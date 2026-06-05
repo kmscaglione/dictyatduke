@@ -1313,3 +1313,14 @@ button,
 .src-badge.src-dicty{background:#e3edff;color:#1c47a0;}
 .src-badge.src-curated{background:#e6f7ec;color:#1c7a45;}
 .src-badge.src-auto{background:#eef0f3;color:#5a6573;}
+
+/* Briefly highlight a search-result target (e.g. a specific lab on the labs page) */
+.search-target {
+  animation: search-target-flash 2.4s ease-out;
+  border-radius: 8px;
+  scroll-margin-top: 72px;
+}
+@keyframes search-target-flash {
+  0%, 18% { background: var(--soft, #d8efe6); box-shadow: 0 0 0 3px var(--teal, #1b7f6b); }
+  100% { background: transparent; box-shadow: 0 0 0 0 transparent; }
+}

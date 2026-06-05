@@ -851,6 +851,13 @@ function scrollToEl(el) {
   scrollToY(el.getBoundingClientRect().top + window.scrollY - 60);
 }
 
+// Briefly flash an element so the user sees where a search result landed.
+function highlightElement(el) {
+  if (!el) return;
+  el.classList.add("search-target");
+  setTimeout(() => el.classList.remove("search-target"), 2400);
+}
+
 function normalize(value) {
   return String(value || "").trim().toLowerCase();
 }
@@ -2002,7 +2009,7 @@ function renderBlastPage() {
       </header>
       <div class="record-body">
         <section class="data-block">
-          <h3>Search dictyBase genomes</h3>
+          <h3>Search Dicty@Duke genomes</h3>
           <form class="annotation-form" id="local-blast-form" novalidate>
             <div class="form-field">
               <label for="lblast-program">Program <span class="required">*</span></label>
@@ -2392,7 +2399,15 @@ function openCommunity(section, updateRoute = true) {
   if (updateRoute) history.pushState(null, "", `/community/${encodeURIComponent(section)}`);
   renderCommunity(section);
   const shell = document.querySelector("#community");
-  if (shell) scrollToY(shell.offsetTop - 60);
+  const pi = section === "labs" ? new URLSearchParams(location.search).get("pi") : null;
+  const target = pi ? document.getElementById(`lab-${slugify(pi)}`) : null;
+  if (target) {
+    highlightElement(target);
+    // Clear the ~89px sticky header plus a small gap so the PI name is visible.
+    scrollToY(target.getBoundingClientRect().top + window.scrollY - 100);
+  } else if (shell) {
+    scrollToY(shell.offsetTop - 60);
+  }
 }
 
 function renderCommunity(section) {
@@ -2428,7 +2443,7 @@ function renderAnnotationsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Submit annotations</h2>
-          <p>Upload gene annotations for review by dictyBase curators. You can submit GO terms, phenotypes, literature links, or other gene-level evidence. Accepted formats: CSV, TSV, XLSX, or plain text.</p>
+          <p>Upload gene annotations for review by Dicty@Duke curators. You can submit GO terms, phenotypes, literature links, or other gene-level evidence. Accepted formats: CSV, TSV, XLSX, or plain text.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2480,7 +2495,7 @@ function renderAnnotationsPage() {
         <section class="data-block">
           <h3>What happens next</h3>
           <div class="kv">
-            <span>Review</span><strong>Submissions are reviewed by dictyBase curators before being added to the database.</strong>
+            <span>Review</span><strong>Submissions are reviewed by Dicty@Duke curators before being added to the database.</strong>
             <span>Contact</span><strong>Curators may follow up at the email address you provide.</strong>
             <span>Questions</span><strong>Email <a class="text-link" href="mailto:matt.scaglione@duke.edu">matt.scaglione@duke.edu</a> with any questions.</strong>
           </div>
@@ -2497,7 +2512,7 @@ function renderUploadDataPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Upload data</h2>
-          <p>Submit genome sequences, RNAseq, or proteomic datasets for inclusion in dictyBase. Fill in the form for your data type and a curator will follow up with transfer instructions. Large files are handled outside this form.</p>
+          <p>Submit genome sequences, RNAseq, or proteomic datasets for inclusion in Dicty@Duke. Fill in the form for your data type and a curator will follow up with transfer instructions. Large files are handled outside this form.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2692,7 +2707,7 @@ function renderLabsPage() {
   const emeriti = labs.filter((l) => l.emeritus).sort((a, b) => a.pi.split(" ").pop().localeCompare(b.pi.split(" ").pop()));
 
   const renderCards = (list) => list.map((lab) => `
-    <div class="ontology-term" style="align-items:flex-start">
+    <div class="ontology-term" id="lab-${slugify(lab.pi)}" style="align-items:flex-start">
       <div>
         <strong>
           ${lab.url
@@ -2736,7 +2751,7 @@ function renderCorrectionsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Submit corrections</h2>
-          <p>Found an error on dictyBase? Use this form to report incorrect gene names, wrong links, outdated information, or any other mistake. Curators review all submissions.</p>
+          <p>Found an error on Dicty@Duke? Use this form to report incorrect gene names, wrong links, outdated information, or any other mistake. Curators review all submissions.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2793,7 +2808,7 @@ function renderSuggestionsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Suggestions</h2>
-          <p>Have an idea to improve dictyBase? We welcome suggestions for new features, content, tools, or anything else that would make the site more useful for the community.</p>
+          <p>Have an idea to improve Dicty@Duke? We welcome suggestions for new features, content, tools, or anything else that would make the site more useful for the community.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2947,7 +2962,7 @@ function renderTechnique(technique) {
               </div>
             ` : `
               <h3>${escapeHtml(technique.label)}</h3>
-              <p>This page now lives inside dictyBase v2, so the technique directory can keep routing even if the old dictyBase page is removed.</p>
+              <p>This page now lives inside Dicty@Duke, so the technique directory can keep routing even if the old dictyBase page is removed.</p>
               <p>This record points to an external file or publication rather than a dictyBase editor page. We can mirror the file itself in a later preservation pass.</p>
             `}
           </section>
@@ -3316,7 +3331,7 @@ async function fetchPubMedResults(gene) {
     retmax: "12",
     retmode: "json",
     sort: "pub date",
-    tool: "dictybase_v2",
+    tool: "dictyatduke",
     term: pubMedQuery(gene)
   });
   const searchResponse = await fetch(`${baseUrl}esearch.fcgi?${searchParams.toString()}`);
@@ -3332,7 +3347,7 @@ async function fetchPubMedResults(gene) {
     db: "pubmed",
     id: ids.join(","),
     retmode: "json",
-    tool: "dictybase_v2"
+    tool: "dictyatduke"
   });
   const summaryResponse = await fetch(`${baseUrl}esummary.fcgi?${summaryParams.toString()}`);
   if (!summaryResponse.ok) throw new Error("PubMed summary failed");
@@ -3410,7 +3425,7 @@ async function loadCuratedReferences(gene) {
     if (curatedRefCache.has(gene.id)) {
       papers = curatedRefCache.get(gene.id);
     } else {
-      const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictybase_v2" });
+      const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictyatduke" });
       const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
       if (!res.ok) throw new Error("esummary failed");
       const data = await res.json();
@@ -3838,7 +3853,7 @@ function openDataPage(updateRoute = true) {
         <div class="record-title">
           <p class="eyebrow">About</p>
           <h2>Data &amp; sources</h2>
-          <p>Where each dataset comes from and when it was last refreshed. dictyBase v2 aggregates and re-presents these sources — it is a modern front-end, not the authoritative curator.</p>
+          <p>Where each dataset comes from and when it was last refreshed. Dicty@Duke aggregates and re-presents these sources — it is a modern front-end, not the authoritative curator.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4116,7 +4131,7 @@ function renderStringResults(gene, data, imgContainer, container) {
 
 // --- Search page (General / Phenotype / GO term / Localization) ---
 const SEARCH_PAGE_MODES = [
-  { key: "general", label: "General", title: "Search dictyBase",
+  { key: "general", label: "General", title: "Search Dicty@Duke",
     blurb: "Search the whole site — genes plus organisms, research pages, and tools.",
     placeholder: "Search genes, pages, organisms, tools — e.g. cln5, BLAST, nomenclature" },
   { key: "phenotype", label: "Phenotype", title: "Phenotype search",
@@ -4225,8 +4240,8 @@ function buildSiteIndex() {
   for (const lab of window.dictyLabs || []) {
     if (!lab || !lab.pi) continue;
     add(lab.pi, `Labs · ${[lab.institution, lab.location].filter(Boolean).join(" · ")}`,
-      lab.url || "/community/labs", lab.url ? "Labs" : "Community",
-      { external: !!lab.url, keywords: `${lab.institution || ""} ${lab.location || ""}` });
+      `/community/labs?pi=${encodeURIComponent(slugify(lab.pi))}`, "Community",
+      { keywords: `${lab.institution || ""} ${lab.location || ""}` });
   }
   if (window.meetingsContent) {
     add("Meetings", "Dictyostelium meetings and community events.", "/community/meetings", "Community",

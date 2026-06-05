@@ -4109,27 +4109,42 @@ let searchPageReq = 0; // invalidates stale async results when typing or switchi
 // protocol inside the Techniques page. Built once at startup; `keywords` holds
 // extra text that's matched but not displayed (definitions, categories, …).
 let SITE_PAGES = [];
+function htmlToText(html) {
+  return (html || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z]+;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 function buildSiteIndex() {
   const pages = [];
-  const seen = new Set();
+  const byKey = new Map();
   const clip = (s, n = 140) => {
     s = (s || "").replace(/\s+/g, " ").trim();
     return s.length > n ? s.slice(0, n - 1) + "…" : s;
   };
+  // Duplicate entries (same page reached two ways) merge their keywords rather
+  // than dropping, so the body text from one source enriches the other.
   const add = (title, description, href, group, opts = {}) => {
     title = (title || "").trim();
     if (!title || !href) return;
     const key = (href + "|" + title).toLowerCase();
-    if (seen.has(key)) return;
-    seen.add(key);
-    pages.push({
+    const kw = (opts.keywords || "").toLowerCase();
+    const existing = byKey.get(key);
+    if (existing) {
+      if (kw) existing.keywords = `${existing.keywords} ${kw}`.trim();
+      return;
+    }
+    const entry = {
       title,
       description: clip(description),
       href,
       group: group || "",
       external: !!opts.external,
-      keywords: (opts.keywords || "").toLowerCase(),
-    });
+      keywords: kw,
+    };
+    byKey.set(key, entry);
+    pages.push(entry);
   };
 
   // 1. Top-level nav destinations.
@@ -4144,15 +4159,20 @@ function buildSiteIndex() {
     );
   }
 
-  // 2. Individual protocols/techniques (media, transformation, microscopy, …).
+  // 2. Individual protocols/techniques — full body text indexed so the recipe
+  //    inside a protocol (e.g. "HL5" within Media and Buffers) is findable.
   for (const t of techniqueRecords || []) {
     add(t.label, t.category ? `Technique · ${t.category}` : "Technique",
-      localTechniqueHref(t.label, t.sourceUrl), "Techniques", { keywords: t.category });
+      localTechniqueHref(t.label, t.sourceUrl), "Techniques",
+      { keywords: `${t.category || ""} ${htmlToText(t.contentHtml)}` });
   }
 
-  // 3. Research-resource sections, their terms, and link categories.
+  // 3. Research resources: the page itself (with its full body text), then its
+  //    sections, terms, and link categories.
   for (const r of researchResources || []) {
     const href = `/research/${encodeURIComponent(r.id)}`;
+    add(r.label, r.dek || "", href, "Research",
+      { keywords: `${r.dek || ""} ${(r.paragraphs || []).join(" ")} ${htmlToText(r.htmlContent)}` });
     for (const s of r.sections || []) {
       add(s.title, `${r.label} · ${s.definition || ""}`, href, r.label, { keywords: s.definition });
       for (const term of s.terms || []) {
@@ -4168,6 +4188,18 @@ function buildSiteIndex() {
   for (const o of organisms || []) {
     add(o.name, o.description || o.group || "", `/organisms/${encodeURIComponent(o.id)}`, "Organisms",
       { keywords: `${o.shortName || ""} ${o.group || ""}` });
+  }
+
+  // 5. Community: every lab/PI by name, plus meeting history text.
+  for (const lab of window.dictyLabs || []) {
+    if (!lab || !lab.pi) continue;
+    add(lab.pi, `Labs · ${[lab.institution, lab.location].filter(Boolean).join(" · ")}`,
+      lab.url || "/community/labs", lab.url ? "Labs" : "Community",
+      { external: !!lab.url, keywords: `${lab.institution || ""} ${lab.location || ""}` });
+  }
+  if (window.meetingsContent) {
+    add("Meetings", "Dictyostelium meetings and community events.", "/community/meetings", "Community",
+      { keywords: htmlToText(JSON.stringify(window.meetingsContent)) });
   }
 
   SITE_PAGES = pages;

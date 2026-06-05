@@ -1,0 +1,26 @@
+# dictyBase v2 — your own curation overlay
+# ---------------------------------------------------------------------------
+# Tab-separated, 10 columns. EASIEST: edit in Google Sheets / Excel and export
+# as .tsv — the spreadsheet keeps the columns aligned for you. Empty cells are
+# fine; just keep every tab. Lines starting with # are ignored.
+# Then run:  python3 scripts/merge_curation.py
+#
+# Columns:
+#   ddb_id    DDB_G gene id (the stable key — never changes)
+#   symbol    gene symbol (display only)
+#   type      go | literature | summary
+#   value     go -> GO id (GO:0006935) | literature -> PMID:38562996 | summary -> text
+#   aspect    go only: P (process) | F (function) | C (component)
+#   evidence  go only: IDA IMP IPI IGI IEP (experimental) / IC TAS (curator)
+#   reference the paper you curated from, e.g. PMID:38562996
+#   date      YYYY-MM-DD you made the annotation
+#   curator   your name / initials
+#   note      optional: GO term label, paper title, or a comment
+#
+# Add your rows BELOW the header line. To start from an example, copy one of
+# the commented templates, remove the leading "# ", and fill it in.
+# ---------------------------------------------------------------------------
+ddb_id	symbol	type	value	aspect	evidence	reference	date	curator	note
+# DDB_G0293434	rasG	go	GO:0035556	P	IMP	PMID:38562996	2026-06-05	you	intracellular signal transduction
+# DDB_G0293434	rasG	literature	PMID:38562996			PMID:38562996	2026-06-05	you	Title of the paper you read
+# DDB_G0293434	rasG	summary	RasG is a small GTPase central to chemotaxis and macropinocytosis.			2026-06-05	you	one-line gene summary

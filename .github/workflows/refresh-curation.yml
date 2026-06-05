@@ -1,0 +1,40 @@
+name: Refresh curation
+
+# Re-syncs gene annotations from the GO Consortium GAF and re-merges your own
+# curation, then commits any changes. Runs monthly and on demand.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"   # 06:00 UTC on the 1st of each month
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild imported annotations from latest GAF
+        run: python3 scripts/build_annotations.py
+
+      - name: Merge in local curation
+        run: python3 scripts/merge_curation.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "curation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- assets/gene_annotations.json; then
+            git add assets/gene_annotations.json
+            git commit -m "chore(data): monthly GO annotation refresh"
+            git push
+          else
+            echo "No annotation changes this cycle."
+          fi

@@ -3110,13 +3110,24 @@ function renderTab(gene, tab) {
   }
   return `
     <div class="section-grid">
-      <section class="data-block">
-        <h3>RNA-seq expression <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— Parikh et al. development time course</span></h3>
-        <div id="rnaseq-inline-chart" data-gene-ddb="${escapeHtml(gene.veupath || '')}" style="position:relative;height:180px">
-          <p class="notice muted" style="padding:8px">Loading expression data…</p>
-        </div>
-        <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
-      </section>
+      <div style="display:grid;gap:14px;align-content:start">
+        <section class="data-block">
+          <h3>RNA-seq expression <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— Parikh et al. development time course</span></h3>
+          <div id="rnaseq-inline-chart" data-gene-ddb="${escapeHtml(gene.veupath || '')}" style="position:relative;height:180px">
+            <p class="notice muted" style="padding:8px">Loading expression data…</p>
+          </div>
+          <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
+        </section>
+        <section class="data-block">
+          <h3>Record coverage</h3>
+          <div class="kv">
+            <span>GO rows</span><strong>${gene.go.length}</strong>
+            <span>Phenotypes</span><strong>${gene.phenotypes.length}</strong>
+            <span>Literature</span><strong>${gene.literature.length}</strong>
+            <span>Structures</span><strong>${gene.structures.length}</strong>
+          </div>
+        </section>
+      </div>
       <div style="display:grid;gap:14px;align-content:start">
         <section class="data-block">
           <h3>Identifiers</h3>
@@ -3140,15 +3151,6 @@ function renderTab(gene, tab) {
           </ul>
         </section>` : ""}
       </div>
-      <section class="data-block">
-        <h3>Record coverage</h3>
-        <div class="kv">
-          <span>GO rows</span><strong>${gene.go.length}</strong>
-          <span>Phenotypes</span><strong>${gene.phenotypes.length}</strong>
-          <span>Literature</span><strong>${gene.literature.length}</strong>
-          <span>Structures</span><strong>${gene.structures.length}</strong>
-        </div>
-      </section>
     </div>
   `;
 }

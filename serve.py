@@ -635,7 +635,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return
             label = {"genomic": "genomic", "cdna": "cDNA", "protein": "protein"}[typ]
             wrapped = "\n".join(seq[i:i + 60] for i in range(0, len(seq), 60))
-            fasta = f">{symbol} {ddb} {label} | dictyBase v2\n{wrapped}\n".encode()
+            fasta = f">{symbol} {ddb} {label} | Dicty@Duke\n{wrapped}\n".encode()
             fname = "".join(c for c in f"{symbol}_{typ}.fasta" if c.isalnum() or c in "._-")
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")

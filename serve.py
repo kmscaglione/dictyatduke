@@ -1,6 +1,7 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, hashlib
-import subprocess, shutil, tempfile
+import subprocess, shutil, tempfile, csv, html
 from email import message_from_bytes
+from urllib.parse import unquote, urlparse, parse_qs
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -180,6 +181,113 @@ def extract_sequence(ddb, typ):
             out = out[:-1]
     return out
 
+
+# --- Public read API: lazy loaders over the local curated data ---
+ASSETS = pathlib.Path(ROOT) / "assets"
+_API = {}
+
+
+def _load_json(name):
+    if name not in _API:
+        try:
+            _API[name] = json.loads((ASSETS / name).read_text())
+        except Exception:
+            _API[name] = {}
+    return _API[name]
+
+
+def api_gene_rows():
+    """ddb -> {ddb,symbol,name,location,ncbiGene}; plus a lowercase symbol->ddb map."""
+    if "_rows" not in _API:
+        rows, sym = {}, {}
+        try:
+            for ddb, symbol, name, loc, ncbi in _load_json("gene_index.json"):
+                rows[ddb] = {"ddb": ddb, "symbol": symbol, "name": name, "location": loc, "ncbiGene": ncbi}
+                sym.setdefault(symbol.lower(), ddb)
+        except Exception:
+            pass
+        _API["_rows"], _API["_sym"] = rows, sym
+    return _API["_rows"], _API["_sym"]
+
+
+def resolve_gene(token):
+    rows, sym = api_gene_rows()
+    token = (token or "").strip()
+    if token in rows:
+        return token
+    return sym.get(token.lower())
+
+
+def api_go_inverse():
+    if "_go_inv" not in _API:
+        inv = {}
+        rows, _ = api_gene_rows()
+        for ddb, annots in _load_json("go_annotations.json").items():
+            for go, aspect, ev, pmid in annots:
+                inv.setdefault(go, []).append({
+                    "ddb": ddb, "symbol": rows.get(ddb, {}).get("symbol", ddb),
+                    "aspect": aspect, "evidence": ev, "pmid": pmid})
+        _API["_go_inv"] = inv
+    return _API["_go_inv"]
+
+
+def api_strains():
+    if "_strains" not in _API:
+        sg, sp = {}, {}
+        src = ASSETS / "dictybase-corpus"
+        try:
+            with open(src / "strain_genes.tsv") as fh:
+                for row in csv.reader(fh, delimiter="\t"):
+                    if len(row) >= 2:
+                        sg[row[0].strip()] = row[1].strip()
+        except Exception:
+            pass
+        try:
+            with open(src / "strain_phenotype.tsv") as fh:
+                for row in csv.reader(fh, delimiter="\t"):
+                    if len(row) < 2:
+                        continue
+                    sp.setdefault(row[0].strip(), []).append({
+                        "phenotype": html.unescape((row[1] if len(row) > 1 else "").strip()),
+                        "condition": html.unescape((row[2] if len(row) > 2 else "").strip()),
+                        "pmid": (row[4] if len(row) > 4 else "").strip(),
+                        "note": html.unescape((row[5] if len(row) > 5 else "").strip()),
+                    })
+        except Exception:
+            pass
+        _API["_strains"] = {"gene": sg, "pheno": sp}
+    return _API["_strains"]
+
+
+def strip_markup(text):
+    """dictyBase wiki markup -> plain text (for API consumers)."""
+    if not text:
+        return ""
+    s = re.sub(r"\[(\S+)\s+([^\]]*)\]", lambda m: m.group(2).strip(), str(text))
+    s = re.sub(r"''(.+?)''", r"\1", s)
+    s = re.sub(r"<br\s*/?>", " ", s)
+    return s.strip()
+
+
+def assemble_gene(ddb):
+    rows, _ = api_gene_rows()
+    g = dict(rows[ddb])
+    entry = _load_json("dictybase_corpus.json").get(ddb, {})
+    g["summary"] = strip_markup(entry.get("summary"))
+    g["curator"] = entry.get("curator")
+    g["go"] = [{"id": go, "aspect": a, "evidence": ev, "pmid": p}
+               for go, a, ev, p in _load_json("go_annotations.json").get(ddb, [])]
+    g["phenotypes"] = [{"phenotype": t, "condition": c, "pmid": p, "note": n}
+                       for t, c, p, n in _load_json("phenotypes.json").get(ddb, [])]
+    seen, pmids = set(), []
+    for m in re.finditer(r"pubmed/(\d+)", str(entry.get("summary", ""))):
+        if m.group(1) not in seen:
+            seen.add(m.group(1)); pmids.append(m.group(1))
+    g["references"] = pmids
+    g["sequences"] = {t: f"/api/sequence?ddb={ddb}&type={t}&symbol={g['symbol']}"
+                      for t in ("genomic", "cdna", "protein")}
+    return g
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=ROOT, **kwargs)
@@ -188,6 +296,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # Per-gene sequence download (genomic / cDNA / protein FASTA)
         if self.path.startswith("/api/sequence?"):
             self._handle_sequence()
+            return
+
+        # Public read API
+        if self.path.startswith("/api/gene/"):
+            self._handle_api_gene(unquote(self.path[len("/api/gene/"):].split("?")[0]))
+            return
+        if self.path.startswith("/api/search"):
+            self._handle_api_search()
+            return
+        if self.path.startswith("/api/go/"):
+            self._handle_api_go(unquote(self.path[len("/api/go/"):].split("?")[0]))
+            return
+        if self.path.startswith("/api/strain/"):
+            self._handle_api_strain(unquote(self.path[len("/api/strain/"):].split("?")[0]))
             return
 
         # AlphaFold proxy
@@ -376,6 +498,52 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"ok": True})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_api_gene(self, token):
+        ddb = resolve_gene(token)
+        if not ddb:
+            self.send_json(404, {"error": "gene not found", "query": token})
+            return
+        self.send_json(200, assemble_gene(ddb))
+
+    def _handle_api_search(self):
+        q = parse_qs(urlparse(self.path).query)
+        term = (q.get("q", [""])[0]).strip().lower()
+        try:
+            limit = min(max(int(q.get("limit", ["25"])[0]), 1), 200)
+        except ValueError:
+            limit = 25
+        if not term:
+            self.send_json(400, {"error": "q parameter required"})
+            return
+        rows, _ = api_gene_rows()
+        matches = []
+        for ddb, g in rows.items():
+            sym = g["symbol"].lower()
+            if term in sym or term in ddb.lower() or term in (g["name"] or "").lower():
+                rank = 0 if sym == term else (1 if sym.startswith(term) else 2)
+                matches.append((rank, g["symbol"], {"ddb": ddb, "symbol": g["symbol"], "name": g["name"]}))
+        matches.sort(key=lambda m: (m[0], m[1].lower()))
+        results = [m[2] for m in matches[:limit]]
+        self.send_json(200, {"query": term, "count": len(results), "results": results})
+
+    def _handle_api_go(self, goid):
+        if not re.match(r"^GO:\d{7}$", goid):
+            self.send_json(400, {"error": "GO id must look like GO:0003674"})
+            return
+        genes = api_go_inverse().get(goid, [])
+        self.send_json(200, {"id": goid, "count": len(genes), "genes": genes})
+
+    def _handle_api_strain(self, sid):
+        st = api_strains()
+        gene = st["gene"].get(sid)
+        phenos = st["pheno"].get(sid, [])
+        if gene is None and not phenos:
+            self.send_json(404, {"error": "strain not found", "strain": sid})
+            return
+        rows, _ = api_gene_rows()
+        gene_obj = {"ddb": gene, "symbol": rows.get(gene, {}).get("symbol")} if gene else None
+        self.send_json(200, {"strain": sid, "gene": gene_obj, "phenotypes": phenos})
 
     def _handle_sequence(self):
         """Return a gene's genomic / cDNA / protein sequence as a FASTA download."""

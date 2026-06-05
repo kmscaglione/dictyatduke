@@ -241,6 +241,21 @@ Everything else is a static file, or the SPA shell for client routes.
 
 ---
 
+## Public API
+
+A read-only JSON API over the local curated data (CORS-enabled, `Access-Control-Allow-Origin: *`):
+
+- `GET /api/gene/{symbol|DDB_G…}` — assembled gene record: identifiers, plain-text
+  summary, curated GO, phenotypes, cited references (PMIDs), and sequence URLs.
+- `GET /api/search?q=…&limit=25` — gene search (symbol/id/name), ranked.
+- `GET /api/go/{GO:0003674}` — all genes annotated to a GO term (with evidence).
+- `GET /api/strain/{DBS…}` — a mutant strain's gene + phenotypes.
+- `GET /api/sequence?ddb=…&type=genomic|cdna|protein` — FASTA (see above).
+
+Backed by the same JSON data files; lazily loaded and cached in-process.
+
+---
+
 ## External services (runtime)
 
 The app fetches from these at runtime (browser-side), so full functionality

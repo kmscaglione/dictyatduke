@@ -232,6 +232,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def end_headers(self):
+        # During beta, force revalidation of edited assets so viewers never
+        # see a stale HTML/CSS/JS copy from the browser cache.
+        path = self.path.split("?")[0]
+        if path == "/" or path.endswith((".html", ".css", ".js")):
+            self.send_header("Cache-Control", "no-cache, must-revalidate")
+        super().end_headers()
+
     def log_message(self, fmt, *args):
         pass
 

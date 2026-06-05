@@ -3,15 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>dictyBase v2</title>
+  <title>dictyBase — Dictyostelium genomes, genes &amp; curation</title>
+  <meta name="description" content="A community resource for Dictyostelium and related social amoebae: searchable gene records with structures and expression, nine sequenced genomes, a genome browser, and community curation tools.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="dictyBase">
+  <meta property="og:title" content="dictyBase — Dictyostelium community resource">
+  <meta property="og:description" content="Searchable gene records with AlphaFold structures and RNA-seq expression, nine sequenced dictyostelid genomes, a genome browser, and community curation tools.">
+  <meta property="og:image" content="/assets/dicty-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="dictyBase — Dictyostelium community resource">
+  <meta name="twitter:description" content="Gene records, genomes, structures, and curation tools for the Dictyostelium community.">
+  <meta name="twitter:image" content="/assets/dicty-hero.jpg">
+
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="/">
-      <span class="mark" aria-hidden="true"></span>
-      <span>dictyBase</span>
-    </a>
+    <div class="brand-wrap">
+      <a class="brand" href="/">
+        <span class="mark" aria-hidden="true"></span>
+        <span>dictyBase</span>
+      </a>
+      <span class="beta-badge" title="Beta — data and features are still being validated">Beta</span>
+    </div>
     <nav class="nav-links" aria-label="Primary">
       <div class="nav-item">
         <button class="nav-trigger" type="button" aria-expanded="false">Research</button>
@@ -37,8 +54,8 @@
       <div class="nav-item">
         <button class="nav-trigger" type="button" aria-expanded="false">Genome browser</button>
         <div class="nav-menu">
-          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Future entry point for genome tracks around a gene.</span></a>
-          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Future entry point for sequence search tools.</span></a>
+          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Interactive IGV.js browser across all nine sequenced dictyostelid genomes.</span></a>
+          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Submit nucleotide or protein sequences to NCBI BLAST.</span></a>
         </div>
       </div>
       <div class="nav-item">
@@ -97,8 +114,8 @@
       <details class="mobile-group">
         <summary>Genome browser</summary>
         <div class="mobile-options">
-          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Future entry point for genome tracks around a gene.</span></a>
-          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Future entry point for sequence search tools.</span></a>
+          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Interactive IGV.js browser across all nine sequenced dictyostelid genomes.</span></a>
+          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Submit nucleotide or protein sequences to NCBI BLAST.</span></a>
         </div>
       </details>
       <details class="mobile-group">
@@ -166,6 +183,39 @@
 
     <section class="record-shell" id="research" aria-live="polite" hidden></section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-about">
+        <p class="footer-brand">dictyBase</p>
+        <p>A community resource for <em>Dictyostelium</em> and related social amoebae — searchable gene records, sequenced genomes, structures, and curation tools. This is a <strong>beta</strong> build; data and features are still being validated, so please report anything that looks off.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Data sources</h4>
+        <ul>
+          <li>Legacy dictyBase (Basu et al. 2015)</li>
+          <li><a href="https://www.uniprot.org" target="_blank" rel="noopener">UniProt</a></li>
+          <li><a href="https://www.ncbi.nlm.nih.gov/gene" target="_blank" rel="noopener">NCBI Gene</a></li>
+          <li><a href="https://alphafold.ebi.ac.uk" target="_blank" rel="noopener">AlphaFold (EMBL-EBI)</a></li>
+          <li><a href="https://amoebadb.org" target="_blank" rel="noopener">VEuPathDB / AmoebaDB</a></li>
+          <li><a href="https://app.dictyexpress.org" target="_blank" rel="noopener">dictyExpress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get involved</h4>
+        <ul>
+          <li><a href="/community/suggestions">Send feedback</a></li>
+          <li><a href="/community/corrections">Report a correction</a></li>
+          <li><a href="/community/annotations">Submit annotations</a></li>
+          <li><a href="/community/labs">Browse research labs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 dictyBase · Maintained at Duke University School of Medicine</span>
+      <span>Gene summaries CC BY-NC 4.0 · Beta build</span>
+    </div>
+  </footer>
 
   <script src="/technique-content.js"></script>
   <script src="/teaching-content.js"></script>

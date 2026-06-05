@@ -976,6 +976,46 @@ function pubMedSearchUrl(gene) {
   return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(pubMedQuery(gene))}`;
 }
 
+// --- Recently searched genes (per-browser, stored in localStorage) ---
+const RECENT_GENES_KEY = "dictybase:recentGenes";
+const RECENT_GENES_MAX = 6;
+const recentGenesEl = document.querySelector("#recent-genes");
+
+function loadRecentGenes() {
+  try {
+    const v = JSON.parse(localStorage.getItem(RECENT_GENES_KEY) || "[]");
+    return Array.isArray(v) ? v.filter((s) => typeof s === "string" && s) : [];
+  } catch {
+    return [];
+  }
+}
+
+function recordRecentGene(symbol) {
+  if (!symbol) return;
+  const sym = String(symbol);
+  const list = [sym, ...loadRecentGenes().filter((s) => s.toLowerCase() !== sym.toLowerCase())].slice(0, RECENT_GENES_MAX);
+  try {
+    localStorage.setItem(RECENT_GENES_KEY, JSON.stringify(list));
+  } catch {
+    /* storage full or unavailable (private mode) — just skip persistence */
+  }
+  renderRecentGenes();
+}
+
+function renderRecentGenes() {
+  if (!recentGenesEl) return;
+  const list = loadRecentGenes();
+  if (!list.length) {
+    recentGenesEl.innerHTML = "";
+    recentGenesEl.setAttribute("hidden", "");
+    return;
+  }
+  recentGenesEl.innerHTML = list
+    .map((s) => `<button type="button" data-query="${escapeHtml(s)}">${escapeHtml(s)}</button>`)
+    .join("");
+  recentGenesEl.removeAttribute("hidden");
+}
+
 function setRoute(gene, tab = state.activeTab) {
   const query = new URLSearchParams();
   if (tab !== "Summary") query.set("tab", tab);
@@ -985,6 +1025,7 @@ function setRoute(gene, tab = state.activeTab) {
 function openGene(gene, tab = "Summary", updateRoute = true) {
   state.activeGene = gene;
   state.activeTab = tab;
+  recordRecentGene(gene?.symbol);
   renderRecord();
   if (updateRoute) setRoute(gene, tab);
   scrollToEl(document.querySelector("#record"));
@@ -4483,7 +4524,8 @@ document.addEventListener("click", (event) => {
   const queryButton = event.target.closest("[data-query]");
   if (queryButton) {
     input.value = queryButton.dataset.query;
-    openGene(rankedGenes(input.value)[0]);
+    const match = rankedGenes(input.value)[0];
+    if (match) openGene(match);
     renderSuggestions("");
     return;
   }
@@ -4604,6 +4646,7 @@ function hydrateFromRoute() {
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
 function initialHydrate() {
+  renderRecentGenes();
   hydrateFromRoute();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;

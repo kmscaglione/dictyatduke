@@ -146,6 +146,7 @@ Each tab lazy-loads its data when opened (see the effects at the end of
 | Structures | AlphaFold (via `/api/alphafold` proxy + 3Dmol.js) + RCSB PDB search |
 | Interactions | STRING |
 | Orthologs | OMA Browser |
+| PTMs | UniProt sequence features (modified residue, glycosylation, lipidation, disulfide, cross-link) |
 
 ### The curated-summary markup parser
 `renderCuratedText()` in `app.js` converts dictyBase wiki markup into safe HTML:

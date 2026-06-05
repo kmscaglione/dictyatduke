@@ -1258,7 +1258,7 @@ function initStructureViewer(uniprot) {
 function renderRecord() {
   const gene = state.activeGene;
   if (!gene) return;
-  const tabs = ["Summary", "GO", "Phenotypes", "Literature", "Structures", "Interactions", "Orthologs"];
+  const tabs = ["Summary", "GO", "Phenotypes", "Literature", "Structures", "Interactions", "Orthologs", "PTMs"];
   recordShell.innerHTML = `
     <article class="record-card">
       <header class="record-header">
@@ -1308,6 +1308,9 @@ function renderRecord() {
   }
   if (state.activeTab === "Orthologs") {
     loadOMAResults(gene);
+  }
+  if (state.activeTab === "PTMs") {
+    loadPTMs(gene);
   }
   if (state.activeTab === "Literature") {
     loadCuratedReferences(gene);
@@ -3085,6 +3088,16 @@ function renderTab(gene, tab) {
       </div>`;
   }
 
+  if (tab === "PTMs") {
+    return `
+      <div class="data-block">
+        <h3>Post-translational modifications <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— UniProt</span></h3>
+        <div data-ptm-results="${escapeHtml(gene.id)}">
+          <p class="notice muted">Loading PTMs for ${escapeHtml(gene.symbol)}…</p>
+        </div>
+      </div>`;
+  }
+
   if (tab === "Structures") {
     const structureItems = gene.structures.map(([source, id, detail]) => {
       const href = source === "AlphaFold" && gene.uniprot
@@ -3868,6 +3881,58 @@ function renderOMAResults(gene, orthologs, container) {
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-top:12px">
       <a class="text-link" href="https://omabrowser.org/oma/vps/${encodeURIComponent(gene.uniprot)}/" target="_blank" rel="noopener">View all ${orthologs.length} orthologs on OMA Browser →</a>
     </p>`;
+}
+
+// --- Post-translational modifications (UniProt sequence features) ---
+const ptmCache = new Map();
+const PTM_TYPES = new Set(["Modified residue", "Glycosylation", "Lipidation", "Disulfide bond", "Cross-link"]);
+
+async function loadPTMs(gene) {
+  const container = document.querySelector("[data-ptm-results]");
+  if (!container) return;
+  if (!gene.uniprot) {
+    container.innerHTML = `<p class="notice">No UniProt accession for ${escapeHtml(gene.symbol)} — PTM annotations require a UniProt entry.</p>`;
+    return;
+  }
+  try {
+    let features;
+    if (ptmCache.has(gene.id)) {
+      features = ptmCache.get(gene.id);
+    } else {
+      const res = await fetch(`https://rest.uniprot.org/uniprotkb/${encodeURIComponent(gene.uniprot)}.json?fields=ft_mod_res,ft_carbohyd,ft_lipid,ft_disulfid,ft_crosslnk`);
+      if (!res.ok) throw new Error("UniProt fetch failed");
+      const data = await res.json();
+      features = (data.features || []).filter((f) => PTM_TYPES.has(f.type));
+      ptmCache.set(gene.id, features);
+    }
+    if (state.activeGene !== gene || state.activeTab !== "PTMs") return;
+    if (!features.length) {
+      container.innerHTML = `<p class="notice">No post-translational modifications are annotated in UniProt for ${escapeHtml(gene.uniprot)}.</p>`;
+      return;
+    }
+    const byType = {};
+    for (const f of features) (byType[f.type] = byType[f.type] || []).push(f);
+    const order = ["Modified residue", "Glycosylation", "Lipidation", "Disulfide bond", "Cross-link"].filter((t) => byType[t]);
+    container.innerHTML = order.map((t) => `
+      <div style="margin-bottom:20px">
+        <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(t)} <span style="font-weight:500;text-transform:none;letter-spacing:0">(${byType[t].length})</span></h4>
+        <ul class="list">
+          ${byType[t].map((f) => {
+            const s = f.location?.start?.value, e = f.location?.end?.value;
+            const pos = (s && e && s !== e) ? `${s}–${e}` : `${s ?? "?"}`;
+            const refs = [...new Set((f.evidences || []).filter((ev) => ev.source === "PubMed" && ev.id)
+              .map((ev) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(ev.id)}/" target="_blank" rel="noopener">PMID ${escapeHtml(ev.id)}</a>`))].join(", ");
+            return `<li>
+              <strong>${escapeHtml(f.description || t)}</strong>
+              <span>Position ${escapeHtml(pos)}${refs ? " · " + refs : ""}</span>
+            </li>`;
+          }).join("")}
+        </ul>
+      </div>`).join("") +
+      `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Source: <a class="text-link" href="https://www.uniprot.org/uniprotkb/${escapeHtml(gene.uniprot)}/entry#ptm_processing" target="_blank" rel="noopener">UniProt ${escapeHtml(gene.uniprot)}</a> sequence annotations.</p>`;
+  } catch {
+    container.innerHTML = `<p class="notice">PTM annotations could not be loaded right now.</p>`;
+  }
 }
 
 const pdbCache = new Map();

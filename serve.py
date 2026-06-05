@@ -231,6 +231,28 @@ def api_go_inverse():
     return _API["_go_inv"]
 
 
+def api_phenotype_index():
+    """lowercased phenotype term -> {term, genes:[{ddb,symbol}]} (one row per gene)."""
+    if "_pheno_idx" not in _API:
+        rows, _ = api_gene_rows()
+        idx = {}
+        for ddb, entries in _load_json("phenotypes.json").items():
+            symbol = rows.get(ddb, {}).get("symbol", ddb)
+            for entry in entries:
+                term = (entry[0] if entry else "").strip()
+                if not term:
+                    continue
+                bucket = idx.setdefault(term.lower(), {"term": term, "_seen": set(), "genes": []})
+                if ddb not in bucket["_seen"]:
+                    bucket["_seen"].add(ddb)
+                    bucket["genes"].append({"ddb": ddb, "symbol": symbol})
+        for bucket in idx.values():
+            bucket.pop("_seen", None)
+            bucket["genes"].sort(key=lambda g: g["symbol"].lower())
+        _API["_pheno_idx"] = idx
+    return _API["_pheno_idx"]
+
+
 def api_strains():
     if "_strains" not in _API:
         sg, sp = {}, {}
@@ -308,6 +330,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/search"):
             self._handle_api_search()
+            return
+        if self.path.startswith("/api/phenotype-search"):
+            self._handle_api_phenotype_search()
             return
         if self.path.startswith("/api/go/"):
             self._handle_api_go(unquote(self.path[len("/api/go/"):].split("?")[0]))
@@ -554,6 +579,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         matches.sort(key=lambda m: (m[0], m[1].lower()))
         results = [m[2] for m in matches[:limit]]
         self.send_json(200, {"query": term, "count": len(results), "results": results})
+
+    def _handle_api_phenotype_search(self):
+        q = parse_qs(urlparse(self.path).query)
+        term = (q.get("q", [""])[0]).strip().lower()
+        try:
+            limit = min(max(int(q.get("limit", ["40"])[0]), 1), 200)
+        except ValueError:
+            limit = 40
+        if not term:
+            self.send_json(400, {"error": "q parameter required"})
+            return
+        idx = api_phenotype_index()
+        matches = [v for key, v in idx.items() if term in key]
+        # Most-annotated phenotypes first; exact-ish (term starts with query) ranks above substring.
+        matches.sort(key=lambda v: (0 if v["term"].lower().startswith(term) else 1, -len(v["genes"]), v["term"].lower()))
+        results = [{"term": v["term"], "genes": v["genes"]} for v in matches[:limit]]
+        self.send_json(200, {"query": term, "totalTerms": len(matches), "count": len(results), "terms": results})
 
     def _handle_api_go(self, goid):
         if not re.match(r"^GO:\d{7}$", goid):

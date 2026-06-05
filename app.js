@@ -4083,6 +4083,163 @@ function renderStringResults(gene, data, imgContainer, container) {
   }
 }
 
+// --- Search page (General / Phenotype / GO term / Localization) ---
+const SEARCH_PAGE_MODES = [
+  { key: "general", label: "General", title: "Gene search",
+    blurb: "Find genes by symbol, DDB gene ID, or protein name.",
+    placeholder: "Gene symbol, DDB_G…, or name — e.g. cln5, mhcA, kinase" },
+  { key: "phenotype", label: "Phenotype", title: "Phenotype search",
+    blurb: "Find genes by curated mutant phenotype.",
+    placeholder: "Phenotype term — e.g. chemotaxis, aggregation, spore" },
+  { key: "go", label: "GO term", title: "GO term search",
+    blurb: "Find a Gene Ontology term and the Dictyostelium genes annotated to it.",
+    placeholder: "GO term name or ID — e.g. autophagy, GO:0006914" },
+  { key: "localization", label: "Localization", title: "Localization search",
+    blurb: "Find subcellular locations (GO cellular component) and the genes there.",
+    placeholder: "Location — e.g. nucleus, plasma membrane, phagosome" },
+];
+
+let searchPageMode = "general";
+let searchPageDebounce = null;
+let searchPageReq = 0; // invalidates stale async results when typing or switching mode
+
+function openSearchPage(mode, updateRoute = true) {
+  hideContentSections();
+  if (!SEARCH_PAGE_MODES.some((m) => m.key === mode)) mode = "general";
+  searchPageMode = mode;
+  if (updateRoute) history.pushState(null, "", `/search/${mode}`);
+  if (!toolsShell) return;
+  renderSearchPage();
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+}
+
+function renderSearchPage() {
+  if (!toolsShell) return;
+  searchPageReq++; // drop any in-flight request from a previous mode
+  const cfg = SEARCH_PAGE_MODES.find((m) => m.key === searchPageMode) || SEARCH_PAGE_MODES[0];
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Search</p>
+          <h2>${escapeHtml(cfg.title)}</h2>
+          <p>${escapeHtml(cfg.blurb)}</p>
+        </div>
+      </header>
+      <div class="tabs" aria-label="Search modes">
+        ${SEARCH_PAGE_MODES.map((m) => `<button class="tab ${m.key === searchPageMode ? "active" : ""}" type="button" data-search-tab="${m.key}">${escapeHtml(m.label)}</button>`).join("")}
+      </div>
+      <div class="record-body">
+        <div style="margin-bottom:16px">
+          <input id="page-search-input" type="search" autocomplete="off" placeholder="${escapeHtml(cfg.placeholder)}" aria-label="${escapeHtml(cfg.title)}">
+        </div>
+        <div data-search-results><p class="notice muted">Start typing to search.</p></div>
+      </div>
+    </article>`;
+  const pageInput = document.getElementById("page-search-input");
+  if (pageInput) {
+    pageInput.addEventListener("input", () => {
+      clearTimeout(searchPageDebounce);
+      const val = pageInput.value;
+      searchPageDebounce = setTimeout(() => runSearchPageQuery(searchPageMode, val), 220);
+    });
+    if (appReady) requestAnimationFrame(() => pageInput.focus());
+  }
+}
+
+function runSearchPageQuery(mode, value) {
+  const el = document.querySelector("[data-search-results]");
+  if (!el) return;
+  const q = value.trim();
+  const req = ++searchPageReq;
+  if (q.length < 2) {
+    el.innerHTML = `<p class="notice muted">Type at least two characters to search.</p>`;
+    return;
+  }
+  if (mode === "general") renderGeneSearchResults(el, q);
+  else if (mode === "phenotype") runPhenotypeSearch(el, q, req);
+  else if (mode === "go") runGOTermSearch(el, q, null, req);
+  else if (mode === "localization") runGOTermSearch(el, q, "cellular_component", req);
+}
+
+function renderGeneSearchResults(el, q) {
+  if (!geneIndex.length && !genes.length) {
+    el.innerHTML = `<p class="notice muted">Loading gene catalog… type again in a moment.</p>`;
+    return;
+  }
+  // Mirror the home search: curated records first, then the rest of the
+  // catalog (deduped by NCBI id) so a result opens the same record the user
+  // would reach anywhere else on the site rather than a bare NCBI version.
+  const local = rankedGenes(q);
+  const localKeys = new Set(local.map((g) => g.ncbiGene));
+  const indexed = searchIndex(q, 60).filter((g) => !localKeys.has(g.ncbiGene));
+  const total = local.length + indexed.length;
+  if (!total) {
+    el.innerHTML = `<p class="notice">No genes match “${escapeHtml(q)}”.</p>`;
+    return;
+  }
+  const card = (g, attr) =>
+    `<a class="technique-link" ${attr} href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span><small>${escapeHtml(g.name || g.id)}</small></a>`;
+  const localHtml = local.map((g) => card(g, `data-gene="${escapeHtml(g.id)}"`)).join("");
+  const indexedHtml = indexed.map((g) => card(g, `data-ncbi-gene="${escapeHtml(g.ncbiGene)}"`)).join("");
+  el.innerHTML = `
+    <p class="notice muted">${total} gene${total === 1 ? "" : "s"} matching “${escapeHtml(q)}”.</p>
+    <div class="technique-links">${localHtml}${indexedHtml}</div>`;
+}
+
+async function runPhenotypeSearch(el, q, req) {
+  el.innerHTML = `<p class="notice muted">Searching phenotypes…</p>`;
+  try {
+    const data = await (await fetch(`/api/phenotype-search?q=${encodeURIComponent(q)}&limit=40`)).json();
+    if (req !== searchPageReq) return;
+    if (!data.terms || !data.terms.length) {
+      el.innerHTML = `<p class="notice">No curated phenotypes match “${escapeHtml(q)}”.</p>`;
+      return;
+    }
+    const shown = data.count < data.totalTerms ? ` (showing ${data.count})` : "";
+    el.innerHTML = `
+      <p class="notice muted">${data.totalTerms} phenotype${data.totalTerms === 1 ? "" : "s"} matching “${escapeHtml(q)}”${shown}.</p>
+      ${data.terms.map((t) => `
+        <div class="data-block" style="margin-bottom:14px">
+          <h3 style="font-size:0.9375rem">${escapeHtml(t.term)} <span style="font-weight:500;color:var(--muted,#6b7280)">· ${t.genes.length} gene${t.genes.length === 1 ? "" : "s"}</span></h3>
+          <div class="technique-links">
+            ${t.genes.map((g) => `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span></a>`).join("")}
+          </div>
+        </div>`).join("")}`;
+  } catch {
+    if (req !== searchPageReq) return;
+    el.innerHTML = `<p class="notice">Phenotype search is unavailable right now.</p>`;
+  }
+}
+
+async function runGOTermSearch(el, q, aspectFilter, req) {
+  el.innerHTML = `<p class="notice muted">Searching the Gene Ontology…</p>`;
+  try {
+    const url = `https://www.ebi.ac.uk/QuickGO/services/ontology/go/search?query=${encodeURIComponent(q)}&limit=25&page=1`;
+    const data = await (await fetch(url, { headers: { Accept: "application/json" } })).json();
+    if (req !== searchPageReq) return;
+    let results = (data.results || []).filter((r) => !r.isObsolete);
+    if (aspectFilter) results = results.filter((r) => r.aspect === aspectFilter);
+    if (!results.length) {
+      el.innerHTML = `<p class="notice">No ${aspectFilter ? "localization" : "GO"} terms match “${escapeHtml(q)}”.</p>`;
+      return;
+    }
+    el.innerHTML = `
+      <p class="notice muted">${results.length} term${results.length === 1 ? "" : "s"} matching “${escapeHtml(q)}”. Select one to see the annotated <em>D. discoideum</em> genes.</p>
+      <ul class="list">
+        ${results.map((r) => `
+          <li>
+            <strong><a class="go-search-link" data-go-ref="${escapeHtml(r.id)}" href="/go/${encodeURIComponent(r.id)}">${escapeHtml(r.name)}</a></strong>
+            <span>${escapeHtml(r.id)} · ${escapeHtml(GO_ASPECT_LABEL[r.aspect] || r.aspect || "")}${r.definition?.text ? ` — ${escapeHtml(r.definition.text)}` : ""}</span>
+          </li>`).join("")}
+      </ul>`;
+  } catch {
+    if (req !== searchPageReq) return;
+    el.innerHTML = `<p class="notice">${aspectFilter ? "Localization" : "GO term"} search is unavailable right now.</p>`;
+  }
+}
+
 // --- OMA orthologs ---
 const omaCache = new Map();
 
@@ -4548,6 +4705,7 @@ document.addEventListener("click", (event) => {
 
   const geneButton = event.target.closest("[data-gene]");
   if (geneButton) {
+    event.preventDefault();
     const gene = genes.find((item) => item.id === geneButton.dataset.gene);
     if (gene) {
       input.value = gene.symbol;
@@ -4559,6 +4717,7 @@ document.addEventListener("click", (event) => {
 
   const ncbiButton = event.target.closest("[data-ncbi-gene]");
   if (ncbiButton) {
+    event.preventDefault();
     suggestions.innerHTML = "";
     openRemoteGene(ncbiButton.dataset.ncbiGene);
     return;
@@ -4581,6 +4740,19 @@ document.addEventListener("click", (event) => {
   if (researchTab) {
     const resource = findResearchByToken(researchTab.dataset.researchTab);
     if (resource) openResearch(resource);
+  }
+
+  const searchTab = event.target.closest("[data-search-tab]");
+  if (searchTab) {
+    openSearchPage(searchTab.dataset.searchTab);
+    return;
+  }
+
+  const goRef = event.target.closest("[data-go-ref]");
+  if (goRef) {
+    event.preventDefault();
+    openGOTerm(goRef.dataset.goRef);
+    return;
   }
 });
 
@@ -4632,6 +4804,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "data") {
     openDataPage(false);
+    return;
+  }
+  if (pathParts[0] === "search" && SEARCH_PAGE_MODES.some((m) => m.key === pathParts[1])) {
+    openSearchPage(pathParts[1], false);
     return;
   }
   if (isSearchRoute) {

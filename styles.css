@@ -1305,3 +1305,11 @@ button,
   border: none;
   display: block;
 }
+
+/* Provenance badges for GO annotation source (added by curation pipeline) */
+.src-badge{display:inline-block;font-size:0.66rem;font-weight:600;line-height:1.4;
+  padding:1px 6px;border-radius:999px;margin-left:4px;vertical-align:middle;
+  text-transform:uppercase;letter-spacing:.03em;white-space:nowrap;}
+.src-badge.src-dicty{background:#e3edff;color:#1c47a0;}
+.src-badge.src-curated{background:#e6f7ec;color:#1c7a45;}
+.src-badge.src-auto{background:#eef0f3;color:#5a6573;}

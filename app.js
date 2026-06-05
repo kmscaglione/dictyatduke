@@ -3217,10 +3217,10 @@ function renderTab(gene, tab) {
         <section class="data-block">
           <h3>Record coverage</h3>
           <div class="kv">
-            <span>GO rows</span><strong>${gene.go.length}</strong>
-            <span>Phenotypes</span><strong>${gene.phenotypes.length}</strong>
-            <span>Literature</span><strong>${gene.literature.length}</strong>
-            <span>Structures</span><strong>${gene.structures.length}</strong>
+            <span>GO rows</span><strong>${gene._annot ? (gene._annot.go.F.length + gene._annot.go.P.length + gene._annot.go.C.length) : (gene.go ? gene.go.length : 0)}</strong>
+            <span>Phenotypes</span><strong>${gene.phenotypes ? gene.phenotypes.length : 0}</strong>
+            <span>Literature</span><strong>${gene._annot && gene._annot.literature ? gene._annot.literature.length : (gene.literature ? gene.literature.length : 0)}</strong>
+            <span>Structures</span><strong>${gene.structures ? gene.structures.length : 0}</strong>
           </div>
         </section>
       </div>
@@ -3388,6 +3388,10 @@ function curatedPmids(gene) {
   let m;
   while ((m = re.exec(String(gene.summary || ""))) !== null) {
     if (!seen.has(m[1])) { seen.add(m[1]); out.push(m[1]); }
+  }
+  for (const ref of (gene._annot && gene._annot.literature ? gene._annot.literature : [])) {
+    const id = String(ref).startsWith("PMID:") ? String(ref).slice(5) : String(ref);
+    if (/^\d+$/.test(id) && !seen.has(id)) { seen.add(id); out.push(id); }
   }
   return out;
 }
@@ -3599,11 +3603,31 @@ async function fetchGOResults(gene) {
 
 // dictyBase curated GO annotations (GO Consortium GAF): { ddb: [[goId, aspect, evidence, pmid], ...] }
 let goAnnotData = null;
+let geneAnnotData = null;
+async function ensureGeneAnnotations() {
+  if (geneAnnotData) return geneAnnotData;
+  const res = await fetch("/assets/gene_annotations.json");
+  if (!res.ok) throw new Error("gene annotations unavailable");
+  geneAnnotData = await res.json();
+  return geneAnnotData;
+}
 async function ensureGOAnnotations() {
   if (goAnnotData) return goAnnotData;
-  const res = await fetch("/assets/go_annotations.json");
-  if (!res.ok) throw new Error("GO annotations unavailable");
-  goAnnotData = await res.json();
+  const rich = await ensureGeneAnnotations();
+  const flat = {};
+  for (const ddb in rich) {
+    const g = rich[ddb];
+    const rows = [];
+    for (const aspect of ["F", "P", "C"]) {
+      for (const e of (g.go && g.go[aspect] ? g.go[aspect] : [])) {
+        const ref = e[3] || "";
+        const pmid = ref.startsWith("PMID:") ? ref.slice(5) : "";
+        rows.push([e[0], aspect, e[1], pmid, e[5] || ""]);
+      }
+    }
+    if (rows.length) flat[ddb] = rows;
+  }
+  goAnnotData = flat;
   return goAnnotData;
 }
 
@@ -3635,17 +3659,17 @@ async function loadGOResults(gene) {
       const names = await resolveGONames(ids);
       if (state.activeGene !== gene || state.activeTab !== "GO") return;
       const aspects = { F: new Map(), P: new Map(), C: new Map() };
-      for (const [go, aspect, ev, pmid] of curated) {
+      for (const [go, aspect, ev, pmid, by] of curated) {
         const bucket = aspects[aspect] || (aspects[aspect] = new Map());
         if (!bucket.has(go)) bucket.set(go, []);
-        bucket.get(go).push({ ev, pmid });
+        bucket.get(go).push({ ev, pmid, by });
       }
       const html = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size).map((a) => `
         <div style="margin-bottom:20px">
           <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])}</h4>
           <ul class="list">
             ${[...aspects[a].entries()].map(([go, evs]) => {
-              const refs = [...new Set(evs.map((e) => `${escapeHtml(e.ev)}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}`))];
+              const refs = [...new Set(evs.map((e) => `${escapeHtml(e.ev)}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}${e.by ? ` <span class="src-badge src-${e.by === 'curated-here' ? 'curated' : (e.by === 'dictyBase' ? 'dicty' : 'auto')}">${escapeHtml(e.by === 'curated-here' ? 'curated here' : e.by)}</span>` : ""}`))];
               return `<li>
                 <strong><a href="/go/${escapeHtml(go)}">${escapeHtml(names[go] || go)}</a></strong>
                 <span>${escapeHtml(go)} · ${refs.join(", ")}</span>
@@ -3653,7 +3677,7 @@ async function loadGOResults(gene) {
             }).join("")}
           </ul>
         </div>`).join("");
-      container.innerHTML = html + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Source: dictyBase GO annotations (GO Consortium GAF) · <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">evidence codes</a>.</p>`;
+      container.innerHTML = html + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Each annotation is badged by source — <span class="src-badge src-dicty">dictyBase</span> curated, automated (UniProt/InterPro/GO_Central), or <span class="src-badge src-curated">curated here</span>. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
       return;
     }
 
@@ -3868,20 +3892,27 @@ async function enrichGeneFromCorpus(gene) {
   const ddb = gene.veupath;
   if (!ddb) return gene;
   try {
-    const corpus = await ensureDictyCorpus();
-    const entry = corpus[ddb];
-    if (!entry) return gene;
     const enriched = { ...gene };
-    if (entry.summary && (!enriched.summary || enriched.summary === enriched.name)) {
-      enriched.summary = entry.summary;
-    }
-    if (entry.phenotypes?.length && enriched.phenotypes?.length === 0) {
-      enriched.phenotypes = entry.phenotypes.map(([term, note, pmid]) =>
-        [term, [note, pmid ? `PMID:${pmid}` : ""].filter(Boolean).join(" ")]
-      );
-    }
-    if (entry.curator) enriched._curator = entry.curator;
-    if (entry.note) enriched._curatorNote = entry.note;
+    try {
+      const annot = (await ensureGeneAnnotations())[ddb];
+      if (annot) enriched._annot = annot;
+    } catch { /* annotations optional */ }
+    try {
+      const corpus = await ensureDictyCorpus();
+      const entry = corpus[ddb];
+      if (entry) {
+        if (entry.summary && (!enriched.summary || enriched.summary === enriched.name)) {
+          enriched.summary = entry.summary;
+        }
+        if (entry.phenotypes?.length && enriched.phenotypes?.length === 0) {
+          enriched.phenotypes = entry.phenotypes.map(([term, note, pmid]) =>
+            [term, [note, pmid ? `PMID:${pmid}` : ""].filter(Boolean).join(" ")]
+          );
+        }
+        if (entry.curator) enriched._curator = entry.curator;
+        if (entry.note) enriched._curatorNote = entry.note;
+      }
+    } catch { /* corpus optional */ }
     return enriched;
   } catch {
     return gene;

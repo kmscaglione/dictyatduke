@@ -1369,6 +1369,7 @@ function loadTabData(gene, tab) {
   switch (tab) {
     case "Summary":
       requestAnimationFrame(() => loadRNAseqInline(gene));
+      loadAISummary(gene);
       break;
     case "GO":
       loadGOResults(gene);
@@ -3306,6 +3307,7 @@ function renderTab(gene, tab) {
     `;
   }
   return `
+    <div data-ai-summary></div>
     <div class="section-grid">
       <div style="display:grid;gap:14px;align-content:start">
         <section class="data-block">
@@ -3745,6 +3747,56 @@ async function resolveGONames(goIds) {
   return out;
 }
 
+// --- AI-curation layer (machine-generated; always badged "AI") ---
+let aiCurationData = null;
+async function ensureAICuration() {
+  if (aiCurationData) return aiCurationData;
+  try {
+    const res = await fetch("/assets/ai_curation.json");
+    aiCurationData = res.ok ? await res.json() : {};
+  } catch { aiCurationData = {}; }
+  return aiCurationData;
+}
+function aiCurationFor(gene) {
+  if (!aiCurationData || !gene) return null;
+  return aiCurationData[(gene.symbol || "").toLowerCase()] || null;
+}
+
+// Three curation layers + the automated/electronic bucket. Each annotation is
+// tagged by assigned_by; the user can show/hide whole layers (persisted).
+const CURATION_LAYERS = [
+  { key: "dicty", label: "dictyBase", cls: "src-dicty" },
+  { key: "community", label: "Community", cls: "src-curated" },
+  { key: "ai", label: "AI", cls: "src-ai" },
+  { key: "auto", label: "Automated", cls: "src-auto" },
+];
+function curationLayerOf(by) {
+  if (by === "dictyBase") return "dicty";
+  if (by === "curated-here") return "community";
+  if (by === "AI") return "ai";
+  return "auto";
+}
+let curationLayerState = null;
+function getCurationLayers() {
+  if (!curationLayerState) {
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem("dictybase:curationLayers") || "{}"); } catch {}
+    curationLayerState = {};
+    for (const l of CURATION_LAYERS) curationLayerState[l.key] = saved[l.key] !== false;
+  }
+  return curationLayerState;
+}
+function toggleCurationLayer(key) {
+  const st = getCurationLayers();
+  st[key] = !st[key];
+  try { localStorage.setItem("dictybase:curationLayers", JSON.stringify(st)); } catch {}
+}
+function curationBadge(by) {
+  const def = CURATION_LAYERS.find((l) => l.key === curationLayerOf(by));
+  const text = by === "curated-here" ? "curated here" : (by === "AI" ? "AI" : by);
+  return ` <span class="src-badge ${def.cls}">${escapeHtml(text)}</span>`;
+}
+
 async function loadGOResults(gene) {
   const container = document.querySelector("[data-go-results]");
   if (!container) return;
@@ -3755,30 +3807,14 @@ async function loadGOResults(gene) {
     if (ddb) {
       try { curated = (await ensureGOAnnotations())[ddb]; } catch { /* fall through */ }
     }
-    if (curated && curated.length) {
-      const ids = [...new Set(curated.map((a) => a[0]))];
-      const names = await resolveGONames(ids);
-      if (state.activeGene !== gene || state.activeTab !== "GO") return;
-      const aspects = { F: new Map(), P: new Map(), C: new Map() };
-      for (const [go, aspect, ev, pmid, by] of curated) {
-        const bucket = aspects[aspect] || (aspects[aspect] = new Map());
-        if (!bucket.has(go)) bucket.set(go, []);
-        bucket.get(go).push({ ev, pmid, by });
-      }
-      const html = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size).map((a) => `
-        <div style="margin-bottom:20px">
-          <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])}</h4>
-          <ul class="list">
-            ${[...aspects[a].entries()].map(([go, evs]) => {
-              const refs = [...new Set(evs.map((e) => `${escapeHtml(e.ev)}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}${e.by ? ` <span class="src-badge src-${e.by === 'curated-here' ? 'curated' : (e.by === 'dictyBase' ? 'dicty' : 'auto')}">${escapeHtml(e.by === 'curated-here' ? 'curated here' : e.by)}</span>` : ""}`))];
-              return `<li>
-                <strong><a href="/go/${escapeHtml(go)}">${escapeHtml(names[go] || go)}</a></strong>
-                <span>${escapeHtml(go)} · ${refs.join(", ")}</span>
-              </li>`;
-            }).join("")}
-          </ul>
-        </div>`).join("");
-      container.innerHTML = html + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Each annotation is badged by source — <span class="src-badge src-dicty">dictyBase</span> curated, automated (UniProt/InterPro/GO_Central), or <span class="src-badge src-curated">curated here</span>. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
+    // Merge the dictyBase / automated / community rows with the AI layer, then
+    // render with a per-layer filter toggle.
+    let aiEntry = null;
+    try { await ensureAICuration(); aiEntry = aiCurationFor(gene); } catch { /* AI layer optional */ }
+    const aiRows = ((aiEntry && aiEntry.go) || []).map(([id, aspect, name]) => [id, aspect, "", "", "AI", name]);
+    const allRows = (curated || []).concat(aiRows);
+    if (allRows.length) {
+      await renderGOTab(container, gene, allRows);
       return;
     }
 
@@ -3809,6 +3845,56 @@ async function loadGOResults(gene) {
   } catch (error) {
     container.innerHTML = `<p class="notice">GO annotations could not be loaded right now.</p>`;
   }
+}
+
+
+let goRenderCtx = null;
+async function renderGOTab(container, gene, allRows) {
+  const ids = [...new Set(allRows.filter((r) => !r[5]).map((r) => r[0]))];
+  const names = await resolveGONames(ids);
+  for (const r of allRows) if (r[5] && !names[r[0]]) names[r[0]] = r[5]; // AI rows carry their own name
+  if (state.activeGene !== gene || state.activeTab !== "GO") return;
+  goRenderCtx = { container, gene, allRows, names };
+  paintGOTab();
+}
+
+function paintGOTab() {
+  if (!goRenderCtx) return;
+  const { container, allRows, names } = goRenderCtx;
+  const layers = getCurationLayers();
+  const counts = { dicty: 0, community: 0, ai: 0, auto: 0 };
+  for (const r of allRows) counts[curationLayerOf(r[4])]++;
+  const visible = allRows.filter((r) => layers[curationLayerOf(r[4])]);
+
+  const pills = `<div class="layer-toggle" aria-label="Curation layers">${CURATION_LAYERS
+    .filter((l) => counts[l.key] > 0)
+    .map((l) => `<button type="button" class="layer-pill ${l.cls} ${layers[l.key] ? "on" : "off"}" data-layer="${l.key}" aria-pressed="${layers[l.key]}">${escapeHtml(l.label)} <span class="layer-count">${counts[l.key]}</span></button>`)
+    .join("")}</div>`;
+
+  const aspects = { F: new Map(), P: new Map(), C: new Map() };
+  for (const r of visible) {
+    const [go, aspect, ev, pmid, by] = r;
+    const m = aspects[aspect] || (aspects[aspect] = new Map());
+    if (!m.has(go)) m.set(go, []);
+    m.get(go).push({ ev, pmid, by });
+  }
+  const body = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size).map((a) => `
+    <div style="margin-bottom:20px">
+      <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])}</h4>
+      <ul class="list">
+        ${[...aspects[a].entries()].map(([go, evs]) => {
+          const refs = [...new Set(evs.map((e) => `${e.ev ? escapeHtml(e.ev) : ""}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}${e.by ? curationBadge(e.by) : ""}`.trim()))];
+          return `<li>
+            <strong><a class="go-search-link" data-go-ref="${escapeHtml(go)}" href="/go/${escapeHtml(go)}">${escapeHtml(names[go] || go)}</a></strong>
+            <span>${escapeHtml(go)}${refs.length ? " · " + refs.join(", ") : ""}</span>
+          </li>`;
+        }).join("")}
+      </ul>
+    </div>`).join("");
+
+  const bodyOrEmpty = body || `<p class="notice muted">All curation layers are hidden — re-enable one above.</p>`;
+  const legend = `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Three curation layers — <span class="src-badge src-dicty">dictyBase</span> (official), <span class="src-badge src-curated">curated here</span> (community-submitted), and <span class="src-badge src-ai">AI</span> (machine-generated, unreviewed) — plus <span class="src-badge src-auto">automated</span> electronic inference (UniProt/InterPro/GO_Central). Toggle a layer to show or hide it. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
+  container.innerHTML = pills + bodyOrEmpty + legend;
 }
 
 // --- GO term browsing: genes annotated to a GO term ---
@@ -4081,6 +4167,21 @@ async function ensureRNAseqData() {
   if (!res.ok) throw new Error("RNAseq data not available");
   rnaseqData = await res.json();
   return rnaseqData;
+}
+
+async function loadAISummary(gene) {
+  const el = document.querySelector("[data-ai-summary]");
+  if (!el) return;
+  try { await ensureAICuration(); } catch { return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  const ai = aiCurationFor(gene);
+  if (!ai || !ai.summary || !getCurationLayers().ai) { el.innerHTML = ""; return; }
+  el.innerHTML = `
+    <div class="ai-summary">
+      <h3>AI summary <span class="src-badge src-ai">AI</span></h3>
+      <p>${escapeHtml(ai.summary)}</p>
+      <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
+    </div>`;
 }
 
 async function loadRNAseqInline(gene) {
@@ -5022,6 +5123,13 @@ document.addEventListener("click", (event) => {
   const searchTab = event.target.closest("[data-search-tab]");
   if (searchTab) {
     openSearchPage(searchTab.dataset.searchTab);
+    return;
+  }
+
+  const layerPill = event.target.closest("[data-layer]");
+  if (layerPill) {
+    toggleCurationLayer(layerPill.dataset.layer);
+    paintGOTab();
     return;
   }
 

@@ -1294,31 +1294,54 @@ function renderRecord() {
   if (gene.uniprot) {
     requestAnimationFrame(() => initStructureViewer(gene.uniprot));
   }
-  if (state.activeTab === "Summary") {
-    requestAnimationFrame(() => loadRNAseqInline(gene));
+  loadTabData(gene, state.activeTab);
+}
+
+// Fire the async data loader(s) for a single record tab.
+function loadTabData(gene, tab) {
+  switch (tab) {
+    case "Summary":
+      requestAnimationFrame(() => loadRNAseqInline(gene));
+      break;
+    case "GO":
+      loadGOResults(gene);
+      break;
+    case "Phenotypes":
+      loadPhenotypes(gene);
+      break;
+    case "Interactions":
+      loadStringResults(gene);
+      break;
+    case "Orthologs":
+      loadOMAResults(gene);
+      break;
+    case "PTMs":
+      loadPTMs(gene);
+      break;
+    case "Literature":
+      loadCuratedReferences(gene);
+      loadPubMedResults(gene);
+      break;
+    case "Structures":
+      loadPDBResults(gene);
+      break;
   }
-  if (state.activeTab === "GO") {
-    loadGOResults(gene);
+}
+
+// Swap only the active tab's body — leaves the header (and its structure
+// viewer) untouched so it doesn't flicker or re-fetch on every tab click.
+function switchTab(tab) {
+  const gene = state.activeGene;
+  if (!gene) return;
+  state.activeTab = tab;
+  recordShell.querySelectorAll(".tab").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
+  const body = recordShell.querySelector(".record-body");
+  if (!body) {
+    renderRecord();
+    return;
   }
-  if (state.activeTab === "Phenotypes") {
-    loadPhenotypes(gene);
-  }
-  if (state.activeTab === "Interactions") {
-    loadStringResults(gene);
-  }
-  if (state.activeTab === "Orthologs") {
-    loadOMAResults(gene);
-  }
-  if (state.activeTab === "PTMs") {
-    loadPTMs(gene);
-  }
-  if (state.activeTab === "Literature") {
-    loadCuratedReferences(gene);
-    loadPubMedResults(gene);
-  }
-  if (state.activeTab === "Structures") {
-    loadPDBResults(gene);
-  }
+  body.innerHTML = renderTab(gene, tab);
+  loadTabData(gene, tab);
 }
 
 function findResearchByToken(token) {
@@ -4489,8 +4512,7 @@ document.addEventListener("click", (event) => {
 
   const tabButton = event.target.closest("[data-tab]");
   if (tabButton && state.activeGene) {
-    state.activeTab = tabButton.dataset.tab;
-    renderRecord();
+    switchTab(tabButton.dataset.tab);
     setRoute(state.activeGene, state.activeTab);
   }
 

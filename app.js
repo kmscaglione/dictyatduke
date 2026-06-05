@@ -3666,6 +3666,60 @@ async function loadGOTerm(goid) {
   }
 }
 
+// --- Strain pages ---
+function openStrain(sid, updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", `/strain/${encodeURIComponent(sid)}`);
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Mutant strain</p>
+          <h2>${escapeHtml(sid)}</h2>
+          <p id="strain-gene" style="color:var(--muted,#6b7280)">Loading…</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-strain-phenos><p class="notice muted">Loading phenotypes…</p></div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  loadStrain(sid);
+}
+
+async function loadStrain(sid) {
+  const geneEl = document.getElementById("strain-gene");
+  const phEl = document.querySelector("[data-strain-phenos]");
+  try {
+    const res = await fetch(`/api/strain/${encodeURIComponent(sid)}`);
+    const data = await res.json();
+    if (geneEl) {
+      geneEl.innerHTML = data.gene
+        ? `Mutant of <a class="text-link curated-xref" data-ddb-ref="${escapeHtml(data.gene.ddb)}" href="/gene/${encodeURIComponent(data.gene.symbol || data.gene.ddb)}">${escapeHtml(data.gene.symbol || data.gene.ddb)}</a> · ${escapeHtml(data.gene.ddb)}`
+        : "No associated gene in this dataset.";
+    }
+    if (!phEl) return;
+    const ph = data.phenotypes || [];
+    if (!ph.length) { phEl.innerHTML = `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`; return; }
+    phEl.innerHTML = `
+      <div class="data-block">
+        <h3>${ph.length} phenotype${ph.length === 1 ? "" : "s"}</h3>
+        <ul class="list">
+          ${ph.map((p) => {
+            const note = String(p.note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
+            const detail = [p.condition, note].filter(Boolean).map(escapeHtml).join(" · ");
+            const ref = p.pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p.pmid)}</a>` : "";
+            return `<li><strong>${escapeHtml(p.phenotype)}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
+          }).join("")}
+        </ul>
+      </div>`;
+  } catch {
+    if (phEl) phEl.innerHTML = `<p class="notice">Could not load strain ${escapeHtml(sid)}.</p>`;
+  }
+}
+
 // --- dictyBase curated corpus ---
 let dictyCorpus = null;
 
@@ -3717,11 +3771,18 @@ async function loadPhenotypes(gene) {
   if (!container) return;
   const ddb = gene.veupath || gene.ddb || "";
   try {
-    const data = ddb ? await ensurePhenotypeData() : null;
+    const [data, geneApi] = await Promise.all([
+      ddb ? ensurePhenotypeData() : null,
+      ddb ? fetch(`/api/gene/${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null) : null,
+    ]);
     if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
     const rows = (data && data[ddb]) || [];
+    const strains = (geneApi && geneApi.strains) || [];
+    const strainLine = strains.length
+      ? `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">Mutant strain${strains.length === 1 ? "" : "s"}: ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}">${escapeHtml(s)}</a>`).join(", ")}</p>`
+      : "";
     if (rows.length) {
-      container.innerHTML = `
+      container.innerHTML = strainLine + `
         <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${rows.length} curated phenotype${rows.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
         <ul class="list">
           ${rows.map(([term, cond, pmid, note]) => {
@@ -3734,11 +3795,11 @@ async function loadPhenotypes(gene) {
       return;
     }
     if (gene.phenotypes && gene.phenotypes.length) {
-      container.innerHTML = `<ul class="list">${gene.phenotypes.map(([term, detail]) =>
+      container.innerHTML = strainLine + `<ul class="list">${gene.phenotypes.map(([term, detail]) =>
         `<li><strong>${escapeHtml(term)}</strong><span>${escapeHtml(detail || "")}</span></li>`).join("")}</ul>`;
       return;
     }
-    container.innerHTML = `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`;
+    container.innerHTML = strainLine + `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`;
   } catch {
     container.innerHTML = `<p class="notice">Phenotypes could not be loaded right now.</p>`;
   }
@@ -4225,6 +4286,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const strainLink = event.target.closest('a[href^="/strain/"]');
+  if (strainLink) {
+    event.preventDefault();
+    openStrain(decodeURIComponent(strainLink.getAttribute("href").split("/").filter(Boolean).pop()));
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -4343,6 +4411,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "go" && pathParts[1]) {
     openGOTerm(decodeURIComponent(pathParts[1]), false);
+    return;
+  }
+  if (pathParts[0] === "strain" && pathParts[1]) {
+    openStrain(decodeURIComponent(pathParts[1]), false);
     return;
   }
   if (isSearchRoute) {

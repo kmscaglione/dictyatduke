@@ -255,7 +255,10 @@ def api_strains():
                     })
         except Exception:
             pass
-        _API["_strains"] = {"gene": sg, "pheno": sp}
+        by_gene = {}
+        for strain, gene in sg.items():
+            by_gene.setdefault(gene, []).append(strain)
+        _API["_strains"] = {"gene": sg, "pheno": sp, "by_gene": by_gene}
     return _API["_strains"]
 
 
@@ -286,6 +289,7 @@ def assemble_gene(ddb):
     g["references"] = pmids
     g["sequences"] = {t: f"/api/sequence?ddb={ddb}&type={t}&symbol={g['symbol']}"
                       for t in ("genomic", "cdna", "protein")}
+    g["strains"] = api_strains()["by_gene"].get(ddb, [])
     return g
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -732,4 +736,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args):
         pass
 
-http.server.HTTPServer(("127.0.0.1", 8774), Handler).serve_forever()
+# Threaded so a slow proxied/external call (e.g. the AlphaFold proxy) never
+# blocks other requests on the single-threaded server.
+http.server.ThreadingHTTPServer(("127.0.0.1", 8774), Handler).serve_forever()

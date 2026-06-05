@@ -875,6 +875,43 @@ function rankedGenes(query) {
     });
 }
 
+// Full D. discoideum gene catalog (symbol/id/name) loaded lazily for typeahead.
+// Each entry: { id, symbol, name, location, ncbiGene }.
+let geneIndex = [];
+
+(async function loadGeneIndex() {
+  try {
+    const res = await fetch("/assets/gene_index.json");
+    if (!res.ok) return;
+    const rows = await res.json();
+    geneIndex = rows.map(([id, symbol, name, location, ncbiGene]) => ({
+      id, symbol, name, location, ncbiGene,
+      organism: "Dictyostelium discoideum AX4"
+    }));
+    // If the user is mid-search, refresh suggestions now that the index is ready.
+    if (input && input.value.trim()) renderSuggestions(input.value);
+  } catch { /* typeahead falls back to NCBI search */ }
+})();
+
+function searchIndex(query, limit = 8) {
+  const q = normalizeQuery(query);
+  if (q.length < 2 || !geneIndex.length) return [];
+  const matches = [];
+  for (const g of geneIndex) {
+    const sym = normalizeQuery(g.symbol);
+    const idn = normalizeQuery(g.id);
+    const nm = normalizeQuery(g.name);
+    if (!(sym.includes(q) || idn.includes(q) || nm.includes(q))) continue;
+    let rank = 3;
+    if (sym === q || idn === q) rank = 0;
+    else if (sym.startsWith(q)) rank = 1;
+    else if (idn.startsWith(q)) rank = 2;
+    matches.push({ g, rank });
+  }
+  matches.sort((a, b) => (a.rank - b.rank) || a.g.symbol.localeCompare(b.g.symbol));
+  return matches.slice(0, limit).map((m) => m.g);
+}
+
 function findGeneByToken(token) {
   const q = normalize(decodeURIComponent(token || ""));
   if (!q) return null;
@@ -949,7 +986,11 @@ function renderSuggestions(query) {
     return;
   }
   const local = rankedGenes(query).slice(0, 5);
-  suggestions.innerHTML = local.map((gene) => `
+  const localKeys = new Set(local.map((g) => g.ncbiGene));
+  // Full-catalog matches (e.g. "dsca" -> dscA-1, dscA-2), minus anything already curated.
+  const indexed = searchIndex(query, 8).filter((g) => !localKeys.has(g.ncbiGene));
+
+  const localHtml = local.map((gene) => `
     <button class="suggestion" type="button" data-gene="${gene.id}">
       <span>
         <strong>${gene.symbol} · ${gene.name}</strong>
@@ -957,10 +998,25 @@ function renderSuggestions(query) {
       </span>
       <span class="tag">Local</span>
     </button>
-  `).join("") || `<div class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</div>`;
+  `).join("");
+  const indexHtml = indexed.map((gene) => `
+    <button class="suggestion" type="button" data-ncbi-gene="${escapeHtml(gene.ncbiGene)}">
+      <span>
+        <strong>${escapeHtml(gene.symbol)}${gene.name ? ` · ${escapeHtml(gene.name)}` : ""}</strong>
+        <small>D. discoideum · ${escapeHtml(gene.location)}</small>
+      </span>
+      <span class="tag">Gene</span>
+    </button>
+  `).join("");
 
+  suggestions.innerHTML = (localHtml + indexHtml)
+    || `<div class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</div>`;
+
+  // Only reach out to NCBI when we have nothing locally (aliases, other taxa, UniProt IDs).
   clearTimeout(suggestionDebounceTimer);
-  suggestionDebounceTimer = setTimeout(() => fetchNCBISuggestions(query, local), 400);
+  if (!local.length && !indexed.length) {
+    suggestionDebounceTimer = setTimeout(() => fetchNCBISuggestions(query, local), 400);
+  }
 }
 
 function looksLikeUniProt(q) {
@@ -3544,6 +3600,14 @@ form.addEventListener("submit", async (event) => {
   }
   const query = input.value.trim();
   if (!query) return;
+
+  // Full-catalog match (e.g. "dscA-1") — open via the rich NCBI/UniProt path.
+  const indexFirst = searchIndex(query, 1)[0];
+  if (indexFirst) {
+    suggestions.innerHTML = "";
+    openRemoteGene(indexFirst.ncbiGene);
+    return;
+  }
 
   // UniProt ID shortcut
   if (looksLikeUniProt(query)) {

@@ -1,4 +1,5 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, hashlib
+import subprocess, shutil, tempfile
 from email import message_from_bytes
 
 SSL_CTX = ssl.create_default_context()
@@ -22,6 +23,63 @@ ASSET_RE = re.compile(r'(href|src)="(/[^"?]+\.(?:css|js))"')
 
 # Simple curator auth — SHA256 of password
 CURATOR_PASSWORD_HASH = hashlib.sha256(b"dicty2024curator").hexdigest()
+
+# --- Local BLAST against the bundled dictyostelid genomes ---
+BLAST_DB_DIR = pathlib.Path(ROOT) / "assets" / "genomes" / "blastdb"
+BLAST_BIN_DIR = pathlib.Path(os.path.expanduser("~/.local/blast"))
+BLAST_PROGRAMS = {"blastn", "tblastn"}
+# species id -> label. Keys MUST match the DB names built by scripts/build_blastdb.py
+BLAST_DBS = {
+    "d-discoideum-ax4": "D. discoideum AX4",
+    "d-purpureum": "D. purpureum",
+    "d-firmibasis": "D. firmibasis",
+    "c-fasciculata-sh3": "C. fasciculata SH3",
+    "c-polycephalum": "C. polycephalum",
+    "s-polycarpum": "S. polycarpum",
+    "h-pallidum-pn500": "H. pallidum PN500",
+    "h-pallidum-new": "H. pallidum (2026)",
+    "p-violaceum": "P. violaceum",
+}
+
+
+def blast_bin(program):
+    """Locate a BLAST+ binary (bundled dir first, then PATH)."""
+    p = BLAST_BIN_DIR / program
+    return str(p) if p.exists() else shutil.which(program)
+
+
+# Lazy interval index for mapping a D. discoideum genome hit back to its gene.
+_GENE_INTERVALS = None
+
+
+def gene_intervals():
+    global _GENE_INTERVALS
+    if _GENE_INTERVALS is not None:
+        return _GENE_INTERVALS
+    idx = {}
+    try:
+        rows = json.loads((pathlib.Path(ROOT) / "assets" / "gene_index.json").read_text())
+        for ddb, sym, name, loc, ncbi in rows:
+            if ":" not in loc:
+                continue
+            chrom, span = loc.split(":", 1)
+            a, b = span.replace(",", "").split("-")
+            idx.setdefault(chrom, []).append((int(a), int(b), sym, ddb, ncbi))
+        for c in idx:
+            idx[c].sort()
+    except Exception:
+        pass
+    _GENE_INTERVALS = idx
+    return idx
+
+
+def gene_for_hit(accession, sstart, send):
+    lo, hi = sorted((int(sstart), int(send)))
+    mid = (lo + hi) // 2
+    for a, b, sym, ddb, ncbi in gene_intervals().get(accession, []):
+        if a <= mid <= b:
+            return {"symbol": sym, "ddb": ddb, "ncbi": ncbi}
+    return None
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -103,6 +161,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_approve()
         elif self.path == "/api/curator/reject":
             self._handle_curation_reject()
+        elif self.path == "/api/blast":
+            self._handle_blast()
         else:
             self.send_error(404)
 
@@ -210,6 +270,92 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             entry["rejection_note"] = body.get("note", "")
             curation_file.write_text(json.dumps(entry, indent=2))
             self.send_json(200, {"ok": True})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_blast(self):
+        """Run a local blastn/tblastn against the bundled dictyostelid genomes.
+
+        Security: program + database come from server allowlists; the user
+        sequence is written to a temp file and passed via -query (never a shell),
+        with a size cap and a timeout. No user value reaches a shell or a path.
+        """
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 200000:
+                self.send_json(413, {"error": "Query too large (200 KB max)."})
+                return
+            body = json.loads(self.rfile.read(length))
+            program = body.get("program", "blastn")
+            database = body.get("database", "d-discoideum-ax4")
+            query = (body.get("query") or "").strip()
+
+            if program not in BLAST_PROGRAMS:
+                self.send_json(400, {"error": "Unsupported program."})
+                return
+            if database == "all":
+                db_ids = list(BLAST_DBS.keys())
+            elif database in BLAST_DBS:
+                db_ids = [database]
+            else:
+                self.send_json(400, {"error": "Unknown database."})
+                return
+            if not query:
+                self.send_json(400, {"error": "Empty query sequence."})
+                return
+            if not query.startswith(">"):
+                query = ">query\n" + query
+
+            binpath = blast_bin(program)
+            if not binpath:
+                self.send_json(503, {"error": "BLAST is not installed on the server. See README (P6)."})
+                return
+            missing = [d for d in db_ids if not (BLAST_DB_DIR / (d + ".nsq")).exists()
+                       and not (BLAST_DB_DIR / (d + ".nin")).exists()]
+            if missing:
+                self.send_json(503, {"error": "BLAST databases not built. Run scripts/build_blastdb.py."})
+                return
+
+            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in db_ids)
+            qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+            try:
+                qf.write(query)
+                qf.close()
+                cmd = [binpath, "-query", qf.name, "-db", db_arg,
+                       "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore",
+                       "-max_target_seqs", "50", "-evalue", "1e-3"]
+                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
+            finally:
+                try:
+                    os.unlink(qf.name)
+                except OSError:
+                    pass
+
+            if proc.returncode != 0:
+                self.send_json(500, {"error": "BLAST failed.", "detail": (proc.stderr or "")[:400]})
+                return
+
+            hits = []
+            for line in proc.stdout.splitlines():
+                f = line.split("\t")
+                if len(f) < 12:
+                    continue
+                acc = re.sub(r"^[a-z]+\|", "", f[1]).strip("|")
+                hit = {
+                    "subject": acc,
+                    "identity": float(f[2]), "length": int(f[3]),
+                    "qstart": int(f[6]), "qend": int(f[7]),
+                    "sstart": int(f[8]), "send": int(f[9]),
+                    "evalue": f[10], "bitscore": float(f[11]),
+                }
+                g = gene_for_hit(acc, f[8], f[9])
+                if g:
+                    hit["gene"] = g
+                hits.append(hit)
+            self.send_json(200, {"program": program, "databases": db_ids,
+                                 "count": len(hits), "hits": hits})
+        except subprocess.TimeoutExpired:
+            self.send_json(504, {"error": "BLAST timed out (try a shorter query or one genome)."})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 

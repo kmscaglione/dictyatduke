@@ -211,6 +211,11 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
 - `POST /api/curator/approve` — approve a curation; **merges it into
   `dictybase_corpus.json`** *(auth)*.
 - `POST /api/curator/reject` — reject a curation *(auth)*.
+- `POST /api/blast` — local blastn/tblastn against the bundled genomes (see
+  [Local BLAST](#local-blast-p6)). Returns JSON hits; D. discoideum hits include
+  the mapped gene. Program + database come from server allowlists; the query is
+  written to a temp file and passed via `-query` (never a shell), size-capped and
+  timed out.
 
 Everything else is a static file, or the SPA shell for client routes.
 
@@ -246,6 +251,31 @@ needs internet:
 
 ---
 
+## Local BLAST (P6)
+
+The BLAST tool (`/tools/blast`) searches the bundled dictyostelid genomes
+locally; D. discoideum hits link straight to their gene page. It needs NCBI
+BLAST+ installed and the databases built.
+
+```bash
+# 1. Install BLAST+ (Apple Silicon shown; pick the build for your platform)
+curl -LO https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.17.0+-aarch64-macosx.tar.gz
+tar xzf ncbi-blast-2.17.0+-aarch64-macosx.tar.gz
+mkdir -p ~/.local/blast && cp ncbi-blast-2.17.0+/bin/{makeblastdb,blastn,tblastn} ~/.local/blast/
+
+# 2. Build the per-species databases (-> assets/genomes/blastdb/, gitignored)
+python3 scripts/build_blastdb.py
+```
+
+`serve.py` finds the binaries in `~/.local/blast/` (or on `PATH`) and the DBs in
+`assets/genomes/blastdb/`. If either is missing, the endpoint returns a clear
+503 and the UI shows the message — the rest of the site is unaffected. Supported
+programs: **blastn** (nucleotide) and **tblastn** (protein query); both run
+against the nucleotide genome DBs. Protein-DB searches (blastp/blastx) stay on
+the NCBI hand-off.
+
+---
+
 ## Known issues & gotchas
 
 1. **Plaintext curator password.** `dicty2024curator` lives in `serve.py` as a
@@ -264,8 +294,8 @@ needs internet:
 6. **Port is hard-coded** to 8774 in `serve.py` (no longer reads `argv`).
 7. **`uploads/curations/` is tracked** (community submissions get committed);
    `uploads/files` and `uploads/submissions` are gitignored.
-8. **`assets/dictyo-devil.svg`** is an untracked stray of unknown origin — review
-   or delete.
+8. **Local BLAST needs setup** — BLAST+ binaries + built databases (see
+   [Local BLAST](#local-blast-p6)); the genomes and DBs are gitignored.
 
 ---
 
@@ -278,11 +308,10 @@ Data-depth parity with dictybase.dev was the focus. Done:
 - **P3** Curated references in the Literature tab.
 - **P4** Genome downloads page.
 - **P5** dictyBase-curated GO annotations (from the GO Consortium GAF).
+- **P6** Local BLAST against the bundled genomes (see below).
 
 Not done / out of scope:
 
-- **P6** Local BLAST against the bundled genomes (currently hands off to NCBI).
-  Needs a BLAST backend (`makeblastdb` + a query endpoint).
 - **Dicty Stock Center** — ordering physical strains/plasmids. Out of scope for
   a static reimplementation; best to link out to the official Stock Center.
 - A public/GraphQL **API** and automated tests.

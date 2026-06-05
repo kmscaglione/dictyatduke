@@ -1911,12 +1911,39 @@ function renderBlastPage() {
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Sequence search (BLAST)</h2>
-          <p>Submit a nucleotide or protein sequence to NCBI BLAST. Results open on NCBI in a new tab.</p>
+          <p>BLAST a sequence against the nine sequenced dictyostelid genomes hosted here — hits in <em>D. discoideum</em> link straight to their gene page — or hand off to NCBI for an all-organisms search.</p>
         </div>
       </header>
       <div class="record-body">
         <section class="data-block">
-          <form class="annotation-form" id="blast-form" novalidate>
+          <h3>Search dictyBase genomes</h3>
+          <form class="annotation-form" id="local-blast-form" novalidate>
+            <div class="form-field">
+              <label for="lblast-program">Program <span class="required">*</span></label>
+              <select id="lblast-program" name="program" required>
+                <option value="blastn">blastn — nucleotide query</option>
+                <option value="tblastn">tblastn — protein query (translated search)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="lblast-db">Genome <span class="required">*</span></label>
+              <select id="lblast-db" name="database" required>
+                ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
+                <option value="all">All nine dictyostelids</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="lblast-query">Query sequence <span class="required">*</span></label>
+              <textarea id="lblast-query" name="query" required rows="7" placeholder="Paste a nucleotide (blastn) or protein (tblastn) sequence — FASTA or raw&#10;&#10;&gt;my_seq&#10;ATGCATGCATGC..."></textarea>
+            </div>
+            <div class="form-actions"><button type="submit" class="button primary">Run BLAST</button></div>
+          </form>
+          <div id="local-blast-results" style="margin-top:14px"></div>
+        </section>
+
+        <details class="data-block">
+          <summary style="cursor:pointer;font-weight:800">Search NCBI instead (all organisms, protein databases)</summary>
+          <form class="annotation-form" id="blast-form" novalidate style="margin-top:14px">
             <div class="form-field">
               <label for="blast-program">BLAST program <span class="required">*</span></label>
               <select id="blast-program" name="PROGRAM" required>
@@ -1965,20 +1992,59 @@ function renderBlastPage() {
             </div>
             <div id="blast-status" aria-live="polite"></div>
           </form>
-        </section>
-        <section class="data-block">
-          <h3>About BLAST programs</h3>
-          <div class="kv">
-            <span>blastn</span><strong>Compare a nucleotide sequence against a nucleotide database.</strong>
-            <span>blastp</span><strong>Compare a protein sequence against a protein database.</strong>
-            <span>blastx</span><strong>Translate a nucleotide query and search a protein database.</strong>
-            <span>tblastn</span><strong>Search a translated nucleotide database with a protein query.</strong>
-            <span>tblastx</span><strong>Translate both query and database nucleotides and compare.</strong>
-          </div>
-        </section>
+        </details>
       </div>
     </article>
   `;
+}
+
+// species id -> label for the local BLAST genome picker (keys match serve.py BLAST_DBS / built DBs)
+const LOCAL_BLAST_DBS = {
+  "d-discoideum-ax4": "D. discoideum AX4",
+  "d-purpureum": "D. purpureum",
+  "d-firmibasis": "D. firmibasis",
+  "c-fasciculata-sh3": "C. fasciculata SH3",
+  "c-polycephalum": "C. polycephalum",
+  "s-polycarpum": "S. polycarpum",
+  "h-pallidum-pn500": "H. pallidum PN500",
+  "h-pallidum-new": "H. pallidum (2026)",
+  "p-violaceum": "P. violaceum",
+};
+
+async function runLocalBlast(form) {
+  const results = document.getElementById("local-blast-results");
+  if (!results) return;
+  const program = form.querySelector("#lblast-program").value;
+  const database = form.querySelector("#lblast-db").value;
+  const query = form.querySelector("#lblast-query").value.trim();
+  if (!query) { results.innerHTML = `<p class="notice">Enter a query sequence.</p>`; return; }
+  results.innerHTML = `<p class="notice muted">Running ${escapeHtml(program)} against ${database === "all" ? "all nine genomes" : escapeHtml(LOCAL_BLAST_DBS[database] || database)}…</p>`;
+  try {
+    const res = await fetch("/api/blast", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ program, database, query })
+    });
+    const data = await res.json();
+    if (!res.ok) { results.innerHTML = `<p class="notice">${escapeHtml(data.error || "BLAST failed.")}</p>`; return; }
+    if (!data.hits || !data.hits.length) { results.innerHTML = `<p class="notice">No hits found (E-value &lt; 1e-3).</p>`; return; }
+    results.innerHTML = `
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">${data.count} hit${data.count === 1 ? "" : "s"} · ${escapeHtml(data.program)} · ${data.databases.length} genome${data.databases.length === 1 ? "" : "s"}</p>
+      <ul class="list pubmed-list">
+        ${data.hits.map((h) => {
+          const name = h.gene
+            ? `<a class="text-link curated-xref" href="/gene/${encodeURIComponent(h.gene.symbol)}" data-ddb-ref="${escapeHtml(h.gene.ddb)}">${escapeHtml(h.gene.symbol)}</a>`
+            : escapeHtml(h.subject);
+          const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}`;
+          return `<li>
+            <strong>${name}</strong>
+            <span>${loc} · ${h.identity.toFixed(1)}% identity · ${h.length} bp · E=${escapeHtml(h.evalue)} · ${h.bitscore} bits</span>
+          </li>`;
+        }).join("")}
+      </ul>`;
+  } catch {
+    results.innerHTML = `<p class="notice">Could not reach the BLAST service.</p>`;
+  }
 }
 
 const browserOrganisms = [
@@ -3269,6 +3335,11 @@ async function loadCuratedReferences(gene) {
 }
 
 document.addEventListener("submit", (event) => {
+  if (event.target.id === "local-blast-form") {
+    event.preventDefault();
+    runLocalBlast(event.target);
+    return;
+  }
   if (event.target.id === "blast-form") {
     event.preventDefault();
     const f = event.target;

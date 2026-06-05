@@ -3219,7 +3219,7 @@ function curatedLink(target, label) {
   if (target.startsWith("/ontology/go/")) {
     const go = target.split("/ontology/go/")[1].split(/[/?#]/)[0];
     const goId = "GO:" + go.padStart(7, "0");
-    return `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(goId)}" target="_blank" rel="noopener">${text}</a>`;
+    return `<a class="text-link" href="/go/${escapeHtml(goId)}">${text}</a>`;
   }
   return text;
 }
@@ -3564,7 +3564,7 @@ async function loadGOResults(gene) {
             ${[...aspects[a].entries()].map(([go, evs]) => {
               const refs = [...new Set(evs.map((e) => `${escapeHtml(e.ev)}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}`))];
               return `<li>
-                <strong><a href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(go)}" target="_blank" rel="noopener">${escapeHtml(names[go] || go)}</a></strong>
+                <strong><a href="/go/${escapeHtml(go)}">${escapeHtml(names[go] || go)}</a></strong>
                 <span>${escapeHtml(go)} · ${refs.join(", ")}</span>
               </li>`;
             }).join("")}
@@ -3591,7 +3591,7 @@ async function loadGOResults(gene) {
         <ul class="list">
           ${items.map((t) => `
             <li>
-              <strong><a href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(t.id)}" target="_blank" rel="noopener">${escapeHtml(t.name)}</a></strong>
+              <strong><a href="/go/${escapeHtml(t.id)}">${escapeHtml(t.name)}</a></strong>
               <span>${escapeHtml(t.id)}${t.evidence ? " · " + escapeHtml(t.evidence) : ""}</span>
             </li>
           `).join("")}
@@ -3600,6 +3600,69 @@ async function loadGOResults(gene) {
     `).join("") + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Source: QuickGO / UniProt (no dictyBase curated GO for this gene).</p>`;
   } catch (error) {
     container.innerHTML = `<p class="notice">GO annotations could not be loaded right now.</p>`;
+  }
+}
+
+// --- GO term browsing: genes annotated to a GO term ---
+function openGOTerm(goid, updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", `/go/${encodeURIComponent(goid)}`);
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Gene Ontology</p>
+          <h2 id="go-term-name">${escapeHtml(goid)}</h2>
+          <p id="go-term-def" style="color:var(--muted,#6b7280);line-height:1.55">Loading term…</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-go-term-genes><p class="notice muted">Loading annotated genes…</p></div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  loadGOTerm(goid);
+}
+
+async function loadGOTerm(goid) {
+  const nameEl = document.getElementById("go-term-name");
+  const defEl = document.getElementById("go-term-def");
+  const genesEl = document.querySelector("[data-go-term-genes]");
+  try {
+    const r = await fetch(`https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/${encodeURIComponent(goid)}`, { headers: { Accept: "application/json" } });
+    if (r.ok) {
+      const t = (await r.json()).results?.[0];
+      if (t && nameEl) {
+        nameEl.innerHTML = `${escapeHtml(t.name || goid)} <span style="font-size:0.5em;font-weight:500;color:var(--muted,#6b7280)">${escapeHtml(goid)} · ${escapeHtml(GO_ASPECT_LABEL[t.aspect] || t.aspect || "")}</span>`;
+        if (defEl) defEl.innerHTML = `${escapeHtml(t.definition?.text || "")} <a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${encodeURIComponent(goid)}" target="_blank" rel="noopener">View on QuickGO ↗</a>`;
+      }
+    }
+  } catch { /* term header stays as the GO id */ }
+  try {
+    const res = await fetch(`/api/go/${encodeURIComponent(goid)}`);
+    const data = await res.json();
+    if (!genesEl) return;
+    if (!data.genes || !data.genes.length) {
+      genesEl.innerHTML = `<p class="notice">No <em>D. discoideum</em> genes are annotated to ${escapeHtml(goid)}.</p>`;
+      return;
+    }
+    const byGene = new Map();
+    for (const g of data.genes) {
+      if (!byGene.has(g.ddb)) byGene.set(g.ddb, { symbol: g.symbol, ddb: g.ddb, evs: new Set() });
+      byGene.get(g.ddb).evs.add(g.evidence);
+    }
+    const genes = [...byGene.values()].sort((a, b) => a.symbol.localeCompare(b.symbol));
+    genesEl.innerHTML = `
+      <div class="data-block">
+        <h3>${genes.length} <em>D. discoideum</em> gene${genes.length === 1 ? "" : "s"} annotated to this term</h3>
+        <div class="technique-links">
+          ${genes.map((g) => `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span><small>${escapeHtml([...g.evs].join(", "))}</small></a>`).join("")}
+        </div>
+      </div>`;
+  } catch {
+    if (genesEl) genesEl.innerHTML = `<p class="notice">Could not load annotated genes.</p>`;
   }
 }
 
@@ -4155,6 +4218,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const goLink = event.target.closest('a[href^="/go/"]');
+  if (goLink) {
+    event.preventDefault();
+    openGOTerm(decodeURIComponent(goLink.getAttribute("href").split("/").filter(Boolean).pop()));
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -4269,6 +4339,10 @@ function hydrateFromRoute() {
   }
   if (isCommunityRoute) {
     openCommunity(pathParts[1], false);
+    return;
+  }
+  if (pathParts[0] === "go" && pathParts[1]) {
+    openGOTerm(decodeURIComponent(pathParts[1]), false);
     return;
   }
   if (isSearchRoute) {

@@ -2403,8 +2403,9 @@ function openCommunity(section, updateRoute = true) {
   const target = pi ? document.getElementById(`lab-${slugify(pi)}`) : null;
   if (target) {
     highlightElement(target);
-    // Clear the ~89px sticky header plus a small gap so the PI name is visible.
-    scrollToY(target.getBoundingClientRect().top + window.scrollY - 100);
+    // Jump straight to the PI (instant, not smooth) and clear the ~89px
+    // sticky header plus a small gap so the name is visible.
+    window.scrollTo({ top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - 100), behavior: "instant" });
   } else if (shell) {
     scrollToY(shell.offsetTop - 60);
   }
@@ -4822,8 +4823,12 @@ document.addEventListener("click", (event) => {
   const communityLink = event.target.closest('a[href^="/community/"]');
   if (communityLink) {
     event.preventDefault();
-    const slug = communityLink.getAttribute("href").split("/").filter(Boolean).pop();
-    openCommunity(slug);
+    // Parse as a URL so a "?pi=" query (deep-link to a specific lab)
+    // survives instead of being folded into the section slug.
+    const u = new URL(communityLink.getAttribute("href"), location.origin);
+    const slug = u.pathname.split("/").filter(Boolean).pop();
+    history.pushState(null, "", u.pathname + u.search);
+    openCommunity(slug, false);
     return;
   }
 

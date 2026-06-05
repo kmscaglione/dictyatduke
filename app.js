@@ -3417,14 +3417,71 @@ async function fetchGOResults(gene) {
   return results;
 }
 
+// dictyBase curated GO annotations (GO Consortium GAF): { ddb: [[goId, aspect, evidence, pmid], ...] }
+let goAnnotData = null;
+async function ensureGOAnnotations() {
+  if (goAnnotData) return goAnnotData;
+  const res = await fetch("/assets/go_annotations.json");
+  if (!res.ok) throw new Error("GO annotations unavailable");
+  goAnnotData = await res.json();
+  return goAnnotData;
+}
+
+async function resolveGONames(goIds) {
+  const out = {};
+  if (!goIds.length) return out;
+  try {
+    const res = await fetch(`https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/${goIds.join(",")}`, { headers: { Accept: "application/json" } });
+    if (res.ok) {
+      const data = await res.json();
+      for (const t of data.results || []) if (t.id && t.name) out[t.id] = t.name;
+    }
+  } catch { /* names fall back to GO IDs */ }
+  return out;
+}
+
 async function loadGOResults(gene) {
   const container = document.querySelector("[data-go-results]");
   if (!container) return;
+  const ddb = gene.veupath || gene.ddb || "";
   try {
+    // Prefer dictyBase curated GO annotations from the GAF
+    let curated = null;
+    if (ddb) {
+      try { curated = (await ensureGOAnnotations())[ddb]; } catch { /* fall through */ }
+    }
+    if (curated && curated.length) {
+      const ids = [...new Set(curated.map((a) => a[0]))];
+      const names = await resolveGONames(ids);
+      if (state.activeGene !== gene || state.activeTab !== "GO") return;
+      const aspects = { F: new Map(), P: new Map(), C: new Map() };
+      for (const [go, aspect, ev, pmid] of curated) {
+        const bucket = aspects[aspect] || (aspects[aspect] = new Map());
+        if (!bucket.has(go)) bucket.set(go, []);
+        bucket.get(go).push({ ev, pmid });
+      }
+      const html = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size).map((a) => `
+        <div style="margin-bottom:20px">
+          <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])}</h4>
+          <ul class="list">
+            ${[...aspects[a].entries()].map(([go, evs]) => {
+              const refs = [...new Set(evs.map((e) => `${escapeHtml(e.ev)}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}`))];
+              return `<li>
+                <strong><a href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(go)}" target="_blank" rel="noopener">${escapeHtml(names[go] || go)}</a></strong>
+                <span>${escapeHtml(go)} · ${refs.join(", ")}</span>
+              </li>`;
+            }).join("")}
+          </ul>
+        </div>`).join("");
+      container.innerHTML = html + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Source: dictyBase GO annotations (GO Consortium GAF) · <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">evidence codes</a>.</p>`;
+      return;
+    }
+
+    // Fallback: live QuickGO/UniProt lookup
     const terms = await fetchGOResults(gene);
     if (state.activeGene !== gene || state.activeTab !== "GO") return;
     if (!terms.length) {
-      container.innerHTML = `<p class="notice">No GO annotations found for ${escapeHtml(gene.uniprot)} in QuickGO or UniProt.</p>`;
+      container.innerHTML = `<p class="notice">No GO annotations found for ${escapeHtml(gene.symbol)}.</p>`;
       return;
     }
     const byAspect = {};
@@ -3443,7 +3500,7 @@ async function loadGOResults(gene) {
           `).join("")}
         </ul>
       </div>
-    `).join("");
+    `).join("") + `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:4px">Source: QuickGO / UniProt (no dictyBase curated GO for this gene).</p>`;
   } catch (error) {
     container.innerHTML = `<p class="notice">GO annotations could not be loaded right now.</p>`;
   }

@@ -832,6 +832,25 @@ const researchShell = document.querySelector("#research");
 const mobileMenu = document.querySelector("#mobile-menu");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 
+// Section scrolling. In-app navigation animates (smooth); the very first
+// deep-link landing jumps instantly. Programmatic smooth scrolls are
+// unreliable while the page is still loading and are skipped entirely under
+// "reduce motion" — both left deep links to /gene, /go, /strain and /data
+// stranded up at the hero. `appReady` flips true once the initial route is
+// hydrated (see the bottom of this file).
+let appReady = false;
+function scrollToY(top) {
+  window.scrollTo({ top: Math.max(0, top), behavior: appReady ? "smooth" : "instant" });
+}
+function scrollToEl(el) {
+  if (!el) return;
+  if (appReady) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  scrollToY(el.getBoundingClientRect().top + window.scrollY - 60);
+}
+
 function normalize(value) {
   return String(value || "").trim().toLowerCase();
 }
@@ -968,7 +987,7 @@ function openGene(gene, tab = "Summary", updateRoute = true) {
   state.activeTab = tab;
   renderRecord();
   if (updateRoute) setRoute(gene, tab);
-  document.querySelector("#record").scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(document.querySelector("#record"));
   // Enrich from dictyBase corpus asynchronously
   enrichGeneFromCorpus(gene).then((enriched) => {
     if (state.activeGene?.symbol === enriched.symbol && JSON.stringify(enriched) !== JSON.stringify(gene)) {
@@ -1125,7 +1144,7 @@ async function fetchNCBISuggestions(query, localRows) {
 
 async function openUniProtGene(uniprotId) {
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading ${escapeHtml(uniprotId)} from UniProt…</p></div>`;
-  recordShell.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(recordShell);
   try {
     const gene = await fetchUniProtGene(uniprotId);
     input.value = gene.symbol;
@@ -1137,7 +1156,7 @@ async function openUniProtGene(uniprotId) {
 
 async function openRemoteGene(ncbiId) {
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading gene ${escapeHtml(ncbiId)}…</p></div>`;
-  recordShell.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(recordShell);
   try {
     // 1. NCBI Gene summary
     const summaryParams = new URLSearchParams({ db: "gene", id: ncbiId, retmode: "json" });
@@ -1362,7 +1381,7 @@ function openResearch(resource, updateRoute = true) {
   state.activeResearch = resource.id;
   renderResearch();
   if (updateRoute) setResearchRoute(resource);
-  document.querySelector("#research").scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(document.querySelector("#research"));
 }
 
 function openTechnique(technique, updateRoute = true) {
@@ -1374,7 +1393,7 @@ function openTechnique(technique, updateRoute = true) {
   state.activeResearch = "techniques";
   renderTechnique(technique);
   if (updateRoute) setTechniqueRoute(technique);
-  document.querySelector("#research").scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(document.querySelector("#research"));
 }
 
 function openTool(tool, updateRoute = true) {
@@ -1384,26 +1403,26 @@ function openTool(tool, updateRoute = true) {
   if (tool === "genome-browser") {
     toolsShell.innerHTML = renderGenomeBrowser();
     toolsShell.removeAttribute("hidden");
-    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    scrollToY(toolsShell.offsetTop - 60);
     requestAnimationFrame(initGenomeBrowser);
   } else if (tool === "blast") {
     toolsShell.innerHTML = renderBlastPage();
     toolsShell.removeAttribute("hidden");
-    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    scrollToY(toolsShell.offsetTop - 60);
   } else if (tool === "heatstress") {
     toolsShell.innerHTML = renderHeatStressPage();
     toolsShell.removeAttribute("hidden");
-    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    scrollToY(toolsShell.offsetTop - 60);
     initHeatStressViewer();
   } else if (tool === "proteomics") {
     toolsShell.innerHTML = renderProteomicsPage();
     toolsShell.removeAttribute("hidden");
-    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    scrollToY(toolsShell.offsetTop - 60);
     initProteomicsViewer();
   } else if (tool === "downloads") {
     toolsShell.innerHTML = renderDownloadsShell();
     toolsShell.removeAttribute("hidden");
-    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    scrollToY(toolsShell.offsetTop - 60);
     loadDownloads();
   }
 }
@@ -2270,7 +2289,7 @@ function openOrganism(id, updateRoute = true) {
     organismShell.removeAttribute("hidden");
   }
   const shell = document.querySelector("#organism");
-  if (shell) window.scrollTo({ top: shell.offsetTop - 60, behavior: "smooth" });
+  if (shell) scrollToY(shell.offsetTop - 60);
 }
 
 function renderOrganismPage(org) {
@@ -2332,7 +2351,7 @@ function openCommunity(section, updateRoute = true) {
   if (updateRoute) history.pushState(null, "", `/community/${encodeURIComponent(section)}`);
   renderCommunity(section);
   const shell = document.querySelector("#community");
-  if (shell) window.scrollTo({ top: shell.offsetTop - 60, behavior: "smooth" });
+  if (shell) scrollToY(shell.offsetTop - 60);
 }
 
 function renderCommunity(section) {
@@ -3645,7 +3664,7 @@ function openGOTerm(goid, updateRoute = true) {
       </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
-  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  scrollToY(toolsShell.offsetTop - 60);
   loadGOTerm(goid);
 }
 
@@ -3708,7 +3727,7 @@ function openStrain(sid, updateRoute = true) {
       </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
-  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  scrollToY(toolsShell.offsetTop - 60);
   loadStrain(sid);
 }
 
@@ -3762,7 +3781,7 @@ function openDataPage(updateRoute = true) {
       </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
-  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  scrollToY(toolsShell.offsetTop - 60);
   loadDataStatus();
 }
 
@@ -4309,7 +4328,7 @@ form.addEventListener("submit", async (event) => {
 
   // Fall back to NCBI search
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</p></div>`;
-  recordShell.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToEl(recordShell);
   try {
     const searchParams = new URLSearchParams({ db: "gene", retmax: "1", retmode: "json", term: buildNCBITerm(query) });
     const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?${searchParams}`);
@@ -4579,4 +4598,19 @@ function hydrateFromRoute() {
   }
 }
 
-hydrateFromRoute();
+// Take over scroll handling so the browser's default "restore to top" on a
+// fresh load doesn't fight the scroll-to-section that hydrateFromRoute kicks
+// off for deep links (/gene, /go, /strain, /data, …).
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+function initialHydrate() {
+  hydrateFromRoute();
+  // From here on, in-app navigation scrolls smoothly.
+  appReady = true;
+}
+if (document.readyState === "complete") {
+  initialHydrate();
+} else {
+  // Wait for first load so section offsets are final before we scroll to one.
+  window.addEventListener("load", initialHydrate, { once: true });
+}

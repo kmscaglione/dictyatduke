@@ -1143,6 +1143,11 @@ button,
   width: 100%;
   max-width: 520px;
   height: auto;
+  /* Reserve the image's space before the JPG loads so the page doesn't
+     reflow on load — that shift was throwing off the scroll-to-section
+     on direct links to /gene, /go, /strain and /data. */
+  aspect-ratio: 973 / 768;
+  background: var(--soft, #edf6f2);
   border-radius: 10px;
   display: block;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);

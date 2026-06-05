@@ -2780,6 +2780,12 @@ function renderAwardRecipientsPage() {
     </article>`;
 }
 
+// Emails are stored base64-of-reversed in labs-content.js so the static
+// file holds no scrapeable address; reconstruct only at render time.
+function decodeEmail(enc) {
+  try { return atob(enc).split("").reverse().join(""); } catch { return ""; }
+}
+
 function renderLabsPage() {
   const labs = window.dictyLabs || [];
   const active = labs.filter((l) => !l.emeritus).sort((a, b) => a.pi.split(" ").pop().localeCompare(b.pi.split(" ").pop()));
@@ -2795,7 +2801,7 @@ function renderLabsPage() {
         </strong>
         <span>${escapeHtml(lab.institution)}</span>
       </div>
-      ${lab.email ? `<p style="margin:0 0 3px;font-size:0.8125rem">${lab.email.split(/,\s*/).map((e) => `<a class="text-link" href="mailto:${escapeHtml(e)}">${escapeHtml(e)}</a>`).join(", ")}</p>` : ""}
+      ${lab.email ? `<p style="margin:0 0 3px;font-size:0.8125rem">${decodeEmail(lab.email).split(/,\s*/).map((e) => `<a class="text-link" href="mailto:${escapeHtml(e)}">${escapeHtml(e)}</a>`).join(", ")}</p>` : ""}
       <p style="margin:0;color:var(--muted,#6b7280);font-size:0.8125rem">${escapeHtml(lab.location)}</p>
     </div>`).join("");
 

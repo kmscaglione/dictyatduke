@@ -1300,6 +1300,9 @@ function renderRecord() {
   if (state.activeTab === "GO") {
     loadGOResults(gene);
   }
+  if (state.activeTab === "Phenotypes") {
+    loadPhenotypes(gene);
+  }
   if (state.activeTab === "Interactions") {
     loadStringResults(gene);
   }
@@ -2907,7 +2910,13 @@ function renderTab(gene, tab) {
     `;
   }
   if (tab === "Phenotypes") {
-    return `<div class="data-block"><h3>Phenotypes</h3>${list(gene.phenotypes, ([term, detail]) => [term, detail])}</div>`;
+    return `
+      <div class="data-block">
+        <h3>Phenotypes</h3>
+        <div data-phenotype-results="${escapeHtml(gene.id)}">
+          <p class="notice muted">Loading phenotypes for ${escapeHtml(gene.symbol)}…</p>
+        </div>
+      </div>`;
   }
   if (tab === "Literature") {
     return `
@@ -3347,6 +3356,49 @@ async function enrichGeneFromCorpus(gene) {
     return enriched;
   } catch {
     return gene;
+  }
+}
+
+// --- Phenotypes (dictyBase mutant-strain curation) ---
+let phenotypeData = null;
+
+async function ensurePhenotypeData() {
+  if (phenotypeData) return phenotypeData;
+  const res = await fetch("/assets/phenotypes.json");
+  if (!res.ok) throw new Error("Phenotype data not available");
+  phenotypeData = await res.json();
+  return phenotypeData;
+}
+
+async function loadPhenotypes(gene) {
+  const container = document.querySelector("[data-phenotype-results]");
+  if (!container) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  try {
+    const data = ddb ? await ensurePhenotypeData() : null;
+    if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
+    const rows = (data && data[ddb]) || [];
+    if (rows.length) {
+      container.innerHTML = `
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${rows.length} curated phenotype${rows.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
+        <ul class="list">
+          ${rows.map(([term, cond, pmid, note]) => {
+            const cleanNote = String(note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
+            const detail = [cond, cleanNote].filter(Boolean).map(escapeHtml).join(" · ");
+            const ref = pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a>` : "";
+            return `<li><strong>${escapeHtml(term)}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
+          }).join("")}
+        </ul>`;
+      return;
+    }
+    if (gene.phenotypes && gene.phenotypes.length) {
+      container.innerHTML = `<ul class="list">${gene.phenotypes.map(([term, detail]) =>
+        `<li><strong>${escapeHtml(term)}</strong><span>${escapeHtml(detail || "")}</span></li>`).join("")}</ul>`;
+      return;
+    }
+    container.innerHTML = `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`;
+  } catch {
+    container.innerHTML = `<p class="notice">Phenotypes could not be loaded right now.</p>`;
   }
 }
 

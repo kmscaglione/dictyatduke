@@ -1373,6 +1373,61 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
     initProteomicsViewer();
+  } else if (tool === "downloads") {
+    toolsShell.innerHTML = renderDownloadsShell();
+    toolsShell.removeAttribute("hidden");
+    window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+    loadDownloads();
+  }
+}
+
+function formatBytes(n) {
+  if (!n) return "";
+  const mb = n / 1024 / 1024;
+  return mb >= 1 ? `${mb.toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`;
+}
+
+function renderDownloadsShell() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Downloads</p>
+          <h2>Genome downloads</h2>
+          <p>Genome assemblies (FASTA) and gene annotations (GFF3) for all nine sequenced dictyostelid species. FASTA files are gzip-compressed.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-downloads-results>
+          <p class="notice muted">Loading downloads…</p>
+        </div>
+      </div>
+    </article>`;
+}
+
+async function loadDownloads() {
+  const container = document.querySelector("[data-downloads-results]");
+  if (!container) return;
+  try {
+    const res = await fetch("/assets/downloads_manifest.json");
+    if (!res.ok) throw new Error("manifest unavailable");
+    const manifest = await res.json();
+    container.innerHTML = manifest.map((sp) => `
+      <section class="data-block" style="margin-bottom:14px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <h3 style="margin:0"><em>${escapeHtml(sp.label)}</em></h3>
+          <a class="text-link" href="https://www.ncbi.nlm.nih.gov/datasets/genome/${encodeURIComponent(sp.assembly)}/" target="_blank" rel="noopener" style="font-size:0.8125rem">${escapeHtml(sp.assembly)} ↗</a>
+        </div>
+        <ul class="list" style="margin-top:10px">
+          ${sp.files.map((f) => `
+            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span><strong>${escapeHtml(f.type)}</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">${escapeHtml(f.name)}</span></span>
+              <a class="button" href="${escapeHtml(f.url)}" download>Download · ${escapeHtml(formatBytes(f.size))}</a>
+            </li>`).join("")}
+        </ul>
+      </section>`).join("");
+  } catch {
+    container.innerHTML = `<p class="notice">Downloads could not be loaded right now.</p>`;
   }
 }
 
@@ -3794,7 +3849,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -3928,7 +3983,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

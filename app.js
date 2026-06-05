@@ -2431,6 +2431,9 @@ function renderCommunity(section) {
   } else if (section === "suggestions") {
     communityShell.innerHTML = renderSuggestionsPage();
     communityShell.removeAttribute("hidden");
+  } else if (section === "award-recipients") {
+    communityShell.innerHTML = renderAwardRecipientsPage();
+    communityShell.removeAttribute("hidden");
   } else {
     communityShell.innerHTML = "";
     communityShell.setAttribute("hidden", "");
@@ -2700,6 +2703,81 @@ function renderUploadDataPage() {
       </div>
     </article>
   `;
+}
+
+// --- Community award recipients (by year, newest first) ---
+const AWARD_RECIPIENTS = [
+  { year: "2025", awards: [
+    { stage: "Graduate Student", names: ["Sarena Banu", "Mark Jacob"], coWinners: true },
+    { stage: "Postdoctoral Researcher", names: ["Pavani Hathi"] },
+    { stage: "Research Scientist", names: ["Pundrik Jaiswal"] },
+    { stage: "Junior Faculty", names: ["Otmane Lamrabet", "Tera Levin"], coWinners: true },
+  ] },
+  { year: "2024", awards: [
+    { stage: "Graduate Student", names: ["William Kim"] },
+    { stage: "Postdoctoral Researcher", names: ["Tyler Larsen"] },
+    { stage: "Junior Faculty", names: ["Longfei Shu", "Mariko Katoh-Kurasawa"], coWinners: true },
+  ] },
+  { year: "2023", awards: [
+    { stage: "Graduate Student", names: ["Sarah Körber"] },
+    { stage: "Postdoctoral Researcher", names: ["Simona Burraco"] },
+    { stage: "Research Scientist", names: ["Peter Thomason"] },
+    { stage: "Junior Faculty", names: ["Caroline Barisch"] },
+  ] },
+  { year: "2022", awards: [
+    { stage: "Graduate Student", names: ["Hui Tu"] },
+    { stage: "Postdoctoral Researcher", names: ["Hugh Ford"] },
+    { stage: "Research Scientist", names: ["Debra Brock"] },
+    { stage: "Junior Faculty", names: ["Huaqing Cai"] },
+  ] },
+  { year: "2021", awards: [
+    { stage: "Graduate Student", names: ["Megan Aoki"] },
+    { stage: "Postdoctoral Researcher", names: ["Peggy Paschke", "Otmane Lamrabet", "Shashi Singh"], coWinners: true },
+    { stage: "Junior Faculty", names: ["Pierre Stallforth"] },
+  ] },
+  { year: "2020", awards: [
+    { stage: "Graduate Student", names: ["Eleanor Warren", "Joe Oddy"], coWinners: true },
+    { stage: "Postdoctoral Researcher", names: ["Luke Tweedy"] },
+    { stage: "Junior Faculty", names: ["Matt Scaglione"] },
+  ] },
+  { year: "2019", awards: [
+    { stage: "Postdoctoral Researcher", names: ["Santosh Sathe", "Ramesh Rijal"], coWinners: true },
+    { stage: "Junior Faculty", names: ["Robert Huber", "Allyson Sgro"], coWinners: true },
+  ] },
+];
+
+function joinAwardNames(names) {
+  if (!names || !names.length) return "";
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} & ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
+}
+
+function renderAwardRecipientsPage() {
+  const years = AWARD_RECIPIENTS.map((y) => `
+    <section class="data-block">
+      <h3>${escapeHtml(y.year)}</h3>
+      <div class="ontology-term-list">
+        ${y.awards.map((a) => `
+          <div class="ontology-term" style="align-items:flex-start">
+            <div>
+              <strong>${escapeHtml(joinAwardNames(a.names))}</strong>
+              <span>${escapeHtml(a.stage)}${a.coWinners ? " · co-winners" : ""}</span>
+            </div>
+          </div>`).join("")}
+      </div>
+    </section>`).join("");
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Community</p>
+          <h2>Award Recipients</h2>
+          <p>Annual <em>Dictyostelium</em> community award recipients, by year and career stage.</p>
+        </div>
+      </header>
+      <div class="record-body">${years}</div>
+    </article>`;
 }
 
 function renderLabsPage() {
@@ -4248,6 +4326,8 @@ function buildSiteIndex() {
     add("Meetings", "Dictyostelium meetings and community events.", "/community/meetings", "Community",
       { keywords: htmlToText(JSON.stringify(window.meetingsContent)) });
   }
+  add("Award Recipients", "Annual community award winners by career stage.", "/community/award-recipients", "Community",
+    { keywords: AWARD_RECIPIENTS.flatMap((y) => [y.year, ...y.awards.flatMap((a) => [a.stage, ...a.names])]).join(" ") });
 
   SITE_PAGES = pages;
 }

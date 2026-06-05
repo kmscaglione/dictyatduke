@@ -1265,7 +1265,7 @@ function renderRecord() {
         <div class="record-title">
           <p class="eyebrow">Gene record</p>
           <h2>${gene.symbol}</h2>
-          <p><strong>${gene.name}</strong> · ${gene.summary}</p>
+          <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}</p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator ? `<span class="tag" style="background:var(--soft,#edf6f2);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
@@ -3025,6 +3025,44 @@ function escapeHtml(value) {
   }[character]));
 }
 
+// Render a dictyBase curated summary, converting its wiki-style markup into
+// safe HTML: [target label] links (gene cross-refs, GO terms, PubMed),
+// ''italics'', and <br /> line breaks. Plain text is escaped.
+function renderCuratedText(text) {
+  if (!text) return "";
+  const s = String(text);
+  const re = /\[(\S+)\s+([^\]]*)\]|''(.+?)''|<br\s*\/?>/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(s)) !== null) {
+    out += escapeHtml(s.slice(last, m.index));
+    last = re.lastIndex;
+    if (m[1] !== undefined) out += curatedLink(m[1], (m[2] || "").trim());
+    else if (m[3] !== undefined) out += `<em>${escapeHtml(m[3])}</em>`;
+    else out += "<br>";
+  }
+  out += escapeHtml(s.slice(last));
+  return out;
+}
+
+function curatedLink(target, label) {
+  const text = escapeHtml(label || target);
+  if (/^https?:/i.test(target)) {
+    const pm = target.match(/pubmed\/(\d+)/i);
+    const href = pm ? `https://pubmed.ncbi.nlm.nih.gov/${pm[1]}/` : target;
+    return `<a class="text-link" href="${escapeHtml(href)}" target="_blank" rel="noopener">${text}</a>`;
+  }
+  if (target.startsWith("/gene/")) {
+    const ddb = target.slice(6).split(/[/?#]/)[0];
+    return `<a class="text-link curated-xref" href="/gene/${encodeURIComponent(label || ddb)}" data-ddb-ref="${escapeHtml(ddb)}">${text}</a>`;
+  }
+  if (target.startsWith("/ontology/go/")) {
+    const go = target.split("/ontology/go/")[1].split(/[/?#]/)[0];
+    const goId = "GO:" + go.padStart(7, "0");
+    return `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(goId)}" target="_blank" rel="noopener">${text}</a>`;
+  }
+  return text;
+}
+
 async function fetchPubMedResults(gene) {
   if (pubMedCache.has(gene.id)) return pubMedCache.get(gene.id);
 
@@ -3754,6 +3792,22 @@ document.addEventListener("click", (event) => {
     input.value = queryButton.dataset.query;
     openGene(rankedGenes(input.value)[0]);
     renderSuggestions("");
+    return;
+  }
+
+  const xref = event.target.closest(".curated-xref");
+  if (xref) {
+    event.preventDefault();
+    const ddb = xref.dataset.ddbRef;
+    const hit = geneIndex.find((g) => g.id === ddb);
+    suggestions.innerHTML = "";
+    if (hit && hit.ncbiGene) {
+      openRemoteGene(hit.ncbiGene);
+    } else {
+      const fallback = findGeneByToken(xref.textContent.trim()) || searchIndex(xref.textContent.trim(), 1)[0];
+      if (fallback && fallback.ncbiGene && !genes.includes(fallback)) openRemoteGene(fallback.ncbiGene);
+      else if (fallback) openGene(fallback);
+    }
     return;
   }
 

@@ -250,6 +250,8 @@ A read-only JSON API over the local curated data (CORS-enabled, `Access-Control-
 - `GET /api/search?q=…&limit=25` — gene search (symbol/id/name), ranked.
 - `GET /api/go/{GO:0003674}` — all genes annotated to a GO term (with evidence).
 - `GET /api/strain/{DBS…}` — a mutant strain's gene + phenotypes.
+- `GET /api/data-status` — per-dataset source, record count, and last-updated
+  date (powers the `/data` provenance page).
 - `GET /api/sequence?ddb=…&type=genomic|cdna|protein` — FASTA (see above).
 
 Backed by the same JSON data files; lazily loaded and cached in-process.

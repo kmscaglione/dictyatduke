@@ -315,6 +315,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/strain/"):
             self._handle_api_strain(unquote(self.path[len("/api/strain/"):].split("?")[0]))
             return
+        if self.path.startswith("/api/data-status"):
+            self._handle_api_status()
+            return
 
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
@@ -502,6 +505,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"ok": True})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_api_status(self):
+        def updated(fname):
+            try:
+                return datetime.datetime.utcfromtimestamp((ASSETS / fname).stat().st_mtime).strftime("%Y-%m-%d")
+            except OSError:
+                return None
+        rows, _ = api_gene_rows()
+        datasets = [
+            {"key": "summaries", "label": "Curated gene summaries", "source": "dictyBase (Basu et al. 2015)",
+             "updated": updated("dictybase_corpus.json"), "records": len(_load_json("dictybase_corpus.json"))},
+            {"key": "gene_index", "label": "Gene catalog", "source": "NCBI RefSeq — D. discoideum AX4 GFF",
+             "updated": updated("gene_index.json"), "records": len(rows)},
+            {"key": "go", "label": "GO annotations", "source": "GO Consortium GAF (current.geneontology.org)",
+             "updated": updated("go_annotations.json"), "records": len(_load_json("go_annotations.json"))},
+            {"key": "phenotypes", "label": "Phenotypes", "source": "dictyBase mutant-strain curation",
+             "updated": updated("phenotypes.json"), "records": len(_load_json("phenotypes.json"))},
+            {"key": "genomes", "label": "Genome assemblies", "source": "NCBI Datasets",
+             "updated": updated("downloads_manifest.json"), "records": len(_load_json("downloads_manifest.json"))},
+        ]
+        self.send_json(200, {"datasets": datasets})
 
     def _handle_api_gene(self, token):
         ddb = resolve_gene(token)

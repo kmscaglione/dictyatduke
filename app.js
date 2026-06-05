@@ -3720,6 +3720,56 @@ async function loadStrain(sid) {
   }
 }
 
+// --- Data & sources (provenance + freshness) ---
+function openDataPage(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/data");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">About</p>
+          <h2>Data &amp; sources</h2>
+          <p>Where each dataset comes from and when it was last refreshed. dictyBase v2 aggregates and re-presents these sources — it is a modern front-end, not the authoritative curator.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-data-status><p class="notice muted">Loading…</p></div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  window.scrollTo({ top: toolsShell.offsetTop - 60, behavior: "smooth" });
+  loadDataStatus();
+}
+
+async function loadDataStatus() {
+  const el = document.querySelector("[data-data-status]");
+  if (!el) return;
+  try {
+    const data = await (await fetch("/api/data-status")).json();
+    el.innerHTML = `
+      <div class="data-block">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9375rem">
+          <thead><tr style="text-align:left;color:var(--muted,#6b7280);font-size:0.75rem;text-transform:uppercase;letter-spacing:.05em">
+            <th style="padding:8px 10px">Dataset</th><th style="padding:8px 10px">Source</th><th style="padding:8px 10px;text-align:right">Records</th><th style="padding:8px 10px">Updated</th>
+          </tr></thead>
+          <tbody>
+            ${data.datasets.map((d) => `<tr style="border-top:1px solid var(--line,#e5e7eb)">
+              <td style="padding:10px"><strong>${escapeHtml(d.label)}</strong></td>
+              <td style="padding:10px;color:var(--muted,#6b7280)">${escapeHtml(d.source)}</td>
+              <td style="padding:10px;text-align:right">${Number(d.records).toLocaleString()}</td>
+              <td style="padding:10px;white-space:nowrap">${escapeHtml(d.updated || "—")}</td>
+            </tr>`).join("")}
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:10px">Dates reflect the last local refresh of each dataset (regenerated via <code>scripts/build_data.py</code>).</p>`;
+  } catch {
+    el.innerHTML = `<p class="notice">Could not load data status.</p>`;
+  }
+}
+
 // --- dictyBase curated corpus ---
 let dictyCorpus = null;
 
@@ -4293,6 +4343,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const dataLink = event.target.closest('a[href="/data"]');
+  if (dataLink) {
+    event.preventDefault();
+    openDataPage();
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -4415,6 +4472,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "strain" && pathParts[1]) {
     openStrain(decodeURIComponent(pathParts[1]), false);
+    return;
+  }
+  if (pathParts[0] === "data") {
+    openDataPage(false);
     return;
   }
   if (isSearchRoute) {

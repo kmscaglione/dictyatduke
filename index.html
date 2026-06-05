@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dictyBase v2</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>dictyBase</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">Research</button>
+        <div class="nav-menu">
+          <a class="menu-option" href="https://en.wikipedia.org/wiki/Dictyostelium" target="_blank" rel="noopener"><strong>About Dictyostelium</strong><span>Overview of the organism, life cycle, and research history.</span></a>
+          <a class="menu-option" href="/research/techniques"><strong>Techniques</strong><span>Methods for transformation, imaging, genetics, and cell assays.</span></a>
+          <a class="menu-option" href="/research/nomenclature-guidelines"><strong>Nomenclature guidelines</strong><span>Gene, strain, allele, and plasmid naming standards.</span></a>
+          <a class="menu-option" href="/research/anatomy-ontology"><strong>Anatomy ontology</strong><span>Controlled terms for structures, stages, and cell types.</span></a>
+          <a class="menu-option" href="/research/teaching-labs"><strong>Teaching labs</strong><span>Classroom-ready exercises and teaching resources.</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">Community</button>
+        <div class="nav-menu">
+          <a class="menu-option" href="/community/labs"><strong>Labs</strong><span>Active Dictyostelium research labs worldwide.</span></a>
+          <a class="menu-option" href="/community/annotations"><strong>Submit annotations</strong><span>Upload gene annotations for curator review.</span></a>
+          <a class="menu-option" href="/community/upload-data"><strong>Upload data</strong><span>Submit genome, RNAseq, or proteomic datasets.</span></a>
+          <a class="menu-option" href="/community/corrections"><strong>Submit corrections</strong><span>Report errors found on the website.</span></a>
+          <a class="menu-option" href="/community/suggestions"><strong>Suggestions</strong><span>Share ideas for improving dictyBase.</span></a>
+          <a class="menu-option" href="/community/meetings"><strong>Meetings</strong><span>Dictyostelium meetings and community events.</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">Genome browser</button>
+        <div class="nav-menu">
+          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Future entry point for genome tracks around a gene.</span></a>
+          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Future entry point for sequence search tools.</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">Organisms</button>
+        <div class="nav-menu">
+          <a class="menu-option" href="/organisms/d-discoideum-ax4"><strong>D. discoideum AX4</strong><span>Reference strain — group 4, 34 Mb genome.</span></a>
+          <a class="menu-option" href="/organisms/d-purpureum"><strong>D. purpureum</strong><span>Group 4, comparative genomics reference.</span></a>
+          <a class="menu-option" href="/organisms/d-firmibasis"><strong>D. firmibasis</strong><span>Chromosome-level assembly, 2024.</span></a>
+          <a class="menu-option" href="/organisms/c-fasciculata-sh3"><strong>C. fasciculata SH3</strong><span>Group 2, formerly D. fasciculatum.</span></a>
+          <a class="menu-option" href="/organisms/c-polycephalum"><strong>C. polycephalum</strong><span>Group 2, formerly D. polycephalum.</span></a>
+          <a class="menu-option" href="/organisms/s-polycarpum"><strong>S. polycarpum</strong><span>Group 2, formerly D. polycarpum.</span></a>
+          <a class="menu-option" href="/organisms/h-pallidum-pn500"><strong>H. pallidum PN500</strong><span>Group 1, formerly P. pallidum.</span></a>
+          <a class="menu-option" href="/organisms/h-pallidum-new"><strong>H. pallidum (2026)</strong><span>New chromosome-level assembly.</span></a>
+          <a class="menu-option" href="/organisms/p-violaceum"><strong>P. violaceum</strong><span>Group 1 species.</span></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-trigger" type="button" aria-expanded="false">Useful tools</button>
+        <div class="nav-menu">
+          <a class="menu-option" href="https://app.dictyexpress.org" target="_blank" rel="noopener"><strong>dictyExpress</strong><span>Gene expression data and RNA-seq visualizations.</span></a>
+          <a class="menu-option" href="/tools/proteomics"><strong>Developmental proteome viewer</strong><span>4,502 proteins across five life cycle stages. Banu et al. 2026.</span></a>
+          <a class="menu-option" href="/tools/heatstress"><strong>Insoluble proteome viewer</strong><span>8,043 proteins — heat stress and development. Williams et al. 2026.</span></a>
+        </div>
+      </div>
+    </nav>
+    <button class="mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile primary">
+    <div class="mobile-menu-inner">
+      <details class="mobile-group">
+        <summary>Research</summary>
+        <div class="mobile-options">
+          <a class="menu-option" href="https://en.wikipedia.org/wiki/Dictyostelium" target="_blank" rel="noopener"><strong>About Dictyostelium</strong><span>Overview of the organism, life cycle, and research history.</span></a>
+          <a class="menu-option" href="/research/techniques"><strong>Techniques</strong><span>Methods for transformation, imaging, genetics, and cell assays.</span></a>
+          <a class="menu-option" href="/research/nomenclature-guidelines"><strong>Nomenclature guidelines</strong><span>Gene, strain, allele, and plasmid naming standards.</span></a>
+          <a class="menu-option" href="/research/anatomy-ontology"><strong>Anatomy ontology</strong><span>Controlled terms for structures, stages, and cell types.</span></a>
+          <a class="menu-option" href="/research/teaching-labs"><strong>Teaching labs</strong><span>Classroom-ready exercises and teaching resources.</span></a>
+        </div>
+      </details>
+      <details class="mobile-group">
+        <summary>Community</summary>
+        <div class="mobile-options">
+          <a class="menu-option" href="/community/labs"><strong>Labs</strong><span>Active Dictyostelium research labs worldwide.</span></a>
+          <a class="menu-option" href="/community/annotations"><strong>Submit annotations</strong><span>Upload gene annotations for curator review.</span></a>
+          <a class="menu-option" href="/community/upload-data"><strong>Upload data</strong><span>Submit genome, RNAseq, or proteomic datasets.</span></a>
+          <a class="menu-option" href="/community/corrections"><strong>Submit corrections</strong><span>Report errors found on the website.</span></a>
+          <a class="menu-option" href="/community/suggestions"><strong>Suggestions</strong><span>Share ideas for improving dictyBase.</span></a>
+          <a class="menu-option" href="/community/meetings"><strong>Meetings</strong><span>Dictyostelium meetings and community events.</span></a>
+        </div>
+      </details>
+      <details class="mobile-group">
+        <summary>Genome browser</summary>
+        <div class="mobile-options">
+          <a class="menu-option" href="/tools/genome-browser"><strong>Launch browser</strong><span>Future entry point for genome tracks around a gene.</span></a>
+          <a class="menu-option" href="/tools/blast"><strong>Sequence search</strong><span>Future entry point for sequence search tools.</span></a>
+        </div>
+      </details>
+      <details class="mobile-group">
+        <summary>Organisms</summary>
+        <div class="mobile-options">
+          <a class="menu-option" href="/organisms/d-discoideum-ax4"><strong>D. discoideum AX4</strong><span>Reference strain — group 4, 34 Mb genome.</span></a>
+          <a class="menu-option" href="/organisms/d-purpureum"><strong>D. purpureum</strong><span>Group 4, comparative genomics reference.</span></a>
+          <a class="menu-option" href="/organisms/d-firmibasis"><strong>D. firmibasis</strong><span>Chromosome-level assembly, 2024.</span></a>
+          <a class="menu-option" href="/organisms/c-fasciculata-sh3"><strong>C. fasciculata SH3</strong><span>Group 2, formerly D. fasciculatum.</span></a>
+          <a class="menu-option" href="/organisms/c-polycephalum"><strong>C. polycephalum</strong><span>Group 2, formerly D. polycephalum.</span></a>
+          <a class="menu-option" href="/organisms/s-polycarpum"><strong>S. polycarpum</strong><span>Group 2, formerly D. polycarpum.</span></a>
+          <a class="menu-option" href="/organisms/h-pallidum-pn500"><strong>H. pallidum PN500</strong><span>Group 1, formerly P. pallidum.</span></a>
+          <a class="menu-option" href="/organisms/h-pallidum-new"><strong>H. pallidum (2026)</strong><span>New chromosome-level assembly.</span></a>
+          <a class="menu-option" href="/organisms/p-violaceum"><strong>P. violaceum</strong><span>Group 1 species.</span></a>
+        </div>
+      </details>
+      <details class="mobile-group">
+        <summary>Useful tools</summary>
+        <div class="mobile-options">
+          <a class="menu-option" href="https://app.dictyexpress.org" target="_blank" rel="noopener"><strong>dictyExpress</strong><span>Gene expression data and RNA-seq visualizations.</span></a>
+          <a class="menu-option" href="/tools/proteomics"><strong>Developmental proteome viewer</strong><span>4,502 proteins across five life cycle stages. Banu et al. 2026.</span></a>
+          <a class="menu-option" href="/tools/heatstress"><strong>Insoluble proteome viewer</strong><span>8,043 proteins — heat stress and development. Williams et al. 2026.</span></a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="search">
+      <div class="hero-copy">
+        <p class="eyebrow">Dictyostelium community resource</p>
+        <img src="/assets/dicty-hero.jpg" alt="Developing Dictyostelium discoideum" class="hero-image">
+        <p class="hero-image-credit">Image: <a href="https://commons.wikimedia.org/wiki/Dictyostelium" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></p>
+      </div>
+
+      <form class="search-panel" id="search-form" role="search">
+        <label for="search-input">Gene search</label>
+        <div class="search-row">
+          <input id="search-input" autocomplete="off" placeholder="Try CLN5, acaA, mhcA, carA, rasG">
+          <button type="submit">Search</button>
+        </div>
+        <div class="quick-links" aria-label="Example searches">
+          <button type="button" data-query="CLN5">CLN5</button>
+          <button type="button" data-query="acaA">acaA</button>
+          <button type="button" data-query="mhcA">mhcA</button>
+          <button type="button" data-query="rasG">rasG</button>
+        </div>
+        <div class="suggestions" id="suggestions" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="record-shell" id="record" aria-live="polite">
+      <div class="empty-state">
+        <p class="eyebrow">Gene record</p>
+        <h2>Search for a gene to begin.</h2>
+        <p>The record view will appear here with source links and annotation sections.</p>
+      </div>
+    </section>
+
+    <section class="record-shell" id="tools" aria-live="polite" hidden></section>
+
+    <section class="record-shell" id="organism" aria-live="polite" hidden></section>
+
+    <section class="record-shell" id="community" aria-live="polite" hidden></section>
+
+    <section class="record-shell" id="research" aria-live="polite" hidden></section>
+  </main>
+
+  <script src="/technique-content.js"></script>
+  <script src="/teaching-content.js"></script>
+  <script src="/meetings-content.js"></script>
+  <script src="/labs-content.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# --- Large reproducible genome archives (re-downloadable from NCBI) ---
+# Excluded to keep the repo lightweight. If you want these versioned,
+# use Git LFS instead (see note from setup).
+assets/genomes/
+
+# --- Runtime / user-submitted data ---
+uploads/files/
+uploads/submissions/
+
+# --- Assistant & editor config ---
+.claude/
+
+# --- OS / Python cruft ---
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# --- Local server / temp ---
+*.tmp
+.~lock.*

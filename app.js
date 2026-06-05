@@ -1265,7 +1265,7 @@ function renderRecord() {
         <div class="record-title">
           <p class="eyebrow">Gene record</p>
           <h2>${gene.symbol}</h2>
-          <p><strong>${gene.name}</strong> · ${gene.summary}</p>
+          <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}</p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator ? `<span class="tag" style="background:var(--soft,#edf6f2);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
@@ -1299,6 +1299,9 @@ function renderRecord() {
   }
   if (state.activeTab === "GO") {
     loadGOResults(gene);
+  }
+  if (state.activeTab === "Phenotypes") {
+    loadPhenotypes(gene);
   }
   if (state.activeTab === "Interactions") {
     loadStringResults(gene);
@@ -2907,7 +2910,13 @@ function renderTab(gene, tab) {
     `;
   }
   if (tab === "Phenotypes") {
-    return `<div class="data-block"><h3>Phenotypes</h3>${list(gene.phenotypes, ([term, detail]) => [term, detail])}</div>`;
+    return `
+      <div class="data-block">
+        <h3>Phenotypes</h3>
+        <div data-phenotype-results="${escapeHtml(gene.id)}">
+          <p class="notice muted">Loading phenotypes for ${escapeHtml(gene.symbol)}…</p>
+        </div>
+      </div>`;
   }
   if (tab === "Literature") {
     return `
@@ -3023,6 +3032,44 @@ function escapeHtml(value) {
     '"': "&quot;",
     "'": "&#39;"
   }[character]));
+}
+
+// Render a dictyBase curated summary, converting its wiki-style markup into
+// safe HTML: [target label] links (gene cross-refs, GO terms, PubMed),
+// ''italics'', and <br /> line breaks. Plain text is escaped.
+function renderCuratedText(text) {
+  if (!text) return "";
+  const s = String(text);
+  const re = /\[(\S+)\s+([^\]]*)\]|''(.+?)''|<br\s*\/?>/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(s)) !== null) {
+    out += escapeHtml(s.slice(last, m.index));
+    last = re.lastIndex;
+    if (m[1] !== undefined) out += curatedLink(m[1], (m[2] || "").trim());
+    else if (m[3] !== undefined) out += `<em>${escapeHtml(m[3])}</em>`;
+    else out += "<br>";
+  }
+  out += escapeHtml(s.slice(last));
+  return out;
+}
+
+function curatedLink(target, label) {
+  const text = escapeHtml(label || target);
+  if (/^https?:/i.test(target)) {
+    const pm = target.match(/pubmed\/(\d+)/i);
+    const href = pm ? `https://pubmed.ncbi.nlm.nih.gov/${pm[1]}/` : target;
+    return `<a class="text-link" href="${escapeHtml(href)}" target="_blank" rel="noopener">${text}</a>`;
+  }
+  if (target.startsWith("/gene/")) {
+    const ddb = target.slice(6).split(/[/?#]/)[0];
+    return `<a class="text-link curated-xref" href="/gene/${encodeURIComponent(label || ddb)}" data-ddb-ref="${escapeHtml(ddb)}">${text}</a>`;
+  }
+  if (target.startsWith("/ontology/go/")) {
+    const go = target.split("/ontology/go/")[1].split(/[/?#]/)[0];
+    const goId = "GO:" + go.padStart(7, "0");
+    return `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${escapeHtml(goId)}" target="_blank" rel="noopener">${text}</a>`;
+  }
+  return text;
 }
 
 async function fetchPubMedResults(gene) {
@@ -3309,6 +3356,49 @@ async function enrichGeneFromCorpus(gene) {
     return enriched;
   } catch {
     return gene;
+  }
+}
+
+// --- Phenotypes (dictyBase mutant-strain curation) ---
+let phenotypeData = null;
+
+async function ensurePhenotypeData() {
+  if (phenotypeData) return phenotypeData;
+  const res = await fetch("/assets/phenotypes.json");
+  if (!res.ok) throw new Error("Phenotype data not available");
+  phenotypeData = await res.json();
+  return phenotypeData;
+}
+
+async function loadPhenotypes(gene) {
+  const container = document.querySelector("[data-phenotype-results]");
+  if (!container) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  try {
+    const data = ddb ? await ensurePhenotypeData() : null;
+    if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
+    const rows = (data && data[ddb]) || [];
+    if (rows.length) {
+      container.innerHTML = `
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${rows.length} curated phenotype${rows.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
+        <ul class="list">
+          ${rows.map(([term, cond, pmid, note]) => {
+            const cleanNote = String(note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
+            const detail = [cond, cleanNote].filter(Boolean).map(escapeHtml).join(" · ");
+            const ref = pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a>` : "";
+            return `<li><strong>${escapeHtml(term)}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
+          }).join("")}
+        </ul>`;
+      return;
+    }
+    if (gene.phenotypes && gene.phenotypes.length) {
+      container.innerHTML = `<ul class="list">${gene.phenotypes.map(([term, detail]) =>
+        `<li><strong>${escapeHtml(term)}</strong><span>${escapeHtml(detail || "")}</span></li>`).join("")}</ul>`;
+      return;
+    }
+    container.innerHTML = `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`;
+  } catch {
+    container.innerHTML = `<p class="notice">Phenotypes could not be loaded right now.</p>`;
   }
 }
 
@@ -3754,6 +3844,22 @@ document.addEventListener("click", (event) => {
     input.value = queryButton.dataset.query;
     openGene(rankedGenes(input.value)[0]);
     renderSuggestions("");
+    return;
+  }
+
+  const xref = event.target.closest(".curated-xref");
+  if (xref) {
+    event.preventDefault();
+    const ddb = xref.dataset.ddbRef;
+    const hit = geneIndex.find((g) => g.id === ddb);
+    suggestions.innerHTML = "";
+    if (hit && hit.ncbiGene) {
+      openRemoteGene(hit.ncbiGene);
+    } else {
+      const fallback = findGeneByToken(xref.textContent.trim()) || searchIndex(xref.textContent.trim(), 1)[0];
+      if (fallback && fallback.ncbiGene && !genes.includes(fallback)) openRemoteGene(fallback.ncbiGene);
+      else if (fallback) openGene(fallback);
+    }
     return;
   }
 

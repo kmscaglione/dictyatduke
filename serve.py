@@ -273,6 +273,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_header("Cache-Control", "public, max-age=31536000, immutable")
             else:
                 self.send_header("Cache-Control", "no-cache, must-revalidate")
+        elif raw.endswith(".json"):
+            # Data files change as curation is updated — revalidate (cheap 304s)
+            # so viewers never read a stale corpus/index from cache.
+            self.send_header("Cache-Control", "no-cache, must-revalidate")
         super().end_headers()
 
     def log_message(self, fmt, *args):

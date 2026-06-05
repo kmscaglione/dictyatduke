@@ -16,6 +16,10 @@ CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
                ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json"}
 
+# Cache-busting: stamp local css/js asset URLs in index.html with their mtime
+# so browsers always re-fetch a file after it changes, but cache it otherwise.
+ASSET_RE = re.compile(r'(href|src)="(/[^"?]+\.(?:css|js))"')
+
 # Simple curator auth — SHA256 of password
 CURATOR_PASSWORD_HASH = hashlib.sha256(b"dicty2024curator").hexdigest()
 
@@ -59,10 +63,34 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, items)
             return
 
-        _, ext = os.path.splitext(self.path.split("?")[0])
-        if ext not in STATIC_EXTS:
-            self.path = "/index.html"
+        raw = self.path.split("?")[0]
+        _, ext = os.path.splitext(raw)
+        # Serve the SPA shell (with cache-busted asset URLs) for the root, an
+        # explicit index.html, or any non-static client route. Real static
+        # files fall through to the default handler.
+        if raw in ("/", "/index.html") or ext not in STATIC_EXTS:
+            return self._serve_index()
         super().do_GET()
+
+    def _serve_index(self):
+        try:
+            html = (pathlib.Path(ROOT) / "index.html").read_text()
+            def stamp(m):
+                attr, ref = m.group(1), m.group(2)
+                try:
+                    v = int((pathlib.Path(ROOT) / ref.lstrip("/")).stat().st_mtime)
+                except OSError:
+                    return m.group(0)
+                return f'{attr}="{ref}?v={v}"'
+            body = ASSET_RE.sub(stamp, html).encode()
+            self._no_cache = True
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+        except Exception as e:
+            self.send_error(500, str(e))
 
     def do_POST(self):
         if self.path == "/api/upload":
@@ -233,11 +261,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def end_headers(self):
-        # During beta, force revalidation of edited assets so viewers never
-        # see a stale HTML/CSS/JS copy from the browser cache.
-        path = self.path.split("?")[0]
-        if path == "/" or path.endswith((".html", ".css", ".js")):
+        # HTML is always revalidated so new asset versions are picked up;
+        # mtime-stamped css/js can be cached aggressively (URL changes on edit);
+        # any unversioned css/js still revalidates to avoid staleness.
+        raw = self.path.split("?")[0]
+        query = self.path.split("?", 1)[1] if "?" in self.path else ""
+        if getattr(self, "_no_cache", False) or raw == "/" or raw.endswith(".html"):
             self.send_header("Cache-Control", "no-cache, must-revalidate")
+        elif raw.endswith((".css", ".js")):
+            if "v=" in query:
+                self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+            else:
+                self.send_header("Cache-Control", "no-cache, must-revalidate")
         super().end_headers()
 
     def log_message(self, fmt, *args):

@@ -81,11 +81,115 @@ def gene_for_hit(accession, sstart, send):
             return {"symbol": sym, "ddb": ddb, "ncbi": ncbi}
     return None
 
+
+# --- Per-gene sequence extraction (genomic / cDNA / protein) from genome + GFF ---
+GENE_GFF = pathlib.Path(ROOT) / "assets" / "genomes" / "D_discoideum_AX4.gff"
+GENOME_FASTA = pathlib.Path(ROOT) / "assets" / "genomes" / "D_discoideum_AX4_refseq.fna"
+_REVCOMP = str.maketrans("ACGTUacgtuN", "TGCAAtgcaaN")
+_CODON = {}
+for _i, _aa in enumerate("FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"):
+    _b = "TCAG"
+    _CODON[_b[_i // 16] + _b[(_i // 4) % 4] + _b[_i % 4]] = _aa
+
+
+def _translate(seq):
+    seq = seq.upper().replace("U", "T")
+    return "".join(_CODON.get(seq[i:i + 3], "X") for i in range(0, len(seq) - 2, 3))
+
+
+_GENE_MODELS = None
+
+
+def gene_models():
+    global _GENE_MODELS
+    if _GENE_MODELS is not None:
+        return _GENE_MODELS
+    models = {}
+    try:
+        with open(GENE_GFF) as fh:
+            for line in fh:
+                if line.startswith("#"):
+                    continue
+                f = line.rstrip("\n").split("\t")
+                if len(f) < 9 or f[2] not in ("exon", "CDS"):
+                    continue
+                m = re.search(r"locus_tag=([^;]+)", f[8])
+                if not m or not m.group(1).startswith("DDB_G"):
+                    continue
+                g = models.setdefault(m.group(1), {"chrom": f[0], "strand": f[6], "exon": [], "CDS": []})
+                g[f[2]].append((int(f[3]), int(f[4])))
+    except Exception:
+        pass
+    _GENE_MODELS = models
+    return models
+
+
+_GENOME_SEQ = None
+
+
+def genome_seq():
+    global _GENOME_SEQ
+    if _GENOME_SEQ is not None:
+        return _GENOME_SEQ
+    seq, cur, buf = {}, None, []
+    try:
+        with open(GENOME_FASTA) as fh:
+            for line in fh:
+                if line.startswith(">"):
+                    if cur:
+                        seq[cur] = "".join(buf)
+                    cur = line[1:].split()[0]
+                    buf = []
+                else:
+                    buf.append(line.strip())
+        if cur:
+            seq[cur] = "".join(buf)
+    except Exception:
+        pass
+    _GENOME_SEQ = seq
+    return seq
+
+
+def extract_sequence(ddb, typ):
+    g = gene_models().get(ddb)
+    if not g:
+        return None
+    chrom = genome_seq().get(g["chrom"])
+    if not chrom:
+        return None
+    if typ == "genomic":
+        if not g["exon"]:
+            return None
+        a = min(s for s, e in g["exon"]); b = max(e for s, e in g["exon"])
+        out = chrom[a - 1:b]
+    elif typ == "cdna":
+        if not g["exon"]:
+            return None
+        out = "".join(chrom[s - 1:e] for s, e in sorted(g["exon"]))
+    elif typ == "protein":
+        if not g["CDS"]:
+            return None
+        out = "".join(chrom[s - 1:e] for s, e in sorted(g["CDS"]))
+    else:
+        return None
+    if g["strand"] == "-":
+        out = out.translate(_REVCOMP)[::-1]
+    if typ == "protein":
+        out = _translate(out)
+        if out.endswith("*"):
+            out = out[:-1]
+    return out
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=ROOT, **kwargs)
 
     def do_GET(self):
+        # Per-gene sequence download (genomic / cDNA / protein FASTA)
+        if self.path.startswith("/api/sequence?"):
+            self._handle_sequence()
+            return
+
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
         if m:
@@ -272,6 +376,38 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"ok": True})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_sequence(self):
+        """Return a gene's genomic / cDNA / protein sequence as a FASTA download."""
+        try:
+            from urllib.parse import urlparse, parse_qs
+            q = parse_qs(urlparse(self.path).query)
+            ddb = (q.get("ddb", [""])[0]).strip()
+            typ = (q.get("type", [""])[0]).strip()
+            symbol = (q.get("symbol", [ddb])[0]).strip().replace("\n", "") or ddb
+            if typ not in ("genomic", "cdna", "protein"):
+                self.send_error(400, "type must be genomic, cdna, or protein")
+                return
+            if not re.match(r"^DDB_G\d+$", ddb):
+                self.send_error(400, "invalid gene id")
+                return
+            seq = extract_sequence(ddb, typ)
+            if not seq:
+                self.send_error(404, "Sequence not available for this gene")
+                return
+            label = {"genomic": "genomic", "cdna": "cDNA", "protein": "protein"}[typ]
+            wrapped = "\n".join(seq[i:i + 60] for i in range(0, len(seq), 60))
+            fasta = f">{symbol} {ddb} {label} | dictyBase v2\n{wrapped}\n".encode()
+            fname = "".join(c for c in f"{symbol}_{typ}.fasta" if c.isalnum() or c in "._-")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Disposition", f'attachment; filename="{fname}"')
+            self.send_header("Content-Length", str(len(fasta)))
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(fasta)
+        except Exception as e:
+            self.send_error(500, str(e))
 
     def _handle_blast(self):
         """Run a local blastn/tblastn against the bundled dictyostelid genomes.

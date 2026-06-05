@@ -211,6 +211,10 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
 - `POST /api/curator/approve` — approve a curation; **merges it into
   `dictybase_corpus.json`** *(auth)*.
 - `POST /api/curator/reject` — reject a curation *(auth)*.
+- `GET  /api/sequence?ddb=DDB_G…&type=genomic|cdna|protein&symbol=…` — returns a
+  gene's sequence as a FASTA download, extracted on the fly from the D. discoideum
+  genome + GFF (cDNA = spliced exons, protein = translated CDS). Powers the
+  "Sequences" box on the gene record.
 - `POST /api/blast` — local blastn/tblastn against the bundled genomes (see
   [Local BLAST](#local-blast-p6)). Returns JSON hits; D. discoideum hits include
   the mapped gene. Program + database come from server allowlists; the query is

@@ -3117,18 +3117,29 @@ function renderTab(gene, tab) {
         </div>
         <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
       </section>
-      <section class="data-block">
-        <h3>Identifiers</h3>
-        <div class="kv">
-          <span>Symbol</span><strong>${gene.symbol}</strong>
-          <span>Name</span><strong>${gene.name}</strong>
-          <span>Organism</span><strong>${gene.organism}</strong>
-          <span>Location</span><strong>${gene.location}</strong>
-          <span>NCBI Gene</span><strong>${gene.ncbiGene}</strong>
-          <span>UniProt</span><strong>${gene.uniprot}</strong>
-          <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
-        </div>
-      </section>
+      <div style="display:grid;gap:14px;align-content:start">
+        <section class="data-block">
+          <h3>Identifiers</h3>
+          <div class="kv">
+            <span>Symbol</span><strong>${gene.symbol}</strong>
+            <span>Name</span><strong>${gene.name}</strong>
+            <span>Organism</span><strong>${gene.organism}</strong>
+            <span>Location</span><strong>${gene.location}</strong>
+            <span>NCBI Gene</span><strong>${gene.ncbiGene}</strong>
+            <span>UniProt</span><strong>${gene.uniprot}</strong>
+            <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
+          </div>
+        </section>
+        ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
+        <section class="data-block">
+          <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
+          <ul class="list">
+            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=genomic&symbol=${encodeURIComponent(gene.symbol)}" download>Genomic DNA</a></strong><span>Gene region including introns</span></li>
+            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=cdna&symbol=${encodeURIComponent(gene.symbol)}" download>cDNA</a></strong><span>Spliced transcript (exons)</span></li>
+            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}" download>Protein</a></strong><span>Translated coding sequence</span></li>
+          </ul>
+        </section>` : ""}
+      </div>
       <section class="data-block">
         <h3>Record coverage</h3>
         <div class="kv">

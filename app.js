@@ -1310,6 +1310,7 @@ function renderRecord() {
     loadOMAResults(gene);
   }
   if (state.activeTab === "Literature") {
+    loadCuratedReferences(gene);
     loadPubMedResults(gene);
   }
   if (state.activeTab === "Structures") {
@@ -2977,14 +2978,18 @@ function renderTab(gene, tab) {
     return `
       <div class="data-block">
         <h3>Literature</h3>
-        <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener">Search PubMed for all ${gene.symbol} papers</a>
-        <div class="pubmed-results" data-pubmed-results="${gene.id}">
-          <p class="notice muted">Loading PubMed matches for ${gene.symbol}...</p>
+        <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
+          <p class="notice muted">Loading curated references…</p>
         </div>
+        <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener" style="margin-top:16px">Search PubMed for all ${escapeHtml(gene.symbol)} papers</a>
+        <div class="pubmed-results" data-pubmed-results="${gene.id}">
+          <p class="notice muted">Loading recent PubMed matches for ${escapeHtml(gene.symbol)}…</p>
+        </div>
+        ${gene.literature && gene.literature.length ? `
         <div class="seeded-literature">
           <h4>Seeded literature links</h4>
-          ${gene.literature.length ? list(gene.literature, ([pmid, title, journal]) => [`PMID ${pmid}`, `${title} ${journal}`], true) : "<p>No linked PubMed seed rows yet.</p>"}
-        </div>
+          ${list(gene.literature, ([pmid, title, journal]) => [`PMID ${pmid}`, `${title} ${journal}`], true)}
+        </div>` : ""}
       </div>
     `;
   }
@@ -3195,6 +3200,71 @@ async function loadPubMedResults(gene) {
     `;
   } catch (error) {
     container.innerHTML = `<p class="notice">PubMed results could not be loaded right now. The seeded literature links below are still available.</p>`;
+  }
+}
+
+// Papers cited in the dictyBase curated summary (PMIDs embedded in the markup).
+const curatedRefCache = new Map();
+
+function curatedPmids(gene) {
+  const out = [];
+  const seen = new Set();
+  const re = /pubmed\/(\d+)/gi;
+  let m;
+  while ((m = re.exec(String(gene.summary || ""))) !== null) {
+    if (!seen.has(m[1])) { seen.add(m[1]); out.push(m[1]); }
+  }
+  return out;
+}
+
+async function loadCuratedReferences(gene) {
+  const container = document.querySelector("[data-curated-refs]");
+  if (!container) return;
+  const pmids = curatedPmids(gene).slice(0, 60);
+  if (!pmids.length) {
+    container.innerHTML = `<p class="notice muted">No references are cited in the curated summary for ${escapeHtml(gene.symbol)}.</p>`;
+    return;
+  }
+  const renderHeader = (n) => `<h4>Curated references <span style="font-weight:500;color:var(--muted,#6b7280)">— cited in the dictyBase summary (${n})</span></h4>`;
+  try {
+    let papers;
+    if (curatedRefCache.has(gene.id)) {
+      papers = curatedRefCache.get(gene.id);
+    } else {
+      const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictybase_v2" });
+      const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
+      if (!res.ok) throw new Error("esummary failed");
+      const data = await res.json();
+      papers = pmids.map((pmid) => {
+        const item = data.result?.[pmid];
+        return {
+          pmid,
+          title: item?.title || `PMID ${pmid}`,
+          journal: item?.fulljournalname || item?.source || "",
+          date: item?.pubdate || "",
+          authors: (item?.authors || []).slice(0, 3).map((a) => a.name).filter(Boolean).join(", ")
+        };
+      });
+      curatedRefCache.set(gene.id, papers);
+    }
+    if (state.activeGene !== gene || state.activeTab !== "Literature") return;
+    container.innerHTML = `
+      ${renderHeader(papers.length)}
+      <ul class="list pubmed-list">
+        ${papers.map((p) => `
+          <li>
+            <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
+            <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
+          </li>`).join("")}
+      </ul>`;
+  } catch {
+    if (state.activeGene !== gene || state.activeTab !== "Literature") return;
+    // Fallback: linked PMIDs without titles
+    container.innerHTML = `
+      ${renderHeader(pmids.length)}
+      <ul class="list">
+        ${pmids.map((pmid) => `<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a></strong></li>`).join("")}
+      </ul>`;
   }
 }
 

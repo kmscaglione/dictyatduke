@@ -2795,6 +2795,7 @@ function renderLabsPage() {
         </strong>
         <span>${escapeHtml(lab.institution)}</span>
       </div>
+      ${lab.email ? `<p style="margin:0 0 3px;font-size:0.8125rem">${lab.email.split(/,\s*/).map((e) => `<a class="text-link" href="mailto:${escapeHtml(e)}">${escapeHtml(e)}</a>`).join(", ")}</p>` : ""}
       <p style="margin:0;color:var(--muted,#6b7280);font-size:0.8125rem">${escapeHtml(lab.location)}</p>
     </div>`).join("");
 

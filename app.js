@@ -4026,33 +4026,106 @@ async function loadOMAResults(gene) {
   }
 }
 
+// Key model organisms, in display priority order. Matched against the OMA
+// scientific name (substring). The most useful row for a curator is almost
+// always the human 1:1 ortholog, so Human leads.
+const OMA_MODEL_ORGANISMS = [
+  { match: "Homo sapiens", label: "Human" },
+  { match: "Mus musculus", label: "Mouse" },
+  { match: "Rattus norvegicus", label: "Rat" },
+  { match: "Danio rerio", label: "Zebrafish" },
+  { match: "Xenopus tropicalis", label: "Frog (X. tropicalis)" },
+  { match: "Xenopus laevis", label: "Frog (X. laevis)" },
+  { match: "Drosophila melanogaster", label: "Fruit fly" },
+  { match: "Caenorhabditis elegans", label: "C. elegans" },
+  { match: "Saccharomyces cerevisiae", label: "Budding yeast" },
+  { match: "Schizosaccharomyces pombe", label: "Fission yeast" },
+  { match: "Arabidopsis thaliana", label: "Arabidopsis" },
+  { match: "Dictyostelium", label: "Dictyostelid" },
+  { match: "Polysphondylium", label: "Dictyostelid" },
+  { match: "Cavenderia", label: "Dictyostelid" },
+  { match: "Heterostelium", label: "Dictyostelid" },
+];
+
+// A 1:1 ortholog is the cleanest evolutionary correspondence; rank it first.
+const OMA_REL_RANK = { "1:1": 0, "1:n": 1, "m:1": 2, "m:n": 3 };
+
+function omaRelBadge(rel) {
+  if (!rel) return "";
+  const one2one = rel === "1:1";
+  const bg = one2one ? "var(--accent-soft,#d1fae5)" : "var(--surface-2,#f3f4f6)";
+  const fg = one2one ? "var(--accent-strong,#065f46)" : "var(--muted,#6b7280)";
+  return `<span title="OMA orthology relationship type" style="display:inline-block;margin-left:8px;padding:1px 6px;border-radius:6px;font-size:0.6875rem;font-weight:600;background:${bg};color:${fg}">${escapeHtml(rel)}</span>`;
+}
+
+function omaRow(o) {
+  const label = o.canonicalid || o.omaid;
+  return `<li>
+    <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(o.omaid)}/" target="_blank" rel="noopener">${escapeHtml(label)}</a></strong>${omaRelBadge(o.rel)}
+    <span>${escapeHtml(o.sci)}</span>
+  </li>`;
+}
+
 function renderOMAResults(gene, orthologs, container) {
   if (!orthologs.length) {
     container.innerHTML = `<p class="notice">No orthologs found in OMA for ${escapeHtml(gene.uniprot)}.</p>`;
     return;
   }
-  // Group by kingdom/domain for display
-  const grouped = {};
-  for (const o of orthologs) {
-    const sci = o.species?.sciname || o.taxon?.sciname || "Unknown";
-    const kingdom = sci.includes("sapiens") ? "Human" : sci.includes("elegans") ? "C. elegans" : sci.includes("cerevisiae") ? "S. cerevisiae" : sci.includes("Dictyostelium") ? "Dictyostelia" : sci.includes("melanogaster") ? "D. melanogaster" : "Other";
-    if (!grouped[kingdom]) grouped[kingdom] = [];
-    grouped[kingdom].push({ sci, id: o.omaid, canonicalid: o.canonicalid || "" });
-  }
-  const highlight = ["Human", "S. cerevisiae", "C. elegans", "D. melanogaster", "Dictyostelia"];
-  const order = [...highlight.filter((k) => grouped[k]), "Other"];
+  // Normalize each ortholog and tag it with its model-organism rank (if any).
+  const rows = orthologs.map((o) => {
+    const sci = o.species?.species || o.species?.sciname || "Unknown species";
+    const modelIdx = OMA_MODEL_ORGANISMS.findIndex((m) => sci.includes(m.match));
+    return {
+      omaid: o.omaid,
+      canonicalid: o.canonicalid || "",
+      sci,
+      rel: o.rel_type || "",
+      distance: typeof o.distance === "number" ? o.distance : Infinity,
+      modelIdx,
+      modelLabel: modelIdx >= 0 ? OMA_MODEL_ORGANISMS[modelIdx].label : "",
+    };
+  });
+
+  const relRank = (r) => (r.rel in OMA_REL_RANK ? OMA_REL_RANK[r.rel] : 9);
+
+  const models = rows
+    .filter((r) => r.modelIdx >= 0)
+    .sort((a, b) => a.modelIdx - b.modelIdx || relRank(a) - relRank(b) || a.distance - b.distance);
+
+  // Closest non-model species, 1:1 relationships and short distances first.
+  const OTHER_LIMIT = 6;
+  const others = rows
+    .filter((r) => r.modelIdx < 0)
+    .sort((a, b) => relRank(a) - relRank(b) || a.distance - b.distance);
+  const othersShown = others.slice(0, OTHER_LIMIT);
+
+  const sectionHead = (txt) =>
+    `<h4 style="margin:14px 0 6px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(txt)}</h4>`;
+
+  const modelsHtml = models.length
+    ? sectionHead("Model organisms") +
+      `<ul class="list">${models
+        .map((r) => `<li>
+          <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(r.omaid)}/" target="_blank" rel="noopener">${escapeHtml(r.canonicalid || r.omaid)}</a></strong>${omaRelBadge(r.rel)}
+          <span><span style="font-weight:600;color:var(--text,#111827)">${escapeHtml(r.modelLabel)}</span> · ${escapeHtml(r.sci)}</span>
+        </li>`)
+        .join("")}</ul>`
+    : "";
+
+  const othersHtml = othersShown.length
+    ? sectionHead(
+        others.length > OTHER_LIMIT
+          ? `Other species (showing ${othersShown.length} of ${others.length})`
+          : "Other species"
+      ) + `<ul class="list">${othersShown.map(omaRow).join("")}</ul>`
+    : "";
+
+  const oneToOne = rows.filter((r) => r.rel === "1:1").length;
   container.innerHTML = `
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-bottom:12px">${orthologs.length} orthologs found across all species. Showing key model organisms below.</p>
-    ${order.filter((k) => grouped[k]).map((kingdom) => `
-      <h4 style="margin:12px 0 6px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(kingdom)}</h4>
-      <ul class="list">
-        ${grouped[kingdom].slice(0, 5).map((o) => `
-          <li>
-            <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(o.id)}/" target="_blank" rel="noopener">${escapeHtml(o.id)}</a></strong>
-            <span>${escapeHtml(o.sci)}${o.canonicalid ? " · " + escapeHtml(o.canonicalid) : ""}</span>
-          </li>`).join("")}
-      </ul>`).join("")}
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-top:12px">
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-bottom:4px">${orthologs.length} orthologs across all species${oneToOne ? `, ${oneToOne} one-to-one` : ""}.</p>
+    ${modelsHtml}
+    ${othersHtml}
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-top:14px">
       <a class="text-link" href="https://omabrowser.org/oma/vps/${encodeURIComponent(gene.uniprot)}/" target="_blank" rel="noopener">View all ${orthologs.length} orthologs on OMA Browser →</a>
     </p>`;
 }

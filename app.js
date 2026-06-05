@@ -4103,35 +4103,94 @@ let searchPageMode = "general";
 let searchPageDebounce = null;
 let searchPageReq = 0; // invalidates stale async results when typing or switching mode
 
-// A searchable index of every site destination, harvested from the primary
-// nav so it always matches what's actually linked (research pages, organisms,
-// tools, community pages, the genome browser, …). Built once at startup.
+// A searchable index of the site's content — not just the top-level nav, but
+// the individual protocols, nomenclature/anatomy terms, and organism records
+// reachable underneath it, so a search for e.g. "media" finds the media
+// protocol inside the Techniques page. Built once at startup; `keywords` holds
+// extra text that's matched but not displayed (definitions, categories, …).
 let SITE_PAGES = [];
 function buildSiteIndex() {
+  const pages = [];
   const seen = new Set();
-  SITE_PAGES = [...document.querySelectorAll(".nav-links .menu-option")]
-    .map((a) => {
-      const href = a.getAttribute("href") || "";
-      const group = a.closest(".nav-item")?.querySelector(".nav-trigger")?.textContent.trim() || "";
-      return {
-        title: a.querySelector("strong")?.textContent.trim() || a.textContent.trim(),
-        description: a.querySelector("span")?.textContent.trim() || "",
-        href,
-        group,
-        external: a.target === "_blank" || /^https?:/i.test(href),
-      };
-    })
-    .filter((p) => p.href && p.title && !seen.has(p.href) && seen.add(p.href));
+  const clip = (s, n = 140) => {
+    s = (s || "").replace(/\s+/g, " ").trim();
+    return s.length > n ? s.slice(0, n - 1) + "…" : s;
+  };
+  const add = (title, description, href, group, opts = {}) => {
+    title = (title || "").trim();
+    if (!title || !href) return;
+    const key = (href + "|" + title).toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    pages.push({
+      title,
+      description: clip(description),
+      href,
+      group: group || "",
+      external: !!opts.external,
+      keywords: (opts.keywords || "").toLowerCase(),
+    });
+  };
+
+  // 1. Top-level nav destinations.
+  for (const a of document.querySelectorAll(".nav-links .menu-option")) {
+    const href = a.getAttribute("href") || "";
+    add(
+      a.querySelector("strong")?.textContent || a.textContent,
+      a.querySelector("span")?.textContent || "",
+      href,
+      a.closest(".nav-item")?.querySelector(".nav-trigger")?.textContent.trim() || "",
+      { external: a.target === "_blank" || /^https?:/i.test(href) }
+    );
+  }
+
+  // 2. Individual protocols/techniques (media, transformation, microscopy, …).
+  for (const t of techniqueRecords || []) {
+    add(t.label, t.category ? `Technique · ${t.category}` : "Technique",
+      localTechniqueHref(t.label, t.sourceUrl), "Techniques", { keywords: t.category });
+  }
+
+  // 3. Research-resource sections, their terms, and link categories.
+  for (const r of researchResources || []) {
+    const href = `/research/${encodeURIComponent(r.id)}`;
+    for (const s of r.sections || []) {
+      add(s.title, `${r.label} · ${s.definition || ""}`, href, r.label, { keywords: s.definition });
+      for (const term of s.terms || []) {
+        add(term[0], `${r.label} — ${s.title}`, href, r.label, { keywords: term[2] });
+      }
+    }
+    for (const ls of r.linkSections || []) {
+      add(ls.title, `${r.label} category`, href, r.label, { keywords: (ls.links || []).map((l) => l[0]).join(" ") });
+    }
+  }
+
+  // 4. Organisms with their full descriptions.
+  for (const o of organisms || []) {
+    add(o.name, o.description || o.group || "", `/organisms/${encodeURIComponent(o.id)}`, "Organisms",
+      { keywords: `${o.shortName || ""} ${o.group || ""}` });
+  }
+
+  SITE_PAGES = pages;
 }
 
 function searchSitePages(q) {
-  const nq = q.toLowerCase();
-  if (!nq) return [];
-  return SITE_PAGES.filter((p) =>
-    p.title.toLowerCase().includes(nq) ||
-    p.description.toLowerCase().includes(nq) ||
-    p.group.toLowerCase().includes(nq)
-  ).slice(0, 12);
+  const nq = q.toLowerCase().trim();
+  if (nq.length < 2) return [];
+  const scored = [];
+  for (const p of SITE_PAGES) {
+    const title = p.title.toLowerCase();
+    if (title.includes(nq)) {
+      scored.push([title === nq ? 0 : title.startsWith(nq) ? 1 : 2, p]);
+    } else if (
+      p.group.toLowerCase().includes(nq) ||
+      p.description.toLowerCase().includes(nq) ||
+      p.keywords.includes(nq)
+    ) {
+      scored.push([3, p]);
+    }
+  }
+  scored.sort((a, b) => a[0] - b[0] || a[1].title.localeCompare(b[1].title));
+  return scored.slice(0, 15).map((s) => s[1]);
 }
 
 function openSearchPage(mode, updateRoute = true) {

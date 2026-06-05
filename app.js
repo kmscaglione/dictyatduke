@@ -4085,9 +4085,9 @@ function renderStringResults(gene, data, imgContainer, container) {
 
 // --- Search page (General / Phenotype / GO term / Localization) ---
 const SEARCH_PAGE_MODES = [
-  { key: "general", label: "General", title: "Gene search",
-    blurb: "Find genes by symbol, DDB gene ID, or protein name.",
-    placeholder: "Gene symbol, DDB_G…, or name — e.g. cln5, mhcA, kinase" },
+  { key: "general", label: "General", title: "Search dictyBase",
+    blurb: "Search the whole site — genes plus organisms, research pages, and tools.",
+    placeholder: "Search genes, pages, organisms, tools — e.g. cln5, BLAST, nomenclature" },
   { key: "phenotype", label: "Phenotype", title: "Phenotype search",
     blurb: "Find genes by curated mutant phenotype.",
     placeholder: "Phenotype term — e.g. chemotaxis, aggregation, spore" },
@@ -4102,6 +4102,37 @@ const SEARCH_PAGE_MODES = [
 let searchPageMode = "general";
 let searchPageDebounce = null;
 let searchPageReq = 0; // invalidates stale async results when typing or switching mode
+
+// A searchable index of every site destination, harvested from the primary
+// nav so it always matches what's actually linked (research pages, organisms,
+// tools, community pages, the genome browser, …). Built once at startup.
+let SITE_PAGES = [];
+function buildSiteIndex() {
+  const seen = new Set();
+  SITE_PAGES = [...document.querySelectorAll(".nav-links .menu-option")]
+    .map((a) => {
+      const href = a.getAttribute("href") || "";
+      const group = a.closest(".nav-item")?.querySelector(".nav-trigger")?.textContent.trim() || "";
+      return {
+        title: a.querySelector("strong")?.textContent.trim() || a.textContent.trim(),
+        description: a.querySelector("span")?.textContent.trim() || "",
+        href,
+        group,
+        external: a.target === "_blank" || /^https?:/i.test(href),
+      };
+    })
+    .filter((p) => p.href && p.title && !seen.has(p.href) && seen.add(p.href));
+}
+
+function searchSitePages(q) {
+  const nq = q.toLowerCase();
+  if (!nq) return [];
+  return SITE_PAGES.filter((p) =>
+    p.title.toLowerCase().includes(nq) ||
+    p.description.toLowerCase().includes(nq) ||
+    p.group.toLowerCase().includes(nq)
+  ).slice(0, 12);
+}
 
 function openSearchPage(mode, updateRoute = true) {
   hideContentSections();
@@ -4157,35 +4188,52 @@ function runSearchPageQuery(mode, value) {
     el.innerHTML = `<p class="notice muted">Type at least two characters to search.</p>`;
     return;
   }
-  if (mode === "general") renderGeneSearchResults(el, q);
+  if (mode === "general") renderGeneralResults(el, q);
   else if (mode === "phenotype") runPhenotypeSearch(el, q, req);
   else if (mode === "go") runGOTermSearch(el, q, null, req);
   else if (mode === "localization") runGOTermSearch(el, q, "cellular_component", req);
 }
 
-function renderGeneSearchResults(el, q) {
-  if (!geneIndex.length && !genes.length) {
-    el.innerHTML = `<p class="notice muted">Loading gene catalog… type again in a moment.</p>`;
-    return;
-  }
-  // Mirror the home search: curated records first, then the rest of the
-  // catalog (deduped by NCBI id) so a result opens the same record the user
-  // would reach anywhere else on the site rather than a bare NCBI version.
+// Site-wide search: genes plus any site page/tool/organism/research entry.
+function renderGeneralResults(el, q) {
+  // Curated gene records first, then the rest of the catalog (deduped by NCBI
+  // id) so a result opens the same record the user would reach anywhere else.
   const local = rankedGenes(q);
   const localKeys = new Set(local.map((g) => g.ncbiGene));
-  const indexed = searchIndex(q, 60).filter((g) => !localKeys.has(g.ncbiGene));
-  const total = local.length + indexed.length;
-  if (!total) {
-    el.innerHTML = `<p class="notice">No genes match “${escapeHtml(q)}”.</p>`;
+  const indexed = geneIndex.length ? searchIndex(q, 60).filter((g) => !localKeys.has(g.ncbiGene)) : [];
+  const geneTotal = local.length + indexed.length;
+  const pages = searchSitePages(q);
+
+  if (!geneTotal && !pages.length) {
+    const stillLoading = !geneIndex.length && local.length === 0;
+    el.innerHTML = stillLoading
+      ? `<p class="notice muted">Loading the gene catalog… try again in a moment.</p>`
+      : `<p class="notice">Nothing on the site matches “${escapeHtml(q)}”.</p>`;
     return;
   }
-  const card = (g, attr) =>
+
+  const geneCard = (g, attr) =>
     `<a class="technique-link" ${attr} href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span><small>${escapeHtml(g.name || g.id)}</small></a>`;
-  const localHtml = local.map((g) => card(g, `data-gene="${escapeHtml(g.id)}"`)).join("");
-  const indexedHtml = indexed.map((g) => card(g, `data-ncbi-gene="${escapeHtml(g.ncbiGene)}"`)).join("");
-  el.innerHTML = `
-    <p class="notice muted">${total} gene${total === 1 ? "" : "s"} matching “${escapeHtml(q)}”.</p>
-    <div class="technique-links">${localHtml}${indexedHtml}</div>`;
+  const section = (title, count, inner) => `
+    <div class="data-block" style="margin-bottom:14px">
+      <h3 style="font-size:0.9375rem">${escapeHtml(title)} <span style="font-weight:500;color:var(--muted,#6b7280)">· ${count}</span></h3>
+      <div class="technique-links">${inner}</div>
+    </div>`;
+
+  let html = "";
+  if (geneTotal) {
+    html += section("Genes", geneTotal,
+      local.map((g) => geneCard(g, `data-gene="${escapeHtml(g.id)}"`)).join("") +
+      indexed.map((g) => geneCard(g, `data-ncbi-gene="${escapeHtml(g.ncbiGene)}"`)).join(""));
+  }
+  if (pages.length) {
+    html += section("Pages & tools", pages.length, pages.map((p) =>
+      `<a class="technique-link" href="${escapeHtml(p.href)}"${p.external ? ' target="_blank" rel="noopener"' : ""}>
+        <span>${escapeHtml(p.title)}${p.external ? " ↗" : ""}</span>
+        <small>${escapeHtml(p.group)}${p.description ? " · " + escapeHtml(p.description) : ""}</small>
+      </a>`).join(""));
+  }
+  el.innerHTML = html;
 }
 
 async function runPhenotypeSearch(el, q, req) {
@@ -4822,6 +4870,7 @@ function hydrateFromRoute() {
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
 function initialHydrate() {
+  buildSiteIndex();
   renderRecentGenes();
   hydrateFromRoute();
   // From here on, in-app navigation scrolls smoothly.

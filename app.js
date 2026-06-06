@@ -1358,7 +1358,11 @@ function renderRecord() {
       </div>
 
       <div class="record-body" id="record-panel" role="tabpanel" tabindex="0" aria-labelledby="record-tab-${state.activeTab}">${renderTab(gene, state.activeTab)}</div>
-      ${gene._curator ? `<p style="font-size:0.75rem;color:var(--muted,#6b7280);padding:0 24px 16px">Gene summary curated by ${escapeHtml(gene._curator)} · <a class="text-link" href="https://doi.org/10.1002/dvg.22867" target="_blank" rel="noopener">dictyBase (Basu et al. 2015)</a> · <a class="text-link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>` : ""}
+      ${gene._curator ? `<p style="font-size:0.75rem;color:var(--muted,#6b7280);padding:0 24px 4px">Gene summary curated by ${escapeHtml(gene._curator)} · <a class="text-link" href="https://doi.org/10.1002/dvg.22867" target="_blank" rel="noopener">dictyBase (Basu et al. 2015)</a> · <a class="text-link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>` : ""}
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);padding:0 24px 16px">
+        <button type="button" class="text-link cite-toggle" data-cite-symbol="${escapeHtml(gene.symbol)}" style="background:none;border:none;cursor:pointer;color:var(--teal-dark);padding:0">Cite this page</button>
+        · <a class="text-link" href="/community/corrections?gene=${encodeURIComponent(gene.symbol)}">Report an error</a>
+      </p>
     </article>
   `;
   if (gene.uniprot) {
@@ -1482,6 +1486,98 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     loadDownloads();
+  } else if (tool === "enrichment") {
+    toolsShell.innerHTML = renderEnrichmentPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initEnrichment();
+  }
+}
+
+function renderEnrichmentPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Analysis</p>
+          <h2>GO-term enrichment</h2>
+          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find Gene Ontology terms that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all GO-annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <form id="enrich-form">
+          <textarea id="enrich-genes" rows="6" placeholder="mhcA acaA carA rasG pkaC gbpC&#10;DDB_G0286509" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.875rem;padding:10px;border:1px solid var(--line,#d7dee0);border-radius:8px;resize:vertical"></textarea>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px">
+            <button type="submit">Run enrichment</button>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
+              <input id="enrich-min" type="number" min="1" max="50" value="2" style="width:56px;margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
+            </label>
+            <button type="button" id="enrich-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
+          </div>
+        </form>
+        <div id="enrich-results" style="margin-top:18px"></div>
+      </div>
+    </article>`;
+}
+
+function initEnrichment() {
+  const form = document.getElementById("enrich-form");
+  const example = document.getElementById("enrich-example");
+  if (example) example.addEventListener("click", () => {
+    document.getElementById("enrich-genes").value =
+      "abpA abpC corA ctxA ctxB fimA sevA proA proB myoB racE limE forH arpB cofA myoI";
+  });
+  if (form) form.addEventListener("submit", (e) => { e.preventDefault(); runEnrichment(); });
+}
+
+async function runEnrichment() {
+  const out = document.getElementById("enrich-results");
+  const raw = document.getElementById("enrich-genes").value.trim();
+  const minStudy = Math.max(1, Math.min(50, parseInt(document.getElementById("enrich-min").value, 10) || 2));
+  if (!raw) { out.innerHTML = `<p class="notice">Enter at least one gene.</p>`; return; }
+  const genes = raw.split(/[\s,]+/).filter(Boolean);
+  out.innerHTML = `<p class="notice muted">Testing ${genes.length} gene${genes.length === 1 ? "" : "s"} against the GO annotation…</p>`;
+  try {
+    const res = await fetch("/api/enrichment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ genes, min_study: minStudy })
+    });
+    const data = await res.json();
+    if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "Enrichment failed.")}</p>`; return; }
+    const rows = data.results || [];
+    const ASPECT = { P: "biological process", F: "molecular function", C: "cellular component" };
+    const head = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">
+      ${data.study_n} of ${genes.length} gene${genes.length === 1 ? "" : "s"} mapped to annotations · background ${data.background_n.toLocaleString()} genes
+      ${data.unmatched.length ? ` · <span title="${escapeHtml(data.unmatched.join(", "))}">${data.unmatched.length} not recognized</span>` : ""}</p>`;
+    if (!rows.length) { out.innerHTML = head + `<p class="notice">No GO terms reached the threshold for this list.</p>`; return; }
+    out.innerHTML = head + `
+      <div style="overflow-x:auto">
+      <table class="enrich-table" style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+          <th style="padding:6px 8px">GO term</th><th style="padding:6px 8px">Aspect</th>
+          <th style="padding:6px 8px" title="genes in your list with this term / genes tested">In list</th>
+          <th style="padding:6px 8px" title="fold over the genome-wide rate">Fold</th>
+          <th style="padding:6px 8px">P</th><th style="padding:6px 8px" title="Benjamini–Hochberg FDR">q (FDR)</th>
+        </tr></thead>
+        <tbody>
+          ${rows.map((t) => {
+            const sig = t.q_value < 0.05;
+            const name = t.name ? escapeHtml(t.name) : `<span style="color:var(--muted,#6b7280)">${escapeHtml(t.id)}</span>`;
+            return `<tr style="border-bottom:1px solid var(--line,#eef2f3)${sig ? "" : ";opacity:.6"}">
+              <td style="padding:6px 8px"><a class="text-link" href="/go/${escapeHtml(t.id)}">${name}</a></td>
+              <td style="padding:6px 8px">${ASPECT[t.aspect] || t.aspect}</td>
+              <td style="padding:6px 8px">${t.study_count}/${t.study_n}</td>
+              <td style="padding:6px 8px">${t.fold_enrichment != null ? t.fold_enrichment + "×" : "—"}</td>
+              <td style="padding:6px 8px">${t.p_value.toExponential(1)}</td>
+              <td style="padding:6px 8px">${t.q_value.toExponential(1)}</td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table></div>
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Rows with FDR ≥ 0.05 are dimmed. Term names link to the GO browser.</p>`;
+  } catch {
+    out.innerHTML = `<p class="notice">Could not reach the enrichment service.</p>`;
   }
 }
 
@@ -4185,9 +4281,13 @@ async function loadAISummary(gene) {
   if (state.activeGene !== gene || state.activeTab !== "Summary") return;
   const ai = aiCurationFor(gene);
   if (!ai || !ai.summary || !getCurationLayers().ai) { el.innerHTML = ""; return; }
+  const tier = ai.basis === "family"
+    ? `<span class="ai-tier" title="Predicted from the gene's protein family/domain, not gene-specific literature">family-level</span>`
+    : ai.basis === "annotation" ? ""
+    : `<span class="ai-tier" title="Model-authored from gene-specific knowledge for this well-studied gene">gene-specific</span>`;
   el.innerHTML = `
     <div class="ai-summary">
-      <h3>AI summary <span class="src-badge src-ai">AI</span></h3>
+      <h3>AI summary <span class="src-badge src-ai">AI</span> ${tier}</h3>
       <p>${escapeHtml(ai.summary)}</p>
       <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
     </div>`;
@@ -5075,11 +5175,25 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
     }
+  }
+
+  const citeToggle = event.target.closest(".cite-toggle");
+  if (citeToggle) {
+    const sym = citeToggle.dataset.citeSymbol || "";
+    const existing = citeToggle.parentElement.querySelector(".cite-box");
+    if (existing) { existing.remove(); return; }
+    const today = new Date().toISOString().slice(0, 10);
+    const box = document.createElement("span");
+    box.className = "cite-box";
+    box.style.cssText = "display:block;margin-top:6px;padding:8px 10px;background:var(--soft,#edf6f2);border-radius:6px;color:var(--ink,#1f2937);font-size:0.75rem;line-height:1.5";
+    box.textContent = `Dicty@Duke. ${sym} gene record. Duke University. Retrieved ${today} from ${location.origin}/gene/${sym}`;
+    citeToggle.parentElement.appendChild(box);
+    return;
   }
 
   const blastClear = event.target.closest("#blast-clear");

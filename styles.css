@@ -395,6 +395,12 @@ button,
   text-align: left;
 }
 
+.suggestion.is-active {
+  border-color: var(--teal);
+  background: var(--soft);
+  color: var(--teal-dark);
+}
+
 .suggestion span {
   display: block;
 }

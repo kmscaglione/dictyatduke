@@ -1350,11 +1350,14 @@ function renderRecord() {
         `).join("")}
       </div>
 
-      <div class="tabs" aria-label="Record sections">
-        ${tabs.map((tab) => `<button class="tab ${tab === state.activeTab ? "active" : ""}" type="button" data-tab="${tab}">${tab}</button>`).join("")}
+      <div class="tabs" role="tablist" aria-label="Record sections">
+        ${tabs.map((tab) => {
+          const active = tab === state.activeTab;
+          return `<button class="tab ${active ? "active" : ""}" type="button" role="tab" id="record-tab-${tab}" data-tab="${tab}" aria-controls="record-panel" aria-selected="${active}" tabindex="${active ? "0" : "-1"}">${tab}</button>`;
+        }).join("")}
       </div>
 
-      <div class="record-body">${renderTab(gene, state.activeTab)}</div>
+      <div class="record-body" id="record-panel" role="tabpanel" tabindex="0" aria-labelledby="record-tab-${state.activeTab}">${renderTab(gene, state.activeTab)}</div>
       ${gene._curator ? `<p style="font-size:0.75rem;color:var(--muted,#6b7280);padding:0 24px 16px">Gene summary curated by ${escapeHtml(gene._curator)} · <a class="text-link" href="https://doi.org/10.1002/dvg.22867" target="_blank" rel="noopener">dictyBase (Basu et al. 2015)</a> · <a class="text-link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>` : ""}
     </article>
   `;
@@ -1402,12 +1405,18 @@ function switchTab(tab) {
   const gene = state.activeGene;
   if (!gene) return;
   state.activeTab = tab;
-  recordShell.querySelectorAll(".tab").forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
+  recordShell.querySelectorAll(".tab").forEach((b) => {
+    const isActive = b.dataset.tab === tab;
+    b.classList.toggle("active", isActive);
+    b.setAttribute("aria-selected", String(isActive));
+    b.tabIndex = isActive ? 0 : -1;
+  });
   const body = recordShell.querySelector(".record-body");
   if (!body) {
     renderRecord();
     return;
   }
+  body.setAttribute("aria-labelledby", `record-tab-${tab}`);
   body.innerHTML = renderTab(gene, tab);
   loadTabData(gene, tab);
 }
@@ -4918,6 +4927,86 @@ form.addEventListener("submit", async (event) => {
 
 input.addEventListener("input", () => renderSuggestions(input.value));
 
+// --- Accessible combobox keyboard navigation for the gene-search autocomplete ---
+// The suggestion dropdown is rendered as `.suggestion` buttons inside
+// `#suggestions` by several code paths (renderSuggestions / fetchNCBISuggestions).
+// Rather than touch each render site, a MutationObserver re-applies the listbox
+// ARIA wiring (role="option" + unique ids) whenever the dropdown contents change.
+let suggestionActiveIndex = -1;
+
+function suggestionOptions() {
+  return Array.from(suggestions.querySelectorAll(".suggestion"));
+}
+
+function decorateSuggestionOptions() {
+  const opts = suggestionOptions();
+  opts.forEach((opt, i) => {
+    opt.setAttribute("role", "option");
+    if (!opt.id) opt.id = `suggestion-option-${i}`;
+    opt.setAttribute("aria-selected", "false");
+  });
+  input.setAttribute("aria-expanded", opts.length ? "true" : "false");
+  // The DOM was just replaced — any previous highlight is gone.
+  suggestionActiveIndex = -1;
+  input.removeAttribute("aria-activedescendant");
+}
+
+const suggestionObserver = new MutationObserver(decorateSuggestionOptions);
+suggestionObserver.observe(suggestions, { childList: true });
+
+function setActiveSuggestion(index) {
+  const opts = suggestionOptions();
+  if (!opts.length) return;
+  // Wrap at the ends.
+  if (index < 0) index = opts.length - 1;
+  if (index >= opts.length) index = 0;
+  opts.forEach((opt, i) => opt.setAttribute("aria-selected", i === index ? "true" : "false"));
+  opts.forEach((opt) => opt.classList.remove("is-active"));
+  const active = opts[index];
+  active.classList.add("is-active");
+  active.scrollIntoView({ block: "nearest" });
+  input.setAttribute("aria-activedescendant", active.id);
+  suggestionActiveIndex = index;
+}
+
+function clearSuggestions() {
+  suggestions.innerHTML = "";
+  suggestionActiveIndex = -1;
+  input.setAttribute("aria-expanded", "false");
+  input.removeAttribute("aria-activedescendant");
+}
+
+input.addEventListener("keydown", (event) => {
+  const opts = suggestionOptions();
+  switch (event.key) {
+    case "ArrowDown":
+      if (!opts.length) return;
+      event.preventDefault();
+      setActiveSuggestion(suggestionActiveIndex + 1);
+      break;
+    case "ArrowUp":
+      if (!opts.length) return;
+      event.preventDefault();
+      setActiveSuggestion(suggestionActiveIndex - 1);
+      break;
+    case "Enter":
+      // Activate the highlighted suggestion via the existing click path.
+      // With nothing highlighted, fall through to the form's submit handler.
+      if (suggestionActiveIndex >= 0 && opts[suggestionActiveIndex]) {
+        event.preventDefault();
+        opts[suggestionActiveIndex].click();
+      }
+      break;
+    case "Escape":
+      if (opts.length) {
+        event.preventDefault();
+        clearSuggestions();
+        input.focus();
+      }
+      break;
+  }
+});
+
 document.addEventListener("click", (event) => {
   const mobileToggle = event.target.closest(".mobile-menu-toggle");
   if (mobileToggle && mobileMenu) {
@@ -5139,6 +5228,50 @@ document.addEventListener("click", (event) => {
     openGOTerm(goRef.dataset.goRef);
     return;
   }
+});
+
+// Standard ARIA tabs keyboard pattern for the gene-record tab strip:
+// Left/Right (and Home/End) move focus between tabs and activate the focused
+// tab; Enter/Space activate the focused tab. Activation reuses switchTab so the
+// existing lazy-load-on-open behavior is preserved.
+recordShell.addEventListener("keydown", (event) => {
+  const tab = event.target.closest('[role="tab"][data-tab]');
+  if (!tab || !state.activeGene) return;
+  const tabsList = Array.from(recordShell.querySelectorAll('[role="tab"][data-tab]'));
+  const current = tabsList.indexOf(tab);
+  let nextIndex = -1;
+  switch (event.key) {
+    case "ArrowRight":
+    case "ArrowDown":
+      nextIndex = (current + 1) % tabsList.length;
+      break;
+    case "ArrowLeft":
+    case "ArrowUp":
+      nextIndex = (current - 1 + tabsList.length) % tabsList.length;
+      break;
+    case "Home":
+      nextIndex = 0;
+      break;
+    case "End":
+      nextIndex = tabsList.length - 1;
+      break;
+    case "Enter":
+    case " ":
+      event.preventDefault();
+      switchTab(tab.dataset.tab);
+      setRoute(state.activeGene, state.activeTab);
+      return;
+    default:
+      return;
+  }
+  event.preventDefault();
+  const target = tabsList[nextIndex];
+  if (!target) return;
+  // Activate on focus (standard automatic-activation tabs pattern).
+  switchTab(target.dataset.tab);
+  setRoute(state.activeGene, state.activeTab);
+  // switchTab rewrites tabindex; re-query and focus the now-active tab.
+  recordShell.querySelector(`[role="tab"][data-tab="${target.dataset.tab}"]`)?.focus();
 });
 
 window.addEventListener("popstate", hydrateFromRoute);

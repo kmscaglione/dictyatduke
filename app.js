@@ -5510,10 +5510,63 @@ function hydrateFromRoute() {
 // off for deep links (/gene, /go, /strain, /data, …).
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
+// --- Hero video: a YouTube clip cued to a segment, muted + autoplay + looped.
+// ToS-compliant embed (no rehosting), on the privacy-enhanced youtube-nocookie
+// host. Honors prefers-reduced-motion by falling back to a static thumbnail. ---
+let heroPlayer = null;
+function initHeroVideo() {
+  const wrap = document.querySelector("[data-yt-hero]");
+  const mount = document.getElementById("hero-yt");
+  if (!wrap || !mount) return;
+  const id = wrap.dataset.ytId;
+  const start = parseInt(wrap.dataset.ytStart, 10) || 0;
+  const end = parseInt(wrap.dataset.ytEnd, 10) || 0;
+  // Reduced-motion users get a static thumbnail that links to YouTube instead.
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    mount.outerHTML = `<a class="hero-video-fallback" href="https://youtu.be/${id}?t=${start}" target="_blank" rel="noopener">`
+      + `<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="Dictyostelium development film — play on YouTube"></a>`;
+    return;
+  }
+  const make = () => {
+    heroPlayer = new YT.Player("hero-yt", {
+      videoId: id,
+      host: "https://www.youtube-nocookie.com",
+      playerVars: {
+        autoplay: 1, mute: 1, controls: 0, start: start, end: end,
+        modestbranding: 1, playsinline: 1, rel: 0, disablekb: 1, fs: 0, iv_load_policy: 3,
+      },
+      events: {
+        onReady: (e) => {
+          e.target.mute();
+          e.target.seekTo(start);
+          e.target.playVideo();
+          // The end param stops playback but doesn't reliably loop a segment, so
+          // poll and seek back to the start when we pass the end.
+          setInterval(() => {
+            try { if (end && e.target.getCurrentTime() >= end) e.target.seekTo(start); } catch { /* not ready */ }
+          }, 500);
+        },
+        onStateChange: (e) => {
+          if (e.data === YT.PlayerState.ENDED) { e.target.seekTo(start); e.target.playVideo(); }
+        },
+      },
+    });
+  };
+  if (window.YT && window.YT.Player) { make(); return; }
+  const prev = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = () => { if (typeof prev === "function") prev(); make(); };
+  if (!document.querySelector('script[src*="iframe_api"]')) {
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+  }
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
   hydrateFromRoute();
+  initHeroVideo();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

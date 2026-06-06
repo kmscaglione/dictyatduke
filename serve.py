@@ -354,6 +354,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/domains"):
             self._handle_domains()
             return
+        if self.path.startswith("/api/coexpression"):
+            self._handle_coexpression()
+            return
 
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
@@ -480,6 +483,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_enrichment()
         else:
             self.send_error(404)
+
+    def _handle_coexpression(self):
+        """GET /api/coexpression?ddb=DDB_G...&n= -> co-expressed genes."""
+        q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "bad or missing ddb"})
+            return
+        try:
+            n = max(1, min(int(q.get("n", ["12"])[0]), 50))
+        except ValueError:
+            n = 12
+        try:
+            self.send_json(200, enrichment.coexpression(ddb, n=n))
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
 
     def _handle_domains(self):
         """GET /api/domains?acc=UNIPROT -> {length, domains:[...]}.

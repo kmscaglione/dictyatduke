@@ -86,5 +86,20 @@ class PhenotypeEnrichTest(unittest.TestCase):
         self.assertEqual(r["results"], [])
 
 
+class CoexpressionTest(unittest.TestCase):
+    def test_self_excluded_and_sorted(self):
+        cx = enrichment._load_coexp()
+        ddb = next(iter(cx["vecs"]))  # any gene with a non-flat profile
+        r = enrichment.coexpression(ddb, n=10)
+        ids = [x["ddb"] for x in r["results"]]
+        self.assertNotIn(ddb, ids)                      # self excluded
+        rs = [x["r"] for x in r["results"]]
+        self.assertEqual(rs, sorted(rs, reverse=True))  # descending r
+        self.assertTrue(all(-1.0001 <= x <= 1.0001 for x in rs))
+
+    def test_unknown_gene(self):
+        self.assertEqual(enrichment.coexpression("DDB_G9999999")["results"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

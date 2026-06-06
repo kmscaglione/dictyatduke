@@ -1377,6 +1377,8 @@ function loadTabData(gene, tab) {
     case "Summary":
       requestAnimationFrame(() => loadRNAseqInline(gene));
       loadAISummary(gene);
+      loadGeneModel(gene);
+      loadCoexpression(gene);
       break;
     case "GO":
       loadGOResults(gene);
@@ -3570,6 +3572,7 @@ function renderTab(gene, tab) {
   }
   return `
     <div data-ai-summary></div>
+    <section class="data-block" data-gene-model hidden></section>
     <div class="section-grid">
       <div style="display:grid;gap:14px;align-content:start">
         <section class="data-block">
@@ -3579,6 +3582,7 @@ function renderTab(gene, tab) {
           </div>
           <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
         </section>
+        <section class="data-block" data-coexpression hidden></section>
         <section class="data-block">
           <h3>Record coverage</h3>
           <div class="kv">
@@ -4655,6 +4659,69 @@ async function runComparative(gene) {
     </table></div>
     <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3). The <em>D. discoideum</em> AX4 row is this gene's own locus.</p>`;
   reset("Re-run comparison");
+}
+
+// Gene model (exon/intron) diagram from assets/gene_models.json.
+let geneModelData = null;
+async function ensureGeneModels() {
+  if (geneModelData) return geneModelData;
+  try {
+    const res = await fetch("/assets/gene_models.json");
+    geneModelData = res.ok ? await res.json() : {};
+  } catch { geneModelData = {}; }
+  return geneModelData;
+}
+async function loadGeneModel(gene) {
+  const el = document.querySelector("[data-gene-model]");
+  if (!el) return;
+  try { await ensureGeneModels(); } catch { return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  const m = geneModelData[(gene.veupath || gene.ddb || "").toUpperCase()];
+  if (!m || !m.exons || !m.exons.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  const gstart = m.start, glen = Math.max(1, m.end - m.start);
+  const W = 760, H = 46, pad = 6, y = 22, exonH = 12, cdsH = 16;
+  const x = (p) => pad + ((p - gstart) / glen) * (W - 2 * pad);
+  const within = (s, e, list) => list.some(([cs, ce]) => s < ce && e > cs);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Gene model, ${m.exons.length} exons">`;
+  // intron line across the whole span
+  svg += `<line x1="${x(m.start)}" y1="${y + exonH / 2}" x2="${x(m.end)}" y2="${y + exonH / 2}" stroke="var(--line,#d7dee0)" stroke-width="2"/>`;
+  for (const [s, e] of m.exons) {
+    const coding = within(s, e, m.cds || []);
+    const bx = x(s), bw = Math.max(1.5, x(e) - x(s));
+    const h = coding ? cdsH : exonH, ty = coding ? y - 2 : y;
+    svg += `<rect x="${bx.toFixed(1)}" y="${ty}" width="${bw.toFixed(1)}" height="${h}" rx="1.5" fill="${coding ? "var(--teal,#00539b)" : "#a9bcd6"}"><title>exon ${s.toLocaleString()}–${e.toLocaleString()}</title></rect>`;
+  }
+  svg += `<text x="${pad}" y="12" font-size="9" fill="var(--muted,#6b7280)">${m.chrom} (${m.strand})</text>`;
+  svg += `<text x="${W - pad}" y="12" font-size="9" fill="var(--muted,#6b7280)" text-anchor="end">${glen.toLocaleString()} bp</text>`;
+  svg += `</svg>`;
+  el.innerHTML = `<h3>Gene model <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${m.exons.length} exon${m.exons.length === 1 ? "" : "s"}, ${m.strand} strand</span></h3>${svg}<p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Tall blue = coding (CDS), short grey = UTR/non-coding exon, line = intron. ${m.strand === "+" ? "5′→3′ left to right." : "Minus strand (coordinates increase left to right)."}</p>`;
+}
+
+// Co-expressed genes (Pearson over the Parikh developmental time course).
+async function loadCoexpression(gene) {
+  const el = document.querySelector("[data-coexpression]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.setAttribute("hidden", ""); return; }
+  let data;
+  try {
+    const res = await fetch(`/api/coexpression?ddb=${encodeURIComponent(ddb)}&n=12`);
+    data = await res.json();
+    if (!res.ok) throw new Error();
+  } catch { el.setAttribute("hidden", ""); return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  const rows = data.results || [];
+  if (!rows.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `
+    <h3>Co-expressed genes <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— similar developmental profile</span></h3>
+    <ul class="list" style="font-size:0.8125rem">
+      ${rows.map((r) => `<li style="display:flex;justify-content:space-between;gap:8px">
+        <a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a>
+        <span style="color:var(--muted,#6b7280)">r = ${r.r.toFixed(2)}</span></li>`).join("")}
+    </ul>
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Pearson correlation of RNA-seq profiles (Parikh time course). Correlation ≠ function — a hypothesis-generation aid.</p>`;
 }
 
 async function loadRNAseqInline(gene) {

@@ -276,3 +276,48 @@ def enrich_phenotypes(tokens, min_study=2, max_terms=200):
         "background_n": M,
         "results": results,
     }
+
+
+# --- Co-expression (Pearson over the Parikh developmental time course) -----
+_coexp = {}
+_COEXP_TPS = ["0", "4", "8", "12", "16", "20", "24"]
+
+
+def _load_coexp():
+    if _coexp:
+        return _coexp
+    rna = json.loads((ASSETS / "rnaseq_parikh.json").read_text())
+    vecs = {}  # ddb -> (mean-centered 7-vector, norm)
+    for ddb, vals in rna.items():
+        v = [float(vals.get(tp, 0) or 0) for tp in _COEXP_TPS]
+        m = sum(v) / len(v)
+        c = [x - m for x in v]
+        norm = sum(x * x for x in c) ** 0.5
+        if norm > 0:  # drop flat/zero profiles (no correlation defined)
+            vecs[ddb] = (c, norm)
+    idx = json.loads((ASSETS / "gene_index.json").read_text())
+    sym = {r[0]: (r[1] or r[0]) for r in idx if r and r[0]}
+    _coexp.update(vecs=vecs, sym=sym)
+    return _coexp
+
+
+def coexpression(ddb, n=12, min_r=0.5):
+    """Top-n genes whose developmental expression correlates with `ddb`."""
+    cx = _load_coexp()
+    q = cx["vecs"].get(ddb)
+    if not q:
+        return {"query": ddb, "results": []}
+    qc, qn = q
+    scored = []
+    for d, (c, nrm) in cx["vecs"].items():
+        if d == ddb:
+            continue
+        r = sum(a * b for a, b in zip(qc, c)) / (qn * nrm)
+        scored.append((r, d))
+    scored.sort(reverse=True)
+    out = []
+    for r, d in scored[:n]:
+        if r < min_r:
+            break
+        out.append({"ddb": d, "symbol": cx["sym"].get(d, d), "r": round(r, 4)})
+    return {"query": ddb, "results": out}

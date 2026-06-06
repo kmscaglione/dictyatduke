@@ -1404,6 +1404,7 @@ function loadTabData(gene, tab) {
       break;
     case "Structures":
       loadDomains(gene);
+      loadConservation(gene);
       loadPDBResults(gene);
       break;
   }
@@ -1506,6 +1507,80 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initLab();
+  } else if (tool === "expression") {
+    toolsShell.innerHTML = renderExpressionPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initExpressionCompare();
+  }
+}
+
+function renderExpressionPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Analysis</p>
+          <h2>Compare gene expression</h2>
+          <p>Overlay the developmental RNA-seq profiles (Parikh et al. time course) of several genes to compare candidates at a glance.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+          <input id="expr-genes" placeholder="genes — e.g. mhcA acaA carA rasG pkaC" style="${FIELD};min-width:340px;flex:1">
+          <button type="button" id="expr-run">Plot</button>
+        </div>
+        <div data-expr-results style="margin-top:12px"><canvas id="expr-chart" height="120" hidden></canvas></div>
+      </div>
+    </article>`;
+}
+
+function initExpressionCompare() {
+  const b = document.getElementById("expr-run");
+  if (b) b.addEventListener("click", runExpressionCompare);
+}
+
+let exprChart = null;
+async function runExpressionCompare() {
+  const out = document.querySelector("[data-expr-results]");
+  const raw = (document.getElementById("expr-genes").value || "").trim();
+  if (!raw) { out.innerHTML = `<p class="notice">Enter one or more genes.</p>`; return; }
+  out.innerHTML = `<p class="notice muted">Loading expression…</p>`;
+  let data;
+  try {
+    data = await (await fetch(`/api/expression?genes=${encodeURIComponent(raw)}`)).json();
+    if (data.error) throw new Error(data.error);
+  } catch { out.innerHTML = `<p class="notice">Could not load expression data.</p>`; return; }
+  if (!data.series || !data.series.length) {
+    out.innerHTML = `<p class="notice">No expression data for those genes.${data.unmatched && data.unmatched.length ? " Unrecognized: " + escapeHtml(data.unmatched.join(", ")) : ""}</p>`;
+    return;
+  }
+  const palette = ["#00539b", "#be123c", "#047857", "#b45309", "#6b2fb3", "#0891b2", "#9d174d", "#1d4ed8"];
+  out.innerHTML = `<canvas id="expr-chart" height="120"></canvas>${data.unmatched && data.unmatched.length ? `<p style="font-size:.75rem;color:var(--muted,#6b7280);margin-top:6px">Not recognized: ${escapeHtml(data.unmatched.join(", "))}</p>` : ""}`;
+  const draw = () => {
+    if (!window.Chart) return;
+    if (exprChart) exprChart.destroy();
+    exprChart = new Chart(document.getElementById("expr-chart"), {
+      type: "line",
+      data: {
+        labels: data.timepoints.map((t) => t + "h"),
+        datasets: data.series.map((s, i) => ({
+          label: s.symbol, data: s.values,
+          borderColor: palette[i % palette.length],
+          backgroundColor: palette[i % palette.length] + "22",
+          tension: 0.3, pointRadius: 3, fill: false,
+        })),
+      },
+      options: { responsive: true, maintainAspectRatio: true,
+        scales: { y: { title: { display: true, text: "RPKM" } },
+                  x: { title: { display: true, text: "Development (h)" } } } },
+    });
+  };
+  if (window.Chart) { draw(); } else {
+    const s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js";
+    s.onload = draw;
+    document.head.appendChild(s);
   }
 }
 
@@ -3670,6 +3745,7 @@ function renderTab(gene, tab) {
         <h3>Domain architecture <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— InterPro / Pfam</span></h3>
         <div data-domains>${gene.uniprot ? `<p class="notice muted">Loading domains for ${escapeHtml(gene.uniprot)}…</p>` : `<p class="notice muted">No UniProt accession for this gene.</p>`}</div>
       </div>
+      <div class="data-block" data-conservation></div>
       <div class="data-block">
         <h3>Predicted structures</h3>
         <ul class="list">${structureItems}</ul>
@@ -5506,6 +5582,56 @@ function domainColor(s) {
   return DOMAIN_COLORS[h % DOMAIN_COLORS.length];
 }
 
+// Per-residue protein conservation across the dictyostelid genomes (on-demand).
+function loadConservation(gene) {
+  const el = document.querySelector("[data-conservation]");
+  if (!el) return;
+  if (!gene.uniprot && !/^DDB_G\d+$/.test(gene.veupath || gene.ddb || "")) { el.innerHTML = ""; return; }
+  el.innerHTML = `
+    <h3>Conservation across dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— tblastn vs 9 genomes</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Per-residue protein conservation across the sequenced dictyostelids — darker = more conserved. Runs on demand.</p>
+    <button type="button" id="conservation-run">Compute conservation</button>
+    <div data-conservation-results style="margin-top:12px"></div>`;
+  const btn = document.getElementById("conservation-run");
+  if (btn) btn.addEventListener("click", () => runConservation(gene));
+}
+
+async function runConservation(gene) {
+  const out = document.querySelector("[data-conservation-results]");
+  const btn = document.getElementById("conservation-run");
+  if (!out || (btn && btn.disabled)) return;
+  if (btn) { btn.disabled = true; btn.textContent = "Computing…"; }
+  const ddb = gene.veupath || gene.ddb;
+  out.innerHTML = `<p class="notice muted">Running tblastn against the nine genomes…</p>`;
+  let data;
+  try {
+    data = await (await fetch(`/api/conservation?ddb=${encodeURIComponent(ddb)}`)).json();
+    if (data.error) throw new Error(data.error);
+  } catch {
+    out.innerHTML = `<p class="notice">Conservation could not be computed.</p>`;
+    if (btn) { btn.disabled = false; btn.textContent = "Compute conservation"; }
+    return;
+  }
+  if (state.activeGene !== gene || state.activeTab !== "Structures") return;
+  const c = data.conservation || [];
+  const L = data.length || c.length;
+  if (!L || !data.homologs) { out.innerHTML = `<p class="notice muted">No homologs found in the other genomes.</p>`; if (btn) { btn.disabled = false; btn.textContent = "Compute conservation"; } return; }
+  const W = 760, H = 30, pad = 4, cols = Math.min(L, 600), colW = (W - 2 * pad) / cols;
+  const shade = (f) => `rgb(${Math.round(231 - f * 231)}, ${Math.round(238 - f * 155)}, ${Math.round(247 - f * 92)})`; // light -> Duke navy
+  let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="none" role="img" aria-label="Conservation track">`;
+  for (let i = 0; i < cols; i++) {
+    const a = Math.floor(i * L / cols), b = Math.max(a + 1, Math.floor((i + 1) * L / cols));
+    let s = 0; for (let j = a; j < b; j++) s += c[j] || 0;
+    const f = s / (b - a);
+    svg += `<rect x="${(pad + i * colW).toFixed(2)}" y="4" width="${(colW + 0.5).toFixed(2)}" height="${H - 8}" fill="${shade(f)}"/>`;
+  }
+  svg += `</svg>`;
+  const mean = c.reduce((a, b) => a + b, 0) / (c.length || 1);
+  out.innerHTML = `${svg}
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">${data.homologs} dictyostelid homolog${data.homologs === 1 ? "" : "s"} · mean conservation ${(mean * 100).toFixed(0)}% · darker = identical across more species. Query-anchored from pairwise tblastn alignments (not a multiple alignment).</p>`;
+  if (btn) { btn.disabled = false; btn.textContent = "Re-run"; }
+}
+
 async function loadDomains(gene) {
   const el = document.querySelector("[data-domains]");
   if (!el || !gene.uniprot) return;
@@ -5780,7 +5906,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -6019,7 +6145,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

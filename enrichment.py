@@ -297,8 +297,25 @@ def _load_coexp():
             vecs[ddb] = (c, norm)
     idx = json.loads((ASSETS / "gene_index.json").read_text())
     sym = {r[0]: (r[1] or r[0]) for r in idx if r and r[0]}
-    _coexp.update(vecs=vecs, sym=sym)
+    _coexp.update(vecs=vecs, sym=sym, raw=rna)
     return _coexp
+
+
+def expression_profiles(tokens):
+    """Raw RNA-seq profiles for a gene list (for the multi-gene comparison)."""
+    _load()
+    cx = _load_coexp()
+    matched, unmatched = resolve_genes(tokens)
+    series = []
+    for ddb in sorted(matched):
+        vals = cx["raw"].get(ddb)
+        if not vals:
+            continue
+        series.append({
+            "ddb": ddb, "symbol": cx["sym"].get(ddb, ddb),
+            "values": [round(float(vals.get(tp, 0) or 0), 3) for tp in _COEXP_TPS],
+        })
+    return {"timepoints": _COEXP_TPS, "series": series, "unmatched": unmatched}
 
 
 def coexpression(ddb, n=12, min_r=0.5):

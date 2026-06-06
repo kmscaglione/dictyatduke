@@ -100,6 +100,15 @@ class CoexpressionTest(unittest.TestCase):
     def test_unknown_gene(self):
         self.assertEqual(enrichment.coexpression("DDB_G9999999")["results"], [])
 
+    def test_expression_profiles(self):
+        r = enrichment.expression_profiles(["mhcA", "__nope__"])
+        self.assertEqual(len(r["timepoints"]), 7)
+        self.assertTrue(r["series"])
+        s = r["series"][0]
+        self.assertEqual(len(s["values"]), 7)
+        self.assertIn("symbol", s)
+        self.assertIn("__nope__", r["unmatched"])
+
 
 if __name__ == "__main__":
     unittest.main()

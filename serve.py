@@ -358,6 +358,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/coexpression"):
             self._handle_coexpression()
             return
+        if self.path.startswith("/api/expression"):
+            self._handle_expression()
+            return
+        if self.path.startswith("/api/conservation"):
+            self._handle_conservation()
+            return
         if self.path.startswith("/api/crispr"):
             self._handle_crispr()
             return
@@ -573,6 +579,76 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 counts[f[0]] = counts.get(f[0], 0) + 1
         for i, g in enumerate(guides):
             g["off_targets"] = max(0, counts.get(f"g{i}", 1) - 1)
+
+    def _handle_expression(self):
+        q = parse_qs(urlparse(self.path).query)
+        genes = [g for g in re.split(r"[\s,]+", (q.get("genes", [""])[0] or "").strip()) if g][:30]
+        if not genes:
+            self.send_json(400, {"error": "provide a 'genes' list"})
+            return
+        try:
+            self.send_json(200, enrichment.expression_profiles(genes))
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_conservation(self):
+        """Per-residue protein conservation across the dictyostelid genomes:
+        one tblastn vs all bundled genomes, query-anchored from the alignments."""
+        q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "bad or missing ddb"})
+            return
+        try:
+            prot = (extract_sequence(ddb, "protein") or "").strip().replace("*", "")
+            if not prot:
+                self.send_json(404, {"error": "no protein for this gene"})
+                return
+            L = len(prot)
+            binpath = blast_bin("tblastn")
+            if not binpath:
+                self.send_json(503, {"error": "BLAST unavailable"})
+                return
+            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in BLAST_DBS)
+            qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+            try:
+                qf.write(">q\n" + prot + "\n")
+                qf.close()
+                cmd = [binpath, "-query", qf.name, "-db", db_arg,
+                       "-outfmt", "6 sseqid bitscore qstart qend qseq sseq",
+                       "-max_target_seqs", "20", "-evalue", "1e-5"]
+                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+            finally:
+                try:
+                    os.unlink(qf.name)
+                except OSError:
+                    pass
+            best = {}  # best HSP per subject sequence
+            for line in proc.stdout.splitlines():
+                f = line.split("\t")
+                if len(f) < 6:
+                    continue
+                sid, bs = f[0], float(f[1])
+                if sid not in best or bs > best[sid][0]:
+                    best[sid] = (bs, int(f[2]), f[4], f[5])
+            cons, cov, used = [0] * L, [0] * L, 0
+            for _sid, (bs, qstart, qseq, sseq) in sorted(best.items(), key=lambda kv: -kv[1][0])[:12]:
+                used += 1
+                p = qstart - 1
+                for a, b in zip(qseq, sseq):
+                    if a == "-":
+                        continue
+                    if 0 <= p < L:
+                        cov[p] += 1
+                        if a.upper() == b.upper():
+                            cons[p] += 1
+                    p += 1
+            frac = [round(cons[i] / cov[i], 3) if cov[i] else 0.0 for i in range(L)]
+            self.send_json(200, {"length": L, "homologs": used, "conservation": frac})
+        except subprocess.TimeoutExpired:
+            self.send_json(504, {"error": "conservation search timed out"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
 
     def _handle_coexpression(self):
         """GET /api/coexpression?ddb=DDB_G...&n= -> co-expressed genes."""

@@ -1389,6 +1389,7 @@ function loadTabData(gene, tab) {
       break;
     case "Orthologs":
       loadHumanDisease(gene);
+      loadComparative(gene);
       loadOMAResults(gene);
       break;
     case "PTMs":
@@ -3433,6 +3434,7 @@ function renderTab(gene, tab) {
   if (tab === "Orthologs") {
     return `
       <div data-human-disease></div>
+      <div class="data-block" data-dicty-comparative></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
         <div data-oma-results="${escapeHtml(gene.id)}">
@@ -4413,6 +4415,80 @@ async function loadAISummary(gene) {
       <p>${escapeHtml(ai.summary)}</p>
       <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
     </div>`;
+}
+
+// Comparative genomics: best tblastn hit of this protein in each of the nine
+// sequenced dictyostelid genomes. On-demand (button) because it runs 9 BLASTs.
+function loadComparative(gene) {
+  const el = document.querySelector("[data-dicty-comparative]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  el.innerHTML = `
+    <h3>Across the sequenced dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— local tblastn</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">See how conserved this protein is by searching it against all nine dictyostelid genomes hosted here. Runs on demand.</p>
+    <button type="button" id="comparative-run">Compare across 9 genomes</button>
+    <div data-comparative-results style="margin-top:12px"></div>`;
+  const btn = document.getElementById("comparative-run");
+  if (btn) btn.addEventListener("click", () => runComparative(gene));
+}
+
+async function runComparative(gene) {
+  const out = document.querySelector("[data-comparative-results]");
+  const btn = document.getElementById("comparative-run");
+  if (!out || (btn && btn.disabled)) return;
+  if (btn) { btn.disabled = true; btn.textContent = "Comparing…"; }
+  const reset = (label) => { if (btn) { btn.disabled = false; btn.textContent = label; } };
+  const ddb = gene.veupath || gene.ddb;
+  out.innerHTML = `<p class="notice muted">Fetching protein and running tblastn against nine genomes…</p>`;
+  let fasta;
+  try {
+    const r = await fetch(`/api/sequence?ddb=${encodeURIComponent(ddb)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}`);
+    fasta = await r.text();
+    if (!r.ok || !fasta.startsWith(">")) throw new Error("no protein");
+  } catch {
+    out.innerHTML = `<p class="notice">Could not retrieve a protein sequence for this gene.</p>`;
+    reset("Compare across 9 genomes");
+    return;
+  }
+  const results = await Promise.all(Object.entries(LOCAL_BLAST_DBS).map(async ([id, label]) => {
+    try {
+      const res = await fetch("/api/blast", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ program: "tblastn", database: id, query: fasta }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.hits || !data.hits.length) return { label, hit: null };
+      return { label, hit: data.hits.reduce((a, b) => (b.bitscore > a.bitscore ? b : a)) };
+    } catch { return { label, hit: null }; }
+  }));
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  out.innerHTML = `
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="padding:6px 8px">Species</th><th style="padding:6px 8px">Best hit</th>
+        <th style="padding:6px 8px">% identity</th><th style="padding:6px 8px">Aln</th><th style="padding:6px 8px">E-value</th>
+      </tr></thead>
+      <tbody>
+        ${results.map((r) => {
+          if (!r.hit) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="padding:6px 8px"><em>${escapeHtml(r.label)}</em></td><td style="padding:6px 8px" colspan="4"><span style="color:var(--muted,#6b7280)">no significant hit</span></td></tr>`;
+          const h = r.hit;
+          const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}`;
+          const cell = h.gene
+            ? `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(h.gene.ddb)}" href="/gene/${encodeURIComponent(h.gene.symbol)}">${escapeHtml(h.gene.symbol)}</a> <span style="color:var(--muted,#6b7280)">${loc}</span>`
+            : loc;
+          return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+            <td style="padding:6px 8px"><em>${escapeHtml(r.label)}</em></td>
+            <td style="padding:6px 8px">${cell}</td>
+            <td style="padding:6px 8px">${h.identity.toFixed(1)}%</td>
+            <td style="padding:6px 8px">${h.length}</td>
+            <td style="padding:6px 8px">${escapeHtml(h.evalue)}</td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table></div>
+    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3). The <em>D. discoideum</em> AX4 row is this gene's own locus.</p>`;
+  reset("Re-run comparison");
 }
 
 async function loadRNAseqInline(gene) {

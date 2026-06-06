@@ -1503,8 +1503,8 @@ function renderEnrichmentPage() {
       <header class="record-header">
         <div class="record-title">
           <p class="eyebrow">Analysis</p>
-          <h2>GO-term enrichment</h2>
-          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find Gene Ontology terms that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all GO-annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR.</p>
+          <h2>Enrichment analysis</h2>
+          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find <strong>GO terms</strong> or curated <strong>mutant phenotypes</strong> that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR.</p>
         </div>
       </header>
       <div class="record-body">
@@ -1512,6 +1512,12 @@ function renderEnrichmentPage() {
           <textarea id="enrich-genes" rows="6" placeholder="mhcA acaA carA rasG pkaC gbpC&#10;DDB_G0286509" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.875rem;padding:10px;border:1px solid var(--line,#d7dee0);border-radius:8px;resize:vertical"></textarea>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px">
             <button type="submit">Run enrichment</button>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">analyze
+              <select id="enrich-set" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
+                <option value="go">GO terms</option>
+                <option value="phenotype">Phenotypes</option>
+              </select>
+            </label>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
               <input id="enrich-min" type="number" min="1" max="50" value="2" style="width:56px;margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
             </label>
@@ -1536,15 +1542,17 @@ function initEnrichment() {
 async function runEnrichment() {
   const out = document.getElementById("enrich-results");
   const raw = document.getElementById("enrich-genes").value.trim();
+  const set = (document.getElementById("enrich-set") || {}).value === "phenotype" ? "phenotype" : "go";
   const minStudy = Math.max(1, Math.min(50, parseInt(document.getElementById("enrich-min").value, 10) || 2));
   if (!raw) { out.innerHTML = `<p class="notice">Enter at least one gene.</p>`; return; }
   const genes = raw.split(/[\s,]+/).filter(Boolean);
-  out.innerHTML = `<p class="notice muted">Testing ${genes.length} gene${genes.length === 1 ? "" : "s"} against the GO annotation…</p>`;
+  const what = set === "phenotype" ? "phenotype annotations" : "the GO annotation";
+  out.innerHTML = `<p class="notice muted">Testing ${genes.length} gene${genes.length === 1 ? "" : "s"} against ${what}…</p>`;
   try {
     const res = await fetch("/api/enrichment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ genes, min_study: minStudy })
+      body: JSON.stringify({ genes, min_study: minStudy, set })
     });
     const data = await res.json();
     if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "Enrichment failed.")}</p>`; return; }
@@ -1553,12 +1561,15 @@ async function runEnrichment() {
     const head = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">
       ${data.study_n} of ${genes.length} gene${genes.length === 1 ? "" : "s"} mapped to annotations · background ${data.background_n.toLocaleString()} genes
       ${data.unmatched.length ? ` · <span title="${escapeHtml(data.unmatched.join(", "))}">${data.unmatched.length} not recognized</span>` : ""}</p>`;
-    if (!rows.length) { out.innerHTML = head + `<p class="notice">No GO terms reached the threshold for this list.</p>`; return; }
+    if (!rows.length) { out.innerHTML = head + `<p class="notice">No ${set === "phenotype" ? "phenotypes" : "GO terms"} reached the threshold for this list.</p>`; return; }
+    const cols = set === "phenotype"
+      ? `<th style="padding:6px 8px">Phenotype</th>`
+      : `<th style="padding:6px 8px">GO term</th><th style="padding:6px 8px">Aspect</th>`;
     out.innerHTML = head + `
       <div style="overflow-x:auto">
       <table class="enrich-table" style="width:100%;border-collapse:collapse;font-size:0.8125rem">
         <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
-          <th style="padding:6px 8px">GO term</th><th style="padding:6px 8px">Aspect</th>
+          ${cols}
           <th style="padding:6px 8px" title="genes in your list with this term / genes tested">In list</th>
           <th style="padding:6px 8px" title="fold over the genome-wide rate">Fold</th>
           <th style="padding:6px 8px">P</th><th style="padding:6px 8px" title="Benjamini–Hochberg FDR">q (FDR)</th>
@@ -1566,10 +1577,11 @@ async function runEnrichment() {
         <tbody>
           ${rows.map((t) => {
             const sig = t.q_value < 0.05;
-            const name = t.name ? escapeHtml(t.name) : `<span style="color:var(--muted,#6b7280)">${escapeHtml(t.id)}</span>`;
+            const label = set === "phenotype"
+              ? `<td style="padding:6px 8px">${escapeHtml(t.term)}</td>`
+              : `<td style="padding:6px 8px"><a class="text-link" href="/go/${escapeHtml(t.id)}">${t.name ? escapeHtml(t.name) : `<span style="color:var(--muted,#6b7280)">${escapeHtml(t.id)}</span>`}</a></td><td style="padding:6px 8px">${ASPECT[t.aspect] || t.aspect}</td>`;
             return `<tr style="border-bottom:1px solid var(--line,#eef2f3)${sig ? "" : ";opacity:.6"}">
-              <td style="padding:6px 8px"><a class="text-link" href="/go/${escapeHtml(t.id)}">${name}</a></td>
-              <td style="padding:6px 8px">${ASPECT[t.aspect] || t.aspect}</td>
+              ${label}
               <td style="padding:6px 8px">${t.study_count}/${t.study_n}</td>
               <td style="padding:6px 8px">${t.fold_enrichment != null ? t.fold_enrichment + "×" : "—"}</td>
               <td style="padding:6px 8px">${t.p_value.toExponential(1)}</td>
@@ -1578,7 +1590,7 @@ async function runEnrichment() {
           }).join("")}
         </tbody>
       </table></div>
-      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Rows with FDR ≥ 0.05 are dimmed. Term names link to the GO browser.</p>`;
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Rows with FDR ≥ 0.05 are dimmed.${set === "phenotype" ? "" : " Term names link to the GO browser."}</p>`;
   } catch {
     out.innerHTML = `<p class="notice">Could not reach the enrichment service.</p>`;
   }
@@ -5674,7 +5686,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

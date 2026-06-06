@@ -527,9 +527,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not genes:
                 self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
                 return
-            background = "genome" if payload.get("background") == "genome" else "annotated"
             min_study = max(1, min(int(payload.get("min_study", 2)), 50))
-            result = enrichment.enrich(genes, background=background, min_study=min_study)
+            if payload.get("set") == "phenotype":
+                result = enrichment.enrich_phenotypes(genes, min_study=min_study)
+            else:
+                background = "genome" if payload.get("background") == "genome" else "annotated"
+                result = enrichment.enrich(genes, background=background, min_study=min_study)
             self.send_json(200, result)
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})

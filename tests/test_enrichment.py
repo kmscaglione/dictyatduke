@@ -60,5 +60,31 @@ class EnrichTest(unittest.TestCase):
         self.assertEqual(r["results"], [])
 
 
+class PhenotypeEnrichTest(unittest.TestCase):
+    def test_shared_phenotype(self):
+        import json
+        import pathlib
+        ph = json.loads((pathlib.Path(enrichment.ASSETS) / "phenotypes.json").read_text())
+        term_genes = {}
+        for ddb, rows in ph.items():
+            for r in rows:
+                t = (r[0] or "").strip() if r else ""
+                if t:
+                    term_genes.setdefault(t, set()).add(ddb)
+        # take the most-shared phenotype and enrich on exactly its gene set
+        term, genes = max(term_genes.items(), key=lambda kv: len(kv[1]))
+        genes = sorted(genes)
+        r = enrichment.enrich_phenotypes(genes, min_study=2)
+        self.assertGreaterEqual(r["study_n"], 3)
+        hits = {x["term"]: x for x in r["results"]}
+        self.assertIn(term, hits)
+        self.assertLess(hits[term]["q_value"], 0.05)  # perfect enrichment is significant
+
+    def test_empty_input(self):
+        r = enrichment.enrich_phenotypes([], min_study=2)
+        self.assertEqual(r["study_n"], 0)
+        self.assertEqual(r["results"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

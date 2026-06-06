@@ -201,3 +201,78 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200):
         "background_n": M,
         "results": results,
     }
+
+
+# --- Phenotype enrichment (curated mutant phenotypes) ---------------------
+_pstate = {}
+
+
+def _load_phenotypes():
+    if _pstate:
+        return _pstate
+    ph = json.loads((ASSETS / "phenotypes.json").read_text())
+    gene_terms, term_genes = {}, {}
+    for ddb, rows in ph.items():
+        terms = set()
+        for r in rows:
+            t = (r[0] or "").strip() if r else ""
+            if not t:
+                continue
+            terms.add(t)
+            term_genes.setdefault(t, set()).add(ddb)
+        if terms:
+            gene_terms[ddb] = terms
+    _pstate.update(gene_terms=gene_terms, term_genes=term_genes,
+                   annotated=set(gene_terms))
+    return _pstate
+
+
+def enrich_phenotypes(tokens, min_study=2, max_terms=200):
+    """Hypergeometric over-representation of curated phenotypes in a gene list.
+
+    Background = all genes with at least one curated phenotype. Returns the same
+    shape as enrich() but with 'term' (the phenotype) instead of GO id/aspect.
+    """
+    _load()  # for resolve_genes
+    pst = _load_phenotypes()
+    matched, unmatched = resolve_genes(tokens)
+    pop = pst["annotated"]
+    M = len(pop)
+    study = matched & pop
+    N = len(study)
+
+    results = []
+    if N:
+        cand = {}
+        for ddb in study:
+            for t in pst["gene_terms"].get(ddb, ()):
+                cand.setdefault(t, []).append(ddb)
+        pvals, rows = [], []
+        for term, genes in cand.items():
+            k = len(genes)
+            if k < min_study:
+                continue
+            n = len(pst["term_genes"].get(term, ()))
+            p = hypergeom_sf(k, M, n, N)
+            expected = N * n / M if M else 0
+            rows.append({
+                "term": term,
+                "study_count": k, "study_n": N,
+                "pop_count": n, "pop_n": M,
+                "fold_enrichment": round(k / expected, 2) if expected else None,
+                "p_value": p, "genes": sorted(genes),
+            })
+            pvals.append(p)
+        qs = _bh(pvals)
+        for row, q in zip(rows, qs):
+            row["q_value"] = q
+        rows.sort(key=lambda r: (r["p_value"], -r["study_count"]))
+        results = rows[:max_terms]
+
+    return {
+        "study_n": N,
+        "study_resolved": sorted(study),
+        "unmatched": unmatched,
+        "background_n": M,
+        "results": results,
+    }

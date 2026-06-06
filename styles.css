@@ -45,9 +45,9 @@ input {
   z-index: 50;
   min-height: 88px;
   padding: 0 28px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(251, 252, 249, .96);
-  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, .18);
+  background: linear-gradient(100deg, #001a57 0%, #013b86 100%);
+  color: #fff;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 22px;
@@ -60,6 +60,7 @@ input {
   gap: 14px;
   font-size: 32px;
   font-weight: 850;
+  color: #fff;
 }
 
 .mark {
@@ -74,7 +75,7 @@ input {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #35443d;
+  color: rgba(255, 255, 255, .92);
   font-size: 14px;
   font-weight: 650;
 }
@@ -113,10 +114,9 @@ input {
 .nav-trigger:hover,
 .nav-trigger:focus,
 .nav-item.open .nav-trigger {
-  border-color: #d6e4dd;
-  background: #fff;
-  color: var(--teal-dark);
-  box-shadow: 0 8px 18px rgba(23, 33, 29, .05);
+  border-color: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
   outline: 0;
 }
 
@@ -124,7 +124,7 @@ input {
   content: "⌄";
   display: inline-block;
   margin-left: 7px;
-  color: var(--teal-dark);
+  color: rgba(255, 255, 255, .7);
   font-size: 12px;
   transform: translateY(-1px);
 }
@@ -193,23 +193,22 @@ input {
   width: 42px;
   height: 42px;
   min-height: 42px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, .35);
   border-radius: 8px;
   padding: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, .12);
   display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  box-shadow: 0 8px 22px rgba(23, 33, 29, .07);
 }
 
 .mobile-menu-toggle span {
   width: 18px;
   height: 2px;
   border-radius: 999px;
-  background: var(--teal-dark);
+  background: #fff;
 }
 
 .mobile-menu {
@@ -366,9 +365,15 @@ button,
 
 .search-row button,
 .button.primary {
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--teal-dark);
+  background: linear-gradient(135deg, #0a66b4 0%, var(--teal) 55%, var(--teal-dark) 100%);
   color: #fff;
+  box-shadow: 0 6px 16px rgba(1, 33, 105, .22);
+}
+
+.search-row button:hover,
+.button.primary:hover {
+  filter: brightness(1.07);
 }
 
 .quick-links {
@@ -1228,10 +1233,10 @@ button,
 }
 
 .beta-badge {
-  border: 1px solid #ead7b7;
+  border: 1px solid rgba(255, 255, 255, .4);
   border-radius: 999px;
-  background: #fff9ed;
-  color: var(--amber);
+  background: rgba(255, 255, 255, .16);
+  color: #fff;
   padding: 2px 9px;
   font-size: 11px;
   font-weight: 900;

@@ -1388,6 +1388,7 @@ function loadTabData(gene, tab) {
       loadStringResults(gene);
       break;
     case "Orthologs":
+      loadHumanDisease(gene);
       loadOMAResults(gene);
       break;
     case "PTMs":
@@ -3370,6 +3371,7 @@ function renderTab(gene, tab) {
 
   if (tab === "Orthologs") {
     return `
+      <div data-human-disease></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
         <div data-oma-results="${escapeHtml(gene.id)}">
@@ -3865,6 +3867,61 @@ async function ensureAICuration() {
 function aiCurationFor(gene) {
   if (!aiCurationData || !gene) return null;
   return aiCurationData[(gene.symbol || "").toLowerCase()] || null;
+}
+
+// Human ortholog + disease (assets/ortholog_disease.json, keyed by DDB_G id).
+let orthologDiseaseData = null;
+async function ensureOrthologDisease() {
+  if (orthologDiseaseData) return orthologDiseaseData;
+  try {
+    const res = await fetch("/assets/ortholog_disease.json");
+    orthologDiseaseData = res.ok ? await res.json() : {};
+  } catch { orthologDiseaseData = {}; }
+  return orthologDiseaseData;
+}
+function diseaseHref(id) {
+  const [src, num] = id.split(":");
+  if (src === "OMIM") return `https://omim.org/entry/${num}`;
+  if (src === "ORPHA") return `https://www.orpha.net/en/disease/detail/${num}`;
+  if (src === "DECIPHER") return `https://www.deciphergenomics.org/syndrome/${num}`;
+  return "";
+}
+async function loadHumanDisease(gene) {
+  const el = document.querySelector("[data-human-disease]");
+  if (!el) return;
+  try { await ensureOrthologDisease(); } catch { return; }
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  const entry = ddb && orthologDiseaseData[ddb];
+  const orthologs = entry && entry.orthologs || [];
+  if (!orthologs.length) { el.innerHTML = ""; return; }
+  const withDisease = orthologs.filter((o) => o.diseases && o.diseases.length);
+  el.innerHTML = `
+    <div class="data-block">
+      <h3>Human ortholog${orthologs.length > 1 ? "s" : ""} &amp; disease
+        <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA · UniProt · HPO</span></h3>
+      <ul class="list">
+        ${orthologs.map((o) => {
+          const dis = (o.diseases || []).map((d) => {
+            const href = diseaseHref(d.id);
+            const label = escapeHtml(d.name || d.id);
+            const link = href ? `<a class="text-link" href="${href}" target="_blank" rel="noopener">${label}</a>` : label;
+            // only append the id when it isn't already the label (i.e. a name exists)
+            const suffix = d.name ? ` <span style="color:var(--muted,#6b7280)">· ${escapeHtml(d.id)}</span>` : "";
+            return `<li>${link}${suffix}</li>`;
+          }).join("");
+          return `<li>
+            <strong><a class="text-link" href="https://www.uniprot.org/uniprotkb?query=${encodeURIComponent(o.human_uniprot)}" target="_blank" rel="noopener">${escapeHtml(o.human_symbol)}</a></strong>
+            <span>human ortholog${o.relationship ? " · " + escapeHtml(o.relationship) : ""}${o.diseases.length ? " · " + o.diseases.length + " disease association" + (o.diseases.length === 1 ? "" : "s") : ""}</span>
+            ${dis ? `<ul class="list" style="margin:6px 0 0 14px">${dis}</ul>` : ""}
+          </li>`;
+        }).join("")}
+      </ul>
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">
+        Orthologs from OMA; disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER).
+        ${withDisease.length ? "" : "No curated disease associations for this ortholog."}
+        Computational predictions — confirm against primary sources.</p>
+    </div>`;
 }
 
 // Three curation layers + the automated/electronic bucket. Each annotation is

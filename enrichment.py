@@ -278,6 +278,68 @@ def enrich_phenotypes(tokens, min_study=2, max_terms=200):
     }
 
 
+# --- KEGG pathway enrichment ----------------------------------------------
+_kegg = {}
+
+
+def _load_kegg():
+    if _kegg:
+        return _kegg
+    data = json.loads((ASSETS / "kegg_pathways.json").read_text())
+    gene_terms, term_genes, term_name = {}, {}, {}
+    for ddb, paths in data.items():
+        terms = set()
+        for p in paths:
+            pid = p["id"]
+            term_name[pid] = p.get("name", pid)
+            terms.add(pid)
+            term_genes.setdefault(pid, set()).add(ddb)
+        if terms:
+            gene_terms[ddb] = terms
+    _kegg.update(gene_terms=gene_terms, term_genes=term_genes,
+                 term_name=term_name, annotated=set(gene_terms))
+    return _kegg
+
+
+def enrich_kegg(tokens, min_study=2, max_terms=200):
+    """Hypergeometric over-representation of KEGG pathways in a gene list."""
+    _load()
+    kg = _load_kegg()
+    matched, unmatched = resolve_genes(tokens)
+    pop = kg["annotated"]
+    M = len(pop)
+    study = matched & pop
+    N = len(study)
+    results = []
+    if N:
+        cand = {}
+        for ddb in study:
+            for pid in kg["gene_terms"].get(ddb, ()):
+                cand.setdefault(pid, []).append(ddb)
+        pvals, rows = [], []
+        for pid, genes in cand.items():
+            k = len(genes)
+            if k < min_study:
+                continue
+            n = len(kg["term_genes"].get(pid, ()))
+            p = hypergeom_sf(k, M, n, N)
+            expected = N * n / M if M else 0
+            rows.append({
+                "id": pid, "term": kg["term_name"].get(pid, pid),
+                "study_count": k, "study_n": N, "pop_count": n, "pop_n": M,
+                "fold_enrichment": round(k / expected, 2) if expected else None,
+                "p_value": p, "genes": sorted(genes),
+            })
+            pvals.append(p)
+        qs = _bh(pvals)
+        for row, q in zip(rows, qs):
+            row["q_value"] = q
+        rows.sort(key=lambda r: (r["p_value"], -r["study_count"]))
+        results = rows[:max_terms]
+    return {"study_n": N, "study_resolved": sorted(study),
+            "unmatched": unmatched, "background_n": M, "results": results}
+
+
 # --- Co-expression (Pearson over the Parikh developmental time course) -----
 _coexp = {}
 _COEXP_TPS = ["0", "4", "8", "12", "16", "20", "24"]

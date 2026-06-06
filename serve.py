@@ -807,6 +807,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             min_study = max(1, min(int(payload.get("min_study", 2)), 50))
             if payload.get("set") == "phenotype":
                 result = enrichment.enrich_phenotypes(genes, min_study=min_study)
+            elif payload.get("set") == "kegg":
+                result = enrichment.enrich_kegg(genes, min_study=min_study)
             else:
                 background = "genome" if payload.get("background") == "genome" else "annotated"
                 result = enrichment.enrich(genes, background=background, min_study=min_study)

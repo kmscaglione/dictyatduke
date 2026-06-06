@@ -1379,6 +1379,7 @@ function loadTabData(gene, tab) {
       loadAISummary(gene);
       loadGeneModel(gene);
       loadCoexpression(gene);
+      loadKeggPathways(gene);
       break;
     case "GO":
       loadGOResults(gene);
@@ -1764,6 +1765,7 @@ function renderEnrichmentPage() {
               <select id="enrich-set" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
                 <option value="go">GO terms</option>
                 <option value="phenotype">Phenotypes</option>
+                <option value="kegg">KEGG pathways</option>
               </select>
             </label>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
@@ -1790,11 +1792,12 @@ function initEnrichment() {
 async function runEnrichment() {
   const out = document.getElementById("enrich-results");
   const raw = document.getElementById("enrich-genes").value.trim();
-  const set = (document.getElementById("enrich-set") || {}).value === "phenotype" ? "phenotype" : "go";
+  const setVal = (document.getElementById("enrich-set") || {}).value;
+  const set = ["phenotype", "kegg"].includes(setVal) ? setVal : "go";
   const minStudy = Math.max(1, Math.min(50, parseInt(document.getElementById("enrich-min").value, 10) || 2));
   if (!raw) { out.innerHTML = `<p class="notice">Enter at least one gene.</p>`; return; }
   const genes = raw.split(/[\s,]+/).filter(Boolean);
-  const what = set === "phenotype" ? "phenotype annotations" : "the GO annotation";
+  const what = { phenotype: "phenotype annotations", kegg: "KEGG pathways" }[set] || "the GO annotation";
   out.innerHTML = `<p class="notice muted">Testing ${genes.length} gene${genes.length === 1 ? "" : "s"} against ${what}…</p>`;
   try {
     const res = await fetch("/api/enrichment", {
@@ -1809,10 +1812,11 @@ async function runEnrichment() {
     const head = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">
       ${data.study_n} of ${genes.length} gene${genes.length === 1 ? "" : "s"} mapped to annotations · background ${data.background_n.toLocaleString()} genes
       ${data.unmatched.length ? ` · <span title="${escapeHtml(data.unmatched.join(", "))}">${data.unmatched.length} not recognized</span>` : ""}</p>`;
-    if (!rows.length) { out.innerHTML = head + `<p class="notice">No ${set === "phenotype" ? "phenotypes" : "GO terms"} reached the threshold for this list.</p>`; return; }
-    const cols = set === "phenotype"
-      ? `<th style="padding:6px 8px">Phenotype</th>`
-      : `<th style="padding:6px 8px">GO term</th><th style="padding:6px 8px">Aspect</th>`;
+    const noun = { phenotype: "phenotypes", kegg: "pathways" }[set] || "GO terms";
+    if (!rows.length) { out.innerHTML = head + `<p class="notice">No ${noun} reached the threshold for this list.</p>`; return; }
+    const cols = set === "go"
+      ? `<th style="padding:6px 8px">GO term</th><th style="padding:6px 8px">Aspect</th>`
+      : `<th style="padding:6px 8px">${set === "kegg" ? "Pathway" : "Phenotype"}</th>`;
     out.innerHTML = head + `
       <div style="overflow-x:auto">
       <table class="enrich-table" style="width:100%;border-collapse:collapse;font-size:0.8125rem">
@@ -1825,9 +1829,11 @@ async function runEnrichment() {
         <tbody>
           ${rows.map((t) => {
             const sig = t.q_value < 0.05;
-            const label = set === "phenotype"
-              ? `<td style="padding:6px 8px">${escapeHtml(t.term)}</td>`
-              : `<td style="padding:6px 8px"><a class="text-link" href="/go/${escapeHtml(t.id)}">${t.name ? escapeHtml(t.name) : `<span style="color:var(--muted,#6b7280)">${escapeHtml(t.id)}</span>`}</a></td><td style="padding:6px 8px">${ASPECT[t.aspect] || t.aspect}</td>`;
+            const label = set === "go"
+              ? `<td style="padding:6px 8px"><a class="text-link" href="/go/${escapeHtml(t.id)}">${t.name ? escapeHtml(t.name) : `<span style="color:var(--muted,#6b7280)">${escapeHtml(t.id)}</span>`}</a></td><td style="padding:6px 8px">${ASPECT[t.aspect] || t.aspect}</td>`
+              : set === "kegg"
+                ? `<td style="padding:6px 8px"><a class="text-link" href="https://www.kegg.jp/pathway/${escapeHtml(t.id)}" target="_blank" rel="noopener">${escapeHtml(t.term)}</a></td>`
+                : `<td style="padding:6px 8px">${escapeHtml(t.term)}</td>`;
             return `<tr style="border-bottom:1px solid var(--line,#eef2f3)${sig ? "" : ";opacity:.6"}">
               ${label}
               <td style="padding:6px 8px">${t.study_count}/${t.study_n}</td>
@@ -1838,7 +1844,7 @@ async function runEnrichment() {
           }).join("")}
         </tbody>
       </table></div>
-      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Rows with FDR ≥ 0.05 are dimmed.${set === "phenotype" ? "" : " Term names link to the GO browser."}</p>`;
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Rows with FDR ≥ 0.05 are dimmed.${set === "go" ? " Term names link to the GO browser." : set === "kegg" ? " Pathway names link to KEGG." : ""}</p>`;
   } catch {
     out.innerHTML = `<p class="notice">Could not reach the enrichment service.</p>`;
   }
@@ -3771,6 +3777,7 @@ function renderTab(gene, tab) {
           <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
         </section>
         <section class="data-block" data-coexpression hidden></section>
+        <section class="data-block" data-kegg hidden></section>
         <section class="data-block">
           <h3>Record coverage</h3>
           <div class="kv">
@@ -4884,6 +4891,33 @@ async function loadGeneModel(gene) {
   svg += `<text x="${W - pad}" y="12" font-size="9" fill="var(--muted,#6b7280)" text-anchor="end">${glen.toLocaleString()} bp</text>`;
   svg += `</svg>`;
   el.innerHTML = `<h3>Gene model <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${m.exons.length} exon${m.exons.length === 1 ? "" : "s"}, ${m.strand} strand</span></h3>${svg}<p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Tall blue = coding (CDS), short grey = UTR/non-coding exon, line = intron. ${m.strand === "+" ? "5′→3′ left to right." : "Minus strand (coordinates increase left to right)."}</p>`;
+}
+
+// KEGG pathway membership (assets/kegg_pathways.json, keyed by DDB_G id).
+let keggData = null;
+async function ensureKegg() {
+  if (keggData) return keggData;
+  try {
+    const r = await fetch("/assets/kegg_pathways.json");
+    keggData = r.ok ? await r.json() : {};
+  } catch { keggData = {}; }
+  return keggData;
+}
+async function loadKeggPathways(gene) {
+  const el = document.querySelector("[data-kegg]");
+  if (!el) return;
+  try { await ensureKegg(); } catch { return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  const paths = keggData[ddb];
+  if (!paths || !paths.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `
+    <h3>KEGG pathways <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${paths.length}</span></h3>
+    <ul class="list" style="font-size:0.8125rem">
+      ${paths.map((p) => `<li><a class="text-link" href="https://www.kegg.jp/pathway/${escapeHtml(p.id)}+${escapeHtml(ddb)}" target="_blank" rel="noopener">${escapeHtml(p.name)}</a></li>`).join("")}
+    </ul>
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Links open the KEGG map with this gene highlighted.</p>`;
 }
 
 // Co-expressed genes (Pearson over the Parikh developmental time course).

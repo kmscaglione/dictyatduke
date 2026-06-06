@@ -86,6 +86,19 @@ class PhenotypeEnrichTest(unittest.TestCase):
         self.assertEqual(r["results"], [])
 
 
+class KeggEnrichTest(unittest.TestCase):
+    def test_shared_pathway(self):
+        kg = enrichment._load_kegg()
+        # take the largest pathway and enrich on its gene set -> should top out
+        pid, genes = max(kg["term_genes"].items(), key=lambda kv: len(kv[1]))
+        r = enrichment.enrich_kegg(sorted(genes), min_study=2)
+        self.assertGreaterEqual(r["study_n"], 3)
+        hits = {x["id"]: x for x in r["results"]}
+        self.assertIn(pid, hits)
+        self.assertTrue(hits[pid].get("term"))
+        self.assertLess(hits[pid]["q_value"], 0.05)
+
+
 class CoexpressionTest(unittest.TestCase):
     def test_self_excluded_and_sorted(self):
         cx = enrichment._load_coexp()

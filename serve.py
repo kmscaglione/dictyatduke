@@ -1,7 +1,10 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, hashlib
-import subprocess, shutil, tempfile, csv, html
+import subprocess, shutil, tempfile, csv, html, gzip, io
 from email import message_from_bytes
+from email.utils import parsedate_to_datetime
 from urllib.parse import unquote, urlparse, parse_qs
+
+import enrichment
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -17,6 +20,9 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
                ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json"}
+# Text assets worth gzipping on the fly (the JSON data files are multi-MB and
+# compress ~85%). Binary/already-compressed types are served as-is.
+COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".gff", ".gtf", ".fna", ".fai"}
 
 # Cache-busting: stamp local css/js asset URLs in index.html with their mtime
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
@@ -386,7 +392,47 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # files fall through to the default handler.
         if raw in ("/", "/index.html") or ext not in STATIC_EXTS:
             return self._serve_index()
+        # On-the-fly gzip for large text assets when the client accepts it,
+        # preserving Last-Modified / If-Modified-Since 304 revalidation.
+        if ext in COMPRESSIBLE_EXTS and "gzip" in self.headers.get("Accept-Encoding", ""):
+            if self._serve_gzipped(raw):
+                return
         super().do_GET()
+
+    def _serve_gzipped(self, raw):
+        """Serve a static text file gzip-compressed. Returns False to fall
+        through to the default handler (e.g. file missing)."""
+        fs_path = self.translate_path(self.path)
+        if not os.path.isfile(fs_path):
+            return False
+        try:
+            st = os.stat(fs_path)
+            # honor conditional requests so unchanged files still cost a 304
+            ims = self.headers.get("If-Modified-Since")
+            if ims:
+                try:
+                    since = parsedate_to_datetime(ims).timestamp()
+                    if int(st.st_mtime) <= int(since):
+                        self.send_response(304)
+                        self.end_headers()
+                        return True
+                except (TypeError, ValueError):
+                    pass
+            with open(fs_path, "rb") as f:
+                body = gzip.compress(f.read(), compresslevel=6)
+            self.send_response(200)
+            ctype = self.guess_type(fs_path)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Vary", "Accept-Encoding")
+            self.send_header("Last-Modified", self.date_time_string(int(st.st_mtime)))
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return True
+        except Exception:
+            return False
 
     def _serve_index(self):
         try:
@@ -421,8 +467,34 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_reject()
         elif self.path == "/api/blast":
             self._handle_blast()
+        elif self.path == "/api/enrichment":
+            self._handle_enrichment()
         else:
             self.send_error(404)
+
+    def _handle_enrichment(self):
+        """POST {genes:[...], background?, min_study?} -> GO enrichment."""
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 1_000_000:
+                self.send_json(413, {"error": "Gene list too large"})
+                return
+            payload = json.loads(self.rfile.read(length) or b"{}")
+            genes = payload.get("genes") or []
+            if isinstance(genes, str):
+                genes = re.split(r"[\s,]+", genes)
+            genes = [g for g in genes if g][:5000]
+            if not genes:
+                self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
+                return
+            background = "genome" if payload.get("background") == "genome" else "annotated"
+            min_study = max(1, min(int(payload.get("min_study", 2)), 50))
+            result = enrichment.enrich(genes, background=background, min_study=min_study)
+            self.send_json(200, result)
+        except (ValueError, json.JSONDecodeError) as e:
+            self.send_json(400, {"error": f"Bad request: {e}"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
 
     def _parse_token(self):
         auth = self.headers.get("Authorization", "")
@@ -804,4 +876,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 # Threaded so a slow proxied/external call (e.g. the AlphaFold proxy) never
 # blocks other requests on the single-threaded server.
-http.server.ThreadingHTTPServer(("127.0.0.1", 8774), Handler).serve_forever()
+def main():
+    port = int(os.environ.get("PORT", "8774"))
+    host = os.environ.get("HOST", "127.0.0.1")
+    http.server.ThreadingHTTPServer((host, port), Handler).serve_forever()
+
+
+if __name__ == "__main__":
+    main()

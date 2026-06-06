@@ -1,0 +1,22 @@
+name: Validate
+
+# Runs the stdlib test suite (engine unit tests + data-asset schema checks) so a
+# malformed asset or a regression in the enrichment engine is caught before it
+# ships. No third-party deps -- just Python stdlib unittest.
+
+on:
+  push:
+    branches: [master]
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -v

@@ -27,6 +27,9 @@ jobs:
       - name: Merge in local curation
         run: python3 scripts/merge_curation.py
 
+      - name: Validate regenerated assets
+        run: python3 -m unittest discover -s tests -v
+
       - name: Commit if changed
         run: |
           git config user.name "curation-bot"

@@ -81,5 +81,36 @@ class AiCurationTest(unittest.TestCase):
         self.assertEqual(self.ai["_meta"]["layer"], "AI curation")
 
 
+class OrthologDiseaseTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path = ASSETS / "ortholog_disease.json"
+        cls.od = load("ortholog_disease.json") if path.exists() else None
+
+    def test_structure(self):
+        if self.od is None:
+            self.skipTest("ortholog_disease.json not built")
+        dis_re = re.compile(r"^(OMIM|ORPHA|DECIPHER):")
+        for key, entry in list(self.od.items())[:1000]:
+            if key.startswith("_"):
+                continue
+            self.assertTrue(key.startswith("DDB_G"), f"bad gene key {key}")
+            self.assertIsInstance(entry.get("orthologs"), list)
+            for o in entry["orthologs"]:
+                self.assertTrue(o["human_symbol"], "empty human_symbol")
+                self.assertNotIn(".", o["human_symbol"])  # no RefSeq ids
+                for d in o["diseases"]:
+                    self.assertTrue(dis_re.match(d["id"]), f"bad disease id {d['id']}")
+
+    def test_known_disease_gene(self):
+        if self.od is None:
+            self.skipTest("ortholog_disease.json not built")
+        # cln5 (DDB_G0275299) -> human CLN5 -> neuronal ceroid lipofuscinosis
+        e = self.od.get("DDB_G0275299")
+        self.assertIsNotNone(e, "cln5 ortholog entry missing")
+        syms = {o["human_symbol"] for o in e["orthologs"]}
+        self.assertIn("CLN5", syms)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1389,6 +1389,7 @@ function loadTabData(gene, tab) {
       break;
     case "Orthologs":
       loadHumanDisease(gene);
+      loadParalogs(gene);
       loadComparative(gene);
       loadOMAResults(gene);
       break;
@@ -3446,6 +3447,7 @@ function renderTab(gene, tab) {
   if (tab === "Orthologs") {
     return `
       <div data-human-disease></div>
+      <div class="data-block" data-paralogs></div>
       <div class="data-block" data-dicty-comparative></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
@@ -4427,6 +4429,84 @@ async function loadAISummary(gene) {
       <p>${escapeHtml(ai.summary)}</p>
       <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
     </div>`;
+}
+
+// Paralogs / gene family: other D. discoideum genes whose product is similar to
+// this one, found by tblastn of the protein against the AX4 genome. On-demand.
+function loadParalogs(gene) {
+  const el = document.querySelector("[data-paralogs]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  el.innerHTML = `
+    <h3>Paralogs &amp; similar genes <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— local tblastn vs D. discoideum</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Find other <em>D. discoideum</em> genes with a similar protein (sequence-similarity paralogs / family members). Runs on demand.</p>
+    <button type="button" id="paralogs-run">Find paralogs</button>
+    <div data-paralogs-results style="margin-top:12px"></div>`;
+  const btn = document.getElementById("paralogs-run");
+  if (btn) btn.addEventListener("click", () => runParalogs(gene));
+}
+
+async function runParalogs(gene) {
+  const out = document.querySelector("[data-paralogs-results]");
+  const btn = document.getElementById("paralogs-run");
+  if (!out || (btn && btn.disabled)) return;
+  if (btn) { btn.disabled = true; btn.textContent = "Searching…"; }
+  const reset = (label) => { if (btn) { btn.disabled = false; btn.textContent = label; } };
+  const ddb = gene.veupath || gene.ddb;
+  out.innerHTML = `<p class="notice muted">Running tblastn against the D. discoideum genome…</p>`;
+  let fasta;
+  try {
+    const r = await fetch(`/api/sequence?ddb=${encodeURIComponent(ddb)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}`);
+    fasta = await r.text();
+    if (!r.ok || !fasta.startsWith(">")) throw new Error("no protein");
+  } catch {
+    out.innerHTML = `<p class="notice">Could not retrieve a protein sequence for this gene.</p>`;
+    reset("Find paralogs");
+    return;
+  }
+  let data;
+  try {
+    const res = await fetch("/api/blast", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ program: "tblastn", database: "d-discoideum-ax4", query: fasta }),
+    });
+    data = await res.json();
+    if (!res.ok) throw new Error(data.error || "blast failed");
+  } catch {
+    out.innerHTML = `<p class="notice">Paralog search could not be run.</p>`;
+    reset("Find paralogs");
+    return;
+  }
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  // best hit per gene, excluding this gene's own locus
+  const best = new Map();
+  for (const h of (data.hits || [])) {
+    if (!h.gene || h.gene.ddb === ddb) continue;
+    const prev = best.get(h.gene.ddb);
+    if (!prev || h.bitscore > prev.bitscore) best.set(h.gene.ddb, h);
+  }
+  const rows = [...best.values()].sort((a, b) => b.bitscore - a.bitscore);
+  reset("Re-run");
+  if (!rows.length) { out.innerHTML = `<p class="notice muted">No other D. discoideum genes with significant similarity (E &lt; 1e-3).</p>`; return; }
+  out.innerHTML = `
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="padding:6px 8px">Gene</th><th style="padding:6px 8px">% identity</th>
+        <th style="padding:6px 8px">Aln</th><th style="padding:6px 8px">E-value</th><th style="padding:6px 8px">Bit score</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map((h) => `
+          <tr style="border-bottom:1px solid var(--line,#eef2f3)">
+            <td style="padding:6px 8px"><a class="text-link curated-xref" data-ddb-ref="${escapeHtml(h.gene.ddb)}" href="/gene/${encodeURIComponent(h.gene.symbol)}">${escapeHtml(h.gene.symbol)}</a></td>
+            <td style="padding:6px 8px">${h.identity.toFixed(1)}%</td>
+            <td style="padding:6px 8px">${h.length}</td>
+            <td style="padding:6px 8px">${escapeHtml(h.evalue)}</td>
+            <td style="padding:6px 8px">${h.bitscore}</td>
+          </tr>`).join("")}
+      </tbody>
+    </table></div>
+    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Sequence-similarity matches (tblastn, E &lt; 1e-3), best hit per gene. Not curated orthology — verify family membership.</p>`;
 }
 
 // Comparative genomics: best tblastn hit of this protein in each of the nine

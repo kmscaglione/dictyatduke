@@ -2,7 +2,7 @@ import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.er
 import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
-from urllib.parse import unquote, urlparse, parse_qs
+from urllib.parse import unquote, urlparse, parse_qs, quote
 
 import enrichment
 import bench
@@ -19,6 +19,39 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 (UPLOADS_DIR / "curations").mkdir(exist_ok=True)
 
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
+
+# Recent-papers feed: cached PubMed results, refreshed at most once a day.
+PAPERS_CACHE = pathlib.Path(ROOT) / "cache" / "recent_papers.json"
+PAPERS_TTL = 24 * 3600
+EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+
+
+def fetch_pubmed_recent(term="Dictyostelium", n=5):
+    """Most recent PubMed papers for `term` via E-utilities (esearch+esummary)."""
+    q = (f"{EUTILS}/esearch.fcgi?db=pubmed&term={quote(term)}&sort=pub+date"
+         f"&retmax={n}&retmode=json&tool=DictyAtDuke")
+    with urllib.request.urlopen(q, timeout=20, context=SSL_CTX) as r:
+        ids = json.loads(r.read())["esearchresult"]["idlist"]
+    papers = []
+    if ids:
+        s = f"{EUTILS}/esummary.fcgi?db=pubmed&id={','.join(ids)}&retmode=json&tool=DictyAtDuke"
+        with urllib.request.urlopen(s, timeout=20, context=SSL_CTX) as r:
+            res = json.loads(r.read()).get("result", {})
+        for pid in res.get("uids", []):
+            rec = res.get(pid, {})
+            doi = next((a["value"] for a in rec.get("articleids", [])
+                        if a.get("idtype") == "doi"), "")
+            papers.append({
+                "pmid": pid,
+                "title": (rec.get("title") or "").rstrip(". "),
+                "journal": rec.get("source", ""),
+                "pubdate": rec.get("pubdate", ""),
+                "authors": [a["name"] for a in rec.get("authors", []) if a.get("name")],
+                "doi": doi,
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{pid}/",
+            })
+    return {"updated": datetime.datetime.utcnow().isoformat() + "Z",
+            "term": term, "papers": papers}
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
                ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json", ".bedgraph"}
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
@@ -382,6 +415,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/data-status"):
             self._handle_api_status()
             return
+        if self.path.startswith("/api/recent-papers"):
+            self._handle_recent_papers()
+            return
         if self.path.startswith("/api/domains"):
             self._handle_domains()
             return
@@ -611,6 +647,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 counts[f[0]] = counts.get(f[0], 0) + 1
         for i, g in enumerate(guides):
             g["off_targets"] = max(0, counts.get(f"g{i}", 1) - 1)
+
+    def _handle_recent_papers(self):
+        """Recent Dictyostelium PubMed papers, cached up to a day; serves stale
+        on fetch failure."""
+        try:
+            if (PAPERS_CACHE.exists()
+                    and time.time() - PAPERS_CACHE.stat().st_mtime < PAPERS_TTL):
+                self.send_json(200, json.loads(PAPERS_CACHE.read_text()))
+                return
+            data = fetch_pubmed_recent()
+            PAPERS_CACHE.parent.mkdir(exist_ok=True)
+            PAPERS_CACHE.write_text(json.dumps(data))
+            self.send_json(200, data)
+        except Exception:
+            if PAPERS_CACHE.exists():  # stale-but-available fallback
+                self.send_json(200, json.loads(PAPERS_CACHE.read_text()))
+            else:
+                self.send_json(502, {"error": "PubMed is unavailable right now."})
 
     def _handle_expression(self):
         q = parse_qs(urlparse(self.path).query)

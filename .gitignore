@@ -21,6 +21,7 @@ __pycache__/
 # --- Local server / temp ---
 *.tmp
 .~lock.*
+cache/
 
 # --- Curation pipeline intermediates (regenerable from the GAF) ---
 assets/annotations_imported.json

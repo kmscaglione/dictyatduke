@@ -6265,12 +6265,40 @@ async function loadNews() {
     </div>`;
 }
 
+async function loadRecentPapers() {
+  const el = document.getElementById("papers-feed");
+  if (!el) return;
+  let data;
+  try {
+    const r = await fetch("/api/recent-papers");
+    data = r.ok ? await r.json() : null;
+  } catch { return; }
+  const papers = (data && data.papers) || [];
+  if (!papers.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `
+    <div class="news-head"><p class="eyebrow">From PubMed · refreshed daily</p><h2>Recent <em>Dictyostelium</em> papers</h2></div>
+    <ol class="papers-list">
+      ${papers.map((p) => {
+        const authors = p.authors && p.authors.length
+          ? escapeHtml(p.authors.slice(0, 3).join(", ")) + (p.authors.length > 3 ? " et al." : "")
+          : "";
+        return `<li class="paper-item">
+          <a class="text-link paper-title" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>
+          <div class="paper-meta">${authors}${authors && (p.journal || p.pubdate) ? " · " : ""}<em>${escapeHtml(p.journal || "")}</em>${p.pubdate ? " · " + escapeHtml(p.pubdate) : ""}</div>
+        </li>`;
+      }).join("")}
+    </ol>
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:8px 0 0">Newest PubMed results for “Dictyostelium”. Source: <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=Dictyostelium&sort=date" target="_blank" rel="noopener">PubMed (NCBI)</a>.</p>`;
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
   hydrateFromRoute();
   initHeroVideo();
   loadNews();
+  loadRecentPapers();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

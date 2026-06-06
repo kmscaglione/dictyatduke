@@ -1,0 +1,39 @@
+{
+  "_comment": "Front-page news feed. Newest first. tag: new|update|data|community. Edit this file (or add a curator post endpoint later) to update the feed.",
+  "items": [
+    {
+      "date": "2026-06-06",
+      "tag": "new",
+      "title": "Lab tools: CRISPR guides, qPCR primers, and codon optimization",
+      "body": "Design SpCas9 guides for a gene (with genome off-target checking), qPCR primers over its cDNA, and codon-optimize a sequence for Dictyostelium's AT-rich codon usage. Under Useful tools → Lab tools.",
+      "link": "/tools/lab"
+    },
+    {
+      "date": "2026-06-06",
+      "tag": "new",
+      "title": "Compare expression and find co-expressed genes",
+      "body": "Overlay the developmental RNA-seq profiles of several genes, and see the most co-expressed genes right on each gene record. RNA-seq is also now an overlay track in the genome browser.",
+      "link": "/tools/expression"
+    },
+    {
+      "date": "2026-06-06",
+      "tag": "data",
+      "title": "Human disease models",
+      "body": "Gene records now show human orthologs and their disease associations, plus a browsable Dictyostelium disease-models page — a starting point for using the amoeba as a model system.",
+      "link": "/community/disease-models"
+    },
+    {
+      "date": "2026-06-05",
+      "tag": "new",
+      "title": "AI-suggested annotations (clearly badged)",
+      "body": "A third, machine-generated curation layer offers AI summaries and GO suggestions for many genes. It is unreviewed and always badged ‘AI’ — a starting point, never a substitute for curated evidence.",
+      "link": "/gene/cln5"
+    },
+    {
+      "date": "2026-06-05",
+      "tag": "update",
+      "title": "Welcome to Dicty@Duke (beta)",
+      "body": "A modern interface over Dictyostelid genomes and curation: searchable gene records with structures and expression, a genome browser, BLAST, GO/phenotype enrichment, and a public REST API. Feedback and corrections welcome."
+    }
+  ]
+}

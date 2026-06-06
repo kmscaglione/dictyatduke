@@ -6236,11 +6236,41 @@ function initHeroVideo() {
   }
 }
 
+const NEWS_TAG_COLORS = { new: "#00539b", data: "#012169", update: "#5b6678", community: "#8a5b16" };
+async function loadNews() {
+  const el = document.getElementById("news-feed");
+  if (!el) return;
+  let data;
+  try {
+    const r = await fetch("/assets/news.json");
+    data = r.ok ? await r.json() : null;
+  } catch { return; }
+  const items = (data && data.items) || [];
+  if (!items.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `
+    <div class="news-head"><p class="eyebrow">Dicty@Duke</p><h2>News &amp; updates</h2></div>
+    <div class="news-list">
+      ${items.slice(0, 6).map((it) => {
+        const color = NEWS_TAG_COLORS[it.tag] || "#5b6678";
+        const title = it.link
+          ? `<a class="text-link" href="${escapeHtml(it.link)}">${escapeHtml(it.title)}</a>`
+          : escapeHtml(it.title);
+        return `<article class="news-item">
+          <div class="news-meta"><span class="news-date">${escapeHtml(it.date || "")}</span>${it.tag ? `<span class="news-tag" style="background:${color}">${escapeHtml(it.tag)}</span>` : ""}</div>
+          <h3>${title}</h3>
+          <p>${escapeHtml(it.body || "")}</p>
+        </article>`;
+      }).join("")}
+    </div>`;
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
   hydrateFromRoute();
   initHeroVideo();
+  loadNews();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

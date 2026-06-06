@@ -1495,7 +1495,65 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initEnrichment();
+  } else if (tool === "api") {
+    toolsShell.innerHTML = renderAPIPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
   }
+}
+
+function renderAPIPage() {
+  const get = (path, desc, params) => `
+    <li style="margin-bottom:14px">
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <span style="font-size:0.7rem;font-weight:700;color:#047857;background:#ecfdf5;border-radius:4px;padding:2px 6px">GET</span>
+        <code style="font-size:0.8125rem">${escapeHtml(path)}</code>
+        <a class="text-link" href="${escapeHtml(path)}" target="_blank" rel="noopener" style="font-size:0.75rem">try it →</a>
+      </div>
+      <p style="margin:4px 0 0;font-size:0.8125rem;color:var(--muted,#6b7280)">${desc}${params ? ` <span style="color:#9ca3af">· ${escapeHtml(params)}</span>` : ""}</p>
+    </li>`;
+  const post = (path, desc, body) => `
+    <li style="margin-bottom:14px">
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <span style="font-size:0.7rem;font-weight:700;color:#b45309;background:#fffbeb;border-radius:4px;padding:2px 6px">POST</span>
+        <code style="font-size:0.8125rem">${escapeHtml(path)}</code>
+      </div>
+      <p style="margin:4px 0 4px;font-size:0.8125rem;color:var(--muted,#6b7280)">${desc}</p>
+      <pre style="margin:0;background:var(--soft,#f1f5f4);border-radius:6px;padding:8px 10px;font-size:0.75rem;overflow-x:auto">${escapeHtml(body)}</pre>
+    </li>`;
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Developers</p>
+          <h2>REST API</h2>
+          <p>A small JSON API over the same data the site uses. All responses are JSON with <code>Access-Control-Allow-Origin: *</code> (usable from other sites and notebooks). Base URL is this site's origin. No key or auth needed for the read endpoints below.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <h3>Records &amp; search</h3>
+        <ul style="list-style:none;padding:0">
+          ${get("/api/gene/mhcA", "Full gene record. Accepts a gene symbol or DDB_G id.", "/api/gene/{symbol|DDB_G id}")}
+          ${get("/api/search?q=myosin", "Search genes by symbol, name, or description.", "q=term · limit (1–200, default 25)")}
+          ${get("/api/phenotype-search?q=chemotaxis", "Find genes by curated mutant phenotype.", "q=term · limit (1–200, default 40)")}
+          ${get("/api/go/GO:0006914", "Genes annotated to a GO term.", "/api/go/{GO:id}")}
+          ${get("/api/strain/DBS0236830", "Strain record (gene + curated phenotypes).", "/api/strain/{DBS id}")}
+          ${get("/api/data-status", "Dataset versions and last-refresh provenance.", "")}
+        </ul>
+        <h3>Sequence, structure &amp; domains</h3>
+        <ul style="list-style:none;padding:0">
+          ${get("/api/sequence?ddb=DDB_G0286355&type=protein&symbol=mhcA", "FASTA sequence download.", "type=genomic|cdna|protein")}
+          ${get("/api/domains?acc=P08799", "InterPro/Pfam domain architecture for a UniProt accession.", "acc=UniProt accession")}
+          ${get("/api/alphafold/P08799", "AlphaFold structure (PDB), proxied from EBI.", "/api/alphafold/{UniProt}")}
+        </ul>
+        <h3>Analysis (POST JSON)</h3>
+        <ul style="list-style:none;padding:0">
+          ${post("/api/enrichment", "GO-term or phenotype over-representation (hypergeometric + BH FDR).", 'curl -X POST {origin}/api/enrichment \\\n  -H "Content-Type: application/json" \\\n  -d \'{"genes":["mhcA","abpC","racE"],"set":"go","min_study":2}\'')}
+          ${post("/api/blast", "Local BLAST against the nine bundled dictyostelid genomes.", 'curl -X POST {origin}/api/blast \\\n  -H "Content-Type: application/json" \\\n  -d \'{"program":"tblastn","database":"d-discoideum-ax4","query":">q\\nMSEEVVA..."}\'')}
+        </ul>
+        <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Curator/write endpoints (upload, login, submit) exist but require authentication and aren't part of the public API.</p>
+      </div>
+    </article>`;
 }
 
 function renderEnrichmentPage() {
@@ -2377,6 +2435,21 @@ function renderGenomeBrowser() {
   `;
 }
 
+// Parikh developmental RNA-seq time course as IGV wig tracks (AX4 only — the
+// genome these gene coordinates + expression values belong to).
+const RNASEQ_TPS = ["0", "4", "8", "12", "16", "20", "24"];
+function rnaseqTracks() {
+  return RNASEQ_TPS.map((tp, i) => ({
+    name: `RNA-seq ${tp}h`,
+    url: `/assets/tracks/rnaseq_${tp}h.bedgraph`,
+    format: "bedgraph",
+    type: "wig",
+    height: 32,
+    autoscaleGroup: "rnaseq",
+    color: `rgb(${15 + i * 24}, ${118 - i * 8}, ${110 + i * 12})`,
+  }));
+}
+
 function buildIGVOptions(org) {
   const tracks = org.gffURL ? [{
     name: "Gene annotations",
@@ -2386,6 +2459,7 @@ function buildIGVOptions(org) {
     displayMode: "EXPANDED",
     color: "rgb(15, 118, 110)"
   }] : [];
+  if (org.id === "d-discoideum-ax4") tracks.push(...rnaseqTracks());
   return {
     genome: {
       id: org.id,
@@ -5527,7 +5601,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -5766,7 +5840,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

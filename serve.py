@@ -19,10 +19,12 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
-               ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json"}
+               ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json", ".bedgraph"}
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
-# compress ~85%). Binary/already-compressed types are served as-is.
-COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".gff", ".gtf", ".fna", ".fai"}
+# compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are
+# deliberately excluded — IGV.js reads them with byte offsets, so on-the-fly
+# gzip (which changes Content-Length / can't honor a range) must not touch them.
+COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".bedgraph"}
 
 # Cache-busting: stamp local css/js asset URLs in index.html with their mtime
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
@@ -396,8 +398,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if raw in ("/", "/index.html") or ext not in STATIC_EXTS:
             return self._serve_index()
         # On-the-fly gzip for large text assets when the client accepts it,
-        # preserving Last-Modified / If-Modified-Since 304 revalidation.
-        if ext in COMPRESSIBLE_EXTS and "gzip" in self.headers.get("Accept-Encoding", ""):
+        # preserving Last-Modified / If-Modified-Since 304 revalidation. Skip
+        # ranged requests — gzip can't serve a byte range, and IGV reads the
+        # indexed FASTA (.fna) by Range, so those must fall through to the
+        # default handler (which answers 206 uncompressed).
+        if (ext in COMPRESSIBLE_EXTS and "Range" not in self.headers
+                and "gzip" in self.headers.get("Accept-Encoding", "")):
             if self._serve_gzipped(raw):
                 return
         super().do_GET()

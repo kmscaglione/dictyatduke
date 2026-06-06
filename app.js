@@ -1399,6 +1399,7 @@ function loadTabData(gene, tab) {
       loadPubMedResults(gene);
       break;
     case "Structures":
+      loadDomains(gene);
       loadPDBResults(gene);
       break;
   }
@@ -3462,6 +3463,10 @@ function renderTab(gene, tab) {
     }).join("");
     return `
       <div class="data-block">
+        <h3>Domain architecture <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— InterPro / Pfam</span></h3>
+        <div data-domains>${gene.uniprot ? `<p class="notice muted">Loading domains for ${escapeHtml(gene.uniprot)}…</p>` : `<p class="notice muted">No UniProt accession for this gene.</p>`}</div>
+      </div>
+      <div class="data-block">
         <h3>Predicted structures</h3>
         <ul class="list">${structureItems}</ul>
       </div>
@@ -5071,6 +5076,68 @@ async function fetchPDBResults(gene) {
 
   pdbCache.set(gene.id, details);
   return details;
+}
+
+const DOMAIN_COLORS = ["#0f766e", "#6b2fb3", "#b45309", "#1d4ed8", "#be123c", "#047857", "#7c3aed", "#0891b2"];
+function domainColor(s) {
+  let h = 0;
+  for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return DOMAIN_COLORS[h % DOMAIN_COLORS.length];
+}
+
+async function loadDomains(gene) {
+  const el = document.querySelector("[data-domains]");
+  if (!el || !gene.uniprot) return;
+  let data;
+  try {
+    const res = await fetch(`/api/domains?acc=${encodeURIComponent(gene.uniprot)}`);
+    data = await res.json();
+    if (!res.ok) throw new Error(data.error || "failed");
+  } catch {
+    if (state.activeGene === gene && state.activeTab === "Structures") {
+      el.innerHTML = `<p class="notice muted">Domain data could not be loaded.</p>`;
+    }
+    return;
+  }
+  if (state.activeGene !== gene || state.activeTab !== "Structures") return;
+  const len = data.length || 0;
+  const all = data.domains || [];
+  if (!len || !all.length) { el.innerHTML = `<p class="notice muted">No domain annotations found for ${escapeHtml(gene.uniprot)}.</p>`; return; }
+
+  // Domains for the architecture bar: prefer InterPro's integrated,
+  // non-redundant domain set (covers e.g. the myosin tail that Pfam omits),
+  // then Pfam, then CDD, then anything positional.
+  const positional = (db) => all.filter((d) => d.db === db && (d.type === "domain" || d.type === "repeat"));
+  let boxes = positional("interpro");
+  if (!boxes.length) boxes = positional("pfam");
+  if (!boxes.length) boxes = positional("cdd");
+  if (!boxes.length) boxes = all.filter((d) => (d.type === "domain" || d.type === "repeat"));
+
+  const W = 600, H = 44, pad = 4, ty = 18, th = 12;
+  const x = (p) => pad + (Math.max(0, Math.min(len, p)) / len) * (W - 2 * pad);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Protein domain architecture, ${len} amino acids">`;
+  svg += `<line x1="${pad}" y1="${ty + th / 2}" x2="${W - pad}" y2="${ty + th / 2}" stroke="#d7dee0" stroke-width="2"/>`;
+  for (const d of boxes) {
+    const bx = x(d.start), bw = Math.max(2, x(d.end) - x(d.start));
+    svg += `<rect x="${bx.toFixed(1)}" y="${ty}" width="${bw.toFixed(1)}" height="${th}" rx="2" fill="${domainColor(d.accession || d.name)}"><title>${escapeHtml(d.name || d.accession)} (${d.start}–${d.end})</title></rect>`;
+  }
+  svg += `<text x="${pad}" y="${ty - 4}" font-size="9" fill="#6b7280">1</text>`;
+  svg += `<text x="${W - pad}" y="${ty - 4}" font-size="9" fill="#6b7280" text-anchor="end">${len} aa</text>`;
+  svg += `</svg>`;
+
+  // Legend / full list (domains first, then families/superfamilies), deduped.
+  const seen = new Set();
+  const list = all
+    .filter((d) => { const k = d.accession + d.start + d.end; if (seen.has(k)) return false; seen.add(k); return true; })
+    .sort((a, b) => a.start - b.start)
+    .map((d) => {
+      const url = d.db === "pfam" ? `https://www.ebi.ac.uk/interpro/entry/pfam/${d.accession}/`
+        : d.db === "interpro" ? `https://www.ebi.ac.uk/interpro/entry/InterPro/${d.accession}/` : "";
+      const sw = (d.type === "domain" || d.type === "repeat") ? `<span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:${domainColor(d.accession || d.name)};margin-right:6px"></span>` : `<span style="display:inline-block;width:9px;height:9px;margin-right:6px"></span>`;
+      const nm = url ? `<a class="text-link" href="${url}" target="_blank" rel="noopener">${escapeHtml(d.name || d.accession)}</a>` : escapeHtml(d.name || d.accession);
+      return `<li>${sw}${nm} <span style="color:var(--muted,#6b7280)">· ${escapeHtml(d.type)} · ${escapeHtml(d.db)} · ${d.start}–${d.end}</span></li>`;
+    }).join("");
+  el.innerHTML = `<div style="margin-bottom:10px">${svg}</div><ul class="list" style="font-size:0.8125rem">${list}</ul>`;
 }
 
 async function loadPDBResults(gene) {

@@ -349,6 +349,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/data-status"):
             self._handle_api_status()
             return
+        if self.path.startswith("/api/domains"):
+            self._handle_domains()
+            return
 
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
@@ -471,6 +474,43 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_enrichment()
         else:
             self.send_error(404)
+
+    def _handle_domains(self):
+        """GET /api/domains?acc=UNIPROT -> {length, domains:[...]}.
+
+        Proxies the InterPro REST API (server-side: handles SSL + avoids CORS)
+        for protein length and domain/family architecture."""
+        q = parse_qs(urlparse(self.path).query)
+        acc = (q.get("acc", [""])[0] or "").strip()
+        if not re.match(r"^[A-Za-z0-9]+$", acc):
+            self.send_json(400, {"error": "bad or missing accession"})
+            return
+        base = "https://www.ebi.ac.uk/interpro/api"
+        try:
+            with urllib.request.urlopen(f"{base}/protein/uniprot/{acc}", timeout=20, context=SSL_CTX) as r:
+                length = json.loads(r.read()).get("metadata", {}).get("length")
+            with urllib.request.urlopen(f"{base}/entry/all/protein/uniprot/{acc}/?page_size=100", timeout=25, context=SSL_CTX) as r:
+                data = json.loads(r.read())
+            domains = []
+            for res in data.get("results", []):
+                md = res.get("metadata", {})
+                for prot in res.get("proteins", []):
+                    for loc in prot.get("entry_protein_locations", []):
+                        for fr in loc.get("fragments", []):
+                            if fr.get("start") is None or fr.get("end") is None:
+                                continue
+                            domains.append({
+                                "db": md.get("source_database"),
+                                "accession": md.get("accession"),
+                                "name": md.get("name"),
+                                "type": md.get("type"),
+                                "start": fr["start"], "end": fr["end"],
+                            })
+            self.send_json(200, {"length": length, "domains": domains})
+        except urllib.error.HTTPError as e:
+            self.send_json(404 if e.code == 404 else 502, {"error": f"InterPro: {e}"})
+        except Exception as e:
+            self.send_json(502, {"error": str(e)})
 
     def _handle_enrichment(self):
         """POST {genes:[...], background?, min_study?} -> GO enrichment."""

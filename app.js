@@ -1030,6 +1030,7 @@ function setRoute(gene, tab = state.activeTab) {
 }
 
 function openGene(gene, tab = "Summary", updateRoute = true) {
+  showHomeChrome(false);
   state.activeGene = gene;
   state.activeTab = tab;
   recordRecentGene(gene?.symbol);
@@ -2710,6 +2711,7 @@ function initGenomeBrowser() {
 }
 
 function hideContentSections() {
+  showHomeChrome(false);
   [toolsShell, organismShell, communityShell, researchShell].forEach((shell) => {
     if (shell) {
       shell.innerHTML = "";
@@ -5773,6 +5775,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   // Fall back to NCBI search
+  showHomeChrome(false);
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</p></div>`;
   scrollToEl(recordShell);
   try {
@@ -6156,6 +6159,7 @@ recordShell.addEventListener("keydown", (event) => {
 window.addEventListener("popstate", hydrateFromRoute);
 
 function hydrateFromRoute() {
+  showHomeChrome(true);  // default; the branch openers below flip it off for non-home views
   const params = new URLSearchParams(window.location.search);
   const pathParts = window.location.pathname.split("/").filter(Boolean);
   const isGeneRoute = pathParts[0] === "gene" && pathParts[1];
@@ -6270,6 +6274,19 @@ function initHeroVideo() {
   }
 }
 
+// Home-only chrome: the hero (with quick search + video) and the news/papers
+// feeds show only on the home view, not on gene/tool/community/etc. pages.
+let isHomeView = true;
+function showHomeChrome(show) {
+  isHomeView = show;
+  const hero = document.getElementById("search");
+  if (hero) hero.hidden = !show;
+  ["news-feed", "papers-feed"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.hidden = !(show && el.children.length > 0);
+  });
+}
+
 const NEWS_TAG_COLORS = { new: "#00539b", data: "#012169", update: "#5b6678", community: "#8a5b16" };
 async function loadNews() {
   const el = document.getElementById("news-feed");
@@ -6281,7 +6298,7 @@ async function loadNews() {
   } catch { return; }
   const items = (data && data.items) || [];
   if (!items.length) { el.setAttribute("hidden", ""); return; }
-  el.removeAttribute("hidden");
+  el.hidden = !isHomeView;
   el.innerHTML = `
     <div class="news-head"><p class="eyebrow">Dicty@Duke</p><h2>News &amp; updates</h2></div>
     <div class="news-list">
@@ -6309,7 +6326,7 @@ async function loadRecentPapers() {
   } catch { return; }
   const papers = (data && data.papers) || [];
   if (!papers.length) { el.setAttribute("hidden", ""); return; }
-  el.removeAttribute("hidden");
+  el.hidden = !isHomeView;
   el.innerHTML = `
     <div class="news-head"><p class="eyebrow">From PubMed · refreshed daily</p><h2>Recent <em>Dictyostelium</em> papers</h2></div>
     <ol class="papers-list">

@@ -192,10 +192,10 @@ def main():
         if not hit:
             unmapped += 1
             continue
-        ddb, _sym = hit
+        ddb, dicty_symbol = hit
         joined += 1
         diseases = hpo.get(human_symbol, [])
-        entry = data.setdefault(ddb, {"orthologs": []})
+        entry = data.setdefault(ddb, {"symbol": dicty_symbol, "orthologs": []})
         if human_symbol not in {o["human_symbol"] for o in entry["orthologs"]}:
             entry["orthologs"].append({
                 "human_symbol": human_symbol,

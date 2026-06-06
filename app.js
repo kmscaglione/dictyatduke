@@ -2541,10 +2541,70 @@ function renderCommunity(section) {
   } else if (section === "award-recipients") {
     communityShell.innerHTML = renderAwardRecipientsPage();
     communityShell.removeAttribute("hidden");
+  } else if (section === "disease-models") {
+    communityShell.innerHTML = renderDiseaseModelsPage();
+    communityShell.removeAttribute("hidden");
+    loadDiseaseModels();
   } else {
     communityShell.innerHTML = "";
     communityShell.setAttribute("hidden", "");
   }
+}
+
+function renderDiseaseModelsPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Human disease</p>
+          <h2>Dictyostelium disease models</h2>
+          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER). These are computational predictions; confirm against the primary literature.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <input id="disease-filter" type="search" placeholder="Filter by Dicty gene, human ortholog, or disease…" aria-label="Filter disease models" style="width:100%;max-width:440px;padding:8px 10px;border:1px solid var(--line,#d7dee0);border-radius:8px;margin-bottom:12px">
+        <div data-disease-results><p class="notice muted">Loading disease models…</p></div>
+      </div>
+    </article>`;
+}
+
+async function loadDiseaseModels() {
+  const container = document.querySelector("[data-disease-results]");
+  if (!container) return;
+  try { await ensureOrthologDisease(); } catch { container.innerHTML = `<p class="notice">Disease data is unavailable right now.</p>`; return; }
+  const rows = [];
+  for (const [ddb, v] of Object.entries(orthologDiseaseData)) {
+    if (ddb.startsWith("_")) continue;
+    for (const o of (v.orthologs || [])) {
+      if (!o.diseases || !o.diseases.length) continue;
+      rows.push({ symbol: v.symbol || ddb, human: o.human_symbol, rel: o.relationship, diseases: o.diseases });
+    }
+  }
+  rows.sort((a, b) => a.symbol.localeCompare(b.symbol));
+  const render = (filter) => {
+    const f = (filter || "").trim().toLowerCase();
+    const shown = !f ? rows : rows.filter((r) =>
+      r.symbol.toLowerCase().includes(f) || r.human.toLowerCase().includes(f) ||
+      r.diseases.some((d) => (d.name || "").toLowerCase().includes(f) || d.id.toLowerCase().includes(f)));
+    container.innerHTML = `
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${shown.length} of ${rows.length} disease-linked gene–ortholog pairs</p>
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+          <th style="padding:6px 8px">Dicty gene</th><th style="padding:6px 8px">Human ortholog</th><th style="padding:6px 8px">Disease(s)</th>
+        </tr></thead>
+        <tbody>
+          ${shown.map((r) => `
+            <tr style="border-bottom:1px solid var(--line,#eef2f3);vertical-align:top">
+              <td style="padding:6px 8px"><a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a></td>
+              <td style="padding:6px 8px"><strong>${escapeHtml(r.human)}</strong>${r.rel ? ` <span style="color:var(--muted,#6b7280)">${escapeHtml(r.rel)}</span>` : ""}</td>
+              <td style="padding:6px 8px">${r.diseases.map((d) => { const h = diseaseHref(d.id); const lab = escapeHtml(d.name || d.id); return h ? `<a class="text-link" href="${h}" target="_blank" rel="noopener">${lab}</a>` : lab; }).join("<br>")}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table></div>`;
+  };
+  render("");
+  const inp = document.getElementById("disease-filter");
+  if (inp) inp.addEventListener("input", () => render(inp.value));
 }
 
 function renderAnnotationsPage() {

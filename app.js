@@ -1335,7 +1335,7 @@ function renderRecord() {
           <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}</p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-            ${gene._curator ? `<span class="tag" style="background:var(--soft,#edf6f2);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
+            ${gene._curator ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
         </div>
         ${gene.uniprot ? `<div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}"></div>` : ""}
@@ -1709,7 +1709,7 @@ let heatStressData = null;
 let hsChart = null;
 let hsSelected = [];
 const HS_CONDITIONS = ["Control", "Heat stress", "Development"];
-const HS_COLORS = ["#0f766e", "#dc2626", "#2563eb"];
+const HS_COLORS = ["#00539b", "#dc2626", "#2563eb"];
 
 function renderHeatStressPage() {
   return `
@@ -1914,7 +1914,7 @@ function renderHSTopTable() {
       const p = heatStressData.find((x) => x.gene === row.dataset.gene);
       if (p) addToHSChart(p);
     });
-    row.addEventListener("mouseenter", () => row.style.background = "var(--soft,#edf6f2)");
+    row.addEventListener("mouseenter", () => row.style.background = "var(--soft,#e7eef7)");
     row.addEventListener("mouseleave", () => row.style.background = "");
   });
 
@@ -1967,7 +1967,7 @@ function wireHSSearch() {
 
 let proteomicsData = null;
 const STAGES = ["Vegetative", "Aggregation", "Mound", "Culmination", "Fruiting body"];
-const STAGE_COLORS = ["#0f766e","#2563eb","#d97706","#dc2626","#7c3aed"];
+const STAGE_COLORS = ["#00539b","#2563eb","#d97706","#dc2626","#7c3aed"];
 let proteomicsChart = null;
 let proteomicsSelected = [];
 
@@ -2136,7 +2136,7 @@ function renderTopTable() {
       const protein = proteomicsData.find((p) => p.gene === gene);
       if (protein) addToChart(protein);
     });
-    row.addEventListener("mouseenter", () => row.style.background = "var(--soft,#edf6f2)");
+    row.addEventListener("mouseenter", () => row.style.background = "var(--soft,#e7eef7)");
     row.addEventListener("mouseleave", () => row.style.background = "");
   });
 }
@@ -2446,7 +2446,7 @@ function rnaseqTracks() {
     type: "wig",
     height: 32,
     autoscaleGroup: "rnaseq",
-    color: `rgb(${15 + i * 24}, ${118 - i * 8}, ${110 + i * 12})`,
+    color: `rgb(${i * 2}, ${83 - i * 8}, ${155 - i * 8})`,
   }));
 }
 
@@ -2457,7 +2457,7 @@ function buildIGVOptions(org) {
     format: "gff3",
     indexed: false,
     displayMode: "EXPANDED",
-    color: "rgb(15, 118, 110)"
+    color: "rgb(0, 83, 155)"
   }] : [];
   if (org.id === "d-discoideum-ax4") tracks.push(...rnaseqTracks());
   return {
@@ -4689,8 +4689,8 @@ async function loadRNAseqInline(gene) {
           datasets: [{
             label: `${gene.symbol} RPKM`,
             data: points,
-            borderColor: "#0f766e",
-            backgroundColor: "#0f766e22",
+            borderColor: "#00539b",
+            backgroundColor: "#00539b22",
             tension: 0.3,
             pointRadius: 4,
             pointHoverRadius: 6,
@@ -4773,7 +4773,7 @@ function renderStringResults(gene, data, imgContainer, container) {
           <strong><a href="https://string-db.org/cgi/network?species_text=Dictyostelium+discoideum&identifiers=${encodeURIComponent(gene.symbol)}%0D${encodeURIComponent(partner)}" target="_blank" rel="noopener">${escapeHtml(partner)}</a></strong>
           <span style="display:flex;align-items:center;gap:8px">
             <span style="flex:1;max-width:120px;height:6px;background:#e5e7eb;border-radius:999px;overflow:hidden">
-              <span style="display:block;height:100%;width:${barW}%;background:var(--teal,#0f766e);border-radius:999px"></span>
+              <span style="display:block;height:100%;width:${barW}%;background:var(--teal,#00539b);border-radius:999px"></span>
             </span>
             Score: ${score}/100
           </span>
@@ -5320,7 +5320,7 @@ async function fetchPDBResults(gene) {
   return details;
 }
 
-const DOMAIN_COLORS = ["#0f766e", "#6b2fb3", "#b45309", "#1d4ed8", "#be123c", "#047857", "#7c3aed", "#0891b2"];
+const DOMAIN_COLORS = ["#00539b", "#6b2fb3", "#b45309", "#1d4ed8", "#be123c", "#047857", "#7c3aed", "#0891b2"];
 function domainColor(s) {
   let h = 0;
   for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
@@ -5616,7 +5616,7 @@ document.addEventListener("click", (event) => {
     const today = new Date().toISOString().slice(0, 10);
     const box = document.createElement("span");
     box.className = "cite-box";
-    box.style.cssText = "display:block;margin-top:6px;padding:8px 10px;background:var(--soft,#edf6f2);border-radius:6px;color:var(--ink,#1f2937);font-size:0.75rem;line-height:1.5";
+    box.style.cssText = "display:block;margin-top:6px;padding:8px 10px;background:var(--soft,#e7eef7);border-radius:6px;color:var(--ink,#1f2937);font-size:0.75rem;line-height:1.5";
     box.textContent = `Dicty@Duke. ${sym} gene record. Duke University. Retrieved ${today} from ${location.origin}/gene/${sym}`;
     citeToggle.parentElement.appendChild(box);
     return;

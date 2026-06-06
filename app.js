@@ -1501,7 +1501,119 @@ function openTool(tool, updateRoute = true) {
     toolsShell.innerHTML = renderAPIPage();
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
+  } else if (tool === "lab") {
+    toolsShell.innerHTML = renderLabPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initLab();
   }
+}
+
+const FIELD = "padding:8px 10px;border:1px solid var(--line,#d7dee0);border-radius:8px";
+function renderLabPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Lab tools</p>
+          <h2>Molecular biology tools</h2>
+          <p>Design reagents for <em>Dictyostelium</em>: CRISPR guides and qPCR primers for a gene, and codon-optimize a sequence for the AT-rich Dicty codon usage. Computational suggestions — validate before use.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <h3>CRISPR guide RNAs <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— SpCas9 (NGG), genome off-target checked</span></h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+          <input id="crispr-gene" placeholder="gene symbol or DDB_G id (e.g. cln5)" style="${FIELD};min-width:260px">
+          <button type="button" id="crispr-run">Design guides</button>
+        </div>
+        <div data-crispr-results style="margin-bottom:22px"></div>
+
+        <h3>qPCR primers <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— over the cDNA</span></h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+          <input id="primer-gene" placeholder="gene symbol or DDB_G id" style="${FIELD};min-width:260px">
+          <button type="button" id="primer-run">Design primers</button>
+        </div>
+        <div data-primer-results style="margin-bottom:22px"></div>
+
+        <h3>Codon optimizer <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— for Dicty expression</span></h3>
+        <textarea id="codon-seq" rows="4" placeholder="Paste a protein (MFLIK…) or coding DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px"><button type="button" id="codon-run">Optimize</button></div>
+        <div data-codon-results style="margin-top:12px"></div>
+      </div>
+    </article>`;
+}
+
+async function resolveGeneToDDB(input) {
+  const t = (input || "").trim();
+  if (/^DDB_G\d+$/i.test(t)) return t.toUpperCase();
+  if (!t) return null;
+  try {
+    const r = await fetch(`/api/gene/${encodeURIComponent(t)}`);
+    if (!r.ok) return null;
+    const g = await r.json();
+    return g.ddb || g.veupath || null;
+  } catch { return null; }
+}
+
+function initLab() {
+  const on = (id, fn) => { const b = document.getElementById(id); if (b) b.addEventListener("click", fn); };
+  on("crispr-run", runLabCrispr);
+  on("primer-run", runLabPrimers);
+  on("codon-run", runLabCodon);
+}
+
+async function runLabCrispr() {
+  const out = document.querySelector("[data-crispr-results]");
+  out.innerHTML = `<p class="notice muted">Resolving gene and scanning for guides…</p>`;
+  const ddb = await resolveGeneToDDB(document.getElementById("crispr-gene").value);
+  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
+  try {
+    const data = await (await fetch(`/api/crispr?ddb=${encodeURIComponent(ddb)}`)).json();
+    const g = data.guides || [];
+    if (!g.length) { out.innerHTML = `<p class="notice">No guides found.</p>`; return; }
+    out.innerHTML = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="padding:5px 8px">Protospacer (5′→3′)</th><th style="padding:5px 8px">PAM</th><th style="padding:5px 8px">Strand</th><th style="padding:5px 8px">Pos</th><th style="padding:5px 8px">GC</th><th style="padding:5px 8px" title="genome off-target sites">Off-tgt</th><th style="padding:5px 8px">Score</th></tr></thead>
+      <tbody>${g.slice(0, 15).map((x) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+        <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.protospacer}${x.poly_t ? ` <span title="poly-T (Pol III terminator)" style="color:#b45309">⚠</span>` : ""}</td>
+        <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.pam}</td><td style="padding:5px 8px">${x.strand}</td>
+        <td style="padding:5px 8px">${x.position}</td><td style="padding:5px 8px">${(x.gc * 100).toFixed(0)}%</td>
+        <td style="padding:5px 8px${x.off_targets ? ";color:#be123c" : ""}">${x.off_targets ?? "—"}</td><td style="padding:5px 8px">${x.score}</td></tr>`).join("")}</tbody></table></div>
+      <p style="font-size:.72rem;color:var(--muted,#6b7280);margin-top:6px">Off-target = additional near-perfect genomic sites (blastn-short). Ranked by off-target then on-target score. Verify experimentally.</p>`;
+  } catch { out.innerHTML = `<p class="notice">Guide design failed.</p>`; }
+}
+
+async function runLabPrimers() {
+  const out = document.querySelector("[data-primer-results]");
+  out.innerHTML = `<p class="notice muted">Resolving gene and designing primers…</p>`;
+  const ddb = await resolveGeneToDDB(document.getElementById("primer-gene").value);
+  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
+  try {
+    const data = await (await fetch(`/api/primers?ddb=${encodeURIComponent(ddb)}`)).json();
+    const p = data.primers || [];
+    if (!p.length) { out.innerHTML = `<p class="notice">No primer pairs met the criteria for this transcript.</p>`; return; }
+    out.innerHTML = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="padding:5px 8px">Forward (5′→3′)</th><th style="padding:5px 8px">Reverse (5′→3′)</th><th style="padding:5px 8px">Product</th><th style="padding:5px 8px">Tm F/R</th></tr></thead>
+      <tbody>${p.map((x) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+        <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.forward}</td>
+        <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.reverse}</td>
+        <td style="padding:5px 8px">${x.product} bp</td><td style="padding:5px 8px">${x.fwd_tm}/${x.rev_tm}°C</td></tr>`).join("")}</tbody></table></div>`;
+  } catch { out.innerHTML = `<p class="notice">Primer design failed.</p>`; }
+}
+
+async function runLabCodon() {
+  const out = document.querySelector("[data-codon-results]");
+  const seq = document.getElementById("codon-seq").value.trim();
+  if (!seq) { out.innerHTML = `<p class="notice">Paste a sequence.</p>`; return; }
+  out.innerHTML = `<p class="notice muted">Optimizing…</p>`;
+  try {
+    const r = await (await fetch("/api/codon-optimize", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
+    if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    out.innerHTML = `
+      <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${r.length_aa} aa · optimized GC ${(r.optimized_gc * 100).toFixed(0)}%${r.input_was_dna && r.input_cai != null ? ` · input CAI ${r.input_cai}` : ""}</p>
+      <textarea readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD}">${escapeHtml(r.optimized_dna)}</textarea>`;
+  } catch { out.innerHTML = `<p class="notice">Optimization failed.</p>`; }
 }
 
 function renderAPIPage() {
@@ -5668,7 +5780,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -5907,7 +6019,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

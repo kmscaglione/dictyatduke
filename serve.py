@@ -5,6 +5,7 @@ from email.utils import parsedate_to_datetime
 from urllib.parse import unquote, urlparse, parse_qs
 
 import enrichment
+import bench
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -357,6 +358,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/coexpression"):
             self._handle_coexpression()
             return
+        if self.path.startswith("/api/crispr"):
+            self._handle_crispr()
+            return
+        if self.path.startswith("/api/primers"):
+            self._handle_primers()
+            return
 
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
@@ -481,8 +488,91 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_blast()
         elif self.path == "/api/enrichment":
             self._handle_enrichment()
+        elif self.path == "/api/codon-optimize":
+            self._handle_codon()
         else:
             self.send_error(404)
+
+    def _handle_codon(self):
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 200000:
+                self.send_json(413, {"error": "Sequence too large"})
+                return
+            seq = (json.loads(self.rfile.read(length) or b"{}").get("seq") or "").strip()
+            if not seq:
+                self.send_json(400, {"error": "Provide a 'seq' (protein or DNA)"})
+                return
+            self.send_json(200, bench.codon_optimize(seq))
+        except (ValueError, json.JSONDecodeError) as e:
+            self.send_json(400, {"error": f"Bad request: {e}"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_primers(self):
+        q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "bad or missing ddb"})
+            return
+        try:
+            seq = extract_sequence(ddb, "cdna")
+            if not seq:
+                self.send_json(404, {"error": "no transcript for this gene"})
+                return
+            self.send_json(200, {"ddb": ddb, "length": len(seq),
+                                 "primers": bench.design_primers(seq)})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_crispr(self):
+        q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "bad or missing ddb"})
+            return
+        try:
+            seq = extract_sequence(ddb, "cdna")
+            if not seq:
+                self.send_json(404, {"error": "no transcript for this gene"})
+                return
+            guides = bench.crispr_guides(seq)
+            self._crispr_offtargets(guides)
+            guides.sort(key=lambda g: (g.get("off_targets", 0), -g["score"]))
+            self.send_json(200, {"ddb": ddb, "length": len(seq), "guides": guides})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _crispr_offtargets(self, guides):
+        """Annotate each guide with a genome off-target count (best-effort, one
+        blastn-short pass against the AX4 genome)."""
+        if not guides:
+            return
+        binpath = blast_bin("blastn")
+        db = BLAST_DB_DIR / "d-discoideum-ax4"
+        if not binpath or not (BLAST_DB_DIR / "d-discoideum-ax4.nsq").exists():
+            return
+        fa = "".join(f">g{i}\n{g['protospacer']}\n" for i, g in enumerate(guides))
+        qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+        try:
+            qf.write(fa)
+            qf.close()
+            cmd = [binpath, "-query", qf.name, "-db", str(db), "-task", "blastn-short",
+                   "-outfmt", "6 qseqid pident length", "-word_size", "7",
+                   "-evalue", "10", "-dust", "no", "-max_target_seqs", "100"]
+            proc = subprocess.run(cmd, capture_output=True, text=True, timeout=45)
+        finally:
+            try:
+                os.unlink(qf.name)
+            except OSError:
+                pass
+        counts = {}
+        for line in proc.stdout.splitlines():
+            f = line.split("\t")
+            if len(f) >= 3 and float(f[1]) >= 85 and int(f[2]) >= 17:
+                counts[f[0]] = counts.get(f[0], 0) + 1
+        for i, g in enumerate(guides):
+            g["off_targets"] = max(0, counts.get(f"g{i}", 1) - 1)
 
     def _handle_coexpression(self):
         """GET /api/coexpression?ddb=DDB_G...&n= -> co-expressed genes."""

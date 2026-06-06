@@ -29,6 +29,12 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "ai_curation.json"
 
+# When False, genes whose description matches NO family rule are NOT given an AI
+# entry -- so an AI card only appears where there's real family-level signal,
+# instead of restating the description the gene page already shows. Flip to True
+# to emit the hedged "annotated from sequence" fallback for every named gene.
+EMIT_FALLBACK = False
+
 # GO id -> standard term name (every id pre-checked against the Dicty GAF)
 N = {
     "GO:0005525": "GTP binding", "GO:0003924": "GTPase activity",
@@ -154,6 +160,13 @@ RULES = [
      "A protein kinase that transfers phosphate from ATP to substrate proteins, "
      "a core mechanism of signal regulation.",
      go(("GO:0016301", "F"), ("GO:0005524", "F"), ("GO:0006468", "P"))),
+    # generic kinase catch (metabolic/lipid kinases, "* chain kinase", etc.) --
+    # placed after the protein-kinase rules and BEFORE myosin/oxidoreductase so
+    # e.g. "myosin heavy chain kinase" is scored as a kinase, not a motor.
+    ({"any": ["kinase"], "not": ["inhibitor", "anchor"]},
+     "A predicted kinase that transfers a phosphate group from ATP to its "
+     "substrate.",
+     go(("GO:0016301", "F"), ("GO:0005524", "F"))),
     ({"any": ["cytochrome p450"]},
      "A cytochrome P450, a heme-thiolate monooxygenase that oxidizes lipophilic "
      "substrates in biosynthetic and detoxification reactions.",
@@ -182,7 +195,7 @@ RULES = [
      "A predicted adenylyl cyclase that synthesizes the second messenger cAMP "
      "from ATP.",
      go(("GO:0004016", "F"), ("GO:0006171", "P"))),
-    ({"any": ["phosphodiesterase"]},
+    ({"any": ["phosphodiesterase"], "not": ["inhibitor"]},
      "A predicted cyclic-nucleotide phosphodiesterase that hydrolyzes cyclic "
      "nucleotides such as cAMP or cGMP.",
      go(("GO:0004112", "F"))),
@@ -234,7 +247,8 @@ RULES = [
      "A tetratricopeptide-repeat (TPR) protein; TPR motifs mediate "
      "protein-protein interactions and complex assembly.",
      go(("GO:0005515", "F"))),
-    ({"any": ["heat shock protein", "hsp20", "hsp70", "hsp90", "chaperone"]},
+    ({"any": ["heat shock protein", "hsp20", "hsp70", "hsp90", "hsp40",
+        "chaperonin", "molecular chaperone", "dnaj"]},
      "A predicted molecular chaperone / heat-shock protein that assists protein "
      "folding and the response to stress.",
      go(("GO:0005515", "F"))),
@@ -243,7 +257,7 @@ RULES = [
      "A Rho guanine-nucleotide exchange factor (RhoGEF/DOCK) that activates "
      "Rho-family GTPases by promoting GDP-to-GTP exchange.",
      go(("GO:0005085", "F"), ("GO:0035556", "P"))),
-    ({"any": ["superoxide dismutase"]},
+    ({"any": ["superoxide dismutase"], "not": ["chaperone", "for superoxide"]},
      "A superoxide dismutase that detoxifies superoxide radicals, part of the "
      "cellular defense against oxidative stress.",
      go(("GO:0004784", "F"), ("GO:0046872", "F"))),
@@ -264,7 +278,8 @@ RULES = [
      "A predicted ion channel that conducts ions across a membrane.",
      go(("GO:0005216", "F"), ("GO:0006811", "P"), ("GO:0016020", "C"))),
     ({"any": ["dna-directed rna polymerase", "rna polymerase ii",
-        "rna polymerase iii", "rna polymerase i"]},
+        "rna polymerase iii", "rna polymerase i"],
+        "not": ["associated", "-associated"]},
      "A DNA-directed RNA polymerase subunit, part of the machinery that "
      "transcribes DNA into RNA.",
      go(("GO:0003899", "F"), ("GO:0006351", "P"), ("GO:0005634", "C"))),
@@ -293,7 +308,7 @@ RULES = [
      "A protein bearing a recognized protein-interaction domain, predicted to "
      "mediate protein-protein interactions within a larger complex or pathway.",
      go(("GO:0005515", "F"))),
-    ({"any": ["myosin"]},
+    ({"any": ["myosin"], "not": ["kinase", "binding protein", "phosphatase"]},
      "A myosin, an actin-based motor protein that uses ATP hydrolysis to move "
      "along or exert force on actin filaments.",
      go(("GO:0003774", "F"), ("GO:0003779", "F"), ("GO:0005524", "F"))),
@@ -353,11 +368,15 @@ def main() -> int:
     real_go = {r[0] for v in go_ann.values() for r in v}
 
     data = json.loads(OUT.read_text()) if OUT.exists() else {}
-    # Only the hand-authored core is off-limits (no "basis" field). Prior
-    # family/annotation entries are regenerated, so this script is idempotent
-    # and rule edits take effect on re-run.
+    # Only the hand-authored core is off-limits (no "basis" field). Drop every
+    # prior family/annotation entry and regenerate from scratch, so this script
+    # is idempotent and rule/flag edits take full effect (incl. entries that move
+    # tiers or get suppressed).
     core = {k for k in data
             if not k.startswith("_") and "basis" not in data[k]}
+    for k in [k for k in data
+              if not k.startswith("_") and "basis" in data[k]]:
+        del data[k]
 
     # remaining NAMED genes (real symbol, not hypothetical, not in the core)
     remaining = [(r[1], r[2]) for r in index
@@ -371,12 +390,15 @@ def main() -> int:
         print("VALIDATION FAILED: GO ids not in Dicty GAF:", bad, file=sys.stderr)
         return 1
 
-    added = skipped_empty = fam = anno = gorows = 0
+    added = skipped_empty = skipped_fallback = fam = anno = gorows = 0
     for sym, desc in remaining:
         if not desc.strip():
             skipped_empty += 1
             continue
         summary, terms, basis = curate(desc)
+        if basis == "annotation" and not EMIT_FALLBACK:
+            skipped_fallback += 1
+            continue
         data[sym.lower()] = {
             "summary": summary,
             "go": [list(t) for t in terms],
@@ -399,9 +421,10 @@ def main() -> int:
     }
     OUT.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     total = len([k for k in data if not k.startswith("_")])
-    print(f"family pass: +{added} genes ({fam} family-matched, {anno} fallback), "
-          f"{gorows} GO rows; skipped {skipped_empty} empty-description genes; "
-          f"{total} genes total", file=sys.stderr)
+    print(f"family pass: +{added} genes ({fam} family-matched, {anno} fallback); "
+          f"skipped {skipped_empty} empty-description + {skipped_fallback} "
+          f"unmatched (EMIT_FALLBACK={EMIT_FALLBACK}); {total} genes total",
+          file=sys.stderr)
     return 0
 
 

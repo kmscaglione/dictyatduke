@@ -1,5 +1,5 @@
-import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, hashlib
-import subprocess, shutil, tempfile, csv, html, gzip, io
+import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
+import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
 from urllib.parse import unquote, urlparse, parse_qs
@@ -31,8 +31,38 @@ COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".bedgraph"}
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
 ASSET_RE = re.compile(r'(href|src)="(/[^"?]+\.(?:css|js))"')
 
-# Simple curator auth — SHA256 of password
-CURATOR_PASSWORD_HASH = hashlib.sha256(b"dicty2024curator").hexdigest()
+# Curator auth. The password comes from the CURATOR_PASSWORD env var (no secret
+# in source). If unset, a random one is generated per run and printed to the log
+# so local dev still works; set CURATOR_PASSWORD in any real deployment.
+CURATOR_PASSWORD = os.environ.get("CURATOR_PASSWORD")
+if not CURATOR_PASSWORD:
+    CURATOR_PASSWORD = secrets.token_urlsafe(12)
+    print(f"[serve] CURATOR_PASSWORD not set — generated dev password: {CURATOR_PASSWORD}",
+          file=sys.stderr)
+
+# Login issues a random, expiring session token (NOT derived from the password),
+# kept server-side. In-memory: tokens reset on restart (fine for one process).
+_SESSIONS = {}            # token -> expiry epoch
+SESSION_TTL = 8 * 3600    # 8 hours
+_LOGIN_FAILS = {}         # ip -> [recent failed-attempt epochs]
+_UPLOAD_HITS = {}         # ip -> [recent upload epochs]
+
+# Upload guardrails (the /api/upload endpoint is public community submission).
+UPLOAD_MAX_BYTES = 50 * 1024 * 1024
+UPLOAD_EXTS = {".csv", ".tsv", ".txt", ".xlsx", ".xls", ".fasta", ".fa", ".fna",
+               ".gff", ".gff3", ".gtf", ".bed", ".bedgraph", ".wig", ".json",
+               ".gz", ".zip", ".pdf"}
+
+
+def _rate_limited(store, ip, limit, window):
+    """True if `ip` has >= `limit` events in the last `window` seconds; records now."""
+    now = time.time()
+    hits = [t for t in store.get(ip, []) if now - t < window]
+    store[ip] = hits
+    if len(hits) >= limit:
+        return True
+    hits.append(now)
+    return False
 
 # --- Local BLAST against the bundled dictyostelid genomes ---
 BLAST_DB_DIR = pathlib.Path(ROOT) / "assets" / "genomes" / "blastdb"
@@ -484,6 +514,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_upload()
         elif self.path == "/api/curator/login":
             self._handle_login()
+        elif self.path == "/api/curator/logout":
+            self._handle_logout()
         elif self.path == "/api/curator/submit":
             self._handle_curation_submit()
         elif self.path == "/api/curator/approve":
@@ -736,26 +768,46 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         return ""
 
     def _auth(self, token):
-        return token == CURATOR_PASSWORD_HASH
+        exp = _SESSIONS.get(token)
+        if not exp:
+            return False
+        if time.time() > exp:
+            _SESSIONS.pop(token, None)
+            return False
+        return True
 
     def _handle_login(self):
+        ip = self.client_address[0]
+        if _rate_limited(_LOGIN_FAILS, ip, limit=5, window=300):
+            self.send_json(429, {"error": "Too many attempts. Wait a few minutes."})
+            return
         try:
-            length = int(self.headers.get("Content-Length", 0))
-            body = json.loads(self.rfile.read(length))
-            pw = body.get("password", "")
-            h = hashlib.sha256(pw.encode()).hexdigest()
-            if h == CURATOR_PASSWORD_HASH:
-                self.send_json(200, {"token": CURATOR_PASSWORD_HASH})
+            length = min(int(self.headers.get("Content-Length", 0)), 4096)
+            pw = json.loads(self.rfile.read(length) or b"{}").get("password", "")
+            if isinstance(pw, str) and hmac.compare_digest(pw, CURATOR_PASSWORD):
+                _LOGIN_FAILS.pop(ip, None)  # clear on success
+                token = secrets.token_urlsafe(32)
+                _SESSIONS[token] = time.time() + SESSION_TTL
+                self.send_json(200, {"token": token, "expires_in": SESSION_TTL})
             else:
                 self.send_json(401, {"error": "Wrong password"})
-        except Exception as e:
-            self.send_json(500, {"error": str(e)})
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Bad request"})
+        except Exception:
+            self.send_json(500, {"error": "Login failed"})
+
+    def _handle_logout(self):
+        _SESSIONS.pop(self._parse_token(), None)
+        self.send_json(200, {"ok": True})
 
     def _handle_curation_submit(self):
         """Community submission of a gene curation."""
         try:
-            length = int(self.headers.get("Content-Length", 0))
-            body = json.loads(self.rfile.read(length))
+            if _rate_limited(_UPLOAD_HITS, self.client_address[0], limit=20, window=3600):
+                self.send_json(429, {"error": "Submission limit reached. Try again later."})
+                return
+            length = min(int(self.headers.get("Content-Length", 0)), 65536)
+            body = json.loads(self.rfile.read(length) or b"{}")
             curation_id = str(uuid.uuid4())[:8]
             entry = {
                 "id": curation_id,
@@ -1041,8 +1093,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def _handle_upload(self):
         try:
+            ip = self.client_address[0]
+            if _rate_limited(_UPLOAD_HITS, ip, limit=10, window=3600):
+                self.send_json(429, {"error": "Upload limit reached. Try again later."})
+                return
             content_type = self.headers.get("Content-Type", "")
             length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > UPLOAD_MAX_BYTES:
+                self.send_json(413, {"error": f"File too large (max {UPLOAD_MAX_BYTES // (1024 * 1024)} MB)."})
+                return
             body = self.rfile.read(length)
             raw = f"Content-Type: {content_type}\r\n\r\n".encode() + body
             msg = message_from_bytes(raw)
@@ -1068,6 +1127,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             meta = {"id": submission_id, "timestamp": datetime.datetime.utcnow().isoformat() + "Z", "files": []}
             meta.update(fields)
             if file_data:
+                ext = os.path.splitext(file_name)[1].lower()
+                if ext not in UPLOAD_EXTS:
+                    self.send_json(415, {"error": f"File type '{ext or 'unknown'}' not accepted."})
+                    return
+                # sanitize -> alnum/._- only, so no path separators survive
                 safe = "".join(c for c in f"{submission_id}_{file_name}" if c.isalnum() or c in "._-")
                 (UPLOADS_DIR / "files" / safe).write_bytes(file_data)
                 meta["files"].append(safe)

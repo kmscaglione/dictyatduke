@@ -234,10 +234,18 @@ Everything else is a static file, or the SPA shell for client routes.
   refresh (Cmd/Ctrl+Shift+R) fixes it. New visitors are unaffected.
 
 **Curator auth**
-- `POST /api/curator/login` checks a password whose SHA-256 is hard-coded in
-  `serve.py` (`CURATOR_PASSWORD_HASH`). On success it returns the hash itself as
-  the bearer token; protected endpoints compare the `Authorization: Bearer …`
-  header to that hash. **This is weak — see Known issues.**
+- The curator password comes from the `CURATOR_PASSWORD` env var (no secret in
+  source); if unset, a random dev password is generated per run and printed to
+  the log. Set it in any real deployment: `CURATOR_PASSWORD=… python3 serve.py`.
+- `POST /api/curator/login` compares the password in constant time
+  (`hmac.compare_digest`), rate-limited to 5 attempts / 5 min / IP. On success it
+  issues a **random, expiring session token** (8 h), held server-side; protected
+  endpoints validate the `Authorization: Bearer …` token against that session
+  store. `POST /api/curator/logout` invalidates a token.
+- `POST /api/upload` (public submission) is capped at 50 MB, restricted to a
+  file-type allowlist, and rate-limited (10/h/IP); filenames are sanitized.
+  Note: the session store and rate-limit counters are in-memory (single
+  process) — move to shared storage if running multiple workers.
 
 ---
 
@@ -300,10 +308,12 @@ the NCBI hand-off.
 
 ## Known issues & gotchas
 
-1. **Plaintext curator password.** `dicty2024curator` lives in `serve.py` as a
-   SHA-256, and the "token" is just that hash. Fine for a private beta; **rotate
-   to a real secret (env var) + real session tokens before going public or
-   adding collaborators.**
+1. **Curator auth** (hardened 2026-06-06): password is read from the
+   `CURATOR_PASSWORD` env var (random dev fallback, printed to the log),
+   constant-time compared, login rate-limited, and login issues random expiring
+   session tokens (no longer the password hash). Uploads are size/type/rate
+   limited. Remaining for scale: the session + rate-limit stores are in-memory
+   (single process); HTTPS/stable hosting is still needed before public launch.
 2. **Genomes are gitignored.** A fresh clone has no `assets/genomes/`, so the
    genome browser and Downloads page 404 until you re-download (see Data pipeline).
 3. **Cache transition.** See the cache caveat above — existing testers may need

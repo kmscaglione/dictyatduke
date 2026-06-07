@@ -1031,6 +1031,9 @@ function setRoute(gene, tab = state.activeTab) {
 
 function openGene(gene, tab = "Summary", updateRoute = true) {
   showHomeChrome(false);
+  [toolsShell, organismShell, communityShell, researchShell].forEach((s) => {
+    if (s) { s.innerHTML = ""; s.setAttribute("hidden", ""); }
+  });
   state.activeGene = gene;
   state.activeTab = tab;
   recordRecentGene(gene?.symbol);
@@ -1192,6 +1195,7 @@ async function fetchNCBISuggestions(query, localRows) {
 }
 
 async function openUniProtGene(uniprotId) {
+  recordShell.removeAttribute("hidden");
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading ${escapeHtml(uniprotId)} from UniProt…</p></div>`;
   scrollToEl(recordShell);
   try {
@@ -1204,6 +1208,7 @@ async function openUniProtGene(uniprotId) {
 }
 
 async function openRemoteGene(ncbiId) {
+  recordShell.removeAttribute("hidden");
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading gene ${escapeHtml(ncbiId)}…</p></div>`;
   scrollToEl(recordShell);
   try {
@@ -1326,6 +1331,7 @@ function initStructureViewer(uniprot) {
 function renderRecord() {
   const gene = state.activeGene;
   if (!gene) return;
+  recordShell.removeAttribute("hidden");
   const tabs = ["Summary", "GO", "Phenotypes", "Literature", "Structures", "Interactions", "Orthologs", "PTMs"];
   recordShell.innerHTML = `
     <article class="record-card">
@@ -1338,6 +1344,7 @@ function renderRecord() {
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
+          <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
         </div>
         ${gene.uniprot ? `<div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}"></div>` : ""}
       </header>
@@ -1514,6 +1521,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initExpressionCompare();
+  } else if (tool === "basket") {
+    toolsShell.innerHTML = renderBasketPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initBasket();
   }
 }
 
@@ -3022,7 +3034,7 @@ async function initEducation() {
 
 function hideContentSections() {
   showHomeChrome(false);
-  [toolsShell, organismShell, communityShell, researchShell].forEach((shell) => {
+  [recordShell, toolsShell, organismShell, communityShell, researchShell].forEach((shell) => {
     if (shell) {
       shell.innerHTML = "";
       shell.setAttribute("hidden", "");
@@ -6086,6 +6098,7 @@ form.addEventListener("submit", async (event) => {
 
   // Fall back to NCBI search
   showHomeChrome(false);
+  recordShell.removeAttribute("hidden");
   recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</p></div>`;
   scrollToEl(recordShell);
   try {
@@ -6500,7 +6513,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -6903,6 +6916,199 @@ function hovercardPlace(rect) {
   card.style.visibility = "visible";
 }
 
+// ---- Gene basket / workspace (per-browser, localStorage) ----
+const BASKET_KEY = "dictybase:basket";
+
+function loadBasket() {
+  try {
+    const v = JSON.parse(localStorage.getItem(BASKET_KEY) || "[]");
+    return Array.isArray(v) ? v.filter((e) => e && (e.ddb || e.symbol)) : [];
+  } catch { return []; }
+}
+function saveBasket(list) {
+  try { localStorage.setItem(BASKET_KEY, JSON.stringify(list)); } catch { /* private mode */ }
+  updateBasketCount();
+}
+function basketKey(e) { return String((e && (e.ddb || e.symbol)) || "").toLowerCase(); }
+function basketHas(ddb, symbol) {
+  const a = String(ddb || "").toLowerCase(), b = String(symbol || "").toLowerCase();
+  return loadBasket().some((e) => {
+    const ed = String(e.ddb || "").toLowerCase(), es = String(e.symbol || "").toLowerCase();
+    return (a && (ed === a || es === a)) || (b && (ed === b || es === b));
+  });
+}
+function basketAdd(entry) {
+  if (!entry || (!entry.ddb && !entry.symbol)) return;
+  const list = loadBasket();
+  if (list.some((e) => basketKey(e) === basketKey(entry))) return;
+  list.push({ ddb: entry.ddb || "", symbol: entry.symbol || "", name: entry.name || "", ncbiGene: entry.ncbiGene || "" });
+  saveBasket(list);
+}
+function basketRemove(key) {
+  saveBasket(loadBasket().filter((e) => basketKey(e) !== String(key).toLowerCase()));
+}
+function basketClear() { saveBasket([]); }
+
+function updateBasketCount() {
+  const n = loadBasket().length;
+  document.querySelectorAll("[data-basket-count]").forEach((el) => { el.textContent = n; el.hidden = n === 0; });
+  const tgl = document.querySelector("[data-basket-toggle]");
+  if (tgl && state.activeGene) {
+    const inB = basketHas(state.activeGene.veupath, state.activeGene.symbol);
+    tgl.classList.toggle("in", inB);
+    const lbl = tgl.querySelector(".bt-label"); if (lbl) lbl.textContent = inB ? "In basket" : "Add to basket";
+    const ic = tgl.querySelector(".bt-icon"); if (ic) ic.textContent = inB ? "✓" : "＋";
+  }
+  if (document.querySelector("[data-basket-list]")) renderBasketList();
+}
+
+function basketToggleButtonHTML(gene) {
+  const inB = basketHas(gene.veupath, gene.symbol);
+  return `<button type="button" class="basket-toggle${inB ? " in" : ""}" data-basket-toggle
+      data-ddb="${escapeHtml(gene.veupath || "")}" data-symbol="${escapeHtml(gene.symbol || "")}"
+      data-name="${escapeHtml(gene.name || "")}" data-ncbi="${escapeHtml(gene.ncbiGene || "")}">
+      <span class="bt-icon" aria-hidden="true">${inB ? "✓" : "＋"}</span> <span class="bt-label">${inB ? "In basket" : "Add to basket"}</span>
+    </button>`;
+}
+
+function renderBasketPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Workspace</p>
+        <h2>My gene basket</h2>
+        <p>Collect genes as you browse, then analyze or export them as a set. Stored in this browser only — nothing is uploaded.</p>
+      </div></header>
+      <div class="record-body">
+        <div class="basket-toolbar">
+          <button type="button" class="button primary" data-basket-action="go">GO enrichment →</button>
+          <button type="button" class="button primary" data-basket-action="phenotype">Phenotype enrichment →</button>
+          <button type="button" class="button" data-basket-action="expression">Compare expression →</button>
+          <button type="button" class="button" data-basket-action="csv">Export CSV</button>
+          <button type="button" class="button" data-basket-action="fasta">Export protein FASTA</button>
+          <button type="button" class="ghost-btn" data-basket-action="clear">Clear</button>
+        </div>
+        <div data-basket-results style="margin:12px 0"></div>
+        <div data-basket-list></div>
+      </div>
+    </article>`;
+}
+
+function renderBasketList() {
+  const el = document.querySelector("[data-basket-list]");
+  if (!el) return;
+  const list = loadBasket();
+  if (!list.length) {
+    el.innerHTML = `<div class="basket-empty">
+      <p><strong>Your basket is empty.</strong></p>
+      <p class="muted">Add genes from any gene record with the <em>Add to basket</em> button, or from the
+      <a class="text-link" href="/search/advanced">advanced gene finder</a>. Press <kbd>⌘K</kbd> to jump to a gene quickly.</p>
+    </div>`;
+    return;
+  }
+  el.innerHTML = `
+    <div style="overflow-x:auto">
+    <table class="basket-table">
+      <thead><tr><th>Gene</th><th>Name</th><th>DDB_G</th><th aria-label="Remove"></th></tr></thead>
+      <tbody>
+        ${list.map((e) => `<tr>
+          <td><a class="text-link" href="/gene/${encodeURIComponent(e.symbol || e.ddb)}">${escapeHtml(e.symbol || e.ddb)}</a></td>
+          <td>${escapeHtml(e.name || "")}</td>
+          <td class="mono">${escapeHtml(e.ddb || "")}</td>
+          <td><button type="button" class="basket-x" data-basket-remove="${escapeHtml(basketKey(e))}" aria-label="Remove ${escapeHtml(e.symbol || e.ddb)} from basket">✕</button></td>
+        </tr>`).join("")}
+      </tbody>
+    </table></div>
+    <p class="muted" style="font-size:12px;margin:10px 0 0">${list.length} gene${list.length === 1 ? "" : "s"} in basket.</p>`;
+}
+
+function initBasket() { renderBasketList(); }
+
+function basketDownload(text, filename, type) {
+  const url = URL.createObjectURL(new Blob([text], { type: type || "text/plain" }));
+  const a = document.createElement("a");
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function basketExportCSV(list) {
+  const esc = (s) => `"${String(s || "").replace(/"/g, '""')}"`;
+  const rows = list.map((e) => [e.symbol, e.ddb, e.name, e.ncbiGene].map(esc).join(","));
+  basketDownload("symbol,ddb_g,name,ncbi_gene\n" + rows.join("\n") + "\n", "dicty-gene-basket.csv", "text/csv");
+}
+
+async function basketExportFasta(list, results) {
+  const withDdb = list.filter((e) => e.ddb);
+  if (!withDdb.length) { if (results) results.innerHTML = `<p class="notice">None of these genes have a DDB_G id for sequence export.</p>`; return; }
+  if (results) results.innerHTML = `<p class="notice muted">Fetching ${withDdb.length} protein sequence${withDdb.length === 1 ? "" : "s"}…</p>`;
+  const parts = [];
+  for (const e of withDdb) {
+    try {
+      const r = await fetch(`/api/sequence?ddb=${encodeURIComponent(e.ddb)}&type=protein&symbol=${encodeURIComponent(e.symbol || e.ddb)}`);
+      if (r.ok) { const t = (await r.text()).trim(); if (t) parts.push(t); }
+    } catch { /* skip this gene */ }
+  }
+  if (!parts.length) { if (results) results.innerHTML = `<p class="notice">No sequences could be retrieved.</p>`; return; }
+  basketDownload(parts.join("\n") + "\n", "dicty-gene-basket.protein.fasta", "text/plain");
+  if (results) results.innerHTML = `<p class="notice muted">Downloaded ${parts.length} protein sequence${parts.length === 1 ? "" : "s"} as FASTA.</p>`;
+}
+
+function basketAction(kind) {
+  const list = loadBasket();
+  const results = document.querySelector("[data-basket-results]");
+  if (kind === "clear") {
+    if (list.length && confirm("Remove all genes from the basket?")) basketClear();
+    return;
+  }
+  if (!list.length) { if (results) results.innerHTML = `<p class="notice muted">Add some genes to the basket first.</p>`; return; }
+  const symbols = list.map((e) => e.symbol || e.ddb).filter(Boolean);
+  if (kind === "csv") { basketExportCSV(list); return; }
+  if (kind === "fasta") { basketExportFasta(list, results); return; }
+  if (kind === "expression") {
+    openTool("expression");
+    setTimeout(() => {
+      const inp = document.getElementById("expr-genes");
+      if (inp) inp.value = symbols.slice(0, 12).join(" ");
+      if (typeof runExpressionCompare === "function") runExpressionCompare();
+    }, 80);
+    return;
+  }
+  if (kind === "go" || kind === "phenotype") {
+    openTool("enrichment");
+    setTimeout(() => {
+      const g = document.getElementById("enrich-genes"); if (g) g.value = symbols.join(" ");
+      const s = document.getElementById("enrich-set"); if (s) s.value = kind === "phenotype" ? "phenotype" : "go";
+      if (typeof runEnrichment === "function") runEnrichment();
+    }, 80);
+  }
+}
+
+function basketInit() {
+  updateBasketCount();
+  document.addEventListener("click", (e) => {
+    const tgl = e.target.closest("[data-basket-toggle]");
+    if (tgl) {
+      const entry = { ddb: tgl.dataset.ddb, symbol: tgl.dataset.symbol, name: tgl.dataset.name, ncbiGene: tgl.dataset.ncbi };
+      if (basketHas(entry.ddb, entry.symbol)) basketRemove(basketKey(entry)); else basketAdd(entry);
+      return;
+    }
+    const add = e.target.closest("[data-basket-add]");
+    if (add) {
+      basketAdd({ ddb: add.dataset.ddb, symbol: add.dataset.symbol, name: add.dataset.name, ncbiGene: add.dataset.ncbi });
+      add.classList.add("added");
+      add.textContent = "✓";
+      add.title = "In basket";
+      return;
+    }
+    const rm = e.target.closest("[data-basket-remove]");
+    if (rm) { basketRemove(rm.dataset.basketRemove); return; }
+    const act = e.target.closest("[data-basket-action]");
+    if (act) { basketAction(act.dataset.basketAction); return; }
+    if (e.target.closest("#basket-btn")) { openTool("basket"); }
+  });
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
@@ -6912,6 +7118,7 @@ function initialHydrate() {
   loadRecentPapers();
   cmdkInit();
   hovercardInit();
+  basketInit();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

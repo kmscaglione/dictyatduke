@@ -1520,3 +1520,26 @@ button,
 .ai-summary p{margin:0;color:var(--ink);font-size:0.9375rem;line-height:1.5;}
 .ai-summary .ai-note{margin-top:8px;font-size:0.75rem;color:var(--muted,#6b7280);}
 .ai-tier{font-size:0.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#6b2fb3;background:#efe6fb;border-radius:999px;padding:2px 8px;}
+
+/* ---- Command palette (⌘K / Ctrl-K) ---- */
+.cmdk { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: flex-start; justify-content: center; }
+.cmdk[hidden] { display: none; }
+.cmdk-backdrop { position: absolute; inset: 0; background: rgba(1, 33, 105, .32); }
+.cmdk-panel { position: relative; margin-top: 12vh; width: min(640px, 92vw); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 24px 60px rgba(1, 33, 105, .28); overflow: hidden; }
+.cmdk-input { width: 100%; min-height: 54px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 18px; font-size: 16px; font-weight: 600; background: #fff; color: var(--ink); }
+.cmdk-input:focus { outline: none; }
+.cmdk-results { list-style: none; margin: 0; padding: 6px; max-height: 56vh; overflow-y: auto; }
+.cmdk-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; cursor: pointer; }
+.cmdk-item.active { background: var(--soft); }
+.cmdk-kind { flex: 0 0 auto; width: 62px; text-align: center; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: #fff; background: var(--teal); border-radius: 999px; padding: 3px 0; }
+.cmdk-kind-gene { background: var(--teal-dark); }
+.cmdk-kind-tool, .cmdk-kind-search { background: #0a66b4; }
+.cmdk-kind-learn { background: #8a5b16; }
+.cmdk-kind-community, .cmdk-kind-research, .cmdk-kind-page { background: #5b6678; }
+.cmdk-label { font-weight: 700; color: var(--ink); }
+.cmdk-sub { margin-left: auto; padding-left: 12px; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 55%; }
+.cmdk-empty { padding: 18px; text-align: center; color: var(--muted); }
+.cmdk-foot { display: flex; gap: 16px; padding: 8px 16px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); background: var(--panel); }
+.cmdk-foot kbd { font: inherit; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-right: 3px; }
+body.cmdk-active { overflow: hidden; }
+@media (max-width: 640px) { .cmdk-sub { display: none; } }

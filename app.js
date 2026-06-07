@@ -6664,6 +6664,157 @@ async function loadRecentPapers() {
     <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:8px 0 0">Newest PubMed results for “Dictyostelium”. Source: <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=Dictyostelium&sort=date" target="_blank" rel="noopener">PubMed (NCBI)</a>.</p>`;
 }
 
+// Shared: open a gene from a catalog-index entry ({id, symbol, name, ncbiGene}).
+// Used by the command palette, the gene basket, and the advanced finder.
+function navigateToGene(entry) {
+  if (!entry) return;
+  const sym = normalizeQuery(entry.symbol || "");
+  const curated = genes.find((x) => x.id === entry.id || (sym && normalizeQuery(x.symbol) === sym));
+  if (curated) { openGene(curated); return; }
+  if (entry.ncbiGene) { openRemoteGene(entry.ncbiGene); return; }
+  const m = findGeneByToken(entry.symbol || entry.id);
+  if (m) openGene(m);
+}
+
+// ---- Command palette (⌘K / Ctrl-K): quick-jump to any gene, page, or tool ----
+const CMDK_TARGETS = [
+  { kind: "Page", label: "Home", href: "/", kw: "home start" },
+  { kind: "Tool", label: "My gene basket", href: "/tools/basket", sub: "Collected genes — enrichment, compare & export", kw: "basket workspace cart list saved collection" },
+  { kind: "Search", label: "Advanced gene finder", href: "/search/advanced", sub: "Filter genes by phenotype, disease, expression", kw: "filter facet find advanced browse" },
+  { kind: "Search", label: "General search", href: "/search/general", kw: "search find" },
+  { kind: "Search", label: "Phenotype search", href: "/search/phenotype", kw: "phenotype mutant" },
+  { kind: "Search", label: "GO term search", href: "/search/go", kw: "gene ontology go term" },
+  { kind: "Search", label: "Localization search", href: "/search/localization", kw: "localization subcellular location" },
+  { kind: "Tool", label: "Genome browser", href: "/tools/genome-browser", kw: "igv browser genome tracks" },
+  { kind: "Tool", label: "BLAST sequence search", href: "/tools/blast", kw: "blast sequence align" },
+  { kind: "Tool", label: "GO enrichment", href: "/tools/enrichment", kw: "enrichment go phenotype kegg overrepresented" },
+  { kind: "Tool", label: "Compare expression", href: "/tools/expression", kw: "expression rna-seq chart compare profile" },
+  { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
+  { kind: "Tool", label: "REST API docs", href: "/tools/api", kw: "api rest json endpoint" },
+  { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
+  { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },
+  { kind: "Tool", label: "Insoluble proteome viewer", href: "/tools/heatstress", kw: "proteome heat stress insoluble" },
+  { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },
+  { kind: "Learn", label: "Teaching labs", href: "/research/teaching-labs", kw: "teaching lab classroom protocol undergraduate" },
+  { kind: "Research", label: "Techniques", href: "/research/techniques", kw: "methods techniques transformation imaging" },
+  { kind: "Research", label: "Nomenclature guidelines", href: "/research/nomenclature-guidelines", kw: "naming nomenclature gene strain" },
+  { kind: "Research", label: "Anatomy ontology", href: "/research/anatomy-ontology", kw: "anatomy ontology structures" },
+  { kind: "Community", label: "Research labs", href: "/community/labs", kw: "labs community groups" },
+  { kind: "Community", label: "Disease models", href: "/community/disease-models", kw: "disease human ortholog model" },
+  { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
+  { kind: "Community", label: "Dicty Stock Center", href: "https://dictybase.dev/stockcenter", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
+  { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
+];
+
+const cmdk = { root: null, input: null, list: null, items: [], active: 0, open: false };
+
+function cmdkIsTyping(el) {
+  return el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable);
+}
+
+function cmdkInit() {
+  cmdk.root = document.getElementById("cmdk");
+  cmdk.input = document.getElementById("cmdk-input");
+  cmdk.list = document.getElementById("cmdk-results");
+  if (!cmdk.root || !cmdk.input || !cmdk.list) return;
+  document.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) { e.preventDefault(); cmdkToggle(); return; }
+    if (e.key === "/" && !cmdk.open && !cmdkIsTyping(e.target)) { e.preventDefault(); cmdkOpen(); return; }
+    if (!cmdk.open) return;
+    if (e.key === "Escape") { e.preventDefault(); cmdkClose(); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); cmdkMove(1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); cmdkMove(-1); }
+    else if (e.key === "Enter") { e.preventDefault(); cmdkActivate(cmdk.active); }
+  });
+  cmdk.input.addEventListener("input", () => cmdkRender(cmdk.input.value));
+  cmdk.list.addEventListener("mousemove", (e) => {
+    const li = e.target.closest("[data-idx]"); if (!li) return;
+    const i = +li.dataset.idx;
+    if (i !== cmdk.active) { cmdk.active = i; cmdkPaintActive(); }
+  });
+  cmdk.list.addEventListener("click", (e) => {
+    const li = e.target.closest("[data-idx]"); if (li) cmdkActivate(+li.dataset.idx);
+  });
+  cmdk.root.querySelector("[data-cmdk-close]")?.addEventListener("click", cmdkClose);
+}
+
+function cmdkToggle() { cmdk.open ? cmdkClose() : cmdkOpen(); }
+function cmdkOpen() {
+  if (!cmdk.root) return;
+  cmdk.open = true;
+  cmdk.root.removeAttribute("hidden");
+  document.body.classList.add("cmdk-active");
+  cmdk.input.value = "";
+  cmdkRender("");
+  setTimeout(() => cmdk.input.focus(), 0);
+}
+function cmdkClose() {
+  if (!cmdk.root) return;
+  cmdk.open = false;
+  cmdk.root.setAttribute("hidden", "");
+  document.body.classList.remove("cmdk-active");
+}
+
+function cmdkBuild(query) {
+  const q = (query || "").trim();
+  const items = [];
+  if (!q) {
+    loadRecentGenes().forEach((symbol) => {
+      const g = geneIndex.find((x) => x.symbol.toLowerCase() === symbol.toLowerCase());
+      if (g) items.push({ kind: "Gene", label: g.symbol, sub: g.name, gene: g });
+    });
+    CMDK_TARGETS.slice(0, 8).forEach((t) => items.push({ kind: t.kind, label: t.label, sub: t.sub || "", href: t.href }));
+    return items;
+  }
+  const ql = q.toLowerCase();
+  CMDK_TARGETS.forEach((t) => {
+    if (t.label.toLowerCase().includes(ql) || (t.kw || "").includes(ql))
+      items.push({ kind: t.kind, label: t.label, sub: t.sub || "", href: t.href });
+  });
+  searchIndex(q, 12).forEach((g) => items.push({ kind: "Gene", label: g.symbol, sub: g.name, gene: g }));
+  return items.slice(0, 24);
+}
+
+function cmdkRender(query) {
+  cmdk.items = cmdkBuild(query);
+  cmdk.active = 0;
+  if (!cmdk.items.length) {
+    cmdk.list.innerHTML = `<li class="cmdk-empty">No matches${query ? ` for “${escapeHtml(query)}”` : ""}.</li>`;
+    return;
+  }
+  cmdk.list.innerHTML = cmdk.items.map((it, i) => `
+    <li class="cmdk-item${i === 0 ? " active" : ""}" role="option" data-idx="${i}" aria-selected="${i === 0}">
+      <span class="cmdk-kind cmdk-kind-${it.kind.toLowerCase()}">${escapeHtml(it.kind)}</span>
+      <span class="cmdk-label">${escapeHtml(it.label)}</span>
+      ${it.sub ? `<span class="cmdk-sub">${escapeHtml(it.sub)}</span>` : ""}
+    </li>`).join("");
+}
+
+function cmdkPaintActive() {
+  [...cmdk.list.querySelectorAll(".cmdk-item")].forEach((li, i) => {
+    const on = i === cmdk.active;
+    li.classList.toggle("active", on);
+    li.setAttribute("aria-selected", on ? "true" : "false");
+    if (on) li.scrollIntoView({ block: "nearest" });
+  });
+}
+function cmdkMove(d) {
+  if (!cmdk.items.length) return;
+  cmdk.active = (cmdk.active + d + cmdk.items.length) % cmdk.items.length;
+  cmdkPaintActive();
+}
+function cmdkActivate(i) {
+  const it = cmdk.items[i];
+  if (!it) return;
+  cmdkClose();
+  if (it.gene) { navigateToGene(it.gene); return; }
+  if (it.href) {
+    if (/^https?:/.test(it.href)) { window.open(it.href, "_blank", "noopener"); return; }
+    history.pushState(null, "", it.href);
+    hydrateFromRoute();
+  }
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
@@ -6671,6 +6822,7 @@ function initialHydrate() {
   initHeroVideo();
   loadNews();
   loadRecentPapers();
+  cmdkInit();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

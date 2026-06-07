@@ -1,0 +1,65 @@
+{
+  "_comment": "Concept self-quiz for the Education hub. answer = index of the correct choice.",
+  "questions": [
+    {
+      "q": "What triggers Dictyostelium amoebae to begin multicellular development?",
+      "choices": ["Exposure to light", "Starvation (food depletion)", "A rise in temperature", "Cell crowding alone"],
+      "answer": 1,
+      "explain": "Starvation initiates development: cells stop dividing and begin secreting and sensing cAMP to aggregate."
+    },
+    {
+      "q": "Which molecule do cells chemotax toward during aggregation?",
+      "choices": ["Folate", "cAMP", "DIF-1", "Ammonia"],
+      "answer": 1,
+      "explain": "Aggregating cells chemotax toward cAMP. (Folate guides feeding amoebae toward bacteria.)"
+    },
+    {
+      "q": "In the migrating slug, where are the future spore (prespore) cells located?",
+      "choices": ["Anterior tip", "Posterior region", "Outer sheath only", "Evenly throughout"],
+      "answer": 1,
+      "explain": "Prestalk cells occupy the anterior ~20%; prespore cells make up the posterior region."
+    },
+    {
+      "q": "The Dictyostelium stalk is made of cells that…",
+      "choices": ["Become spores", "Vacuolate and die (altruism)", "Revert to amoebae", "Divide rapidly"],
+      "answer": 1,
+      "explain": "Stalk cells vacuolate and die to hold the spore mass aloft — a classic example of altruistic cell death."
+    },
+    {
+      "q": "Which morphogen promotes prestalk/stalk cell fate?",
+      "choices": ["cGMP", "DIF-1", "Folate", "Adenosine"],
+      "answer": 1,
+      "explain": "DIF-1 (Differentiation-Inducing Factor 1), a chlorinated polyketide, induces prestalk/stalk differentiation."
+    },
+    {
+      "q": "Roughly how long does development take, from starvation to fruiting body?",
+      "choices": ["About 2 hours", "About 24 hours", "About 1 week", "About 1 month"],
+      "answer": 1,
+      "explain": "Under standard conditions the whole program — aggregation through culmination — takes about 24 hours."
+    },
+    {
+      "q": "Why is Dictyostelium a useful model for human disease?",
+      "choices": ["It has no genome", "Many of its genes have human orthologs (e.g. CLN5)", "It is a vertebrate", "It cannot be cultured"],
+      "answer": 1,
+      "explain": "Despite being an amoeba, it shares many disease-relevant genes with humans — e.g. CLN5 (Batten disease)."
+    },
+    {
+      "q": "What does a vegetative (feeding) amoeba eat, and how?",
+      "choices": ["Sunlight, via photosynthesis", "Bacteria, via phagocytosis", "cAMP, via uptake", "Nothing; it is dormant"],
+      "answer": 1,
+      "explain": "Feeding amoebae engulf bacteria by phagocytosis — the basis for using Dictyostelium to study phagocytes."
+    },
+    {
+      "q": "Which structure disperses to start the next generation?",
+      "choices": ["The stalk", "The basal disc", "The spores", "The slug sheath"],
+      "answer": 2,
+      "explain": "Spores in the sorus are dispersed and germinate into new amoebae when conditions improve."
+    },
+    {
+      "q": "What guides the migrating slug toward the soil surface?",
+      "choices": ["Gravity only", "Light and heat (photo/thermotaxis)", "cAMP gradients", "Random movement"],
+      "answer": 1,
+      "explain": "The slug migrates toward light and warmth (photo- and thermotaxis), bringing it to the surface for spore dispersal."
+    }
+  ]
+}

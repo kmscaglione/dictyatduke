@@ -1,0 +1,29 @@
+{
+  "_comment": "Dictyostelium glossary for the Education hub. Edit to add terms.",
+  "terms": [
+    {"term": "Aggregation", "def": "The stage where starving amoebae move together (chemotax) toward cAMP signaling centers to form a multicellular mound."},
+    {"term": "Aggregation-competent", "def": "The state cells reach a few hours into starvation when they can both relay and respond to cAMP and begin streaming."},
+    {"term": "Allorecognition", "def": "The ability of cells to distinguish self/kin from non-self during aggregation, governed by the tgrB1/tgrC1 genes."},
+    {"term": "Amoeba", "def": "The single-celled, free-living feeding form of Dictyostelium that grows by engulfing bacteria."},
+    {"term": "Anterior-like cells (ALCs)", "def": "Prestalk-type cells scattered in the prespore region of the slug; they contribute to structures during culmination."},
+    {"term": "Axenic strain", "def": "A lab strain (e.g. AX2, AX3, AX4) that can grow in liquid nutrient medium without bacteria, enabling large-scale culture."},
+    {"term": "cAMP relay", "def": "The pulsatile circuit in which a cAMP signal triggers cells to synthesize and secrete more cAMP, propagating waves that organize aggregation."},
+    {"term": "Chemotaxis", "def": "Directed cell movement up a chemical gradient; in Dictyostelium classically toward cAMP (aggregation) or folate (feeding)."},
+    {"term": "Culmination", "def": "The final morphogenetic stage in which the slug stands up and forms a fruiting body (stalk + spore mass)."},
+    {"term": "DIF-1", "def": "Differentiation-Inducing Factor 1, a chlorinated polyketide morphogen that promotes prestalk/stalk cell fate."},
+    {"term": "Fruiting body (sorocarp)", "def": "The terminal structure: a cellular stalk holding aloft a sorus (ball of spores) on a basal disc."},
+    {"term": "Mound", "def": "The hemispherical aggregate of ~10^5 cells formed at the end of aggregation, where cell-type differentiation begins."},
+    {"term": "Phagocytosis", "def": "Engulfment of particles (bacteria) by amoebae; the basis of Dictyostelium's use as a model for host-pathogen and immune cell biology."},
+    {"term": "Prespore cells", "def": "Cells in the posterior of the slug fated to become spores; marked by genes such as pspA, cotB, and cotC."},
+    {"term": "Prestalk cells", "def": "Cells in the anterior of the slug fated to become the stalk; marked by genes such as ecmA and ecmB."},
+    {"term": "Pseudoplasmodium (slug)", "def": "The migrating, sausage-shaped multicellular stage with established anterior-posterior cell-type pattern."},
+    {"term": "REMI", "def": "Restriction Enzyme-Mediated Integration, a classic insertional mutagenesis method for tagging and disrupting Dictyostelium genes."},
+    {"term": "Social amoeba", "def": "An amoeba that switches from a unicellular to a cooperative multicellular lifestyle under stress — Dictyostelium's defining trait."},
+    {"term": "Sorus", "def": "The spherical spore mass at the top of the fruiting body."},
+    {"term": "Spore", "def": "The dormant, stress-resistant cell type that disperses and later germinates into a new amoeba."},
+    {"term": "Stalk", "def": "The structural column of vacuolated, dead cells that holds the sorus aloft — an example of altruistic cell death."},
+    {"term": "Streaming", "def": "The branching, head-to-tail chains amoebae form as they chemotax into an aggregation center."},
+    {"term": "Slug migration (photo/thermotaxis)", "def": "The slug's directed movement toward light and warmth, guiding it to the soil surface for dispersal."},
+    {"term": "Vegetative growth", "def": "The feeding, dividing phase of single amoebae while bacterial food is available."}
+  ]
+}

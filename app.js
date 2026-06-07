@@ -2710,6 +2710,133 @@ function initGenomeBrowser() {
   }
 }
 
+// ---- Education hub: life cycle, glossary, concept quiz, primer ----
+const LIFE_CYCLE = [
+  { id: "growth", name: "Vegetative growth", time: "while food lasts",
+    summary: "Single amoebae crawl through the soil eating bacteria by phagocytosis and divide every few hours — the unicellular, feeding phase.",
+    markers: ["myoB", "phg1a", "rasS"] },
+  { id: "starvation", name: "Starvation & cAMP signaling", time: "0–6 h",
+    summary: "When food runs out, cells stop dividing, become aggregation-competent, and begin secreting and sensing pulses of the chemoattractant cAMP.",
+    markers: ["acaA", "carA", "pdsA", "gpaB", "dagA"] },
+  { id: "aggregation", name: "Aggregation (streaming)", time: "~6–10 h",
+    summary: "Cells chemotax up relayed cAMP waves toward signaling centers, forming branching streams, and switch on cell–cell adhesion.",
+    markers: ["carA", "acaA", "csaA", "gbpC"] },
+  { id: "mound", name: "Mound", time: "~10–14 h",
+    summary: "~100,000 cells pile into a mound and begin choosing fates — prestalk vs prespore — under the morphogen DIF-1 and continued cAMP signaling.",
+    markers: ["ecmA", "pspA", "dimB", "gtaC"] },
+  { id: "slug", name: "Slug (migration)", time: "~14–20 h",
+    summary: "The mound forms a motile slug with prestalk cells at the front and prespore cells behind; it migrates toward light and warmth (photo/thermotaxis).",
+    markers: ["ecmA", "ecmB", "pspA", "cudA", "amtC"] },
+  { id: "culmination", name: "Culmination → fruiting body", time: "~20–24 h",
+    summary: "The slug stands up: prestalk cells vacuolate into a dead stalk that lifts a sorus of spores. Spores disperse and germinate into new amoebae — the cycle repeats.",
+    markers: ["ecmB", "cotB", "cotC", "spiA", "tagC"] },
+];
+
+function openEducation(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/education");
+  if (!researchShell) return;
+  researchShell.innerHTML = renderEducationPage();
+  researchShell.removeAttribute("hidden");
+  scrollToEl(researchShell);
+  initEducation();
+}
+
+function renderEducationPage() {
+  const steps = LIFE_CYCLE.map((s, i) =>
+    `<button type="button" class="lc-stage${i === 0 ? " active" : ""}" data-stage="${i}">
+       <span class="lc-num">${i + 1}</span><span class="lc-name">${escapeHtml(s.name)}</span><span class="lc-time">${escapeHtml(s.time)}</span>
+     </button>`).join('<span class="lc-arrow" aria-hidden="true">→</span>');
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Education</p>
+        <h2>Learn <em>Dictyostelium</em></h2>
+        <p><em>Dictyostelium discoideum</em> is a social amoeba and a premier teaching organism: cheap and safe to grow, with a dramatic 24-hour life cycle that takes single cells through chemotaxis, cooperation, and multicellular development — and a genome full of human-disease orthologs. Use the interactive life cycle, glossary, and quiz below with your students.</p>
+      </div></header>
+      <div class="record-body">
+        <h3 id="life-cycle">The life cycle <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— click a stage</span></h3>
+        <div class="lc-stepper">${steps}</div>
+        <div class="lc-detail" data-stage-detail></div>
+
+        <h3 id="glossary" style="margin-top:26px">Glossary</h3>
+        <input id="glossary-filter" type="search" placeholder="Filter terms…" aria-label="Filter glossary" style="${FIELD};width:100%;max-width:340px;margin-bottom:10px">
+        <div data-glossary><p class="notice muted">Loading glossary…</p></div>
+
+        <h3 id="quiz" style="margin-top:26px">Concept self-quiz</h3>
+        <div data-quiz><p class="notice muted">Loading quiz…</p></div>
+
+        <h3 style="margin-top:26px">Classroom lab materials</h3>
+        <p style="font-size:.875rem">Ready-to-use undergraduate lab protocols (chemotaxis, cell migration, the life cycle, and more) are on the <a class="text-link" href="/research/teaching-labs">Teaching labs</a> page.</p>
+      </div>
+    </article>`;
+}
+
+function renderLifeCycleDetail(i) {
+  const el = document.querySelector("[data-stage-detail]");
+  if (!el) return;
+  const s = LIFE_CYCLE[i];
+  el.innerHTML = `
+    <h4 style="margin:0 0 6px">${escapeHtml(s.name)} <span style="font-weight:500;color:var(--muted,#6b7280)">· ${escapeHtml(s.time)}</span></h4>
+    <p style="margin:0 0 8px">${escapeHtml(s.summary)}</p>
+    <p style="margin:0;font-size:.8125rem"><strong>Marker genes:</strong> ${s.markers.map((m) => `<a class="text-link" href="/gene/${encodeURIComponent(m)}">${escapeHtml(m)}</a>`).join(", ")}</p>`;
+}
+
+async function initEducation() {
+  renderLifeCycleDetail(0);
+  document.querySelectorAll(".lc-stage").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".lc-stage").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderLifeCycleDetail(parseInt(btn.dataset.stage, 10));
+    });
+  });
+  // Glossary
+  const gEl = document.querySelector("[data-glossary]");
+  if (gEl) {
+    try {
+      const terms = ((await (await fetch("/assets/glossary.json")).json()).terms || [])
+        .sort((a, b) => a.term.localeCompare(b.term));
+      const render = (f) => {
+        const q = (f || "").trim().toLowerCase();
+        const shown = q ? terms.filter((t) => t.term.toLowerCase().includes(q) || t.def.toLowerCase().includes(q)) : terms;
+        gEl.innerHTML = `<dl class="glossary">${shown.map((t) => `<dt>${escapeHtml(t.term)}</dt><dd>${escapeHtml(t.def)}</dd>`).join("")}</dl>`;
+      };
+      render("");
+      const inp = document.getElementById("glossary-filter");
+      if (inp) inp.addEventListener("input", () => render(inp.value));
+    } catch { gEl.innerHTML = `<p class="notice muted">Glossary unavailable.</p>`; }
+  }
+  // Quiz
+  const qEl = document.querySelector("[data-quiz]");
+  if (qEl) {
+    try {
+      const questions = (await (await fetch("/assets/quiz.json")).json()).questions || [];
+      qEl.innerHTML = questions.map((q, i) => `
+        <div class="quiz-q" data-qi="${i}">
+          <p class="quiz-prompt"><strong>${i + 1}.</strong> ${escapeHtml(q.q)}</p>
+          <div class="quiz-choices">${q.choices.map((c, ci) => `<button type="button" class="quiz-choice" data-qi="${i}" data-ci="${ci}">${escapeHtml(c)}</button>`).join("")}</div>
+          <p class="quiz-feedback" data-feedback="${i}" hidden></p>
+        </div>`).join("");
+      qEl.addEventListener("click", (e) => {
+        const b = e.target.closest(".quiz-choice");
+        if (!b) return;
+        const qi = +b.dataset.qi, ci = +b.dataset.ci, q = questions[qi];
+        const wrap = qEl.querySelector(`.quiz-q[data-qi="${qi}"]`);
+        wrap.querySelectorAll(".quiz-choice").forEach((c, idx) => {
+          c.disabled = true;
+          if (idx === q.answer) c.classList.add("correct");
+          else if (idx === ci) c.classList.add("wrong");
+        });
+        const fb = qEl.querySelector(`[data-feedback="${qi}"]`);
+        fb.hidden = false;
+        fb.innerHTML = `${ci === q.answer ? "✓ Correct. " : "✗ "}${escapeHtml(q.explain)}`;
+        fb.className = `quiz-feedback ${ci === q.answer ? "ok" : "no"}`;
+      });
+    } catch { qEl.innerHTML = `<p class="notice muted">Quiz unavailable.</p>`; }
+  }
+}
+
 function hideContentSections() {
   showHomeChrome(false);
   [toolsShell, organismShell, communityShell, researchShell].forEach((shell) => {
@@ -5979,6 +6106,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const eduLink = event.target.closest('a[href="/education"]');
+  if (eduLink) {
+    event.preventDefault();
+    openEducation();
+    return;
+  }
+
   const communityLink = event.target.closest('a[href^="/community/"]');
   if (communityLink) {
     event.preventDefault();
@@ -6193,6 +6327,10 @@ function hydrateFromRoute() {
   }
   if (isCommunityRoute) {
     openCommunity(pathParts[1], false);
+    return;
+  }
+  if (pathParts[0] === "education") {
+    openEducation(false);
     return;
   }
   if (pathParts[0] === "go" && pathParts[1]) {

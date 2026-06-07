@@ -6266,11 +6266,18 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
     }
+  }
+
+  const advLink = event.target.closest('a[href="/search/advanced"]');
+  if (advLink) {
+    event.preventDefault();
+    openAdvancedFinder();
+    return;
   }
 
   const citeToggle = event.target.closest(".cite-toggle");
@@ -6539,6 +6546,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "data") {
     openDataPage(false);
+    return;
+  }
+  if (pathParts[0] === "search" && pathParts[1] === "advanced") {
+    openAdvancedFinder(false);
     return;
   }
   if (pathParts[0] === "search" && SEARCH_PAGE_MODES.some((m) => m.key === pathParts[1])) {
@@ -7107,6 +7118,143 @@ function basketInit() {
     if (act) { basketAction(act.dataset.basketAction); return; }
     if (e.target.closest("#basket-btn")) { openTool("basket"); }
   });
+}
+
+// ---- Advanced gene finder: faceted filtering over the whole catalog ----
+let FACETS = null;            // { ddb: [pheno, ortholog, disease, peakStage] }
+let finderResults = [];       // current filtered list of { g, p, o, d, x }
+const FINDER_STAGES = ["0 h · growth", "4 h", "8 h · aggregation", "12 h · mound", "16 h · slug", "20 h", "24 h · fruiting"];
+const FINDER_MAX = 300;
+
+function openAdvancedFinder(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/search/advanced");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = renderAdvancedFinder();
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  initAdvancedFinder();
+}
+
+function renderAdvancedFinder() {
+  const total = geneIndex.length ? `${geneIndex.length.toLocaleString()} ` : "";
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Search</p>
+        <h2>Advanced gene finder</h2>
+        <p>Filter the ${total}<em>D. discoideum</em> genes by what's known about them — curated phenotype, human ortholog, disease link, and developmental expression peak. Send hits to your <a class="text-link" href="/tools/basket">basket</a> or export them as CSV.</p>
+      </div></header>
+      <div class="record-body">
+        <div class="finder-controls">
+          <input id="finder-text" type="search" placeholder="Symbol or name contains… e.g. kinase, ras, myosin" aria-label="Symbol or name contains" style="${FIELD};min-width:240px;flex:1">
+          <label class="finder-check"><input type="checkbox" id="finder-pheno"> Has mutant phenotype</label>
+          <label class="finder-check"><input type="checkbox" id="finder-ortholog"> Has human ortholog</label>
+          <label class="finder-check"><input type="checkbox" id="finder-disease"> Disease-linked</label>
+          <label class="finder-peak">Expression peak
+            <select id="finder-peak" style="${FIELD}">
+              <option value="">Any</option>
+              <option value="exp">Expressed (any stage)</option>
+              ${FINDER_STAGES.map((s, i) => `<option value="${i}">${escapeHtml(s)}</option>`).join("")}
+            </select>
+          </label>
+        </div>
+        <div class="finder-actions">
+          <button type="button" class="ghost-btn" id="finder-reset">Reset</button>
+          <button type="button" class="button" id="finder-csv">Export results (CSV)</button>
+          <button type="button" class="button" id="finder-basket">Add results to basket</button>
+        </div>
+        <div data-finder-results><p class="notice muted">Loading gene facets…</p></div>
+      </div>
+    </article>`;
+}
+
+async function initAdvancedFinder() {
+  if (!FACETS) {
+    try { FACETS = await (await fetch("/assets/gene_facets.json")).json(); }
+    catch { FACETS = {}; }
+  }
+  for (let i = 0; i < 30 && !geneIndex.length; i++) await new Promise((r) => setTimeout(r, 100));
+  ["finder-text", "finder-pheno", "finder-ortholog", "finder-disease", "finder-peak"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) { el.addEventListener("input", finderApply); el.addEventListener("change", finderApply); }
+  });
+  document.getElementById("finder-reset")?.addEventListener("click", () => {
+    const t = document.getElementById("finder-text"); if (t) t.value = "";
+    ["finder-pheno", "finder-ortholog", "finder-disease"].forEach((id) => { const e = document.getElementById(id); if (e) e.checked = false; });
+    const pk = document.getElementById("finder-peak"); if (pk) pk.value = "";
+    finderApply();
+  });
+  document.getElementById("finder-csv")?.addEventListener("click", finderExportCSV);
+  document.getElementById("finder-basket")?.addEventListener("click", finderAddAll);
+  finderApply();
+}
+
+function finderFilter() {
+  const text = (document.getElementById("finder-text")?.value || "").trim().toLowerCase();
+  const needPheno = document.getElementById("finder-pheno")?.checked;
+  const needOrth = document.getElementById("finder-ortholog")?.checked;
+  const needDis = document.getElementById("finder-disease")?.checked;
+  const peakVal = document.getElementById("finder-peak")?.value || "";
+  const peakNum = peakVal !== "" && peakVal !== "exp" ? parseInt(peakVal, 10) : null;
+  const out = [];
+  for (const g of geneIndex) {
+    if (text && !(g.symbol.toLowerCase().includes(text) || (g.name || "").toLowerCase().includes(text))) continue;
+    const f = FACETS[g.id];
+    const p = f ? f[0] : 0, o = f ? f[1] : 0, d = f ? f[2] : 0, x = f ? f[3] : -1;
+    if (needPheno && !p) continue;
+    if (needOrth && !o) continue;
+    if (needDis && !d) continue;
+    if (peakVal === "exp" && x < 0) continue;
+    if (peakNum !== null && x !== peakNum) continue;
+    out.push({ g, p, o, d, x });
+  }
+  return out;
+}
+
+function finderApply() {
+  const el = document.querySelector("[data-finder-results]");
+  if (!el) return;
+  if (!geneIndex.length) { el.innerHTML = `<p class="notice muted">Loading gene catalog…</p>`; return; }
+  finderResults = finderFilter();
+  const n = finderResults.length;
+  if (!n) { el.innerHTML = `<p class="notice">No genes match these filters.</p>`; return; }
+  const shown = finderResults.slice(0, FINDER_MAX);
+  el.innerHTML = `
+    <p class="finder-count">${n.toLocaleString()} gene${n === 1 ? "" : "s"} match${n === 1 ? "es" : ""}${n > FINDER_MAX ? ` — showing the first ${FINDER_MAX}` : ""}.</p>
+    <div style="overflow-x:auto"><table class="finder-table">
+      <thead><tr><th>Gene</th><th>Name</th><th>Known for</th><th>Expression peak</th><th aria-label="Add"></th></tr></thead>
+      <tbody>
+        ${shown.map(({ g, p, o, d, x }) => {
+          const chips = [
+            p ? '<span class="fchip">phenotype</span>' : "",
+            d ? '<span class="fchip fchip-dis">disease</span>' : (o ? '<span class="fchip">ortholog</span>' : ""),
+          ].join("");
+          return `<tr>
+            <td><a class="text-link" href="/gene/${encodeURIComponent(g.symbol)}">${escapeHtml(g.symbol)}</a></td>
+            <td>${escapeHtml(g.name || "")}</td>
+            <td>${chips || '<span class="muted">—</span>'}</td>
+            <td>${x >= 0 ? escapeHtml(FINDER_STAGES[x]) : '<span class="muted">—</span>'}</td>
+            <td><button type="button" class="basket-add" title="Add ${escapeHtml(g.symbol)} to basket" aria-label="Add ${escapeHtml(g.symbol)} to basket" data-basket-add data-ddb="${escapeHtml(g.id)}" data-symbol="${escapeHtml(g.symbol)}" data-name="${escapeHtml(g.name || "")}" data-ncbi="${escapeHtml(g.ncbiGene || "")}">＋</button></td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table></div>`;
+}
+
+function finderExportCSV() {
+  if (!finderResults.length) return;
+  const esc = (s) => `"${String(s || "").replace(/"/g, '""')}"`;
+  const rows = finderResults.map(({ g, p, o, d, x }) =>
+    [g.symbol, g.id, g.name, p ? "yes" : "", o ? "yes" : "", d ? "yes" : "", x >= 0 ? FINDER_STAGES[x] : ""].map(esc).join(","));
+  basketDownload("symbol,ddb_g,name,phenotype,human_ortholog,disease,expression_peak\n" + rows.join("\n") + "\n", "dicty-gene-finder.csv", "text/csv");
+}
+
+function finderAddAll() {
+  if (!finderResults.length) return;
+  const cap = 200;
+  if (finderResults.length > cap && !confirm(`Add the first ${cap} of ${finderResults.length} matching genes to your basket?`)) return;
+  finderResults.slice(0, cap).forEach(({ g }) => basketAdd({ ddb: g.id, symbol: g.symbol, name: g.name, ncbiGene: g.ncbiGene }));
 }
 
 function initialHydrate() {

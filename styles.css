@@ -1582,3 +1582,19 @@ body.cmdk-active { overflow: hidden; }
 .basket-empty kbd { font: inherit; background: var(--soft); border-radius: 4px; padding: 0 5px; }
 .basket-add { min-height: 28px; min-width: 30px; padding: 0 9px; border-radius: 999px; font-weight: 800; color: var(--teal-dark); background: var(--soft); border: 1px solid transparent; }
 .basket-add.added { color: #065f46; background: #ecfdf5; }
+
+/* ---- Advanced gene finder ---- */
+.finder-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.finder-check { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; color: var(--ink); cursor: pointer; }
+.finder-check input { width: auto; min-height: 0; }
+.finder-peak { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.finder-peak select { min-height: 36px; width: auto; }
+.finder-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.finder-actions .button, .finder-actions .ghost-btn { min-height: 36px; }
+.finder-count { font-size: 13px; font-weight: 700; color: var(--teal-dark); margin: 4px 0 8px; }
+.finder-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.finder-table th { text-align: left; padding: 8px; border-bottom: 2px solid var(--line); font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.finder-table td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.finder-table .muted { color: var(--muted); }
+.fchip { display: inline-block; font-size: 11px; font-weight: 700; color: var(--teal-dark); background: var(--soft); border-radius: 999px; padding: 2px 8px; margin: 0 4px 2px 0; }
+.fchip.fchip-dis { color: #9f1239; background: #fef2f2; }

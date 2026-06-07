@@ -112,5 +112,31 @@ class OrthologDiseaseTest(unittest.TestCase):
         self.assertIn("CLN5", syms)
 
 
+class TestGeneFacets(unittest.TestCase):
+    """gene_facets.json powers the advanced finder: {ddb: [pheno, ortholog, disease, peak]}."""
+
+    @classmethod
+    def setUpClass(cls):
+        path = ASSETS / "gene_facets.json"
+        cls.facets = load("gene_facets.json") if path.exists() else None
+
+    def test_structure(self):
+        if self.facets is None:
+            self.skipTest("gene_facets.json not built")
+        self.assertGreater(len(self.facets), 1000)
+        for key, v in list(self.facets.items())[:2000]:
+            self.assertTrue(key.startswith("DDB_G"), f"bad gene key {key}")
+            self.assertEqual(len(v), 4, f"{key} should have 4 facet values")
+            self.assertIn(v[0], (0, 1))
+            self.assertIn(v[1], (0, 1))
+            self.assertIn(v[2], (0, 1))
+            self.assertTrue(-1 <= v[3] <= 6, f"{key} peak stage {v[3]} out of range")
+            # disease implies an ortholog exists
+            if v[2]:
+                self.assertEqual(v[1], 1, f"{key} disease without ortholog")
+            # only genes with at least one facet are stored
+            self.assertTrue(v[0] or v[1] or v[2] or v[3] >= 0, f"{key} has no facet")
+
+
 if __name__ == "__main__":
     unittest.main()

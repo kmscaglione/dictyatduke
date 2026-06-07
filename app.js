@@ -2732,6 +2732,104 @@ const LIFE_CYCLE = [
     markers: ["ecmB", "cotB", "cotC", "spiA", "tagC"] },
 ];
 
+// Original, copyright-free schematic figures instructors can download for slides/handouts.
+const TEACHING_FIGURES = [
+  {
+    id: "dicty-fruiting-body",
+    title: "Fruiting body anatomy",
+    caption: "The mature sorocarp: a sorus of spores held aloft by a dead cellular stalk on a basal disc.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380" role="img" aria-labelledby="fbt fbd" font-family="'Helvetica Neue',Arial,sans-serif">
+  <title id="fbt">Dictyostelium fruiting body anatomy</title>
+  <desc id="fbd">A schematic of the mature fruiting body (sorocarp): a sorus of spores on a cellular stalk rising from a basal disc.</desc>
+  <rect width="360" height="380" fill="#ffffff"/>
+  <ellipse cx="150" cy="350" rx="58" ry="13" fill="#012169"/>
+  <polygon points="138,344 162,344 156,152 144,152" fill="#9fb8d6" stroke="#012169" stroke-width="1.5"/>
+  <g stroke="#012169" stroke-width="1" opacity="0.35">
+    <line x1="145" y1="200" x2="155" y2="200"/><line x1="144" y1="244" x2="156" y2="244"/>
+    <line x1="143" y1="288" x2="157" y2="288"/><line x1="141" y1="324" x2="159" y2="324"/>
+  </g>
+  <circle cx="150" cy="110" r="50" fill="#f4c84a" stroke="#d9a92a" stroke-width="2"/>
+  <g fill="#a9781a" opacity="0.55">
+    <circle cx="132" cy="94" r="5"/><circle cx="150" cy="86" r="5"/><circle cx="168" cy="96" r="5"/>
+    <circle cx="124" cy="112" r="5"/><circle cx="143" cy="108" r="5"/><circle cx="161" cy="110" r="5"/><circle cx="176" cy="118" r="5"/>
+    <circle cx="134" cy="130" r="5"/><circle cx="152" cy="128" r="5"/><circle cx="168" cy="132" r="5"/>
+  </g>
+  <g font-size="13" fill="#1a2b3c">
+    <line x1="196" y1="92" x2="234" y2="72" stroke="#6b7280" stroke-width="1"/>
+    <text x="238" y="69">Sorus</text><text x="238" y="85" font-size="11" fill="#6b7280">ball of spores</text>
+    <line x1="120" y1="112" x2="78" y2="112" stroke="#6b7280" stroke-width="1"/>
+    <text x="14" y="109">Spores</text>
+    <line x1="157" y1="248" x2="234" y2="248" stroke="#6b7280" stroke-width="1"/>
+    <text x="238" y="245">Stalk</text><text x="238" y="261" font-size="11" fill="#6b7280">dead, vacuolated cells</text>
+    <line x1="206" y1="350" x2="234" y2="350" stroke="#6b7280" stroke-width="1"/>
+    <text x="238" y="354">Basal disc</text>
+  </g>
+</svg>`,
+  },
+  {
+    id: "dicty-slug-patterning",
+    title: "Slug cell-type patterning",
+    caption: "The migrating pseudoplasmodium: prestalk cells at the anterior tip, prespore cells in the posterior.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 232" role="img" aria-labelledby="slt sld" font-family="'Helvetica Neue',Arial,sans-serif">
+  <title id="slt">Dictyostelium slug cell-type patterning</title>
+  <desc id="sld">A migrating slug showing prestalk cells in the anterior ~20% and prespore cells in the posterior ~80%, moving toward light and heat.</desc>
+  <rect width="380" height="232" fill="#ffffff"/>
+  <defs><clipPath id="slugClip"><rect x="100" y="126" width="220" height="52" rx="26"/></clipPath></defs>
+  <line x1="298" y1="72" x2="92" y2="72" stroke="#00539B" stroke-width="2"/>
+  <polygon points="92,72 105,65 105,79" fill="#00539B"/>
+  <text x="200" y="56" text-anchor="middle" font-size="12.5" fill="#1a2b3c">Migration toward light &amp; heat</text>
+  <line x1="24" y1="192" x2="356" y2="192" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="300" y1="186" x2="356" y2="186" stroke="#9fb8d6" stroke-width="3" stroke-dasharray="2 6" opacity="0.7"/>
+  <g clip-path="url(#slugClip)"><rect x="100" y="126" width="46" height="52" fill="#5f93cb"/></g>
+  <polygon points="112,128 84,114 116,150" fill="#5f93cb" stroke="#7da3cf" stroke-width="1.5"/>
+  <rect x="100" y="126" width="220" height="52" rx="26" fill="none" stroke="#7da3cf" stroke-width="2"/>
+  <g font-size="12.5" fill="#1a2b3c">
+    <line x1="96" y1="120" x2="72" y2="92" stroke="#6b7280" stroke-width="1"/>
+    <text x="14" y="88">Tip (organizer)</text>
+    <line x1="120" y1="178" x2="74" y2="206" stroke="#6b7280" stroke-width="1"/>
+    <text x="8" y="222">Prestalk (anterior ~20%)</text>
+    <line x1="250" y1="178" x2="306" y2="206" stroke="#6b7280" stroke-width="1"/>
+    <text x="372" y="222" text-anchor="end">Prespore (posterior ~80%)</text>
+    <text x="328" y="183" font-size="10.5" fill="#6b7280">slime trail</text>
+  </g>
+</svg>`,
+  },
+  {
+    id: "dicty-aggregation-camp",
+    title: "Aggregation & cAMP relay",
+    caption: "Starving cells chemotax up relayed cAMP waves toward a signaling center, forming branching streams.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 300" role="img" aria-labelledby="agt agd" font-family="'Helvetica Neue',Arial,sans-serif">
+  <title id="agt">Dictyostelium aggregation and cAMP relay</title>
+  <desc id="agd">Cells stream toward a central cAMP signaling source along outward-propagating waves during aggregation.</desc>
+  <rect width="380" height="300" fill="#ffffff"/>
+  <g fill="none" stroke="#00539B" stroke-dasharray="4 7">
+    <circle cx="160" cy="150" r="40" opacity="0.55"/><circle cx="160" cy="150" r="72" opacity="0.4"/>
+    <circle cx="160" cy="150" r="104" opacity="0.28"/><circle cx="160" cy="150" r="134" opacity="0.18"/>
+  </g>
+  <circle cx="160" cy="150" r="22" fill="none" stroke="#f4c84a" stroke-width="2.5" opacity="0.8"/>
+  <circle cx="160" cy="150" r="13" fill="#012169"/>
+  <g fill="#00539B" opacity="0.85">
+    <ellipse cx="300" cy="150" rx="7" ry="4"/><ellipse cx="276" cy="150" rx="7" ry="4"/><ellipse cx="252" cy="150" rx="7" ry="4"/>
+    <ellipse cx="64" cy="68" rx="7" ry="4" transform="rotate(40 64 68)"/><ellipse cx="88" cy="92" rx="7" ry="4" transform="rotate(40 88 92)"/><ellipse cx="112" cy="116" rx="7" ry="4" transform="rotate(40 112 116)"/>
+    <ellipse cx="160" cy="288" rx="4" ry="7"/><ellipse cx="160" cy="264" rx="4" ry="7"/><ellipse cx="160" cy="240" rx="4" ry="7"/>
+  </g>
+  <g fill="#012169">
+    <polygon points="238,150 250,145 250,155"/>
+    <polygon points="126,130 134,120 138,131"/>
+    <polygon points="160,226 155,238 165,238"/>
+  </g>
+  <g font-size="12.5" fill="#1a2b3c">
+    <line x1="160" y1="135" x2="160" y2="40" stroke="#6b7280" stroke-width="1"/>
+    <text x="160" y="34" text-anchor="middle">Signaling center (cAMP source)</text>
+    <line x1="232" y1="118" x2="300" y2="92" stroke="#6b7280" stroke-width="1"/>
+    <text x="304" y="89">cAMP</text><text x="304" y="104" font-size="11" fill="#6b7280">waves</text>
+    <line x1="276" y1="158" x2="276" y2="208" stroke="#6b7280" stroke-width="1"/>
+    <text x="276" y="224" text-anchor="middle">Cells stream in (chemotaxis)</text>
+  </g>
+</svg>`,
+  },
+];
+
 function openEducation(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/education");
@@ -2765,6 +2863,16 @@ function renderEducationPage() {
 
         <h3 id="quiz" style="margin-top:26px">Concept self-quiz</h3>
         <div data-quiz><p class="notice muted">Loading quiz…</p></div>
+        <div class="quiz-print-area" data-quiz-print-area aria-hidden="true"></div>
+
+        <h3 id="figures" style="margin-top:26px">Teaching figures <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— free to use in your slides</span></h3>
+        <p style="font-size:.875rem">Original schematic diagrams you can download and drop straight into lecture slides or handouts. These are copyright-free — use and adapt them freely, no attribution required.</p>
+        <div class="edu-figures">${TEACHING_FIGURES.map((f) => `
+          <figure class="edu-figure">
+            <div class="edu-figure-art">${f.svg}</div>
+            <figcaption><strong>${escapeHtml(f.title)}</strong><span>${escapeHtml(f.caption)}</span></figcaption>
+            <button type="button" class="ghost-btn edu-fig-dl" data-fig="${f.id}">Download SVG</button>
+          </figure>`).join("")}</div>
 
         <h3 style="margin-top:26px">Classroom lab materials</h3>
         <p style="font-size:.875rem">Ready-to-use undergraduate lab protocols (chemotaxis, cell migration, the life cycle, and more) are on the <a class="text-link" href="/research/teaching-labs">Teaching labs</a> page.</p>
@@ -2807,21 +2915,81 @@ async function initEducation() {
       if (inp) inp.addEventListener("input", () => render(inp.value));
     } catch { gEl.innerHTML = `<p class="notice muted">Glossary unavailable.</p>`; }
   }
-  // Quiz
+  // Quiz (scored, resettable, printable)
   const qEl = document.querySelector("[data-quiz]");
+  const printArea = document.querySelector("[data-quiz-print-area]");
   if (qEl) {
     try {
       const questions = (await (await fetch("/assets/quiz.json")).json()).questions || [];
-      qEl.innerHTML = questions.map((q, i) => `
-        <div class="quiz-q" data-qi="${i}">
-          <p class="quiz-prompt"><strong>${i + 1}.</strong> ${escapeHtml(q.q)}</p>
-          <div class="quiz-choices">${q.choices.map((c, ci) => `<button type="button" class="quiz-choice" data-qi="${i}" data-ci="${ci}">${escapeHtml(c)}</button>`).join("")}</div>
-          <p class="quiz-feedback" data-feedback="${i}" hidden></p>
-        </div>`).join("");
+      const total = questions.length;
+      const state = new Map(); // qi -> chosen choice index
+
+      const countCorrect = () => [...state.entries()].filter(([qi, ci]) => ci === questions[qi].answer).length;
+      const updateScore = () => {
+        const el = qEl.querySelector("[data-score]");
+        if (!el) return;
+        const done = state.size, correct = countCorrect();
+        const pct = done ? Math.round((correct / done) * 100) : 0;
+        el.textContent = done === total
+          ? `Quiz complete — ${correct} / ${total} correct (${pct}%)`
+          : `Answered ${done} / ${total} · ${correct} correct`;
+        el.classList.toggle("done", done === total);
+      };
+
+      const mount = () => {
+        state.clear();
+        qEl.innerHTML = `
+          <div class="quiz-scorebar">
+            <span class="quiz-score" data-score>Answered 0 / ${total}</span>
+            <span class="quiz-actions">
+              <button type="button" class="ghost-btn" data-quiz-reset>Reset</button>
+              <button type="button" class="ghost-btn" data-quiz-print>Print / save results</button>
+            </span>
+          </div>
+          ${questions.map((q, i) => `
+            <div class="quiz-q" data-qi="${i}">
+              <p class="quiz-prompt"><strong>${i + 1}.</strong> ${escapeHtml(q.q)}</p>
+              <div class="quiz-choices">${q.choices.map((c, ci) => `<button type="button" class="quiz-choice" data-qi="${i}" data-ci="${ci}">${escapeHtml(c)}</button>`).join("")}</div>
+              <p class="quiz-feedback" data-feedback="${i}" hidden></p>
+            </div>`).join("")}`;
+        updateScore();
+      };
+
+      const printResults = () => {
+        if (printArea) {
+          const done = state.size, correct = countCorrect();
+          const pct = done ? Math.round((correct / done) * 100) : 0;
+          const rows = questions.map((q, i) => {
+            const chosen = state.has(i) ? state.get(i) : null;
+            const choices = q.choices.map((c, ci) => {
+              const isAns = ci === q.answer, isPick = ci === chosen;
+              const mark = isAns ? " ✓" : (isPick ? " ✗ (your answer)" : "");
+              return `<li class="${isAns ? "pa-correct" : (isPick ? "pa-wrong" : "")}">${escapeHtml(c)}${mark}</li>`;
+            }).join("");
+            return `<div class="pa-q"><p class="pa-prompt"><strong>${i + 1}. ${escapeHtml(q.q)}</strong></p><ul>${choices}</ul><p class="pa-explain">${escapeHtml(q.explain)}</p></div>`;
+          }).join("");
+          printArea.innerHTML = `
+            <h2>Dicty@Duke — Concept self-quiz</h2>
+            <p class="pa-score">Score: ${correct} / ${total} correct${done < total ? ` (${done} of ${total} answered)` : ""} · ${pct}%</p>
+            ${rows}
+            <p class="pa-foot">Dicty@Duke · Learn Dictyostelium · /education</p>`;
+          document.body.classList.add("print-quiz");
+          const cleanup = () => { document.body.classList.remove("print-quiz"); window.removeEventListener("afterprint", cleanup); };
+          window.addEventListener("afterprint", cleanup);
+          setTimeout(cleanup, 1500);
+        }
+        window.print();
+      };
+
+      mount();
       qEl.addEventListener("click", (e) => {
+        if (e.target.closest("[data-quiz-reset]")) { mount(); return; }
+        if (e.target.closest("[data-quiz-print]")) { printResults(); return; }
         const b = e.target.closest(".quiz-choice");
         if (!b) return;
         const qi = +b.dataset.qi, ci = +b.dataset.ci, q = questions[qi];
+        if (state.has(qi)) return; // lock each question after first answer
+        state.set(qi, ci);
         const wrap = qEl.querySelector(`.quiz-q[data-qi="${qi}"]`);
         wrap.querySelectorAll(".quiz-choice").forEach((c, idx) => {
           c.disabled = true;
@@ -2832,9 +3000,24 @@ async function initEducation() {
         fb.hidden = false;
         fb.innerHTML = `${ci === q.answer ? "✓ Correct. " : "✗ "}${escapeHtml(q.explain)}`;
         fb.className = `quiz-feedback ${ci === q.answer ? "ok" : "no"}`;
+        updateScore();
       });
     } catch { qEl.innerHTML = `<p class="notice muted">Quiz unavailable.</p>`; }
   }
+
+  // Teaching figures: download the inline SVG as a file
+  document.querySelectorAll(".edu-fig-dl").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const svg = btn.closest(".edu-figure")?.querySelector("svg");
+      if (!svg) return;
+      const src = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n' + svg.outerHTML;
+      const url = URL.createObjectURL(new Blob([src], { type: "image/svg+xml" }));
+      const a = document.createElement("a");
+      a.href = url; a.download = `${btn.dataset.fig || "dicty-figure"}.svg`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+  });
 }
 
 function hideContentSections() {

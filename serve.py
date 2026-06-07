@@ -397,6 +397,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Public read API
+        if self.path.startswith("/api/gene-card"):
+            self._handle_gene_card()
+            return
         if self.path.startswith("/api/gene/"):
             self._handle_api_gene(unquote(self.path[len("/api/gene/"):].split("?")[0]))
             return
@@ -972,6 +975,39 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(404, {"error": "gene not found", "query": token})
             return
         self.send_json(200, assemble_gene(ddb))
+
+    def _handle_gene_card(self):
+        """Compact gene summary for hovercards: name, trimmed summary, facet flags."""
+        q = parse_qs(urlparse(self.path).query)
+        ddb = resolve_gene((q.get("id", [""])[0]).strip())
+        if not ddb:
+            self.send_json(404, {"error": "gene not found"})
+            return
+        rows, _ = api_gene_rows()
+        g = rows.get(ddb, {})
+        summary = strip_markup(_load_json("dictybase_corpus.json").get(ddb, {}).get("summary"))
+        if len(summary) > 240:
+            cut = summary[:240]
+            sp = cut.rfind(" ")
+            summary = (cut[:sp] if sp > 120 else cut).rstrip() + "…"
+        od = _load_json("ortholog_disease.json").get(ddb) or {}
+        orths = od.get("orthologs", []) if isinstance(od, dict) else []
+        human = []
+        for o in orths:
+            hs = o.get("human_symbol")
+            if hs and hs not in human:
+                human.append(hs)
+        self.send_json(200, {
+            "ddb": ddb,
+            "symbol": g.get("symbol", ddb),
+            "name": g.get("name", ""),
+            "summary": summary,
+            "human": human[:4],
+            "phenotype": ddb in _load_json("phenotypes.json"),
+            "ortholog": bool(orths),
+            "disease": any(o.get("diseases") for o in orths),
+            "ncbiGene": g.get("ncbiGene"),
+        })
 
     def _handle_api_search(self):
         q = parse_qs(urlparse(self.path).query)

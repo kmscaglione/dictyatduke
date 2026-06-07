@@ -6815,6 +6815,94 @@ function cmdkActivate(i) {
   }
 }
 
+// ---- Gene hovercards: hover any /gene/ link to preview the gene ----
+const hc = { el: null, link: null, showTimer: null, hideTimer: null, cache: new Map(), token: 0 };
+
+function hovercardInit() {
+  if (window.matchMedia && window.matchMedia("(hover: none)").matches) return; // touch devices
+  hc.el = document.createElement("div");
+  hc.el.className = "hovercard";
+  hc.el.setAttribute("hidden", "");
+  hc.el.addEventListener("mouseenter", () => clearTimeout(hc.hideTimer));
+  hc.el.addEventListener("mouseleave", () => { hc.hideTimer = setTimeout(hovercardHide, 160); });
+  document.body.appendChild(hc.el);
+
+  document.addEventListener("mouseover", (e) => {
+    const link = e.target.closest('a[href^="/gene/"]');
+    if (!link) return;
+    if (link === hc.link) { clearTimeout(hc.hideTimer); return; }
+    hc.link = link;
+    clearTimeout(hc.showTimer); clearTimeout(hc.hideTimer);
+    hc.showTimer = setTimeout(() => hovercardShow(link), 280);
+  });
+  document.addEventListener("mouseout", (e) => {
+    const link = e.target.closest('a[href^="/gene/"]');
+    if (!link) return;
+    const to = e.relatedTarget;
+    if (to && (link.contains(to) || (hc.el && hc.el.contains(to)))) return;
+    clearTimeout(hc.showTimer);
+    hc.hideTimer = setTimeout(hovercardHide, 160);
+  });
+  window.addEventListener("scroll", hovercardHide, true);
+}
+
+function hovercardHide() {
+  if (hc.el) hc.el.setAttribute("hidden", "");
+  hc.link = null;
+}
+
+function hovercardSymbol(href) {
+  const m = (href || "").match(/\/gene\/([^/?#]+)/);
+  return m ? decodeURIComponent(m[1]) : "";
+}
+
+async function hovercardShow(link) {
+  const sym = hovercardSymbol(link.getAttribute("href"));
+  if (!sym) return;
+  const myToken = ++hc.token;
+  let data = hc.cache.get(sym.toLowerCase());
+  if (!data) {
+    try {
+      const r = await fetch(`/api/gene-card?id=${encodeURIComponent(sym)}`);
+      if (!r.ok) return;
+      data = await r.json();
+      hc.cache.set(sym.toLowerCase(), data);
+    } catch { return; }
+  }
+  if (myToken !== hc.token || hc.link !== link) return; // pointer moved on
+  hc.el.innerHTML = hovercardRender(data);
+  hovercardPlace(link.getBoundingClientRect());
+}
+
+function hovercardRender(d) {
+  const badges = [];
+  if (d.phenotype) badges.push('<span class="hc-badge">phenotypes</span>');
+  if (d.disease) badges.push('<span class="hc-badge hc-dis">disease link</span>');
+  else if (d.ortholog) badges.push('<span class="hc-badge">human ortholog</span>');
+  const human = d.human && d.human.length
+    ? `<div class="hc-human">↔ human ${d.human.map(escapeHtml).join(", ")}</div>` : "";
+  return `
+    <div class="hc-head"><strong>${escapeHtml(d.symbol)}</strong>${d.name ? ` <span class="hc-name">${escapeHtml(d.name)}</span>` : ""}</div>
+    ${d.summary ? `<p class="hc-summary">${escapeHtml(d.summary)}</p>` : '<p class="hc-summary hc-muted">No curated summary yet.</p>'}
+    ${badges.length ? `<div class="hc-badges">${badges.join("")}</div>` : ""}
+    ${human}`;
+}
+
+function hovercardPlace(rect) {
+  const card = hc.el;
+  card.style.visibility = "hidden";
+  card.removeAttribute("hidden");
+  const cw = card.offsetWidth, ch = card.offsetHeight, pad = 12;
+  let left = Math.min(rect.left, window.innerWidth - cw - pad);
+  if (left < pad) left = pad;
+  let top = rect.bottom + 8;
+  if (top + ch > window.innerHeight - pad) top = rect.top - ch - 8; // flip above
+  if (top < pad) top = pad;
+  card.style.left = `${left}px`;
+  card.style.top = `${top}px`;
+  card.style.visibility = "visible";
+}
+
 function initialHydrate() {
   buildSiteIndex();
   renderRecentGenes();
@@ -6823,6 +6911,7 @@ function initialHydrate() {
   loadNews();
   loadRecentPapers();
   cmdkInit();
+  hovercardInit();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
 }

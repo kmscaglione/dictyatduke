@@ -6626,6 +6626,8 @@ function showHomeChrome(show) {
   isHomeView = show;
   const hero = document.getElementById("search");
   if (hero) hero.hidden = !show;
+  const caps = document.getElementById("capabilities");
+  if (caps) caps.hidden = !show;
   ["news-feed", "papers-feed"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.hidden = !(show && el.children.length > 0);

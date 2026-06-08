@@ -18,6 +18,14 @@
   box-sizing: border-box;
 }
 
+/* Make the `hidden` attribute authoritative. Sections toggled via [hidden]
+   that also set an explicit `display` (.hero, .capabilities, grid layouts)
+   would otherwise stay visible — this is why per-element [hidden] patches
+   existed. One global rule keeps `hidden` meaning hidden everywhere. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -374,6 +382,62 @@ button,
 .search-row button:hover,
 .button.primary:hover {
   filter: brightness(1.07);
+}
+
+/* Home hero intro */
+.hero-title {
+  max-width: none;
+  margin-bottom: 12px;
+  font-size: clamp(30px, 4.4vw, 46px);
+  line-height: 1.04;
+}
+.hero-title em { font-style: italic; color: var(--teal-dark); }
+.hero-lede {
+  margin: 0 0 22px;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Home capability strip */
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 8px 0 6px;
+}
+.cap-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.cap-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: 0 10px 24px rgba(1, 33, 105, .12);
+}
+.cap-card .cap-icon { font-size: 22px; line-height: 1; }
+.cap-card strong { font-size: 15px; color: var(--teal-dark); }
+.cap-card span:last-child { font-size: 13.5px; color: var(--muted); line-height: 1.45; }
+
+/* Visible keyboard focus for interactive controls (a11y) */
+button:focus-visible,
+.button:focus-visible,
+.cap-card:focus-visible,
+.tab:focus-visible,
+.cmdk-input:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
 }
 
 .quick-links {
@@ -1070,6 +1134,10 @@ button,
     padding-top: 34px;
   }
 
+  .capabilities {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .search-row {
     grid-template-columns: 1fr;
   }
@@ -1331,6 +1399,7 @@ button,
   .glossary dd { margin-bottom: 8px; }
   .lc-arrow { display: none; }
   .quiz-scorebar { flex-direction: column; align-items: flex-start; }
+  .capabilities { grid-template-columns: 1fr; }
 }
 
 .hero-image-credit a {
@@ -1527,7 +1596,7 @@ button,
 .cmdk-backdrop { position: absolute; inset: 0; background: rgba(1, 33, 105, .32); }
 .cmdk-panel { position: relative; margin-top: 12vh; width: min(640px, 92vw); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 24px 60px rgba(1, 33, 105, .28); overflow: hidden; }
 .cmdk-input { width: 100%; min-height: 54px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 18px; font-size: 16px; font-weight: 600; background: #fff; color: var(--ink); }
-.cmdk-input:focus { outline: none; }
+.cmdk-input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .cmdk-results { list-style: none; margin: 0; padding: 6px; max-height: 56vh; overflow-y: auto; }
 .cmdk-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; cursor: pointer; }
 .cmdk-item.active { background: var(--soft); }

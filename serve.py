@@ -53,7 +53,8 @@ def fetch_pubmed_recent(term="Dictyostelium", n=5):
     return {"updated": datetime.datetime.utcnow().isoformat() + "Z",
             "term": term, "papers": papers}
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
-               ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json", ".bedgraph"}
+               ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json", ".bedgraph",
+               ".tbi"}  # .tbi: tabix indexes for the bgzipped browser GFF/track files
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
 # compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are
 # deliberately excluded — IGV.js reads them with byte offsets, so on-the-fly
@@ -491,7 +492,82 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 and "gzip" in self.headers.get("Accept-Encoding", "")):
             if self._serve_gzipped(raw):
                 return
+        # Range-capable static serving. The stdlib handler ignores Range and
+        # returns the whole file (200), so IGV.js would download the entire
+        # 35 MB FASTA and 2.5 MB bgzipped GFF on every open. Honoring Range lets
+        # it byte-range into the .fna (via .fai) and the bgzipped+tabixed
+        # .gff.gz/.bedgraph.gz (via .tbi) and fetch only the on-screen window.
+        if self._serve_static_ranged():
+            return
         super().do_GET()
+
+    # Content types for files the stdlib guesser doesn't know / gets wrong.
+    _STATIC_CTYPES = {
+        ".gz": "application/gzip", ".tbi": "application/octet-stream",
+        ".fna": "text/plain", ".fai": "text/plain", ".gff": "text/plain",
+        ".gtf": "text/plain", ".bedgraph": "text/plain",
+    }
+
+    def _serve_static_ranged(self):
+        """Serve a static file, honoring a single `Range: bytes=start-end`
+        header with a 206 response. Returns False (without writing) to fall
+        through to the default handler — e.g. file missing or a malformed/
+        unsatisfiable range."""
+        fs_path = self.translate_path(self.path)
+        if not os.path.isfile(fs_path):
+            return False
+        try:
+            st = os.stat(fs_path)
+            size = st.st_size
+            _, ext = os.path.splitext(fs_path)
+            ctype = self._STATIC_CTYPES.get(ext) or self.guess_type(fs_path)
+            last_mod = self.date_time_string(int(st.st_mtime))
+
+            rng = self.headers.get("Range")
+            start, end = 0, size - 1
+            partial = False
+            if rng and rng.startswith("bytes="):
+                spec = rng[6:].split(",")[0].strip()  # first range only
+                s, _, e = spec.partition("-")
+                try:
+                    if s == "":            # suffix range: bytes=-N (last N bytes)
+                        start = max(0, size - int(e))
+                    else:
+                        start = int(s)
+                        end = int(e) if e else size - 1
+                    end = min(end, size - 1)
+                    if start > end or start >= size:
+                        raise ValueError
+                    partial = True
+                except (ValueError, TypeError):
+                    # Unsatisfiable/malformed — fall back to full content (200).
+                    start, end, partial = 0, size - 1, False
+
+            length = end - start + 1
+            self.send_response(206 if partial else 200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Length", str(length))
+            if partial:
+                self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+            self.send_header("Last-Modified", last_mod)
+            self.end_headers()
+            if self.command == "HEAD":
+                return True
+            with open(fs_path, "rb") as f:
+                f.seek(start)
+                remaining = length
+                while remaining > 0:
+                    chunk = f.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    self.wfile.write(chunk)
+                    remaining -= len(chunk)
+            return True
+        except (BrokenPipeError, ConnectionResetError):
+            return True  # client (IGV) closed the range early — not an error
+        except Exception:
+            return False
 
     def _serve_gzipped(self, raw):
         """Serve a static text file gzip-compressed. Returns False to fall

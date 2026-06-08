@@ -457,6 +457,36 @@ button:focus-visible,
   .spinner { animation-duration: 1.6s; }
 }
 
+/* Genome browser (IGV.js) container + loading skeleton + light Duke theming */
+.igv-wrap {
+  width: 100%;
+  min-height: 500px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+.igv-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 500px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+/* Soften IGV's default chrome toward the site palette (no-op if class names
+   change in a future IGV version — purely cosmetic). */
+.igv-wrap .igv-navbar {
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+}
+.igv-wrap .igv-search-input {
+  border-radius: 6px;
+}
+
 /* Make horizontally-scrollable tables show their scrollbar as an
    affordance that more columns exist off-screen (esp. on mobile). */
 [style*="overflow-x:auto"]::-webkit-scrollbar,

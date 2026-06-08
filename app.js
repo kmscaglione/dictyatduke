@@ -2646,8 +2646,8 @@ function renderGenomeBrowser() {
           </select>
           <span id="browser-gff-note" style="font-size:0.8125rem;color:var(--muted,#6b7280)"></span>
         </div>
-        <div id="igv-container" style="width:100%;min-height:500px;border:1px solid var(--border,#e5e7eb);border-radius:8px;overflow:hidden;">
-          <p style="padding:16px;color:var(--muted,#6b7280);font-size:0.875rem">Loading genome browser…</p>
+        <div id="igv-container" class="igv-wrap">
+          <div class="igv-loading"><span class="spinner" aria-hidden="true"></span>Loading genome browser…</div>
         </div>
       </div>
     </article>
@@ -2670,11 +2670,15 @@ function rnaseqTracks() {
 }
 
 function buildIGVOptions(org) {
+  // Use the bgzipped + tabix-indexed annotation so IGV byte-ranges only the
+  // visible window (built by scripts/build_browser_tracks.py). org.gffURL still
+  // points at the plain .gff; the indexed copy is `${gffURL}.gz` (+ .gz.tbi).
   const tracks = org.gffURL ? [{
     name: "Gene annotations",
-    url: org.gffURL,
+    url: `${org.gffURL}.gz`,
+    indexURL: `${org.gffURL}.gz.tbi`,
     format: "gff3",
-    indexed: false,
+    indexed: true,
     displayMode: "EXPANDED",
     color: "rgb(0, 83, 155)"
   }] : [];
@@ -2724,7 +2728,7 @@ function initGenomeBrowser() {
     run();
   } else {
     const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/igv@3.0.2/dist/igv.min.js";
+    script.src = "/assets/vendor/igv.min.js";  // self-hosted (no CDN dependency)
     script.onload = run;
     script.onerror = () => {
       container.innerHTML = `<p style="padding:16px;color:var(--muted,#6b7280)">IGV.js could not be loaded.</p>`;

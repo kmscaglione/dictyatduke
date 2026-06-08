@@ -8,6 +8,11 @@
 Run it whenever you want the feed refreshed (and commit the result):
 
     python3 scripts/build_news.py
+    python3 scripts/build_news.py --preview   # show what would change, write nothing
+
+A news post is public content, so the intended flow is verify-then-post:
+run --preview, eyeball the proposed entries, and only run for real (and
+commit) once they look right.
 
 Commit-trailer format (anywhere in the commit message, one per line):
 
@@ -114,12 +119,36 @@ def main():
                      "posts come from `News:` commit trailers."),
         "items": merged,
     }
+
+    # What's new vs the currently-published feed (so a human can verify before
+    # it goes live). Keyed by title so re-runs don't re-flag the same post.
+    try:
+        with open(OUT, "r", encoding="utf-8") as fh:
+            current = {i.get("title", "") for i in (json.load(fh) or {}).get("items", [])}
+    except (OSError, ValueError):
+        current = set()
+    new_posts = [i for i in merged if i.get("title", "") not in current]
+
+    n_git = sum(1 for i in merged if "commit" in i)
+    preview = "--preview" in sys.argv or "--dry-run" in sys.argv
+
+    print(f"Feed would have {len(merged)} items "
+          f"({len(manual)} manual, {n_git} from commit trailers).")
+    if new_posts:
+        print(f"\n{len(new_posts)} new post(s) vs the live feed — verify before posting:")
+        for i in new_posts:
+            link = f"  → {i['link']}" if i.get("link") else ""
+            print(f"  • {i['date']} [{i['tag']}] {i['title']}{link}\n      {i.get('body','')}")
+    else:
+        print("No new posts vs the live feed.")
+
+    if preview:
+        print("\n[preview] news.json NOT written. Re-run without --preview to post.")
+        return
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=2)
         fh.write("\n")
-    n_git = sum(1 for i in merged if "commit" in i)
-    print(f"Wrote {OUT}: {len(merged)} items "
-          f"({len(manual)} manual, {n_git} from commit trailers).")
+    print(f"\nWrote {OUT}.")
 
 
 if __name__ == "__main__":

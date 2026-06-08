@@ -329,7 +329,9 @@
     </div>
   </div>
 
-  <script src="/technique-content.js"></script>
+  <!-- technique-content.js (~310KB of protocol bodies) is loaded lazily by
+       app.js (ensureTechniqueContent) — on demand when a protocol page opens,
+       or in the background after first paint — so it no longer blocks load. -->
   <script src="/teaching-content.js"></script>
   <script src="/meetings-content.js"></script>
   <script src="/labs-content.js"></script>

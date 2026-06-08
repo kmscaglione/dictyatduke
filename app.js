@@ -818,7 +818,10 @@ const organisms = [
   }
 ];
 
-const techniqueRecords = buildTechniqueRecords();
+// `let` so it can be rebuilt once the lazily-loaded technique bodies arrive.
+// Before then, records still carry correct slug/label/category (from
+// researchResources) — only `contentHtml` is empty.
+let techniqueRecords = buildTechniqueRecords();
 
 const toolsShell = document.querySelector("#tools");
 const organismShell = document.querySelector("#organism");
@@ -1462,7 +1465,7 @@ function openResearch(resource, updateRoute = true) {
   scrollToEl(document.querySelector("#research"));
 }
 
-function openTechnique(technique, updateRoute = true) {
+async function openTechnique(technique, updateRoute = true) {
   if (!technique) {
     openResearch(findResearchByToken("techniques"), updateRoute);
     return;
@@ -1472,6 +1475,14 @@ function openTechnique(technique, updateRoute = true) {
   renderTechnique(technique);
   if (updateRoute) setTechniqueRoute(technique);
   scrollToEl(document.querySelector("#research"));
+  // If the protocol body hasn't been lazy-loaded yet, fetch it and re-render
+  // in place once it arrives (the header/links above are already on screen).
+  if (!technique.contentHtml && !window.techniqueContent) {
+    await ensureTechniqueContent();
+    if (state.activeResearch !== "techniques") return; // user navigated away
+    const full = findTechniqueByToken(technique.slug);
+    if (full && full.contentHtml) renderTechnique(full);
+  }
 }
 
 function openTool(tool, updateRoute = true) {
@@ -3930,6 +3941,25 @@ function renderResearchLinkSections(sections) {
 
 function stripLeadingTechniqueHeading(html) {
   return String(html || "").replace(/^<h[1-3]>.*?<\/h[1-3]>/i, "").trim();
+}
+
+// Lazily fetch technique-content.js (~310KB of protocol bodies). Resolves
+// immediately if already present; injects the script once otherwise and
+// rebuilds techniqueRecords (so contentHtml is populated) before resolving.
+// Fails open — on network error, pages still render without protocol bodies.
+let _techniqueContentPromise = null;
+function ensureTechniqueContent() {
+  if (window.techniqueContent) return Promise.resolve(window.techniqueContent);
+  if (!_techniqueContentPromise) {
+    _techniqueContentPromise = new Promise((resolve) => {
+      const s = document.createElement("script");
+      s.src = "/technique-content.js";
+      s.onload = () => { techniqueRecords = buildTechniqueRecords(); resolve(window.techniqueContent || null); };
+      s.onerror = () => resolve(null);
+      document.head.appendChild(s);
+    });
+  }
+  return _techniqueContentPromise;
 }
 
 function buildTechniqueRecords() {
@@ -7277,6 +7307,11 @@ function initialHydrate() {
   basketInit();
   // From here on, in-app navigation scrolls smoothly.
   appReady = true;
+  // After first paint, quietly pull in the technique protocol bodies and
+  // re-index them so full-text protocol search ("HL5") works. Non-blocking;
+  // until it finishes, techniques are still findable by title/category.
+  const whenIdle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
+  whenIdle(() => { ensureTechniqueContent().then(() => buildSiteIndex()); });
 }
 if (document.readyState === "complete") {
   initialHydrate();

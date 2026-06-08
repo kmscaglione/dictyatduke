@@ -1,3 +1,19 @@
+// Append the data-asset version to /assets/*.json fetches so those files can be
+// cached immutably by the browser and a CDN. window.__ASSET_V comes from the
+// always-revalidated index.html and changes the moment any data file is rebuilt,
+// so a new version busts the cache automatically — no stale data, no CDN purge.
+(function () {
+  const _fetch = window.fetch;
+  window.fetch = function (input, init) {
+    if (typeof input === "string" && window.__ASSET_V &&
+        input.indexOf("/assets/") === 0 && input.slice(-5) === ".json" &&
+        input.indexOf("?") === -1) {
+      input += "?v=" + window.__ASSET_V;
+    }
+    return _fetch.call(this, input, init);
+  };
+})();
+
 const genes = [
   {
     id: "CLN5",

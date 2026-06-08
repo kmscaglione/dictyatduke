@@ -66,6 +66,26 @@ COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".bedgraph"}
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
 ASSET_RE = re.compile(r'(href|src)="(/[^"?]+\.(?:css|js))"')
 
+# Version stamp for the static data files: the newest mtime among assets/*.json.
+# Injected into index.html so the front-end can request immutable, cache-busted
+# /assets/*.json?v=<stamp> URLs. Changes the instant any data file is rebuilt.
+def _data_version():
+    latest = 0
+    try:
+        for p in (pathlib.Path(ROOT) / "assets").glob("*.json"):
+            try:
+                latest = max(latest, int(p.stat().st_mtime))
+            except OSError:
+                pass
+    except OSError:
+        pass
+    return latest
+
+# Cache of gzip-compressed asset bodies, keyed by (path, mtime), so cold serves
+# of the multi-MB JSONs don't re-compress on every request. Bounded by the small
+# set of compressible assets; entries for old mtimes are simply never hit again.
+_GZIP_CACHE = {}
+
 # Curator auth. The password comes from the CURATOR_PASSWORD env var (no secret
 # in source). If unset, a random one is generated per run and printed to the log
 # so local dev still works; set CURATOR_PASSWORD in any real deployment.
@@ -589,8 +609,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         return True
                 except (TypeError, ValueError):
                     pass
-            with open(fs_path, "rb") as f:
-                body = gzip.compress(f.read(), compresslevel=6)
+            key = (fs_path, int(st.st_mtime))
+            body = _GZIP_CACHE.get(key)
+            if body is None:
+                with open(fs_path, "rb") as f:
+                    body = gzip.compress(f.read(), compresslevel=6)
+                _GZIP_CACHE[key] = body
             self.send_response(200)
             ctype = self.guess_type(fs_path)
             self.send_header("Content-Type", ctype)
@@ -615,7 +639,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 except OSError:
                     return m.group(0)
                 return f'{attr}="{ref}?v={v}"'
-            body = ASSET_RE.sub(stamp, html).encode()
+            html = ASSET_RE.sub(stamp, html)
+            # Inject the data-asset version (max mtime of assets/*.json). app.js
+            # appends ?v=<this> to its /assets/*.json fetches so they cache
+            # immutably; this index.html is no-cache, so the value is always
+            # current and a data rebuild auto-busts the cached JSONs.
+            html = html.replace(
+                "</head>", f'<script>window.__ASSET_V="{_data_version()}";</script></head>', 1)
+            body = html.encode()
             self._no_cache = True
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -1333,9 +1364,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             else:
                 self.send_header("Cache-Control", "no-cache, must-revalidate")
         elif raw.endswith(".json"):
-            # Data files change as curation is updated — revalidate (cheap 304s)
-            # so viewers never read a stale corpus/index from cache.
-            self.send_header("Cache-Control", "no-cache, must-revalidate")
+            # Data JSONs are versioned (?v=<data stamp>) by the fetch wrapper in
+            # app.js, so a changed file gets a new URL — cache it hard (and let a
+            # CDN cache it too). Unversioned hits (news.json, direct/curl) keep
+            # revalidating so no one reads a stale corpus/index.
+            if "v=" in query:
+                self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+            else:
+                self.send_header("Cache-Control", "no-cache, must-revalidate")
         super().end_headers()
 
     def log_message(self, fmt, *args):

@@ -1782,7 +1782,7 @@ function renderEnrichmentPage() {
       </header>
       <div class="record-body">
         <form id="enrich-form">
-          <textarea id="enrich-genes" rows="6" placeholder="mhcA acaA carA rasG pkaC gbpC&#10;DDB_G0286509" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.875rem;padding:10px;border:1px solid var(--line,#d7dee0);border-radius:8px;resize:vertical"></textarea>
+          <textarea id="enrich-genes" rows="6" aria-label="Gene list — symbols or DDB_G ids, space- or newline-separated" placeholder="mhcA acaA carA rasG pkaC gbpC&#10;DDB_G0286509" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.875rem;padding:10px;border:1px solid var(--line,#d7dee0);border-radius:8px;resize:vertical"></textarea>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px">
             <button type="submit">Run enrichment</button>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">analyze
@@ -6786,6 +6786,18 @@ function cmdkInit() {
   document.addEventListener("keydown", (e) => {
     if ((e.metaKey || e.ctrlKey) && (e.key === "k" || e.key === "K")) { e.preventDefault(); cmdkToggle(); return; }
     if (e.key === "/" && !cmdk.open && !cmdkIsTyping(e.target)) { e.preventDefault(); cmdkOpen(); return; }
+    // Escape closes an open nav dropdown and returns focus to its trigger.
+    if (e.key === "Escape" && !cmdk.open) {
+      const openItem = document.querySelector(".nav-item.open");
+      if (openItem) {
+        e.preventDefault();
+        openItem.classList.remove("open");
+        const trig = openItem.querySelector(".nav-trigger");
+        trig?.setAttribute("aria-expanded", "false");
+        trig?.focus();
+        return;
+      }
+    }
     if (!cmdk.open) return;
     if (e.key === "Escape") { e.preventDefault(); cmdkClose(); }
     else if (e.key === "ArrowDown") { e.preventDefault(); cmdkMove(1); }
@@ -6807,6 +6819,7 @@ function cmdkInit() {
 function cmdkToggle() { cmdk.open ? cmdkClose() : cmdkOpen(); }
 function cmdkOpen() {
   if (!cmdk.root) return;
+  cmdk.returnFocus = document.activeElement;  // restore on close (a11y)
   cmdk.open = true;
   cmdk.root.removeAttribute("hidden");
   document.body.classList.add("cmdk-active");
@@ -6819,6 +6832,10 @@ function cmdkClose() {
   cmdk.open = false;
   cmdk.root.setAttribute("hidden", "");
   document.body.classList.remove("cmdk-active");
+  // Return focus to wherever it was before the palette opened.
+  const ret = cmdk.returnFocus;
+  cmdk.returnFocus = null;
+  if (ret && typeof ret.focus === "function" && document.contains(ret)) ret.focus();
 }
 
 function cmdkBuild(query) {

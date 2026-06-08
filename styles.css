@@ -440,6 +440,35 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
+/* Loading spinner — used in .notice loading states via loadingHTML() */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  border: 2px solid var(--soft);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 1.6s; }
+}
+
+/* Make horizontally-scrollable tables show their scrollbar as an
+   affordance that more columns exist off-screen (esp. on mobile). */
+[style*="overflow-x:auto"]::-webkit-scrollbar,
+[style*="overflow-x: auto"]::-webkit-scrollbar {
+  height: 8px;
+}
+[style*="overflow-x:auto"]::-webkit-scrollbar-thumb,
+[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+
 .quick-links {
   display: flex;
   flex-wrap: wrap;

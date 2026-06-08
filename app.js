@@ -1196,20 +1196,20 @@ async function fetchNCBISuggestions(query, localRows) {
 
 async function openUniProtGene(uniprotId) {
   recordShell.removeAttribute("hidden");
-  recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading ${escapeHtml(uniprotId)} from UniProt…</p></div>`;
+  recordShell.innerHTML = `<div class="empty-state">${loadingHTML(`Loading ${uniprotId} from UniProt…`)}</div>`;
   scrollToEl(recordShell);
   try {
     const gene = await fetchUniProtGene(uniprotId);
     input.value = gene.symbol;
     openGene(gene, "Summary", true);
   } catch (err) {
-    recordShell.innerHTML = `<div class="empty-state"><p class="notice">Could not load UniProt entry ${escapeHtml(uniprotId)}: ${escapeHtml(err.message)}</p></div>`;
+    recordShell.innerHTML = `<div class="empty-state"><p class="notice">Couldn't load UniProt entry ${escapeHtml(uniprotId)} right now — the source may be temporarily unavailable. Try again in a moment or search another gene.</p></div>`;
   }
 }
 
 async function openRemoteGene(ncbiId) {
   recordShell.removeAttribute("hidden");
-  recordShell.innerHTML = `<div class="empty-state"><p class="notice muted">Loading gene ${escapeHtml(ncbiId)}…</p></div>`;
+  recordShell.innerHTML = `<div class="empty-state">${loadingHTML(`Loading gene ${ncbiId}…`)}</div>`;
   scrollToEl(recordShell);
   try {
     // 1. NCBI Gene summary
@@ -1289,7 +1289,7 @@ async function openRemoteGene(ncbiId) {
     input.value = symbol;
     openGene(gene, "Summary", true);
   } catch (err) {
-    recordShell.innerHTML = `<div class="empty-state"><p class="notice">Could not load gene ${escapeHtml(ncbiId)}: ${escapeHtml(err.message)}</p></div>`;
+    recordShell.innerHTML = `<div class="empty-state"><p class="notice">Couldn't load gene ${escapeHtml(ncbiId)} right now — the source may be temporarily unavailable. Try again in a moment or search another gene.</p></div>`;
   }
 }
 
@@ -1559,7 +1559,7 @@ async function runExpressionCompare() {
   const out = document.querySelector("[data-expr-results]");
   const raw = (document.getElementById("expr-genes").value || "").trim();
   if (!raw) { out.innerHTML = `<p class="notice">Enter one or more genes.</p>`; return; }
-  out.innerHTML = `<p class="notice muted">Loading expression…</p>`;
+  out.innerHTML = loadingHTML("Loading expression…");
   let data;
   try {
     data = await (await fetch(`/api/expression?genes=${encodeURIComponent(raw)}`)).json();
@@ -2499,7 +2499,7 @@ async function runLocalBlast(form) {
   const database = form.querySelector("#lblast-db").value;
   const query = form.querySelector("#lblast-query").value.trim();
   if (!query) { results.innerHTML = `<p class="notice">Enter a query sequence.</p>`; return; }
-  results.innerHTML = `<p class="notice muted">Running ${escapeHtml(program)} against ${database === "all" ? "all nine genomes" : escapeHtml(LOCAL_BLAST_DBS[database] || database)}…</p>`;
+  results.innerHTML = loadingHTML(`Running ${program} against ${database === "all" ? "all nine genomes" : (LOCAL_BLAST_DBS[database] || database)}…`);
   try {
     const res = await fetch("/api/blast", {
       method: "POST",
@@ -3988,7 +3988,7 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Gene Ontology</h3>
         <div data-go-results="${gene.id}">
-          <p class="notice muted">Loading GO annotations for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading GO annotations for ${gene.symbol}…`)}
         </div>
       </div>
     `;
@@ -4155,6 +4155,12 @@ function escapeHtml(value) {
     '"': "&quot;",
     "'": "&#39;"
   }[character]));
+}
+
+// Loading state with an animated spinner. `label` is plain text (escaped).
+// `cls` lets callers add modifiers (e.g. "muted") to the .notice element.
+function loadingHTML(label, cls = "muted") {
+  return `<p class="notice ${cls}"><span class="spinner" aria-hidden="true"></span>${escapeHtml(label)}</p>`;
 }
 
 // Render a dictyBase curated summary, converting its wiki-style markup into

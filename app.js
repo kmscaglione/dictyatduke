@@ -336,7 +336,7 @@ const researchResources = [
         title: "Transformation",
         links: [
           ["Transformation protocols", "https://dictybase.dev/research/techniques/transformation-protocols"],
-          ["Gaudet et al. 2007", "https://dictybase.dev/publication/17545968"],
+          ["Gaudet et al. 2007", "https://pubmed.ncbi.nlm.nih.gov/17545968/"],
           ["Calcium phosphate precipitation", "https://dictybase.dev/research/techniques/calcium-phosphate-precipitation"],
           ["Electroporation", "https://dictybase.dev/research/techniques/electroporation"],
           ["Transformation of NC4 or D. mucoroides", "https://dictybase.dev/research/techniques/transformation-nc4"],

@@ -52,8 +52,9 @@ def fetch_pubmed_recent(term="Dictyostelium", n=5):
             })
     return {"updated": datetime.datetime.utcnow().isoformat() + "Z",
             "term": term, "papers": papers}
-STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".ico", ".svg", ".woff", ".woff2",
-               ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf", ".json", ".bedgraph",
+STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".svg",
+               ".woff", ".woff2", ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf",
+               ".json", ".bedgraph",
                ".tbi"}  # .tbi: tabix indexes for the bgzipped browser GFF/track files
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
 # compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are

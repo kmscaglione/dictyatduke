@@ -1379,10 +1379,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 # Threaded so a slow proxied/external call (e.g. the AlphaFold proxy) never
 # blocks other requests on the single-threaded server.
+class Server(http.server.ThreadingHTTPServer):
+    # stdlib default listen backlog is only 5 — far too small, so bursts of
+    # simultaneous new connections get refused. 256 absorbs realistic spikes.
+    request_queue_size = 256
+    daemon_threads = True          # don't let worker threads block shutdown
+    allow_reuse_address = True
+
 def main():
     port = int(os.environ.get("PORT", "8774"))
     host = os.environ.get("HOST", "127.0.0.1")
-    http.server.ThreadingHTTPServer((host, port), Handler).serve_forever()
+    Server((host, port), Handler).serve_forever()
 
 
 if __name__ == "__main__":

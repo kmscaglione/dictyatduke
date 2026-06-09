@@ -24,6 +24,24 @@
     {"term": "Stalk", "def": "The structural column of vacuolated, dead cells that holds the sorus aloft — an example of altruistic cell death."},
     {"term": "Streaming", "def": "The branching, head-to-tail chains amoebae form as they chemotax into an aggregation center."},
     {"term": "Slug migration (photo/thermotaxis)", "def": "The slug's directed movement toward light and warmth, guiding it to the soil surface for dispersal."},
-    {"term": "Vegetative growth", "def": "The feeding, dividing phase of single amoebae while bacterial food is available."}
+    {"term": "Vegetative growth", "def": "The feeding, dividing phase of single amoebae while bacterial food is available."},
+    {"term": "AX4", "def": "The standard axenic laboratory strain and the reference genome for D. discoideum; derived from the wild isolate NC4 and able to grow in liquid HL5 medium without bacteria."},
+    {"term": "NC4", "def": "The original wild-type D. discoideum isolate (collected from forest soil) and the parent of the axenic AX strains; grows on bacteria rather than in liquid medium."},
+    {"term": "HL5", "def": "The standard rich liquid medium for growing axenic Dictyostelium strains in the absence of bacteria."},
+    {"term": "cAMP", "def": "Cyclic AMP, the key extracellular signal that coordinates aggregation; secreted in pulses and detected by cell-surface receptors (cARs) to drive chemotaxis and development."},
+    {"term": "cAR1", "def": "Cyclic AMP receptor 1, the principal cell-surface receptor that lets cells detect and chemotax toward cAMP during aggregation."},
+    {"term": "Folate", "def": "A chemoattractant released by bacteria; growing amoebae chemotax toward folate to find food, before switching to cAMP-directed aggregation when starved."},
+    {"term": "Macropinocytosis", "def": "Bulk uptake of liquid via large membrane ruffles; how axenic strains feed in HL5, and a model for the same process in immune and cancer cells."},
+    {"term": "CRISPR-Cas9", "def": "Genome-editing tool now widely used in Dictyostelium for precise, marker-free gene knockouts and edits; design guides on the Lab tools page."},
+    {"term": "Gene knockout", "def": "Disruption or deletion of a gene to test its function; simple in Dictyostelium because the genome is haploid, so one disruption yields a null."},
+    {"term": "Haploid", "def": "Having a single copy of each chromosome. Dictyostelium is haploid while growing, so a single gene disruption immediately reveals the loss-of-function phenotype."},
+    {"term": "Morphogen", "def": "A secreted signal whose concentration gradient directs cell fate; in Dictyostelium, DIF-1 and cAMP pattern prestalk versus prespore cells."},
+    {"term": "Cheating", "def": "In mixtures of strains, contributing disproportionately to the surviving spores rather than the dead stalk; Dictyostelium is a key model for the evolution of cooperation and conflict."},
+    {"term": "Development", "def": "The starvation-triggered, ~24-hour program that turns a population of single amoebae into a multicellular fruiting body."},
+    {"term": "Spore germination", "def": "Emergence of a new amoeba from a dormant spore once food and moisture return."},
+    {"term": "Dictyostelid", "def": "Any member of the Dictyostelia, the group of social (cellular slime mold) amoebae; D. discoideum is the best-studied dictyostelid."},
+    {"term": "Wild isolate", "def": "A Dictyostelium strain collected from nature (e.g. forest soil) rather than adapted to the lab; used to study natural variation and social behavior."},
+    {"term": "Tipped mound", "def": "The stage after the mound when a nipple-like tip forms and organizes the aggregate into a migrating slug."},
+    {"term": "Cell sorting", "def": "Active movement of differentiating cells to their correct positions — prestalk toward the tip, prespore to the rear — within the mound and slug."}
   ]
 }

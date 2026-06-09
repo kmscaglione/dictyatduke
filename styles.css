@@ -428,6 +428,69 @@ button,
   line-height: 1.5;
 }
 
+/* Home "New to Dictyostelium?" banner */
+.start-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 10px 0 4px;
+  padding: 14px 18px;
+  border: 1px solid var(--teal);
+  border-radius: 10px;
+  background: linear-gradient(100deg, var(--soft), #fff);
+  text-decoration: none;
+  color: var(--ink);
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+.start-banner:hover { box-shadow: 0 8px 22px rgba(1, 33, 105, .12); transform: translateY(-1px); }
+.start-banner-icon { font-size: 26px; line-height: 1; }
+.start-banner-text { flex: 1; font-size: 14.5px; line-height: 1.45; }
+.start-banner-text strong { color: var(--teal-dark); }
+.start-banner-cta { white-space: nowrap; font-weight: 800; color: var(--teal-dark); }
+@media (max-width: 640px) {
+  .start-banner { flex-wrap: wrap; }
+  .start-banner-cta { width: 100%; }
+}
+
+/* "Start here" newcomer page */
+.start-why {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.start-why-card {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.start-why-card strong { color: var(--teal-dark); font-size: 15px; }
+.start-why-card span { color: var(--muted); font-size: 13.5px; line-height: 1.45; }
+.start-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.start-step { display: flex; gap: 14px; align-items: flex-start; }
+.start-step-n {
+  flex: none; width: 30px; height: 30px; border-radius: 999px;
+  display: grid; place-items: center; font-weight: 800;
+  background: var(--soft); color: var(--teal-dark);
+}
+.start-step strong { display: block; }
+.start-step p { margin: 2px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.faq { display: grid; gap: 8px; }
+.faq-item {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
+  padding: 0 14px;
+}
+.faq-item summary {
+  cursor: pointer; padding: 12px 0; font-weight: 750; list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: "+ "; color: var(--teal); font-weight: 900; }
+.faq-item[open] summary::before { content: "− "; }
+.faq-item[open] summary { color: var(--teal-dark); }
+.faq-a { padding: 0 0 14px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
 /* Home capability strip */
 .capabilities {
   display: grid;

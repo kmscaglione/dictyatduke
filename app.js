@@ -2873,6 +2873,77 @@ const TEACHING_FIGURES = [
   },
 ];
 
+// ---- "Start here": an on-ramp for researchers new to Dictyostelium ----
+const START_WHY = [
+  ["Haploid genetics", "One gene knockout gives a clean null — no need to make homozygotes, so loss-of-function phenotypes show up immediately."],
+  ["A 24-hour life cycle", "Starving cells chemotax, cooperate, and build a multicellular fruiting body in a day — chemotaxis, signaling, and development in one organism."],
+  ["Human-disease relevance", "Roughly two-thirds of its ~12,000 genes have human orthologs; a tractable model for neurodegeneration, mitochondrial disease, autophagy, and infection."],
+  ["Cheap, fast, safe", "Grows in simple liquid medium or on bacteria, doubles in ~8–12 h, and is non-pathogenic (biosafety level 1)."],
+  ["Genetically tractable", "Homologous-recombination knockouts, REMI, RNAi, and CRISPR-Cas9 all work in the haploid genome."],
+  ["A premier cell-biology model", "Foundational for chemotaxis, phagocytosis, macropinocytosis, cytokinesis, and the evolution of multicellularity."],
+];
+const START_STEPS = [
+  ["See if it fits your question", "Browse what Dictyostelium is used for and the human diseases it models.", "/community/disease-models", "Disease models"],
+  ["Find your genes of interest", "Search by symbol, or filter the whole catalog by phenotype, ortholog, disease link, or expression.", "/search/advanced", "Advanced gene finder"],
+  ["Get strains & plasmids", "Order from the community Dicty Stock Center.", "https://dictybase.dev/stockcenter", "Dicty Stock Center"],
+  ["Grow the cells", "Media, buffers, and growth protocols — axenic in HL5 or on bacteria.", "/research/techniques/media", "Media & buffers"],
+  ["Make mutants", "Transformation protocols, plus a CRISPR guide designer with genome off-target checking.", "/tools/lab", "Lab tools"],
+  ["Analyze", "Search by sequence (BLAST), browse the genome, and compare expression.", "/tools/blast", "BLAST"],
+];
+const START_FAQ = [
+  ["What is Dictyostelium discoideum?", "A social amoeba (a “cellular slime mold”) that lives in forest soil. It grows as single amoebae that eat bacteria, but when food runs out, up to ~100,000 cells stream together and build a multicellular fruiting body in about 24 hours — making it a uniquely visual, tractable model for chemotaxis, cell–cell signaling, and development."],
+  ["Why use it as a model organism?", "It is haploid (one knockout gives an immediate phenotype), cheap and safe to grow, and genetically tractable (homologous recombination, REMI, RNAi, and CRISPR). Its ~34 Mb genome has ~12,000 genes, about two-thirds with human orthologs — so it models human biology and disease while being far easier to manipulate than animal cells."],
+  ["What is AX4, and how is it different from NC4?", "NC4 is the original wild isolate, collected from soil, and grows on bacteria. AX4 is an axenic lab strain derived from NC4 that also grows in liquid HL5 medium without bacteria — convenient for large-scale culture. AX4 is the reference genome on this site."],
+  ["How do I obtain strains and plasmids?", "From the Dicty Stock Center (under Community → Stock Center), the community repository that distributes Dictyostelium strains and plasmids."],
+  ["Can I do CRISPR in Dictyostelium?", "Yes — CRISPR-Cas9 is now standard for marker-free knockouts and edits. You can design guides with genome off-target checking on the Lab tools page."],
+  ["How long is the life cycle?", "About 24 hours from the onset of starvation to a mature fruiting body, passing through aggregation, mound, slug, and culmination. Step through each stage on the Learn page."],
+  ["How are the cells grown?", "Axenic strains (AX2/AX3/AX4) grow in liquid HL5 medium; any strain can be grown on a lawn of bacteria. See the media and growth protocols under Research → Techniques."],
+  ["Is it pathogenic? What biosafety level?", "No — Dictyostelium is non-pathogenic and handled at biosafety level 1. It is even used as a host to study human pathogens such as Legionella and Mycobacterium."],
+  ["Where is the genome, and how do I search it?", "Use the gene search on the home page or the Advanced gene finder, browse the assembly in the Genome browser, and search by sequence with BLAST — all on this site."],
+];
+
+function openStart(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/start");
+  if (!researchShell) return;
+  researchShell.innerHTML = renderStartPage();
+  researchShell.removeAttribute("hidden");
+  scrollToEl(researchShell);
+}
+
+function renderStartPage() {
+  const why = START_WHY.map(([h, b]) =>
+    `<div class="start-why-card"><strong>${escapeHtml(h)}</strong><span>${escapeHtml(b)}</span></div>`).join("");
+  const steps = START_STEPS.map(([h, b, href, label], i) => {
+    const ext = /^https?:/.test(href);
+    const link = `<a class="text-link" href="${escapeHtml(href)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${escapeHtml(label)}${ext ? " ↗" : ""}</a>`;
+    return `<li class="start-step"><span class="start-step-n">${i + 1}</span><div><strong>${escapeHtml(h)}</strong><p>${escapeHtml(b)} ${link}</p></div></li>`;
+  }).join("");
+  const faq = START_FAQ.map(([q, a]) =>
+    `<details class="faq-item"><summary>${escapeHtml(q)}</summary><div class="faq-a">${escapeHtml(a)}</div></details>`).join("");
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Start here</p>
+        <h2>New to <em>Dictyostelium</em>?</h2>
+        <p><em>Dictyostelium discoideum</em> — the social amoeba — is one of biology's most tractable model organisms: a haploid genome rich in human-disease genes, a dramatic 24-hour life cycle, and decades of community tools. This page is the on-ramp: why researchers choose it, and how to get going.</p>
+      </div></header>
+      <div class="record-body">
+        <h3 id="why">Why Dictyostelium?</h3>
+        <div class="start-why">${why}</div>
+
+        <h3 id="get-started" style="margin-top:28px">Getting started — a path</h3>
+        <ol class="start-steps">${steps}</ol>
+
+        <h3 id="faq" style="margin-top:28px">Frequently asked questions</h3>
+        <div class="faq">${faq}</div>
+
+        <h3 style="margin-top:28px">Keep learning</h3>
+        <p style="font-size:.9rem">Explore the interactive <a class="text-link" href="/education">life cycle, glossary, and quiz</a>, the step-by-step <a class="text-link" href="/research/techniques">lab protocols</a>, and the <a class="text-link" href="/community/labs">labs worldwide</a> working on <em>Dictyostelium</em>.</p>
+      </div>
+    </article>`;
+}
+
 function openEducation(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/education");
@@ -6372,6 +6443,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const startLink = event.target.closest('a[href="/start"]');
+  if (startLink) {
+    event.preventDefault();
+    openStart();
+    return;
+  }
+
   const communityLink = event.target.closest('a[href^="/community/"]');
   if (communityLink) {
     event.preventDefault();
@@ -6592,6 +6670,10 @@ function hydrateFromRoute() {
     openEducation(false);
     return;
   }
+  if (pathParts[0] === "start") {
+    openStart(false);
+    return;
+  }
   if (pathParts[0] === "go" && pathParts[1]) {
     openGOTerm(decodeURIComponent(pathParts[1]), false);
     return;
@@ -6684,6 +6766,8 @@ function showHomeChrome(show) {
   if (hero) hero.hidden = !show;
   const caps = document.getElementById("capabilities");
   if (caps) caps.hidden = !show;
+  const startBanner = document.getElementById("start-banner");
+  if (startBanner) startBanner.hidden = !show;
   ["news-feed", "papers-feed"].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.hidden = !(show && el.children.length > 0);
@@ -6776,6 +6860,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },
   { kind: "Tool", label: "Insoluble proteome viewer", href: "/tools/heatstress", kw: "proteome heat stress insoluble" },
+  { kind: "Learn", label: "Start here — new to Dictyostelium", href: "/start", sub: "Why Dicty, getting started, and FAQ", kw: "start here new beginner why dictyostelium getting started faq introduction onboarding model organism" },
   { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },
   { kind: "Learn", label: "Teaching labs", href: "/research/teaching-labs", kw: "teaching lab classroom protocol undergraduate" },
   { kind: "Research", label: "Techniques", href: "/research/techniques", kw: "methods techniques transformation imaging" },

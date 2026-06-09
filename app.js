@@ -2883,7 +2883,7 @@ const START_WHY = [
   ["A premier cell-biology model", "Foundational for chemotaxis, phagocytosis, macropinocytosis, cytokinesis, and the evolution of multicellularity."],
 ];
 const START_STEPS = [
-  ["See if it fits your question", "Browse what Dictyostelium is used for and the human diseases it models.", "/community/disease-models", "Disease models"],
+  ["See if it fits your question", "Browse the research areas Dictyostelium excels in — each with marker genes, protocols, and key papers.", "/research-areas", "Research areas"],
   ["Find your genes of interest", "Search by symbol, or filter the whole catalog by phenotype, ortholog, disease link, or expression.", "/search/advanced", "Advanced gene finder"],
   ["Get strains & plasmids", "Order from the community Dicty Stock Center.", "https://dictybase.dev/stockcenter", "Dicty Stock Center"],
   ["Grow the cells", "Media, buffers, and growth protocols — axenic in HL5 or on bacteria.", "/research/techniques/media", "Media & buffers"],
@@ -2939,7 +2939,123 @@ function renderStartPage() {
         <div class="faq">${faq}</div>
 
         <h3 style="margin-top:28px">Keep learning</h3>
-        <p style="font-size:.9rem">Explore the interactive <a class="text-link" href="/education">life cycle, glossary, and quiz</a>, the step-by-step <a class="text-link" href="/research/techniques">lab protocols</a>, and the <a class="text-link" href="/community/labs">labs worldwide</a> working on <em>Dictyostelium</em>.</p>
+        <p style="font-size:.9rem">See the <a class="text-link" href="/research-areas">research areas</a> Dicty excels in, explore the interactive <a class="text-link" href="/education">life cycle, glossary, and quiz</a>, the step-by-step <a class="text-link" href="/research/techniques">lab protocols</a>, and the <a class="text-link" href="/community/labs">labs worldwide</a> working on <em>Dictyostelium</em>.</p>
+      </div>
+    </article>`;
+}
+
+// "Is Dictyostelium right for my question?" — the research-areas map.
+// Each area links the fields Dicty excels in to verified marker genes (gene
+// records on this site), relevant protocols, and a scoped literature search.
+// Gene symbols below were checked against assets/gene_index.json so the
+// /gene/<symbol> links resolve; protocol slugs exist under /research/techniques.
+const RESEARCH_AREAS = [
+  {
+    id: "chemotaxis",
+    icon: "🧭",
+    title: "Chemotaxis & cell migration",
+    question: "How do cells sense gradients and move?",
+    blurb: "Starving cells chemotax toward cAMP with textbook precision, making the amoeba the premier model for eukaryotic gradient sensing, directed motility, and the PI3K/PTEN and Ras/Rac signaling that steers a crawling cell — the same machinery that drives neutrophil chasing and metastasis.",
+    genes: ["carA-1", "gpaB", "acaA", "pikA", "pten", "pkbA", "rasC", "racE"],
+    protocols: [["Grow & starve cells", "growth"], ["Develop on agar", "development"]],
+    pubmed: 'chemotaxis OR "cell migration"',
+  },
+  {
+    id: "development",
+    icon: "🍄",
+    title: "Development & multicellularity",
+    question: "How do single cells build a body?",
+    blurb: "When food runs out, up to ~100,000 cells aggregate, sort, and culminate into a fruiting body in 24 hours — a self-organizing program of cell–cell signaling, stalk-vs-spore differentiation, and pattern formation that models the origins of multicellularity.",
+    genes: ["acaA", "csaA", "gbpC", "ecmA", "ecmB", "pspA", "cudA", "gtaC"],
+    protocols: [["Methods for development", "development"], ["Whole-mount in situ", "wmish"]],
+    pubmed: "development OR multicellular OR morphogenesis",
+  },
+  {
+    id: "autophagy",
+    icon: "♻️",
+    title: "Autophagy & lysosomal biology",
+    question: "How do cells recycle themselves?",
+    blurb: "Development is fuelled by autophagy, and the conserved ATG machinery is intact yet non-essential in the haploid genome — so clean autophagy nulls are easy to make. A leading model for autophagy, lysosomal storage disease (Batten disease / NCL), and neurodegeneration.",
+    genes: ["atg1", "atg5", "atg7", "atg8", "atg9", "atg12", "vmp1"],
+    protocols: [["Transformation protocols", "transformation-protocols"], ["RNAi knockdown", "rnai-procedure"]],
+    pubmed: "autophagy",
+  },
+  {
+    id: "host-pathogen",
+    icon: "🦠",
+    title: "Phagocytosis & host–pathogen",
+    question: "How do cells eat — and fight infection?",
+    blurb: "As a professional phagocyte that hunts bacteria, Dictyostelium shares its eating-and-killing machinery with macrophages, and is a tractable host for human pathogens such as Legionella, Mycobacterium, and Pseudomonas — innate immunity without the animal.",
+    genes: ["myoB", "sibA", "talA", "corA", "kil1", "vatA", "phg1a", "nramp1"],
+    protocols: [["Grow on bacteria", "growth"], ["Feed heat-killed bacteria", "addheatkilledbac"]],
+    pubmed: "phagocytosis OR Legionella OR Mycobacterium",
+  },
+  {
+    id: "cytokinesis",
+    icon: "🔬",
+    title: "Cytokinesis & the cytoskeleton",
+    question: "How does a cell divide and hold its shape?",
+    blurb: "Foundational work on non-muscle myosin II, actin dynamics, and the contractile ring was done here — cells lacking myosin II survive on a surface, letting you dissect cytokinesis genetically in ways animal cells won't allow.",
+    genes: ["mhcA", "mlcE", "racE", "dynA", "clcA", "abpA", "forA"],
+    protocols: [["Isolate the cytoskeleton", "cytoisol"], ["Myosin ATPase assay", "atpasemyoassay"]],
+    pubmed: "cytokinesis OR myosin",
+  },
+  {
+    id: "disease-models",
+    icon: "🧬",
+    title: "Human disease models",
+    question: "Is my disease gene conserved here?",
+    blurb: "About two-thirds of Dictyostelium genes have human orthologs, many tied to disease — mitochondrial disorders, neurodegeneration, Batten disease, and immune deficiency. Browse the ortholog–disease map to see if your gene of interest has a tractable amoeba counterpart.",
+    genes: ["cln5", "cln3", "ppt1", "tpp1", "ndufs4", "sodA", "nramp1", "mfeB"],
+    protocols: [["Transformation protocols", "transformation-protocols"], ["REMI mutagenesis", "remi-mutagenesis"]],
+    pubmed: '"disease model" OR ortholog OR neurodegeneration',
+    more: ["/community/disease-models", "Browse the disease-model table →"],
+  },
+];
+
+function areaPubMedUrl(area) {
+  return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(`Dictyostelium AND (${area.pubmed})`)}`;
+}
+
+function openResearchAreas(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/research-areas");
+  if (!researchShell) return;
+  researchShell.innerHTML = renderResearchAreasPage();
+  researchShell.removeAttribute("hidden");
+  scrollToEl(researchShell);
+}
+
+function renderResearchAreasPage() {
+  const cards = RESEARCH_AREAS.map((a) => {
+    const genes = a.genes.map((g) =>
+      `<a class="ra-gene" href="/gene/${encodeURIComponent(g)}">${escapeHtml(g)}</a>`).join("");
+    const protocols = a.protocols.map(([label, slug]) =>
+      `<a class="text-link" href="/research/techniques/${encodeURIComponent(slug)}">${escapeHtml(label)}</a>`).join(" · ");
+    const lit = `<a class="text-link" href="${areaPubMedUrl(a)}" target="_blank" rel="noopener">Key literature ↗</a>`;
+    const more = a.more
+      ? ` · <a class="text-link" href="${escapeHtml(a.more[0])}">${escapeHtml(a.more[1])}</a>`
+      : "";
+    return `
+      <section class="ra-card" id="area-${a.id}">
+        <h3 class="ra-title"><span class="ra-icon" aria-hidden="true">${a.icon}</span> ${escapeHtml(a.title)}</h3>
+        <p class="ra-q">${escapeHtml(a.question)}</p>
+        <p class="ra-blurb">${escapeHtml(a.blurb)}</p>
+        <p class="ra-label">Marker genes</p>
+        <div class="ra-genes">${genes}</div>
+        <p class="ra-foot">Protocols: ${protocols} &nbsp;·&nbsp; ${lit}${more}</p>
+      </section>`;
+  }).join("");
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Research areas</p>
+        <h2>Is <em>Dictyostelium</em> right for my question?</h2>
+        <p>The amoeba is a powerhouse in a handful of fields. Find yours below — each links to the <strong>marker genes</strong> to study, the <strong>protocols</strong> to run, and the <strong>literature</strong> to read. If your question maps onto one of these, Dicty is likely a strong, fast, and cheap model for it.</p>
+      </div></header>
+      <div class="record-body">
+        <div class="ra-grid">${cards}</div>
+        <p class="ra-note">Marker genes link to records on this site; gene picks and protocols are starting points, not an exhaustive list. New to the organism? Start with <a class="text-link" href="/start">Why Dictyostelium</a>, or order strains from the <a class="text-link" href="https://dictybase.dev/stockcenter" target="_blank" rel="noopener">Dicty Stock Center ↗</a>.</p>
       </div>
     </article>`;
 }
@@ -6450,6 +6566,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const areasLink = event.target.closest('a[href="/research-areas"]');
+  if (areasLink) {
+    event.preventDefault();
+    openResearchAreas();
+    return;
+  }
+
   const communityLink = event.target.closest('a[href^="/community/"]');
   if (communityLink) {
     event.preventDefault();
@@ -6674,6 +6797,10 @@ function hydrateFromRoute() {
     openStart(false);
     return;
   }
+  if (pathParts[0] === "research-areas") {
+    openResearchAreas(false);
+    return;
+  }
   if (pathParts[0] === "go" && pathParts[1]) {
     openGOTerm(decodeURIComponent(pathParts[1]), false);
     return;
@@ -6861,6 +6988,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },
   { kind: "Tool", label: "Insoluble proteome viewer", href: "/tools/heatstress", kw: "proteome heat stress insoluble" },
   { kind: "Learn", label: "Start here — new to Dictyostelium", href: "/start", sub: "Why Dicty, getting started, and FAQ", kw: "start here new beginner why dictyostelium getting started faq introduction onboarding model organism" },
+  { kind: "Learn", label: "Research areas — is Dicty right for my question?", href: "/research-areas", sub: "Fields Dicty excels in, with marker genes & protocols", kw: "research areas fields chemotaxis development autophagy phagocytosis host pathogen cytokinesis cytoskeleton disease models marker genes is dicty right for my question topics" },
   { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },
   { kind: "Learn", label: "Teaching labs", href: "/research/teaching-labs", kw: "teaching lab classroom protocol undergraduate" },
   { kind: "Research", label: "Techniques", href: "/research/techniques", kw: "methods techniques transformation imaging" },

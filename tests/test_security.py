@@ -42,6 +42,39 @@ class RateLimitTest(unittest.TestCase):
         self.assertTrue(serve._rate_limited(store, "a", limit=1, window=300))   # same ip blocked
 
 
+class BlastThrottleTest(unittest.TestCase):
+    """The CPU-heavy BLAST endpoints are gated by a concurrency semaphore and
+    per-IP rate limits so a burst can't pin the box or hammer NCBI/EBI."""
+
+    def test_concurrency_cap_configured(self):
+        # a bounded semaphore exists and matches the configured cap
+        self.assertGreaterEqual(serve.BLAST_MAX_CONCURRENT, 1)
+        self.assertEqual(serve._BLAST_SEM._initial_value, serve.BLAST_MAX_CONCURRENT)
+
+    def test_semaphore_blocks_past_cap(self):
+        import threading
+        sem = threading.BoundedSemaphore(2)
+        self.assertTrue(sem.acquire(timeout=0.1))   # slot 1
+        self.assertTrue(sem.acquire(timeout=0.1))   # slot 2
+        self.assertFalse(sem.acquire(timeout=0.1))  # cap reached -> denied
+        sem.release()
+        self.assertTrue(sem.acquire(timeout=0.1))   # freed -> available again
+
+    def test_throttle_stores_exist(self):
+        # separate per-IP buckets for BLAST and outbound-proxy traffic
+        self.assertIsInstance(serve._BLAST_HITS, dict)
+        self.assertIsInstance(serve._PROXY_HITS, dict)
+
+    def test_blast_rate_limit_window(self):
+        # the BLAST bucket trips after its limit within the window
+        store = {}
+        ip = "9.9.9.9"
+        allowed = sum(not serve._rate_limited(store, ip, limit=20, window=60)
+                      for _ in range(20))
+        self.assertEqual(allowed, 20)
+        self.assertTrue(serve._rate_limited(store, ip, limit=20, window=60))  # 21st blocked
+
+
 class UploadGuardTest(unittest.TestCase):
     def test_extension_allowlist_is_restrictive(self):
         self.assertIn(".csv", serve.UPLOAD_EXTS)

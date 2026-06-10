@@ -1,5 +1,5 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
-import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys
+import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
 from urllib.parse import unquote, urlparse, parse_qs, quote
@@ -101,6 +101,17 @@ _SESSIONS = {}            # token -> expiry epoch
 SESSION_TTL = 8 * 3600    # 8 hours
 _LOGIN_FAILS = {}         # ip -> [recent failed-attempt epochs]
 _UPLOAD_HITS = {}         # ip -> [recent upload epochs]
+_BLAST_HITS = {}          # ip -> [recent BLAST-family request epochs]
+_PROXY_HITS = {}          # ip -> [recent outbound-proxy request epochs]
+
+# Concurrency cap for the CPU-heavy BLAST endpoints. Each blastn/tblastn pins a
+# core for seconds (cross-species/conservation tblastn = vs 9 genomes), so a
+# handful of concurrent requests can exhaust the box. A bounded semaphore limits
+# how many run at once; requests that can't get a slot quickly get a 503 rather
+# than piling up. Tune with BLAST_MAX_CONCURRENT.
+BLAST_MAX_CONCURRENT = int(os.environ.get("BLAST_MAX_CONCURRENT", "3"))
+_BLAST_SEM = threading.BoundedSemaphore(BLAST_MAX_CONCURRENT)
+BLAST_SLOT_WAIT = 2.0     # seconds to wait for a free slot before giving up
 
 # Upload guardrails (the /api/upload endpoint is public community submission).
 UPLOAD_MAX_BYTES = 50 * 1024 * 1024
@@ -444,7 +455,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_recent_papers()
             return
         if self.path.startswith("/api/domains"):
-            self._handle_domains()
+            if self._proxy_rate_ok():
+                self._handle_domains()
             return
         if self.path.startswith("/api/coexpression"):
             self._handle_coexpression()
@@ -453,10 +465,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_expression()
             return
         if self.path.startswith("/api/conservation"):
-            self._handle_conservation()
+            if self._acquire_blast_slot():
+                try:
+                    self._handle_conservation()
+                finally:
+                    _BLAST_SEM.release()
             return
         if self.path.startswith("/api/crispr"):
-            self._handle_crispr()
+            if self._acquire_blast_slot():
+                try:
+                    self._handle_crispr()
+                finally:
+                    _BLAST_SEM.release()
             return
         if self.path.startswith("/api/primers"):
             self._handle_primers()
@@ -465,6 +485,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
         if m:
+            if not self._proxy_rate_ok():
+                return
             uniprot = m.group(1).upper()
             try:
                 with urllib.request.urlopen(f"https://alphafold.ebi.ac.uk/api/prediction/{uniprot}", timeout=10, context=SSL_CTX) as r:
@@ -670,7 +692,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif self.path == "/api/curator/reject":
             self._handle_curation_reject()
         elif self.path == "/api/blast":
-            self._handle_blast()
+            if self._acquire_blast_slot():
+                try:
+                    self._handle_blast()
+                finally:
+                    _BLAST_SEM.release()
         elif self.path == "/api/enrichment":
             self._handle_enrichment()
         elif self.path == "/api/codon-optimize":
@@ -1204,6 +1230,31 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(fasta)
         except Exception as e:
             self.send_error(500, str(e))
+
+    def _acquire_blast_slot(self):
+        """Rate-limit (per IP) and concurrency-gate a CPU-heavy BLAST request.
+
+        Sends the error response and returns False if rejected. On True the
+        caller MUST release `_BLAST_SEM` exactly once (use try/finally)."""
+        ip = self.client_address[0]
+        if _rate_limited(_BLAST_HITS, ip, limit=20, window=60):
+            self.send_json(429, {"error": "Too many sequence searches from your "
+                                          "address. Wait a minute and retry."})
+            return False
+        if not _BLAST_SEM.acquire(timeout=BLAST_SLOT_WAIT):
+            self.send_json(503, {"error": "Server is busy running other sequence "
+                                          "searches. Please retry in a few seconds."})
+            return False
+        return True
+
+    def _proxy_rate_ok(self):
+        """Throttle the outbound-proxy endpoints (AlphaFold/InterPro): they make
+        slow third-party calls that tie up a worker thread and, unthrottled, let
+        a client drive this server to hammer (and get banned by) NCBI/EBI."""
+        if _rate_limited(_PROXY_HITS, self.client_address[0], limit=30, window=60):
+            self.send_json(429, {"error": "Too many requests. Slow down a moment."})
+            return False
+        return True
 
     def _handle_blast(self):
         """Run a local blastn/tblastn against the bundled dictyostelid genomes.

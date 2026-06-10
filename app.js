@@ -6779,6 +6779,28 @@ function hydrateFromRoute() {
     openGene(gene, params.get("tab") || "Summary", false);
     return;
   }
+  // Non-curated gene reached by direct URL (e.g. a /gene/<sym> link from search
+  // results or a crawler): findGeneByToken only covers the curated set, so fall
+  // back to the full catalog and open via NCBI. Wait for geneIndex if it's still
+  // loading (initial hydration can run before the catalog fetch resolves).
+  if (isGeneRoute) {
+    const tok = normalize(decodeURIComponent(pathParts[1] || ""));
+    const fromCatalog = () => {
+      const entry = geneIndex.find((g) =>
+        normalize(g.id) === tok || normalize(g.symbol) === tok || normalize(g.ncbiGene) === tok);
+      if (entry) { input.value = entry.symbol; navigateToGene(entry); return true; }
+      return false;
+    };
+    if (geneIndex.length) {
+      if (fromCatalog()) return;
+    } else {
+      (async () => {
+        for (let i = 0; i < 50 && !geneIndex.length; i++) await new Promise((r) => setTimeout(r, 100));
+        fromCatalog();
+      })();
+      return;
+    }
+  }
   if (isTechniqueRoute) {
     openTechnique(findTechniqueByToken(pathParts[2]), false);
     return;

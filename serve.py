@@ -107,6 +107,117 @@ def _load_domains():
             _DOMAINS_CACHE["genes"] = {}
     return _DOMAINS_CACHE["genes"]
 
+
+# ------------------------------------------------------------------- SEO -----
+# The SPA serves one HTML shell for every route, so without this a crawler sees
+# the same generic <title>/meta for /gene/mybB as for the home page and can't
+# index gene pages. _serve_index injects per-route <title>, description,
+# canonical, OpenGraph and JSON-LD; /robots.txt + /sitemap.xml expose the genes.
+SITE_NAME = "Dicty@Duke"
+GENE_INDEX_PATH = pathlib.Path(ROOT) / "assets" / "gene_index.json"
+_GENE_META = {"mtime": None, "by_symbol": {}, "by_ddb": {}, "records": []}
+
+# Public base URL for absolute canonical/sitemap URLs. Set PUBLIC_BASE_URL in
+# the deployment (e.g. https://dicty.example.org); otherwise derived per request
+# from the Host header (https assumed, since TLS terminates at the proxy).
+PUBLIC_BASE_URL = os.environ.get("PUBLIC_BASE_URL", "").rstrip("/")
+_esc = html.escape  # module-level alias (the `html` name is shadowed in _serve_index)
+
+# Friendly titles/descriptions for the main static routes. Unlisted routes keep
+# the index.html defaults. (Values may contain pre-escaped entities.)
+_ROUTE_META = {
+    "/tools/blast": ("BLAST search",
+        "BLAST a nucleotide or protein query against nine sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
+    "/tools/enrichment": ("GO and phenotype enrichment",
+        "Hypergeometric GO-term and phenotype enrichment analysis for a list of Dictyostelium genes, with Benjamini-Hochberg correction."),
+    "/tools/expression": ("Expression compare",
+        "Overlay the developmental RNA-seq expression profiles of several Dictyostelium genes across the life cycle."),
+    "/tools/lab": ("Lab tools",
+        "Design CRISPR guides with genome off-target checking, qPCR primers, and codon-optimize sequences for Dictyostelium."),
+    "/tools/api": ("REST API",
+        "Public REST API for Dictyostelium gene records, GO terms, strains, BLAST, and enrichment on Dicty@Duke."),
+    "/education": ("Education",
+        "Learn Dictyostelium: an interactive life-cycle stepper, glossary, self-quiz, and downloadable teaching figures."),
+    "/start": ("Start here",
+        "New to Dictyostelium? Why it is a powerful model organism and how to get started using it in your lab."),
+    "/data": ("Data and provenance",
+        "Where Dicty@Duke's data comes from: sources, licenses, versioning, and how the site is built."),
+    "/community/disease-models": ("Disease models",
+        "Browse Dictyostelium genes with human disease-associated orthologs - a starting point for modelling human disease in the amoeba."),
+}
+
+
+def _load_gene_meta():
+    try:
+        mtime = GENE_INDEX_PATH.stat().st_mtime
+    except OSError:
+        return _GENE_META
+    if _GENE_META["mtime"] != mtime:
+        try:
+            recs = json.loads(GENE_INDEX_PATH.read_text())
+        except (ValueError, OSError):
+            recs = []
+        by_symbol, by_ddb = {}, {}
+        for r in recs:
+            if not r:
+                continue
+            ddb = (r[0] or "").upper()
+            sym = r[1] if len(r) > 1 else ""
+            if ddb:
+                by_ddb[ddb] = r
+            if sym:
+                by_symbol.setdefault(sym.lower(), r)
+        _GENE_META.update(mtime=mtime, by_symbol=by_symbol, by_ddb=by_ddb, records=recs)
+    return _GENE_META
+
+
+def _clip(s, n=158):
+    s = " ".join((s or "").split())
+    return s if len(s) <= n else s[:n - 1].rstrip() + "…"
+
+
+def route_meta(path):
+    """(title, description, canonical_path, jsonld|None) for a client route.
+    title/description are plain text (caller escapes). None title -> use defaults."""
+    parts = [p for p in path.split("/") if p]
+    if len(parts) >= 2 and parts[0] == "gene":
+        token = unquote(parts[1])
+        gm = _load_gene_meta()
+        rec = gm["by_symbol"].get(token.lower()) or gm["by_ddb"].get(token.upper())
+        if rec:
+            ddb = rec[0]
+            sym = rec[1] or ddb
+            desc = (rec[2] if len(rec) > 2 else "") or ""
+            named = bool(sym) and sym.upper() != ddb.upper()
+            label = f"{sym} ({ddb})" if named else ddb
+            human = desc if desc and desc.lower() != "hypothetical protein" else "Dictyostelium discoideum gene"
+            title = f"{label} · Dictyostelium gene · {SITE_NAME}"
+            description = _clip(f"{label}: {human}. GO annotations, phenotypes, sequences, "
+                               f"orthologs, protein structure, and expression.")
+            canon = f"/gene/{sym}" if named else f"/gene/{ddb}"
+            jsonld = {
+                "@context": "https://schema.org",
+                "@type": "Gene",
+                "name": sym,
+                "identifier": ddb,
+                "description": human,
+                "isPartOfBioChemEntity": "Dictyostelium discoideum",
+            }
+            return title, description, canon, jsonld
+        # unknown gene token: still give it a sensible title
+        return f"{token} · Dictyostelium gene · {SITE_NAME}", None, path, None
+    hit = _ROUTE_META.get(path.rstrip("/") or "/")
+    if hit:
+        return f"{hit[0]} · {SITE_NAME}", hit[1], path, None
+    return None, None, path, None
+
+
+def _base_url(handler):
+    if PUBLIC_BASE_URL:
+        return PUBLIC_BASE_URL
+    host = handler.headers.get("Host", "")
+    return f"https://{host}" if host else ""
+
 # Curator auth. The password comes from the CURATOR_PASSWORD env var (no secret
 # in source). If unset, a random one is generated per run and printed to the log
 # so local dev still works; set CURATOR_PASSWORD in any real deployment.
@@ -552,6 +663,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         raw = self.path.split("?")[0]
         _, ext = os.path.splitext(raw)
+        if raw == "/robots.txt":
+            return self._serve_robots()
+        if raw == "/sitemap.xml":
+            return self._serve_sitemap()
         # Serve the SPA shell (with cache-busted asset URLs) for the root, an
         # explicit index.html, or any non-static client route. Real static
         # files fall through to the default handler.
@@ -699,6 +814,36 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # current and a data rebuild auto-busts the cached JSONs.
             html = html.replace(
                 "</head>", f'<script>window.__ASSET_V="{_data_version()}";</script></head>', 1)
+
+            # Per-route SEO metadata so crawlers index each gene/tool page
+            # distinctly (the body is still client-rendered; this is the head).
+            path = self.path.split("?")[0]
+            title, desc, canon, jsonld = route_meta(path)
+            base = _base_url(self)
+            head = []
+            if title:
+                html = re.sub(r"<title>.*?</title>", f"<title>{_esc(title)}</title>",
+                              html, count=1, flags=re.S)
+                for attr in ('property="og:title"', 'name="twitter:title"'):
+                    html = re.sub(r'(<meta ' + re.escape(attr) + r' content=").*?(">)',
+                                  lambda m: m.group(1) + _esc(title) + m.group(2),
+                                  html, count=1, flags=re.S)
+            if desc:
+                for attr in ('name="description"', 'property="og:description"',
+                             'name="twitter:description"'):
+                    html = re.sub(r'(<meta ' + re.escape(attr) + r' content=").*?(">)',
+                                  lambda m: m.group(1) + _esc(desc) + m.group(2),
+                                  html, count=1, flags=re.S)
+            if base and canon:
+                head.append(f'<link rel="canonical" href="{_esc(base + canon)}">')
+                head.append(f'<meta property="og:url" content="{_esc(base + canon)}">')
+            if jsonld:
+                if base:
+                    jsonld["url"] = base + canon
+                blob = json.dumps(jsonld, ensure_ascii=False).replace("</", "<\\/")
+                head.append(f'<script type="application/ld+json">{blob}</script>')
+            if head:
+                html = html.replace("</head>", "\n".join(head) + "\n</head>", 1)
             body = html.encode()
             self._no_cache = True
             self.send_response(200)
@@ -708,6 +853,64 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(body)
         except Exception as e:
             self.send_error(500, str(e))
+
+    def _serve_robots(self):
+        base = _base_url(self)
+        lines = ["User-agent: *", "Allow: /", "Disallow: /api/"]
+        if base:
+            lines.append(f"Sitemap: {base}/sitemap.xml")
+        body = ("\n".join(lines) + "\n").encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "public, max-age=86400")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+    # Cached sitemap body, keyed by (gene_index mtime, base url).
+    _SITEMAP_CACHE = {}
+
+    def _serve_sitemap(self):
+        base = _base_url(self)
+        gm = _load_gene_meta()
+        key = (gm["mtime"], base)
+        xml = Handler._SITEMAP_CACHE.get(key)
+        if xml is None:
+            urls = ["/", "/start", "/education", "/data", "/tools/blast",
+                    "/tools/enrichment", "/tools/expression", "/tools/lab",
+                    "/tools/api", "/community/disease-models", "/search/advanced"]
+            parts = ['<?xml version="1.0" encoding="UTF-8"?>',
+                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+            for u in urls:
+                parts.append(f"<url><loc>{_esc(base + u)}</loc></url>")
+            for r in gm["records"]:
+                if not r:
+                    continue
+                ddb = r[0]
+                sym = r[1] if len(r) > 1 else ""
+                token = sym if (sym and sym.upper() != (ddb or "").upper()) else ddb
+                if not token:
+                    continue
+                parts.append(f"<url><loc>{_esc(base + '/gene/' + quote(token))}</loc></url>")
+            parts.append("</urlset>")
+            xml = ("\n".join(parts)).encode()
+            Handler._SITEMAP_CACHE.clear()
+            Handler._SITEMAP_CACHE[key] = xml
+        accepts_gzip = "gzip" in self.headers.get("Accept-Encoding", "")
+        self.send_response(200)
+        self.send_header("Content-Type", "application/xml; charset=utf-8")
+        self.send_header("Cache-Control", "public, max-age=86400")
+        if accepts_gzip:
+            body = gzip.compress(xml, compresslevel=6)
+            self.send_header("Content-Encoding", "gzip")
+            self.send_header("Vary", "Accept-Encoding")
+        else:
+            body = xml
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
 
     def do_POST(self):
         if self.path == "/api/upload":

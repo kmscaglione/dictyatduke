@@ -111,10 +111,18 @@ sudo tee /etc/dicty.env >/dev/null <<EOF
 CURATOR_PASSWORD=$(python3 -c 'import secrets;print(secrets.token_urlsafe(24))')
 BLAST_MAX_CONCURRENT=6
 PROXY_MAX_CONCURRENT=8
+PUBLIC_BASE_URL=https://dicty.yourdomain.org
 PORT=8774
 HOST=127.0.0.1
 EOF
 ```
+
+- `PUBLIC_BASE_URL` — your real public origin (no trailing slash). Used for the
+  absolute canonical URLs, OpenGraph `og:url`, and `sitemap.xml`/`robots.txt`
+  links so search engines index the right hostname. If unset it's derived from
+  each request's Host header (fine behind a single proxy, but set it to be safe).
+  After deploying, submit `https://dicty.yourdomain.org/sitemap.xml` in Google
+  Search Console.
 
 - `BLAST_MAX_CONCURRENT=6` — 6 concurrent blastn/tblastn searches, leaving ~2
   cores for serving. The 7th gets a fast 503.

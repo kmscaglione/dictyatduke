@@ -356,4 +356,9 @@ Today the beta runs from a developer laptop (`serve.py`) exposed via a Cloudflar
 quick tunnel — the URL is ephemeral and the machine must stay on. For a stable
 deployment, host the static files + a small Python process (or port `serve.py`'s
 handful of endpoints to a managed runtime) and serve `assets/genomes/` from
-object storage / a CDN. Restore the secret-handling fixes from Known issues first.
+object storage / a CDN.
+
+**See [`docs/deployment.md`](docs/deployment.md) for a step-by-step public-host
+checklist** (Linux VM with systemd + Caddy/TLS + firewall, or a macOS laptop with
+Cloudflare Tunnel + launchd), and [`docs/cdn-setup.md`](docs/cdn-setup.md) for the
+optional CDN layer.

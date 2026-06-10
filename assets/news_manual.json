@@ -2,6 +2,13 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-06-10",
+      "tag": "data",
+      "title": "Annotations now refresh automatically",
+      "body": "Human orthologs, the UniProt accession map, and protein-domain architecture now update each month from UniProt, OMA, and InterPro, so the data stays current without manual rebuilds. Protein domains are precomputed for faster loading on the Structures tab, with a live lookup as a fallback.",
+      "link": "/data"
+    },
+    {
       "date": "2026-06-08",
       "tag": "update",
       "title": "A much faster genome browser",

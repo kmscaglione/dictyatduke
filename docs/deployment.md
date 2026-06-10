@@ -17,10 +17,24 @@ few gitignored data dirs (genomes, BLAST DBs). There is no build step.
 
 ## 0. Provision the VM
 
-- **Size:** ~2 vCPU / 4 GB RAM / 30 GB disk is plenty for the expected ≤10
-  concurrent users. BLAST is the only CPU-heavy path and is now capped to 3
-  concurrent searches (`BLAST_MAX_CONCURRENT`), so 2 vCPU absorbs it. The
-  genomes (~600 MB) + BLAST DBs dominate disk.
+- **Size (target ~50 concurrent users, headroom to ~100–150):**
+  **8 vCPU / 16 GB RAM / 80–100 GB SSD.** This is generous for 50 — the goal is
+  to *use* the cores, not to squeeze.
+  - **Core budget (the key idea):** BLAST runs as a *subprocess*, so it executes
+    outside Python's GIL — each search ≈ 1 core. Split the 8 cores as **~6 for
+    concurrent BLAST** (`BLAST_MAX_CONCURRENT=6`) and **~2 reserved** for the
+    request-serving process + Caddy + OS. A 7th concurrent search gets a clean
+    503 rather than starving the box.
+  - **RAM:** 16 GB is comfortable — the gzip cache of the big JSONs is a few MB;
+    the real value is OS page-cache keeping the 6.6 MB `gene_annotations.json`
+    and the genome BLAST DBs hot in RAM after first read.
+  - **Disk:** genomes (~600 MB) + BLAST DBs + browser-track indexes ≈ 1–2 GB;
+    uploads are pruned on a timer (§6). 80–100 GB is effectively unlimited here.
+  - **Stay single-process** (§3) — do not add workers; the in-memory session /
+    rate-limit / BLAST-semaphore state would not be shared across them.
+  - **Bandwidth:** each cold gene page is ~14 MB of static JSON egress. 8 cores
+    can *compute* 50 cold loads fine, but the egress is real (and usually
+    metered) — put a CDN in front (§7) to offload ~90% of it.
 - **OS:** Ubuntu 22.04/24.04 LTS assumed below (Debian-family `apt`).
 - **DNS:** point an A/AAAA record (e.g. `dicty.yourdomain.org`) at the VM's
   public IP before requesting a cert — Let's Encrypt validates over that name.
@@ -84,20 +98,29 @@ kill %1
 
 ## 2. Secrets and environment
 
-The server reads four env vars: `CURATOR_PASSWORD`, `BLAST_MAX_CONCURRENT`
-(default 3), `PORT` (default 8774), `HOST` (default 127.0.0.1).
+The server reads five env vars: `CURATOR_PASSWORD`, `BLAST_MAX_CONCURRENT`
+(default 3), `PROXY_MAX_CONCURRENT` (default 8), `PORT` (default 8774), `HOST`
+(default 127.0.0.1).
 
-Create a root-owned, locked-down env file (the systemd unit loads it):
+Create a root-owned, locked-down env file (the systemd unit loads it). The
+concurrency values below are tuned for the 8 vCPU box (§0):
 
 ```bash
 sudo install -o root -g dicty -m 0640 /dev/null /etc/dicty.env
 sudo tee /etc/dicty.env >/dev/null <<EOF
 CURATOR_PASSWORD=$(python3 -c 'import secrets;print(secrets.token_urlsafe(24))')
-BLAST_MAX_CONCURRENT=3
+BLAST_MAX_CONCURRENT=6
+PROXY_MAX_CONCURRENT=8
 PORT=8774
 HOST=127.0.0.1
 EOF
 ```
+
+- `BLAST_MAX_CONCURRENT=6` — 6 concurrent blastn/tblastn searches, leaving ~2
+  cores for serving. The 7th gets a fast 503.
+- `PROXY_MAX_CONCURRENT=8` — global cap on the slow AlphaFold/InterPro proxy
+  calls (each ties up a thread for 10–25 s) so a burst of users can't exhaust
+  threads or hammer EBI/NCBI.
 
 - **Save the generated `CURATOR_PASSWORD`** in your password manager — it's the
   only way into the curator dashboard. If you don't set it, the server prints a
@@ -130,10 +153,11 @@ ExecStart=/usr/bin/python3 serve.py
 Restart=always
 RestartSec=2
 
-# Resource ceilings — BLAST can spike CPU; keep it from starving the box.
-CPUQuota=180%
-MemoryMax=2G
-TasksMax=256
+# Resource ceilings for the 8 vCPU / 16 GB box (§0). BLAST child processes
+# share this cgroup, so these bound the app + all its BLAST subprocesses.
+CPUQuota=700%
+MemoryMax=12G
+TasksMax=512
 
 # Sandboxing — the process only needs to read its dir and write uploads/cache.
 NoNewPrivileges=true
@@ -272,12 +296,14 @@ echo '/var/log/caddy/*.log { weekly rotate 8 compress missingok notifempty }' | 
 
 ---
 
-## 7. (Optional) CDN in front
+## 7. CDN in front (recommended at this scale)
 
-For higher scale, put Cloudflare in front per **`docs/cdn-setup.md`** — the
-multi-MB data JSONs are versioned-immutable (`?v=<mtime>`) so the edge caches
-them hard with no stale-data risk, offloading ~90% of origin bytes. Not needed
-at ≤10 users, but it's the cheapest scale lever when you want it.
+At ~50 concurrent users this is **strongly recommended — for bandwidth and cost,
+not CPU.** Put Cloudflare in front per **`docs/cdn-setup.md`**: the multi-MB data
+JSONs are versioned-immutable (`?v=<mtime>`) so the edge caches them hard with no
+stale-data risk, offloading ~90% of origin egress (each cold gene page is ~14 MB)
+and adding global latency wins. The origin then handles ~1 dynamic API call per
+page. The free tier is sufficient.
 
 ---
 

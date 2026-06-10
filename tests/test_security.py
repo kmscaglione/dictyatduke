@@ -65,6 +65,11 @@ class BlastThrottleTest(unittest.TestCase):
         self.assertIsInstance(serve._BLAST_HITS, dict)
         self.assertIsInstance(serve._PROXY_HITS, dict)
 
+    def test_proxy_concurrency_cap_configured(self):
+        # the outbound-proxy endpoints have their own global semaphore
+        self.assertGreaterEqual(serve.PROXY_MAX_CONCURRENT, 1)
+        self.assertEqual(serve._PROXY_SEM._initial_value, serve.PROXY_MAX_CONCURRENT)
+
     def test_blast_rate_limit_window(self):
         # the BLAST bucket trips after its limit within the window
         store = {}

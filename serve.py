@@ -113,6 +113,15 @@ BLAST_MAX_CONCURRENT = int(os.environ.get("BLAST_MAX_CONCURRENT", "3"))
 _BLAST_SEM = threading.BoundedSemaphore(BLAST_MAX_CONCURRENT)
 BLAST_SLOT_WAIT = 2.0     # seconds to wait for a free slot before giving up
 
+# The outbound-proxy endpoints (AlphaFold, InterPro /api/domains) make slow
+# third-party calls that each tie up a worker thread for 10-25s. Per-IP rate
+# limiting alone doesn't bound *global* concurrency, so under load many users
+# could pile up slow upstream calls and exhaust threads (and hammer EBI/NCBI).
+# A global semaphore caps how many run at once; overflow gets a fast 503.
+PROXY_MAX_CONCURRENT = int(os.environ.get("PROXY_MAX_CONCURRENT", "8"))
+_PROXY_SEM = threading.BoundedSemaphore(PROXY_MAX_CONCURRENT)
+PROXY_SLOT_WAIT = 2.0
+
 # Upload guardrails (the /api/upload endpoint is public community submission).
 UPLOAD_MAX_BYTES = 50 * 1024 * 1024
 UPLOAD_EXTS = {".csv", ".tsv", ".txt", ".xlsx", ".xls", ".fasta", ".fa", ".fna",
@@ -455,8 +464,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_recent_papers()
             return
         if self.path.startswith("/api/domains"):
-            if self._proxy_rate_ok():
-                self._handle_domains()
+            if self._acquire_proxy_slot():
+                try:
+                    self._handle_domains()
+                finally:
+                    _PROXY_SEM.release()
             return
         if self.path.startswith("/api/coexpression"):
             self._handle_coexpression()
@@ -485,7 +497,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
         if m:
-            if not self._proxy_rate_ok():
+            if not self._acquire_proxy_slot():
                 return
             uniprot = m.group(1).upper()
             try:
@@ -503,6 +515,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(pdb_data)
             except Exception as e:
                 self.send_error(404, str(e))
+            finally:
+                _PROXY_SEM.release()
             return
 
         # Curator dashboard API — list pending curations
@@ -1247,12 +1261,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return False
         return True
 
-    def _proxy_rate_ok(self):
-        """Throttle the outbound-proxy endpoints (AlphaFold/InterPro): they make
-        slow third-party calls that tie up a worker thread and, unthrottled, let
-        a client drive this server to hammer (and get banned by) NCBI/EBI."""
+    def _acquire_proxy_slot(self):
+        """Rate-limit (per IP) and concurrency-gate an outbound-proxy request
+        (AlphaFold/InterPro): they make slow third-party calls that tie up a
+        worker thread and, unthrottled, let a client drive this server to hammer
+        (and get banned by) NCBI/EBI.
+
+        Sends the error response and returns False if rejected. On True the
+        caller MUST release `_PROXY_SEM` exactly once (use try/finally)."""
         if _rate_limited(_PROXY_HITS, self.client_address[0], limit=30, window=60):
             self.send_json(429, {"error": "Too many requests. Slow down a moment."})
+            return False
+        if not _PROXY_SEM.acquire(timeout=PROXY_SLOT_WAIT):
+            self.send_json(503, {"error": "Busy fetching external data. Retry shortly."})
             return False
         return True
 

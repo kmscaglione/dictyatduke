@@ -1,0 +1,66 @@
+name: Refresh external data
+
+# Refreshes the data layers derived from external reference sources (UniProt,
+# OMA, HPO, InterPro) and commits any changes. Kept separate from the GAF/
+# curation refresh so a flaky third party here can't block that job.
+#
+#   * uniprot_map.json     — DDB_G -> UniProt accession (UniProt proteome)
+#   * ortholog_disease.json — human ortholog + disease (UniProt + OMA + HPO)
+#   * domains.json          — InterPro domain architecture (incremental top-up)
+#
+# Runs monthly and on demand. The domain step is bounded (--limit) so it tops up
+# a slice of genes each run rather than re-querying InterPro for all of them; it
+# skips genes already present in the committed domains.json, so coverage grows
+# over a few cycles and then steady-states cheap.
+
+on:
+  schedule:
+    - cron: "0 6 2 * *"   # 06:00 UTC on the 2nd (a day after the curation refresh)
+  workflow_dispatch:
+    inputs:
+      domain_limit:
+        description: "Max genes to fetch domains for this run"
+        default: "1500"
+
+permissions:
+  contents: write
+
+env:
+  # Disease names from OMIM (via HPO) carry redistribution terms; the automated
+  # public refresh keeps only the openly-licensed Orphanet subset. Set to 0 in a
+  # manual/internal run if you want the richer OMIM-inclusive set.
+  ORPHA_ONLY: "1"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild UniProt accession map
+        run: python3 scripts/build_uniprot_map.py
+
+      - name: Rebuild ortholog + disease (Orphanet-only by default)
+        run: python3 scripts/build_ortholog_disease.py
+
+      - name: Top up InterPro domain cache
+        run: python3 scripts/build_domains.py --limit "${{ github.event.inputs.domain_limit || '1500' }}"
+
+      - name: Validate regenerated assets
+        run: python3 -m unittest discover -s tests
+
+      - name: Commit if changed
+        run: |
+          git config user.name "data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/uniprot_map.json assets/ortholog_disease.json assets/domains.json
+          if git diff --cached --quiet; then
+            echo "No external-data changes this cycle."
+          else
+            git commit -m "chore(data): monthly external-data refresh (UniProt/OMA/HPO/InterPro)"
+            git push
+          fi

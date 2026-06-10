@@ -6235,12 +6235,22 @@ async function runConservation(gene) {
 
 async function loadDomains(gene) {
   const el = document.querySelector("[data-domains]");
-  if (!el || !gene.uniprot) return;
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
   let data;
   try {
-    const res = await fetch(`/api/domains?acc=${encodeURIComponent(gene.uniprot)}`);
-    data = await res.json();
-    if (!res.ok) throw new Error(data.error || "failed");
+    // Prefer the precomputed store (server reads domains.json, ~2 KB per gene);
+    // fall back to the live InterPro proxy for genes not yet cached.
+    let res = ddb ? await fetch(`/api/domains?ddb=${encodeURIComponent(ddb)}`) : null;
+    if (res && res.ok) {
+      data = await res.json();
+    } else if (gene.uniprot) {
+      res = await fetch(`/api/domains?acc=${encodeURIComponent(gene.uniprot)}`);
+      data = await res.json();
+      if (!res.ok) throw new Error(data.error || "failed");
+    } else {
+      data = { length: 0, domains: [] };
+    }
   } catch {
     if (state.activeGene === gene && state.activeTab === "Structures") {
       el.innerHTML = `<p class="notice muted">Domain data could not be loaded.</p>`;
@@ -6250,7 +6260,7 @@ async function loadDomains(gene) {
   if (state.activeGene !== gene || state.activeTab !== "Structures") return;
   const len = data.length || 0;
   const all = data.domains || [];
-  if (!len || !all.length) { el.innerHTML = `<p class="notice muted">No domain annotations found for ${escapeHtml(gene.uniprot)}.</p>`; return; }
+  if (!len || !all.length) { el.innerHTML = `<p class="notice muted">No domain annotations found${gene.uniprot ? ` for ${escapeHtml(gene.uniprot)}` : ""}.</p>`; return; }
 
   // Domains for the architecture bar: prefer InterPro's integrated,
   // non-redundant domain set (covers e.g. the myosin tail that Pfam omits),

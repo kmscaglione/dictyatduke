@@ -86,6 +86,27 @@ def _data_version():
 # set of compressible assets; entries for old mtimes are simply never hit again.
 _GZIP_CACHE = {}
 
+# Precomputed InterPro domain architecture (assets/domains.json, built by
+# scripts/build_domains.py). Served per-gene from memory so clients fetch ~2 KB
+# for one gene instead of downloading the whole multi-MB file; reloaded when the
+# file changes (mtime-keyed). The live InterPro proxy stays the fallback.
+DOMAINS_PATH = pathlib.Path(ROOT) / "assets" / "domains.json"
+_DOMAINS_CACHE = {"mtime": None, "genes": {}}
+
+
+def _load_domains():
+    try:
+        mtime = DOMAINS_PATH.stat().st_mtime
+    except OSError:
+        return {}
+    if _DOMAINS_CACHE["mtime"] != mtime:
+        try:
+            _DOMAINS_CACHE["genes"] = json.loads(DOMAINS_PATH.read_text()).get("genes", {})
+            _DOMAINS_CACHE["mtime"] = mtime
+        except (ValueError, OSError):
+            _DOMAINS_CACHE["genes"] = {}
+    return _DOMAINS_CACHE["genes"]
+
 # Curator auth. The password comes from the CURATOR_PASSWORD env var (no secret
 # in source). If unset, a random one is generated per run and printed to the log
 # so local dev still works; set CURATOR_PASSWORD in any real deployment.
@@ -464,11 +485,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_recent_papers()
             return
         if self.path.startswith("/api/domains"):
-            if self._acquire_proxy_slot():
-                try:
-                    self._handle_domains()
-                finally:
-                    _PROXY_SEM.release()
+            self._handle_domains()   # gates the live-fetch path internally
             return
         if self.path.startswith("/api/coexpression"):
             self._handle_coexpression()
@@ -904,14 +921,31 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(500, {"error": str(e)})
 
     def _handle_domains(self):
-        """GET /api/domains?acc=UNIPROT -> {length, domains:[...]}.
+        """GET /api/domains -> {length, domains:[...]}.
 
-        Proxies the InterPro REST API (server-side: handles SSL + avoids CORS)
-        for protein length and domain/family architecture."""
+        Two modes:
+          ?ddb=DDB_G... -> served from the precomputed domains.json (in-memory,
+                           fast, no external call); 404 if that gene isn't cached.
+          ?acc=UNIPROT  -> live InterPro proxy (the fallback); rate/concurrency
+                           gated like the other outbound proxies."""
         q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
+        if ddb:
+            if not re.match(r"^DDB_G\d+$", ddb):
+                self.send_json(400, {"error": "bad ddb"})
+                return
+            rec = _load_domains().get(ddb)
+            if rec is None:
+                self.send_json(404, {"error": "gene not in domain cache"})
+                return
+            self.send_json(200, {"length": rec.get("length"),
+                                 "domains": rec.get("domains", [])})
+            return
         acc = (q.get("acc", [""])[0] or "").strip()
         if not re.match(r"^[A-Za-z0-9]+$", acc):
             self.send_json(400, {"error": "bad or missing accession"})
+            return
+        if not self._acquire_proxy_slot():
             return
         base = "https://www.ebi.ac.uk/interpro/api"
         try:
@@ -939,6 +973,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(404 if e.code == 404 else 502, {"error": f"InterPro: {e}"})
         except Exception as e:
             self.send_json(502, {"error": str(e)})
+        finally:
+            _PROXY_SEM.release()
 
     def _handle_enrichment(self):
         """POST {genes:[...], background?, min_study?} -> GO enrichment."""

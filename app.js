@@ -1407,6 +1407,7 @@ function loadTabData(gene, tab) {
       loadGeneModel(gene);
       loadCoexpression(gene);
       loadKeggPathways(gene);
+      initRecordLabTools(gene);
       break;
     case "GO":
       loadGOResults(gene);
@@ -1678,16 +1679,11 @@ function initLab() {
   on("codon-run", runLabCodon);
 }
 
-async function runLabCrispr() {
-  const out = document.querySelector("[data-crispr-results]");
-  out.innerHTML = `<p class="notice muted">Resolving gene and scanning for guides…</p>`;
-  const ddb = await resolveGeneToDDB(document.getElementById("crispr-gene").value);
-  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
-  try {
-    const data = await (await fetch(`/api/crispr?ddb=${encodeURIComponent(ddb)}`)).json();
-    const g = data.guides || [];
-    if (!g.length) { out.innerHTML = `<p class="notice">No guides found.</p>`; return; }
-    out.innerHTML = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+// Result tables shared by the Lab tools page and the gene-record Lab reagents
+// section — both hit /api/crispr and /api/primers, only the gene source differs.
+function crisprTableHTML(g) {
+  if (!g.length) return `<p class="notice">No guides found.</p>`;
+  return `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
       <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
         <th style="padding:5px 8px">Protospacer (5′→3′)</th><th style="padding:5px 8px">PAM</th><th style="padding:5px 8px">Strand</th><th style="padding:5px 8px">Pos</th><th style="padding:5px 8px">GC</th><th style="padding:5px 8px" title="genome off-target sites">Off-tgt</th><th style="padding:5px 8px">Score</th></tr></thead>
       <tbody>${g.slice(0, 15).map((x) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
@@ -1696,26 +1692,61 @@ async function runLabCrispr() {
         <td style="padding:5px 8px">${x.position}</td><td style="padding:5px 8px">${(x.gc * 100).toFixed(0)}%</td>
         <td style="padding:5px 8px${x.off_targets ? ";color:#be123c" : ""}">${x.off_targets ?? "—"}</td><td style="padding:5px 8px">${x.score}</td></tr>`).join("")}</tbody></table></div>
       <p style="font-size:.72rem;color:var(--muted,#6b7280);margin-top:6px">Off-target = additional near-perfect genomic sites (blastn-short). Ranked by off-target then on-target score. Verify experimentally.</p>`;
-  } catch { out.innerHTML = `<p class="notice">Guide design failed.</p>`; }
 }
 
-async function runLabPrimers() {
-  const out = document.querySelector("[data-primer-results]");
-  out.innerHTML = `<p class="notice muted">Resolving gene and designing primers…</p>`;
-  const ddb = await resolveGeneToDDB(document.getElementById("primer-gene").value);
-  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
-  try {
-    const data = await (await fetch(`/api/primers?ddb=${encodeURIComponent(ddb)}`)).json();
-    const p = data.primers || [];
-    if (!p.length) { out.innerHTML = `<p class="notice">No primer pairs met the criteria for this transcript.</p>`; return; }
-    out.innerHTML = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+function primerTableHTML(p) {
+  if (!p.length) return `<p class="notice">No primer pairs met the criteria for this transcript.</p>`;
+  return `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
       <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
         <th style="padding:5px 8px">Forward (5′→3′)</th><th style="padding:5px 8px">Reverse (5′→3′)</th><th style="padding:5px 8px">Product</th><th style="padding:5px 8px">Tm F/R</th></tr></thead>
       <tbody>${p.map((x) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
         <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.forward}</td>
         <td style="padding:5px 8px;font-family:ui-monospace,Menlo,monospace">${x.reverse}</td>
         <td style="padding:5px 8px">${x.product} bp</td><td style="padding:5px 8px">${x.fwd_tm}/${x.rev_tm}°C</td></tr>`).join("")}</tbody></table></div>`;
+}
+
+// Run the CRISPR/primer designers for a known DDB_G id, rendering into `out`.
+async function fetchCrisprInto(ddb, out) {
+  out.innerHTML = loadingHTML("Scanning for guides…");
+  try {
+    const data = await (await fetch(`/api/crispr?ddb=${encodeURIComponent(ddb)}`)).json();
+    out.innerHTML = crisprTableHTML(data.guides || []);
+  } catch { out.innerHTML = `<p class="notice">Guide design failed.</p>`; }
+}
+
+async function fetchPrimersInto(ddb, out) {
+  out.innerHTML = loadingHTML("Designing primers…");
+  try {
+    const data = await (await fetch(`/api/primers?ddb=${encodeURIComponent(ddb)}`)).json();
+    out.innerHTML = primerTableHTML(data.primers || []);
   } catch { out.innerHTML = `<p class="notice">Primer design failed.</p>`; }
+}
+
+async function runLabCrispr() {
+  const out = document.querySelector("[data-crispr-results]");
+  out.innerHTML = loadingHTML("Resolving gene and scanning for guides…");
+  const ddb = await resolveGeneToDDB(document.getElementById("crispr-gene").value);
+  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
+  await fetchCrisprInto(ddb, out);
+}
+
+async function runLabPrimers() {
+  const out = document.querySelector("[data-primer-results]");
+  out.innerHTML = loadingHTML("Resolving gene and designing primers…");
+  const ddb = await resolveGeneToDDB(document.getElementById("primer-gene").value);
+  if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
+  await fetchPrimersInto(ddb, out);
+}
+
+// Wire the on-demand Lab reagents buttons on a gene record's Summary tab.
+// The record already knows its DDB_G id, so no gene resolution is needed.
+function initRecordLabTools(gene) {
+  const ddb = gene.veupath;
+  if (!ddb || !/^DDB_G\d+$/.test(ddb)) return;
+  const cb = document.querySelector("[data-record-crispr-run]");
+  if (cb) cb.addEventListener("click", () => fetchCrisprInto(ddb, document.querySelector("[data-record-crispr-results]")));
+  const pb = document.querySelector("[data-record-primer-run]");
+  if (pb) pb.addEventListener("click", () => fetchPrimersInto(ddb, document.querySelector("[data-record-primer-results]")));
 }
 
 async function runLabCodon() {
@@ -4370,6 +4401,17 @@ function renderTab(gene, tab) {
             <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=cdna&symbol=${encodeURIComponent(gene.symbol)}" download>cDNA</a></strong><span>Spliced transcript (exons)</span></li>
             <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}" download>Protein</a></strong><span>Translated coding sequence</span></li>
           </ul>
+        </section>
+        <section class="data-block">
+          <h3>Lab reagents <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— design on demand</span></h3>
+          <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">CRISPR guides and qPCR primers for <strong>${escapeHtml(gene.symbol)}</strong>. Computational suggestions — validate before use.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">
+            <button type="button" data-record-crispr-run>Design CRISPR guides</button>
+            <button type="button" data-record-primer-run>Design qPCR primers</button>
+          </div>
+          <div data-record-crispr-results style="margin-bottom:8px"></div>
+          <div data-record-primer-results></div>
+          <a class="text-link" href="/tools/lab" style="font-size:0.8125rem;display:inline-block;margin-top:6px">More lab tools (codon optimizer) →</a>
         </section>` : ""}
       </div>
     </div>

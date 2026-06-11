@@ -7069,7 +7069,7 @@ const CMDK_TARGETS = [
   { kind: "Research", label: "Nomenclature guidelines", href: "/research/nomenclature-guidelines", kw: "naming nomenclature gene strain" },
   { kind: "Research", label: "Anatomy ontology", href: "/research/anatomy-ontology", kw: "anatomy ontology structures" },
   { kind: "Community", label: "Research labs", href: "/community/labs", kw: "labs community groups" },
-  { kind: "Community", label: "Disease models", href: "/community/disease-models", kw: "disease human ortholog model" },
+  { kind: "Research", label: "Disease models", href: "/community/disease-models", kw: "disease human ortholog model" },
   { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
   { kind: "Community", label: "Dicty Stock Center", href: "https://dictybase.dev/stockcenter", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },

@@ -32,7 +32,16 @@ GENETIC_CODE = {
     "CGT": "R", "CGC": "R", "CGA": "R", "CGG": "R", "AGA": "R", "AGG": "R",
     "GGT": "G", "GGC": "G", "GGA": "G", "GGG": "G",
 }
-_codon_cache = None
+_codon_caches = {}
+
+# Codon-usage tables the optimizer can target. Dicty is computed from the AX4
+# CDS (build_codon_usage.py); the heterologous hosts come from published
+# genome-wide usage (build_codon_tables.py).
+CODON_FILES = {
+    "dicty": "dicty_codon_usage.json",
+    "ecoli": "ecoli_codon_usage.json",
+    "human": "human_codon_usage.json",
+}
 
 
 def revcomp(s):
@@ -43,11 +52,11 @@ def _clean(seq, alphabet="ACGTN"):
     return "".join(c for c in (seq or "").upper() if c in alphabet)
 
 
-def _codon_tables():
-    global _codon_cache
-    if _codon_cache is None:
-        _codon_cache = json.loads((ASSETS / "dicty_codon_usage.json").read_text())
-    return _codon_cache
+def _codon_tables(organism="dicty"):
+    organism = organism if organism in CODON_FILES else "dicty"
+    if organism not in _codon_caches:
+        _codon_caches[organism] = json.loads((ASSETS / CODON_FILES[organism]).read_text())
+    return _codon_caches[organism]
 
 
 def translate(dna):
@@ -59,10 +68,15 @@ def gc_frac(s):
     return (s.count("G") + s.count("C")) / len(s) if s else 0.0
 
 
-def codon_optimize(seq):
-    """Optimize a protein or DNA sequence for Dicty; also report input CAI if DNA."""
+def codon_optimize(seq, organism="dicty"):
+    """Optimize a protein/DNA sequence for a target host's codon usage.
+
+    organism is one of CODON_FILES (dicty | ecoli | human). Input CAI, when the
+    input is DNA, is scored against the chosen target host.
+    """
     raw = re.sub(r"\s|>.*", "", seq or "").upper()
-    tables = _codon_tables()
+    organism = organism if organism in CODON_FILES else "dicty"
+    tables = _codon_tables(organism)
     pref, w = tables["preferred"], tables["relative_adaptiveness"]
     is_dna = raw != "" and set(raw) <= set("ACGTUN")
     input_cai = None
@@ -84,6 +98,7 @@ def codon_optimize(seq):
         "optimized_gc": round(gc_frac(opt), 3),
         "input_was_dna": is_dna,
         "input_cai": input_cai,
+        "organism": organism,
     }
 
 

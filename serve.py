@@ -944,11 +944,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if length > 200000:
                 self.send_json(413, {"error": "Sequence too large"})
                 return
-            seq = (json.loads(self.rfile.read(length) or b"{}").get("seq") or "").strip()
+            body = json.loads(self.rfile.read(length) or b"{}")
+            seq = (body.get("seq") or "").strip()
+            organism = body.get("organism") or "dicty"
             if not seq:
                 self.send_json(400, {"error": "Provide a 'seq' (protein or DNA)"})
                 return
-            self.send_json(200, bench.codon_optimize(seq))
+            self.send_json(200, bench.codon_optimize(seq, organism))
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})
         except Exception as e:

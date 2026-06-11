@@ -1634,7 +1634,7 @@ function renderLabPage() {
         <div class="record-title">
           <p class="eyebrow">Lab tools</p>
           <h2>Molecular biology tools</h2>
-          <p>Design reagents for <em>Dictyostelium</em>: CRISPR guides and qPCR primers for a gene, and codon-optimize a sequence for the AT-rich Dicty codon usage. Computational suggestions — validate before use.</p>
+          <p>Design reagents for <em>Dictyostelium</em>: CRISPR guides and qPCR primers for a gene, and codon-optimize a sequence for expression in <em>Dictyostelium</em>, <em>E. coli</em>, or human cells. Computational suggestions — validate before use.</p>
         </div>
       </header>
       <div class="record-body">
@@ -1652,9 +1652,18 @@ function renderLabPage() {
         </div>
         <div data-primer-results style="margin-bottom:22px"></div>
 
-        <h3>Codon optimizer <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— for Dicty expression</span></h3>
+        <h3>Codon optimizer <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— for heterologous expression</span></h3>
         <textarea id="codon-seq" rows="4" placeholder="Paste a protein (MFLIK…) or coding DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
-        <div style="margin-top:8px"><button type="button" id="codon-run">Optimize</button></div>
+        <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <label style="font-size:.8125rem;color:var(--muted,#6b7280)">Optimize for
+            <select id="codon-organism" style="${FIELD};margin-left:4px">
+              <option value="dicty">Dictyostelium (AT-rich)</option>
+              <option value="ecoli">E. coli K-12</option>
+              <option value="human">Human cells</option>
+            </select>
+          </label>
+          <button type="button" id="codon-run">Optimize</button>
+        </div>
         <div data-codon-results style="margin-top:12px"></div>
       </div>
     </article>`;
@@ -1749,16 +1758,20 @@ function initRecordLabTools(gene) {
   if (pb) pb.addEventListener("click", () => fetchPrimersInto(ddb, document.querySelector("[data-record-primer-results]")));
 }
 
+const CODON_ORGANISM_LABELS = { dicty: "Dictyostelium", ecoli: "E. coli K-12", human: "Human cells" };
 async function runLabCodon() {
   const out = document.querySelector("[data-codon-results]");
   const seq = document.getElementById("codon-seq").value.trim();
+  const sel = document.getElementById("codon-organism");
+  const organism = sel ? sel.value : "dicty";
   if (!seq) { out.innerHTML = `<p class="notice">Paste a sequence.</p>`; return; }
-  out.innerHTML = `<p class="notice muted">Optimizing…</p>`;
+  out.innerHTML = loadingHTML("Optimizing…");
   try {
-    const r = await (await fetch("/api/codon-optimize", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
+    const r = await (await fetch("/api/codon-optimize", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq, organism }) })).json();
     if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    const label = CODON_ORGANISM_LABELS[r.organism] || r.organism;
     out.innerHTML = `
-      <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${r.length_aa} aa · optimized GC ${(r.optimized_gc * 100).toFixed(0)}%${r.input_was_dna && r.input_cai != null ? ` · input CAI ${r.input_cai}` : ""}</p>
+      <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">Optimized for <strong>${escapeHtml(label)}</strong> · ${r.length_aa} aa · GC ${(r.optimized_gc * 100).toFixed(0)}%${r.input_was_dna && r.input_cai != null ? ` · input CAI ${r.input_cai}` : ""}</p>
       <textarea readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD}">${escapeHtml(r.optimized_dna)}</textarea>`;
   } catch { out.innerHTML = `<p class="notice">Optimization failed.</p>`; }
 }

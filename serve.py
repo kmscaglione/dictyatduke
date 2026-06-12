@@ -236,6 +236,20 @@ _UPLOAD_HITS = {}         # ip -> [recent upload epochs]
 _BLAST_HITS = {}          # ip -> [recent BLAST-family request epochs]
 _PROXY_HITS = {}          # ip -> [recent outbound-proxy request epochs]
 
+# Allowlisted, cached GET proxy for the public bio APIs the gene record reads
+# from the browser (NCBI E-utilities, UniProt, EBI QuickGO, STRING, OMA, RCSB).
+# Proxying them server-side adds caching, hides the user's IP/query from those
+# upstreams, dodges CORS, and lets us rate-limit. https + host allowlist ONLY —
+# this is not an open relay.
+_PROXY_HOSTS = {
+    "eutils.ncbi.nlm.nih.gov", "rest.uniprot.org", "www.ebi.ac.uk",
+    "string-db.org", "omabrowser.org", "search.rcsb.org", "data.rcsb.org",
+}
+_EXT_CACHE = {}                    # url -> (expiry_epoch, status, ctype, body bytes)
+_EXT_CACHE_TTL = 6 * 3600
+_EXT_CACHE_MAX = 600               # cap entries; oldest evicted first
+_EXT_CACHE_MAX_BYTES = 2_000_000   # don't cache huge payloads
+
 # Concurrency cap for the CPU-heavy BLAST endpoints. Each blastn/tblastn pins a
 # core for seconds (cross-species/conservation tblastn = vs 9 genomes), so a
 # handful of concurrent requests can exhaust the box. A bounded semaphore limits
@@ -621,6 +635,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/primers"):
             self._handle_primers()
             return
+        if self.path.startswith("/api/ext"):
+            self._handle_ext_proxy()   # gates the live-fetch path internally
+            return
 
         # AlphaFold proxy
         m = re.match(r"^/api/alphafold/([A-Z0-9]+)$", self.path, re.I)
@@ -937,6 +954,64 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_codon()
         else:
             self.send_error(404)
+
+    def _send_proxy_bytes(self, status, ctype, body, cached=False):
+        self.send_response(status)
+        self.send_header("Content-Type", ctype or "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Cache-Control", "public, max-age=1800")
+        self.send_header("X-Proxy-Cache", "HIT" if cached else "MISS")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+    def _handle_ext_proxy(self):
+        """Allowlisted, cached GET proxy for the public bio APIs the gene record
+        reads (NCBI/UniProt/EBI-QuickGO/STRING/OMA/RCSB). https + host allowlist
+        only — not an open relay. Serves a short-TTL in-memory cache first, then
+        rate/concurrency-gated upstream fetch; passes upstream errors through."""
+        target = (parse_qs(urlparse(self.path).query).get("url") or [""])[0]
+        if not target:
+            self.send_json(400, {"error": "Missing url parameter"})
+            return
+        u = urlparse(target)
+        if u.scheme != "https" or u.hostname not in _PROXY_HOSTS:
+            self.send_json(403, {"error": "Host not allowed"})
+            return
+        now = time.time()
+        hit = _EXT_CACHE.get(target)
+        if hit and hit[0] > now:
+            self._send_proxy_bytes(hit[1], hit[2], hit[3], cached=True)
+            return
+        if not self._acquire_proxy_slot():
+            return
+        try:
+            req = urllib.request.Request(target, headers={
+                "User-Agent": "DictyAtDuke/1.0 (https://dictyatduke; mailto:dictybase@duke.edu)",
+                "Accept": "application/json",
+            })
+            with urllib.request.urlopen(req, timeout=20, context=SSL_CTX) as r:
+                body = r.read()
+                ctype = r.headers.get("Content-Type", "application/json")
+                status = getattr(r, "status", 200) or 200
+            if len(body) <= _EXT_CACHE_MAX_BYTES:
+                if len(_EXT_CACHE) >= _EXT_CACHE_MAX:
+                    _EXT_CACHE.pop(next(iter(_EXT_CACHE)))
+                _EXT_CACHE[target] = (now + _EXT_CACHE_TTL, status, ctype, body)
+            self._send_proxy_bytes(status, ctype, body)
+        except urllib.error.HTTPError as e:
+            # Pass the upstream status + body through (e.g. a real 404 from RCSB)
+            try:
+                body = e.read()
+            except Exception:
+                body = b""
+            ctype = e.headers.get("Content-Type", "application/json") if e.headers else "application/json"
+            self._send_proxy_bytes(e.code, ctype, body)
+        except Exception as e:
+            self.send_json(502, {"error": "Upstream fetch failed", "detail": str(e)[:200]})
+        finally:
+            _PROXY_SEM.release()
 
     def _handle_codon(self):
         try:

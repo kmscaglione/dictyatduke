@@ -1,14 +1,33 @@
-// Append the data-asset version to /assets/*.json fetches so those files can be
-// cached immutably by the browser and a CDN. window.__ASSET_V comes from the
-// always-revalidated index.html and changes the moment any data file is rebuilt,
-// so a new version busts the cache automatically — no stale data, no CDN purge.
+// fetch() shim with two jobs:
+// 1. Append the data-asset version to /assets/*.json fetches so those files can
+//    be cached immutably by the browser and a CDN. window.__ASSET_V comes from
+//    the always-revalidated index.html and changes the moment any data file is
+//    rebuilt, so a new version busts the cache automatically — no stale data.
+// 2. Route GET fetches to the public bio APIs (NCBI/UniProt/EBI/STRING/OMA/RCSB)
+//    through our /api/ext server proxy, which caches them, hides the user's IP
+//    and query from those upstreams, and avoids CORS. Done in one place so the
+//    ~16 call sites don't each have to wrap their URL. (The STRING network
+//    *image* is an <img src>, not a fetch, so it stays a direct browser load.)
+const EXT_PROXY_HOSTS = new Set([
+  "eutils.ncbi.nlm.nih.gov", "rest.uniprot.org", "www.ebi.ac.uk",
+  "string-db.org", "omabrowser.org", "search.rcsb.org", "data.rcsb.org",
+]);
 (function () {
   const _fetch = window.fetch;
   window.fetch = function (input, init) {
-    if (typeof input === "string" && window.__ASSET_V &&
-        input.indexOf("/assets/") === 0 && input.slice(-5) === ".json" &&
-        input.indexOf("?") === -1) {
-      input += "?v=" + window.__ASSET_V;
+    if (typeof input === "string") {
+      if (window.__ASSET_V && input.indexOf("/assets/") === 0 &&
+          input.slice(-5) === ".json" && input.indexOf("?") === -1) {
+        input += "?v=" + window.__ASSET_V;
+      } else if (input.indexOf("https://") === 0) {
+        const method = (init && init.method ? init.method : "GET").toUpperCase();
+        let host = "";
+        try { host = new URL(input).host; } catch (e) { /* leave as-is */ }
+        if (method === "GET" && EXT_PROXY_HOSTS.has(host)) {
+          input = "/api/ext?url=" + encodeURIComponent(input);
+          init = init ? Object.assign({}, init, { headers: undefined }) : undefined;
+        }
+      }
     }
     return _fetch.call(this, input, init);
   };
@@ -6199,11 +6218,10 @@ async function fetchPDBResults(gene) {
     return_type: "entry"
   };
 
-  const response = await fetch("https://search.rcsb.org/rcsbsearch/v2/query", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(query)
-  });
+  // GET form (?json=) of the RCSB search so it routes through our /api/ext
+  // proxy like the other external calls (the v2 API accepts either).
+  const response = await fetch("https://search.rcsb.org/rcsbsearch/v2/query?json=" +
+    encodeURIComponent(JSON.stringify(query)));
   if (response.status === 204) { pdbCache.set(gene.id, []); return []; }
   if (!response.ok) throw new Error("PDB search failed");
   const data = await response.json();

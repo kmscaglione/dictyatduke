@@ -102,6 +102,85 @@ def codon_optimize(seq, organism="dicty"):
     }
 
 
+# Common cloning restriction enzymes: name -> recognition site (5'->3'). All
+# listed sites are palindromic (the usual 6/8-cutters), but the scan also checks
+# the reverse complement so a non-palindromic addition would still work.
+RESTRICTION_ENZYMES = {
+    "EcoRI": "GAATTC", "BamHI": "GGATCC", "HindIII": "AAGCTT", "XhoI": "CTCGAG",
+    "XbaI": "TCTAGA", "NotI": "GCGGCCGC", "NcoI": "CCATGG", "NdeI": "CATATG",
+    "SalI": "GTCGAC", "SpeI": "ACTAGT", "KpnI": "GGTACC", "SacI": "GAGCTC",
+    "PstI": "CTGCAG", "SmaI": "CCCGGG", "BglII": "AGATCT", "ClaI": "ATCGAT",
+    "EcoRV": "GATATC", "HpaI": "GTTAAC", "NheI": "GCTAGC", "AscI": "GGCGCGCC",
+    "AflII": "CTTAAG", "DraI": "TTTAAA", "SspI": "AATATT", "MfeI": "CAATTG",
+}
+
+
+def _find_all(s, sub):
+    pos, start = [], 0
+    while True:
+        i = s.find(sub, start)
+        if i < 0:
+            break
+        pos.append(i + 1)   # 1-based
+        start = i + 1
+    return pos
+
+
+def restriction_sites(seq):
+    """Recognition sites for common cloning enzymes in a DNA sequence. Enzymes
+    that DON'T cut are reported too (count 0) since a non-cutter is what you want
+    for a cloning site — Dicty's AT-rich sequence makes GC-rich sites rare."""
+    s = _clean(seq, "ACGT")
+    out = []
+    for name, site in RESTRICTION_ENZYMES.items():
+        positions = _find_all(s, site)
+        rc = revcomp(site)
+        if rc != site:
+            positions = sorted(positions + _find_all(s, rc))
+        out.append({"enzyme": name, "site": site, "count": len(positions),
+                    "positions": positions[:50]})
+    out.sort(key=lambda e: (e["count"], e["enzyme"]))
+    return {"length": len(s), "enzymes": out}
+
+
+def find_orfs(seq, min_aa=30, top=20):
+    """ORFs (ATG..stop) across all six reading frames of a DNA sequence. Returns
+    the longest, each with strand, frame, 1-based span, lengths, and the
+    translated protein. (For a raw 6-frame translation, read the proteins.)"""
+    s = _clean(seq, "ACGT")
+    n = len(s)
+    orfs = []
+    for strand, d in (("+", s), ("-", revcomp(s))):
+        for frame in range(3):
+            i = frame
+            while i < len(d) - 2:
+                if d[i:i + 3] == "ATG":
+                    prot, j = [], i
+                    while j < len(d) - 2:
+                        aa = GENETIC_CODE.get(d[j:j + 3], "X")
+                        if aa == "*":
+                            break
+                        prot.append(aa)
+                        j += 3
+                    has_stop = j < len(d) - 2
+                    if has_stop and len(prot) >= min_aa:
+                        if strand == "+":
+                            start, end = i + 1, j + 3
+                        else:
+                            start, end = n - (j + 3) + 1, n - i
+                        orfs.append({
+                            "strand": strand, "frame": frame + 1,
+                            "start": start, "end": end,
+                            "length_nt": (j + 3) - i, "length_aa": len(prot),
+                            "protein": "".join(prot),
+                        })
+                        i = j + 3
+                        continue
+                i += 3
+    orfs.sort(key=lambda o: -o["length_aa"])
+    return {"length": n, "orf_count": len(orfs), "orfs": orfs[:top]}
+
+
 def crispr_guides(cds, max_guides=25):
     """SpCas9 NGG guides in a CDS with on-target heuristic scoring."""
     cds = _clean(cds, "ACGT")

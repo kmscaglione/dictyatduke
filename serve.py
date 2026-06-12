@@ -977,6 +977,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_enrichment()
         elif self.path == "/api/codon-optimize":
             self._handle_codon()
+        elif self.path == "/api/restriction":
+            self._handle_seq_tool(bench.restriction_sites)
+        elif self.path == "/api/orf":
+            self._handle_seq_tool(bench.find_orfs)
         else:
             self.send_error(404)
 
@@ -1051,6 +1055,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json(400, {"error": "Provide a 'seq' (protein or DNA)"})
                 return
             self.send_json(200, bench.codon_optimize(seq, organism))
+        except (ValueError, json.JSONDecodeError) as e:
+            self.send_json(400, {"error": f"Bad request: {e}"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_seq_tool(self, fn):
+        """Shared handler for the sequence-in/JSON-out Lab tools (restriction
+        sites, ORF finder): read {seq}, run `fn(seq)`, return its dict."""
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 200000:
+                self.send_json(413, {"error": "Sequence too large"})
+                return
+            seq = (json.loads(self.rfile.read(length) or b"{}").get("seq") or "").strip()
+            if not seq:
+                self.send_json(400, {"error": "Provide a DNA 'seq'"})
+                return
+            self.send_json(200, fn(seq))
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})
         except Exception as e:

@@ -55,5 +55,34 @@ class PrimerTest(unittest.TestCase):
             self.assertEqual(p["forward"], cdna[p["fwd_pos"] - 1:p["fwd_pos"] - 1 + len(p["forward"])])
 
 
+class RestrictionTest(unittest.TestCase):
+    def test_finds_known_site(self):
+        seq = "AAAA" + "GAATTC" + "TTTT"   # EcoRI at position 5
+        res = bench.restriction_sites(seq)
+        eco = next(e for e in res["enzymes"] if e["enzyme"] == "EcoRI")
+        self.assertEqual(eco["count"], 1)
+        self.assertEqual(eco["positions"], [5])
+
+    def test_noncutter_reported_zero(self):
+        res = bench.restriction_sites("ATATATATATATATAT")  # no GC-rich sites
+        notI = next(e for e in res["enzymes"] if e["enzyme"] == "NotI")
+        self.assertEqual(notI["count"], 0)
+
+
+class OrfTest(unittest.TestCase):
+    def test_finds_forward_orf(self):
+        cds = "ATG" + "GCT" * 40 + "TAA"           # Met + 40 Ala + stop
+        res = bench.find_orfs("CC" + cds + "CC")
+        self.assertTrue(res["orfs"])
+        top = res["orfs"][0]
+        self.assertEqual(top["strand"], "+")
+        self.assertEqual(top["length_aa"], 41)
+        self.assertTrue(top["protein"].startswith("MA"))
+
+    def test_translation_matches(self):
+        res = bench.find_orfs("ATG" + "AAA" * 35 + "TGA")
+        self.assertEqual(res["orfs"][0]["protein"], "M" + "K" * 35)
+
+
 if __name__ == "__main__":
     unittest.main()

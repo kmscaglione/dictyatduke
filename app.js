@@ -1653,7 +1653,7 @@ function renderLabPage() {
         <div class="record-title">
           <p class="eyebrow">Lab tools</p>
           <h2>Molecular biology tools</h2>
-          <p>Design reagents for <em>Dictyostelium</em>: CRISPR guides and qPCR primers for a gene, and codon-optimize a sequence for expression in <em>Dictyostelium</em>, <em>E. coli</em>, or human cells. Computational suggestions — validate before use.</p>
+          <p>Design reagents for <em>Dictyostelium</em>: CRISPR guides and qPCR primers for a gene; codon-optimize a sequence for expression in <em>Dictyostelium</em>, <em>E. coli</em>, or human cells; map restriction sites; and find ORFs. Computational suggestions — validate before use.</p>
         </div>
       </header>
       <div class="record-body">
@@ -1684,6 +1684,16 @@ function renderLabPage() {
           <button type="button" id="codon-run">Optimize</button>
         </div>
         <div data-codon-results style="margin-top:12px"></div>
+
+        <h3 style="margin-top:24px">Restriction sites <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— common cloning enzymes</span></h3>
+        <textarea id="re-seq" rows="3" placeholder="Paste a DNA sequence (e.g. a CDS or insert)" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px"><button type="button" id="re-run">Find sites</button></div>
+        <div data-re-results style="margin-top:12px"></div>
+
+        <h3 style="margin-top:24px">ORF finder &amp; translation <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— six-frame, ATG→stop, ≥30 aa</span></h3>
+        <textarea id="orf-seq" rows="3" placeholder="Paste a DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px"><button type="button" id="orf-run">Find ORFs</button></div>
+        <div data-orf-results style="margin-top:12px"></div>
       </div>
     </article>`;
 }
@@ -1705,6 +1715,51 @@ function initLab() {
   on("crispr-run", runLabCrispr);
   on("primer-run", runLabPrimers);
   on("codon-run", runLabCodon);
+  on("re-run", runLabRestriction);
+  on("orf-run", runLabOrf);
+}
+
+async function runLabRestriction() {
+  const out = document.querySelector("[data-re-results]");
+  const seq = document.getElementById("re-seq").value.trim();
+  if (!seq) { out.innerHTML = `<p class="notice">Paste a DNA sequence.</p>`; return; }
+  out.innerHTML = loadingHTML("Scanning for sites…");
+  try {
+    const r = await (await fetch("/api/restriction", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
+    if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    const cutters = r.enzymes.filter((e) => e.count > 0);
+    const noncut = r.enzymes.filter((e) => e.count === 0).map((e) => e.enzyme);
+    const td = "padding:5px 8px";
+    out.innerHTML = `
+      <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${r.length} bp · ${cutters.length} enzyme${cutters.length === 1 ? "" : "s"} cut · ${noncut.length} don't</p>
+      ${cutters.length ? `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Enzyme</th><th style="${td}">Site</th><th style="${td}">Cuts</th><th style="${td}">Positions (1-based)</th></tr></thead>
+        <tbody>${cutters.map((e) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+          <td style="${td}"><strong>${e.enzyme}</strong></td><td style="${td};font-family:ui-monospace,Menlo,monospace">${e.site}</td>
+          <td style="${td}">${e.count}</td><td style="${td}">${e.positions.join(", ")}</td></tr>`).join("")}</tbody></table></div>` : `<p class="notice muted">None of the listed enzymes cut this sequence.</p>`}
+      ${noncut.length ? `<p style="font-size:.75rem;color:#047857;margin-top:8px"><strong>Non-cutters</strong> (usable as cloning sites): ${noncut.join(", ")}</p>` : ""}`;
+  } catch { out.innerHTML = `<p class="notice">Scan failed.</p>`; }
+}
+
+async function runLabOrf() {
+  const out = document.querySelector("[data-orf-results]");
+  const seq = document.getElementById("orf-seq").value.trim();
+  if (!seq) { out.innerHTML = `<p class="notice">Paste a DNA sequence.</p>`; return; }
+  out.innerHTML = loadingHTML("Finding ORFs…");
+  try {
+    const r = await (await fetch("/api/orf", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
+    if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    if (!r.orfs.length) { out.innerHTML = `<p class="notice">No ORFs ≥30 aa found in any frame.</p>`; return; }
+    const td = "padding:5px 8px";
+    out.innerHTML = `
+      <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${r.length} bp · ${r.orf_count} ORF${r.orf_count === 1 ? "" : "s"} ≥30 aa · showing longest ${r.orfs.length}</p>
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Strand</th><th style="${td}">Frame</th><th style="${td}">Span (nt)</th><th style="${td}">Length</th><th style="${td}">Protein</th></tr></thead>
+        <tbody>${r.orfs.map((o) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+          <td style="${td}">${o.strand}</td><td style="${td}">${o.frame}</td><td style="${td}">${o.start}–${o.end}</td><td style="${td}">${o.length_aa} aa</td>
+          <td style="${td};font-family:ui-monospace,Menlo,monospace" title="${escapeHtml(o.protein)}">${escapeHtml(o.protein.length > 40 ? o.protein.slice(0, 40) + "…" : o.protein)}</td></tr>`).join("")}</tbody></table></div>
+      <p style="font-size:.72rem;color:var(--muted,#6b7280);margin-top:6px">Hover a protein to see the full translation. Longest ORF first.</p>`;
+  } catch { out.innerHTML = `<p class="notice">ORF search failed.</p>`; }
 }
 
 // Result tables shared by the Lab tools page and the gene-record Lab reagents

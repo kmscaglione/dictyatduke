@@ -6933,6 +6933,52 @@ recordShell.addEventListener("keydown", (event) => {
 
 window.addEventListener("popstate", hydrateFromRoute);
 
+// A proper not-found view (instead of silently showing the home page) for an
+// unknown route or an unresolvable /gene/<token>. Offers a search box + the main
+// destinations so a dead link is recoverable.
+function renderNotFoundPage(opts) {
+  const isGene = (opts && opts.kind) === "gene";
+  const tok = (opts && opts.token) || window.location.pathname;
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">404</p>
+        <h2>${isGene ? "Gene not found" : "Page not found"}</h2>
+        <p>${isGene
+          ? `No gene matching <strong>${escapeHtml(tok)}</strong> is in the catalog. It may be an outdated name — try a search, or the advanced finder.`
+          : `<strong>${escapeHtml(tok)}</strong> isn’t a page on this site. Try a search or one of these:`}</p>
+      </div></header>
+      <div class="record-body">
+        <form data-nf-search style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px">
+          <input name="q" placeholder="Search genes (e.g. cln5, mhcA, rasG)" aria-label="Search genes" style="flex:1;min-width:240px;${FIELD}">
+          <button type="submit" class="button primary">Search</button>
+        </form>
+        <ul class="list">
+          <li><strong><a class="text-link" href="/">Home</a></strong><span>Gene search and overview</span></li>
+          <li><strong><a class="text-link" href="/search/advanced">Advanced gene finder</a></strong><span>Filter the catalog by phenotype, ortholog, disease, expression</span></li>
+          <li><strong><a class="text-link" href="/tools/blast">BLAST</a></strong><span>Search by sequence</span></li>
+          <li><strong><a class="text-link" href="/start">Start here</a></strong><span>New to <em>Dictyostelium</em>?</span></li>
+        </ul>
+      </div>
+    </article>`;
+}
+
+function showNotFound(opts) {
+  hideContentSections();
+  if (!toolsShell) return;
+  toolsShell.innerHTML = renderNotFoundPage(opts);
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  const form = toolsShell.querySelector("[data-nf-search]");
+  if (form) form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = (form.querySelector("input").value || "").trim();
+    if (!q) return;
+    history.pushState(null, "", `/search?q=${encodeURIComponent(q)}`);
+    hydrateFromRoute();
+  });
+}
+
 function hydrateFromRoute() {
   showHomeChrome(true);  // default; the branch openers below flip it off for non-home views
   const params = new URLSearchParams(window.location.search);
@@ -6964,10 +7010,12 @@ function hydrateFromRoute() {
     };
     if (geneIndex.length) {
       if (fromCatalog()) return;
+      showNotFound({ kind: "gene", token: decodeURIComponent(pathParts[1] || "") });
+      return;
     } else {
       (async () => {
         for (let i = 0; i < 50 && !geneIndex.length; i++) await new Promise((r) => setTimeout(r, 100));
-        fromCatalog();
+        if (!fromCatalog()) showNotFound({ kind: "gene", token: decodeURIComponent(pathParts[1] || "") });
       })();
       return;
     }
@@ -7027,6 +7075,11 @@ function hydrateFromRoute() {
   if (isSearchRoute) {
     input.value = params.get("q") || "";
     renderSuggestions(input.value);
+    return;
+  }
+  // Nothing matched: home for "/", a real 404 for any other unknown path.
+  if (pathParts.length) {
+    showNotFound({ kind: "page", token: window.location.pathname });
   }
 }
 

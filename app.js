@@ -5296,6 +5296,58 @@ function openDataPage(updateRoute = true) {
   loadDataStatus();
 }
 
+function openCite(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/cite");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Citation</p>
+        <h2>How to cite Dicty@Duke</h2>
+        <p>If this resource supported your work, please cite the data release below. Individual gene records also carry a “Cite this page” link.</p>
+      </div></header>
+      <div class="record-body"><div data-cite><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading release info…</p></div></div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadCite();
+}
+
+async function loadCite() {
+  const el = document.querySelector("[data-cite]");
+  if (!el) return;
+  let m = {};
+  try { m = await (await fetch("/api/version")).json(); } catch { /* fall back to placeholders */ }
+  const year = (m.released || "2026").slice(0, 4);
+  const url = m.url || location.origin;
+  const ref = m.doi ? `https://doi.org/${m.doi}` : url;
+  const citation = `${m.authors || "Dicty@Duke contributors"} (${year}). ${m.title || "Dicty@Duke"} (version ${m.version || "—"}) [Data set]. ${m.publisher || ""}. ${ref}`.replace(/\s+\./g, ".");
+  const bibtex = `@misc{dictyatduke_${year},
+  title   = {${m.title || "Dicty@Duke"}},
+  author  = {{${m.authors || "Dicty@Duke contributors"}}},
+  year    = {${year}},
+  version = {${m.version || ""}},
+${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
+  note    = {${m.publisher || ""}}
+}`;
+  el.innerHTML = `
+    <div class="data-block">
+      <div class="kv" style="font-size:0.9375rem">
+        <span>Release</span><strong>${escapeHtml(m.version || "—")}</strong>
+        <span>Released</span><strong>${escapeHtml(m.released || "—")}</strong>
+        <span>Data last updated</span><strong>${escapeHtml(m.data_updated || "—")}</strong>
+        <span>DOI</span><strong>${m.doi ? `<a class="text-link" href="https://doi.org/${escapeHtml(m.doi)}" target="_blank" rel="noopener">${escapeHtml(m.doi)}</a>` : `<span style="color:var(--muted,#6b7280)">pending — minted via Zenodo on the first tagged release</span>`}</strong>
+      </div>
+    </div>
+    <h3 style="margin-top:18px">Cite this release</h3>
+    <p style="font-size:0.9375rem;background:var(--soft,#f1f5f4);border-radius:8px;padding:12px 14px;margin:0">${escapeHtml(citation)}</p>
+    <h3 style="margin-top:18px">BibTeX</h3>
+    <textarea readonly rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
+    <h3 style="margin-top:18px">Citing the data sources</h3>
+    <p style="font-size:0.9375rem">Dicty@Duke aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
+}
+
 async function loadDataStatus() {
   const el = document.querySelector("[data-data-status]");
   if (!el) return;
@@ -6816,6 +6868,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const citeLink = event.target.closest('a[href="/cite"]');
+  if (citeLink) {
+    event.preventDefault();
+    openCite();
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -7093,6 +7152,10 @@ function hydrateFromRoute() {
     openDataPage(false);
     return;
   }
+  if (pathParts[0] === "cite") {
+    openCite(false);
+    return;
+  }
   if (pathParts[0] === "search" && pathParts[1] === "advanced") {
     openAdvancedFinder(false);
     return;
@@ -7284,6 +7347,7 @@ const CMDK_TARGETS = [
   { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
   { kind: "Community", label: "Dicty Stock Center", href: "https://dictybase.dev/stockcenter", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
+  { kind: "Page", label: "How to cite", href: "/cite", kw: "cite citation doi bibtex reference how to cite release version" },
 ];
 
 const cmdk = { root: null, input: null, list: null, items: [], active: 0, open: false };

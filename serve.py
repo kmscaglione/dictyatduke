@@ -115,6 +115,16 @@ def _load_domains():
 GENE_ANNOT_PATH = pathlib.Path(ROOT) / "assets" / "gene_annotations.json"
 _GENE_ANNOT_CACHE = {"mtime": None, "genes": {}}
 
+# Citable data-release metadata (assets/data_release.json) — version, date, DOI.
+RELEASE_PATH = pathlib.Path(ROOT) / "assets" / "data_release.json"
+
+
+def _release_meta():
+    try:
+        return json.loads(RELEASE_PATH.read_text())
+    except (ValueError, OSError):
+        return {}
+
 
 def _load_gene_annotations():
     try:
@@ -164,6 +174,8 @@ _ROUTE_META = {
         "New to Dictyostelium? Why it is a powerful model organism and how to get started using it in your lab."),
     "/data": ("Data and provenance",
         "Where Dicty@Duke's data comes from: sources, licenses, versioning, and how the site is built."),
+    "/cite": ("How to cite",
+        "How to cite the Dicty@Duke data release: version, DOI, citation text, and BibTeX, plus the primary data sources to credit."),
     "/community/disease-models": ("Disease models",
         "Browse Dictyostelium genes with human disease-associated orthologs - a starting point for modelling human disease in the amoeba."),
 }
@@ -691,6 +703,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/data-status"):
             self._handle_api_status()
             return
+        if self.path.startswith("/api/version"):
+            meta = _release_meta()
+            stamp = _data_version()
+            meta["data_updated"] = (datetime.datetime.utcfromtimestamp(stamp).strftime("%Y-%m-%d")
+                                    if stamp else "")
+            self.send_json(200, meta)
+            return
         if self.path.startswith("/api/recent-papers"):
             self._handle_recent_papers()
             return
@@ -991,7 +1010,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         key = (gm["mtime"], base)
         xml = Handler._SITEMAP_CACHE.get(key)
         if xml is None:
-            urls = ["/", "/start", "/education", "/data", "/tools/blast",
+            urls = ["/", "/start", "/education", "/data", "/cite", "/tools/blast",
                     "/tools/enrichment", "/tools/expression", "/tools/lab",
                     "/tools/api", "/community/disease-models", "/search/advanced"]
             parts = ['<?xml version="1.0" encoding="UTF-8"?>',

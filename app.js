@@ -1618,7 +1618,7 @@ function renderExpressionPage() {
       </header>
       <div class="record-body">
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
-          <input id="expr-genes" placeholder="genes — e.g. mhcA acaA carA rasG pkaC" style="${FIELD};min-width:340px;flex:1">
+          <input id="expr-genes" aria-label="Genes to compare" placeholder="genes — e.g. mhcA acaA carA rasG pkaC" style="${FIELD};min-width:340px;flex:1">
           <button type="button" id="expr-run">Plot</button>
         </div>
         <div data-expr-results style="margin-top:12px"><canvas id="expr-chart" height="120" hidden></canvas></div>
@@ -1689,20 +1689,20 @@ function renderLabPage() {
       <div class="record-body">
         <h3>CRISPR guide RNAs <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— SpCas9 (NGG), genome off-target checked</span></h3>
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
-          <input id="crispr-gene" placeholder="gene symbol or DDB_G id (e.g. cln5)" style="${FIELD};min-width:260px">
+          <input id="crispr-gene" aria-label="Gene symbol or DDB_G id" placeholder="gene symbol or DDB_G id (e.g. cln5)" style="${FIELD};min-width:260px">
           <button type="button" id="crispr-run">Design guides</button>
         </div>
         <div data-crispr-results style="margin-bottom:22px"></div>
 
         <h3>qPCR primers <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— over the cDNA</span></h3>
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
-          <input id="primer-gene" placeholder="gene symbol or DDB_G id" style="${FIELD};min-width:260px">
+          <input id="primer-gene" aria-label="Gene symbol or DDB_G id" placeholder="gene symbol or DDB_G id" style="${FIELD};min-width:260px">
           <button type="button" id="primer-run">Design primers</button>
         </div>
         <div data-primer-results style="margin-bottom:22px"></div>
 
         <h3>Codon optimizer <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— for heterologous expression</span></h3>
-        <textarea id="codon-seq" rows="4" placeholder="Paste a protein (MFLIK…) or coding DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <textarea id="codon-seq" aria-label="Sequence to optimize" rows="4" placeholder="Paste a protein (MFLIK…) or coding DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
         <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
           <label style="font-size:.8125rem;color:var(--muted,#6b7280)">Optimize for
             <select id="codon-organism" style="${FIELD};margin-left:4px">
@@ -1716,12 +1716,12 @@ function renderLabPage() {
         <div data-codon-results style="margin-top:12px"></div>
 
         <h3 style="margin-top:24px">Restriction sites <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— common cloning enzymes</span></h3>
-        <textarea id="re-seq" rows="3" placeholder="Paste a DNA sequence (e.g. a CDS or insert)" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <textarea id="re-seq" aria-label="DNA sequence to scan for restriction sites" rows="3" placeholder="Paste a DNA sequence (e.g. a CDS or insert)" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
         <div style="margin-top:8px"><button type="button" id="re-run">Find sites</button></div>
         <div data-re-results style="margin-top:12px"></div>
 
         <h3 style="margin-top:24px">ORF finder &amp; translation <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— six-frame, ATG→stop, ≥30 aa</span></h3>
-        <textarea id="orf-seq" rows="3" placeholder="Paste a DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <textarea id="orf-seq" aria-label="DNA sequence to find ORFs in" rows="3" placeholder="Paste a DNA sequence" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
         <div style="margin-top:8px"><button type="button" id="orf-run">Find ORFs</button></div>
         <div data-orf-results style="margin-top:12px"></div>
       </div>
@@ -1756,7 +1756,7 @@ async function runLabRestriction() {
   out.innerHTML = loadingHTML("Scanning for sites…");
   try {
     const r = await (await fetch("/api/restriction", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
-    if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    if (r.error || !Array.isArray(r.enzymes)) { out.innerHTML = `<p class="notice">${escapeHtml(r.error || "Could not scan that sequence.")}</p>`; return; }
     const cutters = r.enzymes.filter((e) => e.count > 0);
     const noncut = r.enzymes.filter((e) => e.count === 0).map((e) => e.enzyme);
     const td = "padding:5px 8px";
@@ -1778,7 +1778,7 @@ async function runLabOrf() {
   out.innerHTML = loadingHTML("Finding ORFs…");
   try {
     const r = await (await fetch("/api/orf", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) })).json();
-    if (r.error) { out.innerHTML = `<p class="notice">${escapeHtml(r.error)}</p>`; return; }
+    if (r.error || !Array.isArray(r.orfs)) { out.innerHTML = `<p class="notice">${escapeHtml(r.error || "Could not scan that sequence.")}</p>`; return; }
     if (!r.orfs.length) { out.innerHTML = `<p class="notice">No ORFs ≥30 aa found in any frame.</p>`; return; }
     const td = "padding:5px 8px";
     out.innerHTML = `
@@ -1876,7 +1876,7 @@ async function runLabCodon() {
     const label = CODON_ORGANISM_LABELS[r.organism] || r.organism;
     out.innerHTML = `
       <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">Optimized for <strong>${escapeHtml(label)}</strong> · ${r.length_aa} aa · GC ${(r.optimized_gc * 100).toFixed(0)}%${r.input_was_dna && r.input_cai != null ? ` · input CAI ${r.input_cai}` : ""}</p>
-      <textarea readonly rows="4" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD}">${escapeHtml(r.optimized_dna)}</textarea>`;
+      <textarea readonly aria-label="Optimized DNA sequence" rows="4" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD}">${escapeHtml(r.optimized_dna)}</textarea>`;
   } catch { out.innerHTML = `<p class="notice">Optimization failed.</p>`; }
 }
 
@@ -1950,7 +1950,7 @@ function renderEnrichmentPage() {
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px">
             <button type="submit">Run enrichment</button>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">analyze
-              <select id="enrich-set" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
+              <select id="enrich-set" aria-label="Analysis type: GO terms, phenotypes, or KEGG pathways" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
                 <option value="go">GO terms</option>
                 <option value="phenotype">Phenotypes</option>
                 <option value="kegg">KEGG pathways</option>
@@ -2109,7 +2109,7 @@ function renderHeatStressPage() {
         <section class="data-block">
           <h3>Search proteins</h3>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-            <input id="hs-search" type="text" placeholder="Gene name, UniProt ID, or description…" style="flex:1;min-width:220px">
+            <input id="hs-search" aria-label="Search heat-stress proteins" type="text" placeholder="Gene name, UniProt ID, or description…" style="flex:1;min-width:220px">
             <button class="button primary" id="hs-search-btn">Search</button>
             <button class="button" id="hs-clear-btn">Clear chart</button>
           </div>
@@ -2220,7 +2220,7 @@ function updateHSChart() {
       <span style="display:inline-flex;align-items:center;gap:5px;font-size:0.8125rem;background:${HS_COLORS[i % HS_COLORS.length]}18;padding:3px 10px;border-radius:999px;border:1px solid ${HS_COLORS[i % HS_COLORS.length]}44">
         <span style="width:10px;height:10px;border-radius:50%;background:${HS_COLORS[i % HS_COLORS.length]};flex-shrink:0"></span>
         ${escapeHtml(p.gene)}
-        <button onclick="removeFromHSChart('${escapeHtml(p.gene)}')" style="background:none;border:none;cursor:pointer;padding:0;font-size:12px;color:#6b7280;min-height:unset">✕</button>
+        <button onclick="removeFromHSChart('${escapeHtml(p.gene)}')" aria-label="Remove ${escapeHtml(p.gene)} from chart" style="background:none;border:none;cursor:pointer;padding:0;font-size:12px;color:#6b7280;min-height:unset">✕</button>
       </span>`).join("");
   }
 }
@@ -2369,7 +2369,7 @@ function renderProteomicsPage() {
         <section class="data-block">
           <h3>Search proteins</h3>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-            <input id="prot-search" type="text" placeholder="Gene name, UniProt ID, or description…" style="flex:1;min-width:220px">
+            <input id="prot-search" aria-label="Search proteome" type="text" placeholder="Gene name, UniProt ID, or description…" style="flex:1;min-width:220px">
             <button class="button primary" id="prot-search-btn">Search</button>
             <button class="button" id="prot-clear-btn">Clear chart</button>
           </div>
@@ -2472,7 +2472,7 @@ function updateChart() {
       <span style="display:inline-flex;align-items:center;gap:5px;font-size:0.8125rem;background:${STAGE_COLORS[i % STAGE_COLORS.length]}18;padding:3px 10px;border-radius:999px;border:1px solid ${STAGE_COLORS[i % STAGE_COLORS.length]}44">
         <span style="width:10px;height:10px;border-radius:50%;background:${STAGE_COLORS[i % STAGE_COLORS.length]};flex-shrink:0"></span>
         ${escapeHtml(p.gene)}
-        <button onclick="removeFromChart('${escapeHtml(p.gene)}')" style="background:none;border:none;cursor:pointer;padding:0;font-size:12px;color:#6b7280;min-height:unset">✕</button>
+        <button onclick="removeFromChart('${escapeHtml(p.gene)}')" aria-label="Remove ${escapeHtml(p.gene)} from chart" style="background:none;border:none;cursor:pointer;padding:0;font-size:12px;color:#6b7280;min-height:unset">✕</button>
       </span>`).join("");
   }
 }
@@ -5343,7 +5343,7 @@ ${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
     <h3 style="margin-top:18px">Cite this release</h3>
     <p style="font-size:0.9375rem;background:var(--soft,#f1f5f4);border-radius:8px;padding:12px 14px;margin:0">${escapeHtml(citation)}</p>
     <h3 style="margin-top:18px">BibTeX</h3>
-    <textarea readonly rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
+    <textarea readonly aria-label="BibTeX citation (click to select)" rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
     <h3 style="margin-top:18px">Citing the data sources</h3>
     <p style="font-size:0.9375rem">Dicty@Duke aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
 }
@@ -7664,7 +7664,7 @@ function renderBasketList() {
           <td><a class="text-link" href="/gene/${encodeURIComponent(e.symbol || e.ddb)}">${escapeHtml(e.symbol || e.ddb)}</a></td>
           <td>${escapeHtml(e.name || "")}</td>
           <td class="mono">${escapeHtml(e.ddb || "")}</td>
-          <td><button type="button" class="basket-x" data-basket-remove="${escapeHtml(basketKey(e))}" aria-label="Remove ${escapeHtml(e.symbol || e.ddb)} from basket">✕</button></td>
+          <td><button type="button" class="basket-x" data-basket-remove="${escapeHtml(basketKey(e))}" aria-label="Remove ${escapeHtml(e.symbol || e.ddb)} from basket" title="Remove from basket">✕</button></td>
         </tr>`).join("")}
       </tbody>
     </table></div>

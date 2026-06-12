@@ -7488,6 +7488,7 @@ function renderBasketPage() {
           <button type="button" class="button" data-basket-action="expression">Compare expression →</button>
           <button type="button" class="button" data-basket-action="csv">Export CSV</button>
           <button type="button" class="button" data-basket-action="fasta">Export protein FASTA</button>
+          <button type="button" class="button" data-basket-action="share">Copy share link</button>
           <button type="button" class="ghost-btn" data-basket-action="clear">Clear</button>
         </div>
         <div data-basket-results style="margin:12px 0"></div>
@@ -7524,7 +7525,58 @@ function renderBasketList() {
     <p class="muted" style="font-size:12px;margin:10px 0 0">${list.length} gene${list.length === 1 ? "" : "s"} in basket.</p>`;
 }
 
-function initBasket() { renderBasketList(); }
+// Resolve a share-link token (a DDB_G id or a gene symbol) to a basket entry,
+// using the loaded catalog for the name/symbol/ncbi fields where possible.
+function resolveBasketToken(tok) {
+  const t = String(tok || "").trim();
+  if (!t) return null;
+  const lc = t.toLowerCase();
+  const g = geneIndex.find((x) => x.id.toLowerCase() === lc || (x.symbol || "").toLowerCase() === lc);
+  if (g) return { ddb: g.id, symbol: g.symbol || "", name: g.name || "", ncbiGene: g.ncbiGene || "" };
+  if (/^DDB_G\d+$/i.test(t)) return { ddb: t.toUpperCase(), symbol: "", name: "", ncbiGene: "" };
+  return { ddb: "", symbol: t, name: "", ncbiGene: "" };
+}
+
+// Build a shareable URL that re-creates this basket on another machine, and copy
+// it to the clipboard. Genes are encoded as DDB_G ids (or symbols) — compact and
+// resolvable; no server state needed.
+function basketShare(list, results) {
+  const ids = list.map((e) => e.ddb || e.symbol).filter(Boolean);
+  const url = `${location.origin}/tools/basket?genes=${encodeURIComponent(ids.join(","))}`;
+  const show = (msg) => { if (results) results.innerHTML = `<p class="notice">${msg}</p>`; };
+  const ok = `Share link copied — ${ids.length} gene${ids.length === 1 ? "" : "s"}. Anyone who opens it gets this set added to their basket.<br><input readonly value="${escapeHtml(url)}" onclick="this.select()" style="width:100%;margin-top:6px;font-size:.8125rem;padding:6px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => show(ok), () => show(ok));
+  } else {
+    show(ok);
+  }
+}
+
+// Load a shared gene set from ?genes= into the basket (merging, deduped), then
+// strip the param so a refresh doesn't re-trigger. Waits for the catalog so the
+// tokens resolve to names.
+async function loadSharedBasket() {
+  const param = new URLSearchParams(location.search).get("genes");
+  if (!param) return 0;
+  for (let i = 0; i < 30 && !geneIndex.length; i++) await new Promise((r) => setTimeout(r, 100));
+  const tokens = param.split(",").map((s) => s.trim()).filter(Boolean);
+  let added = 0;
+  for (const tok of tokens) {
+    const entry = resolveBasketToken(tok);
+    if (entry && (entry.ddb || entry.symbol) && !basketHas(entry.ddb, entry.symbol)) { basketAdd(entry); added++; }
+  }
+  try { history.replaceState({}, "", "/tools/basket"); } catch { /* ignore */ }
+  return { added, total: tokens.length };
+}
+
+async function initBasket() {
+  const r = await loadSharedBasket();
+  renderBasketList();
+  if (r && r.total) {
+    const results = document.querySelector("[data-basket-results]");
+    if (results) results.innerHTML = `<p class="notice">Loaded ${r.added} gene${r.added === 1 ? "" : "s"} from a shared link${r.added < r.total ? ` (${r.total - r.added} already in your basket)` : ""}.</p>`;
+  }
+}
 
 function basketDownload(text, filename, type) {
   const url = URL.createObjectURL(new Blob([text], { type: type || "text/plain" }));
@@ -7565,6 +7617,7 @@ function basketAction(kind) {
   }
   if (!list.length) { if (results) results.innerHTML = `<p class="notice muted">Add some genes to the basket first.</p>`; return; }
   const symbols = list.map((e) => e.symbol || e.ddb).filter(Boolean);
+  if (kind === "share") { basketShare(list, results); return; }
   if (kind === "csv") { basketExportCSV(list); return; }
   if (kind === "fasta") { basketExportFasta(list, results); return; }
   if (kind === "expression") {

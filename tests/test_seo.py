@@ -47,5 +47,19 @@ class RouteMetaTest(unittest.TestCase):
         self.assertEqual(serve._clip("short"), "short")
 
 
+class GeneAnnotationsLoaderTest(unittest.TestCase):
+    def test_per_gene_lookup(self):
+        data = serve._load_gene_annotations()
+        self.assertIsInstance(data, dict)
+        self.assertGreater(len(data), 1000)
+        # Every key is a DDB_G id and each entry carries a 'go' block.
+        sample = next(iter(data))
+        self.assertRegex(sample, r"^DDB_G\d+$")
+        self.assertIn("go", data[sample])
+
+    def test_unknown_gene_absent(self):
+        self.assertNotIn("DDB_G9999999", serve._load_gene_annotations())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4806,34 +4806,50 @@ async function fetchGOResults(gene) {
   return results;
 }
 
-// dictyBase curated GO annotations (GO Consortium GAF): { ddb: [[goId, aspect, evidence, pmid], ...] }
-let goAnnotData = null;
+// Per-gene GO/literature annotations. Fetched one gene at a time from
+// /api/gene-annotations?ddb= (a few KB) rather than pulling the whole 6.6 MB
+// gene_annotations.json into the browser. The whole-file load survives only as
+// a fallback if the per-gene endpoint is unavailable (e.g. an old server).
+const geneAnnotCache = new Map();   // ddb -> rich annot object or null
 let geneAnnotData = null;
-async function ensureGeneAnnotations() {
+async function ensureGeneAnnotations() {            // whole-file fallback only
   if (geneAnnotData) return geneAnnotData;
   const res = await fetch("/assets/gene_annotations.json");
   if (!res.ok) throw new Error("gene annotations unavailable");
   geneAnnotData = await res.json();
   return geneAnnotData;
 }
-async function ensureGOAnnotations() {
-  if (goAnnotData) return goAnnotData;
-  const rich = await ensureGeneAnnotations();
-  const flat = {};
-  for (const ddb in rich) {
-    const g = rich[ddb];
-    const rows = [];
-    for (const aspect of ["F", "P", "C"]) {
-      for (const e of (g.go && g.go[aspect] ? g.go[aspect] : [])) {
-        const ref = e[3] || "";
-        const pmid = ref.startsWith("PMID:") ? ref.slice(5) : "";
-        rows.push([e[0], aspect, e[1], pmid, e[5] || ""]);
-      }
+async function fetchGeneAnnot(ddb) {
+  if (!ddb) return null;
+  if (geneAnnotCache.has(ddb)) return geneAnnotCache.get(ddb);
+  let annot = null;
+  try {
+    const res = await fetch(`/api/gene-annotations?ddb=${encodeURIComponent(ddb)}`);
+    if (res.ok) {
+      const data = await res.json();
+      annot = data && Object.keys(data).length ? data : null;
+    } else {
+      annot = (await ensureGeneAnnotations())[ddb] || null;
     }
-    if (rows.length) flat[ddb] = rows;
+  } catch {
+    try { annot = (await ensureGeneAnnotations())[ddb] || null; } catch { annot = null; }
   }
-  goAnnotData = flat;
-  return goAnnotData;
+  geneAnnotCache.set(ddb, annot);
+  return annot;
+}
+// Flatten one gene's rich annotation into the GO rows the GO tab renders:
+// [GO id, aspect, evidence, pmid, source].
+function goRowsFromAnnot(g) {
+  const rows = [];
+  if (!g || !g.go) return rows;
+  for (const aspect of ["F", "P", "C"]) {
+    for (const e of (g.go[aspect] || [])) {
+      const ref = e[3] || "";
+      const pmid = ref.startsWith("PMID:") ? ref.slice(5) : "";
+      rows.push([e[0], aspect, e[1], pmid, e[5] || ""]);
+    }
+  }
+  return rows;
 }
 
 async function resolveGONames(goIds) {
@@ -4962,7 +4978,7 @@ async function loadGOResults(gene) {
     // Prefer dictyBase curated GO annotations from the GAF
     let curated = null;
     if (ddb) {
-      try { curated = (await ensureGOAnnotations())[ddb]; } catch { /* fall through */ }
+      try { curated = goRowsFromAnnot(await fetchGeneAnnot(ddb)); } catch { /* fall through */ }
     }
     // Merge the dictyBase / automated / community rows with the AI layer, then
     // render with a per-layer filter toggle.
@@ -5238,7 +5254,7 @@ async function enrichGeneFromCorpus(gene) {
   try {
     const enriched = { ...gene };
     try {
-      const annot = (await ensureGeneAnnotations())[ddb];
+      const annot = await fetchGeneAnnot(ddb);
       if (annot) enriched._annot = annot;
     } catch { /* annotations optional */ }
     try {

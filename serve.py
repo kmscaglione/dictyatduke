@@ -108,6 +108,28 @@ def _load_domains():
     return _DOMAINS_CACHE["genes"]
 
 
+# Full GO/literature annotations (assets/gene_annotations.json, ~6.6 MB, keyed by
+# DDB_G id). Loaded once into memory and served one gene at a time via
+# GET /api/gene-annotations?ddb=... so the gene page fetches a few KB instead of
+# the whole file. mtime-reloaded like the domains cache.
+GENE_ANNOT_PATH = pathlib.Path(ROOT) / "assets" / "gene_annotations.json"
+_GENE_ANNOT_CACHE = {"mtime": None, "genes": {}}
+
+
+def _load_gene_annotations():
+    try:
+        mtime = GENE_ANNOT_PATH.stat().st_mtime
+    except OSError:
+        return {}
+    if _GENE_ANNOT_CACHE["mtime"] != mtime:
+        try:
+            _GENE_ANNOT_CACHE["genes"] = json.loads(GENE_ANNOT_PATH.read_text())
+            _GENE_ANNOT_CACHE["mtime"] = mtime
+        except (ValueError, OSError):
+            _GENE_ANNOT_CACHE["genes"] = {}
+    return _GENE_ANNOT_CACHE["genes"]
+
+
 # ------------------------------------------------------------------- SEO -----
 # The SPA serves one HTML shell for every route, so without this a crawler sees
 # the same generic <title>/meta for /gene/mybB as for the home page and can't
@@ -587,6 +609,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # Public read API
         if self.path.startswith("/api/gene-card"):
             self._handle_gene_card()
+            return
+        if self.path.startswith("/api/gene-annotations"):
+            self._handle_gene_annotations()
             return
         if self.path.startswith("/api/gene/"):
             self._handle_api_gene(unquote(self.path[len("/api/gene/"):].split("?")[0]))
@@ -1439,6 +1464,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(404, {"error": "gene not found", "query": token})
             return
         self.send_json(200, assemble_gene(ddb))
+
+    def _handle_gene_annotations(self):
+        """One gene's full GO/literature annotations by DDB_G id, served from the
+        in-memory map so the gene page fetches ~a few KB instead of the 6.6 MB
+        whole-file. Returns {} (200) for a gene with no annotations."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        self.send_json(200, _load_gene_annotations().get(ddb, {}))
 
     def _handle_gene_card(self):
         """Compact gene summary for hovercards: name, trimmed summary, facet flags."""

@@ -272,6 +272,66 @@ _EXT_CACHE_TTL = 6 * 3600
 _EXT_CACHE_MAX = 600               # cap entries; oldest evicted first
 _EXT_CACHE_MAX_BYTES = 2_000_000   # don't cache huge payloads
 
+# Privacy-respecting, first-party pageview counts: cookieless, no IP/User-Agent
+# stored, no per-hit timestamps — just {route-bucket: count}. Dynamic id segments
+# are bucketed (/gene/<x> -> /gene/:id) to bound the keyspace and to never store
+# arbitrary user input. Persisted to cache/pageviews.json.
+PAGEVIEWS_PATH = pathlib.Path(ROOT) / "cache" / "pageviews.json"
+_PAGEVIEWS = {"counts": {}, "since": None, "updated": None}
+_PAGEVIEWS_LOADED = False
+_PV_LOCK = threading.Lock()
+_HIT_HITS = {}                     # ip -> recent /api/hit epochs (limiter only; not stored)
+# Top-level route segments the SPA actually serves; anything else buckets to /other.
+_PV_HEADS = {"gene", "strain", "go", "organisms", "research", "community", "tools",
+             "search", "education", "start", "research-areas", "data", "cite", "index.html"}
+
+
+def _bucket_path(path):
+    """Collapse a request path to a bounded analytics bucket (no raw ids/input)."""
+    parts = [p for p in (path or "/").split("?")[0].split("/") if p]
+    if not parts:
+        return "/"
+    head = parts[0]
+    if head not in _PV_HEADS:
+        return "/other"
+    if head in ("gene", "strain", "go"):
+        return f"/{head}/:id"
+    if head == "organisms":
+        return "/organisms/:slug"
+    if head == "research" and len(parts) > 1 and parts[1] == "techniques":
+        return "/research/techniques/:slug"
+    if head in ("tools", "community", "search", "research") and len(parts) > 1:
+        seg = re.sub(r"[^a-z0-9-]", "", parts[1].lower())[:40]
+        return f"/{head}/{seg}"
+    return "/" + head
+
+
+def _load_pageviews():
+    global _PAGEVIEWS_LOADED
+    if _PAGEVIEWS_LOADED:
+        return
+    try:
+        if PAGEVIEWS_PATH.exists():
+            d = json.loads(PAGEVIEWS_PATH.read_text())
+            if isinstance(d, dict):
+                _PAGEVIEWS["counts"] = d.get("counts", {}) or {}
+                _PAGEVIEWS["since"] = d.get("since")
+                _PAGEVIEWS["updated"] = d.get("updated")
+    except (ValueError, OSError):
+        pass
+    _PAGEVIEWS_LOADED = True
+
+
+def _save_pageviews():
+    try:
+        PAGEVIEWS_PATH.parent.mkdir(exist_ok=True)
+        _PAGEVIEWS["updated"] = datetime.datetime.utcnow().isoformat() + "Z"
+        if not _PAGEVIEWS["since"]:
+            _PAGEVIEWS["since"] = _PAGEVIEWS["updated"]
+        PAGEVIEWS_PATH.write_text(json.dumps(_PAGEVIEWS))
+    except OSError:
+        pass
+
 # Concurrency cap for the CPU-heavy BLAST endpoints. Each blastn/tblastn pins a
 # core for seconds (cross-species/conservation tblastn = vs 9 genomes), so a
 # handful of concurrent requests can exhaust the box. A bounded semaphore limits
@@ -689,6 +749,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 _PROXY_SEM.release()
             return
 
+        # Aggregate pageview stats (curator-only; aggregate counts, no PII)
+        if self.path.startswith("/api/stats"):
+            if not self._auth(self._parse_token()):
+                self.send_json(401, {"error": "Unauthorized"})
+                return
+            with _PV_LOCK:
+                _load_pageviews()
+                counts = dict(sorted(_PAGEVIEWS["counts"].items(), key=lambda kv: -kv[1]))
+                self.send_json(200, {"since": _PAGEVIEWS["since"], "updated": _PAGEVIEWS["updated"],
+                                     "total": sum(counts.values()), "counts": counts})
+            return
+
         # Curator dashboard API — list pending curations
         if self.path == "/api/curator/queue":
             token = self._parse_token()
@@ -981,8 +1053,33 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_seq_tool(bench.restriction_sites)
         elif self.path == "/api/orf":
             self._handle_seq_tool(bench.find_orfs)
+        elif self.path == "/api/hit":
+            self._handle_hit()
         else:
             self.send_error(404)
+
+    def _handle_hit(self):
+        """Cookieless, no-PII pageview beacon. The IP is used only to rate-limit
+        (never stored); only the bucketed route path is counted."""
+        if _rate_limited(_HIT_HITS, self.client_address[0], limit=120, window=60):
+            self.send_response(204)
+            self.end_headers()
+            return
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            path = "/"
+            if 0 < length <= 2000:
+                path = json.loads(self.rfile.read(length) or b"{}").get("path") or "/"
+        except (ValueError, json.JSONDecodeError):
+            path = "/"
+        bucket = _bucket_path(path)
+        with _PV_LOCK:
+            _load_pageviews()
+            _PAGEVIEWS["counts"][bucket] = _PAGEVIEWS["counts"].get(bucket, 0) + 1
+            _save_pageviews()
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
 
     def _send_proxy_bytes(self, status, ctype, body, cached=False):
         self.send_response(status)

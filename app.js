@@ -33,6 +33,35 @@ const EXT_PROXY_HOSTS = new Set([
   };
 })();
 
+// First-party, cookieless pageview beacon. The server buckets the path and
+// stores only aggregate counts — no cookies, no IP/User-Agent, no PII. Fires on
+// initial load and on every SPA navigation (pushState / back-forward).
+let _lastPageview = null;
+function recordPageview(path) {
+  const p = path || window.location.pathname;
+  if (p === _lastPageview) return;     // ignore tab-only (?tab=) changes — same path
+  _lastPageview = p;
+  try {
+    const body = JSON.stringify({ path: p });
+    if (navigator.sendBeacon) navigator.sendBeacon("/api/hit", body);
+    else fetch("/api/hit", { method: "POST", body, keepalive: true });
+  } catch (e) { /* analytics is best-effort */ }
+}
+(function () {
+  const _push = history.pushState;
+  history.pushState = function () {
+    const r = _push.apply(this, arguments);
+    try { recordPageview(window.location.pathname); } catch (e) { /* ignore */ }
+    return r;
+  };
+  window.addEventListener("popstate", () => recordPageview(window.location.pathname));
+  if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", () => recordPageview(window.location.pathname));
+  } else {
+    recordPageview(window.location.pathname);
+  }
+})();
+
 const genes = [
   {
     id: "CLN5",

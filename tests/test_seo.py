@@ -61,5 +61,23 @@ class GeneAnnotationsLoaderTest(unittest.TestCase):
         self.assertNotIn("DDB_G9999999", serve._load_gene_annotations())
 
 
+class PageviewBucketTest(unittest.TestCase):
+    def test_dynamic_ids_collapse(self):
+        self.assertEqual(serve._bucket_path("/gene/cln5"), "/gene/:id")
+        self.assertEqual(serve._bucket_path("/strain/DBS0236546"), "/strain/:id")
+        self.assertEqual(serve._bucket_path("/go/GO:0005764"), "/go/:id")
+        self.assertEqual(serve._bucket_path("/organisms/d-discoideum-ax4"), "/organisms/:slug")
+
+    def test_known_routes_kept_unknown_bucketed(self):
+        self.assertEqual(serve._bucket_path("/tools/lab"), "/tools/lab")
+        self.assertEqual(serve._bucket_path("/community/disease-models"), "/community/disease-models")
+        self.assertEqual(serve._bucket_path("/"), "/")
+        self.assertEqual(serve._bucket_path("/wat/ever"), "/other")
+
+    def test_no_raw_user_input_leaks(self):
+        # A junk segment under a known head is sanitized, never stored verbatim.
+        self.assertNotIn("<script>", serve._bucket_path("/tools/<script>alert(1)</script>"))
+
+
 if __name__ == "__main__":
     unittest.main()

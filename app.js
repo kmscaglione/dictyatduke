@@ -1426,6 +1426,7 @@ function loadTabData(gene, tab) {
       loadGeneModel(gene);
       loadCoexpression(gene);
       loadKeggPathways(gene);
+      loadStrains(gene);
       initRecordLabTools(gene);
       break;
     case "GO":
@@ -4480,6 +4481,7 @@ function renderTab(gene, tab) {
             <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
           </div>
         </section>
+        <section class="data-block" data-strains hidden></section>
         ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
         <section class="data-block">
           <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
@@ -5656,6 +5658,31 @@ async function loadCoexpression(gene) {
         <span style="color:var(--muted,#6b7280)">r = ${r.r.toFixed(2)}</span></li>`).join("")}
     </ul>
     <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Pearson correlation of RNA-seq profiles (Parikh time course). Correlation ≠ function — a hypothesis-generation aid.</p>`;
+}
+
+// Known mutant strains for this gene, from the dictyBase strain corpus. The data
+// already drives the Phenotypes tab and the /strain/<id> pages; this surfaces it
+// on the Summary view so the mutants are visible without opening a tab.
+async function loadStrains(gene) {
+  const el = document.querySelector("[data-strains]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.setAttribute("hidden", ""); return; }
+  let strains;
+  try {
+    const res = await fetch(`/api/gene/${encodeURIComponent(ddb)}`);
+    const data = await res.json();
+    strains = (data && data.strains) || [];
+  } catch { el.setAttribute("hidden", ""); return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  if (!strains.length) { el.setAttribute("hidden", ""); return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `
+    <h3>Mutant strains <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${strains.length} in dictyBase</span></h3>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}" style="font-size:0.8125rem;padding:2px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">${escapeHtml(s)}</a>`).join("")}
+    </div>
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Strains carrying a mutation in this gene. Order physical stocks from the <a class="text-link" href="https://dictybase.dev/stockcenter" target="_blank" rel="noopener">Dicty Stock Center</a>.</p>`;
 }
 
 async function loadRNAseqInline(gene) {

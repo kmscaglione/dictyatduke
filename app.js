@@ -1471,6 +1471,8 @@ function loadTabData(gene, tab) {
       loadHumanDisease(gene);
       loadParalogs(gene);
       loadComparative(gene);
+      loadNeighborhood(gene);
+      loadVariation(gene);
       loadOMAResults(gene);
       break;
     case "PTMs":
@@ -1603,6 +1605,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initBasket();
+  } else if (tool === "convert") {
+    toolsShell.innerHTML = renderConvertPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initConvert();
   }
 }
 
@@ -2044,6 +2051,74 @@ function formatBytes(n) {
   return mb >= 1 ? `${mb.toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`;
 }
 
+function renderConvertPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Tools</p>
+          <h2>Gene ID converter</h2>
+          <p>Paste a mixed list of gene identifiers — symbols (<em>mhcA</em>), DDB_G ids, UniProt accessions, or NCBI Gene ids — and get them resolved to a single normalized table with every cross-reference. Unrecognized inputs are flagged.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <textarea id="convert-input" aria-label="Identifiers to convert" rows="6" placeholder="mhcA  rasG&#10;DDB_G0286355&#10;P08799&#10;8629223" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <button type="button" id="convert-run">Convert</button>
+          <button type="button" id="convert-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
+        </div>
+        <div data-convert-results style="margin-top:14px"></div>
+      </div>
+    </article>`;
+}
+
+function initConvert() {
+  const b = document.getElementById("convert-run");
+  if (b) b.addEventListener("click", runConvert);
+  const ex = document.getElementById("convert-example");
+  if (ex) ex.addEventListener("click", () => {
+    document.getElementById("convert-input").value = "mhcA rasG cln5\nDDB_G0286355\nP08799\n8629223\nnotagene";
+    runConvert();
+  });
+}
+
+async function runConvert() {
+  const out = document.querySelector("[data-convert-results]");
+  const raw = (document.getElementById("convert-input").value || "").trim();
+  if (!raw) { out.innerHTML = `<p class="notice">Paste some identifiers.</p>`; return; }
+  const ids = raw.split(/[\s,;]+/).filter(Boolean);
+  out.innerHTML = loadingHTML("Resolving identifiers…");
+  let data;
+  try {
+    data = await (await fetch("/api/idmap", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ids }) })).json();
+    if (data.error) throw new Error(data.error);
+  } catch { out.innerHTML = `<p class="notice">Could not resolve identifiers right now.</p>`; return; }
+  const td = "padding:5px 8px";
+  const rows = (data.results || []).map((r) => {
+    if (!r.found) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><code>${escapeHtml(r.input)}</code></td><td style="${td}" colspan="5"><span style="color:#b91c1c">not found</span></td></tr>`;
+    const up = r.uniprot ? `<a class="text-link" href="https://www.uniprot.org/uniprotkb/${encodeURIComponent(r.uniprot)}" target="_blank" rel="noopener">${escapeHtml(r.uniprot)}</a>` : "—";
+    const nc = r.ncbiGene ? `<a class="text-link" href="https://www.ncbi.nlm.nih.gov/gene/${encodeURIComponent(r.ncbiGene)}" target="_blank" rel="noopener">${escapeHtml(r.ncbiGene)}</a>` : "—";
+    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+      <td style="${td}"><code>${escapeHtml(r.input)}</code></td>
+      <td style="${td}"><a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}" data-ddb-ref="${escapeHtml(r.ddb)}"><strong>${escapeHtml(r.symbol)}</strong></a></td>
+      <td style="${td}">${escapeHtml(r.ddb)}</td>
+      <td style="${td}">${up}</td>
+      <td style="${td}">${nc}</td>
+      <td style="${td};color:var(--muted,#6b7280)">${escapeHtml(r.name || "")}</td></tr>`;
+  }).join("");
+  const tsv = ["input\tsymbol\tddb_g\tuniprot\tncbi_gene\tname",
+    ...(data.results || []).filter((r) => r.found).map((r) => [r.input, r.symbol, r.ddb, r.uniprot, r.ncbiGene, r.name].join("\t"))].join("\n");
+  out.innerHTML = `
+    <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${data.found} of ${data.count} resolved.
+      <button type="button" id="convert-copy" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Copy as TSV</button></p>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="${td}">Input</th><th style="${td}">Symbol</th><th style="${td}">DDB_G</th><th style="${td}">UniProt</th><th style="${td}">NCBI Gene</th><th style="${td}">Name</th>
+      </tr></thead><tbody>${rows}</tbody></table></div>`;
+  const cp = document.getElementById("convert-copy");
+  if (cp) cp.addEventListener("click", () => { navigator.clipboard && navigator.clipboard.writeText(tsv); cp.textContent = "Copied ✓"; });
+}
+
 function renderDownloadsShell() {
   return `
     <article class="record-card research-card">
@@ -2058,6 +2133,20 @@ function renderDownloadsShell() {
         <div data-downloads-results>
           <p class="notice muted">Loading downloads…</p>
         </div>
+        <h3 style="margin:22px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line,#d7dee0)">Bulk data tables</h3>
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-2px 0 12px">Whole-database exports as tab-separated values (TSV) for offline analysis. Also available via the <a class="text-link" href="/tools/api">REST API</a>.</p>
+        <ul class="list">
+          ${[
+            ["genes", "Gene catalog", "DDB_G id, symbol, name, location, NCBI gene, UniProt — all ~13,900 genes."],
+            ["go", "GO annotations", "Gene → GO term, aspect, evidence code, PMID."],
+            ["phenotypes", "Curated phenotypes", "Gene → mutant phenotype and supporting PMID."],
+            ["orthologs", "Human orthologs & disease", "Gene → human ortholog, relationship, linked disease."],
+          ].map(([ds, label, desc]) => `
+            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span><strong>${label}</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">${desc}</span></span>
+              <a class="button" href="/api/bulk?dataset=${ds}" download>Download TSV</a>
+            </li>`).join("")}
+        </ul>
       </div>
     </article>`;
 }
@@ -4517,6 +4606,8 @@ function renderTab(gene, tab) {
       <div data-human-disease></div>
       <div class="data-block" data-paralogs></div>
       <div class="data-block" data-dicty-comparative></div>
+      <div class="data-block" data-neighborhood></div>
+      <div class="data-block" data-variation></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
         <div data-oma-results="${escapeHtml(gene.id)}">
@@ -5587,6 +5678,148 @@ async function loadAISummary(gene) {
       <p>${escapeHtml(ai.summary)}</p>
       <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
     </div>`;
+}
+
+// Genomic neighborhood (synteny): the genes flanking this one on the AX4
+// chromosome, drawn as a strand-aware arrow track. An on-demand button then
+// checks whether that local gene order is conserved in another dictyostelid.
+async function loadNeighborhood(gene) {
+  const el = document.querySelector("[data-neighborhood]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  el.innerHTML = `<h3>Genomic neighborhood <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— gene order on the AX4 chromosome</span></h3>
+    <div data-nb-results><p class="notice muted">Loading neighborhood…</p></div>`;
+  const out = el.querySelector("[data-nb-results]");
+  let data;
+  try {
+    data = await (await fetch(`/api/neighborhood?ddb=${encodeURIComponent(ddb)}`)).json();
+    if (data.error || !data.genes) throw new Error("none");
+  } catch { out.innerHTML = `<p class="notice muted">No placed neighborhood for this gene.</p>`; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  const box = (g) => {
+    const arrow = g.strand === "-" ? "◄ " : "";
+    const arrowR = g.strand === "-" ? "" : " ►";
+    const inner = `${arrow}${escapeHtml(g.symbol)}${arrowR}`;
+    const style = `display:inline-block;padding:6px 9px;border-radius:6px;font-size:.78rem;white-space:nowrap;border:1px solid ${g.target ? "var(--teal-dark,#012169)" : "var(--line,#d7dee0)"};background:${g.target ? "var(--soft,#e7eef7)" : "#fff"};font-weight:${g.target ? "800" : "500"}`;
+    return g.target
+      ? `<span style="${style}" title="${escapeHtml(g.name || "")}">${inner}</span>`
+      : `<a href="/gene/${encodeURIComponent(g.symbol)}" data-ddb-ref="${escapeHtml(g.ddb)}" class="text-link" style="${style};text-decoration:none" title="${escapeHtml(g.name || "")}">${inner}</a>`;
+  };
+  const speciesOpts = Object.entries(LOCAL_BLAST_DBS)
+    .filter(([id]) => id !== "d-discoideum-ax4")
+    .map(([id, label]) => `<option value="${id}">${escapeHtml(label)}</option>`).join("");
+  out.innerHTML = `
+    <p style="font-size:.75rem;color:var(--muted,#6b7280);margin:0 0 8px">${escapeHtml(data.chrom)} · arrows show strand · the highlighted gene is <em>${escapeHtml(gene.symbol)}</em>.</p>
+    <div style="display:flex;gap:6px;align-items:center;overflow-x:auto;padding-bottom:6px">${data.genes.map(box).join('<span style="color:var(--muted,#9ca3af)">·</span>')}</div>
+    <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <label style="font-size:.8125rem;color:var(--muted,#6b7280)">Check conserved order in
+        <select data-nb-species style="${FIELD};margin-left:4px">${speciesOpts}</select></label>
+      <button type="button" data-nb-check>Check synteny</button>
+    </div>
+    <div data-nb-synteny style="margin-top:10px"></div>`;
+  const btn = out.querySelector("[data-nb-check]");
+  btn.addEventListener("click", () => checkSynteny(gene, data, out));
+}
+
+async function checkSynteny(gene, data, out) {
+  const btn = out.querySelector("[data-nb-check]");
+  const sp = out.querySelector("[data-nb-species]");
+  const dbId = sp.value, dbLabel = sp.options[sp.selectedIndex].text;
+  const syn = out.querySelector("[data-nb-synteny]");
+  btn.disabled = true; btn.textContent = "Checking…";
+  syn.innerHTML = `<p class="notice muted">Running tblastn of ${data.genes.length} neighbors against ${escapeHtml(dbLabel)}…</p>`;
+  // For each neighbor, fetch its protein and tblastn it against the chosen
+  // species (queued jobs). Best-hit contig tells us where it lands.
+  const hits = await Promise.all(data.genes.map(async (g) => {
+    try {
+      const fasta = await fetch(`/api/sequence?ddb=${encodeURIComponent(g.ddb)}&type=protein&symbol=${encodeURIComponent(g.symbol)}`).then((r) => r.text());
+      if (!fasta.startsWith(">")) return { g, contig: null };
+      const d = await pollJob(() => fetch("/api/blast?async=1", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ program: "tblastn", database: dbId, query: fasta }),
+      }).then((r) => r.json()));
+      const best = (d.hits || []).reduce((a, b) => (!a || b.bitscore > a.bitscore ? b : a), null);
+      return { g, contig: best ? best.subject : null, sstart: best ? best.sstart : null };
+    } catch { return { g, contig: null }; }
+  }));
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  const counts = {};
+  hits.forEach((h) => { if (h.contig) counts[h.contig] = (counts[h.contig] || 0) + 1; });
+  const topContig = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+  const onTop = hits.filter((h) => h.contig === topContig).length;
+  const found = hits.filter((h) => h.contig).length;
+  const verdict = !topContig ? "No homologs found in this species."
+    : onTop === found && found > 1 ? `Local gene order is <strong>conserved</strong> — all ${found} detected neighbors map to one contig in ${escapeHtml(dbLabel)}.`
+    : onTop > 1 ? `Order is <strong>partially conserved</strong> — ${onTop} of ${found} detected neighbors share a contig.`
+    : "Neighbors are dispersed — little local synteny detected.";
+  syn.innerHTML = `
+    <p style="font-size:.8125rem;margin:0 0 8px">${verdict}</p>
+    <div style="display:flex;gap:6px;align-items:flex-start;overflow-x:auto;padding-bottom:6px">
+      ${hits.map((h) => {
+        const same = h.contig && h.contig === topContig;
+        return `<div style="text-align:center;min-width:64px">
+          <div style="font-size:.72rem;font-weight:${h.g.target ? "800" : "500"}">${escapeHtml(h.g.symbol)}</div>
+          <div style="font-size:.66rem;color:${same ? "var(--teal-dark,#012169)" : "var(--muted,#9ca3af)"};margin-top:2px">${h.contig ? escapeHtml(h.contig.length > 12 ? h.contig.slice(0, 12) + "…" : h.contig) : "—"}</div>
+        </div>`;
+      }).join("")}
+    </div>
+    <p style="font-size:.7rem;color:var(--muted,#9ca3af);margin-top:6px">Each neighbor's best tblastn hit; shared contig (highlighted) = conserved local order. Contig-level, not a full alignment.</p>`;
+  btn.disabled = false; btn.textContent = "Re-check synteny";
+}
+
+// Natural variation: amino-acid differences in this protein across the Ahmed
+// et al. 2025 wild isolates (tblastn vs each isolate assembly). On-demand.
+function loadVariation(gene) {
+  const el = document.querySelector("[data-variation]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  el.innerHTML = `
+    <h3>Natural variation <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— across wild isolates (Ahmed et al. 2025)</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Compare this protein across the sequenced wild <em>D. discoideum</em> isolates to see how polymorphic it is. Runs on demand.</p>
+    <button type="button" id="variation-run">Show variation across isolates</button>
+    <div data-variation-results style="margin-top:12px"></div>`;
+  const btn = document.getElementById("variation-run");
+  if (btn) btn.addEventListener("click", () => runVariation(gene));
+}
+
+async function runVariation(gene) {
+  const out = document.querySelector("[data-variation-results]");
+  const btn = document.getElementById("variation-run");
+  if (!out || (btn && btn.disabled)) return;
+  if (btn) { btn.disabled = true; btn.textContent = "Comparing…"; }
+  const ddb = gene.veupath || gene.ddb;
+  out.innerHTML = `<p class="notice muted">Running tblastn across the wild isolates…</p>`;
+  let data;
+  try {
+    data = await pollJob(() => fetch(`/api/variation?ddb=${encodeURIComponent(ddb)}&async=1`).then((r) => r.json()));
+    if (data.error) throw new Error(data.error);
+  } catch {
+    out.innerHTML = `<p class="notice">Variation could not be computed.</p>`;
+    if (btn) { btn.disabled = false; btn.textContent = "Show variation across isolates"; }
+    return;
+  }
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  const td = "padding:5px 8px";
+  const rows = (data.isolates || []).map((iso) => {
+    if (!iso.found) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(iso.label)}</em></td><td style="${td}" colspan="3"><span style="color:var(--muted,#6b7280)">no homolog detected</span></td></tr>`;
+    const subs = (iso.subs || []).map((s) => `${s.ref}${s.pos}${s.alt}`).join(", ");
+    const subsCell = iso.n_subs === 0 ? '<span style="color:#047857">identical</span>'
+      : `${iso.n_subs} aa${subs ? ` <span style="color:var(--muted,#6b7280);font-size:.92em">(${escapeHtml(subs)}${iso.n_subs > (iso.subs || []).length ? ", …" : ""})</span>` : ""}`;
+    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+      <td style="${td}"><em>${escapeHtml(iso.label)}</em></td>
+      <td style="${td}">${iso.identity}%</td>
+      <td style="${td}">${iso.coverage}%</td>
+      <td style="${td}">${subsCell}</td></tr>`;
+  }).join("");
+  out.innerHTML = `
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+        <th style="${td}">Isolate</th><th style="${td}">% identity</th><th style="${td}">Coverage</th><th style="${td}">Substitutions</th>
+      </tr></thead><tbody>${rows}</tbody></table></div>
+    <p style="font-size:.7rem;color:var(--muted,#9ca3af);margin-top:6px">Protein-level (tblastn of the AX4 protein vs each isolate assembly), reference = AX4. Substitutions are amino-acid changes vs the reference; positions are AX4 residue numbers.</p>`;
+  if (btn) { btn.disabled = false; btn.textContent = "Re-run"; }
 }
 
 // Paralogs / gene family: other D. discoideum genes whose product is similar to
@@ -6862,7 +7095,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -7207,7 +7440,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -7423,6 +7656,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "GO enrichment", href: "/tools/enrichment", kw: "enrichment go phenotype kegg overrepresented" },
   { kind: "Tool", label: "Compare expression", href: "/tools/expression", kw: "expression rna-seq chart compare profile" },
   { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
+  { kind: "Tool", label: "Gene ID converter", href: "/tools/convert", sub: "Symbol ↔ DDB_G ↔ UniProt ↔ NCBI", kw: "convert id mapping symbol ddb uniprot ncbi validate batch" },
   { kind: "Tool", label: "REST API docs", href: "/tools/api", kw: "api rest json endpoint" },
   { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },

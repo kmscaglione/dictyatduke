@@ -169,6 +169,8 @@ _ROUTE_META = {
         "Design CRISPR guides with genome off-target checking, qPCR primers, and codon-optimize sequences for Dictyostelium."),
     "/tools/api": ("REST API",
         "Public REST API for Dictyostelium gene records, GO terms, strains, BLAST, and enrichment on Dicty@Duke."),
+    "/tools/convert": ("Gene ID converter",
+        "Convert between Dictyostelium gene symbols, DDB_G ids, UniProt accessions, and NCBI Gene ids in one normalized table."),
     "/education": ("Education",
         "Learn Dictyostelium: an interactive life-cycle stepper, glossary, self-quiz, and downloadable teaching figures."),
     "/start": ("Start here",
@@ -851,6 +853,200 @@ def run_conservation(ddb):
     return 200, {"length": L, "homologs": used, "conservation": frac}
 
 
+def _uniprot_for(ddb):
+    return (_load_json("uniprot_map.json").get("map", {}).get(ddb) or {}).get("acc", "")
+
+
+def _idmap_reverse():
+    """Cached reverse lookups for the batch ID converter: UniProt acc -> ddb and
+    NCBI gene id -> ddb. Built once from the gene index + uniprot map."""
+    if "_idrev" not in _API:
+        rows, _sym = api_gene_rows()
+        by_uniprot, by_ncbi = {}, {}
+        for ddb, info in _load_json("uniprot_map.json").get("map", {}).items():
+            acc = (info or {}).get("acc")
+            if acc:
+                by_uniprot.setdefault(acc.upper(), ddb)
+        for ddb, r in rows.items():
+            if r.get("ncbiGene"):
+                by_ncbi.setdefault(str(r["ncbiGene"]), ddb)
+        _API["_idrev"] = {"uniprot": by_uniprot, "ncbi": by_ncbi}
+    return _API["_idrev"]
+
+
+def resolve_ids(tokens):
+    """Resolve mixed gene identifiers (symbol / DDB_G id / UniProt acc / NCBI
+    gene id) to a normalized cross-reference row each."""
+    rows, sym = api_gene_rows()
+    rev = _idmap_reverse()
+    out = []
+    for raw in tokens:
+        t = (raw or "").strip()
+        if not t:
+            continue
+        ddb = None
+        tu = t.upper()
+        if re.match(r"^DDB_G\d+$", tu):
+            ddb = tu if tu in rows else None
+        elif t.lower() in sym:
+            ddb = sym[t.lower()]
+        elif tu in rev["uniprot"]:
+            ddb = rev["uniprot"][tu]
+        elif t.isdigit() and t in rev["ncbi"]:
+            ddb = rev["ncbi"][t]
+        if ddb and ddb in rows:
+            r = rows[ddb]
+            out.append({"input": t, "found": True, "ddb": ddb, "symbol": r["symbol"],
+                        "name": r["name"], "uniprot": _uniprot_for(ddb),
+                        "ncbiGene": r["ncbiGene"], "location": r["location"]})
+        else:
+            out.append({"input": t, "found": False})
+    return out
+
+
+# Genes ordered along each chromosome, for the neighborhood/synteny view.
+def _chrom_order():
+    if "_chrom_order" not in _API:
+        models = _load_json("gene_models.json")
+        by_chrom = {}
+        for ddb, m in models.items():
+            by_chrom.setdefault(m.get("chrom", ""), []).append((m.get("start", 0), ddb))
+        index = {}  # ddb -> (chrom, position-in-chrom)
+        for chrom, lst in by_chrom.items():
+            lst.sort()
+            for i, (_s, ddb) in enumerate(lst):
+                index[ddb] = (chrom, i)
+        _API["_chrom_lists"] = {c: [d for _s, d in lst] for c, lst in by_chrom.items()}
+        _API["_chrom_order"] = index
+    return _API["_chrom_order"], _API["_chrom_lists"]
+
+
+def gene_neighborhood(ddb, k=5):
+    ddb = (ddb or "").strip().upper()
+    rows, _sym = api_gene_rows()
+    models = _load_json("gene_models.json")
+    index, lists = _chrom_order()
+    if ddb not in index:
+        return 404, {"error": "gene not on a placed contig"}
+    chrom, pos = index[ddb]
+    order = lists[chrom]
+    lo, hi = max(0, pos - k), min(len(order), pos + k + 1)
+    genes = []
+    for d in order[lo:hi]:
+        m = models.get(d, {})
+        r = rows.get(d, {})
+        genes.append({"ddb": d, "symbol": r.get("symbol") or d, "name": r.get("name", ""),
+                      "strand": m.get("strand", "+"), "start": m.get("start"),
+                      "end": m.get("end"), "target": d == ddb})
+    return 200, {"ddb": ddb, "chrom": chrom, "genes": genes}
+
+
+def run_variation(ddb):
+    """Amino-acid variation of a gene's protein across the Ahmed et al. 2025 wild
+    isolates: tblastn the reference protein vs each isolate assembly, compare the
+    best HSP to the query, and report identity + substitutions. (code, payload)."""
+    ddb = (ddb or "").strip().upper()
+    if not re.match(r"^DDB_G\d+$", ddb):
+        return 400, {"error": "bad or missing ddb"}
+    prot = (extract_sequence(ddb, "protein") or "").strip().replace("*", "")
+    if not prot:
+        return 404, {"error": "no protein for this gene"}
+    L = len(prot)
+    binpath = blast_bin("tblastn")
+    if not binpath:
+        return 503, {"error": "BLAST unavailable"}
+    qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+    isolates = []
+    try:
+        qf.write(">q\n" + prot + "\n")
+        qf.close()
+        for db in [d for d in BLAST_DBS if d in BLAST_ISOLATE_DBS]:
+            label = BLAST_DBS[db]
+            if not (BLAST_DB_DIR / (db + ".nsq")).exists():
+                continue
+            cmd = [binpath, "-query", qf.name, "-db", str(BLAST_DB_DIR / db),
+                   "-outfmt", "6 pident length qstart qend qseq sseq bitscore",
+                   "-max_target_seqs", "5", "-evalue", "1e-5"]
+            try:
+                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
+            except subprocess.TimeoutExpired:
+                continue
+            best = None
+            for line in proc.stdout.splitlines():
+                f = line.split("\t")
+                if len(f) < 7:
+                    continue
+                bs = float(f[6])
+                if best is None or bs > best[6]:
+                    best = (float(f[0]), int(f[1]), int(f[2]), int(f[3]), f[4], f[5], bs)
+            if not best:
+                isolates.append({"id": db, "label": label, "found": False})
+                continue
+            pident, alnlen, qstart, _qend, qseq, sseq, _bs = best
+            subs = []
+            p = qstart
+            for a, b in zip(qseq, sseq):
+                if a != "-":
+                    if b != "-" and b.upper() != a.upper() and b.upper() != "X":
+                        subs.append({"pos": p, "ref": a.upper(), "alt": b.upper()})
+                    p += 1
+            isolates.append({"id": db, "label": label, "found": True,
+                             "identity": round(pident, 1),
+                             "coverage": round(100.0 * alnlen / L, 1),
+                             "n_subs": len(subs), "subs": subs[:80]})
+    finally:
+        try:
+            os.unlink(qf.name)
+        except OSError:
+            pass
+    return 200, {"ddb": ddb, "length": L, "isolates": isolates}
+
+
+def bulk_tsv(dataset):
+    """Generate a TSV dump of a dataset for the bulk-download page. Returns
+    (filename, text) or (None, None) for an unknown dataset."""
+    rows, _sym = api_gene_rows()
+    out = []
+    if dataset == "genes":
+        out.append("ddb_g\tsymbol\tname\tlocation\tncbi_gene\tuniprot")
+        for ddb, r in rows.items():
+            out.append("\t".join(str(x) for x in [ddb, r["symbol"], r["name"],
+                       r["location"], r["ncbiGene"], _uniprot_for(ddb)]))
+    elif dataset == "go":
+        out.append("ddb_g\tsymbol\tgo_id\taspect\tevidence\tpmid")
+        annots = _load_json("go_annotations.json")
+        for ddb, entries in annots.items():
+            sym = rows.get(ddb, {}).get("symbol", "")
+            for e in entries:
+                go, aspect, ev, pmid = (list(e) + ["", "", "", ""])[:4]
+                out.append("\t".join(str(x) for x in [ddb, sym, go, aspect, ev, pmid]))
+    elif dataset == "phenotypes":
+        out.append("ddb_g\tsymbol\tphenotype\tpmid")
+        ph = _load_json("phenotypes.json")
+        for ddb, entries in ph.items():
+            sym = rows.get(ddb, {}).get("symbol", "")
+            for e in entries:
+                term = e[0] if isinstance(e, (list, tuple)) else e
+                pmid = e[2] if isinstance(e, (list, tuple)) and len(e) > 2 else ""
+                out.append("\t".join(str(x) for x in [ddb, sym, term, pmid]))
+    elif dataset == "orthologs":
+        out.append("ddb_g\tsymbol\thuman_ortholog\trelationship\tdisease")
+        od = _load_json("ortholog_disease.json")
+        for ddb, info in od.items():
+            if not isinstance(info, dict):
+                continue
+            sym = info.get("symbol") or rows.get(ddb, {}).get("symbol", "")
+            for orth in info.get("orthologs", []):
+                human = orth.get("human_symbol", "")
+                rel = orth.get("relationship", "")
+                diseases = orth.get("diseases", []) or []
+                dis = "; ".join(d.get("name", "") if isinstance(d, dict) else str(d) for d in diseases)
+                out.append("\t".join(str(x) for x in [ddb, sym, human, rel, dis]))
+    else:
+        return None, None
+    return f"dictyatduke_{dataset}.tsv", "\n".join(out) + "\n"
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -860,6 +1056,7 @@ API_CACHEABLE_PREFIXES = (
     "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-search",
     "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
     "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
+    "/api/neighborhood",
 )
 API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=600"
 
@@ -915,6 +1112,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/data-status"):
             self._handle_api_status()
+            return
+        if self.path.startswith("/api/neighborhood"):
+            self._handle_neighborhood()
+            return
+        if self.path.startswith("/api/bulk"):
+            self._handle_bulk()
+            return
+        if self.path.startswith("/api/variation"):
+            ddb = parse_qs(urlparse(self.path).query).get("ddb", [""])[0]
+            if "async=1" in (urlparse(self.path).query or ""):
+                jid = submit_job(lambda: run_variation(ddb))
+                self.send_json(202, {"job_id": jid})
+            elif self._acquire_blast_slot():
+                try:
+                    code, payload = run_variation(ddb)
+                    self.send_json(code, payload)
+                finally:
+                    _BLAST_SEM.release()
             return
         if self.path.startswith("/api/version"):
             meta = _release_meta()
@@ -1284,6 +1499,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     self._handle_blast()
                 finally:
                     _BLAST_SEM.release()
+        elif self.path == "/api/idmap":
+            self._handle_idmap()
         elif self.path == "/api/enrichment":
             self._handle_enrichment()
         elif self.path == "/api/codon-optimize":
@@ -2003,6 +2220,58 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif j["status"] == "error":
             out["error"] = j["error"]
         self.send_json(200, out)
+
+    def _handle_idmap(self):
+        """Batch ID converter: POST {ids:[...]} -> normalized cross-ref rows."""
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 200000:
+                self.send_json(413, {"error": "Too many ids (200 KB max)."})
+                return
+            body = json.loads(self.rfile.read(length)) if length else {}
+            ids = body.get("ids") or []
+            if isinstance(ids, str):
+                ids = re.split(r"[\s,;]+", ids)
+            ids = [i for i in ids if i][:2000]
+            results = resolve_ids(ids)
+            self.send_json(200, {"count": len(results),
+                                 "found": sum(1 for r in results if r["found"]),
+                                 "results": results})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_neighborhood(self):
+        try:
+            q = parse_qs(urlparse(self.path).query)
+            ddb = q.get("ddb", [""])[0]
+            try:
+                k = max(1, min(15, int(q.get("k", ["5"])[0])))
+            except ValueError:
+                k = 5
+            code, payload = gene_neighborhood(ddb, k)
+            self.send_json(code, payload)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_bulk(self):
+        """Stream a TSV dump of a dataset as a download."""
+        try:
+            dataset = parse_qs(urlparse(self.path).query).get("dataset", [""])[0]
+            fname, text = bulk_tsv(dataset)
+            if not fname:
+                self.send_json(400, {"error": "Unknown dataset. Use genes|go|phenotypes|orthologs."})
+                return
+            data = text.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/tab-separated-values; charset=utf-8")
+            self.send_header("Content-Disposition", f'attachment; filename="{fname}"')
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Cache-Control", "public, max-age=300, s-maxage=3600")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(data)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
 
     def _handle_upload(self):
         try:

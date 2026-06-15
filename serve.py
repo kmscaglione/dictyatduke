@@ -684,9 +684,39 @@ def assemble_gene(ddb):
     g["strains"] = api_strains()["by_gene"].get(ddb, [])
     return g
 
+# Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
+# (infrequent) rebuild or a curation edit, so a short edge TTL with
+# stale-while-revalidate offloads the vast majority of reads with at most a few
+# minutes' staleness. Write/auth/analysis endpoints (blast, enrichment, login,
+# upload, hit, stats) are deliberately absent and stay uncached.
+API_CACHEABLE_PREFIXES = (
+    "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-search",
+    "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
+    "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
+)
+API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=600"
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
+    # HTTP/1.1 enables connection keep-alive (every response below sets a
+    # correct Content-Length, so the stdlib reuses the socket instead of a fresh
+    # TCP/TLS handshake per request). Idle keep-alive sockets time out at 30s.
+    protocol_version = "HTTP/1.1"
+    timeout = 30
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=ROOT, **kwargs)
+
+    def handle_one_request(self):
+        # Reset per-request flags before each request on a kept-alive connection
+        # so state (e.g. the index's no-cache) can't leak to the next response.
+        self._no_cache = False
+        self._code = 200
+        super().handle_one_request()
+
+    def send_response(self, code, message=None):
+        self._code = code  # captured so end_headers only caches success responses
+        super().send_response(code, message)
 
     def do_GET(self):
         # Per-gene sequence download (genomic / cDNA / protein FASTA)
@@ -1950,6 +1980,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_header("Cache-Control", "public, max-age=31536000, immutable")
             else:
                 self.send_header("Cache-Control", "no-cache, must-revalidate")
+        elif (self.command == "GET" and getattr(self, "_code", 200) < 300
+              and raw.startswith(API_CACHEABLE_PREFIXES)):
+            self.send_header("Cache-Control", API_CACHE_CONTROL)
         super().end_headers()
 
     def log_message(self, fmt, *args):

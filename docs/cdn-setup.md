@@ -19,7 +19,17 @@ The app is built so the CDN can cache hard **without ever serving stale data**:
 - **JS/CSS** are already mtime-stamped (`/app.js?v=<mtime>`) and `immutable`.
 - **`index.html`** is `no-cache` (always revalidated) — so it always hands out
   the current `__ASSET_V` and asset versions.
-- **`/api/*`** responses are dynamic and not cached.
+- **Read-only `/api/*` GET endpoints** (`/api/gene*`, `/api/sequence`,
+  `/api/search`, `/api/phenotype-search`, `/api/go/*`, `/api/strain/*`,
+  `/api/data-status`, `/api/version`, `/api/recent-papers`, `/api/coexpression`,
+  `/api/expression`, `/api/domains`) now send
+  `Cache-Control: public, max-age=60, s-maxage=300, stale-while-revalidate=600`
+  on **2xx GET** responses, so the edge serves them for ~5 min (≤5 min staleness
+  for a live curation edit — acceptable) and absorbs the bulk of read traffic.
+  Error responses (4xx/5xx) and non-GET methods are never cached.
+- **Write/analysis `/api/*` endpoints** (`/api/blast`, `/api/enrichment`,
+  `/api/login`, `/api/upload`, `/api/hit`, `/api/stats`, the external proxies)
+  send no public cache header and stay origin-only.
 - Unversioned direct hits (e.g. `curl /assets/x.json` with no `?v=`) stay
   `no-cache` — only the front-end's versioned requests are cacheable.
 
@@ -46,8 +56,11 @@ Then, in the Cloudflare dashboard:
      **Browser TTL = Respect origin**.
    - This makes the edge serve `/assets/*` from cache, hitting your origin only
      on the first request per version.
-2. **Bypass cache for dynamic paths** (usually automatic, but to be explicit):
-   - A second rule: URI Path starts with `/api/` → **Bypass cache**.
+2. **Read APIs follow origin headers; everything else bypasses:**
+   - URI Path starts with `/api/` → **Cache eligibility = Eligible**, **Edge TTL
+     = Use cache-control header if present**. The read endpoints carry an
+     `s-maxage`, so they cache; write/analysis endpoints send none and Cloudflare
+     leaves them uncached. (POSTs are never cached regardless.)
    - `index.html` / `/` is `no-cache` from origin, so Cloudflare won't cache it.
 3. **Compression**: leave Cloudflare's Brotli **on** — it compresses at the
    edge. (The origin also gzip-caches; either way the client gets compressed

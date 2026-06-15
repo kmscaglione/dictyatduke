@@ -2697,6 +2697,28 @@ const WILD_ISOLATES = {
   "dc-cf3b": "D. citrinum Cf3b",
 };
 
+// Submit a heavy BLAST/conservation job (server runs it on a bounded worker
+// pool) and poll /api/job until it finishes. `submit` returns {job_id}. Resolves
+// to the same payload the synchronous endpoint would have returned; throws on
+// server error or timeout. Backs off 300ms → 2s between polls.
+async function pollJob(submit) {
+  const sub = await submit();
+  if (!sub || !sub.job_id) throw new Error(sub && sub.error || "could not queue job");
+  const id = sub.job_id;
+  let delay = 300;
+  for (let i = 0; i < 150; i++) {
+    await new Promise((r) => setTimeout(r, delay));
+    const j = await (await fetch(`/api/job?id=${encodeURIComponent(id)}`)).json();
+    if (j.status === "done") {
+      if (j.code && j.code >= 400) throw new Error((j.result && j.result.error) || "job failed");
+      return j.result;
+    }
+    if (j.status === "error") throw new Error(j.error || "job failed");
+    delay = Math.min(Math.round(delay * 1.3), 2000);
+  }
+  throw new Error("timed out");
+}
+
 async function runLocalBlast(form) {
   const results = document.getElementById("local-blast-results");
   if (!results) return;
@@ -2706,13 +2728,22 @@ async function runLocalBlast(form) {
   if (!query) { results.innerHTML = `<p class="notice">Enter a query sequence.</p>`; return; }
   results.innerHTML = loadingHTML(`Running ${program} against ${database === "all" ? "all species" : (LOCAL_BLAST_DBS[database] || WILD_ISOLATES[database] || database)}…`);
   try {
-    const res = await fetch("/api/blast", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ program, database, query })
-    });
-    const data = await res.json();
-    if (!res.ok) { results.innerHTML = `<p class="notice">${escapeHtml(data.error || "BLAST failed.")}</p>`; return; }
+    let data;
+    if (database === "all") {
+      // Heavy multi-genome search — run it as a queued job so it neither holds a
+      // request thread nor 503s under load.
+      data = await pollJob(() => fetch("/api/blast?async=1", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ program, database, query }),
+      }).then((r) => r.json()));
+    } else {
+      const res = await fetch("/api/blast", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ program, database, query }),
+      });
+      data = await res.json();
+      if (!res.ok) { results.innerHTML = `<p class="notice">${escapeHtml(data.error || "BLAST failed.")}</p>`; return; }
+    }
     if (!data.hits || !data.hits.length) { results.innerHTML = `<p class="notice">No hits found (E-value &lt; 1e-3).</p>`; return; }
     results.innerHTML = `
       <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">${data.count} hit${data.count === 1 ? "" : "s"} · ${escapeHtml(data.program)} · ${data.databases.length} genome${data.databases.length === 1 ? "" : "s"}</p>
@@ -5672,12 +5703,13 @@ async function runComparative(gene) {
   }
   const results = await Promise.all(Object.entries(LOCAL_BLAST_DBS).map(async ([id, label]) => {
     try {
-      const res = await fetch("/api/blast", {
+      // Queued jobs: 11 submits, but the server's pool runs only a few at a time
+      // so this can't overwhelm the box (and won't 503 under contention).
+      const data = await pollJob(() => fetch("/api/blast?async=1", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ program: "tblastn", database: id, query: fasta }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.hits || !data.hits.length) return { label, hit: null };
+      }).then((r) => r.json()));
+      if (!data.hits || !data.hits.length) return { label, hit: null };
       return { label, hit: data.hits.reduce((a, b) => (b.bitscore > a.bitscore ? b : a)) };
     } catch { return { label, hit: null }; }
   }));
@@ -6517,7 +6549,7 @@ async function runConservation(gene) {
   out.innerHTML = `<p class="notice muted">Running tblastn across the sequenced species…</p>`;
   let data;
   try {
-    data = await (await fetch(`/api/conservation?ddb=${encodeURIComponent(ddb)}`)).json();
+    data = await pollJob(() => fetch(`/api/conservation?ddb=${encodeURIComponent(ddb)}&async=1`).then((r) => r.json()));
     if (data.error) throw new Error(data.error);
   } catch {
     out.innerHTML = `<p class="notice">Conservation could not be computed.</p>`;

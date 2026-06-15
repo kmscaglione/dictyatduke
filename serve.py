@@ -1,5 +1,6 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
 import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading
+import concurrent.futures
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
 from urllib.parse import unquote, urlparse, parse_qs, quote
@@ -353,6 +354,59 @@ BLAST_MAX_CONCURRENT = int(os.environ.get("BLAST_MAX_CONCURRENT", "3"))
 _BLAST_SEM = threading.BoundedSemaphore(BLAST_MAX_CONCURRENT)
 BLAST_SLOT_WAIT = 2.0     # seconds to wait for a free slot before giving up
 
+# Async BLAST jobs. The heavy multi-genome searches (cross-species comparison,
+# conservation, "all species" BLAST) are the one operation that pins a core for
+# seconds. Run synchronously they hold a request thread the whole time and 503
+# under contention. Instead the front-end submits them to this bounded worker
+# pool and polls /api/job — work queues gracefully (no 503, no held threads) and
+# concurrency stays capped at BLAST_MAX_CONCURRENT. Single-genome BLAST stays
+# synchronous (it's fast). State is in-process (single worker); see the
+# multi-worker note in docs/deployment.md.
+_BLAST_POOL = concurrent.futures.ThreadPoolExecutor(
+    max_workers=BLAST_MAX_CONCURRENT, thread_name_prefix="blast-job")
+_JOBS = {}                # job_id -> {status, code, result, error, created}
+_JOBS_LOCK = threading.Lock()
+JOB_TTL = 600             # seconds a finished job's result is retained
+MAX_JOBS = 2000           # hard cap so a flood can't grow the registry unbounded
+
+
+def submit_job(fn):
+    """Queue fn() (returns (http_code, payload)) on the BLAST pool; returns a
+    job id to poll via /api/job. Prunes expired/old jobs first."""
+    now = time.time()
+    jid = secrets.token_urlsafe(12)
+    with _JOBS_LOCK:
+        for k in [k for k, v in _JOBS.items() if now - v["created"] > JOB_TTL]:
+            _JOBS.pop(k, None)
+        if len(_JOBS) >= MAX_JOBS:                      # evict oldest under flood
+            for k in sorted(_JOBS, key=lambda k: _JOBS[k]["created"])[:len(_JOBS) - MAX_JOBS + 1]:
+                _JOBS.pop(k, None)
+        _JOBS[jid] = {"status": "queued", "code": None, "result": None,
+                      "error": None, "created": now}
+
+    def _run():
+        with _JOBS_LOCK:
+            if jid in _JOBS:
+                _JOBS[jid]["status"] = "running"
+        try:
+            code, payload = fn()
+            with _JOBS_LOCK:
+                if jid in _JOBS:
+                    _JOBS[jid].update(status="done", code=code, result=payload)
+        except Exception as e:
+            with _JOBS_LOCK:
+                if jid in _JOBS:
+                    _JOBS[jid].update(status="error", error=str(e))
+
+    _BLAST_POOL.submit(_run)
+    return jid
+
+
+def job_snapshot(jid):
+    with _JOBS_LOCK:
+        j = _JOBS.get(jid)
+        return dict(j) if j else None
+
 # The outbound-proxy endpoints (AlphaFold, InterPro /api/domains) make slow
 # third-party calls that each tie up a worker thread for 10-25s. Per-IP rate
 # limiting alone doesn't bound *global* concurrency, so under load many users
@@ -684,6 +738,119 @@ def assemble_gene(ddb):
     g["strains"] = api_strains()["by_gene"].get(ddb, [])
     return g
 
+def run_blast(program, database, query):
+    """Pure BLAST compute shared by the sync handler and the async worker.
+    Returns (http_code, payload_dict). No request/`self` state — safe to call
+    from a pool thread."""
+    if program not in BLAST_PROGRAMS:
+        return 400, {"error": "Unsupported program."}
+    if database == "all":
+        db_ids = list(BLAST_SPECIES_DBS)
+    elif database in BLAST_DBS:
+        db_ids = [database]
+    else:
+        return 400, {"error": "Unknown database."}
+    query = (query or "").strip()
+    if not query:
+        return 400, {"error": "Empty query sequence."}
+    if not query.startswith(">"):
+        query = ">query\n" + query
+    binpath = blast_bin(program)
+    if not binpath:
+        return 503, {"error": "BLAST is not installed on the server. See README (P6)."}
+    missing = [d for d in db_ids if not (BLAST_DB_DIR / (d + ".nsq")).exists()
+               and not (BLAST_DB_DIR / (d + ".nin")).exists()]
+    if missing:
+        return 503, {"error": "BLAST databases not built. Run scripts/build_blastdb.py."}
+    db_arg = " ".join(str(BLAST_DB_DIR / d) for d in db_ids)
+    qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+    try:
+        qf.write(query)
+        qf.close()
+        cmd = [binpath, "-query", qf.name, "-db", db_arg,
+               "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore",
+               "-max_target_seqs", "50", "-evalue", "1e-3"]
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
+    except subprocess.TimeoutExpired:
+        return 504, {"error": "BLAST timed out (try a shorter query or one genome)."}
+    finally:
+        try:
+            os.unlink(qf.name)
+        except OSError:
+            pass
+    if proc.returncode != 0:
+        return 500, {"error": "BLAST failed.", "detail": (proc.stderr or "")[:400]}
+    hits = []
+    for line in proc.stdout.splitlines():
+        f = line.split("\t")
+        if len(f) < 12:
+            continue
+        acc = re.sub(r"^[a-z]+\|", "", f[1]).strip("|")
+        hit = {"subject": acc, "identity": float(f[2]), "length": int(f[3]),
+               "qstart": int(f[6]), "qend": int(f[7]),
+               "sstart": int(f[8]), "send": int(f[9]),
+               "evalue": f[10], "bitscore": float(f[11])}
+        g = gene_for_hit(acc, f[8], f[9])
+        if g:
+            hit["gene"] = g
+        hits.append(hit)
+    return 200, {"program": program, "databases": db_ids, "count": len(hits), "hits": hits}
+
+
+def run_conservation(ddb):
+    """Pure conservation compute (one tblastn vs the species set, query-anchored).
+    Returns (http_code, payload_dict). Safe to call from a pool thread."""
+    ddb = (ddb or "").strip().upper()
+    if not re.match(r"^DDB_G\d+$", ddb):
+        return 400, {"error": "bad or missing ddb"}
+    prot = (extract_sequence(ddb, "protein") or "").strip().replace("*", "")
+    if not prot:
+        return 404, {"error": "no protein for this gene"}
+    L = len(prot)
+    binpath = blast_bin("tblastn")
+    if not binpath:
+        return 503, {"error": "BLAST unavailable"}
+    # Species set only — conspecific wild isolates would skew per-residue conservation.
+    db_arg = " ".join(str(BLAST_DB_DIR / d) for d in BLAST_SPECIES_DBS)
+    qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+    try:
+        qf.write(">q\n" + prot + "\n")
+        qf.close()
+        cmd = [binpath, "-query", qf.name, "-db", db_arg,
+               "-outfmt", "6 sseqid bitscore qstart qend qseq sseq",
+               "-max_target_seqs", "20", "-evalue", "1e-5"]
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+    except subprocess.TimeoutExpired:
+        return 504, {"error": "conservation search timed out"}
+    finally:
+        try:
+            os.unlink(qf.name)
+        except OSError:
+            pass
+    best = {}  # best HSP per subject sequence
+    for line in proc.stdout.splitlines():
+        f = line.split("\t")
+        if len(f) < 6:
+            continue
+        sid, bs = f[0], float(f[1])
+        if sid not in best or bs > best[sid][0]:
+            best[sid] = (bs, int(f[2]), f[4], f[5])
+    cons, cov, used = [0] * L, [0] * L, 0
+    for _sid, (bs, qstart, qseq, sseq) in sorted(best.items(), key=lambda kv: -kv[1][0])[:12]:
+        used += 1
+        p = qstart - 1
+        for a, b in zip(qseq, sseq):
+            if a == "-":
+                continue
+            if 0 <= p < L:
+                cov[p] += 1
+                if a.upper() == b.upper():
+                    cons[p] += 1
+            p += 1
+    frac = [round(cons[i] / cov[i], 3) if cov[i] else 0.0 for i in range(L)]
+    return 200, {"length": L, "homologs": used, "conservation": frac}
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -768,8 +935,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/expression"):
             self._handle_expression()
             return
+        if self.path.startswith("/api/job"):
+            self._handle_job_status()
+            return
         if self.path.startswith("/api/conservation"):
-            if self._acquire_blast_slot():
+            if "async=1" in (urlparse(self.path).query or ""):
+                self._handle_conservation_async()       # pool-bounded, pollable
+            elif self._acquire_blast_slot():
                 try:
                     self._handle_conservation()
                 finally:
@@ -1104,6 +1276,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_approve()
         elif self.path == "/api/curator/reject":
             self._handle_curation_reject()
+        elif self.path.startswith("/api/blast?") and "async=1" in urlparse(self.path).query:
+            self._handle_blast_async()                   # pool-bounded, pollable
         elif self.path == "/api/blast":
             if self._acquire_blast_slot():
                 try:
@@ -1335,62 +1509,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(500, {"error": str(e)})
 
     def _handle_conservation(self):
-        """Per-residue protein conservation across the dictyostelid genomes:
-        one tblastn vs all bundled genomes, query-anchored from the alignments."""
-        q = parse_qs(urlparse(self.path).query)
-        ddb = (q.get("ddb", [""])[0] or "").strip().upper()
-        if not re.match(r"^DDB_G\d+$", ddb):
-            self.send_json(400, {"error": "bad or missing ddb"})
-            return
+        """Per-residue protein conservation across the species set, run
+        synchronously (the async variant is _handle_conservation_async)."""
         try:
-            prot = (extract_sequence(ddb, "protein") or "").strip().replace("*", "")
-            if not prot:
-                self.send_json(404, {"error": "no protein for this gene"})
-                return
-            L = len(prot)
-            binpath = blast_bin("tblastn")
-            if not binpath:
-                self.send_json(503, {"error": "BLAST unavailable"})
-                return
-            # Species set only — conspecific wild isolates would skew per-residue conservation.
-            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in BLAST_SPECIES_DBS)
-            qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
-            try:
-                qf.write(">q\n" + prot + "\n")
-                qf.close()
-                cmd = [binpath, "-query", qf.name, "-db", db_arg,
-                       "-outfmt", "6 sseqid bitscore qstart qend qseq sseq",
-                       "-max_target_seqs", "20", "-evalue", "1e-5"]
-                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
-            finally:
-                try:
-                    os.unlink(qf.name)
-                except OSError:
-                    pass
-            best = {}  # best HSP per subject sequence
-            for line in proc.stdout.splitlines():
-                f = line.split("\t")
-                if len(f) < 6:
-                    continue
-                sid, bs = f[0], float(f[1])
-                if sid not in best or bs > best[sid][0]:
-                    best[sid] = (bs, int(f[2]), f[4], f[5])
-            cons, cov, used = [0] * L, [0] * L, 0
-            for _sid, (bs, qstart, qseq, sseq) in sorted(best.items(), key=lambda kv: -kv[1][0])[:12]:
-                used += 1
-                p = qstart - 1
-                for a, b in zip(qseq, sseq):
-                    if a == "-":
-                        continue
-                    if 0 <= p < L:
-                        cov[p] += 1
-                        if a.upper() == b.upper():
-                            cons[p] += 1
-                    p += 1
-            frac = [round(cons[i] / cov[i], 3) if cov[i] else 0.0 for i in range(L)]
-            self.send_json(200, {"length": L, "homologs": used, "conservation": frac})
-        except subprocess.TimeoutExpired:
-            self.send_json(504, {"error": "conservation search timed out"})
+            ddb = parse_qs(urlparse(self.path).query).get("ddb", [""])[0] or ""
+            code, payload = run_conservation(ddb)
+            self.send_json(code, payload)
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 
@@ -1813,91 +1937,72 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return False
         return True
 
+    def _read_blast_body(self):
+        """Parse + size-check a BLAST request body. Returns the dict, or None
+        after having sent an error response."""
+        length = int(self.headers.get("Content-Length", 0))
+        if length > 200000:
+            self.send_json(413, {"error": "Query too large (200 KB max)."})
+            return None
+        return json.loads(self.rfile.read(length))
+
     def _handle_blast(self):
-        """Run a local blastn/tblastn against the bundled dictyostelid genomes.
+        """Run a local blastn/tblastn synchronously against the bundled genomes.
 
         Security: program + database come from server allowlists; the user
         sequence is written to a temp file and passed via -query (never a shell),
         with a size cap and a timeout. No user value reaches a shell or a path.
         """
         try:
-            length = int(self.headers.get("Content-Length", 0))
-            if length > 200000:
-                self.send_json(413, {"error": "Query too large (200 KB max)."})
+            body = self._read_blast_body()
+            if body is None:
                 return
-            body = json.loads(self.rfile.read(length))
-            program = body.get("program", "blastn")
-            database = body.get("database", "d-discoideum-ax4")
-            query = (body.get("query") or "").strip()
-
-            if program not in BLAST_PROGRAMS:
-                self.send_json(400, {"error": "Unsupported program."})
-                return
-            if database == "all":
-                db_ids = list(BLAST_SPECIES_DBS)
-            elif database in BLAST_DBS:
-                db_ids = [database]
-            else:
-                self.send_json(400, {"error": "Unknown database."})
-                return
-            if not query:
-                self.send_json(400, {"error": "Empty query sequence."})
-                return
-            if not query.startswith(">"):
-                query = ">query\n" + query
-
-            binpath = blast_bin(program)
-            if not binpath:
-                self.send_json(503, {"error": "BLAST is not installed on the server. See README (P6)."})
-                return
-            missing = [d for d in db_ids if not (BLAST_DB_DIR / (d + ".nsq")).exists()
-                       and not (BLAST_DB_DIR / (d + ".nin")).exists()]
-            if missing:
-                self.send_json(503, {"error": "BLAST databases not built. Run scripts/build_blastdb.py."})
-                return
-
-            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in db_ids)
-            qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
-            try:
-                qf.write(query)
-                qf.close()
-                cmd = [binpath, "-query", qf.name, "-db", db_arg,
-                       "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore",
-                       "-max_target_seqs", "50", "-evalue", "1e-3"]
-                proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
-            finally:
-                try:
-                    os.unlink(qf.name)
-                except OSError:
-                    pass
-
-            if proc.returncode != 0:
-                self.send_json(500, {"error": "BLAST failed.", "detail": (proc.stderr or "")[:400]})
-                return
-
-            hits = []
-            for line in proc.stdout.splitlines():
-                f = line.split("\t")
-                if len(f) < 12:
-                    continue
-                acc = re.sub(r"^[a-z]+\|", "", f[1]).strip("|")
-                hit = {
-                    "subject": acc,
-                    "identity": float(f[2]), "length": int(f[3]),
-                    "qstart": int(f[6]), "qend": int(f[7]),
-                    "sstart": int(f[8]), "send": int(f[9]),
-                    "evalue": f[10], "bitscore": float(f[11]),
-                }
-                g = gene_for_hit(acc, f[8], f[9])
-                if g:
-                    hit["gene"] = g
-                hits.append(hit)
-            self.send_json(200, {"program": program, "databases": db_ids,
-                                 "count": len(hits), "hits": hits})
-        except subprocess.TimeoutExpired:
-            self.send_json(504, {"error": "BLAST timed out (try a shorter query or one genome)."})
+            code, payload = run_blast(body.get("program", "blastn"),
+                                      body.get("database", "d-discoideum-ax4"),
+                                      body.get("query") or "")
+            self.send_json(code, payload)
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_blast_async(self):
+        """Submit a BLAST to the worker pool; returns a job id to poll at
+        /api/job. Used by the front-end for the heavy multi-genome searches so
+        they neither hold a request thread nor 503 under contention."""
+        try:
+            body = self._read_blast_body()
+            if body is None:
+                return
+            program = body.get("program", "blastn")
+            database = body.get("database", "d-discoideum-ax4")
+            query = body.get("query") or ""
+            jid = submit_job(lambda: run_blast(program, database, query))
+            self.send_json(202, {"job_id": jid})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_conservation_async(self):
+        try:
+            ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0] or "")
+            jid = submit_job(lambda: run_conservation(ddb))
+            self.send_json(202, {"job_id": jid})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_job_status(self):
+        """Poll an async job. 200 with {status: queued|running|done|error}; when
+        done, the original handler's status code + payload are echoed."""
+        jid = parse_qs(urlparse(self.path).query).get("id", [""])[0]
+        j = job_snapshot(jid)
+        if not j:
+            self.send_json(404, {"error": "unknown or expired job"})
+            return
+        out = {"status": j["status"]}
+        if j["status"] == "done":
+            out["code"] = j["code"]
+            out["result"] = j["result"]
+        elif j["status"] == "error":
+            out["error"] = j["error"]
+        self.send_json(200, out)
 
     def _handle_upload(self):
         try:

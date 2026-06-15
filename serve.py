@@ -7,6 +7,7 @@ from urllib.parse import unquote, urlparse, parse_qs, quote
 
 import enrichment
 import bench
+import msa
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -171,6 +172,8 @@ _ROUTE_META = {
         "Public REST API for Dictyostelium gene records, GO terms, strains, BLAST, and enrichment on Dicty@Duke."),
     "/tools/convert": ("Gene ID converter",
         "Convert between Dictyostelium gene symbols, DDB_G ids, UniProt accessions, and NCBI Gene ids in one normalized table."),
+    "/tools/sequence": ("Sequence tools",
+        "Retrieve genomic DNA by coordinates, run in-silico PCR, and build a multiple sequence alignment across the sequenced dictyostelids and wild isolates."),
     "/education": ("Education",
         "Learn Dictyostelium: an interactive life-cycle stepper, glossary, self-quiz, and downloadable teaching figures."),
     "/start": ("Start here",
@@ -1047,6 +1050,172 @@ def bulk_tsv(dataset):
     return f"dictyatduke_{dataset}.tsv", "\n".join(out) + "\n"
 
 
+# Genome FASTA per genome id (matches the BLAST/browser ids). AX4 uses the
+# RefSeq assembly (NC_ contigs match gene coordinates); the rest use the
+# _browser.fna built by scripts/fetch/build. Used by the region + in-silico PCR
+# tools, which need whole-contig sequence (not just per-gene).
+GENOME_FILES = {
+    "d-discoideum-ax4": "D_discoideum_AX4_refseq.fna",
+    "d-purpureum": "D_purpureum_browser.fna",
+    "d-firmibasis": "D_firmibasis_browser.fna",
+    "c-fasciculata-sh3": "C_fasciculata_SH3_browser.fna",
+    "c-polycephalum": "C_polycephalum_browser.fna",
+    "s-polycarpum": "S_polycarpum_browser.fna",
+    "h-pallidum-pn500": "H_pallidum_PN500_browser.fna",
+    "h-pallidum-new": "H_pallidum_new_browser.fna",
+    "p-violaceum": "P_violaceum_browser.fna",
+    "d-citrinum": "D_citrinum_GS8b_browser.fna",
+    "d-dimigraforme": "D_dimigraforme_Ar5b_browser.fna",
+    "dd-ax2-214": "Dd_AX2-214_browser.fna",
+    "dd-cr116c": "Dd_CR116C_browser.fna",
+    "dd-ot3a": "Dd_OT3A_browser.fna",
+    "dd-m4b": "Dd_M4B_browser.fna",
+    "dd-s6b": "Dd_S6B_browser.fna",
+    "dc-cf3b": "D_citrinum_Cf3b_browser.fna",
+}
+_GENOME_CACHE = {}          # gid -> {chrom: seq}; tiny LRU (each genome ~30 MB)
+_GENOME_CACHE_ORDER = []
+
+
+def load_genome(gid):
+    if gid == "d-discoideum-ax4":
+        return genome_seq()                      # already cached separately
+    if gid in _GENOME_CACHE:
+        return _GENOME_CACHE[gid]
+    fn = GENOME_FILES.get(gid)
+    if not fn:
+        return {}
+    seq, cur, buf = {}, None, []
+    try:
+        with open(pathlib.Path(ROOT) / "assets" / "genomes" / fn) as fh:
+            for line in fh:
+                if line.startswith(">"):
+                    if cur:
+                        seq[cur] = "".join(buf)
+                    cur = line[1:].split()[0]
+                    buf = []
+                else:
+                    buf.append(line.strip())
+        if cur:
+            seq[cur] = "".join(buf)
+    except OSError:
+        return {}
+    _GENOME_CACHE[gid] = seq
+    _GENOME_CACHE_ORDER.append(gid)
+    while len(_GENOME_CACHE_ORDER) > 3:
+        _GENOME_CACHE.pop(_GENOME_CACHE_ORDER.pop(0), None)
+    return seq
+
+
+_COMP = str.maketrans("ACGTUNRYKMSWBDHVacgtunrykmswbdhv",
+                      "TGCAANYRMKSWVHDBtgcaanyrmkswvhdb")
+
+
+def revcomp(s):
+    return s.translate(_COMP)[::-1]
+
+
+def extract_region(gid, chrom, start, end, strand, flank):
+    if gid not in GENOME_FILES:
+        return 400, {"error": "unknown genome"}
+    seq = load_genome(gid)
+    if not seq:
+        return 503, {"error": "genome not available on the server"}
+    if chrom not in seq:
+        return 404, {"error": f"contig '{chrom}' not found", "contigs": list(seq.keys())[:25]}
+    c = seq[chrom]
+    try:
+        start, end = int(start), int(end)
+        flank = max(0, min(100000, int(flank or 0)))
+    except (TypeError, ValueError):
+        return 400, {"error": "coordinates must be integers"}
+    if end < start:
+        return 400, {"error": "end must be >= start"}
+    a, b = max(1, start - flank), min(len(c), end + flank)
+    sub = c[a - 1:b].upper()
+    if strand == "-":
+        sub = revcomp(sub)
+    return 200, {"genome": gid, "chrom": chrom, "start": a, "end": b,
+                 "strand": strand or "+", "length": len(sub), "seq": sub}
+
+
+def _amplicons(chrom, u, left, rightsite, label_l, label_r, maxsize, strand, acc):
+    i = u.find(left)
+    while i != -1 and len(acc) < 50:
+        j = u.find(rightsite, i + len(left))
+        if j != -1:
+            end = j + len(rightsite)
+            size = end - i
+            if size <= maxsize:
+                amp = u[i:end]
+                acc.append({"chrom": chrom, "start": i + 1, "end": end, "size": size,
+                            "strand": strand, "fwd": label_l, "rev": label_r,
+                            "seq": amp if len(amp) <= 4000 else amp[:2000] + "…" + amp[-2000:]})
+        i = u.find(left, i + 1)
+
+
+def run_ispcr(gid, fwd, rev, maxsize):
+    """Perfect-match in-silico PCR: find amplicons bounded by the two primers."""
+    if gid not in GENOME_FILES:
+        return 400, {"error": "unknown genome"}
+    fwd = re.sub(r"[^ACGT]", "", (fwd or "").upper())
+    rev = re.sub(r"[^ACGT]", "", (rev or "").upper())
+    if len(fwd) < 10 or len(rev) < 10:
+        return 400, {"error": "both primers must be at least 10 nt of A/C/G/T"}
+    try:
+        maxsize = max(50, min(20000, int(maxsize or 4000)))
+    except (TypeError, ValueError):
+        maxsize = 4000
+    seq = load_genome(gid)
+    if not seq:
+        return 503, {"error": "genome not available on the server"}
+    products = []
+    rcF, rcR = revcomp(fwd), revcomp(rev)
+    for chrom, cseq in seq.items():
+        u = cseq.upper()
+        _amplicons(chrom, u, fwd, rcR, "fwd", "rev", maxsize, "+", products)   # fwd → ...← rev
+        _amplicons(chrom, u, rev, rcF, "rev", "fwd", maxsize, "-", products)   # other strand
+        if len(products) >= 50:
+            break
+    products.sort(key=lambda p: p["size"])
+    return 200, {"genome": gid, "count": len(products), "products": products[:50]}
+
+
+def _parse_fasta(text):
+    """Parse FASTA into [(name, seq)]; tolerates bare sequences (one per line)."""
+    text = (text or "").strip()
+    if not text:
+        return []
+    if not text.lstrip().startswith(">"):
+        return [(f"seq{i+1}", s.strip()) for i, s in enumerate(text.splitlines()) if s.strip()]
+    out, name, buf = [], None, []
+    for line in text.splitlines():
+        if line.startswith(">"):
+            if name is not None:
+                out.append((name, "".join(buf)))
+            name = line[1:].strip() or f"seq{len(out)+1}"
+            buf = []
+        else:
+            buf.append(line.strip())
+    if name is not None:
+        out.append((name, "".join(buf)))
+    return [(n, s) for n, s in out if s]
+
+
+def run_align(fasta_text):
+    recs = _parse_fasta(fasta_text)
+    if len(recs) < 2:
+        return 400, {"error": "Provide at least two sequences (FASTA)."}
+    if len(recs) > msa.MAX_SEQS:
+        recs = recs[:msa.MAX_SEQS]
+    names = [n for n, _ in recs]
+    aligned = msa.align([s for _, s in recs])
+    return 200, {"count": len(aligned), "length": len(aligned[0]) if aligned else 0,
+                 "identity": msa.percent_identity(aligned),
+                 "consensus": msa.consensus(aligned),
+                 "rows": [{"name": names[i], "seq": aligned[i]} for i in range(len(aligned))]}
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -1056,7 +1225,7 @@ API_CACHEABLE_PREFIXES = (
     "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-search",
     "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
     "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
-    "/api/neighborhood",
+    "/api/neighborhood", "/api/region", "/api/ispcr",
 )
 API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=600"
 
@@ -1118,6 +1287,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/bulk"):
             self._handle_bulk()
+            return
+        if self.path.startswith("/api/region"):
+            self._handle_region()
+            return
+        if self.path.startswith("/api/ispcr"):
+            self._handle_ispcr()
             return
         if self.path.startswith("/api/variation"):
             ddb = parse_qs(urlparse(self.path).query).get("ddb", [""])[0]
@@ -1501,6 +1676,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     _BLAST_SEM.release()
         elif self.path == "/api/idmap":
             self._handle_idmap()
+        elif self.path == "/api/align":
+            self._handle_align()
         elif self.path == "/api/enrichment":
             self._handle_enrichment()
         elif self.path == "/api/codon-optimize":
@@ -2270,6 +2447,40 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(data)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_region(self):
+        try:
+            q = parse_qs(urlparse(self.path).query)
+            code, payload = extract_region(
+                q.get("genome", ["d-discoideum-ax4"])[0], q.get("chrom", [""])[0],
+                q.get("start", ["0"])[0], q.get("end", ["0"])[0],
+                q.get("strand", ["+"])[0], q.get("flank", ["0"])[0])
+            self.send_json(code, payload)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_ispcr(self):
+        try:
+            q = parse_qs(urlparse(self.path).query)
+            code, payload = run_ispcr(q.get("genome", ["d-discoideum-ax4"])[0],
+                                      q.get("fwd", [""])[0], q.get("rev", [""])[0],
+                                      q.get("maxsize", ["4000"])[0])
+            self.send_json(code, payload)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_align(self):
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 500000:
+                self.send_json(413, {"error": "Input too large (500 KB max)."})
+                return
+            body = json.loads(self.rfile.read(length)) if length else {}
+            text = body.get("fasta") or body.get("sequences") or ""
+            jid = submit_job(lambda: run_align(text))   # pure-Python but can be slow; queue it
+            self.send_json(202, {"job_id": jid})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 

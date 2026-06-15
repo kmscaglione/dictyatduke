@@ -1610,6 +1610,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initConvert();
+  } else if (tool === "sequence") {
+    toolsShell.innerHTML = renderSequenceToolsPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initSequenceTools();
   }
 }
 
@@ -2049,6 +2054,154 @@ function formatBytes(n) {
   if (!n) return "";
   const mb = n / 1024 / 1024;
   return mb >= 1 ? `${mb.toFixed(1)} MB` : `${Math.max(1, Math.round(n / 1024))} KB`;
+}
+
+function genomeOptionsHTML(selected) {
+  const sp = Object.entries(LOCAL_BLAST_DBS).map(([id, l]) => `<option value="${id}"${id === selected ? " selected" : ""}>${escapeHtml(l)}</option>`).join("");
+  const iso = Object.entries(WILD_ISOLATES).map(([id, l]) => `<option value="${id}">${escapeHtml(l)}</option>`).join("");
+  return `<optgroup label="Species">${sp}</optgroup><optgroup label="Wild isolates (Ahmed et al. 2025)">${iso}</optgroup>`;
+}
+
+function renderSequenceToolsPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Tools</p>
+          <h2>Sequence tools</h2>
+          <p>Pull genomic DNA by coordinates, run in-silico PCR against any hosted genome, and align a set of sequences. Works across the sequenced dictyostelids and the wild isolates.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <h3>Retrieve a genomic region</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <select id="reg-genome" aria-label="Genome" style="${FIELD}">${genomeOptionsHTML("d-discoideum-ax4")}</select>
+          <input id="reg-chrom" aria-label="Contig" placeholder="contig (e.g. NC_007092.3)" style="${FIELD};min-width:200px">
+          <input id="reg-start" aria-label="Start" placeholder="start" inputmode="numeric" style="${FIELD};width:110px">
+          <input id="reg-end" aria-label="End" placeholder="end" inputmode="numeric" style="${FIELD};width:110px">
+          <select id="reg-strand" aria-label="Strand" style="${FIELD}"><option value="+">+ strand</option><option value="-">− strand</option></select>
+          <input id="reg-flank" aria-label="Flank" placeholder="flank bp" inputmode="numeric" value="0" style="${FIELD};width:100px">
+          <button type="button" id="reg-run">Get sequence</button>
+        </div>
+        <div data-region-results style="margin-top:12px"></div>
+
+        <h3 style="margin-top:26px">In-silico PCR</h3>
+        <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">Perfect-match search for amplicons bounded by a primer pair (either orientation).</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <select id="pcr-genome" aria-label="Genome" style="${FIELD}">${genomeOptionsHTML("d-discoideum-ax4")}</select>
+          <input id="pcr-fwd" aria-label="Forward primer" placeholder="forward primer (5'→3')" style="${FIELD};min-width:240px;font-family:ui-monospace,Menlo,monospace">
+          <input id="pcr-rev" aria-label="Reverse primer" placeholder="reverse primer (5'→3')" style="${FIELD};min-width:240px;font-family:ui-monospace,Menlo,monospace">
+          <input id="pcr-max" aria-label="Max product size" placeholder="max bp" inputmode="numeric" value="4000" style="${FIELD};width:100px">
+          <button type="button" id="pcr-run">Find amplicons</button>
+        </div>
+        <div data-pcr-results style="margin-top:12px"></div>
+
+        <h3 style="margin-top:26px">Multiple sequence alignment</h3>
+        <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">Paste 2+ sequences in FASTA (protein or DNA). Center-star alignment — best for related sequences (orthologs, isolates).</p>
+        <textarea id="aln-input" aria-label="Sequences to align (FASTA)" rows="6" placeholder=">seq1&#10;MSEEVVA…&#10;>seq2&#10;MSEDVVA…" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px"><button type="button" id="aln-run">Align</button></div>
+        <div data-aln-results style="margin-top:12px"></div>
+      </div>
+    </article>`;
+}
+
+function initSequenceTools() {
+  const wire = (id, fn) => { const b = document.getElementById(id); if (b) b.addEventListener("click", fn); };
+  wire("reg-run", runRegion);
+  wire("pcr-run", runIsPcr);
+  wire("aln-run", runAlign);
+}
+
+async function runRegion() {
+  const out = document.querySelector("[data-region-results]");
+  const g = document.getElementById("reg-genome").value;
+  const chrom = document.getElementById("reg-chrom").value.trim();
+  const start = document.getElementById("reg-start").value.trim();
+  const end = document.getElementById("reg-end").value.trim();
+  const strand = document.getElementById("reg-strand").value;
+  const flank = document.getElementById("reg-flank").value.trim() || "0";
+  if (!chrom || !start || !end) { out.innerHTML = `<p class="notice">Enter a contig, start, and end.</p>`; return; }
+  out.innerHTML = loadingHTML("Extracting…");
+  let d;
+  try {
+    d = await (await fetch(`/api/region?genome=${encodeURIComponent(g)}&chrom=${encodeURIComponent(chrom)}&start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&strand=${encodeURIComponent(strand)}&flank=${encodeURIComponent(flank)}`)).json();
+  } catch { out.innerHTML = `<p class="notice">Could not fetch the region.</p>`; return; }
+  if (d.error) {
+    out.innerHTML = `<p class="notice">${escapeHtml(d.error)}${d.contigs ? `<br><span style="font-size:.8em;color:var(--muted,#6b7280)">e.g. ${d.contigs.slice(0, 6).map(escapeHtml).join(", ")}</span>` : ""}</p>`;
+    return;
+  }
+  const header = `>${escapeHtml(d.chrom)}:${d.start}-${d.end}(${d.strand}) ${escapeHtml(LOCAL_BLAST_DBS[d.genome] || WILD_ISOLATES[d.genome] || d.genome)} | Dicty@Duke`;
+  const wrapped = d.seq.replace(/(.{60})/g, "$1\n");
+  out.innerHTML = `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${d.length.toLocaleString()} bp</p>
+    <textarea readonly aria-label="Region FASTA" rows="6" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.78rem;${FIELD}">${escapeHtml(header)}\n${escapeHtml(wrapped)}</textarea>`;
+}
+
+async function runIsPcr() {
+  const out = document.querySelector("[data-pcr-results]");
+  const g = document.getElementById("pcr-genome").value;
+  const fwd = document.getElementById("pcr-fwd").value.trim();
+  const rev = document.getElementById("pcr-rev").value.trim();
+  const max = document.getElementById("pcr-max").value.trim() || "4000";
+  if (!fwd || !rev) { out.innerHTML = `<p class="notice">Enter both primers.</p>`; return; }
+  out.innerHTML = loadingHTML("Searching for amplicons…");
+  let d;
+  try {
+    d = await (await fetch(`/api/ispcr?genome=${encodeURIComponent(g)}&fwd=${encodeURIComponent(fwd)}&rev=${encodeURIComponent(rev)}&maxsize=${encodeURIComponent(max)}`)).json();
+  } catch { out.innerHTML = `<p class="notice">In-silico PCR failed.</p>`; return; }
+  if (d.error) { out.innerHTML = `<p class="notice">${escapeHtml(d.error)}</p>`; return; }
+  if (!d.products || !d.products.length) { out.innerHTML = `<p class="notice muted">No amplicons (perfect-match, ≤ ${escapeHtml(max)} bp). Check primers and genome.</p>`; return; }
+  const td = "padding:5px 8px";
+  out.innerHTML = `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${d.products.length} amplicon${d.products.length === 1 ? "" : "s"}</p>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Contig</th><th style="${td}">Position</th><th style="${td}">Size</th><th style="${td}">Strand</th><th style="${td}">Product</th></tr></thead>
+      <tbody>${d.products.map((p) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+        <td style="${td}">${escapeHtml(p.chrom)}</td><td style="${td}">${p.start.toLocaleString()}–${p.end.toLocaleString()}</td>
+        <td style="${td}"><strong>${p.size.toLocaleString()} bp</strong></td><td style="${td}">${p.strand}</td>
+        <td style="${td};font-family:ui-monospace,Menlo,monospace;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${escapeHtml(p.seq)}">${escapeHtml(p.seq.slice(0, 40))}…</td></tr>`).join("")}</tbody></table></div>`;
+}
+
+async function runAlign() {
+  const out = document.querySelector("[data-aln-results]");
+  const fasta = (document.getElementById("aln-input").value || "").trim();
+  if (!fasta) { out.innerHTML = `<p class="notice">Paste at least two sequences.</p>`; return; }
+  out.innerHTML = loadingHTML("Aligning…");
+  let d;
+  try {
+    d = await pollJob(() => fetch("/api/align", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ fasta }) }).then((r) => r.json()));
+  } catch (e) { out.innerHTML = `<p class="notice">${escapeHtml(e.message || "Alignment failed.")}</p>`; return; }
+  if (!d || d.error) { out.innerHTML = `<p class="notice">${escapeHtml((d && d.error) || "Alignment failed.")}</p>`; return; }
+  out.innerHTML = renderAlignment(d);
+  const cp = document.getElementById("aln-copy");
+  if (cp) cp.addEventListener("click", () => {
+    const fa = (d.rows || []).map((r) => `>${r.name}\n${r.seq}`).join("\n");
+    if (navigator.clipboard) navigator.clipboard.writeText(fa);
+    cp.textContent = "Copied ✓";
+  });
+}
+
+function renderAlignment(d) {
+  const rows = d.rows || [];
+  const cons = d.consensus || "";
+  const nameW = Math.min(18, Math.max(6, ...rows.map((r) => r.name.length)));
+  const colorize = rows.length * d.length <= 14000;
+  const cell = (ch, consCh) => {
+    if (!colorize) return ch === "<" ? "&lt;" : ch;
+    if (ch === "-") return `<span style="color:#cbd5e1">-</span>`;
+    if (ch === consCh) return `<span style="background:#e7f3ea">${escapeHtml(ch)}</span>`;
+    return `<span style="background:#fde7d6">${escapeHtml(ch)}</span>`;
+  };
+  const line = (name, seq) => {
+    const label = escapeHtml((name || "").slice(0, nameW).padEnd(nameW, " "));
+    const body = colorize ? [...seq].map((ch, i) => cell(ch, cons[i])).join("") : escapeHtml(seq);
+    return `<div style="white-space:pre"><span style="color:var(--muted,#6b7280)">${label}</span> ${body}</div>`;
+  };
+  return `
+    <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${rows.length} sequences · ${d.length} columns · ${d.identity}% mean pairwise identity
+      <button type="button" id="aln-copy" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Copy aligned FASTA</button></p>
+    <div style="overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:.74rem;line-height:1.5;border:1px solid var(--line,#d7dee0);border-radius:8px;padding:10px;background:#fff">
+      ${rows.map((r) => line(r.name, r.seq)).join("")}
+      <div style="white-space:pre;border-top:1px solid var(--line,#eef2f3);margin-top:4px;padding-top:4px"><span style="color:var(--muted,#6b7280)">${"consensus".slice(0, nameW).padEnd(nameW, " ")}</span> ${colorize ? escapeHtml(cons) : escapeHtml(cons)}</div>
+    </div>`;
 }
 
 function renderConvertPage() {
@@ -2989,6 +3142,19 @@ function renderGenomeBrowser() {
           </select>
           <span id="browser-gff-note" style="font-size:0.8125rem;color:var(--muted,#6b7280)"></span>
         </div>
+        <details style="margin-bottom:12px">
+          <summary style="cursor:pointer;font-size:0.875rem;font-weight:700">Add your own track</summary>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <input id="track-url" aria-label="Track URL" placeholder="track URL — BED, GFF3, VCF, bigWig, BAM…" style="${FIELD};min-width:300px;flex:1">
+            <input id="track-name" aria-label="Track name" placeholder="track name (optional)" style="${FIELD};width:170px">
+            <select id="track-format" aria-label="Track format" style="${FIELD}">
+              <option value="">auto-detect</option><option value="bed">BED</option><option value="gff3">GFF3</option><option value="gtf">GTF</option><option value="vcf">VCF</option><option value="bigwig">bigWig</option><option value="bedgraph">bedGraph</option><option value="bam">BAM</option><option value="wig">WIG</option>
+            </select>
+            <button type="button" id="track-add">Add track</button>
+          </div>
+          <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Your browser fetches the file directly from the URL, so it must be publicly reachable and CORS-enabled. Indexed formats (BAM, VCF.gz) need their index (.bai / .tbi) at the same location.</p>
+          <div id="track-msg" style="font-size:0.8125rem;margin-top:6px"></div>
+        </details>
         <div id="igv-container" class="igv-wrap">
           <div class="igv-loading"><span class="spinner" aria-hidden="true"></span>Loading genome browser…</div>
         </div>
@@ -3058,6 +3224,24 @@ function initGenomeBrowser() {
   };
 
   const startWithOrg = browserOrganisms[0];
+
+  const addBtn = document.getElementById("track-add");
+  if (addBtn) addBtn.addEventListener("click", () => {
+    const url = (document.getElementById("track-url").value || "").trim();
+    const name = (document.getElementById("track-name").value || "").trim();
+    const fmt = document.getElementById("track-format").value;
+    const msg = document.getElementById("track-msg");
+    if (!url) { msg.style.color = "#b91c1c"; msg.textContent = "Enter a track URL."; return; }
+    if (!igvBrowser) { msg.style.color = "#b91c1c"; msg.textContent = "Browser still loading — try again in a moment."; return; }
+    const cfg = { url, name: name || url.split("/").pop().split("?")[0] };
+    if (fmt) cfg.format = fmt;
+    if (/\.(bam|cram)(\?|$)/i.test(url)) cfg.indexURL = url + ".bai";
+    else if (/\.(vcf|bed|gff3?|gtf)\.gz(\?|$)/i.test(url)) cfg.indexURL = url + ".tbi";
+    msg.style.color = "var(--muted,#6b7280)"; msg.textContent = "Loading track…";
+    Promise.resolve(igvBrowser.loadTrack(cfg))
+      .then(() => { msg.style.color = "#047857"; msg.textContent = `Added “${cfg.name}” ✓`; })
+      .catch(() => { msg.style.color = "#b91c1c"; msg.textContent = "Could not load that track — check the URL, format, and that the host allows CORS."; });
+  });
 
   const run = () => {
     loadBrowser(startWithOrg);
@@ -7095,7 +7279,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -7440,7 +7624,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -7657,6 +7841,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Compare expression", href: "/tools/expression", kw: "expression rna-seq chart compare profile" },
   { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
   { kind: "Tool", label: "Gene ID converter", href: "/tools/convert", sub: "Symbol ↔ DDB_G ↔ UniProt ↔ NCBI", kw: "convert id mapping symbol ddb uniprot ncbi validate batch" },
+  { kind: "Tool", label: "Sequence tools", href: "/tools/sequence", sub: "Region retrieval, in-silico PCR, alignment", kw: "sequence region coordinates in-silico pcr amplicon primer alignment msa align" },
   { kind: "Tool", label: "REST API docs", href: "/tools/api", kw: "api rest json endpoint" },
   { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },

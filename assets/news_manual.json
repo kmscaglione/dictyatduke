@@ -1,60 +1,67 @@
 {
-  "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
-  "items": [
-    {
-      "date": "2026-06-10",
-      "tag": "data",
-      "title": "Annotations now refresh automatically",
-      "body": "Human orthologs, the UniProt accession map, and protein-domain architecture now update each month from UniProt, OMA, and InterPro, so the data stays current without manual rebuilds. Protein domains are precomputed for faster loading on the Structures tab, with a live lookup as a fallback.",
-      "link": "/data"
-    },
-    {
-      "date": "2026-06-08",
-      "tag": "update",
-      "title": "A much faster genome browser",
-      "body": "The genome browser now opens in about a second instead of ten — gene annotations are served from indexed files, so only the region you're viewing is fetched. Same data, far less waiting.",
-      "link": "/tools/genome-browser"
-    },
-    {
-      "date": "2026-06-07",
-      "tag": "new",
-      "title": "Command palette, gene basket, and advanced search",
-      "body": "Press ⌘K (or /) to jump to any gene, page, or tool. Collect genes into a basket and send the whole set into enrichment or expression tools. And filter the catalog by phenotype, human ortholog, disease link, or expression peak in the new advanced finder.",
-      "link": "/search/advanced"
-    },
-    {
-      "date": "2026-06-06",
-      "tag": "new",
-      "title": "Lab tools: CRISPR guides, qPCR primers, and codon optimization",
-      "body": "Design SpCas9 guides for a gene (with genome off-target checking), qPCR primers over its cDNA, and codon-optimize a sequence for Dictyostelium's AT-rich codon usage. Under Useful tools → Lab tools.",
-      "link": "/tools/lab"
-    },
-    {
-      "date": "2026-06-06",
-      "tag": "new",
-      "title": "Compare expression and find co-expressed genes",
-      "body": "Overlay the developmental RNA-seq profiles of several genes, and see the most co-expressed genes right on each gene record. RNA-seq is also now an overlay track in the genome browser.",
-      "link": "/tools/expression"
-    },
-    {
-      "date": "2026-06-06",
-      "tag": "data",
-      "title": "Human disease models",
-      "body": "Gene records now show human orthologs and their disease associations, plus a browsable Dictyostelium disease-models page — a starting point for using the amoeba as a model system.",
-      "link": "/community/disease-models"
-    },
-    {
-      "date": "2026-06-05",
-      "tag": "new",
-      "title": "AI-suggested annotations (clearly badged)",
-      "body": "A third, machine-generated curation layer offers AI summaries and GO suggestions for many genes. It is unreviewed and always badged ‘AI’ — a starting point, never a substitute for curated evidence.",
-      "link": "/gene/cln5"
-    },
-    {
-      "date": "2026-06-05",
-      "tag": "update",
-      "title": "Welcome to Dicty@Duke (beta)",
-      "body": "A modern interface over Dictyostelid genomes and curation: searchable gene records with structures and expression, a genome browser, BLAST, GO/phenotype enrichment, and a public REST API. Feedback and corrections welcome."
-    }
-  ]
+    "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
+    "items": [
+        {
+            "date": "2026-06-15",
+            "tag": "data",
+            "title": "New dictyostelid genomes: wild isolates and two more species",
+            "body": "Genome assemblies and annotations from Ahmed et al. 2025 (PNAS) are now on the site. Two new species — D. citrinum and D. dimigraforme — join the comparative tools, and a panel of wild D. discoideum isolates (AX2-214, CR116C, OT3A, M4B, S6B) is now available alongside them. Search any of them with BLAST, view them in the genome browser, or grab the FASTA and annotations on the genome downloads page. Released under CC BY 4.0.",
+            "paper": "https://www.pnas.org/doi/10.1073/pnas.2520843122"
+        },
+        {
+            "date": "2026-06-10",
+            "tag": "data",
+            "title": "Annotations now refresh automatically",
+            "body": "Human orthologs, the UniProt accession map, and protein-domain architecture now update each month from UniProt, OMA, and InterPro, so the data stays current without manual rebuilds. Protein domains are precomputed for faster loading on the Structures tab, with a live lookup as a fallback.",
+            "link": "/data"
+        },
+        {
+            "date": "2026-06-08",
+            "tag": "update",
+            "title": "A much faster genome browser",
+            "body": "The genome browser now opens in about a second instead of ten — gene annotations are served from indexed files, so only the region you're viewing is fetched. Same data, far less waiting.",
+            "link": "/tools/genome-browser"
+        },
+        {
+            "date": "2026-06-07",
+            "tag": "new",
+            "title": "Command palette, gene basket, and advanced search",
+            "body": "Press ⌘K (or /) to jump to any gene, page, or tool. Collect genes into a basket and send the whole set into enrichment or expression tools. And filter the catalog by phenotype, human ortholog, disease link, or expression peak in the new advanced finder.",
+            "link": "/search/advanced"
+        },
+        {
+            "date": "2026-06-06",
+            "tag": "new",
+            "title": "Lab tools: CRISPR guides, qPCR primers, and codon optimization",
+            "body": "Design SpCas9 guides for a gene (with genome off-target checking), qPCR primers over its cDNA, and codon-optimize a sequence for Dictyostelium's AT-rich codon usage. Under Useful tools → Lab tools.",
+            "link": "/tools/lab"
+        },
+        {
+            "date": "2026-06-06",
+            "tag": "new",
+            "title": "Compare expression and find co-expressed genes",
+            "body": "Overlay the developmental RNA-seq profiles of several genes, and see the most co-expressed genes right on each gene record. RNA-seq is also now an overlay track in the genome browser.",
+            "link": "/tools/expression"
+        },
+        {
+            "date": "2026-06-06",
+            "tag": "data",
+            "title": "Human disease models",
+            "body": "Gene records now show human orthologs and their disease associations, plus a browsable Dictyostelium disease-models page — a starting point for using the amoeba as a model system.",
+            "link": "/community/disease-models"
+        },
+        {
+            "date": "2026-06-05",
+            "tag": "new",
+            "title": "AI-suggested annotations (clearly badged)",
+            "body": "A third, machine-generated curation layer offers AI summaries and GO suggestions for many genes. It is unreviewed and always badged ‘AI’ — a starting point, never a substitute for curated evidence.",
+            "link": "/gene/cln5"
+        },
+        {
+            "date": "2026-06-05",
+            "tag": "update",
+            "title": "Welcome to Dicty@Duke (beta)",
+            "body": "A modern interface over Dictyostelid genomes and curation: searchable gene records with structures and expression, a genome browser, BLAST, GO/phenotype enrichment, and a public REST API. Feedback and corrections welcome."
+        }
+    ]
 }

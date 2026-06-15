@@ -7332,6 +7332,7 @@ async function loadNews() {
           <div class="news-meta"><span class="news-date">${escapeHtml(it.date || "")}</span>${it.tag ? `<span class="news-tag" style="background:${color}">${escapeHtml(it.tag)}</span>` : ""}</div>
           <h3>${title}</h3>
           <p>${escapeHtml(it.body || "")}</p>
+          ${it.paper ? `<p style="margin-top:6px"><a class="text-link" href="${escapeHtml(it.paper)}" target="_blank" rel="noopener">Read the paper ↗</a></p>` : ""}
         </article>`;
       }).join("")}
     </div>`;

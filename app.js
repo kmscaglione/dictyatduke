@@ -7383,6 +7383,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const newsLink = event.target.closest('a[href="/news"]');
+  if (newsLink) {
+    event.preventDefault();
+    openNews();
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -7664,6 +7671,10 @@ function hydrateFromRoute() {
     openCite(false);
     return;
   }
+  if (pathParts[0] === "news") {
+    openNews(false);
+    return;
+  }
   if (pathParts[0] === "search" && pathParts[1] === "advanced") {
     openAdvancedFinder(false);
     return;
@@ -7770,21 +7781,53 @@ async function loadNews() {
   if (!items.length) { el.setAttribute("hidden", ""); return; }
   el.hidden = !isHomeView;
   el.innerHTML = `
-    <div class="news-head"><p class="eyebrow">Dicty@Duke</p><h2>News &amp; updates</h2></div>
+    <div class="news-head"><p class="eyebrow">Dicty@Duke</p><h2><a class="text-link news-all-link" href="/news">News &amp; updates</a></h2></div>
     <div class="news-list">
-      ${items.slice(0, 6).map((it) => {
-        const color = NEWS_TAG_COLORS[it.tag] || "#5b6678";
-        const title = it.link
-          ? `<a class="text-link" href="${escapeHtml(it.link)}">${escapeHtml(it.title)}</a>`
-          : escapeHtml(it.title);
-        return `<article class="news-item">
-          <div class="news-meta"><span class="news-date">${escapeHtml(it.date || "")}</span>${it.tag ? `<span class="news-tag" style="background:${color}">${escapeHtml(it.tag)}</span>` : ""}</div>
-          <h3>${title}</h3>
-          <p>${escapeHtml(it.body || "")}</p>
-          ${it.paper ? `<p style="margin-top:6px"><a class="text-link" href="${escapeHtml(it.paper)}" target="_blank" rel="noopener">Read the paper ↗</a></p>` : ""}
-        </article>`;
-      }).join("")}
-    </div>`;
+      ${items.slice(0, 6).map(newsItemHTML).join("")}
+    </div>
+    <p style="margin-top:12px"><a class="text-link" href="/news">All news &amp; updates →</a></p>`;
+}
+
+function newsItemHTML(it) {
+  const color = NEWS_TAG_COLORS[it.tag] || "#5b6678";
+  const title = it.link
+    ? `<a class="text-link" href="${escapeHtml(it.link)}">${escapeHtml(it.title)}</a>`
+    : escapeHtml(it.title);
+  return `<article class="news-item">
+    <div class="news-meta"><span class="news-date">${escapeHtml(it.date || "")}</span>${it.tag ? `<span class="news-tag" style="background:${color}">${escapeHtml(it.tag)}</span>` : ""}</div>
+    <h3>${title}</h3>
+    <p>${escapeHtml(it.body || "")}</p>
+    ${it.paper ? `<p style="margin-top:6px"><a class="text-link" href="${escapeHtml(it.paper)}" target="_blank" rel="noopener">Read the paper ↗</a></p>` : ""}
+  </article>`;
+}
+
+function openNews(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/news");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Dicty@Duke</p>
+        <h2>News &amp; updates</h2>
+        <p>Every site announcement and data update, newest first.</p>
+      </div></header>
+      <div class="record-body"><div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div></div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadAllNews();
+}
+
+async function loadAllNews() {
+  const el = document.querySelector("[data-news-all]");
+  if (!el) return;
+  try {
+    const r = await fetch("/assets/news.json");
+    const data = r.ok ? await r.json() : null;
+    const items = (data && data.items) || [];
+    el.innerHTML = items.length ? items.map(newsItemHTML).join("") : `<p class="notice muted">No news yet.</p>`;
+  } catch { el.innerHTML = `<p class="notice">Could not load news right now.</p>`; }
 }
 
 async function loadRecentPapers() {
@@ -7858,6 +7901,7 @@ const CMDK_TARGETS = [
   { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
   { kind: "Community", label: "Dicty Stock Center", href: "https://dictybase.dev/stockcenter", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
+  { kind: "Page", label: "News & updates", href: "/news", kw: "news updates announcements changelog history releases" },
   { kind: "Page", label: "How to cite", href: "/cite", kw: "cite citation doi bibtex reference how to cite release version" },
 ];
 

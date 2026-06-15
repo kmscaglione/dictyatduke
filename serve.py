@@ -180,6 +180,8 @@ _ROUTE_META = {
         "New to Dictyostelium? Why it is a powerful model organism and how to get started using it in your lab."),
     "/data": ("Data and provenance",
         "Where Dicty@Duke's data comes from: sources, licenses, versioning, and how the site is built."),
+    "/news": ("News and updates",
+        "All Dicty@Duke announcements and data updates, newest first."),
     "/cite": ("How to cite",
         "How to cite the Dicty@Duke data release: version, DOI, citation text, and BibTeX, plus the primary data sources to credit."),
     "/community/disease-models": ("Disease models",
@@ -1618,9 +1620,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         key = (gm["mtime"], base)
         xml = Handler._SITEMAP_CACHE.get(key)
         if xml is None:
-            urls = ["/", "/start", "/education", "/data", "/cite", "/tools/blast",
-                    "/tools/enrichment", "/tools/expression", "/tools/lab",
-                    "/tools/api", "/community/disease-models", "/search/advanced"]
+            urls = ["/", "/start", "/education", "/data", "/cite", "/news",
+                    "/tools/blast", "/tools/enrichment", "/tools/expression",
+                    "/tools/lab", "/tools/sequence", "/tools/convert",
+                    "/tools/downloads", "/tools/api", "/tools/genome-browser",
+                    "/community/disease-models", "/search/advanced"]
             parts = ['<?xml version="1.0" encoding="UTF-8"?>',
                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
             for u in urls:

@@ -7432,6 +7432,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const newsArchiveLink = event.target.closest('a[href="/news/archive"]');
+  if (newsArchiveLink) {
+    event.preventDefault();
+    openNewsArchive();
+    return;
+  }
+
   const newsLink = event.target.closest('a[href="/news"]');
   if (newsLink) {
     event.preventDefault();
@@ -7735,7 +7742,8 @@ function hydrateFromRoute() {
     return;
   }
   if (pathParts[0] === "news") {
-    openNews(false);
+    if (pathParts[1] === "archive") openNewsArchive(false);
+    else openNews(false);
     return;
   }
   if (pathParts[0] === "tools" && !pathParts[1]) {
@@ -7929,20 +7937,44 @@ function openNews(updateRoute = true) {
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Dicty@Duke</p>
         <h2>News &amp; updates</h2>
-        <p>Every site announcement and data update, newest first. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
+        <p>The latest site announcements and data updates. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
       </div></header>
-      <div class="record-body"><div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div></div>
+      <div class="record-body">
+        <div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
+        <p style="margin-top:16px;border-top:1px solid var(--line,#d7dee0);padding-top:12px"><a class="text-link" href="/news/archive">Older posts — browse the full news archive →</a></p>
+      </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
   scrollToY(toolsShell.offsetTop - 60);
-  loadAllNews();
+  loadNewsInto("[data-news-all]", "/assets/news.json");
 }
 
-async function loadAllNews() {
-  const el = document.querySelector("[data-news-all]");
+function openNewsArchive(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/news/archive");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Dicty@Duke</p>
+        <h2>News archive</h2>
+        <p>Every post ever made, newest first. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
+      </div></header>
+      <div class="record-body">
+        <div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
+        <p style="margin-top:16px"><a class="text-link" href="/news">← Back to the latest news</a></p>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadNewsInto("[data-news-all]", "/assets/news_archive.json");
+}
+
+async function loadNewsInto(sel, url) {
+  const el = document.querySelector(sel);
   if (!el) return;
   try {
-    const r = await fetch("/assets/news.json");
+    const r = await fetch(url);
     const data = r.ok ? await r.json() : null;
     const items = (data && data.items) || [];
     el.innerHTML = items.length ? items.map(newsItemHTML).join("") : `<p class="notice muted">No news yet.</p>`;

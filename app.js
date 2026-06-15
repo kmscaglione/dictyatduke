@@ -1411,7 +1411,7 @@ function renderRecord() {
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
-          <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
+          <div class="record-actions">${basketToggleButtonHTML(gene)}${geneLocus(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
         </div>
         ${gene.uniprot ? `<div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}"></div>` : ""}
       </header>
@@ -1483,6 +1483,7 @@ function loadTabData(gene, tab) {
       loadPubMedResults(gene);
       break;
     case "Structures":
+      loadProteinProps(gene);
       loadDomains(gene);
       loadConservation(gene);
       loadPDBResults(gene);
@@ -3117,6 +3118,24 @@ const browserOrganisms = [
 ];
 
 let igvBrowser = null;
+let pendingBrowserLocus = null;   // set by viewInBrowser(); consumed on next browser load
+
+// Parse a gene record's location ("NC_007088.5: 1,696,443-1,697,768") into the
+// AX4 RefSeq locus the genome browser uses. Returns null when no coordinates
+// (e.g. "curated locus") or a non-AX4 contig.
+function geneLocus(gene) {
+  const m = (gene && gene.location || "").match(/^(N[CW]_[\d.]+)\s*:\s*([\d,]+)\s*-\s*([\d,]+)/);
+  if (!m) return null;
+  return { chrom: m[1], start: parseInt(m[2].replace(/,/g, ""), 10), end: parseInt(m[3].replace(/,/g, ""), 10) };
+}
+
+function viewInBrowser(gene) {
+  const l = geneLocus(gene);
+  if (!l) return;
+  const pad = 2000;
+  pendingBrowserLocus = `${l.chrom}:${Math.max(1, l.start - pad)}-${l.end + pad}`;
+  openTool("genome-browser");
+}
 
 function renderGenomeBrowser() {
   const opt = (o) => `<option value="${escapeHtml(o.id)}">${escapeHtml(o.label)} · ${escapeHtml(o.assembly)}</option>`;
@@ -3210,13 +3229,19 @@ function initGenomeBrowser() {
   const note = document.getElementById("browser-gff-note");
   if (!container || !select) return;
 
+  igvBrowser = null;   // container was just re-rendered; build a fresh instance
+
   const loadBrowser = (org) => {
     if (note) note.textContent = org.gffURL ? "" : "No gene annotations available for this organism.";
+    const locus = pendingBrowserLocus; pendingBrowserLocus = null;
     if (igvBrowser) {
-      igvBrowser.loadGenome(buildIGVOptions(org).genome).catch(() => {});
+      igvBrowser.loadGenome(buildIGVOptions(org).genome)
+        .then(() => { if (locus) igvBrowser.search(locus); }).catch(() => {});
       return;
     }
-    igv.createBrowser(container, buildIGVOptions(org))
+    const opts = buildIGVOptions(org);
+    if (locus) opts.locus = locus;
+    igv.createBrowser(container, opts)
       .then((b) => { igvBrowser = b; })
       .catch(() => {
         container.innerHTML = `<p style="padding:16px;color:var(--muted,#6b7280)">Browser could not be loaded.</p>`;
@@ -4821,6 +4846,7 @@ function renderTab(gene, tab) {
       return `<li><strong>${label}</strong><span>${escapeHtml(id)} · ${escapeHtml(detail)}</span></li>`;
     }).join("");
     return `
+      <div class="data-block" data-protein-props></div>
       <div class="data-block">
         <h3>Domain architecture <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— InterPro / Pfam</span></h3>
         <div data-domains>${gene.uniprot ? `<p class="notice muted">Loading domains for ${escapeHtml(gene.uniprot)}…</p>` : `<p class="notice muted">No UniProt accession for this gene.</p>`}</div>
@@ -6993,6 +7019,29 @@ async function runConservation(gene) {
   if (btn) { btn.disabled = false; btn.textContent = "Re-run"; }
 }
 
+async function loadProteinProps(gene) {
+  const el = document.querySelector("[data-protein-props]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  el.innerHTML = `<h3>Protein properties</h3><p class="notice muted">Computing…</p>`;
+  let d;
+  try { d = await (await fetch(`/api/protein-props?ddb=${encodeURIComponent(ddb)}`)).json(); }
+  catch { el.innerHTML = ""; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Structures") return;
+  if (!d || d.error || !d.length) { el.innerHTML = ""; return; }
+  const water = d.gravy > 0 ? "hydrophobic" : "hydrophilic";
+  const item = (v, l) => `<span style="display:inline-block"><strong style="font-size:1.05rem">${v}</strong> <span style="color:var(--muted,#6b7280);font-size:.8125rem">${l}</span></span>`;
+  el.innerHTML = `
+    <h3>Protein properties <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— computed from the sequence</span></h3>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:baseline">
+      ${item(d.length.toLocaleString(), "residues")}
+      ${item(d.mw_kda + " kDa", "mol. weight")}
+      ${item(d.pi, "isoelectric point")}
+      ${item(d.gravy, `GRAVY · ${water}`)}
+    </div>`;
+}
+
 async function loadDomains(gene) {
   const el = document.querySelector("[data-domains]");
   if (!el) return;
@@ -7390,6 +7439,20 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const viewBrowserBtn = event.target.closest("[data-view-browser]");
+  if (viewBrowserBtn) {
+    event.preventDefault();
+    if (state.activeGene) viewInBrowser(state.activeGene);
+    return;
+  }
+
+  const toolsIndexLink = event.target.closest('a[href="/tools"]');
+  if (toolsIndexLink) {
+    event.preventDefault();
+    openToolsIndex();
+    return;
+  }
+
   const researchLink = event.target.closest('a[href^="/research/"]');
   if (researchLink) {
     document.querySelectorAll(".research-dropdown.open").forEach((dropdown) => {
@@ -7675,6 +7738,10 @@ function hydrateFromRoute() {
     openNews(false);
     return;
   }
+  if (pathParts[0] === "tools" && !pathParts[1]) {
+    openToolsIndex(false);
+    return;
+  }
   if (pathParts[0] === "search" && pathParts[1] === "advanced") {
     openAdvancedFinder(false);
     return;
@@ -7801,6 +7868,58 @@ function newsItemHTML(it) {
   </article>`;
 }
 
+const TOOLS_INDEX = [
+  ["Search & identifiers", [
+    ["Gene ID converter", "/tools/convert", "Map symbols, DDB_G, UniProt, and NCBI ids in one table."],
+    ["Advanced gene finder", "/search/advanced", "Filter the catalog by phenotype, ortholog, disease, or expression peak."],
+  ]],
+  ["Sequence & alignment", [
+    ["Sequence tools", "/tools/sequence", "Region retrieval, in-silico PCR, and multiple sequence alignment."],
+    ["BLAST", "/tools/blast", "Search a sequence against the dictyostelid genomes and isolates."],
+  ]],
+  ["Genome", [
+    ["Genome browser", "/tools/genome-browser", "IGV across the sequenced genomes — load your own tracks too."],
+    ["Downloads", "/tools/downloads", "Genome assemblies, annotations, and whole-database TSV tables."],
+  ]],
+  ["Expression & function", [
+    ["Compare expression", "/tools/expression", "Overlay developmental RNA-seq profiles of several genes."],
+    ["GO / phenotype enrichment", "/tools/enrichment", "Over-representation analysis for a gene list."],
+    ["Developmental proteome", "/tools/proteomics", "4,502 proteins across five life-cycle stages."],
+    ["Insoluble proteome", "/tools/heatstress", "8,043 proteins — heat stress and development."],
+  ]],
+  ["Bench & workspace", [
+    ["Lab tools", "/tools/lab", "CRISPR guides, qPCR primers, codon optimizer, restriction sites, ORFs."],
+    ["Gene basket", "/tools/basket", "Collect genes and send the whole set to any tool."],
+  ]],
+  ["Developers", [
+    ["REST API", "/tools/api", "JSON API over the same data the site uses."],
+  ]],
+];
+
+function renderToolsIndex() {
+  return `<article class="record-card research-card">
+    <header class="record-header"><div class="record-title">
+      <p class="eyebrow">Tools</p><h2>All tools</h2>
+      <p>Everything you can do on Dicty@Duke, in one place.</p>
+    </div></header>
+    <div class="record-body">
+      ${TOOLS_INDEX.map(([group, items]) => `
+        <h3 style="margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line,#d7dee0)">${group}</h3>
+        <div class="source-links" aria-label="${escapeHtml(group)} tools">
+          ${items.map(([label, href, desc]) => `<a class="source-link" href="${href}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(desc)}</span></a>`).join("")}
+        </div>`).join("")}
+    </div></article>`;
+}
+
+function openToolsIndex(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/tools");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = renderToolsIndex();
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+}
+
 function openNews(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/news");
@@ -7810,7 +7929,7 @@ function openNews(updateRoute = true) {
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Dicty@Duke</p>
         <h2>News &amp; updates</h2>
-        <p>Every site announcement and data update, newest first.</p>
+        <p>Every site announcement and data update, newest first. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
       </div></header>
       <div class="record-body"><div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div></div>
     </article>`;
@@ -7885,6 +8004,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
   { kind: "Tool", label: "Gene ID converter", href: "/tools/convert", sub: "Symbol ↔ DDB_G ↔ UniProt ↔ NCBI", kw: "convert id mapping symbol ddb uniprot ncbi validate batch" },
   { kind: "Tool", label: "Sequence tools", href: "/tools/sequence", sub: "Region retrieval, in-silico PCR, alignment", kw: "sequence region coordinates in-silico pcr amplicon primer alignment msa align" },
+  { kind: "Page", label: "All tools", href: "/tools", sub: "Browse every analysis tool", kw: "tools index all tools overview list" },
   { kind: "Tool", label: "REST API docs", href: "/tools/api", kw: "api rest json endpoint" },
   { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },

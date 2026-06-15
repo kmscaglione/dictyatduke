@@ -182,6 +182,8 @@ _ROUTE_META = {
         "Where Dicty@Duke's data comes from: sources, licenses, versioning, and how the site is built."),
     "/news": ("News and updates",
         "All Dicty@Duke announcements and data updates, newest first."),
+    "/tools": ("All tools",
+        "Every Dicty@Duke analysis tool in one place: BLAST, genome browser, enrichment, sequence tools, lab tools, and more."),
     "/cite": ("How to cite",
         "How to cite the Dicty@Duke data release: version, DOI, citation text, and BibTeX, plus the primary data sources to credit."),
     "/community/disease-models": ("Disease models",
@@ -1227,7 +1229,7 @@ API_CACHEABLE_PREFIXES = (
     "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-search",
     "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
     "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
-    "/api/neighborhood", "/api/region", "/api/ispcr",
+    "/api/neighborhood", "/api/region", "/api/ispcr", "/api/protein-props",
 )
 API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=600"
 
@@ -1295,6 +1297,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/ispcr"):
             self._handle_ispcr()
+            return
+        if self.path.startswith("/api/protein-props"):
+            self._handle_protein_props()
             return
         if self.path.startswith("/api/variation"):
             ddb = parse_qs(urlparse(self.path).query).get("ddb", [""])[0]
@@ -1410,6 +1415,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._serve_robots()
         if raw == "/sitemap.xml":
             return self._serve_sitemap()
+        if raw == "/news.xml":
+            return self._serve_news_feed()
         # Serve the SPA shell (with cache-busted asset URLs) for the root, an
         # explicit index.html, or any non-static client route. Real static
         # files fall through to the default handler.
@@ -1614,13 +1621,52 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     # Cached sitemap body, keyed by (gene_index mtime, base url).
     _SITEMAP_CACHE = {}
 
+    def _serve_news_feed(self):
+        """Atom feed of the news items (assets/news.json), for subscribers."""
+        base = _base_url(self) or ""
+        try:
+            items = (json.loads((ASSETS / "news.json").read_text()) or {}).get("items", [])
+        except (OSError, ValueError):
+            items = []
+        updated = (items[0]["date"] if items and items[0].get("date") else "1970-01-01") + "T00:00:00Z"
+        parts = ['<?xml version="1.0" encoding="UTF-8"?>',
+                 '<feed xmlns="http://www.w3.org/2005/Atom">',
+                 "<title>Dicty@Duke — News &amp; updates</title>",
+                 f'<link href="{_esc(base)}/news"/>',
+                 f'<link rel="self" type="application/atom+xml" href="{_esc(base)}/news.xml"/>',
+                 f"<id>{_esc(base)}/news</id>",
+                 f"<updated>{updated}</updated>"]
+        for it in items:
+            link = base + (it.get("link") or "/news")
+            ident = base + "/news#" + quote((it.get("title") or "")[:80])
+            when = (it.get("date") or "1970-01-01") + "T00:00:00Z"
+            body = it.get("body", "")
+            if it.get("paper"):
+                body += f" (paper: {it['paper']})"
+            parts += ["<entry>",
+                      f"<title>{_esc(it.get('title', ''))}</title>",
+                      f'<link href="{_esc(link)}"/>',
+                      f"<id>{_esc(ident)}</id>",
+                      f"<updated>{when}</updated>",
+                      (f"<category term=\"{_esc(it['tag'])}\"/>" if it.get("tag") else ""),
+                      f"<summary>{_esc(body)}</summary>",
+                      "</entry>"]
+        parts.append("</feed>")
+        body = ("\n".join(p for p in parts if p)).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/atom+xml; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "public, max-age=3600")
+        self.end_headers()
+        self.wfile.write(body)
+
     def _serve_sitemap(self):
         base = _base_url(self)
         gm = _load_gene_meta()
         key = (gm["mtime"], base)
         xml = Handler._SITEMAP_CACHE.get(key)
         if xml is None:
-            urls = ["/", "/start", "/education", "/data", "/cite", "/news",
+            urls = ["/", "/start", "/education", "/data", "/cite", "/news", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
                     "/tools/lab", "/tools/sequence", "/tools/convert",
                     "/tools/downloads", "/tools/api", "/tools/genome-browser",
@@ -2472,6 +2518,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                       q.get("fwd", [""])[0], q.get("rev", [""])[0],
                                       q.get("maxsize", ["4000"])[0])
             self.send_json(code, payload)
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_protein_props(self):
+        try:
+            ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0] or "").strip().upper()
+            if not re.match(r"^DDB_G\d+$", ddb):
+                self.send_json(400, {"error": "bad or missing ddb"})
+                return
+            prot = (extract_sequence(ddb, "protein") or "").strip()
+            if not prot:
+                self.send_json(404, {"error": "no protein for this gene"})
+                return
+            self.send_json(200, bench.protein_props(prot))
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 

@@ -84,5 +84,21 @@ class OrfTest(unittest.TestCase):
         self.assertEqual(res["orfs"][0]["protein"], "M" + "K" * 35)
 
 
+class ProteinPropsTest(unittest.TestCase):
+    def test_basic(self):
+        p = bench.protein_props("MKKKDDDE")
+        self.assertEqual(p["length"], 8)
+        self.assertGreater(p["mw"], 900)
+        self.assertIn("pi", p)
+        self.assertIn("gravy", p)
+
+    def test_charge(self):
+        self.assertGreater(bench.protein_props("KKKKKK")["pi"], 9)
+        self.assertLess(bench.protein_props("DDDDDD")["pi"], 5)
+
+    def test_empty(self):
+        self.assertIn("error", bench.protein_props("XXX---"))
+
+
 if __name__ == "__main__":
     unittest.main()

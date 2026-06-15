@@ -5050,8 +5050,13 @@ async function fetchPubMedResults(gene) {
       title: item.title || "Untitled PubMed record",
       journal: item.fulljournalname || item.source || "PubMed",
       date: item.pubdate || "",
+      // PubMed's normalized sort date ("YYYY/MM/DD …"); lexically sortable.
+      sortDate: item.sortpubdate || item.epubdate || item.pubdate || "",
       authors: (item.authors || []).slice(0, 3).map((author) => author.name).filter(Boolean).join(", ")
     }));
+  // Strictly most-recent first (PubMed's own pub-date sort doesn't always match
+  // the human-readable pubdate, which can leave a few entries out of order).
+  papers.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
   pubMedCache.set(gene.id, papers);
   return papers;
 }

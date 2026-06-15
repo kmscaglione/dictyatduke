@@ -3,6 +3,13 @@
   "items": [
     {
       "date": "2026-06-15",
+      "tag": "new",
+      "title": "New tools: ID converter, bulk downloads, synteny & variation",
+      "body": "Four additions for working with the data. A gene ID converter maps a mixed list of symbols, DDB_G, UniProt, and NCBI ids into one table. Whole-database TSV downloads (genes, GO, phenotypes, human orthologs) are now on the downloads page. And every gene record's Orthologs tab gains a genomic-neighborhood view that checks whether local gene order is conserved across the dictyostelids, plus a natural-variation panel comparing the protein across the wild D. discoideum isolates.",
+      "link": "/tools/convert"
+    },
+    {
+      "date": "2026-06-15",
       "tag": "data",
       "title": "New dictyostelid genomes: wild isolates and two more species",
       "body": "Genome assemblies and annotations from Ahmed et al. 2025 (PNAS) are now on the site. Two new species — D. citrinum and D. dimigraforme — join the comparative tools, and a panel of wild D. discoideum isolates (AX2-214, CR116C, OT3A, M4B, S6B) is now available alongside them. Search any of them with BLAST, view them in the genome browser, or grab the FASTA and annotations on the genome downloads page. Released under CC BY 4.0.",

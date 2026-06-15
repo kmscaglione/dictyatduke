@@ -33,6 +33,16 @@ SPECIES = [
     ("h-pallidum-pn500",  "H_pallidum_PN500_browser",  "H_pallidum_PN500"),
     ("h-pallidum-new",    "H_pallidum_new_browser",    "H_pallidum_new"),
     ("p-violaceum",       "P_violaceum_browser",       "P_violaceum"),
+    # Ahmed et al. 2025 (PNAS) — new species reps for the comparative set
+    ("d-citrinum",        "D_citrinum_GS8b_browser",     "D_citrinum_GS8b"),
+    ("d-dimigraforme",    "D_dimigraforme_Ar5b_browser", "D_dimigraforme_Ar5b"),
+    # Ahmed et al. 2025 — D. discoideum (+ 2nd citrinum) wild isolates
+    ("dd-ax2-214",        "Dd_AX2-214_browser",      "Dd_AX2-214"),
+    ("dd-cr116c",         "Dd_CR116C_browser",       "Dd_CR116C"),
+    ("dd-ot3a",           "Dd_OT3A_browser",         "Dd_OT3A"),
+    ("dd-m4b",            "Dd_M4B_browser",          "Dd_M4B"),
+    ("dd-s6b",            "Dd_S6B_browser",          "Dd_S6B"),
+    ("dc-cf3b",           "D_citrinum_Cf3b_browser", "D_citrinum_Cf3b"),
 ]
 
 

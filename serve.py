@@ -394,7 +394,23 @@ BLAST_DBS = {
     "h-pallidum-pn500": "H. pallidum PN500",
     "h-pallidum-new": "H. pallidum (2026)",
     "p-violaceum": "P. violaceum",
+    # Ahmed et al. 2025 (PNAS) — new species reps (join the comparative set)
+    "d-citrinum": "D. citrinum GS8b",
+    "d-dimigraforme": "D. dimigraforme Ar5b",
+    # Ahmed et al. 2025 — wild isolates (individually searchable, NOT in "all")
+    "dd-ax2-214": "D. discoideum AX2-214",
+    "dd-cr116c": "D. discoideum CR116C",
+    "dd-ot3a": "D. discoideum OT3A",
+    "dd-m4b": "D. cf. discoideum M4B",
+    "dd-s6b": "D. cf. discoideum S6B",
+    "dc-cf3b": "D. citrinum Cf3b",
 }
+# Wild isolates from Ahmed et al. 2025: conspecific D. discoideum strains (plus a
+# 2nd D. citrinum). Individually BLAST-able/browsable, but excluded from the
+# cross-species "all" search so it stays one-assembly-per-species.
+BLAST_ISOLATE_DBS = {"dd-ax2-214", "dd-cr116c", "dd-ot3a", "dd-m4b", "dd-s6b", "dc-cf3b"}
+# The cross-species comparative set = everything except the wild isolates.
+BLAST_SPECIES_DBS = [d for d in BLAST_DBS if d not in BLAST_ISOLATE_DBS]
 
 
 def blast_bin(program):
@@ -1306,7 +1322,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not binpath:
                 self.send_json(503, {"error": "BLAST unavailable"})
                 return
-            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in BLAST_DBS)
+            # Species set only — conspecific wild isolates would skew per-residue conservation.
+            db_arg = " ".join(str(BLAST_DB_DIR / d) for d in BLAST_SPECIES_DBS)
             qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
             try:
                 qf.write(">q\n" + prot + "\n")
@@ -1787,7 +1804,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json(400, {"error": "Unsupported program."})
                 return
             if database == "all":
-                db_ids = list(BLAST_DBS.keys())
+                db_ids = list(BLAST_SPECIES_DBS)
             elif database in BLAST_DBS:
                 db_ids = [database]
             else:

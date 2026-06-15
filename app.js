@@ -1927,7 +1927,7 @@ function renderAPIPage() {
         <h3>Analysis (POST JSON)</h3>
         <ul style="list-style:none;padding:0">
           ${post("/api/enrichment", "GO-term or phenotype over-representation (hypergeometric + BH FDR).", 'curl -X POST {origin}/api/enrichment \\\n  -H "Content-Type: application/json" \\\n  -d \'{"genes":["mhcA","abpC","racE"],"set":"go","min_study":2}\'')}
-          ${post("/api/blast", "Local BLAST against the nine bundled dictyostelid genomes.", 'curl -X POST {origin}/api/blast \\\n  -H "Content-Type: application/json" \\\n  -d \'{"program":"tblastn","database":"d-discoideum-ax4","query":">q\\nMSEEVVA..."}\'')}
+          ${post("/api/blast", "Local BLAST against the bundled dictyostelid genomes (database=all searches every species; or pass a single genome id).", 'curl -X POST {origin}/api/blast \\\n  -H "Content-Type: application/json" \\\n  -d \'{"program":"tblastn","database":"d-discoideum-ax4","query":">q\\nMSEEVVA..."}\'')}
         </ul>
         <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Curator/write endpoints (upload, login, submit) exist but require authentication and aren't part of the public API.</p>
       </div>
@@ -2051,7 +2051,7 @@ function renderDownloadsShell() {
         <div class="record-title">
           <p class="eyebrow">Downloads</p>
           <h2>Genome downloads</h2>
-          <p>Genome assemblies (FASTA) and gene annotations (GFF3) for all nine sequenced dictyostelid species. FASTA files are gzip-compressed.</p>
+          <p>Genome assemblies (FASTA) and gene annotations (GFF3) for the sequenced dictyostelid species, plus a panel of <em>D. discoideum</em> wild isolates. FASTA files are gzip-compressed.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2069,7 +2069,7 @@ async function loadDownloads() {
     const res = await fetch("/assets/downloads_manifest.json");
     if (!res.ok) throw new Error("manifest unavailable");
     const manifest = await res.json();
-    container.innerHTML = manifest.map((sp) => `
+    const card = (sp) => `
       <section class="data-block" style="margin-bottom:14px">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <h3 style="margin:0"><em>${escapeHtml(sp.label)}</em></h3>
@@ -2082,7 +2082,15 @@ async function loadDownloads() {
               <a class="button" href="${escapeHtml(f.url)}" download>Download · ${escapeHtml(formatBytes(f.size))}</a>
             </li>`).join("")}
         </ul>
-      </section>`).join("");
+      </section>`;
+    const species = manifest.filter((sp) => sp.group !== "isolate");
+    const isolates = manifest.filter((sp) => sp.group === "isolate");
+    const groupHead = (t) => `<h3 style="margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line,#d7dee0)">${t}</h3>`;
+    container.innerHTML =
+      groupHead("Sequenced dictyostelid species") + species.map(card).join("") +
+      (isolates.length ? groupHead("D. discoideum wild isolates") +
+        `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-4px 0 12px">Chromosome- to scaffold-level assemblies of wild <em>D. discoideum</em> isolates (and one additional <em>D. citrinum</em>) from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> — released under CC BY 4.0.</p>` +
+        isolates.map(card).join("") : "");
   } catch {
     container.innerHTML = `<p class="notice">Downloads could not be loaded right now.</p>`;
   }
@@ -2567,7 +2575,7 @@ function renderBlastPage() {
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Sequence search (BLAST)</h2>
-          <p>BLAST a sequence against the nine sequenced dictyostelid genomes hosted here — hits in <em>D. discoideum</em> link straight to their gene page — or hand off to NCBI for an all-organisms search.</p>
+          <p>BLAST a sequence against the sequenced dictyostelid genomes hosted here — including a panel of <em>D. discoideum</em> wild isolates — hits in <em>D. discoideum</em> link straight to their gene page — or hand off to NCBI for an all-organisms search.</p>
         </div>
       </header>
       <div class="record-body">
@@ -2584,8 +2592,13 @@ function renderBlastPage() {
             <div class="form-field">
               <label for="lblast-db">Genome <span class="required">*</span></label>
               <select id="lblast-db" name="database" required>
-                ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
-                <option value="all">All nine dictyostelids</option>
+                <optgroup label="Comparative species">
+                  ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
+                  <option value="all">All species</option>
+                </optgroup>
+                <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
+                  ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
+                </optgroup>
               </select>
             </div>
             <div class="form-field">
@@ -2655,6 +2668,8 @@ function renderBlastPage() {
 }
 
 // species id -> label for the local BLAST genome picker (keys match serve.py BLAST_DBS / built DBs)
+// Comparative species set — one assembly per species. The cross-species
+// comparison, conservation track, and "All species" BLAST iterate this.
 const LOCAL_BLAST_DBS = {
   "d-discoideum-ax4": "D. discoideum AX4",
   "d-purpureum": "D. purpureum",
@@ -2665,6 +2680,21 @@ const LOCAL_BLAST_DBS = {
   "h-pallidum-pn500": "H. pallidum PN500",
   "h-pallidum-new": "H. pallidum (2026)",
   "p-violaceum": "P. violaceum",
+  "d-citrinum": "D. citrinum GS8b",
+  "d-dimigraforme": "D. dimigraforme Ar5b",
+};
+
+// Wild isolates from Ahmed et al. 2025 (PNAS, doi:10.1073/pnas.2520843122):
+// conspecific D. discoideum strains plus a 2nd D. citrinum. Kept separate from
+// the comparative set above — individually BLAST-able but NOT part of the
+// cross-species comparison (which compares species, not strains).
+const WILD_ISOLATES = {
+  "dd-ax2-214": "D. discoideum AX2-214",
+  "dd-cr116c": "D. discoideum CR116C",
+  "dd-ot3a": "D. discoideum OT3A",
+  "dd-m4b": "D. cf. discoideum M4B",
+  "dd-s6b": "D. cf. discoideum S6B",
+  "dc-cf3b": "D. citrinum Cf3b",
 };
 
 async function runLocalBlast(form) {
@@ -2674,7 +2704,7 @@ async function runLocalBlast(form) {
   const database = form.querySelector("#lblast-db").value;
   const query = form.querySelector("#lblast-query").value.trim();
   if (!query) { results.innerHTML = `<p class="notice">Enter a query sequence.</p>`; return; }
-  results.innerHTML = loadingHTML(`Running ${program} against ${database === "all" ? "all nine genomes" : (LOCAL_BLAST_DBS[database] || database)}…`);
+  results.innerHTML = loadingHTML(`Running ${program} against ${database === "all" ? "all species" : (LOCAL_BLAST_DBS[database] || WILD_ISOLATES[database] || database)}…`);
   try {
     const res = await fetch("/api/blast", {
       method: "POST",
@@ -2784,22 +2814,51 @@ const browserOrganisms = [
     indexURL: "/assets/genomes/P_violaceum_browser.fna.fai",
     gffURL: "/assets/genomes/P_violaceum_browser.gff",
     locus: "AJWJ01000001.1:1-200000"
-  }
+  },
+  // Ahmed et al. 2025 (PNAS) — new species reps
+  { id: "d-citrinum", label: "D. citrinum GS8b", assembly: "GCA_054859325.1", group: "species",
+    fastaURL: "/assets/genomes/D_citrinum_GS8b_browser.fna", indexURL: "/assets/genomes/D_citrinum_GS8b_browser.fna.fai",
+    gffURL: "/assets/genomes/D_citrinum_GS8b_browser.gff", locus: "JBTAPL010000001.1:1-200000" },
+  { id: "d-dimigraforme", label: "D. dimigraforme Ar5b", assembly: "GCA_054859025.1", group: "species",
+    fastaURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna", indexURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna.fai",
+    gffURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.gff", locus: "JBTAPM010000002.1:1-200000" },
+  // Ahmed et al. 2025 — D. discoideum (+ 2nd citrinum) wild isolates
+  { id: "dd-ax2-214", label: "D. discoideum AX2-214", assembly: "GCA_054883475.1", group: "isolate",
+    fastaURL: "/assets/genomes/Dd_AX2-214_browser.fna", indexURL: "/assets/genomes/Dd_AX2-214_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_AX2-214_browser.gff", locus: "CM142508.1:1-200000" },
+  { id: "dd-cr116c", label: "D. discoideum CR116C", assembly: "GCA_054859385.1", group: "isolate",
+    fastaURL: "/assets/genomes/Dd_CR116C_browser.fna", indexURL: "/assets/genomes/Dd_CR116C_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_CR116C_browser.gff", locus: "JBTAPF010000001.1:1-200000" },
+  { id: "dd-ot3a", label: "D. discoideum OT3A", assembly: "GCA_054859355.1", group: "isolate",
+    fastaURL: "/assets/genomes/Dd_OT3A_browser.fna", indexURL: "/assets/genomes/Dd_OT3A_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_OT3A_browser.gff", locus: "JBTAPG010000033.1:1-200000" },
+  { id: "dd-m4b", label: "D. cf. discoideum M4B", assembly: "GCA_054859205.1", group: "isolate",
+    fastaURL: "/assets/genomes/Dd_M4B_browser.fna", indexURL: "/assets/genomes/Dd_M4B_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_M4B_browser.gff", locus: "JBTAPH010000036.1:1-200000" },
+  { id: "dd-s6b", label: "D. cf. discoideum S6B", assembly: "GCA_054859235.1", group: "isolate",
+    fastaURL: "/assets/genomes/Dd_S6B_browser.fna", indexURL: "/assets/genomes/Dd_S6B_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_S6B_browser.gff", locus: "JBTAPI010000014.1:1-200000" },
+  { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "isolate",
+    fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
+    gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "JBTAPK010000002.1:1-200000" }
 ];
 
 let igvBrowser = null;
 
 function renderGenomeBrowser() {
-  const options = browserOrganisms.map((o) =>
-    `<option value="${escapeHtml(o.id)}">${escapeHtml(o.label)} · ${escapeHtml(o.assembly)}</option>`
-  ).join("");
+  const opt = (o) => `<option value="${escapeHtml(o.id)}">${escapeHtml(o.label)} · ${escapeHtml(o.assembly)}</option>`;
+  const species = browserOrganisms.filter((o) => o.group !== "isolate");
+  const isolates = browserOrganisms.filter((o) => o.group === "isolate");
+  const options =
+    `<optgroup label="Comparative species">${species.map(opt).join("")}</optgroup>` +
+    `<optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">${isolates.map(opt).join("")}</optgroup>`;
   return `
     <article class="record-card research-card">
       <header class="record-header">
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Genome browser</h2>
-          <p>Interactive genome browser for all nine sequenced dictyostelid species. Powered by IGV.js.</p>
+          <p>Interactive genome browser for the sequenced dictyostelid species and a panel of <em>D. discoideum</em> wild isolates (Ahmed et al. 2025). Powered by IGV.js.</p>
         </div>
       </header>
       <div class="record-body">
@@ -5345,7 +5404,7 @@ ${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
     <h3 style="margin-top:18px">BibTeX</h3>
     <textarea readonly aria-label="BibTeX citation (click to select)" rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
     <h3 style="margin-top:18px">Citing the data sources</h3>
-    <p style="font-size:0.9375rem">Dicty@Duke aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
+    <p style="font-size:0.9375rem">Dicty@Duke aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. The <em>D. discoideum</em> wild-isolate genomes (and the <em>D. citrinum</em> / <em>D. dimigraforme</em> assemblies) are from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> (CC BY 4.0). Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
 }
 
 async function loadDataStatus() {
@@ -5577,8 +5636,8 @@ async function runParalogs(gene) {
     <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Sequence-similarity matches (tblastn, E &lt; 1e-3), best hit per gene. Not curated orthology — verify family membership.</p>`;
 }
 
-// Comparative genomics: best tblastn hit of this protein in each of the nine
-// sequenced dictyostelid genomes. On-demand (button) because it runs 9 BLASTs.
+// Comparative genomics: best tblastn hit of this protein in each sequenced
+// dictyostelid species. On-demand (button) because it runs one BLAST per species.
 function loadComparative(gene) {
   const el = document.querySelector("[data-dicty-comparative]");
   if (!el) return;
@@ -5586,8 +5645,8 @@ function loadComparative(gene) {
   if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
   el.innerHTML = `
     <h3>Across the sequenced dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— local tblastn</span></h3>
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">See how conserved this protein is by searching it against all nine dictyostelid genomes hosted here. Runs on demand.</p>
-    <button type="button" id="comparative-run">Compare across 9 genomes</button>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">See how conserved this protein is by searching it against every sequenced dictyostelid species hosted here. Runs on demand.</p>
+    <button type="button" id="comparative-run">Compare across species</button>
     <div data-comparative-results style="margin-top:12px"></div>`;
   const btn = document.getElementById("comparative-run");
   if (btn) btn.addEventListener("click", () => runComparative(gene));
@@ -5600,7 +5659,7 @@ async function runComparative(gene) {
   if (btn) { btn.disabled = true; btn.textContent = "Comparing…"; }
   const reset = (label) => { if (btn) { btn.disabled = false; btn.textContent = label; } };
   const ddb = gene.veupath || gene.ddb;
-  out.innerHTML = `<p class="notice muted">Fetching protein and running tblastn against nine genomes…</p>`;
+  out.innerHTML = `<p class="notice muted">Fetching protein and running tblastn across species…</p>`;
   let fasta;
   try {
     const r = await fetch(`/api/sequence?ddb=${encodeURIComponent(ddb)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}`);
@@ -5608,7 +5667,7 @@ async function runComparative(gene) {
     if (!r.ok || !fasta.startsWith(">")) throw new Error("no protein");
   } catch {
     out.innerHTML = `<p class="notice">Could not retrieve a protein sequence for this gene.</p>`;
-    reset("Compare across 9 genomes");
+    reset("Compare across species");
     return;
   }
   const results = await Promise.all(Object.entries(LOCAL_BLAST_DBS).map(async ([id, label]) => {
@@ -6441,7 +6500,7 @@ function loadConservation(gene) {
   if (!el) return;
   if (!gene.uniprot && !/^DDB_G\d+$/.test(gene.veupath || gene.ddb || "")) { el.innerHTML = ""; return; }
   el.innerHTML = `
-    <h3>Conservation across dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— tblastn vs 9 genomes</span></h3>
+    <h3>Conservation across dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— tblastn across species</span></h3>
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Per-residue protein conservation across the sequenced dictyostelids — darker = more conserved. Runs on demand.</p>
     <button type="button" id="conservation-run">Compute conservation</button>
     <div data-conservation-results style="margin-top:12px"></div>`;
@@ -6455,7 +6514,7 @@ async function runConservation(gene) {
   if (!out || (btn && btn.disabled)) return;
   if (btn) { btn.disabled = true; btn.textContent = "Computing…"; }
   const ddb = gene.veupath || gene.ddb;
-  out.innerHTML = `<p class="notice muted">Running tblastn against the nine genomes…</p>`;
+  out.innerHTML = `<p class="notice muted">Running tblastn across the sequenced species…</p>`;
   let data;
   try {
     data = await (await fetch(`/api/conservation?ddb=${encodeURIComponent(ddb)}`)).json();

@@ -3,6 +3,13 @@
   "items": [
     {
       "date": "2026-06-15",
+      "tag": "update",
+      "title": "Quality-of-life upgrades: a tools page, browser jump, and more",
+      "body": "A few smaller improvements. Every gene record now has a 'View in genome browser' button that jumps straight to its locus. A new All tools page collects every analysis tool in one place. Gene Structures tabs show protein stats (length, molecular weight, isoelectric point, hydropathy). And you can now subscribe to site news by RSS.",
+      "link": "/tools"
+    },
+    {
+      "date": "2026-06-15",
       "tag": "new",
       "title": "Sequence tools: region retrieval, in-silico PCR, and alignment",
       "body": "A new Sequence tools page pulls genomic DNA by coordinates from any hosted genome, runs in-silico PCR to find a primer pair's amplicons, and builds a multiple sequence alignment of a set of sequences. The genome browser also gains an 'add your own track' option to load your BED, GFF, VCF, or BAM by URL.",

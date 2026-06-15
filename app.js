@@ -1411,7 +1411,7 @@ function renderRecord() {
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
-          <div class="record-actions">${basketToggleButtonHTML(gene)}${geneLocus(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
+          <div class="record-actions">${basketToggleButtonHTML(gene)}${canViewInBrowser(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
         </div>
         ${gene.uniprot ? `<div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}"></div>` : ""}
       </header>
@@ -3121,19 +3121,42 @@ let igvBrowser = null;
 let pendingBrowserLocus = null;   // set by viewInBrowser(); consumed on next browser load
 
 // Parse a gene record's location ("NC_007088.5: 1,696,443-1,697,768") into the
-// AX4 RefSeq locus the genome browser uses. Returns null when no coordinates
-// (e.g. "curated locus") or a non-AX4 contig.
+// AX4 RefSeq locus the genome browser uses. Coordinate separator may be a hyphen
+// or en/em-dash (NCBI records use an en-dash). Returns null when there are no
+// coordinates (e.g. "curated locus" / "See NCBI Gene record").
 function geneLocus(gene) {
-  const m = (gene && gene.location || "").match(/^(N[CW]_[\d.]+)\s*:\s*([\d,]+)\s*-\s*([\d,]+)/);
+  const m = (gene && gene.location || "").match(/^(N[CW]_[\d.]+)\s*:\s*([\d,]+)\s*[-–—]\s*([\d,]+)/);
   if (!m) return null;
   return { chrom: m[1], start: parseInt(m[2].replace(/,/g, ""), 10), end: parseInt(m[3].replace(/,/g, ""), 10) };
 }
 
-function viewInBrowser(gene) {
-  const l = geneLocus(gene);
-  if (!l) return;
+function geneDdb(gene) {
+  const d = (gene && (gene.veupath || gene.ddb || gene.id) || "").toUpperCase();
+  return /^DDB_G\d+$/.test(d) ? d : "";
+}
+
+// Show the "view in browser" jump whenever we can place the gene — either its
+// location string parses, or it has a DDB_G id we can resolve server-side.
+function canViewInBrowser(gene) {
+  return !!(geneLocus(gene) || geneDdb(gene));
+}
+
+async function viewInBrowser(gene) {
+  let loc = geneLocus(gene);
+  if (!loc) {
+    // Fall back to the authoritative coordinates in gene_models (these always
+    // match the browser's contig names), via the neighborhood endpoint.
+    const ddb = geneDdb(gene);
+    if (!ddb) return;
+    try {
+      const d = await fetch(`/api/neighborhood?ddb=${encodeURIComponent(ddb)}&k=0`).then((r) => r.json());
+      const t = (d.genes || []).find((g) => g.target) || (d.genes || [])[0];
+      if (d.chrom && t && t.start && t.end) loc = { chrom: d.chrom, start: t.start, end: t.end };
+    } catch { /* fall through */ }
+  }
+  if (!loc) return;
   const pad = 2000;
-  pendingBrowserLocus = `${l.chrom}:${Math.max(1, l.start - pad)}-${l.end + pad}`;
+  pendingBrowserLocus = `${loc.chrom}:${Math.max(1, loc.start - pad)}-${loc.end + pad}`;
   openTool("genome-browser");
 }
 

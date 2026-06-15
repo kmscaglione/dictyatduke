@@ -4,6 +4,13 @@
     {
       "date": "2026-06-15",
       "tag": "new",
+      "title": "Sequence tools: region retrieval, in-silico PCR, and alignment",
+      "body": "A new Sequence tools page pulls genomic DNA by coordinates from any hosted genome, runs in-silico PCR to find a primer pair's amplicons, and builds a multiple sequence alignment of a set of sequences. The genome browser also gains an 'add your own track' option to load your BED, GFF, VCF, or BAM by URL.",
+      "link": "/tools/sequence"
+    },
+    {
+      "date": "2026-06-15",
+      "tag": "new",
       "title": "New tools: ID converter, bulk downloads, synteny & variation",
       "body": "Four additions for working with the data. A gene ID converter maps a mixed list of symbols, DDB_G, UniProt, and NCBI ids into one table. Whole-database TSV downloads (genes, GO, phenotypes, human orthologs) are now on the downloads page. And every gene record's Orthologs tab gains a genomic-neighborhood view that checks whether local gene order is conserved across the dictyostelids, plus a natural-variation panel comparing the protein across the wild D. discoideum isolates.",
       "link": "/tools/convert"

@@ -1258,7 +1258,14 @@ def _geneset_summary(n, go_sig, ph_sig, kegg_sig, with_orth, with_dis, peak_hist
 def geneset_report(tokens):
     """Deterministic interpretation of a gene set: enrichment (GO / phenotype /
     KEGG), human-ortholog & disease counts, developmental expression-peak
-    profile, notable genes, and a plain-language summary. No external API."""
+    profile, notable genes, and a plain-language summary. No external API.
+
+    Accepts gene symbols, DDB_G ids, UniProt accessions, and NCBI Gene ids —
+    the latter two are translated to DDB_G ids up front so the enrichment engine
+    (symbol/DDB-keyed) can use them."""
+    rev = _idmap_reverse()
+    tokens = [(rev["uniprot"].get(t.strip().upper()) or rev["ncbi"].get(t.strip())
+               or t) for t in tokens]
     matched, unmatched = enrichment.resolve_genes(tokens)
     matched = sorted(matched)
     if not matched:

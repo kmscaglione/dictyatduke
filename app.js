@@ -2217,11 +2217,11 @@ function renderGeneSetPage() {
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Gene set analysis</h2>
-          <p>Paste a hit list — differentially-expressed genes, proteomics hits, a screen — and get an instant interpretation: enriched GO terms, mutant phenotypes, and KEGG pathways, the human-ortholog and disease overlap, the developmental expression-peak profile of your set, and a plain-language summary. All computed locally from the site's curated data — no account, no limits.</p>
+          <p>Paste a hit list — differentially-expressed genes, proteomics hits, a screen — and get an instant interpretation: enriched GO terms, mutant phenotypes, and KEGG pathways, the human-ortholog and disease overlap, the developmental expression-peak profile of your set, and a plain-language summary. Accepts gene symbols, DDB_G ids, UniProt accessions, and NCBI Gene ids. All computed locally from the site's curated data — no account, no limits.</p>
         </div>
       </header>
       <div class="record-body">
-        <textarea id="gs-input" aria-label="Gene list" rows="5" placeholder="mhcA abpC racE rasG&#10;DDB_G0286355 cln5 tpp1 ctsD" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <textarea id="gs-input" aria-label="Gene list" rows="5" placeholder="mhcA abpC racE rasG&#10;DDB_G0286355  P08799  cln5 tpp1 ctsD" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
         <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
           <button type="button" id="gs-run">Analyze gene set</button>
           <button type="button" id="gs-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>

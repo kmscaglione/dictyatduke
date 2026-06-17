@@ -164,6 +164,8 @@ _ROUTE_META = {
         "BLAST a nucleotide or protein query against nine sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
     "/tools/enrichment": ("GO and phenotype enrichment",
         "Hypergeometric GO-term and phenotype enrichment analysis for a list of Dictyostelium genes, with Benjamini-Hochberg correction."),
+    "/tools/geneset": ("Gene set analysis",
+        "Interpret a Dictyostelium gene set: GO/phenotype/KEGG enrichment, human-ortholog and disease overlap, developmental expression-peak profile, and a plain-language summary. Free, no account."),
     "/tools/expression": ("Expression compare",
         "Overlay the developmental RNA-seq expression profiles of several Dictyostelium genes across the life cycle."),
     "/tools/lab": ("Lab tools",
@@ -1220,6 +1222,105 @@ def run_align(fasta_text):
                  "rows": [{"name": names[i], "seq": aligned[i]} for i in range(len(aligned))]}
 
 
+_PEAK_STAGES = ["0 h", "4 h", "8 h", "12 h", "16 h", "20 h", "24 h"]
+
+
+def _sig(results, cap=10):
+    """Top significant enrichment rows (q <= 0.05); fall back to the top few."""
+    rows = results or []
+    sig = [r for r in rows if r.get("q_value", 1) <= 0.05]
+    return (sig or rows[:5])[:cap]
+
+
+def _geneset_summary(n, go_sig, ph_sig, kegg_sig, with_orth, with_dis, peak_hist, no_peak):
+    parts = [f"Your set of {n} recognized gene{'s' if n != 1 else ''}"]
+    themes = []
+    if kegg_sig:
+        themes.append("KEGG pathways including " + kegg_sig[0]["term"])
+    if go_sig:
+        themes.append(f"{len(go_sig)} over-represented GO term{'s' if len(go_sig) != 1 else ''}")
+    if themes:
+        parts[0] += " is enriched for " + " and ".join(themes)
+    if ph_sig:
+        parts.append("Shared mutant phenotypes include " + ph_sig[0]["term"])
+    if any(peak_hist):
+        top_i = max(range(7), key=lambda i: peak_hist[i])
+        if peak_hist[top_i]:
+            parts.append(f"Developmental expression most often peaks at {_PEAK_STAGES[top_i]} "
+                         f"({peak_hist[top_i]} of {n})")
+    if with_dis:
+        parts.append(f"{with_dis} of {n} have a human ortholog linked to disease")
+    elif with_orth:
+        parts.append(f"{with_orth} of {n} have a human ortholog")
+    return ". ".join(parts) + "."
+
+
+def geneset_report(tokens):
+    """Deterministic interpretation of a gene set: enrichment (GO / phenotype /
+    KEGG), human-ortholog & disease counts, developmental expression-peak
+    profile, notable genes, and a plain-language summary. No external API."""
+    matched, unmatched = enrichment.resolve_genes(tokens)
+    matched = sorted(matched)
+    if not matched:
+        return 200, {"matched_n": 0, "unmatched": unmatched,
+                     "summary": "None of those identifiers matched a Dictyostelium gene."}
+    go = enrichment.enrich(tokens)
+    pheno = enrichment.enrich_phenotypes(tokens)
+    kegg = enrichment.enrich_kegg(tokens)
+    facets = _load_json("gene_facets.json")
+    od = _load_json("ortholog_disease.json")
+    rows, _sym = api_gene_rows()
+    with_orth = with_dis = no_peak = 0
+    peak_hist = [0] * 7
+    for ddb in matched:
+        f = facets.get(ddb) or [0, 0, 0, -1]
+        if len(f) > 1 and f[1]:
+            with_orth += 1
+        if len(f) > 2 and f[2]:
+            with_dis += 1
+        peak = f[3] if len(f) > 3 else -1
+        if isinstance(peak, int) and 0 <= peak < 7:
+            peak_hist[peak] += 1
+        else:
+            no_peak += 1
+    notable = []
+    for ddb in matched:
+        info = od.get(ddb)
+        if not isinstance(info, dict):
+            continue
+        hit = None
+        for orth in info.get("orthologs", []):
+            for d in (orth.get("diseases") or []):
+                dis = d.get("name") if isinstance(d, dict) else str(d)
+                if dis:
+                    hit = (orth.get("human_symbol", ""), dis)
+                    break
+            if hit:
+                break
+        if hit:
+            sym = info.get("symbol") or rows.get(ddb, {}).get("symbol", ddb)
+            notable.append({"ddb": ddb, "symbol": sym, "human": hit[0], "disease": hit[1]})
+        if len(notable) >= 15:
+            break
+    go_sig, ph_sig, kegg_sig = _sig(go.get("results")), _sig(pheno.get("results")), _sig(kegg.get("results"))
+    summary = _geneset_summary(len(matched), go_sig, ph_sig, kegg_sig,
+                               with_orth, with_dis, peak_hist, no_peak)
+    keep_go = lambda r: {"id": r["id"], "aspect": r.get("aspect"), "fold": r.get("fold_enrichment"),
+                         "study_count": r.get("study_count"), "q": round(r.get("q_value", 1), 4)}
+    keep_t = lambda r: {"id": r.get("id"), "term": r.get("term"), "fold": r.get("fold_enrichment"),
+                        "study_count": r.get("study_count"), "q": round(r.get("q_value", 1), 4)}
+    return 200, {
+        "matched_n": len(matched), "unmatched": unmatched[:50],
+        "summary": summary,
+        "go": [keep_go(r) for r in go_sig],
+        "phenotype": [keep_t(r) for r in ph_sig],
+        "kegg": [keep_t(r) for r in kegg_sig],
+        "orthologs": {"with_ortholog": with_orth, "with_disease": with_dis, "total": len(matched)},
+        "expression": {"stages": _PEAK_STAGES, "hist": peak_hist, "no_peak": no_peak},
+        "notable": notable,
+    }
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -1668,7 +1769,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if xml is None:
             urls = ["/", "/start", "/education", "/data", "/cite", "/news", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
-                    "/tools/lab", "/tools/sequence", "/tools/convert",
+                    "/tools/lab", "/tools/sequence", "/tools/convert", "/tools/geneset",
                     "/tools/downloads", "/tools/api", "/tools/genome-browser",
                     "/community/disease-models", "/search/advanced"]
             parts = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -1726,6 +1827,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     _BLAST_SEM.release()
         elif self.path == "/api/idmap":
             self._handle_idmap()
+        elif self.path == "/api/geneset-report":
+            self._handle_geneset()
         elif self.path == "/api/align":
             self._handle_align()
         elif self.path == "/api/enrichment":
@@ -2464,6 +2567,25 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"count": len(results),
                                  "found": sum(1 for r in results if r["found"]),
                                  "results": results})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _handle_geneset(self):
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 1_000_000:
+                self.send_json(413, {"error": "Gene list too large"})
+                return
+            payload = json.loads(self.rfile.read(length) or b"{}")
+            genes = payload.get("genes") or []
+            if isinstance(genes, str):
+                genes = re.split(r"[\s,;]+", genes)
+            genes = [g for g in genes if g][:5000]
+            if not genes:
+                self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
+                return
+            code, payload = geneset_report(genes)
+            self.send_json(code, payload)
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 

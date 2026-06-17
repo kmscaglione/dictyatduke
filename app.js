@@ -1616,6 +1616,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initSequenceTools();
+  } else if (tool === "geneset") {
+    toolsShell.innerHTML = renderGeneSetPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initGeneSet();
   }
 }
 
@@ -2203,6 +2208,100 @@ function renderAlignment(d) {
       ${rows.map((r) => line(r.name, r.seq)).join("")}
       <div style="white-space:pre;border-top:1px solid var(--line,#eef2f3);margin-top:4px;padding-top:4px"><span style="color:var(--muted,#6b7280)">${"consensus".slice(0, nameW).padEnd(nameW, " ")}</span> ${colorize ? escapeHtml(cons) : escapeHtml(cons)}</div>
     </div>`;
+}
+
+function renderGeneSetPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Tools</p>
+          <h2>Gene set analysis</h2>
+          <p>Paste a hit list — differentially-expressed genes, proteomics hits, a screen — and get an instant interpretation: enriched GO terms, mutant phenotypes, and KEGG pathways, the human-ortholog and disease overlap, the developmental expression-peak profile of your set, and a plain-language summary. All computed locally from the site's curated data — no account, no limits.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <textarea id="gs-input" aria-label="Gene list" rows="5" placeholder="mhcA abpC racE rasG&#10;DDB_G0286355 cln5 tpp1 ctsD" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.8125rem;${FIELD};resize:vertical"></textarea>
+        <div style="margin-top:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <button type="button" id="gs-run">Analyze gene set</button>
+          <button type="button" id="gs-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
+        </div>
+        <div data-gs-results style="margin-top:16px"></div>
+      </div>
+    </article>`;
+}
+
+function initGeneSet() {
+  const b = document.getElementById("gs-run");
+  if (b) b.addEventListener("click", runGeneSet);
+  const ex = document.getElementById("gs-example");
+  if (ex) ex.addEventListener("click", () => {
+    document.getElementById("gs-input").value = "mhcA abpC racE rasG rasD arpC myoB limE forA cln5 tpp1 ctsD";
+    runGeneSet();
+  });
+}
+
+async function runGeneSet() {
+  const out = document.querySelector("[data-gs-results]");
+  const raw = (document.getElementById("gs-input").value || "").trim();
+  if (!raw) { out.innerHTML = `<p class="notice">Paste a gene list.</p>`; return; }
+  const genes = raw.split(/[\s,;]+/).filter(Boolean);
+  out.innerHTML = loadingHTML("Analyzing gene set…");
+  let d;
+  try {
+    d = await (await fetch("/api/geneset-report", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ genes }) })).json();
+    if (d.error) throw new Error(d.error);
+  } catch (e) { out.innerHTML = `<p class="notice">${escapeHtml(e.message || "Could not analyze that set.")}</p>`; return; }
+  out.innerHTML = renderGeneSetReport(d);
+}
+
+function renderGeneSetReport(d) {
+  if (!d.matched_n) return `<p class="notice">${escapeHtml(d.summary || "No genes recognized.")}</p>`;
+  const td = "padding:5px 8px";
+  const ASPECT = { P: "Process", F: "Function", C: "Component" };
+  const enrichTable = (rows, kind) => {
+    if (!rows || !rows.length) return `<p class="notice muted">No significant ${kind} enrichment.</p>`;
+    return `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Term</th><th style="${td}">Genes</th><th style="${td}">Fold</th><th style="${td}">q</th></tr></thead>
+      <tbody>${rows.map((r) => {
+        const label = kind === "GO"
+          ? `<a class="text-link" href="/go/${encodeURIComponent(r.id)}">${escapeHtml(r.id)}</a> <span style="color:var(--muted,#6b7280);font-size:.85em">${escapeHtml(ASPECT[r.aspect] || r.aspect || "")}</span>`
+          : `${escapeHtml(r.term || r.id)}${r.id ? ` <span style="color:var(--muted,#9ca3af);font-size:.8em">${escapeHtml(r.id)}</span>` : ""}`;
+        return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}">${label}</td><td style="${td}">${r.study_count}</td><td style="${td}">${r.fold}×</td><td style="${td}">${r.q < 0.001 ? r.q.toExponential(1) : r.q}</td></tr>`;
+      }).join("")}</tbody></table></div>`;
+  };
+  const e = d.expression || { stages: [], hist: [], no_peak: 0 };
+  const maxH = Math.max(1, ...(e.hist || []));
+  const bars = (e.hist || []).map((c, i) => `
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:36px">
+      <span style="font-size:.7rem;color:var(--muted,#6b7280)">${c || ""}</span>
+      <div style="width:22px;height:60px;display:flex;align-items:flex-end"><div style="width:100%;height:${Math.round(100 * c / maxH)}%;background:var(--teal-dark,#012169);border-radius:3px 3px 0 0;min-height:${c ? 3 : 0}px"></div></div>
+      <span style="font-size:.66rem;color:var(--muted,#9ca3af)">${escapeHtml((e.stages[i] || "").replace(" h", ""))}</span>
+    </div>`).join("");
+  const o = d.orthologs || {};
+  return `
+    <div class="data-block" style="background:var(--soft,#e7eef7);border-radius:8px;padding:14px 16px;margin-bottom:16px">
+      <p style="margin:0;font-size:.95rem">${escapeHtml(d.summary)}</p>
+      <p style="margin:8px 0 0;font-size:.75rem;color:var(--muted,#6b7280)">${d.matched_n} gene${d.matched_n === 1 ? "" : "s"} recognized${d.unmatched && d.unmatched.length ? ` · not recognized: ${d.unmatched.slice(0, 20).map(escapeHtml).join(", ")}` : ""}</p>
+    </div>
+    <div class="data-block"><h3>Enriched GO terms</h3>${enrichTable(d.go, "GO")}</div>
+    <div class="data-block"><h3>Enriched mutant phenotypes</h3>${enrichTable(d.phenotype, "phenotype")}</div>
+    <div class="data-block"><h3>Enriched KEGG pathways</h3>${enrichTable(d.kegg, "KEGG")}</div>
+    <div class="data-block">
+      <h3>Human orthologs &amp; disease</h3>
+      <p style="font-size:.9rem;margin:0 0 10px"><strong>${o.with_ortholog || 0}</strong> of ${o.total} have a human ortholog · <strong>${o.with_disease || 0}</strong> are linked to a human disease.</p>
+      ${(d.notable || []).length ? `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Gene</th><th style="${td}">Human</th><th style="${td}">Disease</th></tr></thead>
+        <tbody>${d.notable.map((x) => `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+          <td style="${td}"><a class="text-link" href="/gene/${encodeURIComponent(x.symbol)}" data-ddb-ref="${escapeHtml(x.ddb)}"><strong>${escapeHtml(x.symbol)}</strong></a></td>
+          <td style="${td}">${escapeHtml(x.human || "")}</td><td style="${td};color:var(--muted,#6b7280)">${escapeHtml(x.disease || "")}</td></tr>`).join("")}</tbody></table></div>` : ""}
+    </div>
+    <div class="data-block">
+      <h3>Developmental expression peak <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— when each gene's RNA-seq profile is highest</span></h3>
+      <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap">${bars}</div>
+      ${e.no_peak ? `<p style="font-size:.75rem;color:var(--muted,#9ca3af);margin:8px 0 0">${e.no_peak} gene${e.no_peak === 1 ? "" : "s"} with no clear peak (low expression).</p>` : ""}
+    </div>
+    <p style="font-size:.72rem;color:var(--muted,#9ca3af);margin-top:6px">Enrichment: hypergeometric test with Benjamini–Hochberg FDR (q ≤ 0.05). For the full enrichment tool with options, see <a class="text-link" href="/tools/enrichment">GO &amp; phenotype enrichment</a>.</p>`;
 }
 
 function renderConvertPage() {
@@ -7356,7 +7455,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -7729,7 +7828,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -7918,6 +8017,7 @@ const TOOLS_INDEX = [
     ["Downloads", "/tools/downloads", "Genome assemblies, annotations, and whole-database TSV tables."],
   ]],
   ["Expression & function", [
+    ["Gene set analysis", "/tools/geneset", "Interpret a hit list — enrichment, disease overlap, expression peak, summary."],
     ["Compare expression", "/tools/expression", "Overlay developmental RNA-seq profiles of several genes."],
     ["GO / phenotype enrichment", "/tools/enrichment", "Over-representation analysis for a gene list."],
     ["Developmental proteome", "/tools/proteomics", "4,502 proteins across five life-cycle stages."],
@@ -8060,6 +8160,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Genome browser", href: "/tools/genome-browser", kw: "igv browser genome tracks" },
   { kind: "Tool", label: "BLAST sequence search", href: "/tools/blast", kw: "blast sequence align" },
   { kind: "Tool", label: "GO enrichment", href: "/tools/enrichment", kw: "enrichment go phenotype kegg overrepresented" },
+  { kind: "Tool", label: "Gene set analysis", href: "/tools/geneset", sub: "Interpret a hit list: enrichment, disease, expression", kw: "gene set analysis deg hit list omics rnaseq proteomics interpret report enrichment" },
   { kind: "Tool", label: "Compare expression", href: "/tools/expression", kw: "expression rna-seq chart compare profile" },
   { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
   { kind: "Tool", label: "Gene ID converter", href: "/tools/convert", sub: "Symbol ↔ DDB_G ↔ UniProt ↔ NCBI", kw: "convert id mapping symbol ddb uniprot ncbi validate batch" },

@@ -27,3 +27,16 @@ cache/
 assets/annotations_imported.json
 *.gaf
 *.gaf.gz
+
+# --- Unrelated personal/research scratch files (not part of this project) ---
+RNAseq_DEG_Trend_Analysis.docx
+RNAseq_Trend_Analysis_Followup.docx
+TBP_CUTRUN_WT_vs_CHIPKO.docx
+TBP_CUTRUN_light_only.docx
+WT_only_HS_genes.txt
+bigwig.py
+cutrun_tss_point.csv
+interaction_model.csv
+ora_keyword.csv
+ora_tf_family.csv
+run_GO_enrichment.py

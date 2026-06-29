@@ -1,0 +1,63 @@
+[Unit]
+# Dicty@Duke web application — runs serve.py (Python stdlib HTTP server).
+# Install to /etc/systemd/system/dicty.service, then:
+#   sudo systemctl daemon-reload && sudo systemctl enable --now dicty
+Description=Dicty@Duke web app (serve.py)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+# --- Who it runs as -------------------------------------------------------
+# Use a non-root account that can READ the site and WRITE cache/ + uploads/.
+# Set these to whoever owns /srv/web/dicty.labs.duke.edu/html (ask OIT if a
+# managed web user/group already exists, e.g. an apache/www group).
+User=dicty
+Group=dicty
+
+WorkingDirectory=/srv/web/dicty.labs.duke.edu/html
+
+# serve.py has NO third-party runtime dependencies — system python3 is enough.
+# (pysam/anthropic are build-time-only, used by scripts, never by serve.py.)
+ExecStart=/usr/bin/python3 serve.py
+
+# --- Configuration --------------------------------------------------------
+Environment=HOST=127.0.0.1
+Environment=PORT=8774
+Environment=PUBLIC_BASE_URL=https://dicty.labs.duke.edu
+
+# Concurrency caps — tune to the box. Rule of thumb on an 8 vCPU host: leave
+# ~2 cores for the app/OS, give the rest to BLAST subprocess work.
+Environment=BLAST_MAX_CONCURRENT=6
+Environment=PROXY_MAX_CONCURRENT=8
+
+# Secrets (CURATOR_PASSWORD, etc.) live OUTSIDE the repo. Create /etc/dicty.env:
+#   CURATOR_PASSWORD=<a long random string>
+# chmod 600 it and chown to the service user. The leading "-" makes it optional
+# so the service still starts (with a random dev password) if the file is absent.
+EnvironmentFile=-/etc/dicty.env
+
+# --- Reliability ----------------------------------------------------------
+Restart=on-failure
+RestartSec=3
+
+# IMPORTANT: this is a SINGLE-PROCESS app. Its session/rate-limit/BLAST-queue
+# state is in-memory, so do NOT run multiple workers/instances of serve.py.
+
+# --- Resource guardrails (adjust to the box) ------------------------------
+CPUQuota=700%
+MemoryMax=12G
+TasksMax=512
+
+# --- Hardening ------------------------------------------------------------
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+# serve.py writes pageview counts + the recent-papers cache to cache/, and
+# curator uploads to uploads/ — both under the site dir, which must stay writable:
+ReadWritePaths=/srv/web/dicty.labs.duke.edu/html
+
+[Install]
+WantedBy=multi-user.target

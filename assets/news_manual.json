@@ -2,6 +2,12 @@
     "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
     "items": [
         {
+            "date": "2026-06-30",
+            "tag": "update",
+            "title": "Dicty@Duke is live in preview at Duke",
+            "body": "Dicty@Duke is now hosted at Duke and reachable at dicty.labs.duke.edu. This is an early preview served from static hosting while the application server is being provisioned, so many interactive features — full gene-record data, BLAST, the analysis tools, and search — are not available yet and will return errors. The site will be fully functional once the backend is in place. Thanks for your patience as we stand it up."
+        },
+        {
             "date": "2026-06-15",
             "tag": "update",
             "title": "Quality-of-life upgrades: a tools page, browser jump, and more",

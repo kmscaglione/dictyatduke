@@ -54,16 +54,35 @@ systemctl status dicty                 # should be active (running)
 curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8774/   # expect 200
 ```
 
-## 5. Apache front
+## 5. Apache/httpd front
+
+**On this box (AlmaLinux 9 + httpd, verified 2026-06-30):** there is already an
+OIT-managed vhost for the site
+(`/etc/httpd/conf.d/25-dicty.labs.duke.edu-https.conf`, with `DocumentRoot`).
+Do **not** add a second vhost (`dicty.apache.conf` would collide — duplicate
+ServerName on :443). Instead:
+
+1. Fold the proxy directives from `deploy/dicty.httpd-proxy.conf` into that
+   existing `<VirtualHost *:443>`. Modules (proxy, proxy_http, headers) are
+   already loaded; `mod_ssl` is installed.
+2. Flip the SELinux boolean (enforcing on this host — without it httpd can't
+   reach the backend and every request 503s):
+   ```bash
+   sudo setsebool -P httpd_can_network_connect 1
+   ```
+3. Reload: `sudo apachectl configtest && sudo systemctl reload httpd`
+
+`DocumentRoot` can stay set (OIT tooling expects it) — the `ProxyPass /` takes
+precedence, so it's bypassed and all requests reach serve.py.
+
+**Debian/apache2 or a from-scratch host instead?** Use the standalone vhost:
 ```bash
 sudo a2enmod proxy proxy_http headers rewrite ssl
 sudo cp deploy/dicty.apache.conf /etc/apache2/sites-available/dicty.conf
-# >>> edit SSLCertificate* paths to OIT's cert locations <<<
+# >>> edit SSLCertificate* paths to the cert locations <<<
 sudo a2ensite dicty
 sudo apache2ctl configtest && sudo systemctl reload apache2
 ```
-(RHEL/CentOS: modules are usually built in; drop the conf in
-`/etc/httpd/conf.d/dicty.conf` and `systemctl reload httpd`.)
 
 Then visit https://dicty.labs.duke.edu — gene search, records, and tools should
 all work.

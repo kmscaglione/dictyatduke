@@ -1621,7 +1621,93 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initGeneSet();
+  } else if (tool === "stats") {
+    toolsShell.innerHTML = renderStatsPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initStats();
   }
+}
+
+// Curator-only site stats (unlisted — reachable at /tools/stats). Reads the
+// privacy-respecting pageview counter (/api/stats) after a curator sign-in.
+function renderStatsPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Curator</p>
+          <h2>Site visit stats</h2>
+          <p>Privacy-respecting pageview counts — no cookies, IP addresses, or personal data; page/section buckets only. Curator sign-in required.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div id="stats-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
+          <input id="stats-pw" type="password" aria-label="Curator password" placeholder="Curator password" style="${FIELD};min-width:240px">
+          <button type="button" id="stats-login">Sign in</button>
+          <span id="stats-msg" class="muted" style="font-size:13px"></span>
+        </div>
+        <div id="stats-out"></div>
+      </div>
+    </article>`;
+}
+
+function initStats() {
+  const pw = document.getElementById("stats-pw");
+  const btn = document.getElementById("stats-login");
+  const msg = document.getElementById("stats-msg");
+  if (!btn) return;
+  const go = async () => {
+    const password = (pw.value || "").trim();
+    if (!password) { pw.focus(); return; }
+    msg.textContent = "Signing in…";
+    try {
+      const r = await fetch("/api/curator/login", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong password."; return; }
+      const { token } = await r.json();
+      msg.textContent = "";
+      document.getElementById("stats-auth").style.display = "none";
+      loadStats(token);
+    } catch { msg.textContent = "Sign-in failed — try again."; }
+  };
+  btn.addEventListener("click", go);
+  pw.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+}
+
+async function loadStats(token) {
+  const out = document.getElementById("stats-out");
+  if (!out) return;
+  out.innerHTML = loadingHTML("Loading stats…");
+  try {
+    const r = await fetch("/api/stats", { headers: { Authorization: `Bearer ${token}` } });
+    if (!r.ok) { out.innerHTML = `<div class="empty-state">Could not load stats — your session may have expired. Reload and sign in again.</div>`; return; }
+    const d = await r.json();
+    const rows = Object.entries(d.counts || {});
+    const total = d.total || 0;
+    const max = rows.length ? rows[0][1] : 1;
+    const since = d.since ? new Date(d.since).toLocaleDateString() : "—";
+    out.innerHTML = `
+      <p style="margin:0 0 10px"><strong>${total.toLocaleString()}</strong> page views since ${escapeHtml(since)}
+        <span class="muted" style="font-size:12px">· updated ${d.updated ? escapeHtml(new Date(d.updated).toLocaleString()) : "—"}</span></p>
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead><tr>
+          <th style="text-align:left;padding:6px 8px">Page</th>
+          <th style="text-align:right;padding:6px 8px">Views</th>
+          <th style="width:40%"></th>
+        </tr></thead>
+        <tbody>
+        ${rows.length ? rows.map(([k, n]) => `
+          <tr style="border-top:1px solid var(--line)">
+            <td style="padding:6px 8px;font-family:ui-monospace,monospace">${escapeHtml(k)}</td>
+            <td style="padding:6px 8px;text-align:right">${n.toLocaleString()}</td>
+            <td style="padding:6px 8px"><div style="height:8px;border-radius:4px;background:var(--teal);width:${Math.max(2, Math.round((n / max) * 100))}%"></div></td>
+          </tr>`).join("") : `<tr><td colspan="3" style="padding:12px">No views recorded yet.</td></tr>`}
+        </tbody>
+      </table></div>`;
+  } catch { out.innerHTML = `<div class="empty-state">Could not load stats.</div>`; }
 }
 
 function renderExpressionPage() {
@@ -7458,7 +7544,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -7831,7 +7917,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

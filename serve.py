@@ -2737,6 +2737,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def end_headers(self):
+        # Baseline security headers on every response (belt-and-suspenders with
+        # anything the Apache/TLS front adds; HSTS is set at the TLS terminator).
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("X-Frame-Options", "SAMEORIGIN")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
         # HTML is always revalidated so new asset versions are picked up;
         # mtime-stamped css/js can be cached aggressively (URL changes on edit);
         # any unversioned css/js still revalidates to avoid staleness.

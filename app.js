@@ -5497,7 +5497,10 @@ async function ensureOrthologDisease() {
 function diseaseHref(id) {
   const [src, num] = id.split(":");
   if (src === "OMIM") return `https://omim.org/entry/${num}`;
-  if (src === "ORPHA") return `https://www.orpha.net/en/disease/detail/${num}`;
+  // Orphanet's own site sits behind an aggressive Cloudflare bot-check that loops
+  // "verifying you are human", so link the disease via EBI's OLS4 (ORDO ontology)
+  // instead — reliable, and it surfaces the term plus all its cross-references.
+  if (src === "ORPHA") return `https://www.ebi.ac.uk/ols4/ontologies/ordo/classes/${encodeURIComponent(encodeURIComponent("http://www.orpha.net/ORDO/Orphanet_" + num))}`;
   if (src === "DECIPHER") return `https://www.deciphergenomics.org/syndrome/${num}`;
   return "";
 }

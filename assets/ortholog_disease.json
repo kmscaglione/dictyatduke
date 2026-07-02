@@ -42463,7 +42463,7 @@
   },
   "_meta": {
     "description": "Dictyostelium genes -> human orthologs -> disease, keyed by DDB_G id.",
-    "built": "2026-06-10",
+    "built": "2026-07-02",
     "counts": {
       "genes_with_ortholog": 2521,
       "genes_with_disease": 423,

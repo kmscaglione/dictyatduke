@@ -1264,11 +1264,19 @@ button:focus-visible,
     position: sticky;
     min-height: 64px;
     padding: 10px 12px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
     /* keep the desktop blue gradient on mobile — a white bg here made the
        white nav text + hamburger invisible (white-on-white). */
   }
+
+  /* The desktop brand (68px logo + 32px text) is far too wide for a phone and
+     pushed the basket + hamburger off the right edge. Shrink it and let the
+     column shrink (minmax above) so the actions stay on the blue bar. */
+  .brand-wrap { min-width: 0; }
+  .brand { font-size: 19px; gap: 8px; min-width: 0; }
+  .mark { height: 34px; }
+  .brand span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .nav-links {
     display: none;

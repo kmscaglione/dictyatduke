@@ -1266,7 +1266,8 @@ button:focus-visible,
     padding: 10px 12px;
     grid-template-columns: 1fr auto;
     gap: 12px;
-    background: rgba(251, 252, 249, .98);
+    /* keep the desktop blue gradient on mobile — a white bg here made the
+       white nav text + hamburger invisible (white-on-white). */
   }
 
   .nav-links {

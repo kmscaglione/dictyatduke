@@ -3,6 +3,12 @@
     "items": [
         {
             "date": "2026-07-02",
+            "tag": "new",
+            "title": "BLAST and the genome browser are now live",
+            "body": "The genome tools are fully online: sequence-search any of the 17 hosted dictyostelid genomes with BLAST, explore them in the genome browser, and compare a gene across species. Per-gene sequence downloads, conservation, and natural-variation panels are working too. Thanks for your patience during setup — the site is now feature-complete."
+        },
+        {
+            "date": "2026-07-02",
             "tag": "update",
             "title": "Dicty@Duke is now live — with one known issue",
             "body": "Dicty@Duke is now running on Duke servers at dicty.labs.duke.edu. Gene search and records, GO and phenotype enrichment, protein structures, human-disease orthologs, the analysis tools, and the public API are all working. Known issue: BLAST and the other genome-dependent features (per-gene sequence retrieval, the genome browser, and cross-species comparison) are temporarily unavailable while we finish installing the genome databases on the new server — we expect them back shortly. Thanks for your patience, and please send feedback and corrections."

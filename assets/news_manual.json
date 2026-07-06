@@ -2,7 +2,7 @@
     "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
     "items": [
         {
-            "date": "2026-07-02",
+            "date": "2026-07-06",
             "tag": "new",
             "title": "BLAST and the genome browser are now live",
             "body": "The genome tools are fully online: sequence-search any of the 17 hosted dictyostelid genomes with BLAST, explore them in the genome browser, and compare a gene across species. Per-gene sequence downloads, conservation, and natural-variation panels are working too. Thanks for your patience during setup — the site is now feature-complete."

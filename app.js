@@ -5969,7 +5969,7 @@ async function loadDataStatus() {
           <tbody>
             ${data.datasets.map((d) => `<tr style="border-top:1px solid var(--line,#e5e7eb)">
               <td style="padding:10px"><strong>${escapeHtml(d.label)}</strong></td>
-              <td style="padding:10px;color:var(--muted,#6b7280)">${escapeHtml(d.source)}</td>
+              <td style="padding:10px;color:var(--muted,#6b7280)">${d.source && d.source.includes("dictyBase") ? `<a class="text-link" href="https://dictybase.dev" target="_blank" rel="noopener">${escapeHtml(d.source)}</a>` : escapeHtml(d.source)}</td>
               <td style="padding:10px;text-align:right">${Number(d.records).toLocaleString()}</td>
               <td style="padding:10px;white-space:nowrap">${escapeHtml(d.updated || "—")}</td>
             </tr>`).join("")}

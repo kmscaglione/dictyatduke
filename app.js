@@ -1722,7 +1722,7 @@ function renderExpressionPage() {
       </header>
       <div class="record-body">
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
-          <input id="expr-genes" aria-label="Genes to compare" placeholder="genes — e.g. mhcA acaA carA rasG pkaC" style="${FIELD};min-width:340px;flex:1">
+          <input id="expr-genes" aria-label="Genes to compare" placeholder="genes — e.g. mhcA acaA carA rasG pkaC" style="${FIELD};min-width:min(340px,100%);flex:1">
           <button type="button" id="expr-run">Plot</button>
         </div>
         <div data-expr-results style="margin-top:12px"><canvas id="expr-chart" height="120" hidden></canvas></div>
@@ -3372,7 +3372,7 @@ function renderGenomeBrowser() {
         <details style="margin-bottom:12px">
           <summary style="cursor:pointer;font-size:0.875rem;font-weight:700">Add your own track</summary>
           <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-            <input id="track-url" aria-label="Track URL" placeholder="track URL — BED, GFF3, VCF, bigWig, BAM…" style="${FIELD};min-width:300px;flex:1">
+            <input id="track-url" aria-label="Track URL" placeholder="track URL — BED, GFF3, VCF, bigWig, BAM…" style="${FIELD};min-width:min(300px,100%);flex:1">
             <input id="track-name" aria-label="Track name" placeholder="track name (optional)" style="${FIELD};width:170px">
             <select id="track-format" aria-label="Track format" style="${FIELD}">
               <option value="">auto-detect</option><option value="bed">BED</option><option value="gff3">GFF3</option><option value="gtf">GTF</option><option value="vcf">VCF</option><option value="bigwig">bigWig</option><option value="bedgraph">bedGraph</option><option value="bam">BAM</option><option value="wig">WIG</option>

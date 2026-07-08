@@ -500,6 +500,32 @@ button,
 .form-field.field-error select,
 .form-field.field-error textarea { border-color: var(--red, #c0392b); }
 
+/* Dicty Stock Center */
+.stock-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--line); }
+.stock-tab {
+  background: none; border: 0; border-bottom: 2px solid transparent;
+  padding: 8px 14px; margin-bottom: -1px;
+  font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer;
+}
+.stock-tab:hover { color: var(--teal-dark); }
+.stock-tab.active { color: var(--teal-dark); border-bottom-color: var(--teal); }
+.stock-list { display: flex; flex-direction: column; }
+.stock-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 0; border-top: 1px solid #edf1ee;
+}
+.stock-item:first-child { border-top: 0; }
+.stock-item-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.stock-item-body strong { font-size: 14px; }
+.stock-item-body span { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.stock-item .button { flex-shrink: 0; }
+.stock-cart-list { list-style: none; padding: 0; margin: 0 0 8px; }
+.stock-cart-list li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  padding: 6px 0; border-top: 1px solid #edf1ee;
+}
+.stock-cart-list li:first-child { border-top: 0; }
+
 .start-banner-icon { font-size: 26px; line-height: 1; }
 .start-banner-text { flex: 1; font-size: 14.5px; line-height: 1.45; }
 .start-banner-text strong { color: var(--teal-dark); }

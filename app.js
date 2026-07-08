@@ -6087,6 +6087,185 @@ async function loadStrain(sid) {
 }
 
 // --- Data & sources (provenance + freshness) ---
+// --- Dicty Stock Center: browse strains/plasmids, build a request, email it ---
+let stockCenterData = null;
+async function ensureStockCenter() {
+  if (stockCenterData) return stockCenterData;
+  try {
+    const res = await fetch("/assets/stock_center.json");
+    stockCenterData = res.ok ? await res.json() : { strains: [], plasmids: [] };
+  } catch { stockCenterData = { strains: [], plasmids: [] }; }
+  return stockCenterData;
+}
+
+const STOCK_CART_KEY = "dicty_stock_cart";
+const STOCK_ORDER_EMAIL = "matt.scaglione@duke.edu";
+function stockCart() { try { return JSON.parse(localStorage.getItem(STOCK_CART_KEY)) || []; } catch { return []; } }
+function stockCartSave(items) { try { localStorage.setItem(STOCK_CART_KEY, JSON.stringify(items)); } catch { /* ignore */ } }
+function stockCartHas(type, id) { return stockCart().some((i) => i.type === type && i.id === id); }
+
+function openStockCenter(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/stock-center");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = renderStockCenterPage();
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  initStockCenter();
+}
+
+function renderStockCenterPage() {
+  return `
+    <article class="record-card research-card" data-stock-root>
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Dicty Stock Center</p>
+          <h2>Order strains &amp; plasmids</h2>
+          <p>Browse the Dictyostelium strain and plasmid collections, add what you need to a request, and email it to the Stock Center. Shipping goes on your own FedEx account — details are in the request form.</p>
+          <p class="notice muted" style="margin:8px 0 0">Interim catalog imported from the legacy Dicty Stock Center — being replaced by the full, current inventory.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div class="stock-tabs" role="tablist">
+          <button type="button" class="stock-tab active" data-stock-tab="strains" role="tab">Strains</button>
+          <button type="button" class="stock-tab" data-stock-tab="plasmids" role="tab">Plasmids</button>
+        </div>
+        <div class="form-field" style="margin:14px 0 0">
+          <input type="search" id="stock-search" placeholder="Search the catalog…" autocomplete="off" aria-label="Search the stock center catalog">
+        </div>
+        <div data-stock-list><p class="notice muted">Loading catalog…</p></div>
+
+        <section class="data-block" style="margin-top:22px">
+          <h3>Your request (<span data-stock-cart-count>0</span>)</h3>
+          <div data-stock-cart></div>
+        </section>
+      </div>
+    </article>`;
+}
+
+function stockItemHTML(kind, it) {
+  const type = kind === "strains" ? "strain" : "plasmid";
+  const label = kind === "strains" ? it.id : `#${it.id} ${it.name}`;
+  const sub = kind === "strains"
+    ? [it.summary, it.genotype].filter(Boolean).join(" · ")
+    : [it.description, it.depositor ? "Deposited by " + it.depositor : ""].filter(Boolean).join(" · ");
+  const inCart = stockCartHas(type, it.id);
+  return `
+    <div class="stock-item">
+      <div class="stock-item-body">
+        <strong>${escapeHtml(label)}</strong>
+        ${sub ? `<span>${escapeHtml(sub)}</span>` : ""}
+      </div>
+      <button type="button" class="button ${inCart ? "" : "primary"}" data-stock-add data-type="${type}" data-id="${escapeHtml(it.id)}" data-label="${escapeHtml(label)}">${inCart ? "✓ Added" : "Add"}</button>
+    </div>`;
+}
+
+function stockOrderFormHTML() {
+  return `
+    <form class="annotation-form" id="stock-order-form" novalidate style="margin-top:16px">
+      <h4 style="margin:0 0 4px">Send this request</h4>
+      <p class="wizard-help">Emails your request to the Stock Center. We ship on <strong>your</strong> FedEx account — enter the account number so shipping bills to you, or <a class="text-link" href="https://www.fedex.com/en-us/shipping/create-shipment.html" target="_blank" rel="noopener">prepare a prepaid label at FedEx</a> and email it to us.</p>
+      <div class="form-field"><label for="stock-name">Your name <span class="required">*</span></label><input type="text" id="stock-name" name="name" required></div>
+      <div class="form-field"><label for="stock-email">Email <span class="required">*</span></label><input type="email" id="stock-email" name="email" required></div>
+      <div class="form-field"><label for="stock-inst">Institution / lab</label><input type="text" id="stock-inst" name="institution"></div>
+      <div class="form-field"><label for="stock-addr">Shipping address <span class="required">*</span></label><textarea id="stock-addr" name="address" rows="3" required></textarea></div>
+      <div class="form-field"><label for="stock-fedex">Your FedEx account number <span class="required">*</span></label><input type="text" id="stock-fedex" name="fedex" required placeholder="Shipping is billed to this account"></div>
+      <div class="form-actions"><button type="submit" class="button primary">Email my request</button></div>
+      <div id="stock-order-status" aria-live="polite"></div>
+    </form>`;
+}
+
+function initStockCenter() {
+  const root = toolsShell.querySelector("[data-stock-root]");
+  if (!root) return;
+  let active = "strains";
+  const listEl = root.querySelector("[data-stock-list]");
+  const searchEl = root.querySelector("#stock-search");
+
+  const renderCart = () => {
+    const c = stockCart();
+    root.querySelector("[data-stock-cart-count]").textContent = c.length;
+    const box = root.querySelector("[data-stock-cart]");
+    if (!c.length) { box.innerHTML = `<p class="notice muted">Nothing yet — add strains or plasmids above.</p>`; return; }
+    box.innerHTML = `
+      <ul class="list stock-cart-list">
+        ${c.map((i) => `<li><span><strong>${escapeHtml(i.label)}</strong> <span class="muted">(${i.type})</span></span><button type="button" class="text-link" data-stock-remove data-type="${i.type}" data-id="${escapeHtml(i.id)}">remove</button></li>`).join("")}
+      </ul>
+      <button type="button" class="text-link" data-stock-clear>Clear all</button>
+      ${stockOrderFormHTML()}`;
+  };
+
+  const renderList = () => {
+    const data = stockCenterData || { strains: [], plasmids: [] };
+    const q = (searchEl.value || "").trim().toLowerCase();
+    const items = active === "strains" ? data.strains : data.plasmids;
+    const match = (it) => {
+      if (!q) return true;
+      const hay = active === "strains"
+        ? `${it.id} ${it.summary} ${it.genotype} ${it.phenotype}`
+        : `${it.id} ${it.name} ${it.description} ${it.depositor}`;
+      return hay.toLowerCase().includes(q);
+    };
+    const shown = items.filter(match);
+    const cap = 300;
+    listEl.innerHTML = `
+      <p style="font-size:.8125rem;color:var(--muted);margin:10px 0 6px">${shown.length} of ${items.length} ${active}</p>
+      <div class="stock-list">${shown.slice(0, cap).map((it) => stockItemHTML(active, it)).join("")}</div>
+      ${shown.length > cap ? `<p class="notice muted">Showing the first ${cap} — refine your search to narrow the list.</p>` : ""}`;
+  };
+
+  root.addEventListener("click", (e) => {
+    const add = e.target.closest("[data-stock-add]");
+    const remove = e.target.closest("[data-stock-remove]");
+    const clear = e.target.closest("[data-stock-clear]");
+    const tab = e.target.closest("[data-stock-tab]");
+    if (add) {
+      const c = stockCart();
+      const exists = c.some((i) => i.type === add.dataset.type && i.id === add.dataset.id);
+      const next = exists
+        ? c.filter((i) => !(i.type === add.dataset.type && i.id === add.dataset.id))
+        : c.concat({ type: add.dataset.type, id: add.dataset.id, label: add.dataset.label });
+      stockCartSave(next); renderList(); renderCart();
+    } else if (remove) {
+      stockCartSave(stockCart().filter((i) => !(i.type === remove.dataset.type && i.id === remove.dataset.id)));
+      renderList(); renderCart();
+    } else if (clear) {
+      stockCartSave([]); renderList(); renderCart();
+    } else if (tab) {
+      active = tab.dataset.stockTab;
+      root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t === tab));
+      renderList();
+    }
+  });
+
+  root.addEventListener("submit", (e) => {
+    if (e.target.id !== "stock-order-form") return;
+    e.preventDefault();
+    const f = e.target;
+    const status = f.querySelector("#stock-order-status");
+    const missing = [...f.querySelectorAll("[required]")].filter((el) => !el.value.trim());
+    if (missing.length) { missing[0].focus(); status.innerHTML = `<p class="notice" style="color:var(--red,#c0392b)">Please fill in the required fields.</p>`; return; }
+    const c = stockCart();
+    if (!c.length) { status.innerHTML = `<p class="notice">Your request is empty.</p>`; return; }
+    const d = new FormData(f);
+    const body = [
+      "Dicty Stock Center — order request", "",
+      `Requester: ${d.get("name")} <${d.get("email")}>`,
+      d.get("institution") ? `Institution: ${d.get("institution")}` : null,
+      "", "Ship to:", d.get("address"), "",
+      `FedEx account (bill shipping to recipient): ${d.get("fedex")}`, "",
+      `Items requested (${c.length}):`,
+      ...c.map((i) => `  - [${i.type}] ${i.label}`)
+    ].filter((x) => x !== null).join("\n");
+    window.location.href = `mailto:${STOCK_ORDER_EMAIL}?subject=${encodeURIComponent("Dicty Stock Center order — " + c.length + " item(s)")}&body=${encodeURIComponent(body)}`;
+    status.innerHTML = `<p class="notice">Your email client should have opened with the request. If not, email <a href="mailto:${STOCK_ORDER_EMAIL}">${STOCK_ORDER_EMAIL}</a> directly.</p>`;
+  });
+
+  searchEl.addEventListener("input", renderList);
+  renderCart();
+  ensureStockCenter().then(() => { renderList(); });
+}
+
 function openDataPage(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/data");
@@ -6974,6 +7153,8 @@ function buildSiteIndex() {
   }
   add("Award Recipients", "Annual community award winners by career stage.", "/community/award-recipients", "Community",
     { keywords: AWARD_RECIPIENTS.flatMap((y) => [y.year, ...y.awards.flatMap((a) => [a.stage, ...a.names])]).join(" ") });
+  add("Dicty Stock Center", "Order Dictyostelium strains and plasmids.", "/stock-center", "Community",
+    { keywords: "stock center order request strains plasmids fedex shipping catalog" });
 
   SITE_PAGES = pages;
 }
@@ -8157,6 +8338,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "data") {
     openDataPage(false);
+    return;
+  }
+  if (pathParts[0] === "stock-center") {
+    openStockCenter(false);
     return;
   }
   if (pathParts[0] === "cite") {

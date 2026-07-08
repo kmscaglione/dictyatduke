@@ -1303,11 +1303,13 @@ async function openRemoteGene(ncbiId) {
     // 2. Use DDB_G from NCBI aliases immediately — fast path for most D. discoideum genes
     let veupath = ddbFromAliases;
 
-    // 3. UniProt lookup — try symbol as-is then lowercase
+    // 3. UniProt lookup — try symbol as-is, then lowercase, then the DDB_G id.
+    // dictyBase symbols often differ from UniProt gene names (e.g. ppk1 -> ppkA),
+    // so fall back to the DDB_G id, which UniProt indexes as an ORF name.
     let uniprot = "";
     let uniprotFullRecord = null;
     try {
-      const symsToTry = [...new Set([symbol, symbol.toLowerCase()])];
+      const symsToTry = [...new Set([symbol, symbol.toLowerCase(), ddbFromAliases].filter(Boolean))];
       for (const sym of symsToTry) {
         const upRes = await fetch(`https://rest.uniprot.org/uniprotkb/search?query=gene:${encodeURIComponent(sym)}+AND+organism_id:44689&format=json&size=1`);
         const upData = await upRes.json();

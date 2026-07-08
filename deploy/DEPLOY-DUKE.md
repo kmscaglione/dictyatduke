@@ -1,4 +1,4 @@
-# Deploying Dicty@Duke on dicty.labs.duke.edu (Apache + systemd)
+# Deploying dictyBase on dicty.labs.duke.edu (Apache + systemd)
 
 Concrete steps for this server. Path assumed: `/srv/web/dicty.labs.duke.edu/html`.
 General background is in `../docs/deployment.md`; this file is the Duke-specific

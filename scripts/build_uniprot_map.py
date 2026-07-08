@@ -41,7 +41,7 @@ OUT = ROOT / "assets" / "uniprot_map.json"
 CACHE = pathlib.Path(os.environ.get("DICTY_CACHE", "/tmp/dicty-uniprot-map"))
 CACHE.mkdir(parents=True, exist_ok=True)
 
-UA = {"User-Agent": "Dicty@Duke uniprot-map build (research)"}
+UA = {"User-Agent": "dictyBase uniprot-map build (research)"}
 ORGANISM_ID = "44689"  # Dictyostelium discoideum
 
 

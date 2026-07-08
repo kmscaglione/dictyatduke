@@ -1,4 +1,4 @@
-# Static-host trial result — Dicty@Duke needs a backend VM
+# Static-host trial result — dictyBase needs a backend VM
 
 **Date:** 2026-06-30
 **Host tested:** `web-staticsites-01.oit.duke.edu` (OIT shared static hosting)
@@ -8,7 +8,7 @@
 is required.
 
 ## What the app is
-Dicty@Duke is **not** a static site. It is a single-page app served by a small
+dictyBase is **not** a static site. It is a single-page app served by a small
 Python backend (`serve.py`, Python 3 standard library only — no third-party
 runtime deps). The backend does work that a static DocumentRoot cannot:
 

@@ -1,8 +1,8 @@
 [Unit]
-# Dicty@Duke web application — runs serve.py (Python stdlib HTTP server).
+# dictyBase web application — runs serve.py (Python stdlib HTTP server).
 # Install to /etc/systemd/system/dicty.service, then:
 #   sudo systemctl daemon-reload && sudo systemctl enable --now dicty
-Description=Dicty@Duke web app (serve.py)
+Description=dictyBase web app (serve.py)
 After=network-online.target
 Wants=network-online.target
 

@@ -1,4 +1,4 @@
-"""GO-term enrichment engine for Dicty@Duke.
+"""GO-term enrichment engine for dictyBase.
 
 Pure, dependency-free (stdlib only) so it is unit-testable without starting the
 server. Given a list of genes (DDB ids or symbols), it computes hypergeometric

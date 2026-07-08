@@ -10,14 +10,14 @@
     {
       "date": "2026-07-02",
       "tag": "update",
-      "title": "Dicty@Duke is now live — with one known issue",
-      "body": "Dicty@Duke is now running on Duke servers at dicty.labs.duke.edu. Gene search and records, GO and phenotype enrichment, protein structures, human-disease orthologs, the analysis tools, and the public API are all working. Known issue: BLAST and the other genome-dependent features (per-gene sequence retrieval, the genome browser, and cross-species comparison) are temporarily unavailable while we finish installing the genome databases on the new server — we expect them back shortly. Thanks for your patience, and please send feedback and corrections."
+      "title": "dictyBase is now live — with one known issue",
+      "body": "dictyBase is now running on Duke servers at dicty.labs.duke.edu. Gene search and records, GO and phenotype enrichment, protein structures, human-disease orthologs, the analysis tools, and the public API are all working. Known issue: BLAST and the other genome-dependent features (per-gene sequence retrieval, the genome browser, and cross-species comparison) are temporarily unavailable while we finish installing the genome databases on the new server — we expect them back shortly. Thanks for your patience, and please send feedback and corrections."
     },
     {
       "date": "2026-06-30",
       "tag": "update",
-      "title": "Dicty@Duke is live in preview at Duke",
-      "body": "Dicty@Duke is now hosted at Duke and reachable at dicty.labs.duke.edu. This is an early preview served from static hosting while the application server is being provisioned, so many interactive features — full gene-record data, BLAST, the analysis tools, and search — are not available yet and will return errors. The site will be fully functional once the backend is in place. Thanks for your patience as we stand it up."
+      "title": "dictyBase is live in preview at Duke",
+      "body": "dictyBase is now hosted at Duke and reachable at dicty.labs.duke.edu. This is an early preview served from static hosting while the application server is being provisioned, so many interactive features — full gene-record data, BLAST, the analysis tools, and search — are not available yet and will return errors. The site will be fully functional once the backend is in place. Thanks for your patience as we stand it up."
     },
     {
       "date": "2026-06-15",
@@ -99,7 +99,7 @@
     {
       "date": "2026-06-05",
       "tag": "update",
-      "title": "Welcome to Dicty@Duke (beta)",
+      "title": "Welcome to dictyBase (beta)",
       "body": "A modern interface over Dictyostelid genomes and curation: searchable gene records with structures and expression, a genome browser, BLAST, GO/phenotype enrichment, and a public REST API. Feedback and corrections welcome."
     }
   ]

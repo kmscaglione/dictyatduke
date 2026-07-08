@@ -42,7 +42,7 @@ CACHE = pathlib.Path("/tmp/odbuild")
 CACHE.mkdir(exist_ok=True)
 ORPHA_ONLY = os.environ.get("ORPHA_ONLY") == "1"
 
-UA = {"User-Agent": "Dicty@Duke ortholog-disease build (research)"}
+UA = {"User-Agent": "dictyBase ortholog-disease build (research)"}
 
 
 def _fetch(url, attempts=4):

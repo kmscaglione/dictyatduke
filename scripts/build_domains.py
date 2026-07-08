@@ -54,7 +54,7 @@ CACHE = pathlib.Path(os.environ.get("DICTY_CACHE", "/tmp/dicty-domains"))
 CACHE.mkdir(parents=True, exist_ok=True)
 
 INTERPRO = "https://www.ebi.ac.uk/interpro/api"
-UA = {"User-Agent": "Dicty@Duke domain-cache build (research)"}
+UA = {"User-Agent": "dictyBase domain-cache build (research)"}
 THROTTLE = float(os.environ.get("DICTY_THROTTLE", "0.34"))  # ~3 req/s default
 
 

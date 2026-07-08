@@ -1,4 +1,4 @@
-# Deploying Dicty@Duke to a public host
+# Deploying dictyBase to a public host
 
 A practical, ordered checklist for putting the site on a public VM safely. The
 application code is already hardened (env-var secret, constant-time auth,
@@ -147,7 +147,7 @@ the state wouldn't be shared) and must auto-restart on crash or reboot.
 ```ini
 # /etc/systemd/system/dicty.service
 [Unit]
-Description=Dicty@Duke (serve.py)
+Description=dictyBase (serve.py)
 After=network-online.target
 Wants=network-online.target
 

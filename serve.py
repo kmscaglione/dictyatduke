@@ -147,7 +147,7 @@ def _load_gene_annotations():
 # the same generic <title>/meta for /gene/mybB as for the home page and can't
 # index gene pages. _serve_index injects per-route <title>, description,
 # canonical, OpenGraph and JSON-LD; /robots.txt + /sitemap.xml expose the genes.
-SITE_NAME = "Dicty@Duke"
+SITE_NAME = "dictyBase"
 GENE_INDEX_PATH = pathlib.Path(ROOT) / "assets" / "gene_index.json"
 _GENE_META = {"mtime": None, "by_symbol": {}, "by_ddb": {}, "records": []}
 
@@ -171,7 +171,7 @@ _ROUTE_META = {
     "/tools/lab": ("Lab tools",
         "Design CRISPR guides with genome off-target checking, qPCR primers, and codon-optimize sequences for Dictyostelium."),
     "/tools/api": ("REST API",
-        "Public REST API for Dictyostelium gene records, GO terms, strains, BLAST, and enrichment on Dicty@Duke."),
+        "Public REST API for Dictyostelium gene records, GO terms, strains, BLAST, and enrichment on dictyBase."),
     "/tools/convert": ("Gene ID converter",
         "Convert between Dictyostelium gene symbols, DDB_G ids, UniProt accessions, and NCBI Gene ids in one normalized table."),
     "/tools/sequence": ("Sequence tools",
@@ -181,13 +181,13 @@ _ROUTE_META = {
     "/start": ("Start here",
         "New to Dictyostelium? Why it is a powerful model organism and how to get started using it in your lab."),
     "/data": ("Data and provenance",
-        "Where Dicty@Duke's data comes from: sources, licenses, versioning, and how the site is built."),
+        "Where dictyBase's data comes from: sources, licenses, versioning, and how the site is built."),
     "/news": ("News and updates",
-        "All Dicty@Duke announcements and data updates, newest first."),
+        "All dictyBase announcements and data updates, newest first."),
     "/tools": ("All tools",
-        "Every Dicty@Duke analysis tool in one place: BLAST, genome browser, enrichment, sequence tools, lab tools, and more."),
+        "Every dictyBase analysis tool in one place: BLAST, genome browser, enrichment, sequence tools, lab tools, and more."),
     "/cite": ("How to cite",
-        "How to cite the Dicty@Duke data release: version, DOI, citation text, and BibTeX, plus the primary data sources to credit."),
+        "How to cite the dictyBase data release: version, DOI, citation text, and BibTeX, plus the primary data sources to credit."),
     "/community/disease-models": ("Disease models",
         "Browse Dictyostelium genes with human disease-associated orthologs - a starting point for modelling human disease in the amoeba."),
 }
@@ -1739,7 +1739,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         updated = (items[0]["date"] if items and items[0].get("date") else "1970-01-01") + "T00:00:00Z"
         parts = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<feed xmlns="http://www.w3.org/2005/Atom">',
-                 "<title>Dicty@Duke — News &amp; updates</title>",
+                 "<title>dictyBase — News &amp; updates</title>",
                  f'<link href="{_esc(base)}/news"/>',
                  f'<link rel="self" type="application/atom+xml" href="{_esc(base)}/news.xml"/>',
                  f"<id>{_esc(base)}/news</id>",
@@ -2447,7 +2447,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return
             label = {"genomic": "genomic", "cdna": "cDNA", "protein": "protein"}[typ]
             wrapped = "\n".join(seq[i:i + 60] for i in range(0, len(seq), 60))
-            fasta = f">{symbol} {ddb} {label} | Dicty@Duke\n{wrapped}\n".encode()
+            fasta = f">{symbol} {ddb} {label} | dictyBase\n{wrapped}\n".encode()
             fname = "".join(c for c in f"{symbol}_{typ}.fasta" if c.isalnum() or c in "._-")
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")

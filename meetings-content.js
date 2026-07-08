@@ -9,7 +9,7 @@ window.meetingsContent = {
       dates: "August 3–7, 2025",
       organizers: ["Ralph Gräf", "Christian Hammann"],
       links: [],
-      upcoming: true
+      upcoming: false
     },
     {
       year: 2024,

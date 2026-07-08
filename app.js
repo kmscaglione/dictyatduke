@@ -4239,8 +4239,8 @@ function renderAnnotationsPage() {
               <textarea id="ann-notes" name="notes" required rows="4" placeholder="Describe the annotation, evidence, or correction you are submitting."></textarea>
             </div>
             <div class="form-field">
-              <label for="ann-pmid">Supporting PMID (optional)</label>
-              <input type="text" id="ann-pmid" name="pmid" placeholder="e.g. 34291044">
+              <label for="ann-pmid">Supporting PMID <span class="required">*</span></label>
+              <input type="text" id="ann-pmid" name="pmid" required placeholder="e.g. 34291044">
             </div>
             <div class="form-field">
               <label for="ann-file">Attach a file (optional)</label>

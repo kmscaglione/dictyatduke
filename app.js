@@ -4190,6 +4190,24 @@ function renderAnnotationsPage() {
         </div>
       </header>
       <div class="record-body">
+        <section class="data-block" id="how-curation-works">
+          <h3>How community curation works</h3>
+          <p>Community curation lets the researchers who know a gene best — usually its authors — add expert, evidence-backed annotations to the database. The steps below follow the model pioneered by <a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">PomBase's Canto</a> community-curation tool, adapted to Dicty@Duke.</p>
+          <ol class="curation-steps">
+            <li><strong>Start with a publication.</strong> Curate the findings from one paper at a time — typically your own. Have its PMID or DOI handy.</li>
+            <li><strong>Focus on experimental results.</strong> Annotate what the experiments actually show — a gene's function, its role in a process, where the product localizes, or a mutant phenotype. Skip background and speculation.</li>
+            <li><strong>Choose the annotation type and the most specific term.</strong>
+              <ul>
+                <li><strong>GO term</strong> — molecular function, biological process, or cellular component. Browse terms at <a class="text-link" href="https://www.ebi.ac.uk/QuickGO/" target="_blank" rel="noopener">QuickGO</a> or <a class="text-link" href="https://amigo.geneontology.org/" target="_blank" rel="noopener">AmiGO</a> and pick the most specific one that fits.</li>
+                <li><strong>Phenotype</strong> — an observable trait of a mutant, knockout, or over-expression strain.</li>
+                <li><strong>Literature / PMID</strong> — link a publication to a gene.</li>
+                <li><strong>Nomenclature</strong> — a gene name or symbol correction.</li>
+              </ul>
+            </li>
+            <li><strong>Give the evidence.</strong> In the notes, say how the finding was shown (the experiment or assay) and point to the figure or table. Add the supporting PMID so a curator can verify it.</li>
+            <li><strong>Submit for review.</strong> A Dicty@Duke curator checks each submission against the evidence before it is added — so your contribution is credited and stays consistent with the rest of the database.</li>
+          </ol>
+        </section>
         <section class="data-block" id="annotation-form-section">
           <h3>Annotation submission</h3>
           <form class="annotation-form" id="annotation-form" novalidate>

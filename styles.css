@@ -443,6 +443,33 @@ button,
   transition: box-shadow .12s ease, transform .12s ease;
 }
 .start-banner:hover { box-shadow: 0 8px 22px rgba(1, 33, 105, .12); transform: translateY(-1px); }
+
+/* "Community Curation" CTA at the top of the search panel */
+.curate-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  background: linear-gradient(100deg, var(--soft), #fff);
+  text-decoration: none;
+  color: var(--ink);
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+.curate-cta:hover { box-shadow: 0 8px 22px rgba(1, 33, 105, .12); transform: translateY(-1px); }
+.curate-cta-icon { font-size: 22px; line-height: 1; }
+.curate-cta-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.35; }
+.curate-cta-text strong { color: var(--teal-dark); font-size: 15px; }
+.curate-cta-text small { color: var(--muted); font-size: 12.5px; }
+.curate-cta-arrow { margin-left: auto; font-weight: 800; color: var(--teal-dark); }
+
+/* "How community curation works" steps */
+.curation-steps { margin: 6px 0 0; padding-left: 20px; line-height: 1.5; }
+.curation-steps > li { margin-bottom: 10px; }
+.curation-steps ul { margin: 6px 0; padding-left: 18px; }
+.curation-steps ul li { margin-bottom: 3px; }
+
 .start-banner-icon { font-size: 26px; line-height: 1; }
 .start-banner-text { flex: 1; font-size: 14.5px; line-height: 1.45; }
 .start-banner-text strong { color: var(--teal-dark); }

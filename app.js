@@ -4101,6 +4101,7 @@ function renderCommunity(section) {
   } else if (section === "annotations") {
     communityShell.innerHTML = renderAnnotationsPage();
     communityShell.removeAttribute("hidden");
+    initCurationWizard();
   } else if (section === "upload-data") {
     communityShell.innerHTML = renderUploadDataPage();
     communityShell.removeAttribute("hidden");
@@ -4185,85 +4186,266 @@ function renderAnnotationsPage() {
       <header class="record-header">
         <div class="record-title">
           <p class="eyebrow">Community</p>
-          <h2>Submit annotations</h2>
-          <p>Upload gene annotations for review by Dicty@Duke curators. You can submit GO terms, phenotypes, literature links, or other gene-level evidence. Accepted formats: CSV, TSV, XLSX, or plain text.</p>
+          <h2>Curate a gene</h2>
+          <p>Add expert, evidence-backed annotations to Dicty@Duke. This short guided form walks you through the same standard steps professional curators follow — modeled on <a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">PomBase's Canto</a>, kept deliberately lightweight. Work through one paper, one gene, and one finding at a time.</p>
         </div>
       </header>
       <div class="record-body">
-        <section class="data-block" id="how-curation-works">
-          <h3>How community curation works</h3>
-          <p>Community curation lets the researchers who know a gene best — usually its authors — add expert, evidence-backed annotations to the database. The steps below follow the model pioneered by <a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">PomBase's Canto</a> community-curation tool, adapted to Dicty@Duke.</p>
-          <ol class="curation-steps">
-            <li><strong>Start with a publication.</strong> Curate the findings from one paper at a time — typically your own. Have its PMID or DOI handy.</li>
-            <li><strong>Focus on experimental results.</strong> Annotate what the experiments actually show — a gene's function, its role in a process, where the product localizes, or a mutant phenotype. Skip background and speculation.</li>
-            <li><strong>Choose the annotation type and the most specific term.</strong>
-              <ul>
-                <li><strong>GO term</strong> — molecular function, biological process, or cellular component. Browse terms at <a class="text-link" href="https://www.ebi.ac.uk/QuickGO/" target="_blank" rel="noopener">QuickGO</a> or <a class="text-link" href="https://amigo.geneontology.org/" target="_blank" rel="noopener">AmiGO</a> and pick the most specific one that fits.</li>
-                <li><strong>Phenotype</strong> — an observable trait of a mutant, knockout, or over-expression strain.</li>
-                <li><strong>Literature / PMID</strong> — link a publication to a gene.</li>
-                <li><strong>Nomenclature</strong> — a gene name or symbol correction.</li>
-              </ul>
-            </li>
-            <li><strong>Give the evidence.</strong> In the notes, say how the finding was shown (the experiment or assay) and point to the figure or table. Add the supporting PMID so a curator can verify it.</li>
-            <li><strong>Submit for review.</strong> A Dicty@Duke curator checks each submission against the evidence before it is added — so your contribution is credited and stays consistent with the rest of the database.</li>
-          </ol>
+        <section class="data-block" id="curation-resources">
+          <h3>Before you start</h3>
+          <p>Curation captures a single experimental result from a publication as a standardized annotation. The best annotation is <strong>specific</strong> (the most precise term that fits), <strong>evidenced</strong> (tied to an experiment in the paper), and <strong>attributed</strong> (linked to its PMID). These resources help you choose well:</p>
+          <ul class="resource-links">
+            <li><a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">Canto curation tutorial</a> — the community-curation workflow this form is based on.</li>
+            <li><a class="text-link" href="https://www.ebi.ac.uk/QuickGO/" target="_blank" rel="noopener">QuickGO</a> — search the Gene Ontology and copy the most specific term (its name and <code>GO:</code> id).</li>
+            <li><a class="text-link" href="https://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">GO evidence codes</a> — how to describe the experiment that supports an annotation.</li>
+            <li><a class="text-link" href="https://geneontology.org/docs/go-annotations/" target="_blank" rel="noopener">What makes a good GO annotation</a> — the annotation best-practice guide.</li>
+          </ul>
         </section>
+
         <section class="data-block" id="annotation-form-section">
-          <h3>Annotation submission</h3>
-          <form class="annotation-form" id="annotation-form" novalidate>
-            <div class="form-field">
-              <label for="ann-submitter-name">Your name <span class="required">*</span></label>
-              <input type="text" id="ann-submitter-name" name="submitter_name" autocomplete="name" required placeholder="Jane Smith">
-            </div>
-            <div class="form-field">
-              <label for="ann-submitter-email">Email address <span class="required">*</span></label>
-              <input type="email" id="ann-submitter-email" name="submitter_email" autocomplete="email" required placeholder="you@institution.edu">
-            </div>
-            <div class="form-field">
-              <label for="ann-gene">Gene symbol or DDB ID <span class="required">*</span></label>
-              <input type="text" id="ann-gene" name="gene" required placeholder="e.g. cln5, DDB_G0275299">
-            </div>
-            <div class="form-field">
-              <label for="ann-type">Annotation type <span class="required">*</span></label>
-              <select id="ann-type" name="annotation_type" required>
-                <option value="">Select a type…</option>
-                <option value="go">GO term</option>
-                <option value="phenotype">Phenotype</option>
-                <option value="literature">Literature / PMID</option>
-                <option value="nomenclature">Nomenclature correction</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="ann-notes">Notes or description <span class="required">*</span></label>
-              <textarea id="ann-notes" name="notes" required rows="4" placeholder="Describe the annotation, evidence, or correction you are submitting."></textarea>
-            </div>
-            <div class="form-field">
-              <label for="ann-pmid">Supporting PMID <span class="required">*</span></label>
-              <input type="text" id="ann-pmid" name="pmid" required placeholder="e.g. 34291044">
-            </div>
-            <div class="form-field">
-              <label for="ann-file">Attach a file (optional)</label>
-              <input type="file" id="ann-file" name="annotation_file" accept=".csv,.tsv,.xlsx,.txt,.pdf,.docx">
-              <small>CSV, TSV, XLSX, TXT, PDF, or DOCX · max 10 MB</small>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="button primary">Submit annotation</button>
-            </div>
-            <div id="annotation-form-status" aria-live="polite"></div>
-          </form>
+          <div id="curation-wizard">
+            <ol class="wizard-progress" aria-hidden="true">
+              <li data-step="0"><span>1</span> Publication</li>
+              <li data-step="1"><span>2</span> Gene</li>
+              <li data-step="2"><span>3</span> Annotation</li>
+              <li data-step="3"><span>4</span> Review</li>
+            </ol>
+
+            <form class="annotation-form" id="annotation-form" novalidate>
+
+              <fieldset class="wizard-step" data-step="0">
+                <legend>Step 1 · Start with the publication</legend>
+                <p class="wizard-help">Curate one paper at a time — usually your own. Everything you submit should be supported by a result reported in this publication.</p>
+                <div class="form-field">
+                  <label for="ann-pmid">PubMed ID (PMID) <span class="required">*</span></label>
+                  <input type="text" id="ann-pmid" name="pmid" required inputmode="numeric" placeholder="e.g. 34291044">
+                  <small>The number from the paper's <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a> page — digits only.</small>
+                </div>
+                <div class="form-field">
+                  <label for="ann-submitter-name">Your name <span class="required">*</span></label>
+                  <input type="text" id="ann-submitter-name" name="submitter_name" autocomplete="name" required placeholder="Jane Smith">
+                </div>
+                <div class="form-field">
+                  <label for="ann-submitter-email">Email address <span class="required">*</span></label>
+                  <input type="email" id="ann-submitter-email" name="submitter_email" autocomplete="email" required placeholder="you@institution.edu">
+                  <small>So a curator can credit you and follow up if there's a question.</small>
+                </div>
+                <div class="wizard-nav">
+                  <span></span>
+                  <button type="button" class="button primary" data-wiz-next>Next: the gene →</button>
+                </div>
+              </fieldset>
+
+              <fieldset class="wizard-step" data-step="1" hidden>
+                <legend>Step 2 · Which gene?</legend>
+                <p class="wizard-help">One gene per submission. Use its dictyBase symbol or DDB_G id — if you're unsure of the exact id, look it up with gene search first.</p>
+                <div class="form-field">
+                  <label for="ann-gene">Gene symbol or DDB_G id <span class="required">*</span></label>
+                  <input type="text" id="ann-gene" name="gene" required placeholder="e.g. cln5, DDB_G0275299">
+                </div>
+                <div class="wizard-nav">
+                  <button type="button" class="button" data-wiz-back>← Back</button>
+                  <button type="button" class="button primary" data-wiz-next>Next: the annotation →</button>
+                </div>
+              </fieldset>
+
+              <fieldset class="wizard-step" data-step="2" hidden>
+                <legend>Step 3 · Describe the finding</legend>
+                <p class="wizard-help">Capture one experimental result. Pick the kind of annotation, name the most specific term, and say how it was shown.</p>
+                <div class="form-field">
+                  <label for="ann-type">Annotation type <span class="required">*</span></label>
+                  <select id="ann-type" name="annotation_type" required>
+                    <option value="">Select…</option>
+                    <optgroup label="Gene Ontology">
+                      <option value="GO molecular function">GO · molecular function (what the product does)</option>
+                      <option value="GO biological process">GO · biological process (what it's part of)</option>
+                      <option value="GO cellular component">GO · cellular component (where it acts)</option>
+                    </optgroup>
+                    <option value="Phenotype">Phenotype (mutant / knockout / over-expression)</option>
+                    <option value="Physical or genetic interaction">Physical or genetic interaction</option>
+                    <option value="Literature">Literature link only</option>
+                    <option value="Nomenclature correction">Nomenclature correction</option>
+                  </select>
+                </div>
+                <div class="form-field" data-when-go hidden>
+                  <label for="ann-goid">GO term id (recommended)</label>
+                  <input type="text" id="ann-goid" name="go_id" placeholder="e.g. GO:0016301">
+                  <small>Find the most specific term at <a class="text-link" href="https://www.ebi.ac.uk/QuickGO/" target="_blank" rel="noopener">QuickGO</a> and paste its id.</small>
+                </div>
+                <div class="form-field">
+                  <label for="ann-term"><span data-term-text>Term or finding</span> <span class="required">*</span></label>
+                  <input type="text" id="ann-term" name="term" required placeholder="e.g. protein kinase activity">
+                </div>
+                <div class="form-field">
+                  <label for="ann-evidence">How was it shown? <span class="required">*</span></label>
+                  <select id="ann-evidence" name="evidence" required>
+                    <option value="">Select the experiment type…</option>
+                    <option value="Direct assay">Direct assay (e.g. enzyme or binding assay)</option>
+                    <option value="Mutant or knockout phenotype">Mutant or knockout phenotype</option>
+                    <option value="Genetic interaction">Genetic interaction</option>
+                    <option value="Physical interaction">Physical interaction (e.g. co-IP, pull-down)</option>
+                    <option value="Expression pattern">Expression pattern</option>
+                    <option value="Sequence or structural similarity">Sequence or structural similarity</option>
+                    <option value="Author statement / review">Author statement / review</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="ann-figure">Figure or table (optional)</label>
+                  <input type="text" id="ann-figure" name="figure" placeholder="e.g. Fig 3B, Table 1">
+                </div>
+                <div class="form-field">
+                  <label for="ann-notes">Anything else for the curator? (optional)</label>
+                  <textarea id="ann-notes" name="notes" rows="3" placeholder="Extra context, caveats, or a second annotation to note."></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="ann-file">Attach a file (optional)</label>
+                  <input type="file" id="ann-file" name="annotation_file" accept=".csv,.tsv,.xlsx,.txt,.pdf,.docx">
+                  <small>CSV, TSV, XLSX, TXT, PDF, or DOCX · max 10 MB. Useful for submitting several annotations at once.</small>
+                </div>
+                <div class="wizard-nav">
+                  <button type="button" class="button" data-wiz-back>← Back</button>
+                  <button type="button" class="button primary" data-wiz-next>Review →</button>
+                </div>
+              </fieldset>
+
+              <fieldset class="wizard-step" data-step="3" hidden>
+                <legend>Step 4 · Review &amp; submit</legend>
+                <p class="wizard-help">Check your annotation below. A Dicty@Duke curator verifies each submission against the paper before it's added to the database.</p>
+                <div class="wizard-review kv" id="wizard-review"></div>
+                <div class="wizard-nav">
+                  <button type="button" class="button" data-wiz-back>← Back</button>
+                  <button type="submit" class="button primary">Submit annotation</button>
+                </div>
+              </fieldset>
+
+              <div id="annotation-form-status" aria-live="polite"></div>
+            </form>
+          </div>
         </section>
+
         <section class="data-block">
           <h3>What happens next</h3>
           <div class="kv">
-            <span>Review</span><strong>Submissions are reviewed by Dicty@Duke curators before being added to the database.</strong>
-            <span>Contact</span><strong>Curators may follow up at the email address you provide.</strong>
-            <span>Questions</span><strong>Email <a class="text-link" href="mailto:matt.scaglione@duke.edu">matt.scaglione@duke.edu</a> with any questions.</strong>
+            <span>Review</span><strong>A curator checks your annotation against the cited paper before it is added — usually within a few days.</strong>
+            <span>Credit</span><strong>Accepted annotations are attributed to you as the community curator.</strong>
+            <span>More to add?</span><strong>Submit the form again for each additional finding, or attach a file with several at once.</strong>
+            <span>Questions</span><strong>Email <a class="text-link" href="mailto:matt.scaglione@duke.edu">matt.scaglione@duke.edu</a>.</strong>
           </div>
         </section>
       </div>
     </article>
   `;
+}
+
+// Guided "Canto-lite" curation wizard: step navigation, per-step validation,
+// type-aware fields, and a review summary. Submit is handled by the shared
+// annotation-form submit handler.
+function initCurationWizard() {
+  const wiz = document.getElementById("curation-wizard");
+  if (!wiz) return;
+  const steps = Array.from(wiz.querySelectorAll(".wizard-step"));
+  const dots = Array.from(wiz.querySelectorAll(".wizard-progress li"));
+  const status = document.getElementById("annotation-form-status");
+  let current = 0;
+
+  const show = (i) => {
+    steps.forEach((s, idx) => { s.hidden = idx !== i; });
+    dots.forEach((d, idx) => {
+      d.classList.toggle("active", idx === i);
+      d.classList.toggle("done", idx < i);
+    });
+    current = i;
+    if (status) status.innerHTML = "";
+    const focusable = steps[i].querySelector("input:not([type=file]), select, textarea");
+    if (focusable) focusable.focus({ preventScroll: true });
+    wiz.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const flagError = (el) => { const f = el.closest(".form-field"); if (f) f.classList.add("field-error"); };
+  const clearErrors = (i) => {
+    steps[i].querySelectorAll(".form-field.field-error").forEach((f) => f.classList.remove("field-error"));
+    if (status) status.innerHTML = "";
+  };
+  const say = (msg) => { if (status) status.innerHTML = `<p class="notice" style="color:var(--red,#c0392b)">${msg}</p>`; };
+
+  const validateStep = (i) => {
+    clearErrors(i);
+    // Every required field in a step is always visible (the only toggled field,
+    // the GO id, is optional), so a plain non-empty check is enough.
+    const req = Array.from(steps[i].querySelectorAll("[required]"));
+    const missing = req.filter((el) => !el.value.trim());
+    if (missing.length) {
+      missing.forEach(flagError);
+      say("Please fill in the highlighted field" + (missing.length > 1 ? "s" : "") + " before continuing.");
+      missing[0].focus();
+      return false;
+    }
+    const pmid = steps[i].querySelector("#ann-pmid");
+    if (pmid && !/^\d{4,9}$/.test(pmid.value.trim())) {
+      flagError(pmid);
+      say("Enter a numeric PubMed ID — just the digits from the paper's PubMed page.");
+      pmid.focus();
+      return false;
+    }
+    return true;
+  };
+
+  const buildReview = () => {
+    const d = new FormData(document.getElementById("annotation-form"));
+    const rows = [
+      ["Publication", "PMID:" + (d.get("pmid") || "")],
+      ["Submitter", `${d.get("submitter_name") || ""} <${d.get("submitter_email") || ""}>`],
+      ["Gene", d.get("gene") || ""],
+      ["Annotation type", d.get("annotation_type") || ""],
+      d.get("go_id") ? ["GO id", d.get("go_id")] : null,
+      ["Term / finding", d.get("term") || ""],
+      ["Evidence", d.get("evidence") || ""],
+      d.get("figure") ? ["Figure / table", d.get("figure")] : null,
+      d.get("notes") ? ["Notes", d.get("notes")] : null
+    ].filter(Boolean);
+    const file = d.get("annotation_file");
+    if (file && file.size > 0) rows.push(["Attached file", file.name]);
+    const review = document.getElementById("wizard-review");
+    if (review) review.innerHTML = rows.map(([k, v]) => `<span>${escapeHtml(k)}</span><strong>${escapeHtml(String(v))}</strong>`).join("");
+  };
+
+  wiz.addEventListener("click", (e) => {
+    const next = e.target.closest("[data-wiz-next]");
+    const back = e.target.closest("[data-wiz-back]");
+    if (next) {
+      e.preventDefault();
+      if (!validateStep(current)) return;
+      const to = current + 1;
+      if (to === steps.length - 1) buildReview();
+      show(to);
+    } else if (back) {
+      e.preventDefault();
+      show(Math.max(0, current - 1));
+    }
+  });
+
+  // Adapt the annotation step to the chosen type.
+  const typeSel = document.getElementById("ann-type");
+  const goIdField = wiz.querySelector("[data-when-go]");
+  const termText = wiz.querySelector("[data-term-text]");
+  const termInput = document.getElementById("ann-term");
+  if (typeSel) {
+    typeSel.addEventListener("change", () => {
+      const v = typeSel.value || "";
+      const isGO = v.indexOf("GO ") === 0;
+      if (goIdField) goIdField.hidden = !isGO;
+      if (termText && termInput) {
+        if (isGO) { termText.textContent = "GO term name"; termInput.placeholder = "e.g. protein kinase activity"; }
+        else if (v === "Phenotype") { termText.textContent = "Phenotype"; termInput.placeholder = "e.g. reduced fruiting-body formation"; }
+        else if (v.indexOf("interaction") > -1) { termText.textContent = "Interacting gene / partner"; termInput.placeholder = "e.g. interacts with gskA"; }
+        else if (v === "Nomenclature correction") { termText.textContent = "Proposed correction"; termInput.placeholder = "e.g. rename to ppkA"; }
+        else { termText.textContent = "Term or finding"; termInput.placeholder = "Describe the finding"; }
+      }
+    });
+  }
+
+  show(0);
 }
 
 function renderUploadDataPage() {
@@ -5422,10 +5604,14 @@ document.addEventListener("submit", (event) => {
     const data = new FormData(form);
     const summary = [
       `Submitter: ${data.get("submitter_name")} <${data.get("submitter_email")}>`,
+      `Publication: PMID:${data.get("pmid")}`,
       `Gene: ${data.get("gene")}`,
-      `Type: ${data.get("annotation_type")}`,
-      `Notes: ${data.get("notes")}`,
-      data.get("pmid") ? `PMID: ${data.get("pmid")}` : null
+      `Annotation type: ${data.get("annotation_type")}`,
+      data.get("go_id") ? `GO id: ${data.get("go_id")}` : null,
+      `Term / finding: ${data.get("term")}`,
+      `Evidence: ${data.get("evidence")}`,
+      data.get("figure") ? `Figure / table: ${data.get("figure")}` : null,
+      data.get("notes") ? `Notes: ${data.get("notes")}` : null
     ].filter(Boolean).join("\n");
     const file = data.get("annotation_file");
     const hasFile = file && file.size > 0;

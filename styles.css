@@ -464,11 +464,41 @@ button,
 .curate-cta-text small { color: var(--muted); font-size: 12.5px; }
 .curate-cta-arrow { margin-left: auto; font-weight: 800; color: var(--teal-dark); }
 
-/* "How community curation works" steps */
-.curation-steps { margin: 6px 0 0; padding-left: 20px; line-height: 1.5; }
-.curation-steps > li { margin-bottom: 10px; }
-.curation-steps ul { margin: 6px 0; padding-left: 18px; }
-.curation-steps ul li { margin-bottom: 3px; }
+/* Curation best-practice links */
+.resource-links { margin: 6px 0 0; padding-left: 18px; line-height: 1.55; }
+.resource-links li { margin-bottom: 6px; }
+.resource-links code { font-size: .85em; background: var(--soft); padding: 0 4px; border-radius: 4px; }
+
+/* Guided "Canto-lite" curation wizard */
+#curation-wizard { min-width: 0; }
+.wizard-progress {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  list-style: none; padding: 0; margin: 0 0 20px;
+}
+.wizard-progress li {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px;
+}
+.wizard-progress li span {
+  display: inline-grid; place-items: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--line); color: #fff; font-size: 12px; font-weight: 700;
+}
+.wizard-progress li.active { color: var(--teal-dark); border-color: var(--teal); background: var(--soft); }
+.wizard-progress li.active span { background: var(--teal); }
+.wizard-progress li.done { color: var(--teal-dark); }
+.wizard-progress li.done span { background: var(--teal-dark); }
+
+.wizard-step { border: 0; padding: 0; margin: 0; min-width: 0; }
+.wizard-step legend { font-size: 1.05rem; font-weight: 700; color: var(--teal-dark); padding: 0; margin-bottom: 4px; }
+.wizard-help { font-size: .9rem; color: var(--muted); margin: 0 0 16px; line-height: 1.5; }
+.wizard-nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 20px; }
+.wizard-review.kv { margin-top: 4px; }
+
+.form-field.field-error input,
+.form-field.field-error select,
+.form-field.field-error textarea { border-color: var(--red, #c0392b); }
 
 .start-banner-icon { font-size: 26px; line-height: 1; }
 .start-banner-text { flex: 1; font-size: 14.5px; line-height: 1.45; }

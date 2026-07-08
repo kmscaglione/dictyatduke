@@ -6121,24 +6121,32 @@ function renderStockCenterPage() {
         <div class="record-title">
           <p class="eyebrow">Dicty Stock Center</p>
           <h2>Order strains &amp; plasmids</h2>
-          <p>Browse the Dictyostelium strain and plasmid collections, add what you need to a request, and email it to the Stock Center. Shipping goes on your own FedEx account — details are in the request form.</p>
+          <p>Browse the Dictyostelium strain and plasmid collections, add what you need to your cart, then check out to send the request to the Stock Center. Shipping goes on your own FedEx account.</p>
           <p class="notice muted" style="margin:8px 0 0">Interim catalog imported from the legacy Dicty Stock Center — being replaced by the full, current inventory.</p>
         </div>
       </header>
       <div class="record-body">
-        <div class="stock-tabs" role="tablist">
-          <button type="button" class="stock-tab active" data-stock-tab="strains" role="tab">Strains</button>
-          <button type="button" class="stock-tab" data-stock-tab="plasmids" role="tab">Plasmids</button>
+        <div class="stock-cartbar" data-stock-cartbar hidden>
+          <span>🛒 <strong data-stock-cart-count>0</strong> <span data-stock-cart-word>items</span> in your cart</span>
+          <button type="button" class="button primary" data-stock-checkout>Review &amp; check out →</button>
         </div>
-        <div class="form-field" style="margin:14px 0 0">
-          <input type="search" id="stock-search" placeholder="Search the catalog…" autocomplete="off" aria-label="Search the stock center catalog">
-        </div>
-        <div data-stock-list><p class="notice muted">Loading catalog…</p></div>
 
-        <section class="data-block" style="margin-top:22px">
-          <h3>Your request (<span data-stock-cart-count>0</span>)</h3>
+        <div data-stock-browse>
+          <div class="stock-tabs" role="tablist">
+            <button type="button" class="stock-tab active" data-stock-tab="strains" role="tab">Strains</button>
+            <button type="button" class="stock-tab" data-stock-tab="plasmids" role="tab">Plasmids</button>
+          </div>
+          <div class="form-field" style="margin:14px 0 0">
+            <input type="search" id="stock-search" placeholder="Search the catalog…" autocomplete="off" aria-label="Search the stock center catalog">
+          </div>
+          <div data-stock-list><p class="notice muted">Loading catalog…</p></div>
+        </div>
+
+        <div data-stock-checkout-view hidden>
+          <button type="button" class="text-link" data-stock-back>← Continue browsing</button>
+          <h3 style="margin:10px 0 2px">Your cart (<span data-stock-cart-count>0</span>)</h3>
           <div data-stock-cart></div>
-        </section>
+        </div>
       </div>
     </article>`;
 }
@@ -6181,17 +6189,31 @@ function initStockCenter() {
   let active = "strains";
   const listEl = root.querySelector("[data-stock-list]");
   const searchEl = root.querySelector("#stock-search");
+  const browseView = root.querySelector("[data-stock-browse]");
+  const checkoutView = root.querySelector("[data-stock-checkout-view]");
+  const cartbar = root.querySelector("[data-stock-cartbar]");
+
+  const updateCounts = () => {
+    const n = stockCart().length;
+    root.querySelectorAll("[data-stock-cart-count]").forEach((el) => { el.textContent = n; });
+    const word = root.querySelector("[data-stock-cart-word]");
+    if (word) word.textContent = n === 1 ? "item" : "items";
+    // Sticky cart bar shows only while browsing and only when the cart has items.
+    cartbar.hidden = !(n > 0 && checkoutView.hidden);
+  };
 
   const renderCart = () => {
     const c = stockCart();
-    root.querySelector("[data-stock-cart-count]").textContent = c.length;
     const box = root.querySelector("[data-stock-cart]");
-    if (!c.length) { box.innerHTML = `<p class="notice muted">Nothing yet — add strains or plasmids above.</p>`; return; }
+    if (!c.length) {
+      box.innerHTML = `<p class="notice muted" style="margin-top:8px">Your cart is empty. <button type="button" class="text-link" data-stock-back>Browse the catalog →</button></p>`;
+      return;
+    }
     box.innerHTML = `
       <ul class="list stock-cart-list">
         ${c.map((i) => `<li><span><strong>${escapeHtml(i.label)}</strong> <span class="muted">(${i.type})</span></span><button type="button" class="text-link" data-stock-remove data-type="${i.type}" data-id="${escapeHtml(i.id)}">remove</button></li>`).join("")}
       </ul>
-      <button type="button" class="text-link" data-stock-clear>Clear all</button>
+      <button type="button" class="text-link" data-stock-clear>Clear cart</button>
       ${stockOrderFormHTML()}`;
   };
 
@@ -6214,27 +6236,40 @@ function initStockCenter() {
       ${shown.length > cap ? `<p class="notice muted">Showing the first ${cap} — refine your search to narrow the list.</p>` : ""}`;
   };
 
+  const showCheckout = () => { browseView.hidden = true; checkoutView.hidden = false; renderCart(); updateCounts(); scrollToY(root.offsetTop - 60); };
+  const showBrowse = () => { checkoutView.hidden = true; browseView.hidden = false; renderList(); updateCounts(); };
+  // Re-render whichever view is showing after a cart change.
+  const refresh = () => { if (checkoutView.hidden) renderList(); else renderCart(); updateCounts(); };
+
   root.addEventListener("click", (e) => {
     const add = e.target.closest("[data-stock-add]");
     const remove = e.target.closest("[data-stock-remove]");
     const clear = e.target.closest("[data-stock-clear]");
     const tab = e.target.closest("[data-stock-tab]");
     if (add) {
+      const exists = stockCartHas(add.dataset.type, add.dataset.id);
       const c = stockCart();
-      const exists = c.some((i) => i.type === add.dataset.type && i.id === add.dataset.id);
       const next = exists
         ? c.filter((i) => !(i.type === add.dataset.type && i.id === add.dataset.id))
         : c.concat({ type: add.dataset.type, id: add.dataset.id, label: add.dataset.label });
-      stockCartSave(next); renderList(); renderCart();
+      stockCartSave(next);
+      // Update just the clicked button — no full-list re-render (avoids a flash/scroll jump).
+      add.textContent = exists ? "Add" : "✓ Added";
+      add.classList.toggle("primary", exists);
+      updateCounts();
     } else if (remove) {
       stockCartSave(stockCart().filter((i) => !(i.type === remove.dataset.type && i.id === remove.dataset.id)));
-      renderList(); renderCart();
+      refresh();
     } else if (clear) {
-      stockCartSave([]); renderList(); renderCart();
+      stockCartSave([]); refresh();
     } else if (tab) {
       active = tab.dataset.stockTab;
       root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t === tab));
       renderList();
+    } else if (e.target.closest("[data-stock-checkout]")) {
+      showCheckout();
+    } else if (e.target.closest("[data-stock-back]")) {
+      showBrowse();
     }
   });
 
@@ -6262,8 +6297,8 @@ function initStockCenter() {
   });
 
   searchEl.addEventListener("input", renderList);
-  renderCart();
-  ensureStockCenter().then(() => { renderList(); });
+  updateCounts();
+  ensureStockCenter().then(() => { renderList(); updateCounts(); });
 }
 
 function openDataPage(updateRoute = true) {

@@ -56,32 +56,32 @@
         "diseases": [
           {
             "id": "ORPHA:98994",
-            "name": "",
+            "name": "Total early-onset cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98991",
-            "name": "",
+            "name": "Early-onset nuclear cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98993",
-            "name": "",
+            "name": "Early-onset posterior polar cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98989",
-            "name": "",
+            "name": "Cerulean cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98985",
-            "name": "",
+            "name": "Early-onset sutural cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:441452",
-            "name": "",
+            "name": "Early-onset lamellar cataract",
             "source": "ORPHA"
           }
         ]
@@ -338,7 +338,7 @@
           },
           {
             "id": "ORPHA:440402",
-            "name": "",
+            "name": "Interstitial lung disease due to ABCA3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -355,7 +355,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -480,7 +480,7 @@
           },
           {
             "id": "ORPHA:93623",
-            "name": "",
+            "name": "Dent disease type 2",
             "source": "ORPHA"
           }
         ]
@@ -542,7 +542,7 @@
         "diseases": [
           {
             "id": "ORPHA:447784",
-            "name": "",
+            "name": "Mitochondrial pyruvate carrier deficiency",
             "source": "ORPHA"
           }
         ]
@@ -621,7 +621,7 @@
         "diseases": [
           {
             "id": "ORPHA:293955",
-            "name": "",
+            "name": "Childhood encephalopathy due to thiamine pyrophosphokinase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -840,7 +840,7 @@
         "diseases": [
           {
             "id": "ORPHA:319308",
-            "name": "",
+            "name": "MiT family translocation renal cell carcinoma",
             "source": "ORPHA"
           },
           {
@@ -868,7 +868,7 @@
         "diseases": [
           {
             "id": "ORPHA:178469",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -1081,7 +1081,7 @@
         "diseases": [
           {
             "id": "ORPHA:53696",
-            "name": "",
+            "name": "Arthrogryposis-anterior horn cell disease syndrome",
             "source": "ORPHA"
           },
           {
@@ -1108,7 +1108,7 @@
         "diseases": [
           {
             "id": "ORPHA:464756",
-            "name": "",
+            "name": "Familial gastric type 1 neuroendocrine tumor",
             "source": "ORPHA"
           }
         ]
@@ -1619,7 +1619,7 @@
         "diseases": [
           {
             "id": "ORPHA:137893",
-            "name": "",
+            "name": "Male infertility due to large-headed multiflagellar polyploid spermatozoa",
             "source": "ORPHA"
           },
           {
@@ -1746,7 +1746,7 @@
         "diseases": [
           {
             "id": "ORPHA:280620",
-            "name": "",
+            "name": "Progressive myoclonic epilepsy type 6",
             "source": "ORPHA"
           }
         ]
@@ -1840,7 +1840,7 @@
           },
           {
             "id": "ORPHA:252202",
-            "name": "",
+            "name": "Constitutional mismatch repair deficiency syndrome",
             "source": "ORPHA"
           }
         ]
@@ -1890,12 +1890,12 @@
           },
           {
             "id": "ORPHA:688543",
-            "name": "",
+            "name": "T-B-NK- reticular dysgenesis-like severe combined immunodeficiency",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:692812",
-            "name": "",
+            "name": "RAC2-related combined immunodeficiency-bronchiectasis-cancer-predisposing syndrome",
             "source": "ORPHA"
           }
         ]
@@ -1907,12 +1907,12 @@
         "diseases": [
           {
             "id": "ORPHA:659609",
-            "name": "",
+            "name": "Facial dysmorphism-global developmental delay-hypotonia-polymicrogyria syndrome",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -1985,12 +1985,12 @@
           },
           {
             "id": "ORPHA:708129",
-            "name": "",
+            "name": "Autosomal recessive ACTN2-related distal myopathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:708133",
-            "name": "",
+            "name": "Autosomal dominant ACTN2-related distal myopathy",
             "source": "ORPHA"
           }
         ]
@@ -2318,7 +2318,7 @@
         "diseases": [
           {
             "id": "ORPHA:662762",
-            "name": "",
+            "name": "Motor delay-microcephaly-speech impairment-ocular abnormalities syndrome",
             "source": "ORPHA"
           }
         ]
@@ -2364,17 +2364,17 @@
         "diseases": [
           {
             "id": "ORPHA:216812",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216804",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216820",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 4",
             "source": "ORPHA"
           }
         ]
@@ -2476,7 +2476,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -2527,27 +2527,27 @@
         "diseases": [
           {
             "id": "ORPHA:216972",
-            "name": "",
+            "name": "Niemann-Pick disease type C, severe perinatal form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216975",
-            "name": "",
+            "name": "Niemann-Pick disease type C, severe early infantile neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216978",
-            "name": "",
+            "name": "Niemann-Pick disease type C, late infantile neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216986",
-            "name": "",
+            "name": "Niemann-Pick disease type C, adult neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216981",
-            "name": "",
+            "name": "Niemann-Pick disease type C, juvenile neurologic onset",
             "source": "ORPHA"
           }
         ]
@@ -2756,7 +2756,7 @@
           },
           {
             "id": "ORPHA:98994",
-            "name": "",
+            "name": "Total early-onset cataract",
             "source": "ORPHA"
           }
         ]
@@ -2784,7 +2784,7 @@
         "diseases": [
           {
             "id": "ORPHA:99936",
-            "name": "",
+            "name": "Autosomal dominant Charcot-Marie-Tooth disease type 2B",
             "source": "ORPHA"
           }
         ]
@@ -2936,7 +2936,7 @@
         "diseases": [
           {
             "id": "ORPHA:227796",
-            "name": "",
+            "name": "Fundus albipunctatus",
             "source": "ORPHA"
           },
           {
@@ -2987,7 +2987,7 @@
         "diseases": [
           {
             "id": "ORPHA:98676",
-            "name": "",
+            "name": "Autosomal recessive isolated optic atrophy",
             "source": "ORPHA"
           }
         ]
@@ -3663,7 +3663,7 @@
         "diseases": [
           {
             "id": "ORPHA:488168",
-            "name": "",
+            "name": "Microcephaly-congenital cataract-psoriasiform dermatitis syndrome",
             "source": "ORPHA"
           }
         ]
@@ -3847,17 +3847,17 @@
         "diseases": [
           {
             "id": "ORPHA:699769",
-            "name": "",
+            "name": "Juvenile CLN2 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699761",
-            "name": "",
+            "name": "Late infantile CLN2 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699751",
-            "name": "",
+            "name": "Infantile CLN2 disease",
             "source": "ORPHA"
           },
           {
@@ -4247,7 +4247,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -4264,7 +4264,7 @@
         "diseases": [
           {
             "id": "ORPHA:596753",
-            "name": "",
+            "name": "VEXAS syndrome",
             "source": "ORPHA"
           },
           {
@@ -4657,7 +4657,7 @@
         "diseases": [
           {
             "id": "ORPHA:567502",
-            "name": "",
+            "name": "B-cell immunodeficiency-limb anomaly-urogenital malformation syndrome",
             "source": "ORPHA"
           }
         ]
@@ -5144,7 +5144,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -5178,7 +5178,7 @@
         "diseases": [
           {
             "id": "ORPHA:488168",
-            "name": "",
+            "name": "Microcephaly-congenital cataract-psoriasiform dermatitis syndrome",
             "source": "ORPHA"
           }
         ]
@@ -5540,7 +5540,7 @@
         "diseases": [
           {
             "id": "ORPHA:329242",
-            "name": "",
+            "name": "Congenital chronic diarrhea with protein-losing enteropathy",
             "source": "ORPHA"
           }
         ]
@@ -5829,7 +5829,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -6645,7 +6645,7 @@
         "diseases": [
           {
             "id": "ORPHA:228366",
-            "name": "",
+            "name": "CLN7 disease",
             "source": "ORPHA"
           },
           {
@@ -6728,7 +6728,7 @@
           },
           {
             "id": "ORPHA:642965",
-            "name": "",
+            "name": "Autosomal recessive ataxia due to PEX2 deficiency",
             "source": "ORPHA"
           },
           {
@@ -6873,7 +6873,7 @@
           },
           {
             "id": "ORPHA:443162",
-            "name": "",
+            "name": "NDE1-related microhydranencephaly",
             "source": "ORPHA"
           },
           {
@@ -7860,7 +7860,7 @@
         "diseases": [
           {
             "id": "ORPHA:93602",
-            "name": "",
+            "name": "Xanthinuria type II",
             "source": "ORPHA"
           }
         ]
@@ -8797,7 +8797,7 @@
         "diseases": [
           {
             "id": "ORPHA:391351",
-            "name": "",
+            "name": "SURF1-related Charcot-Marie-Tooth disease type 4",
             "source": "ORPHA"
           }
         ]
@@ -8915,7 +8915,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -9043,7 +9043,7 @@
           },
           {
             "id": "ORPHA:440402",
-            "name": "",
+            "name": "Interstitial lung disease due to ABCA3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -9093,7 +9093,7 @@
           },
           {
             "id": "ORPHA:440402",
-            "name": "",
+            "name": "Interstitial lung disease due to ABCA3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -9254,12 +9254,12 @@
         "diseases": [
           {
             "id": "ORPHA:251579",
-            "name": "",
+            "name": "Giant cell glioblastoma",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:251576",
-            "name": "",
+            "name": "Gliosarcoma",
             "source": "ORPHA"
           },
           {
@@ -9380,7 +9380,7 @@
         "diseases": [
           {
             "id": "ORPHA:422526",
-            "name": "",
+            "name": "Hereditary clear cell renal cell carcinoma",
             "source": "ORPHA"
           }
         ]
@@ -9982,7 +9982,7 @@
           },
           {
             "id": "ORPHA:255132",
-            "name": "",
+            "name": "Adult-onset autosomal recessive sideroblastic anemia",
             "source": "ORPHA"
           }
         ]
@@ -10106,7 +10106,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -10357,7 +10357,7 @@
         "diseases": [
           {
             "id": "ORPHA:178469",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic intellectual disability",
             "source": "ORPHA"
           },
           {
@@ -10553,7 +10553,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -10698,22 +10698,22 @@
         "diseases": [
           {
             "id": "ORPHA:166260",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:166265",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99791",
-            "name": "",
+            "name": "Dentin dysplasia type II",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99789",
-            "name": "",
+            "name": "Dentin dysplasia type I",
             "source": "ORPHA"
           }
         ]
@@ -10740,7 +10740,7 @@
           },
           {
             "id": "ORPHA:404553",
-            "name": "",
+            "name": "Deficiency of adenosine deaminase 2",
             "source": "ORPHA"
           }
         ]
@@ -10757,7 +10757,7 @@
         "diseases": [
           {
             "id": "ORPHA:308425",
-            "name": "",
+            "name": "Methylmalonic acidemia due to methylmalonyl-CoA epimerase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -10934,12 +10934,12 @@
         "diseases": [
           {
             "id": "ORPHA:308487",
-            "name": "",
+            "name": "Generalized galactose epimerase deficiency",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:308473",
-            "name": "",
+            "name": "Erythrocyte galactose epimerase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -10956,17 +10956,17 @@
         "diseases": [
           {
             "id": "ORPHA:699812",
-            "name": "",
+            "name": "Adult CLN5 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699807",
-            "name": "",
+            "name": "Juvenile CLN5 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699802",
-            "name": "",
+            "name": "Late infantile CLN5 disease",
             "source": "ORPHA"
           }
         ]
@@ -11111,7 +11111,7 @@
         "diseases": [
           {
             "id": "ORPHA:90635",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic genetic deafness",
             "source": "ORPHA"
           }
         ]
@@ -11145,7 +11145,7 @@
         "diseases": [
           {
             "id": "ORPHA:675767",
-            "name": "",
+            "name": "Severe congenital neutropenia-developmental delay syndrome due to SRP54 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -11546,7 +11546,7 @@
           },
           {
             "id": "ORPHA:252202",
-            "name": "",
+            "name": "Constitutional mismatch repair deficiency syndrome",
             "source": "ORPHA"
           }
         ]
@@ -11783,7 +11783,7 @@
         "diseases": [
           {
             "id": "ORPHA:227796",
-            "name": "",
+            "name": "Fundus albipunctatus",
             "source": "ORPHA"
           },
           {
@@ -11889,7 +11889,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           },
           {
@@ -12121,7 +12121,7 @@
         "diseases": [
           {
             "id": "ORPHA:610573",
-            "name": "",
+            "name": "CLCN6-related childhood-onset progressive neurodegeneration-peripheral neuropathy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -12198,7 +12198,7 @@
           },
           {
             "id": "ORPHA:79483",
-            "name": "",
+            "name": "Phakomatosis cesioflammea",
             "source": "ORPHA"
           },
           {
@@ -12213,7 +12213,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -12235,7 +12235,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -12424,7 +12424,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -12704,7 +12704,7 @@
         "diseases": [
           {
             "id": "ORPHA:178338",
-            "name": "",
+            "name": "UV-sensitive syndrome",
             "source": "ORPHA"
           },
           {
@@ -12853,27 +12853,27 @@
         "diseases": [
           {
             "id": "ORPHA:216972",
-            "name": "",
+            "name": "Niemann-Pick disease type C, severe perinatal form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216975",
-            "name": "",
+            "name": "Niemann-Pick disease type C, severe early infantile neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216978",
-            "name": "",
+            "name": "Niemann-Pick disease type C, late infantile neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216986",
-            "name": "",
+            "name": "Niemann-Pick disease type C, adult neurologic onset",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216981",
-            "name": "",
+            "name": "Niemann-Pick disease type C, juvenile neurologic onset",
             "source": "ORPHA"
           }
         ]
@@ -12947,7 +12947,7 @@
         "diseases": [
           {
             "id": "ORPHA:440706",
-            "name": "",
+            "name": "Ribose-5-P isomerase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -13113,7 +13113,7 @@
         "diseases": [
           {
             "id": "ORPHA:610573",
-            "name": "",
+            "name": "CLCN6-related childhood-onset progressive neurodegeneration-peripheral neuropathy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -13548,7 +13548,7 @@
           },
           {
             "id": "ORPHA:642954",
-            "name": "",
+            "name": "Autosomal recessive ataxia due to PEX16 deficiency",
             "source": "ORPHA"
           },
           {
@@ -13775,7 +13775,7 @@
         "diseases": [
           {
             "id": "ORPHA:464756",
-            "name": "",
+            "name": "Familial gastric type 1 neuroendocrine tumor",
             "source": "ORPHA"
           }
         ]
@@ -14418,7 +14418,7 @@
           },
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -14530,12 +14530,12 @@
           },
           {
             "id": "ORPHA:688543",
-            "name": "",
+            "name": "T-B-NK- reticular dysgenesis-like severe combined immunodeficiency",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:692812",
-            "name": "",
+            "name": "RAC2-related combined immunodeficiency-bronchiectasis-cancer-predisposing syndrome",
             "source": "ORPHA"
           }
         ]
@@ -14547,12 +14547,12 @@
         "diseases": [
           {
             "id": "ORPHA:659609",
-            "name": "",
+            "name": "Facial dysmorphism-global developmental delay-hypotonia-polymicrogyria syndrome",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -14804,12 +14804,12 @@
         "diseases": [
           {
             "id": "ORPHA:394532",
-            "name": "",
+            "name": "Multiple acyl-CoA dehydrogenase deficiency, mild type",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:394529",
-            "name": "",
+            "name": "Multiple acyl-CoA dehydrogenase deficiency, severe neonatal type",
             "source": "ORPHA"
           }
         ]
@@ -14925,7 +14925,7 @@
         "diseases": [
           {
             "id": "ORPHA:98676",
-            "name": "",
+            "name": "Autosomal recessive isolated optic atrophy",
             "source": "ORPHA"
           },
           {
@@ -15311,32 +15311,32 @@
         "diseases": [
           {
             "id": "ORPHA:98947",
-            "name": "",
+            "name": "Coloboma of optic disc",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98943",
-            "name": "",
+            "name": "Coloboma of eye lens",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98944",
-            "name": "",
+            "name": "Coloboma of iris",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98945",
-            "name": "",
+            "name": "Coloboma of macula",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98946",
-            "name": "",
+            "name": "Coloboma of eyelid",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98942",
-            "name": "",
+            "name": "Coloboma of choroid and retina",
             "source": "ORPHA"
           }
         ]
@@ -15725,7 +15725,7 @@
         "diseases": [
           {
             "id": "ORPHA:610573",
-            "name": "",
+            "name": "CLCN6-related childhood-onset progressive neurodegeneration-peripheral neuropathy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -15938,7 +15938,7 @@
         "diseases": [
           {
             "id": "ORPHA:652522",
-            "name": "",
+            "name": "Periodic fever-immunodeficiency-thrombocytopenia syndrome",
             "source": "ORPHA"
           }
         ]
@@ -16177,7 +16177,7 @@
         "diseases": [
           {
             "id": "ORPHA:99731",
-            "name": "",
+            "name": "Isolated sulfite oxidase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -16676,7 +16676,7 @@
         "diseases": [
           {
             "id": "ORPHA:397593",
-            "name": "",
+            "name": "Severe neonatal lactic acidosis due to NFS1-ISD11 complex deficiency",
             "source": "ORPHA"
           }
         ]
@@ -16978,7 +16978,7 @@
         "diseases": [
           {
             "id": "ORPHA:55595",
-            "name": "",
+            "name": "TNP03-related limb-girdle muscular dystrophy D2",
             "source": "ORPHA"
           },
           {
@@ -17042,32 +17042,32 @@
         "diseases": [
           {
             "id": "ORPHA:98994",
-            "name": "",
+            "name": "Total early-onset cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98991",
-            "name": "",
+            "name": "Early-onset nuclear cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98993",
-            "name": "",
+            "name": "Early-onset posterior polar cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98989",
-            "name": "",
+            "name": "Cerulean cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98985",
-            "name": "",
+            "name": "Early-onset sutural cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:441452",
-            "name": "",
+            "name": "Early-onset lamellar cataract",
             "source": "ORPHA"
           }
         ]
@@ -17514,7 +17514,7 @@
         "diseases": [
           {
             "id": "ORPHA:567502",
-            "name": "",
+            "name": "B-cell immunodeficiency-limb anomaly-urogenital malformation syndrome",
             "source": "ORPHA"
           }
         ]
@@ -17661,7 +17661,7 @@
         "diseases": [
           {
             "id": "ORPHA:309789",
-            "name": "",
+            "name": "Rhizomelic chondrodysplasia punctata type 1",
             "source": "ORPHA"
           },
           {
@@ -17744,7 +17744,7 @@
         "diseases": [
           {
             "id": "ORPHA:79311",
-            "name": "",
+            "name": "Vitamin B12-responsive methylmalonic acidemia type cblB",
             "source": "ORPHA"
           }
         ]
@@ -17789,7 +17789,7 @@
         "diseases": [
           {
             "id": "ORPHA:369955",
-            "name": "",
+            "name": "Methylmalonic acidemia with homocystinuria, type cblJ",
             "source": "ORPHA"
           }
         ]
@@ -17806,7 +17806,7 @@
         "diseases": [
           {
             "id": "ORPHA:369955",
-            "name": "",
+            "name": "Methylmalonic acidemia with homocystinuria, type cblJ",
             "source": "ORPHA"
           }
         ]
@@ -17984,7 +17984,7 @@
         "diseases": [
           {
             "id": "ORPHA:98676",
-            "name": "",
+            "name": "Autosomal recessive isolated optic atrophy",
             "source": "ORPHA"
           }
         ]
@@ -18048,7 +18048,7 @@
         "diseases": [
           {
             "id": "ORPHA:90635",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic genetic deafness",
             "source": "ORPHA"
           }
         ]
@@ -18296,7 +18296,7 @@
         "diseases": [
           {
             "id": "ORPHA:569274",
-            "name": "",
+            "name": "Multiple mitochondrial dysfunctions syndrome type 5",
             "source": "ORPHA"
           }
         ]
@@ -18330,7 +18330,7 @@
         "diseases": [
           {
             "id": "ORPHA:506334",
-            "name": "",
+            "name": "Familial steroid-resistant nephrotic syndrome with adrenal insufficiency",
             "source": "ORPHA"
           }
         ]
@@ -18626,17 +18626,17 @@
         "diseases": [
           {
             "id": "ORPHA:216812",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216804",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216820",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 4",
             "source": "ORPHA"
           }
         ]
@@ -18804,12 +18804,12 @@
         "diseases": [
           {
             "id": "ORPHA:658778",
-            "name": "",
+            "name": "COQ7-related distal hereditary motor neuropathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:319678",
-            "name": "",
+            "name": "Encephalopathy-hypertrophic cardiomyopathy-renal tubular disease syndrome",
             "source": "ORPHA"
           }
         ]
@@ -18954,32 +18954,32 @@
         "diseases": [
           {
             "id": "ORPHA:98994",
-            "name": "",
+            "name": "Total early-onset cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98991",
-            "name": "",
+            "name": "Early-onset nuclear cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98993",
-            "name": "",
+            "name": "Early-onset posterior polar cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98989",
-            "name": "",
+            "name": "Cerulean cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98985",
-            "name": "",
+            "name": "Early-onset sutural cataract",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:441452",
-            "name": "",
+            "name": "Early-onset lamellar cataract",
             "source": "ORPHA"
           }
         ]
@@ -19426,7 +19426,7 @@
           },
           {
             "id": "ORPHA:422526",
-            "name": "",
+            "name": "Hereditary clear cell renal cell carcinoma",
             "source": "ORPHA"
           }
         ]
@@ -19553,7 +19553,7 @@
         "diseases": [
           {
             "id": "ORPHA:317425",
-            "name": "",
+            "name": "T-B-NK+ severe combined immunodeficiency due to DNA-PKcs deficiency",
             "source": "ORPHA"
           }
         ]
@@ -19629,7 +19629,7 @@
           },
           {
             "id": "ORPHA:101101",
-            "name": "",
+            "name": "Charcot-Marie-Tooth disease type 2B2",
             "source": "ORPHA"
           }
         ]
@@ -19646,7 +19646,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -19842,7 +19842,7 @@
         "diseases": [
           {
             "id": "ORPHA:695807",
-            "name": "",
+            "name": "Immunodeficiency-systemic inflammation-lymphoma predisposition syndrome",
             "source": "ORPHA"
           }
         ]
@@ -20002,7 +20002,7 @@
         "diseases": [
           {
             "id": "ORPHA:1561",
-            "name": "",
+            "name": "Fatal infantile cytochrome C oxidase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -20080,12 +20080,12 @@
           },
           {
             "id": "ORPHA:269001",
-            "name": "",
+            "name": "Isolated focal cortical dysplasia type IIa",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:269008",
-            "name": "",
+            "name": "Isolated focal cortical dysplasia type IIb",
             "source": "ORPHA"
           },
           {
@@ -20497,7 +20497,7 @@
         "diseases": [
           {
             "id": "ORPHA:79311",
-            "name": "",
+            "name": "Vitamin B12-responsive methylmalonic acidemia type cblB",
             "source": "ORPHA"
           }
         ]
@@ -21013,12 +21013,12 @@
         "diseases": [
           {
             "id": "ORPHA:90636",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic genetic deafness",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:659975",
-            "name": "",
+            "name": "Sensorineural hearing loss-spastic quadriplegia-intellectual disability syndrome",
             "source": "ORPHA"
           }
         ]
@@ -21455,17 +21455,17 @@
         "diseases": [
           {
             "id": "ORPHA:216812",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216804",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:216820",
-            "name": "",
+            "name": "Osteogenesis imperfecta type 4",
             "source": "ORPHA"
           }
         ]
@@ -21516,12 +21516,12 @@
         "diseases": [
           {
             "id": "ORPHA:659609",
-            "name": "",
+            "name": "Facial dysmorphism-global developmental delay-hypotonia-polymicrogyria syndrome",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -21538,12 +21538,12 @@
           },
           {
             "id": "ORPHA:688543",
-            "name": "",
+            "name": "T-B-NK- reticular dysgenesis-like severe combined immunodeficiency",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:692812",
-            "name": "",
+            "name": "RAC2-related combined immunodeficiency-bronchiectasis-cancer-predisposing syndrome",
             "source": "ORPHA"
           }
         ]
@@ -21808,17 +21808,17 @@
         "diseases": [
           {
             "id": "ORPHA:309178",
-            "name": "",
+            "name": "Tay-Sachs disease, infantile form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309192",
-            "name": "",
+            "name": "Tay-Sachs disease, adult form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309185",
-            "name": "",
+            "name": "Tay-Sachs disease, juvenile form",
             "source": "ORPHA"
           }
         ]
@@ -21890,7 +21890,7 @@
         "diseases": [
           {
             "id": "ORPHA:589522",
-            "name": "",
+            "name": "Spinocerebellar ataxia type 46",
             "source": "ORPHA"
           }
         ]
@@ -22341,7 +22341,7 @@
         "diseases": [
           {
             "id": "ORPHA:506334",
-            "name": "",
+            "name": "Familial steroid-resistant nephrotic syndrome with adrenal insufficiency",
             "source": "ORPHA"
           }
         ]
@@ -22507,37 +22507,37 @@
           },
           {
             "id": "ORPHA:98947",
-            "name": "",
+            "name": "Coloboma of optic disc",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98943",
-            "name": "",
+            "name": "Coloboma of eye lens",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98944",
-            "name": "",
+            "name": "Coloboma of iris",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98945",
-            "name": "",
+            "name": "Coloboma of macula",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98946",
-            "name": "",
+            "name": "Coloboma of eyelid",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98942",
-            "name": "",
+            "name": "Coloboma of choroid and retina",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:98938",
-            "name": "",
+            "name": "Isolated colobomatous microphthalmia",
             "source": "ORPHA"
           }
         ]
@@ -22643,7 +22643,7 @@
         "diseases": [
           {
             "id": "ORPHA:43115",
-            "name": "",
+            "name": "Hereditary myopathy with lactic acidosis due to ISCU deficiency",
             "source": "ORPHA"
           }
         ]
@@ -22869,7 +22869,7 @@
           },
           {
             "id": "ORPHA:79483",
-            "name": "",
+            "name": "Phakomatosis cesioflammea",
             "source": "ORPHA"
           },
           {
@@ -22884,7 +22884,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -22906,7 +22906,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -23171,22 +23171,22 @@
         "diseases": [
           {
             "id": "ORPHA:166260",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:166265",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99791",
-            "name": "",
+            "name": "Dentin dysplasia type II",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99789",
-            "name": "",
+            "name": "Dentin dysplasia type I",
             "source": "ORPHA"
           }
         ]
@@ -23319,7 +23319,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -23336,7 +23336,7 @@
           },
           {
             "id": "ORPHA:79483",
-            "name": "",
+            "name": "Phakomatosis cesioflammea",
             "source": "ORPHA"
           },
           {
@@ -23351,7 +23351,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -23479,7 +23479,7 @@
         "diseases": [
           {
             "id": "ORPHA:306558",
-            "name": "",
+            "name": "Primary microcephaly-epilepsy-permanent neonatal diabetes syndrome",
             "source": "ORPHA"
           }
         ]
@@ -23799,7 +23799,7 @@
         "diseases": [
           {
             "id": "ORPHA:55595",
-            "name": "",
+            "name": "TNP03-related limb-girdle muscular dystrophy D2",
             "source": "ORPHA"
           },
           {
@@ -24286,7 +24286,7 @@
         "diseases": [
           {
             "id": "ORPHA:300496",
-            "name": "",
+            "name": "Multiple congenital anomalies-hypotonia-seizures syndrome type 2",
             "source": "ORPHA"
           },
           {
@@ -24301,7 +24301,7 @@
           },
           {
             "id": "ORPHA:397922",
-            "name": "",
+            "name": "Ferro-cerebro-cutaneous syndrome",
             "source": "ORPHA"
           },
           {
@@ -24339,7 +24339,7 @@
           },
           {
             "id": "ORPHA:252202",
-            "name": "",
+            "name": "Constitutional mismatch repair deficiency syndrome",
             "source": "ORPHA"
           }
         ]
@@ -24731,7 +24731,7 @@
         "diseases": [
           {
             "id": "ORPHA:314689",
-            "name": "",
+            "name": "Combined immunodeficiency due to STK4 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -24770,7 +24770,7 @@
         "diseases": [
           {
             "id": "ORPHA:521438",
-            "name": "",
+            "name": "Congenital vertebral-cardiac-renal anomalies syndrome",
             "source": "ORPHA"
           },
           {
@@ -25004,7 +25004,7 @@
         "diseases": [
           {
             "id": "ORPHA:99789",
-            "name": "",
+            "name": "Dentin dysplasia type I",
             "source": "ORPHA"
           }
         ]
@@ -25016,7 +25016,7 @@
         "diseases": [
           {
             "id": "ORPHA:603448",
-            "name": "",
+            "name": "Cerebellar hypoplasia-intellectual disability-congenital microcephaly-dystonia-anemia-growth retardation syndrome",
             "source": "ORPHA"
           }
         ]
@@ -25247,7 +25247,7 @@
           },
           {
             "id": "ORPHA:448267",
-            "name": "",
+            "name": "Regressive spondylometaphyseal dysplasia",
             "source": "ORPHA"
           }
         ]
@@ -25337,7 +25337,7 @@
         "diseases": [
           {
             "id": "ORPHA:589595",
-            "name": "",
+            "name": "Mixed phenotype acute leukemia with t(v;11q23.3)",
             "source": "ORPHA"
           }
         ]
@@ -25824,7 +25824,7 @@
           },
           {
             "id": "ORPHA:90625",
-            "name": "",
+            "name": "X-linked non-syndromic genetic deafness",
             "source": "ORPHA"
           },
           {
@@ -25951,7 +25951,7 @@
         "diseases": [
           {
             "id": "ORPHA:447737",
-            "name": "",
+            "name": "Combined immunodeficiency due to DOCK2 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -25963,7 +25963,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -26272,12 +26272,12 @@
         "diseases": [
           {
             "id": "ORPHA:300530",
-            "name": "",
+            "name": "Pseudohypoaldosteronism type 2E",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -26788,7 +26788,7 @@
         "diseases": [
           {
             "id": "ORPHA:308386",
-            "name": "",
+            "name": "Sulfite oxidase deficiency due to molybdenum cofactor deficiency type A",
             "source": "ORPHA"
           }
         ]
@@ -27028,7 +27028,7 @@
         "diseases": [
           {
             "id": "ORPHA:97234",
-            "name": "",
+            "name": "Glycogen storage disease due to phosphoglycerate mutase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -27487,22 +27487,22 @@
         "diseases": [
           {
             "id": "ORPHA:699745",
-            "name": "",
+            "name": "Adult CLN1 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699739",
-            "name": "",
+            "name": "Juvenile CLN1 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699734",
-            "name": "",
+            "name": "Late infantile CLN1 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699718",
-            "name": "",
+            "name": "Infantile CLN1 disease",
             "source": "ORPHA"
           }
         ]
@@ -27519,7 +27519,7 @@
         "diseases": [
           {
             "id": "ORPHA:317476",
-            "name": "",
+            "name": "XMEN",
             "source": "ORPHA"
           }
         ]
@@ -27531,7 +27531,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -28029,7 +28029,7 @@
         "diseases": [
           {
             "id": "ORPHA:247198",
-            "name": "",
+            "name": "Progressive cerebello-cerebral atrophy",
             "source": "ORPHA"
           }
         ]
@@ -28208,7 +28208,7 @@
         "diseases": [
           {
             "id": "ORPHA:715623",
-            "name": "",
+            "name": "Motor incoordination-myopathy-respiratory insufficiency-progressive cerebellar atrophy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -28253,7 +28253,7 @@
         "diseases": [
           {
             "id": "ORPHA:289290",
-            "name": "",
+            "name": "Hypermethioninemia encephalopathy due to adenosine kinase deficiency",
             "source": "ORPHA"
           }
         ]
@@ -28270,7 +28270,7 @@
         "diseases": [
           {
             "id": "ORPHA:391376",
-            "name": "",
+            "name": "Congenital microcephaly-severe encephalopathy-progressive cerebral atrophy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -28320,7 +28320,7 @@
           },
           {
             "id": "ORPHA:83639",
-            "name": "",
+            "name": "Hypercoagulability syndrome due to glycosylphosphatidylinositol deficiency",
             "source": "ORPHA"
           }
         ]
@@ -28392,7 +28392,7 @@
           },
           {
             "id": "ORPHA:79483",
-            "name": "",
+            "name": "Phakomatosis cesioflammea",
             "source": "ORPHA"
           },
           {
@@ -28407,7 +28407,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -28429,7 +28429,7 @@
           },
           {
             "id": "ORPHA:675359",
-            "name": "",
+            "name": "Anastomosing hemangioma",
             "source": "ORPHA"
           }
         ]
@@ -28486,7 +28486,7 @@
         "diseases": [
           {
             "id": "ORPHA:90641",
-            "name": "",
+            "name": "Mitochondrial non-syndromic sensorineural deafness",
             "source": "ORPHA"
           }
         ]
@@ -28503,7 +28503,7 @@
         "diseases": [
           {
             "id": "ORPHA:600668",
-            "name": "",
+            "name": "CCNK-related neurodevelopmental disorder-severe intellectual disability-facial dysmorphism syndrome",
             "source": "ORPHA"
           }
         ]
@@ -28531,7 +28531,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -28710,7 +28710,7 @@
         "diseases": [
           {
             "id": "ORPHA:90635",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic genetic deafness",
             "source": "ORPHA"
           },
           {
@@ -28720,7 +28720,7 @@
           },
           {
             "id": "ORPHA:477742",
-            "name": "",
+            "name": "Nodular fasciitis",
             "source": "ORPHA"
           }
         ]
@@ -28737,7 +28737,7 @@
           },
           {
             "id": "ORPHA:98829",
-            "name": "",
+            "name": "Acute myeloid leukemia with abnormal bone marrow eosinophils inv(16)(p13q22) or t(16;16)(p13;q22)",
             "source": "ORPHA"
           },
           {
@@ -28944,7 +28944,7 @@
         "diseases": [
           {
             "id": "ORPHA:457375",
-            "name": "",
+            "name": "ITPA-related lethal infantile neurological disorder with cataract and cardiac involvement",
             "source": "ORPHA"
           }
         ]
@@ -29251,7 +29251,7 @@
         "diseases": [
           {
             "id": "ORPHA:90635",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic genetic deafness",
             "source": "ORPHA"
           }
         ]
@@ -29329,7 +29329,7 @@
           },
           {
             "id": "ORPHA:592570",
-            "name": "",
+            "name": "TRAF7-associated heart defect-digital anomalies-facial dysmorphism-motor and speech delay syndrome",
             "source": "ORPHA"
           }
         ]
@@ -29465,7 +29465,7 @@
         "diseases": [
           {
             "id": "ORPHA:402014",
-            "name": "",
+            "name": "Acute myeloid leukemia with t(6;9)(p23;q34)",
             "source": "ORPHA"
           }
         ]
@@ -29839,17 +29839,17 @@
         "diseases": [
           {
             "id": "ORPHA:309178",
-            "name": "",
+            "name": "Tay-Sachs disease, infantile form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309192",
-            "name": "",
+            "name": "Tay-Sachs disease, adult form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309185",
-            "name": "",
+            "name": "Tay-Sachs disease, juvenile form",
             "source": "ORPHA"
           }
         ]
@@ -30432,7 +30432,7 @@
         "diseases": [
           {
             "id": "ORPHA:488647",
-            "name": "",
+            "name": "DDX41-related hematologic malignancy predisposition syndrome",
             "source": "ORPHA"
           }
         ]
@@ -30487,7 +30487,7 @@
           },
           {
             "id": "ORPHA:252202",
-            "name": "",
+            "name": "Constitutional mismatch repair deficiency syndrome",
             "source": "ORPHA"
           }
         ]
@@ -30725,7 +30725,7 @@
           },
           {
             "id": "ORPHA:79643",
-            "name": "",
+            "name": "Autosomal recessive hyperinsulinism due to SUR1 deficiency",
             "source": "ORPHA"
           },
           {
@@ -30735,7 +30735,7 @@
           },
           {
             "id": "ORPHA:276598",
-            "name": "",
+            "name": "Diazoxide-resistant focal hyperinsulinism due to SUR1 deficiency",
             "source": "ORPHA"
           },
           {
@@ -30785,17 +30785,17 @@
         "diseases": [
           {
             "id": "ORPHA:309178",
-            "name": "",
+            "name": "Tay-Sachs disease, infantile form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309192",
-            "name": "",
+            "name": "Tay-Sachs disease, adult form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309185",
-            "name": "",
+            "name": "Tay-Sachs disease, juvenile form",
             "source": "ORPHA"
           }
         ]
@@ -30960,7 +30960,7 @@
         "diseases": [
           {
             "id": "ORPHA:589522",
-            "name": "",
+            "name": "Spinocerebellar ataxia type 46",
             "source": "ORPHA"
           }
         ]
@@ -30994,17 +30994,17 @@
         "diseases": [
           {
             "id": "ORPHA:309178",
-            "name": "",
+            "name": "Tay-Sachs disease, infantile form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309192",
-            "name": "",
+            "name": "Tay-Sachs disease, adult form",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:309185",
-            "name": "",
+            "name": "Tay-Sachs disease, juvenile form",
             "source": "ORPHA"
           }
         ]
@@ -31251,17 +31251,17 @@
         "diseases": [
           {
             "id": "ORPHA:289857",
-            "name": "",
+            "name": "Neonatal glycine encephalopathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:289863",
-            "name": "",
+            "name": "Atypical glycine encephalopathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:289860",
-            "name": "",
+            "name": "Infantile glycine encephalopathy",
             "source": "ORPHA"
           }
         ]
@@ -31590,12 +31590,12 @@
         "diseases": [
           {
             "id": "ORPHA:146",
-            "name": "",
+            "name": "Differentiated thyroid carcinoma",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -31779,7 +31779,7 @@
           },
           {
             "id": "ORPHA:139583",
-            "name": "",
+            "name": "X-linked hereditary sensory and autonomic neuropathy with deafness",
             "source": "ORPHA"
           },
           {
@@ -32013,7 +32013,7 @@
         "diseases": [
           {
             "id": "ORPHA:502444",
-            "name": "",
+            "name": "Alkaline ceramidase 3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -32200,7 +32200,7 @@
           },
           {
             "id": "ORPHA:2102",
-            "name": "",
+            "name": "GTP cyclohydrolase I deficiency",
             "source": "ORPHA"
           }
         ]
@@ -32420,12 +32420,12 @@
         "diseases": [
           {
             "id": "ORPHA:642976",
-            "name": "",
+            "name": "Perrault syndrome type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:642945",
-            "name": "",
+            "name": "Perrault syndrome type 1",
             "source": "ORPHA"
           }
         ]
@@ -32650,22 +32650,22 @@
         "diseases": [
           {
             "id": "ORPHA:166260",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 2",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:166265",
-            "name": "",
+            "name": "Dentinogenesis imperfecta type 3",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99791",
-            "name": "",
+            "name": "Dentin dysplasia type II",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:99789",
-            "name": "",
+            "name": "Dentin dysplasia type I",
             "source": "ORPHA"
           }
         ]
@@ -32900,7 +32900,7 @@
         "diseases": [
           {
             "id": "ORPHA:83639",
-            "name": "",
+            "name": "Hypercoagulability syndrome due to glycosylphosphatidylinositol deficiency",
             "source": "ORPHA"
           }
         ]
@@ -33366,7 +33366,7 @@
         "diseases": [
           {
             "id": "ORPHA:178469",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -33444,7 +33444,7 @@
         "diseases": [
           {
             "id": "ORPHA:497906",
-            "name": "",
+            "name": "Childhood-onset basal ganglia degeneration syndrome",
             "source": "ORPHA"
           },
           {
@@ -33571,7 +33571,7 @@
         "diseases": [
           {
             "id": "ORPHA:718017",
-            "name": "",
+            "name": "Combined immunodeficiency due to COPG1 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -33685,7 +33685,7 @@
         "diseases": [
           {
             "id": "ORPHA:54260",
-            "name": "",
+            "name": "Left ventricular noncompaction",
             "source": "ORPHA"
           },
           {
@@ -33725,12 +33725,12 @@
           },
           {
             "id": "ORPHA:293888",
-            "name": "",
+            "name": "Inherited isolated arrhythmogenic cardiomyopathy, dominant-left variant",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:293899",
-            "name": "",
+            "name": "Inherited isolated arrhythmogenic ventricular dysplasia, biventricular variant",
             "source": "ORPHA"
           },
           {
@@ -33755,7 +33755,7 @@
           },
           {
             "id": "ORPHA:293910",
-            "name": "",
+            "name": "Inherited isolated arrhythmogenic cardiomyopathy, dominant-right variant",
             "source": "ORPHA"
           },
           {
@@ -33780,7 +33780,7 @@
           },
           {
             "id": "ORPHA:675396",
-            "name": "",
+            "name": "Epithelioid hemangioma",
             "source": "ORPHA"
           },
           {
@@ -34009,7 +34009,7 @@
         "diseases": [
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -34234,7 +34234,7 @@
         "diseases": [
           {
             "id": "ORPHA:101050",
-            "name": "",
+            "name": "Familial hypocalciuric hypercalcemia type 3",
             "source": "ORPHA"
           }
         ]
@@ -34664,7 +34664,7 @@
         "diseases": [
           {
             "id": "ORPHA:631248",
-            "name": "",
+            "name": "Mitchell Syndrome",
             "source": "ORPHA"
           },
           {
@@ -34970,7 +34970,7 @@
         "diseases": [
           {
             "id": "ORPHA:369852",
-            "name": "",
+            "name": "Congenital neutropenia-myelofibrosis-nephromegaly syndrome",
             "source": "ORPHA"
           }
         ]
@@ -35071,7 +35071,7 @@
         "diseases": [
           {
             "id": "ORPHA:487814",
-            "name": "",
+            "name": "Autosomal dominant Charcot-Marie-Tooth disease type 2 due to DGAT2 mutation",
             "source": "ORPHA"
           }
         ]
@@ -35837,7 +35837,7 @@
         "diseases": [
           {
             "id": "ORPHA:397593",
-            "name": "",
+            "name": "Severe neonatal lactic acidosis due to NFS1-ISD11 complex deficiency",
             "source": "ORPHA"
           }
         ]
@@ -36028,17 +36028,17 @@
         "diseases": [
           {
             "id": "ORPHA:289857",
-            "name": "",
+            "name": "Neonatal glycine encephalopathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:289863",
-            "name": "",
+            "name": "Atypical glycine encephalopathy",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:289860",
-            "name": "",
+            "name": "Infantile glycine encephalopathy",
             "source": "ORPHA"
           }
         ]
@@ -36134,7 +36134,7 @@
         "diseases": [
           {
             "id": "ORPHA:98676",
-            "name": "",
+            "name": "Autosomal recessive isolated optic atrophy",
             "source": "ORPHA"
           }
         ]
@@ -36162,12 +36162,12 @@
         "diseases": [
           {
             "id": "ORPHA:394532",
-            "name": "",
+            "name": "Multiple acyl-CoA dehydrogenase deficiency, mild type",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:394529",
-            "name": "",
+            "name": "Multiple acyl-CoA dehydrogenase deficiency, severe neonatal type",
             "source": "ORPHA"
           }
         ]
@@ -36268,7 +36268,7 @@
         "diseases": [
           {
             "id": "ORPHA:93601",
-            "name": "",
+            "name": "Xanthinuria type I",
             "source": "ORPHA"
           }
         ]
@@ -36562,12 +36562,12 @@
         "diseases": [
           {
             "id": "ORPHA:699796",
-            "name": "",
+            "name": "Protracted juvenile CLN3 disease",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:699780",
-            "name": "",
+            "name": "Juvenile CLN3 disease",
             "source": "ORPHA"
           }
         ]
@@ -36774,7 +36774,7 @@
           },
           {
             "id": "ORPHA:440402",
-            "name": "",
+            "name": "Interstitial lung disease due to ABCA3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -36869,7 +36869,7 @@
         "diseases": [
           {
             "id": "ORPHA:98838",
-            "name": "",
+            "name": "Primary mediastinal large B-cell lymphoma",
             "source": "ORPHA"
           }
         ]
@@ -37073,7 +37073,7 @@
         "diseases": [
           {
             "id": "ORPHA:314399",
-            "name": "",
+            "name": "Autosomal dominant aplasia and myelodysplasia",
             "source": "ORPHA"
           }
         ]
@@ -37123,7 +37123,7 @@
           },
           {
             "id": "ORPHA:280406",
-            "name": "",
+            "name": "Familial steroid-resistant nephrotic syndrome with sensorineural deafness",
             "source": "ORPHA"
           }
         ]
@@ -37912,7 +37912,7 @@
           },
           {
             "id": "ORPHA:708203",
-            "name": "",
+            "name": "Intellectual disability-small hands and feet-drug-resistant epilepsy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -37962,7 +37962,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -38213,7 +38213,7 @@
         "diseases": [
           {
             "id": "ORPHA:447737",
-            "name": "",
+            "name": "Combined immunodeficiency due to DOCK2 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -38225,7 +38225,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -38292,7 +38292,7 @@
         "diseases": [
           {
             "id": "ORPHA:528084",
-            "name": "",
+            "name": "Non-specific syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -39352,7 +39352,7 @@
         "diseases": [
           {
             "id": "ORPHA:457185",
-            "name": "",
+            "name": "Neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome",
             "source": "ORPHA"
           }
         ]
@@ -39582,7 +39582,7 @@
         "diseases": [
           {
             "id": "ORPHA:464443",
-            "name": "",
+            "name": "COG6-CGD",
             "source": "ORPHA"
           },
           {
@@ -39604,7 +39604,7 @@
         "diseases": [
           {
             "id": "ORPHA:240760",
-            "name": "",
+            "name": "Nijmegen breakage syndrome-like disorder",
             "source": "ORPHA"
           },
           {
@@ -40353,7 +40353,7 @@
         "diseases": [
           {
             "id": "ORPHA:178469",
-            "name": "",
+            "name": "Autosomal dominant non-syndromic intellectual disability",
             "source": "ORPHA"
           },
           {
@@ -40642,7 +40642,7 @@
         "diseases": [
           {
             "id": "ORPHA:402020",
-            "name": "",
+            "name": "Acute myeloid leukemia with inv(3)(q21q26.2) or t(3;3)(q21;q26.2)",
             "source": "ORPHA"
           }
         ]
@@ -40714,7 +40714,7 @@
         "diseases": [
           {
             "id": "ORPHA:261619",
-            "name": "",
+            "name": "Alagille syndrome due to a JAG1 point mutation",
             "source": "ORPHA"
           },
           {
@@ -40724,7 +40724,7 @@
           },
           {
             "id": "ORPHA:261600",
-            "name": "",
+            "name": "Alagille syndrome due to 20p12 microdeletion",
             "source": "ORPHA"
           }
         ]
@@ -40741,12 +40741,12 @@
         "diseases": [
           {
             "id": "ORPHA:260305",
-            "name": "",
+            "name": "Autosomal recessive sideroblastic anemia",
             "source": "ORPHA"
           },
           {
             "id": "ORPHA:496751",
-            "name": "",
+            "name": "EVEN-plus syndrome",
             "source": "ORPHA"
           }
         ]
@@ -40892,7 +40892,7 @@
           },
           {
             "id": "ORPHA:440402",
-            "name": "",
+            "name": "Interstitial lung disease due to ABCA3 deficiency",
             "source": "ORPHA"
           }
         ]
@@ -41050,7 +41050,7 @@
         "diseases": [
           {
             "id": "ORPHA:240760",
-            "name": "",
+            "name": "Nijmegen breakage syndrome-like disorder",
             "source": "ORPHA"
           },
           {
@@ -41107,7 +41107,7 @@
         "diseases": [
           {
             "id": "ORPHA:98676",
-            "name": "",
+            "name": "Autosomal recessive isolated optic atrophy",
             "source": "ORPHA"
           }
         ]
@@ -41886,7 +41886,7 @@
         "diseases": [
           {
             "id": "ORPHA:610573",
-            "name": "",
+            "name": "CLCN6-related childhood-onset progressive neurodegeneration-peripheral neuropathy syndrome",
             "source": "ORPHA"
           }
         ]
@@ -42180,7 +42180,7 @@
         "diseases": [
           {
             "id": "ORPHA:139441",
-            "name": "",
+            "name": "Hypomyelination with atrophy of basal ganglia and cerebellum",
             "source": "ORPHA"
           }
         ]
@@ -42219,7 +42219,7 @@
           },
           {
             "id": "ORPHA:88616",
-            "name": "",
+            "name": "Autosomal recessive non-syndromic intellectual disability",
             "source": "ORPHA"
           }
         ]
@@ -42269,7 +42269,7 @@
         "diseases": [
           {
             "id": "ORPHA:478049",
-            "name": "",
+            "name": "Lethal left ventricular non-compaction-seizures-hypotonia-cataract-developmental delay syndrome",
             "source": "ORPHA"
           }
         ]
@@ -42492,6 +42492,11 @@
       }
     ],
     "license_note": "Disease associations/names from OMIM (via HPO) carry OMIM redistribution terms; review before public launch. Re-run with ORPHA_ONLY=1 for the openly-licensed Orphanet-only subset.",
-    "orpha_only": true
+    "orpha_only": true,
+    "orpha_names_backfilled": {
+      "rows": 300,
+      "on": "2026-07-09",
+      "source": "Orphanet ORDO via EBI OLS4"
+    }
   }
 }

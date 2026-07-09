@@ -178,7 +178,76 @@ def hpo_gene_to_disease():
     return out
 
 
+# ------------------------------------------------------- ORPHA name backfill --
+# HPO's phenotype.hpoa lacks a display name for many Orphanet ids, so those
+# disease rows fall back to showing a bare "ORPHA:xxxxx" code on the gene page.
+# Resolve the missing names from Orphanet's ORDO ontology via EBI OLS4 (the same
+# authority the on-page disease links point at).
+def _orpha_label(num):
+    cache = CACHE / f"orpha_{num}.txt"
+    if cache.exists():
+        return cache.read_text(encoding="utf-8").strip()
+    url = ("https://www.ebi.ac.uk/ols4/api/ontologies/ordo/terms?"
+           f"iri=http://www.orpha.net/ORDO/Orphanet_{num}")
+    label = ""
+    try:
+        d = json.loads(_fetch(url))
+        terms = d.get("_embedded", {}).get("terms", [])
+        label = (terms[0].get("label") or "") if terms else ""
+    except Exception:
+        label = ""
+    cache.write_text(label, encoding="utf-8")
+    return label
+
+
+def backfill_orpha_names(data):
+    """Fill empty `name` for ORPHA disease ids in-place; return rows filled."""
+    import time
+    missing = set()
+    for k, entry in data.items():
+        if k.startswith("_"):
+            continue
+        for o in entry.get("orthologs", []):
+            for dis in o.get("diseases", []):
+                if dis.get("id", "").startswith("ORPHA:") and not dis.get("name"):
+                    missing.add(dis["id"])
+    resolved = {}
+    for i, did in enumerate(sorted(missing), 1):
+        label = _orpha_label(did.split(":")[1])
+        if label:
+            resolved[did] = label
+        if i % 25 == 0:
+            print(f"  resolved {i}/{len(missing)} ORPHA names", file=sys.stderr)
+        time.sleep(0.05)  # be polite to OLS4
+    filled = 0
+    for k, entry in data.items():
+        if k.startswith("_"):
+            continue
+        for o in entry.get("orthologs", []):
+            for dis in o.get("diseases", []):
+                if not dis.get("name") and dis.get("id") in resolved:
+                    dis["name"] = resolved[dis["id"]]
+                    filled += 1
+    print(f"  backfilled {filled} rows from {len(resolved)}/{len(missing)} "
+          "unique ORPHA ids", file=sys.stderr)
+    return filled
+
+
 def main():
+    # Fast path: patch names into the existing JSON without a full re-fetch.
+    if os.environ.get("PATCH_NAMES") == "1":
+        data = json.loads(OUT.read_text(encoding="utf-8"))
+        print("Backfilling missing ORPHA disease names via OLS4...", file=sys.stderr)
+        filled = backfill_orpha_names(data)
+        meta = data.setdefault("_meta", {})
+        meta["orpha_names_backfilled"] = {
+            "rows": filled, "on": datetime.date.today().isoformat(),
+            "source": "Orphanet ORDO via EBI OLS4",
+        }
+        OUT.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        print(f"patched {OUT}: {filled} names", file=sys.stderr)
+        return 0
+
     print("Fetching UniProt D. discoideum entry-name -> DDB_G map...", file=sys.stderr)
     uni = uniprot_entryname_to_gene()
     print("Fetching OMA Dicty<->human ortholog pairs...", file=sys.stderr)
@@ -203,6 +272,9 @@ def main():
                 "relationship": rel,
                 "diseases": diseases,
             })
+
+    print("Backfilling missing ORPHA disease names via OLS4...", file=sys.stderr)
+    backfill_orpha_names(data)
 
     genes_with_disease = sum(
         1 for v in data.values()

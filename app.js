@@ -9510,8 +9510,9 @@ function basketInit() {
 // ---- Advanced gene finder: faceted filtering over the whole catalog ----
 let FACETS = null;            // { ddb: [pheno, ortholog, disease, peakStage] }
 let finderResults = [];       // current filtered list of { g, p, o, d, x }
+let finderPage = 1;
 const FINDER_STAGES = ["0 h · growth", "4 h", "8 h · aggregation", "12 h · mound", "16 h · slug", "20 h", "24 h · fruiting"];
-const FINDER_MAX = 300;
+const FINDER_PAGE = 25;       // rows per page
 
 function openAdvancedFinder(updateRoute = true) {
   hideContentSections();
@@ -9562,15 +9563,31 @@ async function initAdvancedFinder() {
     catch { FACETS = {}; }
   }
   for (let i = 0; i < 30 && !geneIndex.length; i++) await new Promise((r) => setTimeout(r, 100));
+  const onFilter = () => { finderPage = 1; finderApply(); };   // any filter change → page 1
   ["finder-text", "finder-pheno", "finder-ortholog", "finder-disease", "finder-peak"].forEach((id) => {
     const el = document.getElementById(id);
-    if (el) { el.addEventListener("input", finderApply); el.addEventListener("change", finderApply); }
+    if (el) { el.addEventListener("input", onFilter); el.addEventListener("change", onFilter); }
   });
   document.getElementById("finder-reset")?.addEventListener("click", () => {
     const t = document.getElementById("finder-text"); if (t) t.value = "";
     ["finder-pheno", "finder-ortholog", "finder-disease"].forEach((id) => { const e = document.getElementById(id); if (e) e.checked = false; });
     const pk = document.getElementById("finder-peak"); if (pk) pk.value = "";
-    finderApply();
+    onFilter();
+  });
+  // Pagination (Prev/Next + jump-to-page) — delegated on the results container,
+  // which re-renders its innerHTML but persists as an element.
+  const results = document.querySelector("[data-finder-results]");
+  const jump = () => { finderApply(); scrollToY((toolsShell?.offsetTop || 0) - 60); };
+  results?.addEventListener("click", (e) => {
+    const nav = e.target.closest("[data-finder-page]");
+    if (!nav) return;
+    finderPage += nav.dataset.finderPage === "next" ? 1 : -1;
+    jump();
+  });
+  results?.addEventListener("change", (e) => {
+    if (!e.target.closest("[data-finder-page-input]")) return;
+    const v = parseInt(e.target.value, 10);
+    if (Number.isFinite(v)) { finderPage = v; jump(); }
   });
   document.getElementById("finder-csv")?.addEventListener("click", finderExportCSV);
   document.getElementById("finder-basket")?.addEventListener("click", finderAddAll);
@@ -9606,9 +9623,19 @@ function finderApply() {
   finderResults = finderFilter();
   const n = finderResults.length;
   if (!n) { el.innerHTML = `<p class="notice">No genes match these filters.</p>`; return; }
-  const shown = finderResults.slice(0, FINDER_MAX);
+  const totalPages = Math.max(1, Math.ceil(n / FINDER_PAGE));
+  if (finderPage > totalPages) finderPage = totalPages;
+  if (finderPage < 1) finderPage = 1;
+  const start = (finderPage - 1) * FINDER_PAGE;
+  const shown = finderResults.slice(start, start + FINDER_PAGE);
+  const pager = totalPages > 1 ? `
+    <div class="stock-pager">
+      <button type="button" data-finder-page="prev"${finderPage <= 1 ? " disabled" : ""}>‹ Prev</button>
+      <span class="stock-pager-label">Page <input type="number" class="stock-page-input" data-finder-page-input min="1" max="${totalPages}" value="${finderPage}" aria-label="Go to page"> of ${totalPages.toLocaleString()}</span>
+      <button type="button" data-finder-page="next"${finderPage >= totalPages ? " disabled" : ""}>Next ›</button>
+    </div>` : "";
   el.innerHTML = `
-    <p class="finder-count">${n.toLocaleString()} gene${n === 1 ? "" : "s"} match${n === 1 ? "es" : ""}${n > FINDER_MAX ? ` — showing the first ${FINDER_MAX}` : ""}.</p>
+    <p class="finder-count">${n.toLocaleString()} gene${n === 1 ? "" : "s"} match${n === 1 ? "es" : ""}.</p>
     <div style="overflow-x:auto"><table class="finder-table">
       <thead><tr><th>Gene</th><th>Name</th><th>Known for</th><th>Expression peak</th><th aria-label="Add"></th></tr></thead>
       <tbody>
@@ -9626,7 +9653,8 @@ function finderApply() {
           </tr>`;
         }).join("")}
       </tbody>
-    </table></div>`;
+    </table></div>
+    ${pager}`;
 }
 
 function finderExportCSV() {

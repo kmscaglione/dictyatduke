@@ -101,9 +101,9 @@ input {
 
 .mark {
   height: 68px;
-  width: auto;
-  border-radius: 10px;
-  background: #1f2d4d;
+  width: 68px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -1374,7 +1374,7 @@ button:focus-visible,
      column shrink (minmax above) so the actions stay on the blue bar. */
   .brand-wrap { min-width: 0; }
   .brand { font-size: 19px; gap: 8px; min-width: 0; }
-  .mark { height: 34px; }
+  .mark { height: 34px; width: 34px; }
   .brand span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
   .nav-links {

@@ -5528,7 +5528,7 @@ async function fetchPubMedResults(gene) {
   const baseUrl = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
   const searchParams = new URLSearchParams({
     db: "pubmed",
-    retmax: "12",
+    retmax: "40", // fetch a pool so the on-page filter has something to search; show 10 by default
     retmode: "json",
     sort: "pub date",
     tool: "dictyatduke",
@@ -5571,6 +5571,37 @@ async function fetchPubMedResults(gene) {
   return papers;
 }
 
+// Render a paper list with a filter box that shows the N most recent by default.
+// `papers` should already be sorted most-recent-first; each is {pmid,title,journal,date,authors}.
+function renderFilterablePapers(container, papers, { headerHtml = "", shown = 10, placeholder = "Filter papers by title, journal, or author…", noun = "papers" } = {}) {
+  const paperHtml = (p) => `
+    <li>
+      <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
+      <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
+    </li>`;
+  container.innerHTML = `${headerHtml}
+    <input type="search" class="pubmed-search" placeholder="${escapeHtml(placeholder)}" aria-label="${escapeHtml(placeholder)}">
+    <div class="paper-list-wrap"></div>`;
+  const searchEl = container.querySelector(".pubmed-search");
+  const wrap = container.querySelector(".paper-list-wrap");
+  const paint = () => {
+    const q = searchEl.value.trim().toLowerCase();
+    if (q) {
+      const hits = papers.filter((p) => `${p.title} ${p.journal} ${p.authors}`.toLowerCase().includes(q));
+      wrap.innerHTML = hits.length
+        ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map(paperHtml).join("")}</ul>`
+        : `<p class="notice muted">No ${noun} match “${escapeHtml(searchEl.value.trim())}”.</p>`;
+      return;
+    }
+    const note = papers.length > shown
+      ? `<p class="oma-count">Showing the ${shown} most recent of ${papers.length} — filter above to find a specific one.</p>`
+      : "";
+    wrap.innerHTML = note + `<ul class="list pubmed-list">${papers.slice(0, shown).map(paperHtml).join("")}</ul>`;
+  };
+  searchEl.addEventListener("input", paint);
+  paint();
+}
+
 async function loadPubMedResults(gene) {
   const container = document.querySelector("[data-pubmed-results]");
   if (!container) return;
@@ -5582,17 +5613,12 @@ async function loadPubMedResults(gene) {
       container.innerHTML = `<p class="notice">No PubMed results returned for this gene query. Use the PubMed search link above to broaden the search.</p>`;
       return;
     }
-    container.innerHTML = `
-      <h4>PubMed search results</h4>
-      <ul class="list pubmed-list">
-        ${papers.map((paper) => `
-          <li>
-            <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(paper.pmid)}/" target="_blank" rel="noopener">${escapeHtml(paper.title)}</a></strong>
-            <span>${escapeHtml([paper.journal, paper.date, paper.authors].filter(Boolean).join(" · "))}</span>
-          </li>
-        `).join("")}
-      </ul>
-    `;
+
+    renderFilterablePapers(container, papers, {
+      headerHtml: `<h4>PubMed search results</h4>`,
+      placeholder: "Filter papers by title, journal, or author…",
+      noun: "papers",
+    });
   } catch (error) {
     container.innerHTML = `<p class="notice">PubMed results could not be loaded right now. The seeded literature links below are still available.</p>`;
   }
@@ -5641,21 +5667,19 @@ async function loadCuratedReferences(gene) {
           title: item?.title || `PMID ${pmid}`,
           journal: item?.fulljournalname || item?.source || "",
           date: item?.pubdate || "",
+          sortDate: item?.sortpubdate || item?.epubdate || item?.pubdate || "",
           authors: (item?.authors || []).slice(0, 3).map((a) => a.name).filter(Boolean).join(", ")
         };
       });
+      papers.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
       curatedRefCache.set(gene.id, papers);
     }
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-    container.innerHTML = `
-      ${renderHeader(papers.length)}
-      <ul class="list pubmed-list">
-        ${papers.map((p) => `
-          <li>
-            <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
-            <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
-          </li>`).join("")}
-      </ul>`;
+    renderFilterablePapers(container, papers, {
+      headerHtml: renderHeader(papers.length),
+      placeholder: "Filter references by title, journal, or author…",
+      noun: "references",
+    });
   } catch {
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
     // Fallback: linked PMIDs without titles

@@ -344,6 +344,30 @@ h1 {
   line-height: 1.55;
 }
 
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.hero-stats > div { display: flex; flex-direction: column; }
+.hero-stats dt {
+  font-size: 32px;
+  font-weight: 850;
+  line-height: 1.05;
+  color: var(--teal-dark);
+  font-variant-numeric: tabular-nums;
+}
+.hero-stats dd {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--muted);
+}
+
 .search-panel,
 .record-card,
 .empty-state {

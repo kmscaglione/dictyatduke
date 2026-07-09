@@ -1508,6 +1508,42 @@ button:focus-visible,
 }
 .oma-toggle:hover { border-color: var(--teal); }
 
+/* Stock Center pagination */
+.stock-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.stock-pager button {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+.stock-pager button:hover:not(:disabled) { border-color: var(--teal); }
+.stock-pager button:disabled { opacity: .4; cursor: default; }
+.stock-pager-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.stock-page-input {
+  width: 58px;
+  min-height: 34px;
+  text-align: center;
+  padding: 0 6px;
+}
+
 .notice {
   border: 1px solid #ead7b7;
   border-radius: 8px;

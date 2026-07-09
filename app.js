@@ -6405,8 +6405,8 @@ function initStockCenter() {
   if (!root) return;
   let active = "strains";
   let showAllStrains = false;   // strains default to in-stock only; toggle reveals all
-  const STOCK_PAGE = 25;        // progressive paging — keep the visible list short
-  let limit = STOCK_PAGE;
+  const STOCK_PAGE = 25;        // items per page
+  let page = 1;
   const listEl = root.querySelector("[data-stock-list]");
   const searchEl = root.querySelector("#stock-search");
   const browseView = root.querySelector("[data-stock-browse]");
@@ -6494,15 +6494,24 @@ function initStockCenter() {
         <p class="notice muted">${q ? `No ${baseLabel} match “${escapeHtml(searchEl.value.trim())}”.` : `No ${baseLabel} to show.`}</p>`;
       return;
     }
-    const visible = shown.slice(0, limit);
-    const more = shown.length - visible.length;
+    const totalPages = Math.max(1, Math.ceil(shown.length / STOCK_PAGE));
+    if (page > totalPages) page = totalPages;
+    if (page < 1) page = 1;
+    const start = (page - 1) * STOCK_PAGE;
+    const visible = shown.slice(start, start + STOCK_PAGE);
+    const pager = totalPages > 1 ? `
+      <div class="stock-pager">
+        <button type="button" data-stock-page="prev"${page <= 1 ? " disabled" : ""}>‹ Prev</button>
+        <span class="stock-pager-label">Page <input type="number" class="stock-page-input" min="1" max="${totalPages}" value="${page}" aria-label="Go to page"> of ${totalPages.toLocaleString()}</span>
+        <button type="button" data-stock-page="next"${page >= totalPages ? " disabled" : ""}>Next ›</button>
+      </div>` : "";
     listEl.innerHTML = `
       <div class="stock-listhead">
         <p>${count}</p>
         ${toggle}
       </div>
       <div class="stock-list">${visible.map((it) => stockItemHTML(active, it)).join("")}</div>
-      ${more > 0 ? `<button type="button" class="oma-toggle" data-stock-more style="margin-top:12px">Show ${Math.min(STOCK_PAGE, more)} more — ${more.toLocaleString()} left</button>` : ""}`;
+      ${pager}`;
   };
 
   const showCheckout = () => { browseView.hidden = true; checkoutView.hidden = false; renderCart(); updateCounts(); scrollToY(root.offsetTop - 60); };
@@ -6536,12 +6545,14 @@ function initStockCenter() {
       root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t === tab));
       searchEl.value = "";
       searchEl.placeholder = active === "gwdi" ? "Search the GWDI bank by gene name…" : "Search the catalog…";
-      limit = STOCK_PAGE;
+      page = 1;
       renderList();
-    } else if (e.target.closest("[data-stock-more]")) {
-      limit += STOCK_PAGE; renderList();
+    } else if (e.target.closest("[data-stock-page]")) {
+      page += e.target.closest("[data-stock-page]").dataset.stockPage === "next" ? 1 : -1;
+      renderList();
+      scrollToY(root.offsetTop - 60);
     } else if (e.target.closest("[data-stock-showall]")) {
-      showAllStrains = !showAllStrains; limit = STOCK_PAGE; renderList();
+      showAllStrains = !showAllStrains; page = 1; renderList();
     } else if (e.target.closest("[data-gwdi-example]")) {
       searchEl.value = "smp3"; searchEl.focus(); renderGwdi();
     } else if (e.target.closest("[data-stock-checkout]")) {
@@ -6575,10 +6586,17 @@ function initStockCenter() {
   });
 
   searchEl.addEventListener("input", () => {
-    limit = STOCK_PAGE;                                // a new query resets paging
+    page = 1;                                          // a new query resets to page 1
     if (active !== "gwdi") { renderList(); return; }
     clearTimeout(gwdiTimer);
     gwdiTimer = setTimeout(renderGwdi, 350);          // debounce the live API search
+  });
+  // Jump to a typed page number (fires on Enter or blur).
+  root.addEventListener("change", (e) => {
+    const inp = e.target.closest(".stock-page-input");
+    if (!inp) return;
+    const n = parseInt(inp.value, 10);
+    if (Number.isFinite(n)) { page = n; renderList(); scrollToY(root.offsetTop - 60); }
   });
   updateCounts();
   ensureStockCenter().then(() => { renderList(); updateCounts(); });

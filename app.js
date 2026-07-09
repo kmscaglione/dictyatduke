@@ -1427,6 +1427,17 @@ function initStructureViewer(uniprot) {
   if (currentViewer) { try { currentViewer.clear(); } catch {} }
   el.innerHTML = `<p style="font-size:0.75rem;color:#9ca3af;padding:8px;text-align:center">Loading structure…</p>`;
 
+  // A clean click (not a drag-rotate) on the preview opens the Structures tab.
+  el.style.cursor = "pointer";
+  let downX = 0, downY = 0;
+  el.addEventListener("mousedown", (e) => { downX = e.clientX; downY = e.clientY; });
+  el.addEventListener("click", (e) => {
+    if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) return; // dragged → rotating, don't navigate
+    if (!state.activeGene) return;
+    switchTab("Structures");
+    setRoute(state.activeGene, state.activeTab);
+  });
+
   const renderIntoEl = () => {
     const viewer = $3Dmol.createViewer(el, { backgroundColor: "white", antialias: true });
     currentViewer = viewer;
@@ -1510,7 +1521,11 @@ function renderRecord() {
           </div>
           <div class="record-actions">${basketToggleButtonHTML(gene)}${canViewInBrowser(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
         </div>
-        ${gene.uniprot ? `<div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}"></div>` : ""}
+        ${gene.uniprot ? `
+        <div class="structure-preview">
+          <div class="structure-viewer" id="af-viewer" data-uniprot="${escapeHtml(gene.uniprot)}" title="Open the full 3D structure"></div>
+          <button type="button" class="structure-preview-link" data-tab="Structures">View 3D structure →</button>
+        </div>` : ""}
       </header>
 
       <div class="source-links" aria-label="External links">

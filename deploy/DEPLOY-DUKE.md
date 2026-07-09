@@ -88,12 +88,25 @@ Then visit https://dicty.labs.duke.edu — gene search, records, and tools shoul
 all work.
 
 ## 6. Updating later
+
+First push the commits from your Mac to **GitLab** (the remote this box pulls
+from): `git push gitlab master`.
+
+Then, on the server, **force-match GitLab** — this is a deploy mirror, so always
+fetch + hard-reset. Do **not** use `git pull`: the local branch diverges from the
+rewritten history and `pull` stops with "Need to specify how to reconcile
+divergent branches". (Pull as `kms205`, not `dicty` — that service user was never
+created on this box; the checkout is owned by `kms205`.)
+
 ```bash
 cd /srv/web/dicty.labs.duke.edu/html
-sudo -u dicty git pull
+git fetch origin master && git reset --hard origin/master
 sudo systemctl restart dicty           # only needed for serve.py changes;
-                                       # app.js/index.html/JSON are read live.
+                                       # app.js/index.html/JSON/styles.css are read live.
 ```
+
+`git reset --hard` discards anything local — which is what you want here, since
+nothing is ever edited on the server directly.
 
 ## Notes
 - **Single process only** — never run multiple serve.py workers (in-memory state).

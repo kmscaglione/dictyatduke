@@ -1395,6 +1395,78 @@ button:focus-visible,
   line-height: 1.45;
 }
 
+/* Human orthologs & disease — one card per ortholog, scannable disease rows */
+.ortholog-cards {
+  display: grid;
+  gap: 12px;
+}
+.ortholog-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--panel);
+}
+.ortholog-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ortholog-symbol {
+  font-size: 15px;
+  font-weight: 850;
+  color: var(--teal-dark);
+  text-decoration: none;
+}
+.ortholog-symbol:hover { text-decoration: underline; }
+.ortholog-rel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  background: var(--soft);
+  border-radius: 999px;
+  padding: 2px 9px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.ortholog-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.disease-list {
+  list-style: none;
+  margin: 11px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+}
+.disease-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.disease-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.disease-name { min-width: 0; }
+.disease-id {
+  margin-left: 7px;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: nowrap;
+}
+
 .notice {
   border: 1px solid #ead7b7;
   border-radius: 8px;

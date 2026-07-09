@@ -5933,24 +5933,28 @@ async function loadHumanDisease(gene) {
     <div class="data-block">
       <h3>Human ortholog${orthologs.length > 1 ? "s" : ""} &amp; disease
         <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA · UniProt · HPO</span></h3>
-      <ul class="list">
+      <div class="ortholog-cards">
         ${orthologs.map((o) => {
-          const dis = (o.diseases || []).map((d) => {
+          const diseases = o.diseases || [];
+          const rows = diseases.map((d) => {
             const href = diseaseHref(d.id);
-            const label = escapeHtml(d.name || d.id);
-            const link = href ? `<a class="text-link" href="${href}" target="_blank" rel="noopener">${label}</a>` : label;
-            // only append the id when it isn't already the label (i.e. a name exists)
-            const suffix = d.name ? ` <span style="color:var(--muted,#6b7280)">· ${escapeHtml(d.id)}</span>` : "";
-            return `<li>${link}${suffix}</li>`;
+            const name = escapeHtml(d.name || d.id);
+            const nameHtml = href ? `<a class="text-link" href="${href}" target="_blank" rel="noopener">${name}</a>` : name;
+            // only show the id separately when a real name is the label
+            const idHtml = d.name ? `<span class="disease-id">${escapeHtml(d.id)}</span>` : "";
+            return `<li class="disease-row"><span class="disease-dot" aria-hidden="true"></span><span class="disease-name">${nameHtml}${idHtml}</span></li>`;
           }).join("");
-          return `<li>
-            <strong><a class="text-link" href="https://www.uniprot.org/uniprotkb?query=${encodeURIComponent(o.human_uniprot)}" target="_blank" rel="noopener">${escapeHtml(o.human_symbol)}</a></strong>
-            <span>human ortholog${o.relationship ? " · " + escapeHtml(o.relationship) : ""}${o.diseases.length ? " · " + o.diseases.length + " disease association" + (o.diseases.length === 1 ? "" : "s") : ""}</span>
-            ${dis ? `<ul class="list" style="margin:6px 0 0 14px">${dis}</ul>` : ""}
-          </li>`;
+          return `<div class="ortholog-card">
+            <div class="ortholog-head">
+              <a class="ortholog-symbol" href="https://www.uniprot.org/uniprotkb?query=${encodeURIComponent(o.human_uniprot)}" target="_blank" rel="noopener">${escapeHtml(o.human_symbol)}</a>
+              ${o.relationship ? `<span class="ortholog-rel">${escapeHtml(o.relationship)}</span>` : ""}
+              <span class="ortholog-count">${diseases.length ? diseases.length + " disease" + (diseases.length === 1 ? "" : "s") : "no disease link"}</span>
+            </div>
+            ${rows ? `<ul class="disease-list">${rows}</ul>` : ""}
+          </div>`;
         }).join("")}
-      </ul>
-      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:12px">
         Orthologs from OMA; disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER).
         ${withDisease.length ? "" : "No curated disease associations for this ortholog."}
         Computational predictions — confirm against primary sources.</p>

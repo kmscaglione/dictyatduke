@@ -1475,7 +1475,8 @@ button:focus-visible,
 }
 .oma-search,
 .go-search,
-.pubmed-search {
+.pubmed-search,
+.lit-search {
   width: 100%;
   max-width: 420px;
   min-height: 42px;

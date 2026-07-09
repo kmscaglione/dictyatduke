@@ -1591,6 +1591,7 @@ function loadTabData(gene, tab) {
       loadPTMs(gene);
       break;
     case "Literature":
+      initLiteratureSearch();
       loadCuratedReferences(gene);
       loadPubMedResults(gene);
       break;
@@ -5300,6 +5301,7 @@ function renderTab(gene, tab) {
     return `
       <div class="data-block">
         <h3>Literature</h3>
+        <input type="search" class="lit-search" placeholder="Filter all papers by title, journal, or author…" aria-label="Filter literature">
         <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
           <p class="notice muted">Loading curated references…</p>
         </div>
@@ -5571,35 +5573,52 @@ async function fetchPubMedResults(gene) {
   return papers;
 }
 
-// Render a paper list with a filter box that shows the N most recent by default.
-// `papers` should already be sorted most-recent-first; each is {pmid,title,journal,date,authors}.
-function renderFilterablePapers(container, papers, { headerHtml = "", shown = 10, placeholder = "Filter papers by title, journal, or author…", noun = "papers" } = {}) {
-  const paperHtml = (p) => `
-    <li>
-      <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
-      <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
-    </li>`;
-  container.innerHTML = `${headerHtml}
-    <input type="search" class="pubmed-search" placeholder="${escapeHtml(placeholder)}" aria-label="${escapeHtml(placeholder)}">
-    <div class="paper-list-wrap"></div>`;
-  const searchEl = container.querySelector(".pubmed-search");
-  const wrap = container.querySelector(".paper-list-wrap");
-  const paint = () => {
-    const q = searchEl.value.trim().toLowerCase();
-    if (q) {
-      const hits = papers.filter((p) => `${p.title} ${p.journal} ${p.authors}`.toLowerCase().includes(q));
-      wrap.innerHTML = hits.length
-        ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map(paperHtml).join("")}</ul>`
-        : `<p class="notice muted">No ${noun} match “${escapeHtml(searchEl.value.trim())}”.</p>`;
-      return;
-    }
-    const note = papers.length > shown
-      ? `<p class="oma-count">Showing the ${shown} most recent of ${papers.length} — filter above to find a specific one.</p>`
+// One filter box drives every list on the Literature tab. Each loader registers
+// its section (curated refs, PubMed feed); typing filters all of them at once,
+// so a search hides the default papers everywhere and clearing brings them back.
+let litQuery = "";
+let litSections = [];
+
+function initLiteratureSearch() {
+  litQuery = "";
+  litSections = [];
+  const inp = document.querySelector(".lit-search");
+  if (inp) inp.addEventListener("input", () => { litQuery = inp.value; litPaint(); });
+}
+
+function litPaperHtml(p) {
+  return `<li>
+    <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
+    <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
+  </li>`;
+}
+
+function renderLitSection(s) {
+  const q = litQuery.trim().toLowerCase();
+  if (q) {
+    const hits = s.papers.filter((p) => `${p.title} ${p.journal} ${p.authors}`.toLowerCase().includes(q));
+    s.el.innerHTML = s.headerHtml + (hits.length
+      ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map(litPaperHtml).join("")}</ul>`
+      : `<p class="notice muted">No ${s.noun} match “${escapeHtml(litQuery.trim())}”.</p>`);
+  } else {
+    const note = s.papers.length > s.defaultShown
+      ? `<p class="oma-count">Showing the ${s.defaultShown} most recent of ${s.papers.length} — filter above to find a specific one.</p>`
       : "";
-    wrap.innerHTML = note + `<ul class="list pubmed-list">${papers.slice(0, shown).map(paperHtml).join("")}</ul>`;
-  };
-  searchEl.addEventListener("input", paint);
-  paint();
+    s.el.innerHTML = s.headerHtml + note + `<ul class="list pubmed-list">${s.papers.slice(0, s.defaultShown).map(litPaperHtml).join("")}</ul>`;
+  }
+}
+
+function litPaint() {
+  litSections.forEach(renderLitSection);
+  // Seeded links are a tiny static set — hide them while filtering for consistency.
+  const seeded = document.querySelector(".seeded-literature");
+  if (seeded) seeded.style.display = litQuery.trim() ? "none" : "";
+}
+
+function litRegister(section) {
+  litSections = litSections.filter((s) => s.el !== section.el); // replace on reload
+  litSections.push(section);
+  renderLitSection(section);
 }
 
 async function loadPubMedResults(gene) {
@@ -5614,11 +5633,7 @@ async function loadPubMedResults(gene) {
       return;
     }
 
-    renderFilterablePapers(container, papers, {
-      headerHtml: `<h4>PubMed search results</h4>`,
-      placeholder: "Filter papers by title, journal, or author…",
-      noun: "papers",
-    });
+    litRegister({ el: container, headerHtml: `<h4>PubMed search results</h4>`, papers, noun: "papers", defaultShown: 10 });
   } catch (error) {
     container.innerHTML = `<p class="notice">PubMed results could not be loaded right now. The seeded literature links below are still available.</p>`;
   }
@@ -5675,11 +5690,7 @@ async function loadCuratedReferences(gene) {
       curatedRefCache.set(gene.id, papers);
     }
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-    renderFilterablePapers(container, papers, {
-      headerHtml: renderHeader(papers.length),
-      placeholder: "Filter references by title, journal, or author…",
-      noun: "references",
-    });
+    litRegister({ el: container, headerHtml: renderHeader(papers.length), papers, noun: "references", defaultShown: 10 });
   } catch {
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
     // Fallback: linked PMIDs without titles

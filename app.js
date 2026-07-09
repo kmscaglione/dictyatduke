@@ -1864,7 +1864,7 @@ async function runExpressionCompare() {
     out.innerHTML = `<p class="notice">No expression data for those genes.${data.unmatched && data.unmatched.length ? " Unrecognized: " + escapeHtml(data.unmatched.join(", ")) : ""}</p>`;
     return;
   }
-  const palette = ["#00539b", "#be123c", "#047857", "#b45309", "#6b2fb3", "#0891b2", "#9d174d", "#1d4ed8"];
+  const palette = ["#0b746a", "#be123c", "#047857", "#b45309", "#6b2fb3", "#0891b2", "#9d174d", "#1d4ed8"];
   out.innerHTML = `<canvas id="expr-chart" height="120"></canvas>${data.unmatched && data.unmatched.length ? `<p style="font-size:.75rem;color:var(--muted,#6b7280);margin-top:6px">Not recognized: ${escapeHtml(data.unmatched.join(", "))}</p>` : ""}`;
   const draw = () => {
     if (!window.Chart) return;
@@ -2475,7 +2475,7 @@ function renderGeneSetReport(d) {
   const bars = (e.hist || []).map((c, i) => `
     <div style="display:flex;flex-direction:column;align-items:center;gap:3px;min-width:36px">
       <span style="font-size:.7rem;color:var(--muted,#6b7280)">${c || ""}</span>
-      <div style="width:22px;height:60px;display:flex;align-items:flex-end"><div style="width:100%;height:${Math.round(100 * c / maxH)}%;background:var(--teal-dark,#012169);border-radius:3px 3px 0 0;min-height:${c ? 3 : 0}px"></div></div>
+      <div style="width:22px;height:60px;display:flex;align-items:flex-end"><div style="width:100%;height:${Math.round(100 * c / maxH)}%;background:var(--teal-dark,#0a4f47);border-radius:3px 3px 0 0;min-height:${c ? 3 : 0}px"></div></div>
       <span style="font-size:.66rem;color:var(--muted,#9ca3af)">${escapeHtml((e.stages[i] || "").replace(" h", ""))}</span>
     </div>`).join("");
   const o = d.orthologs || {};
@@ -2642,7 +2642,7 @@ let heatStressData = null;
 let hsChart = null;
 let hsSelected = [];
 const HS_CONDITIONS = ["Control", "Heat stress", "Development"];
-const HS_COLORS = ["#00539b", "#dc2626", "#2563eb"];
+const HS_COLORS = ["#0b746a", "#dc2626", "#2563eb"];
 
 function renderHeatStressPage() {
   return `
@@ -2900,7 +2900,7 @@ function wireHSSearch() {
 
 let proteomicsData = null;
 const STAGES = ["Vegetative", "Aggregation", "Mound", "Culmination", "Fruiting body"];
-const STAGE_COLORS = ["#00539b","#2563eb","#d97706","#dc2626","#7c3aed"];
+const STAGE_COLORS = ["#0b746a","#2563eb","#d97706","#dc2626","#7c3aed"];
 let proteomicsChart = null;
 let proteomicsSelected = [];
 
@@ -3643,9 +3643,9 @@ const TEACHING_FIGURES = [
   <title id="fbt">Dictyostelium fruiting body anatomy</title>
   <desc id="fbd">A schematic of the mature fruiting body (sorocarp): a sorus of spores on a cellular stalk rising from a basal disc.</desc>
   <rect width="360" height="380" fill="#ffffff"/>
-  <ellipse cx="150" cy="350" rx="58" ry="13" fill="#012169"/>
-  <polygon points="138,344 162,344 156,152 144,152" fill="#9fb8d6" stroke="#012169" stroke-width="1.5"/>
-  <g stroke="#012169" stroke-width="1" opacity="0.35">
+  <ellipse cx="150" cy="350" rx="58" ry="13" fill="#0a4f47"/>
+  <polygon points="138,344 162,344 156,152 144,152" fill="#9fb8d6" stroke="#0a4f47" stroke-width="1.5"/>
+  <g stroke="#0a4f47" stroke-width="1" opacity="0.35">
     <line x1="145" y1="200" x2="155" y2="200"/><line x1="144" y1="244" x2="156" y2="244"/>
     <line x1="143" y1="288" x2="157" y2="288"/><line x1="141" y1="324" x2="159" y2="324"/>
   </g>
@@ -3676,8 +3676,8 @@ const TEACHING_FIGURES = [
   <desc id="sld">A migrating slug showing prestalk cells in the anterior ~20% and prespore cells in the posterior ~80%, moving toward light and heat.</desc>
   <rect width="380" height="232" fill="#ffffff"/>
   <defs><clipPath id="slugClip"><rect x="100" y="126" width="220" height="52" rx="26"/></clipPath></defs>
-  <line x1="298" y1="72" x2="92" y2="72" stroke="#00539B" stroke-width="2"/>
-  <polygon points="92,72 105,65 105,79" fill="#00539B"/>
+  <line x1="298" y1="72" x2="92" y2="72" stroke="#0b746a" stroke-width="2"/>
+  <polygon points="92,72 105,65 105,79" fill="#0b746a"/>
   <text x="200" y="56" text-anchor="middle" font-size="12.5" fill="#1a2b3c">Migration toward light &amp; heat</text>
   <line x1="24" y1="192" x2="356" y2="192" stroke="#cbd5e1" stroke-width="1.5"/>
   <line x1="300" y1="186" x2="356" y2="186" stroke="#9fb8d6" stroke-width="3" stroke-dasharray="2 6" opacity="0.7"/>
@@ -3703,18 +3703,18 @@ const TEACHING_FIGURES = [
   <title id="agt">Dictyostelium aggregation and cAMP relay</title>
   <desc id="agd">Cells stream toward a central cAMP signaling source along outward-propagating waves during aggregation.</desc>
   <rect width="380" height="300" fill="#ffffff"/>
-  <g fill="none" stroke="#00539B" stroke-dasharray="4 7">
+  <g fill="none" stroke="#0b746a" stroke-dasharray="4 7">
     <circle cx="160" cy="150" r="40" opacity="0.55"/><circle cx="160" cy="150" r="72" opacity="0.4"/>
     <circle cx="160" cy="150" r="104" opacity="0.28"/><circle cx="160" cy="150" r="134" opacity="0.18"/>
   </g>
   <circle cx="160" cy="150" r="22" fill="none" stroke="#f4c84a" stroke-width="2.5" opacity="0.8"/>
-  <circle cx="160" cy="150" r="13" fill="#012169"/>
-  <g fill="#00539B" opacity="0.85">
+  <circle cx="160" cy="150" r="13" fill="#0a4f47"/>
+  <g fill="#0b746a" opacity="0.85">
     <ellipse cx="300" cy="150" rx="7" ry="4"/><ellipse cx="276" cy="150" rx="7" ry="4"/><ellipse cx="252" cy="150" rx="7" ry="4"/>
     <ellipse cx="64" cy="68" rx="7" ry="4" transform="rotate(40 64 68)"/><ellipse cx="88" cy="92" rx="7" ry="4" transform="rotate(40 88 92)"/><ellipse cx="112" cy="116" rx="7" ry="4" transform="rotate(40 112 116)"/>
     <ellipse cx="160" cy="288" rx="4" ry="7"/><ellipse cx="160" cy="264" rx="4" ry="7"/><ellipse cx="160" cy="240" rx="4" ry="7"/>
   </g>
-  <g fill="#012169">
+  <g fill="#0a4f47">
     <polygon points="238,150 250,145 250,155"/>
     <polygon points="126,130 134,120 138,131"/>
     <polygon points="160,226 155,238 165,238"/>
@@ -6817,7 +6817,7 @@ async function loadNeighborhood(gene) {
     const arrow = g.strand === "-" ? "◄ " : "";
     const arrowR = g.strand === "-" ? "" : " ►";
     const inner = `${arrow}${escapeHtml(g.symbol)}${arrowR}`;
-    const style = `display:inline-block;padding:6px 9px;border-radius:6px;font-size:.78rem;white-space:nowrap;border:1px solid ${g.target ? "var(--teal-dark,#012169)" : "var(--line,#d7dee0)"};background:${g.target ? "var(--soft,#e7eef7)" : "#fff"};font-weight:${g.target ? "800" : "500"}`;
+    const style = `display:inline-block;padding:6px 9px;border-radius:6px;font-size:.78rem;white-space:nowrap;border:1px solid ${g.target ? "var(--teal-dark,#0a4f47)" : "var(--line,#d7dee0)"};background:${g.target ? "var(--soft,#e7eef7)" : "#fff"};font-weight:${g.target ? "800" : "500"}`;
     return g.target
       ? `<span style="${style}" title="${escapeHtml(g.name || "")}">${inner}</span>`
       : `<a href="/gene/${encodeURIComponent(g.symbol)}" data-ddb-ref="${escapeHtml(g.ddb)}" class="text-link" style="${style};text-decoration:none" title="${escapeHtml(g.name || "")}">${inner}</a>`;
@@ -6876,7 +6876,7 @@ async function checkSynteny(gene, data, out) {
         const same = h.contig && h.contig === topContig;
         return `<div style="text-align:center;min-width:64px">
           <div style="font-size:.72rem;font-weight:${h.g.target ? "800" : "500"}">${escapeHtml(h.g.symbol)}</div>
-          <div style="font-size:.66rem;color:${same ? "var(--teal-dark,#012169)" : "var(--muted,#9ca3af)"};margin-top:2px">${h.contig ? escapeHtml(h.contig.length > 12 ? h.contig.slice(0, 12) + "…" : h.contig) : "—"}</div>
+          <div style="font-size:.66rem;color:${same ? "var(--teal-dark,#0a4f47)" : "var(--muted,#9ca3af)"};margin-top:2px">${h.contig ? escapeHtml(h.contig.length > 12 ? h.contig.slice(0, 12) + "…" : h.contig) : "—"}</div>
         </div>`;
       }).join("")}
     </div>
@@ -7120,12 +7120,12 @@ async function loadGeneModel(gene) {
     const coding = within(s, e, m.cds || []);
     const bx = x(s), bw = Math.max(1.5, x(e) - x(s));
     const h = coding ? cdsH : exonH, ty = coding ? y - 2 : y;
-    svg += `<rect x="${bx.toFixed(1)}" y="${ty}" width="${bw.toFixed(1)}" height="${h}" rx="1.5" fill="${coding ? "var(--teal,#00539b)" : "#a9bcd6"}"><title>exon ${s.toLocaleString()}–${e.toLocaleString()}</title></rect>`;
+    svg += `<rect x="${bx.toFixed(1)}" y="${ty}" width="${bw.toFixed(1)}" height="${h}" rx="1.5" fill="${coding ? "var(--teal,#0b746a)" : "#a9bcd6"}"><title>exon ${s.toLocaleString()}–${e.toLocaleString()}</title></rect>`;
   }
   svg += `<text x="${pad}" y="12" font-size="9" fill="var(--muted,#6b7280)">${m.chrom} (${m.strand})</text>`;
   svg += `<text x="${W - pad}" y="12" font-size="9" fill="var(--muted,#6b7280)" text-anchor="end">${glen.toLocaleString()} bp</text>`;
   svg += `</svg>`;
-  el.innerHTML = `<h3>Gene model <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${m.exons.length} exon${m.exons.length === 1 ? "" : "s"}, ${m.strand} strand</span></h3>${svg}<p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Tall blue = coding (CDS), short grey = UTR/non-coding exon, line = intron. ${m.strand === "+" ? "5′→3′ left to right." : "Minus strand (coordinates increase left to right)."}</p>`;
+  el.innerHTML = `<h3>Gene model <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${m.exons.length} exon${m.exons.length === 1 ? "" : "s"}, ${m.strand} strand</span></h3>${svg}<p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Tall teal = coding (CDS), short grey = UTR/non-coding exon, line = intron. ${m.strand === "+" ? "5′→3′ left to right." : "Minus strand (coordinates increase left to right)."}</p>`;
 }
 
 // KEGG pathway membership (assets/kegg_pathways.json, keyed by DDB_G id).
@@ -7238,8 +7238,8 @@ async function loadRNAseqInline(gene) {
           datasets: [{
             label: `${gene.symbol} RPKM`,
             data: points,
-            borderColor: "#00539b",
-            backgroundColor: "#00539b22",
+            borderColor: "#0b746a",
+            backgroundColor: "#0b746a22",
             tension: 0.3,
             pointRadius: 4,
             pointHoverRadius: 6,
@@ -7322,7 +7322,7 @@ function renderStringResults(gene, data, imgContainer, container) {
           <strong><a href="https://string-db.org/cgi/network?species_text=Dictyostelium+discoideum&identifiers=${encodeURIComponent(gene.symbol)}%0D${encodeURIComponent(partner)}" target="_blank" rel="noopener">${escapeHtml(partner)}</a></strong>
           <span style="display:flex;align-items:center;gap:8px">
             <span style="flex:1;max-width:120px;height:6px;background:#e5e7eb;border-radius:999px;overflow:hidden">
-              <span style="display:block;height:100%;width:${barW}%;background:var(--teal,#00539b);border-radius:999px"></span>
+              <span style="display:block;height:100%;width:${barW}%;background:var(--teal,#0b746a);border-radius:999px"></span>
             </span>
             Score: ${score}/100
           </span>
@@ -7892,7 +7892,7 @@ async function fetchPDBResults(gene) {
   return details;
 }
 
-const DOMAIN_COLORS = ["#00539b", "#6b2fb3", "#b45309", "#1d4ed8", "#be123c", "#047857", "#7c3aed", "#0891b2"];
+const DOMAIN_COLORS = ["#0b746a", "#6b2fb3", "#b45309", "#1d4ed8", "#be123c", "#047857", "#7c3aed", "#0891b2"];
 function domainColor(s) {
   let h = 0;
   for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
@@ -8797,7 +8797,7 @@ function showHomeChrome(show) {
   });
 }
 
-const NEWS_TAG_COLORS = { new: "#00539b", data: "#012169", update: "#5b6678", community: "#8a5b16" };
+const NEWS_TAG_COLORS = { new: "#0b746a", data: "#0a4f47", update: "#5b6678", community: "#8a5b16" };
 async function loadNews() {
   const el = document.getElementById("news-feed");
   if (!el) return;

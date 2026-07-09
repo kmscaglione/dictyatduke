@@ -1,17 +1,18 @@
 :root {
   color-scheme: light;
-  --bg: #f4f6fa;
+  --bg: #f1f6f4;
   --panel: #ffffff;
-  --ink: #15203a;
-  --muted: #5b6678;
-  --line: #dbe2ec;
-  /* Brand blue palette — --teal/--teal-dark kept as names (used widely) but now
-     hold Royal blue (#00539B) and Navy (#012169). */
-  --teal: #00539b;
-  --teal-dark: #012169;
-  --soft: #e7eef7;
+  --ink: #16302b;
+  --muted: #5a6a66;
+  --line: #d7e5e0;
+  /* Teal / emerald brand palette. The --teal/--teal-dark names are now literal:
+     a medium teal accent (buttons, links, chips) and a deep teal (topbar,
+     headings, strong text). */
+  --teal: #0b746a;
+  --teal-dark: #0a4f47;
+  --soft: #dcefea;
   --amber: #8a5b16;
-  --shadow: 0 18px 42px rgba(1, 33, 105, .12);
+  --shadow: 0 18px 42px rgba(10, 79, 71, .12);
 }
 
 * {
@@ -82,7 +83,7 @@ input {
   min-height: 112px;
   padding: 0 28px;
   border-bottom: 1px solid rgba(0, 0, 0, .18);
-  background: linear-gradient(100deg, #001a57 0%, #013b86 100%);
+  background: linear-gradient(100deg, #073d37 0%, #0a6156 100%);
   color: #fff;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
@@ -422,12 +423,12 @@ h1 {
   font-size: 17px;
   border-radius: 14px;
   padding: 0 20px;
-  box-shadow: 0 6px 20px rgba(1, 33, 105, .10);
+  box-shadow: 0 6px 20px rgba(10, 79, 71, .10);
 }
 .hero-search input:focus {
   outline: none;
   border-color: var(--teal);
-  box-shadow: 0 6px 20px rgba(1, 33, 105, .16), 0 0 0 3px rgba(10, 102, 180, .18);
+  box-shadow: 0 6px 20px rgba(10, 79, 71, .16), 0 0 0 3px rgba(11, 116, 106, .22);
 }
 .hero-search .search-row button {
   min-height: 60px;
@@ -470,9 +471,9 @@ button,
 .search-row button,
 .button.primary {
   border-color: var(--teal-dark);
-  background: linear-gradient(135deg, #0a66b4 0%, var(--teal) 55%, var(--teal-dark) 100%);
+  background: linear-gradient(135deg, #0f9084 0%, var(--teal) 50%, var(--teal-dark) 100%);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(1, 33, 105, .22);
+  box-shadow: 0 6px 16px rgba(10, 79, 71, .22);
 }
 
 .search-row button:hover,
@@ -510,7 +511,7 @@ button,
   color: var(--ink);
   transition: box-shadow .12s ease, transform .12s ease;
 }
-.start-banner:hover { box-shadow: 0 8px 22px rgba(1, 33, 105, .12); transform: translateY(-1px); }
+.start-banner:hover { box-shadow: 0 8px 22px rgba(10, 79, 71, .12); transform: translateY(-1px); }
 
 /* "Community Curation" CTA at the top of the search panel */
 .curate-cta {
@@ -525,7 +526,7 @@ button,
   color: var(--ink);
   transition: box-shadow .12s ease, transform .12s ease, border-color .12s ease;
 }
-.curate-cta:hover { border-color: var(--teal); box-shadow: 0 6px 16px rgba(1, 33, 105, .08); transform: translateY(-1px); }
+.curate-cta:hover { border-color: var(--teal); box-shadow: 0 6px 16px rgba(10, 79, 71, .08); transform: translateY(-1px); }
 .curate-cta-icon { font-size: 20px; line-height: 1; }
 .curate-cta-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.32; }
 .curate-cta-text strong { color: var(--teal-dark); font-size: 14px; }
@@ -575,7 +576,7 @@ button,
   padding: 10px 14px; margin-bottom: 16px;
   border: 1px solid var(--teal); border-radius: 8px;
   background: linear-gradient(100deg, var(--soft), #fff);
-  box-shadow: 0 2px 8px rgba(1, 33, 105, .08);
+  box-shadow: 0 2px 8px rgba(10, 79, 71, .08);
 }
 .stock-cartbar span { font-size: 14px; }
 .stock-cartbar strong { color: var(--teal-dark); }
@@ -2113,8 +2114,8 @@ button:focus-visible,
 /* ---- Command palette (⌘K / Ctrl-K) ---- */
 .cmdk { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: flex-start; justify-content: center; }
 .cmdk[hidden] { display: none; }
-.cmdk-backdrop { position: absolute; inset: 0; background: rgba(1, 33, 105, .32); }
-.cmdk-panel { position: relative; margin-top: 12vh; width: min(640px, 92vw); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 24px 60px rgba(1, 33, 105, .28); overflow: hidden; }
+.cmdk-backdrop { position: absolute; inset: 0; background: rgba(10, 79, 71, .32); }
+.cmdk-panel { position: relative; margin-top: 12vh; width: min(640px, 92vw); background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 24px 60px rgba(10, 79, 71, .28); overflow: hidden; }
 .cmdk-input { width: 100%; min-height: 54px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 18px; font-size: 16px; font-weight: 600; background: #fff; color: var(--ink); }
 .cmdk-input:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .cmdk-results { list-style: none; margin: 0; padding: 6px; max-height: 56vh; overflow-y: auto; }
@@ -2122,7 +2123,7 @@ button:focus-visible,
 .cmdk-item.active { background: var(--soft); }
 .cmdk-kind { flex: 0 0 auto; width: 62px; text-align: center; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: #fff; background: var(--teal); border-radius: 999px; padding: 3px 0; }
 .cmdk-kind-gene { background: var(--teal-dark); }
-.cmdk-kind-tool, .cmdk-kind-search { background: #0a66b4; }
+.cmdk-kind-tool, .cmdk-kind-search { background: #0b746a; }
 .cmdk-kind-learn { background: #8a5b16; }
 .cmdk-kind-community, .cmdk-kind-research, .cmdk-kind-page { background: #5b6678; }
 .cmdk-label { font-weight: 700; color: var(--ink); }
@@ -2134,7 +2135,7 @@ body.cmdk-active { overflow: hidden; }
 @media (max-width: 640px) { .cmdk-sub { display: none; } }
 
 /* ---- Gene hovercards ---- */
-.hovercard { position: fixed; z-index: 1100; width: 300px; max-width: 90vw; padding: 12px 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(1, 33, 105, .22); font-size: 13px; }
+.hovercard { position: fixed; z-index: 1100; width: 300px; max-width: 90vw; padding: 12px 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(10, 79, 71, .22); font-size: 13px; }
 .hovercard[hidden] { display: none; }
 .hovercard .hc-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-bottom: 6px; }
 .hovercard .hc-head strong { font-size: 15px; color: var(--teal-dark); font-style: italic; }
@@ -2150,7 +2151,7 @@ body.cmdk-active { overflow: hidden; }
 .header-actions { display: flex; align-items: center; gap: 10px; justify-self: end; }
 .basket-btn { position: relative; min-height: 40px; width: 44px; padding: 0; border: 1px solid rgba(255, 255, 255, .3); border-radius: 10px; background: rgba(255, 255, 255, .12); color: #fff; }
 .basket-btn:hover { background: rgba(255, 255, 255, .22); }
-.basket-count { position: absolute; top: -6px; right: -6px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #f4c84a; color: #012169; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.basket-count { position: absolute; top: -6px; right: -6px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #f4c84a; color: #0a4f47; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
 .basket-count[hidden] { display: none; }
 
 .record-actions { margin-top: 12px; }

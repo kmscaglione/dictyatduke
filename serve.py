@@ -1428,6 +1428,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                     if stamp else "")
             self.send_json(200, meta)
             return
+        if self.path.startswith("/api/health"):
+            # Lightweight uptime check: 200 only if serve.py is up AND the core
+            # gene index loads with content. Not in API_CACHEABLE_PREFIXES, so it
+            # is served no-cache — every check truly hits the origin.
+            try:
+                genes = _load_json("gene_index.json")
+                ok = isinstance(genes, list) and len(genes) > 0
+            except Exception:
+                ok = False
+            self.send_json(200 if ok else 503, {"status": "ok" if ok else "degraded"})
+            return
         if self.path.startswith("/api/recent-papers"):
             self._handle_recent_papers()
             return

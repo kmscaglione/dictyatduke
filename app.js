@@ -6405,6 +6405,8 @@ function initStockCenter() {
   if (!root) return;
   let active = "strains";
   let showAllStrains = false;   // strains default to in-stock only; toggle reveals all
+  const STOCK_PAGE = 25;        // progressive paging — keep the visible list short
+  let limit = STOCK_PAGE;
   const listEl = root.querySelector("[data-stock-list]");
   const searchEl = root.querySelector("#stock-search");
   const browseView = root.querySelector("[data-stock-browse]");
@@ -6480,20 +6482,27 @@ function initStockCenter() {
       return hay.toLowerCase().includes(q);
     };
     const shown = items.filter(match);
-    const cap = 300;
     const baseLabel = strainsTab ? (showAllStrains ? "strains" : "in-stock strains") : "plasmids";
     const count = q ? `${shown.length} of ${items.length.toLocaleString()} ${baseLabel}`
                     : `${items.length.toLocaleString()} ${baseLabel}`;
     const toggle = strainsTab
       ? `<button type="button" class="text-link" data-stock-showall>${showAllStrains ? "Show in-stock only" : `Show all ${data.strains.length.toLocaleString()} strains`}</button>`
       : "";
+    if (!shown.length) {
+      listEl.innerHTML = `
+        <div class="stock-listhead"><p>${count}</p>${toggle}</div>
+        <p class="notice muted">${q ? `No ${baseLabel} match “${escapeHtml(searchEl.value.trim())}”.` : `No ${baseLabel} to show.`}</p>`;
+      return;
+    }
+    const visible = shown.slice(0, limit);
+    const more = shown.length - visible.length;
     listEl.innerHTML = `
       <div class="stock-listhead">
         <p>${count}</p>
         ${toggle}
       </div>
-      <div class="stock-list">${shown.slice(0, cap).map((it) => stockItemHTML(active, it)).join("")}</div>
-      ${shown.length > cap ? `<p class="notice muted">Showing the first ${cap} — refine your search to narrow the list.</p>` : ""}`;
+      <div class="stock-list">${visible.map((it) => stockItemHTML(active, it)).join("")}</div>
+      ${more > 0 ? `<button type="button" class="oma-toggle" data-stock-more style="margin-top:12px">Show ${Math.min(STOCK_PAGE, more)} more — ${more.toLocaleString()} left</button>` : ""}`;
   };
 
   const showCheckout = () => { browseView.hidden = true; checkoutView.hidden = false; renderCart(); updateCounts(); scrollToY(root.offsetTop - 60); };
@@ -6527,9 +6536,12 @@ function initStockCenter() {
       root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t === tab));
       searchEl.value = "";
       searchEl.placeholder = active === "gwdi" ? "Search the GWDI bank by gene name…" : "Search the catalog…";
+      limit = STOCK_PAGE;
       renderList();
+    } else if (e.target.closest("[data-stock-more]")) {
+      limit += STOCK_PAGE; renderList();
     } else if (e.target.closest("[data-stock-showall]")) {
-      showAllStrains = !showAllStrains; renderList();
+      showAllStrains = !showAllStrains; limit = STOCK_PAGE; renderList();
     } else if (e.target.closest("[data-gwdi-example]")) {
       searchEl.value = "smp3"; searchEl.focus(); renderGwdi();
     } else if (e.target.closest("[data-stock-checkout]")) {
@@ -6563,6 +6575,7 @@ function initStockCenter() {
   });
 
   searchEl.addEventListener("input", () => {
+    limit = STOCK_PAGE;                                // a new query resets paging
     if (active !== "gwdi") { renderList(); return; }
     clearTimeout(gwdiTimer);
     gwdiTimer = setTimeout(renderGwdi, 350);          // debounce the live API search

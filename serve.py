@@ -161,7 +161,7 @@ _esc = html.escape  # module-level alias (the `html` name is shadowed in _serve_
 # the index.html defaults. (Values may contain pre-escaped entities.)
 _ROUTE_META = {
     "/tools/blast": ("BLAST search",
-        "BLAST a nucleotide or protein query against nine sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
+        "BLAST a nucleotide or protein query against 17 sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
     "/tools/enrichment": ("GO and phenotype enrichment",
         "Hypergeometric GO-term and phenotype enrichment analysis for a list of Dictyostelium genes, with Benjamini-Hochberg correction."),
     "/tools/geneset": ("Gene set analysis",

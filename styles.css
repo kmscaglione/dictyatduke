@@ -79,7 +79,7 @@ input {
   position: sticky;
   top: 0;
   z-index: 50;
-  min-height: 88px;
+  min-height: 112px;
   padding: 0 28px;
   border-bottom: 1px solid rgba(0, 0, 0, .18);
   background: linear-gradient(100deg, #001a57 0%, #013b86 100%);
@@ -93,14 +93,14 @@ input {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  font-size: 32px;
+  gap: 12px;
+  font-size: 38px;
   font-weight: 850;
   color: #fff;
 }
 
 .mark {
-  height: 80px;
+  height: 100px;
   width: auto;
 }
 
@@ -108,11 +108,13 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   color: rgba(255, 255, 255, .92);
   font-size: 14px;
   font-weight: 650;
 }
+
+.nav-trigger { white-space: nowrap; }
 
 @media (max-width: 1040px) {
   .nav-links {
@@ -137,7 +139,7 @@ input {
   min-height: 38px;
   border: 1px solid transparent;
   border-radius: 999px;
-  padding: 0 13px;
+  padding: 0 9px;
   background: transparent;
   color: inherit;
   font: inherit;
@@ -1738,7 +1740,7 @@ button:focus-visible,
 .brand-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .beta-badge {
@@ -1746,8 +1748,8 @@ button:focus-visible,
   border-radius: 999px;
   background: rgba(255, 255, 255, .16);
   color: #fff;
-  padding: 2px 9px;
-  font-size: 11px;
+  padding: 3px 11px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: .06em;
   text-transform: uppercase;

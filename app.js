@@ -6153,15 +6153,15 @@ function renderStockCenterPage() {
 
 function stockItemHTML(kind, it) {
   const type = kind === "strains" ? "strain" : "plasmid";
-  // Strains: show the strain name; carry the DBS id (canonical) for the order.
-  const name = kind === "strains" ? (it.label || it.id) : `#${it.id} ${it.name}`;
-  const cartLabel = kind === "strains" ? `${it.label || it.id} (${it.id})` : name;
+  // Show the strain/plasmid name; carry the DBS/DBP id (canonical) for the order.
+  const name = kind === "strains" ? (it.label || it.id) : (it.name || it.id);
+  const cartLabel = `${name} (${it.id})`;
   const sub = kind === "strains"
     ? [it.summary, it.genotype].filter(Boolean).join(" · ")
     : [it.description, it.depositor ? "Deposited by " + it.depositor : ""].filter(Boolean).join(" · ");
   const tags = kind === "strains"
     ? `<span class="stock-item-id">${escapeHtml(it.id)}</span>${it.in_stock ? `<span class="stock-badge">In&nbsp;stock</span>` : ""}`
-    : "";
+    : `<span class="stock-item-id">${escapeHtml(it.id)}</span>`;
   const inCart = stockCartHas(type, it.id);
   return `
     <div class="stock-item">
@@ -6264,7 +6264,7 @@ function initStockCenter() {
       if (!q) return true;
       const hay = strainsTab
         ? `${it.id} ${it.label} ${(it.names || []).join(" ")} ${it.summary} ${it.genotype} ${it.phenotype}`
-        : `${it.id} ${it.name} ${it.description} ${it.depositor}`;
+        : `${it.id} ${it.name} ${it.description} ${it.depositor} ${it.genbank || ""}`;
       return hay.toLowerCase().includes(q);
     };
     const shown = items.filter(match);

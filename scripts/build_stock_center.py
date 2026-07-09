@@ -14,6 +14,7 @@ this is dictyBase's own Stock Center data).
 import html
 import json
 import os
+import re
 import ssl
 import sys
 import time
@@ -59,9 +60,13 @@ STRAIN_FIELDS = ("id label summary in_stock names genotypes "
                  "phenotypes{ phenotype } characteristics")
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
 def _u(s):
-    # The API returns HTML-entity-encoded text (e.g. "&#947;S13" for "γS13").
-    return html.unescape(s) if s else s
+    # API text has HTML entities (&#947; -> γ) and inline tags (<u>, <sub>, <i>);
+    # decode the entities and strip the tags to plain text.
+    return _TAG_RE.sub("", html.unescape(s)) if s else s
 
 
 def _map_strain(s):
@@ -109,19 +114,76 @@ def fetch_type(strain_type, page=300):
     return out
 
 
+PLASMID_FIELDS = "id name summary in_stock genbank_accession depositor{ first_name last_name }"
+
+
+def _depositor(dep):
+    if not dep:
+        return ""
+    fn = _u((dep.get("first_name") or "").strip())
+    ln = _u((dep.get("last_name") or "").strip())
+    if " " in ln:                       # last_name often holds the full display name
+        return ln
+    return (fn + " " + ln).strip()
+
+
+def _map_plasmid(p):
+    obj = {"id": p["id"], "name": _u(p.get("name")) or p["id"], "in_stock": bool(p.get("in_stock"))}
+    desc = " ".join(_u(p.get("summary") or "").split())
+    dep = _depositor(p.get("depositor"))
+    gb = (p.get("genbank_accession") or "").strip()
+    if desc:
+        obj["description"] = desc
+    if dep:
+        obj["depositor"] = dep
+    if gb:
+        obj["genbank"] = gb
+    return obj
+
+
+def fetch_plasmids(page=500):
+    out, cursor, pages = [], 0, 0
+    while True:
+        q = "{ listPlasmids(cursor:%d, limit:%d){ nextCursor plasmids{ %s } } }" % (cursor, page, PLASMID_FIELDS)
+        d = _post(q)
+        if "errors" in d and not d.get("data"):
+            raise SystemExit("API error for plasmids: %s" % d["errors"])
+        ls = d["data"]["listPlasmids"]
+        out.extend(_map_plasmid(p) for p in ls["plasmids"])
+        pages += 1
+        nc = ls.get("nextCursor")
+        sys.stdout.write("\r  plasmids: %d (%d pages)" % (len(out), pages))
+        sys.stdout.flush()
+        if not nc or not ls["plasmids"]:
+            break
+        cursor = nc
+        time.sleep(0.3)
+    print()
+    return out
+
+
 def main():
-    # mode: "all" (default) = both files; "main" = stock_center.json only;
-    # "gwdi" = stock_gwdi.json only.
+    # mode: all (default) = everything; main/strains/plasmids = parts of
+    # stock_center.json; gwdi = stock_gwdi.json only.
     mode = sys.argv[1] if len(sys.argv) > 1 else "all"
     print("Fetching from %s (mode: %s)" % (EP, mode))
+    sc_path = os.path.join(ASSETS, "stock_center.json")
+    existing = json.load(open(sc_path)) if os.path.exists(sc_path) else {}
+    strains = existing.get("strains", [])
+    plasmids = existing.get("plasmids", [])
+    regular = bacterial = None
 
-    if mode in ("all", "main"):
+    if mode in ("all", "main", "strains"):
         regular = fetch_type("REGULAR")
         bacterial = fetch_type("BACTERIAL")
-        sc_path = os.path.join(ASSETS, "stock_center.json")
-        existing = json.load(open(sc_path)) if os.path.exists(sc_path) else {}
-        plasmids = existing.get("plasmids", [])
-        main_strains = sorted(regular + bacterial, key=lambda s: s["label"].lower())
+        strains = sorted(regular + bacterial, key=lambda s: s["label"].lower())
+    if mode in ("all", "main", "plasmids"):
+        plasmids = sorted(fetch_plasmids(), key=lambda p: p["name"].lower())
+
+    if mode in ("all", "main", "strains", "plasmids"):
+        counts = {"strains": len(strains), "plasmids": len(plasmids)}
+        if regular is not None:
+            counts.update(regular=len(regular), bacterial=len(bacterial))
         main = {
             "_meta": {
                 "description": "Dicty Stock Center catalog: browseable strains (regular + "
@@ -129,15 +191,14 @@ def main():
                                "stock_gwdi.json, searched via /api/stock-gwdi.",
                 "source": {"name": "dictyBase / Dicty Stock Center",
                            "api": EP, "license": "CC BY 4.0"},
-                "counts": {"strains": len(main_strains), "plasmids": len(plasmids),
-                           "regular": len(regular), "bacterial": len(bacterial)},
+                "counts": counts,
             },
-            "strains": main_strains,
+            "strains": strains,
             "plasmids": plasmids,
         }
         json.dump(main, open(sc_path, "w"), ensure_ascii=False, separators=(",", ":"))
         print("Wrote stock_center.json (%d strains + %d plasmids) %.2f MB"
-              % (len(main_strains), len(plasmids), os.path.getsize(sc_path) / 1e6))
+              % (len(strains), len(plasmids), os.path.getsize(sc_path) / 1e6))
 
     if mode in ("all", "gwdi"):
         gwdi = sorted(fetch_type("GWDI"), key=lambda s: s["label"].lower())

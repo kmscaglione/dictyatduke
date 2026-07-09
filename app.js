@@ -6193,6 +6193,7 @@ function initStockCenter() {
   const root = toolsShell.querySelector("[data-stock-root]");
   if (!root) return;
   let active = "strains";
+  let showAllStrains = false;   // strains default to in-stock only; toggle reveals all
   const listEl = root.querySelector("[data-stock-list]");
   const searchEl = root.querySelector("#stock-search");
   const browseView = root.querySelector("[data-stock-browse]");
@@ -6256,18 +6257,30 @@ function initStockCenter() {
     if (active === "gwdi") { renderGwdi(); return; }
     const data = stockCenterData || { strains: [], plasmids: [] };
     const q = (searchEl.value || "").trim().toLowerCase();
-    const items = active === "strains" ? data.strains : data.plasmids;
+    // Strains default to in-stock only (most aren't stocked); plasmids show all.
+    const strainsTab = active === "strains";
+    let items = strainsTab ? data.strains : data.plasmids;
+    if (strainsTab && !showAllStrains) items = items.filter((it) => it.in_stock);
     const match = (it) => {
       if (!q) return true;
-      const hay = active === "strains"
+      const hay = strainsTab
         ? `${it.id} ${it.label} ${(it.names || []).join(" ")} ${it.summary} ${it.genotype} ${it.phenotype}`
         : `${it.id} ${it.name} ${it.description} ${it.depositor}`;
       return hay.toLowerCase().includes(q);
     };
     const shown = items.filter(match);
     const cap = 300;
+    const baseLabel = strainsTab ? (showAllStrains ? "strains" : "in-stock strains") : "plasmids";
+    const count = q ? `${shown.length} of ${items.length.toLocaleString()} ${baseLabel}`
+                    : `${items.length.toLocaleString()} ${baseLabel}`;
+    const toggle = strainsTab
+      ? `<button type="button" class="text-link" data-stock-showall>${showAllStrains ? "Show in-stock only" : `Show all ${data.strains.length.toLocaleString()} strains`}</button>`
+      : "";
     listEl.innerHTML = `
-      <p style="font-size:.8125rem;color:var(--muted);margin:10px 0 6px">${shown.length} of ${items.length} ${active}</p>
+      <div class="stock-listhead">
+        <p>${count}</p>
+        ${toggle}
+      </div>
       <div class="stock-list">${shown.slice(0, cap).map((it) => stockItemHTML(active, it)).join("")}</div>
       ${shown.length > cap ? `<p class="notice muted">Showing the first ${cap} — refine your search to narrow the list.</p>` : ""}`;
   };
@@ -6304,6 +6317,8 @@ function initStockCenter() {
       searchEl.value = "";
       searchEl.placeholder = active === "gwdi" ? "Search the GWDI bank by gene name…" : "Search the catalog…";
       renderList();
+    } else if (e.target.closest("[data-stock-showall]")) {
+      showAllStrains = !showAllStrains; renderList();
     } else if (e.target.closest("[data-gwdi-example]")) {
       searchEl.value = "smp3"; searchEl.focus(); renderGwdi();
     } else if (e.target.closest("[data-stock-checkout]")) {

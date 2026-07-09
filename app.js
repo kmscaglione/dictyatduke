@@ -6048,40 +6048,81 @@ async function loadGOResults(gene) {
 
 
 let goRenderCtx = null;
+let goSearch = "";
+let goExpanded = false;
 async function renderGOTab(container, gene, allRows) {
   const ids = [...new Set(allRows.filter((r) => !r[5]).map((r) => r[0]))];
   const names = await resolveGONames(ids);
   for (const r of allRows) if (r[5] && !names[r[0]]) names[r[0]] = r[5]; // AI rows carry their own name
   if (state.activeGene !== gene || state.activeTab !== "GO") return;
   goRenderCtx = { container, gene, allRows, names };
+  goSearch = "";
+  goExpanded = false;
   paintGOTab();
 }
 
 function paintGOTab() {
   if (!goRenderCtx) return;
-  const { container, allRows, names } = goRenderCtx;
+  const { container, allRows } = goRenderCtx;
   const layers = getCurationLayers();
   const counts = { dicty: 0, community: 0, ai: 0, auto: 0 };
   for (const r of allRows) counts[curationLayerOf(r[4])]++;
-  const visible = allRows.filter((r) => layers[curationLayerOf(r[4])]);
 
   const pills = `<div class="layer-toggle" aria-label="Curation layers">${CURATION_LAYERS
     .filter((l) => counts[l.key] > 0)
     .map((l) => `<button type="button" class="layer-pill ${l.cls} ${layers[l.key] ? "on" : "off"}" data-layer="${l.key}" aria-pressed="${layers[l.key]}">${escapeHtml(l.label)} <span class="layer-count">${counts[l.key]}</span></button>`)
     .join("")}</div>`;
 
+  const legend = `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Three curation layers — <span class="src-badge src-dicty">dictyBase</span> (official), <span class="src-badge src-curated">curated here</span> (community-submitted), and <span class="src-badge src-ai">AI</span> (machine-generated, unreviewed) — plus <span class="src-badge src-auto">automated</span> electronic inference (UniProt/InterPro/GO_Central). Toggle a layer to show or hide it. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
+
+  container.innerHTML = `
+    ${pills}
+    <input type="search" class="go-search" placeholder="Filter GO terms by name or id…" aria-label="Filter GO terms" value="${escapeHtml(goSearch)}">
+    <div class="go-body"></div>
+    ${legend}`;
+
+  const searchEl = container.querySelector(".go-search");
+  const bodyEl = container.querySelector(".go-body");
+  searchEl.addEventListener("input", () => { goSearch = searchEl.value; paintGOBody(); });
+  bodyEl.addEventListener("click", (e) => {
+    if (e.target.closest("[data-go-expand]")) { goExpanded = true; paintGOBody(); }
+    else if (e.target.closest("[data-go-collapse]")) { goExpanded = false; paintGOBody(); }
+  });
+  paintGOBody();
+}
+
+function paintGOBody() {
+  if (!goRenderCtx) return;
+  const { container, allRows, names } = goRenderCtx;
+  const bodyEl = container.querySelector(".go-body");
+  if (!bodyEl) return;
+  const layers = getCurationLayers();
+  const q = goSearch.trim().toLowerCase();
+  const visible = allRows.filter((r) => layers[curationLayerOf(r[4])]);
+
   const aspects = { F: new Map(), P: new Map(), C: new Map() };
   for (const r of visible) {
     const [go, aspect, ev, pmid, by] = r;
+    if (q && !(String(names[go] || go).toLowerCase().includes(q) || String(go).toLowerCase().includes(q))) continue;
     const m = aspects[aspect] || (aspects[aspect] = new Map());
     if (!m.has(go)) m.set(go, []);
     m.get(go).push({ ev, pmid, by });
   }
-  const body = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size).map((a) => `
+
+  const CAP = 8;
+  const aspectList = ["F", "P", "C"].filter((a) => aspects[a] && aspects[a].size);
+  const total = aspectList.reduce((n, a) => n + aspects[a].size, 0);
+  const anyOver = aspectList.some((a) => aspects[a].size > CAP);
+  const collapse = !q && !goExpanded;
+
+  const sections = aspectList.map((a) => {
+    let entries = [...aspects[a].entries()];
+    if (collapse && entries.length > CAP) entries = entries.slice(0, CAP);
+    return `
     <div style="margin-bottom:20px">
-      <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])}</h4>
+      <h4 style="margin:0 0 8px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(GO_ASPECT_LABEL[a])} <span style="font-weight:500">(${aspects[a].size})</span></h4>
       <ul class="list">
-        ${[...aspects[a].entries()].map(([go, evs]) => {
+        ${entries.map(([go, evs]) => {
           const refs = [...new Set(evs.map((e) => `${e.ev ? escapeHtml(e.ev) : ""}${e.pmid ? ` <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(e.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(e.pmid)}</a>` : ""}${e.by ? curationBadge(e.by) : ""}`.trim()))];
           return `<li>
             <strong><a class="go-search-link" data-go-ref="${escapeHtml(go)}" href="/go/${escapeHtml(go)}">${escapeHtml(names[go] || go)}</a></strong>
@@ -6089,11 +6130,20 @@ function paintGOTab() {
           </li>`;
         }).join("")}
       </ul>
-    </div>`).join("");
+    </div>`;
+  }).join("");
 
-  const bodyOrEmpty = body || `<p class="notice muted">All curation layers are hidden — re-enable one above.</p>`;
-  const legend = `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Three curation layers — <span class="src-badge src-dicty">dictyBase</span> (official), <span class="src-badge src-curated">curated here</span> (community-submitted), and <span class="src-badge src-ai">AI</span> (machine-generated, unreviewed) — plus <span class="src-badge src-auto">automated</span> electronic inference (UniProt/InterPro/GO_Central). Toggle a layer to show or hide it. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
-  container.innerHTML = pills + bodyOrEmpty + legend;
+  let out;
+  if (!total) {
+    out = q
+      ? `<p class="notice muted">No GO terms match “${escapeHtml(goSearch.trim())}”.</p>`
+      : `<p class="notice muted">All curation layers are hidden — re-enable one above.</p>`;
+  } else {
+    out = sections;
+    if (collapse && anyOver) out += `<button type="button" class="oma-toggle" data-go-expand>Show all ${total} GO terms ▾</button>`;
+    else if (!q && goExpanded && anyOver) out += `<button type="button" class="oma-toggle" data-go-collapse>Show less ▴</button>`;
+  }
+  bodyEl.innerHTML = out;
 }
 
 // --- GO term browsing: genes annotated to a GO term ---

@@ -1473,7 +1473,8 @@ button:focus-visible,
   color: var(--muted);
   margin: 0 0 10px;
 }
-.oma-search {
+.oma-search,
+.go-search {
   width: 100%;
   max-width: 420px;
   min-height: 42px;

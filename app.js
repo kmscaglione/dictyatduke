@@ -6135,6 +6135,7 @@ function renderStockCenterPage() {
           <div class="stock-tabs" role="tablist">
             <button type="button" class="stock-tab active" data-stock-tab="strains" role="tab">Strains</button>
             <button type="button" class="stock-tab" data-stock-tab="plasmids" role="tab">Plasmids</button>
+            <button type="button" class="stock-tab" data-stock-tab="gwdi" role="tab">GWDI insertion bank</button>
           </div>
           <div class="form-field" style="margin:14px 0 0">
             <input type="search" id="stock-search" placeholder="Search the catalog…" autocomplete="off" aria-label="Search the stock center catalog">
@@ -6153,18 +6154,23 @@ function renderStockCenterPage() {
 
 function stockItemHTML(kind, it) {
   const type = kind === "strains" ? "strain" : "plasmid";
-  const label = kind === "strains" ? it.id : `#${it.id} ${it.name}`;
+  // Strains: show the strain name; carry the DBS id (canonical) for the order.
+  const name = kind === "strains" ? (it.label || it.id) : `#${it.id} ${it.name}`;
+  const cartLabel = kind === "strains" ? `${it.label || it.id} (${it.id})` : name;
   const sub = kind === "strains"
     ? [it.summary, it.genotype].filter(Boolean).join(" · ")
     : [it.description, it.depositor ? "Deposited by " + it.depositor : ""].filter(Boolean).join(" · ");
+  const tags = kind === "strains"
+    ? `<span class="stock-item-id">${escapeHtml(it.id)}</span>${it.in_stock ? `<span class="stock-badge">In&nbsp;stock</span>` : ""}`
+    : "";
   const inCart = stockCartHas(type, it.id);
   return `
     <div class="stock-item">
       <div class="stock-item-body">
-        <strong>${escapeHtml(label)}</strong>
+        <strong>${escapeHtml(name)}${tags}</strong>
         ${sub ? `<span>${escapeHtml(sub)}</span>` : ""}
       </div>
-      <button type="button" class="button ${inCart ? "" : "primary"}" data-stock-add data-type="${type}" data-id="${escapeHtml(it.id)}" data-label="${escapeHtml(label)}">${inCart ? "✓ Added" : "Add"}</button>
+      <button type="button" class="button ${inCart ? "" : "primary"}" data-stock-add data-type="${type}" data-id="${escapeHtml(it.id)}" data-label="${escapeHtml(cartLabel)}">${inCart ? "✓ Added" : "Add"}</button>
     </div>`;
 }
 
@@ -6217,14 +6223,44 @@ function initStockCenter() {
       ${stockOrderFormHTML()}`;
   };
 
+  // GWDI insertion bank (~21.5k strains) isn't bundled — search it live via
+  // the /api/stock-gwdi proxy. Results are added to the same cart.
+  let gwdiSeq = 0, gwdiTimer = null;
+  const renderGwdi = () => {
+    const q = (searchEl.value || "").trim();
+    if (q.length < 2) {
+      listEl.innerHTML = `<p class="notice muted" style="margin-top:10px">The GWDI insertion bank has ~21,500 strains — too many to list. Type a gene name (e.g. <button type="button" class="text-link" data-gwdi-example>smp3</button>) to search it live.</p>`;
+      return;
+    }
+    listEl.innerHTML = `<p class="notice muted" style="margin-top:10px">Searching the GWDI bank for “${escapeHtml(q)}”…</p>`;
+    const seq = ++gwdiSeq;
+    fetch(`/api/stock-gwdi?q=${encodeURIComponent(q)}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (seq !== gwdiSeq || active !== "gwdi") return;      // superseded by a newer search
+        const rows = d.strains || [];
+        if (!rows.length) {
+          listEl.innerHTML = `<p class="notice muted">No GWDI strains found for “${escapeHtml(q)}”. Try a gene symbol (e.g. smp3, mybB).</p>`;
+          return;
+        }
+        listEl.innerHTML = `
+          <p style="font-size:.8125rem;color:var(--muted);margin:10px 0 6px">${rows.length}${rows.length >= 150 ? "+" : ""} GWDI strain${rows.length !== 1 ? "s" : ""} matching “${escapeHtml(q)}”${rows.length >= 150 ? " — showing the first 150, refine to narrow" : ""}</p>
+          <div class="stock-list">${rows.map((it) => stockItemHTML("strains", it)).join("")}</div>`;
+      })
+      .catch(() => {
+        if (seq === gwdiSeq) listEl.innerHTML = `<p class="notice muted">GWDI search is temporarily unavailable — try again in a moment.</p>`;
+      });
+  };
+
   const renderList = () => {
+    if (active === "gwdi") { renderGwdi(); return; }
     const data = stockCenterData || { strains: [], plasmids: [] };
     const q = (searchEl.value || "").trim().toLowerCase();
     const items = active === "strains" ? data.strains : data.plasmids;
     const match = (it) => {
       if (!q) return true;
       const hay = active === "strains"
-        ? `${it.id} ${it.summary} ${it.genotype} ${it.phenotype}`
+        ? `${it.id} ${it.label} ${(it.names || []).join(" ")} ${it.summary} ${it.genotype} ${it.phenotype}`
         : `${it.id} ${it.name} ${it.description} ${it.depositor}`;
       return hay.toLowerCase().includes(q);
     };
@@ -6265,7 +6301,11 @@ function initStockCenter() {
     } else if (tab) {
       active = tab.dataset.stockTab;
       root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t === tab));
+      searchEl.value = "";
+      searchEl.placeholder = active === "gwdi" ? "Search the GWDI bank by gene name…" : "Search the catalog…";
       renderList();
+    } else if (e.target.closest("[data-gwdi-example]")) {
+      searchEl.value = "smp3"; searchEl.focus(); renderGwdi();
     } else if (e.target.closest("[data-stock-checkout]")) {
       showCheckout();
     } else if (e.target.closest("[data-stock-back]")) {
@@ -6296,7 +6336,11 @@ function initStockCenter() {
     status.innerHTML = `<p class="notice">Your email client should have opened with the request. If not, email <a href="mailto:${STOCK_ORDER_EMAIL}">${STOCK_ORDER_EMAIL}</a> directly.</p>`;
   });
 
-  searchEl.addEventListener("input", renderList);
+  searchEl.addEventListener("input", () => {
+    if (active !== "gwdi") { renderList(); return; }
+    clearTimeout(gwdiTimer);
+    gwdiTimer = setTimeout(renderGwdi, 350);          // debounce the live API search
+  });
   updateCounts();
   ensureStockCenter().then(() => { renderList(); updateCounts(); });
 }

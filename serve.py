@@ -305,6 +305,7 @@ _PAGEVIEWS = {"counts": {}, "since": None, "updated": None}
 _PAGEVIEWS_LOADED = False
 _PV_LOCK = threading.Lock()
 _HIT_HITS = {}                     # ip -> recent /api/hit epochs (limiter only; not stored)
+_GWDI_HITS = {}                    # ip -> recent /api/stock-gwdi epochs (rate limiter)
 # Top-level route segments the SPA actually serves; anything else buckets to /other.
 _PV_HEADS = {"gene", "strain", "go", "organisms", "research", "community", "tools",
              "search", "education", "start", "research-areas", "data", "cite", "index.html"}
@@ -1439,6 +1440,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 ok = False
             self.send_json(200 if ok else 503, {"status": "ok" if ok else "degraded"})
             return
+        if self.path.startswith("/api/stock-gwdi"):
+            self._handle_stock_gwdi()
+            return
         if self.path.startswith("/api/recent-papers"):
             self._handle_recent_papers()
             return
@@ -1884,6 +1888,34 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(204)
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
+
+    def _handle_stock_gwdi(self):
+        """Live search of the GWDI insertion bank (21k+ strains, too large to bundle)
+        via the dictyBase GraphQL API. Returns compact strain records for the cart."""
+        if _rate_limited(_GWDI_HITS, self.client_address[0], limit=60, window=60):
+            self.send_json(429, {"strains": [], "error": "rate limited"})
+            return
+        q = (parse_qs(urlparse(self.path).query).get("q") or [""])[0].strip()
+        if len(q) < 2:
+            self.send_json(200, {"strains": []})
+            return
+        qs = q.replace("\\", "\\\\").replace('"', '\\"')[:80]
+        gql = ('{ listStrains(cursor:0, limit:150, filter:{strain_type:GWDI, label:"%s"})'
+               '{ strains{ id label summary in_stock } } }' % qs)
+        try:
+            body = json.dumps({"query": gql}).encode()
+            req = urllib.request.Request("https://graphql.dictybase.dev/graphql", body,
+                                         {"Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=15, context=SSL_CTX) as r:
+                data = json.loads(r.read())
+            rows = ((data.get("data") or {}).get("listStrains") or {}).get("strains") or []
+            out = [{"id": s["id"],
+                    "label": html.unescape(s.get("label") or s["id"]),
+                    "summary": html.unescape(" ".join((s.get("summary") or "").split())),
+                    "in_stock": bool(s.get("in_stock"))} for s in rows]
+            self.send_json(200, {"strains": out})
+        except Exception:
+            self.send_json(502, {"strains": [], "error": "GWDI search is temporarily unavailable"})
 
     def _send_proxy_bytes(self, status, ctype, body, cached=False):
         self.send_response(status)

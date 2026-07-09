@@ -1090,6 +1090,8 @@ function pubMedSearchUrl(gene) {
 const RECENT_GENES_KEY = "dictybase:recentGenes";
 const RECENT_GENES_MAX = 6;
 const recentGenesEl = document.querySelector("#recent-genes");
+// Well-known genes shown as starter chips before a visitor has any search history.
+const EXAMPLE_GENES = ["mhcA", "rasG", "carA", "acaA", "gbpC"];
 
 function loadRecentGenes() {
   try {
@@ -1115,12 +1117,11 @@ function recordRecentGene(symbol) {
 function renderRecentGenes() {
   if (!recentGenesEl) return;
   const list = loadRecentGenes();
-  if (!list.length) {
-    recentGenesEl.innerHTML = "";
-    recentGenesEl.setAttribute("hidden", "");
-    return;
-  }
-  recentGenesEl.innerHTML = list
+  const isExamples = !list.length;
+  const chips = isExamples ? EXAMPLE_GENES : list;
+  const label = isExamples ? "Try a gene" : "Recent";
+  recentGenesEl.setAttribute("aria-label", isExamples ? "Example genes" : "Recently searched genes");
+  recentGenesEl.innerHTML = `<span class="quick-links-label">${label}</span>` + chips
     .map((s) => `<button type="button" data-query="${escapeHtml(s)}">${escapeHtml(s)}</button>`)
     .join("");
   recentGenesEl.removeAttribute("hidden");

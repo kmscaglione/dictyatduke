@@ -1,4 +1,4 @@
-# dictyBase v2 ("dictyBase at Duke")
+# dictyBase v2
 
 A modern, single-page reimplementation of the [dictyBase](https://dictybase.dev)
 *Dictyostelium* model-organism database: gene search and richly curated gene

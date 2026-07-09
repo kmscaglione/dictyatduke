@@ -1,6 +1,6 @@
 # Data versioning, citation, and DOI
 
-Dicty@Duke is citable as a versioned data release.
+dictyBase is citable as a versioned data release.
 
 ## Where the version lives
 

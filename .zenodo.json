@@ -1,11 +1,11 @@
 {
-  "title": "Dicty@Duke: a community resource for Dictyostelium genomes, genes, and curation",
+  "title": "dictyBase: a community resource for Dictyostelium genomes, genes, and curation",
   "description": "A modern reimplementation of the Dictyostelium model-organism database: searchable gene records, nine sequenced dictyostelid genomes, GO/phenotype/expression data, structures, a genome browser, BLAST, enrichment, and molecular-biology tools. Aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG.",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "CC-BY-NC-4.0",
   "creators": [
-    { "name": "Scaglione lab and Dicty@Duke contributors", "affiliation": "Duke University School of Medicine" }
+    { "name": "Scaglione lab and dictyBase contributors", "affiliation": "Duke University School of Medicine" }
   ],
   "keywords": [
     "Dictyostelium",

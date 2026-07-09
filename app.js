@@ -2224,7 +2224,7 @@ async function runRegion() {
     out.innerHTML = `<p class="notice">${escapeHtml(d.error)}${d.contigs ? `<br><span style="font-size:.8em;color:var(--muted,#6b7280)">e.g. ${d.contigs.slice(0, 6).map(escapeHtml).join(", ")}</span>` : ""}</p>`;
     return;
   }
-  const header = `>${escapeHtml(d.chrom)}:${d.start}-${d.end}(${d.strand}) ${escapeHtml(LOCAL_BLAST_DBS[d.genome] || WILD_ISOLATES[d.genome] || d.genome)} | Dicty@Duke`;
+  const header = `>${escapeHtml(d.chrom)}:${d.start}-${d.end}(${d.strand}) ${escapeHtml(LOCAL_BLAST_DBS[d.genome] || WILD_ISOLATES[d.genome] || d.genome)} | dictyBase`;
   const wrapped = d.seq.replace(/(.{60})/g, "$1\n");
   out.innerHTML = `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${d.length.toLocaleString()} bp</p>
     <textarea readonly aria-label="Region FASTA" rows="6" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:.78rem;${FIELD}">${escapeHtml(header)}\n${escapeHtml(wrapped)}</textarea>`;
@@ -3010,7 +3010,7 @@ function renderBlastPage() {
       </header>
       <div class="record-body">
         <section class="data-block">
-          <h3>Search Dicty@Duke genomes</h3>
+          <h3>Search dictyBase genomes</h3>
           <form class="annotation-form" id="local-blast-form" novalidate>
             <div class="form-field">
               <label for="lblast-program">Program <span class="required">*</span></label>
@@ -3945,10 +3945,10 @@ async function initEducation() {
             return `<div class="pa-q"><p class="pa-prompt"><strong>${i + 1}. ${escapeHtml(q.q)}</strong></p><ul>${choices}</ul><p class="pa-explain">${escapeHtml(q.explain)}</p></div>`;
           }).join("");
           printArea.innerHTML = `
-            <h2>Dicty@Duke — Concept self-quiz</h2>
+            <h2>dictyBase — Concept self-quiz</h2>
             <p class="pa-score">Score: ${correct} / ${total} correct${done < total ? ` (${done} of ${total} answered)` : ""} · ${pct}%</p>
             ${rows}
-            <p class="pa-foot">Dicty@Duke · Learn Dictyostelium · /education</p>`;
+            <p class="pa-foot">dictyBase · Learn Dictyostelium · /education</p>`;
           document.body.classList.add("print-quiz");
           const cleanup = () => { document.body.classList.remove("print-quiz"); window.removeEventListener("afterprint", cleanup); };
           window.addEventListener("afterprint", cleanup);
@@ -4187,7 +4187,7 @@ function renderAnnotationsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Curate a gene</h2>
-          <p>Add expert, evidence-backed annotations to Dicty@Duke. This short guided form walks you through the same standard steps professional curators follow — modeled on <a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">PomBase's Canto</a>, kept deliberately lightweight. Work through one paper, one gene, and one finding at a time.</p>
+          <p>Add expert, evidence-backed annotations to dictyBase. This short guided form walks you through the same standard steps professional curators follow — modeled on <a class="text-link" href="https://pombase.github.io/canto_tutorial/" target="_blank" rel="noopener">PomBase's Canto</a>, kept deliberately lightweight. Work through one paper, one gene, and one finding at a time.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4311,7 +4311,7 @@ function renderAnnotationsPage() {
 
               <fieldset class="wizard-step" data-step="3" hidden>
                 <legend>Step 4 · Review &amp; submit</legend>
-                <p class="wizard-help">Check your annotation below. A Dicty@Duke curator verifies each submission against the paper before it's added to the database.</p>
+                <p class="wizard-help">Check your annotation below. A dictyBase curator verifies each submission against the paper before it's added to the database.</p>
                 <div class="wizard-review kv" id="wizard-review"></div>
                 <div class="wizard-nav">
                   <button type="button" class="button" data-wiz-back>← Back</button>
@@ -4455,7 +4455,7 @@ function renderUploadDataPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Upload data</h2>
-          <p>Submit genome sequences, RNAseq, or proteomic datasets for inclusion in Dicty@Duke. Fill in the form for your data type and a curator will follow up with transfer instructions. Large files are handled outside this form.</p>
+          <p>Submit genome sequences, RNAseq, or proteomic datasets for inclusion in dictyBase. Fill in the form for your data type and a curator will follow up with transfer instructions. Large files are handled outside this form.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4776,7 +4776,7 @@ function renderCorrectionsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Submit corrections</h2>
-          <p>Found an error on Dicty@Duke? Use this form to report incorrect gene names, wrong links, outdated information, or any other mistake. Curators review all submissions.</p>
+          <p>Found an error on dictyBase? Use this form to report incorrect gene names, wrong links, outdated information, or any other mistake. Curators review all submissions.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4833,7 +4833,7 @@ function renderSuggestionsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Suggestions</h2>
-          <p>Have an idea to improve Dicty@Duke? We welcome suggestions for new features, content, tools, or anything else that would make the site more useful for the community.</p>
+          <p>Have an idea to improve dictyBase? We welcome suggestions for new features, content, tools, or anything else that would make the site more useful for the community.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4987,7 +4987,7 @@ function renderTechnique(technique) {
               </div>
             ` : `
               <h3>${escapeHtml(technique.label)}</h3>
-              <p>This page now lives inside Dicty@Duke, so the technique directory can keep routing even if the old dictyBase page is removed.</p>
+              <p>This page now lives inside dictyBase, so the technique directory can keep routing even if the old dictyBase page is removed.</p>
               <p>This record points to an external file or publication rather than a dictyBase editor page. We can mirror the file itself in a later preservation pass.</p>
             `}
           </section>
@@ -6311,7 +6311,7 @@ function openDataPage(updateRoute = true) {
         <div class="record-title">
           <p class="eyebrow">About</p>
           <h2>Data &amp; sources</h2>
-          <p>Where each dataset comes from and when it was last refreshed. Dicty@Duke aggregates and re-presents these sources — it is a modern front-end, not the authoritative curator.</p>
+          <p>Where each dataset comes from and when it was last refreshed. dictyBase aggregates and re-presents these sources — it is a modern front-end, not the authoritative curator.</p>
         </div>
       </header>
       <div class="record-body">
@@ -6331,7 +6331,7 @@ function openCite(updateRoute = true) {
     <article class="record-card research-card">
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Citation</p>
-        <h2>How to cite Dicty@Duke</h2>
+        <h2>How to cite dictyBase</h2>
         <p>If this resource supported your work, please cite the data release below. Individual gene records also carry a “Cite this page” link.</p>
       </div></header>
       <div class="record-body"><div data-cite><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading release info…</p></div></div>
@@ -6349,10 +6349,10 @@ async function loadCite() {
   const year = (m.released || "2026").slice(0, 4);
   const url = m.url || location.origin;
   const ref = m.doi ? `https://doi.org/${m.doi}` : url;
-  const citation = `${m.authors || "Dicty@Duke contributors"} (${year}). ${m.title || "Dicty@Duke"} (version ${m.version || "—"}) [Data set]. ${m.publisher || ""}. ${ref}`.replace(/\s+\./g, ".");
+  const citation = `${m.authors || "dictyBase contributors"} (${year}). ${m.title || "dictyBase"} (version ${m.version || "—"}) [Data set]. ${m.publisher || ""}. ${ref}`.replace(/\s+\./g, ".");
   const bibtex = `@misc{dictyatduke_${year},
-  title   = {${m.title || "Dicty@Duke"}},
-  author  = {{${m.authors || "Dicty@Duke contributors"}}},
+  title   = {${m.title || "dictyBase"}},
+  author  = {{${m.authors || "dictyBase contributors"}}},
   year    = {${year}},
   version = {${m.version || ""}},
 ${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
@@ -6372,7 +6372,7 @@ ${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
     <h3 style="margin-top:18px">BibTeX</h3>
     <textarea readonly aria-label="BibTeX citation (click to select)" rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
     <h3 style="margin-top:18px">Citing the data sources</h3>
-    <p style="font-size:0.9375rem">Dicty@Duke aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. The <em>D. discoideum</em> wild-isolate genomes (and the <em>D. citrinum</em> / <em>D. dimigraforme</em> assemblies) are from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> (CC BY 4.0). Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
+    <p style="font-size:0.9375rem">dictyBase aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. The <em>D. discoideum</em> wild-isolate genomes (and the <em>D. citrinum</em> / <em>D. dimigraforme</em> assemblies) are from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> (CC BY 4.0). Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
 }
 
 async function loadDataStatus() {
@@ -7070,7 +7070,7 @@ function renderStringResults(gene, data, imgContainer, container) {
 
 // --- Search page (General / Phenotype / GO term / Localization) ---
 const SEARCH_PAGE_MODES = [
-  { key: "general", label: "General", title: "Search Dicty@Duke",
+  { key: "general", label: "General", title: "Search dictyBase",
     blurb: "Search the whole site — genes plus organisms, research pages, and tools.",
     placeholder: "Search genes, pages, organisms, tools — e.g. cln5, BLAST, nomenclature" },
   { key: "phenotype", label: "Phenotype", title: "Phenotype search",
@@ -7642,7 +7642,7 @@ async function runConservation(gene) {
   const L = data.length || c.length;
   if (!L || !data.homologs) { out.innerHTML = `<p class="notice muted">No homologs found in the other genomes.</p>`; if (btn) { btn.disabled = false; btn.textContent = "Compute conservation"; } return; }
   const W = 760, H = 30, pad = 4, cols = Math.min(L, 600), colW = (W - 2 * pad) / cols;
-  const shade = (f) => `rgb(${Math.round(231 - f * 231)}, ${Math.round(238 - f * 155)}, ${Math.round(247 - f * 92)})`; // light -> Duke navy
+  const shade = (f) => `rgb(${Math.round(231 - f * 231)}, ${Math.round(238 - f * 155)}, ${Math.round(247 - f * 92)})`; // light -> navy
   let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="none" role="img" aria-label="Conservation track">`;
   for (let i = 0; i < cols; i++) {
     const a = Math.floor(i * L / cols), b = Math.max(a + 1, Math.floor((i + 1) * L / cols));
@@ -7989,7 +7989,7 @@ document.addEventListener("click", (event) => {
     const box = document.createElement("span");
     box.className = "cite-box";
     box.style.cssText = "display:block;margin-top:6px;padding:8px 10px;background:var(--soft,#e7eef7);border-radius:6px;color:var(--ink,#1f2937);font-size:0.75rem;line-height:1.5";
-    box.textContent = `Dicty@Duke. ${sym} gene record. Duke University. Retrieved ${today} from ${location.origin}/gene/${sym}`;
+    box.textContent = `dictyBase. ${sym} gene record. Duke University. Retrieved ${today} from ${location.origin}/gene/${sym}`;
     citeToggle.parentElement.appendChild(box);
     return;
   }
@@ -8498,7 +8498,7 @@ async function loadNews() {
   if (!items.length) { el.setAttribute("hidden", ""); return; }
   el.hidden = !isHomeView;
   el.innerHTML = `
-    <div class="news-head"><p class="eyebrow">Dicty@Duke</p><h2><a class="text-link news-all-link" href="/news">News &amp; updates</a></h2></div>
+    <div class="news-head"><p class="eyebrow">dictyBase</p><h2><a class="text-link news-all-link" href="/news">News &amp; updates</a></h2></div>
     <div class="news-list">
       ${items.slice(0, 6).map(newsItemHTML).join("")}
     </div>
@@ -8551,7 +8551,7 @@ function renderToolsIndex() {
   return `<article class="record-card research-card">
     <header class="record-header"><div class="record-title">
       <p class="eyebrow">Tools</p><h2>All tools</h2>
-      <p>Everything you can do on Dicty@Duke, in one place.</p>
+      <p>Everything you can do on dictyBase, in one place.</p>
     </div></header>
     <div class="record-body">
       ${TOOLS_INDEX.map(([group, items]) => `
@@ -8578,7 +8578,7 @@ function openNews(updateRoute = true) {
   toolsShell.innerHTML = `
     <article class="record-card research-card">
       <header class="record-header"><div class="record-title">
-        <p class="eyebrow">Dicty@Duke</p>
+        <p class="eyebrow">dictyBase</p>
         <h2>News &amp; updates</h2>
         <p>The latest site announcements and data updates. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
       </div></header>
@@ -8599,7 +8599,7 @@ function openNewsArchive(updateRoute = true) {
   toolsShell.innerHTML = `
     <article class="record-card research-card">
       <header class="record-header"><div class="record-title">
-        <p class="eyebrow">Dicty@Duke</p>
+        <p class="eyebrow">dictyBase</p>
         <h2>News archive</h2>
         <p>Every post ever made, newest first. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
       </div></header>

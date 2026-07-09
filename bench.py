@@ -1,4 +1,4 @@
-"""Bench/molecular-biology tools for Dicty@Duke (pure, stdlib-only, testable).
+"""Bench/molecular-biology tools for dictyBase (pure, stdlib-only, testable).
 
 - codon_optimize: codon-optimize a protein/DNA for Dictyostelium expression and
   score a coding DNA's CAI, using the AT-rich Dicty codon table

@@ -5,8 +5,8 @@
   --ink: #15203a;
   --muted: #5b6678;
   --line: #dbe2ec;
-  /* Duke blue palette — --teal/--teal-dark kept as names (used widely) but now
-     hold Duke Royal (#00539B) and Duke Navy (#012169). */
+  /* Brand blue palette — --teal/--teal-dark kept as names (used widely) but now
+     hold Royal blue (#00539B) and Navy (#012169). */
   --teal: #00539b;
   --teal-dark: #012169;
   --soft: #e7eef7;
@@ -691,7 +691,7 @@ button:focus-visible,
   .spinner { animation-duration: 1.6s; }
 }
 
-/* Genome browser (IGV.js) container + loading skeleton + light Duke theming */
+/* Genome browser (IGV.js) container + loading skeleton + light theming */
 .igv-wrap {
   width: 100%;
   min-height: 500px;

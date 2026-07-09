@@ -21,7 +21,7 @@ class RouteMetaTest(unittest.TestCase):
         title, desc, canon, jsonld = serve.route_meta(f"/gene/{sym}")
         self.assertIn(sym, title)
         self.assertIn(ddb, title)
-        self.assertIn("Dicty@Duke", title)
+        self.assertIn("dictyBase", title)
         self.assertEqual(canon, f"/gene/{sym}")
         self.assertEqual(jsonld["@type"], "Gene")
         self.assertEqual(jsonld["identifier"], ddb)

@@ -303,12 +303,26 @@ main {
 }
 
 .hero {
-  min-height: 430px;
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(360px, .85fr);
-  gap: 34px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 54px 0 30px;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 0 36px;
+}
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .eyebrow {
@@ -344,11 +358,23 @@ h1 {
   line-height: 1.55;
 }
 
+.hero-ctas {
+  width: 100%;
+  max-width: 640px;
+  margin: 16px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 40px;
-  margin: 28px 0 0;
+  justify-content: center;
+  gap: 14px 44px;
+  width: 100%;
+  max-width: 640px;
+  margin: 30px auto 0;
   padding-top: 24px;
   border-top: 1px solid var(--line);
 }
@@ -368,7 +394,6 @@ h1 {
   color: var(--muted);
 }
 
-.search-panel,
 .record-card,
 .empty-state {
   border: 1px solid var(--line);
@@ -377,24 +402,43 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.search-panel {
-  padding: 18px;
+/* Home hero search — large, centered, prominent */
+.hero-search {
+  width: 100%;
+  max-width: 640px;
+  margin: 30px auto 0;
   display: grid;
-  gap: 14px;
-}
-
-.search-panel label {
-  color: #24332e;
-  font-size: 13px;
-  font-weight: 850;
-  text-transform: uppercase;
-  letter-spacing: .06em;
+  gap: 12px;
 }
 
 .search-row {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 10px;
+}
+
+.hero-search input {
+  min-height: 60px;
+  font-size: 17px;
+  border-radius: 14px;
+  padding: 0 20px;
+  box-shadow: 0 6px 20px rgba(1, 33, 105, .10);
+}
+.hero-search input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 6px 20px rgba(1, 33, 105, .16), 0 0 0 3px rgba(10, 102, 180, .18);
+}
+.hero-search .search-row button {
+  min-height: 60px;
+  border-radius: 14px;
+  padding: 0 30px;
+  font-size: 16px;
+}
+.hero-search .quick-links,
+.hero-search .suggestions {
+  justify-content: center;
+  text-align: left;
 }
 
 input {
@@ -445,8 +489,8 @@ button,
 }
 .hero-title em { font-style: italic; color: var(--teal-dark); }
 .hero-lede {
-  margin: 0 0 22px;
-  max-width: 560px;
+  margin: 0 auto 6px;
+  max-width: 580px;
   color: var(--muted);
   font-size: 17px;
   line-height: 1.5;
@@ -663,39 +707,9 @@ button,
 }
 .ra-note { margin: 18px 0 0; font-size: 13px; color: var(--muted); line-height: 1.55; }
 
-/* Home capability strip */
-.capabilities {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 8px 0 6px;
-}
-.cap-card {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 6px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--panel);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: var(--ink);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-}
-.cap-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--teal);
-  box-shadow: 0 10px 24px rgba(1, 33, 105, .12);
-}
-.cap-card .cap-icon { font-size: 22px; line-height: 1; }
-.cap-card strong { font-size: 15px; color: var(--teal-dark); }
-.cap-card span:last-child { font-size: 13.5px; color: var(--muted); line-height: 1.45; }
-
 /* Visible keyboard focus for interactive controls (a11y) */
 button:focus-visible,
 .button:focus-visible,
-.cap-card:focus-visible,
 .tab:focus-visible,
 .cmdk-input:focus-visible,
 [role="tab"]:focus-visible {
@@ -1451,7 +1465,6 @@ button:focus-visible,
     width: min(100% - 24px, 1180px);
   }
 
-  .hero,
   .record-header,
   .section-grid,
   .technique-detail-layout,
@@ -1461,12 +1474,11 @@ button:focus-visible,
   }
 
   .hero {
-    min-height: auto;
     padding-top: 34px;
   }
 
-  .capabilities {
-    grid-template-columns: 1fr 1fr;
+  .hero-ctas {
+    grid-template-columns: 1fr;
   }
 
   .search-row {
@@ -1730,7 +1742,6 @@ button:focus-visible,
   .glossary dd { margin-bottom: 8px; }
   .lc-arrow { display: none; }
   .quiz-scorebar { flex-direction: column; align-items: flex-start; }
-  .capabilities { grid-template-columns: 1fr; }
 }
 
 .hero-image-credit a {

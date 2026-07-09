@@ -198,25 +198,21 @@
 
   <main id="main" tabindex="-1">
     <section class="hero" id="search">
-      <div class="hero-copy">
-        <p class="eyebrow">Dictyostelium genome resource</p>
-        <h1 class="hero-title">Explore the <em>Dictyostelium</em> genome</h1>
-        <p class="hero-lede">Searchable gene records, sequenced genomes, protein structures, and analysis tools for the social-amoeba research community.</p>
-        <dl class="hero-stats">
-          <div><dt>13,000+</dt><dd>gene records</dd></div>
-          <div><dt>17</dt><dd>sequenced genomes</dd></div>
-          <div><dt>28,000+</dt><dd>stock-center strains</dd></div>
-        </dl>
-      </div>
+      <p class="eyebrow">Dictyostelium genome resource</p>
+      <h1 class="hero-title">Explore the <em>Dictyostelium</em> genome</h1>
+      <p class="hero-lede">Searchable gene records, sequenced genomes, protein structures, and analysis tools for the social-amoeba research community.</p>
 
-      <form class="search-panel" id="search-form" role="search">
-        <label for="search-input">Gene search</label>
+      <form class="hero-search" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Gene search</label>
         <div class="search-row">
-          <input id="search-input" autocomplete="off" placeholder="Try CLN5, acaA, mhcA, carA, rasG" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-haspopup="listbox">
+          <input id="search-input" autocomplete="off" placeholder="Search genes — try CLN5, acaA, mhcA, carA, rasG" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-haspopup="listbox">
           <button type="submit">Search</button>
         </div>
         <div class="quick-links" id="recent-genes" aria-label="Recently searched genes" hidden></div>
         <div class="suggestions" id="suggestions" role="listbox" aria-label="Gene search suggestions" aria-live="polite"></div>
+      </form>
+
+      <div class="hero-ctas">
         <a class="curate-cta" href="/community/annotations">
           <span class="curate-cta-icon" aria-hidden="true">✍️</span>
           <span class="curate-cta-text">
@@ -233,7 +229,13 @@
           </span>
           <span class="curate-cta-arrow" aria-hidden="true">→</span>
         </a>
-      </form>
+      </div>
+
+      <dl class="hero-stats">
+        <div><dt>13,000+</dt><dd>gene records</dd></div>
+        <div><dt>17</dt><dd>sequenced genomes</dd></div>
+        <div><dt>28,000+</dt><dd>stock-center strains</dd></div>
+      </dl>
     </section>
 
     <a class="start-banner" id="start-banner" href="/start">
@@ -242,33 +244,6 @@
       <span class="start-banner-cta">Start here →</span>
     </a>
 
-    <section class="capabilities" id="capabilities" aria-label="What you can do here">
-      <a class="cap-card" href="/search/advanced">
-        <span class="cap-icon" aria-hidden="true">🔍</span>
-        <strong>Search</strong>
-        <span>Find genes by name, phenotype, GO term, localization, or the advanced filter.</span>
-      </a>
-      <a class="cap-card" href="/tools/genome-browser">
-        <span class="cap-icon" aria-hidden="true">🧭</span>
-        <strong>Browse</strong>
-        <span>Explore the genome browser and every sequenced dictyostelid species.</span>
-      </a>
-      <a class="cap-card" href="/tools">
-        <span class="cap-icon" aria-hidden="true">🧪</span>
-        <strong>Analyze</strong>
-        <span>BLAST, GO enrichment, expression, proteomes, and lab tools.</span>
-      </a>
-      <a class="cap-card" href="/community/labs">
-        <span class="cap-icon" aria-hidden="true">👥</span>
-        <strong>Community</strong>
-        <span>Labs, meetings, news, and ways to contribute to dictyBase.</span>
-      </a>
-      <a class="cap-card" href="/start">
-        <span class="cap-icon" aria-hidden="true">📚</span>
-        <strong>Resources</strong>
-        <span>New-to-Dicty guide, techniques, disease models, and downloads.</span>
-      </a>
-    </section>
 
     <section class="news-feed" id="news-feed" aria-label="News and updates" hidden></section>
 

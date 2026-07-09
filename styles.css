@@ -309,7 +309,7 @@ main {
   text-align: center;
   max-width: 780px;
   margin: 0 auto;
-  padding: 60px 0 36px;
+  padding: 40px 0 32px;
 }
 
 /* Screen-reader-only utility */
@@ -516,20 +516,20 @@ button,
 .curate-cta {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border: 1px solid var(--teal);
-  border-radius: 8px;
-  background: linear-gradient(100deg, var(--soft), #fff);
+  gap: 11px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
   text-decoration: none;
   color: var(--ink);
-  transition: box-shadow .12s ease, transform .12s ease;
+  transition: box-shadow .12s ease, transform .12s ease, border-color .12s ease;
 }
-.curate-cta:hover { box-shadow: 0 8px 22px rgba(1, 33, 105, .12); transform: translateY(-1px); }
-.curate-cta-icon { font-size: 22px; line-height: 1; }
-.curate-cta-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.35; }
-.curate-cta-text strong { color: var(--teal-dark); font-size: 15px; }
-.curate-cta-text small { color: var(--muted); font-size: 12.5px; }
+.curate-cta:hover { border-color: var(--teal); box-shadow: 0 6px 16px rgba(1, 33, 105, .08); transform: translateY(-1px); }
+.curate-cta-icon { font-size: 20px; line-height: 1; }
+.curate-cta-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.32; }
+.curate-cta-text strong { color: var(--teal-dark); font-size: 14px; }
+.curate-cta-text small { color: var(--muted); font-size: 12px; }
 .curate-cta-arrow { margin-left: auto; font-weight: 800; color: var(--teal-dark); }
 
 /* Curation best-practice links */

@@ -1154,6 +1154,15 @@ function openGene(gene, tab = "Summary", updateRoute = true) {
 
 let suggestionDebounceTimer = null;
 
+// Site-wide page/tool matches for the hero search (shares the command palette's index).
+function matchSitePages(query, limit = 4) {
+  const ql = query.trim().toLowerCase();
+  if (!ql) return [];
+  return CMDK_TARGETS
+    .filter((t) => t.href !== "/" && (t.label.toLowerCase().includes(ql) || (t.kw || "").includes(ql)))
+    .slice(0, limit);
+}
+
 function renderSuggestions(query) {
   if (!query.trim()) {
     suggestions.innerHTML = "";
@@ -1163,6 +1172,8 @@ function renderSuggestions(query) {
   const localKeys = new Set(local.map((g) => g.ncbiGene));
   // Full-catalog matches (e.g. "dsca" -> dscA-1, dscA-2), minus anything already curated.
   const indexed = searchIndex(query, 8).filter((g) => !localKeys.has(g.ncbiGene));
+  // Matching tools & pages (e.g. "blast", "downloads", "genome browser").
+  const pages = matchSitePages(query, 4);
 
   const localHtml = local.map((gene) => `
     <button class="suggestion" type="button" data-gene="${gene.id}">
@@ -1182,13 +1193,22 @@ function renderSuggestions(query) {
       <span class="tag">Gene</span>
     </button>
   `).join("");
+  const pageHtml = pages.map((t) => `
+    <button class="suggestion" type="button" data-href="${escapeHtml(t.href)}">
+      <span>
+        <strong>${escapeHtml(t.label)}</strong>
+        ${t.sub ? `<small>${escapeHtml(t.sub)}</small>` : ""}
+      </span>
+      <span class="tag">${escapeHtml(t.kind)}</span>
+    </button>
+  `).join("");
 
-  suggestions.innerHTML = (localHtml + indexHtml)
+  suggestions.innerHTML = (localHtml + indexHtml + pageHtml)
     || `<div class="notice muted">Searching NCBI for <em>${escapeHtml(query)}</em>…</div>`;
 
   // Only reach out to NCBI when we have nothing locally (aliases, other taxa, UniProt IDs).
   clearTimeout(suggestionDebounceTimer);
-  if (!local.length && !indexed.length) {
+  if (!local.length && !indexed.length && !pages.length) {
     suggestionDebounceTimer = setTimeout(() => fetchNCBISuggestions(query, local), 400);
   }
 }
@@ -7890,6 +7910,15 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
+  // No gene matched — if the query names a tool or page, go there instead of NCBI.
+  const pageHit = matchSitePages(query, 1)[0];
+  if (pageHit) {
+    suggestions.innerHTML = "";
+    if (/^https?:/.test(pageHit.href)) { window.open(pageHit.href, "_blank", "noopener"); }
+    else { history.pushState(null, "", pageHit.href); hydrateFromRoute(); }
+    return;
+  }
+
   // Fall back to NCBI search
   showHomeChrome(false);
   recordShell.removeAttribute("hidden");
@@ -8229,6 +8258,17 @@ document.addEventListener("click", (event) => {
       if (fallback && fallback.ncbiGene && !genes.includes(fallback)) openRemoteGene(fallback.ncbiGene);
       else if (fallback) openGene(fallback);
     }
+    return;
+  }
+
+  const hrefButton = event.target.closest(".suggestion[data-href]");
+  if (hrefButton) {
+    event.preventDefault();
+    suggestions.innerHTML = "";
+    if (input) input.value = "";
+    const href = hrefButton.dataset.href;
+    if (/^https?:/.test(href)) { window.open(href, "_blank", "noopener"); }
+    else { history.pushState(null, "", href); hydrateFromRoute(); }
     return;
   }
 
@@ -8594,9 +8634,9 @@ async function loadNews() {
   el.innerHTML = `
     <div class="news-head"><p class="eyebrow">dictyBase</p><h2><a class="text-link news-all-link" href="/news">News &amp; updates</a></h2></div>
     <div class="news-list">
-      ${items.slice(0, 6).map(newsItemHTML).join("")}
+      ${items.slice(0, 3).map(newsItemHTML).join("")}
     </div>
-    <p style="margin-top:12px"><a class="text-link" href="/news">All news &amp; updates →</a></p>`;
+    <p style="margin-top:12px"><a class="text-link" href="/news">See all news &amp; updates →</a></p>`;
 }
 
 function newsItemHTML(it) {
@@ -8787,9 +8827,12 @@ const CMDK_TARGETS = [
   { kind: "Research", label: "Nomenclature guidelines", href: "/research/nomenclature-guidelines", kw: "naming nomenclature gene strain" },
   { kind: "Research", label: "Anatomy ontology", href: "/research/anatomy-ontology", kw: "anatomy ontology structures" },
   { kind: "Community", label: "Research labs", href: "/community/labs", kw: "labs community groups" },
+  { kind: "Community", label: "Community curation", href: "/community/annotations", sub: "Contribute annotations for curator review", kw: "community curation annotate annotation contribute submit gene curate expert canto" },
+  { kind: "Community", label: "Meetings & events", href: "/community/meetings", kw: "meetings conference events dicty conference workshop symposium" },
+  { kind: "Community", label: "Upload data", href: "/community/upload-data", kw: "upload submit data genome rnaseq proteomic dataset deposit" },
   { kind: "Research", label: "Disease models", href: "/community/disease-models", kw: "disease human ortholog model" },
   { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
-  { kind: "Community", label: "Dicty Stock Center", href: "https://dictybase.dev/stockcenter", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
+  { kind: "Community", label: "Dicty Stock Center", href: "/stock-center", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
   { kind: "Page", label: "News & updates", href: "/news", kw: "news updates announcements changelog history releases" },
   { kind: "Page", label: "How to cite", href: "/cite", kw: "cite citation doi bibtex reference how to cite release version" },

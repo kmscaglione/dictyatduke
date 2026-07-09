@@ -1467,6 +1467,43 @@ button:focus-visible,
   white-space: nowrap;
 }
 
+/* OMA orthologs — searchable, collapsible list */
+.oma-summary {
+  font-size: .8125rem;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+.oma-search {
+  width: 100%;
+  max-width: 420px;
+  min-height: 42px;
+  margin-bottom: 12px;
+}
+.oma-subhead {
+  margin: 14px 0 6px;
+  font-size: .8125rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.oma-count {
+  font-size: .8125rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.oma-toggle {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+.oma-toggle:hover { border-color: var(--teal); }
+
 .notice {
   border: 1px solid #ead7b7;
   border-radius: 8px;

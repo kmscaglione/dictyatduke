@@ -7611,14 +7611,6 @@ function omaRelBadge(rel) {
   return `<span title="OMA orthology relationship type" style="display:inline-block;margin-left:8px;padding:1px 6px;border-radius:6px;font-size:0.6875rem;font-weight:600;background:${bg};color:${fg}">${escapeHtml(rel)}</span>`;
 }
 
-function omaRow(o) {
-  const label = o.canonicalid || o.omaid;
-  return `<li>
-    <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(o.omaid)}/" target="_blank" rel="noopener">${escapeHtml(label)}</a></strong>${omaRelBadge(o.rel)}
-    <span>${escapeHtml(o.sci)}</span>
-  </li>`;
-}
-
 function renderOMAResults(gene, orthologs, container) {
   if (!orthologs.length) {
     container.innerHTML = `<p class="notice">No orthologs found in OMA for ${escapeHtml(gene.uniprot)}.</p>`;
@@ -7645,42 +7637,72 @@ function renderOMAResults(gene, orthologs, container) {
     .filter((r) => r.modelIdx >= 0)
     .sort((a, b) => a.modelIdx - b.modelIdx || relRank(a) - relRank(b) || a.distance - b.distance);
 
-  // Closest non-model species, 1:1 relationships and short distances first.
-  const OTHER_LIMIT = 6;
   const others = rows
     .filter((r) => r.modelIdx < 0)
     .sort((a, b) => relRank(a) - relRank(b) || a.distance - b.distance);
-  const othersShown = others.slice(0, OTHER_LIMIT);
-
-  const sectionHead = (txt) =>
-    `<h4 style="margin:14px 0 6px;font-size:0.875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#6b7280)">${escapeHtml(txt)}</h4>`;
-
-  const modelsHtml = models.length
-    ? sectionHead("Model organisms") +
-      `<ul class="list">${models
-        .map((r) => `<li>
-          <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(r.omaid)}/" target="_blank" rel="noopener">${escapeHtml(r.canonicalid || r.omaid)}</a></strong>${omaRelBadge(r.rel)}
-          <span><span style="font-weight:600;color:var(--text,#111827)">${escapeHtml(r.modelLabel)}</span> · ${escapeHtml(r.sci)}</span>
-        </li>`)
-        .join("")}</ul>`
-    : "";
-
-  const othersHtml = othersShown.length
-    ? sectionHead(
-        others.length > OTHER_LIMIT
-          ? `Other species (showing ${othersShown.length} of ${others.length})`
-          : "Other species"
-      ) + `<ul class="list">${othersShown.map(omaRow).join("")}</ul>`
-    : "";
-
   const oneToOne = rows.filter((r) => r.rel === "1:1").length;
+
+  const CAP = 100; // keep the DOM light; the search box + OMA link cover the long tail
+  const rowHtml = (r) => `<li>
+    <strong><a href="https://omabrowser.org/oma/vps/${encodeURIComponent(r.omaid)}/" target="_blank" rel="noopener">${escapeHtml(r.canonicalid || r.omaid)}</a></strong>${omaRelBadge(r.rel)}
+    <span>${r.modelLabel ? `<span style="font-weight:600;color:var(--text,#111827)">${escapeHtml(r.modelLabel)}</span> · ` : ""}${escapeHtml(r.sci)}</span>
+  </li>`;
+  const sectionHead = (txt) => `<h4 class="oma-subhead">${escapeHtml(txt)}</h4>`;
+  const listBlock = (arr) => `<ul class="list">${arr.map(rowHtml).join("")}</ul>`;
+
   container.innerHTML = `
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-bottom:4px">${orthologs.length} orthologs across all species${oneToOne ? `, ${oneToOne} one-to-one` : ""}.</p>
-    ${modelsHtml}
-    ${othersHtml}
+    <p class="oma-summary">${orthologs.length.toLocaleString()} orthologs across all species${oneToOne ? ` · ${oneToOne} one-to-one` : ""}.</p>
+    <input type="search" class="oma-search" placeholder="Search orthologs by organism or id…" aria-label="Search orthologs">
+    <div class="oma-list"></div>
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-top:14px">
       <a class="text-link" href="https://omabrowser.org/oma/vps/${encodeURIComponent(gene.uniprot)}/" target="_blank" rel="noopener">View all ${orthologs.length} orthologs on OMA Browser →</a>
     </p>`;
+
+  const listEl = container.querySelector(".oma-list");
+  const searchEl = container.querySelector(".oma-search");
+  let expanded = false;
+
+  const paint = () => {
+    const q = searchEl.value.trim().toLowerCase();
+    if (q) {
+      const hits = rows
+        .filter((r) =>
+          r.sci.toLowerCase().includes(q) ||
+          (r.canonicalid || "").toLowerCase().includes(q) ||
+          (r.omaid || "").toLowerCase().includes(q) ||
+          (r.modelLabel || "").toLowerCase().includes(q))
+        .sort((a, b) => (a.modelIdx < 0) - (b.modelIdx < 0) || relRank(a) - relRank(b) || a.distance - b.distance);
+      if (!hits.length) {
+        listEl.innerHTML = `<p class="notice muted">No orthologs match “${escapeHtml(searchEl.value.trim())}”.</p>`;
+        return;
+      }
+      listEl.innerHTML =
+        `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}${hits.length > CAP ? ` · showing ${CAP}` : ""}</p>` +
+        listBlock(hits.slice(0, CAP));
+      return;
+    }
+    if (!expanded) {
+      listEl.innerHTML = `<button type="button" class="oma-toggle" data-oma-toggle="open">Show all ${rows.length.toLocaleString()} orthologs ▾</button>`;
+      return;
+    }
+    const modelsHtml = models.length ? sectionHead("Model organisms") + listBlock(models) : "";
+    let othersHtml = "";
+    if (others.length) {
+      othersHtml = sectionHead(`Other species (${others.length})`) + listBlock(others.slice(0, CAP)) +
+        (others.length > CAP ? `<p class="oma-count">Showing ${CAP} of ${others.length} — search above or use OMA Browser for the rest.</p>` : "");
+    }
+    listEl.innerHTML = modelsHtml + othersHtml +
+      `<button type="button" class="oma-toggle" data-oma-toggle="close" style="margin-top:12px">Show less ▴</button>`;
+  };
+
+  searchEl.addEventListener("input", paint);
+  listEl.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-oma-toggle]");
+    if (!t) return;
+    expanded = t.dataset.omaToggle === "open";
+    paint();
+  });
+  paint();
 }
 
 // --- Post-translational modifications (UniProt sequence features) ---

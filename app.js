@@ -6122,7 +6122,6 @@ function renderStockCenterPage() {
           <p class="eyebrow">Dicty Stock Center</p>
           <h2>Order strains &amp; plasmids</h2>
           <p>Browse the Dictyostelium strain and plasmid collections, add what you need to your cart, then check out to send the request to the Stock Center. Shipping goes on your own FedEx account.</p>
-          <p class="notice muted" style="margin:8px 0 0">Interim catalog imported from the legacy Dicty Stock Center — being replaced by the full, current inventory.</p>
         </div>
       </header>
       <div class="record-body">

@@ -5320,15 +5320,15 @@ function renderTab(gene, tab) {
   if (tab === "Interactions") {
     return `
       <div class="data-block">
-        <h3>Protein interactions <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING database</span></h3>
-        <div data-string-results="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading STRING interactions for ${escapeHtml(gene.symbol)}…</p>
+        <h3>Interaction network <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING database</span></h3>
+        <div id="string-network-img" style="text-align:center">
+          <p class="notice muted">Loading network image…</p>
         </div>
       </div>
       <div class="data-block">
-        <h3>Interaction network</h3>
-        <div id="string-network-img" style="text-align:center">
-          <p class="notice muted">Loading network image…</p>
+        <h3>Protein interactions</h3>
+        <div data-string-results="${escapeHtml(gene.id)}">
+          <p class="notice muted">Loading STRING interactions for ${escapeHtml(gene.symbol)}…</p>
         </div>
       </div>`;
   }

@@ -879,6 +879,42 @@ const organisms = [
     papers: [
       { pmid: "38898145", title: "Chromosome-level genome assembly and annotation of the social amoeba Dictyostelium firmibasis", journal: "Scientific Data · 2024", url: "https://pubmed.ncbi.nlm.nih.gov/38898145/" }
     ]
+  },
+  {
+    id: "d-citrinum",
+    name: "Dictyostelium citrinum GS8b",
+    shortName: "D. citrinum GS8b",
+    group: "Group 4",
+    description: "A group 4 Dictyostelium species. This GS8b assembly was sequenced and annotated as part of a 2025 PNAS study of the rapid evolution of self/non-self recognition genes across the dictyostelids.",
+    genomeSize: "31 Mb",
+    chromosomes: "89 contigs",
+    genes: "~11,300",
+    assembly: "GCA_054859325.1",
+    assemblyName: "ASM5485932v1",
+    genomeFile: "/assets/genomes/D_citrinum_GS8b_genome.fna.gz",
+    ncbiUrl: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_054859325.1/",
+    amoebaDbUrl: "",
+    papers: [
+      { pmid: "41400994", title: "Hypermutable hotspot enables the rapid evolution of self/non-self recognition genes in Dictyostelium", journal: "PNAS · 2025", url: "https://pubmed.ncbi.nlm.nih.gov/41400994/" }
+    ]
+  },
+  {
+    id: "d-dimigraforme",
+    name: "Dictyostelium dimigraforme Ar5b",
+    shortName: "D. dimigraforme Ar5b",
+    group: "Group 4",
+    description: "A group 4 Dictyostelium species. This Ar5b assembly was sequenced and annotated as part of a 2025 PNAS study of the rapid evolution of self/non-self recognition genes across the dictyostelids.",
+    genomeSize: "35 Mb",
+    chromosomes: "76 contigs",
+    genes: "~12,700",
+    assembly: "GCA_054859025.1",
+    assemblyName: "ASM5485902v1",
+    genomeFile: "/assets/genomes/D_dimigraforme_Ar5b_genome.fna.gz",
+    ncbiUrl: "https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_054859025.1/",
+    amoebaDbUrl: "",
+    papers: [
+      { pmid: "41400994", title: "Hypermutable hotspot enables the rapid evolution of self/non-self recognition genes in Dictyostelium", journal: "PNAS · 2025", url: "https://pubmed.ncbi.nlm.nih.gov/41400994/" }
+    ]
   }
 ];
 

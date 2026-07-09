@@ -1454,6 +1454,44 @@ function initStructureViewer(uniprot) {
   }
 }
 
+// Large interactive structure on the Structures tab, colored by AlphaFold
+// per-residue confidence (pLDDT, stored in the PDB B-factor column).
+let currentViewerLarge = null;
+
+function initStructureViewerLarge(uniprot) {
+  const el = document.getElementById("af-viewer-large");
+  if (!el || !uniprot) return;
+  if (currentViewerLarge) { try { currentViewerLarge.clear(); } catch {} currentViewerLarge = null; }
+  el.innerHTML = `<p class="viewer-msg">Loading structure…</p>`;
+
+  const renderIntoEl = () => {
+    if (!document.getElementById("af-viewer-large")) return; // tab switched away before the lib loaded
+    const viewer = $3Dmol.createViewer(el, { backgroundColor: "white", antialias: true });
+    currentViewerLarge = viewer;
+    fetch(`/api/alphafold/${uniprot}`)
+      .then((r) => { if (!r.ok) throw new Error("not found"); return r.text(); })
+      .then((pdbData) => {
+        if (!document.getElementById("af-viewer-large")) return; // tab switched away during fetch
+        viewer.addModel(pdbData, "pdb");
+        viewer.setStyle({}, { cartoon: { colorscheme: { prop: "b", gradient: "roygb", min: 50, max: 90 } } });
+        viewer.zoomTo();
+        viewer.spin(true);
+        viewer.render();
+      })
+      .catch(() => { el.innerHTML = `<p class="viewer-msg">Structure unavailable</p>`; });
+  };
+
+  if (window.$3Dmol) {
+    renderIntoEl();
+  } else {
+    const script = document.createElement("script");
+    script.src = "https://3Dmol.csb.pitt.edu/build/3Dmol-min.js";
+    script.onload = renderIntoEl;
+    script.onerror = () => { el.innerHTML = `<p class="viewer-msg">Viewer unavailable</p>`; };
+    document.head.appendChild(script);
+  }
+}
+
 function renderRecord() {
   const gene = state.activeGene;
   if (!gene) return;
@@ -1542,6 +1580,7 @@ function loadTabData(gene, tab) {
       loadPubMedResults(gene);
       break;
     case "Structures":
+      requestAnimationFrame(() => initStructureViewerLarge(gene.uniprot));
       loadProteinProps(gene);
       loadDomains(gene);
       loadConservation(gene);
@@ -5312,7 +5351,19 @@ function renderTab(gene, tab) {
       const label = href ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(source)}</a>` : escapeHtml(source);
       return `<li><strong>${label}</strong><span>${escapeHtml(id)} · ${escapeHtml(detail)}</span></li>`;
     }).join("");
+    const viewerBlock = gene.uniprot ? `
+      <div class="data-block">
+        <h3>Predicted 3D structure <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— AlphaFold, colored by model confidence (pLDDT)</span></h3>
+        <div class="structure-viewer-large" id="af-viewer-large" data-uniprot="${escapeHtml(gene.uniprot)}"></div>
+        <div class="af-legend">
+          <span>Low confidence</span>
+          <span class="af-legend-bar" aria-hidden="true"></span>
+          <span>High confidence</span>
+        </div>
+        <p class="af-caption">Drag to rotate · scroll to zoom · <a href="https://alphafold.ebi.ac.uk/entry/${escapeHtml(gene.uniprot)}" target="_blank" rel="noopener">Open in AlphaFold DB →</a></p>
+      </div>` : "";
     return `
+      ${viewerBlock}
       <div class="data-block" data-protein-props></div>
       <div class="data-block">
         <h3>Domain architecture <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— InterPro / Pfam</span></h3>
@@ -5320,7 +5371,7 @@ function renderTab(gene, tab) {
       </div>
       <div class="data-block" data-conservation></div>
       <div class="data-block">
-        <h3>Predicted structures</h3>
+        <h3>Structure resources</h3>
         <ul class="list">${structureItems}</ul>
       </div>
       <div class="data-block">

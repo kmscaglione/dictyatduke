@@ -928,6 +928,45 @@ button:focus-visible,
   pointer-events: none;
 }
 
+/* All-tools index — uniform card grid, full (wrapping) descriptions */
+.tools-group {
+  margin: 8px 0 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+  font-size: 1.05rem;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tool-card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color .12s ease, box-shadow .12s ease, transform .12s ease;
+}
+.tool-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 8px 20px rgba(10, 79, 71, .1);
+  transform: translateY(-1px);
+}
+.tool-card strong {
+  display: block;
+  color: var(--teal-dark);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.tool-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
 .research-links {
   margin-top: 14px;
   padding: 0;

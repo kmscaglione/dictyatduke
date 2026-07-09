@@ -8898,9 +8898,9 @@ function renderToolsIndex() {
     </div></header>
     <div class="record-body">
       ${TOOLS_INDEX.map(([group, items]) => `
-        <h3 style="margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--line,#d7dee0)">${group}</h3>
-        <div class="source-links" aria-label="${escapeHtml(group)} tools">
-          ${items.map(([label, href, desc]) => `<a class="source-link" href="${href}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(desc)}</span></a>`).join("")}
+        <h3 class="tools-group">${escapeHtml(group)}</h3>
+        <div class="tools-grid" aria-label="${escapeHtml(group)} tools">
+          ${items.map(([label, href, desc]) => `<a class="tool-card" href="${href}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(desc)}</span></a>`).join("")}
         </div>`).join("")}
     </div></article>`;
 }

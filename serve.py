@@ -1890,32 +1890,25 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
     def _handle_stock_gwdi(self):
-        """Live search of the GWDI insertion bank (21k+ strains, too large to bundle)
-        via the dictyBase GraphQL API. Returns compact strain records for the cart."""
-        if _rate_limited(_GWDI_HITS, self.client_address[0], limit=60, window=60):
+        """Search the GWDI insertion bank (~21.5k strains) server-side against the
+        locally-hosted assets/stock_gwdi.json. Kept as a search (not bundled to the
+        client) because the bank is large and found by gene — but the data is ours."""
+        if _rate_limited(_GWDI_HITS, self.client_address[0], limit=120, window=60):
             self.send_json(429, {"strains": [], "error": "rate limited"})
             return
-        q = (parse_qs(urlparse(self.path).query).get("q") or [""])[0].strip()
+        q = (parse_qs(urlparse(self.path).query).get("q") or [""])[0].strip().lower()
         if len(q) < 2:
             self.send_json(200, {"strains": []})
             return
-        qs = q.replace("\\", "\\\\").replace('"', '\\"')[:80]
-        gql = ('{ listStrains(cursor:0, limit:150, filter:{strain_type:GWDI, label:"%s"})'
-               '{ strains{ id label summary in_stock } } }' % qs)
-        try:
-            body = json.dumps({"query": gql}).encode()
-            req = urllib.request.Request("https://graphql.dictybase.dev/graphql", body,
-                                         {"Content-Type": "application/json"})
-            with urllib.request.urlopen(req, timeout=15, context=SSL_CTX) as r:
-                data = json.loads(r.read())
-            rows = ((data.get("data") or {}).get("listStrains") or {}).get("strains") or []
-            out = [{"id": s["id"],
-                    "label": html.unescape(s.get("label") or s["id"]),
-                    "summary": html.unescape(" ".join((s.get("summary") or "").split())),
-                    "in_stock": bool(s.get("in_stock"))} for s in rows]
-            self.send_json(200, {"strains": out})
-        except Exception:
-            self.send_json(502, {"strains": [], "error": "GWDI search is temporarily unavailable"})
+        data = _load_json("stock_gwdi.json")          # cached by mtime
+        strains = data.get("strains", []) if isinstance(data, dict) else []
+        out = []
+        for s in strains:
+            if q in s.get("label", "").lower() or q in s.get("summary", "").lower():
+                out.append(s)
+                if len(out) >= 150:
+                    break
+        self.send_json(200, {"strains": out})
 
     def _send_proxy_bytes(self, status, ctype, body, cached=False):
         self.send_response(status)

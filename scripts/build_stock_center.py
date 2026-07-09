@@ -110,33 +110,49 @@ def fetch_type(strain_type, page=300):
 
 
 def main():
-    # Bundle the browseable strains (regular + bacterial). The GWDI insertion bank
-    # (~21.5k strains) is intentionally NOT bundled — it's queried live from the API
-    # via the /api/stock-gwdi proxy, since it's found by gene, not by browsing.
-    print("Fetching from", EP)
-    regular = fetch_type("REGULAR")
-    bacterial = fetch_type("BACTERIAL")
+    # mode: "all" (default) = both files; "main" = stock_center.json only;
+    # "gwdi" = stock_gwdi.json only.
+    mode = sys.argv[1] if len(sys.argv) > 1 else "all"
+    print("Fetching from %s (mode: %s)" % (EP, mode))
 
-    sc_path = os.path.join(ASSETS, "stock_center.json")
-    existing = json.load(open(sc_path)) if os.path.exists(sc_path) else {}
-    plasmids = existing.get("plasmids", [])
-    main_strains = sorted(regular + bacterial, key=lambda s: s["label"].lower())
-    main = {
-        "_meta": {
-            "description": "Dicty Stock Center catalog: browseable strains (regular + "
-                           "bacterial) and plasmids. The GWDI insertion bank is searched "
-                           "live via /api/stock-gwdi.",
-            "source": {"name": "dictyBase / Dicty Stock Center",
-                       "api": EP, "license": "CC BY 4.0"},
-            "counts": {"strains": len(main_strains), "plasmids": len(plasmids),
-                       "regular": len(regular), "bacterial": len(bacterial)},
-        },
-        "strains": main_strains,
-        "plasmids": plasmids,
-    }
-    json.dump(main, open(sc_path, "w"), ensure_ascii=False, separators=(",", ":"))
-    print("Wrote stock_center.json (%d strains + %d plasmids) %.2f MB"
-          % (len(main_strains), len(plasmids), os.path.getsize(sc_path) / 1e6))
+    if mode in ("all", "main"):
+        regular = fetch_type("REGULAR")
+        bacterial = fetch_type("BACTERIAL")
+        sc_path = os.path.join(ASSETS, "stock_center.json")
+        existing = json.load(open(sc_path)) if os.path.exists(sc_path) else {}
+        plasmids = existing.get("plasmids", [])
+        main_strains = sorted(regular + bacterial, key=lambda s: s["label"].lower())
+        main = {
+            "_meta": {
+                "description": "Dicty Stock Center catalog: browseable strains (regular + "
+                               "bacterial) and plasmids. GWDI insertion-bank strains are in "
+                               "stock_gwdi.json, searched via /api/stock-gwdi.",
+                "source": {"name": "dictyBase / Dicty Stock Center",
+                           "api": EP, "license": "CC BY 4.0"},
+                "counts": {"strains": len(main_strains), "plasmids": len(plasmids),
+                           "regular": len(regular), "bacterial": len(bacterial)},
+            },
+            "strains": main_strains,
+            "plasmids": plasmids,
+        }
+        json.dump(main, open(sc_path, "w"), ensure_ascii=False, separators=(",", ":"))
+        print("Wrote stock_center.json (%d strains + %d plasmids) %.2f MB"
+              % (len(main_strains), len(plasmids), os.path.getsize(sc_path) / 1e6))
+
+    if mode in ("all", "gwdi"):
+        gwdi = sorted(fetch_type("GWDI"), key=lambda s: s["label"].lower())
+        g_path = os.path.join(ASSETS, "stock_gwdi.json")
+        json.dump({
+            "_meta": {"description": "Dicty Stock Center GWDI (Genome-Wide Dictyostelium "
+                                     "Insertion) bank — hosted locally, searched via "
+                                     "/api/stock-gwdi.",
+                      "source": {"name": "dictyBase / Dicty Stock Center", "api": EP,
+                                 "license": "CC BY 4.0"},
+                      "counts": {"strains": len(gwdi)}},
+            "strains": gwdi,
+        }, open(g_path, "w"), ensure_ascii=False, separators=(",", ":"))
+        print("Wrote stock_gwdi.json (%d GWDI strains) %.2f MB"
+              % (len(gwdi), os.path.getsize(g_path) / 1e6))
 
 
 if __name__ == "__main__":

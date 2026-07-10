@@ -1947,9 +1947,9 @@ function renderCuratePage() {
         <p class="eyebrow">Curator</p>
         <h2>Curate gene summaries</h2>
         <p>Edit a gene's curated summary, note, and reference PMIDs directly, and
-        review community submissions. Curator sign-in required. Edits save to this
-        server's corpus and show immediately here; <strong>commit &amp; deploy</strong>
-        to publish them (see <code>docs/CURATION.md</code>).</p>
+        review community submissions. Curator sign-in required. <strong>Edits go
+        live on the site immediately</strong> — no deploy or terminal needed. Every
+        change is backed up and logged; grab a snapshot anytime with Download backup.</p>
       </div></header>
       <div class="record-body">
         <div id="cur-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
@@ -1959,6 +1959,8 @@ function renderCuratePage() {
           <span id="cur-msg" class="muted" style="font-size:13px"></span>
         </div>
         <div id="cur-work" hidden>
+          <p style="margin:0 0 12px"><a id="cur-backup" class="text-link" href="#" style="font-size:13px">⬇ Download backup</a>
+            <span class="muted" style="font-size:12px"> — all curation (gene + stock edits) and the edit log, as one file.</span></p>
           <h3 class="tools-group">Edit a gene</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
             <input id="cur-gene" type="text" placeholder="Gene symbol or DDB_G… (e.g. mhcA)" style="${FIELD};min-width:260px">
@@ -1983,7 +1985,7 @@ function renderCuratePage() {
             </div>
           </div>
           <h3 class="tools-group" style="margin-top:22px">Strains &amp; plasmids</h3>
-          <p class="muted" style="font-size:13px;margin:-4px 0 8px">Add or update a Dicty Stock Center catalog entry. Same deploy rule: edits save here, then <strong>commit &amp; deploy</strong> to publish.</p>
+          <p class="muted" style="font-size:13px;margin:-4px 0 8px">Add or update a Dicty Stock Center catalog entry. Edits go live immediately — no deploy needed.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
             <select id="stk-type" style="${FIELD}" aria-label="Type">
               <option value="strain">Strain</option>
@@ -2062,6 +2064,21 @@ function initCurate() {
   pw.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
   if (curatorToken) showWork();   // already signed in this session
 
+  // Download a backup snapshot (auth'd fetch → blob → save).
+  const backupLink = document.getElementById("cur-backup");
+  if (backupLink) backupLink.addEventListener("click", async (e) => {
+    e.preventDefault();
+    try {
+      const r = await fetch("/api/curator/backup", { headers: { Authorization: `Bearer ${curatorToken}` } });
+      if (!r.ok) { alert("Backup failed — your session may have expired."); return; }
+      const url = URL.createObjectURL(await r.blob());
+      const a = document.createElement("a");
+      a.href = url; a.download = "dicty-curation-backup.json";
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    } catch { alert("Backup failed."); }
+  });
+
   // --- Edit a gene ---
   const geneEl = document.getElementById("cur-gene");
   const loadMsg = document.getElementById("cur-load-msg");
@@ -2110,7 +2127,7 @@ function initCurate() {
           curator_name: (nameEl.value || "").trim() }) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) { saveMsg.textContent = d.error || "Save failed."; return; }
-      saveMsg.textContent = `Saved ✓ (${d.curator_date}). Commit & deploy to publish.`;
+      saveMsg.textContent = `Saved ✓ (${d.curator_date}) — live on the site now.`;
       document.getElementById("cur-e-date").textContent = d.curator_date;
     } catch { saveMsg.textContent = "Save failed — the previous version is intact."; }
   });
@@ -2232,7 +2249,7 @@ function initStockCurate() {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` }, body: JSON.stringify(payload) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) { saveMsg.textContent = d.error || "Save failed."; return; }
-      saveMsg.textContent = `${d.created ? "Added" : "Updated"} ✓ (${d.edited_date}). Commit & deploy to publish.`;
+      saveMsg.textContent = `${d.created ? "Added" : "Updated"} ✓ (${d.edited_date}) — live on the site now.`;
       $("stk-editing").textContent = `${d.id} (existing — editing)`;
     } catch { saveMsg.textContent = "Save failed — the previous catalog is intact."; }
   });
@@ -2248,7 +2265,7 @@ function initStockCurate() {
         body: JSON.stringify({ type: typeSel.value, id: id.toUpperCase() }) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) { saveMsg.textContent = d.error || "Delete failed."; return; }
-      saveMsg.textContent = `Deleted ✓. Commit & deploy to publish.`;
+      saveMsg.textContent = `Deleted ✓ — removed from the live catalog.`;
       form.setAttribute("hidden", "");
     } catch { saveMsg.textContent = "Delete failed — the previous catalog is intact."; }
   });

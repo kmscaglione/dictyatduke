@@ -45,3 +45,10 @@ assets/dictybase_corpus.json.bak
 assets/dictybase_corpus.json.tmp
 assets/stock_center.json.bak
 assets/stock_center.json.tmp
+assets/curation_overrides.json
+assets/curation_overrides.json.bak
+assets/curation_overrides.json.tmp
+assets/stock_overrides.json
+assets/stock_overrides.json.bak
+assets/stock_overrides.json.tmp
+assets/curation_log.jsonl

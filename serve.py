@@ -22,6 +22,10 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
 STOCK_PATH = pathlib.Path(ROOT) / "assets" / "stock_center.json"
+# Durable, gitignored curation overrides (survive `git reset --hard` deploys).
+OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "curation_overrides.json"
+STOCK_OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "stock_overrides.json"
+CURATION_LOG_PATH = pathlib.Path(ROOT) / "assets" / "curation_log.jsonl"
 
 # Recent-papers feed: cached PubMed results, refreshed at most once a day.
 PAPERS_CACHE = pathlib.Path(ROOT) / "cache" / "recent_papers.json"
@@ -773,48 +777,109 @@ def _load_json(name):
     return _API[name]
 
 
-def write_corpus(corpus):
-    """Persist the curated corpus SAFELY. The corpus is a single 3.4 MB file that
-    every gene page reads, so a bad write is a site-wide outage. Guards:
-      1. Serialize to a string FIRST — if the dict can't be JSON-encoded we raise
-         before touching the file on disk (the good copy is never harmed).
-      2. Back up the current good file to <name>.bak.
-      3. Write to a temp file, then os.replace() — an atomic rename, so readers
-         only ever see the old file or the fully-written new one (never a
-         half-written, truncated file even if the process dies mid-write).
-      4. Invalidate the in-process cache so gene pages reflect the edit at once
-         (_load_json caches by name and would otherwise serve the old copy until
-         the next restart).
-    """
-    data = json.dumps(corpus, separators=(",", ":"), ensure_ascii=False)  # (1)
-    if CORPUS_PATH.exists():
-        try:
-            shutil.copyfile(CORPUS_PATH, str(CORPUS_PATH) + ".bak")            # (2)
-        except OSError:
-            pass
-    tmp = str(CORPUS_PATH) + ".tmp"
-    with open(tmp, "w") as fh:
-        fh.write(data)
-    os.replace(tmp, CORPUS_PATH)                                             # (3)
-    _API.pop("dictybase_corpus.json", None)                                 # (4)
+# --- Durable curation via override files -----------------------------------
+# Curation (gene summaries, strains, plasmids) is edited through the web portal
+# and must SURVIVE code deploys, which run `git reset --hard`. reset --hard wipes
+# tracked files but LEAVES untracked/gitignored ones — so curation is written to
+# gitignored override files (never tracked), not to the base data files. The base
+# files stay in git as the seed; serve.py merges the overrides over them in memory
+# at read time. Result: fully web-based curation, live immediately, never lost on
+# a deploy, and the terminal is only ever needed for code. Every write keeps a
+# .bak and appends to an audit log (curation_log.jsonl) for rollback/history.
+_STOCK_BLOB = None   # cached merged stock catalog bytes, served at /assets/stock_center.json
 
 
-def write_stock(data):
-    """Persist the stock catalog (stock_center.json) with the same guards as
-    write_corpus: serialize-first, .bak backup, atomic os.replace, cache-invalidate.
-    The catalog is served as a static file, so an atomic replace also bumps the
-    mtime that the gzip cache keys on — clients pick the change up immediately."""
-    blob = json.dumps(data, separators=(",", ":"), ensure_ascii=False)
-    if STOCK_PATH.exists():
+def _read_json_file(path, default):
+    try:
+        return json.loads(pathlib.Path(path).read_text())
+    except (OSError, ValueError):
+        return default
+
+
+def _atomic_write_json(path, obj):
+    """Serialize-first (raises before touching disk if unencodable), back up the
+    current good file to <name>.bak, write a temp file, then atomic os.replace()."""
+    blob = json.dumps(obj, separators=(",", ":"), ensure_ascii=False)
+    p = pathlib.Path(path)
+    if p.exists():
         try:
-            shutil.copyfile(STOCK_PATH, str(STOCK_PATH) + ".bak")
+            shutil.copyfile(p, str(p) + ".bak")
         except OSError:
             pass
-    tmp = str(STOCK_PATH) + ".tmp"
+    tmp = str(p) + ".tmp"
     with open(tmp, "w") as fh:
         fh.write(blob)
-    os.replace(tmp, STOCK_PATH)
-    _API.pop("stock_center.json", None)
+    os.replace(tmp, p)
+
+
+def apply_gene_overrides():
+    """Merge curation_overrides.json over the base corpus into the in-process
+    cache, so every reader (via _load_json) sees curated edits. Re-run after each
+    save. The base file on disk is never modified."""
+    base = _read_json_file(CORPUS_PATH, {})
+    for ddb, fields in _read_json_file(OVERRIDES_PATH, {}).items():
+        base[ddb] = {**base.get(ddb, {}), **fields}
+    _API["dictybase_corpus.json"] = base
+
+
+def apply_stock_overrides():
+    """Merge stock_overrides.json over the base catalog (added/edited entries by
+    id, plus a deleted set) into the in-process cache AND the served blob."""
+    global _STOCK_BLOB
+    base = _read_json_file(STOCK_PATH, {"strains": [], "plasmids": []})
+    ov = _read_json_file(STOCK_OVERRIDES_PATH, {})
+    deleted = ov.get("deleted", {})
+    for key in ("strains", "plasmids"):
+        by_id = {e["id"]: e for e in base.get(key, []) if isinstance(e, dict) and e.get("id")}
+        for eid, entry in (ov.get(key) or {}).items():
+            by_id[eid] = entry
+        for eid in (deleted.get(key) or []):
+            by_id.pop(eid, None)
+        base[key] = sorted(by_id.values(),
+                           key=lambda e: (e.get("label") or e.get("name") or e.get("id") or "").lower())
+    base.setdefault("_meta", {}).setdefault("counts", {})
+    base["_meta"]["counts"]["strains"] = len(base.get("strains", []))
+    base["_meta"]["counts"]["plasmids"] = len(base.get("plasmids", []))
+    _API["stock_center.json"] = base
+    _STOCK_BLOB = json.dumps(base, separators=(",", ":"), ensure_ascii=False).encode()
+
+
+def _log_curation(kind, action, item_id, curator):
+    try:
+        line = json.dumps({"ts": datetime.datetime.utcnow().isoformat() + "Z",
+                           "type": kind, "action": action, "id": item_id,
+                           "curator": curator or "Curator"})
+        with open(CURATION_LOG_PATH, "a") as fh:
+            fh.write(line + "\n")
+    except OSError:
+        pass
+
+
+def save_gene_override(ddb, fields, curator):
+    ov = _read_json_file(OVERRIDES_PATH, {})
+    ov[ddb] = fields
+    _atomic_write_json(OVERRIDES_PATH, ov)
+    apply_gene_overrides()
+    _log_curation("gene", "edit", ddb, curator)
+
+
+def save_stock_override(kind, sid, entry, curator, delete=False):
+    key = "strains" if kind == "strain" else "plasmids"
+    ov = _read_json_file(STOCK_OVERRIDES_PATH, {})
+    ov.setdefault(key, {})
+    ov.setdefault("deleted", {}).setdefault("strains", [])
+    ov["deleted"].setdefault("plasmids", [])
+    if delete:
+        ov[key].pop(sid, None)
+        if sid not in ov["deleted"][key]:
+            ov["deleted"][key].append(sid)
+    else:
+        ov[key][sid] = entry
+        if sid in ov["deleted"][key]:
+            ov["deleted"][key].remove(sid)
+    _atomic_write_json(STOCK_OVERRIDES_PATH, ov)
+    apply_stock_overrides()
+    _log_curation(kind, "delete" if delete else "edit", sid, curator)
 
 
 def api_gene_rows():
@@ -1764,8 +1829,46 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"matches": matches})
             return
 
+        # Curator dashboard API — download a snapshot of all durable curation
+        # (gene overrides + stock overrides + the audit log) for backup.
+        if self.path.startswith("/api/curator/backup"):
+            if not self._auth(self._parse_token()):
+                self.send_json(401, {"error": "Unauthorized"})
+                return
+            try:
+                log_lines = CURATION_LOG_PATH.read_text().splitlines() if CURATION_LOG_PATH.exists() else []
+            except OSError:
+                log_lines = []
+            bundle = {
+                "exported": datetime.datetime.utcnow().isoformat() + "Z",
+                "gene_overrides": _read_json_file(OVERRIDES_PATH, {}),
+                "stock_overrides": _read_json_file(STOCK_OVERRIDES_PATH, {}),
+                "log": [json.loads(x) for x in log_lines if x.strip()],
+            }
+            body = json.dumps(bundle, indent=2).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Disposition", "attachment; filename=dicty-curation-backup.json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return
+
         raw = self.path.split("?")[0]
         _, ext = os.path.splitext(raw)
+        # The stock catalog is served with curator overrides merged in (durable
+        # web edits), not as the raw file on disk.
+        if raw == "/assets/stock_center.json" and _STOCK_BLOB is not None:
+            body = _STOCK_BLOB
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-cache, must-revalidate")
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return
         if raw == "/robots.txt":
             return self._serve_robots()
         if raw == "/sitemap.xml":
@@ -2587,15 +2690,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not ddb:
                 self.send_json(400, {"error": "No DDB ID — cannot merge without a DDB_G identifier"})
                 return
-            # Merge into corpus
-            corpus = json.loads(CORPUS_PATH.read_text()) if CORPUS_PATH.exists() else {}
-            if ddb not in corpus: corpus[ddb] = {}
-            corpus[ddb]["summary"] = entry["summary"]
-            corpus[ddb]["curator"] = curator_name
-            corpus[ddb]["curator_date"] = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
+            # Merge into the durable curation override (survives deploys).
+            base = _load_json("dictybase_corpus.json").get(ddb, {})
+            fields = {k: base[k] for k in ("summary", "curator", "curator_date",
+                                           "note", "curator_pmids") if k in base}
+            fields["summary"] = entry["summary"]
+            fields["curator"] = curator_name
+            fields["curator_date"] = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
             if entry.get("pmids"):
-                corpus[ddb]["curator_pmids"] = entry["pmids"]
-            write_corpus(corpus)   # atomic + backup + cache-invalidate
+                fields["curator_pmids"] = entry["pmids"]
+            save_gene_override(ddb, fields, curator_name)
             # Mark approved
             entry["status"] = "approved"
             entry["approved_by"] = curator_name
@@ -2628,9 +2732,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def _handle_curation_edit(self):
         """Curator edits a gene's curation DIRECTLY (no submit→approve dance).
-        This is the canonical curation path for the single-curator workflow — the
-        corpus file is the source of truth. Auth required; writes are guarded by
-        write_corpus() (atomic + backup + cache-invalidate)."""
+        The canonical curation path for the single-curator workflow. Auth required;
+        saved to the durable gene override (gitignored, survives deploys) via
+        save_gene_override() — atomic + .bak + audit log, live immediately."""
         if not self._auth(self._parse_token()):
             self.send_json(401, {"error": "Unauthorized"})
             return
@@ -2657,15 +2761,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": "A field is too long."})
             return
         try:
-            corpus = json.loads(CORPUS_PATH.read_text()) if CORPUS_PATH.exists() else {}
-            e = corpus.setdefault(ddb, {})
-            e["summary"] = summary
-            e["curator"] = curator
-            e["curator_date"] = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
-            e["note"] = note                     # WYSIWYG: empty clears it
-            e["curator_pmids"] = pmids            # WYSIWYG: empty clears it
-            write_corpus(corpus)
-            self.send_json(200, {"ok": True, "ddb": ddb, "curator_date": e["curator_date"]})
+            date = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
+            fields = {"summary": summary, "curator": curator, "curator_date": date,
+                      "note": note, "curator_pmids": pmids}   # WYSIWYG: empty clears
+            save_gene_override(ddb, fields, curator)           # durable override + log
+            self.send_json(200, {"ok": True, "ddb": ddb, "curator_date": date})
         except Exception as ex:
             print(f"[curate] edit error: {ex}", file=sys.stderr)
             self.send_json(500, {"error": "Save failed — the previous version is intact."})
@@ -2728,18 +2828,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 if v:
                     entry[k] = v
         try:
-            data = json.loads(STOCK_PATH.read_text()) if STOCK_PATH.exists() else {"strains": [], "plasmids": []}
-            arr = data.setdefault("strains" if kind == "strain" else "plasmids", [])
-            idx = next((i for i, e in enumerate(arr) if isinstance(e, dict) and e.get("id") == sid), None)
-            created = idx is None
-            if created:
-                arr.append(entry)
-            else:
-                arr[idx] = entry
-            data.setdefault("_meta", {}).setdefault("counts", {})
-            data["_meta"]["counts"]["strains"] = len(data.get("strains", []))
-            data["_meta"]["counts"]["plasmids"] = len(data.get("plasmids", []))
-            write_stock(data)
+            key = "strains" if kind == "strain" else "plasmids"
+            current = _load_json("stock_center.json").get(key, [])
+            created = not any(isinstance(e, dict) and e.get("id") == sid for e in current)
+            save_stock_override(kind, sid, entry, body.get("curator_name"))   # durable override + log
             self.send_json(200, {"ok": True, "id": sid, "created": created,
                                  "edited_date": entry["edited_date"]})
         except Exception as ex:
@@ -2758,18 +2850,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": "type and id are required."})
             return
         try:
-            data = json.loads(STOCK_PATH.read_text()) if STOCK_PATH.exists() else {}
             key = "strains" if kind == "strain" else "plasmids"
-            arr = data.get(key, [])
-            new = [e for e in arr if not (isinstance(e, dict) and e.get("id") == sid)]
-            if len(new) == len(arr):
+            current = _load_json("stock_center.json").get(key, [])
+            if not any(isinstance(e, dict) and e.get("id") == sid for e in current):
                 self.send_json(404, {"error": "Not found in the catalog."})
                 return
-            data[key] = new
-            data.setdefault("_meta", {}).setdefault("counts", {})
-            data["_meta"]["counts"]["strains"] = len(data.get("strains", []))
-            data["_meta"]["counts"]["plasmids"] = len(data.get("plasmids", []))
-            write_stock(data)
+            save_stock_override(kind, sid, None, body.get("curator_name"), delete=True)
             self.send_json(200, {"ok": True, "id": sid})
         except Exception as ex:
             print(f"[stock] delete error: {ex}", file=sys.stderr)
@@ -3258,6 +3344,10 @@ class Server(http.server.ThreadingHTTPServer):
 def main():
     port = int(os.environ.get("PORT", "8774"))
     host = os.environ.get("HOST", "127.0.0.1")
+    # Merge any durable curation overrides over the base data before serving, so
+    # the very first request already reflects curated edits.
+    apply_gene_overrides()
+    apply_stock_overrides()
     Server((host, port), Handler).serve_forever()
 
 

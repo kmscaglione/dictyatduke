@@ -40,3 +40,4 @@ interaction_model.csv
 ora_keyword.csv
 ora_tf_family.csv
 run_GO_enrichment.py
+.gemini_key

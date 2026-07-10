@@ -299,11 +299,27 @@ if not CURATOR_PASSWORD:
 #   4. Global caps:  a daily request ceiling AND a daily output-token budget,
 #                    both reset at UTC midnight, so a bad day can't blow past the
 #                    free-tier quota even if the per-IP limit is bypassed.
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-# Free-tier model. gemini-2.0-flash is fast, capable enough for this Q&A, and on
-# the free tier. Override with ANALYZE_MODEL=gemini-2.5-flash (also free tier,
-# stronger) or another AI Studio model id.
-ANALYZE_MODEL = os.environ.get("ANALYZE_MODEL", "gemini-2.0-flash")
+def _read_gemini_key():
+    """Key from GEMINI_API_KEY env (production: /etc/dicty.env) OR, for easy local
+    dev, a gitignored `.gemini_key` file next to serve.py. The file path avoids
+    fiddly inline env vars — `pbpaste > .gemini_key` and restart is enough."""
+    k = os.environ.get("GEMINI_API_KEY", "").strip()
+    if k:
+        return k
+    try:
+        return (pathlib.Path(ROOT) / ".gemini_key").read_text().strip()
+    except OSError:
+        return ""
+
+
+GEMINI_API_KEY = _read_gemini_key()
+# Free-tier model. gemini-flash-lite-latest is an auto-updating alias for the
+# current lightweight flash model — fast, capable enough for this Q&A, on the
+# free tier, and reliably available (the heavier flash models often 503 under
+# load). Verified working on this account 2026-07-10. Older ids like
+# gemini-2.0-flash return 429 (no free quota) and gemini-2.5-* are retired for
+# new keys. Override with ANALYZE_MODEL=<id> to use a stronger model.
+ANALYZE_MODEL = os.environ.get("ANALYZE_MODEL", "gemini-flash-lite-latest")
 ANALYZE_MAX_TOKENS = int(os.environ.get("ANALYZE_MAX_TOKENS", "1200"))   # output cap/call
 ANALYZE_Q_MAXCHARS = 2000          # user question hard cap
 ANALYZE_CTX_MAXCHARS = 12000       # attached data context hard cap
@@ -2026,8 +2042,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             text, out_tokens = _analyze_generate(question, context)
             _analyze_record_tokens(out_tokens)
         except urllib.error.HTTPError as e:
-            detail = "auth" if e.code in (400, 401, 403) else "upstream"
-            print(f"[analyze] Gemini HTTPError {e.code} ({detail})", file=sys.stderr)
+            # Log Gemini's own error message (it names the exact problem: bad key,
+            # unknown model, quota, etc.). The body describes the error and does
+            # NOT echo the API key, so it's safe to log.
+            try:
+                gmsg = ((json.loads(e.read() or b"{}").get("error") or {})
+                        .get("message", ""))[:300]
+            except Exception:
+                gmsg = ""
+            print(f"[analyze] Gemini HTTPError {e.code}: {gmsg}", file=sys.stderr)
             self.send_json(502, {"error": "The AI assistant is temporarily unavailable."})
             return
         except Exception as e:

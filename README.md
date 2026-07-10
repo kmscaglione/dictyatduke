@@ -2,8 +2,11 @@
 
 A modern, single-page reimplementation of the [dictyBase](https://dictybase.dev)
 *Dictyostelium* model-organism database: gene search and richly curated gene
-records, nine sequenced dictyostelid genomes, a genome browser, proteome
-viewers, community-curation forms, and genome downloads.
+records, 17 sequenced dictyostelid genomes (incl. wild *D. discoideum* isolates
+and two new species from Ahmed et al. 2025), a genome browser, local BLAST,
+proteome viewers, GO/phenotype enrichment, the Dicty Stock Center catalog,
+community-curation forms, an optional AI analysis assistant, and genome
+downloads.
 
 > **Status: beta.** Data and features are still being validated. This is a
 > research prototype, not the canonical resource. See [Roadmap](#roadmap) and
@@ -38,10 +41,13 @@ cloudflared tunnel --url http://127.0.0.1:8774
   transpile. `index.html` is the shell; `app.js` is the whole application;
   `styles.css` is all styling. Large content blobs live in separate
   `*-content.js` files loaded as globals.
-- **Backend:** `serve.py` — a ~250-line subclass of Python's
-  `http.server.SimpleHTTPRequestHandler`. It serves static files, falls back to
-  the SPA shell for client routes, exposes a few JSON/proxy API endpoints, and
-  adds cache-control + asset cache-busting.
+- **Backend:** `serve.py` — a ~3,000-line subclass of Python's
+  `http.server` handler (standard library only, no dependencies). It serves
+  static files, falls back to the SPA shell for client routes, exposes the
+  JSON/proxy/compute API endpoints (search, gene records, local BLAST,
+  enrichment, sequence tools, allowlisted third-party proxy, curator/community
+  submission, and an optional AI proxy), and adds cache-control + asset
+  cache-busting.
 - **Data:** static JSON files in `assets/`, generated from source files in
   `assets/dictybase-corpus/` and `assets/genomes/` plus one external download
   (the GO annotation file). See [Data pipeline](#data-pipeline).
@@ -62,10 +68,12 @@ Browser ──HTTP──> serve.py ──> static files (index.html, app.js, ass
 
 ```
 index.html            SPA shell: top nav, hero + gene search, content sections, footer
-app.js                The entire app (~180 KB): routing, gene records + tabs, tools,
-                      organisms, community forms, the curated-summary markup parser
+app.js                The entire app (~500 KB / ~9,900 lines): routing, gene records +
+                      tabs, all tools, organisms, community forms, the curated-summary
+                      markup parser
 styles.css            All styles. Theme via CSS custom properties in :root
-serve.py              Python HTTP server (static + SPA fallback + API + cache-busting)
+serve.py              Python HTTP server (~3,000 lines: static + SPA fallback + API +
+                      cache-busting), standard library only
 
 technique-content.js  window.techniqueContent  — protocols/methods content (large)
 teaching-content.js   window.teachingLabsContent — classroom resources
@@ -121,9 +129,13 @@ renders the matching view. Routes:
 |---|---|
 | `/` | home (hero + gene search) |
 | `/gene/:symbol` | gene record |
-| `/tools/:tool` | `genome-browser`, `blast`, `proteomics`, `heatstress`, `downloads` |
+| `/tools` | all-tools index |
+| `/tools/:tool` | `genome-browser`, `blast`, `sequence`, `convert`, `expression`, `enrichment`, `geneset`, `lab`, `proteomics`, `heatstress`, `downloads`, `basket`, `api`, `ai` (AI assistant), `stats` |
+| `/stock-center` | Dicty Stock Center catalog + order cart |
+| `/search/advanced` | advanced gene finder (facet filters) |
+| `/news`, `/news/archive` | news feed |
 | `/organisms/:id` | organism page |
-| `/community/:slug` | community forms (annotations, upload-data, corrections, suggestions, meetings, labs) |
+| `/community/:slug` | community forms (annotations, upload-data, corrections, suggestions, meetings, labs, disease-models) |
 | `/research/:slug`, `/research/techniques/:slug` | research/technique content |
 
 ### Gene search
@@ -221,6 +233,18 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
   the mapped gene. Program + database come from server allowlists; the query is
   written to a temp file and passed via `-query` (never a shell), size-capped and
   timed out.
+- `POST /api/enrichment`, `/api/geneset-report`, `/api/align`, `/api/idmap`,
+  `/api/codon-optimize`, `/api/restriction`, `/api/orf` — the analysis/bench
+  tools (GO/phenotype enrichment, gene-set report, MSA, ID mapping, codon
+  optimization, restriction/ORF finding).
+- `POST /api/analyze` — **optional AI assistant** ("Ask AI", `/tools/ai`).
+  Proxies one bounded prompt to a provider (Google Gemini free tier by default;
+  `_analyze_generate` is the only provider-specific code). **Disabled unless a
+  key is set** (`GEMINI_API_KEY` env, or a gitignored `.gemini_key` file);
+  `/api/version` exposes an `ai_assistant` flag so the UI hides the tool when
+  off. Heavily gated against public-proxy abuse: input-size caps, per-IP
+  rate limits (min + day), and global daily request + output-token ceilings
+  that reset at UTC midnight. Model via `ANALYZE_MODEL`.
 
 Everything else is a static file, or the SPA shell for client routes.
 
@@ -318,9 +342,9 @@ the NCBI hand-off.
    genome browser and Downloads page 404 until you re-download (see Data pipeline).
 3. **Cache transition.** See the cache caveat above — existing testers may need
    one hard refresh after a deploy; new visitors are fine.
-4. **`app.js` is one ~180 KB file.** No modules/build. Readable but large; a
-   future refactor could split it. `technique-content.js` (~318 KB) loads on
-   every page — a candidate for lazy-loading.
+4. **`app.js` is one ~500 KB / ~9,900-line file.** No modules/build. Readable
+   and sectioned, but large; a future refactor could split it. Some large
+   `*-content.js` blobs load on every page — candidates for lazy-loading.
 5. **No tests, no CI.** Verification has been manual (run the server, drive the
    UI). Worth adding before multi-developer work.
 6. **Port is hard-coded** to 8774 in `serve.py` (no longer reads `argv`).
@@ -333,32 +357,49 @@ the NCBI hand-off.
 
 ## Roadmap
 
-Data-depth parity with dictybase.dev was the focus. Done:
+Data-depth parity with dictybase.dev was the initial focus. Shipped since:
 
-- **P1** Linked curated gene summaries (gene/GO/PubMed cross-links).
-- **P2** Phenotypes tab from mutant-strain curation.
-- **P3** Curated references in the Literature tab.
-- **P4** Genome downloads page.
-- **P5** dictyBase-curated GO annotations (from the GO Consortium GAF).
-- **P6** Local BLAST against the bundled genomes (see below).
+- **Gene records** — linked curated summaries (gene/GO/PubMed cross-links),
+  phenotypes, curated references, GO annotations (GO Consortium GAF), protein
+  structures (AlphaFold + PDB), interactions (STRING), orthologs (OMA), PTMs,
+  and human-disease orthologs.
+- **Genome tools** — 17 dictyostelid genomes with a genome browser, local
+  BLAST, per-gene sequence retrieval, cross-species comparison, synteny, and
+  natural-variation panels; whole-genome + whole-database downloads.
+- **Analysis tools** — GO/phenotype enrichment, gene-set analysis, expression
+  comparison, developmental/insoluble proteome viewers, a gene ID converter,
+  sequence tools (region retrieval, in-silico PCR, MSA), and lab tools (CRISPR
+  guides, qPCR primers, codon optimizer, restriction/ORF).
+- **Dicty Stock Center** — a browseable strain/plasmid catalog (~8,300 entries)
+  plus the GWDI insertion bank (~21,500), with a cart that emails an order
+  request. *Data is scraped from the legacy catalog pages (interim); a proper
+  export/feed would replace it.*
+- **Community curation** — a guided gene-annotation form with curator review.
+- **AI analysis assistant** — an optional, key-gated "Ask AI" tool (`/tools/ai`),
+  clearly badged AI-generated. Off unless a provider key is set.
+- **Public REST API** (see above) and a command palette / advanced finder.
 
-Not done / out of scope:
+Not done / candidates:
 
-- **Dicty Stock Center** — ordering physical strains/plasmids. Out of scope for
-  a static reimplementation; best to link out to the official Stock Center.
-- A public/GraphQL **API** and automated tests.
+- Automated tests + CI (currently manual verification).
+- A proper Stock Center data export (replacing the interim scrape).
+- Splitting `app.js` into modules.
 
 ---
 
 ## Deployment notes
 
-Today the beta runs from a developer laptop (`serve.py`) exposed via a Cloudflare
-quick tunnel — the URL is ephemeral and the machine must stay on. For a stable
-deployment, host the static files + a small Python process (or port `serve.py`'s
-handful of endpoints to a managed runtime) and serve `assets/genomes/` from
-object storage / a CDN.
+**Live at <https://dicty.labs.duke.edu>** — a Duke AlmaLinux 9 VM running
+Apache (TLS) as a reverse proxy in front of `serve.py` (bound to
+`127.0.0.1:8774`) under a systemd unit (`dicty.service`). Deploys are a git
+pull: push to the Duke GitLab remote, then on the server
+`git fetch origin master && git reset --hard origin/master` (+ `systemctl
+restart dicty` only when `serve.py` changes — `app.js`/`styles.css`/JSON are
+read live). Secrets come from `/etc/dicty.env` (or, where that file isn't
+writable, a gitignored `.gemini_key` in the site dir for the AI key).
 
-**See [`docs/deployment.md`](docs/deployment.md) for a step-by-step public-host
-checklist** (Linux VM with systemd + Caddy/TLS + firewall, or a macOS laptop with
-Cloudflare Tunnel + launchd), and [`docs/cdn-setup.md`](docs/cdn-setup.md) for the
-optional CDN layer.
+**See [`deploy/DEPLOY-DUKE.md`](deploy/DEPLOY-DUKE.md)** for the exact
+server recipe (Apache vhost, systemd unit, SELinux, genome-data install, and
+the update/rollback flow), [`docs/deployment.md`](docs/deployment.md) for the
+general public-host checklist, and [`docs/cdn-setup.md`](docs/cdn-setup.md) for
+the optional CDN layer (the app already emits immutable/edge-cacheable headers).

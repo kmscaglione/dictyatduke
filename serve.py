@@ -270,10 +270,23 @@ def _base_url(handler):
     host = handler.headers.get("Host", "")
     return f"https://{host}" if host else ""
 
-# Curator auth. The password comes from the CURATOR_PASSWORD env var (no secret
-# in source). If unset, a random one is generated per run and printed to the log
-# so local dev still works; set CURATOR_PASSWORD in any real deployment.
-CURATOR_PASSWORD = os.environ.get("CURATOR_PASSWORD")
+# Curator BOOTSTRAP-admin password. Read from the CURATOR_PASSWORD env var, OR a
+# gitignored `.curator_password` file next to serve.py (same trick as .gemini_key —
+# handy on the Duke server where /etc/dicty.env isn't writable by kms205). If
+# neither is set, a random one is generated per run and printed to the log. This
+# is only the bootstrap login used to create the first named accounts; day-to-day
+# logins use the per-person accounts in curators.json.
+def _read_curator_password():
+    pw = (os.environ.get("CURATOR_PASSWORD") or "").strip()
+    if pw:
+        return pw
+    try:
+        return (pathlib.Path(ROOT) / ".curator_password").read_text().strip()
+    except OSError:
+        return ""
+
+
+CURATOR_PASSWORD = _read_curator_password()
 if not CURATOR_PASSWORD:
     CURATOR_PASSWORD = secrets.token_urlsafe(12)
     print(f"[serve] CURATOR_PASSWORD not set — generated dev password: {CURATOR_PASSWORD}",

@@ -55,3 +55,4 @@ assets/curation_log.jsonl
 assets/curators.json
 assets/curators.json.bak
 assets/curators.json.tmp
+.curator_password

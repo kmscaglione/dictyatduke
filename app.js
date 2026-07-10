@@ -8822,31 +8822,20 @@ function showHomeChrome(show) {
   if (caps) caps.hidden = !show;
   const startBanner = document.getElementById("start-banner");
   if (startBanner) startBanner.hidden = !show;
-  ["news-feed", "papers-feed"].forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) el.hidden = !(show && el.children.length > 0);
-  });
+  const papers = document.getElementById("papers-feed");
+  if (papers) papers.hidden = !(show && papers.children.length > 0);
 }
 
 const NEWS_TAG_COLORS = { new: "#0b746a", data: "#0a4f47", update: "#5b6678", community: "#8a5b16" };
+// News now surfaces only through the ticker (below the nav) and the full /news
+// page; the homepage feed section was removed.
 async function loadNews() {
-  const el = document.getElementById("news-feed");
-  if (!el) return;
   let data;
   try {
     const r = await fetch("/assets/news.json");
     data = r.ok ? await r.json() : null;
   } catch { return; }
-  const items = (data && data.items) || [];
-  renderNewsTicker(items);   // scrolling strip below the nav (all pages)
-  if (!items.length) { el.setAttribute("hidden", ""); return; }
-  el.hidden = !isHomeView;
-  el.innerHTML = `
-    <div class="news-head"><p class="eyebrow">dictyBase</p><h2><a class="text-link news-all-link" href="/news">News &amp; updates</a></h2></div>
-    <div class="news-list">
-      ${items.slice(0, 3).map(newsItemHTML).join("")}
-    </div>
-    <p style="margin-top:12px"><a class="text-link" href="/news">See all news &amp; updates →</a></p>`;
+  renderNewsTicker((data && data.items) || []);
 }
 
 // Scrolling news ticker below the nav — a seamless marquee of recent headlines.
@@ -8863,6 +8852,12 @@ function renderNewsTicker(items) {
   const base = one.repeat(Math.max(1, Math.ceil(6 / Math.min(items.length, 8))));
   track.innerHTML = base + base;
   ticker.removeAttribute("hidden");
+  // Set the duration from the actual width so the scroll speed (~50 px/s) stays
+  // readable and consistent no matter how many posts there are.
+  requestAnimationFrame(() => {
+    const dur = Math.max(24, (track.scrollWidth / 2) / 50);
+    track.style.animationDuration = dur.toFixed(1) + "s";
+  });
 }
 
 function newsItemHTML(it) {

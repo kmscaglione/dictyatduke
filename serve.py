@@ -273,42 +273,47 @@ if not CURATOR_PASSWORD:
     print(f"[serve] CURATOR_PASSWORD not set — generated dev password: {CURATOR_PASSWORD}",
           file=sys.stderr)
 
-# --- AI analysis assistant (Claude) -----------------------------------------
+# --- AI analysis assistant (Google Gemini, free tier) -----------------------
 # A public "Ask about this data" tool that proxies a single, bounded prompt to
-# the Anthropic API. This is a public endpoint with no login, so it is a prime
-# target for abuse (free LLM proxy) — every knob below exists to cap that.
+# the Google Gemini API (free tier via an AI Studio key — no per-token bill).
+# It is still a public endpoint with no login, so it is a prime target for abuse
+# (free LLM proxy). The caps below exist to stop that AND to stay comfortably
+# inside the free-tier request/day quota so it never spills into paid usage.
 #
-# It is OFF unless ANTHROPIC_API_KEY is set in the environment (like
+# It is OFF unless GEMINI_API_KEY is set in the environment (like
 # CURATOR_PASSWORD, no secret in source). With no key the endpoint returns a
 # clean "unavailable" so the UI can hide the tool; the site is otherwise
 # unaffected. Set the key + tune the caps in /etc/dicty.env when ready.
 #
+# NOTE on the free tier: Google MAY use free-tier (unpaid) inputs/outputs to
+# improve its models, including human review. The questions here are about
+# public gene data so the risk is low, but the UI disclaimer tells users not to
+# submit anything sensitive or unpublished.
+#
 # Gating layers (belt AND suspenders — any one tripping refuses the call):
-#   1. Feature flag: no ANTHROPIC_API_KEY  -> disabled.
+#   1. Feature flag: no GEMINI_API_KEY  -> disabled.
 #   2. Input caps:   question/context length + total prompt-char budget.
 #   3. Per-IP rate:  a few calls/min and /day (behind the Apache proxy every
 #                    client looks like 127.0.0.1, so this is effectively global
 #                    until the X-Forwarded-For change lands — deliberately tight).
-#   4. Global caps:  a hard daily request ceiling AND a daily output-token
-#                    budget, both reset at UTC midnight, so a bad day can't run
-#                    up an unbounded bill even if the per-IP limit is bypassed.
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
-# Cost tradeoff is the whole point here, so this defaults to Sonnet (strong,
-# ~5x cheaper than Opus). Override with ANALYZE_MODEL=claude-opus-4-8 for the
-# best answers, or claude-haiku-4-5 for the cheapest. The daily token budget
-# below caps spend regardless of which you pick.
-ANALYZE_MODEL = os.environ.get("ANALYZE_MODEL", "claude-sonnet-5")
+#   4. Global caps:  a daily request ceiling AND a daily output-token budget,
+#                    both reset at UTC midnight, so a bad day can't blow past the
+#                    free-tier quota even if the per-IP limit is bypassed.
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
+# Free-tier model. gemini-2.0-flash is fast, capable enough for this Q&A, and on
+# the free tier. Override with ANALYZE_MODEL=gemini-2.5-flash (also free tier,
+# stronger) or another AI Studio model id.
+ANALYZE_MODEL = os.environ.get("ANALYZE_MODEL", "gemini-2.0-flash")
 ANALYZE_MAX_TOKENS = int(os.environ.get("ANALYZE_MAX_TOKENS", "1200"))   # output cap/call
 ANALYZE_Q_MAXCHARS = 2000          # user question hard cap
 ANALYZE_CTX_MAXCHARS = 12000       # attached data context hard cap
 ANALYZE_PROMPT_MAXCHARS = 14000    # combined ceiling (defense in depth)
 ANALYZE_PER_IP_MIN = int(os.environ.get("ANALYZE_PER_IP_MIN", "4"))     # calls / 60s / ip
 ANALYZE_PER_IP_DAY = int(os.environ.get("ANALYZE_PER_IP_DAY", "40"))    # calls / day / ip
-ANALYZE_GLOBAL_DAY = int(os.environ.get("ANALYZE_GLOBAL_DAY", "1500"))  # calls / day (all)
-# Daily *output* token budget across everyone. At Sonnet's $15/1M output that's
-# ~$4.50/day if fully spent; scale to taste. Input tokens are tiny by comparison
-# (prompt is capped at ~14k chars) so the output budget is the meaningful lever.
-ANALYZE_TOKENS_DAY = int(os.environ.get("ANALYZE_TOKENS_DAY", "300000"))
+ANALYZE_GLOBAL_DAY = int(os.environ.get("ANALYZE_GLOBAL_DAY", "1000"))  # calls / day (all)
+# Daily *output* token budget across everyone. Free tier isn't billed per token,
+# so this is a soft usage guard (abuse + quota headroom), not a dollar ceiling.
+ANALYZE_TOKENS_DAY = int(os.environ.get("ANALYZE_TOKENS_DAY", "500000"))
 _ANALYZE_MIN = {}                  # ip -> [recent epochs]  (per-minute limiter)
 _ANALYZE_DAY = {}                  # ip -> [recent epochs]  (per-day limiter)
 _ANALYZE_USAGE = {"day": None, "calls": 0, "out_tokens": 0}   # global daily meter
@@ -357,33 +362,38 @@ def _analyze_record_tokens(out_tokens):
         _ANALYZE_USAGE["out_tokens"] += int(out_tokens or 0)
 
 
-def _analyze_call_claude(question, context):
-    """Single non-streaming Messages API call via stdlib urllib (serve.py has no
-    third-party deps). Returns (text, out_tokens). Raises on transport/HTTP error."""
+def _analyze_generate(question, context):
+    """Single generateContent call to the Google Gemini API via stdlib urllib
+    (serve.py has no third-party deps). Returns (text, out_tokens). Raises on
+    transport/HTTP error; returns a friendly note if the model declines/blocks."""
     user = question if not context else f"{question}\n\n--- Data context ---\n{context}"
     payload = {
-        "model": ANALYZE_MODEL,
-        "max_tokens": ANALYZE_MAX_TOKENS,
-        "system": ANALYZE_SYSTEM,
-        # Thinking off keeps latency and token spend bounded for a public tool.
-        "thinking": {"type": "disabled"},
-        "messages": [{"role": "user", "content": user}],
+        "system_instruction": {"parts": [{"text": ANALYZE_SYSTEM}]},
+        "contents": [{"role": "user", "parts": [{"text": user}]}],
+        "generationConfig": {"maxOutputTokens": ANALYZE_MAX_TOKENS, "temperature": 0.4},
     }
+    # Key goes in the header (x-goog-api-key), never the URL, so it can't leak
+    # into logs/referers.
+    url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+           f"{ANALYZE_MODEL}:generateContent")
     req = urllib.request.Request(
-        "https://api.anthropic.com/v1/messages",
-        data=json.dumps(payload).encode(),
-        headers={
-            "content-type": "application/json",
-            "x-api-key": ANTHROPIC_API_KEY,
-            "anthropic-version": "2023-06-01",
-        }, method="POST")
+        url, data=json.dumps(payload).encode(),
+        headers={"content-type": "application/json", "x-goog-api-key": GEMINI_API_KEY},
+        method="POST")
     with urllib.request.urlopen(req, timeout=60, context=SSL_CTX) as r:
         data = json.loads(r.read())
-    text = "".join(b.get("text", "") for b in data.get("content", [])
-                    if b.get("type") == "text").strip()
-    out_tokens = (data.get("usage") or {}).get("output_tokens", 0)
-    if data.get("stop_reason") == "refusal":
-        text = text or "I can't help with that request."
+    cands = data.get("candidates") or []
+    parts = (cands[0].get("content", {}).get("parts", []) if cands else [])
+    text = "".join(p.get("text", "") for p in parts).strip()
+    usage = data.get("usageMetadata") or {}
+    out_tokens = usage.get("candidatesTokenCount", 0)
+    if not text:
+        # Blocked prompt, safety stop, or an empty candidate — give a clean note
+        # rather than a blank box (finishReason / blockReason explain why).
+        reason = ((cands[0].get("finishReason") if cands else None)
+                  or (data.get("promptFeedback") or {}).get("blockReason") or "")
+        text = ("I can't help with that request." if reason
+                else "No answer was generated — please try rephrasing.")
     return text, out_tokens
 
 
@@ -1541,7 +1551,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             stamp = _data_version()
             meta["data_updated"] = (datetime.datetime.utcfromtimestamp(stamp).strftime("%Y-%m-%d")
                                     if stamp else "")
-            meta["ai_assistant"] = bool(ANTHROPIC_API_KEY)   # lets the UI hide the tool if off
+            meta["ai_assistant"] = bool(GEMINI_API_KEY)   # lets the UI hide the tool if off
             self.send_json(200, meta)
             return
         if self.path.startswith("/api/health"):
@@ -1984,10 +1994,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404)
 
     def _handle_analyze(self):
-        """Public, heavily-gated Claude proxy for the "Ask AI about this" tool.
-        Disabled unless ANTHROPIC_API_KEY is set. Every gate lives in
+        """Public, heavily-gated Gemini proxy for the "Ask AI about this" tool.
+        Disabled unless GEMINI_API_KEY is set. Every gate lives in
         _analyze_reserve(); see the config block for the abuse model."""
-        if not ANTHROPIC_API_KEY:
+        if not GEMINI_API_KEY:
             self.send_json(503, {"error": "The AI assistant is not enabled on this server.",
                                  "disabled": True})
             return
@@ -2013,11 +2023,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(code, {"error": msg})
             return
         try:
-            text, out_tokens = _analyze_call_claude(question, context)
+            text, out_tokens = _analyze_generate(question, context)
             _analyze_record_tokens(out_tokens)
         except urllib.error.HTTPError as e:
-            detail = "auth" if e.code in (401, 403) else "upstream"
-            print(f"[analyze] Anthropic HTTPError {e.code} ({detail})", file=sys.stderr)
+            detail = "auth" if e.code in (400, 401, 403) else "upstream"
+            print(f"[analyze] Gemini HTTPError {e.code} ({detail})", file=sys.stderr)
             self.send_json(502, {"error": "The AI assistant is temporarily unavailable."})
             return
         except Exception as e:

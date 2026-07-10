@@ -3156,7 +3156,7 @@ function renderBlastPage() {
 
         <details class="data-block">
           <summary style="cursor:pointer;font-weight:800">Search NCBI instead (all organisms, protein databases)</summary>
-          <form class="annotation-form" id="blast-form" novalidate style="margin-top:14px">
+          <form class="annotation-form form-wide" id="blast-form" novalidate style="margin-top:14px">
             <div class="form-field">
               <label for="blast-program">BLAST program <span class="required">*</span></label>
               <select id="blast-program" name="PROGRAM" required>
@@ -3171,6 +3171,7 @@ function renderBlastPage() {
               <label for="blast-query">Query sequence <span class="required">*</span></label>
               <textarea id="blast-query" name="QUERY" required rows="8" placeholder="Paste a nucleotide or protein sequence in FASTA format or as raw sequence&#10;&#10;&gt;my_sequence&#10;ATGCATGCATGC..."></textarea>
             </div>
+            <div class="form-row">
             <div class="form-field">
               <label for="blast-db">Database</label>
               <select id="blast-db" name="DATABASE">
@@ -3198,6 +3199,7 @@ function renderBlastPage() {
                   <option value="">All organisms</option>
                 </optgroup>
               </select>
+            </div>
             </div>
             <div class="form-actions" style="display:flex;gap:10px;flex-wrap:wrap">
               <button type="submit" class="button primary">Run BLAST on NCBI</button>

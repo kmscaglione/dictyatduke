@@ -772,6 +772,32 @@ def _load_json(name):
     return _API[name]
 
 
+def write_corpus(corpus):
+    """Persist the curated corpus SAFELY. The corpus is a single 3.4 MB file that
+    every gene page reads, so a bad write is a site-wide outage. Guards:
+      1. Serialize to a string FIRST — if the dict can't be JSON-encoded we raise
+         before touching the file on disk (the good copy is never harmed).
+      2. Back up the current good file to <name>.bak.
+      3. Write to a temp file, then os.replace() — an atomic rename, so readers
+         only ever see the old file or the fully-written new one (never a
+         half-written, truncated file even if the process dies mid-write).
+      4. Invalidate the in-process cache so gene pages reflect the edit at once
+         (_load_json caches by name and would otherwise serve the old copy until
+         the next restart).
+    """
+    data = json.dumps(corpus, separators=(",", ":"), ensure_ascii=False)  # (1)
+    if CORPUS_PATH.exists():
+        try:
+            shutil.copyfile(CORPUS_PATH, str(CORPUS_PATH) + ".bak")            # (2)
+        except OSError:
+            pass
+    tmp = str(CORPUS_PATH) + ".tmp"
+    with open(tmp, "w") as fh:
+        fh.write(data)
+    os.replace(tmp, CORPUS_PATH)                                             # (3)
+    _API.pop("dictybase_corpus.json", None)                                 # (4)
+
+
 def api_gene_rows():
     """ddb -> {ddb,symbol,name,location,ncbiGene}; plus a lowercase symbol->ddb map."""
     if "_rows" not in _API:
@@ -1673,6 +1699,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, items)
             return
 
+        # Curator dashboard API — raw corpus entry for a gene, to seed the edit
+        # form (returns the summary WITH markup, unlike the public gene record).
+        if self.path.startswith("/api/curator/entry"):
+            if not self._auth(self._parse_token()):
+                self.send_json(401, {"error": "Unauthorized"})
+                return
+            ddb = (parse_qs(urlparse(self.path).query).get("ddb") or [""])[0].strip()
+            e = _load_json("dictybase_corpus.json").get(ddb, {})
+            self.send_json(200, {"ddb": ddb, "summary": e.get("summary", ""),
+                                 "note": e.get("note", ""), "curator": e.get("curator", ""),
+                                 "pmids": e.get("curator_pmids", ""),
+                                 "curator_date": e.get("curator_date", "")})
+            return
+
         raw = self.path.split("?")[0]
         _, ext = os.path.splitext(raw)
         if raw == "/robots.txt":
@@ -1980,6 +2020,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_approve()
         elif self.path == "/api/curator/reject":
             self._handle_curation_reject()
+        elif self.path == "/api/curator/edit":
+            self._handle_curation_edit()
         elif self.path.startswith("/api/blast?") and "async=1" in urlparse(self.path).query:
             self._handle_blast_async()                   # pool-bounded, pollable
         elif self.path == "/api/blast":
@@ -2498,7 +2540,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             corpus[ddb]["curator_date"] = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
             if entry.get("pmids"):
                 corpus[ddb]["curator_pmids"] = entry["pmids"]
-            CORPUS_PATH.write_text(json.dumps(corpus, separators=(",", ":")))
+            write_corpus(corpus)   # atomic + backup + cache-invalidate
             # Mark approved
             entry["status"] = "approved"
             entry["approved_by"] = curator_name
@@ -2528,6 +2570,50 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"ok": True})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_curation_edit(self):
+        """Curator edits a gene's curation DIRECTLY (no submit→approve dance).
+        This is the canonical curation path for the single-curator workflow — the
+        corpus file is the source of truth. Auth required; writes are guarded by
+        write_corpus() (atomic + backup + cache-invalidate)."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 65536)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request"})
+            return
+        ddb = (body.get("ddb") or "").strip()
+        summary = (body.get("summary") or "").strip()
+        note = (body.get("note") or "").strip()
+        pmids = (body.get("pmids") or "").strip()
+        curator = (body.get("curator_name") or "Curator").strip()[:80] or "Curator"
+        # Validate BEFORE touching the corpus — a bad edit must never land.
+        if not ddb.startswith("DDB_G"):
+            self.send_json(400, {"error": "A valid DDB_G… identifier is required."})
+            return
+        if len(summary) < 2:
+            self.send_json(400, {"error": "Summary is empty — refusing to blank the gene. "
+                                          "Enter a summary (or use Reject to remove a submission)."})
+            return
+        if len(summary) > 20000 or len(note) > 4000 or len(pmids) > 2000:
+            self.send_json(400, {"error": "A field is too long."})
+            return
+        try:
+            corpus = json.loads(CORPUS_PATH.read_text()) if CORPUS_PATH.exists() else {}
+            e = corpus.setdefault(ddb, {})
+            e["summary"] = summary
+            e["curator"] = curator
+            e["curator_date"] = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
+            e["note"] = note                     # WYSIWYG: empty clears it
+            e["curator_pmids"] = pmids            # WYSIWYG: empty clears it
+            write_corpus(corpus)
+            self.send_json(200, {"ok": True, "ddb": ddb, "curator_date": e["curator_date"]})
+        except Exception as ex:
+            print(f"[curate] edit error: {ex}", file=sys.stderr)
+            self.send_json(500, {"error": "Save failed — the previous version is intact."})
 
     def _handle_api_status(self):
         def updated(fname):

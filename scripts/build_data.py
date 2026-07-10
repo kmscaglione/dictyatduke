@@ -113,12 +113,17 @@ def build_phenotypes():
 
 # ---------------------------------------------------------------------------
 # dictybase_corpus.json summaries  <-  genesummary.csv
-# Merge linked summaries (with wiki markup) into the existing corpus and decode
-# HTML entities. Preserves existing curator notes / legacy phenotypes.
+# genesummary.csv is the legacy dictyBase SEED. It fills in genes that haven't
+# been hand-curated, but it MUST NOT overwrite a gene edited through the curator
+# UI — that path (serve.py write_corpus) stamps `curator_date`, which the CSV
+# never sets, so we skip any entry that has one. Without this guard, re-running
+# build_data.py would silently wipe every curation. The corpus JSON is the
+# source of truth for hand-curated genes; the CSV only seeds the rest.
 # ---------------------------------------------------------------------------
 def merge_summaries():
     corpus_path = os.path.join(ASSETS, "dictybase_corpus.json")
     corpus = json.load(open(corpus_path)) if os.path.exists(corpus_path) else {}
+    kept = 0
     with open(os.path.join(CORPUS_SRC, "genesummary.csv"), newline="") as fh:
         for row in csv.reader(fh, delimiter="\t"):
             if len(row) < 3:
@@ -130,13 +135,18 @@ def merge_summaries():
             if not summary:
                 continue
             e = corpus.setdefault(ddb, {})
+            if e.get("curator_date"):          # hand-curated via the UI — never clobber
+                kept += 1
+                continue
             e["summary"] = html.unescape(summary)
             if row[1].strip():
                 e["curator"] = row[1].strip()
-    # decode entities everywhere (idempotent)
+    # decode entities everywhere (idempotent), but leave hand-curated entries as-is
     for v in corpus.values():
-        if isinstance(v, dict) and v.get("summary"):
+        if isinstance(v, dict) and v.get("summary") and not v.get("curator_date"):
             v["summary"] = html.unescape(v["summary"])
+    if kept:
+        print(f"  preserved {kept} hand-curated summary(ies) (curator_date set)")
     _write("dictybase_corpus.json", corpus)
 
 

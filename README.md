@@ -218,12 +218,21 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
 - `GET  /api/alphafold/{uniprot}` — proxies the AlphaFold PDB for a UniProt ID
   (adds CORS so 3Dmol.js can load it).
 - `GET  /api/curator/queue` — list pending community curations *(auth)*.
+- `GET  /api/curator/entry?ddb=DDB_G…` — raw corpus entry (summary **with**
+  markup) to seed the edit form *(auth)*.
 - `POST /api/upload` — multipart file/data submission → `uploads/`.
 - `POST /api/curator/login` — password → bearer token.
 - `POST /api/curator/submit` — community gene-curation submission.
-- `POST /api/curator/approve` — approve a curation; **merges it into
+- `POST /api/curator/edit` — **curator edits a gene directly** (the canonical
+  single-curator path); writes the summary/note/PMIDs into the corpus *(auth)*.
+- `POST /api/curator/approve` — approve a community curation; **merges it into
   `dictybase_corpus.json`** *(auth)*.
 - `POST /api/curator/reject` — reject a curation *(auth)*.
+
+  All corpus writes go through `write_corpus()` (serialize-first, `.bak` backup,
+  atomic rename, cache-invalidate) so a bad edit can't corrupt or blank the
+  shared 3.4 MB file. The curator dashboard is at **`/tools/curate`** (unlisted).
+  **Curation workflow + markup cheatsheet: [`docs/CURATION.md`](docs/CURATION.md).**
 - `GET  /api/sequence?ddb=DDB_G…&type=genomic|cdna|protein&symbol=…` — returns a
   gene's sequence as a FASTA download, extracted on the fly from the D. discoideum
   genome + GFF (cDNA = spliced exons, protein = translated CDS). Powers the

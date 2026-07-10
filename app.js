@@ -1746,6 +1746,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initAnalyze();
+  } else if (tool === "curate") {
+    toolsShell.innerHTML = renderCuratePage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initCurate();
   }
 }
 
@@ -1926,6 +1931,184 @@ async function loadStats(token) {
         </tbody>
       </table></div>`;
   } catch { out.innerHTML = `<div class="empty-state">Could not load stats.</div>`; }
+}
+
+// --- Curator dashboard (unlisted, /tools/curate) ---------------------------
+// The canonical curation path for the single-curator workflow: sign in, edit a
+// gene's summary/note/PMIDs directly (source of truth is the corpus file), and
+// review community submissions. Edits save to THIS instance's corpus and are
+// read live; publishing to production is a commit + deploy (see docs/CURATION.md).
+let curatorToken = null;
+
+function renderCuratePage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Curator</p>
+        <h2>Curate gene summaries</h2>
+        <p>Edit a gene's curated summary, note, and reference PMIDs directly, and
+        review community submissions. Curator sign-in required. Edits save to this
+        server's corpus and show immediately here; <strong>commit &amp; deploy</strong>
+        to publish them (see <code>docs/CURATION.md</code>).</p>
+      </div></header>
+      <div class="record-body">
+        <div id="cur-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
+          <input id="cur-pw" type="password" aria-label="Curator password" placeholder="Curator password" style="${FIELD};min-width:220px">
+          <input id="cur-name" type="text" placeholder="Your name (attribution)" style="${FIELD};min-width:200px">
+          <button type="button" id="cur-login">Sign in</button>
+          <span id="cur-msg" class="muted" style="font-size:13px"></span>
+        </div>
+        <div id="cur-work" hidden>
+          <h3 class="tools-group">Edit a gene</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+            <input id="cur-gene" type="text" placeholder="Gene symbol or DDB_G… (e.g. mhcA)" style="${FIELD};min-width:260px">
+            <button type="button" id="cur-load">Load</button>
+            <span id="cur-load-msg" class="muted" style="font-size:13px"></span>
+          </div>
+          <div id="cur-editor" hidden>
+            <div class="kv" style="font-size:13px;margin-bottom:8px">
+              <span>Gene</span><strong id="cur-e-gene"></strong>
+              <span>Last curated</span><strong id="cur-e-date"></strong>
+            </div>
+            <label style="font-weight:600;font-size:14px;display:block;margin:8px 0 4px">Summary
+              <span class="muted" style="font-weight:400">— dictyBase markup ok: <code>[/gene/DDB_G… sym]</code>, <code>''italics''</code>, PubMed links</span></label>
+            <textarea id="cur-summary" rows="8" style="width:100%;${FIELD};resize:vertical;font-size:14px;line-height:1.55"></textarea>
+            <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Curator note <span class="muted" style="font-weight:400">(optional)</span></label>
+            <input id="cur-note" type="text" style="width:100%;${FIELD}">
+            <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Reference PMIDs <span class="muted" style="font-weight:400">(optional, comma-separated)</span></label>
+            <input id="cur-pmids" type="text" placeholder="12345678, 23456789" style="width:100%;${FIELD}">
+            <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+              <button type="button" id="cur-save">Save curation</button>
+              <span id="cur-save-msg" class="muted" style="font-size:13px"></span>
+            </div>
+          </div>
+          <h3 class="tools-group" style="margin-top:22px">Community submissions</h3>
+          <div id="cur-queue"><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function initCurate() {
+  const loginBtn = document.getElementById("cur-login");
+  if (!loginBtn) return;
+  const pw = document.getElementById("cur-pw");
+  const nameEl = document.getElementById("cur-name");
+  const msg = document.getElementById("cur-msg");
+  const showWork = () => {
+    document.getElementById("cur-auth").style.display = "none";
+    document.getElementById("cur-work").removeAttribute("hidden");
+    loadCurQueue();
+  };
+  const login = async () => {
+    const password = (pw.value || "").trim();
+    if (!password) { pw.focus(); return; }
+    msg.textContent = "Signing in…";
+    try {
+      const r = await fetch("/api/curator/login", { method: "POST",
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password }) });
+      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong password."; return; }
+      curatorToken = (await r.json()).token;
+      msg.textContent = "";
+      showWork();
+    } catch { msg.textContent = "Sign-in failed — try again."; }
+  };
+  loginBtn.addEventListener("click", login);
+  pw.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
+  if (curatorToken) showWork();   // already signed in this session
+
+  // --- Edit a gene ---
+  const geneEl = document.getElementById("cur-gene");
+  const loadMsg = document.getElementById("cur-load-msg");
+  const editor = document.getElementById("cur-editor");
+  const resolveDdb = (tok) => {
+    tok = (tok || "").trim();
+    if (/^DDB_G/i.test(tok)) return tok.replace(/^ddb_g/i, "DDB_G");
+    const n = normalize(tok);
+    const g = geneIndex.find((x) => normalize(x.symbol) === n || normalize(x.id) === n);
+    return g ? g.id : "";
+  };
+  const load = async () => {
+    const ddb = resolveDdb(geneEl.value);
+    if (!ddb) { loadMsg.textContent = "Gene not found — enter a symbol or DDB_G id."; editor.setAttribute("hidden", ""); return; }
+    loadMsg.textContent = "Loading…";
+    try {
+      const r = await fetch(`/api/curator/entry?ddb=${encodeURIComponent(ddb)}`, { headers: { Authorization: `Bearer ${curatorToken}` } });
+      if (!r.ok) { loadMsg.textContent = r.status === 401 ? "Session expired — reload and sign in again." : "Load failed."; return; }
+      const d = await r.json();
+      loadMsg.textContent = "";
+      const typed = geneEl.value.trim();
+      document.getElementById("cur-e-gene").textContent = ddb + (typed && !/^DDB_G/i.test(typed) ? ` (${typed})` : "");
+      document.getElementById("cur-e-date").textContent = d.curator_date || "never";
+      document.getElementById("cur-summary").value = d.summary || "";
+      document.getElementById("cur-note").value = d.note || "";
+      document.getElementById("cur-pmids").value = d.pmids || "";
+      editor.dataset.ddb = ddb;
+      editor.removeAttribute("hidden");
+    } catch { loadMsg.textContent = "Load failed."; }
+  };
+  document.getElementById("cur-load").addEventListener("click", load);
+  geneEl.addEventListener("keydown", (e) => { if (e.key === "Enter") load(); });
+
+  document.getElementById("cur-save").addEventListener("click", async () => {
+    const saveMsg = document.getElementById("cur-save-msg");
+    const ddb = editor.dataset.ddb;
+    const summary = document.getElementById("cur-summary").value.trim();
+    if (summary.length < 2) { saveMsg.textContent = "Summary is empty."; return; }
+    saveMsg.textContent = "Saving…";
+    try {
+      const r = await fetch("/api/curator/edit", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify({ ddb, summary,
+          note: document.getElementById("cur-note").value.trim(),
+          pmids: document.getElementById("cur-pmids").value.trim(),
+          curator_name: (nameEl.value || "").trim() }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { saveMsg.textContent = d.error || "Save failed."; return; }
+      saveMsg.textContent = `Saved ✓ (${d.curator_date}). Commit & deploy to publish.`;
+      document.getElementById("cur-e-date").textContent = d.curator_date;
+    } catch { saveMsg.textContent = "Save failed — the previous version is intact."; }
+  });
+
+  // --- Community submission review (approve/reject) ---
+  document.getElementById("cur-queue").addEventListener("click", async (e) => {
+    const btn = e.target.closest(".cur-approve, .cur-reject");
+    if (!btn) return;
+    const approve = btn.classList.contains("cur-approve");
+    if (!approve && !confirm("Reject this submission?")) return;
+    btn.disabled = true;
+    try {
+      const r = await fetch(approve ? "/api/curator/approve" : "/api/curator/reject", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify({ id: btn.dataset.cid, curator_name: (nameEl.value || "").trim() || "Curator" }) });
+      if (r.ok) loadCurQueue();
+      else { const d = await r.json().catch(() => ({})); alert(d.error || "Action failed"); btn.disabled = false; }
+    } catch { btn.disabled = false; }
+  });
+}
+
+async function loadCurQueue() {
+  const el = document.getElementById("cur-queue");
+  if (!el) return;
+  try {
+    const r = await fetch("/api/curator/queue", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) { el.innerHTML = `<p class="notice muted">Could not load submissions (session may have expired).</p>`; return; }
+    const items = (await r.json()).filter((x) => x.status === "pending");
+    if (!items.length) { el.innerHTML = `<p class="notice muted">No pending community submissions.</p>`; return; }
+    el.innerHTML = items.map((it) => `
+      <div class="data-block" style="margin-bottom:10px">
+        <div class="kv" style="font-size:13px">
+          <span>Gene</span><strong>${escapeHtml(it.gene || "")} ${it.ddb ? `(${escapeHtml(it.ddb)})` : `<span style="color:#b91c1c">— no DDB id, can't approve</span>`}</strong>
+          <span>From</span><strong>${escapeHtml(it.submitter_name || "")}</strong>
+        </div>
+        <p style="font-size:13px;white-space:pre-wrap;margin:6px 0">${escapeHtml(it.summary || "")}</p>
+        ${it.pmids ? `<p style="font-size:12px;color:var(--muted)">PMIDs: ${escapeHtml(it.pmids)}</p>` : ""}
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <button type="button" class="cur-approve" data-cid="${escapeHtml(it.id)}"${it.ddb ? "" : " disabled"}>Approve → corpus</button>
+          <button type="button" class="cur-reject" data-cid="${escapeHtml(it.id)}">Reject</button>
+        </div>
+      </div>`).join("");
+  } catch { el.innerHTML = `<p class="notice muted">Could not load submissions.</p>`; }
 }
 
 function renderExpressionPage() {
@@ -8464,7 +8647,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai", "curate"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -8848,7 +9031,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai", "curate"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }

@@ -43,3 +43,5 @@ run_GO_enrichment.py
 .gemini_key
 assets/dictybase_corpus.json.bak
 assets/dictybase_corpus.json.tmp
+assets/stock_center.json.bak
+assets/stock_center.json.tmp

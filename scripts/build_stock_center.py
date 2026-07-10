@@ -173,12 +173,29 @@ def main():
     plasmids = existing.get("plasmids", [])
     regular = bacterial = None
 
+    # Curator hand-edits (made via /tools/curate → write_stock) carry an
+    # `edited_date`. A re-fetch must NOT clobber them: the curator's version wins
+    # by id, and curator-added entries not in the fetch are kept. Without this,
+    # re-running build_stock_center.py would silently wipe every stock edit.
+    def _preserve(fetched, existing_list):
+        edited = {e["id"]: e for e in existing_list
+                  if isinstance(e, dict) and e.get("edited_date") and e.get("id")}
+        if not edited:
+            return fetched
+        by_id = {e["id"]: e for e in fetched if isinstance(e, dict) and e.get("id")}
+        by_id.update(edited)      # curator versions win; curator-only ids added
+        print("  preserved %d hand-edited stock entr%s (edited_date set)"
+              % (len(edited), "y" if len(edited) == 1 else "ies"))
+        return list(by_id.values())
+
     if mode in ("all", "main", "strains"):
         regular = fetch_type("REGULAR")
         bacterial = fetch_type("BACTERIAL")
-        strains = sorted(regular + bacterial, key=lambda s: s["label"].lower())
+        merged = _preserve(regular + bacterial, existing.get("strains", []))
+        strains = sorted(merged, key=lambda s: (s.get("label") or s.get("id") or "").lower())
     if mode in ("all", "main", "plasmids"):
-        plasmids = sorted(fetch_plasmids(), key=lambda p: p["name"].lower())
+        merged = _preserve(fetch_plasmids(), existing.get("plasmids", []))
+        plasmids = sorted(merged, key=lambda p: (p.get("name") or p.get("id") or "").lower())
 
     if mode in ("all", "main", "strains", "plasmids"):
         counts = {"strains": len(strains), "plasmids": len(plasmids)}

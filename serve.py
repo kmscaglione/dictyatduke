@@ -21,6 +21,7 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 (UPLOADS_DIR / "curations").mkdir(exist_ok=True)
 
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
+STOCK_PATH = pathlib.Path(ROOT) / "assets" / "stock_center.json"
 
 # Recent-papers feed: cached PubMed results, refreshed at most once a day.
 PAPERS_CACHE = pathlib.Path(ROOT) / "cache" / "recent_papers.json"
@@ -796,6 +797,24 @@ def write_corpus(corpus):
         fh.write(data)
     os.replace(tmp, CORPUS_PATH)                                             # (3)
     _API.pop("dictybase_corpus.json", None)                                 # (4)
+
+
+def write_stock(data):
+    """Persist the stock catalog (stock_center.json) with the same guards as
+    write_corpus: serialize-first, .bak backup, atomic os.replace, cache-invalidate.
+    The catalog is served as a static file, so an atomic replace also bumps the
+    mtime that the gzip cache keys on — clients pick the change up immediately."""
+    blob = json.dumps(data, separators=(",", ":"), ensure_ascii=False)
+    if STOCK_PATH.exists():
+        try:
+            shutil.copyfile(STOCK_PATH, str(STOCK_PATH) + ".bak")
+        except OSError:
+            pass
+    tmp = str(STOCK_PATH) + ".tmp"
+    with open(tmp, "w") as fh:
+        fh.write(blob)
+    os.replace(tmp, STOCK_PATH)
+    _API.pop("stock_center.json", None)
 
 
 def api_gene_rows():
@@ -1713,6 +1732,38 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                  "curator_date": e.get("curator_date", "")})
             return
 
+        # Curator dashboard API — look up a strain/plasmid to seed the edit form.
+        # ?type=strain|plasmid & (id=DBS…/DBP… for an exact entry, OR q=text to
+        # search label/name/summary and return up to 15 matches to pick from).
+        if self.path.startswith("/api/curator/stock-entry"):
+            if not self._auth(self._parse_token()):
+                self.send_json(401, {"error": "Unauthorized"})
+                return
+            q = parse_qs(urlparse(self.path).query)
+            kind = (q.get("type") or [""])[0].strip()
+            sid = (q.get("id") or [""])[0].strip()
+            term = (q.get("q") or [""])[0].strip().lower()
+            key = "strains" if kind == "strain" else "plasmids"
+            arr = _load_json("stock_center.json").get(key, [])
+            if sid:
+                entry = next((e for e in arr if isinstance(e, dict) and e.get("id") == sid), None)
+                self.send_json(200, {"found": entry is not None, "entry": entry or {}})
+                return
+            matches = []
+            if term:
+                for e in arr:
+                    if not isinstance(e, dict):
+                        continue
+                    hay = " ".join(str(e.get(f, "")) for f in
+                                   ("id", "label", "name", "summary", "description", "genotype")).lower()
+                    if term in hay:
+                        matches.append({"id": e.get("id"),
+                                        "label": e.get("label") or e.get("name") or e.get("id")})
+                        if len(matches) >= 15:
+                            break
+            self.send_json(200, {"matches": matches})
+            return
+
         raw = self.path.split("?")[0]
         _, ext = os.path.splitext(raw)
         if raw == "/robots.txt":
@@ -2022,6 +2073,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_reject()
         elif self.path == "/api/curator/edit":
             self._handle_curation_edit()
+        elif self.path == "/api/curator/stock-edit":
+            self._handle_stock_edit()
+        elif self.path == "/api/curator/stock-delete":
+            self._handle_stock_delete()
         elif self.path.startswith("/api/blast?") and "async=1" in urlparse(self.path).query:
             self._handle_blast_async()                   # pool-bounded, pollable
         elif self.path == "/api/blast":
@@ -2614,6 +2669,111 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         except Exception as ex:
             print(f"[curate] edit error: {ex}", file=sys.stderr)
             self.send_json(500, {"error": "Save failed — the previous version is intact."})
+
+    # --- Stock Center curation (strains + plasmids) -----------------------
+    def _stock_body(self):
+        """Read + auth-check a stock edit/delete request. Returns (body, error).
+        On error, error is a (code, message) tuple and body is None."""
+        if not self._auth(self._parse_token()):
+            return None, (401, "Unauthorized")
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 65536)
+            return json.loads(self.rfile.read(length) or b"{}"), None
+        except (ValueError, json.JSONDecodeError):
+            return None, (400, "Invalid request")
+
+    def _handle_stock_edit(self):
+        """Curator adds or updates one strain or plasmid in stock_center.json.
+        `type` is 'strain' or 'plasmid'; matching is by `id` (DBS…/DBP…). Marked
+        with `edited_date` so a re-fetch (build_stock_center.py) won't clobber it."""
+        body, err = self._stock_body()
+        if err:
+            self.send_json(err[0], {"error": err[1]})
+            return
+        kind = (body.get("type") or "").strip()
+        sid = (body.get("id") or "").strip()
+        name = (body.get("name") or body.get("label") or "").strip()
+        if kind not in ("strain", "plasmid"):
+            self.send_json(400, {"error": "type must be 'strain' or 'plasmid'."})
+            return
+        prefix = "DBS" if kind == "strain" else "DBP"
+        if not sid.startswith(prefix):
+            self.send_json(400, {"error": f"A valid {prefix}… id is required for a {kind}."})
+            return
+        if not name:
+            self.send_json(400, {"error": "A label/name is required."})
+            return
+        # Build the entry from allowed fields only (cap lengths).
+        entry = {"id": sid, "in_stock": bool(body.get("in_stock")),
+                 "edited_date": datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()}
+        def field(k, maxlen=6000):
+            v = (body.get(k) or "").strip()
+            return v[:maxlen]
+        if kind == "strain":
+            entry["label"] = name[:200]
+            for k in ("summary", "genotype", "phenotype"):
+                v = field(k)
+                if v:
+                    entry[k] = v
+            names = body.get("names")
+            if isinstance(names, str):
+                names = [n.strip() for n in names.split(",")]
+            names = [n[:120] for n in (names or []) if isinstance(n, str) and n.strip()]
+            if names:
+                entry["names"] = names[:20]
+        else:
+            entry["name"] = name[:200]
+            for k in ("description", "depositor", "genbank"):
+                v = field(k)
+                if v:
+                    entry[k] = v
+        try:
+            data = json.loads(STOCK_PATH.read_text()) if STOCK_PATH.exists() else {"strains": [], "plasmids": []}
+            arr = data.setdefault("strains" if kind == "strain" else "plasmids", [])
+            idx = next((i for i, e in enumerate(arr) if isinstance(e, dict) and e.get("id") == sid), None)
+            created = idx is None
+            if created:
+                arr.append(entry)
+            else:
+                arr[idx] = entry
+            data.setdefault("_meta", {}).setdefault("counts", {})
+            data["_meta"]["counts"]["strains"] = len(data.get("strains", []))
+            data["_meta"]["counts"]["plasmids"] = len(data.get("plasmids", []))
+            write_stock(data)
+            self.send_json(200, {"ok": True, "id": sid, "created": created,
+                                 "edited_date": entry["edited_date"]})
+        except Exception as ex:
+            print(f"[stock] edit error: {ex}", file=sys.stderr)
+            self.send_json(500, {"error": "Save failed — the previous catalog is intact."})
+
+    def _handle_stock_delete(self):
+        """Curator removes one strain or plasmid by id."""
+        body, err = self._stock_body()
+        if err:
+            self.send_json(err[0], {"error": err[1]})
+            return
+        kind = (body.get("type") or "").strip()
+        sid = (body.get("id") or "").strip()
+        if kind not in ("strain", "plasmid") or not sid:
+            self.send_json(400, {"error": "type and id are required."})
+            return
+        try:
+            data = json.loads(STOCK_PATH.read_text()) if STOCK_PATH.exists() else {}
+            key = "strains" if kind == "strain" else "plasmids"
+            arr = data.get(key, [])
+            new = [e for e in arr if not (isinstance(e, dict) and e.get("id") == sid)]
+            if len(new) == len(arr):
+                self.send_json(404, {"error": "Not found in the catalog."})
+                return
+            data[key] = new
+            data.setdefault("_meta", {}).setdefault("counts", {})
+            data["_meta"]["counts"]["strains"] = len(data.get("strains", []))
+            data["_meta"]["counts"]["plasmids"] = len(data.get("plasmids", []))
+            write_stock(data)
+            self.send_json(200, {"ok": True, "id": sid})
+        except Exception as ex:
+            print(f"[stock] delete error: {ex}", file=sys.stderr)
+            self.send_json(500, {"error": "Delete failed — the previous catalog is intact."})
 
     def _handle_api_status(self):
         def updated(fname):

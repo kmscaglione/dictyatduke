@@ -1982,6 +1982,51 @@ function renderCuratePage() {
               <span id="cur-save-msg" class="muted" style="font-size:13px"></span>
             </div>
           </div>
+          <h3 class="tools-group" style="margin-top:22px">Strains &amp; plasmids</h3>
+          <p class="muted" style="font-size:13px;margin:-4px 0 8px">Add or update a Dicty Stock Center catalog entry. Same deploy rule: edits save here, then <strong>commit &amp; deploy</strong> to publish.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+            <select id="stk-type" style="${FIELD}" aria-label="Type">
+              <option value="strain">Strain</option>
+              <option value="plasmid">Plasmid</option>
+            </select>
+            <input id="stk-q" type="text" placeholder="Search by name, or paste a DBS…/DBP… id" style="${FIELD};min-width:280px">
+            <button type="button" id="stk-find">Find</button>
+            <button type="button" id="stk-new">+ Add new</button>
+            <span id="stk-msg" class="muted" style="font-size:13px"></span>
+          </div>
+          <div id="stk-matches" style="margin-bottom:8px"></div>
+          <div id="stk-form" hidden>
+            <div class="kv" style="font-size:13px;margin-bottom:8px"><span>Editing</span><strong id="stk-editing"></strong></div>
+            <label style="font-weight:600;font-size:14px;display:block;margin:6px 0 4px">ID <span class="muted" style="font-weight:400">(DBS… strain / DBP… plasmid — required)</span></label>
+            <input id="stk-id" type="text" style="width:100%;${FIELD}">
+            <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Name / label</label>
+            <input id="stk-name" type="text" style="width:100%;${FIELD}">
+            <label style="display:flex;gap:8px;align-items:center;margin:12px 0;font-size:14px;font-weight:600"><input type="checkbox" id="stk-instock"> In stock</label>
+            <div class="stk-strain-only">
+              <label style="font-weight:600;font-size:14px;display:block;margin:6px 0 4px">Summary</label>
+              <textarea id="stk-summary" rows="3" style="width:100%;${FIELD};resize:vertical"></textarea>
+              <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Genotype</label>
+              <input id="stk-genotype" type="text" style="width:100%;${FIELD}">
+              <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Phenotype</label>
+              <input id="stk-phenotype" type="text" style="width:100%;${FIELD}">
+              <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Also known as <span class="muted" style="font-weight:400">(comma-separated)</span></label>
+              <input id="stk-names" type="text" style="width:100%;${FIELD}">
+            </div>
+            <div class="stk-plasmid-only">
+              <label style="font-weight:600;font-size:14px;display:block;margin:6px 0 4px">Description</label>
+              <textarea id="stk-description" rows="3" style="width:100%;${FIELD};resize:vertical"></textarea>
+              <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">Depositor</label>
+              <input id="stk-depositor" type="text" style="width:100%;${FIELD}">
+              <label style="font-weight:600;font-size:14px;display:block;margin:10px 0 4px">GenBank accession</label>
+              <input id="stk-genbank" type="text" style="width:100%;${FIELD}">
+            </div>
+            <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+              <button type="button" id="stk-save">Save</button>
+              <button type="button" id="stk-delete" style="background:#fff;color:#b91c1c;border:1px solid #e5b4b4">Delete</button>
+              <span id="stk-save-msg" class="muted" style="font-size:13px"></span>
+            </div>
+          </div>
+
           <h3 class="tools-group" style="margin-top:22px">Community submissions</h3>
           <div id="cur-queue"><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
         </div>
@@ -2084,6 +2129,128 @@ function initCurate() {
       if (r.ok) loadCurQueue();
       else { const d = await r.json().catch(() => ({})); alert(d.error || "Action failed"); btn.disabled = false; }
     } catch { btn.disabled = false; }
+  });
+
+  initStockCurate();
+}
+
+// Stock Center curation (strains + plasmids) — the section inside /tools/curate.
+function initStockCurate() {
+  const typeSel = document.getElementById("stk-type");
+  if (!typeSel) return;
+  const nameEl = document.getElementById("cur-name");
+  const q = document.getElementById("stk-q");
+  const msg = document.getElementById("stk-msg");
+  const matchesEl = document.getElementById("stk-matches");
+  const form = document.getElementById("stk-form");
+  const saveMsg = document.getElementById("stk-save-msg");
+  const $ = (id) => document.getElementById(id);
+  const isStrain = () => typeSel.value === "strain";
+
+  // Show only the fields for the current type.
+  const applyType = () => {
+    const strain = isStrain();
+    form.querySelectorAll(".stk-strain-only").forEach((el) => el.style.display = strain ? "" : "none");
+    form.querySelectorAll(".stk-plasmid-only").forEach((el) => el.style.display = strain ? "none" : "");
+    q.placeholder = strain ? "Search by name, or paste a DBS… id" : "Search by name, or paste a DBP… id";
+  };
+  typeSel.addEventListener("change", () => { applyType(); form.setAttribute("hidden", ""); matchesEl.innerHTML = ""; });
+  applyType();
+
+  const fill = (e) => {
+    $("stk-id").value = e.id || "";
+    $("stk-name").value = e.label || e.name || "";
+    $("stk-instock").checked = !!e.in_stock;
+    $("stk-summary").value = e.summary || "";
+    $("stk-genotype").value = e.genotype || "";
+    $("stk-phenotype").value = e.phenotype || "";
+    $("stk-names").value = Array.isArray(e.names) ? e.names.join(", ") : "";
+    $("stk-description").value = e.description || "";
+    $("stk-depositor").value = e.depositor || "";
+    $("stk-genbank").value = e.genbank || "";
+  };
+  const openForm = (e, label) => {
+    fill(e || {});
+    $("stk-editing").textContent = label;
+    saveMsg.textContent = "";
+    matchesEl.innerHTML = "";
+    form.removeAttribute("hidden");
+  };
+  const loadById = async (id) => {
+    msg.textContent = "Loading…";
+    try {
+      const r = await fetch(`/api/curator/stock-entry?type=${typeSel.value}&id=${encodeURIComponent(id)}`,
+        { headers: { Authorization: `Bearer ${curatorToken}` } });
+      if (!r.ok) { msg.textContent = r.status === 401 ? "Session expired — reload." : "Load failed."; return; }
+      const d = await r.json();
+      msg.textContent = "";
+      if (d.found) openForm(d.entry, `${id} (existing — editing)`);
+      else openForm({ id }, `${id} (not found — will be added)`);
+    } catch { msg.textContent = "Load failed."; }
+  };
+  const find = async () => {
+    const term = (q.value || "").trim();
+    matchesEl.innerHTML = "";
+    if (!term) { q.focus(); return; }
+    if (/^DB[SP]\d/i.test(term)) { loadById(term.toUpperCase()); return; }
+    msg.textContent = "Searching…";
+    try {
+      const r = await fetch(`/api/curator/stock-entry?type=${typeSel.value}&q=${encodeURIComponent(term)}`,
+        { headers: { Authorization: `Bearer ${curatorToken}` } });
+      if (!r.ok) { msg.textContent = "Search failed."; return; }
+      const d = await r.json();
+      msg.textContent = "";
+      const m = d.matches || [];
+      if (!m.length) { matchesEl.innerHTML = `<p class="notice muted" style="font-size:13px">No matches. Use “+ Add new” to create one.</p>`; return; }
+      matchesEl.innerHTML = m.map((x) =>
+        `<button type="button" class="stk-pick text-link" data-id="${escapeHtml(x.id)}" style="display:block;background:none;border:0;padding:3px 0;cursor:pointer;font-size:13px;text-align:left">${escapeHtml(x.label)} <span class="muted">${escapeHtml(x.id)}</span></button>`).join("");
+    } catch { msg.textContent = "Search failed."; }
+  };
+  $("stk-find").addEventListener("click", find);
+  q.addEventListener("keydown", (e) => { if (e.key === "Enter") find(); });
+  matchesEl.addEventListener("click", (e) => {
+    const b = e.target.closest(".stk-pick");
+    if (b) loadById(b.dataset.id);
+  });
+  $("stk-new").addEventListener("click", () => openForm({}, `New ${typeSel.value}`));
+
+  $("stk-save").addEventListener("click", async () => {
+    const id = $("stk-id").value.trim();
+    const name = $("stk-name").value.trim();
+    const prefix = isStrain() ? "DBS" : "DBP";
+    if (!id.toUpperCase().startsWith(prefix)) { saveMsg.textContent = `ID must start with ${prefix}.`; return; }
+    if (!name) { saveMsg.textContent = "Name/label is required."; return; }
+    const payload = { type: typeSel.value, id: id.toUpperCase(), name, in_stock: $("stk-instock").checked,
+      curator_name: (nameEl && nameEl.value || "").trim() };
+    if (isStrain()) Object.assign(payload, { summary: $("stk-summary").value.trim(),
+      genotype: $("stk-genotype").value.trim(), phenotype: $("stk-phenotype").value.trim(), names: $("stk-names").value.trim() });
+    else Object.assign(payload, { description: $("stk-description").value.trim(),
+      depositor: $("stk-depositor").value.trim(), genbank: $("stk-genbank").value.trim() });
+    saveMsg.textContent = "Saving…";
+    try {
+      const r = await fetch("/api/curator/stock-edit", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` }, body: JSON.stringify(payload) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { saveMsg.textContent = d.error || "Save failed."; return; }
+      saveMsg.textContent = `${d.created ? "Added" : "Updated"} ✓ (${d.edited_date}). Commit & deploy to publish.`;
+      $("stk-editing").textContent = `${d.id} (existing — editing)`;
+    } catch { saveMsg.textContent = "Save failed — the previous catalog is intact."; }
+  });
+
+  $("stk-delete").addEventListener("click", async () => {
+    const id = $("stk-id").value.trim();
+    if (!id) return;
+    if (!confirm(`Remove ${id} from the catalog?`)) return;
+    saveMsg.textContent = "Deleting…";
+    try {
+      const r = await fetch("/api/curator/stock-delete", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify({ type: typeSel.value, id: id.toUpperCase() }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { saveMsg.textContent = d.error || "Delete failed."; return; }
+      saveMsg.textContent = `Deleted ✓. Commit & deploy to publish.`;
+      form.setAttribute("hidden", "");
+    } catch { saveMsg.textContent = "Delete failed — the previous catalog is intact."; }
   });
 }
 

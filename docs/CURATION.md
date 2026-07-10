@@ -74,6 +74,37 @@ refreshes automatically on its own monthly schedule.)
 
 ---
 
+## Strains & plasmids (stock catalog)
+
+Same dashboard, same rules. In the **Strains & plasmids** section of
+`/tools/curate`:
+
+1. Pick **Strain** or **Plasmid**.
+2. **Find** an entry — type a name to search, or paste a `DBS…`/`DBP…` id to
+   jump straight to it. Click a match to load it. Or click **+ Add new** for a
+   brand-new entry.
+3. Edit the fields (toggle **In stock**, fix the genotype/summary, etc.) and
+   **Save**. **Delete** removes an entry from the catalog.
+4. **Commit & deploy** to publish — same two commands as above, but the file is
+   `assets/stock_center.json`:
+   ```bash
+   git add assets/stock_center.json && git commit -m "stock: <id> <what changed>"
+   git push gitlab master
+   # then on the server: git fetch origin master && git reset --hard origin/master
+   ```
+
+Notes:
+- The catalog is normally rebuilt from the Dicty Stock Center's GraphQL API by
+  `scripts/build_stock_center.py`. A re-run **will not overwrite** anything you
+  edited here — hand-edited entries carry an `edited_date` that the rebuild
+  preserves (curator-added entries are kept too). So editing and re-fetching are
+  both safe.
+- Writes are atomic with a `.bak` backup, exactly like gene summaries.
+- The huge GWDI insertion bank (`stock_gwdi.json`, ~21k strains) is **not** edited
+  here — it's a bulk import, refreshed by `build_stock_center.py gwdi`.
+
+---
+
 ## Summary markup cheatsheet
 
 The summary field accepts dictyBase wiki markup, rendered to safe HTML:

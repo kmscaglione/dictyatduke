@@ -228,8 +228,14 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
 - `POST /api/curator/approve` — approve a community curation; **merges it into
   `dictybase_corpus.json`** *(auth)*.
 - `POST /api/curator/reject` — reject a curation *(auth)*.
+- `GET  /api/curator/stock-entry?type=strain|plasmid&(id=…|q=…)` — look up or
+  search a Stock Center entry to seed the edit form *(auth)*.
+- `POST /api/curator/stock-edit` — add/update a strain or plasmid in
+  `stock_center.json` (marks `edited_date` so a re-fetch won't clobber it) *(auth)*.
+- `POST /api/curator/stock-delete` — remove a strain or plasmid *(auth)*.
 
-  All corpus writes go through `write_corpus()` (serialize-first, `.bak` backup,
+  Corpus **and** stock writes go through `write_corpus()` / `write_stock()`
+  (serialize-first, `.bak` backup,
   atomic rename, cache-invalidate) so a bad edit can't corrupt or blank the
   shared 3.4 MB file. The curator dashboard is at **`/tools/curate`** (unlisted).
   **Curation workflow + markup cheatsheet: [`docs/CURATION.md`](docs/CURATION.md).**

@@ -4253,7 +4253,7 @@ function renderDiseaseModelsPage() {
       </header>
       <div class="record-body">
         <input id="disease-filter" type="search" placeholder="Filter by Dicty gene, human ortholog, or disease…" aria-label="Filter disease models" style="width:100%;max-width:440px;padding:8px 10px;border:1px solid var(--line,#d7dee0);border-radius:8px;margin-bottom:12px">
-        <div data-disease-results><p class="notice muted">Loading disease models…</p></div>
+        <div data-disease-results>${loadingHTML("Loading disease models…")}</div>
       </div>
     </article>`;
 }
@@ -5346,7 +5346,7 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Phenotypes</h3>
         <div data-phenotype-results="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading phenotypes for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading phenotypes for ${gene.symbol}…`)}
         </div>
       </div>`;
   }
@@ -5356,11 +5356,11 @@ function renderTab(gene, tab) {
         <h3>Literature</h3>
         <input type="search" class="lit-search" placeholder="Filter all papers by title, journal, or author…" aria-label="Filter literature">
         <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading curated references…</p>
+          ${loadingHTML("Loading curated references…")}
         </div>
         <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener" style="margin-top:16px">Search PubMed for all ${escapeHtml(gene.symbol)} papers</a>
         <div class="pubmed-results" data-pubmed-results="${gene.id}">
-          <p class="notice muted">Loading recent PubMed matches for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading recent PubMed matches for ${gene.symbol}…`)}
         </div>
         ${gene.literature && gene.literature.length ? `
         <div class="seeded-literature">
@@ -5375,13 +5375,13 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Interaction network <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING database</span></h3>
         <div id="string-network-img" style="text-align:center">
-          <p class="notice muted">Loading network image…</p>
+          ${loadingHTML("Loading network image…")}
         </div>
       </div>
       <div class="data-block">
         <h3>Protein interactions</h3>
         <div data-string-results="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading STRING interactions for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading STRING interactions for ${gene.symbol}…`)}
         </div>
       </div>`;
   }
@@ -5396,7 +5396,7 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
         <div data-oma-results="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading orthologs for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading orthologs for ${gene.symbol}…`)}
         </div>
       </div>`;
   }
@@ -5406,7 +5406,7 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Post-translational modifications <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— UniProt</span></h3>
         <div data-ptm-results="${escapeHtml(gene.id)}">
-          <p class="notice muted">Loading PTMs for ${escapeHtml(gene.symbol)}…</p>
+          ${loadingHTML(`Loading PTMs for ${gene.symbol}…`)}
         </div>
       </div>`;
   }
@@ -6404,7 +6404,7 @@ function renderStockCenterPage() {
           <div class="form-field" style="margin:14px 0 0">
             <input type="search" id="stock-search" placeholder="Search the catalog…" autocomplete="off" aria-label="Search the stock center catalog">
           </div>
-          <div data-stock-list><p class="notice muted">Loading catalog…</p></div>
+          <div data-stock-list>${loadingHTML("Loading catalog…")}</div>
         </div>
 
         <div data-stock-checkout-view hidden>
@@ -9626,7 +9626,7 @@ function renderAdvancedFinder() {
           <button type="button" class="button" id="finder-csv">Export results (CSV)</button>
           <button type="button" class="button" id="finder-basket">Add results to basket</button>
         </div>
-        <div data-finder-results><p class="notice muted">Loading gene facets…</p></div>
+        <div data-finder-results>${loadingHTML("Loading gene facets…")}</div>
       </div>
     </article>`;
 }

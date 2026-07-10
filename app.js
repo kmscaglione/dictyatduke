@@ -3123,25 +3123,27 @@ function renderBlastPage() {
       <div class="record-body">
         <section class="data-block">
           <h3>Search dictyBase genomes</h3>
-          <form class="annotation-form" id="local-blast-form" novalidate>
-            <div class="form-field">
-              <label for="lblast-program">Program <span class="required">*</span></label>
-              <select id="lblast-program" name="program" required>
-                <option value="blastn">blastn — nucleotide query</option>
-                <option value="tblastn">tblastn — protein query (translated search)</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="lblast-db">Genome <span class="required">*</span></label>
-              <select id="lblast-db" name="database" required>
-                <optgroup label="Comparative species">
-                  ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
-                  <option value="all">All species</option>
-                </optgroup>
-                <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
-                  ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
-                </optgroup>
-              </select>
+          <form class="annotation-form form-wide" id="local-blast-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="lblast-program">Program <span class="required">*</span></label>
+                <select id="lblast-program" name="program" required>
+                  <option value="blastn">blastn — nucleotide query</option>
+                  <option value="tblastn">tblastn — protein query (translated search)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="lblast-db">Genome <span class="required">*</span></label>
+                <select id="lblast-db" name="database" required>
+                  <optgroup label="Comparative species">
+                    ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
+                    <option value="all">All species</option>
+                  </optgroup>
+                  <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
+                    ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
+                  </optgroup>
+                </select>
+              </div>
             </div>
             <div class="form-field">
               <label for="lblast-query">Query sequence <span class="required">*</span></label>

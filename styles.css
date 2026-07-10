@@ -1773,6 +1773,17 @@ button:focus-visible,
   max-width: 560px;
 }
 
+/* Wide variant for analysis forms (e.g. BLAST) that should use the card width. */
+.annotation-form.form-wide { max-width: none; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
 .form-field {
   display: flex;
   flex-direction: column;

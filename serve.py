@@ -273,6 +273,120 @@ if not CURATOR_PASSWORD:
     print(f"[serve] CURATOR_PASSWORD not set — generated dev password: {CURATOR_PASSWORD}",
           file=sys.stderr)
 
+# --- AI analysis assistant (Claude) -----------------------------------------
+# A public "Ask about this data" tool that proxies a single, bounded prompt to
+# the Anthropic API. This is a public endpoint with no login, so it is a prime
+# target for abuse (free LLM proxy) — every knob below exists to cap that.
+#
+# It is OFF unless ANTHROPIC_API_KEY is set in the environment (like
+# CURATOR_PASSWORD, no secret in source). With no key the endpoint returns a
+# clean "unavailable" so the UI can hide the tool; the site is otherwise
+# unaffected. Set the key + tune the caps in /etc/dicty.env when ready.
+#
+# Gating layers (belt AND suspenders — any one tripping refuses the call):
+#   1. Feature flag: no ANTHROPIC_API_KEY  -> disabled.
+#   2. Input caps:   question/context length + total prompt-char budget.
+#   3. Per-IP rate:  a few calls/min and /day (behind the Apache proxy every
+#                    client looks like 127.0.0.1, so this is effectively global
+#                    until the X-Forwarded-For change lands — deliberately tight).
+#   4. Global caps:  a hard daily request ceiling AND a daily output-token
+#                    budget, both reset at UTC midnight, so a bad day can't run
+#                    up an unbounded bill even if the per-IP limit is bypassed.
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+# Cost tradeoff is the whole point here, so this defaults to Sonnet (strong,
+# ~5x cheaper than Opus). Override with ANALYZE_MODEL=claude-opus-4-8 for the
+# best answers, or claude-haiku-4-5 for the cheapest. The daily token budget
+# below caps spend regardless of which you pick.
+ANALYZE_MODEL = os.environ.get("ANALYZE_MODEL", "claude-sonnet-5")
+ANALYZE_MAX_TOKENS = int(os.environ.get("ANALYZE_MAX_TOKENS", "1200"))   # output cap/call
+ANALYZE_Q_MAXCHARS = 2000          # user question hard cap
+ANALYZE_CTX_MAXCHARS = 12000       # attached data context hard cap
+ANALYZE_PROMPT_MAXCHARS = 14000    # combined ceiling (defense in depth)
+ANALYZE_PER_IP_MIN = int(os.environ.get("ANALYZE_PER_IP_MIN", "4"))     # calls / 60s / ip
+ANALYZE_PER_IP_DAY = int(os.environ.get("ANALYZE_PER_IP_DAY", "40"))    # calls / day / ip
+ANALYZE_GLOBAL_DAY = int(os.environ.get("ANALYZE_GLOBAL_DAY", "1500"))  # calls / day (all)
+# Daily *output* token budget across everyone. At Sonnet's $15/1M output that's
+# ~$4.50/day if fully spent; scale to taste. Input tokens are tiny by comparison
+# (prompt is capped at ~14k chars) so the output budget is the meaningful lever.
+ANALYZE_TOKENS_DAY = int(os.environ.get("ANALYZE_TOKENS_DAY", "300000"))
+_ANALYZE_MIN = {}                  # ip -> [recent epochs]  (per-minute limiter)
+_ANALYZE_DAY = {}                  # ip -> [recent epochs]  (per-day limiter)
+_ANALYZE_USAGE = {"day": None, "calls": 0, "out_tokens": 0}   # global daily meter
+_ANALYZE_LOCK = threading.Lock()
+
+ANALYZE_SYSTEM = (
+    "You are the dictyBase AI analysis assistant, an expert in Dictyostelium "
+    "discoideum genetics, cell biology, and the model-organism literature. "
+    "dictyBase is a community resource for Dictyostelium researchers. Help the "
+    "user interpret the gene, protein, phenotype, or dataset they ask about. "
+    "Be concise, specific, and grounded in established Dictyostelium biology; "
+    "when a claim is uncertain or would need experimental confirmation, say so. "
+    "If the question is outside Dictyostelium biology or the provided data, say "
+    "you can't help with that rather than guessing. These are AI-generated "
+    "notes, not curated facts — do not fabricate gene IDs, citations, or "
+    "numbers you were not given."
+)
+
+
+def _analyze_reserve(ip, now):
+    """Atomically check every gate and, if all pass, record the call. Returns
+    (ok, http_code, message). Token budget is checked here (pre-call) against
+    the running meter; the actual output tokens are added after the API returns."""
+    with _ANALYZE_LOCK:
+        today = time.strftime("%Y-%m-%d", time.gmtime(now))
+        if _ANALYZE_USAGE["day"] != today:                 # UTC-midnight rollover
+            _ANALYZE_USAGE.update(day=today, calls=0, out_tokens=0)
+        # per-IP: minute + day
+        mins = [t for t in _ANALYZE_MIN.get(ip, []) if now - t < 60]
+        days = [t for t in _ANALYZE_DAY.get(ip, []) if now - t < 86400]
+        if len(mins) >= ANALYZE_PER_IP_MIN or len(days) >= ANALYZE_PER_IP_DAY:
+            _ANALYZE_MIN[ip], _ANALYZE_DAY[ip] = mins, days
+            return False, 429, "Rate limit reached — please wait a bit before asking again."
+        # global: request count + token budget
+        if _ANALYZE_USAGE["calls"] >= ANALYZE_GLOBAL_DAY or \
+           _ANALYZE_USAGE["out_tokens"] >= ANALYZE_TOKENS_DAY:
+            return False, 503, "The AI assistant has reached its daily limit. Try again tomorrow."
+        mins.append(now); days.append(now)
+        _ANALYZE_MIN[ip], _ANALYZE_DAY[ip] = mins, days
+        _ANALYZE_USAGE["calls"] += 1
+        return True, 200, ""
+
+
+def _analyze_record_tokens(out_tokens):
+    with _ANALYZE_LOCK:
+        _ANALYZE_USAGE["out_tokens"] += int(out_tokens or 0)
+
+
+def _analyze_call_claude(question, context):
+    """Single non-streaming Messages API call via stdlib urllib (serve.py has no
+    third-party deps). Returns (text, out_tokens). Raises on transport/HTTP error."""
+    user = question if not context else f"{question}\n\n--- Data context ---\n{context}"
+    payload = {
+        "model": ANALYZE_MODEL,
+        "max_tokens": ANALYZE_MAX_TOKENS,
+        "system": ANALYZE_SYSTEM,
+        # Thinking off keeps latency and token spend bounded for a public tool.
+        "thinking": {"type": "disabled"},
+        "messages": [{"role": "user", "content": user}],
+    }
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=json.dumps(payload).encode(),
+        headers={
+            "content-type": "application/json",
+            "x-api-key": ANTHROPIC_API_KEY,
+            "anthropic-version": "2023-06-01",
+        }, method="POST")
+    with urllib.request.urlopen(req, timeout=60, context=SSL_CTX) as r:
+        data = json.loads(r.read())
+    text = "".join(b.get("text", "") for b in data.get("content", [])
+                    if b.get("type") == "text").strip()
+    out_tokens = (data.get("usage") or {}).get("output_tokens", 0)
+    if data.get("stop_reason") == "refusal":
+        text = text or "I can't help with that request."
+    return text, out_tokens
+
+
 # Login issues a random, expiring session token (NOT derived from the password),
 # kept server-side. In-memory: tokens reset on restart (fine for one process).
 _SESSIONS = {}            # token -> expiry epoch
@@ -1427,6 +1541,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             stamp = _data_version()
             meta["data_updated"] = (datetime.datetime.utcfromtimestamp(stamp).strftime("%Y-%m-%d")
                                     if stamp else "")
+            meta["ai_assistant"] = bool(ANTHROPIC_API_KEY)   # lets the UI hide the tool if off
             self.send_json(200, meta)
             return
         if self.path.startswith("/api/health"):
@@ -1863,8 +1978,53 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_seq_tool(bench.find_orfs)
         elif self.path == "/api/hit":
             self._handle_hit()
+        elif self.path == "/api/analyze":
+            self._handle_analyze()
         else:
             self.send_error(404)
+
+    def _handle_analyze(self):
+        """Public, heavily-gated Claude proxy for the "Ask AI about this" tool.
+        Disabled unless ANTHROPIC_API_KEY is set. Every gate lives in
+        _analyze_reserve(); see the config block for the abuse model."""
+        if not ANTHROPIC_API_KEY:
+            self.send_json(503, {"error": "The AI assistant is not enabled on this server.",
+                                 "disabled": True})
+            return
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length <= 0 or length > 64 * 1024:
+                self.send_json(400, {"error": "Empty or oversized request."})
+                return
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request."})
+            return
+        question = (body.get("question") or "").strip()[:ANALYZE_Q_MAXCHARS]
+        context = (body.get("context") or "").strip()[:ANALYZE_CTX_MAXCHARS]
+        if len(question) < 3:
+            self.send_json(400, {"error": "Please enter a question."})
+            return
+        if len(question) + len(context) > ANALYZE_PROMPT_MAXCHARS:
+            context = context[:max(0, ANALYZE_PROMPT_MAXCHARS - len(question))]
+        ip = self.client_address[0]
+        ok, code, msg = _analyze_reserve(ip, time.time())
+        if not ok:
+            self.send_json(code, {"error": msg})
+            return
+        try:
+            text, out_tokens = _analyze_call_claude(question, context)
+            _analyze_record_tokens(out_tokens)
+        except urllib.error.HTTPError as e:
+            detail = "auth" if e.code in (401, 403) else "upstream"
+            print(f"[analyze] Anthropic HTTPError {e.code} ({detail})", file=sys.stderr)
+            self.send_json(502, {"error": "The AI assistant is temporarily unavailable."})
+            return
+        except Exception as e:
+            print(f"[analyze] error: {e}", file=sys.stderr)
+            self.send_json(502, {"error": "The AI assistant is temporarily unavailable."})
+            return
+        self.send_json(200, {"answer": text, "model": ANALYZE_MODEL})
 
     def _handle_hit(self):
         """Cookieless, no-PII pageview beacon. The IP is used only to rate-limit

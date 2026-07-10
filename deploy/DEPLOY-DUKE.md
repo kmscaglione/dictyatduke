@@ -26,6 +26,27 @@ sudo chmod 600 /etc/dicty.env
 sudo chown dicty:dicty /etc/dicty.env      # the service user (see step 4)
 ```
 
+### Optional: the AI analysis assistant ("Ask AI" tool)
+The `/tools/ai` tool proxies a single, heavily-gated prompt to the Anthropic
+API. It is **off** unless `ANTHROPIC_API_KEY` is set — with no key the endpoint
+returns a clean "not enabled" and the tool/card stay hidden, so the rest of the
+site is unaffected. To turn it on, add the key (and, optionally, override the
+caps) to `/etc/dicty.env` and restart the service:
+```bash
+# append to /etc/dicty.env (keep the file 600 / owned by the service user):
+ANTHROPIC_API_KEY=sk-ant-...            # required to enable the tool
+# ANALYZE_MODEL=claude-sonnet-5         # default; opus-4-8 = best, haiku-4-5 = cheapest
+# ANALYZE_TOKENS_DAY=300000             # daily output-token budget (hard $ ceiling)
+# ANALYZE_GLOBAL_DAY=1500               # daily request ceiling (all users)
+# ANALYZE_PER_IP_MIN=4  ANALYZE_PER_IP_DAY=40   # per-IP throttles
+```
+Gating is layered (feature flag → input-size caps → per-IP rate → global daily
+request + token budget), all reset at UTC midnight, so a bad day can't run up an
+unbounded bill. **Caveat behind the proxy:** serve.py sees `127.0.0.1` for every
+client, so the per-IP limits are effectively global until the X-Forwarded-For
+change lands (see the Notes at the bottom) — the defaults are deliberately tight
+for that reason. Bump `ANALYZE_PER_IP_*` once real client IPs are passed through.
+
 ## 3. Genome data (needed for Genome browser / BLAST / Downloads)
 `assets/genomes/` (~600 MB) is gitignored, so the clone doesn't include it.
 Requires NCBI BLAST+ and pysam (build-time only). On the server:

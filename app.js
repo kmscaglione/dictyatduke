@@ -6400,6 +6400,20 @@ function stockOrderFormHTML() {
     </form>`;
 }
 
+// Numbered pagination control shared by the Stock Center and the Advanced gene
+// finder. `prefix` namespaces the data-attributes (data-<prefix>-page /
+// data-<prefix>-page-input) so each caller wires its own Prev/Next + jump
+// handlers. Returns "" for a single page.
+function paginationHTML(page, totalPages, prefix) {
+  if (totalPages <= 1) return "";
+  return `
+    <div class="stock-pager">
+      <button type="button" data-${prefix}-page="prev"${page <= 1 ? " disabled" : ""}>‹ Prev</button>
+      <span class="stock-pager-label">Page <input type="number" class="stock-page-input" data-${prefix}-page-input min="1" max="${totalPages}" value="${page}" aria-label="Go to page"> of ${totalPages.toLocaleString()}</span>
+      <button type="button" data-${prefix}-page="next"${page >= totalPages ? " disabled" : ""}>Next ›</button>
+    </div>`;
+}
+
 function initStockCenter() {
   const root = toolsShell.querySelector("[data-stock-root]");
   if (!root) return;
@@ -6499,12 +6513,7 @@ function initStockCenter() {
     if (page < 1) page = 1;
     const start = (page - 1) * STOCK_PAGE;
     const visible = shown.slice(start, start + STOCK_PAGE);
-    const pager = totalPages > 1 ? `
-      <div class="stock-pager">
-        <button type="button" data-stock-page="prev"${page <= 1 ? " disabled" : ""}>‹ Prev</button>
-        <span class="stock-pager-label">Page <input type="number" class="stock-page-input" min="1" max="${totalPages}" value="${page}" aria-label="Go to page"> of ${totalPages.toLocaleString()}</span>
-        <button type="button" data-stock-page="next"${page >= totalPages ? " disabled" : ""}>Next ›</button>
-      </div>` : "";
+    const pager = paginationHTML(page, totalPages, "stock");
     listEl.innerHTML = `
       <div class="stock-listhead">
         <p>${count}</p>
@@ -9640,12 +9649,7 @@ function finderApply() {
   if (finderPage < 1) finderPage = 1;
   const start = (finderPage - 1) * FINDER_PAGE;
   const shown = finderResults.slice(start, start + FINDER_PAGE);
-  const pager = totalPages > 1 ? `
-    <div class="stock-pager">
-      <button type="button" data-finder-page="prev"${finderPage <= 1 ? " disabled" : ""}>‹ Prev</button>
-      <span class="stock-pager-label">Page <input type="number" class="stock-page-input" data-finder-page-input min="1" max="${totalPages}" value="${finderPage}" aria-label="Go to page"> of ${totalPages.toLocaleString()}</span>
-      <button type="button" data-finder-page="next"${finderPage >= totalPages ? " disabled" : ""}>Next ›</button>
-    </div>` : "";
+  const pager = paginationHTML(finderPage, totalPages, "finder");
   el.innerHTML = `
     <p class="finder-count">${n.toLocaleString()} gene${n === 1 ? "" : "s"} match${n === 1 ? "es" : ""}.</p>
     <div style="overflow-x:auto"><table class="finder-table">

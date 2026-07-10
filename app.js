@@ -1939,6 +1939,8 @@ async function loadStats(token) {
 // review community submissions. Edits save to THIS instance's corpus and are
 // read live; publishing to production is a commit + deploy (see docs/CURATION.md).
 let curatorToken = null;
+let curatorAdmin = false;
+let curatorName = "";
 
 function renderCuratePage() {
   return `
@@ -1953,14 +1955,28 @@ function renderCuratePage() {
       </div></header>
       <div class="record-body">
         <div id="cur-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
-          <input id="cur-pw" type="password" aria-label="Curator password" placeholder="Curator password" style="${FIELD};min-width:220px">
-          <input id="cur-name" type="text" placeholder="Your name (attribution)" style="${FIELD};min-width:200px">
+          <input id="cur-user" type="text" autocomplete="username" aria-label="Username" placeholder="Username" style="${FIELD};min-width:180px">
+          <input id="cur-pw" type="password" autocomplete="current-password" aria-label="Password" placeholder="Password" style="${FIELD};min-width:180px">
           <button type="button" id="cur-login">Sign in</button>
           <span id="cur-msg" class="muted" style="font-size:13px"></span>
         </div>
         <div id="cur-work" hidden>
-          <p style="margin:0 0 12px"><a id="cur-backup" class="text-link" href="#" style="font-size:13px">⬇ Download backup</a>
-            <span class="muted" style="font-size:12px"> — all curation (gene + stock edits) and the edit log, as one file.</span></p>
+          <p style="margin:0 0 12px;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline">
+            <span class="muted" style="font-size:13px">Signed in as <strong id="cur-whoami" style="color:var(--ink)"></strong></span>
+            <a id="cur-backup" class="text-link" href="#" style="font-size:13px">⬇ Download backup</a>
+            <a id="cur-logout" class="text-link" href="#" style="font-size:13px">Sign out</a></p>
+          <div id="cur-accounts-section" hidden>
+            <h3 class="tools-group">Curators <span class="muted" style="font-weight:400;font-size:12px">(admin)</span></h3>
+            <div id="cur-accounts-list" style="margin-bottom:8px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <input id="acct-user" type="text" placeholder="username" style="${FIELD};min-width:130px">
+              <input id="acct-name" type="text" placeholder="Full name" style="${FIELD};min-width:150px">
+              <input id="acct-pw" type="password" placeholder="password" style="${FIELD};min-width:130px">
+              <label style="display:flex;gap:5px;align-items:center;font-size:13px"><input type="checkbox" id="acct-admin"> admin</label>
+              <button type="button" id="acct-add">Add / update</button>
+              <span id="acct-msg" class="muted" style="font-size:13px"></span>
+            </div>
+          </div>
           <h3 class="tools-group">Edit a gene</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
             <input id="cur-gene" type="text" placeholder="Gene symbol or DDB_G… (e.g. mhcA)" style="${FIELD};min-width:260px">
@@ -2039,30 +2055,44 @@ function renderCuratePage() {
 function initCurate() {
   const loginBtn = document.getElementById("cur-login");
   if (!loginBtn) return;
+  const userEl = document.getElementById("cur-user");
   const pw = document.getElementById("cur-pw");
-  const nameEl = document.getElementById("cur-name");
   const msg = document.getElementById("cur-msg");
   const showWork = () => {
     document.getElementById("cur-auth").style.display = "none";
     document.getElementById("cur-work").removeAttribute("hidden");
+    const who = document.getElementById("cur-whoami");
+    if (who) who.textContent = curatorName + (curatorAdmin ? " · admin" : "");
+    const acctSec = document.getElementById("cur-accounts-section");
+    if (acctSec) { acctSec.hidden = !curatorAdmin; if (curatorAdmin) loadAccounts(); }
     loadCurQueue();
   };
   const login = async () => {
+    const username = (userEl.value || "").trim();
     const password = (pw.value || "").trim();
     if (!password) { pw.focus(); return; }
     msg.textContent = "Signing in…";
     try {
       const r = await fetch("/api/curator/login", { method: "POST",
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password }) });
-      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong password."; return; }
-      curatorToken = (await r.json()).token;
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, password }) });
+      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong username or password."; return; }
+      const d = await r.json();
+      curatorToken = d.token; curatorName = d.name || username || "Curator"; curatorAdmin = !!d.admin;
       msg.textContent = "";
       showWork();
     } catch { msg.textContent = "Sign-in failed — try again."; }
   };
   loginBtn.addEventListener("click", login);
-  pw.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
+  [userEl, pw].forEach((el) => el.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); }));
   if (curatorToken) showWork();   // already signed in this session
+
+  const logout = document.getElementById("cur-logout");
+  if (logout) logout.addEventListener("click", (e) => {
+    e.preventDefault();
+    fetch("/api/curator/logout", { method: "POST", headers: { Authorization: `Bearer ${curatorToken}` } }).catch(() => {});
+    curatorToken = null; curatorAdmin = false; curatorName = "";
+    openTool("curate", false);   // re-render back to the login screen
+  });
 
   // Download a backup snapshot (auth'd fetch → blob → save).
   const backupLink = document.getElementById("cur-backup");
@@ -2077,6 +2107,42 @@ function initCurate() {
       document.body.appendChild(a); a.click(); a.remove();
       URL.revokeObjectURL(url);
     } catch { alert("Backup failed."); }
+  });
+
+  // --- Curator accounts (admin only) ---
+  const acctAdd = document.getElementById("acct-add");
+  if (acctAdd) acctAdd.addEventListener("click", async () => {
+    const am = document.getElementById("acct-msg");
+    const username = document.getElementById("acct-user").value.trim().toLowerCase();
+    const name = document.getElementById("acct-name").value.trim();
+    const password = document.getElementById("acct-pw").value;
+    const admin = document.getElementById("acct-admin").checked;
+    if (!username || !name) { am.textContent = "Username and name required."; return; }
+    am.textContent = "Saving…";
+    try {
+      const r = await fetch("/api/curator/accounts", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify({ username, name, password, admin }) });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) { am.textContent = d.error || "Save failed."; return; }
+      am.textContent = `Saved ✓`;
+      document.getElementById("acct-user").value = ""; document.getElementById("acct-name").value = "";
+      document.getElementById("acct-pw").value = ""; document.getElementById("acct-admin").checked = false;
+      loadAccounts();
+    } catch { am.textContent = "Save failed."; }
+  });
+  const acctList = document.getElementById("cur-accounts-list");
+  if (acctList) acctList.addEventListener("click", async (e) => {
+    const b = e.target.closest(".acct-del");
+    if (!b) return;
+    if (!confirm(`Remove curator "${b.dataset.user}"?`)) return;
+    try {
+      const r = await fetch("/api/curator/accounts/delete", { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify({ username: b.dataset.user }) });
+      if (r.ok) loadAccounts();
+      else { const d = await r.json().catch(() => ({})); alert(d.error || "Delete failed"); }
+    } catch { /* ignore */ }
   });
 
   // --- Edit a gene ---
@@ -2123,8 +2189,7 @@ function initCurate() {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
         body: JSON.stringify({ ddb, summary,
           note: document.getElementById("cur-note").value.trim(),
-          pmids: document.getElementById("cur-pmids").value.trim(),
-          curator_name: (nameEl.value || "").trim() }) });
+          pmids: document.getElementById("cur-pmids").value.trim() }) });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) { saveMsg.textContent = d.error || "Save failed."; return; }
       saveMsg.textContent = `Saved ✓ (${d.curator_date}) — live on the site now.`;
@@ -2142,7 +2207,7 @@ function initCurate() {
     try {
       const r = await fetch(approve ? "/api/curator/approve" : "/api/curator/reject", { method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
-        body: JSON.stringify({ id: btn.dataset.cid, curator_name: (nameEl.value || "").trim() || "Curator" }) });
+        body: JSON.stringify({ id: btn.dataset.cid }) });
       if (r.ok) loadCurQueue();
       else { const d = await r.json().catch(() => ({})); alert(d.error || "Action failed"); btn.disabled = false; }
     } catch { btn.disabled = false; }
@@ -2155,7 +2220,6 @@ function initCurate() {
 function initStockCurate() {
   const typeSel = document.getElementById("stk-type");
   if (!typeSel) return;
-  const nameEl = document.getElementById("cur-name");
   const q = document.getElementById("stk-q");
   const msg = document.getElementById("stk-msg");
   const matchesEl = document.getElementById("stk-matches");
@@ -2237,8 +2301,7 @@ function initStockCurate() {
     const prefix = isStrain() ? "DBS" : "DBP";
     if (!id.toUpperCase().startsWith(prefix)) { saveMsg.textContent = `ID must start with ${prefix}.`; return; }
     if (!name) { saveMsg.textContent = "Name/label is required."; return; }
-    const payload = { type: typeSel.value, id: id.toUpperCase(), name, in_stock: $("stk-instock").checked,
-      curator_name: (nameEl && nameEl.value || "").trim() };
+    const payload = { type: typeSel.value, id: id.toUpperCase(), name, in_stock: $("stk-instock").checked };
     if (isStrain()) Object.assign(payload, { summary: $("stk-summary").value.trim(),
       genotype: $("stk-genotype").value.trim(), phenotype: $("stk-phenotype").value.trim(), names: $("stk-names").value.trim() });
     else Object.assign(payload, { description: $("stk-description").value.trim(),
@@ -2269,6 +2332,22 @@ function initStockCurate() {
       form.setAttribute("hidden", "");
     } catch { saveMsg.textContent = "Delete failed — the previous catalog is intact."; }
   });
+}
+
+async function loadAccounts() {
+  const el = document.getElementById("cur-accounts-list");
+  if (!el) return;
+  try {
+    const r = await fetch("/api/curator/accounts", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load accounts.</p>`; return; }
+    const accts = (await r.json()).accounts || [];
+    el.innerHTML = accts.length ? `<table style="font-size:13px;border-collapse:collapse">
+      ${accts.map((a) => `<tr style="border-top:1px solid var(--line)">
+        <td style="padding:4px 12px 4px 0"><strong>${escapeHtml(a.name)}</strong> <span class="muted">${escapeHtml(a.username)}</span>${a.admin ? ` <span class="news-tag" style="background:var(--teal-dark);font-size:10px;padding:1px 6px">admin</span>` : ""}</td>
+        <td style="padding:4px 0"><button type="button" class="acct-del" data-user="${escapeHtml(a.username)}" style="background:#fff;color:#b91c1c;border:1px solid #e5b4b4;font-size:12px;padding:2px 8px">Remove</button></td>
+      </tr>`).join("")}</table>`
+      : `<p class="notice muted" style="font-size:13px">No named accounts yet — add one below. (You're signed in with the bootstrap admin password.)</p>`;
+  } catch { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load accounts.</p>`; }
 }
 
 async function loadCurQueue() {

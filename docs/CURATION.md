@@ -24,7 +24,17 @@ curation, and it validates and writes safely (atomic, with a backup).
 
 ### 1. Open the dashboard
 Go to **https://dicty.labs.duke.edu/tools/curate** (unlisted — not in any menu).
-Sign in with the curator password and put your name in the attribution box.
+Sign in with your **username and password**. Your edits are automatically
+attributed to your account name (no typing your name — it's taken from the login,
+so it can't be faked).
+
+**Accounts (admin):** each curator has their own login. If you're an **admin**,
+a **Curators** panel appears where you add a person (username, full name,
+password, and an admin checkbox) or remove one. Passwords are stored hashed, not
+in plain text. The `CURATOR_PASSWORD` set on the server is a **bootstrap admin
+login** — use it the first time to create the named accounts (including your own),
+then everyone signs in with their own username. Only admins can manage accounts;
+regular curators can curate but can't add/remove people.
 
 ### 2. Edit a gene
 - Type a **gene symbol or DDB_G id** (e.g. `mhcA`) and click **Load** — the

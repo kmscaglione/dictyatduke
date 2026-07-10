@@ -1,5 +1,5 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
-import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading
+import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading, hashlib
 import concurrent.futures
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
@@ -26,6 +26,7 @@ STOCK_PATH = pathlib.Path(ROOT) / "assets" / "stock_center.json"
 OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "curation_overrides.json"
 STOCK_OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "stock_overrides.json"
 CURATION_LOG_PATH = pathlib.Path(ROOT) / "assets" / "curation_log.jsonl"
+CURATORS_PATH = pathlib.Path(ROOT) / "assets" / "curators.json"  # named accounts (gitignored)
 
 # Recent-papers feed: cached PubMed results, refreshed at most once a day.
 PAPERS_CACHE = pathlib.Path(ROOT) / "cache" / "recent_papers.json"
@@ -880,6 +881,33 @@ def save_stock_override(kind, sid, entry, curator, delete=False):
     _atomic_write_json(STOCK_OVERRIDES_PATH, ov)
     apply_stock_overrides()
     _log_curation(kind, "delete" if delete else "edit", sid, curator)
+
+
+# --- Named curator accounts (username + password + display name + admin) ----
+# Stored in curators.json (gitignored, durable). Passwords are salted PBKDF2
+# hashes — the file never holds a readable password. The env CURATOR_PASSWORD
+# remains a bootstrap admin login so you can always get in to create accounts.
+def _hash_pw(password, salt=None):
+    salt = salt or secrets.token_hex(16)
+    h = hashlib.pbkdf2_hmac("sha256", password.encode(), bytes.fromhex(salt), 200_000).hex()
+    return salt, h
+
+
+def _verify_pw(password, salt, expected):
+    try:
+        _, h = _hash_pw(password, salt)
+    except (ValueError, TypeError):
+        return False
+    return hmac.compare_digest(h, expected)
+
+
+def load_curators():
+    d = _read_json_file(CURATORS_PATH, {})
+    return d if isinstance(d, dict) else {}
+
+
+def save_curators(accts):
+    _atomic_write_json(CURATORS_PATH, accts)
 
 
 def api_gene_rows():
@@ -1829,6 +1857,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(200, {"matches": matches})
             return
 
+        # Curator dashboard API — list curator accounts (admin only, no passwords).
+        if self.path == "/api/curator/accounts":
+            self._handle_accounts_list()
+            return
+
         # Curator dashboard API — download a snapshot of all durable curation
         # (gene overrides + stock overrides + the audit log) for backup.
         if self.path.startswith("/api/curator/backup"):
@@ -2180,6 +2213,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_stock_edit()
         elif self.path == "/api/curator/stock-delete":
             self._handle_stock_delete()
+        elif self.path == "/api/curator/accounts":
+            self._handle_accounts_save()
+        elif self.path == "/api/curator/accounts/delete":
+            self._handle_accounts_delete()
         elif self.path.startswith("/api/blast?") and "async=1" in urlparse(self.path).query:
             self._handle_blast_async()                   # pool-bounded, pollable
         elif self.path == "/api/blast":
@@ -2607,14 +2644,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if auth.startswith("Bearer "): return auth[7:]
         return ""
 
-    def _auth(self, token):
-        exp = _SESSIONS.get(token)
-        if not exp:
-            return False
-        if time.time() > exp:
+    def _session(self, token):
+        """Return the session dict {exp, name, admin, username} if the token is
+        valid and unexpired, else None."""
+        s = _SESSIONS.get(token)
+        if not s:
+            return None
+        if time.time() > s.get("exp", 0):
             _SESSIONS.pop(token, None)
-            return False
-        return True
+            return None
+        return s
+
+    def _auth(self, token):
+        return self._session(token) is not None
+
+    def _session_name(self):
+        s = self._session(self._parse_token())
+        return (s or {}).get("name") or "Curator"
+
+    def _is_admin(self):
+        s = self._session(self._parse_token())
+        return bool(s and s.get("admin"))
 
     def _handle_login(self):
         ip = self.client_address[0]
@@ -2623,14 +2673,29 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         try:
             length = min(int(self.headers.get("Content-Length", 0)), 4096)
-            pw = json.loads(self.rfile.read(length) or b"{}").get("password", "")
-            if isinstance(pw, str) and hmac.compare_digest(pw, CURATOR_PASSWORD):
-                _LOGIN_FAILS.pop(ip, None)  # clear on success
-                token = secrets.token_urlsafe(32)
-                _SESSIONS[token] = time.time() + SESSION_TTL
-                self.send_json(200, {"token": token, "expires_in": SESSION_TTL})
-            else:
-                self.send_json(401, {"error": "Wrong password"})
+            body = json.loads(self.rfile.read(length) or b"{}")
+            username = (body.get("username") or "").strip()
+            password = body.get("password", "")
+            if not isinstance(password, str):
+                self.send_json(400, {"error": "Bad request"})
+                return
+            name = admin = None
+            acct = load_curators().get(username) if username else None
+            if acct and _verify_pw(password, acct.get("salt", ""), acct.get("pw", "")):
+                name, admin = acct.get("name") or username, bool(acct.get("admin"))
+            elif CURATOR_PASSWORD and hmac.compare_digest(password, CURATOR_PASSWORD):
+                # Bootstrap admin (env password) — always admin, so you can create
+                # the first named accounts.
+                name, admin = (username or "Admin"), True
+            if name is None:
+                self.send_json(401, {"error": "Wrong username or password"})
+                return
+            _LOGIN_FAILS.pop(ip, None)  # clear on success
+            token = secrets.token_urlsafe(32)
+            _SESSIONS[token] = {"exp": time.time() + SESSION_TTL, "name": name,
+                                "admin": admin, "username": username or "admin"}
+            self.send_json(200, {"token": token, "name": name, "admin": admin,
+                                 "expires_in": SESSION_TTL})
         except (ValueError, json.JSONDecodeError):
             self.send_json(400, {"error": "Bad request"})
         except Exception:
@@ -2638,6 +2703,75 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def _handle_logout(self):
         _SESSIONS.pop(self._parse_token(), None)
+        self.send_json(200, {"ok": True})
+
+    # --- Curator account management (admin only) --------------------------
+    def _handle_accounts_list(self):
+        if not self._is_admin():
+            self.send_json(403, {"error": "Admin access required."})
+            return
+        accts = load_curators()
+        out = [{"username": u, "name": a.get("name", u), "admin": bool(a.get("admin"))}
+               for u, a in sorted(accts.items())]
+        self.send_json(200, {"accounts": out})
+
+    def _handle_accounts_save(self):
+        if not self._is_admin():
+            self.send_json(403, {"error": "Admin access required."})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 8192)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request"})
+            return
+        username = (body.get("username") or "").strip().lower()
+        name = (body.get("name") or "").strip()[:80]
+        password = body.get("password") or ""
+        admin = bool(body.get("admin"))
+        if not re.match(r"^[a-z0-9._-]{2,40}$", username):
+            self.send_json(400, {"error": "Username must be 2–40 chars: letters, numbers, . _ -"})
+            return
+        if not name:
+            self.send_json(400, {"error": "A display name is required."})
+            return
+        accts = load_curators()
+        existing = accts.get(username, {})
+        if password:
+            if len(password) < 6:
+                self.send_json(400, {"error": "Password must be at least 6 characters."})
+                return
+            existing["salt"], existing["pw"] = _hash_pw(password)
+        elif "pw" not in existing:
+            self.send_json(400, {"error": "A password is required for a new account."})
+            return
+        existing["name"] = name
+        existing["admin"] = admin
+        accts[username] = existing
+        save_curators(accts)
+        _log_curation("account", "save", username, self._session_name())
+        self.send_json(200, {"ok": True, "username": username, "created": username not in accts})
+
+    def _handle_accounts_delete(self):
+        if not self._is_admin():
+            self.send_json(403, {"error": "Admin access required."})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 2048)
+            username = (json.loads(self.rfile.read(length) or b"{}").get("username") or "").strip().lower()
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request"})
+            return
+        accts = load_curators()
+        if username not in accts:
+            self.send_json(404, {"error": "No such account."})
+            return
+        if accts[username].get("admin") and sum(1 for a in accts.values() if a.get("admin")) <= 1:
+            self.send_json(400, {"error": "Can't remove the last admin account."})
+            return
+        accts.pop(username, None)
+        save_curators(accts)
+        _log_curation("account", "delete", username, self._session_name())
         self.send_json(200, {"ok": True})
 
     def _handle_curation_submit(self):
@@ -2680,7 +2814,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             length = int(self.headers.get("Content-Length", 0))
             body = json.loads(self.rfile.read(length))
             curation_id = body.get("id", "")
-            curator_name = body.get("curator_name", "Curator")
+            curator_name = self._session_name()   # verified from the login, not self-typed
             curation_file = UPLOADS_DIR / "curations" / f"{curation_id}.json"
             if not curation_file.exists():
                 self.send_json(404, {"error": "Curation not found"})
@@ -2748,7 +2882,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         summary = (body.get("summary") or "").strip()
         note = (body.get("note") or "").strip()
         pmids = (body.get("pmids") or "").strip()
-        curator = (body.get("curator_name") or "Curator").strip()[:80] or "Curator"
+        curator = self._session_name()   # verified from the login, not self-typed
         # Validate BEFORE touching the corpus — a bad edit must never land.
         if not ddb.startswith("DDB_G"):
             self.send_json(400, {"error": "A valid DDB_G… identifier is required."})
@@ -2831,7 +2965,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             key = "strains" if kind == "strain" else "plasmids"
             current = _load_json("stock_center.json").get(key, [])
             created = not any(isinstance(e, dict) and e.get("id") == sid for e in current)
-            save_stock_override(kind, sid, entry, body.get("curator_name"))   # durable override + log
+            save_stock_override(kind, sid, entry, self._session_name())   # durable override + log
             self.send_json(200, {"ok": True, "id": sid, "created": created,
                                  "edited_date": entry["edited_date"]})
         except Exception as ex:
@@ -2855,7 +2989,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not any(isinstance(e, dict) and e.get("id") == sid for e in current):
                 self.send_json(404, {"error": "Not found in the catalog."})
                 return
-            save_stock_override(kind, sid, None, body.get("curator_name"), delete=True)
+            save_stock_override(kind, sid, None, self._session_name(), delete=True)
             self.send_json(200, {"ok": True, "id": sid})
         except Exception as ex:
             print(f"[stock] delete error: {ex}", file=sys.stderr)

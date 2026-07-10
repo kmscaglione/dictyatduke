@@ -52,3 +52,6 @@ assets/stock_overrides.json
 assets/stock_overrides.json.bak
 assets/stock_overrides.json.tmp
 assets/curation_log.jsonl
+assets/curators.json
+assets/curators.json.bak
+assets/curators.json.tmp

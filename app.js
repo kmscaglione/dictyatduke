@@ -9017,26 +9017,17 @@ async function loadNews() {
   renderNewsTicker((data && data.items) || []);
 }
 
-// Scrolling news ticker below the nav — a seamless marquee of recent headlines.
+// News strip below the nav — the 3 most recent headlines, shown statically
+// (no scrolling). CSS drops the later ones as the bar narrows so nothing clips.
 function renderNewsTicker(items) {
   const track = document.getElementById("news-ticker-track");
   const ticker = document.getElementById("news-ticker");
   if (!track || !ticker || !items.length) return;
   const sep = '<span class="news-ticker-sep" aria-hidden="true">•</span>';
-  const one = items.slice(0, 8).map((it) =>
-    `<a class="news-ticker-item" href="/news"><span class="news-ticker-date">${escapeHtml(it.date || "")}</span><strong>${escapeHtml(it.title || "")}</strong></a>${sep}`
-  ).join("");
-  // Repeat so the strip overflows the viewport even with a few posts, then
-  // duplicate the whole thing so translateX(-50%) loops seamlessly.
-  const base = one.repeat(Math.max(1, Math.ceil(6 / Math.min(items.length, 8))));
-  track.innerHTML = base + base;
+  track.innerHTML = items.slice(0, 3).map((it) =>
+    `<a class="news-ticker-item" href="/news"><span class="news-ticker-date">${escapeHtml(it.date || "")}</span><strong>${escapeHtml(it.title || "")}</strong></a>`
+  ).join(sep);
   ticker.removeAttribute("hidden");
-  // Set the duration from the actual width so the scroll speed (~50 px/s) stays
-  // readable and consistent no matter how many posts there are.
-  requestAnimationFrame(() => {
-    const dur = Math.max(24, (track.scrollWidth / 2) / 50);
-    track.style.animationDuration = dur.toFixed(1) + "s";
-  });
 }
 
 function newsItemHTML(it) {

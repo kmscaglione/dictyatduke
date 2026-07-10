@@ -8838,6 +8838,7 @@ async function loadNews() {
     data = r.ok ? await r.json() : null;
   } catch { return; }
   const items = (data && data.items) || [];
+  renderNewsTicker(items);   // scrolling strip below the nav (all pages)
   if (!items.length) { el.setAttribute("hidden", ""); return; }
   el.hidden = !isHomeView;
   el.innerHTML = `
@@ -8846,6 +8847,22 @@ async function loadNews() {
       ${items.slice(0, 3).map(newsItemHTML).join("")}
     </div>
     <p style="margin-top:12px"><a class="text-link" href="/news">See all news &amp; updates →</a></p>`;
+}
+
+// Scrolling news ticker below the nav — a seamless marquee of recent headlines.
+function renderNewsTicker(items) {
+  const track = document.getElementById("news-ticker-track");
+  const ticker = document.getElementById("news-ticker");
+  if (!track || !ticker || !items.length) return;
+  const sep = '<span class="news-ticker-sep" aria-hidden="true">•</span>';
+  const one = items.slice(0, 8).map((it) =>
+    `<a class="news-ticker-item" href="/news"><span class="news-ticker-date">${escapeHtml(it.date || "")}</span><strong>${escapeHtml(it.title || "")}</strong></a>${sep}`
+  ).join("");
+  // Repeat so the strip overflows the viewport even with a few posts, then
+  // duplicate the whole thing so translateX(-50%) loops seamlessly.
+  const base = one.repeat(Math.max(1, Math.ceil(6 / Math.min(items.length, 8))));
+  track.innerHTML = base + base;
+  ticker.removeAttribute("hidden");
 }
 
 function newsItemHTML(it) {

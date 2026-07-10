@@ -4214,6 +4214,7 @@ function renderCommunity(section) {
   } else if (section === "labs") {
     communityShell.innerHTML = renderLabsPage();
     communityShell.removeAttribute("hidden");
+    initLabsFilter();
   } else if (section === "annotations") {
     communityShell.innerHTML = renderAnnotationsPage();
     communityShell.removeAttribute("hidden");
@@ -4270,30 +4271,49 @@ async function loadDiseaseModels() {
     }
   }
   rows.sort((a, b) => a.symbol.localeCompare(b.symbol));
-  const render = (filter) => {
-    const f = (filter || "").trim().toLowerCase();
+  const PAGE = 50;
+  let page = 1;
+  const inp = document.getElementById("disease-filter");
+  const toTop = () => scrollToY(Math.max(0, container.getBoundingClientRect().top + window.scrollY - 130));
+  const render = () => {
+    const f = (inp?.value || "").trim().toLowerCase();
     const shown = !f ? rows : rows.filter((r) =>
       r.symbol.toLowerCase().includes(f) || r.human.toLowerCase().includes(f) ||
       r.diseases.some((d) => (d.name || "").toLowerCase().includes(f) || d.id.toLowerCase().includes(f)));
+    const totalPages = Math.max(1, Math.ceil(shown.length / PAGE));
+    if (page > totalPages) page = totalPages;
+    if (page < 1) page = 1;
+    const visible = shown.slice((page - 1) * PAGE, page * PAGE);
     container.innerHTML = `
-      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${shown.length} of ${rows.length} disease-linked gene–ortholog pairs</p>
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${shown.length.toLocaleString()} of ${rows.length.toLocaleString()} disease-linked gene–ortholog pairs</p>
       <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
         <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
           <th style="padding:6px 8px">Dicty gene</th><th style="padding:6px 8px">Human ortholog</th><th style="padding:6px 8px">Disease(s)</th>
         </tr></thead>
         <tbody>
-          ${shown.map((r) => `
+          ${visible.map((r) => `
             <tr style="border-bottom:1px solid var(--line,#eef2f3);vertical-align:top">
               <td style="padding:6px 8px"><a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a></td>
               <td style="padding:6px 8px"><strong>${escapeHtml(r.human)}</strong>${r.rel ? ` <span style="color:var(--muted,#6b7280)">${escapeHtml(r.rel)}</span>` : ""}</td>
               <td style="padding:6px 8px">${r.diseases.map((d) => { const h = diseaseHref(d.id); const lab = escapeHtml(d.name || d.id); return h ? `<a class="text-link" href="${h}" target="_blank" rel="noopener">${lab}</a>` : lab; }).join("<br>")}</td>
             </tr>`).join("")}
         </tbody>
-      </table></div>`;
+      </table></div>
+      ${paginationHTML(page, totalPages, "disease")}`;
   };
-  render("");
-  const inp = document.getElementById("disease-filter");
-  if (inp) inp.addEventListener("input", () => render(inp.value));
+  render();
+  if (inp) inp.addEventListener("input", () => { page = 1; render(); });
+  container.addEventListener("click", (e) => {
+    const nav = e.target.closest("[data-disease-page]");
+    if (!nav) return;
+    page += nav.dataset.diseasePage === "next" ? 1 : -1;
+    render(); toTop();
+  });
+  container.addEventListener("change", (e) => {
+    if (!e.target.closest("[data-disease-page-input]")) return;
+    const v = parseInt(e.target.value, 10);
+    if (Number.isFinite(v)) { page = v; render(); toTop(); }
+  });
 }
 
 function renderAnnotationsPage() {
@@ -4847,7 +4867,7 @@ function renderLabsPage() {
   const emeriti = labs.filter((l) => l.emeritus).sort((a, b) => a.pi.split(" ").pop().localeCompare(b.pi.split(" ").pop()));
 
   const renderCards = (list) => list.map((lab) => `
-    <div class="ontology-term" id="lab-${slugify(lab.pi)}" style="align-items:flex-start">
+    <div class="ontology-term" id="lab-${slugify(lab.pi)}" data-lab-search="${escapeHtml([lab.pi, lab.institution, lab.location].filter(Boolean).join(" ").toLowerCase())}" style="align-items:flex-start">
       <div>
         <strong>
           ${lab.url
@@ -4870,6 +4890,8 @@ function renderLabsPage() {
         </div>
       </header>
       <div class="record-body">
+        <input id="lab-filter" type="search" class="lab-filter" placeholder="Filter labs by name, institution, or country…" aria-label="Filter labs">
+        <p id="lab-filter-count" class="research-note" hidden></p>
         <section class="data-block">
           <h3>Active labs</h3>
           <div class="ontology-term-list">${renderCards(active)}</div>
@@ -4883,6 +4905,33 @@ function renderLabsPage() {
       </div>
     </article>
   `;
+}
+
+// Live filter for the labs directory — hides non-matching cards (and any
+// section left empty) and shows a match count.
+function initLabsFilter() {
+  const inp = document.getElementById("lab-filter");
+  if (!inp || !communityShell) return;
+  const cards = [...communityShell.querySelectorAll("[data-lab-search]")];
+  const sections = [...communityShell.querySelectorAll(".data-block")].filter((s) => s.querySelector("[data-lab-search]"));
+  const countEl = document.getElementById("lab-filter-count");
+  inp.addEventListener("input", () => {
+    const q = inp.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((c) => {
+      const on = !q || c.dataset.labSearch.includes(q);
+      c.style.display = on ? "" : "none";
+      if (on) shown++;
+    });
+    sections.forEach((sec) => {
+      const anyVisible = [...sec.querySelectorAll("[data-lab-search]")].some((c) => c.style.display !== "none");
+      sec.style.display = anyVisible ? "" : "none";
+    });
+    if (countEl) {
+      countEl.hidden = !q;
+      countEl.textContent = q ? `${shown} lab${shown === 1 ? "" : "s"} match “${inp.value.trim()}”.` : "";
+    }
+  });
 }
 
 function renderCorrectionsPage() {

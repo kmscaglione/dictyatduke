@@ -22,7 +22,14 @@ import urllib.request
 
 BASE = os.environ.get("CANARY_BASE", "https://dicty.labs.duke.edu").rstrip("/")
 UA = "dictyBase-canary/1.0 (+https://dicty.labs.duke.edu)"
+# Verify TLS by default (GitHub runners have a CA bundle, so this also catches a
+# real cert expiry). Set CANARY_INSECURE=1 to skip it on a machine whose local CA
+# store is broken (e.g. a fresh python.org install that never ran Install
+# Certificates), so a local run isn't blocked by an environment quirk.
 CTX = ssl.create_default_context()
+if os.environ.get("CANARY_INSECURE") == "1":
+    CTX.check_hostname = False
+    CTX.verify_mode = ssl.CERT_NONE
 
 # (symbol, DDB_G id) — stable, well-studied golden records.
 GOLDEN = [

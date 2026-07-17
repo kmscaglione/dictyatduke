@@ -275,6 +275,8 @@ catalog. A failed check exits non-zero → the workflow goes red → GitHub emai
 No infrastructure; it runs from GitHub's runners against the public HTTPS site (no VPN).
 - Run it yourself: `python3 scripts/canary.py` (hits production), or
   `CANARY_BASE=http://127.0.0.1:8774 python3 scripts/canary.py` against a local server.
+  (If your machine's CA store is broken and TLS verification fails, prepend
+  `CANARY_INSECURE=1` — a local-only escape hatch; GitHub's runners verify normally.)
 - Run on demand: GitHub → Actions → **Canary** → **Run workflow**.
 - Change cadence: the `cron` line in `canary.yml` (`"23 * * * *"` = hourly).
 

@@ -4398,10 +4398,15 @@ function renderGuidePage() {
     </article>`;
 }
 
-// First-visit "Site guide" pill beside the search bar: shown until the visitor
-// opens the guide or dismisses it (persisted per browser).
-const GUIDE_SEEN_KEY = "dictybase:guideSeen";
+// "Site guide" pill beside the search bar for new visitors. It shows on the home
+// view for up to GUIDE_SHOW_LIMIT visits, or until the visitor opens the guide or
+// dismisses it — whichever comes first (all persisted per browser).
+const GUIDE_SEEN_KEY = "dictybase:guideSeen";        // opened or dismissed -> hide for good
+const GUIDE_COUNT_KEY = "dictybase:guideShownCount"; // how many home visits we've shown it on
+const GUIDE_SHOW_LIMIT = 3;
 function guideSeen() { try { return localStorage.getItem(GUIDE_SEEN_KEY) === "1"; } catch { return false; } }
+function guideShownCount() { try { return parseInt(localStorage.getItem(GUIDE_COUNT_KEY) || "0", 10) || 0; } catch { return 0; } }
+function bumpGuideShownCount() { try { localStorage.setItem(GUIDE_COUNT_KEY, String(guideShownCount() + 1)); } catch { /* private mode */ } }
 function markGuideSeen() {
   try { localStorage.setItem(GUIDE_SEEN_KEY, "1"); } catch { /* private mode: just hide */ }
   const g = document.getElementById("search-guide");
@@ -9546,7 +9551,11 @@ function showHomeChrome(show) {
   const startBanner = document.getElementById("start-banner");
   if (startBanner) startBanner.hidden = !show;
   const searchGuide = document.getElementById("search-guide");
-  if (searchGuide) searchGuide.hidden = !(show && !guideSeen());
+  if (searchGuide) {
+    const showPill = show && !guideSeen() && guideShownCount() < GUIDE_SHOW_LIMIT;
+    searchGuide.hidden = !showPill;
+    if (showPill) bumpGuideShownCount();
+  }
   const papers = document.getElementById("papers-feed");
   if (papers) papers.hidden = !(show && papers.children.length > 0);
 }

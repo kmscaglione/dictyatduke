@@ -4398,7 +4398,18 @@ function renderGuidePage() {
     </article>`;
 }
 
+// First-visit "Site guide" pill beside the search bar: shown until the visitor
+// opens the guide or dismisses it (persisted per browser).
+const GUIDE_SEEN_KEY = "dictybase:guideSeen";
+function guideSeen() { try { return localStorage.getItem(GUIDE_SEEN_KEY) === "1"; } catch { return false; } }
+function markGuideSeen() {
+  try { localStorage.setItem(GUIDE_SEEN_KEY, "1"); } catch { /* private mode: just hide */ }
+  const g = document.getElementById("search-guide");
+  if (g) g.hidden = true;
+}
+
 function openGuide(updateRoute = true) {
+  markGuideSeen();
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/guide");
   if (!researchShell) return;
@@ -9049,6 +9060,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const guideDismiss = event.target.closest(".search-guide-x");
+  if (guideDismiss) {
+    event.preventDefault();
+    markGuideSeen();
+    return;
+  }
+
   const guideLink = event.target.closest('a[href="/guide"]');
   if (guideLink) {
     event.preventDefault();
@@ -9527,6 +9545,8 @@ function showHomeChrome(show) {
   if (caps) caps.hidden = !show;
   const startBanner = document.getElementById("start-banner");
   if (startBanner) startBanner.hidden = !show;
+  const searchGuide = document.getElementById("search-guide");
+  if (searchGuide) searchGuide.hidden = !(show && !guideSeen());
   const papers = document.getElementById("papers-feed");
   if (papers) papers.hidden = !(show && papers.children.length > 0);
 }

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="58 160 1278 1150" font-family="Helvetica, Arial, sans-serif">
+  <!-- Figure 2. dictyBase gene-record interface (cln5). Browser chrome cropped via viewBox.
+       Markers positioned in the screenshot's native pixel space (image is 1392x1493). -->
+  <image xlink:href="figure2-interface.png" href="figure2-interface.png" x="0" y="0" width="1392" height="1493" preserveAspectRatio="none"/>
+  <g font-size="17" font-weight="700" text-anchor="middle">
+    <g><circle cx="690" cy="207" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="690" y="213" fill="#fff">A</text></g>
+    <g><circle cx="108" cy="398" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="108" y="404" fill="#fff">B</text></g>
+    <g><circle cx="1160" cy="440" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="1160" y="446" fill="#fff">C</text></g>
+    <g><circle cx="760" cy="642" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="760" y="648" fill="#fff">D</text></g>
+    <g><circle cx="184" cy="719" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="184" y="725" fill="#fff">E</text></g>
+    <g><circle cx="205" cy="779" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="205" y="785" fill="#fff">F</text></g>
+    <g><circle cx="210" cy="945" r="17" fill="#012169" stroke="#fff" stroke-width="3"/><text x="210" y="951" fill="#fff">G</text></g>
+  </g>
+</svg>

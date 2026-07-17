@@ -413,8 +413,16 @@ restart dicty` only when `serve.py` changes — `app.js`/`styles.css`/JSON are
 read live). Secrets come from `/etc/dicty.env` (or, where that file isn't
 writable, a gitignored `.gemini_key` in the site dir for the AI key).
 
-**See [`deploy/DEPLOY-DUKE.md`](deploy/DEPLOY-DUKE.md)** for the exact
-server recipe (Apache vhost, systemd unit, SELinux, genome-data install, and
-the update/rollback flow), [`docs/deployment.md`](docs/deployment.md) for the
-general public-host checklist, and [`docs/cdn-setup.md`](docs/cdn-setup.md) for
-the optional CDN layer (the app already emits immutable/edge-cacheable headers).
+**Start with [`docs/OPERATIONS.md`](docs/OPERATIONS.md)** — the day-to-day
+production runbook: how the live Duke box actually works (the `apache` /
+`dicty-at-duke` ownership model and `web_chown`), deploying, when a restart is
+required, refreshing data, the gotchas that bite, troubleshooting, why the design
+choices are what they are, and how to onboard a second maintainer.
+
+Then: [`deploy/DEPLOY-DUKE.md`](deploy/DEPLOY-DUKE.md) for the original
+server-build recipe (Apache vhost, systemd unit, SELinux, genome-data install) —
+note the live box diverged from it in places, and OPERATIONS.md documents the
+*current* reality; [`docs/deployment.md`](docs/deployment.md) for the general
+public-host checklist (generic — describes Caddy, not Duke's httpd); and
+[`docs/cdn-setup.md`](docs/cdn-setup.md) for the optional CDN layer (the app
+already emits immutable/edge-cacheable headers).

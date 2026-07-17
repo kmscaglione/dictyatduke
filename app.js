@@ -1515,10 +1515,10 @@ function renderRecord() {
         <div class="record-title">
           <p class="eyebrow">Gene record</p>
           <h2>${gene.symbol}</h2>
-          <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}</p>
+          <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-            ${gene._curator ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
+            ${gene._curator && !gene._legacySummary ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
           <div class="record-actions">${basketToggleButtonHTML(gene)}${canViewInBrowser(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
         </div>
@@ -6537,6 +6537,25 @@ function aiCurationFor(gene) {
   return aiCurationData[(gene.symbol || "").toLowerCase()] || null;
 }
 
+// --- dictyBase legacy gene-product descriptions (imported fallback; always badged) ---
+let legacyDescData = null;
+async function ensureLegacyDescriptions() {
+  if (legacyDescData) return legacyDescData;
+  try {
+    const res = await fetch("/assets/legacy_descriptions.json");
+    legacyDescData = res.ok ? await res.json() : {};
+  } catch { legacyDescData = {}; }
+  return legacyDescData;
+}
+// A bare curator stamp ("Basic annotations have been added…"), not real content.
+function isCuratorNote(s) {
+  const t = (s || "").trim().toLowerCase();
+  if (!t) return true;
+  if (t.startsWith("gene has been")) return true;
+  return ["basic annotations have been added", "comprehensively annotated",
+          "annotations have been added", "gene model has been"].some((p) => t.includes(p));
+}
+
 // Human ortholog + disease (assets/ortholog_disease.json, keyed by DDB_G id).
 let orthologDiseaseData = null;
 async function ensureOrthologDisease() {
@@ -7351,6 +7370,18 @@ async function enrichGeneFromCorpus(gene) {
         if (entry.note) enriched._curatorNote = entry.note;
       }
     } catch { /* corpus optional */ }
+    // Fallback: imported dictyBase legacy gene-product description (badged), used
+    // ONLY where we have no real curated summary of our own.
+    try {
+      const leg = (await ensureLegacyDescriptions())[ddb];
+      if (leg && leg.description) {
+        const cur = (enriched.summary || "").trim();
+        if (!cur || cur === enriched.name || isCuratorNote(cur)) {
+          enriched.summary = leg.description;
+          enriched._legacySummary = true;
+        }
+      }
+    } catch { /* legacy layer optional */ }
     return enriched;
   } catch {
     return gene;

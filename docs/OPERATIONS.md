@@ -253,3 +253,35 @@ that, a second person should:
 
 Anyone who can do those six things can keep the site alive indefinitely. That — not the
 architecture — is what makes this durable.
+
+## 11. Validation & monitoring
+
+Two layers check that the site actually returns the data it should. Both are stdlib-only.
+
+**Before it ships — CI (`.github/workflows/validate.yml`).** On every push to master and every
+PR, GitHub runs `python3 -m unittest discover -s tests`:
+- `tests/test_assets.py` — schema/integrity of the static data files (IDs well-formed, GO ids
+  real, `cln5` → human `CLN5`, etc.).
+- `tests/test_endpoints.py` — boots `serve.py` in-process and hits the **real API**, asserting a
+  set of golden genes (rasG, cln5, mhcA, acaA, gbpC, pkaC) resolve by symbol *and* DDB_G id with
+  GO terms and sequence links, that search finds them, annotations return GO, an unknown gene
+  404s, and the catalog is > 13k. This is what catches **serving** regressions (routing,
+  override-merge, empty responses) that a file-only check misses.
+- Run locally: `CURATOR_PASSWORD=x python3 -m unittest discover -s tests`.
+
+**After it ships — canary (`.github/workflows/canary.yml`).** Every 2 hours GitHub probes the
+**live** site (`scripts/canary.py`): health, the same golden records, search, and the stock
+catalog. A failed check exits non-zero → the workflow goes red → GitHub emails the repo owner.
+No infrastructure; it runs from GitHub's runners against the public HTTPS site (no VPN).
+- Run it yourself: `python3 scripts/canary.py` (hits production), or
+  `CANARY_BASE=http://127.0.0.1:8774 python3 scripts/canary.py` against a local server.
+- Run on demand: GitHub → Actions → **Canary** → **Run workflow**.
+- Change cadence: the `cron` line in `canary.yml` (`"23 * * * *"` = hourly).
+
+**A red canary means the live site is returning wrong/empty data or is down.** Check, in order:
+the site loads at all → `/api/health` → whether a recent deploy landed a bad asset (roll back
+with `git reset --hard <last-good>` + redeploy) → whether a data rebuild shrank a file.
+
+**Extending the golden set:** add `(symbol, DDB_G id)` pairs to the `GOLDEN` list in **both**
+`tests/test_endpoints.py` and `scripts/canary.py` (verify the id against `assets/gene_index.json`
+first). Keep them to stable, well-annotated genes so the checks don't flap on a data refresh.

@@ -4356,6 +4356,57 @@ function renderStartPage() {
     </article>`;
 }
 
+// Site orientation guide (/guide) — a plain map of what's here and where to find
+// it, for people arriving at the rebuilt dictyBase (and for beta reviewers).
+// Framed as orientation, not as a comparison to any prior site.
+function renderGuidePage() {
+  const here = [
+    ["/search/advanced", "Gene records", "Every gene with GO, phenotype, ortholog, human-disease links, protein structure, and expression. Search from the box at the top of any page, or filter with the advanced finder."],
+    ["/tools/genome-browser", "Genomes &amp; browser", "17 sequenced dictyostelid genomes in an interactive browser."],
+    ["/tools/blast", "BLAST", "Search the genomes and proteomes by DNA or protein sequence."],
+    ["/stock-center", "Stock Center", "The full Dicty Stock Center catalog. Browse and order strains and plasmids."],
+    ["/tools", "Analysis tools", "GO enrichment, gene-set analysis, expression, CRISPR and primer design, and more."],
+    ["/community/annotations", "Curation", "How gene annotations are curated here, and how to contribute one."],
+  ].map(([href, h, b]) => `<div class="start-why-card"><strong><a class="text-link" href="${href}">${h}</a></strong><span>${b}</span></div>`).join("");
+
+  const tasks = [
+    ["Look up a gene", "Type a gene symbol or DDB_G id into the search box at the top of any page.", "/search/advanced", "Advanced gene finder"],
+    ["Search by sequence", "Paste a DNA or protein sequence to BLAST it against the dictyostelid genomes and proteomes.", "/tools/blast", "BLAST"],
+    ["Order strains or plasmids", "Browse the Dicty Stock Center catalog and add items to an order.", "/stock-center", "Stock Center"],
+    ["Analyze a gene list", "Run GO enrichment or gene-set analysis on a list of genes.", "/tools/enrichment", "GO enrichment"],
+    ["Browse a genome", "Move along any assembly and jump to a gene or region.", "/tools/genome-browser", "Genome browser"],
+    ["Download data or use the API", "Bulk FASTA and GFF3 downloads, plus a JSON API for programmatic access.", "/tools/downloads", "Downloads"],
+  ].map(([h, b, href, label], i) => `<li class="start-step"><span class="start-step-n">${i + 1}</span><div><strong>${h}</strong><p>${b} <a class="text-link" href="${href}">${label}</a></p></div></li>`).join("");
+
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Guide</p>
+        <h2>Getting around dictyBase</h2>
+        <p>dictyBase is the community resource for <em>Dictyostelium</em> genes, genomes, strains, and tools, rebuilt as a modern, faster site now hosted at Duke University. It is currently in beta while we validate the data. This page is a quick orientation to what is here and where to find it.</p>
+      </div></header>
+      <div class="record-body">
+        <h3 id="whats-here">What's here</h3>
+        <div class="start-why">${here}</div>
+
+        <h3 id="find" style="margin-top:28px">Finding your way around</h3>
+        <ol class="start-steps">${tasks}</ol>
+
+        <h3 id="beta" style="margin-top:28px">This is a beta</h3>
+        <p style="font-size:.9rem">We are still validating data, so some records may be incomplete or need correction. If something looks wrong, missing, or confusing, please tell us: use <a class="text-link" href="/community/corrections">Submit corrections</a> or email <a class="text-link" href="mailto:matt.scaglione@duke.edu">matt.scaglione@duke.edu</a>. Your feedback directly shapes what launches.</p>
+      </div>
+    </article>`;
+}
+
+function openGuide(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/guide");
+  if (!researchShell) return;
+  researchShell.innerHTML = renderGuidePage();
+  researchShell.removeAttribute("hidden");
+  scrollToEl(researchShell);
+}
+
 // "Is Dictyostelium right for my question?" — the research-areas map.
 // Each area links the fields Dicty excels in to verified marker genes (gene
 // records on this site), relevant protocols, and a scoped literature search.
@@ -8998,6 +9049,13 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const guideLink = event.target.closest('a[href="/guide"]');
+  if (guideLink) {
+    event.preventDefault();
+    openGuide();
+    return;
+  }
+
   const areasLink = event.target.closest('a[href="/research-areas"]');
   if (areasLink) {
     event.preventDefault();
@@ -9343,6 +9401,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "start") {
     openStart(false);
+    return;
+  }
+  if (pathParts[0] === "guide") {
+    openGuide(false);
     return;
   }
   if (pathParts[0] === "research-areas") {
@@ -9693,6 +9755,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Download genomes", href: "/tools/downloads", kw: "download fasta gff genomes assembly" },
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },
   { kind: "Tool", label: "Insoluble proteome viewer", href: "/tools/heatstress", kw: "proteome heat stress insoluble" },
+  { kind: "Guide", label: "Guide to the site", href: "/guide", sub: "What's here and where to find things", kw: "guide help getting around orientation tour new site what is here where to find beta how to use navigate map" },
   { kind: "Learn", label: "Start here — new to Dictyostelium", href: "/start", sub: "Why Dicty, getting started, and FAQ", kw: "start here new beginner why dictyostelium getting started faq introduction onboarding model organism" },
   { kind: "Learn", label: "Research areas — is Dicty right for my question?", href: "/research-areas", sub: "Fields Dicty excels in, with marker genes & protocols", kw: "research areas fields chemotaxis development autophagy phagocytosis host pathogen cytokinesis cytoskeleton disease models marker genes is dicty right for my question topics" },
   { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },

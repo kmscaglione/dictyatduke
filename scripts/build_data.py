@@ -194,48 +194,94 @@ def build_downloads_manifest():
 # go_annotations.json  <-  GO Consortium GAF (external download, --go only)
 # { ddb: [[goId, aspect(F/P/C), evidenceCode, pmid], ...] }
 # ---------------------------------------------------------------------------
-GAF_URL = "http://current.geneontology.org/annotations/dictybase.gaf.gz"
+# https (http 301-redirects) + a real UA (the GOC CDN 403s the default urllib UA).
+GAF_URL = "https://current.geneontology.org/annotations/dictybase.gaf.gz"
+GAF_UA = "Mozilla/5.0 (compatible; dictyBase-data-sync/1.0; +https://dicty.labs.duke.edu)"
 EXP = {"EXP", "IDA", "IPI", "IMP", "IGI", "IEP", "HTP", "HDA", "HMP", "HGI", "HEP"}
 
+# --- Input screening ---------------------------------------------------------
+# The GAF is a trusted source, but we still validate every field before it lands
+# in a file the site serves: only well-formed IDs, whitelisted evidence codes,
+# and known aspects pass. Anything malformed is dropped, not stored. This keeps
+# a corrupt or tampered upstream file from injecting junk (or markup) into the
+# data the browser renders.
+_DDB_RE = re.compile(r"^DDB_G[0-9]{4,}$")
+_GO_RE = re.compile(r"^GO:[0-9]{7}$")
+_PMID_RE = re.compile(r"^[0-9]{1,9}$")
+GO_ASPECTS = {"P", "F", "C"}
+GO_EVIDENCE = {  # the complete GO evidence-code set; anything else is rejected
+    "EXP", "IDA", "IPI", "IMP", "IGI", "IEP",              # experimental
+    "HTP", "HDA", "HMP", "HGI", "HEP",                     # high-throughput
+    "IBA", "IBD", "IKR", "IRD",                            # phylogenetic
+    "ISS", "ISO", "ISA", "ISM", "IGC", "RCA",              # computational
+    "TAS", "NAS", "IC", "ND",                              # author/curator/no-data
+    "IEA",                                                 # electronic
+}
 
-def build_go_annotations():
-    print(f"  downloading {GAF_URL}")
-    raw = urllib.request.urlopen(GAF_URL, timeout=60).read()
+
+def _read_gaf(local=None):
+    """Return the decoded GAF text, from a local file or the live GOC download."""
+    if local:
+        with open(local, "rb") as fh:
+            raw = fh.read()
+    else:
+        print(f"  downloading {GAF_URL}")
+        req = urllib.request.Request(GAF_URL, headers={"User-Agent": GAF_UA})
+        raw = urllib.request.urlopen(req, timeout=90).read()
+    return gzip.decompress(raw).decode("utf-8", "replace")
+
+
+def build_go_annotations(gaf_path=None):
+    text = _read_gaf(gaf_path)
     genes, seen = {}, set()
-    for line in gzip.decompress(raw).decode().splitlines():
+    dropped = kept = 0
+    release = ""
+    for line in text.splitlines():
         if line.startswith("!"):
+            # the GAF concatenates sub-sources (GOC/UniProt/PANTHER), each with its
+            # own date header; the first (GOC master assembly) is the release date.
+            if line.startswith("!date-generated:") and not release:
+                release = line.split(":", 1)[1].strip()
             continue
         c = line.split("\t")
         if len(c) < 9:
             continue
         ddb, go, ref, ev, aspect = c[1], c[4], c[5], c[6], c[8]
-        if not ddb.startswith("DDB_G") or not go.startswith("GO:"):
+        # screen: reject anything that isn't a well-formed, whitelisted value
+        if not (_DDB_RE.match(ddb) and _GO_RE.match(go)
+                and aspect in GO_ASPECTS and ev in GO_EVIDENCE):
+            dropped += 1
             continue
         pmid = ""
         for r in ref.split("|"):
             if r.startswith("PMID:"):
-                pmid = r.split(":", 1)[1]
+                cand = r.split(":", 1)[1]
+                pmid = cand if _PMID_RE.match(cand) else ""   # only accept a clean id
                 break
         key = (ddb, go, ev, pmid)
         if key in seen:
             continue
         seen.add(key)
+        kept += 1
         genes.setdefault(ddb, []).append([go, aspect, ev, pmid])
     # experimental evidence first, then aspect
     for d in genes:
         genes[d].sort(key=lambda a: (0 if a[2] in EXP else (2 if a[2] == "IEA" else 1), a[1]))
+    print(f"  GAF release {release or '?'}: kept {kept} rows across {len(genes)} genes; "
+          f"screened out {dropped} malformed/invalid rows")
     _write("go_annotations.json", genes)
 
 
 def main():
     want_go = "--go" in sys.argv
+    gaf_path = sys.argv[sys.argv.index("--gaf") + 1] if "--gaf" in sys.argv else None
     print("Building dictyBase data files...")
     build_gene_index()
     build_phenotypes()
     merge_summaries()
     build_downloads_manifest()
-    if want_go:
-        build_go_annotations()
+    if want_go or gaf_path:
+        build_go_annotations(gaf_path)
     else:
         print("  (skipping go_annotations.json — pass --go to download + rebuild)")
     # Derived facets for the advanced gene finder (needs ortholog_disease +

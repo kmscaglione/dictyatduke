@@ -70,6 +70,30 @@ STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", 
 # gzip (which changes Content-Length / can't honor a range) must not touch them.
 COMPRESSIBLE_EXTS = {".json", ".js", ".css", ".svg", ".bedgraph"}
 
+# Files/trees that live under ROOT but must NEVER be web-served, regardless of
+# extension — the static handler serves anything with a STATIC_EXTS extension
+# (incl. .json), so without this guard these gitignored runtime files would leak:
+#   curators.json           salted PBKDF2 password hashes for curator accounts
+#   *_overrides / log       durable curation state + audit trail
+#   uploads/                the submission inbox — files + submitter emails (PII)
+# Dotfiles (.gemini_key, .curator_password) are already caught by the SPA
+# fallback (no extension) but are blocked here too, belt-and-suspenders.
+_BLOCKED_EXACT = {
+    "/assets/curators.json",
+    "/assets/curation_overrides.json",
+    "/assets/stock_overrides.json",
+    "/assets/curation_log.jsonl",
+}
+_BLOCKED_PREFIXES = ("/uploads/",)
+
+
+def _is_blocked_path(raw):
+    """True if `raw` (a URL path, no query) must not be web-served."""
+    if raw in _BLOCKED_EXACT or raw.startswith(_BLOCKED_PREFIXES):
+        return True
+    # any path segment that is a dotfile (e.g. /.curator_password, /.gemini_key)
+    return any(seg.startswith(".") for seg in raw.split("/") if seg)
+
 # Cache-busting: stamp local css/js asset URLs in index.html with their mtime
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
 ASSET_RE = re.compile(r'(href|src)="(/[^"?]+\.(?:css|js))"')
@@ -1902,6 +1926,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         raw = self.path.split("?")[0]
+        # Secrets, curator accounts, override/audit state, and the upload inbox
+        # live under ROOT but must never be served — 404 before any file handler.
+        if _is_blocked_path(raw):
+            self.send_error(404, "Not Found")
+            return
         _, ext = os.path.splitext(raw)
         # The stock catalog is served with curator overrides merged in (durable
         # web edits), not as the raw file on disk.

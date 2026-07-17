@@ -13,6 +13,16 @@ SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
 SSL_CTX.verify_mode = ssl.CERT_NONE
 
+# Opener for the outbound allowlist proxy that does NOT follow redirects: the
+# allowlist is enforced on the original URL only, so a 3xx to an internal address
+# would bypass it (SSRF). A refused redirect surfaces as the 3xx itself, which the
+# proxy passes through harmlessly (no Location is forwarded to the browser).
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+_NOREDIRECT_OPENER = urllib.request.build_opener(
+    _NoRedirect, urllib.request.HTTPSHandler(context=SSL_CTX))
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOADS_DIR = pathlib.Path(ROOT) / "uploads"
 UPLOADS_DIR.mkdir(exist_ok=True)
@@ -610,6 +620,13 @@ def job_snapshot(jid):
 PROXY_MAX_CONCURRENT = int(os.environ.get("PROXY_MAX_CONCURRENT", "8"))
 _PROXY_SEM = threading.BoundedSemaphore(PROXY_MAX_CONCURRENT)
 PROXY_SLOT_WAIT = 2.0
+
+# Public unauthenticated write endpoints (/api/upload, /api/curator/submit) are
+# unused by the frontend — the community forms email instead — and are disabled
+# for the public launch to remove the disk-fill / queue-flood / hostile-file
+# surface. Set True (and add per-tenant limits) only if you wire up in-app
+# submission later. See _handle_upload / _handle_curation_submit.
+ACCEPT_PUBLIC_SUBMISSIONS = False
 
 # Upload guardrails (the /api/upload endpoint is public community submission).
 UPLOAD_MAX_BYTES = 50 * 1024 * 1024
@@ -2418,7 +2435,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 "User-Agent": "dictyBase/1.0 (https://dictyatduke; mailto:dictybase@duke.edu)",
                 "Accept": "application/json",
             })
-            with urllib.request.urlopen(req, timeout=20, context=SSL_CTX) as r:
+            with _NOREDIRECT_OPENER.open(req, timeout=20) as r:
                 body = r.read()
                 ctype = r.headers.get("Content-Type", "application/json")
                 status = getattr(r, "status", 200) or 200
@@ -2818,6 +2835,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def _handle_curation_submit(self):
         """Community submission of a gene curation."""
+        if not ACCEPT_PUBLIC_SUBMISSIONS:   # disabled for public launch
+            self.send_json(404, {"error": "Not found"})
+            return
         try:
             if _rate_limited(_UPLOAD_HITS, self.client_address[0], limit=20, window=3600):
                 self.send_json(429, {"error": "Submission limit reached. Try again later."})
@@ -3415,6 +3435,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(500, {"error": str(e)})
 
     def _handle_upload(self):
+        if not ACCEPT_PUBLIC_SUBMISSIONS:   # disabled for public launch
+            self.send_json(404, {"error": "Not found"})
+            return
         try:
             ip = self.client_address[0]
             if _rate_limited(_UPLOAD_HITS, ip, limit=10, window=3600):

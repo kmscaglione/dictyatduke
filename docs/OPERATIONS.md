@@ -81,6 +81,30 @@ mode `ug=rwX`**. Consequences:
   runs as `apache` and is *not* in `dicty-at-duke`, so it can't rely on group writes.
   A missing/unwritable `cache/` is what caused the `/api/recent-papers` 502 once.
 
+### Files that must never be web-served
+
+`serve.py`'s static handler serves **any** file under `html/` whose extension is in
+`STATIC_EXTS` — and `.json` is in that set. Several sensitive runtime files are `.json`
+(or live under a served dir), so without a guard they would be fetchable over HTTP:
+
+| Path | Holds |
+|---|---|
+| `assets/curators.json` | salted PBKDF2 password hashes for curator accounts |
+| `assets/curation_overrides.json`, `assets/stock_overrides.json` | durable curation state |
+| `assets/curation_log.jsonl` | curation audit trail |
+| `uploads/**` | community submissions — uploaded files **and submitter emails (PII)** |
+
+`_is_blocked_path()` (defined near `STATIC_EXTS`, enforced at the top of `do_GET`) returns
+**404** for all of the above plus any dotfile (`.curator_password`, `.gemini_key`), *before*
+any file handler runs. **If you add a new secret or PII-bearing file under `html/`, add it to
+`_BLOCKED_EXACT`/`_BLOCKED_PREFIXES` — do not rely on it being gitignored or having an
+unusual extension.** Quick check after a deploy:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" https://dicty.labs.duke.edu/assets/curators.json  # want 404
+curl -s -o /dev/null -w "%{http_code}\n" https://dicty.labs.duke.edu/uploads/               # want 404
+```
+
 ## 4. Deploying a change
 
 **Golden rule: deploy through git. Do not hand-patch the server.** (It has drifted before

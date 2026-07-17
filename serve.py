@@ -3063,18 +3063,67 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return datetime.datetime.utcfromtimestamp((ASSETS / fname).stat().st_mtime).strftime("%Y-%m-%d")
             except OSError:
                 return None
+        def cnt(fname):
+            d = _load_json(fname)
+            if isinstance(d, list):
+                return len(d)
+            if isinstance(d, dict):
+                keys = [k for k in d if not str(k).startswith("_")]
+                # unwrap a single {_meta, <wrapper>: {...}} container (uniprot_map, domains)
+                if len(keys) == 1 and isinstance(d[keys[0]], (dict, list)):
+                    return len(d[keys[0]])
+                return len(keys)
+            return None
         rows, _ = api_gene_rows()
+        sc = _load_json("stock_center.json")
+        stock_n = (len(sc.get("strains", [])) + len(sc.get("plasmids", []))) if isinstance(sc, dict) else None
+        # Complete data-source registry (this /data page is the canonical attribution
+        # surface). Every source that carries an attribution/share-alike term is
+        # named with its license + a link. Keep this list in sync when a data layer
+        # is added — CC BY / CC BY-SA sources MUST appear here.
         datasets = [
-            {"key": "summaries", "label": "Curated gene summaries", "source": "dictyBase (Basu et al. 2015)",
-             "updated": updated("dictybase_corpus.json"), "records": len(_load_json("dictybase_corpus.json"))},
-            {"key": "gene_index", "label": "Gene catalog", "source": "NCBI RefSeq — D. discoideum AX4 GFF",
-             "updated": updated("gene_index.json"), "records": len(rows)},
-            {"key": "go", "label": "GO annotations", "source": "GO Consortium GAF (current.geneontology.org)",
-             "updated": updated("go_annotations.json"), "records": len(_load_json("go_annotations.json"))},
-            {"key": "phenotypes", "label": "Phenotypes", "source": "dictyBase mutant-strain curation",
-             "updated": updated("phenotypes.json"), "records": len(_load_json("phenotypes.json"))},
-            {"key": "genomes", "label": "Genome assemblies", "source": "NCBI Datasets",
-             "updated": updated("downloads_manifest.json"), "records": len(_load_json("downloads_manifest.json"))},
+            {"label": "Curated gene summaries", "source": "dictyBase (Basu et al. 2015)",
+             "license": "CC BY-NC 4.0", "url": "https://dictybase.dev",
+             "records": cnt("dictybase_corpus.json"), "updated": updated("dictybase_corpus.json")},
+            {"label": "Gene catalog", "source": "NCBI RefSeq — D. discoideum AX4",
+             "license": "Public domain (NCBI)", "url": "https://www.ncbi.nlm.nih.gov/refseq/",
+             "records": len(rows), "updated": updated("gene_index.json")},
+            {"label": "GO annotations", "source": "GO Consortium GAF",
+             "license": "CC BY 4.0", "url": "https://geneontology.org",
+             "records": cnt("go_annotations.json"), "updated": updated("go_annotations.json")},
+            {"label": "Phenotypes", "source": "dictyBase mutant-strain curation",
+             "license": "CC BY-NC 4.0", "url": "https://dictybase.dev",
+             "records": cnt("phenotypes.json"), "updated": updated("phenotypes.json")},
+            {"label": "Genome assemblies", "source": "NCBI Datasets; wild isolates Ahmed et al. 2025 (PNAS)",
+             "license": "CC BY 4.0", "url": "https://www.ncbi.nlm.nih.gov/datasets/",
+             "records": cnt("downloads_manifest.json"), "updated": updated("downloads_manifest.json")},
+            {"label": "Protein IDs & cross-references", "source": "UniProt",
+             "license": "CC BY 4.0", "url": "https://www.uniprot.org",
+             "records": cnt("uniprot_map.json"), "updated": updated("uniprot_map.json")},
+            {"label": "Human orthologs", "source": "OMA Browser",
+             "license": "CC BY-SA 2.5", "url": "https://omabrowser.org",
+             "records": cnt("ortholog_disease.json"), "updated": updated("ortholog_disease.json")},
+            {"label": "Human disease associations", "source": "Orphanet (via HPO annotations)",
+             "license": "CC BY 4.0", "url": "https://www.orpha.net",
+             "records": None, "updated": updated("ortholog_disease.json")},
+            {"label": "Protein domains", "source": "InterPro / Pfam (EMBL-EBI)",
+             "license": "CC0 1.0", "url": "https://www.ebi.ac.uk/interpro/",
+             "records": cnt("domains.json"), "updated": updated("domains.json")},
+            {"label": "Pathways", "source": "KEGG (Kanehisa Laboratories)",
+             "license": "KEGG terms — academic use", "url": "https://www.kegg.jp",
+             "records": cnt("kegg_pathways.json"), "updated": updated("kegg_pathways.json")},
+            {"label": "Developmental expression", "source": "Parikh et al. 2010 RNA-seq",
+             "license": "See publication", "url": "https://doi.org/10.1186/gb-2010-11-3-r35",
+             "records": None, "updated": updated("rnaseq_parikh.json")},
+            {"label": "Protein structures", "source": "AlphaFold DB (EMBL-EBI / DeepMind)",
+             "license": "CC BY 4.0", "url": "https://alphafold.ebi.ac.uk",
+             "records": None, "updated": None},
+            {"label": "Proteomics", "source": "Banu et al. 2026; Williams et al. 2026",
+             "license": "See publications", "url": "",
+             "records": None, "updated": updated("proteomics_data.json")},
+            {"label": "Stock catalog", "source": "dictyBase / Dicty Stock Center",
+             "license": "CC BY 4.0", "url": "https://dictybase.dev",
+             "records": stock_n, "updated": updated("stock_center.json")},
         ]
         self.send_json(200, {"datasets": datasets})
 

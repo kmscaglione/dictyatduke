@@ -4865,7 +4865,7 @@ function renderDiseaseModelsPage() {
         <div class="record-title">
           <p class="eyebrow">Human disease</p>
           <h2>Dictyostelium disease models</h2>
-          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER). These are computational predictions; confirm against the primary literature.</p>
+          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from Orphanet (via the Human Phenotype Ontology). These are computational predictions; confirm against the primary literature.</p>
         </div>
       </header>
       <div class="record-body">
@@ -7383,19 +7383,20 @@ async function loadDataStatus() {
       <div class="data-block">
         <table style="width:100%;border-collapse:collapse;font-size:0.9375rem">
           <thead><tr style="text-align:left;color:var(--muted,#6b7280);font-size:0.75rem;text-transform:uppercase;letter-spacing:.05em">
-            <th style="padding:8px 10px">Dataset</th><th style="padding:8px 10px">Source</th><th style="padding:8px 10px;text-align:right">Records</th><th style="padding:8px 10px">Updated</th>
+            <th style="padding:8px 10px">Dataset</th><th style="padding:8px 10px">Source</th><th style="padding:8px 10px">License</th><th style="padding:8px 10px;text-align:right">Records</th><th style="padding:8px 10px">Updated</th>
           </tr></thead>
           <tbody>
             ${data.datasets.map((d) => `<tr style="border-top:1px solid var(--line,#e5e7eb)">
               <td style="padding:10px"><strong>${escapeHtml(d.label)}</strong></td>
-              <td style="padding:10px;color:var(--muted,#6b7280)">${d.source && d.source.includes("dictyBase") ? `<a class="text-link" href="https://dictybase.dev" target="_blank" rel="noopener">${escapeHtml(d.source)}</a>` : escapeHtml(d.source)}</td>
-              <td style="padding:10px;text-align:right">${Number(d.records).toLocaleString()}</td>
+              <td style="padding:10px;color:var(--muted,#6b7280)">${d.url ? `<a class="text-link" href="${escapeHtml(d.url)}" target="_blank" rel="noopener">${escapeHtml(d.source)}</a>` : escapeHtml(d.source)}</td>
+              <td style="padding:10px;color:var(--muted,#6b7280);white-space:nowrap">${escapeHtml(d.license || "—")}</td>
+              <td style="padding:10px;text-align:right">${d.records != null ? Number(d.records).toLocaleString() : "—"}</td>
               <td style="padding:10px;white-space:nowrap">${escapeHtml(d.updated || "—")}</td>
             </tr>`).join("")}
           </tbody>
         </table>
       </div>
-      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:10px">Dates reflect the last local refresh of each dataset (regenerated via <code>scripts/build_data.py</code>).</p>`;
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:10px">dictyBase re-presents these sources with attribution under their respective licenses; it is not the authoritative curator. Dates reflect the last local refresh (via <code>scripts/build_data.py</code>).</p>`;
   } catch {
     el.innerHTML = `<p class="notice">Could not load data status.</p>`;
   }
@@ -7889,7 +7890,7 @@ async function loadKeggPathways(gene) {
   if (!paths || !paths.length) { el.setAttribute("hidden", ""); return; }
   el.removeAttribute("hidden");
   el.innerHTML = `
-    <h3>KEGG pathways <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— ${paths.length}</span></h3>
+    <h3>Pathways <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— <a class="text-link" href="https://www.kegg.jp/" target="_blank" rel="noopener">KEGG</a> · ${paths.length}</span></h3>
     <ul class="list" style="font-size:0.8125rem">
       ${paths.map((p) => `<li><a class="text-link" href="https://www.kegg.jp/pathway/${escapeHtml(p.id)}+${escapeHtml(ddb)}" target="_blank" rel="noopener">${escapeHtml(p.name)}</a></li>`).join("")}
     </ul>

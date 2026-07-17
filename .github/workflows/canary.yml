@@ -1,0 +1,25 @@
+name: Canary
+
+# Periodically probe the LIVE site to confirm it is returning correct data
+# (health, golden gene records, search, stock catalog). A failed run shows as a
+# red check and triggers GitHub's built-in failure email to the repo owner — no
+# extra infrastructure. Add a Slack/webhook step here later if you want push
+# alerts. Runs from GitHub's runners against the public HTTPS site (no VPN).
+
+on:
+  schedule:
+    - cron: "23 */2 * * *"   # every 2 hours, at :23. Tighten to "23 * * * *" for hourly.
+  workflow_dispatch: {}       # run on demand from the Actions tab
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe the live site
+        run: python3 scripts/canary.py
+        env:
+          CANARY_BASE: https://dicty.labs.duke.edu

@@ -37,12 +37,17 @@ const EXT_PROXY_HOSTS = new Set([
 // stores only aggregate counts — no cookies, no IP/User-Agent, no PII. Fires on
 // initial load and on every SPA navigation (pushState / back-forward).
 let _lastPageview = null;
+let _firstView = true;
 function recordPageview(path) {
   const p = path || window.location.pathname;
   if (p === _lastPageview) return;     // ignore tab-only (?tab=) changes — same path
   _lastPageview = p;
   try {
-    const body = JSON.stringify({ path: p });
+    const payload = { path: p };
+    // Attribute the traffic source once per visit: send document.referrer on the
+    // first pageview only (server counts it once, not on every SPA navigation).
+    if (_firstView) { payload.ref = document.referrer || ""; _firstView = false; }
+    const body = JSON.stringify(payload);
     if (navigator.sendBeacon) navigator.sendBeacon("/api/hit", body);
     else fetch("/api/hit", { method: "POST", body, keepalive: true });
   } catch (e) { /* analytics is best-effort */ }
@@ -1912,24 +1917,49 @@ async function loadStats(token) {
     const total = d.total || 0;
     const max = rows.length ? rows[0][1] : 1;
     const since = d.since ? new Date(d.since).toLocaleDateString() : "—";
-    out.innerHTML = `
-      <p style="margin:0 0 10px"><strong>${total.toLocaleString()}</strong> page views since ${escapeHtml(since)}
-        <span class="muted" style="font-size:12px">· updated ${d.updated ? escapeHtml(new Date(d.updated).toLocaleString()) : "—"}</span></p>
+    const today = d.today || 0;
+    // Last 14 calendar days (fill gaps with 0 so quiet days show as quiet).
+    const days = d.days || {};
+    const recent = [];
+    const now = new Date();
+    for (let i = 13; i >= 0; i--) {
+      const dt = new Date(now.getTime() - i * 86400000);
+      const key = dt.toISOString().slice(0, 10);
+      recent.push([key, days[key] || 0]);
+    }
+    const dMax = Math.max(1, ...recent.map(([, n]) => n));
+    const refs = Object.entries(d.referrers || {});
+    const rMax = refs.length ? Math.max(...refs.map(([, n]) => n)) : 1;
+    // Reusable label/value/bar table.
+    const barTable = (hdr, entries, mx, empty, mono) => `
       <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px">
         <thead><tr>
-          <th style="text-align:left;padding:6px 8px">Page</th>
+          <th style="text-align:left;padding:6px 8px">${hdr}</th>
           <th style="text-align:right;padding:6px 8px">Views</th>
           <th style="width:40%"></th>
         </tr></thead>
         <tbody>
-        ${rows.length ? rows.map(([k, n]) => `
+        ${entries.length ? entries.map(([k, n]) => `
           <tr style="border-top:1px solid var(--line)">
-            <td style="padding:6px 8px;font-family:ui-monospace,monospace">${escapeHtml(k)}</td>
+            <td style="padding:6px 8px${mono ? ";font-family:ui-monospace,monospace" : ""}">${escapeHtml(k)}</td>
             <td style="padding:6px 8px;text-align:right">${n.toLocaleString()}</td>
-            <td style="padding:6px 8px"><div style="height:8px;border-radius:4px;background:var(--teal);width:${Math.max(2, Math.round((n / max) * 100))}%"></div></td>
-          </tr>`).join("") : `<tr><td colspan="3" style="padding:12px">No views recorded yet.</td></tr>`}
+            <td style="padding:6px 8px"><div style="height:8px;border-radius:4px;background:var(--teal);width:${Math.max(n ? 2 : 0, Math.round((n / mx) * 100))}%"></div></td>
+          </tr>`).join("") : `<tr><td colspan="3" style="padding:12px">${empty}</td></tr>`}
         </tbody>
       </table></div>`;
+    out.innerHTML = `
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin:0 0 14px">
+        <div><div style="font-size:26px;font-weight:700;line-height:1">${today.toLocaleString()}</div><div class="muted" style="font-size:12px">views today</div></div>
+        <div><div style="font-size:26px;font-weight:700;line-height:1">${total.toLocaleString()}</div><div class="muted" style="font-size:12px">total since ${escapeHtml(since)}</div></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin:0 0 14px">Updated ${d.updated ? escapeHtml(new Date(d.updated).toLocaleString()) : "—"} · times are UTC-based day buckets</p>
+      <h3 style="margin:14px 0 6px;font-size:15px">Last 14 days</h3>
+      ${barTable("Day", recent, dMax, "No views yet.", true)}
+      <h3 style="margin:18px 0 6px;font-size:15px">Where views come from</h3>
+      <p class="muted" style="font-size:12px;margin:0 0 6px">Traffic source per visit, from the referring site — no cookies or IPs. “Direct / email” = opened straight from a bookmark, typed URL, or an email/app that sends no referrer.</p>
+      ${barTable("Source", refs, rMax, "No referrer data yet.", false)}
+      <h3 style="margin:18px 0 6px;font-size:15px">By page</h3>
+      ${barTable("Page", rows, max, "No views recorded yet.", true)}`;
   } catch { out.innerHTML = `<div class="empty-state">Could not load stats.</div>`; }
 }
 

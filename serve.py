@@ -494,7 +494,12 @@ _EXT_CACHE_MAX_BYTES = 2_000_000   # don't cache huge payloads
 # are bucketed (/gene/<x> -> /gene/:id) to bound the keyspace and to never store
 # arbitrary user input. Persisted to cache/pageviews.json.
 PAGEVIEWS_PATH = pathlib.Path(ROOT) / "cache" / "pageviews.json"
-_PAGEVIEWS = {"counts": {}, "since": None, "updated": None}
+# counts: {route-bucket: total}. days: {YYYY-MM-DD (UTC): total} for "today"/trend.
+# referrers: {source-label: entries} — where a visit came from, bucketed to the
+# source site only (no full URLs, no query strings), counted once per entry.
+_PAGEVIEWS = {"counts": {}, "days": {}, "referrers": {}, "since": None, "updated": None}
+_PV_DAYS_KEEP = 400        # cap the day keyspace (~13 months); prune older on write
+_PV_REF_CAP = 200          # cap distinct referrer buckets; overflow -> "Other"
 _PAGEVIEWS_LOADED = False
 _PV_LOCK = threading.Lock()
 _HIT_HITS = {}                     # ip -> recent /api/hit epochs (limiter only; not stored)
@@ -524,6 +529,50 @@ def _bucket_path(path):
     return "/" + head
 
 
+# Map common referrer hosts to friendly source labels. Bounds the keyspace and
+# avoids storing arbitrary/attacker-controlled hostnames verbatim.
+_REF_SOURCES = [
+    (("t.co", "twitter.com", "x.com"), "Twitter/X"),
+    (("facebook.com",), "Facebook"),
+    (("mail.google.com",), "Gmail"),
+    (("outlook.com", "outlook.office.com", "outlook.office365.com", "outlook.live.com"), "Outlook"),
+    (("scholar.google.com",), "Google Scholar"),
+    (("google.com", "google.co.uk", "google.ca", "google.de"), "Google"),
+    (("bing.com",), "Bing"),
+    (("duckduckgo.com",), "DuckDuckGo"),
+    (("linkedin.com", "lnkd.in"), "LinkedIn"),
+    (("reddit.com",), "Reddit"),
+    (("news.ycombinator.com",), "Hacker News"),
+    (("bsky.app",), "Bluesky"),
+    (("wikipedia.org",), "Wikipedia"),
+    (("slack.com",), "Slack"),
+    (("teams.microsoft.com",), "MS Teams"),
+]
+
+
+def _bucket_referrer(ref, self_host=None):
+    """Collapse a referrer URL to a bounded, friendly source label. Only the
+    source site is ever derived — never the full URL, path, or query string."""
+    if not ref:
+        return "Direct / email"
+    try:
+        host = (urlparse(ref).hostname or "").lower().lstrip(".")
+    except ValueError:
+        return "Other"
+    if host.startswith("www."):
+        host = host[4:]
+    if not host:
+        return "Direct / email"
+    if self_host and (host == self_host or host.endswith("." + self_host)):
+        return "Internal"
+    for hosts, label in _REF_SOURCES:
+        if any(host == h or host.endswith("." + h) for h in hosts):
+            return label
+    if host == "duke.edu" or host.endswith(".duke.edu"):
+        return "Duke (other)"
+    return re.sub(r"[^a-z0-9.-]", "", host)[:40] or "Other"
+
+
 def _load_pageviews():
     global _PAGEVIEWS_LOADED
     if _PAGEVIEWS_LOADED:
@@ -533,6 +582,8 @@ def _load_pageviews():
             d = json.loads(PAGEVIEWS_PATH.read_text())
             if isinstance(d, dict):
                 _PAGEVIEWS["counts"] = d.get("counts", {}) or {}
+                _PAGEVIEWS["days"] = d.get("days", {}) or {}
+                _PAGEVIEWS["referrers"] = d.get("referrers", {}) or {}
                 _PAGEVIEWS["since"] = d.get("since")
                 _PAGEVIEWS["updated"] = d.get("updated")
     except (ValueError, OSError):
@@ -1847,8 +1898,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             with _PV_LOCK:
                 _load_pageviews()
                 counts = dict(sorted(_PAGEVIEWS["counts"].items(), key=lambda kv: -kv[1]))
+                days = dict(sorted(_PAGEVIEWS.get("days", {}).items()))
+                referrers = dict(sorted(_PAGEVIEWS.get("referrers", {}).items(), key=lambda kv: -kv[1]))
+                today = datetime.datetime.utcnow().strftime("%Y-%m-%d")
                 self.send_json(200, {"since": _PAGEVIEWS["since"], "updated": _PAGEVIEWS["updated"],
-                                     "total": sum(counts.values()), "counts": counts})
+                                     "total": sum(counts.values()), "counts": counts,
+                                     "days": days, "today": days.get(today, 0),
+                                     "referrers": referrers})
             return
 
         # Curator dashboard API — list pending curations
@@ -2362,17 +2418,37 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_response(204)
             self.end_headers()
             return
+        path = "/"
+        # ref is present (possibly "") only on the first pageview of a visit, so
+        # the source is attributed once per entry, not on every SPA navigation.
+        ref_present, ref = False, ""
         try:
             length = int(self.headers.get("Content-Length", 0))
-            path = "/"
             if 0 < length <= 2000:
-                path = json.loads(self.rfile.read(length) or b"{}").get("path") or "/"
+                data = json.loads(self.rfile.read(length) or b"{}")
+                if isinstance(data, dict):
+                    path = data.get("path") or "/"
+                    if "ref" in data:
+                        ref_present, ref = True, (data.get("ref") or "")
         except (ValueError, json.JSONDecodeError):
             path = "/"
         bucket = _bucket_path(path)
+        day = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+        self_host = (self.headers.get("Host") or "").split(":")[0].lower()
         with _PV_LOCK:
             _load_pageviews()
             _PAGEVIEWS["counts"][bucket] = _PAGEVIEWS["counts"].get(bucket, 0) + 1
+            days = _PAGEVIEWS["days"]
+            days[day] = days.get(day, 0) + 1
+            if len(days) > _PV_DAYS_KEEP:
+                for k in sorted(days)[:-_PV_DAYS_KEEP]:
+                    days.pop(k, None)
+            if ref_present:
+                rb = _bucket_referrer(ref, self_host)
+                refs = _PAGEVIEWS["referrers"]
+                if rb not in refs and len(refs) >= _PV_REF_CAP:
+                    rb = "Other"
+                refs[rb] = refs.get(rb, 0) + 1
             _save_pageviews()
         self.send_response(204)
         self.send_header("Access-Control-Allow-Origin", "*")

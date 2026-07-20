@@ -1987,6 +1987,7 @@ function renderCuratePage() {
         <div id="cur-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
           <input id="cur-user" type="text" autocomplete="username" aria-label="Username" placeholder="Username" style="${FIELD};min-width:180px">
           <input id="cur-pw" type="password" autocomplete="current-password" aria-label="Password" placeholder="Password" style="${FIELD};min-width:180px">
+          <input id="cur-code" type="text" inputmode="numeric" autocomplete="one-time-code" aria-label="Two-factor code" placeholder="6-digit code" hidden style="${FIELD};min-width:140px">
           <button type="button" id="cur-login">Sign in</button>
           <span id="cur-msg" class="muted" style="font-size:13px"></span>
         </div>
@@ -1995,6 +1996,8 @@ function renderCuratePage() {
             <span class="muted" style="font-size:13px">Signed in as <strong id="cur-whoami" style="color:var(--ink)"></strong></span>
             <a id="cur-backup" class="text-link" href="#" style="font-size:13px">⬇ Download backup</a>
             <a id="cur-logout" class="text-link" href="#" style="font-size:13px">Sign out</a></p>
+          <h3 class="tools-group">Two-factor authentication</h3>
+          <div id="cur-2fa" style="margin-bottom:6px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
           <div id="cur-accounts-section" hidden>
             <h3 class="tools-group">Curators <span class="muted" style="font-weight:400;font-size:12px">(admin)</span></h3>
             <div id="cur-accounts-list" style="margin-bottom:8px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
@@ -2095,17 +2098,34 @@ function initCurate() {
     if (who) who.textContent = curatorName + (curatorAdmin ? " · admin" : "");
     const acctSec = document.getElementById("cur-accounts-section");
     if (acctSec) { acctSec.hidden = !curatorAdmin; if (curatorAdmin) loadAccounts(); }
+    load2FA();
     loadCurQueue();
   };
+  const codeEl = document.getElementById("cur-code");
   const login = async () => {
     const username = (userEl.value || "").trim();
     const password = (pw.value || "").trim();
+    const code = ((codeEl && codeEl.value) || "").trim();
     if (!password) { pw.focus(); return; }
     msg.textContent = "Signing in…";
     try {
       const r = await fetch("/api/curator/login", { method: "POST",
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, password }) });
-      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong username or password."; return; }
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, password, code }) });
+      if (!r.ok) {
+        let e = {};
+        try { e = await r.json(); } catch { /* non-JSON error */ }
+        if (e.totp_required && codeEl) {
+          // Password was right — this account has two-factor enrolled.
+          codeEl.hidden = false;
+          codeEl.value = "";
+          codeEl.focus();
+          msg.textContent = code ? "That code didn't match — try the current one."
+                                 : "Enter the 6-digit code from your authenticator app (or a backup code).";
+          return;
+        }
+        msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong username or password.";
+        return;
+      }
       const d = await r.json();
       curatorToken = d.token; curatorName = d.name || username || "Curator"; curatorAdmin = !!d.admin;
       msg.textContent = "";
@@ -2113,7 +2133,7 @@ function initCurate() {
     } catch { msg.textContent = "Sign-in failed — try again."; }
   };
   loginBtn.addEventListener("click", login);
-  [userEl, pw].forEach((el) => el.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); }));
+  [userEl, pw, codeEl].filter(Boolean).forEach((el) => el.addEventListener("keydown", (e) => { if (e.key === "Enter") login(); }));
   if (curatorToken) showWork();   // already signed in this session
 
   const logout = document.getElementById("cur-logout");
@@ -2362,6 +2382,112 @@ function initStockCurate() {
       form.setAttribute("hidden", "");
     } catch { saveMsg.textContent = "Delete failed — the previous catalog is intact."; }
   });
+}
+
+// --- Curator two-factor (TOTP) enrollment ---------------------------------
+// Status → enable (show setup key, verify a code, hand back one-time backup
+// codes) → or turn off (requires the account password again).
+async function load2FA() {
+  const el = document.getElementById("cur-2fa");
+  if (!el) return;
+  const fail = () => { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load two-factor status.</p>`; };
+  let s;
+  try {
+    const r = await fetch("/api/curator/2fa", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) return fail();
+    s = await r.json();
+  } catch { return fail(); }
+
+  if (!s.account) {
+    el.innerHTML = `<p class="notice muted" style="font-size:13px">You are signed in with the bootstrap admin password, which has no two-factor. Create a named curator account below, then sign in as that account to enable it.</p>`;
+    return;
+  }
+  if (s.enabled) {
+    el.innerHTML = `
+      <p style="font-size:13px;margin:0 0 8px"><strong style="color:#065f46">✓ Enabled</strong> for <strong>${escapeHtml(s.username)}</strong>
+        <span class="muted">· ${s.backup_remaining} backup code${s.backup_remaining === 1 ? "" : "s"} left</span></p>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input id="tfa-off-pw" type="password" placeholder="Your password" style="${FIELD};min-width:160px">
+        <button type="button" id="tfa-off" style="background:#fff;color:#b91c1c;border:1px solid #e5b4b4">Turn off</button>
+        <span id="tfa-msg" class="muted" style="font-size:13px"></span>
+      </div>`;
+    document.getElementById("tfa-off").addEventListener("click", disable2FA);
+    return;
+  }
+  el.innerHTML = `
+    <p style="font-size:13px;margin:0 0 8px">Not enabled. Require a code from your phone at sign-in, so a stolen password alone can't reach curation.</p>
+    <button type="button" id="tfa-start">Enable two-factor</button>
+    <span id="tfa-msg" class="muted" style="font-size:13px;margin-left:8px"></span>`;
+  document.getElementById("tfa-start").addEventListener("click", start2FA);
+}
+
+async function start2FA() {
+  const el = document.getElementById("cur-2fa");
+  const msg = document.getElementById("tfa-msg");
+  if (msg) msg.textContent = "Generating…";
+  let d;
+  try {
+    const r = await fetch("/api/curator/2fa/setup", { method: "POST", headers: { Authorization: `Bearer ${curatorToken}` } });
+    d = await r.json();
+    if (!r.ok) { if (msg) msg.textContent = d.error || "Could not start setup."; return; }
+  } catch { if (msg) msg.textContent = "Could not start setup."; return; }
+  el.innerHTML = `
+    <ol style="font-size:13px;padding-left:18px;margin:0 0 10px">
+      <li>In your authenticator app (Google Authenticator, 1Password, Authy…), add an account using <strong>“enter a setup key”</strong>.</li>
+      <li>Key: <code style="display:inline-block;background:var(--soft);padding:2px 6px;border-radius:4px;font-size:12px;letter-spacing:.06em">${escapeHtml(d.secret)}</code></li>
+      <li>Type the 6-digit code it shows:</li>
+    </ol>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <input id="tfa-code" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code" style="${FIELD};min-width:140px">
+      <button type="button" id="tfa-verify">Verify &amp; enable</button>
+      <button type="button" id="tfa-cancel" style="background:#fff">Cancel</button>
+      <span id="tfa-msg" class="muted" style="font-size:13px"></span>
+    </div>`;
+  document.getElementById("tfa-verify").addEventListener("click", () => enable2FA(d.secret));
+  document.getElementById("tfa-cancel").addEventListener("click", load2FA);
+  const codeEl = document.getElementById("tfa-code");
+  codeEl.focus();
+  codeEl.addEventListener("keydown", (e) => { if (e.key === "Enter") enable2FA(d.secret); });
+}
+
+async function enable2FA(secret) {
+  const msg = document.getElementById("tfa-msg");
+  const code = ((document.getElementById("tfa-code") || {}).value || "").trim();
+  if (!code) return;
+  if (msg) msg.textContent = "Verifying…";
+  try {
+    const r = await fetch("/api/curator/2fa/enable", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify({ secret, code }),
+    });
+    const d = await r.json();
+    if (!r.ok) { if (msg) msg.textContent = d.error || "That code didn't match."; return; }
+    document.getElementById("cur-2fa").innerHTML = `
+      <p style="font-size:13px;margin:0 0 8px"><strong style="color:#065f46">✓ Two-factor is on.</strong> Save these backup codes somewhere safe — each works once if you lose your phone, and they are shown only now.</p>
+      <pre style="background:var(--soft);padding:10px 12px;border-radius:8px;font-size:13px;margin:0 0 8px;white-space:pre-wrap">${escapeHtml((d.backup_codes || []).join("\n"))}</pre>
+      <button type="button" id="tfa-done">Done</button>`;
+    document.getElementById("tfa-done").addEventListener("click", load2FA);
+  } catch { if (msg) msg.textContent = "Could not enable two-factor."; }
+}
+
+async function disable2FA() {
+  const msg = document.getElementById("tfa-msg");
+  const pwEl = document.getElementById("tfa-off-pw");
+  const password = ((pwEl || {}).value || "").trim();
+  if (!password) { if (pwEl) pwEl.focus(); return; }
+  if (!confirm("Turn off two-factor authentication for your account?")) return;
+  if (msg) msg.textContent = "Working…";
+  try {
+    const r = await fetch("/api/curator/2fa/disable", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify({ password }),
+    });
+    const d = await r.json();
+    if (!r.ok) { if (msg) msg.textContent = d.error || "Could not turn it off."; return; }
+    load2FA();
+  } catch { if (msg) msg.textContent = "Could not turn it off."; }
 }
 
 async function loadAccounts() {

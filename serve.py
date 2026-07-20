@@ -1,5 +1,6 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
 import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading, hashlib
+import base64, struct
 import concurrent.futures
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
@@ -1006,6 +1007,78 @@ def _verify_pw(password, salt, expected):
     return hmac.compare_digest(h, expected)
 
 
+# --- Two-factor auth for curator accounts: TOTP (RFC 6238), stdlib only ------
+# Standard authenticator-app codes (Google Authenticator, 1Password, Authy, …):
+# SHA-1, 6 digits, 30s step, accepted within +/-1 step for clock skew. The
+# per-account base32 secret lives in curators.json (which is never web-served,
+# see _is_blocked_path). The counter of the last accepted code is remembered so
+# a code cannot be replayed inside its validity window. Single-use backup codes
+# (stored as hashes) prevent lockout if a curator loses their phone.
+TOTP_STEP = 30
+TOTP_DIGITS = 6
+TOTP_WINDOW = 1          # +/- one 30s step
+BACKUP_CODE_COUNT = 10
+
+
+def _totp_new_secret():
+    return base64.b32encode(secrets.token_bytes(20)).decode().rstrip("=")
+
+
+def _totp_at(secret, counter):
+    key = base64.b32decode(secret.upper() + "=" * (-len(secret) % 8))
+    mac = hmac.new(key, struct.pack(">Q", counter), hashlib.sha1).digest()
+    off = mac[-1] & 0x0F
+    num = struct.unpack(">I", mac[off:off + 4])[0] & 0x7FFFFFFF
+    return str(num % (10 ** TOTP_DIGITS)).zfill(TOTP_DIGITS)
+
+
+def _totp_check(secret, code, last_counter=-1, now=None):
+    """Return the matched counter, or None. A counter <= last_counter is a
+    replay of an already-used code and is rejected."""
+    code = (code or "").strip().replace(" ", "").replace("-", "")
+    if not (code.isdigit() and len(code) == TOTP_DIGITS):
+        return None
+    base = int((now if now is not None else time.time()) // TOTP_STEP)
+    for drift in range(-TOTP_WINDOW, TOTP_WINDOW + 1):
+        counter = base + drift
+        if counter <= last_counter:
+            continue
+        try:
+            if hmac.compare_digest(_totp_at(secret, counter), code):
+                return counter
+        except Exception:
+            return None
+    return None
+
+
+def _otpauth_uri(username, secret, issuer="dictyBase"):
+    """otpauth:// URI an authenticator app can take (paste or QR)."""
+    label = quote(f"{issuer}:{username}")
+    return (f"otpauth://totp/{label}?secret={secret}&issuer={quote(issuer)}"
+            f"&algorithm=SHA1&digits={TOTP_DIGITS}&period={TOTP_STEP}")
+
+
+def _new_backup_codes(n=BACKUP_CODE_COUNT):
+    """Return (plaintext codes shown once, hashes to store)."""
+    codes = ["-".join(secrets.token_hex(2) for _ in range(4)) for _ in range(n)]
+    return codes, [hashlib.sha256(c.encode()).hexdigest() for c in codes]
+
+
+def _consume_backup_code(accts, username, code):
+    """Single-use recovery code: verify and burn it. True if accepted."""
+    acct = accts.get(username) or {}
+    want = hashlib.sha256((code or "").strip().lower().encode()).hexdigest()
+    remaining = list(acct.get("backup") or [])
+    for i, h in enumerate(remaining):
+        if hmac.compare_digest(h, want):
+            remaining.pop(i)
+            acct["backup"] = remaining
+            accts[username] = acct
+            save_curators(accts)
+            return True
+    return False
+
+
 def load_curators():
     d = _read_json_file(CURATORS_PATH, {})
     return d if isinstance(d, dict) else {}
@@ -1968,6 +2041,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Curator dashboard API — list curator accounts (admin only, no passwords).
+        if self.path == "/api/curator/2fa":
+            self._handle_2fa_status()
+            return
         if self.path == "/api/curator/accounts":
             self._handle_accounts_list()
             return
@@ -2332,6 +2408,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_accounts_save()
         elif self.path == "/api/curator/accounts/delete":
             self._handle_accounts_delete()
+        elif self.path == "/api/curator/2fa/setup":
+            self._handle_2fa_setup()
+        elif self.path == "/api/curator/2fa/enable":
+            self._handle_2fa_enable()
+        elif self.path == "/api/curator/2fa/disable":
+            self._handle_2fa_disable()
         elif self.path.startswith("/api/blast?") and "async=1" in urlparse(self.path).query:
             self._handle_blast_async()                   # pool-bounded, pollable
         elif self.path == "/api/blast":
@@ -2797,6 +2879,89 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         s = self._session(self._parse_token())
         return (s or {}).get("name") or "Curator"
 
+    def _session_username(self):
+        """The named-account username for this session ("" for bootstrap admin)."""
+        s = self._session(self._parse_token())
+        return (s or {}).get("username") or ""
+
+    # --- Two-factor enrollment (named accounts only) ------------------------
+    def _handle_2fa_status(self):
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        user = self._session_username()
+        acct = load_curators().get(user) or {}
+        self.send_json(200, {"account": bool(acct), "username": user,
+                             "enabled": bool(acct.get("totp")),
+                             "backup_remaining": len(acct.get("backup") or [])})
+
+    def _handle_2fa_setup(self):
+        """Mint a fresh secret to show the curator. Not active until verified."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        user = self._session_username()
+        if not user or user not in load_curators():
+            self.send_json(400, {"error": "Two-factor is only available for named curator accounts. "
+                                          "Create one from Accounts, then sign in as that account."})
+            return
+        secret = _totp_new_secret()
+        self.send_json(200, {"secret": secret, "otpauth": _otpauth_uri(user, secret)})
+
+    def _handle_2fa_enable(self):
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 4096)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Bad request"})
+            return
+        user = self._session_username()
+        accts = load_curators()
+        acct = accts.get(user)
+        if not acct:
+            self.send_json(400, {"error": "Two-factor is only available for named curator accounts."})
+            return
+        secret = (body.get("secret") or "").strip()
+        if not secret or _totp_check(secret, body.get("code")) is None:
+            self.send_json(400, {"error": "That code didn't match. Check the app's clock and try again."})
+            return
+        codes, hashed = _new_backup_codes()
+        acct.update(totp=secret, totp_last=-1, backup=hashed)
+        accts[user] = acct
+        save_curators(accts)
+        _log_curation("account", "2fa-enable", user, self._session_name())
+        self.send_json(200, {"ok": True, "backup_codes": codes})
+
+    def _handle_2fa_disable(self):
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 4096)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Bad request"})
+            return
+        user = self._session_username()
+        accts = load_curators()
+        acct = accts.get(user)
+        if not acct:
+            self.send_json(400, {"error": "No named account for this session."})
+            return
+        # Re-authenticate before removing a security control.
+        if not _verify_pw(body.get("password") or "", acct.get("salt", ""), acct.get("pw", "")):
+            self.send_json(401, {"error": "Password incorrect."})
+            return
+        for k in ("totp", "totp_last", "backup"):
+            acct.pop(k, None)
+        accts[user] = acct
+        save_curators(accts)
+        _log_curation("account", "2fa-disable", user, self._session_name())
+        self.send_json(200, {"ok": True})
+
     def _is_admin(self):
         s = self._session(self._parse_token())
         return bool(s and s.get("admin"))
@@ -2815,8 +2980,26 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json(400, {"error": "Bad request"})
                 return
             name = admin = None
-            acct = load_curators().get(username) if username else None
+            accts = load_curators()
+            acct = accts.get(username) if username else None
             if acct and _verify_pw(password, acct.get("salt", ""), acct.get("pw", "")):
+                # Password is right. If this account has 2FA enrolled, a valid
+                # TOTP (or a single-use backup code) is also required.
+                if acct.get("totp"):
+                    code = (body.get("code") or "").strip()
+                    if not code:
+                        self.send_json(401, {"error": "Two-factor code required",
+                                             "totp_required": True})
+                        return
+                    counter = _totp_check(acct["totp"], code, int(acct.get("totp_last", -1)))
+                    if counter is not None:
+                        acct["totp_last"] = counter      # burn this counter (no replay)
+                        accts[username] = acct
+                        save_curators(accts)
+                    elif not _consume_backup_code(accts, username, code):
+                        self.send_json(401, {"error": "Invalid two-factor code",
+                                             "totp_required": True})
+                        return
                 name, admin = acct.get("name") or username, bool(acct.get("admin"))
             elif CURATOR_PASSWORD and hmac.compare_digest(password, CURATOR_PASSWORD):
                 # Bootstrap admin (env password) — always admin, so you can create
@@ -2846,7 +3029,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(403, {"error": "Admin access required."})
             return
         accts = load_curators()
-        out = [{"username": u, "name": a.get("name", u), "admin": bool(a.get("admin"))}
+        out = [{"username": u, "name": a.get("name", u), "admin": bool(a.get("admin")),
+                "totp": bool(a.get("totp"))}
                for u, a in sorted(accts.items())]
         self.send_json(200, {"accounts": out})
 

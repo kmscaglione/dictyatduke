@@ -36,6 +36,27 @@ login** — use it the first time to create the named accounts (including your o
 then everyone signs in with their own username. Only admins can manage accounts;
 regular curators can curate but can't add/remove people.
 
+**Two-factor authentication (recommended).** Under **Two-factor authentication**
+on the dashboard you can require a code from your phone at sign-in, so a stolen
+password alone can't reach curation.
+
+1. Click **Enable two-factor**. A **setup key** appears.
+2. In your authenticator app (Google Authenticator, 1Password, Authy, …) add an
+   account using *"enter a setup key"* and paste it.
+3. Type the 6-digit code the app shows and click **Verify & enable**.
+4. **Save the 10 backup codes it gives you.** Each works once, in place of your
+   phone, and they are shown only that one time. Keep them somewhere safe and
+   separate from your password.
+
+After that, signing in asks for the 6-digit code (a backup code also works). To
+turn it off, enter your password and click **Turn off**.
+
+Notes: codes rotate every 30 seconds and a used code can't be reused. If your
+phone's clock drifts badly the code won't match — enable automatic time on the
+phone. The `CURATOR_PASSWORD` bootstrap login has **no** two-factor on purpose:
+it's the break-glass way back in if someone loses both their phone and their
+backup codes, so keep it strong and off your laptop.
+
 ### 2. Edit a gene
 - Type a **gene symbol or DDB_G id** (e.g. `mhcA`) and click **Load** — the
   current summary, note, and PMIDs fill in.

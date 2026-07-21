@@ -179,18 +179,28 @@ def inparanoid_seed_pairs():
     return pairs
 
 
-def human_acc_to_symbol():
-    """{human UniProt accession (upper): gene symbol} — join key for InParanoid's
-    human side (OMA already carries the symbol in its mnemonic)."""
+def human_uniprot_symbols():
+    """Current human gene symbols keyed by BOTH UniProt accession and entry name.
+
+    InParanoid's human side is a bare accession; OMA's canonicalid is the entry
+    name (mnemonic, e.g. COR1A_HUMAN) whose embedded symbol can be stale and then
+    fails to join to HPO (COR1A vs the current CORO1A). UniProt's gene_primary is
+    the current symbol for both, so we resolve each side through it.
+    Returns ({ACCESSION: symbol}, {ENTRYNAME: symbol})."""
     url = ("https://rest.uniprot.org/uniprotkb/stream?"
-           "query=organism_id:9606+AND+reviewed:true&fields=accession,gene_primary&format=tsv")
-    text = _get(url, "human_acc_symbol.tsv")
-    out = {}
+           "query=organism_id:9606+AND+reviewed:true&fields=accession,id,gene_primary&format=tsv")
+    text = _get(url, "human_uniprot_symbols.tsv")
+    by_acc, by_entry = {}, {}
     for line in text.splitlines()[1:]:
         c = line.split("\t")
-        if len(c) >= 2 and c[0] and c[1]:
-            out[c[0].upper()] = c[1]
-    return out
+        if len(c) < 3 or not c[2]:
+            continue
+        acc, entry, sym = c[0], c[1], c[2]
+        if acc:
+            by_acc[acc.upper()] = sym
+        if entry:
+            by_entry[entry.upper()] = sym
+    return by_acc, by_entry
 
 
 # -------------------------------------------------------------------- HPO ----
@@ -302,8 +312,8 @@ def main():
     pairs = oma_pairs()
     print("Fetching InParanoid Dicty<->human seed orthologs...", file=sys.stderr)
     inp = inparanoid_seed_pairs()
-    print("Fetching UniProt human accession -> symbol...", file=sys.stderr)
-    human_sym = human_acc_to_symbol()
+    print("Fetching UniProt human accession/entry-name -> current symbol...", file=sys.stderr)
+    human_by_acc, human_by_entry = human_uniprot_symbols()
     print("Fetching HPO gene -> disease...", file=sys.stderr)
     hpo = hpo_gene_to_disease()
 
@@ -327,11 +337,13 @@ def main():
             oma_unmapped += 1
             continue
         oma_joined += 1
-        add_ortho(hit[0], hit[1], human_symbol, human_en, rel, "OMA")
+        # normalize OMA's (possibly stale) mnemonic symbol to UniProt's current one
+        cur = human_by_entry.get(human_en.upper()) or human_symbol
+        add_ortho(hit[0], hit[1], cur, human_en, rel, "OMA")
 
     for d_acc, h_acc in inp:
         hit = uni.get(d_acc)
-        hs = human_sym.get(h_acc)
+        hs = human_by_acc.get(h_acc)
         if not hit or not hs:
             continue
         inp_joined += 1

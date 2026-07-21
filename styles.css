@@ -1000,6 +1000,21 @@ button:focus-visible,
   line-height: 1.55;
 }
 
+.record-title p.gene-synonyms {
+  margin: -2px 0 8px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.gene-synonyms-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--teal-dark, #0a4f47);
+  margin-right: 6px;
+}
+
 .tag-row,
 .source-links,
 .tabs {

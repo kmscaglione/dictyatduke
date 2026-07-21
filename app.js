@@ -1067,6 +1067,29 @@ function genePath(gene) {
   return `/gene/${encodeURIComponent(gene.symbol)}`;
 }
 
+// Old/alternate symbols to show under the gene name. Prefer the curated set
+// carried on the gene (openRemoteGene attaches it from the catalog); fall back to
+// the catalog by DDB_G/symbol for featured genes. Drops the current symbol itself.
+function geneSynonyms(gene) {
+  if (!gene) return [];
+  let syns = gene.synonyms;
+  if (!syns || !syns.length) {
+    const ddb = normalize(gene.veupath || "");
+    const sym = normalize(gene.symbol || "");
+    const entry = geneIndex.find((g) =>
+      (ddb && normalize(g.id) === ddb) || (sym && normalize(g.symbol) === sym));
+    syns = (entry && entry.synonyms) || [];
+  }
+  const cur = normalize(gene.symbol || "");
+  const seen = new Set();
+  return syns.filter((s) => {
+    const n = normalize(s);
+    if (!n || n === cur || seen.has(n)) return false;
+    seen.add(n);
+    return true;
+  });
+}
+
 function alphaFoldUrl(gene) {
   if (gene.uniprot) return `https://alphafold.ebi.ac.uk/entry/${gene.uniprot}`;
   return `https://alphafold.ebi.ac.uk/search/text/${encodeURIComponent(gene.symbol)}`;
@@ -1417,6 +1440,7 @@ async function openRemoteGene(ncbiId) {
       location,
       summary: name,
       aliases: [...new Set(aliases)],
+      synonyms: (local && local.synonyms) || [],
       tags: [],
       ncbiGene: ncbiId,
       uniprot,
@@ -1529,6 +1553,7 @@ function renderRecord() {
         <div class="record-title">
           <p class="eyebrow">Gene record</p>
           <h2>${gene.symbol}</h2>
+          ${(() => { const s = geneSynonyms(gene); return s.length ? `<p class="gene-synonyms"><span class="gene-synonyms-label">Synonyms</span> ${s.map(escapeHtml).join(", ")}</p>` : ""; })()}
           <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}

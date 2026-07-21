@@ -5920,14 +5920,14 @@ function renderMeetingsPage() {
 
 function renderConferenceItem(conf) {
   const organizers = conf.organizers.join(", ");
-  const meta = [conf.dates, conf.local ? "local meeting" : ""].filter(Boolean).join(" · ");
+  const title = [conf.year, conf.location].filter(Boolean).join(" — ");
   return `
     <article class="ontology-term">
       <div>
-        <strong>${escapeHtml(conf.year + (conf.name !== "Dicty " + conf.year ? " — " + conf.name : ""))}</strong>
-        ${meta ? `<span>${escapeHtml(meta)}</span>` : ""}
+        <strong>${escapeHtml(title)}</strong>
+        ${conf.local ? `<span>local meeting</span>` : ""}
       </div>
-      <p>${escapeHtml(conf.location)}${organizers ? " · Organized by " + escapeHtml(organizers) : ""}</p>
+      ${organizers ? `<p>Organized by ${escapeHtml(organizers)}</p>` : ""}
     </article>
   `;
 }

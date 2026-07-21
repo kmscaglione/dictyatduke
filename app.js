@@ -7563,6 +7563,72 @@ function openDataPage(updateRoute = true) {
   loadDataStatus();
 }
 
+function fmtBytes(n) {
+  if (!n) return "";
+  if (n >= 1048576) return (n / 1048576).toFixed(1) + " MB";
+  if (n >= 1024) return Math.round(n / 1024) + " KB";
+  return n + " B";
+}
+
+const downloadsSlug = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+function openDownloadsPage(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/downloads");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">dictyBase Downloads</p>
+          <h2>dictyBase Downloads</h2>
+          <p>A preserved local mirror of the dictyBase Downloads page. These curated data files — gene information, mutant phenotypes, ontologies, protein data, GO annotations, and literature — are served directly from this site so they stay available. The files are dictyBase's; see <a class="text-link" href="/data">Data &amp; sources</a> for provenance and terms.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-downloads><p class="notice muted">Loading downloads…</p></div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadDownloads();
+}
+
+async function loadDownloads() {
+  const el = document.querySelector("[data-downloads]");
+  if (!el) return;
+  let data;
+  try {
+    data = await fetch("/assets/dictybase-downloads/manifest.json").then((r) => r.json());
+  } catch {
+    el.innerHTML = `<p class="notice">Downloads are unavailable right now.</p>`;
+    return;
+  }
+  el.innerHTML = `
+    <nav class="downloads-toc" aria-label="Download sections">
+      ${data.sections.map((s) => `<a class="text-link" href="#${downloadsSlug(s.title)}">${escapeHtml(s.title)}</a>`).join("")}
+    </nav>
+    ${data.sections.map((s) => `
+      <section class="data-block downloads-section" id="${downloadsSlug(s.title)}">
+        <h3>${escapeHtml(s.title)}</h3>
+        ${s.blurb ? `<p class="downloads-blurb">${escapeHtml(s.blurb)}</p>` : ""}
+        <ul class="downloads-list">
+          ${s.items.map((it) => `
+            <li>
+              <span class="downloads-desc">${escapeHtml(it.desc)}</span>
+              <span class="downloads-files">
+                ${it.files.map((f) => `<a class="downloads-file" href="/assets/${escapeHtml(f.path)}" download>${escapeHtml(f.label)}${f.bytes ? ` <span class="downloads-size">${fmtBytes(f.bytes)}</span>` : ""}</a>`).join("")}
+              </span>
+            </li>`).join("")}
+        </ul>
+      </section>`).join("")}
+    <p class="research-note">Mirrored from <a class="text-link" href="http://dictybase.org/Downloads/" target="_blank" rel="noopener">dictybase.org/Downloads</a>${data.total_bytes ? ` · ${fmtBytes(data.total_bytes)} total` : ""}. Files retain dictyBase's terms of use.</p>`;
+  if (window.location.hash) {
+    const target = el.querySelector(window.location.hash);
+    if (target) requestAnimationFrame(() => target.scrollIntoView());
+  }
+}
+
 function openCite(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/cite");
@@ -9718,6 +9784,10 @@ function hydrateFromRoute() {
     openDataPage(false);
     return;
   }
+  if (pathParts[0] === "downloads") {
+    openDownloadsPage(false);
+    return;
+  }
   if (pathParts[0] === "stock-center") {
     openStockCenter(false);
     return;
@@ -10072,6 +10142,7 @@ const CMDK_TARGETS = [
   { kind: "Community", label: "Award recipients", href: "/community/award-recipients", kw: "award recipients" },
   { kind: "Community", label: "Dicty Stock Center", href: "/stock-center", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
+  { kind: "Page", label: "dictyBase Downloads", href: "/downloads", sub: "Mirror of the dictyBase Downloads page", kw: "downloads dictybase files bulk data mutant phenotypes gff3 ontology gene information gaf tab-delimited excel archive mirror" },
   { kind: "Page", label: "News & updates", href: "/news", kw: "news updates announcements changelog history releases" },
   { kind: "Page", label: "How to cite", href: "/cite", kw: "cite citation doi bibtex reference how to cite release version" },
 ];

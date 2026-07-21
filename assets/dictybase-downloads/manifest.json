@@ -1,0 +1,410 @@
+{
+  "source": "http://dictybase.org/Downloads/",
+  "note": "Local mirror of the dictyBase Downloads page, preserved and served from dicty.labs.duke.edu. Files are dictyBase's; see each dataset's terms at dictybase.org.",
+  "sections": [
+    {
+      "title": "Gene Information",
+      "blurb": "Core gene-level tables, most refreshed monthly.",
+      "items": [
+        {
+          "desc": "dictyBase ID, gene names, synonyms, and gene products (updated monthly)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/gene_information.txt",
+              "bytes": 764428
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/gene_information.xls",
+              "bytes": 1145344
+            }
+          ]
+        },
+        {
+          "desc": "DDB - DDB_G - UniProt mapping (updated monthly)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/DDB-GeneID-UniProt.txt",
+              "bytes": 1119363
+            }
+          ]
+        },
+        {
+          "desc": "DDB_G curation status (updated monthly)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/DDB_G-curation_status.txt",
+              "bytes": 988771
+            }
+          ]
+        },
+        {
+          "desc": "Curated model history (updated weekly)",
+          "files": [
+            {
+              "label": "zip",
+              "path": "dictybase-downloads/general/curated_gene_DDB_map.zip",
+              "bytes": 116928
+            }
+          ]
+        },
+        {
+          "desc": "Ortholog information (Aug 25, 2010)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/ortholog_information.txt",
+              "bytes": 2740793
+            }
+          ]
+        },
+        {
+          "desc": "Alternative transcripts (updated monthly)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/alternative_transcripts.txt",
+              "bytes": 1606
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/alternative_transcripts.xls",
+              "bytes": 35036
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dictyostelium Sequences and Annotations",
+      "blurb": "Genome sequences and annotations.",
+      "items": [
+        {
+          "desc": "Sequences and annotations in GFF3 format (updated monthly)",
+          "files": [
+            {
+              "label": "zip",
+              "path": "dictybase-downloads/gff3/dicty_gff3.zip",
+              "bytes": 15002742
+            }
+          ]
+        },
+        {
+          "desc": "Promoter sequences \u2014 5' flanking sequence up to the next gene (Mar 30, 2010)",
+          "files": [
+            {
+              "label": "zip",
+              "path": "dictybase-downloads/sequence_sets/promoter_sequences.zip",
+              "bytes": 3646453
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mutant Phenotypes",
+      "blurb": "Curated mutant strains and their phenotypes (updated monthly).",
+      "items": [
+        {
+          "desc": "All curated mutants with phenotypes",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/all-mutants.txt",
+              "bytes": 329380
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/all-mutants.xls",
+              "bytes": 464384
+            }
+          ]
+        },
+        {
+          "desc": "All curated mutants with phenotypes (with a DDB_G ID column)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/all-mutants-ddb_g.txt",
+              "bytes": 219650
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/all-mutants-ddb_g.xls",
+              "bytes": 385024
+            }
+          ]
+        },
+        {
+          "desc": "Null mutants",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/null-mutants.txt",
+              "bytes": 198255
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/null-mutants.xls",
+              "bytes": 285696
+            }
+          ]
+        },
+        {
+          "desc": "Overexpression mutants",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/overexpression-mutants.txt",
+              "bytes": 81584
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/overexpression-mutants.xls",
+              "bytes": 122880
+            }
+          ]
+        },
+        {
+          "desc": "Multiple mutants",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/multiple-mutants.txt",
+              "bytes": 57045
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/multiple-mutants.xls",
+              "bytes": 87040
+            }
+          ]
+        },
+        {
+          "desc": "Mutants with developmental defects",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/developmental-mutants.txt",
+              "bytes": 230793
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/developmental-mutants.xls",
+              "bytes": 274432
+            }
+          ]
+        },
+        {
+          "desc": "Other mutants",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/other-mutants.txt",
+              "bytes": 35067
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/other-mutants.xls",
+              "bytes": 54272
+            }
+          ]
+        },
+        {
+          "desc": "Insertional (REMI) mutants at BCM",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/mutant_phenotypes/remi.txt",
+              "bytes": 15244
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/mutant_phenotypes/remi.xls",
+              "bytes": 71680
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dictyostelium Anatomy Ontology",
+      "blurb": "Gaudet, Williams, Fey and Chisholm, 2008.",
+      "items": [
+        {
+          "desc": "Terms used to describe Dictyostelium anatomy",
+          "files": [
+            {
+              "label": "OBO",
+              "path": "dictybase-downloads/pheno_ontology/dicty_anatomy.obo",
+              "bytes": 58928
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Dictyostelium Phenotype Ontology",
+      "blurb": "Terms used to annotate phenotypes (updated monthly).",
+      "items": [
+        {
+          "desc": "Dictyostelium phenotype ontology",
+          "files": [
+            {
+              "label": "OBO",
+              "path": "dictybase-downloads/pheno_ontology/dicty_phenotypes.obo",
+              "bytes": 337767
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Protein Information",
+      "blurb": "Domains, codon usage, molecular weight, and modifications.",
+      "items": [
+        {
+          "desc": "InterPro domains of Dictyostelium proteins (updated quarterly)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/Dd_protein_domains.txt",
+              "bytes": 5464893
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/Dd_protein_domains.xls",
+              "bytes": 8961024
+            }
+          ]
+        },
+        {
+          "desc": "D. discoideum codon bias \u2014 11,666 curated protein-coding genes (Nov 2012)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/Dd_Codon_Bias.txt",
+              "bytes": 2091
+            }
+          ]
+        },
+        {
+          "desc": "Molecular weight (Da) of all proteins (Nov 2012)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/dicty-mw.txt",
+              "bytes": 393014
+            }
+          ]
+        },
+        {
+          "desc": "AX2 phosphoproteome (Aug 2013) \u2014 provided by Pascale Charest and Richard Firtel",
+          "files": [
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/AX2_phosphoproteome.xlsx",
+              "bytes": 472554
+            }
+          ]
+        },
+        {
+          "desc": "N-terminal myristoylation sites (Jul 2006)",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/NMT.txt",
+              "bytes": 4054
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/NMT.xls",
+              "bytes": 23552
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GO Association Files",
+      "blurb": "Gene Ontology annotations for Dictyostelium.",
+      "items": [
+        {
+          "desc": "GO annotations (GAF)",
+          "files": [
+            {
+              "label": "gzip",
+              "path": "dictybase-downloads/go/gene_association.dictyBase.gz",
+              "bytes": 834356
+            }
+          ]
+        },
+        {
+          "desc": "GO annotations mapped to GO-slim (Aug 2006)",
+          "files": [
+            {
+              "label": "text",
+              "path": "dictybase-downloads/goslim/slim_gene_association.ddb",
+              "bytes": 5021816
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "References",
+      "blurb": "Literature associated with genes (updated monthly).",
+      "items": [
+        {
+          "desc": "PubMed IDs and associated genes",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/DDBID_PMID.txt",
+              "bytes": 599075
+            },
+            {
+              "label": "excel",
+              "path": "dictybase-downloads/general/DDBID_PMID.xls",
+              "bytes": 1181696
+            }
+          ]
+        },
+        {
+          "desc": "High-throughput papers and associated genes",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/High_throughput_papers.txt",
+              "bytes": 407275
+            }
+          ]
+        },
+        {
+          "desc": "Reviews and associated genes",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/Reviews.txt",
+              "bytes": 293657
+            }
+          ]
+        },
+        {
+          "desc": "Papers (excluding reviews and high-throughput) and associated genes",
+          "files": [
+            {
+              "label": "tab-delimited",
+              "path": "dictybase-downloads/general/not_reviews_not_high_throughput_papers.txt",
+              "bytes": 6785611
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total_bytes": 59315253
+}

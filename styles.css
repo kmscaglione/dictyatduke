@@ -1649,6 +1649,69 @@ button:focus-visible,
   background: var(--teal-dark, #0a4f47);
   border-color: var(--teal-dark, #0a4f47);
 }
+
+/* dictyBase Downloads mirror page */
+.downloads-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 4px 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line, #d7dee0);
+  font-size: 0.8125rem;
+}
+.downloads-blurb {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0 0 10px;
+}
+.downloads-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.downloads-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-top: 1px solid #edf1ee;
+}
+.downloads-desc {
+  flex: 1 1 320px;
+  min-width: 0;
+  font-size: 0.9rem;
+}
+.downloads-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.downloads-file {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--teal-dark, #0a4f47);
+  background: var(--soft, #e7eef7);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 3px 11px;
+  white-space: nowrap;
+}
+.downloads-file:hover {
+  border-color: var(--teal-dark, #0a4f47);
+}
+.downloads-size {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
 .disease-list {
   list-style: none;
   margin: 11px 0 0;

@@ -74,7 +74,9 @@ def fetch_pubmed_recent(term="Dictyostelium", n=5):
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".svg",
                ".woff", ".woff2", ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf",
                ".json", ".bedgraph",
-               ".tbi"}  # .tbi: tabix indexes for the bgzipped browser GFF/track files
+               ".tbi",   # .tbi: tabix indexes for the bgzipped browser GFF/track files
+               # dictyBase Downloads mirror (assets/dictybase-downloads/): data files
+               ".txt", ".zip", ".xls", ".xlsx", ".obo", ".ddb"}
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
 # compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are
 # deliberately excluded — IGV.js reads them with byte offsets, so on-the-fly
@@ -223,6 +225,8 @@ _ROUTE_META = {
         "New to Dictyostelium? Why it is a powerful model organism and how to get started using it in your lab."),
     "/data": ("Data and provenance",
         "Where dictyBase's data comes from: sources, licenses, versioning, and how the site is built."),
+    "/downloads": ("dictyBase Downloads",
+        "A preserved local mirror of the dictyBase Downloads page: gene information, mutant phenotypes, ontologies, protein data, GO annotations, and literature."),
     "/news": ("News and updates",
         "All dictyBase announcements and data updates, newest first."),
     "/tools": ("All tools",
@@ -2136,6 +2140,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".gz": "application/gzip", ".tbi": "application/octet-stream",
         ".fna": "text/plain", ".fai": "text/plain", ".gff": "text/plain",
         ".gtf": "text/plain", ".bedgraph": "text/plain",
+        ".obo": "text/plain", ".ddb": "text/plain", ".txt": "text/plain",
     }
 
     def _serve_static_ranged(self):

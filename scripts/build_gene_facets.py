@@ -10,7 +10,7 @@ value, or -1 if the gene is not meaningfully expressed (max RPKM < threshold).
 Genes with no facet at all are omitted to keep the file small. The front-end
 joins this against the already-loaded gene_index.json (symbol/name).
 
-Sources: gene_index.json, phenotypes.json, ortholog_disease.json, rnaseq_parikh.json.
+Sources: gene_index.json, phenotypes.json, ortholog_disease.json, rnaseq_rosengarten.json.
 Re-run after any of those change:  python3 scripts/build_gene_facets.py
 """
 import json
@@ -18,7 +18,7 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
-PEAK_MIN_RPKM = 5.0
+PEAK_MIN = 10.0   # normalized-expression floor (Rosengarten scale; was RPKM 5 for Parikh)
 TIMEPOINTS = ["0", "4", "8", "12", "16", "20", "24"]
 
 
@@ -30,7 +30,7 @@ def main():
     index = load("gene_index.json")
     phenos = load("phenotypes.json")
     ortho = load("ortholog_disease.json")
-    rna = load("rnaseq_parikh.json")
+    rna = load("rnaseq_rosengarten.json")
 
     facets = {}
     for row in index:
@@ -48,7 +48,7 @@ def main():
                 v = float(prof.get(tp, 0) or 0)
                 if v > best_v:
                     best_v, best_i = v, i
-            if best_v >= PEAK_MIN_RPKM:
+            if best_v >= PEAK_MIN:
                 peak = best_i
         if p or o or d or peak >= 0:
             facets[ddb] = [p, o, d, peak]

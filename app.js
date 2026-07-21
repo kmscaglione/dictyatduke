@@ -2557,7 +2557,7 @@ function renderExpressionPage() {
         <div class="record-title">
           <p class="eyebrow">Analysis</p>
           <h2>Compare gene expression</h2>
-          <p>Overlay the developmental RNA-seq profiles (Parikh et al. time course) of several genes to compare candidates at a glance.</p>
+          <p>Overlay the developmental RNA-seq profiles (Rosengarten et al. 2015 time course) of several genes to compare candidates at a glance.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4234,9 +4234,10 @@ function renderGenomeBrowser() {
   `;
 }
 
-// Parikh developmental RNA-seq time course as IGV wig tracks (AX4 only — the
-// genome these gene coordinates + expression values belong to).
-const RNASEQ_TPS = ["0", "4", "8", "12", "16", "20", "24"];
+// Rosengarten et al. 2015 developmental RNA-seq time course as IGV wig tracks
+// (AX4 only — the genome these gene coordinates + expression values belong to).
+const RNASEQ_TPS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
+                    "12", "14", "16", "18", "20", "22", "24"];
 function rnaseqTracks() {
   return RNASEQ_TPS.map((tp, i) => ({
     name: `RNA-seq ${tp}h`,
@@ -6251,11 +6252,11 @@ function renderTab(gene, tab) {
     <div class="section-grid">
       <div style="display:grid;gap:14px;align-content:start">
         <section class="data-block">
-          <h3>RNA-seq expression <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— Parikh et al. development time course</span></h3>
+          <h3>RNA-seq expression <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— Rosengarten et al. 2015 development time course</span></h3>
           <div id="rnaseq-inline-chart" data-gene-ddb="${escapeHtml(gene.veupath || '')}" style="position:relative;height:180px">
             <p class="notice muted" style="padding:8px">Loading expression data…</p>
           </div>
-          <a class="text-link" href="https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">View full data in dictyExpress →</a>
+          <a class="text-link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE61914" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">Source data: Rosengarten et al. 2015, GEO GSE61914 →</a>
         </section>
         <section class="data-block" data-coexpression hidden></section>
         <section class="data-block" data-kegg hidden></section>
@@ -7682,14 +7683,14 @@ async function loadPhenotypes(gene) {
   }
 }
 
-// --- RNAseq expression (Parikh et al.) ---
+// --- RNAseq expression (Rosengarten et al. 2015 filter-development time course) ---
 let rnaseqData = null;
-const TP_LABELS = ["0h", "4h", "8h", "12h", "16h", "20h", "24h"];
-const TP_KEYS = [0, 4, 8, 12, 16, 20, 24];
+const TP_KEYS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24];
+const TP_LABELS = TP_KEYS.map((h) => `${h}h`);
 
 async function ensureRNAseqData() {
   if (rnaseqData) return rnaseqData;
-  const res = await fetch("/assets/rnaseq_parikh.json");
+  const res = await fetch("/assets/rnaseq_rosengarten.json");
   if (!res.ok) throw new Error("RNAseq data not available");
   rnaseqData = await res.json();
   return rnaseqData;
@@ -8073,7 +8074,7 @@ async function loadKeggPathways(gene) {
     <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Links open the KEGG map with this gene highlighted.</p>`;
 }
 
-// Co-expressed genes (Pearson over the Parikh developmental time course).
+// Co-expressed genes (Pearson over the Rosengarten 2015 developmental time course).
 async function loadCoexpression(gene) {
   const el = document.querySelector("[data-coexpression]");
   if (!el) return;
@@ -8096,7 +8097,7 @@ async function loadCoexpression(gene) {
         <a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a>
         <span style="color:var(--muted,#6b7280)">r = ${r.r.toFixed(2)}</span></li>`).join("")}
     </ul>
-    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Pearson correlation of RNA-seq profiles (Parikh time course). Correlation ≠ function — a hypothesis-generation aid.</p>`;
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:4px 0 0">Pearson correlation of RNA-seq profiles (Rosengarten et al. 2015 time course). Correlation ≠ function — a hypothesis-generation aid.</p>`;
 }
 
 // Known mutant strains for this gene, from the dictyBase strain corpus. The data
@@ -8154,7 +8155,7 @@ async function loadRNAseqInline(gene) {
         data: {
           labels: TP_LABELS,
           datasets: [{
-            label: `${gene.symbol} RPKM`,
+            label: `${gene.symbol} (normalized expression)`,
             data: points,
             borderColor: "#0b746a",
             backgroundColor: "#0b746a22",
@@ -8177,10 +8178,10 @@ async function loadRNAseqInline(gene) {
           },
           scales: {
             x: { title: { display: true, text: "Development (hours)" } },
-            y: { title: { display: true, text: "RPKM" }, beginAtZero: true }
+            y: { title: { display: true, text: "Normalized expression" }, beginAtZero: true }
           },
           onClick: () => {
-            window.open(`https://app.dictyexpress.org/?gene=${encodeURIComponent(gene.symbol)}`, "_blank");
+            window.open("https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE61914", "_blank");
           }
         }
       });

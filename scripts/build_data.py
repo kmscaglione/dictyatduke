@@ -285,7 +285,7 @@ def main():
     else:
         print("  (skipping go_annotations.json — pass --go to download + rebuild)")
     # Derived facets for the advanced gene finder (needs ortholog_disease +
-    # rnaseq_parikh; skips gracefully if those upstream assets aren't built yet).
+    # rnaseq_rosengarten; skips gracefully if those upstream assets aren't built yet).
     try:
         import build_gene_facets
         build_gene_facets.main()

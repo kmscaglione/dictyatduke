@@ -86,7 +86,7 @@ assets/
   phenotypes.json           mutant-strain phenotypes per gene
   go_annotations.json       dictyBase-curated GO annotations (from the GO Consortium GAF)
   downloads_manifest.json   per-species genome/annotation download list
-  rnaseq_parikh.json        RNA-seq developmental time course (expression chart)
+  rnaseq_rosengarten.json   RNA-seq developmental time course (Rosengarten 2015)
   proteomics_data.json      developmental proteome viewer dataset
   heatstress_data.json      insoluble/heat-stress proteome viewer dataset
   dicty-hero.jpg            homepage hero image

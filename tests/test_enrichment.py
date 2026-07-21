@@ -115,10 +115,11 @@ class CoexpressionTest(unittest.TestCase):
 
     def test_expression_profiles(self):
         r = enrichment.expression_profiles(["mhcA", "__nope__"])
-        self.assertEqual(len(r["timepoints"]), 7)
+        # Rosengarten 2015 filter-development course: 19 time points.
+        self.assertEqual(len(r["timepoints"]), 19)
         self.assertTrue(r["series"])
         s = r["series"][0]
-        self.assertEqual(len(s["values"]), 7)
+        self.assertEqual(len(s["values"]), len(r["timepoints"]))
         self.assertIn("symbol", s)
         self.assertIn("__nope__", r["unmatched"])
 

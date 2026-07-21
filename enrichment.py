@@ -340,17 +340,22 @@ def enrich_kegg(tokens, min_study=2, max_terms=200):
             "unmatched": unmatched, "background_n": M, "results": results}
 
 
-# --- Co-expression (Pearson over the Parikh developmental time course) -----
+# --- Co-expression (Pearson over the Rosengarten 2015 developmental time course) --
 _coexp = {}
-_COEXP_TPS = ["0", "4", "8", "12", "16", "20", "24"]
+# Rosengarten et al. 2015 filter-development time course (hours). Hourly to 12h,
+# then every 2h to 24h — 19 points.
+_COEXP_TPS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+              "14", "16", "18", "20", "22", "24"]
 
 
 def _load_coexp():
     if _coexp:
         return _coexp
-    rna = json.loads((ASSETS / "rnaseq_parikh.json").read_text())
-    vecs = {}  # ddb -> (mean-centered 7-vector, norm)
+    rna = json.loads((ASSETS / "rnaseq_rosengarten.json").read_text())
+    vecs = {}  # ddb -> (mean-centered profile vector, norm)
     for ddb, vals in rna.items():
+        if ddb.startswith("_"):        # skip _meta
+            continue
         v = [float(vals.get(tp, 0) or 0) for tp in _COEXP_TPS]
         m = sum(v) / len(v)
         c = [x - m for x in v]

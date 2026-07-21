@@ -1349,8 +1349,14 @@ async function openRemoteGene(ncbiId) {
     const item = data.result?.[ncbiId];
     if (!item) throw new Error("Gene not found");
 
-    const symbol = item.name || ncbiId;
-    const name = item.description || "";
+    // Prefer our local catalog's symbol/name (dictyBase nomenclature, the naming
+    // authority) over NCBI's: NCBI labels genes it hasn't named with the DDB_G
+    // locus tag, so without this the header shows "DDB_G0272192" instead of the
+    // real symbol for the ~700 genes we name from dictyBase but NCBI doesn't.
+    const local = geneIndex.find((g) => normalize(g.ncbiGene) === normalize(ncbiId));
+    const localSymbol = local && local.symbol && !/^DDB_G\d+$/i.test(local.symbol) ? local.symbol : "";
+    const symbol = localSymbol || item.name || ncbiId;
+    const name = item.description || (local && local.name) || "";
     const chrInfo = item.genomicinfo?.[0];
     const location = chrInfo
       ? `${chrInfo.chraccver}: ${Number(chrInfo.chrstart).toLocaleString()}–${Number(chrInfo.chrstop).toLocaleString()}`

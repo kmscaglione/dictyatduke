@@ -1871,30 +1871,50 @@ function renderStatsPage() {
       </header>
       <div class="record-body">
         <div id="stats-auth" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
-          <input id="stats-pw" type="password" aria-label="Curator password" placeholder="Curator password" style="${FIELD};min-width:240px">
+          <input id="stats-user" type="text" autocomplete="username" aria-label="Username" placeholder="Username" style="${FIELD};min-width:150px">
+          <input id="stats-pw" type="password" autocomplete="current-password" aria-label="Password" placeholder="Password" style="${FIELD};min-width:180px">
+          <input id="stats-code" type="text" inputmode="numeric" autocomplete="one-time-code" aria-label="Two-factor code" placeholder="6-digit code" hidden style="${FIELD};min-width:140px">
           <button type="button" id="stats-login">Sign in</button>
           <span id="stats-msg" class="muted" style="font-size:13px"></span>
         </div>
+        <p class="muted" style="font-size:12px;margin:-6px 0 12px">Sign in with your curator account. Leave the username blank to use the bootstrap admin password.</p>
         <div id="stats-out"></div>
       </div>
     </article>`;
 }
 
 function initStats() {
+  const userEl = document.getElementById("stats-user");
   const pw = document.getElementById("stats-pw");
+  const codeEl = document.getElementById("stats-code");
   const btn = document.getElementById("stats-login");
   const msg = document.getElementById("stats-msg");
   if (!btn) return;
   const go = async () => {
+    const username = (userEl.value || "").trim();
     const password = (pw.value || "").trim();
+    const code = ((codeEl && codeEl.value) || "").trim();
     if (!password) { pw.focus(); return; }
     msg.textContent = "Signing in…";
     try {
       const r = await fetch("/api/curator/login", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password, code }),
       });
-      if (!r.ok) { msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong password."; return; }
+      if (!r.ok) {
+        let e = {};
+        try { e = await r.json(); } catch { /* non-JSON error */ }
+        if (e.totp_required && codeEl) {
+          codeEl.hidden = false;
+          codeEl.value = "";
+          codeEl.focus();
+          msg.textContent = code ? "That code didn't match — try the current one."
+                                 : "Enter the 6-digit code from your authenticator app (or a backup code).";
+          return;
+        }
+        msg.textContent = r.status === 429 ? "Too many attempts — wait a few minutes." : "Wrong username or password.";
+        return;
+      }
       const { token } = await r.json();
       msg.textContent = "";
       document.getElementById("stats-auth").style.display = "none";
@@ -1902,7 +1922,7 @@ function initStats() {
     } catch { msg.textContent = "Sign-in failed — try again."; }
   };
   btn.addEventListener("click", go);
-  pw.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  [userEl, pw, codeEl].filter(Boolean).forEach((el) => el.addEventListener("keydown", (e) => { if (e.key === "Enter") go(); }));
 }
 
 async function loadStats(token) {

@@ -1,10 +1,10 @@
 {
-  "version": "2026.06",
-  "released": "2026-06-11",
+  "version": "2026.07",
+  "released": "2026-07-21",
   "title": "dictyBase: a community resource for Dictyostelium genomes, genes, and curation",
   "authors": "Scaglione lab and dictyBase contributors",
   "publisher": "Duke University School of Medicine",
   "doi": "",
-  "url": "",
+  "url": "https://dicty.labs.duke.edu",
   "license": "Site gene summaries CC BY-NC 4.0. Underlying data belongs to its sources (dictyBase / Basu et al. 2015, UniProt, NCBI, EBI, OMA, RCSB, KEGG) and is subject to their terms."
 }

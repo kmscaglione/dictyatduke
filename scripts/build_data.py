@@ -277,6 +277,13 @@ def main():
     gaf_path = sys.argv[sys.argv.index("--gaf") + 1] if "--gaf" in sys.argv else None
     print("Building dictyBase data files...")
     build_gene_index()
+    # Overlay dictyBase's authoritative gene names (fills/updates symbols the NCBI
+    # RefSeq GFF lags on). Best-effort: needs dictybase.org, skips cleanly offline.
+    try:
+        import build_gene_names
+        build_gene_names.main()
+    except Exception as exc:  # noqa: BLE001 — best-effort naming refresh
+        print(f"  (skipped gene-name overlay: {exc})")
     build_phenotypes()
     merge_summaries()
     build_downloads_manifest()

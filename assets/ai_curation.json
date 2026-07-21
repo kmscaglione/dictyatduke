@@ -795,21 +795,6 @@
       ]
     ]
   },
-  "daip1": {
-    "summary": "Actin-interacting protein 1 (Aip1), which cooperates with cofilin to cap and accelerate disassembly of cofilin-severed actin filaments, promoting the high filament turnover required for motility and cytokinesis.",
-    "go": [
-      [
-        "GO:0051015",
-        "F",
-        "actin filament binding"
-      ],
-      [
-        "GO:0030036",
-        "P",
-        "actin cytoskeleton organization"
-      ]
-    ]
-  },
   "myob": {
     "summary": "A class I (single-headed, unconventional) myosin that links the actin cortex to membranes. Myosin IB localizes to the leading edge, phagocytic cups, and macropinosomes, contributing to pseudopod dynamics, phagocytosis, and cortical tension.",
     "go": [
@@ -1111,16 +1096,6 @@
         "F",
         "ATP binding"
       ],
-      [
-        "GO:0006914",
-        "P",
-        "autophagy"
-      ]
-    ]
-  },
-  "atg8": {
-    "summary": "Atg8, a ubiquitin-like protein conjugated to phosphatidylethanolamine on the autophagosome membrane. Lipidated Atg8 marks growing autophagosomes and is the standard fluorescent reporter for monitoring autophagy in Dictyostelium.",
-    "go": [
       [
         "GO:0006914",
         "P",
@@ -4507,27 +4482,6 @@
     ],
     "basis": "family"
   },
-  "brip1": {
-    "summary": "An ATP-dependent helicase that uses ATP hydrolysis to unwind or remodel nucleic acids.",
-    "go": [
-      [
-        "GO:0004386",
-        "F",
-        "helicase activity"
-      ],
-      [
-        "GO:0005524",
-        "F",
-        "ATP binding"
-      ],
-      [
-        "GO:0003676",
-        "F",
-        "nucleic acid binding"
-      ]
-    ],
-    "basis": "family"
-  },
   "bub3": {
     "summary": "A WD40-repeat protein. WD40 repeats fold into a beta-propeller scaffold that mediates protein-protein interactions.",
     "go": [
@@ -6882,28 +6836,6 @@
     ],
     "basis": "family"
   },
-  "dg1105": {
-    "summary": "A protein bearing a recognized protein-interaction domain, predicted to mediate protein-protein interactions within a larger complex or pathway.",
-    "go": [
-      [
-        "GO:0005515",
-        "F",
-        "protein binding"
-      ]
-    ],
-    "basis": "family"
-  },
-  "dg1106": {
-    "summary": "A RING-type zinc-finger protein. RING domains bind zinc and commonly function within ubiquitin-ligase complexes.",
-    "go": [
-      [
-        "GO:0008270",
-        "F",
-        "zinc ion binding"
-      ]
-    ],
-    "basis": "family"
-  },
   "dg1110": {
     "summary": "A predicted membrane protein of currently uncharacterized function.",
     "go": [
@@ -7879,39 +7811,6 @@
         "GO:0030248",
         "F",
         "cellulose binding"
-      ]
-    ],
-    "basis": "family"
-  },
-  "eif3s2": {
-    "summary": "A WD40-repeat protein. WD40 repeats fold into a beta-propeller scaffold that mediates protein-protein interactions.",
-    "go": [
-      [
-        "GO:0005515",
-        "F",
-        "protein binding"
-      ]
-    ],
-    "basis": "family"
-  },
-  "eif3s4": {
-    "summary": "An RNA-binding protein, predicted from its RNA-recognition domain to bind RNA and function in RNA metabolism.",
-    "go": [
-      [
-        "GO:0003723",
-        "F",
-        "RNA binding"
-      ]
-    ],
-    "basis": "family"
-  },
-  "eif3s9": {
-    "summary": "An RNA-binding protein, predicted from its RNA-recognition domain to bind RNA and function in RNA metabolism.",
-    "go": [
-      [
-        "GO:0003723",
-        "F",
-        "RNA binding"
       ]
     ],
     "basis": "family"
@@ -10095,27 +9994,6 @@
     ],
     "basis": "family"
   },
-  "grlg": {
-    "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
-    "go": [
-      [
-        "GO:0004930",
-        "F",
-        "G protein-coupled receptor activity"
-      ],
-      [
-        "GO:0007186",
-        "P",
-        "G protein-coupled receptor signaling pathway"
-      ],
-      [
-        "GO:0005886",
-        "C",
-        "plasma membrane"
-      ]
-    ],
-    "basis": "family"
-  },
   "grlh": {
     "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
     "go": [
@@ -10159,27 +10037,6 @@
     "basis": "family"
   },
   "grlk": {
-    "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
-    "go": [
-      [
-        "GO:0004930",
-        "F",
-        "G protein-coupled receptor activity"
-      ],
-      [
-        "GO:0007186",
-        "P",
-        "G protein-coupled receptor signaling pathway"
-      ],
-      [
-        "GO:0005886",
-        "C",
-        "plasma membrane"
-      ]
-    ],
-    "basis": "family"
-  },
-  "grll": {
     "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
     "go": [
       [
@@ -14814,17 +14671,6 @@
     ],
     "basis": "family"
   },
-  "pipkina": {
-    "summary": "An ankyrin-repeat protein; stacked ankyrin repeats mediate protein-protein interactions.",
-    "go": [
-      [
-        "GO:0005515",
-        "F",
-        "protein binding"
-      ]
-    ],
-    "basis": "family"
-  },
   "pkad": {
     "summary": "A protein kinase that transfers phosphate from ATP to substrate proteins, a core mechanism of signal regulation.",
     "go": [
@@ -15496,27 +15342,6 @@
   },
   "pyk3": {
     "summary": "A protein-tyrosine kinase that phosphorylates substrate proteins on tyrosine residues as part of signal transduction.",
-    "go": [
-      [
-        "GO:0016301",
-        "F",
-        "kinase activity"
-      ],
-      [
-        "GO:0005524",
-        "F",
-        "ATP binding"
-      ],
-      [
-        "GO:0006468",
-        "P",
-        "protein phosphorylation"
-      ]
-    ],
-    "basis": "family"
-  },
-  "pyk4": {
-    "summary": "A protein kinase that transfers phosphate from ATP to substrate proteins, a core mechanism of signal regulation.",
     "go": [
       [
         "GO:0016301",
@@ -19217,17 +19042,6 @@
     ],
     "basis": "family"
   },
-  "sr": {
-    "summary": "A predicted oxidoreductase that catalyzes electron-transfer (redox) reactions.",
-    "go": [
-      [
-        "GO:0016491",
-        "F",
-        "oxidoreductase activity"
-      ]
-    ],
-    "basis": "family"
-  },
   "ssba": {
     "summary": "An RNA-binding protein, predicted from its RNA-recognition domain to bind RNA and function in RNA metabolism.",
     "go": [
@@ -19571,27 +19385,6 @@
         "GO:0008270",
         "F",
         "zinc ion binding"
-      ]
-    ],
-    "basis": "family"
-  },
-  "tfiiic3": {
-    "summary": "A predicted sequence-specific DNA-binding transcription factor that regulates gene expression.",
-    "go": [
-      [
-        "GO:0003677",
-        "F",
-        "DNA binding"
-      ],
-      [
-        "GO:0006355",
-        "P",
-        "regulation of DNA-templated transcription"
-      ],
-      [
-        "GO:0005634",
-        "C",
-        "nucleus"
       ]
     ],
     "basis": "family"
@@ -21330,17 +21123,6 @@
     ],
     "basis": "family"
   },
-  "zfaa": {
-    "summary": "A RING-type zinc-finger protein. RING domains bind zinc and commonly function within ubiquitin-ligase complexes.",
-    "go": [
-      [
-        "GO:0008270",
-        "F",
-        "zinc ion binding"
-      ]
-    ],
-    "basis": "family"
-  },
   "ziza": {
     "summary": "A Rho guanine-nucleotide exchange factor (RhoGEF/DOCK) that activates Rho-family GTPases by promoting GDP-to-GTP exchange.",
     "go": [
@@ -21412,6 +21194,224 @@
         "GO:0008270",
         "F",
         "zinc ion binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "aip1": {
+    "summary": "Actin-interacting protein 1 (Aip1), which cooperates with cofilin to cap and accelerate disassembly of cofilin-severed actin filaments, promoting the high filament turnover required for motility and cytokinesis.",
+    "go": [
+      [
+        "GO:0051015",
+        "F",
+        "actin filament binding"
+      ],
+      [
+        "GO:0030036",
+        "P",
+        "actin cytoskeleton organization"
+      ]
+    ]
+  },
+  "atg8a": {
+    "summary": "Atg8, a ubiquitin-like protein conjugated to phosphatidylethanolamine on the autophagosome membrane. Lipidated Atg8 marks growing autophagosomes and is the standard fluorescent reporter for monitoring autophagy in Dictyostelium.",
+    "go": [
+      [
+        "GO:0006914",
+        "P",
+        "autophagy"
+      ]
+    ]
+  },
+  "eif3b": {
+    "summary": "An RNA-binding protein, predicted from its RNA-recognition domain to bind RNA and function in RNA metabolism.",
+    "go": [
+      [
+        "GO:0003723",
+        "F",
+        "RNA binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "eif3g": {
+    "summary": "An RNA-binding protein, predicted from its RNA-recognition domain to bind RNA and function in RNA metabolism.",
+    "go": [
+      [
+        "GO:0003723",
+        "F",
+        "RNA binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "eif3i": {
+    "summary": "A WD40-repeat protein. WD40 repeats fold into a beta-propeller scaffold that mediates protein-protein interactions.",
+    "go": [
+      [
+        "GO:0005515",
+        "F",
+        "protein binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "far1": {
+    "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
+    "go": [
+      [
+        "GO:0004930",
+        "F",
+        "G protein-coupled receptor activity"
+      ],
+      [
+        "GO:0007186",
+        "P",
+        "G protein-coupled receptor signaling pathway"
+      ],
+      [
+        "GO:0005886",
+        "C",
+        "plasma membrane"
+      ]
+    ],
+    "basis": "family"
+  },
+  "far2": {
+    "summary": "A G-protein-coupled (seven-transmembrane) receptor that transduces extracellular signals to intracellular heterotrimeric G proteins.",
+    "go": [
+      [
+        "GO:0004930",
+        "F",
+        "G protein-coupled receptor activity"
+      ],
+      [
+        "GO:0007186",
+        "P",
+        "G protein-coupled receptor signaling pathway"
+      ],
+      [
+        "GO:0005886",
+        "C",
+        "plasma membrane"
+      ]
+    ],
+    "basis": "family"
+  },
+  "fncj": {
+    "summary": "An ATP-dependent helicase that uses ATP hydrolysis to unwind or remodel nucleic acids.",
+    "go": [
+      [
+        "GO:0004386",
+        "F",
+        "helicase activity"
+      ],
+      [
+        "GO:0005524",
+        "F",
+        "ATP binding"
+      ],
+      [
+        "GO:0003676",
+        "F",
+        "nucleic acid binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "gtf3c3": {
+    "summary": "A predicted sequence-specific DNA-binding transcription factor that regulates gene expression.",
+    "go": [
+      [
+        "GO:0003677",
+        "F",
+        "DNA binding"
+      ],
+      [
+        "GO:0006355",
+        "P",
+        "regulation of DNA-templated transcription"
+      ],
+      [
+        "GO:0005634",
+        "C",
+        "nucleus"
+      ]
+    ],
+    "basis": "family"
+  },
+  "keaa": {
+    "summary": "A RING-type zinc-finger protein. RING domains bind zinc and commonly function within ubiquitin-ligase complexes.",
+    "go": [
+      [
+        "GO:0008270",
+        "F",
+        "zinc ion binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "pik6": {
+    "summary": "An ankyrin-repeat protein; stacked ankyrin repeats mediate protein-protein interactions.",
+    "go": [
+      [
+        "GO:0005515",
+        "F",
+        "protein binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "scaa": {
+    "summary": "A protein bearing a recognized protein-interaction domain, predicted to mediate protein-protein interactions within a larger complex or pathway.",
+    "go": [
+      [
+        "GO:0005515",
+        "F",
+        "protein binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "spr": {
+    "summary": "A predicted oxidoreductase that catalyzes electron-transfer (redox) reactions.",
+    "go": [
+      [
+        "GO:0016491",
+        "F",
+        "oxidoreductase activity"
+      ]
+    ],
+    "basis": "family"
+  },
+  "trafd": {
+    "summary": "A RING-type zinc-finger protein. RING domains bind zinc and commonly function within ubiquitin-ligase complexes.",
+    "go": [
+      [
+        "GO:0008270",
+        "F",
+        "zinc ion binding"
+      ]
+    ],
+    "basis": "family"
+  },
+  "zak2": {
+    "summary": "A protein kinase that transfers phosphate from ATP to substrate proteins, a core mechanism of signal regulation.",
+    "go": [
+      [
+        "GO:0016301",
+        "F",
+        "kinase activity"
+      ],
+      [
+        "GO:0005524",
+        "F",
+        "ATP binding"
+      ],
+      [
+        "GO:0006468",
+        "P",
+        "protein phosphorylation"
       ]
     ],
     "basis": "family"

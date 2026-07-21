@@ -24,7 +24,9 @@ after the genomes are present (and re-run if the GFFs change):
 Idempotent: existing outputs are overwritten.
 """
 import glob
+import json
 import os
+import pathlib
 import sys
 
 try:
@@ -37,11 +39,26 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GENOMES = os.path.join(ROOT, "assets", "genomes")
 
 
+# DDB_G -> symbol from the catalog (carries dictyBase's authoritative names, applied
+# by build_gene_names). Used to label AX4 transcripts; empty for other species.
+def _load_gene_symbols():
+    try:
+        idx = json.loads((pathlib.Path(__file__).resolve().parents[1]
+                          / "assets" / "gene_index.json").read_text())
+        return {r[0]: r[1] for r in idx if len(r) > 1 and r[0]}
+    except Exception:
+        return {}
+
+
+_GENE_SYM = _load_gene_symbols()
+
+
 def _relabel_mrna(line):
     """Give IGV a meaningful transcript label. NCBI RefSeq GFFs set an mRNA's
     `Name` to its accession (e.g. XM_635544.2), so the browser shows accessions
-    instead of gene names. Rewrite the mRNA `Name` to the gene symbol (`gene=`),
-    or the locus tag (`locus_tag=`, the DDB_G id) when there is no symbol. The
+    instead of gene names. Rewrite the mRNA `Name` to the catalog symbol for its
+    DDB_G locus (dictyBase's authoritative name; the DDB_G id itself when unnamed),
+    falling back to the GFF's own `gene=`/`locus_tag=` for non-AX4 genomes. The
     accession is preserved in `ID=`/`Dbxref=`, so it still shows on click."""
     cols = line.rstrip("\n").split("\t")
     if len(cols) < 9 or cols[2] != "mRNA":
@@ -50,7 +67,8 @@ def _relabel_mrna(line):
     attrs = dict(kv.partition("=")[::2] for kv in parts if "=" in kv)
     if "Name" not in attrs:
         return line
-    sym = (attrs.get("gene") or attrs.get("locus_tag") or "").strip()
+    locus = (attrs.get("locus_tag") or "").strip()
+    sym = (_GENE_SYM.get(locus) or attrs.get("gene") or locus or "").strip()
     if not sym:
         return line
     cols[8] = ";".join((f"Name={sym}" if kv.startswith("Name=") else kv) for kv in parts)

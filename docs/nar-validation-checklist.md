@@ -1,21 +1,77 @@
 # dictyBase data-accuracy validation checklist (for the NAR manuscript)
 
-**Goal.** Independently confirm that the data the site shows is *correct* — matches
-the authoritative sources — and that the specific numbers we claim in the paper are
-right. You are trying to *find problems* before a reviewer or reader does.
+**Goal.** Independently confirm that the data the site shows is *correct* (matches the
+authoritative sources) and that the specific numbers we claim in the paper are right.
+You are trying to *find problems* before a reviewer or reader does.
 
-**How to work.**
-- Test the **live site: https://dicty.labs.duke.edu**
-- For every check, mark **PASS** or **FAIL**. If FAIL, write down: the gene/input,
-  what the site showed, what the correct value is, and the source you checked
-  against. Use the recording table at the bottom (copy it into a spreadsheet).
-- When a check says "compare to dictyBase," use the current dictyBase at
-  **https://dictybase.dev** (search the same gene there).
-- You do **not** need to be exhaustive. For each section, do the listed reference
-  genes **plus 3–5 genes you pick yourself at random**, so problems that only affect
-  some records get caught.
+**Where to work.** Test the **live site: https://dicty.labs.duke.edu**. Where a check
+says "compare to dictyBase," use the current dictyBase at **https://dictybase.dev**.
 
-**Reference gene panel** (well-studied genes; use these throughout):
+---
+
+## How to actually validate (read this first)
+
+You obviously can't count 13,000 genes or open every record. Use these four
+techniques instead. Most of your time is techniques 1 and 3.
+
+### Technique 1 — To check a COUNT, download the data and count it (don't count the screen)
+
+The site can export its data as a spreadsheet. Download it, count the rows, and that
+number should match what the site displays. This proves the number on the page really
+reflects the served data (not a stale, hand-typed label).
+
+- **Genes:** open `https://dicty.labs.duke.edu/api/bulk?dataset=genes` in your browser
+  (it downloads a `.tsv`). Open it in Excel. **Rows minus the header row = the gene
+  count.** It should equal the homepage "13,000+" and the `/data` "Gene catalog" number.
+- **GO annotations:** `…/api/bulk?dataset=go` → rows = the GO-annotation count.
+- **Phenotypes:** `…/api/bulk?dataset=phenotypes`. **Orthologs / disease:** `…/api/bulk?dataset=orthologs`.
+- **Genomes (17):** small enough to just count on the downloads page. List them out.
+- *Counting rows in Excel:* open the file, press **Ctrl/Cmd+End** to jump to the last
+  row; that row number, minus 1 for the header, is the count. Or type `=COUNTA(A:A)-1`.
+
+### Technique 2 — Benchmark each count against an INDEPENDENT source
+
+The site counting itself is not proof. Compare to an outside authority. Exact matches
+are **not** expected (annotation versions differ); the same ballpark is good, a
+difference of **thousands** is a red flag to write down.
+
+- **Genes:** NCBI Datasets for *D. discoideum* (taxon 44689,
+  `ncbi.nlm.nih.gov/datasets/taxonomy/44689/`) and dictyBase both state a gene/protein
+  total. Compare. A difference of a few hundred is normal; thousands is not.
+- **GO annotations:** download the current GO Consortium GAF
+  (`current.geneontology.org/annotations/dictybase.gaf.gz`), count the lines that do
+  **not** start with `!`, compare.
+- **Proteomics:** the Banu et al. and Williams et al. papers state their protein counts
+  in the abstract — compare directly to what the viewer shows.
+
+### Technique 3 — To check ACCURACY, take a random sample (you can't check them all)
+
+Pick a random handful, check each one carefully, and infer the whole. If your whole
+sample is correct you have strong confidence in the full dataset; if you find errors,
+expand the sample and record how many.
+
+- **Draw the sample:** from the genes `.tsv` you downloaded, add a column `=RAND()` in
+  Excel, **sort by that column**, and take the top **~40 genes**. That is an unbiased
+  random sample.
+- Run the §2 gene-record checks on those ~40 (plus the 6 reference genes below). ~40 is
+  a good target for gene records; **5–10 is enough** for tools/search where you're
+  testing that a feature *works*, not bulk data.
+- **Record the error rate:** "0 of 40 wrong" is a strong result; "3 of 40 wrong" is
+  something we need to fix and look into more broadly.
+
+### Technique 4 — Know what counts as a real problem
+
+- **Ignore** cosmetic differences: capitalization, spacing, punctuation, or an accepted
+  synonym.
+- **Flag** substantive disagreements: a different gene ID, a wrong genomic location, a
+  GO term the authoritative source doesn't list, a protein of a different length, a
+  disease that doesn't match, or a broken/incorrect link.
+- When unsure, write it down and let Matt decide. Over-reporting is fine; a silent miss
+  is not.
+
+---
+
+**Reference gene panel** (well-studied genes; use these throughout in addition to your random sample):
 
 | Symbol | DDB_G id | Note |
 |---|---|---|
@@ -26,111 +82,116 @@ right. You are trying to *find problems* before a reviewer or reader does.
 | gbpC | DDB_G0291079 | cGMP-binding protein |
 | cln5 | DDB_G0275299 | disease model (human CLN5 / Batten) |
 
-**Authoritative sources you'll use:** dictyBase (dictybase.dev), NCBI Gene, UniProt,
-QuickGO (ebi.ac.uk/QuickGO), KEGG, OMA Browser, Orphanet, AlphaFold, InterPro, and
-the primary papers (PubMed).
+**Authoritative sources:** dictyBase (dictybase.dev), NCBI Gene / Datasets, UniProt,
+QuickGO (ebi.ac.uk/QuickGO), KEGG, OMA Browser, Orphanet, AlphaFold, InterPro, PubMed.
 
 ---
 
 ## 1. Headline numbers (these go in the manuscript — verify exactly)
 
-Check each number on the site and confirm it matches what the manuscript states.
-Open **/data** (footer → "Data & freshness") for the per-dataset record counts.
+Use **Technique 1** (download + count) then **Technique 2** (benchmark). For each,
+record: the site's number, your counted number, and the independent benchmark.
 
-- [ ] **Gene records** — homepage says "13,000+"; /data "Gene catalog" count. Record the exact number.
-- [ ] **Sequenced genomes** — homepage says "17". Confirm on the genome browser / downloads page that 17 assemblies are actually listed (11 species-level + 6 wild isolates).
-- [ ] **Stock center** — homepage "28,000+ strains". Confirm the Stock Center actual catalog counts (browsable strains + plasmids) match the manuscript's numbers.
-- [ ] **Disease genes** — the manuscript states a count (e.g. 423). Confirm it matches the site's disease-models page / count.
-- [ ] **Proteomics** — the proteome viewers state protein counts (e.g. Banu et al. ~4,502; Williams et al. ~8,043). Confirm the viewers actually show those numbers.
-- [ ] **GO annotations** — /data shows a GO annotation count. Note it; it should be in the same ballpark as the current GO Consortium dictyBase GAF.
-- [ ] Any other count that appears as a specific number in the manuscript — find it on the site and confirm.
+- [ ] **Gene records** — homepage "13,000+" and `/data` "Gene catalog". Download `api/bulk?dataset=genes`, count rows, confirm it matches; then check it's in NCBI/dictyBase's range for *D. discoideum*.
+- [ ] **Sequenced genomes** — count the assemblies listed on the downloads page and genome browser; should be **17** (11 species-level + 6 wild isolates). Match each name to NCBI.
+- [ ] **Stock center** — the browsable strain + plasmid counts. Compare to what dictyBase's Dicty Stock Center reports.
+- [ ] **Disease genes** — this is the number of *genes that have a disease*, not ortholog rows. Easiest: use the count on the disease-models page / advanced-finder "has disease" filter. To verify it: open `api/bulk?dataset=orthologs`, filter the **disease** column to non-empty, and count the **distinct** `ddb_g`. Confirm it matches the manuscript (e.g. 423).
+- [ ] **Proteomics** — the two proteome viewers state protein counts; confirm they match the numbers in the Banu et al. and Williams et al. abstracts.
+- [ ] **GO annotations** — download `api/bulk?dataset=go`, count rows; benchmark against the GO Consortium dictyBase GAF (count non-`!` lines).
+- [ ] Any other specific number in the manuscript — find it on the site, count/benchmark it the same way.
 
 ## 2. Gene records (the core of the site)
 
-For **each reference gene** (and your random picks), open its record and check:
+Run these on your **~40-gene random sample (Technique 3)** plus the 6 reference genes.
+For each gene, open its record and check:
 
 - [ ] **Symbol + name + DDB_G id** match dictyBase and NCBI Gene.
 - [ ] **Genomic location** (chromosome + coordinates) matches NCBI Gene / dictyBase.
-- [ ] **Summary text** is present and consistent with dictyBase (spot-check wording; it should not contradict dictyBase).
-- [ ] **Curation badge is correct**: if a summary is labeled "dictyBase legacy," confirm that text really comes from dictyBase. If anything is labeled **AI**, confirm it is clearly badged as AI and is *not* presented as curated fact.
-- [ ] **GO terms**: pick 3 GO terms shown; look each up in QuickGO and confirm the term id matches the name, and that dictyBase/QuickGO also associates that gene with that term.
-- [ ] **Phenotypes** (if any) match the mutant phenotypes dictyBase lists for that gene.
-- [ ] **Human ortholog + disease** (genes that have them, e.g. cln5): the human ortholog matches OMA, and the disease matches Orphanet (cln5 → CLN5 → neuronal ceroid lipofuscinosis / Batten).
-- [ ] **Cross-reference links** (UniProt, NCBI) open the *correct* entry for that gene, not a different one.
-- [ ] **Sequences** — retrieve genomic, cDNA, and protein. Protein sequence should match the UniProt entry (same length, same first/last residues). cDNA should translate to the protein.
-- [ ] **Protein structure** (AlphaFold) loads and corresponds to the right UniProt accession.
-- [ ] **Domains** (InterPro/Pfam) shown match what InterPro lists for that UniProt accession.
+- [ ] **Summary text** is present and does not contradict dictyBase.
+- [ ] **Curation badge is correct** — "dictyBase legacy" text really comes from dictyBase; anything "AI" is clearly badged and not presented as curated fact.
+- [ ] **GO terms** — pick 3; look each up in QuickGO; the term id matches its name, and dictyBase/QuickGO also associate that gene with it.
+- [ ] **Phenotypes** (if any) match the mutant phenotypes dictyBase lists.
+- [ ] **Human ortholog + disease** (e.g. cln5) — ortholog matches OMA; disease matches Orphanet (cln5 → CLN5 → neuronal ceroid lipofuscinosis / Batten).
+- [ ] **Cross-reference links** (UniProt, NCBI) open the *correct* entry, not a different gene.
+- [ ] **Sequences** — protein matches UniProt: paste the site's protein into the UniProt entry's BLAST or just compare **length and the first/last ~10 residues**. cDNA should translate to that protein.
+- [ ] **Protein structure** (AlphaFold) loads and is for the right UniProt accession.
+- [ ] **Domains** (InterPro/Pfam) match what InterPro lists for that UniProt accession.
+
+*Report the error rate here (e.g. "1 of 40 genes had a wrong location").*
 
 ## 3. Search
 
-- [ ] **Gene search**: type each reference symbol; the top hit is the correct gene.
-- [ ] Search by **DDB_G id**; returns the same gene.
-- [ ] Search by **UniProt accession** and **NCBI Gene id**; resolves to the right gene.
-- [ ] **Phenotype search**: pick a phenotype; results are genes that really have it (spot-check 2 against dictyBase).
-- [ ] **GO term search**: search a GO term; the genes returned are annotated to it (spot-check count/order against QuickGO for the same term where feasible).
-- [ ] **Localization search**: pick a subcellular location; results are plausible.
-- [ ] **Advanced gene finder**: apply a filter (e.g. has human ortholog + disease); every result actually meets the filter (spot-check 3).
+Functional checks — 5–10 examples each is enough.
+
+- [ ] **Gene search** — each reference symbol returns the correct gene as top hit; search by DDB_G id, UniProt accession, and NCBI Gene id also resolve to the right gene.
+- [ ] **Phenotype search** — pick a phenotype; spot-check 2 results against dictyBase.
+- [ ] **GO term search** — search a term; the genes returned are annotated to it. *How to spot-check the size:* compare the number of genes the site returns for that term to the number QuickGO shows for the same GO term in *D. discoideum* — same ballpark is fine.
+- [ ] **Localization search** — pick a location; results are plausible.
+- [ ] **Advanced gene finder** — apply a filter (e.g. has human ortholog + disease); confirm 3 results actually meet the filter.
 
 ## 4. BLAST
 
-- [ ] Copy a reference gene's **DNA** sequence, run **blastn** against *D. discoideum AX4*; it hits **itself at ~100% identity**, and the hit links back to the correct gene.
-- [ ] Copy a **protein** sequence, run **tblastn**; top hit is the correct gene.
-- [ ] Run a cross-species search; results are returned for the other genomes without error.
-- [ ] Try a nonsense/very short sequence; the site handles it gracefully (clear message, no crash).
+- [ ] Copy a reference gene's **DNA**, run **blastn** vs *D. discoideum AX4* → it hits **itself at ~100% identity** and the hit links back to the correct gene. (This is the cleanest accuracy check: the sequence must find its own gene.)
+- [ ] Copy a **protein**, run **tblastn** → top hit is the correct gene.
+- [ ] Run a **cross-species** search → results returned for the other genomes, no error.
+- [ ] Try a nonsense / very short sequence → handled gracefully (clear message, no crash).
 
 ## 5. Genome browser & downloads
 
-- [ ] Genome browser **loads** and lists all sequenced species.
-- [ ] Navigate to a reference gene's coordinates; the **gene model** (exons) displays and matches the location on its record page.
-- [ ] Downloads page lists **all 17 assemblies**. Download **one FASTA and one GFF**; the file opens, is not empty/corrupt, and the assembly name/species matches NCBI.
-- [ ] Assembly identifiers / species names on the downloads page match the source (NCBI / the Ahmed et al. 2025 paper for the wild isolates).
+- [ ] Genome browser loads and lists all sequenced species.
+- [ ] Navigate to a reference gene's coordinates → the **gene model** (exons) matches the location shown on its record page.
+- [ ] Downloads page lists **17 assemblies**. Download **one FASTA and one GFF**; open them — not empty/corrupt, species matches NCBI. *Sanity-check a FASTA:* the first line starts with `>` and the sequence is only A/C/G/T/N. *Sanity-check a GFF:* it has `gene`/`mRNA`/`CDS` feature rows.
+- [ ] Assembly names/species match the source (NCBI / Ahmed et al. 2025 for the wild isolates).
 
 ## 6. Stock Center
 
-- [ ] Search a **known strain** (e.g. an AX4-derived knockout you can find in dictyBase); its catalog entry (genotype, description) matches dictyBase's Dicty Stock Center.
-- [ ] Browse counts of strains and plasmids match the manuscript numbers.
-- [ ] Add an item to the order/cart and confirm the order flow works up to (but not including) actually submitting an order.
+- [ ] Search a **known strain** → its catalog entry (genotype, description) matches dictyBase's Dicty Stock Center.
+- [ ] Strain and plasmid counts match the manuscript (Technique 1/2).
+- [ ] Add an item to the order/cart → the order flow works up to (not including) actually submitting.
 
 ## 7. Analysis tools
 
-- [ ] **GO enrichment**: paste a set of genes known to share a process (e.g. several chemotaxis genes); the enriched terms make biological sense (chemotaxis / signaling appear near the top).
-- [ ] **Gene-set analysis**: paste a hit list; confirm it returns GO, phenotype, KEGG, ortholog/disease, and an expression-peak profile without error, and the numbers are internally consistent.
-- [ ] **Compare expression** (Parikh RNA-seq): plot a developmentally regulated gene (e.g. acaA/pkaC); the profile matches its known developmental pattern.
-- [ ] **Proteome viewers** (Banu / Williams): look up a protein; it appears with values across stages.
-- [ ] **Lab tools** — generate CRISPR guides and qPCR primers for a reference gene; the guides/primers map to that gene's sequence (spot-check one primer against the sequence).
-- [ ] **Codon optimization** — run a short protein; output is valid DNA that back-translates to the input protein.
+Functional checks — one or two good examples each.
+
+- [ ] **GO enrichment** — paste genes known to share a process (e.g. several chemotaxis genes: carA-1, gpaB, acaA, pikA); the top enriched terms should be about chemotaxis/signaling. *Validation:* the result makes biological sense and the p-values are small for the expected terms.
+- [ ] **Gene-set analysis** — paste a hit list → returns GO, phenotype, KEGG, ortholog/disease, and an expression-peak profile with no error; numbers are internally consistent (e.g. "disease genes" count ≤ total genes in the set).
+- [ ] **Compare expression** (Parikh RNA-seq) — plot a developmentally regulated gene (acaA/pkaC); the profile matches its known developmental timing.
+- [ ] **Proteome viewers** — a protein appears with values across the life-cycle stages.
+- [ ] **Lab tools** — generate CRISPR guides and qPCR primers for a reference gene; confirm one guide/primer sequence actually occurs in that gene's sequence (search for it with Ctrl+F in the retrieved sequence).
+- [ ] **Codon optimization** — run a short protein; paste the output DNA into any translate tool (e.g. ExPASy Translate) and confirm it back-translates to the input protein.
 - [ ] **Sequence tools** — region retrieval and in-silico PCR return the expected region/product for known coordinates/primers.
-- [ ] **ID converter** — convert a symbol → DDB_G → UniProt → NCBI and back; the ids are consistent with the gene record.
+- [ ] **ID converter** — convert a symbol → DDB_G → UniProt → NCBI and back; the ids stay consistent with the gene record.
 
-## 8. API (a quick programmatic spot-check)
+## 8. API (quick programmatic spot-check)
 
-- [ ] Open `https://dicty.labs.duke.edu/api/gene/rasG` in the browser; the JSON symbol, name, and GO match the rasG record page.
-- [ ] Open `https://dicty.labs.duke.edu/api/search?q=mhcA`; mhcA (DDB_G0286355) is in the results.
-- [ ] Open `https://dicty.labs.duke.edu/api/gene-annotations?ddb=DDB_G0275299`; GO annotations are returned for cln5.
+Open each URL in the browser and compare the JSON to the record page.
+
+- [ ] `…/api/gene/rasG` → symbol, name, GO match the rasG record page.
+- [ ] `…/api/search?q=mhcA` → mhcA (DDB_G0286355) is in the results.
+- [ ] `…/api/gene-annotations?ddb=DDB_G0275299` → GO annotations returned for cln5.
 
 ## 9. External links & attribution
 
-- [ ] On a gene record, click the **UniProt**, **NCBI**, and any **PubMed** links; each opens the correct external entry.
-- [ ] **/data** page lists every data source with a license and a working link (UniProt, NCBI, GO, OMA, Orphanet, InterPro, KEGG, AlphaFold, Parikh, proteomics, Stock Center).
-- [ ] **/cite** page loads and shows a citation.
-- [ ] Footer credit and license line are present and correct.
+- [ ] On a gene record, the **UniProt / NCBI / PubMed** links open the *correct* external entry.
+- [ ] **/data** lists every data source with a license and a working link.
+- [ ] **/cite** loads and shows a citation; footer credit and license line are present and correct.
 
 ## 10. Sanity sweep (catch the weird stuff)
 
-- [ ] Visit ~10 **randomly chosen** genes (pick DDB_G ids at random). None should be blank, broken, or error out.
-- [ ] Look for any gene where the **summary contradicts the GO terms / name** (a sign of a mismatched record).
-- [ ] Check a **hypothetical/uncharacterized** gene: it should show minimal data gracefully, not an error.
-- [ ] Note any page that is slow, throws a browser error, or shows "undefined"/"NaN"/placeholder text.
+- [ ] From your random sample, confirm **none** are blank, broken, or error out.
+- [ ] Look for any gene where the **summary contradicts its GO terms / name**.
+- [ ] Check a **hypothetical/uncharacterized** gene → shows minimal data gracefully, not an error.
+- [ ] Note any page that is slow, throws a browser error, or shows "undefined" / "NaN" / placeholder text.
 
 ---
 
 ## Recording table (copy into a spreadsheet)
 
-| # | Section | Test | Gene / input | Expected | Result (PASS/FAIL) | Discrepancy & source checked |
+| # | Section | Test / gene | Site showed | Expected / source | PASS / FAIL | Notes |
 |---|---|---|---|---|---|---|
 | | | | | | | |
 
-**When done:** give Matt (1) the list of every FAIL with details, (2) the exact
-headline numbers you recorded in §1 (so we cite the right figures), and (3) any
-"looks off but not clearly wrong" notes. Flag anything where the site and dictyBase
-*disagree* — those are the highest priority.
+**When done, give Matt:** (1) every FAIL with details, (2) the exact **headline numbers**
+from §1 (site number, your count, and the independent benchmark) so we cite the right
+figures, (3) the **error rate** from your §2 random sample, and (4) any "looks off but
+not clearly wrong" notes. Anything where the site and dictyBase *disagree* is highest priority.

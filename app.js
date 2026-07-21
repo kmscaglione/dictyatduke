@@ -1513,7 +1513,7 @@ function renderRecord() {
   const gene = state.activeGene;
   if (!gene) return;
   recordShell.removeAttribute("hidden");
-  const tabs = ["Summary", "GO", "Phenotypes", "Literature", "Structures", "Interactions", "Orthologs", "PTMs"];
+  const tabs = ["Summary", "GO", "Phenotypes", "Literature", "Structures", "Interactions", "Genome", "Orthologs", "PTMs"];
   recordShell.innerHTML = `
     <article class="record-card">
       <header class="record-header">
@@ -1525,7 +1525,7 @@ function renderRecord() {
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator && !gene._legacySummary ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
-          <div class="record-actions">${basketToggleButtonHTML(gene)}${canViewInBrowser(gene) ? `<button type="button" class="button" data-view-browser>View in genome browser →</button>` : ""}</div>
+          <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
         </div>
         ${gene.uniprot ? `
         <div class="structure-preview">
@@ -1585,11 +1585,13 @@ function loadTabData(gene, tab) {
     case "Interactions":
       loadStringResults(gene);
       break;
+    case "Genome":
+      loadNeighborhood(gene);
+      break;
     case "Orthologs":
       loadHumanDisease(gene);
       loadParalogs(gene);
       loadComparative(gene);
-      loadNeighborhood(gene);
       loadVariation(gene);
       loadOMAResults(gene);
       break;
@@ -6180,12 +6182,24 @@ function renderTab(gene, tab) {
       </div>`;
   }
 
+  if (tab === "Genome") {
+    const placed = canViewInBrowser(gene);
+    return `
+      <div class="data-block">
+        <h3>Genome browser <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— this gene on the AX4 assembly</span></h3>
+        ${placed
+          ? `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Open the interactive browser centered on <em>${escapeHtml(gene.symbol)}</em>, with the RNA-seq overlay and neighboring genes in view.</p>
+             <button type="button" class="button" data-view-browser>View in genome browser →</button>`
+          : `<p class="notice muted">This gene isn't placed on the browser assembly.</p>`}
+      </div>
+      <div class="data-block" data-neighborhood></div>`;
+  }
+
   if (tab === "Orthologs") {
     return `
       <div data-human-disease></div>
       <div class="data-block" data-paralogs></div>
       <div class="data-block" data-dicty-comparative></div>
-      <div class="data-block" data-neighborhood></div>
       <div class="data-block" data-variation></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
@@ -7745,7 +7759,7 @@ async function loadNeighborhood(gene) {
     data = await (await fetch(`/api/neighborhood?ddb=${encodeURIComponent(ddb)}`)).json();
     if (data.error || !data.genes) throw new Error("none");
   } catch { out.innerHTML = `<p class="notice muted">No placed neighborhood for this gene.</p>`; return; }
-  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  if (state.activeGene !== gene || state.activeTab !== "Genome") return;
   const box = (g) => {
     const arrow = g.strand === "-" ? "◄ " : "";
     const arrowR = g.strand === "-" ? "" : " ►";
@@ -7792,7 +7806,7 @@ async function checkSynteny(gene, data, out) {
       return { g, contig: best ? best.subject : null, sstart: best ? best.sstart : null };
     } catch { return { g, contig: null }; }
   }));
-  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  if (state.activeGene !== gene || state.activeTab !== "Genome") return;
   const counts = {};
   hits.forEach((h) => { if (h.contig) counts[h.contig] = (counts[h.contig] || 0) + 1; });
   const topContig = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];

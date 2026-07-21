@@ -6256,6 +6256,7 @@ function renderTab(gene, tab) {
           <div id="rnaseq-inline-chart" data-gene-ddb="${escapeHtml(gene.veupath || '')}" style="position:relative;height:180px">
             <p class="notice muted" style="padding:8px">Loading expression data…</p>
           </div>
+          <p id="rnaseq-dup-note" style="font-size:0.72rem;color:var(--amber,#8a5b16);margin:6px 0 0" hidden></p>
           <a class="text-link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE61914" target="_blank" rel="noopener" style="font-size:0.8125rem;margin-top:6px;display:block">Source data: Rosengarten et al. 2015, GEO GSE61914 →</a>
         </section>
         <section class="data-block" data-coexpression hidden></section>
@@ -7696,6 +7697,19 @@ async function ensureRNAseqData() {
   return rnaseqData;
 }
 
+// Chromosome-2 duplication: near-identical duplicate copies (X-1/X-2) can't be
+// told apart by RNA-seq, so one copy carries the reads and the other looks empty.
+// This maps the empty copy -> its expressed sibling so both show the same profile.
+let dupExprMap = null;
+async function ensureDupExpression() {
+  if (dupExprMap) return dupExprMap;
+  try {
+    const res = await fetch("/assets/dup_expression.json");
+    dupExprMap = res.ok ? await res.json() : {};
+  } catch { dupExprMap = {}; }
+  return dupExprMap;
+}
+
 async function loadAISummary(gene) {
   const el = document.querySelector("[data-ai-summary]");
   if (!el) return;
@@ -8137,7 +8151,23 @@ async function loadRNAseqInline(gene) {
 
   try {
     const data = await ensureRNAseqData();
-    const vals = data[ddb];
+    let vals = data[ddb];
+    let dupFrom = "";
+    if (!vals) {
+      // chromosome-2 duplication: reads land on the sibling copy; borrow its profile
+      const dup = (await ensureDupExpression())[ddb];
+      if (dup && data[dup.from]) { vals = data[dup.from]; dupFrom = dup.symbol; }
+    }
+    const dupNoteEl = document.getElementById("rnaseq-dup-note");
+    if (dupNoteEl) {
+      if (dupFrom) {
+        dupNoteEl.textContent = `Chromosome 2 is partially duplicated in AX4. This gene's near-identical duplicate copy (${dupFrom}) carries the RNA-seq reads, which can't be assigned separately, so the profile shown is from ${dupFrom}.`;
+        dupNoteEl.hidden = false;
+      } else {
+        dupNoteEl.hidden = true;
+        dupNoteEl.textContent = "";
+      }
+    }
     if (!vals) {
       el.innerHTML = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);padding:8px">No expression data found for ${escapeHtml(ddb)}.</p>`;
       return;

@@ -1019,8 +1019,8 @@ let geneIndex = [];
     const res = await fetch("/assets/gene_index.json");
     if (!res.ok) return;
     const rows = await res.json();
-    geneIndex = rows.map(([id, symbol, name, location, ncbiGene]) => ({
-      id, symbol, name, location, ncbiGene,
+    geneIndex = rows.map(([id, symbol, name, location, ncbiGene, synonyms = []]) => ({
+      id, symbol, name, location, ncbiGene, synonyms,
       organism: "Dictyostelium discoideum AX4"
     }));
     // If the user is mid-search, refresh suggestions now that the index is ready.
@@ -1036,11 +1036,14 @@ function searchIndex(query, limit = 8) {
     const sym = normalizeQuery(g.symbol);
     const idn = normalizeQuery(g.id);
     const nm = normalizeQuery(g.name);
-    if (!(sym.includes(q) || idn.includes(q) || nm.includes(q))) continue;
+    const syns = (g.synonyms || []).map(normalizeQuery);
+    const synExact = syns.includes(q);
+    if (!(sym.includes(q) || idn.includes(q) || nm.includes(q) || syns.some((s) => s.includes(q)))) continue;
     let rank = 3;
     if (sym === q || idn === q) rank = 0;
     else if (sym.startsWith(q)) rank = 1;
     else if (idn.startsWith(q)) rank = 2;
+    else if (synExact) rank = 2;   // an old/alternate symbol typed in full ranks like an id hit
     matches.push({ g, rank });
   }
   matches.sort((a, b) => (a.rank - b.rank) || a.g.symbol.localeCompare(b.g.symbol));
@@ -9610,7 +9613,8 @@ function hydrateFromRoute() {
     const tok = normalize(decodeURIComponent(pathParts[1] || ""));
     const fromCatalog = () => {
       const entry = geneIndex.find((g) =>
-        normalize(g.id) === tok || normalize(g.symbol) === tok || normalize(g.ncbiGene) === tok);
+        normalize(g.id) === tok || normalize(g.symbol) === tok || normalize(g.ncbiGene) === tok
+        || (g.synonyms || []).some((s) => normalize(s) === tok));
       if (entry) { input.value = entry.symbol; navigateToGene(entry); return true; }
       return false;
     };

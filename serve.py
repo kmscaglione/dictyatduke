@@ -254,6 +254,11 @@ def _load_gene_meta():
                 by_ddb[ddb] = r
             if sym:
                 by_symbol.setdefault(sym.lower(), r)
+            # old/alternate symbols (6th field) resolve to the same record, so a
+            # /gene/<old-symbol> link gets the right title and canonical /gene/<symbol>.
+            for a in (r[5] if len(r) > 5 else []):
+                if a:
+                    by_symbol.setdefault(a.lower(), r)
         _GENE_META.update(mtime=mtime, by_symbol=by_symbol, by_ddb=by_ddb, records=recs)
     return _GENE_META
 
@@ -748,7 +753,7 @@ def gene_intervals():
     idx = {}
     try:
         rows = json.loads((pathlib.Path(ROOT) / "assets" / "gene_index.json").read_text())
-        for ddb, sym, name, loc, ncbi in rows:
+        for ddb, sym, name, loc, ncbi, *_ in rows:
             if ":" not in loc:
                 continue
             chrom, span = loc.split(":", 1)
@@ -1093,9 +1098,13 @@ def api_gene_rows():
     if "_rows" not in _API:
         rows, sym = {}, {}
         try:
-            for ddb, symbol, name, loc, ncbi in _load_json("gene_index.json"):
-                rows[ddb] = {"ddb": ddb, "symbol": symbol, "name": name, "location": loc, "ncbiGene": ncbi}
+            for ddb, symbol, name, loc, ncbi, *rest in _load_json("gene_index.json"):
+                aliases = rest[0] if rest else []
+                rows[ddb] = {"ddb": ddb, "symbol": symbol, "name": name, "location": loc,
+                             "ncbiGene": ncbi, "synonyms": aliases}
                 sym.setdefault(symbol.lower(), ddb)
+                for a in aliases:               # old symbols resolve too (e.g. grlL -> far1)
+                    sym.setdefault(a.lower(), ddb)
         except Exception:
             pass
         _API["_rows"], _API["_sym"] = rows, sym

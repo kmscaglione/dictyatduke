@@ -145,6 +145,54 @@ def oma_pairs():
     return pairs
 
 
+# ------------------------------------------------------------- InParanoid ----
+# InParanoiDB 9 (Persson & Sonnhammer, J Mol Biol 2023; CC BY-SA 4.0) covers
+# D. discoideum, which OMA calls conservatively — InParanoid recovers many
+# well-conserved Dicty<->human orthologs OMA misses. We keep only SEED orthologs
+# (inparalog-score 1.0, the main 1:1 pair on each side) for higher confidence,
+# and tag each ortholog with its supporting method so both-source calls read as
+# high-confidence and single-source calls are visibly weaker (the DIOPT idea).
+INPARANOID_URL = "https://inparanoidb.sbc.su.se/download/sqltable/44689&9606&prot"
+
+
+def inparanoid_seed_pairs():
+    """[(dicty_uniprot_acc, human_uniprot_acc), ...] seed orthologs, D.d.<->human."""
+    text = _get(INPARANOID_URL, "inparanoid_44689_9606.tsv")
+    groups = {}
+    for line in text.splitlines():
+        c = line.rstrip("\n").split("\t")
+        if len(c) < 6:
+            continue
+        gid, sp, score, acc = c[0], c[2], c[3], c[4]
+        try:
+            if float(score) < 1.0:      # seed ortholog only (drop lower-score inparalogs)
+                continue
+        except ValueError:
+            continue
+        g = groups.setdefault(gid, {"d": [], "h": []})
+        if sp.startswith("44689"):
+            g["d"].append(acc.upper())
+        elif sp.startswith("9606"):
+            g["h"].append(acc.upper())
+    pairs = [(d, h) for g in groups.values() for d in g["d"] for h in g["h"]]
+    print(f"  inparanoid: {len(pairs)} seed Dicty<->human pairs", file=sys.stderr)
+    return pairs
+
+
+def human_acc_to_symbol():
+    """{human UniProt accession (upper): gene symbol} — join key for InParanoid's
+    human side (OMA already carries the symbol in its mnemonic)."""
+    url = ("https://rest.uniprot.org/uniprotkb/stream?"
+           "query=organism_id:9606+AND+reviewed:true&fields=accession,gene_primary&format=tsv")
+    text = _get(url, "human_acc_symbol.tsv")
+    out = {}
+    for line in text.splitlines()[1:]:
+        c = line.split("\t")
+        if len(c) >= 2 and c[0] and c[1]:
+            out[c[0].upper()] = c[1]
+    return out
+
+
 # -------------------------------------------------------------------- HPO ----
 def hpo_gene_to_disease():
     """{human_symbol: [{id, name, source}, ...]}."""
@@ -252,41 +300,66 @@ def main():
     uni = uniprot_entryname_to_gene()
     print("Fetching OMA Dicty<->human ortholog pairs...", file=sys.stderr)
     pairs = oma_pairs()
+    print("Fetching InParanoid Dicty<->human seed orthologs...", file=sys.stderr)
+    inp = inparanoid_seed_pairs()
+    print("Fetching UniProt human accession -> symbol...", file=sys.stderr)
+    human_sym = human_acc_to_symbol()
     print("Fetching HPO gene -> disease...", file=sys.stderr)
     hpo = hpo_gene_to_disease()
 
-    data, joined, unmapped = {}, 0, 0
+    # Merge both ortholog sources into one registry keyed by (DDB_G, human_symbol),
+    # accumulating which method(s) support each call.
+    orthos, oma_joined, oma_unmapped, inp_joined = {}, 0, 0, 0
+
+    def add_ortho(ddb, dicty_symbol, human_symbol, human_uniprot, rel, source):
+        o = orthos.setdefault((ddb, human_symbol), {
+            "dicty_symbol": dicty_symbol, "human_uniprot": human_uniprot,
+            "relationship": rel, "sources": set()})
+        o["sources"].add(source)
+        if not o["human_uniprot"] and human_uniprot:
+            o["human_uniprot"] = human_uniprot
+        if not o["relationship"] and rel:
+            o["relationship"] = rel
+
     for dicty_en, human_symbol, human_en, rel in pairs:
         hit = uni.get(dicty_en)
         if not hit:
-            unmapped += 1
+            oma_unmapped += 1
             continue
-        ddb, dicty_symbol = hit
-        joined += 1
-        diseases = hpo.get(human_symbol, [])
-        entry = data.setdefault(ddb, {"symbol": dicty_symbol, "orthologs": []})
-        if human_symbol not in {o["human_symbol"] for o in entry["orthologs"]}:
-            entry["orthologs"].append({
-                "human_symbol": human_symbol,
-                "human_uniprot": human_en,
-                "relationship": rel,
-                "diseases": diseases,
-            })
+        oma_joined += 1
+        add_ortho(hit[0], hit[1], human_symbol, human_en, rel, "OMA")
 
-    # Use dictyBase's authoritative symbol per gene (keyed by DDB_G) rather than
-    # UniProt's gene_primary, so the disease table matches the gene records after
-    # the nomenclature update (e.g. DDB_G0272192 shows mfsd8, not a stale symbol).
+    for d_acc, h_acc in inp:
+        hit = uni.get(d_acc)
+        hs = human_sym.get(h_acc)
+        if not hit or not hs:
+            continue
+        inp_joined += 1
+        add_ortho(hit[0], hit[1], hs, h_acc, "", "InParanoid")
+
+    data = {}
+    for (ddb, human_symbol), o in orthos.items():
+        entry = data.setdefault(ddb, {"symbol": o["dicty_symbol"], "orthologs": []})
+        entry["orthologs"].append({
+            "human_symbol": human_symbol,
+            "human_uniprot": o["human_uniprot"],
+            "relationship": o["relationship"],
+            "sources": sorted(o["sources"]),
+            "diseases": hpo.get(human_symbol, []),
+        })
+    joined, unmapped = oma_joined, oma_unmapped
+
+    # Set each gene's display symbol from the catalog — dictyBase's authoritative
+    # name, or the DDB_G id when unnamed — rather than UniProt's gene_primary, which
+    # is sometimes blank or malformed. Keeps the table consistent with gene records
+    # and avoids empty/garbled symbols.
     try:
         gi = json.loads((ROOT / "assets" / "gene_index.json").read_text())
-        dsym = {r[0]: r[1] for r in gi if r and r[0] and not str(r[1]).startswith("DDB_G")}
-        relabeled = 0
+        gsym = {r[0]: r[1] for r in gi if r and r[0]}
         for ddb, v in data.items():
             if ddb.startswith("_"):
                 continue
-            if ddb in dsym and v.get("symbol") != dsym[ddb]:
-                v["symbol"] = dsym[ddb]
-                relabeled += 1
-        print(f"  relabeled {relabeled} symbols from gene_index", file=sys.stderr)
+            v["symbol"] = gsym.get(ddb) or ddb
     except Exception as exc:  # noqa: BLE001 — best-effort symbol refresh
         print(f"  (skipped gene_index symbol overlay: {exc})", file=sys.stderr)
 
@@ -296,8 +369,11 @@ def main():
     genes_with_disease = sum(
         1 for v in data.values()
         if any(o["diseases"] for o in v["orthologs"]))
+    both = sum(1 for v in data.values()
+               for o in v["orthologs"] if len(o["sources"]) > 1)
     data["_meta"] = {
-        "description": "Dictyostelium genes -> human orthologs -> disease, keyed by DDB_G id.",
+        "description": "Dictyostelium genes -> human orthologs -> disease, keyed by DDB_G id. "
+        "Each ortholog carries the method(s) that support it (OMA and/or InParanoid).",
         "built": datetime.date.today().isoformat(),
         "counts": {
             "genes_with_ortholog": len([k for k in data if not k.startswith("_")]),
@@ -305,11 +381,17 @@ def main():
             "oma_pairs": len(pairs),
             "joined": joined,
             "unmapped_dicty_side": unmapped,
+            "inparanoid_seed_pairs": len(inp),
+            "inparanoid_joined": inp_joined,
+            "orthologs_supported_by_both": both,
         },
         "sources": [
             {"name": "OMA Browser", "use": "Dicty<->human orthologs",
              "license": "CC BY-SA 2.5", "url": "https://omabrowser.org/"},
-            {"name": "UniProt", "use": "Dicty entry-name -> DDB_G id + symbol",
+            {"name": "InParanoiDB 9", "use": "Dicty<->human seed orthologs "
+             "(Persson & Sonnhammer, J Mol Biol 2023)",
+             "license": "CC BY-SA 4.0", "url": "https://inparanoidb.sbc.su.se/"},
+            {"name": "UniProt", "use": "Dicty entry-name -> DDB_G id + symbol; human accession -> symbol",
              "license": "CC BY 4.0", "url": "https://www.uniprot.org/"},
             {"name": "Human Phenotype Ontology (HPO)", "use": "human gene -> disease",
              "license": "see hpo.jax.org; OMIM-derived entries carry OMIM terms",

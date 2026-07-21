@@ -1630,6 +1630,25 @@ button:focus-visible,
   color: var(--muted);
   white-space: nowrap;
 }
+/* Ortholog prediction method(s). Single method = muted/outline; both methods
+   agreeing = filled teal, reads as higher confidence. */
+.ortho-src {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: .02em;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line, #d7dee0);
+}
+.ortho-src-both {
+  color: #fff;
+  background: var(--teal-dark, #0a4f47);
+  border-color: var(--teal-dark, #0a4f47);
+}
 .disease-list {
   list-style: none;
   margin: 11px 0 0;

@@ -5078,7 +5078,7 @@ function renderDiseaseModelsPage() {
         <div class="record-title">
           <p class="eyebrow">Human disease</p>
           <h2>Dictyostelium disease models</h2>
-          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from OMIM and Orphanet (via the Human Phenotype Ontology). These are computational predictions; confirm against the primary literature.</p>
+          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA and InParanoid (each pair tagged with its supporting method); disease associations from OMIM and Orphanet (via the Human Phenotype Ontology). These are computational predictions; confirm against the primary literature.</p>
         </div>
       </header>
       <div class="record-body">
@@ -5097,7 +5097,7 @@ async function loadDiseaseModels() {
     if (ddb.startsWith("_")) continue;
     for (const o of (v.orthologs || [])) {
       if (!o.diseases || !o.diseases.length) continue;
-      rows.push({ symbol: v.symbol || ddb, human: o.human_symbol, rel: o.relationship, diseases: o.diseases });
+      rows.push({ symbol: v.symbol || ddb, human: o.human_symbol, rel: o.relationship, sources: o.sources || [], diseases: o.diseases });
     }
   }
   rows.sort((a, b) => a.symbol.localeCompare(b.symbol));
@@ -5109,6 +5109,7 @@ async function loadDiseaseModels() {
     const f = (inp?.value || "").trim().toLowerCase();
     const shown = !f ? rows : rows.filter((r) =>
       r.symbol.toLowerCase().includes(f) || r.human.toLowerCase().includes(f) ||
+      (r.sources || []).some((s) => s.toLowerCase().includes(f)) ||
       r.diseases.some((d) => (d.name || "").toLowerCase().includes(f) || d.id.toLowerCase().includes(f)));
     const totalPages = Math.max(1, Math.ceil(shown.length / PAGE));
     if (page > totalPages) page = totalPages;
@@ -5118,13 +5119,14 @@ async function loadDiseaseModels() {
       <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${shown.length.toLocaleString()} of ${rows.length.toLocaleString()} disease-linked gene–ortholog pairs</p>
       <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
         <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
-          <th style="padding:6px 8px">Dicty gene</th><th style="padding:6px 8px">Human ortholog</th><th style="padding:6px 8px">Disease(s)</th>
+          <th style="padding:6px 8px">Dicty gene</th><th style="padding:6px 8px">Human ortholog</th><th style="padding:6px 8px">Support</th><th style="padding:6px 8px">Disease(s)</th>
         </tr></thead>
         <tbody>
           ${visible.map((r) => `
             <tr style="border-bottom:1px solid var(--line,#eef2f3);vertical-align:top">
               <td style="padding:6px 8px"><a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a></td>
               <td style="padding:6px 8px"><strong>${escapeHtml(r.human)}</strong>${r.rel ? ` <span style="color:var(--muted,#6b7280)">${escapeHtml(r.rel)}</span>` : ""}</td>
+              <td style="padding:6px 8px">${orthoSourceTag(r.sources)}</td>
               <td style="padding:6px 8px">${r.diseases.map((d) => { const h = diseaseHref(d.id); const lab = escapeHtml(d.name || d.id); return h ? `<a class="text-link" href="${h}" target="_blank" rel="noopener">${lab}</a>` : lab; }).join("<br>")}</td>
             </tr>`).join("")}
         </tbody>
@@ -6869,6 +6871,18 @@ function diseaseHref(id) {
   if (src === "DECIPHER") return `https://www.deciphergenomics.org/syndrome/${num}`;
   return "";
 }
+// Compact badge showing which method(s) predict an ortholog. Supported by both
+// OMA and InParanoid = high confidence; a single method reads as weaker.
+function orthoSourceTag(sources) {
+  const s = sources || [];
+  if (!s.length) return "";
+  const both = s.length > 1;
+  const title = both
+    ? "Predicted by both OMA and InParanoid — high confidence"
+    : `Predicted by ${s[0]} only`;
+  return `<span class="ortho-src${both ? " ortho-src-both" : ""}" title="${escapeHtml(title)}">${escapeHtml(s.join(" + "))}</span>`;
+}
+
 async function loadHumanDisease(gene) {
   const el = document.querySelector("[data-human-disease]");
   if (!el) return;
@@ -6882,7 +6896,7 @@ async function loadHumanDisease(gene) {
   el.innerHTML = `
     <div class="data-block">
       <h3>Human ortholog${orthologs.length > 1 ? "s" : ""} &amp; disease
-        <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA · UniProt · HPO</span></h3>
+        <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA · InParanoid · HPO</span></h3>
       <div class="ortholog-cards">
         ${orthologs.map((o) => {
           const diseases = o.diseases || [];
@@ -6898,6 +6912,7 @@ async function loadHumanDisease(gene) {
             <div class="ortholog-head">
               <a class="ortholog-symbol" href="https://www.uniprot.org/uniprotkb?query=${encodeURIComponent(o.human_uniprot)}" target="_blank" rel="noopener">${escapeHtml(o.human_symbol)}</a>
               ${o.relationship ? `<span class="ortholog-rel">${escapeHtml(o.relationship)}</span>` : ""}
+              ${orthoSourceTag(o.sources)}
               <span class="ortholog-count">${diseases.length ? diseases.length + " disease" + (diseases.length === 1 ? "" : "s") : "no disease link"}</span>
             </div>
             ${rows ? `<ul class="disease-list">${rows}</ul>` : ""}
@@ -6905,7 +6920,7 @@ async function loadHumanDisease(gene) {
         }).join("")}
       </div>
       <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:12px">
-        Orthologs from OMA; disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER).
+        Orthologs from OMA and InParanoid (each ortholog tagged with its method); disease associations from the Human Phenotype Ontology (OMIM / Orphanet / DECIPHER).
         ${withDisease.length ? "" : "No curated disease associations for this ortholog."}
         Computational predictions — confirm against primary sources.</p>
     </div>`;

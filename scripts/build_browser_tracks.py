@@ -37,6 +37,26 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GENOMES = os.path.join(ROOT, "assets", "genomes")
 
 
+def _relabel_mrna(line):
+    """Give IGV a meaningful transcript label. NCBI RefSeq GFFs set an mRNA's
+    `Name` to its accession (e.g. XM_635544.2), so the browser shows accessions
+    instead of gene names. Rewrite the mRNA `Name` to the gene symbol (`gene=`),
+    or the locus tag (`locus_tag=`, the DDB_G id) when there is no symbol. The
+    accession is preserved in `ID=`/`Dbxref=`, so it still shows on click."""
+    cols = line.rstrip("\n").split("\t")
+    if len(cols) < 9 or cols[2] != "mRNA":
+        return line
+    parts = cols[8].split(";")
+    attrs = dict(kv.partition("=")[::2] for kv in parts if "=" in kv)
+    if "Name" not in attrs:
+        return line
+    sym = (attrs.get("gene") or attrs.get("locus_tag") or "").strip()
+    if not sym:
+        return line
+    cols[8] = ";".join((f"Name={sym}" if kv.startswith("Name=") else kv) for kv in parts)
+    return "\t".join(cols) + "\n"
+
+
 def sorted_records(path, start_col):
     """Yield (header_lines, sorted_feature_lines). Comment/header lines (`#`) are
     kept at the top; feature lines are grouped by seqid then sorted by start.
@@ -51,7 +71,7 @@ def sorted_records(path, start_col):
                     break
                 headers.append(line)
             elif line.strip():
-                feats.append(line)
+                feats.append(_relabel_mrna(line))
 
     def key(line):
         cols = line.split("\t")

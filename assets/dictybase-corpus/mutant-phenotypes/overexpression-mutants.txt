@@ -1,0 +1,803 @@
+Systematic Name	Strain Descriptor	Associated gene(s)	Phenotypes
+DBS0350657	 [csaA]:csaA	csaA	aberrant aggregation | increased calcium-independent cell-cell adhesion
+DBS0351382	 myoB-/[act15]:GFP:myoB(1-921,1057-1111)	myoB	abolished protein localization to actin wave
+DBS0235594	CHE10	cbpC	decreased slug migration | precocious aggregation | decreased mound size | decreased fruiting body size | delayed culmination
+DBS0266719	Dd5P4-/[act15]:Dd5P4:GFP	Dd5P4	wild type
+DBS0266695	Dd5P4-/[act15]:GAP5P4	Dd5P4	increased number of mound tips | decreased growth rate
+DBS0351414	Dd5P4-/[act15]:GFP:Dd5P4(D319G)	Dd5P4	increased contractile vacuole size | aberrant contractile vacuole discharge | aberrant protein localization to contractile vacuole
+DBS0266720	Dd5P4-/[act15]:Hs-OCRL	Dd5P4	decreased phagocytosis
+DBS0266721	Dd5P4-/[act15]:Hs-OCRL(D422A)	Dd5P4	decreased phagocytosis
+DBS0266694	Dd5P4-/[act15]:cat5P4	Dd5P4	increased number of mound tips | decreased growth rate
+CW0391	FLAG-VwkA	vwkA	increased myosin II assembly | decreased growth rate | aberrant cytokinesis | development arrests at mound stage | aberrant hypotonic response | increased protein level
+CW0368	GFP-VwkA	vwkA	decreased growth rate | aberrant cytokinesis
+DBS0350102	GFP:pcp	pcp	aberrant contractile vacuole morphology | aberrant hypotonic response
+DBS0351312	HSPC300-/[act15]:abpB(129-295)	abpB | hspc300	aberrant cellular process
+DBS0237044	VatMpr/[act15]:vatM	vatM	wild type
+DBS0237042	VatMpr/[act15]:vatM:GFP	vatM	decreased growth rate
+DBS0351311	[AS]proA/abpB(129-295)	abpB | proA	aberrant cellular process
+DBS0238036	[AS]proA/proB-/[act15]:proA	proA | proB	wild type
+DBS0238037	[AS]proA/proB-/[act15]:proB	proA | proB	wild type
+DBS0238035	[AS]proA/proB-/[unk]:FLAG:proC	proA | proB | proC	wild type
+DBS0237279	[OE]:HA:rab21(Q66L)	rab21	increased phagocytosis | aberrant cytoskeleton organization
+DBS0237274	[OE]:chlim	ChLim	increased actin filament polymerization | decreased phagocytosis | decreased growth rate
+DBS0350519	[OE]:egeA	egeA	decreased protein level | abolished aggregation
+DBS0237275	[OE]:gbfA	gbfA	precocious prespore gene expression
+JH182	[OE]:gpaD	gpaD	aberrant fruiting body morphogenesis | decreased sporulation
+JH258	[OE]:gpaE	gpaE	precocious prestalk gene expression | precocious prespore gene expression | precocious development of tipped mound
+DBS0348921	[OE]:ipkA1	ipkA1	aberrant inositol phosphate metabolic process | decreased response to lithium | aberrant gene expression
+DBS0348922	[OE]:itpk1	itpk1	aberrant inositol phosphate metabolic process | decreased response to lithium | aberrant gene expression
+DBS0236962	[OE]:pdiA	pdiA	delayed aggregation
+DBS0237015	[OE]:pdiA	pdiA	aberrant development of tipped mound | abolished culmination | abolished slug development
+DBS0302681	[OE]:sgcA(878-2843):GFP/sgcA-	gcA | sgcA	aberrant chemotaxis to cAMP | decreased chemotaxis rate
+DBS0302682	[OE]:sgcA(N1106A):GFP/gca-/sgcA-	gcA | sgcA	increased lateral pseudopodium formation | aberrant chemotaxis to cAMP | aberrant stream morphology | decreased chemotaxis rate
+DBS0266621	[OE]mipp1	mipp1	aberrant inositol phosphate metabolic process | aberrant gene expression | increased response to lithium
+DBS0349923	[RNAi]ctnnA/[act15]:GFP-mhcA	ctnnA	aberrant stalk morphogenesis | decreased epithelium-like organization | aberrant protein localization
+DBS0350924	[TRE-Pmin]:6xHis:GFP:dhcA(1384-4725(K1975T))	dhcA	aberrant molecular function
+DBS0350052	[TRE-Pmin]:arfA(Q71L):GFP	arfA	aberrant filopodium formation | aberrant cytokinesis
+DBS0350053	[TRE-Pmin]:arfA(T31N):GFP	arfA	wild type | increased defense response to Gram-negative bacterium
+DBS0351202	[act15]:6xHis:amd1:eYFP	amd1	decreased gene expression | increased gene expression | aberrant vegetative growth | aberrant fruiting body morphogenesis | delayed development | mitotic G1 phase arrest
+DBS0351167	[act15]:6xHis:ei24:eYFP	ei24	aberrant aggregation | increased chemotaxis to cAMP | aberrant cell cycle | increased cAMP level | increased sporulation
+DBS0350674	[act15]:6xHis:erkA	erkA	aberrant slug development
+DBS0351253	[act15]:6xHis:sesn:eYFP	sesn	aberrant aggregation | decreased protein level | increased gene expression | decreased growth rate | aberrant response to oxidative stress
+DBS0349845	[act15]:7xHis:myoK:Ty1	myoK	aberrant cortical actin cytoskeleton organization | aberrant engulfment during phagocytosis | aberrant cell morphology
+DBS0237100	[act15]:CFP:racC(G15V)	racC	increased actin filament polymerization
+DBS0266512	[act15]:DDB_G0272656	sigN4	wild type
+DBS0350049	[act15]:FLAG:cycC	cycC	precocious development of tipped mound
+DBS0350321	[act15]:FLAG:hbx4	hbx4	aberrant aggregation | abolished gene expression | abolished slug migration | decreased growth rate | aberrant cytokinesis
+DBS0350322	[act15]:FLAG:hbx4/[act15]:cadA	cadA | hbx4	wild type
+DBS0350325	[act15]:FLAG:hbx4/[ecmAO]:lacZ	hbx4	decreased spore germination | increased prestalk gene expression | abolished prespore gene expression | increased prestalk cell differentiation
+DBS0351294	[act15]:FLAG:mybB	mybB	increased gene expression | precocious development
+DBS0238107	[act15]:FLAG:ppp4C	ppp4c	wild type
+DBS0238108	[act15]:FLAG:ppp4C(H113Q)	ppp4c	development arrests at mound stage | delayed development
+DBS0351488	[act15]:FLAG:rasC(Q62L)	rasC	abolished protein localization to plasma membrane | increased actin filament polymerization | decreased chemotaxis to cAMP
+DBS0351292	[act15]:FLAG:sir2A	sir2A	delayed development
+DBS0351293	[act15]:FLAG:sir2C	sir2C	delayed development
+DBS0351291	[act15]:FLAG:sir2D	sir2D	increased gene expression | precocious development
+DBS0304572	[act15]:GFP:abpD(1441-1736)	abpD	abolished protein localization to nuclear envelope
+DBS0304571	[act15]:GFP:abpD(1441-1738)	abpD	abolished protein localization to nuclear envelope
+DBS0304573	[act15]:GFP:abpD(1441-1738,1737P/A)	abpD	abolished protein localization to nuclear envelope
+DBS0237114	[act15]:GFP:abpE(413-481)	abpE-1 | abpE-2	increased lateral pseudopodium formation
+DBS0351483	[act15]:GFP:aqpB(1-208,219-294)	aqpB	decreased hypotonic response
+DBS0351097	[act15]:GFP:cbpG	cbpG	increased cell-substrate adhesion | increased vegetative cell size | decreased chemotaxis to cAMP | abolished aggregation
+DBS0350593	[act15]:GFP:cepL	cepL	decreased growth rate | decreased phagocytosis | increased vegetative cell size | increased cell-substrate adhesion | aberrant centrosome localization | decreased establishment of cell polarity
+DBS0350594	[act15]:GFP:cepL(1-1114)	cepL	increased number of centrosomes | decreased growth rate | aberrant vegetative growth | increased fruiting body size | decreased phagocytosis | increased cell-substrate adhesion | decreased chemotaxis rate | aberrant phototaxis
+DBS0350595	[act15]:GFP:cepL(1-763)	cepL	increased number of centrosomes | decreased growth rate | aberrant vegetative growth | increased fruiting body size | decreased phagocytosis | increased cell-substrate adhesion | decreased chemotaxis rate | aberrant phototaxis
+DBS0350596	[act15]:GFP:cepL(763-1114)	cepL	development arrests at loose mound stage | abolished establishment of cell polarity | delayed aggregation | decreased vegetative cell size | increased cell-substrate adhesion | decreased chemotaxis rate | increased growth rate | aberrant phototaxis | delayed gene expression
+DBS0350460	[act15]:GFP:docD	docD	increased actin filament polymerization | increased cell motility | increased pseudopodium formation
+DBS0350288	[act15]:GFP:forF(1-1087)	forF	decreased pinocytosis | decreased phagocytosis | decreased growth rate
+DBS0235662	[act15]:GFP:forH(1-425)	forH	abolished protein localization to pseudopodium
+DBS0350984	[act15]:GFP:frmB	frmB	decreased spore size | aberrant stalk development
+DBS0304973	[act15]:GFP:gefQ(173-651,818-1298)	gefQ	increased guanyl-nucleotide exchange factor activity
+DBS0304971	[act15]:GFP:gefQ(683-833)	gefQ	decreased guanyl-nucleotide exchange factor activity
+DBS0304972	[act15]:GFP:gefQ(910-1298)	gefQ	aberrant cytokinesis | aberrant phototaxis
+DBS0351254	[act15]:GFP:gflB	gflB	decreased substrate adhesion-dependent cell spreading | decreased actin filament polymerization | increased cell motility
+DBS0350422	[act15]:GFP:gpbB	gpbB	aberrant vegetative growth | delayed development
+DBS0350349	[act15]:GFP:gtaC(1-467:497-587)	gtaC	abolished protein localization to nucleus
+DBS0350351	[act15]:GFP:gtaC(229-587)	gtaC	abolished protein localization to cytoplasm
+DBS0350359	[act15]:GFP:gtaC(281-467:497-587)	gtaC	aberrant protein localization to cytoplasm
+DBS0350352	[act15]:GFP:gtaC(281-587)	gtaC	abolished protein localization to cytoplasm
+DBS0350360	[act15]:GFP:gtaC(346-467:497-587)	gtaC	aberrant protein localization to cytoplasm | aberrant protein localization to nucleus
+DBS0350353	[act15]:GFP:gtaC(346-587)	gtaC	abolished protein localization to cytoplasm
+DBS0350350	[act15]:GFP:gtaC(K469,470,494,496A/R468,471A)	gtaC	abolished protein localization to nucleus
+DBS0236070	[act15]:GFP:hcpA	hcpA	decreased growth rate | aberrant mitotic anaphase
+DBS0351562	[act15]:GFP:impA1	impa1	decreased response to lithium
+DBS0237117	[act15]:GFP:krsA	krsA	decreased slug migration
+DBS0237118	[act15]:GFP:limE	limE	aberrant cytokinesis
+DBS0351530	[act15]:GFP:lis1	lis1	decreased phagocytosis | decreased chemotaxis to folate
+DBS0349983	[act15]:GFP:lmnB	lmnB	aberrant chromatin assembly
+DBS0350490	[act15]:GFP:mhcA(T1823D/T1833D/T2029D)/AX3	mhcA	decreased growth rate | aberrant localization
+DBS0350852	[act15]:GFP:nkaP	nkaP	aberrant aggregation | decreased gene expression | increased gene expression | aberrant vegetative growth | increased chemotaxis rate
+DBS0350338	[act15]:GFP:pakA	pakA	increased phagocytosis
+DBS0350337	[act15]:GFP:pakA(797-1197)	pakA	decreased phagocytosis | decreased cell motility
+DBS0237122	[act15]:GFP:pats1(2087-2351)	pats1	aberrant cytokinesis
+DBS0237123	[act15]:GFP:phg2(1-245)	phg2	decreased phagocytosis
+DBS0235442	[act15]:GFP:pldB	pldB	abolished aggregation
+DBS0237702	[act15]:GFP:rac1A	rac1A	increased filopodium formation | increased membrane ruffling | increased macropinocytosis | increased growth rate | increased cell motility
+DBS0351073	[act15]:GFP:rac1A(G12V)	rac1A	decreased growth rate | decreased phagocytosis | aberrant cytokinesis | decreased macropinocytosis | decreased cell motility | delayed development | aberrant actin filament organization | abolished filopodium formation
+DBS0351075	[act15]:GFP:rac1A(T17N)	rac1A	aberrant filopodium formation
+DBS0237703	[act15]:GFP:rac1B	rac1B	increased filopodium formation | increased membrane ruffling
+DBS0237704	[act15]:GFP:rac1C	rac1C	increased filopodium formation | increased membrane ruffling | increased growth rate | increased cell motility
+DBS0351074	[act15]:GFP:rac1C(G12V)	rac1C	decreased growth rate | decreased phagocytosis | aberrant cytokinesis | decreased macropinocytosis | decreased cell motility | delayed development | aberrant actin filament organization | abolished filopodium formation
+DBS0351076	[act15]:GFP:rac1C(T17N)	rac1C	aberrant filopodium formation
+DBS0237125	[act15]:GFP:racG(1-168):racH(164-200)	racG | racH	increased filopodium formation | decreased actin filament polymerization | decreased phagocytosis
+DBS0237128	[act15]:GFP:racH(1-163):racG(167-201)	racG | racH	decreased actin filament polymerization
+DBS0237130	[act15]:GFP:racH(M13V)	racH	increased actin filament polymerization | aberrant cytokinesis | aberrant cell morphology
+DBS0237132	[act15]:GFP:racH(T18N)	racH	aberrant cytokinesis | aberrant cell morphology
+DBS0237133	[act15]:GFP:racH:gemA(630-658)	gemA | racH	delayed cytokinesis
+DBS0238392	[act15]:GFP:rapA	rapA	increased cell-substrate adhesion
+DBS0238393	[act15]:GFP:rapA(G12V)	rapA	increased cell-substrate adhesion
+DBS0238394	[act15]:GFP:rapA(S17N)	rapA	decreased cell-substrate adhesion
+DBS0237134	[act15]:GFP:sbds	sbds	wild type
+DBS0237135	[act15]:GFP:sbds	sbds	wild type
+DBS0351177	[act15]:GFP:sey1	sey1	decreased defense response to Gram-negative bacterium | aberrant vacuole organization
+DBS0350715	[act15]:GFP:src1(2-646)	src1	aberrant nuclear envelope morphology
+DBS0304563	[act15]:GFP:sun1(283-905)	sun1	increased number of centrosomes | decreased protein localization to nuclear envelope | aberrant nuclear membrane organization | aberrant nucleus morphology | increased vegetative cell size | aberrant centrosome localization | aberrant mitotic sister chromatid segregation
+DBS0350441	[act15]:GFP:talA/mhcA-/talA-	mhcA | talA	aberrant protein localization
+DBS0350648	[act15]:HA:Rab14(N121I)	rab14	decreased pinocytosis | decreased hypotonic response | aberrant contractile vacuole morphology
+DBS0350899	[act15]:HA:rab11(N126I)	rab11A	aberrant contractile vacuole organization | aberrant contractile vacuole morphology | increased phagocytosis
+DBS0350812	[act15]:HA:rab7A(Q67L)	rab7A	increased exocytosis
+DBS0350813	[act15]:HA:rab7A(T22N)	rab7A	decreased pinocytosis | increased secretion of lysosomal enzymes | decreased exocytosis | decreased phagocytosis | aberrant phagosome maturation | abolished macropinocytosis | abolished protein localization to phagocytic vesicle
+DBS0238111	[act15]:HA:smkA	smkA	delayed development | decreased fruiting body size | decreased establishment of cell polarity | decreased chemotaxis to cAMP
+DBS0350429	[act15]:RFP:abpE	abpE-1 | abpE-2	delayed aggregation
+DBS0350867	[act15]:RFP:mtpn	mtpn	increased filopodium formation | decreased protein localization to cell cortex | aberrant actin filament organization | decreased pseudopodium size
+DBS0351228	[act15]:T7:rasG(G12T)	rasG	increased protein phosphorylation | decreased growth rate | decreased phagocytosis | increased cell-substrate adhesion | decreased filopodium formation
+DBS0351226	[act15]:YFP:iqgC	iqgC	decreased phagocytosis | decreased macropinocytosis
+DBS0350986	[act15]:YFP:myoC(G395A)	myoC	decreased pinocytosis | aberrant mitotic spindle organization | decreased phagocytosis
+DBS0237817	[act15]:YFP:wipA	wipA	increased filopodium formation | increased actin filament polymerization at leading edge
+DBS0237819	[act15]:YFP:wipA(K36A)	wipA	increased filopodium formation | increased actin filament polymerization at leading edge
+DBS0237821	[act15]:YFP:wipA(K93A/S95A)	wipA	increased filopodium formation | increased actin filament polymerization at leading edge
+DBS0350673	[act15]:abpC:GFP	abpC	decreased cell motility
+DBS0304574	[act15]:abpD	abpD	abolished protein localization to nuclear envelope
+DBS0237096	[act15]:abpE	abpE-1 | abpE-2	aberrant aggregation | increased lateral pseudopodium formation | decreased cell motility | delayed development | decreased fruiting body size
+DBS0350800	[act15]:adprt1A	adprt1A	increased gene expression | decreased gene expression | decreased ATP level | delayed aggregation | aberrant cell cycle | decreased growth rate | aberrant response to oxidative stress | increased mitochondrial fission | decreased cAMP level
+DBS0238086	[act15]:atg1	atg1	wild type
+DBS0238091	[act15]:atg1(1-628)	atg1	wild type
+DBS0238088	[act15]:atg1(K36A)	atg1	abolished macroautophagy | increased number of autophagosomes | aberrant cellular response to nitrogen starvation | abolished aggregation
+DBS0238090	[act15]:atg1(K36A/1-628)	atg1	wild type
+DBS0350008	[act15]:bzpN:GFP	bzpN	decreased growth rate | abolished negative regulation of vegetative growth
+JK1	[act15]:carA	carA-1 | carA-2	delayed aggregation
+DBS0252737	[act15]:carA(I104A)	carA-1 | carA-2	decreased cAMP binding
+DBS0252732	[act15]:carA(I104C)	carA-1 | carA-2	decreased protein kinase activation
+DBS0252740	[act15]:carA(I104D)	carA-1 | carA-2	increased cAMP binding | delayed aggregation | aberrant oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252744	[act15]:carA(I104E)	carA-1 | carA-2	increased cAMP binding | delayed aggregation | aberrant oscillatory cAMP signaling
+DBS0252741	[act15]:carA(I104F)	carA-1 | carA-2	increased cAMP binding | decreased protein kinase activation
+DBS0252738	[act15]:carA(I104G)	carA-1 | carA-2	increased cAMP binding | decreased protein kinase activation
+DBS0252747	[act15]:carA(I104H)	carA-1 | carA-2	development arrests at loose mound stage | increased cAMP binding | abolished oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252749	[act15]:carA(I104K)	carA-1 | carA-2	increased cAMP binding | abolished oscillatory cAMP signaling | decreased protein kinase activation | abolished aggregation
+DBS0252739	[act15]:carA(I104L)	carA-1 | carA-2	wild type
+DBS0252742	[act15]:carA(I104M)	carA-1 | carA-2	increased cAMP binding
+DBS0252746	[act15]:carA(I104N)	carA-1 | carA-2	development arrests at loose mound stage | increased cAMP binding | abolished oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252734	[act15]:carA(I104P)	carA-1 | carA-2	decreased protein kinase activation
+DBS0252745	[act15]:carA(I104Q)	carA-1 | carA-2	development arrests at loose mound stage | increased cAMP binding | abolished oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252750	[act15]:carA(I104R)	carA-1 | carA-2	development arrests at loose mound stage | increased cAMP binding | abolished oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252743	[act15]:carA(I104S)	carA-1 | carA-2	increased cAMP binding | aberrant oscillatory cAMP signaling | decreased protein kinase activation
+DBS0252735	[act15]:carA(I104T)	carA-1 | carA-2	increased cAMP binding | aberrant oscillatory cAMP signaling
+DBS0252736	[act15]:carA(I104V)	carA-1 | carA-2	wild type
+DBS0252733	[act15]:carA(I104W)	carA-1 | carA-2	increased cAMP binding
+DBS0252748	[act15]:carA(I104Y)	carA-1 | carA-2	development arrests at loose mound stage | increased cAMP binding | aberrant oscillatory cAMP signaling | decreased protein kinase activation
+DBS0351055	[act15]:catA	catA	decreased slug migration | decreased fruiting body size | decreased superoxide generation | decreased sporulation
+DBS0351588	[act15]:cdcD(E219K):RFP	cdcD	abolished catalytic activity
+DBS0302445	[act15]:cfaD	cfaD	decreased growth rate | aberrant fruiting body morphogenesis
+DBS0350333	[act15]:cnrF:GFP	cnrF	aberrant regulation of GTPase activity
+DBS0302658	[act15]:cnrN:myc/smlA-	cnrN | smlA	decreased fruiting body size
+DBS0237102	[act15]:cofA	cofA	increased actin bundle formation | increased membrane ruffling | increased cell motility
+DBS0350583	[act15]:csaA	csaA	decreased cell-substrate adhesion | precocious aggregation | increased calcium-independent cell-cell adhesion
+DBS0349864	[act15]:cyrA:GFP	cyrA	increased chemotaxis to cAMP
+DBS0237104	[act15]:dagA	dagA	wild type
+DBS0350978	[act15]:deeJ	deeJ	increased pinocytosis | increased growth rate | increased phagocytosis
+DBS0237106	[act15]:dhkC(394-661)	dhkC	development arrests at slug stage | increased slug migration
+DBS0235716	[act15]:dhkK	dhkK	precocious aggregation | development arrests at mound stage
+DBS0235705	[act15]:dhkK(D1125N)	dhkK	aberrant extracellular cAMP signaling pathway | delayed development
+DBS0235707	[act15]:dhkK(H825Q)	dhkK	precocious development | decreased fruiting body size
+DBS0235709	[act15]:dhkK(H825Q/D1125N)	dhkK	aberrant slug migration | delayed culmination
+DBS0351565	[act15]:eIF6	eIF6	aberrant cellular process
+DBS0237108	[act15]:fbxA:FLAG	fbxA	decreased prespore cell differentiation
+DBS0350365	[act15]:fip(1163-2038)	fip-1 | fip-2	aberrant prestalk O cell differentiation
+DBS0350012	[act15]:fps:GFP	fps	increased resistance to alendronic acid
+DBS0235979	[act15]:fszA:GFP	fszA	aberrant mitochondrion morphology
+DBS0351485	[act15]:fszB:GFP	fszB	decreased mitochondrial fusion | decreased mitochondrial fission
+DBS0351056	[act15]:gcsA	gcsA	increased catalytic activity | decreased slug migration | aberrant gene expression | decreased fruiting body size | decreased superoxide generation | decreased sporulation
+DBS0237136	[act15]:gpaA	gpaA	increased stalk length | aberrant cytokinesis | aberrant fruiting body morphogenesis
+DBS0351058	[act15]:gpaB	gpaB	aberrant aggregation | abolished sporulation | development arrests at mound stage | increased cAMP level | aberrant actin filament polymerization | decreased establishment of cell polarity | aberrant protein localization to plasma membrane | increased prestalk cell differentiation
+DBS0350680	[act15]:gpaE	gpaE	abolished vegetative growth | decreased chemotaxis to folate
+DBS0237145	[act15]:gpaG	gpaG	aberrant fruiting body morphogenesis
+DBS0237146	[act15]:gpaH	gpaH	wild type
+DBS0350971	[act15]:gpaH/AX2	gpaH	aberrant cytokinesis | decreased growth rate | aberrant spore germination | aberrant sorocarp development | increased cell-substrate adhesion | increased cell-cell adhesion
+DBS0350079	[act15]:grlB	grlB	delayed aggregation
+DBS0351054	[act15]:gshB	gshB	aberrant aggregation | abolished sporulation | increased gene expression | development arrests at mound stage | increased cAMP level | aberrant actin filament polymerization | decreased establishment of cell polarity
+DBS0351059	[act15]:gshB/[AS]gpaB	gpaB | gshB	aberrant stream morphology | decreased establishment of cell polarity | decreased sporulation
+DBS0350989	[act15]:gst4	gst4	increased fruiting body size
+DBS0236152	[act15]:hcpA(1-161:218-225):GFP	hcpA	decreased growth rate
+DBS0252821	[act15]:hssA	hssA	wild type
+DBS0351173	[act15]:htrA(S300A)	htrA	decreased growth rate | aberrant fruiting body morphogenesis
+DBS0351282	[act15]:htt:eYFP	htt	decreased gene expression | increased gene expression
+DBS0350037	[act15]:mekA(299-360)	mekA	decreased mound size
+DBS0350034	[act15]:mekA(K321A)	mekA	decreased mound size
+DBS0350033	[act15]:mekA(S444A/T448A)	mekA	decreased mound size
+DBS0237203	[act15]:mhkB:FLAG	mhkB	aberrant cytokinesis | decreased myosin II assembly
+DBS0350026	[act15]:mip1/[act15]:mekA:FLAG	mekA | mip1-1 | mip1-2	aberrant protein localization to nucleus
+DBS0350331	[act15]:mkpA:GFP:TAP	mkpA	increased resistance to cisplatin
+DBS0350330	[act15]:mkpB:GFP:TAP	mkpB-1 | mkpB-2	increased resistance to cisplatin
+DBS0237162	[act15]:myc-cdk8	cdk8	increased number of tip-organizers | precocious development of tipped mound
+DBS0350050	[act15]:myc:cdk8/[act15]:FLAG:cycC	cdk8 | cycC	precocious development of tipped mound
+DBS0266837	[act15]:myc:ptpC	ptpC	abolished protein localization to nucleus | aberrant hyperosmotic response | aberrant signal transduction
+DBS0350417	[act15]:myc:ptpC	ptpC	aberrant protein phosphorylation
+DBS0266839	[act15]:myc:ptpC&#916;(C649S)	ptpC	aberrant protein localization to nucleus | increased protein tyrosine phosphorylation
+DBS0266838	[act15]:myc:ptpC(C649S)	ptpC	aberrant protein localization to nucleus | increased protein tyrosine phosphorylation
+DBS0238398	[act15]:myc:rapA	rapA	increased cell-substrate adhesion | decreased cell motility | aberrant cell morphology
+DBS0238396	[act15]:myc:rapA(G12V)	rapA	increased protein localization to cell cortex | delayed aggregation | increased cell-substrate adhesion | decreased cell motility | increased protein kinase activation
+DBS0238397	[act15]:myc:rapA(S17N)	rapA	decreased cell-substrate adhesion
+DBS0237167	[act15]:myc:rckA	rckA	delayed development
+DBS0237163	[act15]:myc:rckA(C551A)	rckA	delayed slug development | decreased chemotaxis rate
+DBS0237164	[act15]:myc:rckA(E510G)	rckA	delayed slug development | decreased chemotaxis rate
+DBS0237165	[act15]:myc:rckA(E510G/N511A)	rckA	delayed slug development | decreased chemotaxis rate
+DBS0237166	[act15]:myc:rckA(K867A)	rckA	precocious aggregation | delayed slug development | decreased chemotaxis rate
+DBS0350132	[act15]:myc:splB	splB	increased protein localization to nucleus | increased protein tyrosine phosphorylation
+DBS0351051	[act15]:myc:talA(2255-2492)/puf118(677-1036)	puf118 | talA	aberrant chemotaxis to cAMP | abolished protein localization to leading edge
+DBS0351359	[act15]:myoB	myoB	decreased pinocytosis | increased protein localization to cell cortex | delayed aggregation | decreased growth rate | decreased cell motility | delayed development | decreased fruiting body size | aberrant actin filament organization
+DBS0351037	[act15]:myoE(1-1005)	myoE	abolished phosphatidylinositol binding
+DBS0351036	[act15]:myoE(K859A/K863A/R868A/R869A):GFP	myoE	abolished phosphatidylinositol binding | abolished protein localization to plasma membrane
+DBS0349847	[act15]:myoK:Myc	myoK	decreased phagocytosis
+DBS0237179	[act15]:myr:rckA	rckA	delayed development | decreased chemotaxis rate
+DBS0349860	[act15]:ndkC	ndkC-1 | ndkC-2	decreased exocytosis | decreased pinocytosis | decreased phagocytosis | decreased growth rate | increased growth rate
+DBS0237180	[act15]:nramp1:GFP	nramp1	increased defense response to Gram-negative bacterium | increased iron ion transport
+DBS0350858	[act15]:odc	odc	aberrant cellular metabolic process | aberrant cell cycle
+DBS0351201	[act15]:odc:eYFP	odc	decreased growth rate | delayed development
+DBS0237182	[act15]:pakA	pakA	wild type
+DBS0237183	[act15]:pakA(K394A)	pakA	development arrests at mound stage | delayed development
+DBS0237184	[act15]:pakA[CA]	pakA	abolished aggregation
+DBS0237185	[act15]:pakA[G+K]	pakA	wild type
+DBS0351186	[act15]:phr2ab:GFP	phr2aB	aberrant cytokinesis | aberrant centrosome organization
+DBS0349903	[act15]:pisA	pisA	aberrant development of tipped mound | decreased slug migration | delayed aggregation | decreased fruiting body size
+DBS0349902	[act15]:pisA:GFP	pisA	decreased slug migration | increased gene expression | decreased gene expression | delayed aggregation | delayed development | decreased phototaxis
+DBS0350693	[act15]:pkaC	pkaC	precocious development
+DBS0237188	[act15]:pkaC(1-497)	pkaC	precocious development | decreased fruiting body size | decreased cAMP level
+DBS0235418	[act15]:pkaR	pkaR	aberrant response to abiotic stimulus
+DBS0237189	[act15]:pkaR(G135E/G261A)	pkaR	decreased protein tyrosine phosphorylation | decreased protein kinase activity | abolished cAMP binding | abolished oscillatory cAMP signaling | abolished aggregation
+DBS0350701	[act15]:pkaR(G135E/G261A)/AX3	pkaR	decreased gene expression | abolished oscillatory cAMP signaling
+DBS0350609	[act15]:pkaR(S133T,G135E)	pkaR	decreased cAMP binding | decreased protein kinase activity | abolished oscillatory cAMP signaling | abolished aggregation
+DBS0350920	[act15]:pkcA	pkcA	increased catalytic activity | abolished aggregation
+DBS0235538	[act15]:pldB	pldB	increased catalytic activity | increased exocytosis | decreased actin filament polymerization | aberrant chemotaxis to cAMP | abolished aggregation | decreased sporulation
+DBS0349874	[act15]:psaA:GFP	psaA	aberrant sporulation
+DBS0351577	[act15]:psiA	psiA	decreased prespore gene expression | decreased stalk cell differentiation
+DBS0351579	[act15]:psiA/[cudA]:lacZ	psiA	aberrant prespore gene expression
+DBS0351580	[act15]:psiA/[ecmB]:lacZ	psiA	delayed prestalk gene expression
+DBS0350751	[act15]:pten(16-515):GFP	pten	abolished catalytic activity
+DBS0350750	[act15]:pten(186-515):GFP	pten	abolished catalytic activity
+DBS0350752	[act15]:pten(C124S):GFP	pten	abolished catalytic activity
+DBS0350753	[act15]:pten(G129E):GFP	pten	abolished catalytic activity
+DBS0350318	[act15]:rab11A:RFP	rab11A	aberrant contractile vacuole organization | decreased contractile vacuole size | abolished hypotonic response
+DBS0350951	[act15]:rac1B(Q61L)	rac1B	increased lateral pseudopodium formation | decreased chemotaxis to cAMP | aberrant actin filament organization
+DBS0350952	[act15]:rac1B(T17N)	rac1B	abolished establishment of cell polarity | delayed aggregation | aberrant actin filament organization | abolished chemotaxis to cAMP
+DBS0350469	[act15]:racE(G20V):GFP	racE	decreased actin filament polymerization | aberrant cytokinesis | decreased growth rate
+DBS0351497	[act15]:rasD(Q61L)	rasD	decreased protein kinase activation
+DBS0351496	[act15]:rasD(S17N)	rasD	increased protein kinase activation
+DBS0351212	[act15]:rasG(S17N)	rasG	aberrant activation of GTPase activity | decreased chemotaxis to cAMP
+DBS0350262	[act15]:rbg3	rbg3	increased lysosome size | decreased growth rate | delayed development
+DBS0237192	[act15]:rblA	rblA	delayed mitotic cell cycle
+DBS0349938	[act15]:rgaA	rgaA	decreased actin filament polymerization | aberrant cytokinesis | decreased cell motility
+DBS0351529	[act15]:rgbA(751-1072,1080-1284,1517-1846)	rgbA	aberrant macropinocytosis | abolished protein localization to macropinosome
+DBS0351528	[act15]:rgbA(751-1072,1121-1317,1505-1834)	rgbA	aberrant macropinocytosis | abolished protein localization to macropinosome
+DBS0351304	[act15]:rheb	rheb	decreased phagocytosis | decreased macropinocytosis | increased growth rate
+DBS0350294	[act15]:rheb:YFP	rheb	increased vegetative cell size
+DBS0350890	[act15]:rnp1A	rnp1A	increased resistance to nocodazole
+DBS0350575	[act15]:rps4	rps4	decreased spore germination | aberrant actin cytoskeleton organization | aberrant vegetative growth | decreased mound size | decreased spore size | aberrant fruiting body morphogenesis | decreased sporulation
+DBS0236915	[act15]:rzpA	rzpA	increased prestalk gene expression | decreased prespore gene expression | delayed culmination
+DBS0349793	[act15]:sadA(921-952)	sadA	decreased cell-substrate adhesion
+SA604	[act15]:sgkA:FLAG	sgkA	aberrant response to abiotic stimulus | increased resistance to cisplatin | aberrant cytokinesis | increased resistance to carboplatin
+HPF437	[act15]:snfA(1-379):GFP	snfA	increased stalk width | increased ATP level | decreased growth rate | increased number of mitochondria | decreased defense response to bacterium | decreased phototaxis | decreased stalk length | aberrant mitochondrion organization
+DBS0351040	[act15]:snfA(1-379):GFP/[AS]ndkC-1	ndkC-1 | ndkC-2 | snfA	wild type
+DBS0350976	[act15]:snfA:YFP	snfA	decreased growth rate | aberrant fruiting body morphogenesis
+DBS0351053	[act15]:sod2	sod2	decreased slug migration | decreased fruiting body size | decreased superoxide generation | decreased sporulation
+DBS0304457	[act15]:sodA/gcsA-	gcsA | sodA	wild type
+DBS0237194	[act15]:sodA:myc	sodA	aberrant response to abiotic stimulus | decreased gene expression | abolished aggregation
+DBS0237195	[act15]:spkA:FLAG	spkA-1 | spkA-2	aberrant aggregation | decreased chemotaxis rate | aberrant actin filament organization | decreased establishment of cell polarity
+AK1209	[act15]:tagA(1-890)	tagA	increased number of mound tips
+DBS0350962	[act15]:tor(212-2380):YFP	tor	decreased growth rate | aberrant sorocarp development
+DBS0237198	[act15]:torA	torA	abolished vegetative growth
+DBS0350862	[act15]:tpt1:YFP	tpt1	decreased gene expression | decreased growth rate | decreased number of mounds | delayed development | aberrant fruiting body morphogenesis
+DBS0237199	[act15]:trrA	trrA	aberrant aggregation | decreased growth rate | decreased phagocytosis | delayed culmination
+DBS0351572	[act15]:vacA:GFP	vacA	decreased phagocytosis
+DBS0351573	[act15]:vacB:GFP	vacB	decreased phagocytosis
+DBS0351574	[act15]:vacC:GFP	vacC	decreased phagocytosis
+DBS0237200	[act15]:vasP	vasP	increased filopodium formation | increased actin filament polymerization
+DBS0351184	[act15]:washc5(N457D):GFP	washc5	aberrant cytokinesis
+DBS0351183	[act15]:washc5:GFP	washc5	aberrant cytokinesis
+DBS0350911	[act6]:GFP:cepA/cepA(183-346)	cepA	increased number of centrosomes
+DBS0351235	[act6]:GFP:cepL	cepL	increased number of microtubule organizing center
+DBS0351586	[act6]:GFP:gefQ(S431A)	gefQ	increased number of mound tips | delayed development
+DBS0349984	[act6]:GFP:lmnB(1-712)	lmnB	aberrant cellular response to fluid shear stress | aberrant intermediate filament organization | abolished vegetative growth
+DBS0350497	[act6]:GFP:rab2A	rab2A	decreased pinocytosis | decreased phagocytosis | aberrant hypotonic response | increased growth rate
+DBS0350499	[act6]:GFP:rab2A(Q64L)	rab2A	decreased autophagic cell death | aberrant cell-cell adhesion | aberrant sorocarp development | aberrant hypotonic response | increased growth rate | increased phagocytosis
+DBS0306243	[act6]:GFP:sun1	sun1	increased number of centrosomes | aberrant nucleus morphology | aberrant mitotic sister chromatid segregation | aberrant centromere complex assembly | aberrant centrosome organization
+DBS0306244	[act6]:GFP:sun1(1-722)	sun1	increased number of centrosomes | aberrant nucleus morphology | aberrant mitotic sister chromatid segregation | aberrant centromere complex assembly | aberrant centrosome organization
+DBS0350685	[act6]:csaA	csaA	increased migratory slug size | increased calcium-independent cell-cell adhesion
+DBS0237205	[act6]:dia1	dia1	delayed aggregation
+DBS0236905	[act6]:mrps4	mrps4	precocious aggregation
+DBS0235444	[act6]:myc:eppA(S250A)	eppA	decreased growth rate | delayed development | decreased cAMP level
+DBS0235445	[act6]:myc:eppA(S325A)	eppA	decreased growth rate
+DBS0266836	[act6]:ptpB	ptpB	delayed aggregation | decreased fruiting body size
+DBS0350807	[act6]:rabS(N137I):GFP	rabS	increased secretion of lysosomal enzymes | aberrant contractile vacuole organization | increased endocytic recycling
+DBS0350806	[act6]:rabS:GFP	rabS	decreased cell-cell adhesion | increased secretion of lysosomal enzymes | increased cell death | increased pinocytosis | aberrant sorocarp development | aberrant hyperosmotic response | decreased chemotaxis to cAMP | increased growth rate | increased phagocytosis
+DBS0350982	[act6]:rps6	rps6	aberrant cytokinesis | delayed development
+DBS0304410	[act6]:srsA	srsA	increased migratory slug size | increased mound size | decreased gene expression | delayed aggregation | aberrant fruiting body morphogenesis | decreased sporulation
+DBS0237220	[act6]:trap1	trap1	development arrests at loose mound stage | aberrant aggregation | abolished pinocytosis | increased gene expression | decreased gene expression | decreased growth rate
+DBS0350695	[act6]:yakA	yakA	increased gene expression | abolished vegetative growth
+DBS0350069	[act6]:zizB:GFP	zizB	aberrant cell separation during cytokinesis | increased filopodium formation
+DBS0304460	[act]:alrA/gcsA-	alrA | gcsA	wild type
+DBS0349955	[ampA]:RFP:ampA	ampA	development arrests at mound stage
+DBS0351495	[cotB]:FLAG:fbxD	fbxD	delayed culmination
+HW358	[cotB]:fpaB:myc	fpaB-1 | fpaB-2	increased response to hypoxia
+DBS0350705	[cotC]:pkaC	pkaC	aberrant sorocarp development | aberrant fruiting body morphogenesis | precocious development
+DBS0350706	[cotC]:pkaC/[spiA]:lacZ	pkaC | spiA	precocious gene expression
+DBS0350048	[cycC]:cycC:TAP	cycC	decreased protein level
+DBS0351493	[dscA]:His:agtA	agtA	decreased sporulation
+DBS0351492	[dscA]:His:agtA(D132A)	agtA	aberrant stalk morphogenesis | abolished sporulation
+DBS0305081	[dscB]:GFP:vamp7A(L35A)	vamp7A	increased protein localization to plasma membrane
+DBS0351106	[dscB]:HA:racC	racC	decreased exocytosis | decreased pinocytosis | decreased macropinocytosis | aberrant actin filament organization | increased phagocytosis
+DBS0350820	[dscB]:cafA	cafA	increased gene expression | precocious development
+DBS0237237	[dscB]:cycB(106-436)	cycB	mitotic M phase arrest
+DBS0350922	[dscB]:dicA(1-278)	dicA	increased cell death | abolished protein binding | aberrant microtubule cytoskeleton organization | aberrant Golgi localization | aberrant mitotic sister chromatid segregation | aberrant centrosome organization
+DBS0350923	[dscB]:dicA(48-654)	dicA	aberrant microtubule cytoskeleton organization | aberrant Golgi localization | decreased protein binding | aberrant mitotic sister chromatid segregation | aberrant centrosome organization
+DBS0351510	[dscB]:rac1B(G12V):myc	rac1B	decreased pinocytosis | decreased growth rate | aberrant cytokinesis | delayed development | aberrant actin filament organization | aberrant cell morphology
+DBS0351511	[dscB]:rac1B(Q61L):myc	rac1B	decreased growth rate | aberrant cytokinesis | delayed development | aberrant actin filament organization | aberrant cell morphology
+DBS0351512	[dscB]:rac1B(T17N):myc	rac1B	decreased pinocytosis | decreased growth rate | aberrant cytokinesis | decreased chemotaxis to folate | delayed development | aberrant actin filament polymerization | aberrant cell morphology
+DBS0350589	[dscB]:rapA	rapA	decreased pinocytosis | aberrant actin filament organization | aberrant cell morphology | increased phagocytosis
+DBS0350590	[dscB]:rapA(G12T)	rapA	decreased pinocytosis | increased phagocytosis
+DBS0351227	[dscB]:rasG(G12T/T45Q)	rasG	wild type | aberrant cell morphology
+DBS0350933	[dscC]:kif2	kif2	aberrant cell cycle
+DBS0351230	[ecmAO]:rasG(G12T)	rasG	aberrant prestalk gene expression | aberrant culmination
+DBS0350703	[ecmA]:pkaC	pkaC	development arrests at mound stage | abolished development of tipped mound
+DBS0350659	[ecmA]:pkaC(9-648)	pkaC	development arrests at tipped mound stage
+DBS0350699	[ecmA]:pkaR(G135E/G261A)	pkaR	decreased migratory slug size | delayed development of tipped mound | aberrant culmination | aberrant slug migration | decreased prestalk gene expression | increased slug migration | aberrant prestalk cell differentiation
+DBS0350700	[ecmA]:pkaR(G135E/G261A)/[ecmB-frag]:lacZ	pkaR	abolished stalk cell differentiation
+DBS0350704	[ecmB]:pkaC	pkaC	development arrests at mound stage | abolished development of tipped mound
+DBS0350639	[ecmF]:expl3:myc	expl3	aberrant stalk morphogenesis | delayed slug development
+DBS0304865	[expl7]:expl7:GFP	expl7	aberrant late culminant morphology
+DBS0237252	[gpaA]:gpaA(G45V)	gpaA	delayed development
+DBS0237253	[gpaA]:gpaA(Q206L)	gpaA	increased basal disc size
+DBS0349948	[ndm]:ndm:RFP	ndm	development arrests at mound stage
+DBS0236086	[pdsA-agg]:pdsA	pdsA	precocious development
+DBS0236111	[pdsA-ldev]:pdsA	pdsA	development arrests at mound stage
+DBS0236484	[pkaC]:pkaC	pkaC	increased gene expression | precocious prespore gene expression | decreased spore cell differentiation | aberrant fruiting body morphogenesis | precocious development | precocious gene expression | decreased cAMP level
+DBS0350709	[pkaC]:pkaC/[dscC]:lacZ	dscC-1 | dscC-2 | pkaC	aberrant gene expression
+DBS0350196	[pkaC]:pkaC/nsfA(A1854T,T1984A,C2131A,A2398T,T2574A)	nsfA | pkaC	decreased spore cell differentiation
+DBS0350696	[pkaC]:pkaC/srfA-	pkaC | srfA	aberrant spore coat morphology | aberrant gene expression
+DBS0237289	[psmC1]:psmC1	psmC1	delayed development of tipped mound | aberrant cytokinesis | delayed gene expression
+DBS0350658	[pspA]:pkaC(9-648)	pkaC	precocious sporulation | aberrant fruiting body morphogenesis
+DBS0350697	[pspA]:pkaR(G135E/G261A)	pkaR	abolished gene expression | decreased prespore gene expression | aberrant sorus color
+DBS0351229	[pspA]:rasG(G12T)	rasG	increased number of mound tips | increased prestalk gene expression | decreased prespore gene expression | abolished phototaxis | increased prestalk cell differentiation
+DBS0237290	[ptpA1]:ptpA1	ptpA1-1 | ptpA1-2	delayed aggregation | decreased growth rate | aberrant fruiting body morphogenesis
+DBS0351231	[rasD]:rasG(G12T)	rasG	development arrests at loose mound stage | increased number of mound tips
+DBS0236867	[rasG]:rasG(G12T)	rasG	aberrant aggregation
+SA601	[sglA-myc]neo<sup>R</sup>-1	sglA	decreased resistance to carboplatin | decreased growth rate | aberrant cytokinesis | decreased resistance to cisplatin
+DBS0351461	[tet]rasD(G12T)	rasD	increased gene expression | increased prestalk cell differentiation
+DBS0351463	[tet]rasD(G12T)/rigA-	rasD | rigA	wild type
+DBS0351290	[tre]:drkA:myc	drkA	decreased growth rate | increased protein tyrosine phosphorylation
+DBS0304911	[tre]:paxB	paxB	abolished sporulation | aberrant endocytosis | decreased cell-substrate adhesion | aberrant chemotaxis to folate | development arrests at mound stage | decreased cell motility | increased cell-cell adhesion
+DBS0350267	[tre]:secG	secG	increased filopodium formation | abolished establishment of cell polarity | development arrests at mound stage | aberrant actin cytoskeleton organization | aberrant actin filament polymerization | abolished chemotaxis to cAMP | delayed gene expression
+DBS0351555	[unk]:FLAG:rab1A(Q67L) 	rab1A	aberrant actin filament polymerization | aberrant pseudopodium formation
+DBS0351556	[unk]:FLAG:rab1A(S22N)	rab1A	decreased actin filament polymerization | decreased chemotaxis to cAMP
+DBS0351442	[unk]:GFP:RasG	rasG	increased macropinocytosis
+DBS0351443	[unk]:GFP:RasG(G12T)	rasG	increased macropinocytosis
+DBS0351444	[unk]:GFP:RasS	rasS	increased macropinocytosis
+DBS0351445	[unk]:GFP:RasS(G12V)	rasS	increased macropinocytosis
+DBS0350726	[unk]:GFP:cepE	cepE	increased number of centrosomes | aberrant cytokinesis
+DBS0351454	[unk]:GFP:piaA(G963E)	piaA	delayed aggregation | decreased protein binding
+DBS0351507	[unk]:GFP:wasA(I173A/F179A)	wasA	abolished protein binding
+DBS0350447	[unk]:PTEN(H385G/N389A/H390A)	pten	decreased protein localization to plasma membrane | decreased fruiting body size
+DBS0351270	[unk]:gpgA(1-65)	gpgA	decreased protein localization to plasma membrane | abolished aggregation | aberrant actin filament organization | abolished chemotaxis to cAMP
+DBS0350716	[unk]:pdsA	pdsA	aberrant sorocarp development
+DBS0350259	[unk]:pikA(1-492(S7A/S11A/S109A/S113A/S177A/S181A))	pikA	increased protein localization to plasma membrane
+DBS0236859	[unk]:rasD(G12T)	rasD	increased myo-inositol level | decreased gene expression | increased prestalk gene expression | decreased prespore gene expression | development arrests at tipped mound stage | increased protein kinase activation
+DBS0350837	[unk]:rasD(G12T)/[rasD]:rapA	rapA | rasD	increased number of mound tips | aberrant culmination | decreased prespore cell differentiation | aberrant gene expression | decreased stalk cell differentiation
+DBS0351430	[unk]:tps9(N236A)	tps9	decreased catalytic activity
+DBS0351561	[unk]:vacA:myc:vasP	vacA | vasP	decreased phagocytosis | decreased growth rate | aberrant cytokinesis | increased protein level | aberrant cell morphology
+DBS0350464	[unk]:vasP(1-197:221-261:285-380)	vasP	abolished actin filament polymerization
+DBS0350463	[unk]:vasP(1-261:285-380)	vasP	aberrant actin filament organization
+DBS0350465	[unk]:vasP(1-340:376-380)	vasP	decreased actin filament polymerization | aberrant actin filament organization
+DBS0349920	aarA-/[act15]:GFP-mhcA	aarA	aberrant stalk morphogenesis | aberrant protein localization
+DBS0237938	abpC-/[act15]:GFP:abpC(9-148)	abpC	aberrant phototaxis
+DBS0235426	abpC-/[act15]:abpC	abpC	wild type
+DBS0350938	abpC-/[act15]:abpC	abpC	wild type
+DBS0237945	abpC-/[act15]:abpC(1-348:449-857):GFP	abpC	aberrant phototaxis | aberrant actin filament organization
+DBS0237946	abpC-/[act15]:abpC(1-556:644-857):GFP	abpC	aberrant phototaxis | aberrant actin filament organization
+DBS0237941	abpC-/[act15]:abpC(1-739):GFP	abpC	aberrant phototaxis
+DBS0351553	abpC-/[act15]:qkgA(425-1553)	abpC | qkgA-1 | qkgA-2	aberrant actin filament polymerization
+DBS0349852	abpE-/[act15]:abpE	abpE-1 | abpE-2	decreased phagocytosis
+DBS0350720	acaA-/[acaA-agg]:acaA:myc	acaA	decreased gene expression | decreased fruiting body size
+DBS0350721	acaA-/[acaA-psp]:acaA:myc	acaA	decreased gene expression | decreased mound size | decreased fruiting body size
+DBS0350722	acaA-/[acaA-pst]:acaA:myc	acaA	wild type
+DBS0350702	acaA-/[act15]:HA:pkaC	acaA | pkaC	wild type | delayed development | decreased cAMP level
+DBS0350725	acaA-/[act15]:HA:pkaC/acrA-	acaA | acrA | pkaC	decreased gene expression | abolished adenylate cyclase activity | development arrests at tipped mound stage
+DBS0350737	acaA-/[act15]:acaA	acaA	aberrant slug development
+DBS0350738	acaA-/[act15]:acaA(1-390;398-1407)	acaA	abolished aggregation
+DBS0350739	acaA-/[act15]:acaA(L394T/K482N)	acaA	wild type
+DBS0350735	acaA-/[act15]:pkaR(G135E/G261A)	acaA | pkaR	increased cAMP level
+DBS0350736	acaA-/[unk]:acaA(F306L/S498G,K504E,E593V,I649T)	acaA	decreased gene expression | abolished oscillatory cAMP signaling | decreased cAMP level
+DBS0350734	acaA-/[unk]:acaA(N333D,G633S)	acaA	abolished adenylate cyclase activity
+DBS0350733	acaA-/[unk]:acaA(V427I,S642F)	acaA	abolished activation of adenylate cyclase activity
+DBS0350711	acaA-/[unk]:acgA	acaA | acgA	aberrant sorocarp development
+DBS0350055	acapA-/[act15]:acapA(R633Q):GFP	acapA	aberrant filopodium formation | aberrant lysosome organization
+DBS0350054	acapA-/[act15]:acapA:GFP	acapA	increased filopodium formation
+DBS0350723	acrA-/[act15]:acaA(L394S)	acaA | acrA	precocious spore germination
+DBS0237786	acrA-/[act15]:acgA(1-401)	acgA | acrA	decreased prespore gene expression | decreased prespore cell differentiation | decreased sporulation
+DBS0350724	acrA-/[pkaC]:pkaC	acrA | pkaC	decreased spore germination | decreased fruiting body size | precocious development | decreased sporulation
+DBS0351190	adcC-/[act15]:adcC(1-485)	adcC	decreased protein localization to plasma membrane
+DBS0351189	adcC-/[act15]:adcC(101-654):GFP	adcC	abolished protein localization to plasma membrane
+DBS0235473	alrA-/[act15]:alrA	alrA	wild type
+DBS0235488	alxA-/[act15]:FLAG:alxA	alxA	delayed development
+DBS0235476	alxA-/[act15]:alxA(1-596):myc2	alxA	aberrant standing slug morphology
+DBS0235477	alxA-/[act15]:alxA(1-697):myc2	alxA	wild type
+DBS0235478	alxA-/[act15]:alxA(155-697):myc2	alxA	aberrant standing slug morphology
+DBS0235479	alxA-/[act15]:alxA(293-697):myc2	alxA	aberrant standing slug morphology
+DBS0235480	alxA-/[act15]:alxA(460-794):myc2	alxA	aberrant standing slug morphology
+DBS0235481	alxA-/[act15]:alxA(D310A/N311A)	alxA	wild type
+DBS0235482	alxA-/[act15]:alxA(Q181E/Q183)	alxA	wild type
+DBS0235483	alxA-/[act15]:alxA(S700A/S704A/S708A)	alxA	wild type
+DBS0235484	alxA-/[act15]:alxA(S700D/S704D/S708D)	alxA	wild type
+DBS0235485	alxA-/[act15]:alxA(Y315D)	alxA	wild type
+DBS0235486	alxA-/[act15]:alxA(Y315F)	alxA	wild type
+DBS0235487	alxA-/[act15]:alxA:myc2	alxA	wild type
+DBS0349953	ampA/[ampA]:TAP	ampA	increased protein secretion | development arrests at mound stage
+DBS0235495	ampA/[ampA]:ampA	ampA	decreased cell-substrate adhesion | increased pinocytosis | increased actin filament polymerization | aberrant chemotaxis to folate | increased pseudopodium formation
+DBS0349952	ampA/[ampA]:ampA/lmbd2B-	ampA | lmbd2B	aberrant chemotaxis
+DBS0235501	amtC-/[act15]:cudA	amtC | cudA	delayed culmination
+DBS0235502	amtC-/[ecmA]:cudA	amtC | cudA	delayed culmination
+DBS0235503	amtC-/[pspA]:cudA	amtC | cudA	development arrests at slug stage
+DBS0305085	apm2-/[dscB]:GFP:vamp7A	apm2 | vamp7A	increased protein localization to plasma membrane
+DBS0305083	apm3-/[dscB]:GFP:vamp7A	apm3 | vamp7A	increased protein localization to plasma membrane
+DBS0235510	aprA-/[act15]:aprA	aprA	decreased growth rate | aberrant fruiting body morphogenesis
+DBS0350009	aprA-/[act15]:bzpN:GFP	aprA | bzpN	abolished negative regulation of vegetative growth
+DBS0238085	atg1-/[act15]:atg1	atg1	wild type
+DBS0238092	atg1-/[act15]:atg1(1-628)	atg1	aberrant cellular response to nitrogen starvation | abolished aggregation
+DBS0238087	atg1-/[act15]:atg1(K36A)	atg1	aberrant cellular response to nitrogen starvation | abolished aggregation
+DBS0238089	atg1-/[act15]:atg1(K36A/1-628)	atg1	aberrant cellular response to nitrogen starvation | abolished aggregation
+DBS0351576	atg5-/abpB-/[dscB]:abpB(D93A/D95A/D97A):GFP	abpB | atg5	aberrant cellular component organization | abolished vegetative growth
+DBS0351477	atg7-/[act15]:YFP:atg7(C563A)	atg7	aberrant sorus morphology | decreased spore germination | delayed development
+DBS0351479	atg7-/[act15]:pkaC:YFP	atg7 | pkaC	decreased gene expression | decreased sporulation
+DBS0305978	atg9-/[act15]:GFP:atg9	atg9	wild type
+DBS0305979	atg9-/[act15]:atg9:GFP	atg9	wild type
+DBS0351589	atg9-/[act15]:cdcD(R154C/E219K):RFP	atg9 | cdcD	wild type
+DBS0351480	atg9-/[act15]:pkaC:YFP	atg9 | pkaC	abolished sporulation
+DBS0351266	carA-/[act15]:gpbA:YFP	carA-1 | carA-2 | gpbA	abolished aggregation
+DBS0350568	carA-/carC-/[act15]:carA(261-359;S299A,S302G,S303G,S304G,S308A,S324G,S325A,S331A)(369-392;S383A,S385A)	carA-1 | carA-2 | carC	abolished stream development | aberrant activation of adenylate cyclase activity | aberrant chemotaxis to cAMP | aberrant oscillatory cAMP signaling | aberrant actin filament polymerization
+DBS0350436	cdk8-/[act15]:myc:cdk8	cdk8	wild type
+DBS0350437	cdk8-/[act15]:myc:cdk8(D194A)	cdk8	decreased spore germination | abolished aggregation
+DBS0306227	cenB-/[act15]:RFP:cenB	cenB	wild type
+DBS0350010	cfaD-/[act15]:bzpN:GFP	bzpN | cfaD	abolished negative regulation of vegetative growth
+DBS0302446	cfaD-/[act15]:cfaD	cfaD	wild type
+DBS0350090	chcA-/[act15]:GFP:ap2a1	ap2a1-1 | ap2a1-2 | chcA	increased protein localization
+DBS0302455	chcA-/[act15]:epnA:GFP	chcA | epnA	aberrant protein localization to clathrin-coated pit
+DBS0350091	chcA-/[act15]:gppA:GFP	chcA | gppA	aberrant protein localization to plasma membrane
+DBS0235604	clc-/[act15]:GFP-clc(146-194)	clc	abolished cytokinesis | wild type | aberrant fruiting body morphogenesis
+DBS0235605	clc-/[act15]:GFP-clc(85-124)	clc	abolished cytokinesis | wild type | aberrant fruiting body morphogenesis
+DBS0235607	clc-/[act15]GFP:clc(1-124)	clc	abolished cytokinesis | wild type | aberrant fruiting body morphogenesis
+DBS0350474	cln3-/[act15]:GFP:cln3	cln3	wild type
+DBS0350309	cnrF-/[act15]:cnrF:RFP	cnrF	wild type
+DBS0302656	cnrN-/[act15]:cnrN	cnrN	wild type
+DBS0351521	corA-/[act15]:FLAG:corA(1-432)	corA	abolished aggregation
+DBS0350345	corA-/[act15]:GFP:mhkA	corA | mhkA	wild type
+DBS0350346	corA-/[act15]:GFP:mhkB	corA | mhkB	wild type
+DBS0350344	corA-/[act15]:GFP:mhkC	corA | mhkC	decreased catalytic activity | wild type
+DBS0350343	corA-/[act15]:GFP:pakA(797-1197)	corA | pakA	wild type
+DBS0350371	corA-/[act15]:corA	corA	wild type
+DBS0238320	cpnA-/[act15]:GFP:cpnA	cpnA	delayed hypotonic response | decreased culmination | delayed development
+DBS0349922	ctxA-/[act15]:GFP-mhcA	ctxA	aberrant protein localization to basolateral plasma membrane | aberrant stalk morphogenesis | aberrant development of tipped mound
+DBS0350293	ctxA-/ctxB-/[act15]:GFP:arcA	arcA | ctxA | ctxB	aberrant protein localization to cell cortex
+DBS0349972	ctxA-/ctxB-/[act15]:acaA:YFP	acaA | ctxA | ctxB	aberrant fruiting body morphogenesis
+DBS0349973	ctxA-/ctxB-/[act15]:carA:YFP	carA-1 | carA-2 | ctxA | ctxB	abolished stream development | abolished adenylate cyclase activity | development arrests at tight mound stage
+DBS0266761	culB-/[act15]:pkaC	culB | pkaC	abolished sporulation | precocious prestalk gene expression | abolished aggregation | abolished prespore gene expression
+DBS0349807	detA-/[act6]:GFP:detA	detA	wild type
+DBS0349816	detA-/[act6]:GFP:detA/[act6]:3xHA:culD	culD | detA	increased gene expression
+DBS0349817	detA-/[act6]:GFP:detA/[act6]:3xHA:repE	detA | repE	increased gene expression
+DBS0349813	detA-/[cotB]:GFP	detA	decreased prespore cell differentiation
+DBS0349811	detA-/[ecm0]:lacZ	detA	aberrant prestalk O cell differentiation
+DBS0349812	detA-/[ecmA0]:GFP	detA	increased prestalk cell differentiation
+DBS0349808	detA-/[ecmA0]:lacZ	detA	increased prestalk cell differentiation
+DBS0349809	detA-/[ecmA]:lacZ	detA	increased prestalk A cell differentiation
+DBS0349810	detA-/[ecmB]:lacZ	detA	delayed development
+DBS0350394	dgat1-/dgat2-/[act15]:GFP:dgat2	dgat1 | dgat2	wild type
+DBS0235703	dhkA-/[pkaC]:pkaC	dhkA | pkaC	aberrant stalk morphogenesis
+DBS0235712	dhkK-/[act15]:dhkK(D1125N)	dhkK	aberrant fruiting body morphogenesis
+DBS0235719	dia1-/[act6]:trap1	dia1 | trap1	aberrant aggregation | decreased fruiting body size
+DBS0235903	dimB-/[act15]:dimA:GFP	dimA | dimB	abolished protein localization to nucleus
+DBS0235904	dimB-/[act15]:dimB:GFP	dimB	wild type
+DBS0349975	dmtA-/[dimB]:dimB	dimB | dmtA	decreased prestalk B cell differentiation
+DBS0238511	drkC-/[act15]:drkC(1-497):YFP	drkC	decreased phagocytosis
+DBS0238513	drkC-/[act15]:drkC(K518R):YFP	drkC	decreased phagocytosis
+DBS0350218	drnB-/[act15]:pre-miRNA	drnB	abolished pre-miRNA processing
+DBS0350210	drnB-/[act6]:lacZ/[RNAi]lacZ	drnB	abolished production of siRNA involved in RNA interference | abolished transitive RNA interference
+DBS0302602	dsgg-/OE]:dsgg(Delta-Fbox)	dsgg	wild type
+DBS0302606	dsgg-/[OE]:GFP:lvsD	dsgg | lvsD	wild type
+DBS0302599	dsgg-/[OE]:dsgg	dsgg	wild type
+DBS0302601	dsgg-/[OE]:dsgg(Q551A)	dsgg	aberrant contractile vacuole organization
+DBS0302600	dsgg-/[OE]:dsggR515A)	dsgg	aberrant contractile vacuole organization
+DBS0302607	dsgg-/[OE]:lvsA	dsgg | lvsA	aberrant contractile vacuole organization
+DBS0302611	dsgg-/[OE]:phgA	dsgg | phgA	aberrant contractile vacuole organization
+DBS0302678	dsgg-/[OE]:rab8A	dsgg | rab8A	aberrant contractile vacuole organization
+DBS0238237	dstA-/GFP:dstA(237-707):ORF+	dstA	abolished culmination | decreased stalk length
+DBS0252824	dstA-/GFP:dstA(237-707):ORF+/[act15]:2C	2C | dstA	aberrant fruiting body morphogenesis
+DBS0252823	dstA-/GFP:dstA(237-707):ORF+/[act15]:7E	7E | dstA | hssB	wild type
+DBS0252826	dstA-/GFP:dstA(237-707):ORF+/[act15]:DDB_G0276165	DDB_G0276165 | dstA	aberrant fruiting body morphogenesis
+DBS0252825	dstA-/GFP:dstA(237-707):ORF+/[act15]:DDB_G0282325	DDB_G0282325 | dstA	aberrant fruiting body morphogenesis
+DBS0252816	dstA-/GFP:dstA(237-707):ORF+/[act15]:hssA	dstA | hssA	wild type
+DBS0252822	dstA-/GFP:dstA(237-707):ORF+/[act15]:hssB	dstA | hssB	wild type
+DBS0350804	ehd-/[act15]:dymA:GFP	dymA | ehd	aberrant phagosome maturation | decreased protein processing in phagocytic vesicle
+DBS0302598	elmoA-/[act15]:elmoA(1-903/959-977):GFP	elmoA	decreased cell motility | increased phagocytosis
+DBS0302591	elmoA-/[act15]:elmoA:GFP	elmoA	wild type
+DBS0302457	epnA-/[act15]:GFP:epnA(253-677)	epnA	aberrant spore morphology | abolished protein localization to plasma membrane | abolished protein localization to clathrin-coated pit
+DBS0302456	epnA-/[act15]:epnA(1-133):GFP	epnA	aberrant localization to coated pits
+DBS0302474	epnA-/[act15]:epnA(R65A/K78A):GFP	epnA	aberrant spore morphology | abolished protein localization to plasma membrane | abolished phosphatidylinositol-4,5-bisphosphate binding | abolished protein localization to clathrin-coated pit | abolished protein phosphorylation
+DBS0302475	epnA-/[act15]:epnA(T107A):GFP	epnA	aberrant spore morphology | abolished protein localization to plasma membrane
+DBS0302454	epnA-/[act15]:epnA:GFP	epnA	wild type
+DBS0235948	eppA-/[act6]:myc:eppA	eppA	wild type
+DBS0350681	erkA-/[act15]:gpaE	erkA | gpaE	wild type
+HR42	fbxA-/[act15]:myc:fbxA	fbxA	abolished culmination | decreased sporulation
+DBS0304905	forC-/[act15]:GFP:forC	forC	wild type
+DBS0235971	forH-/[act15]:GFP:forH	forH	increased filopodium formation | decreased cell motility | increased cell-substrate adhesion
+DBS0304440	frmA-/[unk]:GFP	frmA	decreased gene expression | aberrant sorocarp development | increased cell-cell adhesion | delayed development | abolished phototaxis
+DBS0305026	gabT-[pkaC]:pkaC	gabT | pkaC	aberrant protein secretion
+DBS0304912	gbpC-/[act15]:gbpC	gbpC	wild type
+DBS0304917	gbpC-/[act15]:gbpC(1-1698:2005-2631)	gbpC	decreased chemotaxis to cAMP
+DBS0349868	gbpC-/[act15]:gbpC(1-2331:2470-2631):GFP	gbpC	aberrant stream morphology | decreased chemotaxis to cAMP
+DBS0304918	gbpC-/[act15]:gbpC(311-2631)	gbpC	decreased chemotaxis to cAMP
+DBS0304916	gbpC-/[act15]:gbpC(F1892A)	gbpC	decreased chemotaxis to cAMP
+DBS0304915	gbpC-/[act15]:gbpC(F2082A/E2084A/F2564A/E2566A)	gbpC	decreased chemotaxis to cAMP
+DBS0304913	gbpC-/[act15]:gbpC(K342N)	gbpC	decreased chemotaxis to cAMP
+DBS0304914	gbpC-/[act15]:gbpC(K905W)	gbpC	decreased chemotaxis to cAMP
+DBS0235998	gbpD-/[act15]:gbpD	gbpD	increased lateral pseudopodium formation | increased cell-substrate adhesion | decreased chemotaxis rate | aberrant actin filament organization | abolished aggregation
+DBS0350387	gcsA-/[act15]:carA	carA-1 | carA-2 | gcsA	abolished aggregation
+DBS0350388	gcsA-/[act15]:yakA	gcsA | yakA	wild type
+DBS0237190	gdt1-/[act15]:pkaR(G135E/G261A)	gdt1 | pkaR	increased gene expression | abolished aggregation
+DBS0350449	gefA-/[dscB]:rasG(S17N)	gefA | rasG	decreased actin filament polymerization | decreased activation of GTPase activity | aberrant chemotaxis to cAMP | decreased protein kinase activation
+DBS0304985	gefQ-/[act15]:GFP:gefQ(172-654)	gefQ	abolished guanyl-nucleotide exchange factor activity | decreased phototaxis
+DBS0304986	gefQ-/[act15]:GFP:gefQ(910-1298)	gefQ	decreased phototaxis
+DBS0238390	gnt15-/[act15]:FLAG:gnt15	gnt15	wild type
+DBS0238391	gnt15-/[act15]:FLAG:gnt15	gnt15	wild type
+DBS0236092	gpaA-/[gpaA]:gpaA(G45V)	gpaA	delayed development
+DBS0236093	gpaA-/[gpaA]:gpaA(Q206L)	gpaA	increased basal disc size
+JM1	gpaB-/[OE]:carA	carA-1 | carA-2 | gpaB	aberrant calcium-mediated signaling
+DBS0236096	gpaB-/[act15]:gpaB	gpaB	abolished aggregation
+DBS0266942	gpaB-/[act15]:gpaB	gpaB	delayed aggregation
+DBS0266939	gpaB-/[act15]:gpaB(1-345):gpaD(337-345)	gpaB | gpaD	abolished aggregation
+DBS0351103	gpaB-/[act15]:gpaB(C4A)	gpaB	abolished protein localization to plasma membrane | decreased cGMP-mediated signaling | abolished aggregation
+DBS0237137	gpaB-/[act15]:gpaB(D154V)	gpaB	aberrant aggregation | decreased activation of adenylate cyclase activity | decreased cGMP-mediated signaling | decreased oscillatory cAMP signaling | decreased chemotaxis rate
+DBS0237138	gpaB-/[act15]:gpaB(E190G)	gpaB	aberrant aggregation | decreased activation of adenylate cyclase activity | decreased cGMP-mediated signaling | decreased oscillatory cAMP signaling
+DBS0351105	gpaB-/[act15]:gpaB(G207A)	gpaB	abolished protein localization to plasma membrane
+DBS0351104	gpaB-/[act15]:gpaB(G2A)	gpaB	abolished protein localization to plasma membrane
+DBS0237139	gpaB-/[act15]:gpaB(I104S)	gpaB	aberrant aggregation | decreased activation of adenylate cyclase activity | decreased cGMP-mediated signaling | decreased oscillatory cAMP signaling | decreased chemotaxis rate
+DBS0237140	gpaB-/[act15]:gpaB(L110S)	gpaB	aberrant aggregation | decreased activation of adenylate cyclase activity | decreased cGMP-mediated signaling | decreased oscillatory cAMP signaling | decreased chemotaxis rate
+DBS0237141	gpaB-/[act15]:gpaB(L76P)	gpaB	abolished aggregation
+DBS0237142	gpaB-/[act15]:gpaB(N74D)	gpaB	decreased activation of adenylate cyclase activity | decreased cGMP-mediated signaling | decreased oscillatory cAMP signaling | decreased chemotaxis rate | abolished aggregation
+DBS0237143	gpaB-/[act15]:gpaB(R64G)	gpaB	decreased chemotaxis rate | abolished aggregation
+DBS0237144	gpaB-/[act15]:gpaB(S155P)	gpaB	decreased chemotaxis rate | abolished aggregation
+DBS0351217	gpaB-/[act15]:gpaI	gpaB | gpaI	wild type
+DBS0351214	gpaB-/[act15]:rasG(S17N)	gpaB | rasG	abolished activation of GTPase activity
+DBS0236097	gpaB-/[gpaA]:gpaB	gpaB	abolished aggregation
+DBS0236099	gpaB-/[gpaB]:gpaB	gpaB	wild type
+DBS0266944	gpaD-/[act15]:gpaB	gpaB | gpaD	aberrant fruiting body morphogenesis | decreased chemotaxis to folate | decreased cGMP biosynthesis
+DBS0266946	gpaD-/[act15]:gpaB(1-345):gpaD(337-345)	gpaB | gpaD	aberrant fruiting body morphogenesis | decreased cGMP biosynthesis
+DBS0266943	gpaD-/[act15]:gpaD	gpaD	wild type
+DBS0266945	gpaD-/[act15]:gpaE	gpaD | gpaE	aberrant fruiting body morphogenesis | decreased chemotaxis to folate | decreased cGMP biosynthesis
+DBS0266947	gpaD-/[act15]:gpaE(1-339):gpaD(337-345)	gpaD | gpaE	aberrant fruiting body morphogenesis | decreased chemotaxis to folate | decreased cGMP biosynthesis
+DBS0266941	gpaE-/[act15]:gpaE	gpaE	precocious development of tipped mound
+DBS0266948	gpaE-/[act15]:gpaE(1-339):gpaD(337-345)	gpaD | gpaE	precocious development of tipped mound
+DBS0350678	gpaE-/[act15]:gpaE(K10E/K11E)	gpaE	delayed development of tipped mound | delayed gene expression
+DBS0350470	gpbA-/[act15]:GFP:cap	cap | gpbA	decreased phagocytosis
+LW14	gpbA-/[act15]:carA	carA-1 | carA-2 | gpbA	aberrant calcium-mediated signaling | decreased protein kinase activation | abolished aggregation
+LW17	gpbA-/[act15]:carC	carC | gpbA	abolished aggregation
+DBS0351260	gpbA-/[act15]:gpbA(A99T/Y271H/C335M)	gpbA	abolished activation of adenylate cyclase activity | aberrant fruiting body morphogenesis
+DBS0351261	gpbA-/[act15]:gpbA(M30V/K85R/S104P/Q163H)	gpbA	development arrests at mound stage | abolished activation of adenylate cyclase activity | decreased chemotaxis to cAMP
+DBS0351263	gpbA-/[act15]:gpbA(M48T/I52T/E310G)	gpbA	wild type | decreased activation of adenylate cyclase activity | decreased gene expression | aberrant slug development
+DBS0351259	gpbA-/[act15]:gpbA(N147D/H149R/N237S)	gpbA	development arrests at mound stage | abolished activation of adenylate cyclase activity | abolished chemotaxis to cAMP
+DBS0351264	gpbA-/[act15]:gpbA(R13G/N74S/S79P/H149R/V178A/V194R/F293L)	gpbA	decreased activation of adenylate cyclase activity | decreased gene expression | development arrests at tipped mound stage
+DBS0351262	gpbA-/[act15]:gpbA(S196G/V199D/C211R)	gpbA	decreased activation of adenylate cyclase activity | aberrant fruiting body morphogenesis
+DBS0351258	gpbA-/[act15]:gpbA(V88A/F229S/D235V)	gpbA	abolished activation of adenylate cyclase activity | aberrant fruiting body morphogenesis | decreased chemotaxis to cAMP
+HO547	gpbA-/[act6]:FRB:[act15]:RFP:gpbA/[act15]:cnxA:CFP:FKBP/[act15]:limE(1-145):GFP	gpbA	aberrant cortical actin cytoskeleton organization
+HO543	gpbA-/[act6]:FRB:[act15]:RFP:gpbA/[act15]:cnxA:YFP:FKBP	gpbA	abolished chemotaxis to folate
+DBS0351198	gpbA-/[act6]:yakA	gpbA | yakA	abolished vegetative growth
+DBS0350479	gpr89-/[act15]:gpr89:GFP	gpr89	wild type
+DBS0304815	grlA-/[act15]:grlA:GFP	grlA	aberrant development of tipped mound
+DBS0351147	grlH-/[act15]:grlH	grlH	wild type
+DBS0238866	grlJ-/[act15]:grlJ:GFP	grlJ	wild type
+DBS0350284	grlJ-/[act15]:grlJ:GFP	grlJ	wild type
+DBS0238687	grpA-/[act15]:grpA-FLAG	grpA	wild type
+DBS0349930	gskA-/[act15]:GFP:tacA	gskA | tacA	increased protein localization to nucleus
+DBS0349881	gskA-/[act15]:gskA(Y214F)	gskA	abolished stream development
+DBS0350260	gskA-/[unk]:pikA(1-492(S7D/S11D/S109D/S113D/S177D/S181D))	gskA | pikA	wild type
+DBS0350348	gtaC-/[act15]:GFP:gtaC	gtaC	wild type
+DBS0350357	gtaC-/[act15]:GFP:gtaC(C500,503,522,525S)	gtaC	aberrant gene expression | abolished aggregation | decreased fruiting body size
+DBS0350358	gtaC-/[act15]:GFP:gtaC(T376A/S379,380A/C500,503,522,525S)	gtaC	aberrant protein localization to nucleus
+DBS0350361	gtaC-/[act15]:gtaC:(468-496):GFP:gtaC	gtaC	development arrests at mound stage | decreased mound size | precocious development
+DBS0350257	gxcC-/[act15]:GFP:gxcC	gxcC	wild type
+DBS0350269	gxcT-/[act15]:GFP:gxcT	gxcT	wild type
+DBS0350656	hatA-/[hatB]:hatB	hatA | hatB	aberrant cellular response to stress
+DBS0350289	hspc300-/[act15]:myc:hspc300	hspc300	wild type
+DBS0252702	icmA-/[act15]:TAP:YFP:rasG	icmA-1 | icmA-2 | rasG	abolished C-terminal protein methylation
+DBS0238521	icpA-/[act15]:GFP:icpA(1-1013)	icpA	aberrant protein localization to mitotic spindle
+DBS0350439	iplA-/[act15]:GFP:iplA	iplA	wild type
+DBS0351436	ireA-/[act15]:ireA(K603N):GFP	ireA	decreased protein level | aberrant endoplasmic reticulum organization | aberrant cellular response to stress
+DBS0351437	ireA-/[act15]:ireA(N927A):GFP	ireA	decreased protein level | aberrant endoplasmic reticulum organization | aberrant cellular response to stress
+DBS0350959	kif10-/[act15]:dhcA(1384-4725)	dhcA | kif10	wild type
+DBS0350022	kif5-/[act15]:FLAG:kif5	kif5	aberrant cytokinesis | aberrant cell morphology
+DBS0350023	kif5-/[act15]:FLAG:kif5(342-990)	kif5	aberrant cell morphology
+DBS0350024	kif5-/[act15]:GFP:kif5(805-990)	kif5	aberrant cytokinesis
+DBS0350947	kif8-/[act15]:dhcA(1384-4725)	dhcA | kif8	wild type
+DBS0350044	kil2-/[act15]:kil1	kil1 | kil2	abolished defense response to bacterium
+DBS0236493	krsA-/[act15]:GFP:krsA	krsA	wild type
+DBS0238721	krsA-/[act15]:GFP:krsA	krsA	wild type
+DBS0238722	krsA-/[act15]:GFP:krsA(K49R)	krsA	aberrant stream morphology
+DBS0238723	krsA-/[act15]:GFP:krsA(T173A)	krsA	abolished stream development
+DBS0238725	krsA-/[act15]:GFP:krsA(deltaC)	krsA	aberrant stream morphology
+DBS0238724	krsA-/[act15]:GFP:krsA(deltaKinase)	krsA	abolished stream development
+DBS0238726	krsA-/[act15]:GFP:krsA(deltaNS)	krsA	abolished stream development
+DBS0350537	ku80-/myc:ku80(1-782)	ku80	decreased double-strand break repair via nonhomologous end joining
+DBS0350453	lpten-/[act15]:lpten:RFP	lpten	wild type
+DBS0350036	mekA-/[act15]:mekA(299-360)	mekA	decreased mound size
+DBS0350035	mekA-/[act15]:mekA(K321A)	mekA	decreased mound size
+DBS0350032	mekA-/[act15]:mekA(S444A/T448A)	mekA	decreased mound size
+DBS0238109	mekA-/ppp4C-/[act15]:FLAG:pppC	ppp4c	decreased mound size | precocious development
+DBS0266674	mhcA-/[act15]:GFP:abpC(9-148)	abpC | mhcA	decreased uropod retraction | decreased pseudopodium retraction
+DBS0266675	mhcA-/[act15]:GFP:mhcA(E476K)	mhcA	decreased pseudopodium retraction
+DBS0350489	mhcA-/[act15]:GFP:mhcA/[RNAi]rmd1	mhcA | rmd1	abolished protein localization to cleavage furrow
+DBS0236548	mhcA-/[act15]:GFP:pats1(2087-2351)	mhcA | pats1	aberrant cytokinesis
+DBS0350291	mhcA-/[act15]:gppA:GFP	gppA | mhcA	aberrant contractile vacuole morphology | decreased contractile vacuole discharge
+DBS0236549	mhcA-/[act15]:limE(1-145):GFP	limE | mhcA	increased actin filament polymerization
+DBS0350808	mhcA-/[act15]:mhcA(1-933:1455-2116]	mhcA	wild type | aberrant cytokinesis | aberrant fruiting body morphogenesis
+DBS0238158	mhcA-/[act15]:mhcA(81-2116)	mhcA	decreased growth rate | development arrests at tipped mound stage
+DBS0236550	mhcA-/[act15]:mhcA(T1823A/T1833A/T2029A)	mhcA	decreased filopodium formation
+DBS0236551	mhcA-/[act15]:mhcA(T1823D/T1833D/T2029D)	mhcA	increased filopodium formation
+DBS0350948	mhcA-/[mhcA]:mhcA(1-1224)/[act15]:mhcA(E683K)	mhcA	aberrant catalytic activity
+DBS0350949	mhcA-/[mhcA]:mhcA(1-1224)/[act15]:mhcA(R686C)	mhcA	aberrant catalytic activity
+DBS0238157	mhcA-/[mhcA]:mhcA(1-1224)/[act15]:mhcA(R689H)	mhcA	decreased actin filament sliding
+DBS0236557	mhkA-/[act15]:mhkA	mhkA	decreased growth rate | development arrests at mound stage | aberrant cytokinesis | decreased myosin II assembly
+DBS0351180	midA/[act15]:midA(E200A)	midA	aberrant cellular homeostasis | decreased growth rate | decreased phototaxis
+DBS0351182	midA/[act15]:midA(G170V/G172V)	midA	aberrant cellular homeostasis | decreased growth rate | decreased phototaxis
+DBS0351181	midA/[act15]:midA(N205A)	midA	aberrant cellular homeostasis | decreased growth rate | decreased phototaxis
+DBS0238058	mlcE-/[act15]:myc:mlcE	mlcE	wild type
+DBS0349919	mlkA-/[act15]:GFP-mhcA	mlkA	aberrant stalk morphogenesis
+DBS0266904	mpl1-/[act15]:flag:mpl1	mpl1	wild type
+DBS0350391	mrfA-/[act15]:myc:mrfA(K772A):FLAG	mrfA	aberrant protein modification
+DBS0350390	mrfA-/[act15]:myc:mrfA(S767A):FLAG	mrfA	aberrant protein modification | delayed development
+DBS0350389	mrfA-/[act15]:myc:mrfA:FLAG	mrfA	wild type
+DBS0350990	myoA-/myoB-/[act15]:myoB	myoA | myoB	delayed aggregation
+DBS0350991	myoA-/myoB-/[act15]:myoB(1-1057)	myoA | myoB	decreased pinocytosis | decreased growth rate | aberrant actin filament organization
+DBS0350992	myoA-/myoB-/[act15]:myoB(S332)	myoA | myoB	decreased pinocytosis | decreased growth rate | aberrant actin filament organization
+DBS0351378	myoB-/[act15]:GFP:myoB(1-720)	myoB	abolished protein localization to plasma membrane
+DBS0351379	myoB-/[act15]:GFP:myoB(1-800,813-1111)	myoB	abolished protein localization to actin wave | abolished protein localization to plasma membrane
+DBS0351380	myoB-/[act15]:GFP:myoB(713-1111)	myoB	abolished protein localization to leading edge
+DBS0351367	myoB-/[act15]:myoB(S332A)	myoB	abolished protein phosphorylation
+DBS0266889	myoI-/[act15]:GFP:myoI	myoI	wild type
+DBS0351400	myoI-/[act15]:GFP:myoI(1-1020)	myoI	abolished protein localization to pseudopodium | decreased filopodium formation
+DBS0351398	myoI-/[act15]:GFP:myoI(2057-2357)	myoI	increased filopodium formation
+DBS0266890	myoI-/[act15]:GFP:myoI(809-1154)	myoI	decreased phagocytosis
+DBS0351399	myoI-/[act15]:GFP:myoI(K23333A,K2336A)	myoI	increased filopodium formation
+DBS0237617	myoI-/[act15]:gbpD	gbpD | myoI	increased cell-substrate adhesion | aberrant cell morphology | increased pseudopodium formation
+DBS0349846	myoK-/[act15]:YFP:myoK(1-121:262-858)	myoK	decreased phagocytosis
+DBS0349850	myoK-/[act15]:myoK	myoK	increased phagocytosis
+DBS0349854	myoK-/[act15]:pakB(1-337:563-852)	myoK | pakB	wild type
+DBS0349841	nhe1-/[act15]:mhcA:GFP	mhcA | nhe1	abolished protein localization to trailing edge
+DBS0236611	noxA-/[act15]:noxA:myc2	noxA	aberrant fruiting body morphogenesis
+DBS0236702	nxnA-/[act15]:GFP:nxnB 	nxnA | nxnB	development arrests at mound stage
+DBS0238362	p2xA-/[act15]:p2xA:GFP	p2xA	wild type
+DBS0350014	pah-/[act15]:6xHis:pah	pah	wild type
+DBS0350016	pah-/[act15]:6xHis:pah(92-415)	pah	abolished vegetative growth
+DBS0350015	pah-/[act15]:6xHis:pah(92-441)	pah	wild type
+DBS0350810	pakA-/[act15]:pakA(T579A)	pakA	decreased chemotaxis to cAMP
+DBS0349889	pakA-/[act15]:pakA:GFP	pakA	wild type
+DBS0350428	pakB-/[act15]:RFP:abpE	abpE-1 | abpE-2 | pakB	decreased chemotaxis to cAMP | aberrant establishment or maintenance of cell polarity | abolished aggregation | abolished protein localization to leading edge
+DBS0350430	pakB-/[act15]:RFP:abpE/[act15]:GFP:pak(1-180)	abpE-1 | abpE-2 | pakB	wild type
+DBS0350282	pakD-/[act15]:pakD	pakD	development arrests at mound stage
+DBS0350395	pakD-/[act15]:pakD:GFP	pakD	wild type
+DBS0350973	paxB-/[act15]:gpaH	gpaH | paxB	aberrant cytokinesis
+DBS0350094	paxB-/[act15]:pldB	paxB | pldB	wild type | increased phagocytosis
+DBS0350893	pdeD-/pdeE-/[unk]:pdeE	pdeD | pdeE	delayed aggregation
+DBS0236747	pefB-/noxA-/[act15]:pefB	noxA | pefB	aberrant sorocarp development
+DBS0304869	phg1A-/[act15]:phg1A(1-276):phg1B221-587)	phg1A | phg1B	decreased phagocytosis
+DBS0304868	phg1A-/[act15]:phg1B	phg1A | phg1B	increased secretion of lysosomal enzymes | wild type | decreased cell-substrate adhesion | aberrant protein level | decreased phagocytosis
+DBS0304870	phg1A-/[act15]:phg1B(1-220):phg1a(277-642)	phg1A | phg1B	decreased phagocytosis
+DBS0237615	phg2-/[act15]:gbpD	gbpD | phg2	aberrant cell morphology | abolished chemotaxis to cAMP | increased pseudopodium formation
+DBS0302610	phgA-/[OE]:dsgg	dsgg | phgA	aberrant contractile vacuole organization
+DBS0351455	piaA(G917D)/[unk]:GFP:piaA(G963E)	piaA	abolished aggregation
+DBS0350471	pikA-/pikB-/[act15]:GFP:cap	cap | pikA | pikB	wild type
+DBS0351206	pirA-/pirA(K193D/R194D):EGFP	pirA	abolished protein localization to cell periphery | decreased protein phosphorylation
+DBS0350708	pkaC-/[act6]:pkaC(303-648)	pkaC	wild type
+DBS0350707	pkaC-/[act6]:pkaC(330-648)	pkaC	abolished aggregation
+DBS0350919	pkcA-/[act15]:pldB	pkcA | pldB	aberrant aggregation | decreased sporulation
+DBS0267125	plc-/[OE]:dagA(PH):GFP/[OE]:plc	dagA | plc	increased protein localization to plasma membrane | decreased chemotaxis to cAMP
+DBS0350047	plc-/[act15]:pten:GFP	plc | pten	wild type | aberrant protein localization to cytoplasm
+DBS0236797	pldB-/[act15]:pldB:GFP	pldB	abolished aggregation
+DBS0351356	ppk1-/[act15]:GFP:hsp48	hsp48 | ppk1	decreased protein level
+DBS0236825	ppk1-/[act15]:ppk1	ppk1	wild type
+DBS0238110	ppp4C-/[act15]:smkA	ppp4c | smkA	development arrests at mound stage | delayed development
+DBS0238034	proC-/[unk]:FLAG:proC	proC	wild type
+DBS0350305	psenA-/psenB-/[act15]:GFP:psenB	psenA | psenB	wild type
+DBS0350306	psenA-/psenB-/[act15]:psenB(D348A/D394A)	psenA | psenB	wild type
+DBS0302356	psrA-/[act15]:FLAG:gskA	gskA | psrA	increased protein kinase activation
+DBS0302357	psrA-/[act15]:gskA(K84M/K85M)	gskA | psrA	decreased culmination | decreased prespore gene expression | delayed development | increased protein kinase activation
+DBS0350829	psrA-/[unk]:FLAG:rasD(G12T)	psrA | rasD	increased protein kinase activation
+DBS0350454	pten-/[act15]:lpten:RFP	lpten | pten	wild type
+DBS0349890	pten-/[act15]:pakA:GFP	pakA | pten	aberrant cytokinesis
+DBS0350754	pten-/[act15]:pten(186-515):GFP	pten	aberrant sorocarp development | decreased chemotaxis to cAMP
+DBS0350755	pten-/[act15]:pten(C124S):GFP	pten	aberrant sorocarp development | decreased chemotaxis to cAMP
+DBS0351587	pten-/[act15]:pten(G129E)	pten	increased lateral pseudopodium formation | aberrant localization
+DBS0236831	pten-/[act15]:pten:GFP	pten	wild type
+DBS0349893	pten-/pakA-/[act15]:pakA(T585A):GFP	pakA | pten	decreased chemotaxis to cAMP
+DBS0349900	pten-/pakA-/[act15]:pakA(T585E):GFP	pakA | pten	aberrant cytokinesis | decreased chemotaxis to cAMP
+DBS0349899	pten-/pakA-/[act15]:pakA:GFP	pakA | pten	aberrant cytokinesis
+DBS0350675	ptpB-/[act15]:6xHis:erkA	erkA | ptpB	aberrant stream morphology
+DBS0350018	qdpr-/[act15]:pah	pah | qdpr	decreased growth rate
+DBS0350011	qkgA-/[act15]:bzpN:GFP	bzpN | qkgA-1 | qkgA-2	abolished negative regulation of vegetative growth
+DBS0237191	racC-/[act15]:CFP:racC	racC	increased actin filament polymerization
+DBS0351348	racE-/[act15]:GFP:racE(G20V)	racE	decreased protein phosphorylation | decreased chemotaxis to cAMP
+DBS0351349	racE-/[act15]:GFP:racE(G23V)	racE	increased protein phosphorylation
+DBS0351350	racE-/[act15]:GFP:racE(S192D)	racE	increased protein phosphorylation | wild type
+DBS0351347	racE-/[act15]:GFP:racE(T25N)	racE	wild type
+DBS0351614	racE-/[act15]:GFP:racE(T25N/S192D)	racE	wild type
+DBS0351351	racE-/[act15]:GFP:rasC(Q62L)	racE | rasC	decreased protein phosphorylation
+DBS0349949	racE-/[act15]:fttB	fttB | racE	decreased growth rate
+DBS0349946	racE-/[act15]:fttB:GFP	fttB | racE	abolished protein localization to cell cortex
+DBS0350956	racE-/[act15]racE(G20V)	racE	wild type
+DBS0350957	racE-/[act15]racE(T25N)	racE	abolished cytokinesis
+DBS0236844	racF2(G12V)	racF2	decreased cell-cell adhesion
+DBS0236845	racF2(N17T)	racF2	increased cell-cell adhesion | decreased sexual fusion
+DBS0350317	rapgap9-/[act15]:GFP:rapgap9	rapgap9	wild type
+DBS0237614	rasC-/[act15]:gbpD	gbpD | rasC	increased cell-substrate adhesion | aberrant cell morphology
+DBS0350740	rasC-/[rasC]:rasG	rasC | rasG	abolished activation of adenylate cyclase activity | abolished aggregation
+DBS0350742	rasC-/[rasC]:rasG(1-77(D30A)):rasC(79-189)	rasC | rasG	wild type
+DBS0350741	rasC-/[rasC]:rasG(D30A)	rasC | rasG	aberrant aggregation | decreased activation of adenylate cyclase activity
+DBS0266697	rasC-/rasG-/[act15]:carA	carA-1 | carA-2 | rasC | rasG	decreased activation of adenylate cyclase activity | abolished activation of GTPase activity | decreased growth rate | abolished vegetative growth | abolished protein kinase activation | abolished cGMP-mediated signaling | abolished chemotaxis to cAMP
+DBS0350480	rasC-/rasG-/[rasG]:rasD	rasC | rasD | rasG	decreased chemotaxis to folate
+DBS0350482	rasC-/rasG-/[rasG]:rasD(1-104):rasG(103-189)	rasC | rasD | rasG	decreased chemotaxis to folate
+DBS0350481	rasC-/rasG-/[rasG]:rasG	rasC | rasG	wild type
+DBS0350483	rasC-/rasG-/[rasG]:rasG(1-104):rasD(103-187)	rasC | rasD | rasG	wild type
+DBS0351062	rasC-/rasG-/[unk]:carA	carA-1 | carA-2 | rasC | rasG	decreased protein localization to plasma membrane
+DBS0351213	rasC-[act15]:rasG(S17N)	rasC | rasG	abolished activation of GTPase activity | decreased chemotaxis to cAMP
+DBS0236864	rasG-/[OE]:rasB	rasB | rasG	decreased growth rate
+DBS0350448	rasG-/[dscB]:rasG(S17N)	rasG	decreased positive regulation of GTPase activity | decreased actin filament polymerization | decreased protein kinase activation | decreased chemotaxis to cAMP
+DBS0349996	rblA-/[act15]:GFP/[act15]:myc:btg	btg | rblA	increased cell migration to prestalk region
+DBS0235706	regA-/[act15]:dhkK(D1125N)	dhkK | regA	aberrant fruiting body morphogenesis | precocious development
+DBS0351475	regA-/[act15]:erkA	erkA | regA	delayed slug development
+DBS0351472	regA-/[act15]:regA(R588A,R589A,L594A,I595A,L596A)	regA	delayed development
+DBS0351284	regA-/[act15]:regA(S142A)	regA	aberrant fruiting body morphogenesis | precocious development
+DBS0351283	regA-/[act15]:regA(S142E)	regA	delayed development
+DBS0351285	regA-/[act15]:regA(S413A)	regA	increased mound size | delayed development
+DBS0351286	regA-/[act15]:regA(S413E)	regA	increased mound size | delayed development
+DBS0351287	regA-/[act15]:regA(T676A)	regA	delayed sporulation
+DBS0351288	regA-/[act15]:regA(T676E)	regA	aberrant fruiting body morphogenesis | precocious development
+DBS0349921	rgaA-/[act15]:GFP-mhcA	rgaA	aberrant stalk morphogenesis | aberrant development of tipped mound | abolished protein localization to apical plasma membrane
+DBS0350020	rgfA-/[act15]:rgfA	rgfA	decreased chemotaxis to folate | delayed development
+DBS0350193	ric8-/[act15]:GFP:ric8	ric8	wild type
+DBS0350219	rrpC-/[act15]:pre-miRNA	rrpC	increased pre-miRNA processing
+DBS0350974	sadA-/[act15]:gpaH	gpaH | sadA	aberrant cytokinesis
+DBS0351566	sbdS(1-30,TS18,31-274)/[act15]:eIF(T56K)	eIF6 | sbds	wild type
+DBS0351524	scrA-/[act15]:scrA(R177A,R179A,K180A,R183A,R184A,R187A,K190A,K191A,K194A)	scrA	decreased bleb assembly | increased cellular localization | aberrant pseudopodium formation
+DBS0351611	scrA-/[act15]:scrA(S287,290,301,335,339,384,388,389,430,432,433,437,440A)	scrA	aberrant pseudopodium formation
+DBS0351522	scrA-/[act15]:scrA(S430A,S432A,S433A,S437A,S440A)	scrA	decreased bleb assembly | increased cellular localization | aberrant pseudopodium formation
+DBS0351523	scrA-/[act15]:scrA(S430D,S432D,S433D,S437D,S440D)	scrA	decreased pseudopodium size
+DBS0349927	scrA-/[act15]:wasA:GFP/[ act8]:RFP:arcD	scrA	decreased establishment of cell polarity | decreased pseudopodium formation
+DBS0349957	sma-/ampA/[ampA]:ampA	ampA | sma	decreased chemotaxis to folate
+DBS0351063	sodC-/[unk]:rasG(C118A)	rasG | sodC	aberrant regulation of GTPase activity
+DBS0350637	tagB-/[pkaC]:pkaC	pkaC | tagB	aberrant response to biotic stimulus | abolished spore cell differentiation
+DBS0350698	tagC-/[pkaC]:pkaC	pkaC | tagC	development arrests at mound stage | abolished spore cell differentiation
+DBS0236976	talA-	talA	decreased protein level | decreased cell-substrate adhesion | aberrant cytokinesis | decreased phagocytosis | aberrant cell morphology
+DBS0304585	talA-/[act15]:FLAG:talB	talA | talB	decreased cell-substrate adhesion
+DBS0237616	talA-/[act15]:gbpD	gbpD | talA	increased cell-substrate adhesion | aberrant cell morphology | increased pseudopodium formation
+DBS0238395	talA-/[act15]:rapA(G12V)	rapA | talA	increased cell-substrate adhesion
+DBS0304582	talA-/talB-/[act15]:FLAG:talB	talA | talB	wild type
+DBS0350713	talA-/talB-/[act15]:talB(K16A)	talA | talB	decreased cell-substrate adhesion
+DBS0304586	talB-/[act15]:talA:GFP	talA | talB	aberrant fruiting body morphogenesis
+DBS0350712	talB-/[act15]:talB(K16A)	talB	development arrests at tipped mound stage
+DBS0350729	tipC-/[unk]:tipC(2725-3848):GFP	tipC	decreased fruiting body size
+DBS0350505	tpp1-/[cotB]:tpp1	tpp1	wild type
+DBS0302383	tsuA-/[unk]:tsuA(1-1774):YFP	tsuA	abolished protein localization to microtubules | abolished protein localization to microtubule organizing center | decreased mound size | decreased fruiting body size
+DBS0302385	tsuA-/[unk]:tsuA(1-260):YFP	tsuA	abolished protein localization to microtubules | abolished protein localization to microtubule organizing center | decreased mound size | decreased fruiting body size
+DBS0302384	tsuA-/[unk]:tsuA(1774-2247):YFP	tsuA	abolished protein localization to microtubules | abolished protein localization to microtubule organizing center | decreased mound size | decreased fruiting body size
+DBS0302382	tsuA-/[unk]:tsuA(K34R):YFP	tsuA	decreased mound size | decreased fruiting body size
+DBS0237033	vasP-/[act15]:GFP:vasP(1-264/285-380)	vasP	abolished filopodium formation
+DBS0237836	vasP-/[act15]:YFP:wipA	vasP | wipA	decreased filopodium formation
+DBS0237842	vasP-/[act15]:YFP:wipA/[act15]:vasP:FLAG	vasP | wipA	increased filopodium formation
+DBS0351313	vasP-/[act15]:abpB(129-295)	abpB | vasP	aberrant cellular process
+DBS0351300	vasP-/[act15]:eYFP:vasP(S141A)	vasP	decreased protein localization to cell cortex | wild type | decreased lateral pseudopodium retraction | decreased establishment of cell polarity | aberrant actin filament organization
+DBS0351301	vasP-/[act15]:eYFP:vasP(S141D)	vasP	aberrant hyperosmotic response | decreased filopodium formation
+DBS0237040	vasP-/[act15]:vasP	vasP	decreased filopodium formation
+DBS0237840	vasP-/[act15]:vasP	vasP	increased filopodium formation | increased actin filament polymerization
+DBS0237037	vasP-/[act15]:vasP(1-110:231-380)	vasP	aberrant cytokinesis | increased actin filament polymerization | decreased filopodium formation
+DBS0237038	vasP-/[act15]:vasP(1-228)	vasP	decreased filopodium formation
+DBS0237039	vasP-/[act15]:vasP(111-380)	vasP	increased filopodium formation | increased actin filament polymerization
+DBS0350466	vasP-/[unk]:vasP(1-197:221-380)	vasP	wild type
+DBS0350467	vasP-/[unk]:vasP(1-261:285-380)	vasP	decreased cell motility | abolished filopodium formation
+DBS0350290	vwkA-/[act15]:GFP:mhcA	mhcA | vwkA	aberrant myosin II filament organization
+DBS0351509	wasA-/[tet]:scrA/[unk]:GFP:wasA(I173A/F179A)	scrA | wasA	aberrant pseudopodium formation
+DBS0351508	wasA-/[unk]:GFP:wasA(I173A/F179A)	wasA	aberrant protein localization to trailing edge | decreased establishment of cell polarity
+DBS0237812	wasA1-/[tet]:YFP:wasA2/[act15]:wasA	wasA	increased actin filament polymerization at leading edge
+DBS0237811	wasA1-/[tet]:YFP:wasA2/[act15]:wasA(Y33A/W39A/F90A/F91A)	wasA	decreased actin filament polymerization | decreased actin filament polymerization at leading edge
+DBS0237820	wasA1-/[tet]:YFP:wasA2/[act15]:wipA	wasA | wipA	abolished positive chemotaxis
+DBS0350255	wasB-/[act15]:YFP:wasB	wasB	wild type
+DBS0351185	washc5-/[act15]:washc5(N457D):GFP	washc5	abolished exocytosis
+DBS0350247	wshA-/fam21-/[act15]:GFP:wshA	fam21 | wshA	aberrant lysosome organization
+DBS0350944	xacA-/[act15]:xacA(1-320)	xacA	decreased growth rate | aberrant cytokinesis
+DBS0350945	xacA-/[act15]:xacA(779-1335)	xacA	decreased hypotonic response | aberrant contractile vacuole morphology
+DBS0237091	yakA-/[crlA]:crlA	crlA | yakA	abolished vegetative growth
+DBS0349882	zak2-/[ecmA]:zakA	zak2 | zakA	precocious prestalk gene expression

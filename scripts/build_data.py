@@ -83,32 +83,103 @@ def build_gene_index():
 # { ddb: [[term, condition, pmid, note], ...] }
 # ---------------------------------------------------------------------------
 def build_phenotypes():
+    """phenotypes.json { ddb: [[term, condition, pmid, note], ...] }.
+
+    Two sources, merged:
+      1. Legacy strain snapshot (strain_phenotype.tsv + strain_genes.tsv) — kept
+         for its PMID / assay-condition / note detail.
+      2. dictyBase's current "Mutant Phenotypes" downloads (fetch_mutant_phenotypes.py
+         -> mutant-phenotypes/) — the authoritative, complete curated set, which
+         roughly doubles gene coverage but carries only the phenotype term. Each
+         strain maps to its gene via the DDB_G export, falling back to the symbol
+         column resolved through the catalog (incl. synonyms).
+    New terms are added; anything already present (from the richer legacy rows)
+    is kept, so no PMIDs are lost."""
+    MP = os.path.join(CORPUS_SRC, "mutant-phenotypes")
+    genes, seen = {}, set()   # ddb -> rows; seen = (ddb, term.lower())
+
+    def add(ddb, term, cond, pmid, note):
+        term = (term or "").strip()
+        if not ddb or not term:
+            return
+        key = (ddb, term.lower())
+        if key in seen:
+            return
+        seen.add(key)
+        genes.setdefault(ddb, []).append([term, cond, pmid, note])
+
+    # (1) legacy snapshot — keep its references/conditions
     strain_gene = {}
     with open(os.path.join(CORPUS_SRC, "strain_genes.tsv")) as fh:
         for row in csv.reader(fh, delimiter="\t"):
             if len(row) >= 2:
                 strain_gene[row[0].strip()] = row[1].strip()
-
-    genes, seen = {}, set()
     with open(os.path.join(CORPUS_SRC, "strain_phenotype.tsv")) as fh:
         for row in csv.reader(fh, delimiter="\t"):
             if len(row) < 2:
                 continue
-            gene = strain_gene.get(row[0].strip())
-            if not gene:
-                continue
-            term = html.unescape((row[1] if len(row) > 1 else "").strip())
-            cond = html.unescape((row[2] if len(row) > 2 else "").strip())
-            pmid = (row[4] if len(row) > 4 else "").strip()
-            note = html.unescape((row[5] if len(row) > 5 else "").strip())
-            if not term:
-                continue
-            key = (gene, term, cond, pmid)
-            if key in seen:
-                continue
-            seen.add(key)
-            genes.setdefault(gene, []).append([term, cond, pmid, note])
+            add(strain_gene.get(row[0].strip()),
+                html.unescape((row[1] if len(row) > 1 else "").strip()),
+                html.unescape((row[2] if len(row) > 2 else "").strip()),
+                (row[4] if len(row) > 4 else "").strip(),
+                html.unescape((row[5] if len(row) > 5 else "").strip()))
+
+    # (2) current dictyBase mutant-phenotype downloads (authoritative + complete)
+    def _load_mp():
+        # strain (Systematic_Name) -> [DDB_G, ...] from the authoritative export
+        strain2ddb = {}
+        p = os.path.join(MP, "all-mutants-ddb_g.txt")
+        if os.path.exists(p):
+            with open(p, encoding="utf-8", errors="replace") as fh:
+                rows = csv.reader(fh, delimiter="\t")
+                next(rows, None)
+                for row in rows:
+                    if len(row) >= 4:
+                        ddbs = [d for d in row[3].replace(",", " ").split() if d.startswith("DDB_G")]
+                        if ddbs:
+                            strain2ddb[row[0].strip()] = ddbs
+        # symbol / synonym / DDB_G -> DDB_G, from the catalog
+        sym2ddb = {}
+        with open(os.path.join(ASSETS, "gene_index.json")) as fh:
+            for r in json.load(fh):
+                if not r or not r[0]:
+                    continue
+                sym2ddb.setdefault(r[0].lower(), r[0])
+                if len(r) > 1 and r[1]:
+                    sym2ddb.setdefault(r[1].lower(), r[0])
+                for s in (r[5] if len(r) > 5 else []):
+                    sym2ddb.setdefault(s.lower(), r[0])
+        return strain2ddb, sym2ddb
+
+    all_mut = os.path.join(MP, "all-mutants.txt")
+    if os.path.exists(all_mut):
+        strain2ddb, sym2ddb = _load_mp()
+        added = set()
+        with open(all_mut, encoding="utf-8", errors="replace") as fh:
+            rows = csv.reader(fh, delimiter="\t")
+            next(rows, None)
+            for row in rows:
+                if len(row) < 4:
+                    continue
+                strain, desc, gsyms, phenos = row[0].strip(), row[1].strip(), row[2], row[3]
+                ddbs = strain2ddb.get(strain) or [
+                    sym2ddb[g.strip().lower()]
+                    for g in gsyms.replace(",", " ").replace("|", " ").split()
+                    if g.strip().lower() in sym2ddb]
+                for term in (html.unescape(p.strip()) for p in phenos.split("|") if p.strip()):
+                    for ddb in dict.fromkeys(ddbs):     # de-dupe genes, keep order
+                        before = (ddb, term.lower()) in seen
+                        add(ddb, term, "", "", desc)     # strain descriptor as context
+                        if not before:
+                            added.add(ddb)
+        print(f"  phenotypes: +{len(added)} genes from dictyBase mutant-phenotype downloads")
+    else:
+        print("  phenotypes: mutant-phenotype downloads not found — run "
+              "scripts/fetch_mutant_phenotypes.py (using legacy snapshot only)")
+
     _write("phenotypes.json", genes)
+    print(f"  phenotypes.json: {len(genes)} genes, "
+          f"{sum(len(v) for v in genes.values())} annotations")
 
 
 # ---------------------------------------------------------------------------

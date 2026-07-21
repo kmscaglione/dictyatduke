@@ -5078,7 +5078,7 @@ function renderDiseaseModelsPage() {
         <div class="record-title">
           <p class="eyebrow">Human disease</p>
           <h2>Dictyostelium disease models</h2>
-          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from Orphanet (via the Human Phenotype Ontology). These are computational predictions; confirm against the primary literature.</p>
+          <p>Dictyostelium genes whose human orthologs are linked to disease — a starting point for using the amoeba as a model system. Orthologs from OMA; disease associations from OMIM and Orphanet (via the Human Phenotype Ontology). These are computational predictions; confirm against the primary literature.</p>
         </div>
       </header>
       <div class="record-body">

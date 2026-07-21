@@ -273,6 +273,23 @@ def main():
                 "diseases": diseases,
             })
 
+    # Use dictyBase's authoritative symbol per gene (keyed by DDB_G) rather than
+    # UniProt's gene_primary, so the disease table matches the gene records after
+    # the nomenclature update (e.g. DDB_G0272192 shows mfsd8, not a stale symbol).
+    try:
+        gi = json.loads((ROOT / "assets" / "gene_index.json").read_text())
+        dsym = {r[0]: r[1] for r in gi if r and r[0] and not str(r[1]).startswith("DDB_G")}
+        relabeled = 0
+        for ddb, v in data.items():
+            if ddb.startswith("_"):
+                continue
+            if ddb in dsym and v.get("symbol") != dsym[ddb]:
+                v["symbol"] = dsym[ddb]
+                relabeled += 1
+        print(f"  relabeled {relabeled} symbols from gene_index", file=sys.stderr)
+    except Exception as exc:  # noqa: BLE001 — best-effort symbol refresh
+        print(f"  (skipped gene_index symbol overlay: {exc})", file=sys.stderr)
+
     print("Backfilling missing ORPHA disease names via OLS4...", file=sys.stderr)
     backfill_orpha_names(data)
 

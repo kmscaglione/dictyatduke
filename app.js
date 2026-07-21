@@ -1067,6 +1067,27 @@ function genePath(gene) {
   return `/gene/${encodeURIComponent(gene.symbol)}`;
 }
 
+// AX4 RefSeq contig accession -> chromosome, for display. The six assembled
+// chromosomes are NC_007087..NC_007092 (1..6); NC_000895 is the mitochondrion.
+const CHROM_BY_CONTIG = {
+  NC_007087: "1", NC_007088: "2", NC_007089: "3",
+  NC_007090: "4", NC_007091: "5", NC_007092: "6",
+  NC_000895: "M",
+};
+
+// Show "Chromosome N: start-end" instead of the raw contig accession. Unplaced
+// scaffolds (NW_*) and any unmapped accession are left exactly as they are.
+function formatLocation(loc) {
+  if (!loc) return loc || "";
+  const m = String(loc).match(/^([A-Za-z]+_?\d+)(?:\.\d+)?\s*:\s*(.*)$/);
+  if (!m) return loc;
+  const chr = CHROM_BY_CONTIG[m[1]];
+  if (!chr) return loc;
+  const rest = m[2].trim();
+  const label = chr === "M" ? "Mitochondrion" : `Chromosome ${chr}`;
+  return rest ? `${label}: ${rest}` : label;
+}
+
 // Old/alternate symbols to show under the gene name. Prefer the curated set
 // carried on the gene (openRemoteGene attaches it from the catalog); fall back to
 // the catalog by DDB_G/symbol for featured genes. Drops the current symbol itself.
@@ -1212,7 +1233,7 @@ function renderSuggestions(query) {
     <button class="suggestion" type="button" data-gene="${gene.id}">
       <span>
         <strong>${gene.symbol} · ${gene.name}</strong>
-        <small>${gene.organism} · ${gene.location}</small>
+        <small>${gene.organism} · ${escapeHtml(formatLocation(gene.location))}</small>
       </span>
       <span class="tag">Local</span>
     </button>
@@ -1221,7 +1242,7 @@ function renderSuggestions(query) {
     <button class="suggestion" type="button" data-ncbi-gene="${escapeHtml(gene.ncbiGene)}">
       <span>
         <strong>${escapeHtml(gene.symbol)}${gene.name ? ` · ${escapeHtml(gene.name)}` : ""}</strong>
-        <small>D. discoideum · ${escapeHtml(gene.location)}</small>
+        <small>D. discoideum · ${escapeHtml(formatLocation(gene.location))}</small>
       </span>
       <span class="tag">Gene</span>
     </button>
@@ -1305,7 +1326,7 @@ async function fetchNCBISuggestions(query, localRows) {
   try {
     const localHtml = localRows.map((gene) => `
       <button class="suggestion" type="button" data-gene="${gene.id}">
-        <span><strong>${gene.symbol} · ${gene.name}</strong><small>${gene.organism} · ${gene.location}</small></span>
+        <span><strong>${gene.symbol} · ${gene.name}</strong><small>${gene.organism} · ${escapeHtml(formatLocation(gene.location))}</small></span>
         <span class="tag">Local</span>
       </button>`).join("");
 
@@ -6328,7 +6349,7 @@ function renderTab(gene, tab) {
             <span>Symbol</span><strong>${gene.symbol}</strong>
             <span>Name</span><strong>${gene.name}</strong>
             <span>Organism</span><strong>${gene.organism}</strong>
-            <span>Location</span><strong>${gene.location}</strong>
+            <span>Location</span><strong>${escapeHtml(formatLocation(gene.location))}</strong>
             <span>NCBI Gene</span><strong>${gene.ncbiGene}</strong>
             <span>UniProt</span><strong>${gene.uniprot}</strong>
             <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>

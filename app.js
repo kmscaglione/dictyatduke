@@ -1634,6 +1634,7 @@ function loadTabData(gene, tab) {
       break;
     case "GO":
       loadGOResults(gene);
+      loadGeneExtras(gene);
       break;
     case "Phenotypes":
       loadPhenotypes(gene);
@@ -1643,6 +1644,7 @@ function loadTabData(gene, tab) {
       break;
     case "Genome":
       loadNeighborhood(gene);
+      loadPromoter(gene);
       break;
     case "Orthologs":
       loadHumanDisease(gene);
@@ -6190,6 +6192,7 @@ function findTechniqueByToken(token) {
 function renderTab(gene, tab) {
   if (tab === "GO") {
     return `
+      <div class="data-block" data-dicty-goslim></div>
       <div class="data-block">
         <h3>Gene Ontology</h3>
         <div data-go-results="${gene.id}">
@@ -6254,7 +6257,12 @@ function renderTab(gene, tab) {
              <button type="button" class="button" data-view-browser>View in genome browser →</button>`
           : `<p class="notice muted">This gene isn't placed on the browser assembly.</p>`}
       </div>
-      <div class="data-block" data-neighborhood></div>`;
+      <div class="data-block" data-neighborhood></div>
+      <div class="data-block" data-promoter-block hidden>
+        <h3>Promoter sequence <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— 5' flanking to the next gene (dictyBase, 2006)</span></h3>
+        <button type="button" class="button" data-promoter-btn>Retrieve 5' flanking sequence</button>
+        <div data-promoter-out style="margin-top:10px"></div>
+      </div>`;
   }
 
   if (tab === "Orthologs") {
@@ -6839,6 +6847,16 @@ async function fetchGeneExtras(ddb) {
 
 const SUB = "font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)";
 
+let goslimTermsData = null;
+async function ensureGoslimTerms() {
+  if (goslimTermsData) return goslimTermsData;
+  try { goslimTermsData = await fetch("/assets/goslim_terms.json").then((r) => r.json()); }
+  catch { goslimTermsData = {}; }
+  return goslimTermsData;
+}
+// Top-level GO roots carry no information as a "summary" — drop them.
+const GOSLIM_ROOTS = new Set(["biological_process", "cellular_component", "molecular_function"]);
+
 // Populate whichever dictyBase-enrichment placeholders are on the active tab
 // (literature, orthologs, PTMs, curation status, alt transcripts). Cached, so
 // calling it from several tab loaders costs one fetch.
@@ -6874,6 +6892,25 @@ async function loadGeneExtras(gene) {
       : "";
   }
 
+  const gs = document.querySelector("[data-dicty-goslim]");
+  if (gs && x.goslim && x.goslim.length) {
+    const names = await ensureGoslimTerms();
+    if ((state.activeGene?.veupath || state.activeGene?.ddb || "").toUpperCase() === ddb) {
+      const label = { P: "Biological process", F: "Molecular function", C: "Cellular component" };
+      const byAspect = { P: [], F: [], C: [] };
+      const seen = new Set();
+      x.goslim.forEach(([g, a]) => {
+        const nm = names[g];
+        if (nm && !GOSLIM_ROOTS.has(nm) && !seen.has(a + nm)) { seen.add(a + nm); (byAspect[a] || (byAspect[a] = [])).push(nm); }
+      });
+      const aspects = ["P", "F", "C"].filter((a) => byAspect[a] && byAspect[a].length);
+      gs.innerHTML = aspects.length
+        ? `<h3>GO-slim summary <span style="${SUB}">— broad functional categories (dictyBase GO-slim)</span></h3>
+           ${aspects.map((a) => `<p style="font-size:.8125rem;margin:4px 0"><strong>${label[a]}</strong> · ${byAspect[a].map(escapeHtml).join(", ")}</p>`).join("")}`
+        : "";
+    }
+  } else if (gs) gs.innerHTML = "";
+
   const cur = document.querySelector("[data-dicty-curation]");
   if (cur) cur.innerHTML = x.curation
     ? `<p style="font-size:.72rem;color:var(--muted,#6b7280);margin:8px 0 0"><strong>Curation status</strong> · ${escapeHtml(x.curation)}</p>` : "";
@@ -6884,6 +6921,36 @@ async function loadGeneExtras(gene) {
     tl.hidden = tv.hidden = !has;
     if (has) tv.textContent = x.transcripts.join(", ");
   }
+}
+
+// Genome tab: on-demand 5' flanking (promoter) sequence retrieval.
+async function loadPromoter(gene) {
+  const block = document.querySelector("[data-promoter-block]");
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!block || !/^DDB_G\d+$/.test(ddb)) return;
+  block.hidden = false;
+  const btn = block.querySelector("[data-promoter-btn]");
+  const out = block.querySelector("[data-promoter-out]");
+  btn.addEventListener("click", async () => {
+    btn.disabled = true;
+    btn.textContent = "Retrieving…";
+    let d;
+    try { d = await fetch(`/api/promoter?ddb=${encodeURIComponent(ddb)}`).then((r) => r.json()); }
+    catch {
+      out.innerHTML = `<p class="notice">Could not retrieve the promoter sequence.</p>`;
+      btn.disabled = false; btn.textContent = "Retrieve 5' flanking sequence";
+      return;
+    }
+    if (!d.sequence) {
+      out.innerHTML = `<p class="notice muted">No promoter sequence on file for ${escapeHtml(gene.symbol)}.</p>`;
+      btn.style.display = "none";
+      return;
+    }
+    const fasta = `>${gene.symbol}_promoter ${ddb} ${d.length}bp\n${d.sequence.replace(/(.{60})/g, "$1\n")}`;
+    out.innerHTML = `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${d.length.toLocaleString()} bp of 5' flanking sequence, up to the neighbouring gene (dictyBase, 2006).</p>
+      <textarea readonly style="width:100%;height:160px;font-family:monospace;font-size:.72rem" onclick="this.select()">${escapeHtml(fasta)}</textarea>`;
+    btn.style.display = "none";
+  }, { once: true });
 }
 
 // Flatten one gene's rich annotation into the GO rows the GO tab renders:

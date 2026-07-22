@@ -20,6 +20,13 @@ import csv
 import json
 import pathlib
 import re
+import ssl
+import urllib.request
+
+_SSL = ssl.create_default_context()
+_SSL.check_hostname = False
+_SSL.verify_mode = ssl.CERT_NONE
+_UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DL = ROOT / "assets" / "dictybase-downloads"
@@ -114,6 +121,15 @@ def build_extras(ddb2g):
     except Exception as exc:  # noqa: BLE001 — phospho is optional
         print(f"  (phospho skipped: {exc})")
 
+    # GO-slim: broad GO categories per gene (mapped to GO-slim.obo), keyed by DDB
+    p = DL / "goslim" / "slim_gene_association.ddb"
+    if p.exists():
+        for r in rows(p, skip_header=False):
+            if len(r) > 8 and r[4].startswith("GO:"):
+                g = ddb2g.get(r[1].strip())
+                if g:
+                    e(g).setdefault("goslim", set()).add((r[4].strip(), r[8].strip()))
+
     # finalize sets -> sorted lists / counts
     for g, d in extras.items():
         if "pmids" in d:
@@ -121,6 +137,8 @@ def build_extras(ddb2g):
         if "phospho" in d:
             peps = sorted(d["phospho"]["peptides"])
             d["phospho"] = {"count": len(peps), "peptides": peps[:40]}
+        if "goslim" in d:
+            d["goslim"] = sorted([g_, a] for g_, a in d["goslim"])
     (ASSETS / "gene_extras.json").write_text(json.dumps(extras, separators=(",", ":")))
     return extras
 
@@ -156,6 +174,58 @@ def build_domains(ddb2g):
         out[g].sort(key=lambda d: (d["start"] if d["start"] is not None else 1 << 30))
     (ASSETS / "dictybase_domains.json").write_text(json.dumps(out, separators=(",", ":")))
     return out
+
+
+def build_promoters(ddb2g):
+    """5' flanking (promoter) sequence per gene, from the promoter FASTA. Keyed by
+    the DDB feature id in each header (>DDB0…|contig|…); mapped to DDB_G."""
+    import zipfile
+    zp = DL / "sequence_sets" / "promoter_sequences.zip"
+    out = {}
+    if not zp.exists():
+        (ASSETS / "promoters.json").write_text("{}")
+        return out
+    with zipfile.ZipFile(zp) as z:
+        with z.open("promoter_sequences.fasta") as fh:
+            cur, seq = None, []
+            for raw in fh:
+                line = raw.decode("utf-8", "replace").rstrip("\n")
+                if line.startswith(">"):
+                    if cur and seq:
+                        out[cur] = "".join(seq)
+                    ddb0 = line[1:].split("|")[0].strip()
+                    cur, seq = ddb2g.get(ddb0), []
+                elif cur:
+                    seq.append(line.strip())
+            if cur and seq:
+                out[cur] = "".join(seq)
+    (ASSETS / "promoters.json").write_text(json.dumps(out, separators=(",", ":")))
+    return out
+
+
+def build_goslim_terms(extras):
+    """Resolve the ~120 distinct GO-slim term ids to names once (via QuickGO),
+    mapping secondary/obsolete ids too so the 2006-era slim ids still name-match.
+    Written to goslim_terms.json so the client needs no live GO lookups."""
+    ids = sorted({go for d in extras.values() for go, _ in d.get("goslim", [])})
+    names = {}
+    try:
+        for i in range(0, len(ids), 100):
+            batch = ids[i:i + 100]
+            url = ("https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/"
+                   + ",".join(batch))
+            req = urllib.request.Request(url, headers={"Accept": "application/json", "User-Agent": _UA})
+            data = json.loads(urllib.request.urlopen(req, timeout=60, context=_SSL).read())
+            for t in data.get("results", []):
+                if not t.get("name") or t.get("isObsolete"):
+                    continue
+                names[t["id"]] = t["name"]
+                for sid in (t.get("secondaryIds") or []):
+                    names.setdefault(sid, t["name"])
+    except Exception as exc:  # noqa: BLE001 — best-effort; client falls back to ids
+        print(f"  (goslim term names skipped: {exc})")
+    (ASSETS / "goslim_terms.json").write_text(json.dumps(names, separators=(",", ":")))
+    return names
 
 
 def build_ontology():
@@ -223,6 +293,10 @@ def main():
     dom = build_domains(ddb2g)
     print(f"  dictybase_domains.json: {len(dom)} genes, "
           f"{sum(len(v) for v in dom.values())} domain rows")
+    prom = build_promoters(ddb2g)
+    print(f"  promoters.json: {len(prom)} genes with a 5' flanking sequence")
+    gt = build_goslim_terms(extras)
+    print(f"  goslim_terms.json: {len(gt)} GO-slim term names resolved")
     onto = build_ontology()
     print(f"  phenotype_ontology.json: {len(onto)} terms")
     cod = build_codon_usage()

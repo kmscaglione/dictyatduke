@@ -165,8 +165,10 @@ _GENE_ANNOT_CACHE = {"mtime": None, "genes": {}}
 # together they are ~10 MB. mtime-reloaded.
 GENE_EXTRAS_PATH = pathlib.Path(ROOT) / "assets" / "gene_extras.json"
 DICTY_DOMAINS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_domains.json"
+PROMOTERS_PATH = pathlib.Path(ROOT) / "assets" / "promoters.json"
 _GENE_EXTRAS_CACHE = {"mtime": None, "genes": {}}
 _DICTY_DOMAINS_CACHE = {"mtime": None, "genes": {}}
+_PROMOTERS_CACHE = {"mtime": None, "genes": {}}
 
 
 def _load_mtime_json(path, cache):
@@ -1871,6 +1873,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/gene-extras"):
             self._handle_gene_extras()
             return
+        if self.path.startswith("/api/promoter"):
+            self._handle_promoter()
+            return
         if self.path.startswith("/api/gene/"):
             self._handle_api_gene(unquote(self.path[len("/api/gene/"):].split("?")[0]))
             return
@@ -3454,6 +3459,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         out = dict(_load_mtime_json(GENE_EXTRAS_PATH, _GENE_EXTRAS_CACHE).get(ddb, {}))
         out["domains"] = _load_mtime_json(DICTY_DOMAINS_PATH, _DICTY_DOMAINS_CACHE).get(ddb, [])
         self.send_json(200, out)
+
+    def _handle_promoter(self):
+        """A gene's 5' flanking (promoter) sequence by DDB_G id."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        seq = _load_mtime_json(PROMOTERS_PATH, _PROMOTERS_CACHE).get(ddb, "")
+        self.send_json(200, {"ddb": ddb, "length": len(seq), "sequence": seq})
 
     def _handle_gene_card(self):
         """Compact gene summary for hovercards: name, trimmed summary, facet flags."""

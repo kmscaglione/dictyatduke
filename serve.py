@@ -160,6 +160,28 @@ def _load_domains():
 GENE_ANNOT_PATH = pathlib.Path(ROOT) / "assets" / "gene_annotations.json"
 _GENE_ANNOT_CACHE = {"mtime": None, "genes": {}}
 
+# Per-gene extras + InterPro domains from dictyBase's download files (build_
+# dictybase_enrichment.py). Served per-gene like the annotations above, since
+# together they are ~10 MB. mtime-reloaded.
+GENE_EXTRAS_PATH = pathlib.Path(ROOT) / "assets" / "gene_extras.json"
+DICTY_DOMAINS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_domains.json"
+_GENE_EXTRAS_CACHE = {"mtime": None, "genes": {}}
+_DICTY_DOMAINS_CACHE = {"mtime": None, "genes": {}}
+
+
+def _load_mtime_json(path, cache):
+    try:
+        mtime = path.stat().st_mtime
+    except OSError:
+        return cache["genes"]
+    if cache["mtime"] != mtime:
+        try:
+            cache["genes"] = json.loads(path.read_text())
+            cache["mtime"] = mtime
+        except (ValueError, OSError):
+            cache["genes"] = {}
+    return cache["genes"]
+
 # Citable data-release metadata (assets/data_release.json) — version, date, DOI.
 RELEASE_PATH = pathlib.Path(ROOT) / "assets" / "data_release.json"
 
@@ -1846,6 +1868,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/gene-annotations"):
             self._handle_gene_annotations()
             return
+        if self.path.startswith("/api/gene-extras"):
+            self._handle_gene_extras()
+            return
         if self.path.startswith("/api/gene/"):
             self._handle_api_gene(unquote(self.path[len("/api/gene/"):].split("?")[0]))
             return
@@ -3417,6 +3442,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": "ddb (DDB_G…) required"})
             return
         self.send_json(200, _load_gene_annotations().get(ddb, {}))
+
+    def _handle_gene_extras(self):
+        """One gene's dictyBase enrichment (literature, curation status, alt
+        transcripts, dictyBase orthologs, myristoylation, phospho, MW) plus its
+        InterPro domains, by DDB_G id. Served per-gene from the in-memory maps."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        out = dict(_load_mtime_json(GENE_EXTRAS_PATH, _GENE_EXTRAS_CACHE).get(ddb, {}))
+        out["domains"] = _load_mtime_json(DICTY_DOMAINS_PATH, _DICTY_DOMAINS_CACHE).get(ddb, [])
+        self.send_json(200, out)
 
     def _handle_gene_card(self):
         """Compact gene summary for hovercards: name, trimmed summary, facet flags."""

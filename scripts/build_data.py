@@ -356,6 +356,13 @@ def main():
     except Exception as exc:  # noqa: BLE001 — best-effort naming refresh
         print(f"  (skipped gene-name overlay: {exc})")
     build_phenotypes()
+    # Per-gene enrichment from the mirrored dictyBase download files (literature,
+    # domains, curation status, orthologs, PTMs, MW, ontologies, codon usage).
+    try:
+        import build_dictybase_enrichment
+        build_dictybase_enrichment.main()
+    except Exception as exc:  # noqa: BLE001 — best-effort; needs the downloads mirror
+        print(f"  (skipped dictyBase enrichment: {exc})")
     merge_summaries()
     build_downloads_manifest()
     if want_go or gaf_path:

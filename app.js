@@ -1630,6 +1630,7 @@ function loadTabData(gene, tab) {
       loadKeggPathways(gene);
       loadStrains(gene);
       initRecordLabTools(gene);
+      loadGeneExtras(gene);
       break;
     case "GO":
       loadGOResults(gene);
@@ -1649,14 +1650,17 @@ function loadTabData(gene, tab) {
       loadComparative(gene);
       loadVariation(gene);
       loadOMAResults(gene);
+      loadGeneExtras(gene);
       break;
     case "PTMs":
       loadPTMs(gene);
+      loadGeneExtras(gene);
       break;
     case "Literature":
       initLiteratureSearch();
       loadCuratedReferences(gene);
       loadPubMedResults(gene);
+      loadGeneExtras(gene);
       break;
     case "Structures":
       requestAnimationFrame(() => initStructureViewerLarge(gene.uniprot));
@@ -6211,6 +6215,7 @@ function renderTab(gene, tab) {
         <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
           ${loadingHTML("Loading curated references…")}
         </div>
+        <div data-dicty-lit></div>
         <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener" style="margin-top:16px">Search PubMed for all ${escapeHtml(gene.symbol)} papers</a>
         <div class="pubmed-results" data-pubmed-results="${gene.id}">
           ${loadingHTML(`Loading recent PubMed matches for ${gene.symbol}…`)}
@@ -6258,6 +6263,7 @@ function renderTab(gene, tab) {
       <div class="data-block" data-paralogs></div>
       <div class="data-block" data-dicty-comparative></div>
       <div class="data-block" data-variation></div>
+      <div class="data-block" data-dicty-orthologs></div>
       <div class="data-block">
         <h3>Orthologs <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OMA Browser</span></h3>
         <div data-oma-results="${escapeHtml(gene.id)}">
@@ -6273,7 +6279,8 @@ function renderTab(gene, tab) {
         <div data-ptm-results="${escapeHtml(gene.id)}">
           ${loadingHTML(`Loading PTMs for ${gene.symbol}…`)}
         </div>
-      </div>`;
+      </div>
+      <div class="data-block" data-dicty-mods></div>`;
   }
 
   if (tab === "Structures") {
@@ -6353,7 +6360,9 @@ function renderTab(gene, tab) {
             <span>NCBI Gene</span><strong>${gene.ncbiGene}</strong>
             <span>UniProt</span><strong>${gene.uniprot}</strong>
             <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
+            <span data-dicty-transcripts-label hidden>Alt transcripts</span><strong data-dicty-transcripts hidden></strong>
           </div>
+          <div data-dicty-curation></div>
         </section>
         <section class="data-block" data-strains hidden></section>
         ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
@@ -6810,6 +6819,73 @@ async function fetchGeneAnnot(ddb) {
   geneAnnotCache.set(ddb, annot);
   return annot;
 }
+// Per-gene dictyBase enrichment (literature, curation, domains, orthologs,
+// myristoylation, phospho, MW, alt transcripts) from /api/gene-extras.
+const geneExtrasCache = new Map();   // ddb -> extras object or null
+async function fetchGeneExtras(ddb) {
+  if (!ddb || !/^DDB_G\d+$/.test(ddb)) return null;
+  if (geneExtrasCache.has(ddb)) return geneExtrasCache.get(ddb);
+  let extras = null;
+  try {
+    const res = await fetch(`/api/gene-extras?ddb=${encodeURIComponent(ddb)}`);
+    if (res.ok) {
+      const d = await res.json();
+      extras = d && Object.keys(d).some((k) => k !== "domains" || (d.domains && d.domains.length)) ? d : null;
+    }
+  } catch { extras = null; }
+  geneExtrasCache.set(ddb, extras);
+  return extras;
+}
+
+const SUB = "font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)";
+
+// Populate whichever dictyBase-enrichment placeholders are on the active tab
+// (literature, orthologs, PTMs, curation status, alt transcripts). Cached, so
+// calling it from several tab loaders costs one fetch.
+async function loadGeneExtras(gene) {
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  const x = await fetchGeneExtras(ddb);
+  // Compare by DDB_G, not object identity: corpus enrichment swaps the gene
+  // object for a fresh one with the same id while this fetch is in flight.
+  const active = (state.activeGene?.veupath || state.activeGene?.ddb || "").toUpperCase();
+  if (!x || active !== ddb) return;
+
+  const lit = document.querySelector("[data-dicty-lit]");
+  if (lit) lit.innerHTML = (x.pmids && x.pmids.length)
+    ? `<div class="seeded-literature"><h4>dictyBase-curated literature <span style="font-weight:500;color:var(--muted,#6b7280)">— ${x.pmids.length} paper${x.pmids.length === 1 ? "" : "s"} linked to this gene</span></h4>
+        <p style="font-size:.8125rem;line-height:1.9">${x.pmids.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}</p></div>`
+    : "";
+
+  const orth = document.querySelector("[data-dicty-orthologs]");
+  if (orth) orth.innerHTML = (x.orthologs && Object.keys(x.orthologs).length)
+    ? `<h3>dictyBase orthologs <span style="${SUB}">— OrthoMCL, InParanoid, and sequencing projects</span></h3>
+        ${Object.entries(x.orthologs).map(([src, list]) => `<p style="font-size:.8125rem;margin:6px 0"><strong>${escapeHtml(src)}</strong> · ${list.map(escapeHtml).join(", ")}</p>`).join("")}`
+    : "";
+
+  const mods = document.querySelector("[data-dicty-mods]");
+  if (mods) {
+    const parts = [];
+    if (x.myristoylation)
+      parts.push(`<p style="font-size:.8125rem;margin:4px 0"><strong>N-terminal myristoylation</strong> · ${escapeHtml(x.myristoylation.reliability)} (NMT score ${escapeHtml(x.myristoylation.score)})</p>`);
+    if (x.phospho)
+      parts.push(`<p style="font-size:.8125rem;margin:4px 0"><strong>AX2 phosphoproteome</strong> · ${x.phospho.count} phosphopeptide${x.phospho.count === 1 ? "" : "s"} detected${x.phospho.peptides && x.phospho.peptides.length ? ` (e.g. ${x.phospho.peptides.slice(0, 3).map(escapeHtml).join(", ")})` : ""}</p>`);
+    mods.innerHTML = parts.length
+      ? `<h3>dictyBase protein modifications <span style="${SUB}">— myristoylation prediction · AX2 phosphoproteome (Charest &amp; Firtel)</span></h3>${parts.join("")}`
+      : "";
+  }
+
+  const cur = document.querySelector("[data-dicty-curation]");
+  if (cur) cur.innerHTML = x.curation
+    ? `<p style="font-size:.72rem;color:var(--muted,#6b7280);margin:8px 0 0"><strong>Curation status</strong> · ${escapeHtml(x.curation)}</p>` : "";
+  const tl = document.querySelector("[data-dicty-transcripts-label]");
+  const tv = document.querySelector("[data-dicty-transcripts]");
+  if (tl && tv) {
+    const has = x.transcripts && x.transcripts.length;
+    tl.hidden = tv.hidden = !has;
+    if (has) tv.textContent = x.transcripts.join(", ");
+  }
+}
+
 // Flatten one gene's rich annotation into the GO rows the GO tab renders:
 // [GO id, aspect, evidence, pmid, source].
 function goRowsFromAnnot(g) {

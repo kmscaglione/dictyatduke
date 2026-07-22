@@ -6869,10 +6869,15 @@ async function loadGeneExtras(gene) {
   if (!x || active !== ddb) return;
 
   const lit = document.querySelector("[data-dicty-lit]");
-  if (lit) lit.innerHTML = (x.pmids && x.pmids.length)
-    ? `<div class="seeded-literature"><h4>dictyBase-curated literature <span style="font-weight:500;color:var(--muted,#6b7280)">— ${x.pmids.length} paper${x.pmids.length === 1 ? "" : "s"} linked to this gene</span></h4>
-        <p style="font-size:.8125rem;line-height:1.9">${x.pmids.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}</p></div>`
-    : "";
+  if (lit) {
+    const pmids = x.pmids || [];
+    const show = pmids.slice(0, 40);
+    const more = pmids.length - show.length;
+    lit.innerHTML = pmids.length
+      ? `<div class="seeded-literature"><h4>dictyBase-curated literature <span style="font-weight:500;color:var(--muted,#6b7280)">— ${pmids.length} paper${pmids.length === 1 ? "" : "s"} linked to this gene</span></h4>
+          <p style="font-size:.8125rem;line-height:1.9">${show.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}${more > 0 ? ` · <span style="color:var(--muted,#6b7280)">+${more} more</span>` : ""}</p></div>`
+      : "";
+  }
 
   const orth = document.querySelector("[data-dicty-orthologs]");
   if (orth) orth.innerHTML = (x.orthologs && Object.keys(x.orthologs).length)

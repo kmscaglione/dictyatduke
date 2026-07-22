@@ -59,13 +59,18 @@ def build_extras(ddb2g):
     def e(g):
         return extras.setdefault(g, {})
 
-    # literature: PMID <tab> DDB_G..._RTE <tab> DDB feature id
+    # literature: PMID <tab> gene (DDB_G..._RTE OR a bare symbol) <tab> DDB feature id.
+    # Column 2 is inconsistent (id for some rows, symbol for others), so key off
+    # the DDB feature id in column 3, falling back to a DDB_G in column 2.
     for r in rows(DL / "general" / "DDBID_PMID.txt", skip_header=False):
-        if len(r) < 2 or not r[0].strip().isdigit():
+        if len(r) < 3 or not r[0].strip().isdigit():
             continue
-        mm = DDBG.search(r[1])
-        if mm:
-            e(mm.group(0)).setdefault("pmids", set()).add(r[0].strip())
+        g = ddb2g.get(r[2].strip())
+        if not g:
+            mm = DDBG.search(r[1])
+            g = mm.group(0) if mm else None
+        if g:
+            e(g).setdefault("pmids", set()).add(r[0].strip())
 
     # curation status: DDB_G <tab> free-text status
     for r in rows(G / "DDB_G-curation_status.txt", skip_header=False):

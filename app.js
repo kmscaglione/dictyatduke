@@ -8761,10 +8761,23 @@ function renderGeneralResults(el, q) {
   el.innerHTML = html;
 }
 
+let phenoOntologyData = null;
+// Dicty Phenotype/Anatomy Ontology (DDPHENO) term -> definition + synonyms,
+// loaded once. Lets phenotype search explain each term.
+async function ensurePhenotypeOntology() {
+  if (phenoOntologyData) return phenoOntologyData;
+  try { phenoOntologyData = await fetch("/assets/phenotype_ontology.json").then((r) => r.json()); }
+  catch { phenoOntologyData = {}; }
+  return phenoOntologyData;
+}
+
 async function runPhenotypeSearch(el, q, req) {
   el.innerHTML = `<p class="notice muted">Searching phenotypes…</p>`;
   try {
-    const data = await (await fetch(`/api/phenotype-search?q=${encodeURIComponent(q)}&limit=40`)).json();
+    const [data, onto] = await Promise.all([
+      (await fetch(`/api/phenotype-search?q=${encodeURIComponent(q)}&limit=40`)).json(),
+      ensurePhenotypeOntology(),
+    ]);
     if (req !== searchPageReq) return;
     if (!data.terms || !data.terms.length) {
       el.innerHTML = `<p class="notice">No curated phenotypes match “${escapeHtml(q)}”.</p>`;
@@ -8773,13 +8786,20 @@ async function runPhenotypeSearch(el, q, req) {
     const shown = data.count < data.totalTerms ? ` (showing ${data.count})` : "";
     el.innerHTML = `
       <p class="notice muted">${data.totalTerms} phenotype${data.totalTerms === 1 ? "" : "s"} matching “${escapeHtml(q)}”${shown}.</p>
-      ${data.terms.map((t) => `
+      ${data.terms.map((t) => {
+        const o = onto[(t.term || "").toLowerCase()];
+        const def = o && o.definition
+          ? `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:2px 0 8px">${escapeHtml(o.definition)}${o.synonyms && o.synonyms.length ? ` <span style="opacity:.85">(also: ${o.synonyms.slice(0, 3).map(escapeHtml).join(", ")})</span>` : ""}</p>`
+          : "";
+        return `
         <div class="data-block" style="margin-bottom:14px">
           <h3 style="font-size:0.9375rem">${escapeHtml(t.term)} <span style="font-weight:500;color:var(--muted,#6b7280)">· ${t.genes.length} gene${t.genes.length === 1 ? "" : "s"}</span></h3>
+          ${def}
           <div class="technique-links">
             ${t.genes.map((g) => `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span></a>`).join("")}
           </div>
-        </div>`).join("")}`;
+        </div>`;
+      }).join("")}`;
   } catch {
     if (req !== searchPageReq) return;
     el.innerHTML = `<p class="notice">Phenotype search is unavailable right now.</p>`;

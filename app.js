@@ -9194,7 +9194,18 @@ async function loadDomains(gene) {
   if (state.activeGene !== gene || state.activeTab !== "Structures") return;
   const len = data.length || 0;
   const all = data.domains || [];
-  if (!len || !all.length) { el.innerHTML = `<p class="notice muted">No domain annotations found${gene.uniprot ? ` for ${escapeHtml(gene.uniprot)}` : ""}.</p>`; return; }
+  if (!len || !all.length) {
+    // Fall back to dictyBase's own InterPro domain table for genes the primary
+    // (UniProt/InterPro) store doesn't cover.
+    const extras = await fetchGeneExtras(ddb);
+    if (state.activeGene !== gene || state.activeTab !== "Structures") return;
+    const dd = (extras && extras.domains) || [];
+    el.innerHTML = dd.length
+      ? `<h3>Protein domains <span style="${SUB}">— dictyBase / InterPro</span></h3>
+         <ul class="list">${dd.map((d) => `<li><strong>${escapeHtml(d.name || d.id)}</strong><span>${escapeHtml(d.db || "")}${d.interpro ? ` · ${escapeHtml(d.interpro)}` : ""}${d.start != null ? ` · ${d.start}–${d.end}` : ""}</span></li>`).join("")}</ul>`
+      : `<p class="notice muted">No domain annotations found${gene.uniprot ? ` for ${escapeHtml(gene.uniprot)}` : ""}.</p>`;
+    return;
+  }
 
   // Domains for the architecture bar: prefer InterPro's integrated,
   // non-redundant domain set (covers e.g. the myosin tail that Pfam omits),

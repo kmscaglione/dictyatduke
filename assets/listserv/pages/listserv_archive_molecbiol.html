@@ -1,0 +1,1277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Molecular Biology Techniques</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="molecbiol" id="molecbiol"></a>
+        </p>
+        <h1>
+            <a name="molecbiol" id="molecbiol"><b>Molecular Biology Techniques</b></a>
+        </h1>
+        <p>
+            <a href="listserv_archive_molecbiol.html#molecbiol_genomic"><b><font color="black">Genomic DNA Preparations</font></b></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic1">Genomic minipreps: Has anyone developed a simple, reliable protocol for performing PCR reactions on Dicty whole cell lysates?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic1"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic2">Genomic minipreps: Can you recommend a quick and easy method for preparing template DNA from a small sample of cells for doing PCR? I'm looking for a method suitable for screening transformants by PCR.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic3">Genomic minipreps: I need a reliable protocol for PCR of cell lysates for use in screening recombinants. Does anybody have a 'quick and dirty' way of preparing lysates for PCR?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic4">Genomic DNA preps: Has anyone had success preparing genomic DNA for Southerns using the DNeasy kit from Qiagen?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic4-1">Genomic DNA preps: I was wondering if anyone has advice on using BRL/Life's Trizol and Dnazol to isolate RNA/ genomic DNA from Dictyostelium?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic4-1"></a><br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_molecbiol.html#molecbiol_cloning"><b><font color="black">Cloning and PCR Amplification</font></b></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic5-2">Gel purification of DNA fragments</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic5-2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic5-1">I was wondering whether anyone has handy a protocol for isolating extrachromosomal plasmids from Dictyostelium cells.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic5-1"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic5">Cloning upstream gene sequences: I am interested to know if anyone has experience cloning unknown upstream Dicty genomic DNA using PCR based on a known cDNA sequence?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic5"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic6">Stability of Dicty DNA in bacteria: Does anyone have magical tricks to deal with these problems?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic6"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic14">Would anybody know of a high-fidelity polymerase that could PCR-amplify very AT-rich regions?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_molecbiol.html#molecbiol_rna"><b><font color="black">RNA extraction and Nothern blots</font></b></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic15">Problems with RNA extraction in AX4: Does anybody know that if there is any difference between AX2 and AX4?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic8">RNA extraction: I need some more details on extracting RNA from synchronized developing Dicty on filters.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic8"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic10">Does anyone have a preferred method for isolating polyA-RNA from vegetative cells?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic10"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic16">What is the best gene for standardizing Northern blot during Dicty vegetative stage?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic16"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic11">What is the best gene for standardize Northern blot during dicty development?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic11"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic12">What can be the internal control for RT-PCR to investigate mRNA expression level during dicty development?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic12"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic9">β-gal Northerns: I´m using β-gal as a reporter gene in Dicty and I get nice protein expression. Unfortunately I can hardly detect the mRNA in Northern blots.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic9"></a><br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_molecbiol.html#molecbiol_probes"><b><font color="black">Probes</font></b></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic13">Does anyone have a favorite non-isotopic method/kit for making probes?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic13"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_molecbiol.html#genomic7">I am looking for an 18s primer for dictyosteloids.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_molecbiol.html#genomic7"></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="molecbiol_genomic" id="molecbiol_genomic"></a>
+        </p>
+        <h2>
+            <a name="molecbiol_genomic" id="molecbiol_genomic"><b>Genomic DNA Preparations</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="genomic1" id="genomic1"></a> <b>Genomic minipreps: Has anyone developed a simple, reliable protocol for performing PCR reactions on Dicty whole cell lysates which they would be willing to share with us?</b><br>
+            <i>-Barrie Coukell, York University, Toronto, Canada, 24 Apr 1998</i><br>
+        </p>
+        <ul>
+            <li>I managed to clone parts of the genomic copy of the pdsA gene from Dicty whole cell lysates. How I did it was to resuspend some cells (rough estimate, about 100&nbsp;µl&nbsp;of a log phase culture) in 16.7 mM phosphate, pH 6.5, stick the tube in boiling water for 2 minutes, spin for 1 minute. I took 10µl of the supernatant for PCR reactions - seemed to work reliably then.<br>
+                <i>-Richard Sucgang, Baylor College of Medicine, Houston, TX, 24 Apr 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have had good success using a method suggested by Carl Saxe. We do it as follows. Does anybody have experience using this as a starting point for doing RT-PCR?
+                <ol>
+                    <li>1-2 x 10<sup>6</sup> vegetative (growing) cells from either shaking flask or bacterial colony were collected in microcentrifuge tube, and washed twice (10 sec x 13,000 g) with 0.5-1&nbsp;ml&nbsp;ddH<sub>2</sub>O.
+                    </li>
+                    <li>Cell pellet was suspended in 1 X PCR buffer with 1.5 mM MgCl<sub>2</sub> to 10<sup>4</sup> per&nbsp;µl. Add 10% NP-40 to final concentration of 0.5%. Then add 50 mg/ml proteinase K (Promega V302B) to final concentration of 0.05 mg/ml.
+                    </li>
+                    <li>Incubate at 56°C for 45 min allow protein degradation by proteinase K.
+                    </li>
+                    <li>Incubate at 95°C for 10 min to inactivate proteinase K.
+                    </li>
+                    <li>2-3&nbsp;µl&nbsp;of above sample was used for 15-20&nbsp;µl&nbsp;PCR reaction.
+                    </li>
+                    <li>10-20&nbsp;µl&nbsp;PCR product was assayed by 1% Seakem agarose gel.
+                    </li>
+                </ol><i>-Yunyan Zhang &amp; Chris West, University of Florida College of Medicine, Gainesville, Florida, 24 Apr 1998</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic2" id="genomic2"></a> <b>Can you recommend a quick and easy method for preparing template DNA from a small sample of cells for doing PCR ? I'm looking for a method suitable for screening transformants by PCR.</b><br>
+            <i>-Eugenio L. de Hostos, University of California, San Francisco, CA, 29 Jan 1999</i><br>
+        </p>
+        <ul>
+            <li>Much thanks to all who answered my request for info concerning PCR-ready genomic DNA minipreps. In summary the methods fell into three groups:<br>
+                <ul>
+                    <li>Boiling
+                    </li>
+                    <li>Detergent / Proteinase K
+                    </li>
+                    <li>NaOH Extraction ( in Biotechniques)
+                    </li>
+                </ul>Detergent/Prot K seems to be the most reliable method. Boiling was variable and NaOH extraction was negative.<br>
+                The no frills method I have settled on is:<br>
+                Resuspend cell pellet (about 10µl of cell mass, unwashed OK) in 25 ul of TE + 0.3% Tween + 60mg/&nbsp;ml&nbsp;Prot K (in PCR machine); 45 min @ 56°C 15 min @ 95°C use 1- 2&nbsp;µl&nbsp;per 25&nbsp;µl&nbsp;PCR reaction<br>
+                <i>-Thanks, Geno, 16 Feb 1999</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic3" id="genomic3"></a> <b>I need a reliable protocol for PCR of cell lysates for use in screening recombinants. Does anybody have a 'quick and dirty' way of preparing lysates for PCR?</b><br>
+            <i>-Dana Mahadeo, 17 Nov 1999</i><br>
+        </p>
+        <ul>
+            <li>We routinely screen k/o with cell PCR. From initial colonies, we grow them in 96 well plates roughly 200µl, and when we can see cells at bottom, we resuspend and use 50µl for PCR. Just spin them down and do PCR using hot start. Often times, the absence of an endogeneous band indicates positives. Then, we make genomic DNA for PCR and genomic southern for more rigorous analysis.<br>
+                <i>-Kim, Leung, NIDDK, 17 Nov 1999</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic4" id="genomic4"></a> <b>Has anyone had success preparing genomic DNA for Southerns using the DNeasy kit from Qiagen? We have tried it a few different ways, but keep getting extremely low yields.</b><br>
+            <i>-Janet Smith, Boston Biomedical Research Institute, 16 Mar 2001</i><br>
+        </p>
+        <ul>
+            <li>I have used both the Qiagen and Invitrogens Easy DNA kit. Neither of them were impressive in terms of yield even after many tinkerings with the protocols. I have had success however using GibcoBRL's DNazol. It is quick and easy with respectable yields. However, the DNA has to be dissolved in 8mM NaOH and then pH adjusted with 1M HEPES. For some reason, 1x TE will not dissolve the genomic DNA. The preps were clean, digested with enzymes quite readily and worked well for Southerns.<br>
+                <i>-Michael Myre, University of Toronto, Mississauga, ON, Canada, 16 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>My experiences with DNeasy were similar, working with both Dicty and yeast: low yields but clean nucleic acids.<br>
+                <i>-Eugenio L. de Hostos, Exelixis Inc., 16 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I've just tried DNAZol for the first time and it seemed dandy. DNA cut well (with EcoRI at least) with nicely discernible EtBr stained bands from about 10<sup>6</sup> cells or more. I dissolved some final DNA pellets, as they suggested, in 8 mM NaOH but others simply in TE (pellets from 1-2 10<sup>7</sup> cells). Although DNA took a few minutes longer to solubilize in TE, it dissolved well. I did take the precaution of doing the two centrifugations they list as optional, given the glycogen present in axenically grown cells. Perhaps even these steps are unnecessary. All in all, it struck me as a good and simple method.<br>
+                <i>-David Ratner, Amherst College, Amherst, MA, 3 Sep 2003</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic4-1" id="genomic4-1"></a> <b>I was wondering if anyone has advice on using BRL/Life's Trizol and Dnazol to isolate RNA/ genomic DNA from Dictyostelium? I have used Dnazol, followed the standard protocol, and obtained some genomic DNA, though it was never very satisfactory. A large insoluble pellet remains after lysis, and I have never obtained DNA that could be spooled from the tube. How should the protocol be modified? Are Dicty considered polysaccharide-rich; should steps be taken to reduce polysaccharides such as are used for plants and some mammalian tissues such as liver? I have not yet used Trizol.</b><br>
+            <i>-Adrian Ozinsky, U. Washington, 12 Jan 1999</i><br>
+        </p>
+        <ul>
+            <li style="list-style: none">Thank you for all the useful responses about the use of Dnazol (for genomic DNA) and Trizol (for RNA) with Dicty. In summary, Trizol gets resounding support for the isolation of quality RNA. Dnazol does not seem to work that well in Dicty. Several other labs found , as I found, that one can get sufficient genomic DNA for PCR, but not enough for Southerns. The huge pellet that remains after lysis probably is polysaccharides. Some suggestions to remove this were offered. I have copied responses below.<br>
+                Regards, <i>-Adrian, 14 Jan 1999</i><br>
+                <br>
+            </li>
+            <li>Haven't tried Dnazol, but you can be pretty sure that the ppt in polysaccharide. And yes, Dicty are quite polysacch rich. Hope you have luck,<br>
+                <i>-Karl Saxe</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We've been using Trizol for a few years now, it works very well. Our protocol is as follows:<br>
+                RNA preparation<br>
+                <ol>
+                    <li>collect 10<sup>8</sup> cells (2 filters) in 1.5&nbsp;ml&nbsp;eppendorf test tube.
+                    </li>
+                    <li>resuspend in 1&nbsp;ml&nbsp;TRIzol reagent (BRL), vortex, incubate 5' at room temp. Lysates can be stored at -70°C for several months.
+                    </li>
+                    <li>add 200&nbsp;µl&nbsp;chloroform (straight, no isoamyl), vortex, incubate 3' at room temp.<br>
+                    </li>
+                    <li>centrifuge 15' at 12K RPM.
+                    </li>
+                    <li>transfer upper (aqueous) phase to fresh test tube (about 600&nbsp;µl).
+                    </li>
+                    <li>add 500&nbsp;µl&nbsp;isopropanol, incubate 10' at room temp.
+                    </li>
+                    <li>centrifuge 10' at 14K RPM.
+                    </li>
+                    <li>wash pellet with 1&nbsp;ml&nbsp;70% ethanol.
+                    </li>
+                    <li>centrifuge 5' at 14K RPM.
+                    </li>
+                    <li>air dry (don't use vacuum,it will be hard to dissolve).
+                    </li>
+                    <li>dissolve in 100&nbsp;µl&nbsp;1X MOPS (or whatever).
+                    </li>
+                    <li>determine RNA concentration (42&nbsp;µg/ml = 1 OD at 260 nm).
+                    </li>
+                </ol><i>-Danny Fuller, UCSD</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Just thought I'd put in a good word about Trizol-I have used it to isolate Dicty total RNA with great yields and purity. I use the Life Trizol protocol, treating the Dicty as "tissue" for purposes of homogenization (i.e. resuspending in 1&nbsp;ml&nbsp;Trizol per 100 mg of cell pellet, and simply resuspending with a pipette tip to lyse.) 8x10<sup>8</sup> cells generated more than 3 mg of RNA. I personally followed it up with Clontech's mRNA separator kit and got a great mRNA template for cDNA production... Good luck<br>
+                <i>-Nira Pollock, UCSF</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We use the BRL DNazol reagent for what we call "genomic DNA minipreps" from Dictys. The quality was satisfactory for PCR; however, we have never tried any digests (e.g. for Southerns), as the quantities we obtain are too small. In our protocol, we dissolve the cell pellet from a confluent 9 cm-dish (2x10<sup>7</sup> cells?) in 500&nbsp;µl&nbsp;DNAzol; this yields a small pellet of insoluble matter - maybe your ratio is different, as you observe a large pellet after this step? The amount of DNA is certainly too small to be spooled; in the original protocol, they suggest to centrifuge for smaller quantities, and that is what we do (4000 rpm in an Eppifuge at RT). You are right that Dictys are polysaccharide-rich; we therefore wash the DNA pellet with 4M LiCl, which is also used to remove glycogen from liver tissue, I believe. As I said for the yield, one such prep gives enough material for 20 PCR reactions (we never actually determined the exact amount, but I estimate it would be a few&nbsp;µg). Tell me if you are interested in the detailed protocol. For large preps, we still follow the classical protocol involving phenol/chloroform extration etc. In case you receive an answer from people who upscaled the whole DNAzol thing, I in turn would appreciate if you shared it with me! Regards,<br>
+                <i>-Heidrun Geissler, Heidelberg, Germany</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I generally use TRIZOL to isolate RNA from Dicty (standard protocol is good); RNA are OK for Northen blot but I've never try other experiment with these RNA. To isolate DNA I use another protocol from C Chang with some modifications: it's a bit time consuming (more than trizol!) but it works ! If you are interested in, please don't hesitate to contact me Sincerely yours,<br>
+                <i>-Myriam Adam, Marseille, France</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I've never used Trizol or Dnazol. We have a nice cheap simple genomic prep which works fine. For RNA, Catrimox was pretty good - see <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2813">Insall et al 1996</a> or ask for a protocol if you want one. But then maybe you wanted to use Trizol or Dnazol...<br>
+                <i>-Robert Insall</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I've never used Dnazol but I've used Trizol to extract RNA and it was all right. I used 1ml of reagent for 10<sup>7</sup> cells. Cheers,<br>
+                <i>-Jean-Pierre Levraud Marseille, France</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I used either trizol and rnazol for some experiments two years ago to extract RNA from dicty cells (veg. &amp; diff. cells). Both worked equally well for this purpose: no need to modify the protocol. Unfortunatly I have no experience using trizol to extract DNA in dicty cells. I tried this year the qiaamp tissue kit from qiagen to extract dicty DNA, with no success. I also tried this kit on a prep of dicty nucleus with the same result. Hope it can help anyway! Regards,<br>
+                <i>-Sophie Cornillon, Geneve, Switzerland</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I use trizol (from sigma), and it has always given me good quality RNA, although extraction of DNA by this method gives me a very poor yield and that insoluble pellet. But then there are easier ways of isolating DNA from dicty cells. Best wishes<br>
+                <i>-J.K Jaiswal</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have used DNazol successfully, but we modified it, upon advice from the company (we used DNazol from Molecular Research Center tel: 1-888-841-0900): yes Dicty never spools. So we follow the protocol up to the 1st Ethanol precipitation. From then:
+                <ol>
+                    <li>spin 10 min. to pellet DNA
+                    </li>
+                    <li>resuspend in 50-100&nbsp;µl&nbsp;TE buffer
+                    </li>
+                    <li>Add RNase for 5-10 min. (from 10 mg/ml, boiled)
+                    </li>
+                    <li>Prepare DNazol Wash Solution*: 1&nbsp;ml&nbsp;DNazol + 0.5&nbsp;ml&nbsp;Ethanol
+                    </li>
+                    <li>Add 1&nbsp;ml&nbsp;to RNase treated Sample
+                    </li>
+                    <li>Invert few times, and let sit for 5 min.
+                    </li>
+                    <li>Spin 10 mim.
+                    </li>
+                    <li>wash x2 with 95% ethanol
+                    </li>
+                    <li>Resuspend in NaOH
+                    </li>
+                </ol>* DNazol wash solution will solubilize the RNase and the degraded RNA, and both will be eliminated in the wash.<br>
+                Hope this helps<br>
+                <i>-Hannah Alexander, Missouri</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I've also been using DNAzol for DNA isolation from Dicty and I find there is some insoluble material and the DNA is not high quality. So, I usually end up centrifuging to remove the insoluble material, doing an RNase A digestion followed by a phenol/chloroform cleanup and ethanol precipitation. I've never used Trizol but I have used a very similar product, RNA STAT-60 (Tel-Test, Inc) for RNA isolation, which works well. Qiagen's RNeasy Mini Kit works nicely for quick RNA isolation. Hope this helps.<br>
+                <i>-Pam Postlethwait, U. Chicago</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>This response is from tech services at BRL/Life who make Dnazol and Trizol.<br>
+                We have not tried Trizol or DNAzol with Dictyostelium, but here are some general guidlines for using Trizol with mold: Mold (e.g., aspergillus): Freeze mold in liquid nitrogen, add Trizol and grind to powder with mortar and pestle. If customer is not planning to isolate DNA from sample, pre- centrifugation after homogenization should remove extracellular material. If RNA solution is very viscous (indicating "junk" in sample), try reprecipitating with high salt isopropanol precipitation. The high salt isopropanol precipitation helps remove polysaccharides and is as follows: Add to the aqueous phase 0.25&nbsp;ml&nbsp;of isopropanol followed by 0.25 ml of a high salt precipitation solution (0.8 M sodium citrate and 1.2 M NaCl) per 1&nbsp;ml&nbsp;of TRIzol used for homogenization. Mix the resulting solution, centrifuge, and proceed with isolation as described in the protocol. The modified precipitation effectively precipitates RNA and maintains proteoglycans and polysaccharides in a soluble form. This procedure should ONLY be used if the sample is known to have a high content of proteoglycans and polysaccharides. As far as DNAzol goes, I think the same recommendation for freezing and grinding may help and perhaps plant DNAzol would give better results. I will send you a plant DNAzol sample so you can try it and see if it gives better results. If you could let me know how things work out, I'd appreciate it. Best Regards,<br>
+                <i>-Tech Services - Mol. Bio (USA) [MOLBIO@lifetech.com] Liz Horton Technical Services</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="molecbiol_cloning" id="molecbiol_cloning"></a>
+        </p>
+        <h2>
+            <a name="molecbiol_cloning" id="molecbiol_cloning"><b>Cloning and PCR Amplification</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="genomic5-2" id="genomic5-2"></a> <b>Gel purification of DNA fragments: In the last weeks, many people indicated that they have cloning problems using Dicty DNA. In our laboratory, we had also a lot of problems to clone Dicty DNA. We finally succeeded to clone by skipping the standard gel purification step. Now we only do a column DNA purification after DNA digestion. It is working but there is limitation to do that (for example: multiple undesired sub-products are obtained after ligation). We want to retry gel purification for DNA cloning. Do someone know the critical parameters that we should consider to have better results using gel purification for cloning Dicty DNA? Thanks in advance for the answers!</b><br>
+            <i>-Steve Charette, Centre médical universitaire, Université de Genève, Switzerland, 30 Aug 2004</i><br>
+        </p>
+        <ul>
+            <li>To all of you who met the problem when isolating DNA fragments from agarose gels. We met the problem when isolating DNA-inverted repeats from gel and described the reason in: Prevorovsky M, Puta F. A/T-rich inverted DNA repeats are destabilized by chaotrope-containing buffer during purification using silica gel membrane technology. Biotechniques. 2003 Oct;35(4):698-700, 702. To those of you who have no access to the paper I can sent reprint file on request. With regards,<br>
+                <i>-Frantisek Puta, 6 Sept 2004</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic5-1" id="genomic5-1"></a> <b>I was wondering whether anyone has handy a protocol for isolating extrachromosomal plasmids from Dictyostelium cells. I have searched all over for one and haven't been able to get hold of one yet. Can it be done? Any help would be greatly appreciated. Thankx</b><br>
+            <i>-Paul Smith, Deakin University, Melbourne, Australia, 16 Jun 2004</i><br>
+        </p>
+        <ul>
+            <li>You will find a protocol for small scale isolation of plasmid DNA from Dicty cells in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2754">Hughes and Welker 1988</a>. That is,
+                <ol>
+                    <li>Suspend a loopful of vegetative cells from a 2 cm colony in 1&nbsp;ml&nbsp;of cold, sterile water and centrifuge for 1 s in a microfuge.
+                    </li>
+                    <li>Resuspend the pellet in 1&nbsp;ml&nbsp;of NP40 lysis buffer (10 mM Mg-acetate, 10 mM NaCl, 30 mM HEPES (pH7.5), 10% sucrose, 2% NP-40)
+                    </li>
+                    <li>Centrifuge for 30 s.
+                    </li>
+                    <li>Resuspend the nuclei in 150 microliters of TE.
+                    </li>
+                    <li>Add 200 microliters of alkaline SDS (0.2M NaOH, 1% SDS) and incubate for 15 min on ice.
+                    </li>
+                    <li>Add 150 microliters of 3M Na-acetate (pH 4.8) and incubate for 15 min on ice.
+                    </li>
+                    <li>Centrifuge for 5 min.
+                    </li>
+                    <li>Recover 450 microliters of the supernatant and precipitate with ethanol.
+                    </li>
+                </ol>Maybe it can be applied to larger scale.<br>
+                <i>-Takahiro Morio, University of Tsukuba, Japan, 17 Jun 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The Robinson laboratory regularly uses the Wizard Plus miniprep kit from Promega to isolate plasmids from Dicty. Plasmids recovered from Dicty are then transformed into the Stbl2 cells (can be obtained from Invitrogen) bacterial strain (very low rates of gene recombination). Finally, minipreps of the transformed bacteria are done to recover more useful quantities of DNA. Hope that helps,<br>
+                <i>-Elizabeth Reichl, Johns Hopkins University, MD, 17 Jun 2004</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic5" id="genomic5"></a> <b>I am interested to know if anyone has experience cloning unknown upstream Dicty genomic DNA using PCR based on a known cDNA sequence. Some methods available in the literature (successfully used on mammalian DNA) uses panhandle (or variants of) PCR or the more general ligation mediated PCR. One can imagine potential problems with AT rich Dicty DNA, especially if attempting panhandle PCR.</b><br>
+            <i>-James Lim, University of British Columbia, BC, Canada, 10 Oct 1997</i><br>
+            <br>
+            This a compilation of the replies I received:
+        </p>
+        <ul>
+            <li>We've done exactly what you have described - without much difficulty in Dictyostelium. <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3395">Koonce, M.P. 1997</a>.<br>
+                <i>-MP Koonce</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have worked out a procedure that has been successful in several cases in our lab. See: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6924">Williamson and Rutherford 1994</a>.<br>
+                <i>-Charlie Rutherford</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have had success with using inverse PCR to clone upstream and downstream sequences from known dicty sequences.<br>
+                <i>-Kelley Rogers</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have successfully used both inverse and RACE PCR. The problem with inverse PCR was mainly finding an enzyme that would cut close enough to yield an amplifiable product. With RACE the difficulties probably lie in the efficiency of getting full length cDNA template from an anchored primer at the 3' end when one is looking for the 5' end of the gene. As with everything sometimes it seems to work well, others not so well.<br>
+                <i>-Paul Fisher</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have experience in using inverse PCR to obtain the control region of a dicty gene based on cDNA sequence. This is published, albeit with scant detail on methods, in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1871">Freeland et al 1996</a>.<br>
+                <i>-Tom Freeland, Walsh University, North Canton, OH</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have not done this but have been successful in getting upstream sequences by inserting a vector into the gene as one would for a KO but constructing it with sites so that one can excise the upstream sequences in the same way one would clone out a REMI. For best results, one first maps the upstream sequences and then constructs the KO vector to contain an appropriate linker to do the excision.<br>
+                <i>-Rick Firtel</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic14" id="genomic14"></a> <b>Would anybody know of a high-fidelity polymerase that could PCR-amplify very AT-rich regions? Any advice, comments or direction would be greatly appreciated!</b><br>
+            <i>-Myriam Adam, 12 Nov 2002</i><br>
+        </p>
+        <ul>
+            <li>Hi, I have been using this program and Sigma JumpStart REDAccuTaq DNA polymerase(Cat. No. D1313) on an A&amp;B GeneAmp PCR 2700 machine.
+                <ul>
+                    <li>94°C, 2 mins
+                    </li>
+                    <li>95°C, 45 secs
+                    </li>
+                    <li>52-62°C, 45 secs
+                    </li>
+                    <li>65°C, 1 min
+                    </li>
+                    <li>68°C, 1.5 mins
+                    </li>
+                    <li>65°C, 1 min
+                    </li>
+                    <li>68°C, 1.5 mins
+                    </li>
+                    <li>65°C, 1 min
+                    </li>
+                    <li>68°C, 1.5 mins
+                    </li>
+                    <li>Cycle back to 95°C, 40 cycles,
+                    </li>
+                    <li>68°C, 7 mins,
+                    </li>
+                    <li>4°C 'til I come back.
+                    </li>
+                </ul>My target is very AT rich. I had some luck getting some fragments. The rationale is that 65°C helps AT-rich region with efficiency while the recommendated elongation temp. is fairly close at 68°. The primers, which worked, range from 20mer to 37mers. Still a pain in the neck dealing with this problem, I can only get some to work. Good luck!<br>
+                <i>-Linnan Tang, Johns Hopkins University, 12 Nov 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have encountered this problem when amplifying genes using genomic DNA as the template. The intended target (approx. 1.5 kbp) had an intron of ~ 150 bp's. Knowing that dicty. introns are pretty much only A's and T's, I tried adjusting a number of the PCR parameters. I use Roche's Expand High Fidelity Taq/Pwo enzyme mix, and a PE GeneAmp 9700 thermocycler. I got the reaction to work after adjusting the dNTP concentrations. I used increased ratios of AT to GC (ie., 1:1, 1.5:1, up to 3:1). Also, the reactions were always hot start, since the varying concentrations of dNTPs likely affect your primer pair's annealing temperatures. The rationale for this approach was based on the idea that exponential amplification of highly AT-rich templates was exhausting the supply of available A and T dNTPs. Hope this helps.<br>
+                <i>-Michael Myre, University of Toronto at Mississauga, ON, Canada, 12 Nov 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have been using Pfu polymerase to amplify approx. 2kb genes using genomoc DNA as template. I had luck to get my target product. My program as follows:
+                <ul>
+                    <li>94°C, 5 mins
+                    </li>
+                    <li>94°C, 1min
+                    </li>
+                    <li>58°C, 2mins
+                    </li>
+                    <li>68°C, 4 min
+                    </li>
+                    <li>Cycle back to 94°C, 40 cycles
+                    </li>
+                    <li>68°C, 10 mins
+                    </li>
+                    <li>4°C indefinate
+                    </li>
+                </ul>Hopfully this will help you. Good luck<br>
+                <i>-Junxia Min, University of Missouri Columbia, MO, 12 Nov 2002</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic6" id="genomic6"></a> <b>Stability of Dicty DNA in bacteria: We seem to encounter often problems when handling dictyo DNA. The most obvious subclonings can be a challenge, some plasmids are very unstable in bacteria. Does anyone have magical tricks to deal with these problems? Thanks,</b><br>
+            <i>-Pierre Cosson, Centre Medical Universitaire, Geneva, Switzerland, 30 May 2000</i><br>
+        </p>
+        <ul>
+            <li>We use JC11451 a recB/C mutant. RecB/C and sbcB are involved in a recA-independent recombination pathway that is a major cause of the problems. The same pathway recircularizes linear plasmid multimers such as are found in Dicty plasmid insertions into the genome. This allows efficient recovery of plasmid from such insertions and also estimation of copy number and detection of rearrangements. Beware that for both recB/C and sbcB are mutant then another recombination pathway (recE-dependent) becomes active and the problems go back to wildtype levels. The beneficial effect of these mutations in reducing unwanted recombination events is 3-4 log. I believe that the E. coli SURE strain is also deficient in these recA-independent recombinations which are responsible for the difficulties... so it should be a good host strain as well. However we have not tested it. The effect of these recombination pathways on plasmid multimer recircularization is published in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=274">Barth et al. 1996</a> Plasmid 36, 86.<br>
+                <i>-Paul Fisher, 30 May 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Over the years we have tried a number of different Rec mutant strains, sure, etc. We've found that for plasmids that we know are unstable that this does not help in our hands (our experience). We tend to use old=-fashion MC1061 and commercial high efficiency strains for cloning REMI DNAs.<br>
+                <i>-Rick Firtel, UCSD, 30 May 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We had some bad experiences with stability in the SURE strain of E. coli. Our stability problems largely disappeared using Dh5a and when in doubt lower incubation tempertures. Cheers,<br>
+                <i>-Martin Slade, Macquarie University, Sydney, Australia, 31 May 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Following our question about stability of plasmids containing Dictyo DNA we got quite a few answers. This is a summary. We will stick to SURE strains, but the best choice might depend on the exact nature of the problem.<br>
+                Apparently many people have experienced problems when handling dictyo DNA. The classical solution seems to be a better choice of bacteria although there is no consensus as to what the best bacteria is, if any. Paul Fischer recommends JC11451, a sbcB strain, and suggests that SURE bacteria should be the same. The effect of these recombination pathways on plasmid multimer recircularization is published in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=274">Barth et al. 1996</a>. In our hands indeed (P. Cosson), the SURE bacteria seemed a better choice than DH5 or DH10B. Chinten James Lim also reports problems with DH5 and prefers XL1 Blue MRF'. However Martin Slade reports problems with SURE and prefers DH5. Doug Robinson recommends STBL2 bacteria. Finally Rick Firtel says that they have tested a number of bacteria and that they are all the same. They use MC1061.<br>
+                Lower incubation temperatures are recommended by Martin Slade and Chinten James Lim when dealing with unstable, particularly large plasmids.<br>
+                It might be that part of the problem is that we are not all talking about the same thing. As for ourselves we have experienced distinct problems :<br>
+                <ol>
+                    <li>Easy constructs (classical subcloning) are unusually difficult to obtain. Is this dependent on the strain of bacteria ?
+                    </li>
+                    <li>When introducing DNA in a bacteria there can be deletions, but then the plasmid seems stable. This is classical with REMI rescue. In our hands SURE bacteria are much preferable in this case.
+                    </li>
+                    <li>Some plasmids already present in a bacteria tend to delete some sequence.
+                    </li>
+                    <li style="list-style: none">This is not very common and we observed it mostly with big plasmids, and even in SURE bacteria. Maybe that's where lower temperature would help?
+                    </li>
+                </ol>
+                <ul>
+                    <li>SURE 2 : recB/C/J, sbcC (recA-independent recombination, the combination of recB/C and sbcB activates recE pathway, is it the case here ?) mcrA/CB (methylation), uvrC (UV repair), umuC (SOS system), hsdSMR (restriction systems)
+                    </li>
+                    <li>XL1 Blue : recA, hsdR many variants
+                    </li>
+                    <li>XL1 Blue MRF' : recA, mcrA/CB, hsdSMR
+                    </li>
+                    <li>JC11451 : sbcB
+                    </li>
+                    <li>STBL2 : recA, mcrA/CB
+                    </li>
+                    <li>DH5α : recA, hsdR, deoR (allows efficient replication of big plasmids)
+                    </li>
+                    <li>MC1061 : mcrB, hsdR
+                    </li>
+                </ul>Note : not all of these descriptions are complete<br>
+                <i>-Pierre Cosson, Centre Medical Universitaire, Geneva, Switzerland, 8 Jun 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Our experiences seem to match Pierre's very well. I would add that when deletions do occur in already established plasmids it is frequently associated with a duplicated sequence (or something approaching it?). We have not tried Martin Slade's low temperature trick, but I seem to remember Wolfgang Nellen recommending this to me years ago as well. Cheers,<br>
+                <i>-Paul Fisher, 8 Jun 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Just a brief note to plasmid stability: yes, lowering temperature works sometimes in our hands. and here is another observation which may be of interest: we tried to clone a difficult piece of DNA into MC1061 and into DH5α. We got almost nothing out of DH5α and a reasonable number of clones in MC1061 - but they were all rearranged and useless. I leave the interpretation to you! regards<br>
+                <i>-Wolfgang Nellen, Kassel-University, Germany, 8 Jun 2000</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="molecbiol_rna" id="molecbiol_rna"></a>
+        </p>
+        <h2>
+            <a name="molecbiol_rna" id="molecbiol_rna"><b>RNA extraction and Nothern blots</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="genomic15" id="genomic15"></a> <b>Problems with RNA extraction in AX4: Does anybody know that if there is any difference between AX2 and AX4 cell strains? I use the same mini RNAprep kit from Qiagen to isolate RNA from AX2 and AX4. It works well for AX2, but not for AX4. The problem might be due to the lysis of plasma membrane. Is AX4 plasma membrane more resistant to lysis buffer which contains Nonidet P-40 as detergent?</b><br>
+            <i>-Jianbo Na, 25 April 2005</i><br>
+        </p>
+        <ul>
+            <li>The history of the origin of the axenic strains is found at: <a href="http://www.dictybase.org/strain_history.htm">http://www.dictybase.org/strain_history.htm</a>. As far as differences in susceptibility to lysis by detergents is concerned: no idea why that may be true.<br>
+                <i>-Jakob Franke, Columbia University</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>If it's of any help, we routinely isolate RNA from Ax4 with Trizol and get very high yields.<br>
+                <i>-Jan Kirsten, Vanderbilt University</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic8" id="genomic8"></a> <b>RNA extraction: I need some more details on extracting RNA from synchronized developing Dicty on filters. I would like to look at the expression of a particular Dictyostelium gene during the developmental cycle. I am planning on extracting RNA at different stages of development and performing a Northern Blot. Looking at the literature, I've found several protocols. However, I need some more details on extracting RNA from synchronized developing Dicty on filters. Can anyone direct me to a protocol with specifics or does anyone have a protocol they can send me?</b><br>
+            <i>-Cynthia K. Damer, Vassar College, 25 May 2001</i><br>
+        </p>
+        <ul>
+            <li>Here is what has worked well for us. We get nice westerns and RACE results with this RNA.<br>
+                <ol>
+                    <li>Set up dishes with 10<sup>8</sup> cells on 42.5-mm Whatman No. 50 filters. This is described very clearly by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=9012">Sussman 1987</a> on pp.20-21 of Methods in Cell Biology, Vol. 28.
+                    </li>
+                    <li>At the desired time intervals (we did every 4 hours) remove the No. 50 filter (which has the cells attached to it) and place it in a 14 ml disposable "click top" tube containing 10&nbsp;ml&nbsp;Trizol Reagent (Gibco-BRL).
+                    </li>
+                    <li>Gently agitate for 5 min so that the cells dissolve, and then remove the filter with tweezers.
+                    </li>
+                    <li>Proceed with the Trizol protocol from the manufacturer. Briefly, add 2 ml chloroform, shake the tubes vigorously for 15 s, and spin 12,000 x g for 15 m at 4°C. Transfer the upper aqueous phase to a fresh tube, and add 5 ml isopropanol, mix and incubate at RT for 10 m, and spin at 12,000 x g for 10 m at 4°C. Wash the pellet with 10&nbsp;ml&nbsp;75% EtOH, and allow the pellet to air dry for 10 min.
+                    </li>
+                    <li>Redissolve the pellet in 800µl water. Pipet up and down and incubate at 60°C to get it to dissolve.
+                    </li>
+                    <li>Make a 1:100 dilution and quantitate by UV absorbance. Yield decreases during development - 1.12 mg at 0 hrs; 0.45 mg at 24 hr.
+                    </li>
+                </ol>Good luck!<br>
+                <i>-Janet Smith, Boston Biomedical Research Institute, 5 Jun 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic10" id="genomic10"></a> <b>Does anyone have a preferred method for isolating polyA-RNA from vegetative cells? Any responses will be appreciated. Thanks,</b><br>
+            <i>-Denis A. Larochelle, Clark University, Worcester, MA, 12 Jan 2001</i><br>
+        </p>
+        <ul>
+            <li>If you already have total RNA, the mRNA oligotex kit (Qiagen) is GREAT! In my hands it has been fast, easy and no-fail. [For making total RNA I use a standard SDS/Proteinase K prep. coupled with Lithium Chloride precipitation to remove DNA and carbohydrate - works like a charm]<br>
+                <i>-Anne Hitt, Oakland University, Rochester, MI, 12 Jan 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Alternatively, I have found that the Trizol reagent total mRNA protocol followed by the oligotex kit works well also.<br>
+                <i>-P. C. LaRosa, 12 Jan 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic16" id="genomic16"></a> <b>What is the best gene for standardizing Northern blot during Dicty vegetative stage? I am looking for a good normalizing gene for Northern blot analysis, but it CANNOT be actin, nor actinin, nor ribosomal RNA. I read something about that on the List Serv Archive, but it was regarding to developmental stages. Have you got any idea? And,in case, could you send me that probe? Thanks a lot,</b><br>
+            <i>-Alessio Sillo, University of Torino, May 31, 2006</i><br>
+        </p>
+        <ul>
+            <li>Dear Alession, we have been using a cDNA of histone H3a (dictybase <a href="/db/cgi-bin/gene_page.pl?dictybaseid=DDB0191157">DDB0191157</a>). It is strongly expressed and easy to detect. Good luck<br>
+                <i>-Thomas Winckler, University Jena</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic11" id="genomic11"></a> <b>What is the best gene for standardize Northern blot during dicty development?</b><br>
+            <i>-Fan Jiang, Hunter College, NY</i><br>
+        </p>
+        <ul>
+            <li>This is a good question! The usual standard seems to be total actin mRNA but there are clearly some (minor) changes in abundance during development. The situation with rRNA is similar. As far as I know, nobody cared to standardize a standard. In practice, however, this does not really matter since both actin and rRNA are pretty close to equal expression levels. I would bet that more exact standardization of quantification is rather limited by other factors (differential stability of RNA during the prep, minor differences in growth and developmental conditions etc.). I assume that the community has more or less agreed on actin and rRNA as standards. Since for rRNA you need not even hybridize, this is definitely the easier way. In my opinion, special care should be taken when using drugs (on the cells, not the researcher!) since the effects on the "standards" are mostly not well defined. I have, however, no good suggestion how to solve this problem.<br>
+                <i>-Wolfgang Nellen, Kassel-University, Germany, 1 May 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic12" id="genomic12"></a> <b>What can be the internal control for RT-PCR to investigate mRNA expression level during dicty development?</b><br>
+            <i>-Chikako Kitayama, National Institute of Advanced Industrial Science and Technology, Japan, 15 Apr 2002</i><br>
+        </p>
+        <ul>
+            <li>Since I received several e-mails wondering same question with me, I thought it would be good idea to put the answers to the mailing list. Because these answers were to my personal e-mail address, I deleted the signatures of kind senders, just in case. Thank you for those who replied to me.<br>
+                <i>- Chikako Kitayama, 16 Apr 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have used the IG7 (<a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=rnlA">rnlA</a>) message as an internal control for RT-PCR. Below is the full sequence, the primers I used were :<br>
+                ttacatttattagacccgaaaccaagcg (forward primer bp 625-652)<br>
+                ttccctttagacctatggaccttagcg (reverse primer bp 992-966)<br>
+                annealing temp for PCR used was 57*C However you will need to use temperature matched primers to your other message so these exact primers may not work will for you.
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Is this real-time or rev. transcriptase? You can use actin for reverse transcriptase.
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We use the H7 (<a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=cinD">cinD</a>) gene which is constitutively expressed at the same level during growth and development. The primers are:<br>
+                H7Q1 (5' primer) ATTAGGTGGTGCCAATC<br>
+                H7Q2 (3' primer) GTGGGCTCTTAATTGAAC; fragment size 330 bp.<br>
+                Reference is in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=7246">Dev. Biol. 196, 171-183 (1998)</a>.
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic9" id="genomic9"></a> <b>β-gal Northerns: I´m using β-gal as a reporter gene in Dicty and I get nice protein expression. Unfortunately I can hardly detect the mRNA in Northern blots. β-gal RT-PCR works fine and control-hybridizations with other probes also give nice results. Has anybody encountered and solved this problem?</b><br>
+            <i>-Henrik Martens, Kassel University, Germany, 21 Sep 2000</i><br>
+        </p>
+        <ul>
+            <li>Have a look at:<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1333">Detterbeck et al 1994</a>. I remember that the blots were not as easy as they could have been. Low expression and relatively high background with the probe. Cheers,<br>
+                <i>-Birgit Wetterauer, Zoologisches Institut der LMU, Muenchen, Germany, 21 Sep 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have analyzed by Northern many, many samples of Dicty RNA containing lacZ message. More often than not they run as smears. Occasionally we see bands around 4 kb followed by ugly smears. We get reasonable data using dot-blot analysis for quantification (see <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=438">Bonfils et al 1999</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6378">Tsang et al 1996</a>). Good luck,<br>
+                <i>-Adrian Tsang, Concordia University, Montreal, Canada, 21 Sep 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Our experience has varied with the particular β-gal fusion. With a β-gal fusion to a spore coat protein gene and to the D11 (AmpA) prestalk gene where we have included between 7 to 100 aa of the original protein coding region 5' of the β-gal fusion we have had very good northerns with good β-gal mRNA bands which showed the same time course etc as the endogenous mRNA. But when we made β-gal fusions to the ribosomal protein gene promoters, 5' non-translated leaders and the codon for the 1st Met we had barely detectable mRNAs on northerns although very strong staining for β-gal in situ (within 5 min.). My guess is that it depends on the particular gene and where in the gene you make the fusion. My sympathy and good luck,<br>
+                <i>-Daphne Blumberg, University of Maryland, Baltimore County, 21 Sep 2000</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="molecbiol_probe" id="molecbiol_probe"></a>
+        </p>
+        <h2>
+            <a name="molecbiol_probe" id="molecbiol_probe"><b>Probes</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="genomic13" id="genomic13"></a> <b>Does anyone have a favorite non-isotopic method/kit for making probes? Regards,</b><br>
+            <i>- Anne Hitt, Oakland University Rochester, MI, 11 Jun 2002</i><br>
+        </p>
+        <ul>
+            <li style="list-style: none">I have received several messages about non-isotopic labeling kits. A summary of the information is below:
+            </li>
+            <li>The DIG kits from Boehringer Mannheim/Roche appears to be the favorite when coupled with the Alkaline phosphatase detection system, and highly suggest the use of the DIG-EasyHyb for the best results. One group mentioned the use of High Prime kit and another mentioned that the DIG PCR products worked very well. Five groups have used the DIG system from Boehringer Mannheim/Roche, of these, one group obtained variable results and has returned to 32P.
+            </li>
+            <li>One group used the ECL direct nucleic acid labeling kit from Amersham/Pharmacia.
+            </li>
+            <li>One group used the North2South kit from Pierce---from looking at the catalog information this kit appears to require less processing time than the DIG kit; they claim it is as sensitive and it may be cheaper than the DIG system.
+            </li>
+            <li style="list-style: none">Thanks to everyone who weighed in on the different kits!<br>
+                <i>- Anne Hitt, 13 Jun 2002</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="genomic7" id="genomic7"></a> <b>I am looking for an 18s primer for dictyosteloids. Please let me know if you happen to know one or a paper that references one. Thanks,</b><br>
+            <i>-Mari-Vaughn Virginia Johnson, 12 Sep 2000</i><br>
+        </p>
+        <ul>
+            <li>I have designed primer for 17S rRNA (which is the same in Dicty as 18S in most other organisms). I have not evaluated their suitability for RT-PCR extensively but they worked fine in RT-reactions. Here are the sequences:<br>
+                Dd 17S-F1: CACTGTGAGAAAATTGTGG<br>
+                Dd 17S-R1: AGGTCTCGTCCGTTATCGG<br>
+                Hope this helps,<br>
+                <i>-Juergen Oberstrass, Kassel University, Germany, 14 Sep 2000</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

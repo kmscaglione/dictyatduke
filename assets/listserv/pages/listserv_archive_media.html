@@ -1,0 +1,674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Media</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="media" id="media"></a>
+        </p>
+        <h1>
+            <a name="media" id="media"><b>Media</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_media.html#media3">Problems preparing SM medium.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_media.html#media3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_media.html#media5">Problems with HL5 medium.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_media.html#media5"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_media.html#media2">How many of you out there use Formedium HL5? Are you happy?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_media.html#media2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_media.html#media4">I'm looking for some minimal medium without yeast extract and peptone, in order to prevent interference of these compounds with GFP fluorescence.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_media.html#media4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_media.html#media1">Has anybody had any success growing Dicty cells in the FM media available through Bio101?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_media.html#media1"></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="media5" id="media5"></a> <b>Problems with HL5 medium: We have been experiencing media problems for a while now (almost 2 months) and wonder if anybody else are in the same situation and, with any luck, identified the source of the problem. We observe an unusual cloudy precipitate in our HL5 medium. The precipitate slightly sediments and seems to increase over time. Our cells grow very slowly in this medium, either by lack of a nutrient (which precipitates) or because the precipitate is somehow toxic to the cells. We first suspected the new batch of peptone and thus exchanged it for another one, but the problem persists. Did anyone encountered the same problem? Any remedy or suggestions? Hopefully yours,</b><br>
+            <i>-Pascale Charest, UCSD, July 5, 2006</i><br>
+        </p>
+        <ul>
+            <li>Same problem we also faced so I performed one simple experiment: I dissolved different components of HL5 medium from different batchs in different beakers and I found that pepton from Oxoid was having that problem (if you are using the same, I ordered those in March 06). So we replaced it with new bottles and problem was solved. If I remember correct its batch number was 411.... Hope you will solve the problem<br>
+                <i>-Vikas Sonakya, Hunter College</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We use media from <a target="new" href="http://www.formedium.com">http://www.formedium.com</a> We've even got them to make up KK2 with a decent shelf life so it's just add water ( : Anyway cells seem to grow fine for us in this - email them for a sample? Best Wishes<br>
+                <i>-Emma Dalton, Cardiff University</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="media1" id="media1"></a> <b>I wanna prepare SM plate, I add agar to the SM broth and then autoclave the solution. However, the volume decrease sharply and most of it evaporate. What is wrong with my protocol? Thanx for help. Regards,</b><br>
+            <i>-Rachel Zhang, August 2, 2006</i><br>
+        </p>
+        <ul>
+            <li>It seems like you have a general autoclave issue. My guess is that either you are not sealing your containers properly or you are not putting the autoclave on the appropriate setting. I'd advise getting someone who is familiar with the workings of your particular autoclave to show you what to do.<br>
+                <i>-Sara Kalla, Rice University</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Are you autoclaving at the liquid cycle (if not, it could/will "boil over" upon release of pressure) and do you have some liquid in the bottom of the tray in which your flask is sitting.<br>
+                <i>-Hanke van der Wel, University of Oklahoma</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="media2" id="media2"></a> <b>How many of you out there use Formedium HL5? Are you happy? A few months ago, we switched from home made HL5c (Christophe Reymond�s original recipe) to a commercial HL5 from the company Formedium. All the preliminary tests were fine (health, growth rate etc...) but we then realised that the medium is contaminated with particulate material, a fine&nbsp;micron-size precipitate that looks a little bit like dead bacteria. We checked, it does not grow, nothing is alive. To add to the confusion, our own medium appeared suddenly to have the same problem, even though we have checked with Formedium that we use no common source of products for the preparation!!! Formedium sent us a new batch which still has the same problem. As we perform loads of phagocytosis experiments, not knowing the impact of this particulate stuff, as a matter of prudence, we started sterile-filtering the medium which is economically not viable!! Should we care about that particulate stuff? Any idea or suggestion welcome!</b><br>
+            <i>-Thierry Soldati, Universit� de Gen�ve, Switzerland, 2 Feb 2005</i><br>
+        </p>
+        <ul>
+            <li>I have now compiled the answers about the particulate material in HL5 from Formedium, and I attach them all. The most interesting ones are the one from Steve Alexander, because it phenocopies our observations, and the one from Hirosaki Ochiai, because it likely identifies the culprit. We have now tested and decided to buy the new HL5c from Formedium, as we are happy, both because the Dictys grow well, but also because there are significantly less particles (event though not zero).<br>
+                <i>-Thierry Soldati, Universit� de Gen�ve, Switzerland, 14 March 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have long had masses of particulate stuff using Oxoid ingredients, though the amount varies depending on the batch of medium and how far you are through the pot of peptone. For growth of AX3, it doesn't in my experience matter if you filter-sterilize the medium. It was a rumour in Rob Kay's lab that the bits were helpful for other strains though. I don't remember either which strains or how good the evidence was.<br>
+                <i>-Robert Insall, The University of Birmingham, UK, 2 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have sometimes seen very small particles in our home made HL5 (never used Formedium). We now routinely filter our solutions on paper filters after dissolution, and before autoclaving, and that essentially gets rid of the problem for us.<br>
+                <i>-Pierre Cosson, Centre M�dical Universitaire, Gen�ve, Switzerland, 2 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Markus and we have checked a commercial HL5 medium but I do not remember the company. We found somewhat slower growth compared to our home-made soup and therefore did not buy it. Concerning the particles: a long time ago we had bought FM Medium (powder) from Difco (?) and that actually turned turbid a while after you set had it up. The particles were not alife but Dicty loved them - they did not grow when you filtered them out. We had the impression back then that particles were rather good for the cells so they had something to chew on. As long as they grow for you and the particles do not interfere with your phago-assays I would not worry too much!<br>
+                <i>-Wolfgang Nellen, Universit�t Kassel, Germany, 2 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We use the formedium HL5 and it seems absolutely fine I hadn't even noticed any particulate stuff!<br>
+                <i>-Chris Thompson, U. Manchester, UK, 2 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>About 2 months ago we started seeing abundant particles in our HL-5 medium as well. We make it ourselves using Bacto Proteose Peptone (now from BD). We test lots of this and then buy several bottles from the same lot. We were in the middle of a batch of several bottles when this occurred. None of the other ingredients was changed from what we had been using. The particles are about 1-2&nbsp;microns and they are not completely uniform. They do not grow on any medium at either 22 or 37 degrees. They are removable by filtering with a 0.22&nbsp;micron filter. The particles do not seem to alter growth rate or stationary phase levels at all. We first noticed the particles when we began to use 24 and 96 well plastic plates for selecting mutants resistant to drugs. However, in our first several experiments using these plates no one remembers seeing the particles. They are not as noticeable when cells are counted in a hemacytometer. We have shortened the time of autoclaving and that did not seem to help. We have used exactly the same recipe for HL5 for the past 34 years and have never seen this before. It is interesting that this is happening on both sides of the Atlantic.<br>
+                <i>-Steve and Hannah Alexander, U. Missouri, MO, 4 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We are not using any readymade medium but brewing it at home. Earlier, we also faced the same kind of problem and fear. But then realised that it was a harmless thing which came up when the culture was grown to high density. Strongly suspected that it might be some salt like calcium that precipitates out. Till now any of our experiments have not shown any change in parameter due to the prescnce of these white precipitates. hope it is the same for you<br>
+                <i>-Bhavesh Vats, 4 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I see Formedium (<a target="new" href="http://www.formedium.com">www.formedium.com</a>) are now selling a full range of Dicty media. In particular they sell AX medium, HL5, HL5-C, FM and SIH. The last two are synthetic, while the first three are different proportions of peptones, yeast extract and sugar. This makes me ask - has anyone done a side-by-side comparison of these different formulations? Erwin Flaschel's lab have done so for FM and SIH. Presumably the others must have different advantages (for people to bother developing them) or suit different cell types. To kick off, two observations:
+                <ol>
+                    <li>SIH works excellently for Ura selection;
+                    </li>
+                    <li>Formedium's FM works fine, better than the other sources we've bought it from and somewhat better than when we make it ourselves.
+                    </li>
+                </ol><i>-Robert Insall, The University of Birmingham, UK, 10 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Two points: We have also tried the ForMedium FM and it works very well. Second, I have received quite a few replies to my question about particulate materials ... except from people using ForMedium HL5. I would appreciate a more complete response!? Best regards,<br>
+                <i>-Thierry Soldati, Universit� de Gen�ve, Switzerland, 10 Feb 2005</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I saw recently your E-mail of 02 Feb 2005. You worry about influence to cells of that particulate stuff in HL5 I think that the particulate stuff are yeast cell walls. I saw them under a microscope after separately dissolving each component of medium HL5 and I found that the particulate stuff are derived from the yeast extract, and cell wall structure could not be destroyed by autoclaving. of course the wall does not affect cell growth. I remember that Szent-Gyorgi's proverb "Discovery consists of seeing what everybody has seen and thinking what nobody has thought",although In the present case its finding is so small. Cheers,<br>
+                <i>-Hiroshi Ochiai, Hirosaki University, Japan, 14 Feb 2005</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="media4" id="media4"></a> <b>I'm looking for some minimal medium without yeast extract and peptone, in order to prevent interference of these compounds with GFP fluorescence. It should be some medium, which ensures a good growing potential. If anybody knows a recipe for this magical medium, please, tell me.</b><br>
+            <i>-Radek Blatny, 11 Nov 2001</i><br>
+        </p>
+        <ul>
+            <li>The reference for Dictyostelium minimal medium (FM medium), and a complete recipee on how to make it, can be found on dictyBase: <a href="/techniques/media/fm-medium.html">http://dictybase.org/techniques/media/fm-medium.html</a><br>
+                <i>-Jakob Franke, Columbia U. NY, 12 Nov 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <ol>
+                    <li>ctf harvesting the amoebae into saline ought to get rid of of any interfering organics for the fluorescence assay. If the problem is that these organics interfere with expression then try #2
+                    </li>
+                    <li>This recipe is borderline between defined and non-axenic!! Grow up E.coli (b/r) or Klebsiella to late log. ctf harvest the grown bacteria (you'd want about a 1&nbsp;ml&nbsp;pellet) into an isotonic buffered saline (try 0.1M Na/K PO<sub><small>4</small></sub>, pH6.3//100% bonner's saline). after 2 - 3 washes, this should be growth-medium free. Autoclave the bacterial suspension. Use aliquots of the dead bacteria into dicty suspended in the same buffered-saline in aerated suspension culture. separate amoebae from rest by ctf harvesting<br>
+                        you'll have to play some games getting the bacterial aliquot just right for your growth conditions but it works- trick is not having the bacteria overwhelm the amoebae with growth inhibitors. so- you just grow up a lot of suspension to get enough amoebae.<br>
+                        <i>-Jared L. Rifkin, Queens College, NY, 12 Nov 2001</i><br>
+                    </li>
+                </ol><br>
+            </li>
+            <li>see also: <a href="listserv_archive_micros.html#micros2">Autofluorescence 1</a>, <a href="listserv_archive_micros.html#micros3">Autofluorescence 2</a><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="media1" id="media1"></a> <b>Has anybody had any success growing Dicty cells in the FM media available through Bio101?<br></b> <i>-Denis A Larochelle, 5 Mar 1998</i><br>
+        </p>
+        <ul>
+            <li>On a related subject, this FM medium works fine for a couple of weeks, then slowly goes brown, releases a horrible precipitate, and stops working. It doesn't matter whether it's filtered or autoclaved. Does anyone know what's going on, chemically speaking? Or (more importantly) how to stop it? It's the single worst thing about using FM...<br>
+                <i>-Robert Insall, The University of Birmingham, UK, 26 Aug 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Respect to the precipitate, Are cells growing in it when it stars to form? If so, at which concentration does the thing starts? Is it exposed to light? Ions released by cells or just light or heat easily promote polymers formation and this will precipitate.<br>
+                <i>-Maribel Rico, Case Western Reserve University, Cleveland OH, 26 Aug 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I like to remind everybody that there is a detailed protocol on how to prepare the medium on dictyBase:<br>
+                <a href="/techniques/media/fm-medium.html">http://dictybase.org/techniques/media/fm-medium.html</a><br>
+                The protocol has been updated and now also contains ordering information from Bio101, as provided by Rob Insall. We have never experienced the precipitate problem mentioned in some messages, and I have no explanation.<br>
+                <i>-Jakob Franke, Columbia Univ, NY, 15 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We use Jakob web recipe and it has worked flawlessly. We did have a problem with precipitates at one point an tracked it down to a new student who did not know how to dilute a 1000x stock solution correctly. I would look for something like that.<br>
+                <i>-David Knecht, University of Connecticut, CT, 15 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Hello Dicties all! The BIO 101 FM medium has stopped working for us recently - wild type cells won't grow in it at all, indeed they die after a week or two in selection. I've analyzed the problem by adding back each stock in turn. The conclusion is that one or more components of the vitamin mix have gone off. If you're using FM medium from BIO 101 (or indeed having trouble with any other supplier - I know the Sigma stuff was giving problems to some), try adding another 1x of the vitamin mix.<br>
+                Hope this helps<br>
+                <i>-Robert Insall, The University of Birmingham, UK, 29 Nov 2000</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

@@ -1,0 +1,893 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Biochemical Methods</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="biochem" id="biochem"></a>
+        </p>
+        <h1>
+            <a name="biochem" id="biochem"><b>Biochemical Methods</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem8">How to break cells without detergent?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem8"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem9">We are in the search of a good secondary antibody to detect anti-mouse antibodies in Western blot.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem7">Is there a consensus of protease inhibitor combinations to work with Dicty cell lysates?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem7"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem6">Does anyone have any experience in making really clean immunopreciptations from Dicty?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem6"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem5">I'm trying to optimize a rapid centrifugation protocol to pellet Dicty. The goal here is to efficiently pellet Dictyostelium whole cells in suspension, as rapidly as possible, without disruption of the plasma membrane.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem5"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem4">Has anyone used the Ras activation kit (from any company) to do the Ras activation assay in Dictyostelium cells?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem3">I am planning to purchase a PKA assay kit to measure PKA activity with PKA inhibitor treatment over time. Anybody have a suggestion for me about what I should get?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem1">Metabolic labelling of cells: Does anyone have a good protocol for metabolic labelling of proteins with 35S? I have been told that Dicty do not take up 35S-methionine particularly well. Does anyone know if this is true or false?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem1"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_biochem.html#biochem2">Has anyone done an 35-S-amino acid pulse-chase experiment recently or know of a good reasonably recent reference where it worked?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_biochem.html#biochem2"></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem8" id="biochem8"></a> <b>How to break cells without detergent? Recently I am doing protein purification in Dicty. I need to lyse cells without detergent in ~30ml volume of lysis buffer. Filtrate through 5.0 uM Whatman filter is good for small volume, but the filter is easy to break or be blocked in my case. Does anyone else know other methods to break Dicty efficiently? Thanks in advance,<br></b><br>
+            <i>-Xin-Hua Liao, NIH, June 29, 2006</i><br>
+        </p>
+        <ul>
+            <li>One possible solution to your problem is hypotonic lysis. Take a look at <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2608">Hereld et al 1994</a> under "Preparation of Membranes" and references therein. In this method from the Devreotes lab, cells are equilibrated in high salt, pelleted, and resuspended in hypotonic buffer containing protease inhibitors, causing them to burst. The focus in their application was the membranes, but it might also be a good starting point for cytosolic components.<br>
+                Other traditional methods I'm aware of are dounce homogenization (breaks cells by shearing) and nitrogen cavitation (basically the cellular equivalent of the bends). However, I don't know how well these methods work for Dicty. Maybe someone out there in Dicty-space knows or has a better suggestion. Good luck!<br>
+                <i>-Dale Hereld, University of Texas</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>How about repeating short sonication on ice or fleeze-thaw? Best wishes,<br>
+                <i>-Yuzuru Kubohara, Gunma University</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>When doing large volumes, prefilter the cell suspension prepared in buffered 0.25&nbsp;M sucrose (no Mg or EDTA) through a bed of loosely packed glass wool mounted on a vacuum erlenmeyer. Then you should be able to push &gt;100&nbsp;ml through a 47-mm diameter 5-micron nuclepore filter before needing to change it, unless the cells have been sitting in stationary phase for a long time. Good luck,<br>
+                <i>-Chris West, University of Oklahoma</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>In our hands homogenizing cells with Dounce did not work. Dictyo cells are very resistant to shearing forces (maybe due in part to their small size). Cell homogenizers (cell crackers) work very well. Have a look at <a target="new" href="www.isobiotec.com">www.isobiotec.com</a>. If you resuspend your cell pellet in an equivalent volume of medium then pass it 20 times through a cell cracker you break the cells very efficiently. Best<br>
+                <i>-Pierre Cosson, Centre Medical Universitaire, Geneve</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I did by passing cell suspension through 5&nbsp;�m Nucleopore membrane twice (<a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=11059">Betapudi et al 2005</a>). It works fine.<br>
+                <i>-Venk Betapudi, Case Western Reserve University</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I had this problem in about 1980, and used a Parr Bomb. You equilibrate the cells at about 250&nbsp;psi for about 15 minutes at 4�C, and then they break when you let them out dropwise. You need stirring during the incubation in order to get the solution to equilibrate uniformly. We used to grow about 25&nbsp;liters of Dictyostelium generating 250 packed ml of cells and a 500&nbsp;ml of lysis solution. I have used smaller volumes such as your 30&nbsp;ml. Find a graduated cylinder that fits into the bomb so that the column of solution is high enough that you don't waste too much. Make sure the stir bar at the bottom is going around after the lid is in place on the bomb with the collection stem in your vessel of cells. We published the method as part of another purification in <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1677">Fechheimer &amp; Furukawa 1991</a>. The Parr bomb is not cheap, but if you look around at NIH, I am sure that there are lots of them there. Good luck.<br>
+                <i>-Marcus Fechheimer, University of Georgia</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We observe apparently complete lysis from freeze-thaw without detergent. I am writing from memory so details may be off. I think you can find references for this in Spudich papers if not elsewhere. Drip a 10^8cell/ml suspension with protease inhibitors into liquid nitrogen. (Leave out DTT if the next step would expose antibodies to this reducing agent.) The result is frozen spheres ("popcorn") of ~100&nbsp;�g that store very well at -80�. Thaw them in an equal volume of buffer with protease inhibitors.<br>
+                <i>-Jon Goldberg, Boston Biomedical Research Institute</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Parr bombs are absolutely wonderful and much the best answer if you're doing a big prep. They're absolutely streets better than any other method I've seen when volumes get large. They also actually make little (10&nbsp;ml) ones which I've never tried.<br>
+                <i>-Robert Insall, The University of Birmingham</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Our collective experience in the laboratories of Michael Brenner, Ted Steck and in my lab can be summarized as follows: First you must know the location of the protein that you are purifying: cytosolic, lumen of the membrane compartment, transmembrane in organelles or PM. Some of the methods will make a difference, particularly because Dicty has notorious proteolytic activities. 1. Passing through 2 layers of 5 micron Nuclpore filters works best. Has minimum release of endo-lysosomal content including hydrolases.<br>
+                2. Freeze-thaw will work but will lyse most of the endo-lyso and therefore stability of the protein in question will be compromised.<br>
+                3. Mild sonication works but again release of proteases is the issue but it is not as bad as Freeze-thaw but certainly not as good as passing thro' filters.<br>
+                4. Hypotonic lysis will work but again release of hydrolase/proteases are problem.<br>
+                5. Dounce does not work.<br>
+                Basically if I were you, I will be able to decide depending upon the nature of the protein to be purified and its intracellular location.<br>
+                <i>-Harish Padh, Pharmaceutical Education and Research Development Centre</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem9" id="biochem9"></a> <b>We are in the search of a good secondary antibody to detect anti-mouse antibodies in western blot. We use an antibody of the BioRad company and we face a problem of background noise when blotting extract from Dictyostelium cells. Would somebody have another antibody to suggest. Thank you in advance for your suggestion.<br></b><br>
+            <i>-Steve Charette, Centre m�dical universitaire, Universit� de Gen�ve, Feb 27, 2006</i><br>
+        </p>
+        <ul>
+            <li>Jackson ImmunoResearch Laboratories sells affinity-purified antibodies with very low background (<a target="new" href="www.jacksonimmuno.com">www.jacksonimmuno.com</a>).<br>
+                <i>-Margaret Clarke, Oklahoma Med. Res. Found.</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I was using an anti-mouse F(ab')2 - HRP from Jackson laboratories which was working very well on lysates in blots. if you need the exact reference, let me know. bon courage!<br>
+                <i>-Cathy Laporte</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have recently encountered high background problems after switching over to a new secondary Ab detection system. We feel that the problem was mainly solved by optimizing the blocking solns., and are partial to 5% non-fat dry milk in TBS as a blocking agent especially with the secondary Ab. We have used alexa680 and alkaline phosphatase based reporting systems on Abs from several companies. Good luck,<br>
+                <i>-Chris West, University of Oklahoma Health Sciences Center</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem7" id="biochem7"></a> <b>Is there a consensus of protease inhibitor combinations to work with Dicty cell lysates? I'm using Roche's Complete tablet and it seems not enough to block those monster lytic enzymes in Dicty.</b><br>
+            <i>-Patrick Zhang, Baylor College of Medicine, TX, 27 July 2005</i><br>
+        </p>
+        <ul>
+            <li>Can't help too much with inhibitors (although the mixture that Klein &amp; Devreotes used to purify cAR1 seems to work very well, at cost of great complexity). But I do suggest:<br>
+                (a) filter lysis, if appropriate (ie target is not membrane bound)- doesn't rupture the organelles as badly as detergent<br>
+                (b) use starved cells if possible - they have lower protease levels<br>
+                (c) lower the cell density - both proteolysis and protein aggregation increase at higher densities, and the inhibitors work better at a higher ratio of inhibitors:proteases<br>
+                (d) if you can include EDTA it blocks metalloproteases. It can of course wreck some proteins too.<br>
+                <i>-Robert Insall, The University of Birmingham, UK</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Check the 1987 Methods in cell biology vol 28. Three papers: <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=9008">Goodloe-Holland and Luna</a>, <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=9003">Spudich</a> and the <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=9017">Stone et al.</a> paper all have really good protease cocktails. Also Chris West's papers have good protease combinations, in particular his <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2259">Gonzalez-Yanes et al. 1992</a>. We generally couple these cocktails with the Henderson-Das nucleopore filter lysis procedure as that procedure seems not to cause as much "wholesale" protease release. That reference is <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1199">Das and Henserson 1983</a>.<br>
+                <i>-Daphne Blumberg, U. Maryland Baltimore County, MD</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Hi, guys, thanks a bunch for the advice. How about sonication without detergent? Any comments?<br>
+                <i>-Patrick Zhang</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The best method depends on what you are going after. Do you want the soluble fraction, cytoskeleton, an organelle, or its membrane or its luminal contents? The filter lysis method, which as others have noted is superior for keeping organelles intact, is fast, efficient, and works well down to 2 x 10exp8 cells and up to tens of liters. If you have too many samples and/or can deal with the release of DNA and acid hydrolases, sonication can have its place. As an update to our 1992 paper(<a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2259">Gonzalez-Yanes et al. 1992</a>), we have successfully purified many soluble and vesicle proteins from filter-lysed growing and developing cells using 1 microM PMSF (with special precautions), 10 microG/ml aprotinin and 10 microG/ml leupeptin, keeping it cold and working fast. We have not needed other inhibitors, though we do use EDTA (as mentioned by Insall) too if conditions allow it.<br>
+                <i>-Chris West, University of Oklahoma</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem6" id="biochem6"></a> <b>Does anyone have any experience in making really clean immunopreciptations from Dicty? I suspect most of the buffers used by mammalian people are too salty for Dicty complexes and will cause some protein denaturation, but using typical low-salt Dicty buffers gives a large background. Also, ideal lysis conditions are not clear to me; Dicty has much more lipid per cytoplasm, so maybe more detergent or different detergents?</b><br>
+            <i>-Robert Insall, The University of Birmingham, UK, April 5, 2005</i><br>
+        </p>
+        <ul>
+            <li>We tried several times immunoprecipitating dictyo proteins (for example in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=8318">Ravanel et al 2001</a>). Our conclusion is that classical mammalian lysis buffers (1% Triton X100, 120 mM NaCl) work fine for immunoprecipitation as long as the antibodies are good. Of course there is no way to know for sure if some protein-protein complexes are broken in these conditions, but the IP itself works fine.<br>
+                <i>-Pierre Cosson</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Jon Chubb has an exceptionally severe protocol for chromatin immunoprecipitation (ChIp) in Dictyostelium, but which requires the complexes to be crosslinked before proceeding.<br>
+                <i>-Jon Chubb</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We previously used 20&nbsp;mM Tris 7.5 with 50&nbsp;mM NaCl and 1% Triton. The IPs and GSH pulldowns were quite clean. I'll bet the specificity and integrity of the antibody is likely the limiting factor. Why use detergent at all? You have a Parr Bomb. Just bomb and ultracentrifuge at 100K. It works well for neutrophils.<br>
+                <i>-Andrew Wilkins</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Based on Coomasie stain, the IP buffer described in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4185">Meili et al 1999</a> yielded only the protein of interest for me (in this case, a Myc-tagged PKB). The ab used was the Myc monoclonal from <a target="new" href="http://www.cellsignal.com/index.asp">Cell Signaling Technologies</a>.<br>
+                <i>-James Lim</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The key was that getting the sup completely away from the pellet on the first spin dramatically reduced the background in the final pellet.<br>
+                <br>
+                IP Protocol (using Pansorbin (Staph A fixed cells):<br>
+                <ol>
+                    <li>Lyse cells in MES-PDF by addition of Triton to 0.2%
+                    </li>
+                    <li>spin 5&nbsp;min in microfuge to pellet debris
+                    </li>
+                    <li>to sup add 100&nbsp;�l&nbsp;of Pansorbin
+                    </li>
+                    <li>15&nbsp;min on ice
+                    </li>
+                    <li>spin 5&nbsp;min (This is a non-specific clearing spin)
+                    </li>
+                    <li>add antibody to sup and incubate 15&nbsp;min room temp then &gt;&nbsp;15&nbsp;minutes on ice
+                    </li>
+                    <li>add excess Pansorbin
+                    </li>
+                    <li>incubate 15&nbsp;min on ice
+                    </li>
+                    <li>add a 0.2&nbsp;ml cushion of 30% sucrose in Buffer A (50&nbsp;mM Tris, 150&nbsp;mM NaCl, 5&nbsp;mM EDTA, 1&nbsp;mM NaN3, 0.5%&nbsp;NP-40, pH 7.5) slowly down the side of the tube to underlay the lysate
+                    </li>
+                    <li>pellet the Pansorbin through the cushion for 3.5&nbsp;min in a microfuge
+                    </li>
+                    <li>The sup and cushion is aspirated and the pellet washed 4 more times (I believe I only did the cushion the first time, but I am not sure)
+                    </li>
+                    <li>Antigen is then eluted in SDS sample buffer and the pansorbin spun out.
+                    </li>
+                </ol>This would probably work similarly with protein A beads, etc.<br>
+                <i>-Dave Knecht</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have had very good luck immunoprecipitating <a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=gpab">Ga2</a> from Dicty membranes using Peter D's original protocol (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6593">Vaughan and Devreotes 1988</a>). S-35 labeled cells shows only the one band on autorads. We dissolve pellets in a reduced SDS sample buffer (10 mls has 1&nbsp;ml&nbsp;of glycerol, 0.25&nbsp;ml&nbsp;of 20% SDS, 1&nbsp;ml&nbsp;of the Upper Tris buffer from standard polyacrylamide gels, rest water with a pinch of bromophenol blue) No reducing agents.<br>
+                <br>
+                Protocol: Mix the following components:<br>
+                Sample: 1&nbsp;ml&nbsp; /0.1 ml<br>
+                IPB: 3&nbsp;ml&nbsp; /0.3 ml<br>
+                Ab: 0.1&nbsp;ml&nbsp; /10&nbsp;�l<br>
+                (obviously you will have to figure what works best for your Ab)<br>
+                Protein-A beads: 0.5&nbsp;ml&nbsp; /50&nbsp;�l<br>
+                (Beads are a 50% slurry in IPB)<br>
+                <ol>
+                    <li>Incubate 4 hr at 4�C on rotator
+                    </li>
+                    <li>wash beads 3x IPW (Use 1 IP vol)
+                    </li>
+                    <li>elute with 0.1 vol of 2x SB at 100�C for 5 min.
+                    </li>
+                </ol>To get a 50% slurry of beads to IPB weigh out 0.080g/1&nbsp;ml&nbsp;(Beads are from Pharmacia (now Amersham Bioscience), Protein A Sepharose CL-4B (order 1.5 g 17-0780-01)).<br>
+                IPB: 20 mM Tris-HCl pH 7.5, 0.15 M NaCl, 0.5% NP-40 (we now substitute IGEPAL CA-630), 0.5 mg/ml ovalbumin, 1/10 of PND's lab ERB formula (any mix of protease inhibitors would do I'm sure)<br>
+                IPW: Same as IPB but with added 0.1% SDS and 0.5% Na deoxycholate, no ovalbumin<br>
+                <i>-Bob Gundersen</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I would be dearly interested, because our experience with standard RIPA buffer is that it is ultraclean ... but not very informative! But at least lysis is extremely efficient in RIPA, mostly everything is soluble. The detergent concentration is not all important, the ratio of volume of buffer to number of cells is exactly as crucial (what counts in the end is the number of molecules of detergent versus the number of molecules of lipids). Because RIPA appeared to stringent, we recently decided to change it to RIPA-2, but I don't have final results on its use!!<br>
+                <br>
+                RIPA 1x: (we usually keep it as a 5x stock): 50 mM Tris/Cl pH 7, 150 mM NaCl, 1% deoxycholate, 1% Triton X100, 0.1% SDS<br>
+                RIPA-2 1x: 50 mM Tris/Cl pH 7, 50 mM NaCl, 0.5% deoxycholate, 1% NP40<br>
+                Protocol: ***All on ice!!***
+                <ol>
+                    <li>RIPA Buffer, add Complete<small><sup>TM</sup></small> as protease inhibitor cocktail
+                    </li>
+                    <li>take confluent plate, wash in S�R, lift cells in S�R and pellet in S�R at 500 g 5min.
+                    </li>
+                    <li>take pellet into RIPA 500&nbsp;�l.
+                    </li>
+                    <li>leave rocking (or on wheel) on ice for min 30 min.
+                    </li>
+                    <li>pellet insoluble material 5 min at 13 krpm.
+                    </li>
+                    <li>take 50&nbsp;�l&nbsp;of Protein G agarose bead-slurry per condition/point and wash 3-4x with RIPA. pellet at 13 krpm for 30 sec.
+                    </li>
+                    <li>pre-clear:
+                        <ul>
+                            <li>take washed agarose beads + ~2&nbsp;�g of pre-clear Ab (whatever control Ab you want to use or nothing!) + lysate
+                            </li>
+                            <li>leave rocking at 4�C for 1h.
+                            </li>
+                            <li>Pellet beads at 13 krpm 30 sec.
+                            </li>
+                            <li>take lysate into new tube
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <ul>
+            <li>IP with real Ab:
+            </li>
+        </ul>
+        <ul>
+            <li>take 100&nbsp;�l&nbsp;(check slurry) of washed agarose beads + ~2&nbsp;�g of antibody + lysate
+            </li>
+            <li>leave rocking at 4�C for 2h
+            </li>
+        </ul>
+        <ul>
+            <li>pellet beads
+            </li>
+            <li>wash beads 5x with RIPA
+            </li>
+            <li>Resuspend beads in 70&nbsp;�l&nbsp;Sample Buffer and boil for 5 min.
+            </li>
+            <li>SDS or Western
+            </li>
+            <li style="list-style: none">Tips and tricks: Clearing is important. Don't overdo the length of incubations, because proteins will precipitate and the background will sky rocket! I have never heard of an overwashed pellet!<br>
+                <i>-Thierry Soldati</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Regarding the lyses buffer, I tried several detergents and found 0.1% NP-40 in 1X PBS (pH 6.5) buffer gave the best results of immunopreciptation with Dicty cells (cell density is 10e7 cells/ml) when the interesting proteins in my case basically are membrane proteins like Car1-YFP or Galpha and beta subunits tagged with XFP. I used anti-GFP monoclonal antibodies to pull down XFP-proteins. Triton X-100 (0.1-0.5 %) is also good. It solubilizes more protein than NP-40 does but there is no great effects on immunoprecipitation products.<br>
+                <i>-Xueha Xu</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have had good luck immunoaffinity purifying Flag-tagged <a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=mhka">MHCK A</a> (expressed from pTX-Flag) from Dicty cells (mhkA null; Dicty stock center strain <a href="http://dictybase.org/db/cgi-bin/dictyBase/SC/strain_details.pl?id=372">CW0371</a>) by lysing with the following buffer: 50 mM Tris pH 8.0, 150 mM NaCl, 1% Triton X-100, 1 mM EDTA, 2 x Protease Inhibitor Cocktail (Roche complete-mini; Fisher #NC9260922), 2 mM PMSF, 1 mM DTT.<br>
+                The lysate was then incubated with anti-Flag beads (Sigma 2426) for about 1h @ 4�C and the beads were washed extensively with the buffer above lacking TX-100. The fusion protein was then eluted with flag peptide. The eluted protein is pretty clean with relatively minor amounts of breakdown product (the lower band reacts w/ anti-MHCK A Ab).<br>
+                <i>-Paul Steimle</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Immunoprecipitation from Dicty: SS�s modification of RIT�s Protocol 12/13/04<br>
+                General info: keep everything ice cold to reduce proteolysis. This protocol is for proteins found in the soluble fraction after Triton lysis. It can also be modified slightly for use in precipitating proteins from membranes (simply replace the cell pellet in step 1 with a pellet of membranes). The amount of cells could probably be reduced, but Dicty are so easy to grow...<br>
+                <br>
+            </li>
+        </ul>
+        <ol>
+            <li>Wash 5 x10e7 cells for each cell line in Sorrenson�s Buffer (SB) twice. Resuspend in 5&nbsp;ml&nbsp;SB, place in a 15 ml Sarstedt tube, spin down the pellet, remove S/N, and keep pellets on ice.
+            </li>
+            <li>Lyse the cell pellet by gently resuspending it in 5.0&nbsp;ml&nbsp;of ice cold Lysis Buffer (LB) with inhibitors. Spin in the Beckman J6 rotor at 4000 rpm for 10 mins @ 4�C to pellet insoluble material. Transfer supernatant to a fresh tube and take gel samples (25�l of sup. boiled with 25&nbsp;�l&nbsp;USLB + DTT). Keep the rest of the sup. on ice.
+            </li>
+            <li>Preclear the sup. of proteins which have an affinity for protein A sepharose beads (Amersham Biosciences cat.#17-1279-01) by adding 25-30&nbsp;�l&nbsp;washed beads.
+            </li>
+            <li style="list-style: none">[Prepare beads in advance by washing them twice in cold LB without protease inhibitors. Spin the beads briefly in a centrifuge to pellet between washes and be careful not to aspirate them off. This can be avoided by putting a 200 �l pipette tip on the end of the aspirator Pasteur. After the final wash, add 1 volume LB to the bead slurry and keep cold. To transfer the beads, vortex briefly to resuspend the beads then use a pipette tip with the end cut off.]
+            </li>
+            <li>Rotate sup. with beads at 4�C for 20 min on a rocking table to pre-clear. Then, spin down the beads at 4�C at 500 rpm for 5 min in the J6. Transfer the sup. To a fresh tube and keep cold. Repeat steps 3 and 4 two more times.
+            </li>
+            <li>Add the precipitating antibody and rotate 1 hr at 4�C on a rocking table. [For a GFP IP, we typically use 10-20 mg (5-10 ml) of Molecular Probes rabbit IgG anti-GFP at 2 mg/ml, cat.# A11122. ]
+            </li>
+            <li>Add 25-50&nbsp;�l&nbsp;of washed protein A beads as before. Rotate at 4�C for 1 h to bind the antibody.
+            </li>
+            <li>Pellet the beads at 4�C at 500 rpm for 5 min in the J6. Take a sup. sample as before and then carefully remove the sup. with a small tip on the aspirator. Do not suck up the beads. Wash the beads by adding 5.0 ml cold LB with protease inhibitors.
+            </li>
+            <li>Rotate 5 min. then pellet beads again. repeat 3 times.
+            </li>
+            <li>Wash 3 more times, but rotate each wash for 20 min.
+            </li>
+            <li>Pellet the beads, remove most of the sup., then resuspend and transfer them to a 1.5&nbsp;ml&nbsp;tube. Spin the beads down in a cold microcentrifuge at 500 RPM 5 min. Remove the sup. Insert a 200&nbsp;�l&nbsp;pipette tip (on a pipettor) into the beads and suction off any remaining liquid. [It is necessary to remove the liquid so that the solution of released proteins is sufficiently concentrated to load on an SDS-PAGE gel.]
+            </li>
+            <li>Add 30&nbsp;�l&nbsp;of ULSB + DTT and, with a cut-off pipette tip, mix it thoroughly with the beads. Incubate at 100�C for 3 min. and then either freeze or load the sample.
+            </li>
+            <li style="list-style: none">[To visualize bands on a silver stain gel, load 10-15&nbsp;�l&nbsp;of sample on the gel.]
+            </li>
+        </ol>
+        <p>
+            <br>
+            Solutions:<br>
+            Lysis Buffer: 25 mM HEPES pH 7.4, 150 mM NaCl, 1 mM EDTA pH 8.0, 1 mM EGTA pH 8.0, 1% Triton X-100 (use 10% pure stock from Pierce)<br>
+            Inhibitors (all are listed at their final/working concentration): 1 mM AEBSF (Pefablock), 0.1 mM TLCK, 0.1 mM TPCK, 0.1 mM EGTA, 3.3&nbsp;�g/ml E64, 0.4&nbsp;�g/ml Calpain Inhibitor I<br>
+            <i>-Meg Titus</i>
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem5" id="biochem5"></a> <b>I'm trying to optimize a rapid centrifugation protocol to pellet Dicty. The goal here is to efficiently pellet Dictyostelium whole cells in suspension, as rapidly as possible, without disruption of the PM.</b><br>
+            <i>-David B. Stephens, University of Arkansas at Little Rock, June 12, 2004</i><br>
+        </p>
+        <ul>
+            <li>The method of Bonner which I've used (and referenced in my reports) works consistently. Indeed, with the one repeat, the cells come up bacteria-free (if you're growing dicty with bacteria as food. if not- this is a moot point). Centrifuge cell suspension @ 50 x gravity for 3-4 min, using 15&nbsp;ml&nbsp;plastic conical centrifuge tubes. This gives a firm yet soft sediment from which the supernatant should be aspirated as quickly as possible. The sediment should be resuspended in standard saline, or whatever you wish, also as quickly as possible to a volume &gt;10&nbsp;ml&nbsp; (these amoebae do not "like" being anoxic for too long.) We routinely get ~0.2&nbsp;ml&nbsp;of pellet from ~12ml of suspension of a 24 hr culture. Repeat centrifugation and harvesting, the final volume can be whatever you need depending upon cell density, etc. this routinely gives viable physiologically reponsive cells with &gt;99.9% of the original suspension fluid removed. overall time = &lt;10 min. if you want sterile, just use sterile saline and sterile capped tubes and do transfers under sterile conditions.<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 14 Jun 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>After posing a question about speed vs. viability in Dictyostelium pelleting, I decided to check it out for myself. The answer posted by Dr. Jared L. Rifkin (thanks Jared) took too long for the assay we are running. If anyone is interested, the results are as follows: A centrifugation at 3000 X g for 1 minute was sufficient to return virtually 100% of the cells from the pellet with 100% of the original viability, as assessed by duplicate cell counting using Trypan blue. Less force failed to return the full cell count. A pulse of 15,000 X g for 10 seconds had the same result. After reflection, I should have realized that a totally fluid structure within a fluid medium would be hgihly g-tolerant, but sometimes I just have to see for myself. This was one of those technical details that I couldn't believe I hadn't learned somewhere, and really couldn't find a consensus on once I looked.<br>
+                <i>-David B. Stephens, University of Arkansas at Little Rock, June 12, 2004</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem4" id="biochem4"></a> <b>Has anyone used the Ras activation kit (from any company) to do the Ras activation assay in Dictyostelium cells? Or if anyone has a method to check for ras activation in Dictyostelium cells? regards,</b><br>
+            <i>-B.Deenadayalan, University of K�ln, Germany, 16 Jan 2003</i><br>
+        </p>
+        <ul>
+            <li>We tried fairly hard to do the assay, long before anyone thought of making a kit of it. However, it appears that the combination of the Y13-259 antibody and 0�C is insufficient to prevent GTP hydrolysis, so the IP-based assay didn't work well, and that RasG didn't bind the Raf-RBD even when activated, making the GST-Raf based assay fail. I'd love to know if anyone else has done better, but I suspect this assay may need a Ras binding domain cloned from Dicty to work properly.<br>
+                <i>-Robert Insall, The University of Birmingham, UK, 16 Jan 2003</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem3" id="biochem3"></a> <b>I am planning to purchase a PKA assay kit to measure PKA activity with PKA inhibitor treatment over time. So that I want to know whether anybody have a suggestion for me about what I should get. If anyone can provide a protocol for me, I really appreciate for that as well.</b><br>
+            <i>-Hui Zhang, U. Iowa, 27 Oct 2002</i><br>
+        </p>
+        <ul>
+            <li>There apears to be some debate in the literature regarding in vitro PKA assays in Dicty. In mammalian cells the regulatory subunit of PKA is tightly bound to the catalytic subunit in the absence of cAMP, so that assays of PKA in lysates give an accurate reflection of PKA activity (and relative intracellular cAMP level) in vivo. Historically, the literature for Dicty has indicated that these assays do not work. The regulatory and catalytic subunits quickly dissociate when lysates are made. PKA is fully activated, even in the absence of cAMP. On the other hand, other Dicty workers have recently reported data using these assays, but I have never seen the old biochemical dissociation assertions refuted. I can attest to the success in mammalian cells, but never tried them in Dicty so I have no personal experience. I am interested in other opinions, experiences...<br>
+                <i>-Alan Kimmel, NIH, MD, 27 Oct 02</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem1" id="biochem1"></a> <b>Does anyone have a good protocol for metabolic labelling of proteins with 35S? I have been told that Dicty do not take up 35S-methionine particularly well. Does anyone know if this is true or false?</b><br>
+            <i>-Richard Tuxworth, MRC Laboratory for Molecular Cell Biology, University College London, London, 9 Aug 1998 UK</i><br>
+        </p>
+        <ul>
+            <li>Dicty cells will take up 35S methionine if this is not diluted with axenic medium and is presented to them on filters without much dilution. The method and incorporation data can be found in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4440">Newell, Longlands &amp; Sussman 1971</a>. Best wishes,<br>
+                <i>-Peter Newell, Oxford, UK, 12 Aug 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have always had good success with 35S-met. What helps most is to plate the cells on Nuclepore filters which are really thin (get much more isotope incorporated that on, say, Millipores). Then transfer the filter from its support (usually agar) to sit right on top of a droplet of label in an otherwise empty petri dish (cell side up because the liquid in the drop goes through the filter instantly but cells are not submerged if the droplet is small). See <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1198">Das and Henderson 1983</a> and <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1199">Das and Henderson 1983</a> for more details. Note that we always label in buffer without nutrients but in a short pulse quite a lot of label gets in.<br>
+                <i>-Ellen Henderson, Goergetown University, 21 Aug 1998</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="biochem2" id="biochem2"></a> <b>Has anyone done an 35-S-amino acid pulse-chase experiment recently or know of a good reasonably recent reference where it worked?</b><br>
+            <i>-Rick Firtel, UCSD, CA, 16 Feb 2001</i><br>
+        </p>
+        <ul>
+            <li>This is not a recent reference, but it worked very well: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2702">Hohmann et al. 1987</a>.<br>
+                <i>-Salvatore Bozzaro, Universit� di Torino, Italy, 19 Feb 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p><table width="100%">
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+   <tr>
+      <td class="footer" align="LEFT" width="1"><a href="/"><img src="/inc/images/arrow.small.up.gif" border="0"></a></td>
+      <td class="footer" align="LEFT"><a href="/">Return to Home</a></td>
+      <td class="footer" align="center" width="50%">Supported by NIH (NIGMS and NHGRI)</td>
+      <td class="footer" align="right"><a href="/db/cgi-bin/dictyBase/suggestion">Send a Message to the dictyBase Curators</a></td>
+      <td class="footer" align="right" width="1"><a href="/db/cgi-bin/dictyBase/suggestion"><img src="/inc/images/mail.gif" border="0"></a></td>
+   </tr>
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+</table>
+
+</BODY></HTML>
+<script>shift_linkMenu();</script>
+
+    </body>
+</html>

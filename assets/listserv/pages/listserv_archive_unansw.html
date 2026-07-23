@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Unanswered Questions</title>
+    </head>
+    <body>
+        <p>
+            <a name="unansw" id="unansw"></a>
+        </p>
+        <h1>
+            <a name="unansw" id="unansw"><b>Unanswered Questions</b></a>
+        </h1>
+        <hr>
+        <ul>
+            <li>Just wondering: is there a good reason why Dictyo so frequently has polyN, polyQ, etc repeats in so many of its proteins ? Are there other organisms doing the same ? I will send a summary of the answers to everybody,<br>
+                <i>-Pierre Cosson, Centre Médical Universitaire, Geneva, Switzerland, 15 Aug 2003</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <!--
+This is discussed in [genome paper]
+Pascale Gaudet, Northwestern University, Chicago, IL, 9 Mar 2005-->
+            </li>
+            <li>I wonder whether anybody can tell me if they have used the Lumio kit for labelling proteins in Dictyostelium? Were there any significant background/ permeability/ toxic effects? Thanks!<br>
+                <i>-Margaret Clotworthy, MRC Laboratory of Molecular Biology, UK, 5 March 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Are there any dicty strains available that have gfp-inserts and/or gfp-fused proteins with known function (like a camp receptor or cytoskeleton label)? and- how stable are these inserts over generations? Purpose: I teach a cell biol tech lab course (soph-jr level): once/week, 5hr, 2 cred. I have introduced working actin labelling and chemotaxis labs. I'd be glad to send protocols upon request. it would be dramatic (ie- turn the students "on") to show "glowing" amoebae either as demo of gfp utility or as exp workup with some temporal/spatial changes. So- could any of you share such a strain with me and our students?<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 12 Mar 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>A naive question concerning growth of dictyo on bacterial lawns. We use for this a standard medium (recipe below), and use Klebsiella bacteria. I was wondering what is the reason for adding MgSO4 to this medium. In principle it is not essential for the bacteria, and neither for the Dictyo. In addition, compared to HL5, this medium is mostly poor in yeast extract (7 times less than in HL5), and somewhat lower in sugar (2 times less). Is there any rational to this recipe? Are there different options for this medium ? Did anyone experience medium without magnesium sulfate? Standard medium (SM), for 1 liter :<br>
+                10g Oxoid peptone, 1g Yeast extract Difco, 2.2g KH<sub>2</sub>PO<sub>4</sub> Fluka, 1g K<sub>2</sub>HPO<sub>4</sub> Wako, 1g MgSO<sub>4</sub> 7H<sub>2</sub>O Merck, 20g Bactoagar, complete to 950ml with bidistilled H<sub>2</sub>O (cell culture water), autoclave, cool to 50°C, add 50&nbsp;ml&nbsp;glucose 20g/100ml (filtered sterile), pour plates (&gt;35ml/plate).<br>
+                <i>-Pierre Cosson, Centre Médical Universitaire, Geneva, Switzerland, 4 May 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I used Amersham cGMP assay kit RPN226 to measure the cGMP concentration but failed to see the increase of cGMP level upon cAMP or sorbitol stimulation. Did anybody try this kit before? Does anybody have a Dicty specific protocol I could follow? How does it compare to the old kit using tritium labelled cGMP? Thanks.<br>
+                <i>-Fei Du, UCSD, CA, 25 May 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Millipore recently altered the manufacturing process of its round nitrocellulose filter pads (0.8&nbsp;µm, Black/White, AAWP, 47mm), which prolongs the dicty development on these pads. I wonder whether there are any proper substitutes. Thank you.<br>
+                <i>-Yi Chen, Derrick Brazill's lab, Hunter College, NY, 9 Jun 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I am facing a problem of ligating a relatively small fragment of about 600 bp into a Dictyostelium vector of about 11 Kb. I have tried the ligation with different enzymes and with different conditions but so far have no success. The fragment is obtained after digesting with BamH1 and Xcm1. Does anybody have any suggestion for this.<br>
+                <i>-Maqsood A. Ansari, UK, Jul 21, 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I too am facing a similar problem but of the reverse order. Trying to insert a 2450 bp fragment in 6Kb Dicty vector (derivative of Ecm-BGal Vector). It involves removing a 132 bp fragment from the modified Dicty vector and inserting the 2450 bp fragment there. Any advise will be highly appreciated.<br>
+                <i>-Bhavesh Vats, 6 Aug 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have had some difficulty trying to clone large pieces of dicty DNA into general cloning vectors. These pieces range 2.5-5.0 kb. Does anybody out there know of or have a good cloning vector that can accommodate pieces in this size range? Any suggestions or modified protocols would be greatly appreciated. Thanks,<br>
+                <i>-Denis A. Larochelle, Clark University, Worcester, MA, 11 Aug 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>      </TD>
+
+   </TR>
+
+</TABLE>
+<table width="100%">
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+   <tr>
+      <td class="footer" align="LEFT" width="1"><a href="/"><img src="/inc/images/arrow.small.up.gif" border="0"></a></td>
+      <td class="footer" align="LEFT"><a href="/">Return to Home</a></td>
+      <td class="footer" align="center" width="50%">Supported by NIH (NIGMS and NHGRI)</td>
+      <td class="footer" align="right"><a href="/db/cgi-bin/dictyBase/suggestion">Send a Message to the dictyBase Curators</a></td>
+      <td class="footer" align="right" width="1"><a href="/db/cgi-bin/dictyBase/suggestion"><img src="/inc/images/mail.gif" border="0"></a></td>
+   </tr>
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+</table>
+
+</BODY></HTML>
+<script>shift_linkMenu();</script>
+
+    </body>
+</html>

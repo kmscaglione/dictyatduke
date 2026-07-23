@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Growing Dictyostelium on Bacteria</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="bacteria" id="bacteria"></a>
+        </p>
+        <h1>
+            <a name="bacteria" id="bacteria"><b>Growing Dictyostelium on Bacteria</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_bacteria.html#bacteria1">We are trying to grow dictyo (DH1) on a lawn of E. coli instead of the usual K. aerogenes.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_bacteria.html#bacteria1"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_bacteria.html#bacteria2">I have a question as to which E. coli B/r strain is being used to culture Dictyostelium.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_bacteria.html#bacteria2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_bacteria.html#bacteria3">I am growing my strains on KA plates, and I want to collect happily growing vegetative cells.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_bacteria.html#bacteria3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_bacteria.html#bacteria4">Poor growth of Klebsiella on SM plates.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_bacteria.html#bacteria4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_bacteria.html#bacteria5">Is Klebsiella Kp29 dangerous?</a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="bacteria1" id="bacteria1"></a> <b>Dear Everybody, We are trying to grow dictyo (DH1) on a lawn of E. coli instead of the usual K. aerogenes. On our regular SM plates (For 1 liter : Oxoid peptone: 10 g, Yeast extract Difco: 1 g, KH<sub>2</sub>PO<sub>4</sub> Fluka: 2.2 g, K<sub>2</sub>HPO<sub>4</sub> Wako: 1 g, MgSO<sub>4</sub> Merck: 1 g, Bactoagar: 20 g, complete to 950&nbsp;ml&nbsp;with bidistilled H<sub>2</sub>O (cell culture water), autoclave, cool to 50°C, add 50&nbsp;ml&nbsp;glucose 20g/100ml filtered sterile) we can get very nice colonies of dictyo on K.a. lawns, but nothing clear when using E. coli lawn (DH5α). Maybe this is related to the fact that E. coli grows more slowly than K.a. in these conditions ? If anybody knows the magical trick , please let us know... Thanks,</b><br>
+            <i>-Pierre Cosson, Centre Medical Universitaire, Geneva, Switzerland, 30 Oct 2000</i><br>
+        </p>
+        <ul>
+            <li>There should be no problem growing Dicty on DH5α (I've done it myself, and Peter Newell's lab sent me a strain on DH5α a while back) **BUT** You may be drying out your Dicty. They like wettish conditions, and Klebsiella are fairly good at maintaining these. Most strains of E.coli used for cloning (like DH5α) have a mutation which is specifically there to make them less mucoid, so they carry less moisture. You could therefore try one of the following:<br>
+                <ul>
+                    <li>keep your DH5α plates much, much wetter - don't have sitting liquid (it makes everything go anoxic and v. unpleasant) but make sure the surface is still moist when you plate them, and keep them in a box with some moist tissue paper
+                    </li>
+                    <li>use a mucoid E. coli strain (I have actually used one of these myself - BB1 - though all the residual slime is a little irritating)
+                    </li>
+                </ul>See if this helps; I'm sure the list members would like to know if it does<br>
+                <i>- Robert Insall, The University of Birmingham, UK</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>As I recall, the Gerisch lab uses a low nutrient agar with Ecoli B/2 for optimal colony morphology. Remember that the colonies will spread out more relative to where development begins because of the reduced bacterial density.<br>
+                NA agar:<br>
+                <ul>
+                    <li>20 g Bacto Agar
+                    </li>
+                    <li>1 g Bacto peptone
+                    </li>
+                    <li>1 g glucose
+                    </li>
+                    <li>dissolve in 1 liter Soerensen's phosphate buffer, autoclave, and pour 25-30&nbsp;ml&nbsp;per plate.
+                    </li>
+                </ul>Prepare the B/2 as an overnight 37°C stock in LB or the standard I broth for microbiology (Merck). Store at 4°C for up to 1 week. Spread 0.1&nbsp;ml&nbsp;of the bacteria on the petri dishes. Add the Dicty either with the bacteria or spot with toothpicks afterwards. Good luck,<br>
+                <i>-Jeff Segall, Albert Einstein College of Medicine, NY</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The E.coli K12 strains do not grow well on the SM or LP agar plates that we use for growing Dicty on lawns of either Ka or B/r but you can get nice Dicty colonies on E.coli K12 strains by using M9-CA (case amino acids) plates. This is the usual minimal plate that is used for E. coli K12. If you need a recipe let me know. You basically need a minimal plate that K12 strains grow well on. Good Luck,<br>
+                <i>-Daphne Blumberg, University of Maryland, Baltimore, MD</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="bacteria2" id="bacteria2"></a> <b>I have a question as to which E. coli B/r strain is being used to culture Dictyostelium. Different labs have used the name "B/r" for classifying various radiation-resistant isolates of E. coli strain B. I found at least three different deposits at the American Type Culture Collection (ATCC) and the Yale E. coli stock center CGSC:<br></b>
+        </p>
+        <ol>
+            <li>
+                <b>ATCC#12407 "a radiation-resistant mutant of strain B" deposited by M. Demerec</b>
+            </li>
+            <li>
+                <b>ATCC#23227 "RH-hcr+ mutant of strain B" deposited by R.F. Hill</b>
+            </li>
+            <li>
+                <b>CGSC#6573 "lon-11, sulA1, LAMR, Mal (ts) mutant of strain B" as described by E.M. Witkin in 1946.</b>
+            </li>
+        </ol>
+        <p>
+            <b>Thank you,</b><br>
+            <i>-Stefan Pukatzki, Harvard Medical School, Boston, 6 Mar 2001</i><br>
+        </p>
+        <ul>
+            <li>I have E. coli B, but I don't have B/r. I think B should be good for what you do. Historically I think Raper used B/r for no other reason than he had it available in the lab. If you want the E. coli B let me know and I will grow it up. If you use E. coli for Dd food supply I can tell you how to do it. Dd doesn't grow as well on E. coli as it does on Klebsiella, and there are problems with E. coli forming acid which inhibits Dd growth.<br>
+                <i>-Herb Ennis, Columbia U., NY, 7 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Guenther Gerisch has used the B/r strains for growth of cells on Ecoli in suspension in phosphate buffer, I believe because the r(for rough?) cells did not clump together as much. For growth on low nutrient agar (NA) dishes, he recommended B/2 because morphology/development seemed to be better. Growth on E coli on SM (rich nutrient agar) plates might be difficult for the reasons Herb notes.<br>
+                <i>-Jeff Segall Albert Einstein College of Medicine, NY, 7 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The "received wisdom" I got John Bonner is that the "B/r" (originally named as a 'radiation resistant' strain, from I suspect military-scientific studies of WW2 days) does not form chains but rather divides into unattached single cells. dicty doesn't like to ingest clumps or chains of bacteria. I still don't know which of the ATCC numbers is the one that is equivalent to what john and i and others use. i've got a culture B/r originally from John that i would be glad to share a subculture of- just ask. As for E. coli making acid, you gotta keep the E. coli culture component from going stationary- that will keep the acid and the sour smell to a minimum. also-in Sussman's medium: keep the phosphate level minimal (I always add Na-K phosphate buffer but at no mopre than 0.01 M) otherwise the coli will accumulate intracellular phosphate bodies (visible under dark-field) that will inhibit growth and cell behavior. A healthy pre-stationary E. coli culture will have a wheaty smell to it. well- if you can stand the aroma of Klebsiellsa, you're welcome to use it.<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 7 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Recently I found myself growing dicty on an E. coli strain (HT115). I had great difficulty growing/developing dicty on this strain when I used either SM or LB plates. I had no problems however when I used a derviation of M9 plates as follows:<br>
+                NGM plates (as per Andy Fire's lab):
+                <ul>
+                    <li>3g NaCl
+                    </li>
+                    <li>17g agar
+                    </li>
+                    <li>2.5g bacto-peptone in 1 liter, autoclave and cool to ~55°C, then add:
+                    </li>
+                    <li style="list-style: none">
+                        <ul>
+                            <li>1ml 5mg/ml cholesterol
+                            </li>
+                            <li>1ml 1MCaCl<sub>2</sub>
+                            </li>
+                            <li>1ml 1M NaSO<sub>4</sub>
+                            </li>
+                            <li>25ml 1M KPO<sub>4</sub> buffer pH 6.0, antibiotic if desired depending on E. coli strain.
+                            </li>
+                        </ul>
+                    </li>
+                </ul><br>
+                I would grow my E. coli up in standard LB to about mid-log phase, concentrate it by about 4X and mix ~200&nbsp;µl&nbsp;of this culture with my dicty for plating onto the NGM plates. The exact origin of this E. coli strain is unknown to me and I wasn't able to find out too much information about it. However, I think the key to growing dicty on E. coli may, as has already been suggested, be the media used rather then the strain. Although I am at a loss to tell you why this NGM media worked so well while SM and LB didn't work at all. Hope this helps.<br>
+                <i>-Lisa Kreppel, Laboratory of Cellular and Developmental Biology / NIDDK, MD, 7 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Dear all, I think that we should try and standardize the use of E. coli in the community. As with Klebsiella it seems that some of us are using traditional stocks but many don't care what they really are (as long as they work). It is a good idea to have a "certified" reference at the stock center! best,<br>
+                <i>-Wolfgang Nellen, Kassel-University, Germany, 8 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Dear Stefan, I have introduced E. coli B/r to phagocytosis work in Dictyostelium in 1959 (no joke!) (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2061">G. Gerisch, Naturwissenschaften 46, 654-656</a>). The strain is still available from us. One advantage of this strain is that it forms almost globular bacteria of uniform size, which allow precise recordings of bacteria uptake in suspension by turbidity measurements. In contrast, the parent E. coli B tends to form long snakes that can not be taken up by Dd. It is important that our B/r strain is also defective in the synthesis of cell-surface lipopolysaccharides because this is a requirement for adhesion to the phagocyte surface. The core oligosaccharide synthesized ends with a glucose residue. This enabled Guenter Vogel to demonstrate a glucose receptor to be involved in binding bacteria to the Dd surface.<br>
+                We use washed B/r bacteria suspended in phosphate buffer. I do not recommend this strain for nutrient-rich agar plate cultures, because some bacterial metabolite causes alterations in the shape of fruiting bodies. E. coli B/2 can be used in both suspension and agar plate cultures. Bacteria are in this strain similarly short as in B/r and are easily taken up in suspension. Regards,<br>
+                <i>-Guenther Gerisch, Max-Planck-Institut fuer Biochemie, Martinsried, Germany, 8 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I suspect, as Gunther and i have pointed out, that the primary concern is that the bacteria are not-aggregate (chain) forming. The nature of any cell surface material, as pointed out by Gunther and Vogel, is obviously significant for successful phagocytosis. it is a speculation on my part that the media differences you allude to may very well affect chain-forming and/or synthesis of cell-surface lipopolysaccharides by bacteria.<br>
+                Nellen's point about some standard and explicit reference for all (i may add 'not just the bacteria') culture components is really important.<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 8 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Does anyone recall the actual origins of E. coli B/r -- My recollection was that /r referred to the fact that it was a restricted host range mutant for bacteriophage T4rII mutants and that B/2 was a restricted host range mutant for bacteriophage T2 which is consistent with Gunter's description of the alterations in the LPS but my bacterial genetics days were over 25 years ago and memory fails with age !!! Perhaps someone with a better memory or who is younger can set us straight on this. Best<br>
+                <i>-Daphne Blumberg, University of Maryland, Baltimore, MD , 8 Mar 2001</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Daphne, Below are the genetic designtions for the strains
+                <ul>
+                    <li>CGSC DB--
+                    </li>
+                    <li>Strain: E.coli B/r
+                    </li>
+                    <li>CGSC#: 6573
+                    </li>
+                    <li>Strain Designation
+                    </li>
+                    <li>Designation: AC6573
+                    </li>
+                    <li>Sex(Hfr,F+,F-,or F'): F-
+                    </li>
+                    <li>Mutations: lon-11, sulA1, LAMR, Mal(ts)
+                    </li>
+                    <li>No. of Muts Carried: 4
+                    </li>
+                    <li>Comments: E. coli B derivative. Not a K-12 strain. Several persons may have isolated radiation-resistant derivatives of E. coli B and called them simply E.coli B/r". This designation should be reserved for the original isolate of Witkin.
+                    </li>
+                    <li>References: Witkin, E.M. 1946. Proc.Natl.Acad.Sci.USA 32:59-0
+                    </li>
+                </ul>As you say B/2 should be E.coli B resistant tp phage T2.<br>
+                <i>- Herb Ennis, Columbia U., NY, 9 Mar 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="bacteria3" id="bacteria3"></a> <b>I am growing my strains on KA plates, and I want to collect happily growing vegetative cells , which means I have to collect cells before any dicty plaque can be observed. I tried several times to collect those cells and failed, since I cannot wash away all the bacteria. I think the problem for my case is that there are too many bacteria to be washed away. Do you have any tricks on how to deal with this problem? Thank you very much!</b><br>
+            <i>-Guokai Chen, BCM, Houston, TX, 8 May 2001</i><br>
+        </p>
+        <ul>
+            <li>What a pain! What I found helpful when I've done this in the past is getting whatever I've collected from the KA plates into a couple of mls of liquid media (HL5 or non-nutrient media, it all depends on what you're doing with them later), spinning the cells down very gently for a couple of minutes, washing them a couple of times in either HL5 or non-nutrient media (again, it all depends on what you're doing with them later), letting them settle out in a dish or on a coverslip, washing the plate a couple of times over the course of an hour or so and then leaving them for an additional 2-3 hours. This waiting time gives the dicty a chance to munch on the bacteria that remain, which reduces their numbers. It's not perfect, but it might work for you.<br>
+                <i>- Steph Levi, 8 May 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <i>-[In response to Steph Levi' comment]:</i>These cells are no longer really vegetative! keep that in mind! a few hours at high density and low food is clearly the beginning of development! regards<br>
+                <i>-Wolfgang Nellen, Kassel-University, Germany, 9 May 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Old time-proven protocol (I got it from J. Bonner): -I usually use this protocol to isolate veg cells from suspension cultures but it works equally well after the plate-grown culture mixture is washed from the agar and suspended. i have used both phosphate-buffered (pH6.3) Bonner's saline or, and better, Sussman's medium to wash the amoebae cum bacteria in the initial wash/suspension of the growth plates. try to keep the volume of this wash-fluid to less than 10 ml per plate. Centrifuge (swinging bucket) the suspended growth mixture (~10 ml aliquots) in plastic tubes @ 50 g for 3 min. aspirate off the supernatant fluid leaving a loosely packed sediment. Thoroughly resuspend the collected sediments into a total of 10-12&nbsp;ml&nbsp; saline, ctf again @ 50 g for 3 min, aspirate the supernatant fluid, and resuspend the amoebae into whatever volume of saline you want. assuming the last pellet is ~0.1&nbsp;ml&nbsp;of amoebae, you will have removed &gt;99.9% of the original suspension fluid including most all of the bacteria. using plastic ctf tubes gives a neater pellet without amoebae stuck on the tube walls.<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 8 May 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We haven't done this for years but we used to try to get as many log-phage veg cells as possible for doing RNA time courses.<br>
+                The key is to have as high a density of cells per plate. Using thick KA plates (poured near the top on 20 mm Petri dishes, not the standard 15 mm deep plates) gives a greater yield of cells per plate. We used to inoculate with about 2-3 sorocarps (even if we used axenic KAx-3 cells) per plate. This produced thick bacterial lawns before the Dicty cells took off. The next key is to harvest as late as possible- generally 40-44 hrs but before the plates start to clear. As the cells grow with a rapid generation time on plates (3.5 hrs), you need to start sacrificing a plate every hour or so starting at 40 hrs to see what the yeild is. After a few tried, you should have parameters down to get the best yield- it's empirical and by trial and error but we found it reproducible if we kept all of the factors constant- how thick the plates are poured, amount of inoculating bacteria, # of sorocarps, etc.<br>
+                We used differential centrifugation. Dicty pelleted at about 3K in our centrifuge but most bacteria didn't. Three-four washes were normally sufficient to reduced to bacteria to almost non-detectable while maintaining a very high yeild of Dicty cells. The speed and time will depend upon your centrifuge. If you start with a lower yeild of Dicty cells from the plate and proportionally more bacterial, the percent recovery of Dicty cells goes way down. Hopefuly this is useful.<br>
+                <i>-Rick Firtel, UCSD, CA, 8 May 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>A follow-up: if your goal is a good yield of vegetative amoebae, why don't you try suspension culture. I use this routinely. Into 25&nbsp;ml&nbsp;of Sussman's medium in foam-plugged flask, inoculate with ~.001 cc (ie, a cubic mm) each of plate grown bacteria (we use E.coli B/r) and of dicty fruiting bodies. Grown on a rotary shaker (gently!, just enough to keep the suspension swirling) @21-22 degrees, in dark, for 24-28 hrs. My experience is that the culture will clear @~30 hrs giving you aggregation competent amoebae. These culture times are empirically drawn and are promarily affected by swirl speed and amount of inocula. freshness of bacteria and spores (we routinely passage every 2 weeks) are also a factor.<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 8 May 2001</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="bacteria4" id="bacteria4"></a> <b>Poor growth of Klebsiella on SM plates: My group have been having intermittent problems with SM agar plates for some years now. A certain proportion of Klebsiella lawns grow thin and white instead of lush and yellow. Dictyostelium cells completely fail to grow on the thin, white lawns. Certain treatments (for example overdrying or cobalt selection) make things much worse - a higher proportion of plates fail. Aslo, the prepackaged SM agar from BIO101 is worse than medium made from individual components. We've recently noticed that the plates with the white lawns are very acidic. I also discovered in correspondence with Dennis Welker that he's had similar troubles with cobalt plates. His answer was to buffer with a bit more phosphate to stop plates getting too acid. Recently I've found that adding 20mM MES pH 6.5 abolishes the problem more or less completely, and as a fringe benefit lawns are a bit thicker and faster-growing. We are therefore musing on a shift to always using MES (to yield SMM agar...), but I wanted to bounce this off the community a bit before doing anything rash. Therefore:<br>
+            (a) have you had the "white Klebsiella" problem? If so, did you do anything special to make it go away?<br>
+            (b) if you're feeling adventurous, or have been troubled by weedy lawns or white Kleb or suchlike, could you please try this and tell me how your cells get on? If a few people report positive or negative results I'll summarize them in a future post. Best wishes,</b><br>
+            <i>-Robert Insall, The University of Birmingham, UK, 8 Apr 2002</i><br>
+        </p>
+        <ul>
+            <li>Well- I always have used E coli B/r (having been dictyized in Bonner's lab) but have always buffered my SM and my Bonner's salt with 0.01M Na/K phospahte buffer @pH 6.3. (more Na than K).<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 9 Apr 2002</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Thin Klebsiella lawns: We had this problem many years ago when I first came to La Trobe and spent about 6 months trying to track it down. The cause is plasticizer leached from the plastic by hot agar. Different brands of Petri dish exhibit the problem to different but variable extents. The solution is to let the agar cool more before pouring the plates. My rule of thumb is that you need to be able to hold the agar flask comfortably in your bare hand for pouring the plates.... but of course don't let the agar set!<br>
+                <i>-Paul R. Fisher, La Trobe University, Australia, 9 Apr 2002</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I also have had the problem of poor growth of bacteria in the central part of the plate and found it to be related to acidification of the medium (can be monitored by including BTB of PR in the medium). The problem was solved by simply doubling the buffer (4.4 g/L KH<sub>2</sub>PO<sub>4</sub>, 2.0 g/L N<sub>2</sub>HPO<sub>4</sub>, nearly 50 mM of phosphate) and additionally decreasing the carbon source glucose which I thought might be causing the excessive acidification. I chose 3/4 the concentration of peptone. More precipitates (magnesium phosphate?) form in the agar solution but apparently they don't do any harm. I have never had the same problem again for over 10 years, and the medium continues to support excellent growth of bacteria and give large yields of Dictyostelium as well as several other slime mould species. MES might be better, though much more expensive, because you can keep the ionic strength lower. Too thin a plate (less than 25&nbsp;ml&nbsp;per 9 cm plate) is no good, probably because of the faster accumulation of wastes (not just acids) rather than the limitation of nutrients. Best wishes,<br>
+                <i>-Kei Inouye, Kyoto University, Japan, 10 Apr 2002</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="bacteria5" id="bacteria5"></a> <b>Is Klebsiella Kp29 dangerous? Many of us use Klebsiella pneumoniae, strain Kp29, for bacterial culture of Dicty. As most of us know, some strains of K. pneumonia are potentially lethal human pathogens. I recently found out that ALL Klebsiella strains (both pneumoniae and so-called environmental species) are classified in Germany as dangerous and can only be handled legally under medium security (S2) conditions. Quite likely this is the case in other countries as well. An old Dicty tradition says that Kp29 is nonpathogenic as it lacks a mucopolysaccharide capsule, and is thus easily phagocytosed. If this can be documented there might be a chance of getting our bug reclassified as harmless, which would definitely be a plus for me. On the other hand, if there is a real medical risk we should all know about it. I have found a German Klebsiella expert who is willing to look into the capsule issue with modern methods. Has anyone else done this already? Does anyone have information about the gene/s mutated in Kp29? Does anyone know if these mutations can revert? Has anyone heard of clinical infections suspected or known to have been caused by Kp29? Does anyone know about the legal status of Kp29 in the US or other countries, or of any regulatory agency decisions concerning Kp29?</b><br>
+            <i>-Harry MacWilliams, Ludwig-Maximilians-Universität, Muenchen, Germany, 19 Jul 2003</i><br>
+        </p>
+        <ul>
+            <li>We are using a Klebsiella strain from the Dictyo community (from the P. Golstein lab in Marseille, France), supposedly non-pathogenic. Indeed it does not have a visible capsule (by EM). It has been tested in animals (pneumonia in mice), and it is not pathogenic in this test (whereas pathogenic Klebsiella are). I don't know if this is good enough to get legal authorization to handle them in a regular lab, but we've always used it as non-pathogenic. In our hands it is also great for growing dictyo. Available upon request...<br>
+                <i>-Pierre Cosson, Centre Medical Universitaire, Geneva, Switzerland, 28 Jul 2003</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p><table width="100%">
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+   <tr>
+      <td class="footer" align="LEFT" width="1"><a href="/"><img src="/inc/images/arrow.small.up.gif" border="0"></a></td>
+      <td class="footer" align="LEFT"><a href="/">Return to Home</a></td>
+      <td class="footer" align="center" width="50%">Supported by NIH (NIGMS and NHGRI)</td>
+      <td class="footer" align="right"><a href="/db/cgi-bin/dictyBase/suggestion">Send a Message to the dictyBase Curators</a></td>
+      <td class="footer" align="right" width="1"><a href="/db/cgi-bin/dictyBase/suggestion"><img src="/inc/images/mail.gif" border="0"></a></td>
+   </tr>
+   <tr><td colspan="5" class="separator"><img src="/inc/images/bluepix.png" border="0"></td></tr>
+</table>
+
+</BODY></HTML>
+<script>shift_linkMenu();</script>
+
+    </body>
+</html>

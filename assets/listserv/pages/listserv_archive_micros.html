@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Microscopy</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="micros" id="micros"></a>
+        </p>
+        <h1>
+            <a name="micros" id="micros"><b>Microscopy</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_micros.html#micros7">Does anyone know how to fix dicty cells for immunofluorescence studies?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros7"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros6">Can someone direct me to a method for disaggregating cells from mounds and slugs that yields cells suitable for immunofluorescent microscopy?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros6"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros2">Autofluorescence: I am visualising live cells grown in HL5, and have a problem with autofluorescence.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros3">Autofluorescence: Purging background green fluorescence.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros4">Cell fixation: I would like to find a protocol to fix Dicty cells expressing GFP such that GFP fluorescence is maintained and nuclei can be stained with propidium iodide.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros5">Phototoxicity: Has anyone done a study in any depth about the worst and best wavelengths for photoxicity in Dicty?</a><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_micros.html#micros1">Digital Cameras: I am interested in buying a digital camera for our Nikon dissecting scope. Experience here is leading us to the KODAK DCS (either 420 or 460). I am looking for any advice others may have with these or alternative configurations.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_micros.html#micros1"></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros7" id="micros7"></a> <b>Does anyone know how to fix dicty cells for immunofluorescence studies?</b><br>
+            <i>-Hina A Rehman, 17 Nov 2005</i><br>
+            <br>
+        </p>
+        <ul>
+            <li>We use the following procedure:<br>
+                - 4% paraformadehyde for 15-30 minutes (depends on the antigen)<br>
+                - Wash 1X with phosphate buffer containing 0.5% saponin and 1.5% BSA<br>
+                - Incubate with primary antibody diluted with 0.5% saponin, 1.5% BSA, PB for 1 hour.<br>
+                - Wash 3X with .5% saponin and 1.5% BSA/PB.<br>
+                - Incubate with secondary antibody diluted with 0.5% saponin, 1.5% BSA in PB for 1 hour.<br>
+                - Wash 3X with PB.<br>
+                - Resuspend in mounting media (90% glycerol, 10% PB).<br>
+                We get the saponin from Sigma.<br>
+                <i>-Mark Hickman, University of Texas Health Science Center, Houston</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>If its a new antibody I would suggest trying a variety of fixation techniques, some antigens work with formaldehyde, others only work with ethanol fixation, etc. I've attached a list of fixatives. (see <a href="/techniques/microscopy/fixation_rgomer.html">Techniques pages</a>)<br>
+                <i>-Richard Gomer</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros6" id="micros6"></a> <b>Can someone direct me to a method for disaggregating cells from mounds and slugs that yields cells suitable for immunofluorescent microscopy?</b><br>
+            <i>-Dale Herald, University of Texas-Houston Medical School, TX, 4 May 2005</i><br>
+            <br>
+            Thanks to all who responded to my question about diaggregating multicellular stages. The responses were numerous, prompt, and very helpful. What a great community we have. I've summarized them below for anyone with interest.<br>
+            <i>Dale</i>
+        </p>
+        <ul>
+            <li>A mechanical method for disaggregating cells was reported by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4440">Newell, Longlands and Sussman in 1971</a>. This paper is a classic and was influential in putting Dictyostelium on the molecular biology map. The method involves triturating the aggregates through a pipet and I have done it many times. A few years later I (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=76">Alexander, Brackenbury and Sussman</a>) published a paper in Nature (1975) that used trypsin to disaggregate cells. And Dave <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5081">Ratner</a> had a paper in Exp. Cell Res. (1983) where they use proteases to make cells that they then separated into prespore and prestalk populations. The latter two methods alter the cell surface of course.<br>
+                <i>-Steve Alexander</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I remember skooshing slugs etc up and down with a Pasteur pipette, and getting cells. There will be some clumps and some broken cells but if you keep monitoring with a hemocytometer it works.<br>
+                <i>-Richard Gomer</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Rob Kay's "BAL/pronase" protocol was good.<br>
+                <i>-Robert Insall</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>See my Nature paper (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=10161">Foster et al. (2004)</a>) for a simple way of disaggregating cells ready for gfp counting, etc.<br>
+                <i>-Chris Thompson</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have used the [cellulase] protocol succesfully for slug immunostaining and I'm sure it will work for mounds....<br>
+                <i>-Elisa Alvarez</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Use cellulase, is cheap and works fine for all stages. Look in some of our old papers to do with celltype proportioning for details.<br>
+                <i>-Kees Weijer</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We take them at loose mound and either vortex or disrupt by vigorous pipetting. We never had good success dissocociating slugs. Another way, depending on what you want, is to develop in shaking culture. We pulse for 4&nbsp;hrs. This gets them agg competent and then give the hi&nbsp;cA for ~2&nbsp;hr to turn on "late genes". The aggregates here are smaller than on plates and sometimes easier to break up....<br>
+                <i>-Alan Kimmel</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros2" id="micros2"></a> <b>I am visualising live cells grown in HL5, and have a problem with autofluorescence. There appear to be many small vesicles that fluoresce at blue, green and red wavelengths (I am using a 360nm excitation and a 420nm emission filter if that helps). Has anyone encountered the same problem? Does anyone know of any conditions to grow cells under to remove this background? I have to compare starved against growing cells, so starving is not an option. How about growing cells on bacterial lawns?</b><br>
+            <i>-Grant Otto, Columbia University, New York, NY, 9 Jan 2002</i><br>
+        </p>
+        <ul>
+            <li>Everyone who does live cell imaging encounters this problem, since HL5 is fluorescent. What we typically do is starve the cells in buffer for 1-2 hours if our signal is low. Obviously if the signal is strong enough, you don't worry about a little background. This helps, but does not totally eliminate the problem. You must also be wary however that the cells are starved and that might affect the biology.<br>
+                <i>-Rex Chisholm, Northwestern University, Chicago, IL, 9 Jan 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Growing on bacterial lawn works but since you have to wash the bacteria off, the cells are for that period without nutrition. Don't know how critical that is to your experiments.<br>
+                <i>-Petra Fey, Northwestern University, Chicago, IL, 9 Jan 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The following holds true for nc-4h cells - I don't have any specific data about the transition dynamics for any of the AX# cells: washing bacterial-grown dicty doesn't generate truly "starved" amoebae (ie- loss of folate sensitivity and gain of camp sensitivity) for perhaps 10 hrs after washing. there appears to be a very slow turn on (starting ~3-4 hrs after wash) of camp sensitivity and a very slow and long (&gt;14 hrs) shut-down of folate reponsiveness. (all this goes back ~30 years to reports by Bonner&amp; Pan&amp; Sachsenheimer, et al. and <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=475">Bonner et al 1970</a>)<br>
+                <br>
+                Like I said- this is true for NC-4h. Perhaps it is time for someone do to some old-fashioned time-course chemotaxis assays on ax# strains ("starved" for n hrs, etc.). I'll do it later this spring if ax# spores are sent to me (along with recipe and protocols for growing these axenic strains. (that's right- I work with NC-4h. Why "assume" that a half century of behavioral and life-cycle data for nc-4h is the same for the ax# strains??!)<br>
+                <i>-Jared L. Rifkin, Queens College, NY, 9 Jan 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The HL5 fluorescence problem keeps coming up. At least for the S65T-gfp wavelength range, there is a simple, workable solution: low-fluorescence axenic medium (see recipe below). This also works fine at excitation 360/emission 510. I have not tried excitation 360/emission 420, but here I suspect there is significant cytosolic fluorescence that will be difficult to get rid of in any way.<br>
+                I have sent this recipe to several other labs; does anyone have comments or improvements?<br>
+                Recipe for <a href="/techniques/media/lowflo_medium.html">"Loflo" medium</a>.<br>
+                <i>-Harry MacWilliams, Ludwig-Maximilians-Universität, Muenchen, Germany, 10 Jan 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I made up the LoFlo and LoFlo w/ yeast extract according to the protocol by Harry MacWilliams (Dicty listserv Jan 10, '02) and I have found that it works great. The only variation is that my yeast extract is provided by Difco and not Oxoid. I suppose that this does not make a difference in the autofluorescence, although the experiment has not been done.<br>
+                <br>
+                I am in Day #3 of doing growth curves and the AX-4 cells in HL-5 and LoFlo + yeast extract look identical and their growth is very similar. The cells in LoFlo+yeast extract have just been titered at 2e6/ml and growth may taper off. Cells in LoFlo have a slightly altered morphology (bigger vesicles and more cells elongated) and their growth is lagging behind a bit (reduced by 10-20%).<br>
+                <br>
+                Looking in the fluorescence microscope, I cannot distinguish by eye any difference in autofluorescence between cells grown in LoFlo and LoFlo+yeast extract. The vesicle autofluorescence of cells grown in HL-5 is much higher than the cells grown in both LoFlo media. Autofluorescence was greatly reduced in the filters used to see fluoresceine (490/520-530), rhodamine, and the S65T-gfp.<br>
+                <i>-Edward Harris, Louisiana State University, Shreveport, LA, 18 Jan 2002</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros3" id="micros3"></a> <b>To better visualize a GFP-tagged protein in individual cells, we would like to minimize their green fluorescent background. We suspect that this arises from ingested axenic medium, but we do not know how to get rid of it. Any suggestions would be appreciated and shared with any interested parties.</b><br>
+        </p>
+        <ul>
+            <li style="list-style: none">Summary: I want to thank the respondents and share some of their answers (below). Incidentally, for our purposes, incubating the cells in buffer for 2 hours purged them of their [endocytic] background fluorescence.<br>
+                <br>
+            </li>
+            <li>We routinely incubate the cells in a neutral buffer such as MOPS or PDF for a few hours prior to imaging. Obviously this can be a problem for certain kinds of experiments. Please let me know about any other good tricks you learn about.<br>
+                <i>-Rex L. Chisholm, Northwestern University, Chicago, IL</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>You're right that HL-5 is tremendously fuorescent-----we put our cells in a phosphate buffer for several hours to wash out the HL-5.....If you don't want cells in early development, I suppose you could feed them bacteria in the phosphate buffer....<br>
+                <i>-Terry O'Halloran</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>With our filter set axenic medium has significant yellowish fluorescence. To reduce this problem I usually put the cells in PO<sub>4</sub> buffer for 20 min or so before imaging for GFP. Even after this, however, vacuoles however may appear yellowish.<br>
+                <i>-Eugenio L. de Hostos</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We don't really see much background, although this may be because we generally do not examine vegetative cells. What we found that helped when we started our studies is to use a filter that is specifically set for GFP and to use one with a narrow band width. This significantly helps to eliminate general background and may help your specific problem.<br>
+                <i>-Richard A. Firtel</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We've had that problem and it is axenic growth that does it. So we grow cells on bacteria or starve them. You can also fix and image GFP if dead cells will do, but you take some fluorescent losses during fixation.<br>
+                <i>-Edward C. Cox</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have come up with an axenic medium with vastly reduced fluorescence which is based on casein peptone. Cells may not grow in it indefinitely, but they will increase in number at least an order of magnitude before showing signs of starvation.<br>
+                <i>-Harry MacWilliams</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Indeed, autofluorescence results from vesicles filled with axenic medium. Therefore, washing cells does not help a lot. one way to get around the problem is to grow cells on bacteria. a different way that I can also recommend, is to use the wt-GFP instead of the red-shifted S65T mutation. if you illuminate cells expressing wt-GFP with UV light (eg the DAPI filter set) the autofluorescence appears blue, while the GFP fluorescence glows in green.<br>
+                <i>-Markus Maniak</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>A good way to get rid of the growth media caused fluorescence is to switch over to this caesin peptone from Merck, instead of the regular Oxoid peptone. The only problem besides the cost and easy availability that I faced was that the cells do not grow to as high densities as in the normal media. But, this nonetheless gives you significant reduction in the background. Let me know if you want any more details.<br>
+                <i>-Jyoti Kumar Jaiswal</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I had trouble with the autofluorescence of Dicty when I was measuring intracellular pH. I didn't think of the media causing the autofluorescence though. One way to test that idea is to titrate the media to different pH values and measure the fluorescence between a slide and cover slip. I used little wells on microscope slides to measure pH calibration curves. I suppose you could use cloning rings on a slide if you have inverted optics.<br>
+                <i>-Ruth</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The background fluorescence of internalized nutrient compounds can be highly reduced using a confocal microscope. You also can get rid of the background when you observe the cells in non-nutrient medium (phosphate buffer) or if you do not want to starve the cells while adding bacteria as nutrient source (E.coli B/r) to the phosphate buffer.<br>
+                <i>-Ralph Neujahr</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Can't help much at all, except to confirm that axenically grown Dicty do have considerable autofluorescence which diminishes several-fold in the early hours of development. If your protocol can tolerate a pre-period of buffer suspension, that has some effect. When we have used strong promoters for GFP, autofluorescence is entirely negligible (1%) but it can certainly muck up the situation for a weak promoter. Because the autofluorescence looks yellower than GFP signal, we have tried a few filters in microscopy, but failed to find any magic solution. For flow cytometry, one can do a cross-channel correction (Fl 1 -x%Fl 2) which can make some numbers look better, but I get nervous as the data get manipulated more. Are you using a mutated GFP? The S65T change helps markedly. Lastly, when we raise the conc. of G418 of transformants, the desired GFP signal does increase, and not, as far as we have seen, due to any major change in copy number. Something else is going on. None of this may be new to you, but it's all I know.<br>
+                <i>-David I. Ratner</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>In 1986 we showed that 0.1 M sucrose will induce the secretion of a substantial quantity of the lysosomal enzymes from vegetative cells (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5646">Seshadri et al 1986</a>). I wonder if this also results in secretion of any recently ingested medium containing the background fluorescence? The paper to check is <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3314">Klein et al 1989</a> I hope this may trigger some ideas to overcome the problem.<br>
+                <i>-Dave Cotter</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Dictyostelium cells have fluorescent vacuoles in monocellular vegetative stage. The fluorescent substance(s) observed in the cell mass in multicellular stage. The fluorescent substance(s) observed only inter spore matrix in a spore mass. The main components of the fluorescence are thought to be Dictyo-pterine in vegitative stage and Dictyo-lumazine in developmental stage. I could wash out the fluorescence by cold-methanol fixation and water. If you want to observe a fluorescence in a living cell, my suggestion may not be effective.<br>
+                References:<br>
+                Uchiyama, Nagai and Maruyama 1993. Localization of fluorescent substances in the cellular slime mold Dictyostelium discoideum cells during growth and development. Journal of Plant Research, vol. 106,345-349, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6409">Uchiyama, Nagai and Maruyama 1994</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6410">Uchiyama, Nagai and Maruyama 1997</a>.<br>
+                <i>-Saburo Uchiyama</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros4" id="micros4"></a> <b>I would like to find a protocol to fix Dicty cells expressing GFP such that GFP fluorescence is maintained and nuclei can be stained with propidium iodide.</b><br>
+            <i>-Thomas Winckler, Institut fur Pharmazeutische Biologie, Frankfurt, Germany, 21 Feb 2000</i><br>
+        </p>
+        <ul>
+            <li style="list-style: none">Dear colleagues, Thanks a lot for your communications concerning the fixation of cells expressing GFP. Many people wanted to get the results of this discussion, so below is a summary of what was suggested by the community:<br>
+                <br>
+            </li>
+            <li>There was the suggestion to use methanol (10 min, -20°C) for fixation and to use Phenylendiamin (0.1%) to stabilize GFP fluorescence.
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>There is a two-step fixation method described by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=9014">Fukui et al in Meth. Cell Biol. 1987</a>.
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Susan Lee wrote: Fix cells with 3.7% formaldehyde in 12mM Na/K phosphate buffer for 5-10 min. Remove buffer. Permeablize in 0.2% triton X-100 in PBS for 1 min. Remove solution. Wash twice with PBS, 5 min each. Then you can do the second staining.
+            </li>
+            <li style="list-style: none">
+                <br>
+                Meanwhile we found that fixation with methanol works fine if you fix for 20 sec to 2 min (try) at -20°C. GFP fluorescence is well conserved and the cells can be stained for nucleic acids with 5 °g/ml propidium iodide.
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros5" id="micros5"></a> <b>Has anyone done a study in any depth about the worst and best wavelengths for photoxicity in Dicty? I'm wondering about buying far-red fluors, for example - but does the red laser do any less harm than the green (which is in my hands much the worst)? And does multiphoton illumination hurt them any less? Does anyone know what the mechanism of phototoxicity is?</b><br>
+            <i>-Robert Insall, 10 May 2001</i><br>
+        </p>
+        <ul>
+            <li>Good questions Rob. There were some studies by Haeder years ago, that would be worthy to read again.<br>
+                <i>-Salvatore Bozzaro, Università di Torino, Orbassano, Italy</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="micros1" id="micros1"></a> <b>I am interested in buying a digital camera for our Nikon dissecting scope. Experience here is leading us to the KODAK DCS (either 420 or 460). I am looking for any advice others may have with these or alternative configurations.</b><br>
+            <i>-Alan Kimmel, NIH, Bethesda, MD, 5 Jun 1997</i><br>
+        </p>
+        <ul>
+            <li>I'm still looking into things but am going to demo a Sensys camera- about $18K. It's very sensitive and can be used both on dissecting and fluorescent microscopes and good resolution (approx. 1100x1400) but it's B&amp;W (mostly for fluorescent stuff which we are going to be doing on a dissecting scope looking at cell movement).<br>
+                <i>-Rick Firtel, University of California, San Diego, CA, 5 Jun 1997</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have heard good things about the Pixera Pro for color light microscopy. It is probably not sensitive enough for weak fluoescence, but I have not tried it so don't know. It is not a cooled integrating camera, but is digital and about $1000. Many people have used the Cohu with integrating capability and an Scion frame grabbing board and NIH Image to accomplish the same thing for about $2000 total (gray scale or filter wheel for color). This is sensitive for many fluorescence applications unless you are talking really weak and needing really high resolution. The $20,000 digital cameras (Princeton, Photometrics) will do it all if you have the $$$.<br>
+                <i>-David Knecht, University of Connecticut, CT, 5 Jun 1997</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We are using the Sensys camera from photometrics for visualization of GFP fusions and it works very well. For some applications where the protein being imaged is very low light level we find that even the Sensys camera requires 300-500 msec. exposure times, but on the whole we've been very happy with it.<br>
+                <i>-Rex L. Chisholm, Northwestern University Medical School, Chicago, IL, 5 Jun 1997</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

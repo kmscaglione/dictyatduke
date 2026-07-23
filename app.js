@@ -5220,6 +5220,10 @@ function renderCommunity(section) {
     communityShell.innerHTML = renderDiseaseModelsPage();
     communityShell.removeAttribute("hidden");
     loadDiseaseModels();
+  } else if (section === "listserv") {
+    communityShell.innerHTML = renderListservPage();
+    communityShell.removeAttribute("hidden");
+    loadListservArchive();
   } else {
     communityShell.innerHTML = "";
     communityShell.setAttribute("hidden", "");
@@ -5301,6 +5305,104 @@ async function loadDiseaseModels() {
     const v = parseInt(e.target.value, 10);
     if (Number.isFinite(v)) { page = v; render(); toTop(); }
   });
+}
+
+// ---- Dicty ListServ Archive (migrated from dictybase.org/ListServ_archive) ---
+let listservData = null;
+
+function renderListservPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Community</p>
+          <h2>Dicty ListServ Archive</h2>
+          <p>Questions and answers sent to the <code>dicty@listserv</code> mailing list since 1997, curated by topic. Migrated from dictyBase and preserved here in full. To ask a new question, email <a class="text-link" href="mailto:dicty@listserv.it.northwestern.edu">dicty@listserv.it.northwestern.edu</a> (you must be a <a class="text-link" href="/community/labs">dictyBase colleague</a> to receive replies).</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div class="lit-searchbar">
+          <input type="search" class="listserv-search" placeholder="Search all questions and answers…" aria-label="Search the ListServ archive">
+        </div>
+        <div data-listserv><p class="notice muted">Loading the archive…</p></div>
+      </div>
+    </article>
+  `;
+}
+
+async function ensureListservData() {
+  if (listservData) return listservData;
+  const res = await fetch("/assets/listserv/archive.json");
+  if (!res.ok) throw new Error("archive fetch failed");
+  listservData = await res.json();
+  return listservData;
+}
+
+function listservQaHtml(q) {
+  const date = q.date ? `<span class="listserv-date">${escapeHtml(q.date)}</span>` : "";
+  // answersHtml is sanitised at build time (allow-listed tags only).
+  return `<details class="listserv-qa" id="${escapeHtml(q.id || "")}">
+    <summary>${escapeHtml(q.q)}${date}</summary>
+    <div class="listserv-answer">${q.answersHtml || `<p class="muted">No answer was recorded for this question.</p>`}</div>
+  </details>`;
+}
+
+async function loadListservArchive() {
+  const container = document.querySelector("[data-listserv]");
+  if (!container) return;
+  let data;
+  try { data = await ensureListservData(); }
+  catch { container.innerHTML = `<p class="notice">The ListServ archive could not be loaded right now.</p>`; return; }
+  if (!document.querySelector("[data-listserv]")) return; // navigated away mid-fetch
+
+  const sections = data.sections || [];
+  const nav = `<nav class="listserv-nav">${sections
+    .map((s) => `<a href="#sec-${escapeHtml(s.id)}">${escapeHtml(s.title)} <span>${s.questions.length}</span></a>`)
+    .join("")}</nav>`;
+  const body = sections.map((s) => `
+    <section class="listserv-section" id="sec-${escapeHtml(s.id)}" data-section-title="${escapeHtml(s.title.toLowerCase())}">
+      <h3>${escapeHtml(s.title)} <span class="listserv-count">${s.questions.length}</span></h3>
+      ${s.questions.map(listservQaHtml).join("")}
+    </section>`).join("");
+  const unanswered = (data.unanswered && data.unanswered.length) ? `
+    <section class="listserv-section" id="sec-unanswered" data-section-title="unanswered questions">
+      <h3>Unanswered questions <span class="listserv-count">${data.unanswered.length}</span></h3>
+      <p class="muted" style="margin:0 0 10px">These were asked on the list but never got a recorded reply.</p>
+      <ul class="list">${data.unanswered.map((u) =>
+        `<li><span>${escapeHtml(u.q)}${u.by ? ` — <em>${escapeHtml(u.by)}</em>` : ""}</span></li>`).join("")}
+    </section>` : "";
+
+  container.innerHTML = `
+    <p class="oma-count">${(data.counts?.questions || 0).toLocaleString()} questions across ${sections.length} topics${data.unanswered?.length ? ` · ${data.unanswered.length} unanswered` : ""}</p>
+    ${nav}
+    <div class="listserv-results">${body}${unanswered}</div>`;
+
+  // One search box filters every Q&A card and hides emptied sections.
+  const inp = document.querySelector(".listserv-search");
+  const results = container.querySelector(".listserv-results");
+  const apply = () => {
+    const q = (inp?.value || "").trim().toLowerCase();
+    container.querySelectorAll(".listserv-section").forEach((sec) => {
+      let shown = 0;
+      sec.querySelectorAll(".listserv-qa").forEach((d) => {
+        const hit = !q || d.textContent.toLowerCase().includes(q);
+        d.style.display = hit ? "" : "none";
+        if (hit) { shown++; if (q) d.open = true; else d.open = false; }
+      });
+      // Unanswered list items (no <details>)
+      const li = sec.querySelectorAll("ul.list li");
+      if (li.length) {
+        li.forEach((it) => {
+          const hit = !q || it.textContent.toLowerCase().includes(q);
+          it.style.display = hit ? "" : "none";
+          if (hit) shown++;
+        });
+      }
+      const titleHit = !q || (sec.dataset.sectionTitle || "").includes(q);
+      sec.style.display = (shown > 0 || titleHit) ? "" : "none";
+    });
+  };
+  if (inp) inp.addEventListener("input", apply);
 }
 
 function renderAnnotationsPage() {
@@ -10503,6 +10605,7 @@ const CMDK_TARGETS = [
   { kind: "Community", label: "Dicty Stock Center", href: "/stock-center", sub: "Order strains & plasmids", kw: "stock center strains plasmids order reagents" },
   { kind: "Page", label: "Data & provenance", href: "/data", kw: "data provenance sources downloads" },
   { kind: "Page", label: "dictyBase Downloads", href: "/downloads", sub: "Mirror of the dictyBase Downloads page", kw: "downloads dictybase files bulk data mutant phenotypes gff3 ontology gene information gaf tab-delimited excel archive mirror" },
+  { kind: "Community", label: "ListServ Archive", href: "/community/listserv", sub: "Q&A from the dicty mailing list since 1997", kw: "listserv mailing list archive questions answers dicty email discussion faq forum thread protocol troubleshooting community" },
   { kind: "Page", label: "News & updates", href: "/news", kw: "news updates announcements changelog history releases" },
   { kind: "Page", label: "How to cite", href: "/cite", kw: "cite citation doi bibtex reference how to cite release version" },
 ];

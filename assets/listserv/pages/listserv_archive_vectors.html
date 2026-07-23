@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Dictyostelium Vectors</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="vectors" id="vectors"></a>
+        </p>
+        <h1>
+            <a name="vectors" id="vectors"><b>Dictyostelium Vectors</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors6">Where can I find the sequences of Dicty vectors?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors2">I am looking for a certain plasmid. Where can I obtain it?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors10">I am looking for a dicty vector that enables me to clone a gene of interest at the N-terminus of GFP.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_vectors.html#vectors10"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors3">Does anyone have a good inducible system for protein expression in Dicty?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors8">We would like to overexpress a protein in Dicty. We would appreciate any information with regard to the vectors that are available for overexpression and any other suggestions on methodology.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors9">IRES vectors: Has anyone ever tried using internal ribosome entry site vectors?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_vectors.html#vectors9"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors4">We are looking for an extrachromosomal vector that carries GFP or beta-galactosidase.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_vectors.html#vectors4"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors1">We are looking for an extrachromosomal vector that we can use to express myosin light chain mutants in Dicty. What is your collective wisdom regarding the best vector?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_vectors.html#vectors1"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors5">I wonder if anyone can enlighten me on what pREP might be and on some reference on what it is?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_vectors.html#vectors7">Has anyone sequenced the thy1 gene that is used as a selectable marker with the JH10 strain?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors6" id="vectors6"></a> <b>Where can I find the sequences of Dicty vectors?</b><br>
+        </p>
+        <ul>
+            <li>Many of the vectors stored at the Stock Center have sequence information. <a href="http://dictybase.org/db/cgi-bin/dictyBase/SC/searchform.pl">Search</a> for your desired plasmid, click on the link, 
+            and check out if the sequence is available (e.g. <a href="http://dictybase.org/db/cgi-bin/dictyBase/SC/plasmid_details.pl?id=109">pDXA-FLAG</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/SC/plasmid_details.pl?id=580">pEcm0-i-alpha-gal</a>). <br>
+                <i>-The dictyBase team</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors2" id="vectors2"></a> <b>I am looking for a certain plasmid. Where can I obtain it?</b><br>
+        </p>
+        <ul>
+            <li>The <a href="http://dictybase.org/StockCenter/StockCenter.html">Dicty Stock Center</a> has several Dictyostelium vectors. See the <a href="http://dictybase.org/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a><br>
+                <i>-The dictyBase team</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors10" id="vectors10"></a> <b>I am looking for a dicty vector that enables me to clone a gene of interest at the N-terminus of GFP. I am trying to create a fusion protein with C-terminal GFP and with no purification tags at the N-terminus. pTXGFP has a MCS at the C-ter of GFP and a N-ter His-tag; so this is not useful for my purpose. I'd be grateful for any suggestions.<br></b> <i>-Thanks, Bhadresh Rami, Stanford University, July 31, 2006</i><br>
+        </p>
+        <ul>
+            <li>I have created N-terminal and C-terminal GFP-vwkA by using pTX-GFP vector. See <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=11059">Betapudi et al. (2005)</a>. Good luck<br>
+                <i>-Venk Betapudi, Case Western Reserve University</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors8" id="vectors8"></a> <b>We would like to overexpress a protein in Dicty. We would appreciate any information with regard to the vectors that are available for overexpression and any other suggestions on methodology.</b><br>
+            <i>-Charles L. Rutherford, Virginia Tech University, VA, Jun 8, 2004</i><br>
+        </p>
+        <ul>
+            <li>For expressing secretory proteins, we have two G418 selectable, integrating plasmids modified from pVEII. After a cleavable signal peptide, they have BglII and BamHI sites upstream of and downstream from a c-myc tag. One version expresses in growing cells using the discoidin promoter, the other from prespore cells using the cotB promoter. Cheers,<br>
+                <i>-Chris West, University of Oklahoma Health Sciences Center, OK, Jun 8, 2004</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors3" id="vectors3"></a> <b>Does anyone have a good inducible system for protein expression in Dicty ? For example has anyone tried to import the glucocorticoid responsive elements in Dicty or any other inducible promoter? Finally has somebody successfully used the conditional gene expression system based on an inducible tRNA suppressor gene described by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1402">Dingermann et al.</a>?</b><br>
+            <i>-Mohammed Benghezal, 18 Nov 1999</i><br>
+        </p>
+        <ul>
+            <li>Dear Mohammed- I can comment on the last one. We have done extensive work on the inducible tRNA system. It is quite a challenge to use, although we have a paper ready for submission inwhich we used it. It has been extremely difficult to get reproducible and robust inducibility. For reasons we do not understand, the cells rapidly lose the repression in the absence of tet leading to loss of induction (ie it becomes more constitutive over time.). There are ideas we have as to how to improve it, but I don't have the hands at the moment to do it. Therefore, if you need something that works now, I would recommend the discoidin system, since that works well in ours and others hands.<br>
+                <i>-Dave Knecht, 18 Nov 1999</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have developed a DNA damage-inducible vector that works well for rapid induction. See <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=8397">Gaudet et al 2001</a> and <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5616">Secko et al 2001</a>.<br>
+                <i>-Pascale Gaudet, Concordia University, Canada</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Hi everyone, On November 18 Mohammed Benghezal requested for a good system for inducible protein expression in Dicty. As many of you may know, we presented during the Dicty meeting in Maine our results on a tetracyclin-inducible protein expression system (see abstract below). In our hands the system is excellent allowing a more than 2000-fold induction of protein expression. During the meeting we informed the field that the inducible system is availlable for the community upon completion of the experiments. Since the Dicty meeting we have performed additional experiments concerning the kinetics of induction and induction in individual cells. Presently we are writing a manuscript describing the system, which we expect to submit at the end of the year [see <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=387">Blaauw, Linskens, and van Haastert, 2000</a>] In January 2000 we will be ready to distribute the two plasmids and additional information concerning the use of the system to everyone that has asked for them (or will). For your information we will put in the coming weeks the maps of the plasmids on our web site. With best regards,<br>
+                <i>-Mieke Blaauw, Maarten Linskens, Peter van Haastert, 25 Nov 1999</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors9" id="vectors9"></a> <b>IRES vectors: Has anyone ever tried using internal ribosome entry site vectors? Dave Knecht and I agree - a system that allows two proteins to be expressed from one mRNA could be really useful. If, that is, it works. They exist in mammalian systems but the jury appears to be out on how effective they are.</b><br>
+            <i>-Robert Insall, The University of Birmingham, U.K., 18 July 2002</i><br>
+        </p>
+        <ul>
+            <li>We have used them extensively in mammalian cells and find that they provide by far the best way to guarantee expression levels in stable cell lines. They don't do much for transient transfection. Our use has been to drive G418 resistance and some protein (usually RLC).<br>
+                <i>-Rex Chisholm, Northwestern University, Chicago, IL, 18 July 2002</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have tried in human, mouse and hamster cells. I believe it will also work in Dicty, and somebody should try.<br>
+                <i>-Yadava Nagendra, UCSD, 18 July 2002</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors4" id="vectors4"></a> <b>We are looking for an extrachromosomal vector that carries GFP or beta-galactosidase. If you have such a thing, please contact me. Thanks,</b><br>
+            <i>-Rich Kessin, Columbia University, New York, 6 Jul 2000</i><br>
+        </p>
+        <ul>
+            <li>We have made a set of vectors for GFP and FLAG-epitope tag fusions that are working well for us. I'll have Steph in my lab send you the two extrachromosomal versions (Ddp1-based) called pTX-GFP and pTX-FLAG, &amp; we'll send a copy of the manuscript (in press in PLASMID). The sequences have been deposited in GenBank, but they seem to be taking a while to release them. Please contact me again if you would like me to email the sequences. Also, please feel free to distribute these to anyone who wants them-- the less we have to send out directly the better!!<br>
+                <i>-Tom Egelhoff, Case Western Reserve School of Medicine, Cleveland, OH, 7 Jul 2000</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors1" id="vectors1"></a> <b>We are looking for an extrachromosomal vector that we can use to express myosin light chain mutants in Dicty. What is your collective wisdom regarding the best vector? It would be best if the vector was Blasticidin resistant since our cells are already G418 resistant, but we could obviously swap selectable markers.</b><br>
+            <i>-Rex Chisholm, Northwestern University, Chicago, IL, 16 Oct 1997</i><br>
+        </p>
+        <ul>
+            <li>I suspect the question should be: what vectors do not become unstable during cloning in E. coli when you add such large amounts of A+T DNA. You are proposing Dicty plasmid DNA (600bp for Ddp2 ori, 7.2kb for Ddp1) promoter &amp; polyadenylation for selective marker (perhaps 600bp) and then your promoter and gene. I would suggest the best course would be to adapt the Ddp2 based expression vectors (eg pMUW2442) which are small 3.1 kb and do not need to contain a selective marker. The selective marker is carried on a separate integrating plasmid (eg pMUW110) which supplies the Ddp2 ORF in trans. Thus it would be neccessary to swop the selective marker in pMUW110 or just insert the Ddp2 Rep gene into the vector of your choice. We have versions of the extrachromosomal plasmid pMUW2442 which lack any promoter or polyadenylation sequences, just having the Ddp2 ori and a BamHI site where the expression cassette was inserted. From memory, the size of the basic construct is about 2.5 kb. There is nothing smaller. The Ddp1 based, 13 kb p155dI shuttle vector (Dennis Welker's lab) is getting a bit big for adding a A+T rich gene.<br>
+                <i>-Martin Slade, Macquarie University, Australia, 16 Oct 1997</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors5" id="vectors5"></a> <b>I wonder if anyone can enlighten me on what pREP might be and on some reference on what it is?</b><br>
+            <i>-P. Christopher LaRosa, 26 Jan 2000</i><br>
+        </p>
+        <ul>
+            <li>pRep, as I understand it, enables extrachromosomal replication at high numbers in Ddp2-based vectors. Hope this is helpful!<br>
+                <i>-Stephanie Levi, 27 Jan 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>pREP is a plasmid that contains the origin of replication from the Dictyostelium plasmid DdP2 and the "ORF" (origin recognition factor or something like that) which binds to the ORI and is necessary to keep the plasmid extrachromosomal (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3624">Leiting, Lindner and Noegel, 1990</a>). You can use it as a helper plasmid for vectors carrying the ORI but no ORF. the system did not work optimally, however, since there seems to be competition between the two plasmids. There are now strains available (e.g. from Piero Morandini; Milano) which have the ORF integrated into the genome.<br>
+                <i>-Birgit Wetterauer, Zoologisches Institut der LMU, Munich, Germany, 28 Jan 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I'm not quite sure what pREP is, but pMUW110 has the Ddp2 REP gene (no ori) in a G418 selective marker (Actin 6 promoter). See: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=8736">Dittrich, Williams Slade 1994</a>. Let me know if you want some. Cheers,<br>
+                <i>-Martin Slade, Macquarie University, Australia, 28 Feb 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have just cloned REP into the DIV1 plasmid that carries a uracile marker. Let me know if this is of interest for you so I can send it to you.<br>
+                <i>-Mohammed Benghezal/Pierre Cosson, Centre Medical Universitaire, Switzerland, 28 Feb 2000</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have three version available for the REP gene:<br>
+                <ol>
+                    <li>Pyr5-6 + REP for the complementation of ura- cells
+                    </li>
+                    <li>A Pyr5-6 gene disruption (FOA selection)
+                    </li>
+                    <li>Bsr + REP for a positive selection to Blasticidin resistance.
+                    </li>
+                </ol>I am of course talking about the REP gene for Ddp2 based plasmid. Best regards,<br>
+                <i>-Piero Morandini, University of Milan, Italy, 28 Feb 2000</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="vectors7" id="vectors7"></a> <b>Has anyone sequenced the thy1 gene that is used as a selectable marker with the JH10 strain? Does using this marker result in higher frequencies of ectopic integrations? Any help on this would be greatly appreciated.</b><br>
+            <i>-Michael Myre, University of Toronto, Mississauga, ON, Canada, 3 Apr 2001</i><br>
+        </p>
+        <ul>
+            <li>You can find the sequence for the thy1 gene in a paper by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1480">Dynes and Firtel 1989</a>. I don't believe the entire 3 kb genomic fragment was sequenced but the entire sequence is in the dictyBase genome data base: <a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=thya">http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=thyA</a>. Many of the common restriction enzyme sites have been mapped in this fragment. I don't know if anyone has done a direct comparison between thy1 and Bsr selectable markers in gene disruptions but I suspect there is some recombination of thy1 marker with the mutant thy1 locus in JH10 cells. Note the thy1 is defective in this strain due to the insertion of the pyr5-6 gene into thy1 locus. We have been able to obtain ~40% efficiency in gene disruptions with some genes using the thy1 gene and JH10 cells. Best regards,<br>
+                <i>-Jeff Hadwiger, Oklahoma State University, OK, 4 Apr 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

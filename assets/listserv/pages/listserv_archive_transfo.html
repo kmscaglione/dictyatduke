@@ -1,0 +1,1084 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: Dictyostelium Transformation</title>
+    </head>
+    <body>
+        <p>
+            <a name="transfo" id="transfo"></a>
+        </p>
+        <h1>
+            <a name="transfo" id="transfo"><b>Dictyostelium Transformation</b></a>
+        </h1>
+        <p>
+            <a name="top" id="top"></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo17">Transforming two vectors.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo16">I want to generate conditional mutants in AX2 strain of Dicty using antisense technique.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo14">I'd like to do RNA interference, has anyone a detailed protocol, advices...about this technique.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo13">Has anyone in the community tried RNAi by soaking or feeding, as in C. elegans?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_transfo.html#transfo_select"><b><font color="black">Selection of Transformants</font></b></a>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo15">I am wondering why Herpes Simplex Viral Thymidine kinase- negative selection is not used in Dictyostelium</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_transfo.html#transfo15"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo9">Has anybody used puromycin as selection marker to Dicty?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo2">Selectable markers: We would need to obtain homologous recombinants using a resistance marker other than blasticidin.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo8">Blasticidin selection on bacterial lawns?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo4">I am wondering if somebody has a trick for G418 selection or a good working protocol different from the standard one.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_transfo.html#transfo_proto"><b><font color="black">Transformation Protocols</font></b></a><br>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo12">Problems with transformation NC4-A4 cells.</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo1">Transient transfection: Has anyone tried transient expression of a GFP tagged protein in dicty?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo5">Has anyone developed a protocol for transient transfection of plasmids or for the introduction of antisense oligos?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo7">Can anyone give me a good protocol for electroporation of dicty in 0.2 cm cuvettes?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo6">Does anyone have experience in electroporating fluorescent molecules into Dicty cells?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo3">What are the pros &amp; cons of using lipofectamine?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+        </ul>
+        <p>
+            <a href="listserv_archive_transfo.html#transfo_issues"><b><font color="black">General Transformation Issues</font></b></a><br>
+        </p>
+        <ul>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo18">Abnormal cellular morphology of transformants</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo10">We are experiencing a problem about an unstable-lacZ transformant</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_transfo.html#transfo11">Unstable phenotype</a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo17" id="transfo17"></a> <b>Transforming two vectors: I am interested in doing live cell imaging in Dicty targeting two proteins at the same time. I had generated a cell line with one GFP (PTX-GFP)in one of the proteins and I have to introduce another tag. Does anyone know about another plasmid with RFP, YFP and another resistant different than G418? Or another way of doing live cell imaging with two proteins at the same time? Thanks</b><br>
+            <i>-Maria Gomez, June 19, 2006</i><br>
+        </p>
+        <ul>
+            <li>If your single tagged transformants are efficient i.e. you get lots of green and red cells, a simple co-transformation may do the job. We have done this in some cases and it works! regards<br>
+                <i>-Wolfgang Nellen, Universit�t Kassel</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have done dual color labelings for different proteins using GFP and mRFP. This is published eg. <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=10180">Fischer et al 2004</a> and <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=11112">Diez et al 2005</a>. I deposited the vector at the Dicty-Stock-Center. Best regards,<br>
+                <i>-Annette Mueller-Taubenberger, Ludwig Maximilians University</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo16" id="transfo16"></a> <b>I want to generate conditional mutants in AX2 strain of dicty using antisense technique</b><br>
+            <i>-Hina Rehman, July 5, 2006</i><br>
+        </p>
+        <ul>
+            <li>We have successfully done conditional knockdowns using RNAi constructs cloned in Tet-OFF system. For details look at Rosel D and Kimmel AR, Eur J Cell Biol. 2006, The COP9 signalosome regulates cell proliferation of Dictyostelium discoideum. (PMID: 16781008). With regards,<br>
+                <i>-Daniel Rosel, NIH</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo14" id="transfo14"></a> <b>I'd like to do RNA interference, has anyone a detailed protocol, advices... about this technique.</b><br>
+            <i>-Nathalie Cherix, Centre M�dical Universitaire, Gen�ve, Switzerland, 18 Oct 2005</i><br>
+        </p>
+        <ul>
+            <li>We've done RNAi for calcineurin and it was working pretty well. We make the RNAi constructs more or less how it is described in the manuscript of <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4050">Martens, et. al. 2002</a>. Usually we make 2 PCR products of the target gene: one of 400 bp and one of 500 bp. Both we clone in a TA cloning vector and then subclone one of them in opposite direction so that later the mRNA can form a stem loop (100 bp for the loop seems to be sufficient). In the case of Calcineurin B we cloned these inverse construct in a pDNeoII vector which has an actin6 promotor. Well if Dicty is very sensible for silencing of the target protein it will not work, than you need the Tet off system described by <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=387">Blaauw et al. 2000</a>. For using this system you need two plasmids: MB35 and MB38. MB35 you have to transform into Dicty. Inside of MB38 you have to clone your RNAi construct and afterwards you transform your plasmid construct inside of Dicty-MB35.<br>
+                <br>
+                We transform our cells by electorporation and keep them the whole time in HL5 medium with antibiotics. Monoclonal sorting we make in micro titer plates by diluting the cells. It seems to be that a lot of people have problems establishing RNAi. Maybe its important to keep the cells the whole time axenicly with antibiotics. We tried the method described here for 3 genes now and it was working with all of them.<br>
+                <br>
+                If you still have questions don�t hesitate to contact me.<br>
+                <i>-Barbara Weissenmayer, Free University of Berlin, Germany</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo13" id="transfo13"></a> <b>Has anyone in the community tried RNAi by soaking or feeding, as in C. elegans? I recently read the <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4050">Martens, et. al. 2002</a> paper on RNAi in Dictyostelium and am interested in knocking down our proteins of interest; however, they only tried transforming a hairpin-creating plasmid.</b><br>
+            <i>-Shawn Galdeen, Titus Lab, University of Minnesota, Merch 23, 2005</i><br>
+        </p>
+        <ul>
+            <li>We have tried feeding without success - but this does not mean that it does not work at all. If you try again, make sure that you use the RNase-deficient strain of E. coli. For those who are interested: we have a Dicty mutant that enhances RNAi significantly (however: developmental defect at approx. 10 hours)<br>
+                <i>-Wolfgang Nellen</i><br>
+                <br>
+            </li>
+            <li>We have only used hairpin constructs transformed into Dicty in expression vectors. I have thought about doing the C elegans thing for ages, just to see if it worked, but somehow never got around to it. I will be most interested to learn if someone has tried it.<br>
+                <i>-Paul Fisher</i><br>
+                <br>
+            </li>
+            <li>We have not tried extensively, but have tried feeding. It did not work at all as best as we could tell. There was a pretty good presentation/discussion of methods at the Dicty meeting this year, focussed around a talk by Sabastian Mana-Capelli from Dennis Larochelle's lab. It was all based on one gene (<a href="http://dictybase.org/db/cgi-bin//gene_page.pl?gene_name=race">racE</a>), but informative. I suggest you contact them for their best take on things.<br>
+                <i>-Karl Saxe</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We tried both soaking in siRNA oligos and feeding on bacteria carrying hairpin-creating plasmids. Both failed.<br>
+                <i>-Gad Shaulsky</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We've tried feeding and using other methods to load the cells with RNAi (rather than rely on transfecting them with DNA and asking them to make it) but have had no success with it yet.<br>
+                <i>-Denis Larochelle</i><br>
+                <br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo_select" id="transfo_select"></a>
+        </p>
+        <h2>
+            <a name="transfo_select" id="transfo_select"><b>Selection of Transformants</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="transfo9" id="transfo9"></a> <b>Has anybody used puromycin as selection marker to Dicty?</b><br>
+            <i>-Akira Nagasaki, National Institute for Advanced Interdisciplinary Research, Tsukuba, Japan, 15 Mar 2001</i><br>
+        </p>
+        <ul>
+            <li>A student of mine started to make a Dicty puro vector some years ago. She gave up for two reasons. One is that 100-200&nbsp;�g/ml of puromycin are needed to kill Ax2. Puromycin costs nearly ten times as much as G418, so this could become a major expense. The second problem is that the puromycin N-acetyl transferase gene from Streptomyces alboniger, which is used in mammalian-cell vectors, is 75% GC and thus very atypical for Dicty. I still have the gene and can send it to you or anyone else on request.<br>
+                <i>-Harry MacWilliams, Ludwig-Maximilians-Universit�t, Muenchen, Germany, 15 Mar 2001</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo2" id="transfo2"></a> <b>We would need to obtain homologous recombinants using a resistance marker other than blasticidin. We tried neomycin resistance, and did not get recombinants, perhaps because of inappropriate neomycin concentrations. Has anyone reproducibly obtained good yields of homologous recombinants using an antibiotic resistance marker other than blasticidin or neomycin resistance ?</b><br>
+            <i>-Myriam Adam, Centre d'Immunologie INSERM-CNRS de Marseille-Luminy, Marseille, France, 29 Mar 2001</i><br>
+        </p>
+        <ul>
+            <li>Thy1 and Ura are excellent markers but require autotrophic strains, which are available. Of the two, we predominantly use Thy1 if we need to do double KOs.<br>
+                <i>-Rick Firtel, UCSD, CA, 29 Mar 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The thy1 (thymidine selection) and pyr5-6 (uracil selection) genes work well as selectable markers in gene disruptions in auxotrophic strains lacking these genes. The selection for thy1 gene has the advantage of using HL-5 medium whereas selections for the pyr5-6 gene generally requires a defined minimal medium. The selection time (10-14 days) for both of these markers is a bit longer than blasticidin selection but they don't require the addition of any drugs. These genes also offer different internal restriction enzyme sites than the blasticidin or G418r genes which might be useful in construction and excision of your gene disruption vector.<br>
+                <i>-Jeff Hadwiger, Department of Microbiology and Molecular Genetics Oklahoma State University, OK, 29 Mar 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I use Hygromysin selection for double KO. The selection is not as clean as blasticidin but it works fine as far as hygromysin concentration is kept between 25-30&nbsp;�g/ml.<br>
+                <i>-Masashi Fukuzawa, University of Dundee, Dundee, UK, 31 Mar 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo_select" id="transfo_select"></a>
+        </p>
+        <h2>
+            <a name="transfo_select" id="transfo_select"><b>Selection of Transformants</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="transfo15" id="transfo15"></a> <b>I am wondering why Herpes Simplex Viral Thymidine kinase- negative selection is not used in Dictyostelium for eliminating non-homologous insertions during KO trails. Can anyone share their experience? Recently, I screened for KO around 1150 colonies without success using regular KO construct with recombinant arms of 470 and 780 on either side.</b><br>
+            <i>-Sudhakar Veeranki, FIU, July 28, 2006</i><br>
+        </p>
+        <ul>
+            <li>If you are interested in using a negative selection system when transforming cells take a look at the following from <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4303">Dingermann et al. 1997</a>. The expression of an ochre suppressor mutant of the GluII(UUA) tRNA appears to be lethal to Dictyostelium, and offers a novel 'positive negative' strategy to select for targeted gene disruption by homologous recombination. Inclusion of the suppressor tRNA gene decreases the overall transformation frequency by approximately 20-fold. This increases the proportion of targeted gene disruptions to over 90%.<br>
+                <i>-Micheal Myre, Harvard Medical School</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo8" id="transfo8"></a> <b>Blasticidin selection on bacterial lawns? Can anyone give me any information on success or failure to select for blasticidin resistant cells on bacterial lawns? Thanks</b><br>
+            <i>-Janet Smith, Boston Biomedical Research Institute, 18 Mar 2000</i><br>
+        </p>
+        <ul>
+            <li>Blasticidin selection worked OK for us using Micrococcus luteus spread plates &amp; 10&nbsp;�g blastocidin, similar to Paul Fisher's G418 selection. Easy to select for G418 at the same time. Yours,<br>
+                <i>-Martin Slade, 20 Mar 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I use blasticidin selection on plates at 30 ug/ml, using E.coli B/r (the equivalent of 500&nbsp;�l&nbsp;o/n culture per plate to get a nice lawn). Below 30&nbsp;�g/ml blasticidin I get some growth of non-transformed cells, above I don't get a nice bacterial lawn. Good Luck -<br>
+                <i>-Petra Fey, 20 Mar 2000</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo4" id="transfo4"></a> <b>We are experience a specially bud season for G418 selection in our lab (Actually in my hands G418 selection has been always difficult, the contrary happens with BS selection that is usually very efficient). We get no transformants or false positives, etc. I am wondering if somebody has a trick for this G418 selection or a good working protocol different from the standard one.</b><br>
+            <i>-Ricardo Escalante, 24 Sep 1999</i><br>
+        </p>
+        <ul>
+            <li>Try the V18 promoter based vectors that are available through Harry MacWilliams. Harry has a variety of these. These are very efficient in our hands, giving resistant colonies to 5 or 10&nbsp;�g/ml in less than a week in HL/5. We use electroporation.<br>
+                <i>-Richard Kessin, Columbia University, New York, 24 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We recently tried out the electroporation protocol described in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4776">Pang, Lynes &amp; Knecht 1999</a>. It has been a great improvement over our earlier electroporation and CaPO4 methods. After a week in G418 selection we now have innumerable cells compared to the 0-2 colonies we used to get. Roughly half the clones are desired transformants. I would be glad to share the protocol we got from Dave.<br>
+                <i>-Chris West, University of Florida College of Medicine, Gainesville, FL, 24 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>As Rich Kessin hinted, my lab does neo transformations using a Tn5 cassette driven by the V18 promoter. This works well in HL5 but the really big advantage is that one can select on Klebsiella lawns. The method has the following advantages over selection in HL5:<br>
+                <ul>
+                    <li>It is fast. Transformants form clones that develop, through fruiting, right on the selection plates. This means that if you are looking for changes in developmental morphology or reporter expression patterns in your transformants, you can have your answer in as little as 3 or 4 days after electroporation.
+                    </li>
+                    <li>The plates are virtually contamination-proof. The vector makes Dicty transformation easily feasible in undergraduate teaching labs. One should not even need a sterile hood.
+                    </li>
+                    <li>The method works for nonaxenic strains, at least NC4 and D. mucoroides -- others have simply not yet been tried.
+                    </li>
+                </ul>The method is described in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6824">Plasmid 36, 169-181 (1996)</a> The vector is available with standard reporter cassettes or a variety of multiple cloning sites. Anyone who wants to use it is more than welcome.<br>
+                <i>-Harry MacWilliams, Ludwig-Maximilians-Universitaet Muenchen, Munich, Germany, 24 Sept, 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Hi everyone, Here is our 2 cents worth - we routinely use Micrococcus luteus lawns The G418 concentrations required are only 15&nbsp;�g/ml - similar to selection in liquid medium, there is no preselection step so little opportunity for transformants to multiply prior to plating giving rise to siblings, and there is no "leakage" of wildtype cells ie. no false positives. The method was published in <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6866">Plasmid 32, 182-194 (1994)</a>. In our hands it works well with any of the G418 resistance vectors we try - you don't need the V18 promoter and especially high level expression etc. The first transformants appear after about 6 days (but can take longer) so it is slower than other selections, but in our hands at least it is a very, very clean selection.<br>
+                <i>-Paul Fisher, 25 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>For those interested, <a href="/techniques/transformation/knecht_electroporation_protocol.html">here is our latest transformation protocol</a>. It seems very robust in our hands, and many people who have tried it have also found it works well for them. As to the selection on bacteria, despite my supposed infallibility (Yikes, Marcus!) Harry assures me that there is a difference between the Actin 6 and 15 cassettes such that he can select transformants on bacteria plates with A15TN903 but not with A6Tn5. That of course raises the question of whether there is a difference in the two neo genes in addition to/as opposed to the promoters themselves. In relation to Paul's comments, the repression of the actin promoters on bacteria only happened very early in veg growth when the bacterial lawns were thick. The expression turned on long before there was any visible sign of growth, ie. when the lawn was thinning, but still not obviously clearing. Therefore, I presume that on Luteus lawns, which are always thin, the repression is incomplete and that is why the selection works. Harry's selection is a normal bacterial growth plate and since he can get transformants, it is clear that enough A15Tn903 is expressed for cells to survive. I don't understand the difference in our data, but at least I don't have to worry about being infallible anymore.<br>
+                <i>-David Knecht, University of Connecticut Storrs, CT, 27 Sep 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Just a note on the thickness of the M. luteus lawns. We use quite thick SM agar plates (maybe 35&nbsp;ml&nbsp;SM agar per plate) so we find that our M. luteus lawns grow quite thick usually ... so I don't think thin lawns are why the selection works. However we have done most of our work with the actin15 promoter so maybe the actin 6 could be a problem.<br>
+                <i>-Paul Fisher, 27 Sep 1999</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo_proto" id="transfo_proto"></a>
+        </p>
+        <h2>
+            <a name="transfo_proto" id="transfo_proto"><b>Transformation Protocols</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="transfo12" id="transfo12"></a> <b>Problems with transformation NC4-A4 cells: I am trying to transform NC4-A2 Dicty cells with various plasmids for expression of GFP-tagged fusion proteins. Unfortunately, I haven't been able to get stable transformants using conventional electroporation conditions: sequential pulses at 0.85&nbsp;V, overnight recovery in HL5, and addition of G418&nbsp;(10&nbsp;�g/ml) the next day. It would be greatly appreciated if anyone has any suggestions or tricks that might increase the transformation efficiency in this cell line.</b><br>
+            <i>-Paul Steimle, University of North Carolina at Greensboro, NC, 28 Jun 2004</i>
+        </p>
+        <div style="margin-left: 2em">
+            <br>
+        </div>
+        <ul>
+            <li>I have found that the addition of 10% heat inactivated foetal calf serum to the medium for the first week or so helps considerably in my lab.<br>
+                <i>-Chris Thompson, 28 Jun 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We never had any trouble zapping these with different vectors, but we use the Devreotes protocol (1 zap at 1&nbsp;kV in a 0.2&nbsp;cm cuvette with a 5&nbsp;ohm resistor in series).<br>
+                A different issue, though - G418 selection is medium-dependent. See if you can select blasticidin in the same cells.<br>
+                <i>-Robert Insall, 28 Jun 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have no idea if the NC4-A2 are more difficult than AX2, AX3, AX4 or whatever. I'ld suggest to use the "classical" calcium-phosphate method that we initially "invented". We are using both and sometimes one works better than the other - give it a try!<br>
+                <i>-Wolfgang Nellen, 28 Jun 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I have no experience with NC4-A2 but for the Ax cell lines, when we have trouble getting transformants we include heat-killed bacteria according to <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=2956">Joly et al 1993</a>. It seems to work quite well for us.<br>
+                <i>-Robert Gundersen, 28 Jun 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Maybe this will be of some help, we have recently used 2 electroporators(the biorad gene pulser is our usual). We normally get quite a few colonies that are stable transformants. I've added our protocols so maybe you can spot differences that may help: Dictyostelium electroporation
+                <ol>
+                    <li>Require 10e7 log phase cells (i.e. 1-2x10e6/ml) per electroporation cuvette.
+                    </li>
+                    <li>Spin cells out of axenic medium, 2000&nbsp;rpm 4 minutes
+                    </li>
+                    <li>Wash once in sterile electroporation buffer
+                    </li>
+                    <li>Resuspend cells in 800�l electroporation buffer per 10e7 cells
+                    </li>
+                    <li>Add 10&nbsp;�g uncut maxiprep DNA (for plasmid transformations) or 15&nbsp;�g cut DNA for knockouts to the 800�l cells in the cuvette (KO�s use 5-10 cuvettes to get lots of colonies)
+                    </li>
+                    <li>Incubate on ice for 10 minutes.
+                    </li>
+                    <li>Electroporate using Biorad Gene Pulser at 1.6&nbsp;kV, 3&nbsp;�F. Time constant should be 0.3-0.5msec.
+                    </li>
+                    <li>Incubate cells on ice for 10 minutes to recover.
+                    </li>
+                    <li>Add 8&nbsp;�l CaMg per cuvette.
+                    </li>
+                    <li>Incubate for 15&nbsp;minutes at room temperature.
+                    </li>
+                    <li>Split the contents of each cuvette onto 2 (plasmid) or 4 (knockout) axenic plates: rich medium with tet and strep but NO selection overnight. Select for 2-3 days with axenic medium supplemented with heat killed bacteria, tet, strep and blasticidin (10&nbsp;�g/ml) or G418 (20&nbsp;�g/ml)
+                    </li>
+                    <li>Select changing medium every 1-3 days, without heat killed bugs.
+                    </li>
+                    <li>For knockouts, plate at 50-100 per plate onto Sussman's Medium with Klebsiella when plates are confluent
+                    </li>
+                </ol><br>
+                Solutions<br>
+                -Electroporation buffer: KK2 (no Mg2+), 50&nbsp;mM sucrose. Sterile.<br>
+                -CaMg: 0.1&nbsp;M MgCl2, 0.1&nbsp;M CaCl2. Sterile.<br>
+                n.b. KK2 Buffer (Potassium di-hydrogen orthophosphate (KH2PO4) 2.25g/l and Di-potassium hydrogen orthophosphate (K2HPO4)0.67g/l<br>
+                Modifications for BTX ECM399 : set to HV mode (which means a constant 36&nbsp;�F capacitance - different to our usual protocol), To get equivalent colony growth to our usual machine. We used 1000&nbsp;V and 500&nbsp;V which gave times of 3&nbsp;ms and a Vp of 960 and 480 respectively.....same solutions and everything else.<br>
+                <i>-Emma Charlotte Dalton, Jun 29, 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>To transform AX3 cells, we use a voltage of 1.2&nbsp;kV and capacitance of 3&nbsp;�F with a Bio-Rad Gene Pulsor. G418-resistant cells are selected with a G418 concentration of 12-20&nbsp;�g/ml; 10&nbsp;�g/ml is too low.<br>
+                <i>-Ed Korn, Jun 28, 2004</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>First, the most distinguishing characteristic of NC4A2 is its motility. It is highly motile and thus does not form colonies on plastic in HL5 but spreads rapidly. If you need clonality, select in HL5 and then clone on SM plates or else select in 96 well microtiter plates. You can plate in normal dishes and plate at low density to only have 5-10 transformants per plate and then they tend to be separated enough to pick with a pippetman. As to transformation not working, this is not the first time I have heard it. If Bsr is working, that limits the options. How well is bsr working? You should be getting thousands of transformants per cuvette. If you are getting only a few, then it may be efficiency. Is you time constant in the right range? One thing we have found recently is new batches of G418 are more pure. As you go up in G418 concentration, in general you go down in efficiency. What I look for is cells being normal after 24 hours in drug, rounding at 48 hours and detaching by 72. If they are dead after one day, drop the G418. Also, the HL5 can cause cels to grow at high density, but not low density. Try plating about 50 cells in a 10ml dish and see if they grow out OK. If not, then your HL5 may be no good. This would be most likely peptone problems (what are you using) or water. I think I remember hearing that some people had trouble moving to new labs where the water was too good. I now make my HL5 with tap water because our other is so pure that we fear missing some trace elements. Remember, these guys grow in soil, so water quality is not normally too high. That should give you a start. Let me know what you find from these ideas and we can go from there.<br>
+                <i>-David Knecht, Jun 28, 2004</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo1" id="transfo1"></a> <b>Transient transfection: Has anyone tried transient expression of a GFP tagged protein in dicty?</b><br>
+            <i>-Mark A. Landree, Devreotes Lab, Johns Hopkins Medical Institute, Baltimore, MD, 6 Feb 2001</i><br>
+        </p>
+        <ul>
+            <li>We are currently attempting this using mamfectin and lipofectin. So far, we have not been successful. I have noticed that the lipid carrier for lipofecting just sits on the cells. It glows red in the GFP channel.<br>
+                <i>-Edward Harris, 6 Feb 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We had tried lipofectin many years ago for stable transformation and had similar rates as with Ca-phosphate. This may mean that also transient is not much more effective!<br>
+                <i>-Wolfgang Nellen, Kassel-University, Kassel, Germany, 6 Feb 2001</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo5" id="transfo5"></a> <b>Has anyone developed a protocol for transient transfection of plasmids or for the introduction of antisense oligos?</b><br>
+            <i>-James Cardelli, 23 Jul 1999</i><br>
+        </p>
+        <ul>
+            <li>We did a bunch of experiments adding antisense oligos to cells in HL5, both regular oligos as well as S-oligos. These caused the cognate protein expression levels to INCREASE as determined by immunofluorescence. So we tried sense oligos as well as antisense in other areas of the message, and these also generally caused protein expression levels to increase. Maybe they hold open a transcription complex?<br>
+                <i>-Richard Gomer, Rice University, Houston, TX, 23 Jul 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Richard's experiments stimulate me to wonder if anyone has tried RNA-I as C. elegans folks use so effectively.<br>
+                <i>-Rex Chisholm, Northwestern University, Chicago, IL, 23 Jul 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We keep thinking about RNA-I and using electroporation as well as bathing to get it in but we haven't tried it yet. Richard- how did you get the oligos into cells?<br>
+                <i>-Rick Firtel, 23 Jul 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <i>[In response to]</i> Richard- how did you get the oligos into cells?<br>
+                We had cells growing in monolayer culture in HL5 in 8 well slides, and just pipetted in oligos to the HL5 and gently shook the slide. We used about 1 microgram/milliliter final concentration, and then waited a day before fixing and staining. Its a nice way to increase expression of things- smlA oligos increase SmlA staining and not RtoA staining, and vice versa....<br>
+                <i>-Richard Gomer, Rice University, Houston, TX, 23 Jul 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>we have tried to introduce oligos and also RNAs by electroporation and other techniques but without success (so far). I have the gut feeling that cells are very sticky outside and a lot of small nucleic acids just stays glued to the outside (and is finally just taken up and digested) but I may be wrong. We have not tried it extensively yet.<br>
+                <i>-Wolfgang Nellen, Kassel-University, Kassel, Germany, 28 Jul 1999</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We tried without success! The experiment was to try and switch out gfp and we used "bathing" cells in AX medium and in P-buffer and electroporation. Unfortunately, the lights did not go off! Interestingly, at least part of the machinery known to be involved in RNAi effects in C. elegans is definitely present in Dicty.<br>
+                <i>-Wolfgang Nellen, Kassel-University, Kassel, Germany, 28 Jul 1999</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo7" id="transfo7"></a> <b>Can anyone give me a good protocol for electroporation of dicty in 0.2 cm cuvettes? I have protocols for 0.1 cm and 0.4 cm, but only can get 0.2 cm cuvettes at the moment. Thanks -</b><br>
+            <i>-Janet Smith, Boston Biomedical Research Institute, 9 Dec 1999</i><br>
+        </p>
+        <ul>
+            <li>Protocol in this paper: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1247">J Cell Biol 1993 Jan;120(1):163-73</a>.<br>
+                <i>-Eugenio L. de Hostos, University of California, San Francisco, 9 Dec 1999</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo6" id="transfo6"></a> <b>Does anyone have experience in electroporating fluorescent molecules into Dicty cells? I'm trying to introduce a fluorescent calcium indicator and I've tried a few different protocols as well as a couple of different FURA conjugates with little success. If anyone has done this successfully or has done similar experiments I would appreciate any suggestions.</b><br>
+            <i>-Carie S. Trbovich, 2 Jun 1998</i><br>
+        </p>
+        <ul>
+            <li>Robert Dottin once talked about electroporating ethidium bromide into Dicty cells; there is at least one report of successful incorporation of Fura-2 through scrape-loading (and there is at least one report of the total failure to load with Quin-2AM).<br>
+                Apparently, this is not a total problem with all acetomethoxy esters; successful labelling can be done with the pH dependent dye BCECF, as well as the esterified chloromethylfluorescein. You may also want to consult the following papers: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1247">Unterweger and Schlatterer 1995</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5549">Schlatterer, Knoll and Malchow 1992</a>.<br>
+                <i>-Richard Sucgang, 2 Jun 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have successfully electroporated fura-2 into both NC4 and Ax2 cells (M Azhar, S. Saran and V. Nanjundiah, Current Science vol 68 no.3, 337-342, 1995 "Spatial gradients of calcium in the slug of Dictyostelium discoideum").<br>
+                Fura-2 was added at a final concentration of 90&nbsp;�M to a 100&nbsp;�l&nbsp;aliquot of a freshly starved cell suspension (1-3.10E7 cells/ml in 50 mM sucrose). Electroporation was carried out using a BioRad Gene Pulser with a single low voltage pulse (0.09 kV/mm, 25&nbsp;�F capacitance, 200 ohms, cuvette width 1 mm). Amoebae were revived in HMK buffer (20 mM HEPES-NaOH, 5 mM MgCl<sub>2</sub>, 100 mM KCl, pH6.9) at room temperature immediately after pulsing. Excess dye was removed by spinning cells down in buffer and cells were dispersed on non-nutrient agar plates. Fluorescence persisted until the slug stage and, in some cases, well beyond.<br>
+                It is important NOT to perform the post-electroporation incubation in cold buffer; that leads to dye sequestration, as can be seen from a pattern of punctate - as opposed to uniform - intracellular fluorescence.<br>
+                <i>-Vidyanand Nanjundiah, Indian Institute of Science, India, 2 Jun 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The first paper describing electroporation of Dictyostelium cells with FuraBSA was from:<br>
+                <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=7200">Yumura, Furuya and Takeuchi 1996</a>. We were not quite successful with this protocol (probably due to different strains used?) and modified it for use with Ax2. This was published in: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5886">Sonnemann, Knoll and Schlatterer 1997</a>.<br>
+                If you have more questions do not hesitate to contact me.<br>
+                <i>-Christina Schlatterer, Fak Biol, Uni Konstanz, Konstanz, 3 Jun 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We have also done electroporation of phalloidin and rhodamine dextran.<br>
+                <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3337">Knecht and Shelden 1995</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3601">Lee, Shelden and Knecht 1997</a><br>
+                <i>-David Knecht, Department of Molecular and Cell Biology, University of Connecticut, 3 Jun 1998</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo3" id="transfo3"></a> <b>I would appreciate it if some one could let me know if they have used lipofectamine, or any other lipid reagents to transfect dicty. And what are the pros &amp; cons of using lipofectamine.</b><br>
+            <i>-Chowdhury Wasim, Daphne Blumberg's lab, University of Maryland, Baltimore, MD, 13 Apr 1998</i><br>
+        </p>
+        <ul>
+            <li>A long time ago we've tried lipofection and it worked the same as calcium and electroporation, except that it was much more expensive!<br>
+                <i>-Wolfgang Nellen, Kassel-University, Kassel, Germany, 28 Jul 1999</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo_issues" id="transfo_issues"></a>
+        </p>
+        <h2>
+            <a name="transfo_issues" id="transfo_issues"><b>General Transformation Issues</b></a>
+        </h2>
+        <hr>
+        <p>
+            <a name="transfo18" id="transfo18"></a> <b>Abnormal cellular morphology of transformants</b><br>
+            We are doing a control experiment that involves electroporation of pDNeoII vector in to AX2 cells and subsequently plating them on G418 (10&nbsp;�g/ml). We got the transformants but they do not look like normal AX2 cells. The transformants are small and look squeezed and hammered, however they are dividing well. Does anyone know why we are seeing morphological changes in transformants? Which genes are present in pDNeoII besides the gene for G418 resistance? Please share your views and experience on this with us. Thank you very much for your time. Best Regards,<br>
+            <i>-Sandhya Baviskar, Department of Biological Sciences, Idaho State university, June 1, 2006</i><br>
+        </p>
+        <ul>
+            <li>There should not be any morphological changes even though Christophe Reymond (I believe) had shown some time ago that NPTII (neomycin phosphotransferase) has some effect on signal transduction components. One possible reason: do not keep your wild type cells in suspension culture for too long! We have observed that after a few weeks retroelements get activated and may cause mutations (<a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=11209">Kuhlmann, et al 2005</a>). This is why many labs start new stock cultures from spores every week or two.<br>
+                <i>-Wolfgang Nellen, Universit�t Kassel</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>One possibility is that they are not genuine transformants. 10&nbsp;�g/ml is fine normally but is at the low end of the range and there is batch variation in G418 potency. If you had a less potent batch you could be seeing wild type cells or G418 resistant mutants that are unhappy but managing. We don't like going below 15&nbsp;�g/ml G418 in liquid medium for this reason. I should add that we normally select transformants clonally on Micrococcus lawns (<a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=6866">Wilczynska and Fisher 1994</a>).<br>
+                <i>-Paul R. Fisher, Microbiology, La Trobe University</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo10" id="transfo10"></a> <b>We are experiencing a problem about an unstable-lacZ transformant (ubi-his-lac). The transformants grow normally in axenic culture, but in E. coli suspension in phosphate buffer, they become unhappy and refuse to grow. In contrast, normal lacZ transformants grow normally in E. coli suspension in phosphate buffer. Does anyone have the same experience, or suggest the possible reason?</b><br>
+            <i>-Naohisa Takaoka, Hokkaido University, Japan, 8 Jan 2002</i><br>
+        </p>
+        <ul>
+            <li>I don't use coli but I can say that all the labile gal transformants I have made grow nicely on Klebsiella on plates. I have also grown many of these in Klebsiella suspensions, and never seen a problem. Another point -- any of you who are still using the "first generation" ubi-his-gal might want to know that there is a much-improved reporter out, in which the alpha-peptide, partially deleted in the original, has been restored. This gives a huge increase in activity, and allows one to go to a shorter-halflife gal and still get much better detectability than ubi-his. Applications have been described in: <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=8397">Gaudet et al 2001</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3886">MacWilliams et al 2001</a>, <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5003">Rafols et al 2001</a>. The official name of the new reporter is i-alphagal. Anyone who wants it is welcome --- just contact me.<br>
+                <i>-Harry MacWilliams, Ludwig-Maximilians-Universit�t, Muenchen, Germany, 8 Jan 2002</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="transfo11" id="transfo11"></a> <b>Unstable phenotype: I am attempting to perform control experiments between AX4 and GFP-labeled AX4 where I plate out a 50:50 mixture of the two clones. I then look at the ratio of the two clones both in cells and in spores. Because these are the same clone, the only difference between the two is that one is labeled, I expect to find an equal ratio of the two clones both in the cells and the spores. This will serve as a control to test for cheating (any time the ratio is not 50:50) in lines derived from the AX4 strain that have been through many generations of bottlenecking in order to generate mutations. When I do these experiments, the GFP-labeled strain always loses, meaning that unlabeled AX4 is overrepresented. What usually happens is that there is a 50:50 mix of the two clones in the cells, but this number drops in favor of the unlabeled AX4 in the spores. However, the degree of decline is not stable and changes every time I try to replicate this. I was wondering if anyone had experience with this sort of thing, and what advice you could offer me?</b><br>
+            <i>-Sara Middlemist, Rice University, Houston, TX, 16 Dec 2004</i><br>
+        </p>
+        <ul>
+            <li>Have you checked to see the penetrance of GFP expresssion in your GFP labelled AX4? In most cases, there is less than 100% penetrance - that is, cells will not be uniformly labelled in intensity. So, if you mix this 50:50, the labelled cells will always appear to lose because they aren't *all* visibly labelled.<br>
+                I would suggest instead using two different labels (say, GFP and YFP), and use them at ~ 5% each in a bulk mass of unlabelled cells, and checking for competition between the two labelled "tracer" lines as a rate of change from baseline.<br>
+                <i>-Ricky Sucgang, Baylor College of Medicine, Houston, TX, 16 Dec 2004</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

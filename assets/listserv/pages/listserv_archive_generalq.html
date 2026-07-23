@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>ListServ Archive: General Dictyostelium Questions</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a> <a name="generalq" id="generalq"></a>
+        </p>
+        <h1>
+            <a name="generalq" id="generalq"><b>General Dictyostelium Questions</b></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq13">Who knows about a virus that might infect Dictyostelium ?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq12">A big inverted dupliation is found in chromosome 2 in AX2 cells. Does anyone know if there is this kind of duplication (the same or others) in the DH1 cells?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq1">Dictyostelium taxomomy: What is the class, order, and family for Dictyostelium discoideum?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq4">What is the relationship of the flagellated molds to the core fungi (Zygomycota, Ascomycota, and Basidiomycota)?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq6">Does anyone know of a source for a video showing Dicty development?</a>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq2">I am looking for some pictures (or better, movies) of dicty cells developing into macrocysts. Do you know of any www address where I could find this?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_generalq.html#generalq2"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq7">Is there a good reason why Dictyostelium secrete their lysosomal enzymes when they are starved ? Does this play a role in development?</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_generalq.html#generalq7"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq9">Looking for the absence of a gene in the genome.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_generalq.html#generalq9"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq3">I was wondering who isolated NC4 cells.</a>
+            </li>
+            <li style="list-style: none">
+                <a href="listserv_archive_generalq.html#generalq3"></a><br>
+            </li>
+            <li>
+                <a href="listserv_archive_generalq.html#generalq11">I could not figure out a way to access up to date primary reads via blast. Is there another web site which I should use?</a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq13" id="generalq13"></a> <b>Who knows about a virus that might infect Dictyostelium ? I am asking for your support concerning the identification of possible virus infections of that species.</b><br>
+            The rational behind this quest is the following: we have recently sequenced the genome of a large DNA virus (Mimivirus) that infects the Amoeba "Acanthamoeba polyphaga". This virus has actually long thought to be a bacteria (it has the size of a Micoplasma; see <a target="new" href="http://igs-server.cnrs-mrs.fr/%20Pdf/12663918.pdf">http://igs-server.cnrs-mrs.fr/Pdf/12663918.pdf</a> In order to study host-virus interactions from a bio-informatics point of view, it would be of great interest if we could sequence the genome of a DNA virus that infects Dictyostelium. I would therefore be extremely grateful for any information that you could give me about putative viral infections of Dictyostelium (references, specimen, cases of supposed bacterial infection, collegues that I could contact, or even kust vage suspicions that I could follow up on). Thank you very much in advance for your help,<br>
+            <i>- Karsten Suhre, CNRS, Marseille, January 26, 2005</i><br>
+            <br>
+            I was grateful for the opportunity to present Mimivirus to the Dicty-community this summer at the Dicty2005 meeting in Autrans, and also for the numerous discussions we had afterwards. As a follow-up on my original posting "Who knows about a virus that might infect Dictyostelium", I must say that no large DNA virus that infects Dicty has been detected so far. Thanks to strains provided by Rupert Mutzel from Berlin, and work of my collegues at the hospital La Timone here in Marseille, we were able to test different Dicty strains for infection by Mimivirus. These tests did not yield positive results up to now - in the sense that all cultures grew normally in the presence of Mimivirus on the plate. However, it is now clear that Mimivirus can infect both, Acanthamoeba castellanii and Acanthamoeba polyphaga, which means that its host spectrum is not limitted to a single species. Moreover, Ghedin and Claverie have shown the ubiquitious presence of Mimivirideae in environmental samples : <a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&amp;DB=pubmed">Ghedin et al 2005</a> Last but not least, we have identified an exceptionally conserved promoter element AAAATTGA in Mimivirus (<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=pubmed&amp;cmd=Retrieve&amp;dopt=AbstractPlus&amp;list_uids=16203998&amp;query_hl=18&amp;itool=pubmed_docsum">Suhre et al 2005</a>) that has also been identified as a controlling element in Dictyostelium aggregation phase : D. Seo, M. Yasunaga, J. H. Kim, <a target="new" href="%20http://syseng.ualr.edu/DrKimsLectureNotes/CEC2004.pdf">A Computational Approach to Detect Transcription, Regulatory Elements in Dictyostelium Discoideum</a> Taken together with the different aspects of Mimivirus' lifestyle (see Claverie et al. <a target="new">http://arxiv.org/abs/q-bio.PE/0506007&gt;Mimivirus and the emerging concept of "giant" virus</a>). I am more than ever convinced that the exist close relatives of Mimivirus that may be able to replicate in Dictyostelium. So I would like to repeat my call to those who collect Dictyosteliums from the wild to keep an eye open for small coccus like particles in Dictyostelium cells ( particles stain mildly Gram-positive ). Finding a second Mimivirus is not like confirming a hypothesis - it would open the door to all kinds of comparative genomics and virus-host interaction studies. Looking forward to hearing about any "suspect" findings, Kind regards,<br>
+            <i>-Karsten Suhre, CNRS, Marseille, December 9, 2005</i><br>
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq12" id="generalq12"></a> <b>A big inverted dupliation is found in chromosome 2 in AX2 cells. Does anyone know if there is this kind of duplication (the same or others) in the DH1 cells?</b><br>
+            <i>-Steve Charette, Centre Médical Universitaire, Genève, Switzerland, 20 June 2005</i><br>
+        </p>
+        <ul>
+            <li>The duplication in AX3 is also found in DH1, which was derived from AX3. I don't believe there is a deletion in AX2 but could be wrong. A second fault in DH1 is apparently caused by deletion of part of the glycerol kinase promoter, which makes it grow rather slowly and initiate starvation and development relatively rapidly. DH1 also seems to be unusually troubled by secondary mutations, though it's unclear whether this is caused by the pyr56 deletion or the glycerol kinase (or anything else). We have found that JH8 is a better pyr56- parent. We have also tried to make pyr56- AX2, but the strain we made reverts rather badly, I suspect it was made wrong. Dave Knecht has made a pyr56- NC4A2 which behaves very nicely.<br>
+                <i>-Robert Insall, The University of Birmingham, UK</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>We are currently establishing a simple test for the duplication because it seems that a lot of things may happen at this point in chromosome 2. We'll post it here when we are done.<br>
+                <i>-Wolfgang Nellen, Kassel Univ. Germany</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I think Robert clarified this already to some extent but, to avoid any confusion, I would emphasize that the ~800 kb inverted duplication is NOT present in AX2, its parent (NC4), or its derivatives (e.g., HC6). It appears to be confined to AX3, an independent derivative of NC4, as well as AX3 derivatives (e.g., KAX3, AX4, DH1, etc.).<br>
+                <i>-Dale Hereld, UT-Houston Med Sch, TX</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Just to add to this, we had Alan Wardroper in our lab last year who HAPPY mapped the NC4 chromosome 2. He confirmed that the inverted duplication in AX4 is only present at a single copy in the parent NC4, but he found that NC4 has smaller duplications in other regions of chromosome 2. This suggests that NC4's chromosome 2 is predisposed to further duplication events. A small part of this was mentioned in the genome paper.<br>
+                <i>-Justin Pachebat, MRC Laboratory of Molecular Biology, UK</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq1" id="generalq1"></a> <b>Dictyostelium taxomomy: What is the class, order, and family for Dictyostelium discoideum?</b><br>
+            <i>-26 Jan 1998</i><br>
+        </p>
+        <ul>
+            <li>The taxonomy of Dictyostelium is controversial.<br>
+                <ul>
+                    <li>Olive (The Mycetozoans, Academic Press, 1975) placed it in the Class Eumycetozoa, Subclass Dictyostelia, order Dictyosteliida, Family Dictyosteliida.<br>
+                    </li>
+                    <li>Cavender (Handbook of Protoctista, eds. L. Margulis et al., 1990, Jones and Bartlett, Boston) placed it in the Phylum Dictyostelida, Family Dictyosteliaceae<br>
+                    </li>
+                </ul><i>-U.-P. Roos, University of Zurich, Zurich, Switzerland, 27 Jan 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>It is unclear the meaning of the older classifications as the most recent protein sequence data comparisons as well as regulatory hierarchies found in Dicty but not in fungi and plants (STATs, p110-related PI3K, Akt/PKB, etc) place Dicty in the crown of organisms that include plants, fungi, and animals and above plants and at the same or higher level as fungi. See <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=222">Baldauf &amp; Doolittle, 1997</a>.<br>
+                <i>-Rick Firtel, UCSD, CA, 27 Jan 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Almost all of the available protein sequence data pretty strongly support Olive's classification, i.e. they place Dictyostelium together with Physarum in a single class. This should probably be called the Mycetozoa, or Eumycetozoa. This data includes actin (e.g. J.Mol.Evol. 41:841), beta-tubulin (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3119">Mol.Biol.Evol. 13:1297</a>), and elongation factor 1-alpha (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=222">PNAS 94:12007</a>). The latter is especially strong, since it includes sequence data from the third group of organisms which Olive classified as slime molds, the protostelids. Not only does the EF-1a data strongly support a single, coherent Mycetozoa, it also shows that Dicty+Physarum is probably only a subgroup within the Mycetozoa. i.e., the Dictyo/Physarum split probably does not even represent the deepest division in the Class. Most protein data also suggest that the slime molds are crown eukaryotes, quite possibly more closely related to animals and fungi than are the green plants. This includes the actin and EF-1a data cited above (the tubulin trees are hard to interpret here) as well as GAPDH (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5222">J.Euk.Micro. 43:475</a>), RNA polymerase (Arch.Portistenkde. 1145:221) and more. Probably most convincing is a combined analysis of 19 different proteins by Kuma et al. (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=3490">J.Mol.Evol. 41:238</a>), which strongly places Dicty as a closer relative to animals+fungi than are green plants.<br>
+                <i>-Sandie Baldauf, Dalhousie University, Halifax, Nova Scotia, Canada, 27 Jan 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I am wondering whether we can only talk about gene sequences in order assign a Dictyostelium to a particular phylum or class. There are a few facts that one should bear in mind:<br>
+                <ol>
+                    <li>Dicty can produce cellulose in certain stages of the life cycle
+                    </li>
+                    <li>It produces sporopollenin
+                    </li>
+                    <li>It uses Ethylene as a sexual hormone
+                    </li>
+                    <li>The sterol biosynthetic pathway is more similar to that one in algae (<a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=4419">Nes et al.,1990</a>)
+                    </li>
+                </ol>All these points (and may be other people can suggest more) strongly support a closer association to plants rather that fungi/animals.<br>
+                <i>-Piero Morandini, University of Milan, Milan, Italy, 27 Jan 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Tunicates have cellulose also. Dicty has many pathways that are shared with mammals but have never been seen in p lants. That does not necessarily mean that they don't exist in plants but until they are identified, it's only appropriate to characterize the organism by what we do know. Interestingly, Dicty shared 2 component systems with fungi and plants that were presumably have been lost in the animal line (or not yet found). The signaling pathways that are known place Dicty above plants and at a similar position in the hierarchy as fungi or above, consistent with sequence analysis of conserved proteins. Most of the molecular evolutionists that use protein sequence database analysis for classification would consider Dicty a separate offshoot from either fungi and plants. I'm not sure that it's unexpected that Dicty shares some properties with all of the other groups that comprise the crown. In thinking about their position in evolution, one would have to argue that either all plants and fungi lost components like PI3K, STATs, etc or that Dicty evolved these highly conserved proteins independently, both of which are probably unlikely but not absolutely impossible. The more likely explanation is that Dicty evolved after these pathways were established and that they therefore evolved later than plants and fungi.<br>
+                <i>-Rick Firtel, UCSD, CA, 27 Jan 1998</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>
+                <i>In response to</i> [Tunicates have cellulose also. Dicty has many pathways that are shared with mammals but have never been seen in plants. That does not necessarily mean that they don't exist in plants but until they are identified, it's only appropriate to characterize the organism by what we do know. Interestingly, Dicty shared 2 component systems with fungi and plants that were presumably have been lost in the animal line (or not yet found).]:<br>
+                So why not saying that Dicty has many pathways that are shared with plants but has never been seen in mammals? That does not necessarily mean that they don't exist in mammals...etc. What I mean is not only for sake of contradicting, but to point out that we cannot speak only in terms of protein sequence or signaling pathways. For instance dicty uses the proton pump to drive solute uptake, as plants and fungi do and not the Na/K pump. Should we then say that all mammals have lost the proton pump? We cannot dismiss many different biochemical and sequence data simply because they do not fit the classification<br>
+                See also: Taxonomy, slime molds, and the questions we ask, Andrew R. Swanson, Frederick W. Spiegel and James C. Cavender, Mycologia<br>
+                see also: The evolution of development in the cellular slime molds, John Bonner, Evolution and Development<br>
+                <i>-Piero Morandini, University of Milan, Italy, 30 Jan 1998</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq4" id="generalq4"></a> <b>What is the relationship of the flagellated molds to the core fungi (Zygomycota, Ascomycota, and Basidiomycota)?</b><br>
+            <i>-Jeff Grantz, IU Southwest, 28 Jan 2000</i><br>
+        </p>
+        <ul>
+            <li>If you want to be a fungi you need at least:<br>
+                <ul>
+                    <li>Chitin in your vegetative cell wall
+                    </li>
+                    <li>Heterotrophy
+                    </li>
+                </ul>All Fungi have a cell wall which major component is chitin as oposed to the cellulose wall of Plantae. Animalia, though, does not have cell walls, right? As Animalia, some Fungi have flagelated forms, however these could be pre- or post meiotic and they can be classified acording to the number and location of these flageli. Like Dicty, Fungi form fruiting bodies and lack cloroplasts...is heterotrophous...feeds on other living organisms. However Dicty ( nickname for Dictyostelium ) does not have a cell wall in its vegetative form, therefore it does not have chitin in the cell wall. At certain moments in its life cycle, like in the spores, Dicty presents a cell wall, but its major component is cellulose. You could go to <a href="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=5782">http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=5782</a> to see its taxonomic classification. I advance you that you'll realize that Dicty is far from Fungi even though it may look like it. One last thing, Dicty does not have flagella at any moment in its life cycle. I hope this can help you.<br>
+                <i>-Maribel Rico, Case Western Reserve University, Cleveland. OH, 28 Jan 2000</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq6" id="generalq6"></a> <b>Does anyone know of a source for a video showing Dicty development?</b><br>
+            <i>-Charles L. Rutherford, Virginia Tech University, VA, 13 Sep 2000</i><br>
+        </p>
+        <ul>
+            <li>There is a segment showing Dicty chemotaxis on either "A Dozen Eggs" or "Cellebration". I've used both videos in lectures and can't remember which one has the Dicty sequences. If you can't find a Dicty specific video, this might serve the purpose.<br>
+                <i>-Mary Kimble, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>In addition to the clip on 'A Dozen Eggs', and some short nice sequences at the Dicty web site <a href="http://dictybase.org/Multimedia/index.html">http://dictybase.org/Multimedia/index.html</a>, I have a VCR copy of an 8-mm movie from Jim Gregg that has Bonner's and Gerisch's (I think) early recordings.<br>
+                <i>-Chris West, U. Florida, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Some years ago, public education tv (station that carries 'nova' etc) had JT Bonner from describing dicty. My experience is that they would provide a vcr copy at cost. I cannot tell you which was the producing station but it may have been new york (wetv) or boston (wgbh).<br>
+                <i>-Jared L. Rifkin, Queens College, Flushing, NY, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Dicty morphogenesis is shown in "A Dozen Eggs".<br>
+                <i>-Patricia A. Clow, Genzyme Corporation, Framingham, MA, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Anyone... I have obviously missed a thing or two. "A Dozen Eggs"??? Please enlighten me? Apologies to the vast majority who are apparently in the know. Thanks.<br>
+                <i>-Dale Hereld, University of Texas-Houston Medical School, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>"A Dozen Eggs" time-lapse microscopy of normal development. Edited by Rachel Fink and distributed by Sinauer Associates for the Society of Developmental Biology. The video shows the development (at least the early stages) of 12 organisms including a segment on "slime mold morphogenesis" by Bonner.<br>
+                <i>-David F. Lindsey, Walla Walla College, WA, 13 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I tried to buy the Nova video a couple of years ago - they only sell videos of some of their shows, and the dicty program was not one of the ones that was available. I also looked at one by Woodworth/Essayo and didn't like it - for one thing the narrator kept referring to "cAMP" as "AMP".<br>
+                <i>-Janet Smith, 14 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>no idea about those eggs but wouldn't it be nice to have a collection of good, commercially available Dicty related videos on the Dicty home page? Let me start out with two which are probably less known:<br>
+                <ul>
+                    <li>Behavior and Differentiation of Cellular Slime Mold - A Clarified Mode of Life on Soil
+                    </li>
+                    <li>The life cycle of cellular slime mold - morphogenesis from unicellular to multicellular forms
+                    </li>
+                </ul><i>-Higuchi Bioscience Laboratory, Tokyo, Japan, 13 Sept 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Except for using the no-no word for our pet, the movies are pretty good! In addition there is of course the Gunther Gerisch classic and the "Dr. Bonner and his slime molds" which I guess is available from BBC. regards<br>
+                <i>-Wolfgang Nellen, Kassel-University, Germany, 14 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>I would be delighted to put any and all videos on-line. We have the capability to covert "oldfashioned" vcr type videos to digital. However, with most of these there are significant copyright issues. We would need to obtain permission from the copyright owners. I had an email conversation with John Bonner a while back about doing this for the "Dr. Bonner" video. He correctly pointed out this would required BBC permission, which I have not yet figured out how to obtain.<br>
+                <i>-Rex Chisholm, Northwestern University, Chicago, USA, 14 Sep 2000</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>A bit more details about the "less known" Dicty films.<br>
+                Behavior and Differentiation of Cellular Slime Mold. 21 min. (1993) 16 mm film US$ 1,600-<br>
+                Video (VHS:PAL/Secam/NTSC) US$ 250-<br>
+                The Life Cycle of Cellular Slime Mold. 15 min. (1982)<br>
+                16 mm film US$ 1,400-<br>
+                Video (VHS:PAL/NTSC) US$ 220-<br>
+                The second one is more basic, but I find it still very stimulating. Both English and Japanese versions are available. They can be purchased from: Cine Document Co., Ltd. 1-12-12 Kitami, Setagaya-ku, Tokyo 157-0067 Japan Fax:+81-3-3417-2365.<br>
+                They also sell films on true slime moulds, etc.<br>
+                <i>-Kei Inouye, 15 Sep 2000</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq2" id="generalq2"></a> <b>I am looking for some pictures (or better, movies) of dicty cells developing into macrocysts. Do you know of any www address where I could find this?</b><br>
+            <i>-Jean-Pierre Levraud, Centre d'Immunologie INSERM-CNRS de Marseille-Luminy, France, 7 Jan 1999</i><br>
+        </p>
+        <ul>
+            <li>You can find some pictures of macrocyst development on my website at <a target="new" href="http://www.erin.utoronto.ca/~w3oday/">http://www.erin.utoronto.ca/~w3oday</a> This site is now called "Life Cycles of the Cellular Slime Moulds" and was recently updated. More will be added shortly. I have lots movies but compared to asexual development the process is not very dynamic. I've been thinking about editing them and putting them on video. If you're interested after seeing my site please let me know. By the way, my site is on our work only. David Francis, Greg Erdos, Kaichiro Yanigasawa, Ken Raper, and others have also done work on macrocysts. Hope this helps.<br>
+                <i>-Dan O'Day, U. Toronto, 7 Jan 1999</i><br>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq7" id="generalq7"></a> <b>Is there a good reason why Dictyostelium secrete their lysosomal enzymes when they are starved ? Does this play a role in development ?</b><br>
+            <i>-Pierre Cosson, Geneva, Switzerland, 15 Nov 2001</i><br>
+        </p>
+        <ul>
+            <li>Just a follow up on a previous message, where I was asking why Dictyostelium secretes its lysosomal enzymes in starvation conditions. Apparently nobody seems to have a clue. I received quite a few messages, all asking to be told what the answer to this question could be. My own guess would be that secretion of lysosomal enzymes is not a prelude to development, but rather an ultimate attempt to obtain food. Starving Dictyo might have a chance to obtain nutrients by digesting extracellular material that proves too big to phagocytose. Best,<br>
+                <i>-Pierre Cosson, Geneva, Switzerland, 03 Dec 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Dear Pierre, Your explanation is much valid and acclaimed, but it generates few questions, since lysosomal materials (mostly hydrolytic enzymes and ions) are detrimental to the cell itself. If they secrete them for breaking down the more complex food materials, it would be a suicide. One possible explanation I could think of for secretion of lysosomal material outside, by starving cells (if we think of the total population of cells) is that A cell secrets lysosomal materials either to kill itself (altruistic mode)- suicidal and allow its members in the population to thrive and propagate their population. OR its a mode to kill other cells in the population so that it can qualify to get the remaining available nutrients. The later explanation could be circumvented since once the hydrolytic enzymes are secreted it is going to kill the cell itself (due to proximity) and also its neighbors (Bystander effect),so this leads us again to the former explanation of suicidal mechanism which is the most nearest possibility. If we extend the suicidal altruistic mechanism, we could also add on that these hydrolytic enzymes secreted or its products or the debris of the cells due to hydrolytic enzyme degradation could be a(additional) signal for other remaining population to enter into sporulation. Please do forward your comments.<br>
+                <i>-Ahamarshan.J.N., 3 Dec 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>It should be born in mind that Dicty also secretes its lysosomal enzymes when diluted into fresh growth media. Thus it may be a response to a major change in osmolarity of media rather than starvation.<br>
+                <i>-David Knecht, University of Connecticut, 3 Dec 2001</i><br>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Presumably lysosomal enzymes are resistant to degradation in the lysosome. How else can the cell get rid of unwanted, potentially destructive enzymes except by secreting them? Alternative mechanisms would require a targeted mechanism for destroying individual unwanted lysosomal enzymes.<br>
+                Lysosomal enzymes are not necessarily active outside the cell. The extracellular medium is not so acid as the lysosome and the cysteine proteases need to be in a reduced state. Just a thought,<br>
+                <i>-Martin Slade, Macquarie University, Sydney, 3 Dec 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq9" id="generalq9"></a> <b>Looking for the absence of a gene in the genome: I am asking your advice, on the following point which may also be of general interest. When a search using the usual BLAST tools shows the absence of a given gene (eg homologous to a mammalian gene) in the known Dictyostelium genome, to which extent is it possible to claim that the gene is not present in the whole Dictyostelium genome ? Especially in complex genomes which are difficult to sequence in their entirety, and in genomes which are reaching only asymptotically complete sequencing, it would seem very useful to still be able to draw conclusions based on the likelihood, increasing with genome overage, that given genes are not present. This would lead to a probabilistic expression of gene absence.<br>
+            What is the present coverage for the Dictyostelium genome ? Which database, among those that are proposed for BLAST searches on the corresponding sites, would be the most representative and significant from this point of view? Could especially the colleagues who are specialists in sequencing, and who are doing such a tremendously useful job on the Dictyostelium genome, tell us what is currently the weight of an absence ?<br>
+            With many thanks for your answers and advice, and regards,</b><br>
+            <i>-Pierre Golstein, CNRS-INSERM-Univ.Med., Marseille, France, 31 Oct 2003</i><br>
+        </p>
+        <ul>
+            <li>The strategy of the project is a whole chromosome shotgun approach and we have reached an approximately 8-fold overall coverage (for individual chromosomes the coverage may be somehow higher or lower). If we assume equal coverage and no cloning and sequencing biases (which is in reality not the case) then a whole genome assembly at this coverage should result according to the poisson distribution in a sequence with around 200 gaps and a total gap length of 10 to 20 kb. The whole genome assembly which was generated at the Sanger Institute resulted in 6092 contigs amounting to 38,349,036 nucleotides. It covers the genome pretty well since 93% of the cDNA clusters of the Japanese CDNA project have hits to contigs. The contig set can be searched using WU-BLAST at <a target="new" href="http://www.sanger.ac.uk/Projects/D_discoideum/blast_server.shtml">http://www.sanger.ac.uk/Projects/D_discoideum/blast_server.shtml</a> The assemblies of the individual chromosome sequences (C1,2,3: Cologne/Jena; C4,C5, 2/3 of C6: Baylor; 1/3 of C6:Sanger) are of much higher quality and can be searched at the following sites: C1, C2, C3: <a target="new" href="http://www.uni-koeln.de/dictyostelium/">http://www.uni-koeln.de/dictyostelium/</a> or <a target="new" href="http://genome.imb-jena.de/dictyostelium/">http://genome.imb-jena.de/dictyostelium/</a> C4, C5, C6: <a target="new" href="http://dictyensembl.bioch.bcm.tmc.edu">http://dictyensembl.bioch.bcm.tmc.edu</a> <a target="new" href="http://www.sanger.ac.uk/cgi-bin/blast/submitblast/d_discoideum/omni">http://www.sanger.ac.uk/cgi-bin/blast/submitblast/d_discoideum/omni</a> If you want to check for the presence of a given gene we recommend the latter sites. It is not possible to provide an exact probability for the presence/absence of a given gene. Based on the coverage of the individual chromosomes the probability to find a given gene is estimated to be higher than 0.98. Best regards,<br>
+                <i>-Ludwig Eichinger, Ricky Sucgang, Marie-Adèle Rajandream, 6 Nov 2003</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>The whole genome sequence can be searched using the dictyBase <a href="http://dictybase.org/db/cgi-bin/blast.pl">BLAST server</a>.<br>
+                <i>-The dictyBase team</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq3" id="generalq3"></a> <b>I was wondering who isolated NC4 cells.</b><br>
+            <i>-Lucila Licate, 15 May 2001</i><br>
+        </p>
+        <ul>
+            <li>It was Kenneth Raper back around 1935. NC stands for North Carolina, where he was at the time. Original paper is <a href="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=5048">Raper 1935</a>. Dictyostelium discoideum, a new species of slime mold from decaying forest leaves. J. Agricul. Res. 50, 135-147.<br>
+                <i>-Masazumi Sameshim, The Tokyo Metropolitan Institute of Medical Science, Japan, 15 May 2001</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="generalq11" id="generalq11"></a> <b>I could not figure out a way to access up to date primary reads via blast. Is there another web site which I should use?</b><br>
+            <i>-Ruedi Meili, UCSD, CA, 23 April 2004</i><br>
+        </p>
+        <ul>
+            <li>With the availability of assembled genomic data, there is little reason to for the individual genome sequencing centers to host the primary reads as a BLAST database. In fact, one should interpret BLAST results from the primary shotgun data with some caution, as it contains contaminants and poorly called sequences - data that cannot be encompassed by BLAST as an algorithm, and whose curation would be difficult. If you have a specific application that the assembled sequence cannot address, and can be solved using BLAST against the primary reads, please let us in the genome sequencing project know about it - we may have missed something. Thanks.<br>
+                <i>-Ricky Sucgang, Baylor College of Medicine, Houston, TX, 23 April 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Actually there are very good reasons to have access to the original reads, and my understanding is that original reads exist and are accessible for all other genomes. one example - You have identified a conserved gene with an absolutely conserved amino acid, yet in the dicty assembly this AA appears to differ. Is it really different, was the assembly just wrong, were the reads ambiguous, etc? A quick blast of the original data may give a definitive answer. In an sense, access to the primary read is analogous to depositing microarray data at GEO, etc.<br>
+                <i>-Alan Kimmel, NIH, MD, 24 April 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>All primary reads are accessible via BLAST at <a target="new" href="http://genome.imb-jena.de/cgi-bin/dicty/BlastDicty.cgi">http://genome.imb-jena.de/cgi-bin/dicty/BlastDicty.cgi</a>. Just use the database option 'shotgun' The sequences themselves can be retrieved from our retrieval page as fasta files. But I agree with Ricky that it is no good to have only the read information separated from the assembly only as a fasta sequence. The only possibility to check the quality of the primary reads would be to obtain the trace files. This would require a viewing tool to be installed at every users site. This seems to be a little bit too complicated. We plan to include the quality information for every single base of our assemblies(c1, c2, c3) into our analysis pages. I think this would help most in cases where discrepancies between genome centre assemblies and other sources occur. Ricky's suggestion to contact the sequencing centres is so far the most convenient way to solve problems.<br>
+                <i>-Gernot Gloeckner, Institute for Molecular Biotechnology, Jena, Germany, 25 April 2004</i>
+            </li>
+            <li style="list-style: none">
+                <br>
+            </li>
+            <li>Just a quick point of clarification - I do not think that the genome sequencing centers are planning to withold or discard the original read data; of course, these data will be made available to the research community. The original issue I was pointing out is that BLAST is a poor tool for querying this kind of data, since the original reads vary greatly in read quality and distribution, and BLAST is not designed to use this kind of metadata. The assembled sequence has brought the qualities to a comparable level, and thus, BLAST is valid there. Incidentally, in the example Alan pointed out below, a quick BLAST search through raw basecalls will not resolve the anomaly described, since a consensus built through this method will include low quality bases, and ignore read-pair contradictions. But, an inspection through the original assembly, as Gernot suggested, will provide a conclusion with a measurable level of confidence.<br>
+                <i>-Ricky Sucgang, Baylor College of Medicine, Houston, TX, 26 April 2004</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/ListServ_archive/listserv_archive_questions.html">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

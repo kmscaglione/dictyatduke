@@ -1590,6 +1590,27 @@ button:focus-visible,
   line-height: 1.45;
 }
 
+/* Link from a dictyBase-curated paper out to that gene's curation record. */
+.curation-link {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border: 1px solid #cfe0d8;
+  border-radius: 999px;
+  background: var(--soft, #eef5f1);
+  color: var(--teal-dark, #1f6f5c);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.curation-link:hover {
+  background: var(--teal-dark, #1f6f5c);
+  color: #fff;
+  border-color: var(--teal-dark, #1f6f5c);
+}
+
 /* Human orthologs & disease — one card per ortholog, scannable disease rows */
 .ortholog-cards {
   display: grid;

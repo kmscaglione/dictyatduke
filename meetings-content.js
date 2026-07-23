@@ -32,7 +32,7 @@ window.meetingsContent = {
       name: "Dicty 2022",
       location: "Stirling, Scotland",
       dates: "August 7–11, 2022",
-      organizers: ["Robert Insall", "Jonathan Chubb", "Jason King", "Peggy Paschke"],
+      organizers: ["Robert Insall", "Jonathan Chubb", "Jason King", "Peggy Paschke", "Simona Buracco"],
       links: []
     },
     {

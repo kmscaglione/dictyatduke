@@ -5984,7 +5984,7 @@ async function loadMeetingMedia() {
     if (!m || !box) return;
     const parts = [];
     if (m.abstract) parts.push(`<a class="meeting-link" href="/assets/${escapeHtml(m.abstract)}" target="_blank" rel="noopener">Abstract book (PDF)</a>`);
-    if (m.pictures && m.pictures.length) parts.push(`<button type="button" class="meeting-link" data-meeting-photos>${m.pictures.length} photos</button>`);
+    if (m.pictures && m.pictures.length) parts.push(`<button type="button" class="meeting-link" data-meeting-photos>${m.pictures.length} photo${m.pictures.length === 1 ? "" : "s"}</button>`);
     if (m.external_photos) parts.push(`<a class="meeting-link" href="${escapeHtml(m.external_photos)}" target="_blank" rel="noopener" title="Photos hosted off-site">Photos →</a>`);
     if (!parts.length) return;
     box.innerHTML = parts.join("");

@@ -2124,6 +2124,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "Not Found")
             return
         _, ext = os.path.splitext(raw)
+        ext = ext.lower()   # case-insensitive: serve .JPG the same as .jpg
         # The stock catalog is served with curator overrides merged in (durable
         # web edits), not as the raw file on disk.
         if raw == "/assets/stock_center.json" and _STOCK_BLOB is not None:

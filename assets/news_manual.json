@@ -3,6 +3,13 @@
   "items": [
     {
       "date": "2026-07-23",
+      "tag": "new",
+      "title": "See who studies each gene",
+      "body": "Every gene record now shows the researchers who study that gene. Look for the new Researchers list on the Literature tab. It ranks the senior authors of the gene's papers by how many they have published, and each name links to that author's papers on the gene in PubMed. The list is built from the published literature, so it stays current on its own as new papers are indexed. There is nothing to sign up for and no profile to maintain.",
+      "link": "/gene/cadA"
+    },
+    {
+      "date": "2026-07-23",
       "tag": "community",
       "title": "Congratulations to the 2026 Dictyostelium award winners",
       "body": "Congratulations to the winners of the 2026 Dictyostelium awards! Lu Ma won the Graduate Student award. Xuehua Xu won the Research Scientist award. Fei Liu and Mélanie Foulon are co-winners of the Postdoctoral Researcher award. Jordi van Gestel and Elizabeth Ostrowski are co-winners of the Junior Faculty award. Congratulations to all the winners, and thank you to everyone who makes the Dictyostelium community what it is.",

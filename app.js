@@ -5902,6 +5902,12 @@ function renderUploadDataPage() {
 
 // --- Community award recipients (by year, newest first) ---
 const AWARD_RECIPIENTS = [
+  { year: "2026", awards: [
+    { stage: "Graduate Student", names: ["Lu Ma"] },
+    { stage: "Postdoctoral Researcher", names: ["Fei Liu", "Mélanie Foulon"], coWinners: true },
+    { stage: "Research Scientist", names: ["Xuehua Xu"] },
+    { stage: "Junior Faculty", names: ["Jordi van Gestel", "Elizabeth Ostrowski"], coWinners: true },
+  ] },
   { year: "2025", awards: [
     { stage: "Graduate Student", names: ["Sarena Banu", "Mark Jacob"], coWinners: true },
     { stage: "Postdoctoral Researcher", names: ["Pavani Hathi"] },

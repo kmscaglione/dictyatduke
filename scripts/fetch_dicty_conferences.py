@@ -50,6 +50,12 @@ GALLERIES = {
 # them). We can't mirror these, so record a single link out. The rest of the
 # picture links (2010-2016, 2018-2019) are dead on dictyBase and elsewhere.
 EXTERNAL_PHOTOS = {
+    # dictyBase PhotoFloat galleries (2011-2014): hundreds of full-res originals
+    # each (~2.4 GB total), too large to mirror — link to the gallery instead.
+    2011: "http://dictybase.org/conferences/pictures/#!/dicty11",
+    2012: "http://dictybase.org/conferences/pictures/#!/dicty12",
+    2013: "http://dictybase.org/conferences/pictures/#!/dicty13",
+    2014: "http://dictybase.org/conferences/pictures/#!/dicty14",
     2017: "https://drive.google.com/drive/folders/0B_xxyPWhEOYCMkl4SmNIYnd6MkU",
 }
 

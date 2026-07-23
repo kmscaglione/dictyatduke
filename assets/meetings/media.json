@@ -189,16 +189,20 @@
   "abstract": "meetings/abstracts/dicty2010_abstracts.pdf"
  },
  "2011": {
-  "abstract": "meetings/abstracts/dicty2011_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2011_abstracts.pdf",
+  "external_photos": "http://dictybase.org/conferences/pictures/#!/dicty11"
  },
  "2012": {
-  "abstract": "meetings/abstracts/dicty2012_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2012_abstracts.pdf",
+  "external_photos": "http://dictybase.org/conferences/pictures/#!/dicty12"
  },
  "2013": {
-  "abstract": "meetings/abstracts/dicty2013_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2013_abstracts.pdf",
+  "external_photos": "http://dictybase.org/conferences/pictures/#!/dicty13"
  },
  "2014": {
-  "abstract": "meetings/abstracts/dicty2014_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2014_abstracts.pdf",
+  "external_photos": "http://dictybase.org/conferences/pictures/#!/dicty14"
  },
  "2015": {
   "abstract": "meetings/abstracts/dicty2015_abstracts.pdf"

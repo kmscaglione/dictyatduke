@@ -1672,6 +1672,7 @@ function loadTabData(gene, tab) {
       break;
     case "Literature":
       initLiteratureSearch();
+      loadGeneResearchers(gene);
       loadCuratedReferences(gene);
       loadPubMedResults(gene);
       loadGeneExtras(gene);
@@ -6513,6 +6514,9 @@ function renderTab(gene, tab) {
     return `
       <div class="data-block">
         <h3>Literature</h3>
+        <div class="gene-researchers" data-gene-researchers="${escapeHtml(gene.id)}">
+          ${loadingHTML(`Finding researchers who study ${escapeHtml(gene.symbol)}…`)}
+        </div>
         <input type="search" class="lit-search" placeholder="Filter all papers by title, journal, or author…" aria-label="Filter literature">
         <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
           ${loadingHTML("Loading curated references…")}
@@ -6759,7 +6763,18 @@ function curatedLink(target, label) {
   return text;
 }
 
+const pubMedPromise = new Map();  // in-flight de-dupe so concurrent callers share one fetch
+
 async function fetchPubMedResults(gene) {
+  if (pubMedCache.has(gene.id)) return pubMedCache.get(gene.id);
+  if (pubMedPromise.has(gene.id)) return pubMedPromise.get(gene.id);
+  const p = fetchPubMedResultsRaw(gene);
+  pubMedPromise.set(gene.id, p);
+  p.catch(() => {}).finally(() => pubMedPromise.delete(gene.id));
+  return p;
+}
+
+async function fetchPubMedResultsRaw(gene) {
   if (pubMedCache.has(gene.id)) return pubMedCache.get(gene.id);
 
   const baseUrl = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
@@ -6799,7 +6814,8 @@ async function fetchPubMedResults(gene) {
       date: item.pubdate || "",
       // PubMed's normalized sort date ("YYYY/MM/DD …"); lexically sortable.
       sortDate: item.sortpubdate || item.epubdate || item.pubdate || "",
-      authors: (item.authors || []).slice(0, 3).map((author) => author.name).filter(Boolean).join(", ")
+      authors: (item.authors || []).slice(0, 3).map((author) => author.name).filter(Boolean).join(", "),
+      senior: seniorAuthorOf(item)
     }));
   // Strictly most-recent first (PubMed's own pub-date sort doesn't always match
   // the human-readable pubdate, which can leave a few entries out of order).
@@ -6874,8 +6890,107 @@ async function loadPubMedResults(gene) {
   }
 }
 
+// --- Researchers studying a gene (literature-derived) --------------------
+// Mimics dictyBase's "gene researchers" link, but computed from the literature
+// instead of a self-reported registry: the senior (last) author of a paper is
+// its PI, so we rank the senior authors across a gene's papers by how many they
+// have. This refreshes on its own as PubMed indexes new papers — no upkeep.
+const geneResearcherCache = new Map();
+
+function seniorAuthorOf(item) {
+  // PubMed lists authors in order; the last real author (not a collective/group
+  // name) is the senior author / PI.
+  const authors = (item.authors || []).filter((a) => a.authtype === "Author" && a.name);
+  return authors.length ? authors[authors.length - 1].name : "";
+}
+
+function researcherSearchUrl(gene, name) {
+  const term = `${name}[Author] AND ${gene.symbol} AND Dictyostelium`;
+  return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(term)}`;
+}
+
+async function computeGeneResearchers(gene) {
+  if (geneResearcherCache.has(gene.id)) return geneResearcherCache.get(gene.id);
+  // Reuse the papers the curated-references and PubMed loaders already fetch —
+  // no extra NCBI call (a 3rd concurrent esummary trips rate-limiting).
+  const [curated, pubmed] = await Promise.all([
+    fetchCuratedPapers(gene).catch(() => []),
+    fetchPubMedResults(gene).catch(() => [])
+  ]);
+  const byPmid = new Map();
+  [...curated, ...pubmed].forEach((p) => { if (p && p.pmid) byPmid.set(String(p.pmid), p); });
+  const by = new Map();
+  for (const p of byPmid.values()) {
+    if (!p.senior) continue;
+    const e = by.get(p.senior) || { name: p.senior, count: 0, latest: "" };
+    e.count += 1;
+    if ((p.sortDate || "") > e.latest) e.latest = p.sortDate || "";
+    by.set(p.senior, e);
+  }
+  const list = [...by.values()].sort((a, b) =>
+    b.count - a.count || (b.latest || "").localeCompare(a.latest || "") || a.name.localeCompare(b.name));
+  geneResearcherCache.set(gene.id, list);
+  return list;
+}
+
+async function loadGeneResearchers(gene) {
+  const container = document.querySelector("[data-gene-researchers]");
+  if (!container) return;
+  let list;
+  try { list = await computeGeneResearchers(gene); }
+  catch { if (container) container.innerHTML = ""; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Literature") return;
+  if (!list.length) { container.innerHTML = ""; return; }
+  const shown = list.slice(0, 25);
+  const more = list.length > shown.length ? ` (top ${shown.length})` : "";
+  container.innerHTML = `
+    <h4>Researchers <span style="font-weight:500;color:var(--muted,#6b7280)">— senior authors on ${escapeHtml(gene.symbol)} papers</span></h4>
+    <p class="oma-count">${list.length} researcher${list.length === 1 ? "" : "s"}${more}, ranked by number of ${escapeHtml(gene.symbol)} papers. Derived from the literature (senior/last author), so it updates as new papers are indexed in PubMed.</p>
+    <ul class="list researcher-list">
+      ${shown.map((r) => `<li>
+        <strong><a href="${researcherSearchUrl(gene, r.name)}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a></strong>
+        <span>${r.count} paper${r.count === 1 ? "" : "s"}${r.latest ? ` · most recent ${escapeHtml(String(r.latest).slice(0, 4))}` : ""}</span>
+      </li>`).join("")}
+    </ul>`;
+}
+
 // Papers cited in the dictyBase curated summary (PMIDs embedded in the markup).
 const curatedRefCache = new Map();
+const curatedRefPromise = new Map();  // in-flight de-dupe so concurrent callers share one fetch
+
+// Fetch (and cache) the curated papers for a gene, each with a `senior` last
+// author. Shared by the curated-references list and the researchers view so the
+// esummary call happens once, not once per consumer.
+function fetchCuratedPapers(gene) {
+  if (curatedRefCache.has(gene.id)) return Promise.resolve(curatedRefCache.get(gene.id));
+  if (curatedRefPromise.has(gene.id)) return curatedRefPromise.get(gene.id);
+  const pmids = curatedPmids(gene).slice(0, 60);
+  if (!pmids.length) { curatedRefCache.set(gene.id, []); return Promise.resolve([]); }
+  const p = (async () => {
+    const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictyatduke" });
+    const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
+    if (!res.ok) throw new Error("esummary failed");
+    const data = await res.json();
+    const papers = pmids.map((pmid) => {
+      const item = data.result?.[pmid];
+      return {
+        pmid,
+        title: item?.title || `PMID ${pmid}`,
+        journal: item?.fulljournalname || item?.source || "",
+        date: item?.pubdate || "",
+        sortDate: item?.sortpubdate || item?.epubdate || item?.pubdate || "",
+        authors: (item?.authors || []).slice(0, 3).map((a) => a.name).filter(Boolean).join(", "),
+        senior: item ? seniorAuthorOf(item) : ""
+      };
+    });
+    papers.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
+    curatedRefCache.set(gene.id, papers);
+    return papers;
+  })();
+  curatedRefPromise.set(gene.id, p);
+  p.catch(() => {}).finally(() => curatedRefPromise.delete(gene.id));
+  return p;
+}
 
 function curatedPmids(gene) {
   const out = [];
@@ -6902,28 +7017,7 @@ async function loadCuratedReferences(gene) {
   }
   const renderHeader = (n) => `<h4>Curated references <span style="font-weight:500;color:var(--muted,#6b7280)">— cited in the dictyBase summary (${n})</span></h4>`;
   try {
-    let papers;
-    if (curatedRefCache.has(gene.id)) {
-      papers = curatedRefCache.get(gene.id);
-    } else {
-      const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictyatduke" });
-      const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
-      if (!res.ok) throw new Error("esummary failed");
-      const data = await res.json();
-      papers = pmids.map((pmid) => {
-        const item = data.result?.[pmid];
-        return {
-          pmid,
-          title: item?.title || `PMID ${pmid}`,
-          journal: item?.fulljournalname || item?.source || "",
-          date: item?.pubdate || "",
-          sortDate: item?.sortpubdate || item?.epubdate || item?.pubdate || "",
-          authors: (item?.authors || []).slice(0, 3).map((a) => a.name).filter(Boolean).join(", ")
-        };
-      });
-      papers.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
-      curatedRefCache.set(gene.id, papers);
-    }
+    const papers = await fetchCuratedPapers(gene);
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
     litRegister({ el: container, headerHtml: renderHeader(papers.length), papers, noun: "references", defaultShown: 10 });
   } catch {

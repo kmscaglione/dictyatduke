@@ -98,6 +98,7 @@ class Sanitizer(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.out = []
         self._skip = 0
+        self._a_stack = []   # per <a>: True if we emitted a tag to close
 
     def handle_starttag(self, tag, attrs):
         if tag in DROP_CONTENT:
@@ -108,14 +109,15 @@ class Sanitizer(HTMLParser):
         if tag not in ALLOWED:
             return
         if tag == "a":
-            href = dict(attrs).get("href", "")
-            new = rewrite_href(href)
-            if new is None:
-                self.out.append("<a>")
-            elif new.startswith("#"):
+            new = rewrite_href(dict(attrs).get("href", ""))
+            if not new:                       # dead/unmappable link -> unwrap to text
+                self._a_stack.append(False)
+            elif new.startswith(("/", "#")):  # our own page or in-page anchor
                 self.out.append(f'<a href="{html.escape(new)}">')
-            else:
+                self._a_stack.append(True)
+            else:                             # external link
                 self.out.append(f'<a href="{html.escape(new)}" target="_blank" rel="noopener">')
+                self._a_stack.append(True)
         else:
             self.out.append(f"<{tag}>")
 
@@ -124,6 +126,10 @@ class Sanitizer(HTMLParser):
             self._skip = max(0, self._skip - 1)
             return
         if tag == "font" or tag not in ALLOWED:
+            return
+        if tag == "a":
+            if self._a_stack and self._a_stack.pop():
+                self.out.append("</a>")
             return
         self.out.append(f"</{tag}>")
 
@@ -140,20 +146,56 @@ class Sanitizer(HTMLParser):
 
 
 def rewrite_href(href):
-    href = (href or "").strip()
+    """Rewrite a source link to its equivalent on this site.
+
+    Returns an in-page anchor (#..), one of our own routes (/..), an external
+    URL, or "" when the link is dead/unmappable and should be unwrapped to
+    plain text (keeping the citation but dropping the broken href).
+    """
+    href = (href or "").strip().lstrip()
+    href = re.sub(r"^(?:%20|\s)+", "", href)   # some source hrefs have a leading space
     if not href or href.startswith(("#top", "javascript:")):
-        return None
+        return ""
     # Cross-reference within the archive -> in-page anchor (qid).
     m = re.match(r"listserv_archive_[\w]+\.html#([\w]+)", href, re.I)
     if m:
         return "#" + m.group(1)
+
+    # Normalise dictybase.org URLs (absolute or root-relative) to a path so we
+    # can map them onto our own routes.
+    dm = re.match(r"https?://(?:www\.)?dictybase\.org(/.*)?$", href, re.I)
+    path = dm.group(1) if dm else (href if href.startswith("/") else None)
+    if path:
+        g = re.search(r"gene_page\.pl\?(?:gene_name|dictybaseid)=([\w.\-]+)", path, re.I)
+        if g:
+            return "/gene/" + g.group(1)
+        if re.search(r"/blast\.pl", path, re.I):
+            return "/tools/blast"
+        if re.search(r"/SC/|/StockCenter", path, re.I):
+            return "/stock-center"
+        if re.search(r"/suggestion\b", path, re.I):
+            return "/community/suggestions"
+        # dictyBase's reference/publication system is retired (500s everywhere),
+        # so refNo/author links can't resolve — keep the citation text, drop link.
+        if re.search(r"reference\.pl|/publication/", path, re.I):
+            return ""
+        am = re.search(r"/ListServ_archive/listserv_archive_[\w]+\.html#([\w]+)", path, re.I)
+        if am:
+            return "#" + am.group(1)
+        if re.match(r"/ListServ_archive/", path, re.I):
+            return "/community/listserv"
+        # Other dictybase.org pages we don't host yet — leave pointing at the
+        # source for now (some still resolve); revisit as pages are migrated.
+        return "http://dictybase.org" + path
+
     if href.startswith(("http://", "https://", "mailto:")):
         return href
-    if href.startswith("/"):
-        return "http://dictybase.org" + href
     if href.startswith("listserv_archive"):   # bare archive page, no anchor
-        return None
-    return href
+        return ""
+    # Bare external domain with no scheme (e.g. www.jacksonimmuno.com).
+    if re.match(r"(?:www\.)?[\w-]+(?:\.[\w-]+)+(?:/|$)", href):
+        return "http://" + href
+    return ""   # anything else relative/unknown -> unwrap to text
 
 
 def sanitize(fragment):
@@ -222,6 +264,14 @@ def parse_content_page(page_html):
         if dm:
             date = strip_tags(dm.group(1))
             rest = rest[dm.end():]
+        # Drop the per-answer "[TOP] [INDEX]" nav and the page footer that follow
+        # the answer text (whichever chrome marker appears first).
+        cut = len(rest)
+        for marker in (r'<p\s+align="right"', r'/inc/images/logo\.gif', r'<!--\s*footer'):
+            mm = re.search(marker, rest, re.I)
+            if mm:
+                cut = min(cut, mm.start())
+        rest = rest[:cut]
         out[qid] = {
             "q": question,
             "date": date,

@@ -1014,6 +1014,15 @@ function rankedGenes(query) {
 // Each entry: { id, symbol, name, location, ncbiGene }.
 let geneIndex = [];
 
+// Site version shown by the logo/Beta badge — single source of truth is
+// assets/version.json (bumped each release). Falls back to the HTML default.
+(async function loadSiteVersion() {
+  try {
+    const { version } = await fetch("/assets/version.json").then((r) => r.json());
+    if (version) document.querySelectorAll("[data-site-version]").forEach((el) => { el.textContent = `v${version}`; });
+  } catch { /* keep the HTML default */ }
+})();
+
 (async function loadGeneIndex() {
   try {
     const res = await fetch("/assets/gene_index.json");

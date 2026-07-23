@@ -5068,6 +5068,7 @@ function renderCommunity(section) {
   if (section === "meetings") {
     communityShell.innerHTML = renderMeetingsPage();
     communityShell.removeAttribute("hidden");
+    loadMeetingMedia();
   } else if (section === "labs") {
     communityShell.innerHTML = renderLabsPage();
     communityShell.removeAttribute("hidden");
@@ -5951,14 +5952,42 @@ function renderConferenceItem(conf) {
   const organizers = conf.organizers.join(", ");
   const title = [conf.year, conf.location].filter(Boolean).join(" — ");
   return `
-    <article class="ontology-term">
+    <article class="ontology-term" data-meeting-year="${escapeHtml(String(conf.year))}">
       <div>
         <strong>${escapeHtml(title)}</strong>
         ${conf.local ? `<span>local meeting</span>` : ""}
       </div>
       ${organizers ? `<p>Organized by ${escapeHtml(organizers)}</p>` : ""}
+      <div class="meeting-media" data-meeting-media></div>
     </article>
   `;
+}
+
+// Attach preserved abstract books + photo galleries (assets/meetings/media.json,
+// mirrored from dictybase.org) to each meeting on the page, matched by year.
+async function loadMeetingMedia() {
+  let media;
+  try { media = await fetch("/assets/meetings/media.json").then((r) => r.json()); }
+  catch { return; }
+  document.querySelectorAll("[data-meeting-year]").forEach((el) => {
+    const m = media[el.dataset.meetingYear];
+    const box = el.querySelector("[data-meeting-media]");
+    if (!m || !box) return;
+    const parts = [];
+    if (m.abstract) parts.push(`<a class="meeting-link" href="/assets/${escapeHtml(m.abstract)}" target="_blank" rel="noopener">Abstract book (PDF)</a>`);
+    if (m.pictures && m.pictures.length) parts.push(`<button type="button" class="meeting-link" data-meeting-photos>${m.pictures.length} photos</button>`);
+    if (!parts.length) return;
+    box.innerHTML = parts.join("");
+    const btn = box.querySelector("[data-meeting-photos]");
+    if (btn) btn.addEventListener("click", () => {
+      const open = box.querySelector(".meeting-gallery");
+      if (open) { open.remove(); return; }
+      const g = document.createElement("div");
+      g.className = "meeting-gallery";
+      g.innerHTML = m.pictures.map((p) => `<a href="/assets/${escapeHtml(p)}" target="_blank" rel="noopener"><img loading="lazy" src="/assets/${escapeHtml(p)}" alt="Photo from the ${escapeHtml(el.dataset.meetingYear)} meeting"></a>`).join("");
+      box.appendChild(g);
+    });
+  });
 }
 
 function renderResearch() {

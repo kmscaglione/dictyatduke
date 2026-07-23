@@ -1712,6 +1712,43 @@ button:focus-visible,
   color: var(--muted);
   font-size: 0.72rem;
 }
+
+/* Meetings: preserved abstract books + photo galleries */
+.meeting-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+.meeting-media:empty { margin-top: 0; }
+.meeting-link {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--teal-dark, #0a4f47);
+  background: var(--soft, #e7eef7);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 3px 11px;
+  cursor: pointer;
+}
+.meeting-link:hover { border-color: var(--teal-dark, #0a4f47); }
+.meeting-gallery {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+.meeting-gallery img {
+  width: 100%;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line, #d7dee0);
+  display: block;
+}
 .disease-list {
   list-style: none;
   margin: 11px 0 0;

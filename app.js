@@ -4293,7 +4293,7 @@ function renderGenomeBrowser() {
           <span id="browser-search-msg" style="font-size:0.8125rem"></span>
         </div>
         <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— AX4 only; zoom in to ≤250 kb to see cut sites.</span></span>
+          <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— AX4 only; zoom into a gene to see cut sites.</span></span>
           <button type="button" id="browser-restriction" aria-pressed="false">Show restriction sites</button>
         </div>
         <details style="margin-bottom:12px">
@@ -4437,7 +4437,8 @@ function initGenomeBrowser() {
     url: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz",
     indexURL: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz.tbi",
     format: "gff3", indexed: true, displayMode: "COLLAPSED",
-    color: "rgb(178, 34, 52)", height: 44, visibilityWindow: 250000,
+    color: "rgb(178, 34, 52)", height: 40, visibilityWindow: 250000,
+    order: -1,   // pin to the top so it isn't buried below the 19 RNA-seq tracks
   };
   const restrictionBtn = document.getElementById("browser-restriction");
   let restrictionOn = false;
@@ -4448,14 +4449,19 @@ function initGenomeBrowser() {
     restrictionBtn.textContent = restrictionOn ? "Hide restriction sites" : "Show restriction sites";
     restrictionBtn.setAttribute("aria-pressed", restrictionOn ? "true" : "false");
   };
+  const restrictionHint = document.getElementById("browser-restriction-hint");
+  const HINT_DEFAULT = restrictionHint ? restrictionHint.innerHTML : "";
   if (restrictionBtn) restrictionBtn.addEventListener("click", () => {
     if (!igvBrowser || select.value !== "d-discoideum-ax4") return;
     if (!restrictionOn) {
-      Promise.resolve(igvBrowser.loadTrack(RESTRICTION))
-        .then(() => { restrictionOn = true; setRestrictionBtn(); }).catch(() => {});
+      Promise.resolve(igvBrowser.loadTrack(RESTRICTION)).then(() => {
+        restrictionOn = true; setRestrictionBtn();
+        if (restrictionHint) restrictionHint.innerHTML = "Added as the top track — <strong>zoom into a gene</strong> to see individual cut sites (they're too small to see zoomed out).";
+      }).catch(() => {});
     } else {
       try { igvBrowser.removeTrackByName("Restriction sites"); } catch { /* older IGV */ }
       restrictionOn = false; setRestrictionBtn();
+      if (restrictionHint) restrictionHint.innerHTML = HINT_DEFAULT;
     }
   });
 

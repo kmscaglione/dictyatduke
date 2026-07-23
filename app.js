@@ -4268,19 +4268,7 @@ function geneLocus(gene) {
 
 function geneDdb(gene) {
   const d = (gene && (gene.veupath || gene.ddb || gene.id) || "").toUpperCase();
-  if (/^DDB_G\d+$/.test(d)) return d;
-  // Fall back to a DDB_G locus tag hiding in the alias list.
-  const aliases = gene && Array.isArray(gene.aliases) ? gene.aliases : [];
-  const alias = aliases.map((a) => String(a).toUpperCase()).find((a) => /^DDB_G\d+$/.test(a));
-  return alias || "";
-}
-
-// dictyBase hosts the authoritative curation for each gene, including the
-// literature its curators read and annotated. This deep-links to that gene's
-// References view — the record behind our "curated references" list.
-function dictybaseCurationUrl(gene) {
-  const ddb = geneDdb(gene);
-  return ddb ? `http://dictybase.org/gene/${encodeURIComponent(ddb)}/references` : "";
+  return /^DDB_G\d+$/.test(d) ? d : "";
 }
 
 // Show the "view in browser" jump whenever we can place the gene — either its
@@ -6691,13 +6679,10 @@ function initLiteratureSearch() {
   if (inp) inp.addEventListener("input", () => { litQuery = inp.value; litPaint(); });
 }
 
-function litPaperHtml(p, curationUrl) {
-  const curationLink = curationUrl
-    ? ` <a class="curation-link" href="${escapeHtml(curationUrl)}" target="_blank" rel="noopener" title="See how dictyBase curated this gene's literature">dictyBase curation ↗</a>`
-    : "";
+function litPaperHtml(p) {
   return `<li>
     <strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(p.pmid)}/" target="_blank" rel="noopener">${escapeHtml(p.title)}</a></strong>
-    <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}${curationLink}</span>
+    <span>${escapeHtml([p.authors, p.journal, p.date].filter(Boolean).join(" · ")) || `PMID ${escapeHtml(p.pmid)}`}</span>
   </li>`;
 }
 
@@ -6706,13 +6691,13 @@ function renderLitSection(s) {
   if (q) {
     const hits = s.papers.filter((p) => `${p.title} ${p.journal} ${p.authors}`.toLowerCase().includes(q));
     s.el.innerHTML = s.headerHtml + (hits.length
-      ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map((p) => litPaperHtml(p, s.curationUrl)).join("")}</ul>`
+      ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map(litPaperHtml).join("")}</ul>`
       : `<p class="notice muted">No ${s.noun} match “${escapeHtml(litQuery.trim())}”.</p>`);
   } else {
     const note = s.papers.length > s.defaultShown
       ? `<p class="oma-count">Showing the ${s.defaultShown} most recent of ${s.papers.length} — filter above to find a specific one.</p>`
       : "";
-    s.el.innerHTML = s.headerHtml + note + `<ul class="list pubmed-list">${s.papers.slice(0, s.defaultShown).map((p) => litPaperHtml(p, s.curationUrl)).join("")}</ul>`;
+    s.el.innerHTML = s.headerHtml + note + `<ul class="list pubmed-list">${s.papers.slice(0, s.defaultShown).map(litPaperHtml).join("")}</ul>`;
   }
 }
 
@@ -6773,7 +6758,6 @@ async function loadCuratedReferences(gene) {
     container.innerHTML = `<p class="notice muted">No references are cited in the curated summary for ${escapeHtml(gene.symbol)}.</p>`;
     return;
   }
-  const curationUrl = dictybaseCurationUrl(gene);
   const renderHeader = (n) => `<h4>Curated references <span style="font-weight:500;color:var(--muted,#6b7280)">— cited in the dictyBase summary (${n})</span></h4>`;
   try {
     let papers;
@@ -6799,14 +6783,14 @@ async function loadCuratedReferences(gene) {
       curatedRefCache.set(gene.id, papers);
     }
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-    litRegister({ el: container, headerHtml: renderHeader(papers.length), papers, noun: "references", defaultShown: 10, curationUrl });
+    litRegister({ el: container, headerHtml: renderHeader(papers.length), papers, noun: "references", defaultShown: 10 });
   } catch {
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
     // Fallback: linked PMIDs without titles
     container.innerHTML = `
       ${renderHeader(pmids.length)}
       <ul class="list">
-        ${pmids.map((pmid) => `<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a></strong>${curationUrl ? ` <a class="curation-link" href="${escapeHtml(curationUrl)}" target="_blank" rel="noopener" title="See how dictyBase curated this gene's literature">dictyBase curation ↗</a>` : ""}</li>`).join("")}
+        ${pmids.map((pmid) => `<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a></strong></li>`).join("")}
       </ul>`;
   }
 }

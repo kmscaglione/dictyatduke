@@ -44,6 +44,10 @@ GALLERIES = {
     1997: "/DictyAnnualConference/dicty97/thumbs.html",
     1998: "/DictyAnnualConference/dicty98/dicty98.html",
     2001: "/DictyAnnualConference/dicty01/index.html",
+    # multi-page galleries: a list of listing pages
+    2010: ["/DictyAnnualConference/dicty10/pictures/",
+           "/DictyAnnualConference/dicty10/pictures/index2.html",
+           "/DictyAnnualConference/dicty10/pictures/index3.html"],
 }
 
 # Meetings whose photos live on an external site (dictyBase just embeds/links
@@ -91,17 +95,21 @@ def main():
         media.setdefault(str(year), {})["external_photos"] = url
         print(f"  external photos {year}: {url}")
 
-    # photo galleries
+    # photo galleries (each year is one listing page, or a list of pages)
     for year, page in GALLERIES.items():
-        pageurl = BASE + page
-        try:
-            body = get(pageurl).decode("utf-8", "replace")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  gallery {year}: {exc}"); continue
-        hrefs = re.findall(r'href="([^"]+\.(?:jpe?g|png))"', body, re.I)
-        srcs = re.findall(r'src="([^"]+\.(?:jpe?g|png))"', body, re.I)
-        urls = [u for u in (hrefs or srcs) if "/inc/images/" not in u]
-        urls = sorted({urllib.parse.urljoin(pageurl, u) for u in urls})
+        pages = page if isinstance(page, list) else [page]
+        urls = set()
+        for pg in pages:
+            pageurl = BASE + pg
+            try:
+                body = get(pageurl).decode("utf-8", "replace")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  gallery {year} ({pg}): {exc}"); continue
+            hrefs = re.findall(r'href="([^"]+\.(?:jpe?g|png))"', body, re.I)
+            srcs = re.findall(r'src="([^"]+\.(?:jpe?g|png))"', body, re.I)
+            imgs = [u for u in (hrefs or srcs) if "/inc/images/" not in u]
+            urls |= {urllib.parse.urljoin(pageurl, u) for u in imgs}
+        urls = sorted(urls)
         pdir = MEET / "pictures" / f"dicty{year}"
         pdir.mkdir(parents=True, exist_ok=True)
         saved = []

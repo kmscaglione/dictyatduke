@@ -59,6 +59,51 @@ GALLERIES = {
 }
 
 
+def fetch_photofloat(year, album, media):
+    """Mirror a PhotoFloat gallery: 1024px full + 150px thumbnail per photo,
+    read from the album's cache manifest. Both-or-neither per photo so the two
+    lists stay aligned."""
+    try:
+        meta = json.loads(get(f"{PF_CACHE}{album}.json").decode("utf-8", "replace"))
+    except Exception as exc:  # noqa: BLE001
+        print(f"  photofloat {year}: {exc}"); return
+    fdir = MEET / "pictures" / f"dicty{year}"
+    tdir = fdir / "thumb"
+    fdir.mkdir(parents=True, exist_ok=True)
+    tdir.mkdir(exist_ok=True)
+
+    def grab(url, dest):
+        if dest.exists() and dest.stat().st_size > 500:
+            return True
+        try:
+            data = get(url)
+        except Exception:  # noqa: BLE001
+            return False
+        if len(data) < 500:
+            return False
+        dest.write_bytes(data)
+        return True
+
+    fulls, thumbs = [], []
+    for p in meta.get("photos", []):
+        name = p.get("name", "")
+        if not name:
+            continue
+        cbase = f"{album}-{name.lower()}"
+        full_rel = f"meetings/pictures/dicty{year}/{cbase}_1024.jpg"
+        thumb_rel = f"meetings/pictures/dicty{year}/thumb/{cbase}_150s.jpg"
+        if (grab(f"{PF_CACHE}{cbase}_1024.jpg", ROOT / "assets" / full_rel)
+                and grab(f"{PF_CACHE}{cbase}_150s.jpg", ROOT / "assets" / thumb_rel)):
+            fulls.append(full_rel)
+            thumbs.append(thumb_rel)
+    if fulls:
+        e = media.setdefault(str(year), {})
+        e["pictures"] = fulls
+        e["thumbs"] = thumbs
+        e.pop("external_photos", None)
+    print(f"  photofloat {year}: {len(fulls)} photos + thumbnails")
+
+
 def crawl_gallery(start, max_pages=100):
     """Collect every photo URL under a meeting's folder, following in-folder
     sub-page/sub-directory links (not the site chrome, which lives elsewhere)."""
@@ -101,14 +146,16 @@ def _is_thumb(u):
 # them). We can't mirror these, so record a single link out. The rest of the
 # picture links (2010-2016, 2018-2019) are dead on dictyBase and elsewhere.
 EXTERNAL_PHOTOS = {
-    # dictyBase PhotoFloat galleries (2011-2014): hundreds of full-res originals
-    # each (~2.4 GB total), too large to mirror — link to the gallery instead.
-    2011: "http://dictybase.org/conferences/pictures/#!/dicty11",
-    2012: "http://dictybase.org/conferences/pictures/#!/dicty12",
-    2013: "http://dictybase.org/conferences/pictures/#!/dicty13",
-    2014: "http://dictybase.org/conferences/pictures/#!/dicty14",
+    # Geneva 2017 photos live in a Google Drive folder (survives dictyBase).
     2017: "https://drive.google.com/drive/folders/0B_xxyPWhEOYCMkl4SmNIYnd6MkU",
 }
+
+# dictyBase PhotoFloat galleries (2011-2014). dictybase.org is being retired, so
+# mirror them: 1024px scaled versions (the largest PhotoFloat generates) for
+# viewing/download + 150px square thumbnails for the grid. Cache filename scheme:
+# cache/<album>-<lowercased-name>_<size>.jpg
+PHOTOFLOAT = {2011: "dicty11", 2012: "dicty12", 2013: "dicty13", 2014: "dicty14"}
+PF_CACHE = "http://dictybase.org/conferences/pictures/cache/"
 
 
 def get(url):
@@ -168,6 +215,10 @@ def main():
         if saved:
             media.setdefault(str(year), {})["pictures"] = saved
         print(f"  gallery {year}: {len(saved)} photos")
+
+    # PhotoFloat galleries (2011-2014) — mirror scaled + thumbnails
+    for year, album in PHOTOFLOAT.items():
+        fetch_photofloat(year, album, media)
 
     # Include any manually-added files (recent meetings contributed directly,
     # not sourced from dictyBase) so they appear on the page too. Anything already

@@ -5994,7 +5994,10 @@ async function loadMeetingMedia() {
       if (open) { open.remove(); return; }
       const g = document.createElement("div");
       g.className = "meeting-gallery";
-      g.innerHTML = m.pictures.map((p) => `<a href="/assets/${escapeHtml(p)}" target="_blank" rel="noopener"><img loading="lazy" src="/assets/${escapeHtml(p)}" alt="Photo from the ${escapeHtml(el.dataset.meetingYear)} meeting"></a>`).join("");
+      g.innerHTML = m.pictures.map((p, i) => {
+        const thumb = (m.thumbs && m.thumbs[i]) || p;
+        return `<a href="/assets/${escapeHtml(p)}" target="_blank" rel="noopener"><img loading="lazy" src="/assets/${escapeHtml(thumb)}" alt="Photo from the ${escapeHtml(el.dataset.meetingYear)} meeting"></a>`;
+      }).join("");
       box.appendChild(g);
     });
   });

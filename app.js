@@ -4293,7 +4293,7 @@ function renderGenomeBrowser() {
           <span id="browser-search-msg" style="font-size:0.8125rem"></span>
         </div>
         <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— AX4 only; zoom into a gene to see cut sites.</span></span>
+          <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— zoom into a region to see cut sites (all genomes).</span></span>
           <button type="button" id="browser-restriction" aria-pressed="false">Show restriction sites</button>
         </div>
         <details style="margin-bottom:12px">
@@ -4432,29 +4432,34 @@ function initGenomeBrowser() {
   }
 
   // --- Restriction sites: an on-demand AX4-only track (precomputed cut sites) ---
-  const RESTRICTION = {
-    name: "Restriction sites",
-    url: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz",
-    indexURL: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz.tbi",
-    format: "gff3", indexed: true, displayMode: "COLLAPSED",
-    color: "rgb(178, 34, 52)", height: 40, visibilityWindow: 250000,
-    order: -1,   // pin to the top so it isn't buried below the 19 RNA-seq tracks
+  // Restriction track for a given organism — derived from its FASTA basename
+  // (each genome has its own precomputed <name>_restriction.gff3.gz).
+  const restrictionTrackFor = (org) => {
+    const base = (org.fastaURL || "").split("/").pop().replace(/\.(fna|fa|fasta)$/i, "");
+    return {
+      name: "Restriction sites",
+      url: `/assets/tracks/${base}_restriction.gff3.gz`,
+      indexURL: `/assets/tracks/${base}_restriction.gff3.gz.tbi`,
+      format: "gff3", indexed: true, displayMode: "COLLAPSED",
+      color: "rgb(178, 34, 52)", height: 40, visibilityWindow: 250000,
+      order: -1,   // pin to the top so it isn't buried below the other tracks
+    };
   };
   const restrictionBtn = document.getElementById("browser-restriction");
   let restrictionOn = false;
   const setRestrictionBtn = () => {
     if (!restrictionBtn) return;
-    const ax4 = select.value === "d-discoideum-ax4";
-    restrictionBtn.disabled = !ax4;
+    restrictionBtn.disabled = false;
     restrictionBtn.textContent = restrictionOn ? "Hide restriction sites" : "Show restriction sites";
     restrictionBtn.setAttribute("aria-pressed", restrictionOn ? "true" : "false");
   };
   const restrictionHint = document.getElementById("browser-restriction-hint");
   const HINT_DEFAULT = restrictionHint ? restrictionHint.innerHTML : "";
   if (restrictionBtn) restrictionBtn.addEventListener("click", () => {
-    if (!igvBrowser || select.value !== "d-discoideum-ax4") return;
+    const org = browserOrganisms.find((o) => o.id === select.value);
+    if (!igvBrowser || !org) return;
     if (!restrictionOn) {
-      Promise.resolve(igvBrowser.loadTrack(RESTRICTION)).then(() => {
+      Promise.resolve(igvBrowser.loadTrack(restrictionTrackFor(org))).then(() => {
         restrictionOn = true; setRestrictionBtn();
         if (restrictionHint) restrictionHint.innerHTML = "Added as the top track — <strong>zoom into a gene</strong> to see individual cut sites (they're too small to see zoomed out).";
       }).catch(() => {});

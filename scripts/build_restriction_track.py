@@ -27,8 +27,20 @@ except ImportError:
              "bgzip/tabix. Build-time tool only.")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FASTA = os.path.join(ROOT, "assets", "genomes", "D_discoideum_AX4_refseq.fna")
-OUT = os.path.join(ROOT, "assets", "tracks", "D_discoideum_AX4_restriction.gff3")
+GENOMES_DIR = os.path.join(ROOT, "assets", "genomes")
+TRACKS_DIR = os.path.join(ROOT, "assets", "tracks")
+
+# Every genome shown in the browser (basename of its <name>.fna). The restriction
+# track for each is written as <name>_restriction.gff3.gz next to the RNA-seq
+# tracks; the browser derives this path from the organism's fastaURL.
+GENOMES = [
+    "D_discoideum_AX4_refseq", "D_purpureum_browser", "D_firmibasis_browser",
+    "C_fasciculata_SH3_browser", "C_polycephalum_browser", "S_polycarpum_browser",
+    "H_pallidum_PN500_browser", "H_pallidum_new_browser", "P_violaceum_browser",
+    "D_citrinum_GS8b_browser", "D_dimigraforme_Ar5b_browser", "D_citrinum_Cf3b_browser",
+    "Dd_AX2-214_browser", "Dd_CR116C_browser", "Dd_OT3A_browser",
+    "Dd_M4B_browser", "Dd_S6B_browser",
+]
 
 # Common cloning enzymes with palindromic recognition sequences.
 ENZYMES = {
@@ -56,35 +68,35 @@ def read_fasta(path):
         yield name, "".join(seq)
 
 
-def main():
-    if not os.path.exists(FASTA):
-        sys.exit(f"FASTA not found: {FASTA} (run where the AX4 genome is present)")
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    patterns = [(name, re.compile(site)) for name, site in ENZYMES.items()]
-    rows, counts = [], {}
-    for chrom, seq in read_fasta(FASTA):
-        for name, pat in patterns:
+PATTERNS = [(name, re.compile(site)) for name, site in ENZYMES.items()]
+
+
+def build_one(base):
+    fasta = os.path.join(GENOMES_DIR, base + ".fna")
+    if not os.path.exists(fasta):
+        print(f"  {base}: FASTA not found, skipped"); return
+    out = os.path.join(TRACKS_DIR, base + "_restriction.gff3")
+    rows = []
+    for chrom, seq in read_fasta(fasta):
+        for name, pat in PATTERNS:
             for m in pat.finditer(seq):
-                start = m.start() + 1          # GFF3 is 1-based, inclusive
-                end = m.end()
-                rows.append((chrom, start, end, name))
-                counts[name] = counts.get(name, 0) + 1
-
+                rows.append((chrom, m.start() + 1, m.end(), name))  # GFF3 1-based
     rows.sort(key=lambda r: (r[0], r[1]))
-    with open(OUT, "w", encoding="utf-8") as out:
-        out.write("##gff-version 3\n")
+    with open(out, "w", encoding="utf-8") as fh:
+        fh.write("##gff-version 3\n")
         for chrom, start, end, name in rows:
-            out.write(f"{chrom}\trestriction\trestriction_site\t{start}\t{end}\t.\t.\t.\t"
-                      f"ID={name}_{chrom}_{start};Name={name};enzyme={name};"
-                      f"site={ENZYMES[name]}\n")
+            fh.write(f"{chrom}\trestriction\trestriction_site\t{start}\t{end}\t.\t.\t.\t"
+                     f"ID={name}_{chrom}_{start};Name={name};enzyme={name};site={ENZYMES[name]}\n")
+    pysam.tabix_index(out, preset="gff", force=True)   # -> out + ".gz" (+ .tbi)
+    size_mb = os.path.getsize(out + ".gz") / 1048576
+    print(f"  {base}: {len(rows):,} sites -> {size_mb:.2f} MB")
 
-    pysam.tabix_index(OUT, preset="gff", force=True)   # -> OUT + ".gz" (+ .tbi)
-    gz = OUT + ".gz"
-    size_mb = os.path.getsize(gz) / 1048576
-    print(f"  wrote {os.path.relpath(gz, ROOT)} ({size_mb:.2f} MB + .tbi, "
-          f"{len(rows):,} sites across {len(ENZYMES)} enzymes)")
-    for name in sorted(counts, key=lambda n: -counts[n])[:6]:
-        print(f"    {name:8} {counts[name]:>7,} sites")
+
+def main():
+    os.makedirs(TRACKS_DIR, exist_ok=True)
+    only = sys.argv[1:] or GENOMES
+    for base in only:
+        build_one(base)
 
 
 if __name__ == "__main__":

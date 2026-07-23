@@ -3911,6 +3911,34 @@ function wireProteomicsSearch() {
   });
 }
 
+// Genome (nucleotide) targets for blastn/tblastn; the protein target for blastp.
+// blastp only has the AX4 proteome, so its database select collapses to one item.
+function localBlastGenomeOptions() {
+  return `<optgroup label="Comparative species">
+      ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
+      <option value="all">All species</option>
+    </optgroup>
+    <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
+      ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
+    </optgroup>`;
+}
+
+function localBlastProteinOptions() {
+  return `<option value="d-discoideum-ax4-prot">D. discoideum AX4 proteins</option>`;
+}
+
+// blastp searches proteins, blastn/tblastn search genomes — swap the database
+// select (and its label) to match when the program changes.
+function syncLocalBlastDb() {
+  const prog = document.getElementById("lblast-program");
+  const db = document.getElementById("lblast-db");
+  const label = document.getElementById("lblast-db-label");
+  if (!prog || !db) return;
+  const isProt = prog.value === "blastp";
+  db.innerHTML = isProt ? localBlastProteinOptions() : localBlastGenomeOptions();
+  if (label) label.innerHTML = (isProt ? "Protein set" : "Genome") + ` <span class="required">*</span>`;
+}
+
 function renderBlastPage() {
   return `
     <article class="record-card research-card">
@@ -3930,25 +3958,20 @@ function renderBlastPage() {
                 <label for="lblast-program">Program <span class="required">*</span></label>
                 <select id="lblast-program" name="program" required>
                   <option value="blastn">blastn — nucleotide query</option>
-                  <option value="tblastn">tblastn — protein query (translated search)</option>
+                  <option value="blastp">blastp — protein query vs D. discoideum proteins</option>
+                  <option value="tblastn">tblastn — protein query (translated genome search)</option>
                 </select>
               </div>
               <div class="form-field">
-                <label for="lblast-db">Genome <span class="required">*</span></label>
+                <label for="lblast-db" id="lblast-db-label">Genome <span class="required">*</span></label>
                 <select id="lblast-db" name="database" required>
-                  <optgroup label="Comparative species">
-                    ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
-                    <option value="all">All species</option>
-                  </optgroup>
-                  <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
-                    ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
-                  </optgroup>
+                  ${localBlastGenomeOptions()}
                 </select>
               </div>
             </div>
             <div class="form-field">
               <label for="lblast-query">Query sequence <span class="required">*</span></label>
-              <textarea id="lblast-query" name="query" required rows="7" placeholder="Paste a nucleotide (blastn) or protein (tblastn) sequence — FASTA or raw&#10;&#10;&gt;my_seq&#10;ATGCATGCATGC..."></textarea>
+              <textarea id="lblast-query" name="query" required rows="7" placeholder="Paste a nucleotide (blastn) or protein (blastp / tblastn) sequence — FASTA or raw&#10;&#10;&gt;my_seq&#10;ATGCATGCATGC..."></textarea>
             </div>
             <div class="form-actions"><button type="submit" class="button primary">Run BLAST</button></div>
           </form>
@@ -4107,7 +4130,9 @@ async function runLocalBlast(form) {
   const database = form.querySelector("#lblast-db").value;
   const query = form.querySelector("#lblast-query").value.trim();
   if (!query) { results.innerHTML = `<p class="notice">Enter a query sequence.</p>`; return; }
-  results.innerHTML = loadingHTML(`Running ${program} against ${database === "all" ? "all species" : (LOCAL_BLAST_DBS[database] || WILD_ISOLATES[database] || database)}…`);
+  const dbLabel = database === "all" ? "all species"
+    : (LOCAL_BLAST_DBS[database] || WILD_ISOLATES[database] || (database === "d-discoideum-ax4-prot" ? "D. discoideum AX4 proteins" : database));
+  results.innerHTML = loadingHTML(`Running ${program} against ${dbLabel}…`);
   try {
     let data;
     if (database === "all") {
@@ -4126,17 +4151,23 @@ async function runLocalBlast(form) {
       if (!res.ok) { results.innerHTML = `<p class="notice">${escapeHtml(data.error || "BLAST failed.")}</p>`; return; }
     }
     if (!data.hits || !data.hits.length) { results.innerHTML = `<p class="notice">No hits found (E-value &lt; 1e-3).</p>`; return; }
+    const isProt = data.program === "blastp";
+    const targetNoun = isProt ? "proteome" : "genome";
     results.innerHTML = `
-      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">${data.count} hit${data.count === 1 ? "" : "s"} · ${escapeHtml(data.program)} · ${data.databases.length} genome${data.databases.length === 1 ? "" : "s"}</p>
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">${data.count} hit${data.count === 1 ? "" : "s"} · ${escapeHtml(data.program)} · ${data.databases.length} ${targetNoun}${data.databases.length === 1 ? "" : "s"}</p>
       <div class="blast-hits">
         ${data.hits.map((h) => {
           const name = h.gene
             ? `<a class="text-link curated-xref" href="/gene/${encodeURIComponent(h.gene.symbol)}" data-ddb-ref="${escapeHtml(h.gene.ddb)}">${escapeHtml(h.gene.symbol)}</a>`
             : escapeHtml(h.subject);
-          const strand = h.send < h.sstart ? " (−)" : "";
-          const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}${strand}`;
+          // Protein hits are subject=DDB_G with residue coords (no strand); genome
+          // hits carry a contig accession + genomic coordinates.
+          const loc = isProt
+            ? `${escapeHtml(h.subject)} · residues ${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}`
+            : `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}${h.send < h.sstart ? " (−)" : ""}`;
+          const unit = (isProt || data.program === "tblastn") ? "aa" : "bp";
           return `<div class="blast-hit">
-            <div class="blast-hit-head"><strong>${name}</strong> <span>${h.identity.toFixed(1)}% identity · ${h.length} ${data.program === "tblastn" ? "aa" : "bp"} · E=${escapeHtml(h.evalue)} · ${h.bitscore} bits · ${loc}</span></div>
+            <div class="blast-hit-head"><strong>${name}</strong> <span>${h.identity.toFixed(1)}% identity · ${h.length} ${unit} · E=${escapeHtml(h.evalue)} · ${h.bitscore} bits · ${loc}</span></div>
             ${blastAlignmentHTML(h, data.program)}
           </div>`;
         }).join("")}
@@ -6899,6 +6930,10 @@ async function loadCuratedReferences(gene) {
       </ul>`;
   }
 }
+
+document.addEventListener("change", (event) => {
+  if (event.target.id === "lblast-program") syncLocalBlastDb();
+});
 
 document.addEventListener("submit", (event) => {
   if (event.target.id === "local-blast-form") {

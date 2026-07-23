@@ -733,7 +733,12 @@ def _rate_limited(store, ip, limit, window):
 # --- Local BLAST against the bundled dictyostelid genomes ---
 BLAST_DB_DIR = pathlib.Path(ROOT) / "assets" / "genomes" / "blastdb"
 BLAST_BIN_DIR = pathlib.Path(os.path.expanduser("~/.local/blast"))
-BLAST_PROGRAMS = {"blastn", "tblastn"}
+BLAST_PROGRAMS = {"blastn", "tblastn", "blastp"}
+# Protein databases for blastp. Only D. discoideum AX4 has an annotated proteome
+# here, so blastp searches it alone (built by scripts/build_protein_blastdb.py,
+# one sequence per gene headed by its DDB_G id). Other dictyostelids are assembly
+# only — use tblastn for a protein query against those genomes.
+PROT_DBS = {"d-discoideum-ax4-prot": "D. discoideum AX4 proteins"}
 # species id -> label. Keys MUST match the DB names built by scripts/build_blastdb.py
 BLAST_DBS = {
     "d-discoideum-ax4": "D. discoideum AX4",
@@ -802,6 +807,25 @@ def gene_for_hit(accession, sstart, send):
         if a <= mid <= b:
             return {"symbol": sym, "ddb": ddb, "ncbi": ncbi}
     return None
+
+
+# blastp subjects are named by their DDB_G id, so a hit maps to its gene by a
+# direct id lookup (no genomic-coordinate interval search).
+_GENE_BY_DDB = None
+
+
+def gene_by_ddb(ddb):
+    global _GENE_BY_DDB
+    if _GENE_BY_DDB is None:
+        idx = {}
+        try:
+            rows = json.loads((pathlib.Path(ROOT) / "assets" / "gene_index.json").read_text())
+            for ddb_, sym, name, loc, ncbi, *_ in rows:
+                idx[ddb_] = {"symbol": sym, "ddb": ddb_, "ncbi": ncbi}
+        except Exception:
+            pass
+        _GENE_BY_DDB = idx
+    return _GENE_BY_DDB.get(ddb)
 
 
 # --- Per-gene sequence extraction (genomic / cDNA / protein) from genome + GFF ---
@@ -1249,7 +1273,12 @@ def run_blast(program, database, query):
     from a pool thread."""
     if program not in BLAST_PROGRAMS:
         return 400, {"error": "Unsupported program."}
-    if database == "all":
+    is_prot = program == "blastp"
+    if is_prot:
+        if database not in PROT_DBS:
+            return 400, {"error": "Unknown database."}
+        db_ids = [database]
+    elif database == "all":
         db_ids = list(BLAST_SPECIES_DBS)
     elif database in BLAST_DBS:
         db_ids = [database]
@@ -1263,10 +1292,11 @@ def run_blast(program, database, query):
     binpath = blast_bin(program)
     if not binpath:
         return 503, {"error": "BLAST is not installed on the server. See README (P6)."}
-    missing = [d for d in db_ids if not (BLAST_DB_DIR / (d + ".nsq")).exists()
-               and not (BLAST_DB_DIR / (d + ".nin")).exists()]
+    exts = (".psq", ".pin") if is_prot else (".nsq", ".nin")
+    build_hint = "scripts/build_protein_blastdb.py" if is_prot else "scripts/build_blastdb.py"
+    missing = [d for d in db_ids if not any((BLAST_DB_DIR / (d + e)).exists() for e in exts)]
     if missing:
-        return 503, {"error": "BLAST databases not built. Run scripts/build_blastdb.py."}
+        return 503, {"error": f"BLAST databases not built. Run {build_hint}."}
     db_arg = " ".join(str(BLAST_DB_DIR / d) for d in db_ids)
     qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
     try:
@@ -1296,7 +1326,7 @@ def run_blast(program, database, query):
                "sstart": int(f[8]), "send": int(f[9]),
                "evalue": f[10], "bitscore": float(f[11]),
                "qseq": f[12], "sseq": f[13]}
-        g = gene_for_hit(acc, f[8], f[9])
+        g = gene_by_ddb(acc) if is_prot else gene_for_hit(acc, f[8], f[9])
         if g:
             hit["gene"] = g
         hits.append(hit)

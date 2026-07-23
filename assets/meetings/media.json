@@ -1,4 +1,34 @@
 {
+ "1975": {
+  "pictures": [
+   "meetings/pictures/dicty1975/dicty75_1.png",
+   "meetings/pictures/dicty1975/dicty75_1thumb.png"
+  ]
+ },
+ "1977": {
+  "pictures": [
+   "meetings/pictures/dicty1977/dicty1977.png",
+   "meetings/pictures/dicty1977/dicty1977_legend.png"
+  ]
+ },
+ "1981": {
+  "pictures": [
+   "meetings/pictures/dicty1981/dicty81_1.png",
+   "meetings/pictures/dicty1981/dicty81_1_thumb1.png"
+  ]
+ },
+ "1983": {
+  "pictures": [
+   "meetings/pictures/dicty1983/Kyoto83-legend.jpg",
+   "meetings/pictures/dicty1983/Kyoto83-names.jpg",
+   "meetings/pictures/dicty1983/Kyoto83.jpg"
+  ]
+ },
+ "1987": {
+  "pictures": [
+   "meetings/pictures/dicty1987/Sussmann_Retreat_87.png"
+  ]
+ },
  "1995": {
   "pictures": [
    "meetings/pictures/dicty1995/dd95_01.jpg",
@@ -20,6 +50,11 @@
    "meetings/pictures/dicty1995/dd95_17.jpg",
    "meetings/pictures/dicty1995/dd95_19.jpg",
    "meetings/pictures/dicty1995/dd95_20.jpg"
+  ]
+ },
+ "1996": {
+  "pictures": [
+   "meetings/pictures/dicty1996/dicty96_1.png"
   ]
  },
  "1997": {
@@ -172,7 +207,8 @@
   "abstract": "meetings/abstracts/dicty2016_abstracts.pdf"
  },
  "2017": {
-  "abstract": "meetings/abstracts/dicty2017_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2017_abstracts.pdf",
+  "external_photos": "https://drive.google.com/drive/folders/0B_xxyPWhEOYCMkl4SmNIYnd6MkU"
  },
  "2018": {
   "abstract": "meetings/abstracts/dicty2018_abstracts.pdf"

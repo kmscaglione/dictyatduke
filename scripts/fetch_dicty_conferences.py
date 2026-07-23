@@ -32,12 +32,25 @@ UA = {"User-Agent": "dictyBase-preservation/1.0 (+https://dicty.labs.duke.edu)"}
 ABSTRACTS = {y: (f"/DictyAnnualConference/dicty06/dicty2006_abstracts.pdf" if y == 2006
                  else f"/DictyAnnualConference/dicty{y}.pdf") for y in range(1999, 2019)}
 
-# The four galleries that still serve real photos, (year -> listing page).
+# Galleries that still serve real photos on dictyBase (year -> listing page).
 GALLERIES = {
+    1975: "/DictyAnnualConference/dicty75/dicty75_1.html",
+    1977: "/DictyAnnualConference/dicty77/dicty77_1.html",
+    1981: "/DictyAnnualConference/dicty81/dicty81_1.html",
+    1983: "/DictyAnnualConference/dicty83/dicty83_1.html",
+    1987: "/DictyAnnualConference/dicty87/dicty87_1.html",
     1995: "/DictyAnnualConference/dicty95/dicty95_pics.html",
+    1996: "/DictyAnnualConference/dicty96/dicty96_1.html",
     1997: "/DictyAnnualConference/dicty97/thumbs.html",
     1998: "/DictyAnnualConference/dicty98/dicty98.html",
     2001: "/DictyAnnualConference/dicty01/index.html",
+}
+
+# Meetings whose photos live on an external site (dictyBase just embeds/links
+# them). We can't mirror these, so record a single link out. The rest of the
+# picture links (2010-2016, 2018-2019) are dead on dictyBase and elsewhere.
+EXTERNAL_PHOTOS = {
+    2017: "https://drive.google.com/drive/folders/0B_xxyPWhEOYCMkl4SmNIYnd6MkU",
 }
 
 
@@ -48,20 +61,29 @@ def get(url):
 def main():
     media = {}
 
-    # abstract books
+    # abstract books (skip re-download if already mirrored)
     adir = MEET / "abstracts"
     adir.mkdir(parents=True, exist_ok=True)
     for year, path in ABSTRACTS.items():
+        rel = f"meetings/abstracts/dicty{year}_abstracts.pdf"
+        dest = ROOT / "assets" / rel
+        if dest.exists() and dest.stat().st_size > 1000:
+            media.setdefault(str(year), {})["abstract"] = rel
+            continue
         try:
             data = get(BASE + path)
         except Exception as exc:  # noqa: BLE001
             print(f"  abstract {year}: {exc}"); continue
         if len(data) < 1000:
             print(f"  abstract {year}: too small, skipped"); continue
-        rel = f"meetings/abstracts/dicty{year}_abstracts.pdf"
-        (ROOT / "assets" / rel).write_bytes(data)
+        dest.write_bytes(data)
         media.setdefault(str(year), {})["abstract"] = rel
         print(f"  abstract {year}: {len(data):,} bytes")
+
+    # external photo links (one link out; nothing to mirror)
+    for year, url in EXTERNAL_PHOTOS.items():
+        media.setdefault(str(year), {})["external_photos"] = url
+        print(f"  external photos {year}: {url}")
 
     # photo galleries
     for year, page in GALLERIES.items():
@@ -70,8 +92,8 @@ def main():
             body = get(pageurl).decode("utf-8", "replace")
         except Exception as exc:  # noqa: BLE001
             print(f"  gallery {year}: {exc}"); continue
-        hrefs = re.findall(r'href="([^"]+\.(?:jpg|jpeg|JPG|JPEG))"', body)
-        srcs = re.findall(r'src="([^"]+\.(?:jpg|jpeg|JPG|JPEG))"', body)
+        hrefs = re.findall(r'href="([^"]+\.(?:jpe?g|png))"', body, re.I)
+        srcs = re.findall(r'src="([^"]+\.(?:jpe?g|png))"', body, re.I)
         urls = [u for u in (hrefs or srcs) if "/inc/images/" not in u]
         urls = sorted({urllib.parse.urljoin(pageurl, u) for u in urls})
         pdir = MEET / "pictures" / f"dicty{year}"
@@ -79,14 +101,18 @@ def main():
         saved = []
         for u in urls:
             name = urllib.parse.unquote(u.rsplit("/", 1)[-1])
+            dest = pdir / name
+            rel = f"meetings/pictures/dicty{year}/{name}"
+            if dest.exists() and dest.stat().st_size > 500:
+                saved.append(rel); continue
             try:
                 img = get(u)
             except Exception:
                 continue
             if len(img) < 500:
                 continue
-            (pdir / name).write_bytes(img)
-            saved.append(f"meetings/pictures/dicty{year}/{name}")
+            dest.write_bytes(img)
+            saved.append(rel)
         if saved:
             media.setdefault(str(year), {})["pictures"] = saved
         print(f"  gallery {year}: {len(saved)} photos")

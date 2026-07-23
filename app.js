@@ -1137,11 +1137,14 @@ function sourceLinks(gene) {
 }
 
 function pubMedQuery(gene) {
-  const geneTerms = [gene.symbol, gene.name, gene.veupath, gene.uniprot]
-    .filter(Boolean)
-    .map((term) => `"${term}"`)
-    .join(" OR ");
-  return `(${geneTerms}) AND Dictyostelium`;
+  // Search by the gene name only. NCBI labels un-named genes with their DDB_G
+  // locus tag, so a symbol that is itself a DDB_G id doesn't count as a name —
+  // in that case fall back to the DDB number. The UniProt accession is never
+  // searched (it turns up unrelated hits and rarely appears in the literature).
+  const named = gene.symbol && !/^DDB_G\d+$/i.test(gene.symbol) ? gene.symbol : "";
+  const ddb = gene.veupath || (/^DDB_G\d+$/i.test(gene.symbol || "") ? gene.symbol : "");
+  const term = named || ddb || gene.name || gene.id || "";
+  return `"${term}" AND Dictyostelium`;
 }
 
 function pubMedSearchUrl(gene) {

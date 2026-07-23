@@ -4285,6 +4285,16 @@ function renderGenomeBrowser() {
           </select>
           <span id="browser-gff-note" style="font-size:0.8125rem;color:var(--muted,#6b7280)"></span>
         </div>
+        <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <label for="browser-gene-search" style="font-size:0.875rem;font-weight:700">Go to gene:</label>
+          <input id="browser-gene-search" type="search" list="browser-gene-list" placeholder="symbol or DDB_G — e.g. mhcA, carA-1" style="${FIELD};width:min(260px,100%)" autocomplete="off">
+          <datalist id="browser-gene-list"></datalist>
+          <button type="button" id="browser-gene-go">Go</button>
+          <label style="font-size:0.8125rem;color:var(--muted,#6b7280);display:inline-flex;align-items:center;gap:5px;margin-left:6px">
+            <input type="checkbox" id="browser-restriction"> Restriction sites <span style="opacity:.75">(AX4)</span>
+          </label>
+          <span id="browser-search-msg" style="font-size:0.8125rem"></span>
+        </div>
         <details style="margin-bottom:12px">
           <summary style="cursor:pointer;font-size:0.875rem;font-weight:700">Add your own track</summary>
           <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
@@ -4393,9 +4403,60 @@ function initGenomeBrowser() {
       .catch(() => { msg.style.color = "#b91c1c"; msg.textContent = "Could not load that track — check the URL, format, and that the host allows CORS."; });
   });
 
+  // --- Go to gene: resolve a symbol/DDB_G to its AX4 locus and jump there ---
+  const searchMsg = document.getElementById("browser-search-msg");
+  const AX4 = () => browserOrganisms.find((o) => o.id === "d-discoideum-ax4");
+  const goToGene = () => {
+    const q = (document.getElementById("browser-gene-search").value || "").trim();
+    if (!q || !searchMsg) return;
+    const nq = normalize(q);
+    const entry = geneIndex.find((g) => normalize(g.symbol) === nq || normalize(g.id) === nq
+      || (g.synonyms || []).some((s) => normalize(s) === nq)) || searchIndex(q, 1)[0];
+    const loc = entry && geneLocus(entry);
+    if (!loc) { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = `No AX4 coordinates for “${q}”.`; return; }
+    searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = `${entry.symbol} · ${loc.chrom}`;
+    const locusStr = `${loc.chrom}:${Math.max(1, loc.start - 2000)}-${loc.end + 2000}`;
+    if (select.value !== "d-discoideum-ax4") { select.value = "d-discoideum-ax4"; pendingBrowserLocus = locusStr; loadBrowser(AX4()); }
+    else if (igvBrowser) igvBrowser.search(locusStr);
+  };
+  const geneInput = document.getElementById("browser-gene-search");
+  const goBtn = document.getElementById("browser-gene-go");
+  if (goBtn) goBtn.addEventListener("click", goToGene);
+  if (geneInput) {
+    geneInput.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); goToGene(); } });
+    geneInput.addEventListener("input", () => {
+      const dl = document.getElementById("browser-gene-list");
+      if (dl) dl.innerHTML = searchIndex(geneInput.value, 8).map((g) => `<option value="${escapeHtml(g.symbol)}">`).join("");
+    });
+  }
+
+  // --- Restriction sites: an on-demand AX4-only track (precomputed cut sites) ---
+  const RESTRICTION = {
+    name: "Restriction sites",
+    url: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz",
+    indexURL: "/assets/tracks/D_discoideum_AX4_restriction.gff3.gz.tbi",
+    format: "gff3", indexed: true, displayMode: "COLLAPSED",
+    color: "rgb(178, 34, 52)", height: 44, visibilityWindow: 250000,
+  };
+  const restrictionCb = document.getElementById("browser-restriction");
+  if (restrictionCb) restrictionCb.addEventListener("change", () => {
+    if (!igvBrowser) { restrictionCb.checked = false; return; }
+    if (select.value !== "d-discoideum-ax4") {
+      if (searchMsg) { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = "Restriction sites are available for AX4 only."; }
+      restrictionCb.checked = false; return;
+    }
+    if (restrictionCb.checked) {
+      if (searchMsg) { searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = "Zoom in to ≤250 kb to see cut sites."; }
+      Promise.resolve(igvBrowser.loadTrack(RESTRICTION)).catch(() => { restrictionCb.checked = false; });
+    } else {
+      try { igvBrowser.removeTrackByName("Restriction sites"); } catch { /* older IGV */ }
+    }
+  });
+
   const run = () => {
     loadBrowser(startWithOrg);
     select.addEventListener("change", () => {
+      if (restrictionCb) restrictionCb.checked = false;   // track is dropped on genome reload
       const org = browserOrganisms.find((o) => o.id === select.value);
       if (org) loadBrowser(org);
     });

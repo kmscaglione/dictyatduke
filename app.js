@@ -4063,6 +4063,40 @@ async function pollJob(submit) {
   throw new Error("timed out");
 }
 
+// Render a BLAST hit as a classic pairwise alignment (Query / midline / Sbjct),
+// wrapped to 60 columns with running coordinates. Subject advances 3 nt per
+// residue for tblastn (translated genome), 1 for blastn; strand from sstart/send.
+function blastAlignmentHTML(h, program) {
+  const q = h.qseq || "", s = h.sseq || "";
+  if (!q || !s) return "";
+  const W = 60;
+  const sStride = program === "tblastn" ? 3 : 1;
+  const sDir = h.send < h.sstart ? -1 : 1;
+  const pad = (n) => String(n).padStart(9);
+  const PREFIX = " ".repeat(18);   // "Query  " + 9-wide pos + "  "
+  let qPos = h.qstart, sPos = h.sstart;
+  const out = [];
+  for (let i = 0; i < q.length; i += W) {
+    const qc = q.slice(i, i + W), sc = s.slice(i, i + W);
+    let mid = "";
+    for (let k = 0; k < qc.length; k++) {
+      const a = qc[k], b = sc[k] || "";
+      mid += (a !== "-" && b !== "-" && a.toUpperCase() === b.toUpperCase()) ? "|" : " ";
+    }
+    const qNon = (qc.match(/[^-]/g) || []).length;
+    const sNon = (sc.match(/[^-]/g) || []).length;
+    const qEnd = qNon ? qPos + qNon - 1 : qPos;
+    const sEnd = sNon ? sPos + sDir * (sNon * sStride - 1) : sPos;
+    out.push(`Query  ${pad(qPos)}  ${qc}  ${qEnd}`);
+    out.push(`${PREFIX}${mid}`);
+    out.push(`Sbjct  ${pad(sPos)}  ${sc}  ${sEnd}`);
+    out.push("");
+    qPos = qEnd + (qNon ? 1 : 0);
+    sPos = sEnd + (sNon ? sDir : 0);
+  }
+  return `<pre class="blast-aln">${escapeHtml(out.join("\n").replace(/\n+$/, ""))}</pre>`;
+}
+
 async function runLocalBlast(form) {
   const results = document.getElementById("local-blast-results");
   if (!results) return;
@@ -4091,18 +4125,19 @@ async function runLocalBlast(form) {
     if (!data.hits || !data.hits.length) { results.innerHTML = `<p class="notice">No hits found (E-value &lt; 1e-3).</p>`; return; }
     results.innerHTML = `
       <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">${data.count} hit${data.count === 1 ? "" : "s"} · ${escapeHtml(data.program)} · ${data.databases.length} genome${data.databases.length === 1 ? "" : "s"}</p>
-      <ul class="list pubmed-list">
+      <div class="blast-hits">
         ${data.hits.map((h) => {
           const name = h.gene
             ? `<a class="text-link curated-xref" href="/gene/${encodeURIComponent(h.gene.symbol)}" data-ddb-ref="${escapeHtml(h.gene.ddb)}">${escapeHtml(h.gene.symbol)}</a>`
             : escapeHtml(h.subject);
-          const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}`;
-          return `<li>
-            <strong>${name}</strong>
-            <span>${loc} · ${h.identity.toFixed(1)}% identity · ${h.length} bp · E=${escapeHtml(h.evalue)} · ${h.bitscore} bits</span>
-          </li>`;
+          const strand = h.send < h.sstart ? " (−)" : "";
+          const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}${strand}`;
+          return `<div class="blast-hit">
+            <div class="blast-hit-head"><strong>${name}</strong> <span>${h.identity.toFixed(1)}% identity · ${h.length} ${data.program === "tblastn" ? "aa" : "bp"} · E=${escapeHtml(h.evalue)} · ${h.bitscore} bits · ${loc}</span></div>
+            ${blastAlignmentHTML(h, data.program)}
+          </div>`;
         }).join("")}
-      </ul>`;
+      </div>`;
   } catch {
     results.innerHTML = `<p class="notice">Could not reach the BLAST service.</p>`;
   }

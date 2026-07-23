@@ -1273,7 +1273,7 @@ def run_blast(program, database, query):
         qf.write(query)
         qf.close()
         cmd = [binpath, "-query", qf.name, "-db", db_arg,
-               "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore",
+               "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qseq sseq",
                "-max_target_seqs", "50", "-evalue", "1e-3"]
         proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
     except subprocess.TimeoutExpired:
@@ -1288,13 +1288,14 @@ def run_blast(program, database, query):
     hits = []
     for line in proc.stdout.splitlines():
         f = line.split("\t")
-        if len(f) < 12:
+        if len(f) < 14:
             continue
         acc = re.sub(r"^[a-z]+\|", "", f[1]).strip("|")
         hit = {"subject": acc, "identity": float(f[2]), "length": int(f[3]),
                "qstart": int(f[6]), "qend": int(f[7]),
                "sstart": int(f[8]), "send": int(f[9]),
-               "evalue": f[10], "bitscore": float(f[11])}
+               "evalue": f[10], "bitscore": float(f[11]),
+               "qseq": f[12], "sseq": f[13]}
         g = gene_for_hit(acc, f[8], f[9])
         if g:
             hit["gene"] = g

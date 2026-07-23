@@ -4285,15 +4285,16 @@ function renderGenomeBrowser() {
           </select>
           <span id="browser-gff-note" style="font-size:0.8125rem;color:var(--muted,#6b7280)"></span>
         </div>
-        <div style="margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <div style="margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <label for="browser-gene-search" style="font-size:0.875rem;font-weight:700">Go to gene:</label>
           <input id="browser-gene-search" type="search" list="browser-gene-list" placeholder="symbol or DDB_G — e.g. mhcA, carA-1" style="${FIELD};width:min(260px,100%)" autocomplete="off">
           <datalist id="browser-gene-list"></datalist>
           <button type="button" id="browser-gene-go">Go</button>
-          <label style="font-size:0.8125rem;color:var(--muted,#6b7280);display:inline-flex;align-items:center;gap:5px;margin-left:6px">
-            <input type="checkbox" id="browser-restriction"> Restriction sites <span style="opacity:.75">(AX4)</span>
-          </label>
           <span id="browser-search-msg" style="font-size:0.8125rem"></span>
+        </div>
+        <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— AX4 only; zoom in to ≤250 kb to see cut sites.</span></span>
+          <button type="button" id="browser-restriction" aria-pressed="false">Show restriction sites</button>
         </div>
         <details style="margin-bottom:12px">
           <summary style="cursor:pointer;font-size:0.875rem;font-weight:700">Add your own track</summary>
@@ -4438,25 +4439,32 @@ function initGenomeBrowser() {
     format: "gff3", indexed: true, displayMode: "COLLAPSED",
     color: "rgb(178, 34, 52)", height: 44, visibilityWindow: 250000,
   };
-  const restrictionCb = document.getElementById("browser-restriction");
-  if (restrictionCb) restrictionCb.addEventListener("change", () => {
-    if (!igvBrowser) { restrictionCb.checked = false; return; }
-    if (select.value !== "d-discoideum-ax4") {
-      if (searchMsg) { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = "Restriction sites are available for AX4 only."; }
-      restrictionCb.checked = false; return;
-    }
-    if (restrictionCb.checked) {
-      if (searchMsg) { searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = "Zoom in to ≤250 kb to see cut sites."; }
-      Promise.resolve(igvBrowser.loadTrack(RESTRICTION)).catch(() => { restrictionCb.checked = false; });
+  const restrictionBtn = document.getElementById("browser-restriction");
+  let restrictionOn = false;
+  const setRestrictionBtn = () => {
+    if (!restrictionBtn) return;
+    const ax4 = select.value === "d-discoideum-ax4";
+    restrictionBtn.disabled = !ax4;
+    restrictionBtn.textContent = restrictionOn ? "Hide restriction sites" : "Show restriction sites";
+    restrictionBtn.setAttribute("aria-pressed", restrictionOn ? "true" : "false");
+  };
+  if (restrictionBtn) restrictionBtn.addEventListener("click", () => {
+    if (!igvBrowser || select.value !== "d-discoideum-ax4") return;
+    if (!restrictionOn) {
+      Promise.resolve(igvBrowser.loadTrack(RESTRICTION))
+        .then(() => { restrictionOn = true; setRestrictionBtn(); }).catch(() => {});
     } else {
       try { igvBrowser.removeTrackByName("Restriction sites"); } catch { /* older IGV */ }
+      restrictionOn = false; setRestrictionBtn();
     }
   });
 
   const run = () => {
+    setRestrictionBtn();
     loadBrowser(startWithOrg);
     select.addEventListener("change", () => {
-      if (restrictionCb) restrictionCb.checked = false;   // track is dropped on genome reload
+      restrictionOn = false;   // track is dropped on genome reload
+      setRestrictionBtn();
       const org = browserOrganisms.find((o) => o.id === select.value);
       if (org) loadBrowser(org);
     });

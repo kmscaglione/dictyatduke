@@ -2,10 +2,10 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
-      "date": "2026-07-23",
+      "date": "2026-07-24",
       "tag": "new",
       "title": "See who studies each gene",
-      "body": "Every gene record now shows the researchers who study that gene. Look for the new Researchers list on the Literature tab. It ranks the senior authors of the gene's papers by how many they have published, and each name links to that author's papers on the gene in PubMed. The list is built from the published literature, so it stays current on its own as new papers are indexed. There is nothing to sign up for and no profile to maintain.",
+      "body": "Every gene record now shows the researchers who study that gene. Look for the new Researchers list on the Literature tab. It ranks the senior authors of the gene's papers by how many they have published, and each name links to that author's papers on the gene in PubMed. The list is built from the published literature, so it stays current on its own as new papers are indexed. You can also add your lab. If your group published on a gene where you were not the last author, use the \"add your lab\" link on the Literature tab to request a listing. A curator reviews each request before it appears.",
       "link": "/gene/cadA"
     },
     {

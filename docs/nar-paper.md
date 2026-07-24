@@ -1,5 +1,10 @@
 # dictyBase 2026: a lightweight, sustainable reimplementation of the *Dictyostelium* model organism database
 
+> **NOT THE CANONICAL DRAFT.** The authoritative manuscript is the Word document
+> (`dictyBase_v3_<date>_2026.docx`, kept by M. Scaglione); this file is an older,
+> diverged snapshot and is **not maintained**. Do not edit it as the current draft —
+> its numbers and text may lag the Word version.
+
 **Working manuscript — Nucleic Acids Research (Database Issue) style**
 
 > Framing locked: modern reimplementation of dictyBase (continuity with the established
@@ -186,6 +191,29 @@ scripts are openly available (see Availability), enabling independent deployment
 inspection, and reuse. We return to the implications of this footprint for MOD
 sustainability in the Discussion.
 
+**AI-assisted software development.** The software described here was written with
+substantial assistance from an AI coding assistant (Anthropic's Claude, used through the
+Claude Code command-line interface [version to confirm]). The assistant was used to
+draft and refactor the service, the single-page application, and the data-build scripts,
+under continuous direction and review by the authors. We report this workflow openly
+because it is relevant to the central claim of the paper. Assisted development is part of
+what allows a small team to build and maintain a content-complete resource, and it lowers
+the engineering effort a community must sustain to keep a database running.
+
+We treat generated code as a draft, not as an authority. Every component was read, tested,
+and revised by the authors before use. Correctness rests on the same mechanisms that would
+apply to any code. The system carries an automated test suite, and all served data are
+validated against their authoritative sources during the build; for example, every gene
+symbol and Gene Ontology identifier is checked against the reference sets, so no identifier
+is fabricated. Because the full source is openly available (see Availability), the
+implementation can be audited independently of how it was produced.
+
+This use of a language model is confined to writing software. It is separate from the
+machine-generated annotation layer in the data (above), which is a distinct, badged, and
+toggleable feature kept apart from curated evidence. It is separate again from the curated
+content of the resource. Gene summaries, nomenclature, and expert Gene Ontology and
+phenotype annotations are human-authored and are not produced by a language model.
+
 ## Web interface and analysis tools
 
 **The gene record.** Each gene is presented as a single record organized into tabbed
@@ -256,7 +284,10 @@ a database server and distributed microservices, reduces the resource's dependen
 single engineer, and makes both its software and its data auditable and independently
 deployable. For communities whose size or funding cannot support a large engineering
 effort—an increasingly common situation among model organism databases—this architecture
-offers a route to preserving a comprehensive resource at modest cost.
+offers a route to preserving a comprehensive resource at modest cost. AI-assisted
+software development, described above, further reduces the engineering effort required,
+and we expect it to become a routine part of how small teams build and maintain such
+resources.
 
 **Limitations.** The design makes deliberate trade-offs. It is optimized for a read-mostly
 resource at the query volumes typical of a specialized community, and is not intended to
@@ -348,3 +379,4 @@ before submission.*
 - Render Figure 1 from `docs/figure1-architecture.svg`; consider a Figure 2 (annotated interface screenshot).
 - Verify database/tool references (†) against current versions; convert citations to NAR numbered style.
 - Length check against NAR Database Issue limits; trim if needed.
+- AI-assisted development section: confirm the tool/version string to cite, decide whether to name the specific model, and consider whether to move this disclosure to a standalone "Methods"/transparency note if a reviewer prefers it out of Implementation.

@@ -105,6 +105,10 @@ assets/
 scripts/
   build_data.py             regenerate gene_index, phenotypes, downloads_manifest,
                             go_annotations, and the corpus summary merge
+  build_blastdb.py          per-species nucleotide BLAST DBs (blastn/tblastn)
+  build_protein_blastdb.py  D. discoideum AX4 proteome DB (blastp)
+  fetch_dictybase_listserv.py  mirror + parse the Dicty ListServ Archive
+                            (-> assets/listserv/, Community page)
 
 uploads/                    runtime user submissions (mostly GITIGNORED)
   files/  submissions/      community uploads (gitignored)
@@ -243,7 +247,7 @@ Datasets and place the FASTA (`*_genome.fna.gz`, `*_browser.fna`), index
   gene's sequence as a FASTA download, extracted on the fly from the D. discoideum
   genome + GFF (cDNA = spliced exons, protein = translated CDS). Powers the
   "Sequences" box on the gene record.
-- `POST /api/blast` — local blastn/tblastn against the bundled genomes (see
+- `POST /api/blast` — local blastn/tblastn/blastp against the bundled genomes (see
   [Local BLAST](#local-blast-p6)). Returns JSON hits; D. discoideum hits include
   the mapped gene. Program + database come from server allowlists; the query is
   written to a temp file and passed via `-query` (never a shell), size-capped and
@@ -330,18 +334,21 @@ BLAST+ installed and the databases built.
 # 1. Install BLAST+ (Apple Silicon shown; pick the build for your platform)
 curl -LO https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.17.0+-aarch64-macosx.tar.gz
 tar xzf ncbi-blast-2.17.0+-aarch64-macosx.tar.gz
-mkdir -p ~/.local/blast && cp ncbi-blast-2.17.0+/bin/{makeblastdb,blastn,tblastn} ~/.local/blast/
+mkdir -p ~/.local/blast && cp ncbi-blast-2.17.0+/bin/{makeblastdb,blastn,tblastn,blastp} ~/.local/blast/
 
-# 2. Build the per-species databases (-> assets/genomes/blastdb/, gitignored)
-python3 scripts/build_blastdb.py
+# 2. Build the databases (-> assets/genomes/blastdb/, gitignored)
+python3 scripts/build_blastdb.py           # per-species nucleotide DBs (blastn/tblastn)
+python3 scripts/build_protein_blastdb.py   # D. discoideum AX4 proteome (blastp)
 ```
 
 `serve.py` finds the binaries in `~/.local/blast/` (or on `PATH`) and the DBs in
 `assets/genomes/blastdb/`. If either is missing, the endpoint returns a clear
 503 and the UI shows the message — the rest of the site is unaffected. Supported
-programs: **blastn** (nucleotide) and **tblastn** (protein query); both run
-against the nucleotide genome DBs. Protein-DB searches (blastp/blastx) stay on
-the NCBI hand-off.
+programs: **blastn** (nucleotide) and **tblastn** (protein query) run against the
+nucleotide genome DBs; **blastp** runs a protein query against the *D. discoideum*
+AX4 proteome (`d-discoideum-ax4-prot`, one sequence per gene, so a hit maps
+straight to its gene page). The other dictyostelids are assembly-only — use
+tblastn for a protein query there. blastx stays on the NCBI hand-off.
 
 ---
 

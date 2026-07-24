@@ -2947,7 +2947,7 @@ function renderAPIPage() {
         <h3>Analysis (POST JSON)</h3>
         <ul style="list-style:none;padding:0">
           ${post("/api/enrichment", "GO-term or phenotype over-representation (hypergeometric + BH FDR).", 'curl -X POST {origin}/api/enrichment \\\n  -H "Content-Type: application/json" \\\n  -d \'{"genes":["mhcA","abpC","racE"],"set":"go","min_study":2}\'')}
-          ${post("/api/blast", "Local BLAST against the bundled dictyostelid genomes (database=all searches every species; or pass a single genome id).", 'curl -X POST {origin}/api/blast \\\n  -H "Content-Type: application/json" \\\n  -d \'{"program":"tblastn","database":"d-discoideum-ax4","query":">q\\nMSEEVVA..."}\'')}
+          ${post("/api/blast", "Local BLAST against the bundled genomes. blastn/tblastn take a genome id (or database=all for every species); blastp searches the D. discoideum AX4 proteome (database=d-discoideum-ax4-prot). D. discoideum hits map to their gene.", 'curl -X POST {origin}/api/blast \\\n  -H "Content-Type: application/json" \\\n  -d \'{"program":"blastp","database":"d-discoideum-ax4-prot","query":">q\\nMSEEVVA..."}\'')}
         </ul>
         <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Curator/write endpoints (upload, login, submit) exist but require authentication and aren't part of the public API.</p>
       </div>

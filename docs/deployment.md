@@ -124,7 +124,7 @@ EOF
   After deploying, submit `https://dicty.yourdomain.org/sitemap.xml` in Google
   Search Console.
 
-- `BLAST_MAX_CONCURRENT=6` — 6 concurrent blastn/tblastn searches, leaving ~2
+- `BLAST_MAX_CONCURRENT=6` — 6 concurrent BLAST searches (blastn/tblastn/blastp), leaving ~2
   cores for serving. The 7th gets a fast 503.
 - `PROXY_MAX_CONCURRENT=8` — global cap on the slow AlphaFold/InterPro proxy
   calls (each ties up a thread for 10–25 s) so a burst of users can't exhaust

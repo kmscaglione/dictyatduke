@@ -156,6 +156,7 @@ python3 scripts/build_data.py --go       # also re-downloads the GO GAF -> go_an
 python3 scripts/build_stock_center.py    # full Dicty Stock Center catalog from dictyBase GraphQL
 python3 scripts/build_stock_center.py plasmids
 python3 scripts/build_gene_facets.py     # advanced-finder facets (needs ortholog_disease + rnaseq)
+python3 scripts/fetch_dictybase_listserv.py  # mirror the Dicty ListServ Archive -> assets/listserv/
 ```
 
 - `build_data.py` also runs `build_gene_facets.py` at the end (skips gracefully if inputs
@@ -176,13 +177,16 @@ python3 scripts/build_gene_facets.py     # advanced-finder facets (needs ortholo
 pip install --user pysam                      # BUILD-time only, not a runtime dep
 python3 scripts/fetch_genomes.py              # 9 core assemblies (incl. AX4)
 python3 scripts/fetch_paper_genomes.py        # the additional paper/isolate assemblies
-python3 scripts/build_blastdb.py              # per-species BLAST DBs
+python3 scripts/build_blastdb.py              # per-species nucleotide DBs (blastn/tblastn)
+python3 scripts/build_protein_blastdb.py      # AX4 proteome DB (blastp)
 python3 scripts/build_browser_tracks.py       # bgzip+tabix GFFs for IGV byte-range
 sudo /srv/web/bin/web_chown apache assets/genomes
 sudo systemctl restart dicty                  # REQUIRED (see §5)
 ```
-BLAST+ is installed system-wide by OIT at `/usr/bin/{makeblastdb,blastn,tblastn}`;
-`serve.py` and `build_blastdb.py` both find it via `shutil.which`.
+BLAST+ is installed system-wide by OIT at `/usr/bin/{makeblastdb,blastn,tblastn,blastp}`;
+`serve.py` and the build scripts find it via `shutil.which`. The protein DB
+(`build_protein_blastdb.py`) needs the GFF + RefSeq FASTA present, so run it after
+the genome fetch.
 
 ## 7. Gotchas that will bite you
 

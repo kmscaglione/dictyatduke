@@ -635,8 +635,8 @@ def _save_pageviews():
     except OSError:
         pass
 
-# Concurrency cap for the CPU-heavy BLAST endpoints. Each blastn/tblastn pins a
-# core for seconds (cross-species/conservation tblastn = vs 9 genomes), so a
+# Concurrency cap for the CPU-heavy BLAST endpoints. Each blastn/tblastn/blastp
+# pins a core for seconds (cross-species/conservation tblastn = vs 9 genomes), so a
 # handful of concurrent requests can exhaust the box. A bounded semaphore limits
 # how many run at once; requests that can't get a slot quickly get a 503 rather
 # than piling up. Tune with BLAST_MAX_CONCURRENT.
@@ -3664,7 +3664,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         return json.loads(self.rfile.read(length))
 
     def _handle_blast(self):
-        """Run a local blastn/tblastn synchronously against the bundled genomes.
+        """Run a local blastn/tblastn/blastp synchronously against the bundled data.
 
         Security: program + database come from server allowlists; the user
         sequence is written to a temp file and passed via -query (never a shell),

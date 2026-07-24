@@ -58,7 +58,8 @@ Requires NCBI BLAST+ and pysam (build-time only). On the server:
 cd /srv/web/dicty.labs.duke.edu/html
 # Download the bundled assemblies (see scripts/ + downloads_manifest.json), then:
 python3 scripts/fetch_paper_genomes.py        # the Ahmed 2025 isolate genomes
-python3 scripts/build_blastdb.py              # needs makeblastdb on PATH (~/.local/blast)
+python3 scripts/build_blastdb.py              # nucleotide DBs; needs makeblastdb on PATH
+python3 scripts/build_protein_blastdb.py      # AX4 proteome DB for blastp (needs blastp on PATH)
 python3 scripts/build_browser_tracks.py       # needs: pip install --user pysam
 ```
 The site runs without this — only the genome browser, local BLAST, cross-species,

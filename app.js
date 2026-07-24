@@ -2498,19 +2498,30 @@ function initCurate() {
       msg.textContent = `Downloaded ${n} curated GO annotation${n === "1" ? "" : "s"}.`;
     } catch { msg.textContent = "Failed."; }
   });
+  let curTodoByDdb = {};
   document.getElementById("cur-todo-btn").addEventListener("click", async () => {
     const box = document.getElementById("cur-todo");
     box.innerHTML = `<span class="muted">Loading…</span>`;
     try {
       const d = await (await fetch("/api/curator/todo", { headers: { Authorization: `Bearer ${curatorToken}` } })).json();
+      curTodoByDdb = {};
+      (d.top || []).forEach((r) => { curTodoByDdb[r.ddb] = r; });
       const rows = (d.top || []).map((r) =>
-        `<tr><td style="padding:2px 10px 2px 0"><button type="button" class="cur-todo-pick" data-sym="${escapeHtml(r.symbol)}" style="border:0;background:none;color:var(--teal-dark,#1f6f5c);cursor:pointer;padding:0">${escapeHtml(r.symbol)}</button></td><td class="muted" style="padding:2px 0">${r.papers} paper${r.papers === 1 ? "" : "s"}</td></tr>`).join("");
-      box.innerHTML = `<p class="muted" style="margin:6px 0">${d.counts.uncurated_with_papers.toLocaleString()} genes have papers but no curated summary (${d.counts.uncurated_total.toLocaleString()} uncurated total). Highest-cited first:</p>
+        `<tr><td style="padding:2px 10px 2px 0"><button type="button" class="cur-todo-pick" data-sym="${escapeHtml(r.symbol)}" data-ddb="${escapeHtml(r.ddb)}" title="Open its ${r.papers} papers in PubMed and load it for curation" style="border:0;background:none;color:var(--teal-dark,#1f6f5c);cursor:pointer;padding:0">${escapeHtml(r.symbol)}</button></td><td class="muted" style="padding:2px 0">${r.papers} paper${r.papers === 1 ? "" : "s"}</td></tr>`).join("");
+      box.innerHTML = `<p class="muted" style="margin:6px 0">${d.counts.uncurated_with_papers.toLocaleString()} genes have papers but no curated summary (${d.counts.uncurated_total.toLocaleString()} uncurated total). Highest-cited first — click a gene to open its papers in PubMed and load it for curation:</p>
         <table style="border-collapse:collapse"><tbody>${rows}</tbody></table>`;
     } catch { box.innerHTML = `<span class="muted">Failed to load.</span>`; }
   });
   document.getElementById("cur-todo").addEventListener("click", (e) => {
     const b = e.target.closest(".cur-todo-pick"); if (!b) return;
+    // Open the gene's papers in PubMed (the exact set counted in the to-do).
+    const r = curTodoByDdb[b.dataset.ddb];
+    const pmids = (r && r.pmids) || [];
+    if (pmids.length) {
+      const term = pmids.slice(0, 100).join(" ");
+      window.open(`https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(term)}`, "_blank", "noopener");
+    }
+    // ...and load it into the editor so it's ready to curate.
     geneEl.value = b.dataset.sym; load();
     editor.scrollIntoView({ behavior: "smooth" });
   });

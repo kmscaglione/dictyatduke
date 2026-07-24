@@ -3626,7 +3626,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         for ddb, ex in extras.items():
             pmids = ex.get("pmids") or []
             if pmids and uncurated(ddb):
-                rows.append({"ddb": ddb, "symbol": symbols.get(ddb, ddb), "papers": len(pmids)})
+                rows.append({"ddb": ddb, "symbol": symbols.get(ddb, ddb),
+                             "papers": len(pmids), "pmids": [str(p) for p in pmids[:200]]})
         rows.sort(key=lambda r: -r["papers"])
         no_summary = sum(1 for ddb in symbols if uncurated(ddb))
         self.send_json(200, {

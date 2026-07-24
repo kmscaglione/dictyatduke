@@ -1,4 +1,10 @@
 {
   "_comment": "Self-reported researchers, added by a curator after reviewing an email request (see the 'add your lab' link on a gene's Literature tab). Use this for PIs whose group published on a gene but who are not the paper's last author, so the literature-derived list misses them. Keyed by gene symbol (lowercase) OR DDB_G id. Each entry: name (required, as it should display), lab (optional), pmid (optional, the paper from their group), note (optional). Shown in the Researchers list marked 'self-reported'. This file is curated by hand; nothing is written to it automatically.",
-  "genes": {}
+  "genes": {
+    "ctsD": [
+      {
+        "name": "Huber RJ"
+      }
+    ]
+  }
 }

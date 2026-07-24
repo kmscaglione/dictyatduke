@@ -2428,7 +2428,10 @@
   "abstract": "meetings/abstracts/dicty2016_abstracts.pdf"
  },
  "2017": {
-  "abstract": "meetings/abstracts/dicty2017_abstracts.pdf"
+  "abstract": "meetings/abstracts/dicty2017_abstracts.pdf",
+  "pictures": [
+   "meetings/pictures/dicty2017/dicty2017_1.jpg"
+  ]
  },
  "2018": {
   "abstract": "meetings/abstracts/dicty2018_abstracts.pdf"

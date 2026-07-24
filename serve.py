@@ -33,11 +33,29 @@ UPLOADS_DIR.mkdir(exist_ok=True)
 
 CORPUS_PATH = pathlib.Path(ROOT) / "assets" / "dictybase_corpus.json"
 STOCK_PATH = pathlib.Path(ROOT) / "assets" / "stock_center.json"
-# Durable, gitignored curation overrides (survive `git reset --hard` deploys).
-OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "curation_overrides.json"
-STOCK_OVERRIDES_PATH = pathlib.Path(ROOT) / "assets" / "stock_overrides.json"
-CURATION_LOG_PATH = pathlib.Path(ROOT) / "assets" / "curation_log.jsonl"
-CURATORS_PATH = pathlib.Path(ROOT) / "assets" / "curators.json"  # named accounts (gitignored)
+# Durable, gitignored curator writes live UNDER uploads/ — the one tree the
+# service user (apache in prod) can write and that is blocked from web-serving
+# (curators.json holds password hashes). assets/ is read-only to the service on
+# the Duke host, so writing curation there silently failed. Survive deploys
+# because uploads/ is gitignored and never touched by `git reset --hard`.
+CURATION_STATE_DIR = UPLOADS_DIR / "curator_state"
+CURATION_STATE_DIR.mkdir(exist_ok=True)
+OVERRIDES_PATH = CURATION_STATE_DIR / "curation_overrides.json"
+STOCK_OVERRIDES_PATH = CURATION_STATE_DIR / "stock_overrides.json"
+CURATION_LOG_PATH = CURATION_STATE_DIR / "curation_log.jsonl"
+CURATORS_PATH = CURATION_STATE_DIR / "curators.json"  # named accounts (hashes)
+
+# One-time migration: relocate any pre-existing curator state from the old
+# assets/ location into the writable dir, so nothing is lost on upgrade.
+for _fname in ("curation_overrides.json", "stock_overrides.json",
+               "curation_log.jsonl", "curators.json"):
+    _old = pathlib.Path(ROOT) / "assets" / _fname
+    _new = CURATION_STATE_DIR / _fname
+    if _old.exists() and not _new.exists():
+        try:
+            shutil.move(str(_old), str(_new))
+        except OSError:
+            pass
 
 # Recent-papers feed: cached PubMed results, refreshed at most once a day.
 PAPERS_CACHE = pathlib.Path(ROOT) / "cache" / "recent_papers.json"

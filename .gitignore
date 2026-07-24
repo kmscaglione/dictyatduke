@@ -6,6 +6,7 @@ assets/genomes/
 # --- Runtime / user-submitted data ---
 uploads/files/
 uploads/submissions/
+uploads/curator_state/
 
 # --- Assistant & editor config ---
 .claude/

@@ -6909,6 +6909,50 @@ function researcherSearchUrl(gene, name) {
   return `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(term)}`;
 }
 
+// Curator-approved, self-reported researchers (for PIs who are not a paper's
+// last author). Curated by hand in assets/gene_researchers.json; loaded once.
+let researcherClaimsData = null;
+async function fetchResearcherClaims() {
+  if (researcherClaimsData) return researcherClaimsData;
+  try {
+    const res = await fetch("/assets/gene_researchers.json");
+    researcherClaimsData = res.ok ? await res.json() : { genes: {} };
+  } catch { researcherClaimsData = { genes: {} }; }
+  return researcherClaimsData;
+}
+
+// Merge the hand-curated self-reported researchers for a gene into a
+// literature-derived list. A claim that matches an existing (last-author) name
+// just flags it self-reported; a new name is appended.
+async function mergeResearcherClaims(gene, list) {
+  let data;
+  try { data = await fetchResearcherClaims(); } catch { return list; }
+  const genes = data.genes || {};
+  const keys = [gene.symbol, (geneDdb(gene) || "")].filter(Boolean)
+    .flatMap((k) => [k, k.toLowerCase()]);
+  const claims = [];
+  const seenKey = new Set();
+  for (const k of keys) {
+    if (seenKey.has(k) || !genes[k]) continue;
+    seenKey.add(k);
+    for (const c of genes[k]) if (c && c.name) claims.push(c);
+  }
+  if (!claims.length) return list;
+  const byName = new Map(list.map((r) => [r.name.toLowerCase(), { ...r }]));
+  for (const c of claims) {
+    const key = c.name.toLowerCase();
+    const e = byName.get(key);
+    if (e) {
+      e.self = true;
+      e.lab = c.lab || e.lab;
+    } else {
+      byName.set(key, { name: c.name, count: c.pmid ? 1 : 0, latest: "", self: true, lab: c.lab || "", pmid: c.pmid || "" });
+    }
+  }
+  return [...byName.values()].sort((a, b) =>
+    b.count - a.count || (b.latest || "").localeCompare(a.latest || "") || a.name.localeCompare(b.name));
+}
+
 async function computeGeneResearchers(gene) {
   if (geneResearcherCache.has(gene.id)) return geneResearcherCache.get(gene.id);
   // Reuse the papers the curated-references and PubMed loaders already fetch —
@@ -6927,8 +6971,9 @@ async function computeGeneResearchers(gene) {
     if ((p.sortDate || "") > e.latest) e.latest = p.sortDate || "";
     by.set(p.senior, e);
   }
-  const list = [...by.values()].sort((a, b) =>
+  let list = [...by.values()].sort((a, b) =>
     b.count - a.count || (b.latest || "").localeCompare(a.latest || "") || a.name.localeCompare(b.name));
+  list = await mergeResearcherClaims(gene, list);
   geneResearcherCache.set(gene.id, list);
   return list;
 }
@@ -6940,18 +6985,27 @@ async function loadGeneResearchers(gene) {
   try { list = await computeGeneResearchers(gene); }
   catch { if (container) container.innerHTML = ""; return; }
   if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-  if (!list.length) { container.innerHTML = ""; return; }
   const shown = list.slice(0, 25);
   const more = list.length > shown.length ? ` (top ${shown.length})` : "";
+  const badge = `<span style="margin-left:6px;padding:1px 6px;border:1px solid #cfe0d8;border-radius:999px;background:var(--soft,#eef5f1);color:var(--teal-dark,#1f6f5c);font-size:11px;font-weight:600" title="Self-reported by the group, reviewed by a curator">self-reported</span>`;
+  const rows = shown.map((r) => {
+    const meta = r.count
+      ? `${r.count} paper${r.count === 1 ? "" : "s"}${r.latest ? ` · most recent ${escapeHtml(String(r.latest).slice(0, 4))}` : ""}${r.lab ? ` · ${escapeHtml(r.lab)}` : ""}`
+      : (r.lab ? escapeHtml(r.lab) : "listed by the group");
+    return `<li>
+      <strong><a href="${researcherSearchUrl(gene, r.name)}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a></strong>${r.self ? badge : ""}
+      <span>${meta}</span>
+    </li>`;
+  }).join("");
+  const subject = `Researcher listing for ${gene.symbol}`;
+  const body = `I am a PI whose group has published on ${gene.symbol} (${geneDdb(gene) || gene.symbol}). Please add me to the researchers list for this gene.\n\nName (as it should appear):\nLab / institution:\nPMID of the paper from my group:\nMy role on the paper (e.g. corresponding author):\n`;
+  const addLink = `<a class="text-link" href="mailto:matt.scaglione@duke.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">add your lab</a>`;
   container.innerHTML = `
-    <h4>Researchers <span style="font-weight:500;color:var(--muted,#6b7280)">— senior authors on ${escapeHtml(gene.symbol)} papers</span></h4>
-    <p class="oma-count">${list.length} researcher${list.length === 1 ? "" : "s"}${more}, ranked by number of ${escapeHtml(gene.symbol)} papers. Derived from the literature (senior/last author), so it updates as new papers are indexed in PubMed.</p>
-    <ul class="list researcher-list">
-      ${shown.map((r) => `<li>
-        <strong><a href="${researcherSearchUrl(gene, r.name)}" target="_blank" rel="noopener">${escapeHtml(r.name)}</a></strong>
-        <span>${r.count} paper${r.count === 1 ? "" : "s"}${r.latest ? ` · most recent ${escapeHtml(String(r.latest).slice(0, 4))}` : ""}</span>
-      </li>`).join("")}
-    </ul>`;
+    <h4>Researchers <span style="font-weight:500;color:var(--muted,#6b7280)">— who studies ${escapeHtml(gene.symbol)}</span></h4>
+    ${list.length
+      ? `<p class="oma-count">${list.length} researcher${list.length === 1 ? "" : "s"}${more}, ranked by number of ${escapeHtml(gene.symbol)} papers. Derived from the literature (senior/last author). Published a ${escapeHtml(gene.symbol)} paper from your group but not listed? ${addLink}.</p>
+         <ul class="list researcher-list">${rows}</ul>`
+      : `<p class="oma-count">No researchers are listed for ${escapeHtml(gene.symbol)} yet. This list is built from the senior authors of the gene's papers. Work on ${escapeHtml(gene.symbol)}? ${addLink}.</p>`}`;
 }
 
 // Papers cited in the dictyBase curated summary (PMIDs embedded in the markup).

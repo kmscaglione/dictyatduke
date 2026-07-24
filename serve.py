@@ -982,6 +982,8 @@ def _load_json(name):
 # a deploy, and the terminal is only ever needed for code. Every write keeps a
 # .bak and appends to an audit log (curation_log.jsonl) for rollback/history.
 _STOCK_BLOB = None   # cached merged stock catalog bytes, served at /assets/stock_center.json
+_CORPUS_BLOB = None  # cached merged gene corpus bytes, served at /assets/dictybase_corpus.json
+_CORPUS_BLOB_GZ = None  # gzip of the above (corpus is ~3.4 MB; compress once per rebuild)
 
 
 def _read_json_file(path, default):
@@ -1009,12 +1011,16 @@ def _atomic_write_json(path, obj):
 
 def apply_gene_overrides():
     """Merge curation_overrides.json over the base corpus into the in-process
-    cache, so every reader (via _load_json) sees curated edits. Re-run after each
-    save. The base file on disk is never modified."""
+    cache AND the blob served at /assets/dictybase_corpus.json, so every reader
+    (the API and the gene record) sees curated edits. Re-run after each save.
+    The base file on disk is never modified."""
+    global _CORPUS_BLOB, _CORPUS_BLOB_GZ
     base = _read_json_file(CORPUS_PATH, {})
     for ddb, fields in _read_json_file(OVERRIDES_PATH, {}).items():
         base[ddb] = {**base.get(ddb, {}), **fields}
     _API["dictybase_corpus.json"] = base
+    _CORPUS_BLOB = json.dumps(base, separators=(",", ":"), ensure_ascii=False).encode()
+    _CORPUS_BLOB_GZ = gzip.compress(_CORPUS_BLOB, compresslevel=6)
 
 
 def apply_stock_overrides():
@@ -2233,6 +2239,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             body = _STOCK_BLOB
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-cache, must-revalidate")
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return
+        # The gene corpus is likewise served with curator summary/note overrides
+        # merged in, so a curated edit shows on the gene record immediately.
+        if raw == "/assets/dictybase_corpus.json" and _CORPUS_BLOB is not None:
+            gz = "gzip" in self.headers.get("Accept-Encoding", "")
+            body = _CORPUS_BLOB_GZ if (gz and _CORPUS_BLOB_GZ is not None) else _CORPUS_BLOB
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            if gz and _CORPUS_BLOB_GZ is not None:
+                self.send_header("Content-Encoding", "gzip")
+                self.send_header("Vary", "Accept-Encoding")
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-cache, must-revalidate")
             self.end_headers()

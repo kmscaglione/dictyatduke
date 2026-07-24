@@ -2128,7 +2128,53 @@ function renderCuratePage() {
               <button type="button" id="cur-save">Save curation</button>
               <span id="cur-save-msg" class="muted" style="font-size:13px"></span>
             </div>
+
+            <div style="margin-top:18px;border-top:1px solid var(--line,#e5e9ee);padding-top:14px">
+              <datalist id="go-ev-list"><option value="IDA"><option value="IMP"><option value="IPI"><option value="IGI"><option value="IEP"><option value="EXP"><option value="IC"><option value="TAS"><option value="NAS"><option value="ISS"><option value="ISO"><option value="IBA"></datalist>
+              <datalist id="go-qual-list"><option value="enables"><option value="involved_in"><option value="located_in"><option value="part_of"><option value="acts_upstream_of_or_within"><option value="contributes_to"><option value="NOT|enables"></datalist>
+
+              <h4 style="margin:0 0 4px">GO annotations <span class="muted" style="font-weight:400">— evidence code + PMID required; shows on the record as expert-curated</span></h4>
+              <div id="cur-go-list" style="font-size:13px;margin-bottom:6px"></div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+                <select id="cur-go-aspect" style="${FIELD}" aria-label="GO aspect">
+                  <option value="F">Function (F)</option><option value="P">Process (P)</option><option value="C">Component (C)</option>
+                </select>
+                <input id="cur-go-id" placeholder="GO:0006936" style="${FIELD};width:120px" aria-label="GO id">
+                <input id="cur-go-ev" list="go-ev-list" placeholder="IMP" style="${FIELD};width:80px" aria-label="Evidence code">
+                <input id="cur-go-qual" list="go-qual-list" placeholder="qualifier (optional)" style="${FIELD};width:150px" aria-label="Qualifier">
+                <input id="cur-go-pmid" placeholder="PMID" style="${FIELD};width:110px" aria-label="PMID">
+                <button type="button" id="cur-go-add">Add GO</button>
+                <span id="cur-go-msg" class="muted" style="font-size:13px"></span>
+              </div>
+
+              <h4 style="margin:16px 0 4px">Phenotypes <span class="muted" style="font-weight:400">— term + PMID required</span></h4>
+              <div id="cur-pheno-list" style="font-size:13px;margin-bottom:6px"></div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+                <input id="cur-pheno-term" placeholder="phenotype term" style="${FIELD};min-width:220px" aria-label="Phenotype term">
+                <input id="cur-pheno-cond" placeholder="conditions (optional)" style="${FIELD};min-width:160px" aria-label="Conditions">
+                <input id="cur-pheno-pmid" placeholder="PMID" style="${FIELD};width:110px" aria-label="PMID">
+                <button type="button" id="cur-pheno-add">Add phenotype</button>
+                <span id="cur-pheno-msg" class="muted" style="font-size:13px"></span>
+              </div>
+
+              <h4 style="margin:16px 0 4px">Nomenclature <span class="muted" style="font-weight:400">— dictyBase is the naming authority</span></h4>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+                <input id="cur-symbol" placeholder="symbol (e.g. mhcA)" style="${FIELD};width:150px" aria-label="Gene symbol">
+                <input id="cur-synonyms" placeholder="synonyms, comma-separated" style="${FIELD};min-width:260px" aria-label="Synonyms">
+                <button type="button" id="cur-nom-save">Save names</button>
+                <span id="cur-nom-msg" class="muted" style="font-size:13px"></span>
+              </div>
+            </div>
           </div>
+
+          <h3 class="tools-group" style="margin-top:22px">Curation reports</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+            <button type="button" id="cur-gaf">Download GAF (curated GO)</button>
+            <button type="button" id="cur-todo-btn">Curation to-do</button>
+            <span id="cur-report-msg" class="muted" style="font-size:13px"></span>
+          </div>
+          <div id="cur-todo" style="font-size:13px"></div>
+
           <h3 class="tools-group" style="margin-top:22px">Strains &amp; plasmids</h3>
           <p class="muted" style="font-size:13px;margin:-4px 0 8px">Add or update a Dicty Stock Center catalog entry. Edits go live immediately — no deploy needed.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
@@ -2319,6 +2365,7 @@ function initCurate() {
       document.getElementById("cur-pmids").value = d.pmids || "";
       editor.dataset.ddb = ddb;
       editor.removeAttribute("hidden");
+      loadGeneCuration(ddb);
     } catch { loadMsg.textContent = "Load failed."; }
   };
   document.getElementById("cur-load").addEventListener("click", load);
@@ -2341,6 +2388,131 @@ function initCurate() {
       saveMsg.textContent = `Saved ✓ (${d.curator_date}) — live on the site now.`;
       document.getElementById("cur-e-date").textContent = d.curator_date;
     } catch { saveMsg.textContent = "Save failed — the previous version is intact."; }
+  });
+
+  // --- Structured curation: GO, phenotypes, nomenclature ---
+  const goList = document.getElementById("cur-go-list");
+  const phenoList = document.getElementById("cur-pheno-list");
+  const delBtn = 'style="border:0;background:none;color:var(--red,#c0392b);cursor:pointer;font-size:12px;padding:0 4px"';
+  async function curatorPost(path, body) {
+    try {
+      const r = await fetch(path, { method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+        body: JSON.stringify(body) });
+      const d = await r.json().catch(() => ({}));
+      return { ok: r.ok, d };
+    } catch { return { ok: false, d: { error: "Network error." } }; }
+  }
+  function renderGoList(go) {
+    const rows = [];
+    for (const a of ["F", "P", "C"]) for (const e of (go[a] || [])) {
+      rows.push(`<div style="display:flex;gap:8px;align-items:center;padding:2px 0">
+        <code>${escapeHtml(e[0])}</code>
+        <span class="muted">${a} · ${escapeHtml(e[1] || "")} · ${escapeHtml(e[2] || "")} · ${escapeHtml(e[3] || "")}</span>
+        <button type="button" class="cur-go-del" data-aspect="${a}" data-go="${escapeHtml(e[0])}" ${delBtn}>delete</button></div>`);
+    }
+    goList.innerHTML = rows.length ? rows.join("") : `<span class="muted">No curated GO annotations yet.</span>`;
+  }
+  function renderPhenoList(rows) {
+    phenoList.innerHTML = (rows && rows.length) ? rows.map((r) =>
+      `<div style="display:flex;gap:8px;align-items:center;padding:2px 0">
+        <span>${escapeHtml(r[0] || "")}</span>
+        <span class="muted">${escapeHtml(r[1] || "")}${r[2] ? ` · PMID ${escapeHtml(String(r[2]))}` : ""}</span>
+        <button type="button" class="cur-pheno-del" data-term="${escapeHtml(r[0] || "")}" data-pmid="${escapeHtml(String(r[2] || ""))}" ${delBtn}>delete</button></div>`).join("")
+      : `<span class="muted">No curated phenotypes yet.</span>`;
+  }
+  async function loadGeneCuration(ddb) {
+    try {
+      const d = await (await fetch(`/api/gene-curation?ddb=${encodeURIComponent(ddb)}`)).json();
+      renderGoList(d.curated_go || { F: [], P: [], C: [] });
+      renderPhenoList(d.curated_phenotypes || []);
+      document.getElementById("cur-symbol").value = d.symbol || "";
+      document.getElementById("cur-synonyms").value = (d.synonyms || []).join(", ");
+    } catch { /* leave panels as-is */ }
+  }
+
+  document.getElementById("cur-go-add").addEventListener("click", async () => {
+    const msg = document.getElementById("cur-go-msg");
+    const ddb = editor.dataset.ddb;
+    msg.textContent = "Saving…";
+    const { ok, d } = await curatorPost("/api/curator/go", {
+      ddb, action: "add", aspect: document.getElementById("cur-go-aspect").value,
+      go_id: document.getElementById("cur-go-id").value.trim(),
+      evidence: document.getElementById("cur-go-ev").value.trim(),
+      qualifier: document.getElementById("cur-go-qual").value.trim(),
+      pmid: document.getElementById("cur-go-pmid").value.trim() });
+    if (!ok) { msg.textContent = d.error || "Failed."; return; }
+    msg.textContent = "Added ✓";
+    renderGoList(d.curated_go);
+    ["cur-go-id", "cur-go-pmid"].forEach((id) => document.getElementById(id).value = "");
+  });
+  goList.addEventListener("click", async (e) => {
+    const b = e.target.closest(".cur-go-del"); if (!b) return;
+    const { ok, d } = await curatorPost("/api/curator/go", {
+      ddb: editor.dataset.ddb, action: "delete", aspect: b.dataset.aspect, go_id: b.dataset.go });
+    if (ok) renderGoList(d.curated_go);
+  });
+
+  document.getElementById("cur-pheno-add").addEventListener("click", async () => {
+    const msg = document.getElementById("cur-pheno-msg");
+    msg.textContent = "Saving…";
+    const { ok, d } = await curatorPost("/api/curator/phenotype", {
+      ddb: editor.dataset.ddb, action: "add",
+      term: document.getElementById("cur-pheno-term").value.trim(),
+      conditions: document.getElementById("cur-pheno-cond").value.trim(),
+      pmid: document.getElementById("cur-pheno-pmid").value.trim() });
+    if (!ok) { msg.textContent = d.error || "Failed."; return; }
+    msg.textContent = "Added ✓";
+    renderPhenoList(d.curated_phenotypes);
+    ["cur-pheno-term", "cur-pheno-cond", "cur-pheno-pmid"].forEach((id) => document.getElementById(id).value = "");
+  });
+  phenoList.addEventListener("click", async (e) => {
+    const b = e.target.closest(".cur-pheno-del"); if (!b) return;
+    const { ok, d } = await curatorPost("/api/curator/phenotype", {
+      ddb: editor.dataset.ddb, action: "delete", term: b.dataset.term, pmid: b.dataset.pmid });
+    if (ok) renderPhenoList(d.curated_phenotypes);
+  });
+
+  document.getElementById("cur-nom-save").addEventListener("click", async () => {
+    const msg = document.getElementById("cur-nom-msg");
+    msg.textContent = "Saving…";
+    const { ok, d } = await curatorPost("/api/curator/nomenclature", {
+      ddb: editor.dataset.ddb,
+      symbol: document.getElementById("cur-symbol").value.trim(),
+      synonyms: document.getElementById("cur-synonyms").value });
+    msg.textContent = ok ? "Saved ✓ — live on the record." : (d.error || "Failed.");
+  });
+
+  // --- Curation reports: GAF export + to-do queue ---
+  document.getElementById("cur-gaf").addEventListener("click", async () => {
+    const msg = document.getElementById("cur-report-msg");
+    msg.textContent = "Building GAF…";
+    try {
+      const r = await fetch("/api/curator/gaf", { headers: { Authorization: `Bearer ${curatorToken}` } });
+      if (!r.ok) { msg.textContent = "Failed."; return; }
+      const n = r.headers.get("X-Annotation-Count") || "?";
+      const blob = await r.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a"); a.href = url; a.download = "dictybase_curated.gaf"; a.click();
+      URL.revokeObjectURL(url);
+      msg.textContent = `Downloaded ${n} curated GO annotation${n === "1" ? "" : "s"}.`;
+    } catch { msg.textContent = "Failed."; }
+  });
+  document.getElementById("cur-todo-btn").addEventListener("click", async () => {
+    const box = document.getElementById("cur-todo");
+    box.innerHTML = `<span class="muted">Loading…</span>`;
+    try {
+      const d = await (await fetch("/api/curator/todo", { headers: { Authorization: `Bearer ${curatorToken}` } })).json();
+      const rows = (d.top || []).map((r) =>
+        `<tr><td style="padding:2px 10px 2px 0"><button type="button" class="cur-todo-pick" data-sym="${escapeHtml(r.symbol)}" style="border:0;background:none;color:var(--teal-dark,#1f6f5c);cursor:pointer;padding:0">${escapeHtml(r.symbol)}</button></td><td class="muted" style="padding:2px 0">${r.papers} paper${r.papers === 1 ? "" : "s"}</td></tr>`).join("");
+      box.innerHTML = `<p class="muted" style="margin:6px 0">${d.counts.uncurated_with_papers.toLocaleString()} genes have papers but no curated summary (${d.counts.uncurated_total.toLocaleString()} uncurated total). Highest-cited first:</p>
+        <table style="border-collapse:collapse"><tbody>${rows}</tbody></table>`;
+    } catch { box.innerHTML = `<span class="muted">Failed to load.</span>`; }
+  });
+  document.getElementById("cur-todo").addEventListener("click", (e) => {
+    const b = e.target.closest(".cur-todo-pick"); if (!b) return;
+    geneEl.value = b.dataset.sym; load();
+    editor.scrollIntoView({ behavior: "smooth" });
   });
 
   // --- Community submission review (approve/reject) ---
@@ -8365,6 +8537,20 @@ async function enrichGeneFromCorpus(gene) {
         if (entry.note) enriched._curatorNote = entry.note;
       }
     } catch { /* corpus optional */ }
+    // Curator nomenclature override (dictyBase is the naming authority): apply a
+    // curated symbol and merge curated synonyms into the record.
+    try {
+      const cu = await fetch(`/api/gene-curation?ddb=${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      if (cu && (cu.symbol || (cu.synonyms && cu.synonyms.length))) {
+        const merged = (enriched.synonyms || []).slice();
+        if (cu.symbol && cu.symbol !== enriched.symbol) {
+          if (enriched.symbol) merged.push(enriched.symbol);
+          enriched.symbol = cu.symbol;
+        }
+        (cu.synonyms || []).forEach((s) => { if (s && !merged.includes(s)) merged.push(s); });
+        if (merged.length) enriched.synonyms = merged;
+      }
+    } catch { /* curation overlay optional */ }
     // Fallback: imported dictyBase legacy gene-product description (badged), used
     // ONLY where we have no real curated summary of our own.
     try {
@@ -8399,12 +8585,15 @@ async function loadPhenotypes(gene) {
   if (!container) return;
   const ddb = gene.veupath || gene.ddb || "";
   try {
-    const [data, geneApi] = await Promise.all([
+    const [data, geneApi, curation] = await Promise.all([
       ddb ? ensurePhenotypeData() : null,
       ddb ? fetch(`/api/gene/${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null) : null,
+      ddb ? fetch(`/api/gene-curation?ddb=${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null) : null,
     ]);
     if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
-    const rows = (data && data[ddb]) || [];
+    const curatedPh = (curation && curation.curated_phenotypes) || [];
+    const rows = curatedPh.concat((data && data[ddb]) || []);
+    const curatedSet = new Set(curatedPh.map((r) => r[0] + "|" + (r[2] || "")));
     const strains = (geneApi && geneApi.strains) || [];
     const strainLine = strains.length
       ? `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">Mutant strain${strains.length === 1 ? "" : "s"}: ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}">${escapeHtml(s)}</a>`).join(", ")}</p>`
@@ -8417,7 +8606,8 @@ async function loadPhenotypes(gene) {
             const cleanNote = String(note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
             const detail = [cond, cleanNote].filter(Boolean).map(escapeHtml).join(" · ");
             const ref = pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a>` : "";
-            return `<li><strong>${escapeHtml(term)}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
+            const curated = curatedSet.has(term + "|" + (pmid || "")) ? ` <span class="curation-link" style="cursor:default" title="Curated at dictyBase">curated</span>` : "";
+            return `<li><strong>${escapeHtml(term)}${curated}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
           }).join("")}
         </ul>`;
       return;

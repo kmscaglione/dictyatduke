@@ -209,6 +209,37 @@ def _load_gene_annotations():
     return _GENE_ANNOT_CACHE["genes"]
 
 
+def _merge_curated_go(ddb, annot):
+    """Fold a gene's curator-added GO annotations into its served annotations so
+    the record shows them alongside imported ones. Curated entries carry a real
+    evidence code (not IEA) and source 'dictyBase curated', so the existing GO
+    render badges them as expert/manual. Reads the durable override each call
+    (curation is live-editable)."""
+    cur = _read_json_file(OVERRIDES_PATH, {}).get(ddb, {}).get("curated_go")
+    if not cur or not any(cur.get(a) for a in ("P", "F", "C")):
+        return annot
+    annot = dict(annot)
+    go = {a: list((annot.get("go") or {}).get(a, [])) for a in ("P", "F", "C")}
+    manual_added = 0
+    for a in ("P", "F", "C"):
+        for e in cur.get(a, []):
+            go[a].append(e)
+            if len(e) < 2 or e[1] != "IEA":
+                manual_added += 1
+    annot["go"] = go
+    annot["symbol"] = annot.get("symbol") or ddb
+    c = dict(annot.get("counts") or {"total": 0, "manual": 0, "automated": 0, "papers": 0})
+    total_added = sum(len(cur.get(a, [])) for a in ("P", "F", "C"))
+    c["total"] = c.get("total", 0) + total_added
+    c["manual"] = c.get("manual", 0) + manual_added
+    annot["counts"] = c
+    srcs = list(annot.get("sources") or [])
+    if "dictyBase curated" not in srcs:
+        srcs.append("dictyBase curated")
+    annot["sources"] = srcs
+    return annot
+
+
 # ------------------------------------------------------------------- SEO -----
 # The SPA serves one HTML shell for every route, so without this a crawler sees
 # the same generic <title>/meta for /gene/mybB as for the home page and can't
@@ -1019,12 +1050,43 @@ def _log_curation(kind, action, item_id, curator):
         pass
 
 
-def save_gene_override(ddb, fields, curator):
+def save_gene_override(ddb, fields, curator, action="edit"):
+    # Merge into the existing override so a summary edit doesn't wipe structured
+    # curation (curated GO/phenotypes/nomenclature) and vice-versa.
     ov = _read_json_file(OVERRIDES_PATH, {})
-    ov[ddb] = fields
+    ov[ddb] = {**ov.get(ddb, {}), **fields}
     _atomic_write_json(OVERRIDES_PATH, ov)
     apply_gene_overrides()
-    _log_curation("gene", "edit", ddb, curator)
+    _log_curation("gene", action, ddb, curator)
+
+
+def gene_curation(ddb):
+    """The curator override record for one gene (structured annotations included)."""
+    return _read_json_file(OVERRIDES_PATH, {}).get(ddb, {})
+
+
+_DDB_SYMBOL = {"mtime": None, "map": {}}
+
+
+def ddb_symbol_map():
+    """DDB_G id -> approved gene symbol, from gene_index.json. mtime-cached."""
+    try:
+        mtime = GENE_INDEX_PATH.stat().st_mtime
+    except OSError:
+        return _DDB_SYMBOL["map"]
+    if _DDB_SYMBOL["mtime"] != mtime:
+        m = {}
+        for row in _read_json_file(GENE_INDEX_PATH, []):
+            if isinstance(row, list) and len(row) >= 2 and row[0]:
+                m[row[0]] = row[1] or row[0]
+        _DDB_SYMBOL["map"] = m
+        _DDB_SYMBOL["mtime"] = mtime
+    return _DDB_SYMBOL["map"]
+
+
+# GO aspect -> default relation qualifier when a curator does not pick one.
+_GO_DEFAULT_QUALIFIER = {"P": "involved_in", "F": "enables", "C": "located_in"}
+_CURATED_GO_SOURCE = "dictyBase curated"
 
 
 def save_stock_override(kind, sid, entry, curator, delete=False):
@@ -1904,6 +1966,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/gene-extras"):
             self._handle_gene_extras()
             return
+        if self.path.startswith("/api/gene-curation"):
+            self._handle_gene_curation()
+            return
         if self.path.startswith("/api/promoter"):
             self._handle_promoter()
             return
@@ -2120,6 +2185,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path == "/api/curator/accounts":
             self._handle_accounts_list()
+            return
+        if self.path.startswith("/api/curator/gaf"):
+            self._handle_curator_gaf()
+            return
+        if self.path.startswith("/api/curator/todo"):
+            self._handle_curator_todo()
             return
 
         # Curator dashboard API — download a snapshot of all durable curation
@@ -2476,6 +2547,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_reject()
         elif self.path == "/api/curator/edit":
             self._handle_curation_edit()
+        elif self.path == "/api/curator/go":
+            self._handle_curator_go()
+        elif self.path == "/api/curator/phenotype":
+            self._handle_curator_phenotype()
+        elif self.path == "/api/curator/nomenclature":
+            self._handle_curator_nomenclature()
         elif self.path == "/api/curator/stock-edit":
             self._handle_stock_edit()
         elif self.path == "/api/curator/stock-delete":
@@ -3302,6 +3379,200 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             print(f"[curate] edit error: {ex}", file=sys.stderr)
             self.send_json(500, {"error": "Save failed — the previous version is intact."})
 
+    # --- Structured curation: GO, phenotypes, nomenclature ----------------
+    def _curator_json(self):
+        """Auth-check + read a JSON POST body for a curator write. Returns
+        (body, curator, error) — on error, body is None and error is (code, msg)."""
+        if not self._auth(self._parse_token()):
+            return None, None, (401, {"error": "Unauthorized"})
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 65536)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            return None, None, (400, {"error": "Invalid request"})
+        return body, self._session_name(), None
+
+    def _handle_gene_curation(self):
+        """Public: a gene's curator-added structured annotations (curated
+        phenotypes + nomenclature), for the gene record to merge in. Curated GO
+        is folded into /api/gene-annotations instead."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        ov = gene_curation(ddb)
+        self.send_json(200, {
+            "curated_go": ov.get("curated_go", {"P": [], "F": [], "C": []}),
+            "curated_phenotypes": ov.get("curated_phenotypes", []),
+            "symbol": ov.get("symbol", ""),
+            "synonyms": ov.get("synonyms", []),
+            "curator": ov.get("curator", ""),
+            "curator_date": ov.get("curator_date", ""),
+        })
+
+    def _handle_curator_go(self):
+        """Add or delete a curated GO annotation. Body: {ddb, action:add|delete,
+        go_id, aspect:P|F|C, evidence, qualifier?, pmid}. Evidence + reference are
+        required on add (no unsupported annotations)."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        ddb = (body.get("ddb") or "").strip()
+        aspect = (body.get("aspect") or "").strip().upper()
+        go_id = (body.get("go_id") or "").strip().upper()
+        action = (body.get("action") or "add").strip()
+        if not re.match(r"^DDB_G\d+$", ddb) or aspect not in ("P", "F", "C"):
+            self.send_json(400, {"error": "A valid DDB_G id and aspect (P/F/C) are required."})
+            return
+        if not re.match(r"^GO:\d{7}$", go_id):
+            self.send_json(400, {"error": "A valid GO id (GO:0000000) is required."})
+            return
+        cur = dict(gene_curation(ddb).get("curated_go") or {"P": [], "F": [], "C": []})
+        for a in ("P", "F", "C"):
+            cur.setdefault(a, [])
+        date = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+        if action == "delete":
+            cur[aspect] = [e for e in cur[aspect] if not (len(e) >= 1 and e[0] == go_id)]
+        else:
+            evidence = (body.get("evidence") or "").strip().upper()
+            pmid = re.sub(r"\D", "", (body.get("pmid") or ""))
+            if not evidence:
+                self.send_json(400, {"error": "An evidence code is required (e.g. IDA, IMP, IPI)."})
+                return
+            if not pmid:
+                self.send_json(400, {"error": "A supporting PMID is required."})
+                return
+            qual = (body.get("qualifier") or "").strip() or _GO_DEFAULT_QUALIFIER[aspect]
+            entry = [go_id, evidence, qual, "PMID:" + pmid, date, _CURATED_GO_SOURCE]
+            cur[aspect] = [e for e in cur[aspect] if not (len(e) >= 1 and e[0] == go_id)]
+            cur[aspect].append(entry)
+        save_gene_override(ddb, {"curated_go": cur, "curator": curator, "curator_date":
+                                 datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()},
+                           curator, action="go-" + action)
+        self.send_json(200, {"ok": True, "ddb": ddb, "curated_go": cur})
+
+    def _handle_curator_phenotype(self):
+        """Add or delete a curated phenotype. Body: {ddb, action:add|delete,
+        term, conditions?, pmid, note?}. Term + reference required on add.
+        Stored in the same [term, conditions, pmid, note] shape as phenotypes.json."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        ddb = (body.get("ddb") or "").strip()
+        term = (body.get("term") or "").strip()
+        action = (body.get("action") or "add").strip()
+        if not re.match(r"^DDB_G\d+$", ddb) or not term:
+            self.send_json(400, {"error": "A valid DDB_G id and a phenotype term are required."})
+            return
+        rows = [r for r in (gene_curation(ddb).get("curated_phenotypes") or []) if isinstance(r, list)]
+        if action == "delete":
+            pmid = re.sub(r"\D", "", (body.get("pmid") or ""))
+            rows = [r for r in rows if not (r[0] == term and (len(r) < 3 or re.sub(r"\D", "", str(r[2])) == pmid))]
+        else:
+            pmid = re.sub(r"\D", "", (body.get("pmid") or ""))
+            if not pmid:
+                self.send_json(400, {"error": "A supporting PMID is required."})
+                return
+            conditions = (body.get("conditions") or "").strip()
+            note = (body.get("note") or "").strip()
+            rows.append([term, conditions, pmid, note])
+        save_gene_override(ddb, {"curated_phenotypes": rows, "curator": curator, "curator_date":
+                                 datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()},
+                           curator, action="phenotype-" + action)
+        self.send_json(200, {"ok": True, "ddb": ddb, "curated_phenotypes": rows})
+
+    def _handle_curator_nomenclature(self):
+        """Set a gene's symbol and synonyms. Body: {ddb, symbol, synonyms:[...]}.
+        dictyBase is the naming authority, so this is a durable override."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        ddb = (body.get("ddb") or "").strip()
+        symbol = (body.get("symbol") or "").strip()
+        syn = body.get("synonyms") or []
+        if isinstance(syn, str):
+            syn = [s.strip() for s in re.split(r"[,\n]", syn)]
+        synonyms = [s.strip() for s in syn if isinstance(s, str) and s.strip()][:40]
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "A valid DDB_G id is required."})
+            return
+        if len(symbol) > 60 or any(len(s) > 60 for s in synonyms):
+            self.send_json(400, {"error": "A symbol/synonym is too long."})
+            return
+        fields = {"synonyms": synonyms, "curator": curator,
+                  "curator_date": datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()}
+        if symbol:
+            fields["symbol"] = symbol
+        save_gene_override(ddb, fields, curator, action="nomenclature")
+        self.send_json(200, {"ok": True, "ddb": ddb, "symbol": symbol, "synonyms": synonyms})
+
+    def _handle_curator_gaf(self):
+        """Export all curated GO annotations as a GAF 2.2 file for contributing
+        back to the GO Consortium (curator-only download)."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        symbols = ddb_symbol_map()
+        stamp = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+        lines = ["!gaf-version: 2.2",
+                 "!generated-by: dictyBase", "!date-generated: " + stamp, "!"]
+        n = 0
+        for ddb, ov in sorted(_read_json_file(OVERRIDES_PATH, {}).items()):
+            go = (ov or {}).get("curated_go") or {}
+            sym = symbols.get(ddb, ddb)
+            for aspect in ("F", "P", "C"):
+                for e in go.get(aspect, []):
+                    if len(e) < 6:
+                        continue
+                    go_id, evidence, qual, ref, date, _src = e[:6]
+                    gafdate = (date or stamp).replace("-", "")
+                    row = ["dictyBase", ddb, sym, qual, go_id, ref, evidence, "",
+                           aspect, "", "", "gene", "taxon:44689", gafdate, "dictyBase", "", ""]
+                    lines.append("\t".join(row))
+                    n += 1
+        data = ("\n".join(lines) + "\n").encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
+        self.send_header("Content-Disposition", 'attachment; filename="dictybase_curated.gaf"')
+        self.send_header("X-Annotation-Count", str(n))
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def _handle_curator_todo(self):
+        """Curation to-do queue: genes with literature but no curated summary,
+        ranked by paper count (highest-value first). Curator-only."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        corpus = _load_json("dictybase_corpus.json")
+        extras = _load_mtime_json(GENE_EXTRAS_PATH, _GENE_EXTRAS_CACHE)
+        symbols = ddb_symbol_map()
+        overrides = _read_json_file(OVERRIDES_PATH, {})
+
+        def uncurated(ddb):
+            e = corpus.get(ddb, {})
+            s = (e.get("summary") or "").strip().lower()
+            if overrides.get(ddb, {}).get("curator_date"):
+                return False   # touched by a curator here
+            return (not s) or ("has not been manually" in s) or ("no curated model" in s) \
+                or ("inadequate support" in s) or len(s) < 40
+
+        rows = []
+        for ddb, ex in extras.items():
+            pmids = ex.get("pmids") or []
+            if pmids and uncurated(ddb):
+                rows.append({"ddb": ddb, "symbol": symbols.get(ddb, ddb), "papers": len(pmids)})
+        rows.sort(key=lambda r: -r["papers"])
+        no_summary = sum(1 for ddb in symbols if uncurated(ddb))
+        self.send_json(200, {
+            "counts": {"uncurated_with_papers": len(rows), "uncurated_total": no_summary},
+            "top": rows[:150],
+        })
+
     # --- Stock Center curation (strains + plasmids) -----------------------
     def _stock_body(self):
         """Read + auth-check a stock edit/delete request. Returns (body, error).
@@ -3478,7 +3749,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not re.match(r"^DDB_G\d+$", ddb):
             self.send_json(400, {"error": "ddb (DDB_G…) required"})
             return
-        self.send_json(200, _load_gene_annotations().get(ddb, {}))
+        self.send_json(200, _merge_curated_go(ddb, _load_gene_annotations().get(ddb, {})))
 
     def _handle_gene_extras(self):
         """One gene's dictyBase enrichment (literature, curation status, alt

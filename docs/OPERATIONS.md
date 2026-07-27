@@ -188,6 +188,31 @@ BLAST+ is installed system-wide by OIT at `/usr/bin/{makeblastdb,blastn,tblastn,
 (`build_protein_blastdb.py`) needs the GFF + RefSeq FASTA present, so run it after
 the genome fetch.
 
+## Curation backup (off-box)
+
+Durable curator state lives ONLY on the VM under `uploads/curator_state/`
+(`curation_overrides.json`, `stock_overrides.json`, `curators.json`,
+`curation_log.jsonl`) and is gitignored, so a disk/VM loss would lose it. A
+crash/restart is safe (atomic writes + rebuild-from-disk); disk loss is the real
+exposure. `scripts/backup_curation.sh` pushes those files to a **separate private
+git repo** on a nightly user cron (no root).
+
+One-time setup as the deploy user:
+
+```bash
+gh repo create <you>/dicty-curation-backup --private        # or make one in the web UI
+git clone <that repo> ~/dicty-curation-backup               # remote must push non-interactively
+crontab -e     # add:
+# 30 3 * * * /srv/web/dicty.labs.duke.edu/html/scripts/backup_curation.sh >> "$HOME/curation-backup.log" 2>&1
+```
+
+Run it once by hand to confirm it pushes. Restore is just a `git clone` of the
+backup repo and copying the JSON back into `uploads/curator_state/`. The deploy
+user needs read access to the state files — they're group-readable by
+`dicty-at-duke`, which the deploy user is in. Paths override via
+`CURATION_STATE_DIR` / `CURATION_BACKUP_REPO`. Belt-and-suspenders: ask OIT
+whether the VM is snapshotted.
+
 ## 7. Gotchas that will bite you
 
 - **Adding a `/tools/X` route requires THREE edits in `app.js`**, not one:

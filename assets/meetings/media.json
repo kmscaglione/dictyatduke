@@ -2443,10 +2443,16 @@
   "abstract": "meetings/abstracts/dicty2022_abstracts.pdf",
   "external_photos": "https://photos.google.com/share/AF1QipND56esynGYUMIDoQmKeRLWGsxmy8fEMyUh9qSBUK690jWVlBetmkAJMSdtsshb9w?pli=1&key=OFgtMkVfMjMtTWlDQ2JoTFhnQmZlS1p6R0N6TGl3"
  },
+ "2023": {
+  "abstract": "meetings/abstracts/dicty2023_abstracts.pdf"
+ },
  "2024": {
   "abstract": "meetings/abstracts/dicty2024_abstracts.pdf",
   "pictures": [
    "meetings/pictures/dicty2024/IMG_1069.jpg"
   ]
+ },
+ "2025": {
+  "abstract": "meetings/abstracts/dicty2025_abstracts.pdf"
  }
 }

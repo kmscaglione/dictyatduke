@@ -16,7 +16,12 @@ import gzip, json, os, sys, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
-GAF_URL = "http://current.geneontology.org/annotations/dictybase.gaf.gz"
+# GO renamed the per-species GAFs: the old `dictybase.gaf.gz` alias is now FROZEN
+# (it stopped updating, so we were ~5,000 dictyBase annotations behind). The live
+# file is DICDI-mod.gaf.gz under /annotations/gaf/. Same content shape (keyed by
+# DDB_G), just current. DICDI-uniprot.gaf.gz holds the ~500 extra external
+# (InterPro/IntAct) annotations if we ever want to merge them too.
+GAF_URL = "https://current.geneontology.org/annotations/gaf/DICDI-mod.gaf.gz"
 
 # Evidence codes that mean "a curator read a paper / made a judgement"
 MANUAL_EV = {"IDA", "IPI", "IMP", "IGI", "IEP",        # experimental

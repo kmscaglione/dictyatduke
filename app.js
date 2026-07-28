@@ -3579,6 +3579,8 @@ function renderDownloadsShell() {
             ["go", "GO annotations", "Gene → GO term, aspect, evidence code, PMID."],
             ["phenotypes", "Curated phenotypes", "Gene → mutant phenotype and supporting PMID."],
             ["orthologs", "Human orthologs & disease", "Gene → human ortholog, relationship, linked disease."],
+            ["strains", "Stock Center strain catalog", "Dicty Stock Center: DSC id, name, in-stock, genotype, summary, synonyms — every catalog strain (~7,000)."],
+            ["plasmids", "Stock Center plasmid catalog", "Dicty Stock Center: DSC id, name, in-stock, depositor, description — every catalog plasmid (~1,265)."],
           ].map(([ds, label, desc]) => `
             <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
               <span><strong>${label}</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">${desc}</span></span>
@@ -8392,6 +8394,20 @@ function openDownloadsPage(updateRoute = true) {
         </div>
       </header>
       <div class="record-body">
+        <section class="data-block" id="stock-center-catalog" style="margin-bottom:18px">
+          <h3>Dicty Stock Center catalog</h3>
+          <p class="downloads-blurb">The full Dicty Stock Center catalog as tab-separated values (TSV) — the same strains and plasmids you can browse and order in the <a class="text-link" href="/stock-center">Stock Center</a>. Open in Excel, R, or any spreadsheet tool.</p>
+          <ul class="downloads-list">
+            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span><strong>Strain catalog</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">DSC id, name, in-stock, genotype, summary, synonyms — every catalog strain (~7,000).</span></span>
+              <a class="button" href="/api/bulk?dataset=strains" download>Download TSV</a>
+            </li>
+            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span><strong>Plasmid catalog</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">DSC id, name, in-stock, depositor, description — every catalog plasmid (~1,265).</span></span>
+              <a class="button" href="/api/bulk?dataset=plasmids" download>Download TSV</a>
+            </li>
+          </ul>
+        </section>
         <div data-downloads><p class="notice muted">Loading downloads…</p></div>
       </div>
     </article>`;

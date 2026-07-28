@@ -1755,6 +1755,23 @@ def bulk_tsv(dataset):
                 diseases = orth.get("diseases", []) or []
                 dis = "; ".join(d.get("name", "") if isinstance(d, dict) else str(d) for d in diseases)
                 out.append("\t".join(str(x) for x in [ddb, sym, human, rel, dis]))
+    elif dataset in ("strains", "plasmids"):
+        # Dicty Stock Center catalog (same override-merged data the site serves).
+        stock = _load_json("stock_center.json")
+        def _c(x):  # TSV-safe: summaries/descriptions can carry tabs/newlines
+            return str(x if x is not None else "").replace("\t", " ").replace("\r", " ").replace("\n", " ").strip()
+        if dataset == "strains":
+            out.append("dsc_id\tname\tin_stock\tgenotype\tsummary\tsynonyms")
+            for s in stock.get("strains", []):
+                out.append("\t".join([_c(s.get("id")), _c(s.get("label")),
+                    "yes" if s.get("in_stock") else "no", _c(s.get("genotype")),
+                    _c(s.get("summary")), _c("; ".join(s.get("names") or []))]))
+        else:
+            out.append("dsc_id\tname\tin_stock\tdepositor\tdescription")
+            for p in stock.get("plasmids", []):
+                out.append("\t".join([_c(p.get("id")), _c(p.get("name")),
+                    "yes" if p.get("in_stock") else "no", _c(p.get("depositor")),
+                    _c(p.get("description"))]))
     else:
         return None, None
     return f"dictyatduke_{dataset}.tsv", "\n".join(out) + "\n"
@@ -4183,7 +4200,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             dataset = parse_qs(urlparse(self.path).query).get("dataset", [""])[0]
             fname, text = bulk_tsv(dataset)
             if not fname:
-                self.send_json(400, {"error": "Unknown dataset. Use genes|go|phenotypes|orthologs."})
+                self.send_json(400, {"error": "Unknown dataset. Use genes|go|phenotypes|orthologs|strains|plasmids."})
                 return
             data = text.encode("utf-8")
             self.send_response(200)

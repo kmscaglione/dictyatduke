@@ -58,8 +58,9 @@ def _relabel_mrna(line):
     `Name` to its accession (e.g. XM_635544.2), so the browser shows accessions
     instead of gene names. Rewrite the mRNA `Name` to the catalog symbol for its
     DDB_G locus (dictyBase's authoritative name; the DDB_G id itself when unnamed),
-    falling back to the GFF's own `gene=`/`locus_tag=` for non-AX4 genomes. The
-    accession is preserved in `ID=`/`Dbxref=`, so it still shows on click."""
+    then the submitter's own transcript id (`orig_transcript_id`, for the paper
+    genomes), falling back to the GFF's `gene=`/`locus_tag=`. The GenBank id is
+    preserved in `ID=`/`Dbxref=`, so it still shows on click."""
     cols = line.rstrip("\n").split("\t")
     if len(cols) < 9 or cols[2] != "mRNA":
         return line
@@ -68,7 +69,9 @@ def _relabel_mrna(line):
     if "Name" not in attrs:
         return line
     locus = (attrs.get("locus_tag") or "").strip()
-    sym = (_GENE_SYM.get(locus) or attrs.get("gene") or locus or "").strip()
+    # Submitter transcript id: gnl|WGS:JBTAPL|DC_GS_00011627-RA -> DC_GS_00011627-RA
+    orig = (attrs.get("orig_transcript_id") or "").rsplit("|", 1)[-1].strip()
+    sym = (_GENE_SYM.get(locus) or orig or attrs.get("gene") or locus or "").strip()
     if not sym:
         return line
     cols[8] = ";".join((f"Name={sym}" if kv.startswith("Name=") else kv) for kv in parts)

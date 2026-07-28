@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch the dictyostelid genomes from Ahmed et al. 2025 (PNAS) and lay them out
+"""Fetch the dictyostelid genomes from Holland*, Ahmed* et al. 2025 (PNAS) and lay them out
 the way the rest of the site expects.
 
 Paper: "Hypermutable hotspot enables the rapid evolution of self/non-self

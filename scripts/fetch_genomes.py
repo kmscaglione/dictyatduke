@@ -2,7 +2,7 @@
 """Fetch the CORE dictyostelid genomes (D. discoideum AX4 + the legacy comparative
 species) from NCBI and lay them out the way serve.py / build_blastdb.py expect.
 
-This is the companion to scripts/fetch_paper_genomes.py, which fetches the Ahmed
+This is the companion to scripts/fetch_paper_genomes.py, which fetches the Holland*, Ahmed* et al. 2025
 et al. 2025 (PNAS) subset. Between the two you get all 17 assemblies listed in
 assets/downloads_manifest.json. Run this one for the 9 it covers:
 
@@ -50,7 +50,7 @@ AX4_ID = "d-discoideum-ax4"
 AX4_ACC = "GCF_000004695.1"
 
 # id, accession, output Name (filename stem) — the 8 legacy comparative species.
-# (AX4 is handled separately; the Ahmed 2025 subset is fetch_paper_genomes.py.)
+# (AX4 is handled separately; the Holland*, Ahmed* et al. 2025 subset is fetch_paper_genomes.py.)
 LEGACY = [
     ("d-purpureum",       "GCA_000190715.1", "D_purpureum"),
     ("d-firmibasis",      "GCA_036169595.1", "D_firmibasis"),

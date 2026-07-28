@@ -3250,7 +3250,7 @@ function formatBytes(n) {
 function genomeOptionsHTML(selected) {
   const sp = Object.entries(LOCAL_BLAST_DBS).map(([id, l]) => `<option value="${id}"${id === selected ? " selected" : ""}>${escapeHtml(l)}</option>`).join("");
   const iso = Object.entries(WILD_ISOLATES).map(([id, l]) => `<option value="${id}">${escapeHtml(l)}</option>`).join("");
-  return `<optgroup label="Species">${sp}</optgroup><optgroup label="Wild isolates (Ahmed et al. 2025)">${iso}</optgroup>`;
+  return `<optgroup label="Species">${sp}</optgroup><optgroup label="Wild isolates (Holland*, Ahmed* et al. 2025)">${iso}</optgroup>`;
 }
 
 function renderSequenceToolsPage() {
@@ -3616,7 +3616,7 @@ async function loadDownloads() {
     container.innerHTML =
       groupHead("Sequenced dictyostelid species") + species.map(card).join("") +
       (isolates.length ? groupHead("D. discoideum wild isolates") +
-        `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-4px 0 12px">Chromosome- to scaffold-level assemblies of conspecific wild <em>D. discoideum</em> isolates from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> — released under CC BY 4.0.</p>` +
+        `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-4px 0 12px">Chromosome- to scaffold-level assemblies of conspecific wild <em>D. discoideum</em> isolates from Holland*, Ahmed* et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> — released under CC BY 4.0.</p>` +
         isolates.map(card).join("") : "");
   } catch {
     container.innerHTML = `<p class="notice">Downloads could not be loaded right now.</p>`;
@@ -4102,7 +4102,7 @@ function localBlastGenomeOptions() {
       ${Object.entries(LOCAL_BLAST_DBS).map(([id, label]) => `<option value="${id}"${id === "d-discoideum-ax4" ? " selected" : ""}>${label}</option>`).join("")}
       <option value="all">All species</option>
     </optgroup>
-    <optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">
+    <optgroup label="D. discoideum wild isolates (Holland*, Ahmed* et al. 2025)">
       ${Object.entries(WILD_ISOLATES).map(([id, label]) => `<option value="${id}">${label}</option>`).join("")}
     </optgroup>`;
 }
@@ -4241,7 +4241,7 @@ const LOCAL_BLAST_DBS = {
   "dc-cf3b": "D. citrinum Cf3b",
 };
 
-// Wild isolates from Ahmed et al. 2025 (PNAS, doi:10.1073/pnas.2520843122):
+// Wild isolates from Holland*, Ahmed* et al. 2025 (PNAS, doi:10.1073/pnas.2520843122):
 // the conspecific D. discoideum strains ONLY — the "Natural variation" panel.
 // Kept separate from the comparative set above (which compares species, not
 // conspecific strains). The more distant cf. discoideum M4B/S6B and the 2nd
@@ -4444,14 +4444,14 @@ const browserOrganisms = [
     gffURL: "/assets/genomes/P_violaceum_browser.gff",
     locus: "AJWJ01000001.1:1-200000"
   },
-  // Ahmed et al. 2025 (PNAS) — new species reps
+  // Holland*, Ahmed* et al. 2025 (PNAS) — new species reps
   { id: "d-citrinum", label: "D. citrinum GS8b", assembly: "GCA_054859325.1", group: "species",
     fastaURL: "/assets/genomes/D_citrinum_GS8b_browser.fna", indexURL: "/assets/genomes/D_citrinum_GS8b_browser.fna.fai",
     gffURL: "/assets/genomes/D_citrinum_GS8b_browser.gff", locus: "JBTAPL010000001.1:1-200000" },
   { id: "d-dimigraforme", label: "D. dimigraforme Ar5b", assembly: "GCA_054859025.1", group: "species",
     fastaURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna", indexURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna.fai",
     gffURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.gff", locus: "JBTAPM010000002.1:1-200000" },
-  // Ahmed et al. 2025 — more distant cf. discoideum + the 2nd D. citrinum:
+  // Holland*, Ahmed* et al. 2025 — more distant cf. discoideum + the 2nd D. citrinum:
   // species-level comparisons, so grouped with the comparative reps above.
   { id: "dd-m4b", label: "D. cf. discoideum M4B", assembly: "GCA_054859205.1", group: "species",
     fastaURL: "/assets/genomes/Dd_M4B_browser.fna", indexURL: "/assets/genomes/Dd_M4B_browser.fna.fai",
@@ -4462,7 +4462,7 @@ const browserOrganisms = [
   { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "species",
     fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
     gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "JBTAPK010000002.1:1-200000" },
-  // Ahmed et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
+  // Holland*, Ahmed* et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
   { id: "dd-ax2-214", label: "D. discoideum AX2-214", assembly: "GCA_054883475.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_AX2-214_browser.fna", indexURL: "/assets/genomes/Dd_AX2-214_browser.fna.fai",
     gffURL: "/assets/genomes/Dd_AX2-214_browser.gff", locus: "CM142508.1:1-200000" },
@@ -4523,14 +4523,14 @@ function renderGenomeBrowser() {
   const isolates = browserOrganisms.filter((o) => o.group === "isolate");
   const options =
     `<optgroup label="Comparative species">${species.map(opt).join("")}</optgroup>` +
-    `<optgroup label="D. discoideum wild isolates (Ahmed et al. 2025)">${isolates.map(opt).join("")}</optgroup>`;
+    `<optgroup label="D. discoideum wild isolates (Holland*, Ahmed* et al. 2025)">${isolates.map(opt).join("")}</optgroup>`;
   return `
     <article class="record-card research-card">
       <header class="record-header">
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Genome browser</h2>
-          <p>Interactive genome browser for the sequenced dictyostelid species and a panel of <em>D. discoideum</em> wild isolates (Ahmed et al. 2025). Powered by IGV.js.</p>
+          <p>Interactive genome browser for the sequenced dictyostelid species and a panel of <em>D. discoideum</em> wild isolates (Holland*, Ahmed* et al. <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">2025, PNAS</a>). Powered by IGV.js.</p>
         </div>
       </header>
       <div class="record-body">
@@ -8484,7 +8484,7 @@ ${m.doi ? `  doi     = {${m.doi}},\n` : ""}  url     = {${url}},
     <h3 style="margin-top:18px">BibTeX</h3>
     <textarea readonly aria-label="BibTeX citation (click to select)" rows="9" onclick="this.select()" style="width:100%;font-family:ui-monospace,Menlo,monospace;font-size:0.8125rem;${FIELD};resize:vertical">${escapeHtml(bibtex)}</textarea>
     <h3 style="margin-top:18px">Citing the data sources</h3>
-    <p style="font-size:0.9375rem">dictyBase aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. The <em>D. discoideum</em> wild-isolate genomes (and the <em>D. citrinum</em> / <em>D. dimigraforme</em> assemblies) are from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> (CC BY 4.0). Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
+    <p style="font-size:0.9375rem">dictyBase aggregates and re-presents data from dictyBase (Basu et al. 2015), UniProt, NCBI, EBI, OMA, RCSB, and KEGG. The <em>D. discoideum</em> wild-isolate genomes (and the <em>D. citrinum</em> / <em>D. dimigraforme</em> assemblies) are from Holland*, Ahmed* et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> (CC BY 4.0; * equal contribution). Please also cite the primary source relevant to the data you used — each gene record links them. ${escapeHtml(m.license || "")}</p>`;
 }
 
 async function loadDataStatus() {
@@ -8770,15 +8770,15 @@ async function checkSynteny(gene, data, out) {
   btn.disabled = false; btn.textContent = "Re-check synteny";
 }
 
-// Natural variation: amino-acid differences in this protein across the Ahmed
-// et al. 2025 wild isolates (tblastn vs each isolate assembly). On-demand.
+// Natural variation: amino-acid differences in this protein across the Holland*,
+// Ahmed* et al. 2025 wild isolates (tblastn vs each isolate assembly). On-demand.
 function loadVariation(gene) {
   const el = document.querySelector("[data-variation]");
   if (!el) return;
   const ddb = gene.veupath || gene.ddb || "";
   if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
   el.innerHTML = `
-    <h3>Natural variation <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— across wild isolates (Ahmed et al. 2025)</span></h3>
+    <h3>Natural variation <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— across wild isolates (Holland*, Ahmed* et al. <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">2025, PNAS</a>)</span></h3>
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Compare this protein across the sequenced wild <em>D. discoideum</em> isolates to see how polymorphic it is. Runs on demand.</p>
     <button type="button" id="variation-run">Show variation across isolates</button>
     <div data-variation-results style="margin-top:12px"></div>`;

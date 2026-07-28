@@ -820,7 +820,7 @@ BLAST_DBS = {
     "h-pallidum-pn500": "H. pallidum PN500",
     "h-pallidum-new": "H. pallidum (2026)",
     "p-violaceum": "P. violaceum",
-    # Ahmed et al. 2025 (PNAS) — comparative reps (join the cross-species set).
+    # Holland*, Ahmed* et al. 2025 (PNAS) — comparative reps (join the cross-species set).
     # Both D. citrinum strains sit here; M4B/S6B are "cf. discoideum" (too distant
     # to be conspecific), so they belong with the other species, not Natural variation.
     "d-citrinum": "D. citrinum GS8b",
@@ -828,7 +828,7 @@ BLAST_DBS = {
     "dd-m4b": "D. cf. discoideum M4B",
     "dd-s6b": "D. cf. discoideum S6B",
     "dc-cf3b": "D. citrinum Cf3b",
-    # Ahmed et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
+    # Holland*, Ahmed* et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
     "dd-ax2-214": "D. discoideum AX2-214",
     "dd-cr116c": "D. discoideum CR116C",
     "dd-ot3a": "D. discoideum OT3A",
@@ -1587,7 +1587,7 @@ def gene_neighborhood(ddb, k=5):
 
 
 def run_variation(ddb):
-    """Amino-acid variation of a gene's protein across the Ahmed et al. 2025 wild
+    """Amino-acid variation of a gene's protein across the Holland*, Ahmed* et al. 2025 wild
     isolates: tblastn the reference protein vs each isolate assembly, compare the
     best HSP to the query, and report identity + substitutions. (code, payload)."""
     ddb = (ddb or "").strip().upper()
@@ -3767,7 +3767,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             {"label": "Phenotypes", "source": "dictyBase mutant-strain curation",
              "license": "CC BY-NC 4.0", "url": "https://dictybase.dev",
              "records": cnt("phenotypes.json"), "updated": updated("phenotypes.json")},
-            {"label": "Genome assemblies", "source": "NCBI Datasets; wild isolates Ahmed et al. 2025 (PNAS)",
+            {"label": "Genome assemblies", "source": "NCBI Datasets; wild isolates Holland*, Ahmed* et al. 2025 (PNAS)",
              "license": "CC BY 4.0", "url": "https://www.ncbi.nlm.nih.gov/datasets/",
              "records": cnt("downloads_manifest.json"), "updated": updated("downloads_manifest.json")},
             {"label": "Protein IDs & cross-references", "source": "UniProt",

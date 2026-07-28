@@ -8,10 +8,12 @@ recognition genes in Dictyostelium", PNAS 2025, doi:10.1073/pnas.2520843122
 under NCBI BioProject PRJNA1300491. We mirror the publicly released subset.
 
 Two roles (see app.js / serve.py wiring):
-  * "species"  — new species reps that JOIN the cross-species comparative set.
-  * "isolate"  — D. discoideum (and a 2nd D. citrinum) wild isolates, kept in a
-                 SEPARATE panel: individually BLAST-able / browsable / downloadable
-                 but NOT part of the cross-species comparison or the "all" search.
+  * "species"  — comparative reps that JOIN the cross-species set: the new species
+                 (D. citrinum GS8b, D. dimigraforme), plus the more distant
+                 cf. discoideum M4B/S6B and the 2nd D. citrinum (Cf3b).
+  * "isolate"  — conspecific D. discoideum wild isolates (AX2-214, CR116C, OT3A),
+                 the "Natural variation" panel: individually BLAST-able / browsable
+                 / downloadable but NOT part of the cross-species comparison.
 
 For each accession we produce, in assets/genomes/ (gitignored, like the other
 genome data), the same trio of files the existing genomes use:
@@ -42,16 +44,17 @@ DL = "https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/{acc}/download?i
 
 # accession, output Name (filename stem), display label, role
 GENOMES_TABLE = [
-    # New species reps -> comparative / cross-species set
+    # Comparative reps -> cross-species set. Both citrinum strains here; M4B/S6B
+    # are "cf. discoideum" (too distant to be conspecific), so species-level too.
     ("GCA_054859325.1", "D_citrinum_GS8b",     "D. citrinum GS8b",       "species"),
     ("GCA_054859025.1", "D_dimigraforme_Ar5b", "D. dimigraforme Ar5b",   "species"),
-    # D. discoideum (+ one cf. discoideum / 2nd citrinum) wild isolates -> isolate panel
+    ("GCA_054859205.1", "Dd_M4B",     "D. cf. discoideum M4B",  "species"),
+    ("GCA_054859235.1", "Dd_S6B",     "D. cf. discoideum S6B",  "species"),
+    ("GCA_054859145.1", "D_citrinum_Cf3b", "D. citrinum Cf3b",  "species"),
+    # Conspecific D. discoideum wild isolates -> "Natural variation" panel
     ("GCA_054883475.1", "Dd_AX2-214", "D. discoideum AX2-214",  "isolate"),
     ("GCA_054859385.1", "Dd_CR116C",  "D. discoideum CR116C",   "isolate"),
     ("GCA_054859355.1", "Dd_OT3A",    "D. discoideum OT3A",     "isolate"),
-    ("GCA_054859205.1", "Dd_M4B",     "D. cf. discoideum M4B",  "isolate"),
-    ("GCA_054859235.1", "Dd_S6B",     "D. cf. discoideum S6B",  "isolate"),
-    ("GCA_054859145.1", "D_citrinum_Cf3b", "D. citrinum Cf3b",  "isolate"),
 ]
 
 

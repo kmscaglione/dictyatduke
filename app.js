@@ -3616,7 +3616,7 @@ async function loadDownloads() {
     container.innerHTML =
       groupHead("Sequenced dictyostelid species") + species.map(card).join("") +
       (isolates.length ? groupHead("D. discoideum wild isolates") +
-        `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-4px 0 12px">Chromosome- to scaffold-level assemblies of wild <em>D. discoideum</em> isolates (and one additional <em>D. citrinum</em>) from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> — released under CC BY 4.0.</p>` +
+        `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-4px 0 12px">Chromosome- to scaffold-level assemblies of conspecific wild <em>D. discoideum</em> isolates from Ahmed et al. 2025, <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">PNAS</a> — released under CC BY 4.0.</p>` +
         isolates.map(card).join("") : "");
   } catch {
     container.innerHTML = `<p class="notice">Downloads could not be loaded right now.</p>`;
@@ -4236,19 +4236,20 @@ const LOCAL_BLAST_DBS = {
   "p-violaceum": "P. violaceum",
   "d-citrinum": "D. citrinum GS8b",
   "d-dimigraforme": "D. dimigraforme Ar5b",
+  "dd-m4b": "D. cf. discoideum M4B",
+  "dd-s6b": "D. cf. discoideum S6B",
+  "dc-cf3b": "D. citrinum Cf3b",
 };
 
 // Wild isolates from Ahmed et al. 2025 (PNAS, doi:10.1073/pnas.2520843122):
-// conspecific D. discoideum strains plus a 2nd D. citrinum. Kept separate from
-// the comparative set above — individually BLAST-able but NOT part of the
-// cross-species comparison (which compares species, not strains).
+// the conspecific D. discoideum strains ONLY — the "Natural variation" panel.
+// Kept separate from the comparative set above (which compares species, not
+// conspecific strains). The more distant cf. discoideum M4B/S6B and the 2nd
+// D. citrinum (Cf3b) are species-level comparisons and live in LOCAL_BLAST_DBS.
 const WILD_ISOLATES = {
   "dd-ax2-214": "D. discoideum AX2-214",
   "dd-cr116c": "D. discoideum CR116C",
   "dd-ot3a": "D. discoideum OT3A",
-  "dd-m4b": "D. cf. discoideum M4B",
-  "dd-s6b": "D. cf. discoideum S6B",
-  "dc-cf3b": "D. citrinum Cf3b",
 };
 
 // Submit a heavy BLAST/conservation job (server runs it on a bounded worker
@@ -4450,7 +4451,18 @@ const browserOrganisms = [
   { id: "d-dimigraforme", label: "D. dimigraforme Ar5b", assembly: "GCA_054859025.1", group: "species",
     fastaURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna", indexURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna.fai",
     gffURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.gff", locus: "JBTAPM010000002.1:1-200000" },
-  // Ahmed et al. 2025 — D. discoideum (+ 2nd citrinum) wild isolates
+  // Ahmed et al. 2025 — more distant cf. discoideum + the 2nd D. citrinum:
+  // species-level comparisons, so grouped with the comparative reps above.
+  { id: "dd-m4b", label: "D. cf. discoideum M4B", assembly: "GCA_054859205.1", group: "species",
+    fastaURL: "/assets/genomes/Dd_M4B_browser.fna", indexURL: "/assets/genomes/Dd_M4B_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_M4B_browser.gff", locus: "JBTAPH010000036.1:1-200000" },
+  { id: "dd-s6b", label: "D. cf. discoideum S6B", assembly: "GCA_054859235.1", group: "species",
+    fastaURL: "/assets/genomes/Dd_S6B_browser.fna", indexURL: "/assets/genomes/Dd_S6B_browser.fna.fai",
+    gffURL: "/assets/genomes/Dd_S6B_browser.gff", locus: "JBTAPI010000014.1:1-200000" },
+  { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "species",
+    fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
+    gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "JBTAPK010000002.1:1-200000" },
+  // Ahmed et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
   { id: "dd-ax2-214", label: "D. discoideum AX2-214", assembly: "GCA_054883475.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_AX2-214_browser.fna", indexURL: "/assets/genomes/Dd_AX2-214_browser.fna.fai",
     gffURL: "/assets/genomes/Dd_AX2-214_browser.gff", locus: "CM142508.1:1-200000" },
@@ -4459,16 +4471,7 @@ const browserOrganisms = [
     gffURL: "/assets/genomes/Dd_CR116C_browser.gff", locus: "JBTAPF010000001.1:1-200000" },
   { id: "dd-ot3a", label: "D. discoideum OT3A", assembly: "GCA_054859355.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_OT3A_browser.fna", indexURL: "/assets/genomes/Dd_OT3A_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_OT3A_browser.gff", locus: "JBTAPG010000033.1:1-200000" },
-  { id: "dd-m4b", label: "D. cf. discoideum M4B", assembly: "GCA_054859205.1", group: "isolate",
-    fastaURL: "/assets/genomes/Dd_M4B_browser.fna", indexURL: "/assets/genomes/Dd_M4B_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_M4B_browser.gff", locus: "JBTAPH010000036.1:1-200000" },
-  { id: "dd-s6b", label: "D. cf. discoideum S6B", assembly: "GCA_054859235.1", group: "isolate",
-    fastaURL: "/assets/genomes/Dd_S6B_browser.fna", indexURL: "/assets/genomes/Dd_S6B_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_S6B_browser.gff", locus: "JBTAPI010000014.1:1-200000" },
-  { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "isolate",
-    fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
-    gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "JBTAPK010000002.1:1-200000" }
+    gffURL: "/assets/genomes/Dd_OT3A_browser.gff", locus: "JBTAPG010000033.1:1-200000" }
 ];
 
 let igvBrowser = null;

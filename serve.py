@@ -820,22 +820,26 @@ BLAST_DBS = {
     "h-pallidum-pn500": "H. pallidum PN500",
     "h-pallidum-new": "H. pallidum (2026)",
     "p-violaceum": "P. violaceum",
-    # Ahmed et al. 2025 (PNAS) — new species reps (join the comparative set)
+    # Ahmed et al. 2025 (PNAS) — comparative reps (join the cross-species set).
+    # Both D. citrinum strains sit here; M4B/S6B are "cf. discoideum" (too distant
+    # to be conspecific), so they belong with the other species, not Natural variation.
     "d-citrinum": "D. citrinum GS8b",
     "d-dimigraforme": "D. dimigraforme Ar5b",
-    # Ahmed et al. 2025 — wild isolates (individually searchable, NOT in "all")
-    "dd-ax2-214": "D. discoideum AX2-214",
-    "dd-cr116c": "D. discoideum CR116C",
-    "dd-ot3a": "D. discoideum OT3A",
     "dd-m4b": "D. cf. discoideum M4B",
     "dd-s6b": "D. cf. discoideum S6B",
     "dc-cf3b": "D. citrinum Cf3b",
+    # Ahmed et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
+    "dd-ax2-214": "D. discoideum AX2-214",
+    "dd-cr116c": "D. discoideum CR116C",
+    "dd-ot3a": "D. discoideum OT3A",
 }
-# Wild isolates from Ahmed et al. 2025: conspecific D. discoideum strains (plus a
-# 2nd D. citrinum). Individually BLAST-able/browsable, but excluded from the
-# cross-species "all" search so it stays one-assembly-per-species.
-BLAST_ISOLATE_DBS = {"dd-ax2-214", "dd-cr116c", "dd-ot3a", "dd-m4b", "dd-s6b", "dc-cf3b"}
-# The cross-species comparative set = everything except the wild isolates.
+# "Natural variation" = the conspecific D. discoideum wild isolates ONLY. These
+# drive the per-gene amino-acid variation view and are excluded from the
+# cross-species comparison/conservation (where conspecific strains would skew
+# per-residue conservation). Everything else — including both D. citrinum strains
+# and the more distant cf. discoideum M4B/S6B — is a comparative species rep.
+BLAST_ISOLATE_DBS = {"dd-ax2-214", "dd-cr116c", "dd-ot3a"}
+# "Across the sequenced dictyostelids" = every genome except those wild isolates.
 BLAST_SPECIES_DBS = [d for d in BLAST_DBS if d not in BLAST_ISOLATE_DBS]
 
 

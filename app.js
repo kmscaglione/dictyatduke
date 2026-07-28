@@ -4447,31 +4447,31 @@ const browserOrganisms = [
   // Holland*, Ahmed* et al. 2025 (PNAS) — new species reps
   { id: "d-citrinum", label: "D. citrinum GS8b", assembly: "GCA_054859325.1", group: "species",
     fastaURL: "/assets/genomes/D_citrinum_GS8b_browser.fna", indexURL: "/assets/genomes/D_citrinum_GS8b_browser.fna.fai",
-    gffURL: "/assets/genomes/D_citrinum_GS8b_browser.gff", locus: "JBTAPL010000001.1:1-200000" },
+    gffURL: "/assets/genomes/D_citrinum_GS8b_browser.gff", locus: "GS8b_v4_f1_contig_102_p7:1-200000" },
   { id: "d-dimigraforme", label: "D. dimigraforme Ar5b", assembly: "GCA_054859025.1", group: "species",
     fastaURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna", indexURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.fna.fai",
-    gffURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.gff", locus: "JBTAPM010000002.1:1-200000" },
+    gffURL: "/assets/genomes/D_dimigraforme_Ar5b_browser.gff", locus: "AR5B_contig_102_p9:1-200000" },
   // Holland*, Ahmed* et al. 2025 — more distant cf. discoideum + the 2nd D. citrinum:
   // species-level comparisons, so grouped with the comparative reps above.
   { id: "dd-m4b", label: "D. cf. discoideum M4B", assembly: "GCA_054859205.1", group: "species",
     fastaURL: "/assets/genomes/Dd_M4B_browser.fna", indexURL: "/assets/genomes/Dd_M4B_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_M4B_browser.gff", locus: "JBTAPH010000036.1:1-200000" },
+    gffURL: "/assets/genomes/Dd_M4B_browser.gff", locus: "M4B_v4_f1_contig_51_p7:1-200000" },
   { id: "dd-s6b", label: "D. cf. discoideum S6B", assembly: "GCA_054859235.1", group: "species",
     fastaURL: "/assets/genomes/Dd_S6B_browser.fna", indexURL: "/assets/genomes/Dd_S6B_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_S6B_browser.gff", locus: "JBTAPI010000014.1:1-200000" },
+    gffURL: "/assets/genomes/Dd_S6B_browser.gff", locus: "S6B_v1_f1_contig_206_p11:1-200000" },
   { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "species",
     fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
-    gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "JBTAPK010000002.1:1-200000" },
+    gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "CF58_contig_100_p7:1-200000" },
   // Holland*, Ahmed* et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
   { id: "dd-ax2-214", label: "D. discoideum AX2-214", assembly: "GCA_054883475.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_AX2-214_browser.fna", indexURL: "/assets/genomes/Dd_AX2-214_browser.fna.fai",
     gffURL: "/assets/genomes/Dd_AX2-214_browser.gff", locus: "CM142508.1:1-200000" },
   { id: "dd-cr116c", label: "D. discoideum CR116C", assembly: "GCA_054859385.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_CR116C_browser.fna", indexURL: "/assets/genomes/Dd_CR116C_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_CR116C_browser.gff", locus: "JBTAPF010000001.1:1-200000" },
+    gffURL: "/assets/genomes/Dd_CR116C_browser.gff", locus: "CRII6C_contig_120_p10:1-200000" },
   { id: "dd-ot3a", label: "D. discoideum OT3A", assembly: "GCA_054859355.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_OT3A_browser.fna", indexURL: "/assets/genomes/Dd_OT3A_browser.fna.fai",
-    gffURL: "/assets/genomes/Dd_OT3A_browser.gff", locus: "JBTAPG010000033.1:1-200000" }
+    gffURL: "/assets/genomes/Dd_OT3A_browser.gff", locus: "OT3A_contig_227_p9:1-200000" }
 ];
 
 let igvBrowser = null;

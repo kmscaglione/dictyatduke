@@ -8944,9 +8944,10 @@ async function runComparative(gene) {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ program: "tblastn", database: id, query: fasta }),
       }).then((r) => r.json()));
-      if (!data.hits || !data.hits.length) return { label, hit: null };
-      return { label, hit: data.hits.reduce((a, b) => (b.bitscore > a.bitscore ? b : a)) };
-    } catch { return { label, hit: null }; }
+      if (!data.hits || !data.hits.length) return { id, label, hit: null, hits: [] };
+      const best = data.hits.reduce((a, b) => (b.bitscore > a.bitscore ? b : a));
+      return { id, label, hit: best, hits: data.hits };
+    } catch { return { id, label, hit: null, hits: [] }; }
   }));
   if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
   out.innerHTML = `
@@ -8973,8 +8974,60 @@ async function runComparative(gene) {
         }).join("")}
       </tbody>
     </table></div>
-    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3). The <em>D. discoideum</em> AX4 row is this gene's own locus.</p>`;
+    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3). The <em>D. discoideum</em> AX4 row is this gene's own locus.</p>
+    ${results.some((r) => r.hits && r.hits.length) ? `
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" id="comp-dl-tsv" style="font-size:0.8125rem;padding:6px 10px;border:1px solid var(--line,#d7dee0);border-radius:6px;background:var(--surface,#fff);cursor:pointer">Download all hits (TSV)</button>
+        <button type="button" id="comp-dl-fasta" style="font-size:0.8125rem;padding:6px 10px;border:1px solid var(--line,#d7dee0);border-radius:6px;background:var(--surface,#fff);cursor:pointer">Download hit proteins (FASTA)</button>
+      </div>
+      <p style="font-size:0.7rem;color:var(--muted,#9ca3af);margin-top:4px">Downloads include every tblastn HSP per genome (the table shows only the best per species). FASTA is the translated hit protein, with this gene's AX4 protein as the first record for alignment.</p>` : ""}`;
+  const anyHits = results.some((r) => r.hits && r.hits.length);
+  if (anyHits) {
+    const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const base = `${String(gene.symbol || ddb).replace(/[^\w.-]+/g, "_")}_tblastn_dictyostelids_${stamp}`;
+    const tsvBtn = document.getElementById("comp-dl-tsv");
+    const faBtn = document.getElementById("comp-dl-fasta");
+    if (tsvBtn) tsvBtn.addEventListener("click", () => basketDownload(comparativeTSV(results, gene, ddb), `${base}.tsv`, "text/tab-separated-values"));
+    if (faBtn) faBtn.addEventListener("click", () => basketDownload(comparativeFASTA(results, gene, ddb, fasta), `${base}_hits.fasta`, "text/plain"));
+  }
   reset("Re-run comparison");
+}
+
+// Build a TSV of every tblastn HSP behind the comparative table (all species).
+function comparativeTSV(results, gene, ddb) {
+  const cols = ["species", "database", "subject", "sstart", "send", "strand",
+    "pct_identity", "aln_len", "evalue", "bitscore", "qstart", "qend", "dicty_gene"];
+  const rows = [cols.join("\t")];
+  for (const r of results) {
+    for (const h of (r.hits || [])) {
+      const strand = Number(h.sstart) <= Number(h.send) ? "+" : "-";
+      const g = h.gene ? `${h.gene.symbol} (${h.gene.ddb})` : "";
+      const pid = typeof h.identity === "number" ? h.identity.toFixed(1) : h.identity;
+      rows.push([r.label, r.id, h.subject, h.sstart, h.send, strand,
+        pid, h.length, h.evalue, h.bitscore, h.qstart, h.qend, g].join("\t"));
+    }
+  }
+  return `# tblastn of ${gene.symbol || ddb} (${ddb}) protein vs the sequenced dictyostelids\n`
+    + `# all HSPs, E < 1e-3; best hit per species is shown on the gene page. Source: dictyBase\n`
+    + rows.join("\n") + "\n";
+}
+
+// Build a FASTA of the translated hit proteins, query first (for easy alignment).
+function comparativeFASTA(results, gene, ddb, queryFasta) {
+  const wrap = (s) => (s.match(/.{1,60}/g) || []).join("\n");
+  const recs = [];
+  const qseq = String(queryFasta || "").split("\n").slice(1).join("").replace(/[^A-Za-z*]/g, "");
+  if (qseq) recs.push(`>query|${gene.symbol || ddb}|${ddb} D. discoideum AX4\n${wrap(qseq)}`);
+  for (const r of results) {
+    for (const h of (r.hits || [])) {
+      const seq = String(h.sseq || "").replace(/-/g, "");
+      if (!seq) continue;
+      const label = String(r.label).replace(/\s+/g, "_");
+      const g = h.gene ? ` ${h.gene.symbol}` : "";
+      recs.push(`>${label}|${h.subject}:${h.sstart}-${h.send}|pident=${h.identity}|evalue=${h.evalue}${g}\n${wrap(seq)}`);
+    }
+  }
+  return recs.join("\n") + "\n";
 }
 
 // Gene model (exon/intron) diagram from assets/gene_models.json.

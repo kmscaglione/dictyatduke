@@ -265,8 +265,12 @@ def build_downloads_manifest():
 # go_annotations.json  <-  GO Consortium GAF (external download, --go only)
 # { ddb: [[goId, aspect(F/P/C), evidenceCode, pmid], ...] }
 # ---------------------------------------------------------------------------
+# NOTE: go_annotations.json is now normally DERIVED from gene_annotations.json by
+# scripts/merge_curation.py, so the two never drift. This --go path is a legacy
+# standalone rebuild; if you use it, keep the URL current. GO renamed the per-
+# species GAFs: the old `dictybase.gaf.gz` alias is FROZEN — use DICDI-mod.gaf.gz.
 # https (http 301-redirects) + a real UA (the GOC CDN 403s the default urllib UA).
-GAF_URL = "https://current.geneontology.org/annotations/dictybase.gaf.gz"
+GAF_URL = "https://current.geneontology.org/annotations/gaf/DICDI-mod.gaf.gz"
 GAF_UA = "Mozilla/5.0 (compatible; dictyBase-data-sync/1.0; +https://dicty.labs.duke.edu)"
 EXP = {"EXP", "IDA", "IPI", "IMP", "IGI", "IEP", "HTP", "HDA", "HMP", "HGI", "HEP"}
 

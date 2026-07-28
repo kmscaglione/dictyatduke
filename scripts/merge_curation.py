@@ -12,14 +12,52 @@ Usage:
 
 Standard library only.
 """
-import csv, json, os, sys
+import csv, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 IMPORTED = os.path.join(ASSETS, "annotations_imported.json")
 CURATION = os.path.join(ROOT, "curation", "curation.tsv")
 OUT = os.path.join(ASSETS, "gene_annotations.json")
+GO_INDEX = os.path.join(ASSETS, "go_annotations.json")
 ASPECTS = {"P", "F", "C"}
+_PMID_RE = re.compile(r"^\d+$")
+# experimental evidence first, then IEA last (matches the old build_data ordering)
+_EXP = {"IDA", "IPI", "IMP", "IGI", "IEP", "HTP", "HDA", "HMP", "HGI", "HEP"}
+
+
+def _write_go_index(genes):
+    """Derive the flat GO index (go_annotations.json) from the canonical
+    gene_annotations map, so the two can never drift. Format per gene:
+    [[go_id, aspect, evidence, pmid], ...], deduped by (go, aspect, ev, pmid).
+    This is the file the GO-term pages and the inverse index read; the canonical
+    per-annotation total lives in gene_annotations.json (every GAF row)."""
+    out = {}
+    for ddb, rec in genes.items():
+        seen, lst = set(), []
+        go = rec.get("go", {})
+        for aspect in ("P", "F", "C"):
+            for e in go.get(aspect, []):
+                go_id, ev, ref = e[0], e[1], (e[3] if len(e) > 3 else "")
+                pmid = ""
+                for r in str(ref).split("|"):
+                    if r.startswith("PMID:"):
+                        cand = r.split(":", 1)[1]
+                        pmid = cand if _PMID_RE.match(cand) else ""
+                        break
+                key = (go_id, aspect, ev, pmid)
+                if key in seen:
+                    continue
+                seen.add(key)
+                lst.append([go_id, aspect, ev, pmid])
+        if lst:
+            lst.sort(key=lambda a: (0 if a[2] in _EXP else (2 if a[2] == "IEA" else 1), a[1]))
+            out[ddb] = lst
+    with open(GO_INDEX, "w", encoding="utf-8") as fh:
+        json.dump(out, fh, separators=(",", ":"), ensure_ascii=False)
+    total = sum(len(v) for v in out.values())
+    print(f"  wrote go_annotations.json (derived index): {len(out)} genes, "
+          f"{total} distinct GO annotations")
 
 
 def _blank_gene(symbol=""):
@@ -91,8 +129,10 @@ def merge():
 
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(genes, fh, separators=(",", ":"), ensure_ascii=False)
-    print(f"  wrote gene_annotations.json: {len(genes)} genes "
+    total_go = sum(len(rec.get("go", {}).get(a, [])) for rec in genes.values() for a in ("P", "F", "C"))
+    print(f"  wrote gene_annotations.json: {len(genes)} genes, {total_go} GO annotations "
           f"({os.path.getsize(OUT)/1024:.0f} KB)")
+    _write_go_index(genes)
     print(f"  your curation: {sum(added.values())} entries across {len(touched)} genes "
           f"(go={added['go']}, literature={added['literature']}, summary={added['summary']})")
 

@@ -248,6 +248,19 @@ def _load_gene_annotations():
     return _GENE_ANNOT_CACHE["genes"]
 
 
+def _go_annotation_total():
+    """Canonical GO annotation count: every GAF row in gene_annotations.json.
+    (go_annotations.json is a deduped index and is intentionally smaller.) Cached
+    with the annotation file's mtime so /data and the API stay in sync with it."""
+    genes = _load_gene_annotations()
+    mtime = _GENE_ANNOT_CACHE.get("mtime")
+    if _GENE_ANNOT_CACHE.get("go_total_mtime") != mtime:
+        _GENE_ANNOT_CACHE["go_total"] = sum(
+            len(rec.get("go", {}).get(a, [])) for rec in genes.values() for a in ("P", "F", "C"))
+        _GENE_ANNOT_CACHE["go_total_mtime"] = mtime
+    return _GENE_ANNOT_CACHE.get("go_total", 0)
+
+
 def _merge_curated_go(ddb, annot):
     """Fold a gene's curator-added GO annotations into its served annotations so
     the record shows them alongside imported ones. Curated entries carry a real
@@ -1726,13 +1739,17 @@ def bulk_tsv(dataset):
             out.append("\t".join(str(x) for x in [ddb, r["symbol"], r["name"],
                        r["location"], r["ncbiGene"], _uniprot_for(ddb)]))
     elif dataset == "go":
-        out.append("ddb_g\tsymbol\tgo_id\taspect\tevidence\tpmid")
-        annots = _load_json("go_annotations.json")
-        for ddb, entries in annots.items():
-            sym = rows.get(ddb, {}).get("symbol", "")
-            for e in entries:
-                go, aspect, ev, pmid = (list(e) + ["", "", "", ""])[:4]
-                out.append("\t".join(str(x) for x in [ddb, sym, go, aspect, ev, pmid]))
+        # Every GO annotation (one row per GAF assertion) from the canonical file,
+        # so the row count matches the GO annotation total shown on /data.
+        out.append("ddb_g\tsymbol\tgo_id\taspect\tqualifier\tevidence\treference\tdate\tassigned_by")
+        for ddb, rec in _load_gene_annotations().items():
+            sym = rec.get("symbol") or rows.get(ddb, {}).get("symbol", "")
+            go = rec.get("go", {})
+            for aspect in ("P", "F", "C"):
+                for e in go.get(aspect, []):
+                    go_id, ev, qual, ref, date, by = (list(e) + [""] * 6)[:6]
+                    out.append("\t".join(str(x) for x in
+                               [ddb, sym, go_id, aspect, qual, ev, ref, date, by]))
     elif dataset == "phenotypes":
         out.append("ddb_g\tsymbol\tphenotype\tpmid")
         ph = _load_json("phenotypes.json")
@@ -3846,9 +3863,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             {"label": "Gene catalog", "source": "NCBI RefSeq — D. discoideum AX4",
              "license": "Public domain (NCBI)", "url": "https://www.ncbi.nlm.nih.gov/refseq/",
              "records": len(rows), "updated": updated("gene_index.json")},
-            {"label": "GO annotations", "source": "GO Consortium GAF",
+            {"label": "GO annotations", "source": "GO Consortium GAF (DICDI-mod)",
              "license": "CC BY 4.0", "url": "https://geneontology.org",
-             "records": cnt("go_annotations.json"), "updated": updated("go_annotations.json")},
+             "records": _go_annotation_total(), "updated": updated("gene_annotations.json")},
             {"label": "Phenotypes", "source": "dictyBase mutant-strain curation",
              "license": "CC BY-NC 4.0", "url": "https://dictybase.dev",
              "records": cnt("phenotypes.json"), "updated": updated("phenotypes.json")},

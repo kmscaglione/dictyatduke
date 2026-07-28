@@ -1586,10 +1586,45 @@ def gene_neighborhood(ddb, k=5):
     return 200, {"ddb": ddb, "chrom": chrom, "genes": genes}
 
 
+def _ax4_reciprocal(prot):
+    """Reciprocal ortholog check: the DDB_G id of the best AX4-proteome match for a
+    protein (blastp vs the d-discoideum-ax4-prot DB), or None. Used to tell a true
+    ortholog locus from a paralog: a strain locus whose best AX4 hit is *this* gene
+    is the ortholog; one that best-matches a different AX4 gene is a paralog."""
+    prot = (prot or "").strip()
+    if len(prot) < 20:
+        return None
+    binp = blast_bin("blastp")
+    db = BLAST_DB_DIR / "d-discoideum-ax4-prot"
+    if not binp or not list(db.parent.glob(db.name + "*.p*")):
+        return None
+    qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
+    try:
+        qf.write(">q\n" + prot + "\n")
+        qf.close()
+        cmd = [binp, "-query", qf.name, "-db", str(db),
+               "-outfmt", "6 sseqid bitscore", "-max_target_seqs", "1", "-evalue", "1e-5"]
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    except subprocess.TimeoutExpired:
+        return None
+    finally:
+        try:
+            os.unlink(qf.name)
+        except OSError:
+            pass
+    for line in proc.stdout.splitlines():
+        m = re.search(r"DDB_G\d+", line.split("\t")[0])
+        return m.group(0) if m else None
+    return None
+
+
 def run_variation(ddb):
-    """Amino-acid variation of a gene's protein across the Holland*, Ahmed* et al. 2025 wild
-    isolates: tblastn the reference protein vs each isolate assembly, compare the
-    best HSP to the query, and report identity + substitutions. (code, payload)."""
+    """Amino-acid variation of a gene's protein across the Holland*, Ahmed* et al.
+    2025 wild isolates. tblastn the reference protein vs each isolate assembly, then
+    pick the ortholog *by reciprocal best hit* (the strain locus whose own best AX4
+    match is this gene) rather than raw bitscore, so a paralog can't masquerade as
+    the ortholog. Reports identity + substitutions for the ortholog locus, and flags
+    paralogy so a family like tgrC1 isn't read as spurious variation. (code, payload)."""
     ddb = (ddb or "").strip().upper()
     if not re.match(r"^DDB_G\d+$", ddb):
         return 400, {"error": "bad or missing ddb"}
@@ -1600,6 +1635,8 @@ def run_variation(ddb):
     binpath = blast_bin("tblastn")
     if not binpath:
         return 503, {"error": "BLAST unavailable"}
+    recip_ok = bool(blast_bin("blastp") and
+                    list((BLAST_DB_DIR).glob("d-discoideum-ax4-prot*.p*")))
     qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
     isolates = []
     try:
@@ -1610,41 +1647,72 @@ def run_variation(ddb):
             if not (BLAST_DB_DIR / (db + ".nsq")).exists():
                 continue
             cmd = [binpath, "-query", qf.name, "-db", str(BLAST_DB_DIR / db),
-                   "-outfmt", "6 pident length qstart qend qseq sseq bitscore",
-                   "-max_target_seqs", "5", "-evalue", "1e-5"]
+                   "-outfmt", "6 sseqid pident length qstart qend sstart send qseq sseq bitscore",
+                   "-max_target_seqs", "6", "-evalue", "1e-5"]
             try:
                 proc = subprocess.run(cmd, capture_output=True, text=True, timeout=40)
             except subprocess.TimeoutExpired:
                 continue
-            best = None
+            # Best HSP per distinct subject locus (a paralog family has several).
+            by_locus = {}
             for line in proc.stdout.splitlines():
                 f = line.split("\t")
-                if len(f) < 7:
+                if len(f) < 10:
                     continue
-                bs = float(f[6])
-                if best is None or bs > best[6]:
-                    best = (float(f[0]), int(f[1]), int(f[2]), int(f[3]), f[4], f[5], bs)
-            if not best:
+                sid, bs = f[0], float(f[9])
+                cur = by_locus.get(sid)
+                if cur is None or bs > cur["bitscore"]:
+                    by_locus[sid] = {"subject": sid, "identity": float(f[1]),
+                                     "length": int(f[2]), "qstart": int(f[3]),
+                                     "qseq": f[7], "sseq": f[8], "bitscore": bs}
+            if not by_locus:
                 isolates.append({"id": db, "label": label, "found": False})
                 continue
-            pident, alnlen, qstart, _qend, qseq, sseq, _bs = best
+            loci = sorted(by_locus.values(), key=lambda h: -h["bitscore"])
+            best_bs = loci[0]["bitscore"]
+            # Reciprocal-check the top few loci to find the true ortholog.
+            ortholog, n_paralogs, para_gene = None, 0, None
+            if recip_ok:
+                for lc in loci[:3]:
+                    lc["rbh"] = _ax4_reciprocal(lc["sseq"].replace("-", ""))
+                    if lc["rbh"] == ddb and ortholog is None:
+                        ortholog = lc
+                    elif lc["rbh"] and lc["rbh"] != ddb and lc["bitscore"] >= 0.5 * best_bs:
+                        n_paralogs += 1
+                        para_gene = para_gene or lc["rbh"]
+            chosen = ortholog or loci[0]
+            if not recip_ok:
+                status = "unverified"
+            elif ortholog is not None:
+                status = "confirmed"
+            elif loci[0].get("rbh"):
+                status = "ambiguous"
+            else:
+                status = "unverified"
             subs = []
-            p = qstart
-            for a, b in zip(qseq, sseq):
+            p = chosen["qstart"]
+            for a, b in zip(chosen["qseq"], chosen["sseq"]):
                 if a != "-":
                     if b != "-" and b.upper() != a.upper() and b.upper() != "X":
                         subs.append({"pos": p, "ref": a.upper(), "alt": b.upper()})
                     p += 1
-            isolates.append({"id": db, "label": label, "found": True,
-                             "identity": round(pident, 1),
-                             "coverage": round(100.0 * alnlen / L, 1),
-                             "n_subs": len(subs), "subs": subs[:80]})
+            row = {"id": db, "label": label, "found": True,
+                   "identity": round(chosen["identity"], 1),
+                   "coverage": round(100.0 * chosen["length"] / L, 1),
+                   "n_subs": len(subs), "subs": subs[:80],
+                   "ortholog_status": status, "n_paralogs": n_paralogs}
+            if status == "ambiguous" and loci[0].get("rbh"):
+                rg = gene_by_ddb(loci[0]["rbh"])
+                if rg:
+                    row["rbh_gene"] = rg
+            isolates.append(row)
     finally:
         try:
             os.unlink(qf.name)
         except OSError:
             pass
-    return 200, {"ddb": ddb, "length": L, "isolates": isolates}
+    return 200, {"ddb": ddb, "length": L, "isolates": isolates,
+                 "method": "reciprocal-best-hit" if recip_ok else "best-hit"}
 
 
 def bulk_tsv(dataset):

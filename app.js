@@ -8804,23 +8804,39 @@ async function runVariation(gene) {
   }
   if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
   const td = "padding:5px 8px";
+  const geneLink = (g) => `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}">${escapeHtml(g.symbol)}</a>`;
+  const orthoCell = (iso) => {
+    const para = iso.n_paralogs ? ` <span style="color:#b45309">· ${iso.n_paralogs} paralog${iso.n_paralogs > 1 ? "s" : ""}</span>` : "";
+    if (iso.ortholog_status === "confirmed") return `<span style="color:#047857">✓ reciprocal</span>${para}`;
+    if (iso.ortholog_status === "ambiguous") return `<span style="color:#b45309">⚠ matches ${iso.rbh_gene ? geneLink(iso.rbh_gene) : "a paralog"}</span>${para}`;
+    return `<span style="color:var(--muted,#6b7280)">best hit</span>${para}`;
+  };
+  const anyFlag = (data.isolates || []).some((i) => i.found && (i.ortholog_status === "ambiguous" || i.n_paralogs));
   const rows = (data.isolates || []).map((iso) => {
-    if (!iso.found) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(iso.label)}</em></td><td style="${td}" colspan="3"><span style="color:var(--muted,#6b7280)">no homolog detected</span></td></tr>`;
+    if (!iso.found) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(iso.label)}</em></td><td style="${td}" colspan="4"><span style="color:var(--muted,#6b7280)">no homolog detected</span></td></tr>`;
     const subs = (iso.subs || []).map((s) => `${s.ref}${s.pos}${s.alt}`).join(", ");
-    const subsCell = iso.n_subs === 0 ? '<span style="color:#047857">identical</span>'
+    const subsCell = iso.ortholog_status === "ambiguous"
+      ? '<span style="color:var(--muted,#9ca3af)">not scored (locus is a paralog)</span>'
+      : iso.n_subs === 0 ? '<span style="color:#047857">identical</span>'
       : `${iso.n_subs} aa${subs ? ` <span style="color:var(--muted,#6b7280);font-size:.92em">(${escapeHtml(subs)}${iso.n_subs > (iso.subs || []).length ? ", …" : ""})</span>` : ""}`;
     return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
       <td style="${td}"><em>${escapeHtml(iso.label)}</em></td>
+      <td style="${td}">${orthoCell(iso)}</td>
       <td style="${td}">${iso.identity}%</td>
       <td style="${td}">${iso.coverage}%</td>
       <td style="${td}">${subsCell}</td></tr>`;
   }).join("");
+  const flagBanner = anyFlag ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:.78rem;padding:8px 10px;border-radius:6px;margin:0 0 10px">This protein has paralogs in one or more strains. Rows marked <strong>⚠</strong> are strain loci that better match a different <em>D. discoideum</em> gene, so they are shown as paralogs, not allelic variation. This is what makes families like <em>tgrC1</em> tricky.</p>` : "";
+  const methodNote = data.method === "reciprocal-best-hit"
+    ? `Ortholog per strain is the <strong>reciprocal best hit</strong>: the tblastn locus whose own best match in the AX4 proteome is this gene. <span style="color:#047857">✓</span> = confirmed 1:1; <span style="color:#b45309">⚠</span> = the strain's closest locus is a paralog. Substitutions are amino-acid changes vs AX4; positions are AX4 residue numbers. A curated ortholog set will supersede this heuristic.`
+    : `Protein-level (tblastn of the AX4 protein vs each isolate assembly), reference = AX4. Reciprocal ortholog check unavailable on this server, so best-hit only. Positions are AX4 residue numbers.`;
   out.innerHTML = `
+    ${flagBanner}
     <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
       <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
-        <th style="${td}">Isolate</th><th style="${td}">% identity</th><th style="${td}">Coverage</th><th style="${td}">Substitutions</th>
+        <th style="${td}">Isolate</th><th style="${td}">Ortholog</th><th style="${td}">% identity</th><th style="${td}">Coverage</th><th style="${td}">Substitutions</th>
       </tr></thead><tbody>${rows}</tbody></table></div>
-    <p style="font-size:.7rem;color:var(--muted,#9ca3af);margin-top:6px">Protein-level (tblastn of the AX4 protein vs each isolate assembly), reference = AX4. Substitutions are amino-acid changes vs the reference; positions are AX4 residue numbers.</p>`;
+    <p style="font-size:.7rem;color:var(--muted,#9ca3af);margin-top:6px">${methodNote}</p>`;
   if (btn) { btn.disabled = false; btn.textContent = "Re-run"; }
 }
 
@@ -8961,9 +8977,13 @@ async function runComparative(gene) {
           if (!r.hit) return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="padding:6px 8px"><em>${escapeHtml(r.label)}</em></td><td style="padding:6px 8px" colspan="4"><span style="color:var(--muted,#6b7280)">no significant hit</span></td></tr>`;
           const h = r.hit;
           const loc = `${escapeHtml(h.subject)}:${Number(h.sstart).toLocaleString()}–${Number(h.send).toLocaleString()}`;
-          const cell = h.gene
+          const strongLoci = new Set((r.hits || []).filter((x) => x.bitscore >= 0.6 * h.bitscore).map((x) => x.subject));
+          const paraBadge = strongLoci.size > 1
+            ? ` <span title="${strongLoci.size} loci in this genome hit at similar strength — likely a paralog family, so the best hit may not be the ortholog" style="color:#b45309;font-size:.85em;white-space:nowrap">⚠ ${strongLoci.size} loci</span>`
+            : "";
+          const cell = (h.gene
             ? `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(h.gene.ddb)}" href="/gene/${encodeURIComponent(h.gene.symbol)}">${escapeHtml(h.gene.symbol)}</a> <span style="color:var(--muted,#6b7280)">${loc}</span>`
-            : loc;
+            : loc) + paraBadge;
           return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
             <td style="padding:6px 8px"><em>${escapeHtml(r.label)}</em></td>
             <td style="padding:6px 8px">${cell}</td>
@@ -8974,7 +8994,7 @@ async function runComparative(gene) {
         }).join("")}
       </tbody>
     </table></div>
-    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3). The <em>D. discoideum</em> AX4 row is this gene's own locus.</p>
+    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Best tblastn hit per genome (E &lt; 1e-3), sequence-similarity not curated orthology. The <em>D. discoideum</em> AX4 row is this gene's own locus. <span style="color:#b45309">⚠</span> marks genomes where several loci hit at similar strength (likely paralogs), so the best hit may not be the true ortholog. A curated ortholog set will supersede this.</p>
     ${results.some((r) => r.hits && r.hits.length) ? `
       <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
         <button type="button" id="comp-dl-tsv" style="font-size:0.8125rem;padding:6px 10px;border:1px solid var(--line,#d7dee0);border-radius:6px;background:var(--surface,#fff);cursor:pointer">Download all hits (TSV)</button>

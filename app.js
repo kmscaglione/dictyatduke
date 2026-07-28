@@ -4550,6 +4550,7 @@ function renderGenomeBrowser() {
           <button type="button" id="browser-gene-go">Go</button>
           <span id="browser-search-msg" style="font-size:0.8125rem"></span>
         </div>
+        <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:-4px 0 12px">On a non-<em>D. discoideum</em> genome a gene symbol jumps to its <strong>ortholog</strong> here (best tblastn hit of the AX4 protein); you can also enter coordinates or a gene ID from the track.</p>
         <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
           <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— zoom into a region to see cut sites (all genomes).</span></span>
           <button type="button" id="browser-restriction" aria-pressed="false">Show restriction sites</button>
@@ -4662,31 +4663,68 @@ function initGenomeBrowser() {
       .catch(() => { msg.style.color = "#b91c1c"; msg.textContent = "Could not load that track — check the URL, format, and that the host allows CORS."; });
   });
 
-  // --- Go to gene / locus: search WITHIN the currently selected organism. Symbol
-  // resolution (mhcA -> coordinates) is D. discoideum / AX4 only; for any other
-  // genome we hand the query straight to IGV (a locus, or a gene ID from its own
-  // track) and never yank the user back to AX4. ---
+  // --- Go to gene / locus / ortholog. On AX4 a symbol/DDB_G resolves to its own
+  // locus. On any other genome, a D. discoideum symbol jumps to that gene's
+  // ORTHOLOG here (best tblastn hit of its protein), and a plain locus / native
+  // gene ID is handed to IGV — never a revert to AX4. ---
   const searchMsg = document.getElementById("browser-search-msg");
+  const resolveGene = (q) => {
+    const nq = normalize(q);
+    return geneIndex.find((g) => normalize(g.symbol) === nq || normalize(g.id) === nq
+      || (g.synonyms || []).some((s) => normalize(s) === nq));
+  };
+  // tblastn the AX4 protein against the selected genome and jump to the best hit.
+  const findOrtholog = async (entry, org) => {
+    searchMsg.style.color = "var(--muted,#6b7280)";
+    searchMsg.textContent = `Finding ${entry.symbol} ortholog in ${org.label}… (tblastn)`;
+    let fasta;
+    try {
+      const r = await fetch(`/api/sequence?ddb=${encodeURIComponent(entry.id)}&type=protein&symbol=${encodeURIComponent(entry.symbol)}`);
+      fasta = await r.text();
+      if (!r.ok || !fasta.startsWith(">")) throw 0;
+    } catch { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = `No protein sequence for ${entry.symbol}.`; return; }
+    let data;
+    try {
+      data = await pollJob(() => fetch("/api/blast?async=1", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ program: "tblastn", database: org.id, query: fasta }),
+      }).then((r) => r.json()));
+      if (data.error) throw 0;
+    } catch { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = "Ortholog search could not be run."; return; }
+    if (select.value !== org.id) return;   // user switched organism mid-search
+    if (!data.hits || !data.hits.length) {
+      searchMsg.style.color = "#b91c1c";
+      searchMsg.textContent = `No ${entry.symbol} ortholog found in ${org.label} (tblastn, E < 1e-3).`; return;
+    }
+    const best = data.hits.reduce((a, b) => (b.bitscore > a.bitscore ? b : a));
+    const strong = new Set(data.hits.filter((h) => h.bitscore >= 0.6 * best.bitscore).map((h) => h.subject));
+    const lo = Math.min(Number(best.sstart), Number(best.send));
+    const hi = Math.max(Number(best.sstart), Number(best.send));
+    if (igvBrowser) Promise.resolve(igvBrowser.search(`${best.subject}:${Math.max(1, lo - 2000)}-${hi + 2000}`)).catch(() => {});
+    const para = strong.size > 1 ? ` · ⚠ ${strong.size} loci (paralogs?)` : "";
+    searchMsg.style.color = "var(--muted,#6b7280)";
+    searchMsg.textContent = `${entry.symbol} ortholog → ${best.subject} (${Math.round(best.identity)}% id)${para}`;
+  };
   const goToGene = () => {
     const q = (document.getElementById("browser-gene-search").value || "").trim();
     if (!q || !searchMsg) return;
     const curOrg = browserOrganisms.find((o) => o.id === select.value);
     if (select.value !== "d-discoideum-ax4") {
-      // Stay in the selected genome; let IGV resolve a locus or in-track feature.
       if (!igvBrowser) return;
+      // A known D. discoideum gene -> find its ortholog here; else treat as a locus.
+      const entry = resolveGene(q);
+      if (entry) { findOrtholog(entry, curOrg); return; }
       searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = "Searching…";
       Promise.resolve(igvBrowser.search(q))
         .then(() => { searchMsg.textContent = ""; })
         .catch(() => {
           const eg = `${((curOrg && curOrg.locus) || "contig:1-200000").split(":")[0]}:1-20000`;
           searchMsg.style.color = "#b91c1c";
-          searchMsg.textContent = `“${q}” not found in ${curOrg ? curOrg.label : "this genome"}. Try coordinates (e.g. ${eg}); gene-symbol lookup like mhcA is D. discoideum (AX4) only.`;
+          searchMsg.textContent = `“${q}” not found in ${curOrg ? curOrg.label : "this genome"}. Try a gene symbol (finds its ortholog) or coordinates (e.g. ${eg}).`;
         });
       return;
     }
-    const nq = normalize(q);
-    const entry = geneIndex.find((g) => normalize(g.symbol) === nq || normalize(g.id) === nq
-      || (g.synonyms || []).some((s) => normalize(s) === nq)) || searchIndex(q, 1)[0];
+    const entry = resolveGene(q) || searchIndex(q, 1)[0];
     const loc = entry && geneLocus(entry);
     if (!loc) { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = `No AX4 coordinates for “${q}”.`; return; }
     searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = `${entry.symbol} · ${loc.chrom}`;
@@ -4700,11 +4738,9 @@ function initGenomeBrowser() {
     geneInput.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); goToGene(); } });
     geneInput.addEventListener("input", () => {
       const dl = document.getElementById("browser-gene-list");
-      if (!dl) return;
-      // AX4 symbol suggestions only apply to the AX4 genome.
-      dl.innerHTML = select.value === "d-discoideum-ax4"
-        ? searchIndex(geneInput.value, 8).map((g) => `<option value="${escapeHtml(g.symbol)}">`).join("")
-        : "";
+      // Symbols are valid everywhere now: their own locus on AX4, their ortholog
+      // locus on any other genome.
+      if (dl) dl.innerHTML = searchIndex(geneInput.value, 8).map((g) => `<option value="${escapeHtml(g.symbol)}">`).join("");
     });
   }
 
@@ -4752,7 +4788,7 @@ function initGenomeBrowser() {
   const updateSearchHint = (org) => {
     if (!geneInput) return;
     geneInput.placeholder = (org && org.id !== "d-discoideum-ax4")
-      ? `gene ID or coordinates — e.g. ${(org.locus || "contig:1-200000").split(":")[0]}:1-20000`
+      ? "gene → its ortholog here, or coordinates — e.g. mhcA"
       : "symbol or DDB_G — e.g. mhcA, carA-1";
   };
   const run = () => {

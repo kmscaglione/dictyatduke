@@ -8481,30 +8481,27 @@ function openDownloadsPage(updateRoute = true) {
         </div>
       </header>
       <div class="record-body">
-        <section class="data-block" id="stock-center-catalog" style="margin-bottom:18px">
+        <section class="data-block downloads-section" id="stock-center-catalog">
           <h3>Dicty Stock Center catalog</h3>
-          <p class="downloads-blurb">The full Dicty Stock Center catalog as tab-separated values (TSV) — the same strains and plasmids you can browse and order in the <a class="text-link" href="/stock-center">Stock Center</a>. Open in Excel, R, or any spreadsheet tool.</p>
+          <p class="downloads-blurb">The full Dicty Stock Center catalog as tab-separated values (TSV): the same strains and plasmids you can browse and order in the <a class="text-link" href="/stock-center">Stock Center</a>. Open in Excel, R, or any spreadsheet tool.</p>
           <ul class="downloads-list">
-            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-              <span><strong>Strain catalog</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">DSC id, name, in-stock, genotype, summary, synonyms — every catalog strain (~7,000).</span></span>
-              <a class="button" href="/api/bulk?dataset=strains" download>Download TSV</a>
+            <li>
+              <span class="downloads-desc">Strain catalog: DSC id, name, in-stock, genotype, summary, synonyms (every catalog strain, ~7,000).</span>
+              <span class="downloads-files"><a class="downloads-file" href="/api/bulk?dataset=strains" download>TSV</a></span>
             </li>
-            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-              <span><strong>Plasmid catalog</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">DSC id, name, in-stock, depositor, description — every catalog plasmid (~1,265).</span></span>
-              <a class="button" href="/api/bulk?dataset=plasmids" download>Download TSV</a>
+            <li>
+              <span class="downloads-desc">Plasmid catalog: DSC id, name, in-stock, depositor, description (every catalog plasmid, ~1,265).</span>
+              <span class="downloads-files"><a class="downloads-file" href="/api/bulk?dataset=plasmids" download>TSV</a></span>
             </li>
           </ul>
         </section>
-        <section class="data-block" id="current-go-annotations" style="margin-bottom:18px">
+        <section class="data-block downloads-section" id="current-go-annotations">
           <h3>GO annotations (current)</h3>
           <p class="downloads-blurb">Every dictyBase Gene Ontology annotation from the current GO Consortium release: <strong>68,097</strong> across 8,659 genes. This is the up-to-date set; the “GO Association Files” section below is a preserved 2013 snapshot.</p>
           <ul class="downloads-list">
-            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-              <span><strong>All GO annotations</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">GAF 2.2 (a drop-in replacement for gene_association.dictyBase), or a TSV for spreadsheets. One row per annotation.</span></span>
-              <span style="display:flex;gap:8px;flex-wrap:wrap">
-                <a class="button" href="/api/bulk?dataset=go-gaf" download>Download GAF</a>
-                <a class="button" href="/api/bulk?dataset=go" download>Download TSV</a>
-              </span>
+            <li>
+              <span class="downloads-desc">All GO annotations, one row each. GAF 2.2 is a drop-in replacement for gene_association.dictyBase; TSV for spreadsheets.</span>
+              <span class="downloads-files"><a class="downloads-file" href="/api/bulk?dataset=go-gaf" download>GAF</a><a class="downloads-file" href="/api/bulk?dataset=go" download>TSV</a></span>
             </li>
           </ul>
         </section>

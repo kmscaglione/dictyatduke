@@ -8481,6 +8481,11 @@ function openDownloadsPage(updateRoute = true) {
         </div>
       </header>
       <div class="record-body">
+        <section class="data-block downloads-section" id="genome-sequences">
+          <h3>Genome sequences &amp; annotations</h3>
+          <p class="downloads-blurb">Assembly FASTA (gzip) and gene annotations (GFF3) for every sequenced dictyostelid genome. To explore them interactively, use the <a class="text-link" href="/tools/genome-browser">genome browser</a>.</p>
+          <div data-genome-assemblies><p class="notice muted">Loading genome downloads…</p></div>
+        </section>
         <section class="data-block downloads-section" id="stock-center-catalog">
           <h3>Dicty Stock Center catalog</h3>
           <p class="downloads-blurb">The full Dicty Stock Center catalog as tab-separated values (TSV): the same strains and plasmids you can browse and order in the <a class="text-link" href="/stock-center">Stock Center</a>. Open in Excel, R, or any spreadsheet tool.</p>
@@ -8515,8 +8520,32 @@ function openDownloadsPage(updateRoute = true) {
     </article>`;
   toolsShell.removeAttribute("hidden");
   scrollToY(toolsShell.offsetTop - 60);
+  loadGenomeAssemblies();
   loadDownloads();
   loadChangelog();
+}
+
+// Per-genome assembly FASTA + GFF3 downloads, from the genome manifest. One row
+// per genome with pill file links, styled like the rest of the Downloads page.
+async function loadGenomeAssemblies() {
+  const el = document.querySelector("[data-genome-assemblies]");
+  if (!el) return;
+  let manifest;
+  try { manifest = await fetch("/assets/downloads_manifest.json").then((r) => r.json()); }
+  catch { el.innerHTML = `<p class="notice muted">Genome downloads are unavailable right now.</p>`; return; }
+  const fileLabel = (t) => /GFF/i.test(t) ? "GFF3" : /RefSeq/i.test(t) ? "RefSeq FASTA" : "FASTA";
+  const assemblyTag = (sp) => !sp.assembly ? ""
+    : sp.assembly === "GenBank pending" ? ` <span style="color:var(--muted,#9ca3af);font-size:0.8125rem">(GenBank pending)</span>`
+    : ` <a class="text-link" href="https://www.ncbi.nlm.nih.gov/datasets/genome/${encodeURIComponent(sp.assembly)}/" target="_blank" rel="noopener" style="font-size:0.8125rem">${escapeHtml(sp.assembly)}</a>`;
+  const row = (sp) => `<li>
+      <span class="downloads-desc"><strong>${escapeHtml(sp.label)}</strong>${assemblyTag(sp)}</span>
+      <span class="downloads-files">${(sp.files || []).map((f) => `<a class="downloads-file" href="${escapeHtml(f.url)}" download title="${escapeHtml(f.name)} · ${escapeHtml(formatBytes(f.size))}">${escapeHtml(fileLabel(f.type))}</a>`).join("")}</span>
+    </li>`;
+  const species = manifest.filter((sp) => sp.group !== "isolate");
+  const isolates = manifest.filter((sp) => sp.group === "isolate");
+  el.innerHTML =
+    `<ul class="downloads-list">${species.map(row).join("")}</ul>` +
+    (isolates.length ? `<h4 style="margin:16px 0 6px">D. discoideum wild isolates</h4><ul class="downloads-list">${isolates.map(row).join("")}</ul>` : "");
 }
 
 async function loadChangelog() {

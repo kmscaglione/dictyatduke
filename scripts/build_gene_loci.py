@@ -58,6 +58,33 @@ def _cds_records(path):
             yield _finish(contig, cur)
 
 
+def _gff_protein_loci(gff_path):
+    """protein_id -> 'contig:start-end' from a GFF3's CDS features (NCBI style).
+    D. firmibasis isn't a .gbf genome; its OrthoFinder ids are GenBank protein
+    accessions (KAK…) which appear as protein_id in its browser GFF, on contigs
+    that match the browser — so we can still make those orthologs clickable."""
+    spans = {}
+    with open(gff_path, encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            if line.startswith("#") or "\t" not in line:
+                continue
+            c = line.rstrip("\n").split("\t")
+            if len(c) < 9 or c[2] != "CDS":
+                continue
+            attrs = dict(kv.split("=", 1) for kv in c[8].split(";") if "=" in kv)
+            pid = attrs.get("protein_id")
+            if not pid:
+                continue
+            contig, s, e = c[0], int(c[3]), int(c[4])
+            key = (contig, pid)
+            if key in spans:
+                s0, e0 = spans[key]
+                spans[key] = (min(s, s0), max(e, e0))
+            else:
+                spans[key] = (s, e)
+    return {pid: f"{contig}:{s}-{e}" for (contig, pid), (s, e) in spans.items()}
+
+
 def _finish(contig, cur):
     if not cur["pid"]:
         return None
@@ -91,6 +118,14 @@ def build(src):
             loci[gene] = f"{contig}:{lo}-{hi}"
         genomes[gid] = loci
         print(f"  {gid:16} {len(loci):6} genes  <- {base}.gbf")
+    # D. firmibasis: index its GenBank protein accessions from the browser GFF so
+    # its OrthoFinder orthologs (KAK…) are clickable too.
+    firmi_gff = os.path.join(ROOT, "assets", "genomes", "D_firmibasis_browser.gff")
+    if os.path.exists(firmi_gff):
+        fl = _gff_protein_loci(firmi_gff)
+        if fl:
+            genomes["d-firmibasis"] = fl
+            print(f"  {'d-firmibasis':16} {len(fl):6} proteins  <- D_firmibasis_browser.gff")
     payload = {"_meta": {"source": "GenBank flat files, Holland*, Ahmed* et al. 2025",
                          "genomes": {g: len(v) for g, v in genomes.items()}},
                "loci": genomes}

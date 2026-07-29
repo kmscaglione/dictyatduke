@@ -2255,7 +2255,7 @@ def geneset_report(tokens):
 # upload, hit, stats) are deliberately absent and stay uncached.
 API_CACHEABLE_PREFIXES = (
     "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-",
-    "/api/orthogroup", "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
+    "/api/orthogroup", "/api/interactions", "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
     "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
     "/api/neighborhood", "/api/region", "/api/ispcr", "/api/protein-props",
 )
@@ -2295,6 +2295,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/gene-annotations"):
             self._handle_gene_annotations()
+            return
+        if self.path.startswith("/api/interactions"):
+            self._handle_interactions()
             return
         if self.path.startswith("/api/orthogroup-sequences"):
             self._handle_orthogroup_sequences()
@@ -4207,6 +4210,26 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     loci[gid] = gl[gid]
         self.send_json(200, {"ddb": ddb, "species": og.get("_meta", {}).get("species", []),
                              "group": entry, "loci": loci})
+
+    def _handle_interactions(self):
+        """One gene's curated protein/genetic interactions (BioGRID) by DDB_G id.
+        Partner symbols are refreshed to our current nomenclature where we have it."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        data = _load_json("interactions.json")
+        entries = data.get("genes", {}).get(ddb, [])
+        rows, _sym = api_gene_rows()
+        out = []
+        for e in entries:
+            pd = e.get("partner_ddb")
+            sym = e.get("partner_symbol")
+            if pd and rows.get(pd, {}).get("symbol"):
+                sym = rows[pd]["symbol"]
+            out.append({**e, "partner_symbol": sym})
+        self.send_json(200, {"ddb": ddb, "interactions": out,
+                             "meta": data.get("_meta", {})})
 
     def _handle_orthogroup_sequences(self):
         """Download a gene's curated orthologs as one multi-FASTA (protein or CDS)."""

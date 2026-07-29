@@ -1652,6 +1652,7 @@ function loadTabData(gene, tab) {
       loadPhenotypes(gene);
       break;
     case "Interactions":
+      loadCuratedInteractions(gene);
       loadStringResults(gene);
       break;
     case "Genome":
@@ -6915,16 +6916,15 @@ function renderTab(gene, tab) {
   }
   if (tab === "Interactions") {
     return `
+      <div class="data-block" data-curated-interactions></div>
       <div class="data-block">
-        <h3>Interaction network <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING database</span></h3>
+        <h3>Predicted associations <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING (computational, not curated)</span></h3>
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Functional-association network from STRING: predicted from coexpression, text mining, and homology, so it is broader but not experimentally curated.</p>
         <div id="string-network-img" style="text-align:center">
           ${loadingHTML("Loading network image…")}
         </div>
-      </div>
-      <div class="data-block">
-        <h3>Protein interactions</h3>
-        <div data-string-results="${escapeHtml(gene.id)}">
-          ${loadingHTML(`Loading STRING interactions for ${gene.symbol}…`)}
+        <div data-string-results="${escapeHtml(gene.id)}" style="margin-top:12px">
+          ${loadingHTML(`Loading STRING partners for ${gene.symbol}…`)}
         </div>
       </div>`;
   }
@@ -9644,6 +9644,53 @@ async function loadRNAseqInline(gene) {
   } catch {
     el.innerHTML = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);padding:8px">Expression data could not be loaded.</p>`;
   }
+}
+
+// --- Curated interactions (BioGRID) ---
+// Experimentally curated physical/genetic interactions, distinct from STRING's
+// predicted associations below. Small corpus for Dictyostelium (dozens), so this
+// shows every curated interaction with its method and PMID.
+async function loadCuratedInteractions(gene) {
+  const el = document.querySelector("[data-curated-interactions]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  let data;
+  try { data = await fetch(`/api/interactions?ddb=${encodeURIComponent(ddb)}`).then((r) => r.json()); }
+  catch { el.innerHTML = ""; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Interactions") return;
+  const rows = data.interactions || [];
+  const head = `<h3>Curated interactions <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— BioGRID (experimentally curated)</span></h3>`;
+  if (!rows.length) {
+    el.innerHTML = `${head}<p class="notice muted" style="margin:0">No curated physical or genetic interactions are recorded for ${escapeHtml(gene.symbol)} in BioGRID. Predicted associations from STRING are shown below.</p>`;
+    return;
+  }
+  const nPhys = rows.filter((r) => r.type === "physical").length;
+  const nGen = rows.filter((r) => r.type === "genetic").length;
+  const td = "padding:5px 8px;vertical-align:top";
+  const badge = (t) => t === "genetic"
+    ? `<span style="font-size:.7rem;padding:1px 6px;border-radius:4px;background:#eef2ff;color:#4338ca">genetic</span>`
+    : `<span style="font-size:.7rem;padding:1px 6px;border-radius:4px;background:#ecfdf5;color:#047857">physical</span>`;
+  const body = rows.map((r) => {
+    const partner = r.partner_ddb
+      ? `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(r.partner_ddb)}" href="/gene/${encodeURIComponent(r.partner_symbol || r.partner_ddb)}">${escapeHtml(r.partner_symbol || r.partner_ddb)}</a>`
+      : `${escapeHtml(r.partner_symbol || "?")}${r.partner_organism ? ` <span style="color:var(--muted,#9ca3af);font-style:italic">(${escapeHtml(r.partner_organism)})</span>` : ""}`;
+    const pmid = r.pmid
+      ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(r.pmid)}/" target="_blank" rel="noopener">${escapeHtml(r.pmid)}</a>`
+      : "—";
+    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)">
+      <td style="${td}">${partner}</td>
+      <td style="${td}">${badge(r.type)}</td>
+      <td style="${td}">${escapeHtml(r.method || "")}${r.throughput ? ` <span style="color:var(--muted,#9ca3af);font-size:.72rem">(${escapeHtml(r.throughput)})</span>` : ""}</td>
+      <td style="${td}">${pmid}</td></tr>`;
+  }).join("");
+  const sources = (data.meta && data.meta.sources) || ["BioGRID"];
+  el.innerHTML = `${head}
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${rows.length} curated interaction${rows.length === 1 ? "" : "s"} (${nPhys} physical, ${nGen} genetic) with experimental evidence from ${escapeHtml(sources.join(", "))}.</p>
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Partner</th><th style="${td}">Type</th><th style="${td}">Method</th><th style="${td}">Reference</th></tr></thead>
+      <tbody>${body}</tbody></table></div>
+    <p style="font-size:0.7rem;color:var(--muted,#9ca3af);margin:8px 0 0">${escapeHtml((data.meta && data.meta.attribution) || "")} <a class="text-link" href="https://thebiogrid.org/" target="_blank" rel="noopener">BioGRID →</a></p>`;
 }
 
 // --- STRING interactions ---

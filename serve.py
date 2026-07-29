@@ -2466,6 +2466,36 @@ def draft_paper_by_pmid(pmid):
     return {"added": True, "pmid": pmid, "token": draft["token"], "title": draft["title"]}
 
 
+def redraft_paper(pmid):
+    """Regenerate an existing draft's AI content in place (e.g. to pick up newer
+    draft fields like the per-gene recap sentences). Keeps the same session token
+    so an already-shared invitation link stays valid, and preserves any author
+    submission. Returns {ok, pmid, gene_summaries} or {error}."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+    if not d:
+        return {"error": "This paper is not in the draft queue yet."}
+    metas = fetch_pubmed_meta([pmid])
+    p = metas[0] if metas else {"pmid": pmid, "title": d.get("title", ""),
+                                "journal": d.get("journal", ""), "url": d.get("url", "")}
+    p = {**p, **fetch_pubmed_full([pmid]).get(pmid, {})}
+    if not p.get("abstract"):
+        p["abstract"] = d.get("abstract", "")
+    fresh = _build_draft(p)              # regenerate genes/AI/email; DON'T take its token
+    d["genes"] = fresh["genes"]
+    d["ai"] = fresh["ai"]
+    d["email_text"] = fresh["email_text"]
+    d["abstract"] = (p.get("abstract", "") or "")[:4000]
+    if p.get("corr_name"):
+        d["corr_name"] = p["corr_name"]
+    if p.get("corr_email"):
+        d["corr_email"] = p["corr_email"]
+    d["redrafted"] = datetime.datetime.utcnow().isoformat() + "Z"
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return {"ok": True, "pmid": pmid, "gene_summaries": len((d["ai"] or {}).get("gene_summaries", []))}
+
+
 # --- Phase 2: the author-facing pre-filled session the invitation links to ----
 # A draft's token is a one-draft capability: whoever has the emailed link can view
 # and submit that paper's curation (no login). Submissions land back on the draft
@@ -3274,6 +3304,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_refresh()
         elif self.path == "/api/curator/papers/draft-one":
             self._handle_curator_papers_draft_one()
+        elif self.path == "/api/curator/papers/redraft":
+            self._handle_curator_papers_redraft()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/append-summary":
@@ -4200,6 +4232,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, res)
             return
         _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
+        self.send_json(200, res)
+
+    def _handle_curator_papers_redraft(self):
+        """Regenerate an existing draft's AI content (keeps its link)."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        try:
+            res = redraft_paper(body.get("pmid"))
+        except Exception as e:
+            self.send_json(502, {"error": f"Could not regenerate ({type(e).__name__})."})
+            return
+        if res.get("error"):
+            self.send_json(400, res)
+            return
+        _log_curation("paper-draft", "redraft", res.get("pmid", ""), curator)
         self.send_json(200, res)
 
     def _handle_curator_papers_update(self):

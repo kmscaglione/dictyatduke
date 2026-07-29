@@ -2896,7 +2896,8 @@ function paperDraftCard(d) {
       <div><a href="${esc(d.url)}" target="_blank" rel="noopener" style="font-weight:600">${esc(d.title)}</a>
         <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status)}</strong>` : ""}</span></div>
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
-      <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}</div>
+      <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
+        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" title="Regenerate the AI draft (keeps the invitation link)" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Regenerate</button></div>
       ${aiHtml}
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Invitation email (review, then send it yourself)</summary>
@@ -2961,6 +2962,19 @@ async function loadPaperDrafts() {
       if (dismissBtn) dismissBtn.addEventListener("click", async () => {
         try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
         catch { say("Could not dismiss."); }
+      });
+      const redraftBtn = card.querySelector(".pd-redraft");
+      if (redraftBtn) redraftBtn.addEventListener("click", async () => {
+        const orig = redraftBtn.textContent; redraftBtn.disabled = true; redraftBtn.textContent = "Regenerating…";
+        try {
+          const r = await fetch("/api/curator/papers/redraft", {
+            method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+            body: JSON.stringify({ pmid }),
+          });
+          const d2 = await r.json();
+          if (!r.ok) throw new Error(d2.error || "failed");
+          loadPaperDrafts();
+        } catch { redraftBtn.textContent = "failed"; setTimeout(() => { redraftBtn.textContent = orig; redraftBtn.disabled = false; }, 1600); }
       });
       card.querySelectorAll(".pd-addsum").forEach((b) => b.addEventListener("click", async () => {
         const gene = b.dataset.gene, sentence = b.dataset.sentence, refpmid = b.dataset.pmid;

@@ -2842,7 +2842,18 @@ function paperDraftCard(d) {
   const corr = d.corr_name
     ? `${esc(d.corr_name)}${d.corr_email ? ` &lt;${esc(d.corr_email)}&gt;` : ` <span class="muted">(no email found)</span>`}`
     : `<span class="muted">corresponding author not identified</span>`;
-  return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:10px 12px;margin-bottom:10px">
+  const sub = d.submission;
+  const subList = (label, arr, fmt) => arr && arr.length ? `<div><strong>${label}:</strong> ${arr.map(fmt).map(esc).join("; ")}</div>` : "";
+  const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
+      <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}:
+      ${subList("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
+      ${subList("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
+      ${subList("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
+      ${sub.note ? `<div><em>Note:</em> ${esc(sub.note)}</div>` : ""}
+    </div>` : "";
+  const border = d.status === "submitted" ? "#10b981" : "var(--line,#e5e9ee)";
+  return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid ${border};border-radius:8px;padding:10px 12px;margin-bottom:10px">
+      ${submitted}
       <div><a href="${esc(d.url)}" target="_blank" rel="noopener" style="font-weight:600">${esc(d.title)}</a>
         <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status)}</strong>` : ""}</span></div>
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
@@ -11263,10 +11274,109 @@ function showNotFound(opts) {
   });
 }
 
+// --- Author-facing paper curation session (Phase 2, linked from invitations) --
+function openPaperSession() {
+  showHomeChrome(false);
+  hideContentSections();
+  if (!toolsShell) return;
+  const token = new URLSearchParams(location.search).get("t") || "";
+  toolsShell.innerHTML = `<article class="record-card research-card" style="max-width:820px;margin:16px auto"><div class="record-body" id="paper-session"><p class="notice muted">Loading…</p></div></article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(0);
+  loadPaperSession(token);
+}
+
+async function loadPaperSession(token) {
+  const el = document.getElementById("paper-session");
+  if (!el) return;
+  let s;
+  try {
+    const r = await fetch(`/api/paper-session?t=${encodeURIComponent(token)}`);
+    s = await r.json();
+    if (!r.ok) throw new Error(s.error || "This curation link is not valid.");
+  } catch (e) {
+    el.innerHTML = `<p class="notice">${escapeHtml((e && e.message) || "This curation link is not valid.")}</p>`;
+    return;
+  }
+  renderPaperSessionForm(el, token, s);
+}
+
+function renderPaperSessionForm(el, token, s) {
+  const esc = escapeHtml;
+  const aspOpt = (v) => ["F", "P", "C"].map((a) => `<option value="${a}"${a === (v || "F") ? " selected" : ""}>${a}</option>`).join("");
+  const typeOpt = (v) => ["physical", "genetic"].map((t) => `<option value="${t}"${t === (v || "physical") ? " selected" : ""}>${t}</option>`).join("");
+  const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
+      <input type="checkbox" class="keep" checked title="Keep this annotation">
+      <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
+      <input class="t" value="${esc(x.term || "")}" placeholder="GO term / description" style="${FIELD};flex:1;min-width:170px">
+      <select class="a" style="${FIELD}" aria-label="aspect">${aspOpt(x.aspect)}</select></div>`).join("");
+  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
+      <input type="checkbox" class="keep" checked>
+      <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
+      <input class="p" value="${esc(x.phenotype || "")}" placeholder="phenotype" style="${FIELD};flex:1;min-width:200px"></div>`).join("");
+  const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
+      <input type="checkbox" class="keep" checked>
+      <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
+      <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
+      <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select></div>`).join("");
+  const section = (title, rows, hint) => rows
+    ? `<h3 class="tools-group">${title}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
+    : "";
+  const genes = (s.genes || []).map((g) => esc(g.symbol || g.ddb)).join(", ");
+  el.innerHTML = `
+    <p class="eyebrow">Help curate this paper</p>
+    <h2 style="margin:2px 0 6px">${esc(s.title || "")}</h2>
+    <p class="muted" style="font-size:13px;margin:0 0 10px">${esc(s.journal || "")}${s.pmid ? ` · <a class="text-link" href="${esc(s.url)}" target="_blank" rel="noopener">PMID ${esc(s.pmid)}</a>` : ""}</p>
+    <p style="font-size:14px;line-height:1.6">dictyBase drafted the annotations below from your paper. Please correct anything wrong, uncheck what does not belong, and submit. This is a draft: nothing is published without your submission and a curator's review.</p>
+    ${s.already_submitted ? `<p class="notice" style="background:#ecfdf5;border:1px solid #a7f3d0;color:#047857">Thanks — a submission was already received for this paper. You can revise and submit again.</p>` : ""}
+    ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
+    ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
+    ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. A curator maps these to formal GO IDs.")}
+    ${section("Phenotypes", phRows, "Mutant phenotypes reported for these genes.")}
+    ${section("Interactions", inRows, "Physical or genetic interactions.")}
+    ${(goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated. Please add the key findings for your paper in the notes below.</p>`}
+    <h3 class="tools-group">Notes to the curator <span class="muted" style="font-weight:400;font-size:12px">(anything else worth capturing)</span></h3>
+    <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px">
+      <input id="ps-name" type="text" placeholder="Your name (optional)" style="${FIELD};min-width:200px">
+      <button type="button" id="ps-submit" class="button">Submit for review</button>
+      <span id="ps-msg" class="muted" style="font-size:13px"></span>
+    </div>`;
+  const submitBtn = document.getElementById("ps-submit");
+  submitBtn.addEventListener("click", async () => {
+    const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
+    const curation = {
+      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value })),
+      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value })),
+      interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value })),
+    };
+    const note = (document.getElementById("ps-note").value || "").trim();
+    const submitter = (document.getElementById("ps-name").value || "").trim();
+    const msg = document.getElementById("ps-msg");
+    submitBtn.disabled = true; msg.textContent = "Submitting…";
+    try {
+      const r = await fetch("/api/paper-session/submit", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ t: token, curation, note, submitter }),
+      });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || "failed");
+      el.innerHTML = `<p class="eyebrow">Thank you</p><h2>Submitted for review</h2>
+        <p style="font-size:14px;line-height:1.6">Your curation for <em>${esc(s.title || "this paper")}</em> has been sent to the dictyBase curators. They will review it and add it to the gene records. We appreciate your help keeping Dictyostelium annotations accurate.</p>
+        <p><a class="text-link" href="/">Return to dictyBase</a></p>`;
+      scrollToY(0);
+    } catch (e) {
+      submitBtn.disabled = false;
+      msg.textContent = "Could not submit. " + ((e && e.message) || "");
+    }
+  });
+}
+
 function hydrateFromRoute() {
   showHomeChrome(true);  // default; the branch openers below flip it off for non-home views
   const params = new URLSearchParams(window.location.search);
   const pathParts = window.location.pathname.split("/").filter(Boolean);
+  if (pathParts[0] === "curate-paper") { openPaperSession(); return; }
   const isGeneRoute = pathParts[0] === "gene" && pathParts[1];
   const isSearchRoute = pathParts[0] === "search";
   const isTechniqueRoute = pathParts[0] === "research" && pathParts[1] === "techniques" && pathParts[2];

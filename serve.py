@@ -593,6 +593,7 @@ _LOGIN_FAILS = {}         # ip -> [recent failed-attempt epochs]
 _UPLOAD_HITS = {}         # ip -> [recent upload epochs]
 _BLAST_HITS = {}          # ip -> [recent BLAST-family request epochs]
 _PROXY_HITS = {}          # ip -> [recent outbound-proxy request epochs]
+_PAPER_HITS = {}          # ip -> [recent paper-session epochs] (public author page)
 
 # Allowlisted, cached GET proxy for the public bio APIs the gene record reads
 # from the browser (NCBI E-utilities, UniProt, EBI QuickGO, STRING, OMA, RCSB).
@@ -2408,6 +2409,60 @@ def refresh_paper_drafts(limit=8):
     return {"added": added, "scanned": len(recent), "total": len(store["drafts"])}
 
 
+# --- Phase 2: the author-facing pre-filled session the invitation links to ----
+# A draft's token is a one-draft capability: whoever has the emailed link can view
+# and submit that paper's curation (no login). Submissions land back on the draft
+# for a curator to review; they are never published directly.
+def _paper_public_view(d):
+    """The author-facing subset of a draft — no email or other PII."""
+    ai = d.get("ai") or {}
+    return {
+        "pmid": d.get("pmid"), "title": d.get("title"), "journal": d.get("journal"),
+        "pubdate": d.get("pubdate"), "url": d.get("url"), "status": d.get("status"),
+        "genes": d.get("genes") or [],
+        "summary": ai.get("summary", "") if ai.get("ok") else "",
+        "go": ai.get("go") or [], "phenotypes": ai.get("phenotypes") or [],
+        "interactions": ai.get("interactions") or [],
+        "already_submitted": bool(d.get("submission")),
+    }
+
+
+def paper_session_get(token):
+    if not token:
+        return 404, {"error": "This curation link is not valid."}
+    d = next((x for x in _load_paper_drafts().get("drafts", []) if x.get("token") == token), None)
+    if not d:
+        return 404, {"error": "This curation link is not valid or has expired."}
+    return 200, _paper_public_view(d)
+
+
+def paper_session_submit(token, payload):
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("token") == token), None)
+    if not d:
+        return 404, {"error": "This curation link is not valid or has expired."}
+
+    def clean(arr, keys):
+        out = []
+        for it in (arr or [])[:80]:
+            if isinstance(it, dict):
+                out.append({k: str(it.get(k, ""))[:200] for k in keys})
+        return out
+
+    cur = payload.get("curation") or {}
+    d["submission"] = {
+        "go": clean(cur.get("go"), ["gene", "term", "aspect"]),
+        "phenotypes": clean(cur.get("phenotypes"), ["gene", "phenotype"]),
+        "interactions": clean(cur.get("interactions"), ["gene_a", "gene_b", "type"]),
+        "note": str(payload.get("note", ""))[:4000],
+        "submitter": str(payload.get("submitter", ""))[:200],
+        "submitted_at": datetime.datetime.utcnow().isoformat() + "Z",
+    }
+    d["status"] = "submitted"
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return 200, {"ok": True}
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -2625,6 +2680,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Curator dashboard API — list pending curations
+        if self.path.split("?")[0] == "/api/paper-session":
+            if _rate_limited(_PAPER_HITS, self.client_address[0], limit=40, window=60):
+                self.send_json(429, {"error": "Too many requests. Slow down a moment."})
+                return
+            token = (parse_qs(urlparse(self.path).query).get("t") or [""])[0].strip()
+            code, payload = paper_session_get(token)
+            self.send_json(code, payload)
+            return
         if self.path.split("?")[0] == "/api/curator/papers":
             self._handle_curator_papers()
             return
@@ -3146,6 +3209,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_reject()
         elif self.path == "/api/curator/edit":
             self._handle_curation_edit()
+        elif self.path == "/api/paper-session/submit":
+            self._handle_paper_session_submit()
         elif self.path == "/api/curator/papers/refresh":
             self._handle_curator_papers_refresh()
         elif self.path == "/api/curator/papers/update":
@@ -4012,6 +4077,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             "curator": ov.get("curator", ""),
             "curator_date": ov.get("curator_date", ""),
         })
+
+    def _handle_paper_session_submit(self):
+        """Public: an author submits their revised curation via a draft token. No
+        auth (the token is the capability); rate-limited; lands on the draft for
+        curator review, never published directly."""
+        if _rate_limited(_PAPER_HITS, self.client_address[0], limit=15, window=60):
+            self.send_json(429, {"error": "Too many submissions. Please wait a moment."})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 65536)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request"})
+            return
+        token = str(body.get("t") or "").strip()
+        code, payload = paper_session_submit(token, body)
+        self.send_json(code, payload)
 
     def _handle_curator_papers(self):
         """List the AI-seeded paper-curation drafts (curator only)."""

@@ -93,7 +93,7 @@
           ]
         },
         {
-          "desc": "Promoter sequences \u2014 5' flanking sequence up to the next gene (Mar 30, 2010)",
+          "desc": "Promoter sequences — 5' flanking sequence up to the next gene (Mar 30, 2010)",
           "files": [
             {
               "label": "zip",
@@ -282,7 +282,7 @@
           ]
         },
         {
-          "desc": "D. discoideum codon bias \u2014 11,666 curated protein-coding genes (Nov 2012)",
+          "desc": "D. discoideum codon bias — 11,666 curated protein-coding genes (Nov 2012)",
           "files": [
             {
               "label": "tab-delimited",
@@ -302,7 +302,7 @@
           ]
         },
         {
-          "desc": "AX2 phosphoproteome (Aug 2013) \u2014 provided by Pascale Charest and Richard Firtel",
+          "desc": "AX2 phosphoproteome (Aug 2013) — provided by Pascale Charest and Richard Firtel",
           "files": [
             {
               "label": "excel",
@@ -330,7 +330,7 @@
     },
     {
       "title": "GO Association Files",
-      "blurb": "Gene Ontology annotations for Dictyostelium.",
+      "blurb": "Gene Ontology annotations for Dictyostelium: a preserved 2013 snapshot. For the current set (68,097 annotations) use the “GO annotations (current)” section near the top of this page.",
       "items": [
         {
           "desc": "GO annotations (GAF)",

@@ -1804,6 +1804,29 @@ def bulk_tsv(dataset):
                     go_id, ev, qual, ref, date, by = (list(e) + [""] * 6)[:6]
                     out.append("\t".join(str(x) for x in
                                [ddb, sym, go_id, aspect, qual, ev, ref, date, by]))
+    elif dataset == "go-gaf":
+        # Current annotations as a GAF 2.2 file — a drop-in replacement for the old
+        # gene_association.dictyBase. 17 tab-separated columns + `!` header lines.
+        default_rel = {"P": "involved_in", "F": "enables", "C": "located_in"}
+        today = datetime.date.today().isoformat()
+        header = ["!gaf-version: 2.2",
+                  "!generated-by: dictyBase (dicty.labs.duke.edu)",
+                  f"!date-generated: {today}",
+                  "!source: GO Consortium DICDI-mod GAF, merged with dictyBase curation"]
+        body = []
+        for ddb, rec in _load_gene_annotations().items():
+            sym = rec.get("symbol") or rows.get(ddb, {}).get("symbol", "")
+            name = rows.get(ddb, {}).get("name", "")
+            go = rec.get("go", {})
+            for aspect in ("P", "F", "C"):
+                for e in go.get(aspect, []):
+                    go_id, ev, qual, ref, date, by = (list(e) + [""] * 6)[:6]
+                    qual = qual or default_rel.get(aspect, "")   # GAF 2.2 needs a relation
+                    ymd = str(date).replace("-", "")
+                    body.append("\t".join([
+                        "dictyBase", ddb, sym, qual, go_id, ref, ev, "", aspect,
+                        name, "", "gene", "taxon:44689", ymd, by or "dictyBase", "", ""]))
+        return "gene_association.dictyBase.gaf", "\n".join(header + body) + "\n"
     elif dataset == "phenotypes":
         out.append("ddb_g\tsymbol\tphenotype\tpmid")
         ph = _load_json("phenotypes.json")
@@ -4341,7 +4364,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             dataset = parse_qs(urlparse(self.path).query).get("dataset", [""])[0]
             fname, text = bulk_tsv(dataset)
             if not fname:
-                self.send_json(400, {"error": "Unknown dataset. Use genes|go|phenotypes|orthologs|strains|plasmids."})
+                self.send_json(400, {"error": "Unknown dataset. Use genes|go|go-gaf|phenotypes|orthologs|strains|plasmids."})
                 return
             data = text.encode("utf-8")
             self.send_response(200)

@@ -4242,6 +4242,8 @@ const LOCAL_BLAST_DBS = {
   "dd-m4b": "D. cf. discoideum M4B",
   "dd-s6b": "D. cf. discoideum S6B",
   "dc-cf3b": "D. citrinum Cf3b",
+  "dc-kgl29a": "D. citrinum KGL29A",
+  "di-pj11": "D. intermedium PJ11",
 };
 
 // Wild isolates from Holland*, Ahmed* et al. 2025 (PNAS, doi:10.1073/pnas.2520843122):
@@ -4465,6 +4467,13 @@ const browserOrganisms = [
   { id: "dc-cf3b", label: "D. citrinum Cf3b", assembly: "GCA_054859145.1", group: "species",
     fastaURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna", indexURL: "/assets/genomes/D_citrinum_Cf3b_browser.fna.fai",
     gffURL: "/assets/genomes/D_citrinum_Cf3b_browser.gff", locus: "CF58_contig_100_p7:1-200000" },
+  // Hosted from the submitter GenBank files — still stuck in GenBank's pipeline.
+  { id: "dc-kgl29a", label: "D. citrinum KGL29A", assembly: "GenBank pending", group: "species",
+    fastaURL: "/assets/genomes/D_citrinum_KGL29A_browser.fna", indexURL: "/assets/genomes/D_citrinum_KGL29A_browser.fna.fai",
+    gffURL: "/assets/genomes/D_citrinum_KGL29A_browser.gff", locus: "KGL29Av1_KGL29Av1_contig_1_p5:1-200000" },
+  { id: "di-pj11", label: "D. intermedium PJ11", assembly: "GenBank pending", group: "species",
+    fastaURL: "/assets/genomes/D_intermedium_PJ11_browser.fna", indexURL: "/assets/genomes/D_intermedium_PJ11_browser.fna.fai",
+    gffURL: "/assets/genomes/D_intermedium_PJ11_browser.gff", locus: "PJ11_contig_1_p8:1-200000" },
   // Holland*, Ahmed* et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
   { id: "dd-ax2-214", label: "D. discoideum AX2-214", assembly: "GCA_054883475.1", group: "isolate",
     fastaURL: "/assets/genomes/Dd_AX2-214_browser.fna", indexURL: "/assets/genomes/Dd_AX2-214_browser.fna.fai",

@@ -841,6 +841,9 @@ BLAST_DBS = {
     "dd-m4b": "D. cf. discoideum M4B",
     "dd-s6b": "D. cf. discoideum S6B",
     "dc-cf3b": "D. citrinum Cf3b",
+    # Hosted from the submitter GenBank files — still stuck in GenBank's pipeline.
+    "dc-kgl29a": "D. citrinum KGL29A",
+    "di-pj11": "D. intermedium PJ11",
     # Holland*, Ahmed* et al. 2025 — conspecific D. discoideum wild isolates (Natural variation)
     "dd-ax2-214": "D. discoideum AX2-214",
     "dd-cr116c": "D. discoideum CR116C",
@@ -1816,6 +1819,8 @@ GENOME_FILES = {
     "dd-m4b": "Dd_M4B_browser.fna",
     "dd-s6b": "Dd_S6B_browser.fna",
     "dc-cf3b": "D_citrinum_Cf3b_browser.fna",
+    "dc-kgl29a": "D_citrinum_KGL29A_browser.fna",
+    "di-pj11": "D_intermedium_PJ11_browser.fna",
 }
 _GENOME_CACHE = {}          # gid -> {chrom: seq}; tiny LRU (each genome ~30 MB)
 _GENOME_CACHE_ORDER = []

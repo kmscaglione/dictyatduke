@@ -39,9 +39,9 @@ SPECIES = {
     "S6B_prot":              ("dd-s6b", "D. cf. discoideum S6B", True),
     "GS8b_prot":             ("d-citrinum", "D. citrinum GS8b", True),
     "Cf3b_prot":             ("dc-cf3b", "D. citrinum Cf3b", True),
-    "KGL29A_prot":           ("dc-kgl29a", "D. citrinum KGL29A", False),
+    "KGL29A_prot":           ("dc-kgl29a", "D. citrinum KGL29A", True),
     "Ar5b_prot":             ("d-dimigraforme", "D. dimigraforme Ar5b", True),
-    "PJ11_prot":             ("di-pj11", "D. intermedium PJ11", False),
+    "PJ11_prot":             ("di-pj11", "D. intermedium PJ11", True),
     "tnsc14_firmibasis":     ("d-firmibasis", "D. firmibasis", True),
 }
 _DDBG = re.compile(r"DDB_G\d+")

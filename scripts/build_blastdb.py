@@ -43,6 +43,9 @@ SPECIES = [
     ("dd-m4b",            "Dd_M4B_browser",          "Dd_M4B"),
     ("dd-s6b",            "Dd_S6B_browser",          "Dd_S6B"),
     ("dc-cf3b",           "D_citrinum_Cf3b_browser", "D_citrinum_Cf3b"),
+    # Hosted from the submitter GenBank files (genomes_from_gbf.py)
+    ("dc-kgl29a",         "D_citrinum_KGL29A_browser",   "D_citrinum_KGL29A"),
+    ("di-pj11",           "D_intermedium_PJ11_browser",  "D_intermedium_PJ11"),
 ]
 
 

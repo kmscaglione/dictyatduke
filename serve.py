@@ -2335,7 +2335,11 @@ def _curation_ai_draft(paper, genes):
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
     prompt = (
         "From this Dictyostelium paper, extract curation as STRICT JSON with keys: "
-        '"summary" (<=2 sentences), "go" (list of {gene, term, aspect:"P"|"F"|"C"}), '
+        '"summary" (<=2 sentences on the paper), '
+        '"gene_summaries" (list of {gene, sentence}: for each gene the paper '
+        "characterizes, ONE sentence, in the style of a dictyBase gene summary, "
+        "stating what this paper shows the gene does or what its mutant shows), "
+        '"go" (list of {gene, term, aspect:"P"|"F"|"C"}), '
         '"phenotypes" (list of {gene, phenotype}), "interactions" '
         '(list of {gene_a, gene_b, type:"physical"|"genetic"}). Only use genes named '
         "in the paper; prefer these detected symbols where relevant: " + gene_list +
@@ -2347,7 +2351,10 @@ def _curation_ai_draft(paper, genes):
         _analyze_record_tokens(out_tokens)
         m = re.search(r"\{.*\}", text, re.S)
         data = json.loads(m.group(0)) if m else {}
+        gsum = [{"gene": str(x.get("gene", ""))[:60], "sentence": str(x.get("sentence", ""))[:500]}
+                for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
         return {"ok": True, "model": ANALYZE_MODEL, "summary": (data.get("summary") or "")[:600],
+                "gene_summaries": gsum,
                 "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
                 "interactions": data.get("interactions") or []}
     except Exception as e:
@@ -2471,6 +2478,7 @@ def _paper_public_view(d):
         "pubdate": d.get("pubdate"), "url": d.get("url"), "status": d.get("status"),
         "genes": d.get("genes") or [],
         "summary": ai.get("summary", "") if ai.get("ok") else "",
+        "gene_summaries": ai.get("gene_summaries") or [],
         "go": ai.get("go") or [], "phenotypes": ai.get("phenotypes") or [],
         "interactions": ai.get("interactions") or [],
         "already_submitted": bool(d.get("submission")),
@@ -2501,6 +2509,7 @@ def paper_session_submit(token, payload):
 
     cur = payload.get("curation") or {}
     d["submission"] = {
+        "gene_summaries": clean(cur.get("gene_summaries"), ["gene", "sentence"]),
         "go": clean(cur.get("go"), ["gene", "term", "aspect"]),
         "phenotypes": clean(cur.get("phenotypes"), ["gene", "phenotype"]),
         "interactions": clean(cur.get("interactions"), ["gene_a", "gene_b", "type"]),

@@ -2867,8 +2867,10 @@ function paperDraftCard(d) {
   } else {
     const list = (label, arr, fmt) => arr && arr.length
       ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map(fmt).map(esc).join("; ")}</div>` : "";
+    const gsLines = (ai.gene_summaries || []).map((x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`).join("");
     aiHtml = `
       ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
+      ${gsLines}
       ${list("GO", ai.go, (x) => `${x.gene || "?"}: ${x.term || ""} (${x.aspect || "?"})`)}
       ${list("Phenotypes", ai.phenotypes, (x) => `${x.gene || "?"}: ${x.phenotype || ""}`)}
       ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}`;
@@ -2880,6 +2882,7 @@ function paperDraftCard(d) {
   const subList = (label, arr, fmt) => arr && arr.length ? `<div><strong>${label}:</strong> ${arr.map(fmt).map(esc).join("; ")}</div>` : "";
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
       <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}:
+      ${subList("Gene summaries", sub.gene_summaries, (x) => `${x.gene}: ${x.sentence}`)}
       ${subList("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
       ${subList("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
       ${subList("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
@@ -11339,6 +11342,10 @@ function renderPaperSessionForm(el, token, s) {
   const esc = escapeHtml;
   const aspOpt = (v) => ["F", "P", "C"].map((a) => `<option value="${a}"${a === (v || "F") ? " selected" : ""}>${a}</option>`).join("");
   const typeOpt = (v) => ["physical", "genetic"].map((t) => `<option value="${t}"${t === (v || "physical") ? " selected" : ""}>${t}</option>`).join("");
+  const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs" style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap">
+      <input type="checkbox" class="keep" checked style="margin-top:9px" title="Keep this description">
+      <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
+      <textarea class="ss" rows="2" placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea></div>`).join("");
   const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
       <input type="checkbox" class="keep" checked title="Keep this annotation">
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
@@ -11365,6 +11372,7 @@ function renderPaperSessionForm(el, token, s) {
     ${s.already_submitted ? `<p class="notice" style="background:#ecfdf5;border:1px solid #a7f3d0;color:#047857">Thanks — a submission was already received for this paper. You can revise and submit again.</p>` : ""}
     ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
     ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
+    ${section("What each gene does — from this paper", gsRows, "One sentence per gene, in the style of a gene summary. Edit freely; a curator may add this to the gene's dictyBase record.")}
     ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. A curator maps these to formal GO IDs.")}
     ${section("Phenotypes", phRows, "Mutant phenotypes reported for these genes.")}
     ${section("Interactions", inRows, "Physical or genetic interactions.")}
@@ -11380,6 +11388,7 @@ function renderPaperSessionForm(el, token, s) {
   submitBtn.addEventListener("click", async () => {
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
     const curation = {
+      gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value })),
       go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value })),
       phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value })),
       interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value })),

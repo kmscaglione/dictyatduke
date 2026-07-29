@@ -2114,6 +2114,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/gene-annotations"):
             self._handle_gene_annotations()
             return
+        if self.path.startswith("/api/orthogroup"):
+            self._handle_orthogroup()
+            return
         if self.path.startswith("/api/gene-extras"):
             self._handle_gene_extras()
             return
@@ -3918,6 +3921,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": "ddb (DDB_G…) required"})
             return
         self.send_json(200, _merge_curated_go(ddb, _load_gene_annotations().get(ddb, {})))
+
+    def _handle_orthogroup(self):
+        """One gene's curated orthogroup (OrthoFinder, Holland*, Ahmed* et al. 2025)
+        by DDB_G id: the ortholog gene id(s) in each sequenced genome, plus any AX4
+        in-paralogs. Served per-gene from the cached whole-file. {} when the gene
+        isn't in any group."""
+        ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+        if not re.match(r"^DDB_G\d+$", ddb):
+            self.send_json(400, {"error": "ddb (DDB_G…) required"})
+            return
+        og = _load_json("orthogroups.json")
+        entry = og.get("genes", {}).get(ddb, {})
+        self.send_json(200, {"ddb": ddb, "species": og.get("_meta", {}).get("species", []),
+                             "group": entry})
 
     def _handle_gene_extras(self):
         """One gene's dictyBase enrichment (literature, curation status, alt

@@ -1660,6 +1660,7 @@ function loadTabData(gene, tab) {
       break;
     case "Orthologs":
       loadHumanDisease(gene);
+      loadCuratedOrthologs(gene);
       loadParalogs(gene);
       loadComparative(gene);
       loadVariation(gene);
@@ -6824,6 +6825,7 @@ function renderTab(gene, tab) {
   if (tab === "Orthologs") {
     return `
       <div data-human-disease></div>
+      <div class="data-block" data-curated-orthologs></div>
       <div class="data-block" data-paralogs></div>
       <div class="data-block" data-dicty-comparative></div>
       <div class="data-block" data-variation></div>
@@ -8997,6 +8999,47 @@ async function runParalogs(gene) {
       </tbody>
     </table></div>
     <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Sequence-similarity matches (tblastn, E &lt; 1e-3), best hit per gene. Not curated orthology — verify family membership.</p>`;
+}
+
+// Curated orthologs: the gene's OrthoFinder orthogroup (Holland*, Ahmed* et al.
+// 2025) — the true ortholog gene id(s) in each sequenced genome, keyed by DDB_G.
+// Authoritative; sits above the tblastn best-hit comparison.
+async function loadCuratedOrthologs(gene) {
+  const el = document.querySelector("[data-curated-orthologs]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  let data;
+  try { data = await fetch(`/api/orthogroup?ddb=${encodeURIComponent(ddb)}`).then((r) => r.json()); }
+  catch { el.innerHTML = ""; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Orthologs") return;
+  const head = `<h3>Orthologs across the sequenced dictyostelids <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— OrthoFinder (curated)</span></h3>`;
+  const grp = data.group || {};
+  if (!grp.og) {
+    el.innerHTML = `${head}<p class="notice muted" style="margin:0">${escapeHtml(gene.symbol)} is not placed in a curated orthogroup. See the sequence-similarity comparison below.</p>`;
+    return;
+  }
+  const td = "padding:5px 8px";
+  const orth = grp.orthologs || {};
+  const rows = (data.species || []).filter((s) => s.id !== "d-discoideum-ax4").map((s) => {
+    const ids = orth[s.id] || [];
+    const body = ids.length
+      ? escapeHtml(ids.join(", ")) + (s.hosted ? "" : ` <span style="color:var(--muted,#9ca3af)">(genome not yet hosted)</span>`)
+        + (ids.length > 1 ? ` <span style="color:#b45309">· ${ids.length} co-orthologs</span>` : "")
+      : `<span style="color:var(--muted,#9ca3af)">no ortholog in this genome</span>`;
+    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(s.label)}</em></td><td style="${td}">${body}</td></tr>`;
+  }).join("");
+  const paralogs = grp.ax4_paralogs || [];
+  const paraNote = paralogs.length
+    ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:.78rem;padding:8px 10px;border-radius:6px;margin:0 0 10px">This gene is one of ${paralogs.length + 1} <em>D. discoideum</em> in-paralogs in ${escapeHtml(grp.og)}: ${[ddb, ...paralogs].map((g) => `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(g)}" href="/gene/${encodeURIComponent(g)}">${g === ddb ? escapeHtml(gene.symbol) : escapeHtml(g)}</a>`).join(", ")}. The orthologs below are shared by the whole group.</p>`
+    : "";
+  el.innerHTML = `
+    ${head}
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">Curated ortholog calls from OrthoFinder (Holland*, Ahmed* et al. <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">2025, PNAS</a>), group <strong>${escapeHtml(grp.og)}</strong>, by gene ID. More reliable than the sequence-similarity search below.</p>
+    ${paraNote}
+    <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Genome</th><th style="${td}">Ortholog gene ID</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
 }
 
 // Comparative genomics: best tblastn hit of this protein in each sequenced

@@ -2542,8 +2542,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             _, ext = os.path.splitext(fs_path)
             ctype = self._STATIC_CTYPES.get(ext) or self.guess_type(fs_path)
             last_mod = self.date_time_string(int(st.st_mtime))
+            # ETag from mtime+size so a rebuilt track/genome (same URL, new bytes)
+            # gets a new validator. `no-cache` makes the browser REVALIDATE before
+            # reusing its cache, which auto-picks-up rebuilds and defeats Safari's
+            # stale-partial-range bug — without this these files were cached with no
+            # validator and browsers served the old track until a manual cache wipe.
+            etag = f'"{int(st.st_mtime)}-{size}"'
 
             rng = self.headers.get("Range")
+            # A cached partial whose representation changed (If-Range mismatch): its
+            # bytes are stale, so ignore the Range and send the whole current file.
+            if rng and self.headers.get("If-Range") not in (None, etag):
+                rng = None
+            # Full-resource revalidation: unchanged -> 304 (cheap; keeps caching
+            # fast while still current).
+            if not rng and self.headers.get("If-None-Match") in (etag, "*"):
+                self.send_response(304)
+                self.send_header("ETag", etag)
+                self.send_header("Cache-Control", "no-cache")
+                self.send_header("Last-Modified", last_mod)
+                self.end_headers()
+                return True
             start, end = 0, size - 1
             partial = False
             if rng and rng.startswith("bytes="):
@@ -2568,6 +2587,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Content-Type", ctype)
             self.send_header("Accept-Ranges", "bytes")
             self.send_header("Content-Length", str(length))
+            self.send_header("ETag", etag)
+            self.send_header("Cache-Control", "no-cache")
             if partial:
                 self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
             self.send_header("Last-Modified", last_mod)

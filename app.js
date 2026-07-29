@@ -8495,6 +8495,16 @@ function openDownloadsPage(updateRoute = true) {
             </li>
           </ul>
         </section>
+        <section class="data-block" id="current-go-annotations" style="margin-bottom:18px">
+          <h3>GO annotations (current)</h3>
+          <p class="downloads-blurb">Every dictyBase Gene Ontology annotation from the current GO Consortium release — <strong>68,097</strong> across 8,659 genes. This is the up-to-date set; the “GO Association Files” section below is a preserved 2013 snapshot.</p>
+          <ul class="downloads-list">
+            <li style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span><strong>All GO annotations</strong><br><span style="color:var(--muted,#6b7280);font-size:0.8125rem">One row per annotation: DDB_G id, symbol, GO id, aspect, qualifier, evidence, reference, date, assigned&nbsp;by.</span></span>
+              <a class="button" href="/api/bulk?dataset=go" download>Download TSV</a>
+            </li>
+          </ul>
+        </section>
         <div data-downloads><p class="notice muted">Loading downloads…</p></div>
       </div>
     </article>`;

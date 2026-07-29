@@ -181,8 +181,18 @@ def from_gff_fasta(gff, fna):
                 phase = int(c[7])
             except ValueError:
                 phase = 0
-            gid = a.get("Name") or a.get("protein_id") or a.get("locus_tag") or rid
-            gid = re.sub(r"^(rna-|cds-|gene-)", "", gid)
+            # Prefer the submitter gene id (it's carried in the NCBI-processed
+            # models' rna-/cds- IDs, e.g. rna-DC_GS_00004190-RA); else fall back.
+            gid = None
+            for src in (rid, a.get("ID", ""), a.get("Name", ""), a.get("protein_id", "")):
+                m = _GENE.search(src)
+                if m:
+                    gid = m.group(0)
+                    break
+            if not gid:
+                gid = a.get("Name") or a.get("protein_id") or a.get("locus_tag") or rid
+                gid = re.sub(r"^(rna-|cds-|gene-)", "", gid)
+                gid = re.sub(r"-R[A-Z0-9]+$", "", gid)
             e = tx.setdefault(rid, {"gid": gid, "chrom": c[0], "strand": c[6], "parts": []})
             e["parts"].append((int(c[3]), int(c[4]), phase))
     seen = set()
@@ -228,10 +238,15 @@ def main():
         if args.only and stem not in args.only:
             continue
         path = os.path.join(args.src, base + ".gbf")
+        fna = os.path.join(GENOMES, f"{stem}_browser.fna")
+        gff = os.path.join(GENOMES, f"{stem}_browser.gff")
         if os.path.exists(path):
-            _write(stem, from_gbf(path))
+            _write(stem, from_gbf(path))                       # authoritative /translation
+        elif os.path.exists(fna) and os.path.exists(gff):
+            print(f"  ({base}.gbf absent — translating {stem} from its GFF+FASTA)")
+            _write(stem, from_gff_fasta(gff, fna))             # same models, on-box
         else:
-            print(f"  skip {stem}: {base}.gbf not found in {args.src}")
+            print(f"  skip {stem}: no {base}.gbf and no browser files")
     for stem, fna, gff in GFF_GENOMES:
         if args.only and stem not in args.only:
             continue

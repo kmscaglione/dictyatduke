@@ -1333,6 +1333,21 @@ def api_phenotype_index():
     return _API["_pheno_idx"]
 
 
+def api_phenotypes_by_gene():
+    """ddb -> [phenotype term labels] (for combinatorial search + downloads)."""
+    if "_pheno_by_gene" not in _API:
+        m = {}
+        for ddb, entries in _load_json("phenotypes.json").items():
+            terms = []
+            for e in entries:
+                t = (e[0] if e else "").strip()
+                if t:
+                    terms.append(t)
+            m[ddb] = terms
+        _API["_pheno_by_gene"] = m
+    return _API["_pheno_by_gene"]
+
+
 def api_strains():
     if "_strains" not in _API:
         sg, sp = {}, {}
@@ -2113,8 +2128,8 @@ def geneset_report(tokens):
 # minutes' staleness. Write/auth/analysis endpoints (blast, enrichment, login,
 # upload, hit, stats) are deliberately absent and stay uncached.
 API_CACHEABLE_PREFIXES = (
-    "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-search",
-    "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
+    "/api/gene", "/api/sequence", "/api/search", "/api/phenotype-",
+    "/api/orthogroup", "/api/go/", "/api/strain/", "/api/data-status", "/api/version",
     "/api/recent-papers", "/api/coexpression", "/api/expression", "/api/domains",
     "/api/neighborhood", "/api/region", "/api/ispcr", "/api/protein-props",
 )
@@ -2172,6 +2187,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/search"):
             self._handle_api_search()
+            return
+        if self.path.startswith("/api/phenotype-combine"):
+            self._handle_api_phenotype_combine()
             return
         if self.path.startswith("/api/phenotype-search"):
             self._handle_api_phenotype_search()
@@ -4077,6 +4095,45 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         matches.sort(key=lambda v: (0 if v["term"].lower().startswith(term) else 1, -len(v["genes"]), v["term"].lower()))
         results = [{"term": v["term"], "genes": v["genes"]} for v in matches[:limit]]
         self.send_json(200, {"query": term, "totalTerms": len(matches), "count": len(results), "terms": results})
+
+    def _handle_api_phenotype_combine(self):
+        """Combinatorial phenotype search: genes with ALL (op=and) or ANY (op=or) of
+        several phenotypes. Each `;`-separated term is expanded to the curated
+        phenotypes containing it, then the per-term gene sets are intersected/unioned.
+        /api/phenotype-combine?terms=chemotaxis;aberrant+fruiting&op=and"""
+        q = parse_qs(urlparse(self.path).query)
+        raw = (q.get("terms", [q.get("q", [""])[0]])[0]).strip()
+        op = (q.get("op", ["and"])[0]).strip().lower()
+        if op not in ("and", "or"):
+            op = "and"
+        terms = [t.strip().lower() for t in raw.split(";") if t.strip()]
+        if not terms:
+            self.send_json(400, {"error": "terms parameter required (semicolon-separated)"})
+            return
+        idx = api_phenotype_index()
+        per_input = []
+        for t in terms:
+            matched, genes = [], set()
+            for key, v in idx.items():
+                if t in key:
+                    matched.append(v["term"])
+                    genes.update(g["ddb"] for g in v["genes"])
+            per_input.append({"query": t, "matchedTerms": sorted(matched),
+                              "geneCount": len(genes), "_genes": genes})
+        sets = [pi["_genes"] for pi in per_input]
+        combined = (set.intersection(*sets) if op == "and" else set().union(*sets)) if sets else set()
+        rows, _ = api_gene_rows()
+        by_gene = api_phenotypes_by_gene()
+        matched_all = set().union(*[set(pi["matchedTerms"]) for pi in per_input]) if per_input else set()
+        genes_out = []
+        for ddb in combined:
+            phs = sorted({p for p in by_gene.get(ddb, []) if p in matched_all})
+            genes_out.append({"ddb": ddb, "symbol": rows.get(ddb, {}).get("symbol", ddb),
+                              "phenotypes": phs})
+        genes_out.sort(key=lambda g: g["symbol"].lower())
+        inputs = [{"query": pi["query"], "matchedTerms": pi["matchedTerms"],
+                   "geneCount": pi["geneCount"]} for pi in per_input]
+        self.send_json(200, {"op": op, "inputs": inputs, "count": len(genes_out), "genes": genes_out})
 
     def _handle_api_go(self, goid):
         if not re.match(r"^GO:\d{7}$", goid):

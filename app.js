@@ -9477,8 +9477,8 @@ const SEARCH_PAGE_MODES = [
     blurb: "Search the whole site — genes plus organisms, research pages, and tools.",
     placeholder: "Search genes, pages, organisms, tools — e.g. cln5, BLAST, nomenclature" },
   { key: "phenotype", label: "Phenotype", title: "Phenotype search",
-    blurb: "Find genes by curated mutant phenotype.",
-    placeholder: "Phenotype term — e.g. chemotaxis, aggregation, spore" },
+    blurb: "Find genes by curated mutant phenotype. Combine several with “;” to find genes with all (or any) of them.",
+    placeholder: "Phenotype term(s) — e.g. chemotaxis; aberrant fruiting body" },
   { key: "go", label: "GO term", title: "GO term search",
     blurb: "Find a Gene Ontology term and the Dictyostelium genes annotated to it.",
     placeholder: "GO term name or ID — e.g. autophagy, GO:0006914" },
@@ -9488,6 +9488,7 @@ const SEARCH_PAGE_MODES = [
 ];
 
 let searchPageMode = "general";
+let phenoCombineOp = "and";   // AND/OR for combinatorial phenotype search
 let searchPageDebounce = null;
 let searchPageReq = 0; // invalidates stale async results when typing or switching mode
 
@@ -9648,6 +9649,12 @@ function renderSearchPage() {
         <div style="margin-bottom:16px">
           <input id="page-search-input" type="search" autocomplete="off" placeholder="${escapeHtml(cfg.placeholder)}" aria-label="${escapeHtml(cfg.title)}">
         </div>
+        ${searchPageMode === "phenotype" ? `
+        <div id="pheno-combine" style="margin:-6px 0 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:0.8125rem;color:var(--muted,#6b7280)">
+          <span>Multiple terms (separate with “;”):</span>
+          <label style="cursor:pointer"><input type="radio" name="pheno-op" value="and"${phenoCombineOp === "and" ? " checked" : ""}> all — AND</label>
+          <label style="cursor:pointer"><input type="radio" name="pheno-op" value="or"${phenoCombineOp === "or" ? " checked" : ""}> any — OR</label>
+        </div>` : ""}
         <div data-search-results><p class="notice muted">Start typing to search.</p></div>
       </div>
     </article>`;
@@ -9660,6 +9667,10 @@ function renderSearchPage() {
     });
     if (appReady) requestAnimationFrame(() => pageInput.focus());
   }
+  document.querySelectorAll('input[name="pheno-op"]').forEach((r) => r.addEventListener("change", () => {
+    phenoCombineOp = r.value;
+    if (pageInput && pageInput.value.trim().length >= 2) runSearchPageQuery("phenotype", pageInput.value);
+  }));
 }
 
 function runSearchPageQuery(mode, value) {
@@ -9729,11 +9740,26 @@ async function ensurePhenotypeOntology() {
   return phenoOntologyData;
 }
 
+// Download the resulting gene list (ddb, symbol, matched phenotypes) as TSV.
+function wirePhenotypeDownload(el, genes, base) {
+  const btn = el.querySelector("#pheno-dl");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const tsv = ["ddb_g\tsymbol\tphenotypes",
+      ...genes.map((g) => `${g.ddb}\t${g.symbol}\t${(g.phenotypes || []).join("; ")}`)].join("\n") + "\n";
+    basketDownload(tsv, `${base}_${stamp}.tsv`, "text/tab-separated-values");
+  });
+}
+const phenoDlBtn = `<button type="button" id="pheno-dl" class="button" style="font-size:0.8125rem;padding:6px 10px">Download genes (TSV)</button>`;
+
 async function runPhenotypeSearch(el, q, req) {
+  const terms = q.split(";").map((t) => t.trim()).filter((t) => t.length >= 2);
+  if (terms.length >= 2) return runPhenotypeCombine(el, terms, req);
   el.innerHTML = `<p class="notice muted">Searching phenotypes…</p>`;
   try {
     const [data, onto] = await Promise.all([
-      (await fetch(`/api/phenotype-search?q=${encodeURIComponent(q)}&limit=40`)).json(),
+      (await fetch(`/api/phenotype-search?q=${encodeURIComponent(terms[0] || q.trim())}&limit=40`)).json(),
       ensurePhenotypeOntology(),
     ]);
     if (req !== searchPageReq) return;
@@ -9742,8 +9768,19 @@ async function runPhenotypeSearch(el, q, req) {
       return;
     }
     const shown = data.count < data.totalTerms ? ` (showing ${data.count})` : "";
+    // Unique genes across the shown terms, each with the term(s) it appears under.
+    const byGene = new Map();
+    data.terms.forEach((t) => t.genes.forEach((g) => {
+      const e = byGene.get(g.ddb) || { ddb: g.ddb, symbol: g.symbol, phenotypes: [] };
+      if (!e.phenotypes.includes(t.term)) e.phenotypes.push(t.term);
+      byGene.set(g.ddb, e);
+    }));
+    const dlGenes = [...byGene.values()];
     el.innerHTML = `
-      <p class="notice muted">${data.totalTerms} phenotype${data.totalTerms === 1 ? "" : "s"} matching “${escapeHtml(q)}”${shown}.</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+        <p class="notice muted" style="margin:0">${data.totalTerms} phenotype${data.totalTerms === 1 ? "" : "s"} matching “${escapeHtml(q)}”${shown} · ${dlGenes.length} gene${dlGenes.length === 1 ? "" : "s"}.</p>
+        ${phenoDlBtn}
+      </div>
       ${data.terms.map((t) => {
         const o = onto[(t.term || "").toLowerCase()];
         const def = o && o.definition
@@ -9758,6 +9795,36 @@ async function runPhenotypeSearch(el, q, req) {
           </div>
         </div>`;
       }).join("")}`;
+    wirePhenotypeDownload(el, dlGenes, `phenotype_${(terms[0] || q).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 30) || "search"}`);
+  } catch {
+    if (req !== searchPageReq) return;
+    el.innerHTML = `<p class="notice">Phenotype search is unavailable right now.</p>`;
+  }
+}
+
+// Combinatorial phenotype search: genes with all (AND) / any (OR) of several terms.
+async function runPhenotypeCombine(el, terms, req) {
+  el.innerHTML = `<p class="notice muted">Combining ${terms.length} phenotypes…</p>`;
+  try {
+    const data = await (await fetch(`/api/phenotype-combine?terms=${encodeURIComponent(terms.join(";"))}&op=${phenoCombineOp}`)).json();
+    if (req !== searchPageReq) return;
+    if (data.error) { el.innerHTML = `<p class="notice">${escapeHtml(data.error)}</p>`; return; }
+    const glue = data.op === "and" ? " and " : " or ";
+    const summary = (data.inputs || []).map((i) => `“${escapeHtml(i.query)}” (${i.geneCount})`).join(glue);
+    const opWord = data.op === "and" ? "all" : "any";
+    if (!data.count) {
+      el.innerHTML = `<p class="notice">No genes have ${opWord} of: ${summary}.</p>`;
+      return;
+    }
+    el.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+        <p class="notice muted" style="margin:0"><strong>${data.count}</strong> gene${data.count === 1 ? "" : "s"} with ${opWord} of: ${summary}.</p>
+        ${phenoDlBtn}
+      </div>
+      <div class="technique-links">
+        ${data.genes.map((g) => `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}" title="${escapeHtml((g.phenotypes || []).join('; '))}"><span>${escapeHtml(g.symbol)}</span><small>${escapeHtml((g.phenotypes || []).slice(0, 2).join('; '))}${(g.phenotypes || []).length > 2 ? '…' : ''}</small></a>`).join("")}
+      </div>`;
+    wirePhenotypeDownload(el, data.genes, `phenotype_combo_${data.op}`);
   } catch {
     if (req !== searchPageReq) return;
     el.innerHTML = `<p class="notice">Phenotype search is unavailable right now.</p>`;

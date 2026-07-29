@@ -1653,6 +1653,24 @@ def run_variation(ddb):
         return 503, {"error": "BLAST unavailable"}
     recip_ok = bool(blast_bin("blastp") and
                     list((BLAST_DB_DIR).glob("d-discoideum-ax4-prot*.p*")))
+    # Curated ortholog per genome (OrthoFinder) -> its locus, to pin the right HSP
+    # instead of a paralog. Matches by contig name, so it kicks in once the isolate
+    # blastdb subjects carry the submitter names (relabel / .gbf build).
+    og_entry = _load_json("orthogroups.json").get("genes", {}).get(ddb, {})
+    gene_loci_map = _load_json("gene_loci.json").get("loci", {})
+
+    def curated_ortholog(genome_id):
+        for gid in og_entry.get("orthologs", {}).get(genome_id, []):
+            loc = gene_loci_map.get(genome_id, {}).get(gid)
+            if loc and ":" in loc:
+                contig, rng = loc.rsplit(":", 1)
+                try:
+                    s, e = (int(x) for x in rng.split("-"))
+                except ValueError:
+                    continue
+                return gid, contig, s, e
+        return None
+
     qf = tempfile.NamedTemporaryFile("w", suffix=".fa", delete=False)
     isolates = []
     try:
@@ -1680,31 +1698,47 @@ def run_variation(ddb):
                 if cur is None or bs > cur["bitscore"]:
                     by_locus[sid] = {"subject": sid, "identity": float(f[1]),
                                      "length": int(f[2]), "qstart": int(f[3]),
+                                     "sstart": int(f[5]), "send": int(f[6]),
                                      "qseq": f[7], "sseq": f[8], "bitscore": bs}
             if not by_locus:
                 isolates.append({"id": db, "label": label, "found": False})
                 continue
             loci = sorted(by_locus.values(), key=lambda h: -h["bitscore"])
             best_bs = loci[0]["bitscore"]
-            # Reciprocal-check the top few loci to find the true ortholog.
-            ortholog, n_paralogs, para_gene = None, 0, None
-            if recip_ok:
-                for lc in loci[:3]:
-                    lc["rbh"] = _ax4_reciprocal(lc["sseq"].replace("-", ""))
-                    if lc["rbh"] == ddb and ortholog is None:
-                        ortholog = lc
-                    elif lc["rbh"] and lc["rbh"] != ddb and lc["bitscore"] >= 0.5 * best_bs:
-                        n_paralogs += 1
-                        para_gene = para_gene or lc["rbh"]
-            chosen = ortholog or loci[0]
-            if not recip_ok:
-                status = "unverified"
-            elif ortholog is not None:
-                status = "confirmed"
-            elif loci[0].get("rbh"):
-                status = "ambiguous"
-            else:
-                status = "unverified"
+            chosen, status, ortholog_gene = None, None, None
+            n_paralogs, para_gene = 0, None
+            # 1) Curated ortholog: take the HSP that lands on its locus (kills the
+            #    paralog-collapse problem outright).
+            cur = curated_ortholog(db)
+            if cur:
+                gid, ccontig, cs, ce = cur
+                for lc in loci:
+                    lo, hi = min(lc["sstart"], lc["send"]), max(lc["sstart"], lc["send"])
+                    if lc["subject"] == ccontig and lo <= ce and hi >= cs:
+                        chosen, status, ortholog_gene = lc, "curated", gid
+                        break
+                if chosen:
+                    n_paralogs = sum(1 for lc in loci if lc is not chosen and lc["bitscore"] >= 0.5 * best_bs)
+            # 2) Else reciprocal-best-hit against the AX4 proteome.
+            if chosen is None:
+                ortholog = None
+                if recip_ok:
+                    for lc in loci[:3]:
+                        lc["rbh"] = _ax4_reciprocal(lc["sseq"].replace("-", ""))
+                        if lc["rbh"] == ddb and ortholog is None:
+                            ortholog = lc
+                        elif lc["rbh"] and lc["rbh"] != ddb and lc["bitscore"] >= 0.5 * best_bs:
+                            n_paralogs += 1
+                            para_gene = para_gene or lc["rbh"]
+                chosen = ortholog or loci[0]
+                if not recip_ok:
+                    status = "unverified"
+                elif ortholog is not None:
+                    status = "confirmed"
+                elif loci[0].get("rbh"):
+                    status = "ambiguous"
+                else:
+                    status = "unverified"
             subs = []
             p = chosen["qstart"]
             for a, b in zip(chosen["qseq"], chosen["sseq"]):
@@ -1717,6 +1751,8 @@ def run_variation(ddb):
                    "coverage": round(100.0 * chosen["length"] / L, 1),
                    "n_subs": len(subs), "subs": subs[:80],
                    "ortholog_status": status, "n_paralogs": n_paralogs}
+            if ortholog_gene:
+                row["ortholog_gene_id"] = ortholog_gene
             if status == "ambiguous" and loci[0].get("rbh"):
                 rg = gene_by_ddb(loci[0]["rbh"])
                 if rg:

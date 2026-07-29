@@ -8910,6 +8910,7 @@ async function runVariation(gene) {
   const geneLink = (g) => `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}">${escapeHtml(g.symbol)}</a>`;
   const orthoCell = (iso) => {
     const para = iso.n_paralogs ? ` <span style="color:#b45309">· ${iso.n_paralogs} paralog${iso.n_paralogs > 1 ? "s" : ""}</span>` : "";
+    if (iso.ortholog_status === "curated") return `<span style="color:#047857">✓ curated${iso.ortholog_gene_id ? " " + escapeHtml(iso.ortholog_gene_id) : ""}</span>${para}`;
     if (iso.ortholog_status === "confirmed") return `<span style="color:#047857">✓ reciprocal</span>${para}`;
     if (iso.ortholog_status === "ambiguous") return `<span style="color:#b45309">⚠ matches ${iso.rbh_gene ? geneLink(iso.rbh_gene) : "a paralog"}</span>${para}`;
     return `<span style="color:var(--muted,#6b7280)">best hit</span>${para}`;
@@ -8931,7 +8932,7 @@ async function runVariation(gene) {
   }).join("");
   const flagBanner = anyFlag ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e;font-size:.78rem;padding:8px 10px;border-radius:6px;margin:0 0 10px">This protein has paralogs in one or more strains. Rows marked <strong>⚠</strong> are strain loci that better match a different <em>D. discoideum</em> gene, so they are shown as paralogs, not allelic variation. This is what makes families like <em>tgrC1</em> tricky.</p>` : "";
   const methodNote = data.method === "reciprocal-best-hit"
-    ? `Ortholog per strain is the <strong>reciprocal best hit</strong>: the tblastn locus whose own best match in the AX4 proteome is this gene. <span style="color:#047857">✓</span> = confirmed 1:1; <span style="color:#b45309">⚠</span> = the strain's closest locus is a paralog. Substitutions are amino-acid changes vs AX4; positions are AX4 residue numbers. A curated ortholog set will supersede this heuristic.`
+    ? `Ortholog per strain: <span style="color:#047857">✓ curated</span> uses the OrthoFinder ortholog's locus (Holland*, Ahmed* et al. 2025); otherwise the <strong>reciprocal best hit</strong> (locus whose own best AX4-proteome match is this gene). <span style="color:#b45309">⚠</span> = the strain's closest locus is a paralog. Substitutions are amino-acid changes vs AX4; positions are AX4 residue numbers.`
     : `Protein-level (tblastn of the AX4 protein vs each isolate assembly), reference = AX4. Reciprocal ortholog check unavailable on this server, so best-hit only. Positions are AX4 residue numbers.`;
   out.innerHTML = `
     ${flagBanner}

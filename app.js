@@ -5035,7 +5035,7 @@ function renderStartPage() {
 function renderGuidePage() {
   const here = [
     ["/search/advanced", "Gene records", "Every gene with GO, phenotype, ortholog, human-disease links, protein structure, and expression. Search from the box at the top of any page, or filter with the advanced finder."],
-    ["/tools/genome-browser", "Genomes &amp; browser", "17 sequenced dictyostelid genomes in an interactive browser."],
+    ["/tools/genome-browser", "Genomes &amp; browser", "19 sequenced dictyostelid genomes in an interactive browser."],
     ["/tools/blast", "BLAST", "Search the genomes and proteomes by DNA or protein sequence."],
     ["/stock-center", "Stock Center", "The full Dicty Stock Center catalog. Browse and order strains and plasmids."],
     ["/tools", "Analysis tools", "GO enrichment, gene-set analysis, expression, CRISPR and primer design, and more."],

@@ -1636,6 +1636,7 @@ function loadTabData(gene, tab) {
   switch (tab) {
     case "Summary":
       requestAnimationFrame(() => loadRNAseqInline(gene));
+      loadAuthorCuration(gene);
       loadAISummary(gene);
       loadGeneModel(gene);
       loadCoexpression(gene);
@@ -2857,8 +2858,11 @@ async function draftPaperByPmid() {
 
 function paperDraftCard(d) {
   const esc = escapeHtml;
+  const gsPlainLine = (x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`;
+  // The "add to summary" button appears only on the AUTHOR-submitted recap, i.e.
+  // once the author has reviewed and okayed the sentence — not on the raw AI draft.
   const gsBtnLine = (x) => `<div style="font-size:12.5px;margin:3px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}
-      <button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button></div>`;
+      <button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this author-approved sentence to the gene's curated summary" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button></div>`;
   const geneChips = (d.genes || []).length
     ? d.genes.map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}" target="_blank" rel="noopener">${esc(g.symbol || g.ddb)}</a>`).join(", ")
     : `<span class="muted">none detected in the abstract</span>`;
@@ -2869,7 +2873,7 @@ function paperDraftCard(d) {
   } else {
     const list = (label, arr, fmt) => arr && arr.length
       ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map(fmt).map(esc).join("; ")}</div>` : "";
-    const gsLines = (ai.gene_summaries || []).map(gsBtnLine).join("");
+    const gsLines = (ai.gene_summaries || []).map(gsPlainLine).join("");
     aiHtml = `
       ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
       ${gsLines}
@@ -7233,6 +7237,7 @@ function renderTab(gene, tab) {
     `;
   }
   return `
+    <div data-author-curation></div>
     <div data-ai-summary></div>
     <section class="data-block" data-gene-model hidden></section>
     <div class="section-grid">
@@ -9161,6 +9166,46 @@ async function ensureDupExpression() {
     dupExprMap = res.ok ? await res.json() : {};
   } catch { dupExprMap = {}; }
   return dupExprMap;
+}
+
+// Third curation window: author-submitted curation awaiting curator approval.
+// Shown provisionally so users see the author's comments before the curator acts.
+async function loadAuthorCuration(gene) {
+  const el = document.querySelector("[data-author-curation]");
+  if (!el) return;
+  const ddb = gene.veupath || gene.ddb || "";
+  if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
+  let data;
+  try { data = await fetch(`/api/author-curation?ddb=${encodeURIComponent(ddb)}`).then((r) => r.json()); }
+  catch { el.innerHTML = ""; return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  const entries = (data && data.entries) || [];
+  if (!entries.length) { el.innerHTML = ""; return; }
+  const esc = escapeHtml;
+  const cards = entries.map((e) => {
+    const cite = e.pmid
+      ? `<a class="text-link" href="${esc(e.url || `https://pubmed.ncbi.nlm.nih.gov/${e.pmid}/`)}" target="_blank" rel="noopener">${esc(e.title || "PMID " + e.pmid)}</a>`
+      : esc(e.title || "");
+    const who = e.submitter ? `submitted by ${esc(e.submitter)}` : "submitted by the paper's author";
+    const line = (label, txt) => txt ? `<div style="margin:2px 0"><strong>${label}:</strong> ${esc(txt)}</div>` : "";
+    const go = (e.go || []).map((x) => `${x.gene}: ${x.term} (${x.aspect})`).join("; ");
+    const ph = (e.phenotypes || []).map((x) => `${x.phenotype}`).join("; ");
+    const inx = (e.interactions || []).map((x) => `${x.gene_a} + ${x.gene_b} (${x.type})`).join("; ");
+    return `<div style="border-left:3px solid #d97706;padding:6px 10px;margin:8px 0;background:#fffbeb;border-radius:0 6px 6px 0">
+        <div style="font-size:0.8125rem;margin-bottom:2px">From ${cite} <span class="muted">— ${who}</span></div>
+        ${line("What the paper shows this gene does", e.gene_summary)}
+        ${line("GO", go)}
+        ${line("Phenotypes", ph)}
+        ${line("Interactions", inx)}
+        ${e.note ? `<div class="muted" style="font-size:0.75rem;margin-top:2px"><em>Author note:</em> ${esc(e.note)}</div>` : ""}
+      </div>`;
+  }).join("");
+  el.className = "data-block";
+  el.innerHTML = `
+    <h3>Author-submitted curation
+      <span style="font-size:0.7rem;font-weight:600;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:1px 8px;margin-left:6px;vertical-align:middle">awaiting curator approval</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Curation submitted by the paper's author through dictyBase. It is shown here provisionally and is <strong>not yet part of the curated record</strong> until a curator reviews it.</p>
+    ${cards}`;
 }
 
 async function loadAISummary(gene) {
@@ -11393,24 +11438,34 @@ function renderPaperSessionForm(el, token, s) {
       <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
       <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
       <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select></div>`).join("");
-  const section = (title, rows, hint) => rows
-    ? `<h3 class="tools-group">${title}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
+  const help = (t) => `<span class="ps-help" role="img" aria-label="help" title="${esc(t)}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:11px;font-weight:700;margin-left:6px;cursor:help;vertical-align:middle">?</span>`;
+  const section = (title, rows, hint, helpText) => rows
+    ? `<h3 class="tools-group">${title}${helpText ? help(helpText) : ""}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
     : "";
   const genes = (s.genes || []).map((g) => esc(g.symbol || g.ddb)).join(", ");
   el.innerHTML = `
     <p class="eyebrow">Help curate this paper</p>
     <h2 style="margin:2px 0 6px">${esc(s.title || "")}</h2>
     <p class="muted" style="font-size:13px;margin:0 0 10px">${esc(s.journal || "")}${s.pmid ? ` · <a class="text-link" href="${esc(s.url)}" target="_blank" rel="noopener">PMID ${esc(s.pmid)}</a>` : ""}</p>
-    <p style="font-size:14px;line-height:1.6">dictyBase drafted the annotations below from your paper. Please correct anything wrong, uncheck what does not belong, and submit. This is a draft: nothing is published without your submission and a curator's review.</p>
+    <div style="background:#f8fafc;border:1px solid #e5e9ee;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.55;margin:0 0 14px">
+      <strong>How to curate your paper</strong> <span class="muted">(about 3 minutes)</span>
+      <ol style="margin:6px 0 0;padding-left:20px">
+        <li>Below are annotations we drafted automatically from your abstract, so some may be wrong or incomplete.</li>
+        <li><strong>Edit</strong> anything inaccurate and <strong>uncheck</strong> the box next to anything that does not belong.</li>
+        <li>Add anything important we missed in the <em>Notes</em> box at the bottom.</li>
+        <li>Click <strong>Submit for review</strong>. A curator checks everything before it becomes part of the record.</li>
+      </ol>
+      <div class="muted" style="font-size:12px;margin-top:6px">Hover the <strong>?</strong> next to each section for what it means. Nothing is published without your submission and a curator's review.</div>
+    </div>
     ${s.already_submitted ? `<p class="notice" style="background:#ecfdf5;border:1px solid #a7f3d0;color:#047857">Thanks — a submission was already received for this paper. You can revise and submit again.</p>` : ""}
     ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
     ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
-    ${section("What each gene does — from this paper", gsRows, "One sentence per gene, in the style of a gene summary. Edit freely; a curator may add this to the gene's dictyBase record.")}
-    ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. A curator maps these to formal GO IDs.")}
-    ${section("Phenotypes", phRows, "Mutant phenotypes reported for these genes.")}
-    ${section("Interactions", inRows, "Physical or genetic interactions.")}
-    ${(goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated. Please add the key findings for your paper in the notes below.</p>`}
-    <h3 class="tools-group">Notes to the curator <span class="muted" style="font-weight:400;font-size:12px">(anything else worth capturing)</span></h3>
+    ${section("What each gene does — from this paper", gsRows, "One sentence per gene. Edit freely; a curator may add it to the gene's dictyBase summary.", "A plain-language sentence describing what your paper shows this gene does, or what its mutant reveals. This is the kind of description shown at the top of a gene's page.")}
+    ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. A curator maps these to formal GO IDs.", "Gene Ontology terms describe a gene's molecular Function (F), the biological Process (P) it takes part in, or the cellular Component (C) where it acts. Write it in plain words; a curator maps it to the official GO term.")}
+    ${section("Phenotypes", phRows, "Observable traits of a mutant of this gene.", "What a mutant of this gene looks like or does differently, for example 'reduced growth', 'aggregation defect', or 'no fruiting bodies'.")}
+    ${section("Interactions", inRows, "Physical or genetic interactions between two genes.", "Two genes or proteins that either physically bind each other (physical) or interact genetically, such as a double-mutant effect (genetic).")}
+    ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated from the abstract. Please add the key findings for your paper in the notes below.</p>`}
+    <h3 class="tools-group">Notes to the curator ${help("Anything else worth capturing that is not covered above: key findings, corrections, missing genes, or context. A curator reads this.")}<span class="muted" style="font-weight:400;font-size:12px"> (optional)</span></h3>
     <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical"></textarea>
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px">
       <input id="ps-name" type="text" placeholder="Your name (optional)" style="${FIELD};min-width:200px">

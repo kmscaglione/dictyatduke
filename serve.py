@@ -2504,6 +2504,58 @@ def redraft_paper(pmid):
 # A draft's token is a one-draft capability: whoever has the emailed link can view
 # and submit that paper's curation (no login). Submissions land back on the draft
 # for a curator to review; they are never published directly.
+_AUTHOR_CUR = {"mtime": None, "index": {}}
+
+
+def _author_curation_index():
+    """Map DDB_G -> list of author-submitted (not-yet-approved) curation entries,
+    built from paper-session submissions. mtime-cached. Public: lets a gene page
+    show the author's comments while awaiting curator review. Submitter name only,
+    never the email."""
+    try:
+        mtime = os.path.getmtime(PAPER_DRAFTS_PATH)
+    except OSError:
+        return {}
+    if _AUTHOR_CUR["mtime"] == mtime:
+        return _AUTHOR_CUR["index"]
+    idx = {}
+    for d in _load_paper_drafts().get("drafts", []):
+        sub = d.get("submission")
+        if not sub:
+            continue
+        paper = {"pmid": d.get("pmid"), "title": d.get("title"), "url": d.get("url"),
+                 "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", ""),
+                 "note": sub.get("note", "")}
+        per = {}
+
+        def slot(ddb):
+            return per.setdefault(ddb, {"gene_summary": "", "go": [], "phenotypes": [], "interactions": []})
+
+        for gs in sub.get("gene_summaries", []):
+            ddb = resolve_gene(gs.get("gene", ""))
+            if ddb and gs.get("sentence"):
+                slot(ddb)["gene_summary"] = gs["sentence"]
+        for g in sub.get("go", []):
+            ddb = resolve_gene(g.get("gene", ""))
+            if ddb:
+                slot(ddb)["go"].append(g)
+        for ph in sub.get("phenotypes", []):
+            ddb = resolve_gene(ph.get("gene", ""))
+            if ddb:
+                slot(ddb)["phenotypes"].append(ph)
+        for it in sub.get("interactions", []):
+            seen = set()
+            for gk in ("gene_a", "gene_b"):
+                ddb = resolve_gene(it.get(gk, ""))
+                if ddb and ddb not in seen:
+                    seen.add(ddb)
+                    slot(ddb)["interactions"].append(it)
+        for ddb, content in per.items():
+            idx.setdefault(ddb, []).append({**paper, **content})
+    _AUTHOR_CUR["mtime"], _AUTHOR_CUR["index"] = mtime, idx
+    return idx
+
+
 def _paper_public_view(d):
     """The author-facing subset of a draft — no email or other PII."""
     ai = d.get("ai") or {}
@@ -2773,6 +2825,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Curator dashboard API — list pending curations
+        if self.path.startswith("/api/author-curation"):
+            ddb = (parse_qs(urlparse(self.path).query).get("ddb", [""])[0]).strip()
+            if not re.match(r"^DDB_G\d+$", ddb):
+                self.send_json(400, {"error": "ddb (DDB_G…) required"})
+                return
+            self.send_json(200, {"ddb": ddb, "entries": _author_curation_index().get(ddb, [])})
+            return
         if self.path.split("?")[0] == "/api/paper-session":
             if _rate_limited(_PAPER_HITS, self.client_address[0], limit=40, window=60):
                 self.send_json(429, {"error": "Too many requests. Slow down a moment."})

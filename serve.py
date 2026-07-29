@@ -3933,8 +3933,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         og = _load_json("orthogroups.json")
         entry = og.get("genes", {}).get(ddb, {})
+        # Attach each ortholog gene id's locus (contig:start-end) so the gene page
+        # can deep-link into the genome browser. gene_loci.json is keyed by genome.
+        loci_by_genome = _load_json("gene_loci.json").get("loci", {})
+        loci = {}
+        for genome_id, ids in entry.get("orthologs", {}).items():
+            gl = loci_by_genome.get(genome_id, {})
+            for gid in ids:
+                if gid in gl:
+                    loci[gid] = gl[gid]
         self.send_json(200, {"ddb": ddb, "species": og.get("_meta", {}).get("species", []),
-                             "group": entry})
+                             "group": entry, "loci": loci})
 
     def _handle_gene_extras(self):
         """One gene's dictyBase enrichment (literature, curation status, alt

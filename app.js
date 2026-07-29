@@ -4479,6 +4479,15 @@ const browserOrganisms = [
 
 let igvBrowser = null;
 let pendingBrowserLocus = null;   // set by viewInBrowser(); consumed on next browser load
+let pendingBrowserOrg = null;     // organism to open the browser on (default: AX4)
+
+// Open the genome browser on a specific organism at a locus (e.g. a curated
+// ortholog's contig:start-end). Consumed by initGenomeBrowser on next load.
+function openBrowserAt(orgId, locus) {
+  pendingBrowserOrg = orgId || null;
+  pendingBrowserLocus = locus || null;
+  openTool("genome-browser");
+}
 
 // Parse a gene record's location ("NC_007088.5: 1,696,443-1,697,768") into the
 // AX4 RefSeq locus the genome browser uses. Coordinate separator may be a hyphen
@@ -4644,7 +4653,9 @@ function initGenomeBrowser() {
       });
   };
 
-  const startWithOrg = browserOrganisms[0];
+  const startWithOrg = (pendingBrowserOrg && browserOrganisms.find((o) => o.id === pendingBrowserOrg)) || browserOrganisms[0];
+  pendingBrowserOrg = null;
+  if (select) select.value = startWithOrg.id;
 
   const addBtn = document.getElementById("track-add");
   if (addBtn) addBtn.addEventListener("click", () => {
@@ -9021,12 +9032,23 @@ async function loadCuratedOrthologs(gene) {
   }
   const td = "padding:5px 8px";
   const orth = grp.orthologs || {};
+  const loci = data.loci || {};
   const rows = (data.species || []).filter((s) => s.id !== "d-discoideum-ax4").map((s) => {
     const ids = orth[s.id] || [];
-    const body = ids.length
-      ? escapeHtml(ids.join(", ")) + (s.hosted ? "" : ` <span style="color:var(--muted,#9ca3af)">(genome not yet hosted)</span>`)
-        + (ids.length > 1 ? ` <span style="color:#b45309">· ${ids.length} co-orthologs</span>` : "")
-      : `<span style="color:var(--muted,#9ca3af)">no ortholog in this genome</span>`;
+    let body;
+    if (!ids.length) {
+      body = `<span style="color:var(--muted,#9ca3af)">no ortholog in this genome</span>`;
+    } else {
+      const linked = ids.map((gid) => {
+        const locus = loci[gid];
+        return (s.hosted && locus)
+          ? `<button type="button" class="ortholog-jump" data-org="${escapeHtml(s.id)}" data-locus="${escapeHtml(locus)}" title="Open ${escapeHtml(locus)} in the genome browser" style="background:none;border:none;padding:0;font:inherit;color:var(--link,#0b62c4);cursor:pointer;text-decoration:underline">${escapeHtml(gid)}</button>`
+          : escapeHtml(gid);
+      }).join(", ");
+      body = linked
+        + (!s.hosted ? ` <span style="color:var(--muted,#9ca3af)">(genome not yet hosted)</span>` : "")
+        + (ids.length > 1 ? ` <span style="color:#b45309">· ${ids.length} co-orthologs</span>` : "");
+    }
     return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(s.label)}</em></td><td style="${td}">${body}</td></tr>`;
   }).join("");
   const paralogs = grp.ax4_paralogs || [];
@@ -9040,6 +9062,8 @@ async function loadCuratedOrthologs(gene) {
     <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
       <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Genome</th><th style="${td}">Ortholog gene ID</th></tr></thead>
       <tbody>${rows}</tbody></table></div>`;
+  el.querySelectorAll(".ortholog-jump").forEach((b) =>
+    b.addEventListener("click", () => openBrowserAt(b.dataset.org, b.dataset.locus)));
 }
 
 // Comparative genomics: best tblastn hit of this protein in each sequenced

@@ -1962,6 +1962,93 @@ def extract_region(gid, chrom, start, end, strand, flank):
                  "strand": strand or "+", "length": len(sub), "seq": sub}
 
 
+# --- Ortholog sequence download (Tera Levin's request) ----------------------
+# A D. discoideum gene page lets you download its curated orthologs' sequences
+# (protein or CDS nucleotide) as one multi-FASTA, keyed by gene id. The AX4 gene's
+# own sequence comes from extract_sequence; every other record is pulled by gene id
+# straight from the per-genome CDS/protein FASTAs built by build_gene_sequences.py.
+GENOMES_DIR = pathlib.Path(ROOT) / "assets" / "genomes"
+
+# OrthoFinder species id -> per-genome sequence-file stem
+# (assets/genomes/<stem>_{cds,proteins}.fasta.gz). d-discoideum-ax4 is the query
+# gene itself and is handled separately via extract_sequence.
+_OG_SPECIES_STEM = {
+    "dd-ax2-214": "Dd_AX2-214", "dd-cr116c": "Dd_CR116C", "dd-ot3a": "Dd_OT3A",
+    "dd-m4b": "Dd_M4B", "dd-s6b": "Dd_S6B", "d-citrinum": "D_citrinum_GS8b",
+    "dc-cf3b": "D_citrinum_Cf3b", "dc-kgl29a": "D_citrinum_KGL29A",
+    "d-dimigraforme": "D_dimigraforme_Ar5b", "di-pj11": "D_intermedium_PJ11",
+    "d-firmibasis": "D_firmibasis",
+}
+
+
+def _fasta_fetch(stem, suffix, wanted):
+    """Pull the records for `wanted` gene ids from
+    assets/genomes/<stem>_<suffix>.fasta.gz in one streaming pass, stopping once
+    every id is found. Returns {gid: sequence} (only the ids that were present)."""
+    if not wanted:
+        return {}
+    path = GENOMES_DIR / f"{stem}_{suffix}.fasta.gz"
+    if not path.exists():
+        return {}
+    want = set(wanted)
+    out, cur, keep, buf = {}, None, False, []
+    try:
+        with gzip.open(path, "rt") as fh:
+            for line in fh:
+                if line.startswith(">"):
+                    if keep and cur:
+                        out[cur] = "".join(buf)
+                        if len(out) == len(want):
+                            return out
+                    cur = line[1:].split()[0]
+                    keep = cur in want
+                    buf = []
+                elif keep:
+                    buf.append(line.strip())
+            if keep and cur and cur not in out:
+                out[cur] = "".join(buf)
+    except OSError:
+        pass
+    return out
+
+
+def orthogroup_sequences(ddb, kind):
+    """Multi-FASTA of a gene's curated orthologs: the AX4 gene itself followed by
+    one record per ortholog gene id in each sequenced genome (OrthoFinder order).
+    kind: 'protein' or 'cds' (nucleotide). Returns (code, payload, error) where
+    payload is (symbol, og_id, [(header, sequence), ...])."""
+    if not re.match(r"^DDB_G\d+$", ddb or ""):
+        return 400, None, "ddb (DDB_G…) required"
+    if kind not in ("protein", "cds"):
+        return 400, None, "kind must be protein or cds"
+    suffix = "proteins" if kind == "protein" else "cds"
+    og = _load_json("orthogroups.json")
+    entry = og.get("genes", {}).get(ddb, {})
+    if not entry.get("og"):
+        return 404, None, "this gene is not in a curated orthogroup"
+    orth = entry.get("orthologs", {})
+    rows, _sym = api_gene_rows()
+    symbol = rows.get(ddb, {}).get("symbol") or ddb
+    parts = []
+    # 1) the query D. discoideum AX4 gene itself (authoritative, from its models)
+    q = extract_sequence(ddb, "protein" if kind == "protein" else "cdna")
+    if q:
+        parts.append((f"{ddb} {symbol} | D. discoideum AX4", q))
+    # 2) each sequenced-genome ortholog, by gene id, in the canonical species order
+    for s in og.get("_meta", {}).get("species", []):
+        stem = _OG_SPECIES_STEM.get(s.get("id"))
+        ids = orth.get(s.get("id"), [])
+        if not stem or not ids:
+            continue
+        found = _fasta_fetch(stem, suffix, ids)
+        for gid in ids:                       # preserve OrthoFinder order
+            if found.get(gid):
+                parts.append((f"{gid} | {s.get('label', '')}", found[gid]))
+    if not parts:
+        return 404, None, "no ortholog sequences are available for this gene"
+    return 200, (symbol, entry.get("og"), parts), None
+
+
 def _amplicons(chrom, u, left, rightsite, label_l, label_r, maxsize, strand, acc):
     i = u.find(left)
     while i != -1 and len(acc) < 50:
@@ -2192,6 +2279,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/gene-annotations"):
             self._handle_gene_annotations()
+            return
+        if self.path.startswith("/api/orthogroup-sequences"):
+            self._handle_orthogroup_sequences()
             return
         if self.path.startswith("/api/orthogroup"):
             self._handle_orthogroup()
@@ -4047,6 +4137,29 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     loci[gid] = gl[gid]
         self.send_json(200, {"ddb": ddb, "species": og.get("_meta", {}).get("species", []),
                              "group": entry, "loci": loci})
+
+    def _handle_orthogroup_sequences(self):
+        """Download a gene's curated orthologs as one multi-FASTA (protein or CDS)."""
+        q = parse_qs(urlparse(self.path).query)
+        ddb = (q.get("ddb", [""])[0]).strip()
+        kind = (q.get("kind", ["protein"])[0]).strip()
+        code, payload, err = orthogroup_sequences(ddb, kind)
+        if code != 200:
+            self.send_json(code, {"error": err})
+            return
+        symbol, _og_id, parts = payload
+        wrap = lambda s: "\n".join(s[i:i + 60] for i in range(0, len(s), 60))
+        body = "".join(f">{h}\n{wrap(s)}\n" for h, s in parts).encode()
+        label = "proteins" if kind == "protein" else "cds"
+        safe = "".join(c for c in symbol if c.isalnum() or c in "._-") or ddb
+        fname = f"{safe}_orthologs_{label}.fasta"
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
+        self.send_header("Content-Disposition", f'attachment; filename="{fname}"')
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        self.wfile.write(body)
 
     def _handle_gene_extras(self):
         """One gene's dictyBase enrichment (literature, curation status, alt

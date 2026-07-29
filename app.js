@@ -8483,7 +8483,7 @@ function openDownloadsPage(updateRoute = true) {
       <div class="record-body">
         <section class="data-block downloads-section" id="genome-sequences">
           <h3>Genome sequences &amp; annotations</h3>
-          <p class="downloads-blurb">Assembly FASTA (gzip) and gene annotations (GFF3) for every sequenced dictyostelid genome. To explore them interactively, use the <a class="text-link" href="/tools/genome-browser">genome browser</a>.</p>
+          <p class="downloads-blurb">Assembly FASTA (gzip), gene annotations (GFF3), and the predicted <strong>CDS</strong> (nucleotide) and <strong>protein</strong> multi-FASTA (one record per gene, keyed by gene ID) for every sequenced dictyostelid genome. To explore them interactively, use the <a class="text-link" href="/tools/genome-browser">genome browser</a>.</p>
           <div data-genome-assemblies><p class="notice muted">Loading genome downloads…</p></div>
         </section>
         <section class="data-block downloads-section" id="stock-center-catalog">
@@ -8533,7 +8533,10 @@ async function loadGenomeAssemblies() {
   let manifest;
   try { manifest = await fetch("/assets/downloads_manifest.json").then((r) => r.json()); }
   catch { el.innerHTML = `<p class="notice muted">Genome downloads are unavailable right now.</p>`; return; }
-  const fileLabel = (t) => /GFF/i.test(t) ? "GFF3" : /RefSeq/i.test(t) ? "RefSeq FASTA" : "FASTA";
+  const fileLabel = (t) => /GFF/i.test(t) ? "GFF3"
+    : /protein/i.test(t) ? "Proteins (AA)"
+    : /CDS/i.test(t) ? "CDS (nt)"
+    : /RefSeq/i.test(t) ? "RefSeq FASTA" : "FASTA";
   const assemblyTag = (sp) => !sp.assembly ? ""
     : sp.assembly === "GenBank pending" ? ` <span style="color:var(--muted,#9ca3af);font-size:0.8125rem">(GenBank pending)</span>`
     : ` <a class="text-link" href="https://www.ncbi.nlm.nih.gov/datasets/genome/${encodeURIComponent(sp.assembly)}/" target="_blank" rel="noopener" style="font-size:0.8125rem">${escapeHtml(sp.assembly)}</a>`;

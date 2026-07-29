@@ -2112,6 +2112,9 @@ function renderCuratePage() {
             <h3 class="tools-group">Paper curation drafts <span class="muted" style="font-weight:400;font-size:12px">— AI-seeded from recent papers; review before any email is sent</span></h3>
             <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
               <button type="button" id="cur-papers-refresh">Fetch new papers</button>
+              <span class="muted" style="font-size:12px">or draft a specific paper:</span>
+              <input type="text" id="cur-papers-pmid" inputmode="numeric" placeholder="PMID" aria-label="PubMed ID" style="${FIELD};width:130px">
+              <button type="button" id="cur-papers-draft">Draft PMID</button>
               <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
             </div>
             <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
@@ -2257,6 +2260,10 @@ function initCurate() {
   };
   const refreshBtn = document.getElementById("cur-papers-refresh");
   if (refreshBtn) refreshBtn.addEventListener("click", () => refreshPaperDrafts());
+  const draftBtn = document.getElementById("cur-papers-draft");
+  const pmidEl = document.getElementById("cur-papers-pmid");
+  if (draftBtn) draftBtn.addEventListener("click", () => draftPaperByPmid());
+  if (pmidEl) pmidEl.addEventListener("keydown", (e) => { if (e.key === "Enter") draftPaperByPmid(); });
   const codeEl = document.getElementById("cur-code");
   const login = async () => {
     const username = (userEl.value || "").trim();
@@ -2816,6 +2823,33 @@ async function refreshPaperDrafts() {
     loadPaperDrafts();
   } catch (e) {
     if (msg) msg.textContent = "Could not fetch papers. " + (e.message || "");
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+async function draftPaperByPmid() {
+  const inp = document.getElementById("cur-papers-pmid");
+  const msg = document.getElementById("cur-papers-msg");
+  const btn = document.getElementById("cur-papers-draft");
+  const pmid = ((inp && inp.value) || "").replace(/\D/g, "");
+  if (!pmid) { if (inp) inp.focus(); return; }
+  if (btn) btn.disabled = true;
+  if (msg) msg.textContent = "Fetching and drafting…";
+  try {
+    const r = await fetch("/api/curator/papers/draft-one", {
+      method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify({ pmid }),
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || "failed");
+    if (msg) msg.textContent = d.exists
+      ? `PMID ${pmid} is already in the queue.`
+      : `Drafted “${(d.title || "").slice(0, 55)}”.`;
+    if (inp) inp.value = "";
+    loadPaperDrafts();
+  } catch (e) {
+    if (msg) msg.textContent = (e && e.message) || "Could not draft that PMID.";
   } finally {
     if (btn) btn.disabled = false;
   }

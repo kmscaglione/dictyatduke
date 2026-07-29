@@ -2379,34 +2379,84 @@ def _load_paper_drafts():
     return _read_json_file(PAPER_DRAFTS_PATH, {"drafts": []})
 
 
+def fetch_pubmed_meta(ids):
+    """esummary for specific PMIDs -> paper dicts (title/journal/authors/doi/url).
+    Lets a curator draft any paper by id, not only the most recent ones."""
+    ids = [re.sub(r"\D", "", str(i)) for i in ids]
+    ids = [i for i in ids if i]
+    if not ids:
+        return []
+    s = f"{EUTILS}/esummary.fcgi?db=pubmed&id={','.join(ids)}&retmode=json&tool=dictyBase"
+    try:
+        with urllib.request.urlopen(s, timeout=20, context=SSL_CTX) as r:
+            res = json.loads(r.read()).get("result", {})
+    except Exception:
+        return []
+    papers = []
+    for pid in res.get("uids", []):
+        rec = res.get(pid, {})
+        if rec.get("error"):
+            continue
+        doi = next((a["value"] for a in rec.get("articleids", []) if a.get("idtype") == "doi"), "")
+        papers.append({
+            "pmid": pid, "title": (rec.get("title") or "").rstrip(". "),
+            "journal": rec.get("source", ""), "pubdate": rec.get("pubdate", ""),
+            "authors": [a["name"] for a in rec.get("authors", []) if a.get("name")],
+            "doi": doi, "url": f"https://pubmed.ncbi.nlm.nih.gov/{pid}/",
+        })
+    return papers
+
+
+def _build_draft(p):
+    """Assemble one paper-curation draft: gene mentions, AI suggestions, a session
+    token, and the ready-to-send invitation."""
+    genes = extract_gene_mentions(f"{p.get('title', '')} {p.get('abstract', '')}")
+    token = secrets.token_urlsafe(12)
+    session_url = f"/curate-paper?t={token}"
+    return {
+        "pmid": p["pmid"], "title": p.get("title", ""), "journal": p.get("journal", ""),
+        "pubdate": p.get("pubdate", ""), "url": p.get("url", ""),
+        "corr_name": p.get("corr_name", ""), "corr_email": p.get("corr_email", ""),
+        "abstract": (p.get("abstract", "") or "")[:4000], "genes": genes,
+        "ai": _curation_ai_draft(p, genes), "token": token, "session_url": session_url,
+        "email_text": _invitation_email(p, genes, session_url), "status": "new",
+        "created": datetime.datetime.utcnow().isoformat() + "Z",
+    }
+
+
 def refresh_paper_drafts(limit=8):
-    """Fetch recent Dictyostelium papers and add a draft for each new PMID.
-    Returns {added, scanned, total}."""
+    """Fetch recent Dictyostelium papers and add a draft for each new PMID."""
     store = _load_paper_drafts()
     existing = {d.get("pmid") for d in store.get("drafts", [])}
     recent = fetch_pubmed_recent(n=limit).get("papers", [])
-    full = fetch_pubmed_full([p["pmid"] for p in recent if p["pmid"] not in existing])
-    added = 0
-    for p in recent:
-        if p["pmid"] in existing:
-            continue
-        p = {**p, **full.get(p["pmid"], {})}
-        genes = extract_gene_mentions(f"{p.get('title', '')} {p.get('abstract', '')}")
-        token = secrets.token_urlsafe(12)
-        session_url = f"/curate-paper?t={token}"
-        store.setdefault("drafts", []).insert(0, {
-            "pmid": p["pmid"], "title": p.get("title", ""), "journal": p.get("journal", ""),
-            "pubdate": p.get("pubdate", ""), "url": p.get("url", ""),
-            "corr_name": p.get("corr_name", ""), "corr_email": p.get("corr_email", ""),
-            "abstract": (p.get("abstract", "") or "")[:4000], "genes": genes,
-            "ai": _curation_ai_draft(p, genes), "token": token, "session_url": session_url,
-            "email_text": _invitation_email(p, genes, session_url), "status": "new",
-            "created": datetime.datetime.utcnow().isoformat() + "Z",
-        })
-        added += 1
-    store["drafts"] = store.get("drafts", [])[:200]
+    new = [p for p in recent if p["pmid"] not in existing]
+    full = fetch_pubmed_full([p["pmid"] for p in new])
+    for p in new:
+        store.setdefault("drafts", []).insert(0, _build_draft({**p, **full.get(p["pmid"], {})}))
+    store["drafts"] = store.get("drafts", [])[:400]
     _atomic_write_json(PAPER_DRAFTS_PATH, store)
-    return {"added": added, "scanned": len(recent), "total": len(store["drafts"])}
+    return {"added": len(new), "scanned": len(recent), "total": len(store["drafts"])}
+
+
+def draft_paper_by_pmid(pmid):
+    """Draft a specific paper by PMID, for working through older uncurated
+    literature. Returns {added|exists|error, pmid, token?, title?}."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    if not pmid:
+        return {"error": "Enter a numeric PubMed ID."}
+    store = _load_paper_drafts()
+    hit = next((d for d in store.get("drafts", []) if d.get("pmid") == pmid), None)
+    if hit:
+        return {"exists": True, "pmid": pmid, "token": hit.get("token"), "title": hit.get("title", "")}
+    metas = fetch_pubmed_meta([pmid])
+    if not metas:
+        return {"error": f"PMID {pmid} was not found in PubMed."}
+    p = {**metas[0], **fetch_pubmed_full([pmid]).get(pmid, {})}
+    draft = _build_draft(p)
+    store.setdefault("drafts", []).insert(0, draft)
+    store["drafts"] = store["drafts"][:400]
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return {"added": True, "pmid": pmid, "token": draft["token"], "title": draft["title"]}
 
 
 # --- Phase 2: the author-facing pre-filled session the invitation links to ----
@@ -3213,6 +3263,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_paper_session_submit()
         elif self.path == "/api/curator/papers/refresh":
             self._handle_curator_papers_refresh()
+        elif self.path == "/api/curator/papers/draft-one":
+            self._handle_curator_papers_draft_one()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/go":
@@ -4120,6 +4172,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(502, {"error": f"Could not fetch papers ({type(e).__name__})."})
             return
         _log_curation("paper-draft", "refresh", f"added {res['added']}", curator)
+        self.send_json(200, res)
+
+    def _handle_curator_papers_draft_one(self):
+        """Draft a specific paper by PMID (older-literature curation). No email."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        try:
+            res = draft_paper_by_pmid(body.get("pmid"))
+        except Exception as e:
+            self.send_json(502, {"error": f"Could not fetch that paper ({type(e).__name__})."})
+            return
+        if res.get("error"):
+            self.send_json(400, res)
+            return
+        _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
         self.send_json(200, res)
 
     def _handle_curator_papers_update(self):

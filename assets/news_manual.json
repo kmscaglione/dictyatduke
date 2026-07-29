@@ -2,6 +2,40 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-07-29",
+      "tag": "data",
+      "title": "Two more dictyostelid genomes, 19 now hosted",
+      "body": "D. citrinum KGL29A and D. intermedium PJ11, two genomes still working through GenBank's pipeline, are now hosted here directly. That brings the site to 19 sequenced dictyostelid genomes. Both are in the genome browser, BLAST, downloads, and the ortholog tables, using the sequencing team's own contig names and gene IDs. With thanks to Tera Levin and the Holland*, Ahmed* et al. 2025 team for sharing the assemblies.",
+      "link": "/tools/genome-browser"
+    },
+    {
+      "date": "2026-07-29",
+      "tag": "new",
+      "title": "Curated orthologs, and ortholog search in the browser",
+      "body": "Two ortholog improvements. Each gene's Orthologs tab now shows curated ortholog calls across all the sequenced dictyostelid genomes, from the Holland*, Ahmed* et al. 2025 OrthoFinder groups, each linking straight to its locus in the genome browser, with paralogs flagged. And in the genome browser, typing a gene symbol while viewing another species jumps to that gene's ortholog there. The natural-variation panel now compares each strain against its true ortholog rather than the closest paralog."
+    },
+    {
+      "date": "2026-07-29",
+      "tag": "update",
+      "title": "Search by more than one phenotype, and download the results",
+      "body": "Phenotype search can now combine several phenotypes at once. Enter multiple terms separated by a semicolon and choose all (AND) or any (OR), for example chemotaxis; aberrant fruiting body. Every result also has a one-click download of the matching gene list as a spreadsheet.",
+      "link": "/search/phenotype"
+    },
+    {
+      "date": "2026-07-29",
+      "tag": "update",
+      "title": "New downloads: the Stock Center catalog and BLAST results",
+      "body": "The full Dicty Stock Center catalog, all strains and plasmids, is now downloadable as a spreadsheet from the Downloads page. On gene pages, the cross-species BLAST comparison now offers downloads of the hit table and a FASTA of the hit sequences.",
+      "link": "/downloads"
+    },
+    {
+      "date": "2026-07-29",
+      "tag": "data",
+      "title": "GO annotations refreshed to the current release",
+      "body": "The Gene Ontology annotations were refreshed to the current GO Consortium release: 68,097 annotations across 8,659 genes, up from 65,201. You can confirm the count on the Data and sources page.",
+      "link": "/data"
+    },
+    {
       "date": "2026-07-24",
       "tag": "new",
       "title": "See who studies each gene",

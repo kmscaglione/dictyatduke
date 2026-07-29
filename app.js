@@ -2108,6 +2108,15 @@ function renderCuratePage() {
               <span id="acct-msg" class="muted" style="font-size:13px"></span>
             </div>
           </div>
+          <div id="cur-papers-section">
+            <h3 class="tools-group">Paper curation drafts <span class="muted" style="font-weight:400;font-size:12px">— AI-seeded from recent papers; review before any email is sent</span></h3>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <button type="button" id="cur-papers-refresh">Fetch new papers</button>
+              <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
+            </div>
+            <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
+            <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
+          </div>
           <h3 class="tools-group">Edit a gene</h3>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
             <input id="cur-gene" type="text" placeholder="Gene symbol or DDB_G… (e.g. mhcA)" style="${FIELD};min-width:260px">
@@ -2244,7 +2253,10 @@ function initCurate() {
     if (acctSec) { acctSec.hidden = !curatorAdmin; if (curatorAdmin) loadAccounts(); }
     load2FA();
     loadCurQueue();
+    loadPaperDrafts();
   };
+  const refreshBtn = document.getElementById("cur-papers-refresh");
+  if (refreshBtn) refreshBtn.addEventListener("click", () => refreshPaperDrafts());
   const codeEl = document.getElementById("cur-code");
   const login = async () => {
     const username = (userEl.value || "").trim();
@@ -2785,6 +2797,130 @@ async function loadAccounts() {
       </tr>`).join("")}</table>`
       : `<p class="notice muted" style="font-size:13px">No named accounts yet — add one below. (You're signed in with the bootstrap admin password.)</p>`;
   } catch { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load accounts.</p>`; }
+}
+
+// --- AI-seeded paper curation drafts (Phase 1: no auto-send) ---------------
+async function refreshPaperDrafts() {
+  const msg = document.getElementById("cur-papers-msg");
+  const btn = document.getElementById("cur-papers-refresh");
+  if (btn) { btn.disabled = true; }
+  if (msg) msg.textContent = "Fetching recent papers and drafting…";
+  try {
+    const r = await fetch("/api/curator/papers/refresh", {
+      method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify({ limit: 8 }),
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || "failed");
+    if (msg) msg.textContent = `Added ${d.added} new draft${d.added === 1 ? "" : "s"} (scanned ${d.scanned}).`;
+    loadPaperDrafts();
+  } catch (e) {
+    if (msg) msg.textContent = "Could not fetch papers. " + (e.message || "");
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+}
+
+function paperDraftCard(d) {
+  const esc = escapeHtml;
+  const geneChips = (d.genes || []).length
+    ? d.genes.map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}" target="_blank" rel="noopener">${esc(g.symbol || g.ddb)}</a>`).join(", ")
+    : `<span class="muted">none detected in the abstract</span>`;
+  const ai = d.ai || {};
+  let aiHtml;
+  if (!ai.ok) {
+    aiHtml = `<p class="muted" style="font-size:12px;margin:4px 0">AI suggestions: ${esc(ai.note || "unavailable")}</p>`;
+  } else {
+    const list = (label, arr, fmt) => arr && arr.length
+      ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map(fmt).map(esc).join("; ")}</div>` : "";
+    aiHtml = `
+      ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
+      ${list("GO", ai.go, (x) => `${x.gene || "?"}: ${x.term || ""} (${x.aspect || "?"})`)}
+      ${list("Phenotypes", ai.phenotypes, (x) => `${x.gene || "?"}: ${x.phenotype || ""}`)}
+      ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}`;
+  }
+  const corr = d.corr_name
+    ? `${esc(d.corr_name)}${d.corr_email ? ` &lt;${esc(d.corr_email)}&gt;` : ` <span class="muted">(no email found)</span>`}`
+    : `<span class="muted">corresponding author not identified</span>`;
+  return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:10px 12px;margin-bottom:10px">
+      <div><a href="${esc(d.url)}" target="_blank" rel="noopener" style="font-weight:600">${esc(d.title)}</a>
+        <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status)}</strong>` : ""}</span></div>
+      <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
+      <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}</div>
+      ${aiHtml}
+      <details style="margin-top:6px">
+        <summary style="cursor:pointer;font-size:13px">Invitation email (review, then send it yourself)</summary>
+        <textarea class="pd-email" rows="9" style="width:100%;${FIELD};font-size:12.5px;line-height:1.5;margin-top:6px;resize:vertical">${esc(d.email_text || "")}</textarea>
+        ${d.corr_email ? "" : `<p class="muted" style="font-size:11px;margin:3px 0">No author email was found. Add a recipient yourself before sending.</p>`}
+        <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;align-items:center">
+          <button type="button" class="pd-copy">Copy email</button>
+          ${d.corr_email ? `<a class="text-link pd-mailto" href="#" style="font-size:13px">Open in mail app</a>` : ""}
+          <button type="button" class="pd-sent">Mark as sent</button>
+          <button type="button" class="pd-dismiss">Dismiss</button>
+          <span class="pd-msg muted" style="font-size:12px"></span>
+        </div>
+      </details>
+    </div>`;
+}
+
+async function updatePaperDraft(pmid, status, emailText) {
+  const r = await fetch("/api/curator/papers/update", {
+    method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+    body: JSON.stringify({ pmid, status, email_text: emailText }),
+  });
+  if (!r.ok) throw new Error("update failed");
+  return r.json();
+}
+
+async function loadPaperDrafts() {
+  const el = document.getElementById("cur-papers-list");
+  if (!el) return;
+  try {
+    const r = await fetch("/api/curator/papers", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load drafts (session may have expired).</p>`; return; }
+    const data = await r.json();
+    const drafts = data.drafts || [];
+    if (!drafts.length) {
+      el.innerHTML = `<p class="notice muted" style="font-size:13px">No drafts yet. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI suggestions are off on this server; gene detection still runs.)"}</p>`;
+      return;
+    }
+    el.innerHTML = drafts.map(paperDraftCard).join("");
+    el.querySelectorAll(".paper-draft").forEach((card) => {
+      const pmid = card.dataset.pmid;
+      const emailEl = card.querySelector(".pd-email");
+      const cardMsg = card.querySelector(".pd-msg");
+      const say = (t) => { if (cardMsg) cardMsg.textContent = t; };
+      const copyBtn = card.querySelector(".pd-copy");
+      if (copyBtn) copyBtn.addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(emailEl.value); say("Copied."); }
+        catch { emailEl.select(); say("Select-all + copy."); }
+      });
+      const mailto = card.querySelector(".pd-mailto");
+      if (mailto) mailto.addEventListener("click", (e) => {
+        e.preventDefault();
+        const subj = encodeURIComponent("dictyBase curation for your recent paper");
+        const to = (paperDraftEmail(card) || "");
+        window.location.href = `mailto:${to}?subject=${subj}&body=${encodeURIComponent(emailEl.value)}`;
+      });
+      const sentBtn = card.querySelector(".pd-sent");
+      if (sentBtn) sentBtn.addEventListener("click", async () => {
+        try { await updatePaperDraft(pmid, "sent", emailEl.value); say("Marked as sent."); loadPaperDrafts(); }
+        catch { say("Could not update."); }
+      });
+      const dismissBtn = card.querySelector(".pd-dismiss");
+      if (dismissBtn) dismissBtn.addEventListener("click", async () => {
+        try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
+        catch { say("Could not dismiss."); }
+      });
+    });
+  } catch { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load drafts.</p>`; }
+}
+
+// Pull the author email out of the rendered corresponding line (best-effort for mailto).
+function paperDraftEmail(card) {
+  const m = (card.querySelector(".muted") || {}).textContent || "";
+  const e = m.match(/[\w.+-]+@[\w-]+\.[\w.-]+/);
+  return e ? e[0] : "";
 }
 
 async function loadCurQueue() {

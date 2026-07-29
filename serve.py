@@ -64,6 +64,7 @@ OVERRIDES_PATH = CURATION_STATE_DIR / "curation_overrides.json"
 STOCK_OVERRIDES_PATH = CURATION_STATE_DIR / "stock_overrides.json"
 CURATION_LOG_PATH = CURATION_STATE_DIR / "curation_log.jsonl"
 CURATORS_PATH = CURATION_STATE_DIR / "curators.json"  # named accounts (hashes)
+PAPER_DRAFTS_PATH = CURATION_STATE_DIR / "curation_paper_drafts.json"  # AI-seeded paper-curation queue
 
 # One-time migration: relocate any pre-existing curator state from the old
 # assets/ location into the writable dir, so nothing is lost on upgrade.
@@ -135,6 +136,7 @@ _BLOCKED_EXACT = {
     "/assets/curation_overrides.json",
     "/assets/stock_overrides.json",
     "/assets/curation_log.jsonl",
+    "/assets/curation_paper_drafts.json",
 }
 _BLOCKED_PREFIXES = ("/uploads/",)
 
@@ -2248,6 +2250,164 @@ def geneset_report(tokens):
     }
 
 
+# --- AI-seeded paper curation (curator-only pipeline) -----------------------
+# Phase 1 of author-driven curation: pull recent Dictyostelium papers, draft
+# curation from the abstract (gene mentions + optional AI GO/phenotype/interaction
+# suggestions), and prepare an invitation to the corresponding author to review
+# and submit. NOTHING is emailed automatically: the pipeline builds drafts and a
+# ready-to-send invitation into a curator review queue; a human approves the send.
+def fetch_pubmed_full(pmids):
+    """efetch abstract + a corresponding-author email for each PMID (XML).
+    Returns {pmid: {abstract, corr_name, corr_email}}. Best-effort; empty on error."""
+    import xml.etree.ElementTree as ET
+    out = {}
+    if not pmids:
+        return out
+    q = f"{EUTILS}/efetch.fcgi?db=pubmed&id={','.join(pmids)}&retmode=xml&tool=dictyBase"
+    try:
+        with urllib.request.urlopen(q, timeout=25, context=SSL_CTX) as r:
+            root = ET.fromstring(r.read())
+    except Exception:
+        return out
+    for art in root.findall(".//PubmedArticle"):
+        pmid = (art.findtext(".//PMID") or "").strip()
+        if not pmid:
+            continue
+        chunks = []
+        for at in art.findall(".//Abstract/AbstractText"):
+            txt = "".join(at.itertext()).strip()
+            if txt:
+                chunks.append(f"{at.get('Label')}: {txt}" if at.get("Label") else txt)
+        corr_name, corr_email = "", ""
+        for a in art.findall(".//AuthorList/Author"):
+            aff = " ".join("".join(e.itertext()) for e in a.findall(".//AffiliationInfo/Affiliation"))
+            m = re.search(r"[\w.+-]+@[\w-]+\.[\w.-]+", aff)
+            if m:                                     # last author with an email wins
+                corr_email = m.group(0).rstrip(".")
+                corr_name = f"{a.findtext('ForeName') or ''} {a.findtext('LastName') or ''}".strip()
+        out[pmid] = {"abstract": "\n".join(chunks), "corr_name": corr_name, "corr_email": corr_email}
+    return out
+
+
+_GENE_SYMBOL_IDX = None
+
+
+def _gene_symbol_index():
+    """Exact-case gene symbol -> DDB_G, from gene_index.json (cached). Case-exact
+    matching keeps false positives low: papers write symbols in their real case."""
+    global _GENE_SYMBOL_IDX
+    if _GENE_SYMBOL_IDX is None:
+        idx = {}
+        for row in _load_json("gene_index.json"):
+            if row and len(row) > 1 and row[0] and isinstance(row[1], str):
+                sym = row[1].strip()
+                if len(sym) >= 3 and re.match(r"^[A-Za-z][A-Za-z0-9_-]{2,}$", sym):
+                    idx.setdefault(sym, row[0])
+        _GENE_SYMBOL_IDX = idx
+    return _GENE_SYMBOL_IDX
+
+
+def extract_gene_mentions(text):
+    """Detected gene mentions in free text: exact-case symbol hits plus any DDB_G
+    ids. Returns [{ddb, symbol}], deduped, capped. Conservative on purpose; the
+    curator/author corrects it."""
+    if not text:
+        return []
+    idx = _gene_symbol_index()
+    found = {}
+    for tok in re.findall(r"[A-Za-z][A-Za-z0-9_-]{2,}", text):
+        if tok in idx:
+            found.setdefault(idx[tok], tok)
+    for ddb in re.findall(r"DDB_G\d+", text):
+        found.setdefault(ddb, ddb)
+    rows, _sym = api_gene_rows()
+    return [{"ddb": d, "symbol": rows.get(d, {}).get("symbol", s)}
+            for d, s in list(found.items())[:40]]
+
+
+def _curation_ai_draft(paper, genes):
+    """AI GO/phenotype/interaction suggestions from the abstract, as structured
+    JSON. Human-in-the-loop only: these are draft suggestions a curator/author
+    approves, never auto-published. Returns {ok:False, note} when AI is off."""
+    if not GEMINI_API_KEY:
+        return {"ok": False, "note": "AI drafting is off on this server (no API key)."}
+    gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
+    prompt = (
+        "From this Dictyostelium paper, extract curation as STRICT JSON with keys: "
+        '"summary" (<=2 sentences), "go" (list of {gene, term, aspect:"P"|"F"|"C"}), '
+        '"phenotypes" (list of {gene, phenotype}), "interactions" '
+        '(list of {gene_a, gene_b, type:"physical"|"genetic"}). Only use genes named '
+        "in the paper; prefer these detected symbols where relevant: " + gene_list +
+        ". Empty list where nothing applies. Output ONLY the JSON object.\n\n"
+        f"Title: {paper.get('title', '')}\nAbstract: {(paper.get('abstract', '') or '')[:6000]}"
+    )
+    try:
+        text, out_tokens = _analyze_generate(prompt, "")
+        _analyze_record_tokens(out_tokens)
+        m = re.search(r"\{.*\}", text, re.S)
+        data = json.loads(m.group(0)) if m else {}
+        return {"ok": True, "model": ANALYZE_MODEL, "summary": (data.get("summary") or "")[:600],
+                "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
+                "interactions": data.get("interactions") or []}
+    except Exception as e:
+        return {"ok": False, "note": f"AI draft could not be generated ({type(e).__name__})."}
+
+
+def _invitation_email(paper, genes, session_url):
+    """Plain-text invitation to the corresponding author. A DRAFT for a curator to
+    review and send by hand; the pipeline never sends it."""
+    base = os.environ.get("SITE_BASE_URL", "https://dicty.labs.duke.edu")
+    symbols = ", ".join(g["symbol"] for g in genes[:12]) or "genes from your paper"
+    greet = paper.get("corr_name") or "Colleague"
+    return (
+        f"Dear {greet},\n\n"
+        f"dictyBase has prepared draft gene-function curation for your recent paper, "
+        f"\"{paper.get('title', '')}\" (PMID {paper.get('pmid', '')}), with pre-filled "
+        f"annotations for {symbols}.\n\n"
+        f"Would you review, correct, and submit them? Your input makes the annotations "
+        f"authoritative, and it takes only a few minutes:\n{base}{session_url}\n\n"
+        f"The draft was generated automatically and is not public. Nothing is published "
+        f"without your review and a curator check.\n\n"
+        f"Thank you for helping keep Dictyostelium annotations accurate.\n"
+        f"The dictyBase team\n\n"
+        f"(Not your paper, or prefer not to receive these? Reply and we will stop.)"
+    )
+
+
+def _load_paper_drafts():
+    return _read_json_file(PAPER_DRAFTS_PATH, {"drafts": []})
+
+
+def refresh_paper_drafts(limit=8):
+    """Fetch recent Dictyostelium papers and add a draft for each new PMID.
+    Returns {added, scanned, total}."""
+    store = _load_paper_drafts()
+    existing = {d.get("pmid") for d in store.get("drafts", [])}
+    recent = fetch_pubmed_recent(n=limit).get("papers", [])
+    full = fetch_pubmed_full([p["pmid"] for p in recent if p["pmid"] not in existing])
+    added = 0
+    for p in recent:
+        if p["pmid"] in existing:
+            continue
+        p = {**p, **full.get(p["pmid"], {})}
+        genes = extract_gene_mentions(f"{p.get('title', '')} {p.get('abstract', '')}")
+        token = secrets.token_urlsafe(12)
+        session_url = f"/curate-paper?t={token}"
+        store.setdefault("drafts", []).insert(0, {
+            "pmid": p["pmid"], "title": p.get("title", ""), "journal": p.get("journal", ""),
+            "pubdate": p.get("pubdate", ""), "url": p.get("url", ""),
+            "corr_name": p.get("corr_name", ""), "corr_email": p.get("corr_email", ""),
+            "abstract": (p.get("abstract", "") or "")[:4000], "genes": genes,
+            "ai": _curation_ai_draft(p, genes), "token": token, "session_url": session_url,
+            "email_text": _invitation_email(p, genes, session_url), "status": "new",
+            "created": datetime.datetime.utcnow().isoformat() + "Z",
+        })
+        added += 1
+    store["drafts"] = store.get("drafts", [])[:200]
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return {"added": added, "scanned": len(recent), "total": len(store["drafts"])}
+
+
 # Read-only GET endpoints safe to cache at a CDN edge. Data changes only on a
 # (infrequent) rebuild or a curation edit, so a short edge TTL with
 # stale-while-revalidate offloads the vast majority of reads with at most a few
@@ -2465,6 +2625,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Curator dashboard API — list pending curations
+        if self.path.split("?")[0] == "/api/curator/papers":
+            self._handle_curator_papers()
+            return
         if self.path == "/api/curator/queue":
             token = self._parse_token()
             if not self._auth(token):
@@ -2983,6 +3146,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curation_reject()
         elif self.path == "/api/curator/edit":
             self._handle_curation_edit()
+        elif self.path == "/api/curator/papers/refresh":
+            self._handle_curator_papers_refresh()
+        elif self.path == "/api/curator/papers/update":
+            self._handle_curator_papers_update()
         elif self.path == "/api/curator/go":
             self._handle_curator_go()
         elif self.path == "/api/curator/phenotype":
@@ -3845,6 +4012,56 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             "curator": ov.get("curator", ""),
             "curator_date": ov.get("curator_date", ""),
         })
+
+    def _handle_curator_papers(self):
+        """List the AI-seeded paper-curation drafts (curator only)."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        store = _load_paper_drafts()
+        drafts = [d for d in store.get("drafts", []) if d.get("status") != "dismissed"]
+        self.send_json(200, {"drafts": drafts, "ai_on": bool(GEMINI_API_KEY)})
+
+    def _handle_curator_papers_refresh(self):
+        """Pull recent papers and draft curation for the new ones. No email sent."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        try:
+            limit = min(max(int(body.get("limit", 8)), 1), 20)
+        except (TypeError, ValueError):
+            limit = 8
+        try:
+            res = refresh_paper_drafts(limit)
+        except Exception as e:
+            self.send_json(502, {"error": f"Could not fetch papers ({type(e).__name__})."})
+            return
+        _log_curation("paper-draft", "refresh", f"added {res['added']}", curator)
+        self.send_json(200, res)
+
+    def _handle_curator_papers_update(self):
+        """Update a draft's status (reviewed/sent/dismissed) or its edited email."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        pmid = str(body.get("pmid") or "").strip()
+        status = (body.get("status") or "").strip()
+        if status not in ("new", "reviewed", "sent", "dismissed"):
+            self.send_json(400, {"error": "invalid status"})
+            return
+        store = _load_paper_drafts()
+        hit = next((d for d in store.get("drafts", []) if d.get("pmid") == pmid), None)
+        if not hit:
+            self.send_json(404, {"error": "draft not found"})
+            return
+        hit["status"] = status
+        if isinstance(body.get("email_text"), str):
+            hit["email_text"] = body["email_text"][:8000]
+        _atomic_write_json(PAPER_DRAFTS_PATH, store)
+        _log_curation("paper-draft", status, pmid, curator)
+        self.send_json(200, {"ok": True, "pmid": pmid, "status": status})
 
     def _handle_curator_go(self):
         """Add or delete a curated GO annotation. Body: {ddb, action:add|delete,

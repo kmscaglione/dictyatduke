@@ -2608,6 +2608,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # files fall through to the default handler.
         if raw in ("/", "/index.html") or ext not in STATIC_EXTS:
             return self._serve_index()
+        # Per-genome CDS/protein FASTAs are stored gzipped, but serving them as a
+        # `.fasta.gz` to save made macOS/Safari mangle the download (auto-expand
+        # left plaintext still named .gz -> "Error 79, unable to expand"). Serve
+        # them as gzip-ENCODED text/plain named `.fasta` so the browser decodes
+        # in transit and saves a clean, openable FASTA.
+        if raw.startswith("/assets/genomes/") and (raw.endswith("_cds.fasta.gz")
+                or raw.endswith("_proteins.fasta.gz")):
+            if self._serve_sequence_fasta(raw):
+                return
         # On-the-fly gzip for large text assets when the client accepts it,
         # preserving Last-Modified / If-Modified-Since 304 revalidation. Skip
         # ranged requests — gzip can't serve a byte range, and IGV reads the
@@ -2713,6 +2722,51 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return True
         except (BrokenPipeError, ConnectionResetError):
             return True  # client (IGV) closed the range early — not an error
+        except Exception:
+            return False
+
+    def _serve_sequence_fasta(self, raw):
+        """Serve a per-genome CDS/protein FASTA (stored .fasta.gz) as clean,
+        uncompressed FASTA. The bytes on disk are gzip; a browser that accepts
+        gzip gets them verbatim as gzip-ENCODED text/plain (it decodes in transit
+        and saves a `.fasta`); anyone else gets it decompressed. Either way the
+        download is a normal FASTA named `.fasta`, never a `.gz` to hand-expand.
+        Returns False to fall through (e.g. file missing)."""
+        fs_path = self.translate_path(self.path)
+        if not os.path.isfile(fs_path):
+            return False
+        try:
+            st = os.stat(fs_path)
+            # 'f' prefix distinguishes this from the raw-.gz static ETag, so a
+            # browser that cached the old (broken) application/gzip response
+            # re-fetches instead of 304-reusing it.
+            etag = f'"f{int(st.st_mtime)}-{st.st_size}"'
+            fname = os.path.basename(raw)[:-3]   # strip ".gz" -> "<name>.fasta"
+            if self.headers.get("If-None-Match") in (etag, "*"):
+                self.send_response(304)
+                self.send_header("ETag", etag)
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                return True
+            with open(fs_path, "rb") as f:
+                gz = f.read()
+            accepts_gzip = "gzip" in self.headers.get("Accept-Encoding", "")
+            body = gz if accepts_gzip else gzip.decompress(gz)
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            if accepts_gzip:
+                self.send_header("Content-Encoding", "gzip")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Content-Disposition", f'attachment; filename="{fname}"')
+            self.send_header("ETag", etag)
+            self.send_header("Cache-Control", "no-cache")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(body)
+            return True
+        except (BrokenPipeError, ConnectionResetError):
+            return True
         except Exception:
             return False
 

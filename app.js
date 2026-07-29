@@ -8647,7 +8647,13 @@ async function loadGenomeAssemblies() {
     : ` <a class="text-link" href="https://www.ncbi.nlm.nih.gov/datasets/genome/${encodeURIComponent(sp.assembly)}/" target="_blank" rel="noopener" style="font-size:0.8125rem">${escapeHtml(sp.assembly)}</a>`;
   const row = (sp) => `<li>
       <span class="downloads-desc"><strong>${escapeHtml(sp.label)}</strong>${assemblyTag(sp)}</span>
-      <span class="downloads-files">${(sp.files || []).map((f) => `<a class="downloads-file" href="${escapeHtml(f.url)}" download title="${escapeHtml(f.name)} · ${escapeHtml(formatBytes(f.size))}">${escapeHtml(fileLabel(f.type))}</a>`).join("")}</span>
+      <span class="downloads-files">${(sp.files || []).map((f) => {
+        // CDS/protein FASTAs are stored .fasta.gz but served decompressed as
+        // .fasta (see serve.py); name the download .fasta so it opens directly.
+        const dl = /_(cds|proteins)\.fasta\.gz$/.test(f.url || "")
+          ? ` download="${escapeHtml(f.url.split("/").pop().replace(/\.gz$/, ""))}"` : " download";
+        return `<a class="downloads-file" href="${escapeHtml(f.url)}"${dl} title="${escapeHtml(f.name)} · ${escapeHtml(formatBytes(f.size))}">${escapeHtml(fileLabel(f.type))}</a>`;
+      }).join("")}</span>
     </li>`;
   const species = manifest.filter((sp) => sp.group !== "isolate");
   const isolates = manifest.filter((sp) => sp.group === "isolate");

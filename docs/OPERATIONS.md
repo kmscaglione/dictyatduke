@@ -188,6 +188,36 @@ BLAST+ is installed system-wide by OIT at `/usr/bin/{makeblastdb,blastn,tblastn,
 (`build_protein_blastdb.py`) needs the GFF + RefSeq FASTA present, so run it after
 the genome fetch.
 
+### The 10 sequenced genomes from the submitter GenBank files (.gbf)
+
+The Holland\*, Ahmed\* et al. 2025 genomes have authoritative **submitter** contig
+names + gene IDs (`DC_GS_00011627` …) in Tera Levin's GenBank flat files. Two of
+them — **D. citrinum KGL29A** and **D. intermedium PJ11** — are still stuck in
+GenBank's pipeline, so the `.gbf` is the *only* source. Building all 10 from the
+`.gbf` supersedes the NCBI fetch + `relabel_paper_genomes.py`: it gives every
+paper genome its real names in one pass, which is what makes the curated-ortholog
+deep links (`/api/orthogroup` → browser) and the "✓ curated" Natural-variation
+selection line up (they match by contig name).
+
+The `.gbf` files are ~64 MB each (~640 MB total), can't be re-downloaded for
+KGL29A/PJ11, and are gitignored — **keep them and copy them to the box.**
+
+```bash
+# copy the 10 .gbf into data/genbank/ on the server first (scp / rsync), then:
+python3 scripts/genomes_from_gbf.py --src data/genbank    # all 10 -> _browser.fna/.gff/.gz
+python3 scripts/build_gene_loci.py   --src data/genbank    # gene id -> locus (committed too)
+python3 scripts/build_blastdb.py                           # rebuild nucleotide DBs (adds KGL29A/PJ11)
+python3 scripts/build_browser_tracks.py                    # bgzip+tabix the new GFFs
+sudo /srv/web/bin/web_chown apache assets/genomes
+sudo systemctl restart dicty
+```
+
+`gene_loci.json` and `orthogroups.json` are committed (built from the same
+sources), so a plain deploy already has them; rerun `build_gene_loci.py` only if
+the `.gbf` set changes. `build_orthogroups.py` reads `data/orthofinder/Orthogroups.tsv`.
+Until this build runs, KGL29A/PJ11 appear in the dropdowns but won't load, and the
+curated-ortholog jumps to the other 8 line up only once their names are rebuilt.
+
 ## Curation backup (off-box)
 
 Durable curator state lives ONLY on the VM under `uploads/curator_state/`

@@ -3276,6 +3276,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_draft_one()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
+        elif self.path == "/api/curator/append-summary":
+            self._handle_curator_append_summary()
         elif self.path == "/api/curator/go":
             self._handle_curator_go()
         elif self.path == "/api/curator/phenotype":
@@ -4222,6 +4224,38 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         _atomic_write_json(PAPER_DRAFTS_PATH, store)
         _log_curation("paper-draft", status, pmid, curator)
         self.send_json(200, {"ok": True, "pmid": pmid, "status": status})
+
+    def _handle_curator_append_summary(self):
+        """Append one sentence to a gene's curated summary and record its PMID.
+        Backs the paper-curation 'add to summary' button. Auth required; appends
+        (never overwrites) to the durable gene override."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        ddb = (body.get("ddb") or "").strip()
+        sentence = " ".join((body.get("sentence") or "").split()).strip()
+        pmid = re.sub(r"\D", "", body.get("pmid") or "")
+        if not ddb.startswith("DDB_G"):
+            self.send_json(400, {"error": "A valid DDB_G identifier is required."})
+            return
+        if len(sentence) < 3 or len(sentence) > 2000:
+            self.send_json(400, {"error": "Sentence is empty or too long."})
+            return
+        entry = _load_json("dictybase_corpus.json").get(ddb, {})
+        current = (entry.get("summary") or "").strip()
+        new_summary = (current + " " + sentence).strip() if current else sentence
+        if len(new_summary) > 20000:
+            self.send_json(400, {"error": "Summary would be too long."})
+            return
+        pmids = (entry.get("curator_pmids") or "").strip()
+        if pmid and pmid not in pmids:
+            pmids = (pmids + ", " + pmid).strip(", ") if pmids else pmid
+        date = datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()
+        save_gene_override(ddb, {"summary": new_summary, "curator": curator,
+                                 "curator_date": date, "note": entry.get("note", ""),
+                                 "curator_pmids": pmids}, curator, action="append-summary")
+        self.send_json(200, {"ok": True, "ddb": ddb, "summary": new_summary})
 
     def _handle_curator_go(self):
         """Add or delete a curated GO annotation. Body: {ddb, action:add|delete,

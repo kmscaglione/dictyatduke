@@ -2857,6 +2857,8 @@ async function draftPaperByPmid() {
 
 function paperDraftCard(d) {
   const esc = escapeHtml;
+  const gsBtnLine = (x) => `<div style="font-size:12.5px;margin:3px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}
+      <button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button></div>`;
   const geneChips = (d.genes || []).length
     ? d.genes.map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}" target="_blank" rel="noopener">${esc(g.symbol || g.ddb)}</a>`).join(", ")
     : `<span class="muted">none detected in the abstract</span>`;
@@ -2867,7 +2869,7 @@ function paperDraftCard(d) {
   } else {
     const list = (label, arr, fmt) => arr && arr.length
       ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map(fmt).map(esc).join("; ")}</div>` : "";
-    const gsLines = (ai.gene_summaries || []).map((x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`).join("");
+    const gsLines = (ai.gene_summaries || []).map(gsBtnLine).join("");
     aiHtml = `
       ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
       ${gsLines}
@@ -2882,7 +2884,7 @@ function paperDraftCard(d) {
   const subList = (label, arr, fmt) => arr && arr.length ? `<div><strong>${label}:</strong> ${arr.map(fmt).map(esc).join("; ")}</div>` : "";
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
       <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}:
-      ${subList("Gene summaries", sub.gene_summaries, (x) => `${x.gene}: ${x.sentence}`)}
+      ${(sub.gene_summaries || []).length ? `<div style="margin-top:2px"><em>Gene summaries:</em>${(sub.gene_summaries || []).map(gsBtnLine).join("")}</div>` : ""}
       ${subList("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
       ${subList("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
       ${subList("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
@@ -2960,6 +2962,23 @@ async function loadPaperDrafts() {
         try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
         catch { say("Could not dismiss."); }
       });
+      card.querySelectorAll(".pd-addsum").forEach((b) => b.addEventListener("click", async () => {
+        const gene = b.dataset.gene, sentence = b.dataset.sentence, refpmid = b.dataset.pmid;
+        const orig = b.textContent; b.disabled = true; b.textContent = "Adding…";
+        try {
+          const gc = await fetch(`/api/gene-card?id=${encodeURIComponent(gene)}`).then((r) => r.json());
+          if (!gc || !gc.ddb) throw new Error(`no gene ${gene}`);
+          const r = await fetch("/api/curator/append-summary", {
+            method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+            body: JSON.stringify({ ddb: gc.ddb, sentence, pmid: refpmid }),
+          });
+          const d2 = await r.json();
+          if (!r.ok) throw new Error(d2.error || "failed");
+          b.textContent = `✓ added to ${gene}`; b.style.borderColor = "#10b981"; b.style.color = "#047857";
+        } catch (e) {
+          b.textContent = "failed"; setTimeout(() => { b.textContent = orig; b.disabled = false; }, 1800);
+        }
+      }));
     });
   } catch { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load drafts.</p>`; }
 }

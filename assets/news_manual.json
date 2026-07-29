@@ -3,6 +3,19 @@
   "items": [
     {
       "date": "2026-07-29",
+      "tag": "new",
+      "title": "Download the sequences behind the genomes",
+      "body": "You can now get the actual sequences three ways. In the genome browser, click any gene model to download its sequence as FASTA. On each D. discoideum gene's Orthologs tab, download that gene's orthologs as protein or CDS, one genome at a time or all at once in a single file. And on the Downloads page, every sequenced genome now has CDS (nucleotide) and protein (amino acid) FASTA files, one record per gene ID. With thanks to Tera Levin for the suggestions.",
+      "link": "/tools/downloads"
+    },
+    {
+      "date": "2026-07-29",
+      "tag": "new",
+      "title": "Curated protein and genetic interactions on gene pages",
+      "body": "The Interactions tab now shows experimentally curated physical and genetic interactions from BioGRID, each with its experimental method and publication, alongside the predicted associations from STRING. It is a focused set for Dictyostelium today, and curators and authors can help grow it over time."
+    },
+    {
+      "date": "2026-07-29",
       "tag": "data",
       "title": "Two more dictyostelid genomes, 19 now hosted",
       "body": "D. citrinum KGL29A and D. intermedium PJ11, two genomes still working through GenBank's pipeline, are now hosted here directly. That brings the site to 19 sequenced dictyostelid genomes. Both are in the genome browser, BLAST, downloads, and the ortholog tables, using the sequencing team's own contig names and gene IDs. With thanks to Tera Levin and the Holland*, Ahmed* et al. 2025 team for sharing the assemblies.",

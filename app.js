@@ -2893,6 +2893,12 @@ function paperDraftCard(d) {
       ${subList("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
       ${subList("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
       ${sub.note ? `<div><em>Note:</em> ${esc(sub.note)}</div>` : ""}
+      <div style="margin-top:5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        ${sub.handled
+          ? `<span style="font-size:11px;color:#047857">✓ handled — hidden from the gene page</span>`
+          : `<span style="font-size:11px;color:#b45309">shown on the gene page as awaiting approval</span>`}
+        <button type="button" class="pd-handled" data-pmid="${esc(d.pmid)}" data-handled="${sub.handled ? 1 : 0}" style="font-size:11px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">${sub.handled ? "↩ show again" : "✓ mark handled"}</button>
+      </div>
     </div>` : "";
   const border = d.status === "submitted" ? "#10b981" : "var(--line,#e5e9ee)";
   return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid ${border};border-radius:8px;padding:10px 12px;margin-bottom:10px">
@@ -2918,10 +2924,14 @@ function paperDraftCard(d) {
     </div>`;
 }
 
-async function updatePaperDraft(pmid, status, emailText) {
+async function updatePaperDraft(pmid, status, emailText, handled) {
+  const payload = { pmid };
+  if (status) payload.status = status;
+  if (typeof emailText === "string") payload.email_text = emailText;
+  if (typeof handled === "boolean") payload.handled = handled;
   const r = await fetch("/api/curator/papers/update", {
     method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
-    body: JSON.stringify({ pmid, status, email_text: emailText }),
+    body: JSON.stringify(payload),
   });
   if (!r.ok) throw new Error("update failed");
   return r.json();
@@ -2966,6 +2976,13 @@ async function loadPaperDrafts() {
       if (dismissBtn) dismissBtn.addEventListener("click", async () => {
         try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
         catch { say("Could not dismiss."); }
+      });
+      const handledBtn = card.querySelector(".pd-handled");
+      if (handledBtn) handledBtn.addEventListener("click", async () => {
+        const nowHandled = handledBtn.dataset.handled !== "1";
+        handledBtn.disabled = true;
+        try { await updatePaperDraft(pmid, undefined, undefined, nowHandled); loadPaperDrafts(); }
+        catch { handledBtn.disabled = false; }
       });
       const redraftBtn = card.querySelector(".pd-redraft");
       if (redraftBtn) redraftBtn.addEventListener("click", async () => {

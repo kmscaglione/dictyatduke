@@ -2521,7 +2521,7 @@ def _author_curation_index():
     idx = {}
     for d in _load_paper_drafts().get("drafts", []):
         sub = d.get("submission")
-        if not sub:
+        if not sub or sub.get("handled"):   # handled -> curator dealt with it; drop from public
             continue
         paper = {"pmid": d.get("pmid"), "title": d.get("title"), "url": d.get("url"),
                  "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", ""),
@@ -4315,14 +4315,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_json(200, res)
 
     def _handle_curator_papers_update(self):
-        """Update a draft's status (reviewed/sent/dismissed) or its edited email."""
+        """Update a draft: status (reviewed/sent/dismissed), edited email, and/or
+        the submission's `handled` flag (hides an author submission from the public
+        gene-page window once a curator has dealt with it)."""
         body, curator, err = self._curator_json()
         if err:
             self.send_json(*err)
             return
         pmid = str(body.get("pmid") or "").strip()
         status = (body.get("status") or "").strip()
-        if status not in ("new", "reviewed", "sent", "dismissed"):
+        if status and status not in ("new", "reviewed", "sent", "dismissed"):
             self.send_json(400, {"error": "invalid status"})
             return
         store = _load_paper_drafts()
@@ -4330,12 +4332,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not hit:
             self.send_json(404, {"error": "draft not found"})
             return
-        hit["status"] = status
+        if status:
+            hit["status"] = status
         if isinstance(body.get("email_text"), str):
             hit["email_text"] = body["email_text"][:8000]
+        if "handled" in body and hit.get("submission"):
+            hit["submission"]["handled"] = bool(body["handled"])
         _atomic_write_json(PAPER_DRAFTS_PATH, store)
-        _log_curation("paper-draft", status, pmid, curator)
-        self.send_json(200, {"ok": True, "pmid": pmid, "status": status})
+        action = status or ("handled" if body.get("handled") else "update")
+        _log_curation("paper-draft", action, pmid, curator)
+        self.send_json(200, {"ok": True, "pmid": pmid, "status": hit.get("status"),
+                             "handled": bool((hit.get("submission") or {}).get("handled"))})
 
     def _handle_curator_append_summary(self):
         """Append one sentence to a gene's curated summary and record its PMID.

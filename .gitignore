@@ -62,3 +62,6 @@ assets/curators.json.bak
 assets/curators.json.tmp
 .curator_password
 assets/dictybase_live_curation.json
+
+# Root-free vendored pure-Python deps (pip install --target vendor …)
+/vendor/

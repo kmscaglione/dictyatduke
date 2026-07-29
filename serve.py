@@ -25,6 +25,13 @@ _NOREDIRECT_OPENER = urllib.request.build_opener(
     _NoRedirect, urllib.request.HTTPSHandler(context=SSL_CTX))
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+# Repo-local third-party packages installed WITHOUT root, e.g.
+#   pip3 install --target vendor pypdf
+# so the (apache-run) server can import them regardless of system site-packages.
+# gitignored, so a `git reset --hard` deploy keeps them.
+_VENDOR = os.path.join(ROOT, "vendor")
+if os.path.isdir(_VENDOR) and _VENDOR not in sys.path:
+    sys.path.insert(0, _VENDOR)
 UPLOADS_DIR = pathlib.Path(ROOT) / "uploads"
 UPLOADS_DIR.mkdir(exist_ok=True)
 (UPLOADS_DIR / "files").mkdir(exist_ok=True)
@@ -2600,24 +2607,34 @@ def _pmc_fulltext(pmcid):
 
 
 def _pdf_to_text(pdf_bytes):
-    """Best-effort PDF -> text via poppler's pdftotext if installed; else ''."""
+    """PDF -> text. Prefers poppler's pdftotext (best quality) if installed;
+    otherwise falls back to pure-Python pypdf (vendored via `pip --target vendor`,
+    no root needed). Returns '' if neither is available or extraction fails."""
+    if shutil.which("pdftotext"):
+        tmp = None
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
+                f.write(pdf_bytes)
+                tmp = f.name
+            out = subprocess.run(["pdftotext", "-q", "-nopgbrk", tmp, "-"],
+                                 capture_output=True, timeout=90)
+            txt = out.stdout.decode("utf-8", "replace")
+            if txt.strip():
+                return txt
+        except Exception:
+            pass
+        finally:
+            if tmp:
+                try:
+                    os.unlink(tmp)
+                except OSError:
+                    pass
     try:
-        with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
-            f.write(pdf_bytes)
-            path = f.name
-    except OSError:
-        return ""
-    try:
-        out = subprocess.run(["pdftotext", "-q", "-nopgbrk", path, "-"],
-                             capture_output=True, timeout=90)
-        return out.stdout.decode("utf-8", "replace")
+        import pypdf
+        reader = pypdf.PdfReader(io.BytesIO(pdf_bytes))
+        return "\n\n".join((pg.extract_text() or "") for pg in reader.pages)
     except Exception:
         return ""
-    finally:
-        try:
-            os.unlink(path)
-        except OSError:
-            pass
 
 
 def _html_to_text(data):

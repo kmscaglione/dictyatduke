@@ -8506,11 +8506,38 @@ function openDownloadsPage(updateRoute = true) {
           </ul>
         </section>
         <div data-downloads><p class="notice muted">Loading downloads…</p></div>
+        <section class="data-block downloads-section" id="version-history" style="margin-top:18px">
+          <h3>Version history</h3>
+          <p class="downloads-blurb">What changed in each release of this site.</p>
+          <div data-changelog><p class="notice muted">Loading…</p></div>
+        </section>
       </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
   scrollToY(toolsShell.offsetTop - 60);
   loadDownloads();
+  loadChangelog();
+}
+
+async function loadChangelog() {
+  const el = document.querySelector("[data-changelog]");
+  if (!el) return;
+  let data;
+  try { data = await fetch("/assets/changelog.json").then((r) => r.json()); }
+  catch { el.innerHTML = `<p class="notice muted">Version history is unavailable right now.</p>`; return; }
+  const vs = data.versions || [];
+  if (!vs.length) { el.innerHTML = `<p class="notice muted">No version history yet.</p>`; return; }
+  const row = (v) => `<li style="display:flex;gap:12px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--line,#eef2f3)">
+      <span style="min-width:48px;font-weight:600;font-variant-numeric:tabular-nums">v${escapeHtml(v.version)}</span>
+      <span style="min-width:88px;color:var(--muted,#6b7280);font-size:0.8125rem">${escapeHtml(v.date)}</span>
+      <span>${escapeHtml(v.summary)}</span></li>`;
+  const recent = vs.slice(0, 10), older = vs.slice(10);
+  el.innerHTML = `
+    <ul style="list-style:none;padding:0;margin:0;font-size:0.875rem">${recent.map(row).join("")}</ul>
+    ${older.length ? `<details style="margin-top:8px">
+      <summary style="cursor:pointer;font-size:0.875rem;color:var(--link,#0b62c4)">Show ${older.length} earlier versions</summary>
+      <ul style="list-style:none;padding:0;margin:8px 0 0;font-size:0.875rem">${older.map(row).join("")}</ul>
+    </details>` : ""}`;
 }
 
 async function loadDownloads() {

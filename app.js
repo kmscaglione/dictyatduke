@@ -4487,7 +4487,112 @@ const browserOrganisms = [
 ];
 
 let igvBrowser = null;
+let igvLastFeature = null;        // {chr,start,end,strand,name} of the last-clicked gene model (for strand, which the popup rows omit)
+let igvDocListenerInstalled = false;  // the delegated download click listener is installed once for the page
 let pendingBrowserLocus = null;   // set by viewInBrowser(); consumed on next browser load
+
+// Click a gene model in the browser -> download its genomic sequence (Tera Levin's
+// request #3/click-to-download). IGV's popup rows carry a "Location" (chr:start-end)
+// but not strand, so we hook each feature track's popupData to stash the raw clicked
+// feature (which has strand); the Location row is the fallback. The sequence itself
+// comes from /api/region, which reads the same per-genome browser FASTA IGV displays,
+// so the clicked contig name always resolves.
+function hookIGVTracksForDownload(browser) {
+  if (!browser || !Array.isArray(browser.trackViews)) return;
+  for (const tv of browser.trackViews) {
+    const track = tv && tv.track;
+    if (!track || track.__dlHooked || typeof track.popupData !== "function"
+        || typeof track.clickedFeatures !== "function") continue;
+    const orig = track.popupData.bind(track);
+    track.popupData = function (clickState, features) {
+      try {
+        const feats = features || track.clickedFeatures(clickState);
+        const raw = feats && feats.length ? (feats[0]._f || feats[0]) : null;
+        igvLastFeature = (raw && raw.chr != null && raw.start != null && raw.end != null)
+          ? { chr: raw.chr, start: raw.start, end: raw.end, strand: raw.strand || ".", name: raw.name || "" }
+          : null;
+      } catch { igvLastFeature = null; }
+      return orig(clickState, features);
+    };
+    track.__dlHooked = true;
+  }
+}
+
+async function igvDownloadRegion(btn, genome, chrom, start, end, strand, name) {
+  const orig = btn.textContent;
+  btn.disabled = true; btn.textContent = "Downloading…";
+  try {
+    const r = await fetch(`/api/region?genome=${encodeURIComponent(genome)}&chrom=${encodeURIComponent(chrom)}`
+      + `&start=${start}&end=${end}&strand=${encodeURIComponent(strand)}&flank=0`);
+    const d = await r.json();
+    if (!r.ok || !d.seq) throw new Error(d.error || "no sequence");
+    const bp = d.seq.length;
+    const label = name || `${d.chrom}:${d.start}-${d.end}`;
+    const header = `${label} | ${genome} | ${d.chrom}:${d.start}-${d.end}(${d.strand}) | ${bp} bp`;
+    const wrapped = d.seq.replace(/(.{60})/g, "$1\n").replace(/\n$/, "");
+    const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const safe = String(label).replace(/[^\w.-]+/g, "_");
+    basketDownload(`>${header}\n${wrapped}\n`, `${safe}_${genome}_${stamp}.fasta`, "text/plain");
+    btn.textContent = orig; btn.disabled = false;
+  } catch {
+    btn.textContent = "Download failed"; setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1800);
+  }
+}
+
+// Install (once per browser) the trackclick handler that appends a "Download
+// sequence" button to a gene model's popup, and a delegated click listener that
+// runs the download. Re-hook tracks after this whenever the genome/tracks change.
+function wireIGVDownloads(browser) {
+  hookIGVTracksForDownload(browser);
+  if (!igvDocListenerInstalled) {
+    igvDocListenerInstalled = true;
+    document.addEventListener("click", (ev) => {
+      const b = ev.target.closest && ev.target.closest("[data-igv-dl]");
+      if (!b) return;
+      ev.preventDefault();
+      igvDownloadRegion(b, b.dataset.genome, b.dataset.chrom, +b.dataset.start,
+        +b.dataset.end, b.dataset.strand, b.dataset.name || "");
+    });
+  }
+  if (browser.__dlWired) return;   // one trackclick handler per browser instance
+  browser.__dlWired = true;
+  const rowHTML = (e) => {
+    if (typeof e === "string") return /^<hr/i.test(e) ? "<hr style=\"margin:5px 0;border:none;border-top:1px solid #e5e7eb\">" : `<div>${escapeHtml(e)}</div>`;
+    if (e && e.html) return e.html;
+    if (e && e.name) return `<div style="font-size:.75rem"><span style="font-weight:600">${escapeHtml(e.name)}</span>&nbsp;&nbsp;${escapeHtml(String(e.value))}</div>`;
+    if (e && e.value != null) return `<div style="font-size:.75rem">${escapeHtml(String(e.value))}</div>`;
+    return "";
+  };
+  browser.on("trackclick", (track, popoverData) => {
+    // Only enhance gene-model clicks: GFF features are the ones that add a
+    // "Location" row. Anything else (wig/coverage/user tracks) -> default popup.
+    const locRow = Array.isArray(popoverData)
+      ? popoverData.find((r) => r && r.name === "Location" && typeof r.value === "string") : null;
+    if (!locRow) { igvLastFeature = null; return; }
+    const v = locRow.value, ci = v.lastIndexOf(":");
+    const chrom = v.slice(0, ci);
+    const m = v.slice(ci + 1).replace(/,/g, "").match(/(\d+)\s*-\s*(\d+)/);
+    if (ci < 0 || !m) { igvLastFeature = null; return; }
+    const start = +m[1], end = +m[2];
+    let strand = "+";
+    if (igvLastFeature && igvLastFeature.chr === chrom && (igvLastFeature.start + 1) === start
+        && (igvLastFeature.strand === "+" || igvLastFeature.strand === "-")) strand = igvLastFeature.strand;
+    igvLastFeature = null;
+    const nameRow = popoverData.find((r) => r && r.name === "Name");
+    const name = nameRow ? String(nameRow.value) : "";
+    const genome = (document.getElementById("browser-org-select") || {}).value || "";
+    if (!genome) return;
+    const info = popoverData.map(rowHTML).join("");
+    const bp = (end - start + 1).toLocaleString();
+    const dl = `<div style="margin-top:8px;border-top:1px solid #e5e7eb;padding-top:8px">
+        <button type="button" data-igv-dl data-genome="${escapeHtml(genome)}" data-chrom="${escapeHtml(chrom)}"
+          data-start="${start}" data-end="${end}" data-strand="${strand}" data-name="${escapeHtml(name)}"
+          style="font-size:.75rem;padding:4px 9px;border:1px solid #d7dee0;border-radius:5px;background:#fff;cursor:pointer">⤓ Download sequence (FASTA)</button>
+        <div style="font-size:.66rem;color:#9ca3af;margin-top:3px">Genomic sequence${strand === "-" ? ", − strand" : ""} · ${bp} bp</div>
+      </div>`;
+    return `<div style="max-width:340px">${info}${dl}</div>`;
+  });
+}
 let pendingBrowserOrg = null;     // organism to open the browser on (default: AX4)
 
 // Open the genome browser on a specific organism at a locus (e.g. a curated
@@ -4650,13 +4755,13 @@ function initGenomeBrowser() {
     const locus = pendingBrowserLocus; pendingBrowserLocus = null;
     if (igvBrowser) {
       igvBrowser.loadGenome(buildIGVOptions(org).genome)
-        .then(() => { if (locus) igvBrowser.search(locus); }).catch(() => {});
+        .then(() => { hookIGVTracksForDownload(igvBrowser); if (locus) igvBrowser.search(locus); }).catch(() => {});
       return;
     }
     const opts = buildIGVOptions(org);
     if (locus) opts.locus = locus;
     igv.createBrowser(container, opts)
-      .then((b) => { igvBrowser = b; })
+      .then((b) => { igvBrowser = b; wireIGVDownloads(b); })
       .catch(() => {
         container.innerHTML = `<p style="padding:16px;color:var(--muted,#6b7280)">Browser could not be loaded.</p>`;
       });
@@ -4680,7 +4785,7 @@ function initGenomeBrowser() {
     else if (/\.(vcf|bed|gff3?|gtf)\.gz(\?|$)/i.test(url)) cfg.indexURL = url + ".tbi";
     msg.style.color = "var(--muted,#6b7280)"; msg.textContent = "Loading track…";
     Promise.resolve(igvBrowser.loadTrack(cfg))
-      .then(() => { msg.style.color = "#047857"; msg.textContent = `Added “${cfg.name}” ✓`; })
+      .then(() => { hookIGVTracksForDownload(igvBrowser); msg.style.color = "#047857"; msg.textContent = `Added “${cfg.name}” ✓`; })
       .catch(() => { msg.style.color = "#b91c1c"; msg.textContent = "Could not load that track — check the URL, format, and that the host allows CORS."; });
   });
 

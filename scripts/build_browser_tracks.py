@@ -92,6 +92,14 @@ def sorted_records(path, start_col):
                     break
                 headers.append(line)
             elif line.strip():
+                # Drop whole-contig `region` features (NCBI's gbkey=Src source
+                # lines). They're useless in the browser AND IGV.js's tabix reader
+                # returns ONLY the region for a query and none of the genes behind
+                # it, so the track looks empty. htslib/pysam read it fine — this is
+                # an IGV.js quirk. Stripping them makes the gene models show.
+                cols = line.split("\t")
+                if len(cols) > 2 and cols[2] == "region":
+                    continue
                 feats.append(_relabel_mrna(line))
 
     def key(line):

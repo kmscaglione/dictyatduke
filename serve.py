@@ -138,7 +138,7 @@ _BLOCKED_EXACT = {
     "/assets/curation_log.jsonl",
     "/assets/curation_paper_drafts.json",
 }
-_BLOCKED_PREFIXES = ("/uploads/",)
+_BLOCKED_PREFIXES = ("/uploads/", "/assets/paper_fulltext/")
 
 
 def _is_blocked_path(raw):
@@ -2422,7 +2422,7 @@ def _build_draft(p):
     session_url = f"/curate-paper?t={token}"
     return {
         "pmid": p["pmid"], "title": p.get("title", ""), "journal": p.get("journal", ""),
-        "pubdate": p.get("pubdate", ""), "url": p.get("url", ""),
+        "pubdate": p.get("pubdate", ""), "url": p.get("url", ""), "doi": p.get("doi", ""),
         "corr_name": p.get("corr_name", ""), "corr_email": p.get("corr_email", ""),
         "abstract": (p.get("abstract", "") or "")[:4000], "genes": genes,
         "ai": _curation_ai_draft(p, genes), "token": token, "session_url": session_url,
@@ -2554,6 +2554,156 @@ def _author_curation_index():
             idx.setdefault(ddb, []).append({**paper, **content})
     _AUTHOR_CUR["mtime"], _AUTHOR_CUR["index"] = mtime, idx
     return idx
+
+
+# --- Full-text fetcher (for whole-paper curation) ---------------------------
+# Acquire a paper's full text from the best LEGAL source, in order: PMC Open
+# Access, then Unpaywall's OA copy, then the publisher via the server's own
+# institutional (Duke) access. The text is stored privately (never web-served,
+# gitignored) and used only to generate a draft the author then approves; only
+# the resulting summary is ever public.
+FULLTEXT_DIR = CURATION_STATE_DIR / "paper_fulltext"
+CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "dictybase-curation@duke.edu")
+_FT_UA = "dictyBase-curation/1.0 (mailto:%s)" % CONTACT_EMAIL
+
+
+def _pmid_to_pmcid(pmid):
+    try:
+        u = ("https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids="
+             f"{pmid}&format=json&tool=dictyBase&email={quote(CONTACT_EMAIL)}")
+        with urllib.request.urlopen(u, timeout=20, context=SSL_CTX) as r:
+            recs = json.loads(r.read()).get("records", [])
+        return (recs[0].get("pmcid") if recs else None)
+    except Exception:
+        return None
+
+
+def _pmc_fulltext(pmcid):
+    """Plain text from a PMC OA article's JATS XML (prose paragraphs + headings)."""
+    import xml.etree.ElementTree as ET
+    u = f"{EUTILS}/efetch.fcgi?db=pmc&id={pmcid.replace('PMC', '')}&retmode=xml&tool=dictyBase"
+    try:
+        with urllib.request.urlopen(u, timeout=30, context=SSL_CTX) as r:
+            root = ET.fromstring(r.read())
+    except Exception:
+        return ""
+    body = root.find(".//body")
+    if body is None:
+        return ""
+    chunks = []
+    for el in body.iter():
+        if el.tag in ("p", "title", "caption"):
+            txt = " ".join("".join(el.itertext()).split())
+            if txt:
+                chunks.append(txt)
+    return "\n\n".join(chunks)
+
+
+def _pdf_to_text(pdf_bytes):
+    """Best-effort PDF -> text via poppler's pdftotext if installed; else ''."""
+    try:
+        with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
+            f.write(pdf_bytes)
+            path = f.name
+    except OSError:
+        return ""
+    try:
+        out = subprocess.run(["pdftotext", "-q", "-nopgbrk", path, "-"],
+                             capture_output=True, timeout=90)
+        return out.stdout.decode("utf-8", "replace")
+    except Exception:
+        return ""
+    finally:
+        try:
+            os.unlink(path)
+        except OSError:
+            pass
+
+
+def _html_to_text(data):
+    txt = data.decode("utf-8", "replace")
+    txt = re.sub(r"(?is)<(script|style|head|nav|footer|noscript)[^>]*>.*?</\1>", " ", txt)
+    txt = re.sub(r"(?s)<[^>]+>", " ", txt)
+    return " ".join(html.unescape(txt).split())
+
+
+def _fetch_url_text(url):
+    """Fetch a URL and return extracted text (PDF via pdftotext, else HTML->text)."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": _FT_UA})
+        with urllib.request.urlopen(req, timeout=45, context=SSL_CTX) as r:
+            ctype = (r.headers.get("Content-Type") or "").lower()
+            data = r.read(12_000_000)      # 12 MB cap
+    except Exception:
+        return ""
+    if "pdf" in ctype or data[:5] == b"%PDF-":
+        return _pdf_to_text(data)
+    return _html_to_text(data)
+
+
+def _unpaywall_urls(doi):
+    if not doi:
+        return []
+    try:
+        u = f"https://api.unpaywall.org/v2/{quote(doi)}?email={quote(CONTACT_EMAIL)}"
+        with urllib.request.urlopen(u, timeout=20, context=SSL_CTX) as r:
+            d = json.loads(r.read())
+    except Exception:
+        return []
+    urls = []
+    for loc in ([d.get("best_oa_location")] + (d.get("oa_locations") or [])):
+        if isinstance(loc, dict):
+            for k in ("url_for_pdf", "url"):
+                if loc.get(k):
+                    urls.append(loc[k])
+    seen, out = set(), []
+    for u in urls:
+        if u not in seen:
+            seen.add(u)
+            out.append(u)
+    return out[:4]
+
+
+def fetch_full_text(pmid, doi=None):
+    """Return {source, chars, url, text} for a paper's full text, or source
+    'none'. Tries PMC OA, then Unpaywall OA copies, then the publisher via DOI
+    (institutional access from this Duke-hosted server). Best-effort."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    cap = 400_000
+    pmcid = _pmid_to_pmcid(pmid)
+    if pmcid:
+        t = _pmc_fulltext(pmcid)
+        if len(t) > 500:
+            return {"source": "PMC Open Access", "chars": len(t), "text": t[:cap],
+                    "url": f"https://www.ncbi.nlm.nih.gov/pmc/articles/{pmcid}/"}
+    if not doi:
+        metas = fetch_pubmed_meta([pmid])
+        doi = (metas[0].get("doi") if metas else "") or ""
+    for u in _unpaywall_urls(doi):
+        t = _fetch_url_text(u)
+        if len(t) > 500:
+            return {"source": "Unpaywall (open access)", "chars": len(t), "text": t[:cap], "url": u}
+    if doi:
+        t = _fetch_url_text(f"https://doi.org/{quote(doi)}")
+        if len(t) > 1000:
+            return {"source": "Publisher (institutional access)", "chars": len(t),
+                    "text": t[:cap], "url": f"https://doi.org/{doi}"}
+    return {"source": "none", "chars": 0, "text": "", "url": ""}
+
+
+def store_full_text(pmid, result):
+    """Persist fetched full text to the private, never-web-served store."""
+    try:
+        FULLTEXT_DIR.mkdir(parents=True, exist_ok=True)
+        _atomic_write_json(FULLTEXT_DIR / f"{pmid}.json",
+                           {"pmid": pmid, **result,
+                            "fetched_at": datetime.datetime.utcnow().isoformat() + "Z"})
+    except OSError:
+        pass
+
+
+def load_full_text(pmid):
+    return _read_json_file(FULLTEXT_DIR / f"{re.sub(r'[^0-9]', '', str(pmid))}.json", {})
 
 
 def _paper_public_view(d):
@@ -3369,6 +3519,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_draft_one()
         elif self.path == "/api/curator/papers/redraft":
             self._handle_curator_papers_redraft()
+        elif self.path == "/api/curator/papers/fetch-fulltext":
+            self._handle_curator_papers_fetch_fulltext()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/append-summary":
@@ -4296,6 +4448,35 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
         self.send_json(200, res)
+
+    def _handle_curator_papers_fetch_fulltext(self):
+        """Fetch a draft's full text (PMC OA / Unpaywall / publisher) and store it
+        privately. Returns source + size + a short preview, never the full text."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        pmid = re.sub(r"\D", "", str(body.get("pmid") or ""))
+        store = _load_paper_drafts()
+        d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+        if not d:
+            self.send_json(404, {"error": "draft not found"})
+            return
+        try:
+            res = fetch_full_text(pmid, d.get("doi"))
+        except Exception as e:
+            self.send_json(502, {"error": f"Full-text fetch failed ({type(e).__name__})."})
+            return
+        stamp = datetime.datetime.utcnow().isoformat() + "Z"
+        if res["chars"] > 0:
+            store_full_text(pmid, res)
+        d["fulltext"] = {"source": res["source"], "chars": res["chars"],
+                         "url": res["url"], "fetched_at": stamp}
+        _atomic_write_json(PAPER_DRAFTS_PATH, store)
+        _log_curation("paper-draft", "fulltext", f"{pmid} {res['source']} {res['chars']}c", curator)
+        self.send_json(200, {"ok": True, "pmid": pmid, "source": res["source"],
+                             "chars": res["chars"], "url": res["url"],
+                             "preview": res["text"][:600]})
 
     def _handle_curator_papers_redraft(self):
         """Regenerate an existing draft's AI content (keeps its link)."""

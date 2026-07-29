@@ -2907,7 +2907,9 @@ function paperDraftCard(d) {
         <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status)}</strong>` : ""}</span></div>
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
       <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
-        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" title="Regenerate the AI draft (keeps the invitation link)" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Regenerate</button></div>
+        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" title="Regenerate the AI draft (keeps the invitation link)" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Regenerate</button>
+        <button type="button" class="pd-fulltext" data-pmid="${esc(d.pmid)}" title="Fetch the paper's full text from a legal source (private; used to improve the draft)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">📄 Fetch full text</button></div>
+      ${d.fulltext ? `<div class="pd-ft-status" style="font-size:11.5px;margin:2px 0;color:${d.fulltext.chars ? "#047857" : "#b45309"}">Full text: ${d.fulltext.chars ? esc(d.fulltext.source) + " · " + Number(d.fulltext.chars).toLocaleString() + " chars" : "not found in a legal source — ask the author to upload it"}</div>` : ""}
       ${aiHtml}
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Invitation email (review, then send it yourself)</summary>
@@ -2983,6 +2985,19 @@ async function loadPaperDrafts() {
         handledBtn.disabled = true;
         try { await updatePaperDraft(pmid, undefined, undefined, nowHandled); loadPaperDrafts(); }
         catch { handledBtn.disabled = false; }
+      });
+      const ftBtn = card.querySelector(".pd-fulltext");
+      if (ftBtn) ftBtn.addEventListener("click", async () => {
+        const orig = ftBtn.textContent; ftBtn.disabled = true; ftBtn.textContent = "Fetching…";
+        try {
+          const r = await fetch("/api/curator/papers/fetch-fulltext", {
+            method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+            body: JSON.stringify({ pmid }),
+          });
+          const d2 = await r.json();
+          if (!r.ok) throw new Error(d2.error || "failed");
+          loadPaperDrafts();
+        } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
       const redraftBtn = card.querySelector(".pd-redraft");
       if (redraftBtn) redraftBtn.addEventListener("click", async () => {

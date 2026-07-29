@@ -2482,10 +2482,14 @@ def redraft_paper(pmid):
     p = {**p, **fetch_pubmed_full([pmid]).get(pmid, {})}
     if not p.get("abstract"):
         p["abstract"] = d.get("abstract", "")
-    fresh = _build_draft(p)              # regenerate genes/AI/email; DON'T take its token
+    fresh = _build_draft(p)              # regenerate genes/AI; DISCARD its new token
     d["genes"] = fresh["genes"]
     d["ai"] = fresh["ai"]
-    d["email_text"] = fresh["email_text"]
+    # Rebuild the invitation with the EXISTING token so an already-shared link
+    # keeps working (fresh["email_text"] would embed fresh's throwaway token).
+    sess = d.get("session_url") or f"/curate-paper?t={d.get('token', '')}"
+    d["session_url"] = sess
+    d["email_text"] = _invitation_email(p, fresh["genes"], sess)
     d["abstract"] = (p.get("abstract", "") or "")[:4000]
     if p.get("corr_name"):
         d["corr_name"] = p["corr_name"]

@@ -2012,11 +2012,13 @@ def _fasta_fetch(stem, suffix, wanted):
     return out
 
 
-def orthogroup_sequences(ddb, kind):
-    """Multi-FASTA of a gene's curated orthologs: the AX4 gene itself followed by
-    one record per ortholog gene id in each sequenced genome (OrthoFinder order).
-    kind: 'protein' or 'cds' (nucleotide). Returns (code, payload, error) where
-    payload is (symbol, og_id, [(header, sequence), ...])."""
+def orthogroup_sequences(ddb, kind, genome=None):
+    """Multi-FASTA of a gene's curated orthologs, one record per ortholog gene id.
+    kind: 'protein' or 'cds' (nucleotide). With `genome` (an OrthoFinder species id
+    e.g. 'dc-cf3b'), return only that one sequenced genome's ortholog(s); otherwise
+    the AX4 gene itself followed by every genome's ortholog (OrthoFinder order).
+    Returns (code, payload, error), payload = (symbol, og_id, glabel|None,
+    [(header, sequence), ...])."""
     if not re.match(r"^DDB_G\d+$", ddb or ""):
         return 400, None, "ddb (DDB_G…) required"
     if kind not in ("protein", "cds"):
@@ -2029,24 +2031,38 @@ def orthogroup_sequences(ddb, kind):
     orth = entry.get("orthologs", {})
     rows, _sym = api_gene_rows()
     symbol = rows.get(ddb, {}).get("symbol") or ddb
+    species = og.get("_meta", {}).get("species", [])
     parts = []
-    # 1) the query D. discoideum AX4 gene itself (authoritative, from its models)
-    q = extract_sequence(ddb, "protein" if kind == "protein" else "cdna")
-    if q:
-        parts.append((f"{ddb} {symbol} | D. discoideum AX4", q))
-    # 2) each sequenced-genome ortholog, by gene id, in the canonical species order
-    for s in og.get("_meta", {}).get("species", []):
+
+    def add_genome(s):
         stem = _OG_SPECIES_STEM.get(s.get("id"))
         ids = orth.get(s.get("id"), [])
         if not stem or not ids:
-            continue
+            return
         found = _fasta_fetch(stem, suffix, ids)
         for gid in ids:                       # preserve OrthoFinder order
             if found.get(gid):
                 parts.append((f"{gid} | {s.get('label', '')}", found[gid]))
+
+    if genome:
+        s = next((x for x in species if x.get("id") == genome), None)
+        if not s or s.get("id") == "d-discoideum-ax4":
+            return 404, None, "unknown genome for this orthogroup"
+        add_genome(s)
+        if not parts:
+            return 404, None, "no ortholog sequence available for this genome"
+        return 200, (symbol, entry.get("og"), s.get("label", ""), parts), None
+
+    # whole orthogroup: the query D. discoideum AX4 gene itself, then every genome
+    q = extract_sequence(ddb, "protein" if kind == "protein" else "cdna")
+    if q:
+        parts.append((f"{ddb} {symbol} | D. discoideum AX4", q))
+    for s in species:
+        if s.get("id") != "d-discoideum-ax4":
+            add_genome(s)
     if not parts:
         return 404, None, "no ortholog sequences are available for this gene"
-    return 200, (symbol, entry.get("og"), parts), None
+    return 200, (symbol, entry.get("og"), None, parts), None
 
 
 def _amplicons(chrom, u, left, rightsite, label_l, label_r, maxsize, strand, acc):
@@ -4143,16 +4159,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         q = parse_qs(urlparse(self.path).query)
         ddb = (q.get("ddb", [""])[0]).strip()
         kind = (q.get("kind", ["protein"])[0]).strip()
-        code, payload, err = orthogroup_sequences(ddb, kind)
+        genome = (q.get("genome", [""])[0]).strip() or None
+        code, payload, err = orthogroup_sequences(ddb, kind, genome)
         if code != 200:
             self.send_json(code, {"error": err})
             return
-        symbol, _og_id, parts = payload
+        symbol, _og_id, glabel, parts = payload
         wrap = lambda s: "\n".join(s[i:i + 60] for i in range(0, len(s), 60))
         body = "".join(f">{h}\n{wrap(s)}\n" for h, s in parts).encode()
         label = "proteins" if kind == "protein" else "cds"
         safe = "".join(c for c in symbol if c.isalnum() or c in "._-") or ddb
-        fname = f"{safe}_orthologs_{label}.fasta"
+        gtag = ("_" + "".join(c for c in glabel if c.isalnum() or c in "._-")) if glabel else "_orthologs"
+        fname = f"{safe}{gtag}_{label}.fasta"
         self.send_response(200)
         self.send_header("Content-Type", "text/plain; charset=utf-8")
         self.send_header("Content-Disposition", f'attachment; filename="{fname}"')

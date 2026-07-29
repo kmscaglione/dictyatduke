@@ -9112,11 +9112,13 @@ async function loadCuratedOrthologs(gene) {
   const td = "padding:5px 8px";
   const orth = grp.orthologs || {};
   const loci = data.loci || {};
+  const rowBtn = "font-size:0.72rem;padding:3px 7px;border:1px solid var(--line,#d7dee0);border-radius:5px;background:var(--surface,#fff);cursor:pointer;line-height:1.2";
   const rows = (data.species || []).filter((s) => s.id !== "d-discoideum-ax4").map((s) => {
     const ids = orth[s.id] || [];
-    let body;
+    let body, dlCell;
     if (!ids.length) {
       body = `<span style="color:var(--muted,#9ca3af)">no ortholog in this genome</span>`;
+      dlCell = `<span style="color:var(--muted,#d1d5db)">—</span>`;
     } else {
       const linked = ids.map((gid) => {
         const locus = loci[gid];
@@ -9127,8 +9129,14 @@ async function loadCuratedOrthologs(gene) {
       body = linked
         + (!s.hosted ? ` <span style="color:var(--muted,#9ca3af)">(genome not yet hosted)</span>` : "")
         + (ids.length > 1 ? ` <span style="color:#b45309">· ${ids.length} co-orthologs</span>` : "");
+      dlCell = s.hosted
+        ? `<span style="display:inline-flex;gap:4px;white-space:nowrap;justify-content:flex-end">
+             <button type="button" class="og-row-dl" data-genome="${escapeHtml(s.id)}" data-glabel="${escapeHtml(s.label)}" data-kind="protein" title="Download the protein FASTA for ${escapeHtml(s.label)}" style="${rowBtn}">Protein</button>
+             <button type="button" class="og-row-dl" data-genome="${escapeHtml(s.id)}" data-glabel="${escapeHtml(s.label)}" data-kind="cds" title="Download the CDS nucleotide FASTA for ${escapeHtml(s.label)}" style="${rowBtn}">CDS</button>
+           </span>`
+        : `<span style="color:var(--muted,#9ca3af)">not hosted</span>`;
     }
-    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(s.label)}</em></td><td style="${td}">${body}</td></tr>`;
+    return `<tr style="border-bottom:1px solid var(--line,#eef2f3)"><td style="${td}"><em>${escapeHtml(s.label)}</em></td><td style="${td}">${body}</td><td style="${td};text-align:right">${dlCell}</td></tr>`;
   }).join("");
   const paralogs = grp.ax4_paralogs || [];
   const paraNote = paralogs.length
@@ -9138,21 +9146,24 @@ async function loadCuratedOrthologs(gene) {
   const dlBtn = "font-size:0.8125rem;padding:6px 10px;border:1px solid var(--line,#d7dee0);border-radius:6px;background:var(--surface,#fff);cursor:pointer";
   const dlBar = `
     <div style="margin:12px 0 2px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-      <span style="font-size:.8125rem;color:var(--muted,#6b7280)">Download ortholog sequences:</span>
-      <button type="button" data-og-dl="protein" style="${dlBtn}">Proteins (FASTA)</button>
-      <button type="button" data-og-dl="cds" style="${dlBtn}">CDS nucleotide (FASTA)</button>
+      <span style="font-size:.8125rem;color:var(--muted,#6b7280)">Download <strong>all</strong> orthologs (one multi-FASTA):</span>
+      <button type="button" data-og-dl="protein" style="${dlBtn}">All proteins (FASTA)</button>
+      <button type="button" data-og-dl="cds" style="${dlBtn}">All CDS nucleotide (FASTA)</button>
     </div>
-    <p style="font-size:0.7rem;color:var(--muted,#9ca3af);margin:4px 0 0">One record per ortholog gene ID across the ${nGenomes} sequenced genome${nGenomes === 1 ? "" : "s"} with an ortholog here, with this gene's <em>D. discoideum</em> AX4 sequence as the first record.</p>`;
+    <p style="font-size:0.7rem;color:var(--muted,#9ca3af);margin:4px 0 0">One record per ortholog gene ID across the ${nGenomes} sequenced genome${nGenomes === 1 ? "" : "s"} with an ortholog here, with this gene's <em>D. discoideum</em> AX4 sequence as the first record. Per-genome downloads are in the table above.</p>`;
   el.innerHTML = `
     ${head}
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">Curated ortholog calls from OrthoFinder (Holland*, Ahmed* et al. <a class="text-link" href="https://www.pnas.org/doi/10.1073/pnas.2520843122" target="_blank" rel="noopener">2025, PNAS</a>), group <strong>${escapeHtml(grp.og)}</strong>, by gene ID. More reliable than the sequence-similarity search below.</p>
     ${paraNote}
     <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
-      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Genome</th><th style="${td}">Ortholog gene ID</th></tr></thead>
+      <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Genome</th><th style="${td}">Ortholog gene ID</th><th style="${td};text-align:right">Sequence</th></tr></thead>
       <tbody>${rows}</tbody></table></div>
     ${dlBar}`;
   el.querySelectorAll(".ortholog-jump").forEach((b) =>
     b.addEventListener("click", () => openBrowserAt(b.dataset.org, b.dataset.locus)));
+  const stamp = () => new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const safeSym = () => String(gene.symbol || ddb).replace(/[^\w.-]+/g, "_");
+  // "Download all" (one multi-FASTA of every ortholog + the AX4 gene)
   el.querySelectorAll("[data-og-dl]").forEach((b) => b.addEventListener("click", async () => {
     const kind = b.dataset.ogDl;
     const orig = b.textContent;
@@ -9162,12 +9173,27 @@ async function loadCuratedOrthologs(gene) {
       if (!r.ok) throw new Error("fetch failed");
       const text = await r.text();
       if (!text.startsWith(">")) throw new Error("no sequences");
-      const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-      const safe = String(gene.symbol || ddb).replace(/[^\w.-]+/g, "_");
-      basketDownload(text, `${safe}_orthologs_${kind === "protein" ? "proteins" : "cds"}_${stamp}.fasta`, "text/plain");
+      basketDownload(text, `${safeSym()}_orthologs_${kind === "protein" ? "proteins" : "cds"}_${stamp()}.fasta`, "text/plain");
       b.textContent = orig; b.disabled = false;
     } catch {
       b.textContent = "Download failed"; setTimeout(() => { b.textContent = orig; b.disabled = false; }, 1600);
+    }
+  }));
+  // Per-genome downloads (one genome's ortholog gene id(s), protein or CDS)
+  el.querySelectorAll(".og-row-dl").forEach((b) => b.addEventListener("click", async () => {
+    const { kind, genome, glabel } = b.dataset;
+    const orig = b.textContent;
+    b.disabled = true; b.textContent = "…";
+    try {
+      const r = await fetch(`/api/orthogroup-sequences?ddb=${encodeURIComponent(ddb)}&kind=${kind}&genome=${encodeURIComponent(genome)}`);
+      if (!r.ok) throw new Error("fetch failed");
+      const text = await r.text();
+      if (!text.startsWith(">")) throw new Error("no sequences");
+      const gsafe = String(glabel || genome).replace(/[^\w.-]+/g, "_");
+      basketDownload(text, `${safeSym()}_${gsafe}_${kind === "protein" ? "protein" : "cds"}_${stamp()}.fasta`, "text/plain");
+      b.textContent = orig; b.disabled = false;
+    } catch {
+      b.textContent = "✕"; setTimeout(() => { b.textContent = orig; b.disabled = false; }, 1400);
     }
   }));
 }

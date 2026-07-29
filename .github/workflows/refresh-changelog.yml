@@ -1,0 +1,43 @@
+name: Refresh changelog
+
+# Keeps assets/changelog.json in sync with the release history. Runs whenever a
+# new version is pushed (assets/version.json changes), rebuilds the changelog
+# from git, and commits it if it changed. The auto-commit does NOT touch
+# version.json, so it can't retrigger this workflow (and carries [skip ci] too).
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - assets/version.json
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0        # build_changelog walks the full version.json history
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild changelog from git
+        run: python3 scripts/build_changelog.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "changelog-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if ! git diff --quiet -- assets/changelog.json; then
+            git add assets/changelog.json
+            git commit -m "chore(docs): refresh changelog [skip ci]"
+            git push
+          else
+            echo "Changelog already current."
+          fi

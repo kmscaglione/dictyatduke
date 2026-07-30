@@ -492,6 +492,67 @@ def _read_gemini_key():
 
 
 GEMINI_API_KEY = _read_gemini_key()
+
+# --- ORCID sign-in: verified credit for author curation ----------------------
+# The author proves the iD is theirs through ORCID's OAuth "/authenticate"
+# scope, so curation credit attaches to a verified person rather than a typed
+# string. Entirely optional: with no client configured the button disappears and
+# the typed (unverified) field still works, so the curation flow never depends
+# on an external service being up.
+#
+# Configure with ORCID_CLIENT_ID / ORCID_CLIENT_SECRET in the environment, or a
+# gitignored `.orcid_client` file next to serve.py holding "client-id:secret".
+# ORCID_REDIRECT_URI must match the redirect URI registered with ORCID EXACTLY,
+# e.g. https://dicty.labs.duke.edu/api/orcid/callback
+# Set ORCID_ENV=sandbox to test against sandbox.orcid.org first.
+def _read_orcid_client():
+    cid = os.environ.get("ORCID_CLIENT_ID", "").strip()
+    sec = os.environ.get("ORCID_CLIENT_SECRET", "").strip()
+    if cid and sec:
+        return cid, sec
+    try:
+        raw = (pathlib.Path(ROOT) / ".orcid_client").read_text().strip()
+        cid, _, sec = raw.partition(":")
+        return cid.strip(), sec.strip()
+    except OSError:
+        return "", ""
+
+
+ORCID_CLIENT_ID, ORCID_CLIENT_SECRET = _read_orcid_client()
+ORCID_SANDBOX = os.environ.get("ORCID_ENV", "").strip().lower() == "sandbox"
+ORCID_BASE = "https://sandbox.orcid.org" if ORCID_SANDBOX else "https://orcid.org"
+# Defaults to PUBLIC_BASE_URL + /api/orcid/callback, which the systemd unit
+# already sets, so a deployment that cannot write /etc only needs the client
+# file below. Set ORCID_REDIRECT_URI explicitly to override.
+ORCID_REDIRECT_URI = (os.environ.get("ORCID_REDIRECT_URI", "").strip()
+                      or (f"{PUBLIC_BASE_URL}/api/orcid/callback" if PUBLIC_BASE_URL else ""))
+ORCID_ON = bool(ORCID_CLIENT_ID and ORCID_CLIENT_SECRET and ORCID_REDIRECT_URI)
+_ORCID_STATES = {}            # one-time nonce -> {"token": paper token, "exp": epoch}
+ORCID_STATE_TTL = 600
+
+
+def orcid_normalize(value):
+    """Accept a bare iD or a full orcid.org URL; return the bare iD."""
+    v = (value or "").strip()
+    for prefix in ("https://orcid.org/", "http://orcid.org/",
+                   "https://sandbox.orcid.org/", "orcid.org/"):
+        if v.lower().startswith(prefix):
+            v = v[len(prefix):]
+    return v.strip().upper()
+
+
+def orcid_valid(value):
+    """Format plus the ISO 7064 MOD 11-2 check digit. Catches a mistyped digit
+    without any network call, which is most of the value of validating at all."""
+    iid = orcid_normalize(value)
+    if not re.match(r"^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$", iid):
+        return False
+    digits = iid.replace("-", "")
+    total = 0
+    for ch in digits[:-1]:
+        total = (total + int(ch)) * 2
+    check = (12 - total % 11) % 11
+    return ("X" if check == 10 else str(check)) == digits[-1]
 # Free-tier model. gemini-flash-lite-latest is an auto-updating alias for the
 # current lightweight flash model — fast, capable enough for this Q&A, on the
 # free tier, and reliably available (the heavier flash models often 503 under
@@ -2591,6 +2652,68 @@ def decide_submission_item(pmid, key, state, note, curator):
                  "decision": decisions.get(key) or {}, "awaiting_author": open_q}
 
 
+def orcid_start(token):
+    """Begin the sign-in: mint a one-time state bound to this curation link and
+    return the ORCID URL to send the author to. The state is what stops someone
+    replaying a callback against a different paper."""
+    if not ORCID_ON:
+        return 503, {"error": "ORCID sign-in is not configured on this server."}
+    d = next((x for x in _load_paper_drafts().get("drafts", []) if x.get("token") == token), None)
+    if not d:
+        return 404, {"error": "This curation link is not valid."}
+    now = time.time()
+    for k, v in list(_ORCID_STATES.items()):        # drop expired, bound size
+        if v["exp"] < now:
+            _ORCID_STATES.pop(k, None)
+    if len(_ORCID_STATES) > 500:
+        return 503, {"error": "Too many sign-ins in flight. Try again shortly."}
+    state = secrets.token_urlsafe(24)
+    _ORCID_STATES[state] = {"token": token, "exp": now + ORCID_STATE_TTL}
+    url = (f"{ORCID_BASE}/oauth/authorize?client_id={quote(ORCID_CLIENT_ID)}"
+           f"&response_type=code&scope=/authenticate"
+           f"&redirect_uri={quote(ORCID_REDIRECT_URI, safe='')}&state={quote(state)}")
+    return 200, {"url": url}
+
+
+def orcid_exchange(code):
+    """Swap the authorization code for the authenticated iD. Only /authenticate
+    scope is requested, so the reply carries the iD and name and nothing else;
+    the access token is deliberately discarded rather than stored."""
+    body = urllib.parse.urlencode({
+        "client_id": ORCID_CLIENT_ID, "client_secret": ORCID_CLIENT_SECRET,
+        "grant_type": "authorization_code", "code": code,
+        "redirect_uri": ORCID_REDIRECT_URI}).encode()
+    req = urllib.request.Request(f"{ORCID_BASE}/oauth/token", data=body,
+                                 headers={"Accept": "application/json",
+                                          "Content-Type": "application/x-www-form-urlencoded"})
+    with urllib.request.urlopen(req, timeout=20, context=SSL_CTX) as r:
+        return json.loads(r.read())
+
+
+def orcid_finish(state, code):
+    """Complete the sign-in and record the verified iD on the draft.
+    Returns (paper token, ok)."""
+    entry = _ORCID_STATES.pop(state, None)
+    if not entry or entry["exp"] < time.time():
+        return "", False
+    token = entry["token"]
+    try:
+        res = orcid_exchange(code)
+    except Exception:
+        return token, False
+    iid = orcid_normalize(res.get("orcid", ""))
+    if not orcid_valid(iid):
+        return token, False
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("token") == token), None)
+    if not d:
+        return token, False
+    d["orcid"] = {"id": iid, "name": str(res.get("name") or "")[:200], "verified": True,
+                  "at": datetime.datetime.utcnow().isoformat() + "Z"}
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return token, True
+
+
 def delete_submission(pmid):
     """Remove an author's submission from a draft entirely.
 
@@ -2635,7 +2758,8 @@ def _author_curation_index():
         # is deliberately NOT in this public payload. Same for anything the
         # curator rejected: see _keep_public below.
         paper = {"pmid": d.get("pmid"), "title": d.get("title"), "url": d.get("url"),
-                 "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", "")}
+                 "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", ""),
+                 "orcid": sub.get("orcid") or {}}   # public by design: this is the credit
         decisions = sub.get("decisions") or {}
 
         def _keep_public(kind, it):
@@ -2989,6 +3113,8 @@ def _paper_public_view(d):
         "drafted_from": "full_text" if whole_paper else "abstract",
         "note": (sub or {}).get("note", ""),          # their own note, back to them
         "awaiting_author": bool((sub or {}).get("awaiting_author")),
+        "orcid": d.get("orcid") or (sub or {}).get("orcid") or {},
+        "orcid_enabled": ORCID_ON,
     }
 
 
@@ -3029,6 +3155,16 @@ def paper_session_submit(token, payload):
         "submitted_at": datetime.datetime.utcnow().isoformat() + "Z",
         "handled": prev.get("handled", False),
     }
+    # A verified iD (from ORCID sign-in) always wins over a typed one, and a
+    # typed one is only kept if its check digit is right.
+    verified = d.get("orcid") or {}
+    typed = orcid_normalize(payload.get("orcid", ""))
+    if verified.get("verified"):
+        sub["orcid"] = dict(verified)
+        if not sub["submitter"] and verified.get("name"):
+            sub["submitter"] = verified["name"]
+    elif typed and orcid_valid(typed):
+        sub["orcid"] = {"id": typed, "name": "", "verified": False}
     # Carry curator decisions across a resubmission, but only for items that came
     # back unchanged. An item the author edited in response to a question gets a
     # new key, so it lands back in the curator's queue as undecided.
@@ -3264,6 +3400,29 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json(400, {"error": "ddb (DDB_G…) required"})
                 return
             self.send_json(200, {"ddb": ddb, "entries": _author_curation_index().get(ddb, [])})
+            return
+        # ORCID sign-in for the author curation page. Two GETs: one to start the
+        # redirect, one for ORCID to come back to.
+        if self.path.split("?")[0] == "/api/orcid/start":
+            q = parse_qs(urlparse(self.path).query)
+            code, payload = orcid_start((q.get("t") or [""])[0].strip())
+            if code != 200:
+                self.send_json(code, payload)
+            else:
+                self.send_response(302)
+                self.send_header("Location", payload["url"])
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+            return
+        if self.path.split("?")[0] == "/api/orcid/callback":
+            q = parse_qs(urlparse(self.path).query)
+            token, ok = orcid_finish((q.get("state") or [""])[0], (q.get("code") or [""])[0])
+            dest = (f"/curate-paper?t={quote(token)}&orcid={'ok' if ok else 'failed'}"
+                    if token else "/curate-paper?orcid=failed")
+            self.send_response(302)
+            self.send_header("Location", dest)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
             return
         if self.path.split("?")[0] == "/api/paper-session":
             if _rate_limited(_PAPER_HITS, self.client_address[0], limit=40, window=60):

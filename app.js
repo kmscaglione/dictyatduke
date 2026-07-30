@@ -2998,7 +2998,8 @@ function paperDraftCard(d) {
     : "";
   const addSumBtn = (x) => `<button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button>`;
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
-      <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}
+      <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}${(sub.orcid || {}).id
+        ? ` <a class="text-link" href="https://orcid.org/${esc(sub.orcid.id)}" target="_blank" rel="noopener" style="font-size:11.5px">${esc(sub.orcid.id)}</a><span style="font-size:10.5px;color:${sub.orcid.verified ? "#047857" : "#b45309"}">${sub.orcid.verified ? " ✓ verified" : " (typed, unverified)"}</span>` : ""}
       ${sub.awaiting_author ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · waiting on the author</span>` : ""}
       ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
       ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
@@ -9436,7 +9437,11 @@ async function loadAuthorCuration(gene) {
     const cite = e.pmid
       ? `<a class="text-link" href="${esc(e.url || `https://pubmed.ncbi.nlm.nih.gov/${e.pmid}/`)}" target="_blank" rel="noopener">${esc(e.title || "PMID " + e.pmid)}</a>`
       : esc(e.title || "");
-    const who = e.submitter ? `submitted by ${esc(e.submitter)}` : "submitted by the paper's author";
+    const orc = e.orcid || {};
+    const credit = orc.id
+      ? ` <a class="text-link" href="https://orcid.org/${esc(orc.id)}" target="_blank" rel="noopener" title="${orc.verified ? "Verified through ORCID sign-in" : "ORCID iD supplied by the submitter"}">ORCID ${esc(orc.id)}</a>${orc.verified ? " ✓" : ""}`
+      : "";
+    const who = (e.submitter ? `submitted by ${esc(e.submitter)}` : "submitted by the paper's author") + credit;
     const line = (label, txt) => txt ? `<div style="margin:2px 0"><strong>${label}:</strong> ${esc(txt)}</div>` : "";
     const go = (e.go || []).map((x) => `${x.gene}: ${x.term} (${x.aspect})`).join("; ");
     const ph = (e.phenotypes || []).map((x) => `${x.phenotype}`).join("; ");
@@ -9447,8 +9452,7 @@ async function loadAuthorCuration(gene) {
         ${line("GO", go)}
         ${line("Phenotypes", ph)}
         ${line("Interactions", inx)}
-        ${e.note ? `<div class="muted" style="font-size:0.75rem;margin-top:2px"><em>Author note:</em> ${esc(e.note)}</div>` : ""}
-      </div>`;
+      </div>`;   // the author's note is deliberately absent: it is private to the curator
   }).join("");
   el.className = "data-block";
   el.innerHTML = `
@@ -11713,6 +11717,18 @@ function attachCurationTips(scope) {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
 }
 
+// ISO 7064 MOD 11-2, the same check the server runs. Doing it here too means a
+// mistyped iD is caught before the author clicks submit rather than after.
+function orcidChecksumOk(value) {
+  const id = String(value || "").trim().replace(/^https?:\/\/(sandbox\.)?orcid\.org\//i, "").toUpperCase();
+  if (!/^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(id)) return false;
+  const digits = id.replace(/-/g, "");
+  let total = 0;
+  for (const ch of digits.slice(0, -1)) total = (total + Number(ch)) * 2;
+  const check = (12 - (total % 11)) % 11;
+  return (check === 10 ? "X" : String(check)) === digits.slice(-1);
+}
+
 function renderPaperSessionForm(el, token, s) {
   const esc = escapeHtml;
   // Spell the GO aspects out. "F/P/C" means nothing to an author being asked to
@@ -11773,6 +11789,22 @@ function renderPaperSessionForm(el, token, s) {
   const section = (title, rows, hint, helpText) => rows
     ? `<h3 class="tools-group">${title}${helpText ? help(helpText) : ""}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
     : "";
+  // ORCID credit. Verified sign-in when the server has a client configured,
+  // otherwise a typed iD, which is stored only if its check digit is right.
+  const orc = s.orcid || {};
+  const orcidLink = (id) => `<a class="text-link" href="https://orcid.org/${esc(id)}" target="_blank" rel="noopener">${esc(id)}</a>`;
+  const orcidBlock = orc.verified
+    ? `<div style="margin-top:12px;background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;padding:8px 12px;font-size:13px">
+         <strong style="color:#047857">✓ Signed in with ORCID</strong> ${orcidLink(orc.id)}${orc.name ? ` · ${esc(orc.name)}` : ""}
+         <div class="muted" style="font-size:11.5px;margin-top:2px">Your curation will be credited to this iD.</div></div>`
+    : `<div style="margin-top:12px;border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:8px 12px;font-size:13px">
+         <strong>Get credit for this curation</strong> <span class="muted">(optional)</span>
+         <div class="muted" style="font-size:11.5px;margin:2px 0 6px">Your iD is shown alongside the curation on the gene page, so the work is attributable to you.</div>
+         <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+           ${s.orcid_enabled ? `<a id="ps-orcid-signin" class="button" href="/api/orcid/start?t=${encodeURIComponent(token)}" style="font-size:13px;text-decoration:none">Sign in with ORCID</a><span class="muted" style="font-size:12px">or type it:</span>` : ""}
+           <input id="ps-orcid" type="text" value="${esc(orc.id || "")}" placeholder="0000-0002-1825-0097" style="${FIELD};width:190px" aria-label="ORCID iD">
+           <span id="ps-orcid-msg" class="muted" style="font-size:12px"></span>
+         </div></div>`;
   const genes = (s.genes || []).map((g) => esc(g.symbol || g.ddb)).join(", ");
   el.innerHTML = `
     <p class="eyebrow">Help curate this paper</p>
@@ -11807,12 +11839,28 @@ function renderPaperSessionForm(el, token, s) {
     <h3 class="tools-group">Notes to the curator ${help("A private message to the curator: key findings, corrections, missing genes, answers to their questions, or context. Only curators see it. It is never shown on a gene page or published anywhere.")}<span class="muted" style="font-weight:400;font-size:12px"> (optional, private)</span></h3>
     <p class="muted" style="font-size:12px;margin:0 0 4px">🔒 This box is a private conversation between you and the curator. It is never published on a gene page.</p>
     <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical">${esc(s.note || "")}</textarea>
+    ${orcidBlock}
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px">
-      <input id="ps-name" type="text" placeholder="Your name (optional)" style="${FIELD};min-width:200px">
+      <input id="ps-name" type="text" value="${esc(orc.verified ? (orc.name || "") : "")}" placeholder="Your name (optional)" style="${FIELD};min-width:200px">
       <button type="button" id="ps-submit" class="button">Submit for review</button>
       <span id="ps-msg" class="muted" style="font-size:13px"></span>
     </div>`;
   attachCurationTips(el);
+  const orcidEl = document.getElementById("ps-orcid");
+  const orcidMsg = document.getElementById("ps-orcid-msg");
+  if (orcidEl && orcidMsg) orcidEl.addEventListener("input", () => {
+    const v = orcidEl.value.trim();
+    if (!v) { orcidMsg.textContent = ""; return; }
+    const ok = orcidChecksumOk(v);
+    orcidMsg.textContent = ok ? "✓ looks valid" : "check the digits";
+    orcidMsg.style.color = ok ? "#047857" : "#b45309";
+  });
+  // Coming back from ORCID. The page reloads fresh, so say what happened.
+  const back = new URLSearchParams(location.search).get("orcid");
+  if (back === "failed" && orcidMsg) {
+    orcidMsg.textContent = "ORCID sign-in did not complete. Try again, or type your iD.";
+    orcidMsg.style.color = "#b91c1c";
+  }
   const submitBtn = document.getElementById("ps-submit");
   submitBtn.addEventListener("click", async () => {
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
@@ -11824,12 +11872,20 @@ function renderPaperSessionForm(el, token, s) {
     };
     const note = (document.getElementById("ps-note").value || "").trim();
     const submitter = (document.getElementById("ps-name").value || "").trim();
+    const orcidEl = document.getElementById("ps-orcid");
+    const orcid = orcidEl ? orcidEl.value.trim() : "";
+    if (orcid && !orcidChecksumOk(orcid)) {
+      const om = document.getElementById("ps-orcid-msg");
+      if (om) { om.textContent = "That ORCID iD does not look right — check the digits."; om.style.color = "#b91c1c"; }
+      orcidEl.focus();
+      return;
+    }
     const msg = document.getElementById("ps-msg");
     submitBtn.disabled = true; msg.textContent = "Submitting…";
     try {
       const r = await fetch("/api/paper-session/submit", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ t: token, curation, note, submitter }),
+        body: JSON.stringify({ t: token, curation, note, submitter, orcid }),
       });
       const d = await r.json();
       if (!r.ok) throw new Error(d.error || "failed");

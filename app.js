@@ -2996,13 +2996,19 @@ function paperDraftCard(d) {
           <span>${esc(fmt(x))}</span>${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
       }).join("")}</div>`
     : "";
+  // An author GO entry that carries a real GO id can go straight into the
+  // curated record, and from there into the GAF export. Without an id there is
+  // nothing to add, so the button is not offered.
+  const addGoBtn = (x) => x.go_id
+    ? `<button type="button" class="pd-addgo" data-gene="${esc(x.gene || "")}" data-goid="${esc(x.go_id)}" data-aspect="${esc(x.aspect || "")}" data-pmid="${esc(d.pmid)}" title="Add this as a curated GO annotation, which puts it in the GAF export" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to GO</button>`
+    : `<span class="muted" style="font-size:10.5px;margin-left:3px">needs a GO id</span>`;
   const addSumBtn = (x) => `<button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button>`;
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
       <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}${(sub.orcid || {}).id
         ? ` <a class="text-link" href="https://orcid.org/${esc(sub.orcid.id)}" target="_blank" rel="noopener" style="font-size:11.5px">${esc(sub.orcid.id)}</a><span style="font-size:10.5px;color:${sub.orcid.verified ? "#047857" : "#b45309"}">${sub.orcid.verified ? " ✓ verified" : " (typed, unverified)"}</span>` : ""}
       ${sub.awaiting_author ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · waiting on the author</span>` : ""}
       ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
-      ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
+      ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})${x.go_id ? ` [${x.go_id}]` : " [no GO id]"}`, addGoBtn)}
       ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.negative ? "[no change] " : ""}${x.gene}: ${x.phenotype}`)}
       ${subRows("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
       ${sub.note ? `<div style="margin-top:5px;background:#fff;border:1px dashed #cbd5e1;border-radius:5px;padding:5px 7px">
@@ -3119,6 +3125,24 @@ async function loadPaperDrafts() {
           loadPaperDrafts();
         } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
+      // Promote an author's GO annotation into the curated record. The evidence
+      // code is the curator's call, so we ask rather than guess: an annotation
+      // with the wrong evidence is worse than one that waited.
+      card.querySelectorAll(".pd-addgo").forEach((btn) => btn.addEventListener("click", async () => {
+        const ev = (prompt(`Evidence code for ${btn.dataset.gene} ${btn.dataset.goid}?\n\n`
+          + "IDA  direct assay\nIMP  mutant phenotype\nIGI  genetic interaction\n"
+          + "IPI  physical interaction\nIEP  expression pattern\nIC   curator inference\nTAS  author statement",
+          "IMP") || "").trim().toUpperCase();
+        if (!ev) return;
+        const orig = btn.textContent; btn.disabled = true; btn.textContent = "adding…";
+        const { ok, d: res } = await curatorPost("/api/curator/go", {
+          ddb: btn.dataset.gene, action: "add", go_id: btn.dataset.goid,
+          aspect: btn.dataset.aspect, evidence: ev, pmid: btn.dataset.pmid,
+        });
+        if (ok) { btn.textContent = "✓ added"; }
+        else { btn.textContent = orig; btn.disabled = false; alert((res && res.error) || "Could not add that annotation."); }
+      }));
+
       // Delete a submission outright, for when it should not exist rather than
       // just be hidden. Two-step confirm: this is not recoverable from the UI.
       const subDel = card.querySelector(".pd-subdel");
@@ -11751,6 +11775,75 @@ function orcidChecksumOk(value) {
   return (check === 10 ? "X" : String(check)) === digits.slice(-1);
 }
 
+// Gene Ontology autocomplete for the author form. Searching happens server-side
+// against the full ontology (assets/go_terms.json); choosing a term records its
+// GO id and aspect on the row, so what the author submits is a real annotation
+// rather than a phrase somebody has to look up later. Typing without choosing is
+// still allowed: a description with no id is better than a lost observation, and
+// the curator resolves it.
+function attachGoAutocomplete(scope) {
+  scope.querySelectorAll(".ps-go").forEach((row) => {
+    const input = row.querySelector(".t");
+    const menu = row.querySelector(".go-ac");
+    const idCell = row.querySelector(".go-id");
+    const aspectSel = row.querySelector("select.a");
+    if (!input || !menu) return;
+    let items = [], active = -1, timer = null, seq = 0;
+
+    const close = () => { menu.hidden = true; menu.innerHTML = ""; items = []; active = -1; input.setAttribute("aria-expanded", "false"); };
+    const setId = (goId) => {
+      row.dataset.goId = goId || "";
+      idCell.innerHTML = goId
+        ? `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${goId}" target="_blank" rel="noopener">${goId}</a>`
+        : `<span style="color:#b45309">no GO id yet</span>`;
+    };
+    const choose = (t) => {
+      input.value = t.name;
+      setId(t.id);
+      if (aspectSel) aspectSel.value = t.aspect;   // aspect comes from the ontology
+      close();
+    };
+    const paint = () => {
+      menu.innerHTML = items.map((t, i) => `<div class="go-ac-item" data-i="${i}" style="padding:6px 9px;cursor:pointer;font-size:13px;line-height:1.35${i === active ? ";background:#eef2f7" : ""}">
+          ${escapeHtml(t.name)} <span class="muted" style="font-size:11px">${t.id} · ${t.aspect}</span></div>`).join("")
+        || `<div style="padding:6px 9px;font-size:12.5px;color:#6b7280">No matching GO term. You can leave your own wording and a curator will map it.</div>`;
+      menu.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+    };
+    const search = async () => {
+      const q = input.value.trim();
+      if (q.length < 3) return close();
+      const mine = ++seq;
+      try {
+        const r = await fetch(`/api/go-search?q=${encodeURIComponent(q)}`);
+        const d = await r.json();
+        if (mine !== seq) return;                  // a later keystroke won
+        items = d.terms || []; active = -1; paint();
+      } catch { close(); }
+    };
+
+    input.addEventListener("input", () => {
+      setId("");                                   // edited by hand, so the id no longer applies
+      clearTimeout(timer); timer = setTimeout(search, 180);
+    });
+    input.addEventListener("keydown", (e) => {
+      if (menu.hidden || !items.length) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        active = (active + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length;
+        paint();
+      } else if (e.key === "Enter" && active >= 0) {
+        e.preventDefault(); choose(items[active]);
+      } else if (e.key === "Escape") { close(); }
+    });
+    menu.addEventListener("mousedown", (e) => {   // mousedown, so it beats blur
+      const it = e.target.closest(".go-ac-item");
+      if (it) { e.preventDefault(); choose(items[Number(it.dataset.i)]); }
+    });
+    input.addEventListener("blur", () => setTimeout(close, 120));
+  });
+}
+
 function renderPaperSessionForm(el, token, s) {
   const esc = escapeHtml;
   // Spell the GO aspects out. "F/P/C" means nothing to an author being asked to
@@ -11786,10 +11879,17 @@ function renderPaperSessionForm(el, token, s) {
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea>
       ${decNote(x)}</div>`).join("");
-  const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+  // The term box is an autocomplete over the real Gene Ontology. Picking a term
+  // stores its GO id and sets the aspect, which is what lets the annotation
+  // reach the GAF export instead of dying as prose a curator must translate.
+  const goRows = (s.go || []).map((x, i) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
       ${keep(x, ` title="Keep this annotation"`)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <input class="t" value="${esc(x.term || "")}" data-tip-value placeholder="GO term / description" style="${FIELD};flex:1;min-width:170px">
+      <span style="position:relative;flex:1;min-width:200px">
+        <input class="t" value="${esc(x.term || "")}" data-tip-value autocomplete="off" role="combobox" aria-expanded="false" aria-controls="go-ac-${i}" placeholder="start typing, e.g. phagocytosis" style="${FIELD};width:100%">
+        <div class="go-ac" id="go-ac-${i}" hidden style="position:absolute;z-index:60;left:0;right:0;top:100%;background:#fff;border:1px solid var(--line,#d7dee0);border-radius:8px;box-shadow:0 8px 20px rgba(15,23,42,.16);max-height:230px;overflow:auto"></div>
+      </span>
+      <span class="go-id muted" style="font-size:11.5px;min-width:96px">${x.go_id ? `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${esc(x.go_id)}" target="_blank" rel="noopener">${esc(x.go_id)}</a>` : "no GO id yet"}</span>
       <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select>
       ${decNote(x)}</div>`).join("");
   // Phenotype sentences are long. A single-line input showed roughly half of one,
@@ -11868,6 +11968,7 @@ function renderPaperSessionForm(el, token, s) {
       <span id="ps-msg" class="muted" style="font-size:13px"></span>
     </div>`;
   attachCurationTips(el);
+  attachGoAutocomplete(el);
   const orcidEl = document.getElementById("ps-orcid");
   const orcidMsg = document.getElementById("ps-orcid-msg");
   if (orcidEl && orcidMsg) orcidEl.addEventListener("input", () => {
@@ -11888,7 +11989,7 @@ function renderPaperSessionForm(el, token, s) {
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
     const curation = {
       gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value })),
-      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value })),
+      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value, go_id: r.dataset.goId || "" })),
       phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked })),
       interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value })),
     };

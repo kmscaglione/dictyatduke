@@ -26,7 +26,7 @@ LISTS = {
 # Fields that may appear but are not required. `negative` marks a phenotype the
 # paper tested and found unchanged; it is imported and shown separately from the
 # mutant's real phenotypes.
-OPTIONAL = {"phenotypes": {"negative"}}
+OPTIONAL = {"phenotypes": {"negative"}, "go": {"go_id"}}
 MAX_FIELD = 500
 MAX_SUMMARY = 800
 MAX_ITEMS = 100
@@ -118,6 +118,9 @@ def main():
                                         f"{MAX_FIELD}.")
                 for extra in set(item) - set(fields) - OPTIONAL.get(key, set()):
                     warnings.append(f"{where}: field {extra!r} is dropped on import.")
+                if key == "go" and item.get("go_id") and not re.match(r"^GO:\d{7}$", str(item["go_id"])):
+                    errors.append(f"{where}: go_id must look like GO:0006909, got "
+                                  f"{item['go_id']!r}.")
                 if "negative" in item and not isinstance(item["negative"], bool):
                     errors.append(f"{where}: negative must be true or false, got "
                                   f"{item['negative']!r}.")

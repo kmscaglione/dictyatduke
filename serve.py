@@ -1878,7 +1878,10 @@ def bulk_tsv(dataset):
         # Every GO annotation (one row per GAF assertion) from the canonical file,
         # so the row count matches the GO annotation total shown on /data.
         out.append("ddb_g\tsymbol\tgo_id\taspect\tqualifier\tevidence\treference\tdate\tassigned_by")
+        curated = _read_json_file(OVERRIDES_PATH, {})
         for ddb, rec in _load_gene_annotations().items():
+            if ddb in curated:
+                rec = _merge_curated_go(ddb, rec)
             sym = rec.get("symbol") or rows.get(ddb, {}).get("symbol", "")
             go = rec.get("go", {})
             for aspect in ("P", "F", "C"):
@@ -1896,7 +1899,10 @@ def bulk_tsv(dataset):
                   f"!date-generated: {today}",
                   "!source: GO Consortium DICDI-mod GAF, merged with dictyBase curation"]
         body = []
+        curated = _read_json_file(OVERRIDES_PATH, {})
         for ddb, rec in _load_gene_annotations().items():
+            if ddb in curated:
+                rec = _merge_curated_go(ddb, rec)   # dictyBase's own curation belongs in the GAF
             sym = rec.get("symbol") or rows.get(ddb, {}).get("symbol", "")
             name = rows.get(ddb, {}).get("name", "")
             go = rec.get("go", {})
@@ -2767,6 +2773,67 @@ def delete_submission(pmid):
     return 200, {"ok": True, "pmid": pmid, "submitter": who, "removed": counts}
 
 
+# --- Gene Ontology term lookup ----------------------------------------------
+# Built by scripts/build_go_terms.py from go-basic.obo. Held server-side only
+# (4 MB) and queried through /api/go-search, so an author picks a real term with
+# a real id instead of typing prose a curator has to translate later. That is
+# what lets author curation reach the GAF export at all.
+GO_TERMS_PATH = pathlib.Path(ROOT) / "assets" / "go_terms.json"
+_GO_TERMS = {"mtime": None, "terms": {}}
+
+
+def _load_go_terms():
+    try:
+        mtime = os.path.getmtime(GO_TERMS_PATH)
+    except OSError:
+        return {}
+    if _GO_TERMS["mtime"] != mtime:
+        _GO_TERMS["terms"] = _read_json_file(GO_TERMS_PATH, {})
+        _GO_TERMS["mtime"] = mtime
+    return _GO_TERMS["terms"]
+
+
+def go_term(goid):
+    """(name, aspect) for a GO id, or (None, None) if it is not a current term."""
+    rec = _load_go_terms().get(str(goid or "").strip().upper())
+    return (rec[0], rec[1]) if rec else (None, None)
+
+
+def go_search(query, aspect="", limit=12):
+    """Rank GO terms for an autocomplete. Exact id first, then name prefix, then
+    word-boundary, then substring, then an exact synonym."""
+    terms = _load_go_terms()
+    q = " ".join(str(query or "").split()).lower()
+    if not q:
+        return []
+    aspect = (aspect or "").strip().upper()
+    if re.match(r"^(?:go:?\s*)?\d{1,7}$", q):             # they pasted an id, or just its digits
+        gid = "GO:" + re.sub(r"\D", "", q).zfill(7)
+        rec = terms.get(gid)
+        return [{"id": gid, "name": rec[0], "aspect": rec[1]}] if rec else []
+    hits = []
+    for gid, rec in terms.items():
+        name, asp, syns = rec[0], rec[1], (rec[2] if len(rec) > 2 else [])
+        if aspect and asp != aspect:
+            continue
+        low = name.lower()
+        if low == q:
+            rank = 0
+        elif low.startswith(q):
+            rank = 1
+        elif re.search(r"\b" + re.escape(q), low):
+            rank = 2
+        elif q in low:
+            rank = 3
+        elif any(q == s.lower() for s in syns):
+            rank = 4
+        else:
+            continue
+        hits.append((rank, len(name), name, gid, asp))
+    hits.sort()
+    return [{"id": g, "name": n, "aspect": a} for _, _, n, g, a in hits[:max(1, min(limit, 30))]]
+
+
 def _author_curation_index():
     """Map DDB_G -> list of author-submitted (not-yet-approved) curation entries,
     built from paper-session submissions. mtime-cached. Public: lets a gene page
@@ -3042,7 +3109,7 @@ _CURATION_INSTRUCTIONS = (
     '"gene_summaries": [{"gene": "symbol", "sentence": "one sentence, in the style '
     'of a dictyBase gene summary, stating what THIS paper shows the gene does or '
     'what its mutant reveals"}], '
-    '"go": [{"gene": "symbol", "term": "GO term or plain description", "aspect": "P|F|C"}], '
+    '"go": [{"gene": "symbol", "term": "GO term name", "aspect": "P|F|C", "go_id": "GO:0006909"}], '
     '"phenotypes": [{"gene": "symbol", "phenotype": "mutant phenotype", "negative": false}], '
     '"interactions": [{"gene_a": "symbol", "gene_b": "symbol", "type": "physical|genetic"}]}]}\n'
     "Use ONLY Dictyostelium genes actually named in the paper. Be specific and "
@@ -3055,6 +3122,12 @@ _CURATION_INSTRUCTIONS = (
     "not something it simply did not look at. Word it as a plain statement of what "
     "was tested and found normal. dictyBase shows these in a separate section, "
     "away from the gene's actual phenotypes.\n"
+    "GO IDS: give \"go_id\" only when you are confident of the exact term, and "
+    "give the term's real GO name in \"term\". A wrong id is far worse than none, "
+    "because an id flows through to the GAF export as fact. The server checks "
+    "every id against the current ontology and discards any it does not "
+    "recognise, keeping your wording so a curator can map it by hand. If you are "
+    "not sure, leave go_id out and describe the function plainly.\n"
     "Then import the JSON back into dictyBase via the curator portal's "
     "'Import results' button."
 )
@@ -3103,7 +3176,7 @@ def import_curation_results(results):
             "ok": True, "model": "Claude Code (whole paper)",
             "summary": str(r.get("summary", ""))[:800],
             "gene_summaries": clean(r.get("gene_summaries"), ["gene", "sentence"]),
-            "go": clean(r.get("go"), ["gene", "term", "aspect"]),
+            "go": _clean_go(clean(r.get("go"), ["gene", "term", "aspect", "go_id"])),
             "phenotypes": clean(r.get("phenotypes"), ["gene", "phenotype"]),
             "interactions": clean(r.get("interactions"), ["gene_a", "gene_b", "type"]),
         }
@@ -3111,6 +3184,22 @@ def import_curation_results(results):
         n += 1
     _atomic_write_json(PAPER_DRAFTS_PATH, store)
     return {"imported": n}
+
+
+def _clean_go(rows):
+    """Keep a GO id only if it is a real, current term, and take the term's own
+    name and aspect from the ontology when it is. A wrong id is worse than none:
+    it would flow into the GAF export as fact."""
+    out = []
+    for r in rows:
+        gid = str(r.get("go_id", "")).strip().upper()
+        name, aspect = go_term(gid) if gid else (None, None)
+        if name:
+            r["go_id"], r["term"], r["aspect"] = gid, name, aspect
+        else:
+            r["go_id"] = ""
+        out.append(r)
+    return out
 
 
 def _paper_public_view(d):
@@ -3176,7 +3265,7 @@ def paper_session_submit(token, payload):
     prev = d.get("submission") or {}
     sub = {
         "gene_summaries": clean(cur.get("gene_summaries"), ["gene", "sentence"]),
-        "go": clean(cur.get("go"), ["gene", "term", "aspect"]),
+        "go": _clean_go(clean(cur.get("go"), ["gene", "term", "aspect", "go_id"])),
         "phenotypes": clean(cur.get("phenotypes"), ["gene", "phenotype"]),
         "interactions": clean(cur.get("interactions"), ["gene_a", "gene_b", "type"]),
         "note": str(payload.get("note", ""))[:4000],
@@ -3283,6 +3372,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.startswith("/api/phenotype-search"):
             self._handle_api_phenotype_search()
+            return
+        if self.path.split("?")[0] == "/api/go-search":
+            q = parse_qs(urlparse(self.path).query)
+            self.send_json(200, {"terms": go_search((q.get("q") or [""])[0],
+                                                    (q.get("aspect") or [""])[0])})
             return
         if self.path.startswith("/api/go/"):
             self._handle_api_go(unquote(self.path[len("/api/go/"):].split("?")[0]))
@@ -5146,6 +5240,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(*err)
             return
         ddb = (body.get("ddb") or "").strip()
+        if ddb and not re.match(r"^DDB_G\d+$", ddb):
+            ddb = resolve_gene(ddb) or ddb      # accept a gene symbol too
         aspect = (body.get("aspect") or "").strip().upper()
         go_id = (body.get("go_id") or "").strip().upper()
         action = (body.get("action") or "add").strip()

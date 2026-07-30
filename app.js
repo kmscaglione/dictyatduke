@@ -11557,29 +11557,82 @@ async function loadPaperSession(token) {
   renderPaperSessionForm(el, token, s);
 }
 
+// Hover/focus tooltip for the author curation page. Two jobs: show the section
+// help text (a plain title="" attribute was unreliable here and authors reported
+// seeing nothing), and let a long phenotype or GO term be read in full without
+// making every field wide. Only fires for values that are actually clipped.
+function attachCurationTips(scope) {
+  let tip = document.getElementById("ps-tip");
+  if (!tip) {
+    tip = document.createElement("div");
+    tip.id = "ps-tip";
+    tip.setAttribute("role", "tooltip");
+    tip.style.cssText = "position:fixed;z-index:200;display:none;opacity:0;max-width:min(460px,92vw);" +
+      "padding:9px 12px;background:#0f172a;color:#f8fafc;font-size:12.5px;line-height:1.55;" +
+      "border-radius:8px;box-shadow:0 8px 24px rgba(15,23,42,.3);pointer-events:none;" +
+      "white-space:pre-wrap;transition:opacity .12s";
+    document.body.appendChild(tip);
+  }
+  const hide = () => { tip.style.opacity = "0"; tip.style.display = "none"; };
+  const textFor = (t) => {
+    if (t.dataset.tip) return t.dataset.tip;
+    if (t.dataset.tipValue === undefined) return "";
+    const v = (t.value || "").trim();
+    const clipped = t.scrollWidth > t.clientWidth + 2 || t.scrollHeight > t.clientHeight + 2;
+    return v && clipped ? v : "";          // nothing to add when it all fits
+  };
+  const show = (t) => {
+    const text = textFor(t);
+    if (!text) return hide();
+    tip.textContent = text;
+    tip.style.display = "block";
+    tip.style.left = "0px"; tip.style.top = "0px";     // measure before placing
+    const r = t.getBoundingClientRect();
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    const left = Math.min(Math.max(8, r.left), Math.max(8, window.innerWidth - w - 8));
+    let top = r.top - h - 8;
+    if (top < 8) top = Math.min(r.bottom + 8, window.innerHeight - h - 8);
+    tip.style.left = `${left}px`; tip.style.top = `${top}px`; tip.style.opacity = "1";
+  };
+  const hit = (e) => e.target.closest && e.target.closest("[data-tip],[data-tip-value]");
+  scope.addEventListener("mouseover", (e) => { const t = hit(e); if (t) show(t); });
+  scope.addEventListener("mouseout", (e) => { if (hit(e)) hide(); });
+  scope.addEventListener("focusin", (e) => { const t = hit(e); if (t) show(t); });
+  scope.addEventListener("focusout", hide);
+  scope.addEventListener("input", hide);      // stop covering a field being typed in
+  window.addEventListener("scroll", hide, { passive: true });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") hide(); });
+}
+
 function renderPaperSessionForm(el, token, s) {
   const esc = escapeHtml;
-  const aspOpt = (v) => ["F", "P", "C"].map((a) => `<option value="${a}"${a === (v || "F") ? " selected" : ""}>${a}</option>`).join("");
+  // Spell the GO aspects out. "F/P/C" means nothing to an author being asked to
+  // check someone else's annotation.
+  const ASPECTS = { F: "Function (F)", P: "Process (P)", C: "Component (C)" };
+  const aspOpt = (v) => Object.entries(ASPECTS).map(([a, label]) =>
+    `<option value="${a}"${a === (v || "F") ? " selected" : ""}>${label}</option>`).join("");
   const typeOpt = (v) => ["physical", "genetic"].map((t) => `<option value="${t}"${t === (v || "physical") ? " selected" : ""}>${t}</option>`).join("");
   const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs" style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap">
       <input type="checkbox" class="keep" checked style="margin-top:9px" title="Keep this description">
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <textarea class="ss" rows="2" placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea></div>`).join("");
+      <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea></div>`).join("");
   const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
       <input type="checkbox" class="keep" checked title="Keep this annotation">
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <input class="t" value="${esc(x.term || "")}" placeholder="GO term / description" style="${FIELD};flex:1;min-width:170px">
-      <select class="a" style="${FIELD}" aria-label="aspect">${aspOpt(x.aspect)}</select></div>`).join("");
-  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
-      <input type="checkbox" class="keep" checked>
+      <input class="t" value="${esc(x.term || "")}" data-tip-value placeholder="GO term / description" style="${FIELD};flex:1;min-width:170px">
+      <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select></div>`).join("");
+  // Phenotype sentences are long. A single-line input showed roughly half of one,
+  // so this is a wrapping textarea, and hovering shows the whole thing.
+  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:flex-start;margin:4px 0;flex-wrap:wrap">
+      <input type="checkbox" class="keep" checked style="margin-top:9px">
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <input class="p" value="${esc(x.phenotype || "")}" placeholder="phenotype" style="${FIELD};flex:1;min-width:200px"></div>`).join("");
+      <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea></div>`).join("");
   const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
       <input type="checkbox" class="keep" checked>
       <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
       <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
       <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select></div>`).join("");
-  const help = (t) => `<span class="ps-help" role="img" aria-label="help" title="${esc(t)}" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:11px;font-weight:700;margin-left:6px;cursor:help;vertical-align:middle">?</span>`;
+  const help = (t) => `<span class="ps-help" tabindex="0" role="note" aria-label="${esc(t)}" data-tip="${esc(t)}" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:11px;font-weight:700;margin-left:6px;cursor:help;vertical-align:middle">?</span>`;
   const section = (title, rows, hint, helpText) => rows
     ? `<h3 class="tools-group">${title}${helpText ? help(helpText) : ""}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
     : "";
@@ -11602,7 +11655,7 @@ function renderPaperSessionForm(el, token, s) {
     ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
     ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
     ${section("What each gene does — from this paper", gsRows, "One sentence per gene. Edit freely; a curator may add it to the gene's dictyBase summary.", "A plain-language sentence describing what your paper shows this gene does, or what its mutant reveals. This is the kind of description shown at the top of a gene's page.")}
-    ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. A curator maps these to formal GO IDs.", "Gene Ontology terms describe a gene's molecular Function (F), the biological Process (P) it takes part in, or the cellular Component (C) where it acts. Write it in plain words; a curator maps it to the official GO term.")}
+    ${section("Gene Ontology", goRows, "Keep, edit, or uncheck. The dropdown says whether the term is a molecular <strong>Function</strong>, a biological <strong>Process</strong>, or a cellular <strong>Component</strong>. A curator maps these to formal GO IDs.", "Gene Ontology terms describe a gene in three ways: its molecular Function (what the protein does, e.g. actin filament binding), the biological Process it takes part in (e.g. phagocytosis), or the cellular Component where it acts (e.g. cell cortex). Write it in plain words; a curator maps it to the official GO term.")}
     ${section("Phenotypes", phRows, "Observable traits of a mutant of this gene.", "What a mutant of this gene looks like or does differently, for example 'reduced growth', 'aggregation defect', or 'no fruiting bodies'.")}
     ${section("Interactions", inRows, "Physical or genetic interactions between two genes.", "Two genes or proteins that either physically bind each other (physical) or interact genetically, such as a double-mutant effect (genetic).")}
     ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated from the abstract. Please add the key findings for your paper in the notes below.</p>`}
@@ -11613,6 +11666,7 @@ function renderPaperSessionForm(el, token, s) {
       <button type="button" id="ps-submit" class="button">Submit for review</button>
       <span id="ps-msg" class="muted" style="font-size:13px"></span>
     </div>`;
+  attachCurationTips(el);
   const submitBtn = document.getElementById("ps-submit");
   submitBtn.addEventListener("click", async () => {
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);

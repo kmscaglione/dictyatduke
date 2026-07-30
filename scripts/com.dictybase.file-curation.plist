@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Files curation exports into the dated curation folder automatically.
+
+  "Export batch" is a browser download, so it always lands in ~/Downloads. This
+  LaunchAgent watches that folder and runs file_curation_files.py whenever it
+  changes, which moves any dictybase-curation-batch-*.json or
+  dictybase-curation-results-*.json into
+  ~/Desktop/Dicty curation  exported files/<date>/{exported,curated}/.
+
+  Install:
+    cp scripts/com.dictybase.file-curation.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.dictybase.file-curation.plist
+
+  Remove:
+    launchctl bootout gui/$UID/com.dictybase.file-curation
+    rm ~/Library/LaunchAgents/com.dictybase.file-curation.plist
+
+  It logs to /tmp/dicty-file-curation.log. Nothing else in Downloads is touched:
+  the script only matches those two filename patterns.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.dictybase.file-curation</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Library/Frameworks/Python.framework/Versions/3.13/bin/python3</string>
+    <string>/Users/matthewscaglione/Documents/Codex/2026-06-03/i-want-to-compile-a-list/outputs/dictybase-v2/scripts/file_curation_files.py</string>
+  </array>
+
+  <key>WatchPaths</key>
+  <array>
+    <string>/Users/matthewscaglione/Downloads</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/dicty-file-curation.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/dicty-file-curation.log</string>
+</dict>
+</plist>

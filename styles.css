@@ -581,6 +581,18 @@ input {
   color: var(--ink);
 }
 
+/* Checkboxes and radios are not text fields: the sizing above turned them into
+   full-width, 48px-tall controls that pushed the rest of their row onto a new
+   line. Keep them small and inline so they sit beside their label. */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  flex: none;
+  accent-color: var(--teal, #00539b);
+}
+
 button,
 .button {
   min-height: 40px;

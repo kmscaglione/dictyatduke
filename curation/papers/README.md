@@ -5,14 +5,28 @@ human-in-the-loop path added in `serve.py` (`/api/curator/papers/export` and
 `/api/curator/papers/import`). Nothing here is read by the site. The site only
 sees what you import back through the curator dashboard.
 
+**The files live outside the repo**, in two folders on Matt's Desktop:
+
 ```
-curation/papers/
-  batches/   exports downloaded from the dashboard   (gitignored)
-  results/   the curation JSON you import back       (gitignored)
+~/Desktop/Dicty curation  exported files/     <- batches OUT of the dashboard
+  2026-07-30/dictybase-curation-batch-*.json     one folder per export day
+
+~/Desktop/Dicty files to import/              <- finished curation, BACK IN
+  dictybase-curation-results-2026-07-30.json     flat; the name carries the date
 ```
 
-Both subfolders are gitignored on purpose. Batches carry fetched publisher full
-text, and results are unreviewed AI drafts. Neither belongs in a public repo.
+Look in the first for the newest batch to curate. Write finished curation into
+the second, which is what Matt picks in "Import results".
+
+`curation/papers/results/` here holds the working copy of whatever is being
+curated right now; `batches/` stays empty. Both are gitignored, because batches
+carry fetched publisher full text and results are unreviewed AI drafts. Neither
+belongs in a public repo.
+
+"Export batch" is a browser download, so it always lands in `~/Downloads` first.
+`scripts/file_curation_files.py` moves it into the dated folder above, and
+`scripts/com.dictybase.file-curation.plist` is a LaunchAgent that runs it
+automatically whenever Downloads changes.
 
 ## The loop
 

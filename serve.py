@@ -2723,6 +2723,76 @@ def load_full_text(pmid):
     return _read_json_file(FULLTEXT_DIR / f"{re.sub(r'[^0-9]', '', str(pmid))}.json", {})
 
 
+# --- Human-in-the-loop whole-paper curation (Claude Code, no paid API) --------
+# Export the fetched full text as a batch the curator opens in Claude Code, runs
+# curation on (covered by their subscription), and imports back into the drafts.
+_CURATION_INSTRUCTIONS = (
+    "You are curating Dictyostelium papers for dictyBase. For EACH paper in "
+    "`papers`, read `full_text` (fall back to `abstract` if full text is empty) "
+    "and extract curation. Write a JSON file with this exact shape:\n"
+    '{"results": [{"pmid": "...", "summary": "<=2 sentences on the paper", '
+    '"gene_summaries": [{"gene": "symbol", "sentence": "one sentence, in the style '
+    'of a dictyBase gene summary, stating what THIS paper shows the gene does or '
+    'what its mutant reveals"}], '
+    '"go": [{"gene": "symbol", "term": "GO term or plain description", "aspect": "P|F|C"}], '
+    '"phenotypes": [{"gene": "symbol", "phenotype": "mutant phenotype"}], '
+    '"interactions": [{"gene_a": "symbol", "gene_b": "symbol", "type": "physical|genetic"}]}]}\n'
+    "Use ONLY Dictyostelium genes actually named in the paper. Be specific and "
+    "grounded in the text; never invent gene IDs, GO terms, or numbers. Prefer the "
+    "gene symbols in `detected_genes` where they apply. Then import the JSON back "
+    "into dictyBase via the curator portal's 'Import results' button."
+)
+
+
+def paper_export_bundle():
+    """A batch of drafts (with full text where fetched) for offline curation."""
+    papers = []
+    for d in _load_paper_drafts().get("drafts", []):
+        if d.get("status") == "dismissed":
+            continue
+        ft = ""
+        if (d.get("fulltext") or {}).get("chars"):
+            ft = (load_full_text(d.get("pmid", "")).get("text") or "")
+        papers.append({
+            "pmid": d.get("pmid"), "title": d.get("title"), "doi": d.get("doi", ""),
+            "url": d.get("url"), "journal": d.get("journal", ""),
+            "abstract": d.get("abstract", ""), "full_text": ft, "has_full_text": bool(ft),
+            "detected_genes": [g.get("symbol") for g in d.get("genes", []) if g.get("symbol")],
+        })
+    return {"instructions": _CURATION_INSTRUCTIONS, "count": len(papers), "papers": papers}
+
+
+def import_curation_results(results):
+    """Merge Claude-Code curation results back onto the matching drafts' AI draft."""
+    store = _load_paper_drafts()
+    by_pmid = {d.get("pmid"): d for d in store.get("drafts", [])}
+
+    def clean(arr, keys):
+        return [{k: str(it.get(k, ""))[:500] for k in keys}
+                for it in (arr or [])[:100] if isinstance(it, dict)]
+
+    n = 0
+    for r in results or []:
+        if not isinstance(r, dict):
+            continue
+        pmid = re.sub(r"\D", "", str(r.get("pmid", "")))
+        d = by_pmid.get(pmid)
+        if not d:
+            continue
+        d["ai"] = {
+            "ok": True, "model": "Claude Code (whole paper)",
+            "summary": str(r.get("summary", ""))[:800],
+            "gene_summaries": clean(r.get("gene_summaries"), ["gene", "sentence"]),
+            "go": clean(r.get("go"), ["gene", "term", "aspect"]),
+            "phenotypes": clean(r.get("phenotypes"), ["gene", "phenotype"]),
+            "interactions": clean(r.get("interactions"), ["gene_a", "gene_b", "type"]),
+        }
+        d["curated_source"] = "claude-code"
+        n += 1
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return {"imported": n}
+
+
 def _paper_public_view(d):
     """The author-facing subset of a draft — no email or other PII."""
     ai = d.get("ai") or {}
@@ -3006,6 +3076,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             token = (parse_qs(urlparse(self.path).query).get("t") or [""])[0].strip()
             code, payload = paper_session_get(token)
             self.send_json(code, payload)
+            return
+        if self.path.split("?")[0] == "/api/curator/papers/export":
+            self._handle_curator_papers_export()
             return
         if self.path.split("?")[0] == "/api/curator/papers":
             self._handle_curator_papers()
@@ -3538,6 +3611,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_redraft()
         elif self.path == "/api/curator/papers/fetch-fulltext":
             self._handle_curator_papers_fetch_fulltext()
+        elif self.path == "/api/curator/papers/import":
+            self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/append-summary":
@@ -4464,6 +4539,39 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, res)
             return
         _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
+        self.send_json(200, res)
+
+    def _handle_curator_papers_export(self):
+        """Download the curation batch (papers + full text) for Claude Code."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        body = json.dumps(paper_export_bundle(), ensure_ascii=False, indent=1).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Disposition", 'attachment; filename="dictybase-curation-batch.json"')
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _handle_curator_papers_import(self):
+        """Import Claude-Code curation results ({results:[...]}) onto the drafts."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 8_000_000)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid JSON."})
+            return
+        results = body.get("results") if isinstance(body, dict) else None
+        if not isinstance(results, list):
+            self.send_json(400, {"error": "Expected {\"results\": [...]}. "
+                                          "That is the file Claude Code produces."})
+            return
+        res = import_curation_results(results)
+        _log_curation("paper-draft", "import", f"{res['imported']} papers", self._session_name())
         self.send_json(200, res)
 
     def _handle_curator_papers_fetch_fulltext(self):

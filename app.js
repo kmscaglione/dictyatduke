@@ -2118,6 +2118,13 @@ function renderCuratePage() {
               <button type="button" id="cur-papers-draft">Draft PMID</button>
               <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
             </div>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <span class="muted" style="font-size:12px">Whole-paper curation in Claude Code:</span>
+              <button type="button" id="cur-papers-export">⬇ Export batch</button>
+              <button type="button" id="cur-papers-import">⬆ Import results</button>
+              <input type="file" id="cur-papers-import-file" accept=".json,application/json" hidden>
+              <span id="cur-papers-io-msg" class="muted" style="font-size:12px"></span>
+            </div>
             <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
             <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
           </div>
@@ -2265,6 +2272,14 @@ function initCurate() {
   const pmidEl = document.getElementById("cur-papers-pmid");
   if (draftBtn) draftBtn.addEventListener("click", () => draftPaperByPmid());
   if (pmidEl) pmidEl.addEventListener("keydown", (e) => { if (e.key === "Enter") draftPaperByPmid(); });
+  const exportBtn = document.getElementById("cur-papers-export");
+  if (exportBtn) exportBtn.addEventListener("click", () => exportPaperBatch());
+  const importBtn = document.getElementById("cur-papers-import");
+  const importFile = document.getElementById("cur-papers-import-file");
+  if (importBtn && importFile) {
+    importBtn.addEventListener("click", () => importFile.click());
+    importFile.addEventListener("change", () => importPaperResults(importFile));
+  }
   const codeEl = document.getElementById("cur-code");
   const login = async () => {
     const username = (userEl.value || "").trim();
@@ -2854,6 +2869,40 @@ async function draftPaperByPmid() {
   } finally {
     if (btn) btn.disabled = false;
   }
+}
+
+async function exportPaperBatch() {
+  const msg = document.getElementById("cur-papers-io-msg");
+  if (msg) msg.textContent = "Preparing batch…";
+  try {
+    const r = await fetch("/api/curator/papers/export", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) throw new Error();
+    const text = await r.text();
+    let n = 0, withFt = 0;
+    try { const j = JSON.parse(text); n = (j.papers || []).length; withFt = (j.papers || []).filter((p) => p.has_full_text).length; } catch { /* ignore */ }
+    const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    basketDownload(text, `dictybase-curation-batch-${stamp}.json`, "application/json");
+    if (msg) msg.textContent = `Exported ${n} paper${n === 1 ? "" : "s"} (${withFt} with full text). Open the file in Claude Code, curate per its instructions, then Import results.`;
+  } catch { if (msg) msg.textContent = "Export failed."; }
+}
+
+async function importPaperResults(fileInput) {
+  const msg = document.getElementById("cur-papers-io-msg");
+  const file = fileInput.files && fileInput.files[0];
+  fileInput.value = "";
+  if (!file) return;
+  if (msg) msg.textContent = "Importing…";
+  try {
+    const data = JSON.parse(await file.text());
+    const r = await fetch("/api/curator/papers/import", {
+      method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify(data),
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || "import failed");
+    if (msg) msg.textContent = `Imported curation for ${d.imported} paper${d.imported === 1 ? "" : "s"}.`;
+    loadPaperDrafts();
+  } catch (e) { if (msg) msg.textContent = (e && e.message) || "Import failed — check the JSON file."; }
 }
 
 function paperDraftCard(d) {

@@ -2524,6 +2524,71 @@ def redraft_paper(pmid):
 _AUTHOR_CUR = {"mtime": None, "index": {}}
 
 
+# --- Curator decisions on an author's submission -----------------------------
+# A curator accepts, rejects, or asks the author to clarify each item. The
+# decision is keyed by the item's CONTENT, not its position, so it survives the
+# author resubmitting: an untouched item keeps its decision, an edited one comes
+# back as a fresh, undecided item, which is what you want when you asked a
+# question and the author answered it by rewriting the entry.
+SUBMISSION_KINDS = ("gene_summaries", "go", "phenotypes", "interactions")
+DECISION_STATES = ("accepted", "rejected", "clarify")
+
+
+def _decision_key(kind, it):
+    if kind == "gene_summaries":
+        raw = f"{it.get('gene', '')}|{it.get('sentence', '')}"
+    elif kind == "go":
+        raw = f"{it.get('gene', '')}|{it.get('term', '')}|{it.get('aspect', '')}"
+    elif kind == "phenotypes":
+        raw = f"{it.get('gene', '')}|{it.get('phenotype', '')}"
+    else:
+        raw = f"{it.get('gene_a', '')}|{it.get('gene_b', '')}|{it.get('type', '')}"
+    digest = hashlib.sha1(" ".join(raw.split()).lower().encode()).hexdigest()[:10]
+    return f"{kind[:2]}:{digest}"
+
+
+def annotate_submission(sub):
+    """A copy of the submission with each item carrying its key and decision.
+    Used by both the curator dashboard and the author's own page, so the two
+    sides always agree on what an item is."""
+    if not sub:
+        return None
+    out = dict(sub)
+    decisions = sub.get("decisions") or {}
+    for kind in SUBMISSION_KINDS:
+        out[kind] = [{**it, "key": _decision_key(kind, it),
+                      "decision": decisions.get(_decision_key(kind, it)) or {}}
+                     for it in (sub.get(kind) or []) if isinstance(it, dict)]
+    return out
+
+
+def decide_submission_item(pmid, key, state, note, curator):
+    """Record accept / reject / clarify for one submitted item."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    if state not in DECISION_STATES and state != "":
+        return 400, {"error": f"state must be one of {', '.join(DECISION_STATES)}."}
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+    if not d or not d.get("submission"):
+        return 404, {"error": "No author submission for that paper."}
+    valid = {_decision_key(k, it) for k in SUBMISSION_KINDS
+             for it in (d["submission"].get(k) or []) if isinstance(it, dict)}
+    if key not in valid:
+        return 404, {"error": "That item is not part of the current submission."}
+    decisions = d["submission"].setdefault("decisions", {})
+    if state == "":
+        decisions.pop(key, None)                      # undo, back to undecided
+    else:
+        decisions[key] = {"state": state, "note": str(note or "")[:1000],
+                          "by": curator or "Curator",
+                          "at": datetime.datetime.utcnow().isoformat() + "Z"}
+    open_q = any(v.get("state") == "clarify" for v in decisions.values())
+    d["submission"]["awaiting_author"] = open_q
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return 200, {"ok": True, "key": key, "state": state,
+                 "decision": decisions.get(key) or {}, "awaiting_author": open_q}
+
+
 def _author_curation_index():
     """Map DDB_G -> list of author-submitted (not-yet-approved) curation entries,
     built from paper-session submissions. mtime-cached. Public: lets a gene page
@@ -2540,9 +2605,17 @@ def _author_curation_index():
         sub = d.get("submission")
         if not sub or sub.get("handled"):   # handled -> curator dealt with it; drop from public
             continue
+        # The note is a private message between the author and the curator, so it
+        # is deliberately NOT in this public payload. Same for anything the
+        # curator rejected: see _keep_public below.
         paper = {"pmid": d.get("pmid"), "title": d.get("title"), "url": d.get("url"),
-                 "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", ""),
-                 "note": sub.get("note", "")}
+                 "submitter": sub.get("submitter", ""), "submitted_at": sub.get("submitted_at", "")}
+        decisions = sub.get("decisions") or {}
+
+        def _keep_public(kind, it):
+            """Hide items a curator rejected or queried; the rest stay visible as
+            'awaiting approval' exactly as before."""
+            return (decisions.get(_decision_key(kind, it)) or {}).get("state") not in ("rejected", "clarify")
         per = {}
 
         def slot(ddb):
@@ -2550,17 +2623,19 @@ def _author_curation_index():
 
         for gs in sub.get("gene_summaries", []):
             ddb = resolve_gene(gs.get("gene", ""))
-            if ddb and gs.get("sentence"):
+            if ddb and gs.get("sentence") and _keep_public("gene_summaries", gs):
                 slot(ddb)["gene_summary"] = gs["sentence"]
         for g in sub.get("go", []):
             ddb = resolve_gene(g.get("gene", ""))
-            if ddb:
+            if ddb and _keep_public("go", g):
                 slot(ddb)["go"].append(g)
         for ph in sub.get("phenotypes", []):
             ddb = resolve_gene(ph.get("gene", ""))
-            if ddb:
+            if ddb and _keep_public("phenotypes", ph):
                 slot(ddb)["phenotypes"].append(ph)
         for it in sub.get("interactions", []):
+            if not _keep_public("interactions", it):
+                continue
             seen = set()
             for gk in ("gene_a", "gene_b"):
                 ddb = resolve_gene(it.get(gk, ""))
@@ -2848,17 +2923,34 @@ def import_curation_results(results):
 
 
 def _paper_public_view(d):
-    """The author-facing subset of a draft — no email or other PII."""
+    """The author-facing subset of a draft — no email or other PII.
+
+    Once the author has submitted, they see THEIR OWN entries back (annotated
+    with any curator decision), not the original AI draft. That is what makes
+    "ask for clarification" work: the curator's question arrives attached to the
+    exact item it is about, and revising and resubmitting answers it."""
     ai = d.get("ai") or {}
+    sub = annotate_submission(d.get("submission"))
+    src = sub or {"gene_summaries": ai.get("gene_summaries") or [], "go": ai.get("go") or [],
+                  "phenotypes": ai.get("phenotypes") or [], "interactions": ai.get("interactions") or []}
+    # Was the draft written from the whole paper, or only the abstract? The
+    # author is being asked to check it, so they should know what it was based on.
+    ft_chars = (d.get("fulltext") or {}).get("chars") or 0
+    whole_paper = bool(ft_chars) and (d.get("curated_source") == "claude-code"
+                                      or "whole paper" in str(ai.get("model", "")).lower())
     return {
         "pmid": d.get("pmid"), "title": d.get("title"), "journal": d.get("journal"),
         "pubdate": d.get("pubdate"), "url": d.get("url"), "status": d.get("status"),
         "genes": d.get("genes") or [],
         "summary": ai.get("summary", "") if ai.get("ok") else "",
-        "gene_summaries": ai.get("gene_summaries") or [],
-        "go": ai.get("go") or [], "phenotypes": ai.get("phenotypes") or [],
-        "interactions": ai.get("interactions") or [],
-        "already_submitted": bool(d.get("submission")),
+        "gene_summaries": src.get("gene_summaries") or [],
+        "go": src.get("go") or [], "phenotypes": src.get("phenotypes") or [],
+        "interactions": src.get("interactions") or [],
+        "already_submitted": bool(sub),
+        "showing_your_submission": bool(sub),
+        "drafted_from": "full_text" if whole_paper else "abstract",
+        "note": (sub or {}).get("note", ""),          # their own note, back to them
+        "awaiting_author": bool((sub or {}).get("awaiting_author")),
     }
 
 
@@ -2885,7 +2977,8 @@ def paper_session_submit(token, payload):
         return out
 
     cur = payload.get("curation") or {}
-    d["submission"] = {
+    prev = d.get("submission") or {}
+    sub = {
         "gene_summaries": clean(cur.get("gene_summaries"), ["gene", "sentence"]),
         "go": clean(cur.get("go"), ["gene", "term", "aspect"]),
         "phenotypes": clean(cur.get("phenotypes"), ["gene", "phenotype"]),
@@ -2893,7 +2986,15 @@ def paper_session_submit(token, payload):
         "note": str(payload.get("note", ""))[:4000],
         "submitter": str(payload.get("submitter", ""))[:200],
         "submitted_at": datetime.datetime.utcnow().isoformat() + "Z",
+        "handled": prev.get("handled", False),
     }
+    # Carry curator decisions across a resubmission, but only for items that came
+    # back unchanged. An item the author edited in response to a question gets a
+    # new key, so it lands back in the curator's queue as undecided.
+    live = {_decision_key(k, it) for k in SUBMISSION_KINDS for it in sub[k]}
+    sub["decisions"] = {k: v for k, v in (prev.get("decisions") or {}).items() if k in live}
+    sub["awaiting_author"] = any(v.get("state") == "clarify" for v in sub["decisions"].values())
+    d["submission"] = sub
     d["status"] = "submitted"
     _atomic_write_json(PAPER_DRAFTS_PATH, store)
     return 200, {"ok": True}
@@ -3667,6 +3768,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_fetch_fulltext()
         elif self.path.split("?")[0] == "/api/curator/papers/upload-fulltext":
             self._handle_curator_papers_upload_fulltext()
+        elif self.path == "/api/curator/papers/decide":
+            self._handle_curator_papers_decide()
         elif self.path == "/api/curator/papers/import":
             self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
@@ -4559,8 +4662,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(401, {"error": "Unauthorized"})
             return
         store = _load_paper_drafts()
-        drafts = [d for d in store.get("drafts", []) if d.get("status") != "dismissed"]
+        drafts = [{**d, "submission": annotate_submission(d.get("submission"))}
+                  for d in store.get("drafts", []) if d.get("status") != "dismissed"]
         self.send_json(200, {"drafts": drafts, "ai_on": bool(GEMINI_API_KEY)})
+
+    def _handle_curator_papers_decide(self):
+        """Accept, reject, or query one item of an author's submission.
+        Body: {pmid, key, state: accepted|rejected|clarify|"" , note}."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        code, payload = decide_submission_item(
+            body.get("pmid"), str(body.get("key") or ""),
+            str(body.get("state") or ""), body.get("note"), curator)
+        if code == 200:
+            _log_curation("paper-draft", "decide",
+                          f"{body.get('pmid')} {body.get('key')} {body.get('state')}", curator)
+        self.send_json(code, payload)
 
     def _handle_curator_papers_refresh(self):
         """Pull recent papers and draft curation for the new ones. No email sent."""

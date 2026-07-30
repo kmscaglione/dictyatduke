@@ -2941,8 +2941,6 @@ function paperDraftCard(d) {
   const gsPlainLine = (x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`;
   // The "add to summary" button appears only on the AUTHOR-submitted recap, i.e.
   // once the author has reviewed and okayed the sentence — not on the raw AI draft.
-  const gsBtnLine = (x) => `<div style="font-size:12.5px;margin:3px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}
-      <button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this author-approved sentence to the gene's curated summary" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button></div>`;
   const geneChips = (d.genes || []).length
     ? d.genes.map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}" target="_blank" rel="noopener">${esc(g.symbol || g.ddb)}</a>`).join(", ")
     : `<span class="muted">none detected in the abstract</span>`;
@@ -2965,14 +2963,48 @@ function paperDraftCard(d) {
     ? `${esc(d.corr_name)}${d.corr_email ? ` &lt;${esc(d.corr_email)}&gt;` : ` <span class="muted">(no email found)</span>`}`
     : `<span class="muted">corresponding author not identified</span>`;
   const sub = d.submission;
-  const subList = (label, arr, fmt) => arr && arr.length ? `<div><strong>${label}:</strong> ${arr.map(fmt).map(esc).join("; ")}</div>` : "";
+  // Every submitted item gets its own accept / reject / ask decision. The state
+  // is keyed to the item's content server-side, so it survives a resubmission.
+  const DEC = {
+    accepted: { label: "✓ accepted", colour: "#047857", bg: "#ecfdf5" },
+    rejected: { label: "✕ rejected", colour: "#b91c1c", bg: "#fef2f2" },
+    clarify: { label: "? clarification asked", colour: "#b45309", bg: "#fffbeb" },
+  };
+  const decideBtns = (it, extra = "") => {
+    const st = (it.decision || {}).state || "";
+    const style = "font-size:10.5px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer";
+    const on = (s) => st === s ? ";border-color:currentColor;font-weight:700" : "";
+    return `<span class="pd-dec" data-key="${esc(it.key || "")}" data-pmid="${esc(d.pmid)}" style="white-space:nowrap;margin-left:4px">
+        <button type="button" class="pd-accept" style="${style}${on("accepted")};color:#047857" title="Accept this entry">✓</button>
+        <button type="button" class="pd-reject" style="${style}${on("rejected")};color:#b91c1c" title="Reject this entry">✕</button>
+        <button type="button" class="pd-clarify" style="${style}${on("clarify")};color:#b45309" title="Ask the author to clarify this entry">?</button>
+        ${st ? `<button type="button" class="pd-undecide" style="${style};color:#6b7280" title="Clear this decision">undo</button>` : ""}
+        ${extra}</span>`;
+  };
+  const decBadge = (it) => {
+    const dec = it.decision || {}, meta = DEC[dec.state];
+    if (!meta) return "";
+    return `<div style="font-size:11px;color:${meta.colour};margin:1px 0 3px 14px">${meta.label}${dec.by ? ` by ${esc(dec.by)}` : ""}${dec.note ? `: “${esc(dec.note)}”` : ""}</div>`;
+  };
+  const subRows = (label, arr, fmt, extraFor) => arr && arr.length
+    ? `<div style="margin-top:3px"><em>${label}:</em>${arr.map((x) => {
+        const meta = DEC[(x.decision || {}).state];
+        return `<div style="margin:2px 0;padding:2px 4px;border-radius:4px${meta ? `;background:${meta.bg}` : ""}">
+          <span>${esc(fmt(x))}</span>${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
+      }).join("")}</div>`
+    : "";
+  const addSumBtn = (x) => `<button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button>`;
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
-      <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}:
-      ${(sub.gene_summaries || []).length ? `<div style="margin-top:2px"><em>Gene summaries:</em>${(sub.gene_summaries || []).map(gsBtnLine).join("")}</div>` : ""}
-      ${subList("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
-      ${subList("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
-      ${subList("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
-      ${sub.note ? `<div><em>Note:</em> ${esc(sub.note)}</div>` : ""}
+      <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}
+      ${sub.awaiting_author ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · waiting on the author</span>` : ""}
+      ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
+      ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
+      ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
+      ${subRows("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
+      ${sub.note ? `<div style="margin-top:5px;background:#fff;border:1px dashed #cbd5e1;border-radius:5px;padding:5px 7px">
+        <strong style="font-size:11px;color:#475569">🔒 Private note from the author</strong>
+        <span class="muted" style="font-size:10.5px">(never shown on the gene page)</span>
+        <div style="margin-top:2px">${esc(sub.note)}</div></div>` : ""}
       <div style="margin-top:5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
         ${sub.handled
           ? `<span style="font-size:11px;color:#047857">✓ handled — hidden from the gene page</span>`
@@ -3081,6 +3113,44 @@ async function loadPaperDrafts() {
           loadPaperDrafts();
         } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
+      // Accept / reject / ask-for-clarification on each submitted entry. Rejected
+      // and queried items drop off the public gene page; a query is shown to the
+      // author against that exact entry, so revising it answers the question.
+      card.querySelectorAll(".pd-dec").forEach((box) => {
+        const key = box.dataset.key;
+        const decide = async (state, btn) => {
+          let note = "";
+          if (state === "clarify") {
+            note = (prompt("What should the author clarify about this entry?\n\nThey will see this next to it.") || "").trim();
+            if (!note) return;                       // cancelled: change nothing
+          } else if (state === "rejected") {
+            note = (prompt("Reason for rejecting (optional, the author sees it):") || "").trim();
+          }
+          const was = btn.textContent;
+          btn.disabled = true; btn.textContent = "…";
+          try {
+            const r = await fetch("/api/curator/papers/decide", {
+              method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+              body: JSON.stringify({ pmid, key, state, note }),
+            });
+            const d2 = await r.json();
+            if (!r.ok) throw new Error(d2.error || "failed");
+            loadPaperDrafts();
+          } catch (e) {
+            btn.textContent = was; btn.disabled = false;
+            alert(e.message || "Could not save that decision.");
+          }
+        };
+        const wire = (sel, state) => {
+          const b = box.querySelector(sel);
+          if (b) b.addEventListener("click", () => decide(state, b));
+        };
+        wire(".pd-accept", "accepted");
+        wire(".pd-reject", "rejected");
+        wire(".pd-clarify", "clarify");
+        wire(".pd-undecide", "");
+      });
+
       // Upload a copy the curator already has. fetch-fulltext only reaches open
       // copies, so this is the path for a paywalled paper from the library, or
       // a manuscript the author sent. Raw bytes; the server extracts the text.
@@ -11612,26 +11682,52 @@ function renderPaperSessionForm(el, token, s) {
   const aspOpt = (v) => Object.entries(ASPECTS).map(([a, label]) =>
     `<option value="${a}"${a === (v || "F") ? " selected" : ""}>${label}</option>`).join("");
   const typeOpt = (v) => ["physical", "genetic"].map((t) => `<option value="${t}"${t === (v || "physical") ? " selected" : ""}>${t}</option>`).join("");
-  const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs" style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap">
-      <input type="checkbox" class="keep" checked style="margin-top:9px" title="Keep this description">
+  // A curator can accept, reject, or query each entry. A query is shown against
+  // the entry it is about; editing it and submitting again is the answer.
+  const decNote = (x) => {
+    const dec = x.decision || {};
+    if (dec.state === "clarify") {
+      return `<div style="flex-basis:100%;margin:3px 0 7px 22px;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:7px 10px;font-size:12.5px;line-height:1.5">
+        <strong>A curator asked about this entry:</strong> ${esc(dec.note || "Please take another look at this one.")}
+        <div class="muted" style="font-size:11px;margin-top:3px">Edit it to answer, then submit again at the bottom.</div></div>`;
+    }
+    if (dec.state === "rejected") {
+      return `<div style="flex-basis:100%;margin:2px 0 6px 22px;font-size:12px;color:#b91c1c">A curator set this one aside${dec.note ? `: ${esc(dec.note)}` : ""}. It is unchecked, and stays out unless you tick it again.</div>`;
+    }
+    if (dec.state === "accepted") {
+      return `<div style="flex-basis:100%;margin:0 0 5px 22px;font-size:11.5px;color:#047857">✓ Accepted by a curator</div>`;
+    }
+    return "";
+  };
+  const keep = (x, extra = "") => `<input type="checkbox" class="keep"${(x.decision || {}).state === "rejected" ? "" : " checked"}${extra}>`;
+  const rowTint = (x) => {
+    const st = (x.decision || {}).state;
+    return st === "clarify" ? ";background:#fffdf5" : st === "rejected" ? ";opacity:.72" : "";
+  };
+  const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs" style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x, ` style="margin-top:9px" title="Keep this description"`)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea></div>`).join("");
-  const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
-      <input type="checkbox" class="keep" checked title="Keep this annotation">
+      <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea>
+      ${decNote(x)}</div>`).join("");
+  const goRows = (s.go || []).map((x) => `<div class="ps-go" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x, ` title="Keep this annotation"`)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <input class="t" value="${esc(x.term || "")}" data-tip-value placeholder="GO term / description" style="${FIELD};flex:1;min-width:170px">
-      <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select></div>`).join("");
+      <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select>
+      ${decNote(x)}</div>`).join("");
   // Phenotype sentences are long. A single-line input showed roughly half of one,
   // so this is a wrapping textarea, and hovering shows the whole thing.
-  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:flex-start;margin:4px 0;flex-wrap:wrap">
-      <input type="checkbox" class="keep" checked style="margin-top:9px">
+  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:flex-start;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x, ` style="margin-top:9px"`)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea></div>`).join("");
-  const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap">
-      <input type="checkbox" class="keep" checked>
+      <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea>
+      ${decNote(x)}</div>`).join("");
+  const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x)}
       <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
       <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
-      <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select></div>`).join("");
+      <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select>
+      ${decNote(x)}</div>`).join("");
   const help = (t) => `<span class="ps-help" tabindex="0" role="note" aria-label="${esc(t)}" data-tip="${esc(t)}" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:11px;font-weight:700;margin-left:6px;cursor:help;vertical-align:middle">?</span>`;
   const section = (title, rows, hint, helpText) => rows
     ? `<h3 class="tools-group">${title}${helpText ? help(helpText) : ""}</h3><p class="muted" style="font-size:12px;margin:0 0 4px">${hint}</p>${rows}`
@@ -11644,14 +11740,22 @@ function renderPaperSessionForm(el, token, s) {
     <div style="background:#f8fafc;border:1px solid #e5e9ee;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.55;margin:0 0 14px">
       <strong>How to curate your paper</strong> <span class="muted">(about 3 minutes)</span>
       <ol style="margin:6px 0 0;padding-left:20px">
-        <li>Below are annotations we drafted automatically from your abstract, so some may be wrong or incomplete.</li>
+        <li>${s.showing_your_submission
+              ? "Below are the entries <strong>you submitted</strong>, with any curator comments attached to them."
+              : s.drafted_from === "full_text"
+                ? "Below are annotations we drafted automatically by reading the <strong>full text of your paper</strong>, so some may be wrong or incomplete."
+                : "Below are annotations we drafted automatically from your <strong>abstract only</strong>, since we could not obtain the full text, so they are likely to be incomplete."}</li>
         <li><strong>Edit</strong> anything inaccurate and <strong>uncheck</strong> the box next to anything that does not belong.</li>
         <li>Add anything important we missed in the <em>Notes</em> box at the bottom.</li>
         <li>Click <strong>Submit for review</strong>. A curator checks everything before it becomes part of the record.</li>
       </ol>
       <div class="muted" style="font-size:12px;margin-top:6px">Hover the <strong>?</strong> next to each section for what it means. Nothing is published without your submission and a curator's review.</div>
     </div>
-    ${s.already_submitted ? `<p class="notice" style="background:#ecfdf5;border:1px solid #a7f3d0;color:#047857">Thanks — a submission was already received for this paper. You can revise and submit again.</p>` : ""}
+    ${s.awaiting_author
+      ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e"><strong>A curator has a question for you.</strong> Look for the highlighted entries below, edit them to answer, then submit again.</p>`
+      : s.already_submitted
+        ? `<p class="notice" style="background:#ecfdf5;border:1px solid #a7f3d0;color:#047857">Thanks, your submission was received. You can revise it and submit again at any time.</p>`
+        : ""}
     ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
     ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
     ${section("What each gene does — from this paper", gsRows, "One sentence per gene. Edit freely; a curator may add it to the gene's dictyBase summary.", "A plain-language sentence describing what your paper shows this gene does, or what its mutant reveals. This is the kind of description shown at the top of a gene's page.")}
@@ -11659,8 +11763,9 @@ function renderPaperSessionForm(el, token, s) {
     ${section("Phenotypes", phRows, "Observable traits of a mutant of this gene.", "What a mutant of this gene looks like or does differently, for example 'reduced growth', 'aggregation defect', or 'no fruiting bodies'.")}
     ${section("Interactions", inRows, "Physical or genetic interactions between two genes.", "Two genes or proteins that either physically bind each other (physical) or interact genetically, such as a double-mutant effect (genetic).")}
     ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated from the abstract. Please add the key findings for your paper in the notes below.</p>`}
-    <h3 class="tools-group">Notes to the curator ${help("Anything else worth capturing that is not covered above: key findings, corrections, missing genes, or context. A curator reads this.")}<span class="muted" style="font-weight:400;font-size:12px"> (optional)</span></h3>
-    <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical"></textarea>
+    <h3 class="tools-group">Notes to the curator ${help("A private message to the curator: key findings, corrections, missing genes, answers to their questions, or context. Only curators see it. It is never shown on a gene page or published anywhere.")}<span class="muted" style="font-weight:400;font-size:12px"> (optional, private)</span></h3>
+    <p class="muted" style="font-size:12px;margin:0 0 4px">🔒 This box is a private conversation between you and the curator. It is never published on a gene page.</p>
+    <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical">${esc(s.note || "")}</textarea>
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px">
       <input id="ps-name" type="text" placeholder="Your name (optional)" style="${FIELD};min-width:200px">
       <button type="button" id="ps-submit" class="button">Submit for review</button>

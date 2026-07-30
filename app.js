@@ -8,6 +8,11 @@
 //    and query from those upstreams, and avoids CORS. Done in one place so the
 //    ~16 call sites don't each have to wrap their URL. (The STRING network
 //    *image* is an <img src>, not a fetch, so it stays a direct browser load.)
+// 3. Catch a 401 from any /api/curator/ call and send the dashboard back to the
+//    sign-in screen. Sessions live in the server's memory, so a restart or the
+//    8-hour TTL invalidates a token the page still holds; without this the
+//    dashboard looks signed in while every action fails with "Unauthorized".
+//    Done here so all ~40 curator call sites are covered, including future ones.
 const EXT_PROXY_HOSTS = new Set([
   "eutils.ncbi.nlm.nih.gov", "rest.uniprot.org", "www.ebi.ac.uk",
   "string-db.org", "omabrowser.org", "search.rcsb.org", "data.rcsb.org",
@@ -29,7 +34,15 @@ const EXT_PROXY_HOSTS = new Set([
         }
       }
     }
-    return _fetch.call(this, input, init);
+    const res = _fetch.call(this, input, init);
+    if (typeof input === "string" && input.indexOf("/api/curator/") === 0 &&
+        input.indexOf("/api/curator/login") !== 0) {
+      return res.then((r) => {
+        if (r.status === 401) curatorSessionExpired();
+        return r;
+      });
+    }
+    return res;
   };
 })();
 
@@ -2071,6 +2084,24 @@ let curatorToken = null;
 let curatorAdmin = false;
 let curatorName = "";
 
+// Called by the fetch shim on any 401 from /api/curator/. The token the page is
+// holding is dead (server restart or the 8-hour TTL), so drop back to the
+// sign-in bar and say so, instead of leaving a dashboard where nothing works.
+function curatorSessionExpired() {
+  if (!curatorToken) return;            // already signed out; don't re-announce
+  curatorToken = null; curatorAdmin = false; curatorName = "";
+  const auth = document.getElementById("cur-auth");
+  const work = document.getElementById("cur-work");
+  if (!auth || !work) return;           // not on the curator page right now
+  work.setAttribute("hidden", "");
+  auth.style.display = "flex";
+  const msg = document.getElementById("cur-msg");
+  if (msg) msg.textContent = "Your session ended (the server restarted, or it " +
+    "timed out after 8 hours). Sign in again to pick up where you left off.";
+  const pw = document.getElementById("cur-pw");
+  if (pw) { pw.value = ""; pw.focus(); }
+}
+
 function renderCuratePage() {
   return `
     <article class="record-card research-card">
@@ -2957,8 +2988,10 @@ function paperDraftCard(d) {
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
       <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
         <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" title="Regenerate the AI draft (keeps the invitation link)" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Regenerate</button>
-        <button type="button" class="pd-fulltext" data-pmid="${esc(d.pmid)}" title="Fetch the paper's full text from a legal source (private; used to improve the draft)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">📄 Fetch full text</button></div>
-      ${d.fulltext ? `<div class="pd-ft-status" style="font-size:11.5px;margin:2px 0;color:${d.fulltext.chars ? "#047857" : "#b45309"}">Full text: ${d.fulltext.chars ? esc(d.fulltext.source) + " · " + Number(d.fulltext.chars).toLocaleString() + " chars" : "not found in a legal source — ask the author to upload it"}</div>` : ""}
+        <button type="button" class="pd-fulltext" data-pmid="${esc(d.pmid)}" title="Fetch the paper's full text from an openly available copy (private; used to improve the draft)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">📄 Fetch full text</button>
+        <button type="button" class="pd-upload" data-pmid="${esc(d.pmid)}" title="Attach a copy you already have (PDF, HTML or plain text). Stored privately on this server, never published." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">⬆ Upload a copy</button>
+        <input type="file" class="pd-upload-file" accept=".pdf,.html,.htm,.xml,.txt" hidden></div>
+      ${d.fulltext ? `<div class="pd-ft-status" style="font-size:11.5px;margin:2px 0;color:${d.fulltext.chars ? "#047857" : "#b45309"}">Full text: ${d.fulltext.chars ? esc(d.fulltext.source) + " · " + Number(d.fulltext.chars).toLocaleString() + " chars" : "no openly available copy. Upload a copy if you have one through the library, or ask the author for theirs."}</div>` : ""}
       ${aiHtml}
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Invitation email (review, then send it yourself)</summary>
@@ -3048,6 +3081,33 @@ async function loadPaperDrafts() {
           loadPaperDrafts();
         } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
+      // Upload a copy the curator already has. fetch-fulltext only reaches open
+      // copies, so this is the path for a paywalled paper from the library, or
+      // a manuscript the author sent. Raw bytes; the server extracts the text.
+      const upBtn = card.querySelector(".pd-upload");
+      const upFile = card.querySelector(".pd-upload-file");
+      if (upBtn && upFile) {
+        upBtn.addEventListener("click", () => upFile.click());
+        upFile.addEventListener("change", async () => {
+          const file = upFile.files && upFile.files[0];
+          if (!file) return;
+          const orig = upBtn.textContent; upBtn.disabled = true; upBtn.textContent = "Uploading…";
+          try {
+            const r = await fetch("/api/curator/papers/upload-fulltext?pmid=" +
+                encodeURIComponent(pmid) + "&name=" + encodeURIComponent(file.name), {
+              method: "POST", body: file,
+              headers: { "Content-Type": "application/octet-stream", Authorization: `Bearer ${curatorToken}` },
+            });
+            const d2 = await r.json();
+            if (!r.ok) throw new Error(d2.error || "Upload failed.");
+            loadPaperDrafts();
+          } catch (e) {
+            upBtn.textContent = "failed";
+            alert(e.message || "Upload failed.");
+            setTimeout(() => { upBtn.textContent = orig; upBtn.disabled = false; }, 1500);
+          } finally { upFile.value = ""; }
+        });
+      }
       const redraftBtn = card.querySelector(".pd-redraft");
       if (redraftBtn) redraftBtn.addEventListener("click", async () => {
         const orig = redraftBtn.textContent; redraftBtn.disabled = true; redraftBtn.textContent = "Regenerating…";

@@ -8,6 +8,12 @@ uploads/files/
 uploads/submissions/
 uploads/curator_state/
 
+# --- Paper curation workspace (publisher full text, unreviewed AI drafts) ---
+curation/papers/batches/*
+curation/papers/results/*
+!curation/papers/batches/.gitkeep
+!curation/papers/results/.gitkeep
+
 # --- Assistant & editor config ---
 .claude/
 

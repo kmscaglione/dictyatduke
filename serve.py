@@ -2733,6 +2733,50 @@ def load_full_text(pmid):
     return _read_json_file(FULLTEXT_DIR / f"{re.sub(r'[^0-9]', '', str(pmid))}.json", {})
 
 
+def attach_full_text(pmid, data, filename="upload", source=""):
+    """Attach a curator-supplied copy of a paper to its draft.
+
+    fetch_full_text() only reaches openly available copies (PMC OA, Unpaywall,
+    publisher via DOI, all unauthenticated). For a paywalled paper the curator
+    has through their library, this is the way in. Same private store, same
+    shape, so the draft and the Claude Code export can't tell the difference.
+
+    Takes raw bytes (PDF, HTML/XML or plain text). Raises ValueError with a
+    curator-readable message when there is no usable text. Backs both the
+    dashboard's upload button and scripts/add_full_text.py."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    store = _load_paper_drafts()
+    draft = next((d for d in store.get("drafts", []) if d.get("pmid") == pmid), None)
+    if not draft:
+        raise ValueError(f"PMID {pmid} is not in the draft queue.")
+    if not data:
+        raise ValueError("That file was empty.")
+
+    name = re.sub(r"[^\w.\- ]", "", str(filename or "upload"))[:80] or "upload"
+    if data[:5] == b"%PDF-" or name.lower().endswith(".pdf"):
+        text, kind = _pdf_to_text(data), "PDF"
+        if not text.strip():
+            raise ValueError("No text could be extracted from that PDF. If it is a "
+                             "scan with no text layer it would need OCR first.")
+    elif name.lower().endswith((".html", ".htm", ".xml")) or data.lstrip()[:1] == b"<":
+        text, kind = _html_to_text(data), "HTML"
+    else:
+        text, kind = data.decode("utf-8", "replace"), "text"
+
+    text = text[:400_000]                      # same cap fetch_full_text applies
+    if len(text.strip()) < 500:
+        raise ValueError(f"Only {len(text.strip())} characters of text came out of "
+                         "that file, which is too little to curate from.")
+
+    src = source.strip() or f"Uploaded ({name})"
+    stamp = datetime.datetime.utcnow().isoformat() + "Z"
+    store_full_text(pmid, {"source": src, "chars": len(text), "text": text, "url": ""})
+    draft["fulltext"] = {"source": src, "chars": len(text), "url": "", "fetched_at": stamp}
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return {"ok": True, "pmid": pmid, "source": src, "chars": len(text), "kind": kind,
+            "title": draft.get("title", ""), "preview": text[:600]}
+
+
 # --- Human-in-the-loop whole-paper curation (Claude Code, no paid API) --------
 # Export the fetched full text as a batch the curator opens in Claude Code, runs
 # curation on (covered by their subscription), and imports back into the drafts.
@@ -3621,6 +3665,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_redraft()
         elif self.path == "/api/curator/papers/fetch-fulltext":
             self._handle_curator_papers_fetch_fulltext()
+        elif self.path.split("?")[0] == "/api/curator/papers/upload-fulltext":
+            self._handle_curator_papers_upload_fulltext()
         elif self.path == "/api/curator/papers/import":
             self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
@@ -4612,6 +4658,42 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_json(200, {"ok": True, "pmid": pmid, "source": res["source"],
                              "chars": res["chars"], "url": res["url"],
                              "preview": res["text"][:600]})
+
+    def _handle_curator_papers_upload_fulltext(self):
+        """Attach a curator-supplied copy of a paper (PDF/HTML/text) to its draft.
+
+        Raw file bytes in the body, pmid and name in the query string, so there
+        is no multipart parsing to get wrong. The text goes to the same private
+        store as a fetched copy and is never web-served."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        q = parse_qs(urlparse(self.path).query)
+        pmid = re.sub(r"\D", "", (q.get("pmid") or [""])[0])
+        name = (q.get("name") or ["upload"])[0]
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+        except (TypeError, ValueError):
+            length = 0
+        if length <= 0:
+            self.send_json(400, {"error": "No file was sent."})
+            return
+        if length > UPLOAD_MAX_BYTES:
+            self.send_json(413, {"error": f"File too large (max "
+                                          f"{UPLOAD_MAX_BYTES // (1024 * 1024)} MB)."})
+            return
+        data = self.rfile.read(length)
+        try:
+            res = attach_full_text(pmid, data, name)
+        except ValueError as e:
+            self.send_json(400, {"error": str(e)})
+            return
+        except Exception as e:
+            self.send_json(500, {"error": f"Could not read that file ({type(e).__name__})."})
+            return
+        _log_curation("paper-draft", "fulltext-upload",
+                      f"{pmid} {res['kind']} {res['chars']}c", self._session_name())
+        self.send_json(200, res)
 
     def _handle_curator_papers_redraft(self):
         """Regenerate an existing draft's AI content (keeps its link)."""

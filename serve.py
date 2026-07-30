@@ -2591,6 +2591,30 @@ def decide_submission_item(pmid, key, state, note, curator):
                  "decision": decisions.get(key) or {}, "awaiting_author": open_q}
 
 
+def delete_submission(pmid):
+    """Remove an author's submission from a draft entirely.
+
+    Used when a submission should not exist rather than merely be hidden: it
+    disappears from the curator queue and from the gene page, and the paper goes
+    back to awaiting the author. The invitation token is deliberately kept, so
+    the same link still works and the author can curate again against the
+    current draft. Only metadata reaches the audit log, never the content."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+    if not d:
+        return 404, {"error": f"PMID {pmid} is not in the draft queue."}
+    sub = d.get("submission")
+    if not sub:
+        return 404, {"error": "That paper has no author submission to delete."}
+    counts = {k: len(sub.get(k) or []) for k in SUBMISSION_KINDS}
+    who = sub.get("submitter") or "unnamed"
+    d.pop("submission", None)
+    d["status"] = "sent" if d.get("email_sent_at") else "new"
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return 200, {"ok": True, "pmid": pmid, "submitter": who, "removed": counts}
+
+
 def _author_curation_index():
     """Map DDB_G -> list of author-submitted (not-yet-approved) curation entries,
     built from paper-session submissions. mtime-cached. Public: lets a gene page
@@ -3787,6 +3811,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_upload_fulltext()
         elif self.path == "/api/curator/papers/decide":
             self._handle_curator_papers_decide()
+        elif self.path == "/api/curator/papers/submission-delete":
+            self._handle_curator_papers_submission_delete()
         elif self.path == "/api/curator/papers/import":
             self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
@@ -4682,6 +4708,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         drafts = [{**d, "submission": annotate_submission(d.get("submission"))}
                   for d in store.get("drafts", []) if d.get("status") != "dismissed"]
         self.send_json(200, {"drafts": drafts, "ai_on": bool(GEMINI_API_KEY)})
+
+    def _handle_curator_papers_submission_delete(self):
+        """Delete an author's submission outright. Body: {pmid}."""
+        body, curator, err = self._curator_json()
+        if err:
+            self.send_json(*err)
+            return
+        code, payload = delete_submission(body.get("pmid"))
+        if code == 200:
+            _log_curation("paper-draft", "submission-delete",
+                          f"{payload['pmid']} by {payload['submitter']} "
+                          f"({sum(payload['removed'].values())} entries)", curator)
+        self.send_json(code, payload)
 
     def _handle_curator_papers_decide(self):
         """Accept, reject, or query one item of an author's submission.

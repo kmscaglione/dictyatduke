@@ -3013,6 +3013,7 @@ function paperDraftCard(d) {
           ? `<span style="font-size:11px;color:#047857">✓ handled — hidden from the gene page</span>`
           : `<span style="font-size:11px;color:#b45309">shown on the gene page as awaiting approval</span>`}
         <button type="button" class="pd-handled" data-pmid="${esc(d.pmid)}" data-handled="${sub.handled ? 1 : 0}" style="font-size:11px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">${sub.handled ? "↩ show again" : "✓ mark handled"}</button>
+        <button type="button" class="pd-subdel" data-pmid="${esc(d.pmid)}" data-who="${esc(sub.submitter || "")}" title="Delete this submission entirely. The author's link keeps working, so they can curate again from the current draft." style="font-size:11px;padding:1px 7px;border:1px solid #fecaca;border-radius:4px;background:#fff;color:#b91c1c;cursor:pointer">🗑 delete submission</button>
       </div>
     </div>` : "";
   const border = d.status === "submitted" ? "#10b981" : "var(--line,#e5e9ee)";
@@ -3116,6 +3117,29 @@ async function loadPaperDrafts() {
           loadPaperDrafts();
         } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
+      // Delete a submission outright, for when it should not exist rather than
+      // just be hidden. Two-step confirm: this is not recoverable from the UI.
+      const subDel = card.querySelector(".pd-subdel");
+      if (subDel) subDel.addEventListener("click", async () => {
+        const who = subDel.dataset.who || "this author";
+        if (!confirm(`Delete the submission from ${who} for PMID ${pmid}?\n\n`
+          + `It disappears from your queue and from the gene page, and cannot be undone here.\n\n`
+          + `Their invitation link keeps working, so they can curate again from the current draft.`)) return;
+        subDel.disabled = true; subDel.textContent = "deleting…";
+        try {
+          const r = await fetch("/api/curator/papers/submission-delete", {
+            method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+            body: JSON.stringify({ pmid }),
+          });
+          const d2 = await r.json();
+          if (!r.ok) throw new Error(d2.error || "failed");
+          loadPaperDrafts();
+        } catch (e) {
+          subDel.disabled = false; subDel.textContent = "🗑 delete submission";
+          alert(e.message || "Could not delete that submission.");
+        }
+      });
+
       // Accept / reject / ask-for-clarification on each submitted entry. Rejected
       // and queried items drop off the public gene page; a query is shown to the
       // author against that exact entry, so revising it answers the question.

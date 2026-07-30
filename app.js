@@ -12462,7 +12462,7 @@ async function loadRecentPapers() {
           : "";
         return `<li class="paper-item">
           <a class="text-link paper-title" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>
-          <div class="paper-meta">${authors}${authors && (p.journal || p.pubdate) ? " · " : ""}<em>${escapeHtml(p.journal || "")}</em>${p.pubdate ? " · " + escapeHtml(p.pubdate) : ""}</div>
+          <div class="paper-meta">${authors}${authors && (p.journal || p.date || p.pubdate) ? " · " : ""}<em>${escapeHtml(p.journal || "")}</em>${(p.date || p.pubdate) ? " · " + escapeHtml(p.date || p.pubdate) : ""}</div>
         </li>`;
       }).join("")}
     </ol>

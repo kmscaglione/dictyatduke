@@ -92,10 +92,38 @@ PAPERS_TTL = 24 * 3600
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 
+_PM_MONTHS = {m: i for i, m in enumerate(
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def _pubmed_date(value):
+    """A sortable (y, m, d) from PubMed's date strings: '2026 May 26',
+    '2026 Aug', '2026/09/01 00:00'. Unparseable dates sort last."""
+    v = str(value or "").strip().replace("/", " ").split()
+    if not v or not v[0][:4].isdigit():
+        return (0, 0, 0)
+    year = int(v[0][:4])
+    month = day = 0
+    if len(v) > 1:
+        month = _PM_MONTHS.get(v[1][:3], int(v[1]) if v[1].isdigit() else 0)
+    if len(v) > 2 and v[2][:2].isdigit():
+        day = int(v[2][:2])
+    return (year, month, day)
+
+
 def fetch_pubmed_recent(term="Dictyostelium", n=5):
-    """Most recent PubMed papers for `term` via E-utilities (esearch+esummary)."""
-    q = (f"{EUTILS}/esearch.fcgi?db=pubmed&term={quote(term)}&sort=pub+date"
-         f"&retmax={n}&retmode=json&tool=dictyBase")
+    """Most recent PubMed papers for `term` via E-utilities (esearch+esummary).
+
+    Ordered by when each paper actually became available, not by its journal
+    issue date. Sorting on the issue date pins ahead-of-print papers to the top
+    for months: a paper e-published in April carrying an August issue date
+    outranks everything published in July. So the pool comes back in PubMed's
+    own "most recent" order (when the record was added), and is then ordered by
+    electronic publication date, falling back to the issue date when a paper
+    never had one."""
+    pool = max(n * 4, 40)
+    q = (f"{EUTILS}/esearch.fcgi?db=pubmed&term={quote(term)}&sort=most+recent"
+         f"&retmax={pool}&retmode=json&tool=dictyBase")
     with urllib.request.urlopen(q, timeout=20, context=SSL_CTX) as r:
         ids = json.loads(r.read())["esearchresult"]["idlist"]
     papers = []
@@ -107,15 +135,25 @@ def fetch_pubmed_recent(term="Dictyostelium", n=5):
             rec = res.get(pid, {})
             doi = next((a["value"] for a in rec.get("articleids", [])
                         if a.get("idtype") == "doi"), "")
+            epub, issue = rec.get("epubdate", ""), rec.get("pubdate", "")
+            available = epub or rec.get("sortpubdate", "") or issue
             papers.append({
                 "pmid": pid,
                 "title": (rec.get("title") or "").rstrip(". "),
                 "journal": rec.get("source", ""),
-                "pubdate": rec.get("pubdate", ""),
+                "pubdate": issue,
+                "epubdate": epub,
+                # what to show and what to sort on: the date it was really out
+                "date": epub or issue,
                 "authors": [a["name"] for a in rec.get("authors", []) if a.get("name")],
                 "doi": doi,
                 "url": f"https://pubmed.ncbi.nlm.nih.gov/{pid}/",
+                "_sort": _pubmed_date(available),
             })
+        papers.sort(key=lambda p: p["_sort"], reverse=True)
+        papers = papers[:n]
+        for p in papers:
+            p.pop("_sort", None)
     return {"updated": datetime.datetime.utcnow().isoformat() + "Z",
             "term": term, "papers": papers}
 STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".svg",
@@ -4459,9 +4497,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         """Recent Dictyostelium PubMed papers, cached up to a day; serves stale
         on fetch failure."""
         try:
+            cached = None
             if (PAPERS_CACHE.exists()
                     and time.time() - PAPERS_CACHE.stat().st_mtime < PAPERS_TTL):
-                self.send_json(200, json.loads(PAPERS_CACHE.read_text()))
+                cached = json.loads(PAPERS_CACHE.read_text())
+                # A cache written before papers carried a real availability date
+                # would keep the old issue-date ordering for up to a day. Treat
+                # it as stale rather than making anyone wait it out.
+                if not all("date" in p for p in cached.get("papers", [])):
+                    cached = None
+            if cached is not None:
+                self.send_json(200, cached)
                 return
             data = fetch_pubmed_recent()
             PAPERS_CACHE.parent.mkdir(exist_ok=True)

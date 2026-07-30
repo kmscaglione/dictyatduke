@@ -3286,6 +3286,8 @@ def paper_session_submit(token, payload):
                     row["negative"] = True
                 if it.get("unsure"):            # author asked a curator to check this one
                     row["unsure"] = True
+                if it.get("edited"):            # author changed what we drafted
+                    row["edited"] = True
                 out.append(row)
         return out
 

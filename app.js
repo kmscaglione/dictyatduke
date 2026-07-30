@@ -2994,7 +2994,7 @@ function paperDraftCard(d) {
         const meta = DEC[(x.decision || {}).state];
         const bg = meta ? meta.bg : (x.unsure ? "#fffbeb" : "");
         return `<div style="margin:2px 0;padding:2px 4px;border-radius:4px${bg ? `;background:${bg}` : ""}">
-          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}<span>${esc(fmt(x))}</span>${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
+          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}${x.edited ? `<strong style="color:#1d4ed8;font-size:11px">✎ author changed this</strong> ` : ""}<span>${esc(fmt(x))}</span>${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
       }).join("")}</div>`
     : "";
   // An author GO entry that carries a real GO id can go straight into the
@@ -3008,8 +3008,11 @@ function paperDraftCard(d) {
       <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}${(sub.orcid || {}).id
         ? ` <a class="text-link" href="https://orcid.org/${esc(sub.orcid.id)}" target="_blank" rel="noopener" style="font-size:11.5px">${esc(sub.orcid.id)}</a><span style="font-size:10.5px;color:${sub.orcid.verified ? "#047857" : "#b45309"}">${sub.orcid.verified ? " ✓ verified" : " (typed, unverified)"}</span>` : ""}
       ${sub.awaiting_author ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · waiting on the author</span>` : ""}
-      ${(() => { const n = ["gene_summaries","go","phenotypes","interactions"].reduce((a,k) => a + (sub[k]||[]).filter(e => e.unsure).length, 0);
-                 return n ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · ⚑ ${n} flagged for your review</span>` : ""; })()}
+      ${(() => { const K = ["gene_summaries","go","phenotypes","interactions"];
+                 const n = K.reduce((a,k) => a + (sub[k]||[]).filter(e => e.unsure).length, 0);
+                 const ed = K.reduce((a,k) => a + (sub[k]||[]).filter(e => e.edited).length, 0);
+                 return (n ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · ⚑ ${n} flagged for your review</span>` : "")
+                      + (ed ? `<span style="font-size:11px;color:#1d4ed8;font-weight:600"> · ✎ ${ed} changed by the author</span>` : ""); })()}
       ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
       ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})${x.go_id ? ` [${x.go_id}]` : " [no GO id]"}`, addGoBtn)}
       ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.negative ? "[no change] " : ""}${x.gene}: ${x.phenotype}`)}
@@ -11778,6 +11781,16 @@ function orcidChecksumOk(value) {
   return (check === 10 ? "X" : String(check)) === digits.slice(-1);
 }
 
+// What sits in a GO row's id column. With a term chosen it shows the id and a
+// way to change it; without one it shows the search button in place of the "no
+// term yet" text, so the fix is where the problem is stated.
+function goIdCell(goId) {
+  const btn = (label) => `<button type="button" class="go-find" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">${label}</button>`;
+  return goId
+    ? `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${goId}" target="_blank" rel="noopener">${goId}</a>${btn("change")}`
+    : `${btn("🔍 Find the GO term")}`;
+}
+
 // Gene Ontology autocomplete for the author form. Searching happens server-side
 // against the full ontology (assets/go_terms.json); choosing a term records its
 // GO id and aspect on the row, so what the author submits is a real annotation
@@ -11790,17 +11803,18 @@ function attachGoAutocomplete(scope) {
     const menu = row.querySelector(".go-ac");
     const idCell = row.querySelector(".go-id");
     const aspectSel = row.querySelector("select.a");
-    const help = row.querySelector(".go-help");
     if (!input || !menu) return;
     let items = [], active = -1, timer = null, seq = 0, note = "";
 
     const close = () => { menu.hidden = true; menu.innerHTML = ""; items = []; active = -1; input.setAttribute("aria-expanded", "false"); };
     const setId = (goId) => {
       row.dataset.goId = goId || "";
-      idCell.innerHTML = goId
-        ? `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${goId}" target="_blank" rel="noopener">${goId}</a>`
-        : `<span style="color:#b45309">no GO term yet</span>`;
-      if (help) help.style.display = goId ? "none" : "";
+      idCell.innerHTML = goIdCell(goId);
+      wireFind();
+    };
+    const wireFind = () => {
+      const b = row.querySelector(".go-find");
+      if (b) b.addEventListener("click", () => { input.focus(); input.select(); search(); });
     };
     const choose = (t) => {
       input.value = t.name;
@@ -11840,9 +11854,8 @@ function attachGoAutocomplete(scope) {
     });
     // Focusing a row that still holds our wording searches straight away, so the
     // author sees candidates without having to guess that the box is searchable.
-    input.addEventListener("focus", () => { if (!row.dataset.goId && input.value.trim().length > 2) search(); });
-    const findBtn = row.querySelector(".go-find");
-    if (findBtn) findBtn.addEventListener("click", () => { input.focus(); search(); });
+    input.addEventListener("focus", () => { if (input.value.trim().length > 2) search(); });
+    wireFind();
     input.addEventListener("keydown", (e) => {
       if (menu.hidden || !items.length) return;
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
@@ -11886,15 +11899,20 @@ function renderPaperSessionForm(el, token, s) {
     }
     return "";
   };
+  // What the author was handed, so we can tell whether they altered it. Stored
+  // on the row and compared on submit: anything they touched is flagged for the
+  // curator, because an author's edit is the most interesting thing on the page.
+  const orig = (vals) => ` data-orig="${esc(JSON.stringify(vals.map((v) => String(v == null ? "" : v))))}"`;
   const unsure = (x, marginTop = "") => `<label data-tip="Tick this if you are not certain. The entry is held back from the gene page and a curator reviews it with you. Please use it freely: an unchecked or flagged entry costs nothing, a wrong one that goes public costs a lot." style="display:flex;gap:4px;align-items:center;font-size:11.5px;color:#92400e;white-space:nowrap;cursor:help${marginTop}">
         <input type="checkbox" class="unsure"${x.unsure ? " checked" : ""}> not sure</label>`;
-  const keep = (x, extra = "") => `<input type="checkbox" class="keep"${(x.decision || {}).state === "rejected" ? "" : " checked"}${extra}>`;
+  const keep = (x, extra = "", marginTop = "") => `<label data-tip="Leave this ticked to confirm the entry. Untick it to drop it entirely." style="display:flex;gap:4px;align-items:center;font-size:11.5px;color:#047857;white-space:nowrap;cursor:help${marginTop}">
+        <input type="checkbox" class="keep"${(x.decision || {}).state === "rejected" ? "" : " checked"}${extra}> confirm</label>`;
   const rowTint = (x) => {
     const st = (x.decision || {}).state;
     return st === "clarify" ? ";background:#fffdf5" : st === "rejected" ? ";opacity:.72" : "";
   };
-  const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs" style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap${rowTint(x)}">
-      ${keep(x, ` style="margin-top:9px" title="Keep this description"`)}
+  const gsRows = (s.gene_summaries || []).map((x) => `<div class="ps-gs"${orig([x.gene, x.sentence])} style="display:flex;gap:6px;align-items:flex-start;margin:5px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x, "", ";margin-top:11px")}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea>
       ${unsure(x, ";margin-top:11px")}
@@ -11902,33 +11920,28 @@ function renderPaperSessionForm(el, token, s) {
   // The term box is an autocomplete over the real Gene Ontology. Picking a term
   // stores its GO id and sets the aspect, which is what lets the annotation
   // reach the GAF export instead of dying as prose a curator must translate.
-  const goRows = (s.go || []).map((x, i) => `<div class="ps-go" data-go-id="${esc(x.go_id || "")}" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
-      ${keep(x, ` title="Keep this annotation"`)}
+  const goRows = (s.go || []).map((x, i) => `<div class="ps-go" data-go-id="${esc(x.go_id || "")}"${orig([x.gene, x.term, x.aspect, x.go_id])} style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <span style="position:relative;flex:1;min-width:200px">
         <input class="t" value="${esc(x.term || "")}" data-tip-value autocomplete="off" role="combobox" aria-expanded="false" aria-controls="go-ac-${i}" placeholder="start typing, e.g. phagocytosis" style="${FIELD};width:100%">
         <div class="go-ac" id="go-ac-${i}" hidden style="position:absolute;z-index:60;left:0;right:0;top:100%;background:#fff;border:1px solid var(--line,#d7dee0);border-radius:8px;box-shadow:0 8px 20px rgba(15,23,42,.16);max-height:230px;overflow:auto"></div>
       </span>
-      <span class="go-id muted" style="font-size:11.5px;min-width:96px">${x.go_id ? `<a class="text-link" href="https://www.ebi.ac.uk/QuickGO/term/${esc(x.go_id)}" target="_blank" rel="noopener">${esc(x.go_id)}</a>` : `<span style="color:#b45309">no GO term yet</span>`}</span>
+      <span class="go-id" style="font-size:11.5px;min-width:150px">${goIdCell(x.go_id)}</span>
       <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select>
       ${unsure(x)}
-      <div class="go-help" style="flex-basis:100%;margin:1px 0 4px 22px;font-size:11.5px;color:#6b7280${x.go_id ? ";display:none" : ""}">
-        This is our wording, not an official Gene Ontology term.
-        <button type="button" class="go-find" style="font-size:11px;margin:0 4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">🔍 Find the GO term</button>
-        or leave it and a curator will map it. If it is not a function, process or component, untick it instead.
-      </div>
       ${decNote(x)}</div>`).join("");
   // Phenotype sentences are long. A single-line input showed roughly half of one,
   // so this is a wrapping textarea, and hovering shows the whole thing.
-  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph" style="display:flex;gap:6px;align-items:flex-start;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
-      ${keep(x, ` style="margin-top:9px"`)}
+  const phRows = (s.phenotypes || []).map((x) => `<div class="ps-ph"${orig([x.gene, x.phenotype, !!x.negative])} style="display:flex;gap:6px;align-items:flex-start;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+      ${keep(x, "", ";margin-top:11px")}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea>
       <label data-tip="Tick this if the paper tested it and found NO change. Negative results are worth recording, so nobody repeats the experiment, but they are listed separately from the mutant's actual phenotypes." style="display:flex;gap:4px;align-items:center;margin-top:11px;font-size:11.5px;color:#6b7280;white-space:nowrap;cursor:help">
         <input type="checkbox" class="neg"${x.negative ? " checked" : ""}> no change</label>
       ${unsure(x, ";margin-top:11px")}
       ${decNote(x)}</div>`).join("");
-  const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
+  const inRows = (s.interactions || []).map((x) => `<div class="ps-in"${orig([x.gene_a, x.gene_b, x.type])} style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
       ${keep(x)}
       <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
       <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
@@ -12019,11 +12032,13 @@ function renderPaperSessionForm(el, token, s) {
   const submitBtn = document.getElementById("ps-submit");
   submitBtn.addEventListener("click", async () => {
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
+    const changed = (row, vals) =>
+      JSON.stringify(vals.map((v) => String(v == null ? "" : v))) !== (row.dataset.orig || "");
     const curation = {
-      gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value, unsure: r.querySelector(".unsure").checked })),
-      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value, go_id: r.dataset.goId || "", unsure: r.querySelector(".unsure").checked })),
-      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked, unsure: r.querySelector(".unsure").checked })),
-      interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value, unsure: r.querySelector(".unsure").checked })),
+      gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".ss").value]) })),
+      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value, go_id: r.dataset.goId || "", unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".t").value, r.querySelector(".a").value, r.dataset.goId || ""]) })),
+      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".p").value, r.querySelector(".neg").checked]) })),
+      interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".a1").value, r.querySelector(".a2").value, r.querySelector(".ty").value]) })),
     };
     const note = (document.getElementById("ps-note").value || "").trim();
     const submitter = (document.getElementById("ps-name").value || "").trim();

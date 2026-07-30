@@ -2333,10 +2333,20 @@ def extract_gene_mentions(text):
             for d, s in list(found.items())[:40]]
 
 
+# Instant auto-draft source. "gemini" (default) = quick abstract draft on the
+# free tier the moment a paper is queued. "off"/"claude" = no instant draft; all
+# AI curation (abstract or whole paper) comes from Claude Code via export/import.
+PAPER_AUTODRAFT = os.environ.get("PAPER_AUTODRAFT", "gemini").strip().lower()
+_CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate, "
+                     "then Import results. Fetch full text first for a whole-paper draft.")
+
+
 def _curation_ai_draft(paper, genes):
     """AI GO/phenotype/interaction suggestions from the abstract, as structured
     JSON. Human-in-the-loop only: these are draft suggestions a curator/author
-    approves, never auto-published. Returns {ok:False, note} when AI is off."""
+    approves, never auto-published. Returns {ok:False, note} when off."""
+    if PAPER_AUTODRAFT in ("off", "none", "claude", "claude-code"):
+        return {"ok": False, "note": _CLAUDE_CODE_NOTE}
     if not GEMINI_API_KEY:
         return {"ok": False, "note": "AI drafting is off on this server (no API key)."}
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"

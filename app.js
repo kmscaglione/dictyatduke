@@ -11820,9 +11820,9 @@ function renderPaperSessionForm(el, token, s) {
                 : "Below are annotations we drafted automatically from your <strong>abstract only</strong>, since we could not obtain the full text, so they are likely to be incomplete."}</li>
         <li><strong>Edit</strong> anything inaccurate and <strong>uncheck</strong> the box next to anything that does not belong.</li>
         <li>Add anything important we missed in the <em>Notes</em> box at the bottom.</li>
-        <li>Click <strong>Submit for review</strong>. A curator checks everything before it becomes part of the record.</li>
+        <li>Click <strong>Submit for review</strong>. Your version goes onto the gene page marked as provisional, and a curator checks it before it becomes part of the curated record.</li>
       </ol>
-      <div class="muted" style="font-size:12px;margin-top:6px">Hover the <strong>?</strong> next to each section for what it means. Nothing is published without your submission and a curator's review.</div>
+      <div class="muted" style="font-size:12px;margin-top:6px">Hover the <strong>?</strong> next to each section for what it means. Nothing appears anywhere until you submit. What you submit is shown on the gene page marked <em>awaiting curator review</em>, and joins the curated record once a curator has checked it.</div>
     </div>
     ${s.awaiting_author
       ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e"><strong>A curator has a question for you.</strong> Look for the highlighted entries below, edit them to answer, then submit again.</p>`

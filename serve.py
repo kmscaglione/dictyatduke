@@ -527,6 +527,17 @@ ORCID_BASE = "https://sandbox.orcid.org" if ORCID_SANDBOX else "https://orcid.or
 ORCID_REDIRECT_URI = (os.environ.get("ORCID_REDIRECT_URI", "").strip()
                       or (f"{PUBLIC_BASE_URL}/api/orcid/callback" if PUBLIC_BASE_URL else ""))
 ORCID_ON = bool(ORCID_CLIENT_ID and ORCID_CLIENT_SECRET and ORCID_REDIRECT_URI)
+# Say WHY it is off at startup. "Not configured" on its own sends you hunting
+# through three possible causes; the log line names the one that applies.
+if not ORCID_ON:
+    _why = ("no client id/secret (set ORCID_CLIENT_ID + ORCID_CLIENT_SECRET, or put "
+            "'client-id:secret' in .orcid_client next to serve.py, readable by the "
+            "user this service runs as)" if not (ORCID_CLIENT_ID and ORCID_CLIENT_SECRET)
+            else "no redirect URI (set ORCID_REDIRECT_URI, or PUBLIC_BASE_URL)")
+    print(f"[serve] ORCID sign-in is OFF: {_why}", file=sys.stderr)
+else:
+    print(f"[serve] ORCID sign-in is ON: client {ORCID_CLIENT_ID[:8]}…, "
+          f"redirect {ORCID_REDIRECT_URI}", file=sys.stderr)
 _ORCID_STATES = {}            # one-time nonce -> {"token": paper token, "exp": epoch}
 ORCID_STATE_TTL = 600
 
@@ -2452,8 +2463,11 @@ def _invitation_email(paper, genes, session_url):
         f"annotations for {symbols}.\n\n"
         f"Would you review, correct, and submit them? Your input makes the annotations "
         f"authoritative, and it takes only a few minutes:\n{base}{session_url}\n\n"
-        f"The draft was generated automatically and is not public. Nothing is published "
-        f"without your review and a curator check.\n\n"
+        f"The draft was generated automatically and is not public: nothing appears "
+        f"anywhere until you submit. What you do submit is shown on the gene page "
+        f"straight away, clearly marked as awaiting curator review, and becomes part "
+        f"of the curated record once a curator has checked it. You can revise and "
+        f"resubmit at any time using the same link.\n\n"
         f"Thank you for helping keep Dictyostelium annotations accurate.\n"
         f"The dictyBase team\n\n"
         f"(Not your paper, or prefer not to receive these? Reply and we will stop.)"

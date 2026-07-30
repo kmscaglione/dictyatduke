@@ -23,6 +23,10 @@ LISTS = {
     "phenotypes": ["gene", "phenotype"],
     "interactions": ["gene_a", "gene_b", "type"],
 }
+# Fields that may appear but are not required. `negative` marks a phenotype the
+# paper tested and found unchanged; it is imported and shown separately from the
+# mutant's real phenotypes.
+OPTIONAL = {"phenotypes": {"negative"}}
 MAX_FIELD = 500
 MAX_SUMMARY = 800
 MAX_ITEMS = 100
@@ -112,8 +116,11 @@ def main():
                     elif len(text) > MAX_FIELD:
                         warnings.append(f"{where}.{f}: {len(text)} chars, cut at "
                                         f"{MAX_FIELD}.")
-                for extra in set(item) - set(fields):
+                for extra in set(item) - set(fields) - OPTIONAL.get(key, set()):
                     warnings.append(f"{where}: field {extra!r} is dropped on import.")
+                if "negative" in item and not isinstance(item["negative"], bool):
+                    errors.append(f"{where}: negative must be true or false, got "
+                                  f"{item['negative']!r}.")
                 if key == "go" and str(item.get("aspect", "")).strip() not in ASPECTS:
                     errors.append(f"{where}: aspect must be P, F or C, got "
                                   f"{item.get('aspect')!r}.")

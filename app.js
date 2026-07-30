@@ -2206,6 +2206,7 @@ function renderCuratePage() {
                 <input id="cur-pheno-term" placeholder="phenotype term" style="${FIELD};min-width:220px" aria-label="Phenotype term">
                 <input id="cur-pheno-cond" placeholder="conditions (optional)" style="${FIELD};min-width:160px" aria-label="Conditions">
                 <input id="cur-pheno-pmid" placeholder="PMID" style="${FIELD};width:110px" aria-label="PMID">
+                <label style="display:flex;gap:5px;align-items:center;font-size:13px;white-space:nowrap" title="Tested and found unchanged. Listed under Negative findings on the gene page, not as a phenotype."><input type="checkbox" id="cur-pheno-neg"> negative (no change)</label>
                 <button type="button" id="cur-pheno-add">Add phenotype</button>
                 <span id="cur-pheno-msg" class="muted" style="font-size:13px"></span>
               </div>
@@ -2484,7 +2485,7 @@ function initCurate() {
   function renderPhenoList(rows) {
     phenoList.innerHTML = (rows && rows.length) ? rows.map((r) =>
       `<div style="display:flex;gap:8px;align-items:center;padding:2px 0">
-        <span>${escapeHtml(r[0] || "")}</span>
+        <span>${escapeHtml(r[0] || "")}${r[4] ? ` <span style="font-size:11px;color:#6b7280;border:1px solid #d7dee0;border-radius:3px;padding:0 4px">no change</span>` : ""}</span>
         <span class="muted">${escapeHtml(r[1] || "")}${r[2] ? ` · PMID ${escapeHtml(String(r[2]))}` : ""}</span>
         <button type="button" class="cur-pheno-del" data-term="${escapeHtml(r[0] || "")}" data-pmid="${escapeHtml(String(r[2] || ""))}" ${delBtn}>delete</button></div>`).join("")
       : `<span class="muted">No curated phenotypes yet.</span>`;
@@ -2528,11 +2529,13 @@ function initCurate() {
       ddb: editor.dataset.ddb, action: "add",
       term: document.getElementById("cur-pheno-term").value.trim(),
       conditions: document.getElementById("cur-pheno-cond").value.trim(),
-      pmid: document.getElementById("cur-pheno-pmid").value.trim() });
+      pmid: document.getElementById("cur-pheno-pmid").value.trim(),
+      negative: document.getElementById("cur-pheno-neg").checked });
     if (!ok) { msg.textContent = d.error || "Failed."; return; }
     msg.textContent = "Added ✓";
     renderPhenoList(d.curated_phenotypes);
     ["cur-pheno-term", "cur-pheno-cond", "cur-pheno-pmid"].forEach((id) => document.getElementById(id).value = "");
+    document.getElementById("cur-pheno-neg").checked = false;
   });
   phenoList.addEventListener("click", async (e) => {
     const b = e.target.closest(".cur-pheno-del"); if (!b) return;
@@ -2999,7 +3002,7 @@ function paperDraftCard(d) {
       ${sub.awaiting_author ? `<span style="font-size:11px;color:#b45309;font-weight:600"> · waiting on the author</span>` : ""}
       ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
       ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})`)}
-      ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.gene}: ${x.phenotype}`)}
+      ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.negative ? "[no change] " : ""}${x.gene}: ${x.phenotype}`)}
       ${subRows("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
       ${sub.note ? `<div style="margin-top:5px;background:#fff;border:1px dashed #cbd5e1;border-radius:5px;padding:5px 7px">
         <strong style="font-size:11px;color:#475569">🔒 Private note from the author</strong>
@@ -9329,17 +9332,29 @@ async function loadPhenotypes(gene) {
       ? `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">Mutant strain${strains.length === 1 ? "" : "s"}: ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}">${escapeHtml(s)}</a>`).join(", ")}</p>`
       : "";
     if (rows.length) {
-      container.innerHTML = strainLine + `
-        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${rows.length} curated phenotype${rows.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
-        <ul class="list">
-          ${rows.map(([term, cond, pmid, note]) => {
-            const cleanNote = String(note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
-            const detail = [cond, cleanNote].filter(Boolean).map(escapeHtml).join(" · ");
-            const ref = pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a>` : "";
-            const curated = curatedSet.has(term + "|" + (pmid || "")) ? ` <span class="curation-link" style="cursor:default" title="Curated at dictyBase">curated</span>` : "";
-            return `<li><strong>${escapeHtml(term)}${curated}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
-          }).join("")}
-        </ul>`;
+      // A negative result (tested, no change) is real curation, but it is not a
+      // phenotype of the mutant. Mixing the two makes a gene look like it has
+      // defects it does not have, so negatives get their own collapsed section.
+      const isNegative = (r) => r[4] === true || r[4] === "negative";
+      const positives = rows.filter((r) => !isNegative(r));
+      const negatives = rows.filter(isNegative);
+      const phLine = ([term, cond, pmid, note]) => {
+        const cleanNote = String(note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
+        const detail = [cond, cleanNote].filter(Boolean).map(escapeHtml).join(" · ");
+        const ref = pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a>` : "";
+        const curated = curatedSet.has(term + "|" + (pmid || "")) ? ` <span class="curation-link" style="cursor:default" title="Curated at dictyBase">curated</span>` : "";
+        return `<li><strong>${escapeHtml(term)}${curated}</strong><span>${[detail, ref].filter(Boolean).join(" · ") || "&nbsp;"}</span></li>`;
+      };
+      const negativeBlock = negatives.length ? `
+        <details class="pheno-negatives" style="margin-top:16px;border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:8px 12px">
+          <summary style="cursor:pointer;font-size:0.875rem;font-weight:600">Negative findings <span class="muted" style="font-weight:400">(${negatives.length})</span></summary>
+          <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:8px 0 10px">Things a paper tested in this mutant and found <strong>unchanged</strong>. These are not phenotypes; they are recorded so the experiment does not have to be repeated.</p>
+          <ul class="list">${negatives.map(phLine).join("")}</ul>
+        </details>` : "";
+      container.innerHTML = strainLine + (positives.length ? `
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${positives.length} curated phenotype${positives.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
+        <ul class="list">${positives.map(phLine).join("")}</ul>`
+        : `<p class="notice muted">No abnormal phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`) + negativeBlock;
       return;
     }
     if (gene.phenotypes && gene.phenotypes.length) {
@@ -11721,6 +11736,8 @@ function renderPaperSessionForm(el, token, s) {
       ${keep(x, ` style="margin-top:9px"`)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea>
+      <label data-tip="Tick this if the paper tested it and found NO change. Negative results are worth recording, so nobody repeats the experiment, but they are listed separately from the mutant's actual phenotypes." style="display:flex;gap:4px;align-items:center;margin-top:11px;font-size:11.5px;color:#6b7280;white-space:nowrap;cursor:help">
+        <input type="checkbox" class="neg"${x.negative ? " checked" : ""}> no change</label>
       ${decNote(x)}</div>`).join("");
   const inRows = (s.interactions || []).map((x) => `<div class="ps-in" style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
       ${keep(x)}
@@ -11778,7 +11795,7 @@ function renderPaperSessionForm(el, token, s) {
     const curation = {
       gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value })),
       go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value })),
-      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value })),
+      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked })),
       interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value })),
     };
     const note = (document.getElementById("ps-note").value || "").trim();

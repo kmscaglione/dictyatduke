@@ -2540,7 +2540,9 @@ def _decision_key(kind, it):
     elif kind == "go":
         raw = f"{it.get('gene', '')}|{it.get('term', '')}|{it.get('aspect', '')}"
     elif kind == "phenotypes":
-        raw = f"{it.get('gene', '')}|{it.get('phenotype', '')}"
+        # Flipping the negative flag is a real change of meaning, so it makes a
+        # new key and the entry goes back to the curator as undecided.
+        raw = f"{it.get('gene', '')}|{it.get('phenotype', '')}|{'neg' if it.get('negative') else ''}"
     else:
         raw = f"{it.get('gene_a', '')}|{it.get('gene_b', '')}|{it.get('type', '')}"
     digest = hashlib.sha1(" ".join(raw.split()).lower().encode()).hexdigest()[:10]
@@ -2864,12 +2866,20 @@ _CURATION_INSTRUCTIONS = (
     'of a dictyBase gene summary, stating what THIS paper shows the gene does or '
     'what its mutant reveals"}], '
     '"go": [{"gene": "symbol", "term": "GO term or plain description", "aspect": "P|F|C"}], '
-    '"phenotypes": [{"gene": "symbol", "phenotype": "mutant phenotype"}], '
+    '"phenotypes": [{"gene": "symbol", "phenotype": "mutant phenotype", "negative": false}], '
     '"interactions": [{"gene_a": "symbol", "gene_b": "symbol", "type": "physical|genetic"}]}]}\n'
     "Use ONLY Dictyostelium genes actually named in the paper. Be specific and "
     "grounded in the text; never invent gene IDs, GO terms, or numbers. Prefer the "
-    "gene symbols in `detected_genes` where they apply. Then import the JSON back "
-    "into dictyBase via the curator portal's 'Import results' button."
+    "gene symbols in `detected_genes` where they apply.\n"
+    "NEGATIVE RESULTS: record them, they bound what a gene does and stop others "
+    "repeating the experiment, but mark them with \"negative\": true instead of "
+    "writing the word NEGATIVE into the text. A negative is something the paper "
+    "TESTED and found unchanged (\"macropinocytosis is unaffected in the null\"), "
+    "not something it simply did not look at. Word it as a plain statement of what "
+    "was tested and found normal. dictyBase shows these in a separate section, "
+    "away from the gene's actual phenotypes.\n"
+    "Then import the JSON back into dictyBase via the curator portal's "
+    "'Import results' button."
 )
 
 
@@ -2897,7 +2907,11 @@ def import_curation_results(results):
     by_pmid = {d.get("pmid"): d for d in store.get("drafts", [])}
 
     def clean(arr, keys):
-        return [{k: str(it.get(k, ""))[:500] for k in keys}
+        # `negative` is the one non-string field: a phenotype that was tested and
+        # found unchanged. It is kept out of the main phenotype list on a gene
+        # page, so it has to survive as a real boolean.
+        return [{**{k: str(it.get(k, ""))[:500] for k in keys},
+                 **({"negative": True} if it.get("negative") else {})}
                 for it in (arr or [])[:100] if isinstance(it, dict)]
 
     n = 0
@@ -2973,7 +2987,10 @@ def paper_session_submit(token, payload):
         out = []
         for it in (arr or [])[:80]:
             if isinstance(it, dict):
-                out.append({k: str(it.get(k, ""))[:200] for k in keys})
+                row = {k: str(it.get(k, ""))[:200] for k in keys}
+                if it.get("negative"):          # tested and unchanged; see clean() above
+                    row["negative"] = True
+                out.append(row)
         return out
 
     cur = payload.get("curation") or {}
@@ -4937,8 +4954,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def _handle_curator_phenotype(self):
         """Add or delete a curated phenotype. Body: {ddb, action:add|delete,
-        term, conditions?, pmid, note?}. Term + reference required on add.
-        Stored in the same [term, conditions, pmid, note] shape as phenotypes.json."""
+        term, conditions?, pmid, note?, negative?}. Term + reference required on
+        add. Stored in the same [term, conditions, pmid, note] shape as
+        phenotypes.json, with an optional 5th element flagging a negative result
+        (tested, no change). Old 4-element rows stay valid and read as positive."""
         body, curator, err = self._curator_json()
         if err:
             self.send_json(*err)
@@ -4960,7 +4979,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return
             conditions = (body.get("conditions") or "").strip()
             note = (body.get("note") or "").strip()
-            rows.append([term, conditions, pmid, note])
+            row = [term, conditions, pmid, note]
+            if body.get("negative"):
+                row.append(True)
+            rows.append(row)
         save_gene_override(ddb, {"curated_phenotypes": rows, "curator": curator, "curator_date":
                                  datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()},
                            curator, action="phenotype-" + action)

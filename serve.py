@@ -2799,6 +2799,30 @@ def go_term(goid):
     return (rec[0], rec[1]) if rec else (None, None)
 
 
+def go_search_relaxed(query, aspect="", limit=12):
+    """go_search, but if the phrase finds nothing, retry on progressively shorter
+    fragments of it. Curation written as prose ("phagocytosis of surface-attached
+    particles") matches no term exactly, yet its head word usually does. Returns
+    (hits, phrase_actually_searched)."""
+    q = " ".join(str(query or "").split())
+    hits = go_search(q, aspect, limit)
+    if hits or not q:
+        return hits, q
+    words = re.sub(r"[(),/]", " ", q).split()
+    tries = []
+    for n in range(len(words) - 1, 0, -1):      # drop words from the end
+        tries.append(" ".join(words[:n]))
+    for n in range(1, len(words)):              # then from the start
+        tries.append(" ".join(words[n:]))
+    for t in tries:
+        if len(t) < 4:
+            continue
+        hits = go_search(t, aspect, limit)
+        if hits:
+            return hits, t
+    return [], q
+
+
 def go_search(query, aspect="", limit=12):
     """Rank GO terms for an autocomplete. Exact id first, then name prefix, then
     word-boundary, then substring, then an exact synonym."""
@@ -2861,6 +2885,8 @@ def _author_curation_index():
         def _keep_public(kind, it):
             """Hide items a curator rejected or queried; the rest stay visible as
             'awaiting approval' exactly as before."""
+            if it.get("unsure"):        # the author explicitly asked for a curator to look
+                return False
             return (decisions.get(_decision_key(kind, it)) or {}).get("state") not in ("rejected", "clarify")
         per = {}
 
@@ -3258,6 +3284,8 @@ def paper_session_submit(token, payload):
                 row = {k: str(it.get(k, ""))[:200] for k in keys}
                 if it.get("negative"):          # tested and unchanged; see clean() above
                     row["negative"] = True
+                if it.get("unsure"):            # author asked a curator to check this one
+                    row["unsure"] = True
                 out.append(row)
         return out
 
@@ -3375,8 +3403,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         if self.path.split("?")[0] == "/api/go-search":
             q = parse_qs(urlparse(self.path).query)
-            self.send_json(200, {"terms": go_search((q.get("q") or [""])[0],
-                                                    (q.get("aspect") or [""])[0])})
+            asked = (q.get("q") or [""])[0]
+            terms, used = go_search_relaxed(asked, (q.get("aspect") or [""])[0])
+            self.send_json(200, {"terms": terms, "searched": used,
+                                 "relaxed": used.strip().lower() != " ".join(asked.split()).lower()})
             return
         if self.path.startswith("/api/go/"):
             self._handle_api_go(unquote(self.path[len("/api/go/"):].split("?")[0]))

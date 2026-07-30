@@ -2558,16 +2558,31 @@ def draft_paper_by_pmid(pmid):
     return {"added": True, "pmid": pmid, "token": draft["token"], "title": draft["title"]}
 
 
-def redraft_paper(pmid):
-    """Regenerate an existing draft's AI content in place (e.g. to pick up newer
-    draft fields like the per-gene recap sentences). Keeps the same session token
-    so an already-shared invitation link stays valid, and preserves any author
-    submission. Returns {ok, pmid, gene_summaries} or {error}."""
+def redraft_paper(pmid, email_only=False):
+    """Regenerate an existing draft in place. Keeps the same session token so an
+    already-shared invitation link stays valid, and preserves any author
+    submission.
+
+    email_only=True rebuilds ONLY the invitation email, leaving the AI content
+    alone. That distinction matters: a full redraft replaces the AI content with
+    a fresh abstract-based draft, which silently destroys imported whole-paper
+    curation. Refreshing the email after an import is a common thing to want, so
+    it must not be the same button.
+    Returns {ok, pmid, gene_summaries} or {error}."""
     pmid = re.sub(r"\D", "", str(pmid or ""))
     store = _load_paper_drafts()
     d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
     if not d:
         return {"error": "This paper is not in the draft queue yet."}
+    if email_only:
+        sess = d.get("session_url") or f"/curate-paper?t={d.get('token', '')}"
+        d["session_url"] = sess
+        d["email_text"] = _invitation_email(
+            {"corr_name": d.get("corr_name"), "title": d.get("title", ""), "pmid": pmid},
+            d.get("genes") or [], sess)
+        _atomic_write_json(PAPER_DRAFTS_PATH, store)
+        return {"ok": True, "pmid": pmid, "email_only": True,
+                "gene_summaries": len((d.get("ai") or {}).get("gene_summaries", []))}
     metas = fetch_pubmed_meta([pmid])
     p = metas[0] if metas else {"pmid": pmid, "title": d.get("title", ""),
                                 "journal": d.get("journal", ""), "url": d.get("url", "")}
@@ -5050,7 +5065,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(*err)
             return
         try:
-            res = redraft_paper(body.get("pmid"))
+            res = redraft_paper(body.get("pmid"), email_only=bool(body.get("email_only")))
         except Exception as e:
             self.send_json(502, {"error": f"Could not regenerate ({type(e).__name__})."})
             return

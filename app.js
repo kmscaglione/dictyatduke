@@ -5004,6 +5004,105 @@ let igvLastFeature = null;        // {chr,start,end,strand,name} of the last-cli
 let igvDocListenerInstalled = false;  // the delegated download click listener is installed once for the page
 let pendingBrowserLocus = null;   // set by viewInBrowser(); consumed on next browser load
 
+// Common cloning enzymes (mirrors bench.py RESTRICTION_ENZYMES). Used to draw an
+// enzyme-selectable restriction track computed live for the current view.
+const RE_ENZYMES = {
+  EcoRI: "GAATTC", BamHI: "GGATCC", HindIII: "AAGCTT", XhoI: "CTCGAG", XbaI: "TCTAGA",
+  NotI: "GCGGCCGC", NcoI: "CCATGG", NdeI: "CATATG", SalI: "GTCGAC", SpeI: "ACTAGT",
+  KpnI: "GGTACC", SacI: "GAGCTC", PstI: "CTGCAG", SmaI: "CCCGGG", BglII: "AGATCT",
+  ClaI: "ATCGAT", EcoRV: "GATATC", HpaI: "GTTAAC", NheI: "GCTAGC", AscI: "GGCGCGCC",
+  AflII: "CTTAAG", DraI: "TTTAAA", SspI: "AATATT", MfeI: "CAATTG",
+};
+const RE_COMMON = ["EcoRI", "BamHI", "HindIII", "XhoI", "XbaI", "NotI"];
+const RE_MAX_SPAN = 60000;        // compute cut sites only when zoomed to <=60 kb
+let restrictionSelectedEnzymes = new Set(Object.keys(RE_ENZYMES));
+let restrictionActive = false;
+let reRefreshTimer = null;
+
+function revcompDNA(s) {
+  return s.split("").reverse().map((c) => ({ A: "T", T: "A", G: "C", C: "G" }[c] || "N")).join("");
+}
+
+// The genome browser's current view as {chrom, start, end} (1-based, inclusive).
+function igvCurrentRange() {
+  if (!igvBrowser) return null;
+  try {
+    if (typeof igvBrowser.currentLoci === "function") {
+      const loci = igvBrowser.currentLoci();
+      const s = Array.isArray(loci) ? loci[0] : loci;
+      const m = s && String(s).replace(/,/g, "").match(/^(.+):(\d+)-(\d+)$/);
+      if (m) return { chrom: m[1], start: +m[2], end: +m[3] };
+    }
+  } catch { /* fall through */ }
+  try {
+    const rf = (igvBrowser.referenceFrameList || [])[0];
+    if (rf && rf.chr != null) return { chrom: rf.chr, start: Math.max(1, Math.round(rf.start) + 1), end: Math.round(rf.end) };
+  } catch { /* ignore */ }
+  return null;
+}
+
+// Scan the current view's sequence (from /api/region) for the selected enzymes,
+// returning IGV annotation features (both strands).
+async function buildRestrictionFeatures(genome, chrom, start, end) {
+  const r = await fetch(`/api/region?genome=${encodeURIComponent(genome)}&chrom=${encodeURIComponent(chrom)}&start=${start}&end=${end}&strand=%2B&flank=0`);
+  const d = await r.json();
+  if (!d || !d.seq) return [];
+  const seq = d.seq.toUpperCase();
+  const base = d.start;   // genomic 1-based start of the returned sequence
+  const feats = [];
+  for (const enz of restrictionSelectedEnzymes) {
+    const site = RE_ENZYMES[enz];
+    if (!site) continue;
+    for (const pat of new Set([site, revcompDNA(site)])) {
+      let i = seq.indexOf(pat);
+      while (i !== -1) {
+        const gs = base + i;   // 1-based genomic position of the match
+        feats.push({ chr: chrom, start: gs - 1, end: gs - 1 + pat.length, name: enz });
+        if (feats.length >= 5000) return feats;   // safety cap
+        i = seq.indexOf(pat, i + 1);
+      }
+    }
+  }
+  return feats;
+}
+
+async function refreshRestrictionTrack() {
+  if (!restrictionActive || !igvBrowser) return;
+  const genome = (document.getElementById("browser-org-select") || {}).value;
+  const hint = document.getElementById("browser-restriction-hint");
+  const rng = igvCurrentRange();
+  if (!genome || !rng) return;
+  const reload = (feats) => {
+    try { igvBrowser.removeTrackByName("Restriction sites"); } catch { /* older IGV */ }
+    if (feats.length) {
+      igvBrowser.loadTrack({ name: "Restriction sites", type: "annotation", features: feats,
+        displayMode: "EXPANDED", color: "rgb(178,34,52)", height: 46, order: -1 });
+    }
+  };
+  const span = rng.end - rng.start;
+  if (span > RE_MAX_SPAN) {
+    reload([]);
+    if (hint) hint.textContent = `Zoom in to ≤ ${RE_MAX_SPAN / 1000} kb to see cut sites (view is ${Math.round(span / 1000)} kb).`;
+    return;
+  }
+  if (!restrictionSelectedEnzymes.size) {
+    reload([]);
+    if (hint) hint.textContent = "No enzymes selected — choose enzymes to show cut sites.";
+    return;
+  }
+  try {
+    const feats = await buildRestrictionFeatures(genome, rng.chrom, rng.start, rng.end);
+    reload(feats);
+    if (hint) hint.textContent = `${feats.length} cut site${feats.length === 1 ? "" : "s"} · ${restrictionSelectedEnzymes.size} enzyme${restrictionSelectedEnzymes.size === 1 ? "" : "s"} in view.`;
+  } catch { /* leave prior hint */ }
+}
+
+function scheduleRestrictionRefresh() {
+  if (!restrictionActive) return;
+  clearTimeout(reRefreshTimer);
+  reRefreshTimer = setTimeout(refreshRestrictionTrack, 400);
+}
+
 // Click a gene model in the browser -> download its genomic sequence (Tera Levin's
 // request #3/click-to-download). IGV's popup rows carry a "Location" (chr:start-end)
 // but not strand, so we hook each feature track's popupData to stash the raw clicked
@@ -5188,10 +5287,28 @@ function renderGenomeBrowser() {
           <span id="browser-search-msg" style="font-size:0.8125rem"></span>
         </div>
         <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:-4px 0 12px">On a non-<em>D. discoideum</em> genome a gene symbol jumps to its <strong>ortholog</strong> here (best tblastn hit of the AX4 protein); you can also enter coordinates or a gene ID from the track.</p>
-        <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— zoom into a region to see cut sites (all genomes).</span></span>
+        <div style="margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <label for="browser-dl-range" style="font-size:0.875rem;font-weight:700">Download sequence:</label>
+          <input id="browser-dl-range" type="text" placeholder="contig:start-end" style="${FIELD};width:min(260px,100%)" autocomplete="off">
+          <button type="button" id="browser-dl-view">Use current view</button>
+          <button type="button" id="browser-dl-go">Download FASTA</button>
+          <span id="browser-dl-msg" style="font-size:0.8125rem"></span>
+        </div>
+        <div style="margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span id="browser-restriction-hint" style="font-size:0.8125rem;color:var(--muted,#6b7280)">Restriction sites <span style="opacity:.8">— zoom into a region (≤ ${RE_MAX_SPAN / 1000} kb) to see cut sites.</span></span>
           <button type="button" id="browser-restriction" aria-pressed="false">Show restriction sites</button>
         </div>
+        <details id="browser-enzyme-picker" style="margin-bottom:12px">
+          <summary style="cursor:pointer;font-size:0.8125rem;color:var(--muted,#6b7280)">Choose enzymes to show</summary>
+          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+            <button type="button" id="enzyme-all" style="font-size:.72rem;padding:2px 8px">All</button>
+            <button type="button" id="enzyme-none" style="font-size:.72rem;padding:2px 8px">None</button>
+            <button type="button" id="enzyme-common" style="font-size:.72rem;padding:2px 8px">Common 6</button>
+          </div>
+          <div id="browser-enzyme-list" style="display:flex;flex-wrap:wrap;gap:4px 12px;max-width:660px">
+            ${Object.keys(RE_ENZYMES).map((e) => `<label style="font-size:.75rem;display:inline-flex;gap:4px;align-items:center;white-space:nowrap"><input type="checkbox" value="${e}" checked>${e} <span style="color:var(--muted,#9ca3af);font-family:ui-monospace,Menlo,monospace">${RE_ENZYMES[e]}</span></label>`).join("")}
+          </div>
+        </details>
         <details style="margin-bottom:12px">
           <summary style="cursor:pointer;font-size:0.875rem;font-weight:700">Add your own track</summary>
           <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
@@ -5274,7 +5391,11 @@ function initGenomeBrowser() {
     const opts = buildIGVOptions(org);
     if (locus) opts.locus = locus;
     igv.createBrowser(container, opts)
-      .then((b) => { igvBrowser = b; wireIGVDownloads(b); })
+      .then((b) => {
+        igvBrowser = b;
+        wireIGVDownloads(b);
+        try { b.on("locuschange", scheduleRestrictionRefresh); } catch { /* older IGV */ }
+      })
       .catch(() => {
         container.innerHTML = `<p style="padding:16px;color:var(--muted,#6b7280)">Browser could not be loaded.</p>`;
       });
@@ -5383,44 +5504,64 @@ function initGenomeBrowser() {
     });
   }
 
-  // --- Restriction sites: an on-demand AX4-only track (precomputed cut sites) ---
-  // Restriction track for a given organism — derived from its FASTA basename
-  // (each genome has its own precomputed <name>_restriction.gff3.gz).
-  const restrictionTrackFor = (org) => {
-    const base = (org.fastaURL || "").split("/").pop().replace(/\.(fna|fa|fasta)$/i, "");
-    return {
-      name: "Restriction sites",
-      url: `/assets/tracks/${base}_restriction.gff3.gz`,
-      indexURL: `/assets/tracks/${base}_restriction.gff3.gz.tbi`,
-      format: "gff3", indexed: true, displayMode: "COLLAPSED",
-      color: "rgb(178, 34, 52)", height: 40, visibilityWindow: 250000,
-      order: -1,   // pin to the top so it isn't buried below the other tracks
-    };
-  };
+  // --- Download a specific sequence range from the current genome ---
+  const dlRangeEl = document.getElementById("browser-dl-range");
+  const dlMsg = document.getElementById("browser-dl-msg");
+  const dlViewBtn = document.getElementById("browser-dl-view");
+  if (dlViewBtn) dlViewBtn.addEventListener("click", () => {
+    const rng = igvCurrentRange();
+    if (rng && dlRangeEl) dlRangeEl.value = `${rng.chrom}:${rng.start}-${rng.end}`;
+    else if (dlMsg) dlMsg.textContent = "Open a locus first.";
+  });
+  const dlGoBtn = document.getElementById("browser-dl-go");
+  if (dlGoBtn) dlGoBtn.addEventListener("click", () => {
+    const raw = ((dlRangeEl && dlRangeEl.value) || "").trim().replace(/,/g, "");
+    const m = raw.match(/^(.+):(\d+)-(\d+)$/);
+    if (!m) { if (dlMsg) { dlMsg.style.color = "#b91c1c"; dlMsg.textContent = "Enter a range like contig:start-end (or use current view)."; } return; }
+    if (+m[2] > +m[3]) { if (dlMsg) { dlMsg.style.color = "#b91c1c"; dlMsg.textContent = "Start must be ≤ end."; } return; }
+    if (dlMsg) { dlMsg.style.color = ""; dlMsg.textContent = ""; }
+    igvDownloadRegion(dlGoBtn, select.value, m[1], +m[2], +m[3], "+", `${m[1]}_${m[2]}-${m[3]}`);
+  });
+
+  // --- Restriction sites: enzyme-selectable, computed live for the current view ---
   const restrictionBtn = document.getElementById("browser-restriction");
-  let restrictionOn = false;
+  const restrictionHint = document.getElementById("browser-restriction-hint");
+  const HINT_DEFAULT = restrictionHint ? restrictionHint.innerHTML : "";
   const setRestrictionBtn = () => {
     if (!restrictionBtn) return;
     restrictionBtn.disabled = false;
-    restrictionBtn.textContent = restrictionOn ? "Hide restriction sites" : "Show restriction sites";
-    restrictionBtn.setAttribute("aria-pressed", restrictionOn ? "true" : "false");
+    restrictionBtn.textContent = restrictionActive ? "Hide restriction sites" : "Show restriction sites";
+    restrictionBtn.setAttribute("aria-pressed", restrictionActive ? "true" : "false");
   };
-  const restrictionHint = document.getElementById("browser-restriction-hint");
-  const HINT_DEFAULT = restrictionHint ? restrictionHint.innerHTML : "";
   if (restrictionBtn) restrictionBtn.addEventListener("click", () => {
-    const org = browserOrganisms.find((o) => o.id === select.value);
-    if (!igvBrowser || !org) return;
-    if (!restrictionOn) {
-      Promise.resolve(igvBrowser.loadTrack(restrictionTrackFor(org))).then(() => {
-        restrictionOn = true; setRestrictionBtn();
-        if (restrictionHint) restrictionHint.innerHTML = "Added as the top track — <strong>zoom into a gene</strong> to see individual cut sites (they're too small to see zoomed out).";
-      }).catch(() => {});
-    } else {
+    if (!igvBrowser) return;
+    restrictionActive = !restrictionActive;
+    setRestrictionBtn();
+    if (restrictionActive) { refreshRestrictionTrack(); }
+    else {
       try { igvBrowser.removeTrackByName("Restriction sites"); } catch { /* older IGV */ }
-      restrictionOn = false; setRestrictionBtn();
       if (restrictionHint) restrictionHint.innerHTML = HINT_DEFAULT;
     }
   });
+  // Enzyme picker: checkboxes + All / None / Common presets.
+  const enzymeList = document.getElementById("browser-enzyme-list");
+  if (enzymeList) enzymeList.addEventListener("change", (e) => {
+    const cb = e.target;
+    if (!cb || cb.type !== "checkbox") return;
+    if (cb.checked) restrictionSelectedEnzymes.add(cb.value); else restrictionSelectedEnzymes.delete(cb.value);
+    refreshRestrictionTrack();
+  });
+  const setEnzymes = (names) => {
+    restrictionSelectedEnzymes = new Set(names);
+    if (enzymeList) enzymeList.querySelectorAll("input[type=checkbox]").forEach((cb) => { cb.checked = restrictionSelectedEnzymes.has(cb.value); });
+    refreshRestrictionTrack();
+  };
+  const allBtn = document.getElementById("enzyme-all");
+  const noneBtn = document.getElementById("enzyme-none");
+  const commonBtn = document.getElementById("enzyme-common");
+  if (allBtn) allBtn.addEventListener("click", () => setEnzymes(Object.keys(RE_ENZYMES)));
+  if (noneBtn) noneBtn.addEventListener("click", () => setEnzymes([]));
+  if (commonBtn) commonBtn.addEventListener("click", () => setEnzymes(RE_COMMON));
 
   // Match the "Go to gene" affordance to the selected genome: AX4 takes symbols /
   // DDB_G ids; other genomes take a gene ID from their track or plain coordinates.
@@ -5435,8 +5576,11 @@ function initGenomeBrowser() {
     updateSearchHint(startWithOrg);
     loadBrowser(startWithOrg);
     select.addEventListener("change", () => {
-      restrictionOn = false;   // track is dropped on genome reload
+      restrictionActive = false;   // track is dropped on genome reload
       setRestrictionBtn();
+      if (restrictionHint) restrictionHint.innerHTML = HINT_DEFAULT;
+      const dl = document.getElementById("browser-dl-range");
+      if (dl) dl.value = "";       // ranges are genome-specific
       const org = browserOrganisms.find((o) => o.id === select.value);
       updateSearchHint(org);
       if (org) loadBrowser(org);

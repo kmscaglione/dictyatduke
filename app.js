@@ -6292,10 +6292,68 @@ function renderCommunity(section) {
     communityShell.innerHTML = renderListservPage();
     communityShell.removeAttribute("hidden");
     loadListservArchive();
+  } else if (section === "news") {
+    communityShell.innerHTML = renderDictyNewsPage();
+    communityShell.removeAttribute("hidden");
   } else {
     communityShell.innerHTML = "";
     communityShell.setAttribute("hidden", "");
   }
+}
+
+const DICTY_NEWS = [
+  { title: "What is a slime mould? — an educational video", source: "YouTube",
+    note: "A great (if slightly rude) explainer of the organism.",
+    url: "https://www.youtube.com/watch?v=vlANF-v9lb0" },
+  { title: "Slime mould, dark matter, and transport networks", source: "The Guardian, 2025",
+    note: "What slime moulds reveal about networks, from cosmology to cities.",
+    url: "https://www.theguardian.com/commentisfree/2025/jan/08/slime-mould-dark-matter-transport-networks" },
+  { title: "Slime moulds on the radio", source: "BBC Radio",
+    note: "A radio programme on slime mould biology.",
+    url: "https://www.bbc.co.uk/programmes/m002691y" },
+  { title: "The wonder of slime moulds (with photographs)", source: "BBC News",
+    note: "A feature with striking pictures.",
+    url: "https://www.bbc.co.uk/news/articles/c9d9409p76qo" },
+  { title: "Slime mould versus the people", source: "Engelsberg Ideas",
+    note: "An essay comparing slime moulds to human social phenomena.",
+    url: "https://engelsbergideas.com/essays/slime-mould-versus-the-people/" },
+  { title: "Slime mould recreates the Tokyo rail network", source: "National Geographic",
+    note: "About Physarum rather than Dictyostelium, but a classic result.",
+    url: "https://www.nationalgeographic.com/science/article/slime-mould-attacks-simulates-tokyo-rail-network" },
+  { title: "Professor Bonner and the slime moulds (Horizon)", source: "BBC Horizon documentary",
+    note: "The documentary featuring John Bonner.",
+    url: "https://video.alexanderstreet.com/watch/professor-bonner-and-the-slime-moulds" },
+  { title: "The amoeba that farms its own bacteria", source: "WIRED, 2011",
+    note: "Dictyostelium farming, covered by WIRED.",
+    url: "https://www.wired.com/2011/01/bacteria-farming-amoeba/" },
+  { title: "Slime moulds in The New York Times", source: "The New York Times, 2011",
+    note: "A feature on slime mould biology.",
+    url: "https://www.nytimes.com/2011/10/04/science/04slime.html" },
+  { title: "The surprising “intelligence” of slime mould", source: "The New York Times, 2010",
+    note: "Physarum problem-solving.",
+    url: "https://www.nytimes.com/2010/01/26/science/26obmold.html" },
+];
+
+function renderDictyNewsPage() {
+  const item = (n) => `
+    <li style="margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid var(--line,#eef2f3)">
+      <a class="text-link" href="${escapeHtml(n.url)}" target="_blank" rel="noopener noreferrer" style="font-weight:600;font-size:1rem">${escapeHtml(n.title)}</a>
+      <div style="font-size:.72rem;color:var(--muted,#9ca3af);margin:2px 0 0">${escapeHtml(n.source)}</div>
+      ${n.note ? `<p style="font-size:.875rem;color:var(--muted,#6b7280);margin:3px 0 0">${escapeHtml(n.note)}</p>` : ""}
+    </li>`;
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Community</p>
+          <h2>Dicty in the news</h2>
+          <p>Dictyostelium and slime moulds in the popular press, radio, and film — articles and videos for the curious and for outreach. External links open in a new tab. A couple cover the acellular slime mould <em>Physarum</em> rather than <em>Dictyostelium</em>, noted where relevant.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <ul style="list-style:none;padding:0;margin:0">${DICTY_NEWS.map(item).join("")}</ul>
+      </div>
+    </article>`;
 }
 
 function renderDiseaseModelsPage() {

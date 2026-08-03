@@ -6303,7 +6303,7 @@ function renderCommunity(section) {
 
 const DICTY_NEWS = [
   { title: "What is a slime mould? — an educational video", source: "YouTube",
-    note: "A great (if slightly rude) explainer of the organism.",
+    note: "A great explainer of the organism.",
     url: "https://www.youtube.com/watch?v=vlANF-v9lb0" },
   { title: "Slime mould, dark matter, and transport networks", source: "The Guardian, 2025",
     note: "What slime moulds reveal about networks, from cosmology to cities.",

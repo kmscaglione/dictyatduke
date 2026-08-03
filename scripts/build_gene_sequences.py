@@ -34,6 +34,7 @@ GBF = {
 GFF_GENOMES = [
     ("D_discoideum_AX4", "D_discoideum_AX4_refseq.fna", "D_discoideum_AX4.gff"),
     ("D_firmibasis", "D_firmibasis_browser.fna", "D_firmibasis_browser.gff"),
+    ("D_giganteum", "D_giganteum_browser.fna", "D_giganteum_browser.gff"),
     ("D_purpureum", "D_purpureum_browser.fna", "D_purpureum_browser.gff"),
     ("C_fasciculata_SH3", "C_fasciculata_SH3_browser.fna", "C_fasciculata_SH3_browser.gff"),
     ("H_pallidum_PN500", "H_pallidum_PN500_browser.fna", "H_pallidum_PN500_browser.gff"),

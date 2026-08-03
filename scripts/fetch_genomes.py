@@ -53,6 +53,7 @@ AX4_ACC = "GCF_000004695.1"
 # (AX4 is handled separately; the Holland*, Ahmed* et al. 2025 subset is fetch_paper_genomes.py.)
 LEGACY = [
     ("d-purpureum",       "GCA_000190715.1", "D_purpureum"),
+    ("d-giganteum",       "GCA_059609475.1", "D_giganteum"),   # Sharma et al. 2026, GBE (evag198)
     ("d-firmibasis",      "GCA_036169595.1", "D_firmibasis"),
     ("c-fasciculata-sh3", "GCA_000203815.1", "C_fasciculata_SH3"),
     ("c-polycephalum",    "GCA_900092265.1", "C_polycephalum"),

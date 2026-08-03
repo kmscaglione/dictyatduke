@@ -2004,6 +2004,7 @@ def bulk_tsv(dataset):
 GENOME_FILES = {
     "d-discoideum-ax4": "D_discoideum_AX4_refseq.fna",
     "d-purpureum": "D_purpureum_browser.fna",
+    "d-giganteum": "D_giganteum_browser.fna",
     "d-firmibasis": "D_firmibasis_browser.fna",
     "c-fasciculata-sh3": "C_fasciculata_SH3_browser.fna",
     "c-polycephalum": "C_polycephalum_browser.fna",

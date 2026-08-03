@@ -26,6 +26,7 @@ BIN_DIR = os.path.expanduser("~/.local/blast")
 SPECIES = [
     ("d-discoideum-ax4",  "D_discoideum_AX4_refseq",   "D_discoideum_AX4"),
     ("d-purpureum",       "D_purpureum_browser",       "D_purpureum"),
+    ("d-giganteum",       "D_giganteum_browser",       "D_giganteum"),
     ("d-firmibasis",      "D_firmibasis_browser",      "D_firmibasis"),
     ("c-fasciculata-sh3", "C_fasciculata_SH3_browser", "C_fasciculata_SH3"),
     ("c-polycephalum",    "C_polycephalum_browser",    "C_polycephalum"),

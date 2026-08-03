@@ -4743,6 +4743,7 @@ function renderBlastPage() {
 const LOCAL_BLAST_DBS = {
   "d-discoideum-ax4": "D. discoideum AX4",
   "d-purpureum": "D. purpureum",
+  "d-giganteum": "D. giganteum",
   "d-firmibasis": "D. firmibasis",
   "c-fasciculata-sh3": "C. fasciculata SH3",
   "c-polycephalum": "C. polycephalum",
@@ -4907,6 +4908,15 @@ const browserOrganisms = [
     indexURL: "/assets/genomes/D_firmibasis_browser.fna.fai",
     gffURL: "/assets/genomes/D_firmibasis_browser.gff",
     locus: "CM069765.1:1-200000"
+  },
+  {
+    id: "d-giganteum",
+    label: "D. giganteum",
+    assembly: "GCA_059609475.1",
+    fastaURL: "/assets/genomes/D_giganteum_browser.fna",
+    indexURL: "/assets/genomes/D_giganteum_browser.fna.fai",
+    gffURL: "/assets/genomes/D_giganteum_browser.gff",
+    locus: "CM184267.1:1-200000"
   },
   {
     id: "c-fasciculata-sh3",
@@ -5797,7 +5807,7 @@ function renderStartPage() {
 function renderGuidePage() {
   const here = [
     ["/search/advanced", "Gene records", "Every gene with GO, phenotype, ortholog, human-disease links, protein structure, and expression. Search from the box at the top of any page, or filter with the advanced finder."],
-    ["/tools/genome-browser", "Genomes &amp; browser", "19 sequenced dictyostelid genomes in an interactive browser."],
+    ["/tools/genome-browser", "Genomes &amp; browser", "20 sequenced dictyostelid genomes in an interactive browser."],
     ["/tools/blast", "BLAST", "Search the genomes and proteomes by DNA or protein sequence."],
     ["/stock-center", "Stock Center", "The full Dicty Stock Center catalog. Browse and order strains and plasmids."],
     ["/tools", "Analysis tools", "GO enrichment, gene-set analysis, expression, CRISPR and primer design, and more."],

@@ -12086,6 +12086,55 @@ function attachGoAutocomplete(scope) {
   });
 }
 
+// Snapshot / restore the author curation form so the ORCID sign-in round-trip
+// (which navigates away to orcid.org and re-renders the page) doesn't wipe what
+// the author already entered. Keyed by the session token in sessionStorage.
+function paperFormState(el) {
+  const rows = (sel, fields) => [...el.querySelectorAll(sel)].map((r) => {
+    const o = {};
+    const q = (c) => r.querySelector(c);
+    if (q(".keep")) o.keep = q(".keep").checked;
+    if (q(".unsure")) o.unsure = q(".unsure").checked;
+    if (q(".neg")) o.neg = q(".neg").checked;
+    if (q(".fig")) o.fig = q(".fig").value;
+    if (r.dataset.goId) o.goId = r.dataset.goId;
+    for (const [k, c] of Object.entries(fields)) { const f = q(c); if (f) o[k] = f.value; }
+    return o;
+  });
+  const val = (id) => { const e = document.getElementById(id); return e ? e.value : undefined; };
+  return {
+    gs: rows(".ps-gs", { g: ".g", ss: ".ss" }),
+    go: rows(".ps-go", { g: ".g", t: ".t", a: ".a" }),
+    ph: rows(".ps-ph", { g: ".g", p: ".p" }),
+    ix: rows(".ps-in", { a1: ".a1", a2: ".a2", ty: ".ty" }),
+    note: val("ps-note"), name: val("ps-name"), orcid: val("ps-orcid"),
+  };
+}
+
+function restorePaperFormState(el, st) {
+  const setRows = (sel, arr, fields) => {
+    const els = [...el.querySelectorAll(sel)];
+    (arr || []).forEach((o, i) => {
+      const r = els[i]; if (!r) return;
+      const q = (c) => r.querySelector(c);
+      if (q(".keep") && o.keep != null) q(".keep").checked = o.keep;
+      if (q(".unsure") && o.unsure != null) q(".unsure").checked = o.unsure;
+      if (q(".neg") && o.neg != null) q(".neg").checked = o.neg;
+      if (q(".fig") && o.fig != null) q(".fig").value = o.fig;
+      if (o.goId) r.dataset.goId = o.goId;
+      for (const [k, c] of Object.entries(fields)) { const f = q(c); if (f && o[k] != null) f.value = o[k]; }
+    });
+  };
+  setRows(".ps-gs", st.gs, { g: ".g", ss: ".ss" });
+  setRows(".ps-go", st.go, { g: ".g", t: ".t", a: ".a" });
+  setRows(".ps-ph", st.ph, { g: ".g", p: ".p" });
+  setRows(".ps-in", st.ix, { a1: ".a1", a2: ".a2", ty: ".ty" });
+  const setVal = (id, v, onlyIfEmpty) => { const e = document.getElementById(id); if (e && v != null && (!onlyIfEmpty || !e.value)) e.value = v; };
+  setVal("ps-note", st.note);
+  setVal("ps-name", st.name, true);   // don't clobber an ORCID-provided name
+  setVal("ps-orcid", st.orcid);
+}
+
 function renderPaperSessionForm(el, token, s) {
   const esc = escapeHtml;
   // Spell the GO aspects out. "F/P/C" means nothing to an author being asked to
@@ -12226,6 +12275,16 @@ function renderPaperSessionForm(el, token, s) {
     </div>`;
   attachCurationTips(el);
   attachGoAutocomplete(el);
+  // Preserve the author's entries across the ORCID sign-in round-trip (and any
+  // reload): restore any saved state, then autosave on every change.
+  const FORM_KEY = "ps-form-" + token;
+  try { const saved = sessionStorage.getItem(FORM_KEY); if (saved) restorePaperFormState(el, JSON.parse(saved)); } catch { /* ignore */ }
+  let saveT = null;
+  const saveFormState = () => { try { sessionStorage.setItem(FORM_KEY, JSON.stringify(paperFormState(el))); } catch { /* ignore */ } };
+  el.addEventListener("input", () => { clearTimeout(saveT); saveT = setTimeout(saveFormState, 250); });
+  el.addEventListener("change", saveFormState);
+  const orcidSignin = document.getElementById("ps-orcid-signin");
+  if (orcidSignin) orcidSignin.addEventListener("click", saveFormState);   // save before leaving for ORCID
   const orcidEl = document.getElementById("ps-orcid");
   const orcidMsg = document.getElementById("ps-orcid-msg");
   if (orcidEl && orcidMsg) orcidEl.addEventListener("input", () => {
@@ -12271,6 +12330,7 @@ function renderPaperSessionForm(el, token, s) {
       });
       const d = await r.json();
       if (!r.ok) throw new Error(d.error || "failed");
+      try { sessionStorage.removeItem(FORM_KEY); } catch { /* ignore */ }
       el.innerHTML = `<p class="eyebrow">Thank you</p><h2>Submitted for review</h2>
         <p style="font-size:14px;line-height:1.6">Your curation for <em>${esc(s.title || "this paper")}</em> has been sent to the dictyBase curators. They will review it and add it to the gene records. We appreciate your help keeping Dictyostelium annotations accurate.</p>
         <p><a class="text-link" href="/">Return to dictyBase</a></p>`;

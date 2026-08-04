@@ -7808,11 +7808,13 @@ function renderTab(gene, tab) {
         <section class="data-block">
           <h3>Lab reagents <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— design on demand</span></h3>
           <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">CRISPR guides and qPCR primers for <strong>${escapeHtml(gene.symbol)}</strong>. Computational suggestions — validate before use.</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;align-items:center">
-            <button type="button" data-record-crispr-run>Design CRISPR guides</button>
-            <button type="button" data-record-primer-run>Design qPCR primers</button>
-            <label style="font-size:.78rem;color:var(--muted,#6b7280)">product
-              <input type="number" id="record-pmin" min="50" max="1000" value="90" aria-label="Minimum product size (bp)" style="${FIELD};width:64px">–<input type="number" id="record-pmax" min="50" max="2000" value="200" aria-label="Maximum product size (bp)" style="${FIELD};width:64px"> bp</label>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:8px">
+            <div><button type="button" data-record-crispr-run>Design CRISPR guides</button></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <button type="button" data-record-primer-run>Design qPCR primers</button>
+              <label style="font-size:.78rem;color:var(--muted,#6b7280)">product size
+                <input type="number" id="record-pmin" min="50" max="1000" value="90" aria-label="Minimum qPCR product size (bp)" style="${FIELD};width:64px">–<input type="number" id="record-pmax" min="50" max="2000" value="200" aria-label="Maximum qPCR product size (bp)" style="${FIELD};width:64px"> bp</label>
+            </div>
           </div>
           <div data-record-crispr-results style="margin-bottom:8px"></div>
           <div data-record-primer-results></div>

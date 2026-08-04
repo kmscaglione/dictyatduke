@@ -9574,6 +9574,63 @@ async function loadDownloads() {
   }
 }
 
+function openNumbers(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/numbers");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">About</p>
+          <h2>dictyBase by the numbers</h2>
+          <p>What the resource holds today, counted live from the same data the site serves. See <a class="text-link" href="/data">Data &amp; sources</a> for provenance, or <a class="text-link" href="/tools/api">the API</a> to pull these yourself.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div data-numbers><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Counting…</p></div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadNumbers();
+}
+
+async function loadNumbers() {
+  const host = document.querySelector("[data-numbers]");
+  if (!host) return;
+  let ds;
+  try { ds = await (await fetch("/api/data-status")).json(); }
+  catch { host.innerHTML = `<p class="notice">Could not load the numbers right now.</p>`; return; }
+  const rows = (ds && ds.datasets) || [];
+  const find = (frag) => rows.find((d) => (d.label || "").toLowerCase().includes(frag));
+  const rec = (frag) => { const r = find(frag); return r && r.records != null ? Number(r.records) : null; };
+  // KEGG maps are named in the Pathways label ("Pathways — 131 KEGG maps").
+  const kegg = find("pathway");
+  const keggMaps = kegg && /([\d,]+)\s*KEGG maps/i.test(kegg.label) ? RegExp.$1.replace(/,/g, "") : null;
+  const cards = [
+    ["Genes", rec("gene catalog"), "protein-coding & RNA genes"],
+    ["Sequenced genomes", rec("genome assembl"), "dictyostelid assemblies"],
+    ["GO annotations", rec("go annotation"), "across 8,659 genes"],
+    ["Human orthologs", rec("human ortholog"), "genes with an assigned ortholog"],
+    ["Disease-linked genes", null, "via human orthologs"],
+    ["Phenotype genes", rec("phenotype"), "with curated mutant phenotypes"],
+    ["Protein domains", rec("protein domain"), "InterPro / Pfam architectures"],
+    ["KEGG pathways", keggMaps ? Number(keggMaps) : null, `${(rec("pathway") || 0).toLocaleString()} genes mapped`],
+    ["Stock catalog", rec("stock catalog"), "strains & plasmids to order"],
+  ].filter(([, n]) => n != null);
+  // Disease-linked count isn't a data-status record; derive it is not available here, so drop if unknown.
+  const grid = cards.map(([label, n, sub]) => `
+    <div style="background:var(--soft,#f1f5f4);border-radius:12px;padding:18px 16px;text-align:center">
+      <div style="font-size:2rem;font-weight:700;color:var(--teal-dark,#0a4f47);line-height:1.1">${Number(n).toLocaleString()}</div>
+      <div style="font-weight:600;margin-top:4px">${escapeHtml(label)}</div>
+      <div style="font-size:0.8125rem;color:var(--muted,#6b7280);margin-top:2px">${escapeHtml(sub)}</div>
+    </div>`).join("");
+  host.innerHTML = `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px">${grid}</div>
+    <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:14px">Counts come straight from <code>/api/data-status</code> and update whenever the data is refreshed.</p>`;
+}
+
 function openCite(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/cite");
@@ -12577,6 +12634,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "stock-center") {
     openStockCenter(false);
+    return;
+  }
+  if (pathParts[0] === "numbers") {
+    openNumbers(false);
     return;
   }
   if (pathParts[0] === "cite") {

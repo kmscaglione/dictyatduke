@@ -4149,7 +4149,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         xml = Handler._SITEMAP_CACHE.get(key)
         if xml is None:
             urls = ["/", "/start", "/guide", "/education", "/research-areas", "/data",
-                    "/downloads", "/cite", "/news", "/stock-center", "/tools",
+                    "/numbers", "/downloads", "/cite", "/news", "/stock-center", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
                     "/tools/lab", "/tools/sequence", "/tools/convert", "/tools/geneset",
                     "/tools/proteomics", "/tools/heatstress", "/tools/basket",

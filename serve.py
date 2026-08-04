@@ -2988,6 +2988,10 @@ def _author_curation_index():
 FULLTEXT_DIR = CURATION_STATE_DIR / "paper_fulltext"
 CONTACT_EMAIL = os.environ.get("CONTACT_EMAIL", "dictybase-curation@duke.edu")
 _FT_UA = "dictyBase-curation/1.0 (mailto:%s)" % CONTACT_EMAIL
+# Descriptive User-Agent for outbound API calls. EBI (AlphaFold, InterPro) and
+# other providers' WAFs block the default "Python-urllib/x.y" as a bot, so every
+# outbound request must identify itself.
+_HTTP_UA = "dictyBase/1.0 (+https://dicty.labs.duke.edu; mailto:%s)" % CONTACT_EMAIL
 
 
 def _pmid_to_pmcid(pmid):
@@ -3593,11 +3597,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return
             uniprot = m.group(1).upper()
             try:
-                with urllib.request.urlopen(f"https://alphafold.ebi.ac.uk/api/prediction/{uniprot}", timeout=10, context=SSL_CTX) as r:
+                pred_req = urllib.request.Request(
+                    f"https://alphafold.ebi.ac.uk/api/prediction/{uniprot}",
+                    headers={"User-Agent": _HTTP_UA})
+                with urllib.request.urlopen(pred_req, timeout=10, context=SSL_CTX) as r:
                     info = json.loads(r.read())[0]
                 pdb_url = info.get("pdbUrl", "")
                 if not pdb_url: raise ValueError("No pdbUrl")
-                with urllib.request.urlopen(pdb_url, timeout=15, context=SSL_CTX) as r:
+                pdb_req = urllib.request.Request(pdb_url, headers={"User-Agent": _HTTP_UA})
+                with urllib.request.urlopen(pdb_req, timeout=15, context=SSL_CTX) as r:
                     pdb_data = r.read()
                 self.send_response(200)
                 self.send_header("Content-Type", "chemical/x-pdb")
@@ -4694,10 +4702,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not self._acquire_proxy_slot():
             return
         base = "https://www.ebi.ac.uk/interpro/api"
+        ua = {"User-Agent": _HTTP_UA}
         try:
-            with urllib.request.urlopen(f"{base}/protein/uniprot/{acc}", timeout=20, context=SSL_CTX) as r:
+            with urllib.request.urlopen(urllib.request.Request(f"{base}/protein/uniprot/{acc}", headers=ua), timeout=20, context=SSL_CTX) as r:
                 length = json.loads(r.read()).get("metadata", {}).get("length")
-            with urllib.request.urlopen(f"{base}/entry/all/protein/uniprot/{acc}/?page_size=100", timeout=25, context=SSL_CTX) as r:
+            with urllib.request.urlopen(urllib.request.Request(f"{base}/entry/all/protein/uniprot/{acc}/?page_size=100", headers=ua), timeout=25, context=SSL_CTX) as r:
                 data = json.loads(r.read())
             domains = []
             for res in data.get("results", []):

@@ -3775,6 +3775,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._serve_sitemap()
         if raw == "/news.xml":
             return self._serve_news_feed()
+        if raw == "/rss.xml":
+            return self._serve_rss_feed()
         # Serve the SPA shell (with cache-busted asset URLs) for the root, an
         # explicit index.html, or any non-static client route. Real static
         # files fall through to the default handler.
@@ -4094,17 +4096,69 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _serve_rss_feed(self):
+        """RSS 2.0 feed of the news items — the same content as /news.xml (Atom),
+        for readers that prefer RSS."""
+        base = _base_url(self) or ""
+        try:
+            items = (json.loads((ASSETS / "news.json").read_text()) or {}).get("items", [])
+        except (OSError, ValueError):
+            items = []
+
+        def rfc822(d):
+            try:
+                return datetime.datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 00:00:00 GMT")
+            except (ValueError, TypeError):
+                return "Thu, 01 Jan 1970 00:00:00 GMT"
+
+        parts = ['<?xml version="1.0" encoding="UTF-8"?>',
+                 '<rss version="2.0">', "<channel>",
+                 "<title>dictyBase — News &amp; updates</title>",
+                 f"<link>{_esc(base)}/news</link>",
+                 "<description>Site announcements and data updates from dictyBase.</description>",
+                 f'<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="{_esc(base)}/rss.xml" rel="self" type="application/rss+xml"/>']
+        if items and items[0].get("date"):
+            parts.append(f"<lastBuildDate>{rfc822(items[0]['date'])}</lastBuildDate>")
+        for it in items:
+            link = base + (it.get("link") or "/news")
+            body = it.get("body", "")
+            if it.get("paper"):
+                body += f" (paper: {it['paper']})"
+            parts += ["<item>",
+                      f"<title>{_esc(it.get('title', ''))}</title>",
+                      f"<link>{_esc(link)}</link>",
+                      f'<guid isPermaLink="false">{_esc(base + "/news#" + quote((it.get("title") or "")[:80]))}</guid>',
+                      f"<pubDate>{rfc822(it.get('date'))}</pubDate>",
+                      (f"<category>{_esc(it['tag'])}</category>" if it.get("tag") else ""),
+                      f"<description>{_esc(body)}</description>",
+                      "</item>"]
+        parts += ["</channel>", "</rss>"]
+        body = ("\n".join(p for p in parts if p)).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/rss+xml; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "public, max-age=3600")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
     def _serve_sitemap(self):
         base = _base_url(self)
         gm = _load_gene_meta()
         key = (gm["mtime"], base)
         xml = Handler._SITEMAP_CACHE.get(key)
         if xml is None:
-            urls = ["/", "/start", "/education", "/data", "/cite", "/news", "/tools",
+            urls = ["/", "/start", "/guide", "/education", "/research-areas", "/data",
+                    "/downloads", "/cite", "/news", "/stock-center", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
                     "/tools/lab", "/tools/sequence", "/tools/convert", "/tools/geneset",
+                    "/tools/proteomics", "/tools/heatstress", "/tools/basket",
                     "/tools/downloads", "/tools/api", "/tools/genome-browser",
-                    "/community/disease-models", "/search/advanced"]
+                    "/community/labs", "/community/meetings", "/community/jobs",
+                    "/community/listserv", "/community/award-recipients",
+                    "/community/news", "/community/disease-models",
+                    "/community/upload-data", "/community/corrections",
+                    "/community/suggestions", "/search/advanced"]
             parts = ['<?xml version="1.0" encoding="UTF-8"?>',
                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
             for u in urls:

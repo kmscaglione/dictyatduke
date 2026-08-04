@@ -1,0 +1,4 @@
+{
+  "_comment": "Community job board for the Dictyostelium field. Newest first. Positions past their 'closes' date are hidden automatically. Fields per entry: title (required), lab, institution, location, type (phd|postdoc|staff|faculty|other), url (application/details link), contact (email), posted (YYYY-MM-DD), closes (YYYY-MM-DD or empty), summary. To add a posting, append an object to 'positions'.",
+  "positions": []
+}

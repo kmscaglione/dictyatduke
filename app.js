@@ -1144,6 +1144,8 @@ function sourceLinks(gene) {
     ["AlphaFold", gene.uniprot || `Search ${gene.symbol}`, alphaFoldUrl(gene)],
     ["NCBI Gene", gene.ncbiGene, `https://www.ncbi.nlm.nih.gov/gene/${gene.ncbiGene}`],
     ["UniProt", gene.uniprot, `https://www.uniprot.org/uniprotkb/${gene.uniprot}/entry`],
+    ["InterPro", gene.uniprot ? "Domains & families" : "", `https://www.ebi.ac.uk/interpro/protein/UniProt/${gene.uniprot}/`],
+    ["PDB (RCSB)", gene.uniprot ? "Experimental structures" : "", `https://www.rcsb.org/uniprot/${gene.uniprot}`],
     ["VEuPathDB", `AmoebaDB:${gene.veupath}`, `https://www.veupathdb.org/gene/AmoebaDB:${gene.veupath}`],
     ["STRING", `${gene.symbol} interactions`, `https://string-db.org/cgi/network?species_text=Dictyostelium+discoideum&identifiers=${encodeURIComponent(gene.symbol)}`]
   ].filter(([, detail]) => detail);
@@ -6270,6 +6272,17 @@ function openCommunity(section, updateRoute = true) {
   if (updateRoute) history.pushState(null, "", `/community/${encodeURIComponent(section)}`);
   renderCommunity(section);
   const shell = document.querySelector("#community");
+  // Carry the gene context from a per-gene "Report an error" link into the form
+  // so the reporter (and the curator) know which page it is about.
+  if (section === "corrections") {
+    const g = new URLSearchParams(location.search).get("gene");
+    if (g) {
+      const pageEl = document.getElementById("corr-page");
+      if (pageEl && !pageEl.value) pageEl.value = `/gene/${g}`;
+      const descEl = document.getElementById("corr-description");
+      if (descEl) requestAnimationFrame(() => descEl.focus());
+    }
+  }
   const pi = section === "labs" ? new URLSearchParams(location.search).get("pi") : null;
   const target = pi ? document.getElementById(`lab-${slugify(pi)}`) : null;
   if (target) {
@@ -6312,6 +6325,10 @@ function renderCommunity(section) {
     communityShell.innerHTML = renderDiseaseModelsPage();
     communityShell.removeAttribute("hidden");
     loadDiseaseModels();
+  } else if (section === "jobs") {
+    communityShell.innerHTML = renderJobsPage();
+    communityShell.removeAttribute("hidden");
+    loadJobs();
   } else if (section === "listserv") {
     communityShell.innerHTML = renderListservPage();
     communityShell.removeAttribute("hidden");
@@ -7296,6 +7313,64 @@ function renderSuggestionsPage() {
       </div>
     </article>
   `;
+}
+
+const JOB_TYPE_LABEL = { phd: "PhD", postdoc: "Postdoc", staff: "Staff / technician", faculty: "Faculty", other: "Position" };
+
+function renderJobsPage() {
+  const subject = encodeURIComponent("Dicty job board posting");
+  const bodyTxt = encodeURIComponent("Please include: position title, lab / PI, institution, location, type (PhD / postdoc / staff / faculty), a link or how to apply, and a one-line summary. Attach or paste the full ad if you have one.");
+  return `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Community</p>
+          <h2>Jobs &amp; positions</h2>
+          <p>Open positions across the Dictyostelium community — PhD studentships, postdocs, staff, and faculty roles. To list a position, email us the details and a curator will post it.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <p style="margin:0 0 14px"><a class="button primary" href="mailto:matt.scaglione@duke.edu?subject=${subject}&body=${bodyTxt}">Post a position →</a></p>
+        <div data-jobs-list>${loadingHTML("Loading positions…")}</div>
+      </div>
+    </article>`;
+}
+
+function loadJobs() {
+  const host = document.querySelector("[data-jobs-list]");
+  if (!host) return;
+  fetch("/assets/jobs.json")
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => {
+      const today = new Date().toISOString().slice(0, 10);
+      const open = (d && Array.isArray(d.positions) ? d.positions : [])
+        .filter((p) => p && p.title && (!p.closes || p.closes >= today))
+        .sort((a, b) => String(b.posted || "").localeCompare(String(a.posted || "")));
+      if (!open.length) {
+        host.innerHTML = `<p class="research-note">No open positions are listed right now. Check back soon, or use “Post a position” above to add one.</p>`;
+        return;
+      }
+      host.innerHTML = `<div class="ontology-term-list">${open.map(jobItemHTML).join("")}</div>`;
+    })
+    .catch(() => { host.innerHTML = `<p class="research-note">Could not load positions right now.</p>`; });
+}
+
+function jobItemHTML(p) {
+  const where = [p.lab, p.institution, p.location].filter(Boolean).map(escapeHtml).join(" · ");
+  const type = JOB_TYPE_LABEL[p.type] || (p.type ? escapeHtml(p.type) : "");
+  const dates = [p.posted ? `Posted ${escapeHtml(p.posted)}` : "", p.closes ? `Closes ${escapeHtml(p.closes)}` : ""].filter(Boolean).join(" · ");
+  const apply = p.url
+    ? `<a class="text-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener">Details &amp; apply →</a>`
+    : (p.contact ? `<a class="text-link" href="mailto:${escapeHtml(p.contact)}">Contact →</a>` : "");
+  return `
+    <article class="ontology-term">
+      <div>
+        <strong>${escapeHtml(p.title)}${type ? ` <span class="tag" style="font-weight:400">${type}</span>` : ""}</strong>
+        ${where ? `<div style="color:var(--muted,#6b7280);font-size:0.875rem;margin-top:2px">${where}</div>` : ""}
+        ${p.summary ? `<p style="margin:6px 0 0">${escapeHtml(p.summary)}</p>` : ""}
+        <div style="margin-top:6px;font-size:0.8125rem;color:var(--muted,#9ca3af)">${dates}${dates && apply ? " · " : ""}${apply}</div>
+      </div>
+    </article>`;
 }
 
 function renderMeetingsPage() {
@@ -9054,10 +9129,11 @@ function stockItemHTML(kind, it) {
   const row = (k, v) => v ? `<div style="display:flex;gap:8px;margin:2px 0"><span style="min-width:96px;color:var(--muted,#9ca3af)">${k}</span><span style="color:var(--ink,#1f2937)">${escapeHtml(String(v))}</span></div>` : "";
   const detail = kind === "strains"
     ? row("ID", it.id) + row("Name", it.label) + row("Genotype", it.genotype) + row("Description", it.summary) + row("Also known as", syn) + row("In stock", it.in_stock ? "Yes" : "No")
+      + `<div data-strain-gene style="margin-top:4px"></div>`
     : row("ID", it.id) + row("Name", it.name) + row("Description", it.description) + row("Depositor", it.depositor) + row("In stock", it.in_stock ? "Yes" : "No");
   return `
     <div class="stock-item">
-      <div class="stock-item-body" data-stock-detail role="button" tabindex="0" aria-expanded="false" title="Click for details" style="cursor:pointer">
+      <div class="stock-item-body" data-stock-detail${kind === "strains" ? ` data-strain-id="${escapeHtml(it.id)}"` : ""} role="button" tabindex="0" aria-expanded="false" title="Click for details" style="cursor:pointer">
         <strong>${escapeHtml(name)}${tags} <span class="stock-detail-caret" style="color:var(--muted,#9ca3af);font-weight:400;font-size:.8em">▸</span></strong>
         ${sub ? `<span>${escapeHtml(sub)}</span>` : ""}
         <div class="stock-item-detail" hidden style="margin-top:6px;font-size:.8125rem;border-top:1px solid var(--line,#eef2f3);padding-top:6px">${detail}</div>
@@ -9223,6 +9299,23 @@ function initStockCenter() {
         panel.hidden = !open;
         detailBody.setAttribute("aria-expanded", open ? "true" : "false");
         if (caret) caret.textContent = open ? "▾" : "▸";
+        // On first expand of a strain, resolve which gene it mutates (server maps
+        // the strain -> gene) and show a link to that gene page.
+        const sid = detailBody.dataset.strainId;
+        const slot = panel.querySelector("[data-strain-gene]");
+        if (open && sid && slot && !slot.dataset.loaded) {
+          slot.dataset.loaded = "1";
+          fetch(`/api/strain/${encodeURIComponent(sid)}`)
+            .then((r) => (r.ok ? r.json() : null))
+            .then((d) => {
+              const g = d && d.gene;
+              const sym = g && (g.symbol || g.id || g.ddb);
+              if (sym) {
+                slot.innerHTML = `<a class="text-link" href="/gene/${encodeURIComponent(sym)}">Gene page: ${escapeHtml(sym)} →</a>`;
+              }
+            })
+            .catch(() => {});
+        }
       }
       return;
     }
@@ -12395,7 +12488,11 @@ function hydrateFromRoute() {
   const isToolRoute = pathParts[0] === "tools" && pathParts[1];
   const isOrganismRoute = pathParts[0] === "organisms" && pathParts[1];
   const isCommunityRoute = pathParts[0] === "community" && pathParts[1];
-  const gene = isGeneRoute ? findGeneByToken(pathParts[1]) : findGeneByToken(params.get("gene"));
+  // A ?gene= query is only a shortcut on the home/search views. On an explicit
+  // section route (community, tools, research, organisms) it is context for that
+  // page (e.g. /community/corrections?gene=mhcA) and must NOT hijack to the gene.
+  const geneQueryOk = !(isCommunityRoute || isToolRoute || isResearchRoute || isOrganismRoute || isTechniqueRoute);
+  const gene = isGeneRoute ? findGeneByToken(pathParts[1]) : (geneQueryOk ? findGeneByToken(params.get("gene")) : null);
   if (gene) {
     input.value = gene.symbol;
     openGene(gene, params.get("tab") || "Summary", false);
@@ -12711,7 +12808,7 @@ function openNews(updateRoute = true) {
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">dictyBase</p>
         <h2>News &amp; updates</h2>
-        <p>The latest site announcements and data updates. <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Subscribe (RSS) ↗</a></p>
+        <p>The latest site announcements and data updates. Subscribe: <a class="text-link" href="/rss.xml" target="_blank" rel="noopener">RSS ↗</a> · <a class="text-link" href="/news.xml" target="_blank" rel="noopener">Atom ↗</a></p>
       </div></header>
       <div class="record-body">
         <div class="news-list" data-news-all><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>

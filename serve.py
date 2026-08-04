@@ -5654,6 +5654,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     return len(d[keys[0]])
                 return len(keys)
             return None
+        def kegg_map_count():
+            d = _load_json("kegg_pathways.json")
+            if not isinstance(d, dict):
+                return None
+            ids = set()
+            for k, lst in d.items():
+                if str(k).startswith("_"):
+                    continue
+                for p in (lst or []):
+                    if isinstance(p, dict) and p.get("id"):
+                        ids.add(p["id"])
+            return len(ids) or None
+        kegg_maps = kegg_map_count()
         rows, _ = api_gene_rows()
         sc = _load_json("stock_center.json")
         stock_n = (len(sc.get("strains", [])) + len(sc.get("plasmids", []))) if isinstance(sc, dict) else None
@@ -5689,7 +5702,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             {"label": "Protein domains", "source": "InterPro / Pfam (EMBL-EBI)",
              "license": "CC0 1.0", "url": "https://www.ebi.ac.uk/interpro/",
              "records": cnt("domains.json"), "updated": updated("domains.json")},
-            {"label": "Pathways", "source": "KEGG (Kanehisa Laboratories)",
+            {"label": f"Pathways — {kegg_maps} KEGG maps" if kegg_maps else "Pathways",
+             "source": "KEGG (Kanehisa Laboratories)",
              "license": "KEGG terms — academic use", "url": "https://www.kegg.jp",
              "records": cnt("kegg_pathways.json"), "updated": updated("kegg_pathways.json")},
             {"label": "Developmental expression", "source": "Rosengarten et al. 2015 RNA-seq (GEO GSE61914)",

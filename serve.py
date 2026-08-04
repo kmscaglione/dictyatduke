@@ -3126,6 +3126,9 @@ def fetch_full_text(pmid, doi=None):
 
 def store_full_text(pmid, result):
     """Persist fetched full text to the private, never-web-served store."""
+    pmid = re.sub(r"[^0-9]", "", str(pmid))   # digits only — never a path segment
+    if not pmid:
+        return
     try:
         FULLTEXT_DIR.mkdir(parents=True, exist_ok=True)
         _atomic_write_json(FULLTEXT_DIR / f"{pmid}.json",
@@ -3396,6 +3399,24 @@ API_CACHEABLE_PREFIXES = (
     "/api/neighborhood", "/api/region", "/api/ispcr", "/api/protein-props",
 )
 API_CACHE_CONTROL = "public, max-age=60, s-maxage=300, stale-while-revalidate=600"
+
+# Content-Security-Policy for the SPA. The app has NO inline <script> (verified),
+# so script-src omits 'unsafe-inline' — this blocks any injected inline script,
+# the main XSS vector for a site that renders curator/author-entered text. The
+# allowed script hosts are the only externals the app loads: 3Dmol (structure
+# viewer), jsdelivr (Chart.js; IGV is self-hosted), and YouTube's embed API.
+# Inline STYLE attributes are used throughout, so style-src keeps 'unsafe-inline'.
+CSP = (
+    "default-src 'self'; "
+    "script-src 'self' https://3Dmol.csb.pitt.edu https://cdn.jsdelivr.net "
+    "https://www.youtube.com https://s.ytimg.com; "
+    "style-src 'self' 'unsafe-inline'; "
+    "img-src 'self' data: https:; "
+    "font-src 'self' data:; "
+    "connect-src 'self' https:; "
+    "frame-src https://www.youtube-nocookie.com https://www.youtube.com; "
+    "object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+)
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -4931,8 +4952,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         accts = load_curators()
         existing = accts.get(username, {})
         if password:
-            if len(password) < 6:
-                self.send_json(400, {"error": "Password must be at least 6 characters."})
+            if len(password) < 12:
+                self.send_json(400, {"error": "Password must be at least 12 characters."})
                 return
             existing["salt"], existing["pw"] = _hash_pw(password)
         elif "pw" not in existing:
@@ -6303,6 +6324,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("X-Frame-Options", "SAMEORIGIN")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        # Content-Security-Policy: script-src has no 'unsafe-inline', so an
+        # injected inline <script> (the main XSS vector for curator/author text)
+        # won't run, while the app's own external scripts are allow-listed.
+        self.send_header("Content-Security-Policy", CSP)
         # HTML is always revalidated so new asset versions are picked up;
         # mtime-stamped css/js can be cached aggressively (URL changes on edit);
         # any unversioned css/js still revalidates to avoid staleness.

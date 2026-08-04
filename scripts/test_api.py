@@ -52,6 +52,17 @@ def get_json(path):
         return st, None
 
 
+def get_headers(path):
+    """(status, {lowercased header: value}) — never raises."""
+    try:
+        with urllib.request.urlopen(BASE + path, timeout=20) as r:
+            return r.status, {k.lower(): v for k, v in r.headers.items()}
+    except urllib.error.HTTPError as e:
+        return e.code, {k.lower(): v for k, v in e.headers.items()}
+    except Exception:
+        return 0, {}
+
+
 def head_status(path):
     """Status of a HEAD request (never raises)."""
     try:
@@ -142,6 +153,15 @@ def main():
         check(f"blocked (GET) {path}", st != 200, f"status {st}")
     check("blocked (HEAD) /uploads/curator_state/",
           head_status("/uploads/curator_state/curators.json") != 200)
+
+    # Security response headers present (CSP is the key XSS defense).
+    _, h = get_headers("/")
+    csp = h.get("content-security-policy", "")
+    check("header: Content-Security-Policy", bool(csp))
+    check("CSP script-src has no 'unsafe-inline'",
+          "script-src" in csp and "'unsafe-inline'" not in csp.split("script-src", 1)[1].split(";", 1)[0])
+    check("header: X-Content-Type-Options nosniff", h.get("x-content-type-options", "").lower() == "nosniff")
+    check("header: X-Frame-Options", bool(h.get("x-frame-options")))
 
     print(f"\n{_passed}/{_passed + _failed} passed"
           + (f" — {_failed} FAILED" if _failed else " — all good"))

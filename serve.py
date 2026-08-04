@@ -3429,6 +3429,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     # TCP/TLS handshake per request). Idle keep-alive sockets time out at 30s.
     protocol_version = "HTTP/1.1"
     timeout = 30
+    # Don't advertise the exact Python version in the Server header (it just
+    # hands an attacker a version to match CVEs against).
+    server_version = "dictyBase"
+    sys_version = ""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=ROOT, **kwargs)
@@ -6333,6 +6337,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("X-Frame-Options", "SAMEORIGIN")
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        # HSTS: set here because the site's Apache front passes app headers
+        # through and does not add its own. No includeSubDomains — the site is a
+        # subdomain of the shared labs.duke.edu and must not assert HSTS for
+        # siblings. Browsers ignore this over plain HTTP, so it is safe.
+        self.send_header("Strict-Transport-Security", "max-age=31536000")
         # Content-Security-Policy: script-src has no 'unsafe-inline', so an
         # injected inline <script> (the main XSS vector for curator/author text)
         # won't run, while the app's own external scripts are allow-listed.

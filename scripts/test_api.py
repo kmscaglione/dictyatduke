@@ -162,6 +162,8 @@ def main():
           "script-src" in csp and "'unsafe-inline'" not in csp.split("script-src", 1)[1].split(";", 1)[0])
     check("header: X-Content-Type-Options nosniff", h.get("x-content-type-options", "").lower() == "nosniff")
     check("header: X-Frame-Options", bool(h.get("x-frame-options")))
+    check("header: Strict-Transport-Security", "max-age" in h.get("strict-transport-security", ""))
+    check("Server header doesn't leak Python version", "python" not in h.get("server", "").lower())
 
     print(f"\n{_passed}/{_passed + _failed} passed"
           + (f" — {_failed} FAILED" if _failed else " — all good"))

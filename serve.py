@@ -1106,7 +1106,7 @@ def genome_seq():
     return seq
 
 
-def extract_sequence(ddb, typ):
+def extract_sequence(ddb, typ, flank=0):
     g = gene_models().get(ddb)
     if not g:
         return None
@@ -1117,6 +1117,8 @@ def extract_sequence(ddb, typ):
         if not g["exon"]:
             return None
         a = min(s for s, e in g["exon"]); b = max(e for s, e in g["exon"])
+        if flank:   # extend both sides; revcomp below keeps 5' flank = upstream
+            a = max(1, a - flank); b = min(len(chrom), b + flank)
         out = chrom[a - 1:b]
     elif typ == "cdna":
         if not g["exon"]:
@@ -4435,13 +4437,22 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not re.match(r"^DDB_G\d+$", ddb):
             self.send_json(400, {"error": "bad or missing ddb"})
             return
+
+        def _int(name, default, lo, hi):
+            try:
+                return max(lo, min(hi, int(q.get(name, [str(default)])[0])))
+            except (ValueError, TypeError):
+                return default
+        pmin = _int("pmin", 90, 50, 1000)
+        pmax = max(pmin, _int("pmax", 200, 50, 2000))
         try:
             seq = extract_sequence(ddb, "cdna")
             if not seq:
                 self.send_json(404, {"error": "no transcript for this gene"})
                 return
             self.send_json(200, {"ddb": ddb, "length": len(seq),
-                                 "primers": bench.design_primers(seq)})
+                                 "product_min": pmin, "product_max": pmax,
+                                 "primers": bench.design_primers(seq, product_min=pmin, product_max=pmax)})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
 
@@ -5884,20 +5895,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             ddb = (q.get("ddb", [""])[0]).strip()
             typ = (q.get("type", [""])[0]).strip()
             symbol = (q.get("symbol", [ddb])[0]).strip().replace("\n", "") or ddb
+            try:
+                flank = max(0, min(100000, int(q.get("flank", ["0"])[0])))
+            except ValueError:
+                flank = 0
             if typ not in ("genomic", "cdna", "protein"):
                 self.send_error(400, "type must be genomic, cdna, or protein")
                 return
             if not re.match(r"^DDB_G\d+$", ddb):
                 self.send_error(400, "invalid gene id")
                 return
-            seq = extract_sequence(ddb, typ)
+            seq = extract_sequence(ddb, typ, flank if typ == "genomic" else 0)
             if not seq:
                 self.send_error(404, "Sequence not available for this gene")
                 return
             label = {"genomic": "genomic", "cdna": "cDNA", "protein": "protein"}[typ]
+            if typ == "genomic" and flank:
+                label = f"genomic +{flank}bp flanks (gene plus {flank}bp up/downstream)"
             wrapped = "\n".join(seq[i:i + 60] for i in range(0, len(seq), 60))
             fasta = f">{symbol} {ddb} {label} | dictyBase\n{wrapped}\n".encode()
-            fname = "".join(c for c in f"{symbol}_{typ}.fasta" if c.isalnum() or c in "._-")
+            suffix = f"_genomic_plus{flank}" if (typ == "genomic" and flank) else f"_{typ}"
+            fname = "".join(c for c in f"{symbol}{suffix}.fasta" if c.isalnum() or c in "._-")
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.send_header("Content-Disposition", f'attachment; filename="{fname}"')

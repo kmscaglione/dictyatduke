@@ -3371,9 +3371,10 @@ async function runExpressionCompare() {
     exprChart = new Chart(document.getElementById("expr-chart"), {
       type: "line",
       data: {
-        labels: data.timepoints.map((t) => t + "h"),
         datasets: data.series.map((s, i) => ({
-          label: s.symbol, data: s.values,
+          label: s.symbol,
+          // {x: hours, y: RPKM} on a linear axis so intervals match real time.
+          data: s.values.map((v, j) => ({ x: data.timepoints[j], y: v })),
           borderColor: palette[i % palette.length],
           backgroundColor: palette[i % palette.length] + "22",
           tension: 0.3, pointRadius: 3, fill: false,
@@ -3381,7 +3382,7 @@ async function runExpressionCompare() {
       },
       options: { responsive: true, maintainAspectRatio: true,
         scales: { y: { title: { display: true, text: "RPKM" } },
-                  x: { title: { display: true, text: "Development (h)" } } } },
+                  x: { type: "linear", title: { display: true, text: "Development (h)" }, ticks: { callback: (v) => `${v}h` } } } },
     });
   };
   if (window.Chart) { draw(); } else {
@@ -3414,6 +3415,11 @@ function renderLabPage() {
         <h3>qPCR primers <span style="font-size:.75rem;font-weight:500;color:var(--muted,#6b7280)">— over the cDNA</span></h3>
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
           <input id="primer-gene" aria-label="Gene symbol or DDB_G id" placeholder="gene symbol or DDB_G id" style="${FIELD};min-width:260px">
+          <label style="font-size:.8125rem;color:var(--muted,#6b7280)">Product size (bp):
+            <input id="primer-pmin" type="number" min="50" max="1000" value="90" aria-label="Minimum product size (bp)" style="${FIELD};width:74px">
+            <span style="color:var(--muted,#9ca3af)">–</span>
+            <input id="primer-pmax" type="number" min="50" max="2000" value="200" aria-label="Maximum product size (bp)" style="${FIELD};width:74px">
+          </label>
           <button type="button" id="primer-run">Design primers</button>
         </div>
         <div data-primer-results style="margin-bottom:22px"></div>
@@ -3544,10 +3550,12 @@ async function fetchCrisprInto(ddb, out) {
   } catch { out.innerHTML = `<p class="notice">Guide design failed.</p>`; }
 }
 
-async function fetchPrimersInto(ddb, out) {
+async function fetchPrimersInto(ddb, out, opts) {
   out.innerHTML = loadingHTML("Designing primers…");
+  const qs = opts && (opts.pmin || opts.pmax)
+    ? `&pmin=${encodeURIComponent(opts.pmin || 90)}&pmax=${encodeURIComponent(opts.pmax || 200)}` : "";
   try {
-    const data = await (await fetch(`/api/primers?ddb=${encodeURIComponent(ddb)}`)).json();
+    const data = await (await fetch(`/api/primers?ddb=${encodeURIComponent(ddb)}${qs}`)).json();
     out.innerHTML = primerTableHTML(data.primers || []);
   } catch { out.innerHTML = `<p class="notice">Primer design failed.</p>`; }
 }
@@ -3565,7 +3573,9 @@ async function runLabPrimers() {
   out.innerHTML = loadingHTML("Resolving gene and designing primers…");
   const ddb = await resolveGeneToDDB(document.getElementById("primer-gene").value);
   if (!ddb) { out.innerHTML = `<p class="notice">Gene not found.</p>`; return; }
-  await fetchPrimersInto(ddb, out);
+  const pmin = (document.getElementById("primer-pmin") || {}).value;
+  const pmax = (document.getElementById("primer-pmax") || {}).value;
+  await fetchPrimersInto(ddb, out, { pmin, pmax });
 }
 
 // Wire the on-demand Lab reagents buttons on a gene record's Summary tab.
@@ -7786,6 +7796,7 @@ function renderTab(gene, tab) {
           <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
           <ul class="list">
             <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=genomic&symbol=${encodeURIComponent(gene.symbol)}" download>Genomic DNA</a></strong><span>Gene region including introns</span></li>
+            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=genomic&flank=1000&symbol=${encodeURIComponent(gene.symbol)}" download>Genomic + 1 kb flanks</a></strong><span>Gene plus 1000 bp up- and downstream (promoter / terminator)</span></li>
             <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=cdna&symbol=${encodeURIComponent(gene.symbol)}" download>cDNA</a></strong><span>Spliced transcript (exons)</span></li>
             <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}" download>Protein</a></strong><span>Translated coding sequence</span></li>
           </ul>
@@ -9030,11 +9041,18 @@ function stockItemHTML(kind, it) {
     ? `<span class="stock-item-id">${escapeHtml(it.id)}</span>${it.in_stock ? `<span class="stock-badge">In&nbsp;stock</span>` : ""}`
     : `<span class="stock-item-id">${escapeHtml(it.id)}</span>`;
   const inCart = stockCartHas(type, it.id);
+  const syn = Array.isArray(it.names) ? it.names.join(", ")
+    : String(it.names || "").replace(/[[\]']/g, "").trim();
+  const row = (k, v) => v ? `<div style="display:flex;gap:8px;margin:2px 0"><span style="min-width:96px;color:var(--muted,#9ca3af)">${k}</span><span style="color:var(--ink,#1f2937)">${escapeHtml(String(v))}</span></div>` : "";
+  const detail = kind === "strains"
+    ? row("ID", it.id) + row("Name", it.label) + row("Genotype", it.genotype) + row("Description", it.summary) + row("Also known as", syn) + row("In stock", it.in_stock ? "Yes" : "No")
+    : row("ID", it.id) + row("Name", it.name) + row("Description", it.description) + row("Depositor", it.depositor) + row("In stock", it.in_stock ? "Yes" : "No");
   return `
     <div class="stock-item">
-      <div class="stock-item-body">
-        <strong>${escapeHtml(name)}${tags}</strong>
+      <div class="stock-item-body" data-stock-detail role="button" tabindex="0" aria-expanded="false" title="Click for details" style="cursor:pointer">
+        <strong>${escapeHtml(name)}${tags} <span class="stock-detail-caret" style="color:var(--muted,#9ca3af);font-weight:400;font-size:.8em">▸</span></strong>
         ${sub ? `<span>${escapeHtml(sub)}</span>` : ""}
+        <div class="stock-item-detail" hidden style="margin-top:6px;font-size:.8125rem;border-top:1px solid var(--line,#eef2f3);padding-top:6px">${detail}</div>
       </div>
       <button type="button" class="button ${inCart ? "" : "primary"}" data-stock-add data-type="${type}" data-id="${escapeHtml(it.id)}" data-label="${escapeHtml(cartLabel)}">${inCart ? "✓ Added" : "Add"}</button>
     </div>`;
@@ -9188,6 +9206,18 @@ function initStockCenter() {
     const remove = e.target.closest("[data-stock-remove]");
     const clear = e.target.closest("[data-stock-clear]");
     const tab = e.target.closest("[data-stock-tab]");
+    const detailBody = e.target.closest("[data-stock-detail]");
+    if (detailBody && !add) {
+      const panel = detailBody.querySelector(".stock-item-detail");
+      const caret = detailBody.querySelector(".stock-detail-caret");
+      if (panel) {
+        const open = panel.hidden;
+        panel.hidden = !open;
+        detailBody.setAttribute("aria-expanded", open ? "true" : "false");
+        if (caret) caret.textContent = open ? "▾" : "▸";
+      }
+      return;
+    }
     if (add) {
       const exists = stockCartHas(add.dataset.type, add.dataset.id);
       const c = stockCart();
@@ -10380,10 +10410,11 @@ async function loadRNAseqInline(gene) {
       new Chart(canvas, {
         type: "line",
         data: {
-          labels: TP_LABELS,
           datasets: [{
             label: `${gene.symbol} (normalized expression)`,
-            data: points,
+            // {x: hours, y: value} on a linear axis so points sit at their true
+            // time (the course is hourly to 12 h, then every 2 h to 24 h).
+            data: TP_KEYS.map((h) => ({ x: h, y: vals[h] ?? 0 })),
             borderColor: "#0b746a",
             backgroundColor: "#0b746a22",
             tension: 0.3,
@@ -10399,12 +10430,14 @@ async function loadRNAseqInline(gene) {
             legend: { display: false },
             tooltip: {
               callbacks: {
+                title: (items) => (items.length ? `${items[0].parsed.x} h` : ""),
                 label: (ctx) => `RPKM: ${ctx.parsed.y.toFixed(1)}`
               }
             }
           },
           scales: {
-            x: { title: { display: true, text: "Development (hours)" } },
+            x: { type: "linear", min: 0, max: 24, title: { display: true, text: "Development (hours)" },
+                 ticks: { callback: (v) => `${v}h`, stepSize: 2 } },
             y: { title: { display: true, text: "Normalized expression" }, beginAtZero: true }
           },
           onClick: () => {

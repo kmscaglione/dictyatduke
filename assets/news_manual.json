@@ -2,6 +2,12 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-08-04",
+      "tag": "update",
+      "title": "New this week: a jobs board, feeds, and a numbers page",
+      "body": "A few additions from the past few days. There's a new Jobs & positions board under Community for PhD, postdoc, staff, and faculty roles. Gene pages now link out to InterPro and PDB, and Stock Center strains link back to their gene page. You can follow site news by RSS or Atom. And a new dictyBase by the numbers page shows live counts of the genes, genomes, annotations, and stock the site holds. We also finished a data-accuracy review: it corrected the genomic coordinates shown on the featured gene pages and the totals in the advanced gene finder, and we added automated checks so those stay right."
+    },
+    {
       "date": "2026-08-03",
       "tag": "update",
       "title": "Improvements from your beta feedback",

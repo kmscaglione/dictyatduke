@@ -1,4 +1,4 @@
-import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl
+import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, posixpath
 import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading, hashlib
 import base64, struct
 import concurrent.futures
@@ -10,9 +10,15 @@ import enrichment
 import bench
 import msa
 
+# Outbound TLS verification is ON by default. Secrets ride these calls — the
+# ORCID client secret (token exchange) and the Gemini API key — so accepting any
+# certificate would hand them to any on-path attacker. DICTY_INSECURE_TLS=1 is a
+# temporary escape hatch if a network-level TLS interceptor ever breaks
+# verification; do not leave it set.
 SSL_CTX = ssl.create_default_context()
-SSL_CTX.check_hostname = False
-SSL_CTX.verify_mode = ssl.CERT_NONE
+if os.environ.get("DICTY_INSECURE_TLS") == "1":
+    SSL_CTX.check_hostname = False
+    SSL_CTX.verify_mode = ssl.CERT_NONE
 
 # Opener for the outbound allowlist proxy that does NOT follow redirects: the
 # allowlist is enforced on the original URL only, so a 3xx to an internal address
@@ -187,11 +193,23 @@ _BLOCKED_PREFIXES = ("/uploads/", "/assets/paper_fulltext/")
 
 
 def _is_blocked_path(raw):
-    """True if `raw` (a URL path, no query) must not be web-served."""
-    if raw in _BLOCKED_EXACT or raw.startswith(_BLOCKED_PREFIXES):
+    """True if `raw` (a URL path, no query) must not be web-served.
+
+    The path is percent-decoded AND dot-segment-normalized before the check,
+    because the file is ultimately resolved by translate_path() which does the
+    same. Testing the raw encoded form let `/%75ploads/...` and `/uploads%2f...`
+    slip past this guard and leak curator secrets (curators.json password hashes
+    + TOTP secrets, paper-session tokens). Decode/normalize keeps the guard and
+    the resolver looking at the same string.
+    """
+    p = posixpath.normpath(unquote(raw))
+    if p in _BLOCKED_EXACT or p.startswith(_BLOCKED_PREFIXES):
+        return True
+    # the upload tree and its bare directory (normpath drops the trailing slash)
+    if p == "/uploads" or p.startswith("/uploads/"):
         return True
     # any path segment that is a dotfile (e.g. /.curator_password, /.gemini_key)
-    return any(seg.startswith(".") for seg in raw.split("/") if seg)
+    return any(seg.startswith(".") for seg in p.split("/") if seg)
 
 # Cache-busting: stamp local css/js asset URLs in index.html with their mtime
 # so browsers always re-fetch a file after it changes, but cache it otherwise.
@@ -4190,6 +4208,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
         if self.command != "HEAD":
             self.wfile.write(body)
+
+    # Route HEAD through do_GET, which runs the blocklist and suppresses bodies
+    # for HEAD (the `!= "HEAD"` guards throughout). Without this, the stdlib
+    # base-class do_HEAD serves files via send_head(), bypassing _is_blocked_path.
+    do_HEAD = do_GET
 
     def do_POST(self):
         if self.path == "/api/upload":

@@ -52,6 +52,18 @@ def get_json(path):
         return st, None
 
 
+def head_status(path):
+    """Status of a HEAD request (never raises)."""
+    try:
+        req = urllib.request.Request(BASE + path, method="HEAD")
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return r.status
+    except urllib.error.HTTPError as e:
+        return e.code
+    except Exception:
+        return 0
+
+
 def load_asset(name):
     with open(os.path.join(ROOT, "assets", name)) as fh:
         return json.load(fh)
@@ -119,6 +131,17 @@ def main():
                          ("/sitemap.xml", "/gene/"), ("/robots.txt", "Sitemap")):
         st, body = get(path)
         check(f"GET {path}", st == 200 and needle in body, f"status {st}")
+
+    # Security regression: the curator-state tree must never be web-served, and
+    # must not be reachable via percent-encoding or HEAD (the 2026 bypass). A
+    # served file returns 200; a blocked one returns 404. Assert != 200.
+    for path in ("/uploads/curator_state/curators.json",
+                 "/%75ploads/curator_state/curators.json",
+                 "/uploads%2fcurator_state/curators.json"):
+        st, _ = get(path)
+        check(f"blocked (GET) {path}", st != 200, f"status {st}")
+    check("blocked (HEAD) /uploads/curator_state/",
+          head_status("/uploads/curator_state/curators.json") != 200)
 
     print(f"\n{_passed}/{_passed + _failed} passed"
           + (f" — {_failed} FAILED" if _failed else " — all good"))

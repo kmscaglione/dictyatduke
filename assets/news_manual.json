@@ -3,6 +3,12 @@
   "items": [
     {
       "date": "2026-08-03",
+      "tag": "update",
+      "title": "Improvements from your beta feedback",
+      "body": "Thanks to suggestions from beta testers: the developmental RNA-seq charts now plot time proportionally, so the intervals match the real course (hourly to 12 h, then every 2 h). Gene pages have a new \"Genomic + 1 kb flanks\" download that adds 1000 bp up- and downstream for promoter and terminator regions. The qPCR primer tool now lets you set the product size range. And in the Stock Center you can click a strain or plasmid to see its full details before adding it to the cart."
+    },
+    {
+      "date": "2026-08-03",
       "tag": "data",
       "title": "New genome: Dictyostelium giganteum, now 20 hosted",
       "body": "The newly published Dictyostelium giganteum genome (Sharma et al. 2026, Genome Biology and Evolution) is now hosted here, bringing the site to 20 sequenced dictyostelid genomes. The assembly (NCBI GCA_059609475.1) and its annotation are in the genome browser, BLAST, the comparative species search, and the Downloads page, with gene models, restriction sites, and sequence downloads.",

@@ -3,6 +3,12 @@
   "items": [
     {
       "date": "2026-08-03",
+      "tag": "update",
+      "title": "Improvements from your beta feedback",
+      "body": "Thanks to suggestions from beta testers: the developmental RNA-seq charts now plot time proportionally, so the intervals match the real course (hourly to 12 h, then every 2 h). Gene pages have a new \"Genomic + 1 kb flanks\" download that adds 1000 bp up- and downstream for promoter and terminator regions. The qPCR primer tool now lets you set the product size range. And in the Stock Center you can click a strain or plasmid to see its full details before adding it to the cart."
+    },
+    {
+      "date": "2026-08-03",
       "tag": "data",
       "title": "New genome: Dictyostelium giganteum, now 20 hosted",
       "body": "The newly published Dictyostelium giganteum genome (Sharma et al. 2026, Genome Biology and Evolution) is now hosted here, bringing the site to 20 sequenced dictyostelid genomes. The assembly (NCBI GCA_059609475.1) and its annotation are in the genome browser, BLAST, the comparative species search, and the Downloads page, with gene models, restriction sites, and sequence downloads.",
@@ -76,13 +82,6 @@
       "title": "BLAST alignments, protein search, and the ListServ archive",
       "body": "Several updates are now live. BLAST results now show the full pairwise alignment for every hit. You can see exactly where your query matches, with the query and subject sequences lined up, instead of just a link to a genome location. The BLAST tool also gained a blastp option. It searches a protein query against every D. discoideum AX4 protein, and each hit links straight to its gene page. We also migrated the Dicty ListServ Archive from dictyBase. It holds the questions and answers sent to the dicty mailing list since 1997, organized by topic and fully searchable. Find it under Community. Finally, the literature search on each gene page is more precise. It now searches by the gene name alone, so results stay focused on the gene you are viewing.",
       "link": "/tools/blast"
-    },
-    {
-      "date": "2026-07-21",
-      "tag": "data",
-      "title": "More disease models, more phenotypes, and a downloads archive",
-      "body": "Three data updates are now live. Phenotype search now covers about 1,200 genes, up from around 470. It was rebuilt from dictyBase's complete set of curated mutant phenotypes, so many more genes now turn up when you search by phenotype. The disease-model table is much larger too. It now includes OMIM disease links alongside Orphanet, and human orthologs from two prediction methods, OMA and InParanoid. Each ortholog is tagged with the method that supports it, so a call backed by both reads as higher confidence. Genes with a disease-linked human ortholog rose from about 525 to roughly 1,500. Finally, a new dictyBase Downloads page preserves dictyBase's bulk data files as local copies on this site. Gene information, mutant phenotypes, ontologies, protein data, GO annotations, and literature now download directly from us. Look for dictyBase Downloads in the top menu.",
-      "link": "/downloads"
     }
   ]
 }

@@ -433,3 +433,15 @@ note the live box diverged from it in places, and OPERATIONS.md documents the
 public-host checklist (generic — describes Caddy, not Duke's httpd); and
 [`docs/cdn-setup.md`](docs/cdn-setup.md) for the optional CDN layer (the app
 already emits immutable/edge-cacheable headers).
+
+## License
+
+**Code** — the source code and data-build scripts in this repository are released
+under the [MIT License](LICENSE).
+
+**Data** — the curated content bundled under `assets/` is NOT covered by the MIT
+License. It is redistributed under the terms of its original sources: dictyBase
+legacy curation is CC BY-NC 4.0, and other datasets (NCBI, UniProt, GO, KEGG,
+InterPro, AlphaFold, OMA/InParanoiDB, HPO/OMIM/Orphanet, and the cited genome and
+proteomics publications) carry their own licenses. See the in-app **Data &
+sources** page (`/data`) for the per-dataset provenance, license, and links.

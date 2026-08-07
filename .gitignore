@@ -72,3 +72,6 @@ assets/dictybase_live_curation.json
 
 # Root-free vendored pure-Python deps (pip install --target vendor …)
 /vendor/
+
+# Transcoded screen movies: generated from the Cox archive, never committed
+assets/media/

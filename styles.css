@@ -2685,3 +2685,67 @@ body.cmdk-active { overflow: hidden; }
 
 /* Imported dictyBase legacy gene-product description — badged, distinct from curated/AI layers */
 .legacy-badge { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #7a5c00; background: #fdf3d6; border: 1px solid #f0dfa8; border-radius: 999px; padding: 2px 8px; white-space: nowrap; }
+
+/* --- Sawai/Cox 2007 developmental screen -------------------------------- */
+/* The six-stage "phenotype barcode": one cell per developmental stage, shaded
+   by severity. Small enough to sit in a table row, so a whole screen of
+   strains can be scanned at once, and it doubles as the heatmap cell. */
+.pbar { display: inline-flex; gap: 2px; vertical-align: middle; }
+.pbar i {
+  width: 15px; height: 15px; border-radius: 3px;
+  border: 1px solid rgba(10, 79, 71, .18); display: block;
+}
+.pbar.sm i { width: 11px; height: 11px; border-radius: 2px; }
+.pbar i[data-call="normal"]    { background: #eef4f3; }
+.pbar i[data-call="slight"]    { background: #9ecfc6; }
+.pbar i[data-call="aberrant"]  { background: #3f9b8e; }
+.pbar i[data-call="abolished"] { background: #0a4f47; }
+.pbar i[data-call="none"]      { background: repeating-linear-gradient(45deg,#f6f8f8,#f6f8f8 3px,#e6ecea 3px,#e6ecea 6px); }
+
+.screen-legend { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 10px 0 4px; }
+.screen-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); }
+.screen-legend i { width: 13px; height: 13px; border-radius: 3px; border: 1px solid rgba(10,79,71,.18); }
+
+.screen-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0; }
+.screen-controls select, .screen-controls input {
+  padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--panel); color: var(--ink); font: inherit; font-size: .9rem;
+}
+
+.screen-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.screen-table th {
+  text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--muted); font-weight: 700; padding: 8px 10px;
+  border-bottom: 2px solid var(--line); white-space: nowrap;
+}
+.screen-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.screen-table tbody tr:hover { background: var(--soft); }
+.screen-table .num { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+/* Clustered heatmap: rows in the paper's published cluster order. Dense by
+   design, one row per strain, so the grouping is visible without scrolling. */
+.screen-heat { overflow-x: auto; padding: 4px 0 2px; }
+.screen-heat-rows { display: flex; flex-direction: column; gap: 1px; min-width: 320px; }
+.screen-heat-row { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.screen-heat-row:hover .hlabel { color: var(--teal); }
+.screen-heat-row .hlabel {
+  font-size: .7rem; color: var(--muted); width: 62px; flex: none;
+  font-variant-numeric: tabular-nums;
+}
+.screen-heat-row .hgene { font-size: .7rem; color: var(--muted); font-style: italic; }
+.screen-stagehdr { display: flex; gap: 2px; margin-left: 70px; margin-bottom: 5px; }
+.screen-stagehdr span {
+  width: 11px; font-size: .58rem; color: var(--muted); text-align: center;
+  writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; height: 62px;
+}
+
+/* Order column: expands in place so a strain can be added without leaving the table. */
+.screen-order > summary { cursor: pointer; color: var(--teal); font-size: .85rem; white-space: nowrap; }
+.screen-order[open] > summary { margin-bottom: 6px; }
+.screen-order-list { margin: 0; padding: 0; list-style: none; min-width: 232px; }
+.screen-order-list li {
+  display: flex; align-items: center; gap: 8px;
+  padding: 3px 0; font-size: .8rem; white-space: nowrap;
+}
+.screen-order-list li .muted { font-size: .72rem; }
+.screen-order-list li button { margin-left: auto; }

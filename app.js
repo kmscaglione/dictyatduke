@@ -9035,9 +9035,24 @@ async function loadStrain(sid) {
         : "No associated gene in this dataset.";
     }
     if (!phEl) return;
+    // The screen is keyed by V-strain label, not the DBS id used in the URL.
+    await ensureScreen();
+    const vLabel = (screenData && screenData.strains || []).find((s) => s.dbs_id === sid);
+    const screenBlock = vLabel ? screenStrainBlock(vLabel.v_id) : "";
+    // The screen carries gene links (via its legacy DDB ids) that the strain
+    // record itself lacks. Fall back to those rather than showing "no gene".
+    if (geneEl && !data.gene && vLabel && (vLabel.ddb_g || []).length) {
+      geneEl.innerHTML = "Mutant of " + vLabel.ddb_g.map((g, i) => {
+        const label = (vLabel.gene_names || [])[i] || g;
+        return `<a class="text-link" href="/gene/${encodeURIComponent(g)}">${escapeHtml(label)}</a>`;
+      }).join(", ") + ' <span class="legacy-badge">from screen</span>';
+    }
     const ph = data.phenotypes || [];
-    if (!ph.length) { phEl.innerHTML = `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`; return; }
-    phEl.innerHTML = `
+    if (!ph.length) {
+      phEl.innerHTML = screenBlock || `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`;
+      return;
+    }
+    phEl.innerHTML = screenBlock + `
       <div class="data-block">
         <h3>${ph.length} phenotype${ph.length === 1 ? "" : "s"}</h3>
         <ul class="list">
@@ -9052,6 +9067,474 @@ async function loadStrain(sid) {
   } catch {
     if (phEl) phEl.innerHTML = `<p class="notice">Could not load strain ${escapeHtml(sid)}.</p>`;
   }
+}
+
+// --- Sawai/Cox 2007 high-throughput developmental screen -------------------
+// A time-lapse screen of ~2,257 REMI mutant clones, each scored across six
+// developmental stages (Sawai et al., Genome Biol 2007; PMID 17659086). This is
+// high-throughput screen data, not dictyBase expert curation, and is badged as
+// such everywhere it appears.
+const SCREEN_STAGES = ["growth", "wave", "aggregation", "mound", "slug", "culmination"];
+const SCREEN_STAGE_LABEL = {
+  growth: "Growth", wave: "cAMP waves", aggregation: "Aggregation",
+  mound: "Mound", slug: "Slug", culmination: "Culmination",
+};
+let screenData = null;
+async function ensureScreen() {
+  if (screenData) return screenData;
+  try {
+    const res = await fetch("/assets/sawai2007.json");
+    screenData = res.ok ? await res.json() : { strains: [], cluster_order: [], _meta: {} };
+  } catch { screenData = { strains: [], cluster_order: [], _meta: {} }; }
+  screenData._byV = Object.create(null);
+  screenData._byGene = Object.create(null);
+  for (const s of screenData.strains || []) {
+    screenData._byV[s.v_id] = s;
+    for (const g of s.ddb_g || []) (screenData._byGene[g] || (screenData._byGene[g] = [])).push(s);
+  }
+  return screenData;
+}
+
+// One cell per stage, shaded by severity. `title` carries the readable call so
+// the barcode is not colour-only.
+function screenBarcode(strain, small) {
+  const cells = SCREEN_STAGES.map((st) => {
+    const c = (strain.scores && strain.scores[st]) || {};
+    const call = c.call || "none";
+    return `<i data-call="${escapeHtml(call)}" title="${escapeHtml(SCREEN_STAGE_LABEL[st])}: ${escapeHtml(call)}"></i>`;
+  }).join("");
+  const summary = SCREEN_STAGES
+    .map((st) => `${SCREEN_STAGE_LABEL[st]} ${(strain.scores[st] || {}).call || "not scored"}`)
+    .join(", ");
+  return `<span class="pbar${small ? " sm" : ""}" role="img" aria-label="${escapeHtml(summary)}">${cells}</span>`;
+}
+
+function screenLegend() {
+  return `<div class="screen-legend">
+    ${["normal", "slight", "aberrant", "abolished"].map((c) =>
+      `<span><i data-call="${c}" style="background:${
+        { normal: "#eef4f3", slight: "#9ecfc6", aberrant: "#3f9b8e", abolished: "#0a4f47" }[c]
+      }"></i>${c}</span>`).join("")}
+    <span style="margin-left:auto">Stage order: ${SCREEN_STAGES.map((s) => SCREEN_STAGE_LABEL[s]).join(" → ")}</span>
+  </div>`;
+}
+
+function openScreen(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/screens/sawai-2007");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">High-throughput screen</p>
+          <h2>Developmental phenotype screen (Sawai <em>et al.</em>, 2007)</h2>
+          <p style="color:var(--muted)">Time-lapse imaging of REMI mutant clones through development, scored across six stages.</p>
+        </div>
+      </header>
+      <div class="record-body"><div data-screen-body></div></div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  renderScreen();
+}
+
+async function renderScreen() {
+  const el = document.querySelector("[data-screen-body]");
+  if (!el) return;
+  const d = await ensureScreen();
+  const meta = d._meta || {};
+  const c = meta.counts || {};
+  if (!(d.strains || []).length) {
+    el.innerHTML = `<p class="notice">Screen data are not available in this build.</p>`;
+    return;
+  }
+  el.innerHTML = `
+    <p>${c.strains} mutant clones were filmed through development and scored across six stages.
+    ${c.with_defect} show a defect in at least one stage, and ${c.with_gene_link} are linked to
+    ${c.distinct_genes} genes in this build.
+    <span class="legacy-badge">high-throughput screen</span></p>
+    <p class="muted" style="font-size:.85rem">
+      ${escapeHtml(meta.citation || "")}
+      ${meta.pmid ? ` · <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(meta.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(meta.pmid)}</a>` : ""}
+      · Screen calls are kept separate from dictyBase curated phenotypes.
+    </p>
+    ${screenLegend()}
+    <div class="screen-controls">
+      <input type="search" id="screen-q" placeholder="Strain, gene symbol or DDB_G…" style="min-width:230px">
+      <select id="screen-stage">
+        <option value="">Any stage</option>
+        ${SCREEN_STAGES.map((s) => `<option value="${s}">${SCREEN_STAGE_LABEL[s]}</option>`).join("")}
+      </select>
+      <select id="screen-sev">
+        <option value="defect">Any defect</option>
+        <option value="abolished">Abolished only</option>
+        <option value="aberrant">Aberrant or worse</option>
+        <option value="all">Include wild type</option>
+      </select>
+      <label style="font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:6px">
+        <input type="checkbox" id="screen-genes"> linked to a gene
+      </label>
+      <span id="screen-count" class="muted" style="font-size:.85rem;margin-left:auto"></span>
+      <button type="button" class="button" id="screen-tsv" style="padding:6px 12px;font-size:.85rem">Download table (TSV)</button>
+      <button type="button" class="button" id="screen-cart" style="padding:6px 12px;font-size:.85rem">Add orderable to cart</button>
+    </div>
+    <div class="data-block">
+      <h3>Clustered overview</h3>
+      <p class="muted" style="font-size:.85rem">Rows in the paper's published cluster order, so strains
+      with similar stage profiles sit together. Click a row to open the strain.</p>
+      <div class="screen-heat">
+        <div class="screen-stagehdr">${SCREEN_STAGES.map((s) => `<span>${SCREEN_STAGE_LABEL[s]}</span>`).join("")}</div>
+        <div class="screen-heat-rows" id="screen-heat"></div>
+      </div>
+    </div>
+    <div class="data-block">
+      <h3>Strains</h3>
+      <div style="overflow-x:auto">
+        <table class="screen-table">
+          <thead><tr>
+            <th>Strain</th><th>Profile</th><th>Gene</th><th>Affected stages</th><th class="num">Runs</th><th>Order</th>
+          </tr></thead>
+          <tbody id="screen-rows"></tbody>
+        </table>
+      </div>
+      <p id="screen-more" class="muted" style="font-size:.85rem;margin-top:10px"></p>
+    </div>`;
+
+  document.getElementById("screen-tsv").addEventListener("click", () => {
+    const hits = screenLastHits || [];
+    if (!hits.length) return;
+    basketDownload(screenTsv(hits), "dicty-sawai2007-screen.tsv", "text/tab-separated-values");
+  });
+  document.getElementById("screen-cart").addEventListener("click", (ev) => {
+    const hits = screenLastHits || [];
+    // Already in the cart, plus anything we add during this pass, so a strain
+    // shared by several screened clones is only added once.
+    const seen = new Set(stockCart().map((i) => i.id));
+    const fresh = [];
+    for (const s of hits) {
+      const info = screenOrderInfo(s);
+      const candidates = [];
+      if (info.own && info.ownId) candidates.push({ id: info.ownId, label: s.v_id });
+      for (const a of info.alts) if (a.in_stock) candidates.push({ id: a.id, label: a.label || a.id });
+      for (const c of candidates) {
+        if (seen.has(c.id)) continue;
+        seen.add(c.id);
+        fresh.push(c);
+      }
+    }
+    if (!fresh.length) { ev.target.textContent = "Nothing new to add"; return; }
+    if (!confirm(`Add ${fresh.length} orderable strain${fresh.length === 1 ? "" : "s"} to your request cart?`)) return;
+    stockCartSave(stockCart().concat(fresh.map((a) => ({ type: "strain", id: a.id, label: a.label }))));
+    ev.target.textContent = `✓ Added ${fresh.length}`;
+  });
+
+  const q = document.getElementById("screen-q");
+  const stage = document.getElementById("screen-stage");
+  const sev = document.getElementById("screen-sev");
+  const onlyGenes = document.getElementById("screen-genes");
+  const apply = () => screenApply(d);
+  [q, stage, sev, onlyGenes].forEach((n) => {
+    n.addEventListener("input", apply);
+    n.addEventListener("change", apply);
+  });
+  apply();
+}
+
+function screenMatches(s, opts) {
+  const { term, stage, sev, onlyGenes } = opts;
+  if (onlyGenes && !(s.ddb_g || []).length) return false;
+  if (term) {
+    const hay = [s.v_id, s.dbs_id, ...(s.gene_names || []), ...(s.ddb_g || [])]
+      .join(" ").toLowerCase();
+    if (!hay.includes(term)) return false;
+  }
+  const stages = stage ? [stage] : SCREEN_STAGES;
+  if (sev === "all") return true;
+  return stages.some((st) => {
+    const call = (s.scores[st] || {}).call;
+    if (sev === "abolished") return call === "abolished";
+    if (sev === "aberrant") return call === "aberrant" || call === "abolished";
+    return call && call !== "normal";
+  });
+}
+
+let screenLastHits = null;
+
+function screenOrderCell(s) {
+  const info = screenOrderInfo(s);
+  const avail = info.alts.filter((a) => a.in_stock);
+  const own = info.own && info.ownId;
+  if (!own && !avail.length) return `<span class="muted">—</span>`;
+  // Expand in place rather than linking away: ordering is the point of this
+  // column, and a per-gene stock-center view does not exist to link to.
+  const items = [];
+  if (own) items.push({ id: info.ownId, label: s.v_id, tag: "this clone" });
+  for (const a of avail.slice(0, 12)) items.push({ id: a.id, label: a.label || a.id, tag: a.coll });
+  const more = avail.length - Math.min(avail.length, 12);
+  const summary = own
+    ? `in stock${avail.length ? ` +${avail.length}` : ""}`
+    : `${avail.length} available`;
+  return `<details class="screen-order"><summary>${escapeHtml(summary)}</summary>
+    <ul class="screen-order-list">${items.map((it) =>
+      `<li title="${escapeHtml(it.label)}"><a class="text-link" href="/strain/${encodeURIComponent(it.id)}">${escapeHtml(it.id)}</a>
+         <span class="muted">${escapeHtml(it.tag)}</span>
+         ${screenCartBtn(it.id, it.label)}</li>`).join("")}</ul>
+    ${more > 0 ? `<p class="muted" style="font-size:.75rem;margin:4px 0 0">${more} more in the same gene</p>` : ""}
+  </details>`;
+}
+
+const SCREEN_PAGE = 200;
+function screenApply(d) {
+  const opts = {
+    term: (document.getElementById("screen-q").value || "").trim().toLowerCase(),
+    stage: document.getElementById("screen-stage").value,
+    sev: document.getElementById("screen-sev").value,
+    onlyGenes: document.getElementById("screen-genes").checked,
+  };
+  const hits = (d.strains || []).filter((s) => screenMatches(s, opts));
+  screenLastHits = hits;
+  const hitSet = new Set(hits.map((s) => s.v_id));
+
+  document.getElementById("screen-count").textContent =
+    `${hits.length} of ${d.strains.length} strains`;
+
+  // Heatmap follows the published cluster order, filtered to the current hits.
+  const order = (d.cluster_order || []).filter((v) => hitSet.has(v));
+  const heat = order.length ? order : hits.map((s) => s.v_id);
+  document.getElementById("screen-heat").innerHTML = heat.slice(0, 600).map((v) => {
+    const s = d._byV[v];
+    if (!s) return "";
+    const gene = (s.gene_names || [])[0] || "";
+    return `<div class="screen-heat-row" data-v="${escapeHtml(v)}">
+      <span class="hlabel">${escapeHtml(v)}</span>
+      ${screenBarcode(s, true)}
+      <span class="hgene">${escapeHtml(gene)}</span>
+    </div>`;
+  }).join("");
+  document.querySelectorAll(".screen-heat-row").forEach((row) => {
+    row.addEventListener("click", () => {
+      const s = d._byV[row.getAttribute("data-v")];
+      if (s && s.dbs_id) openStrain(s.dbs_id);
+    });
+  });
+
+  document.getElementById("screen-rows").innerHTML = hits.slice(0, SCREEN_PAGE).map((s) => {
+    const genes = (s.ddb_g || []).map((g, i) =>
+      `<a class="text-link" href="/gene/${encodeURIComponent(g)}">${escapeHtml((s.gene_names || [])[i] || g)}</a>`
+    ).join(", ");
+    const strainLink = s.dbs_id
+      ? `<a class="text-link" href="/strain/${encodeURIComponent(s.dbs_id)}">${escapeHtml(s.v_id)}</a>`
+      : escapeHtml(s.v_id);
+    const aff = (s.affected || []).map((a) => SCREEN_STAGE_LABEL[a]).join(", ") || "none";
+    return `<tr>
+      <td>${strainLink}</td>
+      <td>${screenBarcode(s)}</td>
+      <td>${genes || '<span class="muted">not mapped</span>'}</td>
+      <td class="muted">${escapeHtml(aff)}</td>
+      <td class="num">${s.n_runs || ""}</td>
+      <td>${screenOrderCell(s)}</td>
+    </tr>`;
+  }).join("");
+
+  const more = hits.length - SCREEN_PAGE;
+  document.getElementById("screen-more").textContent =
+    more > 0 ? `Showing the first ${SCREEN_PAGE}. Narrow the filters to see the remaining ${more}.` : "";
+}
+
+// Screen block for a strain record. Returns "" when this strain was not in the
+// screen, so it can be concatenated unconditionally.
+function screenStrainBlock(vId) {
+  const d = screenData;
+  if (!d || !d._byV) return "";
+  const s = d._byV[vId];
+  if (!s) return "";
+  const rows = SCREEN_STAGES.map((st) => {
+    const c = s.scores[st] || {};
+    return `<li><strong>${escapeHtml(SCREEN_STAGE_LABEL[st])}</strong><span>${escapeHtml(c.call || "not scored")}</span></li>`;
+  }).join("");
+  return `
+    <div class="data-block">
+      <h3>Developmental screen <span class="legacy-badge">high-throughput screen</span></h3>
+      <p class="muted" style="font-size:.85rem">
+        ${escapeHtml(s.v_id)} · scored from ${s.n_runs || 0} imaging run${s.n_runs === 1 ? "" : "s"} ·
+        <a class="text-link" href="/screens/sawai-2007">all screen strains</a>
+      </p>
+      <p>${screenBarcode(s)}</p>
+      <ul class="list">${rows}</ul>
+      ${screenRunsBlock(s)}
+      ${screenOrderBlock(s)}
+      <p class="muted" style="font-size:.8rem">Sawai et al., Genome Biol 2007 ·
+        <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/17659086/" target="_blank" rel="noopener">PMID 17659086</a>.
+        Screen calls are separate from dictyBase curated phenotypes.</p>
+    </div>`;
+}
+
+// Imaging runs for a screened strain, from the Cox lab's `robot` table: the
+// movie, the plate/well it came from, and the curators' own notes. Only the
+// 2003 dumps survive, so most strains have none of this.
+function screenMovieSrc(path) {
+  if (!path) return "";
+  const base = path.split("/").pop().replace(/\.mov$/i, "");
+  return `/assets/media/screen/${encodeURIComponent(base)}.mp4`;
+}
+
+function screenRunsBlock(strain) {
+  const runs = strain.runs || [];
+  if (!runs.length) return "";
+  const items = runs.map((r, i) => {
+    const bits = [];
+    if (r.plate_well) bits.push(`plate ${escapeHtml(r.plate_well)}`);
+    if (r.quality) bits.push(`${escapeHtml(r.quality)} image quality`);
+    const notes = Object.entries(r.notes || {})
+      .map(([st, n]) => `<li><strong>${escapeHtml(SCREEN_STAGE_LABEL[st] || st)}</strong><span>${escapeHtml(n)}</span></li>`)
+      .join("");
+    const vids = [["movie", "Development"], ["slug_movie", "Slug"]]
+      .filter(([k]) => r[k])
+      .map(([k, label]) => `
+        <figure style="margin:0">
+          <video controls preload="none" playsinline style="width:100%;max-width:320px;border-radius:8px;background:#000"
+                 src="${escapeHtml(screenMovieSrc(r[k]))}"></video>
+          <figcaption class="muted" style="font-size:.75rem;margin-top:3px">${label} · run ${escapeHtml(r.run)}</figcaption>
+        </figure>`).join("");
+    return `
+      <li style="list-style:none;padding:10px 0;border-top:${i ? "1px solid var(--line,#e5e9ee)" : "0"}">
+        <p style="margin:0 0 6px;font-size:.85rem"><strong>Run ${escapeHtml(r.run)}</strong>
+          ${bits.length ? `<span class="muted"> · ${bits.join(" · ")}</span>` : ""}</p>
+        ${vids ? `<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px">${vids}</div>` : ""}
+        ${notes ? `<ul class="list" style="margin:0">${notes}</ul>` : ""}
+        ${r.final_note ? `<p class="muted" style="font-size:.8rem;margin:6px 0 0">${escapeHtml(r.final_note)}</p>` : ""}
+      </li>`;
+  }).join("");
+  const nNotes = runs.reduce((n, r) => n + Object.keys(r.notes || {}).length, 0);
+  return `
+    <div style="margin-top:14px">
+      <p style="font-size:.85rem;margin:0 0 4px"><strong>Imaging runs</strong>
+        <span class="muted">${runs.length} run${runs.length === 1 ? "" : "s"}${
+          nNotes ? `, with the screen curators' own notes` : ""}</span></p>
+      <ul style="margin:0;padding:0">${items}</ul>
+    </div>`;
+}
+
+// Most screened V-strains were never deposited, so the practical route to a
+// mutant is a different insertion in the same gene. This gathers those from
+// GWDI and the main catalog.
+function screenOrderInfo(strain) {
+  const d = screenData;
+  const idx = (d && d.orderable_by_gene) || {};
+  const alts = [];
+  let nTotal = 0;
+  for (const g of strain.ddb_g || []) {
+    const slot = idx[g];
+    if (!slot) continue;
+    nTotal += (slot.n_gwdi || 0) + (slot.n_dsc || 0);
+    for (const it of slot.gwdi || []) alts.push({ ...it, coll: "GWDI", gene: g });
+    for (const it of slot.dsc || []) alts.push({ ...it, coll: "DSC", gene: g });
+  }
+  return { own: !!strain.in_stock, ownId: strain.dbs_id, alts, nTotal };
+}
+
+function screenCartBtn(id, label) {
+  const inCart = stockCartHas("strain", id);
+  return `<button type="button" class="button${inCart ? "" : " primary"}" data-screen-add
+    data-id="${escapeHtml(id)}" data-label="${escapeHtml(label)}"
+    style="padding:2px 9px;font-size:.78rem">${inCart ? "✓ Added" : "Add"}</button>`;
+}
+
+// Ordering panel shared by the strain record and the gene record.
+function screenOrderBlock(strain) {
+  const info = screenOrderInfo(strain);
+  if (!info.own && !info.alts.length) {
+    return `<p class="muted" style="font-size:.82rem">This strain is not in stock and no
+      insertion in the same gene is currently available.</p>`;
+  }
+  const ownRow = info.own && info.ownId
+    ? `<li><strong>${escapeHtml(strain.v_id)} <span class="stock-badge">this strain</span></strong>
+         <span>${screenCartBtn(info.ownId, strain.v_id)}</span></li>`
+    : "";
+  const shown = info.alts.filter((a) => a.in_stock).slice(0, 8);
+  const altRows = shown.map((a) =>
+    `<li><strong>${escapeHtml(a.label || a.id)} <span class="muted" style="font-weight:400">${a.coll}</span></strong>
+       <span>${screenCartBtn(a.id, a.label || a.id)}</span></li>`).join("");
+  const more = info.nTotal - shown.length - (info.own ? 1 : 0);
+  return `
+    <p style="font-size:.82rem;margin:10px 0 6px"><strong>Order this mutant</strong>${
+      info.own ? "" : ` <span class="muted">— the screened clone itself is not in stock, so these are other insertions in the same gene</span>`}</p>
+    <ul class="list">${ownRow}${altRows}</ul>
+    ${more > 0 ? `<p class="muted" style="font-size:.78rem">${more} more available ·
+      <a class="text-link" href="/stock-center">browse the stock center</a></p>` : ""}`;
+}
+
+// One delegated handler covers cart buttons on the screen page and on the
+// strain/gene blocks, which are rendered outside the stock-center root.
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-screen-add]");
+  if (!btn) return;
+  const id = btn.dataset.id;
+  const exists = stockCartHas("strain", id);
+  const next = exists
+    ? stockCart().filter((i) => !(i.type === "strain" && i.id === id))
+    : stockCart().concat({ type: "strain", id, label: btn.dataset.label });
+  stockCartSave(next);
+  btn.textContent = exists ? "Add" : "✓ Added";
+  btn.classList.toggle("primary", exists);
+});
+
+function screenTsv(hits) {
+  const cols = ["v_strain", "dsc_id", "in_stock", "gene_symbol", "ddb_g",
+    ...SCREEN_STAGES, "affected_stages", "imaging_runs",
+    "orderable_strains", "orderable_ids"];
+  const lines = [cols.join("\t")];
+  for (const s of hits) {
+    const info = screenOrderInfo(s);
+    const ids = info.alts.filter((a) => a.in_stock).map((a) => a.id);
+    lines.push([
+      s.v_id,
+      s.dbs_id || "",
+      s.in_stock ? "yes" : "no",
+      (s.gene_names || []).join(";"),
+      (s.ddb_g || []).join(";"),
+      ...SCREEN_STAGES.map((st) => (s.scores[st] || {}).call || ""),
+      (s.affected || []).join(";"),
+      s.n_runs || "",
+      info.nTotal,
+      ids.join(";"),
+    ].map((v) => String(v).replace(/[\t\n\r]/g, " ")).join("\t"));
+  }
+  return lines.join("\n") + "\n";
+}
+
+// Screen block for a gene record. A gene can have several independent REMI
+// insertions, so this lists every screened strain that maps to it. Returns ""
+// when the gene was not hit in the screen.
+function screenGeneBlock(ddbG) {
+  const d = screenData;
+  if (!d || !d._byGene) return "";
+  const hits = d._byGene[ddbG];
+  if (!hits || !hits.length) return "";
+  const withDefect = hits.filter((s) => (s.affected || []).length);
+  const rows = hits.map((s) => {
+    const link = s.dbs_id
+      ? `<a class="text-link" href="/strain/${encodeURIComponent(s.dbs_id)}">${escapeHtml(s.v_id)}</a>`
+      : escapeHtml(s.v_id);
+    const aff = (s.affected || []).map((a) => SCREEN_STAGE_LABEL[a]).join(", ") || "no defect scored";
+    return `<li><strong>${link} ${screenBarcode(s, true)}</strong><span>${escapeHtml(aff)}</span></li>`;
+  }).join("");
+  const lead = withDefect.length
+    ? `${withDefect.length} of ${hits.length} screened insertion${hits.length === 1 ? "" : "s"} in this gene showed a developmental defect.`
+    : `${hits.length} screened insertion${hits.length === 1 ? "" : "s"} in this gene, none scored as defective.`;
+  return `
+    <details class="pheno-negatives" style="margin-top:16px;border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:8px 12px" open>
+      <summary style="cursor:pointer;font-size:0.875rem;font-weight:600">Developmental screen <span class="legacy-badge">high-throughput screen</span></summary>
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:8px 0 10px">${escapeHtml(lead)}
+        Time-lapse imaging scored six stages per strain (Sawai et al., Genome Biol 2007;
+        <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/17659086/" target="_blank" rel="noopener">PMID 17659086</a>).
+        These are screen calls, not dictyBase curated phenotypes.
+        <a class="text-link" href="/screens/sawai-2007">Browse the screen</a>.</p>
+      ${screenLegend()}
+      <ul class="list">${rows}</ul>
+      ${screenOrderBlock(hits[0])}
+    </details>`;
 }
 
 // --- Data & sources (provenance + freshness) ---
@@ -9871,6 +10354,9 @@ async function loadPhenotypes(gene) {
       ddb ? fetch(`/api/gene-curation?ddb=${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null) : null,
     ]);
     if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
+    await ensureScreen();
+    if (state.activeGene !== gene || state.activeTab !== "Phenotypes") return;
+    const screenBlock = screenGeneBlock(ddb);
     const curatedPh = (curation && curation.curated_phenotypes) || [];
     const rows = curatedPh.concat((data && data[ddb]) || []);
     const curatedSet = new Set(curatedPh.map((r) => r[0] + "|" + (r[2] || "")));
@@ -9901,15 +10387,17 @@ async function loadPhenotypes(gene) {
       container.innerHTML = strainLine + (positives.length ? `
         <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 12px">${positives.length} curated phenotype${positives.length === 1 ? "" : "s"} from dictyBase mutant strains.</p>
         <ul class="list">${positives.map(phLine).join("")}</ul>`
-        : `<p class="notice muted">No abnormal phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`) + negativeBlock;
+        : `<p class="notice muted">No abnormal phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`) + negativeBlock + screenBlock;
       return;
     }
     if (gene.phenotypes && gene.phenotypes.length) {
       container.innerHTML = strainLine + `<ul class="list">${gene.phenotypes.map(([term, detail]) =>
-        `<li><strong>${escapeHtml(term)}</strong><span>${escapeHtml(detail || "")}</span></li>`).join("")}</ul>`;
+        `<li><strong>${escapeHtml(term)}</strong><span>${escapeHtml(detail || "")}</span></li>`).join("")}</ul>` + screenBlock;
       return;
     }
-    container.innerHTML = strainLine + `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`;
+    container.innerHTML = strainLine
+      + (screenBlock ? "" : `<p class="notice muted">No curated phenotypes recorded for ${escapeHtml(gene.symbol)} yet.</p>`)
+      + screenBlock;
   } catch {
     container.innerHTML = `<p class="notice">Phenotypes could not be loaded right now.</p>`;
   }
@@ -12735,6 +13223,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "strain" && pathParts[1]) {
     openStrain(decodeURIComponent(pathParts[1]), false);
+    return;
+  }
+  if (pathParts[0] === "screens" && pathParts[1] === "sawai-2007") {
+    openScreen(false);
     return;
   }
   if (pathParts[0] === "data") {

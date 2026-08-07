@@ -167,7 +167,10 @@ STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", 
                ".json", ".bedgraph",
                ".tbi",   # .tbi: tabix indexes for the bgzipped browser GFF/track files
                # dictyBase Downloads mirror (assets/dictybase-downloads/): data files
-               ".txt", ".zip", ".xls", ".xlsx", ".obo", ".ddb"}
+               ".txt", ".zip", ".xls", ".xlsx", ".obo", ".ddb",
+               # Sawai/Cox screen movies (assets/media/screen/), transcoded to H.264.
+               # Served via the ranged handler so the player can seek.
+               ".mp4"}
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
 # compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are
 # deliberately excluded — IGV.js reads them with byte offsets, so on-the-fly
@@ -3866,6 +3869,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".fna": "text/plain", ".fai": "text/plain", ".gff": "text/plain",
         ".gtf": "text/plain", ".bedgraph": "text/plain",
         ".obo": "text/plain", ".ddb": "text/plain", ".txt": "text/plain",
+        ".mp4": "video/mp4",
     }
 
     def _serve_static_ranged(self):

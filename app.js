@@ -13588,6 +13588,7 @@ const CMDK_TARGETS = [
   { kind: "Learn", label: "Research areas — is Dicty right for my question?", href: "/research-areas", sub: "Fields Dicty excels in, with marker genes & protocols", kw: "research areas fields chemotaxis development autophagy phagocytosis host pathogen cytokinesis cytoskeleton disease models marker genes is dicty right for my question topics" },
   { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },
   { kind: "Learn", label: "Teaching labs", href: "/research/teaching-labs", kw: "teaching lab classroom protocol undergraduate" },
+  { kind: "Data", label: "Developmental phenotype screen", href: "/screens/sawai-2007", kw: "sawai cox screen phenotype movie time-lapse remi mutant developmental stage barcode heatmap" },
   { kind: "Research", label: "Techniques", href: "/research/techniques", kw: "methods techniques transformation imaging" },
   { kind: "Research", label: "Nomenclature guidelines", href: "/research/nomenclature-guidelines", kw: "naming nomenclature gene strain" },
   { kind: "Research", label: "Anatomy ontology", href: "/research/anatomy-ontology", kw: "anatomy ontology structures" },

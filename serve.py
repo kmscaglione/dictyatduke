@@ -4048,9 +4048,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # Inject the data-asset version (max mtime of assets/*.json). app.js
             # appends ?v=<this> to its /assets/*.json fetches so they cache
             # immutably; this index.html is no-cache, so the value is always
-            # current and a data rebuild auto-busts the cached JSONs.
+            # current and a data rebuild auto-busts the cached JSONs. Passed as a
+            # <meta> tag (not an inline <script>, which the strict CSP blocks).
             html = html.replace(
-                "</head>", f'<script>window.__ASSET_V="{_data_version()}";</script></head>', 1)
+                "</head>", f'<meta name="asset-version" content="{_data_version()}"></head>', 1)
 
             # Per-route SEO metadata so crawlers index each gene/tool page
             # distinctly (the body is still client-rendered; this is the head).

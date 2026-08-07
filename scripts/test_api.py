@@ -164,6 +164,11 @@ def main():
     check("header: X-Frame-Options", bool(h.get("x-frame-options")))
     check("header: Strict-Transport-Security", "max-age" in h.get("strict-transport-security", ""))
     check("Server header doesn't leak Python version", "python" not in h.get("server", "").lower())
+    # script-src has no 'unsafe-inline', so the served page must contain NO inline
+    # <script> (regression for the __ASSET_V inline-script CSP fix).
+    _, home = get("/")
+    check("served page has no inline <script> (CSP-safe)", "<script>" not in home)
+    check("asset-version passed via <meta>", 'name="asset-version"' in home)
 
     print(f"\n{_passed}/{_passed + _failed} passed"
           + (f" — {_failed} FAILED" if _failed else " — all good"))

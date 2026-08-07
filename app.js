@@ -13,6 +13,11 @@
 //    8-hour TTL invalidates a token the page still holds; without this the
 //    dashboard looks signed in while every action fails with "Unauthorized".
 //    Done here so all ~40 curator call sites are covered, including future ones.
+// Data-asset version, passed by serve.py as a <meta> tag (not an inline
+// <script>, which the strict CSP blocks). Read once here so the existing
+// window.__ASSET_V consumers below keep working.
+window.__ASSET_V = (document.querySelector('meta[name="asset-version"]') || {}).content || "";
+
 const EXT_PROXY_HOSTS = new Set([
   "eutils.ncbi.nlm.nih.gov", "rest.uniprot.org", "www.ebi.ac.uk",
   "string-db.org", "omabrowser.org", "search.rcsb.org", "data.rcsb.org",

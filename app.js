@@ -9638,6 +9638,69 @@ async function loadNumbers() {
     <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:14px">Counts come straight from <code>/api/data-status</code> and update whenever the data is refreshed.</p>`;
 }
 
+function openGomerPage(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/gomer");
+  if (!toolsShell) return;
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header">
+        <div class="record-title">
+          <p class="eyebrow">Community</p>
+          <h2>Gomer Lab annotations <span class="src-badge src-curated" title="Community-contributed; not yet curator-reviewed">community · unreviewed</span></h2>
+          <p>Structural and functional predictions contributed by the <strong>Gomer Lab</strong> (Richard Gomer, Texas A&amp;M University): per-protein BLAST hits, structure-based functional analogs, InterPro domains, and STRING coexpression. Provisional — not yet curator-reviewed. Click a gene to open its full annotation.</p>
+        </div>
+      </header>
+      <div class="record-body">
+        <div class="form-field" style="margin:0 0 12px">
+          <input type="search" id="gomer-search" placeholder="Filter by gene, annotator, or predicted function…" autocomplete="off" aria-label="Filter Gomer annotations">
+        </div>
+        <div data-gomer-list>${loadingHTML("Loading annotations…")}</div>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+  loadGomerPage();
+}
+
+async function loadGomerPage() {
+  const host = document.querySelector("[data-gomer-list]");
+  if (!host) return;
+  let data;
+  try { data = await ensureGomerAnnotations(); }
+  catch { host.innerHTML = `<p class="notice">Could not load annotations right now.</p>`; return; }
+  const rows = Object.entries(data).filter(([k]) => /^DDB_G\d+$/.test(k)).map(([ddb, rec]) => {
+    const g = geneIndex.find((x) => normalize(x.id) === normalize(ddb) || normalize(x.veupath || "") === normalize(ddb));
+    const symbol = (g && g.symbol && !/^DDB_G\d+$/i.test(g.symbol)) ? g.symbol : ddb;
+    const who = String(rec.annotator || "").replace(/^\(([^()]*)\)$/, "$1").trim();
+    const fn = (rec.analogs && rec.analogs[0]) || (rec.go && rec.go[0]) || (rec.blast && rec.blast[0]) || "";
+    return { ddb, symbol, chr: rec.chromosome, who, fn, hay: `${symbol} ${ddb} ${who} ${fn}`.toLowerCase() };
+  }).sort((a, b) => a.symbol.localeCompare(b.symbol));
+
+  const render = (q) => {
+    const list = q ? rows.filter((r) => r.hay.includes(q.toLowerCase())) : rows;
+    const td = "padding:8px 10px";
+    const body = list.map((r) => `
+      <tr style="border-top:1px solid var(--line,#eef2f3)">
+        <td style="${td}"><a class="text-link" href="/gene/${encodeURIComponent(r.symbol)}">${escapeHtml(r.symbol)}</a></td>
+        <td style="${td};color:var(--muted,#6b7280);white-space:nowrap">Chr ${escapeHtml(String(r.chr ?? "—"))}</td>
+        <td style="${td};color:var(--muted,#6b7280)">${escapeHtml(r.who || "—")}</td>
+        <td style="${td};font-size:0.8125rem">${escapeHtml((r.fn || "").slice(0, 90))}</td>
+      </tr>`).join("");
+    host.innerHTML = `
+      <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 8px">${list.length} of ${rows.length} annotated proteins${q ? " (filtered)" : ""}.</p>
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.875rem">
+        <thead><tr style="text-align:left;color:var(--muted,#6b7280);font-size:0.72rem;text-transform:uppercase;letter-spacing:.05em">
+          <th style="padding:6px 10px">Gene</th><th style="padding:6px 10px">Chr</th><th style="padding:6px 10px">Annotator</th><th style="padding:6px 10px">Top predicted function</th>
+        </tr></thead>
+        <tbody>${body || `<tr><td colspan="4" style="padding:12px;color:var(--muted,#6b7280)">No matches.</td></tr>`}</tbody>
+      </table></div>`;
+  };
+  render("");
+  const search = document.getElementById("gomer-search");
+  if (search) search.addEventListener("input", (e) => render(e.target.value.trim()));
+}
+
 function openCite(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/cite");
@@ -10535,12 +10598,18 @@ async function loadGomerAnnotations(gene) {
   const sub = (title, lines) => (lines && lines.length) ? `
     <h4 style="margin:12px 0 4px;font-size:0.9rem">${title}</h4>
     <ul class="list" style="font-size:0.8125rem">${lines.map((l) => `<li>${escapeHtml(l)}</li>`).join("")}</ul>` : "";
-  const body = sub("Structure-based functional analogs", rec.analogs)
+  const body = sub("GO terms (I-TASSER / InterPro)", rec.go)
+    + sub("Structure-based functional analogs", rec.analogs)
     + sub("BLASTp hits", rec.blast)
     + sub("InterPro domains", rec.interpro)
-    + sub("STRING predicted coexpression", rec.string);
+    + sub("STRING coexpression", rec.string)
+    + sub("I-TASSER 3D models", rec.models)
+    + sub("Predicted secondary structure", rec.secondary)
+    + sub("Ligand binding sites", rec.ligands)
+    + sub("Enzyme predictions", rec.enzymes)
+    + sub("Notes", rec.notes);
   el.innerHTML = `
-    <h3>Gomer Lab annotations <span class="src-badge src-curated" title="Community-contributed; not yet curator-reviewed">community · unreviewed</span></h3>
+    <h3><a class="text-link" href="/gomer" title="See all Gomer Lab annotations">Gomer Lab annotations</a> <span class="src-badge src-curated" title="Community-contributed; not yet curator-reviewed">community · unreviewed</span></h3>
     <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Structural and functional predictions contributed by the <strong>Gomer Lab</strong> (Richard Gomer, Texas A&amp;M University)${who ? `, annotated by <strong>${escapeHtml(who)}</strong>` : ""}. Provisional — <strong>not yet curator-reviewed</strong>.</p>
     ${body || `<p class="notice muted">No annotation content.</p>`}`;
   el.removeAttribute("hidden");
@@ -12682,6 +12751,10 @@ function hydrateFromRoute() {
   }
   if (pathParts[0] === "numbers") {
     openNumbers(false);
+    return;
+  }
+  if (pathParts[0] === "gomer") {
+    openGomerPage(false);
     return;
   }
   if (pathParts[0] === "cite") {

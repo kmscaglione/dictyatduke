@@ -160,9 +160,32 @@ def check_headline():
 
 
 # ---------------------------------------------------------------------------
+def check_gomer():
+    """gomer_annotations.json (optional layer): if present, must be keyed by
+    DDB_G ids and the annotator field must be a name, not a leaked data line."""
+    print("Gomer Lab annotations")
+    path = os.path.join(ASSETS, "gomer_annotations.json")
+    if not os.path.exists(path):
+        return ok("gomer_annotations.json absent (layer not installed) — skipped")
+    try:
+        g = load("gomer_annotations.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load gomer_annotations.json ({e})")
+    prots = {k: v for k, v in g.items() if not str(k).startswith("_")}
+    check(len(prots) > 100, f"annotated proteins {len(prots)} (> 100)")
+    bad = [k for k in prots if not re.match(r"^DDB_G\d+$", k)]
+    check(not bad, "all keys are DDB_G ids" if not bad else f"{len(bad)} non-DDB_G keys")
+    # A leaked data line (a STRING/analog row misread as a header) carries an
+    # e-value or a comma-separated score; a real annotator name/note never does.
+    leaked = [k for k, v in prots.items() if isinstance(v, dict)
+              and re.search(r"e-?\d|,\s*\d+\.\d|\d,\s*\d", str(v.get("annotator", "")))]
+    check(not leaked, "annotator fields are clean" if not leaked
+          else f"{len(leaked)} annotator fields look like leaked data")
+
+
 def main():
     print("=== dictyBase data self-check ===")
-    for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline):
+    for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline, check_gomer):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

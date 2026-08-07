@@ -1657,6 +1657,7 @@ function loadTabData(gene, tab) {
       loadCoexpression(gene);
       loadKeggPathways(gene);
       loadStrains(gene);
+      loadGomerAnnotations(gene);
       initRecordLabTools(gene);
       loadGeneExtras(gene);
       break;
@@ -7870,6 +7871,7 @@ function renderTab(gene, tab) {
           <div data-dicty-curation></div>
         </section>
         <section class="data-block" data-strains hidden></section>
+        <section class="data-block" data-gomer hidden></section>
         ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
         <section class="data-block">
           <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
@@ -10502,6 +10504,43 @@ async function loadCoexpression(gene) {
 // Known mutant strains for this gene, from the dictyBase strain corpus. The data
 // already drives the Phenotypes tab and the /strain/<id> pages; this surfaces it
 // on the Summary view so the mutants are visible without opening a tab.
+// Gomer Lab per-protein annotations (assets/gomer_annotations.json). Community-
+// contributed structural/functional predictions, badged and un-reviewed.
+let gomerData = null;
+async function ensureGomerAnnotations() {
+  if (gomerData) return gomerData;
+  try {
+    const res = await fetch("/assets/gomer_annotations.json");
+    gomerData = res.ok ? await res.json() : {};
+  } catch { gomerData = {}; }
+  return gomerData;
+}
+
+async function loadGomerAnnotations(gene) {
+  const el = document.querySelector("[data-gomer]");
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!/^DDB_G\d+$/.test(ddb)) return;
+  let data;
+  try { data = await ensureGomerAnnotations(); } catch { return; }
+  if (state.activeGene !== gene || state.activeTab !== "Summary") return;   // stale
+  const rec = data[ddb];
+  if (!rec) return;                                                         // stays hidden
+  const who = String(rec.annotator || "").replace(/^\(([^()]*)\)$/, "$1").trim();
+  const sub = (title, lines) => (lines && lines.length) ? `
+    <h4 style="margin:12px 0 4px;font-size:0.9rem">${title}</h4>
+    <ul class="list" style="font-size:0.8125rem">${lines.map((l) => `<li>${escapeHtml(l)}</li>`).join("")}</ul>` : "";
+  const body = sub("Structure-based functional analogs", rec.analogs)
+    + sub("BLASTp hits", rec.blast)
+    + sub("InterPro domains", rec.interpro)
+    + sub("STRING predicted coexpression", rec.string);
+  el.innerHTML = `
+    <h3>Gomer Lab annotations <span class="src-badge src-curated" title="Community-contributed; not yet curator-reviewed">community · unreviewed</span></h3>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Structural and functional predictions contributed by the <strong>Gomer Lab</strong> (Richard Gomer, Texas A&amp;M University)${who ? `, annotated by <strong>${escapeHtml(who)}</strong>` : ""}. Provisional — <strong>not yet curator-reviewed</strong>.</p>
+    ${body || `<p class="notice muted">No annotation content.</p>`}`;
+  el.removeAttribute("hidden");
+}
+
 async function loadStrains(gene) {
   const el = document.querySelector("[data-strains]");
   if (!el) return;

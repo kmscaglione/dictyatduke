@@ -1607,7 +1607,7 @@ function renderRecord() {
           <p class="eyebrow">Gene record</p>
           <h2>${gene.symbol}</h2>
           ${(() => { const s = geneSynonyms(gene); return s.length ? `<p class="gene-synonyms"><span class="gene-synonyms-label">Synonyms</span> ${s.map(escapeHtml).join(", ")}</p>` : ""; })()}
-          <p><strong>${escapeHtml(gene.name)}</strong> · ${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>
+          <p><strong>${escapeHtml(gene.name)}</strong></p>
           <div class="tag-row">
             ${gene.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
             ${gene._curator && !gene._legacySummary ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
@@ -1621,7 +1621,27 @@ function renderRecord() {
         </div>` : ""}
       </header>
 
-      <div class="source-links" aria-label="External links">
+      <div class="annotation-stack" aria-label="Curation and annotations">
+        <div class="data-block anno-official" data-official-curation hidden></div>
+        <details class="data-block anno-tile" data-anno-tile="author" hidden>
+          <summary><span class="anno-tile-title">Author-submitted curation</span> <span class="src-badge src-curated">author</span><span class="anno-count" data-anno-count></span></summary>
+          <div class="anno-tile-body" data-author-curation></div>
+        </details>
+        <details class="data-block anno-tile" data-anno-tile="community" hidden>
+          <summary><span class="anno-tile-title">Community curation</span> <span class="src-badge src-curated">curated here</span><span class="anno-count" data-anno-count></span></summary>
+          <div class="anno-tile-body" data-community-curation></div>
+        </details>
+        <details class="data-block anno-tile" data-anno-tile="gomer" hidden>
+          <summary><span class="anno-tile-title">Gomer Lab annotations</span> <span class="src-badge src-curated">community · unreviewed</span><span class="anno-count" data-anno-count></span></summary>
+          <div class="anno-tile-body" data-gomer></div>
+        </details>
+        <details class="data-block anno-tile" data-anno-tile="ai" hidden>
+          <summary><span class="anno-tile-title">AI annotation</span> <span class="src-badge src-ai">AI</span><span class="anno-count" data-anno-count></span></summary>
+          <div class="anno-tile-body" data-ai-summary></div>
+        </details>
+      </div>
+
+      <div class="source-links two-row" aria-label="External links">
         ${sourceLinks(gene).map(([label, detail, href]) => `
           <a class="source-link" href="${href}" target="_blank" rel="noopener">
             <strong>${label}</strong>
@@ -1648,7 +1668,87 @@ function renderRecord() {
   if (gene.uniprot) {
     requestAnimationFrame(() => initStructureViewer(gene.uniprot));
   }
+  loadAnnotationStack(gene);
   loadTabData(gene, state.activeTab);
+}
+
+// The annotation stack sits above the tabs, so it is populated once when the
+// record is built (and again after corpus enrichment) rather than per-tab.
+// Order matches the curation hierarchy: dictyBase official (expanded) first,
+// then author / community / Gomer / AI as collapsed tiles that only appear if
+// that layer has content for this gene.
+function loadAnnotationStack(gene) {
+  loadOfficialCuration(gene);
+  loadAuthorCuration(gene);
+  loadCommunityCuration(gene);
+  loadGomerAnnotations(gene);
+  loadAISummary(gene);
+}
+
+// Show/hide the collapsible tile that wraps a body mount, and set its count.
+function annoTileSet(bodyEl, hasContent, count) {
+  const tile = bodyEl && bodyEl.closest("[data-anno-tile]");
+  if (!tile) return;
+  if (!hasContent) { tile.setAttribute("hidden", ""); tile.removeAttribute("open"); return; }
+  tile.removeAttribute("hidden");
+  const c = tile.querySelector("[data-anno-count]");
+  if (c) c.textContent = (count != null && count !== "") ? String(count) : "";
+}
+
+// dictyBase official curation: the authoritative GO + phenotype annotations and
+// curation status. Shown expanded (not a collapsed tile) as the primary layer.
+async function loadOfficialCuration(gene) {
+  const el = document.querySelector("[data-official-curation]");
+  if (!el) return;
+  const go = Array.isArray(gene.go) ? gene.go : [];
+  const phen = Array.isArray(gene.phenotypes) ? gene.phenotypes : [];
+  let status = "";
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (/^DDB_G\d+$/.test(ddb)) {
+    try { const x = await fetchGeneExtras(ddb); if (state.activeGene !== gene) return; status = (x && x.curation) || ""; }
+    catch { /* status optional */ }
+  }
+  const curated = gene._curator && !gene._legacySummary;
+  // The prose (curated summary sentences) shows on the page; the structured GO
+  // and phenotype curation is not listed here, just a link that opens its tab.
+  const summaryHtml = gene.summary
+    ? `<p style="margin:0 0 2px">${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>`
+    : "";
+  const linkParts = [];
+  if (go.length) linkParts.push(`<button type="button" class="text-link" data-tab="GO" style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark);font:inherit">${go.length} GO term${go.length === 1 ? "" : "s"}</button>`);
+  if (phen.length) linkParts.push(`<button type="button" class="text-link" data-tab="Phenotypes" style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark);font:inherit">${phen.length} phenotype${phen.length === 1 ? "" : "s"}</button>`);
+  const linkHtml = linkParts.length ? `<p style="font-size:0.8125rem;margin:8px 0 0">→ View ${linkParts.join(" &amp; ")}</p>` : "";
+  if (!(summaryHtml || linkHtml || status || curated)) { el.setAttribute("hidden", ""); el.innerHTML = ""; return; }
+  const meta = [];
+  if (status) meta.push(`<strong>Curation status</strong> · ${escapeHtml(status)}`);
+  if (curated) meta.push(`Curated by ${escapeHtml(gene._curator)}`);
+  const metaHtml = meta.length ? `<div style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">${meta.join("<br>")}</div>` : "";
+  el.removeAttribute("hidden");
+  el.innerHTML = `<h3>dictyBase official curation <span class="src-badge src-dicty">dictyBase</span></h3>
+    ${summaryHtml}${metaHtml}${linkHtml}`;
+}
+
+// Community curation: annotations added here through the curation portal, tagged
+// "curated-here" in the GAF. Usually empty; the tile only appears when present.
+async function loadCommunityCuration(gene) {
+  const el = document.querySelector("[data-community-curation]");
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!/^DDB_G\d+$/.test(ddb)) { annoTileSet(el, false); return; }
+  let rows = [];
+  try {
+    const annot = await fetchGeneAnnot(ddb);
+    if (state.activeGene !== gene) return;
+    rows = goRowsFromAnnot(annot).filter((r) => r[4] === "curated-here");
+  } catch { annoTileSet(el, false); return; }
+  if (!rows.length) { annoTileSet(el, false); el.innerHTML = ""; return; }
+  let names = {};
+  try { names = await resolveGONames([...new Set(rows.map((r) => r[0]))]); if (state.activeGene !== gene) return; } catch { /* fall back to ids */ }
+  const ASP = { F: "Molecular function", P: "Biological process", C: "Cellular component" };
+  el.innerHTML = `
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">Annotations contributed through the dictyBase curation portal.</p>
+    <ul class="list" style="font-size:0.8125rem">${rows.map((r) => `<li><strong>${escapeHtml(names[r[0]] || r[0])}</strong><span>${escapeHtml(ASP[r[1]] || r[1])}${r[3] ? ` · PMID ${escapeHtml(r[3])}` : ""}</span></li>`).join("")}</ul>`;
+  annoTileSet(el, true, rows.length);
 }
 
 // Fire the async data loader(s) for a single record tab.
@@ -1656,13 +1756,10 @@ function loadTabData(gene, tab) {
   switch (tab) {
     case "Summary":
       requestAnimationFrame(() => loadRNAseqInline(gene));
-      loadAuthorCuration(gene);
-      loadAISummary(gene);
       loadGeneModel(gene);
       loadCoexpression(gene);
       loadKeggPathways(gene);
       loadStrains(gene);
-      loadGomerAnnotations(gene);
       initRecordLabTools(gene);
       loadGeneExtras(gene);
       break;
@@ -7835,8 +7932,6 @@ function renderTab(gene, tab) {
     `;
   }
   return `
-    <div data-author-curation></div>
-    <div data-ai-summary></div>
     <section class="data-block" data-gene-model hidden></section>
     <div class="section-grid">
       <div style="display:grid;gap:14px;align-content:start">
@@ -7873,10 +7968,8 @@ function renderTab(gene, tab) {
             <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
             <span data-dicty-transcripts-label hidden>Alt transcripts</span><strong data-dicty-transcripts hidden></strong>
           </div>
-          <div data-dicty-curation></div>
         </section>
         <section class="data-block" data-strains hidden></section>
-        <section class="data-block" data-gomer hidden></section>
         ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
         <section class="data-block">
           <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
@@ -10535,10 +10628,10 @@ async function loadAuthorCuration(gene) {
   if (!/^DDB_G\d+$/.test(ddb)) { el.innerHTML = ""; return; }
   let data;
   try { data = await fetch(`/api/author-curation?ddb=${encodeURIComponent(ddb)}`).then((r) => r.json()); }
-  catch { el.innerHTML = ""; return; }
-  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  catch { annoTileSet(el, false); el.innerHTML = ""; return; }
+  if (state.activeGene !== gene) return;
   const entries = (data && data.entries) || [];
-  if (!entries.length) { el.innerHTML = ""; return; }
+  if (!entries.length) { annoTileSet(el, false); el.innerHTML = ""; return; }
   const esc = escapeHtml;
   const cards = entries.map((e) => {
     const cite = e.pmid
@@ -10561,31 +10654,30 @@ async function loadAuthorCuration(gene) {
         ${line("Interactions", inx)}
       </div>`;   // the author's note is deliberately absent: it is private to the curator
   }).join("");
-  el.className = "data-block";
   el.innerHTML = `
-    <h3>Author-submitted curation
-      <span style="font-size:0.7rem;font-weight:600;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:1px 8px;margin-left:6px;vertical-align:middle">awaiting curator approval</span></h3>
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Curation submitted by the paper's author through dictyBase. It is shown here provisionally and is <strong>not yet part of the curated record</strong> until a curator reviews it.</p>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px"><span style="font-size:0.7rem;font-weight:600;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:1px 8px;margin-right:6px">awaiting curator approval</span>Curation submitted by the paper's author through dictyBase. Shown provisionally and <strong>not yet part of the curated record</strong> until a curator reviews it.</p>
     ${cards}`;
+  annoTileSet(el, true, entries.length);
 }
 
 async function loadAISummary(gene) {
   const el = document.querySelector("[data-ai-summary]");
   if (!el) return;
   try { await ensureAICuration(); } catch { return; }
-  if (state.activeGene !== gene || state.activeTab !== "Summary") return;
+  if (state.activeGene !== gene) return;
   const ai = aiCurationFor(gene);
-  if (!ai || !ai.summary || !getCurationLayers().ai) { el.innerHTML = ""; return; }
+  if (!ai || !ai.summary || !getCurationLayers().ai) { annoTileSet(el, false); el.innerHTML = ""; return; }
   const tier = ai.basis === "family"
     ? `<span class="ai-tier" title="Predicted from the gene's protein family/domain, not gene-specific literature">family-level</span>`
     : ai.basis === "annotation" ? ""
     : `<span class="ai-tier" title="Model-authored from gene-specific knowledge for this well-studied gene">gene-specific</span>`;
   el.innerHTML = `
     <div class="ai-summary">
-      <h3>AI summary <span class="src-badge src-ai">AI</span> ${tier}</h3>
-      <p>${escapeHtml(ai.summary)}</p>
-      <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated summary above is authoritative.</p>
+      ${tier ? `<p style="margin:0 0 6px">${tier}</p>` : ""}
+      <p style="margin:0">${escapeHtml(ai.summary)}</p>
+      <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated annotations above are authoritative.</p>
     </div>`;
+  annoTileSet(el, true, "");
 }
 
 // Genomic neighborhood (synteny): the genes flanking this one on the AX4
@@ -11173,12 +11265,12 @@ async function loadGomerAnnotations(gene) {
   const el = document.querySelector("[data-gomer]");
   if (!el) return;
   const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
-  if (!/^DDB_G\d+$/.test(ddb)) return;
+  if (!/^DDB_G\d+$/.test(ddb)) { annoTileSet(el, false); return; }
   let data;
-  try { data = await ensureGomerAnnotations(); } catch { return; }
-  if (state.activeGene !== gene || state.activeTab !== "Summary") return;   // stale
+  try { data = await ensureGomerAnnotations(); } catch { annoTileSet(el, false); return; }
+  if (state.activeGene !== gene) return;   // stale
   const rec = data[ddb];
-  if (!rec) return;                                                         // stays hidden
+  if (!rec) { annoTileSet(el, false); return; }                            // no Gomer data for this gene
   const who = String(rec.annotator || "").replace(/^\(([^()]*)\)$/, "$1").trim();
   const sub = (title, lines) => (lines && lines.length) ? `
     <h4 style="margin:12px 0 4px;font-size:0.9rem">${title}</h4>
@@ -11193,11 +11285,11 @@ async function loadGomerAnnotations(gene) {
     + sub("Ligand binding sites", rec.ligands)
     + sub("Enzyme predictions", rec.enzymes)
     + sub("Notes", rec.notes);
+  const nSub = ["go", "analogs", "blast", "interpro", "string", "models", "secondary", "ligands", "enzymes", "notes"].filter((k) => (rec[k] || []).length).length;
   el.innerHTML = `
-    <h3><a class="text-link" href="/gomer" title="See all Gomer Lab annotations">Gomer Lab annotations</a> <span class="src-badge src-curated" title="Community-contributed; not yet curator-reviewed">community · unreviewed</span></h3>
-    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Structural and functional predictions contributed by the <strong>Gomer Lab</strong> (Richard Gomer, Texas A&amp;M University)${who ? `, annotated by <strong>${escapeHtml(who)}</strong>` : ""}. Provisional — <strong>not yet curator-reviewed</strong>.</p>
+    <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 4px">Structural and functional predictions contributed by the <strong>Gomer Lab</strong> (Richard Gomer, Texas A&amp;M University)${who ? `, annotated by <strong>${escapeHtml(who)}</strong>` : ""}. Provisional — <strong>not yet curator-reviewed</strong>. <a class="text-link" href="/gomer">See all →</a></p>
     ${body || `<p class="notice muted">No annotation content.</p>`}`;
-  el.removeAttribute("hidden");
+  annoTileSet(el, true, nSub);
 }
 
 async function loadStrains(gene) {

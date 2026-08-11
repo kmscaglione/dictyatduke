@@ -1079,6 +1079,48 @@ button:focus-visible,
   font-size: 12px;
 }
 
+/* Two-row external-link grid (replaces the single wrapping flex row). */
+.source-links.two-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.source-links.two-row .source-link { min-width: 0; flex: none; }
+@media (max-width: 760px) {
+  .source-links.two-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Annotation stack: dictyBase official curation (expanded) plus collapsed tiles
+   for the author / community / Gomer / AI layers, sitting above the tabs. */
+.annotation-stack {
+  display: grid;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #fff;
+}
+/* Collapse the whole band when no layer has content for this gene. */
+.annotation-stack:not(:has(> :not([hidden]))) { display: none; padding: 0; }
+.anno-official { border-left: 3px solid var(--teal-dark); }
+.anno-tile > summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.anno-tile > summary::-webkit-details-marker { display: none; }
+.anno-tile > summary::before {
+  content: "\25B8";
+  color: var(--muted);
+  font-size: 0.8em;
+}
+.anno-tile[open] > summary::before { content: "\25BE"; }
+.anno-tile .anno-count { margin-left: auto; font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+.anno-tile .anno-count:empty { display: none; }
+.anno-tile .anno-tile-body { margin-top: 10px; }
+
 .source-link-spacer {
   min-height: 40px;
   pointer-events: none;
@@ -2081,6 +2123,7 @@ button:focus-visible,
 
   .record-header,
   .source-links,
+  .annotation-stack,
   .research-dropdown,
   .tabs,
   .record-body {

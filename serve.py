@@ -168,6 +168,9 @@ STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", 
                ".tbi",   # .tbi: tabix indexes for the bgzipped browser GFF/track files
                # dictyBase Downloads mirror (assets/dictybase-downloads/): data files
                ".txt", ".zip", ".xls", ".xlsx", ".obo", ".ddb",
+               # Cell-tracking tool (assets/tools/cell-tracking/): the TrackMaxima
+               # Fiji plugin and the macro-enabled Chemotaxis Excel template.
+               ".jar", ".xlsm",
                # Sawai/Cox screen movies (assets/media/screen/), transcoded to H.264.
                # Served via the ranged handler so the player can seek.
                ".mp4"}
@@ -3870,6 +3873,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".gtf": "text/plain", ".bedgraph": "text/plain",
         ".obo": "text/plain", ".ddb": "text/plain", ".txt": "text/plain",
         ".mp4": "video/mp4",
+        ".jar": "application/java-archive",
+        ".xlsm": "application/vnd.ms-excel.sheet.macroEnabled.12",
     }
 
     def _serve_static_ranged(self):
@@ -4207,7 +4212,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             urls = ["/", "/start", "/guide", "/education", "/research-areas", "/data",
                     "/numbers", "/gomer", "/downloads", "/cite", "/news", "/stock-center", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
-                    "/tools/lab", "/tools/sequence", "/tools/convert", "/tools/geneset",
+                    "/tools/lab", "/tools/cell-tracking", "/tools/sequence", "/tools/convert", "/tools/geneset",
                     "/tools/proteomics", "/tools/heatstress", "/tools/basket",
                     "/tools/downloads", "/tools/api", "/tools/genome-browser",
                     "/community/labs", "/community/meetings", "/community/jobs",

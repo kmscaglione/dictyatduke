@@ -10184,6 +10184,103 @@ async function loadGomerPage() {
   if (search) search.addEventListener("input", (e) => render(e.target.value.trim()));
 }
 
+// Cell-tracking tool page: TrackMaxima (Fiji plugin) + the Chemotaxis Excel
+// template, contributed by David Knecht. Fully static content — the two
+// downloads live under /assets/tools/cell-tracking/ (whitelisted in serve.py).
+function openCellTracking(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/tools/cell-tracking");
+  if (!toolsShell) return;
+  const dlBtn = "display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line,#d7dee3);border-radius:8px;background:var(--surface,#fff);font-weight:600;text-decoration:none;color:inherit";
+  toolsShell.innerHTML = `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Research tool</p>
+        <h2>Cell tracking</h2>
+        <p>Two tools that work together to track cell motility and chemotaxis in time-lapse
+        image sequences: <strong>TrackMaxima</strong>, a Fiji/ImageJ plugin that automatically
+        follows cell positions frame by frame, and a <strong>Chemotaxis Excel template</strong>
+        that turns those positions into speed, directionality, and spider (rose) plots.</p>
+        <p style="font-size:0.875rem;color:var(--muted,#6b7280)">Developed by Dr. Douwe Veltman in
+        <a class="text-link" href="https://www.crm.ed.ac.uk/research/group/insall-lab" target="_blank" rel="noopener">Robert Insall</a>'s
+        lab at the Beatson Institute, Glasgow, and shared with the Dictyostelium community by
+        <strong>Dr. David Knecht</strong> (Emeritus Professor, University of Connecticut) with Prof. Insall's permission.</p>
+      </div></header>
+      <div class="record-body">
+
+        <div class="data-block">
+          <h3>Downloads</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 6px">
+            <a style="${dlBtn}" href="/assets/tools/cell-tracking/TrackMaxima_IJ2.jar" download>
+              &#8681; TrackMaxima plugin <span style="font-weight:400;color:var(--muted,#6b7280)">· .jar · 113&nbsp;KB</span></a>
+            <a style="${dlBtn}" href="/assets/tools/cell-tracking/Chemotaxis_template_v16.xlsm" download>
+              &#8681; Chemotaxis template v16 <span style="font-weight:400;color:var(--muted,#6b7280)">· .xlsm · 251&nbsp;KB</span></a>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:6px 0 0">
+            The template is a macro-enabled workbook — choose <em>Enable Macros</em> when Excel prompts.</p>
+        </div>
+
+        <div class="data-block">
+          <h3>What it does</h3>
+          <p>TrackMaxima detects cell centroids in each frame and links them into tracks. It is
+          highly configurable and works well on phase-contrast images (and other image types).
+          You then paste the track table into the Chemotaxis template, whose macros split the data
+          by cell, compute speed and directionality, and draw the plots. The two tools also accept
+          tracks from the <em>mTrackJ</em> ImageJ plugin.</p>
+          <p style="font-size:0.875rem"><strong>You will need:</strong> Fiji/ImageJ, and Excel with macros enabled.</p>
+        </div>
+
+        <div class="data-block">
+          <h3>Install the plugin</h3>
+          <ol class="steps">
+            <li>Download <code>TrackMaxima_IJ2.jar</code> above.</li>
+            <li>Locate your Fiji <code>plugins</code> folder. On macOS, control-click Fiji &rarr; <em>Show Package Contents</em>, then open the <code>plugins</code> folder.</li>
+            <li>Move <code>TrackMaxima_IJ2.jar</code> into that <code>plugins</code> folder and start (or restart) Fiji.</li>
+          </ol>
+        </div>
+
+        <div class="data-block">
+          <h3>Track cells in Fiji</h3>
+          <ol class="steps">
+            <li>Open your image sequence (<em>File &rarr; Import &rarr; Image Sequence</em>, or <em>Open</em>).</li>
+            <li>Check <em>Image &rarr; Properties</em> and confirm the frame interval and pixel size are correct. <strong>Use whole units</strong> (e.g. 30 seconds, not 0.5 minutes) — fractional time is the most common cause of errors later.</li>
+            <li>Run <em>Plugins &rarr; Beatson &rarr; Track Maxima</em>. Cross-hairs mark what TrackMaxima thinks are cell centroids.</li>
+            <li>Adjust the settings to optimize detection. Tags update when you change a value and then click into another field. Improving contrast first (<em>Image &rarr; Adjust &rarr; Brightness/Contrast</em>) helps. Use the min/max speed and minimum-frames settings to screen out junk.</li>
+            <li>Click <strong>Track</strong>. When it finishes, use the <em>Overlay</em> tab to review the tracks. Tracks are written onto the image, so to redo, close the file, reopen the data, and try again.</li>
+            <li>When satisfied, click <strong>Display Full Track Table</strong>, select all (&#8984;A on Mac), and copy the full results table (not the summary).</li>
+          </ol>
+          <p style="font-size:0.8125rem;color:var(--muted,#6b7280)">Close and reopen the plugin between stacks. Knecht's typical phase-contrast settings: Light objects · Threshold 14 · Blur 5 · Median Subtraction on · Max missing frames 1 · Max speed 30 · Min speed 0.5 · Min frames 10.</p>
+        </div>
+
+        <div class="data-block">
+          <h3>Quantify and plot in Excel</h3>
+          <ol class="steps">
+            <li>Open a new workbook from the template (<em>File &rarr; New from Template &rarr; Chemotaxis template v16</em>, enabling macros). Cell <code>A4</code> should be selected.</li>
+            <li>Paste the results. The column headers should land in row 4 with the data below. If headers are missing, in Fiji set <em>Edit &rarr; Options &rarr; Input/Output &rarr; Copy Column Headers</em> and re-copy.</li>
+            <li>Click <strong>Extract the Units</strong> — it reads the frame interval and micron calibration from your pasted data.</li>
+            <li>Go to the <strong>Timecourse</strong> tab and click <strong>Calculate this Sheet</strong>. It sorts the data by cell, computes speeds, and builds a summary of average speed. It also computes <strong>cos&nbsp;&theta;</strong>, a chemotactic index.</li>
+            <li>Go to the <strong>Spider Plots</strong> tab and click <strong>Calculate this sheet</strong> to draw the rose/spider plots.</li>
+          </ol>
+          <p style="font-size:0.8125rem;color:var(--muted,#6b7280)"><strong>cos&nbsp;&theta;</strong> measures how directional the movement is. Track with cells moving to the <em>right</em> (rotate the image first if needed): rightward = angle 0 = cos&nbsp;&theta; of 1; against the gradient = &minus;1; orthogonal = 0. If a macro reports that something went wrong, the usual culprit is fractional time units — retrack with whole-unit Properties.</p>
+        </div>
+
+        <div class="data-block">
+          <h3>Questions</h3>
+          <p>Dr. David Knecht (Emeritus Professor, University of Connecticut) is the most experienced
+          user of these tools and has offered to answer questions from the community. Reach him at
+          <a class="text-link" href="mailto:david.knecht@uconn.edu">david.knecht@uconn.edu</a>.</p>
+        </div>
+
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);border-top:1px solid var(--line,#eef2f3);padding-top:12px">
+          Tools developed by Dr. Douwe Veltman (Insall lab, Beatson Institute, Glasgow), posted with
+          Prof. Robert Insall's permission and contributed by Dr. David Knecht (University of Connecticut).
+          Please credit them accordingly in publications.</p>
+      </div>
+    </article>`;
+  toolsShell.removeAttribute("hidden");
+  scrollToY(toolsShell.offsetTop - 60);
+}
+
 function openCite(updateRoute = true) {
   hideContentSections();
   if (updateRoute) history.pushState(null, "", "/cite");
@@ -13249,6 +13346,10 @@ function hydrateFromRoute() {
     openGomerPage(false);
     return;
   }
+  if (pathParts[0] === "tools" && pathParts[1] === "cell-tracking") {
+    openCellTracking(false);
+    return;
+  }
   if (pathParts[0] === "cite") {
     openCite(false);
     return;
@@ -13432,6 +13533,7 @@ const TOOLS_INDEX = [
   ]],
   ["Bench & workspace", [
     ["Lab tools", "/tools/lab", "CRISPR guides, qPCR primers, codon optimizer, restriction sites, ORFs."],
+    ["Cell tracking", "/tools/cell-tracking", "TrackMaxima Fiji plugin + chemotaxis Excel template for motility analysis."],
     ["Gene basket", "/tools/basket", "Collect genes and send the whole set to any tool."],
   ]],
   ["Developers", [

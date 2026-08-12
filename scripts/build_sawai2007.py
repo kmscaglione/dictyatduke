@@ -342,7 +342,24 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true",
                     help="exit non-zero if any validation check reports a problem")
+    ap.add_argument("--have", metavar="DIR",
+                    help="only reference movies whose file (.mov or .mp4) exists somewhere "
+                         "under DIR; blank the rest. Keeps the data in step with the movies "
+                         "actually available, so no gene page shows a player that 404s. The "
+                         "robot table names every movie the screen made, but the archive on "
+                         "hand may hold only a subset.")
     args = ap.parse_args()
+
+    have = None
+    if args.have:
+        d0 = os.path.expanduser(args.have)
+        have = set()
+        for root, _dirs, files in os.walk(d0):
+            for f in files:
+                if f.lower().endswith((".mov", ".mp4")):
+                    have.add(os.path.splitext(f)[0])
+        if not have:
+            sys.exit(f"--have {d0}: found no .mov/.mp4 files there")
 
     strains = read_scores()
     # The complete CSV export supersedes the partial August-2003 SQL dumps; where
@@ -391,6 +408,11 @@ def main():
         s["dbs_id"] = by_label.get(s["v_id"])
         s["in_stock"] = stock_flag.get(s["v_id"], False)
         s["runs"] = runs.get(s["v_id"], [])
+        if have is not None:
+            for r in s["runs"]:
+                for k in ("movie", "slug_movie"):
+                    if r.get(k) and os.path.splitext(os.path.basename(r[k]))[0] not in have:
+                        r[k] = ""
         s["affected"] = sorted(
             st for st in STAGES
             if s["scores"][st]["score"] is not None and s["scores"][st]["score"] < 2.0
@@ -444,11 +466,13 @@ def main():
                 "runs_with_movie": sum(1 for s in strains for r in s["runs"] if r["movie"]),
             },
             "movies": {
-                "status": "complete",
+                "status": "mapping-complete",
                 "note": ("Imaging run to strain mapping comes from the Cox lab's `robot` "
-                         "table, exported in full and provided by Satoshi Sawai (2026). "
-                         "It covers all 77 imaging dates, so nearly every screened strain "
-                         "with a movie is now linked to its run, movie, and wave image."),
+                         "table, exported in full and provided by Satoshi Sawai (2026), "
+                         "covering all 77 imaging dates. Movie references are limited to the "
+                         "files currently in hand (built with --have), so no page links a "
+                         "clip that is not served; dates still to be recovered from the "
+                         "archive are simply left without a movie until then."),
             },
         },
         "strains": strains,

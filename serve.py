@@ -3360,6 +3360,12 @@ def paper_session_submit(token, payload):
                     row["unsure"] = True
                 if it.get("edited"):            # author changed what we drafted
                     row["edited"] = True
+                # Where in the paper the author says this is shown. Required by
+                # the form for anything confirmed but not flagged "not sure",
+                # because pointing at a figure is the one thing a rubber stamp
+                # cannot do: it is the evidence that the entry was really read.
+                if it.get("figure"):
+                    row["figure"] = str(it["figure"])[:80]
                 out.append(row)
         return out
 

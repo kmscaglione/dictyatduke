@@ -3099,7 +3099,7 @@ function paperDraftCard(d) {
         const meta = DEC[(x.decision || {}).state];
         const bg = meta ? meta.bg : (x.unsure ? "#fffbeb" : "");
         return `<div style="margin:2px 0;padding:2px 4px;border-radius:4px${bg ? `;background:${bg}` : ""}">
-          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}${x.edited ? `<strong style="color:#1d4ed8;font-size:11px">✎ author changed this</strong> ` : ""}<span>${esc(fmt(x))}</span>${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
+          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}${x.edited ? `<strong style="color:#1d4ed8;font-size:11px">✎ author changed this</strong> ` : ""}<span>${esc(fmt(x))}</span>${x.figure ? `<strong style="color:#047857;font-size:11px;margin-left:5px" title="Where the author says the paper shows this">📄 ${esc(x.figure)}</strong>` : ""}${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
       }).join("")}</div>`
     : "";
   // An author GO entry that carries a real GO id can go straight into the
@@ -13160,8 +13160,17 @@ function renderPaperSessionForm(el, token, s) {
   const orig = (vals) => ` data-orig="${esc(JSON.stringify(vals.map((v) => String(v == null ? "" : v))))}"`;
   const unsure = (x, marginTop = "") => `<label data-tip="Tick this if you are not certain. The entry is held back from the gene page and a curator reviews it with you. Please use it freely: an unchecked or flagged entry costs nothing, a wrong one that goes public costs a lot." style="display:flex;gap:4px;align-items:center;font-size:11.5px;color:#92400e;white-space:nowrap;cursor:help${marginTop}">
         <input type="checkbox" class="unsure"${x.unsure ? " checked" : ""}> not sure</label>`;
-  const keep = (x, extra = "", marginTop = "") => `<label data-tip="Leave this ticked to confirm the entry. Untick it to drop it entirely." style="display:flex;gap:4px;align-items:center;font-size:11.5px;color:#047857;white-space:nowrap;cursor:help${marginTop}">
-        <input type="checkbox" class="keep"${(x.decision || {}).state === "rejected" ? "" : " checked"}${extra}> confirm</label>`;
+  // Nothing arrives pre-confirmed. A draft we wrote automatically starts unticked,
+  // so confirming is something the author does rather than something that happens
+  // when they do not read. Only their own earlier submission comes back ticked,
+  // because they ticked it.
+  const preTicked = !!s.showing_your_submission;
+  const keep = (x, extra = "", marginTop = "") => `<label data-tip="Tick this to confirm the entry belongs. Leave it unticked and it is dropped." style="display:flex;gap:4px;align-items:center;font-size:11.5px;color:#047857;white-space:nowrap;cursor:help${marginTop}">
+        <input type="checkbox" class="keep"${preTicked && (x.decision || {}).state !== "rejected" ? " checked" : ""}${extra}> confirm</label>`;
+  // Where the paper shows it. Required for anything confirmed without a "not sure"
+  // flag: naming a figure is the one part of this form that cannot be answered
+  // without having looked, and it is useful curation evidence in its own right.
+  const fig = (x, marginTop = "") => `<input class="fig" value="${esc(x.figure || "")}" placeholder="Fig?" aria-label="Figure or table showing this" data-tip="Where in the paper is this shown? A figure, table or panel, for example 'Fig 3B' or 'Table 1'. Needed for anything you confirm, unless you tick 'not sure'." style="${FIELD};width:62px;font-size:12px;cursor:help${marginTop}">`;
   const rowTint = (x) => {
     const st = (x.decision || {}).state;
     return st === "clarify" ? ";background:#fffdf5" : st === "rejected" ? ";opacity:.72" : "";
@@ -13170,6 +13179,7 @@ function renderPaperSessionForm(el, token, s) {
       ${keep(x, "", ";margin-top:11px")}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
       <textarea class="ss" rows="2" data-tip-value placeholder="what this paper shows the gene does" style="${FIELD};flex:1;min-width:230px;resize:vertical;line-height:1.5">${esc(x.sentence || "")}</textarea>
+      ${fig(x, ";margin-top:11px")}
       ${unsure(x, ";margin-top:11px")}
       ${decNote(x)}</div>`).join("");
   // The term box is an autocomplete over the real Gene Ontology. Picking a term
@@ -13178,12 +13188,13 @@ function renderPaperSessionForm(el, token, s) {
   const goRows = (s.go || []).map((x, i) => `<div class="ps-go" data-go-id="${esc(x.go_id || "")}"${orig([x.gene, x.term, x.aspect, x.go_id])} style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
       ${keep(x)}
       <input class="g" value="${esc(x.gene || "")}" placeholder="gene" style="${FIELD};width:90px">
-      <span style="position:relative;flex:1;min-width:200px">
+      <span style="position:relative;flex:1;min-width:148px">
         <input class="t" value="${esc(x.term || "")}" data-tip-value autocomplete="off" role="combobox" aria-expanded="false" aria-controls="go-ac-${i}" placeholder="start typing, e.g. phagocytosis" style="${FIELD};width:100%">
         <div class="go-ac" id="go-ac-${i}" hidden style="position:absolute;z-index:60;left:0;right:0;top:100%;background:#fff;border:1px solid var(--line,#d7dee0);border-radius:8px;box-shadow:0 8px 20px rgba(15,23,42,.16);max-height:230px;overflow:auto"></div>
       </span>
       <span class="go-id" style="font-size:11.5px;min-width:150px">${goIdCell(x.go_id)}</span>
       <select class="a" style="${FIELD}" aria-label="GO aspect">${aspOpt(x.aspect)}</select>
+      ${fig(x)}
       ${unsure(x)}
       ${decNote(x)}</div>`).join("");
   // Phenotype sentences are long. A single-line input showed roughly half of one,
@@ -13194,6 +13205,7 @@ function renderPaperSessionForm(el, token, s) {
       <textarea class="p" rows="2" data-tip-value placeholder="phenotype" style="${FIELD};flex:1;min-width:200px;resize:vertical;line-height:1.5">${esc(x.phenotype || "")}</textarea>
       <label data-tip="Tick this if the paper tested it and found NO change. Negative results are worth recording, so nobody repeats the experiment, but they are listed separately from the mutant's actual phenotypes." style="display:flex;gap:4px;align-items:center;margin-top:11px;font-size:11.5px;color:#6b7280;white-space:nowrap;cursor:help">
         <input type="checkbox" class="neg"${x.negative ? " checked" : ""}> no change</label>
+      ${fig(x, ";margin-top:11px")}
       ${unsure(x, ";margin-top:11px")}
       ${decNote(x)}</div>`).join("");
   const inRows = (s.interactions || []).map((x) => `<div class="ps-in"${orig([x.gene_a, x.gene_b, x.type])} style="display:flex;gap:6px;align-items:center;margin:4px 0;flex-wrap:wrap${rowTint(x)}">
@@ -13201,6 +13213,7 @@ function renderPaperSessionForm(el, token, s) {
       <input class="a1" value="${esc(x.gene_a || "")}" placeholder="gene A" style="${FIELD};width:100px">
       <input class="a2" value="${esc(x.gene_b || "")}" placeholder="gene B" style="${FIELD};width:100px">
       <select class="ty" style="${FIELD}" aria-label="type">${typeOpt(x.type)}</select>
+      ${fig(x)}
       ${unsure(x)}
       ${decNote(x)}</div>`).join("");
   const help = (t) => `<span class="ps-help" tabindex="0" role="note" aria-label="${esc(t)}" data-tip="${esc(t)}" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#e2e8f0;color:#475569;font-size:11px;font-weight:700;margin-left:6px;cursor:help;vertical-align:middle">?</span>`;
@@ -13236,7 +13249,8 @@ function renderPaperSessionForm(el, token, s) {
               : s.drafted_from === "full_text"
                 ? "Below are annotations we drafted automatically by reading the <strong>full text of your paper</strong>, so some may be wrong or incomplete."
                 : "Below are annotations we drafted automatically from your <strong>abstract only</strong>, since we could not obtain the full text, so they are likely to be incomplete."}</li>
-        <li><strong>Edit</strong> anything inaccurate and <strong>uncheck</strong> the box next to anything that does not belong.</li>
+        <li><strong>Nothing is ticked to begin with.</strong> Tick <strong>confirm</strong> only on the entries you have checked and agree with, and edit anything inaccurate. Whatever you leave unticked is simply dropped.</li>
+        <li>For each entry you confirm, say <strong>where the paper shows it</strong> in the small box, for example <em>Fig 3B</em>. If you would rather not, tick <strong>not sure</strong> and a curator will take it from there.</li>
         <li>Add anything important we missed in the <em>Notes</em> box at the bottom.</li>
         <li>Click <strong>Submit for review</strong>. Your version goes onto the gene page marked as provisional, and a curator checks it before it becomes part of the curated record.</li>
       </ol>
@@ -13244,7 +13258,7 @@ function renderPaperSessionForm(el, token, s) {
     </div>
     <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:14px 16px;margin:0 0 14px">
       <p style="font-size:17px;line-height:1.45;font-weight:600;margin:0 0 6px;color:#92400e">If you are not sure about something, please do not confirm it.</p>
-      <p style="font-size:14px;line-height:1.55;margin:0;color:#78350f">Uncheck it, or tick <strong>not sure</strong> next to it, and a curator will look at it with you. Anything you mark that way is held back from the gene page until then. We would far rather follow up on a few entries than publish something that is wrong, and you are not expected to know the Gene Ontology.</p>
+      <p style="font-size:14px;line-height:1.55;margin:0;color:#78350f">Leave it unticked, or tick it along with <strong>not sure</strong>, and a curator will look at it with you. Anything you mark that way is held back from the gene page until then. We would far rather follow up on a few entries than publish something that is wrong, and you are not expected to know the Gene Ontology.</p>
     </div>
     ${s.awaiting_author
       ? `<p class="notice" style="background:#fffbeb;border:1px solid #fde68a;color:#92400e"><strong>A curator has a question for you.</strong> Look for the highlighted entries below, edit them to answer, then submit again.</p>`
@@ -13254,7 +13268,7 @@ function renderPaperSessionForm(el, token, s) {
     ${s.summary ? `<p style="font-size:13px;font-style:italic;color:var(--muted,#6b7280)">${esc(s.summary)}</p>` : ""}
     ${genes ? `<p style="font-size:13px"><strong>Genes detected:</strong> ${genes}</p>` : ""}
     ${section("What each gene does — from this paper", gsRows, "One sentence per gene. Edit freely; a curator may add it to the gene's dictyBase summary.", "A plain-language sentence describing what your paper shows this gene does, or what its mutant reveals. This is the kind of description shown at the top of a gene's page.")}
-    ${section("Gene Ontology", goRows, "Each row should be an official Gene Ontology term. <strong>Click a term box and start typing to search the ontology</strong>; choosing a term fills in its GO id and its category for you. Rows still showing our own wording are marked, and you can leave those for a curator. Uncheck anything that does not belong.", "Gene Ontology terms describe a gene in three ways: its molecular Function (what the protein does, for example actin filament binding), the biological Process it takes part in (for example phagocytosis), or the cellular Component where it acts (for example cell cortex). Only a real GO term can be contributed to the Gene Ontology Consortium, which is why the box searches the ontology. A mutant's observable traits are not GO terms; those belong in Phenotypes.")}
+    ${section("Gene Ontology", goRows, "Each row should be an official Gene Ontology term. <strong>Click a term box and start typing to search the ontology</strong>; choosing a term fills in its GO id and its category for you. Rows still showing our own wording are marked, and you can leave those for a curator. Tick <strong>confirm</strong> only on the rows you agree with; anything left unticked is dropped.", "Gene Ontology terms describe a gene in three ways: its molecular Function (what the protein does, for example actin filament binding), the biological Process it takes part in (for example phagocytosis), or the cellular Component where it acts (for example cell cortex). Only a real GO term can be contributed to the Gene Ontology Consortium, which is why the box searches the ontology. A mutant's observable traits are not GO terms; those belong in Phenotypes.")}
     ${section("Phenotypes", phRows, "Observable traits of a mutant of this gene.", "What a mutant of this gene looks like or does differently, for example 'reduced growth', 'aggregation defect', or 'no fruiting bodies'.")}
     ${section("Interactions", inRows, "Physical or genetic interactions between two genes.", "Two genes or proteins that either physically bind each other (physical) or interact genetically, such as a double-mutant effect (genetic).")}
     ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated from the abstract. Please add the key findings for your paper in the notes below.</p>`}
@@ -13296,14 +13310,30 @@ function renderPaperSessionForm(el, token, s) {
   }
   const submitBtn = document.getElementById("ps-submit");
   submitBtn.addEventListener("click", async () => {
+    const msg0 = document.getElementById("ps-msg");
+    // Confirming an entry means saying where the paper shows it. "Not sure" is
+    // always an escape hatch, so nobody is forced to invent a figure number.
+    const noFigure = [...el.querySelectorAll(".ps-gs,.ps-go,.ps-ph,.ps-in")].filter((r) =>
+      r.querySelector(".keep").checked && !r.querySelector(".unsure").checked
+      && !r.querySelector(".fig").value.trim());
+    if (noFigure.length) {
+      const first = noFigure[0];
+      first.querySelector(".fig").focus();
+      first.scrollIntoView({ block: "center", behavior: "smooth" });
+      noFigure.forEach((r) => { r.querySelector(".fig").style.borderColor = "#dc2626"; });
+      msg0.textContent = `${noFigure.length} confirmed ${noFigure.length === 1 ? "entry needs" : "entries need"} a figure or table — or tick “not sure” instead.`;
+      msg0.style.color = "#b91c1c";
+      return;
+    }
     const collect = (sel, map) => [...el.querySelectorAll(sel)].filter((r) => r.querySelector(".keep").checked).map(map);
+    const figOf = (r) => r.querySelector(".fig").value.trim();
     const changed = (row, vals) =>
       JSON.stringify(vals.map((v) => String(v == null ? "" : v))) !== (row.dataset.orig || "");
     const curation = {
-      gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".ss").value]) })),
-      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value, go_id: r.dataset.goId || "", unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".t").value, r.querySelector(".a").value, r.dataset.goId || ""]) })),
-      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".p").value, r.querySelector(".neg").checked]) })),
-      interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value, unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".a1").value, r.querySelector(".a2").value, r.querySelector(".ty").value]) })),
+      gene_summaries: collect(".ps-gs", (r) => ({ gene: r.querySelector(".g").value, sentence: r.querySelector(".ss").value, figure: figOf(r), unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".ss").value]) })),
+      go: collect(".ps-go", (r) => ({ gene: r.querySelector(".g").value, term: r.querySelector(".t").value, aspect: r.querySelector(".a").value, go_id: r.dataset.goId || "", figure: figOf(r), unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".t").value, r.querySelector(".a").value, r.dataset.goId || ""]) })),
+      phenotypes: collect(".ps-ph", (r) => ({ gene: r.querySelector(".g").value, phenotype: r.querySelector(".p").value, negative: r.querySelector(".neg").checked, figure: figOf(r), unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".g").value, r.querySelector(".p").value, r.querySelector(".neg").checked]) })),
+      interactions: collect(".ps-in", (r) => ({ gene_a: r.querySelector(".a1").value, gene_b: r.querySelector(".a2").value, type: r.querySelector(".ty").value, figure: figOf(r), unsure: r.querySelector(".unsure").checked, edited: changed(r, [r.querySelector(".a1").value, r.querySelector(".a2").value, r.querySelector(".ty").value]) })),
     };
     const note = (document.getElementById("ps-note").value || "").trim();
     const submitter = (document.getElementById("ps-name").value || "").trim();

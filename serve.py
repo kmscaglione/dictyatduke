@@ -4797,7 +4797,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             columns = payload.get("columns")
             if columns is not None and not isinstance(columns, list):
                 columns = None
-            self.send_json(200, enrichment.annotate_genes(genes, columns))
+            self.send_json(200, enrichment.annotate_genes(
+                genes, columns, include_predicted=bool(payload.get("include_predicted")),
+                gomer_min=enrichment.clamp_gomer_min(payload.get("gomer_min"))))
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})
         except Exception as e:
@@ -4828,7 +4830,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 result = enrichment.enrich_kegg(genes, min_study=min_study)
             else:
                 background = "genome" if payload.get("background") == "genome" else "annotated"
-                result = enrichment.enrich(genes, background=background, min_study=min_study)
+                result = enrichment.enrich(genes, background=background, min_study=min_study,
+                                           include_predicted=bool(payload.get("include_predicted")),
+                                           gomer_min=enrichment.clamp_gomer_min(payload.get("gomer_min")))
             self.send_json(200, result)
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})

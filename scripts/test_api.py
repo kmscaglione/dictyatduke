@@ -13,6 +13,7 @@ class of bug the accuracy audit found).
 Start serve.py first. Exit 0 = all passed, 1 = at least one failed. Stdlib only.
 """
 import json
+import re
 import os
 import sys
 import urllib.request
@@ -143,6 +144,18 @@ def main():
     st, gs = post_json("/api/enrichment", {"genes": ["mhcA", "racE", "dagA", "carA", "gbpC"], "set": "goslim"})
     check("POST /api/enrichment set=goslim maps to slim categories",
           st == 200 and isinstance((gs or {}).get("results"), list) and len(gs["results"]) > 0)
+
+    # Uncurated layers: including predictions must not shrink the GO universe, and
+    # a lower Gomer cutoff keeps at least as many predicted terms as a higher one.
+    def _pred_count(gomer_min):
+        _, d = post_json("/api/batch", {"genes": ["DDB_G0267434"], "columns": ["go"],
+                                        "include_predicted": True, "gomer_min": gomer_min})
+        go = ((d or {}).get("rows") or [{}])[0].get("go", "")
+        m = re.search(r"\+(\d+) predicted", go)
+        return int(m.group(1)) if m else 0
+    check("/api/batch Gomer cutoff 0.4 keeps >= terms than 0.6", _pred_count(0.4) >= _pred_count(0.6))
+    st, ep = post_json("/api/enrichment", {"genes": ["mhcA", "racE", "pten"], "set": "go", "include_predicted": True})
+    check("POST /api/enrichment include_predicted stays valid", st == 200 and (ep or {}).get("background_n", 0) > 0)
 
     # /api/domains?ddb= only serves genes in the precomputed cache, so pick one
     # from domains.json rather than assuming a specific gene is cached.

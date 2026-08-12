@@ -3801,6 +3801,12 @@ function renderEnrichmentPage() {
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
               <input id="enrich-min" type="number" min="1" max="50" value="2" style="width:56px;margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
             </label>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Also count the AI, Gomer Lab (I-TASSER), author-submitted, and community layers, in both the gene list and the background so the test stays valid. GO enrichment only."><input type="checkbox" id="enrich-predicted" style="margin-right:4px">include uncurated (AI, Gomer, author, community)</label>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab GO terms">Gomer cutoff
+              <select id="enrich-gomer-min" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
+                <option value="0.4">0.4</option><option value="0.5" selected>0.5</option><option value="0.6">0.6</option>
+              </select>
+            </label>
             <button type="button" id="enrich-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
           </div>
         </form>
@@ -3834,7 +3840,7 @@ async function runEnrichment() {
     const res = await fetch("/api/enrichment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ genes, min_study: minStudy, set })
+      body: JSON.stringify({ genes, min_study: minStudy, set, include_predicted: !!(document.getElementById("enrich-predicted") || {}).checked, gomer_min: parseFloat((document.getElementById("enrich-gomer-min") || {}).value) || 0.5 })
     });
     const data = await res.json();
     if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "Enrichment failed.")}</p>`; return; }
@@ -3943,6 +3949,14 @@ function renderBatchPage() {
               ${BATCH_COLS.map(([key, label, on]) => `<label style="font-size:0.8125rem;white-space:nowrap"><input type="checkbox" class="batch-col" value="${key}"${on ? " checked" : ""}> ${escapeHtml(label)}</label>`).join("")}
             </div>
           </fieldset>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:0 0 8px">
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Fold the AI, Gomer Lab (I-TASSER), author-submitted, and community GO terms into the GO column, marked as predicted."><input type="checkbox" id="batch-predicted" style="margin-right:4px">Include uncurated GO (AI, Gomer, author, community)</label>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab GO terms">Gomer cutoff
+              <select id="batch-gomer-min" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
+                <option value="0.4">0.4</option><option value="0.5" selected>0.5</option><option value="0.6">0.6</option>
+              </select>
+            </label>
+          </div>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
             <button type="submit">Annotate</button>
             <button type="button" id="batch-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
@@ -3981,7 +3995,7 @@ async function runBatch() {
   try {
     const res = await fetch("/api/batch", {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ genes, columns }),
+      body: JSON.stringify({ genes, columns, include_predicted: !!(document.getElementById("batch-predicted") || {}).checked, gomer_min: parseFloat((document.getElementById("batch-gomer-min") || {}).value) || 0.5 }),
     });
     const data = await res.json();
     if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "Annotation failed.")}</p>`; return; }

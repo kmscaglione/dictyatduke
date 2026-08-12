@@ -138,15 +138,19 @@ def _bh(pvals):
     return q
 
 
-def enrich(tokens, background="annotated", min_study=2, max_terms=200):
+def enrich(tokens, background="annotated", min_study=2, max_terms=200,
+           include_predicted=False, gomer_min=0.5):
     """Hypergeometric GO over-representation for a gene list.
 
     background: "annotated" (all GO-annotated genes) or "genome" (all genes).
+    include_predicted: also count the AI, Gomer, author, and community layers, in
+    both the study set and the background, so the test stays internally valid.
+    gomer_min: Gomer I-TASSER confidence cutoff (0.4/0.5/0.6) for those terms.
     Returns a dict: {study_n, study_resolved, unmatched, background_n, results:[...]}.
     Each result: id, aspect, name, study_count, study_n, pop_count, pop_n,
     fold_enrichment, p_value, q_value, genes (matching DDB ids).
     """
-    st = _load()
+    st = _state_for(include_predicted, gomer_min)
     matched, unmatched = resolve_genes(tokens)
 
     if background == "genome":
@@ -486,11 +490,15 @@ def _load_batch():
     return _BATCH
 
 
-def annotate_genes(tokens, columns=None):
-    """One annotated row per matched gene, restricted to the requested columns."""
+def annotate_genes(tokens, columns=None, include_predicted=False, gomer_min=0.5):
+    """One annotated row per matched gene, restricted to the requested columns.
+
+    include_predicted folds the AI, Gomer (score >= gomer_min), author, and
+    community GO terms into the GO column, marked as predicted."""
     cols = [c for c in (columns or BATCH_COLUMNS) if c in BATCH_COLUMNS] or list(BATCH_COLUMNS)
     matched, unmatched = resolve_genes(tokens)
     S = _load_batch()
+    pred = predicted_terms(gomer_min) if include_predicted else {}
     rows = []
     for ddb in sorted(matched):
         info = S["info"].get(ddb, {})
@@ -508,7 +516,14 @@ def annotate_genes(tokens, columns=None):
             for g in (S["go"].get(ddb) or []):
                 if g[0] not in ids:
                     ids.append(g[0])
-            r["go"] = f"{len(ids)} terms" + (f" ({'; '.join(ids[:8])})" if ids else "")
+            curated_n = len(ids)
+            extra = 0
+            for gid, _asp, _nm in pred.get(ddb, []):
+                if gid not in ids:
+                    ids.append(gid)
+                    extra += 1
+            label = f"{curated_n} terms" + (f" +{extra} predicted" if extra else "")
+            r["go"] = label + (f" ({'; '.join(ids[:8])})" if ids else "")
         if "phenotypes" in cols:
             terms = []
             for p in (S["pheno"].get(ddb) or []):
@@ -547,3 +562,145 @@ def annotate_genes(tokens, columns=None):
         rows.append(r)
     return {"matched_n": len(matched), "unmatched": unmatched[:100],
             "columns": cols, "rows": rows}
+
+
+# --- Predicted / unreviewed annotation layers -----------------------------
+# Optional expansion of the GO universe beyond the curated + electronic GAF, for
+# users who want coverage over confidence. Four layers fold in: the AI
+# predictions, the Gomer Lab I-TASSER predictions (kept only at/above a
+# caller-chosen confidence score), author-submitted curation awaiting review,
+# and community "curated-here" annotations.
+GOMER_DEFAULT_MIN = 0.5
+GOMER_MIN_CHOICES = (0.4, 0.5, 0.6)
+_ASPECT_WORD = {"molecular function": "F", "biological process": "P", "cellular component": "C"}
+CURATOR_STATE = ROOT / "uploads" / "curator_state"
+_pred_raw = None
+
+
+def clamp_gomer_min(v):
+    """Snap a requested cutoff to the nearest offered choice (0.4/0.5/0.6)."""
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return GOMER_DEFAULT_MIN
+    return min(GOMER_MIN_CHOICES, key=lambda c: abs(c - v))
+
+
+def _parse_gomer_go(line):
+    """'GO:0008565: molecular function, name, 0.80' -> (gid, aspect, name, score)."""
+    mi = re.match(r"\s*(GO:\d+)", line)
+    ms = re.search(r",\s*([01](?:\.\d+)?)\s*$", line)
+    if not mi or not ms:
+        return None
+    gid, score = mi.group(1), float(ms.group(1))
+    body = re.sub(r",\s*[01](?:\.\d+)?\s*$", "", line[mi.end():]).lstrip(": ").strip()
+    aspect, name = "", body
+    parts = body.split(",", 1)
+    if len(parts) == 2 and parts[0].strip().lower() in _ASPECT_WORD:
+        aspect, name = _ASPECT_WORD[parts[0].strip().lower()], parts[1].strip()
+    return gid, aspect, name, score
+
+
+def _load_predicted_raw():
+    """{ddb -> {gid: (aspect, name, source, score|None)}} across all extra layers."""
+    global _pred_raw
+    if _pred_raw is not None:
+        return _pred_raw
+    st = _load()
+    per = {}
+
+    def add(ddb, gid, aspect, name, source, score=None):
+        if ddb and gid and str(gid).startswith("GO:"):
+            per.setdefault(ddb, {}).setdefault(gid, (aspect or "", name, source, score))
+
+    # AI layer (keyed by gene symbol)
+    try:
+        ai = json.loads((ASSETS / "ai_curation.json").read_text())
+        for sym, v in ai.items():
+            if sym.startswith("_") or not isinstance(v, dict):
+                continue
+            ddb = st["sym2ddb"].get(sym.lower())
+            for row in (v.get("go") or []):
+                add(ddb, row[0], row[1] if len(row) > 1 else "", row[2] if len(row) > 2 else None, "ai")
+    except (OSError, ValueError):
+        pass
+
+    # Gomer Lab I-TASSER layer (keyed by DDB_G; raw strings with a trailing score)
+    try:
+        gm = json.loads((ASSETS / "gomer_annotations.json").read_text())
+        for ddb, rec in gm.items():
+            if not ddb.startswith("DDB_G") or not isinstance(rec, dict):
+                continue
+            for line in (rec.get("go") or []):
+                p = _parse_gomer_go(line)
+                if p:
+                    add(ddb, p[0], p[1], p[2], "gomer", p[3])
+    except (OSError, ValueError):
+        pass
+
+    # Author-submitted curation awaiting curator review (paper-session submissions)
+    try:
+        drafts = json.loads((CURATOR_STATE / "curation_paper_drafts.json").read_text())
+        for d in drafts.get("drafts", []):
+            sub = d.get("submission")
+            if not sub or sub.get("handled"):
+                continue
+            for g in (sub.get("go") or []):
+                gene = str(g.get("gene", ""))
+                ddb = st["sym2ddb"].get(gene.lower()) or (gene if gene.startswith("DDB_G") else None)
+                add(ddb, g.get("go_id") or "", g.get("aspect", ""), g.get("term"), "author")
+    except (OSError, ValueError):
+        pass
+
+    # Community "curated-here" GO from the live curation overrides
+    try:
+        ov = json.loads((CURATOR_STATE / "curation_overrides.json").read_text())
+        for ddb, fields in ov.items():
+            cur = (fields or {}).get("curated_go")
+            if not isinstance(cur, dict):
+                continue
+            for aspect in ("P", "F", "C"):
+                for e in (cur.get(aspect) or []):
+                    if e:
+                        add(ddb, e[0], aspect, None, "community")
+    except (OSError, ValueError):
+        pass
+
+    _pred_raw = per
+    return _pred_raw
+
+
+def predicted_terms(gomer_min=GOMER_DEFAULT_MIN):
+    """{ddb -> [(gid, aspect, name)]}; Gomer terms kept only at score >= gomer_min."""
+    out = {}
+    for ddb, terms in _load_predicted_raw().items():
+        keep = []
+        for gid, (aspect, name, source, score) in terms.items():
+            if source == "gomer" and (score is None or score < gomer_min):
+                continue
+            keep.append((gid, aspect, name))
+        if keep:
+            out[ddb] = keep
+    return out
+
+
+def _state_for(include_predicted, gomer_min=GOMER_DEFAULT_MIN):
+    """Base annotation state, or a copy augmented with the predicted layers."""
+    st = _load()
+    if not include_predicted:
+        return st
+    gene_terms = {d: set(t) for d, t in st["gene_terms"].items()}
+    term_genes = {g: set(s) for g, s in st["term_genes"].items()}
+    term_aspect = dict(st["term_aspect"])
+    names = dict(st["names"])
+    for ddb, rows in predicted_terms(gomer_min).items():
+        for gid, aspect, name in rows:
+            gene_terms.setdefault(ddb, set()).add(gid)
+            term_genes.setdefault(gid, set()).add(ddb)
+            term_aspect.setdefault(gid, aspect)
+            if name and gid not in names:
+                names[gid] = name
+    aug = dict(st)
+    aug.update(gene_terms=gene_terms, term_genes=term_genes,
+               term_aspect=term_aspect, names=names, annotated=set(gene_terms))
+    return aug

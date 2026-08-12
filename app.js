@@ -8129,13 +8129,14 @@ function renderTab(gene, tab) {
         <section class="data-block" data-strains hidden></section>
         ${/^DDB_G\d+$/.test(gene.veupath || "") ? `
         <section class="data-block">
-          <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— FASTA download</span></h3>
+          <h3>Sequences <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— view or download FASTA</span></h3>
           <ul class="list">
-            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=genomic&symbol=${encodeURIComponent(gene.symbol)}" download>Genomic DNA</a></strong><span>Gene region including introns</span></li>
-            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=genomic&flank=1000&symbol=${encodeURIComponent(gene.symbol)}" download>Genomic + 1 kb flanks</a></strong><span>Gene plus 1000 bp up- and downstream (promoter / terminator)</span></li>
-            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=cdna&symbol=${encodeURIComponent(gene.symbol)}" download>cDNA</a></strong><span>Spliced transcript (exons)</span></li>
-            <li><strong><a class="text-link" href="/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=protein&symbol=${encodeURIComponent(gene.symbol)}" download>Protein</a></strong><span>Translated coding sequence</span></li>
+            <li><strong>Genomic DNA</strong><span>Gene region including introns · ${seqActions(gene, "genomic", "")}</span></li>
+            <li><strong>Genomic + 1 kb flanks</strong><span>Gene plus 1000 bp up- and downstream (promoter / terminator) · ${seqActions(gene, "genomic", "1000")}</span></li>
+            <li><strong>cDNA</strong><span>Spliced transcript (exons) · ${seqActions(gene, "cdna", "")}</span></li>
+            <li><strong>Protein</strong><span>Translated coding sequence · ${seqActions(gene, "protein", "")}</span></li>
           </ul>
+          <div data-seq-view style="margin-top:10px"></div>
         </section>
         <section class="data-block">
           <h3>Lab reagents <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— design on demand</span></h3>
@@ -14392,6 +14393,49 @@ async function initBasket() {
     if (results) results.innerHTML = `<p class="notice">Loaded ${r.added} gene${r.added === 1 ? "" : "s"} from a shared link${r.added < r.total ? ` (${r.total - r.added} already in your basket)` : ""}.</p>`;
   }
 }
+
+// FASTA "view or download" actions for a gene's Sequences block. View fetches
+// the FASTA and shows it inline (copy-paste into another tool) instead of only
+// downloading it; the download link is kept alongside.
+function seqActions(gene, type, flank) {
+  const url = `/api/sequence?ddb=${encodeURIComponent(gene.veupath)}&type=${type}${flank ? `&flank=${flank}` : ""}&symbol=${encodeURIComponent(gene.symbol)}`;
+  const kind = type === "protein" ? "Protein" : type === "cdna" ? "cDNA" : (flank ? "Genomic + flanks" : "Genomic DNA");
+  const name = `${kind} · ${gene.symbol}`;
+  return `<button type="button" class="text-link" data-seq-url="${url}" data-seq-name="${escapeHtml(name)}" style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark);font:inherit">view</button> · <a class="text-link" href="${url}" download>download</a>`;
+}
+
+async function viewSequence(url, name) {
+  const host = document.querySelector("[data-seq-view]");
+  if (!host) return;
+  host.innerHTML = `<p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading ${escapeHtml(name)}…</p>`;
+  let text;
+  try { text = await fetch(url).then((r) => r.text()); }
+  catch { host.innerHTML = `<p class="notice">Could not load the sequence.</p>`; return; }
+  host.innerHTML = `
+    <div class="data-block" style="margin:0">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+        <strong style="font-size:0.85rem">${escapeHtml(name)} — FASTA</strong>
+        <span style="display:flex;gap:12px">
+          <button type="button" class="text-link" data-seq-copy style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark)">Copy</button>
+          <button type="button" class="text-link" data-seq-close style="background:none;border:none;padding:0;cursor:pointer;color:var(--muted,#6b7280)">Close</button>
+        </span>
+      </div>
+      <pre data-seq-text style="white-space:pre-wrap;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.8rem;line-height:1.5;background:var(--soft,#f5f7f9);border:1px solid var(--line,#e5e9ee);border-radius:6px;padding:10px;margin:8px 0 0;max-height:340px;overflow:auto">${escapeHtml(text)}</pre>
+    </div>`;
+  host.scrollIntoView({ block: "nearest" });
+}
+
+document.addEventListener("click", (e) => {
+  const viewBtn = e.target.closest("[data-seq-url]");
+  if (viewBtn) { e.preventDefault(); viewSequence(viewBtn.getAttribute("data-seq-url"), viewBtn.getAttribute("data-seq-name") || "Sequence"); return; }
+  if (e.target.closest("[data-seq-copy]")) {
+    const pre = document.querySelector("[data-seq-text]");
+    const btn = e.target.closest("[data-seq-copy]");
+    if (pre && navigator.clipboard) navigator.clipboard.writeText(pre.textContent).then(() => { btn.textContent = "Copied ✓"; setTimeout(() => { btn.textContent = "Copy"; }, 1500); });
+    return;
+  }
+  if (e.target.closest("[data-seq-close]")) { const h = document.querySelector("[data-seq-view]"); if (h) h.innerHTML = ""; }
+});
 
 function basketDownload(text, filename, type) {
   const url = URL.createObjectURL(new Blob([text], { type: type || "text/plain" }));

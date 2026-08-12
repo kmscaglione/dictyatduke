@@ -4244,7 +4244,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             urls = ["/", "/start", "/guide", "/education", "/research-areas", "/data",
                     "/numbers", "/gomer", "/downloads", "/cite", "/news", "/stock-center", "/tools",
                     "/tools/blast", "/tools/enrichment", "/tools/expression",
-                    "/tools/lab", "/tools/cell-tracking", "/tools/sequence", "/tools/convert", "/tools/geneset",
+                    "/tools/lab", "/tools/cell-tracking", "/tools/sequence", "/tools/convert", "/tools/geneset", "/tools/batch",
                     "/tools/proteomics", "/tools/heatstress", "/tools/basket",
                     "/tools/downloads", "/tools/api", "/tools/genome-browser",
                     "/community/labs", "/community/meetings", "/community/jobs",
@@ -4362,6 +4362,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_align()
         elif self.path == "/api/enrichment":
             self._handle_enrichment()
+        elif self.path == "/api/batch":
+            self._handle_batch()
         elif self.path == "/api/codon-optimize":
             self._handle_codon()
         elif self.path == "/api/restriction":
@@ -4777,6 +4779,30 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         finally:
             _PROXY_SEM.release()
 
+    def _handle_batch(self):
+        """POST {genes:[...], columns?:[...]} -> one annotated row per gene."""
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            if length > 1_000_000:
+                self.send_json(413, {"error": "Gene list too large"})
+                return
+            payload = json.loads(self.rfile.read(length) or b"{}")
+            genes = payload.get("genes") or []
+            if isinstance(genes, str):
+                genes = re.split(r"[\s,]+", genes)
+            genes = [g for g in genes if g][:5000]
+            if not genes:
+                self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
+                return
+            columns = payload.get("columns")
+            if columns is not None and not isinstance(columns, list):
+                columns = None
+            self.send_json(200, enrichment.annotate_genes(genes, columns))
+        except (ValueError, json.JSONDecodeError) as e:
+            self.send_json(400, {"error": f"Bad request: {e}"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
     def _handle_enrichment(self):
         """POST {genes:[...], background?, min_study?} -> GO enrichment."""
         try:
@@ -4791,6 +4817,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             genes = [g for g in genes if g][:5000]
             if not genes:
                 self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
+                return
+            if payload.get("set") == "goslim":
+                self.send_json(200, enrichment.map_goslim(genes))
                 return
             min_study = max(1, min(int(payload.get("min_study", 2)), 50))
             if payload.get("set") == "phenotype":

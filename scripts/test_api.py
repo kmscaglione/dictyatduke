@@ -52,6 +52,19 @@ def get_json(path):
         return st, None
 
 
+def post_json(path, payload):
+    """(status, parsed_json | None) for a POST; never raises."""
+    try:
+        req = urllib.request.Request(
+            BASE + path, method="POST",
+            data=json.dumps(payload).encode(),
+            headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return r.status, json.loads(r.read())
+    except Exception:
+        return 0, None
+
+
 def get_headers(path):
     """(status, {lowercased header: value}) — never raises."""
     try:
@@ -115,6 +128,21 @@ def main():
     st, s = get_json("/api/search?q=myosin")
     n = len(s) if isinstance(s, list) else len(s.get("results", []) if isinstance(s, dict) else [])
     check("GET /api/search?q=myosin returns hits", st == 200 and n > 0)
+
+    # Batch annotator: one row per matched gene, only requested columns.
+    st, b = post_json("/api/batch", {"genes": ["mhcA", "racE", "pten"],
+                                     "columns": ["symbol", "human_ortholog", "expression_peak"]})
+    rows = (b or {}).get("rows", [])
+    check("POST /api/batch returns a row per gene", st == 200 and len(rows) == 3)
+    check("/api/batch honors requested columns",
+          bool(rows) and set(rows[0].keys()) <= {"ddb_g", "symbol", "human_ortholog", "expression_peak"})
+    check("/api/batch resolves a known human ortholog (mhcA -> MYH*)",
+          any("MYH" in (r.get("human_ortholog") or "") for r in rows))
+
+    # GO-slim mapping mode of the enrichment endpoint.
+    st, gs = post_json("/api/enrichment", {"genes": ["mhcA", "racE", "dagA", "carA", "gbpC"], "set": "goslim"})
+    check("POST /api/enrichment set=goslim maps to slim categories",
+          st == 200 and isinstance((gs or {}).get("results"), list) and len(gs["results"]) > 0)
 
     # /api/domains?ddb= only serves genes in the precomputed cache, so pick one
     # from domains.json rather than assuming a specific gene is cached.

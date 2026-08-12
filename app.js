@@ -1938,6 +1938,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initGeneSet();
+  } else if (tool === "batch") {
+    toolsShell.innerHTML = renderBatchPage();
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    initBatch();
   } else if (tool === "stats") {
     toolsShell.innerHTML = renderStatsPage();
     toolsShell.removeAttribute("hidden");
@@ -3777,7 +3782,7 @@ function renderEnrichmentPage() {
         <div class="record-title">
           <p class="eyebrow">Analysis</p>
           <h2>Enrichment analysis</h2>
-          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find <strong>GO terms</strong> or curated <strong>mutant phenotypes</strong> that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR.</p>
+          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find <strong>GO terms</strong>, curated <strong>mutant phenotypes</strong>, or <strong>KEGG pathways</strong> that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR. Or switch to <strong>GO-slim mapping</strong> to bucket the list into high-level functional categories.</p>
         </div>
       </header>
       <div class="record-body">
@@ -3787,9 +3792,10 @@ function renderEnrichmentPage() {
             <button type="submit">Run enrichment</button>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">analyze
               <select id="enrich-set" aria-label="Analysis type: GO terms, phenotypes, or KEGG pathways" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
-                <option value="go">GO terms</option>
+                <option value="go">GO enrichment</option>
                 <option value="phenotype">Phenotypes</option>
                 <option value="kegg">KEGG pathways</option>
+                <option value="goslim">GO-slim mapping</option>
               </select>
             </label>
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
@@ -3817,10 +3823,11 @@ async function runEnrichment() {
   const out = document.getElementById("enrich-results");
   const raw = document.getElementById("enrich-genes").value.trim();
   const setVal = (document.getElementById("enrich-set") || {}).value;
-  const set = ["phenotype", "kegg"].includes(setVal) ? setVal : "go";
+  const set = ["phenotype", "kegg", "goslim"].includes(setVal) ? setVal : "go";
   const minStudy = Math.max(1, Math.min(50, parseInt(document.getElementById("enrich-min").value, 10) || 2));
   if (!raw) { out.innerHTML = `<p class="notice">Enter at least one gene.</p>`; return; }
   const genes = raw.split(/[\s,]+/).filter(Boolean);
+  if (set === "goslim") { runGoslim(genes, out); return; }
   const what = { phenotype: "phenotype annotations", kegg: "KEGG pathways" }[set] || "the GO annotation";
   out.innerHTML = `<p class="notice muted">Testing ${genes.length} gene${genes.length === 1 ? "" : "s"} against ${what}…</p>`;
   try {
@@ -3872,6 +3879,142 @@ async function runEnrichment() {
   } catch {
     out.innerHTML = `<p class="notice">Could not reach the enrichment service.</p>`;
   }
+}
+
+// GO-slim mapping: not a statistical test, just how many of the list fall into
+// each high-level GO-slim category (SGD's GO Slim Mapper equivalent).
+async function runGoslim(genes, out) {
+  out.innerHTML = `<p class="notice muted">Mapping ${genes.length} gene${genes.length === 1 ? "" : "s"} onto GO-slim categories…</p>`;
+  try {
+    const res = await fetch("/api/enrichment", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ genes, set: "goslim" }),
+    });
+    const data = await res.json();
+    if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "GO-slim mapping failed.")}</p>`; return; }
+    const rows = data.results || [];
+    const head = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">
+      ${data.mapped_n} of ${genes.length} gene${genes.length === 1 ? "" : "s"} carry GO-slim assignments
+      ${data.unmatched.length ? ` · <span title="${escapeHtml(data.unmatched.join(", "))}">${data.unmatched.length} not recognized</span>` : ""}</p>`;
+    if (!rows.length) { out.innerHTML = head + `<p class="notice">None of those genes have GO-slim assignments.</p>`; return; }
+    const td = "padding:6px 8px";
+    out.innerHTML = head + `
+      <div style="overflow-x:auto"><table class="enrich-table" style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+          <th style="${td}">GO-slim category</th><th style="${td}">Aspect</th>
+          <th style="${td}" title="genes in your list mapped to this category">Genes</th></tr></thead>
+        <tbody>${rows.map((r) => `
+          <tr style="border-bottom:1px solid var(--line,#eef2f3)">
+            <td style="${td}"><a class="text-link" href="/go/${escapeHtml(r.id)}">${escapeHtml(r.name)}</a></td>
+            <td style="${td};color:var(--muted,#6b7280)">${escapeHtml(r.aspect_label)}</td>
+            <td style="${td}"><span title="${escapeHtml((r.genes || []).join(", "))}">${r.count}</span></td>
+          </tr>`).join("")}</tbody>
+      </table></div>
+      <p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Counts are genes from your list in each dictyBase GO-slim bucket (a gene can fall in several). Hover a count to see the genes. Category names link to the GO browser.</p>`;
+  } catch {
+    out.innerHTML = `<p class="notice">Could not reach the GO-slim service.</p>`;
+  }
+}
+
+// Batch gene annotator (SimpleMine-style): paste a list, pick columns, get one
+// row per gene from the data the site already serves, downloadable as TSV.
+const BATCH_COLS = [
+  ["symbol", "Symbol", true], ["name", "Name", true], ["ddb_g", "DDB_G", true],
+  ["ncbi", "NCBI Gene", false], ["synonyms", "Synonyms", false],
+  ["go", "GO terms", true], ["phenotypes", "Phenotypes", true],
+  ["human_ortholog", "Human ortholog", true], ["disease", "Disease", true],
+  ["expression_peak", "Expr. peak", false], ["domains", "InterPro domains", false],
+];
+
+function renderBatchPage() {
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Analysis</p>
+        <h2>Batch gene annotator</h2>
+        <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids), choose the columns you want, and get one row per gene: GO, phenotypes, human ortholog and disease, expression peak, and domains. Download the table as TSV for a spreadsheet.</p>
+      </div></header>
+      <div class="record-body">
+        <form id="batch-form">
+          <textarea id="batch-genes" rows="6" aria-label="Gene list" placeholder="mhcA racE dagA carA pten gbpC tipA&#10;DDB_G0286509" style="width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.875rem;padding:10px;border:1px solid var(--line,#d7dee0);border-radius:8px;resize:vertical"></textarea>
+          <fieldset style="border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:8px 12px;margin:10px 0">
+            <legend style="font-size:0.75rem;color:var(--muted,#6b7280);padding:0 4px">Columns</legend>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 16px">
+              ${BATCH_COLS.map(([key, label, on]) => `<label style="font-size:0.8125rem;white-space:nowrap"><input type="checkbox" class="batch-col" value="${key}"${on ? " checked" : ""}> ${escapeHtml(label)}</label>`).join("")}
+            </div>
+          </fieldset>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <button type="submit">Annotate</button>
+            <button type="button" id="batch-example" class="text-link" style="background:none;border:none;cursor:pointer;color:var(--teal-dark)">Load an example</button>
+            <button type="button" id="batch-tsv" hidden>⬇ Download TSV</button>
+          </div>
+        </form>
+        <div id="batch-results" style="margin-top:18px"></div>
+      </div>
+    </article>`;
+}
+
+let batchLast = null;   // {columns, rows} of the most recent run, for TSV export
+
+function initBatch() {
+  const form = document.getElementById("batch-form");
+  const example = document.getElementById("batch-example");
+  const tsv = document.getElementById("batch-tsv");
+  if (example) example.addEventListener("click", () => {
+    document.getElementById("batch-genes").value = "mhcA racE dagA carA pten gbpC tipA abpC cofA myoII";
+  });
+  if (form) form.addEventListener("submit", (e) => { e.preventDefault(); runBatch(); });
+  if (tsv) tsv.addEventListener("click", () => batchDownloadTSV());
+}
+
+const BATCH_LABEL = Object.fromEntries(BATCH_COLS.map(([k, l]) => [k, l]));
+
+async function runBatch() {
+  const out = document.getElementById("batch-results");
+  const tsvBtn = document.getElementById("batch-tsv");
+  const raw = document.getElementById("batch-genes").value.trim();
+  if (!raw) { out.innerHTML = `<p class="notice">Enter at least one gene.</p>`; if (tsvBtn) tsvBtn.hidden = true; return; }
+  const genes = raw.split(/[\s,]+/).filter(Boolean);
+  const columns = [...document.querySelectorAll(".batch-col:checked")].map((c) => c.value);
+  if (!columns.length) { out.innerHTML = `<p class="notice">Pick at least one column.</p>`; return; }
+  out.innerHTML = `<p class="notice muted">Annotating ${genes.length} gene${genes.length === 1 ? "" : "s"}…</p>`;
+  try {
+    const res = await fetch("/api/batch", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ genes, columns }),
+    });
+    const data = await res.json();
+    if (!res.ok) { out.innerHTML = `<p class="notice">${escapeHtml(data.error || "Annotation failed.")}</p>`; return; }
+    batchLast = { columns: data.columns, rows: data.rows };
+    if (tsvBtn) tsvBtn.hidden = !data.rows.length;
+    const head = `<p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">
+      ${data.rows.length} of ${genes.length} gene${genes.length === 1 ? "" : "s"} matched
+      ${data.unmatched.length ? ` · <span title="${escapeHtml(data.unmatched.join(", "))}">${data.unmatched.length} not recognized</span>` : ""}</p>`;
+    if (!data.rows.length) { out.innerHTML = head + `<p class="notice">None of those identifiers matched a Dictyostelium gene.</p>`; return; }
+    const td = "padding:6px 8px;vertical-align:top;border-bottom:1px solid var(--line,#eef2f3)";
+    out.innerHTML = head + `
+      <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.8125rem">
+        <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)">
+          ${data.columns.map((c) => `<th style="padding:6px 8px;white-space:nowrap">${escapeHtml(BATCH_LABEL[c] || c)}</th>`).join("")}
+        </tr></thead>
+        <tbody>${data.rows.map((r) => `<tr>${data.columns.map((c) => {
+          const v = r[c] == null ? "" : String(r[c]);
+          if (c === "symbol") return `<td style="${td};white-space:nowrap"><a class="text-link" href="/gene/${encodeURIComponent(v || r.ddb_g)}">${escapeHtml(v || r.ddb_g)}</a></td>`;
+          return `<td style="${td}">${escapeHtml(v)}</td>`;
+        }).join("")}</tr>`).join("")}</tbody>
+      </table></div>`;
+  } catch {
+    out.innerHTML = `<p class="notice">Could not reach the annotation service.</p>`;
+  }
+}
+
+function batchDownloadTSV() {
+  if (!batchLast || !batchLast.rows.length) return;
+  const { columns, rows } = batchLast;
+  const esc = (s) => String(s == null ? "" : s).replace(/[\t\r\n]+/g, " ");
+  const lines = [columns.map((c) => BATCH_LABEL[c] || c).join("\t")];
+  for (const r of rows) lines.push(columns.map((c) => esc(r[c])).join("\t"));
+  basketDownload(lines.join("\n") + "\n", "dictybase-gene-annotations.tsv", "text/tab-separated-values");
 }
 
 function formatBytes(n) {
@@ -13421,7 +13564,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai", "curate"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "batch", "stats", "ai", "curate"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -13650,6 +13793,7 @@ const TOOLS_INDEX = [
   ["Search & identifiers", [
     ["Gene ID converter", "/tools/convert", "Map symbols, DDB_G, UniProt, and NCBI ids in one table."],
     ["Advanced gene finder", "/search/advanced", "Filter the catalog by phenotype, ortholog, disease, or expression peak."],
+    ["Batch gene annotator", "/tools/batch", "Paste a gene list, pick columns, get an annotated table to download."],
   ]],
   ["Sequence & alignment", [
     ["Sequence tools", "/tools/sequence", "Region retrieval, in-silico PCR, and multiple sequence alignment."],
@@ -13662,7 +13806,8 @@ const TOOLS_INDEX = [
   ["Expression & function", [
     ["Gene set analysis", "/tools/geneset", "Interpret a hit list — enrichment, disease overlap, expression peak, summary."],
     ["Compare expression", "/tools/expression", "Overlay developmental RNA-seq profiles of several genes."],
-    ["GO / phenotype enrichment", "/tools/enrichment", "Over-representation analysis for a gene list."],
+    ["GO / phenotype enrichment", "/tools/enrichment", "Over-representation (GO, phenotype, KEGG) plus GO-slim mapping for a gene list."],
+    ["Batch gene annotator", "/tools/batch", "One annotated row per gene — GO, phenotype, ortholog, disease, domains — as TSV."],
     ["Developmental proteome", "/tools/proteomics", "4,502 proteins across five life-cycle stages."],
     ["Insoluble proteome", "/tools/heatstress", "8,043 proteins — heat stress and development."],
   ]],
@@ -13811,6 +13956,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "BLAST sequence search", href: "/tools/blast", kw: "blast sequence align" },
   { kind: "Tool", label: "GO enrichment", href: "/tools/enrichment", kw: "enrichment go phenotype kegg overrepresented" },
   { kind: "Tool", label: "Gene set analysis", href: "/tools/geneset", sub: "Interpret a hit list: enrichment, disease, expression", kw: "gene set analysis deg hit list omics rnaseq proteomics interpret report enrichment" },
+  { kind: "Tool", label: "Batch gene annotator", href: "/tools/batch", sub: "Annotate a gene list and download as TSV", kw: "batch annotate gene list table tsv simplemine columns go phenotype ortholog disease domains export" },
   { kind: "Tool", label: "Compare expression", href: "/tools/expression", kw: "expression rna-seq chart compare profile" },
   { kind: "Tool", label: "Lab tools", href: "/tools/lab", sub: "CRISPR guides, qPCR primers, codon optimizer", kw: "crispr primer codon lab bench design" },
   { kind: "Tool", label: "Gene ID converter", href: "/tools/convert", sub: "Symbol ↔ DDB_G ↔ UniProt ↔ NCBI", kw: "convert id mapping symbol ddb uniprot ncbi validate batch" },

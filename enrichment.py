@@ -405,3 +405,145 @@ def coexpression(ddb, n=12, min_r=0.5):
             break
         out.append({"ddb": d, "symbol": cx["sym"].get(d, d), "r": round(r, 4)})
     return {"query": ddb, "results": out}
+
+
+# --- GO-slim mapper -------------------------------------------------------
+# Not a statistical test: maps a gene list onto the high-level dictyBase GO-slim
+# categories and counts how many of the list fall in each (like SGD's GO Slim
+# Mapper). Per-gene slim assignments are precomputed in gene_extras.goslim.
+_GOSLIM = None
+_ASPECT_LABEL = {"P": "Biological process", "F": "Molecular function", "C": "Cellular component"}
+# The ontology roots carry no information (every annotated gene maps to them).
+_GO_ROOTS = {"GO:0008150", "GO:0003674", "GO:0005575", "GO:0007582"}
+
+
+def _load_goslim():
+    global _GOSLIM
+    if _GOSLIM is None:
+        try:
+            gx = json.loads((ASSETS / "gene_extras.json").read_text())
+            names = json.loads((ASSETS / "goslim_terms.json").read_text())
+        except (OSError, ValueError):
+            gx, names = {}, {}
+        per = {k: v.get("goslim") for k, v in gx.items()
+               if isinstance(v, dict) and v.get("goslim")}
+        _GOSLIM = {"per_gene": per, "names": names}
+    return _GOSLIM
+
+
+def map_goslim(tokens):
+    """Bucket a gene list into GO-slim categories, grouped by GO aspect."""
+    matched, unmatched = resolve_genes(tokens)
+    data = _load_goslim()
+    per, names = data["per_gene"], data["names"]
+    buckets = {}
+    mapped = set()
+    for ddb in matched:
+        slim = per.get(ddb)
+        if not slim:
+            continue
+        mapped.add(ddb)
+        for pair in slim:
+            go_id, aspect = pair[0], (pair[1] if len(pair) > 1 else "")
+            if go_id in _GO_ROOTS:
+                continue
+            buckets.setdefault((aspect, go_id), set()).add(ddb)
+    rows = [{
+        "aspect": a, "aspect_label": _ASPECT_LABEL.get(a, a or "other"),
+        "id": gid, "name": names.get(gid, gid),
+        "count": len(genes), "genes": sorted(genes),
+    } for (a, gid), genes in buckets.items()]
+    rows.sort(key=lambda r: (r["aspect_label"], -r["count"], r["name"]))
+    return {"matched_n": len(matched), "mapped_n": len(mapped),
+            "unmatched": unmatched[:50], "results": rows}
+
+
+# --- Batch gene annotator (SimpleMine-style) ------------------------------
+# Paste a gene list, pick columns, get one row per gene assembled from the same
+# data the site already serves. Deliberately light: no data warehouse, just a
+# join over the JSON assets.
+_BATCH = None
+PEAK_STAGES = ["0 h", "4 h", "8 h", "12 h", "16 h", "20 h", "24 h"]  # Rosengarten 2015 dev time course
+BATCH_COLUMNS = ["symbol", "name", "ddb_g", "ncbi", "synonyms",
+                 "go", "phenotypes", "human_ortholog", "disease",
+                 "expression_peak", "domains"]
+
+
+def _load_batch():
+    global _BATCH
+    if _BATCH is None:
+        def L(name):
+            try:
+                return json.loads((ASSETS / name).read_text())
+            except (OSError, ValueError):
+                return {}
+        idx = json.loads((ASSETS / "gene_index.json").read_text())
+        info = {r[0]: {"symbol": r[1], "name": r[2], "ncbi": r[4] if len(r) > 4 else "",
+                       "synonyms": r[5] if len(r) > 5 else []} for r in idx}
+        _BATCH = {"info": info, "go": L("go_annotations.json"), "pheno": L("phenotypes.json"),
+                  "facets": L("gene_facets.json"), "od": L("ortholog_disease.json"),
+                  "domains": L("dictybase_domains.json")}
+    return _BATCH
+
+
+def annotate_genes(tokens, columns=None):
+    """One annotated row per matched gene, restricted to the requested columns."""
+    cols = [c for c in (columns or BATCH_COLUMNS) if c in BATCH_COLUMNS] or list(BATCH_COLUMNS)
+    matched, unmatched = resolve_genes(tokens)
+    S = _load_batch()
+    rows = []
+    for ddb in sorted(matched):
+        info = S["info"].get(ddb, {})
+        r = {"ddb_g": ddb}
+        if "symbol" in cols:
+            r["symbol"] = info.get("symbol", "")
+        if "name" in cols:
+            r["name"] = info.get("name", "")
+        if "ncbi" in cols:
+            r["ncbi"] = str(info.get("ncbi", "") or "")
+        if "synonyms" in cols:
+            r["synonyms"] = "; ".join(info.get("synonyms") or [])
+        if "go" in cols:
+            ids = []
+            for g in (S["go"].get(ddb) or []):
+                if g[0] not in ids:
+                    ids.append(g[0])
+            r["go"] = f"{len(ids)} terms" + (f" ({'; '.join(ids[:8])})" if ids else "")
+        if "phenotypes" in cols:
+            terms = []
+            for p in (S["pheno"].get(ddb) or []):
+                t = p[0] if isinstance(p, list) else p
+                if t and t not in terms:
+                    terms.append(t)
+            r["phenotypes"] = "; ".join(terms[:12])
+        if "human_ortholog" in cols or "disease" in cols:
+            od = S["od"].get(ddb) or {}
+            humans, diseases, upacc = [], [], ""
+            for orth in (od.get("orthologs") or []):
+                hs = orth.get("human_symbol")
+                if hs and hs not in humans:
+                    humans.append(hs)
+                for d in (orth.get("diseases") or []):
+                    dn = d.get("name") if isinstance(d, dict) else str(d)
+                    if dn and dn not in diseases:
+                        diseases.append(dn)
+            if "human_ortholog" in cols:
+                r["human_ortholog"] = "; ".join(humans[:6])
+            if "disease" in cols:
+                r["disease"] = "; ".join(diseases[:6])
+        if "uniprot" in cols:
+            r["uniprot"] = (S["od"].get(ddb) or {}).get("uniprot", "") or ""
+        if "expression_peak" in cols:
+            f = S["facets"].get(ddb) or []
+            peak = f[3] if len(f) > 3 else -1
+            r["expression_peak"] = PEAK_STAGES[peak] if isinstance(peak, int) and 0 <= peak < len(PEAK_STAGES) else ""
+        if "domains" in cols:
+            ip = []
+            for d in (S["domains"].get(ddb) or []):
+                nm = d.get("interpro_name") or d.get("name")
+                if nm and nm not in ip:
+                    ip.append(nm)
+            r["domains"] = "; ".join(ip[:8])
+        rows.append(r)
+    return {"matched_n": len(matched), "unmatched": unmatched[:100],
+            "columns": cols, "rows": rows}

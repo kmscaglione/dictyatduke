@@ -14420,7 +14420,7 @@ async function viewSequence(url, name) {
           <button type="button" class="text-link" data-seq-close style="background:none;border:none;padding:0;cursor:pointer;color:var(--muted,#6b7280)">Close</button>
         </span>
       </div>
-      <pre data-seq-text style="white-space:pre-wrap;word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.8rem;line-height:1.5;background:var(--soft,#f5f7f9);border:1px solid var(--line,#e5e9ee);border-radius:6px;padding:10px;margin:8px 0 0;max-height:340px;overflow:auto">${escapeHtml(text)}</pre>
+      <pre data-seq-text style="white-space:pre;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.8rem;line-height:1.5;background:var(--soft,#f5f7f9);border:1px solid var(--line,#e5e9ee);border-radius:6px;padding:10px;margin:8px 0 0;max-height:340px;overflow:auto">${escapeHtml(text)}</pre>
     </div>`;
   host.scrollIntoView({ block: "nearest" });
 }

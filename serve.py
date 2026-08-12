@@ -1494,6 +1494,31 @@ def api_phenotypes_by_gene():
     return _API["_pheno_by_gene"]
 
 
+
+# The legacy corpus stores the screen's movie links as raw HTML pointing at
+# dicty_Life (dictybase.org/phenotype/movies/...), a service that no longer
+# responds. The note field is escaped before display, so that markup rendered
+# as literal text on every screened strain. We host those movies ourselves now,
+# so the block is replaced with a plain sentence naming the imaging runs; the
+# developmental-screen section of the page plays them.
+_DICTYLIFE_BLOCK = re.compile(r"Movies and analysis available on the dicty_Life website:.*", re.S)
+_DICTYLIFE_RUN = re.compile(r"int_id=([0-9]+_[0-9]+)")
+
+
+def rewrite_dictylife_note(note):
+    if not note or "dicty_Life" not in note:
+        return note
+    runs = _DICTYLIFE_RUN.findall(note)
+    rest = _DICTYLIFE_BLOCK.sub("", note).strip()
+    if not runs:
+        return rest
+    shown = ", ".join(runs[:6])
+    more = f" and {len(runs) - 6} more" if len(runs) > 6 else ""
+    line = ("Time-lapse movies from the developmental screen "
+            f"(imaging run{'s' if len(runs) != 1 else ''} {shown}{more}).")
+    return f"{rest} {line}".strip() if rest else line
+
+
 def api_strains():
     if "_strains" not in _API:
         sg, sp = {}, {}
@@ -1514,7 +1539,8 @@ def api_strains():
                         "phenotype": html.unescape((row[1] if len(row) > 1 else "").strip()),
                         "condition": html.unescape((row[2] if len(row) > 2 else "").strip()),
                         "pmid": (row[4] if len(row) > 4 else "").strip(),
-                        "note": html.unescape((row[5] if len(row) > 5 else "").strip()),
+                        "note": rewrite_dictylife_note(
+                            html.unescape((row[5] if len(row) > 5 else "").strip())),
                     })
         except Exception:
             pass

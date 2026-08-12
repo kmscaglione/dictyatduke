@@ -268,6 +268,44 @@ def read_robot():
     return rows
 
 
+# The complete `robot` table, exported to CSV by the Cox/Sawai lab (2026) and
+# sent by Satoshi Sawai. This is the full run->strain->movie key the August-2003
+# SQL dumps only covered the first 8 dates of: 4,091 imaging runs across all 77
+# dates. Columns are the robot table's, in order, with one extra image-density
+# note column (16) between image_qual and the movie link that the SQL schema
+# folded into image_qual. No header row.
+ROBOT_CSV = "uni-robot_dump.csv"
+# CSV column index (0-based) -> robot field. Established empirically: cols 4..13
+# are the five stage call/note pairs, 14 image_qual, 15 a density note (dropped),
+# 16 movie, 17 slug movie, 18 wavelet, 19 final note.
+ROBOT_CSV_COLS = {
+    0: "int_id", 1: "strain_id", 2: "strain_id_suffix", 3: "mutagen",
+    4: "wave", 5: "wave_nt", 6: "strm", 7: "strm_nt", 8: "mound", 9: "mound_nt",
+    10: "slug", 11: "slug_nt", 12: "culm", 13: "culm_nt", 14: "image_qual",
+    16: "movielink", 17: "slugmovie", 18: "wavelink", 19: "final_note",
+}
+
+
+def read_robot_csv():
+    """The full robot table from uni-robot_dump.csv, keyed by imaging run.
+
+    Same shape as read_robot() so runs_by_strain() consumes either. Rows without
+    an int_id, or too short to reach the movie columns, are skipped."""
+    import csv
+    p = os.path.join(SRC, ROBOT_CSV)
+    if not os.path.exists(p):
+        return {}
+    rows = {}
+    with open(p, encoding="utf-8", errors="replace", newline="") as fh:
+        for rec in csv.reader(fh):
+            if len(rec) <= max(ROBOT_CSV_COLS):
+                continue
+            r = {field: rec[i].strip().strip('"') for i, field in ROBOT_CSV_COLS.items()}
+            if r["int_id"]:
+                rows[r["int_id"]] = r
+    return rows
+
+
 def runs_by_strain(robot):
     """Group robot rows under the V-strain they were imaging."""
     out = {}
@@ -307,7 +345,10 @@ def main():
     args = ap.parse_args()
 
     strains = read_scores()
+    # The complete CSV export supersedes the partial August-2003 SQL dumps; where
+    # a run appears in both, the CSV wins.
     robot = read_robot()
+    robot.update(read_robot_csv())
     runs = runs_by_strain(robot)
     legacy = read_legacy_map()
     order = read_cluster_order()
@@ -403,13 +444,11 @@ def main():
                 "runs_with_movie": sum(1 for s in strains for r in s["runs"] if r["movie"]),
             },
             "movies": {
-                "status": "partial",
-                "note": ("Imaging run to strain mapping comes from the Cox lab's MySQL "
-                         "`robot` table. The surviving dumps are from August 2003 and "
-                         "cover the first 8 imaging dates only, so most strains have no "
-                         "run linked. The paper's public movie search ran on dictyBase "
-                         "itself (phenotype/movies/remote_search_public.php), so the "
-                         "full mapping would have to come from there."),
+                "status": "complete",
+                "note": ("Imaging run to strain mapping comes from the Cox lab's `robot` "
+                         "table, exported in full and provided by Satoshi Sawai (2026). "
+                         "It covers all 77 imaging dates, so nearly every screened strain "
+                         "with a movie is now linked to its run, movie, and wave image."),
             },
         },
         "strains": strains,

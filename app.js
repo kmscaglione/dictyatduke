@@ -9143,6 +9143,7 @@ async function loadStrain(sid) {
     const ph = data.phenotypes || [];
     if (!ph.length) {
       phEl.innerHTML = screenBlock || `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`;
+      initScreenVideos(phEl);
       return;
     }
     phEl.innerHTML = screenBlock + `
@@ -9157,6 +9158,7 @@ async function loadStrain(sid) {
           }).join("")}
         </ul>
       </div>`;
+    initScreenVideos(phEl);
   } catch {
     if (phEl) phEl.innerHTML = `<p class="notice">Could not load strain ${escapeHtml(sid)}.</p>`;
   }
@@ -9470,6 +9472,17 @@ function screenMovieSrc(path) {
   if (!path) return "";
   const base = path.split("/").pop().replace(/\.mov$/i, "");
   return `/assets/media/screen/${encodeURIComponent(base)}.mp4`;
+}
+
+// The movie archive on hand is a subset of every clip the screen made, so a
+// referenced file may not be served. Rather than leave a dead player, HEAD-check
+// each screen video and drop its figure when the file is missing. Same-origin
+// fetch, so CSP-safe. Runs after the strain block is inserted.
+function initScreenVideos(root) {
+  (root || document).querySelectorAll('video[src^="/assets/media/screen/"]').forEach((v) => {
+    const drop = () => { (v.closest("figure") || v).remove(); };
+    fetch(v.getAttribute("src"), { method: "HEAD" }).then((r) => { if (!r.ok) drop(); }).catch(drop);
+  });
 }
 
 function screenRunsBlock(strain) {

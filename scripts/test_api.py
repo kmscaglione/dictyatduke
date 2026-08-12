@@ -140,6 +140,11 @@ def main():
     check("/api/batch resolves a known human ortholog (mhcA -> MYH*)",
           any("MYH" in (r.get("human_ortholog") or "") for r in rows))
 
+    # UniProt accessions resolve the same as symbols/DDB ids (P13773 = carA).
+    st, up = post_json("/api/batch", {"genes": ["P13773"], "columns": ["symbol"]})
+    check("/api/batch accepts a UniProt accession",
+          st == 200 and any(str(r.get("symbol", "")).lower().startswith("cara") for r in (up or {}).get("rows", [])))
+
     # GO-slim mapping mode of the enrichment endpoint.
     st, gs = post_json("/api/enrichment", {"genes": ["mhcA", "racE", "dagA", "carA", "gbpC"], "set": "goslim"})
     check("POST /api/enrichment set=goslim maps to slim categories",

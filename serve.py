@@ -4794,6 +4794,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not genes:
                 self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
                 return
+            rev = _idmap_reverse()   # accept UniProt / NCBI Gene ids too
+            genes = [rev["uniprot"].get(g.strip().upper()) or rev["ncbi"].get(g.strip()) or g for g in genes]
             columns = payload.get("columns")
             if columns is not None and not isinstance(columns, list):
                 columns = None
@@ -4820,6 +4822,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not genes:
                 self.send_json(400, {"error": "Provide a non-empty 'genes' list"})
                 return
+            rev = _idmap_reverse()   # accept UniProt / NCBI Gene ids, not just symbols/DDB
+            genes = [rev["uniprot"].get(g.strip().upper()) or rev["ncbi"].get(g.strip()) or g for g in genes]
             if payload.get("set") == "goslim":
                 self.send_json(200, enrichment.map_goslim(genes))
                 return

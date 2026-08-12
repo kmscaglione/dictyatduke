@@ -3782,7 +3782,7 @@ function renderEnrichmentPage() {
         <div class="record-title">
           <p class="eyebrow">Analysis</p>
           <h2>Enrichment analysis</h2>
-          <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids, separated by spaces, commas, or new lines) to find <strong>GO terms</strong>, curated <strong>mutant phenotypes</strong>, or <strong>KEGG pathways</strong> that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR. Or switch to <strong>GO-slim mapping</strong> to bucket the list into high-level functional categories.</p>
+          <p>Paste a list of genes (symbols like <em>mhcA</em>, DDB_G ids, or UniProt accessions, separated by spaces, commas, or new lines) to find <strong>GO terms</strong>, curated <strong>mutant phenotypes</strong>, or <strong>KEGG pathways</strong> that are statistically over-represented — useful for interpreting a hit list from RNA-seq, proteomics, or a screen. Hypergeometric test against all annotated <em>D. discoideum</em> genes, with Benjamini–Hochberg FDR. Or switch to <strong>GO-slim mapping</strong> to bucket the list into high-level functional categories.</p>
         </div>
       </header>
       <div class="record-body">
@@ -3801,8 +3801,8 @@ function renderEnrichmentPage() {
             <label style="font-size:0.8125rem;color:var(--muted,#6b7280)">min genes per term
               <input id="enrich-min" type="number" min="1" max="50" value="2" style="width:56px;margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
             </label>
-            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Also count the AI, Gomer Lab (I-TASSER), author-submitted, and community layers, in both the gene list and the background so the test stays valid. GO enrichment only."><input type="checkbox" id="enrich-predicted" style="margin-right:4px">include uncurated (AI, Gomer, author, community)</label>
-            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab GO terms">Gomer cutoff
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Also count the AI, Gomer Lab (I-TASSER), author-submitted, and community layers, in both the gene list and the background so the test stays valid. GO enrichment only."><input type="checkbox" id="enrich-predicted" style="margin-right:4px">include uncurated (AI, Gomer Lab annotations, author, community)</label>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab annotation GO terms">Gomer Lab annotations cutoff
               <select id="enrich-gomer-min" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
                 <option value="0.4">0.4</option><option value="0.5" selected>0.5</option><option value="0.6">0.6</option>
               </select>
@@ -3938,7 +3938,7 @@ function renderBatchPage() {
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Analysis</p>
         <h2>Batch gene annotator</h2>
-        <p>Paste a list of genes (symbols like <em>mhcA</em> or DDB_G ids), choose the columns you want, and get one row per gene: GO, phenotypes, human ortholog and disease, expression peak, and domains. Download the table as TSV for a spreadsheet.</p>
+        <p>Paste a list of genes (symbols like <em>mhcA</em>, DDB_G ids, or UniProt accessions), choose the columns you want, and get one row per gene: GO, phenotypes, human ortholog and disease, expression peak, and domains. Download the table as TSV for a spreadsheet.</p>
       </div></header>
       <div class="record-body">
         <form id="batch-form">
@@ -3950,8 +3950,8 @@ function renderBatchPage() {
             </div>
           </fieldset>
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:0 0 8px">
-            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Fold the AI, Gomer Lab (I-TASSER), author-submitted, and community GO terms into the GO column, marked as predicted."><input type="checkbox" id="batch-predicted" style="margin-right:4px">Include uncurated GO (AI, Gomer, author, community)</label>
-            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab GO terms">Gomer cutoff
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Fold the AI, Gomer Lab (I-TASSER), author-submitted, and community GO terms into the GO column, marked as predicted."><input type="checkbox" id="batch-predicted" style="margin-right:4px">Include uncurated GO (AI, Gomer Lab annotations, author, community)</label>
+            <label style="font-size:0.8125rem;color:var(--muted,#6b7280)" title="Minimum I-TASSER confidence score for Gomer Lab annotation GO terms">Gomer Lab annotations cutoff
               <select id="batch-gomer-min" style="margin-left:4px;padding:4px 6px;border:1px solid var(--line,#d7dee0);border-radius:6px">
                 <option value="0.4">0.4</option><option value="0.5" selected>0.5</option><option value="0.6">0.6</option>
               </select>
@@ -12640,6 +12640,22 @@ input.addEventListener("keydown", (event) => {
       break;
   }
 });
+
+// On tool, search, screen and Gomer pages, a result link (gene / GO term /
+// strain / organism) opens in a NEW TAB, so returning to the page doesn't wipe
+// the query and results and force the user to run the search again. Capture
+// phase + stopPropagation so this wins over the in-app navigation handlers.
+// Modifier/middle clicks and other pages keep normal behavior.
+document.addEventListener("click", (event) => {
+  if (event.defaultPrevented || event.button !== 0
+      || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const link = event.target.closest('a[href^="/gene/"], a[href^="/go/"], a[href^="/strain/"], a[href^="/organisms/"]');
+  if (!link) return;
+  if (!/^\/(tools|search|screens|gomer)(\/|$)/.test(location.pathname)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  window.open(link.getAttribute("href"), "_blank", "noopener");
+}, true);
 
 document.addEventListener("click", (event) => {
   const mobileToggle = event.target.closest(".mobile-menu-toggle");

@@ -9568,7 +9568,9 @@ function screenApply(d) {
   document.querySelectorAll(".screen-heat-row").forEach((row) => {
     row.addEventListener("click", () => {
       const s = d._byV[row.getAttribute("data-v")];
-      if (s && s.dbs_id) openStrain(s.dbs_id);
+      // Open in a new tab (like the screen's other result links) so returning
+      // to the screen doesn't lose the current search and filters.
+      if (s && s.dbs_id) window.open(`/strain/${encodeURIComponent(s.dbs_id)}`, "_blank", "noopener");
     });
   });
 

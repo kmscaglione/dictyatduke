@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 470" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-labelledby="f2t f2d">
+<title id="f2t">dictyBase architecture and data flow</title>
+<desc id="f2d">Community data sources are rebuilt by a documented set of scripts into versioned static data files. A single self-contained service delivers those files to the web interface, a REST API and bulk downloads. No database server or distributed services are required.</desc>
+<rect width="940" height="470" fill="#ffffff"/>
+<defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0a4f47"/></marker></defs>
+<rect x="26" y="92" width="212" height="278" rx="11" fill="#eef4f3" stroke="#0a4f47" stroke-width="1.6"/>
+<text x="132" y="120" text-anchor="middle" font-size="14" font-weight="700" fill="#0a4f47">Community data sources</text>
+<text x="48" y="154" font-size="12.5" fill="#1a2b3c">Gene Ontology</text>
+<text x="48" y="183" font-size="12.5" fill="#1a2b3c">NCBI</text>
+<text x="48" y="212" font-size="12.5" fill="#1a2b3c">UniProt</text>
+<text x="48" y="241" font-size="12.5" fill="#1a2b3c">InterPro</text>
+<text x="48" y="270" font-size="12.5" fill="#1a2b3c">KEGG</text>
+<text x="48" y="299" font-size="12.5" fill="#1a2b3c">OMA · InParanoid</text>
+<text x="48" y="328" font-size="12.5" fill="#1a2b3c">Human Phenotype Ontology</text>
+<text x="48" y="357" font-size="12.5" fill="#1a2b3c">AlphaFold</text>
+<path d="M 242,231 L 292,231" fill="none" stroke="#0a4f47" stroke-width="2" marker-end="url(#a2)"/>
+<text x="267" y="216" text-anchor="middle" font-size="11.5" fill="#6b7280">build</text>
+<text x="267" y="255" text-anchor="middle" font-size="11.5" fill="#6b7280">scripts</text>
+<rect x="300" y="176" width="184" height="110" rx="11" fill="#eef4f3" stroke="#0a4f47" stroke-width="1.6"/>
+<text x="392" y="214" text-anchor="middle" font-size="14" font-weight="700" fill="#0a4f47">Static data files</text>
+<text x="392" y="238" text-anchor="middle" font-size="12" fill="#6b7280">versioned</text>
+<text x="392" y="258" text-anchor="middle" font-size="12" fill="#6b7280">JSON · FASTA · GFF3</text>
+<path d="M 488,231 L 538,231" fill="none" stroke="#0a4f47" stroke-width="2" marker-end="url(#a2)"/>
+<rect x="546" y="176" width="196" height="110" rx="11" fill="#0a4f47"/>
+<text x="644" y="211" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Single self-contained</text>
+<text x="644" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">service</text>
+<text x="644" y="254" text-anchor="middle" font-size="11.5" fill="#bcd8d3">Python standard library</text>
+<text x="644" y="271" text-anchor="middle" font-size="11.5" fill="#bcd8d3">no database server</text>
+<rect x="790" y="110" width="128" height="62" rx="10" fill="#eef4f3" stroke="#0b746a" stroke-width="1.6"/>
+<text x="854" y="137" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b746a">Web interface</text>
+<text x="854" y="155" text-anchor="middle" font-size="11" fill="#6b7280">single-page app</text>
+<rect x="790" y="196" width="128" height="62" rx="10" fill="#eef4f3" stroke="#0b746a" stroke-width="1.6"/>
+<text x="854" y="223" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b746a">REST API</text>
+<text x="854" y="241" text-anchor="middle" font-size="11" fill="#6b7280">~40 endpoints</text>
+<rect x="790" y="282" width="128" height="62" rx="10" fill="#eef4f3" stroke="#0b746a" stroke-width="1.6"/>
+<text x="854" y="309" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0b746a">Bulk downloads</text>
+<text x="854" y="327" text-anchor="middle" font-size="11" fill="#6b7280">FASTA · GFF3 · JSON</text>
+<path d="M 746,231 L 786,141" fill="none" stroke="#0a4f47" stroke-width="2" marker-end="url(#a2)"/>
+<path d="M 746,231 L 786,227" fill="none" stroke="#0a4f47" stroke-width="2" marker-end="url(#a2)"/>
+<path d="M 746,231 L 786,313" fill="none" stroke="#0a4f47" stroke-width="2" marker-end="url(#a2)"/>
+<text x="470" y="438" text-anchor="middle" font-size="12" fill="#6b7280">Rebuilt from source · delivered by one service · no database server and no distributed components</text>
+</svg>

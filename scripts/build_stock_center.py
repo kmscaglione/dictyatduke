@@ -188,10 +188,26 @@ def main():
               % (len(edited), "y" if len(edited) == 1 else "ies"))
         return list(by_id.values())
 
+    def _dedupe(rows):
+        """The API returns the bacterial food strains under BOTH strain_type filters,
+        so regular + bacterial repeats them. Without this the catalog lists each one
+        twice and the strain total overcounts (7,079 rather than 7,055)."""
+        seen, out = set(), []
+        for r in rows:
+            rid = r.get("id")
+            if rid in seen:
+                continue
+            seen.add(rid)
+            out.append(r)
+        if len(out) != len(rows):
+            print("  dropped %d duplicate strain row(s) (present under both "
+                  "REGULAR and BACTERIAL)" % (len(rows) - len(out)))
+        return out
+
     if mode in ("all", "main", "strains"):
         regular = fetch_type("REGULAR")
         bacterial = fetch_type("BACTERIAL")
-        merged = _preserve(regular + bacterial, existing.get("strains", []))
+        merged = _preserve(_dedupe(regular + bacterial), existing.get("strains", []))
         strains = sorted(merged, key=lambda s: (s.get("label") or s.get("id") or "").lower())
     if mode in ("all", "main", "plasmids"):
         merged = _preserve(fetch_plasmids(), existing.get("plasmids", []))
@@ -200,7 +216,8 @@ def main():
     if mode in ("all", "main", "strains", "plasmids"):
         counts = {"strains": len(strains), "plasmids": len(plasmids)}
         if regular is not None:
-            counts.update(regular=len(regular), bacterial=len(bacterial))
+            counts.update(regular=len(regular), bacterial=len(bacterial),
+                          bacterial_ids=sorted({b["id"] for b in bacterial}))
         main = {
             "_meta": {
                 "description": "Dicty Stock Center catalog: browseable strains (regular + "

@@ -9,12 +9,18 @@ drifts from what the site actually serves:
 Exits non-zero if any claim disagrees with the data. Update CLAIMS when the
 manuscript text changes, never the derivation.
 
-Two counts cannot be derived from the shipped assets and are reported as
-UNVERIFIABLE rather than silently passed:
-  * bacterial strains  - stock_center.json merges REGULAR + BACTERIAL and does
-    not retain the split; re-running build_stock_center.py records it in _meta.
-  * API endpoint count - derived from serve.py below, but "approximately" in the
-    prose makes an exact match meaningless; check the order of magnitude.
+Counting notes, each of which cost a wrong answer once:
+  * Strain totals are DISTINCT ids. The DSC API returns the bacterial food strains
+    under both REGULAR and BACTERIAL, so the stored list carries duplicate rows.
+  * Orderable screen strains come from the n_gwdi/n_dsc counters, not the stored
+    lists, which are capped at 20 per gene for display.
+  * A screen strain's ddb_g is a list; one insertion can disrupt several genes.
+  * GO coverage comes from gene_annotations.json, the source /api/bulk?dataset=
+    go-gaf exports, not from go_annotations.json.
+  * Endpoints are counted from the request dispatch, not from string matches.
+
+Bacterial strain count is reported UNVERIFIABLE rather than silently passed:
+stock_center.json does not retain the REGULAR/BACTERIAL split.
 """
 
 import json
@@ -41,6 +47,7 @@ CLAIMS = {
     "BLAST-searchable genomes": 19,
     "stock centre strains": 7055,
     "strains in stock": 2130,
+    "data + analysis API endpoints": 40,
     "stock centre plasmids": 1265,
     "GWDI strains (approx)": 21500,
     "screen strains": 2257,
@@ -112,10 +119,17 @@ def derive():
     m = re.search(r"BLAST_DBS\s*=\s*\{(.*?)\n\}", src, re.S)
     out["BLAST-searchable genomes"] = len(re.findall(r'"[a-z0-9.\-]+"\s*:', m.group(1))) if m else -1
 
+    # Count DISTINCT ids: bacterial food strains come back from both the REGULAR and
+    # BACTERIAL queries, so the stored list carries byte-identical duplicate rows.
     sc = load("stock_center.json")
-    out["stock centre strains"] = len(sc["strains"])
-    out["strains in stock"] = sum(1 for s in sc["strains"] if s.get("in_stock") is True)
-    out["stock centre plasmids"] = len(sc["plasmids"])
+    by_id = {}
+    for s in sc["strains"]:
+        by_id.setdefault(s["id"], []).append(s)
+    out["stock centre strains"] = len(by_id)
+    out["strains in stock"] = sum(
+        1 for rows in by_id.values() if any(r.get("in_stock") is True for r in rows))
+    out["_duplicate strain rows"] = len(sc["strains"]) - len(by_id)
+    out["stock centre plasmids"] = len({p["id"] for p in sc["plasmids"]})
     out["GWDI strains (approx)"] = len(load("stock_gwdi.json")["strains"])
 
     sw = load("sawai2007.json")
@@ -142,9 +156,32 @@ def derive():
     labs = os.path.join(ASSETS, "teaching-labs")
     out["teaching lab protocols"] = len(os.listdir(labs))
 
-    # public REST endpoints (curator routes excluded)
-    eps = {e.rstrip("/.") for e in re.findall(r"/api/[a-zA-Z0-9_./-]+", src)}
-    out["_public API endpoints"] = len([e for e in eps if not e.startswith("/api/curator")])
+    # REST endpoints, counted from the request dispatch rather than from string
+    # matches (which pick up comments and external URLs such as AlphaFold's
+    # /api/prediction). "approximately 40" in the paper means the data and analysis
+    # surface, so auth, session and telemetry plumbing is excluded.
+    def dispatch(marker):
+        i = src.index(marker)
+        j = src.find("\n    def ", i + 10)
+        return src[i:j if j > 0 else len(src)]
+
+    b = dispatch("    def do_GET(self):") + dispatch("    def do_POST(self):")
+    eps = set(re.findall(r'(?:path|self\.path)\s*==\s*["\'](/api/[^"\']+)["\']', b))
+    eps |= set(re.findall(
+        r'(?:path|self\.path)\.split\(["\']\?["\']\)\[0\]\s*==\s*["\'](/api/[^"\']+)["\']', b))
+    for m in re.finditer(r'(?:path|self\.path)\s+in\s+\(([^)]*)\)', b):
+        eps |= set(re.findall(r'["\'](/api/[^"\']+)["\']', m.group(1)))
+    eps |= set(re.findall(r'(?:path|self\.path)\.startswith\(["\'](/api/[^"\']+)["\']', b))
+    eps |= set(re.findall(r're\.match\(r?["\']\^(/api/[a-zA-Z0-9_-]+)', b))
+    eps = {e.split("?")[0].rstrip("/") for e in eps} - {"/api", "/api/phenotype-"}
+    public = {e for e in eps if not e.startswith("/api/curator")}
+    plumbing = {"/api/hit", "/api/health", "/api/job", "/api/ext", "/api/upload",
+                "/api/version", "/api/stats", "/api/orcid/start", "/api/orcid/callback",
+                "/api/paper-session", "/api/paper-session/submit", "/api/author-curation",
+                "/api/gene-curation", "/api/analyze"}
+    out["data + analysis API endpoints"] = len(public - plumbing)
+    out["_all routed endpoints"] = len(eps)
+    out["_public endpoints incl. plumbing"] = len(public)
     return out
 
 

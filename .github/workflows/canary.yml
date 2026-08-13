@@ -22,4 +22,4 @@ jobs:
       - name: Probe the live site
         run: python3 scripts/canary.py
         env:
-          CANARY_BASE: https://dicty.labs.duke.edu
+          CANARY_BASE: https://www.dicty.org

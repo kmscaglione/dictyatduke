@@ -3,7 +3,7 @@
 the data it should. Exits non-zero if any check fails, so a scheduled runner
 (.github/workflows/canary.yml) turns a red run into an alert.
 
-Checks, against $CANARY_BASE (default https://dicty.labs.duke.edu):
+Checks, against $CANARY_BASE (default https://www.dicty.org):
   - /api/health is ok
   - each golden gene resolves via /api/gene/<symbol> with GO terms + sequence links
   - /api/search finds a golden gene
@@ -20,8 +20,8 @@ import sys
 import urllib.error
 import urllib.request
 
-BASE = os.environ.get("CANARY_BASE", "https://dicty.labs.duke.edu").rstrip("/")
-UA = "dictyBase-canary/1.0 (+https://dicty.labs.duke.edu)"
+BASE = os.environ.get("CANARY_BASE", "https://www.dicty.org").rstrip("/")
+UA = "dictyBase-canary/1.0 (+https://www.dicty.org)"
 # Verify TLS by default (GitHub runners have a CA bundle, so this also catches a
 # real cert expiry). Set CANARY_INSECURE=1 to skip it on a machine whose local CA
 # store is broken (e.g. a fresh python.org install that never ran Install

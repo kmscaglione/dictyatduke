@@ -26,7 +26,7 @@ import urllib.request
 _SSL = ssl.create_default_context()
 _SSL.check_hostname = False
 _SSL.verify_mode = ssl.CERT_NONE
-_UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
+_UA = "dictyBase-data-sync/1.0 (+https://www.dicty.org)"
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DL = ROOT / "assets" / "dictybase-downloads"

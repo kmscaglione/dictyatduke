@@ -8,7 +8,7 @@ asserts status, shape, and a few values cross-checked against the asset files
 class of bug the accuracy audit found).
 
     python3 scripts/test_api.py                       # tests http://localhost:8774
-    python3 scripts/test_api.py https://dicty.labs.duke.edu
+    python3 scripts/test_api.py https://www.dicty.org
 
 Start serve.py first. Exit 0 = all passed, 1 = at least one failed. Stdlib only.
 """

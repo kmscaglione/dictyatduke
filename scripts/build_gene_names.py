@@ -28,7 +28,7 @@ IDX = ASSETS / "gene_index.json"
 # dictyBase's official gene-names download (dictybase.dev is a SPA / GraphQL and
 # exposes no clean symbol; this file's Gene Name column is the canonical source).
 URL = "http://dictybase.org/db/cgi-bin/dictyBase/download/download.pl?area=general&ID=gene_information.txt"
-UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
+UA = "dictyBase-data-sync/1.0 (+https://www.dicty.org)"
 
 
 def load_file(text):

@@ -4,7 +4,7 @@
 authoritative sources) and that the specific numbers we claim in the paper are right.
 You are trying to *find problems* before a reviewer or reader does.
 
-**Where to work.** Test the **live site: https://dicty.labs.duke.edu**. Where a check
+**Where to work.** Test the **live site: https://www.dicty.org**. Where a check
 says "compare to dictyBase," use the current dictyBase at **https://dictybase.dev**.
 
 ---
@@ -20,7 +20,7 @@ The site can export its data as a spreadsheet. Download it, count the rows, and 
 number should match what the site displays. This proves the number on the page really
 reflects the served data (not a stale, hand-typed label).
 
-- **Genes:** open `https://dicty.labs.duke.edu/api/bulk?dataset=genes` in your browser
+- **Genes:** open `https://www.dicty.org/api/bulk?dataset=genes` in your browser
   (it downloads a `.tsv`). Open it in Excel. **Rows minus the header row = the gene
   count.** It should equal the homepage "13,000+" and the `/data` "Gene catalog" number.
 - **GO annotations:** `…/api/bulk?dataset=go` → rows = the GO-annotation count.

@@ -33,7 +33,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 OUT = ASSETS / "rnaseq_rosengarten.json"
 GEO_URL = "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE61nnn/GSE61914/suppl/GSE61914_RAW.tar"
-UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
+UA = "dictyBase-data-sync/1.0 (+https://www.dicty.org)"
 # Filter-development normalized files: GSM..._FDrep{1,2}_hr{NN}_nor.txt.gz
 FD_RE = re.compile(r"_FDrep([12])_hr(\d+)_nor\.txt\.gz$")
 

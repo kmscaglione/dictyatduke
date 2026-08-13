@@ -26,7 +26,7 @@ BASE = "http://dictybase.org"
 CTX = ssl.create_default_context()
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE
-UA = {"User-Agent": "dictyBase-preservation/1.0 (+https://dicty.labs.duke.edu)"}
+UA = {"User-Agent": "dictyBase-preservation/1.0 (+https://www.dicty.org)"}
 
 # Abstract book PDFs, by year. 2006 is the odd one out (under dicty06/).
 ABSTRACTS = {y: (f"/DictyAnnualConference/dicty06/dicty2006_abstracts.pdf" if y == 2006

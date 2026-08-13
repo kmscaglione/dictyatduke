@@ -565,7 +565,7 @@ GEMINI_API_KEY = _read_gemini_key()
 # Configure with ORCID_CLIENT_ID / ORCID_CLIENT_SECRET in the environment, or a
 # gitignored `.orcid_client` file next to serve.py holding "client-id:secret".
 # ORCID_REDIRECT_URI must match the redirect URI registered with ORCID EXACTLY,
-# e.g. https://dicty.labs.duke.edu/api/orcid/callback
+# e.g. https://www.dicty.org/api/orcid/callback
 # Set ORCID_ENV=sandbox to test against sandbox.orcid.org first.
 def _read_orcid_client():
     cid = os.environ.get("ORCID_CLIENT_ID", "").strip()
@@ -1985,7 +1985,7 @@ def bulk_tsv(dataset):
         default_rel = {"P": "involved_in", "F": "enables", "C": "located_in"}
         today = datetime.date.today().isoformat()
         header = ["!gaf-version: 2.2",
-                  "!generated-by: dictyBase (dicty.labs.duke.edu)",
+                  "!generated-by: dictyBase (www.dicty.org)",
                   f"!date-generated: {today}",
                   "!source: GO Consortium DICDI-mod GAF, merged with dictyBase curation"]
         body = []
@@ -2550,7 +2550,7 @@ def _curation_ai_draft(paper, genes):
 def _invitation_email(paper, genes, session_url):
     """Plain-text invitation to the corresponding author. A DRAFT for a curator to
     review and send by hand; the pipeline never sends it."""
-    base = os.environ.get("SITE_BASE_URL", "https://dicty.labs.duke.edu")
+    base = os.environ.get("SITE_BASE_URL", "https://www.dicty.org")
     symbols = ", ".join(g["symbol"] for g in genes[:12]) or "genes from your paper"
     greet = paper.get("corr_name") or "Colleague"
     return (
@@ -3023,7 +3023,7 @@ _FT_UA = "dictyBase-curation/1.0 (mailto:%s)" % CONTACT_EMAIL
 # Descriptive User-Agent for outbound API calls. EBI (AlphaFold, InterPro) and
 # other providers' WAFs block the default "Python-urllib/x.y" as a bot, so every
 # outbound request must identify itself.
-_HTTP_UA = "dictyBase/1.0 (+https://dicty.labs.duke.edu; mailto:%s)" % CONTACT_EMAIL
+_HTTP_UA = "dictyBase/1.0 (+https://www.dicty.org; mailto:%s)" % CONTACT_EMAIL
 
 
 def _pmid_to_pmcid(pmid):

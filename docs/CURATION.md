@@ -23,7 +23,7 @@ curation, and it validates and writes safely (atomic, with a backup).
 ## Curating
 
 ### 1. Open the dashboard
-Go to **https://dicty.labs.duke.edu/tools/curate** (unlisted — not in any menu).
+Go to **https://www.dicty.org/tools/curate** (unlisted — not in any menu).
 Sign in with your **username and password**. Your edits are automatically
 attributed to your account name (no typing your name — it's taken from the login,
 so it can't be faked).

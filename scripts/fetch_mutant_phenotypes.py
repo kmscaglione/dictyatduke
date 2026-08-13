@@ -18,7 +18,7 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEST = ROOT / "assets" / "dictybase-corpus" / "mutant-phenotypes"
 BASE = "http://dictybase.org/db/cgi-bin/dictyBase/download/download.pl?area=mutant_phenotypes&ID="
-UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
+UA = "dictyBase-data-sync/1.0 (+https://www.dicty.org)"
 
 # all-mutants(-ddb_g) are the complete curated set; the rest are partitions kept
 # as hardcopies for provenance. all-mutants.txt carries the phenotype terms;

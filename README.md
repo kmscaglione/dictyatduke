@@ -411,7 +411,7 @@ Not done / candidates:
 
 ## Deployment notes
 
-**Live at <https://dicty.labs.duke.edu>** — a Duke AlmaLinux 9 VM running
+**Live at <https://www.dicty.org>** — a Duke AlmaLinux 9 VM running
 Apache (TLS) as a reverse proxy in front of `serve.py` (bound to
 `127.0.0.1:8774`) under a systemd unit (`dicty.service`). Deploys are a git
 pull: push to the Duke GitLab remote, then on the server

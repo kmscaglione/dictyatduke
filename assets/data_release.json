@@ -4,7 +4,7 @@
   "title": "dictyBase: a community resource for Dictyostelium genomes, genes, and curation",
   "authors": "Scaglione lab and dictyBase contributors",
   "publisher": "Duke University School of Medicine",
-  "doi": "",
-  "url": "https://dicty.labs.duke.edu",
+  "doi": "10.5281/zenodo.21812669",
+  "url": "https://www.dicty.org",
   "license": "Site gene summaries CC BY-NC 4.0. Underlying data belongs to its sources (dictyBase / Basu et al. 2015, UniProt, NCBI, EBI, OMA, RCSB, KEGG) and is subject to their terms."
 }

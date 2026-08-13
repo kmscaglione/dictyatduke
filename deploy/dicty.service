@@ -25,7 +25,7 @@ ExecStart=/usr/bin/python3 serve.py
 # --- Configuration --------------------------------------------------------
 Environment=HOST=127.0.0.1
 Environment=PORT=8774
-Environment=PUBLIC_BASE_URL=https://dicty.labs.duke.edu
+Environment=PUBLIC_BASE_URL=https://www.dicty.org
 
 # Concurrency caps — tune to the box. Rule of thumb on an 8 vCPU host: leave
 # ~2 cores for the app/OS, give the rest to BLAST subprocess work.

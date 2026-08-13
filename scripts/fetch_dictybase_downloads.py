@@ -20,7 +20,7 @@ import urllib.request
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEST = ROOT / "assets" / "dictybase-downloads"
 DLBASE = "http://dictybase.org/db/cgi-bin/dictyBase/download/download.pl?area={area}&ID={fid}"
-UA = "dictyBase-data-sync/1.0 (+https://dicty.labs.duke.edu)"
+UA = "dictyBase-data-sync/1.0 (+https://www.dicty.org)"
 
 # Faithful replica of the dictybase.org/Downloads sections. Each file: (label, area, id).
 # label is the download-link text; area+id build the source URL and the local path.
@@ -135,7 +135,7 @@ def main():
     manifest = {
         "source": "http://dictybase.org/Downloads/",
         "note": "Local mirror of the dictyBase Downloads page, preserved and served "
-                "from dicty.labs.duke.edu. Files are dictyBase's; see each dataset's "
+                "from www.dicty.org. Files are dictyBase's; see each dataset's "
                 "terms at dictybase.org.",
         "sections": manifest_sections,
         "total_bytes": total,

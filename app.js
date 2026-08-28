@@ -1405,8 +1405,25 @@ async function fetchNCBISuggestions(query, localRows) {
 
 async function openUniProtGene(uniprotId) {
   recordShell.removeAttribute("hidden");
-  recordShell.innerHTML = `<div class="empty-state">${loadingHTML(`Loading ${uniprotId} from UniProt…`)}</div>`;
+  recordShell.innerHTML = `<div class="empty-state">${loadingHTML(`Loading ${uniprotId}…`)}</div>`;
   scrollToEl(recordShell);
+  // Anchor the UniProt accession to its DDB_G through the local id map, then open
+  // it exactly the way a DDB_G search does. UniProt's own record often lacks the
+  // VEuPathDB cross-reference that carries the DDB_G, so a bare UniProt gene had
+  // an empty veupath/ddb and its DDB-keyed data (RNA-seq, sequences, curation)
+  // silently didn't load.
+  try {
+    const m = await fetch("/api/idmap", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids: [uniprotId] }),
+    }).then((r) => r.json());
+    const hit = (m.results || []).find((r) => r.found && /^DDB_G\d+$/.test(r.ddb || ""));
+    if (hit) {
+      input.value = (hit.symbol && !/^DDB_G\d+$/.test(hit.symbol)) ? hit.symbol : hit.ddb;
+      navigateToGene({ id: hit.ddb, symbol: hit.symbol, ncbiGene: hit.ncbiGene });
+      return;
+    }
+  } catch { /* fall through to a direct UniProt fetch */ }
   try {
     const gene = await fetchUniProtGene(uniprotId);
     input.value = gene.symbol;

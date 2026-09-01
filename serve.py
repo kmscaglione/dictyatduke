@@ -376,6 +376,11 @@ _GENE_META = {"mtime": None, "by_symbol": {}, "by_ddb": {}, "records": []}
 # the deployment (e.g. https://dicty.example.org); otherwise derived per request
 # from the Host header (https assumed, since TLS terminates at the proxy).
 PUBLIC_BASE_URL = os.environ.get("PUBLIC_BASE_URL", "").rstrip("/")
+# The canonical public domain used ONLY in SEO signals (canonical/OG links,
+# sitemap, robots, JSON-LD) so search engines index the branded www.dicty.org
+# regardless of which host actually served the request. Kept separate from
+# PUBLIC_BASE_URL, which drives serving/ORCID and must match the real host.
+CANONICAL_BASE_URL = os.environ.get("CANONICAL_BASE_URL", "https://www.dicty.org").rstrip("/")
 _esc = html.escape  # module-level alias (the `html` name is shadowed in _serve_index)
 
 # Friendly titles/descriptions for the main static routes. Unlisted routes keep
@@ -480,6 +485,22 @@ def route_meta(path):
             return title, description, canon, jsonld
         # unknown gene token: still give it a sensible title
         return f"{token} · Dictyostelium gene · {SITE_NAME}", None, path, None
+    if not parts:  # homepage: WebSite + Organization + a sitelinks searchbox
+        return None, None, "/", {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": SITE_NAME,
+            "alternateName": ["dictyBase", "Dictyostelium genome database"],
+            "description": ("dictyBase: the community resource for Dictyostelium "
+                            "discoideum genomes, genes, curation, and analysis tools."),
+            "publisher": {"@type": "Organization", "name": SITE_NAME},
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {"@type": "EntryPoint",
+                           "urlTemplate": CANONICAL_BASE_URL + "/search?q={search_term_string}"},
+                "query-input": "required name=search_term_string",
+            },
+        }
     hit = _ROUTE_META.get(path.rstrip("/") or "/")
     if hit:
         return f"{hit[0]} · {SITE_NAME}", hit[1], path, None
@@ -4098,7 +4119,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # distinctly (the body is still client-rendered; this is the head).
             path = self.path.split("?")[0]
             title, desc, canon, jsonld = route_meta(path)
-            base = _base_url(self)
+            base = CANONICAL_BASE_URL or _base_url(self)
             head = []
             if title:
                 html = re.sub(r"<title>.*?</title>", f"<title>{_esc(title)}</title>",
@@ -4134,7 +4155,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(500, str(e))
 
     def _serve_robots(self):
-        base = _base_url(self)
+        base = CANONICAL_BASE_URL or _base_url(self)
         lines = ["User-agent: *", "Allow: /", "Disallow: /api/"]
         if base:
             lines.append(f"Sitemap: {base}/sitemap.xml")
@@ -4236,7 +4257,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(body)
 
     def _serve_sitemap(self):
-        base = _base_url(self)
+        base = CANONICAL_BASE_URL or _base_url(self)
         gm = _load_gene_meta()
         key = (gm["mtime"], base)
         xml = Handler._SITEMAP_CACHE.get(key)

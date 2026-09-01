@@ -3,6 +3,12 @@
   "items": [
     {
       "date": "2026-08-12",
+      "tag": "new",
+      "title": "dictyBase is live — tell us what you think",
+      "body": "dictyBase is now open to the whole community as a public beta. This is the new home for Dictyostelium genomes, genes, curation, the Stock Center, and a growing set of analysis tools, and it is free and open to everyone. We built this for you, and we would love your feedback. Try it on the genes and questions you care about, and tell us what works well, what is missing, and what could be clearer. If you hit a bug or find something that looks wrong, please report it so we can fix it quickly. You can reach us any time through Submit corrections and Suggestions under the Community menu. We read every report, and your input directly shapes where dictyBase goes next. Thank you for being part of this. dictyBase belongs to the community."
+    },
+    {
+      "date": "2026-08-12",
       "tag": "community",
       "title": "How curation works now: whole papers, author review, and honest dates",
       "body": "A few changes to how dictyBase curates the literature. When a new Dictyostelium paper appears, dictyBase drafts the gene summaries, Gene Ontology terms, phenotypes, and interactions it reports, then invites the corresponding author to check them. Authors get a private link, edit or remove anything wrong, and pick official GO terms from a search box rather than knowing them by heart. Anything they are unsure about can be flagged for a curator instead of confirmed. Nothing becomes part of the curated record until a curator has reviewed it, and you can sign in with ORCID so the work is credited to you. Where a paper is openly available, dictyBase now curates from the full text rather than the abstract. That finds far more of what a paper reports, including controls and negative results. When no open copy exists, a curator can supply one, and the page an author reviews says which was used. The front-page recent papers list now orders by when each paper actually became available, not by journal issue date, so a paper assigned to a later issue no longer outranks newer ones. It shows that date."

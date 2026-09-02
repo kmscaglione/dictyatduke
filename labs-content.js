@@ -64,6 +64,7 @@ window.dictyLabs = [
   { pi: "David Ratner", institution: "Amherst College", location: "Amherst, USA", url: "https://www.amherst.edu/people/facstaff/diratner", emeritus: true, email: "dWRlLnRzcmVobWFAcmVudGFyaWQ=" },
   { pi: "Francisco Rivero", institution: "University of Hull", location: "Hull, UK", url: "", email: "a3UuY2EubGx1aEBvcHNlckMtb3JldmlSLkY=" },
   { pi: "Douglas Robinson", institution: "Johns Hopkins University School of Medicine", location: "Baltimore, USA", url: "", email: "dWRlLmltaGpAcm5k" },
+  { pi: "Satoshi Sawai", institution: "The University of Tokyo", location: "Tokyo, Japan", url: "", email: "cGouY2Eub3lrb3QtdS5jY2UubGlhbUBpYXdhc3Nj" },
   { pi: "Matt Scaglione", institution: "Duke University School of Medicine", location: "Durham, USA", url: "", email: "dWRlLmVrdWRAZW5vaWxnYWNzLnR0YW0=" },
   { pi: "Pauline Schaap", institution: "University of Dundee", location: "Dundee, Scotland", url: "", email: "a3UuY2EuZWVkbnVkQHBhYWhjcy5w" },
   { pi: "Jeff Segall", institution: "Albert Einstein College of Medicine", location: "Bronx, USA", url: "", email: "dWRlLmRlbW5pZXRzbmllQGxsYWdlcy55ZXJmZmVq" },

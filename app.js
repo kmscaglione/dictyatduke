@@ -1739,28 +1739,61 @@ async function loadOfficialCuration(gene) {
   const phen = Array.isArray(gene.phenotypes) ? gene.phenotypes : [];
   let status = "";
   const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  let fn = null;
   if (/^DDB_G\d+$/.test(ddb)) {
     try { const x = await fetchGeneExtras(ddb); if (state.activeGene !== gene) return; status = (x && x.curation) || ""; }
     catch { /* status optional */ }
+    // An inferred-function entry exists ONLY for genes with no real curated prose.
+    try { fn = (await ensureFunctionSummaries())[ddb] || null; if (state.activeGene !== gene) return; }
+    catch { /* inferred layer optional */ }
   }
-  const curated = gene._curator && !gene._legacySummary;
-  // The prose (curated summary sentences) shows on the page; the structured GO
-  // and phenotype curation is not listed here, just a link that opens its tab.
-  const summaryHtml = gene.summary
-    ? `<p style="margin:0 0 2px">${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>`
-    : "";
+  // Shared GO / phenotype tab links.
   const linkParts = [];
   if (go.length) linkParts.push(`<button type="button" class="text-link" data-tab="GO" style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark);font:inherit">${go.length} GO term${go.length === 1 ? "" : "s"}</button>`);
   if (phen.length) linkParts.push(`<button type="button" class="text-link" data-tab="Phenotypes" style="background:none;border:none;padding:0;cursor:pointer;color:var(--teal-dark);font:inherit">${phen.length} phenotype${phen.length === 1 ? "" : "s"}</button>`);
   const linkHtml = linkParts.length ? `<p style="font-size:0.8125rem;margin:8px 0 0">→ View ${linkParts.join(" &amp; ")}</p>` : "";
-  if (!(summaryHtml || linkHtml || status || curated)) { el.setAttribute("hidden", ""); el.innerHTML = ""; return; }
-  const meta = [];
-  if (status) meta.push(`<strong>Curation status</strong> · ${escapeHtml(status)}`);
-  if (curated) meta.push(`Curated by ${escapeHtml(gene._curator)}`);
-  const metaHtml = meta.length ? `<div style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">${meta.join("<br>")}</div>` : "";
-  el.removeAttribute("hidden");
-  el.innerHTML = `<h3>dictyBase official curation <span class="src-badge src-dicty">dictyBase</span></h3>
+  const statusMeta = status ? `<div style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0"><strong>Curation status</strong> · ${escapeHtml(status)}</div>` : "";
+
+  // Prefer real curated prose (or an imported legacy dictyBase description) over
+  // the inferred line. `fn` is present only when the corpus had no real prose, so
+  // a legacy summary still wins because it is genuine dictyBase content.
+  const showCorpus = gene.summary && (!fn || gene._legacySummary);
+  if (showCorpus) {
+    const curated = gene._curator && !gene._legacySummary;
+    const summaryHtml = `<p style="margin:0 0 2px">${renderCuratedText(gene.summary)}${gene._legacySummary ? ` <span class="legacy-badge" title="Gene-product description imported from dictyBase; not re-curated here.">dictyBase legacy</span>` : ""}</p>`;
+    const meta = [];
+    if (status) meta.push(`<strong>Curation status</strong> · ${escapeHtml(status)}`);
+    if (curated) meta.push(`Curated by ${escapeHtml(gene._curator)}`);
+    const metaHtml = meta.length ? `<div style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">${meta.join("<br>")}</div>` : "";
+    el.removeAttribute("hidden");
+    el.innerHTML = `<h3>dictyBase official curation <span class="src-badge src-dicty">dictyBase</span></h3>
     ${summaryHtml}${metaHtml}${linkHtml}`;
+    return;
+  }
+
+  // No curated description: show a short inferred "what does this protein do?"
+  // line, clearly labelled so it is never mistaken for curation.
+  if (fn && fn.text) {
+    const isUnchar = fn.source === "none";
+    const badge = fn.source === "go"
+      ? ` <span class="src-badge" style="background:#eef2f7;color:#5b6472" title="Synthesized from this gene's Gene Ontology annotations; not manually curated.">inferred</span>`
+      : fn.source === "product"
+      ? ` <span class="src-badge" style="background:#eef2f7;color:#5b6472" title="From the gene product name.">gene product</span>` : "";
+    const note = fn.source === "go"
+      ? "Inferred from this gene's Gene Ontology annotations (largely InterPro / electronic). Not a manually curated description."
+      : fn.source === "product"
+      ? "Based on the gene product name. Not a manually curated description."
+      : "No functional characterization is available for this protein yet.";
+    el.removeAttribute("hidden");
+    el.innerHTML = `<h3>${isUnchar ? "Function" : "Predicted function"} ${isUnchar ? "" : `<span class="src-badge" style="background:#eef2f7;color:#5b6472">predicted</span>`}</h3>
+    <p style="margin:0 0 2px">${escapeHtml(fn.text)}${badge}</p>
+    <div style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">${note}</div>${statusMeta}${linkHtml}`;
+    return;
+  }
+
+  if (!(linkHtml || status)) { el.setAttribute("hidden", ""); el.innerHTML = ""; return; }
+  el.removeAttribute("hidden");
+  el.innerHTML = `<h3>dictyBase official curation <span class="src-badge src-dicty">dictyBase</span></h3>${statusMeta}${linkHtml}`;
 }
 
 // Community curation: annotations added here through the curation portal, tagged
@@ -8927,6 +8960,20 @@ async function resolveGONames(goIds) {
     }
   } catch { /* names fall back to GO IDs */ }
   return out;
+}
+
+// --- inferred function summaries (for genes with no real curated prose) ---
+// A one-line "what does this protein do?" synthesized from Gene Ontology, built
+// by scripts/build_function_summaries.py. Present ONLY for genes that lack a real
+// curated dictyBase description, so its mere presence marks a gene as un-curated.
+let functionSummaries = null;
+async function ensureFunctionSummaries() {
+  if (functionSummaries) return functionSummaries;
+  try {
+    const res = await fetch("/assets/function_summaries.json");
+    functionSummaries = res.ok ? await res.json() : {};
+  } catch { functionSummaries = {}; }
+  return functionSummaries;
 }
 
 // --- AI-curation layer (machine-generated; always badged "AI") ---

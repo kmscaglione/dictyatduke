@@ -48,6 +48,8 @@ STEPS = [
     ("featured-gene locations (app.js)", ["sync_featured_loci.py"], "derive", ["gene_index.json"]),
     ("advanced-finder facets", ["build_gene_facets.py"], "derive",
      ["gene_index.json", "phenotypes.json", "ortholog_disease.json", "rnaseq_rosengarten.json"]),
+    ("inferred function summaries", ["build_function_summaries.py"], "derive",
+     ["go_annotations.json", "go_terms.json", "dictybase_corpus.json", "gene_index.json"]),
     ("news feed", ["build_news.py"], "derive", ["news_manual.json"]),
     ("changelog", ["build_changelog.py"], "derive", []),
     # --- genome-file dependent (assets/genomes/*.gff, gitignored) ---

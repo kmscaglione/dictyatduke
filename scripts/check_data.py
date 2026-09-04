@@ -183,9 +183,39 @@ def check_gomer():
           else f"{len(leaked)} annotator fields look like leaked data")
 
 
+def check_function_summaries():
+    """function_summaries.json (inferred 'what does this protein do?' layer):
+    keyed by DDB_G, every entry has text + a known source, and it must NOT
+    contain a gene that carries a real curated dictyBase description — those keep
+    their curation. cln5/rasC/regA are the canary against a classifier regression
+    that would hide real curation behind an inferred line."""
+    print("inferred function summaries")
+    path = os.path.join(ASSETS, "function_summaries.json")
+    if not os.path.exists(path):
+        return ok("function_summaries.json absent (layer not built) — skipped")
+    try:
+        fs = load("function_summaries.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load function_summaries.json ({e})")
+    ent = {k: v for k, v in fs.items() if not str(k).startswith("_")}
+    check(len(ent) > 5000, f"genes covered {len(ent)} (> 5000)")
+    bad = [k for k in ent if not re.match(r"^DDB_G\d+$", k)]
+    check(not bad, "all keys are DDB_G ids" if not bad else f"{len(bad)} non-DDB_G keys")
+    src_ok = {"go", "product", "none"}
+    badv = [k for k, v in ent.items() if not isinstance(v, dict)
+            or not str(v.get("text", "")).strip() or v.get("source") not in src_ok]
+    check(not badv, "every entry has text + a known source"
+          if not badv else f"{len(badv)} malformed entries")
+    canary = ["DDB_G0275299", "DDB_G0281385", "DDB_G0284331"]  # cln5, rasC, regA
+    leaked = [g for g in canary if g in ent]
+    check(not leaked, "curated genes (cln5/rasC/regA) not overridden by inferred lines"
+          if not leaked else f"curated genes wrongly in inferred layer: {leaked}")
+
+
 def main():
     print("=== dictyBase data self-check ===")
-    for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline, check_gomer):
+    for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
+               check_gomer, check_function_summaries):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

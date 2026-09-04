@@ -497,7 +497,7 @@ const researchResources = [
     label: "Nomenclature guidelines",
     dek: "A uniform nomenclature is essential for compiling Dictyostelium gene, protein, allele, strain, phenotype, genotype, plasmid, construct, and chromosome information.",
     paragraphs: [
-      "Dictyostelium discoideum AX4 has a genome of approximately 34 Mb, containing approximately 12,500 genes. Thousands of mutant strains have been obtained, many of which are available from the Dicty Stock Center.",
+      "Dictyostelium discoideum AX4 has a genome of approximately 34 Mb, containing roughly 13,900 genes. Thousands of mutant strains have been obtained, many of which are available from the Dicty Stock Center.",
       "Researchers are encouraged to conform to these guidelines when naming Dictyostelium genes, proteins, mutant alleles, strains, phenotypes, genotypes, plasmids, molecular genetic constructs, and chromosomes.",
       "Questions and comments should be addressed to matt.scaglione@duke.edu."
     ],
@@ -4433,7 +4433,7 @@ function renderDownloadsShell() {
         <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:-2px 0 12px">Whole-database exports as tab-separated values (TSV) for offline analysis. Also available via the <a class="text-link" href="/tools/api">REST API</a>.</p>
         <ul class="list">
           ${[
-            ["genes", "Gene catalog", "DDB_G id, symbol, name, location, NCBI gene, UniProt — all ~13,900 genes."],
+            ["genes", "Gene catalog", "DDB_G id, symbol, name, location, NCBI gene, UniProt — all 13,892 genes."],
             ["go", "GO annotations", "Gene → GO term, aspect, evidence code, PMID."],
             ["phenotypes", "Curated phenotypes", "Gene → mutant phenotype and supporting PMID."],
             ["orthologs", "Human orthologs & disease", "Gene → human ortholog, relationship, linked disease."],
@@ -6078,7 +6078,7 @@ const TEACHING_FIGURES = [
 const START_WHY = [
   ["Haploid genetics", "One gene knockout gives a clean null — no need to make homozygotes, so loss-of-function phenotypes show up immediately."],
   ["A 24-hour life cycle", "Starving cells chemotax, cooperate, and build a multicellular fruiting body in a day — chemotaxis, signaling, and development in one organism."],
-  ["Human-disease relevance", "Roughly two-thirds of its ~12,000 genes have human orthologs; a tractable model for neurodegeneration, mitochondrial disease, autophagy, and infection."],
+  ["Human-disease relevance", "Roughly two-thirds of its ~13,900 genes have human orthologs; a tractable model for neurodegeneration, mitochondrial disease, autophagy, and infection."],
   ["Cheap, fast, safe", "Grows in simple liquid medium or on bacteria, doubles in ~8–12 h, and is non-pathogenic (biosafety level 1)."],
   ["Genetically tractable", "Homologous-recombination knockouts, REMI, RNAi, and CRISPR-Cas9 all work in the haploid genome."],
   ["A premier cell-biology model", "Foundational for chemotaxis, phagocytosis, macropinocytosis, cytokinesis, and the evolution of multicellularity."],
@@ -6093,7 +6093,7 @@ const START_STEPS = [
 ];
 const START_FAQ = [
   ["What is Dictyostelium discoideum?", "A social amoeba (a “cellular slime mold”) that lives in forest soil. It grows as single amoebae that eat bacteria, but when food runs out, up to ~100,000 cells stream together and build a multicellular fruiting body in about 24 hours — making it a uniquely visual, tractable model for chemotaxis, cell–cell signaling, and development."],
-  ["Why use it as a model organism?", "It is haploid (one knockout gives an immediate phenotype), cheap and safe to grow, and genetically tractable (homologous recombination, REMI, RNAi, and CRISPR). Its ~34 Mb genome has ~12,000 genes, about two-thirds with human orthologs — so it models human biology and disease while being far easier to manipulate than animal cells."],
+  ["Why use it as a model organism?", "It is haploid (one knockout gives an immediate phenotype), cheap and safe to grow, and genetically tractable (homologous recombination, REMI, RNAi, and CRISPR). Its ~34 Mb genome has ~13,900 genes, about two-thirds with human orthologs — so it models human biology and disease while being far easier to manipulate than animal cells."],
   ["What is AX4, and how is it different from NC4?", "NC4 is the original wild isolate, collected from soil, and grows on bacteria. AX4 is an axenic lab strain derived from NC4 that also grows in liquid HL5 medium without bacteria — convenient for large-scale culture. AX4 is the reference genome on this site."],
   ["How do I obtain strains and plasmids?", "From the Dicty Stock Center (under Community → Stock Center), the community repository that distributes Dictyostelium strains and plasmids."],
   ["Can I do CRISPR in Dictyostelium?", "Yes — CRISPR-Cas9 is now standard for marker-free knockouts and edits. You can design guides with genome off-target checking on the Lab tools page."],

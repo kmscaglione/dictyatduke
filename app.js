@@ -1077,10 +1077,27 @@ function searchIndex(query, limit = 8) {
   return matches.slice(0, limit).map((m) => m.g);
 }
 
+// Featured-gene seed records (the `genes` array) carry early hand-written
+// placeholder content — summary, GO, phenotypes, literature, structures, tags —
+// that predates the live data pipeline. When one becomes the base for a record
+// page, strip that placeholder content so the real curated corpus and live
+// annotations fill those fields, exactly like every other gene (otherwise famous
+// genes such as cln5 and regA showed the stale seed blurb and placeholder GO
+// counts instead of their real dictyBase curation). Identity fields — name, IDs,
+// location, aliases — are kept so lookup, display, and external links still work.
+function seedIdentityOnly(gene) {
+  if (!gene) return gene;
+  // Blank the placeholder content to its natural empty type (not delete, so
+  // renderers that map over these fields don't hit `undefined`). Enrichment then
+  // fills summary/phenotypes from the curated corpus and GO/literature from the
+  // live annotations, exactly as for a non-featured gene.
+  return { ...gene, summary: "", go: [], phenotypes: [], literature: [], structures: [], tags: [] };
+}
+
 function findGeneByToken(token) {
   const q = normalize(decodeURIComponent(token || ""));
   if (!q) return null;
-  return genes.find((gene) => [
+  const hit = genes.find((gene) => [
     gene.id,
     gene.symbol,
     gene.ncbiGene,
@@ -1088,6 +1105,7 @@ function findGeneByToken(token) {
     gene.veupath,
     ...(gene.aliases || [])
   ].some((value) => normalize(value) === q)) || rankedGenes(q)[0] || null;
+  return seedIdentityOnly(hit);
 }
 
 function genePath(gene) {

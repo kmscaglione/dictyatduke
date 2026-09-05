@@ -4100,11 +4100,20 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         try:
             html = (pathlib.Path(ROOT) / "index.html").read_text()
             def stamp(m):
+                # Stamp css/js with a CONTENT HASH, not mtime. These files are
+                # served immutable for a year (see end_headers), which is only
+                # safe if the ?v= changes exactly when the bytes change. mtime is
+                # unreliable for that — a `git reset --hard` deploy that doesn't
+                # rewrite app.js leaves its mtime unchanged even across a content
+                # change, so a stale copy could stay pinned in browser/proxy
+                # caches for a year. A hash of the bytes changes iff the content
+                # changes, making the immutable cache correct and self-busting.
                 attr, ref = m.group(1), m.group(2)
                 try:
-                    v = int((pathlib.Path(ROOT) / ref.lstrip("/")).stat().st_mtime)
+                    data = (pathlib.Path(ROOT) / ref.lstrip("/")).read_bytes()
                 except OSError:
                     return m.group(0)
+                v = hashlib.sha1(data).hexdigest()[:12]
                 return f'{attr}="{ref}?v={v}"'
             html = ASSET_RE.sub(stamp, html)
             # Inject the data-asset version (max mtime of assets/*.json). app.js

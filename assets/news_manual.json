@@ -2,6 +2,12 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-09-05",
+      "tag": "update",
+      "title": "A function summary on every protein, and more genes findable by name",
+      "body": "Two pieces of community feedback shaped this update, and both are now live. Every protein page now shows a short function summary. Where dictyBase has a curated description, that is what appears. Where it does not, the page shows a concise function line inferred from the gene's Gene Ontology annotations, clearly labeled as predicted, so you can always tell curated from inferred at a glance. Proteins with nothing known yet say so plainly. We also broadened how genes are matched by name. The site draws names from the Gene Name and Synonyms fields, NCBI, and UniProt. Some genes carry their common name only in dictyBase's gene-product description, so they were not turning up under that name. The site now reads the product descriptions too. Genes like dynacortin (dct), enlazin (enlA), and 14-3-3 (fttB) are findable by name again, and thousands of genes that read \"hypothetical protein\" now show their real product names. Thank you to everyone sending feedback. Please keep it coming, through Submit corrections or Suggestions under the Community menu, or by replying on the mailing list. Your reports directly shape what we build next."
+    },
+    {
       "date": "2026-09-01",
       "tag": "new",
       "title": "dictyBase is live — tell us what you think",

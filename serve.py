@@ -1,6 +1,9 @@
 import http.server, os, json, uuid, datetime, pathlib, urllib.request, urllib.error, re, ssl, posixpath
 import subprocess, shutil, tempfile, csv, html, gzip, io, secrets, hmac, time, sys, threading, hashlib
-import base64, struct
+import base64, struct, mimetypes
+# Web app manifest MIME type, so the PWA manifest is served correctly by any
+# static path (guess_type doesn't know .webmanifest by default).
+mimetypes.add_type("application/manifest+json", ".webmanifest")
 import concurrent.futures
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
@@ -162,7 +165,7 @@ def fetch_pubmed_recent(term="Dictyostelium", n=5):
             p.pop("_sort", None)
     return {"updated": datetime.datetime.utcnow().isoformat() + "Z",
             "term": term, "papers": papers}
-STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".svg",
+STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".svg", ".webmanifest",
                ".woff", ".woff2", ".pdf", ".docx", ".gz", ".fna", ".fai", ".gff", ".gtf",
                ".json", ".bedgraph",
                ".tbi",   # .tbi: tabix indexes for the bgzipped browser GFF/track files
@@ -3928,6 +3931,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".mp4": "video/mp4",
         ".jar": "application/java-archive",
         ".xlsm": "application/vnd.ms-excel.sheet.macroEnabled.12",
+        ".webmanifest": "application/manifest+json",
     }
 
     def _serve_static_ranged(self):

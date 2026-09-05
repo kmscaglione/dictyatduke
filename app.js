@@ -1237,6 +1237,12 @@ function setRoute(gene, tab = state.activeTab) {
 }
 
 function openGene(gene, tab = "Summary", updateRoute = true) {
+  // Strip any featured-gene seed placeholder content (summary/GO/phenotypes/etc.)
+  // so the real curated corpus and live annotations fill the record — for EVERY
+  // entry path. Direct-URL loads already come through findGeneByToken (stripped),
+  // but clicking a search suggestion passes the raw seed object straight here, so
+  // without this those famous genes (cln5, regA, …) showed the seed blurb.
+  gene = seedIdentityOnly(gene);
   showHomeChrome(false);
   [toolsShell, organismShell, communityShell, researchShell].forEach((s) => {
     if (s) { s.innerHTML = ""; s.setAttribute("hidden", ""); }

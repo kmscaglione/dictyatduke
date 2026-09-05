@@ -37,7 +37,7 @@ def load_file(text):
     Column 1 is the Gene Name (canonical symbol); column 2 is a comma-separated
     Synonyms list (old symbols and alternate names). Only real names are kept as
     the symbol (a DDB_G-based 'name' means dictyBase leaves the gene unnamed)."""
-    names, syns = {}, {}
+    names, syns, prods = {}, {}, {}
     for row in csv.reader(text.splitlines(), delimiter="\t"):
         if len(row) < 2:
             continue
@@ -48,7 +48,15 @@ def load_file(text):
             names[ddb] = nm
         raw = row[2] if len(row) > 2 else ""
         syns[ddb] = [s.strip() for s in raw.split(",") if s.strip()]
-    return names, syns
+        # Column 4 is the Gene products (the real product name / description).
+        # dictyBase is authoritative here too, so we use it to replace the RefSeq
+        # GFF's placeholder "hypothetical protein" — and, because gene search also
+        # matches the product/name field, this is what makes genes findable by
+        # their product name (e.g. "dynacortin", "enlazin", "14-3-3").
+        prod = row[3].strip() if len(row) > 3 else ""
+        if prod:
+            prods[ddb] = prod
+    return names, syns, prods
 
 
 def symbol_like(s):
@@ -78,11 +86,11 @@ def main():
         print(f"  downloading {URL}")
         req = urllib.request.Request(URL, headers={"User-Agent": UA})
         text = urllib.request.urlopen(req, timeout=90).read().decode("utf-8", "replace")
-    names, syns = load_file(text)
-    print(f"  dictyBase names loaded: {len(names)}")
+    names, syns, prods = load_file(text)
+    print(f"  dictyBase names loaded: {len(names)}; products: {len(prods)}")
 
     idx = json.loads(IDX.read_text())
-    filled = updated = unchanged = with_syn = 0
+    filled = updated = unchanged = with_syn = prod_set = 0
     for r in idx:
         ddb, cur = r[0], r[1]
         new = names.get(ddb)
@@ -96,6 +104,12 @@ def main():
             r[1] = new
         else:
             unchanged += 1
+        # Overlay the authoritative gene product (field index 2), replacing the
+        # RefSeq placeholder and making the gene findable by its product name.
+        p = prods.get(ddb)
+        if p and len(r) > 2 and p != r[2]:
+            r[2] = p
+            prod_set += 1
         # attach searchable aliases (dictyBase synonyms + the symbol we replaced) as
         # a 6th field, so the old name still resolves after a rename. Idempotent.
         aliases = clean_aliases(syns.get(ddb, []), r[1], ddb, extra)
@@ -112,6 +126,7 @@ def main():
     print(f"  filled (were unnamed):     {filled}")
     print(f"  updated to dictyBase name: {updated}")
     print(f"  unchanged:                 {unchanged}")
+    print(f"  gene products overlaid:    {prod_set}")
     print(f"  genes with search aliases: {with_syn}")
     print(f"  -> {named} of {len(idx)} genes now carry a symbol")
 

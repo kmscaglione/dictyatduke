@@ -2085,6 +2085,16 @@ button:focus-visible,
     backdrop-filter: blur(12px);
     box-shadow: 0 16px 34px rgba(23, 33, 29, .12);
   }
+  /* When open, the menu is a fixed panel filling the screen below the header
+     and scrolls internally, so long menus (Analyze, Resources) are reachable.
+     overscroll-behavior keeps a scroll at the menu's end from moving the page. */
+  .mobile-menu.open {
+    position: fixed;
+    inset: 64px 0 0 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
 
   .mobile-menu-inner {
     width: min(100% - 24px, 1180px);

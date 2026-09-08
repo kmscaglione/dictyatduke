@@ -14152,6 +14152,9 @@ function cmdkInit() {
     const li = e.target.closest("[data-idx]"); if (li) cmdkActivate(+li.dataset.idx);
   });
   cmdk.root.querySelector("[data-cmdk-close]")?.addEventListener("click", cmdkClose);
+  // Header search button: a visible, always-present way to jump to any gene from
+  // any page (Thierry Soldati asked for this — you had to reopen a search page).
+  document.getElementById("header-search-btn")?.addEventListener("click", cmdkOpen);
 }
 
 function cmdkToggle() { cmdk.open ? cmdkClose() : cmdkOpen(); }

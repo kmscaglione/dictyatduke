@@ -2686,8 +2686,8 @@ body.cmdk-active { overflow: hidden; }
 
 /* ---- Gene basket: header button, record toggle, workspace ---- */
 .header-actions { display: flex; align-items: center; gap: 10px; justify-self: end; }
-.basket-btn { position: relative; min-height: 40px; width: 44px; padding: 0; border: 1px solid rgba(255, 255, 255, .3); border-radius: 10px; background: rgba(255, 255, 255, .12); color: #fff; }
-.basket-btn:hover { background: rgba(255, 255, 255, .22); }
+.basket-btn, .header-search-btn { position: relative; min-height: 40px; width: 44px; padding: 0; border: 1px solid rgba(255, 255, 255, .3); border-radius: 10px; background: rgba(255, 255, 255, .12); color: #fff; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.basket-btn:hover, .header-search-btn:hover { background: rgba(255, 255, 255, .22); }
 .basket-count { position: absolute; top: -6px; right: -6px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #f4c84a; color: #0a4f47; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
 .basket-count[hidden] { display: none; }
 

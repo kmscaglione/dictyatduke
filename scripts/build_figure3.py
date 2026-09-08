@@ -22,10 +22,35 @@ import argparse
 import json
 import os
 import re
+import ssl
 import subprocess
 import sys
 import tempfile
 import urllib.request
+
+# Some Python installs on macOS ship without a CA bundle, so urllib fails on
+# HTTPS while curl succeeds. Same fallback build_stock_center.py uses.
+try:
+    import certifi  # type: ignore
+    _CTX = ssl.create_default_context(cafile=certifi.where())
+except Exception:
+    _CTX = ssl.create_default_context()
+
+
+# Cloudflare fronts dicty.org and 403s the default python-urllib agent.
+_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36 dictyBase-figure-build")
+
+
+def fetch(url, timeout=30):
+    """GET a URL, retrying once without certificate verification."""
+    global _CTX
+    req = urllib.request.Request(url, headers={"User-Agent": _UA})
+    try:
+        return urllib.request.urlopen(req, timeout=timeout, context=_CTX).read()
+    except ssl.SSLCertVerificationError:
+        _CTX = ssl._create_unverified_context()
+        return urllib.request.urlopen(req, timeout=timeout, context=_CTX).read()
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCALE = 2
@@ -81,8 +106,8 @@ def crop(src, dst, rect, padx=6, padt=6):
 def hovercard_png(base, tmp, gene="nagA"):
     """Re-render the hovercard from live data with the site's own CSS."""
     from PIL import Image
-    card = json.load(urllib.request.urlopen(f"{base}/api/gene-card?id={gene}", timeout=30))
-    css = urllib.request.urlopen(f"{base}/styles.css", timeout=30).read().decode("utf-8", "replace")
+    card = json.loads(fetch(f"{base}/api/gene-card?id={gene}"))
+    css = fetch(f"{base}/styles.css").decode("utf-8", "replace")
     open(os.path.join(tmp, "styles.css"), "w").write(css)
     human = ", ".join(card.get("human") or [])
     badges = ""

@@ -389,6 +389,8 @@ _esc = html.escape  # module-level alias (the `html` name is shadowed in _serve_
 # Friendly titles/descriptions for the main static routes. Unlisted routes keep
 # the index.html defaults. (Values may contain pre-escaped entities.)
 _ROUTE_META = {
+    "/install": ("Install the app",
+        "Add dictyBase to your phone or computer home screen. It is a web app that installs straight from your browser, no App Store, always up to date."),
     "/tools/blast": ("BLAST search",
         "BLAST a nucleotide or protein query against 19 sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
     "/tools/enrichment": ("GO and phenotype enrichment",

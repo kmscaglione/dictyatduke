@@ -6218,6 +6218,59 @@ function openGuide(updateRoute = true) {
   scrollToEl(researchShell);
 }
 
+// Install-the-app help (/install): dictyBase is a PWA, which people don't think
+// of as an "app", so this spells out the browser-based install per device.
+function renderInstallPage() {
+  const note = (t) => `<p style="font-size:.9rem;color:var(--muted,#6b7280);margin:0 0 8px">${t}</p>`;
+  const step = (n, html) => `<li class="start-step"><span class="start-step-n">${n}</span><div><p>${html}</p></div></li>`;
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Install the app</p>
+        <h2>Add dictyBase to your device</h2>
+        <p>dictyBase is a <strong>web app</strong>. You install it straight from your browser: there is nothing to download, and it is not in the App Store or Google Play. Once installed it sits as an icon on your home screen or desktop and opens in its own full-screen window, like any other app. It stays up to date automatically, because it is the live site.</p>
+      </div></header>
+      <div class="record-body">
+        <h3 id="iphone">iPhone or iPad</h3>
+        ${note("Use <strong>Safari</strong> (this does not work in Chrome on iOS).")}
+        <ol class="start-steps">
+          ${step(1, "Open <strong>dicty.org</strong> in Safari.")}
+          ${step(2, "Tap the <strong>Share</strong> button, the square with an arrow pointing up, in the toolbar at the bottom of the screen (top on iPad).")}
+          ${step(3, "Scroll down the list and tap <strong>Add to Home Screen</strong>.")}
+          ${step(4, "Tap <strong>Add</strong> in the top right. The dictyBase icon is now on your home screen.")}
+        </ol>
+
+        <h3 id="android" style="margin-top:28px">Android phone or tablet</h3>
+        ${note("Use <strong>Chrome</strong>.")}
+        <ol class="start-steps">
+          ${step(1, "Open <strong>dicty.org</strong> in Chrome.")}
+          ${step(2, "Tap the <strong>&#8942;</strong> menu in the top right.")}
+          ${step(3, "Tap <strong>Install app</strong> or <strong>Add to Home screen</strong>, then confirm. The icon appears on your home screen.")}
+        </ol>
+
+        <h3 id="desktop" style="margin-top:28px">Windows or Mac computer</h3>
+        ${note("Use <strong>Chrome</strong> or <strong>Edge</strong>.")}
+        <ol class="start-steps">
+          ${step(1, "Open <strong>dicty.org</strong> in Chrome or Edge.")}
+          ${step(2, "In the <strong>address bar</strong>, click the small <strong>install icon</strong> (a monitor with a down arrow). If you do not see it, open the <strong>&#8942;</strong> menu and choose <strong>Install dictyBase&hellip;</strong> (Chrome) or <strong>Apps &rarr; Install this site as an app</strong> (Edge).")}
+          ${step(3, "Click <strong>Install</strong>. It opens in its own window and is added to your applications.")}
+        </ol>
+
+        <h3 style="margin-top:28px">Removing it</h3>
+        <p style="font-size:.9rem">Delete the icon like any app: long-press on a phone, or right-click and uninstall on a computer.</p>
+      </div>
+    </article>`;
+}
+
+function openInstall(updateRoute = true) {
+  hideContentSections();
+  if (updateRoute) history.pushState(null, "", "/install");
+  if (!researchShell) return;
+  researchShell.innerHTML = renderInstallPage();
+  researchShell.removeAttribute("hidden");
+  scrollToEl(researchShell);
+}
+
 // "Is Dictyostelium right for my question?" — the research-areas map.
 // Each area links the fields Dicty excels in to verified marker genes (gene
 // records on this site), relevant protocols, and a scoped literature search.
@@ -13709,6 +13762,10 @@ function hydrateFromRoute() {
     openGuide(false);
     return;
   }
+  if (pathParts[0] === "install") {
+    openInstall(false);
+    return;
+  }
   if (pathParts[0] === "research-areas") {
     openResearchAreas(false);
     return;
@@ -14088,6 +14145,7 @@ const CMDK_TARGETS = [
   { kind: "Tool", label: "Developmental proteome viewer", href: "/tools/proteomics", kw: "proteome protein development" },
   { kind: "Tool", label: "Insoluble proteome viewer", href: "/tools/heatstress", kw: "proteome heat stress insoluble" },
   { kind: "Guide", label: "Guide to the site", href: "/guide", sub: "What's here and where to find things", kw: "guide help getting around orientation tour new site what is here where to find beta how to use navigate map" },
+  { kind: "Guide", label: "Install the app", href: "/install", sub: "Add dictyBase to your phone or computer", kw: "install app pwa add to home screen mobile phone icon desktop shortcut ios iphone android chrome safari edge home screen" },
   { kind: "Learn", label: "Start here — new to Dictyostelium", href: "/start", sub: "Why Dicty, getting started, and FAQ", kw: "start here new beginner why dictyostelium getting started faq introduction onboarding model organism" },
   { kind: "Learn", label: "Research areas — is Dicty right for my question?", href: "/research-areas", sub: "Fields Dicty excels in, with marker genes & protocols", kw: "research areas fields chemotaxis development autophagy phagocytosis host pathogen cytokinesis cytoskeleton disease models marker genes is dicty right for my question topics" },
   { kind: "Learn", label: "Learn Dictyostelium", href: "/education", sub: "Life cycle, glossary, quiz, teaching figures", kw: "education learn teach students life cycle quiz glossary figures" },

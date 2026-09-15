@@ -1484,7 +1484,12 @@ def api_go_inverse():
 
 
 def api_phenotype_index():
-    """lowercased phenotype term -> {term, genes:[{ddb,symbol}]} (one row per gene)."""
+    """lowercased phenotype term -> {term, genes:[{ddb, symbol, annotations}]}.
+
+    Each gene carries its annotation rows for that phenotype — condition, note,
+    and PMID reference — so the phenotype search can show the same detail the
+    legacy dictyBase phenotype page did (the note and the paper), not just the
+    gene. phenotypes.json rows are [term, condition, pmid, note]."""
     if "_pheno_idx" not in _API:
         rows, _ = api_gene_rows()
         idx = {}
@@ -1494,10 +1499,18 @@ def api_phenotype_index():
                 term = (entry[0] if entry else "").strip()
                 if not term:
                     continue
-                bucket = idx.setdefault(term.lower(), {"term": term, "_seen": set(), "genes": []})
-                if ddb not in bucket["_seen"]:
-                    bucket["_seen"].add(ddb)
-                    bucket["genes"].append({"ddb": ddb, "symbol": symbol})
+                cond = (entry[1] if len(entry) > 1 else "").strip()
+                pmid = (entry[2] if len(entry) > 2 else "").strip()
+                note = (entry[3] if len(entry) > 3 else "").strip()
+                bucket = idx.setdefault(term.lower(), {"term": term, "_seen": {}, "genes": []})
+                gene = bucket["_seen"].get(ddb)
+                if gene is None:
+                    gene = {"ddb": ddb, "symbol": symbol, "annotations": []}
+                    bucket["_seen"][ddb] = gene
+                    bucket["genes"].append(gene)
+                ann = {"condition": cond, "pmid": pmid, "note": note}
+                if (cond or pmid or note) and ann not in gene["annotations"]:
+                    gene["annotations"].append(ann)
         for bucket in idx.values():
             bucket.pop("_seen", None)
             bucket["genes"].sort(key=lambda g: g["symbol"].lower())

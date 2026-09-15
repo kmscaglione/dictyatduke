@@ -12136,6 +12136,25 @@ function wirePhenotypeDownload(el, genes, base) {
 }
 const phenoDlBtn = `<button type="button" id="pheno-dl" class="button" style="font-size:0.8125rem;padding:6px 10px">Download genes (TSV)</button>`;
 
+// One phenotype-search row: the gene, plus its annotation detail for this
+// phenotype — condition/note and the PMID reference, matching what the legacy
+// dictyBase phenotype page showed. A gene with no note or reference is just the
+// linked symbol. Multiple annotation rows for the gene are each shown.
+function phenoGeneRow(g) {
+  const geneLink = `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}">${escapeHtml(g.symbol)}</a>`;
+  const lines = (g.annotations || []).map((a) => {
+    // Strip the "[strain ID: ...]" bookkeeping the way the strain page does.
+    const note = String(a.note || "").replace(/\s*\[strain ID:[^\]]*\]/gi, "").trim();
+    const text = [a.condition, note].map((s) => (s || "").trim()).filter(Boolean).map(escapeHtml).join(" · ");
+    const ref = a.pmid
+      ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(a.pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(a.pmid)}</a>`
+      : "";
+    return [text, ref].filter(Boolean).join(" · ");
+  }).filter(Boolean);
+  const detail = lines.length ? `<span>${lines.join("<br>")}</span>` : "";
+  return `<li><strong>${geneLink}</strong>${detail}</li>`;
+}
+
 async function runPhenotypeSearch(el, q, req) {
   const terms = q.split(";").map((t) => t.trim()).filter((t) => t.length >= 2);
   if (terms.length >= 2) return runPhenotypeCombine(el, terms, req);
@@ -12169,13 +12188,17 @@ async function runPhenotypeSearch(el, q, req) {
         const def = o && o.definition
           ? `<p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:2px 0 8px">${escapeHtml(o.definition)}${o.synonyms && o.synonyms.length ? ` <span style="opacity:.85">(also: ${o.synonyms.slice(0, 3).map(escapeHtml).join(", ")})</span>` : ""}</p>`
           : "";
+        const CAP = 100;                       // keep the DOM sane for common phenotypes
+        const shownGenes = t.genes.slice(0, CAP);
+        const more = t.genes.length - shownGenes.length;
         return `
         <div class="data-block" style="margin-bottom:14px">
           <h3 style="font-size:0.9375rem">${escapeHtml(t.term)} <span style="font-weight:500;color:var(--muted,#6b7280)">· ${t.genes.length} gene${t.genes.length === 1 ? "" : "s"}</span></h3>
           ${def}
-          <div class="technique-links">
-            ${t.genes.map((g) => `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol)}"><span>${escapeHtml(g.symbol)}</span></a>`).join("")}
-          </div>
+          <ul class="list">
+            ${shownGenes.map((g) => phenoGeneRow(g)).join("")}
+          </ul>
+          ${more > 0 ? `<p style="font-size:.78rem;color:var(--muted,#6b7280);margin:8px 0 0">+${more} more gene${more === 1 ? "" : "s"} — use “Download genes (TSV)” for the full list.</p>` : ""}
         </div>`;
       }).join("")}`;
     wirePhenotypeDownload(el, dlGenes, `phenotype_${(terms[0] || q).toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 30) || "search"}`);

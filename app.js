@@ -994,6 +994,18 @@ function normalizeQuery(q) {
   return q.trim().toLowerCase().replace(/[_\-\s]+/g, " ");
 }
 
+// True if `q` (already normalized) starts a word in `text`. A plain substring
+// test lets a short gene query match inside a longer word — "racE" matches
+// "extRACEllular", so searching racE surfaced ecmA (extracellular matrix protein)
+// above the real gene. Requiring a word-start keeps prefix search ("mat" ->
+// "matrix") while rejecting mid-word hits.
+function tokenStartMatch(text, q) {
+  if (!q) return true;
+  const s = normalizeQuery(String(text || ""));
+  if (!s) return false;
+  return new RegExp("(?:^|[^a-z0-9])" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(s);
+}
+
 function matchesGene(gene, query) {
   const q = normalizeQuery(query);
   if (!q) return true;
@@ -1008,8 +1020,7 @@ function matchesGene(gene, query) {
     ...(gene.aliases || []),
     ...(gene.tags || [])
   ];
-  // Normalize each field the same way for comparison
-  return fields.some((value) => normalizeQuery(String(value || "")).includes(q));
+  return fields.some((value) => tokenStartMatch(value, q));
 }
 
 function rankedGenes(query) {
@@ -1058,6 +1069,10 @@ let geneIndex = [];
 function searchIndex(query, limit = 8) {
   const q = normalizeQuery(query);
   if (q.length < 2 || !geneIndex.length) return [];
+  // The name is prose ("extracellular matrix protein A"); match the query only at
+  // a word start so "racE" doesn't pull ecmA in via "extRACEllular". Symbols, ids,
+  // and synonyms stay substring (they're short identifiers). Built once per query.
+  const reName = new RegExp("(?:^|[^a-z0-9])" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const matches = [];
   for (const g of geneIndex) {
     const sym = normalizeQuery(g.symbol);
@@ -1065,7 +1080,7 @@ function searchIndex(query, limit = 8) {
     const nm = normalizeQuery(g.name);
     const syns = (g.synonyms || []).map(normalizeQuery);
     const synExact = syns.includes(q);
-    if (!(sym.includes(q) || idn.includes(q) || nm.includes(q) || syns.some((s) => s.includes(q)))) continue;
+    if (!(sym.includes(q) || idn.includes(q) || reName.test(nm) || syns.some((s) => s.includes(q)))) continue;
     let rank = 3;
     if (sym === q || idn === q) rank = 0;
     else if (sym.startsWith(q)) rank = 1;

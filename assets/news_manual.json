@@ -2,6 +2,12 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-09-15",
+      "tag": "update",
+      "title": "Fuller strain, phenotype, and gene records",
+      "body": "We have made records more complete across the site. Each strain page now shows its full Stock Center record: descriptor, genotype, genetic modification, mutagenesis method, characteristics, depositor, and associated publications. Gene pages list every mutant strain that carries a phenotype. Phenotype annotations now include the curator note and the paper reference for each observation, both on the gene Phenotypes tab and in the phenotype search. Search has also been improved, both on the front page and in the Stock Center. Gene records now show the dictyBase feature (DDB0) identifiers as well."
+    },
+    {
       "date": "2026-09-08",
       "tag": "update",
       "title": "dictyBase is now installable, and you can search from any page",

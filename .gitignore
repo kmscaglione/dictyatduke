@@ -75,3 +75,7 @@ assets/dictybase_live_curation.json
 
 # Transcoded screen movies: generated from the Cox archive, never committed
 assets/media/
+
+# Colleague/researcher directory — contains personal contact data (emails,
+# phones, addresses). Preserved locally only, never committed (per decision).
+assets/dictybase-corpus/colleagues.json

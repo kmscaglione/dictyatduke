@@ -1,0 +1,134 @@
+dictyNews
+Electronic Edition
+Volume 32, number 4
+February 13, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium cells bind a secreted autocrine factor that represses 
+cell proliferation
+
+Jonathan M. Choe*, Deenadayalan Bakthavatsalam*, Jonathan E. Phillips, 
+and Richard H. Gomer 
+*These authors contributed equally to this work
+
+
+BMC Biochemistry, in press
+
+Dictyostelium cells secrete the proteins AprA and CfaD.  Cells lacking 
+either AprA or CfaD proliferate faster than wild type, while AprA or CfaD 
+overexpressor cells proliferate slowly, indicating that AprA and CfaD are 
+autocrine factors that repress proliferation.  CfaD interacts with AprA and 
+requires the presence of AprA to slow proliferation.  To determine if CfaD 
+is necessary for the ability of AprA to slow proliferation, whether AprA 
+binds to cells, and if so whether the binding requires the presence of CfaD, 
+we examined the binding and effect on proliferation of recombinant AprA.  
+We find that the extracellular accumulation of AprA increases with cell 
+density and reaches a concentration of 0.3 µg/ml near a stationary cell 
+density.  When added to wild-type or aprA¯ cells, recombinant AprA (rAprA) 
+significantly slows proliferation at 0.1 µg/ ml and higher concentrations.  
+From 4 to 64 µg/ ml, the effect of rAprA is at a plateau, slowing but not 
+stopping proliferation.  The proliferation-inhibiting activity of rAprA is 
+roughly the same as that of native AprA in conditioned growth medium.  
+Proliferating aprA¯ cells show saturable binding of rAprA to 92,000 ± 11,000 
+cell-surface receptors with a KD of 0.03 ± 0.02 µg/ml.  There appears to be 
+one class of binding site, and no apparent cooperativity.  Native AprA 
+inhibits the binding of rAprA to aprA¯ cells with a Ki of 0.03 µg/ml, 
+suggesting that the binding kinetics of rAprA are similar to those of 
+native AprA.  The proliferation of cells lacking CrlA, a cAMP receptor-like 
+protein, or cells lacking CfaD are not affected by rAprA.  Surprisingly, 
+both cell types still bind rAprA.  Together, the data suggest that AprA 
+functions as an autocrine proliferation-inhibiting factor by binding to 
+cell surface receptors.  Although AprA requires CfaD for activity, it does 
+not require CfaD to bind to cells, suggesting the possibility that cells 
+have an AprA receptor and a CfaD receptor, and activation of both receptors 
+is required to slow proliferation.  We previously found that crlA¯ cells are 
+sensitive to CfaD.  Combined with the results presented here, this suggests 
+that CrlA is not the AprA or CfaD receptor, and may be the receptor for an 
+unknown  third factor that is required for AprA and CfaD activity.
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+--------------------------------------------------------------------------------
+
+
+Infection by tubercular mycobacteria is spread by nonlytic ejection from 
+their amoeba hosts
+
+Monica Hagedorn1, Kyle H. Rohde2, David G. Russell2 and Thierry Soldati1*
+
+1 Département de Biochimie, Faculté des Sciences, Université de Genève, 
+Sciences II, 30 quai Ernest Ansermet, CH-1211-Genève-4, Switzerland. 
+2 Microbiology and Immunology, College of Veterinary Medicine, Cornell 
+University, Ithaca, NY 14853, USA
+
+
+Science, in press
+
+To generate efficient vaccines and cures for Mycobacterium tuberculosis, 
+we need a far better understanding of modes of infection, persistence and 
+spreading. Host cell entry and establishment of a replication niche are well 
+understood, but little is known about how tubercular mycobacteria exit host 
+cells and disseminate the infection. Using the social amoeba Dictyostelium 
+as a genetically tractable host for pathogenic mycobacteria, we discovered 
+that M. tuberculosis and M. marinum but not M. avium are ejected from the 
+cell through an actin-based structure, the ejectosome. This conserved 
+nonlytic spreading mechanism requires a cytoskeleton regulator from the 
+host and an intact mycobacterial ESX-1 secretion system. This insight 
+offers new directions for research into the spreading of tubercular 
+mycobacteria infections in mammalian cells. 
+
+
+Submitted by: Thierry Soldati [thierry.soldati@unige.ch]
+--------------------------------------------------------------------------------
+
+
+Polymorphic members of the lag-gene family mediate kin-discrimination in 
+Dictyostelium
+
+Rocio Benabentos*, Shigenori Hirose*, Richard Sucgang, Tomaz Curk, Mariko Katoh, 
+Elizabeth Ostrowski, Joan E. Strassmann, David C. Queller, Blaz Zupan, 
+Gad Shaulsky** and Adam Kuspa**
+
+*   Equal contribution
+**  Corresponding authors
+
+
+Current Biology, in press
+
+Self- and kin-discrimination are observed in most kingdoms of life and are 
+mediated by highly polymorphic plasma membrane proteins.  Sequence 
+polymorphism, which is essential for effective recognition, is maintained by 
+balancing selection. Dictyostelium discoideum are social amoebae that 
+propagate as unicellular organisms, but aggregate upon starvation and from 
+fruiting bodies with viable spores and dead stalk cells.  Aggregative development 
+exposes Dictyostelium to the perils of chimerism, including cheating, which raises 
+questions about how the victims survive in nature and how social cooperation 
+persists.  Dictyostelids can minimize the cost of chimerism by preferential 
+cooperation with kin, but the mechanisms of kin-discrimination are largely 
+unknown.  Dictyostelium lag-genes encode transmembrane proteins with multiple 
+immunoglobulin (Ig) repeats that participate in cell-adhesion and signaling.  
+Here we describe their role in kin-discrimination.  We show that lagB1 and 
+lagC1 are highly polymorphic in natural populations and that their sequence 
+dissimilarity correlates well with wild-strain segregation.  Deleting lagB1 and 
+lagC1 results in strain segregation in chimerae with wild-type cells, whereas 
+elimination of the nearly invariant homolog lagD1 has no such consequences.  
+These findings reveal an early evolutionary origin of kin-discrimination and 
+provide insight into the mechanism of social recognition and immunity.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+==============================================================
+[End dictyNews, volume 32, number 4]

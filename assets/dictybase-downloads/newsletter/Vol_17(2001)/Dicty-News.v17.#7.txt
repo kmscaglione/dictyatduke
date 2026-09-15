@@ -1,0 +1,141 @@
+Dicty News
+Electronic Edition
+Volume 17, number 7
+September 29, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+
+EXPRESSION SYSTEMS FOR PRODUCTION OF HETEROLOGOUS PROTEINS 
+
+Meena Rai and Harish Padh1 
+
+1B. V. Patel Pharmaceutical Education & Research Development Centre
+
+Thaltej-Gandhinagar Highway, Thaltej, Ahmedabad -380054
+Tel: 079- 7439375; Telfax: 079- 7450449 
+E-mail: perd@wilnetonline.net 
+
+Current Science Vol. 80(9) 1121 - 1128, 2001
+
+SUMMARY 
+
+In this review we outline steps involved in the production of heterologous 
+proteins and then evaluate in detail available expression systems and 
+factors affecting heterologous protein expression. 
+
+Prokaryotic and eukaryotic are the two general categories of expression 
+systems. Prokaryotic systems are generally easier to handle and are 
+satisfactory for most purposes. However, there are serious limitations 
+in using prokaryotic cells for the production of eukaryotic proteins. For 
+example, many of the eukaryotic proteins undergo a variety of post-
+translational modifications like proper folding, glycosylation, 
+phosphorylation, formation of disulfide bridges etc, There is no universal 
+expression system for heterologous proteins. All expression systems have 
+some advantages as well as some disadvantages that should be considered 
+in selecting which one to use. Choosing the best one requires evaluating 
+the options- from yield to glycosylation, to proper folding, to economics 
+of scale up. 
+
+The development of reliable transformation systems for Dictyostelium 
+discoideum has provided the possibility of expressing heterologous genes 
+in this microbe23.24. Dictyostelium is a simple eukaryotic micro-organism 
+with a haploid genome of 5 x 107 bp and a life cycle that alternates 
+between single celled and multicellular stages. They grow to a high cell 
+density without the serum factors or special aeration needed by animal 
+cell cultures. There is no cell wall and the high copy number plasmid 
+vectors allow the expression of protein in cell-associated, membrane 
+attached, or secreted form under the control of regulatable promoters25. 
+The cells of Dictyostelium can do both 0- as well as N- glycosylation26,27. 
+The major advantages of this system includes a very simple and cheap growth 
+medium and the potential for large scale production of proteins. 
+
+Eventual objective of producing a desired protein in an economical 
+heterologous host is influenced by a variety of factors. The new found 
+art of maximising production of heterologous proteins for commercial 
+application is still an art. We have begun to understand factors 
+influencing the eventual production. These factors, described in detail 
+in this article are varied and at times poorly understood. Largely the 
+approach remains empirical. However our collective experience will permit 
+us to rationalise our approach in designing heterologous production of 
+commercially important proteins in a variety of expression system. 
+Subsequent to production, stabilisation and formulation of proteins will 
+pose significant hurdles in utilising the natural biological catalysts and 
+other proteins for therapeutic and industrial purposes. 
+
+-----------------------------------------------------------------------------
+
+Cyclophilins of a novel subfamily interact with SNW/SKIP coregulator in 
+D.discoideum and S.pombe
+
+Michal Skruzny, Monika Ambrozkova, Iva Fukova, Katerina Martinkova, Anna 
+Blahuskova, Ludmila Hamplova, Frantisek Puta, and Petr Folk
+
+Department of Physiology and Developmental Biology, Charles University, 
+Vinicna7, Praha2, 128 00, Czech Republic
+
+accepted: Biochimica et Biophysica Acta
+
+We screened the D.discoideum two-hybrid cDNA library with the SNW/SKIP 
+transcription coregulator SnwA and identified anovel cyclophilin CypE. 
+Independently, the S.pombe cDNA library was screened with the SnwA 
+ortholog Snw1 and the ortholog of CypE (named Cyp2) was found. Both 
+cyclophilins bind the respective SNW protein in their autologous systems. 
+The interaction was localized to the Nterminal part of SnwA as well as of 
+Snw1. CypE was confirmed in vitro to be a cyclosporinA sensitive peptidyl-
+prolyl cis-trans isomerase. Remarkably, both SNW proteins bind the 
+cyclophilins in acyclosporinA independent manner, possibly serving as 
+adaptors for these novel isomerases. These results are the first 
+characterization of the members of a novel cyclophilin subfamily, which 
+includes the human CGI124/PPIL1 protein.
+
+-----------------------------------------------------------------------------
+
+Cross-induction of cell types in Dictyostelium : evidence that DIF-1 is 
+made by prespore cells
+
+Robert R. Kay and Christopher R. L. Thompson
+
+MRC Laboratory of Molecular Biology,
+Hills Road,
+Cambridge CB2 2QH,
+England.
+
+Development, in press.
+
+Abstract
+
+To investigate how cell type proportions are regulated during Dictyostelium 
+development, we have attempted to find out which cell type produces DIF-1, 
+a diffusible signal molecule inducing the differentiation of prestalk-O 
+cells.  DIF-1 is a chlorinated alkyl phenone that is synthesized from a C12 
+polyketide precursor by chlorination and methylation, with the final step 
+catalyzed by the dmtA methyltransferase.  All our evidence points to the 
+prespore cells as the major source of DIF-1: (1) dmtA mRNA and enzyme 
+activity are greatly enriched in prespore compared to prestalk cells.  The 
+chlorinating activity is also somewhat prespore-enriched.  (2) Expression 
+of dmtA is induced by cyclic-AMP and this induction is inhibited by DIF-1. 
+This regulatory behaviour is characteristic of prespore products.  (3) 
+Short-term labelling experiments, using the polyketide precursor, show that 
+purified prespore cells produce DIF-1 at more than 20-times the rate of 
+prestalk cells.  (4) Although DIF-1 has little effect on its own synthesis 
+in short-term labelling experiments, in long-term experiments, using 36Cl- 
+as label, it is strongly inhibitory (IC50 about 5 nM), presumably because 
+it represses expression of dmtA; this is again consistent with DIF-1 
+production by prespore cells.  Inhibition takes about 1 hr to become 
+effective.
+We propose that prespore cells cross-induce the differentiation of 
+prestalk-O cells by making DIF-1, and that this is one of the regulatory 
+loops that sets the proportion of prespore-to-prestalk cells in the 
+aggregate.
+
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 7]

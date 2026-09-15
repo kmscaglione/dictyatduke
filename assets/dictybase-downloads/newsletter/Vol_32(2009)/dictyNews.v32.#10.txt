@@ -1,0 +1,88 @@
+dictyNews
+Electronic Edition
+Volume 32, number 10
+April 10, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium discoideum – a model for many reasons
+
+Sarah J. Annesley and Paul R. Fisher
+
+Department of Microbiology, La Trobe University VIC 3086, Australia
+
+
+Molecular and Cellular Biochemistry, in press.
+
+The social amoeba or cellular slime mould Dictyostelium discoideum is 
+a “professional” phagocyte that has long been recognized for its value 
+as a biomedical model organism, particularly in studying the actomyosin 
+cytoskeleton and chemotactic motility in non-muscle cells. The complete 
+genome sequence of D. discoideum  is known, it is genetically tractable, 
+readily grown clonally as a eukaryotic microorganism and is highly 
+accessible for biochemical, cell biological and physiological studies. 
+These are properties it shares with other microbial model organisms. 
+However Dictyostelium combines these with a unique life style, with 
+motile unicellular and multicellular stages, and multiple cell types 
+that offer for study an unparalleled variety of phenotypes and associated 
+signalling pathways. These advantages have led to its recent emergence 
+as valuable model organism for studying the molecular pathogenesis and 
+treatment of human disease, including a variety of infectious diseases 
+caused by bacterial and fungal pathogens. Perhaps surprisingly, this 
+organism, without neurons or brain, has begun to yield novel insights 
+into the cytopathology of mitochondrial diseases as well as other 
+genetic and idiopathic disorders affecting the central nervous system. 
+Dictyostelium has also contributed significantly to our understanding 
+of NDP kinase, as it was the Dictyostelium enzyme whose structure was 
+first determined and related to enzymatic activity. The phenotypic 
+richness and tractability of Dictyostelium should provide a fertile 
+arena for future exploration of NDPK’s cellular roles.
+
+
+Submitted by: Paul R Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+Switching direction in electric-signal-induced cell migration by cyclic 
+guanosine monophosphate and phosphatidylinositol signaling.
+
+Sato MJ, Kuwayama H, van Egmond WN, Takayama AL, Takagi H, 
+van Haastert PJ, Yanagida T, Ueda M.
+
+
+Proc Natl Acad Sci USA, in press
+
+Switching between attractive and repulsive migration in cell movement in 
+response to extracellular guidance cues has been found in various cell 
+types and is an important cellular function for translocation during 
+cellular and developmental processes. Here we show that the preferential 
+direction of migration during electrotaxis in Dictyostelium cells can 
+be reversed by genetically modulating both guanylyl cyclases (GCases) 
+and the cyclic guanosine monophosphate (cGMP)-binding protein C (GbpC) 
+in combination with the inhibition of phosphatidylinositol-3-OH kinases 
+(PI3Ks). The PI3K-dependent pathway is involved in cathode-directed 
+migration under a direct-current electric field. The catalytic domains 
+of soluble GCase (sGC) and GbpC also mediate cathode-directed signaling 
+via cGMP, whereas the N-terminal domain of sGC mediates anode-directed 
+signaling in conjunction with both the inhibition of PI3Ks and cGMP 
+production. These observations provide an identification of the genes 
+required for directional switching in electrotaxis and suggest that 
+a parallel processing of electric signals, in which multiple-signaling 
+pathways act to bias cell movement toward the cathode or anode, is 
+used to determine the direction of migration.
+
+
+Submitted by: Masayuki Sato [satom@phys1.med.osaka-u.ac.jp]
+==============================================================
+[End dictyNews, volume 32, number 10]

@@ -1,0 +1,200 @@
+Dicty News
+Electronic Edition
+Volume 15, number 2
+July 15, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty"
+
+==============
+  Abstracts
+==============
+
+An F-Box/WD40 repeat-containing protein important for Dictyostelium
+cell-type proportioning, slug behaviour and culmination
+
+Margaret K. Nelson*, Alexandra Clark+, Tomoaki Abe^, Anson Nomura+,
+Negendra Yadava+, Chanin J. Funair*, Keith A. Jermyn^, Sudhasri Mohanty+,
+Richard A. Firtel+, and Jeffrey G. Williams^
+
+* Department of Biology, Allegheny College, Meadville, PA 16335, USA
+
++Department of Biology, Center for Molecular Genetics, University of 
+California, San Diego, 9500 Gilman Drive, La Jolla CA 92093-0634, USA
+
+^Department of Anatomy and Physiology, University of Dundee, MSI/WTB 
+Complex, Dow Street, Dundee DD1 5EH, UK
+
+Develop. Biol., in press.
+
+ABSTRACT 
+
+FbxA is a novel member of a family of proteins that contain an
+F-box and WD40 repeats and that target specific proteins for degradation
+via proteasomes. In fruiting bodies formed from cells where the fbxA gene
+is disrupted (fbxA- cells), the spore mass fails to fully ascend the stalk.
+In addition, fbxA- slugs continue to migrate under environmental conditions
+where the parental strain immediately forms fruiting bodies. Consistent
+with this latter behaviour, the development of fbxA- cells is
+hypersensitive to ammonia, the signalling molecule that regulates the
+transition from the slug stage to terminal differentiation. The slug is
+comprised of an anterior prestalk region and a posterior prespore region
+and the fbxA mRNA is highly enriched in the prestalk cells. The prestalk
+zone of the slug is further sub-divided into an anterior pstA region and a
+posterior pstO region. In fbxA- slugs the pstO region is reduced in size
+and the prespore region is proportionately expanded. Our results indicate
+that FbxA is part of a regulatory pathway that controls cell fate decisions
+and spatial patterning via regulated protein degradation.
+
+----------------------------------------------------------------------------
+
+Characterisation of a DNA sequence element that directs Dictyostelium stalk
+cell­specific gene expression
+
+Adriano Ceccarelli1*, Natasha Zhukovskaya2*, Takefumi Kawata2, Salvatore
+Bozzaro1and Jeffrey Williams2+
+
+1. Dipartimento di Scienze Cliniche e Biologiche, Ospedale San Luigi Gonzaga
+Reg. Gonzole 10  10043, Orbassano, Torino, Italy
+
+2. Department of Anatomy and Physiology, University of Dundee, MSI/WTB 
+Complex,, Dow Street, Dundee DD1 5EH, UK
+
+*Both these authors contributed equally to this work
+
+DIFFERENTIATION IN PRESS
+
+ABSTRACT 
+
+The ecmB gene of Dictyostelium is expressed at culmination, both
+in the prestalk cells that enter the stalk tube and in ancillary stalk cell
+structures such as the basal disc. Stalk tube-specific expression is
+regulated by sequence elements within the cap site proximal part of the
+promoter, the Stalk Tube (ST) promoter region. Dd-STATa, a member of the
+STAT transcription factor family, binds to elements present in the ST
+promoter-region and represses transcription prior to entry into the stalk
+tube. We characterise an activatory DNA sequence element, that lies distal
+to the repressor elements and that is both necessary and sufficient for
+expression within the stalk tube. We have mapped this activator to a 28
+nucleotide region (the 28-mer), within which we have identified a
+GA-containing sequence element that is required for efficient gene
+transcription. The Dd-STATa protein binds to the 28-mer in an in vitro
+binding assay and binding is dependent upon the GA-containing sequence.
+However, the ecmB gene is expressed in a Dd-STATa null mutant therefore
+Dd-STATa cannot be responsible for activating the 28-mer in vivo. Instead,
+we identify a distinct 28-mer binding activity in nuclear extracts from the
+Dd-STATa null mutant, the activity of this GA binding activity being
+largely masked in wild type extracts by the high affinity binding of the
+Dd-STATa protein. We suggest that, in addition to the long range repression
+exerted by binding to the two known repressor sites, Dd-STATa inhibits
+transcription by direct competition with this putative activator for
+binding to the GA sequence.
+
+----------------------------------------------------------------------------
+
+A myosin I is involved in membrane recycling from early endosomes
+
+Eva M. Neuhaus and Thierry Soldati#
+
+Department of Molecular Cell Research, Max-Planck-Institute for Medical
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+#Corresponding author: Tel: +49-6221-486407, Fax: +49-6221-486325, E-mail:
+soldati@mpimf-heidelberg.mpg.de
+
+Journal of Cell Biology, in press
+
+Abstract
+
+	Geometry-based mechanisms have been proposed to account for the sorting of
+membranes and fluid phase in the endocytic pathway, yet little is known
+about the involvement of the actin-myosin cytoskeleton. Here, we demonstrate
+that Dictyostelium discoideum myosin IB functions in the recycling of plasma
+membrane components from endosomes back to the cell surface. Cells lacking
+MyoB (myoA-/B-, and myoB- cells) and wild-type cells treated with the myosin
+inhibitor BDM accumulated a plasma membrane marker and biotinylated surface
+proteins on intracellular endocytic vacuoles. An assay based on reversible
+biotinylation of plasma membrane proteins demonstrated that recycling of
+membrane components is severely impaired in myoA/B null cells. In addition,
+MyoB was specifically found on magnetically purified early pinosomes. Using
+a rapid-freezing cryo-EM method, we observed an increased number of small
+vesicles tethered to relatively early endocytic vacuoles in myoA-/B- cells,
+but not to later endosomes and lysosomes. This accumulation of vesicles
+suggests that the defects in membrane recycling result from a disordered
+morphology of the sorting compartment.
+
+----------------------------------------------------------------------------
+
+Rapid patterning in 2D-cultures of Dictyostelium cells and its relation to
+zonal differentiation
+
+Takashi Hirano1, Satoshi Sawai2, Yasuji Sawada3  and Yasuo Maeda1*
+
+1 Biological Institute, Graduate School of Science, Tohoku University, Aoba,
+Sendai 980-8578, 2Graduate School of Information Sciences, and 3Research
+Institute of Electrical Communication, Tohoku University, Katahira, Sendai
+980-8577, Japan.
+
+*Author to whom all correspondence should be addressed.
+E-mail: ymaeda@mail.cc.tohoku.ac.jp
+
+Develop. Growth Differ., in press
+
+Summary
+
+Rapid patterning has been realized in confined two-dimensional (2-D)
+cultures of Dictyostelium discoideum  Ax-2 cells, as the outer dark zone and
+inner light zone, the width of outer zone being usually about 100 µm,
+irrespective of the size of cell masses under the atomospheric condition.
+The width of outer zone, however, changed depending on external oxygen (O2) 
+concentrations and reached to 250 µm at 100 % O2 . A clear regional
+difference in TMRM  ( tetramethyl rhodamine methyl ester ) staining was
+noticed between the outer zone and the inner zone: the inner zone being more
+strongly stained with TMRM rather than the outer zone facing the air. Using
+the inhibitors ( DNP or NaN3 ) of oxidative phosphorylation and the specific
+inhibitor ( BHAM ) of CN-resistant respiration,it has benn demonstrated that
+the outer zone is basically formed by the O2 -threshold for oxidative
+phosphorylation, while that the inner cells mainly perform CN-resistant
+respiration. When cells around the early mound stage ( just before prestalk
+and prespore differentiation ) were cultured as 2D-cell masses,
+ecmA-expressing cells ( pstA cells ), ecmB-expressing cells ( pstB cells ),
+and D19-expressing cells ( prespore; psp cells ), there arized in a
+position-dependent manner in the outer zone. In the inner zone, cell
+motility seemed to be markedly impaired, and also neither prestalk nor
+prespore differentiation occurred. In addition, once-differentiated prespore
+cells were found to dedifferentiate rapidly in the inner zone. The reason
+for failure of cells to dedifferentiate as well as to differentiate in the
+inner zone is discussed with reference to O2-radicals.
+
+----------------------------------------------------------------------------
+
+A cell type-specific effect of calcium on pattern formation and
+differentiation in Dictyostelium discoideum.
+
+R. Baskar, Preeti Chhabra, Priya Mascarenhas and Vidyanand Nanjundiah
+Indian Institute of Science, Bangalore 560012, India.
+
+Int. J. Develop. Biol., in press.
+
+Spatial gradients of sequestered and free calcium exist in the slug of
+Dictyostelium discoideum (Maeda and Maeda, 1973; Tirlapur et al., 1991;
+Azhar et al., 1995; Cubitt et al., 1995). When we vary intracellular Ca2+
+with the help of calcium buffers and the ionophore Br-A23187, there are
+striking effects on slug morphology, patterning and cell differentiation.
+In the presence of a calcium ionophore, high external Ca2+ levels lead to
+an increase of intracellular sequestered and free calcium, the formation of
+long slugs, a decrease in the fraction of genetically defined prespore
+cells and stalky fruiting bodies. Conversely, a lowering of external Ca2+
+levels results in a decrease of intracellular sequestered and free calcium,
+the formation of short slugs, an increase in the prespore fraction and
+spory fruiting bodies. We infer that Ca2+ plays a significant morphogenetic
+role in D. discoideum development by selectively promoting the prestalk
+pathway relative to the prespore pathway.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 2]

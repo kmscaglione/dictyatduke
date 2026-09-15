@@ -1,0 +1,133 @@
+Dicty News
+Electronic Edition
+Volume 19, number 1
+July 20, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+======================
+  Position Available
+======================
+
+Postdoctoral fellow position available in our Cell Dynamics group
+
+Applications are invited for a postdoctoral position funded by a Wellcome 
+Trust grant for 3 years, to study the mechanisms of phagocytosis by applying 
+proteomic and lipidomic analysis tools. We have recently established and 
+improved a phagosome purification protocol that allows access to large 
+quantities of lipids and proteins at any time point of phagosome maturation. 
+The preliminary molecular characterisation is in press in MBC and we want 
+to further the investigation of wild type and mutant strains with phagocytic 
+impairments. As the components of the complex machineries involved are 
+evolutionarily conserved, their molecular and cellular dissection in 
+Dictyostelium is directly relevant to unravel their functional importance 
+in higher organisms. A description of this and other projects of the group 
+is available at: http://www.bio.ic.ac.uk/research/tps/
+   
+The candidate should be motivated and enthusiastic about this area of 
+research. Proficiency in a variety of techniques, including cell culture, 
+single cell assays,  biophysical and biochemical methods, microscopy and 
+bioinformatics  will be a determining asset for the successful candidate.
+
+For further details, please contact Dr. Thierry Soldati, Department of 
+Biological Sciences, Imperial College of Science, Technology and Medicine, 
+Exhibition Road, London, SW7 2AZ. E-mail t.soldati@ic.ac.uk. To apply, 
+please, send a full CV, a description of current research and interests, 
+and the name of two referees at the same address.
+
+
+=============
+  Abstracts
+=============
+
+High resolution dissection of phagosome maturation reveals distinct membrane 
+trafficking phases
+
+Daniel Gotthardt, Hans Jrg Warnatz, Oliver Henschel, Franz Brckert, Michael 
+Schleicher, and Thierry Soldati
+
+Molecular Biology of the Cell, in press
+
+Abstract
+
+Molecular mechanisms of endocytosis in the genetically and biochemically 
+tractable professional phagocyte Dictyostelium discoideum reveal a striking 
+degree of similarity to higher eukaryotic cells. Pulse-chase feeding with 
+latex beads allowed purification of phagosomes at different maturation 
+stages. Gentle ATP-stripping of an actin meshwork entrapping contaminating 
+organelles resulted in a 10-fold increase in yield and purity, as confirmed 
+by EM. Temporal profiling of signaling, cytoskeletal and trafficking 
+proteins resulted in a complex molecular fingerprint of phagosome biogenesis 
+and maturation. First, nascent phagosomes were associated with coronin, and 
+rapidly received a lysosomal glycoprotein, LmpB. Second, at least two phases 
+of delivery of lysosomal hydrolases (CatD and CP34) were accompanied by 
+removal of plasma membrane components (PM4C4 and biotinylated surface 
+proteins). Third, a phase of late maturation, preparing for final exocytosis 
+of undigested material, included quantitative recycling of hydrolases and 
+association with vacuolin. Also, lysosomal glycoproteins of the Lmp family 
+showed distinct trafficking kinetics. The delivery and recycling of CatD was 
+directly visualized by confocal microscopy. This heavy membrane traffic of 
+cargos was precisely accompanied by regulatory proteins such as the Rab7 
+GTPases and the endosomal SNAREs Vti1 and VAMP7. This initial molecular 
+description of phagocytosis demonstrates the feasibility of a comprehensive 
+analysis of phagosomal lipids and proteins in genetically modified strains.
+
+---------------------------------------------------------------------------- 
+
+Possible Role of Contact Following in the Generation of Coherent Motion of 
+Dictyostelium Cells 
+
+Tamiki Umeda* and Kei Inouye** 
+
+*Department of Marine Engineering, Kobe University of Mercantile Marine, 
+Kobe 658-0022, Japan, **Department of Botany, Division of Biological Science, 
+Graduate School of Science, Kyoto University, Kyoto 606-8502, Japan 
+
+J. theor. Biol. in press 
+
+After aggregation by chemotaxis, cells of the cellular slime mold 
+Dictyostelium discoideum form a multicellular structure and show coherent 
+motion such as vortices. Here we present a mathematical model to explain 
+both aggregation and coherent motion of cells in two-dimensional space. The 
+model incorporates chemotactic response of cells and the cell's property, 
+called "contact following", to follow the other cells with which they are 
+in contact. Analytical study and computer simulation using the model show 
+that with contact following cells form circular clusters within which cell 
+rotation occurs. Unidirectional cell motion in a long belt of cells is 
+another type of solution of the model. Besides, contact following has an 
+effect to accelerate cell cluster merging. By considering the mechanism of 
+cell movement, possible explanations of contact following are proposed. 
+
+-----------------------------------------------------------------------------
+
+Unique Behavior of a Dictyostelium Homologue of TRAP-1, Coupling with 
+Differentiation of D. discoideum cells
+
+Tsuyoshi Morita, Aiko Amagai and Yasuo Maeda
+
+Experimental Cell Research, in press
+
+Dd-TRAP1 is a Dictyostelium homologue of TRAP-1, a human protein that binds 
+to the type1 tumor necrosis factor (TNF) receptor. TRAP-1 has a putative 
+mitochondrial localization sequence and shows significant homology to members 
+of HSP90 family. Although the TRAP-1 is mainly localized to mitochondria in 
+several mammalian cells, in certain tissues it is also localized at specific 
+extramitochondrial sites. In Dictyostelium cells, Dd-TRAP1 is predominantly 
+located in the cell membrane/cortex during growth and just after starvation. 
+Double staining of vegetatively growing cells with the anti-Dd-TRAP1 antibody 
+and TRITC-phalloidin has demonstrated co-localization of Dd-TRAP1 and F-actin 
+at the leading edge of cortical protrusions such as pseudopodes. Coupled 
+with differentiation, however, Dd-TRAP1 located at the cortical region is 
+translocated to mitochondria in spite of the absence of the mitochondrial 
+localization sequence at its N-terminus. The translocation of this protein 
+raises interesting and fundamental questions regarding possible mechanisms 
+by which the Dd-TRAP1 is involved in cellular differentiation.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 1]
+
+ 

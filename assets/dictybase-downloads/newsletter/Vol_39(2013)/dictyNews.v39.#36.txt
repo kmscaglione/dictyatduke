@@ -1,0 +1,52 @@
+dictyNews
+Electronic Edition
+Volume 39, number 36
+December 20, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Calcium dependent regulation of Rab activation and vesicle fusion by an 
+intracellular P2X ion channel.
+
+1Katie Parkinson, 1Abigail E. Baines, 1Thomas Keller, 1Nicole Gruenheit, 
+2Laricia Bragg, 1,2R. Alan North and 1Christopher R.L. Thompson*
+
+1Faculty of Life Sciences, and 2Faculty of Medical and Human Sciences, 
+University of Manchester, Michael Smith Building, Oxford Road, 
+Manchester M13 9PT, United Kingdom
+
+Nature Cell Biology, in press
+
+
+Rab GTPases play key roles in the delivery, docking and fusion of intracellular 
+vesicles. However, the mechanism by which spatial and temporal regulation of 
+Rab GTPase activity is controlled is poorly understood. Here we describe a 
+mechanism by which localized calcium release through a vesicular ion channel 
+controls Rab GTPase activity. We show that activation of P2XA, an intracellular 
+ion channel localized to the Dictyostelium discoideum contractile vacuole system, 
+results in calcium efflux required for downregulation of Rab11a activity and 
+efficient vacuole fusion. Vacuole fusion and Rab11a downregulation require the 
+activity of CnrF, an EF-hand-containing Rab GAP found in a complex with Rab11a 
+and P2XA. CnrF Rab GAP activity for Rab11a is enhanced by the presence of calcium 
+and the EF-hand domain. These findings suggest that P2XA activation results in 
+vacuolar calcium release, which triggers activation of CnrF Rab GAP activity and 
+subsequent downregulation of Rab11a to allow vacuole fusion.
+
+Submitted by Christopher Thompson [christopher.thompson@manchester.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 36]

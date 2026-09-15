@@ -1,0 +1,102 @@
+dictyNews
+Electronic Edition
+Volume 33, number 6
+August 28, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Xpf and not the Fanconi anaemia proteins or Rev3 accounts for the extreme 
+resistance to cisplatin in Dictyostelium discoideum
+
+Xiao-Yin Zhang, Judith Langenick, David Traynor, M. Madan Babu, Rob R. Kay 
+and Ketan J. Patel
+
+Medical Research Council, Laboratory for Molecular Biology, Hills Road, 
+Cambridge CB2 0QH, UK
+
+
+PLoS Genetics, in press
+
+Organisms like Dictyostelium discoideum, often referred to as DNA damage 
+"extremophiles", can survive exposure to extremely high doses of radiation 
+and DNA crosslinking agents. These agents form highly toxic DNA crosslinks 
+that cause extensive DNA damage. However little is known about how 
+Dictyostelium and the other “extremophiles” can tolerate and repair such 
+large numbers of DNA crosslinks. Here we describe a comprehensive genetic 
+analysis of crosslink repair in Dictyostelium discoideum. We analyse three 
+gene groups that are crucial for a replication coupled repair process that 
+removes DNA crosslinks in higher eukarya: The Fanconi anaemia pathway 
+(FA), translesion synthesis (TLS), and nucleotide excision repair. Gene 
+disruption studies unexpectedly reveal that the FA genes and the TLS 
+enzyme Rev3 play minor roles in tolerance to crosslinks in Dictyostelium. 
+However, disruption of the Xpf nuclease subcomponent results in striking 
+hypersensitivity to crosslinks. Genetic interaction studies reveal that 
+although Xpf functions with FA and TLS gene products, most Xpf mediated 
+repair is independent of these two gene groups. These results suggest 
+that Dictyostelium utilises a distinct Xpf nuclease-mediated repair 
+process to remove crosslinked DNA. Other DNA damage resistant organisms 
+and chemoresistant cancer cells might adopt a similar strategy to develop 
+resistance to DNA crosslinking agents. 
+
+
+Submitted by Judith Langenick [jlange@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Phase variation has a role in Burkholderia ambifaria niche adaptation
+
+Ludovic Vial(1), Marie-Christine Groleau(1), Martin G Lamarche(1), Geneviève
+Filion(2), Josée Castonguay-Vanier(1), Valérie Dekimpe(1), France Daigle(3),
+Steve J Charette(2,4) and Eric Déziel(1)
+
+1INRS-Institut Armand Frappier, Laval, Québec, Canada
+2Centre de recherche de l'Institut universitaire de cardiologie et de
+pneumologie de Québec (Hôpital Laval), Québec, Canada
+3Department of Microbiology and Immunology, University of Montreal,
+Montréal, Québec, Canada
+4Département de microbiologie et de biochimie, Faculté des sciences et de
+génie, Université Laval, Québec, Canada
+
+
+ISME Journal, in press
+
+Members of the Burkholderia cepacia complex (Bcc), such as B. ambifaria, 
+are effective biocontrol strains, for instance, as plant growth-promoting
+bacteria; however, Bcc isolates can also cause severe respiratory infections
+in people suffering from cystic fibrosis (CF). No distinction is known
+between isolates from environmental and human origins, suggesting that the
+natural environment is a potential source of infectious Bcc species. While
+investigating the presence and role of phase variation in B. ambifaria HSJ1,
+an isolate recovered from a CF patient, we identified stable variants that
+arose spontaneously irrespective of the culture conditions. Phenotypic and
+proteomic approaches revealed that the transition from wild-type to variant
+types affects the expression of several putative virulence factors. By using
+four different infection models (Drosophila melanogaster, Galleria
+mellonella, macrophages and Dictyostelium discoideum), we showed that the
+wild-type was more virulent than the variant. It may be noted that the
+variant showed reduced replication in a human monocyte cell line when
+compared with the wild-type. On the other hand, the variant of isolate HSJ1
+was more competitive in colonizing plant roots than the wild-type.
+Furthermore, we observed that only clinical B. ambifaria isolates generated
+phase variants, and that these variants showed the same phenotypes as
+observed with the HSJ1 variant. Finally, we determined that environmental 
+B. ambifaria isolates showed traits that were characteristic of variants
+derived from clinical isolates. Our study therefore suggest that B.ambifaria 
+uses phase variation to adapt to drastically different environments: the 
+lung of patients with CF or the rhizosphere.
+
+
+Submitted by Steve Charette [steve.charette@bcm.ulaval.ca]
+==============================================================
+[End dictyNews, volume 33, number 6]

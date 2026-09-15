@@ -1,0 +1,249 @@
+Dicty News
+Electronic Edition
+Volume 16, number 11
+May 26, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+
+Ammonia Differentially Suppresses the cAMP Chemotaxis of Anterior-Like 
+Cells and Prestalk Cells in Dictyostelium discoideum
+
+Ira N. Feit,  Erika J. Medynski,  and Michael J. Rothrock
+
+Department of Biology, Franklin and Marshall College, Lancaster, PA 17603
+
+Journal of Biosciences, In Press
+                                                                        
+A drop assay for chemotaxis to cAMP confirms that both anterior-like cells 
+(ALC) and prestalk cells (pst cells) respond to cAMP gradients.  We present 
+evidence that the chemotactic response of both ALC and pst cells is 
+suppressed by ammonia, but a higher concentration of ammonia is required 
+to suppress the response in pst cells.
+
+    We also confirm that ALC show a chemotactic response to cAMP when 
+moving on a substratum of prespore cells in isolated slug posteriors 
+incubated under oxygen.   ALC chemotaxis on a prespore cell substratum is 
+suppressed by the same concentration of ammonia that suppresses ALC 
+chemotaxis on the agar substratum of the drop assays.  Chemotaxis 
+suppression is mediated by the unprotonated (NH3) species of ammonia.
+
+    The observed suppression, by ammonia, of ALC chemotaxis to cAMP 
+supports our earlier hypothesis that  ammonia is the tip-produced 
+suppressor of such chemotaxis.  We discuss implications of ammonia 
+sensitivity of pst cells and ALC with regard to the movement and 
+localization  of ALC and pst cells in the slug and to the roles played 
+by ALC in fruiting body formation. In addition, we suggest that a 
+progressive decrease in sensitivity to ammonia  is an important part 
+of the maturation of ALC into pst cells.
+
+-----------------------------------------------------------------------------
+
+Sequential Activities of PI 3-Kinase, PKB/Akt and Rab7 during Macropinosome 
+Formation in Dictyostelium
+
+Adam Rupper1, Kyung Lee3, David Knecht3 and James Cardelli1,2
+
+1Department of Microbiology and Immunology
+2Feist/Weiller Cancer Center
+LSU Health Sciences Center
+Shreveport, LA 71130
+318-675-5756
+jcarde@lsuhsc.edu
+
+3Department of Molecular and Cellular Biology
+University of Connecticut
+Storrs, CT 06269-3125
+
+Molecular Biology of the Cell, in press
+
+Abstract
+
+     Macropinocytosis plays an important role in the internalization of 
+antigens by dendritic cells, and is the route of entry for many bacterial 
+pathogens; however, little is known about the molecular mechanisms that 
+regulate the formation or maturation of macropinosomes. Like dendritic cells, 
+Dictyostelium amoebae are active in macropinocytosis, and a variety of proteins 
+have been identified that contribute to this process.  As described here, 
+microscopic analysis of null mutants have revealed that the Class I PI 3-kinases, 
+PIK1 and PIK2, and the downstream effector PKB/AKT are important in regulating 
+completion of macropinocytosis. Although actin-rich membrane protrusions form 
+in these cell-lines, they recede without forming macropinosomes. Imaging of 
+cells expressing GFP fused to the pleckstrin homology domain (PH) of PKB 
+indicates that D3 phosphoinositides are enriched in the forming macropinocytic 
+cup, and remain associated with newly formed macropinosomes for less than 
+one minute.  A fusion protein, consisting of GFP fused to an F-actin binding 
+domain, overlaps with GFP-PHPKB in the timing of association with forming 
+macropinosomes. Although macropinocytosis is reduced in cells expressing 
+dominant negative Rab7, microscopic imaging studies reveal that GFP-Rab7 
+associates only with formed macropinosomes at approximately the time that 
+F-actin and D3 phosphoinositide levels decrease. These results support a 
+model in which F-actin modulating proteins and vesicle trafficking proteins 
+coordinately regulate the formation and maturation of macropinosomes.
+
+-----------------------------------------------------------------------------
+
+A cell number-counting factor regulates group size in Dictyostelium by
+differentially modulating cAMP-induced cAMP and cGMP pulse sizes
+
+Lei Tang, Robin Amman, Tong Gao, and Richard H. Gomer
+
+Howard Hughes Medical Institute and Department of Biochemistry and Cell
+Biology, MS-140, Rice University, 6100 S. Main Street, Houston, TX
+77005-1892
+
+Journal of Biological Chemistry, in press; ms available at
+http://www.jbc.org/cgi/reprint/M102205200v1
+
+Abstract
+A secreted counting factor (CF), regulates the size of Dictyostelium
+discoideum fruiting bodies in part by regulating cell-cell adhesion.
+Aggregation and the expression of adhesion molecules is mediated by relayed
+pulses of cAMP.  Cells also respond to cAMP with a short cGMP pulse.  We
+find that CF slowly down-regulates the cAMP-induced cGMP pulse by
+inhibiting guanylyl cyclase activity.  A one-minute exposure of cells to
+purified CF increases the cAMP-induced cAMP pulse.  CF does not affect the
+cAMP receptor or its interaction with its associated G proteins, or the
+translocation of the cytosolic regulator of adenylyl cyclase (CRAC) to the
+membrane in response to cAMP.  Pulsing streaming wild-type cells with a
+high concentration of cAMP results in the formation of small groups, while
+reducing cAMP pulse size with exogenous cAMP phosphodiesterase during
+stream formation causes cells to form large groups.  Altering the
+extracellular cAMP pulse size does not phenocopy the effects of CF on the
+cAMP-induced cGMP pulse size or cell-cell adhesion, indicating that CF does
+not regulate cGMP pulses and adhesion via CF's effects on cAMP pulses.  The
+results suggest that regulating either cell-cell adhesion, the cGMP, or the
+cAMP pulse size can control group size, and that CF regulates all three of
+these independently.
+
+-----------------------------------------------------------------------------
+
+On the problem of establishing the subcellular localization of
+Dictyostelium retrotransposon TRE5-A proteins by biochemical analysis of
+nuclear extracts
+
+Ulrich Hentschel, Ilse Zuendorf, Theodor Dingermann and Thomas Winckler
+
+Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M.
+(Biozentrum), Frankfurt am Main, Germany
+
+Analytical Biochemistry, in press
+
+Abstract:
+
+At first sight a protein that is enriched in extracts prepared from
+nuclei by means of biochemical methods can be considered to be a nuclear
+protein in vivo. Although this assumption will hold true for most of the
+analysed proteins, it could also lead to false interpretations. We
+analysed the subcellular distribution of endogenous and plasmid-borne
+proteins derived from the retrotransposon TRE5-A of Dictyostelium
+discoideum. In biochemical fractionation experiments the proteins
+encoded by TRE5-A open reading frame 1 (ORF1p) and the putative
+endonuclease encoded in ORF2 (ENp) were found in the detergent-insoluble
+material containing the nuclei. However, salt extraction of isolated
+nuclei did not considerably release the TRE5-A proteins. Instead, the
+TRE5-A proteins were strongly enriched in a fraction that contained the
+chromosomal DNA after removal of most cytoskeletal and histone proteins.
+These observations implied that ORF1p and ENp were both attached to
+chromatin in vivo, but this conclusion was disproved by the expression
+of genetic fusions of green fluorescent protein with either ORF1p or
+ENp. We show conclusive evidence that both fusion proteins were located
+as large aggregates of native protein in the cytoplasm of D. discoideum
+cells.
+
+-----------------------------------------------------------------------------
+
+Supriya Srinivasan*, Mathew Traini›, Ben Herbert›, Diane Sexton›, Jenny 
+Harry›, Hannah Alexander*, Keith L. Williams› and Stephen Alexander*
+
+* Division of Biological Sciences, 303 Tucker Hall, University of Missouri, 
+Columbia, MO 65211, USA
+ › Proteome Systems Limited, 1/35-41 Waterloo Road, North Ryde, Sydney, 
+NSW 2113, Australia
+
+Proteomics, In Press
+
+SUMMARY
+
+Secretion of spore coat proteins from the prespore secretory vesicles (PSVs) 
+in Dictyostelium discoideum is a signal mediated event that underlies 
+terminal cell differentiation, and represents an important case of 
+developmentally regulated secretion.  In order to study the biochemical 
+mechanisms that govern the regulated fusion of the PSVs with the plasma 
+membrane and the subsequent secretion of their cargo, we purified this 
+organelle from prespore cells.  Analysis of protein extracts of highly 
+purified PSVs indicated that, in addition to the cargo of structural spore 
+coat proteins, many more proteins are associated with the PSVs.  Their 
+identification is paramount to the understanding of the mechanism of 
+regulated secretion in this system.  In this study we have taken the 
+first comprehensive proteomic approach to the analysis of an entire - 
+previously uncharacterized - organelle, with the goal of identifying 
+the major proteins associated with the PSVs.  We show that in addition 
+to the structural spore coat proteins, the PSVs contain the enzymes 
+needed for proper spore coat assembly (thioredoxin 2 and 3), regulatory 
+proteins which we predict receive and transduce the developmental signal 
+for secretion (rab7 GTPase, PI-3 kinase, NDP kinase and the calcium binding 
+proteins calfumirin-1 and calreticulin) as well as proteins that interact 
+with the cytoskeleton to mediate movement of the PSVs to the plasma membrane 
+(actin binding proteins coactosin and profilin 1).  In addition, the results 
+suggest that proteins can play multiple roles in the cell, and that protein 
+function can be dictated in part by subcellular localization.  The 
+identification of the PSV proteins is allowing us to develop testable 
+hypotheses about the roles of these proteins within the functional context 
+of developmentally regulated secretion.
+
+-----------------------------------------------------------------------------
+
+A Rab11-like GTPase Associates with and Regulates the Structure and Function 
+of the Contractile Vacuole System in Dictyostelium.
+
+Edward Harris*, Kunito Yoshida, James Cardelli* and John Bush+
+
++Department of Biology
+ University of Arkansas at Little Rock
+Little Rock, AR 72204
+
+* Department of Microbiology and Immunology
+ LSU Health Sciences Center
+Shreveport, LA 71130.
++ Corresponding author:
+
+JOURNAL OF CELL SCIENCE, in press
+
+ABSTRACT
+
+Screening of a cDNA library revealed the existence of a Dictyostelium cDNA 
+encoding a protein 80% identical at the amino acid level to mammalian Rab11. 
+Subcellular fractionation and immunofluorescence studies revealed that 
+DdRab11 was exclusively associated with the ATPase proton pump-rich 
+contractile vacuole membrane system, consisting of a reticular network 
+and bladder-like vacuoles. Video microscopy of cells expressing GFP-DdRab11 
+revealed that this Rab was associated with contractile vacuolar bladders 
+undergoing formation, fusion, and expulsion of water. The association of 
+DdRab11 with contractile vacuole membranes was disrupted when cells were 
+exposed to either hypo-osmotic conditions or an inhibitor of the ATPase 
+proton pump. Cells over-expressing a dominant negative form of DdRab11 
+were analyzed biochemically and microscopically to measure changes in the 
+structure and function of the contractile vacuole system. Compared to 
+wild-type cells, the dominant negative DdRab11 expressing cells contained 
+a more extensive contractile vacuole network and abnormally enlarged 
+contractile vacuole bladders, most likely the result of defects in membrane 
+trafficking. Also, the mutant cells enlarged, detached from surfaces, and 
+contained large vacuoles when exposed to water, suggesting a functional 
+defect in osmotic regulation. No changes were observed in mutant cells in 
+the rate of fluid phase internalization or release, suggesting the 
+DdRab11-mediated membrane trafficking defects were not general in nature.  
+Surprisingly, the rate of phagocytosis was increased in the dominant 
+negative DdRab11 expressing cells as compared to control cells. Our results 
+are consistent with a role for DdRab11 in regulating membrane traffic to 
+maintain the normal morphology and function of the contractile vacuole.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 16, number 11]

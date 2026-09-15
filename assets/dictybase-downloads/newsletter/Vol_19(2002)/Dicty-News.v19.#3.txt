@@ -1,0 +1,376 @@
+Dicty News
+Electronic Edition
+Volume 19, number 3
+August 3, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+======================
+  Position Available
+======================
+
+Postdoctoral position in the Wellcome Trust Biocentre at the University 
+of Dundee
+
+
+A postdoctoral position is available in Dr. Inke Nthke s laboratory to 
+join a team studying the function of the Adenomatous Polyposis Coli tumour 
+suppressor protein (APC).  The project will involve using Dictyostelium 
+Discoideum to investigate the role of APC in cytoskeletal dynamics and 
+organisation.  The general aim of work in the laboratory is to determine 
+how the diverse functions of APC relate to its role in cancer and how these 
+functions are co-ordinated and regulated.  Experimental approaches include 
+general cell- and molecular biology techniques combined with high-resolution 
+fluorescence microscopy and use of Dictyostelium as a model organism.  
+The candidate will join a small, dynamic, highly interactive research team 
+with active collaborations worldwide.
+
+A proven research ability and motivation are required and experience in 
+working with Dictyostelium is requisite.  Experience in general cell biology 
+and molecular biology is essential.  The position is available immediately 
+for 2 years in the first instance.  For informal enquiries, please contact 
+Dr. Inke S. Nthke (+ 44 1382 345821; e-mail: i.s.nathke@dundee.ac.uk).  
+Applications should be directed to: Janette Cordiner, School Administrator, 
+School of Life Sciences, MSI/WTB Complex, University of Dundee, Dow Street, 
+Dundee, DD1 5EH; j.m.cordiner@dundee.ac.uk.   Please cite reference  
+SC/763/1 on the application.
+
+The Wellcome Trust Biocentre is part of the internationally renowned WTB/MSI 
+complex at the University of Dundee. The complex provides an extremely 
+interactive research environment and houses nearly 400 research staff.  
+Further information about research in the WTB/MSI complex can be obtained 
+at http://www.dundee.ac.uk/biocentre/.
+
+
+=============
+  Abstracts
+=============
+
+Differential localization in cells of myosin II heavy chain kinases during 
+cytokinesis and polarized migration.
+
+Wenchuan Liang, Lucila Licate, Hans Warrick, James Spudich, and Thomas Egelhoff
+
+BMC Cell Biology 2002 3: 19
+
+Abstract
+
+Background
+
+Cortical myosin-II filaments in Dictyostelium discoideum display enrichment 
+in the posterior of the cell during cell migration, and in the cleavage 
+furrow during cytokinesis. Filament assembly in turn is regulated by 
+phosphorylation in the tail region of the myosin heavy chain (MHC). Early 
+studies have revealed one enzyme, MHCK-A, which participates in filament 
+assembly control, and two other structurally related enzymes, MHCK-B and 
+-C. In this report we evaluate the biochemical properties of MHCK-C, and 
+using fluorescence microscopy in living cells we examine the localization 
+of GFP-labeled MHCK-A, -B, and -C in relation to GFP-myosin-II localization. 
+
+Results 
+
+Biochemical analysis indicates that MHCK-C can phosphorylate MHC with 
+concomitant disassembly of myosin II filaments. In living cells, GFP-MHCK-A 
+displayed frequent enrichment in the anterior of polarized migrating cells, 
+and in the polar region but not the furrow during cytokinesis. GFP-MHCK-B 
+generally displayed a homogeneous distribution. In migrating cells 
+GFP-MHCK-C displayed posterior enrichment similar to that of myosin II, but 
+did not localize with myosin II to the furrow during the early stage of 
+cytokinesis. At the late stage of cytokinesis, GFP-MHCK-C became strongly 
+enriched in the cleavage furrow, remaining there through completion of 
+division.
+
+Conclusion
+
+MHCK-A, -B, and -C display distinct cellular localization patterns 
+suggesting different cellular functions and regulation for each MHCK 
+isoform. The strong localization of MHCK-C to the cleavage furrow in the 
+late stages of cell division may reflect a mechanism by which the cell 
+regulates the progressive removal of myosin II as furrowing progresses.
+-----------------------------------------------------------------------------
+
+cAMP dependent protein kinase regulates Polysphondylium pallidum development
+
+Satoru Funamoto1,3, Christophe Anjard2,4, Wolfgang Nellen2 and Hiroshi 
+Ochiai1,5
+
+1Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University, Sapporo 060-0810, Japan; 2Department of Genetics, University of 
+Kassel, Heinrich-Plett-Str. 40 D-34132 Kassel, Germany; 3 Present address: 
+Department of Neuropathology, Faculty of Medicine, University of Tokyo, 
+Hongo 7-3-1, Bunkyo-ku, Tokyo 113-0033, Japan; 4Present address: Center for 
+Molecular Genetics, Department of Biology University of California, San Diego 
+9500 Gilman Drive, La Jolla, CA 92093-0634
+
+Author for correspondence. E-mail: hochiai@sci.hokudai.ac.jp
+
+Differentiation, in press.
+
+Abstract 
+
+In eukaryotic cells the universal second messenger cAMP regulates various 
+aspects of development and differentiation. The primary target for cAMP is 
+the regulatory subunit of cAMP-dependent protein kinase A (PKA), which, 
+upon cAMP binding, dissociates from the catalytic subunit and thus activates 
+it. In the soil amoeba Dictyostelium discoideum the function of PKA in 
+growth, development and cell differentiation has been thoroughly 
+investigated and substantial information is available. To obtain a more 
+general view we investigated the influence of PKA on development of the 
+related species Polysphondylium pallidum. Cells were transformed to 
+overexpress either a dominant negative mutant of the regulatory subunit 
+(Rm) from Dictyostelium that cannot bind cAMP, or the catalytic subunit 
+(PKA-C) from Dictyostelium. Cells overexpressing Rm rarely aggregated and 
+the few multicellular structures developed  slowly into very small fruiting 
+bodies without branching of secondary sorogens, the prominent feature of 
+Polysphondylium. Few round spores with reduced viability were formed. When 
+mixed with wild type cells and allowed to develop, the Rm cells were 
+randomly distributed in aggregation streams, but were later found in the 
+posterior region of the culminating slug or were left behind on the surface 
+of the substratum. The PKA-C overexpressing cells exhibited precocious 
+development and formed more aggregates of smaller size. Moreover, 
+expression of PKA-C under the control of the prestalk specific ecmB promoter 
+of Dictyostelium, lead to protrusions from aggregation streams. We conclude 
+that Dictyostelium PKA subunits introduced into Polysphondylium cells are 
+functional as signal components, indicating that a biochemically similar 
+PKA mechanism works in Polysphondylium.
+
+-----------------------------------------------------------------------------
+
+Element analysis of the Polysphondylium pallidum gp64 promoter
+
+Naohisa Takaokaa, Masashi Fukuzawab, Atsushi Katoa, Tamao Saitoa and Hiroshi 
+Ochiaia, c
+
+a. Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University, Sapporo, 060-0810 Japan; b. Wellcome Trust Building, Department 
+of Anatomy and Physiology, University of Dundee, Dow Street, Dundee, DD1 4HN, UK
+
+Author for corresponding. E-mail: hochiai@sci.hokudai.ac.jp 
+
+BBA, in press.
+
+Abstract
+
+gp64 mRNA in Polysphondylium pallidum is expressed extensively during 
+vegetative growth, and begins to rapidly decrease at the onset of 
+development. To examine this unique regulation, 5 deletion analysis of the 
+gp64 promoter was undertaken, and two growth-phase activated elements have 
+been found: a food-dependent, upstream regulatory region (FUR, -222 to 170) 
+and a vegetatively activated, downstream region (VAD, -110 to 63). Here we 
+concentrate our analysis on an A1 and A2 sequences in the FUR region: A1 
+consists of a GATTTTTTTA sequence called a corresponding sequence and A2 
+consists of the direct repeat TTTGTTGTG. The cells carrying a combined 
+construct of A1 and A2 acted synergistically in a reporter activity. A 
+point mutation analysis in A1 indicates that a G residue is required for 
+the activation of A1. From analyses of promoter regulation in a liquid or 
+a solid medium, the promoter activity of the cells fed on bacteria in 
+A-medium (axenic medium for Polysphondylium) or grown in A-medium alone 
+was only one-fourth of that of the cells fed on bacteria.
+
+-----------------------------------------------------------------------------
+
+A novel Dictyostelium Cdk8 is required for aggregation, but dispensable for 
+growth
+
+Kosuke Takeda, Tamao Saito, Hiroshi Ochiai*
+Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University Sapporo, Hokkaido 060-0810, Japan
+
+Author for correspondence. E-mail: hochiai@sci.hokudai.ac.jp
+
+Develop. Growth Differ., in  press
+
+Abstract
+
+When Dictyostelium cells starve, they express genes necessary for 
+aggregation. Using insertional mutagenesis, we have isolated a mutant that
+does not aggregate upon starvation and that forms small plaques on bacterial 
+lawns, thus indicating slow growth. The sequencing of the mutated locus 
+showed a strong similarity to the catalytic domain of cdc2-related kinase 
+genes. Phylogenetic analysis further indicated that the amino acid sequence 
+was more close to cyclin-dependent kinase 8 than to those of other cyclin-
+dependent kinases. Thus we designated this gene as Ddcdk8. The Ddcdk8-null 
+cells do not aggregate and grow somewhat more slowly than parental cells 
+when being shaken in axenic medium or laid on bacterial plates. To confirm 
+whether these defective phenotypes were caused by disruption of this gene, 
+the Ddcdk8-null cells were complemented with DdCdk8 protein expressed from 
+an endogenous promoter but not an actin promoter, and when the complemented 
+cells were then allowed to grow on a bacterial lawn, they began to aggregate 
+as the food supply was depleted, and finally became fruiting bodies. The 
+results suggest that properly regulated DdCdk8 activity is essential for 
+aggregation. Since when starved, Ddcdk8-null cells do not express at all 
+the acaA transcripts required for aggregation, we deduce that Ddcdk8 is 
+epistatic for acaA expression, indicating that the Ddcdk8 products may 
+regulate expression of acaA and/or other genes.
+
+-----------------------------------------------------------------------------
+
+Cell adhesion during the migratory slug stage of Dictyostelium discoideum.
+
+*Vivienne M. Bowers-Morrow, *Sinan O. Ali, and +Keith L. Williams 
+
+*Department of Biological Sciences, Macquarie University, Sydney, NSW, 2109 
+AUSTRALIA 
++Proteome Systems Ltd, North Ryde, Sydney, NSW, 2113 AUSTRALIA 
+
+All correspondence to Vivienne Bowers-Morrow, email: vmorrow@rna.bio.mq.edu.au 
+
+CELL BIOLOGY INTERNATIONAL, in press
+
+ABSTRACT
+
+Prespore-specific Antigen (PsA) is selectively expressed on the surface of 
+prespore cells at the multicellular migratory slug stage of Dictyostelium 
+discoideum development. It is a developmentally regulated glycoprotein 
+which is anchored to the cell membrane through a glycosyl 
+phosphatidylinositol (GPI) anchor. We present the results of an in vitro 
+immunological investigation of the hypothesis that PsA functions as a cell 
+adhesion molecule (CAM), and of a ligand  binding assay indicating that PsA 
+has cell membrane binding partner(s). This is the first evidence to 
+implicate a direct role for a putative CAM in cell-cell adhesion during the 
+multicellular migratory slug stage of D. discoideum development. Cell-cell 
+adhesion assays were carried out in the presence or absence of the monoclonal 
+antibody (mAb) MUD1 which has a single antigenic determinant: a peptide 
+epitope on PsA. These assays showed specific inhibition of cell-cell adhesion 
+by MUD1. Further, it was found that a purified recombinant form of  PsA 
+(rPsA), can neutralize the inhibitory effect of MUD1; the inhibitory effect 
+on cell-cell adhesion is primarily due to the blocking of PsA by the mAb. 
+The resistance of aggregates to dissociation in the presence of 10mM EDTA 
+(ethylenediamintetraacetic acid)  indicates that PsA mediates EDTA-stable 
+cell-cell contacts, and that PsA-mediated cell adhesion is likely to be 
+independent of divalent cations such as Ca 2+ or Mg 2+.
+
+-----------------------------------------------------------------------------
+
+The three-dimensional model of Dictyostelium discoideum racE based on the 
+human rhoA-GDP crystal structure 
+
+Madhavi Agarwala, Donald J. Nelsonb and Denis A. Larochellea 
+
+a Department of Biology, Clark University, 950 Main Street, Worcester, 
+MA 01610, USA; b Department of Chemistry, Clark University, 950 Main Street, 
+Worcester, MA 01610, USA 
+
+Corresponding author. Tel.: +1-508-793-7664; fax: +1-508-793-8861;  email: 
+magarwal@clarku.edu 
+
+Journal of Molecular Graphics and Modelling 21, 3-18
+
+Abstract
+
+The three-dimensional structure of racE was modeled using several homologous 
+small G proteins, and the best model obtained using the human rhoA as 
+modeling template is reported. The three-dimensional fold of the racE model 
+is remarkably similar to the cellular form of human ras p21 crystal 
+structure. Its secondary structure consists of six  -helices, six  -strands 
+and three 310 helices. The model retains its secondary structure after a 
+300 K, 300 ps molecular dynamics (MD) simulation. Important domains of the 
+protein include its effector loop (residues 3446), the insertion domain 
+(residues 121136), and the polybasic motif (between 210 and 220) not 
+modeled in the current structure. The effector loop is inherently flexible 
+and the structure docked with GDP exhibits the effector loop moving 
+significantly closer to the nucleotide binding pocket, forming a tighter 
+complex with the bound GDP. The mobility of the effector loop is conferred 
+by a single residue `hinge' point at residue 34Asp, also allowing the 
+Switch I region, immediately preceding the effector loop, to be equally 
+mobile. In comparison, the Switch II region shows average mobility. The 
+insertion domain is highly flexible, with the insertion taking the form 
+of a helical domain, with several charged residues forming a complex 
+charged interface over the entire insertion region. While the GDP moiety 
+is loosely held in the active site, the metal cation is extensively 
+co-ordinated. The critical residue 38Thr exhibits high mobility, and is 
+seen interacting directly with the metal ion at a distance of 2.64 , and 
+indirectly via an intervening water molecule. 64Gln, a key residue involved 
+in GTP hydrolysis in ras, is seen facing the  -phosphate group and the metal 
+ion. Certain residues (i.e. 51Asn, 38Thr and 65Glu) exhibit unique 
+characteristics and these residues, together with 158Val, may play important 
+roles in the maintenance of the protein's integrity and function. There is 
+strong consensus of secondary structural elements between models generated 
+using various templates, such as h-rac1, h-rhoA and h-cdc42 bound to RhoGDI, 
+all sharing only 5055% sequence identity with racE, which suggests that 
+this model is in all probability an accurate prediction of the true tertiary 
+structure of racE. 
+
+-----------------------------------------------------------------------------
+
+A novel cGMP-signaling pathway mediating myosin phosphorylation and 
+chemotaxis in Dictyostelium
+
+Leonard Bosgraaf#, Henk Russcher#, Janet L. Smith^, Deborah Wessels*, David 
+R. Soll* and Peter J.M. Van Haastert# 
+
+# Department of Biochemistry, University of Groningen, Nijenborgh 4, 9747 
+AG Groningen, the Netherlands. ^ Boston Biomedical Research Institute, 64 
+Grove Street, Watertown, Massachusetts 02472-2829, U.S.A. * W.M. Keck Dynamic 
+Image Analysis Facility, Department of Biological Sciences, University of 
+Iowa, Iowa City, IA 52242, U.S.A.
+
+
+EMBO J, in press
+
+Chemotactic stimulation of Dictyostelium cells results in a transient 
+increase in cGMP levels, and transient phosphorylation of myosin II heavy 
+and regulatory light chains. In Dictyostelium, two guanylyl cyclases and 
+four candidate cGMP-binding proteins (GbpA-D) are implicated in cGMP 
+signaling. GbpA and GbpB are homologous proteins with a Zn2+-hydrolase 
+domain. A double gbpA/gbpB gene disruption leads to a reduction of cGMP-
+phosphodiesterase activity and a ten-fold increase of basal and stimulated 
+cGMP levels. Chemotaxis in gbpA-B- cells is associated with increased myosin 
+II phosphorylation compared to wild type cells; formation of lateral 
+pseudopodia is suppressed resulting in enhanced chemotaxis. GbpC is 
+homologous to GbpD, and contains Ras, MAPKKK and Ras-GEF domains. 
+Inactivation of the gbp genes indicates that only GbpC harbours high 
+affinity cGMP-binding activity. Myosin phosphorylation, assembly of myosin 
+in the cytoskeleton as well as chemotaxis are severely impaired in mutants 
+lacking GbpC and D, or mutants lacking both guanylyl cyclases. Thus a novel 
+cGMP-signaling cascade is critical for chemotaxis in Dictyostelium, and 
+plays a major role in myosin II regulation during this process.
+
+-----------------------------------------------------------------------------
+
+An observation of the initial stage towards a symbiotic relationship
+
+Masahiko Todoriki 1, Shinya Oki 1, Shin-Ichi Matsuyama1, Elizabeth P. 
+Ko-Mitamura1, Itaru Urabe 1 and Tetsuya Yomo 1,2,3*
+
+1Department of Biotechnology, Graduate School of Engineering, Osaka 
+University, 2-1 Yamadaoka, Suita City, 2PRESTO, JST, 2-1 Yamadaoka, Suita 
+City, Osaka 565-0871, Japan and 3Department of Pure and Applied Sciences, 
+University of Tokyo, Komaba, Meguro-ku, Tokyo 153-8902, Japan.
+
+*Corresponding author.  Mailing address: Department of Biotechnology, Graduate 
+School of Engineering, Osaka University, 2-1 Yamadaoka, Suita City, Osaka 
+565-0871, Japan. E-mail: yomo@bio.eng.osaka-u.ac.jp; Tel. :+81-6-6879-7427; 
+Fax: +81-6-6879-7428
+
+BioSystems 65 (2002) 105?112
+
+Abstract
+
+   Two well-characterized and phylogenetically different species, Escherichia 
+coli and Dictyostelium discoideum, were used as the model organisms. When the 
+two species were mixed and allowed to grow on minimal agar plates at 22?C, the 
+two species remarkably achieved a state of coexistence at about two weeks. In
+ addition, the emerged colonies housing the coexisting species have a mucoidal 
+nature that was not observed from its origin. Moreover, the state of 
+coexistence was confirmed to be stable, and so does the mucoidal nature of 
+the emerged colonies. Comparing with the pure E.coli origin, mucoidal colony 
+showed a significant increase in higher molecular weight extracellular 
+components, with polysaccharide as the major constituent. Qualitative 
+analysis of the monosaccharide contents in the extracellular components of 
+the mucoidal colony revealed not only a significant increase in the glucose 
+content, but also significant amount of additional xylose and galactose. 
+The system permits the initial stages of the development of relationship 
+between two species be captured within a short period of time.   This 
+feature, together with being simple and reproducible on laboratory
+ conditions, hence provides a new model system for the study of symbiosis, 
+especially when initial stages are concerned.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 3]
+
+ 

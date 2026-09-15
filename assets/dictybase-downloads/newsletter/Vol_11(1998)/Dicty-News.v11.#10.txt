@@ -1,0 +1,139 @@
+Dicty News
+Electronic Edition
+Volume 11, number 10
+October 31, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+
+Unusual centrosome cycle in Dictyostelium: correlation of dynamic behavior
+and structural changes
+
+Masahiro Ueda, Manfred Schliwa and Ursula Euteneuer
+
+Adolf Butenandt Institute, Cell Biology, University of Munich, 80336
+Munich, Germany
+
+Mol.Biol. Cell, in press
+
+Abstract
+
+   Centrosome duplication and separation are of central importance for 
+cell division. Here we provide a detailed account of this dynamic 
+process in Dictyostelium. Centrosome behavior was monitored in living 
+cells using a g-tubulin-GFP fusion protein and correlated with 
+morphological changes at the ultrastructural level. All aspects of 
+the duplication and separation process of this centrosome are unusual 
+when compared to, e.g., vertebrate cells. In interphase the Dictyostelium 
+centrosome is a box-shaped structure comprised of three major layers, 
+surrounded by an amorphous corona from which microtubules emerge. Structural 
+duplication takes place during prophase, as opposed to G1/S in vertebrate 
+cells. The three layers of the box-shaped core structure increase in size. 
+The surrounding corona is lost, an event accompanied by a decrease in signal 
+intensity of g-tub-GFP at the centrosome and the breakdown of the interphase 
+microtubule system. At the prophase/prometaphase transition the separation 
+into two mitotic centrosomes takes place via an intriguing lengthwise 
+splitting process where the two outer layers of the prophase centrosome 
+peel away from each other and become the mitotic centrosomes. Spindle 
+microtubules  are now nucleated from surfaces that previously were buried 
+inside the interphase centrosome. Finally, at the end of telophase the 
+mitotic centrosomes fold in such a way that the microtubule-nucleating 
+surface remains on the outside of the organelle. Thus in each cell cycle 
+the centrosome undergoes an apparent inside-out/outside-in reversal of 
+its layered structure.
+
+
+----------------------------------------------------------------------------
+
+MODELING CHEMOTACTIC CELL SORTING DURING DICTYOSTELIUM DISCOIDEUM MOUND 
+FORMATION 
+
+Bakhtier Vasiev, Cornelis J.Weijer
+
+Department of Anatomy and Physiology, Wellcome Trust Building,
+University of Dundee, Dundee, DD1 4HN, UK 
+
+Biophysical Journal, in press
+
+ABSTRACT
+
+   Coordinated cell movement is a major mechanism of the multicellular 
+development of most organisms. The multicellular morphogenesis of the 
+slime mould Dictyostelium discoideum, from single cells into a multicellular 
+fruiting body, results from differential chemotactic cell movement. During 
+aggregation cells differentiate into prestalk and prespore cells which will 
+form the stalk and spores in the fruiting body. These cell types arise in a 
+salt and pepper pattern after what the prestalk cells chemotactically sort 
+out to form a tip.  The tip functions as an organizer since it directs the 
+further development. It has been difficult to get a satisfactory formal 
+description of the movement behavior of cells in tissues. Based on our 
+experiments we consider the aggregate as a drop of a viscous fluid and 
+show that this consideration is very well suited to mathematically describe 
+the motion of cells in the tissue. We show that the transformation of a 
+hemispherical mound into an elongated slug can result from the coordinated 
+chemotactic cell movement in response to scroll waves of the chemoattractant 
+cAMP. The model calculations furthermore show that cell sorting can result 
+from differences in chemotactic cell movement and cAMP relay kinetics between 
+the two cell types. During this process the faster moving and stronger signaling 
+cells collect on the top of the mound to form a tip. The mound then extends 
+into an elongated slug just as observed in experiments. The model is able to 
+describe cell movement patterns in the complex multicellular morphogenesis of 
+Dictyostelium rather well and we expect that this approach may be useful in 
+the modeling of tissue transformations in other systems. 
+
+----------------------------------------------------------------------------
+
+Filament structure as an essential factor for regulation of Dictyostelium
+myosin by regulatory light chain phosphorylation
+
+Xiong Liu1,2, Kohji Ito1,3, Sayuri Morimoto4, Atuko Hikkoshi-Iwane4, Toshio
+Yanagida4,5 and Taro Q. P. Uyeda1 
+
+1: Biomolecular Research Group, National Institute for Advanced
+Interdisciplinary Research, Higashi 1-1-4 Tsukuba, Ibaraki 305-8562, Japan
+2: Present address: Laboratory of Cell Biology, National Heart, Lung, and
+Blood Institute, NIH, Bethesda, MD 20892, USA
+3: Present address: Department of Biology, Faculty of Science, Chiba
+University, Inage, Chiba 263-8522, Japan
+4: Yanagida Biomotron Project, ERATO, JST, 2-4-14 Senba-Higashi, Mino, Osaka
+562, Japan
+5: Department of Biophysical Engineering, Osaka University, Toyonaka, Osaka
+560, Japan
+
+Proc. Natl. Acad. Sci. USA, in press.
+
+Abstract
+
+   Phosphorylation of the regulatory light chain (RLC) activates the 
+actin-dependent ATPase activity of Dictyostelium myosin II.  To elucidate 
+this regulatory mechanism, we characterized two mutant myosins, MyDC1225 and 
+MyDC1528, which are truncated at Ala 1224 and Ser 1527, respectively.  These 
+mutant myosins do not contain the C-terminal assembly domain, and thus are 
+unable to form filaments.  Their activities were only weakly regulated by RLC 
+phosphorylation, suggesting that, unlike smooth muscle myosin, efficient 
+regulation of Dictyostelium myosin II requires filament assembly.  Consistent 
+with this hypothesis, wild type myosin progressively lost the regulation as 
+its concentration in the assay mixture was decreased.  Dephosphorylated RLC 
+did not inhibit the activity when the concentration of myosin in the reaction 
+mixture was very low.  Furthermore, 3xAsp myosin, which does not assemble 
+efficiently due to point mutations in the tail, was also less well-regulated 
+than the wild type.  We conclude that the activity in the monomer state is 
+exempt from inhibition by the dephosphorylated RLC, and that the complete 
+regulatory switch is formed only in the filament structure.  Interestingly, 
+a chimeric myosin composed of Dictyostelium heavy meromyosin fused to chicken 
+skeletal light meromyosin was not well regulated by RLC phosphorylation.  
+This suggests that, in addition to filament assembly, some specific feature 
+of the filament structure is required for efficient regulation.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 11, number 10]
+

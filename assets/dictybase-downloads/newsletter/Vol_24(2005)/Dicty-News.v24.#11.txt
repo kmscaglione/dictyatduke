@@ -1,0 +1,87 @@
+Dicty News
+Electronic Edition
+Volume 24, number 11
+April 22, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Peptide signaling during terminal differentiation of Dictyostelium
+
+Christophe Anjard and William F. Loomis
+Center for Molecular Genetics, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368
+
+
+Proc. Natl. Acad. Sci. USA, in press
+
+A wide variety of mechanisms have evolved for intercellular communication
+in metazoans but some of the signaling molecules were already used in their
+predecessors. The social amoeba, Dictyostelium discoideum, is known to use
+peptides to trigger sporulation within fruiting bodies but their sequences
+have not been defined. We found that the peptide signal SDF-2 is processed
+from acyl-CoA binding protein, AcbA. The mammalian homolog of AcbA is
+processed to DBI (Diazepam Binding Inhibitor) that binds to the GABAA
+receptor in the brain and to peripheral 1,4 benzodiazepine receptors (PBR).
+Although Dictyostelium has neither GABAA nor peripheral-type benzodiazepine
+receptors, we find that both a DBI peptide and diazepam (Valium) can mimic
+SDF-2 in a Dictyostelium bioassay.  Mutants lacking AcbA sporulate well only
+when developed in chimeras with wild type cells. Using a yeast system we
+show that ligand binding to the SDF-2 receptor histidine kinase, DhkA,
+inhibits phosphorelay which can account for its ability to induce rapid
+sporulation.
+
+
+Submitted by: William F. Loomis [wloomis@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+Pushing Forces Drive the Comet-Like Motility of Microtubule Arrays in
+Dictyostelium
+
+D.A. Brito, J. Strauss, V. Magidson, I. Tikhonenko, A.Khodjakov, and
+M. P. Koonce
+
+Division of Molecular Medicine
+Wadsworth Center
+Albany, NY, 12201-0509
+
+
+Molecular Biology  of the Cell, in press
+
+Overexpression of dynein fragments in Dictyostelium induces the movement
+of the entire interphase microtubule array. Centrosomes in these cells
+circulate through the cytoplasm at rates between 0.4 and 2.5 _m/sec, and
+are trailed by a comet-tail like arrangement of the microtubule array.
+Previous work suggested that these cells use a dynein-mediated pulling
+mechanism to generate this dramatic movement, and that similar forces are
+at work to maintain the interphase MTOC position in wild type cells. In the
+present study, we address the nature of the forces used to produce
+microtubule movement. We have used a laser microbeam to sever the connection
+between the motile centrosomes and trailing microtubules, demonstrating that
+the major force for such motility results from a pushing on the microtubules.
+We eliminate the possibility that microtubule assembly/disassembly reactions
+are significant contributors to this motility, and suggest that the cell
+cortex figures prominently in locating force-producing molecules. Our
+findings indicate that interphase microtubules in Dictyostelium are subject
+to both dynein and kinesin-like forces, and that these act in concert to
+maintain centrosome position in the cell and to support the radial character
+of the microtubule network.
+
+
+Submitted by: Michael Koonce [koonce@wadsworth.org]
+
+==============================================================================
+[End Dicty News, volume 24, number 11] 

@@ -1,0 +1,149 @@
+Dicty News
+Electronic Edition
+Volume 19, number 6
+August 31, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+The evolution of development in the cellular slime molds.
+
+John Bonner
+
+Department of Ecology and Evolutionary Biology, Princeton University, 
+Princeton, NJ 08540, USA
+
+Evolution and Development, in press.
+
+How might the successive stages in the life cycle of Dictyostelium 
+discoideum have evolved? It has been estimated that cellular slime 
+molds must have come into being something in the order of a billion 
+years ago and during this vast span of time have evolved into the 
+complex forms we find today.  First I will compare the various stages 
+of the D. discoideum life cycle with other forms that exist today, 
+whose mature state corresponds to one of the earlier stages of the 
+development of D. discoideum.  This is a component of my larger 
+argument that each stage of D. discoideum development is adaptive. 
+Those simpler forms would not exist today if they were not competing 
+successfully in their natural environment.  Finally, I discuss the 
+possible evolutionary sequence of the steps in the development of D. 
+discoideum.
+
+-----------------------------------------------------------------------------
+
+Receptor-Dependent and Tyrosine Phosphatase-Mediated Inhibition of GSK3 
+Regulates Cell Fate Choice
+
+Leung Kim 1, Adrian Harwood 2, and Alan R. Kimmel 1,3
+
+1 Laboratory of Cellular and Developmental Biology (Bldg. 50/3351), NIDDK 
+National Institutes of Health, Bethesda, MD  20892-8028, USA
+2 MRC Laboratory for Molecular Cell Biology & Dept of Biology, University 
+College London, London, WCIE 6BT, UK
+
+Developmental Cell, On Press 
+
+Summary
+
+Asymmetric body axis formation is central to metazoan development. 
+Dictyostelium establishes an anterior/posterior axis utilizing 7-TM cAMP 
+morphogen receptors (CARs) and GSK3-mediated signal transductions that has 
+a parallel with metazoan Wnt/Frizzled-GSK3 pathways. In Dictyostelium, GSK3 
+promotes posterior cell patterning but inhibits anterior cell 
+differentiation. Tyrosine kinase ZAK1 mediates GSK3 activation. We now show 
+that CAR4 regulates a tyrosine phosphatase that inhibits GSK3 activity. We 
+have also identified essential phospho-tyrosines in GSK3, confirmed their 
+role in activated/de-activated regulation and cell fate decisions, and 
+relate them to the predicted 3D-structure of GSK3b. CARs differentially 
+regulate GSK3 activity by selectively activating a tyrosine phosphatase or 
+kinase for pattern formation. The findings may provide a comparative 
+understanding of CAR-GSK3 and Wnt/Frizzled-GSK3 pathways.
+
+-----------------------------------------------------------------------------
+
+Loss of the F-actin binding and vesicle associated protein comitin leads to 
+a phagocytosis defect 
+
+
+Thomas Schreiner1), Martina R. Mohrs1), Rosemarie Blau-Wasser1), Alfred von 
+Krempelhuber2), Michael Steinert3), Michael Schleicher4) and Angelika A. 
+Noegel 1) *
+
+1) Center for Biochemistry, Medical Faculty, University of Cologne, 50931 
+Koeln, Germany, 2) Max-Planck-Institut fuer Biochemie, 82152 Martinsried, 
+Germany, 3) Institut fr Molekulare Infektionsbiologie, Universitt Wrzburg, 
+97070 Wuerzburg, Germany, 4) Institut fr Zellbiologie, Ludwig-Maximilians-
+Universitaet, 80336 Muenchen, Germany
+
+Eukaryotic Cell
+
+Abstract
+
+Comitin is an F-actin binding and membrane associated protein from 
+Dictyostelium which is present on Golgi and vesicle membranes and changes 
+its localization in response to agents affecting the cytoskeleton. To 
+investigate its in vivo functions we have generated knock out mutants by 
+gene replacement. Based on comitin's in vitro functions we examined properties 
+related to vesicular transport and microfilament function. Whereas cell growth, 
+pinocytosis, secretion, chemotaxis, motility and development were unaltered, 
+comitin minus cells were impaired in the early steps of phagocytosis of yeast 
+particles and of E. coli, whereas uptake of latex beads was unaffected. 
+Furthermore, the lack of comitin positively affected survival of pathogenic 
+bacteria. Mutant cells also showed an altered response to hyperosmotic shock 
+in comparison to wild type. The redistribution of comitin during hyperosmotic 
+shock in wild type cells and its presence on early phagosomes suggest a 
+direct involvement of comitin in these processes. 
+
+-----------------------------------------------------------------------------
+
+Functions of LIM proteins in cell polarity and chemotactic motility
+
+Bharat Khurana*+1, Taruna Khurana*+2, Nandkumar Khaire and Angelika A. 
+Noegel
+
+Center for Biochemistry, Medical Faculty, University of Cologne, Joseph-
+Stelzmann-Str. 52, D-50931 Cologne, FRG
+
++present address:
+1Laboratory of Viral Diseases 
+Building 4, Room 131 
+National Institute of Allergy and Infectious Diseases (NIAID) 
+2Laboratory of Cellular and Developmental Biology 
+Building 50, Room 3345 
+National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) 
+National Institutes of Health, Bethesda, Maryland 20892-8028, USA
+
+
+EMBO Journal
+
+Abstract
+
+LimC and LimD are two novel LIM proteins of Dictyostelium, which are 
+comprised of double- and single-copy of LIM domains, respectively. Green 
+fluorescent protein (GFP)-fused LimC and LimD proteins preferentially 
+accumulate at areas of the cell-cortex where they colocalize with actin 
+and associate transiently with cytoskeleton-dependent dynamic structures 
+like phagosomes, macropinosomes and pseudopods. Furthermore, both LimC and 
+LimD interact directly with F-actin in vitro. Mutant cells that lack either 
+LimC or LimD or both exhibit normal growth. They are, however, significantly 
+impaired in growth under stress conditions and are highly sensitive towards 
+osmotic shock, suggesting that LimC and LimD contribute towards the 
+maintenance of the cortical strength. Moreover, we noted an altered 
+morphology and F-actin distribution in LimD- and LimC/D- mutants and changes 
+in chemotactic motility associated with an increased pseudopod formation. 
+Our results reveal both unique and overlapping roles for LimC and LimD and 
+suggest that both act directly on the actin cytoskeleton and provide 
+rigidity to the cortex. 
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 6]
+
+ 

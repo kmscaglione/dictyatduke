@@ -1,0 +1,112 @@
+dictyNews
+Electronic Edition
+Volume 28, number 16
+June 8, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+Regulation of G-protein-coupled cAMP receptor activation by a  
+hydrophobic
+residue in transmembrane helix 3
+
+
+Minghang Zhang, Mousumi Goswami, Satoshi Sawai, Edward C. Cox, and
+Dale Hereld
+
+
+Molecular Microbiology, in press
+
+
+Summary:  cAR1, a G-protein-coupled cAMP receptor, is essential for
+multicellular development of Dictyostelium.  We previously identified a
+cAR1-Ile104 mutant that appeared to be constitutively activated based on
+its constitutive phosphorylation, elevated affinity for cAMP, and
+dominant-negative effects on development as well as specific cAR1  
+pathways that are subject to adaptation.  To investigate how Ile104 might  
+regulate cAR1 activation, we assessed the consequences of substituting it with  
+all other amino acids.  Constitutive phosphorylation of these Ile104 mutants
+varied broadly, suggesting that they are activated to varying extents,
+and was correlated with polarity of the substituting amino acid residue.
+Remarkably, all Ile104 substitutions, except for the most conservative,
+dramatically elevated the receptor's cAMP affinity.  However, only a  
+third of the mutants (those with the most polar substitutions) blocked
+development.  These findings are consistent with a model in which polar
+Ile104 substitutions perturb the equilibrium between inactive and active
+cAR1 conformations in favor of the latter.  Based on homology with  
+rhodopsin, Ile104 is likely buried within inactive cAR1 and exposed to the  
+cytoplasm upon activation.  We propose that the hydrophobic effect normally  
+promotes burial of Ile104 and hence cAR1 inactivation, while polar  
+substitution of Ile104 mitigates this effect, resulting in activation.
+
+
+Submitted by: Dale Hereld [hereldd@niaid.nih.gov]
+--------------------------------------------------------------------------------
+
+GxcDD, a putative RacGEF, is involved in Dictyostelium development
+
+
+Subhanjan Mondal, Dhamodharan Neelamegan, Francisco Rivero,
+Angelika. A. Noegel
+
+
+Institute for Biochemistry I, Medical Faculty, and Center for Molecular
+Medicine, University of Cologne, 50931 Cologne
+
+
+BMC Cell Biology
+
+
+Background
+Rho subfamily GTPases are implicated in a large number of actin-related
+processes. They shuttle from an inactive GDP-bound form to an active  
+GTP-bound form. This reaction is catalysed by Guanine nucleotide exchange  
+factor (GEFs). GTPase activating proteins (GAPs) help the GTPase return to the inactive
+GDP-bound form. The social amoeba Dictyostelium discoideum lacks a  
+Rho or Cdc42 ortholog but has several Rac related GTPases. Compared to our  
+understanding of the downstream effects of Racs our understanding of upstream  
+mechanisms that activate Rac GTPases is relatively poor.
+
+
+Results
+We report on GxcDD (Guanine exchange factor for Rac GTPases), a  
+Dictyostelium RacGEF. GxcDD is a 180-kDa multidomain protein containing a type 3 CH  
+domain, two IQ motifs, three PH domains, a RhoGEF domain and an ArfGAP domain.
+Inactivation of the gene results in defective streaming during  
+development under different conditions and a delay in developmental timing. The
+characterization of single domains revealed that the CH domain of GxcDD
+functions as a membrane association domain, the RhoGEF domain can  
+physically interact with a subset of Rac GTPases, and the ArfGAP-PH tandem  
+accumulates in cortical regions of the cell and on phagosomes. Our results also  
+suggest that a conformational change may be required for activation of GxcDD,  
+which would be important for its downstream signaling.
+
+
+Conclusions
+The data indicate that GxcDD is involved in proper streaming and
+development. We propose that GxcDD is not only a component of the Rac
+signaling pathway in Dictyostelium, but is also involved in integrating
+different signals. We provide evidence for a Calponin Homology domain
+acting as a membrane association domain. GxcDD can bind to several Rac
+GTPases, but its function as a nucleotide exchange factor needs to be
+studied further.
+
+
+
+Submitted by: Angelika. A. Noegel [noegel@uni-koeln.de]
+
+
+
+
+==============================================================
+[End dictyNews, volume 28, number 16]

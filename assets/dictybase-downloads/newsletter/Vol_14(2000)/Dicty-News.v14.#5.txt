@@ -1,0 +1,166 @@
+Dicty News
+Electronic Edition
+Volume 14, number 5
+February 26, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+=============
+  Abstracts
+=============
+
+Myosin II-independent cytokinesis in Dictyostelium: its mechanism and
+implications.
+
+Taro Q. P. Uyeda1, Chikako Kitayama1 and Shigehiko Yumura2
+
+1: Biomolecular Research Group, National Institute for Advanced
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan
+2: Department of Biology, Faculty of Science, Yamaguchi University,
+Yamaguchi 753-8512, Japan.
+
+Cell Structure and Function, in press
+
+Abstract
+
+	Similar to higher animal cells, ameba cells of the cellular
+slime mold Dictyostelium discoideum form contractile rings containing
+filaments of myosin II during mitosis, and it is generally believed that
+contraction of these rings bisects the cells.  In suspension, mutant cells
+lacking the single myosin II heavy chain gene cannot carry out cytokinesis,
+become large and multinucleate, and eventually lyze, supporting the idea
+that myosin II plays critical roles in cytokinesis.  These mutant cells are
+however viable on substrates.  Analyses of these mutant cells on substrates
+revealed that, in addition to "classic" cytokinesis which depends on myosin
+II ("cytokinesis A"), Dictyostelium has two distinct, novel methods of
+cytokinesis, 1) attachment-assisted mitotic cleavage employed by myosin II
+null cells on substrates ("cytokinesis B"), and 2) cytofission, a cell
+cycle-independent division of adherent cells ("cytokinesis C").  Cytokinesis
+A, B, and C lose their function such as accuracy and robustness, and demand
+fewer protein factors in this order.  Cytokinesis B is of particular
+importance for future studies.  Similar to cytokinesis A, cytokinesis B
+involves formation of a cleavage furrow in the equatorial region, and it may
+be a primitive but basic mechanism of efficiently bisecting a cell in a cell
+cycle-coupled manner.  Analysis of large, multinucleate myosin II null cells
+suggested that interactions between astral microtubules and cortices
+positively induce polar protrusive activities.  A model is proposed to
+explain how such polar activities drive cytokinesis B, and how cytokinesis B
+is coordinated with cytokinesis A in wild type cells.
+
+----------------------------------------------------------------------------
+
+Molecular biological approaches to study myosin functions in cytokinesis of
+Dictyostelium.
+
+Taro Q. P. Uyeda1, and Shigehiko Yumura2
+
+1: Biomolecular Research Group, National Institute for Advanced
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan
+2: Department of Biology, Faculty of Science, Yamaguchi University,
+Yamaguchi 753-8512, Japan.
+
+Microscopy Research Technique,  in press
+
+Abstract
+
+	The cellular slime mold Dictyostelium discoideum is amenable to
+biochemical, cell biological and molecular genetic analyses, and offers a
+unique opportunity for multifaceted approaches to dissect the mechanism of
+cytokinesis.  One of the important questions that are currently under
+investigation using Dictyostelium is to understand how cleavage furrows or
+contractile rings are assembled in the equatorial region.  Contractile rings
+consist of a number of components including parallel filaments of actin and
+myosin II.  Phenotypic analyses and in vivo localization studies of cells
+expressing mutant myosin IIs have demonstrated that myosin II's transport to
+and localization at the equatorial region does not require regulation by
+phosphorylation of myosin II, specific amino acid sequences of myosin II, or
+the motor activity of myosin II.  Rather, the transport appears to depend on
+a myosin II-independent flow of cortical cytoskeleton.  What drives the flow
+of cortical cytoskeleton is still elusive.  However, a growing number of
+mutants that affect assembly of contractile rings have been accumulated.
+Analyses of these mutations, identification of more cytokinesis-specific
+genes, and information deriving from other experimental systems, should
+allow us to understand the mechanism of contractile ring formation and other
+aspects of cytokinesis.
+
+----------------------------------------------------------------------------
+
+Role of Rac in controlling the actin cytoskeleton and chemotaxis in motile 
+cells
+
+Chang Y. Chung, Susan Lee, Celia Briscoe, Charlene Ellsworth, and Richard 
+A. Firtel
+
+Proc. Natl. Acad. Sci. USA, in press.
+
+ABSTRACT
+
+We have used the chemotactic ability of Dictyostelium cells to examine 
+the roles of Rho family members, known regulators of the assembly of 
+F-actin, in cell movement. Wild-type cells polarize with a leading edge 
+enriched in F-actin towards a chemoattractant. Overexpression of 
+constitutively active Dictyostelium Rac1B61L or disruption of DdRacGAP1, 
+which encodes a Dictyostelium Rac1 GAP, induces membrane ruffles enriched 
+with actin filaments around the perimeter of the cell and increased levels 
+of F-actin in resting cells. Whereas wild-type cells move linearly towards 
+the cAMP source, Rac1B61L and Ddracgap1 null cells make many wrong turns 
+and chemotaxis is inefficient, which presumably results from the 
+unregulated activation of F-actin assembly and pseudopod extension. Cells 
+expressing dominant-negative DdRac1B17N do not have a well-defined 
+F-actin-rich leading edge and do not protrude pseudopodia, resulting in 
+very poor cell motility. From these studies and assays examining 
+chemoattractant-mediated F-actin assembly, we suggest DdRac1 regulates 
+the basal levels of F-actin assembly, its dynamic reorganization in 
+response to chemoattractants, and cellular polarity during chemotaxis.
+
+----------------------------------------------------------------------------
+
+Functional and molecular identification of novel members of the 
+ubiquitous membrane fusion proteins alpha- and gamma-SNAP (Soluble 
+NSF-Attachment Proteins) families in Dictyostelium discoideum
+
+Marianne Weidenhaupt1*, Franz Bruckert1**, Mathilde Louwagie2, Jerome 
+Garin2 and Michel Satre1
+
+1 DBMS/BBSI (UMR5092 CNRS) and 2 DBMS/CP, CEA-Grenoble, 17 rue des 
+Martyrs, 38054 Grenoble Cedex 09, France
+*Present address: LIM/IBS, 41 rue Jules Horowitz, 38027 Grenoble 
+Cedex 01, France
+**corresponding author. E-mail: fbruckert@cea.fr
+
+Eur. J. Biochem., in press.
+
+The soluble NSF-Attachment Proteins (SNAP) are eukaryotic soluble 
+proteins required for membrane fusion. Based on their initial 
+identification in bovine brain cytosol, they are divided in 
+alpha/beta- and gamma-subfamilies. SNAPs act as adapters between NSF 
+(N-ethylmaleimide Sensitive Factor), a hexameric ATPase, and membrane 
+SNARE proteins (SNAP REceptors). Within the NSF/SNAP/SNARE complex, 
+they contribute to the catalysis of an ATP-driven conformational 
+change in the SNAREs, resulting in dissociation of the complex. We 
+have constructed a Dictyostelium discoideum strain, overexpressing a 
+c-myc-tagged form of D. discoideum NSF (NSF-myc). Its 
+immunoprecipitation from detergent-solubilised membrane extracts 
+reveals two associated polypeptides with apparent molecular masses of 
+33 and 36 kDa (p33 and p36), that are absent in NSF-myc 
+immunoprecipitates from cytosol. Analysis of trypsin-digested 
+peptides by microsequencing and mass spectrometry and comparison with 
+cDNA sequences identify p33 and p36 as the D. discoideum homologues 
+of alpha- and gamma-SNAP, respectively. The alpha-/gamma-SNAP molar 
+ratio is close to 3 in vegetative amoebae from this organism. The 
+molecular identification of gamma-SNAP in plants (Arabidopsis 
+thaliana) and insects (Drosophila melanogaster) documents for the 
+first time the wide distribution of the gamma-subtype. Altogether, 
+these results suggest a particular role for gamma-SNAP, possibly 
+distinct from that of alpha-SNAP.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 5]
+
+  

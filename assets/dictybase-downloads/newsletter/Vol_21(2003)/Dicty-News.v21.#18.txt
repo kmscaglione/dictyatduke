@@ -1,0 +1,61 @@
+Dicty NewsElectronic EditionVolume 21, number 18December 12, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+============================================
+Special Note to the Dictyostelium community============================================
+
+For all of the dicty community preparing RNAi constructs:In the article mentioned below we describe the difficulties we met 
+when attempting to purify fragments consisting of inverted-repeat 
+sequences of D. discoideum by using kit for isolation of DNA from 
+agarose gel. The DNA may be denaturated during the procedure and 
+reasociated into monomolecular hairpins.Martin Prevorovsky, Frantisek PutaThe A/T rich inverted repeats are destabilized by chaotrope-containing 
+buffer during purification from agarose gel.Biotechniques. 2003 Oct;35(4):698-700, 702
+
+=============  Abstracts=============
+
+ADENYLYL CYCLASE G IS ACTIVATED BY AN INTRAMOLECULAR OSMOSENSOR						Shweta Saran and Pauline SchaapSchool of Life Sciences, University of Dundee, UK
+
+Mol. Biol. Cell, in press
+
+Adenylyl cyclase G (ACG) is activated by high osmolality and mediates inhibition of spore germination by this stress factor. The catalytic domains of all eukaryote  cyclases are active as dimers and dimerization often mediates activation. To investigate the role of dimerization in ACG activation, we co-expressed ACG with an ACG construct that lacked the catalytic domain (ACG)cat) and was driven by a UV-inducible promoter. After UV-induction of ACG)cat, cAMP production by ACG was strongly inhibited, but osmostimulation  was not reduced. Size-fractionation of native ACG showed that dimers were formed between ACG molecules and between ACG and ACG)cat. However, high osmolality did not alter the dimer/monomer ratio. This indicates that ACG activity requires dimerization via a region outside the catalytic domain, but that dimer formation does not mediate activation. To establish whether ACG required auxiliary sensors for osmostimulation, we expressed ACG cDNA in a yeast adenylyl cyclase null mutant. In yeast, cAMP production by ACG was similarly activated by high osmolality as in Dictyostelium. This strongly suggests that the ACG osmosensor is intramolecular, which would define ACG as the first characterized primary osmosensor in eukaryotes.Ê
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+Identification and phylogenetic analysis of Dictyostelium discoideum kinesin 
+proteinsMartin Kollmar and Gernot Gloeckner
+
+BMC Genomics 2003, 4:47 (published 27 November 2003)BackgroundKinesins constitute a large superfamily of motor proteins in eukaryotic 
+cells. They perform diverse tasks such as vesicle and organelle transport 
+and chromosomal segregation in a microtubule- and ATP-dependent manner. 
+In recent years, the genomes of a number of eukaryotic organisms have
+been completely sequenced. Subsequent studies revealed and classified 
+the full set of members of the kinesin superfamily expressed by these 
+organisms. For Dictyostelium discoideum, only five kinesin superfamily 
+proteins (Kif's) have already been reported.ResultsHere, we report the identification of thirteen kinesin genes exploiting 
+the information from the raw shotgun reads of the Dictyostelium 
+discoideum genome project. A phylogenetic tree of 390 kinesin motor 
+domain sequences was built, grouping the Dictyostelium kinesins into 
+nine subfamilies. According to known cellular functions or strong 
+homologies to kinesins of other organisms, four of the Dictyostelium 
+kinesins are involved in organelle transport, six are implicated in 
+cell division processes, two are predicted to perform multiple functions, 
+and one kinesin may be the founder of a new subclass.ConclusionThis analysis of the Dictyostelium genome led to the identification of 
+eight new kinesin motor proteins. According to an exhaustive phylogenetic 
+comparison, Dictyostelium contains the same subset of kinesins that higher 
+eukaryotes need to perform mitosis. Some of the kinesins are implicated in 
+intracellular traffic and a small number have unpredictable functions.
+
+ Submitted by:  Martin Kollmar [mako@nmr.mpibpc.mpg.de]
+
+-----------------------------------------------------------------------------
+
+The MADS-box transcription factor SrfA is required for actin cytoskeletonorganization and spore coat stability during Dictyostelium sporulation  Ricardo Escalante, Yohko Yamada, David Cotter, Leandro Sastre and MasazumiSameshima.
+
+Mechanisms of Development, in press
+The MADS-box transcription factor SrfA is involved in spore differentiationin Dictyostelium (Escalante and Sastre, 1998). Mutant spores show analtered morphology and loss of viability. A detailed structural analysis ofmutant spores has been performed to gain insight into the specific aspectsof spore differentiation in which SrfA is involved. Two main structuraldefects have been observed. One is the formation of high order actinstructures, the so called actin rods. SrfA mutant spores showed the initialstages of rod formation but no mature rods were found in older sporeseither in the nucleus or the cytoplasm. Moreover, phosphorylation of actin,that is believed to stabilize the actin rods, is strongly reduced in themutant. The other defect observed was the formation of the spore coat.Young srfA-- spores show basically normal trilaminar coat structuressuggesting that release of prespore vesicles and basic assembly of the coattakes place in the absence of SrfA. However, the outer layer gets wavier asthe spore ages and suffers a progressive degradation suggesting a latedefect in the stability of the spore coat. Taken together, these resultssuggest that SrfA is involved in late events of spore maturation necessaryfor spore stability.
+
+Submitted by: Leandro Sastre [lsastre@iib.uam.es]
+
+===============================================================================[End Dicty News, volume 21, number 18]

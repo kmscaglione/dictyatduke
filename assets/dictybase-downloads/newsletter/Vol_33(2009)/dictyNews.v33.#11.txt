@@ -1,0 +1,56 @@
+dictyNews
+Electronic Edition
+Volume 33, number 11
+October 30, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase now on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Propagating waves separate two states of actin organization in living cells
+
+Britta Schroth-Diez,1 Silke Gerwig,1 Mary Ecke,2 Reiner Hegerl,2
+Stefan Diez,1 and Günther Gerisch2
+
+1Max-Planck-Institut für Molekulare Zellbiologie und Genetik, 
+Pfotenhauerstrasse 108, D-01307 Dresden, Germany
+2Max-Planck-Institut für Biochemie, Am Klopferspitz 18, 
+D-82152 Martinsried, Germany
+
+
+HFSP Journal, in press [DOI: 10.2976/1.3239407]
+
+Propagating actin waves are dynamic supramolecular structures formed by the 
+self-assembly of proteins within living cells. They are built from actin filaments 
+together with single-headed myosin, the Arp2/3 complex, and coronin in a 
+defined three-dimensional order. The function of these waves in structuring the 
+cell cortex is studied on the substrate-attached surface of Dictyostelium cells 
+by the use of total internal reflection fluorescence (TIRF) microscopy. Actin 
+waves separate two areas of the cell cortex from each other, which are 
+distinguished by the arrangement of actin filaments. The Arp2/3 complex 
+dominates in the area enclosed by a wave, where it has the capacity of 
+building dendritic structures, while the proteins prevailing in the external area, 
+cortexillin I and myosin-II, bundle actin filaments and arrange them in 
+antiparallel direction. Wave propagation is accompanied by transitions in the 
+state of actin with a preferential period of 5 min. Wave generation is preceded 
+by local fluctuations in actin assembly, some of the nuclei of polymerized actin 
+emanating from clathrin-coated structures, others emerging independently. 
+The dynamics of phase transitions has been analyzed to provide a basis for 
+modeling the nonlinear interactions that produce spatio-temporal patterns in 
+the actin system of living cells. 
+
+Submitted by Günther Gerisch [gerisch@biochem.mpg.de]
+==============================================================
+[End dictyNews, volume 33, number 11]

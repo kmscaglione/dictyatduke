@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 39, number 35
+December 13, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+dictyBase has a job opening! http://dictybase.org/dictybase_jobs.html
+
+=========
+Abstracts
+=========
+
+
+The cyclic AMP phosphodiesterase RegA critically regulates encystation in social 
+and pathogenic amoebas.
+
+Du Q, Schilde C, Birgersson E, Chen ZH, McElroy S, Schaap P.
+
+College of Life Sciences, University of Dundee, Dundee DD15EH, UK.
+
+
+Cell Signal. 2013 Oct 31. pii: S0898-6568(13)00319-7. 
+doi: 10.1016/j.cellsig.2013.10.008. [Epub ahead of print]
+
+Amoebas survive environmental stress by differentiating into encapsulated cysts. 
+As cysts, pathogenic amoebas resist antibiotics, which particularly counteracts 
+treatment of vision-destroying Acanthamoeba keratitis. Limited genetic tractability 
+of amoeba pathogens has left their encystation mechanisms unexplored. The social 
+amoeba Dictyostelium discoideum forms spores in multicellular fruiting bodies to 
+survive starvation, while other dictyostelids, such as Polysphondylium pallidum can 
+additionally encyst as single cells. Sporulation is induced by cAMP acting on PKA, 
+with the cAMP phosphodiesterase RegA critically regulating cAMP levels. We show here
+that RegA is deeply conserved in social and pathogenic amoebas and that deletion of 
+the RegA gene in P. pallidum causes precocious encystation and prevents cyst 
+germination. We heterologously expressed and characterized Acanthamoeba RegA and 
+performed a compound screen to identify RegA inhibitors. Two effective inhibitors 
+increased cAMP levels and triggered Acanthamoeba encystation. Our results show that 
+RegA critically regulates Amoebozoan encystation and that components of the cAMP 
+signalling pathway could be effective targets for therapeutic intervention with 
+encystation.
+
+
+Submitted by Qingyou Du [q.du@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+A RabGAP Regulates Life-Cycle Duration via Trimeric G-protein Cascades in 
+Dictyostelium discoideum
+
+Hidekazu Kuwayama, Yukihiro Miyanaga, Hideko Urushihara and Masahiro Ueda.
+
+
+PLOS ONE  in press
+
+Background: The life-cycle of cellular slime molds comprises chronobiologically 
+regulated processes. During the growth phase, the amoeboid cells proliferate at 
+a definite rate. Upon starvation, they synthesize cAMP as both first and second 
+messengers in signalling pathways and form aggregates, migrating slugs, and 
+fruiting bodies, consisting of spores and stalk cells, within 24 h. In Dictyostelium 
+discoideum, because most growth-specific events cease during development, 
+proliferative and heterochronic mutations are not considered to be interrelated 
+and no genetic factor governing the entire life-cycle duration has ever been 
+identified. 
+Methodology/Principal Findings: Using yeast 2-hybrid library screening, we isolated
+a Dictyostelium discoideum RabGAP, Dd Rbg-3, as a candidate molecule by which the
+Dictyostelium Galpha2 subunit directs its effects. Rab GTPase-activating protein, 
+RabGAP, acts as a negative regulator of Rab small GTPases, which orchestrate the 
+intracellular membrane trafficking involved in cell proliferation. Deletion mutants 
+of Dd rbg-3 exhibited an increased growth rate and a shortened developmental period, 
+while an overexpression mutant demonstrated the opposite effects. We also show that 
+Dd Rbg-3 interacts with 2 Galpha2 subunits in an activity-dependent manner in vitro.
+Furthermore, both human and Caenorhabditis elegans rbg-3 homologs complemented the 
+Ddrbg-3Ðdeletion phenotype in D. discoideum, indicating that similar pathways may 
+be generally conserved in multicellular organisms. 
+
+Conclusions/Significance: Our findings suggest that Dd Rbg-3 acts as a key element 
+regulating the duration of D. discoideum life-span potentially via trimeric 
+G-protein cascades. 
+
+
+Submitted by Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 35]

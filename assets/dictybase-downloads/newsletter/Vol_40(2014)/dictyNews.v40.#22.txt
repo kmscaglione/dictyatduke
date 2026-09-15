@@ -1,0 +1,122 @@
+dictyNews
+Electronic Edition
+Volume 40, number 22
+September 5, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+PTEN Redundancy: Overexpressing lpten, a Homolog of Dictyostelium discoideum 
+ptenA, the Ortholog of Human PTEN, Rescues All Behavioral Defects of the 
+Mutant ptenA- .
+
+Daniel F. Lusche, Deborah Wessels, Nicole A. Richardson, Kanoe B. Russell, 
+Brett M. Hanson, Benjamin A. Soll, Benjamin H. Lin and David R. Soll. 
+
+Monoclonal Antibody Research Institute and Developmental Studies Hybridoma 
+Bank Department of Biology, The University of Iowa, Iowa City, IA 52242 
+
+
+PloS ONE, in press 
+
+Mutations in the tumor suppressor gene PTEN are associated with a significant 
+proportion of human cancers. Because the human genome also contains several 
+homologs of PTEN, we considered the hypothesis that if a homolog, functionally 
+redundant with PTEN, can be overexpressed, it may rescue the defects of a 
+PTEN mutant. We have performed an initial test of this hypothesis in the model 
+system Dictyostelium discoideum, which contains an ortholog of human PTEN, 
+ptenA. Deletion of ptenA results in defects in motility, chemotaxis, aggregation 
+and multicellular morphogenesis. D. discoideum also contains lpten, a newly 
+discovered homolog of ptenA. Overexpressing lpten completely rescues all 
+developmental and behavioral defects of the D. discoideum mutant ptenA-. 
+This hypothesis must now be tested in human cells. 
+
+
+Submitted by Daniel Lusche [daniel-lusche@uiowa.edu]
+---------------------------------------------------------------------------
+
+
+Cell substratum adhesion during early development of Dictyostelium discoideum
+
+Marco Tarantola, Albert Bae, Danny Fuller, Eberhard Bodenschatz, 
+Wouter-Jan Rappel and William F. Loomis
+
+
+PLoS ONE' in press
+
+Vegetative and developed amoebae of Dictyostelium discoideum gain traction 
+and move rapidly on a wide range of substrata without forming focal adhesions. 
+We used two independent assays to quantify cell-substrate adhesion in mutants 
+and in wild-type cells as a function of development. Using a microfluidic device 
+that generates a range of hydrodynamic shear stress, we found that substratum 
+adhesion decreases at least 10 fold during the first 6 hr of development of wild 
+type cells. This result was confirmed using a single-cell assay in which cells 
+were attached to the cantilever of an atomic force probe and allowed to adhere 
+to untreated glass surfaces before being retracted. Both of these assays showed 
+that the decrease in substratum adhesion was dependent on the cAMP receptor 
+CAR1 which triggers development. Vegetative cells missing talin as the result of 
+a mutation in talA exhibited slightly reduced adhesive properties compared to 
+vegetative wild-type cells. In sharp contrast to wild-type cells, however, these 
+talA mutant cells did not show further reduction of adhesion during development 
+such that after 5 hr of development they were significantly more adhesive than 
+developed wild type cells. In addition, both assays showed that substrate 
+adhesion was reduced in 0hr cells when the actin cytoskeleton was disrupted by 
+latrunculin. Consistent with previous observations, substrate adhesion was also 
+reduced in 0hr cells lacking the membrane proteins SadA or SibA as the result 
+of mutations in sadA or sibA. However, there was no difference in the adhesion 
+properties between wild type AX3 cells and these mutant cells after 6 hr of 
+development, suggesting that neither SibA nor SadA play an essential role in 
+substratum adhesion during aggregation. Our results provide a quantitative 
+framework for further studies of cell substratum adhesion in Dictyostelium.
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+---------------------------------------------------------------------------
+
+
+Defective lysosome maturation and Legionella pneumophila replication in 
+Dictyostelium ArfGAP ACAP-A mutant cells
+
+Nathalie Bailo, Pierre Cosson, Steve J. Charette, Valerie E. Paquet, 
+Patricia Doublet, and François Letourneur
+
+
+J Cell Sci , doi:10.1242/jcs.154559
+http://jcs.biologists.org/content/early/2014/09/01/jcs.154559.abstract
+
+Dictyostelium discoideum ACAP-A is an Arf-GTPase-activating protein involved 
+in cytokinesis, cell migration and actin cytoskeleton dynamics. In mammalian 
+cells, ACAP family members regulate endocytic protein trafficking. Here we 
+explored the function of ACAP-A in the endocytic pathway of D. discoideum. In 
+the absence of ACAP-A, reduced fusion efficacy of post-lysosomes with the 
+plasma membrane resulted in the accumulation of post-lysosomes. Moreover, 
+internalized fluid-phase showed extended intracellular transit time and transfer 
+kinetics of phagocyted particles from lysosomes to post-lysosomes was reduced. 
+Neutralization of lysosomal pH, one essential step in lysosome maturation, was 
+also delayed. Whereas expression of ACAP-A-GFP in acapA- cells 
+restored normal particle transport kinetics, a mutant ACAP-A protein with no GAP 
+activity towards the small GTPase ArfA failed to complement this defect. Together 
+these data support a role for ACAP-A in maturation of lysosomes into 
+post-lysosomes through an ArfA-dependent mechanism. In addition, we reveal 
+that ACAP-A is required for efficient intracellular growth of Legionella pneumophila, 
+a pathogen known to subvert the endocytic host cell machinery for replication. 
+This further emphasizes the role of ACAP-A in the endocytic pathway. 
+
+
+Submitted by Francois Letourneur [francois.letourneur@univ-montp2.fr]
+==============================================================
+[End dictyNews, volume 40, number 22]

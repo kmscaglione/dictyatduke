@@ -1,0 +1,58 @@
+dictyNews
+Electronic Edition
+Volume 41, number 22
+October 23, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Mechanism of eIF6 release from the nascent 60S ribosomal subunit
+
+Félix Weis1,2,3,4, Emmanuel Giudice5, Mark Churcher2,3,4, Li Jin2,3,4,6, Christine
+Hilcenko1,2,3,4, Chi C. Wong7, David Traynor6, Robert R. Kay6, Alan J. Warren1,2,3,4
+
+1Cambridge Institute for Medical Research, Cambridge, UK.
+2Medical Research Council Laboratory of Molecular Biology, University of
+Cambridge Research Unit, Cambridge, UK
+3The Department of Haematology, University of Cambridge, Cambridge, UK.
+4Wellcome Trust-Medical Research Council Stem Cell Institute, University of
+Cambridge, Cambridge, UK.
+5Université de Rennes 1, Centre Nationale de la Recherche Scientifique, Unité Mixte
+de Recherche 6290, Institut de Génétique et Développement de Rennes, Rennes,
+France.
+6Medical Research Council Laboratory of Molecular Biology, Cambridge, UK.
+7Experimental Cancer Genetics, Wellcome Trust Sanger Institute, Cambridge, UK.
+
+
+Nature Structural and Molecular Biology, in press
+
+SBDS (deficient in the inherited leukemia predisposition disorder Shwachman-
+Diamond syndrome) and the GTPase EFL1 (an EF-G homolog) activate nascent 60S
+ribosomal subunits for translation by catalyzing eviction of the anti-association factor 
+eIF6 from nascent 60S ribosomal subunits. However, the mechanism is completely
+unknown. Here, we present cryo-electron microscopy structures of human SBDS and
+SBDS-EFL1 bound to Dictyostelium discoideum 60S ribosomal subunits with and
+without endogenous eIF6. SBDS assesses the integrity of the P-site, bridging uL16
+(mutated in T-cell acute lymphoblastic leukemia) with uL11 at the P-stalk base and
+the sarcin-ricin loop. Upon EFL1 binding, SBDS is repositioned around helix 69,
+promoting a conformational switch in EFL1 that displaces eIF6 by competing for an
+overlapping binding site on the 60S ribosomal subunit. Our data reveal the conserved
+mechanism of eIF6 release that is corrupted in both inherited and sporadic leukemias.
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+==============================================================
+[End dictyNews, volume 41, number 22]

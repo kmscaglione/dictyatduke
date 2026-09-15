@@ -1,0 +1,192 @@
+Dicty News
+Electronic Edition
+Volume 18, number 5
+March 30, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+A putative serpentine receptor gene tasA required for normal morphogenesis 
+of primary stalk and branch structure in Polysphondylium pallidum.
+
+
+Yoshinori Kawabe, Hidekazu Kuwayama, Takahiro Morio, Hideko Urushihara, and 
+Yoshimasa Tanaka
+
+Gene 285, 291-299 (2002)
+
+Abstract
+
+
+         The fruiting body of Polysphondylium pallidum is composed of 
+whorls of branches along the axis of a primary stalk. In the course of 
+fruiting body formation, the interval between neighboring whorls and the 
+number and the spacing of branches in a whorl are highly regulated. In this 
+study, using REMI (restriction enzyme mediated integration) mutagenesis, we 
+have obtained a mutant (strain M6226) with thicker and aberrant primary 
+stalk. The gene responsible for the mutant phenotype, confirmed by 
+homologous recombination, encodes an ORF with 383 aa residues (46.3 kDa) 
+and was named tasA (thick and aberrant stalk A). TasA is highly homologous 
+to Dictyostelium discoideum cAMP receptors. A tasA transcript is expressed 
+strictly at the late aggregation stage. Cells expressing a tasA::gfp fusion 
+DNA are localized at the posterior region of the primary sorogen where 
+secondary sorogens and branches originate. This result indicates the 
+existence of "prebranch" and "pretrunk" regions in P. pallidum instead of 
+the prespore and prestalk regions in D. discoideum. The analyses of the 
+gene disruptant and chimeric fruiting bodies also suggests that TasA 
+affects the normal morphogenesis of the primary stalk and the process of 
+cell differentiation into prebranch cells, but not into spore or stalk 
+cells directly. 
+
+-----------------------------------------------------------------------------
+
+Expression and One Step Purification of a Developmentally Regulated Protein 
+from Dictyostelium discoideum
+
+Muatasem Ubeidat and Charles L. Rutherford*
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406, USA
+
+Accepted for publication in: Protein Expression and Purification
+
+ABSTRACT
+
+To overexpress Dictyostelium 5NT, a 1506 bp fragment of the cDNA encoding 
+the gene was cloned into a pET32c+ vector and expressed in the E. coli 
+expression host BL21 CodonPlus"!(DE3)-RIL by Isopropyl-b-D-thiogalactoside 
+(IPTG) induction.  Maximum induction of insoluble recombinant protein was 
+reached after incubation of the culture for 3 h with 1.0 mM IPTG.  High 
+level of 5NT expression was confirmed by SDS-PAGE and immunoblotting 
+analysis.  The recombinant 5NT was purified to homogeneity by a one step 
+purification using continuous-elution electrophoresis.  Ten mg of 
+recombinant 5NT was purified per liter of growth medium.  To achieve one 
+of the goals of this study, polyclonal antibody against the recombinant 
+5NT was produced in a rabbit.  We have shown previously by Northern analysis 
+and reporter gene analysis that 5nt is developmentally regulated.  In this 
+report we used polyclonal antibody against the recombinant protein in 
+Western analysis of membrane protein extracts from different developmental 
+stages of Dictyostelium.  5NT protein levels were first detected at the 
+tight aggregation stage of development.  Thus, there is no significant 
+delay between transcription and translation of 5nt.
+
+-----------------------------------------------------------------------------
+
+A novel disintegrin domain protein affects early cell type specification and 
+pattern formation in Dictyostelium.
+
+Timothy R. Varney, Hoa Ho,  Chere   Petty,  and Daphne D. Blumberg 
+
+Department of Biological Sciences, University of Maryland Baltimore County, 
+1000 Hilltop Circle, Baltimore, Maryland 21250
+
+Development,  in press
+
+SUMMARY
+       The cellular slime mold, Dictyostelium discoideum is a non-metazoan 
+organism yet we demonstrate here that a disintegrin domain containing 
+protein, the product of the ampA gene, plays a role in cell type 
+specification. Disintegrin domain containing proteins are involved in 
+Notch signaling in Drosophila and C. elegans by an ectodomain shedding 
+mechanism that depends on a metalloprotease domain. The Dictyostelium 
+protein lacks a metalloprotease domain. Nonetheless, analysis of cell 
+type specific reporter gene expression during development of the ampA null 
+strain identifies patterning defects that define two distinct roles for the 
+AmpA protein in specifying cell fate. In the absence of a functional ampA 
+gene, cells prematurely specify as prespore cells. Prestalk cell 
+differentiation and migration are delayed. Both of these defects can be 
+rescued by the inclusion of  10% wild-type cells in the developing null 
+mutant aggregates, indicating that the defect is non-cell autonomous. The 
+ampA gene is also demonstrated to be necessary in a cell autonomous manner 
+for the correct localization of anterior-like cells to the upper cup of the 
+fruiting body. When derived from ampA null cells, the anterior-like cells 
+are unable to localize to positions in the interior of the developing mounds. 
+Wild-type cells can rescue defects in morphogenesis by substituting for null 
+cells when they differentiate as anterior-like cells but they can not rescue 
+the ability of ampA null cells to fill this role.  Thus, in spite of its 
+simpler structure, the Dictyostelium ampA protein carries out the same 
+diversity of functions that have been observed for the ADAM and ADAMTS 
+families in metazoans.
+
+-----------------------------------------------------------------------------
+
+Nucleomorphin: A novel, acidic, nuclear calmodulin-binding protein from 
+Dictyostelium that regulates nuclear number
+
+Michael A. Myre* and Danton H. O Day*
+
+*University of Toronto at Mississauga, Department of Zoology, 3359 
+Mississauga Rd. Rm. 3030, Mississauga, ON. L5L 1C6 Canada
+
+J. Biol. Chem., in press
+
+Probing of Dictyostelium discoideum cell extracts after SDS-PAGE using 
+35S-recombinant calmodulin as a probe has revealed approximately three-dozen 
+Ca2+-dependent calmodulin binding proteins. Here, we report the molecular 
+cloning, expression and subcellular localization of a gene encoding a novel 
+CaMBP, we have called nucleomorphin, from D. discoideum. A ZAP cDNA 
+expression library of cells from multicellular development was screened 
+using a recombinant calmodulin probe (35S-VU1-CaM). The open reading frame 
+of 1119 nucleotides encodes a polypeptide of 340 amino acids with a 
+calculated molecular weight of 38.7 kDa, and is constitutively expressed 
+throughout the Dictyostelium life cycle. Nucleomorphin contains a highly 
+acidic glutamic/aspartic acid inverted repeat (DEED) with significant 
+similarity to the conserved nucleoplasmin domain, and a putative 
+transmembrane domain in the carboxyl-terminal region. Southern blotting 
+reveals that nucleomorphin exists as a single copy gene. Using gel overlay 
+assays and CaM-agarose we show that bacterially expressed nucleomorphin 
+binds to bovine CaM in a Ca2+-dependent manner. Amino-terminal fusion to 
+the green fluorescent protein showed that GFP-NumA localized to the nucleus 
+as distinct arc like patterns similar to heterochromatin regions. GFP-NumA 
+lacking the acidic DEED repeat still showed arc-like accumulations at the 
+nuclear periphery but the number of nuclei in these cells was increased 
+markedly compared to control cells. Cells expressing GFP-NumA lacking the 
+transmembrane domain localized to the nuclear periphery, but did not affect 
+nuclear number or gross morphology. Nucleomorphin is the first nuclear CaMBP 
+to be identified in Dictyostelium. Furthermore, this data presents the first 
+identification of a member of the nucleoplasmin family as a calmodulin-
+binding protein and suggests nucleomorphin has a role in nuclear structure 
+in Dictyostelium.
+
+-----------------------------------------------------------------------------
+
+Dictyostelium EB1 is a genuine centrosomal component required for proper 
+spindle formation
+
+Markus Rehberg and Ralph Grf*
+
+Adolf-Butenandt-Institut / Zellbiologie, Ludwig-Maximilians-Universitt 
+Mnchen, Schillerstrasse 42, D-80336 Mnchen, Germany.
+
+Mol. Biol. Cell, in press
+
+EB1 proteins are ubiquitous microtubule-associated proteins involved in 
+microtubule search-and-capture, regulation of microtubule dynamics, cell 
+polarity and chromosome stability. We have cloned a complete cDNA of 
+Dictyostelium EB1 (DdEB1), the largest known EB1 homologue (57 kDa). 
+Immunofluorescence analysis and expression of a GFP-DdEB1 fusion protein 
+revealed that DdEB1 localizes along microtubules, at microtubule tips, 
+centrosomes and protruding pseudopods. During mitosis, it was found at the 
+spindle, spindle poles and kinetochores. DdEB1 is the first EB1-homologue 
+which is also a genuine centrosomal component, because it was localized at 
+isolated centrosomes that are free of microtubules. Furthermore, centrosomal 
+DdEB1 distribution was unaffected by nocodazole treatment. DdEB1 colocalized 
+with DdCP224, the XMAP215 homologue, at microtubule tips, the centrosome and 
+kinetochores. Furthermore, both proteins were part of the same cytosolic 
+protein complex suggesting that they may act together in their functions. 
+DdEB1 deletion mutants expressed as GFP or maltose-binding fusion proteins 
+indicated that microtubule binding requires homo-oligomerization which is 
+mediated by a coiled-coil domain. A DdEB1 null mutant was viable but 
+retarded in prometaphase progression due to a defect in spindle formation. 
+As spindle elongation was normal, DdEB1 seems to be required for the 
+initiation of the outgrowth of spindle microtubules.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 5]

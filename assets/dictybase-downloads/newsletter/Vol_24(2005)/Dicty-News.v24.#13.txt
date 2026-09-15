@@ -1,0 +1,103 @@
+Dicty News
+Electronic Edition
+Volume 24, number 13
+May 20, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+The Diaphanous-related Formin dDia2 is Required for the Formation and 
+Maintenance of Filopodia
+
+Antje Schirenbeck (1), Till Bretschneider (2), Rajesh Arasada (1), 
+Michael Schleicher (1), and Jan Faix (1)
+
+1) A. Butenandt-Institut / Zellbiologie, Ludwig-Maximilians-Universität, 
+Schillerstr. 42, 80336 München, Germany.
+2) AG Zelldynamik, Max-Planck-Institut für Biochemie, Am Klopferspitz 18a, 
+82152 Martinsried, Germany.
+
+
+Nature Cell Biology, in press
+
+Formins play important roles in the nucleation of actin and the formation 
+of linear actin filaments, yet their role in filopodium formation has 
+remained elusive. Dictyostelium Diaphanous-related formin dDia2 is enriched 
+at the tips of filopodia and interacts with profilin II and Rac1. An FH1FH2 
+fragment of dDia2 nucleated actin polymerization and removed capping protein 
+from capped filament ends. Genetic studies showed that dDia2 is important 
+for cell migration as well as the formation, elongation and maintenance of 
+filopodia. Here we provide evidence that dDia2 specifically controls 
+filopodial dynamics by regulating actin turnover at the barbed ends of 
+actin filaments.
+
+
+Submitted by: Jan Faix [faix@bpc.mh-hannover.de]
+
+-----------------------------------------------------------------------------
+
+
+Biological, Biochemical and Kinetic Effects of Mutations of the
+Cardiomyopathy-loop of Dictyostelium Myosin II: Importance of Ala400
+
+Xiong Liu*, Shi Shu*, Mihály Kovács†, and Edward D. Korn
+
+Laboratory of Cell Biology, and †Laboratory of Molecular Physiology
+National Heart, Lung, and Blood Institute, National Institutes of Health,
+Bethesda, Maryland 20892
+
+Running title: Dictyostelium myosin II CM-loop mutants
+
+Address correspondence to: Edward D. Korn, Laboratory of Cell Biology,
+NHLBI, NIH, Building 50, Room 2517-8017, Bethesda, MD 20892-8017, Tel.
+301-496-1616; Fax. 301-402-1519; E-mail: edk@nih.gov <mailto:edk@nih.gov> 
+
+*XL and SS contributed equally to this work.
+
+
+Journal of biological Chemistry, in press
+(available on-line May 16th)
+
+The cardiomyopathy (CM)-loop of the heavy chain of class-II myosins
+begins with a highly conserved Arg residue (whose mutation in human
+beta-cardiac myosin II results in familial hypertrophic cardiomyopathy). 
+The CM-loop of Dictyostelium myosin II (R397-Q407) is essential for its
+biological functions and biochemical activities.  We found that the CM-loop
+of smooth muscle myosin II substituted partially and the CM-loop of
+beta-cardiac myosin II much less well for growth, capping of surface receptors
+and development, and the actin-activated MgATPase and in vitro motility
+activities of purified myosins.  There was little correlation between the
+biochemical and biological activities of the two chimeras and 19 point
+mutants but only the five mutants with kcat/Kactin values equivalent to
+wild-type myosin supported essentially full biological function.  The three
+point mutations of R397 equivalent to those that result in hypertrophic
+cardiomyopathy in humans had minimal biological effects and different
+biochemical effects.  The A400V mutation rendered full-length wild-type
+myosin almost completely inactive, both in vitro and in vivo, and the
+reverse V400A mutation in the cardiac CM-loop chimera restored almost full
+activity, even though the sequence still differed from wild-type in 7 of 11
+positions.  Transient kinetic studies of acto-subfragment-1 (S1) showed that
+the chimeras and the Ala/Val, Val/Ala mutations do not affect the
+equilibrium or the association and dissociation rate constants for either
+ATP or ADP binding to acto-S1 or the rate of ATP-induced dissociation of
+acto-S1.   We conclude that the Ala/Val, Val/Ala mutations affect  the
+release of Pi from acto-S1·ADP·Pi.  In addition, Val at position 400
+substantially reduces the affinity of actin for S1 in the absence of
+nucleotide.
+
+
+Submitted by: Korn, Edward [korned2@nhlbi.nih.gov]
+
+==============================================================================
+[End Dicty News, volume 24, number 13] 

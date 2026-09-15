@@ -1,0 +1,150 @@
+dictyNews
+Electronic Edition
+Volume 26, number 12
+April 28, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+The bundling activity of vasodilator-stimulated phosphoprotein is required 
+for filopodium formation
+
+Antje Schirenbeck1, Rajesh Arasada1, Till Bretschneider2, Theresia E. B. 
+Stradal3, Michael Schleicher1, and Jan Faix4
+
+1Cell Biology, Ludwig-Maximilians-University, Muenchen; 2 Cell Dynamics, 
+Max-Planck-Inst. f. Biochemistry Martinsried; 3 Signalling & Motil. Group, 
+German Research Centre f. Biotechnology, Braunschweig; 4 Inst. f. 
+Biophysical Chemistry, Hannover; Germany
+
+
+Proc. Natl. Acad. Sci. USA, in press
+
+Filopodia are highly dynamic finger-like cell protrusions filled with 
+parallel bundles of actin filaments. Previously we have shown that 
+Diaphanous-related formin dDia2 is involved in the formation of filopodia. 
+Another key player for the formation of filopodia across many species is 
+the vasodilator-stimulated phosphoprotein, VASP. It has been proposed that 
+the essential role of VASP for formation of filopodia is its competition 
+with capping proteins for filament barbed end interaction. In order to 
+better understand the function of VASP in filopodium formation, we analyzed 
+the in vitro and in vivo properties of Dictyostelium VASP (DdVASP) and 
+extended our findings to human VASP (HsVASP). Recombinant VASP from both 
+species nucleated and bundled actin filaments, but did neither compete with 
+capping proteins nor block depolymerization from barbed ends. Together with 
+the finding that DdVASP binds to the FH2 domain of dDia2, these data 
+indicate that the crucial role of VASP in filopodium formation is different 
+from uncapping of actin filaments. To identify the activity of DdVASP 
+required in this process, rescue experiments of DdVASP-null cells with 
+mutant DdVASP constructs were performed. Only wild-type (WT) DdVASP but not 
+a ƒnmutant lacking the F-actin bundling activity could rescue the ability 
+of these cells to form wild-type-like filopodia. Our data suggest that 
+DdVASP is complexed with dDia2 in filopodial tips and supports 
+formin-mediated filament elongation by bundling nascent actin filaments. 
+
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de] 
+-----------------------------------------------------------------------------
+
+
+An Adhesion Molecule in Free-living Dictyostelium Amoebae with Integrin beta
+Features
+
+Sophie Cornillon, Leigh Gebbie, Mohammed Benghezal, Prashant Nair, Sebastien 
+Keller, Bernhard Wehrle-Haller, Steve J. Charette, Franz Brückert, 
+François Letourneur, Pierre Cosson
+
+
+EMBO Reports, In press
+
+The study of free-living amoebae has proven valuable to elucidate the 
+molecular mechanisms controlling phagocytosis, cell adhesion and motility. 
+In this study we identified a new adhesion molecule in Dictyostelium amoebae. 
+The SibA protein (Similar to Integrin Beta) is a type I transmembrane protein 
+and its cytosolic, transmembrane and extracellular domains contain features 
+also found in integrin beta chains. In addition, the conserved cytosolic 
+domain of SibA interacts with talin, a well-characterized partner of 
+mammalian integrins. Finally, genetic inactivation of SIBA affects adhesion 
+to phagocytic particles, as well as cell adhesion and spreading on its 
+substrate. It does not visibly alter the organization of the actin 
+cytoskeleton, cellular migration, or multicellular development. Our results 
+suggest that the SibA protein is a Dictyostelium cell adhesion molecule 
+presenting structural and functional similarities with metazoan integrin 
+beta chains. This study sheds light on the molecular mechanisms controlling 
+cell adhesion and their establishment during evolution.
+
+
+Submitted by: Pierre Cosson [Pierre.Cosson@medecine.unige.ch]
+-----------------------------------------------------------------------------
+
+
+Naringenin is a novel inhibitor of Dictyostelium cell proliferation and cell 
+migration 
+
+Russ Misty, Raquel Martinez, Hind Ali and Paul A. Steimle,  
+
+Department of Biology, University of North Carolina at Greensboro, 
+Greensboro, NC 27402, USA 
+
+
+Biochemical Biophysical Research Communications, in press
+(Available online 25 April 2006)
+
+Naringenin is a flavanone compound that alters critical cellular processes 
+such as cell multiplication, glucose uptake, and mitochondrial activity. In 
+this study, we used the social amoeba, Dictyostelium discoideum, as a model 
+system for examining the cellular processes and signaling pathways affected 
+by naringenin. We found that naringenin inhibited Dictyostelium cell 
+division in a dose-dependent manner (IC50  20 ìM). Assays of Dictyostelium 
+chemotaxis and multicellular development revealed that naringenin possesses 
+a previously unrecognized ability to suppress amoeboid cell motility. We 
+also found that naringenin, which is known to inhibit phosphatidylinositol 
+3-kinase activity, had no apparent effect on phosphatidylinositol 
+3,4,5-trisphosphate synthesis in live Dictyostelium cells; suggesting that 
+this compound suppresses cell growth and migration via alternative signaling 
+pathways. In another context, the discoveries described here highlight the 
+value of using the Dictyostelium model system for identifying and 
+characterizing the mechanisms by which naringenin, and related compounds, 
+exert their effects on eukaryotic cells. 
+
+
+Submitted by: Paul Steimle [p_steiml@uncg.edu]
+-----------------------------------------------------------------------------
+
+
+First Among Equals: Competition Between Genetically Identical Cells
+
+Anupama Khare and Gad Shaulsky
+
+Department of Molecular and Human Genetics, Baylor College of Medicine, 
+One Baylor Plaza, Houston, TX 77030
+
+
+Nature Reviews Genetics, in press
+
+Competition between genetically identical organisms is considered 
+insignificant in evolutionary theory because it is presumed to have little 
+selective consequence. We argue that competition between genetically 
+identical cells could improve the fitness of a multicellular organism by 
+directing fitter cells to the germ-line or by eliminating unfit cells, and 
+that cell-competition mechanisms have been conserved in multicellular 
+organisms. We propose that competition between genetically identical or 
+highly similar units could have similar selective advantages at higher 
+organizational levels such as societies.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu] 
+==============================================================================
+[End dictyNews, volume 26, number 12] 

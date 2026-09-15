@@ -1,0 +1,125 @@
+Dicty News
+Electronic Edition
+Volume 23, number 18
+December 10, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Activation of soluble guanylyl cyclase at the leading edge during
+Dictyostelium chemotaxis 
+
+Douwe M. Veltman, Jeroen Roelofs, Ruchira Engel, Antonie J.W.G. Visser
+and Peter J.M. Van Haastert 
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4,
+9747 AG Groningen, The Netherlands
+
+
+Molecular Biology of the Cell, in press
+
+Dictyostelium contains two guanylyl cyclases, GCA, a twelve-transmembrane
+enzyme, and sGC, a homolog of mammalian soluble adenylyl cyclase. sGC
+provides nearly all chemoattractant-stimulated cGMP formation and is
+essential for efficient chemotaxis towards cAMP. We show that in resting
+cells the major fraction of the sGC-GFP fusion protein localizes to the
+cytosol and a small fraction is associated to the cell cortex. With the
+artificial substrate Mn2+/GTP, sGC activity and protein exhibit a similar
+distribution between soluble and particulate fraction of cell lysates.
+However, with the physiological substrate Mg2+/GTP, sGC in the cytosol is
+nearly inactive, while the particulate enzyme shows high enzyme activity.
+Reconstitution experiments reveal that inactive cytosolic sGC acquires
+catalytic activity with Mg2+/GTP upon association to the membrane.
+Stimulation of cells with cAMP results in a 2-fold increase of
+membrane-localized sGC-GFP, which is accompanied by an increase of the
+membrane-associated guanylyl cyclase activity. In a cAMP gradient,
+sGC-GFP localizes to the anterior cell cortex, suggesting that in
+chemotacting cells, sGC is activated at the leading edge of the cell.
+
+ 
+Submitted by:  Peter van Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-----------------------------------------------------------------------------
+
+
+Reverse genetic analyses of gamete-enriched genes revealed a novel regulator
+of the cAMP signaling pathway in Dictyostelium discoideum
+
+Tetsuya Muramoto, Shugaku Takedaa, Yoko Furuya, and Hideko Urushihara
+
+
+Mechanisms of Development, in press.
+
+Sexual development in Dictyostelium discoideum is initiated by the fusion of
+oppo-site mating type cells to form zygote giant cells, which subsequently
+gather and phagocytose surrounding cells for nutrition to form macrocysts.
+Here we performed the targeting of 24 highly gamete-enriched genes we
+previously isolated, and successfully generated knockout mutants for 16
+genes and RNAi mutants for 20 genes including 6 genes without disruptants.
+In the knockout mutants of two genes, cell aggregation to-ward the giant
+cells was much less extensive and many cells remained around poorly formed
+macrocysts. We named these genes tmcB and tmcC. Although macrocyst formation
+of wild type cells was suppressed by the addition of exogenous cAMP, that
+of knockout mutants of tmcB was much less sensitive. The mRNA level of
+phosphodi-esterase (pde) was higher and that of its inhibitor (pdi) was
+lower in the latter cells compared to the parental strains during sexual
+development. Thus, tmcB appeared to be a novel regulator of the cAMP
+signaling pathway specific to sexual development. Knockout mutants of
+tmcC were indistinguishable from the wild type cells with respect to the
+cAMP response, suggesting that this gene is relevant to other processes.
+
+
+Submitted by: Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Regulation of growth and differentiation in Dictyostelium
+
+Yasuo Maeda
+
+Department of Developmental Biology and Neurosciences, Graduate School of
+
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+
+International Review of Cytology, in press
+
+In general, growth and differentiation are mutually exclusive, but
+cooperatively regulated during the course of development. Thus the process
+of cell’s transition from growth to differentiation is of general
+importance not only for the development of organisms but also the initiation
+of malignant transformation, in which this process is reversed. The cellular
+slime mold Dictyostelium, a wonderful model organism, grows and multiplies
+as long as nutrients are supplied, and its differentiation is triggered by
+starvation. A strict checkpoint (GDT-point), from which cells start
+differentiating in response to differentiation, has been specified in the
+cell cycle of D. discoideum Ax-2 cells. Accordingly, integration of
+GDT-point specific events with starvation-induced events is needed to
+understand the mechanism regulating growth/differentiation transition (GDT).
+A variety of inter- and intra-cellular signals are involved positively or
+negatively in the initiation of differentiation, making a series of
+cross-talks. As was expected from the presence of GDT-point, the cell’s
+positioning in cell masses and subsequent cell-type choice occur depending
+on the cell’s phase in the cell cycle at the onset of starvation. Since
+novel and somewhat unexpected multiple functions of mitochondria in cell
+movement, differentiation and pattern formation have been realized well in
+Dictyostelium cells, they are reviewed in this article.
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+
+==============================================================================
+[End Dicty News, volume 23, number 18] 

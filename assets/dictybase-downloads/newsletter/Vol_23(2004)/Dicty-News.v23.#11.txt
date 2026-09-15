@@ -1,0 +1,129 @@
+Dicty News
+Electronic Edition
+Volume 23, number 11
+October 01, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Localized Ras signaling at the leading edge regulates PI3K, cell polarity,
+and directional cell movement
+
+
+Atsuo T. Sasaki, Cheryl Chun, Kosuke Takeda, and Richard A. Firtel
+Section of Cell and Developmental Biology, Division of Biological Sciences
+and Center for Molecular Genetics, University of California,
+San Diego, 9500 Gilman Drive, La Jolla,
+California 92093-0380
+
+J. Cell Biology, in press
+
+
+During chemotaxis, receptors and heterotrimeric G-protein subunits are
+distributed and activated almost uniformly along the cell membrane, whereas
+PI(3,4,5)P3, the product of PI3K, accumulates locally at the leading edge.
+The key intermediate event that creates this strong PI(3,4,5)P3 asymmetry
+remains unclear. We show that Ras is rapidly and transiently activated in
+response to chemoattractant stimulation and regulates PI3K activity. Ras
+activation occurs at the leading edge of chemotaxing cells, and this local
+activation is independent of the F-actin cytoskeleton, whereas PI3K
+localization is dependent on F-actin polymerization. Inhibition of Ras
+results in severe defects in directional movement, indicating that Ras is
+an upstream component of the cellâs compass. These results support a
+mechanism by which localized Ras activation mediates leading edge formation
+through activation of basal PI3K present on the plasma membrane and other
+Ras effectors required for chemotaxis. A feedback loop, mediated through
+localized F-actin polymerization, recruits cytosolic PI3K to the leading
+edge to amplify the signal. 
+ 
+ 
+Submitted by:  [Rick Firtel <rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+Cell shape regulation and co-translocation of actin and adenosyl
+homocysteinase in response to intermediate hypertonicity.
+
+Yohko Yamada 1 and Masazumi Sameshima 2
+1 Department of Biology, Graduate School of Science, Osaka University.
+2 Department of Biofunctional Science, Faculty of Agriculture and Life
+Science, Hirosaki University.
+
+FEMS Microbiology Letters, Volume 238, 2004, Pages 417-422 
+
+
+Hypertonic stimulation induced association of S-adenosyl-L-homocysteine
+hydrolase (SAHH) with the F-actin-rich cell cortex in Dictyostelium. At
+intermediate, but not higher, levels of hypertonicity, SAHH further
+translocated from the cortex to the cytosol in company with a fraction of
+actin and cofilin. At the same time the cells rounded up. Acidification of
+the cells stimulated both the cell rounding and the translocation of actin
+and SAHH, whereas alkalinization retarded these responses, suggesting that
+cellular pH is involved in their control. On the other hand, mutant analysis
+suggested that neither cGMP signaling nor conventional myosin is required.
+
+
+Submitted by:  Masazumi Sameshima [msameshi@cc.hirosaki-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Two complementary, local excitation, global inhibition mechanisms acting in
+parallel can explain the chemoattractant-induced regulation of PI(3,4,5)P3
+response in Dictyostelium cells
+
+Lan Ma1, Chris Janetopoulos2, Liu Yang1, Peter N. Devreotes2 and Pablo A.
+Iglesias1,3
+
+
+1 Department of Electrical and Computer Engineering, Johns Hopkins University,
+3400 N. Charles St., Baltimore, MD 21218
+
+2 Department of Cell Biology, Johns Hopkins University School of Medicine,
+725 N. Wolfe St., Baltimore, MD 21205
+
+Biophysical Journal, in press
+
+
+Chemotaxing cells, such as Dictyostelium and mammalian neutrophils, sense
+shallow chemoattractant gradients and respond with highly polarized changes
+in cell morphology and motility. Uniform chemoattractant stimulation induces
+the transient translocations of several downstream signaling components,
+including PI3K, PTEN, and PI(3,4,5)P3.  In contrast, static spatial
+chemoattractant gradients elicit the persistent, amplified localization of
+these molecules.  We have proposed a model in which the response to
+chemoattractant is regulated by a balance of a local excitation and a
+global inhibition, both which are controlled by receptor occupancy.  This
+model can account for both the transient and spatial responses to
+chemoattractants, but alone does not amplify the external gradient. In this
+paper we develop a model in which parallel local excitation, global
+inhibition mechanisms control the membrane binding of PI3K and PTEN.
+Together, the action of these enzymes induces an amplified PI(3,4,5)P3
+response that agrees  quantitatively with experimentally obtained PH-GFP
+distributions in latrunculin-treated cells. We compare the model's 
+performance with that of several mutants in which one or both of the enzymes
+are disrupted. The model accounts for the observed response to multiple,
+simultaneous chemoattractant cues and can recreate the cellular response to
+combinations of temporal and spatial stimuli. Finally, we use the model to
+predict the response of a cell where only a fraction is stimulated by a
+saturating dose of chemoattractant.
+
+
+Submitted by:  Pablo A. Iglesias" [pi@jhu.edu]
+
+==============================================================================
+[End Dicty News, volume 23, number 11] 

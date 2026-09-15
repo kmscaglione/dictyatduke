@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 43, number 10
+May 12, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+dictyExpress: a Web-Based Platform for Sequence Data Management 
+and Analytics in Dictyostelium and Beyond
+
+Miha Stajdohar, Rafael D Rosengarten, Janez Kokosar, Luka Jeran, 
+Domen Blenkus, Gad Shaulsky and Blaz Zupan
+
+Genialis Inc., Houston, TX, USA
+Baylor College of Medicine, Houston, TX, USA
+University of Ljubljana, Ljubljana, Slovenia
+
+
+BMC Bioinformatics, in press
+
+Background: Dictyostelium discoideum, a soil-dwelling social amoeba, is a
+model for the study of numerous biological processes. Research in the field 
+has benefited mightily from the adoption of next-generation sequencing for 
+genomic sand transcriptomics. Dictyostelium biologists now face the 
+widespread challenges of analyzing and exploring high dimensional data 
+sets to generate hypotheses and discovering novel insights.
+
+Results: We present dictyExpress (2.0), a web application designed for
+exploratory analysis of gene expression data, as well as data from related
+experiments such as Chromatin Immunoprecipitation sequencing (ChIP-Seq). 
+The application features visualization modules that include time course 
+expression profiles, clustering, gene ontology enrichment analysis, differential 
+expression analysis and comparison of experiments. All visualizations are 
+interactive and interconnected, such that the selection of genes in one 
+module propagates instantly to visualizations in other modules. dictyExpress 
+currently stores the data from over 800 Dictyostelium experiments and is 
+embedded within a general-purpose software framework for management of 
+next-generation sequencing data. dictyExpress allows users to explore their 
+data in a broader context by reciprocal linking with dictyBase|a repository of 
+Dictyostelium genomic data. In addition, we introduce a companion application 
+called GenBoard, an intuitive graphic user interface for data management and
+bioinformatics analysis.
+
+Conclusions: dictyExpress and GenBoard enable broad adoption of next
+generation sequencing based inquiries by the Dictyostelium research community.
+Labs without the means to undertake deep sequencing projects can mine the 
+data available to the public. The entire information flow, from raw sequence data 
+to hypothesis testing, can be accomplished in an efficient workspace. The 
+software framework is generalizable and represents a useful approach for any 
+research community. To encourage more wide usage, the backend is open-
+source, available for extension and further development by bioinformaticians 
+and data scientists.
+
+
+submitted by: Gad Shaulsky [gadi@bcm.edu]
+———————————————————————————————————————
+
+
+Fold-change detection and scale-invariance of cell-cell signaling in social 
+amoeba
+
+Keita Kamino, Yohei Kondo, Akihiko Nakajima, Mai Honda-Kitahara, 
+Kunihiko Kaneko and Satoshi Sawai
+
+Graduate School of Arts and Sciences, University of Tokyo
+
+
+PNAS, in press
+doi: 10.1073/pnas.1702181114
+
+Cell-cell signaling is subject to variability in the extracellular volume, cell 
+number and dilution that potentially increase uncertainty in the absolute 
+concentrations of the extracellular signaling molecules.   To direct cell 
+aggregation, the social amoebae Dictyostelium discoideum collectively give 
+rise to oscillations and waves of cyclic adenosine 3’, 5’- monophosphate 
+(cAMP) under a wide range of cell density.  To date, the systems-level 
+mechanism underlying the robustness is unclear.  By employing quantitative 
+live cell imaging, here we show that the magnitude of the cAMP relay 
+response of individual cells is determined by fold-change in the extracellular 
+cAMP concentrations.  The range of cell density and exogenous cAMP 
+concentrations that support oscillations at the population-level agrees well 
+with conditions that support a large fold-change-dependent response at the 
+single-cell level.   Mathematical analysis suggests that invariance of the 
+oscillations to density transformation is a natural outcome of combining 
+secrete-and-sense systems with a fold-change detection mechanism.
+
+
+submitted by: Satoshi Sawai [cssawai@mail.ecc.u-tokyo.ac.jp]
+==============================================================
+[End dictyNews, volume 43, number 10]

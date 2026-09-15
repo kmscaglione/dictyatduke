@@ -1,0 +1,129 @@
+dictyNews
+Electronic Edition
+Volume 36, number 12
+April 8, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Sequence and generation of mature ribosomal RNA transcripts in 
+Dictyostelium discoideum
+
+Carsten Boesler1, Janis Kruse1, Fredrik Sšderbom2, and 
+Christian Hammann1
+
+1 Heisenberg Research Group Ribogenetics, Technical University of 
+Darmstadt, 64287 Darmstadt, Germany
+2 Department of Molecular Biology, Uppsala Biomedical Center, Swedish 
+University of Agricultural Sciences, S-75124 Uppsala, Sweden  
+
+
+JBC, in press
+
+The amoeba Dictyostelium discoideum is a well-established model organism 
+for studying numerous aspects of cellular and developmental functions. Its 
+ribosomal RNA (rRNA) is encoded in an extrachromosomal palindrome that 
+exists in ca. 100 copies in the cell. In this study, we have set out investigate 
+the sequence of the expressed rRNA. For this, we have ligated the rRNA 
+ends and performed RT-PCR on these circular RNAs. Sequencing revealed 
+that the mature 26S, 17S, 5.8S and 5S rRNAs have sizes of 3741, 1871, 162 
+and 112 nucleotides, respectively. Unlike published, all mature rRNAs of a 
+type uniformly display the same start and end nucleotides in the analyzed AX2 
+strain. We show the existence of a short-lived primary transcript covering the 
+rRNA transcription unit of 17S, 5.8S and 26S rRNA. Northern blots and RT-PCR 
+reveal that from this primary transcript two precursor molecules of the 17S and 
+two precursors of the 26S rRNA are generated. We have also determined the 
+sequences of these precursor molecules, and based on this data, we propose 
+a model for the maturation of the rRNAs in Dictyostelium discoideum that we 
+compare to the processing of the rRNA transcription unit of Saccharomyces 
+cerevisiae.
+
+
+Submitted by  Christian Hammann [hammann@bio.tu-darmstadt.de]
+--------------------------------------------------------------------------------
+
+
+Genetically tagged TRE5-A retrotransposons reveal high amplification rates 
+and authentic target site preference in the Dictyostelium discoideum genome 
+
+Oliver Siol, Thomas Spaller, Jana Schiefner and Thomas Winckler  
+
+School of Biology and Pharmacy, Institute of Pharmacy, Department of 
+Pharmaceutical Biology, University of Jena, Semmelweisstrasse 10, 
+07743 Jena, Germany
+
+
+Nucleic Acids Research, in press   
+
+Retrotransposons contribute significantly to the evolution of eukaryotic genomes. 
+They replicate by producing DNA copies of their own RNA, which are integrated
+at new locations in the host cell genome. In the gene-dense genome of the 
+social amoeba Dictyostelium discoideum, retrotransposon TRE5-A avoids 
+insertional mutagenesis by targeting the transcription factor (TF) IIIC/IIIB complex 
+and integrating ~50 bp upstream of tRNA genes. We generated synthetic TRE5-A 
+retrotransposons (TRE5-Absr) that were tagged with a selection marker that 
+conferred resistance to blasticidin after a complete retrotransposition cycle. We 
+found that the TRE5-Absr elements were efficiently mobilized in trans by proteins 
+expressed from the endogenous TRE5-A population found in D. discoideum cells. 
+ORF1 protein translated from TRE5-Absr elements significantly enhanced 
+retrotransposition. We observed that the 5' untranslated region of TRE5-A could 
+be replaced by an unrelated promoter, whereas the 3' untranslated region of 
+TRE5-A was essential for retrotransposition. A predicted secondary structure in 
+the RNA of the 3' untranslated region of TRE5-A may be involved in the 
+retrotransposition process. The TRE5-Absr elements were capable of identifying 
+authentic integration targets in vivo, including formerly unnoticed, putative 
+binding sites for TFIIIC on the extrachromosomal DNA element that carries the 
+ribosomal RNA genes. 
+
+
+Submitted by Thomas Winckler [t.winckler@uni-jena.de]
+--------------------------------------------------------------------------------
+
+
+The Role of Extracellular Cations in Cell Motility, Polarity and Chemotaxis
+
+David R. Soll, Deborah Wessels, Daniel F. Lusche, Spencer Kuhl, 
+Amanda Scherer, and Shawna Grimm 
+
+
+Research and Reports in Biology 
+http://www.dovepress.com/articles.php?article_id=7033
+
+The concentrations of cations in the aqueous environment of free living organisms 
+and cells within the human body influence motility, shape and chemotaxis.  The 
+role of extracellular cations is usually perceived to be the source for intracellular 
+cations in the process of homeostasis.  The role of surface molecules that interact 
+with extracellular cations is believed to be that of channels, transporters and 
+exchangers.  However, the role of Ca++ as a signal and chemoattractant, and 
+the discovery of the Ca++ receptor CaR, have demonstrated that extracellular 
+cations can function as signals at the cell surface, and the plasma membrane 
+molecules they interact with can function as bona fide receptors that activate 
+coupled signal transduction pathways, associated molecules in the plasma 
+membrane or the cytoskeleton.  With this perspective in mind, we have reviewed 
+the cationic composition of aqueous environments of free living cells and cells that 
+move in multicellular organisms, most notably humans, the range of molecules 
+interacting with cations at the cell surface, the concept of a cell surface cation 
+receptor, and the roles extracellular cations and the plasma membrane proteins 
+that interact with them play in the regulation of motility, shape and chemotaxis.  
+Hopefully, the perspective of this review will increase awareness of the roles 
+extracellular cations play and the possibility that many of the plasma membrane 
+proteins that interact with them could also play roles as receptors.
+
+
+Submitted by Wessels Deborah [deborah-wessels@uiowa.edu]
+==============================================================
+[End dictyNews, volume 36, number 12]

@@ -1,0 +1,194 @@
+CSM News
+Electronic Edition
+Volume 5, number 2
+July 8, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+==============
+ Announcement
+==============
+
+Dicty95
+-------
+
+Dicty95 in Dourdan France was an enormous success--a great meeting!
+Our thanks go to the organizers Michel Sartre and Michel Veron.  They
+were ably assisted by Gerard Klein and members of their labs.  For those
+interested a few photos from the meeting have been posted on the web
+page.  Take a look!
+
+-----------------------------------------------------------------------
+
+GLOBAL SEARCH SERVICE
+----------------------
+                                                          July 7, 1995
+
+   Discussions at the recent Dicty meeting in Dourdan resulted in a
+plan to partially avoid the inefficiencies resulting from sequencing
+developmental genes of Dictyostelium that are isolated in independent
+laboratories. During the next few years the majority of such clones
+will come from screens of REMI generated mutants and a detailed
+proceedure has been agreed upon for these genes. However, genes
+recovered by other means, such as PCR amplification from conserved
+regions or two-hybrid screens, can be equally accommodated.
+   
+   The basic plan is to have a central site where sequences as short
+as 100 base pairs can be used to search all previously sequenced
+fragments and genes so as to distinguish new genes from old
+ones. These will include genes where the sequencing is in progress as
+well as finished genes. There is sufficient information in 100 base
+pairs, even with 5% error, that new sequences can be unequivocably
+recognized as such. Any one, from any lab, can send in a sequence with
+no further documentation and find out within days if anyone else has
+encountered the same gene. The person submitting the sequence will be
+informed whether it comes from a region previously submitted or is
+novel. If the sequence has been previously submitted, both parties
+will be informed of the fact. Novel sequences which have been
+submitted for the search will be added to the file so that
+subsequently submitted sequences can be checked against it. The file
+will be kept confidential so as to encourage submission of sequences
+rather than used to scan the sequences of others.
+   
+   A Developmental Gene Program has been funded at UCSD in which Rick
+Firtel, Doug Smith and I hope to help saturate the morphogenetic genes
+that can be tagged by REMI. I have created a file containing the
+sequences of all Dicty genes now in public data bases (GenBank etc)
+together with all the sequences that we and others are in the process
+of investigating.  Sequences from regions flanking insertion sites
+have been submitted by several laboratories including those of Gomer,
+Kay, Kessin, Kuspa, Nellen, and Williams and in several cases we have
+found that two labs have happened on the same gene. Further steps were
+then worked out by consultations.
+        
+   I am offering to serve as a GLOBAL SEARCH SERVICE for anyone who
+wishes to know if their gene might have been encountered by someone
+else.  To keep the file meaningful, I request that sequences be
+restricted to regions known from direct Southern data of wild-type and
+mutant DNA to flank an insertion site of a REMI mutant. It will not be
+necessary to describe the resulting phenotype (this protects the
+privacy of the lab).  Sequences from PCR or 2-hybrid screens can also
+be submitted when accompanied by a brief description of the manner of
+isolation. This total file will remain confidential.
+
+   As part of the Developmental Gene Program, a public access file,
+DictyDB, will be made available on World Wide Web in a few months that
+will contain all of the Dicty genes in public data bases as well as
+the sequences of REMI tagged genes that have been finished and
+confirmed. Newly isolated mutants will be made available to interested
+parties.
+
+   It was also suggested at the meeting in Dourdan that another public
+access file be generated in which sequences encountered in any manner
+but of no great interest to the specific lab, such as "Space Clones"
+found in PCR screens, cDNA clones that were isolated for no known
+reason, regions flanking genes of interest but clearly the adjacent
+gene etc. be deposited for the perusal of others who might find
+something of interest. I would be willing to set up such an ATTIC of
+left-over, throw-away sequences. There would be no restrictions or
+responsibility for what is in the ATTIC, just the sequence and a note
+of who submitted it. Having one centralized public access depository
+would increase the usefulness of such partial sequences.  ATTIC could
+be scanned via the Web.
+
+   Submission of sequences either to GLOBAL SEARCH or ATTIC can be
+made by e-mail to me, wloomis@UCSD.edu, or by disc. Since typing in
+sequences is a bore, I cannot handle hard copy (typed) sequences. We
+hope to stream-line the submission via the Web site this fall. Since
+REMI can disrupt a given gene at sites up and down the ORF, it would
+be useful to submit each kilobase of sequence to GLOBAL SEARCH as soon
+as it is done so as to save others from sequencing a gene already
+under analysis. In this way the file will grow as we go.
+
+   The whole scheme is open to suggestions and modifications since it
+is aimed at making Dicty studies more efficient for all. I look
+forward to receiving a lot of sequences from many different labs in
+the near future.
+
+Bill Loomis
+
+-------------------------------------------------------------------
+
+===========
+ Abstracts
+===========
+
+Whole-mount in situ hybridization of Cell-type Specific mRNAs in
+Dictyostelium
+
+Ricardo Escalante and William F. Loomis
+
+Department of Biology, University of California, San Diego, La Jolla
+CA 92093
+
+Devel. Biol. in press
+
+ABSTRACT
+
+   We have been able to hybridize non-radioactive probes from
+cell-type specific genes to fixed whole-mounts prepared at the mound,
+slug and culminant stages of Dictyostelium development. The cellular
+patterns of labelling with probes from the prespore gene, cotB, and
+the prestalk genes, ecmA and ecmB, confirmed the patterns seen in
+strains carrying reporter constructs in which the regulatory regions
+of these genes drive b-galactosidase. This technique permits the
+direct observation of protein synthetic capacity from characterized
+genes without the need of generating transformed lines carrying
+specific reporter constructs. Moreover, the pattern is not complicated
+by previous developmental history of gene expression.
+
+[Editor's Note: For those interested in this technique a copy of the
+paper is available on the Web page]
+
+--------------------------------------------------------------------
+
+Dictyostelium vaults: disruption of the major proteins reveals growth and 
+morphological defects and uncovers a new associated protein.
+
+Sanjay K. Vasu and Leonard H. Rome*
+
+Department of Biological Chemistry and the Mental Retardation Research
+Center, University of California School of Medicine, Los Angeles,
+California 90024-1737.
+
+(running title: disruption of mvpB. MvpB sequence data are available from 
+EMBL/GenBank/DDBJ under accession number Z37109. )
+
+* to whom correspondence should be addressed
+   Tel: (310) 825-0709
+   FAX: (310) 206-5272
+   EMAIL: lrome@biochem.medsch.ucla.edu
+
+J. Biol. Chem., in press
+
+Abstract
+
+  Vaults are large cytoplasmic ribonucleoprotein particles which are
+highly conserved in both morphology and protein composition. Protein
+components of vaults isolated from Dictyostelium discoideum migrate on
+SDS-PAGE gels as two bands, one at 94 kDa (MvpA) and the other at 92
+kDa (MvpB). An MvpB cDNA clone was isolated from a Dictyostelium
+expression library. MvpB shares 60% identity with MvpA at the amino
+acid level. This cDNA has been used to disrupt the single mvpB gene in
+both wild-type and mvpA- genetic backgrounds. Although the mvp- mutant
+lines are viable, they show that loss of MvpA and/or MvpB interferes
+with vault function sufficiently to impede growth under conditions of
+nutritional stress. The resulting mutant cell lines reach stationary
+phase in suspension culture at one third of the density of wild-type
+cells. Ovoid structures, isolated from single mvp- mutant lines,
+represent what remains of vaults in these cells.  Similar ovoid
+structures, isolated from the mvpA- mvpB- line, copurify with a newly
+identified protein of MW 92 kDa (MvpC), which lacks cross-reactivity
+with currently available anti-vault antibodies. Our results indicate
+that the major vault proteins are necessary for optimal cell growth in
+Dictyostelium, and reveal an unanticipated complexity in vault
+composition.
+
+---------------------------------------------------------------------
+[End CSM-News, volume 5, number 1]

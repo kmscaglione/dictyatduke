@@ -1,0 +1,52 @@
+dictyNews
+Electronic Edition
+Volume 40, number 8
+March 14, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Nucleocytoplasmic Shuttling of a GATA Transcription Factor Functions as 
+a Development Timer
+
+Huaqing Cai, Mariko Katoh-Kurasawa, Tetsuya Muramoto, Balaji Santhanam, 
+Yu Long, Lei Li, Masahiro Ueda, Pablo A. Iglesias, Gad Shaulsky, 
+Peter N. Devreotes
+
+
+Science, in press
+
+Biological oscillations are observed at many levels of cellular organization.
+In the social amoebae Dictyostelium discoideum, starvation-triggered 
+multicellular development is organized by periodic adenosine 3',5'-cyclic 
+monophosphate (cAMP) waves, which provide both chemoattractant 
+gradients and developmental signals. We report that GtaC, a GATA 
+transcription factor, exhibits rapid nucleocytoplasmic shuttling in response 
+to cAMP waves. This behavior requires coordinated action of a nuclear 
+localization signal and reversible G protein- (heterotrimeric guanine 
+nucleotide–binding protein)–coupled receptor (GPCR)-–mediated 
+phosphorylation. Although both are required for developmental gene 
+expression, receptor occupancy promotes nuclear exit of GtaC, which 
+leads to a transient burst of transcription at each cAMP cycle. We 
+demonstrate that this biological circuit filters out high-frequency signals 
+and counts those admitted, thereby enabling cells to modulate gene 
+expression according to the dynamic pattern of the external stimuli.
+
+
+Submitted by Huaqing Cai [hcai6@jhmi.edu]
+==============================================================
+[End dictyNews, volume 40, number 8]

@@ -1,0 +1,153 @@
+dictyNews
+Electronic Edition
+Volume 42, number 27
+November 18, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Using the social amoeba Dictyostelium to study the functions of 
+proteins linked to neuronal ceroid lipofuscinosis
+
+Robert J. Huber
+
+Department of Biology, Trent University, Peterborough, Ontario, 
+Canada
+
+
+Journal of Biomedical Science, in press
+
+Neuronal ceroid lipofuscinosis (NCL), also known as Batten disease, 
+is a debilitating neurological disorder that affects both children and 
+adults. Thirteen genetically distinct genes have been identified that 
+when mutated, result in abnormal lysosomal function and an 
+excessive accumulation of ceroid lipofuscin in neurons, as well as 
+other cell types outside of the central nervous system. The NCL
+ family of proteins is comprised of lysosomal enzymes (PPT1/CLN1, 
+TPP1/CLN2, CTSD/CLN10, CTSF/CLN13), proteins that peripherally 
+associate with membranes (DNAJC5/CLN4, KCTD7/CLN14), a 
+soluble lysosomal protein (CLN5), a protein present in the secretory 
+pathway (PGRN/CLN11), and several proteins that display different 
+subcellular localizations (CLN3, CLN6, MFSD8/CLN7, CLN8, 
+ATP13A2/CLN12). Unfortunately, the precise functions of many of 
+the NCL proteins are still unclear, which has made targeted therapy 
+development challenging. The social amoeba Dictyostelium 
+discoideum has emerged as an excellent model system for studying 
+the normal functions of proteins linked to human neurological 
+disorders. Intriguingly, the genome of this eukaryotic soil microbe 
+encodes homologs of 11 of the 13 known genes linked to NCL.
+ The genetic tractability of the organism, combined with its unique 
+life cycle, makes Dictyostelium an attractive model system for 
+studying the functions of NCL proteins. Moreover, the ability of human 
+NCL proteins to rescue gene-deficiency phenotypes in Dictyostelium 
+suggests that the biological pathways regulating NCL protein function 
+are likely conserved from Dictyostelium to human. In this review, I will 
+discuss each of the NCL homologs in Dictyostelium in turn and 
+describe how future studies can exploit the advantages of the system 
+by testing new hypotheses that may ultimately lead to effective therapy 
+options for this devastating and currently untreatable neurological 
+disorder. 
+
+
+submitted by: Robert Huber [roberthuber@trentu.ca]
+———————————————————————————————————————
+
+
+A plasma membrane template for macropinocytic cups
+
+Douwe M. Veltman, Thomas D. Williams, Gareth Bloomfield, Bi-Chang 
+Chen, Eric Betzig, Robert H. Insall & Robert R. Kay
+
+
+Elife, accepted
+
+Macropinocytosis is a fundamental mechanism that allows cells to take 
+up extracellular liquid into large vesicles. It critically depends on the 
+formation of a ring of protrusive actin beneath the plasma membrane, 
+which develops into the macropinocytic cup.  We show that 
+macropinocytic cups in Dictyostelium are organised around coincident
+ intense patches of PIP3, active Ras and active Rac.  These signalling 
+patches are invariably associated with a ring of active SCAR/WAVE at 
+their periphery, as are all examined structures based on PIP3 patches,
+ including phagocytic cups and basal waves.  Patch formation does not 
+depend on the enclosing F-actin ring, and patches become enlarged 
+when the RasGAP NF1 is mutated, showing that Ras plays an 
+instructive role. New macropinocytic cups predominantly form by splitting 
+from existing ones.  We propose that cup-shaped plasma membrane
+ structures form from self-organizing patches of active Ras/PIP3, which 
+recruit a ring of actin nucleators to their periphery.
+
+
+submitted by: Douwe Veltman [douweveltman@gmail.com]
+———————————————————————————————————————
+
+
+A core phylogeny of Dictyostelia inferred from genomes representative 
+of the eight major and minor taxonomic divisions of the group. 
+
+Reema Singh, Christina Schilde and Pauline Schaap 
+
+School of Life Sciences, University of Dundee, MSI complex, Dow Street, 
+Dundee DD15EH, UK
+
+
+BMC Evolutionary Biology, in press
+
+Background: Dictyostelia are a well-studied group of organisms with 
+colonial multicellularity, which are members of the mostly unicellular 
+Amoebozoa. A phylogeny based on SSU rDNA data subdivided all 
+Dictyostelia into four major groups, but left the position of the root and 
+of 6 group-intermediate taxa unresolved. Recent phylogenies inferred
+ from 30 or 213 proteins from sequenced genomes, positioned the root 
+between two branches, each containing two major groups, but lacked 
+data to position the group-intermediate taxa. Since the positions of these
+ early diverging taxa are crucial for understanding the evolution of 
+phenotypic complexity in Dictyostelia, we sequenced six representative 
+genomes of early diverging taxa. 
+
+Results: We retrieved orthologs of 47 housekeeping proteins with an 
+average size of 890 amino acids from six newly sequenced and eight 
+published genomes of Dictyostelia and unicellular Amoebozoa and 
+inferred phylogenies from single and concatenated protein sequence 
+alignments. Concatenated alignments of all 47 proteins, and 4 out of 5 
+subsets of 9 concatenated proteins all produced the same consensus 
+phylogeny with 100% statistical support. Trees inferred from just 2 out 
+of the 47 proteins, individually, reproduced the consensus phylogeny, 
+highlighting that single gene phylogenies will rarely reflect correct 
+species relationships. However, sets of two or three concatenated 
+proteins again reproduced the consensus phylogeny, indicating that 
+a small selection of genes suffices for low cost classification of as
+ yet unincorporated or newly discovered dictyostelid and 
+amoebozoan taxa by gene amplification.
+
+Conclusions: The multi-locus consensus phylogeny shows that groups 
+1 and 2 are sister clades in branch I, with the group-intermediate taxon 
+D. polycarpum positioned as outgroup to group 2. Branch II consists of 
+groups 3 and 4, with the group-intermediate taxon Polysphondylium 
+violaceum positioned as sister to group 4, and the group-intermediate 
+taxon Dictyostelium polycephalum branching at the base of that whole 
+clade. Given the data, the approximately unbiased test rejects all 
+alternative topologies favoured by SSU rDNA and individual proteins 
+with high statistical support. The test also rejects monophyletic origins 
+for the genera Acytostelium, Polysphondylium and Dictyostelium. The 
+current position of Acytostelium ellipticum in the consensus phylogeny i
+ndicates that somatic cells were lost twice in Dictyostelia.
+
+
+submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 27]

@@ -1,0 +1,151 @@
+Dicty News
+Electronic Edition
+Volume 10, number 8
+March 21, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+UGUS, A REPORTER FOR USE WITH DESTABILIZING N-TERMINI.
+
+Davide Zaccaria, Roberta Greco, Harry MacWilliams§, Salvatore 
+Bozzaro, and Adriano Ceccarelli*.
+
+Dipartimento di Scienze Cliniche e Biologiche - Universita' di Torino,
+Ospedale S.Luigi, 10043 Orbassano (Italy), and
+§ Zoologisches Institut, Ludwig-Maximilians-Universitat, Luisenstrasse 
+14, 80333 Muenchen (Germany)
+*To whom correspondence should be sent
+
+ABSTRACT
+
+Due to constraints in vector construction, reporter polypeptides often
+carry N-terminal sequences of extraneous origin. Since protein half-life
+can be influenced by small determinants in the N-terminus, such foreign
+sequences can destabilize proteins and compromise results of reporter-
+based studies. We provide a real-life example of this problem 
+(destabilizing sequences derived from a ribosomal protein) and show 
+that it can be solved with the ubiquitin fusion technique, in which 
+ubiquitin sequences are placed upstream of the reporter, in our case 
+beta-glucuronidase.  Post-translational processing by characterized 
+pathways removes the ubiquitin together with destabilizing sequences, 
+generating a stable reporter whose N-terminus is constant.
+
+-------------------------------------------------------------------------
+An intersection of the cAMP/PKA and two-component signal transduction
+systems in Dictyostelium
+
+Peter A. Thomason1, David Traynor1, Guy Cavet* Wen-Tsan Chang2, Adrian J.
+Harwood* and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH,
+England
+
+EMBO J in press
+			
+Summary:
+
+   Terminal differentiation of both stalk and spore cells in 
+Dictyostelium can be triggered by activation of cAMP-dependent protein 
+kinase (PKA).  A screen for mutants where stalk and spore cells 
+mature in isolation produced three genes which may act as negative 
+regulators of PKA: rdeC (encoding the PKA regulatory subunit), regA 
+and rdeA.  The biochemical properties of RegA were studied in detail.  
+One domain is a cAMP phosphodiesterase (Km ~5 micro-Molar).  The other 
+domain is homologous to response regulators of two-component signal 
+transduction systems.  It can accept phosphate from acetyl phosphate 
+in a reaction typical of response regulators, with transfer dependent 
+on Asp212, the predicted phospho-acceptor.  RegA phosphodiesterase 
+activity is stimulated up to 8-fold by the phospho-donor phosphoramidate,
+with stimulation again dependent on Asp212.  This indicates that 
+phosphorylation of the response regulator domain activates the 
+phosphodiesterase domain.  Over-expression of the response regulator
+domain in wild-type cells phenocopies a regA null.  We interpret this
+dominant negative effect as due to a diversion of the normal flow of
+phosphates from RegA, thus preventing its activation.  Mutation of rdeA
+is known to produce elevated cAMP levels.  We propose that cAMP 
+breakdown is controlled by a phospho-relay system which activates RegA, 
+and may include RdeA.  Cell maturation should be triggered when this 
+system is inhibited.
+
+-------------------------------------------------------------------------
+
+Evidence that the RDEA protein is a component of a 
+multistep phosphorelay modulating rate of development in 
+Dictyostelium
+
+Wen-Tsan Chang, Peter A. Thomason*, Julian D. Gross and 
+Peter C. Newell
+
+Department of Biochemistry, University of Oxford, Oxford 
+OX1 3QU, U.K.  and (*) MRC Laboratory of Molecular Biology, 
+Hills Road, Cambridge, CB2 2QH, U.K.
+
+EMBO J. in press.
+
+We have isolated an insertional mutant of Dictyostelium 
+discoideum that aggregated rapidly and formed spores and 
+stalk cells within 14 hours of development instead of the 
+normal 24 hours. We have shown by parasexual genetics that 
+the insertion is in the rdeA locus and have cloned the 
+gene.  It  encodes a predicted 28-kD protein (RDEA) that is 
+enriched in charged residues and is very hydrophilic.  
+Constructs with the DNA for the C-myc epitope or for the 
+green fluorescent protein indicate that RDEA is not 
+compartmentalised.  RDEA displays homology around a 
+histidine residue at amino acid 65 with members of the 
+H2-module family of phosphotransferases that participate in 
+multistep phosphoryl relays.  Replacement of this histidine 
+rendered the protein inactive. The mutant is complemented 
+by transformation with the YPD1 gene of S. cerevisiae, 
+itself an H2-module protein. We propose that RDEA is part 
+of a multistep phosphorelay system that modulates the rate 
+of development.
+
+-------------------------------------------------------------------------
+
+Rules for the addition of O-linked N-acetylglucosamine to secreted proteins
+in Dictyostelium discoideum: In vivo studies on glycosylation of mucin MUC1
+and MUC2 repeats
+
+Eva JUNG, Andrew A. GOOLEY, Nicolle H. PACKER, Peter KARUSO and Keith L.
+WILLIAMS
+
+MUCAB (Macquarie University Centre for Analytical Biotechnology),
+School of Biological Sciences and School of Chemistry, Macquarie
+University, Sydney, NSW 2109, Australia
+
+Eur. J. Biochem., in press
+
+One class of O-glycosylation in the simple eukaryote Dictyostelium 
+discoideum involves the addition of a single N-acetylglucosamine to 
+serine and threonine residues on secreted or membrane bound proteins 
+at an early stage of development. A previously developed in vivo approach 
+for the identification of acceptor sites for O-glycosylation was used to 
+further characterise the specificity of the UDP-GlcNAc: polypeptide 
+N-acetylglucosaminyltransferase(s). Glutathione-S-transferase fusion 
+proteins were constructed to express and secrete the mucin peptide repeat 
+for MUC1 (PDT1RPAPGS1T2APPAHGVT3S2A) and a MUC2-like peptide 
+(PT1T2T3PIT4T5T6T7T8T9VT10PT11PT12PT13GT14QT15), respectively.
+Monosaccharide analysis, electrospray-ionisation mass spectrometry and
+protein sequencing showed that the modification is a single
+N-acetylglucosamine attached to certain threonine residues. The MUC1 repeat
+was glycosylated on T2 and T3 and there were no modifications on T1 or on
+S1 and S2. The MUC2 glycopeptide was glycosylated on T1, T3, T5, T7, T9,
+T10, T11, T12, T13 and T14. Our results show that the D. discoideum
+glycosylation apparatus incorporates GlcNAc residues into peptide sequences
+similar to those reported for the addition of GalNAc residues in mammalian
+tissues. The anomeric linkage of the GlcNAc residues to the polypeptide
+chain was shown to be in alpha configuration as determined by NMR studies
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 8]
+

@@ -1,0 +1,117 @@
+dictyNews
+Electronic Edition
+Volume 28, number 2
+January 19, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+
+Exploiting new terrain: an advantage to sociality in the slime mold 
+Dictyostelium discoideum 
+
+Jennie J. Kuzdzal-Fick , Kevin R. Foster , David C. Queller , and 
+Joan E. Strassmann 
+
+
+Behavioral Ecology, in press
+Advance Access published on January 8, 2007, DOI 10.1093/beheco/arl102.
+
+Understanding the ecological benefits of social actions is central to 
+explaining the evolution of social behavior. The social amoeba Dictyostelium 
+discoideum has been well studied and is a model for social evolution and 
+development, but surprisingly little is known about its ecology. When 
+starving, thousands of the normally solitary amoebae aggregate to form a 
+differentiated multicellular organism known as a slug. The slug migrates 
+toward the soil surface where it metamorphoses into a fruiting body of hardy 
+spores held up by a dead stalk comprising about one-fifth of the cells. 
+Multicellularity in D. discoideum is thought to have evolved to lift the 
+spores above the hazards of the soil where spores can be picked up for 
+long-distance dispersal. Here, we show that multicellularity has another 
+advantage: local dispersal to new food sources. We find that cells shed by 
+D. discoideum slugs during migration consume and remove bacteria in the path 
+of the slug, although slugs themselves do not breakup. We also show that 
+slugs are adept at local dispersal by comparing migration of slugs with 
+migration of individual cells of the mutant, CAP2, which cannot aggregate 
+and so rely only on cellular movement. In particular, the solitary cells of 
+the aggregation mutant are unable to cross a soil barrier, easily crossed by 
+slugs. We propose that the exploitation of local food patches is an important
+selective benefit favoring multicellular cooperation in D. discoideum.
+
+
+Submitted by Jennie Kuzdzal-Fick [jkuzdzal@rice.edu]
+--------------------------------------------------------------------------------
+
+
+Vectors For Expression Of Proteins With Single Or Combinatorial Fluorescent 
+Protein And Tandem Affinity Purification Tags In Dictyostelium
+
+Marcel Meima¤, Karin E. Weening and Pauline Schaap*
+
+School of Life Sciences, University of Dundee, Dundee, DD15EH, UK
+
+
+Protein Expression and Purification, in press.
+
+We constructed a series of expression vectors for purification of native 
+proteins and protein complexes in Dictyostelium. Protein purification is 
+achieved by either a C-terminal or N-terminal fusion of the protein of choice
+to the tandem affinity purification (TAP) tag. The TAP tag consists of a 
+protein A tag and a calmodulin binding peptide (CBP) and has been 
+successfully used for purification of native protein complexes from yeast 
+and animal cells. Protein expression is driven by the constitutive actin 15 
+promoter and the vectors optionally carry additional green- or yellow 
+fluorescent protein (GFP or YFP) tags for fusion at either a C- or N-terminal 
+location.  Tandem affinity purification of native Dictyostelium protein 
+complexes was tested by using pArc-34, one of the members of the well 
+characterized Dictyostelium Arp2/3 complex, as bait. After denaturation and 
+SDS-PAGE separation of the pArc-34 associated proteins all members of the 
+Arp2/3 complex could be identified.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Identification and domain mapping of Dictyostelium discoideum type-1 protein 
+phosphatase inhibitor-2
+
+Juliana M. Sousa-Canavez, Daniela Beton, Daniela C. Gonzalez-Kristeller 
+and Aline M. da Silva
+
+
+Biochimie, in press
+
+Protein phosphatase type-1 catalytic subunit (PP1c) does not exist freely 
+in the cell and its activity must be very strictly controlled. Several 
+protein inhibitors of PP1c have been described including the classical 
+mammalian inhibitor-1 (I-1) and inhibitor-2 (I-2). Association of these 
+inhibitors with PP1c appears to involve multiple contacts and in the case 
+of I-2 no less than five I-2 interaction subdomains have been proposed. In 
+this report, we provide both in vitro and in vivo evidence that the 
+Dictyostelium discoideum genome encodes a protein (DdI-2) that is an 
+ortholog of mammalian I-2 being the first PP1c interacting protein 
+characterized in this social amoeba. Despite the low overall sequence 
+similarity of DdI-2 with other I-2 sequences and its long N-terminal 
+extension, the five PP1c interaction motifs proposed for mammalian I-2 
+are reasonably conserved in the Dictyostelium ortholog. We demonstrate that 
+DdI-2 interacts with and inhibits D.discoideum PP1c (DdPP1c), which we have 
+previously characterized. Moreover, using yeast two-hybrid assays we show 
+that a stable interaction of DdI-2 with DdPP1c requires multiple contacts. 
+
+
+Submitted by: Juliana de Sousa-Canavez [jums@iq.usp.br]
+============================================================
+[End dictyNews, volume 28, number 2]

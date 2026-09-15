@@ -1,0 +1,121 @@
+dictyNews
+Electronic Edition
+Volume 29, number 10
+October 5, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Protein interactions involved in tRNA gene-specific integration of 
+Dictyostelium non-long terminal repeat retrotransposon TRE5-A
+
+Thanh Chung(1), Oliver Siol(2), Theodor Dingermann(1,3) and 
+Thomas Winckler(2)
+
+(1) Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Germany)
+(2) Lehrstuhl fuer Pharmazeutische Biologie, Universitaet Jena (Germany)
+(3) Zentrum für Arzneimittelforschung, Entwicklung und Sicherheit, 
+Frankfurt (Germany)
+
+
+Mol. Cell. Biol., in press
+
+Mobile genetic elements that reside in gene-dense genomes face the problem 
+of avoiding devastating insertional mutagenesis of genes in their host cell 
+genomes. To meet this challenge, some yeast long terminal repeat (LTR) 
+retrotransposons have evolved targeted integration at safe sites in 
+immediate vicinity of tRNA genes. Integration of yeast Ty3 is mediated 
+by interactions of retrotransposon protein with the tRNA gene-specific 
+transcription factor TFIIIB.  In the genome of the social amoeba 
+Dictyostelium discoideum the non-LTR retrotransposon TRE5-A integrates 
+~48 bp upstream of tRNA genes, yet little is known about how the 
+retrotransposon identifies integration sites. Here, we show direct 
+protein interactions of TRE5-A ORF1 protein with subunits of TFIIIB, 
+suggesting that ORF1p is a component of the TRE5-A pre-integration 
+complex that determines integration sites. Our results demonstrate that 
+evolution has put forth similar solutions to prevent damage of diverse, 
+compact genomes by different classes of mobile elements.
+
+
+Submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+--------------------------------------------------------------------------------
+
+
+The Ste20-like kinase SvkA of Dictyostelium discoideum is essential for 
+late stages of cytokinesis
+
+Meino Rohlfs, Rajesh Arasada, Petros Batsios, Julia Janzen and 
+Michael Schleicher
+
+Adolf-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universitaet,
+Schillerstr. 42, 80336 Muenchen, Germany.
+
+
+JCS, in press
+
+The genome of the social amoeba Dictyostelium discoideum codes for about 
+285 kinases which represents 2.6% of the total genome and suggests a 
+similar signaling complexity as in yeast and humans. The behavior of 
+D. discoideum as amoeba and during development relies heavily on the 
+fast rearrangements of the actin cytoskeleton. Here we describe the 
+knockout phenotype of the severin kinase gene (svkA), a homolog of the 
+MST3, MST4 and YSK1 kinases in humans. SvkA-minus cells show drastic 
+defects in cytokinesis, development and directed slug movement. The 
+cytokinesis defect is most prominent leading to multinucleated cells 
+sometimes with more than 30 nuclei. The defect arises from the frequent 
+disability of svkA-minus cells to keep the symmetry during cleavage 
+furrow formation and to sever the last cytosolic connection. We 
+demonstrate that GFP-SvkA is enriched at the centrosome and localizes 
+to the midzone during the final stage of cell division. This distribution 
+is mediated by the C-terminal half of the kinase, whereas a rescue of 
+the phenotypic changes requires the active N-terminal kinase domain as 
+well. The data suggest that SvkA is part of a regulatory pathway from the 
+centrosome to the midzone, thus regulating completion of cell division. 
+
+
+Submitted by: Meino Rohlfs [Meino.Rohlfs@lmu.de]
+--------------------------------------------------------------------------------
+
+
+Regulation of Rap1 Activity by RapGAP1 Controls Cell Adhesion at the 
+Front of Chemotaxing Cells
+
+Taeck J. Jeon, Dai-Jen Lee, Susan Lee, Gerald Weeks, and Richard A. Firtel
+
+
+Journal of Cell Biology, in press
+
+Spatial and temporal regulation of Rap1 is required for proper myosin 
+assembly and cell adhesion during cell migration in Dictyostelium. Here, 
+we identify a Rap1 GAP (RapGAP1) that helps mediate cell adhesion by 
+negatively regulating Rap1 at the leading edge. Defects in spatial 
+regulation of the cell attachment at the leading edge in rapGAP1- (null) 
+cells or cells overexpressing RapGAP1 (RapGAP1OE) leads to defective 
+chemotaxis. rapGAP1- cells have extended chemoattractant-mediated Rap1 
+activation kinetics and decreased MyoII assembly, whereas RapGAP1OE 
+cells show reciprocal phenotypes. We see that RapGAP1 translocates to 
+the cell cortex in response to chemoattractant stimulation and localizes 
+to the leading edge of chemotaxing cells via an F-actin-dependent pathway. 
+RapGAP1 localization is negatively regulated by cortexillin (Ctx), an F-actin 
+bundling protein that functions during cytokinesis. Loss of Ctx leads to 
+constitutive and uniform RapGAP1 cortical localization. We suggest that 
+RapGAP1 functions in the spatial and temporal regulation of attachment 
+sites through MyoII assembly via regulation of Rap1-GTP.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+==============================================================
+[End dictyNews, volume 29, number 10]

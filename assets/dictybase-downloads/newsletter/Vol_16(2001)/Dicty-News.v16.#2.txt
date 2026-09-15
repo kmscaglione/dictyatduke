@@ -1,0 +1,201 @@
+Dicty News
+Electronic Edition
+Volume 16, number 2
+January 27, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+==============
+  Abstracts
+==============
+
+Protein tyrosine phosphatase PTP1 negatively regulates Dictyostelium STATa
+and is required for proper cell-type proportioning
+
+Anne Early(1), Marianne Gamper(2), John Moniakis(2), Eugene Kim(2), Tony
+Hunter(3), Jeffrey G. Williams(4), and Richard A. Firtel(2)
+
+1 MRC Laboratory for Molecular Cell Biology and Department of Biology,
+University College London, Gower Street, London WC1E 6BT, UK.
+2 Section of Cell and Developmental Biology and the Center for Molecular
+Genetics, University of California, San Diego, 9500 Gilman Drive, La Jolla,
+CA 92093-0634, USA.
+3 Salk Institute, 10010 North Torrey Pines Road, La Jolla CA 92037-1099, USA.
+4 University of Dundee, MSI/WTB Complex, Dow Street, Dundee, DD1 5EH, UK.
+
+Developmental Biology, in press
+
+Abstract
+
+The protein tyrosine phosphatase PTP1, which mediates reversible
+phosphorylation on tyrosine, has been shown to play an important regulatory
+role during Dictyostelium development. Mutants lacking PTP1 develop more
+rapidly than normal, while strains that overexpress PTP display aberrant
+morphology. However, the signalling pathways involved have not been
+characterized. In re-examining these strains, we have found that there is
+an inverse correlation between levels of PTP1 activity, the extent of
+tyrosine phosphorylation on Dictyostelium STATa after treatment with cAMP,
+and the proportion of the slug population exhibiting STATa nuclear
+enrichment in vivo. This suggests that PTP1 acts to attenuate the tyrosine
+phosphorylation of STATa and downstream STATa-mediated pathways. Consistent
+with this, we shown that when PTP1 is overexpressed, there is increased
+expression of a prestalk cell marker at the slug posterior, a phenocopy of
+STATa null slugs. In ptp1 null strains, STATa tyrosine phosphorylation and
+nuclear enrichment in the slug anterior is increased. There is also a
+change in the prestalk to prespore cell ratio. Synergy experiments suggest
+that this is due to a cell-autonomous defect in forming the subset of
+prespore cells that are located in the anterior prespore region.
+
+-----------------------------------------------------------------------------
+
+Transcript mapping and processing of mitochondrial RNA in Dictyostelium
+discoideum
+
+C. BARTH1, U. GREFERATH2, M. KOTSIFAS1, Y. TANAKA3, S. ALEXANDER4, 
+H. ALEXANDER4 AND P. R. FISHER1
+
+
+1 Department of Microbiology, La Trobe University, Bundoora 3083,
+Melbourne, Australia
+2 Department of Anatomy and Cell Biology, University of Melbourne,
+Parkville, Melbourne, Australia
+3 Institute of Biological Sciences, University of Tsukuba, Ibaraki
+305-8572, Japan
+4 Division of Biological Sciences, University of Missouri, Columbia, MO
+65211-7400
+
+Current Genetics, in press.
+
+ABSTRACT 
+
+The circular mitochondrial genome of Dictyostelium discoideum has a size of
+55,564 base pairs. We present here a complete and detailed transcription
+map of the mitochondrial DNA. Eight major, polycistronic transcripts
+encoding polypeptides, ribosomal RNAs and interspersed transfer RNAs were
+identified in Northern hybridization studies. Most of these polycistronic
+transcripts are subsequently processed into smaller mono-, di- or
+tricistronic RNAs. In some cases the maturation involves endonucleolytic
+cleavage of the transcripts using transfer RNAs as excision signals. Primer
+extension experiments mapped the 5' ends of the transcripts, which may
+represent transcription initiation sites. Two of the polycistronic
+transcripts were found to be overlapping. Based on sequence alignments of
+the potential transcription start sites a short oligonucleotide consensus
+initiation sequence has been identified which did not reveal any
+significant sequence homologies to known promoter regions from other
+organisms.
+
+-----------------------------------------------------------------------------
+
+An SH2-domain-containing kinase negatively regulates the 
+phosphatidylinositol-3 kinase pathway
+
+
+John Moniakis, Satoru Funamoto, Masashi Fukuzawa, Jill Meisenhelder, 
+Tsuyoshi Araki, Tomoaki Abe, Ruedi Meili, Tony Hunter, Jeffrey Williams, 
+and Richard A. Firtel
+
+Genes and Development, in press.
+
+ABSTRACT
+
+SHK1 is a novel dual-specificity kinase that contains an SH2 domain in its 
+C-terminal region. We demonstrate that SHK1 is required for proper chemotaxis 
+and phagocytosis.  shk1 null cells lack polarity, move very slowly, and 
+exhibit an elevated and temporally extended chemoattractant-mediated 
+activation of the kinase Akt/PKB.  GFP fusions of the PH domain of Akt/PKB 
+or the PH-domain-containing protein CRAC, which become transiently associated 
+with the plasma membrane after a global stimulation with a chemoattractant, 
+remain associated with the plasma membrane for an extended period of time in 
+shk1 null cells.  These results suggest that SHK1 is a negative regulator of 
+the PI3 kinase pathway.  Furthermore, when a chemoattractant gradient is 
+applied to a wild-type cell, these PH-domain-containing proteins and the 
+F-actin binding protein coronin localize to its leading edge, but in an 
+shk1 null cell they become randomly associated with the plasma membrane 
+and cortex, irrespective of the direction of the chemoattractant gradient, 
+suggesting SHK1 is required for the proper spatio-temporal control of 
+F-actin levels in chemotaxing cells.  Consistent with such functions, SHK1 
+is localized at the plasma membrane/cortex and we show that its SH2 domain 
+is required for this localization and the proper function of SHK1. 
+
+-----------------------------------------------------------------------------
+
+p110-related PI 3-kinases regulate phagosome-phagosome fusion 
+and phagosomal pH through a PKB/Akt dependent pathway in Dictyostelium.
+
+Adam C. Rupper1,2, Juan M. Rodriguez-Paris2, Bryon D. Grove3 and James 
+A. Cardelli1,2,4
+
+1Department of Microbiology and Immunology, 2Feist-Weiller Cancer Center, 
+Louisiana State University Health Sciences Center, Shreveport, Louisiana 71130; 
+3Department of Anatomy and Cell Biology, University of North Dakota, Grand 
+Forks, North Dakota 58202
+
+Journal of Cell Science (in press)
+
+ABSTRACT
+
+The Dictyostelium p110-related PI 3-kinases, PIK1 and PIK2, regulate the 
+endosomal pathway and the actin cytoskeleton, but do not significantly 
+regulate internalization of particles in D. discoideum.  Bacteria 
+internalized into Dddpik1/ddpik2 cells or cells treated with  PI 3-kinase 
+inhibitors  remained intact as single particles in phagosomes with closely 
+associated membranes after 2 hours of internalization, while in control 
+cells, bacteria appeared degraded in multi-particle spacious phagosomes.  
+Addition of LY294002 to control cells, after 60 minutes of chase, blocked 
+formation of spacious phagosomes, suggesting PI 3-kinases acted late to 
+regulate spacious phagosome formation.  Phagosomes purified from control 
+and drug treated cells contained equivalent levels of lysosomal proteins, 
+including the proton pump complex, and were acidic, but in drug treated 
+cells and Dddpik1/ddpik2 cells phagosomal pH was significantly more acidic 
+during maturation than the pH of control phagosomes.  Inhibition of 
+phagosomal maturation by LY294002 was overcome by increasing phagosomal 
+pH with NH4Cl, suggesting that an increase in pH might trigger homotypic 
+phagosome fusion.  A pkbA null cell line (PKB/Akt) reproduced the phenotype 
+described for cells treated with PI 3-kinase inhibitors and Dddpik1/ddpik2 
+cells.  We propose that PI 3-kinases, through a PKB/Akt dependent pathway, 
+directly regulate homotypic fusion of single particle containing phagosomes 
+to form multi-particle, spacious phagosomes, possibly through the regulation 
+of phagosomal pH.
+
+-----------------------------------------------------------------------------
+
+Environmental Regulation of Pathways Controlling Sporulation, Dormancy, 
+and Germination Utilizes Bacterial-like Signaling Complexes in Dictyostelium.
+
+David A. Cottera, Dana C. Mahadeoa, David N. Cervia, Yoshiro Kishib, Keith 
+Galec, Todd Sandsa, and Masazumi Sameshimab.
+
+aDepartment of Biological Sciences, University of Windsor, Windsor, Ontario, 
+Canada
+bDepartment of Cell Biology, The Tokyo Metropolitan Institute for Medical 
+Science, Tokyo Metropolitan Organization for Medical Research, Honkomagome, 
+Bunkyo-ku, Tokyo, Japan
+cDepartment of Natural and Quantitative Sciences, Dubai, United Arab Emirates
+
+Protist Vol 151, 111-126
+
+Summary:
+
+In the following review we have examined and compiled information regarding 
+the later stages of development in Dictyostelium, primarily focussing on 
+spore formation, dormancy and germination.  We have given an overview on the 
+current understanding on how these processes function based on genetic, 
+biochemical, and physiological evidence contributed to the field.  We have 
+also compared the interaction of the control of these events compared with 
+other similar systems such as Bacillus.  Histidine kinases play a central 
+role in the development of Dictyostelium.  We have proposed a network model 
+of interacting signals that act through these histidine kinases to achieve 
+and maintain spore dormancy.  The complex process of spore germination relies 
+on many different factors including intrinsic and external signals.  We have 
+established a model for spore germination that incorporates our current 
+understanding as well as proposed signaling processes that may be involved.
+
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 2]

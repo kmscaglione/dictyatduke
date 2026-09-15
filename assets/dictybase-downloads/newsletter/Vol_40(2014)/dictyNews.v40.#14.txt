@@ -1,0 +1,131 @@
+dictyNews
+Electronic Edition
+Volume 40, number 14
+June 6, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Defects in the synthetic pathway prevent DIF-1 mediated stalk lineage 
+specification cascade in the non-differentiating social amoeba, 
+Acytostelium subglobosum.
+
+Mohri K, Hata T, Kikuchi H, Oshima Y, Urushihara H.
+
+
+Biology Open. Posted Online May 29, 2014
+http://bio.biologists.org/content/early/2014/05/23/bio.20148359.long
+
+Separation of somatic cells from germ-line cells is a crucial event for 
+multicellular organisms, but how this step was achieved during evolution 
+remains elusive. In Dictyostelium discoideum and many other 
+dictyostelid species, solitary amoebae gather and form a multicellular 
+fruiting body in which germ-line spores and somatic stalk cells 
+differentiate, whereas in Acytostelium subglobosum, acellular stalks 
+form and all aggregated amoebae become spores. In this study, 
+because most D. discoideum genes known to be required for stalk cell 
+differentiation have homologs in A. subglobosum, we inferred functional 
+variations in these genes and examined conservation of the stalk cell 
+specification cascade of D. discoideum mediated by the polyketide 
+differentiation-inducing factor-1 (DIF-1) in A. subglobosum. Through 
+heterologous expression of A. subglobosum orthologs of DIF-1 
+biosynthesis genes in D. discoideum, we confirmed that two of the three 
+genes were functional equivalents, while DIF-methyltransferase (As-dmtA) 
+involved at the final step of DIF-1 synthesis was not. In fact, DIF-1 activity 
+was undetectable in A. subglobosum lysates and amoebae of this species 
+were not responsive to DIF-1, suggesting a lack of DIF-1 production in 
+this species. On the other hand, the molecular function of an 
+A. subglobosum ortholog of DIF-1 responsive transcription factor was 
+equivalent with that of D. discoideum and inhibition of polyketide synthesis 
+caused developmental arrest in A. subglobosum, which could not be 
+rescued by DIF-1 addition. These results suggest that non-DIF-1 
+polyketide cascades involving downstream transcription factors are 
+required for fruiting body development of A. subglobosum.
+
+
+Submitted by Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+---------------------------------------------------------------------------
+
+
+Specific growth suppression of human cancer cells by targeted delivery 
+of Dictyostelium mitochondrial ribosomal protein S4    
+
+Junji Chida1, Hikaru Araki2 and Yasuo Maeda3,*
+
+* Corresponding author: Yasuo Maeda kjygy352@ybb.ne.jp
+1 Division of Molecular Neurobiology, Institute for Enzyme Research, 
+The University of Tokushima, Kuramoto-cho, Tokushima 770-8503, Japan; 
+E-mail: jchida@tokushima-u.ac.jp
+2 Division of Enzyme Chemistry, Institute for Enzyme Research, 
+The University of Tokushima, Kuramoto-cho, Tokushima 770-8503, Japan; 
+E-mail: h1.arak108@gmail.com
+3 Department of Developmental Biology and Neurosciences, 
+Graduate School of Life Sciences, Tohoku University, Aoba, 
+Sendai 980-8578, Japan; E-mail: kjygy352@ybb.ne.jp
+
+
+Cancer Cell International, accepted 
+
+Background
+In general, growth and differentiation are mutually exclusive but are 
+cooperatively regulated throughout development. Thus, the process 
+of a cell’s switching from growth to differentiation is of great importance 
+not only for the development of organisms but also for malignant 
+transformation, in which this process is reversed. We have previously 
+demonstrated using a Dictyostelium model system that the 
+Dictyostelium mitochondrial ribosomal protein S4 (Dd-mrp4) gene 
+expression is essential for the initiation of cell differentiation: 
+Dd-mrp4-null cells fail to initiate differentiate, while the initial step of 
+cell differentiation and the subsequent morphogenesis are markedly 
+enhanced in mrp4OE cells overexpressing the Dd-mrp4 in the 
+extramitochondrial cytoplasm. This raised a possibility that the 
+ectopically enforced expression of the Dd-mrp4 in human cells might 
+inhibit their growth, particularly of malignant tumor cells, by inducing 
+cell differentiation. 
+Methods
+Four kinds of human tumor cell lines were transfected by three kind 
+of vector constructs (the empty vector: pcDNA3.1 (Mock); 
+pcDNA3.1-rps4 bearing Dictyostelium cytoplasmic ribosomal protein S4; 
+pcDNA3.1-mrp4 bearing Dictyostelium mitochondrial ribosomal protein S4). 
+As controls, four kinds of human primary cultured cells were similarly 
+transfected by the above vector constructs. After transfection, growth 
+kinetics of cells was analyzed using cell viability assay, and also the 
+TUNEL methods was used for evaluation of apoptotic cells. 
+Results
+Ectopically expressed Dd-mrp4 suppressed cell proliferation through 
+inducing apoptotic cell death specifically in the human lung 
+adenocarcinoma (A549), epithelial cervical cancer (HeLa), hepatocellular 
+carcinoma (HepG2) and colonic carcinoma (Caco-2), but not in primary 
+cultured normal cells, such as human brain microvascular endothelial 
+cells (HBMECs); human umbilical vein endothelial cells (HUVECs) and 
+human normal hepatocytes (hHepsTM), with one exception (human 
+cardiac fibloblasts (HCF).
+Conclusion
+The present finding that the ectopically enforced expression of Dd-mrp4 
+in human several tumor cell lines specifically suppresses their proliferation 
+suggests strongly that the Dd-mrp4 gene derived from Dictyostelium 
+mitochondria may provide a new promising therapeutic strategy for 
+disrupting cell viability pathways in human cancers.
+
+Keywords: Mitochondrial ribosomal protein S4 (MRP4); Dd-mrp4; 
+Anticancer action; Apoptosis; Proliferation; Differentiation; 
+Human tumor; Dictyostelium discoideum
+
+
+Submitted by Yasuo Maeda [kjygy352@ybb.ne.jp]
+==============================================================
+[End dictyNews, volume 40, number 14]

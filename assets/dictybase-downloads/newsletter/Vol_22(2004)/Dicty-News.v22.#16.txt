@@ -1,0 +1,99 @@
+Dicty News
+Electronic Edition
+Volume 22, number 16
+June 18, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Novel development rescuing factors (DRFs) secreted by the developing
+Dictyostelium cells, that are involved in the restoration of a mutant
+lacking MAP-kinase ERK2
+
+Masatsune Tsujioka1,2, Tatsuyoshi Yamamoto1, Christopher R. Thompson2,
+Robert R. Kay2 and Mineko Maeda1*
+
+1Department of Biology, Osaka University, Machikaneyama-cho 1-16,
+Toyonaka, Osaka 560-0043, Japan and 2MRC Laboratory of Molecular
+Biology, Cambridge CB2 2QH, UK
+
+Zoological Science, in press
+
+
+We found novel development rescuing factors (DRFs) secreted from developing
+Dictyostelium cells, by using a mutant (erkB-) which is missing MAP-kinase
+ERK2 as a test strain for bioassay. The mutant erkB- fails to undergo
+multicellular morphogenesis due to impaired cAMP signaling. However, such
+developmental defect can be restored by the presence of low-molecular
+weight DRFs that are secreted from developing wild-type cells.  We
+previously showed that DIF-1 (Differentiation-Inducing Factor 1 for stalk
+cells) possesses this activity, indicating a newly discovered role of DIF-1.
+Surprisingly, however, the mutant dmtA-, which is incapable of DIF-1
+synthesis still exerts a strong inducing activity of the multicellular
+morphogenesis of erkB-. After analysis of HPLC fractions of conditioned
+media prepared from both wild type Ax2 and dmtA- strains revealed that both
+strains secrete at least two novel DRF activities with DIF-like mobility.
+However, these activities were not derived from other DIFs such as DIF-2
+and DIF-3. Identification of these DRFs found in this study would provide
+insight into the mechanism by which the development of the erkB- mutant is
+restored and how these factors act in the normal development of
+Dictyostelium.
+
+
+
+Submitted by: Mineko Maeda [mmaeda@bio.sci.osaka-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Identification of Phospholipase B from Dictyostelium discoideum reveals a
+new Lipase Family Present In Mammals, Flies and Nematodes, but not Yeast
+
+Clive P. Morgan, Robert Insall*, Lee Haynes and Shamshad Cockcroft
+
+Biochem J., in press
+
+
+The social amoeba Dictyostelium discoideum exhibits high activities of
+phospholipase and lysophospholipase (Ferber et al Eur.J.Biochem. 1970 14
+253-257). We assayed Dictyostelium lysates to demonstrate the presence of a
+highly active phospholipase B enzyme that removed both fatty-acidchains from
+phosphatidylcholine (PC) and produced the water-soluble
+glycerophosphorylcholine. We purified the PLB activity from Dictyostelium
+cytosol using standard agarose media (size exclusion and ion-exchange), and
+combined this with an affinity step using myristoylated ARF1, a protein
+which has a single fatty acid at its N-terminus. Two proteins co-purified
+(48kDa and 65kDa), and the 48kDa protein was digested with trypsin, peptide
+fragments separated by reverse phase chromatography, and the resultant
+peptides were sequenced by Edman degradation. From the peptide sequences
+obtained, database searches revealed a gene, which encodes a protein of
+65 kDa with unknown function. The 48 kDa, therefore appears to be a
+fragment of the full length 65 kDa product. Expression of the gene in
+E.coli confirmed that it encodes a PLB. Characterisation of its substrate
+specificity indicated that in addition to PC deacylation, the enzyme also
+hydrolysed phosphatidylinositol and phosphatidylethanolamine. The PLB
+identified here is not related to existing PLBs, identified in bacteria,
+fungi or mammals. There are however, genes homologous to Dictyostelium PLB
+in mammals, flies, worms and Giardia but not in yeast. We therefore have
+identified a novel family of intracellular PLBs.
+
+
+
+Submitted by: Robert Insall [r.h.insall@bham.ac.uk]
+
+==============================================================================
+[End Dicty News, volume 22, number 16]

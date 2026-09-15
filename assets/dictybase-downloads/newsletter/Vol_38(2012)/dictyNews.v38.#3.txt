@@ -1,0 +1,153 @@
+dictyNews
+Electronic Edition
+Volume 38, number 3
+January 27, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Functional Characterization of a Novel Aquaporin from Dictyostelium 
+discoideum Amoebae Implies a Unique Gating Mechanism
+
+Julia von Buelow, Annika Mueller-Lucks, Lei Kai, Frank Bernhard, Eric Beitz
+
+
+J. Biol. Chem., in press
+
+The social amoeba Dictyostelium discoideum is a widely used model 
+organism for studying basic functions of protozoan and metazoan cells, 
+such as osmoregulation and cell motility. There is evidence from other 
+species that cellular water channels, aquaporins (AQP), are central to 
+both processes. Yet, data on D. discoideum AQPs is almost absent. 
+Despite cloning of two putative D. discoideum AQPs, WacA and AqpA, 
+water permeability has not been shown. Further, WacA and AqpA are 
+expressed at the late multicellular stage and in spores but not in amoebae. 
+We cloned a novel AQP, AqpB, from amoeboidal D. discoideum cells. 
+Wildtype AqpB was impermeable to water, glycerol, and urea when 
+expressed in Xenopus laevis oocytes. Neither stepwise truncation of the 
+N-terminus nor selected point mutations activated the water channel. 
+However, mutational truncation by 12 amino acids of an extraordinary 
+long intracellular loop induced water permeability of AqpB hinting at a 
+novel gating mechanism. This AqpB mutant was inhibited by mercuric
+chloride confirming the presence of a cysteine residue in the selectivity 
+filter as predicted by our structure model. We detected AqpB by Western 
+blot in a glycosylated and a non-glycosylated form throughout all 
+developmental stages. When expressed in D. discoideum amoebae, 
+AqpB-GFP fusion constructs localized to vacuolar structures, to the 
+plasma membrane, and to lamellipodia-like membrane protrusions. We 
+conclude, that the localization pattern in conjunction with channel gating 
+may be indicative of AqpB functions in osmoregulation as well as cell 
+motility of D. discoideum.
+
+
+Submitted by Eric Beitz [ebeitz@pharmazie.uni-kiel.de]
+--------------------------------------------------------------------------------------
+
+
+Evidence of an evolutionarily conserved LMBR1 domain-containing 
+protein that associates with endocytic cups and plays a role in cell 
+migration in Dictyostelium.
+
+Jessica S Kelsey, Nathan M Fastman and Daphne D Blumberg
+
+
+Eukaryotic Cell, in press
+
+The ampA gene plays a role in Dictyostelium discoideum cell migration.  
+Loss of ampA function results in reduced ability of growing cells to 
+migrate to folic acid and results in small plaques on bacterial lawns, 
+while overexpression of AmpA results in a rapid migration phenotype 
+and correspondingly larger plaques than seen with wild type cells.  
+To help understand how the ampA gene functions, second site 
+suppressors were created by REMI mutageneis. These mutants were 
+selected for their ability to reduce the large plaque size of the AmpA 
+overexpresser strain. The lmbd2B gene was identified as a suppressor 
+of an AmpA overexpressing strain.  The lmbd2B gene belongs to the 
+evolutionarily conserved LMBR1 protein family, some of whose known 
+members are endocytic receptors associated with human diseases such 
+as anemia.  In order to understand lmbd2B function, mRFP fusion 
+proteins were created and lmbd2B knockout cell lines were established.  
+Our findings indicate that the LMBD2B protein is found associated with 
+endocytic cups.  It colocalizes with proteins that play key roles in 
+endocytic events and is localized to ruffles on the dorsal surface of 
+growing cells.  Vegetative lmbd2B null cells display defects in cell 
+migration.  These cells have difficulty sensing the chemoattractant 
+folic acid as indicated by a decrease in their chemotactic index.  
+Lmbd2B null cells also appear to have difficulty establishing a 
+front/back orientation to facilitate migration.  A role for lmbd2B in 
+development is also suggested.  Our research gives insight into the 
+function of a previously uncharacterized branch of the LMBR1 family 
+of proteins.  We provide evidence of an LMBR1 family plasma 
+membrane protein that associates with endocytic cups and plays 
+a role in chemotaxis.
+
+
+Submitted by Daphne D.Blumberg [blumberg@umbc.edu]
+--------------------------------------------------------------------------------------
+
+
+eIF2alpha Kinases Regulate Development Through the BzpR Transcription 
+Factor in Dictyostelium discoideum. 
+
+Charles K. Singleton, Yanhua Xiong, Janet H. Kirsten, and 
+Kelsey P. Pendleton.  
+
+Department of Biological Sciences, Vanderbilt University, 
+VU Station B 351634, Nashville TN 37235
+
+
+PloS ONE, in press
+
+Background. A major mechanism of translational regulation in response 
+to a variety of stresses is mediated by phosphorylation of eIF2alpha to 
+reduce delivery of initiator tRNAs to scanning ribosomes. For some 
+mRNAs, often encoding a bZIP transcription factor, eIF2alpha 
+phosphorylation leads to enhanced translation due to delayed 
+reinitiation at upstream open reading frames. Dictyostelium cells 
+possess at least three eIF2alpha kinases that regulate various portions 
+of the starvation induced developmental program. Cells possessing an 
+eIF2alpha that cannot be phosphorylated (BS167) show abnormalities 
+in growth and development. We sought to identify a bZIP protein in 
+Dictyostelium whose production is controlled by the eIF2alpha 
+regulatory system.
+
+Principle Findings. Cells disrupted in the bzpR gene had similar 
+developmental defects as BS167 cells, including small entities, stalk 
+defects, and reduced spore viability. beta-galactosidase production 
+was used to examine translation from mRNA containing the bzpR 
+5Õ UTR.  While protein production was readily apparent and regulated 
+temporally and spatially in wild type cells, essentially no 
+beta-galactosidase was produced in developing BS167 cells even 
+though the lacZ mRNA levels were the same as those in wild type 
+cells. Also, no protein production was observed in strains lacking IfkA 
+or IfkB eIF2alpha kinases. GFP fusions, with appropriate internal 
+controls, were used to directly demonstrate that the bzpR 5Õ UTR, 
+possessing 7 uORFs, suppressed translation by 12 fold. Suppression 
+occurred even when all but one uORF was deleted, and translational 
+suppression was removed when the ATG of the single uORF was 
+mutated.
+
+Conclusions. The findings indicate that BzpR regulates aspects of 
+the development program in Dictyostelium, serving as a downstream 
+effector of eIF2alpha phosphorylation. Its production is temporally and 
+spatially regulated by eIF2alpha phosphorylation by IfkA and IfkB and 
+through the use of uORFs within the bzpR 5Õ UTR.
+
+
+Submitted by Charles Singleton [charles.k.singleton@Vanderbilt.Edu]
+==============================================================
+[End dictyNews, volume 38, number 3]

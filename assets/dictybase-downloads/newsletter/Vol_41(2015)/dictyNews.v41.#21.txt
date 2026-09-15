@@ -1,0 +1,148 @@
+dictyNews
+Electronic Edition
+Volume 41, number 21
+October 2, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+A Derivative of Differentiation-inducing Factor-3 Inhibits 
+PAK1 Activity and Breast Cancer Cell Proliferation
+
+Peter Oladimeji, Yuzuru Kubohara, Haruhisa Kikuchi, 
+Yoshiteru Oshima,  Courtney Rusch, Rebekah Skerl, & 
+Maria Diakonova #
+
+# Corresponding Author. The Department of Biological 
+Sciences, University of Toledo, Ohio, USA 43606-3390
+
+Accepted for publication in Int. J. Cancer Clin. Res.
+
+Differentiation-inducing factors 1-3 (DIFs 1-3), chlorinated 
+alkylphenones identified in the cellular slime mold 
+Dictyostelium discoideum, are considered anti-tumor agents 
+because they inhibit proliferation of a variety of mammalian 
+tumor cells in vitro. Although the anti-proliferative effects 
+of DIF-1 and DIF-3 are well-documented, the precise molecular 
+mechanisms underlying the actions of DIFs have not been fully 
+elucidated. In this study, we examined the effects of DIFs and 
+their derivatives on PAK1, a key serine-threonine kinase, which 
+is activated by multiple ligands and regulates cell proliferation. 
+We examined the effect of DIF derivatives on PAK1 kinase activity 
+in cells. We also examined the effect of DIF-3(+1) derivative on 
+PAK1 kinase activity in vitro, cyclin D1 promoter activity and 
+breast cancer cell proliferation. It was found that some 
+derivatives strongly inhibited PAK1 kinase activity in human 
+breast cancer MCF-7 cells stably overexpressing PAK1. Among 
+the derivatives, DIF-3(+1) was most potent, which directly 
+inhibited kinase activity of recombinant purified PAK1 in an 
+in vitro kinase assay. Furthermore, DIF-3(+1) strongly inhibited 
+both cyclin D1 promoter activity and proliferation of MCF-7 and 
+T47D breast cancer cells stably overexpressing PAK1 in response 
+to prolactin, estrogen, epidermal growth factor and heregulin. 
+In the present study we propose PAK1 as DIF-3(+1) target mediating 
+its anti-proliferative effect.
+
+Submitted by Yuzuru Kubohara [ykuboha@juntendo.ac.jp]  
+————————————————————————————————————
+
+Dynamic modulation of Dnmt2-dependent tRNA methylation by the 
+micronutrient queuine
+
+Martin Müller1, Mark Hartmann2, Isabelle Schuster3, Sebastian Bender2,
+Kathrin L. Thüring4, Mark Helm4, Jon R. Katze5, Wolfgang Nellen3, 
+Frank Lyko2 and Ann E. Ehrenhofer-Murray1*
+
+1 Institut für Biologie, Humboldt-Universität zu Berlin, 10115 Berlin, 
+Germany
+2 Division of Epigenetics, DKFZ-ZMBH Alliance, German Cancer Research 
+Center, 69120 Heidelberg, Germany
+3 Abteilung für Genetik, Universität Kassel, 34132 Kassel, Germany
+4 Institut für Pharmakologie und Biochemie, Johannes 
+Gutenberg-Universität Mainz, 55099 Mainz, Germany
+5 Department of Microbiology, Immunology and Biochemistry, University 
+of Tennessee Health Science Center, Memphis, TN 38163, USA
+
+accepted: Nucleic Acids Res.
+
+ABSTRACT
+Dnmt2 enzymes are cytosine-5 methyltransferases that methylate C38 of 
+several tRNAs. We report here that the activities of two Dnmt2 homologs, 
+Pmt1 from Schizosaccharomyces pombe and DnmA from Dictyostelium 
+discoideum, are strongly stimulated by prior queuosine (Q) modification 
+of the substrate tRNA. In vivo tRNA methylation levels were stimulated 
+by growth of cells in queuine-containing medium; in vitro Pmt1 activity 
+was enhanced on Q-containing RNA; and queuine-stimulated in vivo 
+methylation was abrogated by the absence of the enzyme that inserts 
+queuine into tRNA, eukaryotic tRNA-guanine transglycosylase. Global 
+analysis of tRNA methylation in S. pombe showed a striking selectivity 
+of Pmt1 for tRNAAsp methylation, which distinguishes Pmt1 from other 
+Dnmt2 homologs. The present analysis also revealed a novel Pmt1- and 
+Q-independent tRNA methylation site in S. pombe, C34 of tRNAPro. 
+Notably, queuine is a micronutrient that is scavenged by higher 
+eukaryotes from the diet and gut microflora. This work therefore 
+reveals an unanticipated route by which the environment can modulate 
+tRNA modification in an organism.
+
+Submitted by Wolfgang Nellen [nellen@uni-kassel.de]
+———————————————————————————————————————
+
+A resilient formin-derived cortical actin meshwork in the rear drives 
+actomyosin-based motility in 2D confinement
+
+Nagendran Ramalingam1,2,*, Christof Franke 3,*, Evelin Jaschinski 4, 
+Moritz Winterhoff 3, Yao Lu 5, Stefan Brühmann 3, Alexander Junemann 3, 
+Helena Meier 3, Angelika A. Noegel 6, Igor Weber 7, Hongxia Zhao 5, 
+Rudolf Merkel 4, Michael Schleicher 1, and Jan Faix 3
+
+* These authors contributed equally to this work
+
+1 Anatomy III/Cell Biology, BioMedCenter, Ludwig-Maximilians-University,
+Grosshaderner Str. 9, Planegg-Martinsried, Germany; 
+2 present address: Department of Neurology, Columbia University, 
+650 West 168th Street, New York, NY 10032, USA; 
+3 Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg-Str. 1, 30625 Hannover, Germany; 
+4 Instituteof Complex Systems, ICS-7: Biomechanics, Forschungszentrum 
+Jülich GmbH, 52425 Jülich, Germany; 
+5 Institute of Biotechnology, PO Box 56, University of Helsinki, Helsinki 
+00014, Finland; 
+6 Center for Biochemistry, Medical Faculty, University of Cologne, 
+50931 Köln, Germany; 
+7 Division of Molecular Biology, Ruder Boškovic; Institute, 
+Bijenicka 54, 10000 Zagreb, Croatia.
+
+Nature Communications, in press
+
+Cell migration is driven by the establishment of disparity between the 
+cortical properties ofthe softer front and the more rigid rear allowing 
+front extension and actomyosin-based rearcontraction. However, how the 
+cortical actin meshwork in the rear is generated remains elusive. Here 
+we identify the mDia1-like formin A (ForA) from Dictyostelium discoideum 
+that generates a subset of filaments as the basis of a resilient cortical 
+actin sheath in the rear. Mechanical resistance of this actin compartment 
+is accomplished by actin crosslinkers and IQGAP-related proteins, and is 
+mandatory to withstand the increased contractile forces in response to 
+mechanical stress by impeding unproductive blebbing in the rear, allowing
+efficient cell migration in two-dimensional-confined environments. 
+Consistently, ForA supresses the formation of lateral protrusions, 
+rapidly relocalizes to new prospective ends in repolarizing cells and is 
+required for cortical integrity. Finally, we show that ForA utilizes the
+phosphoinositide gradients in polarized cells for subcellular targeting.
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+==============================================================
+[End dictyNews, volume 41, number 21]

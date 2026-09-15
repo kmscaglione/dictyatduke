@@ -1,0 +1,182 @@
+Dicty News
+Electronic Edition
+Volume 14, number 13
+June 24, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+  Abstracts
+==============
+
+Isolation and characterization of casein kinase I from Dictyostelium 
+discoideum
+
+Gema Moreno-Bueno, Carmela Calés, M. Margarita Behrens§ and Margarita 
+Fernández-Renart*
+
+Biochem. J., in press.
+
+SUMMARY
+
+In the present study, the molecular cloning and characterization of a 
+49-kDa form of casein kinase I (CKI) from Dictyostelium discoideum is 
+reported. The predicted aminoacid sequence shares 70% identity with the 
+catalytic domain of the mammalian d and e isoforms, Drosophila CKIe and 
+Schizosaccharomyces pombe Hhp1, and 63% identity with Hrr25, a 57-kDa 
+form of yeast casein kinase involved in DNA repair. D. discoideum CKI 
+(DdCKI) was expressed in vegetative asynchronous cells as well as in 
+differentiated cells, as detected by Northern-blot analysis. The level 
+of DdCKI expression does not change during the cell cycle. Antibodies 
+raised against a truncated version of the protein recognize a 49-kDa 
+protein from D. discoideum extracts. Protein expression parallels the 
+pattern found for the RNA. The expression of D. Discoideum CKI in 
+Escherichia coli resulted in an active enzyme that autophosphorylates 
+and phosphorylates casein. Immunofluorescence assays show that D.discoideum 
+CKI is localized in the cytoplasm and nuclei of Dictyostelium cells. The 
+lack of disruptants of the CKI gene suggests that this protein is 
+essential for the vegetative growth of D. discoideum. Overxepression of 
+D.discoideum CKI results in cells with increased resistance to hydroxyurea, 
+suggesting a potential role for this kinase in DNA repair.
+
+----------------------------------------------------------------------------
+
+Involvement of the glucose-regulated protein 94 (Dd-GRP94) in starvation 
+response of Dictyostelium discoideum cells
+
+Tsuyoshi Morita*, Kenji Saitoh, Takashi Takagi and Yasuo Maeda
+
+Biological Institute, Graduate School of Science, Tohoku University, Aoba, 
+Sendai 980-8578, Japan
+
+Biochemical and Biophysical research communications,  in press.
+
+SUMMARY
+
+Upon deprivation of nutrients, Dictyostelium discoideum Ax-2 cells arrest 
+proliferation and initiate a metamorphosed developmental program including 
+induction of altered gene expressions which are necessary for 
+differentiation.  In Ax-2 cells, we found out a member of Hsp90 family 
+usually contained in the endoplasmic reticulum (ER), Dd-GRP94 (Dictyostelium 
+discoideum glucose-regulated protein 94). In general, GRP94 are induced 
+either by glucose-depletion or by depletion of Ca2+ in intracellular Ca2+ 
+stores. Unexpectedly, however, the expression of Dd-grp94 was greatly 
+reduced within 60 minutes of starvation. Dd-grp94-overexpressing cells 
+(GRP94OE cells) collected without forming distinct aggregation-streams, 
+and never formed normal fruiting bodies. Also, prespore differentiation as 
+well as maturation into spores and stalk cells were particularly impaired 
+in the GRP94OE cells. Thus Dd-GRP94 seems to be crucial in late 
+differentiation as well as in starvation response.
+
+
+----------------------------------------------------------------------------
+
+Pyridoxal kinase knockout of Dictyostelium complemented by the human 
+homologue 
+
+Kunde Guo and Peter C. Newell
+
+Department of Biochemistry,  University of Oxford,  South Parks Road, Oxford 
+OX1 3QU, UK
+
+FEMS Microbiol. Letts., in press.
+
+SUMMARY
+
+The gene (pykA) coding for pyridoxal kinase which converts pyridoxal (vitamin 
+B6) to pyridoxal phosphate, was isolated from Dictyostelium discoideum using 
+insertional mutagenesis. Pyridoxal phosphate is a co-factor for the amino acid 
+transamination reaction, which is particularly important for Dictyostelium as 
+it depends on protein degradation for survival during development.  PykA 
+knockout cells were agg-minus on SM plates and grew poorly in axenic medium 
+with low yield but growth was restored by the addition of pyridoxal phosphate. 
+Sequencing indicated a gene, with one intron, coding for a predicted protein 
+of 301 amino acids that was 42% identical in amino acid sequence to human 
+pyridoxal kinase. After expression of the wild type gene in E. coli, the 
+purified PykA protein product was shown to have pyridoxal kinase enzymatic 
+activity with a Km of 8.7 mM for pyridoxal.   Transformation of the 
+Dictyostelium knockout mutant with the human pyridoxal kinase gene gave 
+almost complete complementation of growth and development in a similar 
+manner to that seen using transformation with the wild type Dictyostelium 
+gene.  Phylogenetic analysis indicated that the Dictyostelium amino acid 
+sequence was closer to human pyridoxal kinase than to pyridoxal kinases of 
+lower eukaryotes.
+
+----------------------------------------------------------------------------
+
+CBP1 Associates with the Dictyostelium Cytoskeleton and Is Important for
+Normal Cell Aggregation under Certain Developmental Conditions 
+
+Akil Dharamsi, diane Tessarolo, Barrie Coukell and Jason Pun
+Department of Biology, York University, Toronto, Ontario, M3J 1P3, Canada
+
+Exp. Cell Res. (in press)
+	
+	In cells of the eukaryotic microorganism, Dictyostelium
+discoideum, at least eight small, four EF-hand Ca2+-binding proteins of
+unknown function are expressed at specific times during development.  One
+of these proteins, calcium-binding protein 1 (CBP1), first appears just
+prior to cell aggregation and then is present at relatively constant
+levels throughout development. To determine a role for CBP1 during
+development, the protein was used as bait in a yeast two-hybrid screen to
+reveal putative CBP1-interacting proteins. Two proteins identified in this
+screen were the actin-binding proteins, protovillin and EF-1a . Using an
+in vitro binding assay, both of these proteins were found to interact with
+CBP1 in the absence of Ca2+, but the interaction of CBP1 with EF-1a was
+increased substantially by Ca2+.  CBP1 was also shown by fluorescence
+microscopy and by binding assays to associate with the actin cytoskeleton
+of Dictyostelium cells during development, and these interactions were
+partially Ca2+ dependent.  cbpA-null cells grew normally, but under
+certain developmental conditions, cell aggregation was prolonged and
+irregular.  This defect in aggregation appeared to be related to a general
+reduction in cell motility rather than to a decrease in the ability of the
+cells to respond to the chemoattractant, cAMP.  Together, these results
+suggest that CBP1 might function to help regulate the reorganization of
+the Dictyostelium actin cytoskeleton during cell aggregation.
+ 
+----------------------------------------------------------------------------
+
+A novel role of differentiation-inducing factor-1 (DIF-1) in Dictyostelium
+development, assessed by the restoration of a developmental defect of the 
+mutant lacking MAP-kinase, ERK2
+
+Hidekazu Kuwayama,1 Masakazu Oyama,2 Yuzuru Kubohara,3 and Mineko Maeda1*
+
+1) Department of Biology, University of Osaka, Machikaneyama-cho 1-16, 
+Toyonaka, Osaka 560-0043, Japan. 2) Department of Life Science, Faculty 
+of Science, Himeji Institute of Technology, Shosha 2107, Himeji, Hyogo 
+671-2201, Japan. 3) Biosignal Research Center, Institute for Molecular 
+and Cellular Regulation (IMCR), Gunma University, Showa-machi 3-39-15, 
+Maebashi, 371-8512, Japan.
+
+Development, Growth & Differentiation (in press)
+
+Summary 
+
+   We have previously reported that the differentiating wild-type cells of 
+Dictyostelium discoideum secrete a diffusible factor(s) which is able to 
+rescue the developmental defect in the mutant lacking MAP-kinase ERK2 encoded 
+by the gene erkB. In this study, we demonstrate that DIF-1 (differentiation-
+inducing factor for stalk cells) can mimic the role of the factor(s), and we 
+also discuss the mechanism of the action of DIF-1 in the erkB-null mutant. 
+The mutant usually never form multicellular aggregates because of its defect 
+in cAMP signaling. In the presence of 100 nM DIF-1, however, the mutant cells 
+formed tiny slugs, which eventually developed into small fruiting bodies. By 
+contrast, DIF-1 never rescued the developmental arrest of other Dictyostelium 
+mutants lacking adenylyl cyclase A (ACA), cAMP receptors (cAR1 and cAR3), 
+heterotrimeric G protein, the cytosolic regulator of ACA (CRAC), or the 
+catalytic subunit of cAMP-dependent protein kinase (PKA-C).  Most importantly, 
+it was found that DIF-1 did not affect the cellular cAMP level but rather 
+elevated the transcriptional level of pka during the development of erkB-null 
+cells. These results suggest that DIF-1 may rescue the developmental defect 
+in erkB-null cells via the increase in PKA activity, thus giving the first 
+conclusive evidence that DIF-1 plays a crucial role in the early event of 
+Dictyostelium development as well as in prestalk- and stalk-cell induction.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 13]

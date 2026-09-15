@@ -1,0 +1,284 @@
+Dicty News
+Electronic Edition
+Volume 14, number 8
+April 8, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+======================
+  Position Available
+======================
+________________________________________________________________
+
+POSTDOCTORAL POSITION IN SIGNAL TRANSDUCTION
+
+LOOMIS LAB - CENTER FOR MOLECULAR GENETICS, UCSD, LA JOLLA, CA
+________________________________________________________________
+
+
+Funding is available to support a Postdoctoral Fellow interested in the
+molecular mechanisms that coordinate terminal differentition of
+Dictyostelium.
+
+Signaling by SDF-2 from prestalk cells activates the receptor histidine
+kinase, DhkA, that appears to be directly or indirectly coupled to a MAP
+kinase cascade involved in the inhibition of the cAMP phosphodiesterase,
+RegA. The resulting increase in PKA activity stimulates encapsulation of
+spores. Further studies are aimed at determining whether genes that encode
+Raf-like protein kinases function in this signal transduction pathway
+leading to the activation of ERK1 and/or ERK2. One of these genes, splA,
+has been previously shown to encode a tyrosine kinase essential for spore
+differentiation. We are using biochemical, molecular genetic and microarray
+techniques to elucidate the physiological networks.
+
+Applicants should indicate their qualifications and interest in the
+project, a CV, and contact information on individuals willing to support
+the appliation. The position will be open in the next few months and a
+start date should be indicated. Applications can be e-mailed to Bill Loomis
+[ wloomis@UCSD.edu] or sent to:
+
+Dr. William F. Loomis
+Center for Molecular Genetics
+Division of Cell and Developmental Biology
+2310 Bonner Hall
+UCSD
+La Jolla, CA 92093- 0368
+
+
+=============
+  Abstracts
+=============
+
+3D in vivo analysis of Dictyostelium mounds reveals directional sorting 
+of prestalk cells and defines a role for the myosin II regulatory light 
+chain in prestalk cell sorting and tip protrusion.
+
+Patricia A. Clow*, Tung-Ling L. Chen†, Rex L. Chisholm†, and James G. 
+McNally1 
+
+*Department of Biology, Washington University, Box 1229, St. Louis, 
+Missouri  63130 
+
+†Department of Cell and Molecular Biology, Northwestern University 
+Medical School , 303 E. Chicago Ave. Chicago, Illinois  60611 
+
+1Laboratory of Receptor Biology and Gene Expression, Division of Basic 
+Sciences , National Cancer Institute, Building 41, Room C615, 41 
+Library Drive MSC 5055, Bethesda, Maryland  20892-5055 
+
+Development, in press  
+
+ABSTRACT: 
+
+   During cell sorting in Dictyostelium, we observed that GFP-tagged 
+prestalk cells (ecmAO-expressing cells) moved independently and 
+directionally to form a cluster.  This is consistent with a chemotaxis 
+model for cell sorting (and not differential adhesion) in which a 
+long-range signal attracts many of the prestalk cells to the site of 
+cluster formation.  Surprisingly, the ecmAO prestalk cluster that we 
+observed was initially found at a random location within the mound of 
+this Ax3 strain, defining an intermediate sorting stage not widely 
+reported in Dictyostelium.  The cluster then moved en masse to the top 
+of the mound to produce the classic, apical pattern of ecmAO prestalk 
+cells.  Migration of the cluster was also directional, suggesting the 
+presence of another long-range guidance cue.  Once at the mound apex, 
+the cluster continued moving upward leading to protrusion of the mound's 
+tip.  To investigate the role of the cluster in tip protrusion, we 
+examined ecmAO prestalk-cell sorting in a myosin II regulatory light 
+chain (RLC) null in which tips fail to form.  In RLC-null mounds, 
+ecmAO prestalk cells formed an initial cluster that began to move to 
+the mound apex, but then arrested as a vertical column that extended 
+from the mound's apex to its base.  Mixing experiments with wild-type 
+cells demonstrated that the RLC-null ecmAO prestalk-cell defect is cell 
+autonomous.  These observations define a specific mechanism for myosin's 
+function in tip formation, namely a mechanical role in the upward 
+movement of the ecmAO prestalk cluster.  The wild type data demonstrate 
+that cell sorting can occur in two steps, suggesting that in this Ax3 
+strain spatially and temporally distinct cues may guide prestalk cells 
+first to an initial cluster and then later to the tip.
+
+----------------------------------------------------------------------------
+
+Dictyostelium: A model for regulated cell movement during morphogenesis
+
+Richard A. Firtel1 and Ruedi Meili
+
+In press: Current Opinion in Genetics and Developmental Biology
+
+Abstract
+
+  Dictyostelium has played an important role in unraveling the pathways 
+that control cell movement and chemotaxis. Recent studies have started 
+to elucidate the pathways that control cell sorting, morphogenesis, and 
+the establishment of spatial patterning in this system. In doing so, 
+they provide new insights into how cell movements within a multicellular 
+organism are regulated and the importance of pathways that are similar 
+to those that regulate chemotaxis of cells on two-dimensional surfaces. 
+
+----------------------------------------------------------------------------
+
+Title: Involvement of tail domains in regulation of Dictyostelium myosin II.
+
+Autors: Xiong Liu1, 2, Kohji Ito1, 3, Randall J. Lee4, and Taro Q. P. Uyeda1
+
+1. Biomolecular Research Group , National Institute for Advanced 
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan
+2. Present address: Laboratory of Cell Biology, National Heart, Lung, 
+and Blood Institute, NIH, Bethesda, MD 20892, USA
+3. Present address: Department of Biology, Faculty of Science, Chiba 
+University, Inage, Chiba 263-8522, Japan
+4. Department of Medicine and Cardiovascular Research Institute, University 
+of California at San Francisco, San Francisco, CA 94134, USA
+
+Biochem. Biophys. Res. Comm., in press
+
+Abstract:
+
+The actin-dependent ATPase activity of Dictyostelium myosin II filaments 
+is regulated by phosphorylation of the regulatory light chain. Four deletion 
+mutant myosins which lack different parts of subfragment 2 (S2) showed 
+phosphorylation-independent elevations in their activities. 
+Phosphorylation-independent elevation in the activity was also achieved by 
+a double point mutation to replace conserved Glu932 and Glu933 in S2 with 
+Lys. These results suggested that inhibitory interactions involving the head 
+and S2 are required for efficient regulation. Regulation of wild type myosin 
+was not affected by copolymerization with a S2 deletion mutant myosin in the 
+same filaments. Furthermore, the activity linearly correlated with the 
+fraction of phosphorylated molecules in wild type filaments. These latter 
+two results suggest that the inhibitory head-tail interactions are primarily 
+intramolecular.
+
+----------------------------------------------------------------------------
+
+Protein kinases from Dictyostelium discoideum with similarity to LIM-Kinases
+
+Wetterauer, B.W.
+
+Zoologisches Institut der LMU, Luisenstraße 14, 80333 München
+email: wetterau@zi.biologie.uni-muenchen.de
+
+Abstract:
+
+We cloned a protein kinase (DdKinY) from Dictyostelium discoideum  by low
+stringency hybridization using the catalytic domain from DdKinX (Wetterauer
+et al., 1995) as a probe. Both kinases have low sequence similarity to
+other protein kinases in the databases. However, phylogenetic analysis
+showed that both kinases cluster with vertebrate LIM kinases due to
+homology within the catalytic domain.
+
+----------------------------------------------------------------------------
+
+A protein containing a serine-rich domain with vesicle-fusing properties
+mediates cell-cycle dependent cytosolic pH regulation
+
+Derrick T. Brazill1,2,3, David R. Caprette2, Heather A. Myler1,2, R. Diane
+Hatton1, Robin R. Ammann1, David F. Lindsey1,4, Debra A. Brock1, and
+Richard H. Gomer1,2
+
+1Howard Hughes Medical Institute and 2Department of Biochemistry and Cell
+Biology, MS-140, Rice University, 6100 S. Main Street, Houston, TX
+77005-1892
+3 Current address:  Department of Biology, Hunter College, 695 Park Avenue,
+New York, NY 10021
+4 Current address:  Department of Biological Sciences, Walla Walla College,
+College Place, WA 99324
+
+J. Biol. Chem., in press
+
+ Summary
+	Initial differentiation in Dictyostelium involves both asymmetric
+cell division and a cell cycle-dependent mechanism.  We previously
+identified a gene, rtoA, which when disrupted randomizes the cell
+cycle-dependent mechanism without affecting either the underlying cell
+cycle or asymmetric differentiation. We find that in wild-type cells, RtoA
+levels very during the cell cycle.  Cytosolic pH, which normally varies
+with the cell cycle, is randomized in rtoA cells.  The middle 60% of the
+RtoA protein is 10 tandem repeats of an 11 peptide-long serine-rich motif,
+which we find has a random coil structure.  This domain catalyzes the
+fusion of phospholipid vesicles in vitro.  Conversely, rtoA cells have a
+defect in the fusion of endocytic vesicles.  They also have a decreased
+exocytosis rate, a decreased pH of endocytic/ exocytic vesicles, and an
+increased average cytosolic pH.  Our data indicate that the serine-rich
+domain of RtoA can mediate membrane fusion, and that RtoA can increase the
+rate of vesicle fusion during processing of endoctyic vesicles.  We
+hypothesize that RtoA modulates initial cell type choice by linking
+vegetative cell physiology to the cell cycle.
+
+----------------------------------------------------------------------------
+
+Neochlamydia hartmannellae gen. nov., sp. nov. (Parachlamydiaceae), an 
+endoparasite of the amoeba Hartmannella vermiformis
+
+Matthias Horn1, Michael Wagner1*, Karl-Dieter Müller3, Ernst N. Schmid3, 
+Thomas R. Fritsche2, Karl-Heinz Schleifer1 and Rolf Michel3
+
+1 Lehrstuhl für Mikrobiologie, Technische Universität München, D-83530 
+Freising, Germany.  2 Dept. of Laboratory Medicine, University of 
+Washington, Seattle 98195.  3 Central Institute of the Federal Armed 
+Forces Medical Service, D-56065 Koblenz, Germany
+
+Microbiology, in press
+
+Summary
+
+Free living amoebae are increasingly being recognised to serve as vehicles 
+of dispersal for various bacterial human pathogens and as hosts for a 
+variety of obligate bacterial endocytobionts. Several Chlamydia-like 
+Acanthamoeba endocytobionts constituting the newly proposed family 
+Parachlamydiaceae, are of special interest as potential human pathogens. 
+In this study coccoid bacterial endocytobionts of a Hartmannella 
+vermiformis isolate were analysed. Infection of Hartmannella vermiformis 
+with these bacteria resulted in prevention of cyst formation and 
+subsequent host cell lysis. Transfection experiments demonstrated 
+that the parasites were not capable to propagate within other closely 
+related free living amoebae but were able to infect the distantly-related 
+amoebal species Dictyostelium discoideum. Electron microscopy of the 
+parasites revealed typical morphological characteristics of the 
+Chlamydiales, including the existence of a Chlamydia-like life-cycle, 
+but indicated that these endocytobionts in contrast to Chlamydia species 
+do not reside within a vacuole. Comparative 16S rRNA sequence analysis 
+showed that the endocytobiont of Hartmannella vermiformis, classified 
+as Neochlamydia hartmannellae, is affiliated to the family 
+Parachlamydiaceae. Confocal laser scanning microscopy in combination 
+with fluorescence in situ hybridization using rRNA-targeted 
+oligonucleotide probes confirmed the intracellular localisation of 
+the parasites and demonstrated the absence of other bacterial species 
+within the Hartmannella host. These findings extend our knowledge on 
+phylogenetic diversity of the Parachlamydiaceae and demonstrate for 
+the first time that these endocytobionts can naturally develop within 
+amoebae of the genus Hartmannella. 
+
+----------------------------------------------------------------------------
+A temperature sensitive adenylyl cyclase mutant of Dictyostelium 
+
+Hitesh Patel, Kunde Guo, Carole Parent, Julian Gross, Peter N. Devreotes 
+and Cornelis J. Weijer 
+
+EMBO J., in press.
+
+Abstract
+
+   Dictyostelium development starts with the chemotactic aggregation 
+of up to 106 amoebae in response to propagating cAMP waves. cAMP is produced 
+by the aggregation stage adenylyl cyclase (ACA) and cells lacking ACA (aca 
+null) cannot aggregate. Thermo- sensitive mutants of ACA were selected from 
+a population of aca null cells transformed with an library of ACA genes a 
+major segment of which had been amplified by errorprone PCR. One mutant 
+(tsaca2) that can complement the aggregation null phenotype of aca null 
+cells at 22°C but not at 28°C was characterised in detail. The basal 
+catalytic activity of the enzyme in this mutant was rapidly and reversibly 
+inactivated at 28°C. Using this mutant strain we show that cell movement in 
+aggregates and mounds is organised by propagating waves of cAMP. Synergy 
+experiments between wild type and tsaca2 cells, shifted at various stages 
+of development to the restrictive temperature, showed that ACA plays an 
+important role in the control of cell sorting and tip formation.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 8]
+
+  

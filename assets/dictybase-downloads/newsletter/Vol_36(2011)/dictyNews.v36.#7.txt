@@ -1,0 +1,192 @@
+dictyNews
+Electronic Edition
+Volume 36, number 7
+March 4, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Comparative genomics of the social amoebae Dictyostelium discoideum 
+and Dictyostelium purpureum 
+
+Richard Sucgang1*, Alan Kuo2*, Xiangjun Tian3*, William Salerno1*, Anup Parikh4, 
+Christa L. Feasley5, Eileen Dalin2, Hank Tu2, Eryong Huang4, Kerrie Barry2, 
+Erika Lindquist2, Harris Shapiro2, David Bruce2, Jeremy Schmutz2, Asaf Salamov2, 
+Petra Fey6, Pascale Gaudet6, Christophe Anjard7, M. Madan Babu8, Siddhartha Basu6, 
+Yulia Bushmanova6, Hanke van der Wel5, Mariko Katoh-Kurasawa4, Christopher Dinh1, 
+Pedro M. Coutinho9, Tamao Saito10, Marek Elias11, Pauline Schaap12, Robert R. Kay8, 
+Bernard Henrissat9, Ludwig Eichinger13, Francisco Rivero14, Nicholas H. Putnam3, 
+Christopher M. West5, William F. Loomis7, Rex L. Chisholm6, Gad Shaulsky3,4, 
+Joan E. Strassmann3, David C. Queller3, Adam Kuspa1,3,4,†, and Igor V. Grigoriev2
+
+1Verna and Marrs McLean Department of Biochemistry and Molecular Biology, Baylor 
+College of Medicine, Houston, TX 77030 
+2U.S. Department of Energy Joint Genome Institute, Walnut Creek CA 
+3Department of Ecology and Evolutionary Biology, Rice University, Houston, TX 77005; 
+4Department of Molecular and Human Genetics, Baylor College of Medicine, Houston, 
+TX 77030 
+5Department of Biochemistry & Molecular Biology, Oklahoma Center for Medical 
+Glycobiology, University of Oklahoma Health Sciences Center, Oklahoma City, OK 73104
+6dictyBase, Center for Genetic Medicine, Northwestern University, 750 N Lake Shore 
+Drive, Chicago, Illinois 60611
+7Section of Cell and Developmental Biology, Division of Biology, University of California, 
+San Diego, La Jolla, California 92093
+8Laboratory of Molecular Biology, MRC Centre, Cambridge CB2 2QH, UK
+9Architecture et Fonction des Macromolécules Biologiques, UMR6098, CNRS, 
+Universities of Aix-Marseille I & II, 13288 Marseille, France
+10Department of Materials and Life Sciences, Sophia University 7-1 Kioi-Cho, 
+Chiyoda-Ku, Tokyo, Japan 102-8554
+11Departments of Botany and Parasitology, Faculty of Science, Charles University 
+in Prague, Prague, Czech Republic
+12College of Life Sciences, University of Dundee, DD15EH Dundee, UK
+13Center for Molecular Medicine Cologne, University of Cologne, Joseph-Stelzmann-Str. 
+52, 50931 Cologne, Germany
+14Centre for Biomedical Research, The Hull York Medical School and Department of 
+Biological Sciences, University of Hull, Hull HU6 7RX, UK.
+
+
+Genome Biology, in press
+
+Background:
+The social amoebae (Dictyostelia) are a diverse group of Amoebozoa that achieve 
+multicellularity by aggregation and undergo morphogenesis into fruiting bodies with 
+terminally differentiated spores and stalk cells. There are four groups of dictyostelids, 
+with the most derived being a group that contains the model species Dictyostelium 
+discoideum. 
+Results: 
+We have produced a draft genome sequence of another group Dictyostelid, Dictyostelium 
+purpureum, and compare it to the D. discoideum genome. The assembly (8.41x coverage) 
+comprises 799 scaffolds totaling 33.0 Mb, comparable to the D. discoideum genome size. 
+Sequence comparisons suggest that these two Dictyostelids shared a common ancestor 
+approximately 400 million years ago. In spite of this divergence, most orthologs reside in 
+small clusters of conserved synteny. Comparative analyses revealed a core set of 
+orthologous genes that illuminate Dictyostelid physiology, as well as differences in gene 
+family content. Interesting patterns of gene conservation and divergence are also evident 
+suggesting function differences; some protein families, such as the histidine kinases, 
+have undergone little functional change, whereas others, such as the polyketide synthases, 
+have undergone extensive diversification. The abundant amino acid homopolymers 
+encoded in both genomes are generally not found in homologous positions within proteins, 
+so they are unlikely to derive from ancestral DNA triplet repeats. Genes involved in the 
+social stage evolved more rapidly than others, consistent with either relaxed selection 
+or accelerated evolution due to social conflict.
+Conclusion:
+The findings from this new genome sequence and comparative analysis shed light on 
+the biology and evolution of the Dictyostelia.
+
+
+Submitted by Adam Kuspa [akuspa@bcm.edu]
+--------------------------------------------------------------------------------
+
+
+Deficiency of huntingtin has pleiotropic effects in the social amoeba 
+Dictyostelium discoideum
+
+Michael A. Myre1, Amanda L. Lumsden1, Morgan N. Thompson1, 
+Wilma Wasco2, Marcy E. MacDonald1 and James F. Gusella1
+
+1Molecular Neurogenetics Unit, Center for Human Genetic Research, 
+Massachusetts General Hospital, Boston MA 02114. 
+
+2Genetics and Aging Research Unit, MassGeneral Institute for Neurodegenerative 
+Disease, Massachusetts General Hospital, Charlestown MA 02129. 
+
+
+PLoS Genetics, in press
+
+Huntingtin is a large HEAT repeat protein first identified in humans, where a polyglutamine 
+tract expansion near the amino terminus causes a gain-of-function mechanism that leads 
+to selective neuronal loss in Huntington’s disease (HD). Genetic evidence in humans and 
+knock-in mouse models suggests that this gain-of-function involves an increase or 
+deregulation of some aspect of huntingtin’s normal function(s), which remains poorly 
+understood. As huntingtin shows evolutionary conservation, a powerful approach to 
+discovering its normal biochemical role(s) is to study the effects caused by its deficiency 
+in a model organism with a short life-cycle that comprises both cellular and multicellular 
+developmental stages. To facilitate studies aimed at detailed knowledge of huntingtin’s 
+normal function(s), we generated a null mutant of hd, the HD ortholog in Dictyostelium 
+discoideum. Dictyostelium cells lacking endogenous huntingtin were viable but during 
+development did not exhibit the typical polarized morphology of Dictyostelium cells, 
+streamed poorly to form aggregates by accretion rather than chemotaxis, showed 
+disorganized F-actin staining, exhibited extreme sensitivity to hypoosmotic stress, 
+and failed to form EDTA-resistant cell-cell contacts. Surprisingly, chemotactic 
+streaming could be rescued in the presence of the bivalent cations Ca2+ or Mg2+ 
+but not pulses of cAMP. Although hd- cells completed development, it was delayed 
+and proceeded asynchronously, producing small fruiting bodies with round, defective 
+spores that germinated spontaneously within a glassy sorus. When developed as 
+chimeras with wild-type cells, hd- cells failed to populate the pre-spore region of the 
+slug. In Dictyostelium, huntingtin deficiency is compatible with survival of the organism 
+but renders cells sensitive to low osmolarity which produces pleiotropic cell autonomous 
+defects that affect cAMP signaling, and as a consequence development. Thus, 
+Dictyostelium provides a novel haploid organism model for genetic, cell biological 
+and biochemical studies to delineate the functions of the HD protein.
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+--------------------------------------------------------------------------------
+
+A Dictyostelium SH2 adaptor protein required for correct DIF-1 signaling and 
+pattern formation
+
+
+Christopher Sugden1, Susan Ross1, Sarah J. Annesley4, Christian Cole1, 
+Gareth Bloomfield3, Alasdair Ivens2 Jason Skelton2, Paul R. Fisher4, 
+Geoffrey Barton1 and Jeffrey G. Williams1*
+
+1School of Life Sciences, University of Dundee, Dow St., Dundee, DD1 5EH UK
+2Wellcome Trust Sanger Institute, Hinxton, CB10 1SA UK
+3MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH UK
+4Department of Microbiology, La Trobe University, Bundoora, Victoria 3086, Australia
+* Corresponding Author
+j.g.williams@dundee.ac.uk
+tel 44 1382 385220, 
+fax 44-1382 34421
+
+
+Dev. Biol., in press
+
+Dictyostelium is the only non-metazoan with functionally analysed SH2 domains
+and studying them can give insights into their evolution and wider potential. LrrB 
+has a novel domain configuration with leucine-rich repeat, 14-3-3 and SH2 
+protein-protein interaction modules. It is required for the correct expression of 
+several specific genes in early development and here we characterize its role in 
+later, multicellular development. During development in the light, slug formation 
+in LrrB null (lrrB-) mutants is delayed relative to the parental strain, and the slugs 
+are highly defective in phototaxis and thermotaxis. In the dark the mutant arrests 
+development as an elongated mound, in a hitherto unreported process we term 
+dark stalling. The developmental and phototaxis defects are cell autonomous and 
+marker analysis shows that the pstO prestalk sub-region of the slug is aberrant in 
+the lrrB- mutant. Expression profiling, by parallel micro-array and deep RNA 
+sequence analyses, reveals many other alterations in prestalk-specific gene 
+expression in lrrB- slugs, including reduced expression of the ecmB gene and 
+elevated expression of ampA. During culmination ampA is ectopically expressed 
+in the stalk, there is no expression of ampA and ecmB in the lower cup and the 
+mutant fruiting bodies lack a basal disc. The basal disc cup derives from the pstB 
+cells and this population is greatly reduced in the lrrB- mutant. This anatomical 
+feature is a hallmark of mutants aberrant in signalling by DIF-1, the polyketide 
+that induces prestalk and stalk cell differentiation. In a DIF-1 induction assay 
+the lrrB- mutant is profoundly defective in ecmB activation but only marginally 
+defective in ecmA induction. Thus the mutation partially uncouples these two 
+inductive events. In early development LrrB interacts physically and functionally 
+with CldA, another SH2 domain containing protein. However, the CldA null 
+mutant does not phenocopy the lrrB- in its aberrant multicellular development 
+or phototaxis defect, implying that the early and late functions of LrrB are 
+effected in different ways. These observations, coupled with its domain 
+structure, suggest that LrrB is an SH2 adaptor protein active in diverse 
+developmental signaling pathways. 
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 36, number 7]

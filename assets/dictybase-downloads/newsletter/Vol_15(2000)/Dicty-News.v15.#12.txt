@@ -1,0 +1,206 @@
+Dicty News
+Electronic Edition
+Volume 15, number 12
+December 30, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+==========================================
+  A HAPPY AND PRODUCTIVE NEW YEAR TO ALL
+==========================================
+
+==============
+  Abstracts
+==============
+
+Interaction of gdt1 and protein kinase A (PKA) in the 
+growth-differentiation-transition in Dictyostelium.
+
+Changjiang Zeng1, 3, Christophe Anjard1, 4, Gerd Primpke2, Birgit 
+Wetterauer2 , Sandra Wille1 and Wolfgang Nellen1*
+
+*corresponding author
+e-mail: nellen@hrz.uni-kassel.de
+phone: ++49 (0561) 804 4805
+fax: ++49 (0561) 804 4800
+accepted «Differentiation»
+
+Abstract
+
+The gdt1 gene is a negative regulator of the 
+growth-differentiation-transition (GDT) in Dictyostelium. gdt1- cells 
+express the GDT marker discoidin earlier and at higher levels and 
+prematurely enter the differentiation pathway. Protein kinase A is a 
+positive regulator of the GDT and is required for multicellular 
+development. Disruption of the PKA catalytic subunit or overexpression of a 
+constitutively active mutant of the regulatory subunit results in cells 
+which do not form multicellular aggregates and which show strongly reduced 
+levels of discoidin. We have created PKA-/gdt1- double mutants and show 
+that these display high levels of discoidin expression but no aggregation, 
+suggesting that gdt1 may be a downstream target of PKA in a branched 
+signalling cascade initiating differentiation. Data obtained with the PKA 
+inhibitor H89 support these result: in wild type cells H89 inhibits 
+discoidin expression while in gdt1- mutants there is no obvious effect. 
+However, since PKA-/gdt1- cells display less discoidin expression than the 
+single gdt1 mutant, we propose that PKA and gdt1 are in two parallel 
+interacting pathways.
+To get insight into the mechanism how PKA may block gdt1, we have tested 
+two putative PKA phosphorylation sites in the protein and find that one of 
+them is efficiently phosphorylated by PKA in vitro. A model for the 
+interplay between PKA and gdt1 during the growth-differentiation-transition 
+is discussed.
+
+
+-----------------------------------------------------------------------------
+
+The Histidine Kinases of Dictyostelium.
+
+Christophe Anjard and William F. Loomis
+
+Center for Molecular Genetics, Division of Biology,
+University of California San Diego, La Jolla, CA 92093
+
+Chapter in "Histidine Kinases in Signal Transduction"
+edited by R. Dutta and M. Inouye.  Acad. Press, San Diego
+(in press).
+
+Summary
+
+At least 15 members of the histidine kinase family can be recognized in the
+genomic sequences of Dictyostelium discoideum. The predicted products of
+each of these genes have well conserved catalytic and receiver domains
+although two do not appear to be active kinases since they lack the
+histidine in the H motif that is autophosphorylated and one, DokA, appears
+to function predominantly as a phosphatase. One member of the family, DhkD,
+is a double histidine kinase with two catalytic and two receiver domains.
+Alignment of this large family with the Sln1 histidine kinase of yeast
+extends the sequence profile that characterizes eukaryotic histidine
+kinases. Biochemical studies of the first member of this family to be
+discovered, DhkA, have shown that it is a transmembrane receptor kinase
+that autophosphorylates and relays the phosphate to the receiver aspartate
+when dimerized. Genetic studies on dhkA, dhkB, dhkC and dokA have indicated
+their roles in cellular and developmental processes. It is likely that DhkC
+relays phosphate to the N-terminal receiver domain of the cAMP
+phosphodiesterase RegA through the H2 domain of RdeA. Phosphorylation of
+the receiver domain of RegA activates it. DhkA and DhkB appear to inhibit
+RegA activity by indirectly activating the MAP kinase ERK2. When the
+carboxy terminal region of RegA is phosphorylated, the phosphodiesterase
+activity is inhibited. Histidine kinases may also activate the late
+adenylyl kinase, ACR. Thus these histidine kinases seem to be focused on
+regulating cAMP to modulate the activity of the cAMP dependent protein
+kinase, PKA.
+
+-----------------------------------------------------------------------------
+
+Identification of Clathrin-Adaptor Medium Chains in Dictyostelium
+discoideum: Differential Expression during Development
+
+Benoît de Chassey, Annick Dubois, Yaya Lefkir and François Letourneur*
+
+Institut de Biologie et Chimie des Protéines, UMR5086 - CNRS / Université
+Lyon I- France
+
+*corresponding author
+Institut de Biologie et Chimie des Protéines, UMR5086 - CNRS / Université
+Lyon I
+7, Passage du Vercors 69367 LYON cedex 07 - France
+phone: 0033 4 72 72 26 81     Fax: 0033 4 72 72 26 01    e.mail:
+f.letourneur@ibcp.fr
+
+
+"Gene" in Press
+
+ABSTRACT
+
+Clathrin-adaptor complexes (APs) are vesicle coat components that
+participate in cargo selectivity and transport vesicle formation. Here we
+cloned and characterized apm1, apm3 and apm4 cDNAs encoding AP medium
+chains (µ) in D. discoideum. Amino acid comparison suggested that predicted
+proteins were homologous to known µ1, µ3 and µ4 subunits of mammalian APs
+as they shared 69, 51, and 26% identity with mouse µ1A, human µ3A and human
+µ4 respectively. In all chains, amino acids residues predicted to interact
+with tyrosine based sorting signals were conserved. Southern blot analysis
+indicated only one copy of each gene in D. discoideum genome. Expression of
+apm1 and apm3 mRNAs stayed relatively constant during vegetative growth and
+throughout development. In contrast, apm4 was poorly expressed in amoebae
+but became well detectable by RT-PCR upon cell differentiation. This
+regulated expression of coat proteins enlightens the importance of
+intracellular membrane transport vesicles during development in D.
+discoideum and strengthens this attractive model organism for studying the
+function of coat complexes in vivo.
+
+-----------------------------------------------------------------------------
+
+Real-time visualization of intracellular hydrodynamics in single living
+cells
+
+Eric O. Potma, Wim P. de Boeij, Peter J.M. van Haastert* and Douwe A. 
+Wiersma
+
+Ultrafast Laser and Spectroscopy Laboratory, Materials Science Centre, 
+University of Groningen, Nijenborgh 4, 9747 AG Groningen, the Netherlands.
+*Groningen Biomolecular Sciences and Biotechnology Institute, University of 
+Groningen, Nijenborgh 4, 9747 AG Groningen, the Netherlands. 
+
+PNAS USA in press
+
+Abstract
+
+   Intracellular water concentrations in single living cells were 
+visualized by nonlinear coherent anti-Stokes Raman scattering 
+(CARS) microscopy. In combination with isotopic exchange 
+measurements CARS microscopy allowed the real-time 
+observation of transient intracellular hydrodynamics at a high 
+spatial resolution. Studies of the hydrodynamics in the 
+microorganism Dictyostelium discoideum indicated the 
+presence of a microscopic region near the plasma membrane 
+where the mobility of water molecules is severely restricted. 
+Modeling the transient hydrodynamics eventuated in the 
+determination of cell-specific cytosolic diffusion and plasma 
+membrane permeability constants. Our experiments demonstrate 
+that CARS microscopy offers an invaluable tool for probing 
+single cell water dynamics.
+
+-----------------------------------------------------------------------------
+
+Tortoise, a novel mitochondrial protein, is required for directional 
+responses of Dictyostelium in chemotactic gradients
+
+
+Saskia van Es1, Deborah Wessels2, David R. Soll2, Jane Borleis1 and 
+Peter N. Devreotes*1
+
+J. Cell.Biol. in press
+
+
+Abstract
+
+We have identified a novel gene, Tortoise (TorA) that is required for the 
+efficient chemotaxis of D. discoideum cells. Cells lacking TorA sense 
+chemoattractant gradients as indicated by the presence of periodic waves 
+of cell shape changes and the localized translocation of cytosolic PH-domains 
+to the membrane. However, they are unable to migrate directionally up spatial 
+gradients of cAMP. Cells lacking Mek1 display a similar phenotype. 
+Overexpression of Mek1 in torA- partially restores chemotaxis, while 
+overexpression of TorA in mek1- does not rescue the chemotactic phenotype.  
+Regardless of the genetic background, TorA overexpressing cells stop growing 
+when separated from a substrate. Surprisingly, TorA-GFP is clustered near one 
+end of mitochondria. Deletion analysis of the TorA protein reveals distinct 
+regions for chemotactic function, mitochondrial localization, and the 
+formation of clusters. TorA is associated with a round structure within 
+the mitochondrion that shows enhanced staining with the mitochondrial dye 
+Mitotracker. Cells overexpressing TorA contain many more of these structures 
+than do wild-type cells. These TorA containing structures resist extraction 
+with Triton X-100, which dissolves the mitochondria. The characterization of 
+TorA demonstrates an unexpected link between mitochondrial function, the 
+chemotactic response, and the capacity to grow in suspension.
+
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 15, number 12]

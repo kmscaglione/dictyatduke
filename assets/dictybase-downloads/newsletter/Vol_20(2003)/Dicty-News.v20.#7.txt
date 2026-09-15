@@ -1,0 +1,122 @@
+Dicty NewsElectronic EditionVolume 20, number 7April 11, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at DictyBase--http://dictybase.org.=============  Abstracts=============Crawling into a new era - the Dictyostelium genome project
+
+Ludwig Eichinger and Angelika A. NoegelCenter for Biochemistry, Medical Faculty, University of Cologne,Joseph-Stelzmann-Str. 52, 50931 Kšln, FRGEMBO J., in pressThe social amoeba Dictyostelium discoideum is a well-established modelorganism for the study of basic aspects of differentiation, signaltransduction, phagocytosis, cytokinesis and cell motility. Its genome iscurrently being sequenced by an international consortium using a wholechromosome shotgun (WCS) approach. The pacemaker of the D. discoideumgenome project has been chromosome 2, the largest chromosome, which at 8 Mbrepresents approximately 25% of the genome and whose sequence and analysishas recently been published. Chromosomes 1 and 6 are close to beingfinished. To accelerate completion of the genome sequence the next step inthe project will be a whole genome assembly followed by the analysis of thecomplete gene content. The completed genome sequence and its analysisprovide the basis for genome-wide functional studies. It will positionDictyostelium at the same level as other model organisms and furtherenhance its experimental attractiveness.Submitted by :Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+
+---------------------------------------------------------------------------------------------TagA, a putative serine protease/ABC transporter of Dictyostelium that is required for cell 
+fate determination at the onset of developmentJ. Randall Good1,3,4,5, Matthew Cabral2,4, Sujata Sharma2, Jun Yang1, Nancy Van Driessche2,3, 
+Chad A. Shaw2, Gad Shaulsky2,3 and Adam Kuspa1,2,3,6 1Department of Biochemistry and Molecular 
+Biology, 2Department of Molecular and Human Genetics and the 3Program in Developmental Biology, 
+Baylor College of Medicine, Houston, Texas, USA, 77030, USADevelopment, in pressSummaryThe tag genes of Dictyostelium are predicted to encode multi-domain proteins consisting of 
+serine protease and ATP-binding cassette transporter domains. We have identified a novel tag 
+gene, tagA, which is involved in cell type differentiation.  TagA mutant aggregates elaborate 
+multiple prestalk cell regions during development and produce spores asynchronously and with 
+low viability. The tagA mRNA reaches its highest level by two hours of development and 
+persists at lower levels, whereas TagA protein accumulates between two and ten hours of 
+development and decreases thereafter.  Wild type cells express tagA in prespore cells and 
+mature spores, defining tagA expression as prespore-specific.  However, tagA mutant cells 
+that activate the tagA promoter do not sporulate, but instead form part of the outer basal 
+disc and lower cup of the fruiting body. These results suggest that TagA is required for the 
+specification of an initial population of prespore cells in which tagA is expressed.  TagA 
+mutants produce about twice as many prestalk cells as the wild type as judged by the expression 
+of a prestalk reporter construct. Furthermore, when mixed with wild-type cells tagA mutant 
+cells become overrepresented in the prestalk cell population, suggesting that this phenotype is 
+cell-autonomous.  Expression profiling uncovered a delay in the transcriptional program between 
+2 and 6 hours, coincident with initial TagA expression, revealing a function for TagA prior to 
+the detectable overproduction of prestalk cells. TagA also appears to play a general role in 
+cell fate determination since tagA mutants express the spore coat protein gene, cotB, within 
+vacuolated cells that form part of the stalk and they express the prestalk/stalk-specific gene 
+ecmB within cells that become spores. The expression of TagA at two hours of development, the 
+observed coincident delay in the transcriptional program and the subsequent mis-expression of 
+cell-type specific genes provide evidence for cell fate determination beginning in some cells 
+much earlier than previously believed.Submitted by: Adam Kuspa [akuspa@bcm.tmc.edu]
+
+---------------------------------------------------------------------------------------------IfkA, a presumptive eIF2alpha kinase of Dictyostelium, is required for proper timing of 
+aggregation and regulation of mound size.Rui Fang, Yanhua Xiong, and Charles K. SingletonDepartment of Biological Sciences, Vanderbilt University, VU Station B 351634, Nashville 
+TN 37235-1634Accepted:  BMC-Developmental BiologyABSTRACTBackground.  The transition from growth to development in Dictyostelium is initiated by amino 
+acid starvation of growing amobae. In other eukaryotes, a key sensor of amino acid starvation 
+and mediator of the resulting physiological responses is the GCN2 protein, an eIF2alpha kinase. 
+GCN2 downregulates the initiation of translation of bulk mRNA and enhances translation of 
+specific mRNAs by phosphorylating the translation initiation factor eIF2alpha. Two eIF2alpha 
+kinases were identified in Dictyostelium and studied herein.Results.  Neither of the eIF2alpha kinases appeared to be involved in sensing amino acid 
+starvation to initiate development. However, one of the kinases, IfkA, was shown to 
+phosphorylate eIF2alpha from 1 to 7 hours after the onset of development, resulting in a shift 
+from polysomes to free ribosomes for bulk mRNA. In the absence of the eIF2alpha phosphorylation, 
+ifkA null cells aggregated earlier than normal and formed mounds and ultimately fruiting bodies 
+that were larger than normal. The early aggregation phenotype in ifkA null cells reflected an 
+apparent, earlier than normal establishment of the cAMP pulsing system. The large mound 
+phenotype resulted from a reduced extracellular level of Countin, a component of the counting 
+factor that regulates mound size. In wild type cells, phosphorylation of eIF2alpha by IfkA 
+resulted in a specific stabilization and enhanced translational efficiency of countin mRNA even 
+though reduced translation resulted for bulk mRNA.Conclusions.  IfkA is an eIF2alpha kinase of Dictyostelium that normally phosphorylates 
+eIF2alpha from 1 to 7 hours after the onset of development, or during the preaggregation phase. 
+This results in an overall reduction in the initiation of protein synthesis during this time 
+frame and a concomitant reduction in the number of ribosomes associated with most mRNAs. For 
+some mRNAs, however, initiation of protein synthesis is enhanced or stabilized under the 
+conditions of increased eIF2alpha phosphorylation. This includes countin mRNA.Submitted by: charles singleton [charles.k.singleton@vanderbilt.edu]
+
+---------------------------------------------------------------------------------------------Receptor mediated regulation of PI3Ks confines PI(3,4,5)P3 to the leading edge of chemotaxing 
+cells.Huang, Y.E., Iijima, M., Parent, C.A., Funamoto, S., Firtel, R.A., and Devreotes, P.N.Mol. Bio. Cell, in press.Recent studies have demonstrated that PH domains specific for PI(3,4,5)P3 accumulate at the 
+leading edge of a number of migrating cells and that PI3Ks and PTEN associate with the 
+membrane at the front and back, respectively, of chemotaxing D. discoideum cells.  However, 
+the dependence of chemoattractant induced changes in PI(3,4,5)P3 on PI3K and PTEN activities 
+have not been defined.  We find that bulk PI(3,4,5)P3 levels increase transiently upon 
+chemoattractant stimulation, and the changes are greater and more prolonged in pten- cells.  
+PI3K activation increases within 5 seconds of chemoattractant addition and then declines to 
+a low level of activity identically in wild type and pten- cells.  Reconstitution of the PI3K 
+activation profile can be achieved by mixing membranes from stimulated pi3k1-/pi3k2- cells 
+with cytosolic PI3Ks from unstimulated cells.  These studies show that significant control of 
+chemotaxis occurs upstream of the PI3Ks and that regulation of the PI3Ks and PTEN cooperate 
+to shape the temporal and spatial localization of PI(3,4,5)P3.Submitted by Pam Antol [pjantol@jhmi.edu]
+
+---------------------------------------------------------------------------------------------On the origin of differentiationJ. T. Bonner*Department of Ecology and Evolutionary Biology, Princeton University, Princeton, Princeton, NJ 08544, USA      <jtbonner@princeton.edu>J. Biosciences,  in pressABSTRACTFollowing the origin of multicellularity in many groups of primitive organisms  there evolved more than one cell type.  It has been assumed that this early differentiation is related to size-the larger the organism the more cell types.  Here two very different kinds of organisms are considered: the volvocine algae that become multicellular by growth, and the cellular slime molds that become multicellular by aggregation.  In both cases there are species that have only one cell type and others that have two.  It has been possible to show that there is a perfect correlation with size: the forms with two cell types are significantly larger than those with one.  Also in both groups there are forms of intermediate size that will vary from one to two cell types depending on the size of the individuals, suggesting a form of quorum sensing.  These observations reinforce the view that size plays a critical role in influencing the degree of differentiation.Submitted by : John Bonner [jtbonner@Princeton.EDU]
+
+---------------------------------------------------------------------------------------------MFE1, a member of the peroxisomal hydroxyacyl-CoA dehydrogenase family, affects fatty acid 
+metabolism necessary for morphogenesis in Dictyostelium Satomi Matsuoka1) #, Tamao Saito2) #, Hidekazu Kuwayama1)+, Naoki. Morita3), Hiroshi Ochiai2) 
+and Mineko Maeda1)*1Department of Biology, Graduate school of Science, Osaka University, Machikaneyama-cho 1-16, 
+Toyonaka, Osaka 560-0043, Japan 2Division of Biological Science, Graduate school of Science, Hokkaido University, Sapporo, 
+Hokkaido 060-0810, Japan3Research Institute of Biological Resources, National Institute of Advanced Industrial Science 
+and technology (AIST), Toyohira-ku, Sapporo 062-8517, JapanEukaryotic Cell (in press)Oxidation of long chain fatty acids and branched-chain fatty acids is carried out in mammalian 
+peroxisomes by multifunctional enzyme MFE or DBP, with separate domains for hydroxyacyl-CoA 
+dehydrogenase, enoyl-CoA hydratase and steroid carrier protein, SCP2. We have found that 
+Dictyostelium has a gene, mfeA, encoding MFE1 with homology to the hydroxyacyl-CoA 
+dehydrogenase and SCP2 domains. A separate gene, mfeB, encodes MFE2 with homology to the 
+enoyl-CoA hydratase domain. When grown on a diet of bacteria, Dictyostelium cells in which 
+mfeA is disrupted accumulate excess cyclopropane fatty acids and are unable to develop beyond 
+early aggregation. Axenically grown mutant cells, however, developed into normal fruiting bodies 
+composed of spores and stalk cells. Comparative analysis of whole-cell lipid compositions 
+revealed that bacterially grown mutant cells accumulated cyclopropane fatty acids which remained 
+throughout the developmental stages. Such a persistent accumulation was not detected in wild type 
+cells or axenically grown mutant cells. Bacterial phosphatidylethanolamine which contains abundant 
+cyclopropane fatty acids inhibited the development of even axenically grown mutant cells, while 
+dipalmitoyl phosphatidylethanolamine did not. These results suggest that MFE1 protects the cells 
+from the increase of the harmful xenobiotic fatty acids incorporated from their diets and optimizes 
+cellular lipid composition for proper development. Hence we propose that this enzyme plays an 
+irreplaceable role in the survival strategy of Dictyostelium cells to form spores for their 
+efficient dispersal in nature.Submitted by: Mineko Maeda [mmaeda@bio.sci.osaka-u.ac.jp]
+
+---------------------------------------------------------------------------------------------Phagocytosis of Dictyostelium discoideum Studied by Particle Tracking MethodJ. Ishikawa1, J. Okano1, K. Ohki1, A. Amagai2, Y. Maeda2 and H. Miyata1*1Physics Department, Graduate School of Science, Tohoku University, Aoba-ku, Sendai, Miyagi 
+980-8578, Japanand 2Department of Developmental Biology and Neurosciences, Graduate School of Life Sciences, 
+Tohoku University, Aoba-ku, Sendai, Miyagi 980-8578, Japan*Corresponding author. E-mail: miyata@bio.phys.tohoku.ac.jp.
+
+Exp. Cell Res. (in press)AbstractSingle phagocytic events of cellular slime mold Dictyostelium discoideum were studied by the 
+method of particle tracking.  A 2 um polystyrene bead, which had been covalently coated with 
+folate, was attached to the advancing edge of a Dictyostelium ameba with the aid of an optical 
+trap.  The bead was transported backward on the cell surface.  Forty-five percent of the 
+transported beads were internalized.  The bead motion was analyzed by determining every 33 msec 
+the x-y coordinate of the centroid of the phase contrast image of the bead.  The x(t) and y(t) 
+traces were smoothed over 1 sec and the difference between the smoothed (x'(t) and y'(t)) and 
+the original traces, delta x = x(t)-x'(t) and delta y = y(t)-y'(t), were calculated, which 
+represented relatively rapid components of the bead motion .  The plot of delta2 = [(delta x)2 
++ (delta y)2] against time could be divided into three phases on the basis of the variance of 
+delta2.  Comparison of the plot with the video sequence indicated that the first phase 
+corresponded to the transport, the second phase the internalization and the third phase the 
+post-internalization process (intracellular movement).  Cytochalasin A at 5 uM completely 
+inhibited phagocytosis without affecting the binding of bead to the cell surface, indicating 
+importance of actin cytoskeleton in all the phases.  At 1 uM cytochalasin A the ( value of the 
+post-internalization process decreased, and the duration of the transport phase increased.  At 
+0.25 uM cytochalasin A the duration of the internalization phase exhibited significant increase, 
+but other parameters did not appreciably change.  The complex and differential effects of 
+cytochalasin A on the parameters characterizing the three phases in phagocytic process indicate 
+that various aspects of actin dynamics are involved in the individual process of phagocytosis.
+
+Submitted by: Hidetake Miyata [miyata@brain.phys.tohoku.ac.jp]============================================================[End Dicty News, volume 20, number 7]

@@ -1,0 +1,96 @@
+Dicty NewsElectronic EditionVolume 20, number 11June 20, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at DictyBase--http://dictybase.org.
+
+============================================
+Special Note to the Dictyostelium community============================================
+We have just published within Science's STKE Web site two connection maps. 
+One pertaining to the events associated with the chemotaxis response in 
+early aggregation (http://stke.sciencemag.org/cgi/cm/stkecm;CMP_7918) 
+and the other with the G protein-independent signaling that occurs 
+through the cAR1 receptor (http://stke.sciencemag.org/cgi/cm/stkecm;CMP_11471). 
+A ViewPoint published in the June 6, 2003 issue of Science accompanies 
+the two connection maps. In addition, animators at Science helped design 
+a movie depicting the signaling events that occur in response to cAMP 
+(http://stke.sciencemag.org/cgi/content/full/sigtrans;CMP_7918/DC1). 
+Partial access to STKE is free. To fully benefit the annotated pathways, 
+you must be AAAS member 
+(see http://www.sciencemag.org/subscriptions/accessinfo-stke.dtl for more 
+information). Most Universities and Research Institutes have Institutional 
+Subscriptions. The pathways were based on an intense review of the literature. However, 
+since we are far from perfect, we might have overseen/oversimplified 
+some aspects. We encourage the Dictyostelium community to access the 
+pathways and forward any comments to either of us. We have access to 
+the database and intend to continuously update it. We hope that this 
+will add to the many tools the community possesses and that it will 
+become a central arena for discussion about signaling pathways. Alan Kimmel and Carole Parent
+
+=============  Abstracts=============
+Revamp a model - status and prospects of the Dictyostelium genome projectLudwig EichingerCenter for Biochemistry, Medical Faculty, University of Cologne,Joseph-Stelzmann-Str. 52, 50931 Koeln, FRGCurr. Gen., in pressAbstractInternational efforts are underway that aim at determining the completegenome sequence of the social amoeba Dictyostelium discoideum. As strategya whole chromosome shotgun (WCS) approach has been chosen and each of thesix Dictyostelium chromosomes has been assigned to project partners. Theproject is well advanced, chromosome 2 has recently been published, and itis expected that the sequences of chromosomes 1 and 6 and a gene cataloguefor the complete genome will be available at the end of this year. Thegenome sequence together with powerful molecular genetic tools willundoubtedly further accelerate Dictyostelium research into a number offundamental biological processes that are common to a wide range ofeukaryotes. Furthermore, it will constitute the basis for genome-widefunctional analyses. The integration of results from these studies shouldultimately lead to a better understanding of the complex networks thatgovern cellular behaviour and development.
+
+Submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+-----------------------------------------------------------------------------
+
+Gene regulation during early development of Dictyostelium using genome-wide 
+expression analysesNegin Iranfar, Danny Fuller, and William F. LoomisCell and Developmental Biology, Division of Biology, University of 
+California San Diego, La Jolla, CA 92093Eucaryotic Cell, in pressUsing genome-wide microarrays we have recognized 172 genes that are highly 
+expressed at one stage or another during multicellular development of 
+Dictyostelium discoideum. When developed in shaken suspension, 125 of 
+these genes were expressed if the cells were treated with cAMP pulses at 
+6 minute intervals between 2 and 6 hours of development followed by high 
+levels of exogenous cAMP. In the absence of cAMP treatment, only 3 genes, 
+carA, gbaB and pdsA, were consistantly expressed. Surprisingly, 14 other 
+genes were induced by cAMP treatment of mutant cells lacking the 
+activatable adenylyl cyclase, ACA. However, these genes were not cAMP 
+induced if both of the developmental adenylyl cyclases, ACA and ACR, were 
+disrupted showing that they depend on an internal source of cAMP. 
+Constitutive activity of the cAMP dependent protein kinase, PKA, was 
+found to bypass the requirement of these genes for adenyly cyclase and 
+cAMP pulses  demonstrating the critical role of PKA in transducing the 
+cAMP signal to early gene expression.  In the absence of constitutive 
+PKA activity expression of later genes was strictly dependent on ACA in 
+pulsed cells.
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+Leading the way:Directional sensing through phosphatidylinositol 3-kinase (PI3K) and other 
+signaling pathwaysSylvain Merlot and Richard A. FirtelJ. Cell Science (review), in pressABSTRACTChemoattractant-responsive cells are able to translate a shallow 
+extracellular chemical gradient into a steep intracellular gradient resulting 
+in the localization of F-actin assembly at the front and an actomyosin 
+network at the rear that moves the cell forward.  Recent evidence suggests 
+that one of the first asymmetric cellular responses is the localized 
+accumulation of PtdIns(3,4,5)P3, the product of Class I PI3K at the site of 
+the new leading edge.  The strong accumulation of PtdIns(3,4,5)P3 results 
+from the localized activation of PI3K, but also to feedback loops that amplify 
+PtdIns(3,4,5)P3 synthesis at the front and control its degradation at the 
+side and back of cells.  This review examines these different pathways and 
+discusses several questions about how these pathways are temporally and 
+spatially regulated and integrate with other signaling pathway during 
+directional sensing and chemotaxis.
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+THE SIGNAL TO MOVE: D. discoideum go orienteering
+
+Alan R. Kimmel* and Carole A. Parent+#* Laboratory of Cellular and Developmental Biology, NIDDK+ Laboratory of Cellular and Molecular Biology, NCI National Institutes of Health, Bethesda, MD  20892
+
+Science 300: 1525 (2003)Cells migrating directionally toward a chemoattractant source display a 
+highly polarized cytoskeletal organization, with F-actin localized 
+predominantly at the anterior and myosin II at the lateral and posterior 
+regions. Dictyostelium discoideum has proven a useful system for elucidating 
+signaling pathways that regulate this chemotactic response. During development, 
+extracellular adenosine 3', 5' monophosphate (cAMP) functions as a primary 
+signal to activate cell surface cAMP receptors (cARs). These receptors 
+transduce different signals depending on whether or not they are coupled 
+to heterotrimeric guanine nucleotide -binding proteins (G proteins) (see 
+the STKE Connections Maps). Multiple G protein-stimulated pathways interact 
+to establish polarity in chemotaxing D. discoideum cells by localizing 
+F-actin at their leading edge and by regulating the phosphorylation state 
+and assembly of myosin II. Many of the molecular interactions described are 
+fundamental to the regulation of chemotaxis in other eukaryotic cells.
+
+Submitted by: Carole Parent [parentc@helix.nih.gov]
+
+===============================================================================[End Dicty News, volume 20, number 11]

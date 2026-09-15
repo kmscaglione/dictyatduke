@@ -1,0 +1,178 @@
+dictyNews
+Electronic Edition
+Volume 38, number 5
+February 17, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Rab8a regulates the exocyst-mediated kiss-and-run discharge of 
+the Dictyostelium contractile vacuole
+
+Miriam Essid, Navin Gopaldass, Kunito Yoshida, Christien Merrifield, 
+and Thierry Soldati
+
+
+Molecular Biology of the Cell, in press
+
+Water expulsion by the contractile vacuole in Dictyostelium is carried 
+out by a giant kiss-and-run focal exocytic event during which the two 
+membranes are only transiently connected but do not completely merge. 
+We present a molecular dissection of the GTPase Rab8a and the 
+exocyst complex in tethering of the contractile vacuole to the plasma 
+membrane, fusion and final detachment. Right before discharge, the 
+contractile vacuole bladder sequentially recruits Drainin, a 
+Rab11a-effector, Rab8a, the exocyst complex and LvsA, a protein of 
+the Chediak-Higashi family. Rab8a recruitment precedes the 
+nucleotide-dependent arrival of the exocyst to the bladder by a few 
+seconds. A dominant-negative mutant of Rab8a strongly binds to the 
+exocyst and prevents recruitment to the bladder suggesting that a 
+Rab8a GEF activity is associated with the complex. Absence of Drainin 
+leads to over-tethering and blocks fusion, while expression of 
+constitutively active Rab8a allows fusion but blocks vacuole detachment 
+from the plasma membrane, inducing complete fragmentation of 
+tethered vacuoles. An indistinguishable phenotype is generated in cells 
+lacking LvsA, implicating this protein in post-fusion de-tethering. 
+Interestingly, overexpression of a constitutively active Rab8a mutant 
+reverses the lvsA-null CV phenotype.
+
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+--------------------------------------------------------------------------------------
+
+
+Bestatin inhibits cell growth, division and spore cell differentiation 
+in Dictyostelium 
+
+Yekaterina Poloz1 , Andrew Catalano1 and Danton H. OÕDay1,2
+
+1Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord Street, Toronto, ON, Canada M5S 3G5
+2Department of Biology, University of Toronto Mississauga, 
+3359 Mississauga Road North, Mississauga, ON, Canada L5L 1C6
+
+
+Eukaryotic Cell, In press
+
+Bestatin methyl ester (BME) is an inhibitor of Zn2+-binding 
+aminopeptidases that inhibits cell proliferation and induces apoptosis 
+in normal and cancer cells. We have used Dictyostelium as a model 
+organism to study the effects of BME. Only two Zn2+-binding 
+aminopeptidases have been identified in Dictyostelium to date, 
+puromycin sensitive aminopeptidase A and B (PsaA and PsaB). PSA 
+from other organisms is known to regulate cell division and 
+differentiation. Here we showed that PsaA is differentially expressed 
+throughout growth and development of Dictyostelium and its 
+expression is regulated by developmental morphogens. We present 
+evidence that BME specifically interacts with PsaA and inhibits its 
+aminopeptidase activity. Treatment of cells with BME inhibited the 
+rate of cell growth and the frequency of cell division in growing cells 
+and inhibited spore cell differentiation during late development. 
+Overexpression of PsaA-GFP also inhibited spore cell differentiation 
+but did not affect growth. Using chimeras, we have identified that 
+nuclear versus cytoplasmic localization of PsaA affects the choice 
+between stalk or spore cell differentiation pathway. Cells that 
+overexpressed PsaA-GFP (primarily nuclear) differentiated into stalk 
+cells, while cells that overexpressed PsaADeltaNLS2-GFP 
+(cytoplasmic) differentiated into spores. In conclusion, we have 
+identified that BME inhibits cell growth, division and differentiation 
+in Dictyostelium likely through inhibition of PsaA.   
+
+
+Submitted by: Danton OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+
+CyrA, a matricellular protein that modulates cell motility in 
+Dictyostelium discoideum
+
+Robert J. Huber1, Andres Suarez1, and Danton H. OÕDay1,2
+
+1Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord Street, Toronto, ON, Canada M5S 3G5
+
+2Department of Biology, University of Toronto Mississauga, 
+3359 Mississauga Road North, Mississauga, ON, Canada L5L 1C6
+
+
+Matrix Biology, in press
+
+CyrA, an extracellular matrix (slime sheath), calmodulin (CaM)-binding 
+protein in Dictyostelium discoideum, possesses four tandem EGF-like 
+repeats in its C-terminus and is proteolytically cleaved during asexual 
+development. A previous study reported the expression and localization 
+of CyrA cleavage products CyrA-C45 and CyrA-C40. In this study, an 
+N-terminal antibody was produced that detected the full-length 63 kDa 
+protein (CyrA-C63). Western blot analyses showed that the intracellular 
+expression of CyrA-C63 peaked between 12 and 16 hours of 
+development, consistent with the time that cells are developing into a 
+motile, multicellular slug. CyrA immunolocalization and CyrA-GFP 
+showed that the protein localized to the endoplasmic reticulum, 
+particularly its perinuclear component. CyrA-C63 secretion began 
+shortly after the onset of starvation peaking between 8 and 16 hours 
+of development. A pharmacological analysis showed that CyrA-C63 
+secretion was dependent on intracellular Ca2+ release and active CaM, 
+PI3K, and PLA2. CyrA-C63 bound to CaM both intra- and extracellularly 
+and both proteins were detected in the slime sheath deposited by 
+migrating slugs. In keeping with its purported function, CyrA-GFP over-
+expression enhanced cAMP-mediated chemotaxis and CyrA-C45 was 
+detected in vinculin B (VinB)-GFP immunoprecipitates, thus providing a 
+link between the increase in chemotaxis and a specific cytoskeletal 
+component. Finally, DdEGFL1-FITC was detected on the membranes 
+of cells capped with concanavalin A suggesting that a receptor exists 
+for this peptide sequence. Together with previous studies, the data 
+presented here suggests that CyrA is a bona fide matricellular protein 
+in Dictyostelium discoideum.
+
+
+Submitted by: Danton OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+
+TM9/Phg1 and SadA proteins control surface expression and stability 
+of SibA adhesion molecules in Dictyostelium.
+
+Froquet R, le Coadic M, Perrin J, Cherix N, Cornillon S, Cosson P.
+
+DŽpartement de Physiologie Cellulaire et Metabolisme, Centre 
+Medical Universitaire, 1 rue Michel Servet, 1211 Geneva 4, Switzerland
+
+
+Mol Biol Cell, in press
+
+TM9 proteins form a family of conserved proteins with nine 
+transmembrane domains essential for cellular adhesion in many 
+biological systems, but their exact role in this process remains 
+unknown. Here we found that in Dictyostelium amoebae, genetic 
+inactivation of the TM9 protein Phg1A dramatically decreases the 
+surface levels of the SibA adhesion molecule. This is due to a decrease 
+in sibA mRNA levels, in SibA protein stability, and in SibA targeting to 
+the cell surface. A similar phenotype was observed in cells devoid of 
+SadA, a protein that does not belong to the TM9 family but also 
+exhibits 9 transmembrane domains and is essential for cellular 
+adhesion. A csA-SibA chimeric protein comprising only the 
+transmembrane and cytosolic domains of SibA and the extracellular 
+domain of csA, a Dictyostelium surface protein, also showed reduced 
+stability and relocalization to endocytic compartments in phg1A knockout 
+cells. These results indicate that TM9 proteins participate in cell adhesion 
+by controlling the levels of adhesion proteins present at the cell surface.
+
+
+Submitted by  Pierre Cosson [Pierre.Cosson@unige.ch]
+==============================================================
+[End dictyNews, volume 38, number 5]

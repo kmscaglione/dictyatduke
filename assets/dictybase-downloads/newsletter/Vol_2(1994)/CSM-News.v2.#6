@@ -1,0 +1,197 @@
+CSM News
+Electronic Edition
+Volume 2, number 6
+February 5, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[129.105.233.50], via Gopher at the same address, or by World Wide Web
+through WWW.acns.nwu.edu.
+
+-------------------------------------------------------------------------
+
+Announcement
+============
+
+A new update for the Franke Reference Database is now available from
+the anonymous ftp site or via Gopher or WWW from worms.cmsbio.nwu.edu
+in the "reference_database" directory.  The file is "update5" and is
+available in the usual formats.  The file "read.me" provides
+additional information.  
+
+-------------------------------------------------------------------------
+
+Regarding the Franke database Richard Sucgang writes:
+
+Jakob and I are planning on moving to the new version of Ref-11 (v4)
+which is incompatible in file format to the version currently in the
+archives.
+
+In retrospect, we are uncertain if the Ref11 format has proven to be
+of any use to anyone. Most correspondence and requests for assistance
+revolve around the EndNote version, which is unarguably the most
+popular of the literature management programs. The BibTeX format is of
+use to some people, and _all_ requests for copies on disk have been
+for EndNote format, usually for the Macintosh.
+
+If no one is using the Ref11 format, we would like to discontinue
+updates for it. If you use the Ref11 files, please let us know as soon
+as possible, and which version you use.
+
+By the way, I am trying to use the public domain lharc compression as
+the standard way of saving disk space. The *.lzh files can be
+compressed and decompressed on four platforms : Unix, Mac, DOS, and
+Amiga. Recently, people who have requested for the database on
+Macintosh disks I have included the program MacLHA. Please distribute
+it around; sending files on compressed format is faster.
+
+==========
+Abstracts
+==========
+
+Isolation of transcription factor IIIC from Dictyostelium discoideum
+
+Monika Bukenberger, Theodor Dingermann, Wolfgang Meissner, Klaus
+Seifart and Thomas Winckler
+
+Institut fuer Pharmazeutische Biologie, Johann Wolfgang
+Goethe-Universitaet, Biozentrum, Marie-Curie-Stra'9, D-60439 Frankfurt
+am Main, Germany
+
+Eur. J. Biochem., in press
+
+Summary
+
+   Transcription factor IIIC (TFIIIC) binds in a sequence-specific
+manner to RNA polymerase III-transcribed genes (e.g. transfer RNA
+genes). It sequesters other transcription factors into the preformed
+complex, thereby activating transcription by RNA polymerase III. The
+D.discoideum homologue of TFIIIC was highly purified by affinity
+chromatography based on its tDNA-binding activity.  It is a
+multicomponent factor (Mr 380 kDa), which binds to the B-box element
+of the internal tRNA gene promoter without significant A-box
+interaction.  Partially purified D.discoideum TFIIIC is able to
+functionally complement a human RNA polymerase III in vitro
+transcription system depleted of human TFIIIC. We provide evidence
+that partially purified D.discoideum TFIIIC interacts in vitro with
+gene-external B-box elements present downstream of many D.discoideum
+tRNA genes.
+
+--------------------------------------------------------------------
+
+Internally located and oppositely oriented Pol II promoters direct
+convergent transcription of the LINE-like retroelement DRE from
+Dictyostelium discoideum
+
+Gerald Schumann, Ilse Zuendorf, Joerg Hofmann, Rolf Marschalek and
+Theodor Dingermann
+
+Institut fuer Pharmazeutische Biologie, Johann Wolfgang
+Goethe-Universitaet, Biozentrum, Marie-Curie-Strasse 9, D-60439
+Frankfurt am Main, Germany
+
+Mol. Cell. Biol., in press.
+
+Summary
+
+   The Dictyostelium discoideum genome (strain NC4) harbors approximately
+150 individual copies of the DRE retrotransposable element. This
+element contains non-identical terminal repeats (TRs) consisting of
+conserved building blocks A and B in the left TR and B and C in the
+right TR. Seven different size classes of RNA transcripts from these
+elements were resolved by Northern blot analysis, but their combined
+abundance was very low. When D. discoideum cells were grown in the
+presence of the respiratory chain blocker Antimycin A, steady state
+concentrations of these RNA species increased 10 to 20 fold. The D.
+discoideum genome contains two DRE subtypes, a full length 5.7 kb DREa
+and an internally deleted 2.4 kb DREb element. Both subtypes are
+transcribed, as confirmed by analysis of cloned cDNA. Primary
+transcripts from the sense strand originate at nucleotide +1 and
+terminate at two dominant sites, located 21 or 28 nucleotides upstream
+from the 3'-end of the elements. The activity of a reasonably strong
+pol II promoter in the 5'-terminal A-module is slightly upregulated by
+the tRNA gene located 50 14 nucleotides upstream and drastically
+reduced by the adjacent B-module of the DRE. Transcripts from the
+opposite DNA strand (complementary-sense transcripts) were also
+detected, directed by an internally located pol II promoter residing
+within the C-module. This latter transcription was initiated at
+multiple sites within the oligo(dA12)-stretch which terminates DRE
+elements.
+
+----------------------------------------------------------------------
+
+A gradient method for the quantitative analysis of cell movement and
+tissue flow and its application to the analysis of multicellular
+Dictyostelium development
+
+Florian Siegert+, Cornelis J. Weijer+, Atsushi Nomura*, Hidetoshi
+Miike* 
+
++Zoologisches Institut, Universitat Munchen, Luisenstr.
+14, 80333 Munchen 2, FRG Tel. 0049-89-5902469, FAX 0049-89-5902450
+*Department of Electrical and Electronic Engineering, Yamaguchi
+University, Tokiwadai 2557, Ube, 755 Japan Tel. 0081-836-315100, FAX
+0081-836-359403 
+
+J. Cell Science, in press.
+
+Summary
+
+   We describe the application of a novel image processing method,
+which allows quantitative analysis of cell and tissue movement in a
+series of digitized video images. The result is a vector velocity
+field showing average direction and velocity of movement for every
+pixel in the frame. We apply this method to the analysis of cell
+movement during different stages of the Dictyostelium developmental
+cycle. We analyzed time lapse video recordings of cell movement in
+single cells, mounds and slugs. The program can correctly assess the
+speed and direction of movement of either unlabelled or labelled cells
+in a time series of video images depending on the illumination
+conditions.
+
+Our analysis of cell movement during multicellar development shows that the 
+entire morphogenesis of Dictyostelium is characterized by rotational cell 
+movement. The analysis of cell and tissue movement by the velocity field 
+method should be applicable to the analysis of morphogenetic processes in 
+other systems such as gastrulation and neurulation in vertebrate embryos.
+
+
+=================
+Job Announcement
+=================
+
+Jared Rifkin has asked that the following announcement be posted:
+
+Please send this to the dicty addressees and post in your and
+associated departments:
+
+ASSISTANT PROFESSOR: THE BIOLOGY DEPARTMENT OF QUEENS COLLEGE OF THE
+CITY UNIVERSITY OF NEW YORK IS SEEKING APPLICATIONS FOR A FULL-TIME,
+TENURE TRACK POSITION TO BEGIN FALL 1994.  APPLICANTS MUST HAVE A PH.
+D., APPROPRIATE POST-DOCTORAL TRAINING, AND A DEMONSTRATED ABILITY TO
+ESTABLISH A STRONG INDEPENDENT RESEARCH PROGRAM USING CELLULAR AND
+MOLECULAR APPROACHES TO MICROBIOLOGY OR PLANT PHYSIOLOGY.  SALARY
+RANGE IS $29,931 TO $50,205 (COMMENSURATE WITH QUALIFICATIONS AND
+EXPERIENCE) AND START-UP FUNDS WILL BE AVAILABLE.  THE DEPARTMENT HAS
+AN EXCELLENT LABORATORY SPACE IN A NEW BUILDING PROVIDED WITH HIGH
+QUALITY CORE EQUIPMENT AND ANIMAL FACILITIES.  QUEENS COLLEGE OFFERS A
+STIMULATING SCIENTIFIC ENVIRONMENT AND IS COMMITTED TO HIGH QUALITY
+RESEARCH AND TEACHING.  PARTICIPATION IN BOTH UNDERGRADUATE AND
+DOCTORAL LEVEL COURSES IS EXPECTED.  CANDIDATES SHOULD SUBMIT A
+CURRICULUM VITAE AND ARRANGE FOR THREE LETTERS OF RECOMMENDATION TO BE
+SENT TO THE SEARCH COMMITTEE.  A SUMMARY OF PRESENT AND FUTURE
+RESEARCH INTERESTS IS ALSO REQUIRED.  REVIEW OF COMPLETE APPLICATIONS
+WILL BEGIN ON MARCH 15, 1994 BUT APPLICATIONS WILL BE ACCEPTED UNTIL
+THE SEARCH IS CLOSED; ALL MATERIALS SHOULD BE SENT TO: DR. JARED L.
+RIFKIN, CHAIR, BIOLOGY DEPTARTMENT, QUEENS COLLEGE OF CUNY, FLUSHING,
+NY 11367-1597.
+    QUEENS COLLEGE/CUNY IS AN AFFIRMATIVE ACTION/EQUAL OPPORTUNITY EMPLOYER.
+WOMEN, MINORITIES, AND DISABLED INDIVIDUALS ARE ENCOURAGED TO APPLY.
+
+---------------------------------------------------------------------------
+
+[End CSM News, volume 2, number 6]
+

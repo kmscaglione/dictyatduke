@@ -1,0 +1,51 @@
+dictyNews
+Electronic Edition
+Volume 36, number 15
+June 3, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+The LRRK2-related Roco kinase Roco2 is regulated by Rab1A and 
+controls the actin cytoskeleton 
+
+Sebastien Kicka, Zhouxin Shen, Sarah J. Annesley, Paul R. Fisher, 
+Susan Lee, Steven Briggs and Richard A. Firtel
+
+
+Mol. Biol Cell, in press
+
+We identify a new pathway that is required for proper pseudopod formation. 
+We show that Roco2, an LRRK2-related Roco kinase, is activated in response 
+to chemoattractant stimulation and helps mediate cell polarization and 
+chemotaxis by regulating cortical F-actin polymerization and pseudopod 
+extension in a pathway that requires Rab1A. We found that Roco2 binds 
+the small GTPase Rab1A as well as the F-actin crosslinking protein filamin 
+(actin-binding protein 120, abp120) in vivo. We show that active Rab1A 
+(Rab1A-GTP) is required for and regulates Roco2 kinase activity in vivo, 
+and that filamin lies downstream from Roco2 to control pseudopod extension 
+during chemotaxis and random cell motility. Therefore, our study uncovered 
+a new signaling pathway that involves Rab1A and controls the actin 
+cytoskeleton and pseudopod extension, and thereby, cell polarity and motility. 
+These findings may have also implications in the regulation of other Roco 
+kinases, including possibly LRRK2, in metazoans.
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+==============================================================
+[End dictyNews, volume 36, number 15]

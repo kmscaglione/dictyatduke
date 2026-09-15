@@ -1,0 +1,164 @@
+dictyNews
+Electronic Edition
+Volume 30, number 3
+January 25, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Rho GTPases of the RhoBTB subfamily and tumorigenesis
+
+Jessica Berthold(1), Kristina Schenkova(1) and Francisco RIVERO(1,2)
+
+(1)Center for Biochemistry and Center for Molecular Medicine, Medical Faculty, 
+University of Cologne, Joseph-Stelzmann-Strasse 52, D-50931 Cologne, Germany
+
+(2)The Hull York Medical School, University of Hull, Hull HU6 7RX, 
+United Kingdom.
+
+
+Acta Pharmacol. Sin., review in press
+
+RhoBTB proteins constitute a subfamily of atypical members within the Rho 
+family of small GTPases. Their most salient feature is their domain 
+architecture: a GTPase domain (in most cases non-functional) is followed 
+by a proline-rich region, a tandem of two BTB domains and a conserved 
+C-terminal region. In human the RhoBTB subfamily consists of three 
+isoforms: RhoBTB1, RhoBTB2 and RhoBTB3. Orthologs are present in several 
+other eukaryotes, like Drosophila and Dictyostelium, but have been lost 
+in plants and fungi. Interest in RhoBTB arose when RHOBTB2 was identified 
+as the gene homozygously deleted in breast cancer samples and was proposed 
+as a candidate tumor suppressor gene, a property that has been extended 
+to RHOBTB1. The functions of RhoBTB proteins have not been defined yet, 
+but may be related to the roles of BTB domains in the recruitment of 
+cullin3, a component of a family of ubiquitin ligases. A model emerges 
+in which RhoBTB proteins are required to maintain constant levels of 
+putative substrates involved in cell cycle regulation or vesicle transport t
+hrough targeting for degradation in the 26S proteasome. RhoBTB proteins 
+are engrossing the list of Rho GTPases involved in tumorigenesis. Unlike 
+typical Rho GTPases (usually overexpressed or hyperactive), RhoBTB proteins 
+appear to play a part in the carcinogenic process through a mechanism that 
+involves decreased or abolished expression of the corresponding genes or, 
+more rarely, mutations that result in impaired functioning of the protein, 
+presumably leading to accumulation of RhoBTB substrates and alterations of 
+the cellular homeostasis.
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Evidence that DIF-1 and hyper-osmotic stress activate a Dictyostelium STAT by 
+inhibiting a specific protein tyrosine phosphatase
+
+Tsuyoshi Araki1*, Judith Langenick1*, Marianne Gamper2,3, Richard A. Firtel2 
+and Jeffrey G. Williams1+
+
+1 University of Dundee, College of Life Sciences, Dow Street, 
+Dundee DD1 5EH, UK
+2 University of California, San Diego, Natural Sciences Building Room 6111, 
+9500 Gilman Drive, La Jolla, CA 92093-0380, USA
+3 Biomedical Research Foundation (SBF), Lauchefeld 31, CH-9548 Matzingen, 
+Switzerland
+* Contributed equally
++ author for correspondence
+
+
+Development, in press
+
+STATc becomes tyrosine phosphorylated and accumulates in the nucleus when 
+Dictyostelium cells are exposed to the prestalk cell inducer, Differentiation 
+Inducing Factor-1 (DIF-1), or are subjected to hyper-osmotic stress. We show 
+that the protein tyrosine phosphatase PTP3 interacts directly with STATc and 
+that STATc is refractory to activation in PTP3 over-expressing cells. 
+Conversely, over-expression of a dominant inhibitor of PTP3 leads to 
+constitutive tyrosine phosphorylation and ectopic nuclear localisation of 
+STATc.  Treatment of cells with DIF-1 or exposure to hyper-osmotic stress 
+induce a decrease in biochemically assayable PTP3 activity and both agents 
+also induce serine-threonine phosphorylation of PTP3. These observations 
+suggest a novel mode of STAT activation; whereby serine-threonine 
+phosphorylation of a cognate protein tyrosine phosphatase results in the 
+inhibition of its activity, shifting the phosphorylation-dephosphorylation 
+equilibrium in favour of phosphorylation. 
+
+Submitted by: Tsuyoshi Araki [t.araki@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Molecular dynamics and forces of a motile cell simultaneously visualized by 
+TIRF and force microscopies
+
+Yoshiaki IWADATE and Shigehiko YUMURA
+
+Department of Functional Molecular Biology, Graduate School of Medicine, 
+Yamaguchi University, Yamaguchi 753-8512, Japan
+
+
+Biotechniques, in press
+
+Cells must exert traction forces onto the substratum for continuous migration.  
+Molecular dynamics such as actin polymerization at the front of the cell and 
+myosin II accumulation at the rear should play important roles in the 
+exertion of forces required for migration.  Therefore, it is important to 
+reveal the relationship between the traction forces and molecular dynamics. 
+Traction forces can be calculated from the deformation of the elastic 
+substratum under a migrating cell.  A transparent and colorless elastic 
+substratum with a high reflective index (1.40) and a low Young's Modulus 
+(1.0 kPa) were made from a pair of platinum-catalyzed silicones.  We used 
+this substratum to develop a new method for simultaneous recording of 
+molecular dynamics and traction forces under a migrating cell in which 
+total internal reflection fluorescence (TIRF) and force microscopy were 
+combined.  This new method allows the detection of the spatiotemporal 
+distribution of traction forces produced by individual filopodia in 
+migrating Dictyostelium cells, as well as simultaneous visualization of 
+these traction forces and the dynamics of filamentous myosin II.
+
+Submitted by: Yoshiaki Iwadate [iwadate@yamaguchi-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+The P450 oxidoreductase, RedA, controls development beyond the mound stage 
+in Dictyostelium discoideum 
+
+Daniela C. Gonzalez-Kristeller,Layla Farage, Leonardo C. Fiorini, 
+William F. Loomis, and Aline M. da Silva
+
+
+BMC Development (in press)
+
+Background: NADPH-cytochrome-P450 oxidoreductase (CPR) is a ubiquitous 
+enzyme that belongs to a family of diflavin oxidoreductases and is 
+required for activity of the microsomal cytochrome-P450 monooxygenase 
+system. CPR gene-disruption experiments have demonstrated that absence 
+of this enzyme causes developmental defects both in mouse and insect.
+Results: Annotation of the sequenced genome of D. discoideum revealed 
+the presence of three genes (redA, redB and redC) that encode putative 
+members of the diflavin oxidoreductase protein family. redA transcripts 
+are present during growth and early development but then decline, 
+reaching undetectable levels after the mound stage. redB transcripts 
+are present during growth and in all stages of development while redC 
+expression was detected only in vegetative growing cells. We isolated 
+a mutant strain of Dictyostelium discoideum following restriction 
+enzyme-mediated integration (REMI) mutagenesis in which redA was 
+disrupted. This mutant develops only to the mound stage and accumulates 
+a bright yellow pigment. The mound-arrest phenotype is cell-autonomous 
+suggesting that the defect occurs within the cells rather than in 
+intercellular signaling.
+Conclusion: The developmental arrest due to disruption of redA 
+implicates CPR in the metabolism of compounds that control cell 
+differentiation.
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+==============================================================
+[End dictyNews, volume 30, number 3]

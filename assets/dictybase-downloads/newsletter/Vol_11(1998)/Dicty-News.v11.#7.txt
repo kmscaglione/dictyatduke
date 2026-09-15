@@ -1,0 +1,142 @@
+Dicty News
+Electronic Edition
+Volume 11, number 7
+October 10, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+
+The Glycogen Phosphorylase-2 Promoter Binding Protein in Dictyostelium is
+Replication Protein A
+
+Xiao Wen, Pawjai Khampang, and Charles L.  Rutherford
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061
+
+J. Mol. Biol.,  in press
+
+SUMMARY
+
+   During Dictyostelium development, glycogen degradation is a crucial 
+event that provides glucose monomers used in the synthesis of the essential 
+structural components for cellular differentiation.  The product of the 
+developmentally- regulated glycogen phosphorylase-2 gene (gp2) catalyzes 
+the degradation.   DNA binding proteins were found to bind to a regulatory 
+site of the gp2 gene in a stage-dependent pattern.  Gel-shift  analysis of 
+undifferentiated amoebae cell extract revealed a protein migrating at 0.40 Rf, 
+while 17 h differentiated cell extract produced a species migrating at 0.32 Rf.  
+Both the 0.32 and 0.40 Rf proteins were purified and found to consist of three 
+subunits of 18, 35 and 62 kDa (for 0.40 Rf) or 81 kDa (for 0.32 Rf).  Database 
+searches identified the protein as the Dictyostelium homologue of replication 
+protein A (DdRPA).  Amino acid sequence analysis showed identity between the 
+62 and 81 kDa subunits.  Incubation of cell-free extracts under appropriate 
+conditions at low pH, resulted in conversion of the 81 kDa to the 62 kDa subunit.  
+Northern blot analysis revealed that the levels of expression of the large 
+subunit of DdRPA were constant throughout differentiation and the size of the 
+mRNA was the same at all stages of development.  The results raise the 
+possibility that pH induced post-translational modifications of DdRPA are 
+involved in events that halt cell proliferation and induce differentiation 
+in Dictyostelium .
+
+----------------------------------------------------------------------------
+
+Two-component Signal Transduction Systems in Eukaryotic Microorganisms
+
+William F. Loomis, Adam Kuspa* and Gad Shaulsky#
+
+Department of Biology, University of California San Diego, La Jolla  CA
+92093   *Department of Biochemistry, and  #Department of Molecular
+Genetics, Baylor College of Medicine,  Houston, TX  77030
+
+Curr. Opinions in  Microbiology (in press)
+
+SUMMARY
+
+Conserved signal transduction pathways using phosphorelay from histidine 
+kinases through an intermediate transfer protein (H2) to response 
+regulators have been found in a variety of eukaryotic microorganisms.  
+Several of these pathways are linked to MAP kinase cascades. These 
+networks control different physiological responses including osmoregulation, 
+cAMP levels and cellular morphogenesis.
+
+----------------------------------------------------------------------------
+
+
+A NOVEL ADENYLYL CYCLASE DETECTED IN RAPIDLY DEVELOPING
+MUTANTS OF DICTYOSTELIUM
+
+Hyun-Ji Kim, Wen-Tsan Chang, Marcel Meima, Julian D. Gross and Pauline
+Schaap
+
+Department of Biochemistry, University of Oxford, Oxford OX13QU, UK
+Cell Biology Section, Institute for Molecular Plant Sciences, University of
+Leiden, 2333 AL Leiden, The Netherlands.
+
+J. Biol. Chem., in press
+
+SUMMARY
+
+     Disruption of either the RDEA or REGA genes leads to rapid development
+in Dictyostelium. The RDEA gene product displays homology to certain H2 type
+phosphotransferases, while REGA encodes a cAMP phosphodiesterase with an
+associated response regulator. It has been proposed that RDEA activates REGA
+in a multi step phosphorelay. To test this proposal, we examined cAMP
+accumulation in rdeA and regA null mutants and found that these mutants show
+a pronounced accumulation of cAMP at the vegetative stage, that is not
+observed in wild-type cells. This accumulation was due to a novel adenylyl
+cyclase and not to the known Dictyostelium adenylyl cyclases, ACA or ACG,
+since it occurred in an acaA/rdeA double mutant and, unlike ACG, was inhibited
+by high osmolarity. The novel adenylyl cyclase was not regulated by G-proteins
+and was relatively insensitive to stimulation by Mn2+ ions. Addition of the
+cAMP phosphodiesterase inhibitor, 3-isobutyl-1-methylxanthine (IBMX)
+permitted detection of the novel AC activity in lysates of an  acaA/acgA double
+mutant. The fact that disruption of the RDEA gene as well as inhibition of the
+REGA-phoshodiesterase by IBMX permitted detection of the novel AC activity
+supports the hypothesis that RDEA activates REGA. 
+
+----------------------------------------------------------------------------
+
+TWO DISTINCT SIGNALING PATHWAYS MEDIATE DIF INDUCTION OF
+PRESTALK GENE EXPRESSION IN DICTYOSTELIUM
+
+Irene Verkerke-van Wijk, Raymond Brandt, Laurens Bosman and Pauline
+Schaap
+
+Cell Biology Section, Institute for Molecular Plant Sciences, Leiden University,
+Wassenaarseweg 64, 2333 AL Leiden, The Netherlands
+
+Experimental Cell Research, in press
+
+ABSTRACT
+
+     During Dictyostelium development, the Differentiation Inducing Factor
+(DIF) triggers  expression of the prestalk gene ecmB and induces stalk cell
+differentiation, a form of programmed cell death.  The effects of DIF are
+mediated by a sustained increase in cytosolic Ca2+ levels. The Ca2+-ATPase
+inhibitor, BHQ, causes a similar rise in Ca2+ levels and also  induces prestalk
+gene expression. We show here that Ca2+ is a specific intermediate for prestalk
+gene induction, since BHQ represses transcription of the cAMP-inducible
+aggregative gene PDE, the post-aggregative gene CP2, and the prespore gene
+D19.  The prestalk gene  ecmA is also induced by DIF, but induction appears
+to occur in two steps, which occur within 1 hour and after 2 hours respectively.
+The slow step shows the same kinetics as ecmB induction and similar to ecmB
+induction, this step is BHQ-inducible and requires an initial round of protein
+synthesis. The fast step does not require protein synthesis and cannot be induced
+by BHQ.  This indicates that in addition to the slow Ca2+-mediated pathway,
+there is probably a second fast Ca2+-independent signal transduction pathway
+for DIF.  
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 11, number 7]
+

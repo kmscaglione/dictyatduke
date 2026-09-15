@@ -1,0 +1,402 @@
+CSM News
+Electronic Edition
+Volume 7, number 9
+September 28, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+=============================
+ Another Sequencing Proposal
+=============================
+
+Large scale sequence analysis of developmentally regulated mRNAs
+
+   We all accept the necessity of establishing the sequence of the
+Dictyostelium genome as rapidly as possible and in a recent CSM
+newsletter there were two proposals directed towards acheiving this
+aim; one to sequence the entire genome the other to sequence large
+numbers of proteins.  Here we will describe a large scale sequencing
+strategy, that we are actively pursuing, which is based upon
+sequencing cDNA clones. We will explain why we have taken this route
+but wish to stress that the cDNA strategy should not be viewed as a
+competitor to direct genomic sequence analysis. In the longer term,
+when sufficient funds become available, it is imperative that the
+entire genomic sequence be determined. Rather, the cDNA strategy is
+something that can be started now, with resources that are presently
+available and which is entirely complementary to the whole genome
+sequencing project; the cDNA sequences will be essential if the
+organisation of the genes identified by genomic sequencing is to be
+correctly deduced and the genomic sequence will be necessary to ensure
+that all genes are eventually sequenced. Just as in genome projects in
+other organisms, such as Drosophila and man, sequence information
+obtained by the genomic and the cDNA routes will be freely
+interchanged and we will all reap the benefits of knowing the entire
+sequence that much more quickly.
+
+   We aim to sequence between 10,000 and 20,00 cDNA clones derived
+from mRNA isolated from Dictyostelium slug cells. We estimate that up
+to one half of the genes expressed at this stage will be sequenced in
+such a program.  It is, therefore, a rapid and relatively inexpensive
+way of determining the coding potential of a significant part of the
+Dictyostelium genome. Also, once the sequences of their component cDNA
+clones are established, the libraries themselves will provide a
+resource that will greatly facilitate Dictyostelium research.
+        
+   This project has thus far been funded by a Japanese agency, the
+grant this year being $273,000 with a significant increase expected
+for 1997. However, to sequence such a large number of clones it will
+be necessary to obtain collaborators who have grant monies available
+and who can share the sequencing load. Why should they do this? We
+believe that sequencing technology has now improved to the point where
+large-scale sequence analysis is a highly efficient way of studying
+the function of Dictyostelium genes. It is readily possible to perform
+homologous gene disruption using cDNA clones and so participants will
+be able to perform functional analysis on selected cDNAs. This will,
+in a way, be the converse of REMI and will complement it nicely.  We
+will first identify genes containing domains which suggest that they
+are likely to have an important function and will then determine the
+consequences of their disruption. One difference from REMI is that one
+will know, a priori, what kind of gene one is dealing with so that the
+frustrations of working with a "pioneer gene" will be removed.
+
+   Why sequence cDNAs? Determination of the sequence of a large number
+of cDNA clones has several major attractions.
+
+1) By sequencing 10-20,000 cDNA clones a large fraction of the genomic
+coding potential will be determined. The genome size, the analysis of
+gene structures and RNA hybridisation analysis combine to show that
+there are between 5,000 and 10,000 Dictyostelium genes. About three
+quarters are expressed during growth and another quarter are activated
+during development. These are not mutually exclusive populations, so
+that establishing the sequences of the mRNAs present in the slug will
+also yield the sequences of some of the genes that are expressed
+during growth.  Admittedly, this will only be a fraction of the
+vegetative mRNAs but the compelling argument in favour of initially
+targetting developmental mRNAs is that many of the most interesting
+facets of the biology of the organism are manifest only during
+development.
+
+2) The cDNA clones can be categorised by nucleic acid hybridisation.
+The fact that each cDNA clone derives from a single transcription unit
+and can be rapidly screened by nucleic acid hybridistaion has great
+advantages, both in terms of distributing the effort of sequencing and
+in the speed at which useful information will accrue. The libraries
+will be gridded at high density and the cDNA clones will be
+sequentially screened by nucleic acid hybridisation using various
+probes. We will identify those cDNAs that are prestalk-specific, those
+that are prespore-specific and those that are DIF inducible. Thus, for
+every single cDNA clone within the library a gene expression profile
+will be built up. In this way the cDNA libraries can be sub-divided so
+that the work of sequencing them can be shared between particular
+"interest groups". It will also be readily possible to screen for
+particular conserved sequence domains by hybridisation, again allowing
+clones from the libraries to be allocated to particular interest
+groups.  
+
+3) Once sequenced the cDNA clones will themselves be an
+invaluable resource. The cDNA clones and DNA prepared from them will
+be stored. Once the entire sequence of each clone is known its
+sequence will be placed in the DictyDB database and also in the
+generally available sequence banks.  Individuals who have a segment of
+DNA sequence, or reverse translated protein sequence, that aligns with
+a clone in the library will be sent that clone. This will enormously
+facilitate research within the field. At the moment many genes are
+first isolated as genomic fragments, by insertional gene disruption or
+by PCR, and the cognate cDNAs must then be cloned and sequenced.
+Repeated many times in different labs around the world, this amounts
+to a large effort. This project would obviate much of this: it would
+merely be necessary to obtain a tag sequence, scan the database for
+the desired clone and then request it. It will also be possible to
+conduct "computer-cloning" by searching for desired genes based on
+sequence conservation of particular protein domains.  
+
+A call for collaborators 
+
+  The speed at which we can procede with this scheme will soon become
+dependent upon the number of groups who will share with us the work of
+sequencing and we have appended a more detailed project description
+for those who are potentially interested in participating.
+
+
+Current Participants: 
+
+	Ikuo Takeuchi (Okazaki) 
+	Yoshimasa Tanaka (Tsukuba) 
+	Hideko Urushihara (Tsukuba) 
+	Takahiro Morio (Tsukuba)
+	Yoshihiro Ogawa(Tsukuba)
+	Mineko Maeda (Osaka)
+	Hiroshi Ochiai (Hokkaido) 
+	Tamao Saito (Hokkaido) 
+	Rob Kay (Cambridge) 
+	Jeff Williams(London) - from whom further information can be
+             obtained E-MAIL jeff.williams@ucl.ac.uk
+
+Appendix: A More Detailed Project plan
+
+1). The cDNA libraries The cDNA was synthesised using mRNA isolated
+from slugs, cloned into a small ampicillin resistance plasmid,
+transformed into E. coli and is now being gridded out in micro-titre
+plates. A total of 10-20,000 clones will be analysed.
+
+2) Detection of high abundance sequences and avoidance of duplicating
+sequence determinations between the libraries. 
+
+The cDNA clones will be replicated on to filters, at high density,
+which will then be hybridised with labelled slug cDNA.  From the most
+strongly hybridising clones we will sequence only a limited number of
+randomly picked clones. In this way we will avoid massively redundant
+tag sequencing of the same, highly abundant mRNAs. While it will be
+impossible to entirely prevent such repetitive sequencing, it will
+actually be useful to sequence the same mRNA several times to ensure
+accuracy (typically the same region of a DNA is read 5 times in
+"shotgun" sequencing approaches, such as that proposed in the most
+recently suggested genomic sequencing plan from Bill Loomis). The
+total number of clones eventually sequenced will be between 10 and 20,
+000 and this number should ensure a high (at least 50%) coverage of
+the mRNAs expressed at the slug stage.
+
+3) Determination of the 5' and 3' sequences 
+
+The cDNA inserts will be "tag" sequenced from their peripheries using
+primers located in vector sequences.  This should give up to 1,000
+nucleotides of sequence and, because the average mRNA in Dictyostelium
+is about 1.5Kb in length, over half of the Dictyostelium coding
+sequence present within the library will be established. These partial
+sequences will be searched against the databases and the cDNA clones
+will be prioritised for further analysis. Those that derive from known
+Dictyostelium genes will not be sequenced and those that encode
+"housekeeping" proteins (e.g. metabolic enzymes) will be given lowest
+priority. Those that encode entirely unknown proteins will be given
+intermediate priority and those that contain known sequence domains
+will have the highest priority.
+
+4) Completion of the sequences 
+
+We are committed to completing the entire sequence of each of the
+cDNAs. The Dictyostelium genome is closely mapped, therefore one of
+the major applications of EST's is rendered redundant.  Also, in order
+to be useful as a gridded library, the entire sequence of each clone
+must be lodged in the database. Where necessary, we will therefore
+synthesise primers to complete the sequence of each cDNA. The
+commercial cost of primers has dropped dramatically in recent times
+and this is a viable proposition.
+
+
+===========
+ Abstracts
+===========
+
+Identification of the Cell Fate Gene Stalky in Dictyostelium
+
+Wen-Tsan Chang,  Peter C. Newell  and  Julian D. Gross
+
+Department of Biochemistry, University of Oxford, South Parks Road
+Oxford OX1 3QU,  U.K.
+
+CELL, In Press
+
+SUMMARY
+
+Using insertional mutagenesis we have isolated a "stalky" mutant, in
+which cells normally destined to become spores end up as stalk
+cells. Similar mutants with this phenotype were previously observed
+after chemical mutagenesis but the gene could not be isolated. Our
+mutant, like the previous ones, is in stkA, Its defect, which is cell
+autonomous, is in spore formation and is not overcome by
+overexpressing cAMP-dependent protein kinase. The stkA gene is
+strongly expressed in the prespore region of aggregates, and not
+detectably expressed in the anterior prestalk (pstA) zone.  The mutant
+expresses normal levels of early prespore-cell-specific transcripts
+but fails to produce the late prespore-specific transcript
+spiA. Rescue and sequencing of stkA reveals that it encodes a
+predicted 99-kD protein (STKA) with two putative C4 zinc fingers, one
+of which is a GATA-type zinc finger, indicating that it may be a
+transcription factor.  This conclusion is supported by localisation of
+STKA in the nucleus.
+
+---------------------------------------------------------------------
+
+Classification of Tyrosine Kinases from Dictyostelium discoideum with
+two distinct, complete or incomplete catalytic domains
+
+Kristin Adler, Gunther Gerisch, Ulrike von Hugo, Andrei Lupas, and
+Anton Schweiger
+
+FEBS Letters, in press
+
+Abstract:
+
+   Two new kinases of Dictyostelium discoideum were identified by
+screening of a Lambda-gt11 expression library with a phosphotyrosine
+specific antibody.  Amino-acid sequences derived from cDNA and genomic
+clones indicate that DPYK3 is a protein of 150 kDa and DPYK4 of 75
+kDa. C-terminal fragments of each protein were produced in E. coli and
+shown to be autocatalytically phosphorylated at tyrosine residues. A
+common feature of these kinases is the presence of two different
+sequence stretches in tandem that are related to kinase catalytic
+domains. The sequence relationships of DPYK3 and 4 to other protein
+kinases, and the positions of their catalytic domain sequences within
+the phylogenetic tree of protein kinases were analysed. Domains I of
+both kinases and domain II of DPYK3 constitute, together with the
+catalytic domains of two previously described tyrosine kinases of
+D. discoideum, a branch of their own, separate from the tyrosine
+kinase domains in sensu strictu. Domain II in DPYK4 is found on a
+different branch close to serine/threonine kinases.
+
+---------------------------------------------------------------------
+
+A NOVEL STRUCTURAL COMPONENT OF THE DICTYOSTELIUM CENTROSOME
+
+Astrid Kalt and Manfred Schliwa
+
+Adolf-Butenandt-Institutm Zellbiologie, University of Munich, Germany
+
+Summary
+
+   The microtubule-organizing center of D. discoideum is an
+nucleus-associated body (NAB) that consists of a multilayered,
+box-shaped core embedded in an amorphous corona from which the
+microtubules emerge. The composition of the NAB is still largely
+unresolved. Here we have examined a high molecular weight component of
+the NAB which was identified by a monoclonal antibody raised against
+isolated nucleu/NAB complexes. This antibody recognized a 350 kDa
+component which is immunologically related to the D. discoideum heavy
+chain of myosin II. The 350-kDa antigen was localized only at the NAB
+in interphase cells, while in mitotic cells it was also found in the
+vicinity of the NAB as well as in association with the mitotic
+spindle.  Immunogold labeling experiments showed that the protein is
+part of the NAB corona. This association was not destroyed by
+treatments with 2 M urea or 0.6 M KCL. The 350-kDa antigen was part of
+thiabendazole-induced cytoplasmic microtubule-organizing centers. A
+direct role in the polymerization of tubulin could not be determined
+in an in vitro-microtubule nucleation assay, whereas antibody
+electroporation of live cells appeared to interfere with the
+generation of a normal microtubule system in a subset of cells. Our
+observations suggest that the 350-kDa antigen is a structural
+component of the NAB corona which could be involved in its
+stabilization.
+
+---------------------------------------------------------------------
+
+Adenylyl cyclase G, an osmosensor controling germination of
+Dictyostelium spores
+
+Saskia van Es1, Kiran J. Virdy2, Geoffrey S. Pitt3, Marcel Meima1,
+Todd W. Sands2, Peter N. Devreotes3, David A. Cotter2 and Pauline
+Schaap1.
+
+1.Cell Biology Section, Institute for Molecular Plant Sciences, University of
+Leiden, Wassenaarseweg 64, 2333AL Leiden, The Netherlands.
+2.Department of Biological Sciences, University of Windsor, Windsor,
+Ontario N9B3P4, Canada 
+3.Department of Biological Chemistry, Johns Hop
+kins University Medical
+School, Baltimore, Maryland 21205, USA.
+
+J. Biol. Chem. in press.
+
+
+SUMMARY
+
+   Dictyostelium cells express a G-protein coupled adenylyl cyclase,
+ACA, during aggregation and an atypical adenylyl cyclase, ACG, in
+mature spores. The ACG gene was disrupted by homologous
+recombination. acg- cells developed into normal fruiting bodies with
+viable spores, but spore germination was no longer inhibited by high
+osmolarity, a fairly universal constraint for spore and seed
+germination. ACG activity, measured in aca-/ACG cells, was strongly
+stimulated by high osmolarity with optimal stimulation occurring at
+200 milliosmolar. RdeC mutants, which display unrestrained protein
+kinase A (PKA) activity and a cell line, which overexpresses PKA under
+a prespore specific promoter, germinate very poorly, both at high and
+low osmolarity. These data indicate that ACG is an osmosensor
+controling spore germination through activation of protein kinase A.
+
+---------------------------------------------------------------------
+
+Two ras genes in Dictyostelium minutum show high sequence homology,
+but different developmental regulation from Dictyostelium discoideum
+rasD and rasG genes
+
+Saskia van Es, Rolf A. Kooistra and Pauline Schaap
+
+Cell Biology Section, Institute for Molecular Plant Sciences, University of
+Leiden, Wassenaarseweg 64, 2333 AL Leiden, The Netherlands.
+
+Gene, in press.
+
+SUMMARY
+
+   The social amoeba Dictyostelium discoideum expresses five ras genes
+at different stages of development. One of them, DdrasD is expressed
+during postaggregative development and tra nscription is induced by
+extracellular cAMP. A homologue of DdrasD, the DdrasG gene, is
+expressed exclusively during vegetative growth. We cloned two ras
+homologues, Dmras1 and Dmras2, from the primitive species D. minutum,
+which show high homology to DdrasD and DdrasG and less homology to the
+other Ddras genes. In contrast to the DdrasD and DdrasG genes, both
+the Dmras1 and Dmras2 genes are expressed during the entire course of
+development. The expression levels are low during growth, increase at
+t he onset of starvation and do not decrease until fruiting bodies
+have formed. Expression of neither Dmras1 nor Dmras2 is regulated by
+cAMP. So even though the high degree of homology between the ras genes
+of different species suggests conservation of function, this function
+is apparently not associated with a specific developmental stage.
+
+---------------------------------------------------------------------
+
+WILDTYPE STRAINS OF DICTYOSTELIUM DISCOIDEUM CAN BE TRANSFORMED USING A
+NOVEL SELECTION CASSETTE DRIVEN BY THE PROMOTER OF THE RIBOSOMAL V18 GENE
+
+Birgit Wetterauer1, Piero Morandini2, Irene Hribar1, Irene
+Murgia-Morandini2, Ursula Hamker1, Charles Singleton3, and Harry K.
+MacWilliams1
+
+
+ABSTRACT
+
+   Almost all methods for transformation of the social ameba
+Dictyostelium discoideum rely on axenic growth, that is, growth in a
+synthetic medium, either throughout the procedure or for the
+transfection and a period of preselection.  Axenic growth requires
+several mutations (Williams et al., 1974, Clarke et al., 1987). Here
+we describe a procedure which can be used to transform wildtype
+strains, which are able to grow only on the natural food source,
+bacteria.  The method relies on a new selection cassette driven by the
+V18 promoter, a promoter which we show is substantially more active
+during growth on bacteria than the actin6 promoter, which is widely
+used for axenic transformation.  The procedure gives transformation
+frequencies of about 10-5 with both strains Ax2 (capable of axenic
+growth) and NC4 (capable of growth only on bacteria).  Using this
+vector, we have obtained NC4 strains carrying several
+beta-galactosidase reporter cassettes.  Our vector can also be used in
+axenic transformations.
+
+---------------------------------------------------------------------
+
+[End CSM-News, volume 7, number 9]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+Dicty News
+Electronic Edition
+Volume 21, number 19
+December 26, 2003
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+Chemotaxis: signalling  modules join hands at front and tail
+
+
+Marten Postma, Leonard Bosgraaf, Harriët M. Loovers, and Peter J.M. Van Haastert
+
+
+EMBO Reports, Review/Concept
+
+
+Chemotaxis is the result of a refined interplay between various intracellular 
+molecules that process spatial and temporal information. 
+Here we present a modular scheme of the complex interactions between the front 
+and the back of cells that allows them to navigate. First, at the front of the 
+cell, activated Rho-type GTPases induce actin polymerization and pseudopod formation. 
+Second, phosphatidylinositol 3,4,5-trisphosphate (PI(3,4,5)P3) is produced 
+in a patch at the leading edge, where it binds PH domain-containing proteins, 
+which enhance actin polymerization and translocation of the pseudopod. 
+Third, in Dictyostelium amoebae, a cGMP-signalling cascade has been identified 
+that regulates myosin filament formation in the posterior of the cell, 
+thereby inhibiting the formation of lateral pseudopodia that could misdirect the cell.
+
+Submitted by: Peter J.M. Van Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-----------------------------------------------------------------------------
+Differentiation-inducing factor-1-induced growth arrest of K562 leukemia cells 
+involves the reduction of ERK1/2 activity
+
+
+Emi Akaishi, Torao Narita, Shinjiro Kawai, Yoshikazu Miwa, Toshiyuki Sasaguri, 
+Kohei Hosaka, Yuzuru Kubohara *
+Institute for Molecular and Cellular Regulation (IMCR), Gunma University, 
+Maebashi 371-8512, Japan
+
+
+Eur. J. Pharmacol. In press.
+
+
+Abstract
+The differentiation-inducing factor-1 (DIF-1) is a signal molecule that induces 
+stalk cell differentiation in the cellular slime mold Dictyostelium discoideum.  
+In addition, DIF-1 is a potent anti-leukemic agent that induces growth arrest in 
+K562 cells.  In this study, we investigated the mechanism of the action of DIF-1 
+in K562 cells in the light of cell-cycle regulators such as cyclins, retinoblastoma 
+protein (pRb), and the mitogen-activated protein kinase (MAPK) family.  
+DIF-1 down-regulated cyclins D/E and a phosphorylated form of pRb (p-pRb) and thereby 
+induced G1 arrest of the cell cycle.  DIF-1 inactivated the extracellular signal-regulated 
+kinase (ERK) in a bi-phasic manner but did not affect the c-Jun N-terminal kinase (JNK) 
+or p38 MAPK.  The MEK (MAPK kinase) inhibitor, U0126, which has been shown to induce 
+growth arrest, inactivated ERK and down-regulated cyclins D/E.  Although DIF-1 
+activated the phosphatidylinositol 3-kinase (PI-3K)/Akt pathway, neither wortmannin 
+nor 2-(4-morpholinyl)-8-phenyl-4H-1-benzopyran-4-one (LY294002) (PI-3K inhibitors) 
+cancelled DIF-1-induced growth arrest.  The present results suggest that ERK inactivation 
+may be involved in DIF-1-induced growth arrest and that PI-3K activity is not required 
+for DIF-1-induced growth arrest in K562 cells. 
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+
+===============================================================================
+[End Dicty News, volume 21, number 19]
+

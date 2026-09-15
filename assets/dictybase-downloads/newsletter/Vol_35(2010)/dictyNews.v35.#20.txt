@@ -1,0 +1,198 @@
+dictyNews
+Electronic Edition
+Volume 35, number 20
+Dec 30, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY NEW YEAR!
+
+=========
+Abstracts
+=========
+
+
+The histone methyltransferase Dot1 is required for DNA damage repair and 
+proper development in Dictyostelium
+
+Annette MŸller-Taubenberger, Clemens Bšnisch, Marlis FŸrbringer, 
+Finni Wittek, Sandra B. Hake
+
+
+BBRC, in press
+
+Posttranslational histone modifications play an important role in modulating 
+gene expression and chromatin structure. Here we report the identification of 
+histone H3K79 dimethylation in the simple eukaryote Dictyostelium discoideum. 
+We have deleted the D. discoideum Dot1/KMT4 homologue and demonstrate 
+that it is the sole enzyme responsible for histone H3K79me2. Cells lacking Dot1 
+are reduced in growth and delayed in development, but do not show apparent 
+changes in cell cycle regulation. Furthermore, our results indicate that Dot1 
+contributes to UV damage resistance and DNA repair in D. discoideum. In 
+summary, the data support the view that the machinery controlling the setting 
+of histone marks is evolutionary highly conserved and provide evidence that 
+D. discoideum is a suitable model system to analyze these modifications and 
+their functions during development and differentiation.
+
+
+Submitted by Annette MŸller-Taubenberger [amueller@lrz.uni-muenchen.de]
+--------------------------------------------------------------------------------
+
+
+EGF-like peptide-enhanced cell motility in Dictyostelium functions independently 
+of the cAMP-mediated pathway and requires active Ca2+/calmodulin signaling 
+
+Robert Huber (1) and Danton H. OÕDay (1,2)
+
+(1) Department of Cell & Systems Biology, 25 Harbord Street, University of 
+Toronto, Toronto, ON, Canada  M5S 3G5
+(2) Department of Biology, University of Toronto at Mississauga, 
+3359 Mississauga Road, Mississauga, ON, Canada   L5L 1C6
+
+
+Cellular Signalling, in press
+
+Current knowledge suggests that cell movement in the eukaryotic slime mold 
+Dictyostelium discoideum is mediated by different signaling pathways involving 
+a number of redundant components. Our previous research has identified a 
+specific motility-enhancing function for Epidermal Growth Factor-Like (EGFL) 
+repeats in Dictyostelium, specifically for the EGFL repeats of cyrA, a matricellular, 
+calmodulin (CaM)-binding protein in Dictyostelium. Using mutants of cAMP 
+signaling (carA-, carC-, gpaB-, gpbA-), the endogenous calcium (Ca2+) release 
+inhibitor TMB-8, the CaM antagonist W-7, and a radial motility bioassay, we show 
+that DdEGFL1, a synthetic peptide whose sequence is obtained from the first 
+EGFL repeat of cyrA, functions independently of the cAMP-mediated signaling 
+pathways to enhance cell motility through a mechanism involving Ca2+ signaling, 
+CaM, and RasG. We show that DdEGFL1 increases the amounts of polymeric 
+myosin II heavy chain and actin in the cytoskeleton by 24.1 ± 10.7% and 
+25.9 ± 2.1% respectively and demonstrate a link between Ca2+/CaM signaling 
+and cytoskeletal dynamics. Finally, our findings suggest that carA and carC 
+mediate a brake mechanism during chemotaxis since DdEGFL1 enhanced the 
+movement of carA-/carC- cells by 844 ± 136% compared to only 106 ± 6% for 
+parental DH1 cells. Based on our data, this signaling pathway also appears to 
+involve the G-protein beta subunit, RasC, RasGEFA, and protein kinase B. 
+Together, our research provides insight into the functionality of EGFL repeats in 
+Dictyostelium and the signaling pathways regulating cell movement in this model 
+organism. It also identifies several mechanistic components of 
+DdEGFL1-enhanced cell movement, which may ultimately provide a model 
+system for understanding EGFL repeat function in higher organisms. 
+
+
+Submitted by: Danton H. OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+Tyrosine Phosphorylation of Actin during Microcyst Formation and Germination 
+in Polysphondylium pallidum
+
+Aldona Budniak (1) and Danton H. OÕDay (1,2)
+
+(1) Department of Cell & Systems Biology, 25 Harbord Street, University of 
+Toronto, Toronto, ON, Canada  M5S 3G5
+(2) Department of Biology, University of Toronto at Mississauga, 
+3359 Mississauga Road, Mississauga, ON, Canada   L5L 1C6
+
+
+Protist, in press
+
+High osmolarity causes amoebae of the cellular slime mould Polysphondylium 
+pallidum to individually encyst, forming microcysts. During microcyst differentiation, 
+actin is tyrosine phosphorylated. Tyrosine phosphorylation of actin is independent 
+of encystment conditions and occurs during the final stages of microcyst formation. 
+During microcyst germination, actin undergoes dephosphorylation prior to amoebal 
+emergence. Renewed phosphorylation of actin in germinating microcysts can be 
+triggered by increasing the osmolarity of the medium which inhibits emergence. 
+Immunofluorescence reveals that actin is dispersed throughout the cytoplasm in 
+dormant microcysts. Following the onset of germination, actin is observed around 
+vesicles where it co-localizes with phosphotyrosine. Prior to emergence, actin 
+localizes to patches near the cell surface. Increasing osmolarity disrupts this l
+ocalization and causes actin to redistribute throughout the cytoplasm, a situation 
+similar to that observed in dormant microcysts. The tyrosine phosphorylation state 
+of actin does not appear to influence the long-term viability of dormant microcysts. 
+Together, these results indicate an association between actin tyrosine 
+phosphorylation, organization of the actin cytoskeleton, and microcyst dormancy.
+
+
+Submitted by: Danton H. OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+Expression, identification and purification of Dictyostelium acetoacetyl-CoA 
+thiolase expressed in Escherichia coli Ó
+ 
+Tanaka T, Shima Y, Ogawa N, Nagayama K , Yoshida T, Ohmachi T*
+ 
+Department of Biochemistry and Molecular Biology, Faculty of Agriculture and 
+Life Science, Hirosaki University, 3 Bunkyo-cho, Hirosaki, 036-8561, Japan
+  Present address: Faculty of Life Sciences, University of Manchester, 
+Manchester, M13 9PT, UK
+ 
+ 
+Int. J. Biol. Sci., in press
+ 
+Acetoacetyl-CoA thiolase (AT) is an enzyme that catalyses the CoA-dependent 
+thiolytic cleavage of acetoacetyl-CoA to yield 2 molecules of acetyl-CoA, or the 
+reverse condensation reaction. A full-length cDNA clone pBSGT3, which has 
+homology to known thiolases, was isolated from Dictyostelium cDNA library. 
+Expression of the protein encoded in pBSGT3 in Escherichia coli, its thiolase 
+enzyme activity, and the amino acid sequence homology search revealed that 
+pBSGT3 encodes an AT. The recombinant AT (r-thiolase) was expressed in an 
+active form in an E. coli expression system, and purified to homogeneity by 
+selective ammonium sulfate fractionation and two steps of column 
+chromatography. The purified enzyme exhibited a specific activity of 4.70 mU/mg 
+protein. Its N-terminal sequence was (NH2)-Arg-Met-Tyr-Thr-Thr-Ala-Lys-Asn-
+Leu-Glu-, which corresponds to the sequence from positions 15 to 24 of the 
+amino acid sequence deduced from pBSGT3 clone. The r-thiolase in the inclusion 
+body expressed highly in E. coli was the precursor form, which is slightly larger 
+than the purified r-thiolase. When incubated with cell-free extract of Dictyostelium 
+cells, the precursor was converted to the same size to the purified r-thiolase, 
+suggesting that the presequence at the N-terminus is removed by a 
+Dictyostelium processing peptidase.
+
+
+Submitted by: Tetsuo Ohmachi [tohmachi@cc.hirosaki-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Artificial compounds differentially control Dictyostelium chemotaxis and 
+cell differentiation.
+
+Hidekazu Kuwayama 1, Haruhisa Kikuchi 2, Yoshiteru Oshima 2, 
+Yuzuru Kubohara 3
+
+1 Graduate School of Life and Environmental Sciences, University of Tsukuba, 
+Tsukuba 305-8572, Japan
+2 Graduate School of Pharmaceutical Sciences, Tohoku University, 
+Sendai 980-8578, Japan
+3 Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation (IMCR), Gunma University, Maebashi 371-8512, Japan
+Correspondence: Yuzuru Kubohara, Department of Molecular and Cellular 
+Biology, Institute for Molecular and Cellular Regulation (IMCR), Gunma 
+University, Maebashi 371-8512, Japan. 
+
+
+Cell Structure and Function, in press
+
+Differentiation-inducing factor-1 and -2 (DIF-1 and DIF-2) are small lipophilic 
+signal molecules that control both cell differentiation and chemotaxis in the 
+cellular slime mold Dictyostelium discoideum. In this study, we examined the 
+effects of four amide derivatives of DIF-1 on stalk cell differentiation and 
+chemotaxis. The DIF derivatives differentially affected cell differentiation and 
+chemotaxis, suggesting the possible existence of at least three receptors for 
+DIFs: one receptor responsible for stalk cell induction, and two receptors 
+responsible for chemotaxis modulation. Furthermore, our results indicate that 
+DIF derivatives can be utilized to analyze the DIF-signaling pathways. 
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================
+[End dictyNews, volume 35, number 20]

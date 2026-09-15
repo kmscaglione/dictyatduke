@@ -1,0 +1,292 @@
+Dicty News
+Electronic Edition
+Volume 10, number 11
+April 18, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+SKIPPER, AN LTR RETROTRANSPOSON OF DICTYOSTELIUM
+
+Ping Leng**, David H. Klatte**, Gerald Schumann**, Jef D. Boeke, and
+Theodore L. Steck
+
+** These authors contributed equally and are considered joint first 
+authors
+
+Department of Biochemistry and Molecular Biology, The University of
+Chicago, Chicago, IL 60637
+and
+Dept. of Molecular Biology & Genetics, Johns Hopkins Univ. School of
+Medicine, Baltimore, MD 21205
+
+Nucleic Acids Research, in press 
+
+Abstract
+
+     The complete sequence of a retrotransposon from Dictyostelium 
+discoideum, named skipper, was obtained from cDNA and genomic clones.  
+The sequence of a nearly full-length skipper cDNA was similar to that 
+of three other partially sequenced cDNAs.  The corresponding retro-
+transposon is represented in about 15-20 copies and is abundantly 
+transcribed.  Skipper contains three open reading frames (ORFs) with 
+an unusual sequence organization, aspects of which resemble certain 
+mammalian retroviruses.  ORFs 1 and 3 correspond to gag and pol genes; 
+the second ORF, pro, corresponding to protease, was separated from 
+gag by a single stop codon followed shortly thereafter by a potential 
+pseudoknot.  ORF3 (pol) was separated from pro by a +1 frameshift.  ORFs 
+2 and 3 overlapped by 32 bp.  The computed amino acid sequences of the 
+skipper ORFs contain regions resembling retrotransposon polyprotein 
+domains, including a nucleic acid binding protein, aspartyl protease, 
+reverse transcriptase and integrase. Skipper  is the first example of a 
+retrotransposon with a separate pro gene.  Skipper is also novel in 
+that it appears to use stop codon suppression rather than frameshifting 
+to modulate pro expression.  Finally, skipper  and its components may 
+provide useful tools for the genetic characterization of Dictyostelium. 
+
+-------------------------------------------------------------------------
+A novel Myb homologue initiates Dictyostelium development by
+induction of adenylyl cyclase expression  
+
+Hideshi Otsuka and Peter J.M. Van Haastert
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4,
+9747 AG Groningen, The Netherlands
+
+Genes Dev., in press
+
+ABSTRACT 
+
+   Dictyostelium development is induced by starvation. The adenylyl
+cyclase gene ACA is one of the first genes expressed upon starvation. 
+ACA  produces extracellular cAMP that induces chemotaxis, aggregation
+and differentiation in neighbouring cells. Using insertional
+mutagenesis we have isolated a mutant that does not aggregate upon
+starvation but is rescued by adding extracellular cAMP. Sequencing of
+the mutated locus revealed a new gene, DdMYB2, whose product contains
+three Myb repeats, the DNA-binding motif of Myb-related transcription
+factors. Ddmyb2-null cells show undetectable levels of ACA transcript
+and no cAMP production. Ectopic expression of ACA from a constitutive
+promotor rescues differentiation and morphogenesis of Ddmyb2-null
+mutant. The results suggest that development in Dictyostelium starts
+by starvation-mediated DdMyb2 activation, which induces adenylyl
+cyclase activity producing the differentiation-inducing signal cAMP.
+
+-------------------------------------------------------------------------
+
+In Vitro Microtubule-based Organelle Transport in Wild-Type 
+Dictyostelium and Cells Overexpressing a Truncated Dynein Heavy Chain
+
+Nira Pollock(1), Michael P. Koonce(3), Eugenio L. de Hostos(4), and 
+Ronald D. Vale(2,1) 
+
+(1)Dept. of Pharmacology and (2)Howard Hughes Medical Institute, 
+University of California San Francisco, San Francisco, CA 94143; 
+(3)Division of Molecular Medicine, Wadsworth Center, Empire State 
+Plaza, Albany, New York 12201-0509; and (4)Department of Biochemistry 
+and Cell Biology, Rice University, Houston, TX 77005-1892.
+
+Cell Motil. Cytoskel., in press
+
+Abstract
+
+   The transport of vesicular organelles along microtubules has been
+well documented in a variety of systems, but the molecular mechanisms
+underlying this process are not well understood.  We have developed a
+method for preparing extracts from Dictyostelium discoideum which 
+support high levels of bidirectional, microtubule-based vesicle transport 
+in vitro. This organelle transport assay was also adapted to observe 
+specifically the motility of vesicles in the endocytic pathway.  Vesicle 
+transport can be reconstituted by recombining a high-speed supernatant 
+with KI-washed organelles, which do not move in the absence of 
+supernatant.  Furthermore, a microtubule affinity -purified motor 
+fraction supports robust bidirectional movement of the salt-washed 
+organelles.  The plus and minus end-directed transport activities can
+be separated by exploiting differences in their affinities for 
+microtubules in the presence of 0.3 M KCl.  We also used our assay to 
+examine organelle transport in a strain of Dictyostelium overexpressing 
+a 380-kDa carboxy-terminal fragment of the cytoplasmic dynein heavy 
+chain, which displays an altered microtubule pattern (380-kDa cells; 
+Koonce and Samso, Mol. Biol. Cell, 7: 935-948, 1996).  We have found 
+that the frequency and velocity of minus end-directed membrane organelle 
+movements were significantly reduced in 380-kDa cells relative to wild-
+type cells, while the frequency and velocity of plus end-directed 
+movements were equivalent in the two cell types.  The 380-kDa
+carboxy-terminal fragment cosedimented with membrane organelles, 
+although its affinity was significantly lower than that of native 
+dynein.  An impaired membrane-microtubule interaction may be responsible 
+for the altered microtubule patterns in the 380-kDa cells. 
+
+-------------------------------------------------------------------------
+
+Conditional Loss of Myosin-II Function Mutants Reveal a Position in the 
+Tail that is Critical for Filament Nucleation
+
+Sheri L. Moores and James A. Spudich
+
+Department of Biochemistry, Stanford University School of Medicine
+Stanford, CA 94305
+
+Molecular Cell, in press
+
+Summary
+
+Myosin-II must be assembled into filaments to perform its cellular
+functions.  Two conditional loss of myosin-II function mutants were
+recovered from a genetic screen (Patterson and Spudich, 1995) with 
+defects that were mapped to the coiled coil tail region of Dictyostelium 
+myosin-II.  Strikingly, both tail mutations affected the same arginine 
+residue at position 1880.  A single amino acid substitution, R1880P, 
+disrupted both the dimerization and tetramerization steps of filament 
+nucleation.  Even a single charge reversal at this position, R1880D, 
+was sufficient to inhibit filament assembly, while other single charge 
+reversals in the region of antiparallel contact suppressed these 
+filament assembly mutants.  The considerable impact of small 
+electrostatic forces on nucleation suggests that these steps are 
+delicately balanced.
+
+-------------------------------------------------------------------------
+
+EXPRESSION OF STARVATION-INDUCED GENES
+IN ZYGOTES OF Dictyostelium discoideum
+
+MIHO IIJIMA, KAZUHIRO AIBA*, YOSHIMASA TANAKA 
+and HIDEKO URUSHIHARA
+
+INSTITUTE OF BIOLOGICAL SCIENCES
+UNIVERSITY OF TSUKUBA
+TSUKUBA-SHI, IBARAKI 305 JAPAN
+
+* Present address: Doi Bioassymmetry Project, ERATO, JST, Tsukuba 
+Research Consortium, Tsukuba-shi, Ibaraki 300-26, Japan 
+
+Journal of Plant Research, in press.
+
+ABSTRACT
+
+   Two cDNA fragments induced in developing zygotes of Dictyostelium 
+discoideum were isolated by mRNA differential display. The relevant 
+genes were also found to be expressed during asexual development, 
+suggesting that sexual and asexual development share common molecular 
+mechanisms in D. discoideum.
+
+--------------------------------------------------------------------------
+
+A Dictyostelium discoideum homologue to Tcp-1 is essential for 
+growth and development
+
+Miho Iijima, Hajime Shimizua, Yoshimasa Tanaka and Hideko 
+Urushihara*
+
+Institute of Biological Sciences, University of Tsukuba 
+Tsukuba-shi, 305-8572, JAPAN
+
+*Address for correspondence: Institute of Biological Sciences, 305-8572 
+Japan;  TEL. +81-298-53-4664; FAX. +81-298-53-6614; e-mail: 
+d402hu@sakura.cc.tsukuba.ac.jp
+
+GENE, in press.
+
+Abstract
+
+     Tcp-1 (t-complex polypeptide 1 gene) was first identified in the 
+mouse as relevant for tail-less and embryonic lethal phenotypes. Since 
+then, its homologous sequences have been isolated in several other 
+species, and the yeast Tcp-1 has been shown to encode a molecular 
+chaperon for actin and tubulin. In a random sample of genes expressed 
+in the gamete of Dictyostelium discoideum (Dd), we encountered a sequence
+containing the TCP1 motifs. The complete ORF of the gene (DdTcp-1) showed
+more than 60% similarity to TCP-1 of several organisms including human. 
+DdTcp-1 was found to be expressed in both sexually mature and immature 
+cells at the growth phase. Although the sexual process itself was not 
+affected, antisense interference of this gene resulted in severe 
+retardation of cell growth, leading to the complete cessation of 
+division. In addition, the antisense transformants stopped asexual 
+development at the finger stage. These results suggest an important 
+function of DdTcp-1 in growth and development of this organism. 
+
+-------------------------------------------------------------------------
+
+Microtubule mediated centrosome motility and the positioning of 
+cleavage furrows in multinucleate myosin II-null cells
+
+Ralph Neujahr, Richard Albrecht, Jana Köhler, Monika Matzner, 
+Jean-Marc Schwartz, Monika Westphal, and Günther Gerisch
+
+Max-Planck-Institut für Biochemie
+D-82152 Martinsried, Germany
+
+J. Cell Science, in press.
+
+Summary
+
+To study centrosome motility and the interaction of microtubules with the
+cell cortex in mitotic, post-mitotic and interphase cells, a-tubulin was
+tagged in Dictyostelium discoideum with GFP. Multinucleate cells formed by
+myosin II-null mutants proved to be especially suited for the analysis of
+the control of cleavage furrow formation by the microtubule system. After
+docking of the mitotic apparatus onto the cell cortex during anaphase, the
+cell surface is activated to form ruffles on top of the asters of
+microtubules that emanate from the centrosomes. Cleavage furrows are
+initiated at spaces between the asters independent of the positions of
+spindles. Once initiated, the furrows expand as deep folds without a
+continued connection to the microtubule system. Occurrence of unilateral
+furrows indicates that a closed contractile ring is dispensable for
+cytokinesis in Dictyostelium. The progression of cytokinesis in the
+multinucleate cells underlines the importance of proteins other than myosin
+II in specifying a cleavage furrow. The analysis of centrosome motility
+suggests a major role for a minus-end directed motor protein, probably
+cytoplasmic dynein, in applying traction forces on guiding microtubules
+that connect the centrosome with the cell cortex. 
+
+-------------------------------------------------------------------------
+
+Dictyostelium discoideum cells shed vesicles with associated DNA 
+and vital stain Hoechst 33342
+I. Tatischeff(a)*, M. Bomsel(b), C. de Paillerets(c), H. Durand(b), 
+B. Geny(b), D. Segretain(d), E. Turpin(b) and A. Alfsen(c)
+
+(a) : Laboratoire de Physicochimie Biomoléculaire et Cellulaire, CNRS URA
+2056, Université Pierre et Marie Curie, 4, Place Jussieu, Case 138,F-75252
+Paris Cedex 05, France. e-mail: tati@lpbc.jussieu.fr
+(b) : Signalisation, Inflammation et Transformation Cellulaire, U. 332,
+Institut Cochin de Génétique Moléculaire, 22, rue Méchain,F-75014 Paris,
+France
+© : Etats Liés Moléculaires, Université René Descartes, 45, rue des
+Saints-Pères,F-75270 Paris Cedex 06, France
+(d) : Laboratoire d'Histologie et Embryologie, CHU Paris-Ouest, Faculté de
+Médecine, 45, rue des Saints-Pères,F-75270 Paris Cedex 06, France
+
+Cellular and Molecular Life Sciences, in press.
+
+Abstract
+
+   Dictyostelium discoideum cells are highly resistant to xenobiotics. 
+We previously observed that these primitive eukaryotic cells contain a 
+170 kDa P-glycoprotein, mediating multidrug resistance in mammalian 
+cells, but non-functional in Dictyostelium cells. We show here that 
+Dictyostelium discoideum cells vitally stained with the DNA-specific 
+dye, Hoechst 33342, release fluorescent material in their culture 
+medium. Electron microscopy and lipid analysis demonstrate the 
+vesicular nature of this material.  Moreover, nucleic acids associate 
+with these extracellular vesicles independently of Hoechst vital 
+staining. The main vesicular DNA component exhibits a size >21 kb. 
+Shedding of microvesicles during cell growth is not concomitant to 
+programmed cell death. We propose that these extracellular vesicles 
+are involved in a new cellular resistance mechanism against xenobiotics. 
+Furthermore, since the association of DNA with vesicles occurs in 
+physiological growth conditions and independently of vital staining, 
+the new shedding process might be involved in a more general intercellular 
+mechanism.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 11]
+

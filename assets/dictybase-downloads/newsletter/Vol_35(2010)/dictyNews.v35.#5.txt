@@ -1,0 +1,80 @@
+dictyNews
+Electronic Edition
+Volume 35, number 5
+August 13, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+cAMP diffusion in Dictyostelium discoideum: A Green’s function method
+
+Daniel S. Calovi, Leonardo G. Brunnet, and Rita M. C. de Almeida
+
+Instituto de Física, Universidade Federal do Rio Grande do Sul, Av. 
+Bento Gonçalves 9500, P.B. 15051, 91501-970 Porto Alegre, RS, 
+Brazil
+
+
+Physical review, E 82, 011909 2010
+
+A Green’s function method is developed to approach the spatiotemporal 
+equations describing the cAMP production in Dictyostelium discoideum, 
+markedly reducing numerical calculations times: cAMP concentrations 
+and gradients are calculated just at the amoeba locations. A single set 
+of parameters is capable of reproducing the different observed behaviors, 
+from cAMP synchronization, spiral waves and reaction-diffusion patterns 
+to streaming and mound formation. After aggregation, the emergence 
+of a circular motion of amoebas, breaking the radial cAMP field 
+symmetry, is observed.
+
+
+Submitted by  Daniel Calovi [calovi@if.ufrgs.br]
+--------------------------------------------------------------------------------
+
+
+The ROCO kinase QkgA is necessary for proliferation inhibition by 
+autocrine signals in Dictyostelium discoideum 
+
+Jonathan E. Phillips and Richard H. Gomer
+
+
+Eukaryotic Cell, in press
+
+AprA and CfaD are secreted proteins that function as autocrine signals 
+to inhibit cell proliferation in Dictyostelium discoideum.  Cells lacking 
+AprA or CfaD proliferate rapidly, and adding AprA or CfaD to cells 
+slows proliferation. Cells lacking the ROCO kinase QkgA proliferate 
+rapidly, with a doubling time 83% that of wild type, and overexpression 
+of a QkgA-GFP fusion protein slows cell proliferation.  We found that 
+qkgA¯ cells accumulate normal levels of extracellular AprA and CfaD.  
+Exogenous AprA or CfaD does not slow the proliferation of cells lacking 
+qkgA, and expression of QkgA-GFP in qkgA¯ cells rescues this 
+insensitivity.  Like cells lacking AprA or CfaD, cells lacking QkgA tend 
+to be multinucleate, accumulate nuclei rapidly, and show a mass and 
+protein accumulation per nucleus like that of wild type, suggesting that 
+QkgA negatively regulates proliferation but not growth.  Despite their 
+rapid proliferation, cells lacking AprA, CfaD, or QkgA expand as a 
+colony on bacteria less rapidly than wild type. Unlike AprA and CfaD, 
+QkgA does not affect spore viability following multicellular development.  
+Together, these results indicate that QkgA is necessary for proliferation 
+inhibition by AprA and CfaD, that QkgA mediates some but not all of 
+the effects of AprA and CfaD, and that QkgA may function downstream 
+of these proteins in a signal transduction pathway regulating proliferation.   
+
+
+Submitted by  Richard Gomer [rgomer@tamu.edu]
+==============================================================
+[End dictyNews, volume 35, number 5]

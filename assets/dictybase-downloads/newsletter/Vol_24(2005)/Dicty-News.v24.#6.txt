@@ -1,0 +1,259 @@
+Dicty News
+Electronic Edition
+Volume 24, number 6
+March 11, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Computer-Assisted Reconstruction and Analysis of Filopod Formation and the
+Role of Myosin II Heavy Chain Phosphorylation in Dictyostelium
+
+Paul J. Heid, Jeremy Geiger, Deborah Wessels, Edward Voss and David R. Soll
+
+W.M. Keck Dynamic Image Analysis Facility, Department of Biological Sciences,
+The University of Iowa, Iowa City, IA 52242
+
+
+J Cell Science, in press
+
+To investigate the role played by filopodia in the motility and chemotaxis of
+amoeboid cells, a computer-assisted 3D reconstruction and motion analysis
+system, DIAS 4.0, has been developed.  Reconstruction at short time intervals
+of Dictyostelium amoebae migrating in buffer or in response to chemotactic
+signals revealed 1) that the great majority of filopodia form on pseudopodia,
+not on the cell body; 2) that filopodia on the cell body originate primarily
+on pseudopodia and relocate; and 3) that filopodia on the uropod are longer
+and more stable than those located on other portions of the cell.  When
+adjusting direction through lateral pseudopod formation in a spatial gradient
+of chemoattractant, the temporal and spatial dynamics of lateral pseudopodia
+suggest that filopodia may be involved in stabilizing pseudopodia on the
+substratum while the decision is being made by a cell either to turn into a
+pseudopodium formed in the correct direction (up the gradient) or to retract
+a pseudopodium formed in the wrong direction (down the gradient).  Experiments
+in which amoebae were treated with high concentrations of chemoattractant
+further revealed that receptor occupancy plays a role both in filopod
+formation and retraction.  Since phosphorylation-dephosphorylation of myosinII
+heavy chain (MHC) plays a role in lateral pseudopod formation, turning and
+chemotaxis, the temporal and spatial dynamics of filopod formation were
+analyzed in MHC phosphorylation mutants.  These latter studies revealed that
+MHC phosphorylation-dephosphorylation plays a role in the regulation of
+filopod formation during cell migration in buffer and during chemotaxis.
+The computer-assisted technology described here for reconstructing filopodia
+at short time intervals in living cells, therefore, provides a new tool for
+investigating the role filopodia play in the motility and chemotaxis of
+amoeboid cells.
+
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+
+-----------------------------------------------------------------------------
+
+
+Dynamic properties of Legionella-containing phagosomes in Dictyostelium
+amoebae
+
+Hao Lu and Margaret Clarke
+(Program in Molecular, Cell, and Developmental Biology, Oklahoma Medical
+Research Foundation, Oklahoma City, OK 73121)
+
+
+Cellular Microbiology, in press
+
+The natural hosts of the bacterial pathogen Legionella pneumophila are
+amoebae and protozoa.  In these hosts, as in human macrophages, the pathogen
+enters the cell through phagocytosis, then rapidly modifies the phagosome to
+create a compartment that supports its replication.  We have examined L. 
+pneumophila entry and behavior during early stages of the infection of
+Dictyostelium discoideum amoebae.  Bacteria were labeled with a red
+fluorescent marker, and selected proteins and organelles in the host were
+labeled with GFP, allowing the dynamics and interactions of L. pneumophila-
+containing phagosomes to be tracked in living cells.  These studies
+demonstrated that entry of L. pneumophila is an actin-mediated process, that
+the actin-binding protein coronin surrounds the nascent phagosome but
+dissociates immediately after internalization, that ER membrane is not
+incorporated into a phagosome during uptake, that the newly internalized
+phagosome is rapidly transported about the cell on microtubules, that
+association of ER markers with the phagosome occurs in two steps that
+correlate with distinct changes in phagosome movement, and that the
+vacuolar H(+)-ATPase does not associate with mature replication vacuoles.
+These studies have clarified certain aspects of the  infection process
+and provided new insights into the dynamic interactions between the
+pathogen and its host.  
+
+
+Submitted by: Margaret Clarke [clarkem@omrf.ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+
+Manifestations of multicellularity - Dictyostelium reports
+
+Jeffrey G. Williams*, Angelika A. Noegel+ and Ludwig Eichinger+
+
+*School of Life Sciences
+University of Dundee
+MSI/WTB Complex
+Dow Street
+Dundee
+DD1 5EH
+U. K. 
+
++ Centre for Biochemistry and Centre for Molecular Medicine Cologne
+Medical Faculty, University of Cologne
+Joseph-Stelzmann-Str. 52
+50931 Cologne
+Germany
+
+TIGS Ms, in press
+
+Foreword
+
+The Dictyostelium genome sequence, the first complete amoebozoan sequence
+to be released, has revealed many important evolutionary insights; notable
+among these is the high degree of overlap between metazoan and Dictyostelium
+proteomes. 
+
+Abstract 
+
+The recent release of the Dictyostelium genome sequence is important because
+Dictyostelium has become a much-favoured model system for cell and
+developmental biologists. The sequence has revealed a remarkably high total
+number of app. 12,500 genes, only a thousand fewer than are encoded by
+Drosophila. Previous protein sequence comparisons suggested that
+Dictyostelium is evolutionary closer to animals and fungi than to plants
+and the global protein sequence comparison, now made possible by the genome
+sequence, confirms this. This review focuses on several classes of proteins
+that are shared by Dictyostelium and animals: a highly sophisticated array
+of microfilament components, a large family of G protein-coupled receptors
+and a diverse set of SH2 domain-containing proteins. The presence of these
+proteins strengthens the case for a relatively close relationship with
+animals and extends the range of problems that can be addressed using
+Dictyostelium as a model organism
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+
+-----------------------------------------------------------------------------
+
+cAMP controls cytosolic Ca2+ levels in Dictyostelium discoideum
+
+Daniel F. Lusche, Karen Bezares-Roder, Kathrin Happle, Christina Schlatterer
+
+Faculty for Biology, University of Konstanz, 78457 Konstanz, Germany
+
+
+BMC Cell Biology, in press
+
+Abstract
+Background: Differentiating Dictyostelium discoideum amoebae respond upon
+cAMP-stimulation with an increase in the cytosolic free Ca2+ concentration
+([Ca2+]i) that is composed of liberation of stored Ca2+ and extracellular
+Ca2+-influx. In this study we investigated whether intracellular cAMP is
+involved in the control of [Ca2+]i. 
+
+Results: We analyzed Ca2+-fluxes in a mutant that is devoid of the main
+cAMP-phosphodiesterase (PDE) RegA and displays an altered cAMP metabolism.
+In suspensions of developing cells cAMP-activated influx of extracellular
+Ca2+ was reduced as compared to wild type. Yet, single cell [Ca2+]i-imaging
+of regA- amoebae revealed a cAMP-induced [Ca2+]i increase even in the
+absence of extracellular Ca2+. The cytosolic presence of the cAMP PDE
+inhibitor 3-isobutyl-1-methylxanthine (IBMX) induced elevated basal
+[Ca2+]i in both, mutant and wild type cells. Under this condition wild type
+cells displayed cAMP-activated [Ca2+]i-transients also in nominally
+Ca2+-free medium. In the mutant strain the amplitude of light scattering
+oscillations and of accompanying cAMP oscillations were strongly reduced
+to almost basal levels. In addition, chemotactic performance during
+challenge with a cAMP-filled glass capillary was altered by EGTA-incubation.
+Cells were more sensitive to EGTA treatment than wild type: already at
+2 mM EGTA only small pseudopods were extended and chemotactic speed was
+reduced. 
+
+Conclusions: We conclude that there is a link between the second messengers
+cAMP and Ca2+. cAMP-dependent protein kinase (PKA) could provide for this
+link as a membrane-permeable PKA-activator also increased basal [Ca2+]i of
+regA- cells. Intracellular cAMP levels control [Ca2+]i by regulating
+Ca2+-fluxes of stores which in turn affect Ca2+-influx, light scattering
+oscillations and chemotactic performance. 
+
+
+Submitted by: Christina Schlatterer [Christina.Schlatterer@uni-konstanz.de]
+
+-----------------------------------------------------------------------------
+
+
+Ca2+-regulation in the absaence of the iplA gene product in Dictyostelium
+discoideum
+
+Ralph H Schaloske 1, Daniel F Lusche 2, Karen Bezares-Roder 2,
+Kathrin Happle 2, Dieter Malchow 2 and Christina Schlatterer 2
+
+1 Department of Chemistry and Biochemistry, University of California at
+San Diego, 9500 Gilman Drive, La Jolla, CA 92093-0601, USA
+2 Faculty for Biology, University of Konstanz, 78457 Konstanz, Germany
+
+
+BMC Cell Biology, in press
+
+Abstract 
+
+Background
+Stimulation of Dictyostelium discoideum with cAMP evokes an elevation of
+the cytosolic free Ca2+ concentration ([Ca2+]i). The [Ca2+]i-change is
+composed of liberation of stored Ca2+ and extracellular Ca2+-entry. The
+significance of the [Ca2+]i-transient for chemotaxis is under debate.
+Abolition of chemotactic orientation and migration by Ca2+-buffers in the
+cytosol indicates that a [Ca2+]i-increase is required for chemotaxis. Yet,
+the iplA- mutant disrupted in a gene bearing similarity to IP3-receptors of
+higher eukaryotes aggregates despite the absence of a cAMP-induced
+[Ca2+]i-transient which favours the view that [Ca2+]i-changes are
+insignificant for chemotaxis. 
+
+Results
+We investigated Ca2+-fluxes and the effect of their disturbance on chemotaxis
+and development of iplA- cells. Differentiation was altered as compared to
+wild type amoebae and sensitive towards manipulation of the level of stored
+Ca2+. Chemotaxis was impaired when [Ca2+]i-transients were suppressed by the
+presence of a Ca2+-chelator in the cytosol of the cells. Analysis of ion
+fluxes revealed that capacitative Ca2+-entry was fully operative in the
+mutant. In suspensions of intact and permeabilized cells cAMP elicited
+extracellular Ca2+-influx and liberation of stored Ca2+, respectively, yet
+to a lesser extent than in wild type. In suspensions of partially purified
+storage vesicles ATP-induced Ca2+-uptake and Ca2+-release activated by fatty
+acids or Ca2+-ATPase inhibitors were similar to wild type. Mn2+-quenching of
+fura2 fluorescence allows to study Ca2+-influx indirectly and revealed that
+the responsiveness of mutant cells was shifted to higher concentrations:
+roughly 100 times more Mn2+ was necessary to observe agonist-induced
+Mn2+-influx. cAMP evoked a [Ca2+]i-elevation when stores were strongly
+loaded with Ca2+, again with a similar shift in sensitivity in the mutant.
+In addition, basal [Ca2+]i was significantly lower in iplA- than in wild
+type amoebae.
+
+Conclusions
+These results support the view that [Ca2+]i-transients are essential for
+chemotaxis and differentiation. Moreover, capacitative and agonist-activated
+ion fluxes are regulated by separate pathways that are mediated either by
+two types of channels in the plasma membrane or by distinct mechanisms
+coupling Ca2+-release from stores to Ca2+-entry in Dictyostelium. The
+iplA- strain retains the capacitative Ca2+-entry pathway and an impaired
+agonist-activated pathway that operates with reduced efficiency or at
+higher ionic pressure.
+
+
+Submitted by: Christina Schlatterer [Christina.Schlatterer@uni-konstanz.de]
+
+==============================================================================
+[End Dicty News, volume 24, number 6] 

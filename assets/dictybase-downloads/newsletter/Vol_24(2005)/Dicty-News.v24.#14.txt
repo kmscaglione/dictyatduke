@@ -1,0 +1,156 @@
+Dicty News
+Electronic Edition
+Volume 24, number 14
+June 3, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Transcriptional switch of the dia1 and impA promoter during the 
+growth/differentiation transition
+
+Shigenori Hirose, Taira Mayanagi, Catherine Pears, Aiko Amagai, 
+William F. Loomis, and Yasuo Maeda
+
+
+Eukaryotic Cell, in press
+
+When growth stops due to the depletion of nutrients, Dictyostelium cells 
+rapidly turn off vegetative genes and start to express developmental genes. 
+One of the early developmental genes, dia1, is adjacent to a vegetative gene,
+impA, on chromosome 4. An intergenic region of 654 bp separates the coding
+regions of these divergently transcribed genes. Constructs carrying the
+intergenic region express a reporter gene (GFP) that replaced impA in growing
+cells and a reporter gene that replaced dia1 (DsRed) during development. 
+Deletion of a 112 bp region proximal to the transcriptional start site of 
+impA resulted in complete lack of expression of both reporter genes during 
+growth or development. At the other end of the intergenic region there are 
+two copies of a motif that is also found in the carA regulatory region. 
+Removing one copy of this repeat reduced impA expression 2-fold. Removing 
+the second copy had no further consequences. Removing the central portion of 
+the intergenic region resulted in high levels of expression of dia1 in 
+growing cells indicating that this region contains a sequence involved in 
+repression during the vegetative stage.  Gel-shift experiments showed that 
+a nuclear protein present in growing cells recognizes the sequence
+GAAGTTCTAATTGATTGAAG found in this region. This DNA binding activity is lost 
+within the first 4 hours of development. Different nuclear proteins were 
+found to recognize the repeated sequence proximal to dia1. One of these 
+became prevalent after 4 hours of development. Together these regulatory 
+components at least partially account for this aspect of the growth to 
+differentiation transition.
+
+
+Submitted by: William F. Loomis [wloomis@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+DNG1, a Dictyostelium homologue of tumor suppressor ING1 regulates 
+differentiation of Dictyostelium cells.
+
+Taira Mayanagi, Aiko Amagai and Yasuo Maeda
+
+Department of Developmental Biology and Neurosciences, Graduate School of 
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+
+Cell Mol Life Sci., in press
+
+dng1 is a Dictyostelium homologue of the mammalian tumor suppressor ING gene. 
+DNG1 protein localizes in the nucleus, and has a highly conserved PHD finger 
+domain found in chromatin remodeling proteins. Both dng1 disruption and 
+overexpression impaired cell proliferation. In dng1-null cells, the 
+progression of differentiation was delayed in a cell-density dependent 
+manner, and many tiny aggregates were formed. Exogenously applied cAMP pulses 
+reversed the inhibitory effect caused by dng1 disruption on the aggregation 
+during early development, but formation of tiny aggregates was not restored. 
+dng1-overexpressing cells acquired the ability to chemotaxis to cAMP earlier 
+and exhibited enhanced differentiation. These phenotypes were found to be 
+coupled with altered expressions of early genes such as cAMP receptor 1 (car1) 
+and contact site A (csA). Furthermore, disordered histone modifications were 
+demonstrated in dng1-null cells. These results suggest a regulatory role of 
+dng1 in the transition of cells from growth to differentiation.
+
+
+Submitted by: Taira Mayanagi [taira@nbiochem.med.osaka-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+A collection of amino acid replacement matrices derived from clusters of 
+orthologs
+
+Rolf Olsen and William F. Loomis
+
+Division of Biology. UCSD
+
+
+J. Molecular Evolution, in press
+
+Sequence divergence among orthologous proteins was characterized with 34 
+amino acid replacement matrices, sequence context analysis and a 
+phylogenetic tree. The model was trained on very large datasets of aligned 
+protein sequences drawn from 15 organisms including protists, plants, 
+Dictyostelium, fungi and animals.  Comparative tests with models currently 
+used in phylogeny, i.e. with JTT+G± F and WAG+G± F, made on a test dataset 
+of 380 multiple alignments containing protein sequences from all 5 of the 
+major taxonomic groups mentioned,  indicate our model should be preferred 
+over the JTT+G± F and WAG+G± F models on datasets similar to the test 
+dataset. The strong performance of our model of orthologous protein 
+sequence divergence can be attributed to its ability to better approximate 
+amino acid equilibrium frequencies to compositions found in alignment columns. 
+
+
+Submitted by: William F. Loomis [wloomis@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+Structural requirements of Dictyostelium differentiation-inducing factors for
+their stalk-cell-inducing activity in Dictyostelium cells and 
+anti-proliferative activity in K562 human leukemic cells
+
+Naomi Gokan, Haruhisa Kikuchi, Koji Nakamura, Yoshiteru Oshima, Kohei Hosaka,
+and Yuzuru Kubohara*
+
+*Gunma University IMCR, Japan.
+
+
+Biochem. Pharmacol., in press 
+
+The differentiation-inducing factor-1 (DIF-1) is a lipophilic signal 
+molecule (chlorinated alkylphenone) that induces stalk cell differentiation 
+in the cellular slime mould Dictyostelium discoideum.  It has also been 
+shown that DIF-1 and its derivative (DIF-3) suppress cell growth in 
+mammalian tumor cells.  In the present study, in order to assess the 
+chemical structure-effect relationship of DIF derivatives and to develop 
+useful agents for the study of both Dictyostelium development and cancer 
+biology, we synthesized 28 analogues of DIF-1 and DIF-3 and investigated 
+their stalk-cell-inducing activity in Dictyostelium HM44 cells (mutant 
+strain) and anti-proliferative activity in human leukemia K562 cells.  
+HM44 cells are defective in endogenous DIF-1 production and should be 
+suitable for the assay for stalk-cell-inducing activity of DIF analogues.  
+DIF-1 and some of its derivatives at nanomolar levels were good stalk-cell 
+inducers in HM44 cells, whereas DIF-3 and some DIF-3 derivatives at 
+micromolar levels were potent anti-proliferative agents in K562 cells.  
+We also tried to search for antagonistic molecules against DIF-1 and DIF-3 
+but failed to find such molecules from the analogues used here.  The present 
+findings would give us hints for identifying the target molecule(s) of DIFs 
+and also for developing novel anti-cancer drugs. 
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+
+==============================================================================
+[End Dicty News, volume 24, number 14] 

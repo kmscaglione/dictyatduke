@@ -1,0 +1,134 @@
+Dicty News
+Electronic Edition
+Volume 23, number 13
+October 15, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+In vivo analysis of 3-phosphoinositide dynamics during Dictyostelium
+phagocytosis and chemotaxis
+
+Dirk Dormann (1), Gerti Weijer (1), Simon Dowler (2) and Cornelis
+J. Weijer (1)
+
+1. Division of Cell and Developmental Biology, MSI/WTB Complex,
+University of Dundee, Dow Street, Dundee DD1 5EH, UK; 2. BioFocus Ltd,
+Cambridge, UK
+
+
+Journal of Cell Science, in press
+
+Phagocytosis and chemotaxis are receptor-mediated processes that require
+extensive rearrangements of the actin cytoskeleton, and are controlled by
+lipid second messengers such as phosphatidylinositol 3,4,5-trisphosphate
+[PI(3,4,5)P3] and phosphatidylinositol 3,4-bisphosphate [PI(3,4)P2]. We
+used a panel of Pleckstrin Homology (PH) domains with distinct binding
+specificities for PI(3,4,5)P3 and PI(3,4)P2 to study the spatiotemporal
+dynamics of these phosphoinositides in vivo. During phagocytosis and
+macropinocytosis PI(3,4,5)P3 levels transiently increase at sites of
+engulfment, followed by a rapid PI(3,4)P2 production round the
+phagosome/macropinosome upon its internalisation, suggesting that
+PI(3,4,5)P3 is degraded to PI(3,4)P2. PTEN null mutants, which are
+defective in phagocytosis, show normal rates of PI(3,4,5)P3 degradation,
+but unexpectedly an accelerated PI(3,4)P2 degradation. During chemotaxis
+to cAMP only PI(3,4,5)P3 is formed in the plasma membrane, no PI(3,4)P2
+is detectable showing, that all PI(3,4,5)P3 is degraded by PTEN to
+PI(4,5)P2. We furthermore show that different PI(3,4,5)P3 binding PHdomains
+give distinct spatial and temporal readouts of the same underlying
+PI(3,4,5)P3 signal, enabling distinct biological responses to one signal.
+ 
+ 
+Submitted by:  Dirk Dormann [d.dormann@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Exposure of cells to a cell-number counting factor decreases the activity of
+glucose-6-phosphatase to decrease intracellular glucose levels in
+Dictyostelium 
+
+Wonhee Jang and Richard H. Gomer
+Howard Hughes Medical Institute and Department of Biochemistry and Cell
+Biology, MS-140, Rice University, 6100 S. Main Street, Houston, TX 77005-1892
+
+
+Eukaryotic Cell, in press
+
+The development of Dictyostelium discoideum is a model for tissue size
+regulation as these cells form groups of ~2 x 104 cells.  The group size
+is regulated in part by a negative feedback pathway mediated by a secreted
+multi-polypeptide complex called counting factor (CF).  CF signal
+transduction involves CF decreasing intracellular glucose levels.  A
+component of CF, countin, has the bioactivity of the entire CF complex, and
+an 8-minute exposure of cells to recombinant countin decreases intracellular
+glucose levels.  To understand how CF regulates intracellular glucose, we
+examined the effect of CF on enzymes involved in glucose metabolism.
+Exposure of cells to CF has little effect on amylase or glycogen
+phosphorylase, enzymes involved in glucose production from glycogen.
+Glucokinase activity (the first specific step of glycolysis) is inhibited
+by high levels of CF but is not affected by an 8-minute exposure to countin.
+The second enzyme specific for glycolysis, phosphofructokinase, is not
+regulated by CF.  There are two corresponding enzymes in the gluconeogenesis
+pathway, fructose-1,6-bisphosphatase and glucose-6-phosphatase.  The first
+is not regulated by CF or countin, whereas glucose-6-phosphatase is
+regulated by both CF and an 8-minute exposure to countin.  The
+countin-induced changes in the Km and Vmax of glucose-6-phosphatase cause a
+decrease in glucose production that can account for the countin-induced
+decrease in intracellular glucose levels.  It thus appears that part of the
+CF signal transduction pathway involves inhibiting the activity of
+glucose-6-phosphatase, decreasing intracellular glucose levels and affecting
+the levels of other metabolites, to regulate group size.
+
+
+Submitted by:  Richard Gomer [richard@rice.edu]
+
+-----------------------------------------------------------------------------
+
+
+Cellular distribution and functions of wild-type and constitutively activated
+Dictyostelium PakB
+
+Marc de la Roche, Amjad Mahasneh, Sheu-Fen Lee, Francisco Rivero* and
+Graham P. Côté§
+Department of Biochemistry, Queen's University, Kingston, Ontario,
+Canada K7L 3N6; *Zentrum für Biochemie, Medizinische Fakultät, Universität
+zu Köln, Joseph-Stelzmann-Strasse 52, 50931 Köln, Germany
+
+
+Molecular Biology of the Cell, In Press
+
+Dictyostelium PakB, previously termed myosin I heavy chain kinase, is a
+member of the p21-activated kinase (PAK) family.  Two-hybrid assays showed
+that PakB interacts with Dictyostelium Rac1a/b/c, RacA (a RhoBTB protein),
+RacB, RacC and RacF1.  Wild-type PakB displayed a cytosolic distribution
+with a modest enrichment at the leading edge of migrating cells and at
+macropinocytic and phagocytic cups, sites consistent with a role in
+activating myosin I.  PakB fused at the N-terminus to GFP was proteolyzed
+in cells, resulting in removal of the catalytic domain.  C-terminal
+truncated PakB and activated PakB lacking the p21-binding domain strongly
+localized to the cell cortex, to macropinocytic cups, to the posterior of
+migrating cells and to the cleavage furrow of dividing cells.  These data
+indicate that in its open, active state, the N-terminus of PakB forms a
+tight association with cortical actin filaments.  PakB-null cells displayed
+no significant behavioral defects, but cells expressing activated PakB were
+unable to complete cytokinesis when grown in suspension and exhibited
+increased rates of phagocytosis and pinocytosis.
+ 
+ 
+Submitted by:  Graham Cote [coteg@post.queensu.ca]
+
+==============================================================================
+[End Dicty News, volume 23, number 13] 

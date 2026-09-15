@@ -1,0 +1,155 @@
+dictyNews
+Electronic Edition
+Volume 42, number 29
+December 9, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Actin Binding Domain of Filamin Distinguishes Posterior from Anterior Actin 
+Filaments in Migrating Dictyostelium Cells
+
+Keitaro Shibata, Akira Nagasaki, Hiroyuki Adachi, Taro Q.P. Uyeda
+
+
+Biophysics and Physicobiology, in press
+
+Actin filaments in different parts of a cell interact with specific actin binding 
+proteins (ABPs) and perform different functions in a spatially regulated manner. 
+However, the mechanisms of those spatially-defined interactions have not been 
+fully elucidated. If the structures of actin filaments differ in different parts of a cell, 
+as suggested by previous in vitro structural studies, ABPs may distinguish these 
+structural differences and interact with specific actin filaments in the cell. To 
+test this hypothesis, we followed the translocation of the actin binding domain of 
+filamin (ABDFLN) fused with photoswitchable fluorescent protein (mKikGR) in 
+polarized Dictyostelium cells. When ABDFLN-mKikGR was photoswitched in the 
+middle of a polarized cell, photoswitched ABDFLN-mKikGR rapidly translocated 
+to the rear of the cell, even though actin filaments were abundant in the front. The 
+speed of translocation (>3 µm/s) was much faster than that of the retrograde flow 
+of cortical actin filaments. Rapid translocation of ABDFLN-mKikGR to the rear 
+occurred normally in cells lacking GAPA, the only protein, other than actin, known 
+to bind ABDFLN. We suggest that ABDFLN recognizes a certain feature of actin
+ filaments in the rear of the cell and selectively binds to them, contributing to the 
+posterior localization of filamin.
+
+
+submitted by: Taro Uyeda [t-uyeda@waseda.jp]
+———————————————————————————————————————
+
+
+A novel HECT Ubiquitin Ligase Regulating Chemotaxis and Development in 
+Dictyostelium discoideum
+
+Barbara Pergolizzi, Enrico Bracco and Salvatore Bozzaro
+
+
+J Cell Sci, in press
+
+Cyclic AMP binding to G protein-coupled receptors orchestrates chemotaxis and 
+development in Dictyostelium. By activating the RasC-TORC2-AKT/PKB module, 
+cAMP regulates cell polarization during chemotaxis. TORC2 also mediates GPCR-
+dependent stimulation of adenylyl cyclase A (ACA), enhancing cAMP relay and 
+developmental gene expression. Thus, mutants defective in the TORC2 Pia/Rictor 
+subunit are impaired in chemotaxis and development. Near-saturation mutagenesis 
+of a Pia/Rictor mutant by random gene disruption led to selection of two suppressor 
+mutants, in which spontaneous chemotaxis and development were restored. PKB 
+phosphorylation and chemotactic cell polarization were rescued, whereas Pia/Rictor-
+dependent ACA stimulation was not restored but bypassed, leading to cAMP-
+dependent developmental gene expression. Knocking out the gene encoding the 
+adenylylcyclase B (ACB) in the parental strain showed ACB to be essential for this 
+process. The gene tagged in the suppressor mutants encodes a novel HECT 
+ubiquitin ligase, homologous to mammalian HERC1, but harbouring a pleckstrin 
+homology domain. Expression of the isolated HECTwt, but not HECTC5185S, 
+domain was sufficient to reconstitute the parental phenotype. The novel ubiquitin 
+ligase appears to regulate cell sensitivity to cAMP signalling and TORC2-dependent 
+PKB phosphorylation.
+
+
+submitted by: Salvo Bozzaro [salvatore.bozzaro@unito.it]
+———————————————————————————————————————
+
+
+Actin-Interacting Protein 1 Contributes to Intranuclear Rod Assembly in 
+Dictyostelium discoideum
+
+Hellen C. Ishikawa-Ankerhold, Wioleta Daszkiewicz, Michael Schleicher, and 
+Annette Müller-Taubenberger
+
+
+Scientific Reports, in press
+
+Intranuclear rods are aggregates consisting of actin and cofilin that are formed 
+in the nucleus in consequence of chemical or mechanical stress conditions. The 
+formation of rods is implicated in a variety of pathological conditions, such as 
+certain myopathies and some neurological disorders. It is still not well understood 
+what exactly triggers the formation of intranuclear rods, whether other proteins are 
+involved, and what the underlying mechanisms of rod assembly or disassembly are. 
+In this study, Dictyostelium discoideum was used to examine appearance, stages of 
+assembly, composition, stability, and dismantling of rods. Our data show that 
+intranuclear rods, in addition to actin and cofilin, are composed of a distinct set 
+of other proteins comprising actin-interacting protein 1 (Aip1), coronin (CorA), 
+filactin (Fia), and the 34 kDa actin-bundling protein B (AbpB). A finely tuned 
+spatio-temporal pattern of protein recruitment was found during formation of rods. 
+Aip1 is important for the final state of rod compaction indicating that Aip1 plays 
+a major role in shaping the intranuclear rods. In the absence of both Aip1 and 
+CorA, rods are not formed in the nucleus, suggesting that a sufficient supply of 
+monomeric actin is a prerequisite for rod formation.
+
+
+submitted by: Annette Müller-Taubenberger [amueller@lrz.uni-muenchen.de]
+———————————————————————————————————————
+
+
+The long non-coding RNA transcriptome of Dictyostelium discoideum development
+
+Rafael D. Rosengarten, Balaji Santhanam, Janez Kokosar and Gad Shaulsky
+
+Baylor College of Medicine, Houston, TX, USA
+
+
+Accepted for publication in G3: Genes, Genomes, Genetics
+
+Dictyostelium discoideum live in the soil as single cells, engulfing bacteria and 
+growing vegetatively. Upon starvation, tens of thousands of amoebae enter a 
+developmental program that includes aggregation, multicellular differentiation, 
+and sporulation. Major shifts across the protein-coding transcriptome accompany 
+these developmental changes. However, no study has presented a global survey 
+of long non-coding RNAs in D. discoideum. To characterize the antisense and 
+long intergenic non-coding RNA transcriptome, we analyzed previously published 
+developmental time course samples using an RNA-sequencing library preparation 
+method that selectively depletes ribosomal RNAs. We detected the accumulation 
+of transcripts for 9,833 protein-coding messenger RNAs, 621 long intergenic non-
+coding RNAs and 162 putative antisense RNAs. The non-coding RNAs were 
+interspersed throughout the genome, and were distinct in expression level, length 
+and nucleotide composition. The non-coding transcriptome displayed a temporal 
+profile similar to the coding transcriptome, with stages of gradual change 
+interspersed with larger leaps. The transcription profiles of some non-coding 
+RNAs were strongly correlated with known differentially expressed coding RNAs, 
+hinting at a functional role for these molecules during development. Examining 
+the mitochondrial transcriptome, we modeled two novel antisense transcripts. 
+We applied yet another ribosomal depletion method to a subset of the samples 
+to better retain tRNA transcripts. We observed polymorphisms in tRNA anticodons 
+that suggested a post-transcriptional means by which D. discoideum compensates 
+for codons missing in the genomic complement of tRNAs. We concluded that the 
+prevalence and characteristics of long non-coding RNAs indicate these molecules 
+are relevant to the progression of molecular and cellular phenotypes during 
+development.
+
+
+submitted by: Gad Shaulsky  [gadi@bcm.edu]
+==============================================================
+[End dictyNews, volume 42, number 29]

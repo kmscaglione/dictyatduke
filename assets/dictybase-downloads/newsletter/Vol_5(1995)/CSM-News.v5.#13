@@ -1,0 +1,189 @@
+CSM News
+Electronic Edition
+Volume 5, number 13
+November 4, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+A Model for Pattern Formation in Dictyostelium discoideum 
+
+Pauline Schaap1, Yuanhua Tang2 and Hans G. Othmer3
+
+1.Cell Biology Unit, Institute for Molecular Plant Sciences,
+University of Leiden, 2300 RA Leiden, The Netherlands 
+2.Department of Physiology and Biophysics, Cornell University
+Medical College, New York, New York 10021
+3.Department of Mathematics, University of Utah
+Salt Lake City, UT, 84112,
+
+Differentiation, in press.
+
+Summary
+
+   A model is developed for regulation of cell-type proportions in the
+mound stage of the cellular slime mold Dictyostelium discoideum. The
+model is based on current information on morphogenetic signaling that
+controls the differentiation of prestalk and prespore cells from
+differentiation competent cells.  The morphogens that can control the
+cell type transitions are i.  cAMP, which is required for both
+prestalk and prespore differentiation, ii. DIF, which induces prestalk
+and inhibits prespore differentiation and iii. NH3, which is an
+antagonist for all DIF-induced responses. cAMP is assumed to be a
+background species at the mound stage produced by oscillatory cAMP
+signaling. Besides its effects on differentiation, cAMP also induces
+DIF synthesis. DIF levels are controlled by DIF- dechlorinase, which
+is induced in response to DIF stimulation by the prestalk
+population. Induction of DIF-dechlorinase is inhibited by cAMP and
+NH3. NH3 is predominantly produced by prestalk cells, which show
+relatively high catabolism. As far as possible, we have incorporated
+quantitative information on transition rates between cell types and
+their dependence on morphogen concentrations. Computations using these
+data show correct proportions of prestalk cells, but the ratio of
+prespore to undifferentiated cells is too low. This can be remedied by
+assuming that maintenance of prespore differentiation requires 10-fold
+lower cAMP concentrations than induction. In the absence of NH3 and
+DIF-dechlorinase production, all cells rapidly differentiate into
+prestalk cells.  DIF-dechlorinase is of major importance in setting
+prestalk and prespore proportions, but inclusion of ammonia in the
+presence of DIF-dechlorinase is not strictly necessary in the
+spatially-uniform system studied here.  The regulatory capacity of the
+system is very robust and proportion regulation is not very sensitive
+to changes in morphogen concentrations, beyond a certain level
+required for differentiation induction.
+
+--------------------------------------------------------------------
+
+Differential Distribution of cAMP receptors cAR2 and cAR3 during
+Dictyostelium development
+
+Yimin Yu and Charles L. Saxe III
+
+Department of Anatomy and Cell Biology, Emory University School of Medicine,
+Atlanta, GA 30322-3030
+
+Developmental Biology, in press
+
+Summary
+
+   Signal transduction via a family of cAMP receptor subtypes (cARs)
+is critical for proper development in the cellular slime mold
+Dictyostelium.  Genes encoding four related subtypes have been cloned
+and their expression, based on RNA accumulation has been previously
+reported.  Here we report the differential spatial and temporal
+distribution of cAR2 and cAR3 proteins, based on indirect double
+immunofluorescence.  Cells were transformed with a carB::lacZ
+construct, and an antibody against b-galactosidase used to visualize
+cAR2 expression.  Simultaneously, a cAR3-specific antibody was used to
+identify cAR3 expressing cells.  Results indicate that by the time of
+tip formation (12-14 hr) both receptors are expressed and distribute
+in a virtually non-overlapping pattern, with cAR2 being expressed on
+anterior, prestalk cells, and cAR3 present in the rest of the
+organism.  Differential distribution of these two receptor subtypes
+may result in distinct cAMP signaling mechanisms in the two major
+regions of the organism.
+
+-----------------------------------------------------------------------
+
+The cAMP receptor subtype cAR2 is restricted to a subset of prestalk
+cells during Dictyostelium development and displays unexpected DIF-1
+responsiveness
+
+Charles L. Saxe III, Yimin Yu, Cheryl Jones, Andrea Bauman+, and Chris
+Haynes
+
+Department of Anatomy and Cell Biology, Emory University School of
+Medicine, Atlanta, GA 30322-3030 +Department of Pharmacology,
+Vanderbilt University School of Medicine
+
+Developmental Biology, in press
+
+Summary
+
+   Dictyostelium discoidium cells express a family of cell surface
+cAMP receptors, and these G-protein coupled receptors are each
+expressed with unique spatial and temporal patterns.  One of these
+receptors, cAR2, is present during the post aggregative stages of
+development and our previous work suggests that it is preferentially
+expressed in prestalk cells.  We report here the isolation of the
+promoter for carB, the gene which encodes cAR2. Using this fragment to
+generate a carB::lacZ gene fusion construct, we investigated carB
+expression in detail.  Expression is first detected at the tight
+aggregate stage and subsequently in a pattern reminiscent of the
+prestalk-specific gene ecmA.  There are subtle differences, however,
+with ecmA being expressed significantly in the anterior-like cells
+(ALC) of the migrating pseudoplasmodium and in the basal disc and
+lower cup supporting the sorus during terminal development. carB is
+not expressed in any of these places.  The presence of these different
+prestalk-cell subtypes was confirmed by double indirect
+immunofluorescence using anti-cAR2 and anti-b-galactosidase
+antibodies. While virtually all cAR2-expressing cells also express
+ecmA::lacZ, a substantial fraction of ecmA::lacZ-positive cells do not
+express cAR2.  We also found the regulation of carB gene expression to
+differ from that of ecmA.  carB expression is induced in vitro by
+extracellular cAMP, but surprisingly, not by DIF-1, a soluble molecule
+thought to be essential for the initiation of prestalk
+differentiation. Thus, cAR2 appears to be a cAMP receptor present on a
+restricted subset of prestalk cells and whose expression does not
+respond typically to the prestalk inducer DIF-1.  DIF-1 sensitivity
+may, therefore, not be characteristic of all early prestalk
+differentiation.
+
+---------------------------------------------------------------------
+
+Examination of the Endosomal and Lysosomal Pathways in Dictyostelium
+discoideum Myosin I Mutants.
+
+Lesly Temesvari, John Bush, Michelle Peterson, Kristine Novak,
+Margaret Titus and James Cardelli
+
+Journal of Cell Science, in press.
+
+Summary
+
+   The role of myosin Is in endosomal trafficking and the lysosomal
+system was investigated in a Dictyostelium discoideum myosin I double
+mutant myoB-/C-, that has been previously shown to exhibit defects in
+fluid-phase endocytosis during growth in suspension culture (Novak et
+al., 1995).  Various properties of the endosomal pathway in the
+myoB-/C- double mutant as well as in the myoB- and myoC- single
+mutants, including intravesicular pH, and intracellular retention time
+and exocytosis of a fluid phase marker, were found to be
+indistinguishable from wild type parental cells.  The intimate
+connection between the contractile vacuole complex and the endocytic
+pathway in Dictyostelium , and the localization of a myosin I to the
+contractile vacuole in Acanthamoeba, led us to also examine the
+structure and function of this organelle in the three myosin I
+mutants.  No alteration in contractile vacuole structure or function
+was observed in either the myoB-, myoC- or myoB-/C- cell lines.  The
+transport, processing, and localization of a lysosomal enzyme,
+a-mannosidase, were also unaltered in all three mutants.  However, the
+myoB- and myoB-/C- cell lines, but not the myoC- cell line, were found
+to oversecrete the lysosomal enzymes a-mannosidase and acid
+phosphatase, during growth and starvation.  None of the mutants
+oversecreted proteins following the constitutive secretory pathway.
+Two additional myosin I mutants, myoA- and myoA-/B-, were also found
+to oversecrete the lysosomally localized enzymes a-mannosidase and
+acid phosphatase.  Taken together, these results suggest that these
+myosins do not play a role in the intracellular movement of vesicles,
+but that they may participate in controlling events that occur at the
+actin rich cortical region of the cell.  While no direct evidence has
+been found for the association of myosin Is with lysosomes, we predict
+that the integrity of the lysosomal system is tied to the fidelity of
+the actin cortex, and changes in cortical organization could influence
+such lysosomal-related membrane events such as internalization or
+transit of vesicles to the cell surface. 
+
+----------------------------------------------------------------------
+
+[End CSM News, volume 5, number 13]
+

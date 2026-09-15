@@ -1,0 +1,185 @@
+Dicty News
+Electronic Edition
+Volume 24, number 17
+June 24, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Release of Ca2+ from the endoplasmic reticulum contributes to Ca2+ 
+signalling in Dictyostelium.
+
+Zofia Wilczynska1, Kathrin Happle2, Annette Müller-Taubenberger3, 
+Christina Schlatterer2, Dieter Malchow2 and Paul R. Fisher1,*
+
+1 Department of Microbiology, La Trobe University, Victoria 3086, 
+Australia.
+2 Universität Konstanz, 78464 Konstanz, Federal Republic of Germany. 
+3 Max-Planck-Institut für Biochemie, 82152 Martinsried bei München, 
+Federal Republic of Germany.
+
+
+Eukaryotic Cell, in press
+
+Ca2+ responses to two chemoattractants (folate and cAMP) were assayed in 
+Dictyostelium mutants deficient in one or both of two abundant Ca2+-binding 
+proteins of the endoplasmic reticulum (ER) - calreticulin and calnexin. 
+Mutants deficient in either or both proteins exhibited enhanced cytosolic 
+Ca2+ responses to both attractants. Not only were the mutant responses 
+greater in amplitude, but they also exhibited earlier onsets, faster rise 
+rates, earlier peaks and faster fall rates. Correlations amongst these 
+kinetic parameters and the response amplitudes suggested that key events in 
+the Ca2+ response are autoregulated by the magnitude of the response itself 
+ie. by cytosolic Ca2+ levels. This autoregulation was sufficient to explain 
+the altered kinetics of the mutant responses - larger responses are faster in 
+both mutant and wild type cells in response to both folate (vegetative cells)
+and cAMP (differentiated cells). Searches of the predicted Dictyostelium 
+proteome revealed 3 putative Ca2+ pumps and 4 putative Ca2+ channels. All 
+but one contained sequence motifs for Ca2+- or calmodulin-binding sites, 
+consistent with Ca2+ signals being autoregulatory. Although cytosolic Ca2+ 
+responses in the calnexin and calreticulin mutants are enhanced, the influx 
+of Ca2+ from the extracellular medium into the mutant cells was smaller. 
+Compared to wild type cells, Ca2+ release from the ER in the mutants thus 
+contributes more to the total cytosolic Ca2+ response while influx from the 
+extracellular medium contributes less. These results provide the first 
+molecular genetic evidence that release of Ca2+ from the ER contributes to 
+cytosolic Ca2+ responses in Dictyostelium.
+
+
+Submitted by: Paul Fisher [fisher@lumi.latrobe.edu.au]
+
+-----------------------------------------------------------------------------
+
+
+Engineered gene over-expression as a method of drug target identification 
+
+Christopher J. Sugden +, Janine R. Roper + and Jeffrey G. Williams*
+School of Life Sciences
+University of Dundee
+Wellcome Trust Biocentre
+Dow Street
+DUNDEE, DD1 5EH, UK
++contributed equally to this work
+
+*Corresponding Author
+Professor Jeffrey Williams,
+ School of Biological Sciences, University of Dundee
+MSI/WTB Complex, Dow Street
+DUNDEE, DD1 5EH
+Fax (44) 01382 345386
+Email j.g.williams@dundee.ac.uk
+
+
+Biochem. and Biophys. Res. Comm., in press
+
+The proposed target of aminobisphosphonate (aBP) bone resorption inhibitors, 
+both in mammalian osteoclasts and in Dictyostelium, is the enzyme farnesyl 
+diphosphate synthase (FDP synthase). The genetic evidence, obtained with 
+Dictyostelium, derives from variant strains that over-express FDP synthase 
+and that are relatively resistant to aBPs. We show that forced FDP synthase 
+over-expression also leads to aBP resistance; by placing FDP synthase under 
+control of a semi-constitutive promoter, transforming it into Dictyostelium 
+cells and selecting with the aBP alendronate. This combination of drug and 
+dominant selectable marker provides a novel selection system for 
+transformation. We further show that, when a population of Dictyostelium 
+cells expressing an entire growth stage cDNA library is placed under 
+alendronate selection, FDP synthase is the only cDNA insert that confers 
+drug resistance. This confirms FDP synthase as the primary target of aBPs 
+and suggests a general method of drug target identification based upon 
+engineered gene over-expression. 
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Loss of SMEK, a novel, conserved protein, suppresses mek1 null cell polarity, 
+chemotaxis, and gene expression defects
+
+Michelle C. Mendoza, Fei Du, Negin Iranfar, Nan Tang, Hui Ma, William F. 
+Loomis, and Richard A. Firtel
+
+Molecular and Cellular Biology, in press.
+
+
+MEK/ERK MAP kinase signaling is imperative for proper chemotaxis. 
+Dictyostelium mek1- (MEK1 null) and erk1- cells exhibit severe defects in 
+cell polarization and directional movement, but the molecules responsible 
+for the mek1- and erk1- chemotaxis defects are unknown. Here, we describe a 
+novel, evolutionarily conserved gene, smkA (suppressor of mek1-), whose 
+loss partially suppresses the mek1- chemotaxis phenotypes. SMEK also has 
+MEK1-independent functions: SMEK,but not MEK1, is required for proper 
+cytokinesis during vegetative growth, timely exit from the mound stage 
+during development, and myosin II assembly. SMEK localizes to the cell 
+cortex through an EVH1 domain at its N-terminus during vegetative growth. 
+At the onset of development, SMEK translocates to the nucleus via an NLS 
+(nuclear localization signal) at its C-terminus. The importance of SMEK‚s 
+nuclear localization is demonstrated by our findings that a mutant lacking 
+the EVH1 domain complements SMEK deficiency, whereas a mutant lacking the 
+NLS does not. Microarray analysis reveals that some genes are precociously 
+expressed in mek1- and erk1- cells. The mis-expression of some of these 
+genes is suppressed in the smkA deletion. These data suggest that loss of 
+MEK1/ERK1 signaling compromises gene expression and chemotaxis in a 
+SMEK-dependent manner. 
+
+
+Submitted by:  Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+The effect of the disruption of a gene encoding a PI4 kinase on the 
+developmental defect exhibited by Dictyostelium rasC- cells
+
+Meenal Khosla, George B. Spiegelman and Gerald Weeks
+
+Department of Microbiology and Immunology
+University of British Columbia
+Vancouver, BC, V6T 1Z3
+Canada
+
+
+Developmental  Biology, in press
+
+The disruption of the gene encoding the Dictyostelium Ras sub-family 
+protein, RasC results in a strain that fails to aggregate with defects in 
+both cAMP signal relay and chemotaxis.  Restriction Enzyme Mediated 
+Integration disruption of a second gene in the rasC- strain resulted in 
+cells that were capable of forming multicellular structures in plaques on 
+bacterial lawns.  The disrupted gene, designated pikD1, encodes a member 
+of the phosphatidyl-inositol-4-kinase ∞Ò subfamily.  Although the 
+rasC-/pikD1 cells were capable of progressing through early development, 
+when starved on a plastic surface under submerged conditions, they did not 
+form aggregation streams or exhibit pulsatile motion.   The rasC-/pikD1 
+cells were extremely efficient in their ability to chemotax to cAMP in a 
+spatial gradient, although the reduced phosphorylation of PKB in response 
+to cAMP observed in rasC- cells, was unchanged.  In addition, the activation 
+of adenylyl cyclase, which was greatly reduced in the rasC- cells, was only 
+minimally increased in the rasC-/pikD1  strain.  Thus, although the 
+rasC-/ pikD-  cells were capable of associating to form multicellular 
+structures, normal cell signaling was clearly not restored.  The disruption 
+of the pikD gene in a wild type background resulted in a strain that was 
+delayed in aggregation and formed large aggregation streams, when starved on
+a plastic surface under submerged conditions.  This strain also exhibited a 
+slight defect in terminal development.  In conclusion, disruption of the 
+pikD gene in a rasC- strain resulted in cells that were capable of forming 
+multicellular structures, but which did so in the absence of normal 
+signaling and aggregation stream formation.
+
+
+Submitted by: Gerald Weeks [gerwee@interchange.ubc.ca]
+
+==============================================================================
+[End Dicty News, volume 24, number 17] 

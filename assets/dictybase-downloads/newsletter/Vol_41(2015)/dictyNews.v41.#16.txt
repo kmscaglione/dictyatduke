@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 41, number 16
+July 31, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium Nramp1, structurally and functionally close to 
+mammalian DMT1 transporter, mediates phagosomal iron efflux.
+
+Simona Buracco1, Barbara Peracino1, Raffaella Cinquetti#, 
+Elena Signoretto*, Alessandra Vollero#, Francesca Imperiali#, 
+Michela Castagna*, Elena Bossi# and Salvatore Bozzaro1
+
+1 Department of Clinical and Biological Sciences, University of 
+Torino, AOU S. Luigi, 10043 Orbassano, Italy, 
+#Department of Biotechnology and Life Sciences, University of 
+Insubria, Via J. H. Dunant 3,  21100 Varese (Italy) and 
+*Department of Pharmacological and Biomolecular Sciences, Universita 
+degli Studi di Milano, Via Trentacoste 2, 20133 Milano (Italy)
+
+
+J. Cell Sci., in press
+
+The Nramp (Slc11) protein family is widespread in bacteria and 
+eucaryotes, and mediates transport of divalent metals across cellular 
+membranes. The social amoeba Dictyostelium discoideum harbours two 
+Nramp proteins. Nramp1, like its mammalian ortholog, is recruited to 
+phagosomal and macropinosomal membranes, and confers resistance to 
+pathogenic bacteria. Nramp2 is located exclusively in the contractile 
+vacuole membrane and controls, synergistically with Nramp1, iron 
+homeostasis. It has long been debated whether mammalian Nramp1 
+mediates iron import or export from phagosomes. By selectively loading 
+the iron-chelating fluorochrome calcein in macropinosomes, we show that 
+Dictyostelium Nramp1 mediates iron efflux from macropinosomes in vivo. 
+To gain insight in ion selectivity and transport mechanism, the 
+proteins were expressed in Xenopus oocytes. Using a novel assay with 
+calcein, electrophysiological and radiochemical assays, we show that 
+Nramp1, similarly to rat DMT1, transports iron(II) and manganese, 
+not iron(III) or copper. Metal ion transport is electrogenic and 
+proton-dependent. By contrast, Nramp2 transports only iron(II) in a 
+non-electrogenic and proton-independent way. These differences reflect 
+evolutionary divergence of the prototypical Nramp2 protein sequence 
+compared to the archetypical Nramp1 and DMT1 proteins.
+
+
+Submitted by Salvo Bozzaro [salvatore.bozzaro@unito.it] 
+----------------------------------------------------------------------
+
+
+Matthew C. Walker and Robin S.B. Williams
+
+New experimental therapies for status epilepticus in preclinical 
+development
+
+
+Epilepsy Behav, in press
+This article is part of a Special Issue entitled "Status Epilepticus" 
+
+Starting with the established antiepileptic drug, valproic acid, we 
+have taken a novel approach to develop new antiseizure drugs that 
+may be effective in status epilepticus. We first identified that 
+valproic acid has a potent effect on a biochemical pathway, the 
+phosphoinositide pathway, in Dictyostelium discoideum, and we 
+demonstrated that this may relate to its mechanism of action against 
+seizures in mammalian systems. Through screening in this pathway, we 
+have identified a large array of fatty acids and fatty acid 
+derivatives with antiseizure potential. These were then evaluated in 
+an in vitro mammalian system. One compound that we identified through 
+this process is a major constituent of the ketogenic diet, strongly 
+arguing that it may be the fatty acids that are mediating the 
+antiseizure effect of this diet. We further tested two of the more 
+potent compounds in an in vivo model of status epilepticus and 
+demonstrated that they were more effective than valproic acid in 
+treating the status epilepticus. 
+
+
+Submitted by Robin williams[Robin.Williams@rhul.ac.uk] 
+==============================================================
+[End dictyNews, volume 41, number 16]

@@ -1,0 +1,135 @@
+Dicty News
+Electronic Edition
+Volume 22, number 8
+April 2, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+  
+
+
+A homologue of Cdk8 is required for spore cell differentiation in 
+Dictyostelium
+
+Hsiu-Hsu Sophia Lin, Meenal Khosla, Hao-Jen Huang, Duen-Wei Hsu, 
+Christine Michaelis, Gerald Weeks and Catherine Pears
+
+Dev Biol., in press
+
+
+The Cdk8 proteins are kinases which phosphorylate the carboxy terminal 
+domain (CTD) of RNA polymerase II as well as some transcription factors and, 
+therefore, are involved in the regulation of transcription. Here we report 
+that a Cdk8 homologue from Dictyostelium discoideum is localised in the 
+nucleus where it forms part of a high molecular weight complex that has CTD 
+kinase activity. Insertional mutagenesis was used to abrogate gene function 
+and analysis of the null strain revealed that the DdCdk8 protein plays an 
+important role in spore formation during late development. As previously 
+reported (Takeda, K., Saito, T. and Ochiai, H. 2002. Develop. Growth Differ. 
+44, 213-223) Ddcdk8- cells also exhibit impaired aggregation, although we 
+report that the severity of the defect depends upon experimental conditions.  
+When aggregation occurs, Ddcdk8-  cells form abnormal terminally 
+differentiated structures within which the Ddcdk8- cells differentiate into 
+stalk cells but fail to form spores, indicating a role for DdCdk8 in cell 
+differentiation. When Ddcdk8 is expressed from its own promoter the protein 
+is able to rescue both the late developmental defect and the impaired 
+aggregation.  However, when expressed from an heterologous promoter only 
+the impaired aggregation is rescued. This result demonstrates that the 
+defect during late development is not a consequence of impaired aggregation 
+and indicates a direct role for DdCdk8 in spore formation.
+
+ 
+
+Submitted by: Catherine Pears [catherine.pears@bioch.ox.ac.uk]
+
+-----------------------------------------------------------------------------
+
+Chemoattractant induced Ras activation during Dictyostelium aggregation
+
+Helmut Kae, Chinten James Lim, George B. Spiegelman, Gerald Weeks
+
+Department of Microbiology and Immunology
+University of British Columbia,
+300-6174 University Boulevard,
+Vancouver, British Columbia, Canada
+V6T 1Z3
+
+EMBO Reports, in press
+
+
+Ras proteins are highly conserved molecular switches that regulate cellular 
+response to external stimuli. Dictyostelium discoideum contains an extensive 
+family of Ras proteins that function in regulation of mitosis, cytoskeletal 
+function and motility, and the onset of development. Little is known about 
+the events that lead to the activation of Ras proteins in Dictyostelium, 
+primarily due to a lack of a biochemical assay to measure levels of activated 
+Ras. We have adapted an assay used successfully to measure activated Ras in 
+mammalian cells to monitor activation of two Dictyostelium Ras proteins, 
+RasC and RasG.  We have found that the Ras Binding Domain (RBD) of mammalian 
+Raf1 was capable of binding to the activated form of RasG, but not to the 
+activated form of RasC; however, the RBD of Schizosaccharomyces pombe Byr2 
+was capable of binding preferentially to the activated forms of both RasC 
+and RasG.  Using this assay, we discovered that RasC and RasG showed a rapid 
+and transient activation when aggregation competent cells were stimulated 
+with the chemoattractant cAMP, and this activation did not occur in a number 
+of cAMP signalling mutants.  This data provides further evidence of a role 
+for both RasC and RasG in the early development of Dictyostelium.
+
+
+
+Submitted by: Helmut Kae [hkae@interchange.ubc.ca]
+
+-----------------------------------------------------------------------------
+
+
+Ecological succession of dictyostelid slime molds on the island of Hawaii
+
+Andrew R. Swanson(1), John D. Shadwick(1), Don E. Hemmes(2) and 
+Frederick W. Spiegel(1)
+
+(1)Department of Biological Sciences, University of Arkansas, Fayetteville, 
+Arkansas, 72701, USA
+(2)Department of Biology, University of Hawaii, Hilo, Hawaii, 96720, USA
+
+Systematics and Geography of Plants, in press
+
+
+Patterns of ecological succession have been demonstrated for decomposer 
+communities, but the details of such patterns with respect to the role of 
+eumycetozoans have not been addressed.  Successional patterns can be inferred 
+from a sequence of closely located sites which differ only in age, but are 
+controlled for other sources of variation.  Hawaii, the largest and youngest 
+of the Hawaiian Islands, offers an ideal site for such studies, consisting of 
+variously-aged landforms underlain by similar substrates, and influenced by 
+similar climates and biotic communities.  Soil/litter samples were collected 
+from nine montane mesic sites of similar elevation and rainfall, but ranging 
+in substrate age from 67 to 10,000 ybp.  Samples were processed to recover 
+dictyostelid (cellular) slime molds according to established protocols.  
+Results suggest that slightly different assemblages of dictyostelids occupy 
+the soil/litter derived from different-aged parent materials. The density and 
+species diversity of dictyostelids was higher in soil/litter samples from the 
+youngest sites.  The time necessary for dictyostelids to colonize a site is 
+less than 67 years.  It is hypothesized that colonization of the soil/litter 
+by dictyostelids is followed by the arrival of predators, particularly 
+nematodes, which adversely affect the density and species diversity of soil 
+amoebae in general, and dictyostelids in particular. 
+
+
+
+Submitted by: Andrew R. Swanson [arswans@uark.edu]
+
+===============================================================================
+[End Dicty News, volume 22, number 8]

@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 34, number 10
+March 19, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+Cheating does not explain selective differences at high and low 
+relatedness in a social amoeba
+
+Gerda Saxer, Debra A. Brock, David C. Queller and 
+Joan E. Strassmann
+
+
+BMC Evolutionary Biology 2010, 10:76
+ 
+Background
+Altruism can be favored by high relatedness among interactants.  We tested 
+the effect of relatedness in experimental populations of the social amoeba 
+Dictyostelium discoideum, where altruism occurs in a starvation-induced social 
+stage when some amoebae die to form a stalk that lifts the fertile spores above 
+the soil facilitating dispersal. The single cells that aggregate during the social 
+stage can be genetically diverse, which can lead to conflict over spore and 
+stalk allocation. We mixed eight genetically distinct wild isolates and 
+maintained twelve replicated populations at a high and a low relatedness 
+treatment.  After one and ten social generations we assessed the strain 
+composition of the populations.  We expected that some strains would be 
+out-competed in both treatments. In addition, we expected that low 
+relatedness might allow the persistence of social cheaters as it provides 
+opportunity to exploit other strains.
+
+Results
+We found that at high relatedness a single clone prevailed in all twelve 
+populations. At low relatedness three clones predominated in all twelve 
+populations. Interestingly, exploitation of some clones by others in the social 
+stage did not explain the results. When we mixed each winner against the 
+pool of five losers, the winner did not prevail in the spores because all 
+contributed fairly to the stalk and spores.  Furthermore, the dominant clone 
+at high-relatedness was not cheated by the other two that persisted at low 
+relatedness.  A combination of high spore production and short unicellular 
+stage most successfully explained the three successful clones at low 
+relatedness, but not why one of them fared better at high relatedness.  
+Differences in density did not account for the results, as the clones did not 
+differ in vegetative growth rates nor did they change the growth rates over 
+relevant densities.
+
+Conclusions
+These results suggest that social competition and something beyond solitary 
+growth differences occurs during the vegetative stage when amoebae eat 
+bacteria and divide by binary fission. The high degree of repeatability of our 
+results indicates that these effects are strong and points to the importance 
+of new approaches to studying interactions in D. discoideum.
+
+
+Submitted by Gerda Saxer [gsaxer@rice.edu]
+--------------------------------------------------------------------------------
+
+A Ras signaling complex controls the RasC-TORC2 pathway and 
+directed cell migration
+
+Pascale G. Charest, Zhouxin Shen, Ashley Lakoduk, Atsuo T. Sasaki, 
+Steven P. Briggs, and Richard A. Firtel
+
+
+Developmental Cell, in press
+
+Ras was found to regulate Dictyostelium chemotaxis, but the mechanisms 
+that spatially and temporally control Ras activity during chemotaxis remain 
+largely unknown. We report the discovery of a Ras signaling complex that 
+includes the Ras guanine exchange factor (RasGEF) Aimless, RasGEFH, 
+protein phosphatase 2A (PP2A), and a scaffold designated Sca1. The 
+Sca1/RasGEF/PP2A complex is recruited to the plasma membrane in a 
+chemoattractant- and F-actin-dependent manner and is enriched at the 
+leading edge of chemotaxing cells where it regulates F-actin dynamics 
+and signal relay by controlling the activation of RasC and the downstream 
+TORC2-Akt/protein kinase B (PKB) pathway. In addition, PKB and 
+PKB-related PKBR1 phosphorylate Sca1 and regulate the membrane 
+localization of the Sca1/RasGEF/PP2A complex, and thereby RasC activity, 
+in a negative feedback fashion. Thus, our study uncovered a molecular 
+mechanism whereby RasC activity and the spatiotemporal activation of 
+TORC2 are tightly controlled at the leading edge of chemotaxing cells.
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+==============================================================
+[End dictyNews, volume 34, number 10]

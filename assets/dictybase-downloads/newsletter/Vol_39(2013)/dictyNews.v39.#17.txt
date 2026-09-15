@@ -1,0 +1,57 @@
+dictyNews
+Electronic Edition
+Volume 39, number 17
+June 14, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+ABC transporters in Dictyostelium discoideum development
+
+E.R. Miranda, O. Zhuchenko, M. Toplak, B. Santhanam, B. Zupan, 
+A. Kuspa and G. Shaulsky
+
+Baylor College of Medicine and University of Ljubljana
+
+
+PLoS One, Accepted
+
+ATP-binding cassette (ABC) transporters can translocate a broad 
+spectrum of molecules across the cell membrane including physiological 
+cargo and toxins. ABC transporters are known for the role they play in 
+resistance towards anticancer agents in chemotherapy of cancer patients. 
+There are 68 ABC transporters annotated in the genome of the social 
+amoeba Dictyostelium discoideum. We have characterized more than 
+half of these ABC transporters through a systematic study of mutations in 
+their genes. We have analyzed morphological and transcriptional 
+phenotypes for these mutants during growth and development and found 
+that most of the mutants exhibited rather subtle phenotypes. A few of the 
+genes may share physiological functions, as reflected in their transcriptional 
+phenotypes. Since most of the abc transporter mutants showed subtle 
+morphological phenotypes, we utilized these transcriptional phenotypes to 
+identify genes that are important for development by looking for transcripts 
+whose abundance was  unperturbed in most of the mutants. We found a 
+set of 668 genes that includes many validated D. discoideum developmental 
+genes. We have also found that abcG6 and abcG18 may have potential 
+roles in intercellular signaling during terminal differentiation of spores and 
+stalks.
+
+ 
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+==============================================================
+[End dictyNews, volume 39, number 17]

@@ -1,0 +1,144 @@
+CSM News
+Electronic Edition
+Volume 2, number 19
+May 28, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+through www.nwu.edu.
+
+----------
+ABSTRACTS
+----------
+
+UNIVERSAL SIGNALS CONTROL SLIME MOLD STALK FORMATION
+
+Saskia van Es, Bart W. Nieuwenhuijsen, Francois Lenouvel, Esther M.
+van Deursen and Pauline Schaap.
+
+Cell Biology Unit, Institute of Molecular Plant Sciences, University
+of Leiden, Wassenaarseweg 64, 2333 AL Leiden, The Netherlands.
+
+Proc. Natl. Acad. Sci., in press
+
+      The primitive slime mold Dictyostelium minutum does not display
+oscillations during aggregation, cannot form migrating slugs and does
+not form a prestalk/prespore pattern, which are all characteristic for
+development of its advanced relative D.discoideum. We used D.minutum
+to investigate whether slime molds share common mechanisms controling
+development. In D.discoideum, the morphogen DIF (Differentiation
+Inducing Factor) can induce stalk cell differentiation in vitro.
+However, stalk formation in vivo is supposedly triggered by local
+depletion of DIF antagonists as ammonia or cAMP. A homologue of the
+D.discoideum stalk gene ecmB was cloned in D.minutum, which encodes a
+3.4 kb mRNA, while its deduced amino acid sequence shows repeats of 24
+amino acids, that are characteristic for the D.discoideum ecmB gene.
+Remarkably, DIF effectively induces expression of the D.minutum ecmB
+gene and ammonia inhibits its expression. D.discoideum cells were
+transformed with a construct of the D.minutum ecmB promoter fused to
+the lacZ reporter gene and showed expression in the stalk, but not in
+the upper and lower cup of the fruiting body, which also express the
+D.discoideum ecmB gene. In D.discoideum, the D.minutum ecmB and the
+ecmB promoter are similarly activated by DIF and repressed by both
+cAMP and ammonia, suggesting that additional signaling is required for
+ecmB expression in upper and lower cup cells.  Our data indicate that
+not only the extracellular signals controling stalk formation remained
+highly conserved during slime mold evolution, but also their
+intracellular signaling cascades including gene regulatory proteins.
+
+----------------------------------------------------------------
+
+EXTRACELLULAR cAMP CAN RESTORE DEVELOPMENT IN DICTYOSTELIUM CELLS
+LACKING ONE, BUT NOT TWO SUBTYPES OF EARLY cAMP RECEPTORS (cARs).
+Evidence for involvement of cAR1 in aggregative gene expression
+
+
+Ron D.M. Soede (1), Robert H. Insall (2), Peter N. Devreotes (2),
+Pauline Schaap (1)
+
+(1) Cell Biology Unit, Institute of Molecular Plant Sciences,
+University of Leiden, Wassenaarseweg 64, 2333 AL Leiden, The
+Netherlands.  (2) Department of Biological Chemistry, The Johns
+Hopkins University School of Medicine, Baltimore, Maryland 21205, USA.
+
+Development, in press
+
+SUMMARY
+
+      Extracellular cAMP induces expression of several classes of
+developmentally regulated genes in Dictyostelium.  Four highly homologous
+surface cAMP receptors (cARs) were identified earlier, but involvement of
+specific cARs in gene regulation has not been clarified. Cells lacking the
+chemotactic receptor, cAR1, neither aggregate nor express developmentally
+regulated genes. Expression of aggregative genes is in wild-type cells induced
+by nanomolar cAMP pulses and repressed by persistent micromolar cAMP
+stimuli, that induce expression of prespore and prestalk-enriched genes
+during the postaggregative stages of development. We show here that in cell
+lines carrying a cAR1 gene disruption, nanomolar pulses cannot induce
+aggregative gene expression. Remarkably, micromolar cAMP can induce
+expression of aggregative genes in car1- cells as well as expression of
+prespore and prestalk-enriched genes, and furthermore restores their ability
+to form normal slugs and fruiting bodies.  These data indicate that cAR1
+mediates aggregative but not postaggregative gene expression and
+morphogenesis, and suggest that after gene disruption, its function is
+partially taken over by a lower affinity receptor that is not subjected to
+desensitization.  The absence of another early cAMP receptor, cAR3, does not
+affect development. However, in a car1-/car3- double mutant, cAMP stimulation
+cannot restore any developmental gene expression anymore, indicating that
+cAR3 may have substituted for cAR1 in car1- cell lines. 
+
+------------------------------------------------------------------
+
+ASSOCIATION OF THE DICTYOSTELIUM 30,000 DALTON ACTIN BUNDLING PROTEIN
+WITH CONTACT REGIONS
+
+Marcus Fechheimer (1), Hilary M. Ingalls (2), Ruth Furukawa (1), and
+Elizabeth J. Luna (2,3)
+
+
+1 Department of Zoology, University of Georgia, Athens, GA, 
+2 Department of Biology, Princeton University, Princeton, NJ,
+3 Worcester Foundation for Experimental Biology, Shrewsbury, MA.
+
+J. of Cell Sci., in press.
+
+Summary
+
+     "Contact regions" are plasma membrane domains derived from areas
+of intercellular contact between aggregating Dictyostelium amebae
+(Ingalls, et al., 1986, PNAS 83, 4779).  Purified contact regions
+contain a prominent actin-binding protein with an Mr of 34,000.
+Immunoblotting with monoclonal antibodies identifies this polypeptide
+as a 34,000-dalton actin-bundling protein (known as 30-kDa protein),
+previously shown to be enriched in filopodia (Fechheimer, 1987, J.
+Cell Biol. 104, 1539).  About four times more 30-kDa protein by mass
+is associated with contact regions than is found in total plasma
+membranes isolated from aggregating cells.  In agreement with these
+observations, immunostaining of the 30-kDa protein in aggregating
+cells reveals a prominent localization along the plasma membrane at
+sites of intercellular contact.  By contrast, alpha-actinin does not
+appear to be significantly enriched at sites of cell to cell contact.
+Binding experiments using purified plasma membranes, actin, and 30-kDa
+protein indicate that the 30-kDa protein associates with the plasma
+membrane primarily through interactions with actin filaments.  Calcium
+ions are known to decrease the interaction of actin with 30-kDa
+protein in solution.  Surprisingly, membrane-associated complexes of
+actin and the 30-kDa protein are much less sensitive to dissociation
+by micromolar levels of free calcium ions than are complexes in
+solutions lacking membranes.  These results suggest that the
+interaction of the 30-kDa protein with F-actin at regions of cell-cell
+contact may be less sensitive to disruption by free calcium ions than
+elsewhere in the cell cortex.  The positively-cooperative assembly of
+stable complexes of actin and the 30-kDa protein at contact regions
+may be an important factor in the organization of both the cortex and
+these membrane domains specialized for intercellular adhesion.
+
+--------------------------------------------------------------------
+
+[End CSM News, volume 2, number 19]
+
+

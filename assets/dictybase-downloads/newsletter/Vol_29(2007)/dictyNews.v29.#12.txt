@@ -1,0 +1,55 @@
+dictyNews
+Electronic Edition
+Volume 29, number 12
+November 2, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Competition between targeting signals in hybrid proteins provides 
+information on their relative in vivo affinities for subcellular compartments 
+
+Christian Schmauch, Markus Maniak
+
+Zellbiologie und CINSaT, Universitaet Kassel, Kassel, Germany
+
+
+Eur. J. Cell Biol., in press
+
+After their translation and folding in the cytoplasm, proteins may be imported 
+into an organelle, associate with a membrane, or rather become part of large, 
+highly localised cytoplasmic structures such as the cytoskeleton. The 
+protein's localisation is governed by the binding-strength to its immediate 
+target, such as an import receptor for an organelle or a major component of 
+the cytoskeleton e.g. actin. We have experimentally provided a set of 
+actin-binding proteins with competing targeting information and expressed 
+them at various concentrations to analyse the strength of the signal that 
+governs their subcellular localisation. Our microscopic observations 
+indicate that organellar sorting signals override the targeting preference 
+of most cytoskeletal proteins. Among these signals, the nuclear localisation 
+signal of SV40 is strongest, followed by the oligomerised PHB domain that 
+targets vacuolin to the endosomal surface, and finally the tripeptide SKL 
+mediating transport into the peroxisome. The actin-associated protein coronin, 
+however, can only be misled by the nuclear localisation signal. Interestingly, 
+the targeting behaviour of this model set of hybrid proteins in living 
+Dictyostelium amoebae correlates surprisingly well with the affinities of 
+their constituent signals derived from in vitro experiments conducted in 
+various other organisms. Accordingly, this approach allows estimating the in 
+vivo affinity of a protein to its target even if the latter is not known, as 
+in the case of vacuolin. 
+
+Submitted by: Markus Maniak [maniak@uni-kassel.de]
+==============================================================
+[End dictyNews, volume 29, number 12]

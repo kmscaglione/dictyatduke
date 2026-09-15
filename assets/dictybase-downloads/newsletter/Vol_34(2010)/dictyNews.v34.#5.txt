@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 34, number 5
+February 12, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+A cytohesin homolog in Dictyostelium amoebae
+
+Maria Christina Shina1, Rolf Müller1, Rosemarie Blau-Wasser1, Gernot Glöckner1,2, 
+Michael Schleicher3, Ludwig Eichinger1, Angelika A. Noegel1, Waldemar Kolanus4 
+
+1 Center for Biochemistry, Medical Faculty, Center for Molecular Medicine Cologne 
+(CMMC) and Cologne Excellence Cluster on Cellular Stress Responses in 
+Aging-Associated Diseases (CECAD), University of Cologne, Köln, Germany, 
+2 Leibniz Institute for Age Research -Fritz-Lipmann-Institute e.V., Jena, Germany, 
+3 Institute of Anatomy and Cell Biology and Center for Integrated Protein Science 
+(CIPSM), Ludwig-Maximilians-University, Muenchen, Germany, 
+4 Laboratory of Molecular Immunology, LIMES Institute of the University of Bonn, 
+Bonn, Germany
+
+
+PLoS ONE
+
+Background
+Dictyostelium, an amoeboid motile cell, harbors several paralogous Sec7 genes 
+that encode members of three distinct subfamilies of the Sec7 superfamily of 
+Guanine nucleotide exchange factors. Among them are proteins of the GBF/BIG 
+family present in all eukaryotes. The third subfamily represented with three 
+members in D. discoideum is the cytohesin family that has been thought to be 
+metazoan specific. Cytohesins are characterized by a Sec7 PH tandem domain 
+and have roles in cell adhesion and migration. 
+
+Principle findings 
+Dictyostelium SecG exhibits highest homologies to the cytohesins. It harbors at 
+its amino terminus several ankyrin repeats that are followed by the Sec7 PH 
+tandem domain. Mutants lacking SecG show reduced cell-substratum adhesion 
+whereas cell-cell adhesion which is important for development is not affected. 
+Accordingly, multicellular development proceeds normally in the mutant. During 
+chemotaxis secG-minus cells elongate and migrate in a directed fashion 
+towards cAMP, however speed is moderately reduced. 
+
+Significance
+The data indicate that SecG is a relevant factor for cell-substrate adhesion 
+and reveal the basic function of a cytohesin in a lower eukaryote.
+
+
+Submitted by Angelika Nögel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+The prespore cell inducing factor, psi factor (PsiA), controls both prestalk 
+and prespore gene expression in Dictyostelium development
+
+Yoko Yamada1†, Hiroshi Minamisawa2, Masashi Fukuzawa3, 
+Takefumi Kawata2, Akiko A. Oohata1*
+
+
+Dev.Growth Differ., in press
+
+PsiA (psi factor), encoded by the psiA gene of Dictyostelium, is a secreted 
+signal glycoprotein that induces prespore cell differentiation when added to 
+monolayer cultures. In situ hybridization during normal development showed 
+that the psiA gene is highly expressed in scattered cells at the mound stage 
+and in prespore cells at the onset of culmination. The conventional 
+prespore-cell marker genes, cotC and pspA, were expressed normally in 
+psiA- and psiA overexpressing strains. Expressions of rnrB and cudA are 
+repressed in the prestalk cells of a wild type slug to render prespore specific 
+pattern. However, a promoter-reporter fusion gene, rnrB:gal, showed an 
+ectopic  expression in the prestalk cells of psiA- strain while cudA:gal did 
+so in those of psiA overexpressing strain. Overexpression of psiA delayed 
+expression of the prestalk specific gene, ecmB, during development, while 
+knocking out psiA promoted its expression. In addition, overexpression 
+inhibited DIF-induced stalk formation in monolayer cultures. Together with 
+the known prespore inducing activity, the results indicate that PsiA regulates 
+both prespore and prestalk/stalk cell differentiation. These results indicate 
+that PsiA is also involved in prestalk cell differentiation.
+
+
+Submitted by Akiko Oohata [oohata@makino.kmu.ac.jp]
+==============================================================
+[End dictyNews, volume 34, number 5]

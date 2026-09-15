@@ -1,0 +1,191 @@
+dictyNews
+Electronic Edition
+Volume 35, number 9
+October 8, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Coupling Mechanism of a GPCR and a Heterotrimeric G Protein During 
+Chemoattractant Gradient Sensing in Dictyostelium
+
+Xuehua Xu,1*† Tobias Meckel,1*‡ Joseph A. Brzostowski,2 Jianshe Yan,
+1 Martin Meier-Schellersheim,3 Tian Jin1†
+
+1Chemotaxis Signal Section, National Institutes of Health, Rockville, 
+MD 20852, USA. 
+2Laboratory of Immunogenetics Imaging Facility, Laboratory of 
+Immunogenetics, National Institutes of Health, Rockville, MD 20852, USA. 
+3Program in Systems Immunology and Infectious Disease Modeling, 
+National Institute of Allergy and Infectious Diseases, National Institutes of 
+Health, Rockville, MD 20852, USA.
+*These authors contributed equally to this work.
+†To whom correspondence should be addressed. E-mail: tjin@niaid.nih.gov
+‡Present address: Department of Biology, Technische Universität Darmstadt,
+Schnittspahnstrasse 3-5, D-64287 Darmstadt, Germany.
+
+
+Science Signaling, Volume 3 Issue 141 ra71
+
+The coupling of heterotrimeric guanine nucleotide–binding protein 
+(G protein)–coupled receptors (GPCRs) with G proteins is fundamental 
+for GPCR signaling; however, the mechanism of coupling is still debated. 
+Moreover, how the proposed mechanisms affect the dynamics of 
+downstream signaling remains unclear. Here, through experiments 
+involving fluorescence recovery after photobleaching and
+single-molecule imaging, we directly measured the mobilities of cyclic 
+adenosine monophosphate (cAMP) receptor 1 (cAR1), a chemoattractant 
+receptor, and a G protein bg subunit in live cells. We found that cAR1 
+diffused more slowly in the plasma membrane than did Gbg. Upon 
+binding of ligand to the receptor, the mobility of cAR1 was unchanged, 
+whereas the speed of a fraction of the faster-moving Gbg subunits 
+decreased. Our measurements showed that cAR1 was relatively 
+immobile and Gbg diffused freely, suggesting that chemoattractant-bound 
+cAR1 transiently interacted with G proteins. Using models of possible 
+coupling mechanisms, we computed the temporal kinetics of G protein 
+activation. Our fluorescence resonance energy transfer imaging data 
+showed that fully activated cAR1 induced the sustained dissociation of 
+G protein a and bg subunits, which indicated that ligand-bound cAR1 
+activated G proteins continuously. Finally, simulations indicated that a 
+high-affinity coupling of ligand-bound receptors and G proteins was 
+essential for cAR1 to translate extracellular gradient signals into 
+directional cellular responses.We suggest that chemoattractant 
+receptors use a ligand-induced coupling rather than a precoupled 
+mechanism to control the activation of G proteins during chemotaxis.
+
+
+Submitted by  Xuehua Xu [XXU@niaid.nih.gov]
+--------------------------------------------------------------------------------
+
+
+14-3-3 coordinates microtubules, Rac, and myosin II to control cell 
+mechanics and cytokinesis 
+
+Qiongqiong Zhou, Yee-Seir Kee, Christopher C. Poirier, Christine 
+Jelinek, Jonathan Osborne, Srikanth Divi, Alexandra Surcel, 
+Marie E. Will, Ulrike S. Eggert, Annette Müller-Taubenberger, 
+Pablo A. Iglesias, Robert J. Cotter, and Douglas N. Robinson
+
+
+Curr. Biol., In press
+
+Background: During cytokinesis, regulatory signals are presumed to 
+emanate from the mitotic spindle.  However, what these signals are 
+and how they lead to the spatiotemporal changes in the cortex structure, 
+mechanics, and regional contractility are not well understood in any 
+system.  
+
+Results: To investigate pathways that link the microtubule network to 
+the cortical changes that promote cytokinesis, we used chemical 
+genetics in Dictyostelium to identify genetic suppressors of nocodazole, 
+a microtubule depolymerizer.  We identified 14-3-3 and found that it 
+is enriched in the cortex, helps maintain steady state microtubule length, 
+contributes to normal cortical tension, modulates actin wave formation, 
+and controls the symmetry and kinetics of cleavage furrow contractility 
+during cytokinesis.  Furthermore, 14-3-3 acts downstream of a Rac 
+small GTPase (RacE), associates with myosin II heavy chain and is 
+needed to promote myosin II bipolar thick filament remodeling.  
+
+Conclusion:  14-3-3 connects microtubules, Rac and myosin II to 
+control several aspects of cortical dynamics, mechanics, and 
+cytokinesis cell shape change. Further, 14-3-3 interacts directly 
+with myosin II heavy chain to promote bipolar thick filament r
+emodeling and distribution.  Overall, 14-3-3 appears to integrate 
+several critical cytoskeletal elements that drive two important 
+processes – cytokinesis shape change and cell mechanics.
+
+
+Submitted by Doug Robinson [dnr@jhmi.edu]
+--------------------------------------------------------------------------------
+
+
+The Dictyostelium discoideum acaA gene is transcribed from 
+alternative promoters during aggregation and multicellular 
+development.
+
+Maria Galardi-Castilla, Ane Garciandía, Teresa Suarez and 
+Leandro Sastre
+
+
+PloS  one, in press
+
+Background
+Extracellular cAMP is a key extracellular signaling molecule that 
+regulates aggregation, cell differentiation and morphogenesis 
+during multi-cellular development of the social amoeba Dictyostelium 
+discoideum. This molecule is produced by three different adenylyl 
+cyclases, encoded by the genes acaA, acrA and acgA, expressed at 
+different stages of development and in different structures.  
+
+Methodology/Principal findings
+This article describes the characterization of the promoter region 
+of the acaA gene, showing that it is transcribed from three different 
+alternative promoters. The distal promoter, promoter 1, is active during 
+the aggregation process while the more proximal promoters are active 
+in tip-organiser andposterior regions of the structures. A DNA fragment 
+containing the three promoters drove expression to these same regions 
+and similar results were obtained by in situ hybridization. Analyses of 
+mRNA expression by quantitative RT-PCR with specific primers for 
+each of the three transcripts also demonstrated their different 
+temporal patterns of expression. 
+
+Conclusions/Significance
+The existence of an aggregation-specific promoter can be associated 
+with the use of cAMP as chemo-attractant molecule, which is specific 
+for some Dictyostelium species. Expression at late developmental 
+stages indicates that adenylyl cyclase A might play a more important 
+role in post-aggregative development than previously considered.
+
+
+Submitted by Leandro Sastre [lsastre@iib.uam.es]
+--------------------------------------------------------------------------------
+
+Role of Magnesium and a Phagosomal P-type ATPase in 
+Intracellular Bacterial Killing
+
+Emmanuelle Lelong, Anna Marchetti, Aurélie Guého, 
+Wanessa C. Lima, Natascha Sattler, Maëlle Molmeret, 
+Monica Hagedorn, Thierry Soldati and Pierre Cosson 
+
+
+Cellular Microbiology, in press
+
+Bacterial ingestion and killing by phagocytic cells are essential 
+processes to protect the human body from infectious microorganisms. 
+However, only few proteins implicated in intracellular bacterial killing 
+have been identified to date.  We used Dictyostelium discoideum, 
+a phagocytic bacterial predator, to study intracellular killing. In a 
+random genetic screen we identified Kil2, a type V P-ATPase as 
+an essential element for efficient intracellular killing of Klebsiella 
+pneumoniae bacteria. Interestingly, kil2 knockout cells still killed 
+efficiently several other species of bacteria, and did not show 
+enhanced susceptibility to Mycobacterium marinum intracellular 
+replication. Kil2 is present in the phagosomal membrane, and its 
+structure suggests that it pumps cations into the phagosomal lumen. 
+he killing defect of kil2 knockout cells was rescued by the addition 
+of magnesium ions, suggesting that Kil2 may function as a magnesium 
+pump. In agreement with this, kil2 mutant cells exhibited a specific 
+defect for growth at high concentrations of magnesium. Phagosomal 
+protease activity was lower in kil2 mutant cells than in wild-type cells, 
+a phenotype reversed by the addition of magnesium to the medium. 
+Kil2 may act as a magnesium pump maintaining magnesium 
+concentration in phagosomes, thus ensuring optimal activity of 
+phagosomal proteases and efficient killing of bacteria. 
+
+
+Submitted by Emmanuelle Lelong [emmanuelle.lelong@unige.ch]
+==============================================================
+[End dictyNews, volume 35, number 9]

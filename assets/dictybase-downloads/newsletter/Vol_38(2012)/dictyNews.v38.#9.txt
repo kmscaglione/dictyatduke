@@ -1,0 +1,58 @@
+dictyNews
+Electronic Edition
+Volume 38, number 9
+March 30, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Cooper RM, Wingreen NS, Cox EC
+
+An excitable cortex and memory model successfully predicts new pseudopod 
+dynamics.
+
+
+PLoS One available online http://dx.plos.org/10.1371/journal.pone.0033528
+
+Motile eukaryotic cells migrate with directional persistence by alternating 
+left and right turns, even in the absence of external cues.  For example, 
+Dictyostelium discoideum cells crawl by extending distinct pseudopods in 
+an alternating right-left pattern.  The mechanisms underlying this zig-zag 
+behavior, however, remain unknown.  Here we propose a new Excitable 
+Cortex and Memory (EC&M) model for understanding the alternating, 
+zig-zag extension of pseudopods. Incorporating elements of previous models, 
+we consider the cell cortex as an excitable system and include global inhibition 
+of new pseudopods while a pseudopod is active.  With the novel hypothesis 
+that pseudopod activity makes the local cortex temporarily more excitable Ð 
+thus creating a memory of previous pseudopod locations Ð the model 
+reproduces experimentally observed zig-zag behavior. Furthermore, the 
+EC&M model makes four new predictions concerning pseudopod dynamics.  
+To test these predictions we develop an algorithm that detects pseudopods 
+via hierarchical clustering of individual membrane extensions.  Data from 
+cell-tracking experiments agrees with all four predictions of the model, 
+revealing that pseudopod placement is a non-Markovian process affected 
+by the dynamics of previous pseudopods.  The model is also compatible 
+with known limits of chemotactic sensitivity.  In addition to providing a 
+predictive approach to studying eukaryotic cell motion, the EC&M model 
+provides a general framework for future models, and suggests directions 
+for new research regarding the molecular mechanisms underlying directional 
+persistence.
+
+
+Submitted by Robert Cooper [rmcooper@princeton.edu]
+==============================================================
+[End dictyNews, volume 38, number 9]

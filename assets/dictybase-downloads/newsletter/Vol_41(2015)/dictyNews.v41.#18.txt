@@ -1,0 +1,124 @@
+dictyNews
+Electronic Edition
+Volume 41, number 18
+August 28, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+A host factor supports retrotransposition of the TRE5-A population 
+in Dictyostelium cells by suppressing an Argonaute protein
+
+Anika Schmith1, Thomas Spaller1, Friedemann Gaube1, Åsa Fransson2, 
+Benjamin Boesler3, Sandeep Ojha4, Wolfgang Nellen3, 
+Christian Hammann4, Fredrik Söderbom5, Thomas Winckler1
+
+1 Department of Pharmaceutical Biology, Institute of Pharmacy, 
+University of Jena, Germany
+2 Department of Molecular Biology, Biomedical Center, Swedish 
+University of Agricultural Sciences, Uppsala, Sweden
+3 Institute of Biology – Genetics, University of Kassel, Germany
+4 Ribogenetics@Biochemistry Lab, Department of Life Sciences 
+and Chemistry, Molecular Life Sciences Research Center, Jacobs 
+University Bremen, Germany
+5 Department of Cell and Molecular Biology, Biomedical Center, 
+Uppsala University, Sweden
+
+
+Mobile DNA, in press
+
+Background: In the compact and haploid genome of Dictyostelium 
+discoideum control of transposon activity is of particular 
+importance to maintain viability. The non-long terminal repeat 
+retrotransposon TRE5-A amplifies continuously in D. discoideum 
+cells even though it produces considerable amounts of minus-strand 
+(antisense) RNA in the presence of an active RNA interference 
+machinery. Removal of the host-encoded C-module-binding factor 
+(CbfA) from D. discoideum cells resulted in a more than 90% 
+reduction of both plus- and minus-strand RNA of TRE5-A and a 
+strong decrease of the retrotransposition activity of the cellular 
+TRE5-A population. Transcriptome analysis revealed an 
+approximately 230-fold overexpression of the gene coding for the 
+Argonaute-like protein AgnC in a CbfA-depleted mutant.
+
+Results: The D. discoideum genome contains orthologs of RNA-
+dependent RNA polymerases, Dicer-like proteins, and Argonaute 
+proteins that are supposed to represent RNA interference pathways. 
+We analyzed available mutants in these genes for altered 
+expression of TRE5-A. We found that the retrotransposon was 
+overexpressed in mutants lacking the Argonaute proteins AgnC and 
+AgnE. Because the agnC gene is barely expressed in wild-type cells, 
+probably due to repression by CbfA, we employed a new method of 
+promoter-swapping to overexpress agnC in a CbfA-independent manner. 
+In these strains we established an in vivo retrotransposition assay 
+that determines the retrotransposition frequency of the cellular 
+TRE5-A population. We observed that both the TRE5-A steady-state RNA 
+level and retrotransposition rate dropped to less than 10% of 
+wild-type in the agnC overexpressor strains.
+
+Conclusions: The data suggest that TRE5-A amplification is controlled 
+by a distinct pathway of the Dictyostelium RNA interference machinery 
+that does not require RNA-dependent RNA polymerases but involves AgnC. 
+This control is at least partially overcome by the activity of CbfA, 
+a factor derived from the retrotransposon's host. This unusual 
+regulation of mobile element activity most likely had a profound 
+effect on genome evolution in D. discoideum.
+
+
+Submitted by Thomas Winckler [t.winckler@uni-jena.de] 
+----------------------------------------------------------------------
+
+
+Organization of microtubule assemblies in Dictyostelium syncytia 
+depends on the microtubule crosslinker, Ase1
+
+Irina Tikhonenko, Karen Irizarry, Alexey Khodjakov, and 
+Michael P. Koonce
+
+Division of Translational Medicine
+Wadsworth Center
+NYS Department of Health
+Albany, NY 12201-0509
+
+
+Cell Molecular Life Sciences, in press
+
+It has long been known that the interphase microtubule (MT) array 
+is a key cellular scaffold that provides structural support and 
+directs organelle trafficking in eukaryotic cells. Although in 
+animal cells, a combination of centrosome nucleating properties 
+and polymer dynamics at the distal microtubule ends is generally 
+sufficient to establish a radial, polar array of MTs, little is 
+known about how effector proteins (motors and crosslinkers) are 
+coordinated to produce the diversity of interphase MT array 
+morphologies found in nature. This diversity is particularly 
+important in multinucleated environments where multiple MT arrays 
+must coexist and function. We initiate here a study to address 
+the higher ordered coordination of multiple, independent MT 
+arrays in a common cytoplasm. Deletion of a MT crosslinker of the 
+MAP65/Ase1/PRC1 family disrupts the spatial integrity of multiple 
+arrays in Dictyostelium discoideum, reducing the distance between 
+centrosomes and increasing the intermingling of MTs with opposite 
+polarity. This result, coupled with previous dynein disruptions 
+suggest a robust mechanism by which interphase MT arrays can 
+utilize motors and crosslinkers to sense their position and 
+minimize overlap in a common cytoplasm.
+
+
+Submitted by Mike Koonce [michael.koonce@health.ny.gov] 
+==============================================================
+[End dictyNews, volume 41, number 18]

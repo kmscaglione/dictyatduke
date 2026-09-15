@@ -1,0 +1,113 @@
+Dicty News
+Electronic Edition
+Volume 10, number 5
+February 14, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+A ribosomal protein gene cluster is encoded in the mitochondrial DNA 
+of Dictyostelium discoideum: UGA termination codons and similarity 
+of gene order to  Acanthamoeba castellanii
+ 
+Masao Iwamoto1, Min Pi, Mika Kurihara, Takahiro Morio, Yoshimasa Tanaka*
+ 
+Institute of Biological Sciences, University of Tsukuba, Tsukuba, 
+Ibaraki 305, Japan
+ 
+Curr. Genet. accepted
+
+Abstract        
+
+     We sequenced a region of about 14.5 kb downstream from the 
+ribosomal protein L11 gene (rpl11) in the mitochondrial DNA (54 kb) 
+of the cellular slime mold, Dictyostelium discoideum.  Sequence 
+analysis revealed that ten ribosomal protein genes and six open 
+reading frames (ORFs) formed a cluster arranged in the order:
+rpl11-orf189-rps12-rps7-rpl2-rps19-orf425-orf1740-rpl16-rpl14-
+orf188-rps14-rps89-rps12-rps7-rpl2-rps19-orf425-orf1740-rpl16-
+rpl14-orf188-rps14-rps8-rpl6-rps137-rpl2-rps19-orf425-orf1740-
+rpl16-rpl14-orf188-rps14-rps8-rpl6-rps13-orf127-orf79-orf425-
+orf1740-rpl16-rpl14-orf188-rps14-rps8-rpl6-rps13-orf127-orf796. The
+order was very similar to that of homologous genes in Acanthamoeba 
+castellanii mitochondrial DNA. The N-terminal region of the ORF425 
+and the C-terminal region of the ORF1740 had partial similarities 
+to ribosomal protein S3 of other organisms.  The termination codons 
+of rpl16 and orf188  were UGA, which has not hitherto been found 
+in genes encoded in D. discoideum mitochondrial DNA.
+ 
+------------------------------------------------------------------------- 
+
+Modulation of actin affinity and actomyosin ATPase by charge changes 
+in the myosin motor domain.
+
+Max-Planck-Institut für Medizinische Forschung, Heidelberg
+and Max-Planck-Institut für Molekulare Physiologie, Dortmund (#)
+
+Marcus Furch, Michael A. Geeves (#), and Dietmar J. Manstein
+
+Biochemistry, in press
+
+ABSTRACT: 
+
+   The effects of mutations in an actin-binding surface loop of 
+myosin (loop2) are described. Part of loop 2, the segment between 
+myosin residues 618 and 622, was replaced with sequences enlarged by 
+the introduction of positively charged GKK- or neutral GNN-motifs. 
+Constructs with loops carrying up to 20 additional amino-acids and 
+charge variations from -1 to +12 were produced. Steady state and 
+transient kinetics were used to characterize the enzymatic behavior 
+of the mutant motor domains. Binding of nucleotide was not affected 
+by any of the alterations in loop 2. In regard to their interaction 
+with actin, constructs with moderate charge changes (-1 to +2) 
+displayed wild type-like behavior. Introduction of more than one
+GKK-motif led to stronger coupling between the actin- and
+nucleotide-binding sites of myosin and an up to 1,000-fold increased
+affinity for actin in the absence of ATP and at zero ionic strength. In
+comparison to the wild type construct M765, constructs with 4 to 12 
+extra charges displayed an increased dependence on ionic strength in 
+their interaction with actin, a 2- to 3-fold increase in kcat, a more 
+than 10-fold reduction in Kapp for actin, and a 34- to 70-fold increase 
+in catalytic efficiency.
+
+-------------------------------------------------------------------------
+
+Preferential expression of the cDNA encoding the proteasome subunit 
+during the growth / differentiation transition of Dictyostelium cells
+
+Soo-Cheon Chae and Yasuo Maeda *
+
+Biological Institute, Graduate School of Science, Tohoku University, 
+Aoba, Sendai 980-8578, Japan
+
+Biochem. Biophys. Res. Commun., in press
+
+Abstract:
+
+   A proteasome subunit-1 gene (DAPS-1) was isolated as one 
+preferentially expressed during the transition from growth to 
+differentiation in Dictyostelium discoideum cells, using the 
+differential display method. The DAPS-1 cDNA sequence with a length 
+of 882 bp encodes a protein (Mr. 23.4 kDa) consisting of 213 amino 
+acids. The deduced amino acid sequence of DAPS-1 showed 61% and
+58% identity to the proteasome subunit Y of Xenopus laevis and Homo 
+sapiens, respectively and 48% and 47% identity to the proteasome 
+subunit LMP2 of Homo sapiens  and Orizas latipes, respectively. 
+Northern analysis revealed that a 1.0 kb of DAPS-1 mRNA is 
+predominantly expressed during the early stage of differentiation 
+induced by starvation. This seems to indicate that the DAPS-1 protein 
+may be involved in proteolysis coupled with active exchange of the 
+cellular protein composition during the phase-shift of Dictyostelium 
+cells from the proliferative to differentiated state.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 5]
+

@@ -1,0 +1,72 @@
+Dicty NewsElectronic EditionVolume 22, number 6March 5, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+  Tissue-specific G1 phase cell cycle arrest prior to terminal differentiation 
+in Dictyostelium.Guokai Chen, Gad Shaulsky and Adam KuspaVerna and Marrs McLean Department of Biochemistry and Molecular Biology, 
+andDepartment of Molecular and Human Genetics,Baylor College of Medicine, One Baylor Plaza, Houston TX 77030.Development, in press
+
+The cell cycle status of developing Dictyostelium cells remains unresolved 
+because previous studies have led to conflicting interpretations.  We propose 
+a new model of cell cycle events during development that accounts for most of 
+the previous data and is based on experiments in which multiple parameters of 
+cell cycle status were monitored.   We observe little mitosis during the first 
+twelve hours of development, followed by division of fifty percent of the 
+cells between twelve and eighteen hours of development. Cellular DNA content 
+profiles obtained by flow cytometry and quantification of extra-chromosomal 
+and chromosomal DNA suggest that the daughter cells have half the chromosomal 
+DNA of vegetative cells.  Furthermore, we detect little chromosomal DNA 
+synthesis during development indicating that no S phase occurs and suggesting 
+that dividing cells arrest within the G1 phase of the cell cycle. The DNA 
+content in cells sorted by fluorescent tissue-specific reporters indicates that 
+prespore cells divide first and later encapsulate as G1-arrested spores.  
+Consistent with this, we show by fluorescence in situ hybridization that 
+germinating spores have one copy of their chromosomes and they replicate their 
+chromosomes before mitosis of the emergent amoebea. The DNA content of mature 
+stalk cells suggests that they also attain a G1 state prior to terminal 
+differentiation.  Since prestalk cells appear to be in G2 up to 22 hours of 
+development, our data suggests that they divide just prior to stalk formation.  
+Our results suggest tissue-specific regulation of G1 phase cell cycle arrest 
+prior to terminal differentiation in Dictyostelium.
+
+
+Submitted by: Adam Kuspa [akuspa@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+Overexpression of sphingosine-1-phosphate lyase or inhibition of sphingosine 
+kinase in Dictyostelium discoideum results in a selective increase in 
+sensitivity to platinum based chemotherapy drugsJunxia Min, Andrew L. Stegner, Hannah Alexander and Stephen AlexanderDivision of Biological Sciences, University of Missouri, Columbia, 
+MO 65211-7400Eukaryotic Cell, in pressThe efficacy of the chemotherapy drug cisplatin is often limited due to 
+resistance of the tumors to the drug, and increasing the potency of cisplatin, 
+without increasing its concentration could prove beneficial. A previously 
+characterized Dictyostelium discoideum mutant with increased resistance to 
+cisplatin was defective in the gene encoding sphingosine-1-phosphate (S-1-P) 
+lyase, which catalyzes the breakdown of S-1-P, an important regulatory 
+molecule in cell function and development and the regulation of cell fate. 
+ We hypothesized that the increased resistance to cisplatin was due to an 
+elevation of S-1-P, and predicted that lowering levels of S-1-P should 
+increase sensitivity to the drug. We generated three strains that stably 
+overexpress different levels of the S-1-P lyase.  The overexpressor strains 
+have reduced growth rate, and confirming the hypothesis, showed an 
+expression dependent increase in sensitivity to cisplatin.  Consistently, 
+treating the cells with D-erythro N,N, dimethylsphingosine, a known inhibitor 
+of sphingosine kinase, increased the sensitivity of mutant and parent cells 
+to cisplatin, while addition of exogenous of S-1-P or 8-Br-cAMP made the 
+cells more resistant to cisplatin.  The increased sensitivity of the 
+overexpressors to cisplatin was also observed with the cisplatin analog 
+carboplatin.  In contrast, the response to doxorubicin, 5-flurouracil or 
+etoposide was unaffected, indicating that the involvement of the sphingolipid 
+metabolic pathway in modulating the response to cisplatin is not part of a 
+global genotoxic stress response.  The augmented sensitivity to cisplatin 
+appears to be the result of an intracellular signaling function of S-1-P, 
+since D. discoideum does not appear to have EDG(S-1-P) receptors.  Overall, 
+the results show that modulation of the sphingolipid pathway at multiple 
+points can result in increased sensitivity to cisplatin, and has the 
+potential for increasing the clinical usefulness of this important drug.
+
+Submitted by: Hannah Alexander [alexanderh@missouri.edu]
+
+
+===============================================================================[End Dicty News, volume 22, number 6]

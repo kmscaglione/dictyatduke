@@ -1,0 +1,91 @@
+dictyNews
+Electronic Edition
+Volume 42, number 6
+February 26, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+A Continuum Model of Transcriptional Bursting
+
+Adam M Corrigan, Edward Tunnacliffe, Danielle Cannon, 
+and Jonathan R Chubb*
+
+
+Laboratory for Molecular Cell Biology and Division 
+of Cell and Developmental Biology, University College London, 
+Gower Street, London, WC1E 6BT.  
+
+
+eLife, accepted
+
+Transcription occurs in stochastic bursts. Early models based 
+upon RNA hybridisation studies suggest bursting dynamics arise 
+from alternating inactive and permissive states. Here we 
+investigate bursting mechanism in live cells by quantitative 
+imaging of actin gene transcription, combined with molecular 
+genetics, stochastic simulation and probabilistic modelling. 
+In contrast to early models, our data indicate a continuum of 
+transcriptional states, with a slowly fluctuating initiation 
+rate converting the gene between different levels of activity, 
+interspersed with extended periods of inactivity. We place an 
+upper limit of 40s on the lifetime of fluctuations in 
+elongation rate, with initiation rate variations persisting 
+an order of magnitude longer. TATA mutations reduce the 
+accessibility of high activity states, leaving the lifetime 
+of on- and off-states unchanged. A continuum or spectrum of 
+gene states potentially enables a wide dynamic range for cell 
+responses to stimuli.
+
+
+submitted by: Jonathan Chubb [j.chubb@ucl.ac.uk]
+———————————————————————————————————————
+
+
+Differentiation-inducing factor 2 modulates chemotaxis via 
+the histidine kinase DhkC-dependent pathway in Dictyostelium 
+discoideum
+
+Hidekazu Kuwayama, Yuzuru Kubohara
+
+HK: Faculty of Life and Environmental Sciences, University 
+of Tsukuba, Tsukuba 305-8572, Japan.
+YK: Department of Health Science, Graduate School of Health 
+and Sports Science, Juntendo University, Inzai 270-1695, Japan.
+
+
+FEBS Letters, in press
+
+DIF-1 and DIF-2 are signaling molecules that control chemotaxis 
+in Dictyostelium discoideum. Whereas DIF-1 suppresses chemotaxis 
+in shallow cAMP gradients, DIF-2 enhances chemotaxis under the 
+same conditions via a phosphodiesterase, RegA, which is a part 
+of the DhkC–RdeA–RegA two-component signaling system. In this 
+study, to investigate the mechanism of the chemotaxis 
+regulation by DIF-2, we examined the effects of DIF-2 
+(and DIF-1) on chemotaxis in rdeA– and dhkC– mutant strains. 
+In the parental wild-type strains, chemotactic cell movement 
+was suppressed with DIF-1 and enhanced with DIF-2 in shallow 
+cAMP gradients. In contrast, in both rdeA– and dhkC– strains, 
+chemotaxis was suppressed with DIF-1 but unaffected by DIF-2. 
+The results suggest that DIF-2 modulates chemotaxis via the 
+DhkC–RdeA–RegA signaling system.
+
+
+submitted by: Yuzuru Kubohara [ykuboha@juntendo.ac.jp]
+==============================================================
+[End dictyNews, volume 42, number 6]

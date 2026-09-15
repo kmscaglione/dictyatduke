@@ -1,0 +1,90 @@
+dictyNews
+Electronic Edition
+Volume 39, number 34
+December 6, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+dictyBase has a job opening! http://dictybase.org/dictybase_jobs.html
+
+=========
+Abstracts
+=========
+
+
+The Dictyostelium discoideum RNA-dependent RNA Polymerase RrpC 
+Silences the Centromeric Retrotransposon DIRS-1 Post-transcriptionally 
+and is Required for the Spreading of RNA Silencing Signals 
+
+Stephan Wiegand, Doreen Meier, Carsten Seehafer, Marek Malicki, 
+Patrick Hofmann, Anika Schmith, Thomas Winckler, Balint Foeldesi, 
+Benjamin Boesler, Wolfgang Nellen, Johan Reimegard, Max Kaeller, 
+Jimmie Haellman, Olof Emanuelsson, Lotta Avesson, 
+Fredrik Soederbom and Christian Hammann
+
+
+Nucleic Acids Research, in press
+
+DIRS-1 is the founding member of a poorly characterized class of 
+retrotransposable elements that contain inverse long terminal repeats 
+and tyrosine recombinase instead of DDE-type integrase enzymes. In 
+Dictyostelium discoideum, DIRS-1 forms clusters that adopt the function 
+of centromeres, rendering tight retrotransposition control critical to 
+maintaining chromosome integrity. We report that in deletion strains of 
+the RNA-dependent RNA polymerase RrpC, full length and shorter 
+DIRS-1 mRNAs are strongly enriched. Shorter versions of a hitherto 
+unknown long non-coding RNA in DIRS-1 antisense orientation are 
+also enriched in rrpC- strains. Concurrent with the accumulation of long 
+transcripts, the vast majority of small (21mer) DIRS-1 RNAs vanish in 
+rrpC- strains. RNASeq reveals an asymmetric distribution of the DIRS-1 
+small RNAs, both along DIRS-1 and with respect to sense and antisense 
+orientation. We show that RrpC is required for post-transcriptional 
+DIRS-1 silencing, and also for the spreading of RNA silencing signals. 
+Finally, DIRS-1 mis-regulation in the absence of RrpC leads to 
+retrotransposon mobilization. In summary, our data reveals RrpC as 
+a key player in the silencing of centromeric retrotransposon DIRS-1. 
+RrpC acts at the post-transcriptional level and is involved in the 
+spreading of RNA silencing signals, both in the 5Õ and 3Õ directions.
+
+
+Submitted by Christian Hammann [c.hammann@jacobs-university.de]
+---------------------------------------------------------------------------
+
+
+A CRIB domain mediates functions of coronin
+
+Karthic Swaminathan, Annette Mueller-Taubenberger, Jan Faix, 
+Francisco Rivero, Angelika A. Noegel
+
+
+PNAS, in press
+
+The CRIB (Cdc42- and Rac-interactive binding) motif of coronin binds to 
+Rho GTPases with a preference for GDP-loaded Rac. Mutation of the 
+CRIB motif abrogates Rac binding. This results in increased 1evels of 
+activated Rac in coronin deficient Dictyostelium cells (corA-), which impacts 
+myosin II assembly. corA- cells show increased accumulation of myosin II 
+in the cortex of growth-phase cells. Myosin II assembly is regulated by 
+myosin heavy chain kinase (MHCK)-mediated phosphorylation of its tail. 
+Kinase activity depends on the activation state of the p21-activated kinase 
+PAKa. The myosin II defect of corA- mutant is alleviated by dominant 
+negative PAKa. It is rescued by wild type coronin whereas coronin carrying 
+a mutated CRIB failed to rescue the myosin defect in corA- mutant cells. 
+Ectopically expressed MHCKs affinity-purified from corA- cells show 
+reduced kinase activity. We propose that coronin through its affinity for 
+GDP-Rac regulates the availability of GTP-Rac for activation of 
+downstream effectors.
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 39, number 34]

@@ -1,0 +1,134 @@
+Dicty News
+Electronic Edition
+Volume 24, number 8
+March 25, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Temporal and Spatial Regulation of Phosphoinositide Signaling Mediates
+Cytokinesis
+
+Chris Janetopoulos, Jane Borleis, Francisca Vazquez, Miho Iijima, and
+Peter Devreotes
+
+Department of Cell Biology, Johns Hopkins University School of Medicine
+
+
+Dev Cell, in press
+
+Polarity is a prominent feature of both cell division and migration. While
+a key role for PI(3,4,5)P3 has been established for migration,
+phosphoinositide signaling during cytokinesis has not been reported.  In
+chemotaxis, local accumulation of PI(3,4,5)P3 at the cell‚s leading edge,
+achieved through temporal and spatial regulation of PI3-kinases and the
+tumor suppressor, PTEN, biases the actin cytoskeleton and thereby controls
+directional sensing and polarity.  We find that as migrating D. discoideum
+cells round up to enter cytokinesis, PI(3,4,5)P3 signaling is uniformly
+suppressed . Then as the spindle and cell elongate, PI3Ks and PTEN move to
+and function at the poles and furrow, respectively.  Cell lines lacking both
+these enzymatic activities fail to modulate PI(3,4,5)P3 levels, are
+defective in cytokinesis, and cannot divide in suspension.  The cells
+continue to grow and duplicate their nuclei at a normal rate, generating
+large multinucleate cells.  Furrows that fail to ingress between nuclei
+are unable to stably accumulate myosin filaments or suppress actin-filled
+ruffles. We propose that phosphoinositide-linked circuits, similar to those
+that bring about asymmetry during cell migration, also regulate polarity in
+cytokinesis.
+
+
+Submitted by: Chris Janetopoulos [cjanetop@jhmi.edu]
+
+-----------------------------------------------------------------------------
+
+
+New prestalk and prespore inducing signals in Dictyostelium
+
+Ioannis Serafimidis and Robert R. Kay
+
+MRC Laboratory of Molecular Biology,
+Hills Road,
+Cambridge, CB2 2QH
+UK
+
+Developmental Biology, in press
+
+The differentiation inducing signals (DIFs) currently known in Dictyostelium
+appear unable to account for the full diversity of cell types produced in
+development.  To search for new signals, we analysed the differentiation in
+monolayers of cells expressing prestalk (ecmAO, ecmA, ecmO, ecmB and cAR2)
+and prespore (psA) markers.  Expression of each marker drops off as the cell
+density is reduced, suggesting that cell interaction is required.  Expression
+of each marker is inhibited by cerulenin, an inhibitor of polyketide
+synthesis, and can be restored by conditioned medium.  However, the known
+stalk-inducing polyketide, DIF-1, could not replace conditioned medium and
+induce the ecmA or cAR2 prestalk markers, suggesting that they require
+different polyketide inducers.  Polyketide production by fungi is stimulated
+by cadmium ions, which also dramatically stimulates differentiation in
+Dictyostelium cell cultures and the accumulation of medium factors.  
+Factors produced with cadmium present were extracted from conditioned medium
+and fractionated by HPLC.  A new factor inducing prespore cell
+differentiation, called PSI-2, and two inducing stalk cell differentiation
+(DIFs 6 and 7) were resolved.  All are distinct from currently identified
+factors.  DIF-6, but not DIF-7 or PSI-2, appears to have an essential
+carbonyl group.  Thus Dictyostelium may use extensive polyketide signalling
+in its development.
+
+
+Submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Dictyostelium LIS1 is a centrosomal protein required for microtubule/cell
+cortex interactions, nucleus/centrosome linkage and actin dynamics
+
+Markus Rehberg, Julia Kleylein-Sohn, Jan Faix, Thi-Hieu Ho, Irene Schulz
+and Ralph Gräf*
+
+A.-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität München,
+Schillerstrasse 42, D-80336 München, Germany
+
+*corresponding author
+
+
+Mol. Biol. Cell in press
+
+The widespread LIS1-proteins were originally identified as the target for
+sporadic mutations causing lissencephaly in humans. Dictyostelium LIS1
+(DdLIS1) is a microtubule-associated protein exhibiting 53 % identity to
+human LIS1. It colocalizes with dynein at isolated, microtubule-free 
+centrosomes, suggesting that both are integral centrosomal components.
+Replacement of the DdLIS1 gene by the hypomorphic D327H allele or
+overexpression of an MBP-DdLIS1 fusion disrupted various dynein-associated
+functions. Microtubules lost contact with the cell cortex and were dragged
+behind an unusually motile centrosome. Previously, this phenotype was
+observed in cells overexpressing fragments of dynein or the
+XMAP215-homologue DdCP224. DdLIS1 was coprecipitated with DdCP224,
+suggesting that both act together in dynein-mediated cortical attachment
+of microtubules. Furthermore, DdLIS1-D327H mutants showed Golgi dispersal
+and reduced centrosome/nucleus association. Defects in DdLIS1 function also
+altered actin dynamics characterized by traveling waves of actin
+polymerization correlated with a reduced F-actin content. DdLIS1 could be
+involved in actin dynamics through Rho-GTPases, since DdLIS1 interacted
+directly with Rac1A in vitro. Our results show that DdLIS1 is required for
+maintenance of the microtubule cytoskeleton, Golgi apparatus and
+nucleus/centrosome association, and they suggest that LIS1-dependent
+alterations of actin dynamics could also contribute to defects in neuronal
+migration in lissencephaly patients.
+
+Submitted by: Ralph Graef [rgraef@lrz.uni-muenchen.de]
+
+==============================================================================
+[End Dicty News, volume 24, number 8] 

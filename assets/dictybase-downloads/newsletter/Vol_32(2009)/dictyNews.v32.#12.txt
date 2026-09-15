@@ -1,0 +1,165 @@
+dictyNews
+Electronic Edition
+Volume 32, number 12
+May 1, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Identification and cell cycle-dependent localization of nine
+novel, genuine centrosomal components in Dictyostelium
+discoideum
+ 
+Irene Schulz, Alexander Erle, Ralph Gräf, Anne Krüger, Heiner Lohmeier, 
+SaschaPutzler, Matthias Samereier, Sebastian Weidenthaler
+University of Potsdam, Institute for Biochemistry and Biology, Dept. of 
+Cell BiologyKarl-Liebknecht-Strasse 24-25, Haus 26
+14476 Potsdam-Golm, Germany
+ 
+
+Cell Motility and the Cytoskeleton: Mechanics and Dynamics of the Cytoskeleton
+
+The centrosome is the main microtubule-organizing center and constitutes 
+the largest protein complex in a eukaryotic cell. The Dictyostelium centrosome 
+is an established model for acentriolar centrosomes and it consists of a layered 
+core structure surrounded by a so-called corona, which harbors microtubule 
+nucleation complexes. We have identified 34 new centrosomal candidate proteins 
+through mass spectrometrical analysis of the proteome of isolated Dictyostelium 
+centrosomes. Here we present a characterization of 12 centrosomal candidate 
+proteins all featuring coiled coil regions and low expression levels, which are the
+most common attributes of centrosomal proteins. We used GFP fusion proteins 
+to localize the candidate proteins in whole cells and on microtubule-free, isolated 
+centrosomes. Thus we were able to identify nine new genuine centrosomal proteins 
+including a putative orthologue of Cep192, an interaction partner of polo-like 
+kinase 4 in human centriole biogenesis. In this respect, centrosomal localization 
+of the only polo-like kinase in Dictyostelium, Plk, is also shown in this work. 
+Using confocal deconvolution microscopy, four components, CP39,CP55, CP75 
+and CP91 could be clearly assigned to the so far almost uncharacterized 
+centrosomal core structure, while CP148 and Cep192 localized to a zone 
+between that of corona marker and core proteins. Finally, CP103 and CP248 
+were constituents of the corona. In contrast, NE81 was localized at the nuclear 
+envelope and three others, an orthologue of the spindle checkpoint component 
+Mad1, the novel Cenp68, and the centrosomal CP248 were observed at the 
+centromeres, which are clustered and linked to the centrosome throughout 
+the entire cell cycle.
+
+
+Submitted by: Irene Schulz [Irene.Schulz@uni-potsdam.de]
+--------------------------------------------------------------------------------
+
+
+
+The Ordered Extension of Pseudopodia by Amoeboid Cells in the Absence 
+of External Cues.
+
+Leonard Bosgraaf, and Peter J.M. Van Haastert
+
+
+PLOS ONE, in press
+
+Eukaryotic cells extend pseudopodia for movement. In the absence of 
+external cues, cells move in random directions, but with a strong element 
+of persistence that keeps them moving in the same direction Persistence 
+allows cells to disperse over larger areas and is instrumental to enter 
+new environments where spatial cues can lead the cell. Here we explore 
+cell movement by analyzing the direction, size and timing of ~2000 
+pseudopodia that are extended by Dictyostelium cells. The results show 
+that pseudpopod are extended perpendicular to the surface curvature at 
+the place where they emerge. The location of new pseudopods is not random 
+but highly ordered. Two types of pseudopodia may be formed: frequent splitting 
+of an existing pseudopod, or the occasional extension of a de novo pseudopod 
+at regions devoid of recent pseudopod activity. Split-pseudopodia are extended 
+at ~60 degrees relative to the previous pseudopod, mostly as alternating 
+Right/Left/Right steps leading to relatively straight zigzag runs. De novo 
+pseudopodia are extended in nearly random directions thereby interrupting 
+the zigzag runs. Persistence of cell movement is based on the ratio of split 
+versus de novo pseudopodia. We identify PLA2 and cGMP signaling 
+pathways that modulate this ratio of splitting and de novo pseudopodia, 
+and thereby regulate the dispersal of cells. The observed ordered 
+extension of pseudopodia in the absence of external cues provides a 
+fundamental insight into the coordinated movement of cells, and might 
+form the basis for movement that is directed by internal or external cues. 
+
+
+Submitted by: Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+
+Regulation of the formation and trafficking of vesicles from Golgi by PCH 
+Family Proteins During Chemotaxis
+
+S. Lee, J. W. Han#, L. Leeper, J. S. Gruver, C. Y. Chung*
+
+Department of Pharmacology, Vanderbilt University Medical Center, 
+Nashville, TN 37232-6600
+
+
+BBA-Molecular Cell Research, In press
+
+Previous study demonstrated that WASP localizes on vesicles during 
+Dictyostelium chemotaxis and these vesicles appear to be preferentially 
+distributed at the leading and trailing edge of migrating cells.  In this 
+study, we have examined the role of PCH family proteins, Nwk/Bzz1p-like 
+protein (NLP) and Syndapin-like protein (SLP), in the regulation of the 
+formation and trafficking of WASP-vesicles during chemotaxis. NLP and SLP 
+appear to be functionally redundant and deletion of both nlp and slp genes 
+cause the loss of polararized F-actin organization and significant defects 
+in chemotaxis. WASP and NLP are colocalized on vesicles and interactions 
+between two molecules via the SH3 domain of NLP/SLP and the proline-rich 
+repeats of WASP are required for vesicle formation from Golgi. Microtubules 
+are required for polarized trafficking of these vesicles as vesicles showing 
+high directed mobility are absent in cells treated with nocodazole. Our 
+results suggest that interaction of WASP with NLP/SLP is required for the 
+formation and trafficking of vesicles from Golgi to the membrane, which 
+might play a central role in the establishment of cell polarity during 
+chemotaxis.
+
+
+Submitted by: Chan Chung [chang.chung@vanderbilt.edu]
+--------------------------------------------------------------------------------
+
+
+
+The STE group kinase SepA controls cleavage furrow formation in Dictyostelium   
+
+Annette Müller-Taubenberger*, Hellen C. Ishikawa-Ankerhold, Peter M. Kastner, 
+Emmanuel Burghardt, and Günther Gerisch
+
+
+Cell Motility and the Cytoskeleton, in press.
+
+During a REMI screen for proteins regulating cytokinesis in Dictyostelium 
+discoideum we isolated a mutant forming multinucleate cells. The gene 
+affected in this mutant encoded a kinase, SepA, which is an ortholog of 
+Cdc7, a serine-threonine kinase essential for septum formation in 
+Schizosaccharomyces pombe. Localization of SepA-GFP in live cells and
+its presence in isolated centrosomes indicated that SepA, like its upstream 
+regulator Spg1, is associated with centrosomes. Knockout mutants of SepA 
+showed a severe cytokinesis defect and a delay in development. In 
+multinucleate SepA-null cells nuclear division proceeded normally and 
+synchronously. However, often cleavage furrows were either missing or 
+atypical: they were extremely asymmetric and constriction was impaired. 
+Cortexillin-I, a marker localizing strictly to the furrow in wild-type cells, 
+demonstrated that large, crescent-shaped furrows expanded and persisted 
+long after the spindle regressed and nuclei returned to the interphase state. 
+Outside the furrow the filamentous actin system of the cell cortex showed 
+strong ruffling activity. These data suggest that SepA is involved in the 
+spatial and temporal control system organizing cortical activities in 
+mitotic and post-mitotic cells.     
+
+
+Submitted by: Annette Müller-Taubenberger [amueller@lrz.uni-muenchen.de]
+==============================================================
+[End dictyNews, volume 32, number 12]

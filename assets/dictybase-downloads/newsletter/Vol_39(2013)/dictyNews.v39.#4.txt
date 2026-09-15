@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 39, number 4
+February 8, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+A Rare Combination of Ribonucleotide Reductases in the Social 
+Amoeba Dictyostelium discoideum
+
+Mikael Crona, Lotta Avesson, Margareta Sahlin, Daniel Lundin, 
+Andrea Hinas, Ralph Klose, Fredrik Soderbom, and Britt-Marie Sjoberg
+
+
+Journal of Biological Chemistry, in press
+
+Ribonucleotide reductases (RNRs) catalyze the only pathway for de novo 
+synthesis of deoxyribonucleotides needed for DNA replication and repair. 
+The vast majority of eukaryotes encodes only a class I RNR, but 
+interestingly some eukaryotes, including the social amoeba Dictyostelium 
+discoideum, encode both a class I and a class II RNR. The amino acid 
+sequence of the D. discoideum class I RNR is similar to other eukaryotic 
+RNRs, whereas that of its class II RNR is most similar to the monomeric 
+class II RNRs found in Lactobacillus spp. and a few other bacteria. Here 
+we report the first study of RNRs in a eukaryotic organism that encodes 
+class I and class II RNRs. Both classes of RNR genes were expressed in 
+D. discoideum cells, although the class I transcripts were more abundant 
+and strongly enriched during mid development compared to the class II 
+transcript. The quaternary structure, allosteric regulation, and properties of 
+the diiron-oxo/radical cofactor of D. discoideum class I RNR are similar to 
+the mammalian RNRs. Inhibition of D. discoideum class I RNR by 
+hydroxyurea resulted in a 90% reduction in spore formation and decreased 
+the germination viability of the surviving spores by 75%. Class II RNR could 
+not compensate for class I inhibition during development, and excess of 
+vitamin B12 coenzyme essential for class II activity did not improve spore 
+formation. We suggest that class I is the principal RNR during D. discoideum 
+development and growth, and is important for spore formation, possibly by 
+providing dNTPs for mitochondrial replication.
+
+
+Submitted by Fredrik Soderbom [fredrik.soderbom@icm.uu.se]
+---------------------------------------------------------------------------
+
+
+Robustness of self-organizing chemoattractant field arising from precise 
+pulse-induction of its breakdown enzyme: a single cell level analysis of 
+PDE expression in Dictyostelium
+
+Noritaka Masakià, Koichi Fujimotoà, Mai Honda-Kitahara, Emi Hada and 
+Satoshi Sawai
+
+à Both authors contributed equally to this work.
+
+Graduate School of Arts and Sciences, The University of Tokyo
+
+
+Biophysical Journal, in press
+
+The oscillation of chemoattractant cyclic AMP (cAMP) in Dictyostelium 
+discoideum is a collective phenomenon that occurs when the basal level 
+of extracellular cAMP exceeds a threshold and invokes cooperative mutual 
+excitation of cAMP synthesis and secretion. In order for pulses to be relayed 
+from cell to cell repetitively, secreted cAMP must be cleared and brought 
+down to the sub-threshold level. One of the main determinants of the 
+oscillatory behavior is thus how much extracellular cAMP is degraded by 
+extracellular phosphodiesterase (PDE). To date, the exact nature of its 
+gene regulation remains elusive. Here, we performed live imaging analysis 
+of mRNA transcripts for pdsA - the gene encoding extracellular 
+phosphodiesterase. Our analysis revealed that pdsA is up-regulated during 
+the rising phase of the cAMP oscillations. Furthermore we show by analyzing 
+isolated cells that its expression is strictly dependent on the presence of 
+extracellular cAMP. It is induced only at ~1nM extracellular cAMP, which is 
+almost identical to the threshold concentration for the cAMP relay response. 
+The observed precise regulation of PDE expression together with 
+degradation of extracellular cAMP by PDE form a dual positive and negative 
+feedback circuit, and model analysis shows that this sets the cAMP level 
+near the threshold concentration for the cAMP relay response for a wide 
+range of adenylyl cyclase activity. The overlap of the thresholds could allow 
+oscillations of chemoattractant cAMP to self-organize at various starving 
+conditions making its development robust to fluctuating environment.
+ 
+ 
+Submitted by Satoshi Sawai [cssawai@mail.ecc.u-tokyo.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 4]

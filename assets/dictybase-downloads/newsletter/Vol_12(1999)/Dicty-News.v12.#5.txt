@@ -1,0 +1,179 @@
+Dicty News
+Electronic Edition
+Volume 12, number 5
+February 21, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+==================================================================
+ REPORT ON THE NIH MEETING CONCERNING NON-MAMMALIAN MODEL SYSTEMS
+==================================================================
+
+Rich Kessin, Bill Loomis, Carole Parent
+
+About 120 scientists and NIH administrators met on Tuesday and Wednesday, 
+February 16th and 17th, at the Natcher Center in Bethesda to consider new 
+initiatives that could support futher studies in non-mammalian model 
+systems. Harold Varmus, Head of the NIH, opened the sessions by pointing 
+out that the Institutes at NIH had been set up over the last 50 years on 
+the basis of perceived needs for studies in specific organs or diseases. 
+He felt that basic biological studies, especially in model organisms, fit 
+uneasily in this structure and that NIH wide policies could be better 
+adapted to present needs. This meeting focused on the needs of the communities 
+that work with yeast, worms, flies, fish, frogs, and additional non-mammalian 
+systems.
+
+Ira Herskowitz outlined the strengths of S. cereviasiae; Martin Chalfie 
+described the advantages of C.elegans; Gerry Rubin went over D.  melanogaster; 
+Will Talbot talked about zebrafish and Marc Kirschner elequently emphasized 
+the fusion of biochemistry and genetics in Xenopus.  The organisms that were 
+under consideration as additional model systems included Chlamydomonas, 
+Tetrahymena, Dictyostelium, S. pombe, Neurosporra, Aplysia, sea urchins, 
+Fugu and chickens.
+
+In a 10 minute presentation we reminded the participants of the power of 
+microbial and molecular genetics techniques in Dictyostelium as well as 
+the excellent cytology and biochemistry possible with this organism. The 
+EST Project and the initiation of the Genome Project for Dictyostelium puts 
+the system in a strong position for further utilization. The general consensus 
+appeared to be that studies in Dictyostelium are ripe for major expansion.
+
+Strong arguments were also made for other systems including: Tetrahymena 
+by Martin Gorovsky; Neurosporra by Bob Metzenberg; Aplysia by Eric Kandel; 
+sea urchins by Eric Davidson, and Fugu by Sydney Brenner.  Increased support 
+by the NIH for studies in several of these systems appears likely.
+
+White papers outlining the needs of the community were prepared for the 
+five established model systems (yeast, worms, flies, fish and frogs) as 
+well as Dictyostelium and Tetrahymena. We emphasized the need for addition 
+funds to complete the genome sequence, annotate it, enhance DictyDB, and 
+establish a stock center. We also pointed out the need for strong support 
+of genome array technology for expression analyses and future support for 
+global gene knock-out studies. We estimated that a total of 4.6 million 
+dollars additonal support would fullfill these essential needs.
+
+It was an intense, well-structured meeting in which excellent science as 
+well as policy matters were discussed.  We feel that the wider community 
+gained an appreciation of the strengths of Dictyostelium as a model system 
+as well as the strengths of the Dicty community. We are hopefull that we 
+will see added NIH support in the near future.
+
+
+==============
+  Abstracts
+==============
+
+Variables controlling the expression level of exogenous genes in 
+Dictyostelium
+
+Ka Ming Pang, Michael A. Lynes, David A. Knecht
+
+University of Connecticut, Department of Molecular and Cell Biology
+Storrs, CT 06269, USA
+
+Plasmid, in press.
+
+Abstract
+
+   Ectopic expression of genes from recombinant plasmids is commonly 
+used to study gene function.  In Dictyostelium, three drug resistance 
+cassettes are commonly used as selectable markers in vectors.  We report 
+here a comparative study of the expression of green fluorescence protein 
+(GFP) gene from vectors containing each of the drug resistant cassettes.  
+The expression was highest in cells transformed with the vectors 
+containing the neomycin resistant cassette (pDNeoGFP), followed by the 
+hygromycin resistant cassette (pDHygGFP) and the blasticidin resistant 
+cassette (pDBsrGFP).  The level of GFP expression was directly related 
+to the copy number of the vector in transformants.  In turn, the copy 
+number of the vector depended on the drug resistance cassette as well 
+as the concentration of the drug used in selection.  In general, cells 
+with higher copy numbers could be selected by a higher drug concentration.  
+The expression of GFP was also affected by the method of transformation.  
+For pDHygGFP, expression of GFP was much higher in cells transformed by 
+electroporation than those transformed by calcium phosphate co-precipitation.  
+However, only a slight difference was observed for pDNeoGFP or pDBsrGFP.
+
+----------------------------------------------------------------------------
+
+Isolation of spermidine synthase gene (spsA) of Dictyostelium discoideum1
+
+Kunde Guo, Wen-Tsan Chang and Peter C. Newell
+
+Department of Biochemistry, University of Oxford, South Parks Road, 
+Oxford OX1 3QU, UK
+
+1 The nucleotide sequence data has been submitted to Genbank under the 
+accession number AF069757.
+
+Accepted: Biochimica et Biophysica Acta
+
+Summary
+
+   Polyamines such as putrescine (1,4-diaminobutane), spermidine and 
+spermine have been implicated in a wide variety of essential biological 
+reactions including the biosynthesis of DNA and RNA in all cells from 
+those of man to E. coli.   In Dictyostelium, the major polyamines that 
+have been reported in amoebae are spermidine, putrescine and 
+1,3-diaminopropane.  In polyamine biosynthesis, the enzyme spermidine 
+synthase converts putrescine to spermidine by transfer of a propylamine 
+group from decarboxylated S-adenosylmethionine to putrescine.  Using the 
+gene disruption technique of Restriction Enzyme Mediated Integration 
+(REMI), we have isolated the spermidine synthase gene from Dictyostelium 
+discoideum and have designated it spsA.  Northern blot analysis showed 
+that the spsA mRNA is expressed maximally during the vegetative stage 
+and decreases gradually during the 24 hours of development. Sequencing 
+of the genomic DNA and a full length cDNA clone indicated the presence 
+of one intron in a gene coding for a predicted protein (SpsA) with 284 
+amino acids. The sequence was found to be highly conserved, with amino 
+acid identities compared to human spermidine synthases of 59.5%, mouse: 
+61.3% and yeast: 58.1%.   A null mutant of the spsA gene was unable to 
+grow in the absence of exogenous spermidine and growth was proportional 
+to the amount of spermidine added.  Development of spsA null cells grown 
+in the absence of spermidine produced fruiting bodies that had abnormally 
+short stalks.
+
+----------------------------------------------------------------------------
+
+Regulation of Dictyostelium Protein tyrosine Phosphatase PTP3 through
+Osmotic Shock and Stress Stimulation and Identification of pp130 as a PTP3
+Substrate
+
+Marianne Gamper, Eugene Kim, Peter K. Howard, Hui Ma, Tony Hunter, and 
+Richard A. Firtel, 
+
+J. Biol. Chem., in press.
+
+ABSTRACT
+
+Osmotic shock and growth-medium stimulation of Dictyostelium cells 
+results in rapid cell rounding, a reduction in cell volume, and a 
+rearrangement of the cytoskeleton that leads to resistance to osmotic 
+shock.  Osmotic shock induces the activation of guanylyl cyclase, a 
+rise in cGMP mediating the phosphorylation of myosin II, and the tyrosine 
+phosphorylation of actin and the ~130 kDa protein (p130).  We present data 
+suggesting that signaling pathways leading to these different responses 
+are, at least in part, independent.  We show that a variety of stresses 
+induce the Ser/Thr phosphorylation of the protein tyrosine phosphatase 
+PTP3.  This modification does not alter PTP3 catalytic activity but 
+correlates with its translocation from the cytosol to subcellular 
+structures that co-localize to endosomal vesicles.  This translocation 
+is independent of PTP3 activity.  Mutation of the catalytically essential 
+Cys to a Ser results in inactive PTP3 that forms a stable complex with 
+tyrosine phosphorylated p130 (pp130) in vivo and in vitro, suggesting 
+that PTP3 has a substrate specificity for pp130.  The data suggest that 
+stresses activate several interacting signaling pathways controlled by 
+Ser/Thr and Tyr phosphorylation, which, along with the activation of 
+guanylyl cyclase, mediate the ability of this organism to respond to 
+adverse changes in the external environment.
+
+ 
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 5]
+
+  

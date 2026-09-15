@@ -1,0 +1,216 @@
+Dicty News
+Electronic Edition
+Volume 14, number 4
+February 12, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+======================
+  Position Available
+======================
+
+GRADUATE STUDENT TEACHING ASSISTANTSHIP	
+
+Teaching assistantship available August 2000 for Ph.D. student to study 
+molecular basis for signal transduction and gene expression in 
+Dictyostelium discoideum in the laboratory of Dr. Maureen Brandon. 
+Assistantship includes stipend plus tuition and fees. Responsibilities 
+include teaching undergraduate laboratories, so excellent English speaking 
+skills are essential. Idaho State University is located in southeastern 
+Idaho with easy access to Nordic and alpine ski areas, hiking, camping 
+and mountain biking trails, and Yellowstone and The Grand Teton National 
+Parks. Application materials and instructions are available online at 
+www.isu.edu/departments/bios/. Contact Dr. Maureen Brandon at 
+branmaur@isu.edu prior to submission for further information.
+
+=============
+  Abstracts
+=============
+
+
+Cloning and characterization of beta-COP from Dictyostelium discoideum
+
+Eur. J. Cell Biol.
+
+Martina R. Mohrs2+, Klaus-Peter Janssen1+, Thomas Kreis3#, Angelika A.
+Noegel2* and Michael Schleicher1
+
+1 Institut für Zellbiologie, Ludwig-Maximilians-Universität,
+Schillerstrasse 42, 80336 München, FRG, 2 Institut für Biochemie I,
+Medizinische Einrichtungen der Universität zu Köln, Joseph-Stelzmann-Str.
+52, 50931 Köln, FRG, 3 Department of Cell Biology, CH-1211 Geneva, Switzerland
+
+
+Abstract
+
+We have isolated a cDNA coding for beta-COP from Dictyostelium discoideum
+by polymerase chain reaction using degenerate primers derived from rat
+beta-COP. The complete cDNA clone has a size of 2.8 kb and codes for a
+protein with a calculated molecular mass of 102 kDa. Dictyostelium beta-COP
+exhibits highest homology to mammalian beta-COP, but it is considerably
+smaller due to a shortened variable region that is thought to form a linker
+between the highly conserved N- and C-terminal domains. Dictyostelium
+beta-COP is encoded by a single gene, which is transcribed at moderate
+levels into two RNAs that are present throughout development. To localize
+the protein, full length beta-COP was fused to GFP and expressed in
+Dictyostelium cells. The fusion protein was detected on vesicles
+distributed all over the cells and was strongly enriched in the perinuclear
+region. Based on coimmunofluorescence studies with antibodies directed
+against the Golgi marker comitin, this compartment was identified as the
+Golgi apparatus. beta-COP distribution in Dictyostelium was not brefeldinA
+sensitive being most likely due to the presence of a brefeldinA resistance
+gene. However, upon DMSO treatment we observed a reversible disassembly of
+the Golgi apparatus. In mammalian cells DMSO treatment had a similar effect
+on beta-COP distribution. 
+
+----------------------------------------------------------------------------
+
+Characterization and heterologous expression of cDNAs encoding two novel
+closely related Ca2+-binding proteins in Dictyostelium discoideum 
+
+Magdalena Dorywalska, Barrie Coukell and Akil Dharamsi
+
+Department of Biology, York University, 4700 Keele St., Toronto, Ontario,
+M3J 1P3, CANADA
+
+Biochimica et Biophysica Acta (in press)
+
+Abstract
+
+	During a yeast two-hybrid screen of a Dictyostelium cDNA library
+using the Ca2+-binding protein CBP1 as bait, we isolated a full-length
+cDNA encoding a novel Ca2+-binding protein (termed CBP4a). The protein is
+composed of 162 amino acids and contains four consensus EF-hands. PCR
+amplification of Dictyostelium genomic DNA using primers specific for the
+cDNA sequence resulted in the isolation of a gene encoding a different
+Ca2+-binding protein of 162 amino acids (designated CBP4b) with 90 % amino
+acid sequence identity to CBP4a. Southern blot analysis confirmed the
+presence of two closely related genes in the Dictyostelium genome. CBP4a
+and CBP4b mRNAs are expressed at the same stages of development as CBP1
+mRNA. In addition, both novel proteins bind 45Ca2+ and interact with CBP1
+in vitro in a Ca2+-dependent manner. 
+
+----------------------------------------------------------------------------
+
+The tail domain of myosin M catalyses nucleotide exchange on Rac1 GTPases
+and can induce actin-driven surface protrusions.
+
+Heidrun A. Geissler, Ronald Ullmann, and Thierry Soldati
+
+Department of Molecular Cell Research, Max-Planck-Institute for Medical
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+Correspondence and requests should be addressed to Thierry Soldati
+Tel: +49-6221-486407, Fax: +49-6221-486325
+E-mail: soldati@mzf.mpimf-heidelberg.mpg.de
+
+Traffic, in press (May 2000 issue)
+
+Abstract
+
+   Members of the myosin superfamily play crucial roles in cellular processes
+including management of the cortical cytoskeleton, organelle transport and
+signal transduction. GTPases of the Rho family act as key control elements
+in the reorganization of the actin cytoskeleton in response to growth
+factors, and other functions such as membrane trafficking, transcriptional
+regulation, growth control and development. Here, we describe a novel
+unconventional myosin from Dictyostelium discoideum, MyoM. Primary sequence
+analysis revealed that it has the appearance of a natural chimera between a
+myosin motor domain and a guanine nucleotide exchange factor (GEF) domain
+for Rho GTPases. The functionality of both domains was established. Binding
+of the motor domain to F-actin was ATP-dependent and potentially regulated
+by phosphorylation. The GEF domain displayed selective activity on
+Rac1-related GTPases. Overexpression rather than absence of MyoM affected
+the cell morphology and viability. Particularly in response to hypoosmotic
+stress, cells overexpressing the MyoM tail domain extended massive
+actin-driven protrusions. The GEF was enriched at the tip of growing
+protuberances, likely through its pleckstrin homology domain. MyoM is the
+first unconventional myosin containing an active Rac-GEF domain, suggesting
+a role at the interface of Rac-mediated signal transduction and remodeling
+of the actin cytoskeleton.
+
+----------------------------------------------------------------------------
+
+Dictyostelium discoideum: a new host model system for intracellular 
+pathogens of the genus Legionella
+
+
+Sonja Haegele,1 Rolf Koehler,1 Hilde Merkert,1 Michael Schleicher,2 
+Joerg Hacker, 1 Michael Steinert 1*
+
+1 Institut fuer Molekulare Infektionsbiologie, Universitaet Wuerzburg,
+Roentgenring 11,
+   D-97070 Wuerzburg, Germany.
+
+2 Institut für Zellbiologie, Ludwig-Maximilians-Universitaet,
+Schillerstrasse 42, 
+  D-80336 Muenchen, Gemany.
+
+Accepted: Cellular Microbiology
+
+Summary
+
+   The soil amoeba Dictyostelium discoideum is a haploid eukaryote that, 
+upon starvation, aggregates and enters a developmental cycle to produce 
+fruiting bodies. In this study, we infected single-cell stages of D. 
+discoideum with different Legionella species.  Intracellular growth of 
+Legionella in this new host system was compared to their growth in the
+natural host Acanthamoeba castellanii. Transmission electron microscopy of
+infected D. discoideum cells revealed that legionellae reside within the 
+phagosome. Using confocal microscopy it was observed that replicating, 
+intracellular, GFP-tagged legionellae did rarely co-localize with 
+fluorescent antibodies directed against the lysosomal protein DdLIMP
+of D. discoideum. This indicates that the bacteria inhibit fusion of 
+phagosomes and lysosomes in this particular host system.
+In addition, Legionella infection of D. discoideum inhibited the
+differentiation of the host into the multicellular fruiting stage. 
+Co-culture studies with profilin-minus D. discoideum mutants and
+Legionella resulted in higher rates of infection when compared to 
+infections of wild type amoebae.  Because the amoebae are amenable to 
+genetic manipulation due to their haploid genome and because a number of 
+cellular markers are available, we show for the first time that D. 
+discoideum is a valuable model system to  study intracellular pathogenesis 
+of microbial pathogens. 
+
+----------------------------------------------------------------------------
+
+Role of cAMP-dependent protein kinase during growth and early development
+of Dictyostelium discoideum
+
+Gerd Primpke1, Vasiliki Iassonidou1, Wolfgang Nellen2, Birgit Wetterauer1*
+
+1Zoologisches Institut der Universität München, Luisenstraße 14, 80333 München,
+Germany
+2University of Kassel, Abt. Genetik, Heinrich-Plett-Str. 40, 34132 Kassel,
+Germany
+* to whom correspondence should be addressed
+
+Develop. Biol., in press.
+
+cAMP dependent protein kinase (PKA) is an essential regulator of gene
+expression and cell differentiation during multicellular development of
+Dictyostelium discoideum. Here we show that PKA activity also regulates
+gene expression during the growth phase and at the transition from growth
+to development. Overexpression of PKA leads to overexpression of the
+discoidinIg promoter, while expression of the discoidinIg promoter is
+reduced when PKA activity is reduced, either by expression of a dominant
+negative mutant of the regulatory subunit, or by disruption of the gene for
+the catalytic subunit (PKA-C). The discoidin phenotype of PKA-C null cells
+is cell autonomous. In particular, normal secretion of discoidin inducing
+factors was demonstrated. In addition, PKA-C null cells are able to respond
+to media conditioned by PSF and CMF. We conclude that PKA is a major
+activator of discoidin expression. However, it is not required for
+production or transduction of the inducing extracellular signals. Therefore
+PKA dependent and PKA independent pathways regulate the expression of the
+discoidin genes.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 4]
+
+  

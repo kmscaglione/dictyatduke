@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 43, number 16
+July 21, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Contact enhancement of locomotion in spreading cell colonies
+
+Joseph d’Alessandro1†, Alexandre P. Solon2, Yoshinori Hayakawa3, 
+Christophe Anjard1,François Detcheverry1, Jean-Paul Rieu1 and 
+Charlotte Rivière1
+
+1 : Université de Lyon, Université Claude Bernard Lyon 1, CNRS, 
+Institut Lumière Matière, F-69622 Villeurbanne, France.
+2: Department of Physics, Massachusetts Institute of Technology, 
+Cambridge, Massachusetts 02139, USA.
+3 : Center for Information Technology in Education, Tohoku University, 
+Sendai 980-8578, Japan.
+†Present address: Institut Jacques Monod (IJM), CNRS UMR 7592 
+and Université Paris Diderot, 75013 Paris, France
+
+
+Nature Physics
+Published online: 3 July 2017 DOI: 10.1038/NPHYS4180
+full-text access to view-only version of the manuscript :http://rdcu.be/tUZU 
+
+
+The dispersal of cells from an initially constrained location is a crucial 
+aspect of many physiological phenomena, ranging from morphogenesis 
+to tumour spreading. In such processes, cell–cell interactions may 
+deeply alter the motion of single cells, and in turn the collective dynamics. 
+While contact phenomena like contact inhibition of locomotion are known 
+to come into play at high densities, here we focus on the little explored 
+case of non-cohesive cells at moderate densities. We fully characterize 
+the spreading of micropatterned colonies of Dictyostelium discoideum 
+cells from the complete set of individual trajectories. From data analysis 
+and simulation of an elementary model, we demonstrate that contact 
+interactions act to speed up the early population spreading by promoting 
+individual cells to a state of higher persistence, which constitutes an as-yet 
+unreported contact enhancement of locomotion. Our findings also 
+suggest that the current modelling paradigm of memoryless active particles 
+may need to be extended to account for the history-dependent internal 
+state of motile cells.
+
+
+submitted by: Charlotte Rivière [charlotte.riviere@univ-lyon1.fr]
+———————————————————————————————————————
+
+
+Fat-containing cells are eliminated during Dictyostelium development
+
+Jessica M. Kornke and Markus Maniak 
+
+Abteilung Zellbiologie, Universität Kassel, D-34109 Kassel, Germany
+
+
+Biology Open, accepted
+
+Triacylglycerol is a universal storage molecule for metabolic energy in living 
+organisms. However, Dictyostelium amoebae, that have accumulated 
+storage fat from added fatty acids do not progress though the starvation 
+period preceding the development of the durable spore. Mutants deficient 
+in genes of fat metabolism, such as fcsA, encoding a fatty acid activating 
+enzyme, or dgat1 and dgat2, specifying proteins that synthesize 
+triacylglycerol, strongly increase their chances to contribute to the spore 
+fraction of the developing fruiting body, but lose the ability to produce storage 
+fat efficiently. Dictyostelium seipin, an orthologue of a human protein, that in 
+patients causes the complete loss of adipose tissue when mutated, does not 
+quantitatively affect fat storage in the amoeba. Dictyostelium seiP knockout 
+mutants have lipid droplets that are enlarged in size but reduced in number. 
+These mutants are as vulnerable as the wildtype when exposed to fatty acids 
+during their vegetative growth phase, and do not efficiently enter the spore 
+head in Dictyostelium development.
+
+
+submitted by: Markus Maniak  [maniak@uni-kassel.de]
+==============================================================
+[End dictyNews, volume 43, number 16]

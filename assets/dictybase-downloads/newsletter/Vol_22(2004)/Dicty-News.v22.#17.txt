@@ -1,0 +1,179 @@
+Dicty News
+Electronic Edition
+Volume 22, number 17
+June 25, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Extracellular matrix family proteins that are potential targets of Dd-STATa
+in Dictyostelium discoideum
+
+Nao Shimada1, Keiko Nishio2, Mineko Maeda2, Hideko Urushihara3 and
+Takefumi Kawata1, 4
+
+1Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama,
+Funabashi, Chiba 274-8510, JAPAN
+TEL & FAX: 81-47-472-5156, E-mail: tkawata@bio.sci.toho-u.ac.jp
+2 Department of Biology, Graduate School of Science, Osaka University,
+Toyonaka, Osaka 560-0043
+3 Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki 305-8572
+4 Corresponding author
+ 
+J. Plant Res., in press
+
+
+Dd-STATa is a functional Dictyostelium homologue of metazoan STAT (signal
+transducers and activators of transcription) proteins, which is activated
+by cAMP and is thereby translocated into the nuclei of anterior tip cells
+of the prestalk region of the slug. By using in situ hybridization analyses,
+we found that the SLF308 cDNA clone, which contains the ecmF gene that
+encodes a putative extracellular matrix protein and is expressed in the
+anterior tip cells, was greatly down-regulated in the Dd-STATa-null mutant.
+Disruption of the ecmF gene, however, resulted in almost no phenotypic
+change. The absence of any obvious mutant phenotype in the ecmF-null mutant
+could be due to a redundancy of similar genes. In fact, a search of the
+Dictyostelium whole genome database demonstrates the existence of additional
+16 homologues, all of which contain a cellulose-binding module. Among these
+homologues, four genes show Dd-STATa-dependent expression, while the others
+were Dd-STATa-independent. We discuss the potential role of Dd-STATa in
+morphogenesis via its effect on the interaction between cellulose and these
+extracellular matrix family proteins.
+
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+GSK-3 is a multi-functional regulator of Dictyostelium development
+
+Christina Schilde, Tsuyoshi Araki, Hazel Williams*, Adrian Harwood*,
+and Jeffrey G. Williams
+
+School of Life Sciences, Wellcome Trust Biocentre, University of Dundee,
+Dundee DD1 5EH, UK
+* MRC Laboratory for Molecular Cell Biology & Dept of Biology, University
+College, Gower St, London WC1E 6BT
+
+
+Development, in press
+
+Glycogen Synthase Kinase-3 (GSK-3) is a central regulator of metazoan
+development and the Dictyostelium GSK-3 homologue, GskA, also controls
+cellular differentiation. The originally derived gskA null mutant exhibits
+a severe pattern formation defect. It forms very large numbers of pre-basal
+disc cells at the expense of the prespore population. This defect arises
+early during multicellular development, making it impossible to examine
+later functions of GskA. We report the analysis of a gskA null mutant,
+generated in a different parental strain, which proceeds through development
+to form mature fruiting bodies. In this strain, Ax2/gskA-, early development
+is accelerated and slug migration greatly curtailed. In a monolayer assay of
+stalk cell formation, the Ax2/gskA- strain is hyper-sensitive to the stalk
+cell inducing action of DIF-1 but largely refractory to the repressive
+effect exerted by extracellular cAMP.  During normal development apically
+situated prestalk cells express the ecmB gene just as they commit
+themselves to stalk cell differentiation. In the Ax2/gskA- mutant ecmB is
+expressed throughout the prestalk region of the slug, suggesting that GskA
+forms part of the repressive signalling pathway that prevents premature
+commitment to stalk cell differentiation. GskA may also play an inductive
+developmental role, because micro-array analysis identifies a large gene
+family, the 2C family, that require gskA for optimal expression. These
+observations show that GskA functions throughout Dictyostelium development,
+to regulate several key aspects of cellular patterning.
+
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Chemotaxis: signalling the way forward
+
+Peter J.M. Van Haastert1 and Peter N Devreotes2
+
+1Department of Biochemistry, University of Groningen, Nijenborgh 4, 9747 AG
+Groningen, the Netherlands 
+2 Department of Cell Biology , Johns Hopkins University School of Medicine,
+725 N. Wolfe St., 114 WBSB Baltimore, MD 21205, USA 
+
+Nature Reviews Molecular Cell Biology, in press
+
+
+During random locomotion, human neutrophils and Dictyostelium discoideum
+amoebae repeatedly extend and retract cytoplasmic processes. During directed
+cell migration ? chemotaxis ? these pseudopodia form predominantly at the
+leading edge in response to the local accumulation of certain signalling
+molecules. Concurrent changes in actin and myosin enable the cell to move
+towards the stimulus. Recent studies are beginning to identify an intricate
+network of signalling molecules that mediate these processes, and how these
+molecules become localized in the cell.
+
+
+
+Submitted by: Peter van Haastert" <P.J.M.van.Haastert@chem.rug.nl
+
+-----------------------------------------------------------------------------
+
+
+CbfA, the C-module DNA-binding factor, plays an essential role in the
+initiation of development of Dictyostelium
+
+Thomas Winckler(1), Negin Iranfar(2), Peter Beck(1), Ingo Jennes(1),
+Oliver Siol(1), Unha Baik(1), William F. Loomis(2) and Theodor Dingermann(1)
+
+1 Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt
+(Biozentrum), D-60439 Frankfurt am Main (Germany)
+2 Cell and Developmental Biology, Division of Biology, University of
+California, San Diego, La Jolla, California 92093 (U.S.A.)
+
+Eukaryotic Cell, in press
+
+
+We recently isolated a DNA-binding protein from Dictyostelium discoideum
+cells, CbfA, that interacts in vitro with a regulatory element in
+retrotransposon TRE5-A. We have generated a mutant strain that expresses CbfA
+at <5% of wild-type level to characterize the consequences on D. discoideum
+cell physiology. We found that the multicellular development program leading
+to fruiting body formation is highly compromised in the mutant. The cells
+cannot aggregate and stay as a monolayer almost indefinitely. The cells
+respond properly to prestarvation conditions by expressing discoidin in a
+cell density-dependent manner. A genome-wide microarray-assisted expression
+analysis combined with Northern blot analyses revealed a failure of
+CbfA-depleted cells to induce the aggregation-specific adenylyl cyclase ACA
+and other genes required for cAMP signal relay that is necessary for
+aggregation and subsequent multicellular development. However, the cbfA
+mutant aggregated efficiently when mixed with as few as 5% wild-type cells.
+Moreover, pulsing cbfA mutant cells developing in suspension with nanomolar
+levels of cAMP resulted in induction of acaA and other early developmental
+genes. Although the response was less efficient and slower than in wild-type
+cells, it showed that cells depleted in CbfA are able to initiate development
+if given exogenous cAMP signals. Ectopic expression of the gene encoding the
+catalytic subunit of protein kinase A restored multicellular development of
+the mutant. We conclude that sensing of cell density and starvation are
+independent of CbfA, whereas CbfA is essential for the pattern of gene
+expression which establishes the genetic network leading to aggregation and
+multicellular development of D. discoideum.
+
+
+
+Submitted by: Thomas Winckler <winckler@em.uni-frankfurt.de
+
+==============================================================================
+[End Dicty News, volume 22, number 17]

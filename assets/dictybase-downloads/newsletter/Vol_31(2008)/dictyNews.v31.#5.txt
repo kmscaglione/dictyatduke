@@ -1,0 +1,130 @@
+dictyNews
+Electronic Edition
+Volume 31, number 5
+Aug 1, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+A Protein with Similarity to PTEN Regulates Aggregation Territory Size 
+by Decreasing cAMP Pulse Size during Dictyostelium Development
+
+Yitai Tang and Richard H. Gomer*
+
+Department of Biochemistry and Cell Biology, Rice University, Houston, Texas
+
+
+Eukaryotic Cell, in press
+
+An interesting but largely unanswered biological question is how eukaryotic 
+organisms regulate the size of multicellular tissues. During development, 
+a lawn of Dictyostelium cells breaks up into territories, and within the 
+territories the cells aggregate in dendritic streams to form groups of 
+~20,000 cells. Using random insertional mutagenesis to search for genes 
+involved in group size regulation, we found that an insertion in the cnrN 
+gene affects group size. Cells lacking CnrN (cnrN–) form abnormally small 
+groups, which can be rescued by the expression of exogenous CnrN. Relayed 
+pulses of extracellular adenosine 3’5’-cyclic monophosphate (cAMP) direct 
+cells to aggregate by chemotaxis to form aggregation territories and 
+streams. cnrN– cells over-accumulate cAMP during development and form 
+small territories. Decreasing the cAMP pulse size by treating cnrN– cells 
+with cAMP phosphodiesterase (PDE) or starving cnrN– cells at a low density 
+rescues the small territory phenotype. The predicted CnrN sequence has 
+similarity to phosphatase and tensin homolog (PTEN), which in Dictyostelium 
+inhibits cAMP-stimulated phosphatidylinositol 3’ kinase (PI3K) signaling 
+pathways. CnrN inhibits cAMP-stimulated PIP3 accumulation, Akt activation, 
+actin polymerization, and cAMP production. Our results suggest that CnrN 
+is a protein with some similarities to PTEN, and regulates cAMP signal 
+transduction to regulate territory size.
+
+
+Submitted by: Yitai Tang [yttang@rice.edu]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium myosin-5b is a conditional processive motor
+
+Manuel H. Taft, Falk K. Hartmann, Agrani Rump, Heiko Keller, Igor Chizhov, 
+Dietmar J. Manstein, and Georgios Tsiavaliaris
+
+Institute for Biophysical Chemistry, Hannover Medical School, 
+Hannover D-30625 
+
+Corresponding Author: gtsiaval@bpc.mh-hannover.de
+
+
+JBC, in press
+
+Dictyostelium myosin-5b is the gene product of myoJ and one of two closely 
+related myosin-5 isoenzymes produced in Dictyostelium discoideum. Here 
+we report a detailed investigation of the protein’s kinetic and functional 
+properties. In standard assay buffer conditions, Dictyostelium myosin-5b 
+displays high actin affinity in the presence of ADP, fast ATP hydrolysis, 
+and a high steady-state ATPase activity in the presence of actin that is 
+rate limited by ADP release. These properties are typical for a processive 
+motor that can move over long distances along actin filaments without 
+dissociating. Our results show that a physiological decrease in the 
+concentration of free Mg2+-ions leads to an increased rate of ADP release 
+and shortening of the fraction of time the motor spends in the strong 
+actin binding states. Consistently, the ability of the motor to efficiently 
+translocate actin filaments at very low surface densities decreases with 
+decreasing concentrations of free Mg2+-ions. In addition, we provide 
+evidence that the observed changes in Dd myosin-5b motor activity are of 
+physiological relevance and propose a mechanism by which this molecular 
+motor can switch between processive and non-processive movement. 
+
+
+Submitted by: Georgios Tsiavaliaris [gtsiaval@bpc.mh-hannover.de]
+--------------------------------------------------------------------------------
+
+
+A Dictyostelium homologue of the metazoan Cbl proteins regulates STAT 
+signalling
+(Dictyostelium Cbl and STAT regulation)
+
+Judith Langenick, Tsuyoshi Araki, Yoko Yamada and Jeffrey G. Williams+
+
+University of Dundee, School of Life Sciences, Dow Street, Dundee DD1 
+5EH , UK
+
+
+J Cell Sci, in press
+
+Cbl proteins down-regulate metazoan signalling pathways by ubiquitylating 
+receptor tyrosine kinases, thereby targeting them for degradation. They 
+contain a phosphotyrosine-binding region, comprised of an EF-hand and an 
+SH2 domain, linked to an E3 ubiquitin-ligase domain. CblA, a Dictyostelium 
+homologue of the Cbl proteins, contains all three conserved domains. In a 
+cblA- strain early development occurs normally but migrating cblA- slugs 
+frequently fragment and the basal disc of the culminants that are formed 
+are absent or much reduced. These are characteristic features of mutants 
+in signalling by DIF-1: the low molecular weight, prestalk and stalk cell 
+inducer. Tyrosine phosphorylation of STATc is induced by DIF-1 but in the 
+cblA- strain this response is attenuated relative to parental cells. We 
+present evidence that CblA fulfils this function, as a positive regulator 
+of STATc tyrosine phosphorylation, by down-regulating PTP3: the protein 
+tyrosine phosphatase responsible for de-phosphorylating STATc. Thus Cbl 
+proteins have an ancient origin but, while metazoan Cbl proteins regulate 
+tyrosine kinases, the Dictyostelium Cbl regulates via a a tyrosine 
+phosphatase.
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 31, number 5]

@@ -1,0 +1,95 @@
+Dicty News
+Electronic Edition
+Volume 23, number 2
+July 16, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Transcriptional Transitions During Dictyostelium Spore Germination
+
+
+Qikai Xu, Miroslava Ibarra, Dana Mahadeo, Chad Shaw, Eryong Huang,
+Adam Kuspa, David Cotter and Gad Shaulsky
+
+
+Eukaryotic Cell,  in press
+
+Many protozoa form spores in response to adversity, so spore germination
+is a key process in their life cycle.  Dictyostelium discoideum sporulate
+in response to starvation following a developmental program.  Germination
+is characterized by two visible changes, spore swelling and emergence of
+amoeba from the spore capsule.  Several studies have indicated that an
+additional process termed spore activation is also required, but the
+physiological changes that characterize the three phases are largely
+uncharacterized.  We used microarrays to monitor global transcriptional
+transitions as a surrogate measure of the physiological changes that occur
+during germination.  Using two independent methods to induce germination,
+we identified changes in mRNA levels that characterize the germination
+process rather than changes that resulted from the induction method.  We
+found that germination is characterized by three transitions.  The first
+transition occurs during activation, while the spores appear dormant, the
+largest transition occurs when swelling begins, and the third occurs when
+emergence begins.  These findings indicate that activation and swelling
+are not passive occurrences, such as dilution of inhibitors or spore
+rehydration, but active processes that are accompanied by dramatic events
+of mRNA degradation and de-novo transcription.  This finding confirms and
+extends earlier reports that genes such as celA are regulated during spore
+germination.  We also found by mutation analysis that the unconventional
+myosin gene myoI, which is induced during early germination, plays a role 
+in the maintenance of dormancy and in spore swelling.  This finding
+suggests that some of the observed transcriptional changes are required
+for spore germination.
+
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+The Size-complexity Rule
+
+
+J. T. Bonner
+
+EEB Department, Princeton University, Princeton, NJ 08544
+
+
+Evolution,  In press
+
+It is widely accepted that bigger entities have a greater division of labor
+than small ones and this is reflected in the fact that larger multicellular
+organisms have a corresponding increase in the number of their cell types.  
+This rule is examined in some detail from very small organisms to large
+animals, and plants and societies. Compared to other size-related rules, the
+size-complexity rule is relatively rough and approximate, yet clearly it
+holds throughout the whole range of living organisms, as well as for
+societies.  The relationship between size and complexity is analyzed by
+examining the effects of size increase and decrease: size increase requires
+an increase in complexity, while size decrease permits, and sometimes
+requires, a decrease in complexity.  Conversely, an increase or decrease in
+complexity permits, but does not require changes in size. An especially
+compelling argument for the close relation between size and complexity can
+be found in size quorum sensing in very small multicellular organisms.
+
+
+
+Submitted by: John Bonner [jtbonner@Princeton.EDU]
+
+==============================================================================
+[End Dicty News, volume 23, number 2]

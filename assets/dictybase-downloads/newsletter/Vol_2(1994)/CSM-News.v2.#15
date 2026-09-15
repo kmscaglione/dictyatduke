@@ -1,0 +1,109 @@
+CSM News
+Electronic Edition
+Volume 2, number 15
+April 23, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[129.105.233.50], via Gopher at the same address, or by World Wide Web
+through www.nwu.edu.
+
+==============
+Announcements
+==============
+
+An updated version of Rich Sucgang's Dictyostelium Gene Disruption
+Table is available from the archive in the directory DGDT.  
+
+From the read.me.first file:
+
+
+THE DICTY GENE DISRUPTION TABLE
+This is version 2.0b
+
+This archive contains three files, which all have the same information. 
+The three are merely in different formats to accomodate different 
+information management programs. These are: 
+
+DGDT.TDF - tab delimited text
+DGDT.DIF - database interchange format
+DGDT.SYK - SYLK format
+
+All of these can usually be imported by a database or spreadsheet 
+program. The most universal is the tab delimited text file; some word 
+processing files can also convert it into a tabular form.
+
+A directly readable format is under construction, as well as a hard copy 
+version. Would there be interest in a PostScript version of the hard copy?
+For the moment, however, you need some kind of data management software 
+to access this (you'll probably want one anyway).
+
+There are 61 entries; however, the first entry is merely a description of 
+what is in each of the fields. I will be revising this release shortly, 
+pending corrections and responses.
+
+Thank you everyone for your patience. Many thanks for those who informed 
+me of the gene knockouts in progress, and particularly to Rex Chisholm 
+for maintaining the ftp site, and just being very nice.
+
+Please refer to the file DGDTSPEC.TXT for the information I request for 
+an entry into the table. I hope people find this useful, and I look 
+forward to your responses.
+
+Richard Sucgang
+rs54@columbia.edu
+
+
+==========
+Abstracts
+==========
+
+THE CLATHRIN HEAVY CHAIN FUNCTIONS IN SORTING AND SECRETION OF
+LYSOSOMAL ENZYMES IN DICTYOSTELIUM DISCOIDEUM.
+
+Tracy Ruscetti*, James A. Cardelli*,# Maria L. Niswonger+, and Theresa
+J.  O'Halloran+
+
+*Department of Microbiology and Immunology, Louisiana State University
+Medical Center, Shreveport, LA 71130 +Department of Cell Biology, Duke
+University Medical Center, Durham, NC 27710
+
+J. Cell Biol., in press
+
+Summary
+
+   The clathrin heavy chain is a major component of clathrin-coated
+vesicles that function in selective membrane traffic in eukaryotic
+cells.  We disrupted the clathrin heavy chain gene (chcA) in
+Dictyostelium discoideum to generate a stable clathrin heavy
+chain-deficient cell line.  Measurement of pinocytosis in the
+clathrin-minus mutants revealed a 4-5 fold deficiency in the
+internalization of fluid-phase markers.  Once internalized, these
+markers recycled to the cell surface of mutant cells at wild-type
+rates.  We also explored the involvement of clathrin heavy chain in
+the trafficking of lysosomal enzymes.  Pulse chase analysis revealed
+that clathrin-minus cells processed most alpha-mannosidase to mature
+forms, however, approximately 20-25% of the precursor molecules
+remained uncleaved, were missorted, and were rapidly secreted by the
+constitutive secretory pathway.  The remaining intracellular
+alpha-mannosidase was successfully targeted to mature lysosomes.
+Standard secretion assays showed that the rate of secretion of
+alpha-mannosidase was significantly less in clathrin-minus cells
+compared to control cells in growth medium.  Interestingly the
+secretion rates of another lysosomal enzyme, acid phosphatase, were
+similar in clathrin-minus and wild-type cells.  Like wild-type cells,
+clathrin-minus mutants responded to starvation conditions with
+increased lysosomal enzyme secretion.  Our study of the mutant cells
+provide in vivo evidence for roles for the clathrin heavy chain in (i)
+the internalization of fluid from the plasma membrane, (ii) sorting of
+precursor hydrolases from the constitutive secretory pathway to the
+lysosomal pathway, and (iii) secretion of mature hydrolyases from the
+lysosome to the extracellular space.
+
+----------------------------------------------------------------------
+
+[End CSM-News, volume 2, number 15]
+

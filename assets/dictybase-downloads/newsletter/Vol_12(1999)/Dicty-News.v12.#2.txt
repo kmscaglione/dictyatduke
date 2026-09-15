@@ -1,0 +1,163 @@
+Dicty News
+Electronic Edition
+Volume 12, number 2
+January 16, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+  Abstracts
+==============
+
+Cytokinesis mediated through the recruitment of cortexillins into the 
+cleavage furrow
+
+Igor Weber, Günther Gerisch, Christina Heizer, John Murphy, Kim Badelt,
+Alexander Stock, Jean-Marc Schwartz and Jan Faix
+
+Max-Planck-Institut für Biochemie, Am Klopferspitz 18a, D-82152 Martinsried, 
+Germany.
+
+EMBO Journal, in press
+
+Abstract:
+
+  The fact that substrate-anchored Dictyostelium cells undergo cytokinesis 
+in the absence of myosin II underscores the importance of other proteins 
+in enabling the cleavage furrow to constrict. Cortexillins, a pair of actin-
+bundling proteins, are required for normal cleavage. They are targeted to 
+the incipient furrow in wild-type and, more prominently, in myosin II-null 
+cells. No other F-actin bundling or crosslinking protein tested is co-localized. 
+GFP-fusions show that the N-terminal actin-binding domain of cortexillin I is 
+dispensable and the C-terminal region is sufficient for translocation to the 
+furrow and the rescue of cytokinesis.  Cortexillins are supposed to have a 
+targeting signal for coupling to a myosin II-independent system that directs 
+transport of membrane proteins to the cleavage furrow.
+
+----------------------------------------------------------------------------
+
+RacF1, a novel member of the Rho protein family in Dictyostelium discoideum, 
+associates transiently with cell contact areas, macropinosomes and phagosomes.
+
+Francisco Rivero1,2; Richard Albrecht2,  Heidrun Dislich1, Enrico Bracco2,3; 
+Laura Graciotti2, Salvatore Bozzaro3 and Angelika A. Noegel1,2.
+
+1Institut für Biochemie I, Medizinische Fakultät, Universität zu Köln,
+Joseph-Stelzmann-Str. 52, 50931 Köln, FRG
+2Max-Planck-Institut für Biochemie, Am Klopferspitz 18a, 82152 Martinsried,
+FRG
+3Dipartimento di Scienze Cliniche e Biologiche, Ospedale S. Luigi Gonzaga,
+Regione Gonzole 10, 10043 Orbassano-Torino, Italy
+
+Molecular Biology of the Cell, in press.
+
+Abstract:
+
+   Using a PCR approach we have isolated racF1, a novel member of the 
+Rho family in Dictyostelium. The racF1 gene encodes a protein of 193 amino 
+acids and is constitutively expressed throughout the Dictyostelium life cycle. 
+Highest identity (94%) was found to a RacF2 isoform, to Dictyostelium Rac1A, 
+Rac1B and Rac1C (70%), and to Rac proteins of animal species (64-69%). To 
+investigate the role of RacF1 in cytoskeleton-dependent processes, we have 
+fused it at its amino-terminus with green fluorescent protein (GFP) and 
+studied the dynamics of subcellular redistribution using a confocal laser 
+scanning microscope and a double view microscope system. GFP-RacF1 was 
+homogeneously distributed in the cytosol and accumulated at the plasma 
+membrane, especially at regions of transient intercellular contacts. 
+GFP-RacF1 also localized transiently to macropinosomes and phagocytic 
+cups, and was gradually released within less than one minute after 
+formation of the endocytic vesicle or the phagosome, respectively. Upon 
+stimulation with cAMP, no enrichment of GFP-RacF1 was observed in leading 
+fronts, from which it was found to be initially excluded. Cell lines were 
+obtained using homologous recombination that expressed a truncated racF1 
+gene lacking sequences encoding the carboxyl-terminal region responsible 
+for membrane targeting. These cells displayed normal phagocytosis, 
+endocytosis and exocytosis rates. Our results suggest that RacF1 associates 
+with dynamic structures that are formed during pinocytosis and phagocytosis. 
+Although RacF1 appears not to be essential, it might act in concert and/or 
+share functions with other members of the Rho family in the regulation of a 
+subset of cytoskeletal rearrangements that are required for these processes.
+
+----------------------------------------------------------------------------
+
+Glycogen Synthase Kinase-3 (GSK-3) is regulated during Dictyostelium
+development via the serpentine receptor cAR3
+
+Simon E. Plyte, Emma O’Donovan, James R. Woodgett, and Adrian J. Harwood
+
+Development 126, 325-333.
+
+Abstract
+
+   Glycogen Synthase Kinase-3 (GSK-3) is required during metazoan development 
+to mediate the effects of the extracellular signal wingless/Wnt-1 and hence 
+is necessary for correct cell type specification. GSK-3 also regulates cell 
+fate during Dictyostelium development, but in this case it appears to 
+mediate the effects of extracellular cAMP. By direct measurement of GSK-3 
+kinase activity during Dictyostelium development, we find that there is a 
+rise in activity at the initiation of multicellular development which can 
+be induced by cAMP. The timing of the rise correlates with the requirement 
+for the Dictyostelium homologue of GSK-3, gskA, to specify cell fate. We 
+show that loss of the cAMP receptor cAR3 almost completely abolishes the 
+rise in kinase activity and causes a mis-specification of cell fate that 
+is equivalent to that seen in a gskA- mutant. The phenotype of a cAR3- 
+mutant however is less severe than loss of gskA and ultimately gives rise 
+to an apparently wild type fruiting body. These results indicate that in 
+Dictyostelium extracellular cAMP acts via cAR3 to cause a rise in GSKA 
+kinase activity which regulates cell type patterning during the initial 
+stages of multicellularity.
+
+----------------------------------------------------------------------------
+
+The Small Mr Ras-like GTPase Rap1 Interacts with the Phospholipase C Pathway
+to Regulate Phagocytosis in Dictyostelium discoideum
+
+David J. Seastone1, Linyi Zhang1, Greg Buczynski1, Patrick Rebstein2,
+Gerald Weeks2, George Spiegelman2, and James Cardelli1 3 *
+
+1 Department of Microbiology and Immunology and 3 Feist-Weiller Cancer
+Center  Louisiana State University Medical Center
+Shreveport, LA  71130
+2  Department of Microbiology  University of British Columbia  Vancouver,
+B.C.  Canada V6T 1Z3   
+
+Molecular Biology of the Cell (in press)
+
+ABSTRACT
+
+   The function of the small Mr Ras-like GTPase Rap1 remains largely 
+unknown, but this protein has been demonstrated to regulate cortical 
+actin-based morphologic changes in Dictyostelium, and the oxidative 
+burst in mammalian neutrophils. To test if Rap1 regulates phagocytosis, 
+we biochemically analyzed cell-lines that conditionally overexpressed 
+wild-type (Rap1 WT(+)), constitutively active (Rap1 G12T(+)), and 
+dominant negative (Rap1 S17N(+)) forms of D. discoideum Rap1 at levels 
+less than 6 fold higher levels endogenous Rap1.  The rates of phagocytosis 
+of bacteria and latex beads were significantly higher in Rap1 WT (+) and 
+Rap1 G12T (+) cells, and were reduced in  Rap1 S17N(+) cells.  The 
+addition of inhibitors of protein kinase A, protein kinase G, protein 
+tyrosine kinase or PI 3-kinase to wild-type cells did not affect 
+phagocytosis rates. In contrast, the addition of U73122 (a phospholipase 
+C inhibitor), calphostin C (a protein kinase C inhibitor) and BAPTA-AM 
+(an intracellular Ca2+ chelator) to control cultures reduced phagocytosis 
+rates by 90%, 50% and 65%, respectively, suggesting both arms of the PLC 
+pathway played a role in this process. Other PKC-specific inhibitors, 
+such as chelerythrine and bisindolylmaleimide I, did not reduce phagocytosis 
+rates in control cells, suggesting calphostin C was affecting phagocytosis 
+by interfering with a protein containing a diacylglycerol (DAG)-binding domain.  
+The addition of calphostin C did not reduce phagocytosis rates in  Rap1 
+G12T(+) cells, suggesting that the putative DAG-binding protein acted 
+upstream in a signalling pathway with Rap1.  Surprisingly, macropinocytosis 
+was significantly reduced in Rap1 WT(+) and Rap1 G12T(+) cells as compared 
+to control cells. Together our results suggest that Rap1 and Ca2+ may act 
+together to coordinate important early events regulating phagocytosis. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 2]
+
+  

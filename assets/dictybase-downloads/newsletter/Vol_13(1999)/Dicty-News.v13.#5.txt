@@ -1,0 +1,161 @@
+Dicty News
+Electronic Edition
+Volume 13, number 5
+August 21, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+The Regulative Capacity of Prespore Amoebae as Demonstrated by
+Fluorescence Activated Cell Sorting (FACS) and GFP
+
+Brian M. Nadin, Caroline S. Mah, James R. Scharff, and David I. Ratner
+
+Department of Biology, Amherst College, Amherst, MA, USA, 01002.
+
+Developmental Biology, in press.
+
+   The ability of  prespore Dictyostelium discoideum amoebae to undergo
+redifferentiation so as to re-establish normal spore/stalk proportioning
+has been demonstrated in various ways over the years, beginning with the
+classic micro-dissection work of K. Raper.  The discovery of anterior
+like cells (ALCs) in the slug posterior, however, cast doubt on that
+ability, and more recent experiments using a cell-specific toxin
+suggested that prespore redifferentiation may not in fact occur. To
+re-examine this question, we performed fluorescence activated cell
+sorting (FACS) upon  amoebae expressing a mutated green fluorescent
+protein gene (S65T-GFP) under the control of a prespore-specific (PsA)
+promoter.  FACS produced prespore cell populations with purities,
+measured by GFP expression, as high as 99.5%.  Sorted GFP+ cells were
+developmentally competent and produced normally proportioned fruits,
+indistinguishable from those of  "sham-sorted" (permissively gated,
+mixed GFP+ and GFP-) amoebae.  This result confirms the developmental
+totipotency of prespore amoebae.  
+
+----------------------------------------------------------------------------
+
+Non-LTR retrotransposons with unique integration preferences downstream
+of Dictyostelium discoideum transfer RNA genes
+
+Karol Szafranski (1), Gernot Glvckner (1), Theodor Dingermann (2),
+Karola Dannat (2), Angelika A. Noegel (3), Ludwig Eichinger (3), Andri
+Rosenthal (1) and Thomas Winckler (2)
+
+(1) Institut f|r Molekulare Biotechnologie, Beutenbergstrasse 11,
+D-07745 Jena, Germany
+(2) Institut f|r Pharmazeutische Biologie, Universitdt Frankfurt/M.
+(Biozentrum), Marie-Curie-Strasse 9, D-60439 Frankfurt/M, Germany
+(3) Institut f|r Biochemie I, Universitdt Kvln, Joseph-Stelzmann-Strasse
+52, D-50931 Kvln, Germany
+
+Mol. Gen. Genet., in press
+
+   Retrotransposable elements are genetic entities which move and replicate
+within host cell genomes. We have previously reported on the structures
+and genomic distributions of two non-long terminal repeat (non-LTR)
+retrotransposons, DRE and Tdd-3, in the eukaryotic microorganism
+Dictyostelium discoideum. DRE elements are found inserted upstream and
+Tdd-3 elements downstream of transfer RNA (tRNA) genes with remarkable
+position and orientation specificities. The data set currently available
+from the Dictyostelium Genome Project led to the characterisation of two
+repetitive DNA elements which are related to the D. discoideum non-LTR
+retrotransposon Tdd-3 in both their structural properties and genomic
+distributions. It appears from our data that in the D. discoideum genome
+tRNA genes are principle landmarks for the insertion of mobilised
+non-LTR retrotransposons. This may be interpreted as the consequence of
+a coevolution process allowing a viable population of retroelements to
+transpose without being deleterious to the small microbial host genome
+carrying short intergenic DNA sequences. A new nomenclature is
+introduced to address all tRNA gene-targeted non-LTR retrotransposons
+(TREs) in the D. discoideum genome. TREs inserted 5' and 3' of tRNA
+genes are named TRE5 and TRE3, respectively. According to this
+nomenclature DRE and Tdd-3 are renamed TRE5-A and TRE3-A, respectively.
+The new retroelements described in this study are named TRE3-B (formerly
+RED) and TRE3-C.
+
+----------------------------------------------------------------------------
+
+Structural Basis for Dimerization of the Dictyostelium Gelation Factor
+(ABP120) Rod
+
+Airlie J. McCoy 1, Paola Fucini 2,3, Angelika A. Noegel 2,4 and Murray
+Stewart1
+
+1.  MRC Laboratory of Molecular Biology, Hills Rd., Cambridge CB2 2QH, U.K.
+2.  Max-Planck-Institut für Biochemie, Abteilung Zellbiologie, D-82152
+Martinsried bei München, Germany.
+3.  Present address: New Chemistry Laboratories, South Parks Rd., Oxford
+OX1 3QT, U.K.
+4.  Institut für Biochemie I, Medizinische Einrichtungen der Universität zu
+Köln, Joseph-Stelzmann-Straße 52, D-50931 Köln, Germany.
+
+Nature Struct. Biol., in press.
+
+ABSTRACT
+
+   Gelation factor (ABP120) is one of the principal actin-crosslinking
+proteins of Dictyostelium discoideum.   The extended molecule has an
+N-terminal 250-residue actin-binding domain and a rod constructed from six
+100-residue sequence repeats that have an Ig fold.   The ability to
+dimerize is crucial to the actin crosslinking function of gelation factor
+and is mediated by the rod in which the two chains are arranged
+antiparallel.   We report the 2.2 Å resolution crystal structure of rod
+domains 5 and 6, which shows that dimerization is mediated primarily by rod
+domain 6 and is the result of a double edge-to-edge extension of
+beta-sheets. Thus, contrary to earlier proposals, the chains of the dimeric
+gelation factor molecule overlap only within domain 6, with domains 1-5 not
+paired with domains from the other chain.   This information allows
+construction of an atomic model of the gelation factor molecule and
+suggests  how the chains in the related molecule filamin (ABP280) may
+interact.
+
+----------------------------------------------------------------------------
+
+A prespore-cell-inducing factor in Dictyostelium discoideum: its
+purification and characterization
+
+Manabu Nakagawa1, Akiko A. Oohata2, Hiromasa Tojo3 and Shigeru Fujii1
+
+1 Laboratory of Chemistry, Kansai Medical University, 18-89 Uyama-higashi,
+Hirakata, 573-1136, Japan
+2 Laboratory of Biology, Kansai Medical University, 18-89 Uyama-higashi,
+Hirakata, 573-1136, Japan
+3 Department of Molecular Physiological Chemistry, Osaka University Medical
+School, 2-2 Yamadaoka, Suita, 565-0871, Japan
+
+Biochemical Journal, in press
+
+   Under starvation conditions, amoebae of Dictyostelium discoideum
+aggregate to form multicellular masses: the aggregates are then initiated to
+differentiate.  We have reported previously that a signal substance exists
+in conditioned medium of D. discoideum, and we named it
+prespore-cell-inducing factor (psi factor) [Oohata, Nakagawa, Tasaka, and
+Fujii (1997) Development 124, 2781-2787].  The factor can induce isolated
+amoebae to differentiate into prespore cells.  Moreover, we suggested that
+it caused not only cell differentiation but also cell division.  In the
+present study, we have purified psi factor from the conditioned medium and
+characterized it.  The purified psi factor induced both prespore cell
+differentiation and cell division of prespore cells.  Its apparent molecular
+mass was 180 kDa by gel filtration and 106 kDa by SDS/PAGE.  Based on these
+results, psi factor exists as a dimer in normal conditions.  Periodic
+acid/Schiff staining showed that psi factor was a glycoprotein.  It was
+ascertained by Edman degradation that psi factor is blocked at the
+N-terminal.  Treatment with pyroglutamate aminopeptidase removed the
+N-terminal block and allowed determination of the amino-acid sequence of psi
+factor.  Moreover, three internal amino-acid sequences were determined in
+limited proteolysis experiments using trypsin and endoproteinase Lys-C.  The
+homology search for these sequences supports the fact that psi factor is a
+novel differentiation factor.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 5]
+
+  

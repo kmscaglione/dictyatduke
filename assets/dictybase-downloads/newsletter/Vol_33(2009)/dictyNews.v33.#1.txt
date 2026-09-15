@@ -1,0 +1,113 @@
+dictyNews
+Electronic Edition
+Volume 33, number 1
+July 3, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Histone deacetylases regulate multicellular development in the social
+amoeba Dictyostelium discoideum.
+
+Ritwick Sawarkar, Sandhya S Visweswariah, Wolfgang Nellen and
+Vidyanand Nanjundiah
+
+
+Journal of Molecular Biology, in press
+
+Histone modification is believed to be important for the coordinated
+regulation of developmental pathways. We have studied the roles of histone
+deacetylases (HDACs) in the life cycle of Dictyostelium discoideum (Ax2).
+Our findings are as follows. (1) Bioinformatic analysis shows that there
+are four putative HDACs in D. discoideum, two each of class I and class II
+HDACs. A sequence dendrogram of HDAC domains suggests that the two 
+classII HDACs (HdaC and HdaD) belong to a subgroup of TSA-insensitive 
+HDACs along with Hos3 of Saccharomyces cerevisiae. (2) One of the four
+HDAC-encoding genes, hdaA, could not be knocked out, probably because 
+the gene is essential for growth. However, a strain lacking hdaB could be
+obtained. hdaB is dispensable for growth and development under laboratory
+conditions but is required in a social context: cells that lack hdaB function 
+develop normally but sporulate less efficiently than the wild type in chimeras. 
+(3) Vegetative cells exhibit HDAC activity in both the nucleus and cytosol. 
+Nuclear activity is completely inhibited by trichostatin A (TSA), a specific 
+inhibitor of non-sirtuin HDACs. On the other hand, cytosolic activity is 
+resistant to TSA. This suggests that the TSA-insensitive class II HDACs 
+function in the cytosol whereas the class I enzymes are primarily found in 
+the nucleus. (4) Incubation of growing cells with up to 1 micromolar TSA 
+causes a moderate increase in histone acetylation without any effect on 
+generation time. (5) When starving cells are treated with 500 nanomolar 
+TSA, there is a significant increase in histone acetylation and a delay of 
+about 3-4 hours in development till the mound stage. Differentiation too is 
+delayed in TSA-treated cells but cell type proportions are normal. 
+(6) TSA-treated cells show robust cyclic AMP oscillations comparable to 
+control cells but the temporal expression profile of some ‘developmental' 
+genes is affected. In particular, a subset of genes regulated by cAMP and 
+protein kinase A is delayed. These are the genes encoding the cell 
+adhesion molecule contact site A (csaA), and calcium binding proteins 
+(cbpF and cbpA).
+
+We infer that HDAC activity influences heterochrony, the relative timing
+of developmental events, as well as aspects of the phenotype that mediate
+social behaviour in genetically heterogeneous groups.
+
+
+Submitted by: Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Nanovesicles released by Dictyostelium cells : A potential carrier for 
+drug delivery 
+  
+Françoise Laviallea, Sophie Deshayesa, Florence Gonnetb, Eric Larquetc, 
+Sergei G. Kruglika, Nicolas Boissetc§, Regis Danielb, Annette Alfsend, 
+Irène  Tatischeff a* 
+ 
+a CNRS, UMR7033, Université Pierre et Marie Curie, Laboratoire de Biophysique 
+Moléculaire Cellulaire et Tissulaire, Genopole, F-91030 Evry, France
+b CNRS, UMR8587, Université Evry val d'Essonne, Laboratoire Analyse et 
+Modélisation pour la Biologie et l'Environnement, F-91025 Evry, France
+c CNRS, UMR7590, Institut de Mineralogie et de Physique des Milieux 
+Condensés, Université Pierre et Marie Curie, F-75252 Paris, France
+d CNRS, UMR8104, INSERM, U567, Institut Cochin, Département de Biologie 
+Cellulaire, Université Paris-Descartes, F-75014 Paris, France
+§ Nicolas Boisset deceased on January 2008.
+
+*Corresponding author
+
+
+International Journal of Pharmaceutics, in press
+
+Nanovesicles released by Dictyostelium discoideum cells grown in the 
+presence of the DNA-specific dye Hoechst 33342 have been previously 
+shown to mediate the transfer of the dye into the nuclei of Hoechst-resistant 
+cells. The present investigation extends this work by conducting experiments 
+in the presence of hypericin,a fluorescent therapeutic photosensitizer assayed 
+for antitumoral photodynamic therapy. Nanovesicles released by Dictyostelium 
+cells exhibit an averaged diameter between 50 and 150 nm, as measured by 
+transmission cryoelectron microscopy. A proteomic analysis reveals a 
+predominance of actin and actin-related proteins. The detection of a 
+lysosomal membrane protein (LIMP II) indicates that these vesicles are 
+likely generated in the late endosomal compartment. The use of the hypericin-
+containing nanovesicles as nanodevices for in vitro drug delivery was 
+investigated by fluorescence microscopy. The observed signal was almost 
+exclusively located in the perinuclear area of two human cell lines, skin 
+fibroblasts (HS68) and cervix carcinoma (HeLa) cells. Studies by confocal 
+microscopy with specific markers of cell organelles, provided evidence that 
+hypericin was accumulated in the Golgi apparatus. All these data shed a new 
+light on in vitro drug delivery by using cell-released vesicles as carriers.
+
+
+Submitted by: Irène Tatischeff [irene.tatischeff@upmc.fr]
+
+==============================================================
+[End dictyNews, volume 33, number 1]

@@ -1,0 +1,126 @@
+dictyNews
+Electronic Edition
+Volume 32, number 16
+June 26, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Quantification of social behaviour in D. discoideum reveals complex fixed 
+and facultative strategies 
+
+Neil J. Buttery, Daniel E. Rozen, Jason B. Wolf* & Christopher R. L. Thompson*
+
+Faculty of Life Sciences, University of Manchester, Michael Smith Building, 
+Oxford Rd, Manchester M13 9PT, UK.
+
+*Corresponding authors
+
+
+Current Biology, in press
+
+The maintenance of cooperation is an evolutionary conundrum because costly 
+cooperative acts can be exploited by cheaters. Therefore, understanding 
+cooperation requires an understanding of the nature of cheaters and the 
+strategies used to mitigate their effects.  However, it is often difficult to 
+determine what accounts for differential social success, thus hindering 
+empirical investigation of cheating.  For example, both fixed and facultative 
+strategies can contribute to differential success in social interactions.  
+Furthermore, there is also confusion about how to distinguish social cheating 
+from other possible causes of unequal success in social situations that can 
+result in winners and losers without the need for cheating.  To study these 
+problems, we examined the success of naturally occurring genotypes of 
+Dictyostelium discoideum in social interactions.  Upon starvation, different 
+D. discoideum genotypes will form chimeric fruiting bodies, consisting of dead 
+stalk cells and viable spores.  Here, we demonstrate that an apparent 
+competitive dominance hierarchy of spore formation in chimera is partly due 
+to a fixed strategy in which genotypes exhibit dramatic differences in their 
+inherent allocation to stalk and spores.  However, we also demonstrate the 
+existence of complex facultative social interactions, where genotypes change 
+their spore/stalk allocation when developed in chimera, with the magnitude 
+and direction of changes in allocation dependent upon the genotype of their 
+partner.  Using these changes in allocation patterns in chimera, we further 
+define and partition facultative cheating into two forms: 1) promotion of individual 
+fitness through selfish behaviour (‘self-promotion’) and 2) coercion of other 
+individuals (or genotypes) to act cooperatively.  Our results demonstrate and
+ define social interactions between D. discoideum isolates, thus providing a 
+conceptual framework for the study of the genetic mechanisms that underpin 
+social evolution.
+
+
+Submitted by: Chris Thompson [christopher.thompson@manchester.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Forming Patterns in Development Without Morphogen Gradients: Scattered 
+Differentiation and Sorting Out
+
+Robert R. Kay1 and Christopher R.L. Thompson2
+
+1MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH
+2Faculty of Life Sciences, University of Manchester, Michael Smith Building, 
+Oxford Road, Manchester M13 9PT
+
+Correspondence: christopher.thompson@manchester.ac.uk
+
+
+Generation and Interpretation of Morphogenetic Gradients in CSH Perspectives 
+in Biology
+Edited by James Briscoe, Peter Lawrence and Jean-Paul Vincent
+
+Few mechanisms provide alternatives to morphogen gradients for producing spatial 
+patterns of cells in development. One possibility is based on the sorting out of cells 
+that initially differentiate in a salt and pepper mixture and then physicallymove to 
+create coherent tissues. Here we describe the evidence suggesting this is the major 
+mode of patterning in Dictyostelium. In addition, we discuss whether convergent 
+evolution could have produced a conceptually similar mechanism in other organisms.
+
+
+Submitted by: Chris Thompson [christopher.thompson@manchester.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium Sun1 is a dynamic membrane protein of both nuclear membranes 
+and required for centrosomal association with clustered centromeres
+
+Irene Schulz, Otto Baumann, Matthias Samereier, Christine Zoglmeier, Ralph Gräf*
+
+University of Potsdam, Dept. of Cell Biology, 14476 Potsdam-Golm, Germany
+
+
+Journal: it is Eur. J. Cell Biol., in press
+
+Centrosomal attachment to nuclei is crucial for proper mitosis and nuclear 
+positioning in various organisms, and generally involves SUN-family proteins 
+located at the inner nuclear envelope. There is still no common scheme for 
+the outer nuclear membrane proteins interacting with SUN1 in 
+centrosome/nucleus attachment. Here we propose a model in which Sun1 
+mediates a physical link between centrosomes and clustered centromeres 
+through both nuclear membranes in Dictyostelium. For the first time we provide 
+a detailed microscopic analysis of the centrosomal and nuclear envelope 
+localization of endogenous Dictyostelium Sun1 during interphase and mitosis. 
+By immunogold electron microscopy we show that Sun1 is a resident of both 
+nuclear membranes. Disruption of Sun1 function by overexpression of full length 
+GFP-Sun1 or a GFP-SUN-domain deletion construct revealed not only the 
+established function in centrosome/nucleus attachment and maintenance of 
+ploidy, but also a requirement of Sun1 for the association of the centromere 
+cluster with the centrosome. Live cell imaging visualized the occurrence of mitotic 
+defects, and demonstrated the requirement of microtubules for dynamic distance 
+changes between centrosomes and nuclei. FRAP analysis revealed at least two 
+populations of Sun1, with an immobile fraction associated with the centrosome, 
+and a mobile fraction in the nuclear envelope.
+
+
+Submitted by: Ralph Gräf [rgraef@RZ.UNI-POTSDAM.DE]
+==============================================================
+[End dictyNews, volume 32, number 16]

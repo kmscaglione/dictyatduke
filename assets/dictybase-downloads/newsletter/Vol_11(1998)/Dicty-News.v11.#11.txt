@@ -1,0 +1,221 @@
+Dicty News
+Electronic Edition
+Volume 11, number 11
+December 5, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Expression of Chicken Gizzard RLC Complements the Cytokinesis and 
+Developmental Defects of Dictyostelium RLC Null Cells
+
+Pengxin Chen, Bernard M. Chaudoir, Kathleen M. Trybusl,2, and 
+Rex L. Chisholm*
+
+Department of Cell and Molecular Biology and Robert H. Lurie 
+Cancer Center, Northwestern University Medical School
+303 E. Chicago Avenue
+ 
+1Rosenstiel Basic Medical Sciences Research Center, Brandeis University
+Waltham, MA 02254, 2 Current Address: Dept. of Molecular Physiology 
+and Biophysics, University of Vermont, Burlington, VT 05405
+
+J. Muscle Res. Cell Motil, in press
+
+Abstract
+
+   Dictyostelium RLC null cells have defects in cytokinesis and 
+development that can be rescued by expression of either the wild type 
+Dictyostelium RLC or an RLC mutant that cannot be phosphorylated by 
+MLCK (S13A) (Ostrow et al., 1994). The wild type and S13A mutant LCs 
+rescued the cells equally well, despite the fact that RLC phosphorylation 
+increases purified Dictyostelium myosin's activity 5-fold. In this report 
+we assess the ability of foreign RLCs to rescue the RLC null phenotype. 
+The RLC from smooth muscle myosin, whose activity is tightly controlled 
+by phosphorylation, rescued the null cell phenotype. The purified hybrid 
+myosin had activity and motility comparable to phosphorylated Dictyostelium 
+myosin. In contrast, cells expressing skeletal muscle RLC were deficient in 
+cytokinesis and development, despite having an activity and motility similar 
+to that of myosin with the unphosphorylatable S13A mutant RLC. Neither 
+foreign LC was phosphorylated when expressed in Dictyostelium. These results 
+suggest that the level of actin-activated ATPase activity and motility is 
+not the sole determinant of proper myosin function in vivo. Other heavy 
+chain/light chain interactions, which occur only with the native RLC and 
+smooth muscle RLC, appear to be necessary for optimal function.
+
+
+----------------------------------------------------------------------------
+
+The mitochondrial adenine nucleotide translocator from Dictyostelium discoideum. 
+Functional characterisation and DNA sequencing.
+
+Mireille Bof, Gerard Brandolin, Michel Satre and Gerard Klein
+
+Laboratoire de Biochimie et Biophysique des Systemes Integres (UMR 314 CEA-CNRS), 
+CEA-Grenoble, France.
+
+Eur. J. Biochem., in press
+
+SUMMARY
+
+   The mitochondrial adenine nucleotide translocator (ANT) catalyses the exchange 
+of ATP and ADP between the mitochondria and the cytosol. We have cloned and 
+sequenced the gene encoding the Dictyostelium discoideum adenine nucleotide 
+translocator protein (DdANT) and analysed its transcriptional regulation. The 
+single copy D. discoideum ant gene encodes a protein of 309 amino acid residues 
+with a predicted molecular mass of 33469 Da and a pI of 9.85. These values are 
+comparable to those of ANTs from mammals, insects or fungi. The long N-terminal 
+extension characteristic of plant ANT is absent in DdANT. The protein coding 
+region of the D. discoideum ant gene is interrupted by three introns. Polyclonal 
+antibodies directed against the beef heart mitochondrial ANT or its C-terminal 
+peptide recognised the D.  discoideum protein. Northern analysis revealed that 
+the expression of the D. discoideum ant gene decreased rapidly during first 
+hours of multicellular development but the amount of protein remained stable 
+throughout differentiation.
+----------------------------------------------------------------------------
+
+Dgp1 and Dfp1 are Closely Related Plasmids in the Dictyostelium Ddp2
+Plasmid Family
+
+CHAD M. GONZALES, TRINA D. SPENCER, SCOTT S. PENDLEY, AND 
+DENNIS  L. WELKER1
+
+Program in Molecular Biology, Department of Biology, Utah State University,
+Logan, Utah, 84322-5305
+
+PLASMID, in press.
+
+Summary:
+
+   Dictyostelium plasmids Dgp1 and Dfp1, two members of the Ddp2 plasmid
+family, are 86 % identical in nucleotide sequence. These small (4481 and
+5015 bp), high copy number, nuclear plasmids both carry a gene homologous 
+to the Ddp2 rep gene and a long 0.47 to 0.48 kb inverted  repeat region. Their
+Rep proteins are 82.8% identical in amino acid sequence and carry all ten of
+the conserved peptide sequence motifs found in the Ddp2 family Rep proteins.  
+Unlike other members of this family, Dgp1 carries two copies and Dfp1 carries
+four copies of a 162 to 166 bp direct repeat element. Both the direct and 
+inverted repeat elements, as well as the promoter of the rep gene, are highly 
+conserved (81 to 90% identical) between Dgp1 and Dfp1. In contrast, these 
+regions are not highly conserved and the Rep proteins are only about 40% 
+identical among the other known members of the plasmid family.  
+
+----------------------------------------------------------------------------
+Cloning of a cDNA encoding a new calcium-binding protein from Dictyostelium 
+discoideum and its developmental regulation
+
+Young-Hoon Han, Sa-Ouk Kang*
+
+Laboratory of Biophysics, Department of Microbiology, College of Natural 
+Sciences and Research Center for Molecular Microbiology, Seoul National 
+University, Seoul 151-742, Republic of Korea
+
+FEBS Lett., in press.
+
+Abstract:
+
+   By employing 2D-PAGE, a small protein differentially expressed during the 
+development of Dictyostelium discoideum was discovered. The full cDNA of
+this protein was cloned using RT-PCR technique. The deduced protein is
+composed of 166 amino acids containing four EF-hand domains typical for 
+calcium-binding proteins and was named CBP3. This protein shows little 
+amino acid sequence homology with other calcium-binding proteins from 
+Dictyostelium except EF-hand domains. The CBP3 mRNA was absent in 
+vegetative amoebae and accumulated maximally at 6 h of the development 
+on filters. The mRNA level decreased thereafter and disappeared after 12 h 
+of the development, while the protein level peaked at 8 h of the development 
+and was maintained constant thereafter. The mobility of CBP3 on SDS gel was 
+shifted by the treatment of EGTA, confirming the Ca2+-binding activity of 
+the protein.
+
+----------------------------------------------------------------------------
+
+Involvement of the Ca2+ ATPase PAT1 and the Contractile Vacuole in Calcium
+Regulation in Dictyostelium discoideum
+
+John Moniakis, Barrie Coukell and Agnes Janiec
+
+Department of Biology, York University, 4700 Keele St., Toronto, Ontario,
+CANADA
+
+J. Cell Sci. in press
+
+Abstract
+
+   In Dictyostelium discoideum, the Ca2+ ATPase, PAT1, is localized to 
+membranes of  the contractile vacuole and its expression is up-regulated 
+substantially when the cells are grown in Ca2+-rich media.  In this study, 
+we have analyzed the cellular/molecular mechanisms regulating  PAT1 
+expression and examined the role of  PAT1 and the contractile vacuole in 
+Ca2+ regulation.  During both growth and development,  Dictyostelium cells 
+respond to low millimolar concentrations of extracellular Ca2+ and 
+up-regulate PAT1 in a few hours.  This process is dependent on protein 
+synthesis and the serine/threonine phosphatase, calcineurin. 
+Immunofluorescence analysis indicates that the up-regulated PAT1 is 
+associated mainly with the contractile vacuole, but it is also on the 
+plasma membrane. This latter finding suggests that the contractile vacuole 
+fuses with the plasma membrane to eliminate excess intracellular Ca2+.  
+In support of this idea, it was observed that conditions which impair 
+contractile vacuolar function  reduce the rate of  Ca2+ secretion.  It 
+was also found that cells deficient in PAT1, due  to the expression of 
+antisense patA RNA or to the presence of calcineurin antagonists, grow 
+normally in low Ca2+ medium  but poorly or not at all  in high Ca2+.  
+Together, these results suggest that PAT1 and the contractile vacuole 
+are components of a Ca2+ sequestration and excretion pathway which 
+functions to help maintain Ca2+  homeostasis, especially under 
+conditions of  Ca2+ stress.
+
+----------------------------------------------------------------------------
+
+The Dictyostelium Developmental cDNA Project: Generation and Analysis of
+Expressed Sequence Tags from the First-Finger Stage of Development
+
+Takahiro Morio(1), Hideko Urushihara(1), Tamao Saito(2), Yoshihiro 
+Ugawa(3), Hideaki Mizuno(1), Motonobu Yoshida(4), Ryuji Yoshino(1), 
+Biswa Nath Mitra(1), Min Pi(1), Tomihiro Sato(1), Keiko Takemoto(5), 
+Hiroo Yasukawa(6), Jeffrey Williams(7), Mineko Maeda(8), Ikuo Takeuchi(9), 
+Hiroshi Ochiai(2), and Yoshimasa Tanaka(1,*)
+
+(1)Institute of Biological Sciences, Univ. Tsukuba, Japan, (2) Division of 
+Biological Science, Graduate School of Sciences, Hokkaido Univ., Japan, (3)
+DNA Information & Stock Center, National Institute of Agrobiological
+Resources, Japan, (4) Research Institute of Food Science, Kinki Univ.,
+Japan, (5) Institute for Virus Research, Kyoto Univ., Japan, (6) Faculty of
+Engineering, Toyama Univ., Japan, (7) Department of Anatomy and Physiology,
+University of Dundee, UK, (8) Department of Biology, Graduate School of
+Science, Osaka Univ., Japan, (9) Novartis Foundation for the Promotion of
+Science, Japan 
+
+DNA Research, in press
+
+Abstract
+
+   In an effort to identify and characterize genes expressed during 
+multicellular development in Dictyostelium, we have undertaken a cDNA 
+sequencing project. Using size-fractionated subsets of cDNAs from the 
+first finger stage, two sets of gridded libraries were constructed for 
+cDNA sequencing. One, library S, consisting of 9984 clones, carries 
+relatively short inserts. The other, library L, which consists of 8448 
+clones, has longer inserts. We have sequenced all the selected clones 
+in the library S from their 3’-ends and this generated 3093 non-redundant, 
+expressed sequence tags (ESTs). Among them, 246 ESTs derive from known 
+Dictyostelium genes and 910 are suggested to have significant similarity 
+to genes of Dictyostelium or of other organisms. From the library L, 1132 
+clones were randomly sequenced and this generated 471 non-redundant ESTs. 
+In combination, the ESTs from the two libraries will represent 40% of genes 
+expressed in late development, assuming that the non-redundant ESTs correspond 
+to independent genes. They will provide a useful resource for investigating 
+the genetic networks that regulate multicellular development of this organism.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 11, number 11]
+
+  

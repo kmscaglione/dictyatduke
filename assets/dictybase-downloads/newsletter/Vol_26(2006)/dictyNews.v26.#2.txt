@@ -1,0 +1,233 @@
+dictyNews
+Electronic Edition
+Volume 26, number 2
+January 13, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Cleavage with phospholipase of the lipid anchor in the cell adhesion 
+molecule, csA, from Dictyostelium discoideum
+
+Motonobu Yoshida*, Naoya Sakuragi, Ken Kondo, Eiji Tanesaka
+
+Department of Agriculture, Kinki University, Nakamachi, Nara 631-8505,  
+Japan
+
+
+Comp. Biochem. Physiol., in press
+
+A cell adhesion molecule, 80-kDa csA, is involved in EDTA-resistant cell 
+contact at the aggregation stage of Dictyostelium discoideum.   A 31-kDa 
+csA was isolated from the 80-kDa csA by treatment with Achromobacter 
+protease I. Results from thin-layer chromatography and MALDI-TOF MS analysis 
+indicated that the 31-kDa csA contains ceramide as a component of 
+glycosylphosphatidyl-inositol (GPI).  Comparison between the 80-kDa csA and 
+the 31-kDa csA treated with phosphatidylinositol-specific phospholipase C 
+(PI-PLC) or GPI-specific phospholipase D (GPI-PLD) was carried out.  Our 
+results indicated  that  the GPI-anchor of the 31-kDa csA was more sensitive 
+to PI-PLC treatment than that of the 80-kDa csA, and that the anchor in both 
+was easily cleaved by GPI-PLD treatment.  The results of the 80-kDa csA and 
+the 31-kDa csA treated with sphingomyelinase were almost the same as those 
+with PI-PLC treatment. In the presence of 1,10-phenanthroline, a GPI-PLD 
+inhibitor, development of Dictyostelium was markedly inhibited, suggesting 
+that GPI-PLD is functional in developmental regulation. 
+
+
+Submitted by: Motonobu Yoshida [yoshida_m@nara.kindai.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+A secondary disruption of the lmpA gene encoding a large membrane protein
+allows aggregation defective Dictyostelium rasC- cells to form multicellular
+structures
+
+Meenal Khosla1, Paul Kriebel2, Carole A. Parent2, George B. Spiegelman1 and 
+Gerald Weeks1
+1Department of Microbiology and Immunology, University of British Columbia, 
+Vancouver, BC, V6T 1Z3, Canada and
+2The Laboratory of Cellular and Molecular Biology, National Cancer 
+Institute, NIH, MD, USA
+
+Corresponding author; G. Weeks  
+Tel:    604-822-6649.   Fax:   604-822-6041
+Mailing address: 2350 Health Sciences Mall., Vancouver, BC, V6T 1Z3, Canada.
+Email:  gerwee@interchange.ubc.ca
+
+
+Developmental Biology, in press
+
+The disruption of the gene encoding the Dictyostelium Ras sub-family protein,
+RasC, results in a strain that does not aggregate and has defects in both 
+cAMP signal relay and cAMP chemotaxis.  Disruption of a second gene in the 
+rasC- strain by Restriction Enzyme Mediated Integration produced cells that 
+were capable of forming multicellular structures in plaques on bacterial 
+lawns.   The disrupted gene (lmpA) encoded a novel large membrane protein 
+that was designated Lmp1.  Although the rasC-/lmpA- cells progressed through 
+early development, they did not form aggregation streams on a plastic surface
+under submerged starvation conditions.  Phosphorylation of PKB in response to
+cAMP, which is significantly reduced in rasC- cells, remained low in the 
+rasC-/lmpA- cells.   However, in spite of this low PKB phosphorylation, the 
+rasC-/lmpA- cells underwent efficient chemotaxis to cAMP in a spatial 
+gradient.  Cyclic AMP accumulation, which was greatly reduced in the rasC- 
+cells, was restored in the rasC-/lmpA- strain, but cAMP relay in these cells 
+was not apparent.  These data indicate that, although the rasC-/lmpA- cells 
+were capable of associating to form multicellular structures, normal 
+aggregative cell signaling was clearly not restored.   Disruption of the 
+lmpA gene in a wildtype background resulted in cells that exhibited a slight 
+defect in aggregation and a more substantial defect in late development.  
+These results indicate that in addition to the role played by Lmp1 in 
+aggregation, it is also involved in late development.
+
+
+Submitted by: Gerald Weeks [gerwee@interchange.ubc.ca]
+
+-----------------------------------------------------------------------------
+
+
+A secondary disruption of the lmpA gene encoding a large membrane protein
+allows aggregation defective Dictyostelium rasC- cells to form multicellular 
+structures
+
+Meenal Khosla1, Paul Kriebel2, Carole A. Parent2, George B. Spiegelman1 and 
+Gerald Weeks1
+1Department of Microbiology and Immunology, University of British Columbia, 
+Vancouver, BC, V6T 1Z3, Canada and
+2The Laboratory of Cellular and Molecular Biology, National Cancer Institute, 
+NIH, MD, USA
+
+Corresponding author; G. Weeks  
+Tel:    604-822-6649.   Fax:   604-822-6041
+Mailing address: 2350 Health Sciences Mall., Vancouver, BC, V6T 1Z3, Canada.
+ Email:  gerwee@interchange.ubc.ca
+
+
+Developmental Biology, in press
+
+The disruption of the gene encoding the Dictyostelium Ras sub-family protein, 
+RasC, results in a strain that does not aggregate and has defects in both 
+cAMP signal relay and cAMP chemotaxis.  Disruption of a second gene in the 
+rasC- strain by Restriction Enzyme Mediated Integration produced cells that 
+were capable of forming multicellular structures in plaques on bacterial 
+lawns.  The disrupted gene (lmpA) encoded a novel large membrane protein that 
+was designated Lmp1.  Although the rasC-/lmpA- cells progressed through early 
+development, they did not form aggregation streams on a plastic surface under 
+submerged starvation conditions.  Phosphorylation of PKB in response to cAMP,
+which is significantly reduced in rasC- cells, remained low in the 
+rasC-/lmpA- cells.   However, in spite of this low PKB phosphorylation, the
+rasC-/lmpA- cells underwent efficient chemotaxis to cAMP in a spatial 
+gradient.  Cyclic AMP accumulation, which was greatly reduced in the rasC- 
+cells, was restored in the rasC-/lmpA- strain, but cAMP relay in these cells 
+was not apparent.  These data indicate that, although the rasC-/lmpA- cells 
+were capable of associating to form multicellular structures, normal 
+aggregative cell signaling was clearly not restored.   Disruption of the 
+lmpA gene in a wildtype background resulted in cells that exhibited a slight 
+defect in aggregation and a more substantial defect in late development.  
+These results indicate that in addition to the role played by Lmp1 in 
+aggregation, it is also involved in late development.
+
+
+Submitted by: Gerald Weeks [gerwee@interchange.ubc.ca]
+
+-----------------------------------------------------------------------------
+
+
+HelF, a putative RNA helicase acts as a nuclear suppressor of RNAi but not 
+antisense mediated gene silencing.
+
+Blagovesta Popova1, Markus Kuhlmann1 Andrea Hinas2, Fredrik Söderbom2 and 
+Wolfgang Nellen1* 
+1Abt. Genetik, Universität Kassel, Heinrich-Plett-Str. 40, D-34132 Kassel, 
+Germany
+2Department of Molecular Biology, Biomedical Center, Swedish University of 
+Agricultural Sciences, Box 590, S-75124 Uppsala, Sweden
+
+*corresponding author:
+Wolfgang Nellen
+Abt. Genetik, Universität Kassel, 
+Heinrich-Plett-Str. 40, 
+D-34132 Kassel, 
+Germany
+
+
+Nucleic Acids Res. in press
+
+We have identified a putative RNA helicase from Dictyostelium that is 
+closely related to drh1, the “dicer-related-helicase” from C. elegans and 
+that also has significant similarity to proteins from vertebrates and 
+plants. GFP-tagged HelF protein was localized in speckles in the nucleus. 
+Disruption of the helF gene resulted in a mutant morphology in late 
+development. When transformed with RNAi constructs, HelF- cells displayed 
+enhanced RNA interference on four tested genes. One gene that could not be 
+knocked down in the wild type background was efficiently silenced in the 
+mutant. Furthermore, the efficiency of silencing in the wild type was 
+dramatically improved when helF was disrupted in a secondary transformation. 
+Silencing efficiency depended on transcription levels of hairpin RNA and 
+the threshold was dramatically reduced in HelF- cells. However, the amount 
+of siRNA did not depend on hairpin transcription.
+HelF is thus a natural nuclear suppressor of RNA interference. In contrast, 
+no improvement of gene silencing was observed when mutant cells were 
+challenged with corresponding antisense constructs. This indicates that RNAi 
+and antisense have distinct requirements even though they may share parts 
+of their pathways. 
+
+
+Submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+
+-----------------------------------------------------------------------------
+
+
+Distinct roles of PI(3,4,5)P3 during chemoattractant signaling in 
+Dictyostelium:
+A quantitative in vivo analysis by inhibition of PI3-kinase
+
+Harriët M. Loovers, Marten Postma, Ineke Keizer-Gunnink, Yi Elaine Huang, 
+Peter N. Devreotes, and  Peter J.M. van Haastert
+
+Department of Molecular Cell Biology, University of Groningen, Kerklaan 30, 
+9751NN Haren, the Netherlands
+Department of Cell Biology, Johns Hopkins University School of Medicine, 
+725 N. Wolfe St., 114 WBSB, Baltimore, MD 21205 
+
+
+Molecular Biology of the Cell, in press
+ 
+The role of PI(3,4,5)P3 in Dictyostelium signal transduction and chemotaxis 
+was investigated using the PI3-kinase inhibitor LY294002 and pi3k-null cells. 
+The increase of PI(3,4,5)P3 levels after stimulation with the 
+chemoattractant cAMP was blocked >95% by 60 ?M LY294002 with half-maximal 
+effect at 5 ?M. This correlated well with the inhibition of the membrane 
+translocation of the PH-domain protein, PHcracGFP. LY294002 did not reduce 
+cAMP-mediated cGMP production, but significantly reduced the cAMP response 
+up to 75% in wild type and completely in pi3k-null cells. LY294002-treated 
+cells were round, not elongated as control cells. Interestingly, cAMP 
+induced a time and dose-dependent recovery of cell elongation. These 
+elongated LY294002-treated wild type and pi3k-null cells exhibited 
+chemotactic orientation towards cAMP that is statistically identical to 
+chemotactic orientation of control cells. In control cells, PHcrac-GFP and 
+F-actin colocalize upon cAMP stimulation. However, inhibition of PI3-kinases 
+does not affect the first phase of the actin polymerization at a wide range 
+of chemoattractant concentrations. Our data show that severe inhibition of 
+cAMP-mediated PI(3,4,5)P3 accumulation leads to inhibition of cAMP relay, 
+cell elongation and cell aggregation, but has no detectable effect on 
+chemotactic orientation, provided that cAMP had sufficient time to induce 
+cell elongation. 
+
+
+Submitted by: Peter van Haastert [P.J.M.van.haastert@rug.nl]
+
+==============================================================================
+[End dictyNews, volume 26, number 2] 

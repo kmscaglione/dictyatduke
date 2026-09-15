@@ -1,0 +1,144 @@
+dictyNews
+Electronic Edition
+Volume 37, number 14
+December 2, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Actin Crosslinking Proteins, Cortexillin I and II, Are Required for 
+cAMP-signaling during Dictyostelium Chemotaxis and Development
+ 
+Shi Shu,1 Xiong Liu,1 Paul W. Kriebel,2 Mathew P. Daniels,3 and 
+Edward D. Korn1
+ 
+1Laboratory of Cell Biology, NHLBI, National Institutes of Health, 
+Bethesda, Maryland 20892, USA. 
+2Laboratory of Cellular and Molecular Biology, Center for Cancer 
+Research, NCI, National Institutes of Health, Bethesda, Maryland 20892, 
+USA. 
+3Electron Microscopy Core Facility, NHLBI, National Institutes of Health, 
+Bethesda, Maryland 20892, USA.
+ 
+ 
+Molecular Biology of the Cell,  in press
+
+Starvation induces Dictyostelium amoebae to secrete cAMP towards which 
+other amoebae stream forming multi-cellular mounds that differentiate and 
+develop into fruiting bodies containing spores.  We find that the double 
+deletion of cortexillin (ctx) I and II alters the actin cytoskeleton and 
+substantially inhibits all molecular responses to extracellular cAMP.  
+Synthesis of cAMP-receptor  and adenylyl cyclase A (ACA) is inhibited and 
+activation of ACA, RasC and RasG, phosphorylation of ERK2, activation of 
+TORC2 and stimulation of actin polymerization and myosin assembly are 
+greatly reduced.  As a consequence, cell streaming and development are 
+completely blocked.  Expression of ACA-YFP in the ctxI/ctxII-null cells 
+significantly rescues the wild-type phenotype indicating that the primary 
+chemotaxis and development defect is the inhibition of ACA synthesis and 
+cAMP production. These results demonstrate the critical importance of a
+properly organized actin cytoskeleton for cAMP-signaling pathways, 
+chemotaxis and development in Dictyostelium.
+
+
+Submitted by Edward Korn [korned2@nhlbi.nih.gov]
+--------------------------------------------------------------------------------------
+
+
+Functional characterization of CP148, a novel key component for 
+centrosome integrity in Dictyostelium
+
+Oliver Kuhnert, Otto Baumann, Irene Meyer and Ralph Graef*
+
+University of Potsdam, Institute for Biochemistry and Biology, Dept. 
+of Cell Biology, D-14476 Potsdam-Golm, Germany
+
+
+Cell. Mol. Life Sci., in press
+
+The Dictyostelium centrosome consists of a layered core structure 
+surrounded by a microtubule-nucleating corona. A tight linkage through 
+the nuclear envelope connects the cytosolic centrosome with the 
+clustered centromeres within the nuclear matrix. At G2/M the corona 
+dissociates, and the core structure duplicates yielding two spindle 
+poles. CP148 is a novel coiled coil protein of the centrosomal corona. 
+GFP-CP148 exhibited cell cycle-dependent presence and absence at 
+the centrosome, which correlates with dissociation of the corona in 
+prophase and its reformation in late telophase. During telophase, 
+GFP-CP148 formed cytosolic foci, which coalesced and joined the 
+centrosome. This explains the hypertrophic appearance of the corona 
+upon strong overexpression of GFP-CP148. Depletion of CP148 by 
+RNAi caused virtual loss of the corona and disorganization of interphase 
+microtubules. Surprisingly, formation of the mitotic spindle and astral 
+microtubules was unaffected. Thus, microtubule nucleation complexes 
+associate with centrosomal core components through different means 
+during interphase and mitosis. Furthermore, CP148 RNAi caused 
+dispersal of centromeres and altered Sun1 distribution at the nuclear 
+envelope, suggesting a role of CP148 in the linkage between 
+centrosomes and centromeres. Taken together, CP148 is an essential 
+factor for the formation of the centrosomal corona, which in turn is 
+required for centrosome/centromere linkage.
+
+
+Submitted by Ralph Graef [rgraef@uni-potsdam.de]
+--------------------------------------------------------------------------------------
+
+
+The Skp1 Prolyl 4-hydroxylase of Dictyostelium Mediates 
+Glycosylation-Independent and -Dependent Responses to O2 
+without Affecting Skp1 Stability
+
+Dongmei Zhang (1,2), Hanke van der Wel (1), Jennifer M. Johnson (3), 
+Christopher M. West (1,3)
+
+(1) Dept. of Biochemistry & Molecular Biology, University of Oklahoma 
+Health Sciences Center, 975 NE 10th St., Oklahoma City, OK, 73104, 
+(2) Key Laboratory of Biopesticide and Chemical Biology, Ministry of 
+Education, Fujian Agriculture and Forestry University, Fuzhou 350002, 
+PR China, 
+(3) Oklahoma Center for Medical Glycobiology, University of Oklahoma 
+Health Sciences Center, 975 NE 10th St., Oklahoma City, OK, 73104
+
+
+J. Biol. Chem., in press
+
+Cytoplasmic prolyl 4-hydroxylases (PHDs) have a primary role in O2-sensing 
+in animals via modification of the transcriptional factor subunit HIFalpha, resulting 
+in its poly-ubiquitination by the E3VHLubiquitin (Ub)-ligase and degradation in the 
+26S-proteasome. Previously thought to be restricted to animals, a homolog (P4H1) 
+of HIFalpha-type PHDs is expressed in the social amoeba Dictyostelium where it 
+also exhibits characteristics of an O2-sensor: for development. Dictyostelium lacks 
+HIFalpha and P4H1 modifies a different protein, Skp1, an adaptor of the SCF-class 
+of E3-Ub ligases related to the E3VHLUb-ligase that targets animal HIFalpha. 
+Normally, the HO-Skp1 product of the P4H1 reaction is capped by a GlcNAc sugar 
+that can be subsequently extended to a pentasaccharide by novel 
+glycosyltransferases. To analyze the role of glycosylation, the Skp1 GlcNAc-
+transferase locus gnt1 was modified with a missense mutation to block catalysis or 
+a stop codon to truncate the protein. Despite the accumulation of the hydroxylated 
+form of Skp1, Skp1 was not destabilized based on metabolic labeling. However, 
+hydroxylation alone allowed for partial correction of the high O2-requirement of 
+P4H1-null cells, therefore revealing both glycosylation-independent and -dependent 
+roles for hydroxylation. Genetic complementation of the latter function required an 
+enzymatically active form of Gnt1. Since the effect of the gnt1-deficiency depended 
+on P4H1, and Skp1 was the only protein labeled when the GlcNAc-transferase was 
+restored to mutant extracts, Skp1 apparently mediates the cellular functions of both 
+P4H1 and Gnt1. Though Skp1 stability itself is not affected by hydroxylation, its 
+modification may affect the stability of targets of Skp1-dependent Ub-ligases.
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+==============================================================
+[End dictyNews, volume 37, number 14]

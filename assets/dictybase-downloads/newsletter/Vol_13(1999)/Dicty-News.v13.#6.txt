@@ -1,0 +1,231 @@
+Dicty News
+Electronic Edition
+Volume 13, number 6
+September 11, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+====================
+Postdoc Available
+====================
+
+NIH Funded Postdoctoral Postition: Structure and Function of the Cytoskeleton
+Department of Molecular and Cell Biology, University of Connecticut
+
+   My laboratory is interested in the assembly and dynamics of the
+actin cytoskeleton of motile cells. The mechanisms by which cells create
+specific types of actin assemblies to carry out functions such as
+phagocytosis, macropinocytosis, surface attachment and chemotactic motility
+are being investigated.  Current projects focus on the role of different
+isoforms of the Rac family of small G proteins in regulating actin
+assembly, and the role of actin cross-linking proteins and myosin in
+creating different cytoskeletal structures.  The work is being carried out
+using a combination of biochemical, molecular genetic and advanced imaging
+techniques in the model organism Dictyostelium discoideum.
+   Candidates should have a PhD in an area of Cell or Molecular
+Biology and enthusiasm to explore new areas in a multidisciplinary
+approach.  Starting salary will be determined based on experience and
+potential, and the position is for a minimum of 2 years with renewal
+contingent on satisfactory performance.
+   The University of Connecticut is located in rural Eastern
+Connecticut in a safe and family friendly environment.  The University is
+in the middle of a $1 billion building campaign and the lab will be moving
+into a new facility in the Spring of 2000.  The combination of excellent
+facilities and a rural lifestyle with proximity to Boston (1.5 hours) and
+New York (2.5 hours) makes this an ideal location for those wish to do
+cutting edge science in a relaxed environment.
+
+Send vita and names and addresses (Email and phone) of 3 references to:
+
+Dr. David Knecht
+Molecular and Cell Biology U-125
+University of Connecticut, Storrs, CT 06269
+e-mail:knecht@uconnvm.uconn.edu
+web: http://www.sp.uconn.edu/~mcbstaff/knecht/knecht.html
+
+=============
+  Abstracts
+=============
+
+LbrA, a protein predicted to have a role in vesicle trafficking, is
+necessary for normal morphogenesis in Polysphondylium pallidum.
+
+Yoshinori Kawabe, Toshiteru Enomoto, Takahiro Morio, Hideko Urushihara, and
+Yoshimasa Tanaka*
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki
+305-8572, Japan
+
+Gene, in press
+
+Abstract
+
+        The fruiting body of Polysphondylium pallidum is composed of whorls
+of branches along the axis of a central stalk. In the course of fruiting
+body formation, the interval between neighboring whorls, and the number and
+the spacing of  branches in a whorl are highly regulated. In this study,
+using the REMI (restriction enzyme mediated integration) insertional
+mutagenesis method, we obtained a mutant (strain M2323) with longer
+branches than those of the wild-type strain PN500. The sequence analyses
+revealed the presence of an ORF of 206 aa residues (23 kDa) near the vector
+insertion site. Disruption of the gene, lbrA (long branch A), by homologous
+recombination causes the same phenotype as that of M2323. A lbrA transcript
+is expressed maximally at the early aggregation stage in the parental
+strain, but not detectable in the REMI mutant. A homology search showed
+that LbrA is a member of the p24 family proteins, which have been proposed
+to function as receptors for cargo proteins that are transported by COP I-
+(coat protein I) and / or COP II-coated vesicles between the endoplasmic
+reticulum and the Golgi complex. As far as we know, this is the first paper
+to show that a p24 family  member is implicated in morphogenesis.    
+
+----------------------------------------------------------------------------
+
+NOVEL CELLULAR TRACKS OF MIGRATING DICTYOSTELIUM CELLS
+
+Kazuhiko Uchida and Shigehiko Yumura
+Department of Biology, Faculty of Science, Yamaguchi University, Yamaguchi 7
+53-8512, Japan
+ Eur. J. Cell Biol. in press.
+
+Summary
+
+     After Dictyostelium cells were settled on a coverslip and allowed to 
+migrate freely on the surface, they were stained with fluorescently labeled 
+Concanavalin A. Tracks with distinct patterns that consist of dots and short 
+fibers were observed behind the cells. In this study, we refer to these 
+tracks as 'cellular tracks', CTs for short. We characterized the biological 
+effect of CTs on cell behavior and development. CTs decreased the strength 
+of cell-substratum adhesion, increased the velocity of cell migration, but 
+did not affect growth of cells. CTs also promoted cell aggregation. When 
+pre-aggregation cells touched the CTs of other cells, they avoided or 
+orthogonally crossed them, but did not migrate along them. These 
+observations suggest that the CTs of pre-aggregation cells prompts cells 
+to disperse uniformly on substratum and may enable cells to sense cell 
+density. On the other hand, when aggregation-competent cells touched the 
+CTs of other aggregation-competent cells, a half of them migrated along the 
+CTs. Pre-aggregation cells did not migrate along the CTs of aggregation-
+competent cells. The CTs of aggregation-competent cells may help the 
+cells to aggregate toward the aggregation center.
+
+
+----------------------------------------------------------------------------
+
+DOMAIN ANALYSIS OF CORTEXILLIN I: ACTIN-BUNDLING, PIP2-BINDING AND THE
+RESCUE OF CYTOKINESIS
+
+Alexander Stock1, Michel O. Steinmetz2, Paul A. Janmey3, Ueli Aebi2, 
+Günther Gerisch1*, Richard A. Kammerer2, Igor Weber1, and Jan Faix1
+
+
+1 Max-Planck-Institut für Biochemie, D-82152 Martinsried, Am Klopferspitz
+18a, Germany,
+2 Biozentrum der Universität  Basel, CH-4161 Basel, Klingelbergstrasse 70,
+Switzerland,
+3 Brigham & Women's Hospital, Harvard Medical School, 221 Longwood Avenue,
+Boston, USA
+*Corresponding author: Günther Gerisch, Max-Planck-Institut für Biochemie, 
+D-82152 Martinsried, Germany. Tel.: (49) 89-8578-2326; Fax: (49)
+89-8578-3885; 
+e-mail: gerisch@biochem.mpg.de
+
+EMBO Journal, in press
+
+ABSTRACT:
+
+   Cortexillins are actin-bundling proteins that form a parallel two-stranded
+coiled-coil rod. Actin-binding domains of the alpha-actinin/spectrin type
+are located N-terminal to the rod and unique sequence elements are found in
+the C-terminal region. Domain analysis in vitro revealed that the
+N-terminal domains are not responsible for the strong actin-filament
+bundling activity of cortexillin I. The strongest activity resides in the
+C-terminal region. Phosphatidylinositol 4,5-bisphosphate (PIP2) suppresses
+this bundling activity by binding to a C-terminal nonapeptide sequence.
+These data define a new PIP2-regulated actin-bundling site. In vivo the
+PIP2-binding motif enhances localization of a C-terminal cortexillin I
+fragment to the cell cortex and improves the rescue of cytokinesis. This
+motif is not required, however, for translocation to the cleavage furrow. A
+model is presented proposing that cortexillin translocation is based on a
+mitotic cycle of polar actin polymerization and midzone depolymerization.
+
+----------------------------------------------------------------------------
+
+Cell-sorting in aggregates of Dictyostelium discoideum.
+
+Alastair Nicol, Wouter-Jan Rappel, Herbert Levine and William F. Loomis
+*Departments of Physics and Biology, UCSD, La Jolla, CA
+
+J. Cell Science (in press)
+
+SUMMARY
+
+When Dictyostelium cells are induced to develop between a cover-slip and a
+layer of agarose, they aggregate normally into groups containing up to a
+thousand cells but are then constrained to form disks only a few cells
+thick that appear to be equivalent to the three-dimensional mounds formed
+on top of agarose.  Such vertically restricted aggregates frequently
+develop into elongated motile structures, the flattened equivalent of three
+dimensional slugs.  The advantage of using this system is that the
+restricted z-dimension enables direct microscopic visualization of most of
+the cells in the developing structure. We have used time lapse digital
+fluorescence microscopy of Dictyostelium strains expressing green
+fluorescent protein (GFP) under the control of either prestalk or prespore
+specific promoters to follow cell sorting in these flattened mounds. We
+find that prestalk and prespore cells expressing GFP arise randomly in
+early aggregates and then rotate rapidly around the disk mixed with the
+other cell type. After a few hours, the cell types sort out by a process
+which involves striking changes in relative cell movement. Once sorted, the
+cell types move independently of each other showing very little heterotypic
+adhesion. When a group of prestalk cells reaches the edge of the disk, it
+moves out and is followed by the prespore cell mass. We suggest that
+sorting may result from cell type specific changes in adhesion and the
+consequent disruption of movement in the files of cells that are held
+together by end-to-end adhesion.
+
+----------------------------------------------------------------------------
+
+The contractile vacuole network of Dictyostelium as a distinct organelle:
+its dynamics visualized by a GFP marker protein
+
+Daniela Gabriel, Ulrike Hacker, Jana Koehler, Annette Mueller-Taubenberger,
+Jean-Marc Schwartz, Monika Westphal and Guenther Gerisch
+
+Max-Planck-Institut für Biochemie  
+D-82152 Martinsried, Germany
+
+J. Cell Science, in press.
+
+Summary
+
+The contractile vacuole system is an osmoregulatory organelle composed of
+cisternae and interconnecting ducts. Large cisternae act as bladders that
+periodically fuse with the plasma membrane, forming pores to expel water
+(Heuser et al. (1993) J. Cell Biol. 121, 1311-1327). To visualize the
+entire network in vivo and to identify constituents of the vacuolar complex
+in cell fractions, we introduced a specific marker into Dictyostelium
+cells, GFP-tagged dajumin. The C-terminal, GFP-tagged region of this
+transmembrane protein is responsible for sorting to the contractile vacuole
+complex. Dajumin-GFP negligibly associates with the plasma membrane,
+indicating its retention during discharge of the bladder. Fluorescent
+labeled cell-surface constituents are efficiently internalized by
+endocytosis, while no significant cycling through the contractile vacuole
+is observed. Endosomes loaded with yeast particles or a fluid-phase marker
+indicate sharp separation of the endocytic pathway from the contractile
+vacuole compartment. Even after dispersion of the contractile vacuole
+system during mitosis (Zhu et al. (1993) J. Cell Sci. 104, 1119-1127),
+dajumin-GFP distinguishes the vesicles from endosomes, and visualizes
+post-mitotic re-organization of the network around the nucleus. Highly
+discriminative sorting and membrane fusion mechanisms are proposed to
+account for the sharp separation of the contractile vacuole and endosomal
+compartments. Evidence for a similar compartment in other eukaryotic cells
+is discussed.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 6]
+
+  

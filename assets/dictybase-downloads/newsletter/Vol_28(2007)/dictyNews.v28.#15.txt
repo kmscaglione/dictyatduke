@@ -1,0 +1,90 @@
+dictyNews
+Electronic Edition
+Volume 28, number 15
+June 1, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Replacement of the essential Dictyostelium Arp2 gene by its Entamoeba 
+homologue using parasexual genetics
+
+Mehreen Zaki, Jason King, Klaus Fuetterer and Robert H. Insall
+
+
+BioMed Central, in press
+
+Background
+Cell motility is an essential feature of the pathogenesis and morbidity of 
+amoebiasis caused by Entamoeba histolytica. As motility depends on 
+cytoskeletal organisation and regulation, a study of the molecular components 
+involved is key to a better understanding of amoebic pathogenesis. However, 
+little is known about the physiological roles, interactions and regulation 
+of the proteins of the Entamoeba cytoskeleton.  
+
+Results
+We have established a genetic strategy that uses parasexual genetics to allow 
+essential Dictyostelium discoideum genes to be manipulated and replaced with 
+modified or tagged homologues.  Our results show that actin related protein 2 
+(Arp2) is essential for survival, but that the Dictyostelium protein can be 
+complemented by E. histolytica Arp2, despite the presence of an insertion of 
+16 amino acids in an otherwise highly conserved protein.  Replacement of 
+endogenous Arp2 with myc-tagged Entamoeba or Dictyostelium Arp2 has no 
+obvious effects on growth and the protein incorporates effectively into the 
+Arp2/3 complex.
+
+Conclusions
+We have established an effective two-step method for replacing genes that 
+are required for survival.  Our protocol will allow such genes to be studied 
+far more easily, and also allows an unambiguous demonstration that particular 
+genes are truly essential.  In addition, cells in which the Dictyostelium 
+Arp2 has been replaced by the Entamoeba protein are potential targets for 
+drug screens.
+
+
+Submitted by: Mehreen Zaki [M.Zaki@bham.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Flotillin and RacH modulate the intracellular immunity of Dictyostelium to 
+Mycobacterium marinum infection
+
+Monica Hagedorn and Thierry Soldati
+
+Department de Biochimie, Faculte des Sciences, Universite de Geneve, 
+Sciences II, 30 quai Ernest Ansermet, CH-1211-Geneve-4, Switzerland
+
+
+Cellular Microbiology, in press
+
+Mycobacterium marinum, a close relative of M. tuberculosis, provides a 
+useful model to study the pathogenesis of tuberculosis in genetically 
+tractable model organisms. Using the amoeba Dictyostelium discoideum as a 
+host, we show that expression of the M. marinum protein MAG24-1 is crucial 
+to interfere with phagosome maturation. We find that two host proteins Ð 
+the flotillin homologue vacuolin and p80, a predicted copper transporter Ð 
+accumulate at the vacuole during pathogen replication until it finally 
+ruptures and the bacteria are released into the host cytosol. Flotillin-1 
+accumulation at the replication niche and its rupture were also observed 
+in human peripheral blood monocytes. By infecting various Dictyostelium 
+mutants, we show that the absence of one of the two Dictyostelium vacuolin 
+isoforms renders the host more immune to M. marinum. Conversely, the 
+absence of the small GTPase RacH renders the host more susceptible to 
+M. marinum proliferation but inhibits its cell-to-cell spreading.
+
+
+Submitted by: Thierry Soldati [thierry.soldati@biochem.unige.ch]
+==============================================================
+[End dictyNews, volume 28, number 15]

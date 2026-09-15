@@ -1,0 +1,108 @@
+dictyNews
+Electronic Edition
+Volume 38, number 22
+August 31, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The Nramp (Slc11) proteins regulate development, resistance to 
+pathogenic bacteria and iron homeostasis in Dictyostelium discoideum
+
+Barbara Peracino, Simona Buracco and Salvatore Bozzaro*
+Department of Clinical and Biological Sciences, University of Turin, 
+AOU S. Luigi, 10043 Orbassano, Italy
+
+
+J. Cell Sci,. in press
+
+The Dictyostelium discoideum genome harbours two genes encoding 
+members of the Nramp superfamily, which is conserved from bacteria 
+(MntH proteins) to humans (Slc11 proteins). Nramps are proton-driven 
+metal ion transporters with a preference for iron and manganese. 
+Acquisition of these metal cations is vital for all cells, as they act as 
+redox cofactors and regulate key cellular processes, such as DNA 
+synthesis, electron transport, energy metabolism and oxidative stress. 
+Dictyostelium Nramp1 (Slc11a1), like its mammalian ortholog, mediates 
+resistance to infection by invasive bacteria. We have extended the 
+analysis to the nramp2 gene, by generating single and double 
+nramp1/nramp2 knockout mutants and cells expressing GFP fusion 
+proteins. In contrast to Nramp1, which is recruited to phagosomes and 
+macropinosomes, the Nramp2 protein is localized exclusively in the 
+membrane of the contractile vacuole, a vesicular-tubular network 
+regulating cellular osmolarity. Both proteins colocalize with the 
+V-H+ ATPase, which can provide the electrogenic force for vectorial 
+transport. Like nramp1, nramp2 gene disruption affects resistance to 
+Legionella pneumophila. Disrupting both genes additionally leads to 
+defects in development, with strong delay in cell aggregation, formation 
+of large streams and multi-tipped aggregates. Single and double mutants 
+display differential sensitivity to cell growth under conditions of iron 
+overload or depletion. The data favour the hypothesis that Nramp1 and 
+Nramp2, under control of the V-H+ ATPase, synergistically regulate iron 
+homeostasis, with the contractile vacuole possibly acting as a store for 
+metal cations. 
+
+
+Submitted by Salvatore Bozzaro [salvatore.bozzaro@unito.it]
+---------------------------------------------------------------------------
+
+
+Regulation of multiple tip formation by caffeine in cellular 
+slime molds
+
+Pundrik Jaiswal, Shashi Prakash Singh, Prasad Aiyar, 
+Rakhil Akkali and Ramamurthy Baskar 
+
+
+BMC Development Biology 2012, 12:26 
+
+Background
+The multicellular slug in Dictyostelium has a single tip that acts as 
+an organising centre patterning the rest of the slug. High adenosine 
+levels at the tip are believed to be responsible for this tip dominance 
+and the adenosine antagonist, caffeine overrides this dominance 
+promoting multiple tip formation.
+
+Results
+Caffeine induced multiple tip effect is conserved in all the Dictyostelids 
+tested. Two key components of cAMP relay namely, cAMP 
+phosphodiesterase (Pde4) and adenyl cyclase-A (AcaA) levels get 
+reduced during secondary tip formation in Dictyostelium discoideum. 
+Pharmacological inhibition of cAMP phosphodiesterase also resulted 
+in multiple tips. Caffeine reduces cAMP levels by 16.4, 2.34, 4.71 and 
+6.30 folds, respectively in D. discoideum, D. aureostipes, D. minutum 
+and Polysphondylium pallidum. We propose that altered cAMP levels, 
+perturbed cAMP gradient and impaired signalling may be the critical 
+factors for the origin of multiple tips in other Dictyostelids as well. In 
+the presence of caffeine, slug cell movement gets impaired and 
+restricted. The cell type specific markers, ecmA (prestalk) and pspA 
+(prespore) cells are not equally contributing during additional tip 
+formation. During additional tip emergence, prespore cells 
+transdifferentiate to compensate the loss of prestalk cells.
+
+Conclusion
+Caffeine decreases adenyl cyclase--A (AcaA) levels and as a 
+consequence low cAMP is synthesised altering the gradient. Further 
+if cAMP phosphodiesterase (Pde4) levels go down in the presence 
+of caffeine, the cAMP gradient breaks down. When there is no cAMP 
+gradient, directional movement is inhibited and might favour 
+re-differentiation of prespore to prestalk cells. 
+
+
+Submitted by Pundrik Jaiswal [pundrik_jaiswal@yahoo.co.in]
+==============================================================
+[End dictyNews, volume 38, number 22]

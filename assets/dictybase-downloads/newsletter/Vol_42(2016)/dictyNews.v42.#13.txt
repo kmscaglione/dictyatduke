@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 42, number 13
+May 6, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Oral administration of Dictyostelium differentiation-inducing 
+factor 1 lowers blood glucose levels in streptozotocin-induced 
+diabetic rats
+
+Ritsuko Kawaharada, Akio Nakamura, Katsunori Takahashi, Haruhisa 
+Kikuchi, Yoshiteru Oshima, Yuzuru Kubohara*
+
+*Graduate School of Health and Sports Science, Juntendo University, 
+Inzai City, 270-1695, Japan.
+
+
+Life Sciences, in press
+
+Aims: Differentiation-inducing factor 1 (DIF-1), originally 
+discovered in the cellular slime mold Dictyostelium discoideum, 
+and its derivatives possess pharmacological activities, such as 
+the promotion of glucose uptake in non-transformed mammalian 
+cells in vitro. Accordingly, DIFs are considered promising lead 
+candidates for novel anti-diabetic drugs. The aim of this study 
+was to assess the anti-diabetic and toxic effects of DIF-1 in 
+mouse 3T3-L1 fibroblast cells in vitro and in diabetic rats 
+in vivo.
+Main methods: We investigated the in vitro effects of DIF-1 and 
+DIF-1(3M), a derivative of DIF-1, on glucose metabolism in 3T3-L1 
+cells by using capillary electrophoresis time-of-flight mass 
+spectrometry (CE-TOF-MS). We also examined the effects of DIF-1 
+on blood glucose levels in streptozotocin (STZ)-induced rats. 
+Key findings: CE-TOF-MS revealed that 20 microM DIF-1 and 20 
+microM DIF-1(3M) promoted glucose uptake and metabolism in 
+3T3-L1 cells. Oral administration of DIF-1 (30 mg/kg) significantly 
+lowered basal blood glucose levels in STZ-treated rats and 
+promoted a decrease in blood glucose levels after oral glucose 
+loading (2.5 g/kg) in the rats. In addition, daily oral 
+administration of DIF-1 (30 mg/kg/day) for 1 wk significantly 
+lowered the blood glucose levels in STZ-treated rats but did not 
+affect their body weight and caused only minor alterations in 
+the levels of other blood analytes. 
+Significance: These results indicate that DIF-1 may be a good 
+lead compound for the development of anti-diabetic drugs.
+
+
+
+submitted by: Yuzuru Kubohara [ykuboha@juntendo.ac.jp]
+———————————————————————————————————————
+
+
+Quantitative imaging of Rac1 activity in Dictyostelium cells with 
+a fluorescently labelled GTPase-binding domain from DPAKa kinase
+
+Maja Marinović, Marko Šoštar, Vedrana Filić, Vlatka Antolović, 
+Igor Weber
+
+
+Histochemistry and Cell Biology,  
+http://link.springer.com/article/10.1007/s00418-016-1440-9
+
+Small Rho GTPases are major regulators of the actin cytoskeleton  
+dynamics in eukaryotic cells. Sophisticated tools used to investigate  
+their activity in living cells include probes based on fluorescence  
+resonance energy transfer (FRET), bimolecular fluorescence  
+complementation, and photoactivation. However, such methods are 
+of limited use in quickly migrating cells due to a short time available  
+for image acquisition leading to a low signal-to-noise ratio. Attempts  
+to remedy this effect by increasing the intensity of illumination are  
+restricted by photobleaching of probes and the cell photosensitivity.  
+Here we present design and characterization of a new fluorescent probe  
+that selectively binds to active form of Rac1 GTPases, and demonstrate  
+its superior properties for imaging in highly motile Dictyostelium  
+cells. The probe is based on the GTPase-binding domain (GBD) from  
+DPAKa kinase and was selected on the basis of yeast two-hybrid screen,  
+GST pull-down assay and FRET measurements by fluorescence lifetime  
+imaging microscopy. DPAKa(GBD) probe binds specifically to GTP-bound  
+Rac1 at the cell membrane and features a low cytoplasmic background.  
+The main advantage of DPAKa(GBD) in comparison with similar probes 
+is its finely graded intensity distribution along the entire plasma  
+membrane, which enables quantitative measurements of the Rac1 activity  
+in different parts of the membrane. Finally, expression of DPAKa(GBD)  
+induces no adverse effects on cell growth, motility and cytokinesis.
+
+
+submitted by: Maja Marinović [Maja.Marinovic@irb.hr]
+==============================================================
+[End dictyNews, volume 42, number 13]

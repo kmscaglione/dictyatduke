@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 37, number 8
+September 30, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium Chemotaxis: Essential Ras activation and accessory 
+signaling pathways for amplification
+
+Arjan Kortholt, Rama Kataria, Ineke Keizer-Gunnink, Wouter N. 
+Van Egmond, Ankita Khanna and Peter J.M. Van Haastert
+
+Department of Cell Biochemistry, University of Groningen, Nijenborgh 7, 
+9747 AG Groningen, The Netherlands
+
+
+EMBO reports, in press
+
+Central to chemotaxis is the molecular mechanism by which cells exhibit 
+directed movement in shallow gradients of chemoattractant. We used 
+Dictyostelium mutants to investigate the minimal requirements for chemotaxis, 
+and identified a basal signaling module providing activation of Ras at the 
+leading edge, which is sufficient for chemotaxis. The signaling enzymes PI3K, 
+TorC2, PLA2 and sGC are not required for Ras activation and chemotaxis to 
+folate or to steep gradients of cAMP, but they provide a memory of direction 
+and improved orientation of the cell, which together increases the sensitivity 
+~150-fold for chemotaxis in shallow cAMP gradients.
+
+
+Submitted by: Peter van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Stretching actin filaments within cells enhances their affinity for the 
+myosin ii motor domain.
+
+Taro Q.P. Uyeda1,2, Yoshiaki Iwadate3, 4, Nobuhisa Umeki1, Akira 
+Nagasaki1 and Shigehiko Yumura3 
+
+1: Biomedical Research Institute, National Institute of Advanced Industrial 
+Science and Technology (AIST), Tsukuba, Ibaraki, Japan
+2: Biomedicinal Information Research Center, National Institute of Advanced 
+Industrial Science and Technology (AIST), Koto, Tokyo, Japan
+3: Department of Functional Molecular Biology, Graduate School of Medicine, 
+Yamaguchi University, Yamaguchi, Yamaguchi, Japan
+4: Precursory Research for Embryonic Science and Technology (PRESTO), 
+Japan Science and Technology Agency (JST), Kawaguchi, Saitama, Japan
+
+
+PLoS One, in press
+
+To test the hypothesis that the myosin II motor domain (S1) preferentially 
+binds to specific subsets of actin filaments in vivo, we expressed GFP-fused 
+S1 with mutations that enhanced its affinity for actin in Dictyostelium cells.  
+Consistent with the hypothesis, the GFP-S1 mutants were localized along 
+specific portions of the cell cortex.  Comparison with rhodamine-phalloidin 
+staining in fixed cells demonstrated that the GFP-S1 probes preferentially 
+bound to actin filaments in the rear cortex and cleavage furrows, where actin 
+filaments are stretched by interaction with endogenous myosin II filaments.  
+The GFP-S1 probes were similarly enriched in the cortex stretched passively 
+by traction forces in the absence of myosin II or by external forces using a 
+microcapillary.  The preferential binding of GFP-S1 mutants to stretched 
+actin filaments did not depend on cortexillin I or PTEN, two proteins 
+previously implicated in the recruitment of myosin II filaments to stretched 
+cortex.  These results suggested that it is the stretching of the actin filaments 
+itself that increases their affinity for the myosin II motor domain.  In contrast, 
+the GFP-fused myosin I motor domain did not localize to stretched actin 
+filaments, which suggests different preferences of the motor domains for 
+different structures of actin filaments play a role in distinct intracellular 
+localizations of myosin I and II.  We propose a scheme in which the 
+stretching of actin filaments, the preferential binding of myosin II filaments 
+to stretched actin filaments, and myosin II-dependent contraction form a 
+positive feedback loop that contributes to the stabilization of cell polarity 
+and to the responsiveness of the cells to external mechanical stimuli.  
+
+
+Submitted by: Taro Uyeda [t-uyeda@aist.go.jp]
+==============================================================
+[End dictyNews, volume 37, number 8]

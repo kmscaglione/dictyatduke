@@ -1,0 +1,70 @@
+dictyNews
+Electronic Edition
+Volume 33, number 8
+September 25, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase now on twitter:
+http://twitter.com/dictybase
+
+
+Announcement:
+
+In del Álamo et al. (2007), PNAS 104 no. 33, 13343-13348 we described an 
+improved Fourier traction cytometry algorithm that allows the calculation of 2D 
+traction forces from the 2D deformations of an elastic substrate. We are 
+making it available as a software package which can be found at 
+http://maeresearch.ucsd.edu/~jalamo/dynacyte. 
+
+Ruedi Meili
+
+=========
+Abstracts
+=========
+
+
+Differentiation inducing factors in Dictyostelium discoideum: a novel low 
+molecular factor functions at an early stage(s) of differentiation
+
+Akiko A. Oohata1*, Masashi Fukuzawa2, Rie Hotta3, Manabu Nakagawa4, 
+Masatake Niwa3 and Yoshiaki Takaya3 
+
+1Biological Laboratory and 4Chemical laboratory, Kansai Medical University, 
+Hirakata, Osaka 573-1136, Japan 
+2 Department of Biology, Faculty of Agriculture and Life Science, Hirosaki 
+University, Hirosaki, Aomori 036-8561, Japan
+3 Faculty of Pharmacy, Meijo University, Tempaku, Nagoya 468-8503, Japan
+
+
+Devel. Growth & Differ., in press
+
+There are reports that secreted factor(s) are involved in prespore cell 
+differentiation in Dictyostelium discoideum, but the structures and functions of 
+the various factors have not been elucidated. Previously, we described two 
+prespore cell-inducing factors in conditioned medium; one was a glycoprotein 
+named prespore-cell inducing factor (ψ factor, or PSI-1), and the other 
+a heat stable, dialyzable factor(s).  In this paper, we purified and characterized 
+the most potent prespore-cell inducing activity in dialysates. The factor began 
+to be secreted after the onset of starvation and stopped being secreted once 
+the cells had aggregated, which was earlier than the onset of psi factor gene 
+expression.  In addition, unlike psi factor, its secretion did not appear to 
+depend on activation of protein kinase A. Interestingly, the purified factor 
+not only induced prespore-cell specific genes such as pspA and cotC but 
+also a prestalk-cell specific gene, ecmB in vitro. The purified factor is 
+tentatively designated polyketide like factor (PLF), because it seems to be 
+a novel polyketide with mol wt 208.  Half maximal induction of prespore cell 
+was obtained with 26 nM of PLF.  We propose that PLF plays a key role in 
+the acquisition of differentiation commitment, before the psi factor induces 
+specifically prespore cell differentiation.
+
+
+Submitted by Akiko Oohata [oohata@makino.kmu.ac.jp]
+==============================================================
+[End dictyNews, volume 33, number 8]

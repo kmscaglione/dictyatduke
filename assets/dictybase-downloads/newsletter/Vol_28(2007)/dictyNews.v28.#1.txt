@@ -1,0 +1,54 @@
+dictyNews
+Electronic Edition
+Volume 28, number 1
+January 12, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+Pharmacological evidence that stalk cell differentiation involves increases in 
+the intracellular Ca2+and H+ concentrations in Dictyostelium discoideum.
+
+Yuzuru Kubohara*, Akiko Arai, Naomi Gokan, Kohei Hosaka
+
+*Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation (IMCR), Gunma University, Maebashi 371-8512, Japan
+
+
+Develop. Growth & Differ, in press.
+
+Differentiation-inducing factors (DIFs) are required for stalk cell formation in 
+Dictyostelium discoideum.  In the present study, in order to support our 
+hypothesis that DIFs may function via increases in [Ca2+]c and [H+]c, we 
+investigated the combined effects of 5,5-dimethyl-2,4-oxazolidinedione 
+(DMO: a [H+]c-increasing agent), thapsigargin (Tg), and 
+BHQ ([Ca2+]c-increasing agents) on in vitro stalk cell formation in several 
+strains.  DMO, in combination with Tg or BHQ, induced stalk cell formation 
+in a DIF-deficient mutant HM44.  Although the rates of stalk cell induction 
+by the drugs were low in the presence of cerulenin (an inhibitor of 
+endogenous DIF production) in HM44 and V12M2 (a wild-type strain), the 
+drugs succeeded in inducing sufficient stalk cell formation when a small 
+amount of DIF-1 was supplied.  Furthermore, co-addition of DMO, BHQ, and 
+a small amount of DIF-1also induced sufficient stalk cell formation in AX-4 
+(an axenic strain) and HM1030 (dmtA-) but not in CT15 (dimA-).  The drugs 
+suppressed spore formation and promoted stalk cell formation in both HM18 
+(a sporogenous mutant) and 8-bromo-cAMP-stimulated V12M2.  The 
+present results suggest that DIFs function, at least in part, via increases in 
+[Ca2+]c and [H+]c in D. discoideum.
+
+
+Submitted by Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+============================================================
+[End dictyNews, volume 28, number 1]

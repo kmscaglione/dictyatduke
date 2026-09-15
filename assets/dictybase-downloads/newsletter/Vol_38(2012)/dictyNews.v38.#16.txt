@@ -1,0 +1,158 @@
+dictyNews
+Electronic Edition
+Volume 38, number 16
+June 29, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Mind the gap: a comparative study of migratory behavior in 
+social amoebae
+
+Owen M. Gilbert, Jennie J. Kuzdzal-Fick, David C. Queller, 
+Joan E. Strassmann
+
+
+Behavioral Ecology and Sociobiology, in press
+
+Social amoebae aggregate to form a multicellular slug that 
+migrates some distance.  Most species produce a stalk during 
+migration, but some do not.  We show that D. giganteum, a 
+species that produces stalk during migration, is able to traverse 
+small gaps and utilize bacterial resources following gap traversal 
+by shedding live cells.  In contrast, we found D. discoideum, a 
+species that does not produce stalk during migration, can 
+traverse gaps only when in the presence of other species’ stalks, 
+or other thin filaments.  These findings suggest production of 
+stalk during migration allows traversal of gaps, as commonly 
+occur in soil and leaf litter.  Considering the functional 
+consequences of a stalked migration may be important for 
+explaining the evolutionary maintenance or loss of a stalked 
+migration.
+
+
+Submitted by Owen Gilbert [owen.gilbert@gmail.com]
+--------------------------------------------------------------------------------------
+
+
+Dictyostelium uses the prokaryote messenger c-di-GMP to trigger  
+stalk cell differentiation.
+
+Zhi-hui Chen and Pauline Schaap*
+
+College of Life Sciences, University of Dundee, Dundee  DD15EH, 
+UK
+
+
+Nature, in press
+
+Cyclic di-(3’:5’)-guanosine monophosphate (c-di-GMP) is a major 
+prokaryote signalling intermediate, which is synthesized by 
+diguanylate cyclases and triggers sessility and biofilm formation. 
+We detected the first eukaryote diguanylate cyclases (DgcAs) in 
+all major groups of Dictyostelia. Upon food depletion, 
+Dictyostelium discoideum amoebas collect into aggregates, which 
+first transform into migrating slugs and next into sessile fruiting 
+structures. These structures consist of a spherical spore mass 
+that is supported by a column of stalk cells and a basal disk. A 
+polyketide, DIF-1, was isolated earlier, which induces stalk-like 
+cells in vitro. However, its role in vivo proved recently to be 
+restricted to basal disk formation. Here we show that Dictyostelium 
+DgcA produces c-di-GMP as the morphogen responsible for stalk 
+cell differentiation.  D.discoideum DgcA synthesized c-di-GMP in 
+a GTP-dependent manner and was expressed at the slug tip, the 
+site of stalk cell differentiation. Disruption of the DgcA gene 
+blocked the transition from slug migration to fructification and the 
+expression of stalk genes. Fructification and stalk formation were 
+restored by exposing dgca- slugs to wild-type secretion products 
+or to c-di-GMP. Moreover, c-di-GMP, but not c-di-AMP, induced 
+stalk gene expression in dilute cell monolayers. Apart from 
+identifying the long elusive stalk-inducing morphogen, our work 
+also identifies the first role for c-di-GMP in eukaryotes. 
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------------
+
+
+Structured growth and genetic drift raise relatedness in the social 
+amoeba Dictyostelium discoideum.
+
+Neil J. Buttery(1), Chandra N. Jack(2), Boahemaa Adu-Oppong(1), 
+Kate T. Snyder(3), Christopher R.L. Thompson(4), David C. Queller(1) 
+and Joan E. Strassmann(1)
+
+(1) Department of Biology, Campus Box 1137, Washington University 
+in Saint Louis, One Brookings Drive, Saint Louis, Missouri, USA
+(2) Department of Bioengineering, Rice University, 6100 Main Street, 
+Houston, Texas, USA
+(3) Department of Ecology and Evolution, Rice University, 6100 
+Main Street, Houston, Texas, USA
+(4) Faculty of Life Sciences, University of Manchester, 
+Oxford Road, Manchester, UK
+
+
+ Biology Letters, in press
+
+One condition for the evolution of altruism is genetic relatedness 
+between altruist and beneficiary, often achieved through active kin 
+recognition. Here we investigate the power of a passive process 
+resulting from genetic drift during population growth in the social 
+amoeba Dictyostelium discoideum. We put labelled and unlabelled 
+cells of the same clone in the centre of a plate, and allowed them 
+to proliferate outward.  Zones formed by genetic drift, due to the 
+small population of actively growing cells at the colony edge. We 
+also found that single cells could form zones of high relatedness. 
+Relatedness increased at a significantly higher rate when food 
+was in short supply. This study shows that relatedness can be 
+significantly elevated before the social stage without a small 
+founding population size or recognition mechanism. 
+
+
+Submitted by Neil Buttery [buttery@wustl.edu]
+--------------------------------------------------------------------------------------
+
+
+Innate Non_Specific Cell Substratum Adhesion 
+
+Loomis, W.F., Fuller, D., Gutierrez, E., Groisman, A., 
+and Rappel, W-J. 
+
+Section of Cell and Developmental Biology, Division of Biological Sciences,  
+Department of Physics, Center for Theoretical Biological Physics 
+University of California, San Diego , La Jolla, CA
+
+
+PLoS ONE, in press
+
+Adhesion of motile cells to solid surfaces is necessary to transmit forces 
+required for propulsion. Unlike mammalian cells, Dictyostelium cells do 
+not make integrin mediated focal adhesions. Nevertheless, they can 
+move rapidly on both hydrophobic and hydrophilic surfaces. We have 
+found that adhesion to such surfaces can be inhibited by addition of 
+sugars or amino acids to the buffer. Treating whole cells 
+with _-mannosidase to cleave surface oligosaccharides also reduces 
+adhesion. The results indicate that adhesion of these cells is mediated 
+by van der Waals attraction of their surface glycoproteins to the 
+underlying substratum. Since glycoproteins are prevalent components 
+of the surface of most cells, innate adhesion may be a common
+cellular property that has been overlooked.
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+==============================================================
+[End dictyNews, volume 38, number 16]

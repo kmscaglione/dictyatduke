@@ -1,0 +1,232 @@
+dictyNews
+Electronic Edition
+Volume 42, number 14
+May 20, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium EHD associates with Dynamin and participates in 
+phagosome maturation
+ 
+Aurélie Gueho1, Cristina Bosmani1, Navin Gopaldass2, Virginie Molle3, 
+Thierry Soldati1, and François Letourneur3*
+ 
+1Department of Biochemistry, University of Geneva, CH-1211 Geneva, 
+Switzerland
+2Department of Biochemistry, University of Lausanne, CH-1066 
+Epalinges, Switzerland
+3Laboratoire de Dynamique des Interactions Membranaires Normales 
+et Pathologiques, Université de Montpellier, CNRS, UMR 5235, 
+Place Eugène Bataillon, 34095 Montpellier Cedex 05, France.
+ 
+*Author for correspondence (francois.letourneur@univ-montp2.fr)
+ 
+ 
+Journal of Cell Science, in press
+
+C-terminal EHDs (Eps15 homology-domain-containing proteins) are 
+newly identified key regulators of endosomal membrane trafficking. 
+Here we show that D. discoideum contains a single EHD protein that 
+localizes to endosomal compartments and newly formed phagosomes. 
+We provide the first evidence that EHD regulates phagosome 
+maturation. Deletion of EHD results in defects in intraphagosomal 
+proteolysis and acidification. These defects are linked to early 
+delivery of lysosomal enzymes and fast retrieval of the vacuolar 
+H+-ATPase in maturing phagosomes. We also demonstrate that EHD 
+physically interacts with DymA. Our results indicate that EHD 
+and DymA can associate independently to endomembranes, and yet 
+they share identical kinetics of phagosome recruitment and 
+release during phagosome maturation. Functional analysis of 
+ehd-, dymA-, and double dymA-/ehd- knock-out strains indicate that 
+DymA and EHD play non-redundant independent functions in 
+phagosome maturation. Finally, we show that the absence of EHD 
+leads to increase tubulation of endosomes, indicating that EHD 
+participates in the scission of endosomal tubules as reported 
+for DymA.
+
+
+submitted by: François Letourneur [francois.letourneur@univ-montp2.fr]
+———————————————————————————————————————
+
+
+Two HAP2-GCS1 homologs responsible for gamete interactions in 
+the cellular slime mold with multiple mating types: Implication 
+for common mechanisms of sexual reproduction shared by plants and 
+protozoa and for male-female differentiation
+
+Marina Okamoto, Lixy Yamada, Yukie Fujisaki, Gareth Bloomfield, 
+Kentaro Yoshida, Hidekazu Kuwayama, Hitoshi Sawada, Toshiyuki 
+Mori, and Hideko Urushihara
+
+
+Developmental Biology, in press
+
+Fertilization is a central event in sexual reproduction, and 
+understanding its molecular mechanisms has both basic and 
+applicative biological importance. Recent studies have 
+uncovered the molecules that mediate this process in a variety 
+of organisms, making it intriguing to consider conservation and 
+evolution of the mechanisms of sexual reproduction across phyla. 
+The social amoeba Dictyostelium discoideum undergoes sexual 
+maturation and forms gametes under dark and humid conditions. 
+It exhibits three mating types, type-I, -II, and -III, for the 
+heterothallic mating system. Based on proteome analyses of the 
+gamete membranes, we detected expression of two homologs of 
+the plant fertilization protein HAP2-GCS1. When their coding 
+genes were disrupted in type-I and type-II strains, sexual 
+potency was completely lost, whereas disruption in the type-III 
+strain did not affect mating behavior, suggesting that the 
+latter acts as female in complex organisms. Our results 
+demonstrate the highly conserved function of HAP2-GCS1 in 
+gamete interactions and suggest the presence of additional 
+allo-recognition mechanisms in D. discoideum gametes.
+
+
+submitted by: Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+———————————————————————————————————————
+
+
+Analysis of the microprocessor in Dictyostelium: 
+the role of RbdB, a dsRNA binding protein.
+
+Doreen Meier, Janis Kruse, Jann Buttlar, Michael Friedrich, 
+Fides Zenk, Benjamin Boesler, Konrad U. Förstner, 
+Christian Hammann, Wolfgang Nellen.
+
+
+PLoS Genetics, accepted
+               
+We identified the dsRNA binding protein RbdB as an essential component 
+in miRNA processing in Dictyostelium discoideum. RbdB is a nuclear 
+protein that accumulates, together with Dicer B, in nucleolar foci reminiscent 
+of plant dicing bodies. Disruption of rbdB results in loss of miRNAs and 
+accumulation of primary miRNAs. The phenotype can be rescued by ectopic 
+expression of RbdB thus allowing for a detailed analysis of domain function. 
+The lack of cytoplasmic dsRBD proteins involved in miRNA processing, 
+suggests that both processing steps take place in the nucleus thus 
+resembling the plant pathway. However, we also find features e.g. in the 
+domain structure of Dicer which suggest similarities to animals. Reduction 
+of miRNAs in the rbdB- strain and their increase in the Argonaute A knock 
+out allowed the definition of new miRNAs one of which appears to belong 
+to a new non-canonical class.
+
+
+submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+———————————————————————————————————————
+
+
+Mechanism and biological role of Dnmt2 in Nucleic Acid 
+Methylation
+
+Albert Jeltsch, Ann Ehrenhofer-Murray, Tomasz Jurkowski, 
+Frank Lyko, Gunter Reuter, Serge Ankri, Wolfgang Nellen, 
+Matthias Schaefer & Mark Helm
+
+
+RNA Biology, in press
+
+A group of homologous nucleic acid modification enzymes called Dnmt2, 
+Trdmt1, Pmt1, DnmA, and Ehmet in different model organisms catalyse 
+the transfer of a methyl group from the cofactor S-adenosyl-methionine 
+(SAM) to the carbon-5 of cytosine residues. Originally considered as 
+DNA MTases, these enzymes were shown to be tRNA methyltransferases 
+about a decade ago. Between the presumed involvement in DNA 
+modification-related epigenetics, and the recent foray into the RNA 
+modification field, significant progress has characterized Dnmt2-related 
+research. Here, we review this progress in its diverse facets including 
+molecular evolution, structural biology, biochemistry, chemical biology, 
+cell biology and epigenetics.
+
+
+submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+———————————————————————————————————————
+
+
+Gene discovery by chemical mutagenesis and whole-genome 
+sequencing in Dictyostelium
+
+Cheng-Lin Frank Li, Balaji Santhanam, Amanda Nicole Webb, 
+Blaž Zupan,1 and Gad Shaulsky
+
+Baylor College of Medicine and University of Ljubljana
+
+
+Genome Research, in press
+
+Whole-genome sequencing is a useful approach for identification of 
+chemical-induced lesions, but previous applications involved tedious 
+genetic mapping to pinpoint the causative mutations. We propose that 
+saturation mutagenesis under low mutagenic loads, followed by 
+whole-genome sequencing, should allow direct implication of genes 
+by identifying multiple independent alleles of each relevant gene. We 
+tested the hypothesis by performing three genetic screens with 
+chemical mutagenesis in the social soil amoeba Dictyostelium 
+discoideum. Through genome sequencing, we successfully identified 
+mutant genes with multiple alleles in near-saturation screens, 
+including resistance to intense illumination and strong suppressors of 
+defects in an allorecognition pathway. We tested the causality of the 
+mutations by comparison to published data and by direct 
+complementation tests, finding both dominant and recessive causative 
+mutations. Therefore, our strategy provides a cost- and time-efficient 
+approach to gene discovery by integrating chemical mutagenesis and 
+whole-genome sequencing. The method should be applicable to many 
+microbial systems, and it is expected to revolutionize the field of 
+functional genomics in Dictyostelium by greatly expanding the mutation 
+spectrum relative to other common mutagenesis methods.
+
+
+submitted by: Gad Shaulsky [gadi@bcm.edu]
+———————————————————————————————————————
+
+
+Uses and abuses of macropinocytosis
+
+Gareth Bloomfield and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Francis Crick Avenue, 
+Cambridge Biomedical Campus, Cambridge, CB2 0QH, UK
+
+
+J. Cell Science, in press
+
+Macropinocytosis is a means by which eukaryotic cells ingest 
+extracellular liquid and dissolved molecules. It is widely 
+conserved amongst cells that can take on amoeboid form, and 
+therefore appears to be an ancient feature that can be traced back 
+to an early stage of evolution. Recent advances have highlighted 
+how this endocytic process can be subverted during pathology: 
+certain cancer cells use macropinocytosis to feed on extracellular 
+protein, and many viruses and bacteria use it to enter host cells. 
+Prion and prion-like proteins can also spread and propagate from 
+cell to cell via macropinocytosis. Progress is being made towards 
+using macropinocytosis therapeutically, either to deliver drugs to or 
+cause cell death by inducing catastrophically rapid fluid uptake. 
+Mechanistically, the Ras signalling pathway plays a prominent and 
+conserved activating role in amoebae and in mammals; mutant 
+amoebae with abnormally high Ras activity resemble tumour cells 
+in their increased capacity for growth using nutrients ingested by 
+macropinocytosis. This Commentary takes a functional and 
+evolutionary perspective to highlight progress in understanding and 
+utilising macropinocytosis, which is viewed as an ancient feeding 
+process used by single-celled phagotrophs but now put to varied 
+uses by metazoan cells and abused in disease states, including 
+
+
+submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 14]

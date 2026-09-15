@@ -1,0 +1,140 @@
+dictyNews
+Electronic Edition
+Volume 28, number 11
+May 4, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Stochastic signal processing and transduction in chemotactic response of 
+eukaryotic cells
+
+Masahiro Ueda and Tatsuo Shibata
+
+Laboratories for Nanobiology, Graduate School of Frontier Biosciences, 
+Osaka University, Suita, Osaka 565-0871, Japan
+Department of Mathematical and Life Sciences, University of Hiroshima, 
+Higashi-Hiroshima, Hiroshima 739-8526, Japan
+
+
+Biophysical Journal, in press
+
+Single molecule imaging analysis of chemotactic response in eukaryotic cells 
+has revealed a stochastic nature in the input signals and the signal 
+transduction processes. This leads to a fundamental question on the signaling 
+processes: how does the signaling system operate under stochastic fluctuations 
+or noise? Here we report a stochastic model of chemotactic signaling in which 
+noise and signal propagation along transmembrane signaling by chemoattractant 
+receptors can be analyzed quantitatively. The results obtained from this 
+analysis reveal that the second messenger production reactions by the 
+receptors generate noisy signals, which contain intrinsic noise inherently 
+generated at this reaction and extrinsic noise propagated from the 
+ligand-receptor-binding. Such intrinsic and extrinsic noises limit directional 
+sensing ability of chemotactic cells, which can explain the dependence of 
+chemotactic accuracy on chemical gradients that have been observed 
+experimentally. Our analysis also reveals regulatory mechanisms for signal 
+improvements in the stochastically-operating signaling system by analyzing 
+how signal-to-noise ratio (SNR) of chemotactic signals can be improved or 
+deteriorated by the stochastic properties of receptors and second messenger 
+molecules. Theoretical consideration of noisy signal transduction by 
+chemotactic signaling systems can further be applied to other signaling 
+systems in general. 
+
+
+Submitted by: Masahiro Ueda [ueda@phys1.med.osaka-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Input-output relationship in galvanotactic response 
+of Dictyostelium cells 
+
+Masayuki J. Sato, Michihito Ueda, Hiroaki Takagi, Tomonobu M. Watanabe, 
+Toshio Yanagida, and Masahiro Ueda
+
+Laboratories for Nanobiology, Graduate School of Frontier Biosciences, 
+Osaka University, 1-3 Yamadaoka, Suita, Osaka, 565-0871, Japan. 
+Advanced Technology Research Laboratories, Matsushita Electric Industrial Co., 
+Ltd., 3-4 Hikaridai, Seika-cho, Soraku-gun, Kyoto 619-0237, Japan. 
+
+Biosystems 88, 261-272.
+
+Under a direct current electric field, Dictyostelium cells exhibit migration 
+towards the cathode direction. To determine the input-output relationship of 
+the cell’s galvanotactic response, we developed an experimental instrument in 
+which electric signals applied to the cells are highly reproducible and the 
+motile response are analyzed quantitatively. With no electric field, the cells 
+moved randomly in all directions. Upon applying an electric field, cell 
+migration speeds became about 1.3 times faster than those in the absence of an 
+electric field. Such kinetic effects of electric fields on the migration were 
+observed for cells stimulated between 0.25 to 10 V/cm of the field strength. 
+The directions of cell migrations were biased toward the cathode in a positive 
+manner with field strength, showing galvanotactic response in a dose-dependent 
+manner. Quantitative analysis of the relationship between field strengths and 
+directional movements revealed that the biased movements of the cells depend on 
+the square of electric field strength, which can be described by one simple 
+phenomenological equation. The threshold strength for the galvanotaxis was 
+between 0.25 and 1 V/cm. Galvanotactic efficiency reached to half-maximum at 
+2.6 V/cm, which corresponds to an approximately 8 mV voltage difference between 
+the cathode and anode direction of 10 microm wide, round cells. Based on these 
+results, possible mechanisms of galvanotaxis in Dictyostelium cells were 
+discussed. This development of experimental system, together with its good 
+microscopic accessibility for intracellular signaling molecules, makes 
+Dictyostelium cells attractive as a model organism for elucidating stochastic 
+processes in the signaling systems responsible for cell motility and its 
+regulations. 
+
+
+Submitted by: Masahiro Ueda [ueda@phys1.med.osaka-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium differentiation-inducing factor-1 (DIF-1) induces GLUT1 
+translocation and promotes glucose uptake in mammalian cells
+
+Waka Omata, Hiroshi Shibata, Msahiro Nagasawa, Itaru Kojima, Haruhisa Kikuchi, 
+Yoshiteru Oshima, Kohei Hosaka and Yuzuru Kubohara
+
+Institute for Molecular and Cellular Regulation, Gunma University, Janan.
+
+
+FEBS Journal, In press
+
+The differentiation-inducing factor-1 (DIF-1) is a signal molecule that induces 
+stalk cell formation in the cellular slime mold Dictyostelium discoideum, while 
+DIF-1 and its analogs have been shown to possess anti-proliferative activity 
+in vitro in mammalian tumor cells.  In the present study, we have investigated 
+the effects of DIF-1 and its analogs on normal (non-transformed) mammalian cells.  
+Without affecting the cell morphology and cell number, DIF-1 at micromolar levels 
+dose-dependently promoted the glucose uptake in confluent 3T3-L1 fibroblasts, 
+which was not inhibited with wortmannin or LY293002 [inhibitors for 
+phosphatidylinositol 3-kinase (PI3K)].  DIF-1 affected neither the expression 
+level of GLUT1 (glucose transporter 1) nor the activities of four key enzymes 
+involved in glucose metabolism, such as hexokinase, fluctose-6-phosphate kinase, 
+pyruvate kinase, and glucose-6-phosphate dehydrogenase.  Most importantly, 
+stimulation with DIF-1 was found to induce the translocation of GLUT1 from 
+intracellular vesicles to the plasma membranes in the cells.  In differentiated 
+3T3-L1 adipocytes, DIF-1 induced the translocation of GLUT1 (but not of GLUT4) 
+and promoted glucose uptake, which was not inhibited with wortmannin.  These 
+results indicate that DIF-1 induces GLUT1 translocation and thereby promotes 
+glucose uptake, at least in part, via a PI3K/Akt-independent pathway in mammalian 
+cells.  Furthermore, analogs of DIF-1 that possess stronger anti-tumor activity 
+than DIF-1 were less effective in promoting glucose consumption, suggesting that 
+the mechanism of the action of DIF-1 for stimulating glucose uptake should be 
+different from that for suppressing tumor cell growth. 
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+============================================================
+[End dictyNews, volume 28, number 11]

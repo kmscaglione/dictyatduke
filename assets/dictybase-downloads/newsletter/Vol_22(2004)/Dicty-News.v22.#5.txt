@@ -1,0 +1,98 @@
+Dicty NewsElectronic EditionVolume 22, number 5February 27, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+
+====================
+Special Announcement ====================
+
+
+I just want to say hello and goodbye to all colleagues now that I have 
+retired from the fray. Thanks to all of you for friendship, help, 
+encouragement, criticism, and competition, over the years. Hope to see you 
+some time, though where, when and how I donât know. I now have my home 
+address and email on the website and would appreciate receiving news 
+and reprints.                 Julian Gross
+
+
+
+=============  Abstracts=============
+
+  Dynamics of novel feet of Dictyostelium cells during migrationAuthors: Kazuhiko S. K. Uchida (1) and Shigehiko Yumura (Author for 
+correspondence)(2)(1) Present address: Institute of Biological Sciences, University of Tsukuba, 
+Tsukuba, Ibaraki 305-8572, Japan(2) Department of Biology, Faculty of Science, Yamaguchi University, Yamaguchi 
+753-8512, JapanJournal of Cell Science, in pressWe observed the dynamics of actin foci in live Dictyostelium cells expressing 
+GFP-actin. Actin foci were dynamic structures, but they were fixed on the 
+substratum during cell migration. Interference reflection microscopy revealed 
+that the ventral cell membrane was closer to the substratum at sites of actin 
+foci. Furthermore, some actin foci were incorporated into the retraction 
+fibers, ripped off from the cells, and eventually shed on the substratum after 
+the cells moved away. The velocity of the cells was inversely proportional to 
+the number of actin foci. Measurement of traction force using a silicone 
+substratum demonstrated that the traction force was transmitted to the 
+substratum through actin foci. Taken together, several lines of evidence 
+strongly suggest that actin foci function as the active 'feet' of 
+Dictyostelium cells. We also found evidence suggesting that these changing 
+steps are regulated in a coordinated manner during cell migration. Possible 
+mechanisms by which these cells migrate across substrata are discussed in 
+this context.
+Submitted by: Kazuhiko Uchida [amx02193@mail2.accsnet.ne.jp]
+
+-----------------------------------------------------------------------------
+
+Legionella effectors that promote non-lytic release from protozoaJohn Chen1, Karim Suwwan de Felipe 2, Margaret Clarke 3, Hao Lu, 3O. 
+Roger Anderson4, Gil Segal5 and Howard A. Shuman11 Department of Microbiology and 2 Integrated Program in Cellular, 
+Molecular & Biophysical Studies, College of Physicians & Surgeons, 
+Columbia University, 701 West 168th Street, New York, NY 10032  3 Program in Molecular and Cell Biology, Oklahoma Medical Research 
+Foundation, 825 N.E. 13th Street, Oklahoma City, OK 73104-5046 4 Department of Biology, Lamont-Doherty Earth Observatory, Columbia 
+University, 61 Route 9W, Palisades, NY 10964-10005 Department of Molecular Microbiology & Biotechnology, George S. Wise 
+Faculty of Life Sciences, Tel-Aviv University, Ramat-Aviv, Tel-Aviv 69978, 
+IsraelScience, in press
+
+Legionella pneumophila, the bacterial agent of legionnairesâ disease, 
+replicates intracellularly within a specialized vacuole of mammalian and 
+protozoan host cells.  Little is known about the specialized vacuole except 
+that the Icm/Dot Type IV secretion system is essential for its formation 
+and maintenance.  The Legionella genome database contains two open reading 
+frames encoding polypeptides (LepA and LepB) with predicted coiled-coil 
+regions and weak homology to SNAREs; these are delivered to host cells by 
+an Icm/Dot dependent mechanism.  Analysis of mutant strains suggests that 
+the Lep proteins may enable the Legionella to commandeer a protozoan 
+exocytic pathway for dissemination of the pathogen.
+
+Submitted by: Margaret Clarke [clarkem@omrf.ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+
+Cytosolic [Ca2+]-transients in Dictyostelium discoideum depend on the filling 
+state of internal stores and on an active SERCA Ca2+-pumpChristina Schlatterer, Kathrin Happle, Daniel F. Lusche and JŸrgen Sonnemann+Faculty for Biology, University of Konstanz, 78457 Konstanz, FRG+ Institute of Pharmacology, Pediatric Oncology and Hematology, University 
+of Greifswald, 17487 Greifswald, FRGJ. Biol. Chem., in pressStimulation of Dictyostelium discoideum with cAMP evokes a change of the 
+cytosolic free Ca2+ concentration ([Ca2+]i). We analyzed the role of the 
+filling state of Ca2+-stores for the [Ca2+]i-transient. Parameters tested 
+were the height of the [Ca2+]i-elevation and the percentage of responding 
+amoebae. After loading stores with Ca2+, cAMP induced a [Ca2+]i-transient 
+in many cells. Without prior loading cAMP evoked a [Ca2+]i-change in few 
+cells only. This indicates that the [Ca2+]i-elevation is not mediated 
+exclusively by Ca2+-influx but also by Ca2+-release from stores. Reducing 
+the Ca2+-content of the stores by EGTA-preincubation led to a cAMP-activated 
+[Ca2+]i-increase even at low extracellular [Ca2+]. Moreover, addition of 
+Ca2+ itself elicited a capacitative [Ca2+]i-elevation. This effect was not 
+observed when stores were emptied by the standard technique of inhibiting 
+internal Ca2+-pumps with 2,5-di-(t-butyl)-1,4-hydroquinone (BHQ). Therefore 
+in Dictyostelium, an active internal Ca2+-ATPase is absolutely required to 
+allow for Ca2+-entry. No influence of the filling state of stores on 
+Ca2+-influx characteristics was found by the Mn2+-quenching technique which 
+monitors the rate of Ca2+-entry. Both, basal and cAMP-activated Mn2+-influx 
+rates were similar in control cells and cells with empty stores. By contrast, 
+determination of extracellular free Ca2+ concentration ([Ca2+]e)-changes 
+which represent the sum of Ca2+-influx and efflux revealed a higher rate of 
+[Ca2+]e-decrease in EGTA-treated than in control amoebae. We conclude that 
+emptying of Ca2+-stores does not change the rate of Ca2+-entry but results 
+in inhibition of the plasma membrane Ca2+-ATPase. Furthermore, the activities 
+of the Ca2+-transport ATPases of the stores is of crucial importance for the 
+regulation of [Ca2+]i-changes.
+
+Submitted by:  Christina Schlatterer [Christina.Schlatterer@uni-konstanz.de]
+
+
+===============================================================================[End Dicty News, volume 22, number 5]

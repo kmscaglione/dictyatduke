@@ -1,0 +1,168 @@
+Dicty News
+Electronic Edition
+Volume 14, number 2
+January 22, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+A Xestospongin C-sensitive Ca2+ store is required for cAMP-induced
+Ca2+-influx and cAMP-oscillations in Dictyostelium
+
+Ralph Schaloske, Christina Schlatterer and Dieter Malchow
+
+Faculty of Biology, University of Konstanz, Postfach 5560, 78457 Konstanz,
+Germany
+
+J. Biol. Chem., in press
+
+Abstract
+
+Xestospongin C (XeC) is known to bind to the IP3-sensitive store in
+mammalian cells and to inhibit IP3- and thapsigargin-induced Ca2+-release.
+In this study we show that this is also true for Dictyostelium. In
+addition, XeC inhibited Ca2+-uptake into purified vesicle fractions and
+induced Ca2+-release. This suggests that in the case of Dictyostelium XeC
+opens rather than plugs the IP3-receptor-channel as was proposed for
+mammalian cells (Gafni et al., Neuron (1997) 19, 723-733). In order to
+elucidate the function of the XeC-sensitive Ca2+-store in Dictyostelium
+during differentiation, we applied XeC to the cells and found that it
+caused a time-dependent increase of basal [Ca2+]i and inhibited
+cAMP-induced Ca2+-influx in single cells as well as in cell suspensions.
+Moreover, XeC blocked light scattering spikes and pulsatile
+cAMP-signalling.
+
+----------------------------------------------------------------------------
+
+Disruption of myosin function by a single charge change.
+
+Steffen Nock, Wenchuan Liang, Hans M. Warrick & James A. Spudich*
+
+Department of Biochemistry, Beckman Center B405, Stanford University
+Medical Center, Stanford CA 94305-5307, USA
+
+FEBS Letters, 12-23-99 issue
+
+ABSTRACT
+
+   The dynamic assembly / disassembly of nonmuscle myosin II filaments  is
+critical for the regulation of enzymatic activities and localization.
+Phosphorylation of three threonines, 1823, 1833 and 2029 in the tail of
+Dictyostelium discoideum myosin II has been implicated in control of myosin
+filament assembly. By systematically replacing the three threonines to
+aspartates, mimicking a phosphorylated residue, we found that position 1823
+is the most critical one for the regulation of myosin filament formation
+and in vivo function.  Surprisingly a single charge change is able to
+perturb filament formation and in vivo function of myosin II.
+
+----------------------------------------------------------------------------
+
+The mitochondrial DNA of Dictyostelium discoideum:  Complete sequence, gene
+content and genome organization.
+
+Shinji Ogawa1+, Ryuji Yoshino1, Kiyohiko Angata1, Masao Iwamoto1, Min Pi1,
+Kenji Kuroe1, Kuniko Matsuo1, Takahiro Morio1, Hideko Urushihara1, Kaichiro
+Yanagisawa1 and Yoshimasa Tanaka1,2,*
+
+1Institute of Biological Sciences and 2Center for TARA#, University of
+Tsukuba, Tsukuba, Ibaraki 305-8572, Japan
+
+Mol. Gen. Genet. in press.
+
+Abstract	
+
+   We present an overview of the gene content and genome organization of the
+mitochondrial genome of Dictyostelium discoideum. The mitochondria genome
+consists of 55,564 base-pairs with an A + T content of 72.6%. The
+identified genes are two ribosomal RNAs (rnl and rns), 18 tRNAs, ten
+subunits of the NADH dehydrogenase complex (nad1, 2, 3, 4, 4L, 5, 6, 7, 9
+and 11), apocytochrome b (cytb), three subunits of the cytochrome oxidase
+(cox1/2 and 3), four subunits of the ATP synthase complex (atp1, 6, 8 and
+9), 15 ribosomal proteins, and five open reading frames excluding intronic
+ORFs. Notable features of D. discoideum mtDNA include: (1) All genes are
+encoded on the same strand of the DNA and a universal genetic code is used.
+(2) The cox1 gene has no termination codon and is fused with downstream
+cox2 . The 13 ribosomal protein and four ORF genes form a cluster 15.4 kb
+long with several overlapping regions. (3) The number of tRNAs encoded in
+the genome is not sufficient to support the synthesis of mitochondrial
+protein. (4) In total, five group I introns reside in rnl and cox1/2, and
+three of which in cox1/2 contain four free-standing ORFs. We compare the
+genome to other sequenced mitochondrial genomes, particularly that of
+Acanthamoeba castellanii.
+
+----------------------------------------------------------------------------
+
+The molecular genetics of chemotaxis: 
+Sensing and responding to chemoattractant gradients
+
+Richard A. Firtel and Chang Y. Chung
+
+BioEssays, in press
+
+Summary
+
+Chemotaxis plays a central role in various biological processes, including 
+movement of neutrophils and macrophage during wound healing and aggregation 
+of Dictyostelium cells. During the past few years, new understanding of 
+the mechanisms controlling chemotaxis has been obtained through the molecular 
+genetic and biochemical studies of Dictyostelium and other experimental 
+systems. This review outlines our present understanding of the signaling 
+pathways that allow a cell to sense and respond to a chemoattractant gradient. 
+In response to chemoattractants, cells either become polarized in the 
+direction of the chemoattractant source, resulting in the formation of 
+a leading edge, or reorient their polarity in the direction of the 
+chemoattractant gradient and move with a stronger persistence. Models are 
+presented to explain this directional response. They include a localized 
+activation of pathways at the leading edge and an "inhibition" of these 
+pathways along the lateral edges of the cell. One of the primary pathways 
+that may be responsible for such localized responses is the activation of 
+phosphatidyl inositol-3 kinase (PI3K). Evidence suggests that a localized 
+formation of binding sites for PH (pleckstrin homology) domain-containing 
+proteins produced by PI3K leads to the formation of "activation domains" 
+at the leading edge, producing a localized response. 
+----------------------------------------------------------------------------
+
+The cellulose synthase gene of Dictyostelium
+
+Richard L. Blanton, Danny Fuller, Negin Iranfar, Mark J. Grimson, and
+William F. Loomis
+
+Department of Biological Sciences, Texas Tech University, Lubbock, TX
+79409, U.S.A.
+Department of Biology, University of California San Diego, La Jolla, CA
+92093, U.S.A.
+
+Proc. Natl. Acad. Sci , in press
+
+ABSTRACT
+
+Cellulose is a major component of the extracellular matrices formed during
+development of the social amoeba, Dictyostelium discoideum. We isolated
+insertional mutants that failed to accumulate cellulose and had no
+cellulose synthase activity at any stage of development. Development
+proceeded normally in the null mutants up to the beginning of stalk
+formation, at which point the culminating structures collapsed onto
+themselves, then proceeded to attempt culmination again.  No spores or
+stalk cells were ever made in the mutants, with all cells eventually
+lysing. The predicted product of the disrupted gene (dcsA) showed
+significant similarity to the catalytic subunit of cellulose synthases
+found in bacteria and putative homologs in plants. Enzyme activity and
+normal development were recovered in strains transformed with a construct
+expressing the intact dcsA gene. Growing amoebae carrying the construct
+accumulated the protein product of dcsA, but did not make cellulose until
+they had developed for at least 10 hours.  These studies show directly that
+the product of dcsA is necessary, but not sufficient, for synthesis of
+cellulose.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 2]
+
+  

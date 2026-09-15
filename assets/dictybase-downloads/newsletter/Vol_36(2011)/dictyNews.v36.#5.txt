@@ -1,0 +1,83 @@
+dictyNews
+Electronic Edition
+Volume 36, number 5
+Feb 11, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The dual-specificity protein phosphatase MkpB, homologous to mammalian 
+MKP phosphatases, is required for D. discoideum postaggregative development 
+and cisplatin response
+
+Ver—nica Moncho-Amor, Mar’a Galardi-Castilla, Rosario Perona and Leandro Sastre
+
+
+Differentiation, in press
+
+Dual-specificity protein phosphatases participate in signal transduction pathways 
+inactivating mitogen-activated protein kinases (MAP Kinases). These signaling 
+pathways are of critical importance in the regulation of numerous biological 
+processes, including cell proliferation, differentiation and development. The social 
+amoeba Dictyostelium discoideum harbors 14 genes coding for proteins containing 
+regions very similar to the dual-specificity protein phosphatase domain. One of 
+these genes, mkpB, additionally codes for a region similar to the Rhodanase 
+domain, characteristic of animal MAP Kinase-phosphatases, in its N-terminal 
+region. Cells that over-express this gene show increased protein phosphatase 
+activity.  mkpB is expressed in D. discoideum amoeba at growth but it is greatly 
+induced at 12 hours of multi-cellular development. Although it is expressed in all 
+the cells of developmental structures, mkpB mRNA is enriched in cells with a 
+distribution typical of anterior-like cells. Cells that express a catalytically inactive 
+mutant of MkpB grow and aggregate like wild-type cells but show a greatly 
+impaired post-aggregative development. In addition, the expression of cell-type 
+specific genes is very delayed, indicating that this protein plays an important role 
+in cell differentiation and development. Cells expressing the MkpB catalytically 
+inactive mutant show increased sensitivity to cisplatin, while cells over-expressing 
+wild type MkpB, or MkpA, proteins or mutated in the MAP kinase erkB gene are 
+more resistant to this chemotherapeutic drug, as also shown in human tumor cells. 
+
+
+Submitted by Leandro Sastre [lsastre@iib.uam.es]
+--------------------------------------------------------------------------------
+
+
+Legionella pneumophila infection is enhanced in a RacH-null mutant of 
+Dictyostelium
+
+Alessandra Balest, Barbara Peracino and Salvatore Bozzaro
+
+
+Communicative and integrative Biology, in press
+
+Recently we reported that Dictyostelium cells ingest Legionella pneumophila 
+by macropinocytosis, whereas other bacteria, such as Escherichia coli, 
+Mycobacterium avium, Neisseria meningitidis or Salmonella typhimurium, are 
+taken up by phagocytosis.1 In contrast to phagocytosis, macropinocytosis is 
+partially inhibited by PI3K or PTEN inactivation, whereas both processes are 
+sensitive to PLC inhibition. Independently from reduced uptake, L. pneumophila 
+proliferates more efficiently in PI3K-null than in wild type cells. PI3K inactivation 
+also overcomes the resistance to infection conferred by constitutively expressing 
+the endo-lysosomal iron transporter Nramp1. We have shown this to be due to
+altered recruitment of the V-H+ ATPase, but not Nramp1, in the Legionella-
+containing vacuole (LCV) early during infection.1 As further evidence for 
+impaired LCV acidification we examine here the effects of disrupting the 
+small G protein RacH on Legionella infection.
+
+
+Submitted by: salvatore bozzaro [salvatore.bozzaro@unito.it]
+==============================================================
+[End dictyNews, volume 36, number 5]

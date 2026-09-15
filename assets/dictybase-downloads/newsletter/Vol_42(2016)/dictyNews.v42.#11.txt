@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 42, number 11
+April 15, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Heterotrimeric G protein shuttling via Gip1 extends the dynamic 
+range of eukaryotic chemotaxis
+
+Yoichiro Kamimura Yukihiro Miyanaga and Masahiro Ueda 
+
+Laboratory for Cell Signaling Dynamics, Quantitative Biology 
+Center (QBiC), RIKEN, Suita, Osaka, 565-0874, Japan.
+Laboratory for Single Molecular Biology, Department of Biological 
+Sciences, Graduate School of Science, Osaka University, Toyonaka, 
+Osaka, 560-0043, Japan.
+
+
+Proc. Natl. Acad. Sci. USA , in press.
+
+Chemotactic eukaryote cells can sense chemical gradients over 
+a wide range of concentrations via heterotrimeric G-protein 
+signaling; however, the underlying wide-range sensing mechanisms 
+are only partially understood. Here we report that a novel 
+regulator of G proteins, G protein-interacting protein 1 (Gip1), 
+is essential for extending the chemotactic range of Dictyostelium 
+cells. Genetic disruption of Gip1 caused severe defects in gradient 
+sensing and directed cell migration at high but not low 
+concentrations of chemoattractant. Also, Gip1 was found to bind 
+and sequester G proteins in cytosolic pools. Receptor activation 
+induced G-protein translocation to the plasma membrane from the 
+cytosol in a Gip1-dependent manner, causing a biased redistribution 
+of G protein on the membrane along a chemoattractant gradient. 
+These findings suggest that Gip1 regulates G-protein shuttling 
+between the cytosol and the membrane to ensure the availability 
+and biased redistribution of G protein on the membrane for receptor-
+mediated chemotactic signaling. This mechanism offers an 
+explanation for the wide-range sensing seen in eukaryotic 
+chemotaxis.
+
+
+submitted by: Masahiro Ueda  [masahiroueda@fbs.osaka-u.ac.jp]
+———————————————————————————————————————
+
+
+Mutant p97 exhibits species-specific changes of its ATPase 
+activity and compromises the UBXD9-mediated monomerisation 
+of p97 hexamers
+
+Ramesh Rijal, Khalid Arhzaouy, Karl-Heinz Strucksberg, 
+Megan Cross, Andreas Hofmann, Rolf Schroeder, Christoph S. 
+Clemen, Ludwig Eichinger
+
+
+Eur. J. Cell Biol., in press
+
+p97 (VCP) is a homo-hexameric triple-A ATPase that exerts a plethora 
+of cellular processes. Heterozygous missense mu-tations of p97 cause 
+at least five human neurodegenerative disorders. However, the 
+specific molecular consequences of p97 mutations are hitherto widely 
+unknown. Our in silico structural models of human and Dictyostelium 
+p97 showed that the disease-causing R93C, R155H, and R155C as well 
+as R154C, E219K, R154C/E219K mutations of human and Dic-tyostelium 
+p97, respectively, are surface exposed amino acid residues. In-gel p97 
+ATPase activity measurements of p97 monomers and hexamers revealed 
+significant mutation- and species-specific differences. While all 
+human p97 mutations led to an increase in ATPase activity, no changes 
+could be detected for the Dictyostelium R154C mutant, which is 
+orthol-ogous to human R155C. The E219K mutation led to an almost 
+complete loss of activity, which was partially recuperated in the 
+R154C/E219K double-mutant indicating p97 inter-domain communication. 
+By means of co-immunoprecipitation experiments we identified an 
+UBX-domain containing Dictyostelium protein as a novel p97 interaction 
+partner. We cate-gorized all UBX-domain containing Dictyostelium 
+proteins and named the interaction partner UBXD9. Pull-down assays and 
+surface plasmon resonance analyses of Dictyostelium UBXD9 or the human 
+orthologue TUG/ASPL/UBXD9 demon-strated direct interactions with p97 
+as well as species-, mutation- and ATP-dependent differences in the 
+binding affinities. Sucrose density gradients revealed that both human 
+and Dictyostelium UBXD9 proteins very efficiently disassembled wild-type, 
+but to a lesser extent mutant p97 hexamers into monomers. Our results 
+are consistent with a scenario in which p97 point mutations lead to 
+differences in enzymatic activities and molecular interactions, which in 
+the long-term result in a late-onset and progressive multisystem disease.
+
+
+submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 42, number 11]

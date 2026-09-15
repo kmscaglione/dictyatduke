@@ -1,0 +1,122 @@
+dictyNews
+Electronic Edition
+Volume 39, number 19
+July 5, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+The AmpA protein functions by different mechanisms to influence early cell
+type specification and to modulate cell adhesion and actin polymerization
+in Dictyostelium discoideum
+
+Hoa N. Cost, Elizabeth F. Noratel and Daphne D. Blumberg
+
+Department of Biological Sciences, University of Maryland Baltimore County
+1000 Hilltop Circle, Baltimore, Maryland 21250
+
+
+Differentiation, in press.
+
+The Dictyostelium discoideum ampA gene encodes a multifunctional regulator
+protein that modulates cell-cell and cell-substrate adhesions and actin
+polymerization during growth and is necessary for correct cell type
+specification and patterning during development. Insertional inactivation
+of the ampA gene results in defects that define two distinct roles for the
+ampA gene during development. AmpA is necessary in a non-cell autonomous
+manner to prevent premature expression of a prespore gene marker. It is
+also necessary in a cell autonomous manner for the anterior like cells,
+which express the ampA gene, to migrate to the upper cup during
+culmination. It is also necessary to prevent excessive cell-cell
+agglutination when cells are developed in a submerged suspension culture. 
+Here we demonstrate that a supernatant source of AmpA protein, added
+extracellularly, can prevent the premature mis-expression of the prespore
+marker. Synthetic oligopeptides are used to identify the domain of the
+AmpA protein that is important for preventing cells from mis-expressing
+the prespore gene.  We further demonstrate that a factor capable of
+inducing additional cells to express the prespore gene marker accumulates
+extracellularly in the absence of AmpA protein. While secreted AmpA acts
+extracellularly to suppress prespore gene expression, the effects of AmpA
+on cell agglutination and on actin polymerization in growing cells are not
+due to an extracellular role of secreted AmpA protein.  Rather, these
+effects appear to reflect a distinct cell autonomous role of the ampA
+gene. Finally, we show that secretion of AmpA protein is brought about by
+elevating the levels of expression of ampA so that the protein accumulates
+to an excessive level.
+
+
+Submitted by Daphne Blumberg [blumberg@umbc.edu]
+---------------------------------------------------------------------------
+
+
+ForC lacks canonical formin activity but bundles actin filaments and is 
+required and multicellular development of Dictyostelium cells
+
+Alexander Junemann (1), Moritz Winterhoff (1), Benjamin Nordholz (1), 
+Klemens Rottner (2,3), Ludwig Eichinger (4), Ralph Gräf (5), and Jan Faix (1)
+
+(1) Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg Straße 1, 30625 Hannover, Germany; 
+(2) Institute of Genetics, University of Bonn, Karlrobert-Kreiten-Strasse 13, 
+53115 Bonn, Germany; 
+(3) Helmholtz Centre for Infection Research, Inhoffenstrasse 7, 38124 
+Braunschweig, Germany; 
+(4) Centre for Biochemistry, Medical Faculty, University of Cologne, 
+Joseph-Stelzmann-Str. 52, 50931 Cologne, Germany; 
+(5) Department of Cell Biology, University of Potsdam, 
+Karl-Liebknecht-Str. 24-25, 14476 Potsdam-Golm, Germany.
+
+
+EJCB, in press
+
+Diaphanous-related formins (DRFs) drive the nucleation and elongation 
+of linear actin filaments downstream of Rho GTPase signaling pathways. 
+Dictyostelium formin C (ForC) resembles a DRF, except that it lacks a 
+genuine formin homology domain 1 (FH1), raising the questions whether 
+or not ForC can nucleate and elongate actin filaments. We found that a 
+recombinant ForC-FH2 fragment does not nucleate actin polymerization, 
+but moderately decreases the rate of spontaneous actin assembly and 
+disassembly, although the barbed-end elongation rate in the presence 
+of the formin was not markedly changed. However, the protein bound 
+and crosslinked actin filaments into loose bundles of mixed polarity. 
+Furthermore, ForC is an important regulator of morphogenesis since 
+ForC-null cells are severely impaired in development resulting in the 
+formation of aberrant fruiting bodies. Immunoblotting revealed that ForC 
+is absent during growth, but becomes detectable at the onset of early 
+aggregation when cells chemotactically stream together to form a 
+multicellular organism, and peaks around the culmination stage. 
+Fluorescence microscopy of cells ectopically expressing a GFP-tagged, 
+N-terminal ForC fragment showed its prominent accumulation in the 
+leading edge, suggesting that ForC may play a role in cell migration. In 
+agreement with its expression profile, no defects were observed in 
+random migration of vegetative mutant cells. Notably, chemotaxis of 
+starved cells towards a source of cAMP was severely impaired as 
+opposed to control. This was, however, largely due to a marked 
+developmental delay of the mutant, as evidenced by the expression profile 
+of the early developmental marker csA. In line with this, chemotaxis was 
+almost restored to wild type levels after prolonged starvation. Finally, we 
+observed a complete failure of phototaxis due to abolished slug formation 
+and a massive reduction of spores consistent with forC promoter-driven 
+expression of ß-galactosidase in prespore cells. Together, these findings 
+demonstrate ForC to be critically involved in regulation of the cytoskeleton 
+during various stages of development.
+
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+==============================================================
+[End dictyNews, volume 39, number 19]

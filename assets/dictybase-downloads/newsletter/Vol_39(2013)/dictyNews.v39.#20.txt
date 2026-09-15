@@ -1,0 +1,272 @@
+dictyNews
+Electronic Edition
+Volume 39, number 20
+July 12, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+ForC lacks canonical formin activity but bundles actin filaments and is 
+required and multicellular development of Dictyostelium cells
+
+Alexander Junemann (1), Moritz Winterhoff (1), Benjamin Nordholz (1), 
+Klemens Rottner (2,3), Ludwig Eichinger (4), Ralph Gräf (5), and Jan Faix (1)
+
+(1) Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg Straße 1, 30625 Hannover, Germany
+(2) Institute of Genetics, University of Bonn, Karlrobert-Kreiten-Strasse 13, 
+53115 Bonn, Germany
+(3) Helmholtz Centre for Infection Research, Inhoffenstrasse 7, 38124 
+Braunschweig, Germany
+(4) Centre for Biochemistry, Medical Faculty, University of Cologne, 
+Joseph-Stelzmann-Str. 52, 50931 Cologne, Germany
+(5) Department of Cell Biology, University of Potsdam, 
+Karl-Liebknecht-Str. 24-25, 14476 Potsdam-Golm, Germany
+
+
+EJCB, in press
+
+Diaphanous-related formins (DRFs) drive the nucleation and elongation of 
+linear actin filaments downstream of Rho GTPase signaling pathways. 
+Dictyostelium formin C (ForC) resembles a DRF, except that it lacks a genuine 
+formin homology domain 1 (FH1), raising the questions whether or not ForC 
+can nucleate and elongate actin filaments. We found that a recombinant 
+ForC-FH2 fragment does not nucleate actin polymerization, but moderately 
+decreases the rate of spontaneous actin assembly and disassembly, although 
+the barbed-end elongation rate in the presence of the formin was not markedly 
+changed. However, the protein bound and crosslinked actin filaments into loose 
+bundles of mixed polarity. Furthermore, ForC is an important regulator of 
+morphogenesis since ForC-null cells are severely impaired in development 
+resulting in the formation of aberrant fruiting bodies. Immunoblotting revealed 
+that ForC is absent during growth, but becomes detectable at the onset of early 
+aggregation when cells chemotactically stream together to form a multicellular 
+organism, and peaks around the culmination stage. Fluorescence microscopy of 
+cells ectopically expressing a GFP-tagged, N-terminal ForC fragment showed its 
+prominent accumulation in the leading edge, suggesting that ForC may play a 
+role in cell migration. In agreement with its expression profile, no defects were 
+observed in random migration of vegetative mutant cells. Notably, chemotaxis of 
+starved cells towards a source of cAMP was severely impaired as opposed to 
+control. This was, however, largely due to a marked developmental delay of the 
+mutant, as evidenced by the expression profile of the early developmental marker 
+csA. In line with this, chemotaxis was almost restored to wild type levels after 
+prolonged starvation. Finally, we observed a complete failure of phototaxis due 
+to abolished slug formation and a massive reduction of spores consistent with 
+forC promoter-driven expression of ß-galactosidase in presporecells. Together, 
+these findings demonstrate ForC to be critically involved in regulation of the 
+cytoskeleton during various stages of development.
+
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+---------------------------------------------------------------------------
+
+
+Mitochondria are the target organelle of differentiation-inducing factor-3, 
+an anti-tumor agent isolated from Dictyostelium discoideum
+
+Yuzuru Kubohara 1*, Haruhisa Kikuchi 2, Yusuke Matsuo 2, 
+Yoshiteru Oshima 2 and Yoshimi Homma 3
+
+1 Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation, Gunma University, Maebashi 371-8512, Japan
+2 Laboratory of Natural Product Chemistry, Tohoku University Graduate School 
+of Pharmaceutical Sciences, Aoba-yama, Aoba-ku, Sendai 980-8578, Japan
+3 Department of Biomolecular Science, Institute of Biomedical Sciences, 
+Fukushima Medical University School of Medicine, Fukushima 960-1295, Japan
+
+
+PLoS ONE, in press.
+
+Differentiation-inducing factor-3 (DIF-3), found in the cellular slime mold 
+Dictyostelium discoideum, and its derivatives such as butoxy-DIF-3 
+(Bu-DIF-3) are potent anti-tumor agents. However, the precise mechanisms 
+underlying the actions of DIF-3 remain to be elucidated. In this study, we 
+synthesized a green fluorescent derivative of DIF-3, BODIPY-DIF-3, and a 
+control fluorescent compound, Bu-BODIPY (butyl-BODIPY), and investigated 
+how DIF-like molecules behave in human cervical cancer HeLa cells by using 
+both fluorescence and electron microscopy. BODIPY-DIF-3 at 5–20 microM 
+suppressed cell growth in a dose-dependent manner, whereas Bu-BODIPY 
+had minimal effect on cell growth. When cells were incubated with BODIPY-
+DIF-3 at 20 microM, it penetrated cell membranes within 0.5 h and localized 
+mainly in mitochondria, while Bu-BODIPY did not stain the cells. Exposure of 
+cells for 1–3 days to DIF-3, Bu-DIF-3, BODIPY-DIF-3, or CCCP (a mitochondrial 
+uncoupler) induced substantial mitochondrial swelling, suppressing cell growth. 
+When added to isolated mitochondria, DIF-3, Bu-DIF-3, and BOIDPY-DIF-3, like 
+CCCP, dose-dependently promoted the rate of oxygen consumption, but 
+Bu-BODIPY did not. Our results suggest that these bioactive DIF-like molecules 
+suppress cell growth, at least in part, by disturbing mitochondrial activity. This is 
+the first report showing the cellular localization and behavior of DIF-like 
+molecules in mammalian tumor cells.
+
+
+Submitted by Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+---------------------------------------------------------------------------
+
+
+Target recognition, RNA methylation activity and transcriptional regulation 
+of the Dictyostelium discoideum Dnmt2-homologue (DnmA) 
+
+Sara Mueller1,2, Indra M. Windhof1, Vladimir Maximov1,3, Tomasz Jurkowski4, 
+Albert Jeltsch4, Konrad U. Förstner5, Cynthia M. Sharma5, Ralph Graef6, 
+Wolfgang Nellen1*
+
+1 Department of Genetics, University of Kassel, Heinrich-Plett-Str. 40, 
+34132 Kassel, Germany
+2 current address: Institute for Biochemistry and Molecular Cell Biology, 
+Georg-August-University, Humboldtallee 23, 37073 Göttingen, Germany
+3 current address: Department of Plant Biology and Forest Genetics, 
+Uppsala BioCenter, Swedish University of Agricultural Sciences, 
+PO-Box 7080, SE-75007 Uppsala, Sweden
+4 Institute of Biochemistry, University Stuttgart, Pfaffenwaldring 55, 
+70569 Stuttgart, Germany
+5 Research Center for Infectious Diseases (ZINF), University of Wuerzburg, 
+Josef-Schneider-Str. 2/Bau D15, 97080 Wuerzburg
+6  Universitaet Potsdam, Institut für Biochemie und Biologie, Abt. Zellbiologie, 
+Karl-Liebknecht-Strasse 24-25,, 14476 Potsdam - Golm
+
+
+Nucleic Acids Research, in press 
+
+Although the DNA methyltransferase 2 family is highly conserved during 
+evolution and recent reports suggested a dual specificity with stronger activity 
+on tRNA than DNA substrates, the biological function is still obscure. We show 
+that the Dictyostelium discoideum Dnmt2-homologue DnmA is an active tRNA 
+methyltransferase that modifies C38 in tRNAAsp(GUC) in vitro and in vivo. By 
+a UV-crosslinking and immunoprecipitation (CLIP) approach we identified 
+further DnmA targets. This revealed specific tRNA fragments bound by the 
+enzyme and identified tRNAGlu(CUC/UUC) and tRNAGly(GCC) as new but 
+weaker substrates for both human Dnmt2 and DnmA in vitro but apparently 
+not in vivo. Dnmt2 enzymes form transient covalent complexes with their 
+substrates. The dynamics of complex formation and complex resolution reflect 
+methylation efficiency in vitro. Quantitative PCR analyses revealed alterations 
+in dnmA expression during development, cell cycle and in response to 
+temperature stress. However, dnmA expression only partially correlated with 
+tRNA methylation in vivo. Strikingly, dnmA expression in the laboratory strain 
+AX2 was significantly lower than in the NC4 parent strain. Since expression 
+levels and binding of DnmA to a target in vivo are apparently not necessarily 
+accompanied by methylation, we propose an additional biological function of 
+DnmA apart from methylation.
+
+
+Submitted by Wolfgang Nellen [nellen@uni-kassel.de]
+---------------------------------------------------------------------------
+
+
+Chromatin organisation of transgenes in Dictyostelium
+
+Indra Windhof*, Manu J. Dubin*1 and Wolfgang Nellen2
+
+Abt. Genetik, FB 10, Universität Kassel, Heinrich-Plett-Str. 40, 34132 Kassel, 
+Germany
+
+* these authors equally contributed to this paper
+1 present address: Gregor Mendel Institute of Molecular Plant Biology, 
+Doktor-Bohr-Gasse 3, 1030 Vienna, Austria
+2 corresponding author
+
+
+Die Pharmazie 7/2013, page 595-600.
+
+The introduction of transgenes in Dictyostelium discoideum typically results in 
+the integration of the transformation vector into the genome at one or a few 
+insertion sites as tandem arrays of approx. 100 copies. Exceptions are 
+extrachromosomal vectors, which do not integrate into chromosomes, and 
+vectors containing resistance markers such as Blasticidin, which integrate as 
+single copies at one or a few sites. 
+
+Here we report that low copy number vector inserts display typical euchromatic 
+features while high copy number insertions are enriched for modifications 
+associate with heterochromatin. Interestingly, high copy number insertions also 
+colocalise with heterochromatin, are enriched for the centromeric histone CenH3 
+and display centromere-like behaviour during mitosis. We also found that the 
+chromatin organisation on extrachromosmal transgenes is different from those 
+integrated into the chromosomes.
+
+
+Submitted by Wolfgang Nellen [nellen@uni-kassel.de]
+---------------------------------------------------------------------------
+
+
+WASH is required for lysosomal recycling and efficient autophagic and 
+phagocytic digestion
+
+Jason S. King1, Aurélie Gueho2, Monica Hagedorn3, Navin Gopaldass,2 
+Florence Leuba2, Thierry Soldati2 and Robert H. Insall1.
+
+1 Beatson Institute for Cancer Research, Garscube Estate, Bearsden, 
+Glasgow, UK. G61 1BD
+2 Department of Biochemistry, University of Geneva, 30 quai Ernest 
+Ansermet, Sciences II, CH-1211-Genève-4, Switzerland.
+3 Bernhard Nocht Institute for Tropical Medicine, Bernhard-Nocht Strasse 74, 
+20359 Hamburg, Germany.
+
+
+Molecular Biology of the Cell, In press
+
+WASH is an important regulator of vesicle trafficking. By generating actin on the 
+surface of intracellular vesicles, WASH is able to directly regulate endosomal 
+sorting and maturation. Here we report that in Dictyostelium, WASH is also 
+required for the lysosomal digestion of both phagocytic and autophagic cargo. 
+Consequently, Dictyostelium cells lacking WASH are unable to grow on many 
+bacteria, or digest their own cytoplasm to survive starvation. WASH is required 
+for efficient phagosomal proteolysis, and proteomic analysis demonstrates that 
+this is due to reduced delivery of lysosomal hydrolases. Both protease and lipase 
+delivery are disrupted, and lipid catabolism is also perturbed. Starvation-induced 
+autophagy therefore leads to phospholipid accumulation within WASH null 
+lysosomes. This causes the formation of multilamellar bodies typical of many 
+lysosomal storage diseases. Mechanistically, we show that in cells lacking WASH, 
+cathepsin D becomes trapped in a late endosomal compartment, unable to be 
+recycled to nascent phagosomes and autophagosomes. WASH is therefore 
+required for the maturation of lysosomes to a stage where hydrolases can be
+ retrieved and reused. 
+
+
+Submitted by Jason King [j.king@beatson.gla.ac.uk]
+---------------------------------------------------------------------------
+ 
+ 
+ Aeromonas salmonicida Ati2 is an effector protein of the type three secretion 
+ system.
+
+Dallaire-Dufresne S, Barbeau X, Sarty D, Tanaka KH, Denoncourt AM, Lagüe P, 
+Reith ME, Charette SJ.
+
+
+Microbiology. 2013 Jul 7. [Epub ahead of print]
+
+The bacterium Aeromonas salmonicida, a fish pathogen, uses the type three 
+secretion system (TTSS) to inject effector proteins into host cells to promote the 
+infection. The study of the genome of A. salmonicida has revealed the existence 
+of Ati2, a potential TTSS effector protein. In the present study, a structure-function 
+analysis of Ati2 has been done to determine its role in the virulence of 
+A. salmonicida. Biochemical assays revealed that Ati2 is secreted into the medium 
+in a TTSS-dependent manner. Protein sequence analyses, molecular modeling 
+and biochemical assays demonstrated that Ati2 is an inositol polyphosphate 
+5-phosphatase which hydrolyzes PtdIns(4,5)P2 and PtdIns(3,4,5)P3 in a way 
+similar to VPA0450, a protein from Vibrio parahaemolyticus having high sequence 
+similarity with Ati2. Mutants of Ati2 with altered amino acids at two different 
+locations in the catalytic site displayed no phosphatase activity. Wild-type and 
+mutant forms of Ati2 were cloned into expression systems for Dictyostelium 
+discoideum, a soil amoeba used as alternative host to study A. salmonicida 
+virulence. Expression tests allowed us to demonstrate that Ati2 is toxic for the 
+host cell in a catalytic-dependent manner. Finally, this study has demonstrated 
+the existence of a new TTSS effector protein in A. salmonicida.
+
+
+Submitted by Steve Charette [steve.charette@bcm.ulaval.ca]
+==============================================================
+[End dictyNews, volume 39, number 20]

@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 27, number 2
+July 21, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Novel phosphatidylinositol phosphate kinases with G-protein coupled receptor 
+signature are shared by Dictyostelium and Phytophthora
+
+Deenadayalan Bakthavatsalam 1,3, *, Harold J.G. Meijer 2, *, Angelika A. 
+Noegel 1 and Francine Govers 2 
+
+1 Centre for Biochemistry, Institute of Biochemistry I, Medical Faculty and 
+Centre for Molecular Medicine Cologne, University of Cologne, Cologne, 
+Germany.
+2 Laboratory of Phytopathology, Plant Sciences Group, Wageningen University, 
+Binnenhaven 5, 
+NL-6709 PD Wageningen, The Netherlands.
+3 Present address: Rice University, Department of Biochemistry and Cell 
+Biology, 6100 S Main Street MS 140, Houston, Texas 77005, USA.
+
+* These authors contributed equally to this work.
+
+
+Trends in Microbiology, in press
+
+G-protein coupled receptors (GPCR) and phosphatidylinositol phosphate 
+kinases (PIPK) are important key switches in signal transduction pathways. 
+A novel class of proteins was identified in the genomes of two non-related 
+organisms that harbor both a GPCR- and a PIPK-domain. Dictyostelium 
+discoideum contains one GPCR-PIPK which is crucial in cell density sensing. 
+The genomes of Phytophthora sojae and Phytophthora ramorum each encode 
+twelve GPCR-PIPKs. Intriguingly, these are currently the only species that 
+have these two domains combined in one protein. The structural and 
+regulatory characteristics of GPCR-PIPKs are presented and discussed. It 
+is hypothesized that, upon activation, GPCR-PIPKs are capable to trigger 
+heterotrimeric G-protein signaling and phosphoinositide second-messenger 
+synthesis.
+
+
+Submitted by: Deen Bakthavatsalam [deen@rice.edu]
+-----------------------------------------------------------------------------
+
+
+Biosynthesis of dictyostelium differentiation inducing factor by a hybrid 
+type I fatty acid-type III polyketide synthase
+
+Michael B. Austin1,6, Tamao Saito2,6, Marianne E. Bowman1, Stephen Haydock3, 
+Atsushi Kato2, Bradley S. Moore4, Robert R. Kay5*, and Joseph P. Noel1*
+
+1Howard Hughes Medical Institute, Jack H. Skirball Center for Chemical 
+Biology and Proteomics, The Salk Institute for Biological Studies, 
+La Jolla, CA 92037, USA
+2Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University 060-0810 Sapporo, Japan
+3Biochemistry Department, University of Cambridge, Cambridge CB2 1QW, UK
+4Scripps Institution of Oceanography and Skaggs School of Pharmacy and 
+Pharmaceutical Sciences, University of California San Diego, La Jolla, 
+CA 92037-0634, USA
+5MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 2QH, UK
+
+6These authors contributed equally to this work.
+
+
+Nature Chemical Biology, in press
+
+Differentiation Inducing Factors (DIFs) modulate formation of distinct 
+communal cell types from identical Dictyostelium discoideum amoeba, but DIF 
+biosynthesis remains obscure. We report complimentary in vivo and in vitro 
+experiments identifying one of two ~3000-residue D. discoideum proteins, 
+termed 'steely', as responsible for biosynthesis of the DIF acyl 
+phloroglucinol scaffold. Steely proteins possess six catalytic domains 
+homologous to metazoan type I Fatty Acid Synthases (FASs), but feature an 
+iterative type III Polyketide Synthase (PKS) in place of the expected FAS 
+C-terminal thioesterase (TE) used to off-load fatty acid products. This 
+novel domain arrangement likely facilitates covalent transfer of steely 
+N-terminal acyl products directly to these C-terminal type III PKS active 
+sites, which catalyze both iterative polyketide extension and cyclization. 
+A steely C-terminal domain crystal structure confirms conservation of the 
+homodimeric type III PKS fold. These findings suggest new bioengineering 
+strategies for expanding the scope of fatty acid and polyketide 
+biosynthesis. 
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+==============================================================================
+[End dictyNews, volume 27, number 2] 

@@ -1,0 +1,114 @@
+Dicty News
+Electronic Edition
+Volume 14, number 10
+April 29, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+Rac1 GTPases Control Filopodia Formation, Cell Motility, Endocytosis,
+Cytokinesis, and Development in Dictyostelium
+
+Michel Dumontier, Petra Höcht, Ursula Mintert, and Jan Faix
+
+JCS, in press.
+
+
+SUMMARY
+
+The function of the highly homologous Rac1A, Rac1B, and Rac1C GTPases of
+the Dictyostelium Rac1 group was investigated. All three GTPases bound with
+an equal capacity to the IQGAP-related protein DGAP1, with a preference for
+the activated GTP-bound form. Strong overexpression of wild-type Rac1
+GTPases N-terminally tagged with green fluorescent protein (GFP),
+predominantly induced the formation of numerous long filopodia. Remarkably,
+expression of the constitutively-activated GTPases resulted in
+dominant-negative phenotypes: these Rac1-V12 mutants completely lacked
+filopodia but formed numerous crown shaped structures resembling
+micropinosomes. Moreover, these mutants were severely impaired in cell
+motility, colony growth, phagocytosis, pinocytosis, cytokinesis, and
+development. Transformants expressing constitutively-inactivated Rac1-N17
+proteins were similar to wild-type cells, but displayed abundant and short
+filopodia and exhibited a moderate defect in cytokinesis. Taken together,
+our results indicate that the three GTPases play an identical role in
+signaling pathways and are key regulators of cellular activities that
+depend on the re-organization of the actin cytoskeleton in Dictyostelium.
+
+----------------------------------------------------------------------------
+
+Two-step positioning of a cleavage furrow by cortexillin and myosin II 
+
+Igor Weber, Ralph Neujahr, Aiping Du, Jana Koehler, Jan Faix and Guenther
+Gerisch
+
+Max-Planck-Institut fuer Biochemie, Am Klopferspitz 18a, D-82152
+Martinsried, Germany
+
+Current Biology, in press.
+
+Background: 
+The conventional myosin II is dispensable for mitotic division in
+Dictyostelium if the cells are attached to a substrate, but is required in
+suspension. Only a small fraction of attached myosin II-null cells fails to
+divide. Cortexillins are actin-bundling proteins important for the
+formation of a regular cleavage furrow, even in attached cells.
+Cortexillins translocate to the midzone of mitotic cells independent of
+their contact to a substrate. The cooperation of myosin II and cortexillin
+I in determining the position of a cleavage furrow is subject of the paper. 
+
+Results: 
+The fraction of attached myosin II-null cells that fail to divide is
+analysed using GFP-cortexillin I as a marker for priming of a cleavage
+furrow. We show that positioning of a cleavage furrow is split into two
+steps. In a myosin II- and substrate-independent process, cortexillin I
+delineates a zone around the equatorial region of the cell where a cleavage
+furrow can be formed. Myosin II reliably focusses the cleavage furrow to
+the middle of this cortexillin I zone. If asymmetric cleavage in the
+absence of myosin II partitions a cell into a binucleate and an anucleate
+portion, cell-surface ruffles are induced along the cleavage furrow, which
+lead to movement of the anucleate portion along the connecting strand
+towards the binucleate one. 
+
+Conclusions: 	
+In myosin II-null cells, cleavage furrow positioning occurs in two steps:
+priming of the furrow region and actual cleavage, which may proceed in the
+middle or at one border of the cortexillin ring. A control mechanism acting
+at late cytokinesis prevents cell division into an anucleate and a
+binucleate portion, causing a displaced furrow to regress if it becomes
+aberrantly located on top of polar microtubule asters.
+
+
+----------------------------------------------------------------------------
+
+Discrete Interactions in Cell Adhesion Measured by Single-Molecule Force
+Spectroscopy
+
+Martin Benoit, Daniela Gabriel*, Guenther Gerisch* & Hermann E. Gaub
+
+LMU, Sektion Physik, Amalienstr 54, D-80799 Muenchen, Germany
+* MPI fuer Biochemie, Am Klopferspitz 18a, D-82152 Martinsried, Germany 
+
+Nature Cell Biology, in press.
+
+Cell-to-cell adhesion mediated by specific cell-surface molecules is
+essential for multicellular development. We controlled the interaction
+between single cells and combined single-molecule force spectroscopy with
+genetic manipulation in order to measure de-adhesion forces at the
+resolution of individual cell-adhesion molecules. The measurements were
+focussed on contact site A as a prototype of cell adhesion proteins. The
+csA glycoprotein is specifically expressed in aggregating cells of
+Dictyostelium discoideum, which are engaged in the process of building up a
+multicellular organism. De-adhesion between two adjacent cell surfaces were
+found to be composed of discrete interactions characterized by an unbinding
+force of 23 ±8 pN measured at a rupture rate of 2.5 ±0.5 µm/sec.
+ 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 10]

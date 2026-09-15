@@ -1,0 +1,60 @@
+Dicty NewsElectronic EditionVolume 21, number 17November 28, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+=============  Abstracts=============
+
+Generation of double gene disruptions in Dictyostelium discoideum using a 
+single antibiotic marker selection Venkaiah Betapudi, Karen Shoebotham, and Thomas T. Egelhoff Department of Physiology and Biophysics, Case Western Reserve University, 
+10900 Euclid Avenue, Cleveland, OH 44106, USA Biotechniques, in press 
+Gene targeting is a powerful molecular genetic technique that has been widely 
+used to understand specific gene function in vivo. This technique allows the 
+ablation of an endogenous gene by recombination between an introduced DNA 
+fragment and the homologous target gene. However, when multiple gene 
+disruptions are needed, the availability of only a limited number of marker 
+genes becomes a complication. Here we describe a new approach to perform 
+double gene disruptions in Dictyostelium discoideum by simultaneous 
+transfection of two gene targeting cassettes followed by performing clonal 
+selection against only one marker gene. The subsequent PCR-based screens of 
+blasticidin-resistant clones revealed the integration of both the selected and 
+the unselected targeting cassettes at their original respective loci creating 
+complete gene disruptions. For the genes we have tested in these studies(myosin heavy chain kinases B and C), the efficiency of the double gene 
+targeting event is found in the range of 2%–5% of all blasticidin-resistant 
+colonies following the transfection step. This approach for the simultaneous 
+disruptions of multiple genes should prove to be a valuable tool for other 
+laboratories interested in creating multiple gene disruptants in 
+Dictyostelium or other organisms where a limited number of selectable markers 
+are available. 
+ 
+Submitted by:  Thomas T Egelhoff [tte@po.cwru.edu]
+
+-----------------------------------------------------------------------------
+
+Dynamic actin patterns and Arp2/3 assembly at the substrate-attached surface 
+of motile cells Till Bretschneider 1, Stefan Diez 2, Kurt Anderson 2, John Heuser 3, 
+Margaret Clarke 4, Annette Mueller-Taubenberger 1, Jana Koehler 1 and 
+Guenther Gerisch 1 1  Max-Planck-Institut fuer Biochemie,  D-82152 Martinsried;2  Max-Planck-Institut fuer molekulare Zellbiologie und Genetik,    Pfotenhauer Str. 108, D-01307 Dresden;3  Department of Cell Biology and Physiology, Washington University     School of Medicine, St. Louis, Missouri, USA;4  Program in Molecular and Cell Biology, Oklahoma Medical    Research Foundation, Oklahoma City, Oklahoma, USA.  Current Biology, in press
+ Summary Background: In the cortical region of motile cells, the actin network is 
+rapidly reorganized as required for movement in various directions and of 
+cell-to-substrate adhesion. Visualization of the fine structure and 
+quantitative analysis of actin network dynamics requires the combination of 
+high-resolution imaging with a specific fluorescent probe that highlights the 
+filamentous actin structures in live cells. Results: Combining total-internal reflection fluorescence (TIRF) microscopy 
+with a method for labeling actin filaments in live cells, we analyze the 
+dynamics of actin patterns in the highly motile cells of Dictyostelium. A 
+rapidly restructured network of single or bundled actin filaments provides 
+a scaffold for the assembly of differentiated actin complexes. Two types of 
+these structures are characterized by recruitment of the Arp2/3 complex: 
+stationary foci with a lifetime of 7-10 seconds, and traveling waves. These 
+structures are also formed in the absence of myosin-II.  Our data indicate 
+that Arp2/3-actin asemblies similar to those driving the protrusion of a 
+leading edge are freely formed at the inner face of the plasma membrane on 
+the bottom of the cells. Conclusions: The actin system of highly motile cells runs far from equilibrium, 
+generating a multitude of patterns within a dynamic filamentous network. 
+Traveling waves are the most complicated patterns based on recruitment of the 
+Arp2/3 complex. They are governed by the propagated induction of actin 
+polymerization. We hypothesize that the actin system autonomously generates 
+primordia of specialized structures such as phagocytic cups or lamellipodia. 
+These primordia would represent an activated state of the actin system that 
+enables the cells to respond within seconds to local stimuli by chemotaxis or 
+phagocytic cup formation. Submitted by:  Guenther Gerisch [gerisch@biochem.mpg.de]
+
+===============================================================================[End Dicty News, volume 21, number 17]

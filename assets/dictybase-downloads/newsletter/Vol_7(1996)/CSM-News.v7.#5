@@ -1,0 +1,213 @@
+CSM News
+Electronic Edition
+Volume 7, number 5
+August 31, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+===============
+ Announcements
+===============
+
+Bill Loomis writes:
+
+
+I made a table of our cDNA sequences that we have deposited in GenBank
+during the last month. They are derived from probes used in the
+Mapping Project and so provide sequence tagged sites for whole genome
+sequencing.  Moreover, the Dicty community might be interested to see
+what is out there now. Perhaps you could put this on the next Dicty
+e-mail.
+
+Some of these genes are old friends while others are new and are very
+interesting. A few are the subjects of on-going genetic
+studies. Others are not so informative but it is good to have sequence
+for them.
+
+
+Bill
+
+
+                cDNAs Sequences of Mapped Loci
+
+Previous                                       New
+Locus   Sequence homology       Map position  locus   Genbank No.
+
+rcdA    WD40 prot 2                     3.162   wdpA    U36936
+rcdB    phosphoprotein phosphatase 2A   4.109   pppA    U61987
+rcdC    coatomer beta subunit           4.142   copB    U62960
+rcdD    cadA (gp24)                     4.177   cadA    U49650
+rcdE    phosphoglucomutase              5.028   pgmA    U61984
+rcdF    ribosomal protein S17           5.118   rpgM    P42520
+rcdG    ubiquinone oxido-reductase      5.046   qinA    U61989
+rcdH    carbonic anhydrase              5.086   canA    U66368
+rcdJ    cigA (BP74)                     2.012   cigB    U66528
+rcdK    none                            2.032   ---     U66369
+rcdL    none                            2.035   ---     U66366
+rcdM    none                            2.058   ---     U66527
+rcdP    none                            1.316   ---     U66525
+rcdQ    PEP 8 rel. (protein sorting)    1.336   pepA    U61985
+rcdR    cyclophilin                     1.358   ppiA    227879
+rcdS    proliferation assoc. protein    1.360   prlA    U61403
+rcdX    proteasome C8                   1.005   prtD    U61988
+rcdBB   none                            1.316   ---     U66523
+rcdEE   hsp70                           1.336   hspB    L22736
+rcdFF   protein kinase C inhibitor      5.157   pkiA    U61986
+rcdHH   saposin B[low similarity]       4.053   sapA    U66367
+rcdII   none                            4.051   ---     U66524
+rcdJJ   none                            4.155   ---     U66370
+rcdKK   thymidine kinase                5.067   thyB    U61990
+rcdLL   ubiquitin                       2.233   ubqG    70660
+
+
+===========
+ Abstracts
+===========
+
+
+Vacuolar H+-ATPase and weak base action in  Dictyostelium. 
+
+L. Davies 1, N.A. Farrar 1, M. Satre 2, R.P. Dottin 3 and J.D. Gross 1#
+
+1 Department of Biochemistry, South Parks Road, Oxford, UK. OX1 3QU.
+2 Laboratoire de Biologie Cellulaire (CNRS URA 1130), Departement de 
+Biologie Moléculaire et Structurale, CEA, 38041 Grenoble, France
+3Department of Biological Sciences, Hunter College, City University of 
+New York, 695 Park Avenue, New York 10021, USA.
+
+Mol. Microbiology, in press
+
+Summary
+
+   Amoebae of Dictyostelium discoideum release ammonia during
+development, and the accumulation of this weak base is believed to be
+responsible for inhibiting fruiting body formation and switching
+aggregates into migrating slugs. Exposure to weak bases can also
+inhibit aggregation and cell-type specific gene expression. The
+pathway by which weak bases influence development is not understood.
+We show here that the development of a set of mutants defective in
+acidification of intracellular acidic compartments is abnormally
+sensitive to inhibition by weak bases. Moreover even in the absence of
+added weak bases these mutants are delayed in aggregation and have a
+protracted migratory phase. The same behaviour is observed in
+transformants harbouring an antisense construct for one of the
+vacuolar H+-ATPase subunits.These results support the idea that weak
+bases exert their effects by inhibiting acidification of an
+intracellular acidic compartment.
+
+---------------------------------------------------------------------
+
+A role for calcineurin in Dictyostelium discoideum development. 
+
+Fabiana Horn and Julian Gross
+
+Department of Biochemistry,University of Oxford.South Parks Road
+Oxford OX1 3QU, UK.
+
+Differentiation, in press
+
+Abstract
+
+   We have used the immunosuppressants cyclosporin A and FK506 to
+investigate the involvement of the Ca2+/ CaM-dependent protein
+phosphatase calcineurin in D. discoideum development. We found that
+CsA had little effect on cell growth, or on the aggregation of
+developing amoebae, suggesting that calcineurin does not play a
+significant role at these stages of the D. discoideum life cycle. In
+contrast, when cells were allowed to differentiate under buffer in the
+presence of cAMP, addition of CsA and FK506 strongly inhibited stalk
+cell formation in the wild type and spore formation in a sporogenous
+derivative of D. discoideum strain V12. These agents also reduced the
+expression of prestalk- and prespore-specific transcripts in both
+strains. These results indicate a requirement for calcineurin activity
+in both pathways of cell differentiation. In addition, time-course
+experiments suggest that calcineurin is required early in the
+differentiation processes, but that the maturation of the two cell
+types is resistant to calcineurin inhibition. We also found that CsA
+and FK506 were unable to affect spore formation in rapidly
+developing/sporogenous rdeC mutants of strain NC4, showing that
+constitutive cAMP-dependent protein kinase activity renders the spore
+pathway resistant to calcineurin inhibition.
+
+---------------------------------------------------------------------
+
+Cloning and Characterization of a Dictyostelium Myosin I Heavy Chain
+Kinase Activated by Cdc42 and Rac
+
+Sheu-Fen Lee, Thomas T. Egelhoff*, Amjad Mahasneh and Graham P.Cote
+
+Department of Biochemistry, Queen's University, Kingston, Ontario K7L
+3N6 and *Department of Physiology and Biophysics, Case Western Reserve
+University, Cleveland, Ohio 44106
+
+J. Biol. Chem.  In Press
+
+SUMMARY
+
+   The motile activities of the small, single-headed class I myosins
+(myosin I) from the lower eukaryotes Acanthamoeba and Dictyostelium
+are activated by phosphorylation of a single serine or threonine
+residue in the head domain of the heavy chain.  Recently, we purified
+a myosin I heavy chain kinase (MIHCK) from Dictyostelium based on its
+ability to activate the Dictyostelium myosin ID isozyme (Lee,
+S.-F. and Cote, G.P. (1995) J. Biol. Chem. 270, 11776-11782). The
+complete sequence of the Dictyostelium MIHCK has now been determined,
+revealing a protein of 98 kDa that is composed of an amino terminal
+domain rich in proline, glutamine and serine, a putative Cdc42/Rac
+binding motif and a carboxyl-terminal kinase catalytic domain. MIHCK
+shares significant sequence identity with the S. cerevisiae Ste20p
+kinase and the mammalian p21-activated kinase (PAK).  Gel overlay
+assays and affinity chromatography experiments showed that MIHCK
+interacted with GTPgammaS (guanosine5'-3-O-(thiotriphosphate))-
+labeled Cdc42 and Rac1 but not RhoA.  In the presence of
+GTPgammaS-Rac1 MIHCK autophosphorylation increased from 1 to 9 mol
+phosphate per mol and the rate of Dictyostelium myosin ID
+phosphorylation was stimulated 10-fold.  MIHCK may therefore provide a
+direct link between Cdc42/Rac signaling pathways and motile processes
+driven by myosin I molecules.
+
+---------------------------------------------------------------------
+
+A nuclear protein factor binds specifically to the 3+ regulatory
+module of the long-interspersed-nuclear-element-like Dictyostelium
+repetitive element
+
+Anja Geier, Jens Horn, Theodor Dingermann and Thomas Winckler
+
+Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt
+(Biozentrum), Marie-Curie-Strasse 9, D-60439 Frankfurt, Germany
+
+Eur. J. Biochem., in press
+
+SUMMARY
+
+The Dictyostelium repetitive element DRE integrates in a
+position-specific manner upstream of tRNA genes in the Dictyostelium
+discoideum genome. DRE has structural similarities to the group of
+long interspersed nuclear elements, whose replication mechanism is
+poorly understood. The C-module at the 3' end of DRE encodes a
+regulatory cis-acting sequence that contains an RNA polymerase II
+promoter. This promoter directs the synthesis of RNAs that are thought
+to play a critical role in DRE transposition. In this study, we
+describe the identification of a nuclear protein factor that binds to
+the C-module in a sequence-specific manner. The C-module-binding
+factor (CMBF) recognizes three DNA sequence motifs that contain
+homopolymeric (dT) stretches of variable lengths, but does not bind to
+a standard RNA polymerase II promoter from D.  discoideum. Analysis of
+highly CMBF-enriched fractions and glycerol gradient sedimentation of
+CMBF suggest that the factor exists as a monomeric 115 kDa
+protein. Possible roles of CMBF in DRE transposition are discussed.
+
+---------------------------------------------------------------------
+
+[End CSM-News, volume 7, number 5]
+
+
+
+

@@ -1,0 +1,267 @@
+dictyNews
+Electronic Edition
+Volume 28, number 9
+April 13, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Ethylene induces zygote formation through an enhanced expression of zyg1 in 
+Dictyostelium mucoroides
+
+Aiko Amagai, Sho-saku Soramoto, Shu-hei Saito and Yasuo Maeda
+Department of Developmental Biology and Neurosciences, Graduate School of 
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+
+Exp Cell Res., in press
+
+We have previously demonstrated that a potent plant hormone, ethylene induces 
+sexual development including zygote formation in Dictyostelium cells, and 
+that a novel gene (zyg1) is also involved in zygote formation. Based on these 
+findings, the present work was mainly designed to reveal 1) the precise 
+relationship between the ethylene amount and zygote formation, and 2) the 
+relation of in situ ethylene synthesis to zyg1 expression, using transformants 
+that over- or under-produce ACC-oxidase (Dd-aco) involved in ethylene 
+biosynthesis. ACOOE cells overexpressing Dd-aco gene overproduced ethylene 
+and exhibited the augmented zygote formation. In contrast, ACO-RNAi cells, 
+in which the expression of Dd-aco was suppressed by the RNAi method, showed 
+a reduced level of ethylene production, thus resulting in inhibition of 
+zygote formation. Importantly, the expression of zyg1 was affected by the 
+amount of ethylene produced: Zyg1 expression was augmented in ACOOE cells, 
+but was significantly suppressed in ACO-RNAi cells. In another experiment, 
+we found that 1-methylcyclopropene (1-MCP), which is known to inhibit the 
+function of ethylene by binding specifically to ethylene receptors, greatly 
+suppresses zygote formation. These results indicate that ethylene is capable 
+of inducing zygote formation through the expression of zyg1. 
+
+
+Submitted by: Aiko Amagai [aiamagai@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+A G protein coupled receptor with a lipid kinase domain 
+is involved in cell density sensing
+
+Deenadayalan Bakthavatsalam1+, Derrick Brazill2, Richard H. Gomer3, Ludwig 
+Eichinger1, Francisco Rivero1* and Angelika A. Noegel1*
+
+
+1 Center for Biochemistry, Institute for Biochemistry I, Medical Faculty and 
+Center for Molecular Medicine Cologne, University of Cologne, Cologne, Germany
+2 Center for the Study of Gene Structure and Function, Hunter College, City 
+University of New York, New York, USA
+3 Howard Hughes Medical Institute and Department of Biochemistry and Cell 
+Biology, Rice University, Houston, Texas, USA
+
+Current Biology, in press
+
+
+One mechanism multicellular structures use for controling cell number [1, 2] 
+involves the secretion and sensing of a factor, like leptin [3] or myostatin 
+[4] in mammals. Dictyostelium cells secrete autocrine factors for sensing cell 
+density prior to aggregation and multicellular development [5, 6]. One of 
+these factors, CMF (conditioned medium factor), is a glycoprotein that enables 
+starving cells to respond to cAMP pulses [7, 8, 9].  Its actions are mediated 
+by two receptors. CMFR1 activates a G-protein independent signaling pathway 
+that regulates gene expression [10]. An unknown GÄ„1-dependent receptor 
+activates phospholipase C (PLC), which, by an unknown mechanism, regulates 
+the lifetime of GÄ„2-GTP [11, 12, 13]. Here we describe RpkA, an unusual 
+seven transmembrane receptor fused to a C-terminal PIP5 kinase domain that 
+localizes in membranes of a late endosomal compartment. Loss of RpkA resulted 
+in formation of persistent loose aggregates concomitant with altered expression 
+of cAMP-regulated genes. The developmental defect can be rescued by full length 
+RpkA and the transmembrane domain only. The PIP5 kinase domain, although 
+important for efficient targeting, is dispensable for the developmental role 
+of RpkA. rpkAÄ{ cells secrete and bind CMF but are unable to induce downstream 
+responses like production of inositol trisphosphate. Inactivation of Ga1, a 
+negative regulator of CMF signaling, rescued the developmental defect of the 
+rpkAÄ{ cells, suggesting that RpkA actions are mediated by this G protein. 
+RpkA constitutes an essential component of the cell density sensing mechanism 
+that regulates aggregation during Dictyostelium development.
+
+Submitted by: Angelika A. Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Desalted deep sea water increases transformation and homologous recombination 
+efficiencies in Dictyostelium discoideum
+
+Hidekazu Kuwayama and Akira Nagasaki
+
+
+Journal of Molecular Microbiology and Biotechnology, in press
+
+The life cycle of Dictyostelium discoideum consists of many cellular and 
+developmental aspects. By virtue of its relatively high transformation 
+efficiency and a small haploid genome, this organism has proven to be 
+advantageous for characterizing gene functions. However, a much higher 
+transformation efficiency is required as one of the prerequisites for 
+unravelling gene function on a genome-wide scale. In this study, we 
+describe the positive effect of desalted deep sea water, when used as a 
+solvent medium, on the transformation and homologous recombination 
+efficiencies in Dictyostelium. A standard Dictyostelium medium HL5 
+containing desalted deep sea water, HL5dsw, distinctly increased both the 
+transformation and homologous recombination efficiencies by approximately 
+2- to 3-fold. Furthermore, we observed that the growth of cells in HL5dsw 
+both before and after electroporation contributed to the increase in 
+transformation efficiency. These results indicate that a simple modification 
+of the solvent medium remarkably enhanced the isolation of transformants and 
+gene targeted clones, which had previously been difficult to isolate.
+
+
+Submitted by: Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Evolution of size and pattern in the social amoebas 
+Review
+
+Pauline Schaap
+
+College of Life Sciences, University of Dundee, UK.
+
+
+Bioessays, in press
+
+A fundamental goal of biology is to understand how novel phenotypes evolved 
+through changes in existing genes. The dictyostelids or social amoebas 
+represent a simple form of multicellularity, where starving cells aggregate 
+to build fruiting structures. This review summarizes efforts to provide a 
+framework for investigating the genetic changes that generated novel 
+morphologies in the dictyostelids. The foundation is a recently constructed 
+molecular phylogeny of the dictyostelids, which was used to examine trends 
+in the evolution of novel forms and in the divergence of genes that shape 
+these forms. There is a major trend towards formation of large unbranched 
+fruiting bodies, which is correlated with the use of cyclic AMP (cAMP) as a 
+secreted signal to coordinate cell aggregation. The role of cAMP in 
+aggregation arose through co-option of a pathway that originally acted to 
+coordinate fruiting body formation. The genotypic changes that caused this 
+innovation and the role of dynamic cAMP signaling in defining fruiting body 
+size and pattern throughout Dictyostelid evolution are discussed.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Protocols for growth and development of Dictyostelium discoideum
+
+Petra Fey1, Anthony S. Kowal2, Pascale Gaudet1, Karen E. Pilcher1, and 
+Rex L. Chisholm1,2*
+
+1dictyBase, Center for Genetic Medicine, Northwestern University
+2 Center for Genetic Medicine, Northwestern University
+
+
+Nat Protoc., in press
+
+Dictyostelium discoideum, a unicellular organism capable of developing into a 
+multicellular structure, is a powerful model system to study a variety of 
+biological processes. Because it is inexpensive and relatively easy to grow, 
+Dictyostelium is also frequently used in teaching laboratories. Here we 
+describe conditions for successfully growing and developing Dictyostelium 
+cells and methods for long-term storage of Dictyostelium amoebae and spores.
+
+
+Submitted by: Rex Chisholm [r-chisholm@northwestern.edu]
+--------------------------------------------------------------------------------
+
+
+Transformation of Dictyostelium discoideum with plasmid DNA
+
+Pascale Gaudet, Karen E. Pilcher, Petra Fey, and Rex L. Chisholm*
+
+dictyBase, 676 N. St. Clair St, Suite 1260, Chicago, IL, 60611
+*corresponding author
+
+
+Nat Protoc., in press
+
+DNA-mediated transformation is one of the most widely used techniques to study 
+gene function. The eukaryote Dictyostelium discoideum is amenable to numerous 
+genetic manipulations that require insertion of foreign DNA into cells. Here we 
+describe two commonly used methods to transform Dictyostelium cells: calcium 
+phosphate precipitation, resulting in high copy number transformants, and 
+electroporation, an  effective technique for producing single integration 
+events into genomic DNA. Single integrations are required for gene disruption 
+by homologous recombination. We also discuss how different selection markers 
+affect vector copy number in transformants and explain why blasticidin has 
+become the preferred selectable marker for making gene knock-outs. Both 
+procedures can be accomplished in less than two hours of hands-on time; 
+however, the calcium-phosphate precipitation method contains several 
+incubations, including one of at least four hours, so the total time required 
+for the transformation is approximately 8 hours. 
+
+
+Submitted by: Rex Chisholm [r-chisholm@northwestern.edu]
+--------------------------------------------------------------------------------
+
+
+A reliable general purpose method for extracting genomic DNA from 
+Dictyostelium cells.
+
+Karen E. Pilcher1, Petra Fey1, Pascale Gaudet1, Anthony S. Kowal2, and 
+Rex L. Chisholm1,2*
+*corresponding author
+
+1dictyBase, Center for Genetic Medicine, Northwestern University
+2 Center for Genetic Medicine, Northwestern University
+*corresponding author
+
+
+Nat Protoc., in press
+
+In this protocol, we present a standard method for extracting DNA from cells 
+of the social amoeba Dictyostelium discoideum. While this procedure is similar 
+to other phenol:chloroform-based purification methods, it is modified to 
+account for the high level of carbohydrate and nucleases found in 
+Dictyostelium cells. Genomic DNA can be isolated from wild type and 
+genetically modified cells using the described protocol, allowing molecular 
+genetic analyses to be performed. Following cell lysis, nucleic acid 
+extraction, and precipitation, the isolated DNA is suitable for digestion by 
+restriction enzymes, amplification by PCR, and Southern blotting. This 
+procedure takes approximately 3 hours to complete.
+
+
+Submitted by: Rex Chisholm [r-chisholm@northwestern.edu]
+--------------------------------------------------------------------------------
+
+
+A general purpose method for extracting RNA from Dictyostelium cells
+
+Karen E. Pilcher, Petra Fey, Pascale Gaudet, and Rex L. Chisholm*
+
+dictyBase, 676 N. St. Clair St, Suite 1260, Chicago, IL, 60611
+*corresponding author
+
+
+Nat Protoc., in press
+
+Here we present a protocol for the extraction of RNA from Dictyostelium 
+discoideum. Dictyostelium is a social amoeba which undergoes a basic 
+developmental program, and therefore analysis of RNA levels over a time course 
+is a commonly used technique. This procedure is similar to other guanidine 
+thiocyanate-based methods; however, it has been adjusted because of the large 
+quantities of carbohydrate and nucleases found in Dictyostelium cells. After 
+cell lysis and phenol:chloroform extraction, the resulting high quality RNA 
+isolated with the described protocol allows the molecular genetic analysis of 
+wild type and genetically modified cells. The purified RNA can be used for 
+analyses such as Northern blotting, RT-PCR, and microarrays. From start to 
+finish, this procedure requires approximately two hours to complete.
+
+Submitted by: Rex Chisholm [r-chisholm@northwestern.edu]
+============================================================
+[End dictyNews, volume 28, number 9]

@@ -1,0 +1,98 @@
+dictyNews
+Electronic Edition
+Volume 33, number 14
+November 27, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Autophagy dysfunction and Ubiquitin-positive protein aggregates in Dictyostelium 
+Cells Lacking Vmp1.
+
+Javier Calvo-Garrido  and Ricardo Escalante
+
+Instituto de Investigaciones Biomédicas Alberto Sols. C.S.I.C./U.A.M., 
+Calle Arturo Duperier 4, 28029 Madrid. Spain.
+ 
+
+Autophagy, in press
+
+Ubiquitin-positive protein aggregates are a hallmark of many degenerative 
+diseases. Their presence can be induced by dysfunction in protein 
+degradation pathways such as proteasome and autophagy. We now report 
+several lines of evidence suggesting a defect in autophagy in Dictyostelium 
+cells lacking Vmp1 (Vacuole membrane protein 1), an endoplasmic 
+reticulum (ER)-resident protein involved in pathological processes such 
+as cancer and pancreatitis. vmp1- null cells are unable to survive starvation 
+or undergo autophagic-cell-death under the appropriate inductive signals. 
+Moreover, confocal studies using the autophagy marker Atg8 and previous 
+transmission electron microscopy analysis showed defects in 
+autophagosome formation.  Although Vmp1 is localized in the ER we 
+found co-localization with Atg8 suggesting a contribution of both Vmp1 
+and ER in autophagosome biogenesis or maturation. Interestingly, 
+vmp1- mutant cells showed accumulation of huge ubiquitin-positive protein 
+aggregates containing the autophagy marker GFP-Atg8 and the putative 
+Dictyostelium p62 homologue as described in many degenerative human 
+diseases. The analysis of other Dictyostelium autophagic mutants  
+(atg1-, atg5-, atg6-, atg7- and atg8-) showed a correlation in the severity 
+of their corresponding phenotypes and the presence of ubiquitin-positive 
+protein aggregates suggesting that the deleterious effects associated with 
+development of these aggregates might contribute to the complex 
+phenotypes observed in autophagy deficient mutants. Our results suggest 
+that Vmp1 is required for the clearance of these ubiquitinated protein 
+aggregates through autophagy and highlight a potential role for Vmp1 in 
+protein-aggregation diseases. 
+
+
+Submitted by Ricardo Escalante [rescalante2@gmail.com]
+--------------------------------------------------------------------------------
+
+
+Transcription of the Dictyostelium discoideum mitochondrial genome 
+occurs from a single initiation site
+
+Phuong Le, Paul Robert Fisher and Christian Barth
+
+Department of Microbiology, La Trobe University, Kingsbury Drive, 
+Bundoora, Victoria 3086, Australia
+
+RNA, in press
+
+Transcription of the mitochondrial genome in Dictyostelium discoideum gives 
+rise to eight major polycistronic RNA species that can be detected by Northern 
+hybridization. In order to determine whether these transcripts could possibly 
+derive from processing of even larger transcripts, Reverse Transcriptase 
+Polymerase Chain Reactions (RT-PCR) were performed in an attempt to 
+amplify the intervening regions between the eight major transcripts. All but 
+one intervening regions were successfully reverse transcribed and amplified, 
+indicating that even larger transcripts existed and that the eight major 
+transcripts detected previously may be the products of transcript processing. 
+Southern hybridization analyses of DNA fragments representing the sequences 
+between the eight major transcripts with in vitro capped mitochondrial RNA 
+identified the 5' end of only one of the eight major transcripts as a genuine 
+transcription start site. The ability to initiate transcription from DNA sequences 
+upstream of the identified transcription initiation site was demonstrated in 
+bacterial cells expressing the Dictyostelium mitochondrial RNA polymerase. 
+We conclude that transcription of the Dictyostelium mitochondrial genome is 
+initiated at a single site, generating a large polycistronic transcript that is very 
+efficiently, probably co-transcriptionally, processed into mature RNA species. 
+This is the first report on a protist mitochondrial DNA that is, although much
+larger in size than its metazoan counterparts, transcribed from a single 
+transcription initiation site.
+
+Submitted by Christian Barth [c.barth@latrobe.edu.au]
+==============================================================
+[End dictyNews, volume 33, number 14]

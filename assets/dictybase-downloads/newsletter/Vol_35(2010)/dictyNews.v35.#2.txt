@@ -1,0 +1,91 @@
+dictyNews
+Electronic Edition
+Volume 35, number 2
+July 10, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Redundant and unique roles of coronin proteins in Dictyostelium
+
+Maria C. Shina, Annette Müller-Taubenberger, Can Ünal, 
+Michael Schleicher,  Michael Steinert, Ludwig Eichinger, Rolf Müller, 
+Rosemarie Blau-Wasser, Gernot Glöckner, Angelika A. Noegel
+
+
+Cellular and Molecular Life Sciences, in press
+
+Dictyostelium discoideum harbors a short (CRN12) and a long coronin 
+(CRN7) composed of one and two beta-propellers, respectively. They are 
+primarily present in the cell cortex and cells lacking CRN12 (corA-) or 
+CRN7 (corB-) have defects in actin driven processes. We compared the 
+characteristics of a mutant cell line (corA-/corB-) lacking CRN12 and CRN7 
+with the single mutants focusing on cytokinesis, phagocytosis, chemotaxis 
+and development. Cytokinesis, uptake of small particles, and developmental 
+defects were not enhanced in the corA-/corB- strain as compared to the 
+single mutants, whereas motility and phagocytosis of yeast particles were 
+more severely impaired. It appears that although both proteins affect the 
+same processes they do not act in a redundant manner. Rather, they often 
+act antagonistically which is in accordance with their proposed roles in the 
+actin cytoskeleton where CRN12 acts in actin disassembly whereas CRN7 
+stabilizes actin filaments and protects them from disassembly. 
+
+
+Submitted by  Angelika Nögel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Synthesis and biological activity of peptides equivalent to the IP22 repeat 
+motif found in proteins from Dictyostelium and Mimivirus
+
+Andrew Catalano a, Wei Luo b, Yali Wang b, and Danton H. O’Day a,b,*
+
+aDepartment of Cell and Systems Biology, University of Toronto, 
+25 Harbord st., Toronto, Ontario, Canada, M5S 3G5
+bDepartment of Biology, University of Toronto at Mississauga, 
+3359 Mississauga rd. N., Mississauga, Ontario, Canada, L5L 1C6
+
+
+Peptides, in press
+
+A novel IP22 repeat motif of unknown function was discovered previously that 
+comprises almost the entire structure of cmbB, a calmodulin-binding protein 
+from Dictyostelium discoideum. An analysis of over 2000 IP22 repeats across 
+130 different proteins from different species allowed us to define a prototypical 
+IP22 repeat: I/LPxxhxxhxhxxxhxxxhxxxx (where L = leucine, 
+I = isoleucine, h = any hydrophobic amino acid, x = any amino acid). Here 
+we describe the synthesis of three peptide variants of the IP22 motif: 
+IP22-1(IPNSVTSLKFGDGFNQPLTPGT; 22aa); 
+IP22-2 (LPSTLKTISLSNSTDKKIFKNS; 22aa); and, 
+IP22-3 (IPKSLRSLFLGKGYNQPLEF; 20aa) plus a control peptide from 
+the N-term of cmbB (HNMNPFSPQLDEKKNSHIVEY; 21aa). The structure 
+and purity of synthesized peptides were verified by HPLC and mass 
+spectrometry. The peptides all dose-dependently enhanced random cell motility 
+and cAMP-mediated chemotaxis in Dictyostelium but IP22-3 was most effective 
+peaking in activity around 50μM. Fluorescein isothiocyanate (FITC) -conjugated 
+IP22 peptides did not penetrate cells suggesting these peptides affect cell 
+motility via cell surface interactions. Treatment of cells with FITC-IP22 
+peptides also led to enhanced cell motility equivalent to the non-conjugated 
+peptides. Treatment of IP22-3-stimulated cells with 50μM LY294002, 20μM 
+quinacrine or both suggests that IP22-3 requires both phosphoinositol 
+3-kinase and phospholipase A2 signaling to elicit its effects, a mechanism 
+unique from EGFL motility-enhancing peptides. The mechanism of action 
+and potential uses of IP22 repeat peptides are discussed.
+
+
+Submitted by  Danton O'Day [danton.oday@utoronto.ca]
+==============================================================
+[End dictyNews, volume 35, number 2]

@@ -1,0 +1,192 @@
+dictyNews
+Electronic Edition
+Volume 39, number 26
+September 13 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+G17-modified Hammerhead Ribozymes are active in vitro and in vivo
+
+Anne Kalweit and Christian Hammann
+Ribogenetics@Biochemistry Lab, School of Engineering and Science, 
+MoLife Research Center, Jacobs University Bremen, 28759 Bremen, 
+Germany
+
+
+RNA, in press
+
+Natural hammerhead ribozymes (HHRz) feature tertiary interactions 
+between hairpin loops or bulges in two of three helices that surround 
+the catalytic core of conserved nucleotides. Their conservation was 
+originally established on minimal versions lacking the tertiary 
+interactions. While those sequence requirements in general also apply 
+to natural versions, we show here differences for the HHRz cleavage 
+site N17. A guanosine at this position strongly impairs cleavage 
+activity in minimal versions, whereas we observe for the G17 variants 
+of four tertiary stabilized HHRz significant cleavage and ligation 
+activity in vitro. Kinetic analyses of these variants revealed reduced 
+rate and extent of cleavage, compared to wild type sequences, while 
+variants with distorted tertiary interactions cleaved at reduced rate, 
+but to the same extent. Contrary to this, G17 variants exhibit similar 
+in vitro ligation activity as compared to the respective wild type motif. 
+To also address the catalytic performance of these motifs in vivo, we 
+have inserted HHRz cassettes in the lacZ gene and tested this beta-
+galactosidase reporter in Dictyostelium discoideum. In colorimetric 
+assays, we observe differences in the enzymatic activity of beta-
+galactosidase, which correlate well with the activity of the different 
+HHRz variants in vitro, and which can be unambiguously attributed 
+to ribozyme cleavage by primer extension analysis.
+
+
+Submitted by Christian Hammann [c.hammann@jacobs-university.de]
+---------------------------------------------------------------------------
+
+
+Title: Abi is required for modulation and stability of the SCAR/WAVE 
+complex, but not localization or activity.
+
+Andrew J. Davidson, Seiji Ura, Peter A. Thomason, Gabriela Kalna 
+& Robert H. Insall
+
+
+Eukaryotic cell, in press
+
+The SCAR/WAVE complex drives actin-based protrusion, cell migration 
+and cell separation during cytokinesis. However, the contribution of the 
+individual complex members to the activity of the whole remains a 
+mystery. This is primarily because complex members depend on one 
+another for stability, which limits the scope for experimental manipulation. 
+Several studies suggest that Abi, a relatively small complex member, 
+connects signalling to SCAR/WAVE complex localization and activation 
+through its poly-proline C-terminal tail. We generated a  deletion series 
+of the Dictyostelium Abi to investigate its exact role in regulation of the 
+SCAR complex, and identified a minimal fragment that would stabilize 
+the complex. Surprisingly, loss of either the N-terminus of Abi or the 
+C-terminal polyproline tail confers no detectable defect in complex 
+recruitment to the leading  edge or formation of pseudopods. A fragment 
+containing approximately 20% of Abi - and none of the sites that couple 
+to known signaling pathways - allowed the SCAR complex to function 
+with normal localisation and kinetics. However, expression of N-terminal 
+Abi deletions exacerbated the cytokinesis defect of the Dictyostelium abi 
+mutant, which was earlier shown to be caused by inappropriate activation 
+of SCAR. This demonstrates - unexpectedly - that Abi does not mediate 
+the SCAR complex's ability to make pseudopods, beyond its role in 
+complex stability. Instead we propose that Abi has a modulatory role 
+when the SCAR complex is activated through other mechanisms. 
+
+
+Submitted by Andrew Davidson [a.davidson@beatson.gla.ac.uk]
+---------------------------------------------------------------------------
+
+
+Dictyostelium lipid droplets host novel proteins 
+
+Xiaoli Du1, Caroline Barisch1, Peggy Paschke1, Cornelia Herrfurth3, 
+Oliver Bertinetti2, Nadine Pawolleck1, Heike Otto1, Harald Rühling1, 
+Ivo Feussner3, Friedrich W. Herberg2, and Markus Maniak1* 
+
+1Abt. Zellbiologie, 2Abt. Biochemie, Universität Kassel, Germany
+3Abt. Biochemie der Pflanze, Georg-August-Universität Göttingen, 
+Germany
+
+
+Eukaryotic Cell, in press
+
+Across all kingdoms of life, cells store energy in a specialized organelle, 
+the lipid droplet. In general it consists of a hydrophobic core of 
+triglycerides and steryl-esters surrounded by only one leaflet derived 
+from the endoplasmic reticulum membrane to which a specific set of 
+proteins is bound. We have chosen the unicellular organism Dictyostelium 
+discoideum to establish kinetics of lipid droplet formation and degradation 
+and to further identify the lipid constituents and proteins of lipid droplets. 
+Here we show that the lipid composition is similar to what is found in 
+mammalian lipid droplets. In addition, phospholipids preferentially consist 
+of mainly saturated fatty acids, whereas neutral lipids are enriched in 
+unsaturated fatty acids. Among the novel proteins components are LdpA, 
+a protein specific to Dictyostelium, and Net4, which has strong homologies 
+to mammalian DUF829/Tmem53/NET4 that was previously only known as 
+a constituent of the mammalian nuclear envelope. The proteins analyzed 
+so far appear to move from the endoplasmic reticulum to the lipid droplets, 
+supporting the concept that lipid droplets are formed on this membrane. 
+
+
+Submitted by Markus Maniak [maniak@uni-kassel.de]
+---------------------------------------------------------------------------
+
+
+Identification of pentatricopeptide repeat proteins in the model organism 
+Dictyostelium discoideum.
+
+Sam Manna, Jessica Brewster & Christian Barth
+
+Department of Microbiology, La Trobe University, VIC 3086, Australia.
+
+International Journal of Genomics, vol. 2013, Article ID 586498, 
+doi:10.1155/2013/586498.
+
+Pentatricopeptide repeat (PPR) proteins are RNA binding proteins with 
+functions in organelle RNA metabolism. They are found in all eukaryotes, 
+but have been most extensively studied in plants. We report on the 
+identification of 12 PPR-encoding genes in the genome of the protist 
+Dictyostelium discoideum, with potential homologs in other members of 
+the same lineage and some predicted novel functions for the encoded 
+gene products in protists. For one of the gene products, we show that it 
+localises to mitochondria and we also demonstrate that antisense 
+inhibition of its expression leads to slower growth, a phenotype 
+associated with mitochondrial dysfunction. 
+
+
+Submitted by Christian Barth [c.barth@latrobe.edu.au]
+---------------------------------------------------------------------------
+
+
+Tong Sun, Bohye Kim and Lou W. Kim*
+
+Department of Biological Sciences, Florida International University, 
+Miami, FL, 33199, USA 
+
+Glycogen Synthase Kinase 3 influences cell motility and chemotaxis by 
+regulating PI3K membrane localization in Dictyostelium 
+
+
+Develop. Growth Differ., in press 
+
+Glycogen Synthase Kinase 3 (GSK3) is a multifunctional kinase involved 
+in diverse cellular activities such as metabolism, differentiation, and 
+morphogenesis. Recent studies showed that GSK3 in Dictyostelium affects 
+chemotaxis via TorC2 pathway and Daydreamer. Now we report that GSK3 
+affects PI3K membrane localization, of which the mechanism has remained 
+to be fully understood in Dictyostelium. The membrane localization domain 
+(LD) of Phosphatidylinositol-3-kinase 1 (PI3K1) is phosphorylated on serine 
+residues in a GSK3 dependent mechanism and PI3K1-LD exhibited biased 
+membrane localization in gsk3 cells compared to the wild type cells. 
+Furthermore, multiple GSK3-phosphorylation consensus sites exist in 
+PI3K1-LD, of which phosphomimetic substitutions restored cAMP induced 
+transient membrane localization of PI3K1-LD in gsk3 cells. Serine to alanine 
+substitution mutants of PI3K1-LD, in contrast, displayed constitutive 
+membrane localization in wild type cells. Biochemical analysis revealed that 
+GSK3 dependent serine phosphorylation of PI3K1-LD is constitutive during 
+the course of cAMP stimulation. Together, these data suggest that GSK3 
+dependent serine phosphorylation is a prerequisite for chemoattractant 
+cAMP induced PI3K membrane localization. 
+
+
+Submitted by Leung Kim [louwkim@icloud.com]
+==============================================================
+[End dictyNews, volume 39, number 26]

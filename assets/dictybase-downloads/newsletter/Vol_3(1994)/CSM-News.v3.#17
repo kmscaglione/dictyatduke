@@ -1,0 +1,133 @@
+CSM News
+Electronic Edition
+Volume 3, number 17
+November 26, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+through www.nwu.edu.
+
+------------------------------------------------------------------
+
+Glycogen synthase kinase 3 (GSK-3) regulates cell fate in
+Dictyostelium
+
+A.J. Harwood, S. E. Plyte*, J. Woodgett*, H. Strutt+, & R.R.Kay
+
+MRC Laboratory of Molecular Biology, Hills Rd., Cambridge, CB2 2QH, U.K.
+
+*Ontario Cancer Institute, Princes Margaret Hospital, 500 Sherbourne St. 
+Toronto, Ontario, Canada, M4X 1K9 
+
+Cell, in press.
+
+Abstract
+
+	Extracellular cAMP induces the formation of prespore cells in
+Dictyostelium but inhibits stalk cell formation.  We have cloned,
+gskA, the Dictyostelium homologue of the protein kinase GSK-3 and
+discovered that it is required for both cAMP effects.  Disruption of
+gskA creates a mutant that aggregates but forms few spores and an
+abnormally high number of stalk cells.  These stalk cells probably
+arise from an expanded prestalk B (pstB) cell population, which
+normally produces the basal disc of the fruiting body.  In cultured
+mutant cells cAMP neither inhibits pstB cell differentiation nor
+induces efficient prespore cell differentiation.  We propose that cAMP
+acts through a common pathway that requires GSK-3 and determines the
+proportion of prespore and pstB cells.
+
+------------------------------------------------------------------------
+
+The proximal pathway of metabolism of the chlorinated signal molecule
+DIF-1 in Dictyostelium
+
+Piero Morandini, John Offer, David Traynor, Oliver Nayler, David
+Neuhaus, Graham W. Taylor* and Robert R. Kay 
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH,
+UK 
+
+*Department of Clinical Pharmacology, Royal Postgraduate Medical
+School, London W12 OHS.  
+
+Present addresses.  PM: Dipartimento di Biologia 'L. Gorini", via
+Celoria 26, 20133 Milano, Italy.  DT: Department of Pharmacology,
+University of Cambridge, Tennis Court Rd, Cambridge CB2 1QJ, UK
+
+Biochemical J., in press.
+
+Abstract
+
+   Stalk cell differentiation during Dictyostelium development is
+induced by a chlorinated alkyl phenone called DIF-1.  Inactivation of
+DIF-1 is likely to be a key element in the DIF-1 signalling system and
+we have shown previously that this is accomplished by a dedicated
+metabolic pathway involving up to a dozen unidentified metabolites.
+We report here the structure of the first four metabolites produced
+from DIF-1, as deduced by mass spectroscopy, NMR and chemical
+synthesis.  The structures of these compounds show that the first step
+in metabolism is a dechlorination of the phenolic ring, producing DM1.
+DM1 is identical with the previously known minor DIF activity, DIF-3.
+DIF-3 is then metabolised by three successive oxidations of its
+aliphatic side chain: a hydroxylation at w-2 to produce DM2, oxidation
+of the hydroxyl to a ketone to produce DM3 and a further hydroxylation
+at w-1 to produce DM4, a hydroxy ketone of DIF-3.  We have
+investigated the enzymology of DIF-1 metabolism.  It is already known
+that the first step, to produce DIF-3, is catalysed by a novel
+dechlorinase.  The enzyme activity responsible for the first side
+chain oxidation was detected by incubating 3H-DIF-3 with cell-free
+extracts and resolving the reaction products by TLC.  It will be
+referred to as DIF-3 hydroxylase.  DIF-3 hydroxylase has many of the
+properties of a cytochrome P450.  It is membrane bound and uses NADPH
+as co-substrate.  It is also inhibited by carbon monoxide, the classic
+P450 inhibitor, and by several other P450 inhibitors as well as by
+diphenyliodonium chloride, an inhibitor of cytochrome P450 reductase.
+DIF-3 hydroxylase is highly specific for DIF-3: other closely related
+compounds do not compete for the activity at 100-fold molar excess,
+except for a DIF-3 analog lacking the chlorine atom.  The Km for DIF-3
+of 47nM is consistent with this enzyme being responsible for DIF-3
+metabolism in vivo.  The two further oxidations necessary to produce
+DM4 are also performed in vitro by similar enzyme activities.  One of
+the inhibitors of DIF-3 hydroxylase, ancymidol (IC50=67nM) will be
+particularly suitable for probing the function of DIF metabolism
+during development.
+
+------------------------------------------------------------------
+
+ISOLATION OF DICTYOSTELIUM DISCOIDEUM CYTOKINESIS MUTANTS BY
+RESTRICTION ENZYME-MEDIATED INTEGRATION OF THE BLASTICIDIN S
+RESISTANCE MARKER
+
+Hiroyuki Adachi1,*, Takeshi Hasebe2, Keisuke Yoshinaga1, Takahisa
+Ohta2 and Kazuo Sutoh1
+
+1Department of Life Sciences, Graduate School of Arts and Sciences,
+University of Tokyo, Meguro-ku, Tokyo 153, and 2Department of Applied
+Chemistry, Faculty of Engineering, Kogakuin University, Shinjuku-ku,
+Tokyo 163-91, Japan 
+
+*Corresponding author; aduc@tansei.cc.u-tokyo.ac.jp
+
+BBRC, in press.
+
+Summary
+
+   We have developed an improved REMI (restriction enzyme-mediated
+integration) system for generating mutant Dictyostelium cells quickly
+and efficiently for systematic screening of cytokinesis mutants.  By
+means of this system, three cytokinesis mutants that grow as giant and
+multinucleate cells were isolated from 2,000 Dictyostelium
+transformants.  Southern blot analysis of these mutants revealed that
+a single copy of the tag DNA was integrated into each genome.  The tag
+with flanking genomic DNA at both ends was rescued from one of the
+mutants, and reintroduced into the parental Ax2 strain.  Homologous
+recombination of the rescued gene and the Dictyostelium genome led to
+the phenotypical changes expected for cytokinesis mutants.
+
+-------------------------------------------------------------------
+
+[End CSM News, volume 3, number 17]

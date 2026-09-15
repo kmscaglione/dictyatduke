@@ -1,0 +1,223 @@
+Dicty News
+Electronic Edition
+Volume 20, number 2
+February 15, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+DIF-1, an anti-tumor substance found in Dictyostelium discoideum, 
+inhibits progesterone-induced oocyte maturation in Xenopus laevis 
+
+Yuzuru Kuboharaa*, Yoichi Hanaoka, Emi Akaishi, Hisae Kobayashi, 
+Mineko Maeda, Kohei Hosaka 
+
+Biosignal Research Center, Institute for Molecular and Cellular 
+Regulation (IMCR), Gunma University, Maebashi 371-8512, Japan 
+
+European Journal of Pharmacology, In press 
+
+Abstract 
+
+Differentiation-inducing factor-1 (DIF-1; 1-(3,5-dichloro-2,6-dihydroxy-
+4-methoxyphenyl)hexan-1-one) is a putative morphogen that induces stalk-
+cell formation in the cellular slime mold Dictyostelium discoideum. DIF-1 
+has previously been shown to suppress cell growth in mammalian cells. In 
+this study, we examined the effects of DIF-1 on the progesterone-induced 
+germinal vesicle breakdown in Xenopus laevis, which is thought to be 
+mediated by a decrease in intracellular cAMP and the subsequent activation 
+of mitogen-activated protein kinase (MAPK) and maturation-promoting factor, 
+a complex of cdc2 and cyclin B, which regulates germinal vesicle breakdown. 
+DIF-1 at 10-40 micro M inhibited progesterone-induced germinal vesicle 
+breakdown in de-folliculated oocytes in a dose-dependent manner. 
+Progesterone-induced cdc2 activation, MAPK activation, and c-Mos 
+accumulation were inhibited by DIF-1. Furthermore, DIF-1 was found to 
+inhibit the progesterone-induced cAMP decrease in the oocytes. These 
+results indicate that DIF-1 inhibits progesterone-induced germinal vesicle 
+breakdown possibly by blocking the progesterone-induced decrease in 
+[cAMP]i and the subsequent events in Xenopus oocytes. 
+
+----------------------------------------------------------------------------
+
+The AP-1 clathrin-adaptor is required for lysosomal enzymes sorting and 
+biogenesis of the contractile vacuole complex in Dictyostelium cells 
+
+Yaya Lefkir,* Benot de Chassey,* Annick Dubois,* Aleksandra Bogdanovic, 
+Rebecca J. Brady, Olivier Destaing, Franz bruckert, Theresa J. 
+O'halloran, Pierre Cosson, and Franois Letourneur*# 
+
+* Institut de Biologie et Chimie des Protines, UMR5086 - CNRS/Universit 
+Lyon I 7, Passage du Vercors, 69367 Lyon cedex 07, France; Laboratoire de 
+Biochimie et Biophysique des Systmes Intgrs, 38054 Grenoble Cedex 9, 
+France; 241 Patterson Laboratories, Section of Molecular Cell & Developmental 
+Biology, The University of Texas at Austin, 24th St. and Speedway Avenue, 
+Austin, TX 78712, USA; Laboratoire de Biologie Molculaire et Cellulaire 
+/ UMR 5665 Ecole Normale Suprieure de Lyon, 69364 LYON Cedex 07, France; 
+Universit de Genve, Centre Mdical Universitaire, Dpartement de 
+Morphologie, CH-1211 Genve 4, Switzerland 
+
+Molecular Biology of the Cell, In Press 
+
+ABSTRACT 
+
+Adaptor protein complexes (AP) are major components of the cytoplasmic 
+coat found on clathrin-coated vesicles. Here, we report the molecular and 
+functional characterization of Dictyostelium clathrin-associated AP-1 
+complex, which in mammalian cells, participates mainly in budding of 
+clathrin-coated vesicles from the trans-Golgi network (TGN). The g-adaptin 
+AP-1 subunit was cloned and shown to belong to a Golgi-localized 300kDa 
+protein complex. Time-lapse analysis of cells expressing g-adaptin tagged 
+with the green-fluorescent-protein demonstrates the dynamics of AP-1 
+coated structures leaving the Golgi apparatus and rarely moving towards 
+the TGN. Targeted disruption of the AP-1 medium chain results in viable 
+cells displaying a severe growth defect and a delayed developmental cycle 
+as compared to parental cells. Lysosomal enzymes are constitutively 
+secreted as precursors, suggesting that protein transport between the 
+TGN and lysosomes is defective. Whereas endocytic protein markers are 
+correctly localized to endosomal compartments, morphological and 
+ultrastructural studies reveal the absence of large endosomal vacuoles 
+and an increased number of small vacuoles. In addition, the function of 
+the contractile vacuole complex (CV), an osmoregulatory organelle is 
+impaired and some CV components are not correctly targeted. 
+
+submitted by: Francois Letourneur [f.letourneur@ibcp.fr]
+
+----------------------------------------------------------------------------
+
+Title:  Analysis of 5  Nucleotidase and Alkaline Phosphatase by Gene 
+Disruption in Dictyostelium
+
+Charles L. Rutherford*, Danielle F. Overall, Muatasem Ubeidat and 
+Bradley R. Joyce
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406, USA
+
+Genesis, In Press
+
+Abstract
+
+In Dictyostelium discoideum  a phosphatase with a high pH optimum is known 
+to increase in activity during cell differentiation and become localized 
+to a narrow band of cells at the interface of prespore and prestalk cells.  
+However, it was not clear if this activity is due to a classical  alkaline 
+phosphatase  with broad range substrate specificity or to a 
+ 5 nucleotidase  with high substrate preference for 5 AMP.  We attempted 
+to disrupt the genes encoding these two phosphatase activities in order 
+to determine if the activity that is localized to the interface region 
+resides in either of these two proteins.  During aggregation of 5nt null 
+mutants multiple tips formed rather than the normal single tip for each 
+aggregate.  In situ phosphatase activity assays showed that the wt and 
+the 5nt gene disruption clones had normal phosphatase activity in the 
+area between prestalk and prespore cell types, while the alp null mutants 
+did not have activity in this cellular region.  Thus, the phosphatase 
+activity that becomes localized to the interface of the prestalk and 
+prespore cells is Alkaline Phosphatase.
+
+Submitted by rutherfo@vt.edu
+
+----------------------------------------------------------------------------
+
+ADENYLYL CYCLASE LOCALIZATION REGULATES STREAMING DURING 
+CHEMOTAXIS 
+
+Paul W. Kriebel, Valarie A. Barr, and Carole A. Parent*
+
+Laboratory of Cellular and Molecular Biology, National Cancer Institute, 
+National Institutes of Health 
+
+Cell, In press.
+
+We studied the role of the adenylyl cyclase ACA in D. discoideum chemotaxis 
+and streaming. In this process cells orient themselves in a head to tail 
+fashion as they are migrating to form aggregates. We show that cells lacking 
+ACA are capable of moving up a chemoattractant gradient, but are unable to 
+stream. Imaging of ACA-YFP reveals plasma membrane labeling highly enriched 
+at the uropod of polarized cells. This localization requires the actin 
+cytoskeleton but is independent of the regulator CRAC and the effector PKA. 
+A constitutively active mutant of ACA shows dramatically reduced uropod 
+enrichment and has severe streaming defects. We propose that the asymmetric 
+distribution of ACA provides a compartment from which cAMP is secreted to 
+locally act as a chemoattractant, thereby providing a unique mechanism to 
+amplify chemical gradients. This could represent a general mechanism that 
+cells use to amplify chemotactic responses.
+
+submitted by Carole Parent [parentc@helix.nih.gov]
+
+----------------------------------------------------------------------------
+
+Characterization of  a cAMP-stimulated cAMP phosphodiesterase in 
+Dictyostelium discoideum
+
+Marcel E. Meima, Karin E. Weening and Pauline Schaap
+
+School of Life Sciences, University of Dundee, MSI/WTB complex, Dow Street, 
+Dundee DD1 5EH, UK.
+
+SUMMARY
+
+A cyclic nucleotide phosphodiesterase,  PdeE,  that harbours two cyclic 
+nucleotide  binding motifs and a binuclear Zn2+ binding domain, was 
+characterized in Dictyostelium.  In other eukaryotes, the Dictyostelium 
+domain shows  greatest homology to the 73 kD subunit of the premRNA cleavage 
+and polyadenylation specificity factor. The Dictyostelium PdeE gene is 
+expressed at highest levels during aggregation and its disruption causes 
+the loss of a cAMP-phosphodiesterase activity. The pdeE null mutants show 
+a normal cAMP-induced cGMP response and  a 1.5-fold increase of cAMP-induced 
+cAMP relay. Overexpression of a PdeE-YFP1 fusion construct causes inhibition 
+of aggregation and loss of the cAMP relay response, but the cells can 
+aggregate in synergy with wild-type cells. The PdeE-YFP fusion protein was 
+partially purified by immuno-precipitation and biochemically characterized. 
+PdeE and its Dictyostelium ortholog PdeD are both maximally active at pH 7.0. 
+Both enzymes require bivalent cations for activity. The common cofactors Zn2+ 
+and Mg2+ activated PdeE and PdeD maximally at 10 mM, while Mn2+ activated the 
+enzymes to 4-fold higher levels, with half-maximal activation between 10 
+and 100 M. PdeE is an allosteric enzyme, which is about 4-fold activated by 
+cAMP, with half-maximal activation occurring at about  10 M and an apparent 
+KM around 1 mM. cGMP is degraded at a 6-fold lower rate than cAMP. Neither 
+cGMP nor 8BrcAMP are efficient activators of PdeE activity.
+
+submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+
+----------------------------------------------------------------------------
+
+Differentiation-inducing factor-1 (DIF-1) inhibits STAT3 activity involved 
+in gastric cancer cell proliferation via MEK-ERK-dependent pathway.
+
+Kanai M, Konda Y, Nakajima T, Izumi Y, Kanda N, Nanakin A, Kubohara Y, 
+Chiba T.
+
+Kyoto University School of Medicine, Gunma University IMCR
+
+Oncogene (2003) 22, 548-554.
+
+Differentiation-inducing factor-1 (DIF-1) is a chlorinated hexaphenone 
+isolated from Dictyostelium. DIF-1 exhibits antitumor activity in several 
+types of mammalian tumor cells, although the underlying mechanisms remain 
+unknown. On the other hand, recent studies indicate that constitutively 
+activated STAT3 acts as an oncogene and could be a target for antitumor 
+drug. In the present study, we examined the effects of DIF-1 on 
+proliferation of gastric cancer cell lines as well as on its signal 
+transduction pathways, focusing mainly on STAT proteins. DIF-1 inhibited 
+proliferation of gastric cancer cells. Western blot analysis and 
+electrophoretic mobility shift assay showed that DIF-1 inhibited STAT3 
+activity in an MEK-ERK-dependent manner in gastric cancer cell lines, 
+AGS and MKN28. Moreover, blockade of STAT3 activity by ectopic expression 
+of dominant-negative STAT3 or the Janus kinase inhibitor, tyrphostin 
+AG490, inhibited cell growth of AGS cells. These results suggest that 
+STAT3 activity plays an important role for cell growth in AGS cells, 
+and raises the possibility that inhibition of STAT3 activity is one of 
+the mechanisms responsible for the antitumor effect of DIF-1 in these 
+cells.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 20, number 2]
+
+ 

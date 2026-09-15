@@ -1,0 +1,126 @@
+dictyNews
+Electronic Edition
+Volume 27, number 16
+December 1, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+A 40.7 kDa Rpp30/Rpp1 homologue is a protein subunit of 
+Dictyostelium discoideum RNase P holoenzyme
+
+Anastassios Vourekas1, Dimitra Kalavrizioti1, Ioannis K. Zarkadis2, 
+Georgios A. Spyroulias3, Constantinos Stathopoulos4 and Denis Drainas1
+
+Departments of Biochemistry1 and Biology2, School of Medicine, University 
+of Patras, Patras 265 04, Greece. Department of Pharmacy3, University of 
+Patras, Patras 265 04, Greece 
+Department of Biochemistry and Biotechnology4, University of Thessaly, 
+Larissa 412 21, Greece
+
+
+Biochimie, in press
+
+RNase P is an essential and ubiquitous endonuclease that mediates the 
+maturation of the 5' ends of all precursor tRNA molecules. The holoenzyme 
+from Dictyostelium discoideum possesses RNA and protein subunits 
+essential for activity, but the exact composition of the ribonucleoprotein 
+complex is still under investigation. Bioinformatic analysis of D. discoideum 
+genome identified seven open reading frames encoding candidate RNase P 
+protein subunits. The gene named drpp30, encodes a protein with a 
+predicted molecular mass of 40.7 kDa that clusters with Rpp1 and Rpp30 
+RNase P protein subunits from Saccharomyces cerevisiae and human 
+respectively, which have significantly lower molecular masses. Cloning and 
+heterologous expression of DRpp30 followed by immunochemical analysis 
+of RNase P active fractions demonstrates its association with RNase P 
+holoenzyme. Furthermore, we show that DRpp30 can bind D. discoideum 
+RNase P RNA and tRNA transcripts in vitro, giving a first insight of its 
+possible role in D. discoideum RNase P function. Homology modelling using 
+as a template the archaeal Ph1887p, and molecular dynamics simulations 
+of the modeled structure suggest that DRpp30 adopts a TIM-barrel fold.
+
+
+Submitted by Denis Drainas [Drainas@med.upatras.gr]
+--------------------------------------------------------------------------------
+
+
+Filamin regulated F-actin assembly is essential for morphogenesis and 
+controls phototaxis in Dictyostelium
+
+Nandkumar Khaire, Rolf Mueller, Rosemarie Blau-Wasser, Ludwig Eichinger, 
+Michael Schleicher, Matthias Rief, Tad A. Holak, Angelika A. Noegel
+
+
+Journal of Biological Chemistry, in press
+
+Dictyostelium strains lacking the F-actin crosslinking protein filamin 
+(ddFLN) have a severe phototaxis defect at the multicellular slug stage. 
+Filamins are rod-shaped homodimers that cross-link the actin cytoskeleton 
+into highly viscous, orthogonal networks. Each monomer chain of filamin is 
+comprised of an F-actin-binding domain and a rod domain. In rescue 
+experiments only intact filamin re-established correct phototaxis in filamin 
+minus mutants whereas C-terminally truncated filamin proteins that had lost 
+the dimerisation domain and molecules lacking internal repeats but retaining 
+the dimerisation domain did not rescue the phototaxis defect. Deletion of 
+individual rod repeats also changed their subcellular localisation and mutant 
+filamins in general were less enriched at the cell cortex as compared to the 
+full length protein and were increasingly present in the cytoplasm. For 
+correct phototaxis ddFLN is only required at the tip of the slug as 
+expression under control of the cell type specific ecmA promoter and mixing 
+experiments with wild type cells supported phototactic orientation. Likewise, 
+in chimeric slugs wild type cells were primarily found at the tip of the slug 
+which acts as an organiser in Dictyostelium morphogenesis. 
+
+
+Submitted by: Angelika A. Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Induced symbiosis: Distinctive Escherichia coli-Dictyostelium discoideum 
+transferable co-cultures on agar
+
+Masahiko Todoriki1, Itaru Urabe1
+
+1Department of Biotechnology, Graduate School of Engineering, Osaka 
+University, 2-1 Yamadaoka, Suita, Osaka 565-0871, Japan
+Email. riki3@bio.eng.osaka-u.ac.jp
+
+
+Symbiosis, in press
+
+Despite the near ubiquity of symbiosis, only a few new symbiotic 
+associations have been reported. The establishment of the unique 
+amoeba-bacterial symbiosis observed by Jeon and his colleagues has 
+been difficult to retrace experimentally mainly because of the failure to 
+grow both partners in pure culture. The details of symbiosis origin and 
+especially laboratory induction are unknown in all cases. Here, we present 
+an experiment in which specific strains of four-year subculture Escherichia 
+coli and Dictyostelium discoideum evolved interdependently to produce a 
+new morphological entity on agar plates. The cocultured organisms lost 
+their pure culture identities under the conditions in which both control 
+organisms retained their independent culturability. Between days 32 and 
+101 of culturing of E. coli and between days 259 and 645 in D. discoideum 
+pure culture identity was lost. Yet through the four years both organisms 
+could always be cocultured and stored frozen. We traced the emergence 
+of characteristic changes toward a repeatedly inducible symbiotic 
+relationship in pure cultures of both cocultured organisms. Since both the 
+enteric bacterium and the cellular slime mold are free-living and culturable 
+in pure culture, genetically well-characterized. We provide a useful model 
+for the laboratory study of symbiotic evolution.
+
+
+Submitted by: Masahiko Todoriki [todoriki2004@yahoo.co.jp]
+============================================================
+[End dictyNews, volume 27, number 16]

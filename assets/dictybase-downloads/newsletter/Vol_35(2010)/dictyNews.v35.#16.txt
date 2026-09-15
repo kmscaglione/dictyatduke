@@ -1,0 +1,144 @@
+dictyNews
+Electronic Edition
+Volume 35, number 16
+Dec 3, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Molecular pharmacology in a simple model system: implicating MAP kinase 
+and phosphoinositide signalling in bipolar disorder
+
+Marthe H.R. Ludtmann, Katrina Boeckeler and Robin S.B. Williams
+
+Centre for Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham TW20 0EX, UK
+
+
+Seminars in Cell and Developmental Biology, in press
+
+Understanding the mechanisms of drug action has been the primary focus 
+for pharmacological researchers, traditionally using rodent models. However,
+non-sentient model systems are now increasingly being used as an 
+alternative approach to better understand drug action or targets.  One of 
+these model systems, the social amoeba Dictyostelium, enables the rapid 
+ablation or over-expression of genes, and the subsequent use of isogenic 
+cell culture for the analysis of cell signalling pathways in pharmacological 
+research. The model also supports an increasingly important ethical view 
+of research, involving the reduction, replacement and refinement of animals 
+in biomedical research. This review outlines the use of Dictyostelium in 
+understanding the pharmacological action of two commonly used bipolar 
+disorder treatments (valproic acid and lithium). Both of these compounds 
+regulate mitogen activated protein (MAP) kinase and inositol 
+phospholipid-based signalling by unknown means. Analysis of the molecular 
+pathways targeted by these drugs in Dictyostelium and translation of 
+discoveries to animal systems has helped to further understand the 
+molecular mechanisms of these bipolar disorder treatments.
+
+
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Evolutionary crossroads in developmental biology: Dictyostelium discoideum 
+
+Pauline Schaap 
+
+College of Life Sciences, University of Dundee, Dundee, UK. 
+
+
+Development, in press
+
+Dictyostelium discoideum belongs to a group of multicellular life forms 
+that can also exist for long periods as single cells. This ability to shift 
+between uni- and multicellularity makes the group ideal for studying 
+the genetic changes that occurred at the crossroad between uni- and 
+multicellular life. In this Primer, I discuss the mechanisms that control 
+multicellular development in Dictyostelium discoideum, and reconstruct 
+how some of these mechanisms evolved from a stress response in the 
+unicellular ancestor. 
+
+
+Submitted byPauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Evolution of Pseudomonas aeruginosa virulence revealed in a 
+Dictyostelium discoideum host model
+
+Emmanuelle Lelong, Anna Marchetti, Marianne Simon, Jane L. Burns, 
+Christian van Delden, Thilo Kšhler, Pierre Cosson*
+
+* Corresponding author: Pierre.Cosson@unige.ch
+
+
+Clinical Microbiology and Infection, in press
+
+Pseudomonas aeruginosa can cause acute lung infections in intubated 
+patients or chronic infections in patients with cystic fibrosis (CF). In both 
+situations, P. aeruginosa accumulates specific mutations, in particular
+in the lasR quorum-sensing regulator gene. Using a Dictyostelium 
+discoideum amoeba model, we assessed whether these mutations affect 
+bacterial virulence. 
+In a collection of clinical isolates from 16 CF patients, initial isolates were 
+fully virulent in 15 patients, but in late isolates collected several years later, 
+virulence was decreased in 8 patients. No significant correlation between 
+genetic inactivation of lasR and decreased virulence was observed. In 
+strains isolated from 10 colonized intubated patients, all initial isolates 
+were fully virulent. Despite the accumulation of lasR-inactivating mutations 
+in strains collected over a three-week period, no decrease in virulence was 
+observed in 8/10 patients. In one intubated patient, the virulent initial strain 
+was replaced a few days later with a different less virulent strain. We 
+observed a gradual decrease in bacterial virulence in only one intubated 
+patient.
+We conclude that adaptation of P. aeruginosa to chronically infected CF 
+patients can lead to a slow and gradual loss of virulence, as measured in 
+a Dictyostelium model system. However, loss of virulence is not caused 
+predominantly by mutations in lasR. During short-term colonization of 
+intubated patients up to 20 days, a decrease in virulence was exceptional, 
+despite the accumulation of lasR mutations.
+
+
+Submitted by Emanuelle Lelong [emmanuelle.lelong@unige.ch]
+--------------------------------------------------------------------------------
+
+
+What does Dictyostelium bring to the study of Pseudomonas infections?
+
+Wanessa C Lima, Emmanuelle Lelong, Pierre Cosson
+
+Corresponding Author: Dr Pierre Cosson
+
+
+Seminars in Cell and Developmental Biology 
+
+Bacterial infections are complex events. They are studied in a variety 
+of simple model systems, using mammalian or non-mammalian hosts, 
+all of which fail to reproduce fully the situation in infected patients. Each 
+model presents a combination of conceptual, practical, and ethical 
+advantages and disadvantages. In this review, we detail the use of 
+Dictyostelium discoideum amoebae as a model to study Pseudomonas 
+aeruginosa. More specifically, our aim is to explore what this additional 
+model system can bring to our understanding of Pseudomonas infections. 
+The study of interactions between Dictyostelium amoebae and Pseudomonas 
+provides a view of the selection pressures exerted by environmental predators 
+on Pseudomonas. It also represents a unique system to assess the virulence
+of very large numbers of Pseudomonas strains.
+
+
+Submitted by Emanuelle Lelong [emmanuelle.lelong@unige.ch]
+==============================================================
+[End dictyNews, volume 35, number 16]

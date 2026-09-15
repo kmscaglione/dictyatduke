@@ -1,0 +1,100 @@
+dictyNews
+Electronic Edition
+Volume 42, number 19
+August 12, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+YelA, a putative Dictyostelium translational regulator, acts as an 
+antagonist of DIF-1 signaling to control cell-type proportioning
+
+
+Yoko Yamada, Chris Sugden and Jeffrey G. Williams
+
+
+Int J Dev Biol., in press
+
+DIF-1 is a polyketide, that is produced by Dictyostelium prespore 
+cells and that induces initially uncommitted cells to differentiate 
+as prestalk cells. Exposure of cells to DIF-1 causes transitory 
+hypo-phosphorylation of seven serine residues in YelA; a protein 
+with a region of strong homology to the MIF4G domain of eukaryotic 
+initiation factor eIF4G. Based upon its domain architecture, which 
+in one important aspect closely resembles that of Death-Associated 
+Protein 5 (DAP5), we predict a role in stimulating internal ribosome 
+entry driven mRNA translation. The two paradigmatic DIF-1 inducible 
+genes are ecmA and ecmB. In support of a YelA function in DIF-1 
+signaling, a YelA null strain shows greatly increased expression of 
+ecmA and ecmB in response to DIF-1. Also, during normal 
+development in the null strain, the two genes are accelerated in their 
+expression. This is particularly evident for ecmB, a marker of stalk 
+tube and supporting structure differentiation. Mutants in DIF-1 bio-
+synthesis or signaling display a rudimentary or no basal disc and, 
+conversely, YelA null mutants produce fruiting bodies with a highly 
+enlarged basal disc that ectopically expresses a stalk tube-specific 
+marker. Thus YelA acts as an antagonist of DIF-1 signaling, with a 
+consequent effect on cell type proportioning and it is predicted to 
+act as a translational regulator.
+
+
+submitted by: Yoko Yamada [y.yamada@dundee.ac.uk]
+———————————————————————————————————————
+
+
+Extracellular polyphosphate inhibits proliferation in an 
+autocrine negative feedback loop in Dictyostelium discoideum
+
+
+Patrick M. Suess and Richard H. Gomer
+
+
+The Journal of Biological Chemistry, in press
+
+Polyphosphate is a polymer of phosphate residues linked by 
+high-energy phosphoanhydride bonds. Despite being highly 
+conserved throughout nature, its function is poorly understood. 
+Here we show that Dictyostelium cells accumulate extracellular 
+polyphosphate, and this acts to inhibit proliferation at high cell 
+densities. In shaking culture, extracellular polyphosphate 
+concentrations increase as cell density increases, and if the 
+concentration of polyphosphate observed at stationary phase 
+is added to cells at mid-log, proliferation is halted. Adding an 
+exopolyphosphatase to cell cultures or stationary phase 
+conditioned media decreases polyphosphate levels and 
+abrogates the anti-proliferative effect. Cells show saturable 
+binding of polyphosphate, suggesting the presence of a cell-
+surface polyphosphate receptor. Extracellular polyphosphate 
+accumulation is potentiated by decreased nutrient levels, 
+potentially as a means to anticipate starvation. Loss of the 
+Dictyostelium polyphosphate kinase DdPpk1 causes intracellular 
+polyphosphate levels to become undetectable, and negatively 
+affects fitness, cytokinesis, and germination. However, cells 
+lacking DdPpk1 accumulate ~50% normal levels of extracellular 
+polyphosphate, suggesting an additional means of synthesis. We 
+found that cells lacking inositol hexakisphosphate kinase, which 
+is responsible for the synthesis of the inositol pyrophosphates IP7 
+and IP8, reach abnormally high cell densities and show decreased 
+extracellular polyphosphate levels. Two different enzymes thus 
+appear to mediate the synthesis of Dictyostelium extracellular 
+polyphosphate, which is used as a signal in an autocrine negative 
+feedback loop to regulate cell proliferation.
+
+
+submitted by: Patrick Suess [psuess@bio.tamu.edu]
+==============================================================
+[End dictyNews, volume 42, number 19]

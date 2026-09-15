@@ -1,0 +1,133 @@
+Dicty News
+Electronic Edition
+Volume 22, number 9
+April 9, 2004
+
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+
+Back issues of Dicty-News, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Periodic signaling controlled by an oscillatory circuit that includes
+protein kinases ERK2 and PKA.
+
+
+Mineko Maeda, Sijie Lu, Gad Shaulsky, Yuji Miyazaki, Hidekazu Kuwayama,
+Yoshimasa Tanaka, Adam Kuspa, and William F. Loomis
+
+
+Department of Biology, Osaka University, Osaka, Japan; Departments of
+Biochemistry and Molecular Biology and Molecular and Human Genetics, Baylor
+College of Medicine, Houston TX; Institute of Biological Sciences,
+University of Tsukuba, Ibaraki, Japan; Division of Biological Sciences,
+University of California San Diego, La Jolla, CA
+
+
+Science, in press
+
+
+Self-regulating systems often employ robust oscillatory circuits. One such
+system controls the chemotactic signaling mechanism of Dictyostelium where
+pulses of cAMP are generated with a 7 minute periodicity. We have observed
+spontaneous oscillations in activation of the MAP kinase ERK2 that occur in
+phase with peaks of cAMP and show that ERK2 modulates cAMP levels through the
+phosphodiesterase RegA. Computer modeling and simulations of the underlying
+circuit faithfully account for the ability of the cells to spontaneously
+generate periodic pulses during specific stages of development.  Similar
+oscillatory processes may occur in cells of many different species.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+A Galpha-Dependent Pathway that Antagonizes Multiple Chemoattractant
+Responses that Regulate Directional Cell Movement
+
+
+Joseph A. Brzostowski *, Carole A. Parent +, and Alan R. Kimmel *
+
+
+* LCDB, NIDDK, + LCMB, CCR, NCI,
+National Institutes of Health, Bethesda, MD  20892-8028
+
+
+Genes and Development, in press
+
+
+Chemotactic cells, including neutrophils and Dictyostelium discoideum, orient
+and move directionally in very shallow chemical gradients. As cells polarize,
+distinct structural and signaling components become spatially constrained to
+the leading edge or rear of the cell. It has been suggested that complex
+feedback loops that function downstream of receptor signaling integrate
+activating and inhibiting pathways to establish cell polarity within such
+gradients. Much effort has focused on defining activating pathways, whereas
+inhibitory networks have remained largely unexplored. We have identified a
+novel signaling function in Dictyostelium involving a Galpha subunit (Galpha9)
+that antagonizes broad chemotactic response. Mechanistically, Galpha9
+functions rapidly following receptor stimulation to negatively regulate
+PI3K/PTEN, adenylyl cyclase, and guanylyl cyclase pathways. The coordinated
+activation of these pathways is required to establish the asymmetric
+mobilization of actin and myosin that typifies polarity and ultimately directs
+chemotaxis. Most dramatically, cells lacking Galpha9 have extended PI(3,4,5)P3,
+cAMP, and cGMP responses and are hyperpolarized. In contrast, cells expressing
+constitutively activated Galpha9 exhibit a reciprocal phenotype. Their second
+message pathways are attenuated, and they have lost the ability to suppress
+lateral pseudopod formation. Potentially, functionally similar Galpha-mediated
+inhibitory signaling may exist in other eukaryotic cells to regulate
+chemoattractant response.
+
+
+Submitted by: Joseph Brzostowski [jb363a@nih.gov]
+
+-----------------------------------------------------------------------------
+
+An Orderly Retreat: Dedifferentiation is a Regulated Process
+
+
+Mariko Katoh 1,4, Chad Shaw 1, Qikai Xu 1,2, Nancy Van Driessche 1,3,
+Takahiro Morio 4, Hidekazu Kuwayama 4, Shinji Obara 4, Hideko Urushihara 4,
+Yoshimasa Tanaka 4,6 and Gad Shaulsky 1,2,3,5
+
+
+1 Department of Molecular and Human Genetics, 2Graduate Program in Structural
+and Computational Biology and Molecular Biophysics, 3 Graduate Program in
+Developmental Biology, Baylor College of Medicine, Houston, TX, USA
+4 Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki,
+Japan
+
+PNAS, in press (edited by Igor B. Dawid)
+
+
+ABSTRACT
+Differentiation is a highly regulated process whereby cells become specialized
+to perform specific functions and lose the ability to perform others. In
+contrast, the question of whether dedifferentiation is a genetically
+determined process, or merely an unregulated loss of the differentiated state,
+has not been resolved.  We show here that dedifferentiation in the social
+amoeba Dictyostelium discoideum relies on a sequence of events that is
+independent of the original developmental state and involves the coordinated
+expression of a specific set of genes.  A defect in one of these genes, the
+histidine kinase dhkA, alters the kinetics of dedifferentiation and uncouples
+the progression of dedifferentiation events.  These observations establish
+dedifferentiation as a genetically determined process and suggest the existence
+of a developmental checkpoint that ensures a return path to the
+undifferentiated state.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+
+===============================================================================
+[End Dicty News, volume 22, number 9]

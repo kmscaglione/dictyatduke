@@ -1,0 +1,137 @@
+dictyNews
+Electronic Edition
+Volume 38, number 18
+July 20, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Myosin Heavy Chain Kinases Play Essential Roles In Ca2+, But Not cAMP, 
+Chemotaxis And The Natural Aggregation of Dictyostelium discoideum
+
+Deborah Wessels, Daniel F. Lusche, Paul A. Steimle, Amanda Scherer, 
+Spencer Kuhl, Kristen Wood, Brett Hanson, Thomas T. Egelhoff and 
+David R. Soll
+
+
+Journal of Cell Science, in press
+
+Behavioral analyses of the deletion mutants of the four known myosin II 
+heavy chain (Mhc) kinases of D. discoideum revealed that all played a 
+minor role in the efficiency of basic cell motility, but none played a role in 
+chemotaxis in a spatial gradient of cAMP generated in vitro.  However, 
+each of the two kinases MhckA and MhckC, was essential for chemotaxis
+ in a spatial gradient of Ca2+, shear induced directed movement, and 
+reorientation in the front of waves of cAMP during natural aggregation.  
+The mutant phenotypes of mhckA- and mhckC- were highly similar to that 
+of the Ca2+ channel/receptor mutant iplA- and the myosin II phosphorylation 
+mutant 3XALA, which produces constitutively unphosphorylated myosin II.  
+These results demonstrate that IplA, MhckA and MhckC play a selective 
+role in chemotaxis in a spatial gradient of Ca2+, but not cAMP and suggest 
+that Ca2+ chemotaxis plays a role in the orientation of cells in the front of 
+cAMP waves during natural aggregation.
+
+
+Submitted by Deborah Wessels  [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------------
+
+
+The balance in the delivery of ER components and the vacuolar proton 
+pump to the phagosome depends on myosin IK in Dictyostelium.
+
+Regis Dieckmann1#, Aurelie Gueho1, Roger Monroy1, Thomas Ruppert2, 
+Gareth Bloomfield3 and Thierry Soldati1*
+
+
+Molecular & Cellular Proteomics, in press
+
+1Department de Biochimie, Faculte des Sciences, University de Geneve, 
+Sciences II, 30 quay Ernest Ansermet, CH-1211 Geneve-4, Switzerland
+2Core Facility for Mass Spectrometry and Proteomics, Zentrum fuer 
+Molekulare Biologie der Universitaet Heidelberg (ZMBH), Im Neuenheimer 
+Feld 282, D-69120 Heidelberg, Germany
+3MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 0QH, UK
+#Present address: : Klinisches Institut fuer Pathologie, 1090 Wien, Austria
+*Corresponding author
+
+
+Molecular & Cellular Proteomics, in press
+
+In Dictyostelium, the cytoskeletal proteins Actin binding protein 1 (Abp1) 
+and the class I myosin MyoK directly interact and couple actin dynamics to 
+membrane deformation during phagocytosis. Together with the kinase PakB, 
+they build a regulatory switch that controls the efficiency of uptake of large 
+particles. As a basis for further functional dissection, exhaustive phagosome 
+proteomics was performed and established that about 1300 proteins participate 
+in phagosome biogenesis. Then, quantitative and comparative proteomic analysis 
+of phagosome maturation was performed to investigate the impact of the absence 
+of MyoK or Abp1. Immunoblots and two-dimensional differential gel electrophoresis 
+(2D-DIGE) of phagosomes isolated from myoK-null and abp1-null cells were used 
+to determine the relative abundance of proteins during the course of maturation. 
+Immunoblot profiling showed that absence of Abp1 alters the maturation profile of 
+its direct binding partners such as actin and the Arp2/3 complex, suggesting that 
+Abp1 directly regulates actin dynamics at the phagosome. Comparative 2D-DIGE 
+analysis resulted in the quantification of mutant-to-wild type abundance ratios at 
+all stages of maturation for over one hundred identified proteins. Coordinated 
+temporal changes in these ratio profiles determined the classification of identified 
+proteins into functional groups. Ratio profiling revealed that the early delivery of 
+ER proteins to the phagosome was affected by the absence of MyoK and was 
+coupled to a reciprocal imbalance in the delivery of the vacuolar proton pump 
+and Rab11 GTPases. As direct functional consequences, a delayed acidification 
+and a reduced intra-phagosomal proteolysis were demonstrated in vivo in 
+myoK-null cells. In conclusion, the absence of MyoK alters the balance of the 
+contributions of the ER and an endo-lysosomal compartment, and slows down 
+phagosome acidification as well as the speed and efficiency of particle
+degradation inside the phagosome.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+-------------------------------------------------------------------------------------
+
+
+Ndm, a coiled-coil domain protein that suppresses macropinocytosis and has
+effects on cell migration.
+
+Jessica S Kelsey, Nathan M Fastman, Elizabeth F Noratel and Daphne D
+Blumberg*
+
+
+Molecular Biology of the Cell,  In Press
+
+The ampA gene has a role in cell migration in Dictyostelium discoideum.
+Cells overexpressing AmpA show an increase in cell migration, forming
+large plaques on bacterial lawns.  A second site suppressor of this
+ampA-overexpressing phenotype identified a previously uncharacterized
+gene, ndm which is described here.  The Ndm protein is predicted to
+contain a coiled-coil BAR like domain, a domain involved in endocytosis
+and membrane bending.  Ndm knockout and Ndm-mRFP expressing cell lines
+were used to establish a role for ndm in suppressing endocytosis.  An
+increase in the rate of endocytosis and in the number of endosomes was
+detected in ndm- cells.  During migration ndm- cells formed numerous
+endocytic cups instead of the broad lamellipodia structure characteristic
+of moving cells. A second lamellipodia based function, cell spreading, was
+also defective in the ndm- cells.  The increase in endocytosis and the
+defect in lamellipodia formation were associated with reduced chemotaxis
+in ndm- cells.  Immunofluorescence results and GST pull down assays
+revealed an association of Ndm with coronin and F-actin.  The results
+establish Ndm as a gene important in regulating the balance between
+formation of endocytic cups and lamellipodia structures.
+
+
+Submitted by Daphne Blumberg [blumberg@umbc.edu]
+==============================================================
+[End dictyNews, volume 38, number 18]

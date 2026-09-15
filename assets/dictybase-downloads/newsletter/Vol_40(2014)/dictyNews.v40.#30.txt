@@ -1,0 +1,76 @@
+dictyNews
+Electronic Edition
+Volume 40, number 30
+December 05, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Functional drug screening reveals anticonvulsants as enhancers of 
+mTOR-independent autophagic killing of Mycobacterium tuberculosis 
+through inositol depletion.
+
+Mark Schiebler1,9, Karen Brown1,2,9, Krisztina Hegyi1,9 , Sandra M. 
+Newton3,9, Maurizio Renna4,9, Lucy Hepburn1, Catherine Schaffner1, 
+Sarah Coulter1, Andres Obreg—n-Henao5, Marcela Henao Tamayo5, 
+Randall Basaraba5, Beate Kampmann3, Katherine M. Henry6, Joseph 
+Burgon6, Stephen A. Renshaw6, Angeleen Fleming4, Robert R. Kay7, 
+Karen E. Anderson8, Phillip T. Hawkins8, Diane J. Ordway5, David C. 
+Rubinsztein4 & R. Andres Floto1,2.
+ 
+1Departments of Medicine and  4Medical Genetics, Cambridge Institute 
+for Medical Research, University of Cambridge, UK.
+2Cambridge Centre for Lung Infection, Papworth Hospital, Cambridge, 
+UK
+3Department of Paediatric Infectious Diseases and Allergy, Imperial 
+College London, UK
+5 Department of Microbiology, Immunology and Pathology, Colorado 
+State University, Fort Collins, Colorado, USA
+6 Department of Infection and Immunity, University of Sheffield, 
+Western Bank, Sheffield, UK 7 MRC Laboratory of Molecular Biology, 
+Cambridge, UK
+8 The Inositide Laboratory, Babraham Institute, Babraham Research 
+Campus, Cambridge, UK
+
+
+EMBO Molecular Medicine, in press
+
+Mycobacterium tuberculosis (MTB) remains a major challenge to global 
+health made worse by the spread of multi-drug resistance. We 
+therefore examined whether stimulating intracellular killing of 
+mycobacteria through pharmacological enhancement of macroautophagy 
+might provide a novel therapeutic strategy. Despite the resistance 
+of MTB to killing by basal autophagy, cell-based screening of 
+FDA-approved drugs revealed two anticonvulsants, carbamazepine and 
+valproic acid, that were able to stimulate autophagic killing of 
+intracellular M. tuberculosis within primary human macrophages at 
+concentrations achievable in man. Using a zebrafish model, we show 
+that carbamazepine can stimulate autophagy in vivo and enhance 
+clearance of M. marinum, while in mice infected with a highly virulent 
+multi-drug resistant MTB strain, carbamazepine treatment reduced 
+bacterial burden, improved lung pathology and stimulated adaptive 
+immunity. We show that carbamazepine induces anti-microbial autophagy 
+through a novel, evolutionarily conserved, mTOR-independent pathway 
+controlled by cellular depletion of myoinositol. While strain-specific 
+differences in susceptibility to in vivo carbamazepine treatment may 
+exist, autophagy enhancement by repurposed drugs provides an easily 
+implementable potential therapy for the treatment of multidrug-
+resistant mycobacterial infection.
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]   
+==============================================================
+[End dictyNews, volume 40, number 30]

@@ -1,0 +1,73 @@
+dictyNews
+Electronic Edition
+Volume 37, number 5
+August 26, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Structure, dynamics, lipid-binding, and physiological relevance of 
+the putative GTPase-binding domain of Dictyostelium Formin C
+
+Sonja A. Dames 1, Alexander Junemann 2, Hans J. Sass 3, 
+Andre Schoenichen 4, Barbara E., Stopschinski 4, Stephan Grzesiek 3, 
+Jan Faix 2, and Matthias Geyer 4.
+
+1) Chair of Biomolecular NMR Spectroscopy, Department of Chemistry, 
+Technische Universität München, Lichtenbergstr. 4, 85747 Garching, 
+Germany; 
+2) Institute for Biophysical Chemistry, Hannover Medical School, 
+30623 Hannover, Germany; 
+3) Department of Structural Biology, Biozentrum, University of Basel, 
+Klingelbergstr. 70, 4056 Basel, Switzerland; 
+4) Department of Physical Biochemistry, Max-Planck-Institut für 
+Molekulare Physiologie, Otto-Hahn-Str. 11, 44227 Dortmund, Germany
+
+
+J. Biol. Chem., in press
+
+Dictyostelium Formin C (ForC) is involved in the regulation of local 
+actin cytoskeleton reorganization, e.g. during cellular adhesion or 
+migration. ForC contains formin homology (FH) 2 and 3 domains and an 
+N-terminal putative GTPase-binding domain (GBD), but lacks a canonical 
+FH1 region. To better understand the role of the GBD, its structure, 
+dynamics, lipid-binding properties, and cellular functions were 
+analyzed by NMR and CD spectroscopy and by in vivo fluorescence 
+microscopy. Moreover, the program CS-Rosetta was tested for the 
+structure prediction based on chemical shift data only.
+
+The ForC GBD adopts an ubiquitin-like alpha/beta-roll fold with an 
+unusually long loop between beta-strands 1 and 2. Based on the 
+lipid-binding data, the presence of DPC micelles induces the formation 
+of alpha-helical secondary structure and a rearrangement of the 
+tertiary structure. Lipid-binding studies with a mutant protein and 
+a peptide suggest that the beta1-beta2-loop is not relevant for these 
+conformational changes. Whereas small amounts of negatively charged 
+phosphoinositides (PIP45, PIP345) lower the micelle concentration 
+necessary to induce the observed spectral changes, other negatively 
+charged phospholipids (PS, PG) had no such effect. Interestingly, 
+bicelles and micelles composed of diacylphosphocholines had no effect 
+on the GBD structure. Our data suggest a model, in which part of the 
+large positively charged surface area of the GBD mediates localization 
+to specific membrane patches, thereby regulating interactions with 
+signaling proteins. Our cellular localization studies show that both, 
+the GBD and the FH3 domain, are required for ForC targeting to 
+cell-cell contacts and early phagocytic cups and macropinosomes.
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+==============================================================
+[End dictyNews, volume 37, number 5]

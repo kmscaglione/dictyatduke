@@ -1,0 +1,202 @@
+Dicty News
+Electronic Edition
+Volume 17, number 5
+Sept. 8, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=====================================================
+  NEW JOURNAL - "Eukaryotic Cell" - CALL FOR PAPERS 
+=====================================================
+
+The American Society for Microbiology is pleased to announce publication 
+of an important new journal focusing on eukaryotic microbiology, 
+Eukaryotic Cell.  This bimonthly publication, commencing publication in 
+February 2002 in both print and online formats, will present reports of 
+basic research on simple eukaryotic microorganisms such as yeasts, fungi, 
+algae, protozoa, and social amoebae.  Topics will include, but are not 
+limited to: basic biology; molecular and cellular biology; mechanisms, 
+and control, of developmental pathways; structure and form inherent in 
+basic biological processes; cellular architecture; metabolic physiology; 
+comparative genomics, biochemistry, and evolution; population dynamics; 
+and ecology.   In addition, the journal will consider manuscripts dealing 
+with the viruses of these organisms and their organelles and with 
+interactions with other living systems, where the focus is clearly on the 
+eukaryotic cell.
+
+
+The board of editors of Eukaryotic Cell is led by Editor in Chief C. C. 
+Wang and includes Jay C. Dunlap, Ursula W. Goodenough, Ching Kung, Adam 
+Kuspa, and Aaron P. Mitchell.
+
+
+Manuscripts should be sent to where they will be forwarded to the 
+appropriate editor:
+
+
+Journals Department,
+American Society for Microbiology
+1752 N St., N.W.,
+Washington, DC 20036-2904, USA.  
+
+Format, policies and procedures should follow those given in the
+Instructions to Authors for the other ASM journals.
+These Instructions and sample articles may be
+accessed at: http://www.journals.asm.org/misc/eukaryot.shtml
+
+
+=====================
+  PostDoc Positions
+=====================
+
+A Microarray Resource for the Dictyostelium Research Community
+
+Based in Cambridge, UK
+
+Funding has recently been awarded by the Wellcome Trust to generate
+microarrays for the protozoan organism Dictyostelium discoideum, which
+is widely used to study such basic biological questions as chemotaxis,
+signal transduction and development. This project, a collaboration
+between the Sanger Centre (Drs. Bart Barrell and Al Ivens
+[barrell@sanger.ac.uk; alicat@sanger.ac.uk]) and the MRC Laboratory
+of Molecular Biology (LMB) (Dr. Rob Kay [rrk@mrc-lmb.cam.ac.uk]),
+will utilise all available genome sequence data to produce a publicly
+available, biologically characterised resource.
+
+Two three-year postdoctoral positions are available from 1st
+November 2001. One position will be based at, and employed by, the
+Sanger Centre. This position will be expected to play the major role
+in bioinformatics aspects of the project. The second individual, based
+at, and employed by, the LMB, will specialise predominantly in
+Dictyostelium biology (MRC Band 4).
+
+Both positions would be expected to work on all aspects of the
+project, including developing a suitable strategy with the PIs for
+producing this resource and for initiating and maintaining
+collaborations to ask biologically interesting questions using the arrays.
+The starting salaries for both positions will be based upon
+qualifications and experience.
+
+For further information, please refer to:
+
+http://www.sanger.ac.uk/Projects/D_discoideum/Arrays/
+http://www.mrc-lmb.cam.ac.uk/research/CB/Kay_R/Kay_R.html
+http://dictybase.org/dicty.html
+
+To apply for either position, please write with your CV and current
+salary details to: The Personnel Officer, The Sanger Centre, Wellcome
+Trust Genome Campus, Hinxton, Cambridge CB10 1SA.
+Closing date: 28 September 2001.
+All candidates will be contacted after: 8 October 2001.
+
+==============
+  Abstracts
+==============
+
+Dynamics of the Dictyostelium Arp2/3 Complex in Endocytosis, Cytokinesis, 
+and Chemotaxis
+
+Robert Insall*, Annette Mueller-Taubenberger+, Laura Machesky*, Jana
+Koehler+, Evelyn Simmeth+, Simon J. Atkinson, Igor Weber+ and Guenther
+Gerisch+
+
+* School of Biosciences, Birmingham University, Birmingham B15 2TT, UK; 
++ Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany;
+ Indiana University School of Medicine, Department of Medicine, 1120 South 
+Drive, FH-115, Indianapolis, IN 46202-5116.
+
+Cell Motil. Cytoskeleton, accepted.
+
+Abstract:
+The Arp2/3 complex is a ubiquitous and important regulator of the actin 
+cytoskeleton.  Here we identify this complex from Dictyostelium and 
+investigate its dynamics in live cells.  The predicted sequences of the 
+subunits show a strong homology to the members of the mammalian complex, 
+with the larger subunits generally better conserved than the smaller ones. 
+In the highly motile cells of Dictyostelium the Arp2/3 complex is rapidly 
+re-distributed to the cytoskeleton in response to external stimuli. Fusions 
+of Arp3 and p41-Arc with GFP reveal that in phagocytosis, macropinocytosis 
+and chemotaxis the complex is recruited within seconds to sites where actin 
+polymerization is induced.  In contrast, there is little or no localization 
+to the cleavage furrow during cytokinesis.  Rather the Arp2/3 complex is 
+enriched in ruffles at the polar regions of mitotic cells, which suggests 
+a role in actin polymerization in these ruffles.
+
+-----------------------------------------------------------------------------
+
+Coactosin-like Protein, a human F-actin binding protein: Critical role of 
+lysine-75
+
+Patrick Provost*,  Johanne Doucet*, Alexander Stock+, Guenther Gerisch+, 
+Bengt Samuelsson* and Olof Radmark*
+
+* Department of Medical Biochemistry and Biophysics, Division of Physiological 
+Chemistry II, Karolinska Institute, S-17177  Stockholm, Sweden;
++ Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany.
+
+Biochem. J., accepted.
+
+This paper is not strictly a Dicty paper, but deals with the human homologue 
+of coactosin, an actin binding protein first described in Dictyostelium 
+(DeHostos et al., Cell Motil. Cytoskeleton 26, 181-191 (1993)). Another 
+paper on this human coactosin-like protein (CLP) has appeared in J. Biol. 
+Chem. 276, 16520-16527 (2001): Provost, P., J. Doucet, T. Hammarberg, G. 
+Gerisch, B. Samuelsson and O. Radmark: 5-Lipoxygenase Interacts with 
+Coactosin-like Protein.
+
+Abstract:
+
+Coactosin-like Protein (CLP) was recently identified in a yeast two-hybrid 
+screen using 5-lipoxygenase as a bait. Here, we report the functional 
+characterization of CLP as a human filamentous actin (F-actin) binding protein. 
+CLP mRNA shows a wide tissue distribution and is predominantly expressed in 
+placenta, lung, kidney and peripheral blood leukocytes. Endogenous CLP protein 
+is localized in the cytosol of myeloid cells. Using a two-hybrid approach, 
+actin was identified as a CLP-interacting protein. Binding experiments 
+indicated that CLP associates with F-actin but does not form a stable 
+complex with G-actin. In transfected mammalian cells, CLP colocalized with 
+actin stress fibers. CLP bound to actin filaments in a stoichiometry of 1:2 
+actin subunits, but could be cross-linked to only one subunit of actin. 
+Site-directed mutagenesis revealed the involvement of Lys-75 of CLP in 
+actin binding, a residue highly conserved in related proteins and supposed 
+to be exposed on the surface of the CLP protein. Our results identify CLP as 
+a new human protein that binds F-actin in vitro and in vivo, and indicate 
+that Lys-75 is essential for this interaction.
+
+-----------------------------------------------------------------------------
+
+Characterization of CD36/LIMPII-homologues in Dictyostelium discoideum 
+
+Klaus-Peter Janssen, Ren Rost, Ludwig Eichinger, and Michael Schleicher 
+
+A.-Butenandt-Institut fr Zellbiologie, Ludwig-Maximilians-Universitaet, 
+80336 Muenchen, FRG.
+
+accepted: J. Biol. Chem.
+
+The CD36/LIMPII family is ubiquitously expressed in higher eukaryotes and 
+comprises integral membrane proteins that have in part been characterized 
+as cell adhesion receptors, scavenger receptors, or fatty acids transporters. 
+However, no physiological role has been defined so far for the members of 
+this family that localize specifically to vesicular compartments rather than 
+to the cell surface, namely LIMPII (lysosomal integral membrane protein type 
+II) from mammals and LmpA from the amoeba Dictyostelium discoideum. LmpA, the 
+first described CD36/LIMPII homologue from lower eukaryotes, has initially 
+been identified as a suppressor of the profilin-minus phenotype. Here we report 
+the discovery and initial characterization of two new CD36/LIMPII-related 
+proteins, which both share several features with LmpA: (I) their size is 
+considerably larger than that of the CD36/LIMPII proteins from higher 
+eukaryotes, (II) they show the characteristic hairpin-topology of this protein 
+family, (III) they are heavily N-glycosylated, (IV) they localize to vesicular 
+structures of endo-lysosomal origin. However, they show intriguing differences 
+in their developmental regulation and exhibit different sorting signals of the 
+di-leucine or tyrosine-type in their carboxyterminal tail domains. These 
+features make them promising candidates as paradigm for the study of the 
+function and evolution of the yet poorly understood CD36/LIMPII proteins. 
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 5]

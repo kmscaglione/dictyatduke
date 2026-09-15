@@ -1,0 +1,268 @@
+Dicty News
+Electronic Edition
+Volume 11, number 1
+July 11, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+Inhibition of the cAMP dependent protein kinase by synthetic A-helix peptides
+
+Stéphane Gamboni, Catherine Chaperon, Kirstin Friedrich§,
+Pascal J. Baehler, Christophe D. Reymond
+
+Insitut de biologie cellulaire et de morphologie, Rue du Bugnon 9,
+CH-1005 Lausanne, Switzerland
+§ EPFL, Laboratoire de chimie physique des polymères et membranes,
+CH-1015 Lausanne.
+
+BIOCHEMISTRY (In Press)
+
+Abstract:
+
+The catalytic subunit of the cAMP-dependent protein kinase from 
+Dictyostelium discoideum, PkaC, displays the same properties as its 
+mammalian counterpart, except for being about twice as large in size. 
+Sequence comparisons indicated the presence of a conserved a-helix 
+(A-helix) within the N-terminal region of PkaC which could potentially 
+establish close contacts with the catalytic core (1). We show in this 
+report that a synthetic peptide with the A-helix sequence inhibits 
+PKA activity, whereas unrelated peptides display no inhibitory activity. 
+The inhibition seems competitive with respect to the kemptide substrate 
+rather than due to binding to a secondary site. We further show by amino 
+acid replacements that the last lysine of the A-helix sequence is 
+involved in this specific inhibition. A model is proposed for the 
+possible role of the A-helix.
+
+-------------------------------------------------------------------------
+
+Interaptin, an actin-binding protein of the a-actinin superfamily in
+Dictyostelium discoideum, is developmentally and cAMP-regulated and
+associates with intracellular  membrane compartments 
+
+Francisco Rivero1,2, Adam Kuspa3, Regine Brokamp1, Monika Matzner1 and
+Angelika A. Noegel1,2,4
+1Max-Planck-Institut für Biochemie, Am Klopferspitz 18a, 82152 Martinsried,
+Germany. 2Institut für Biochemie I, Medizinische Fakultät, Universität zu
+Köln, Joseph-Stelzmann-Str. 52, 50931 Köln, Germany
+3Department of Biochemistry, Baylor College of Medicine, 1 Baylor Plaza,
+Houston, TX 77030
+
+Journal of Cell Biology, in press.
+
+In a search for novel members of the a-actinin superfamily a D. discoideum 
+genomic library in YACs was screened under low stringency conditions using 
+the acting-binding domain of the gelation factor as probe. A new locus was 
+identified and 8.6 kb of genomic DNA were sequenced that encompassed the 
+whole abpD gene. The DNA sequence predicts a protein, interaptin, with a 
+calculated molecular mass of 204,300 that is constituted by an actin-binding 
+domain, a central coiled-coil rod domain and a membrane-associated domain. 
+In Northern blot analyses a cAMP-stimulated transcript of 5.8 kb is expressed 
+at the stage when cell differentiation occurs. Monoclonal antibodies raised 
+against bacterially expressed interaptin polypeptides recognized a 200 kD 
+developmentally and cAMP-regulated protein and a 160 kD constitutively 
+expressed protein in Western blots. In multicellular structures interaptin 
+appears to be enriched in anterior-like cells which during culmination sort 
+to the upper and lower cups. The protein is located at the nuclear envelope 
+and ER. In mutants deficient in interaptin development is delayed, but the 
+morphology of the mature fruiting bodies appears normal. When starved in 
+suspension abpD- cells form EDTA-stable aggregates, which, in contrast to 
+wild type, dissociate. Based on its domains and location interaptin 
+constitutes a potential link between intracellular membrane compartments 
+and the actin cytoskeleton.
+-------------------------------------------------------------------------
+
+Kinetic Characterization of Myosin Head Fragments with Long-lived
+Myosin.ATP States 
+
+A. L. Friedman(1), M. A. Geeves(2), D. J. Manstein(3), and J. A.
+Spudich*(1)
+
+Department of Biochemistry, Stanford University, Stanford, California,
+94305, Max-Planck-Institut fur Molekulare Physiologie, Postfach 102644,
+D-44026 Dortmund, and Max-Planck-Institut fur Medizinische Forschung,
+Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+Biochemistry, in press.
+
+ABSTRACT:  
+
+We have separately expressed the D. discoideum myosin II nonhydrolyzer 
+point mutations E459V and E476K [Ruppel, K. M. and Spudich, J. A. (1996) 
+Mol. Biol. Cell 7, 1123-1136.] in the soluble myosin head fragment M761-1R 
+[Anson et al. (1996) EMBO J. 15, 6069-6074] and performed transient kinetic 
+analyses to characterize the ATPase cycles of the mutant proteins.  While 
+the mutations cause some changes in mantATP (2’(3’)-O-(N-methylanthraniloyl)
+-ATP) and mantADP binding, the most dramatic effect is on the hydrolysis 
+step of the ATPase cycle, which is reduced by four (E476K) and six (E459V) 
+orders of magnitude.  Thus both mutant myosin constructs do in fact catalyze 
+ATP hydrolysis but have very long-lived myosin.ATP states.  The E459V mutation 
+allowed for a direct measurement of the ATP off rate constant from myosin, 
+which was found to be 2 x 10-5 s-1.  Actin accelerated ATP release from this 
+E459V construct by at least 100-fold.  Additionally, we found that the affinity 
+of the E476K construct for actin is significantly weaker than for the wild-type 
+construct, while the E459V mutant interacts with actin normally. Their functional 
+properties and the fact that they can be produced and purified in large amounts 
+makes the E476K and E459V constructs ideal tools to elucidate key structural 
+features of the myosin ATPase cycle.  These constructs should allow us to address 
+important questions, including how binding of ATP to myosin heads results in a 
+>3 order of magnitude reduction in actin affinity.
+
+-------------------------------------------------------------------------
+
+A Novel Component Involved in Ubiquitination is Required for Development of
+Dictyostelium discoideum
+
+Stefan  Pukatzki, Nelson Tordilla,  Jakob Franke, and Richard H. Kessin
+
+Department of Anatomy and Cell Biology, College of Physicians & Surgeons, 
+Columbia University, New York, NY 10032, U.S.A.
+
+Journal of Biological Chemistry. In Press.
+
+Abstract
+
+   A novel component of the ubiquitination system, called NOSA, is essential 
+for cellular differentiation in Dictyostelium discoideum. Disruption of nosA 
+does not affect the growth rate but causes an arrest in development after the 
+cells have aggregated. NosA contains seven exons, and codes for a develop-
+mentally regulated 3.5-kb mRNA. The 125-kD NOSA protein is present in the 
+cytosol at constant levels during growth and development. The C-terminal 
+region of NOSA has homology with UFD2 of Saccharomyces cerevisiae and putative 
+homologs in Caenorhabditis elegans and humans. UFD2 is involved in the 
+ubiquitin-mediated degradation of model substrates in which ubiquitin forms 
+part of the translation product, but ufd2 mutants have no detected phenotype. 
+In accord with the homology to UFD2, we found differences in ubiquitination 
+pattern between nosA mutants and their parental cell line. While general in 
+vivo and in vitro ubiquitination is minimally affected, ubiquitination of 
+individual proteins is altered throughout growth and development in nosA 
+mutants. These findings suggest that events involving ubiquitination are 
+critical for progression through the aggregate stage of the Dictyostelium 
+life cycle.
+-------------------------------------------------------------------------
+
+Temperature-sensitive Gbeta mutants Discriminate Between G-protein Dependent
+and G-protein Independent Signaling Mediated by Serpentine Receptors.
+
+Tian Jin1, Ron D. M. Soede2, Jingchun Liu3, Alan R. Kimmel3, Peter N.
+Devreotes1 and Pauline Schaap2*
+
+1Department of Biological Chemistry, Johns Hopkins University School of
+Medicine, 725 North Wolfe Street, Baltimore, Maryland 21205. 
+2Cell Biology Section, Institute for Molecular Plant Sciences, University of
+Leiden, The Netherlands.
+3Laboratory of Cell and Developmental Biology, National Institutes of Health,
+Bethesda, Maryland 20892.
+
+EMBO J. in press
+
+ABSTRACT
+     Deletion of the single gene for the Dictyostelium G-protein beta-subunit
+blocks development at an early stage. We have now isolated
+temperature-sensitive alleles of G-beta to investigate its role in later
+development. We show that G-beta is directly required for adenylyl cyclase A
+activation and for morphogenetic signaling during the entire developmental
+program.  G-beta was also essential for induction of aggregative gene expression
+by cAMP pulses, a process that is mediated by serpentine cAMP receptors 
+(cARs). However, G-beta was not required for cAR-mediated induction of
+prespore genes and repression of stalk genes and neither was G-beta needed for
+induction of prestalk genes by the stalk-inducing morphogen, DIF. cAMP
+induction of prespore genes and repression of stalk genes is mediated by the
+protein kinase GSK-3. GSK-3 also determines cell-type specification in insects
+and vertebrates and is regulated by the wingless/wnt morphogens that are
+detected by serpentine fz receptors. The G-protein dependent and independent
+modes of cAR-mediated signaling reported here may also exist for the
+wingless/wnt signaling pathways in higher organisms.
+
+-------------------------------------------------------------------------
+
+FUNCTIONAL PROMISCUITY OF GENE REGULATION BY SERPENTINE RECEPTORS IN 
+DICTYOSTELIUM 
+
+Irene Verkerke-Van Wijk1, Ji-Yun Kim2, Raymond Brandt1, Peter N.
+Devreotes2 and Pauline Schaap1*
+
+1.Cell Biology Section, Institute for Molecular Plant Sciences, University of
+Leiden,   Wassenaarseweg 64, 2333 AL Leiden, The Netherlands.
+2.Department of Biological Chemistry, Johns Hopkins University School of
+Medicine, Baltimore, MD 21205, USA
+
+Molecular and Cellular Biology in press.
+
+SUMMARY
+     Serpentine receptors as smoothened and frizzled play important roles in
+cell fate determination during animal development. In Dictyostelium, four
+serpentine cAMP receptors (cARs) regulate expression of multiple classes of
+developmental genes. To understand their function, it is essential to know
+whether each cAR is coupled to a specific gene regulatory pathway or whether
+specificity results from the different developmental regulation of  individual
+cARs.  To distinguish between these possibilities, we measured gene induction
+in car1-/car3- cell lines, that express equal levels of either cAR1, cAR2 or
+cAR3 under a constitutive promoter. We found that all cARs efficiently mediate
+both aggregative gene induction by cAMP pulses as well as induction of
+postaggregative and prespore genes by persistent cAMP stimulation. Two
+exceptions to this functional promiscuity were observed: i. Only cAR1 can
+mediate adenosine inhibition of cAMP-induced prespore gene expression, a
+phenomenon that was found earlier in wild-type cells. This suggest that cAR1
+normally mediates prespore gene induction. ii. Only cAR2 allows entry into the
+prestalk pathway. Prestalk gene expression is induced by the lipophilic signal
+DIF, but only after cells have been prestimulated with cAMP. We found that
+DIF-induced prestalk gene expression is 10 times higher in constitutive cAR2
+expressors than in constitutive cAR1 or cAR3 expressors (which still have
+endogenous cAR2), suggesting that cAR2 mediates induction of DIF
+competence.  Since in wild-type slugs, cAR2 is only expressed in anterior cells,
+this could explain the thusfar puzzling observation that prestalk cells
+differentiate at the anterior, while DIF levels are higher at the posterior region.
+After the initial induction of DIF competence, cAMP becomes a repressor of
+prestalk gene expression. This function can again be mediated by  cAR1, cAR2
+and cAR3.
+-------------------------------------------------------------------------
+
+Cell Type Specific Rescue of Myosin Function During Dictyostelium 
+Development Defines Two Distinct Cell Movements Required for Culmination
+
+Tung-Ling L. Chen, Wendy A. Wolf and Rex L. Chisholm
+
+Department of Cell and Molecular Biology, Northwestern University 
+Medical School, Chicago, IL 60611
+
+Development, in press.
+
+SUMMARY
+
+   Mutant Dictyostelium cells lacking any of the component polypeptides 
+of myosin II exhibit developmental defects.  To define myosin's role in 
+establishing Dictyostelium’s developmental pattern, we have rescued myosin 
+function in a myosin regulatory light chain null mutant (mlcR-) using cell 
+type specific promoters.  While mlcR- cells fail to progress beyond the 
+mound stage, expression of RLC from the prestalk promoter, ecmA, produces 
+culminants with normal stalks but with defects in spore cell localization.  
+When GFP marked prestalk and prespore cells expressing ecmA-RLC are mixed 
+with wildtype cells, the mislocalization of prestalk cells, but not prespore 
+cells, is rescued.  Time-lapse video recording of ecmA-RLC cells showed that 
+the posterior prespore zone failed to undergo a contraction important for the 
+upward movement of prespore cells.  Prespore cells marked with green fluorescent 
+protein (GFP) failed to move toward the tip with the spiral motion typical of 
+wildtype.  In contrast, expression of RLC in prespore cells using the psA 
+promoter produced balloon-like structures reminiscent of sorocarps but 
+lacking stalks.  GFP-labeled prespore cells showed a spiral movement 
+toward the top of the structures.  Expression of RLC from the psA promoter 
+restores the normal localization of psA-GFP cells, but not ecmA-GFP cells.  
+These results define two distinct, myosin-dependent movements that are 
+required for establishing a Dictyostelium fruiting body: stalk extension 
+and active movement of the prespore zone that ensures proper placement of 
+the spores atop the stalk.  The approach used in these studies provides 
+a direct means of testing the role of cell motility in distinct cell types 
+during a morphogenetic program.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 1]
+

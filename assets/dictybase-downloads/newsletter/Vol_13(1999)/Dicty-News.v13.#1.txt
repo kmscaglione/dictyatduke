@@ -1,0 +1,243 @@
+Dicty News
+Electronic Edition
+Volume 13, number 1
+July 3, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+=============
+  Abstracts
+=============
+
+Cortexillin I is required for development in Polysphondylium
+
+Petra Fey and Edward C. Cox
+
+333 Moffett Laboratories, Department of Molecular Biology, Princeton 
+University, Princeton NJ 08544
+
+Developmental Biology, in press
+
+Abstract
+
+The actin binding proteins cortexillin I and II play a major role in 
+Dictyostelium cytokinesis where they are found localized to the membranes 
+of the cleavage furrow. Here we report on cortexillin I mutants isolated 
+by gene trapping in Polysphondylium . The original mutation and 
+reconstructed versions of the original, as well as cortexillin I 
+deletions, are unable to form aggregation streams under starvation 
+conditions. The fruiting bodies that do form when cells are grown on 
+bacterial lawns lack the one and two-dimensional symmetries so apparent 
+in wild-type. These two phenotypes and the proposed structural basis for 
+them suggest that cortexillin I functions in chemotaxis and morphogenesis 
+in addition to its role in cytokinesis.
+
+----------------------------------------------------------------------------
+
+A cell-counting factor regulating structure size in Dictyostelium
+
+Debra A. Brock and Richard H. Gomer
+
+Howard Hughes Medical Institute, Department of Biochemistry and Cell
+Biology MS-140, Rice University, 6100 S. Main Street, Houston, TX 77005-1892
+
+Genes&Development, in press
+
+Abstract
+
+	Developing Dictyostelium cells form large aggregation streams which
+break up into groups of 0.2 - 1 x 10exp5 cells.  Each group then becomes a
+fruiting body.  smlA cells oversecrete an unknown factor which causes
+aggregation streams to break up into groups of ~5 x 10exp3 cells and thus
+form very small fruiting bodies.  We have purified the counting factor and
+find that it behaves as a complex of polypeptides with an effective
+molecular weight of 450 kD.  One of the polypeptides is a 40 kD hydrophilic
+protein we have named countin.  Immunofluorescence shows that countin is
+present in all cells and Western blots indicate that countin is secreted.
+In transformants with a disrupted countin gene, there is no detectable
+secretion of counting factor, and the aggregation streams do not break up,
+resulting in huge (up to 2 x 10exp5 cell) fruiting bodies.  Addition  of
+crude countin factor causes the countin cells to form normal size
+aggregates.  Using diffusion calculations, we find that as a general
+principle such a factor can be used to sense the number of cells in a group.
+
+----------------------------------------------------------------------------
+
+Rearrangement of cortex proteins constitutes an osmoprotective mechanism 
+in Dictyostelium
+
+Hans Zischka, Felix Oehme, Tanja Pintsch, Alexander Ott, Heike Keller, 
+Joseph Kellermann and Stephan C. Schuster
+
+Max-Planck-Institut für Biochemie, 82152 Martinsried, Germany
+
+EMBO Journal, in Press
+
+Abstract 
+
+Dictyostelium responds to hyperosmotic stress of 400 mOsm by a rapid 
+reduction of its cell volume to 50 %. The reduced cell volume is maintained 
+as long as these osmotic conditions prevail. Dictyostelium does not accumulate 
+compatible osmolytes to counteract the osmotic pressure applied. By two 
+dimensional gel electrophoresis we demonstrate that during the osmotic shock 
+the protein pattern remains unaltered in whole cell extracts. However, when 
+cells were fractionated into membrane and cytoskeleton fractions, alterations 
+of specific proteins could be demonstrated. In the crude membrane fraction a 
+3-fold increase in protein amount was measured upon hyperosmotic stress. In 
+the cytoskeletal fraction the proteins DdLIM and the regulatory myosin light 
+chain (RMLC) were shown to be regulated in the osmotic stress response. The 
+elongation factors eEF1a (ABP50) and eEF1b were found to increase in the 
+cytoskeletal fraction, suggesting a translational arrest upon hyperosmotic 
+stress. Furthermore, the two main components of the cytoskeleton, actin and 
+myosin II, are phosphorylated as a consequence of the osmotic shock with a 
+tyrosine residue as phosphorylation site on actin and specific threonines 
+in the case of the myosin II heavy chain.
+
+----------------------------------------------------------------------------
+
+DAip1, a Dictyostelium Homologue of the Yeast Actin-Interacting Protein 1,
+Is Involved in Endocytosis, Cytokinesis and Motility
+
+Angelika Konzok, Igor Weber, Evelyn Simmeth, Ulrike Hacker, Markus Maniak*,
+and Annette Müller-Taubenberger
+
+Max-Planck-Institut für Biochemie, D-82152 Martinsried, Germany, and *MRC
+Laboratory for Molecular Cell Biology, University College London WC1E 6BT, UK
+
+J. Cell Biol., in press
+
+Abstract
+
+The 64-kDa protein DAip1 from Dictyostelium contains nine WD40-repeats and
+is homologous to the actin-interacting protein 1, Aip1p, from Saccharomyces
+cerevisiae, and to related proteins from Caenorhabditis, Physarum and
+higher eukaryotes.
+We show that DAip1 is localized to dynamic regions of the cell cortex that
+are enriched in filamentous actin: phagocytic cups, macropinosomes,
+lamellipodia and pseudopodia. In cells expressing GFP-tagged DAip1, the
+protein rapidly redistributes into newly formed cortical protrusions.
+Functions of DAip1 in vivo were assessed using null mutants generated by
+gene replacement, and by overexpressing DAip1. DAip1-null cells are
+impaired in growth and their rates of fluid phase uptake, phagocytosis and
+movement are reduced in comparison to wild-type rates. Cytokinesis is
+prolonged in DAip1-null cells and they tend to become multinucleate. On the
+basis of similar results of DAip1 overexpression and effects of latrunculin
+A, we propose a function for DAip1 in the control of actin depolymerization
+in vivo, probably through interaction with cofilin. Our data suggest that
+DAip1 plays an important regulatory role in the rapid remodeling of the
+cortical actin meshwork.
+
+----------------------------------------------------------------------------
+
+A novel Ras interacting protein required for chemotaxis and cAMP signal 
+relay in Dictyostelium. 
+
+Lee, S., C.A. Parent, R. Insall and R.A. Firtel
+
+Mol. Biol. Cell, in press.
+
+ABSTRACT
+
+We have identified a novel Ras interacting protein from Dictyostelium, 
+RIP3, whose function is required for both chemotaxis and the synthesis 
+and relay of the cAMP chemoattractant signal. rip3 null cells are unable 
+to aggregate and lack receptor activation of adenylyl cyclase but are 
+able, in response to cAMP, to induce aggregation-stage, postaggregative, 
+and cell-type-specific gene expression in suspension culture. In addition, 
+rip3 null cells are unable to properly polarize in a cAMP gradient and 
+chemotaxis is highly impaired. We demonstrate that cAMP stimulation of 
+guanylyl cyclase, which is required for chemotaxis, is reduced ~60% in 
+rip3 null cells. This reduced activation of guanylyl cyclase may account, 
+in part, for the defect in chemotaxis. When cells are pulsed with cAMP 
+for 5 h to mimic the endogenous cAMP oscillations that occur in wild-type 
+strains, the cells will form aggregates, most of which, however, arrest 
+at the mound stage. Unlike the response seen in wild-type strains, the 
+rip3 null cell aggregates that form under these experimental conditions 
+are very small, which is probably due to the rip3 null cell chemotaxis 
+defect. Many of the phenotypes of rip3 null cell, including the inability 
+to activate adenylyl cyclase in response to cAMP and defects in chemotaxis, 
+are very similar to those of strains carrying a disruption of the gene 
+encoding the putative Ras exchange factor AleA. We demonstrate that aleA 
+null cells also exhibit a defect in cAMP-mediated activation of guanylyl 
+cyclase similar to that of rip3 null cells. A double knockout mutant 
+(rip3/aleA null cells) exhibits a further reduction in receptor activation 
+of guanylyl cyclase and these cells display almost no cell polarization 
+or movement in cAMP gradients. As RIP3 preferentially interacts with an 
+activated form of the Dictyostelium Ras protein RasG, which itself is 
+important for cell movement, we propose that RIP3 and AleA are components 
+of a Ras-regulated pathway involved in integrating chemotaxis and signal 
+relay pathways that are essential for aggregation. 
+
+----------------------------------------------------------------------------
+
+Biochemical Characterization of a Dictyostelium Myosin II Heavy Chain 
+Phosphatase that Promotes Filament Assembly
+
+M.B. Murphy, T.T. Egelhoff
+
+Department of Physiology and Biophysics, Case Western Reserve University, 
+Cleveland, Ohio 44106-4970.
+
+Eur. J. Biochem. in press
+
+In Dictyostelium cells, myosin II is found as cytosolic non-assembled 
+monomers and as cytoskeletal bipolar filaments.  It is thought that the 
+phosphorylation state of three threonine residues in the tail of myosin II 
+heavy chain regulates the molecular motor's assembly state and localization. 
+ Phosphorylation of the myosin heavy chain at threonine residues 1823, 1833, 
+2029 is responsible for maintaining myosin in the non-assembled state, and 
+subsequent dephosphorylation of these residues is a prerequisite for 
+assembly into the cytoskeleton.  We report here the characterization of 
+myosin heavy chain phosphatase activities in Dictyostelium utilizing myosin 
+II phosphorylated by Myosin Heavy Chain Kinase A as a substrate.  One of the 
+myosin heavy chain phosphatase activities was identified as protein 
+phosphatase 2A and the purified holoenzyme was composed of a 37 kDa 
+catalytic subunit, a 65 kDa A-subunit, and a 55 kDa B-subunit.  The PP2A 
+holoenzyme displays two orders of magnitude more activity towards myosin 
+phosphorylated on the heavy chains than it does towards myosin 
+phosphorylated on the regulatory light chains, consistent with a role in the 
+control of filament assembly.  The purified myosin heavy chain phosphatase 
+activity promotes bipolar filament assembly in vitro via dephosphorylation 
+of the myosin heavy chain.  This system should provide a valuable model for 
+studying the regulation and localization of PP2A in the context of 
+cytoskeletal reorganization.
+
+----------------------------------------------------------------------------
+
+Molecular Characterization and Immunolocalization of Dictyostelium 
+discoideum Protein Phosphatase 2A
+
+M.B. Murphy, S.K. Levi, T.T. Egelhoff
+ 
+Department of Physiology and Biophysics, Case Western Reserve University 
+Cleveland, Ohio 44106-4970
+
+FEBS Letters, in press
+
+Protein phosphatase 2A (PP2A) was previously purified from Dictyostelium and 
+biochemically characterized.  The purified PP2A holoenzyme was composed of a 
+37 kDa catalytic "C-subunit", a 65 kDa "A-subunit", and a 55 kDa "B 
+subunit".  We report here the characterization of the genes encoding the 
+Dictyostelium PP2A subunits as well as the immunolocalization of the PP2A 
+subunits in Dictyostelium.  The cDNAs encoding the B- and C-subunits were 
+isolated from a Dictyostelium library and the deduced amino-acid sequences 
+reveal strong conservation with the mammalian PP2A homologues.  Southern 
+blot analysis suggests that each of the PP2A subunit genes are present in a 
+single copy.  The PP2A subunits were localized mainly to the cytosol in 
+Dictyostelium cells.  However, immunofluorescence confocal microscopy 
+demonstrates that the B-subunit of PP2A is highly enriched in centrosomes, 
+suggesting a potential role for this PP2A regulatory subunit in centrosomal 
+function.
+
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 1]
+
+  

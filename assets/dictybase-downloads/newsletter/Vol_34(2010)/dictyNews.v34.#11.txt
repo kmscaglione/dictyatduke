@@ -1,0 +1,200 @@
+dictyNews
+Electronic Edition
+Volume 34, number 11
+April 2, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+External and internal constraints to eukaryotic chemotaxis
+
+Danny Fuller1, Wen Chen2, Micha Adler2, Alex Groisman2, Herbert Levine2,3, 
+Wouter-Jan Rappel2,3, William F. Loomis1
+
+1 Division of Biological Sciences,
+2 Department of Physics 
+3 Center for Theoretical Biological Physics, 
+ University of California San Diego, La Jolla, CA 92093
+
+
+Proc. Natl. Acad. Sci.,  in press
+
+Chemotaxis, the chemically guided movement of cells, plays an important role 
+in a number of biological processes including cancer, wound healing and 
+embryogenesis. Chemotacting cells are able to sense shallow chemical gradients
+where the concentration of chemoattractant differs by only a few percent from 
+one side of the cell to the other, over a wide range of local concentrations.  
+Exactly what limits the chemotactic ability of these cells is presently unclear. 
+Here we determine the chemotactic response of Dictyostelium cells to 
+exponential gradients of varying steepness and local concentration of the 
+chemoattractant cAMP. We find that the cells are sensitive to the steepness 
+of the gradient as well as to the local concentration. Using information theory 
+techniques, we derive a formula for the mutual information between the input 
+gradient and the spatial distribution of bound receptors and also compute the 
+mutual information between the input gradient and the motility direction in the 
+experiments. A comparison between these two quantities reveals that for 
+shallow gradients, in which the concentration difference between the back and 
+the front of a 10 mm diameter cell is less than 5 %, and for small local 
+concentrations  (less than 10 nM) the intracellular information loss is insignificant. 
+Thus, external fluctuations due to the finite number of receptors dominate and 
+limit the chemotactic response. For steeper gradients and higher local 
+concentrations, the intracellular information processing is sub-optimal and 
+results in a much smaller mutual information between the input gradient and 
+the motility direction than would have been predicted from the ligand-receptor 
+binding process. 
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+Self-organizing actin waves that simulate phagocytic cup structures 
+
+Günther Gerisch
+
+
+PMC Biophysics 2010, 3:7
+
+This report deals with actin waves that are spontaneously generated on the 
+planar, substrate-attached surface of Dictyostelium cells. These waves have 
+the following characteristics. (1) They are circular structures of varying shape, 
+capable of changing the direction of propagation. (2) The waves propagate by 
+treadmilling with a recovery of actin incorporation after photobleaching of less 
+than 10 seconds. (3) The waves are associated with actin-binding proteins in 
+an ordered 3-dimensional organization: with myosin-IB at the front and close 
+to the membrane, the Arp2/3 complex throughout the wave, and coronin at 
+the cytoplasmic face and back of the wave. Coronin is a marker of 
+disassembling actin structures. (4) The waves separate two areas of the cell 
+cortex that differ in actin structure and phosphoinositide composition of the 
+membrane. The waves arise at the border of membrane areas rich in 
+phosphatidylinositol (3,4,5) trisphosphate (PIP3). The inhibition of PIP3 
+synthesis reversibly inhibits wave formation. (5) The actin wave and PIP3 
+patterns resemble 2-dimensional projections of phagocytic cups, suggesting 
+that they are involved in the scanning of surfaces for particles to be taken up.
+PACS Codes: 87.16.Ln, 87.19.lp, 89.75.Fb
+
+
+Submitted by Günther Gerisch [gerisch@biochem.mpg.de]
+--------------------------------------------------------------------------------
+
+
+A low-affinity ground state conformation for the dynein microtubule binding
+domain.
+
+L. McNaughton, I. Tikhonenko, N. K. Banavali, D.M. LeMaster, and M. P.
+Koonce
+
+Wadsworth Center, Albany, NY
+
+
+J. Biol. Chem, in press
+
+Dynein interacts with microtubules through a dedicated binding domain that
+is dynamically controlled to achieve high or low affinity, depending on the
+state of nucleotide bound in a distant catalytic pocket. The active sites
+for microtubule binding and ATP hydrolysis communicate via conformational
+changes transduced through a ~10 nm length antiparallel coiled-coil stalk,
+which connects the binding domain to the roughly 300-kDa motor core.
+Recently, an X-ray structure of the murine cytoplasmic dynein microtubule
+binding domain (MTBD) in a weak-affinity conformation was published,
+containing a covalently constrained beta+ registry for the coiled-coil stalk
+segment (1). We here present an NMR analysis of the isolated MTBD from
+Dictyostelium discoideum that demonstrates the coiled-coil beta+ registry
+corresponds to the low energy conformation for this functional region of
+dynein. Addition of sequence encoding roughly half of the coiled-coil stalk
+proximal to the binding tip, results in a decreased affinity of the MTBD for
+microtubules. In contrast, addition of the complete coiled-coil sequence
+drives the MTBD to the conformationally unstable, high affinity binding state. 
+These results suggest a thermodynamic coupling between conformational
+free energy differences in the alpha and beta+ registries of the coiled-coil
+stalk that acts as a switch between high and low affinity conformations of
+the MTBD. A balancing of opposing conformations in the stalk and MTBD
+enables potentially modest long-range interactions arising from ATP binding
+in the motor core to induce a relaxation of the MTBD into the stable low
+affinity state.
+
+
+Submitted by Michael Koonce [koonce@wadsworth.org]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium discoideum: A model system for ultrastructural analyses of
+cell motility and development
+
+M.P. Koonce and R.Gräf
+
+Wadsworth Center, Albany, NY and Department of Cell Biology, Institute for
+Biochemistry and Biology, University of Potsdam, Germany
+
+
+In press: Methods in Cell Biology.
+
+Dictyostelium occupies an interesting niche in the grand scheme of model
+organisms. On one hand, it is a compact, highly motile single cell that
+presents numerous opportunities to investigate the fundamental mechanisms 
+of signal transduction, cell movement, and pathogen infection. However, upon
+starvation, individual cells enter a developmental pathway that involves
+cell aggregation, cell-cell adhesion, pattern formation, and differentiation. 
+Thus, Dictyostelium is also well known as a basic model to study developmental 
+processes. Electron microscopy (EM) has played a large role in both the 
+unicellular and multicellular life stages; for example, providing image detail for 
+structure/function relationships of cytoskeletal proteins, the deposition of 
+cellulose fibrils in maturing spores, and the identification of intercellular 
+junctional complexes. Powerful combinations of robust molecular genetic tools, 
+high-resolution light microscopy and EM methods make this organism an 
+attractive model for imaging dynamic cell processes. This methods chapter 
+serves to highlight past and current EM approaches that have advanced our 
+understanding of how cells and proteins function.
+
+
+Submitted by Michael Koonce [koonce@wadsworth.org]
+--------------------------------------------------------------------------------
+
+
+Genetic control of lithium sensitivity and regulation of inositol biosynthetic 
+genes.
+
+Jason King, Melanie Keim, Regina Teo, Karin E. Weening, Mridu Kapur, 
+Karina McQuillan, Jonathan Ryves, Ben Rogers, Emma Dalton, 
+Robin SB Williams and Adrian J. Harwood
+
+
+PLOSone
+
+Lithium (Li+) is a common treatment for bipolar mood disorder, a major 
+psychiatric illness with a lifetime prevalence of more than 1%. Risk of bipolar 
+disorder is heavily influenced by genetic predisposition, but is a complex 
+genetic trait and to date, genetic studies have provided little insight into its 
+molecular origins. An alternative approach is to investigate the genetics of 
+Li+ sensitivity. Using the social amoeba Dictyostelium, we previously 
+identified prolyl oligopeptidase (PO) as a modulator of Li+ sensitivity. In a 
+link to the clinic, PO enzyme activity is altered in bipolar disorder patients. 
+Further studies demonstrated that PO is a negative regulator of 
+inositol(1,4,5)trisphosphate (IP3) synthesis, a Li+ sensitive intracellular 
+signal. However, it was unclear how PO could influence either Li+ sensitivity 
+or risk of bipolar disorder. Here we show that in both Dictyostelium and 
+cultured human cells PO acts via Multiple Inositol Polyphosphate 
+Phosphatase (Mipp1) to control gene expression. This reveals a novel, 
+gene regulatory network that modulates inositol metabolism and Li+ 
+sensitivity. Among its targets is the inositol monophosphatase gene IMPA2, 
+which has also been associated with risk of bipolar disorder in some family 
+studies, and our observations offer a cellular signalling pathway in which 
+PO activity and IMPA2 gene expression converge. 
+
+
+Submitted by Adrian Harwood [harwoodaj@cardiff.ac.uk]
+==============================================================
+[End dictyNews, volume 34, number 11]

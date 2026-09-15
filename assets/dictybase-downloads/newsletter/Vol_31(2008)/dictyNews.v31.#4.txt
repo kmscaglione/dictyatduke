@@ -1,0 +1,104 @@
+dictyNews
+Electronic Edition
+Volume 31, number 4
+July 25, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Chemotaxis, chemokine receptors and human disease
+
+Tian Jin(1), Xuehua Xu(2) and Dale Hereld(3)
+
+(1) Chemotaxis Signal Section, Laboratory of Immunogenetics, NIAID, NIH, 
+Rockville, Maryland 20852.  
+(2) Department of Oncology, Lombardi Comprehensive Cancer Center, Georgetown 
+University, Washington, DC 20057.  
+(3) Division of Metabolism and Health Effects, NIAAA, NIH, Rockville, 
+Maryland 20852
+
+
+Cytokine, in press
+
+Cell migration is involved in diverse physiological processes including 
+embryogenesis, immunity, and diseases such as cancer and chronic inflammatory 
+disease. The movement of many cell types is directed by extracellular gradients 
+of diffusible chemicals. This phenomenon, referred to as "chemotaxis", was 
+first described in 1888 by Leber who observed the movement of leukocytes 
+toward sites of inflammation. We now know that a large family of small 
+proteins, chemokines, serves as the extracellular signals and a family of 
+G-protein-coupled receptors (GPCRs), chemokine receptors, detects gradients 
+of chemokines and guides cell movement in vivo. Currently, we still know 
+little about the molecular machineries that control chemokine gradient 
+sensing and migration of immune cells. Fortunately, the molecular mechanisms 
+that control these fundamental aspects of chemotaxis appear to be 
+evolutionarily conserved, and studies in lower eukaryotic model systems 
+allowed us to form concepts, uncover molecular components, develop new 
+techniques, and test models of chemotaxis. These studies have helped our 
+current understanding of this complicated cell behavior. In this review, we 
+wish to mention landmark discoveries in the chemotaxis research field that 
+shaped our current understanding of this fundamental cell behavior and lay 
+out key questions that remain to be addressed in the future.
+
+
+Submitted by: Dale Hereld [hereldd@mail.nih.gov]
+--------------------------------------------------------------------------------
+
+
+Phagocytosis and host-pathogen interactions in Dictyostelium with a look 
+at macrophages.
+
+S. Bozzaro, C. Bucci and M. Steinert
+
+
+Int. Rev. Cytol., in press
+
+Research into phagocytosis and host-pathogen interactions in the lower 
+eukaryote Dictyostelium discoideum has flourished in recent years. This review 
+presents  a glimpse of where this research stands, with emphasis on the cell 
+biology of the phagocytic process and on the wealth of molecular genetic data 
+that have been gathered. The basic mechanistic machinery and most of the 
+underlying genes appear to be evolutionarily conserved, reflecting the fact 
+that phagocytosis arose as an efficient way to ingest food in single protozoan 
+cells devoid of a rigid cell wall. In spite of some differences, the signal 
+transduction pathways regulating phagosome biogenesis are also emerging as 
+similar between Dictyostelium and macrophages. Both cell types are host for 
+many pathogenic invasive bacteria, which exploit phagocytosis to grow 
+intracellularly. We present an overwiew, based on the analysis of mutants, 
+on how Dictyostelium contributes as a genetic model system to decipher the 
+complexity of host-pathogen interactions.
+
+Table of content:
+1. Introduction
+2. The dynamics of phagocytosis
+3.  Cellular mechanisms of phagocytosis
+3.1 Bacterial adhesion to the cell surface: the search for phagocytosis receptors
+3.2 Actin cytoskeleton in phagocytosis
+3.3 Phagosome fusion with endo-lysosomal vesicles and the killing of bacteria
+4. Regulatory pathways controlling phagocytosis
+4.1 Heterotrimeric G proteins 
+4.2 Phosphoinositides and calcium ions
+4.3 Small G proteins of Ras and Rac families and tyrosine kinases
+4.4 The Rab family and intracellular phagosome maturation
+5. Host-pathogen interactions: a versatile new model host
+5.1 Resistance/susceptibility genes of the host to infection by Mycobacteria, 
+Legionella and Klebsiella
+5.2 Nramp family in Dictyostelium and Nramp1 as the host defence factor
+6. Concluding remarks
+
+
+Submitted by: Salvo Bozzaro [salvatore.bozzaro@unito.it]
+==============================================================
+[End dictyNews, volume 31, number 4]

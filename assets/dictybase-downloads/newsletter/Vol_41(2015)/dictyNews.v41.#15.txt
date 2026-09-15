@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 41, number 15
+July 18, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Absence of catalytic domain in a putative protein kinase C (PkcA) 
+suppresses tip dominance in Dictyostelium discoideum 
+
+Wasima Mohamed a, Sibnath Ray b, Derrick Brazill b, Ramamurthy Baskar a,
+
+a Department of Biotechnology, Bhupat and Jyoti Mehta School of 
+Biosciences, Indian Institute of Technology Madras, Chennai, 600036, 
+India
+b Department of Biological Sciences, Center for Translational and Basic 
+Research, Hunter College and The Graduate Center of the City University 
+of New York, New York, NY 10065
+
+
+Developmental Biology, in press
+
+A number of organisms possess several isoforms of protein kinase C but 
+little is known about the significance of any specific isoform during 
+embryogenesis and development. To address this we characterized a PKC 
+ortholog (PkcA; DDB_G0288147) in Dictyostelium discoideum. pkcA expression 
+switches from prestalk in mound to prespore in slug, indicating a dynamic 
+expression pattern. Mutants lacking the catalytic domain of PkcA (pkcA-) 
+did not exhibit tip dominance. A striking phenotype of pkcA- was the 
+formation of an aggregate with a central hollow, and aggregates later 
+fragmented to form small mounds, each becoming a fruiting body. Optical 
+density wave patterns of cAMP in the late aggregates showed several cAMP 
+wave generation centers. We attribute these defects in pkcA- to impaired 
+cAMP signaling, altered cell motility and decreased expression of the cell 
+adhesion molecules- CadA and CsaA. pkcA- slugs showed ectopic expression 
+of ecmA in the prespore region. Further, the use of a PKC-specific inhibitor, 
+GF109203X that inhibits the activity of catalytic domain phenocopied pkcA-.
+
+
+Submitted by Ramamurthy Baskar [rbaskar@IITM.AC.IN] 
+----------------------------------------------------------------------
+
+
+The GATA transcription factor GtaC regulates early developmental gene 
+expression dynamics in Dictyostelium
+
+Balaji Santhanam1,2,4, Huaqing Cai3, Peter N. Devreotes3, Gad Shaulsky2,5 
+and Mariko Katoh-Kurasawa2,4,5
+
+
+1 Graduate Program in Structural Computational Biology and Molecular 
+Biophysics, Baylor College of Medicine, Houston, TX 77030
+2 Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, TX 77030
+3 Department of Cell Biology, School of Medicine, Johns Hopkins University, 
+Baltimore, MD 21205
+
+4 These authors contributed equally to this work. 
+5 Corresponding authors
+
+
+Nature Communications, Article number:7551| doi:10.1038/ncomms8551
+
+In many systems, including the social amoeba Dictyostelium discoideum, 
+development is often marked by dynamic morphological and transcriptional 
+changes orchestrated by key transcription factors. However, efforts to 
+examine sequential genome-wide changes of gene regulation in developmental 
+processes have been fairly limited. Here we report the developmental 
+regulatory dynamics of GtaC, a GATA-type zinc-finger transcription factor, 
+through the analyses of serial ChIP- and RNA-sequencing data. GtaC is 
+essential for developmental progression, decoding extracellular cAMP 
+pulses during early development and may play a role in mediating cell-type 
+differentiation at later stages. We find that GtaC exhibits temporally 
+distinctive DNA-binding patterns concordant with each developmental stage. 
+We identify direct GtaC targets and observe cotemporaneous GtaC-binding 
+and developmental expression regulation. Our results suggest that GtaC 
+regulates multiple physiological processes as Dictyostelium transitions 
+from a group of unicellular amoebae to an integrated multicellular 
+organism.
+
+
+Submitted by Mariko Katoh-Kurasawa[mkatoh@bcm.edu] 
+==============================================================
+[End dictyNews, volume 41, number 15]

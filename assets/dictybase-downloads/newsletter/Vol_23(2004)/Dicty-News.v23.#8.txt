@@ -1,0 +1,128 @@
+Dicty News
+Electronic Edition
+Volume 23, number 8
+August 27, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Microarray Data Mining with Visual Programming
+
+Tomaz Curk (1), Janez Demsar (1), Qikai Xu (3,4), Gregor Leban (1), Uros
+Petrovic (2), Ivan Bratko (1,2), Gad Shaulsky (3,4) and Blaz Zupan (1,3,*)
+
+1 University of Ljubljana, Faculty of Computer and Information Science,
+2 Jozef Stefan Institute, Ljubljana, Slovenia, 3 Department of Molecular
+and Human Genetics, 4 Graduate Program in Structural and Computational
+Biology and Molecular Biophysics, Baylor College of Medicine, Houston,
+TX 77030, USA. * corresponding author
+
+
+Bioinformatics, in press.
+
+Summary: Visual programming offers an intuitive means of combining known
+analysis and visualization methods into powerful applications.  The system
+presented here enables users who are not programmers to manage microarray
+and genomic data flow and to customize their analysis by combining common
+data analysis tools to fit their needs.
+
+Availability: magix.fri.uni-lj.si/bi-visprog
+Contact: blaz.zupan@fri.uni-lj.si
+Supplementary information: magix.fri.uni-lj.si/bi-visprog
+
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+Calmodulin Binds to and Inhibits the Activity of Phosphoglycerate Kinase 
+
+Michael A. Myre1,2
+Danton H. OâDay1,3
+
+1Department of Biology, University of Toronto at Mississauga,
+3359 Mississauga Rd. Mississauga, ON, L5L 1C6 Canada
+2Current address: Harvard Medical School, Massachusetts General Hospital,
+Building 114--114 16th Street, Charlestown MA 02129-9142 
+3Corresponding author: Phone: 905-828-3896; Fax: 905-828-3792;
+Email: doday@utm.utoronto.ca
+
+
+Biochimica Biophysica Acta÷Molecular Cell Research, in press
+
+Phosphoglycerate kinase functions as a cytoplasmic ATP-generating glycolytic
+enzyme, a nuclear mediator in DNA replication and repair, a stimulator of
+Sendai virus transcription and an extracellular disulphide reductase in
+angiogenesis. Probing of a developmental expression library from
+Dictyostelium discoideum with radiolabelled calmodulin led to the isolation
+of a cDNA encoding a putative calmodulin-binding protein (DdPGK) with 68%
+sequence similarity to human PGK. Dictyostelium, rabbit and yeast PGKs
+bound to calmodulin-agarose in a calcium-dependent manner while DdPGK
+constructs lacking the calmodulin-binding domain (209KPFLAILGGAKVSDKIKLIE228)
+failed to bind. The calmodulin-binding domain shows 80% identity between
+diverse organisms and is situated beside the hinge and within the ATP
+binding domain adjacent to nine mutations associated with phosphoglycerate
+kinase deficiency. Calmodulin addition inhibits yeast PGK activity in vitro
+while the calmodulin antagonist W-7 abrogates this inhibition. Together
+these data suggest that PGK activity may be negatively regulated by calcium
+and calmodulin signalling in eukaryotic cells.
+
+
+
+Submitted by: Danton O'Day [doday@utm.utoronto.ca]
+
+-----------------------------------------------------------------------------
+
+
+Dictyostelium Nucleomorphin is a member of the BRCT-domain family of cell
+cycle checkpoint proteins
+
+Michael A. Myre1,2
+Danton H. OâDay1,3
+
+1Department of Biology, University of Toronto at Mississauga, 3359
+Mississauga Rd. Mississauga, ON, L5L 1C6 Canada
+2Current address: Harvard Medical School, Massachusetts General Hospital,
+Building 114--114 16th Street, Charlestown MA 02129-9142 
+3Corresponding author: Phone: 905-828-3896; Fax: 905-828-3792;
+Email: doday@utm.utoronto.ca
+
+Biochimica Biophysica Acta÷General Subjects, in press
+
+A search of the Dictyostelium genome project database
+(http://dictybase.org/db/cgi-bin/blast.pl) with NumA, a protein that
+regulates nuclear number, predicted it to be encoded by a larger gene
+containing a putative breast cancer carboxy- terminus domain (BRCT).
+Using RT-PCR, northern and western blotting we have identified a
+differentially expressed, 2318 bp cDNA encoding a protein isoform of
+Dictyostelium NumA with an apparent molecular weight of 70 kDa that we
+have called NumB. It contains a single amino-terminal BRCT-domain spanning
+residueâs 125-201. Starvation of shaking cultures reduces NumA expression
+by ~ 88 ± 5.6 %, whereas NumB expression increases ~ 35 ± 3.5 % from
+vegetative levels. NumC, a third isoform that is also expressed during
+development but not growth, remains to be characterized. These findings
+suggest DdNumA is a member of the BRCT-domain containing cell cycle
+checkpoint proteins.    
+
+
+
+Submitted by: Danton O'Day [doday@utm.utoronto.ca]
+
+==============================================================================
+[End Dicty News, volume 23, number 8]

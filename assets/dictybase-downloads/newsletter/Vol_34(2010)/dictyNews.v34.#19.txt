@@ -1,0 +1,92 @@
+dictyNews
+Electronic Edition
+Volume 34, number 19
+June 25, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Self-organization of the phosphatidylinositol lipids signaling system for 
+random cell migration
+
+Yoshiyuki Arai, Tatsuo Shibata, Satomi Matsuoka, Masayuki J. Sato, 
+Toshio Yanagida, and Masahiro Ueda
+
+Graduate School of Frontier Biosciences, Osaka University and JST, 
+CREST, Suita, Osaka 565-0871, Japan.
+Department of Mathematical and Life Sciences, Hiroshima University and 
+JST, PRESTO, Higashi-Hiroshima, Hiroshima 739-8526, Japan.
+
+
+Proc. Natl. Acad. Sci. USA , in press. 
+
+Phosphatidylinositol (PtdIns) lipids have been identified as key signaling 
+mediators for random cell migration as well as chemoattractant-induced 
+directional migration. However, how the PtdIns lipids are organized 
+spatiotemporally to regulate cellular motility and polarity remains to be 
+clarified. Here, we found that selforganized waves of PtdIns 3,4,5-trisphosphate
+[PtdIns(3,4,5)P3] are generated spontaneously on the membrane of 
+Dictyostelium cells in the absence of a chemoattractant. Characteristic 
+oscillatory dynamics within the PtdIns lipids signaling system were determined 
+experimentally by observing the phenotypic variability of PtdIns lipid waves in 
+single cells, which exhibited characteristics of a relaxation oscillator. The 
+enzymes phosphatase and tensin homolog (PTEN) and 
+phosphoinositide-3-kinase (PI3K), which are regulators for PtdIns lipid 
+concentrations along the membrane, were essential for wave generation 
+whereas functional actin cytoskeleton was not. Defects in these enzymes
+inhibited wave generation as well as actin-based polarization and cell migration. 
+On the basis of these experimental results, we developed a reaction-diffusion 
+model that reproduced the characteristic relaxation oscillation dynamics of the 
+PtdIns lipid system, illustrating that a self-organization mechanism provides the 
+basis for the PtdIns lipids signaling system to generate spontaneous 
+spatiotemporal signals for random cell migration and that molecular noise 
+derived from stochastic fluctuations within the signaling components gives 
+rise to the variability of these spontaneous signals.
+
+
+Submitted by  Masahiro Ueda [ueda@phys1.med.osaka-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Glycogen Synthase Kinase-3 Is Required for Efficient Dictyostelium 
+Chemotaxis
+
+Regina Teo, Kimberley J. Lewis, Josephine E. Forde, W. Jonathan Ryves, 
+Jonathan V. Reddy, Benjamin J. Rogers, and Adrian J. Harwood
+
+
+Molecular Biology of the Cell (in press) epub 10.1091/mbc.E09-10-0891
+
+Glycogen synthase kinase-3 (GSK3) is a highly conserved protein kinase 
+that is involved in several important cell signaling pathways and is associated
+with a range of medical conditions. Previous studies indicated a major role
+of the Dictyostelium homologue of GSK3 (gskA) in cell fate determination 
+during morphogenesis of the fruiting body; however, transcriptomic and 
+proteomic studies have suggested that GSK3 regulates gene expression 
+much earlier during Dictyo- stelium development. To investigate a potential 
+earlier role of GskA, we examined the effects of loss of gskA on cell 
+aggregation. We find that cells lacking gskA exhibit poor chemotaxis toward 
+cAMP and folate. Mutants fail to activate two important regulatory signaling 
+pathways, mediated by phosphatidylinositol 3,4,5-trisphosphate and target 
+of rapamycin complex 2, which in combination are required for chemotaxis 
+and cAMP signaling. These results indicate that GskA is required during 
+early stages of Dictyostelium development, in which it is necessary for 
+both chemotaxis and cell signaling.
+
+
+Submitted by Adrian Harwood [harwoodaj@cardiff.ac.uk]
+==============================================================
+[End dictyNews, volume 34, number 19]

@@ -1,0 +1,135 @@
+dictyNews
+Electronic Edition
+Volume 30, number 18
+June 6, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Antisense RNA Inhibition of the beta Subunit of the Dictyostelium discoideum 
+Mitochondrial Processing Peptidase Induces the Expression of 
+Mitochondrial Proteins
+
+Koki Nagayama(1,2), Shiori Itono(2), Takashi Yoshida(2), Sei-ichi Ishiguro(2), 
+Hiroshi Ochiai(2,3), and Tetsuo Ohmachi*(2) 
+
+(1) Science of Bioresources, United Graduate School of Agricultural Sciences, 
+Iwate University, Morioka 020-8551, Japan
+(2) Department of Biochemistry and Biotechnology, Faculty of Agriculture and 
+Life Science, Hirosaki University, Hirosaki 036-8561, Japan
+(3) Creative Research Institutive Sousei (CRIS), Hokkaido University, 
+Sapporo 001-0021, Japan
+
+* Correspondingu author:
+Tel: +81-172-39-3774; Fax: +81-172-39-3750; 
+E-mail: tohmachi@cc.hirosaki-u.ac.jp
+
+
+Bioscience, Biotechnology, and Biochemistry, in press
+
+We cloned and characterized a cDNA encoding the Dictyostelium discoideum 
+beta subunit of mitochondrial processing peptidase (Ddb-MPP). Western blot 
+analysis of the mitochondrial subfractions revealed that Ddb-MPP is located 
+in the mitochondrial matrix and membrane, whereas Dda-MPP, another subunit 
+of DdMPP, is located only in the matrix. Although expression of Ddb-MPP 
+mRNA is down-regulated during early development, the level of the Ddb-MPP 
+protein is constant throughout the Dictyostelium life cycle. In a 
+transformant expressing the antisense RNA of the b-MPP gene, unexpectedly, 
+the b-MPP protein increased about 1.8-fold relative to the wild type, and 
+its mRNA increased 4.5-fold. Expression of other mitochondrial proteins, 
+a-MPP and Cox IV, was also induced. These results suggest that antisense 
+RNA inhibition of the beta-MPP gene induces gene expression of 
+mitochondrial proteins, presumably in a retrograde signaling manner. 
+This is the pathway of the transfer of information from mitochondria 
+to the nucleus.
+
+
+Submitted by: Koki Nagayama [i205015@stu.hirosaki-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Purinergic-mediated Ca(2+) influx in Dictyostelium discoideum.
+
+Melanie J. Ludlow#, David Traynor+, Paul R. Fisher§ and Steven J. Ennion#
+
+#Department of Cell Physiology and Pharmacology, University of Leicester, 
+PO Box 138, Leicester LE1 9HN, UK.
++MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 0QH, UK
+§Department of Microbiology, La Trobe University, Melbourne VIC 3086, 
+Australia
+
+
+Cell Calcium, in press
+
+The presence of five P2X-like genes (p2xA-E) in Dictyostelium suggests 
+that nucleotides other than cAMP may act as extracellular signalling 
+molecules in this model eukaryote. However, p2xA was found to have an 
+exclusively intracellular localisation making it unclear whether 
+Dictyostelium utilise P2 receptors in a manner analogous to vertebrates. 
+Using an apoaequorin expressing strain we show here that Dictyostelium 
+do possess cell surface P2 receptors that facilitate Ca(2+) influx in 
+response to extracellular ATP and ADP (EC(50)=7.5muM and 6.1muM, 
+respectively). Indicative of P2X receptor activation, responses were 
+rapid reaching peak within 2.91+/-0.04s, required extracellular Ca(2+), 
+were inhibited by Gd(3+), modified by extracellular pH and were not 
+affected by deletion of either the single Gbeta or iplA genes. 
+Responses also remained unaffected by disruption of p2xA or p2xE 
+showing that these genes are not involved. Cu(2+) and Zn(2+) 
+inhibited purine-evoked Ca(2+) influx with IC(50) values of 0.9 and 
+6.3muM, respectively. 300muM Zn(2+) completely abolished the initial 
+large rapid rise in intracellular Ca(2+) revealing the presence of 
+an additional smaller, slower P2Y-like response. The existence of 
+P2 receptors in Dictyostelium makes this organism a valuable model 
+to explore fundamental aspects of purinergic signalling.
+
+
+Submitted by: Steve Ennion [se15@leicester.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Vacuole membrane protein 1 is an endoplasmic reticulum protein required 
+for organelle biogenesis, protein secretion and development
+
+Javier Calvo-Garrido, Sergio Carilla-Latorre, Francisco Lázaro-Diéguez, 
+Gustavo Egea and Ricardo Escalante
+
+Molecular Biology of the Cell, in press
+
+Vacuole membrane protein 1 (Vmp1) is membrane protein of unknown 
+molecular function that has been associated with pancreatitis and 
+cancer. The social amoeba Dictyostelium discoideum has a vmp1-related 
+gene that we identified previously in a functional genomic study.  
+Loss-of-function of this gene leads to a severe phenotype that 
+compromises Dictyostelium growth and development. The expression of 
+mammalian Vmp1 in a vmp1- Dictyostelium mutant complemented 
+the phenotype, suggesting a functional conservation of the protein 
+among evolutionarily distant species and highlights Dictyostelium 
+as a valid experimental system to address the function of this gene. 
+Dictyostelium Vmp1 is an endoplasmic reticulum protein necessary 
+for the integrity of this organelle. Cells deficient in Vmp1 display 
+pleiotropic defects in the secretory pathway and organelle biogenesis. 
+The contractile vacuole, which is necessary to survive under hypoosmotic 
+conditions, is not functional in the mutant. The structure of the Golgi 
+apparatus, the function of the endocytic pathway and conventional protein 
+secretion are also affected in these cells. Transmission electron microscopy 
+of vmp1- cells showed the accumulation of autophagic features that suggests 
+a role of Vmp1 in macroautophagy. In addition to these defects observed at 
+the vegetative stage, the onset of multicellular development and early 
+developmental gene expression are also compromised. 
+
+
+Submitted by: Ricardo Escalante [rescalante@iib.uam.es]
+==============================================================
+[End dictyNews, volume 30, number 18]

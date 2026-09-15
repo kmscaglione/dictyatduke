@@ -1,0 +1,127 @@
+dictyNews
+Electronic Edition
+Volume 30, number 7
+February 22, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Actin binding domains direct actin-binding proteins to different 
+cytoskeletal locations
+
+Raymond W. Washington and David A. Knecht
+
+Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, CT 06269, USA
+
+
+BMC Cell Biol. 2008 Feb 13;9(1):10 Epub ahead of print
+
+Filamin (FLN) and non-muscle alpha-actinin are members of a family of F-actin 
+cross-linking proteins that utilize Calponin Homology domains (CH-domain) 
+for actin binding. Although these two proteins have been extensively 
+characterized, little is known about what regulates their binding to F-actin 
+filaments in the cell.
+We have constructed fusion proteins consisting of green fluorescent protein 
+(GFP) with either the entire cross-linking protein or its actin-binding 
+domain (ABD) and examined the localization of these fluorescent proteins 
+in living cells under a variety of conditions.  The full-length fusion 
+proteins, but not the ABD’s complemented the defects of cells lacking 
+both endogenous proteins indicating that they are functional.  The 
+localization patterns of filamin (GFP-FLN) and alpha-actinin (GFP-alphaA) 
+were overlapping but distinct.  GFP-FLN localized to the peripheral cell 
+cortex as well as to new pseudopods of unpolarized cells, but was observed 
+to localize to the rear of polarized cells during cAMP and folate chemotaxis.  
+GFP-alphaA was enriched in new pseudopods and at the front of polarized 
+cells, but in all cases was absent from the peripheral cortex. Although 
+both proteins appear to be involved in macropinocytosis, the association 
+time of the GFP-probes with the internalized macropinosome differed. 
+Surprisingly, the localization of the GFP-actin-binding domain fusion 
+proteins precisely reflected that of their respective full length constructs, 
+indicating that the localization of the protein was determined by the  
+actin-binding domain alone.  When expressed in a cell line lacking both 
+filamin and alpha-actinin, the probes maintain their distinct localization 
+patterns suggesting that they are not functionally redundant.   These 
+observations strongly suggest that the regulation of the binding of these 
+proteins to actin filaments is built into the actin-binding domains.  We 
+suggest that different actin binding domains have different affinities 
+for F-actin filaments in functionally distinct regions of the cytoskeleton.
+
+
+Submitted by: David Knecht [david.knecht@uconn.edu]
+--------------------------------------------------------------------------------
+
+
+DIF-1 induces the basal disc of the Dictyostelium fruiting body
+
+Tamao Saito1, Atsushi Kato1 and Robert R. Kay2
+
+1 Department of Biological Sciences, Faculty of Science, Hokkaido University, 
+Sapporo 060-0810, Japan
+2 MRC Laboratory of Molecular Biology, Cambridge CB2 0QH, UK
+Correspondence to TS (tasaito@sci.hokudai.ac.jp) and RRK (rrk@mrc-lmb.cam.ac.uk)
+
+
+Dev. Biol., in press
+
+The polyketide DIF-1 induces Dictyostelium amoebae to form stalk cells in 
+culture.  To better define its role in normal development, we examined the 
+phenotype of a mutant blocking the first step of DIF-1 synthesis, which 
+lacks both DIF-1 and its biosynthetic intermediate, dM-DIF-1 
+(des-methyl-DIF-1).  Slugs of this polyketide synthase mutant (stlB-) are 
+long and thin and rapidly break up, leaving an immotile prespore mass.  
+They have ~30% fewer prestalk cells than their wild-type parent and lack 
+a subset of anterior-like cells, which later form the outer basal disc.  
+This structure is missing from the fruiting body, which perhaps in 
+consequence initiates culmination along the substratum.  The lower cup 
+is rudimentary at best and the spore mass, lacking support, slips down 
+the stalk.  The dmtA- methyltransferase mutant, blocked in the last step 
+of DIF-1 synthesis, resembles the stlB- mutant but has delayed tip 
+formation and fewer prestalk-O cells.  This difference may be due to 
+accumulation of dM-DIF-1 in the dmtA- mutant, since dM-DIF-1 inhibits 
+prestalk-O differentiation.  Thus DIF-1 is required for slug migration 
+and specifies the anterior-like cells forming the basal disc and much 
+of the lower cup; significantly the DIF-1 biosynthetic pathway may supply 
+a second signal – dM-DIF-1.
+
+
+Submitted by: Tamao Saito [tasaito@sci.hokudai.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Activation of Bacterial Ribonuclease P by Macrolides
+
+Chrisavgi Toumpeki, Anastassios Vourekas, Dimitra Kalavrizioti, 
+Vassiliki Stamatopoulou and Denis Drainas
+
+Biochemistry, in press
+
+The effect of macrolide antibiotic spiramycin on RNase P holoenzyme 
+and M1 RNA from Escherichia coli was investigated. Ribonuclease P (RNase P) 
+is a ribozyme which is responsible for the maturation of 5´ termini of tRNA 
+molecules. Spiramycin revealed a dose-dependent activation on pre-tRNA 
+cleavage by E. coli RNase P holoenzyme and M1 RNA. The Ks and Vmax, as 
+well as the Ks(app) and Vmax(app) values of RNase P holoenzyme and M1 RNA 
+in the presence or absence of spiramycin, were calculated from primary 
+and secondary kinetic plots. It was found that the activity status of 
+RNase P holoenzyme and M1 RNA is improved by the presence of spiramycin 
+18 and 12 fold respectively. Primer extension analysis revealed that 
+spiramycin induces a conformational change of the P10/11 structural 
+element of M1 RNA which is involved in substrate recognition.
+
+
+Submitted by: Denis Drainas [Drainas@med.upatras.gr]
+==============================================================
+[End dictyNews, volume 30, number 7]

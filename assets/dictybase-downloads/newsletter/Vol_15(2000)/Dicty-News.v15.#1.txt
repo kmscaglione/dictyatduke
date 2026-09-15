@@ -1,0 +1,221 @@
+Dicty News
+Electronic Edition
+Volume 15, number 1
+July 8, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+  Abstracts
+==============
+Efficient control of gene expression by a tetracycline-dependent
+transactivator in single Dictyostelium discoideum cells.
+
+Mieke Blaauw, Maarten H.K. Linskens and Peter J.M. van Haastert
+Cell Engineering Facility GBB, Department of Biochemistry, University of
+Groningen,  Nijenborgh 4, 9747 AG Groningen, The Netherlands
+
+Gene, in press.
+
+Abstract
+
+We established a tetracycline-regulated gene expression system that
+tightly controls expression of genes in Dictyostelium discoideum. The
+control elements are contained in two plasmid vectors, one being an
+integrated plasmid encoding a chimeric tetracycline-controlled
+transcriptional activator protein (tTAs*). The second component is an
+extra-chromosomal plasmid harboring the gene of interest preceded by an
+inducible promoter. This promotor contains a tetracycline-responsive
+element, which is the binding site for tTAs*. Tetracycline prevents
+tTAs* from binding to the tetracycline-responsive element, rendering the
+promoter virtually silent. In the absence of tetracycline, tTAs* binds
+to its target sequence and strongly induces gene expression. The
+kinetics of activation and repression of the system were monitored using
+luciferase as a reporter. The results reveal efficient inhibition of
+gene expression by low concentrations of tetracycline and an induction
+of gene expression by several orders of magnitude within a few hours
+after removal of tetracycline. Green fluorescent protein (GFP) provided
+information about the effects of modulation of the tetracycline
+concentration on gene expression, at the single cell level, using
+fluorescence activated cell sorting (FACS). We also report that not all
+cells in a clonal population express the reporter gene.
+
+----------------------------------------------------------------------------
+
+Mutant Rac1B Expression in Dictyostelium: Effects on Morphology, Growth, 
+Endocytosis, Development, and the Actin Cytoskeleton
+
+Stephen J. Palmieri1, Thomas Nebl1*, Robert K. Pope1*, David J.Seastone2, 
+Enkyung Lee3, Edward H. Hinchcliffe1, Greenfield Sluder1, David Knecht3, 
+James Cardelli2, and Elizabeth J. Luna1
+
+1Department of Cell Biology, University of Massachusetts Medical School, 
+377 Plantation Street, Worcester, MA 01605
+
+2Department of Microbiology and Immunology, Feist-Weiller Cancer Center, 
+Louisiana State University Medical Center, Shreveport, LA 71130
+
+3Department of Molecular and Cellular Biology, University of Connecticut, 
+Storrs, CT 06269
+
+
+*T. Nebl and R. K. Pope contributed equally to this work.
+
+Cell Motility and the Cytoskeleton, in press.
+
+SUMMARY
+
+Rac1 is a small G-protein in the Ras superfamily that has been implicated 
+in the control of cell growth, adhesion, and the actin-based cytoskeleton. 
+To investigate the role of Rac1 during motile processes, we have established 
+Dictyostelium cell lines that conditionally overexpress epitope-tagged 
+Dictyostelium discoideum wild-type Rac1B (DdRac1B) or a mutant DdRac1B 
+protein. Expression of endogenous levels of myc- or GFP-tagged wild-type 
+DdRac1B had minimal effect on cellular morphologies and behaviors. By 
+contrast, expression of a constitutively active mutant (G12ÆV or Q61ÆL) 
+or a dominant negative mutant (T17ÆN) generated amoebae with characteristic 
+cellular defects. The morphological appearance of actin-containing structures, 
+intracellular levels of F-actin, and cellular responses to chemoattractant 
+closely paralleled the amount of active DdRac1B, indicating a role in 
+upregulating actin cytoskeletal activities. Expression of any of the 
+three mutants inhibited cell growth and cytokinesis, and delayed multicellular 
+development, suggesting that DdRac1B plays important regulatory role(s) during 
+these processes. No significant effects were observed on binding or internalization 
+of latex beads in suspension or on intracellular membrane trafficking. Cells 
+expressing DdRac1B-G12V exhibited defects in fluid-phase endocytosis and the 
+longest developmental delays; DdRac1B-Q61L produced the strongest cytokinesis 
+defect; and DdRac1B-T17N generated intermediate phenotypes. These conditionally-
+expressed DdRac1B proteins should facilitate the identification and 
+characterization of the Rac1 signaling pathway in an organism that is amenable 
+to both biochemical and molecular genetic manipulations.
+
+----------------------------------------------------------------------------
+
+Spatial and Temporal Expression of a Polysphondylium Spore-specific Gene.
+
+Keqin Y. Gregg & Edward C. Cox
+
+333 Moffett Laboratories, Department of Molecular Biology, University, 
+Princeton, New Jersey 08544
+
+Developmental Biology, in press.
+
+SUMMARY
+
+In the cellular slime mold Polysphondylium spherical masses of cells are 
+periodically released from the base of the culminating sorogen.  These 
+whorls undergo a morphogenetic transformation from spherical to radial 
+symmetry, marked by the early emergence of a radially symmetric prepattern 
+on the whorl surface.  In previous experiments, morphogenesis was followed 
+by observing prestalk cell markers.  Here we describe the isolation and 
+characterization of a spore coat gene whose expression pattern is the 
+negative image of the prestalk pattern.  To study the molecular mechanism 
+of sp-45 gene regulation, we have cloned and analyzed the sp-45 promoter.  
+Deletion analysis localized a single positive regulatory element (PRE) to 
+a 106 bp fragment between positions -246 and –352 of the upstream coding 
+sequence.  This fragment can be further divided into a promoter proximal 
+and promoter distal PRE and a 29 bp sequence between them.  The distal 
+PRE can regulate prespore expression when fused to a nonfunctioning basal 
+promoter. The distal PRE contains two adjacent essential elements, a Gr 
+box (GTGATATAGTGG) and a TA box (TAATATATT).  Each element can drive 
+prespore cell specific reporter gene expression independently when 
+incorporated into a nonfunctional promoter.  Our results also show that 
+prespore cell-specific gene expression is solely under positive regulation, 
+with no evidence for spore-specific enhancers or cis-acting negative 
+regulatory elements.  By fusing GFP to the C-terminus of sp-45, we have 
+demonstrated that the graded gene expression of SP45 in the sorogen is 
+regulated by a sequence lying within the sp-45 coding sequence. The temporal 
+and spatial expression pattern of this protein, taken together with the 
+prestalk expression pattern, demonstrates unambiguously that the radial 
+symmetries that emerge in the whorl are established by a system of positional 
+coordinates, and that cell sorting plays little if any role in this process.
+
+----------------------------------------------------------------------------
+
+Pictures in Cell Biology, The Dictyostelium fruiting body – a stucture of 
+cells and cellulose
+
+Supriya Srinivasan, Hannah Alexander and Stephen Alexander
+
+Division of Biological Sciences, University of Missouri, Columbia, MO 
+65211-7400
+
+Accepted, Trends in Cell Biology, August  2000
+
+The Dictyostelium fruiting body is featured along with a descritption of 
+its biology.
+ 
+----------------------------------------------------------------------------
+
+Molecular basis for resistance to the anticancer drug cisplatin in 
+Dictyostelium
+
+Guochun Li 1, Hannah Alexander1, Natalie Schneider2  and Stephen Alexander 1
+
+1 Division of Biological Sciences, University of Missouri, Columbia, MO 
+65211-7400 and 2 Max-Planck Institut fur Biochemie, D-82152 Martinsried, 
+Germany
+
+Accepted Microbiology
+
+ABSTRACT
+
+  The efficacy of the widely used chemotherapeutic drug cisplatin is 
+limited by the occurrence of drug-resistant tumor cells.  To fully 
+exploit the potential of this drug in cancer therapy, it is 
+imperative to understand the molecular basis of cisplatin resistance. 
+Using an insertional mutagenesis technique in cells of Dictyostelium 
+discoideum, we have identified six genes which are involved in 
+cisplatin resistance.  None of these genes have been previously 
+linked to resistance to this drug.  Several of these genes encode 
+proteins that are involved in signal transduction pathways which 
+regulate cell death, cell proliferation or gene regulation.  The 
+resistance of these mutant strains is specific for cisplatin since 
+deletion of these genes does not confer resistance to other DNA 
+damaging agents.  Significantly, the disruption of three of these 
+genes, encoding the sphingosine-1-phosphate lyase, the regA cAMP 
+phosphodiesterase and a phosphatidylinositol 4-phosphate 5-kinase, 
+also results in abnormalities in the multicellular development of 
+this organism, although there is no change in the rate of mitotic 
+cell growth.  This study identified previously unsuspected molecular 
+pathways which function in the cellular response to cisplatin and are 
+required for normal morphogenesis, and underscores the complexity of 
+the cellular response to cisplatin.  These pathways provide potential 
+targets for modulating the response to this important drug.
+
+----------------------------------------------------------------------------
+
+Green Fluorescent Protein (GFP) and Epitope Tag Fusion Vectors for 
+Dictyostelium discoideum.
+
+Stephanie Levi, Mark Polyakov, and Thomas T. Egelhoff*
+Department of Physiology and Biophysics
+Case Western Reserve School of Medicine
+Cleveland, OH 44106-4970     USA
+
+IN PRESS, PLASMID
+
+We have constructed expression vectors for Dictyostelium discoideum which 
+encode a green fluorescent protein (GFP) sequence upstream of a 
+multicloning site for introduction of sequences of interest.  Insertion of 
+cDNAs into the multicloning site results in expression of fusion protein 
+bearing an amino or carboxyl-terminal GFP tag which can be used for 
+fluorescent localization studies in Dictyostelium cells.  A parallel 
+construct fuses a FLAG epitope tag at the amino terminus of expressed 
+protein.  Each fusion cartridge was placed in a  G418-resistance vector 
+allowing either trans-activated Ddp2-based extrachromosomal replication, or 
+in a vector allowing autonomous Ddp1-based replication.  Distinct 
+differences in expression stability were observed in the two vector 
+types.   When GFP expressing cells were analyzed by fluorescent microscopy, 
+significant cell-to-cell variability in expression level was observed when 
+expression was based on the Ddp2 vector, while less cell-to-cell variation 
+in expression level was observed when the Ddp1 backbone was used for 
+expression.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 1]

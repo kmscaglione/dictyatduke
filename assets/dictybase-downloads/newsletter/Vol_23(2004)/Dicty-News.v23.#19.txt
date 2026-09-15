@@ -1,0 +1,157 @@
+Dicty News
+Electronic Edition
+Volume 23, number 19
+December 17, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Changes in Mg2+-Ion Concentration and Heavy Chain Phosphorylation 
+Regulate the Motor Activity of a Class-I Myosin
+
+Setsuko Fujita-Becker, Ulrike Dürrwang§, Muriel Erent, Richard J. Clark, 
+Michael A. Geeves, and Dietmar J. Manstein
+
+Institute for Biophysical Chemistry, OE 4350, Hannover Medical School, 
+Carl-Neuberg-Straße 1, D-30623 Hannover, Germany and Department of 
+Biosciences, University of Kent, Canterbury CT2 7NJ, United Kingdom 
+
+Journal of Biological Chemistry, in press
+
+Class-I myosins are single-headed motor proteins, implicated in various
+motile processes including organelle translocation, ion-channel gating, and
+cytoskeleton reorganization. Dictyostelium discoideum myosin-ID belongs to
+subclass-1alpha, whose members are thought to be tuned for rapid sliding. The
+direct analysis of myosin-ID motor activity is made possible by the
+production of single polypeptide constructs carrying an artificial lever arm.
+Using these constructs, we show that the motor activity of myosin-ID is
+activated 80-fold by phosphorylation at the TEDS-site. TEDS-site
+phosphorylation acts by stabilizing the actomyosin complex and increasing the
+coupling between actin-binding and the release of hydrolysis products. A
+surprising effect of Mg2+-ions on in vitro motility was discovered. Changes
+in the level of free Mg2+-ions, within the physiological range, are shown to
+modulate motor activity by inhibiting ADP-release. Our results indicate that
+higher concentrations of free Mg2+-ions stabilise the tension-bearing
+A.M.ADP state and shift the system from the production of rapid movement
+towards the generation of tension.
+
+Submitted by: Dietmar Manstein [manstein@bpc.mh-hannover.de]
+
+-----------------------------------------------------------------------------
+
+
+Constitutively active G protein-coupled receptor mutants block
+Dictyostelium development
+
+Minghang Zhang, Mousumi Goswami, and Dale Hereld
+
+Department of Microbiology and Molecular Genetics, The University of Texas
+Medical School at Houston, Houston, Texas  77030, USA
+
+Molecular Biology of the Cell, in press
+
+cAR1, a G protein-coupled receptor (GPCR) for cAMP, is required for the
+multicellular development of Dictyostelium.  The activation of multiple
+pathways by cAR1 is transient due to poorly defined adaptation mechanisms.
+To investigate this, we used a genetic screen for impaired development to
+isolate four dominant-negative cAR1 mutants, designated DN1-4.  The mutant
+receptors inhibit multiple cAR1-mediated responses known to undergo
+adaptation.  Reduced in vitro adenylyl cyclase activation by GTPgammaS
+suggests that they cause constitutive adaptation of this and perhaps other
+pathways.  In addition, the DN mutants are constitutively phosphorylated,
+which normally requires cAMP binding, and possess cAMP affinities that are
+~100-fold higher than that of wild-type cAR1.  Two independent activating
+mutations, L100H and I104N, were identified.  These residues occupy
+adjacent positions near the cytoplasmic end of the receptor's third
+transmembrane helix and correspond to the (E/D)RY motif of numerous
+mammalian GPCRs, which is believed to regulate their activation.  Taken
+together, these findings suggest that the DN mutants are constitutively
+activated and block development by turning on natural adaptation
+mechanisms.
+
+Submitted by: Dale Hereld [dhereld@uth.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+Cyclic AMP Receptors of Dictyostelium
+
+Dale Hereld1 and Peter N. Devreotes2
+
+1The University of Texas Health Science Center at Houston and 2The Johns
+Hopkins University
+
+In "Encyclopedia of Biological Chemistry" (W.J. Lennarz & M.D. Lane,
+eds.), Elsevier, Oxford, in press
+
+When confronted with starvation, the social amoeba Dictyostelium
+discoideum survives by undergoing multicellular development and
+sporulation.  The coordination of these processes is achieved in part
+through intercellular communication using secreted adenosine 3',5'-cyclic
+monophosphate (cAMP) and a family of cell-surface cAMP receptors (cARs).
+The cARs are examples of G protein-coupled receptors (GPCRs), which enable
+eukaryotic cells in general to sense and respond to a wide array of
+environmental and hormonal signals ranging from single photons to large
+glycoprotein hormones.  Due to their involvement in diverse physiological
+processes, GPCR-targeted drugs are frequently employed in medicine to
+treat many common conditions including inflammation, hypertension, heart
+failure, and neurologic and psychiatric disorders.  Because GPCRs and the
+pathways they regulate are conserved in virtually all eukaryotes examined
+to date, genetically tractable microbes such as Dictyostelium have
+contributed significantly to our understanding of GPCR function and
+regulation.
+
+Submitted by: Dale Hereld [dhereld@uth.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+Dd-Alix, a conserved endosome-associated protein, controls Dictyostelium
+development
+
+Sara Mattei§, W. Jonathan Ryves+, Béatrice Blot*, Rémy Sadoul*, Adrian J.
+Harwood+, Michel Satre§, Gérard Klein§ and Laurence Aubry§
+
+§Laboratoire de Biochimie et Biophysique des Systèmes Intégrés (UMR 5092
+CNRS-CEA-UJF), DRDC, CEA-Grenoble, 17 rue des Martyrs, 38054 Grenoble
+Cedex 9, France; +MRC Laboratory for Molecular Cell Biology, University
+College London, London WC1E 6BT, UK; *Laboratoire Neurodégénérescence
+et Plasticité (EMI 0108 INSERM-UJF), CHU-Grenoble -BP 217, 38043 Grenoble
+Cedex 9, France
+
+accepted for publication in Developmental Biology
+
+We have characterized the Dictyostelium homolog of the mammalian protein
+Alix. Dd-Alix is encoded by a single gene and is expressed during
+vegetative growth and multicellular development. We showed that the alx
+null strain fails to complete its developmental program. Past the tight
+aggregate stage, morphogenesis is impaired, leading to markedly aberrant
+structures containing vacuolated and undifferentiated cells but no mature
+spores. The developmental defect is cell-autonomous as most cells remain
+of the PstB type even when mixed with wild-type cells. Complementation
+analysis with different Alix constructs allowed the identification of a
+101-residue stretch containing a coiled-coil domain essential for Alix
+function. In addition, we showed that the protein associates in part with
+vesicular structures and that its distribution on a Percoll gradient
+overlaps that of the endocytic marker Vamp7. Dd-Alix also co-localizes
+with Dd-Vps32. In view of our data, and given the role of Vps32 proteins
+in membrane protein sorting and multivesicular body formation in yeast and
+mammals, we hypothesize that the developmental defects of the alx null
+strain result from abnormal trafficking of cell-surface receptors.
+
+Submitted by: Laurence Aubry [laubry@cea.fr]
+
+==============================================================================
+[End Dicty News, volume 23, number 19] 

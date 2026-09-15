@@ -1,0 +1,178 @@
+Dicty News
+Electronic Edition
+Volume 10, number 7
+February 28, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+Isolation of nucleation-competent centrosomes from Dictyostelium 
+discoideum
+
+Ralph Graef, Ursula Euteneuer, Masahiro Ueda and Manfred Schliwa
+
+Adolf-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität
+München, Schillerstr. 42, D-80336 München, Germany.
+
+Eur. J. Cell Biol., in press
+
+   The centrosome of Dictyostelium discoideum is a box-shaped, layered 
+core structure surrounded by a corona which is made up of dense nodules 
+embedded in amorphous material. It is also known as nucleus-associated 
+body. Because of its tight association with the nucleus the centrosome 
+has resisted so far all attempts for isolation in sufficient purity 
+and quantity for biochemical analysis. Here we report on the large-
+scale isolation of D. discoideum centrosomes after treatment of 
+nucleus-centrosome complexes with a buffer containing sodium 
+pyrophosphate. Following heparin treatment and a filtration step, 
+centrosomes were further purified by density gradient centrifugation. 
+Immunofluorescence analysis of the isolated centrosomes revealed 
+the presence of the D. discoideum 350-kDa antigen, a centrosomal
+marker protein, g-tubulin, and the D. discoideum homologues of 
+pericentrin, Spc110p, and Cdc31p. The structural integrity of the 
+isolated centrosomes was demonstrated by confocal laser microscopy 
+and electron microscopy.  Microtubule nucleation assays with purified 
+pig brain tubulin showed that the isolation procedure did not only 
+preserve the structure but also the functionality of the isolated 
+centrosomes. D. discoideum centrosomes should now become an 
+attractive new model system in addition to, and for comparison 
+with, centriolar centrosomes and yeast spindle pole bodies.
+
+-------------------------------------------------------------------------
+
+Calcium  levels  correlate with cell cycle phase and  affect  the 
+level of the cyclin B transcript in Dictyostelium discoideum.  
+
+M. Azhar(a), M. Krefft(b), S. Saran(c), G. Weeks(d), and  
+Vidyanand Nanjundiah(a)
+   
+a Developmental Biology and Genetics Laboratory, Indian  Institute 
+of Science, Bangalore  560012, India
+b Fachhochschule    Rheinland-Pfalz,   Abteilung    Bingen,    FB-
+Verfahrenstechnik, Berlinerstrasse 109, Germany
+c School of Life Sciences, Jawaharlal Nehru University, New Delhi-
+11067, India
+d Department  of  Microbiology and Immunology  and  Department  of 
+Medical Genetics, University of British Columbia, Vancouver BC V6T, 
+Canada
+
+FEMS Microbiology Letters, in press
+
+Abstract
+
+   In pre-aggregation  amoebae  of  D.   discoideum,   phenotypic 
+differences  with respect to cellular Ca2+ and cell cycle  phases 
+act  coordinately and bias post-aggregative cell-type choice.  We 
+have  shown  that  it  is  possible  to  enhance  (/reduce)   the 
+proportion  of prestalk cells in the slug and generate  a  stalky 
+(/spory)  phenotype in D. discoideum  by artificially  increasing 
+(/decreasing) cellular Ca2+ by using the right combination of the 
+calcium ionophore A23187 and Ca2+-EGTA buffers. Also, sequestered 
+and  free calcium are both relatively high or relatively  low  in 
+the same cell. This enables us to make use of   chlortetracycline 
+(CTC) fluorescence, which is primarily a correlate of sequestered 
+calcium, indirectly to monitor overall cellular calcium. Based on 
+the  temporal  pattern  of  (3-H)  thymidine  uptake   and  MUD-9 
+antibody staining, we infer that Ca2+ levels are highest at the S 
+phase  of the cell cycle. Upon increasing the level of Ca2+  with 
+the help of A23187, there is a 2 to 3-fold decrease in the cyclin 
+B  (clb1)  mRNA  level;  the cdc2 mRNA  level  shows  a  marginal 
+decrease.  A  decrease  in  cellular  Ca2+  does  not  appear  to 
+influence either the clb1 or the cdc2 mRNA levels. These  results 
+suggest  that the effect of Ca2+ and the cell cycle on cell  fate 
+could  be  exerted  at the level  of  transcription,  or  message 
+stability, of specific genes. 
+
+-------------------------------------------------------------------------
+
+
+
+Presteady-state of reaction of Nucleoside Diphosphate Kinase with anti-HIV
+Nucleotides
+
+SCHNEIDER, B. (1)  , XU, Y.W., (2)  SELLAM, O., (1)  SARFATI, R., (1)
+JANIN, J., (2)  VERON, M. (1)  & DEVILLE-BONNE, D. (1)
+
+(1) Institut Pasteur,  Paris and (2) CNRS,  Gif-sur-Yvette, France
+
+J. Biol. Chem., in press
+
+SUMMARY:
+
+   The presteady-state reaction of Dictyostelium nucleoside 
+diphosphate (NDP) kinase with dideoxynucleotide triphosphates 
+(ddNTP) was studied by quenching of protein fluorescence after 
+manual mixing or by stopped-flow.  The fluorescence signal, which 
+is correlated with the phosphorylation state of the catalytic 
+histidine in the enzyme active site, decreases upon ddNTP addition 
+according to a monoexponential time course. The pseudo-first order 
+rate constant was determined for different concentrations of the various 
+ddNTPs and was found to be saturable. The data are compatible with a
+two-step reaction scheme where fast association of the enzyme with the
+dideoxynucleotide is followed by a rate-limiting phosphorylation step. 
+The rate constants and dissociation equilibrium constants determined 
+for each dideoxynucleotide were correlated with the steady-state 
+kinetic parameters measured in the enzymatic assay in the presence 
+of the two substrates. It is shown that ddNTPs are poor substrates 
+for NDP kinase with a rate of phosphate transfer of 0.02 to 3.5 s-1 
+and a KS of 1 to 5 mM. The equilibrium dissociation constants for 
+ADP, GDP, ddADP and ddGDP were also determined by fluorescence 
+titration of a mutant F64W NDP kinase where the introduction of a 
+tryptophan at the nucleotide binding site provides a direct 
+spectroscopic probe. The lack of the 3'OH in ddNTP causes a ten fold
+increase in KD. Contrary to « natural » NTPs, NDP kinase discriminates
+between various ddNTPs, with ddGTP the more efficient  and ddCTP  
+the least efficient substrate within a range of 100 in kcat values.
+
+-------------------------------------------------------------------------
+
+Fucose-beta-1-P-Ser is a new type of glycosylation: Using antibodies to
+identify a novel structure in Dictyostelium discoideum and study multiple
+types of fucosylation during growth and development
+
+Geetha Srikrishna, Liying Wang, and Hudson H. Freeze
+The Burnham Institute, La Jolla Cancer Research Center, La Jolla,
+California 92037
+
+Three antibodies that recognize distinct fucose epitopes were used to 
+study fucosylation during growth and development of Dictyostelium 
+discoideum.  mAb83.5 is known to recognize an undefined "fucose epitope" 
+on several proteins with serine-rich domains, while mAb CAB4, and 
+a component of anti-horse-radish peroxidase, specifically recognize 
+Fuca1,6GlcNAc and Fuca1,3GlcNAc residues respectively in the core 
+of N-linked oligosaccharides.  We show that mAb 83.5 defines a new 
+type of O-glycosylation. Serine-containing peptides incubated with 
+GDPb[3H]Fuc and microsomes formed two fucosylated products. A neutral 
+product accounting for 30% of the label did not react with the 
+antibody, while the rest of the label was incorporated into a 
+charged product which contained all the mAb83.5 reactive material. 
+b-elimination of the labeled peptide or endogenous products produced 
+[3H]Fuc-1-P, indicating phosphodiester linkage to serine. Fucb-1-P 
+and GDP-bFuc at 100µM blocked mAb83.5 binding to endogenous and 
+peptide products, but their a-linked anomers did not.  Electrospray 
+ionization mass spectra of the neutral and anionic labeled
+products showed major peaks of mass units corresponding to O-Fuc-Ser
+peptide and O-Fuc-phospho-Ser peptide respectively. The activity of
+Fuc-phosphotransferase exactly paralleled the accumulation of reactive
+glycans during growth and development. The expressions of N-glycan core
+Fuca1,6GlcNAc and Fuca1,3GlcNAc, and their respective fucosyl transferase
+activities were also synchronous, but their developmental regulation
+differed from one another. Fuca1,6GlcNAc was expressed maximally during
+growth, but declined during development. In contrast core Fuca1,3GlcNAc
+epitopes were expressed almost exclusively during development. These
+findings provide direct evidence for a novel type of O-phosphofucosylation,
+demonstrate the existence of an O-fucosyl transferase, and identify two
+different types of core fucosylation in the N-glycans of Dictyostelium.
+
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 7]
+

@@ -1,0 +1,123 @@
+dictyNews
+Electronic Edition
+Volume 43, number 12
+June 9, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Hydrophilic interaction anion exchange for separation of multiply-modified 
+neutral and anionic Dictyostelium N-glycans
+
+Alba Hykollari, Daniel Malzl, Shi Yan, Iain B. H. Wilson and Katharina 
+Paschinger
+
+Department für Chemie, Universität für Bodenkultur, 1190 Wien, Austria
+
+
+Electrophoresis, in press
+DOI: 10.1002/elps.201700073
+
+The unusual nature of the N-glycans of the cellular slime mould Dictyostelium 
+discoideum has been revealed by a number of studies, primarily based on 
+examination of radiolabelled glycopeptides but more recently also by mass 
+spectrometry. The complexity of the N-glycomes of even glycosylation mutants 
+is compounded by the occurrence of anionic modifications, which also present 
+an analytical challenge. In this study, we have employed hydrophilic interaction 
+anion exchange (HIAX) HPLC in combination with MALDI-TOF MS/MS to 
+explore the anionic N-glycome of the M31 (modA) strain, which lacks 
+endoplasmic reticulum alpha-glucosidase II, an enzyme conserved in most 
+eukaryotes including Homo sapiens. Pre-fractionation with HIAX 
+chromatography enabled the identification of N-glycans with unusual
+ oligo-alpha1,2-mannose extensions as well as others with up to four anionic 
+ modifications. Due to the use of hydrofluoric acid treatment, we were able to 
+ discriminate isobaric glycans differing in the presence of sulphate or phosphate 
+ on intersected structures as opposed to those carrying GlcNAc-phosphodiesters. 
+ The latter represent biosynthetic intermediates during the pathway leading to 
+ formation of the methylphosphorylated mannose epitope, which may have a 
+ similar function in intracellular targeting of hydrolases as the 
+ mannose-6-phosphate modification of lysosomal enzymes in mammals. In 
+ conclusion, HIAX in combination with MS is a highly-sensitive approach for both 
+ fine separation and definition of neutral and anionic N-glycan structures..
+
+
+submitted by: Iain Wilson [iain.wilson@boku.ac.at]
+———————————————————————————————————————
+
+
+Generation of Single-Cell Transcript Variability by Repression
+
+Vlatka Antolovic Agnes Miermont, Adam M. Corrigan, Jonathan R. Chubb
+
+Laboratory for Molecular Cell Biology and Division of Cell and Developmental 
+Biology, University College London, Gower Street, London WC1E 6BT, UK
+
+
+Current Biology, in press
+
+Gene expression levels vary greatly within similar cells, even within clonal cell 
+populations [1]. These spontaneous expression differences underlie cell fate 
+diversity in both differentiation and disease [2]. The mechanisms responsible 
+for generating expression variability are poorly understood. Using single-cell 
+transcriptomics, we show that transcript variability emerging during Dictyostelium 
+differentiation is driven predominantly by repression rather than activation. The 
+increased variability of repressed genes was observed over a broad range of 
+expression levels, indicating that variability is actively imposed and not a passive 
+statistical effect of the reduced numbers of molecules accompanying repression. 
+These findings can be explained by a simple model of transcript production, with 
+expression controlled by the frequency, rather than the magnitude, of 
+transcriptional firing events. Our study reveals that the generation of differences 
+between cells can be a direct consequence of the basic mechanisms of 
+transcriptional regulation.
+
+
+submitted by: Jonathan Chubb [j.chubb@ucl.ac.uk]
+———————————————————————————————————————
+
+
+Symmetry breaking in development and stochastic gene expression
+
+Jonathan R. Chubb
+
+MRC Laboratory for Molecular Cell Biology and Department of Cell and 
+Developmental Biology, University College London, Gower Street, London, 
+WC1E 6BT.
+
+
+WIRES Developmental Biology, in press
+
+The prevailing emphasis in developmental biology since the expansion of the 
+molecular biology age has been that developmental decisions are instructive.  
+A cell differentiates to become a specific cell type because it receives a signal, 
+whereas its neighbour, that does not receive the signal, adopts a different fate. 
+This emphasis has been generally accepted, largely because of the success of 
+this view in tractable invertebrate model organisms, and the widespread 
+similarities in molecular regulation to the development of more complex species.  
+An alternative emphasis, that cells make their own decisions, has until the past 
+decade been conspicuously silent.  Here I trace the re-emergence of our 
+appreciation of single cell decision-making in development, and how widespread 
+this phenomenon is likely to be.  I will focus the discussion on the potential role 
+of stochastic gene expression in generating differences between cells in the 
+absence of simple instructive signals and highlight the complexity of systems 
+proposed to involve this type of regulation. Finally, I will discuss the approaches 
+required to fully test hypotheses that noisy gene regulation can be extrapolated 
+through developmental time to accurately specify cell fate.
+
+
+submitted by: Jonathan Chubb [j.chubb@ucl.ac.uk]
+==============================================================
+[End dictyNews, volume 43, number 12]

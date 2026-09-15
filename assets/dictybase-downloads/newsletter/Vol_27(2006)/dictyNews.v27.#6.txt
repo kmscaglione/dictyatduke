@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 27, number 6
+August 25, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Phosphorylation of actin Tyr53 inhibits filament nucleation and elongation, 
+and destabilizes filaments
+
+Xiong Liu, Shi Shu, Myoung-Soon S. Hong, Rodney L. Levine*, and 
+Edward D. Korn†
+
+Laboratory of Cell Biology, and *Laboratory of Biochemistry, National Heart, 
+Lung, and Blood Institute, Bethesda, MD 20892
+
+
+Proc. Natl. Acad. Sci. USA, in press
+
+Dictyostelium actin was previously shown to become phosphorylated on Tyr53 
+late in the developmental cycle and when cells in the amoeboid stage are 
+subjected to stress, but the phosphorylated actin had not been purified and 
+characterized.  We have separated phosphorylated and unphosphorylated actin 
+and shown that Tyr53-phosphorylation substantially reduces actin's ability 
+to inactivate DNase I, increases actin's critical concentration, and greatly 
+reduces its rate of polymerization.  Tyr53-phosphorylation substantially, if 
+not completely, inhibits nucleation and elongation from the pointed-end of 
+actin filaments, and reduces the rate of elongation from the barbed-end. 
+Negatively stained electron microscopic images of polymerized 
+Tyr53-phosphorylated actin show a variable mixture of small oligomers and 
+filaments, which are converted to more typical, long filaments upon addition 
+of myosin subfragment 1.  Tyr53-phosphorylated and unphosphorylated actin 
+co-polymerize in vitro, and phosphorylated and unphosphorylated actin 
+co-localize in amoebae.  Tyr53-phosphorylation does not affect the ability 
+of filamentous actin to activate myosin ATPase.
+
+
+Submitted by: Edward Korn [edk@nih.gov]
+-----------------------------------------------------------------------------
+
+
+Proteomic fingerprinting of phagosome maturation and evidence for the role 
+of a Galpha during uptake
+
+Daniel Gotthardt1,2*, Vincent Blancheteau3*, Armin Bosserhoff4, 
+Thomas Ruppert4, Mauro Delorenzi5,6, and Thierry Soldati1,3,7,#
+
+*These authors contributed equally to the work
+
+1)Department of Molecular Cell Research, Max-Planck-Institute for Medical 
+Research, D-69120 Heidelberg, Germany.
+2)Department of Internal Medicine IV, University Hospital of Heidelberg, 
+D-69120 Heidelberg, Germany.
+3)Department of Biological Sciences, Imperial College, London SW7 2AZ, UK.
+4)Zentrum für Molekulare Biologie der Universitaet Heidelberg (ZMBH), 
+D-69120 Heidelberg, Germany.
+5)ISREC National Centre of Competence in Research (NCCR) Molecular Oncology,
+Swiss Institute of Experimental Cancer Research (ISREC), Epalinges, 
+Switzerland.
+6)ISREC Swiss Institute of Bioinformatics (SIB), Lausanne, Switzerland.
+7)Department de Biochimie, Faculte des Sciences, Universite de Geneve, 
+CH-1211-Geneve-4, Switzerland.
+
+#)Corresponding author: 
+Tel: +41-22-379-6496     Fax: +41-22-379-6470     
+E-mail: thierry.soldati@biochem.unige.ch
+
+
+Molecular Cell Proteomics, in press 
+(accessible online at http://www.mcponline.org/papbyrecent.shtml)
+
+Phagocytosis, whether of food particles in protozoa or bacteria and cell 
+remnants in the metazoan immune system, is a conserved process. The 
+particles are taken up into phagosomes, which then undergo complex 
+remodelling of their components, called maturation. By using 2D gel 
+electrophoresis and mass spectrometry, combined with genomic data, we have 
+identified 179 phagosomal proteins in the amoeba Dictyostelium, including 
+components of signal transduction, membrane traffic and the cytoskeleton. 
+By carrying out this proteomic analysis over the course of maturation, we 
+obtained time profiles for 1,388 spots and thus generated a dynamic record 
+of phagosomal protein composition. Clustering of the time profiles revealed 
+five clusters and 24 functional groups that were mapped onto a flow chart 
+of maturation. Two heterotrimeric G protein subunits, Galpha4 and Gbeta, 
+appeared at the earliest times. We show that mutations in the genes encoding 
+these two proteins produce a phagocytic uptake defect in Dictyostelium. This 
+analysis of phagosome protein dynamics provides a reference point for future 
+genetic and functional investigations.
+
+
+Submitted by: Thierry Soldati [thierry.soldati@biochem.unige.ch]
+==============================================================================
+[End dictyNews, volume 27, number 6] 

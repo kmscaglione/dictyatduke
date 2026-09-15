@@ -1,0 +1,200 @@
+dictyNews
+Electronic Edition
+Volume 37, number 1
+July 8, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Nucleocytoplasmic transfer of cyclin dependent kinase 5 and its binding to 
+puromycin-sensitive aminopeptidase in Dictyostelium discoideum
+
+Robert J. Huber1 and Danton H. O'Day1,2
+
+1Department of Cell & Systems Biology, University of Toronto, 25 Harbord Street, 
+Toronto, ON, Canada M5S 3G5
+2Department of Biology, University of Toronto Mississauga, 3359 Mississauga 
+Road North, Mississauga, ON, Canada L5L 1C6
+
+
+Histochemistry and Cell Biology, in press
+
+The Dictyostelium discoideum homologue of mammalian cyclin-dependent 
+kinase 5 (Cdk5) has previously been shown to be required for optimal growth 
+and differentiation in this model organism, however the subcellular localization 
+of the protein has not previously been studied. In this study, immunolocalizations 
+and a GFP-fusion construct localized Cdk5 predominantly to the nucleus of 
+vegetative cells. Western blots showed that Cdk5 was present in both nuclear 
+and non-nuclear fractions suggesting a functional role in both cellular locales. 
+During the early stages of mitosis, Cdk5 gradually moved from a punctate 
+nucleoplasmic distribution to localize adjacent to the inner nuclear envelope. 
+During anaphase and telophase, Cdk5 localized to the cytoplasm and was not 
+detected in the nucleoplasm. Cdk5 returned to the nucleus during cytokinesis. 
+Proteolytic activity has been shown to be a critical regulator of the cell cycle. 
+Immunoprecipitations coupled with immunolocalizations, identified puromycin-
+sensitive aminopeptidase A (PsaA) as a potential Cdk5 binding partner in 
+Dictyostelium. Immunoprecipitations also identified two phosphotyrosine 
+proteins (35 kDa and 18 kDa) that may interact with Cdk5 in vivo. Together, 
+this work provides new insight into the localization of Cdk5, its function 
+during cell division, and its binding to a proteolytic enzyme in Dictyostelium.
+
+
+Submitted by: Danton O'Day [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+Protocol manuscript:
+A proteolytic cleavage assay to monitor autophagy in Dictyostelium discoideum
+
+Javier Calvo-Garrido, Sergio Carilla-Latorre, Ana Mesquita and Ricardo Escalante
+
+Instituto de Investigaciones Biomedicas Alberto Sols. C.S.I.C./U.A.M. 
+Calle Arturo Duperier 4, 28029 Madrid. Spain.
+
+
+Autophagy, in press 
+
+Abstract
+Dictyostelium discoideum is a good model of autophagy. However, the lack of 
+autophagic flux techniques hinders the assessment of new mutants or drugs. 
+One of these techniques, which has been used successfully in yeast and 
+mammalian cells, but has not yet been described in Dictyostelium, is based on 
+the presence of proteolytic fragments derived from autophagic degradation of 
+expressed fusion proteins. Lysosomotropic agents such as NH4Cl penetrate 
+acidic compartments and raise their pH, thus allowing the accumulation and 
+measurement of these cleaved fragments, which otherwise would be rapidly 
+degraded. We have used this property to detect the presence of free GFP 
+fragments derived from the fusion protein GFP-Tkt-1, a cytosolic marker. We 
+demonstrate that this proteolytic event is dependent on autophagy and can 
+be used to detect differences in the level of autophagic flux among different 
+mutant strains. Moreover, treatment with NH4Cl also facilitates the assessment 
+of autophagic flux by confocal microscopy using the marker RFP-GFP-Atg8.  
+
+
+Submitted by  Ricardo Escalante [rescalante@iib.uam.es]
+--------------------------------------------------------------------------------
+
+
+The putative bZIP transcripton factor BzpN slows proliferation and functions in 
+the regulation of cell density by autocrine signals in Dictyostelium
+
+Jonathan E. Phillips1 , Eryong Huang2, Gad Shaulsky2, and Richard H. Gomer3
+
+1Department of Biochemistry and Cell Biology, Rice University, Houston, TX, USA
+2Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, TX, USA
+3Department of Biology, Texas A&M University, College Station, TX, USA.
+
+
+PLoS One, in press
+
+The secreted proteins AprA and CfaD function as autocrine signals that inhibit cell 
+proliferation in Dictyostelium discoideum, thereby regulating cell numbers by a 
+negative feedback mechanism.  We report here that the putative basic leucine 
+zipper transcription factor BzpN plays a role in the inhibition of proliferation by 
+AprA and CfaD.  Cells lacking BzpN proliferate more rapidly than wild-type cells 
+but do not reach a higher stationary density.  Recombinant AprA inhibits wild-type 
+cell proliferation but does not inhibit the proliferation of cells lacking BzpN. 
+Recombinant CfaD also inhibits wild-type cell proliferation, but promotes the 
+proliferation of cells lacking BzpN.  Overexpression of BzpN results in a reduced 
+cell density at stationary phase, and this phenotype requires AprA, CfaD, and the 
+kinase QkgA.  Conditioned media from high-density cells stops the proliferation 
+of wild-type but not bzpN¯ cells and induces a nuclear localization of a BzpN-GFP 
+fusion protein, though this localization does not require AprA or CfaD.  Together, 
+the data suggest that BzpN is necessary for some but not all of the effects of 
+AprA and CfaD, and that BzpN may function downstream of AprA and CfaD in 
+a signal transduction pathway that inhibits proliferation.
+
+
+Submitted by Jonathan Phillips [JPhillips@mail.bio.tamu.edu]
+--------------------------------------------------------------------------------
+
+
+Heteroplasmic mitochondrial disease in Dictyostelium discoideum.
+
+Lisa M. Francione and Paul R. Fisher.
+
+Department of Microbiology, La Trobe University, VIC 3086, Australia
+
+
+Biochemical Pharmacology, in press.
+
+The bewildering complexity of the relationship between genotype and 
+phenotype in human mitochondrial diseases has delayed an understanding 
+of the related cytopathological mechanisms. To explore the relationship 
+between mitochondrial dysfunction in Dictyostelium discoideum and the 
+related cytopathologies, we determined whether the phenotypic outcomes 
+were similar regardless of which D. discoideum mitochondrial gene was 
+targeted for disruption. The disruption of the mitochondrial genes resulted
+in a similar pattern of phenotypes to those caused by other mitochondrial 
+defects. These include impairment of phototaxis, multicellular development 
+and growth on plates and in liquid medium. As the reduced growth rates 
+could have been due to defective phagocytic or macropinocytic nutrient 
+uptake, these processes were tested but found to be unaffected. Since 
+mitochondria have been associated with Legionella pathogenesis of 
+human macrophages, it was also determined if mitochondrially diseased 
+Dictyostelium strains were better or worse than healthy cells at supporting 
+the growth of Legionella pneumophila. The results revealed that the 
+mitochondrially diseased strains supported greater L. pneumophila growth 
+than the wild type Dictyostelium strain (AX2). Quantitative northern blotting 
+showed a significant reduction in the level of expression of the entire 
+mitochondrial genome, regardless of which mitochondrial gene was 
+targeted for disruption, suggesting a generalized deficiency in mitochondrial 
+gene expression and function. The phenotypic outcomes were the same 
+as those shown previously to result from chronic hyperactivity of the 
+energy-sensing protein kinase, AMPK, after knockdown of 
+mitochondrial chaperonin 60. 
+
+
+Submitted by Paul Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+An amoeba host model to evaluate Streptococcus suis virulence
+
+Laetitia Bonifait1,2, Steve J. Charette3,4,5, Genevieve Filion3,4, 
+Marcelo Gottschalk2,6 and Daniel Grenier1,2*
+
+1Groupe de Recherche en ecologie Buccale (GREB), Faculte de Medecine 
+Dentaire, Universite Laval, Quebec City, Quebec, Canada;
+2Centre de Recherche en Infectiologie Porcine (CRIP), Fonds Quebecois 
+de la Recherche sur la Nature et les Technologies (FQRNT), Quebec City, 
+Quebec, Canada;
+3Institut de Biologie Integrative et des Systèmes (IBIS), Quebec City, 
+Quebec, Canada;
+4Centre de Recherche de l'Institut Universitaire de Cardiologie et de 
+Pneumologie de Quebec (IUCPQ), Hôpital Laval, Quebec City, Quebec, 
+Canada;
+5Departement de Biochimie, de Microbiologie et de Bio-Informatique, 
+Faculte des Sciences et de Genie, Universite Laval, Quebec City, 
+Quebec, Canada;
+6Groupe de Recherche sur les Maladies Infectieuses du Porc (GREMIP), 
+Faculte de Medecine Veterinaire, Universite de Montreal, Ste-Hyacinthe, 
+Quebec, Canada.
+
+
+Applied and Environmental Microbiology (AEM), in press
+
+The Gram-positive bacterium Streptococcus suis is a major swine pathogen 
+worldwide that causes meningitis, septicemia, and endocarditis. In this study, 
+we demonstrated that the amoeba Dictyostelium discoideum can be a 
+relevant alternative system to study the virulence of S. suis.
+
+
+Submitted by Steve Charette [Steve.Charette@bcm.ulaval.ca]
+==============================================================
+[End dictyNews, volume 37, number 1]

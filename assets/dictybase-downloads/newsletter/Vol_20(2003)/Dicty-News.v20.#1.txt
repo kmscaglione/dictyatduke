@@ -1,0 +1,106 @@
+Dicty News
+Electronic Edition
+Volume 20, number 1
+January 18, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+Receptor Mediated Regulation of PI3Ks Confines PI(3,4,5)P3 to the 
+Leading Edge of  Chemotaxing Cells
+
+Yi Elaine Huang1, Miho Iijima1, Carole A. Parent,2 Satoru Funamoto3,
+Richard A. Firtel3, and Peter Devreotes1
+ 
+1Department of Cell Biology
+Johns Hopkins University
+School of Medicine
+Baltimore, MD 21205
+
+2Laboratory of Cellular and Molecular Biology
+Division of Basic Sciences
+NCI, NIH
+37 Convent Drive, MSC 4255
+Bldg. 37/Rm. 1E24
+Bethesda, MD 20892-4255
+
+3Section of Cell and Developmental Biology
+Division of Biology
+University of California, San Diego
+9500 Gillman Drive
+La Jolla, CA 92093
+
+Molecular Biology of the Cell, In Press
+
+Abstract
+
+Recent studies have demonstrated that PH domains specific for 
+PI(3,4,5)P3 accumulate at the leading edge of a number of migrating 
+cells and that PI3Ks and PTEN associate with the membrane at the front 
+and back, respectively, of chemotaxing D. discoideum cells.  However, 
+the dependence of chemoattractant induced changes in PI(3,4,5)P3 on PI3K 
+and PTEN activities have not been defined.  We find that bulk PI(3,4,5)P3 
+levels increase transiently upon chemoattractant stimulation, and the 
+changes are greater and more prolonged in pten- cells.  PI3K activation 
+increases within 5 seconds of chemoattractant addition and then declines 
+to a low level of activity identically in wild type and pten- cells.  
+Reconstitution of the PI3K activation profile can be achieved by mixing 
+membranes from stimulated pi3k1-/pi3k2- cells with cytosolic PI3Ks from 
+unstimulated cells.  These studies show that significant control of 
+chemotaxis occurs upstream of the PI3Ks and that regulation of the PI3Ks 
+and PTEN cooperate to shape the temporal and spatial localization of 
+PI(3,4,5)P3.
+
+submitted by Pam Antol [pjantol@jhmi.edu]
+----------------------------------------------------------------------------
+
+Dictyostelium differentiation-inducing factor-3 activates glycogen synthase 
+kinase-3b and degrades cyclin D1 in mammalian cells 
+
+Fumi Takahashi-Yanaga, Yoji Taba, Yoshikazu Miwa, Yuzuru Kubohara, Yutaka 
+Watanabe, Masato Hirata, Sachio Morimoto, and Toshiyuki Sasaguri
+
+Dept. of Clinical Pharmacology, Graduate school of Med. Sciences, Kyushu 
+University Dept. of Mol. Cell. Biochem., Graduate School of Dental Sciences, 
+Kyushu University, Fukuoka 812-8582 Biosignal Research Center, IMCR, Gunma 
+University, Mabashi 371-8512 Dept. of Applied Chem. Ehime University, 
+Matsuyama 790-8577, Japan
+
+J. Biol. Chem.  In press.
+
+In search of chemical substances applicable for the treatment of cancer and 
+other proliferative disorders, we studied the signal transduction of 
+Dictyostelium differentiation-inducing factors (DIFs) in mammalian cells 
+mainly using HeLa cells. Although DIF-1 and DIF-3 both strongly inhibited 
+cell proliferation by inducing G0/G1 arrest, DIF-3 was more effective than 
+DIF-1. DIF-3 suppressed cyclin D1 expression at both mRNA and protein levels, 
+while the overexpression of cyclin D1 overrode DIF-3-induced cell cycle 
+arrest. The DIF-3-induced decrease in the amount of cyclin D1 protein 
+preceded the reduction in the level of cyclin D1 mRNA. The decrease in 
+cyclin D1 protein seemed to be caused by accelerated proteolysis, since 
+it was abrogated by ALLN, a proteasome inhibitor. DIF-3-induced degradation 
+of cyclin D1 was also prevented by treatment with lithium chloride, an 
+inhibitor of glycogen synthase kinase-3b (GSK-3b, suggesting that DIF-3 
+induced cyclin D1 proteolysis through the activation of GSK-3b. Indeed, 
+DIF-3 dephosphorylated Ser9 and phosphorylated tyrosine on GSK-3b, and it 
+stimulated GSK-3b activity in an in vitro kinase assay. Moreover, DIF-3 
+was revealed to induce the nuclear translocation of GSK-3b by 
+immunofluorescent microscopy and immunoblotting of subcellular protein 
+fractions. These results suggested that DIF-3 activates GSK-3b to 
+accelerate the proteolysis of cyclin D1 and this mechanism is involved in 
+the DIF-3-induced G0/G1 arrest in mammalian cells.
+
+submitted by: kubohara@pop.showa.gunma-u.ac.jp
+
+----------------------------------------------------------------------------
+
+[End Dicty News, volume 20, number 1]
+
+ 

@@ -1,0 +1,127 @@
+Dicty News
+Electronic Edition
+Volume 19, number 9
+November 9, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+Requirement of a Vasodilator-stimulated Phosphoprotein (VASP) Family 
+Member for Cell Adhesion, the Formation of Filopodia, and Chemotaxis 
+in Dictyostelium
+
+Young-Hoon Han1, Chang Y. Chung1, Deborah Wessels2, Stephen Stephens3, 
+Margaret A. Titus3, David R. Soll2, and Richard A. Firtel1,4
+
+1Section of Cell and Developmental Biology
+Division of Biological Sciences
+Center for Molecular Genetics
+University of California, San Diego
+9500 Gilman Drive
+La Jolla CA 92093-0634
+
+2W.M. Keck Dynamic Image Analysis Facility
+Department of Biological Sciences
+University of Iowa
+210 E Iowa Avenue
+Iowa City IA 52242
+
+3Department of Genetics, Cell Biology, and Development
+University of Minnesota
+6-160 Jackson Hall
+321 Church Street S.E.
+Minneapolis MN 56455
+
+J. Biological Chemistry, in press.
+
+SUMMARY
+
+We have examined the function of a member of the vasodilator-stimulated 
+phosphoprotein family of proteins (DdVASP) in Dictyostelium.  Ddvasp null 
+cells lack filopodia, whereas targeting DdVASP to the plasma membrane with 
+a myristoyl tag results in a significant increase in filopodia.  The 
+PRD-EVH2 structure is required for both actin polymerization activity and 
+filopodia formation.  Ddvasp null cells exhibit a chemotaxis defect, which 
+appears to be due to a defect in the ability of the cells to properly 
+adhere to the substratum and to suppress lateral pseudopod extension.  We 
+demonstrate that during chemotaxis, the anterior ~50% of the cell lifts 
+from the substratum and remains elevated for up to a minute.  These defects 
+lead to a significant decrease in chemotaxis efficiency.  DdVASP localizes 
+to the leading edge in migrating cells and to the tips of filopodia.  In 
+addition, Ddvasp null cells have a defect in particle adhesion but 
+internalize particles normally. Our results provide new insights into the 
+function of DdVASP in controlling the actin cytoskeleton during chemotaxis 
+and filopodia formation.
+
+-----------------------------------------------------------------------------
+
+Single-gene Greenbeard Effects in the Social Amoeba, Dictyostelium discoideum
+
+David C. Queller1, Eleonora Ponte2, Salvatore Bozzaro2 and Joan E.Strassmann1
+
+1 Dept. of Ecology and Evolution, MS-170, Rice University, P.O. Box 1892, 
+Houston, Texas  77251-1892  U.S.A.
+2  Dept. Clinical and Biological Sciences, University of Turin, Ospedale S. 
+Luigi, 10043 Orbassano, Italy
+
+Science in press
+
+Abstract
+
+Selection can favor reproductive altruism if an altruism allele aids copies 
+of itself by helping relatives.  The alternative "greenbeard" mechanism, in 
+which an allele directly recognizes and aids copies of itself in others, is 
+generally thought to be too complex for a single gene to carry out.  The csA 
+gene in  Dictyostelium discoideum acts as a single-gene greenbeard.  When 
+wildtype cells are mixed with csA knockout cells, the wildtype is more 
+altrustic, but is also able to preferentially direct the benefits to other 
+wildtype cells.  Both properties derive directly from homophilic cell 
+adhesion of the protein encoded by csA.
+
+-----------------------------------------------------------------------------
+
+SadA, A Novel Adhesion Receptor In Dictyostelium
+
+Petra Fey, Stephen Stephens*, Margaret A. Titus*, Rex L. Chisholm
+
+Dept. of Cell and Molecular Biology, Northwestern University Feinberg School 
+of Medicine, Chicago, IL 60611
+
+*Department of Genetics, Cell Biology and Development, University of Minnesota
+321 Church St. S.E., 6-160 Jackson Hall, Minneapolis, MN  55455
+
+J. Cell Biol., in press
+
+Little is known about cell-substrate adhesion and how motile and adhesive 
+forces work together in moving cells.  The ability to rapidly screen a large 
+number of insertional mutants prompted us to perform a genetic screen in 
+Dictyostelium to isolate adhesion deficient mutants.  The resulting sad 
+(substrate adhesion deficient) mutants grew in plastic dishes without 
+attaching to the substrate.  The cells were often larger than their wildtype 
+parents and displayed a rough surface with many apparent blebs.  One of 
+these mutants, sadA-, completely lacked substrate adhesion in growth medium.  
+The sadA- mutant also showed slightly impaired cytokinesis, an aberrant 
+F-actin organization, and a phagocytosis defect.  Deletion of the sadA gene 
+by homologous recombination recreated the original mutant phenotype.  
+Expression of sadA-GFP in sadA-null cells restored the wildtype phenotype.  
+In sadA-GFP rescued mutant cells, sadA-GFP localized to the cell surface, 
+appropriate for an adhesion molecule.  SadA contains nine putative 
+transmembrane domains and three conserved EGF-like repeats in a predicted 
+extracellular domain.  The EGF repeats are similar to corresponding regions 
+in proteins known to be involved in adhesion, such as tenascins and 
+integrins.  Our data combined suggest that sadA is the first substrate 
+adhesion receptor to be identified in Dictyostelium.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 9]
+
+ 

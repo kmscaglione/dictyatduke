@@ -1,0 +1,69 @@
+dictyNews
+Electronic Edition
+Volume 41, number 26
+December 12, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+The two Dictyostelium autophagy eight proteins, ATG8a and ATG8b, 
+associate with the autophagosome in succession
+
+Jan Matthias, Susanne Meßling and Ludwig Eichinger
+
+
+European Journal of Cell Biology, in press.
+
+Autophagy is an ancient cellular pathway that is conserved from 
+yeast to man. It contributes to many physiological and pathological 
+processes and plays a major role in the degradation of proteins 
+and/or organelles in response to starvation and stress. In the 
+autophagic process cytosolic material is captured into double 
+membrane-bound vesicles, the autophagosomes. After fusion with 
+lysosomes, the cargo is degraded in the generated autolysosomes and 
+then recycled for further use.Autophagy 8 (ATG8, in mammals LC3), a 
+well-established marker of autophagy, is covalently linked to 
+phosphatidylethanolamine on the autophagic membrane during 
+autophagosome formation. Bioinformatic analysis of the Dictyostelium 
+genome revealed two atg8 genes which encode the ATG8a and ATG8b 
+paralogs, which are with around 14 kDa similar in size, 54 % identical 
+to one another and more closely related to the corresponding proteins 
+in fungi and plants than in animals. For ATG8a we found a strong up-
+regulation throughout the 24 h developmental time course while ATG8b 
+expression was highest in vegetative cells followed by a moderate 
+reduction during early development. Confocal microscopy of 
+fluorescently tagged ATG8a and ATG8b in vegetative AX2 wild-type and 
+in ATG9  minus cells showed that both proteins mainly co-localised on 
+vesicular structures with a diameter above 500 nm while those smaller 
+than 500 nm were predominantly positive for ATG8b. In ATG9 minus cells 
+we found a strong increase in the relative abundance of ATG8a-positive 
+large vesicular structures and of total ATG8b-positive structures per 
+cell indicating autophagic flux problems in this mutant. We also found 
+that vesicular structures positive for ATG8a and/or ATG8b were also 
+positive for ubiquitin. Live cell imaging of AX2 and ATG9 minus cells 
+co-expressing combinations of red and green tagged ATG8a, ATG8b or 
+ATG9 revealed transient co-localisations of these proteins. Our results 
+suggest that ATG8b associates with nascent autophagosomes before 
+ATG8a. We further find that the process of autophagosome formation in 
+Dictyostelium is highly dynamic. We infer from our data that 
+Dictyostelium ATG8a and ATG8b have distinct functions in autophagosome 
+formation and that ATG8b is the functional ortholog of the mammalian 
+LC3 subfamily and ATG8a of the GABARAP subfamily.
+
+
+submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 41, number 26]

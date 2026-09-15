@@ -1,0 +1,166 @@
+dictyNews
+Electronic Edition
+Volume 35, number 7
+September 17, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Peter J.M. Van Haastert
+
+A model for a correlated random walk based on the ordered 
+extension of pseudopodia
+
+Department of Cell Biochemistry, University of Groningen, 
+Kerklaan 30, 9751 NN Haren, the Netherlands
+
+
+PLoS Comp. Biol., in press
+
+Cell migration in the absence of external cues is well described by a 
+correlated random walk. Most single cells move by extending protrusions 
+called pseudopodia. To deduce how cells walk, we have analyzed the 
+formation of pseudopodia by Dictyostelium cells. We have observed 
+that the formation of pseudopodia is highly ordered with two types of 
+pseudopodia: First, de novo formation of pseudopodia at random 
+positions on the cell body, and therefore in random directions. Second, 
+pseudopod splitting near the tip of the current pseudopod in alternating 
+right/left directions, leading to a persistent zig-zag trajectory. Here we 
+analyzed the probability frequency distributions of the angles between 
+pseudopodia and used this information to design a stochastic model for 
+cell movement. Monte Carlo simulations show that the critical elements 
+are the ratio of persistent splitting pseudopodia relative to random de
+novo pseudopodia, the Left/Right alternation, the angle between 
+pseudopodia and the variance of this angle. Experiments confirm 
+predictions of the model, showing reduced persistence in mutants 
+that are defective in pseudopod splitting and in mutants with an 
+irregular cell surface.
+
+
+Submitted by  Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Peter J.M. Van Haastert
+
+A stochastic model for chemotaxis based on the ordered extension of 
+pseudopods
+
+Department of Cell Biochemistry, University of Groningen, 
+Kerklaan 30, 9751 NN Haren, The Netherlands
+
+
+Biophysical Journal, in press
+
+Many amoeboid cells move by extending pseudopods. Here we 
+present a new stochastic model for chemotaxis that is based on 
+pseudopod extensions by Dictyostelium cells. In the absence of 
+external cues, pseudopod extension is highly ordered with two types 
+of pseudopods: de novo formation of a pseudopod at the cell body in 
+random directions, and alternating right/left splitting of an existing 
+pseudopod that leads to a persistent zig-zag trajectory. We measured 
+the directional probabilities of the extension of splitting and de novo 
+pseudopods in chemoattractant gradients with different steepness. 
+Very shallow cAMP gradients can bias the direction of splitting 
+pseudopods, but the bias is not perfect. Orientation of de novo 
+pseudopods require much steeper cAMP gradients and can be more 
+precise. These measured probabilities of pseudopod directions were 
+used to obtain an analytical model for chemotaxis of cell populations. 
+Measured chemotaxis of wild type cells and mutants with specific 
+defects in these stochastic pseudopod properties are similar to 
+predictions of the model. These results show that combining splitting 
+and de novo pseudopods is a very effective way for cells to obtain 
+very high sensitivity to stable gradient and still be responsive to 
+changes in the direction of the gradient.
+
+
+Submitted by  Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Peter J.M. Van Haastert
+
+Chemotaxis: insights from the extending pseudopod
+
+Department of Cell Biochemistry, University of Groningen, 
+Kerklaan 30, 9751 NN Haren, the Netherlands
+
+
+J. Cell Sci., in press
+
+Chemotaxis is one of the most fascinating processes in cell biology. 
+Shallow gradients of chemoattractant direct the movement of cells, 
+and an intricate network of signalling pathways somehow instructs
+the movement apparatus to induce pseudopods in the direction of 
+these gradients. Exciting new experiments have approached 
+chemotaxis from the perspective of the extending pseudopod. 
+These recent studies have revealed that, in the absence of external 
+cues, cells use endogenous signals for the highly ordered extension 
+of pseudopods, which appear mainly as alternating right and left 
+splits. In addition, chemoattractants activate other signalling 
+molecules that induce a positional bias of this basal system, such 
+that the extending pseudopods are oriented towards the gradient. 
+In this Commentary, I review the findings of these recent experiments, 
+which together provide a new view of cell movement and chemotaxis.
+
+
+
+Submitted by  Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+------------------------------------------------------------------------------
+
+
+Regulation of Hip1r by epsin controls the temporal and spatial 
+coupling of actin filaments to clathrin-coated pits
+
+Rebecca J. Brady (1), Cynthia K. Damer (2), John E. Heuser (3) 
+and Theresa J. O’Halloran (1)
+
+(1) Department of Molecular Cell and Developmental Biology, 
+University of Texas at Austin, Austin, TX 78712
+(2) Department of Biology, Central Michigan University, 
+Mount Pleasant, MI 48858
+(3) Department of Cell Biology and Biophysics, 
+Washington University, St. Louis, MO 63130
+
+
+Journal of Cell Science, in press
+
+Recently, it has become clear that the actin cytoskeleton is involved 
+in clathrin-mediated endocytosis. During clathrin-mediated endocytosis, 
+clathrin triskelions and adaptor proteins assemble into lattices, forming 
+clathrin-coated pits. These coated pits invaginate and detach from the 
+membrane, a process that requires dynamic actin polymerization. We 
+found an unexpected role for the clathrin adaptor epsin in regulating 
+actin dynamics during this late stage of coated vesicle formation.  In 
+Dictyostelium cells, epsin is required for both the membrane 
+recruitment and phosphorylation of the actin- and clathrin-binding 
+protein Hip1r. Epsin-null and Hip1r-null cells exhibit deficiencies in the 
+timing and organization of actin filaments at clathrin-coated pits. 
+Consequently, clathrin structures persist on the membranes of epsin 
+and Hip1r mutants and the internalization of clathrin structures is delayed. 
+We conclude that epsin works with Hip1r to regulate actin dynamics by 
+controlling the spatial and temporal coupling of actin filaments to clathrin 
+coated pits. Specific residues in the ENTH domain of epsin that are 
+required for the membrane recruitment and phosphorylation of Hip1r 
+are also required for normal actin and clathrin dynamics at the plasma 
+membrane. We propose that epsin promotes the membrane recruitment 
+and phosphorylation of Hip1r, which in turn regulates actin polymerization 
+at clathrin-coated pits.
+
+
+Submitted by Terry O’Halloran [t.ohalloran@mail.utexas.edu]
+==============================================================
+[End dictyNews, volume 35, number 7]

@@ -1,0 +1,84 @@
+dictyNews
+Electronic Edition
+Volume 43, number 6
+April 3, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Loss of Cln3 impacts protein secretion in the social amoeba 
+Dictyostelium
+
+Robert J. Huber
+
+Department of Biology, Trent University, Peterborough, 
+Ontario, Canada
+
+
+Cellular Signalling, in press
+
+Neuronal ceroid lipofuscinosis (NCL), also referred to as 
+Batten disease, is the most common form of childhood 
+neurodegeneration. Mutations in CLN3 cause the most prevalent 
+subtype of the disease, which manifests during early 
+childhood and is currently untreatable. The precise function 
+of the CLN3 protein is still not known, which has inhibited 
+the development of targeted therapies. In the social amoeba 
+Dictyostelium discoideum, loss of the CLN3 homolog, Cln3, 
+reduces adhesion during early development, which delays 
+streaming and aggregation. The results of the present study 
+indicate that this phenotype may be at least partly due to 
+aberrant protein secretion in cln3- cells. It is well-
+established that Cln3 localizes primarily to the contractile 
+vacuole (CV) system in Dictyostelium, and to a lesser extent,
+ compartments of the endocytic pathway. Intriguingly, the CV 
+ system has been linked to the secretion of proteins that do 
+ not contain a signal peptide for secretion (i.e., 
+ unconventional protein secretion). Proteins that do contain 
+ a signal peptide are secreted via a conventional mechanism 
+ involving the endoplasmic reticulum, transport through the 
+ Golgi, and secretion via vesicle release. In this study, 
+ Cln3 was observed to co-localize with the Golgi marker wheat 
+ germ agglutinin suggesting that Cln3 participates in both 
+ secretion mechanisms. Chimeras of wild-type (WT) and cln3- 
+ cells displayed delayed streaming and aggregation, and 
+ interestingly, cln3- cells starved in conditioned media 
+ (CM) harvested from starving WT cells showed near normal 
+ timing of streaming and aggregation suggesting aberrant 
+ protein secretion in Cln3-deficient cells. Based on these 
+ observations, LC-MS/MS was used to reveal the protein content 
+ of CM from starved cells (mass spectrometry data are 
+ available via ProteomeXchange with identifier PXD004897). A 
+ total of 450 proteins were detected in WT and cln3- CM, of 
+ which 3 were absent in cln3- CM. Moreover, 12 proteins that 
+ were present in cln3- CM were absent in WT CM. Label-free 
+ quantification identified 42 proteins that were present in 
+ significantly higher amounts in cln3- CM compared to WT, and 
+ 3 proteins that were present in significantly reduced amounts. 
+ A GO term enrichment analysis showed that a majority of the 
+ affected proteins are linked to endocytosis, vesicle-mediated 
+ transport, proteolysis, and metabolism. In total, the results 
+ of this study indicate that Cln3 functions in both conventional 
+ and unconventional protein secretion and that loss of Cln3 
+ results in deregulated secretion during early development. 
+ Importantly, this is the first evidence in any system linking 
+ CLN3 function to protein secretion.
+
+
+submitted by: Robert Huber [roberthuber@trentu.ca]
+==============================================================
+[End dictyNews, volume 43, number 6]

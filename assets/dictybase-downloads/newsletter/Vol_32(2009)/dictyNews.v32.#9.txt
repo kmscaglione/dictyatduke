@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 32, number 9
+April 3, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium discoideum Paxillin Regulates Actin-Based Processes
+
+M. Berenice Duran, Asif Rahman, Max Colten and Derrick Brazill
+
+Department of Biological Sciences, Center for the Study of Gene 
+Structure and Function
+Hunter College of the City University of New York, New York, NY 10021
+
+
+Protist, in press
+
+Paxillin is a key player in integrating the actin cytoskeleton with adhesion, 
+and thus is essential to numerous cellular processes including proliferation, 
+differentiation and migration in animal cells.  PaxB, the Dictyostelium 
+discoideum orthologue of paxillin, has been shown to be important for 
+adhesion and development, much like its mammalian counterpart.  Here, 
+we use the overproduction of PaxB to gain better insight into its role in
+ regulating the actin cytoskeleton and adhesion.  We find that PaxB 
+overexpressing (PaxBOE) cells can aggregate and form mounds normally, 
+but are blocked in subsequent development.  This arrest can be rescued 
+by addition of wild-type cells, indicating a non-cell autonomous role for 
+PaxB.  PaxBOE cells also have  alterations in several actin-based 
+processes, including adhesion, endocytosis, motility and chemotaxis.  
+PaxBOE cells exhibit an EDTA-sensitive increase in cell-cell cohesion, 
+suggesting that PaxB-mediated adhesion is Ca2+ or Mg2+ dependent.  
+Interestingly, cells overexpressing paxB are less adhesive to the substratum.  
+In addition, PaxBOE cells display decreased motility under starved conditions, 
+decreased endocytosis, and are unable to efficiently chemotax up a folate 
+gradient.  Taken together, the data suggest that proper expression of PaxB 
+is vital for the regulation of development and actin-dependent processes.
+
+
+
+Submitted by: Derrick Brazill [brazill@genectr.hunter.cuny.edu]
+--------------------------------------------------------------------------------
+
+
+Activated cAMP receptors switch encystation into sporulation
+
+Yoshinori Kawabe1, Takahiro Morio2, John L. James1, Alan R. Prescott1,  
+Yoshimasa Tanaka2 and Pauline Schaap1*
+
+1College of Life Sciences, University of Dundee, Dundee, Angus, 
+DD15EH, UK.
+2Graduate School of Life and Environmental Sciences, University of 
+Tsukuba, Ibaraki, 305-8572, Japan.
+
+
+PNAS, in press
+
+Metazoan embryogenesis is controlled by a limited number of signalling 
+modules that are used repetitively at succesive developmental stages. 
+The development of social amoebas shows similar reiterated use of 
+cAMP-mediated signalling. In the model Dictyostelium discoideum, 
+secreted cAMP acting on 4 cAMP receptors (cARs1-4) coordinates cell 
+movement during aggregation and fruiting body formation, and induces 
+the expression of aggregation and sporulation genes at consecutive 
+developmental stages. To identify hierarchy in the multiple roles of cAMP, 
+we investigated cAR heterogeneity and function across the social amoeba 
+phylogeny. The gene duplications that yielded cARs 2-4 occurred late in 
+evolution. Many species have only a cAR1 ortholog, that duplicated 
+independently in the Polysphondylids and Acytostelids. Disruption of both 
+cAR genes of Polysphondylium pallidum did not affect aggregation, but 
+caused complete collapse of fruiting body morphogenesis. The stunted 
+structures contained disorganized stalk cells, which supported a mass of 
+cysts instead of spores. cAMP triggered spore gene expression in 
+P.pallidum, but not in the cAR null mutant, explaining its sporulation defect. 
+Encystation is the survival strategy of solitary amoebas, and basal taxa, 
+like P.pallidum, can still encyst as single cells. Recent findings showed 
+that intracellular cAMP accumulation suffices to trigger encystation, 
+whereas it is a complementary requirement for sporulation. Combined, 
+the data suggest that cAMP signalling in social amoebas evolved from 
+cAMP-mediated encystation in solitary amoebas. cAMP secretion in 
+aggregates prompted the starving cells to form spores and not cysts, 
+and additionally organized fruiting body morphogenesis. cAMP-mediated 
+aggregation was the most recent innovation.
+
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 32, number 9]

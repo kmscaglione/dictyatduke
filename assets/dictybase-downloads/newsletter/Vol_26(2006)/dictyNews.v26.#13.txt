@@ -1,0 +1,197 @@
+dictyNews
+Electronic Edition
+Volume 26, number 13
+May 5, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+EppA, a putative substrate of DdERK2, regulates cAMP relay and chemotaxis 
+in Dictyostelium discoideum 
+
+Songyang Chen and Jeffrey E. Segall*
+Department of Anatomy and Structural Biology, Albert Einstein College of 
+Medicine, 1300 Morris Park Avenue, Bronx, NY 10461
+
+
+Eukaryotic Cell, in press
+
+The MAP kinase DdERK2 is critical for cAMP relay and chemotaxis to cAMP and 
+folate, but the details downstream of DdERK2 are unclear. To search for 
+targets of DdERK2 in Dictyostelium, 32PO43--labeled protein samples from 
+wild type and Dderk2- cells were resolved by 2 dimensional electrophoresis. 
+Mass spectrometry was used to identify a novel 45kD protein as a substrate 
+of DdERK2 in Dictyostelium named EppA (ERK2-dependent phosphoprotein A). 
+Mutation of potential DdERK2 phosphorylation sites demonstrated that 
+phosphorylation on serine 250 of EppA is DdERK2-dependent. Changing 
+serine 250 to alanine delayed development of Dictyostelium and reduced 
+Dictyostelium chemotaxis to cAMP. Although overexpression of EppA had no 
+significant effect on development or chemotaxis of Dictyostelium, disruption
+of the eppA gene led to delayed development and reduced chemotactic 
+responses to both cAMP and folate. Both eppA gene disruption and 
+overexpression of EppA carrying the serine 250 to alanine mutation led to 
+inhibition of intracellular cAMP accumulation in response to chemoattractant
+cAMP, a pivotal process in Dictyostelium chemotaxis and development. Our 
+studies indicate that EppA regulates extracellular cAMP induced signal 
+relay and chemotaxis of Dictyostelium.
+
+
+Submitted by: Jeffrey E. Segall [segall@aecom.yu.edu] 
+-----------------------------------------------------------------------------
+
+
+A cis-acting site controlling bidirectional transcription at the 
+growth-differentiation transition in Dictyostelium 
+
+Shigenori Hirose, Samuel H. Payne and William F. Loomis
+
+Cell and Developmetal Biology, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368, USA
+
+
+Eukary. Cell, in press
+
+A pair of adjacent genes, impA and dia1, are divergently transcribed but 
+expressed at different stages in the life cycle of Dictyostelium discoideum. 
+The intervening 654 bp region carries cis-acting regions that are essential 
+for transcription in both directions as well as repression of dia1 in 
+growing cells. We have focused on a 112 bp region proximal to dia1 that is 
+essential for bidirectional transcription. Analyses of a set of internal 
+deletions showed that the sequence between positions 80 and 97 
+(TTTGAATTTTTTGAATTT) is critical and that bases outside this region are 
+dispensable. Site directed mutations within this critical region confirmed 
+the importance of this sequence for transcription both to the right and to 
+the left.  However, insertions of either 6 or 24 Ts into the run of 6 Ts 
+separating the repeated GAA sequence had little effect on the functioning 
+of the site in either direction suggesting that factors recognize the half 
+sites TTGAATT separately. Inversion of the bases between positions 80 and 97 
+greatly reduced expression in both directions indicating that orientation is 
+critical for expression of both the near-by impA gene and the distal dia1 
+gene which is more than 500 bp away. Comparison of 38 mutant constructs with 
+multiple random variations in the region indicated that transcription 
+factors may bind to a range of related sequences and still retain function. 
+All functional constructs directed transcription both leftward and rightward 
+while all non-functional constructs were impaired for transcription in both 
+directions. It appears that the same transcription complex controls 
+transcription of both impA and dia1.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+-----------------------------------------------------------------------------
+
+
+Filamins: promiscuous organizers of the cytoskeleton 
+
+
+Grzegorz M. Popowicz1, Michael Schleicher2, Angelika Noegel3, and 
+Tad A. Holak1
+
+1 Max-Planck Institut für Biochemie, 82152 Martinsried, Germany
+2 Institut für Zellbiologie der LMU, 80336 München, Germany
+3 Institut für Biochemie I, Zentrum Molekulare Medizin Köln, Medizinische 
+Fakultät, Univ. zu Köln, 50931 Köln, Germany
+
+
+Trends in Biochemical Sciences, in press
+
+Filamins are F actin cross-linking proteins. They are elongated homodimers; 
+each monomer chain comprises an actin-binding domain and a rod segment which 
+consists of six (Dictyostelium filamin) up to 24 (human filamin) highly 
+homologous repeats of &#61566;96 amino acid residues which adopt an 
+immunoglobulin-like fold. Hinges in the rod segment and reversible unfolding 
+of single repeats might be the structural basis for the intrinsic 
+flexibility of the actin networks generated by filamins. There is a plethora 
+of filamin binding proteins which in most cases bind along the rod repeats. 
+This rather promiscuous behaviour renders a filamin a versatile scaffold 
+between the actin network and finely tuned molecular cascades from the 
+membrane to the cytoskeleton.  
+
+
+Submitted by: Paul Steimle [noegel@uni-koeln.de]
+-----------------------------------------------------------------------------
+
+
+The function of ammonium transporter A in the initiation of culmination of 
+development in Dictyostelium discoideum 
+
+Charles K. Singleton*, Janet H. Kirsten, and Colin J. Dinsmore 
+
+Department of Biological Sciences 
+Vanderbilt University 
+VU Station B 351634 
+Nashville TN 37235-1634, USA 
+
+
+Eukaryotic Cell, in press
+
+The histidine kinase DhkC controls a phosphorelay involved in regulating 
+the slug versus culmination choice during the multicellular developmental 
+program of Dictyostelium discoideum.   When the relay is active, slug 
+migration is favored due to the activation of a cAMP phosphodiesterase and 
+the resultant lowering of the intracellular and extracellular levels of 
+cAMP.  Ammonia signaling represents one input into the DhkC phosphorelay, 
+and previous studies indicated that the ammonium transporter C inhibits the 
+relay in response to low ammonia levels. Evidence is presented that another 
+member of the family of ammonium transporters, AmtA, also regulates the 
+slug/culmination choice. Under standard conditions of development, the wild 
+type strain requires a transitional period of 2 to 3 hours to go from 
+fingers to culminants, with some slugs forming and migrating briefly prior 
+to culmination. In contrast, amtA null cells, like cells that lack DhkC, 
+possessed a transitional period of only 1 to 2 hours and rarely formed 
+slugs. Disruption of amtA in an amtC null strain overcame the slugger 
+phenotype of that strain and restored its ability to culminate. Strains 
+lacking AmtA were insensitive to the ability of ammonia to promote and 
+prolong slug migration. These findings lead to the proposal that AmtA 
+functions in ammonia sensing as an activator of the DhkC phosphorelay in 
+response to perceived high ammonia levels. 
+
+Submitted by: Charles Singleton [charles.k.singleton@vanderbilt.edu] 
+-----------------------------------------------------------------------------
+
+DdPDE4, a novel cAMP-specific Phosphodiesterase 
+at the Surface of Dictyostelium Cells
+
+Sonya Bader, Arjan Kortholt*, Helena Snippe and Peter J.M. Van Haastert
+
+Department of Molecular Cell Biology, University of Groningen, Kerklaan 30, 
+9751NN Haren, the Netherlands
+
+
+Journal of Biological Chemistry, in press
+
+Dictyostelium discoideum cells possess multiple cyclic nucleotide 
+phosphodiesterases that belong either to class I enzymes that are present 
+in all eukaryotes, or to the rare beta-lactamase class II. We describe here 
+the identification and characterization of DdPDE4, the third class I enzyme 
+of Dictyostelium. The deduced amino acid sequence predicts that DdPDE4 has a 
+leader sequence, two transmembrane segments and an extracellular catalytic 
+domain that exhibits a high degree of homology with human cAMP-specific 
+PDE8. Expression of the catalytic domain of DdPDE4 shows that the enzyme 
+is a cAMP-specific phosphodiesterase activity with a KM of 10 ìM;  cGMP is 
+hydrolyzed at least 100-fold more slowly. The full length protein is shown 
+to be membrane-bound with catalytic activity exposed to the extracellular 
+medium. Northern blots and activity measurements reveal that expression of 
+DdPDE4 is low during single cell stages, and increases at nine hours of 
+starvation, corresponding with mound stage. A function during multicellular
+development is confirmed by the phenotype of ddpde4- knock-out strains, 
+showing normal aggregation but impaired development from the mound stage on.
+These results demonstrate that DdPDE4 is a unique membrane-bound 
+phosphodiesterase with an extracellular catalytic domain regulating 
+inter-cellular cAMP during multicellular development. 
+
+
+Submitted by: Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+==============================================================================
+[End dictyNews, volume 26, number 13] 

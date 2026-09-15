@@ -1,0 +1,98 @@
+Dicty News
+Electronic Edition
+Volume 23, number 16
+November 12, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Gamete fusion and cytokinesis preceding zygote establishment in the sexual
+process of Dictyostelium discoideum
+
+Kentaro Ishida, Toshihiro Hata, and Hideko Urushihara
+
+
+Develop.Growth & Differ. in press
+
+Cells of Dictyostelium discoideum become sexually mature under submerged and
+dark conditions, and fuse with opposite mating-type cells to form zygote
+giant cells, which gather surrounding cells and finally develop into dormant
+structures called macrocysts. In the present study, we found that the
+multinuclear fused cells formed during this process frequently underwent
+cytokinesis driven by random local movements. The split cells were capable
+of re-fusion, and repeated fission. These radical behaviors continued until
+the extensive cell aggregation started around the giant cells. Thus, gamete
+fusion and initiation of zygote development do not coincide in the mating of
+D. discoideum. Analyses by confocal microscopy and flow cytometry indicated
+that the cessation of the random movement followed pronuclear fusion, and
+that microtubule organizing centers (MTOCs), abundant in the fused cells at
+the beginning, gradually decreased and only one of them remained within the
+developed macrocyst. Some of the genes known to control cell movement, such
+as rasGEFB and rasS, increased shortly before the cessation of repeated
+fusion-fission and initiation of phagocytosis. These results suggest that
+the sequential molecular events are necessary in D. discoideum after gamete
+fusion to establish a new individuality of zygotes.
+ 
+ 
+Submitted by:  Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Quantitative imaging of single live cells reveals spatiotemporal dynamics of
+multi-step signaling events of chemoattractant gradient sensing in
+Dictyostelium
+
+Xuehua Xu1, Martin Meier-Schellersheim2, Xuanmao Jiao1, Lauren E. Nelson1,
+and Tian Jin1*
+Laboratory of Immunogenetics1, Laboratory of Immunology2, National Institute
+of Allergy and Infectious Diseases, NIH
+Twinbrook II Facility, 12441 Parklawn Drive, Rockville, Maryland 20852, USA
+ 
+*Corresponding author
+Phone: 301-480-1430
+Email: tjin@niaid.nih.gov
+
+
+Molecular biology of the cell, in press.
+
+Activation of G-protein-coupled chemoattractant receptors triggers
+dissociation of G alpha and G betagamma subunits.  These subunits induce
+intracellular responses that can be highly polarized when a cell experiences
+a gradient of chemoattractant.  Exactly how a cell achieves this amplified
+signal polarization is still not well understood.  Here, we quantitatively
+measure temporal and spatial changes of receptor occupancy, G-protein
+activation by FRET imaging, and PIP3 levels by monitoring the dynamics of
+PHCrac-GFP translocation in single living cells in response to different
+chemoattractant fields.  Our results provided the first direct evidence that
+G-proteins are activated to different extents on the cell surface in
+response to asymmetrical stimulations.  A stronger, uniformly applied
+stimulation triggers not only a stronger G-protein activation but also a
+faster adaptation of downstream responses.  When na•ve cells (which have
+not experienced chemoattractant) were abruptly exposed to stable cAMP
+gradients, G-proteins were persistently activated throughout the entire
+cell surface, whereas the response of PHCrac-GFP translocation surprisingly
+consisted of two phases, an initial transient and asymmetrical
+translocation around the cell membrane, followed by a second phase
+producing a highly polarized distribution of PHCrac-GFP.  We propose a
+revised model of gradient sensing, suggesting an important role for locally
+controlled components that inhibit PI3Kinase activity.
+
+
+Submitted by:  [Xuehua Xu <xxu@niaid.nih.gov]
+
+==============================================================================
+[End Dicty News, volume 23, number 16] 

@@ -1,0 +1,136 @@
+dictyNews
+Electronic Edition
+Volume 40, number 4
+February 7, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Both contractile axial and lateral traction force dynamics drive amoeboid 
+cell motility
+
+Effie Bastounis, Ruedi Meili, Begoña Alvarez-González, Joshua Francois, 
+Juan C. del Álamo, Richard A. Firtel*, and Juan C. Lasheras* 
+(*co-senior authors). (2013) 
+
+
+J. Cell Biol., in press
+
+Chemotaxing Dictyostelium cells adapt their morphology and migration 
+speed in response to intrinsic and extrinsic cues. Using Fourier Traction 
+Force Microscopy, we measured the spatiotemporal evolution of shape 
+and traction stresses and constructed traction tension kymographs to 
+analyze cell motility as a function of the dynamics of the cells’ 
+mechanically active traction adhesions. We show that wild-type cells 
+migrate in a step-wise fashion mainly forming stationary traction 
+adhesions along their anterior-posterior axes and exerting strong 
+contractile axial forces. We demonstrate that lateral forces are also 
+important for motility, especially for migration on highly adhesive 
+substrates. Analysis of two mutant strains lacking distinct actin 
+crosslinkers (mhcA- and abp120- cells) on normal and highly adhesive 
+substrates supports a key role for lateral contractions in amoeboid cell 
+motility, while the differences in their traction adhesion dynamics 
+suggest these two strains use distinct mechanisms to achieve migration. 
+Finally, we provide evidence that the above patterns of migration may 
+be conserved in mammalian amoeboid cells.
+
+
+Rick Firtel [rafirtel@ucsd.edu]
+---------------------------------------------------------------------------
+
+
+Visualization of the Actin Cytoskeleton: Different F-Actin-Binding Probes 
+Tell Different Stories
+
+Michael G. Lemieux, Dani Janzen, Rander Hwang, Jeannette Roldan, 
+Irene Jarchum, and David A. Knecht*
+
+*Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, Connecticut 06269
+
+Cytoskeleton, In Press
+2013 Dec 17. doi: 10.1002/cm.21160. [Epub ahead of print]
+PMID: 24347465 
+
+The actin cytoskeleton is necessary for cell viability and plays crucial roles 
+in cell motility, endocytosis, growth, and cytokinesis.  Hence visualization 
+of dynamic changes in F-actin distribution in vivo is of central importance 
+in cell biology.  This has been accomplished by the development of 
+fluorescent protein fusions to actin itself or to various actin-binding proteins, 
+actin cross-linking proteins, and their respective actin-binding domains 
+(ABD’s).  Although these protein fusions have been shown to bind to 
+F-actin in vivo, we show that the fluorescent protein used for visualization 
+changes the subset of F-actin labeled by an F-actin ABD probe.  Further, 
+different amino acid linkers between the fluorescent protein and ABD 
+induced a similar change in localization. Although different linkers and 
+fluorescent proteins can alter the subset of actin bound by a particular 
+ABD, in most cases, the fusion protein did not label all of a cell’s F-actin 
+all of the time.  Even LimEÄcoil and GFP-actin, which have been used 
+extensively for cytoskeletal visualization, were highly variable in the 
+subsets of actin that they labeled.  Lifeact, conversely, clearly labeled 
+cortical F-actin as well as F-actin in the anterior pseudopods of motile 
+cells and in macropinocytotic cups.  We conclude that Lifeact most 
+accurately labels F-actin and is the best currently available probe for 
+visualization of dynamic changes in F-actin networks.  
+
+
+Michael Lemieux [michael.lemieux@uconn.edu]
+--------------------------------------------------------------------------
+
+
+Linh Hai Vu, Tsuyoshi Araki, Jianbo Na, Christoph S. Clemen, Jeffrey G.
+Williams and Ludwig Eichinger
+
+PLoS ONE, accepted
+
+Abstract
+Cellular adaptation to changes in environmental osmolarity is crucial 
+for cell survival. In Dictyostelium, STATc is a key regulator of the
+transcriptional response to hyperosmotic stress. Its phosphorylation 
+and consequent activation is controlled by two signaling branches, 
+one cGMP-  and the other Ca2+-dependent, of which many signaling 
+components have yet to be identified. The STATc stress signalling 
+pathway feeds back on itself by upregulating the expression of STATc 
+and STATc-regulated genes. Based on microarray studies we chose 
+two tyrosine-kinase like proteins, Pyk3 and Phg2, as possible modulators 
+of STATc phosphorylation and generated single and double knock-out 
+mutants to them. Transcriptional regulation of STATc and STATc 
+dependent genes was disturbed in pyk3-, phg2-, and pyk3-/phg2- cells. 
+The absence of Pyk3 and/or Phg2 resulted in diminished or completely
+abolished increased transcription of STATc dependent genes in response 
+to sorbitol, 8-Br-cGMP and the Ca2+ liberator BHQ. Also, phospho-STATc 
+levels were significantly reduced in pyk3- and phg2- cells and even further
+decreased in pyk3-/phg2- cells. The reduced phosphorylation was mirrored 
+by a significant delay in nuclear translocation of GFP-STATc. The protein
+tyrosine phosphatase 3 (PTP3), which dephosphorylates and inhibits 
+STATc, is inhibited by stress-induced phosphorylation on S448 and S747. 
+Use of phosphoserine specific antibodies showed that Phg2 but not Pyk3 
+is  involved in the phosphorylation of PTP3 on S747. In pull-down assays 
+Phg2  and PTP3 interact directly, suggesting that Phg2 phosphorylates 
+PTP3 on  S747 in vivo. Phosphorylation of S448 was unchanged in phg2- 
+cells. We  show that Phg2 and an, as yet unknown, S448 protein kinase 
+are  responsible for PTP3 phosphorylation and hence its inhibition, and 
+that  Pyk3 is involved in the regulation of STATc by either directly or 
+indirectly  activating it. Our results add further complexities to the 
+regulation of STATc,  which presumably ensure its optimal activation 
+in response to different environmental cues.
+
+
+Submitted by Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 40, number 4]

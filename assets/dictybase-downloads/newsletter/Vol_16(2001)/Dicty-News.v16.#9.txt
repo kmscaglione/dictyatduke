@@ -1,0 +1,234 @@
+Dicty News
+Electronic Edition
+Volume 16, number 9
+May 5, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+
+Involvement of a triton-insoluble floating fraction in dictyostelium 
+cell-cell adhesion.
+
+Harris TJ, Awrey DE, Cox BJ, Ravandi A, Tsang A, Siu CH.
+
+Banting and Best Department of Medical Research, University of Toronto, 
+Toronto, Ontario M5G 1L6.
+
+J Biol Chem 2001 Mar 16; [epub ahead of print]
+
+We have isolated and characterized a Triton-insoluble floating fraction 
+(TIFF) from Dictyostelium.  Ten major proteins were consistently detected 
+in TIFF and six species were identified by mass spectrometry as actin, 
+porin, comitin, regulatory myosin light chain, a novel member of the 
+CD36 family, and the phospholipid-anchored cell adhesion molecule gp80.  
+TIFF was enriched with many acylated proteins.  Also, the sterol:
+phospholipid ratio of TIFF was 10-fold higher than that of the bulk 
+plasma membrane.  Immunoelectron microscopy showed that TIFF has vesicular 
+morphology and confirmed the association of gp80 and comitin with TIFF 
+membranes.  Several TIFF properties were similar to those of Dictyostelium 
+contact regions, which were isolated as a cytoskeleton-associated membrane 
+fraction.  Mass spectrometry demonstrated that TIFF and contact regions 
+shared the same major proteins.  During development, gp80 colocalized with 
+F-actin, porin and comitin at cell-cell contacts.  These proteins were 
+also recruited to gp80 caps induced by antibody crosslinking.  Filipin 
+staining revealed high sterol levels in both gp80-enriched cell-cell 
+contacts and gp80 caps.  Moreover, sterol sequestration by filipin and 
+digitonin inhibited gp80-mediated cell-cell adhesion.  This study reveals 
+that  Dictyostelium TIFF has structural properties previously attributed 
+to vertebrate TIFF and establishes a role for Dictyostelium TIFF in cell-
+cell adhesion during multicellular development.
+
+-----------------------------------------------------------------------------
+
+The MADS-box gene srfA is expressed in a complex pattern under the control
+of alternative promoters and is essential for different aspects of
+Dictyostelium development
+
+
+Ricardo Escalante*, Juan J. Vicente, Nicolás Moreno and Leandro Sastre
+
+Instituto de Investigaciones Biomédicas C.S.I.C/U.A.M. C/Arturo Duperier,
+4, 28029 Madrid, Spain.
+*Author for correspondence: Fax: +34-91-585-4587. e-mail: rescalante@iib.uam.es
+
+Developmental Biology (in press)
+
+ABSTRACT
+
+srfA displays a complex temporal and cell-type specific pattern of
+expression in Dictyostelium and is expressed by most of its cell types at
+some stage of their development. This complexity is achieved by the use of
+alternative promoters. The promoter activity of the proximal region was
+found to be restricted to a subset of prestalk cells. Little or no
+associated expression was observed in the lower cup and basal disc during
+culmination. The middle promoter region was preferentially active in
+prestalk cells under usual conditions of filter development. Interestingly,
+during slug migration, the activity of this promoter in posterior prespore
+cells was strongly induced. The distal region displayed a dual pattern of
+expression. Thus, before culmination, this region drove lacZ expression in
+a few cells scattered along the entire structure. However, intense lacZ
+staining was found in the spores by the end of culmination. We have
+previously reported that srfA expression is essential for spore
+differentiation (Escalante and Sastre, 1998. Development 125, 3801-3808).
+Our novel finding of the expression of the gene in prestalk cells before
+culmination suggested that it might play additional roles in Dictyostelium
+development. The study of knock out strains revealed that srfA is also
+required for proper slug migration. Spore differentiation and slug
+migration defects were rescued by re-expression of srfA in the null mutant
+background, under the appropriate promoter control. The expression of srfA
+under the activity of the distal promoter region was able to rescue spore
+differentiation but not slug migration. Conversely, re-expression under the
+control of the middle promoter rescued slug morphogenesis and migration.
+Our results demonstrate that the correct spatial and temporal pattern of
+expression of srfA is essential for the different functions that this
+transcription factor plays in development.
+
+-----------------------------------------------------------------------------
+
+The WASp-like Protein Scar Regulates Macropinocytosis, Phagocytosis and 
+Endosomal Membrane Flow in Dictyostelium.
+
+David J. Seastone1, Ed Harris1, Lesly A. Temesvari2, James E. Bear 3,4, 
+Charles L. Saxe 3, and James Cardelli 1,2,,*
+
+1Department of Microbiology and Immunology and 2 The Feist-Weiller Cancer 
+Center
+Louisiana State University Medical Center
+Shreveport, LA  71130
+
+3 Department of Cell Biology
+Emory University School of Medicine
+Atlanta, GA 30322-3030
+
+4Present address: Department of Biology
+Mass. Inst. Of Tech.
+Cambridge, MA
+
+Journal of Cell Science, in press
+
+Abstract
+
+Scar, a member of the WASp protein family, was discovered in D.  discoideum 
+during a genetic screen for second-site mutations that suppressed a 
+developmental defect. Disruption of the scar gene led to a two-fold decrease 
+in the levels of cellular F-actin. To investigate the role of Scar in 
+endocytosis, phagocytosis, and endocytic membrane trafficking, processes 
+that depend on actin polymerization, we have analyzed a Dictyostelium 
+cell-line that is genetically null for Scar.  Rates of fluid phase 
+macropinocytosis, and phagocytosis are significantly reduced in the scar - 
+cell-line. In addition, exocytosis of fluid phase is delayed in these cells, 
+and movement of fluid phase from lysosomes to post-lysosomes is also 
+delayed. Inhibition of actin polymerization with cytochalasin A resulted 
+in similar phenotypes, suggesting that Scar-mediated polymerization of the 
+actin cytoskeleton was important in the regulation of these processes. 
+Supporting this conclusion, fluorescence microscopy revealed that some 
+endo-lysosomes were ringed with F-actin in control cells but no F-actin 
+was detected associated with endo-lysosomes in Scar null cells. Disruption 
+of the two genes encoding the actin monomer sequestering protein profilin 
+in wild-type cells causes defects in the rate of pinocytosis and fluid 
+phase efflux. Consistent with a predicted physical interaction between 
+Scar and profilin, disrupting the scar gene in the profilin null background 
+results in greater decreases in the rate of fluid phase internalization and 
+fluid phase release compared to either mutant alone. Taken together, these 
+data support a model in which Scar and profilin functionally interact to 
+regulate internalization of fluid and particles and later steps in the 
+endosomal pathway, probably through regulation of actin cytoskeleton 
+polymerization. 
+
+-----------------------------------------------------------------------------
+
+Rab7 Regulates Phagosome Maturation in Dictyostelium
+
+Adam Rupper1, Bryon Grove2 and James Cardelli1*
+
+Department of Microbiology and Immunology and
+The Feist/Weiller Cancer Center
+LSUHSC
+Shreveport, LA 71130
+
+2Department of Anatomy and Cell Biology
+University of North Dakota
+ Grand Forks, North Dakota 58202
+
+*Corresponding Author
+318-675-5756
+jcarde@lsuhsc.edu
+
+Journal of Cell Science, in press
+
+Abstract
+
+     A Dictyostelium Rab7 homolog has been demonstrated to regulate fluid-phase 
+influx, efflux, retention of lysosomal hydrolases and phagocytosis.  Since Rab7 
+function appeared to be required for efficient phagocytosis, we sought to 
+further characterize the role of Rab7 in phagosomal maturation.  Expression of 
+GFP-Rab7 resulted in labeling of both early and late phagosomes containing 
+yeast, but not forming phagocytic cups. In order to determine if Rab7 played 
+a role in regulating membrane traffic between the endo/lysosomal system and 
+maturing phagosomes, latex bead containing (LBC) phagosomes were purified 
+from wild-type cells at various times after internalization. Glycosidases, 
+cysteine proteinases, Rab7 and lysosomally associated membrane proteins were 
+delivered rapidly to nascent phagosomes in control cells.  LBC phagosomes 
+isolated from cells over-expressing dominant negative (DN) Rab7 contained 
+very low levels of LmpA (lysosomal integral membrane protein) and 
+a-mannosidase was not detectable.  Interestingly, cysteine proteinases 
+were delivered to phagosomes as apparent pro-forms in cells over-expressing 
+DN Rab7.    Despite these defects, phagosomes in cells over-expressing DN 
+Rab7 matured to form multi-particle spacious phagosomes, except these 
+phagosomes remained significantly more acidic than control phagosomes.  
+These results suggested that Rab7 regulates both an early and late step 
+of phagosomal maturation, similar to its role in the endo/lysosomal system.    
+
+-----------------------------------------------------------------------------
+
+Phagocytosis and Macropinocytosis in Dictyostelium:  Phosphoinositide-Based 
+Processes, Biochemically Distinct
+
+James Cardelli
+
+Department of Microbiology and Immunology
+Feist-Weiller Cancer Center
+LSU Health Sciences Center
+Shreveport, LA 71130
+
+Telephone: 318-675-5756
+E-mail: jcarde@lsuhsc.edu
+
+Traffic, Review in Press
+
+Abstract
+
+     Phagocytosis and macropinocytosis are actin-dependent clathrin-independent 
+processes primarily performed by cells like neutrophils and macrophages that 
+result in the internalization of particles or the formation of fluid-filled 
+macropinosomes > 0.5 mM in diameter, respectively.  Both of these processes 
+can result in the destruction of internalized microbes, and the display of 
+microbial antigens at the cell surface to activate T and B cells; therefore, 
+these internalization events play critical roles in the host response to 
+invasion by microbial pathogens. Phagocytosis consists of a number of stages, 
+including attachment of particles to to cell surface receptors, engulfment 
+of the particle dependent on actin polymerization and membrane exocytosis, 
+and formation of phago-lysosomes. In contrast, the molecular steps 
+regulating macropinocytosis are only just now being deciphered.  Much 
+remains to be learned concerning the signaling pathways that regulate 
+these processes. Dictyostelium is a genetically and biochemically tractable 
+professional phagocyte that has proven to be a powerful system in which to 
+determine the nature of the molecular steps involved in regulating these 
+internalization processes.  This review primarily summarizes what is 
+currently understood concerning the molecular mechanisms that regulate 
+the process of phagocytosis and macropinocytosis in Dictyostelium. Recent 
+data will also be presented that suggests that although phosphatidylinositol 
+4,5-bisphosphate (PtdIns(4,5)P2) metabolism regulates both phagocytosis and 
+macropinocytosis (a process morphologically similar to phagocytosis), the 
+molecular components and signaling pathways regulating each pathway differ.
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 9]

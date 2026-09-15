@@ -1,0 +1,244 @@
+Dicty News
+Electronic Edition
+Volume 12, number 3
+January 23, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+  Abstracts
+==============
+
+Mechanism of action of the Rep protein from the Dictyostelium Ddp2 plasmid
+family
+
+Iman M. Shammat and Dennis L. Welker
+
+Biology Department, Utah State University, Logan Utah 84322-5305
+
+Plasmid, in press.
+
+Summary:
+
+   The yeast two hybrid system was used to show that the Rep proteins from 
+three members of the Dictyostelium discoideum Ddp2 plasmid family, Ddp2, 
+Ddp5, and Ddp6, form homomultimers but not heteromultimers. The results 
+with deletion mutations suggest that multiple regions of the Rep proteins 
+are involved in the multimerization. Electrophoretic mobility shift assays 
+with heterologously expressed and purified Ddp2 Rep protein showed that it 
+is a DNA binding protein. The nucleosomal organization of Ddp2 and Ddp6 in 
+their inverted repeat and promoter regions was investigated. Analysis of 
+mutants derived from the Ddp6 plasmid revealed that its Rep protein is 
+required for nucleosome positioning (i.e. phasing) to occur in the promoter 
+region. On the other hand, nucleosome positioning in the inverted repeat 
+regions of both plasmids is not dependent on Rep protein but on either a 
+feature of the DNA sequence or the binding of cellular factors, perhaps 
+the Dictyostelium origin recognition complex. Rep protein is likely 
+involved in transcription regulation and control of DNA replication, 
+specifically amplification of plasmid at low copy numbers. The formation 
+of homomultimers may be required for their regulatory activity.
+
+----------------------------------------------------------------------------
+
+The Actin-Associated Protein Coronin in Chemotaxis, Cytokinesis, and
+Phagocytosis of Dictyostelium discoideum
+
+Karmela Barisic, Maria Ecke, Christina Heizer, Markus Maniak, Monika
+Westphal, Richard Albrecht, and Guenther Gerisch
+
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+
+http://www.biochem.mpg.de/gerisch/
+
+Trends in Cell Biology, in press.
+
+Background:
+
+In the highly motile cells of Dictyostelium discoideum the actin 
+system is rapidly re-organized in response to self-generated or 
+extraneous signals.  In this eukaryotic microorganism the actin, 
+together with associated proteins, serves multiple functions 
+providing a basis for cell motility, endocytosis, and mitotic cell 
+division. Coronin is one of the actin-binding proteins that are 
+recruited from the cytoplasm within seconds to locally form 
+membrane-associated complexes together with filamentous actin.
+
+---------------------------------------------------------------------
+
+Microtubule-Dependent Golgi Disassembly and Reconstitution 
+During Mitosis in Dictyostelium discoideum
+
+Natalie Schneider, Guenther Gerisch, and Jean-Marc Schwartz
+
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried
+http://www.biochem.mpg.de/gerisch/
+
+Trends in Cell Biology, in press.
+
+Background:
+
+The Golgi apparatus vesiculates at the beginning of mitosis, and is 
+afterwards reconstituted by assembly of the vesicles close to the 
+centrosome. This is demonstrated here in Dictyostelium cells, which 
+are distinguished from cells of higher eukaryotes by intranuclear 
+mitosis. To visualize Golgi disassembly and re-organization simultaneously 
+with microtubule dynamics, cells were transfected with both golvesin-GFP, 
+which localizes to the Golgi apparatus, and GFP-alpha-tubulin, which 
+visualizes the mitotic apparatus and positions of the centrosomes. At 
+the end of mitosis the centrosomes are rapidly moved around within the 
+cells by guiding microtubules anchored to the cell cortex.
+
+---------------------------------------------------------------------
+
+Cytokinesis in Uni- and Multinucleate Myosin II-null Cells of 
+Dictyostelium discoideum
+
+Ralph Neujahr, Jana Koehler, John Murphy, Jean-Marc Schwartz, Monika 
+Westphal, and Guenther Gerisch 
+
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+http://www.biochem.mpg.de/gerisch/
+
+Trends in Cell Biology, in press.
+
+Background:
+
+During mitotic cell division, the segregation of chromosomes along 
+the spindle is coordinated in time and space with the formation of 
+a cleavage furrow. In Dictyostelium, myosin II-null cells are capable 
+of undergoing cytokinesis when they are attached to an adhesive 
+substrate surface. The mitotic division of these myosin II-depleted 
+cells uncovers basic mechanisms of cytokinesis that drive cleavage 
+furrow formation in the absence of the conventional, filamentous 
+myosin. To relate microtubule dynamics to changes in cell shape, 
+confocal fluorescence images of GFP-alpha-tubulin colored in green 
+are superimposed in the movies onto simultaneously recorded phase-
+contrast images displayed in red.
+
+----------------------------------------------------------------------------
+
+Myosin II-Independent F-Actin Flow Contributes to Cell Locomotion in 
+Dictyostelium
+
+Yoshio Fukui*1, Toshiko Kitanishi-Yumura*2, and Shigehiko Yumura*2
+
+*1) Cell and Molecular Biology, Northwestern University Medical School, 
+Chicago, Illinois, *2) Department of Biology, Faculty of Science, Yamaguchi 
+University, Yamaguchi, Japan.
+
+J. Cell Science, in press
+
+Summary:
+
+   While the treadmilling and retrograde flow of F-actin are believed to 
+be responsible for the protrusion of leading edges, little is known about 
+the mechanism that brings the posterior cell body forward.  To elucidate 
+the mechanism for the global cell locomotion, we examined the organizational 
+changes of filamentous (F-) actin in live Dictyostelium discoideum.  We 
+labeled F-actin with a trace amount of fluorescent phalloidin and analyzed 
+its dynamics in nearly two-dimensional cells by using a sensitive, high-
+resolution charge-coupled device.  We optically resolved a cyclic mode of 
+tightening and loosening of fibrous cortical F-actin and quantitated its 
+flow by measuring temporal and spatial intensity changes.  The rate of 
+F-actin flow was evaluated with respect to migration velocity and 
+morphometric changes.  In migrating monopodial cells, the cortical 
+F-actin encircling the posterior cell body gradually accumulated into 
+the tail end at a speed of 0.35 ?m/min.  We show qualitatively and 
+quantitatively that the F-actin flow is closely associated with cell 
+migration.  Similarly, in dividing cells, the cortical F-actin accumulated 
+into the cleavage furrow.  Although five times slower than the wild type, 
+the F-actin also flows rearward in migrating mhcA- cells; demonstrating 
+that myosin II (conventional myosin) is not absolutely required for the 
+observed dynamics of F-actin.  Yet consistent with reported transportation 
+of ConA-beads (Jay and Elson, Nature 356: 438-440, 1992), the direction 
+of observed F-actin flow in Dictyostelium is conceptually opposite from 
+a barbed-end binding to the plasma membrane.  This study suggests that 
+the posterior end of the cell has a unique motif that tugs the cortical 
+actin layer rearward by means of a mechanism independent from myosin II; 
+and this mechanism may be also involved in the cleavage furrow formation.
+
+----------------------------------------------------------------------------
+
+MOUND CELL MOVEMENT AND MORPHOGENESIS IN DICTYOSTELIUM
+
+Kathryn A. Kellerman* and James G. McNally#
+
+Department of Biology and the Institute for Biomedical Computing, 
+Washington University, St. Louis, MO 63130
+
+Developmental Biology, in press
+
+Summary:
+
+   To examine mechanisms of cell locomotion within a 3-dimensional (3-D) 
+cell mass, we have undertaken a systematic 3-D analysis of individual cell 
+movements in the Dictyostelium mound, the first 3-D structure to form during 
+development of the fruiting body.  We used time-lapse deconvolution microscopy 
+to examine two strains whose motion represents endpoints on the spectrum of 
+motile behaviors that we have observed in mounds.  In AX-2 mounds, cell motion 
+is slow and trajectories are a combination of random and radial, compared to 
+KAX-3, where motion is five-fold faster and most trajectories are rotational.  
+Although radial or rotational motion was correlated with the optical-density 
+wave patterns present in each strain, we also found small but significant 
+sub-populations of cells that moved differently from the majority, 
+demonstrating that optical-density waves are at best insufficient to explain 
+all motile behavior in mounds.  In examining morphogenesis in these strains, 
+we noted that AX-2 mounds tended to culminate directly to a fruiting body, 
+whereas KAX-3 mounds first formed a migratory slug.  By altering buffering 
+conditions we could interchange these behaviors, and then found that mound-
+cell motions also changed accordingly.  This demonstrates a correlation 
+between mound cell motion and subsequent development, but it is not 
+obligatory.  Chimeric mounds composed of only 10% KAX-3 cells and 90% AX-2 
+cells exhibited rotational motion suggesting that a diffusible molecule 
+induces rotation, but many of these mounds still culminated directly 
+demonstrating that rotational motion does not always lead to slug migration.   
+Our observations provide a detailed analysis of cell motion for two distinct 
+modes of mound and slug formation in Dictyostelium.
+
+----------------------------------------------------------------------------
+
+A Mutation that separates the RasG signals that regulate development and
+cytoskeletal function in Dictyostelium
+
+T. Zhang, P.J. Rebstein, M. Khosla, J. Cardelli, G. Buczynski, J. Bush,
+G.B. Spiegelman and G. Weeks
+
+Departments of Microbiology and Immunology and Medical Genetics, University
+of British Columbia, 6174 University Blvd., Vancouver, V6T 1Z3
+
+Exp. Cell Res., accepted
+
+ABSTRACT
+
+   The expression of an activated RasG protein, RasG-G12T, in vegetative 
+cells of Dictyostelium discoideium produced an alteration in cell morphology.  
+Cells underwent a transition between an extensively flattened form that 
+exhibited lateral membrane ruffling to a less flattened form that exhibited 
+prominent dorsal membrane ruffling.  These rasG-G12T transformants exhibited 
+a redistribution of F-actin at the cell periphery and did not undergo the 
+rapid contraction upon refeeding that is characteristic of wild type cells.  
+These results suggest a role for RasG in regulating cytoskeletal rearrangement 
+in D. discoideum.  We had shown previously that expression of rasG-G12T 
+inhibited starvation induced aggregation (Khosla et al., 1996, Mol Cell Biol, 
+16, 4156-4162).  rasG-G12T genes containing secondary mutations were 
+transformed into cells to test whether the effects of rasG-G12T were 
+transmitted through a single downstream effector.  Cells expressing rasG-
+G12T/T35S or rasG-G12T/Y40C (secondary mutations within the effector domain) 
+exhibited normal morphology and underwent normal aggregation, suggesting that 
+signalling through the effector domain was required for both the morphological 
+and development changes induced by rasG-G12T.  In contrast, cells expressing 
+rasG-G12T/T45Q (a secondary mutation in the effector distal flanking domain) 
+exhibited normal aggregation but a morphology indistinguishable from that of 
+rasG-G12T transformants.  This result suggests that RasG regulates 
+developmental and cytoskeletal functions by direct interaction with more than 
+one downstream effectors.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 3]
+
+  

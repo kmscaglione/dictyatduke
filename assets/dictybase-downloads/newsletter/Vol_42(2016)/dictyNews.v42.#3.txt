@@ -1,0 +1,152 @@
+dictyNews
+Electronic Edition
+Volume 42, number 3
+January 29, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Self-Generated Chemoattractant Gradients: Attractant Depletion 
+Extends the Range and Robustness of Chemotaxis.
+
+Luke Tweedy, David A Knecht, Gillian M Mackay & Robert H Insall
+
+
+PLOS Biology, in press
+
+Chemotaxis is fundamentally important, but the sources of gradients 
+in vivo are rarely well understood. Here we analyse self-generated 
+chemotaxis, in which cells respond to gradients they have made 
+themselves by breaking down globally available attractants, using 
+both computational simulations and experiments. We show that 
+chemoattractant degradation creates steep local gradients. This 
+leads to surprising results, in particular the existence of a 
+leading population of cells that moves highly directionally, while 
+cells behind this group are undirected. This leading cell population 
+is denser than those following, especially at high attractant 
+concentrations. The local gradient moves with the leading cells as 
+they interact with their surroundings, giving directed movement that 
+is unusually robust and can operate over long distances. Even when 
+gradients are applied from external sources, attractant breakdown 
+greatly changes cells' responses and increases robustness. We also 
+consider alternative mechanisms for directional decision-making and 
+show that they do not predict the features of population migration 
+we observe experimentally. Our findings provide useful diagnostics 
+to allow identification of self-generated gradients, and suggest 
+that self-generated chemotaxis is unexpectedly universal in biology 
+and medicine.
+
+
+submitted by: Robert Insall [r.insall@beatson.gla.ac.uk]
+———————————————————————————————————————
+
+
+A computational method for the coupled solution of reaction–
+diffusion equations on evolving domains and manifolds: 
+Application to a model of cell migration and chemotaxis
+
+G. MacDonald, J.A. Mackenzie, M. Nolan & R.H. Insall
+
+
+Journal of Computational Physics, in press
+
+In this paper, we devise a moving mesh finite element method for 
+the approximate solution of coupled bulk–surface reaction–diffusion 
+equations on an evolving two dimensional domain. Fundamental to 
+the success of the method is the robust generation of bulk and surface 
+meshes. For this purpose, we use a novel moving mesh partial 
+differential equation (MMPDE) approach. The developed method is 
+applied to model problems with known analytical solutions; these 
+experiments indicate second-order spatial and temporal accuracy. 
+Coupled bulk–surface problems occur frequently in many areas; in 
+particular, in the modelling of eukaryotic cell migration and 
+chemotaxis. We apply the method to a model of the two-way 
+interaction of a migrating cell in a chemotactic field, where the 
+bulk region corresponds to the extracellular region and the 
+surface to the cell membrane.
+
+
+submitted by: Robert Insall [r.insall@beatson.gla.ac.uk]
+———————————————————————————————————————
+
+Use of a Probabilistic Motif Search to Identify Histidine 
+Phosphotransfer Domain-Containing Proteins
+
+Defne Surujon and David I. Ratner
+
+
+PLoS ONE, 2016
+
+The wealth of newly obtained proteomic information affords 
+researchers the possibility of searching for proteins of a 
+given structure or function.  Here we describe a general 
+method for the detection of a protein domain of interest 
+in any species for which a complete proteome exists.  In 
+particular, we apply this approach to identify histidine 
+phosphotransfer (HPt) domain-containing proteins across a 
+range of eukaryotic species.  From the sequences of known 
+HPt domains, we created an amino acid occurrence matrix which 
+we then used to define a conserved, probabilistic motif. 
+Examination of various organisms either known to contain 
+(plant and fungal species) or believed to lack (mammals) HPt 
+domains established criteria by which new HPt candidates were 
+identified and ranked.  Search results using a probabilistic 
+motif matrix compare favorably with data to be found in 
+several commonly used protein structure/function databases: 
+our method identified all known HPt proteins in the Arabidopsis 
+thaliana proteome, confirmed the absence of such motifs in 
+mice and humans, and suggests new candidate HPts in several 
+organisms.  Moreover, probabilistic motif searching can be 
+applied more generally, in a manner both readily customized 
+and computationally compact, to other protein domains; this 
+utility is demonstrated by our identification of histones in 
+a range of eukaryotic organisms.
+
+
+submitted by: David Ratner [diratner@amherst.edu]
+———————————————————————————————————————
+
+
+Rho signaling in Dictyostelium discoideum
+
+Francisco Rivero and Huajiang Xiong
+
+
+International Review of Cell and Molecular Biology
+
+Small GTPases of the Rho family are ubiquitous molecular 
+switches involved in the regulation of most actin cytoskeleton 
+dependent processes and many other processes not directly 
+linked to actin. The soil ameba D. discoideum is a well 
+established model organism for studies of the actin cytoskeleton 
+and its regulation by signal transduction pathways. D. discoideum 
+is equipped with a complex repertoire of Rho signaling components, 
+with 20 Rho GTPases, more than 100 regulators (including exchange 
+factors, GTPase activating proteins and gunanine nucleotide 
+dissociation inhibitors) and nearly 80 effectors or components of 
+effector complexes. In this review we examine the knowledge 
+accumulated to date about proteins involved in Rho-regulated 
+signaling pathways in D. discoideum, with an emphasis on functional 
+studies. We integrate the information about individual components 
+into defined signaling pathways, with a focus on three extensively 
+investigated processes: chemotaxis, vesicle trafficking and 
+cytokinesis.
+
+
+submitted by: Francisco Rivero [f.rivero-crespo@hull.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 3]

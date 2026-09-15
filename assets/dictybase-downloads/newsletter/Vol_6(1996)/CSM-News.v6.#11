@@ -1,0 +1,295 @@
+CSM News
+Electronic Edition
+Volume 6, number 11
+April 20, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+NDP Kinase Can Modulate Contraction of Dictyostelium Cytoskeletons
+
+Carmen Aguado-Velasco, Michel Veron1, Jo Ann Rambow, and Edward R.
+Kuczmarski
+
+Department of Physiology and Biophysics, Finch University of Health
+Sciences, The Chicago Medical School, North Chicago, IL  60064.
+
+1Regulation Enzymatique des Activites Cellulaires, Institut Pasteur,
+75724, Paris, Cedex 15, France
+
+Cell Motility and the Cytoskeleton, in press
+
+ABSTRACT
+
+   Extraction of Dictyostelium amoebae with Triton X-100 produces
+robust cytoskeletons composed mainly of actin and myosin II.  These
+cytoskeletons rapidly contract when mixed with Mg-ATP in simple
+buffers.  The Triton-soluble fraction was found to contain a
+GTP-dependent activity that prevented contraction by Mg-ATP.  This
+activity was purified, and identified as nucleoside diphosphate kinase
+(NDP kinase).  The apparent inhibition resulted from pre-contraction
+of the cytoskeletons.  Tightly bound cytoskeletal ADP was presumably
+phosphorylated, and the resulting ATP powered contraction.  NDP kinase
+appeared to be unique in this capacity, since other regenerating
+systems did not cause pre-contraction.  Reconstitution experiments
+demonstrated that the kinase must be in physical contact with the
+cytoskeleton.  These results suggest that Dictyostelium NDP kinase is
+able to channel ATP to the myosin molecule, and this could play a role
+in directly regulating cytoskeletal contraction or in facilitating
+contraction under conditions where intracellular ATP concentrations
+are low.  This ability to modulate cytoskeletal contraction could help
+to explain observations in other systems whereby defects in NDP kinase
+result in abnormal development or changes in the metastatic potential
+of cancer cells.
+
+----------------------------------------------------------------------
+
+Structure/function-studies on the pH-dependent actin-binding
+protein hisactophilin in Dictyostelium mutants
+
+Mechthild Stoeckelhuber *, Angelika A. Noegel @, Christoph Eckerskorn
+@ Jana Koehler @, Daniela Rieger * and Michael Schleicher *
+
+*Adolf-Butenandt-Institut / Zellbiologie,
+Ludwig-Maximilians-Universitaet, Schillerstr. 42, 80336 Muenchen
+
+@ Max-Planck-Institut fuer Biochemie, Am Klopferspitz 18a, 82151
+Martinsried, Fed. Rep. of Germany
+
+J. Cell Sci., in press.
+
+Summary
+
+Our previous studies have shown that the actin-binding protein
+hisactophilin from Dictyostelium discoideum is a candidate for
+organizing the actin cytoskeleton at the plasma membrane in a
+pH-dependent manner. To further characterize this interaction we
+isolated hisactophilin overexpression (hisII+) and hisactophilin
+minus(his-) mutants.  D. discoideum contains two hisactophilin
+isoforms, both genes are independently transcribed and carry a short
+intron at the same position of the coding region. The deduced amino
+acid sequence of hisactophilin II showed a characteristic high content
+of 35 histidine residues out of total 118 amino acids. After
+transformation of Dictyostelium AX2 wild-type cells with a genomic
+fragment designed to inactivate the hisactophilin I gene we obtained
+hisactophilin II overexpressing mutants (hisII+). Multiple integration
+of the vector led to strong overexpression of hisactophilin II which
+even outnumbered the actin concentration by a factor of
+two. Hisactophilin II protein showed the same biochemical properties
+as hisactophilin I during purification and in its pH-dependent binding
+to F-actin; as shown by mass spectrometry the hisactophilin II
+fraction was almost completely myristoylated despite of this high
+overexpression. The inactivation of both hisactophilin genes was
+achieved by gene replacement with a vector construct encompassing
+parts of gene I and gene II connected by a geneticin cassette. The
+properties of the hisII+ and his- cells with regard to growth in
+shaking culture and on Klebsiella plates, development, chemotaxis and
+morphology were not affected under normal conditions. However, the
+hisII+-transformants revealed a significant difference to wild-type
+cells and his- cells when the cytoplasmic pH was lowered by
+diethylstilbestrol (DES), a proton pump inhibitor. HisII+ cells were
+more resistant to the acidification; in contrast to AX2 wild-type
+cells and his- cells they did not form plasma membrane protrusions,
+showed an increase in F-actin content, and contained large clusters of
+F-actin. Lowering the internal pH caused an accumulation of
+hisactophilin below the plasma membrane. The fact that cells deficient
+in hisactophilin loose again the resistance to acidification is in
+good agreement with the hypothesis that hisactophilin functions as
+a pH-sensor at the plasma membrane by reversibly connecting the
+membrane with the actin cortical network upon local changes of the
+proton concentration.
+
+----------------------------------------------------------------------
+
+The aimless RasGEF is required for processing of chemotactic signals
+through G-protein coupled receptors in Dictyostelium
+
+Robert H. Insall*, Jane Borleis and Peter N. Devreotes
+
+Dept. of Biological Chemistry, The Johns Hopkins University School of Medicine,
+Baltimore, Maryland 21205, USA
+
+*MRC Laboratory for Molecular Cell Biology & Dept. of Physiology,
+University College London, Gower Street, London WC1E 6BT
+
+Current Biology, in press.
+
+
+Background
+
+Ras proteins are small GTP-binding proteins which are essential in a
+wide range of processes, in particular mammalian growth control.  They
+act as molecular switches, being inactive when GDP is bound, and
+active when associated with GTP.  Activation is accomplished by
+guanine nucleotide exchange factors (RasGEFs); when RasGEFs interact
+with Ras proteins, GDP is allowed to escape, and be replaced by GTP.
+Dictyostelium responds to chemoattractants through typical seven
+transmembrane domain receptors and heterotrimeric G-proteins.  There
+are at least five different Dictyostelium Ras genes, whose functions
+are not yet known.
+
+Results
+
+We have isolated the aimless gene, which encodes the Dictyostelium
+homologue of Ras guanine nucleotide exchange factors (RasGEFs), during
+a screen for insertional mutants which fail to aggregate.  Aimless
+null mutants grow at a normal rate, but are severely impaired in both
+chemotaxis and activation of adenylyl cyclase, which are both critical
+for the early stages of development.  While coupling between receptors
+and their G-proteins is unaffected, and several cAMP-mediated
+responses appear normal, receptor and GTPgS mediated activation of
+adenylyl cyclase are reduced by up to 95%.  The motility of mutant
+cells appears normal, suggesting a true defect in gradient sensing.
+
+Conclusions
+
+The discovery of the aimless gene adds an interesting new member to
+the family of RasGEFs.  Our data suggest an unforeseen role for a
+RasGEF, and therefore presumably a complete Ras pathway, in the
+processing of chemotactic signals through G-protein coupled receptors.
+
+----------------------------------------------------------------------
+
+SP75 is encoded by the DP87 gene, and belongs to a family of modular
+Dictyostelium discoideum outer layer spore coat proteins
+
+Christopher M. West, Jie Mao, Hanke van der Wel, Gregory W. Erdos and
+Yunyan Zhang
+
+Department of Anatomy and Cell Biology, College of Medicine, and
+Interdisciplinary Center for Biotechnology Research, University of
+Florida, Gainesville, FL 32610-0235 USA
+
+Microbiology, in press
+
+SUMMARY
+
+   Highly purified spore coats of Dictyostelium each contain about 5 X
+10exp6 proteins as determined by amino acid composition analysis. By
+two-dimensional gel electrophoresis, the coat contains nine major
+abundance and numerous minor protein species, most of which are highly
+enriched relative to the adjacent interspore matrix. Protein is nearly
+quantitatively eluted by denaturants and 2-mercaptoethanol, showing
+that protein is not irreversibly cross-linked. Because a reducing
+agent is required together with denaturants to elute most proteins if
+their free sulfhydryl groups have been prealkylated, proteins appear
+to be disulfide cross-linked into the matrix. One major coat protein,
+SP75, was partially sequenced and found to be encoded by the
+previously identified DP87 gene; this conclusion is supported by
+additional physical, genetic, biochemical and microscopic
+evidence. The five major proteins for which genes have been cloned are
+associated with the outer layer of the coat. In coats which are
+missing one or more of four of these proteins as the result of gene
+disruption, there are physical changes but, with one exception, the
+other major coat proteins appear to be incorporated normally. Sequence
+analysis shows that these five outer layer coat proteins are
+homologous and consist of alternating sequence motifs related to
+epithelial mucin repeats, basic proline repeats found in salivary
+acidic proline-rich proteins, the NH2-terminal subdomain of EGF
+modules, and other cysteine repeats. Based on these and other
+observations, outer layer coat proteins are predicted to organize
+indeterminately to form a cell surface microenvironment supportive of
+cellulose morphogenesis during spore coat formation. 
+
+--------------------------------------------------------------------
+
+Purification and Characterization of an a1,2-L-Fucosyltransferase
+which Modifies the Cytosolic Protein FP21, from the Cytosol of
+Dictyostelium
+
+Christopher M. West, Toby Scott-Ward, Patana Teng-umnuay, Hanke van
+der Wel, Emil Kozarov, and Ann Huynh
+
+Department of Anatomy & Cell Biology, University of Florida College of
+Medicine, Gainesville, FL 32610-0235 USA
+
+J. Biol. Chem., in press
+
+SUMMARY
+
+   A novel fucosyltransferase (cFTase) activity has been enriched over
+10exp6-fold from the cytosolic compartment of Dictyostelium based on
+transfer of [3H]fucose from GDP-[3H]fucose to
+Galb1,3GlcNAcb-paranitrophenyl (paranitrophenyl-lacto-N-bioside or
+pNP-LNB). The activity behaved as a single component during
+purification over DEAE-, phenyl-, Reactive blue-4-, GDP-adipate-,
+GDP-hexanolamine-, and Superdex gel filtration resins. The purified
+activity possessed an apparent Mr of 95 x 103, was Mg+2-dependent with
+a neutral pH optimum, and exhibited a Km for GDP-fucose of 0.34 uM, a
+Km for pNP-LNB of 0.6 mM, and a Vmax for pNP-LNB of 620 nmol/min/mg
+protein. SDS-PAGE analysis of the Superdex elution profile identified
+a polypeptide with an apparent Mr of 85 x 10exp3, which coeluted with
+the cFTase activity and could be specifically photolabeled with the
+donor substrate inhibitor
+GDP-hexanolaminyl-azido-[125I]salicylate. Based on substate analogue
+studies, exoglycosidase digestions, and cochromatography with
+fucosylated standards, the product of the reaction with pNP-LNB was
+Fuca1,2Galb1,3GlcNAcb-pNP. The cFTase preferred substrates with a
+Galb1,3-linkage, and thus its acceptor substrate specificity resembles
+the human Secretor-type a1,2FTase. Afucosyl isoforms of the FP21
+glycoprotein, GP21-I and GP21-II, were purified from the cytosol of a
+Dictyostelium mutant and found to be substrates for the cFTase, which
+exhibited an apparent Km of 0.21 uM and an apparent Vmax of 460
+nmol/min/mg protein toward GP21-II. The highly purified cFTase was
+inhibited by the reaction products Fuca1,2Galb1,3GlcNAcb-pNP and
+FP21-II. FP21-I and recombinant FP21 were not inhibitory, suggesting
+that acceptor substrate specificity is based primarily on carbohydrate
+recognition. A cytosolic location for this step of FP21 glycosylation
+is implied by the isolation of the cFTase from the cytosolic fraction,
+its high affinity for its substrates, and its failure to be detected
+in crude membrane preparations.
+
+--------------------------------------------------------------------
+
+PsB multiprotein complex of Dictyostelium discoideum: Demonstration of
+cellulose binding activity and order of protein subunit assembly.
+
+Vince McGuire and Stephen Alexander
+
+Division of Biological Sciences, University of Missouri
+Columbia, MO 65211
+
+J. Biol. Chem., in press.
+
+Abstract
+
+   The differentiated spores of Dictyostelium are surrounded by an
+extracellular matrix (ECM) - the spore coat - which protects them from
+environmental factors allowing them to remain viable for extended
+periods of time.  This presumably is a major evolutionary advantage.
+This unique ECM is composed of cellulose and glycoproteins.  Previous
+work has shown that some of these spore coat glycoproteins exist as a
+preassembled multiprotein complex (the PsB multiprotein complex) which
+is stored in the prespore vesicles (Watson, McGuire and Alexander,
+J. Cell Sci. 107, 2567-2579 (1994)).  Later in development, the
+complex is synchronously secreted from the PSVs and incorporated into
+the spore coat.  We now have shown that the PsB complex has a specific
+in vitro cellulose binding activity.  The analysis of mutants lacking
+individual subunits of the PsB complex revealed the relative order of
+assembly of the subunit proteins and demonstrated that the protein
+subunits must be assembled for cellulose binding activity.  These
+results provide a biochemical explanation for the localization of this
+multiprotein complex in the spore coat.
+
+--------------------------------------------------------------------
+
+[End CSM News, volume 6, number 11]
+
+
+
+
+
+
+
+
+
+

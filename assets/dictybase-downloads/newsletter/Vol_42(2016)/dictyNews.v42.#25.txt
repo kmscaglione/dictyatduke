@@ -1,0 +1,56 @@
+dictyNews
+Electronic Edition
+Volume 42, number 25
+October 28, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Inference of the drivers of collective movement in two cell types: 
+Dictyostelium and melanoma
+
+Elaine A. Ferguson, Jason Matthiopoulos, Robert H. Insall and 
+Dirk Husmeier
+
+Royal Society Interface, in press
+
+
+Collective cell movement is a key component of many important 
+biological processes, including wound healing, the immune 
+response and the spread of cancers. To understand and influence 
+these movements, we need to be able to identify and quantify the 
+contribution of their different underlying mechanisms. Here, we 
+define a set of six candidate model-formulated as advection-
+diffusion-reaction partial differential equationsóthat incorporate 
+a range of cell movement drivers. We fitted these models to 
+movement assay data from two different cell types: Dictyostelium 
+discoideum and human melanoma. Model comparison using widely 
+applicable information criterion suggested that movement in both 
+of our study systems was driven primarily by a self-generated 
+gradient in the concentration of a depletable chemical in the 
+cellsí environment. For melanoma, there was also evidence that 
+overcrowding influenced movement. These applications of model 
+inference to determine the most likely drivers of cell movement 
+indicate that such statistical techniques have potential to support 
+targeted experimental work in increasing our understanding of 
+collective cell movement in a range of systems.
+
+
+
+submitted by: Robert Insall [r.insall@beatson.gla.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 25]

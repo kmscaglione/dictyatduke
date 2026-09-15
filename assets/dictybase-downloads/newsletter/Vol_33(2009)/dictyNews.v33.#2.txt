@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 33, number 2
+July 17, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+The trishanku gene and terminal morphogenesis in Dictyostelium discoideum
+
+Nameeta Mujumdar1, Kei Inouye2 and Vidyanand Nanjundiah1
+
+1Indian Institute of Science, Bangalore, India and 2Kyoto University, Kyoto, 
+Japan
+
+
+Evolution & Development, in press
+
+The positioning of spores relative to the stalk is a characteristic feature 
+of morphogenesis in the cellular slime moulds. In Dictyostelium discoideum 
+the rising non-motile spore mass is cradled above and below by tissues 
+derived from both prestalk cells and anterior-like cells, that are known 
+as the upper and lower cup respectively. Trishanku (triA) is a novel 
+gene expressed in posterior prespore cells of the D. discoideum slug; 
+in the absence of triA function prespore cells halt their ascent midway 
+on the stalk (Jaiswal et al., Differentiation 74:596–607, 2006). 
+Intra- and inter-strain grafting experiments were carried out with 
+anterior and posterior fragments of Ax2 and triA- slugs. Intra-triA- 
+grafts show that (a) cells freely cross the prestalk-prespore boundary 
+and change their fates accordingly and (b) the lower cup is normal but 
+the upper cup is not. The aberrant terminal morphogenesis seen in 
+triA- can be traced to the improper functioning of the upper cup. 
+When wild-type upper cup function is supplied via other cells, trishanku 
+spores can reach the tip of the stalk. Conversely, Ax2 spores fail to 
+do so in chimeras in which the upper cup is largely made up of mutant 
+cells. A lowered level of expression of the gene encoding the cell 
+adhesion molecule lagC during culmination could be responsible for 
+the poor attachment of the upper cup to the spore mass in triA- . 
+These observations reinforce Sternfeld’s finding (Dev Genes Evol 
+208:487–494, 1998) that the wild-type phenotype of the upper cup is 
+important for the elevation of the spores in D. discoideum. Further, 
+they show that a gene that is expressed in one cell type elicits 
+behaviour in a second cell type that can ‘feed back’ and enhance the 
+fitness of the first cell type. 
+
+
+Submitted by Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Yersinia outer protein YopE affects the actin cytoskeleton in Dictyostelium 
+discoideum through targeting of multiple Rho family GTPases 
+
+Georgia Vlahou, Oxana Schmidt, Bettina Wagner, Handan Uenlue, 
+Petra Dersch, Francisco Rivero and Barbara A. Weissenmayer
+
+
+BMC Microbiology, in press
+
+Background 
+All human pathogenic Yersinia species share a virulence-associated 
+type III secretion system that translocates Yersinia effector proteins 
+into host cells to counteract infection-induced signaling responses and 
+prevent phagocytosis. Dictyostelium discoideum has been recently used to 
+study the effects of bacterial virulence factors produced by internalized 
+pathogens. In this study we explored the potential of Dictyostelium as 
+model organism for analyzing the effects of ectopically expressed Yersinia 
+outer proteins (Yops). 
+
+Results
+TheYersinia pseudotuberculosis virulence factors YopE, YopH, YopM and 
+YopJ were expressed de novo within Dictyostelium and their effects on 
+growth in axenic medium and on bacterial lawns were analyzed. No severe 
+effect was observed for YopH, YopJ and YopM, but expression of YopE, 
+which is a GTPase activating protein for Rho GTPases, was found to be 
+highly detrimental. GFP-tagged YopE expressing cells had less conspicuous 
+cortical actin accumulation and decreased amounts of F-actin. The actin 
+polymerization response upon cAMP stimulation was impaired, although 
+chemotaxis was unaffected. YopE also caused reduced uptake of yeast 
+particles. These alterations are probably due to impaired Rac1 activation. 
+We also found that YopE predominantly associates with intracellular 
+membranes including the Golgi apparatus and inhibits the function of 
+moderately overexpressed RacH. 
+
+Conclusion 
+The phenotype elicited by YopE in Dictyostelium can be explained, at 
+least in part, by inactivation of one or more Rho family GTPases. It 
+further demonstrates that the social amoeba Dictyostelium discoideum 
+can be used as an efficient and easy-to-handle model organism in order 
+to analyze the function of a translocated GAP protein of a human pathogen.
+
+
+Submitted by: Barbara A. Weissenmayer [barbara.weissenmayer@ucd.ie]
+==============================================================
+[End dictyNews, volume 33, number 2]

@@ -1,0 +1,189 @@
+Dicty News
+Electronic Edition
+Volume 22, number 12
+May 14, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+
+Specificity of a Soluble UDP-Galactose:Fucoside a1,3Galactosyltransferase
+that Modifies the Cytoplasmic Glycoprotein Skp1 in Dictyostelium*
+
+Catherine Ketcham¤, Fei Wang¤, S. Z. Fisher¤, Altan Ercan||, Hanke van der
+Wel¤||, R. D. Locke¦, S. ud-Doulah.k¦, Khushi L. Matta¦ and Christopher M.
+West¤||
+
+From the ¤Department of Anatomy & Cell Biology, University of Florida College
+of Medicine, Gainesville, FL  32610-0235  USA, the ¦Department of Molecular &
+Cellular Biophysics, Roswell Park Cancer Institute, Elm & Carlton Streets, 
+Buffalo, NY 14263  USA, and the ||Department of Biochemistry & Molecular
+Biology, Oklahoma Center for Medical Glycobiology, University of Oklahoma
+Health Sciences Center, Oklahoma City, OK  73104  USA
+
+J. Biol. Chem., in press
+
+
+Skp1 is an adaptor-like protein in E3SCF-ubiquitin ligases and other
+multiprotein complexes of the cytoplasm and nucleus. In Dictyostelium, Skp1
+is modified by an unusual pentasaccharide containing a Gala1-Fuc linkage,
+whose formation is examined here. A cytosolic extract from Dictyostelium was
+found to yield, after 2400-fold purification, an activity that could transfer
+Gal from UDP-Gal to both a Fuc-terminated glycoform of Skp1 and synthetic
+Fuc-conjugates in the presence of Mn2+ and dithiothreitol. The microsomal
+fraction was devoid of activity. The linkage formed was Gala1,3Fuc based on
+co-chromatography with only this synthetic isomer conjugate, and sensitivity
+to a1,3/6-galactosidase. Skp1 exhibited an almost 1000-fold lower Km and
+35-fold higher Vmax compared to a simple a-fucoside, but this advantage was
+abolished by denaturation or alkylation of Cys-residues. A comparison of a
+complete series of synthetic glycosides representing the non-reducing
+terminal mono-, di- and tri-saccharides of Skp1 revealed, surprisingly, that
+the disaccharide is most active owing primarily to a Vmax advantage, but
+still much less active than Skp1 itself owing to a Km difference. These
+findings indicate that aGalT1 is a cytoplasmic enzyme whose modification of
+Skp1 requires proper presentation of the terminal acceptor disaccharide by
+a folded Skp1 polypeptide, which correlates with previous evidence that the
+Gala1,3Fuc-linkage is deficient in expressed mutant Skp1 proteins.
+
+
+Submitted by: Chris West [Christopher-West@ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+Chemoattractant-Induced PI(3,4,5)P3 Accumulation is Spatially Amplified and
+Adapts, Independent of the Actin Cytoskeleton
+
+1Chris Janetopoulos, 2Lan Ma, 1Peter N. Devreotes, and 2,3Pablo A. Iglesias
+
+1Dept Cell Biology
+Johns Hopkins University School of Medicine
+725 N. Wolfe St
+Baltimore, MD 21205
+410-955-3225
+410-614-9461 (Fax)
+
+2Dept Electrical & Computer Engineering
+Johns Hopkins University
+3400 N. Charles St.
+Baltimore, MD, 21218
+410-516-6026
+410-516-5566 (Fax)
+
+3Corresponding Author
+
+Proceedings of the National Academy of Sciences USA, in press
+
+
+Experiments in amoebae and neutrophils have shown that local accumulations
+of PI(3,4,5)P3 mediate the ability of cells to migrate during gradient
+sensing. To define the nature of this response, we subjected D. discoideum
+cells to measurable temporal and spatial chemotactic inputs and analyzed the
+accumulation of PI(3,4,5)P3 on the membrane, as well as the recruitment of
+the enzymes PI3K and PTEN. In latrunculin-treated cells, spatial gradients
+elicited a PI(3,4,5)P3 response only on the front portion of the cell where
+the response increased more steeply than the gradient and did not depend on
+its absolute concentration. PI3K bound to the membrane only at the front,
+although it was less sharply localized than PI(3,4,5)P3. Membrane-bound
+PTEN was highest at the rear and varied inversely with receptor occupancy.
+The localization of PI(3,4,5)P3 was enhanced further in untreated, polarized
+cells, containing an intact cytoskeleton. Interestingly, the treated cells
+could respond to two independent gradients simultaneously, demonstrating that
+a response at the front does not necessarily inhibit the back. Combinations
+of temporal and spatial stimuli provided evidence of an inhibitory process
+and showed that a gradient generates a persistent steady-state response
+independent of previous history of exposure to chemoattractant. These results
+support a local excitation/global inhibition model and argue against other
+schemes proposed to explain directional sensing.
+
+
+Submitted by: Chris Janetopoulos [cjanetop@jhmi.edu]
+
+-----------------------------------------------------------------------------
+
+A gene encoding prespore-cell-inducing factor in Dictyostelium discoideum 
+
+Takefumi Kawata1,4,*, Manabu Nakagawa3, Nao Shimada1, Shigeru Fujii3 and
+Akiko A. Oohata2,4
+
+1Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama,
+Funabashi, Chiba 274-8510, JAPAN
+2Biological Laboratory and 3Chemical Laboratory, Kansai Medical University,
+Hirakata, Osaka 573-1136, JAPAN
+4Correspondence authors
+
+Dev. Growth Diff., in press
+
+
+Two factors that exist in conditioned medium (CM) of Dictyostelium discoideum
+induce amoebae to differentiate into prespore cells when they are incubated at
+a very low cell density in submerged monolayer culture.  Previously, we
+purified one of them, a glycoprotein factor with an apparent molecular mass
+of 106 kDa, and we named it y factor (psi, prespore-inducing factor). Based
+on partial amino acid sequence of the purified y factor, we have isolated the
+corresponding cDNA clone, which is expressed maximally at the loose mound
+stage.  The cDNA encodes a novel protein and the predicted molecular mass of
+the mature secreted protein is 60 kDa.  Knockout mutant strains of the y
+factor gene, psiA-, were created by targeted integration.  Although these
+mutant strains appear to develop normally, CM from these mutants showed
+reduced prespore-cell-inducing activity.  Rescuing the mutant strains by
+expression of y factor under control of a constitutive promoter causes
+overproduction of y factor protein and CM from such cells showed a 20-fold
+higher level of prespore-cell-inducing activity than that from wild-type
+cells.  Further, CM from parental cells induced prespore cell division,
+while that from psiA null strains showed no cell division inducing activity.
+Our results indicate that y factor protein is a novel type of growth factor
+that does not belong to any of the families of growth factor so far
+identified in animals. 
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+Cell movements and mechanical force distribution during the migration of
+Dictyostelium slugs
+
+Jean-Paul Rieu 1,*, Catherine Barentin 1, Satoshi Sawai 2, Yasuo Maeda 3 and
+Yasuji Sawada 4
+
+1 Laboratoire de Physique de la Matiere Condensee et des
+Nanostructures, Universite
+
+J. Biol. Phys., in press
+
+
+Migration of Dictyostelium discoideum slugs results from coordinated
+movement of its constituent cells. It is generally assumed that each cell
+contributes to the total motive force of the slug. However, the basic
+mechanisms by which mechanical forces (traction and resistive forces) are
+transmitted to the substrate, their magnitude and their location, are
+largely unknown. In this work, we performed detailed observations of cell
+movements by fluorescence microscopy using two-dimensional (2D) slugs. We
+show that 2D slugs share most of the properties of 3D ones. In particular,
+waves of movement propagate in long 2D slugs, and slug speed correlates with
+slug length as found in 3D slugs. We also present the first measurements of
+the distribution of forces exerted by 2D and 3D slugs using the elastic
+substrate method. Traction forces are mainly exerted in the central region
+of the slug. The large perpendicular forces around slug boundary and the
+existence of parallel resistive forces in the tip and/or the tail suggest an
+important role of the sheath in the transmission of forces to the substrate.
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+
+===============================================================================
+[End Dicty News, volume 22, number 12]

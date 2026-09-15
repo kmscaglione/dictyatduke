@@ -1,0 +1,140 @@
+From r-chisholm@nwu.edu Sat May 27 11:24 CDT 1995
+Return-Path: <r-chisholm@nwu.edu>
+Received: from dicty.cmsbio.nwu.edu by worms.cmsbio.nwu.edu (5.x/SMI-SVR4)
+	id AA00888; Sat, 27 May 1995 11:24:49 -0500
+Received: by dicty.cmsbio.nwu.edu with Microsoft Mail
+	id <01BA2C24.A076E060@dicty.cmsbio.nwu.edu>; Sat, 27 May 1995 11:25:52 -0500
+Message-Id: <01BA2C24.A076E060@dicty.cmsbio.nwu.edu>
+From: "Rex L. Chisholm" <r-chisholm@nwu.edu>
+To: 'CSM-News' <csm-news@worms.cmsbio.nwu.edu>
+Subject: FW: CSM News, v4, #18
+Date: Sat, 27 May 1995 11:25:50 -0500
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"
+Content-Length: 5393
+Status: RO
+
+
+
+----------
+From: 	csm-news@worms.cmsbio.nwu.edu
+Sent: 	Saturday,May 20,1995 2:30AM
+To: 	dd-email-list@worms.cmsbio.nwu.edu
+Subject: 	CSM News, v4, #18
+
+CSM News
+Electronic Edition
+Volume 4, number 18
+May 20, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+Cloning vectors for the production of proteins in Dictyostelium
+discoideum
+
+Dietmar J. Manstein, Hans-Peter Schuster, Piero Morandini$, and
+Deborah M.  Hunt
+
+National Institute for Medical Research, The Ridgeway, Mill Hill,
+London NW7 1AA, UK and $ MRC Laboratory of Molecular Biology, Hills
+Road, Cambridge CB2 2QH, UK.
+
+Gene, in press.
+
+Summary
+
+   We constructed and tested a series of cloning vectors designed to
+facilitate protein production and purification in Dictyostelium
+discoideum (Dd).  These vectors carry the origin of replication of the
+Dd high copy number plasmid, Ddp2, expression cassettes consisting of
+the strong, constitutive actin (act) 15 or the inducible discoidin
+(dis) Ig promoters, a translational start codon upstream from a
+multiple cloning site, and sequences for the addition of epitope or
+affinity tags at the N- or C-termini of any protein. The affinity tag
+used corresponds to 7 (N-terminal fusion) or 8 (C-terminal fusion)
+histidine residues. The epitope tags correspond to an 11-amino-acid
+sequence from human c-myc, recognised by monoclonal antibody (mAb)
+9E10, and the Glu-Glu-Phe sequence recognised by mAb YL1/2 to
+a-tubulin.  Both these mAb are commercially available.  The YL1/2
+epitope offers a second affinity tag for the purification of proteins
+under native conditions. The functional competence of the vectors was
+tested by determining their ability to promote the expression of
+various Dd myosin constructs. High expression levels were obtained for
+each vector, up to 1 mg of homogenous, functional protein per g of
+cells was obtained after purification of the recombinant products.
+        
+   The cellular slime mold Dictyostelium discoideum (Dd) has many
+features that make it an attractive eukaryotic host for the production
+of recombinant proteins.  Dd is biochemically well characterised and
+can be grown readily in the laboratory on a large scale. Our work is
+mostly focused on the characterisation of cytoskeletal proteins like
+myosin.  Functional myosin motor fragments can be produced and
+purified in milligram quantities using Dd (Manstein et al., 1989) and
+detailed kinetic (Ritchie et al., 1993) and structural studies
+(Schroeder et al., 1993) have been carried out using myosin motor
+domains produced in Dd.  The new vectors were designed to improve our
+ability to produce recombinant proteins in Dd for in vitro and in vivo
+studies.  Introduction of the Glu-Glu-Phe epitope tag (Stammers et
+al., 1991) or poly-histidine (his) tag (Janknecht et al., 1991)
+facilitates the rapid and efficient purification of overexpressed
+protein and the Glu-Glu-Phe and c-myc epitope tags can be used for the
+analysis of protein function and fate within the cell.
+
+[Editors Note: The sequences of these vectors are available through
+the Dicty Web Page.]
+
+--------------------------------------------------------------------------
+
+Expression of Light Meromyosin in Dictyostelium blocks normal myosin II 
+function.                                                               
+
+C. Geoffrey Burns(1), Mary Reedy(1), John Heuser(2) and Arturo De
+Lozanne(1)
+
+(1) Department of Cell Biology, Duke University Medical Center Durham,
+NC 27710; (2)Department of Cell Biology, Washington University Saint
+Louis, MO 63110
+
+J. Cell Biol., in press.
+
+Summary
+
+   The ability of myosin II to form filaments is essential for its
+function in vivo.  This property of self association is localized in
+the light meromyosin (LMM) region of the myosin II molecules.  To
+explore this property in more detail within the context of living
+cells, we expressed the LMM portion of the Dictyostelium myosin II
+heavy chain gene in wild-type Dictyostelium cells.  We found that the
+LMM protein was expressed at high levels and that it folded properly
+into a-helical coiled-coiled molecules.  The expressed LMM formed
+large cytoplasmic inclusions composed of entangled short filaments
+surrounded by networks of long tubular structures.  Importantly, these
+abnormal structures sequestered the cell's native myosin II,
+completely removing it from its normal cytoplasmic distribution.  As a
+result the cells expressing LMM displayed a myosin-null phenotype:
+they failed to undergo cytokinesis and became multinucleate, failed to
+form caps after treatment with concanavalin A, and failed to complete
+their normal developmental cycle.  Thus, expression of the LMM
+fragment in Dictyostelium completely abrogates myosin II function in
+vivo.  The dominant-negative character of this phenotype holds promise
+as a general method to disrupt myosin II function in many cell types
+without the necessity of gene targeting.
+
+------------------------------------------------------------------------
+
+[End CSM News, volume 4, number 18]
+
+
+
+

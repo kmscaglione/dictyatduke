@@ -1,0 +1,197 @@
+Dicty News
+Electronic Edition
+Volume 17, number 11
+November 3, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=========================
+  Group Leader Position
+=========================
+
+The MRC Laboratory for Molecular Cell Biology has just placed the 
+following advert
+
+
+"The Medical Research Council (MRC) Cell Biology Unit, under the
+directorship of Professor Alan Hall FRS, was established in January this
+year within the Laboratory for Molecular Cell Biology (LMCB) at University
+College London (UCL). The LMCB is a multi-disciplinary collaboration
+between the MRC and UCL, with modern laboratory space and state of the art
+core facilities. We are now seeking new group leaders for the Cell Biology
+Unit. Current areas of interest within the LMCB include the cytoskeleton,
+receptor signalling, membrane traffic and proliferation/differentiation
+control. We are looking to strengthen these areas, but also to expand into
+other areas of molecular cell biology. We are keen to increase the number
+of groups using model organisms to address important aspects of cell
+biology.
+
+Career appointments are available for candidates with an established
+international reputation, while career-track appointments will be offered
+to scientists at an earlier career stage who have demonstrated potential.
+Salary will be negotiable and relocation expenses will be payable where
+appropriate.
+
+
+Please send your application together with a CV, an outline of future
+research plans and the name and contact details of three referees to 
+Professor Alan Hall at MRC Laboratory for Molecular Cell Biology, 
+University College London, Gower Street, London WC1E 6BT or as an e-mail 
+attachment to alan.hall@ucl.ac.uk before 20 December 2001."
+
+The LMCB is definitely receptive to groups working on model systems: 
+present groups include 1 nematode group, two Drosophila groups and my 
+own Dictyostelium group. I have no doubt that good applications using 
+these or other model systems to address cell biological problems will 
+get a full and fair consideration.
+
+Adrian Harwood
+
+
+=============
+  Abstracts
+=============
+
+S-adenosyl-L-homocysteine hydrolase is sequestered into actin rods in 
+Dictyostelium discoideum spores. For CSM News Letter
+
+Yoshiro Kishi1, Teruko Sugo2, Dana Mahadeo3, David Cotter3 and Masazumi 
+Sameshima1* 
+
+1. Electron Microscopy Center, The Tokyo Metropolitan Institute of Medical 
+Science, Tokyo Metropolitan Organization for Medical Research, 3-18-22 
+Honkomagome, Bunkyo-ku, Tokyo 113-8613, Japan. 2. Division of Cell and 
+Molecular Medicine, Center for Molecular Medicine, Jichi Medical School, 
+Yakushiji 3311-1, Tochigi, 329-0498, Japan. 3. Department of Biological 
+Sciences, University of Windsor, 401 Sunset Avenue, Windsor, Ontario, 
+Canada N9B 3P4.
+
+Accepted in FEBS Letters
+
+Abstract
+
+Here we show evidence that S-adenosyl-L-homocysteine hydrolase (SAHH) is 
+linked to the actin cytoskeleton. Actin rods formed in Dictyostelium 
+discoideum spores during the final stage of development are structurally 
+composed of novel bundles of actin filaments. SAHH only accumulates with 
+actin at this stage of development in the life cycle of D. discoideum. 
+Recently SAHH is believed to be a target for antiviral chemotherapy and 
+suppressions of T cells. Our finding may contribute to designing novel 
+antiviral and immunosuppressive drugs.
+
+-----------------------------------------------------------------------------
+
+Assembly of gp80 adhesion complexes in Dictyostelium: receptor 
+compartmentalization and oligomerization in membrane rafts.
+
+Harris, T.J.C., Ravandi, A. and Siu, C.-H.
+
+Banting and Best Department of Medical Research, University of 
+Toronto, Toronto, Ontario.
+
+J Biol Chem 2001 Oct 16; [epub ahead of print]
+
+http://www.jbc.org/cgi/reprint/M108030200v1
+
+	The phospholipid-anchored membrane glycoprotein gp80 mediates 
+cell-cell adhesion through a homophilic trans-interaction mechanism 
+during Dictyostelium development and is enriched in a Triton 
+X-100-insoluble floating fraction (TIFF). To elucidate how gp80 
+adhesion complexes assemble in the plasma membrane, gp80-gp80 and 
+gp80-raft interactions were investigated. A low density raft-like 
+membrane fraction was isolated using a detergent-free method. It was 
+enriched in sterols, the phospholipid-anchored proteins gp80, gp138 
+and ponticulin, as well as DdCD36 and actin, corresponding to 
+components found in TIFF. Chemical cross-linking revealed that gp80 
+oligomers were enriched in the raft-like membrane fraction, 
+implicating stable oligomer-raft interactions. However, gp80 
+oligomers resisted sterol sequestration and were partially 
+dissociated with Triton X-100, suggesting that compartmentalization 
+in rafts was not solely responsible for their formation. The 
+trans-dimer known to mediate adhesion was identified, but 
+cis-oligomerization predominated and displayed greater accumulation 
+during development. In fact, oligomerization was dependent on the 
+level of gp80 expression and occurred among isolated gp80 
+extracellular domains, indicating that it was mediated by direct 
+gp80-gp80 interactions. Rafts existed in gp80-null cells and such 
+preexistent membrane domains may provide optimal microenvironments 
+for gp80 cis-oligomerization and the assembly of adhesion complexes.
+
+-----------------------------------------------------------------------------
+
+Cell-cell adhesion and signal transduction during Dictyostelium development
+
+Juliet C. Coates and Adrian J. Harwood
+
+Commentary in J. Cell Sci
+ 
+Summary
+
+The development of the non-metazoan eukaryote Dictyostelium discoideum 
+displays many of the features of animal embryogenesis, including regulated 
+cell-cell adhesion. During early development, two proteins, DdCAD-1 and csA, 
+mediate cell-cell adhesion between amoebae as they form a loosely packed 
+multicellular mass. The mechanism governing this process is similar to 
+epithelial sheet sealing in animals. Although cell differentiation can occur 
+in the absence of cell contact, regulated cell-cell adhesion is an important 
+component of Dictyostelium morphogenesis, and a third adhesion molecule, 
+gp150, is required for multicellular development past the aggregation stage.
+Cell-cell junctions that appear to be adherens junctions form during late 
+stages of Dictyostelium development. Although not essential to establish 
+the basic multicellular body plan, these junctions are required to maintain 
+the structural integrity of the fruiting body. The Dictyostelium beta-catenin 
+homologue Aardvark (Aar) is present in adherens junctions, which are lost 
+in its absence. As in the case of its metazoan counterparts, Aar also has 
+a function in cell signalling and regulates expression of the prespore gene 
+psA.  It is becoming clear that cell-cell adhesion is an integral part of 
+Dictyostelium development. As in animals, cell adhesion molecules have a 
+mechanical function, and may also interact with the signal transduction 
+processes governing morphogenesis.
+
+-----------------------------------------------------------------------------
+
+Complex glycosylation of Skp1 in Dictyostelium: implications for the 
+modification of other eukaryotic cytoplasmic and nuclear proteins
+
+Christopher M. West1,3, Hanke van der Wel1, and Eric A. Gaucher2
+
+1Dept. of Anatomy and Cell Biology, University of Florida College of Medicine, 
+Gainesville, FL  32610-0235, and 2Dept. of Chemistry, University of Florida, 
+Gainesville, FL  32611-7200,  USA
+
+3 to whom correspondence should be addressed at Dept. of Anatomy and Cell 
+Biology, 1600 SW Archer Road, University of Florida College of Medicine, 
+Gainesville, FL  32610-0235, USA;
+phone 352-392-3329; fax 352-392-3305; email <westcm@college.med.ufl.edu>
+
+GLYCOBIOLOGY, in press
+
+Recently, complex O-glycosylation of the cytoplasmic/nuclear protein Skp1 
+has been characterized in the eukaryotic microorganism Dictyostelium. Skp1's 
+glycosylation is mediated by the sequential action of a prolyl hydroxylase 
+and five conventional sugar nucleotide-dependent glycosyltransferase 
+activities that reside in the cytoplasm rather than the secretory 
+compartment. The Skp1-HyPro GlcNAcTransferase, which adds the first sugar, 
+appears to be related to a lineage of enzymes that originated in the 
+prokaryotic cytoplasm and initiates mucin-type O-linked glycosylation 
+in the lumen of the eukaryotic Golgi apparatus. GlcNAc is extended by 
+a bifunctional glycosyltransferase that mediates the ordered addition 
+of b1,3-linked Gal and a1,2-linked Fuc. The architecture of this enzyme 
+resembles that of certain 2-domain prokaryotic glycosyltransferases. The 
+catalytic domains are related to those of a large family of prokaryotic 
+and eukaryotic, cytoplasmic, membrane-bound, inverting glycosyltransferases 
+that modify glycolipids and polysaccharides prior to their translocation 
+across membranes toward the secretory pathway or the cell exterior. The 
+existence of these enzymes in the eukaryotic cytoplasm away from membranes, 
+and their ability to modify protein acceptors, exposes a new set of 
+cytoplasmic and nuclear proteins to potential prolyl hydroxylation and 
+complex O-linked glycosylation. Recently described candidate targets 
+include mammalian HIF-a, a-synuclein from the central nervous system, and 
+an algal viral capsid protein.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 11]

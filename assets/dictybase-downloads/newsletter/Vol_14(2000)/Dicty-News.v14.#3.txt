@@ -1,0 +1,177 @@
+Dicty News
+Electronic Edition
+Volume 14, number 3
+January 29, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+
+Multiple O-glycoforms on the spore coat protein SP96 in Dictyostelium 
+discoideum
+
+Marcus Mreyen, Alan Champion, Keith L. Williams and Nicolle H. Packer
+
+J. Biol.Chem., In press
+
+Abstract
+
+   A decreased level of fucosylation on certain spore coat proteins of 
+Dictyostelium discoideum alters the permeability of the spore coat. Here 
+the post-translational modifications of a major spore coat protein, SP96, 
+are studied in a wild-type strain (X22) and a fucosylation defective mutant 
+(HU2470). A novel phosphoglycan structure on SP96 of the wild type strain, 
+consisting of Fuc-GlcNAc- alpha-1-P-Ser, was identified by electrospray 
+ionisation mass spectrometry (ESI-MS). It was shown using monosaccharide 
+and gas chromatography mass spectrometry (GC-MS) analysis that SP96 in 
+the mutant HU2470 contained approximately 20% of wild type levels of 
+fucose, as a result of a missing terminal fucose on the novel glycan 
+structure. The results support previous predictions, based on inhibition 
+studies on different fucose deficient strains, about the nature of 
+monoclonal antibody (mAb) epitopes identified by mAbs MUD62 and MUD166, 
+which are known to identify O-linked glycans (Champion et al. (1995).
+Microbiology 141, 785-97). Quantitative studies on wild-type SP96 indicated 
+there were approximately 60 sites with phosphodiester linked N-acetyl- 
+glucosamine-fucose disaccharide units and a further approximately 20 sites 
+with fucose directly linked to the protein. Over 70% of the serine sites 
+are modified, with less than 1% of these sites phosphorylated without 
+further glycosylation. Threoinine and tyrosine residues were not found 
+to be modified. 
+
+----------------------------------------------------------------------------
+
+Dictyostelium amoebae lacking an F-box protein form spores rather than 
+stalk in chimeras with wild-type
+
+Herbert L. Ennis*, Dee N. Dao*, Stefan U. Pukatzki, and Richard H. Kessin
+
+Department of Anatomy and Cell Biology, Columbia University, 630 West 168th St.
+N.Y., N.Y. 10032, USA
+
+Accepted,  Proceedings of the National Academy of Sciences, USA 
+
+Summary: Using a selection for Dictyostelium mutants that preferentially 
+form spores we have recovered a mutant called CheaterA. In chimeras with 
+isogenic wild-type cells, the CheaterA mutant preferentially forms viable 
+spores rather than inviable stalk cells. The mutant causes wild-type cells 
+that have begun to express spore-specific genes to migrate to the prestalk 
+compartment of the developing organism. In the wild-type, the chtA 
+transcript is absent in growing cells and appears early in development. 
+No transcript was detected in mutant slugs by northern blot. The chtA gene 
+codes for a protein with an F-box and WD40 domains. This class of protein 
+usually forms part of a complex that targets specific protein substrates 
+for ubiquitination and degradation.
+
+Note: Our colleagues Margaret Nelson, Jeff Williams, and Rick Firtel have 
+also cloned and studied this gene. 
+
+----------------------------------------------------------------------------
+
+The actin cytoskeleton of Dictyostelium: a story from mutants
+
+Angelika A. Noegel and Michael Schleicher*
+
+
+Institut für Biochemie I, Medizinische Fakultät, Universität zu Köln,
+Joseph-Stelzmann-Str. 52, 50931 Köln, FRG, *Adolf-Butenandt-Institut für
+Zellbiologie, Ludwig-Maximilians-Universität, Schillerstr. 42, 80336
+München, FRG
+
+J. Cell Sci.
+
+SUMMARY
+
+Actin-binding proteins are effectors of cell signalling and coordinators of
+cellular behaviour. Emphasis in research of the Dictyostelium actin
+cytoskeleton focusses both on the elucidation of the function of bona fide
+actin-binding proteins as well as on proteins involved in signalling to the
+cytoskeleton. A major part of this work is concerned with the analysis of
+Dictyostelium mutants. The results derived from these investigations have
+added to our understanding of the role of the actin cytoskeleton in growth
+and development. Furthermore, the studies identified several cellular and
+developmental stages, that are particularly sensitive to an unbalanced
+cytoskeleton. In addition, use of GFP fusion proteins unravels the spatial
+and temporal patterns of their association with the cytoskeleton.
+
+----------------------------------------------------------------------------
+
+The Dictyostelium LIM domain-containing protein LIM2 is essential for 
+proper chemotaxis and morphogenesis
+
+Sharon Chien, Chang Y. Chung, Sujatha Sukumaran, Nicholas Osborne, Susan Lee, 
+Charlene Ellsworth, James G. McNally, and Richard A. Firtel
+
+Molecular Biology of the Cell, in press.
+
+ABSTRACT
+
+We have identified limB, a gene encoding a novel LIM domain containing 
+protein, LIM2 in a screen for genes required for morphogenesis. limB null 
+cells aggregate, although poorly, but they are unable to undergo morphogenesis 
+and the aggregates arrest at the mound stage. limB null cells exhibit an 
+aberrant actin cytoskeleton and have numerous F-actin-enriched microspikes. 
+The cells exhibit poor adhesion to a substratum and do not form tight cell-cell 
+agglomerates in suspension. Furthermore, limB null cells are unable to 
+properly polarize in chemoattractant gradients and move very poorly. 
+Expression of limB from a prestalk-specific but not a prespore-specific 
+promoter complements the morphogenetic defects of the limB null strain, 
+suggesting that the limB null cell developmental defect results from an 
+inability to properly sort prestalk cells. LIM2 protein is enriched in the 
+cortex of wild-type cells, although it does not co-localized with the actin 
+cytoskeleton. Our analysis indicates that LIM2 is a new regulatory protein 
+that functions to control rearrangements of the actin cytoskeleton and is 
+required for cell motility and chemotaxis. Our findings may be generally 
+applicable to understanding pathways controlling cell movement and 
+morphogenesis in all multicellular organisms. Structure function studies 
+on the LIM domains is presented.
+
+----------------------------------------------------------------------------
+
+Charge Changes in Loop 2 Affect the Thermal Unfolding of the Myosin Motor 
+Domain Bound to F-Actin.
+
+Michael A. Ponomarev‡, Marcus Furch, Dmitrii I. Levitsky‡, and Dietmar J. 
+Manstein*
+
+‡ A.N.Bach Institute of Biochemistry, Russian Academy of Sciences, Leninsky 
+prosp. 33, Moscow 117071, Russia, and Max-Planck-Institut für Medizinische 
+Forschung, Jahnstr. 29, 69120 Heidelberg, Germany
+
+Biochemistry, in press
+
+ABSTRACT
+
+   The thermal unfolding of Dictyostelium discoideum myosin head fragments 
+with alterations in the actin-binding surface loop 2 was studied by 
+differential scanning calorimetry (DSC). Lengthening of loop 2 without 
+concomitant charge changes led to decreases in the transition temperature of 
+not more than 1.8oC. Insertions with multiple positive or negative charges 
+had a stronger destabilizing effect and led to reductions in the thermal 
+transition temperature of up to 3.7oC. In the presence of nucleotide, most 
+mutants displayed similar or higher transition temperatures than M765. Only 
+constructs M765(11/+6) and M765(20/+12) with long positively charged inserts 
+showed transition temperatures that were more than 2oC below the values 
+measured for M765 in the presence of ADP, ADP-AlF4 and ADP-BeF3. Interaction 
+with F-actin in the presence of ADP shifted the thermal transition of M765 
+by 6oC, from 49.1°C to 55.1°C. The actin-induced increase in thermal 
+stability varied between 1.2 and 9.1°C and showed a strong correlation with 
+the mutant constructs’ affinity for actin. Our results show that length and 
+charge changes in loop 2 do not significantly affect nucleotide-induced 
+structural changes in the myosin motor domain, but they affect structural 
+changes that occur when the motor domain is strongly bound to actin and 
+affect the coupling between the actin- and nucleotide binding sites.
+
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 3]
+
+  

@@ -1,0 +1,103 @@
+dictyNews
+Electronic Edition
+Volume 32, number 7
+March 13, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+The carboxy-terminal domain of Dictyostelium C-module-binding factor is an 
+independent gene regulatory entity
+
+J. Lucas (1), A. Bilzer (1), L. Moll (2), I. Zündorf (3), T. Dingermann (3), 
+L. Eichinger (2), O. Siol (1), T. Winckler (1)
+
+(1) School of Biology and Pharmacy, Institute of Pharmacy, Department of 
+PharmaceuticalBiology, University of Jena, Semmelweisstrasse 10, 
+07743 Jena, Germany
+(2) Institute for Biochemistry I, Medical Faculty, University of Cologne, 
+Joseph-Stelzmann-Strasse 52, 50931 Cologne, Germany
+(3) Institute of Pharmaceutical Biology, University of Frankfurt, 
+Max-von-Laue-Strasse 9, 60438 Frankfurt am Main, Germany
+
+
+PLoS ONE, in press
+
+The C-module-binding factor (CbfA) is a multidomain protein that belongs to 
+the family of jumonji-type (JmjC) transcription regulators. In the social 
+amoeba Dictyostelium discoideum, CbfA regulates gene expression during the 
+unicellular growth phase and multicellular development. CbfA and a related 
+D. discoideum CbfA-like protein, CbfB, share a paralogous domain arrangement 
+that includes the JmjC domain, presumably a chromatin-remodeling activity, 
+and two zinc finger-like (ZF) motifs. On the other hand, the CbfA and CbfB 
+proteins have completely different carboxy-terminal domains, suggesting 
+that the plasticity of such domains may have contributed to the adaptation 
+of the CbfA-like transcription factors to the rapid genome evolution in the 
+dictyostelid clade. To support this hypothesis we performed DNA microarray 
+and real-time RT-PCR measurements and found that CbfA regulates at least 
+160 genes during the vegetative growth of D. discoideum cells. Functional 
+annotation of these genes revealed that CbfA predominantly controls the 
+expression of gene products involved in housekeeping functions, such as 
+carbohydrate, purine nucleoside/nucleotide, and amino acid metabolism. 
+The CbfA protein displays two different mechanisms of gene regulation. The 
+expression of one set of CbfA-dependent genes requires at least the 
+JmjC/ZF domain of the CbfA protein and thus may depend on chromatin 
+modulation. Regulation of the larger group of genes, however, does not 
+depend on the entire CbfA protein and requires only the carboxyterminal 
+domain of CbfA (CbfA-CTD). An AT-hook motif located in CbfA-CTD, which 
+is known to mediate DNA binding to A+T-rich sequences in vitro, 
+contributed to CbfA-CTD-dependent gene regulatory functions in vivo.
+
+
+Submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+--------------------------------------------------------------------------------
+
+
+
+The mood stabiliser lithium suppresses PIP3 signalling in Dictyostelium and 
+human cells
+
+Jason S. King, Regina Teo, Jonathan Ryves, Jonathan V. Reddy, Owen Peters, 
+Ben Orabi, Oliver Hoeller, Robin S. B. Williams2 and Adrian J. Harwood
+
+
+Disease Models & Mechanisms, in press
+
+Bipolar mood disorder (manic depression) is a major psychiatric disorder 
+whose molecular origins are unknown. Mood stabilisers offer patients both 
+acute and prophylactic treatment, and experimentally, they provide a means 
+to probe the underlying biology of the disorder. Lithium and other mood 
+stabilisers deplete intracellular inositol and it has been proposed that 
+bipolar mood disorder arises from aberrant inositol (1,4,5)-trisphosphate 
+[IP3, also known as Ins(1,4,5)P3] signalling. However, there is no definitive 
+evidence to support this or any other proposed target; a problem exacerbated 
+by a lack of good cellular models. Phosphatidylinositol (3,4,5)-trisphosphate 
+[PIP3, also known as PtdIns(3,4,5)P3] is a prominent intracellular signal 
+molecule within the central nervous system (CNS) that regulates neuronal 
+survival, connectivity and synaptic function. By using the genetically 
+tractable organism Dictyostelium, we show that lithium suppresses 
+PIP3-mediated signalling. These effects extend to the human neutrophil 
+cell line HL60. Mechanistically, we show that lithium attenuates 
+phosphoinositide synthesis and that its effects can be reversed by 
+overexpression of inositol monophosphatase (IMPase), consistent with 
+the inositol-depletion hypothesis. These results demonstrate a lithium 
+target that is compatible with our current knowledge of the genetic 
+predisposition for bipolar disorder. They also suggest that lithium therapy 
+might be beneficial for other diseases caused by elevated PIP3 signalling.
+
+
+
+Submitted by: Adrian Harwood [harwoodaj@cf.ac.uk]
+==============================================================
+[End dictyNews, volume 32, number 7]

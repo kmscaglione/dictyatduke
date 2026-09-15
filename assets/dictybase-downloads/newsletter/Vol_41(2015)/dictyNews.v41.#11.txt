@@ -1,0 +1,118 @@
+dictyNews
+Electronic Edition
+Volume 41, number 11
+May 29, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+A deep coverage Dictyostelium discoideum genomic DNA library 
+replicates stably in E. coli
+
+Rafael D. Rosengarten, Pamela R. Beltran and Gad Shaulsky
+
+Department of Molecular and Human Genetics Baylor College 
+of Medicine, Houston, TX
+
+
+Genomics, accepted for publication
+
+The natural history of the amoeba Dictyostelium discoideum 
+has inspired scientific inquiry for seventy-five years. A 
+genetically tractable haploid eukaryote, D. discoideum appeals 
+as a laboratory model as well. However, certain rote molecular 
+genetic tasks, such as PCR and cloning, are difficult due to 
+the AT-richness and low complexity of its genome. Here we 
+report on the construction of a ~20 fold coverage D. discoideum 
+genomic library in E. coli, cloning 4 – 10 kilobase partial 
+restriction fragments into a linear vector. End-sequencing 
+indicates that most clones map to the six chromosomes in an 
+unbiased distribution. Over 70% of these clones contain at 
+least one complete open reading frame. We demonstrate that 
+individual clones and library composition are stable over 
+multiple replication cycles. Our library will enable numerous 
+molecular biological applications and the completion of 
+additional species’ genome sequences, and suggests a path 
+towards the long-elusive goal of genetic complementation.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu] 
+----------------------------------------------------------------------
+
+
+Secreted cyclic-di-GMP induces stalk cell differentiation in the 
+eukaryote Dictyostelium discoideum
+
+Minireview
+Zhi-hui Chen and Pauline Schaap#
+
+College of Life Sciences, University of Dundee, Dundee DD15EH, UK
+
+
+J. Bacteriol., in press
+
+Cyclic-di-GMP is currently recognized as the most widely used 
+intracellular signal molecule in prokaryotes, but roles in 
+eukaryotes were only recently discovered. In the social amoeba 
+Dictyostelium discoideum, c-di-GMP, produced by a prokaryote-type 
+diguanylate cyclase, induces the differentiation of stalk cells, 
+thereby enabling the formation of spore- bearing fruiting bodies. 
+In this review, we summarize the currently known mechanisms that 
+control the major life cycle transitions of Dictyostelium and focus 
+particularly on the role of c-di-GMP in stalk formation. Stalk cell 
+differentiation has characteristics of autophagic cell death, a 
+process that also occurs in higher eukaryotes. We discuss the 
+respective roles of c-di-GMP and of another signal molecule, DIF, 
+in autophagic cell death in vitro and in stalk formation in vivo.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk] 
+----------------------------------------------------------------------
+
+
+Temporal regulation of kin recognition maintains recognition-cue 
+diversity and suppresses cheating
+
+Hsing-I Ho and Gad Shaulsky
+
+Department of Molecular and Human Genetics, Baylor College of 
+Medicine, Houston, TX
+
+Nature Communications, in press
+
+Kin recognition, the ability to distinguish kin from non-kin, can 
+facilitate cooperation between relatives. Evolutionary theory predicts 
+that polymorphism in recognition cues, which is essential for effective 
+recognition, would be unstable. Individuals carrying rare recognition 
+cues would benefit less from social interactions than individuals with 
+common cues, leading to loss of the genetic cue-diversity. We test 
+this evolutionary hypothesis in Dictyostelium discoideum, which forms 
+multicellular fruiting bodies by aggregation and utilizes two 
+polymorphic membrane proteins to facilitate preferential cooperation. 
+Surprisingly, we find that rare recognition variants are tolerated and 
+maintain their frequencies among incompatible majority during 
+development. Although the rare variants are initially excluded from the 
+aggregates, they subsequently rejoin the aggregate and produce spores. 
+Social cheating is also refrained in late development, thus limiting 
+the cost of chimerism. Our results suggest a potential mechanism to 
+sustain the evolutionary stability of kin recognition genes and to 
+suppress cheating.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu] 
+==============================================================
+[End dictyNews, volume 41, number 11]

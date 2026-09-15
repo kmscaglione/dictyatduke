@@ -1,0 +1,77 @@
+dictyNews
+Electronic Edition
+Volume 32, number 6
+March 6, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Review: Eukaryotic Chemotaxis
+
+Wouter-Jan Rappel and William F. Loomis
+Departments of Physics and Biology, University of California, San Diego
+
+
+Wiley Interdisciplinary Reviews: Systems Biology and Medicine, in press
+
+During eukaryotic chemotaxis, external chemical gradients guide the crawling 
+motion of cells. This process plays an important role in a large variety of 
+biological systems and has wide ranging medical implications. New 
+experimental techniques including confocal microscopy and microfluidics 
+have advanced our understanding of chemotaxis while numerical modeling 
+efforts are beginning to offer critical insights. In this short review, we 
+survey the current experimental status of the field by dividing chemotaxis 
+into three distinct 'modules': directional sensing, polarity and motility.  
+For each module, we attempt to point out potential new directions of research 
+and discuss how modeling studies interact with experimental investigations.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+
+Filopodia: Complex models for simple rods
+
+
+Jan Faix (1), Dennis Breitsprecher (1), Theresia E.B. Stradal (2) and 
+Klemens Rottner (2).
+
+(1) Inst. for Biophysical Chemistry, Hannover Medical School, Germany.
+(2) Helmholz Center for Infection Research, Braunschweig, Germany.
+
+
+International Journal of Biochemistry & Cell Biology, in press.
+
+Filopodia are prominent cell surface projections filled with bundles of linear 
+actin filaments that drive their protrusion. These structures are considered 
+important sensory organelles, for instance in neuronal growth cones or during 
+the fusion of sheets of epithelial tissues. In addition, they can serve a 
+precursor function in adhesion site or stress fibre formation. Actin filament 
+assembly is essential for filopodia formation and turnover, yet the precise 
+molecular mechanisms of filament nucleation and/or elongation are 
+controversial. Indeed, conflicting reports on the molecular requirements of 
+filopodia initiation have prompted researchers to propose different types 
+and/or alternative or redundant mechanisms mediating this process. 
+However, recent data shed new light on these questions, and they indicate 
+that the balance of a limited set of biochemical activities can determine the 
+structural outcome of a given filopodium. Here we focus on discussing our 
+current view of the relevance of these activities, and attempt to propose a 
+molecular mechanism of filopodia assembly based on a single core 
+machinery.
+
+
+Submitted by: Hans Faix [faix@bpc.mh-hannover.de]
+==============================================================
+[End dictyNews, volume 32, number 6]

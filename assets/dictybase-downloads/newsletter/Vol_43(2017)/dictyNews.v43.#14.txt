@@ -1,0 +1,110 @@
+dictyNews
+Electronic Edition
+Volume 43, number 14
+July 7, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Drinking problems: mechanisms of macropinosome formation and 
+maturation.
+
+Catherine M Buckley and Jason S King
+
+Department of Biomedical Sciences, University of Sheffield, UK.
+
+
+FEBS Journal  2017 May 24 
+http://onlinelibrary.wiley.com/doi/10.1111/febs.14115/full
+
+Macropinocytosis is a mechanism for the nonspecific bulk uptake 
+and internalisation of extracellular fluid. This plays specific and 
+distinct roles in diverse cell types such as macrophages, dendritic 
+cells and neurons, by allowing cells to sample their environment, 
+extract extracellular nutrients and regulate plasma membrane 
+turnover. Macropinocytosis has recently been implicated in 
+several diseases including cancer, neurodegenerative diseases 
+and atherosclerosis. Uptake by macropinocytosis is also exploited 
+by several intracellular pathogens to gain entry into host cells. 
+Both capturing and subsequently processing large volumes of 
+extracellular fluid poses a number of unique challenges for the cell. 
+Macropinosome formation requires coordinated three-dimensional 
+manipulation of the cytoskeleton to form shaped protrusions able 
+to entrap extracellular fluid. The following maturation of these large 
+vesicles then involves a complex series of membrane 
+rearrangements to shrink and concentrate their contents, while 
+delivering components required for digestion and recycling. 
+Recognition of the diverse importance of macropinocytosis in 
+physiology and disease has prompted a number of recent studies. 
+In this article, we summarise advances in our understanding of 
+both macropinosome formation and maturation, and seek to 
+highlight the important unanswered questions.
+
+
+submitted by: Jason King [jason.king@sheffield.ac.uk]
+———————————————————————————————————————
+
+
+Distinct VASP tetramers synergize in the processive elongation 
+of individual actin filaments from clustered arrays
+
+Stefan Brühmann1, Dmitry S. Ushakov1, Moritz Winterhoff1, 
+Richard B. Dickinson2, Ute Curth1, and Jan Faix1
+
+1) Institute for Biophysical Chemistry, Hannover Medical School, 
+30625 Hannover, Germany; 
+2) Department of Chemical Engineering, University of Florida, 
+Gainesville, FL 32611
+
+
+PNAS, in press
+
+Ena/VASP proteins act as actin polymerases that drive the 
+processive elongation of filament barbed ends in membrane 
+protrusions or at the surface of bacterial pathogens. Based on 
+previous analyses of fast and slow elongating VASP proteins 
+by in vitro total internal reflection fluorescence microscopy 
+(TIRFM) and kinetic and thermodynamic measurements, we 
+established a kinetic model of Ena/VASP-mediated actin 
+filament elongation. At steady state, it entails that tetrameric 
+VASP uses one of its arms to processively track growing 
+filament barbed ends while three G-actin–binding sites 
+(GABs) on other arms are available to recruit and deliver 
+monomers to the filament tip, suggesting that VASP 
+operates as a single tetramer in solution or when clustered 
+on a surface, albeit processivity and resistance toward 
+capping protein (CP) differ dramatically between both 
+conditions. Here, we tested the model by variation of the 
+oligomerization state and by increase of the number of 
+GABs on individual polypeptide chains. In excellent 
+agreement with model predictions, we show that in solution
+the rates of filament elongation directly correlate with the 
+number of free GABs. Strikingly, however, irrespective of the 
+oligomerization state or presence of additional GABs, filament 
+elongation on a surface invariably proceeded with the same 
+rate as with the VASP tetramer, demonstrating that adjacent 
+VASP molecules synergize in the elongation of a single 
+filament. Additionally, we reveal that actin ATP hydrolysis is 
+not required for VASP-mediated filament assembly. Finally, 
+we show evidence for the requirement of VASP to form 
+tetramers and provide an amended model of processive 
+VASPmediated actin assembly in clustered arrays.
+
+
+submitted by: Jan Faix [faix.jan@mh-hannover.de]
+==============================================================
+[End dictyNews, volume 43, number 14]

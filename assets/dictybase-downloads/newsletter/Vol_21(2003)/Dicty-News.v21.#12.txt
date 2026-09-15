@@ -1,0 +1,162 @@
+Dicty NewsElectronic EditionVolume 21, number 12October 17, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+=============  Abstracts=============
+
+Compromise of Clathrin Function and Membrane Association by Clathrin Light 
+Chain DeletionJingshan Wang, Valerie C. Virta, Kathryn Riddelle-Spencer, and 
+Theresa J.  O'HalloranTraffic, in pressWhile clathrin heavy chains from different species are highly conserved in 
+amino acid sequence, clathrin light chains are much more divergent.  Thus 
+clathrin light chain may have different roles in different organisms.  To 
+investigate clathrin light chain function, we cloned the clathrin light 
+chain, clcA, from Dictyostelium and examined clathrin function in clcA- 
+mutants.  Phenotypic deficiencies in development, cytokinesis, and 
+osmoregulation showed that light chain was critical for clathrin function 
+in Dictyostelium.  In contrast with budding yeast, we found the light chain 
+did not influence steady state levels of clathrin, triskelion formation, or 
+contribute to clathrin overassembly on intracellular membranes.  Imaging 
+GFP-CHC in clcA- mutants showed that the heavy chain formed dynamic punctate 
+structures that were remarkably similar to those found in wildtype cells. 
+However, clathrin light chain knockouts showed a decreased association of 
+clathrin with intracellular membranes.  Unlike wildtype cells, half of the 
+clathrin in clcA- mutants was cytosolic, suggesting that the absence of 
+light chain compromised the assembly of triskelions onto intracellular 
+membranes.  Taken together, these results suggest a role for the 
+Dictyostelium clathrin light chain in regulating the self-assembly of 
+triskelions onto intracellular membranes, and demonstrate a crucial 
+contribution of the light chain to clathrin function in vivo.
+
+Submitted by: Terry O'Halloran [t.ohalloran@mail.utexas.edu]
+
+-----------------------------------------------------------------------------
+
+Transfer RNA gene-targeted integration: an adaptation of retrotransposable 
+elements to survive in the compact Dictyostelium discoideum genomeThomas Winckler(1), Karol Szafranski(2) and Gernot Gloeckner(2)1 Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Biozentrum), D-60439 Frankfurt am Main, Germany2 IMB Jena, Department of Genome Analysis, D-07745 Jena, GermanyCytogenetic and Genome Research, in press
+
+REVIEW
+Almost every organism carries along a multitude of molecular parasites known 
+as transposable elements (TEs). TEs influence their host genomes in many ways 
+by expanding genome size and complexity, rearranging genomic DNA, mutagenizing 
+host genes, and altering transcription levels of nearby genes. The eukaryotic 
+microorganism Dictyostelium discoideum is attractive for the study of 
+fundamental biological phenomena such as intercellular communication, 
+formation of multicellularity, cell differentiation, and morphogenesis. 
+D. discoideum has a highly compacted, haploid genome with less than 1 kb of 
+genomic DNA separating coding regions. Nevertheless, the D. discoideum genome 
+is loaded with 10% TEs that managed to settle and survive in this inhospitable 
+environment. In depth analysis of D. discoideum genome project data has 
+provided intriguing insights into the evolutionary challenges that mobile 
+elements face when they invade compact genomes. Two different mechanisms are 
+used by D. discoideum TEs to avoid disruption of host genes upon 
+retrotransposition. Several TEs have invented the specific targeting of tRNA 
+gene-flanking regions as a means to avoid integration into coding regions. 
+These elements have been dispersed on all chromosomes, closely following the 
+distribution of tRNA genes. By contrast, TEs that lack bona fide integration 
+specificities show a strong bias to nested integration, thus forming large 
+TE clusters at certain chromosomal loci that are hardly resolved by 
+bioinformatics approaches. We summarize our current view of D. discoideum TEs 
+and present new data from the analysis of the complete sequences of 
+D. discoideum chromosomes 1 and 2, which comprise more than one third of the 
+total genome.
+Submitted by: Thomas Winckler [winckler@em.uni-frankfurt.de]
+
+-----------------------------------------------------------------------------
+
+Actin-binding proteins required for reliable chromosome segregation in mitosis Guenther GerischÊ1, Jan Faix 2,  Jana Koehler 1,Êand 
+Annette Mueller-Taubenberger 1  1  Max-Planck-Institut fuer Biochemie,  D-82152 Martinsried, Germany;2  Ludwig-Maximilians-Universitaet, Institut fuer Zellbiologie, D-80336 
+Muenchen, Germany. Cell Motility and the Cytoskeleton, in press While studying mitosis in Dictyostelium mutants with deficiencies in 
+actin-binding proteins, we found that two of these proteins, cortexillin and 
+Aip1, are required for the precise segregation of chromosomes.  Atypical 
+spindles and nuclei with varying DNA content indicate that mutants lacking 
+cortexillin or Aip1 are genetically unstable.  These aberrations are caused 
+by the detachment and irregular reattachment of centrosomes to the nuclear 
+surface.  Live imaging showed how coalescing mitotic complexes give rise to 
+a multipolar spindle, and how excess centrosomes can be eliminated by 
+mitotic cleavage between anucleate and nucleated portions of a cell.  We 
+hypothesize that mutations in regulatory proteins of the actin network 
+might be one cause of genetic instability of malignant tumor cells.Submitted by:  Guenther Gerisch  [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+Dictyostelium discoideum: Cellular slime mold (Review) Annette Mueller-Taubenberger 1, and Markus Maniak 2 1  Max-Planck-Institut fuer Biochemie,  D-82152 Martinsried, Germany;2  Universitaet Gh Kassel, Department of Cell Biology, D-34132 Kassel, 
+Germany. Accepted, Encyclopedia of Molecular Cell Biology and Molecular Medicine 
+(ed. R. A. Meyers), Wiley-VCH Dictyostelium discoideum is a tractable system for the study of basic 
+processes in cell and developmental biology. These processes include 
+signal transduction, chemotaxis, motility, cytokinesis, phagocytosis, 
+and aspects of development such as cell sorting, pattern formation and 
+cell-type differentiation. Dictyostelium has unique advantages for 
+studying fundamental biological questions, since it is particularly 
+amenable to both genetic and biochemical analyses. Dictyostelium has 
+been chosen, along with several other organisms with known genomes, as a 
+model system to analyze the functions of the identified genes. Biological 
+questions in Dictyostelium have mainly addressed the function of individual 
+gene products, but more systematic approaches have now been launched based 
+on the knowledge derived from genome-, proteome- and cDNA-projects. Recent 
+studies on the genetics of Dictyostelium have opened new directions in 
+biomedical research.  This review summarizes the current knowledge on the 
+Dictyostelium genome, updates the state of the Dictyostelium genome project 
+and concentrates on the molecular methods currently used to explore the 
+functions of individual gene products. Submitted by:  Annette Mueller-Taubenberger  [amueller@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+Two components of a secreted cell-number counting factor bind to cells and 
+have opposing effects on cAMP signal transduction in DictyosteliumDebra A. Brock1, Karen Ehrenman1, Robin Ammann1, Yitai Tang2, and 
+Richard H. Gomer1,21Howard Hughes Medical Institute and 2Department of Biochemistry and 
+Cell Biology, Rice University, Houston, TX J. Biol. Chem., in press	A secreted 450 kDa complex of proteins called counting factor (CF) 
+is part of a negative feedback loop that regulates the size of the groups 
+formed by developing Dictyostelium cells.  Two components of CF are countin 
+and CF50.  Both recombinant countin and recombinant CF50 decrease group size 
+in Dictyostelium.  countinø cells have a decreased cAMP-stimulated cAMP 
+pulse while recombinant countin potentiates the cAMP pulse.  We find that 
+cf50ø cells have an increased cAMP pulse while recombinant CF50 decreases 
+the cAMP pulse, suggesting that countin and CF50 have opposite effects on 
+cAMP signal transduction.  In addition, countin and CF50 have opposite 
+effects on cAMP-stimulated erk2 activation.  However, like recombinant 
+countin, recombinant CF50 increases cell motility.  We previously found 
+that cells bind recombinant countin with a Hill coefficient of 
+approximately 2, a KH of 60 pM and approximately 53 sites/ cells.  We find 
+here that cells also bind 125I-recombinant CF50, with a Hill coefficient of 
+approximately 2, a KH of approximately 15 ng/ ml (490 pM), and 
+approximately 56 sites/ cell.  Countin and CF50 require each other's presence 
+to affect group size, but the presence of countin is not necessary for CF50 to 
+bind to cells, and CF50 is not necessary for countin to bind to cells.  Our 
+working hypothesis is that a signal transduction pathway activated by countin 
+binding to cells modulates a signal transduction pathway activated by CF50 
+binding to cells, and vice versa, and that these two pathways can be 
+distinguished by their effects on cAMP signal transduction.
+
+Submitted by: Richard Gomer [richard@rice.edu]
+
+-----------------------------------------------------------------------------
+
+Dd-STATb, a Dictyostelium STAT protein with a highly aberrant SH2 domain, 
+functions as a regulator of gene expression during growth and early developmentN. V. Zhukovskaya*, M. Fukuzawa*, M. Tsujioka, K. A. Jermyn, T. Kawata, 
+T. Abe, M. Zvelebil^ andJ. G. Williams+School of Life Sciences, University of Dundee, MSI/WTB Complex, Dow Street,Dundee DD1 5EH, UK ^University College London, Ludwig Institute for Cancer Research, 
+The Cruciform Building, Gower Street, London WC1E 6BT, UK ÊÊÊÊ * These authors contributed equally to this work Development, in press
+
+Dictyostelium, the only known non-metazoan organism to employ SH2 
+domain:phosphotyrosine signaling,  possesses STATs (Signal Transducers and 
+Activators of Transcription) and protein kinases with orthodox SH2 domains. 
+Here, however, we describe a novel Dictyostelium STAT containing a remarkably 
+divergent SH2 domain. Dd-STATb displays a 15 amino acid insertion in its SH2 
+domain and the conserved and essential arginine residue, that interacts with
+ phosphotyrosine in all other known SH2 domains, is substituted by leucine. 
+Despite these abnormalities, Dd-STATb is biologically functional. It has a 
+subtle role in growth, so that Dd-STATb null cells are gradually lost from 
+the population when they are co-cultured with parental cells, and micro-array 
+analysis identified several genes that are either under-expressed or 
+over-expressed in the Dd-STATb null strain. The best characterised of these, 
+discoidin 1, is a marker of the growth-development transition and it is 
+over-expressed during growth and early development of Dd-STATb null cells. 
+Dimerisation of STAT proteins occurs by mutual SH2 domain:phosphotyrosine 
+interactions and dimerisation  triggers STAT nuclear accumulation. Despite 
+its aberrant SH2 domain, the Dd-STATb protein sediments at the size expected 
+for a homo-dimer and it is constitutively enriched in the nucleus. Moreover, 
+these properties are retained when the predicted site of tyrosine 
+phosphorylation is substituted by phenylalanine. These observations suggest 
+a non-canonical mode of activation of Dd-STATb, that does not rely on 
+orthodox SH2 domain:phosphotyrosine interactions.
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+===============================================================================[End Dicty News, volume 21, number 12]

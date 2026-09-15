@@ -1,0 +1,170 @@
+Dicty News
+Electronic Edition
+Volume 14, number 9
+April 22, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Dictyostelium RasD is Required for Normal Phototaxis, but not
+Differentiation
+
+Andrew Wilkins, Meenal Khosla, Derek J. Fraser,George B. Spiegelman,
+Paul R. Fisher, Gerald Weeks and Robert H. Insall
+
+in press, Genes & Development
+
+Abstract
+
+RasD, a Dictyostelium homologue of mammalian Ras, is maximally
+expressed during the multicellular stage of development.  Normal
+Dictyostelium aggregates are phototactic and thermotactic, moving
+towards sources of light and heat with great sensitivity.  We show
+that disruption of the gene for rasD causes a near-total loss of
+phototaxis and thermotaxis in mutant aggregates, without obvious
+effects on undirected movement.  Previous experiments had suggested
+important roles for RasD in development and cell-type determination.
+Surprisingly, rasD- cells show no obvious changes in these processes.
+These cells represent a novel class of phototaxis mutant, and
+indicate a role for a Ras pathway in the connections between stimuli
+and coordinated cell movement.
+
+
+----------------------------------------------------------------------------
+
+An Akt/PKB-related kinase activated via a cAMP-receptor dependent,
+PI(3) kinase-independent pathway is required for Dictyostelium
+multicellular development
+
+Ruedi Meili, Charlene Ellsworth, and Richard A. Firtel
+
+Current Biology, in press.
+
+ABSTRACT
+
+Background:  Dictyostelium Akt/PKB is homologous to mammalian Akt/PKB
+and is required for cell polarity and proper chemotaxis during early
+development.  Akt/PKB kinase activity is activated in response to
+chemoattractants in neutrophils and in Dictyostelium by the
+chemoattractant cAMP functioning via a G protein-, PI3 kinase-dependent
+pathway. Dictyostelium contains several kinase structurally related to
+Akt/PKB, one of which, PKBR-1, is investigated here for its role in cell
+polarity, movement, and cellular morphogenesis during development.
+
+Results: PKBR-1 has a kinase and C-terminal domain related to those of
+Akt/PKB but no PH domain.  Instead, it has an N-terminal myristoylation
+site, which is required for PKBR-1's constitutive membrane localization.
+Like Akt/PKB, PKBR-1 is activated by cAMP through a G protein-dependent
+pathway but which does not require PI3K, probably due to PKBR-1's
+constitutive membrane localization, supported by experiments demonstrating
+the requirement of PKBR-1's membrane association for activation and in
+vivo function.  PKBR-1 protein is found in all cells through early
+development but is then restricted to the apical cells in developing
+aggregates, which are thought to control morphogenesis. PKBR-1 null
+cells arrest development at the mound stage and are defective in
+morphogenesis and multicellular development.  These phenotypes are
+complemented Akt/PKB, suggesting functional overlap between PKBR-1
+and Akt/PKB.  Akt/PKB:PKBR-1 double knockout cells exhibit growth
+defects and show stronger chemotaxis and cell polarity defects than
+Akt/PKB null cells.
+
+Conclusions: Our results expand the previously known functions of Akt/PKB
+family members in cell movement and morphogenesis during multicellular
+development.  The data suggest that Akt/PKB and PKBR-1 have overlapping
+effectors and biological function: Akt/PKB, functions predominantly during
+aggregation to control cell polarity and chemotaxis while PKBR-1 is
+required for morphogenesis during multicellular development.
+
+----------------------------------------------------------------------------
+
+Real-time high-resolution optical sectioning suggests biphasic cytokinetic
+mechanism in Dictyostelium discoideum.
+
+Yoshio Fukui
+
+Cell and Molecular Biology, Northwestern University Medical School,
+Chicago, IL 60611-3008.
+
+In Biology of cytokinesis, (ed. Y. Fukui). Microscope Research and
+Technique,
+vol. 49, Number 2 (April 2000). In press.
+
+Abstract
+
+Despite its biological significance, much of the mechanism of cytokinesis
+is not yet resolved.  The problems include: (1) signaling mechanism
+determining
+the position of the cleavage furrow, (2) molecular and mechanistic nature of
+the contractile ring, and (3) the origin of forces responsible for cleavage.
+Using high-resolution imaging technique, the present study analyzes
+morphometric changes of cytokinesis in wild type (NC4) Dictyostelium
+discoideum amoeba.  Sample was prepared by the agar-overlay method, creating
+3 mm-thick, nearly two-dimensional cells; and high-resolution image was
+acquired at 16.7 milliseconds’ temporal, 234 nm x, y-, and 100 nm z-axis
+resolutions.  Under this condition, the formation of cleavage furrow
+initiates
+at mitotic telophase, and daughter cells separate 18-22 minutes after the
+furrow initiation.  We found that the compression of cells and the room
+temperature need to be carefully controlled for cytokinesis to proceed in
+orderly manner.  The results demonstrate that the pole-to-pole distance
+increases by 83% during the initial 5 minutes of cytokinesis, while the
+distance of equator only decreases by 56%.  In contrast, during the
+subsequent
+5 minutes, the pole-to-pole distance only increases by 17%, while the
+equator
+distance decreases as much as by 44%.  This study indicates that cytokinesis
+consists of at least two different phases, each of which results from
+different mechanism.
+
+Note:  This is available online at http://pubweb.nwu.edu/~yoshifk/fukui.html
+
+----------------------------------------------------------------------------
+SPATIALLY REGULATED RECRUITMENT OF CLATHRIN TO
+THE PLASMA MEMBRANE DURING CAPPING AND CELL
+TRANSLOCATION
+
+Cynthia K. Damer1, and Theresa J. O'Halloran2
+1 Department of Biology, Vassar College;
+2 Section of Molecular Cell & Developmental Biology
+The University of Texas at Austin, Austin TX
+
+In press, Molecular Biology of the Cell
+
+Abstract
+
+   Clathrin coated vesicles bud from selected cellular membranes to traffic
+specific intracellular proteins.  To study the dynamic properties of
+clathrin coated membranes, we expressed clathrin heavy chain tagged with
+green
+fluorescent protein (GFP) in Dictyostelium cells.  GFP-clathrin was
+functional
+and retained the native properties of clathrin: the chimeric protein formed
+classic clathrin lattices on cellular membranes and also rescued phenotypic
+defects of clathrin null cells.  GFP-clathrin distributed into punctate loci
+found throughout the cytoplasm, on the plasma membrane and concentrated to a
+perinuclear location. These clathrin-coated structures were remarkably
+motile,
+and capable of rapid and bidirectional transport across the cell. We
+identified
+two local domains of the plasma membrane as sites for clathrin recruitment
+in
+motile cells.  First, as cells translocated or changed shape and retracted
+their tails, clathrin was transiently concentrated on the membrane at the
+back of the cell tail.  Secondly, as cells capped their cell surface
+receptors,
+clathrin was recruited locally to the membrane under the tight cap of
+crosslinked receptors.  This suggests that local sites for clathrin
+polymerization on specific domains of the plasma membrane undergo rapid and
+dynamic regulation in motile cells.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 9]

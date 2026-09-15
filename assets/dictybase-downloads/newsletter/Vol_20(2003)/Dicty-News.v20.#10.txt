@@ -1,0 +1,55 @@
+Dicty NewsElectronic EditionVolume 20, number 10May 30, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at DictyBase--http://dictybase.org.=============  Abstracts=============Superoxide signalling required for multicellular development of Dictyostelium.Gareth Bloomfield and Catherine PearsBiochemistry Department, Oxford University, South Parks Road, Oxford OX1 3QU, UKJ. Cell Science, in pressReactive oxygen species are known to have a signalling role in many organisms. 
+In bacteria and yeast various response systems have evolved to combat oxidative 
+stress which are triggered by reactive oxygen species. Mammals and plants are 
+known to actively generate reactive oxygen species such as superoxide during 
+signalling responses to a variety of extracellular factors. We report here 
+the generation of superoxide as a signalling molecule in early development of 
+Dictyostelium discoideum. Dictyostelium grows as single amoebae but, on 
+starvation, the single cells aggregate to form a multicellular organism. 
+Superoxide is generated in response to a secreted factor during the 
+transition to the multicellular phase of development. Scavenging superoxide, 
+either pharmacologically or by overexpressing the enzyme superoxide 
+dismutase, inhibits the formation of the aggregate. This report of the use of 
+superoxide as a signalling molecule in a lower eukaryote as it switches to a 
+multicellular phase suggests that this signalling mechanism arose early in 
+the evolution of multicellular organisms, perhaps as a necessary consequence 
+of the need to diversify the number and type of signalling pathways available 
+to facilitate intercellular communication. 
+
+Submitted by: Catherine Pears [catherine.pears@bioch.ox.ac.uk]
+-----------------------------------------------------------------------------
+
+CF45-1, a secreted protein which participates in group size regulation in 
+DictyosteliumDebra A. Brock, R. Diane Hatton, Dan-Victor Giurgiutiu, Brenton Scott, Wonhee 
+Jang, Robin Ammann, and Richard H. GomerHoward Hughes Medical Institute and Department of Biochemistry and Cell Biology, 
+MS-140, Rice University, 6100 S. Main Street, Houston, TX 77005 USAEukaryotic Cell, in pressDeveloping Dictyostelium cells aggregate to form fruiting bodies containing 
+typically 2 x 104 cells.  To prevent the formation of an excessively large 
+fruiting body, streams of aggregating cells break up into groups if there 
+are too many cells.  The breakup is regulated by a secreted complex of 
+polypeptides called counting factor (CF).  Countin and CF50 are two of the 
+components of CF.  Disrupting the expression of either of these proteins 
+results in cells secreting very little detectable CF activity, and as a 
+result aggregation streams remain intact and form large fruiting bodies, 
+which invariably collapse.  We find that disrupting the gene encoding a 
+third protein present in crude CF, CF45-1, also results in the formation 
+of large groups when cells are grown with bacteria on agar plates and then 
+starve.  However, unlike countinø and cf50ø cells, cf45-1ø cells sometimes 
+form smaller groups than wild-type cells when the cells are starved on 
+filter pads.  The predicted amino acid sequence of CF45-1 has some 
+similarity to lysozyme, but recombinant CF45-1 has no detectable lysozyme 
+activity.  In the exudates from starved cells, CF45-1 is present in a 
+~450 kDa fraction that also countin and CF50, suggesting that it is part of 
+a complex.  Recombinant CF45-1 decreases group size in colonies of cf45-1ø
+ cells with an EC50 of ~8 ng/ ml and in colonies of wild-type and cf50ø 
+cells with an EC50 of ~40 ng/ml.  Like countinø and cf50ø cells, cf45-1ø 
+cells have high levels of cytosolic glucose, high cell-cell adhesion, and 
+low cell motility.  Together, the data suggest that CF45-1 participates in 
+group size regulation in Dictyostelium.
+
+Submitted by: Richard Gomer [richard@bioc.rice.edu]
+-----------------------------------------------------------------------------
+
+Regulated expression of the centrosomal protein DdCP224 affects microtubuledynamics and reveals mechanisms for the control of supernumerary centrosomenumberRalph Graef*, Ursula Euteneuer, Thi-Hieu Ho, and Markus RehbergAdolf-Butenandt-Institut / Zellbiologie, Universitaet Muenchen, Schillerstr.42, D-80336 Muenchen, GermanyMol. Biol. Cell, in press The Dictyostelium XMAP215-family member DdCP224 is involved in centrosomeduplication and cytokinesis and is concentrated at the centrosome andmicrotubule tips. Here we have created a DdCP224 promoter replacementmutant that allows both over- and underexpression. Overexpression led tosupernumerary MTOCs and, independently, an increase of the number ofmultinuclear cells. Electron microscopy demonstrated that supernumeraryMTOCs represented bona fide centrosomes. Live cell imaging of DdCP224-GFPmutants also expressing GFP-histone2B as a DNA label revealed thatsupernumerary centrosomes were also competent of cell cycle-dependentduplication. By contrast, underexpression of DdCP224 inhibited cell growth,reduced the number and length of astral microtubules, and caused nocodazolehypersensitivity. Moreover, microtubule regrowth after nocodazole removalwas dependent on DdCP224. Underexpression also resulted in a strikingdisappearance of supernumerary centrosomes and multinuclear cells caused byprevious overexpression. We show for the first time by live cellobservation that the number of supernumerary centrosomes can be reducedeither by centrosome fusion (coalescence) or by the formation of cytoplastscontaining supernumerary centrosomes during cytokinesis.
+
+Submitted by: Ralph Graef [rgraef@lrz.uni-muenchen.de]
+============================================================[End Dicty News, volume 20, number 10]

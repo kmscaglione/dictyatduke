@@ -1,0 +1,132 @@
+dictyNews
+Electronic Edition
+Volume 40, number 13
+May 16, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Potential role of bacteria packaging by protozoa in the persistence 
+and transmission of pathogenic bacteria
+
+Alix M. Denoncourt1,2, Valérie E. Paquet1,2 and Steve J. Charette1,2,3*
+
+1. Institut de Biologie Intégrative et des Systèmes (IBIS), Canada
+2. Centre de recherche de l'institut universitaire en cardiologie et 
+pneumologie de Québec, Canada
+3. Département de biochimie, microbiologie et bio-informatique, 
+Université Laval, Canada
+
+
+Front. Microbiol. | doi: 10.3389/fmicb.2014.00240
+(Hypothesis & theory article)
+http://journal.frontiersin.org/Journal/10.3389/fmicb.2014.00240/abstract)
+
+Many pathogenic bacteria live in close association with protozoa. These 
+unicellular eukaryotic microorganisms are ubiquitous in various environments. 
+A number of protozoa such as amoebae and ciliates ingest pathogenic 
+bacteria, package them usually in membrane structures, and then release 
+them into the environment. Packaged bacteria are more resistant to various 
+stresses and are more apt to survive than free bacteria. New evidence 
+indicates that protozoa and not bacteria control the packaging process. It 
+is possible that packaging is more common than suspected and may play 
+a major role in the persistence and transmission of pathogenic bacteria. 
+To confirm the role of packaging in the propagation of infections, it is vital 
+that the molecular mechanisms governing the packaging of bacteria by 
+protozoa be identified as well as elements related to the ecology of this 
+process in order to determine whether packaging acts as a Trojan Horse.
+
+
+Submitted by Steve Charette [Steve.Charette@bcm.ulaval.ca]
+---------------------------------------------------------------------------
+
+
+Secondary Ion Mass Spectrometry Imaging of Dictyostelium discoideum 
+Aggregation Streams 
+
+J. Daniel DeBord1, Donald F. Smith2, Christopher R. Anderton3, 
+Ron M.A. Heeren2, Ljiljana Pasa-Tolc 3, Richard H. Gomer4, and 
+Francisco A. Fernandez-Lima1*
+
+1Department of Chemistry and Biochemistry, Florida International 
+University, Miami, FL 33199, USA
+2 FOM Institute AMOLF, Science Park 104, 1098 XG Amsterdam, 
+The Netherlands
+3 Environmental Molecular Sciences Laboratory, Pacific Northwest 
+National Laboratory, Richland, Washington 99352, USA
+4Department of Biology, Texas A&M University, College Station, 
+TX 77843, USA
+
+
+PLoS ONE, in press
+
+High resolution imaging mass spectrometry could become a valuable tool 
+for cell and developmental biology, but both, high spatial and mass spectral 
+resolution are needed to enable this. In this report, we employed Bi3 
+bombardment time-of-flight (Bi3 ToF-SIMS) and C60 bombardment Fourier 
+transform ion cyclotron resonance secondary ion mass spectrometry 
+(C60 FTICR-SIMS) to image Dictyostelium discoideum aggregation streams. 
+Nearly 300 lipid species were identified from the aggregation streams. High 
+resolution mass spectrometry imaging (FTICR-SIMS) enabled the generation 
+of multiple molecular ion maps at the nominal mass level and provided good 
+coverage for fatty acyls, prenol lipids, and sterol lipids. The comparison of 
+Bi3 ToF-SIMS and C60 FTICR-SIMS suggested that while the first provides 
+fast, high spatial resolution molecular ion images, the chemical complexity 
+of biological samples warrants the use of high resolution analyzers for 
+accurate ion identification.
+
+
+Submitted by Richard Gomer [rgomer@tamu.edu]
+---------------------------------------------------------------------------
+
+
+Erika Kovacs-Bogdan , Yasemin Sancak , Kimberli J. Kamer , Molly 
+Plovanich , Ashwini Jambhekar , Robert J. Huber , Michael A Myre , 
+Michael D Blower and Vamsi K. Mootha
+
+Reconstitution of the mitochondrial calcium uniporter in yeast.
+
+Proceedings of the National Academy of Sciences, USA in press
+
+The mitochondrial calcium uniporter is a highly selective calcium 
+channel distributed broadly across eukaryotes but absent in the yeast S. 
+cerevisiae. In recent years, the molecular components of the human 
+uniporter holocomplex (uniplex) have been identified. It consists of three 
+membrane-spanning subunits (MCU, its paralogue MCUb, and EMRE) 
+and two soluble regulatory components (MICU1 and its paralogue MICU2). 
+At present, the minimal components sufficient for in vivo uniporter activity 
+are not known. Here, we consider Dictyostelium discoideum (Dd), a 
+member of amoebazoa, which is the outgroup of metazoa and fungi, and 
+show that it has a highly simplified uniporter machinery. We show that 
+D. discoideum mitochondria exhibit membrane potential-dependent 
+calcium uptake compatible with uniporter activity. Furthermore, expression 
+of DdMCU complements the mitochondrial calcium uptake defect in human 
+cells lacking MCU or EMRE. Moreover, expression of DdMCU in yeast 
+alone is sufficient to reconstitute mitochondrial calcium uniporter activity. 
+Having established yeast as an in vivo reconstitution system, we then 
+reconstituted the human uniporter. We show that co-expression of MCU 
+and EMRE is sufficient for uniporter activity, whereas expression of MCU 
+alone is not sufficient. Our work establishes yeast as a powerful in vivo 
+reconstitution system for the uniporter. Using this system we confirm that 
+MCU is the pore-forming subunit, define the minimal genetic elements 
+sufficient for a metazoan and a non-metazoan uniporter activity, and 
+provide valuable insights into the evolution of the uniporter machinery.
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+==============================================================
+[End dictyNews, volume 40, number 13]

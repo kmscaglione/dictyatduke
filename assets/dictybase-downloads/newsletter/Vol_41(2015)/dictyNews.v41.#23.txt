@@ -1,0 +1,191 @@
+dictyNews
+Electronic Edition
+Volume 41, number 23
+October 31, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Reactive oxygen species and mitochondria: A nexus of cellular 
+homeostasis.
+
+Dan Dunn J1, Alvarez LA2, Zhang X3, Soldati T4.
+
+1Department of Biochemistry, University of Geneva, 30 quai 
+Ernest Ansermet, Sciences II, CH-1211 Genève-4, Switzerland. 
+2National Children's Research Centre, Our Lady's Children's 
+Hospital, Crumlin, Dublin 12, Ireland. 
+3Department of Biochemistry, University of Geneva, 30 quai 
+Ernest Ansermet, Sciences II, CH-1211 Genève-4, Switzerland. 
+4Department of Biochemistry, University of Geneva, 30 quai 
+Ernest Ansermet, Sciences II, CH-1211 Genève-4, Switzerland. 
+
+
+In: Redox Biol. 2015 Sep 10;6:472-485.
+
+Reactive oxygen species (ROS) are integral components of 
+multiple cellular pathways even though excessive or 
+inappropriately localized ROS damage cells. ROS function as 
+anti-microbial effector molecules and as signaling molecules 
+that regulate such processes as NF-kB transcriptional activity, 
+the production of DNA-based neutrophil extracellular traps 
+(NETs), and autophagy. The main sources of cellular ROS are 
+mitochondria and NADPH oxidases (NOXs). In contrast to 
+NOX-generated ROS, ROS produced in the mitochondria 
+(mtROS) were initially considered to be unwanted by-products 
+of oxidative metabolism. Increasing evidence indicates that 
+mtROS have been incorporated into signaling pathways including 
+those regulating immune responses and autophagy. As metabolic 
+hubs, mitochondria facilitate crosstalk between the metabolic 
+state of the cell with these pathways. Mitochondria and ROS 
+are thus a nexus of multiple pathways that determine the 
+response of cells to disruptions in cellular homeostasis such 
+as infection, sterile damage, and metabolic imbalance. In this 
+review, we discuss the roles of mitochondria in the generation 
+of ROS-derived anti-microbial effectors, the interplay of 
+mitochondria and ROS with autophagy and the formation of DNA 
+extracellular traps, and activation of the NLRP3 inflammasome 
+by ROS and mitochondria.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]  
+————————————————————————————————————
+
+
+Charged Solvatochromic Dyes as Signal Transducers in pH 
+Independent Fluorescent and Colorimetric Ion Selective 
+Nanosensors.
+
+Xie X1, Gutiérrez A1,2, Trofimov V2, Szilagyi I1, 
+Soldati T2, Bakker E1.
+
+1Department of Inorganic and Analytical Chemistry, University 
+of Geneva , Quai Ernest-Ansermet 30, CH-1211, Geneva, 
+Switzerland.
+2Department of Biochemistry, University of Geneva , Quai 
+Ernest-Ansermet 30, CH-1211, Geneva, Switzerland.
+
+
+In: Anal Chem. 2015 Oct 6;87(19):9954-9.
+
+Ionophore-based ion selective optical nanosensors that operate 
+independently of the sample pH are developed here by the use 
+of electrically charged solvatochromic dyes as signal 
+transducers. A series of dye molecules with a D-pi-A structure 
+was synthesized and characterized in various solvents and 
+incorporated into ion selective nanospheres for K(+), Na(+), 
+and H(+). Since dye leakage was greatly suppressed when the 
+solvatochromic dyes were encapsulated in the nanosphere core, 
+ion sensing nanospheres were explored for cellular ion imaging 
+in Dictyostelium discoideum live cells but spontaneous dye 
+loss resulted in undesired staining of cells. The in vitro analysis 
+of potassium in human plasma was successfully demonstrated 
+with this approach. A theoretical model was developed for the 
+response of the ion selective nanosensors containing charged 
+solvatochromic dyes. The nanosensors exhibited a tunable 
+response range, high sensitivity, and good stability.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch] 
+———————————————————————————————————————
+
+
+Adrenergic antagonists restrict replication of Legionella.
+
+Harrison CF1, Kicka S2, Kranjc A3, Finsel I1, Chiriano G3, 
+Ouertatani-Sakouhi H4, Soldati T2, Scapozza L3, Hilbi H5.
+
+1 Max von Pettenkofer Institute, Department of Medicine, 
+Ludwig-Maximilians University Munich, 80336 Munich, Germany.
+2 Department of Biochemistry, University of Geneva, 1211 
+Geneva, Switzerland.
+3 School of Pharmaceutical Sciences, Department of 
+Pharmaceutical Biochemistry, University of Geneva and 
+University of Lausanne, 1211 Geneva, Switzerland.
+4 Faculty of Medicine, University of Geneva, 1211 Geneva, 
+Switzerland. 
+5 Institute of Medical Microbiology, Department of Medicine, 
+University of Zurich, Gloriastrasse 30/32, 8006 Zurich, 
+Switzerland.
+
+
+In: Microbiology. 2015 Jul;161(7):1392-406
+
+Legionella pneumophila is a facultative intracellular bacterium, 
+which upon inhalation can cause a potentially fatal pneumonia 
+termed Legionnaires' disease. The opportunistic pathogen grows 
+in environmental amoebae and mammalian macrophages within a 
+unique membrane-bound compartment, the 'Legionella-containing 
+vacuole'. Bacteria are exposed to many environmental cues 
+including small signalling molecules from eukaryotic cells. A 
+number of pathogenic bacteria sense and respond to catecholamine 
+hormones, such as adrenalin and noradrenalin, a process mediated 
+via the QseBC two-component system in some bacteria. In this 
+study, we examined the effect of adrenergic compounds on 
+L. pneumophila, and discovered that the adrenergic receptor 
+antagonists benoxathian, naftopidil, propranolol and labetalol, as 
+well as the QseC sensor kinase inhibitor LED209, reduced the 
+growth of L. pneumophila in broth or amoebae, while replication 
+in macrophages was enhanced. Growth restriction was common to 
+members of the genus Legionella and Mycobacterium, and was 
+observed for L. pneumophila in the replicative but not stationary 
+phase of the biphasic life cycle. Deletion of the L. pneumophila 
+qseBC genes indicated that growth inhibition by adrenergics or 
+LED209 is mediated only to a minor extent by this two-component 
+system, implying the presence of other adrenergic sensing systems. 
+This study identifies adrenergic molecules as novel inhibitors of 
+extra- and intracellular growth of Legionella and reveals LED209 
+as a potential lead compound to combat infections with Legionella 
+or Mycobacterium spp.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch] 
+———————————————————————————————————————
+
+
+Live imaging of Mycobacterium marinum infection in Dictyostelium 
+discoideum.
+
+Barisch C1, López-Jiménez AT, Soldati T.
+
+1Département de Biochimie, Faculté des Sciences, Université de 
+Genève, Sciences II, 30 Quai Ernest Ansermet, 1211, Genève-4, 
+Switzerland.
+
+
+In; Methods Mol Biol. 2015;1285:369-85: 
+
+The Dictyostelium discoideum-Mycobacterium marinum host-pathogen 
+system is a recently established and powerful model system for 
+mycobacterial infection. In this chapter, two simple protocols for 
+live imaging of Dictyostelium discoideum infection are described. 
+The first method is used to monitor the dynamics of recruitment of 
+GFP-tagged Dictyostelium discoideum proteins at single time-points 
+corresponding to the main stages of the infection (1.5-72 h post 
+infection). The second method focuses at the early stages of the 
+establishment of an infection (0-3 h post infection). In addition, 
+several procedures to improve the imaging of the bacterium-
+containing compartment are described. Basic bacterial parameters 
+such as bacterial growth and the recruitment of host proteins to 
+the bacterium-containing compartment can be easily and precisely 
+quantified using macros for ImageJ. These methods can be adapted 
+to monitoring mycobacteria infection in other systems using 
+mammalian cells.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch] 
+==============================================================
+[End dictyNews, volume 41, number 23]

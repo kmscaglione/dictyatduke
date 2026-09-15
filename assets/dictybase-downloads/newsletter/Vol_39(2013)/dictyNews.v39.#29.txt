@@ -1,0 +1,109 @@
+dictyNews
+Electronic Edition
+Volume 39, number 29
+October 11, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Luo T, Mohan K, Iglesias PA, Robinson DN. 
+
+Molecular mechanisms of cellular mechanosensing
+
+
+Nat. Mater. 2013, in press.
+
+Mechanical forces direct a host of cellular and tissue processes. 
+Although much emphasis has been placed on cell-adhesion 
+complexes as force sensors, the forces must nevertheless be 
+transmitted through the cortical cytoskeleton. Yet how the actin 
+cortex senses and transmits forces and how cytoskeletal proteins 
+interact in response to the forces is poorly understood.  Here, by 
+combining molecular and mechanical experimental perturbations 
+with theoretical multiscale modelling, we decipher cortical 
+mechanosensing from molecular to cellular scales. We show that 
+forces are shared between myosin II and different actin crosslinkers, 
+with myosin having potentiating or inhibitory effects on certain 
+crosslinkers. Different types of cell deformation elicit distinct 
+responses, with myosin and alpha-actinin responding to dilation, 
+and filamin mainly reacting to shear. Our observations show that 
+the accumulation kinetics of each protein may be explained by its 
+molecular mechanisms, and that protein accumulation and the 
+cell’s viscoelastic state can explain cell contraction against 
+mechanical load.
+
+
+Submitted by Douglas Robinson [dnr@jhmi.edu]
+---------------------------------------------------------------------------
+
+
+Phosphorylation of chemoattractant receptors regulates 
+chemotaxis, actin reorganization and signal relay
+
+Joseph A. Brzostowski1,*, Satoshi Sawai2, Orr Rozov1,‡, 
+Xin-hua Liao3,§, Daisuke Imoto4, Carole A. Parent5 and 
+Alan R. Kimmel3,*
+
+1Laboratory of Immunogenetics Imaging Facility, NIAID/NIH, 
+Rockville, MD 20852, USA
+2Graduate School of Arts and Sciences, University of Tokyo and 
+PRESTO, JST, Tokyo 153-8902, Japan
+3Laboratory of Cellular and Developmental Biology, NIDDK/NIH, 
+Bethesda, MD 20892, USA
+4Graduate School of Arts and Sciences, University of Tokyo, 
+Tokyo 153-8902, Japan
+5Laboratory of Cellular and Molecular Biology, NCI/NIH, Bethesda, 
+MD 20892, USA
+*Authors for correspondence (jb363a@nih.gov; alank@helix.nih.gov)
+
+
+J Cell Sci126, 4614-4626
+
+Migratory cells, including mammalian leukocytes and Dictyostelium, 
+use G-protein-coupled receptor (GPCR) signaling to regulate 
+MAPK/ERK, PI3K, TORC2/AKT, adenylyl cyclase and actin 
+polymerization, which collectively direct chemotaxis. Upon ligand 
+binding, mammalian GPCRs are phosphorylated at cytoplasmic 
+residues, uncoupling G-protein pathways, but activating other 
+pathways. However, connections between GPCR phosphorylation 
+and chemotaxis are unclear. In developing Dictyostelium, secreted 
+cAMP serves as a chemoattractant, with extracellular cAMP 
+propagated as oscillating waves to ensure directional migratory 
+signals. cAMP oscillations derive from transient excitatory responses 
+of adenylyl cyclase, which then rapidly adapts. We have studied 
+chemotactic signaling in Dictyostelium that express non-
+phosphorylatable cAMP receptors and show through chemotaxis 
+modeling, single-cell FRET imaging, pure and chimeric population 
+wavelet quantification, biochemical analyses and TIRF microscopy, 
+that receptor phosphorylation is required to regulate adenylyl 
+cyclase adaptation, long-range oscillatory cAMP wave production 
+and cytoskeletal actin response. Phosphorylation defects thus 
+promote hyperactive actin polymerization at the cell periphery, 
+misdirected pseudopodia and the loss of directional chemotaxis. 
+Our data indicate that chemoattractant receptor phosphorylation is 
+required to co-regulate essential pathways for migratory cell 
+polarization and chemotaxis. Our results significantly extend the 
+understanding of the function of GPCR phosphorylation, providing 
+strong evidence that this evolutionarily conserved mechanism is 
+required in a signal attenuation pathway that is necessary to 
+maintain persistent directional movement of Dictyostelium, 
+neutrophils and other migratory cells.
+
+
+Submitted by Joe Brzostowski [brzostowskij@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 39, number 29]

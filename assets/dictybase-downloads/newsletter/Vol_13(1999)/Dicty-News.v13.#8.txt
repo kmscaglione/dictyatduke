@@ -1,0 +1,227 @@
+Dicty News
+Electronic Edition
+Volume 13, number 8
+25 September, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+[Editors note:  The following abstract appeared in the last issue.  Due to
+problems with translation of embedded symbols, the units associated with the
+forces appeared incorrectly.  A corrected version of the abstract is 
+reprinted in its entirety below.]
+
+Migration Forces in Dictyostelium Measured by Centrifuge DIC Microscopy
+
+Yoshio Fukui 1, Taro Q. P. Uyeda2, Chikako Kitayama 2, and Shinya Inoué3 
+
+1 Cell and Molecular Biology, Northwestern University Medical School, 
+Chicago, IL 60611-3008.
+2 Biomolecular Research Group, National Institute for Advanced 
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan. 
+3 Marine Biological Laboratory, Woods Hole, MA 02543-1015.
+
+Biological Bulletin, in press
+
+Abstract
+
+   Amoeboid locomotion represents an important biological activity 
+involved in cell growth and development .  Forces that underlie movement 
+of the giant amoeba, Chaos chaos, have been estimated to be 1.5 x 10e2 
+pN/micrometer2 as measured by Kamiya’s double chamber method.  For a slime 
+mold, Dictyostelium discoideum, the forces of cell locomotion have been 
+unknown, but the cortex resists poking with a microneedle (cortical tension) 
+at 4.1 x 10e3 pN/micrometer2 (Pasternak et al., 1989) .  By micropipette 
+aspiration, the cortical tension of D. discoideum has been measured as 1.55 
+x 10e3 pN/micrometer2 (Gerald et al., 1998).  In the present study, we have 
+determined the migration stalling forces of D. discoideum by using a 
+Centrifuge Polarizing Microscope (CPM) equipped with DIC optics (Goda et 
+al., 1998).  The results demonstrated that individual wild type (NC4) 
+amoebae can crawl centripetally on a glass surface in resistance to 
+gravitational forces larger than 11,465 x g.  NC4 amoebae can also 
+undergo normal cytokinesis at forces of at least 8,376 x g.
+
+(Addendum)
+
+Our results also showed that the gravitational forces equivalent to the 
+migration stall forces for NC4, AX3, HS1 (mhcA-: Ruppel et al., 1994), 
+and A5 (myoA-/myoB-/mhcA-: Kitayama et al., 1998) are, respectively,  
+>2.77 x 10e3 pN, 1.08 x 10e3 pN, 0.28 x 10e3 pN, and 0.30 x 103 pN.
+
+A preprint will become available at http://pubweb.acns.nwu.edu/
+~yoshifk/fukui.html.
+
+----------------------------------------------------------------------------
+
+Molecular mechanisms of membrane trafficking. What do we learn from 
+Dictyostelium discoideum ?
+
+Eva M. Neuhaus and Thierry Soldati#
+
+Department of Molecular Cell Research, Max-Planck-Institute for Medical
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+Protist, in press
+
+Summary
+
+   Thanks to increasing interest, understanding of the molecular mechanisms
+underlying intracellular membrane transport is truly emerging. Even more
+rapid advance is expected since the recognition that efforts to unravel both
+membrane traffic and cytoskeleton need to be concerted. The two main
+membrane traffic pathways are the biosynthetic/secretory route, where
+transport occurs from the ER via the Golgi apparatus to the plasma membrane
+and the endocytic route involving the flow from the plasma membrane to the
+degradative compartment. These two pathways intersect at many compartments,
+both comprise multiple transport steps and both involve efficient sorting of
+membrane and soluble proteins. Here, we review recent studies on the
+dissection of endocytic trafficking in Dictyostelium discoideum and
+integrate the information in the light of knowledge acquired from other
+systems.
+
+----------------------------------------------------------------------------
+
+PAKa, a Putative PAK Family Member, is Required for Cytokinesis and 
+the Regulation of the Cytoskeleton in Dictyostelium Cells during 
+Chemotaxis
+
+Chang Y. Chung and Richard A. Firtel
+
+Department of Biology
+Center for Molecular Genetics
+University of California, San Diego
+9500 Gilman Drive
+La Jolla, CA 92093-0634
+
+J. of Cell Biology, in press.
+
+Abstract
+
+We have identified a Dictyostelium gene encoding a serine/threonine 
+kinase, PAKa, a putative member of the Ste20/PAK family of 
+p21-activated kinases, with a kinase domain and a long N-terminal 
+regulatory domain containing an acidic segment, a polyproline domain, 
+and a CRIB domain.  PAKa co-localizes with myosin II to the cleavage 
+furrow of dividing cells and the posterior of polarized, chemotaxing 
+cells via its N-terminal domain.  paka null cells are defective in 
+completing cytokinesis in suspension.  PAKa is also required for 
+maintaining the direction of cell movement, suppressing lateral 
+pseudopod extension, and proper retraction of the posterior of 
+chemotaxing cells.  paka null cells are defective in myosin II 
+assembly, as the myosin II cap in the posterior of chemotaxing cells 
+and myosin II assembly into cytoskleton upon cAMP stimulation are 
+absent in these cells, while constitutively active PAKa leads to an 
+upregulation of myosin II assembly.  PAKa kinase activity against 
+histone 2B is transiently stimulated and PAKa incorporates into the 
+cytoskeleton with kinetics similar to those of myosin II assembly in 
+response to chemoattractant signaling.  However, PAKa does not 
+phosphorylate myosin II.  We suggest that PAKa is a major regulator 
+of myosin II assembly, but does so by negatively regulating myosin II 
+heavy chain kinase.
+
+----------------------------------------------------------------------------
+
+Promoter analysis of the membrane protein gp64 gene of the cellular 
+slime mold Polysphondylium pallidum
+
+Naohisa Takaoka 1, Masashi Fukuzawa 2, Tamao Saito 1, Takehisa 
+Sakaitani 1 and Hiroshi Ochiai 1
+
+1 Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University, Sapporo, 060-0810 Japan, 
+2 Wellcome Trust Building, Department of Anatomy and Physiology, University 
+of Dundee, Dow Street, Dundee, DD1 4HN, UK
+
+Biochem. Biophys. Acta, in press
+
+Abstract
+
+   We cloned a genomic fragment of the membrane protein gp64 gene of 
+the cellular slime mold Polysphondylium pallidum by inverse PCR.  Primer 
+extension analysis identified a major transcription start site 65 bp 
+upstream of the translation start codon.  The promoter region of the gp64 
+gene contains sequences homologous to a TATA box at position - 47 to - 37 
+and to an initiator (Inr, PyPyCAPyPyPyPy) at position - 3 to + 5 from the 
+transcription start site.  Successively truncated segments of the promoter 
+were tested for their ability to drive expression of the ß-galactosidase 
+reporter gene in transformed cells; also was the difference of the activity 
+between the growth conditions compared.  The results indicated that there 
+are two positive vegetative regulatory elements extending between -187 and 
+-62 bp from the transcription start site of the gp64 promoter; also their 
+activity was two to three times higher in the cells grown with bacteria 
+in shaken suspension than in the cells grown in an axenic medium. 
+
+----------------------------------------------------------------------------
+
+Identification of ?5-fatty acid desaturase from the cellular slime mold 
+Dictyostelium discoideum 
+
+Tamao SAITO and Hiroshi OCHIAI 
+
+Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University, Sapporo, 060-0810 Japan 
+
+Eur. J. Biochem. in press 
+
+Abstract
+
+   cDNA fragments putatively encoding amino acid sequences characteristic 
+of the fatty acid desaturase were obtained using expressed sequence tag (EST) 
+information of the Dictyostelium cDNA project.   Using this sequence, we 
+have determined the cDNA sequence and genomic sequence of a desaturase.  The 
+cloned cDNA is 1489 nucleotides long and the deduced amino acid sequence 
+comprised 464 amino acid residues containing an N-terminal cytochrome b5 
+domain.   The whole sequence was 38.6% identical to the first found 
+?5-desaturase of Mortierella alpina.  We have confirmed its function as 
+?5-desaturase by over expression mutation in D. discoideum and also the 
+gain of function mutation in the yeast Saccharomyces cerevisiae.  Analysis of 
+the lipids from transformed D. discoideum and yeast demonstrated the 
+accumulation of ?5-desaturated products.   This is the first report about 
+the fatty acid desaturase in the cellular slime molds. 
+
+----------------------------------------------------------------------------
+
+A putative receptor mediating cell-density sensing in Dictyostelium
+
+William J. Deery and Richard H. Gomer
+
+Howard Hughes Medical Institute, Department of Biochemistry and Cell
+Biology, MS-140, Rice University, 6100 S. Main Street   Houston, TX
+77005-1892
+
+J. Biol. Chem., in press
+
+Abstract
+
+   When Dictyostelium cells starve, they begin secreting a
+glycoprotein called conditioned medium factor (CMF).  When there is a high
+density of starved cells, as indicated by a high concentration of CMF, the
+cells begin expressing some genes and aggregate using pulses of cAMP as a
+chemoatractant.  CMF regulates gene expression via a G protein-independent
+pathway, while CMF regulates cAMP signal transduction via a G
+protein-dependent pathway.  To elucidate receptors mediating cell density
+sensing, we used CMF-sepharose to isolate membrane proteins that bind CMF.
+We identified a 50 kD protein, CMFR1, that is sensitive to trypsin
+treatment of whole cells.  We obtained partial amino acid sequence of CMFR1
+and isolated the cDNA encoding it.  The derived amino acid sequence has no
+significant similarity to known proteins, and has two or three predicted
+transmembrane domains.  Expression of CMFR1 in insect cells caused an
+increase in CMF binding.  Repression of CMFR1 in Dictyostelium by gene
+disruption resulted in a ~50% decrease of the CMF binding, and a loss of
+CMF-induced G protein-independent gene expression.  The G protein dependent
+CMF signal transduction pathways appear to be functional in cmfr1 cells,
+suggesting that cells sense the density-sensing factor CMF using two or
+more different receptors.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 8]
+
+  

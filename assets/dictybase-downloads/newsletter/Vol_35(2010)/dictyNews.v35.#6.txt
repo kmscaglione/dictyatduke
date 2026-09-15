@@ -1,0 +1,54 @@
+dictyNews
+Electronic Edition
+Volume 35, number 6
+September 3, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Differential regulation by phosphoinositides of bacterial uptake and Nramp1 
+(Slc11a1)-induced resistance to Legionella infection in Dictyostelium 
+
+Barbara Peracino, Alessandra Balest and Salvatore Bozzaro
+Department of Clinical and Biological Sciences, University of Turin, 
+AOU S. Luigi, 10043 Orbassano (Torino), Italy
+
+
+J Cell Science, in press
+
+Membrane phosphatidylinositides recruit cytosolic proteins, regulating 
+phagocytosis, macropinocytosis and endo-lysosomal vesicle maturation. 
+Here we describe effects of PI3K, PTEN or PLC inactivation on Escherichia 
+coli and Legionella pneumophila uptake by the professional phagocyte 
+Dictyostelium discoideum. We show that L. pneumophila is engulfed by 
+macropinocytosis, a process that is partially sensitive, unlike E. coli 
+phagocytosis, to PI3K inactivation. Both processes are blocked by PLC i
+nhibition.  While E. coli is rapidly digested, Legionella proliferates 
+intracellularly. Proliferation is blocked by constitutively expressing Nramp1, 
+an endo-lysosomal iron transporter that confers resistance against invasive 
+bacteria. Inactivating PI3K, but not PTEN or PLC, enhances Legionella
+infection and suppresses the protective effect of Nramp1 overexpression. 
+PI3K activity is restricted to early infection and is not mediated by effects 
+on the actin cytoskeleton, rather L. pneumophila, in contrast to E. coli, 
+subverts phosphoinositide-sensitive fusion of Legionella-containing 
+macropinosomes with acidic vesicles, without affecting Nramp1 recruitment. 
+A model is presented to explain how Legionella escapes fusion with acidic 
+vesicles and Nramp1-induced resistance to pathogens.
+
+
+Submitted by  Salvo Bozzaro [salvatore.bozzaro@unito.it]
+==============================================================
+[End dictyNews, volume 35, number 6]

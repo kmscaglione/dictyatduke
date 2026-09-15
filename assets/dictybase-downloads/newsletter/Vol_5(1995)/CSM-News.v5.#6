@@ -1,0 +1,75 @@
+CSM News
+Electronic Edition
+Volume 5, number 6
+August 26, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+TRAPPING DEVELOPMENTAL PROMOTERS IN DICTYOSTELIUM
+
+Wen-Tsan Chang, Julian D. Gross and Peter C. Newell
+
+Department of Biochemistry, University of Oxford, South Parks Road,
+Oxford OX1 3QU,UK
+
+PLASMID, in press.
+
+Summary
+
+   We have modified the REMI procedure to permit characterisation of
+the promoters and structural sequences of genes that would be missed
+by the standard procedure because their disruption produces no obvious
+phenotype.
+
+   A vector (designated pPTGal) carrying a promoter-less E. coli lacZ
+gene was constructed so that expression of lacZ requires insertion
+into an active host transcription unit.  The construct also contains a
+multiple cloning site (MCS-2) adjacent to the URA gene which permits
+very efficient restriction enzyme-mediated excision and rescue in
+E. coli of the 5' region of the inserted vector (excluding the URA
+gene) together with a segment of 5'-flanking genomic DNA.  [Note that
+with vectors lacking such an internal multiple cloning site, gene
+rescue requires cutting on both sides of the insertion site, (as for
+normal REMI).  However, in the case of lacZ-containing vectors, very
+large plasmids are thereby formed that contain (besides the inserted
+flanking DNA) the complete vector together with the lacZ and URA
+genes.  Although we obtained a number of lacZ-expressing Dictyostelium
+transformants with such vectors lacking the MCS-2 site, rescue of the
+plasmids with flanking DNA in E. coli did not prove possible, possibly
+due to the size of the resulting DNA fragments].
+
+   Using the pPTGal vector we have isolated a series of strains in which
+lacZ is under the control of developmentally activated promoters,
+including prestalk and prespore cell specific promoters and promoters
+showing more complex patterns of lacZ activity.  We have cloned the 5'
+flanking DNA adjacent to the insertion site of three of the
+isolates. Sequencing of the junction between plasmid and host genome
+has confirmed in-frame fusion with the lacZ gene, and reintroduction
+of the cloned plasmids into parental cells has shown that the cloned
+sequences do actually contain the relevant promoters.
+
+   Not only should this technique be able to detect important
+developmental genes which are present in more than one copy, or whose
+function is performed by more than one gene product, it should also
+give easy access to a wide range of developmentally controlled
+promoters without the need to have previously identified the cell type
+specific or developmental genes being regulated.  It should, for
+example, facilitate the characterization of distinct classes of
+promoter sequences that are controlled by different intercellular
+effectors such as cyclic AMP, DIF-1 and ammonia. 
+
+---------------------------------------------------------------------
+
+[End CSM-News, volume 5, number 6]
+
+

@@ -1,0 +1,156 @@
+Dicty News
+Electronic Edition
+Volume 12, number 8
+April 17, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+==============
+  Abstracts
+==============
+
+Folic acid stimulation of the G(alpha)4 G protein-mediated signal transduction
+pathway inhibits anterior prestalk cell development in Dictyostelium
+
+Jeffrey A. Hadwiger and Jaishree Srinivasan
+
+Department of Microbiology and Molecular Genetics, Oklahoma State University
+Stillwater, OK 74078-3020
+
+Differentiation (in press)
+
+ABSTRACT
+
+   In Dictyostelium discoideum, several G proteins are known to mediate the 
+transduction of signals that direct chemotactic movement and regulate 
+developmental morphogenesis.  The G protein alpha subunit encoded by the 
+G(alpha)4 gene has been previously shown to be required for chemotactic 
+responses to folic acid, proper developmental morphogenesis, and spore 
+production.  In this study, cells overexpressing the wild type G(alpha)4 
+gene, due to high copy gene dosage (G(alpha)4HC), were found to be defective 
+in the ability to form the anterior prestalk cell region, express prespore- 
+and prestalk-cell specific genes, and undergo spore formation.  In chimeric 
+organisms, G(alpha)4HC prespore cell-specific gene expression and spore 
+production were rescued by the presence of wild type cells, indicating that 
+prespore cell development in G(alpha)4HC cells is limited by the absence of 
+an intercellular signal.  Transplanted wild type tips were sufficient to 
+rescue the G(alpha)4HC prespore cell development suggesting that the rescuing 
+signal originates from the anterior prestalk cells.  However, the deficiencies 
+in prestalk-specific gene expression were not rescued in the chimeric organisms.  
+Furthermore, G(alpha)4HC cells were localized to the prespore region of these 
+chimeric organisms and completely excluded from the anterior prestalk region, 
+suggesting that the G(alpha)4 subunit functions cell autonomously to prevent 
+anterior prestalk cell development.  The presence of exogenous folic acid during 
+vegetative growth and development delayed anterior prestalk cell development in 
+wild type but not g(alpha)4 null mutant aggregates, indicating that folic acid 
+can inhibit cell type-specific differentiation by stimulating of the G(alpha)4-
+mediated signal transduction pathway. The results of this study suggest that 
+G(alpha)4-mediated signals can regulate cell type-specific differentiation by 
+promoting prespore cell development and inhibiting anterior prestalk cell 
+development.
+
+----------------------------------------------------------------------------
+
+Polycistronic transcription and editing of the mitochondrial small subunit 
+(SSU) ribosomal RNA in Dictyostelium discoideum.
+
+C. Barth, U. Greferath, M. Kotsifas and P.R. Fisher.
+
+Microbiology Dept., La Trobe University, Melbourne, Australia.
+
+Current Genetics. In Press.
+
+Summary:
+
+   Northern analyses and reverse transcription-polymerase chain-reaction 
+(RT-PCR) experiments were performed on total RNA of Dictyostelium discoideum. 
+The mitochondrial genes encoding the small subunit ribosomal RNA (SSU), 
+cytochrome b (CYTB) and subunit 3 of the NADH dehydrogenase (ND3) were found 
+to be cotranscribed. Further posttranscriptional processing resulted in a 
+dicistronic transcript for CYTB and ND3, and a monocistronic SSU transcript. 
+Markedly higher steady state transcript levels were detected for the mature 
+SSU ribosomal RNA. A comparison of the SSU cDNA sequence with the mitochondrial 
+DNA sequence of the SSU gene revealed C-to-U substitutional editing of the SSU 
+ribosomal RNA at a single site, as a consequence of which the cDNA contained a 
+PvuII site not present in the genomic DNA. The editing was shown to be highly 
+efficient and to occur in the primary transcript before the release of the mature 
+mRNA, rRNA and tRNAs. It is suggested that the editing may be required for 
+normal pseudoknot formation in the 530 loop of the RNA and thus important 
+for efficient, accurate translation in the mitochondria.
+
+----------------------------------------------------------------------------
+
+Molecular Basis of Localized Responses During Chemotaxis in Amoebae and
+Leukocytes
+
+Saskia van Es and Peter N. Devreotes
+Department of Biological Chemistry, The Johns Hopkins University, School of
+
+Medicine, Baltimore Maryland 21205
+
+Cellular and Molecular Life Sciences, in press
+
+Abstract
+
+   Chemotaxis and phagocytosis are fundamental responses shared by many 
+eukaryotic cells.  In chemotaxis, motile cells sense and respond directionally 
+to chemical gradients; in phagocytosis, they bind and engulf foreign organisms 
+and debris.  Both processes are central to the inflammatory responses mounted 
+by leukocytes and are displayed by cells of the primitive immune systems of 
+sponges, nematodes and flies.  Moreover, free-living amoebae display both 
+chemotaxis and phagocytosis.  One such amoeba, Dictyostelium discoideum, 
+provides a powerful system for molecular genetic analysis of these processes.  
+In this review, we will describe the general features of chemotaxis shared 
+by amoebae and leukocytes.  We will not focus on motility per se, since this 
+subject has been extensively reviewed and, although motility and chemotaxis 
+are related, these phenomena can be separated.  We will outline the genetic 
+and biochemical tools available in D. discoideum to study chemotaxis and 
+update our current understanding.  Finally, we will discuss the relationship 
+between phagocytosis and chemotaxis. 
+
+----------------------------------------------------------------------------
+
+The crystal structure of the Physarum polycephalum actin-fragmin kinase: an
+atypical protein kinase with a specialised substrate binding domain
+
+Stefan Steinbacher1, Peter Hof, Ludwig Eichinger2, Michael Schleicher2, Jan
+Gettemans3, Joël Vandekerckhove3, Robert Huber and Jörg Benz4
+
+Abteilung Strukturforschung, Max-Planck-Institut für Biochemie, 82152 
+Martinsried, Germany; 2) A.-Butenandt-Institut/Zellbiologie, 
+Ludwig-Maximilians-Universität, 80336 München, Germany; 3) Flanders 
+Interuniversity Institute of Biotechnology, University of Gent, 9000 Gent, 
+Belgium; 4) Present address: Department für Chemie und Biochemie,
+Universität Bern, 3012 Bern, Switzerland
+
+EMBO J., in press
+
+ABSTRACT
+
+   Coordinated temporal and spatial regulation of the actin cytoskeleton 
+is essential for diverse cellular processes such as cell division, cell 
+motility and the formation and maintenance of specialised structures in 
+differentiated cells. In plasmodia of Physarum polycephalum the F-actin 
+capping activity of the actin-fragmin complex is regulated by phosphorylation 
+of actin. This is mediated by a novel type of protein kinase with no sequence 
+homology to eukaryotic-type protein kinases. Here we present the crystal 
+structure of the catalytic domain of the first cloned actin kinase in complex 
+with adenosine-monophosphate at 2.9 Å resolution. The three-dimensional 
+fold reveals a catalytic module of approximately 160 residues, in common 
+with the eukaryotic protein kinase super-family, which harbours the nucleotide 
+binding site and the catalytic apparatus in an inter-lobe cleft. Several 
+kinases that share this catalytic module differ in the overall  architecture 
+of their substrate recognition domain. The actin-fragmin kinase has acquired 
+a unique flat substrate recognition domain which is supposed to confer 
+stringent substrate specificity. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 8]
+
+  

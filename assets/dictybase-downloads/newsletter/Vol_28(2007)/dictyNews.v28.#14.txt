@@ -1,0 +1,151 @@
+dictyNews
+Electronic Edition
+Volume 28, number 14
+May 25, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Note: The Xu et al. abstract from last week's dictyNews had an error 
+in the journal. The corrected version is below.
+
+
+Locally controlled inhibitory mechanisms are involved in eukaryotic
+GPCR-mediated chemosensing
+
+Xuehua Xu1, Martin Meier-Schellersheim2, Jianshe Yan1 and Tian Jin1*
+
+
+J. Cell Biology, in press
+
+GPCR signaling mediates a balance of excitatory and inhibitory
+activities that regulate Dictyostelium chemosensing to cAMP. The
+molecular nature and kinetics of these inhibitors are unknown. We report
+that transient cAMP stimulations induce PIP3 responses without a
+refractory period, suggesting that GPCR-mediated inhibition accumulates
+and decays slowly. Moreover, exposure to cAMP gradients leads to
+asymmetric distribution of the inhibitory components. The gradients
+induce a stable accumulation of the PIP3 reporter PHCrac-GFP in the
+front of cells near the cAMP source. Rapid withdrawal of the gradient
+led to the re-association of G-protein subunits, and the return of the
+PIP3 phosphatase PTEN and PHCrac-GFP to their pre-stimulus distribution.
+Reapplication of cAMP stimulation produces a clear PHCrac-GFP
+translocation to the back but not to the front, indicating that a
+stronger inhibition is maintained in the front of a polarized cell. Our
+study demonstrates a novel spatiotemporal feature of currently unknown
+inhibitory mechanisms acting locally on the PI3K activation pathway.
+
+
+Submitted by: Tian Jin [TJIN@niaid.nih.gov]
+--------------------------------------------------------------------------------
+
+
+The Real Factor for Polypeptide Elongation in Dictyostelium Cells is 
+EF-2B, not EF-2A
+
+Tomoko Yoshino, Yasuo Maeda and Aiko Amagai
+
+Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+
+BBRC, in press
+
+Polypeptide elongation factor 2 (EF-2) plays an essential role in protein 
+synthesis and is believed to be indispensable for cell proliferation. 
+Recently, it has been demonstrated that there are two kinds of EF-2 
+(EF-2A and EF-2B with 76.6% of sequence identity at the amino acid level) 
+in Dictyostelium discoideum. Although the knockout of EF-2A slightly 
+impaired cytokinesis, EF-2A null cells exhibited almost normal protein 
+synthesis and cell growth, suggesting that there is another molecule 
+capable of compensating for EF-2 function. Since EF-2B is the most likely 
+candidate, we examined its function using ef-2b knockdown cells prepared 
+by the RNAi method. Our results strongly suggest that EF-2B is required 
+for protein synthesis and cell proliferation, functioning as the real EF-2. 
+Interestingly, the expressions of ef-2a and ef-2b mRNAs during development 
+are reversely regulated, and the ef-2b expression is greatly augmented in 
+ef-2a null cells. 
+
+
+Submitted by: Aiko Amagai [aiamagai@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+PTEN Plays a Role in the Suppression of Lateral Pseudopod Formation 
+During Dictyostelium Motility and Chemotaxis
+
+Deborah Wessels, Daniel F. Lusche, Spencer Kuhl, Paul Heid and 
+David R. Soll
+
+
+Journal of Cell Science, in press
+
+It has been suggested that the PIP3 phosphatase and tensin homolog, PTEN, 
+plays a fundamental role in Dictyostelium discoideum chemotaxis.  To 
+identify that role, the behavior of a pten- mutant was quantitatively 
+analyzed using 2D and 3D computer-assisted methods.  pten- cells were 
+capable of polarizing and translocating in the absence of attractant, and 
+sensing and responding to spatial gradients, temporal gradients and natural 
+waves of attractant.  However, all of these responses were compromised 
+(i.e., less efficient) due to the fundamental incapacity of pten- cells to 
+suppress lateral pseudopod formation and turning.  This defect was equally 
+manifested in the absence as well as presence of attractant.  PTEN, which 
+is constitutively localized in the cortex of polarized cells, was found 
+essential for the attractant-stimulated increase in cortical myosin II and 
+F-actin that is responsible for the increased suppression of pseudopods 
+during chemotaxis.  PTEN, therefore, plays a fundamental role in the 
+suppression of lateral pseudopod formation, a process essential for the 
+efficiency of locomotion and chemotaxis, but not in directional sensing.
+
+
+Submitted by: Deb Wessels [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------
+
+
+A vesicle surface tyrosine kinase regulates phagosome maturation 
+
+Jun Fang‡, Joseph A. Brzostowski‡, Stephen Ou, Nilgun Isik, Vinod Nair,^  
+and Tian Jin*
+
+Laboratory of Immunogenetics, National Institute of Allergy and Infectious 
+Diseases, NIH, Twinbrook II Facility, 12441 Parklawn Drive, Rockville, 
+Maryland 20852, USA
+
+^ Research Technologies Section/RTB Rocky Mountain Laboratories/NIAID/NIH
+ 903 South 4th Street, Hamilton, MT  59840
+
+
+J. Cell Biology, in press
+
+Phagocytosis is crucial for host defense against microbial pathogens and 
+for obtaining nutrients in Dictyostelium discoideum. Phagocytosed particles 
+are delivered via a complex route from phagosomes to lysosomes for 
+degradation, but the molecular mechanisms involved in the phagosome 
+maturation process are not well understood. Here, we identify a novel 
+vesicle associated receptor tyrosine kinase-like protein, VSK3, in 
+D. discoideum. We demonstrate how VSK3 is involved in phagosome maturation. 
+VSK3 resides on the membrane of late endosomes/lysosomes with its C-terminal 
+kinase domain facing the cytoplasm. Inactivation of VSK3 by gene disruption 
+reduces the rate of phagocytosis in cells, which is rescued by re-expression 
+of VSK3. We found that the in vivo function of VSK3 depends on the presence 
+of the kinase domain and vesicle localization. Furthermore, VSK3 is not 
+essential for engulfment, but instead, is required for the fusion of 
+phagosomes with late endosomes/lysosomes. Our findings suggest that localized 
+tyrosine kinase signaling on the surface of endosome/lysosomes represents a 
+control mechanism for phagosome maturation.
+
+Submitted by: Tian Jin [TJIN@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 28, number 14]

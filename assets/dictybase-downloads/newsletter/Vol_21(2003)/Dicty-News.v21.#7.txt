@@ -1,0 +1,36 @@
+Dicty NewsElectronic EditionVolume 21, number 7September 5, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Cell sorting by differential cell motility: a model for pattern formation 
+in DictyosteliumTamiki Umeda* and  Kei Inouye#*Department of Marine Engineering, Kobe University of Mercantile Marine, 
+Kobe 658-0022, Japan#Department of Botany, Division of Biological Science, Graduate School of 
+Science, Kyoto University, Kyoto 606-8502, JapanJ. theor. Biol., in pressIn the slug stage of the cellular slime mold Dictyostelium discoideum, 
+prespore cells and four types of prestalk cells show a well-defined spatial 
+distribution in a migrating slug. We have developed a continuous 
+mathematical model for the distribution pattern of these cell types based on 
+the balance of force in individual cells. In the model, cell types are 
+assumed to have different properties in cell motility, i.e., different 
+motive force, the rate of resistance against cell movement, and diffusion 
+coefficient. Analysis of the stationary solution of the model shows that 
+combination of these parameters and slug speed determines the 3-dimensional 
+shape of a slug and cell distribution pattern within it. Based on 
+experimental data of slug motive force and velocity measurements, appropriate 
+sets of parameters were chosen so that the cell-type distribution at 
+stationary state matches the distribution in real slugs. With these 
+parameters, we performed numerical calculation of the model in 2-dimensional 
+space using a moving particle method. The results reproduced many of the 
+basic features of slug morphogenesis, i.e., cell sorting, translocation 
+of the prestalk region, elongation of the slug, and its steady migration.
+
+Submitted by: Kei Inouye [inoue@cosmos.bot.kyoto-u.ac.jp]-------------------------------------------------------------------------------Structure of the N-Terminal Domain of the Adenylyl Cyclase-AssociatedProtein (CAP) from Dictyostelium discoideum Dorota Ksiazek, Hans Brandstetter, Lars Israel, Gleb P. Bourenkov, GalinaKatchalova, Klaus-Peter Janssen, Hans D. Bartunik, Angelika A. Noegel,Michael Schleicher and Tad A. HolakStructure, in pressCyclase-associated proteins (CAPs) are widely distributed and highlyconserved proteins that regulate actin remodeling in response to cellularsignals. The N-terminus of CAPs plays a role in Ras signaling and bindsadenylyl cyclase; the C-terminus binds to G-actin and thus alters thedynamic rearrangements of the microfilament system. We report here theX-ray structure of the N-terminal domain of the CAP from Dictyosteliumdiscoideum determined by a combination of single isomorphous replacementwith anomalous scattering (SIRAS) of iridium-soaked crystals. The overallstructure of this domain consists of an a-helix bundle composed of sixantiparallel helices and is found in the monomeric and Mg2+-induced dimericstates. Together with gel filtration, cross-linking experiments, thestructural CAP adata suggest a multimeric state of the whole CAP molecule.The presented structure is the first for an N-terminal domain of any CAPand can be useful for defining specific functions for these domains.Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+
+-------------------------------------------------------------------------------
+Unique behavior and function of the mitochondrial ribosomal protein S4(RPS4) in early Dictyostelium developmentKoh-ichi Hosoya, Aiko Amagai, Junji Chida, and Yasuo Maeda*Department of Developmental Biology and Neurosciences, Graduate School ofLife Sciences, Tohoku University, Aoba, Sendai 980-8578, JapanZoological Science (in press)Certain proteins encoded by mitochondrial DNA (mt-DNA), includingmt-ribosomal protein S4 (rps4), appear to play important roles in theinitiation of cell differentiation. Partial disruption of rps4 inDictyostelium discoideum Ax-2 cells by means of homologous recombinationgreatly impairs the progression of differentiation, while the the rps4OEcells in which the rps4 mRNA was overexpressed in the extra-mitochondrialcytoplasm exhibit enhanced differentiation (Inazu et al., 1999). We haveprepared a specific anti-RPS4 antibody and generated transformants (rps4AScells) by antisense-mediated gene inactivation of rps4. Surprisingly, in therps4AS cells the progress of differentiation was found to be markedlyinhibited, suggesting that the antisense rps4 RNA synthesized in theextra-mitochondrial cytoplasm might be as effective as the partialdisruption of rps4 gene. Immunostaining of the rps4OE cells with theanti-RPS4 antibody demonstrated that the RPS4 protein synthesized in theextra-mitochondrial cytoplasm is capable of moving to the nucleus, aspredicted by PSORTII. Taken together with the results obtained usingimmunostained Ax-2 cells, we propose a possible pathway of RPS4translocation coupled with differentiation.  
+
+Submitted by: Yasuo Maeda [ymaeda@mail.cc.tohoku.ac.jp]
+
+
+===============================================================================[End Dicty News, volume 21, number 7]

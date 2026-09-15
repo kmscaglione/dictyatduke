@@ -1,0 +1,122 @@
+dictyNews
+Electronic Edition
+Volume 28, number 7
+March 23, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+MEK1 and Protein Phosphatase 4 Coordinate Dictyostelium Development and 
+Chemotaxis 
+
+Michelle C. Mendoza, Ezgi O. Booth, Gad Shaulsky,
+and Richard A. Firtel
+
+
+Mol. Cell Bio. in press
+
+The MEK and ERK/MAPK proteins are established regulators of multicellular 
+development and cell movement.  By combining traditional genetic and biochemical 
+assays with statistical analysis of global gene-expression profiles, we 
+discerned a genetic interaction between Dictyostelium mek1, smkA (suppressor 
+of mek1Ð), and pppC (protein phosphatase 4 catalytic subunit).  We found that 
+during development and chemotaxis, both mek1 and smkA regulate pppC function.  
+In other organisms, the protein phosphatase 4 catalytic subunit, PP4C, 
+functions in complex with the PP4R2 and PP4R3 regulatory subunits to control 
+recovery from DNA damage.  Here, we show that catalytically active PP4C is 
+also required for development, chemotaxis, and the expression of numerous 
+genes.  smkA (SMEK) functions as the Dictyostelium PP4R3 homolog and 
+positively regulates a subset of PP4CÕs functions: PP4C-mediated developmental 
+progression, chemotaxis, and the expression of genes specifically involved in 
+cell stress responses and cell movement.  We also demonstrate that SMEK does 
+not control the absolute level of PP4C activity and suggest that SMEK regulates 
+PP4C by controlling its localization to the nucleus.  These data define a novel 
+genetic pathway in which mek1 functions upstream of pppC/smkA to control 
+multicellular development and chemotaxis. 
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+The BEACH protein LvsB is localized on lysosomes and postlysosomes and limits 
+their fusion with early endosomes.
+
+Elena Kypri, Christian Schmauch, Markus Maniak, and Arturo De Lozanne
+
+Section of Molecular Cell & Developmental Biology and Institute for Cellular 
+and Molecular Biology, University of Texas at Austin, Austin, TX 78712 and
+Zellbiologie, Universitaet Kassel, Kassel, Germany
+
+
+Traffic, in press
+
+The Chediak-Higashi Syndrome is a genetic disorder caused by the loss of the 
+BEACH protein Lyst.  Impaired lysosomal function in CHS patients results in 
+many physiological problems, including immunodeficiency, albinism and 
+neurological problems. Dictyostelium LvsB is the ortholog of mammalian Lyst 
+and is also important for lysosomal function. A knock-in approach was used to 
+tag LvsB with GFP and express it from its single chromosomal locus.  GFP-LvsB 
+was observed on late lysosomes and postlysosomes.  Loss of LvsB resulted in 
+enlarged postlysosomes, in the abnormal localization of proton pumps on 
+postlysosomes and their abnormal acidification.  The abnormal postlysosomes 
+in LvsB null cells were produced by the inappropriate fusion of early endosomal 
+compartments with postlysosomal compartments.  The intermixing of compartments 
+resulted in a delayed transit of fluid phase marker through the endolysosomal 
+system.  These results support the model that LvsB and Lyst proteins act as 
+negative regulators of fusion by limiting the heterotypic fusion of early 
+endosomes with postlysosomal compartments. 
+
+
+Submitted by Arturo De Lozanne [a.delozanne@mail.utexas.edu]
+--------------------------------------------------------------------------------
+
+
+Profilin isoforms in Dictyostelium discoideum 
+
+Rajesh Arasada (1), Annika Gloss (1), Budi Tunggal (2), Jayabalan M. Joseph (1), 
+Daniela Rieger (1), Subhanjan Mondal (2), Michael Schleicher (1) and 
+Angelika A. Noegel (2,3)
+
+(1) Adolf-Butenandt-Institut / Zellbiologie, Ludwig-Maximilians-Universitaet, 
+80336 Muenchen, Germany; (2) Institut f. Biochemie, Med. Fak., (3) Zentrum 
+Molekulare Medizin Koeln, Universitaet zu Koeln, 50931 Koeln, Germany.
+
+
+Biochim. Biophys. Acta (Mol. Cell Res.), in press
+
+Eukaryotic cells contain a large number of actin binding proteins of different 
+functions, locations and conconcentrations. They bind either to monomeric actin 
+(G-actin) or to actin filaments (F-actin) and thus regulate the dynamic 
+rearrangement of the actin cytoskeleton. The Dictyostelium discoideum genome 
+harbors representatives of all G-actin binding proteins including actobindin, 
+twinfilin, and profilin. A phylogenetic analysis of all profilins suggests that 
+two distinguishable groups emerged very early in evolution and comprise either 
+vertebrate and viral profilins or profilins from all other organisms. The newly 
+discovered profilin III isoform in D. discoideum shows all functions that are 
+typical for a profilin. However, the concentration of the third isoform in wild 
+type cells reaches only about 0.5% of total profilin. In a yeast-2-hybrid assay 
+profilin III was found to bind specifically to the proline-rich region of the 
+cytoskeleton-associated vasodilator-stimulated phosphoprotein (VASP). 
+Immunolocalization studies showed similar to VASP the profilin III isoform in 
+filopodia and an enrichment at their tips. Cells lacking the profilin III 
+isoform show defects in cell motility during chemotaxis. The low abundance and 
+the specific interaction with VASP argue against a significant actin 
+sequestering function of the profilin III isoform.
+
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+============================================================
+[End dictyNews, volume 28, number 7]

@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 40, number 26
+October 24, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+The thyroxine inactivating gene, type III deiodinase, suppresses 
+multiple signaling centers in Dictyostelium discoideum
+
+Shashi Prakash Singh1, Ranjani Dhakshinamoorthy1, Pundrik Jaiswal1#,
+Stefanie Schmidt2, Sascha Thewes2, and Ramamurthy Baskar1*
+
+Affiliations: 1Department of Biotechnology, Bhupat and Jyoti Mehta 
+School of Biosciences, Indian Institute of Technology-Madras, 
+Chennai-600036, India. 2Institute for Biology-Microbiology, 
+Department of Biology, Chemistry, Pharmacy, Freie Universität Berlin, 
+14195 Berlin, Germany.
+
+# Present address: National Institutes of Diabetes and Digestive 
+and Kidney Diseases (NIDDK)-National Institutes of Health (NIH), 
+Bethesda, Maryland 20892, USA.
+
+Journal: Developmental Biology, in press
+
+Abstract
+Thyroxine deiodinases, the enzymes that regulate thyroxine metabolism, 
+are essential for vertebrate growth and development. In the model 
+organism Dictyostelium discoideum, a single intronless gene (dio3) 
+encodes type III thyroxine 5' deiodinase. The amino acid sequence of 
+D. discoideum Dio3 shares 37% identity with human T4 deiodinase and 
+is a member of the thioredoxin reductase superfamily. dio3 is expressed 
+throughout growth and development and by generating a knockout of dio3, 
+we have examined the role of thyroxine 5' deiodinase in D. discoideum. 
+dio3- had multiple defects that affected growth, timing of development, 
+aggregate size, cell streaming, and cell-type differentiation. A 
+prominent phenotype of dio3- was the breaking of late aggregates 
+into small signaling centers, each forming a fruiting body of its own. 
+cAMP levels, its relay, photo- and chemotaxis were also defective in 
+dio3-. Quantitative RT-PCR analyses suggested that expression levels of 
+genes encoding adenylyl cyclase A (acaA), cAMP-receptor A (carA) and 
+cAMP-phosphodiesterases were reduced. There was a significant reduction 
+in the expression of CadA and CsaA, which are involved in cell-cell 
+adhesion. The dio3- slugs were likely to have a prestalk identity, with 
+the expression of the prestalk marker ecmA being more pronounced than 
+that of the prespore marker pspA. Thus, Dio3 seems to have roles in 
+mediating cAMP synthesis/relay, cell adhesion and slug patterning. The 
+phenotype of dio3- suggests that Dio3 may prevent the formation of 
+multiple signaling centers during D. discoideum development. This is 
+the first report of a thyroxine metabolism gene that is involved in 
+growth and development in a lower eukaryote.
+
+
+Submitted by Shashi Prakash Singh [shashi_prakash5@yahoo.com]
+----------------------------------------------------------------------
+
+Rectified directional sensing in long-range cell migration
+
+Akihiko Nakajima, Shuji Ishihara, Daisuke Imoto and Satoshi Sawai
+
+Department of Basic Science, Graduate School of Arts and Sciences, 
+University of Tokyo, Tokyo 153-8902, Japan.
+
+Nature Communications, in press
+
+How spatial and temporal information are integrated to determine the 
+direction of cell migration remains poorly understood. Here, by 
+precise microfluidics emulation of dynamic chemoattractant waves, 
+we demonstrate that, in Dictyostelium, directional movement as well 
+as activation of small guanosine triphosphatase Ras at the leading 
+edge is suppressed when the chemoattractant concentration is 
+decreasing over time. This ‘rectification’ of directional sensing 
+occurs only at an intermediate range of wave speed and does not 
+require phosphoinositide-3-kinase or F-actin. From modelling analysis, 
+we show that rectification arises naturally in a single-layered 
+incoherent feedforward circuit with zero-order ultrasensitivity. 
+The required stimulus time-window predicts ~5 s transient for 
+directional sensing response close to Ras activation and inhibitor 
+diffusion typical for protein in the cytosol. We suggest that the 
+ability of Dictyostelium cells to move only in the wavefront is 
+closely associated with rectification of adaptive response combined 
+with local activation and global inhibition.
+
+Submitted by Satoshi Sawai [cssawai@mail.ecc.u-tokyo.ac.jp]   ==============================================================
+[End dictyNews, volume 40, number 26]

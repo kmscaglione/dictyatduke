@@ -1,0 +1,150 @@
+dictyNews
+Electronic Edition
+Volume 41, number 5
+March 13, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+Neurofibromin controls macropinocytosis and phagocytosis in 
+Dictyostelium
+
+Gareth Bloomfield, David Traynor, Sophia P. Sander, Douwe Veltman, 
+Justin A. Pachebat and Robert R. Kay
+
+
+eLife
+
+Cells use phagocytosis and macropinocytosis to internalise bulk 
+material, which in phagotrophic organisms supplies the nutrients  
+necessary for growth. Wildtype Dictyostelium amoebae feed on 
+bacteria, but for decades laboratory work has relied on axenic 
+mutants that can also grow on liquid media. We used forward 
+genetics to identify the causative gene underlying this phenotype.  
+This gene encodes the RasGAP Neurofibromin (NF1). Loss of NF1 
+enables axenic growth by increasing fluid uptake. Mutants form 
+outsized macropinosomes which are promoted by greater Ras and 
+PI3K activity at sites of endocytosis. Relatedly, NF1 mutants 
+can ingest larger-than-normal particles using phagocytosis. An 
+NF1 reporter is recruited to nascent macropinosomes, suggesting 
+that NF1 limits their size by locally inhibiting Ras signalling. 
+Our results link NF1 with macropinocytosis and phagocytosis for 
+the first time, and we propose that NF1 evolved in early 
+phagotrophs to spatially modulate Ras activity, thereby 
+constraining and shaping their feeding structures.
+
+
+Submitted by Gareth Bloomfield [garethb@mrc-lmb.cam.ac.uk] 
+----------------------------------------------------------------------
+
+
+Synthesis of prenylated quinolinecarboxylic acid derivatives and 
+their anti-obesity activities. 
+
+Haruhisa Kikuchi, Toshiyuki Suzuki, Masato Ogura, Miwako K. Homma, 
+Yoshimi Homma, Yoshiteru Oshima
+
+
+Bioorg. Med. Chem. 2015, 23, 66-72.
+
+Mitochondrial uncoupling is one of the therapeutic strategies used 
+to control energy metabolism in various metabolic diseases and in 
+obesity. Ppc-1 (1), a prenylated quinolinecarboxylic acid isolated 
+from cellular slime molds, shows uncoupling activity in vitro and 
+anti-obesity activity in vivo. In this study, we synthesized Ppc-1 
+(1) and its derivatives, and revealed the structure-activity 
+relationship of uncoupling activities. The triprenylated compound 18 
+showed mitochondrial uncoupling activity that was more potent than 
+that of Ppc-1 (1). Compound 18 also suppressed weight gain in mice 
+without undesired effects such as lesions on tissues. These results 
+indicate that compound 18 could be used as a seed compound for new 
+anti-obesity drugs.
+
+
+Submitted by Haruhisa Kikuchi [hal@mail.pharm.tohoku.ac.jp]
+----------------------------------------------------------------------
+
+
+Weight Loss by Ppc-1, a Novel Small Molecule Mitochondrial Uncoupler 
+Derived from Slime Mold.
+
+Toshiyuki Suzuki, Haruhisa Kikuchi, Masato Ogura, Miwako K. Homma, 
+Yoshiteru Oshima, Yoshimi Homma
+
+
+PLoS ONE 10(2): e0117088.
+
+Mitochondria play a key role in diverse processes including ATP 
+synthesis and apoptosis. Mitochondrial function can be studied using 
+inhibitors of respiration, and new agents are valuable for 
+discovering novel mechanisms involved in mitochondrial regulation. 
+Here, we screened small molecules derived from slime molds and other 
+microorganisms for their effects on mitochondrial oxygen consumption. 
+We identified Ppc-1 as a novel molecule which stimulates oxygen 
+consumption without adverse effects on ATP production. The kinetic 
+behavior of Ppc-1 suggests its function as a mitochondrial uncoupler. 
+Serial administration of Ppc-1 into mice suppressed weight gain with 
+no abnormal effects on liver or kidney tissues, and no evidence of 
+tumor formation. Serum fatty acid levels were significantly elevated 
+in mice treated with Ppc-1, while body fat content remained low. After 
+a single administration, Ppc-1 distributes into various tissues of 
+individual animals at low levels. Ppc-1 stimulates adipocytes in 
+culture to release fatty acids, which might explain the elevated serum 
+fatty acids in Ppc-1-treated mice. The results suggest that Ppc-1 is 
+a unique mitochondrial regulator which will be a valuable tool for 
+mitochondrial research as well as the development of new drugs to 
+treat obesity.
+
+
+Submitted by Haruhisa Kikuchi [hal@mail.pharm.tohoku.ac.jp]
+----------------------------------------------------------------------
+
+
+A Conserved Signalling Pathway for Amoebozoan Encystation that was 
+Co-Opted for Multicellular Development
+
+Yoshinori Kawabe, Christina Schilde, Qingyou Du and Pauline Schaap
+
+College of Life Sciences, University of Dundee, Dundee DD15EH, 
+Scotland, UK
+
+
+Scientific Reports, in press
+ 
+The evolution of multicellularity required novel mechanisms for 
+intercellular communication, but their origin is unclear. 
+Dictyostelium cells exchange signals to position specialized cell 
+types in multicellular spore-bearing structures. These signals 
+activate complex pathways that converge on activation of 
+cAMP-dependent protein kinase (PKA). Genes controlling PKA were 
+detected in the Dictyostelid unicellular ancestors, which like 
+most protists form dormant cysts when experiencing environmental 
+stress. We deleted PKA and the adenylate cyclases AcrA and AcgA, 
+which synthesize cAMP for PKA activation, in the intermediate 
+species Polysphondylium, which can develop into either cysts 
+or into multicellular structures. Loss of PKA prevented 
+multicellular development, but also completely blocked 
+encystation. Loss of AcrA and AcgA, both essential for 
+sporulation in Dictyostelium, did not affect Polysphondylium 
+sporulation, but prevented encystation. We conclude that 
+multicellular cAMP signalling was co-opted from PKA regulation 
+of protist encystation with progressive refunctionalization of 
+pathway components.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk] 
+==============================================================
+[End dictyNews, volume 41, number 5]

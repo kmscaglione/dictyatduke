@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 26, number 5
+February 17, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Analysis of a gene that is a potential target for the Dictyostelium STAT 
+protein Dd-STATa and that encodes a protein homologous to the adducin head 
+domain 
+
+Ryota Aoshima1, 2, Rieko Hiraoka1, 2, Nao Shimada1, 2 and Takefumi Kawata1, 3
+
+1 Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama, 
+Funabashi, Chiba 274-8510, Japan
+2These authors contributed equally to this work.
+3 Corresponding author
+
+
+Int. J. Dev. Biol., in press.
+
+A Dd-STATa-null mutant, which is defective in expression of a Dictyostelium 
+homologue of the metazoan STAT (signal transducer and activators of 
+transcription) proteins, fails to culminate and this phenotype correlates 
+with the loss of expression of various prestalk (pst) genes. An EST clone, 
+SSK395, encodes a close homologue of the adducin amino-terminal head domain 
+and harbors a putative actin-binding domain. We fused promoter fragments of 
+the cognate gene, ahhA (adducin head homologue A), to a lacZ reporter and 
+determined their expression pattern. The proximal promoter region is 
+necessary for the expression of ahhA at an early (pre-aggregative) stage 
+of development and this expression is Dd-STATa independent. The distal 
+promoter region is necessary for expression at later stages of development 
+in pstA cells, of the slug, and in upper cup and pstAB cells during 
+culmination. The distal region is partly Dd-STATa-dependent. The ahhA-null 
+mutant develops almost normally until culmination, but it forms slanting 
+culminants that tend to collapse on to the substratum. The mutant also 
+occasionally forms fruiting bodies with swollen papillae and with 
+constrictions in the prestalk region. The AhhA protein localizes to the 
+stalk tube entrance and also to the upper cup cells and in cells at or near 
+to the constricted region where an F-actin ring is localized. These 
+findings suggest that Dd-STATa regulates culmination and may be necessary 
+for straight downward elongation of the stalk, via the putative 
+actin-binding protein AhhA. 
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+-----------------------------------------------------------------------------
+
+
+Regulation of Dictyostelium prestalk-specific gene expression by a SHAQKY 
+family MYB transcription factor
+
+
+Masashi Fukuzawa, Natasha V. Zhukovskaya, Yoko Yamada, Tsuyoshi Araki and 
+Jeffrey G. Williams+
+
+University of Dundee
+MSI/WTB Complex
+Dow Street
+Dundee DD1 5EH
+UK
+
+
+Development, in press
+
+PstA and pstO cells are the two major populations in the prestalk region of 
+the Dictyostelium slug and DIF-1 is a low molecular weight signalling 
+molecule that selectively induces pstO cell-specific gene expression. The 
+two cell types are defined by their differential utilisation of spatially 
+separated regions of the ecmA promoter. Additionally, there are 
+anterior-like cells (ALC) scattered throughout the rear, prespore region 
+of the slug. They, like the pstO cells, utilise a cap-site distal ecmA 
+promoter segment termed the ecmO region. When multimerised, a 22nucleotide 
+sub-segment of the ecmO region directs expression in pstA cells, pstO cells 
+and ALC. It also directs DIF-inducible gene expression. The 22-mer was 
+used to purify MybE, a protein with a single MYB DNA binding domain of a 
+type previously found only in a large family of plant transcription factors. 
+Slugs of a mybE null (mybE-) strain express an ecmAO:lacZ fusion gene 
+(i.e. a reporter construct containing the ecmA and ecmO promoter regions) 
+in pstA cells but there is little or no expression in pstO cells and ALC. 
+The ecmA gene is not induced by DIF-1 in a mybE- strain. Thus MybE is 
+necessary for DIF-1 responsiveness and for the correct differentiation of 
+pstO cells and ALC. 
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================================
+[End dictyNews, volume 26, number 5] 

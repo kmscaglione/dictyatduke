@@ -1,0 +1,263 @@
+dictyNews
+Electronic Edition
+Volume 39, number 2
+January 18, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Asymmetric PTEN Distribution Regulated by Spatial Heterogeneity in 
+Membrane-Binding State Transitions
+
+Satomi Matsuoka, Tatsuo Shibata, Masahiro Ueda
+
+
+PLOS Computational Biology, in press
+
+The molecular mechanisms that underlie asymmetric PTEN distribution 
+at the posterior of polarized motile cells and regulate anterior pseudopod 
+formation were addressed by novel single-molecule tracking analysis. 
+Heterogeneity in the lateral mobility of PTEN on a membrane indicated 
+the existence of three membrane-binding states with different diffusion 
+coefficients and membrane-binding lifetimes. The stochastic state 
+transition kinetics of PTEN among these three states were suggested to 
+be regulated spatially along the cell polarity such that only the stable 
+binding state is selectively suppressed at the anterior membrane to 
+cause local PTEN depletion. By incorporating experimentally observed 
+kinetic parameters into a simple mathematical model, the asymmetric 
+PTEN distribution can be explained quantitatively to illustrate the 
+regulatory mechanisms for cellular asymmetry based on an essential 
+causal link between individual stochastic reactions and stable 
+localizations of the ensemble.
+
+
+Submitted by Satomi Matsuoka [matsuoka@phys1.med.osaka-u.ac.jp]
+---------------------------------------------------------------------------
+
+
+Dictyostelium ACAP-A is an ArfGAP involved in cytokinesis, cell 
+migration and actin cytoskeleton dynamics
+
+Marco Dias, Cedric Blanc, Nelcy Thazar-Poulot, Sabrina Ben Larbi, 
+Pierre Cosson, and Francois Letourneur
+
+
+Journal of Cell Science, in press
+
+ACAPs and ASAPs are Arf-GTPase-activating proteins with BAR, PH, 
+GAP and ankyrin repeat domains and are known to regulate vesicular 
+traffic and actin cytoskeleton dynamics in mammalian cells. The amoeba 
+Dictyostelium has only two proteins with this domain organization instead 
+of six in human, enabling a more precise functional analysis. Genetic 
+invalidation of acapA, resulted in multinucleated cells with cytokinesis 
+defects. Mutant acapA- cells were hardly motile and their multicellular 
+development was significantly delayed. In addition, formation of filopodial 
+protrusions was deficient in these cells. Conversely, re-expression of 
+ACAP-A-GFP resulted in numerous and long filopodia-like protrusions. 
+Mutagenesis studies showed that ACAP-A actin remodeling function was 
+dependent on its ability to activate its substrate, the small GTPase ArfA. 
+Likewise, the expression of a constitutively active ArfA•GTP mutant in 
+wild-type cells led to a significant reduction of filopodia length. Together 
+our data support a role for ACAP-A in the control of the actin cytoskeleton 
+organization and dynamics through an ArfA-dependent mechanism.
+
+
+Submitted by Francois Letourneur [francois.letourneur@univ-lyon1.fr]
+---------------------------------------------------------------------------
+
+
+The precision with which single cells of Dictyostelium discoideum can
+locate a source of cyclic AMP.
+
+Abha Chopra(1) and Vidyanand Nanjundiah(2) 
+
+(1)Institute for Immunology and Infectious Diseases, Murdoch University, 
+Perth, WA 6150, Australia;
+(2)Department of Molecular Reproduction and Genetics, Indian Institute of
+Science, Bangalore 560012, India)
+
+
+Chaos, Solitons & Fractals, accepted
+
+When a starved wild-type amoeba of Dictyostelium discoideum is stimulated
+by cyclic AMP emanating from a nearby point source, it responds by putting
+out a hollow balloon-like membrane extension followed by a pseudopod. The
+effect of the stimulus is to influence the position where either of these
+protrusions is made on the cell rather than to cause them to be made.
+Because the pseudopod forms perpendicular to the cell surface, the site of
+formation is a measure of the precision with which a cell can locate the
+cAMP source. Cells beyond 1hr of starvation respond non-randomly with a
+precision that improves steadily thereafter. A cell that is starved for
+1-2hrs can locate the source accurately 43% of the time; the corresponding
+figure for a cell starved for 6-7hrs is 87%.  The response always displays
+scatter; and population-level heterogeneity reflects stochasticity in the
+behaviour of a single cell. From the angular distribution of the response
+its maximum information content is estimated to be 2 to 3 bits. In
+summary, we quantitatively demonstrate the stochastic nature of the
+directional response and the increase in its accuracy over time.
+
+
+Submitted by Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+---------------------------------------------------------------------------
+
+
+Mass spectrometric analysis of neutral and anionic N-glycans from a 
+Dictyostelium discoideum model for human congenital disorder of 
+glycosylation CDG IL.
+
+Hykollari A, Balog CI, Rendic; D, Braulke T, Wilson IB, Paschinger K.
+
+
+J Proteome Res. 2013 Jan 15. [Epub ahead of print]
+
+The HL241 mutant strain of the cellular slime mould Dictyostelium 
+discoideum is a potential model for human congenital disorder of 
+glycosylation type IL (ALG9-CDG) and has been previously predicted 
+to possess a lower degree of modification of its N-glycans with anionic 
+moieties than the parental wild-type. In this study, we first showed that 
+this strain has a premature stop codon in its alg9 mannosyltransferase 
+gene compatible with the occurrence of truncated N-glycans. These 
+were subject to an optimised analytical workflow, considering that mass 
+spectrometry of acidic glycans often presents challenges due to neutral 
+loss and suppression effects. Therefore, the protein-bound N-glycans 
+were first fractionated, after serial enzymatic release, by solid phase 
+extraction. Then primarily single glycan species were isolated by mixed 
+hydrophilic-interaction/anion-exchange or reversed phase HPLC and 
+analysed using chemical and enzymatic treatments and MS/MS. We 
+show that protein-linked N-glycans of the mutant are of reduced size as 
+compared to those of wild-type AX3, but still contain core alpha1,3-fucose, 
+intersecting N-acetylglucosamine, bisecting N-acetylglucosamine, 
+methylphosphate, phosphate and sulphate residues. We observe that a 
+single N-glycan can carry up to four of these six possible modifications. 
+Due to the improved analytical procedures, we reveal fuller details 
+regarding the N-glycomic potential of this fascinating model organism.
+
+
+Submitted by Iain Wilson [iain.wilson@boku.ac.at]
+---------------------------------------------------------------------------
+
+
+Dictyostelium development shows a novel pattern of evolutionary 
+conservation
+
+Xianjun Tian, Joan E. Strassmann and David C. Queller
+
+
+Molecular Biology and Evolution, in press
+
+Von Baer’s law states that early stages of animal development are the 
+most conserved. More recent evidence supports a modified "hourglass" 
+pattern in which an early but somewhat later stage is most conserved.  
+Both patterns have been explained by the relative complexity of either 
+temporal or spatial interactions; the greatest conservation and lowest 
+evolvability occur at the time of the most complex interactions, because 
+these cause larger effects that are harder for selection to alter.  This 
+general kind of explanation might apply universally across independent 
+multicellular systems, as supported by the recent finding of the hourglass 
+pattern in plants.  We use RNA-seq expression data from the development 
+of the slime mold Dictyostelium to demonstrate that it does not follow either 
+of the two canonical patterns but instead tends to show the strongest 
+conservation and weakest evolvability late in development. We propose 
+that this is consistent with a version of the spatial constraints model, 
+modified for organisms that never achieve a high degree of developmental 
+modularity.
+
+
+Submitted by David Queller [queller@biology2.wustl.edu]
+---------------------------------------------------------------------------
+
+
+A non-mitotic CENP-E homolog in Dictyostelium discoideum with slow 
+motor activity
+
+Suleyman Kosem (1,3), Zeynep Okten (1,3), Thi-Hieu Ho (1), Gudrun 
+Trommler (1), Michael P. Koonce (2), Matthias Samereier (1), 
+Annette Mueller-Taubenberger (1)
+
+(1) Institute for Anatomy and Cell Biology, Ludwig Maximilian University of 
+Munich, Schillerstr. 42, 80336 Munich, Germany
+(2) 2Division of Translational Medicine, Wadsworth Center, Empire State 
+Plaza, Albany, New York 12201-0509, USA
+(3) Present address: Physics Department E22, Technical University Munich, 
+James-Franck-Str. 1, 85748 Garching, Germany
+
+
+Biochem. Biophys. Res. Comm., in press
+
+Kinesins are ATP-dependent molecular motors that mediate unidirectional 
+intracellular transport along microtubules. Dictyostelium discoideum has 13 
+different kinesin isoforms including two members of the kinesin-7 family, 
+Kif4 and Kif11. While Kif4 is structurally and functionally related to 
+centromere-associated CENP-E proteins involved in the transport of 
+chromosomes to the poles during mitosis, the function of the unusually 
+short CENP-E variant Kif11 is unclear. Here we show that orthologs of short 
+CENP-E variants are present in plants and fungi, and analyze functional 
+properties of the Dictyostelium CENP-E version, Kif11. Gene knockout 
+mutants reveal that Kif11 is not required for mitosis or development. 
+Imaging of GFP-labeled Kif11 expressing Dictyostelium cells indicates that 
+Kif11 is a plus-end directed motor that accumulates at microtubule plus 
+ends. By multiple motor gliding assays, we show that Kif11 moves with an
+ average velocity of 38 nm per second, thus defining Kif11 as a very slow 
+ motor. The activity of the Kif11 motor appears to be modulated via 
+ interactions with the non-catalytic tail region. Our work highlights a 
+ subclass of kinesin-7-like motors that function outside of a role in mitosis.
+
+
+Submitted by [Annette Mueller-Taubenberger [amueller@lrz.uni-muenchen.de]
+---------------------------------------------------------------------------
+
+
+Temporal and non-permanent division of labor during sorocarp formation in 
+the social amoeba Acytostelium subglobosum
+
+Kurato Mohri, Yu Kiyota, Hidekazu Kuwayama and Hideko Urushihara*
+
+
+Developmental Biology, in press
+
+Somatic cell differentiation is crucial for the development of multicellular 
+organisms. While the development of a fruiting body in Dictyostelium 
+discoideum represents a simple model of this process with separation of 
+stalk cells from the spore lineage, that of Acytostelium subglobosum is not 
+accompanied by cell type separation. This species produces acellular stalks 
+and, seemingly, all aggregated amoebae become spores; however, it 
+possesses homologs for the stalk-cell marker genes of D. discoideum. In 
+this study, we analyzed the spatio-temporal expression of A. subglobosum 
+orthologs for D. discoideum stalk- or spore-lineage markers to clarify the 
+developmental process of A. subglobosum. We first found that the prespore 
+vesicles, which contained spore coat proteins, started to accumulate in the 
+tip region and were observed in the entire sorogen throughout later 
+development, confirming that all A. subglobosum cells became spores. The 
+expression of a stalk-lineage gene ortholog, As-ecmA, started at the mound 
+stage and was prominent in the protruding sorogen. Although two spore-
+lineage gene orthologs, As-cotD1 and -cotD2, were likewise detected shortly 
+after cell aggregation and increased in intensity until tip formation, their 
+expression diminished in the protruding sorogen. Double-fluorescence 
+staining of these prestalk and prespore marker genes revealed that the 
+expression of these marker genes was mutually exclusive and that 
+expression switching occurred in the early tip. Our results indicate that 
+A. subglobosum cells become committed to the spore lineage first, and 
+then, while keeping this commitment intact, participate in stalk formation. 
+Instead of the permanent division of labor observed in D. discoideum, 
+A. subglobosum produces fruiting bodies by all cells contributing to the 
+formation of the stalk as well as forming spores.
+
+
+Submitted by Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 2]

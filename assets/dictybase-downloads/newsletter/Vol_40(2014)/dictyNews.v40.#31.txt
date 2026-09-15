@@ -1,0 +1,141 @@
+dictyNews
+Electronic Edition
+Volume 40, number 31
+December 12, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+The Dictyostelium prestalk inducer Differentiation Inducing Factor-1 
+(DIF-1) triggers unexpectedly complex global phosphorylation changes
+
+Chris Sugden*, Michael D. Urbaniak@, Tsuyoshi Araki* and 
+Jeffrey G. Williams*
+
+*The College of Life Sciences, University of Dundee, Dow St., 
+Dundee DD1 5EH, UK. 
+@Division of Biomedical and Life Sciences, Faculty of Health and 
+Medicine, Lancaster University, Bailrigg, Lancaster LA1 4YG, UK.
+
+Address correspondence to: Jeffrey G. Williams (J.G.Williams@dundee.ac.uk)
+
+Abbreviations: DIF-1, Differentiation Inducing Factor-1; SILAC, 
+Stable Isotope Labeling by Amino Acids in Cell Culture
+
+
+Mol Biol of the Cell (MBoC), in press
+
+DIF-1 is a polyketide that induces Dictyoselium amoebae to 
+differentiate as prestalk cells. We performed a global quantitative 
+screen for phosphorylation changes that occur within the first minutes 
+after addition of DIF-1 using a triple-label SILAC approach. This 
+revealed a new world of DIF-1 controlled signalling: with changes in 
+components of the MAPK and protein kinase-B signalling pathways, 
+components of the actinomyosin cytoskeletal signalling networks and 
+in a broad range of small GTPases and their regulators. The results 
+also provide evidence that the Ca2+/calmodulin dependent phosphatase 
+calcineurin plays a role in DIF-1 signalling to the DimB prestalk 
+transcription factor. At the global level DIF-1 causes a major shift 
+in the phosphorylation/dephosphorylation equilibrium towards net 
+dephosphorylation. Interestingly, many of the sites that are 
+dephosphorylated in response to DIF-1 are phosphorylated in response 
+to extracellular cAMP signalling. This accords with studies that 
+suggest an antagonism between the two inducers and also with the rapid 
+dephosphorylation of the cAMP receptor that we observe in response to 
+DIF-1 and with the known inhibitory effect of DIF-1 on chemotaxis to 
+cAMP.
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+----------------------------------------------------------------------
+
+
+Image based validation of dynamical models for cell reorientation
+
+Robert Lockley (1), Graham Ladds (2) and Till Bretschneider (1)
+
+1 Warwick Systems Biology Centre, Senate House, University of Warwick, 
+Coventry, United Kingdom
+2 Division of Biomedical Cell Biology, Warwick Medical School, 
+University of Warwick, Coventry, United Kingdom
+
+
+Cytometry A, first published online (open access): 9 DEC 2014
+DOI: 10.1002/cyto.a.22600
+
+A key feature of directed cell movement is the ability of cells to 
+reorient quickly in response to changes in the direction of an 
+extracellular stimulus. Mathematical models have suggested quite 
+different regulatory mechanisms to explain reorientation, raising the 
+question of how we can validate these models in a rigorous way. In 
+this study, we fit three reaction–diffusion models to experimental 
+data of Dictyostelium amoebae reorienting in response to alternating 
+gradients of mechanical shear flow. The experimental readouts we use 
+to fit are spatio-temporal distributions of a fluorescent reporter for 
+cortical F-actin labeling the cell front. Experiments performed under 
+different conditions are fitted simultaneously to challenge the models 
+with different types of cellular dynamics. Although the model proposed 
+by Otsuji is unable to provide a satisfactory fit, those suggested by 
+Meinhardt and Levchenko fit equally well. Further, we show that 
+reduction of the three-variable Meinhardt model to a two-variable model 
+also provides an excellent fit, but has the advantage of all parameters 
+being uniquely identifiable. Our work demonstrates that model selection 
+and identifiability analysis, commonly applied to temporal dynamics 
+problems in systems biology, can be a powerful tool when extended to 
+spatio-temporal imaging data.
+
+
+Submitted by Till Bretschneider [T.Bretschneider@warwick.ac.uk]
+----------------------------------------------------------------------
+
+
+c-di-GMP induction of Dictyostelium cell death requires the polyketide 
+DIF-1 
+
+Yu Song, Marie-Francoise Luciani, Corinne Giusti, and Pierre Golstein
+
+Centre d’Immunologie de Marseille-Luminy, UM2 Aix-Marseille Universite, 
+Case 906, 13288 Marseille cedex 9, France; 
+INSERM, U1104, 13288 Marseille, France; 
+CNRS, UMR7280, 13288 Marseille, France.
+Address correspondence to: Pierre Golstein (golstein@ciml.univ-mrs.fr)
+
+
+Mol Biol of the Cell (MBoC), in press
+
+Cell death in the model organism Dictyostelium, as studied in monolayers 
+in vitro, can be induced by the polyketide DIF-1 or by the cyclic 
+dinucleotide c-di-GMP. c-di-GMP, a universal bacterial second messenger, 
+can trigger innate immunity in bacterially-infected animal cells, and is 
+involved in developmental cell death in Dictyostelium. We show here that 
+c-di-GMP was not sufficient to induce cell death in Dictyostelium cell 
+monolayers. Unexpectedly, it also required the DIF-1 polyketide. The 
+latter could be exogenous, as revealed by a telling synergy between 
+c-di-GMP and DIF-1. The required DIF-1 polyketide could also be 
+endogenous, as shown by the inability of c-di-GMP to induce cell death 
+in Dictyostelium HMX44A cells and DH1 cells upon pharmacological or 
+genetic inhibition of DIF-1 biosynthesis. In these cases c-di-GMP-induced 
+cell death was rescued by complementation with exogenous DIF-1. 
+Altogether, these results demonstrated that c-di- GMP could trigger cell 
+death in Dictyostelium only in the presence of the DIF-1 polyketide or 
+its metabolites. This identified another element of control to this cell 
+death and perhaps also to c-di-GMP effects in other situations and 
+organisms.
+
+
+Submitted by Pierre Golstein [golstein@ciml.univ-mrs.fr]   
+==============================================================
+[End dictyNews, volume 40, number 31]

@@ -1,0 +1,129 @@
+Dicty News
+Electronic Edition
+Volume 17, number 14
+December 15, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+===========================
+  New Report on DictyBase
+===========================
+
+John Bonner has contributed a short report on the number of cells in 
+Dictyostelium slugs.  You can download this report from 
+http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+The Formation of Actin Rods Composed of Actin Tubules in Dictyostelium 
+discoideum  Spores
+
+Masazumi Sameshima,*1 Yoshiro Kishi,* Masako Osumi,   Reiko Minamikawa-Tachino, 
+Dana Mahadeo,2 and David A. Cotter2
+
+*Electron Microscopy Center, and Computer Center, The Tokyo Metropolitan 
+Institute of Medical Science, Tokyo Metropolitan Organization for Medical 
+Research, 3-18-22 Honkomagome, Bunkyo-ku, Tokyo 113-8613, Japan;   Department 
+of Chemical and Biological Sciences, Faculty of Science, Japan Women's 
+University, Bunkyo-ku, Tokyo 112-8681, Japan; and 2Department of Biological 
+Sciences, University of Windsor, Windsor, Ontario N9B 3P4, Canada
+
+Accepted by J Struct Biol
+
+Abstract
+
+A new type of actin rods formed in both of the nucleus and the cytoplasm 
+as well as tyrosine phosphorylation of actin are implicated in the 
+maintenance of dormancy and viability of Dictyostelium discoideum spores. 
+Recently we have found that S-adenosyl-L-homocysteine hydrolase that is a 
+key enzyme for methylation is sequestered into actin rods. Here the 
+ultrastructure of the rods and their relationship to the phosphorylation 
+were examined. The rods first appeared in premature spores at the mid 
+culmination stage as bundles composed of actin tubules hexagonally 
+cross-linked. The 13 nm diameter bundles were composed of three actin 
+filaments. Formation of the actin rods begins during late culmination 
+stage and proceeds until two days after completion of fruiting bodies.  
+The physical events occur in the following order; association of several 
+modules of bundles, closely packing and decrease in diameter of actin 
+tubules, elongation of rods across the nucleus or the cytoplasm. Actin 
+phosphorylation levels increased at the late culmination stage and reached 
+a maximum level 12 hours later. Immediately following activation of spore 
+germination, actin was rapidly dephosphorylated, followed shortly thereafter 
+with the disappearance of rods. Shortened actin tubules once again became 
+arranged in a hexagonal pattern. This hexagonal arrangements of actin 
+tubules are possibly involved in rod formation and disappearance, and do 
+not depend upon actin phosphorylation. In contrast, rod-maturation processes 
+may correlate with actin phosphorylation.
+
+-----------------------------------------------------------------------------
+REGULATION OF ADENYLYL CYCLASES BY A REGION OUTSIDE THE MINIMALLY FUNCTIONAL 
+CYTOPLASMIC DOMAINS
+
+Carole A. Parent, Jane Borleis, and Peter N. Devreotes
+
+Department of Biological Chemistry, The Johns Hopkins School of Medicine, 
+Baltimore, MD 21205
+
+Journal of Biological Chemistry, in press.
+
+
+The highly conserved topological structure of G protein activated adenylyl 
+cyclases seems unnecessary since the soluble cytoplasmic domains retain 
+regulatory and catalytic properties. Yet, we previously isolated a 
+constitutively active mutant of the D. discoideum adenylyl cyclase harboring 
+a single point mutation in the region linking the cytoplasmic and membrane 
+domains (L394). We show here that multiple amino acid substitutions at L394 
+also display constitutive activity. The constitutive activity of these 
+mutants is not dependent on G proteins or cytosolic regulators, although 
+some of the mutants can be activated to higher levels than wild type. 
+Combining a constitutive mutation such as L394T with K482N, a point mutation 
+that renders the enzyme insensitive to regulators, restores an enzyme with 
+wild type properties of low basal activity and the capacity to be activated 
+by G proteins. Thus regions located outside the cytoplasmic loops of 
+adenylyl cyclases are not only important in the acquisition of an activated 
+conformation, they also have impact on other regions within the catalytic 
+core of the enzyme.
+
+-----------------------------------------------------------------------------
+
+Phospholipase Cd regulates germination  of Dictyostelium spores
+  
+Peter Van Dijken and Peter J.M. Van Haastert
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4, 9747 AG 
+Groningen, The Netherlands
+
+BMC Cell Biology, in press.
+
+Abstract
+
+Many eukaryotes, including plants and fungi make spores that resist severe 
+environmental stress. The micro-organism Dictyostelium contains a single 
+phospholipase C gene (PLC); deletion of the gene has no effect on growth, 
+cell movement and differentiation. In this report we show that PLC is 
+essential to sense the environment of food-activated spores.  Plc-null spores 
+germinate at alkaline pH, reduced temperature or increased osmolarity, 
+conditions at which the emerging amoebae can not grow. In contrast, 
+food-activated wild-type spores return to dormancy till conditions in the 
+environment allow growth. The analysis of inositol 1,4,5-trisphosphate (IP3) 
+levels and the effect of added IP3 uncover an unexpected mechanism how PLC 
+regulates spore germination: i) deletion of PLC induces the enhanced activity 
+of an IP5 phosphatase leading to high IP3 levels in plc-null cells; ii) in 
+wild-type spores unfavourable conditions inhibit PLC leading to a reduction 
+of IP3 levels; addition of exogenous IP3 to wild-type spores induces 
+germination at unfavourable conditions; iii) in plc-null spores IP3 levels 
+remain high, also at unfavourable environmental conditions. The results 
+imply that environmental conditions regulate PLC activity and that IP3 
+induces spore germination; the uncontrolled germination of plc-null spores 
+is not due to a lack of PLC activity but to the constitutive activation of 
+an alternative IP3- forming pathway.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 14]

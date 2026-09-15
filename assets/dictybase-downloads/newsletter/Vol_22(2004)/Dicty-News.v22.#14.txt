@@ -1,0 +1,108 @@
+Dicty News
+Electronic Edition
+Volume 22, number 14
+June 04, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+
+Prespore-to-stalk conversion involves the production of a pathway-specific
+glycoprotein, wst25, in the cellular slime mould Dictyostelium discoideum
+
+Yuzuru Kubohara,* Akiko Arai, Katsunori Takahashi, Kohei Hosaka, Koji
+Okamoto
+
+Biosignal Research Center, Institute for Molecular and Cellular Regulation,
+Gunma University, Maebashi 371-8512, Japan
+
+
+Biochem. Biophys. Res. Commun., In press.
+
+
+We have previously identified a stalk-specific wheat germ agglutinin
+(WGA)-binding protein, wst34, in the cellular slime mould Dictyostelium
+discoideum (Kubohara and Okamoto, Biochem. Cell Biol. 68, 699-704, 1990).
+Here, we found another stalk-specific WGA-binding protein, wst25, which was
+detected with two antisera that recognize wst34.  Using the two marker
+proteins, we then analyzed and compared the pathways of prestalk-to-stalk
+maturation and prespore-to-stalk conversion in vitro and in vivo.  Prestalk
+cells isolated from normally formed slugs can be converted to stalk cells
+(designated StI) in vitro with 8-bromo-cAMP (Br-cAMP), whereas prespore
+cells isolated from slugs can be converted to fully vacuolated stalk cells
+(designated StII) in vitro with Br-cAMP and DIF-1.  During the process of
+prespore-to-stalk conversion, prespore-specific mRNAs, D19 and 2H3,
+disappeared rapidly, while prestalk-specific mRNAs, ecmA and ecmB, appeared
+at 2 h of incubation and increased thereafter.  Most importantly, however,
+the StII cells thus formed were biochemically different from the StI cells
+originated from prestalk cells; that is, StI cells expressed wst34 but not
+wst25, while StII cells expressed wst25 but not wst34.  When prespore cells
+isolated from slugs were allowed to develop on a substratum, they
+differentiated into spores and stalk cells and formed fruiting bodies, and
+the stalk cells formed from prespore cells in vivo expressed wst25 but not
+wst34.  The present results indicate that there are two types of stalk
+cells, StI (prestalk-origin) and StII (prespore-origin), and that wst34 and
+wst25 are the specific markers for StI and StII, respectively.
+
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+A Demonstration of Pattern Formation Without Positional Information in
+Dictyostelium
+
+Christopher R. L. Thompson*, Stefanie Reichelt and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, England, CB2 2QH
+
+*author for correspondence and present address:
+School of Biological Sciences, University of Manchester, Oxford Road,
+Manchester, England, M13 9PT 
+
+
+Development Growth and Differentiation, in press
+
+
+Although positional information, conveyed by morphogen gradients, is a
+widely accepted way of forming patterns during development, an alternative
+method is conceivable, based on the intermingled differentiation of cells
+with different fates, followed by their sorting into discrete pattern
+elements.  It has been proposed that Dictyostelium prestalk and prespore
+cells behave in this way at the mound stage of development.  However, it
+has been difficult to conclusively demonstrate that they initially
+differentiate intermingled, because rapid cell movement within the mound
+makes it impossible to be sure where prestalk and prespore cells originate.
+We have taken a novel approach to address this problem by blocking cell
+movement at different stages in development, using the actin-depolymerizing
+drug, latrunculin-A.   Prestalk and prespore cells differentiate with
+essentially normal efficiency and timing in such paralyzed structures.
+When movement is blocked sufficiently early, the major cell types all
+subsequently differentiate at scattered positions throughout the aggregate, 
+and even in the streams leading into it. Our work strongly supports the idea
+that the prestalk/prespore pattern in Dictyostelium forms without positional
+information and demonstrate that latrunculin-A may provide a useful tool for
+the investigation of patterning in other organisms.
+
+
+
+Submitted by: Chris Thompson [christopher.thompson@man.ac.uk]
+
+===============================================================================
+[End Dicty News, volume 22, number 14]

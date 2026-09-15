@@ -1,0 +1,171 @@
+dictyNews
+Electronic Edition
+Volume 41, number 7
+April 10, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+Fitness trade-offs result in the illusion of social success
+
+Jason B. Wolf1* Jennifer A. Howie2, Katie Parkinson2, Nicole 
+Gruenheit2, Diogo Melo3, Daniel Rozen4, and 
+Christopher R.L. Thompson2*
+
+1 Department of Biology and Biochemistry, University of Bath,
+ Claverton Down, Bath, BA2 7AY, UK
+2 Faculty of Life Sciences, Michael Smith Building, University 
+of Manchester, Oxford Rd, Manchester, M13 9PT, UK 
+3 Departamento de Genética e Biologia Evolutiva, Instituto 
+de Biociências, Universidade de São Paulo, São Paulo, SP, Brazil
+4 Institute of Biology, Leiden University, Sylvius Laboratory, 
+Sylviusweg 72, PO Box 9505, 2300 RA Leiden, The Netherlands 
+* Corresponding authors
+
+
+Current Biology, in press
+
+Cooperation is ubiquitous across the tree of life, from 
+simple microbes to the complex social systems of animals [1]. 
+Individuals cooperate by engaging in costly behaviours that 
+can be exploited by other individuals who benefit by avoiding 
+these associated costs. Thus, if successful exploitation of 
+social partners during cooperative interactions increases 
+relative fitness, then we expect selection to lead to the 
+emergence of a single optimal winning strategy in which 
+individuals maximize their gain from cooperation while 
+minimizing their associated costs [2]. Such social ‘cheating’ 
+appears to be widespread in nature [3], including several 
+microbial systems [4-11], but despite the fitness advantages 
+favouring social cheating, populations tend to harbour 
+significant variation in social success rather than a single 
+optimal winning strategy. Using the social amoeba Dictyostelium 
+discoideum we provide a possible explanation for the coexistence 
+of such variation. We find that genotypes typically designated 
+as ‘cheaters’ [12] because they produce a disproportionate 
+number of spores in chimeric fruiting bodies, do not actually 
+gain higher fitness as a result of this apparent advantage 
+because they produce smaller, less viable, spores than putative 
+‘losers’. As a consequence of this trade-off between spore 
+number and viability, genotypes with different spore production 
+strategies, which give the appearance of differential social 
+success, ultimately have similar realised fitness. These 
+findings highlight the limitations of using single fitness 
+proxies in evolutionary studies and suggest that interpreting 
+social trait variation in terms of strategies like cheating 
+or cooperating may be misleading unless these behaviours are 
+considered in the context of the true multidimensional nature 
+of fitness.
+
+
+Submitted by Chris Thompson [christopher.thompson@manchester.ac.uk] 
+----------------------------------------------------------------------
+
+
+Genetic control of morphogenesis in Dictyostelium
+
+William F. Loomis
+University of California San Diego, La Jolla, CA 92093 
+
+
+Developmental Biology, in press
+	
+Cells grow, move, expand, shrink and die in the process of 
+generating the characteristic shapes of organisms. Although the 
+structures generated during development of the social amoeba 
+Dictyostelium discoideum look nothing like the structures seen 
+in metazoan embryogenesis, some of the morphogenetic processes 
+used in their making are surprisingly similar. Recent advances 
+in understanding the molecular basis for directed cell migration, 
+cell type specific sorting, differential adhesion, secretion of 
+matrix components, pattern formation, regulation and terminal 
+differentiation are reviewed. Genes involved in Dictyostelium 
+aggregation, slug formation, and culmination of fruiting bodies 
+are discussed.
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+----------------------------------------------------------------------
+
+
+Leaps and lulls in the developmental transcriptome of Dictyostelium 
+discoideum
+
+Rafael David Rosengarten, Balaji Santhanam, Danny Fuller, Mariko 
+Katoh-Kurasawa, William F. Loomis, Blaz Zupan, and Gad Shaulsky
+
+Department of Molecular and Human Genetics and Graduate Program 
+in Structural and Computational Biology and Molecular Biophysics, 
+Baylor College of Medicine
+Section of Cell and Developmental Biology, University of 
+California San Diego
+Faculty of Computer and Information Science, University of 
+Ljubljana
+
+
+BMC Genomics, accepted 26 March 2015
+
+Background. Development of the soil amoeba Dictyostelium discoideum 
+is triggered by starvation. When placed on a solid substrate, the 
+starving solitary amoebae cease growth, communicate via extracellular 
+cAMP, aggregate by tens of thousands and develop into multicellular 
+organisms. Early phases of the developmental program are often 
+studied in cells starved in suspension while cAMP is provided 
+exogenously. Previous studies revealed massive shifts in the 
+transcriptome under both developmental conditions and a close 
+relationship between gene expression and morphogenesis, but were 
+limited by the sampling frequency and the resolution of the methods.
+
+Results. Here, we combine the superior depth and specificity of 
+RNA-seq-based analysis of mRNA abundance with high frequency 
+sampling during filter development and cAMP pulsing in suspension. 
+We found that the developmental transcriptome exhibits mostly 
+gradual changes interspersed by a few instances of large shifts. 
+For each time point we treated the entire transcriptome as single 
+phenotype, and were able to characterize development as groups 
+of similar time points separated by gaps. The grouped time points 
+represented gradual changes in mRNA abundance, or molecular 
+phenotype, and the gaps represented times during which many genes 
+are differentially expressed rapidly, and thus the phenotype 
+changes dramatically. Comparing development on solid substrate 
+to development in suspension revealed that gene expression in 
+filter developed cells lagged behind those treated with exogenous 
+cAMP in suspension. The high sampling frequency revealed many 
+genes whose regulation is reproducibly more complex than 
+indicated by previous studies. Gene Ontology enrichment analysis 
+suggested that the transition to multicellularity coincided with 
+rapid accumulation of transcripts associated with DNA processes 
+and mitosis. Later development included the up-regulation of 
+organic signaling molecules and co-factor biosynthesis. We 
+observed multiple instances of enrichment of oxidation-reduction 
+and reactive oxygen related terms. Our analysis also demonstrated 
+a high level of synchrony among the developing structures 
+throughout development.
+
+Conclusions. Our data describe D. discoideum development as a 
+series of coordinated cellular and multicellular activities. 
+Coordination occurred within fields of aggregating cells and 
+among multicellular bodies, such as mounds or migratory slugs 
+that experience both cell-cell contact and various soluble 
+signaling regimes. These time courses, sampled at the highest 
+temporal resolution to date in this system, provide a 
+comprehensive resource for studies of developmental gene 
+expression.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu] 
+==============================================================
+[End dictyNews, volume 41, number 7]

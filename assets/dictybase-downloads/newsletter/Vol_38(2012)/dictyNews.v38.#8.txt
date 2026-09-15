@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 38, number 8
+March 16, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+The Molecular Basis of the Dynamic Relocalization of Dictyostelium 
+Myosin IB
+
+Hanna Brzeska‡, Jake Guag‡, G. Michael Preston‡, Margaret A. Titus§, 
+and Edward D. Korn‡
+
+From the ‡Laboratory of Cell Biology, National Heart, Lung, and Blood 
+Institute, National Institutes of Health, 9000 Rockville Pike, Bethesda, 
+MD 20892 and the 
+§Department of Genetics, Cell Biology and Development, University of 
+Minnesota, Minneapolis, MN 55455
+
+
+J. Biol. Chem., in press
+
+Class-I myosins have a single heavy chain comprising an N-terminal 
+motor domain with actin-activated ATPase activity and a C-terminal 
+globular tail with a basic region that binds to acidic phospholipids.   
+These myosins contribute to the formation of actin-rich protrusions such 
+as pseudopodia but regulation of the dynamic localization to these 
+structures is not understood. Previously, we found that Acanthamoeba 
+myosin IC binds to acidic phospholipids in vitro through a short sequence 
+of basic and hydrophobic amino acids, BH-site, based on the charge 
+density of the phospholipids.  The tail of Dictyostelium myosin IB (DMIB) 
+also contains a BH-site.  We now report that the BH-site is essential for 
+DMIB binding to the plasma membrane and describe the molecular basis 
+of the dynamic relocalization of DMIB in live cells.  Endogenous DMIB is 
+localized uniformly on the plasma membrane of resting cells, at active 
+protrusions and cell-cell contacts of randomly moving cells, and at the 
+front of motile polarized cells.  The BH-site is required for association of 
+DMIB with the plasma membrane at all stages where it colocalizes with 
+PIP2/PIP3.  The charge-based specificity of the BH-site allows for in vivo 
+specificity of DMIB for PIP2/PIP3 similar to the PH domain-based specificity 
+of other class-I myosins. However, DMIB-head is required for relocalization 
+of DMIB to the front of migrating cells.  Motor activity is not essential but the 
+actin-binding site in the head is important.  Thus, dynamic relocalization of 
+DMIB is determined principally by the local PIP2/PIP3 concentration in the 
+plasma membrane and cytoplasmic F-actin.
+
+
+Submitted by Hanna Brzeska [brzeskah@nhlbi.nih.gov]
+--------------------------------------------------------------------------------------
+
+
+Pleiotropic Roles of a Ribosomal Protein in Dictyostelium discoideum.
+
+Amarnath S, Kawli T, Mohanty S, Srinivasan N, Nanjundiah V.
+
+
+PLoS One. 2012;7(2):e30644. Epub 2012 Feb 17.
+
+The cell cycle phase at starvation influences post-starvation differentiation 
+and morphogenesis in Dictyostelium discoideum. We found that when 
+expressed in Saccharomyces cerevisiae, a D. discoideum cDNA that 
+encodes the ribosomal protein S4 (DdS4) rescues mutations in the cell 
+cycle genes cdc24, cdc42 and bem1. The products of these genes affect 
+morphogenesis in yeast via a coordinated moulding of the cytoskeleton 
+during bud site selection. D. discoideum cells that over- or under-expressed 
+DdS4 did not show detectable changes in protein synthesis but displayed 
+similar developmental aberrations whose intensity was graded with the 
+extent of over- or under-expression. This suggested that DdS4 might 
+influence morphogenesis via a stoichiometric effect - specifically, by taking 
+part in a multimeric complex similar to the one involving Cdc24p, Cdc42p 
+and Bem1p in yeast. In support of the hypothesis, the S. cerevisiae proteins 
+Cdc24p, Cdc42p and Bem1p as well as their D. discoideum cognates could 
+be co-precipitated with antibodies to DdS4. Computational analysis and 
+mutational studies explained these findings: a C-terminal domain of DdS4 
+is the functional equivalent of an SH3 domain in the yeast scaffold protein 
+Bem1p that is central to constructing the bud site selection complex. Thus 
+in addition to being part of the ribosome, DdS4 has a second function, also 
+as part of a multi-protein complex. We speculate that the existence of the 
+second role can act as a safeguard against perturbations to ribosome 
+function caused by spontaneous variations in DdS4 levels.
+
+
+Submitted by Smita Amarnath [smita.smitar@gmail.com]
+==============================================================
+[End dictyNews, volume 38, number 8]

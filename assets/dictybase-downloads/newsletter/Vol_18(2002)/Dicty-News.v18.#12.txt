@@ -1,0 +1,279 @@
+Dicty News
+Electronic Edition
+Volume 18, number 12
+June 22, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+======================
+  Position Available
+======================
+
+Scientific Curator, DictyBase
+
+A position is available for a scientific curator to work with DictyBase.
+This is a great opportunity for someone experienced with Dictyostelium
+as an experimental system, who is also interested in bioinformatics.  
+The individual occupying this position will become part of the DictyBase
+team which includes other scientific curators and bioinformatics support.  
+Responsibilities will include curating entries in DictyBase, 
+working closely with the sequencing centers involved in sequencing the
+Dictyostelium genome as well as the Dictyostelium research community,
+to integrate the scientific knowledge derived from research using 
+Dictyostelium with genome sequence and the scientific literature.
+The DictyBase scientific curators will also interact with scientific 
+curators from other model organism databases such as FlyBase, WormBase,
+SGD (Sacchromyces Genome Database) and MGI (Mouse Genome Informatics).
+
+Desired experience includes research using Dictyostelium, familiarity 
+with genome informatics, and the use of computers in research.  This 
+position will be located in the Northwestern University Center for 
+Genetic Medicine in Chicago.  Appointment will be on the research 
+scientist track at Northwestern University and includes a generous 
+salary and full benefits.
+
+Interested candidates should submit a current CV and a brief description
+of research experience and interest in bioinformatics (preferably by email)
+to:
+
+Rex L. Chisholm (r-chisholm@northwestern.edu)
+Center for Genetic Medicine
+Northwestern University
+303 E. Chicago Ave.
+Chicago, IL 60611
+
+
+=============
+  Abstracts
+=============
+
+Regulated expression of the MADS-box transcription factor SrfA mediates 
+activation of gene expression by PKA during Dictyostelium sporulation
+
+Ricardo Escalante* and Leandro Sastre
+
+Instituto de Investigaciones Biomdicas C.S.I.C/U.A.M. C/Arturo Duperier, 
+4, 28029 Madrid, Spain.
+
+*Author for correspondence: Fax: +34-91-585-4587. 
+E-mail: rescalante@iib.uam.es
+
+Mechanisms of Development (in press)
+
+Abstract
+
+Cell differentiation and morphogenesis are tightly regulated during 
+sporulation in the lower eukaryote Dictyostelium discoideum. The control of 
+the cAMP-dependent protein kinase (PKA) is essential to coordinate these 
+processes.  Several signal transduction pathways are being recognized that 
+lead to the regulation of intracellular cAMP levels. However, very little is 
+known about the events lying downstream of PKA that are essential to 
+activate late gene expression and terminal differentiation of the spores. 
+We have studied the relationship between PKA and the MADS-box transcription 
+factor SrfA, essential for spore differentiation. Constitutive activation of 
+PKA was not able to rescue sporulation in a strain that lacks srfA suggesting 
+the possibility that srfA functions downstream of PKA in a signal 
+transduction pathway leading to spore maturation. A distal promoter region 
+regulates the induction of srfA expression in the prespore region during 
+culmination. We found that this promoter can be induced precociously by 
+activating PKA with 8-Br-cAMP suggesting a transcriptional regulation by 
+PKA. Moreover, precocious sporulation and expression of the spore marker 
+spiA in a strain that over-expresses PKA correlates with a precocious 
+induction of srfA expression. The temporal and spatial pattern of expression 
+was also studied in a mutant strain lacking the main adenylyl cyclase that 
+functions during culmination, ACR. This strain is expected to have lower 
+PKA activity and consistently, the level of srfA expression was reduced. 
+Moreover, the temporal induction of srfA in the prespore region was also 
+delayed during culmination. Our results strongly suggest that PKA activation 
+during culmination leads to the induction of the expression of srfA. The 
+correct temporal and spatial pattern of srfA expression appears to be part 
+of a mechanism that ensures the adequate coordination of gene expression 
+and morphogenesis.
+
+-----------------------------------------------------------------------------
+
+Cells respond to and bind countin, a component of a multisubunit cell-number 
+counting factor
+
+Tong Gao1, Karen Ehrenman1, Lei Tang2, Matthias Leippe3, Debra A. Brock1, 
+and Richard H. Gomer1, 2
+
+1Howard Hughes Medical Institute and 2Department of Biochemistry and Cell 
+Biology, MS-140, Rice University, 6100 S. Main Street, Houston, TX 77005-1892 
+and  3Molecular Parasitology Group, Research Center for Infectious Diseases,
+Rntgenring 11, 97070 Wuerzburg, Germany
+
+Journal of Biological Chemistry, in press
+
+Summary
+
+   In Dictyostelium discoideum counting factor (CF), a secreted ~450kDa 
+complex of polypeptides, inhibits group and fruiting body size. When the 
+gene encoding countin (a component of CF) was disrupted, cells formed large 
+groups.  We find that recombinant countin causes developing cells to form 
+small groups with an EC50 of ~3 ng/ ml, and affects cAMP signal transduction 
+in the same manner as semipurified CF.  Recombinant countin increases cell 
+motility, decreases cell-cell adhesion, and regulates gene expression in a 
+manner similar to the effect of CF. However, countin does not decrease 
+adhesion or group size to the extent that semipurified CF does.  A 1 minute 
+exposure of developing cells to countin causes an increase in F-actin 
+polymerization and myosin phosphorylation, and a decrease in myosin 
+polymerization, suggesting that countin activates a rapid signal 
+transduction pathway.  125I-labelled countin has countin bioactivity, and 
+binding experiments suggest that vegetative and developing cells have ~53 
+cell-surface sites which bind countin with a KD of approximately 1.5 ng/ ml 
+or 60 pM.  We hypothesize that countin regulates cell development through 
+the same pathway as CF and that other proteins within the complex may modify 
+the activity of countin and/or have independent size-regulating activities.
+
+-----------------------------------------------------------------------------
+
+
+A single cell-density sensing factor stimulates distinct signal transduction 
+pathways through two different receptors
+
+William J. Deery, Tong Gao, Robin Ammann, and Richard H. Gomer
+
+Howard Hughes Medical Institute, Department of Biochemistry and Cell Biology, 
+MS-140, Rice University, 6100 S. Main Street Houston, TX 77005-1892
+
+Journal of Biological Chemistry, in press
+
+Summary
+In Dictyostelium discoideum, cell density is monitored by levels of a secreted 
+protein, conditioned-medium factor (CMF).  CMFR1 is a putative CMF receptor 
+necessary for CMF-induced G protein-independent accumulation of the SP70 
+prespore protein, but not for CMF-induced G protein-dependent IP3 production.  
+Using recombinant fragments of CMF, we find that stimulation of the IP3 
+pathway requires amino acids 170 - 180 whereas SP70 accumulation does not, 
+corroborating a two-receptor model.  Cells lacking CMFR1 do not aggregate, 
+due to the lack of expression of several important early developmentally 
+regulated genes, including gp80.  Although many aspects of early 
+developmental cAMP-stimulated signal transduction are mediated by CMF, 
+CMFR1 is not essential for cAMP-stimulated cAMP and cGMP production or
+Ca++ uptake, suggesting the involvement of a second CMF receptor.
+Exogenous application of antibodies against either the region between a 
+first and second or a second and third possible transmembrane domain of 
+CMFR1 induces SP70 accumulation.  Antibody- and CMF-induced gene expression 
+can be inhibited by recombinant CMFR1 corresponding to the region between 
+the first and third potential transmembrane domains, indicating that this 
+region is extracellular and likely contains the CMF binding site.  These 
+observations support a model where a one- or two-transmembrane CMFR1 
+regulates gene expression and a G protein-coupled CMF receptor mediates 
+cAR1 signal transduction.
+
+-----------------------------------------------------------------------------
+
+A second UDP glucose pyrophosphorylase is required for differentiation and 
+development in Dictyostelium discoideum
+
+
+John D. Bishop1, Byoung C. Moon2, Faith Harrow2, Richard H. Gomer1, Robert P. 
+Dottin2, and Derrick T. Brazill2 
+
+1Howard Hughes Medical Institute, Department of Biochemistry and Cell Biology, 
+MS-140, Rice University, Houston, TX 77251-1892 2Hunter College, Department 
+of Biological Sciences, 695 Park Avenue, New York, NY 10021
+
+J. Biological Chemistry, in press.
+
+Summary
+	Uridine diphosphoglucose pyrophosphorylase (UDPGP) is a 
+developmentally regulated enzyme in Dictyostelium discoideum, which is 
+involved in trehalose, cellulose and glycogen synthesis.  Two independent 
+UDPGP proteins are believed to be responsible for this activity.  To 
+determine the relative contributions of each protein, the genes encoding 
+them were disrupted individually.  Cells lacking the udpgp1 gene exhibit 
+normal growth and development and make normal levels of cellulose.  In 
+agreement with these phenotypes, udpgp1- cells still have UDPGP activity, 
+although at a reduced level.  This supports the importance of the second 
+UDPGP gene.  This newly identified gene, ugpB, encodes an active UDPGP as 
+determined by complementation in E. coli.  When this gene is disrupted, 
+cells undergo aberrant differentiation and development ending with small, 
+gnarled fruiting bodies.  These cells also have decreased spore viability 
+and decreased levels of glycogen, whose production requires UDPGP activity. 
+These phenotypes suggest that UgpB constitutes the major UDPGP activity 
+produced during development.  Sequence analysis of the two UDPGP genes shows 
+that UgpB has higher homology to other eukaryotic UDPGPs than does UDPGP1. 
+This includes the presence of 5 conserved lysine residues.  Udpgp1 only has 
+1 of these lysines.
+
+-----------------------------------------------------------------------------
+
+RabD, a Dictyostelium Rab14-related GTPase, Regulates Phagocytosis and 
+Homotypic Phagosome and Lysosome Fusion 
+
+Edward Harris and James Cardelli
+
+Department of Microbiology and Immunology and Feist-Weiller Cancer Center 
+LSU Health Sciences Center Shreveport, LA 
+
+J. Cell Science (in press)
+
+
+Abstract
+
+RabD, a Dictyostelium Rab14-related GTPase, localizes in the endo-lysosomal 
+pathway and contractile vacuole system of membranes, and cell-lines 
+expressing dominant negative RabD were defective in endocytosis, endosomal 
+membrane flow and homotypic lysosome fusion. In support of support of a role 
+in fusion, cells overexpressing constitutively active RabDQ67L accumulated 
+enlarged hydrolase-rich acidic vesicles ringed with GFP-RabD, consistent 
+with RabD directly regulating lysosome fusion. To determine if RabD also 
+regulated phagocytosis and/or homotypic phagosome fusion (a process 
+stimulated by many intracellular pathogens), cells overexpressing dominant 
+active (RabDQ67L+ cells) or dominant negative (RabN121I+ cells) RabD were 
+analyzed microscopically and biochemically.  The rate of phagocytosis was 
+increased 2-fold in RabDQ67L+ cells and reduced by 50% in RabDN121I+ cells 
+as compared to control cells.  To examine the role of RabD in the formation 
+of multi-particle phagosomes, we performed a series of pulse-chase 
+experiments using fluorescently labeled bacteria and fluorescent latex 
+beads.  The rate of fusion of newly formed phagosomes was 5 times higher 
+in the RabDQ67L+ cells and reduced over 50% in RabDN121I+ cells as compared 
+to control cells. GFP-RabDQ67L+ was found to ring multi-particle spacious 
+phagosomes, supporting a direct role for this protein in regulating fusion.  
+Inhibition of PI 3-kinase activity, known to regulate phagosome fusion in 
+the wild-type cells, reduced the rate of phagosome fusion in RabDQ67L+ cells, 
+indicating that RabD acted upstream of or parallel with PI 3-kinase. We 
+hypothesize that RabD and, possibly, Rab14, a related GTPase that associates 
+with phagosomes in mammalian cells, are important regulators of homotypic 
+phagosome and endo-lysosome fusion
+
+-----------------------------------------------------------------------------
+
+Expression Pattern of Alkaline Phosphatase in Dictyostelium
+
+Muatasem Ubeidat, Bradley R. Joyce and Charles L. Rutherford*
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406, USA
+
+Mechanisms of Development, In Press
+
+Abstract
+
+We used two different methods to study the expression pattern of alkaline 
+phosphatase (alp) in Dictyostelium.  In situ staining of the endogenous 
+enzyme activity at different stages of development showed that the enzyme 
+was active early in the aggregation stage and localized to the area where 
+the tip of the first finger was initiated.  The activity was localized to 
+the anterior region of developing slugs, then became restricted to the 
+region between the prestalk and prespore cells at the culmination stage.  
+In the complete fruiting body, the activity was confined to the lower and 
+upper cup.  A second method to study alp expression utilized a beta-
+galactosidase reporter gene under the control of the alp promoter.  A low 
+level of (-galactosidase activity was observed in vegetative cells, then 
+increased during development.  Reporter gene activity was restricted to 
+PstO cells at the slug stage.  At the culmination stage, the expression 
+was restricted to prestalk cells at the interface between the prestalk 
+and prespore cells.  In the completed fruiting body, the expression was 
+observed in the upper and lower cup.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 12]
+
+ 

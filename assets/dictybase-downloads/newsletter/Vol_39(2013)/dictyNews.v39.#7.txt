@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 39, number 7
+March 8, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Antagonistic control of lysosomal fusion by Rab14 and the Lyst-related 
+protein LvsB.
+
+Elena Kypri, Kristin Falkenstein, and Arturo De Lozanne
+
+Section of Molecular Cell & Developmental Biology and Institute for Cellular 
+and Molecular Biology, University of Texas at Austin, Austin, TX 78712.
+
+
+Traffic, in press
+
+While loss of the protein Lyst causes abnormal lysosomes in patients with 
+Chediak-Higashi Syndrome, the contribution of Lyst to lysosome biology is 
+not known. Previously we found that the Dictyostelium ortholog of Lyst, LvsB, 
+is a cytosolic protein that associates with lysosomes and post-lysosomes to 
+prevent their inappropriate fusion.  Here we provide three lines of evidence 
+ that indicate that LvsB contributes to lysosome function by antagonizing the 
+ function of DdRab14, a protein that promotes homotypic fusion among 
+ lysosomes. (1) Instead of restricting DdRab14 to lysosomes, cells that lack 
+ LvsB expand DdRab14 localization to include post-lysosomes. (2) 
+ Expression of activated DdRab14 phenocopies the loss of LvsB, causing 
+ inappropriate heterotypic fusion between lysosomes and post-lysosomes 
+ and their subsequent enlargement. (3) Conversely, expression of inactivated 
+ DdRab14 suppresses the phenotype of LvsB null cells and restores their 
+ lysosomal size and segregation from post-lysosomes.  Our data suggest a 
+ scenario where LvsB binds to late lysosomes and promotes the inactivation 
+ of DdRab14.  This inactivation allows the lysosomes to mature into post-
+ lysosomes for eventual secretion.  We propose that human Lyst may function 
+ similarly to regulate Rab-dependent fusion of lysosomal compartments.
+
+
+Submitted by Arturo De Lozanne [a.delozanne@utexas.edu]
+---------------------------------------------------------------------------
+
+
+Derivatives of Dictyostelium discoideum differentiation-inducing factor-3 
+suppress the activities of Trypanosoma cruzi in vitro and in vivo
+
+Junko Nakajima-Shimada 1*, Toshimitsu Hatabu a, Yukari Hosoi 1, Yoko 
+Onizuka 1, Haruhisa Kikuchi 2, Yoshiteru Oshima 2, Yuzuru Kubohara 3*
+
+1 Graduate School of Health Sciences, Gunma University, Maebashi 
+371-8514, Japan
+2 Graduate School of Pharmaceutical Sciences, Tohoku University, 
+Sendai 980-8578, Japan
+3 Institute for Molecular and Cellular Regulation (IMCR), Gunma University, 
+Maebashi 371-8512, Japan
+
+
+Biochemical Pharmacology, in press
+
+Chagas disease (human American trypanosomiasis), which is caused by 
+the protozoan parasite Trypanosoma cruzi, is responsible for numerous 
+deaths each year; however, established treatments for the disease are 
+limited. Differentiation-inducing factor-1 (DIF-1) and DIF-3 are chlorinated 
+alkylphenones originally found in the cellular slime mold Dictyostelium 
+discoideum that have been shown to possess pharmacological activities. 
+Here, we investigated the effects of DIF-3 derivatives on the infection rate 
+and growth of T. cruzi by using an in vitro assay system utilizing host human 
+fibrosarcoma HT1080 cells. Certain DIF-3 derivatives, such as butoxy-DIF-3 
+(Bu-DIF-3), at micro-molar levels strongly suppressed both the infection rate 
+and growth of T. cruzi in HT1080 cells and exhibited little toxicity for HT1080 
+cells. For example, the IC50 of DIF-3 and Bu-DIF-3 versus the growth of 
+T. cruzi in HT1080 cells were 3.95 and 0.72 uM, respectively, and the LD50 
+of the two compounds versus HT1080 cells were both greater than 100 uM. 
+We also examined the effects of DIF-3 and Bu-DIF-3 on T. cruzi activity in 
+C57BL/6 mice. Intraperitoneally administered Bu-DIF-3 (50 mg/kg) 
+significantly suppressed the number of trypomastigotes in blood with no 
+apparent adverse effects. These results strongly suggest that DIF-3 
+derivatives could be new lead compounds in the development of anti-
+trypanosomiasis drugs.
+ 
+ 
+Submitted by Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 7]

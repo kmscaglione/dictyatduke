@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 38, number 23
+September 14, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Amino acid repeats cause extraordinary coding sequence 
+variation in the social amoeba Dictyostelium discoideum
+
+Clea Scala1 *, Xiangjun Tian2 *, Natasha J. Mehdiabadi1,3,, 
+Margaret H. Smith1, Gerda Saxer4, Katie Stephens1, 
+Prince Buzombo1, Joan E. Strassmann2, David C. Queller2
+
+
+PLoS One, in press
+
+Protein sequences are normally the most conserved elements 
+of genomes owing to purifying selection to maintain their 
+functions.  We document an extraordinary amount of 
+within-species protein sequence variation in the model 
+eukaryote Dictyostelium discoideum stemming from triplet 
+DNA repeats coding for long strings of single amino acids.  
+D. discoideum has a very large number of such strings, many 
+of which are polyglutamine repeats, the same sequence that 
+causes various human neurological disorders in humans, like 
+Huntington’s disease.  We show here that D. discoideum 
+coding repeat loci are highly variable among individuals, making 
+D. discoideum a candidate for the most variable proteome.  
+The coding repeat loci are not significantly less variable than 
+similar non-coding triplet repeats. This pattern is consistent 
+with these amino-acid repeats being largely non-functional 
+sequences evolving primarily by mutation and drift.
+
+
+Submitted by David Queller [queller@wustl.edu]
+---------------------------------------------------------------------------
+
+
+Mitochondrial fission and fusion in Dictyostelium discoideum: 
+a search for proteins involved in membrane dynamics
+
+Brixey G Schimmel, Gregory W Berbusse, and Kari Naylor
+
+
+BMC Research Notes, in press
+
+Background
+Mitochondrial morphology is maintained by two distinct membrane 
+events -fission and fusion. Altering these conserved processes can 
+disrupt mitochondrial morphology and distribution, thereby 
+disrupting the organelle’s functionality and impeding cellular 
+function. In higher eukaryotes, these processes are mediated by 
+a family of dynamin-related proteins (DRP’s). In the lower 
+eukaryotes, for instance Dictyostelium discoideum, mitochondrial 
+fission and fusion have been implicated but not yet established. 
+To understand the overall mechanism of these dynamics across 
+organisms, we developed an assay to identify fission and fusion 
+events in Dictyostelium and to assess the involvement of the 
+mitochondrial proteins, MidA, CluA, and two DRP’s, DymA 
+and DymB.
+
+Findings
+Using laser scanning confocal microscopy we show, for the first t
+ime, that lower eukaryotes mediate mitochondrial fission and fusion. 
+In Dictyostelium, these processes are balanced, occurring 
+approximately 1 event/minute. Quantification of the rates in midA-, 
+cluA-, dymA-, or dymB- strains established that MidA appears to 
+play an indirect role in the regulation of fission and fusion, while the 
+DRP’s are not essential for these processes. Rates of fission and 
+fusion were significantly reduced in cluA-cells, indicating that CluA 
+is necessary for maintaining both fission and fusion.
+
+Conclusions
+We have successfully demonstrated that Dictyostelium mitochondria 
+undergo the dynamic processes of fission and fusion. The classical 
+mediators of membrane dynamics - the DRP’s – are not necessary 
+for these dynamics, whereas CluA is necessary for both processes. 
+This work contributes to our overall understanding of mitochondrial 
+dynamics and ultimately will provide additional insight into 
+mitochondrial disease. 
+
+
+Submitted by Kari Naylor [kknaylor@uca.edu]
+==============================================================
+[End dictyNews, volume 38, number 23]

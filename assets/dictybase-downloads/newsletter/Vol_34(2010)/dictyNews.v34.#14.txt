@@ -1,0 +1,132 @@
+dictyNews
+Electronic Edition
+Volume 34, number 14
+May 7, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+
+Complex genotype interactions influence social fitness during the developmental 
+phase of the social amoeba Dictyostelium discoideum 
+
+Neil J. Buttery1, Christopher R. L. Thompson1,* and Jason B. Wolf2,*
+
+1Faculty of Life Sciences, The University of Manchester, Michael Smith Building, 
+Oxford Rd, Manchester, M13 9PT, UK.
+2Departmemt of Biology & Biochemistry, University of Bath, Claverton Down, 
+Bath BA2 7AY, UK.
+
+*Corresponding authors
+
+
+Journal of Evolutionary Biology, in press
+
+Abstract: When individuals interact, phenotypic variation can be partitioned into 
+direct genetic effects (DGEs) of the individuals’ own genotypes, indirect genetic 
+effects (IGEs) of their social partners’ genotypes and epistatic interactions between 
+the genotypes of interacting individuals (‘genotype-by-genotype (G×G) epistasis’).  
+These components can all play important roles in evolutionary processes, but few 
+empirical studies have examined their importance. The social amoeba Dictyostelium 
+discoideum provides an ideal system to measure these effects during social 
+interactions and development. When starved, free-living amoebae aggregate and 
+differentiate into a multicellular fruiting body with a dead stalk that holds aloft viable 
+spores. By measuring interactions among a set of natural strains we quantify DGEs, 
+IGEs and G×G epistasis affecting spore formation. We find that DGEs explain most 
+of the phenotypic variance (57.6%) while IGEs explain a smaller (13.3%) but highly 
+significant component.  Interestingly, G×G epistasis explains nearly a quarter of the 
+variance (23.0%), highlighting the complex nature of genotype interactions. These 
+results demonstrate the large impact that social interactions can have on 
+development and suggest that social effects should play an important role in 
+developmental evolution in this system. 
+
+
+Submitted by Chris Thompson [christopher.thompson@manchester.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Unconventional secretion of AcbA in Dictyostelium discoideum through a 
+vesicular intermediate.
+
+Matthew Cabral, Christophe Anjard, Vivek Malhotra, William F. Loomis, 
+and Adam Kuspa
+
+Verna and Marrs McLean Department Biochemistry and Molecular Biology and 
+Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, Texas, USA, 77030. 
+Center for Molecular Genetics, Division of Biological Sciences, University of 
+California San Diego, La Jolla, CA 92093.
+
+
+Eukaryotic Cell, in press
+
+The acyl-CoA binding protein, AcbA, is secreted unconventionally and processed 
+into SDF-2, a peptide that coordinates sporulation in Dictyostelium. We report that 
+AcbA is localized in vesicles that accumulate in the cortex of prespore cells just 
+prior to sporulation.  These vesicles are not observed after cells are stimulated to 
+release AcbA, but remain visible after stimulation in cells lacking the Golgi 
+reassembly stacking protein (GRASP). Acyl-CoA binding is required for the 
+inclusion of AcbA in these vesicles, and the secretion of AcbA requires 
+N-ethylmaleimide sensitive factor (NSF).  About 1 percent of the total cellular 
+AcbA can be purified within membrane-bound vesicles.  The yield of vesicles 
+decreases dramatically when purified from wild-type cells that were stimulated to 
+release AcbA, whereas the yield from GRASP mutant cells was only modestly 
+altered by stimulation.  We suggest these AcbA-containing vesicles are secretion 
+intermediates and that GRASP functions at a late step leading to the docking/fusion 
+of these vesicles at the cell surface. 
+
+
+Submitted by Adam Kuspa [akuspa@bcm.edu]
+--------------------------------------------------------------------------------
+
+
+Genetic evidence for concerted control of actin dynamics in cytokinesis, 
+endocytic traffic, and cell motility by coronin and Aip1
+
+Hellen C. Ishikawa-Ankerhold1, Günther Gerisch1, and 
+Annette Müller-Taubenberger2
+
+1 Max Planck Institute for Biochemistry, Am Klopferspitz 18, 
+82152 Martinsried, Germany
+2 Institute for Cell Biology and Center for Integrated Protein Science Munich (CIPSM), 
+Ludwig Maximilians University Munich, Schillerstr. 42, 
+80336 München, Germany
+
+
+Cytoskeleton, in press
+	
+Coronin and actin-interacting protein 1 (Aip1) are actin-binding proteins that by 
+different mechanisms inhibit actin polymerization or enhance the disassembly of 
+actin filaments. Cells of Dictyostelium discoideum lacking both proteins are retarded 
+in growth and early development and often fail to proceed to fruiting body formation. 
+Coronin/Aip1-null cells show numerous surface protrusions enriched in filamentous 
+actin and cofilin. We show that the double-null cells are characterized by an increase 
+in filamentous actin that causes a thickening of the cell cortex. This imbalance has 
+severe consequences for processes that rely on the dynamic reorganization of the 
+actin cytoskeleton as cell motility, cytokinesis and endocytosis. Although cell motility 
+is considerably slowed down, the double-mutant cells are still capable of orientating 
+in a gradient of chemoattractant. The cytokinesis defect is caused by the lack of proper 
+cleavage furrow formation, a defect that is partially rescued by low concentrations of 
+latrunculin A, an inhibitor of actin polymerization. Furthermore, we demonstrate that 
+the disassembly of the actin coat after phagocytic or macropinocytic uptake is 
+significantly delayed in the double-mutant cells. Our results prove that coronin and 
+Aip1 are important effectors that act together in maintaining the balance of actin 
+polymerization and depolymerization in living cells. 
+
+
+Submitted by Annette Müller-Taubenberger [amueller@lrz.uni-muenchen.de]
+==============================================================
+[End dictyNews, volume 34, number 14]

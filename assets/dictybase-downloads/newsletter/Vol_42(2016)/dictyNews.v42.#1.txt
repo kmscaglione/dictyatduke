@@ -1,0 +1,71 @@
+dictyNews
+Electronic Edition
+Volume 42, number 1
+January 8, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Bitter tastant responses in the amoeba Dictyostelium correlate with 
+rat and human taste assays
+
+Marco Cocorocchio1, Robert Ives2, David Clapham3, Paul L.R. Andrews4, 
+Robin S.B. Williams1
+
+1 Centre of Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham, TW20 0EX, UK
+2 RD Platform Technology & Science, GlaxoSmithKline, Hertfordshire, 
+SG1 2NY, UK
+3 RD Platform Technology & Science, GlaxoSmithKline, Hertfordshire, 
+SG12 ODP, UK
+4 Division of Biomedical Science, St George’s University of London, 
+SW17 0RE, UK
+
+
+published in ALTEX
+
+Treatment compliance is reduced when pharmaceutical compounds 
+have a bitter taste and this is particularly marked for paediatric 
+medications. Identification of bitter taste liability during drug 
+discovery utilises the rat in vivo brief access taste aversion (BATA) 
+test which apart from animal use is time consuming with limited 
+throughput. We investigated the suitability of using a simple, non-
+animal model, the amoeba Dictyostelium discoideum to investigate 
+taste-related responses and particularly identification of compounds 
+with a bitter taste liability. The effect of taste-related compounds 
+on Dictyostelium behaviour following acute exposure (15 minutes) was 
+monitored. Dictyostelium did not respond to salty, sour, umami or 
+sweet tasting compounds, however, cells rapidly responded to bitter 
+tastants. Using time-lapse photography and computer-generated 
+quantification to monitor changes in cell membrane movement, we 
+developed an assay to assess the response of Dictyostelium to a wide 
+range of structurally diverse known bitter compounds and blinded 
+compounds. Dictyostelium showed varying responses to the bitter 
+tastants, with IC50 values providing a rank order of potency. 
+Comparison of Dictyostelium IC50 values to those observed in response 
+to a similar range of compounds in the rat in vivo brief access taste 
+aversion test showed a significant (p = 0.0172) positive correlation 
+between the two models, and additionally a similar response to that 
+provided by a human sensory panel assessment test. These experiments 
+demonstrate that Dictyostelium may provide a suitable model for early 
+prediction of bitterness for novel tastants and drugs. Interestingly, 
+a response to bitter tastants appears conserved from single-celled 
+amoebae to humans.  
+
+
+submitted by: Robin Williams [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 1]

@@ -1,0 +1,147 @@
+Dicty News
+Electronic Edition
+Volume 18, number 7
+May 11, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+Evolutionary Analyses of the ABC transporters of Dictyostelium
+
+Christophe Anjard, the Dictyostelium Sequencing Consortium, and William 
+F. Loomis
+
+Center for Molecular Genetics, Division of Biology,
+University of California San Diego, La Jolla, CA 92093-0368
+
+
+Eukaryotic Cell, in press
+
+Summary
+
+The ABC super-family of genes is one of the largest in the genomes of both 
+bacteria and eukaryotes. The proteins they encode all carry a characteristic 
+200-250 amino acid long ATP-Binding Cassette that gives them their family 
+name. In bacteria they are mostly involved in nutrient import while in 
+eukaryotes many are involved in export.  Seven different families have 
+been defined in eukaryotes based on sequence homology, domain topology and 
+function. While only 6 ABC genes have been previously studied in detail in 
+Dictyostelium discoideum, sequences from the well-advanced Dictyostelium 
+genome project have allowed us to recognize 68 members of this super-family. 
+They have been classified and compared to animal, plant and yeast orthologs 
+to gain some insight on the evolution of this super-family. It appears that 
+many of the genes inferred to have been present in the ancestor of the crown 
+organisms duplicated extensively in some but not all phyla while others were 
+lost in one lineage or the other.
+
+-----------------------------------------------------------------------------
+
+Crystal structure of the motor domain of a class-I myosin
+ 
+
+Martin Kollmar, Ulrike Drrwang, Werner Kliche,
+
+Dietmar J. Manstein and F. Jon Kull
+
+Department of Biophysics, Max Planck Institute for Medical Research,
+
+Jahnstrae 29, 69120 Heidelberg, Germany
+
+EMBO J., in press
+
+The crystal structure of the motor domain of Dictyostelium discoideum 
+myosin-IE, a monomeric unconventional myosin, was determined. The 
+crystallographic asymmetric unit contains four independently resolved 
+molecules, highlighting regions that undergo large conformational changes. 
+Differences are particularly pronounced in the actin binding region and the 
+converter domain. The changes in position of the converter domain reflect 
+movements both parallel to and perpendicular to the actin axis. The 
+orientation of the converter domain is ~30 more Rup than other myosin 
+structures, indicating MyoE can produce a larger power stroke by rotating 
+its lever arm through a larger angle. The role of extended loops near the 
+actin-binding site is discussed in the context of cellular localization. 
+The core regions of the motor domain are similar, and the structure reveals 
+how that core is stabilized in the absence of an N-terminal SH3-like domain. 
+
+-----------------------------------------------------------------------------
+
+A role for YakA, cAMP and PKA in the regulation of stress responses of 
+Dictyostelium discoideum cells.
+
+Alexandre Taminato#, Raquel Bagattini#, Renata Gorjo#, Guokai Chen*, Adam 
+Kuspa* and Glaucia Mendes Souza#+.
+
+#Instituto de Qumica, Dep. Bioqumica, Universidade de So Paulo, Brazil.
+* Dep. Biochemistry and Molecular Biology, Baylor College of Medicine 
+Houston, Texas, USA.
+
++ To whom correspondence should be sent.
+glmsouza@iq.usp.br
+FAX: 011-55-11-3815-5579
+Phone: 011-55-11-3091-3815
+
+Molecular Biology of the Cell (in press).
+
+Abstract
+
+The Dictyostelium protein kinase YakA is required for the growth to 
+development transition. During growth YakA controls the cell cycle, 
+regulating the intervals between cell divisions. When starved for nutrients 
+Dictyostelium cells arrest growth and undergo changes in gene expression, 
+decreasing vegetative mRNAs and inducing the expression of pkaC. YakA is an 
+effector of these changes, being necessary for the decrease of vegetative 
+mRNA expression and the increase of PKA activity that will ultimately 
+regulate expression of adenylyl cyclase, cAMP synthesis and the induction 
+of development. We report a role for this kinase in the response to 
+nitrosoative or oxidative stress of Dictyostelium cells. Hydrogen peroxide 
+and sodium nitroprusside arrest the growth of cells and trigger cAMP 
+synthesis and activation of PKA in a manner similar to the well established 
+response to nutrient starvation. We have found that yakA null cells are 
+hyper sensitive to nitrosoative/oxidative stress and that a second-site 
+mutation in pkaC suppresses this sensitivity. The response to different 
+stresses has been investigated and YakA, cAMP and PKA have been identified 
+as components of the pathway  that  regulate the growth arrest that follows 
+treatment with compounds that generate reactive oxygen species. The effect 
+of different types of stress was evaluated in Dictyostelium and the YakA/PKA 
+pathway was also  implicated in the response to heat stress.
+
+-----------------------------------------------------------------------------
+
+Loss of the beta-catenin homologue aardvark causes ectopic stalk formation in 
+Dictyostelium.
+
+Juliet C. Coates1, Mark J. Grimson2, Robin S. B. Williams1, Wayland Bergman1, 
+Richard L. Blanton2 and Adrian J. Harwood1.
+
+1 MRC Laboratory for Molecular Cell Biology, University College London, Gower 
+Street, London WC1E 6BT, UK.
+2 Department of Biological Sciences, Texas Tech University, Lubbock, TX 79409, 
+USA.
+
+Mechanisms of Development (in press)
+
+Abstract
+
+Aardvark (Aar) is a Dictyostelium b-catenin homologue with both cytoskeletal 
+and signal transduction roles during development. Here, we show that loss of 
+aar causes a novel phenotype where multiple stalks appear during late 
+development. Ectopic stalks are preceded by misexpression of the stalk 
+marker ST-lacZ in the surrounding tissue. This process does not involve 
+the kinase GSK-3. Mixing experiments show that ectopic ST-lacZ expression 
+and stalk formation is cell non-autonomous. The protein-cellulose matrix 
+surrounding the stalk of aar mutant fruiting bodies is defective, and 
+damage to the stalk of wild type fruiting bodies leads to ectopic ST-lacZ 
+expression. We postulate that poor synthesis of the stalk tube matrix allows 
+diffusion of a stalk cell-inducing factor into the surrounding tissue.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 7]
+
+ 

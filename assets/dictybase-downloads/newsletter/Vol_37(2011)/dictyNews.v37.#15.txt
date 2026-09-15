@@ -1,0 +1,50 @@
+dictyNews
+Electronic Edition
+Volume 37, number 15
+December 9, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Transcriptional Repression by a Bzip Protein Regulates Dictyostelium 
+Prespore Differentiation
+
+Beatriz Nu–ez-Corcuera, Joanna L. Birch, Yoko Yamada and
+Jeffrey G. Williams+
+
+College of Life Sciences, Welcome Trust Building, University of Dundee,
+Dow St., Dundee DD1 5EH UK
+
+
+PLoS One, in Press
+
+In response to the signaling polyketide DIF-1 DimB directly activates 
+transcription of the ecmB gene in pstB cells; a subset of the prestalk cells 
+that are the precursors of the basal disc. We show that the promoter of
+pspA, a prespore-specific gene, also contains a DimB binding site.  
+Mutation of this site causes ectopic expression in the prestalk region and 
+ChIP analysis shows that DIF-1 induces binding of DimB to the pspA 
+promoter. DIF-1 represses pspA gene expression in a suspension cell 
+assay but this repression is abrogated in a dimB null strain. These results 
+suggest a coupled control mechanism, whereby the same DIF-DimB 
+signaling pathway that directly activates ecmB gene expression directly 
+represses pspA gene expression. 
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 37, number 15]

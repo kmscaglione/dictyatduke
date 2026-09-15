@@ -1,0 +1,82 @@
+Dicty NewsElectronic EditionVolume 21, number 15November 7, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+=============  Abstracts=============
+
+Initiation of Mucin-type O-Glycosylation in Dictyostelium is Homologous 
+to the Corresponding Step in Animals and is Important for Spore 
+Coat Function* Fei WangΩ, Talibah MetcalfΩ¶, Hanke van der WelΩ¶, and 
+Christopher M. WestΩ¶From the ΩDepartment of Anatomy & Cell Biology, College of Medicine, 
+1600 SW Archer Road, University of Florida, Gainesville, FL  32610-0235, 
+and the ¶Department of Biochemistry & Molecular Biology, University of 
+Oklahoma Health Sciences Center, Oklahoma City, OK  73104  USAJ. Biol. Chem., in pressLike animal cells, many unicellular eukaryotes modify mucin-like domains 
+of secretory proteins with multiple O-linked glycans. Unlike animal 
+mucin-type glycans, those of some microbial eukaryotes are initiated by 
+alpha-linked GlcNAc rather than alpha-GalNAc. Based on sequence similarity 
+to a recently cloned soluble polypeptide hydroxyproline GlcNAc-transferase 
+that modifies Skp1 in the cytoplasm of the social amoeba Dictyostelium, we 
+have identified an enzyme, pp alpha-GlcNAc-T2, that attaches GlcNAc to 
+numerous secretory proteins in this organism. Unlike the Skp1 
+GlcNAc-transferase, pp alpha-GlcNAc-T2 is predicted to be a type 2 
+transmembrane protein. A highly purified, soluble, recombinant fragment of  
+pp alpha-GlcNAc-T2 efficiently transfers GlcNAc from UDP-GlcNAc to synthetic 
+peptides corresponding to mucin-like domains in two proteins which traverse 
+the secretory pathway. pp alpha-GlcNAc-T2 is required for addition of GlcNAc 
+to peptides in cell extracts and to the proteins in vivo. Mass spectrometry 
+and Edman degradation analyses show that pp alpha-GlcNAc-T2 attaches GlcNAc 
+in alpha-linkage to the Thr-residues of all the synthetic mucin-repeats. 
+pp alpha-GlcNAc-T2 is encoded by the previously described modB-locus defined 
+by chemical mutagenesis, based on sequence analysis and complementation 
+studies. This finding establishes that the many phenotypes of modB-mutants, 
+including a permeability defect in the spore coat, can now be ascribed to 
+defects in mucin-type O-glycosylation. A comparison of the sequences of 
+pp alpha-GlcNAc-T2 and the animal pp alpha-GalNAc-transferases reveals an 
+ancient common ancestry indicating that, despite the different 
+N-acetylhexosamines involved, the enzymes share a common mechanism of action.    
+
+Submitted by:  Chris West [Christopher-West@ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+Involvement of the AP-1 adaptor complex in early steps of phagocytosis and 
+macropinocytosisYaya Lefkir, Marilyne Malbouyres, Daniel Gotthardt, Adrian Ozinsky, Sophie 
+Cornillon, Franz Bruckert, Alan A. Aderem, Thierry Soldati, Pierre Cosson, 
+and François LetourneurMBC, in pressThe best described function of the adaptor complex-1 (AP-1) is to participate 
+in the budding of clathrin-coated vesicles from the trans-Golgi network and 
+endosomes. Here we show that AP-1 is also localized to phagocytic cups in 
+murine macrophages as well as in Dictyostelium amoebae. AP-1 is recruited to 
+phagosomal membranes at this early stage of phagosome formation and rapidly 
+dissociates from maturing phagosomes. To establish the role of AP-1 in 
+phagocytosis, we made used of Dictyostelium mutant cells (apm1- cells) 
+disrupted for AP-1 medium chain. In this mutant, phagocytosis drops by 60% 
+indicating that AP-1 is necessary for efficient phagocytosis. Furthermore, 
+phagocytosis in apm1- cells is more affected for large rather than small 
+particles and cells exhibiting incomplete engulfment are then often observed. 
+This suggests that AP-1 could participate in the extension of the phagocytic 
+cup. Interestingly, macropinocytosis, a process dedicated to fluid-phase 
+endocytosis and related to phagocytosis, is also impaired in apm1- cells. 
+In summary, our data suggest a new role of AP-1 at an early stage of 
+phagosome and macropinosome formation. 
+
+Submitted by: Francois Letourneur [f.letourneur@ibcp.fr]
+
+-----------------------------------------------------------------------------
+
+Proteomics opens doors to the mechanisms of developmentally regulated 
+secretionStephen Alexander*, Supriya Srinivasan+ and Hannah Alexander**Division of Biological Sciences, University of Missouri, Columbia, 
+MO 65211-7400+Gladstone Institute of Cardiovascular Disease, University of 
+California-San Francisco, San Francisco, CA 94141Molecular and Cellular Proteomics, in press.The program of multicellular development in Dictyostelium discoideum 
+culminates with the assembly of a rugged, environmentally resistant spore 
+coat around each spore cell.  After synthesis, the proteins that will 
+constitute the coat are stored in prespore vesicles (PSVs) until an 
+unknown developmental signal triggers the PSVs to move to the cell surface 
+where they fuse with the plasma membrane and secrete their cargo by 
+exocytosis.  These events occur synchronously in 80% of the cells in each 
+developing multicellular aggregate, and thus the system offers a unique 
+opportunity to study the developmental regulation of protein secretion in 
+situ.  Proteomic analysis of purified PSVs identified many of the constituent 
+proteins, which in turn has lead to novel hypotheses and new experimental 
+avenues regarding the molecular mechanisms regulating secretion from the PSVs. 
+
+Submitted by: Hannah Alexander [AlexanderH@missouri.edu]
+
+===============================================================================[End Dicty News, volume 21, number 15]

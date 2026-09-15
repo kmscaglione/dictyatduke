@@ -1,0 +1,109 @@
+dictyNews
+Electronic Edition
+Volume 27, number 8
+September 8, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Optimization of a large-scale gene disruption protocol in Dictyostelium
+and analysis of conserved genes of unknown function
+
+Patricia Torija, Alicia Robles and Ricardo Escalante
+
+BMC Microbiology 2006, 6:75, in press 
+(available athttp://www.biomedcentral.com/bmcmicrobiol/)
+
+
+Background: Development of the post-genomic age in Dictyostelium will
+require the existence of rapid and reliable methods to disrupt genes
+that would allow the analysis of entire gene families and perhaps the
+possibility to undertake the complete knock-out analysis of all the
+protein-coding genes present in Dictyostelium genome.
+
+Results: Here we present an optimized protocol based on the previously
+described construction of gene disruption vectors by in vitro
+transposition. Our method allows a rapid selection of the construct by a
+simple PCR approach and subsequent sequencing. Disruption constructs
+were amplified by PCR and the products were directly transformed in
+Dictyostelium cells. The selection of homologous recombination events
+was also performed by PCR. We have constructed 41 disruption vectors to
+target genes of unknown function, highly conserved between Dictyostelium
+and human, but absent from the genomes of S. cerevisiae and S. pombe. 28
+genes were successfully disrupted.
+
+Conclusions: This is the first step towards the understanding of the
+function of these conserved genes and exemplifies the easiness to
+undertake large-scale disruption analysis in Dictyostelium.
+
+
+Submitted by: Ricardo Escalante [rescalante@iib.uam.es]
+-----------------------------------------------------------------------------
+
+
+On the role of RNA polymerase III transcription factors in the selection of 
+integration sites by the Dictyostelium non-LTR retrotransposon TRE5-A
+
+Oliver Siol, Moustapha Boutliliss, Thanh Chung, Gernot Glšckner, Theodor 
+Dingermann and Thomas Winckler
+
+
+Mol. Cell. Biol., in press
+
+In the compact Dictyostelium discoideum genome, non-long terminal repeat 
+(non-LTR) retrotransposons known as TREs avoid accidental 
+integration-mediated gene disruption by targeting the vicinity of tRNA 
+genes. In this study we provide the first evidence that proteins of a 
+non-LTR retrotransposon interact with a target-specific transcription factor 
+to direct its integration. We applied an in vivo selection system that 
+allows for the isolation of natural TRE5-A integrations into a known genomic 
+location upstream of tRNA genes. TRE5-A frequently modified the integration 
+site in a way characteristic of other non-LTR retrotransposons by adding 
+non-templated extra nucleotides and generating small and extended target 
+site deletions. Mutations within the B box promoter of the targeted tRNA 
+genes interfered with both the in vitro binding of RNA polymerase III 
+transcription factor TFIIIC and the ability of TRE5-A to target these genes. 
+An isolated B box was sufficient to enhance TRE5-A integration in the 
+absence of a surrounding tRNA gene. The pol III-transcribed ribosomal 5S 
+gene recruits TFIIIC in a B box-independent manner, yet it was readily 
+targeted by TRE5-A in our assay. These results suggest a direct role of an 
+RNA polymerase III transcription factor in the targeting process.
+
+
+Submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+-----------------------------------------------------------------------------
+
+
+A Putative Ariadne-Like Ubiquitin Ligase Is Required for Dictyostelium 
+discoideum Development
+
+Nathaniel Whitney,1 Lacey J. Pearson,1 Ryan Lunsford,1 Lisa McGill,1 
+Richard H. Gomer,2 and David F. Lindsey1
+
+Department of Biological Sciences, Walla Walla College, College Place, 
+Washington 99324,1 and Howard Hughes Medical Institute, Department of 
+Biochemistry and Cell Biology, Rice University, Houston, Texas 770052
+
+
+The Dictyostelium rbrA gene encodes a putative Ariadne ubiquitin ligase. 
+rbrA- cells form defective slugs that cannot phototax. Prestalk cell 
+numbers are reduced in rbrA- slugs, and these prestalk cells do not 
+localize to the tip of slugs. Chimeric slugs containing wild-type cells 
+could phototax and form fruiting bodies.
+
+
+Submitted by: David Lindsey [lindda@wwc.edu]
+==============================================================================
+[End dictyNews, volume 27, number 8] 

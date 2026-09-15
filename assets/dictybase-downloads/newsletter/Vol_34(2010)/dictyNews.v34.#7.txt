@@ -1,0 +1,110 @@
+dictyNews
+Electronic Edition
+Volume 34, number 7
+February 26, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+BTG Interacts with Retinoblastoma to Control Cell Fate in Dictyostelium
+
+Daniele Conte, Harry K. MacWilliams & Adriano Ceccarelli
+
+
+PLoS ONE, in press
+
+Background
+In the genesis of many tissues, a phase of cell proliferation is followed 
+by cell cycle exit and terminal differentiation.  The latter two processes 
+overlap: genes involved in the cessation of growth may also be important 
+in triggering of differentation. Though conceptually distinct, they are often 
+causally related and functional interactions between the cell cycle 
+machinery and cell fate control networks are fundamental to coordinate 
+growth and differentiation. A switch from proliferation to differentiation 
+may also be important in the life cycle of single-celled organisms, and 
+genes which arose as regulators of microbial differentiation may be 
+conserved in higher organisms.  Studies in microorganisms may thus 
+contribute to understanding the molecular links between cell cycle 
+machinery and the determination of cell fate choice networks. 
+
+Methodology/principal findings
+Here we show that in the amoebozoan D. discoideum, an ortholog of 
+the metazoan antiproliferative gene btg controls cell fate, and that this 
+function is dependent on the presence of a second tumor suppressor 
+ortholog, the retinoblastoma-like gene product. Specifically, we find that 
+btg-overexpressing cells preferentially adopt a stalk cell (and, more 
+particularly, an Anterior-Like Cell) fate.  No btg-dependent preference 
+for ALC fate is observed in cells in which the retinoblastoma-like gene 
+has been genetically inactivated. Dictyostelium btg is the only example 
+of non-metazoan member of the BTG family characterized so far, 
+suggesting that a genetic interaction between btg and Rb predated 
+the divergence between dictyostelids and metazoa. 
+
+Conclusions/Significance
+While the requirement for retinoblastoma function for BTG 
+antiproliferative activity in metazoans is known, an interaction of 
+these genes in the control of cell fate has not been previously 
+documented. Involvement of a single pathway in the control of 
+mutually exclusive processes may have relevant implication in 
+the evolution of multicellularity. 
+
+
+Submitted by Adriano Ceccarelli [adriano.ceccarelli@unito.it]
+--------------------------------------------------------------------------------
+
+
+MidA is a putative mitochondrial methyltransferase required for 
+mitochondrial complex I function
+
+Sergio Carilla-Latorre1; M. Esther Gallardo1,4; Sarah J. Annesley2;  
+Javier Calvo-Garrido1; Osvaldo Graña3; Sandra L. Accari2, 
+Paige K. Smith2, 
+Alfonso Valencia3; Rafael Garesse1,4; Paul R. Fisher2 and 
+Ricardo Escalante1
+
+1. Instituto de Investigaciones Biomédicas “Alberto Sols” (CSIC-UAM). 
+Arturo Duperier 4. 28029 Madrid. Spain. 
+2. Department of Microbiology, La Trobe University, Melbourne, 
+Victoria 3086. Australia. 
+3. O. G., Bioinformatics Unit, Structural Biology and Biocomputing Program.
+A. V., Structural Computational Biology Group, Structural Biology and 
+Biocomputing Program.Centro Nacional de Investigaciones Oncológicas. 
+C/ Melchor Fernández Almagro, 3, 28029 Madrid. Spain.
+4. CIBERER, ISCIII. Madrid. Spain. 
+
+
+Journal of Cell Science, in press
+
+Dictyostelium and human MidA (DdMidA and hMidA) are homologous 
+proteins that belong to a family of proteins of unknown function called 
+DUF185. We have found by a yeast-two hybrid screening and subsequent 
+validation by pull-down that both proteins interact with the mitochondrial 
+complex I subunit NDUFS2. Consistent with this, Dictyostelium cells lacking 
+MidA showed a specific defect in complex I activity, and knock down of 
+hMidA in HEK293T cells resulted in reduced levels of assembled complex I. 
+These results indicate a role for MidA in complex I assembly or stability. 
+A structural bioinformatics analysis suggested the presence of a 
+methyltransferase domain that was further supported by site-directed 
+mutagenesis of specific residues from the putative catalytic site. 
+Interestingly, this complex I deficiency in Dictyostelium midA- mutant 
+causes a complex phenotypic outcome including phototaxis and 
+thermotaxis defects. We have found that these aspects of the phenotype 
+are mediated by a chronic activation of AMPK revealing a possible role 
+of AMPK signaling in complex I cytopathology.
+
+
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]
+==============================================================
+[End dictyNews, volume 34, number 7]

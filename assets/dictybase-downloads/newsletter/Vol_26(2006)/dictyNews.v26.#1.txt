@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 26, number 1
+January 06, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Developmental Timing in Dictyostelium is Regulated by the Set1 Histone 
+Methyltransferase
+
+
+Jonathan R. Chubb, Gareth Bloomfield, Qikai Xu, Markus Kaller, Al Ivens, 
+Jason Skelton, Bryan M. Turner, Wolfgang Nellen, Gad Shaulsky, 
+Robert R. Kay, Wendy A. Bickmore and Robert H. Singer
+
+Department of Cell and Developmental Biology, School of Life Sciences, 
+University of Dundee, Dundee, DD1 5EH
+
+
+Developmental Biology, in press
+
+Histone modifying enzymes have enormous potential as regulators of the 
+large-scale changes in gene expression occurring during differentiation.  
+It is unclear how different combinations of histone modification coordinate 
+regimes of transcription during development. We show that different 
+methylation states of lysine 4 of histone H3 (H3K4) mark distinct 
+developmental phases of the simple eukaryote, Dictyostelium.  We demonstrate 
+that the enzyme responsible for all mono, di and tri-methylation of H3K4 is 
+the Dictyostelium homolog of the Set1 histone methyltransferase.  In the 
+absence of Set1, cells display unusually rapid development, characterised 
+by precocious aggregation of amoebae into multicellular aggregates.  Early 
+differentiation markers are abundantly expressed in growing set1 cells, 
+indicating the differentiation program is ectopically activated during 
+growth. This phenotype is caused specifically by the loss of Set1 catalytic 
+activity.  Set1 mutants induce premature differentiation in wild-type cells,
+indicating Set1 regulates production of an extra-cellular factor required 
+for the correct perception of growth conditions.  Microarray analysis of 
+the set1 mutants reveals genomic clustering of mis-expressed genes, 
+suggesting a requirement for Set1 in the regulation of chromatin-mediated 
+events at gene clusters.
+
+
+Submitted by: Jonathan Chubb [j.chubb@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Differential effects of HP1 isoforms on mitotic chromosome distribution and 
+growth in Dictyostelium.
+
+Markus Kaller1, Ursula Euteneuer2 and Wolfgang Nellen1*
+
+1 Abt. Genetik, Kassel University, Heinrich-Plett-Str. 40, 34132 Kassel, 
+Germany
+2 Inst. f. Zellbiologie, LMU, Schillerstr. 42, 80336 München, Germany
+*corresponding author
+Kassel University, FB 18, Abt. Genetik, Heinrich-Plett-Str. 40, 34132 Kassel, 
+Germany
+Tel.: (++49) 561 804 4805
+FAX: (++49) 561 804 4800
+
+
+Eukaryotic Cell, in press
+
+Heterochromatin protein 1 (HP1) is a well characterised heterochromatin 
+component conserved from fission yeast to humans. We identified three 
+HP1-like genes (hcpA, hcpB and hcpC) in the Dictyostelium discoideum genome. 
+Two of these (hcpA and hcpB) are expressed and the proteins colocalized as 
+GFP-fusion proteins in one major cluster at the nuclear periphery that was 
+also characterized by histone H3 lysine 9 dimethylation, a histone 
+modification so far not described for Dictyostelium. The data  strongly 
+suggest that this cluster represents the centromeres. Both single knock-out 
+strains displayed only subtle phenotypes, suggesting that both isoforms have 
+largely overlapping functions. In contrast, disruption of both isoforms 
+appeared to be lethal. Furthermore, overexpression of a C-terminally 
+truncated form of HcpA resulted in phenotypically distinct growth defects 
+that were characterised by a strong decrease in cell viability. Although 
+genetic evidence implies functional redundancy, overexpression of GFP-HcpA, 
+but not GFP-HcpB, caused growth defects that were accompanied by an increase 
+in the frequency of atypic anaphase bridges. Our data indicate that 
+Dictyostelium cells are sensitive to changes in HcpA and HcpB protein levels 
+and that the two isoforms display in vivo and in vitro different affinities 
+to each other. Since the RNAi machinery is frequently involved in chromatin 
+remodelling, we analysed if knock-outs of RNAi components influenced the 
+localisation of H3K9 dimethylation and HP1 isoforms in Dictyostelium. 
+Interestingly, heterochromatin organization appeared to be independent of 
+functional RNAi.
+
+
+Submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+==============================================================================
+[End dictyNews, volume 26, number 1] 

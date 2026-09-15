@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 31, number 3
+July 18, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+A new family of transcription factors 
+
+
+Yoko Yamada+, Hong Yu Wang+, Masashi Fukuzawa, Geoffrey J. Barton and 
+Jeffrey G. Williams 
+
++ Contributed equally
+
+School of Life Sciences
+University of Dundee DD1 5EH
+U. K.
+
+
+Development, in press
+
+CudA, a nuclear protein required for Dictyostelium prespore-specific gene 
+expression,  binds in vivo to the promoter of the cotC prespore gene. A 
+14nt region of the cotC promoter binds CudA in vitro and ECudA, an Entamoeba 
+CudA homologue, also binds to this site. The CudA and ECudA DNA binding site 
+contains a dyad and, consistent with a symmetrical binding site, CudA forms
+a homodimer in the yeast two hybrid system. Mutation of CudA binding sites 
+within the cotC promoter reduces expression in prespore cells. The CudA and 
+ECudA proteins share a 120 amino acid core of homology and clustered point 
+mutations inserted in two highly conserved motifs within the ECudA core 
+region decrease its specific DNA binding in vitro.  This region, the 
+presumptive DNA binding domain, is similar in sequence to domains in two 
+Arabidopsis proteins and one Oryza protein. Significantly, these are the 
+only proteins in the two plant species that contain an SH2 domain. Such a 
+structure, with a DNA binding domain located upstream of an SH2 domain, 
+suggests that the plant proteins are orthologous to metazoan STATs. Consistent 
+with this notion the DNA sequence of the CudA half binding site, GAA, is 
+identical to metazoan STAT half-sites; although the relative positions of the 
+two halves of the dyad are reversed. These results define a hitherto 
+unrecognised class of transcription factor and suggest a model for the 
+evolution of STATs and their DNA binding sites.   
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+From drought sensing  to developmental control: evolution of cyclic AMP 
+signaling in social amoebas.  
+
+
+Allyson V. Ritchie1, Saskia van Es2, Celine Fouquet3  and Pauline Schaap*
+
+College of Life Sciences, University of Dundee, UK.
+
+
+Molecular Biology and Evolution, in press
+
+Amoebas and other protists commonly encyst when faced with environmental 
+stress. While little is known of the signalling pathways that mediate 
+encystation, the analogous process of spore formation in Dictyostelid social 
+amoebas is better understood. In Dictyostelium discoideum, secreted 
+cyclic AMP (cAMP) mediates the aggregation of starving amoebas and induces 
+the differentiation of prespore cells. Intracellular cAMP acting on 
+cAMP-dependent protein kinase (PKA) triggers the maturation of spores and 
+prevents their germination under the prevalent conditions of high osmolality 
+in the spore head. The osmolyte-activated adenylate  cyclase, ACG, produces 
+cAMP for prespore differentiation  and inhibition of  spore germination. 
+To retrace the origin of ACG function, we investigated ACG gene conservation 
+and function in species that span the dictyostelid phylogeny. ACG genes, 
+osmolyte-activated ACG activity and osmo-regulation of spore germination were 
+detected in species that represent the four major groups of Dictyostelia. 
+Unlike the derived species D.discoideum, many basal Dictyostelia have retained 
+the ancestral mechanism of encystation from solitary amoebas. In these species 
+and in solitary amoebas, encystation is independently triggered by starvation 
+or by high osmolality. Osmolyte-induced encystation was accompanied by an 
+increase in cAMP and prevented by inhibition of PKA, indicating  that ACG and 
+PKA activation mediate this response. We propose that high osmolality signals 
+drought in soil amoebas and that developmental cAMP  signaling in the 
+Dictyostelia has evolved from this stress response.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 31, number 3]

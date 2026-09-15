@@ -1,0 +1,145 @@
+dictyNews
+Electronic Edition
+Volume 41, number 9
+May 1, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Evolutionary diversity of social amoebae N-glycomes may support 
+interspecific autonomy
+
+Christa L. Feasley, Hanke van der Wel, and Christopher M. West
+
+Dept. of Biochemistry & Molecular Biology, Oklahoma Center for 
+Medical Glycobiology, University of Oklahoma Health Sciences 
+Center, Oklahoma City, OK USA  73104  USA
+
+
+Glycoconjugate Journal, in press
+
+Multiple species of cellular slime mold (CSM) amoebae share 
+overlapping subterranean environments near the soil surface. 
+Despite similar life-styles, individual species form independent 
+starvation-induced fruiting bodies whose spores can renew the life 
+cycle. N-glycans associated with the cell surface glycocalyx have 
+been predicted to contribute to interspecific avoidance, resistance 
+to pathogens, and prey preference. N-glycans from five CSM species 
+that diverged 300-600 million years ago and whose genomes have been 
+sequenced were fractionated into neutral and acidic pools and 
+profiled by MALDI-TOF-MS. Glycan structure models were refined using 
+linkage specific antibodies, exoglycosidase digestions, MALDI-MS/MS, 
+and chromatographic studies. Amoebae of the type species 
+Dictyostelium discoideum express modestly trimmed high mannose 
+N-glycans variably modified with core alpha-3-linked Fuc and 
+peripherally decorated with 0-2 residues each of beta-GlcNAc, 
+Fuc, methylphosphate and/or sulfate, as reported previously. 
+Comparative analyses of D. purpureum, D. fasciculatum, 
+Polysphondylium pallidum, and Actyostelium subglobosum revealed 
+that each displays a distinctive spectrum of high-mannose species 
+with quantitative variations in the extent of these modifications, 
+and qualitative differences including retention of Glc, mannose 
+methylation, and absence of a peripheral GlcNAc, fucosylation, or 
+sulfation. Starvation-induced development modifies the pattern in 
+all species but, except for universally observed increased 
+mannose-trimming, the N-glycans do not converge to a common profile. 
+Correlations with glycogene repertoires will enable future reverse 
+genetic studies to eliminate N-glycomic differences to test their 
+functions in interspecific relations and pathogen evasion.
+
+
+Submitted by Chris West [westcm@uga.edu] 
+----------------------------------------------------------------------
+
+
+Oxygen Sensing by Protozoans: How They Catch Their Breath
+
+Christopher M. West (1) and Ira J. Blader (2)
+
+(1) Department of Biochemistry & Molecular Biology, Oklahoma Center 
+for Medical Glycobiology, University of Oklahoma Health Sciences 
+Center, 975 NE 10th St. - BRC 417, Oklahoma City, OK 73104 USA
+
+(2) Department of Microbiology and Immunology, University at 
+Buffalo School of Medicine, 347 Biomedical Research Building, 
+3435 Main Street, Buffalo, NY 14214 USA 
+
+
+Current Opinion in Microbiology, in press
+
+Cells must know the local levels of available oxygen and either 
+adapt accordingly or relocate to more favorable environments. 
+Prolyl 4-hydroxylases are emerging as universal cellular oxygen 
+sensors.  In animals, these oxygen sensors respond to decreased 
+oxygen availability by up-regulating hypoxia-inducible transcription 
+factors. In protozoa, the prolyl 4-hydroxylases appear to activate 
+E3-SCF ubiquitin ligase complexes potentially to turn over their 
+proteomes. Intracellular parasites are impacted by both types of 
+oxygen-sensing pathways. Since parasites are exposed to diverse 
+oxygen tensions during their life cycles, this review identifies 
+emerging oxygen-sensing mechanisms and discusses how these 
+mechanisms likely contribute to the regulation of unicellular 
+eukaryotes.
+
+
+Submitted by Chris West [westcm@uga.edu] 
+----------------------------------------------------------------------
+
+
+Dictyostelium acetoacetyl-CoA thiolase is a dual-localizing enzyme 
+that localizes to peroxisomes, mitochondria, and the cytosol
+
+Nana Isezaki(1), Atsushi Sekiba(1), Shoko Itagaki(1), 
+Koki Nagayama(1) , Hiroshi Ochiai(1,2), 
+and Tetsuo Ohmachi(1)*
+
+(1) Department of Biochemistry and Molecular Biology, Faculty of 
+Agriculture and Life Science, Hirosaki University, Hirosaki, Japan, 
+(2) Division of Biological Sciences, Graduate School of Science, 
+Hokkaido University, Sapporo, Japan
+ Present address: Department of Life Science, University of 
+Manchester, Manchester, M13 9PT, UK
+
+
+Microbiology, in press
+
+Acetoacetyl-CoA thiolase (Acat) is an enzyme that catalyzes both 
+the CoA-dependent thiolytic cleavage of acetoacetyl-CoA and the 
+reverse condensation reaction. In Dictyostelium disciodeum, 
+acetoacetyl-CoA thiolase (DdAcat) is encoded by a single acat gene. 
+The aim of this study was to assess the localization of DdAcat and 
+to determine the mechanism of its cellular localization. 
+Subcellular localization of DdAcat was investigated using its 
+fusion protein with the green fluorescent protein (GFP), and it 
+was found to be localized to peroxisomes. The findings showed that 
+the targeting signal of DdAcat to peroxisomes is a unique 
+nonapeptide sequence (15RMYTTAKNL23) similar to the conserved 
+peroxisomal targeting signal-2 (PTS-2). Cell fractionation 
+experiments revealed that DdAcat also exists in the cytosol. 
+Distribution in the cytosol was caused by translational initiation 
+from the second Met codon at position 16. The first 18 N-terminal 
+residues also exhibited function as a mitochondrial targeting 
+signal (MTS). These results indicate that DdAcat is a 
+dual-localizing enzyme that localizes to peroxisomes, mitochondria, 
+and the cytosol using both PTS-2 and MTS signals, which overlap 
+each other near the N terminus, and the alternative utilisation 
+of start codons.
+
+
+Submitted by Tetsuo Ohmachi [tohmachi@hirosaki-u.ac.jp]
+==============================================================
+[End dictyNews, volume 41, number 9]

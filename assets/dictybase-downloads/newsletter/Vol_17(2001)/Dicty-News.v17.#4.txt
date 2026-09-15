@@ -1,0 +1,124 @@
+Dicty News
+Electronic Edition
+Volume 17, number 4
+Sept. 1, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+==============
+  Abstracts
+==============
+
+Cofilin-2, a novel type of cofilin, is expressed specifically at 
+aggregation stage of Dictyostelium discoideum development.  
+
+Hiroyuki Aizawa1*, Yoshiro Kishi2, Kazuko Iida1, Masazumi 
+Sameshima2, and Ichiro Yahara1.  
+
+1Department of Cell Biology, 2Electron Microscopy Center, 
+The Tokyo Metropolitan Institute of Medical Science, 
+Honkomagome 3-18-22, Bunkyo-ku, Tokyo 113-8613, Japan.  
+
+*Present address: Department of Neuroscience, Johns Hopkins 
+University School of Medicine, 725 North Wolfe Street, PCTB 
+1004, Baltimore, MD 21205, USA
+
+Genes to Cells in press.
+
+ Abstract
+Background: A conventional cofilin, cofilin-1 in Dictyostelium discoideum 
+plays significant roles in cell proliferation, phagocytosis, chemotactic
+movement and macropinocytosis. 
+
+Results: We identified a new member of the cofilin family, named cofilin 
+-2 in D. discoideum. Cofilin-2 shows significant homology to a conventional
+Dictyostelium cofilin, cofilin-1, through its entire sequence, and contains 
+residues conserved among the cofilin family that are responsible for actin-
+binding. On the other hand, several residues that are conserved among the 
+cofilin family are missing from cofilin-2. Purified cofilin-2 depolymerized 
+actin filaments in a dose- and pH-dependent manner and reduced the apparent 
+viscosity of an actin solution, although they did not co-sediment with actin 
+filaments at all. Cofilin-2 was not expressed in vegetative cells, but was 
+transiently induced during the aggregation stage of development, whereas 
+cofilin-1 was predominantly expressed in vegetative cells. Immunocytochemistry 
+revealed that cofilin-2 localizes at substrate adhesion sites, where cofilin-1 
+is almost completely excluded. Disruption of the cofilin-2 gene caused an 
+increase in actin accumulation at the substrate adhesion sites. We also found 
+that cofilin-2 did not rescue cof1 gene null yeast cells, whereas cofilin-1 
+did. 
+
+
+Conclusions: Cofilin-2 may play a distinct role from that of cofilin-1 in 
+destabilization of the actin cytoskeleton during Dictyostelium development.  
+
+
+-----------------------------------------------------------------------------
+
+Propagating chemo-attractant waves co-ordinate periodic cell movement 
+in Dictyostelium slugs 
+
+Dirk Dormann & Cornelis J. Weijer 
+
+School of Life Sciences, Division of Cell and Developmental Biology, Wellcome 
+Trust Biocentre, University of Dundee, Dundee DD1 5EH, UK 
+
+ABSTRACT 
+
+Migration and behaviour of Dictyostelium slugs results from co-ordinated 
+movement of its constituent cells. It has been proposed that cell movement 
+is controlled by propagating waves of cAMP as during aggregation and in the 
+mound. We report here the existence of optical density waves in slugs, they 
+are initiated in the tip and propagate backwards. The waves reflect periodic 
+cell movement and are mediated by cAMP since injection of cAMP or cAMP 
+phosphodiesterase disrupts wave propagation and results in effects on cell 
+movement and therefore slug migration. Inhibiting the function of the cAMP 
+receptor cAR1 blocks wave propagation, showing that the signal is mediated by 
+cAR1. Wave initiation is strictly dependent on the tip, in decapitated slugs 
+no new waves are initiated and slug movement stops until a new tip regenerates. 
+Isolated tips continue to migrate while producing waves. We conclude from 
+these observations that the tip acts as a pacemaker for cAMP waves that 
+coordinate cell movement in slugs. 
+
+-----------------------------------------------------------------------------
+
+Extracting transcriptional events from temporal gene expression patterns
+during Dictyostelium development.
+
+R. Sasik, N. Iranfar*, T. Hwa,  and W.F. Loomis*
+
+Department of Physics and *Division of Biology
+University of California San Diego, La Jolla, CA 92093
+
+Bioinformatics, in press
+
+DNA microarray technology can generate a large amount of data describing
+time-course of gene expression. These data, when properly interpreted, can
+yield a great deal of information concerning differential gene expression
+during development. Much current effort in bioinformatics has been devoted
+to the analysis of gene expression data, usually via some "clustering
+analysis" on the raw data in some abstract high dimensional space. Here, we
+describe a method where we first "process" the raw time-course data using a
+simple biologically based kinetic model of gene expression profile e.g.,
+the times of the onset and cessation of the expression of the
+developmentally regulated genes. These vital attributes can then be
+trivally clustered by visual inspection to reveal biologically significant
+effects. We have applied this approach to microarray expression data from samples
+isloated every two hours throughout the 24-hour developmental program of
+Dictyostelium discoideum. mRNA accumulation patterns for 50 developmental
+genes were found to fit the kinetic model with a p-value of 0.05 or better.
+Transcription of these genes appears to be initiated in bursts at
+well-defined periods during development, in a manner suggestive of a
+dependent sequence. This approach can be applied to analyses of other
+temporal expression patterns, including those of the cell cycle.
+
+Intensity ratios for all genes in this study are available at
+http://www.biology.ucsd.edu/loomis-cgi/microarray/ index.html
+
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 4]

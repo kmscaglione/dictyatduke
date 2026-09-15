@@ -1,0 +1,137 @@
+dictyNews
+Electronic Edition
+Volume 36, number 14
+May 13, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The polyketide MPBD initiates the SDF-1 signaling cascade that 
+coordinates terminal differentiation in Dictyostelium
+
+Christophe Anjard, Yongxuan Su and William F. Loomis
+Cell and Developmental Biology, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368
+
+
+Eukaryotic Cell, in press
+
+Dictyostelium uses a wide array of chemical signals to coordinate 
+differentiation as it switches from a unicellular to a multicellular 
+organism. MPBD, the product of the polyketide synthase encoded 
+by stlA, regulates stalk and spore differentiation by rapidly 
+stimulating the release of the phospho-peptide SDF-1. By 
+analyzing specific mutants affected in MPBD or SDF-1 production, 
+we delineated a signal transduction cascade through the membrane 
+receptor CrlA coupled to Ga1, leading to the inhibition of GskA such 
+that the precursor of SDF-1 is released. It is then processed by the
+extracellular protease of TagB on prestalk cells. SDF-1 apparently 
+acts through the adenylyl cyclase ACG to activate the cAMP 
+dependent protein kinase PKA and trigger the production of more 
+SDF-1. This signaling cascade shows similarities with the SDF-2 
+signalling pathway that acts later to induce a rapid spore encapsulation.
+
+
+Submitted by  Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+Autonomous and non-autonomous traits mediate social cooperation in
+Dictyostelium discoideum
+
+Nameeta Mujumdar(1,#), Ashvini Kumar Dubey(2), Krithi Nandimath(1) and
+Vidyanand Nanjundiah (1, 2)
+
+(1) Indian Institute of Science and (2)Jawaharlal Nehru Centre for
+Advanced Scientific Research, Bangalore 560012, India. (#)Present address:
+Division of Basic and Translational Research, University of Minnesota,
+Minneapolis, MN 55455, USA.
+
+
+Journal of Biosciences, in press
+
+In the trishanku (triA-) mutant of Dictyostelium discoideum aggregates are
+smaller than usual and the spore mass is located mid-way up the stalk, not
+at the apex. We have monitored aggregate territory size, spore allocation
+and fruiting body morphology in chimaeric groups of Ax2 and triA- cells.
+Developmental canalisation breaks down in chimaeras. A minority of triA-
+cells causes largely Ax2 aggregation streams to break up; the effect is
+not due to counting factor. Most chimaeric fruiting bodies resemble those
+of Ax2 or triA-. Others are double-deckers with a single stalk and two
+spore masses, one each at the terminus and mid-way along the stalk. The
+relative number of spores belonging to the two genotypes depends on the
+mixing ratio and fruiting body morphology. In double-deckers formed from
+1:1 chimaeras the upper spore mass has more Ax2 spores, and the lower
+spore mass more triA- spores, than expected. Thus the traits under study
+depend partly on the cells' own genotype and partly on the phenotypes, and
+so genotypes, of other cells: they are both autonomous and non-autonomous.
+These findings strengthen the parallels between multicellular development
+and behaviour in social groups. Besides that, they reinforce the point
+that particular traits can be associated with genotypes only in a specific
+context.
+
+
+Submitted by Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Alteration of virulence factors and rearrangement of pAsa5 plasmid caused 
+by the growth of Aeromonas salmonicida in stressful conditions
+
+Rana K. Daher1,2, Genevieve Filion1,2, Sok Gheck E. Tan2, Stephanie 
+Dallaire-Dufresne1,2, Valerie E. Paquet1,2 and Steve J. Charette1,2,3* 
+ 
+1. Institut de biologie integrative et des systemes, Pavillon Charles-Eugene-
+Marchand, Universite Laval, 1030 avenue de la Medecine, Quebec City, 
+Quebec, Canada, G1V 0A6
+2. Centre de recherche de l'Institut universitaire de cardiologie et de 
+pneumologie de Quebec (Hopital Laval), 2725 Chemin Sainte-Foy, 
+Quebec City, Quebec, Canada, G1V 4G5
+3. Departement de biochimie, de microbiologie et de bio-informatique, 
+Faculte des sciences et de genie, Universite Laval, 1045 avenue de la 
+Medecine, Quebec City, Quebec, Canada G1V 0A6
+
+
+Veterinary Microbiology, in press
+ 
+Aeromonas salmonicida, a fish pathogen, is the causative agent of 
+furunculosis. It was already shown that growing this bacterium in stressful 
+conditions such as temperature above 22 C might lead to virulence 
+attenuation. Unfortunately, many veterinary microbiology services and 
+reference centers still routinely cultivate A. salmonicida at 25 C. Here we 
+tested the presence of virulence factors by growth on specific medium as 
+well as the integrity of the pAsa5 plasmid, which bears an important 
+virulence factor, the type III secretion system (TTSS), by PCR analysis in 
+twenty strains, most of which were grown at 25 C in their laboratory of 
+origin. The analysis revealed that strains, which encountered the more 
+stressful growth conditions displayed the most frequent absence of A-layer 
+protein and secreted proteolytic activity. Moreover, many strains had lost 
+parts of the pAsa5 plasmid in which the TTSS region was almost always 
+affected. To confirm the effect of stressful growth conditions on the plasmid, 
+three strains with an intact pAsa5 were cultured at 25 C for two weeks. A 
+low but significant fraction of the tested colonies displayed pAsa5 
+rearrangements. The rearrangement always affected the TTSS region and 
+led to a loss of virulence in the Dictyostelium discoideum co-culture assay. 
+These results demonstrate that the instability of pAsa5 did not lead to its 
+complete loss as previously proposed but to a more complex rearrangement 
+phenomenon and emphasizes the necessity to grow A. salmonicida in 
+appropriate conditions to preserve the complete virulence of the bacterium.
+
+
+Submitted by Steve Charette [Steve.Charette@bcm.ulaval.ca]
+==============================================================
+[End dictyNews, volume 36, number 14]

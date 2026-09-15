@@ -1,0 +1,53 @@
+dictyNews
+Electronic Edition
+Volume 30, number 17
+May 30, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Giorgione, J., and Clarke, M.
+
+Heterogeneous modes of uptake for latex beads revealed through live cell imaging of 
+phagocytes expressing a probe for phosphatidylinositol (3,4,5)-trisphosphate 
+and phosphatidylinositol (3,4)-bisphosphate.  
+
+
+Cell Motil. Cytoskel, in press
+
+Latex beads are the preferred phagocytic substrate in biochemical studies of 
+phagosome composition and maturation.  Using living Dictyostelium cells and 
+fluorescent probes, we compared the properties of phagosomes formed to ingest 
+latex beads or digestible prey.  Significant differences were found during the 
+initial steps of phagocytosis.  During uptake of bacteria or yeast, PHcrac-GFP, 
+a probe that binds to membranes enriched in PI(3,4,5)P3 and PI(3,4)P2, always 
+labeled the nascent phagosome and faded shortly after it sealed.  However, labeling 
+of bead-containing phagosomes was highly variable.  Beads were engulfed by 
+phagosomes either lacking or displaying the PHcrac-GFP label, and that label, 
+if present, often persisted for many minutes, revealing that early trafficking 
+steps for bead-containing phagosomes are quite heterogeneous.  Later stages of 
+the endocytic pathway appeared more similar for phagosomes containing prey and 
+latex beads.  Both types of phagosomes fused with acidic endosomes while 
+undergoing transport along microtubules, both acquired the V-ATPase and lost 
+it prior to exocytosis, and both bound the late endosome marker vacuolin B, 
+which was transferred to the plasma membrane upon exocytosis.  We conclude that 
+caution is needed in extrapolating results from latex bead phagosomes to 
+phagosomes containing physiological substances, especially in early stages 
+of the endocytic pathway.
+
+
+Submitted by: Margaret Clarke [clarkem@omrf.org]
+==============================================================
+[End dictyNews, volume 30, number 17]

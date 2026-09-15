@@ -1,0 +1,228 @@
+Dicty News
+Electronic Edition
+Volume 12, number 10
+May 8, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+================
+  Announcement
+================
+
+Due in part to Robert Insall's move to Birmingham, the European mirror 
+of the Dicty Web site no longer functions.  It appears that the internet
+links between europe and the US are functioning well, so it is not clear we
+need the european mirror.  We propose to dispense with the mirror.  If you 
+experience problems with you connections to the Dicty site, or have other
+thoughts regarding this please let us know at dicty@nwu.edu.
+
+==============
+  Abstracts
+==============
+
+A myb-related protein required for culmination in Dictyostelium.
+
+Kunde Guo , Christophe Anjard , Adrian Harwood , Hyun-Ji Kim , Peter C. 
+Newell  and Julian D. Gross. 
+
+Dept of Biochemistry, University of Oxford, South Parks Road, 
+Oxford OX1 3QU. U.K.
+
+Development (in press). 
+
+Abstract:
+
+   The avian retroviral v-myb gene and its cellular homologues throughout 
+the animal and plant kingdoms contain a conserved DNA binding domain. We 
+have isolated an insertional mutant of Dictyostelium unable to switch from 
+slug migration to fruiting body formation i.e. unable to culminate. The gene 
+that is disrupted, mybC, codes for a protein with a myb-like domain that 
+is recognized by an antibody against the v-myb repeat domain. During 
+development of myb+ cells, mybC is expressed only in prestalk cells.  
+When developed together with wild type cells mybC- cells are able to 
+form both spores and stalk cells very efficiently. Their developmental 
+defect is also bypassed by overexpressing cAMP-dependent protein kinase. 
+However even when their defect is bypassed, mybC null slugs and culminates 
+produce little if any of the intercellular signalling peptides SDF-1 and 
+SDF-2 that are believed to be released by prestalk cells at culmination. 
+We propose that the mybC gene product is required for an intercellular 
+signaling process controlling maturation of stalk cells and spores and 
+that SDF-1 and/or SDF-2 may be implicated in this process. 
+ 
+----------------------------------------------------------------------------
+
+IDENTIFICATION OF CIS-REGULATING ELEMENTS AND TRANS-ACTING FACTORS REGULATING
+THE EXPRESSION OF THE GENE ENCODING THE SMALL SUBUNIT OF RIBONUCLEOTIDE
+REDUCTASE IN DICTYOSTELIUM DISCOIDEUM
+
+Claire Bonfils1,4, Pascale Gaudet2,3, and Adrian Tsang1,2,3
+
+1Department of Biology, 2Department of Chemistry and Biochemistry, and 3Centre
+for Structural and Functional Genomics, Concordia University, Montreal, Quebec,
+H3G 1M8, Canada 
+4Present address: MethylGene Inc., 7220 Frederick-Banting, Ville St-Laurent,
+Quebec, H4S 2A1, Canada
+
+Journal of Biological Chemistry, accepted
+
+SUMMARY
+
+   We have examined the promoter of rnrB, the gene encoding the small subunit 
+of ribonucleotide reductase of Dictyostelium discoideum, using lacZ as a 
+reporter gene. Deletion analysis showed that expression of this gene in 
+vegetative cells involves an A/T-rich element whereas its  expression in 
+prespore cells during development requires a region encompassing two G/C-rich 
+elements, designated box A and box B. Removal of boxes A and B results in very 
+low level of activity. When either box A or box B is deleted, prestalk cells 
+adjacent to the prespore zone also express _-galactosidase. The behaviour of 
+these cis-regulatory elements implies that the mechanism regulating the 
+prespore-specific expression of rnrB is different from that regulating other 
+known prespore genes.  We have used electrophoretic mobility shift assays 
+to identify factors that interact with box A and box B. Box A interacts 
+with a factor that is found in the nuclear fraction. While box B interacts 
+with a factor that is present in the cytosolic fraction throughout growth 
+and development, its presence in the nuclear fraction is developmentally 
+regulated. Results from competition assays suggest that both box A and 
+box B interact with transcriptional activators that have not been 
+characterized previously. 
+
+----------------------------------------------------------------------------
+
+Endocytic transit in Dictyostelium
+
+Markus Maniak
+
+MRC Laboratory for Molecular Cell Biology, University College London, 
+London, UK
+
+Protoplasma, in press
+
+Summary. 
+
+   The cells of Dictyostelium are soil amoebae with a simple endocytic 
+pathway: Particles or fluid are taken up at the plasma membrane in a 
+process dependent on the actin cytoskeleton. After rapid acidification 
+and subsequent neutralisation of the food vacuoles during which breakdown 
+of the contents occurs, indigestible remnants are exocytosed. This tight 
+coupling between endocytosis and exocytosis is thought to maintain membrane 
+homeostasis. In spite of the apparent overall difference between the 
+endocytic pathways of mammalian cells and Dictyostelium, conserved 
+proteins are involved in individual steps of endocytic transport, possibly 
+indicating that in mammalian cells it is only the routing of marker that 
+has evolved from a simple transit to a complex, branched pathway. 
+
+----------------------------------------------------------------------------
+
+Disturbed communication between actin- and nucleotide binding sites in a
+myosin II with truncated 50K/20K junction
+
+Menno L.W. Knetsch 1, Taro Q.P. Uyeda 2, and Dietmar J. Manstein 1
+
+1)Max-Planck-Institute for Medical Research, Dept. of Biophysics, 
+Jahnstrasse 29, D-69120 Heidelberg, Germany and 2) Bionic Design Group, 
+National Institute for advanced Interdisciplinary Research, AIST, 1-1-4
+Higashi, Tsukuba, Ibaraki 305, Japan
+
+J. Biol. Chem (in press.)
+
+ABSTRACT
+
+   The kinetic and functional consequences of deleting nine residues from 
+an actin-binding surface loop (loop 2) were examined to investigate the 
+role of this region in myosin function. The nucleotide-binding properties 
+of myosin were not altered by the deletion. However, the deletion affected 
+actin binding and the communication between the actin- and nucleotide-binding 
+sites. The affinity of M765NL for actin (644 nM) was approximately 100-fold 
+lower than that of wild-type construct M765 (5.8 nM).  Despite this reduction 
+in affinity, actin binding weakened the affinity of ADP for the motor to a 
+similar extent for both mutant and wild-type constructs. The addition of 0.5 
+mM actin decreased ADP affinity from 0.6 mM to 34 mM for M765NL and from 1.6 
+mM to 39 mM for M765. In contrast, communication between the actin- and 
+nucleotide-binding sites appears disturbed in regard to Pi-release: thus, 
+basal ATPase activity for M765NL (0.19 s-1) was 3-fold larger than for M765 
+(0.06 s-1) and the stimulation of ATPase activity by actin was 5-fold lower 
+for M765NL. These results indicate different paths of communication between 
+the actin- and nucleotide-binding sites, in regard to ADP- and Pi-release, 
+and they confirm that loop 2 is involved in high affinity actin binding.
+
+----------------------------------------------------------------------------
+
+Ribosomal protein gene expression is cell type specific during development 
+in Dictyostelium discoideum. 
+
+Ameeta K. Agarwal, Susan N. Parrish and Daphne D. Blumberg
+
+Department of Biological Science, University of Maryland Baltimore County
+1000 Hilltop Circle, Baltimore, Md. 21250
+
+In press in Differentiation.
+
+ABSTRACT:     
+
+   Starvation for amino acids initiates the developmental cycle in the 
+Cellular Slime Mold, Dictyostelium discoideum. Upon starvation one of 
+the earliest developmental events is the selective loss of the ribosomal 
+protein mRNAs from polysomes. This loss depends upon sequences in the 5’ 
+non-translated leader of the r-protein mRNAs. Here evidence is presented 
+which indicates that those cells which will become prestalk cells express 
+the ribosomal protein genes during development under starvation conditions.  
+Cells which enter the prespore pathway shut off r-protein synthesis. The 
+promoter and 5’ non-translated leader sequences from two ribosomal protein 
+genes, the rp-L11 and the rp-S9 genes, are fused to the E.coli -galactosidase 
+reporter gene. While   -galactosidase enzyme activity is detected in situ  
+in most growing cells, by 15 hours of development -galactosidase enzyme 
+activity is largely lost from the prespore cells although strong  
+-galactosidase enzyme activity is present in the prestalk cells. These 
+observations suggest the possibility that the ribosomal protein mRNAs 
+are excluded from polysomes in a cell type specific manner.
+
+----------------------------------------------------------------------------
+
+Dictyostelium ribosomal protein genes and the elongation factor 1B gene 
+show co-ordinate developmental regulation which is under post-transcriptional 
+control.
+
+Ameeta K. Agarwal and Daphne D. Blumberg
+
+Department of Biological Science, University of Maryland Baltimore County
+1000 Hilltop Circle, Baltimore, Md. 21250
+
+In press in Differentiation 
+
+ABSTRACT:
+
+   Starvation for amino acids initiates the developmental program in 
+the Cellular Slime Mold, Dictyostelium discoideum.  One of the earliest 
+developmental events is the decline in ribosomal protein synthesis. The 
+ribosomal protein mRNAs are excluded from polysomes within 20 minutes to 
+1 hour following the removal of nutrients and their mRNA levels decline 
+sharply at about 9 hours into the 24 hour developmental cycle. It has 
+been generally assumed that the decline in r- protein mRNA levels during 
+late development reflected a decline in the transcription rate.  Here we 
+demonstrate that this is not the case. The transcription rates of three 
+ribosomal protein genes, rpL11, rpL23 and rpS9 as well as an elongation 
+factor 1B gene have been determined during growth and development in 
+Dictyostelium. Throughout growth and development the transcription rate 
+of the ribosomal protein genes remains relatively constant at 0.2 to 0.5% 
+of the rate of rRNA transcription while the elongation factor 1B gene is 
+transcribed at 0.4 to 0.6% of the rRNA rate. This low but constant 
+transcription rate is in contrast to a spore coat protein gene Psp D 
+which is transcribed at 6% of the rRNA rate in late developing cells. 
+The elongation factor 1B gene appears to be co-regulated with the ribosomal 
+protein genes both in terms of its transcription rate and mRNA accumulation.  
+Dictyostelium has been a popular model for understanding signal transduction 
+and the growth to differentiation transition, thus it is of significance that 
+the regulation of ribosome biosynthesis in Dictyostelium resembles that of 
+higher eukaryotes in being regulated largely at the post-transcriptional 
+level in response to starvation as opposed to yeasts where the regulation 
+is largely transcriptional.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 10]
+
+  

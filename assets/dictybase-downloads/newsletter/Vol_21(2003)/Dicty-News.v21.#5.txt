@@ -1,0 +1,47 @@
+Dicty NewsElectronic EditionVolume 21, number 5August 22, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+A PTEN-related 5' phosphatidylinositol phosphatase localized in the GolgiSylvain Merlot, Ruedi Meili, David J. Pagliarini, Tomohiko Maehama, 
+Jack E. Dixon, and Richard A. FirtelJ. Biol. Chem., in pressSUMMARYPhosphoinositides play important roles as signaling molecules in different 
+cellular compartments by regulating the localization and activity of 
+proteins through their interaction with specific domains.  The activity of 
+these lipids depends on which sites on the inositol ring are phosphorylated.  
+Signaling pathways dependent on phosphoinositides phosphorylated on the D3 
+position of this ring (3'-phosphoinositides) are negatively regulated by 
+3'-phosphoinositide-specific phosphatases that include PTEN and myotubularin.  
+Using the conserved PTEN catalytic core motif, we have identified a new 
+protein in the Dictyostelium genome called PLIP that defines a new subfamily 
+family of phosphoinositide phosphatases, clearly distinct from PTEN or other 
+closely related proteins.  We show that PLIP is able to dephosphorylate a 
+broad spectrum of phosphoinositides, including 3'-phosphoinositides.  In 
+contrast to previously characterized phosphoinositide phosphatases, PLIP has 
+a strong preference for phosphatidylinositol-5-phosphate , a newly discovered 
+phosphoinositide.  We found that PLIP is localized in the Golgi with its 
+phosphatase domain facing the cytoplasmic compartment.  PLIP null cells 
+created via homologous recombination are unable to effectively aggregate to 
+form multicellular organisms at low cell densities.  PLIP's presence in the 
+Golgi suggests that it may be involved in membrane trafficking.
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]-------------------------------------------------------------------------------The novel ankyrin-repeat containing kinase ARCK-1 acts as a suppressor of the 
+Spalten signaling pathway during Dictyostelium developmentLaurence Aubry, Susan Lee, Kissia Ravanel, and Richard A. FirtelDevel. Biol., in pressABSTRACTSpalten (Spn), a member of the PP2C family of Ser/Thr protein phosphatases, is 
+required for Dictyostelium cell-type differentiation and morphogenesis.  We 
+have identified a new protein kinase, ARCK-1, through a second site suppressor 
+screen for mutants that allow spn null cells to proceed further through 
+development.  ARCK-1 has a C-terminal kinase domain most closely related to 
+Ser/Thr protein kinases and an N-terminal putative regulatory domain with 
+ankyrin repeats, a 14-3-3 binding domain, and a C1 domain, which is required 
+for binding to RasBGTP in a two-hybrid assay.  Disruption of the gene encoding 
+ARCK-1 results in weak, late developmental defects.  However, overexpression of 
+ARCK-1 phenocopies the spn null phenotype, consistent with Spn and ARCK-1 being 
+on the same developmental pathway.  Our previous analyses of Spn and the present 
+analysis of ARCK-1 suggest a model in which Spn and ARCK-1 differentially control 
+the phosphorylation state of a protein that regulates cell-type differentiation.  
+Dephosphorylation of the substrate by Spn is required for cell-type 
+differentiation.  Control of ARCK-1 and Spn activities by upstream signals is 
+proposed to be part of the developmental regulatory program mediating cell-fate 
+decisions in Dictyostelium.Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+===============================================================================[End Dicty News, volume 21, number 5]

@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 36, number 9
+March 18, 2011
+ 
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+ 
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+ 
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+ 
+ 
+=========
+Abstracts
+=========
+ 
+ 
+Role of B regulatory subunits of PP2A in myosin II assembly control in
+Dictyostelium discoideum.
+ 
+Vandana Rai and Thomas Egelhoff
+ 
+ 
+Eukaryotic Cell, In Press
+ 
+In Dictyostelium discoideum, myosin II resides predominantly in a soluble
+pool, as the result of phosphorylation of the myosin heavy chain (MHC) and
+dephosphorylation of the MHC is required for myosin II filament assembly,
+recruitment to the cytoskeleton, and force production. Protein phosphatase
+type 2A (PP2A) was identified in earlier studies in Dictyostelium as a key
+biochemical activity that can drive MHC dephosphorylation.  We report here
+gene targeting and cell biological studies addressing the roles of candidate
+PP2A B regulatory subunits (phr2aBalpha and phr2aBbeta) in myosin II assembly
+control in vivo. Dictyostelium phr2aBalpha and phr2aBbeta null cells show
+delayed development, reduction in the assembly of myosin II in cytoskeletal
+ghost assays, and defects in cytokinesis when grown in suspension, as compared
+to parental cell lines. These results demonstrate that the PP2A B subunits
+phr2aBalpha and phr2aBbeta contribute to myosin II assembly control in vivo,
+with phr2aBalpha having the predominant role facilitating MHC dephosphorylation
+to facilitate filament assembly.
+ 
+ 
+Submitted by Tom Egelhoff [tte@case.edu]
+---------------------------------------------------------------------------------
+ 
+ 
+Chemotaxis: a feedback-based computational model robustly predicts multiple
+aspects of real cell behaviour.
+ 
+Matthew P. Neilson, Douwe Veltman, Peter van Haastert, Steven Webb, John Mackenzie
+and Robert H. Insall
+ 
+ 
+PLOS biology, in press
+ 
+Background:
+The mechanism of eukaryotic chemotaxis remains unclear despite intensive study.
+The most frequently described mechanism acts through attractants causing actin
+polymerization, in turn leading to pseudopod formation and cell movement. We
+recently proposed an alternative mechanism, supported by several lines of data,
+in which pseudopods are made by a self-generated cycle. If chemoattractants are
+present they modulate the cycle, rather than directly causing actin polymerization.
+The aim of this work is to test the explanatory and predictive powers of such
+pseudopod-based models to predict the complex behaviour of cells in chemotaxis.
+Results:
+We have now tested the effectiveness of this mechanism using a computational
+model of cell movement and chemotaxis based on pseudopod autocatalysis. The model
+reproduces a surprisingly wide range of existing data about cell movement and
+chemotaxis. It simulates cell polarization and persistence without stimuli, and
+selection of accurate pseudopods when chemoattractant gradients are present.
+It predicts both bias of pseudopod position in low chemoattractant gradients,
+and - unexpectedly - lateral pseudopod initiation in high gradients. To test the
+predictive ability of the model we looked for untested and novel predictions.
+One prediction from the model is that the angle between successive pseudopods at
+the front of the cell will increase in proportion to the difference between the
+cell's direction and the direction of the gradient. We measured the angles
+between pseudopods in chemotaxing Dictyostelium cells under different conditions,
+and found the results agreed with the model extremely well.
+Conclusions & Significance:
+Our model and data together suggest that in rapidly-moving cells like Dictyostelium
+and neutrophils an intrinsic pseudopod cycle lies at the heart of cell motility.
+This implies that the mechanism behind chemotaxis relies on modification of intrinsic
+pseudopod behaviour, more than generation of new pseudopods or actin polymerization
+by chemoattractants.
+ 
+ 
+Submitted by Robert Insall [R.Insall@beatson.gla.ac.uk]
+==============================================================
+[End dictyNews, volume 36, number 9]

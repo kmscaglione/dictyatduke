@@ -1,0 +1,288 @@
+dictyNews
+Electronic Edition
+Volume 33, number 5
+August 21, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+CP250, a novel acidic coiled coil protein of the Dictyostelium centrosome, 
+affects growth, chemotaxis and the nuclear envelope
+
+Rosemarie Blau-Wasser,*† Ursula Euteneuer,‡ Huajiang Xiong,* 
+Berthold Gassen,*† Michael Schleicher,‡ Angelika A. Noegel*† 
+
+*Center for Biochemistry, Medical Faculty, 
+†Center for Molecular Medicine Cologne (CMMC) and Cologne Excellence 
+Cluster on Cellular Stress Responses in Aging-Associated Diseases (CECAD), 
+University of Cologne, 50931 Köln, Germany, 
+‡Institute of Anatomy and Cell Biology and Center for Integrated Protein 
+Science (CIPSM), Ludwig-Maximilians-University, 80336 München, Germany 
+
+
+Mol. Biol. Cell, in press
+
+The Dictyostelium centrosome is a nucleus associated body consisting of a 
+box-shaped core surrounded by the corona, an amorphous matrix functionally 
+equivalent to the pericentriolar material of animal centrosomes which is 
+responsible for the nucleation and anchoring of microtubules. Here we describe 
+CP250 a component of the corona, an acidic coiled coil protein which is 
+present at the centrosome throughout interphase while disappearing during 
+prophase and reappearing at the end of late telophase. Amino acids 756-1148 
+of the 2,110 amino acids are sufficient for centrosomal targeting and cell 
+cycle dependent centrosome association. Mutant cells lacking CP250 are 
+smaller in size, growth on bacteria is delayed, chemotaxis is altered and 
+development is affected which, in general, are defects observed in 
+cytoskeletal mutants. Furthermore, loss of CP250 affected the nuclear 
+envelope and led to reduced amounts and altered distribution of Sun-1, a 
+conserved nuclear envelope protein that connects the centrosome to 
+chromatin. 
+
+
+Submitted by Angelika Nögel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Role of a Cytoplasmic Dual-Function Glycosyltransferase in O2-Regulation 
+of Development in Dictyostelium
+
+Zhuo A. Wang(1), Hanke van der Wel(1), Yusof Vohra(2), Therese Buskas(2), 
+Geert-Jan Boons(2), and Christopher M. West(1)
+
+1Dept. of Biochemistry & Molecular Biology and Oklahoma Center for 
+Medical Glycobiology, University of Oklahoma Health Sciences Center, 
+Oklahoma City, OK  73104  USA; 
+2Dept. of Chemistry and Complex Carbohydrate Research Center, 315 
+Riverbend Road, University of Georgia, Athens, GA  30602  USA.
+
+
+J. Biol. Chem., in press
+
+In the social amoeba Dictyostelium, a terminal step in development is 
+regulated by environmental O2. Prolyl 4-hydroxylase-1 (P4H1) was 
+previously implicated in mediating the O2 signal, and P4H1-null cells 
+require elevated O2 to culminate. The E3-ubiquitin ligase adaptor Skp1 
+is a P4H1 substrate, and here we investigate the function of PgtA, a 
+dual function beta3-galactosyltransferase/alpha2-fucosyltransferase 
+that contributes the 2nd and 3rd sugars of the pentasaccharide cap 
+formed on Skp1 hydroxyproline. Although pgtA-null cells, whose Skp1 
+contains only a single sugar (N-acetylglucosamine or GlcNAc), show 
+wild-type O2-dependence of culmination, cells lacking AgtA, an 
+alpha3-galactosyltransferase required to extend the trisaccharide, 
+require elevated O2 as for P4H1-null cells. Skp1 is the only detectable 
+protein modified by purified PgtA added to pgtA-null extracts. The 
+basis for specificity of PgtA was investigated using native Skp1 
+acceptor glycoforms and a novel synthetic peptide containing 
+GlcNAcalpha1,4-hydroxy(trans)proline. Cysteine-alkylation of Skp1 
+strongly inhibited modification by the PgtA galactosyltransferase but 
+not the fucosyltransferase. Furthermore, native and synthetic Skp1 
+glycopeptides were poorly galactosylated, not processively fucosylated, 
+and negligibly inhibitory, whereas the fucosyltransferase was active 
+toward small substrates. In addition, the galactosyltransferase exhibited 
+an atypical concentration dependence on UDP-galactose. The results 
+provide the first evidence that Skp1 is the functional target of P4H1 
+in O2-regulation, indicate a gatekeeper function for the 
+beta3-galactosyltransferase in the PgtA-dual reaction, and identify 
+an unexpected P4H1-dependent yet antagonistic function for PgtA 
+that is reversed by AgtA.
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+--------------------------------------------------------------------------------
+
+
+dictyExpress: A Dictyostelium discoideum gene expression database with an 
+explorative data analysis web-based interface
+
+Gregor Rot*, Anup Parikh*, Tomaz Curk, Adam Kuspa, Gad Shaulsky and Blaz Zupan
+
+Faculty of Computer and Information Science, University of Ljubljana, SI-1000
+Ljubljana, Slovenia
+Baylor College of Medicine, Houston, TX 77030, USA
+
+* equal contribution
+
+
+BMC Bioinformatics, in press
+
+Background
+Bioinformatics often leverages on recent advancements in computer science to 
+support biologists in their scientific discovery process. Such efforts include 
+the development of easy-to-use web interfaces to biomedical databases. Recent 
+advancements in interactive web technologies require us to rethink the standard 
+submit-and-wait paradigm, and craft bioinformatics web applications that share 
+analytical and interactive power with their desktop relatives, while retaining 
+simplicity and availability.
+Results
+We have developed dictyExpress, a web application that features a graphical, 
+highly interactive explorative interface to our database that consists of 
+more than 1000 Dictyostelium discoideum gene expression experiments. In 
+dictyExpress, the user can select experiments and genes, perform gene 
+clustering, view gene expression profiles across time, view gene co-expression 
+networks, perform analyses of Gene Ontology term enrichment, and simultaneously 
+display expression profiles for a selected gene in various experiments. Most 
+importantly, these tasks are achieved through web applications whose components 
+are seamlessly interlinked and immediately respond to events triggered by the 
+user, thus providing a powerful explorative data analysis environment.
+Conclusions
+dictyExpress is a precursor for a new generation of web-based bioinformatics 
+applications with simple but powerful interactive interfaces that resemble that 
+of the modern desktop. While dictyExpress serves mainly the Dictyostelium 
+research community, it is relatively easy to adapt it to other datasets. We 
+propose that the design ideas behind dictyExpress will influence the 
+development of similar applications for other model organisms.
+
+
+Submitted by Gad Shaulsky and Blaz Zupan [gadi@bcm.edu]
+--------------------------------------------------------------------------------
+
+
+Self-organizing Actin Waves as Planar Phagocytic Cup Structures
+
+Günther Gerisch1, Mary Ecke1, Britta Schroth-Diez2, Silke Gerwig2, 
+Ulrike Engel3, Lucinda Maddera4, and Margaret Clarke4
+
+1 Max-Planck-Institut für Biochemie, Am Klopferspitz 18, D-82152 
+Martinsried, Germany.
+2 Max-Planck-Institut für molekulare Zellbiologie und Genetik, 
+Pfotenhauerstrasse 108, D-01307 Dresden, Germany.
+3 Nikon Imaging Center der Universität Heidelberg, Bioquant BQ 0004, 
+Im Neuenheimer Feld 267, D-69120 Heidelberg, Germany.
+4 Program in Genetic Models of Disease, Oklahoma Medical Research 
+Foundation, Oklahoma City, OK 73121, USA.
+
+
+Cell Adhesion & Migration, in press
+
+Actin waves that travel on the planar membrane of a substrate-attached cell 
+underscore the capability of the actin system to assemble into dynamic 
+structures by the recruitment of proteins from the cytoplasm. The waves 
+have no fixed shape, can reverse their direction of propagation, and can 
+fuse or divide. Actin waves separate two phases of the plasma membrane that 
+are distinguished by their lipid composition. The area circumscribed by a 
+wave resembles in its phosphoinositide content the interior of a phagocytic 
+cup, leading us to explore the possibility that actin waves are in-plane 
+phagocytic structures generated without the localized stimulus of an attached 
+particle. Consistent with this view, wave-forming cells were found to exhibit 
+a high propensity for taking up particles. Cells fed rod-shaped particles 
+produced elongated phagocytic cups that displayed a zonal pattern that 
+reflected in detail the actin and lipid pattern of free-running actin waves. 
+Neutrophils and macrophages are known to spread on surfaces decorated with 
+immune complexes, a process that has been interpreted as “frustrated” 
+phagocytosis. We suggest that actin waves enable a phagocyte to scan a 
+surface for particles that might be engulfed.
+
+
+Submitted by Günther Gerisch [gerisch@biochem.mpg.de]
+--------------------------------------------------------------------------------
+
+
+Food searching strategy of amoeboid cells by starvation induced run length 
+extension.
+
+Peter J.M. Van Haastert and Leonard Bosgraaf
+
+Department of Cell Biochemistry, University of Groningen, Kerklaan 30, 
+9751 NN Haren, The Netherlands
+
+
+PLoS ONE, in press
+
+Food searching strategies of animals are key to their success in heterogeneous 
+environments. The optimal search strategy may include specialized random walks 
+such as Levy walks with heavy power-law tail distributions, or persistent walks 
+with preferred movement in a similar direction. We have investigated the 
+movement of the soil amoebae Dictyostelium searching for food. Dictyostelium 
+cells move by extending pseudopodia, either in the direction of the previous 
+pseudopod (persistent step) or in a different direction (turn). The analysis 
+of ~4000 pseudopodia reveals that step and turn pseudopodia are drawn from a 
+probability distribution that is determined by cGMP/PLA2 signaling pathways. 
+Starvation activates these pathways thereby suppressing turns and inducing 
+steps. As a consequence, starved cells make very long nearly straight runs 
+and disperse over ~30-fold larger areas, without extending more or larger 
+pseudopodia than vegetative cells. This ‘win-stay/lose-shift’ strategy for 
+food searching is called Starvation Induced Run-length Extension. The SIRE 
+walk explains very well the observed differences in search behavior between 
+fed and starving organisms such as bumble-bees, flower bug, hoverfly and 
+zooplankton. 
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Navigation of chemotactic cells by parallel signaling to pseudopod persistence 
+and orientation.
+
+Leonard Bosgraaf and Peter J.M. Van Haastert
+
+
+Department of Cell Biochemistry, University of Groningen, Kerklaan 30, 
+9751 NN Haren, The Netherlands
+
+
+PLoS ONE, in press
+
+The mechanism of chemotaxis is one of the most interesting issues in modern 
+cell biology. Recent work shows that shallow chemoattractant gradients do not 
+induce the generation of pseudopods, as has been predicted in many models. 
+This poses the question of how else cells can steer towards chemoattractants. 
+Here we use a new computational algorithm to analyze the extension of 
+pseudopods by Dictyostelium cells. We show that a shallow gradient of cAMP 
+induces a small bias in the direction of pseudopod extension, without 
+significantly affecting parameters such as pseudopod frequency or size. 
+Persistent movement, caused by alternating left/right splitting of existing 
+pseudopodia, amplifies the effects of this bias by up to 5-fold. Known 
+players in chemotactic pathways play contrasting parts in this mechanism; 
+PLA2 and cGMP signal to the cytoskeleton to regulate the splitting process, 
+while PI 3-kinase and soluble guanylyl cyclase mediate the directional bias. 
+The coordinated regulation of pseudopod generation, orientation and 
+persistence by multiple signaling pathways allows eukaryotic cells to 
+detect extremely shallow gradients. 
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+The local cell curvature guides pseudopodia towards chemoattractants.
+
+
+Peter J.M. Van Haastert and Leonard Bosgraaf
+
+Department of Cell Biochemistry, University of Groningen, Kerklaan 30, 
+9751 NN Haren, The Netherlands
+
+
+HFSP Journal, in press
+
+Many eukaryotic cells use pseudopodia for movement towards chemoattractants. 
+We developed a computer algorithm to identify pseudopodia, and analyzed how 
+pseudopodia of Dictyostelium cells are guided towards cAMP. Surprisingly, 
+the direction of a pseudopod is not actively oriented towards the gradient, 
+but is always perpendicular to the local cell curvature. The gradient induces 
+a bias in the position where the pseudopod emerges: pseudopodia more likely 
+emerge at the side of the cell closer to the gradient where perpendicular 
+pseudopodia are pointed automatically towards the chemoattractant. A mutant 
+lacking the formin dDia2 is not spherical but has many invaginations. Although 
+pseudopodia still emerge at the side closer to the gradient, the surface 
+curvature is so irregular that many pseudopodia are not extended towards 
+cAMP. The results imply that the direction of pseudopod extension, and 
+therefore also the direction of cell movement, is dominated by two aspects: 
+the position at the cell surface where a pseudopod emerges, and the local 
+curvature of the membrane at that position. 
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 33, number 5]

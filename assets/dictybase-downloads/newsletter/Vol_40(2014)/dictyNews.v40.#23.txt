@@ -1,0 +1,139 @@
+dictyNews
+Electronic Edition
+Volume 40, number 23
+September 12, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The hybrid type polyketide synthase SteelyA is required for cAMP 
+signalling in early Dictyostelium development
+
+Takaaki B. Narita, Zhi-hui Chen, Pauline Schaap and Tamao Saito
+
+
+PLoS One, in press
+
+BACK GROUND: In our previous study we found that the expression 
+of stlA showed peaks both in the early and last stages of development 
+and that a product of SteelyA, 4-methyl-5-pentylbenzene-1,3-diol 
+(MPBD), controlled Dictyostelium spore maturation during the latter. In 
+this study we focused on the role of SteelyA in early stage development.
+
+PRINCIPAL FINDINGS: Our stlA null mutant showed aggregation delay 
+and abnormally small aggregation territories. Chemotaxis analysis 
+revealed defective cAMP chemotaxis in stlA null mutant. cAMP 
+chemotaxis was restored by MPBD addition during early stage 
+development. Assay for cAMP relay response revealed that the stlA null 
+mutant had lower cAMP accumulation during aggregation, suggesting 
+lower ACA activity than the wild type strain. Exogenous cAMP pulses 
+rescued the aggregation defect of the stlA null strain in the absence of 
+MPBD. Expression analysis of cAMP signalling genes revealed lower 
+expression levels in stlA null mutant during aggregation.
+
+CONCLUSION: Our data indicate a regulatory function by SteelyA on 
+cAMP signalling during aggregation and show that SteelyA is 
+indispensable for ACA full induction.
+
+
+Submitted by Tamao Saito [tasaito@sophia.ac.jp]
+---------------------------------------------------------------------------
+
+
+Vmp1 regulates PtdIns3P signaling during autophagosome formation 
+in Dictyostelium discoideum
+
+Javier Calvo-Garrido, Jason S. King, Sandra Mu–oz-Braceras and 
+Ricardo Escalante
+
+Traffic, in press
+
+Generation and turnover of PtdIns3P signaling is essential for 
+autophagosome formation and other membrane traffic processes. 
+In both Dictyostelium discoideum and mammalian cells, 
+autophagosomes are formed from specialized regions of the 
+endoplasmic reticulum (ER), called omegasomes, which are 
+enriched in the signaling lipid PtdIns3P. Vmp1 is a multi-spanning 
+membrane protein localized at the ER that is required for 
+autophagosome formation. There are conflicting reports in the 
+literature as to whether Vmp1 is strictly required or not for 
+autophagy-related PtdIns3P signaling and its hierarchical 
+relationship with Atg1 and PI3K. We have now addressed these 
+questions in the Dictyostelium model.  We show that Dictyostelium 
+cells lacking Vmp1 have elevated and aberrant PtdIns3P signaling 
+on the ER, resulting in an increased and persistent recruitment of 
+Atg18 and other autophagic proteins. This indicates that Vmp1 is 
+not strictly essential for the generation of PtdIns3P signaling but 
+rather suggests a role in the correct turnover or modulation of this 
+signaling. Of interest, these PtdIns3P-enriched regions of the ER 
+surround ubiquitinated protein aggregates but are unable to form 
+functional autophagosomes. vmp1 null cells also have additional 
+defects in macropinocytosis and growth, that are not shared by 
+other autophagy mutants. Remarkably, we show that these defects 
+and also the aberrant PtdIns3P distribution are largely suppressed 
+by the concomitant loss of Atg1, indicating that aberrant autophagic 
+signaling on the ER inhibits macropinocytosis. These results 
+suggest that Atg1 functions upstream of Vmp1 in this signaling 
+pathway and demonstrates a previously unappreciated link 
+between abnormal autophagy signaling and macropinocytosis.
+
+
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]
+---------------------------------------------------------------------------
+
+
+Cellular memory in eukaryotic chemotaxis
+
+Monica Skoge1,2 , Haicen Yue2 , Michael Erickstad2, Albert Bae1,2, 
+Herbert Levine3, Alex Groisman2,   William F. Loomis1, and 
+Wouter-Jan Rappel2
+
+1 Department of Biology, University of California San Diego, 
+La Jolla, CA 92093
+2 Department of Physics, University of California San Diego, 
+La Jolla, CA 92093
+3 Center for Theoretical Biological Physics and Department of 
+Bioengineering, Rice University, Houston, TX 77251
+
+
+PNAS, in press
+
+Natural chemical gradients to which cells respond chemotactically 
+are often dynamic, with both spatial and temporal components. A 
+primary example is the social amoeba Dictyostelium, which migrates 
+to the source of traveling waves of chemoattractant as part of a self-
+organized aggregation process. Despite its physiological importance,
+ little is known about how cells migrate directionally in response to 
+traveling waves.  The classic back-of-the-wave problem is how cells 
+chemotax towards the wave source, even though the spatial gradient 
+reverses direction in the back of the wave.  Here we address this 
+problem by using microfluidics to expose cells to traveling waves of 
+chemoattractant with varying periods. We find that cells exhibit 
+cellular memory and maintain directed motion towards the wave 
+source in the back of the wave for the natural period of 6 minutes, 
+but increasingly reverse direction for longer wave periods. Further 
+insights into cellular memory are provided by experiments quantifying 
+cell motion and localization of a directional-sensing marker  after 
+rapid gradient switches. The results can be explained by a model that 
+couples adaptive directional sensing to bistable cellular memory. Our 
+study shows how spatiotemporal cues can guide cell migration over 
+large distances.
+
+
+Submitted by Wouter-Jan Rappel [rappel@physics.ucsd.edu]
+==============================================================
+[End dictyNews, volume 40, number 23]

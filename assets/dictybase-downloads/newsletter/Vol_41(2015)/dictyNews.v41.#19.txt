@@ -1,0 +1,113 @@
+dictyNews
+Electronic Edition
+Volume 41, number 19
+September 4, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Allorecognition, via TgrB1 and TgrC1, mediates the 
+transition from unicellularity to multicellularity in 
+the social amoebae Dictyostelium discoideum
+
+Shigenori Hirose1, Balaji Santhanam2,3, Mariko 
+Katoh-Kurosawa2, Gad Shaulsky2,3,#, and Adam Kuspa1,2,#
+
+1 Verna and Marrs McLean Department of Biochemistry 
+and Molecular Biology
+2 Department of Molecular and Human Genetics
+3 Structural and Computational Biology and Molecular 
+Biophysics Program
+# Corresponding Authors
+
+Baylor College of Medicine, Houston, TX 77030 USA
+
+Accepted to “Development”
+
+SUMMARY
+The social amoeba Dictyostelium discoideum integrates 
+into a multicellular organism when individual starving 
+cells aggregate and form a mound. The cells then integrate 
+into defined tissues and develop into a fruiting body that 
+consists of a stalk and spores. Aggregation is initially 
+orchestrated by waves of extracellular cyclic adenosine 
+monophosphate (cAMP) and previous theory suggested that 
+cAMP and other field-wide diffusible signals mediate 
+tissue integration and terminal differentiation as well. 
+Cooperation between cells depends on an allorecognition 
+system comprised of the polymorphic adhesion proteins 
+TgrB1 and TgrC1. Binding between compatible TgrB1 and 
+TgrC1 variants ensures that non-matching cells segregate 
+into distinct aggregates prior to terminal development. 
+Here, we have embedded a small number of cells with 
+incompatible allotypes within fields of developing cells 
+with compatible allotypes. We found that compatibility 
+of the allotype encoded by the tgrB1 and tgrC1 genes is 
+required for tissue integration, as manifested in cell 
+polarization, coordinated movement, and differentiation 
+into prestalk and prespore cells. Our results show that 
+the molecules that mediate allorecognition in D. discoideum 
+also control the integration of individual cells into a 
+unified developing organism and this acts as a gating step 
+for multicellularity.
+
+Submitted by Adam Kuspa [akuspa@bcm.edu]
+----------------------------------------------------------------------
+
+Title: Dissecting the function of Atg1 complex in 
+Dictyostelium autophagy reveals a connection with the 
+pentose phosphate pathway enzyme transketolase
+
+Ana Mesquita, Luis C. Tábara, Oscar Martinez-Costa, 
+Natalia Santos-Rodrigo, Olivier Vincent and 
+Ricardo Escalante
+
+Open Biol. 2015 Aug;5(8).
+
+Abstract
+The network of protein-protein interactions of the 
+Dictyostelium discoideum autophagy pathway was 
+investigated by yeast two-hybrid screening of the 
+conserved autophagic proteins Atg1 and Atg8. These 
+analyses confirmed expected interactions described 
+in other organisms and also identified novel interactors 
+that highlight the complexity of autophagy regulation. 
+The Atg1 kinase complex, an essential regulator of 
+autophagy, was investigated in detail here. The 
+composition of the Atg1 complex in Dictyostelium 
+discoideum is more similar to mammalian cells than 
+to Saccharomyces cerevisiae since, besides Atg13, 
+it contains Atg101, a protein not conserved in this 
+yeast. We found that Atg101 interacts with Atg13 and 
+genetic disruption of these proteins in Dictyostelium 
+leads to an early block in autophagy, although the 
+severity of the developmental phenotype and the degree 
+of autophagic block is higher in Atg13 deficient cells. 
+We have also identified a protein containing zinc-finger 
+B-box and FNIP motifs that interacts with Atg101. 
+Disruption of this protein increases autophagic flux 
+suggesting that it functions as a negative regulator 
+of Atg101. We also describe the interaction of Atg1 
+kinase with the pentose phosphate pathway enzyme 
+transketolase. We found changes in the activity of 
+endogenous transketolase activity in strains lacking 
+or overexpressing Atg1 suggesting the presence of an 
+unsuspected regulatory pathway between autophagy and 
+the pentose phosphate pathway in Dictyostelium that 
+seems to be conserved in mammalian cells.
+
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]   ==============================================================
+[End dictyNews, volume 41, number 19]

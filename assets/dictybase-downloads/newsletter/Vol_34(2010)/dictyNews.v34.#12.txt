@@ -1,0 +1,190 @@
+dictyNews
+Electronic Edition
+Volume 34, number 12
+April 9, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+SunB, a novel SUN domain-containing protein required for development 
+of Dictyostelium discoideum
+
+Nao Shimada 1, 2, Kei Inouye 3, Satoshi Sawai 2 and
+Takefumi Kawata 1, *
+
+1Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama, 
+Funabashi, Chiba 274-8510, Japan, 
+2Graduate School of Arts and Sciences, University of Tokyo, 3-8-1 Komaba, 
+Meguro-ku, Tokyo 153-8902, Japan
+3Department of Botany, Graduate School of Science, Kyoto University, 
+Sakyo-ku, Kyoto 606-8502, Japan
+*Author to whom all correspondence should be addressed. 
+
+
+Devleop. Growrh & Differ., In press.
+
+A gene, sunB, encoding a novel class of Sad1 and UNC-84 (SUN) domain, 
+was isolated from a cDNA screen for suppressors of a mutation in Dd-STATa – 
+a Dictyostelium homologue of metazoan STAT (signal transducers and activators 
+of transcription). The SunB protein localized in the area around the nucleus in 
+growing cells, but in the multicellular stages it was predominantly found in 
+prespore vacuoles (PSVs). A disruptant of sunB was multinucleated in the 
+vegetative phase; during development it formed mounds with multiple tips and 
+failed to culminate. The mutation was cell autonomous, and showed reduced 
+expression of the prespore marker gene pspA and elevated expression of 
+marker genes for prestalk AB cells. Interestingly, the level of SunB was 
+abnormally high in the prestalk cells of Dd-STATa mutants, which are defective 
+in culmination. We conclude that SunB is essential for accurate prestalk/prespore 
+differentiation during Dictyostelium development and that its cell-type dependent 
+localization is regulated by a Dd-STATa-mediated signaling pathway.
+
+
+Submitted by Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+An unconventional myosin required for cell polarization and chemotaxis
+
+Laura M. Breshears, Deborah Wessels, David R. Soll, and Margaret A. Titus
+
+
+Proc.Natl.Acad. Sci., in press
+
+MyTH/FERM (myosin tail homology 4/band 4.1, ezrin, radixin, and moesin) 
+myosins have roles in cellular adhesion, extension of actin-filled projections 
+such as filopiodia and stereocilia, and directional migration.  The amoeba 
+Dictyostelium discoideum expresses a simple complement of MyTH/FERM 
+myosins, a class VII (M7) myosin required for cell-substrate adhesion and a 
+unique myosin named MyoG.  Mutants lacking MyoG exhibit a wide range of 
+normal actin-based behaviors, including chemotaxis to folic acid, but have a
+striking defect in polarization and chemotaxis to cAMP.  Although the myoG 
+mutants respond to cAMP stimulation by increasing persistence and weakly 
+increasing levels of cortical F-actin, they do not polarize; instead, they 
+maintain a round shape and move slowly and randomly when exposed to
+a chemotactic gradient.  The mutants also fail to activate and localize PI3K 
+to the membrane closest to the source of chemoattractant. These data
+reveal a role for a MyTH/FERM myosin in mediating early chemotactic 
+signaling and suggest that MyTH/FERM proteins have conserved roles in 
+signaling and the generation of cell polarity.
+
+
+Submitted by Deborah Wessels [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------
+
+
+Involvement of the Cytoskeleton in Controlling Leading Edge Function 
+during Chemotaxis
+
+Susan Lee, Zhouxin Shen, Douglas N. Robinson, Steven Briggs, and 
+Richard A. Firtel
+
+
+Mol. Biol. Cell., in press
+
+In response to directional stimulation by a chemoattractant, cells rapidly 
+activate a series of signaling pathways at the site closest to the 
+chemoattractant source that leads to F-actin polymerization, pseudopod 
+formation, and directional movement up the gradient. Ras proteins are 
+major regulators of chemotaxis in Dictyostelium; they are activated at 
+the leading edge, are required for chemoattractant-mediated activation 
+of PI3K and TORC2, and are one of the most rapid responders with 
+activity peaking at ~3 sec after stimulation. We demonstrate that in 
+myosin II (MyoII) null cells, Ras activation is highly extended and is not 
+restricted to the site closest to the chemoattractant source. This causes 
+elevated, extended, and spatially misregulated activation of PI3K and 
+TORC2 and their effectors Akt/PKB and PKBR1, and elevated F-actin 
+polymerization. We further demonstrate that disruption of specific 
+IQGAP/cortexillin complexes, which also regulate cortical mechanics, 
+causes extended activation of PI3K and Akt/PKB but not Ras activation. 
+Our findings suggest that MyoII and IQGAP/cortexillin play key roles in 
+spatially and temporally regulating leading edge activity and, through this, 
+the ability of cells to restrict the site of pseudopod formation.xation of the 
+MTBD into the stable low affinity state.
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+SCAR/WAVE is activated at mitosis and drives myosin-independent 
+cytokinesis
+
+Jason S. King1,3, Douwe M. Veltman1, Marios Georgiou2, Buzz Baum2 
+and Robert H. Insall1
+
+1Beatson Institute for Cancer Research, Garscube Estate, Switchback 
+Road, Bearsden, Glasgow, UK. G61 1BD.
+2MRC-LMCB, University College London, Gower Street, London, UK. 
+WC1E 6BT
+
+
+J. Cell Sci.,  in press
+
+Cell division requires the tight coordination of multiple cytoskeletal 
+pathways. The best understood of these involves myosin II-dependent 
+constriction around the cell equator but both Dictyostelium and mammalian 
+cells also use a parallel, adhesion-dependent mechanism to generate 
+furrows. We show that the actin nucleation factor SCAR/WAVE is strongly 
+activated during Dictyostelium cytokinesis. This activation localises to large 
+polar protrusions, driving separation of the daughter cells.  This continues for 
+10 minutes after division before the daughter cells revert to normal random 
+motility, indicating that this is a tightly regulated process. We demonstrate 
+that SCAR activity is essential to drive myosin II-independent cytokinesis, 
+and stabilises the furrow, ensuring symmetrical division. SCAR is also 
+responsible for the generation of MiDASes, mitosis-specific actin-rich 
+adhesions. Loss of SCAR in both Dictyostelium and Drosophila leads to a 
+similar mitotic phenotype, with severe mitotic blebbing, indicating conserved 
+functionality. We also find that the microtubule end-binding protein EB1 is 
+required to restrict SCAR localisation and direct migration. EB1-null cells 
+also exhibit decreased adhesion during mitosis. Our data reveal a 
+spindle-directed signalling pathway that regulates SCAR activity, migration 
+and adhesion at mitosis.
+
+
+Submitted by Jason King [J.king@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Autophagic cell death in Dictyostelium requires the receptor histidine 
+kinase DhkM 
+
+Corinne Giusti, Marie-Françoise Luciani, Sarina Ravens, Alexandre Gillet 
+and Pierre Golstein
+
+
+Molecular Biology of the Cell, in press
+
+Dictyostelium constitutes a genetically tractable model for the analysis of 
+autophagic cell death (ACD). During ACD Dictyostelium cells first transform 
+into paddle cells, then become round, synthesize cellulose, vacuolize and die. 
+Through random insertional mutagenesis we identified the receptor histidine 
+kinase DhkM as being essential for ACD. Surprisingly, different DhkM mutants 
+showed distinct non-vacuolizing ACD phenotypes. One class of mutants 
+arrested ACD at the paddle cell stage, perhaps through a dominant negative 
+effect. Other mutants, however, progressed further in the ACD programme. 
+They underwent rounding and cellulose synthesis but stopped before 
+vacuolization. Moreover, they underwent clonogenic but not morphological 
+cell death. Exogenous 8-bromo-cAMP restored vacuolization and death. 
+A role for a membrane receptor at a late stage of the ACD pathway is 
+puzzling, raising questions as to which ligand it is a receptor for and which 
+moieties it phosphorylates. Altogether, DhkM is the most downstream known 
+molecule required for this model ACD, and its distinct mutants genetically 
+separate previously undissociated late cell death events.  
+
+
+Submitted by Pierre Golstein [golstein@ciml.univ-mrs.fr]
+==============================================================
+[End dictyNews, volume 34, number 12]

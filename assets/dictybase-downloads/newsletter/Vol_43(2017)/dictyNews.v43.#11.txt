@@ -1,0 +1,96 @@
+dictyNews
+Electronic Edition
+Volume 43, number 11
+May 19, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+A Tripeptidyl peptidase 1 is a binding partner of GPHR (Golgi pH regulator) 
+in Dictyostelium
+
+Maria Stumpf1, Rolf Müller1, Berthold Gaßen1, Regina Wehrstedt1, Petra Fey2, 
+Malte A. Karow1, Ludwig Eichinger1, Gernot Glöckner1, Angelika A. Noegel1
+
+1Institute of Biochemistry I, Medical Faculty, University Hospital Cologne, 
+University of Cologne, Joseph-Stelzmann-Str. 52, 50931 Köln, Germany;
+2dictyBase, Northwestern University, Biomedical Informatics Center and 
+Center for Genetic Medicine, Chicago, Illinois, USA
+
+
+Disease Models & Mechanisms, in press
+
+Mutations in tripeptidyl peptidase 1 (TPP1) have been associated with late 
+infantile neuronal ceroid lipofuscinosis (NCL2), a neurodegenerative disorder. 
+TPP1 is a lysosomal serine protease, which removes tripeptides from the 
+amino terminus of proteins and is composed of an N-terminal prodomain and 
+a catalytic domain. It is conserved in mammals, amphibians, fish and the 
+amoeba Dictyostelium discoideum. D. discoideum harbors at least six genes 
+encoding tripeptidyl peptidase 1, tpp1A to tpp1F. We identified TPP1F as 
+binding partner of Dictyostelium GPHR (Golgi pH regulator), which is an 
+evolutionary highly conserved intracellular transmembrane protein. For the 
+interaction, a region encompassing the DUF3735 (GPHR_N) domain of GPHR 
+was responsible. In TPP1F the binding site was located in the prodomain. The 
+Tpp1F gene is transcribed throughout development and translated into a 
+polypeptide of approximately 65 kDa. TPP1 activity was demonstrated for 
+TPP1F-GFP immunoprecipitated from D. discoideum cells. Its activity could be 
+inhibited by addition of the recombinant DUF3735 domain of GPHR. Knockout 
+tpp1F mutants did not display a particular phenotype and TPP1 activity was not 
+abrogated, which is presumably due to expression of Tpp1B showing the highest 
+expression levels of all Tpp1 genes during growth. The GPHR interaction was 
+not restricted to TPP1F but occurred also with TPP1B. Based on previous reports 
+showing that the majority of the TPP1 mutations in NCL2 resulted in reduction or
+ loss of enzyme activity, our findings may help to create new reagents with which 
+ one can affect the activity of the protein and ameliorate the disease.
+
+
+submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+———————————————————————————————————————
+
+
+Multiple Dictyostelid Species Destroy Biofilms of Klebsiella oxytoca and Other 
+Gram Negative Species
+
+Dean Sanders1, Katarzyna D. Borys2, Fikrullah Kisa3, Sheryl A. Rakowski4, 
+Marcela Lozano, Marcin Filutowicz5
+
+
+https://doi.org/10.1016/j.protis.2017.04.001
+
+Dictyostelids are free-living phagocytes that feed on bacteria in diverse habitats. 
+When bacterial prey is in short supply or depleted, they undergo multicellular 
+development culminating in the formation of dormant spores. In this work, we 
+tested isolates representing four dictyostelid species from two genera (Dictyostelium 
+and Polysphondylium) for the potential to feed on biofilms preformed on glass and 
+polycarbonate surfaces. The abilities of dictyostelids were monitored for three 
+hallmarks of activity: 1) spore germination on biofilms, 2) predation on biofilm 
+enmeshed bacteria by phagocytic cells and 3) characteristic stages of multicellular 
+development (streaming and fructification). We found that all dictyostelid isolates 
+tested could feed on biofilm enmeshed bacteria produced by human and plant 
+pathogens: Klebsiella oxytoca, Pseudomonas aeruginosa, Pseudomonas syringae, 
+Erwinia amylovora 1189 (biofilm former) and E. amylovora 1189 Δams (biofilm 
+deficient mutant). However, when dictyostelids were fed planktonic E. amylovora 
+Δams the bacterial cells exhibited an increased susceptibility to predation by one 
+of the two dictyostelid strains they were tested against. Taken together, the 
+qualitative and quantitative data presented here suggest that dictyostelids have 
+preferences in bacterial prey which affects their efficiency of feeding on bacterial 
+biofilms.
+
+
+submitted by: Marcin Filutowicz [msfiluto@wisc.edu]
+==============================================================
+[End dictyNews, volume 43, number 11]

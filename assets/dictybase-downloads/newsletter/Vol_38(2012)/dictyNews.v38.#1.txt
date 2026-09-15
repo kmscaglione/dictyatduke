@@ -1,0 +1,143 @@
+dictyNews
+Electronic Edition
+Volume 38, number 1
+January 6, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+HAPPY 2012!
+
+=========
+Abstracts
+=========
+
+
+Bimodal distribution of motility and cell fate in Dictyostelium discoideum
+
+Pavana Goury Sistla1, Vidyanand Nanjundiah2, Gopal Pande1 
+
+1 Centre for Cellular and Molecular Biology, Uppal Road 
+Hyderabad 500 007, India
+2 Developmental Biology and Genetics Laboratory, Indian Institute 
+of Science, Bangalore, 560012, India
+
+International Journal of Developmental Biology, in press
+
+Several differences between presumptive spore and presumptive stalk 
+cells have been reported during the development of Dictyostelium 
+discoideum from unicellular amoebae into multi-cellular fruiting bodies. 
+In this paper we have examined whether cell motility-related properties 
+are also among them. Cell speeds and localisation of motility-related 
+signalling molecules in single cells were monitored by live cell imaging 
+and immunostaining under three conditions: (a) in nutrient medium 
+during growth, (b) immediately following transfer to starvation medium 
+and (c) in nutrient medium that was re-introduced after a brief period 
+of starvation. Cells moved randomly under all three conditions but the 
+mean speed increased following transfer from nutrient medium to 
+starvation medium. Further, the distribution of speeds in starvation 
+medium was bimodal: about 20% of the cells moved significantly faster 
+('fast cells') than the remaining 80% ('slow cells'). Both changes 
+occurred rapidly, i.e. by 15min of transfer to starvation medium; they 
+reverted within 15min after restoration of the nutrient medium. The 
+distribution and organization of the cell motility-related molecules 
+F-actin, PTEN and PI3 kinase was different in slow and fast cells. Our 
+data indicate that fast cells were capable of making more pseudopods 
+and could readily redistribute their cytoskeletal apparatus and 
+associated molecules, leading to a higher speed. Among starved cells, 
+the calcium content of slow cells was significantly lower than that of 
+fast cells. The slow/fast distinction was absent in Polysphondylium 
+pallidum, a cellular slime mould that lacks the presumptive stalk and 
+spore cell classes, and also in trishanku (triA-), a mutant of 
+D. discoideum in which the prestalk and prespore states are unstable. 
+We infer that very soon after the transition from growth to starvation, 
+a switch is triggered in some D. discoideum cells, that separates them 
+into two functional classes: (a) cells that continue to move at (slow) 
+speeds that are seen in nutrient containing conditions, and whose 
+calcium content remains at relatively low levels; and (b) cells that move 
+significantly faster than pre-starvation cells and whose calcium levels 
+are relatively higher. This switch may be the earliest step in the 
+generation of the prespore and prestalk cell categories. The existence 
+of the switch is in accordance with a previously postulated bistable 
+mechanism underlying cell motility.
+
+
+Submitted by Pavana Goury Sistla [pavanags@ccmb.res.in]
+--------------------------------------------------------------------------------------
+
+
+Cell-derived microvesicles and antitumoral multidrug resistance
+
+Irene Tatischeff
+
+Laboratoire Acides Nucleiques et Biophotonique (ANBioPhi), 
+UPMC/CNRS, 4 Place Jussieu, Case Courrier 138, F-75252 
+Paris Cedex 05, France
+
+
+Comptes rendus Biologies, in press.
+
+Antitumoral chemotherapeutic treatments are often impaired by 
+innate or acquired multidrug resistance (MDR). After four decades 
+of MDR research, having underlined its complexity, new knowledge 
+about the mechanisms of tumor resistance to antineoplastic drugs 
+is a prerequisite for improving chemotherapy. Following our 
+observations with a non-pathogenic eukaryotic microorganism, 
+Dictyostelium discoideum, I suggest that MDR in tumor cells might 
+be the consequence of a detoxification mechanism, mediated by 
+cell-derived microvesicles. Recently published observations with 
+tumoral human cells support this hypothesis. First, these cell-derived 
+vesicles might impair chemotherapeutic efficiency of many 
+structurally-different antineoplastic agents by preventing them to 
+reach their intracellular target, followed by their expulsion outside 
+the tumor cells, as observed for Dictyostelium cells. Secondly, 
+beside their newly recognized function of intercellular communication, 
+the cell-derived vesicles might also act as intercellular transporters 
+of multidrug resistance proteins. Experiments are suggested for 
+checking the hypothesis of cell-derived vesicles mediating multidrug 
+resistance.
+
+	
+Submitted by Irene Tatischeff [irene.tatischeff@upmc.fr]
+--------------------------------------------------------------------------------------
+
+
+A Gbg Effector, ElmoE, Transduces GPCR Signaling
+to the Actin Network during Chemotaxis
+
+Jianshe Yan,1 Vassil Mihaylov,3 Xuehua Xu,1 Joseph A. Brzostowski,
+2 Hongyan Li,1 Lunhua Liu,3 Timothy D. Veenstra,4 Carole A. Parent,
+3 and Tian Jin1,*
+
+
+Developmental Cell (2012), doi:10.1016/j.devcel.2011.11.007
+ 
+Activation of G protein-coupled receptors (GPCRs) leads to the 
+dissociation of heterotrimeric G-proteins into Ga and Gbg subunits, 
+which go on to regulate various effectors involved in a panoply of 
+cellular responses. During chemotaxis, Gbg subunits regulate actin 
+assembly and migration, but the protein(s) linking Gbg to the actin 
+cytoskeleton remains unknown. Here, we identified a Gbg effector, 
+ElmoE in Dictyostelium, and demonstrated that it is required for 
+GPCR-mediated chemotaxis. Remarkably, ElmoE associates with 
+Gbg and Dock-like proteins to activate the small GTPase Rac, in a 
+GPCR-dependent manner, and also associates with Arp2/3 complex
+and F-actin. Thus, ElmoE serves as a link between chemoattractant 
+GPCRs, G-proteins and the actincytoskeleton. The pathway, consisting 
+of GPCR, Gbg, Elmo/Dock, Rac, and Arp2/3, spatially guides the 
+growth of dendritic actin networks in pseudopods of eukaryotic cells 
+during chemotaxis.
+
+
+Submitted by Jianshe Yan [yanjia@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 38, number 1]

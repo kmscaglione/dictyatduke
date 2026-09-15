@@ -1,0 +1,61 @@
+dictyNews
+Electronic Edition
+Volume 31, number 10
+September 26, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+A 3-D model used to explore how cell adhesion and stiffness affect 
+cell sorting and movement in multicellular systems
+
+Eirikur Palsson
+
+Department of Biology, Simon Fraser University, Burnaby, British 
+Columbia, Canada V5A 1S6
+
+
+Journal of Theoretical Biology
+Volume 254, Issue 1, 7 September 2008, Pages 1-13
+
+A three-dimensional mathematical model is used to determine the effects 
+of adhesion and cell signalling on cell movements during the aggregation 
+and slug stages of Dictyostelium discoideum (Dd) and to visualize cell 
+sorting. The building blocks of the model are individual deformable 
+ellipsoidal cells, where movement depends on internal parameter state 
+(cell size and stiffness) and on external cues from the neighboring 
+cells, extracellular matrix, and chemical signals. Cell movement and 
+deformation are calculated from equations of motion using the total 
+force acting on each cell, ensuring that forces are balanced. The 
+simulations show that the sorting patterns of prestalk and prespore 
+cells, emerging during the slug stage, depend critically on the type 
+of cell adhesion and not just on chemotactic differences between 
+cells. This occurs because cell size and stiffness can prevent the 
+otherwise faster cells from passing the slower cells. The patterns 
+are distinctively different when the prestalk cells are more or less 
+adhesive than the prespore cells. These simulations suggest that 
+sorting is not solely due to differential chemotaxis, and that differences 
+in both adhesion strength and type between different cell types play 
+a very significant role, both in Dictyostelium and other systems.
+
+Keywords: Dictyostelium; Differential cell adhesion; Pattern formation; 
+Ellipsoidal cells; Deformable cells; Prestalk
+
+Submitted by: Eirikur Palsson [epalsson@sfu.ca]
+==============================================================
+[End dictyNews, volume 31, number 10]

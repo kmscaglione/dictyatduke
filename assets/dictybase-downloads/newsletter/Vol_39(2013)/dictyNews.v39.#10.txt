@@ -1,0 +1,90 @@
+dictyNews
+Electronic Edition
+Volume 39, number 10
+April 5, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium genes dysregulated in an O-glycosylation mutant 
+identified by mRNA differential display
+
+Motonobu Yoshida, Naoya Sakuragi,  Eiji Tanesaka, Yutaka Sendai
+
+Lab of Plant Breeding and Agrobiotechnology, Department of 
+Agricultural Science, Kinki University, Nakamachi 3327-204, 
+Nara 631-8505, Japan
+
+
+J. Biotechnol. Biomater. doi:10.4172/2155-952X.1000152, in press
+
+Seven differentially-expressed cDNA clones were isolated by using 
+an mRNA differential display between a Dictyostelium wild-type AX2 
+and a mutant HG794 defective in O-glycosylation. Transcript levels for 
+the seven clones were reduced or not detectable in the mutant HG794.  
+Homology search showed that the four cDNA clones, DD-3 and DD-7~9 
+are novel and that three cDNA clones, DD-4 and DD-5, -6 encode an actin-
+bundling protein and phosphodiesterase inhibitors, respectively. Full-length 
+cDNAs for DD-3 and -8 were isolated and labeled DD3-3 and DD8-14, 
+respectively. DD3-3 consists of 2,166 bp and  DD8-14 of 2,084 bp. DD3-3 
+was preliminarily reported in a previous paper (Sakuragi et al., 2005). 
+SSL850 was named a clone by the "Dictyostelium cDNA Project in Japan", 
+containing a full-length cDNA for DD-7 and was labeled DD7-1 of 902 bp. 
+It has 60% homology with discoidin Ia.  DD8-14 most likely has no direct 
+role in glycosylation, while DD3-3 and DD7-1 very likely are involved in 
+some aspect of recognition of glycosylation.
+
+
+Submitted by Motonobu Yoshida [yoshida_m@nara.kindai.ac.jp]
+---------------------------------------------------------------------------
+
+
+Dictyostelium discoideum SecG interprets cAMP mediated chemotactic 
+signals to influence actin organization
+
+Rebecca Garcia, Liem Nguyen, and Derrick Brazill
+
+
+Cytoskeleton, in press
+
+Tight control of actin cytoskeletal dynamics is essential for proper cell 
+function and survival.  ARNO, a mammalian guanine nucleotide exchange 
+factor for Arf, has been implicated in actin cytoskeletal regulation but its 
+exact role is still unknown.  To explore the role of ARNO in this regulation 
+as well as in actin-mediated processes, the Dictyostelium discoideum 
+homolog, SecG, was examined.  SecG peaks during aggregation and 
+mound formation. The overexpression of SecG arrests development at the 
+mound stage.  SecG overexpressing (SecG OE) cells fail to stream during 
+aggregation.  Although carA is expressed, SecG OE cells do not chemotax 
+toward cAMP, indicating SecG is involved in the cellular response to cAMP.  
+This chemotactic defect is specific to cAMP-directed chemotaxis, as SecG 
+OE cells chemotax to folate without impairment and exhibit normal cell 
+motility.  The chemotactic defects of the SecG mutants may be due to an 
+impaired cAMP response as evidenced by altered cell polarity and F-actin 
+polymerization after cAMP stimulation.  Cells overexpressing SecG have 
+increased filopodia compared to wild type cells, implying that excess SecG 
+causes abnormal organization of F-actin.  The general function of the 
+cytoskeleton, however, is not disrupted as the SecG OE cells exhibit proper 
+cell-substrate adhesion. Taken together, the results suggest proper SecG 
+levels are needed for appropriate response to cAMP signaling in order to 
+coordinate F-actin organization during development. 
+
+ 
+Submitted by Derrick Brazill [brazill@genectr.hunter.cuny.edu]
+==============================================================
+[End dictyNews, volume 39, number 10]

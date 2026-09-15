@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 30, number 4
+February 1, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Actin-based propulsive forces and myosin II-based contractile forces 
+in migrating Dictyostelium cells
+
+Yoshiaki IWADATE and Shigehiko YUMURA
+
+Department of Functional Molecular Biology, Graduate School of Medicine, 
+Yamaguchi University, Yamaguchi 753-8512, Japan
+
+
+J. Cell Sci., in press
+
+It has been suggested that myosin II exerts traction forces at the posterior 
+ends and retracting pseudopods of migrating cells, but there is no direct 
+evidence.  Here, using a combination of total internal reflection 
+fluorescence (TIRF) and force microscopies with high spatial resolution 
+of about 400 nm, we simultaneously recorded GFP-myosin II dynamics and 
+traction forces under migrating Dictyostelium cells.  Accumulation of 
+filamentous myosin II and a subsequent increase in traction forces were 
+detected in pseudopods just before retraction.  In the case of motor-less 
+myosin II, traction forces did not increase after accumulation, suggesting 
+that the source of the retraction force is the motor activity of accumulated 
+myosin II.  Simultaneous recording of F-actin and traction forces revealed 
+that traction forces were exerted under spot-like regions where F-actin 
+accumulated.  Cells migrated in a direction counter to the sum of the force 
+vectors exerted at each spot, suggesting that the stress spots act as 
+scaffolds to transmit the propulsive forces at the leading edge generated 
+by actin polymerization.
+
+Submitted by: Yoshiaki Iwadate [iwadate@yamaguchi-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+SrfB, a member of the Serum Response Factor family of transcription factors,
+regulates starvation response and early development in Dictyostelium
+
+María Galardi-Castilla(1), Barbara Pergolizzi(2), Gareth Bloomfield(3), 
+Jason Skelton(4), Al Ivens(4), Robert R. Kay(3), Salvatore Bozzaro(2) 
+and Leandro Sastre(1).
+
+(1) Instituto de Investigaciones Biomédicas CSIC/UAM. Arturo Duperier, 
+4. 28029-Madrid. Spain
+(2) Dip. Scienze Cliniche e Biologiche, Università di Torino, 
+Ospedale S. Luigi, Orbassano, Italy
+(3) MRC Laboratory of Molecular Biology. Hills Road, Cambridge, CB2 2QH, UK
+(4)  Wellcome Trust Sanger Institute. Cambridge, Cambridgeshire, CB10 1SA, UK
+
+
+Develop. Biol., in press
+
+The Serum Response Factor (SRF) is an important regulator of cell proliferation 
+and differentiation. D. discoideum  srfB gene codes for an SRF homologue  and 
+is expressed in vegetative cells and during development under the control of 
+three alternative promoters, which show different cell-type specific patterns 
+of expression. The two more proximal promoters directed gene transcription in 
+prestalk AB, stalk and lower-cup cells. The generation of a strain where the 
+srfB gene has been interrupted (srfB-) has shown that this gene is required 
+for regulation of actin-cytoskeleton-related functions, such as cytokinesis 
+and macropinocytosis. The mutant failed to develop well in suspension, but 
+could be rescued by cAMP pulsing, suggesting a defect in cAMP signaling. 
+srfB- cells showed impaired chemotaxis to cAMP and defective lateral 
+pseudopodium inhibition. Nevertheless, srfB- cells aggregated on agar 
+plates and nitrocellulose filters two hours earlier than wild type cells, and 
+completed development, showing an increased tendency to form slug 
+structures. Analysis of wild type and srfB- strains detected significant 
+differences in the regulation of gene expression upon starvation.  Genes 
+coding for lysosomal and ribosomal proteins, developmentally-regulated 
+genes, and some genes coding for proteins involved in cytoskeleton 
+regulation were deregulated during the first stages of development. 
+
+
+Submitted by: Leandro Sastre [lsastre@iib.uam.es]
+==============================================================
+[End dictyNews, volume 30, number 4]

@@ -1,0 +1,165 @@
+dictyNews
+Electronic Edition
+Volume 34, number 6
+February 19, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+Galpha5 subunit-mediated signaling requires a D-motif and the MAP kinase 
+ERK1 in Dictyostelium
+
+Brent Raisley1, Hoai-Nghia Nguyen, and Jeffrey A. Hadwiger*
+
+Department of Microbiology and Molecular Genetics, Oklahoma State University, 
+Stillwater, Oklahoma 74078-3020, USA
+
+
+Microbiology, in press
+
+The Dictyostelium Galpha5 subunit has been shown to reduce cell viability, inhibit 
+folate chemotaxis and to accelerate tip morphogenesis and gene expression 
+during multicellular development. Alteration of the D-motif [mitogen-activated 
+protein kinase (MAPK) docking site] at the amino terminus of the Galpha5 subunit 
+or the loss of the MAPK ERK1 diminished the lethality associated with the 
+over-expression or constitutive activation of the Galpha5 subunit. The amino 
+terminal D-motif of the Galpha5 subunit was also found necessary for the reduced 
+cell size, small aggregate formation and precocious developmental gene 
+expression associated with Galpha5 subunit over-expression. This D-motif also 
+contributed to the aggregation delay in cells expressing a constitutively-active 
+Galpha5 subunit but the D-motif was not necessary for the inhibition of folate 
+chemotaxis. These results suggest that the amino terminal D-motif is required 
+for some but not all phenotypes associated with elevated Galpha5 subunit 
+functions during growth and development and that ERK1 can function in Galpha5 
+subunit-mediated signal transduction.
+
+
+Submitted by Jeff Hadwiger [jeff.hadwiger@okstate.edu]
+--------------------------------------------------------------------------------
+
+
+MAP Kinases have different functions in Dictyostelium 
+G Protein-Mediated Signaling
+
+Hoai-Nghia Nguyen, Brent Raisley1, and Jeffrey A. Hadwiger*
+
+Department of Microbiology and Molecular Genetics, Oklahoma State University, 
+Stillwater, Oklahoma 74078-3020, USA
+
+
+Cellular Signalling, in press
+
+Extracellular signal regulated kinases (ERKs) are a class of MAP kinases that 
+function in many signaling pathways in eukaryotic cells and in some cases, a 
+single stimulus can activate more than one ERK suggesting functional 
+redundancy or divergence from a common pathway. Dictyostelium discoideum 
+encodes only two MAP kinases, ERK1 and ERK2, that both function during the 
+developmental life cycle. To determine if ERK1 and ERK2 have overlapping 
+functions, chemotactic and developmental phenotypes of erk1- and erk2- 
+mutants were assessed with respect to G protein-mediated signal transduction 
+pathways. ERK1 was specifically required for G&#945;5-mediated tip 
+morphogenesis and inhibition of folate chemotaxis but not for cAMP-stimulated 
+chemotaxis or cGMP accumulation. ERK2 was the primary MAPK 
+phosphorylated in response to folate or cAMP stimulation. Cell growth was 
+not altered in erk1-, erk2- or erk1-erk2- mutants but each mutant displayed a 
+different pattern of cell sorting in chimeric aggregates. The distribution of 
+GFP-ERK1 or GFP-ERK2 fusion proteins in the cytoplasm and nucleus was
+not grossly altered in cells stimulated with cAMP or folate. These results suggest 
+ERK1 and ERK2 have different roles in G protein-mediated signaling during 
+growth and development.
+
+
+Submitted by Jeff Hadwiger [jeff.hadwiger@okstate.edu]
+--------------------------------------------------------------------------------
+
+
+Mutation of Actin Tyr-53 Alters the Conformations of the DNase I-binding
+Loop and the Nucleotide-binding Cleft
+
+Xiong Liu, Shi Shu, Myoung-Soon S. Hong, Bin Yu and, Edward D. Korn
+From the Laboratory of Cell Biology, National Heart, Lung, and Blood Institute, 
+NIH, Bethesda, MD 20892
+
+
+J. Biol. Chem. , in press
+
+All but 11 of the 323 known actin sequences have Tyr at position 53, and the 11 exceptions
+have the conservative substitution Phe, which raises the questions: What is(are) the critical
+role(s) of Tyr-53, and, if it can be replaced by Phe, why has this happened so infrequently?
+We compared the properties of purified endogenous Dictyostelium actin and mutant
+constructs with Tyr-53 replaced by Phe, Ala, Glu, Trp and Leu. The Tyr53Phe mutant did
+not differ significantly from endogenous actin in any of the properties assayed, but the
+Tyr53Ala and Tyr53Glu mutants differed substantially: affinity for DNase I was
+reduced, the rate of nucleotide exchange was increased, the critical concentration for
+polymerization was increased, filament elongation was inhibited, and polymerized
+actin was in the form of small oligomers and imperfect filaments. Growth and/or
+development of cells expressing these actin mutants were also inhibited. The Trp and
+Leu mutations had less, but still significant, effects. We conclude that either Tyr or Phe is
+required to maintain the functional conformations of the DNase I-binding loop
+(D-loop), and that the conformation of the D-loop affects not only the properties that
+directly involve the D-loop but also allosterically modifies the conformation of the
+nucleotide-binding cleft. The apparent evolutionary “preference” for Tyr at position
+53 may be because Tyr allows dynamic modification of the D-loop conformation by
+phosphorylation (Baek et al. (2008) Proc. Natl. Acad. Sci. U.S.A. 105, 11748-11753)
+with effects similar, but not identical, to those of the Ala and Glu mutations.
+
+
+Submitted by Edward Korn [korned2@nhlbi.nih.gov]
+--------------------------------------------------------------------------------
+
+
+Identification of a new mechanism for targeting myosin II heavy chain 
+phosphorylation by Dictyostelium myosin heavy chain kinase B 
+
+Julie Underwood, Jonathan Greene, and Paul A. Steimle 
+
+Department of Biology, University of North Carolina at Greensboro,
+Greensboro, North Carolina, USA 
+
+
+BMC Research Notes, in press
+
+BACKGROUND:  Heavy chain phosphorylation plays a central role in regulating 
+myosin II bipolar filament assembly in Dictyostelium, as well as in higher 
+eukaryotic nonmuscle cells.  Our previous work has demonstrated that the 
+WD-repeat domain of Dictyostelium myosin II heavy chain kinase B (MHCK-B), 
+unlike its counterpart in MHCK-A, is not absolutely required for targeting of the 
+kinase to Phosphorylate MHC.  Thus, we tested the hypothesis that an 
+asparagine-rich and structurally disordered region that is unique to MHCK-B 
+can by itself function in substrate targeting.   
+
+FINDINGS:  Biochemical assays comparing the activities of full-length MHCK-B, 
+a truncation lacking only the WD-repeat domain (B-delta-WD), and a truncation 
+lacking both the N-rich region and the WD-repeat domain (B-delta-N-WD) revealed 
+that the N-rich region targets MHCK-B to phosphorylate MHC in a manner that 
+leads to bipolar filament disassembly.  This targeting is physiologically relevant 
+since cellular over-expression of the B-delta-WD truncation, but not the 
+B-delta-N-WD truncation, leads to dramatically reduced levels of myosin II 
+filament assembly  and associated defects in cytokinesis and multicellular 
+development.  
+
+CONCLUSIONS:  The results presented here demonstrate that an intrinsically 
+unstructured, and asparagine-rich, region of a MHCK-B can mediate specific 
+targeting of the kinase to phosphorylate myosin II heavy chain.  This targeting 
+involves a direct binding interaction with myosin II filaments.  In terms of 
+regulating myosin bipolar filament assembly, our results suggest that factors 
+affecting the activity of this unique region of MHCK-B could allow for 
+regulation of MHCKB in a manner that is distinct from the other MHCKs 
+in Dictyostelium.  
+
+
+Submitted by Paul Steimle [p_steiml@uncg.edu]
+==============================================================
+[End dictyNews, volume 34, number 6]

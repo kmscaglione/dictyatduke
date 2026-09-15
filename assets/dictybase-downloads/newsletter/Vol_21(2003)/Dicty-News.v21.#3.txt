@@ -1,0 +1,58 @@
+Dicty NewsElectronic EditionVolume 21, number 3July 25, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Influence of medium composition on growth behaviour ofDictyostelium discoideum for cultivation on axenic mediaMiriam Stephan, Usama Beshay, Karl Friehs, and Erwin FlaschelBielefeld UniversityFaculty of TechnologyD-33594 Bielefeld, GermanyProcess Biochemistry, in pressThe social amoeba D. discoideum represents an attractive hostorganism for the production of heterologous proteins. However, itsapplication is seriously affected by slow growth rates as well as lowmaximal cell densities in the presence of axenic (liquid) media.Starting with standard complex media the influence of certainmedium components is investigated. Thus, the kind andconcentration of carbohydrates, the concentration of salt andammonia  as well as the supplementation of conditioned media arebeing varied. These studies are performed by following cell growth inbatch experiments over the whole growth cycle into the declinephase to obtain information about growth rates as well as maximalcell densities. Only maltose, glucose and a-trehalose aremetabolized with appreciable rates. The concentration of ammoniaproduced correlates inversely with the concentration of carbohydratesmetabolized. Under standard conditions ammonia reachesconcentrations of about 50 mM, most of which being produced duringstationary phase. Ionic strength and the addition of ammonia affectthe growth rate as well as the maximal cell density. Ammonia cannot be accused to limit the maximal cell density. Finally, it is shownthat D. discoideum can be cultivated in normal stirred bioreactors. Asemi-empirical model is discussed for the description of the growthbehaviour.Submitted by: Erwin Flaschel [efl@fermtech.techfak.uni-bielefeld.de]
+
+-----------------------------------------------------------------------------
+Improvement of a synthetic medium for Dictyostelium discoideumSang-In Han, Karl Friehs and Erwin FlaschelBielefeld UniversityFaculty of TechnologyD-33594 Bielefeld, GermanyProcess Biochemistry, in pressD. discoideum is of considerable interest as an expression systemfor the production of proteins of high value. The cultivation of thissocial amoeba is not as easy as with other common microbialexpression systems. Wildtype strains grow on bacteria. Mutantstrains growing on axenic media reach cell densities of 1-2·10^7 mL-1 when cultivated in commonly used complex media. A totallysynthetic medium formulated by Franke and Kessin in 1977 hasbecome popular and allows cell densities of about 3·10^7 mL-1 to beobtained. This medium (FM) is being improved mainly on the basis ofthe analysis of limitations with respect to amino acids. With thisimproved synthetic medium (SIH) cell densities in the order of 5-6·10^7 mL-1 have been achieved.Submitted by: Erwin Flaschel [efl@fermtech.techfak.uni-bielefeld.de]
+
+-----------------------------------------------------------------------------
+
+Cultivation of Dictyostelium discoideum on an improved syntheticmedium in a conventional bioreactorSang-In Han, Karl Friehs and Erwin FlaschelBielefeld UniversityFaculty of TechnologyD-33594 Bielefeld, GermanyProcess Biochemistry, in pressAn improved fully synthetic medium has been presented recentlybased on the synthetic medium formulated by Franke and Kessin in1977. This novel medium was called SIH instead of the classical FMmedium. The improved medium leads to even higher cell densities, amore balanced uptake of amino acids and a better utilisation ofglucose. However, the growth behaviour had only been assessedduring shake-flask cultivation. Here it is shown that D. discoideumcan be cultivated in conventional stirred tank-type bioreactors, if theoperating conditions take care about the shear sensitivity of thecells. A batch as well as a fed-batch cultivation show that masscultivation of D. discoideum can be achieved during growth onsynthetic media.Submitted by: Erwin Flaschel [efl@fermtech.techfak.uni-bielefeld.de]
+
+-----------------------------------------------------------------------------
+
+A Lim protein involved in the progression of cytokinesis and regulation of 
+the mitotic spindle Natalie Schneider 1,2,  Igor Weber 2,3,  Jan Faix 1,  Josef Prassler 2, Annette Mueller-Taubenberger 2,  Jana Koehler 2,  Emmanuel Burghardt 2, Guenther Gerisch 2  and Gerard Marriott 1 1  University of Wisconsin-Madison,  Department of Physiology,    Madison, WI 53706, USA;2  Max-Planck-Institut fuer Biochemie,  D-82152 Martinsried, Germany;3  Rudjer-Boskovic-Institut,  Bijenicka cesta 54, 10000 Zagreb, Croatia. Cell Motility and the Cytoskeleton, in press. DdLimE regulates cell motility and cytokinesis in Dictyostelium.  To specify 
+its function, we generated knock-out mutants and analyzed mitosis by marking 
+the mitotic apparatus with GFP-a-tubulin.  Characteristic of DdLimE-null cells 
+is a late reversal of cytokinesis caused by backward movement of the incipient 
+daughter cells.  This process of “retro-cytokinesis” is accompanied by a delay 
+in disassembly of the mitotic spindle.  The length of interphase microtubules 
+is increased and their depolymerization at prophase is impaired.  These data 
+indicate that DdLimE links the cortical actin network, where it is located, to 
+the microtubule system, whose dynamics it regulates.
+
+Submitted by: Guenther Gerisch [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+****************************************************************************
+NOTE: The biological materials necessary to use this method are being lodged 
+with Dr Jacob Franke's Dictyostelium Stock Centre**************************************************************************** Rapid generation of gene disruption constructs by in vitro transposition and 
+identification of a Dictyostelium protein kinase that regulates its rate of 
+growth and developmentTomoaki Abe, Judith Langenick and Jeffrey G. Williams*School of Life SciencesUniversity of DundeeWellcome Trust BiocentreDow StreetDUNDEE, DD1 5EH, UK
+(Gene disruption, transposition, Dictyostelium, qkgA gene)We describe a rapid method for creating Dictyostelium gene disruption constructs, 
+whereby the target gene is interrupted by a drug resistance cassette using in 
+vitro transposition. A fragment of genomic DNA containing the gene to be 
+disrupted is amplified by PCR, cloned into a plasmid vector using topo-isomerase 
+and then employed as the substrate in an in vitro Tn5 transposition reaction. 
+The transposing species is a fragment of DNA containing a Dictyostelium 
+blasticidin S resistance (bsr) cassette linked to a bacterial tetracycline 
+resistance (tetr) cassette. After transposition the plasmid DNA is transformed 
+into E. coli and clones in which the bsr-tetr cassette is inserted into the 
+Dictyostelium target DNA are identified. To demonstrate its utility we have 
+employed the method to disrupt the gene encoding QkgA, a novel protein kinase 
+identified from the Dictyostelium genome sequencing project.  QkgA is 
+structurally homologous to two previously identified Dictystelium kinases, 
+GbpC and pats1. Like them it contains a Leucine Rich Repeat domain, a small 
+GTP-binding (ras) domain and a MEKK domain. Disruption of the qkgA gene causes 
+a marked increase in growth rate and, during development, aggregation occurs 
+relatively slowly to form abnormally large multicellular structures.
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+===============================================================================[End Dicty News, volume 21, number 3]

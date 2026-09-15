@@ -1,0 +1,87 @@
+dictyNews
+Electronic Edition
+Volume 29, number 14
+November 16, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+DNA oligonucleotide-assisted genetic manipulation increases transformation 
+and homologous recombination efficiencies: evidence from gene targeting 
+of Dictyostelium discoideum
+
+Hidekazu Kuwayama1,2*, Toshio Yanagida2 and Masahiro Ueda2.
+
+1.Graduate School of Life and Environmental Sciences, University of Tsukuba, 
+Tsukuba, Tennodai 1-1-1, Ibaraki 305-8572, Japan
+2.Graduate School of Frontier Biosciences, Osaka University, Yamadaoka 1-3, 
+Suita, Osaka 565-0871, Japan
+
+correpondence should be addressed to Hidekazu Kuwayama 
+
+
+Journal of Biotechnology, in press
+
+Artificial gene alteration by homologous recombination in living cells, termed
+gene targeting, presents fundamental and considerable knowledge of in vivo
+gene function. In principle, this method can possibly be applied to any type
+of genes and transformable cells. However, its success is limited due to a
+low frequency of homologous recombination between endogenous targeted
+geneand exogenous transgene. Here, we describe a general gene-targeting
+method in which co-transformation of DNA oligonucleotides (oligomers) could
+significantly increase the homologous recombination frequency and
+transformation efficiency. The oligomers were simply designed such that they
+were identical to both the ends of the homologous flanking regions of the
+targeting construct. Using this strategy, both targeted alleles of diploid
+cells were simultaneously replaced in a single transformation procedure.
+Thus, the simplicity and versatility of this method applicable to any type
+of cell may increase the application of gene targeting.
+
+
+Submitted by: Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+--------------------------------------------------------------------------------
+
+
+The role of cGMP and the rear of the cell in Dictyostelium chemotaxis and 
+cell streaming
+
+Douwe M. Veltman and Peter J.M. Van Haastert§
+
+
+J. Cell Science, in press
+
+During chemotaxis, pseudopod extensions lead the cell towards the source 
+of attractant. Whereas the role of actin filled pseudopodia at the front of 
+the cell is well recognized, the function of the rear of the cell in 
+chemotaxis and cell-cell interactions is less well known. Dictyostelium 
+cell aggregation is mediated by outward propagated waves of extracellular 
+cAMP that induce chemotaxis and cell-cell contacts, resulting in streams 
+of cells moving towards the aggregation centre. Wild type cells efficiently 
+retract pseudopodia in the rear of the cell during the rising flank of the 
+cAMP wave and have a quiescent cell posterior. This polarization largely 
+remains during the declining flank, which causes cells to continue their 
+chemotactic movement towards the aggregation centre and to form stable 
+streams of moving cells. In contrast, mutant cells lacking cGMP signalling 
+do fail to retract properly lateral pseudopodia. Dominance of the leading 
+edge pseudopod rescues chemotaxis during the rising flank of the wave, but 
+cells move in random directions after the peak of the wave has passed. As 
+a consequence, cell-cell contacts cannot be maintained, and the cell 
+streams break up. The results show that a quiescent rear of the cell 
+increases the efficiency of directional movement and is essential to 
+maintain stable cell-cell contacts.
+
+Submitted by: Peter J.M. Van Haastert [P.J.M.van.Haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 29, number 14]

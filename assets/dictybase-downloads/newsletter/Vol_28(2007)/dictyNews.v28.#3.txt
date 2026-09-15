@@ -1,0 +1,181 @@
+dictyNews
+Electronic Edition
+Volume 28, number 3
+January 26, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+Localisation and organization of protein factors involved in chromosome 
+inheritance in  Dictyostelium discoideum
+
+Markus Kaller, Balint Foeldesi and Wolfgang Nellen*, Abteilung Genetik, 
+FB 18, Universitaet Kassel, Heinrich-Plett-Str. 40. 34132 Kassel, Germany
+
+
+Biol. Chemistry, in press
+
+The members of the heterochromatin protein 1 (HP1) family are highly 
+conserved heterochromatin components required for a various processes that 
+ensure genomic integrity. We have previously shown that the two expressed 
+HP1 isoforms in Dictyostelium, HcpA and HcpB, are mainly localized to 
+(peri-)centromeric heterochromatin and have largely overlapping functions. 
+However, they cause distinct phenotypes when overexpressed. We now show 
+that the two isoforms display quantitative differences in dimerisation 
+behaviour and that these are conferred by the C-terminal hinge and chromo 
+shadow domains. Both Hcp proteins are targeted to distinct subnuclear 
+regions by different chromo shadow domain-dependent and –independent 
+mechanisms in vivo. In addition, both proteins bind to DNA and RNA in 
+vitro in an apparently sequence-nonspecific manner and binding is 
+independent on the chromo shadow domain. Thus, this DNA/RNA binding 
+activity may contribute to targeting the proteins to heterochromatin. To 
+further characterize heterochromatic regions of the Dictyostelium genome, 
+we cloned the homologue of the origin recognition complex subunit 2 
+(Orc2). OrcB localized to distinct subnuclear foci that were also targeted 
+by HcpA, but was, in addition, associated with the centrosome throughout 
+the cell cycle. The results indicate that, similar to Orc2 homologues from 
+other organisms, OrcB is required for different processes in chromosome 
+inheritance.
+
+
+Submitted by Wolfgang Nellen [Nellen@uni-kassel.de]
+--------------------------------------------------------------------------------
+
+
+Chemotaxis in shallow gradients is mediated independently of 
+PtdIns 3-kinase by biased choices between random protrusions 
+
+Natalie Andrew and Robert H. Insall
+
+
+Nature Cell Biol. in press
+
+Current models of eukaryotic chemotaxis propose that directional sensing 
+causes localized generation of new pseudopods. However, quantitative 
+analysis of pseudopod generation suggests a fundamentally different 
+mechanism for chemotaxis in shallow gradients: first, pseudopodia in 
+multiple cell types are usually generated when existing ones bifurcate 
+and are rarely made de novo; second, in Dictyostelium cells in shallow 
+chemoattractant gradients, pseudopodia are made at the same rate whether 
+cells are moving up or down gradients. The location and direction of new 
+pseudopodia are random within the range allowed by bifurcation and are not 
+oriented by chemoattractants. Thus, pseudopod generation is controlled 
+independently of chemotactic signalling. Third, directional sensing is 
+mediated by maintaining the most accurate existing pseudopod, rather than 
+through the generation of new ones. Finally, LY294002 affects the frequency 
+of pseudopod generation, but not the accuracy of selection, suggesting that 
+phosphatidylinositol 3-kinase (PI(3)K) regulates the underlying mechanism 
+of cell movement, rather than control of direction.
+
+
+Submitted by Robert Insall [R.H.Insall@bham.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Rap1 controls cell  adhesion and cell motility through the regulation of 
+myosin II
+
+Taeck J. Jeon, Dai-Jen Lee, Sylvain Merlot, Gerald Weeks, and 
+Richard A. Firtel
+
+
+J. Cell Biology, in press
+
+We have investigated the role of Rap1 in controlling chemotaxis and cell
+adhesion in Dictyostelium.  Rap1 is activated rapidly in response to
+chemoattractant stimulation and activated Rap1 is preferentially found at
+the leading edge of chemotaxing cells.  Cells expressing constitutively
+active Rap1 are highly adhesive and exhibit strong chemotaxis defects,
+partially due to an inability to spatially and temporally regulate myosin
+assembly and disassembly.  We demonstrate that the kinase Phg2, a 
+putativeRap1 effector, colocalizes with Rap1-GTP at the leading edge and 
+is requiredin an in vitro assay for myosin II (MyoII) phosphorylation, which
+disassembles MyoII and facilitates F-actin-mediated leading edge protrusion. 
+We suggest Rap1/Phg2 plays a role in controlling leading edge MyoII
+disassembly while passively allowing MyoII assembly along the lateral sides
+and posterior of the cell.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+Big roles for small GTPases in the control of directed cell movement
+
+Pascale G. Charest and Richard A. Firtel
+
+
+Biochem. J., in press
+
+Small GTPases are involved in the control of diverse cellular behaviors, 
+including cellular growth, differentiation, and motility.  In addition, 
+recent studies have revealed new roles for small GTPases in the regulation 
+of eukaryotic chemotaxis.  Efficient chemotaxis results from coordinated 
+chemoattractant gradient sensing, cell polarization, and cellular motility, 
+and accumulating data suggest that small GTPase signaling plays a central 
+role in each of these processes, as well as in signal relay.  This review 
+summarizes these recent findings, which shed light on the molecular 
+mechanisms by which small GTPases control directed cell migration.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+Exploitation of other social amoebae by Dictyostelium caveatum 
+
+
+Clement Nizak1, 3, Robert J. Fitzhenry2, Richard H. Kessin2
+
+1 Living Matter Laboratory, Center for Physics and Biology, Rockefeller 
+University, 1230 York Avenue, Box 34, New York, NY, 10021, U.S.A.
+2 Department of Anatomy and Cell Biology, Columbia University, 630 West 
+168th Street, New York, NY, 10032, U.S.A.
+3 present address: Laboratoire de Spectrométrie Physique, CNRS, BP87, 
+38402 Saint Martin d'Hères Cedex, France, clement.nizak@ujf-grenoble.fr
+3 Corresponding author: clement.nizak@mail.rockefeller.edu
+
+
+PLoS ONE, in press
+
+Dictyostelium amoebae faced with starvation trigger a developmental 
+program during which many cells aggregate and form fruiting bodies that 
+consist of a ball of spores held aloft by a thin stalk. This developmental 
+strategy is open to several forms of exploitation, including the remarkable 
+case of Dictyostelium caveatum, which, even when it constitutes 1/10e3 of 
+the cells in an aggregate, can inhibit the development of the host and 
+eventually devour it.
+
+We show that it accomplishes this feat by inhibiting a region of cells, 
+called the tip, which organizes the development of the aggregate into a 
+fruiting body. We use live-cell microscopy to define the D. caveatum 
+developmental cycle and to show that D. caveatum amoebae have the 
+capacity to ingest amoebae of other Dictyostelid species, but do not attack 
+each other. The block in development induced by D. caveatum does not 
+affect the expression of specific markers of prespore cell or prestalk cell 
+differentiation, but does stop the coordinated cell movement leading to 
+tip formation.  The inhibition mechanism involves the constitutive 
+secretion of a small molecule by D. caveatum and is reversible. Four 
+Dictyostelid species were inhibited in their development, while 
+D. caveatum is not inhibited by its own compound(s).
+
+D. caveatum has evolved a predation strategy to exploit other members of 
+its genus, including mechanisms of developmental inhibition and specific 
+phagocytosis.
+
+
+Submitted by: Clement Nizak [clement.nizak@mail.rockefeller.edu]
+============================================================
+[End dictyNews, volume 28, number 3]

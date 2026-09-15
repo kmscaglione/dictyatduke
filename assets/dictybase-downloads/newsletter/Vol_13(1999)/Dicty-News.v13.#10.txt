@@ -1,0 +1,196 @@
+Dicty News
+Electronic Edition
+Volume 13, number 10
+October 30, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+LvsA, a protein related to the mouse beige protein, is required for
+cytokinesis in Dictyostelium.
+
+Eunice Kwak*, Noel Gerald*, Denis A. Larochelle*, Kalpa K. Vithalani*,
+Maria L. Niswonger*, Melinda Maready* and Arturo De Lozanne*@
+
+*Department of Cell Biology, Duke University Medical Center, Durham, NC
+27710
+and
+@Section of Molecular Cell & Developmental Biology, University of Texas at
+Austin, Austin, TX 78712.
+
+Molecular Biology of the Cell, in press (December, 1999)
+
+ABSTRACT
+We isolated a Dictyostelium cytokinesis mutant with a defect in a novel
+locus called large volume sphere A (lvsA).  LvsA mutants exhibit an unusual
+phenotype when attempting to undergo cytokinesis in suspension culture.
+Early in cytokinesis, they initiate furrow formation with concomitant myosin
+II localization at the cleavage furrow.  However, the furrow is later
+disrupted by a bulge that forms in the middle of the cell.  This bulge is
+bounded by furrows on both sides, which are often enriched in myosin II.
+The bulge can increase and decrease in size multiple times as the cell
+attempts to divide.  Interestingly, this phenotype is similar to the
+cytokinesis failure of Dictyostelium clathrin heavy chain mutants.
+Furthermore, both cell lines cap ConA receptors, but form only a C-shaped
+loose cap.  Unlike clathrin mutants, lvsA mutants are not defective in
+endocytosis or development.  The LvsA protein shares several domains in
+common with the molecules beige and Chediak-Higashi syndrome proteins that
+are important for lysosomal membrane traffic.  Thus, based on the sequence
+analysis of the LvsA protein and the phenotype of the lvsA mutants, we
+postulate that LvsA plays an important role in a membrane processing pathway
+that is essential for cytokinesis. 
+
+----------------------------------------------------------------------------
+
+Purification and Cloning of TF2: A Novel Protein that binds a Regulatory
+Site of the gp2 Promoter in Dictyostelium
+
+Nikita Warner and Charles L. Rutherford
+
+Biology Department, Molecular and Cellular Biology Section,
+Virginia Polytechnic Institute and State University
+Blacksburg, VA 24061-0406
+
+Archives of Biochemistry and Biophysics, In Press
+
+
+ABSTRACT
+
+	The glycogen phosphorylase-2 gene is developmentally regulated and
+plays a central role in cellular differentiation in Dictyostelium.  There
+are two isozymes of glycogen phosphorylase, GP1 and GP2.  Both forms are
+developmentally regulated; gp1 is expressed in undifferentiated cells and
+gp2 during differentiation.  We report here the identification,
+purification and cloning of a second gp2 DNA-binding factor called TF2.
+This protein demonstrates a high specificity for a transcriptional
+regulatory element, the 5¢ C box.  TF2 was first detected with
+electrophoretic mobility shift assays of DEAE chromatographic fractions of
+cell-free extracts.  The specificity of TF2 for the 5¢ C box was tested by
+competition analysis using six other oligonucleotides.  Purification of TF2
+was achieved by ion-exchange chromatography, DNA affinity chromatography,
+gel filtration chromatography, and preparative SDS-PAGE.  SDS-PAGE analysis
+indicated an apparent subunit molecular weight of 28 kDa.  The apparent
+molecular weight of the native protein as estimated by gel filtration was
+about 53 kDa.  This suggested that TF2 binds gp2 as a homodimer.  Southern
+blot analysis indicated that there is only one form of the tf2 gene.
+Northern analysis showed little or no expression of tf2 in undifferentiated
+cells.  During development tf2 expression increases up to a maximum at 8 h,
+then decreases in later stages.  Attempts to disrupt the gene suggest that
+tf2  mutation may be lethal.
+
+----------------------------------------------------------------------------
+
+Differential In Vitro Activation and Deactivation of Cysteine Proteinases 
+Isolated During Spore Germination and Vegetative Growth of Dictyostelium 
+discoideum 
+
+Dora Cavallo, David Cervi, Todd W. Sands and David A. Cotter
+
+Department of Biological Sciences, University of Windsor, Windsor 
+Ontario, Canada,  N9B 3P4
+
+Eur. J. Biochem., in press.
+
+Summary
+
+   Acid-activatable cysteine proteinases of D. discoideum were first 
+identified in spore extracts of strain SG1 using gelatin-SDS-PAGE, followed 
+by acid treatments. Here we utilized the technique of acid activation to 
+identify cryptic cysteine proteinases throughout auto-induced and heat-
+induced spore germination of D. discoideum strain SG2 and SG1. The major 
+acid activatable cysteine proteinase identified in SG2 and SG1 spore 
+extracts was ddCP38 (D. discoideum cysteine proteinase with a molecular 
+weight of 38 kDa) and ddCP48, respectively. Further investigation of these 
+enzymes revealed they were also base de-activatable with a treatment 
+ammonium chloride directly following acid activation. However, the most 
+intriguing observation was the reversibility of the effects of base 
+deactivation on the enzymes following a second treatment with acetic 
+acid. Thus, we hypothesize that, unlike most mammalian cysteine 
+proteinases that generally require the cleavage of a pro-peptide 
+region for activation, these cysteine proteinases of D. discoideum 
+likely undergo reversible conformational changes between latent and 
+active forms. Moreover, we were able to detect these cryptic cysteine 
+proteinases in the vegetative cells and early aggregates of both 
+strains SG1 and SG2. Studies using 4-[(2S,3S)-3-carboxyoxiran-2-
+ylcarbonyl-L-leucylamido]butylguanidine, a cysteine proteinase 
+inhibitor, revealed that acid activation of a portion of these 
+proteinases was still achievable even after incubation with the 
+inhibitor, further supporting the concept of two stable and 
+reversible conformational arrangements of the enzymes. Thus, we 
+speculate that the pH shuffles that modulate proteinase conformation 
+and activity in vitro may be a reflection of the in vivo regulation 
+of these enzymes via H+-ATPases and ammonia. 
+
+----------------------------------------------------------------------------
+
+Circulation of the plasma membrane in Dictyostelium
+
+by Carmen Aguado-Velasco and Mark S. Bretscher*
+
+MRC Laboratory for Molecular Biology,
+Hills Road, Cambridge CB2 2QH
+
+Molecular Biology of the Cell, in press.
+
+ABSTRACT
+
+We have developed a fluorimetric assay using the dye FM1-43 to determine
+the rate at which Dictyostelium amoebae endocytose their surface membrane.
+Our results show that they do so about once each 4-10 minutes. A clathrin
+null mutant takes its surface up only about 30% more slowly, showing that
+this membrane uptake cannot be caused by clathrin-coated vesicles.
+Surprisingly, Ax2 and its parent NC4, which differ in their rates of fluid
+phase internalisation by about 60-fold, take up their surfaces at the same
+rates. These results show that, in axenic cells, the uptake of fluid and of
+surface area are separate processes. The large activity of this new
+endocytic cycle in both Ax2 and NC4 amoebae appears capable of delivering
+sufficient new surface area to advance the cells' fronts during migration.
+
+----------------------------------------------------------------------------
+
+The prespore vesicles of Dictyostelium discoideum: Purification,
+Characterization and Developmental Regulation
+
+
+Supriya Srinivasan, Hannah Alexander and Stephen Alexander*
+Division of Biological Sciences
+University of Missouri
+Columbia, MO 65211
+
+J. Biol. Chem., in press.
+
+Abstract:
+
+The coordinate fusion of the prespore vesicles (PSVs) with the plasma
+membrane at the terminal stage of spore differentiation in Dictyostelium
+discoideum is an important example of developmentally regulated protein
+secretion. However, little is known about the composition of the vesicles,
+the molecular signals regulating secretion or the mechanics of the
+membrane fusion.  Taking a biochemical approach, we purified PSVs from
+different developmental stages.   These preparations are highly enriched
+for their specific cargo of spore coat proteins while devoid of markers
+for other cellular compartments.  Electron microscopic observations show
+that the PSV preparations are homogenous, with the soluble spore coat
+protein PsB/SP85 distributed throughout the lumen and the acid
+mucopolysaccharide localized in the central core.  During development the
+PSVs increase in size and density concomitant with an increase in their
+protein cargo.  The PSVs contain approximately 80 proteins, and we have
+identified a PSV-specific GTP-binding protein which may be involved in
+regulating vesicle fusion.  The PSVs are not clathrin coated, and do not
+contain the SpiA spore coat protein.  The PSV preparations are ideal for a
+global proteome analysis to identify proteins involved in signal
+reception, vesicle movement, docking and fusion in this developmentally
+regulated organelle.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 10]
+
+  

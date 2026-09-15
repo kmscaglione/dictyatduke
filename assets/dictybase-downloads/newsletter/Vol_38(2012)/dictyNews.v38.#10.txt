@@ -1,0 +1,148 @@
+dictyNews
+Electronic Edition
+Volume 38, number 10
+April 6, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Live imaging of nascent RNA dynamics reveals distinct types of 
+transcriptional pulse regulation
+
+Tetsuya Muramoto1, Danielle Cannon1,4, Marek Gierlinski2,3, Adam 
+Corrigan1,4, Geoffrey J Barton2,3 and Jonathan R Chubb1,4
+
+Divisions of Cell and Developmental Biology1 
+Biological Chemistry and Drug Discovery2 
+Wellcome Trust Centre for Gene Regulation and Expression3, 
+College of Life Sciences, University of Dundee, Dundee DD1 5EH, UK. 
+4Present address: Department of Cell and Developmental Biology and 
+MRC Laboratory for Molecular Cell Biology, University College London, 
+Gower Street, London, WC1E 6BT, UK.
+
+PNAS, in press
+
+
+Transcription of genes can be discontinuous, occurring in pulses or bursts. 
+It is not clear how properties of transcriptional pulses vary between different 
+genes. We compared the pulsing of 5 housekeeping and 5 developmentally-
+induced genes by direct imaging of single gene transcriptional events in 
+individual living Dictyostelium cells. Each gene displayed its own 
+transcriptional signature, differing in probability of firing and pulse duration, 
+frequency and intensity.	In contrast to the prevailing view from both 
+prokaryotes and eukaryotes that transcription displays binary behaviour, 
+strongly expressed housekeeping genes altered the magnitude of their 
+transcriptional pulses during development. These non-binary 'tunable' 
+responses may be better suited than stochastic switch behaviour for 
+housekeeping functions.	Analysis of RNA synthesis kinetics using 
+fluorescence recovery after photobleaching implied modulation of 
+housekeeping gene pulse strength occurs at the level of transcription 
+initiation, rather than elongation. In addition, disparities between single cell 
+and population measures of transcript production suggested differences in 
+RNA stability between gene classes. Analysis of stability using RNAseq 
+revealed no major global differences in stability between developmental and 
+housekeeping transcripts, although strongly induced RNAs showed unusually 
+rapid decay, indicating tight regulation of expression.
+
+
+Submitted by Jonathan Chubb [j.chubb@ucl.ac.uk]
+--------------------------------------------------------------------------------------
+
+
+Valentina Lo Sardo, Chiara Zuccato, Germano Gaudenzi, Barbara Vitali ,
+Catarina Ramos, Marzia Tartari, Michael A. Myre, James A. Walker, Anna
+Pistocchi, Luciano Conti, Marta Valenza, Binia Drung, Boris Schmidt, James
+Gusella, Scott Zeitlin, Franco Cotelli, Elena Cattaneo
+
+An evolutionary recent neuroepithelial cell adhesion function of
+huntingtin implicates ADAM10-Ncadherin
+
+
+Nature Neuroscience, in press
+
+The Huntington's disease gene product, huntingtin, is indispensable for
+neural tube formation but its role is obscure. We studied neurulation in
+htt-null embryonic stem cells and htt-morpholino zebrafish embryos, and
+found a novel, evolutionarily-recent function for this ancient protein. We
+show that htt is essential for homotypic interactions between
+neuroepithelial cells; it permits neurulation and rosette-formation by
+regulating metalloprotease ADAM10-activity and Ncadherin-cleavage. This
+function is embedded in the htt N-terminus and phenocopied by treatment 
+ofhtt-knock-down zebrafish with an ADAM10 inhibitor. Notably, in htt-null
+cells, reversion of the rosetteless phenotype occurs only with expression
+of evolutionarily-recent htt heterologues from deuterostome organisms.
+Conversely, all heterologues tested, including htt from Drosophila
+melanogaster and Dictyostelium discoideum, exhibit anti-apoptotic
+activity. Thus, anti-apoptosis may have been one of htt's ancestral
+function(s) but, in deuterostomes, htt evolved to acquire a unique
+regulatory activity for controlling neural adhesion via ADAM10-Ncadherin,
+with implications for brain evolution and development.
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+--------------------------------------------------------------------------------------
+
+
+Michael A. Myre
+
+Clues to Gamma-secretase, huntingtin and Hirano body normal function
+using the model organism Dictyostelium discoideum
+
+
+Journal of Biomedical Science, in press
+
+Many neurodegenerative disorders, although related by their destruction of
+brain function, display remarkable cellular and/or regional pathogenic
+specificity likely due to a deregulated functionality of the mutant
+protein. However, neurodegenerative disease genes, for example huntingtin
+(HTT), the ataxins, the presenilins (PSEN1/PSEN2) are not simply localized
+to neurons but are ubiquitously expressed throughout peripheral tissues;
+it is therefore paramount to properly understand the earliest
+precipitating events leading to neuronal pathogenesis to develop effective
+long-term therapies. This means, in no unequivocal terms, it is crucial to
+understand the gene's normal function. Unfortunately, many genes are
+often essential for embryogenesis which precludes their study in whole
+organisms. This is true for HTT, the beta-amyloid precursor protein
+(APP) and presenilins, responsible for early onset Alzheimer's
+disease (AD). To better understand neurological disease in humans, many
+lower and higher eukaryotic models have been established. So the question
+arises: how reasonable is the use of organisms to study neurological
+disorders when the model of choice does not contain neurons? Here we will
+review the surprising, and novel emerging use of the model organism
+Dictyostelium discoideum, a species of soil-living amoeba, as a valuable
+biomedical tool to study the normal function of neurodegenerative genes.
+Historically, the evidence on the usefulness of simple organisms to
+understand the etiology of cellular pathology cannot be denied. But using
+an organism without a central nervous system to understand diseases of the
+brain? We will first introduce the life cycle of Dictyostelium, the
+presence of many disease genes in the genome and how it has provided
+unique opportunities to identify mechanisms of disease involving actin
+pathologies, mitochondrial disease, human lysosomal and trafficking
+disorders and host-pathogen interactions. Secondly, I will highlight
+recent studies on the function of HTT, presenilin gamma-secretase and
+Hirano bodies conducted in Dictyostelium. I will then outline the
+limitations and future directions in using Dictyostelium to study disease,
+and finally conclude that given the evolutionary conservation of genes
+between Dictyostelium and humans and the organisms' genetic
+tractability, that this system provides a fertile environment for
+discovering normal gene function related to neurodegeneration and will
+permit translational studies in higher systems.
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+==============================================================
+[End dictyNews, volume 38, number 10]

@@ -1,0 +1,237 @@
+dictyNews
+Electronic Edition
+Volume 25, number 13
+December 1, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Use of a Penetratin-linked peptide in Dictyostelium.
+
+
+J Ryves and A. Harwood
+
+Cardiff School of Biosciences, Biomedical Sciences Building,
+Museum Avenue, PO box 911, Cardiff, CF10 3US, Wales, UK
+
+
+Molecular Biotechnology, in press
+
+The plasma membrane is an effective barrier to most macromolecules and 
+hydrophilic molecules. Remarkably, a class of positively charged cell 
+penetrating peptides (CPPs) has been discovered that can translocate 
+themselves and associated cargoes into the cytoplasm. These have been 
+used to carry oligopeptide and oligonucleotide based inhibitors into 
+mammalian cells. A recent report indicates that the same CPPs are 
+internalized by plant protoplasts suggesting this may be a universal 
+phenomenon. We report here that the prototypical CPP, penetratin, enters 
+cells of the free-living amoebae Dictyostelium discoideum. To investigate 
+the functionality of this technology we fused the penetratin sequence to 
+PKI, a peptide inhibitor of the cAMP dependent protein kinase (PKA). 
+Consistent with its PKA inhibitory action, Penetratin-PKI blocked 
+aggregation in wild type cells and at appropriate concentrations rescued the 
+phenotype of a Dictyostelium mutant which has constitutively high PKA 
+activity. This technology offers an effective method for delivery of 
+oligopeptides and oligonucleotides into Dictyostelium.
+
+
+Submitted by: Jonathan Ryves [ryveswj@cf.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+PI3 Kinase Activity Controls the Chemoattractant-Mediated 
+Activation and Adaptation of Adenylyl Cyclase 
+
+Frank I. Comer 1,2 and Carole A. Parent 1
+
+1. Laboratory of Cellular and Molecular Biology Center for Cancer Research, 
+NCI, NIH
+2. PRAT Research Fellowship Program, NIGMS, NIH
+
+
+Molecular Biology of the Cell, In press
+published November 2, 2005 as 10.1091/mbc.E05-08-0781
+
+The binding of chemoattractants to cognate G protein-coupled receptors 
+activates a variety of signaling cascades that provide spatial and temporal 
+cues required for chemotaxis. When subjected to uniform stimulation, these 
+responses are transient, showing an initial peak of activation followed by a 
+period of adaptation, in which activity subsides even in the presence of 
+stimulus. A tightly regulated balance between receptor-mediated stimulatory 
+and inhibitory pathways controls the kinetics of activation and subsequent 
+adaptation. In Dictyostelium, the adenylyl cyclase ACA, which synthesizes 
+the chemoattractant cAMP, is essential to relay the signal to neighboring 
+cells. Here we report that cells lacking PI3K activity are deficient in 
+signal relay. In LY294002-treated cells this defect is due to loss of ACA 
+activation. In contrast, in cells lacking PI3K1 and PI3K2, the signal relay 
+defect is due to loss of ACA adaptation. We propose that residual low levels 
+of 3-phosphoinositides in pi3k1-/2- cells is sufficient to generate the 
+initial peak of ACA activity, yet is insufficient to sustain the inhibitory 
+phase required for its adaptation.  Thus, PI3K activity is poised to 
+regulate both ACA activation and adaptation, thereby providing a link to 
+ensure the proper balance of counteracting signals required to maintain
+optimal chemoresponsiveness.
+
+
+Submitted by: Frank Comer [comerf@helix.nih.gov]
+
+-----------------------------------------------------------------------------
+
+
+Identification and Purification of a DNA-Binding Protein Interacting with 
+the Promoter of 5’-nucleotidase in Dictyostelium discoideum. 
+
+Natasha S. Wiles, Can M. Eristi, Bradley  R. Joyce, and 
+Charles L. Rutherford. 
+
+Department of Biological Sciences, Virginia Tech, Blacksburg, VA 24061, 
+United States. 
+
+
+Arch. Biochem. Biophys., in press 
+
+The developmental management of 5’-nucleotidase (5nt) expression in 
+Dictyostelium discoideum has provided a focal point for studies of gene 
+regulation at the level of transcription. To identify DNA-protein 
+interactions involved in the 5nt regulation, EMSAs were performed using 
+short oligonucleotides, designed to span a 357 bp promoter region. A 
+binding activity (Rf = 0.33) was identified and shown to be specific to 
+the nucleotide sequence between -338 and -309 bp relative the 5nt ATG. 
+Characterization of the binding activity, including the effects of salt and 
+temperature, provided insight into the nature and stability of the protein. 
+The protein was purified in a series of chromatographic stages, including 
+DEAE Sephacel, Heparin Sepharose, DNA affinity and gel filtration. SDS-PAGE 
+analysis identified a polypeptide with a molecular weight of 70 kDa. Mass 
+spectrometry revealed that the purified protein was a putative 
+formyltetrahydrofolate synthase.
+
+
+Submitted by: Charles Rutherford [rutherfo@vt.edu]
+
+-----------------------------------------------------------------------------
+
+
+Functional genomics in Dictyostelium: MidA, a novel conserved protein is 
+required for mitochondrial function and development
+
+
+Patricia Torija, Juan J. Vicente, Tiago B. Rodrigues, Alicia Robles, 
+Sebastián Cerdán, Leandro Sastre, Rosa M. Calvo and Ricardo Escalante
+
+Instituto de Investigaciones Biomédicas Alberto Sols. C.S.I.C./U.A.M., 
+Calle Arturo Duperier 4, 28029 Madrid. Spain.
+
+
+Journal of Cell Science, in press
+
+Genomic sequencing has revealed a large number of evolutionary conserved 
+genes of unknown function. In the absence of characterized functional 
+domains, the discovery of the role of these genes must rely on experimental 
+approaches. We have selected 30 Dictyostelium genes of unknown function that 
+showed high similarity to uncharacterized human genes and were absent in the 
+complete proteomes from S.cerevisiae and S. pombe. No putative functional 
+motifs were found in their predicted encoded proteins. Eighteen genes were 
+successfully knocked out and 3 of them showed obvious phenotypes. A detailed 
+analysis of one of them, midA, is presented in this report. Disruption of 
+midA in Dictyostelium leads to pleiotropic defects. Cell size, growth rate, 
+phagocytosis and macropinocytosis were affected in the mutant. During 
+development, midA- cells showed an enhanced tendency to remain at the slug 
+stage and spore viability was compromised. The expression of MidA fused to 
+GFP in midA- strain rescued the phenotype and the fused protein was located 
+in the mitochondria. Although cell oxygen consumption, mitochondrial content 
+and mitochondrial membrane potential were similar to wild type, the amount 
+of ATP was significantly reduced in the mutant suggesting a mitochondrial 
+dysfunction. Metabolomic analysis by natural-abundance 13C-Nuclear Magnetic 
+Resonance has shown the lack of glycogen accumulation during growth. During 
+starvation, mutant cells accumulated higher levels of ammonia that inhibited 
+normal development. We hypothesize that the lack of MidA reduces 
+mitochondrial ATP synthetic capacity and this has an impact in some but not 
+all energy-dependent cellular processes. This work exemplifies the potential 
+of Dictyostelium as a model system for functional genomic studies.
+
+
+Submitted by: Ricardo Escalante [rescalante@iib.uam.es]
+
+-----------------------------------------------------------------------------
+
+Contractile ring-independent localization of DdINCENP, a protein important 
+for spindle stability and cytokinesis
+
+Qian Chen, Hui Li, and Arturo De Lozanne
+
+Institute of Cellular and Molecular Biology, and Molecular and Cellular and 
+Developmental Biology Department, University of Texas at Austin, Austin, 
+TX, 78712
+
+
+Molecular Biology of the Cell, in press
+
+Dictyostelium DdINCENP is a chromosomal passenger protein associated with 
+centromeres, the spindle midzone and poles during mitosis and the cleavage 
+furrow during cytokinesis.  Disruption of the single DdINCENP gene revealed 
+important roles for this protein in mitosis and cytokinesis.  DdINCENP null 
+cells lack a robust spindle midzone and are hypersensitive to microtubule 
+depolymerizing drugs suggesting that their spindles may not be stable. 
+Furthermore DdCP224, a protein homologous to the microtubule-stabilizing 
+protein TOGp/XMAP215, was absent from the spindle midzone of DdINCENP null 
+cells.  Overexpression of DdCP224 rescued the weak spindle midzone defect of 
+DdINCENP null cells.  While not required for the localization of the 
+myosin II contractile ring and subsequent formation of a cleavage furrow, 
+DdINCENP is important for the abscission of daughter cells at the end of 
+cytokinesis.  Finally, we show that the localization of DdINCENP at the 
+cleavage furrow is modulated by myosin II but it occurs by a mechanism 
+different from that controlling the formation of the contractile ring. 
+
+
+Submitted by: Arturo De Lozanne [a.delozanne@mail.utexas.edu]
+
+
+-----------------------------------------------------------------------------
+
+Dictyostleium discoideum to human cells:  Pharmacogenetic studies demonstrate
+a role for sphingolipids in chemoresistance
+
+
+Stephen Alexander, Junxia Min and Hannah Alexander, Division of Biological 
+Sciences, University of Missouri,  Columbia, MO 65211-7400
+
+
+BBA-Reviews, General subjects, in press
+
+Resistance to chemotherapy is a major obstacle for the treatment of cancer 
+and a subject of extensive research.  Numerous mechanisms of drug resistance 
+have been proposed, and they differ for different drugs.  Nevertheless, it 
+is clear that our understanding of this important problem is still 
+incomplete, and that new targets for modulating therapy still await 
+discovery.  The attractive biology and the availability of powerful 
+molecular techniques have made the cellular slime mold Dictyostelium 
+discoideum a powerful non-mammalian model for drug target discovery, and 
+the problem of drug resistance.  To understand the molecular basis of 
+chemoresistance to the widely used drug cisplatin, both genetic and 
+pharmacological approaches have been applied to this versatile experimental 
+system.  These studies have resulted in the identification of novel 
+molecular pathways which can be used to increase the efficacy of cisplatin, 
+and brought attention to the role of sphingolipids in mediating the cellular 
+response to chemotherapeutic drugs.  In the following review we will 
+describe the history and utility of D. discoideum in pharmacogenetics, 
+and discuss recent studies which focus attention on the role of 
+sphingolipids in chemotherapy and chemoresistance.
+
+
+Submitted by: Hannah Alexander [alexanderh@missouri.edu]
+
+==============================================================================
+[End dictyNews, volume 25, number 13] 

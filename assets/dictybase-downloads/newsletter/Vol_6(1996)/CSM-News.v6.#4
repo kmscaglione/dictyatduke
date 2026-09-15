@@ -1,0 +1,256 @@
+CSM News
+Electronic Edition
+Volume 6, number 4
+February 17, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+THE VACUOLAR PROTON PUMP OF DICTYOSTELIUM DISCOIDEUM: MOLECULAR
+CLONING AND ANALYSIS OF THE 100-kDa SUBUNIT
+ 
+Tongyao Liu and Margaret Clarke
+
+Program in Molecular and Cell Biology, Oklahoma Medical Research
+Foundation, Oklahoma City, OK 73104
+ 
+J. Cell Sci., in press.
+
+ABSTRACT
+
+   The vacuolar proton pump is a highly-conserved multimeric enzyme
+that catalyzes the translocation of protons across the membranes of
+eukaryotic cells.  Its largest subunit (95-116-kDa) occurs in tissue
+and organelle-specific isoforms and thus may be involved in targeting
+the enyzme or modulating its function.  In amoebae of Dictyostelium
+discoideum, proton pumps with a 100-kDa subunit are found in membranes
+of the contractile vacuole complex, an osmoregulatory organelle.  We
+cloned the cDNA that encodes this 100-kDa protein and found that its
+sequence predicts a protein 45% identical (68% similar) to the
+corresponding mammalian proton pump subunit.  Like the mammalian
+protein, the predicted Dictyostelium sequence contains six possible
+transmembrane domains and a single consensus sequence for N-linked
+glycosylation.  Southern blot analysis detected only a single gene,
+which was designated vatM.  Using genomic DNA and degenerate
+oligonucleotides based on conserved regions of the protein as primers,
+we generated products by polymerase chain reaction that included
+highly variable regions of this protein family. The cloned products
+were identical in nucleotide sequence to vatM, arguing that
+Dictyostelium cells contain only a single isoform of this proton pump
+subunit.  Consistent with this interpretation, the amino acid
+sequences of peptides derived from a protein associated with endosomal
+membranes (Adessi et al., J. Cell Sci. 108:3331-7, 1995) match the
+predicted sequence of the protein encoded by vatM.  Thus, a single
+isoform of the 100-kDa proton pump subunit appears to serve in both
+the contractile vacuole system and the endosomal/lysosomal system of
+Dictyostelium, arguing that this subunit is not responsible for
+regulating the differing abundance and function of proton pumps in
+these two compartments.  Gene targeting experiments suggest that this
+subunit plays important (possibly essential) roles in Dictyostelium
+cells.
+
+-------------------------------------------------------------------
+
+
+Dictyostelium discoideum contains a family of calmodulin related EF-
+hand proteins that are developmentally regulated
+
+Bernadette Andre$, Angelika A. Noegel* and Michael Schleicher$
+
+$Adolf-Butenandt-Institut/Zellbiologie, Schillerstr. 42, 80336 Muenchen;
+*Max-Planck-Institut fuer Biochemie, 82152 Martinsried, Fed. Rep. of
+Germany
+
+FEBS Letters, in press
+
+Abstract
+
+   A full length genomic DNA fragment that codes for a novel EF-hand
+protein from Dictyostelium discoideum was cloned and sequenced. The
+protein is composed of 168 amino acids and contains four consensus
+sequences that are typical for Ca2+-binding EF-hand domains. The
+protein sequence exhibits only minor similarities to other
+calmodulin-type proteins from Dictyostelium. The genomic DNA harbors
+two short introns; their positions suggest that the gene is unrelated
+to the EF-hand proteins from the calmodulin group.  Northern blot
+analysis showed that the mRNA level was significantly increased during
+development. Polyclonal antibodies raised against the recombinant
+protein recognized in Western blots a protein of about 20 kDa. Like
+the mRNA, also the protein was more abundant in developing
+cells. Overlay experiments with 45Ca2+ indicated that the EF-hands in
+fact have Ca2+-binding activity. The recent description of CBP1,
+another calmodulin-type Dictyostelium protein that is upregulated
+during development (Coukell et al., FEBS-Lett. 362:342-346, 1995),
+suggests that D. discoideum contains a family of EF-hand proteins that
+have specific functions during distinct steps of development. We
+therefore designate the protein described in this report as CBP2.
+
+----------------------------------------------------------------------
+
+Ordered yeast artificial chromosome clones representing the
+Dictyostelium discoideum genome
+
+Adam Kuspa* and William F. Loomis@
+
+* Department of Biochemistry, Baylor College of Medicine, Houston, TX
+77030 @Department of Biology, University of California, San Diego, La
+Jolla , CA 920 
+
+Proc. Natl. Acad. Sci., in press.
+
+Abstract
+
+   High resolution gene maps of the 6 chromosomes of Dictyostelium
+discoideum have been generated by a combination of physical mapping
+techniques. A set of yeast artificial chromosome clones has been
+ordered into overlapping arrays that cover >98% of the 34
+megabase-pair genome.  Clones were grouped and ordered according to
+the genes they carried, as determined by hybridization analyses with
+DNA fragments from several hundred genes.  Congruence of the gene
+order within each arrangement of clones with the gene order determined
+from whole genome restriction site mapping indicates that a high
+degree of confidence can be placed on the clone map.  This clone-based
+description of the Dictyostelium chromosomes should be useful for the
+physical mapping and subcloning of new genes, and facilitate more
+detailed analyses of this genome.
+
+--------------------
+
+Table 1. Newly Mapped Loci
+
+
+Locus   Product (Phenotype)  Chromosome Reference
+________________________________________________________
+abcA    putative transporter    1       a
+abpD    actin binding protein   4       b
+abpE    actin binding protein   3       b
+act     actins                  -       a
+aldA    aldehyde dehydrogenase  4       a
+aldB    aldehyde dehydrogenase  6       a
+aleA    (chemotaxis defective)  2       c
+arfB    ADP ribosylation factor 3       d
+cabA2   actin/calmodulin bind   6       e
+cabA3   actin/calmodulin bind   3       e
+camA1   calmodulin              6       (10)
+camA2   calmodulin              3       (10)
+cbpA    calcium binding protein 2       (11)
+cdcE    cdc2-related protein    6       (12)
+cinB    (cycloheximide induced) 4       (13)
+cinC    (cycloheximide induced) 6       (13)
+coaA    coactosin               1       (14)
+comA    comitin                 5       (15)
+copB    b-COP                   4       b
+corA    coronin                 1       (16)
+cudA    (culmination defective) 2       f
+cvmA    contractile vac memb.   6       e
+cycB    cyclinB                 2       (12)
+dagG    (defective aggregation) 2       a
+dhkC    histidine kinase        4       g
+dhkD    histidine kinase        1       g
+DIRS8   DIRS subfragment        4       a
+dlaA    dihydrolipoacetyltrans. 3       h
+fpaA    fucose protein          2       (17)
+fpaB    fucose protein          1       (17)
+ftbA    (defective fruits)      2       i
+fusC    gp138B-like             1       c
+fusD    gp138B-like             5       c
+gerA    germ. protein  (p109)   4       (18)
+glpD    glycogen phosphorylase  5       (19)
+gnlA    (gnarled fruits)        4       i
+gppA    gp100                   6       (20)
+helC    helicase                3       j
+ksnC    kinesin 3               6       k
+ksnF    kinesin 6               1       k
+ksnG    kinesin 7               3       k
+lmcB    (lack of multicell)     3       g
+mapA    microtubule associated  2       l
+mdrA    putative transporter    6       a
+migA    (migration defective)   4       a
+mlcR    myosin light chain      4       (21)
+mndJ    (blocked at mounds)     4       j
+motA    (chemotaxis defective)  1       h
+mrpA    putative transporter    4       m
+mrpB    putative transporter    6       m
+mrpC    putative transporter    2       a
+natA    N-term acetyltransfer   2       h
+ncsB    non-cell specific cDNA  4       (22)
+ndhD    NADH dehydrogenase      1       a
+nosA    (no spores)             6       f
+pabA    polyA binding protein   6       a
+pagB    (preaggregation)        2       g
+pagC    (preaggregation)        4       g
+papA    poly-A polymerase       2       a
+patA    P-type ATPase           3       n
+pkbA    protein kinase K2.6     1       o
+pkfC    protein kinase DK1      4       p
+pmpA    putative membrane       1       q
+ponA    ponticulin              1       (23)
+proB    profilin II             4       (24)
+prtA    proteosomal a-sub M3    6       (25)
+prtB    proteosomal a-sub 7-1   2       (25)
+pspC    prespore gene   2       r
+pspC    prespore gene   2       r
+pspE    prespore gene 1I        4       (22)
+pspF    prespore gene 2H        3       (22)
+pspG    prespore gene 3F        2       (22)
+pspH    prespore gene 6C        3       (22)
+pspJ    prespore gene 7F        2       (22)
+pspL    prespore gene 1H        2       (22)
+pstA    prestalk gene 5G        4       (22)
+ptpC    phosphotyr. pase 3      2       (26)
+ptpE    phosphotyr. pase 3      1       (26)
+purA    adenylosuccinate synth  4       b
+rasG    ras homolog (growth)    1       (27)
+repE    DNA repair gene homolog 4       s
+rioT    putative transcripfactor5       t
+rpgB    ribosomal protein       3       (28)
+rpgF    ribosomal protein       6       u
+rtoA    (altered ratios)        2       i
+rtoB    (altered ratios)        2       i
+schA    (signaling defective)   2       c
+sfbA    (small fruiting bodies) 1       (4)
+smlA    (small fruiting bodies) 4       i
+snrU    U1 protein              1       a
+sokA    (stringy on Klebsiella) 2       p
+sqpA    serine/glutamine-rich   3       v
+talA    talin                   5       (29)
+timA    (tipped mound arrest)   1       a
+tubA    alpha tubulin           6       (30)
+ubcA    ubex52                  3       (31)
+ubpA    (defective aggregation) 4       i
+ubqD    ubiquitin               1       (32)
+ubqE    ubiquitin               1       (32)
+ubqF    ubiquitin               4       (32)
+uceA    ubiquitin conjugating   3       w
+uppA    UDPG pyrophosphorylase  1       (33)
+vagA    (signaling defective)   2       c
+vatP    vacuolar ATPase         2       n
+vseC    vegetative expression   1       (28)
+vseE    vegetative expression   1       (28)
+vsgA    putative vsvG homolog   6       a
+vsgB    putative vsvG homolog   5       a
+yelA    (yellow mounds)         3       a
+_________________________________________________________________
+
+
+Lettered references indicate the source of unpublished probes for the
+genes listed: a; This Work, b; A. Noegel, c; P. Devreotes, d;
+C. Weijer, e; M.  Clarke, f; R. Kessin, g; C. Singleton, h;
+G. Gerisch, i; R. Gomer, j; R.  Kay, k; R. Vale, l; M. Kimble, m;
+T. Wang, n; B. Coukell, o; M. Veron, p; J. Williams, q; W. Nellen, r;
+D. Hames, s; S. Alexander, t; S. Bozarro, u; H. Ennis, v;
+G. Podgorski, and w; E. Luna.
+
+--------------------------------------------------------------------
+
+[End CSM-News, volume 6, number 4]
+

@@ -1,0 +1,61 @@
+dictyNews
+Electronic Edition
+Volume 31, number 19
+December 19, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Reduced amyloidogenic processing of the amyloid beta-protein precursor 
+by the small-molecule differentiation inducing factor-1
+
+Michael A. Myre*, Kevin Washicosky, Robert D. Moir, Giuseppina Tesco,
+Rudolph E. Tanzi Wilma Wasco
+
+*Molecular Neurogenetics Unit, Center for Human Genetic Research,
+Massachusetts General Hospital, Harvard Medical School, Boston, MA 02114,
+USA. Neurobiology of Disease Laboratory, Genetics and Aging Research Unit,
+Massachusetts General Hospital, Harvard Medical School, Charlestown, MA
+02129, USA.
+
+
+Cellular Signalling, in press
+
+The detection of cell cycle proteins in Alzheimer’s disease (AD) brains
+may represent an early event leading to neurodegeneration. To identify
+cell cycle modifiers with anti-Abeta properties, we assessed the effect of
+Differentiation-Inducing Factor-1 (DIF-1), a unique, small-molecule from
+Dictyostelium discoideum, on the proteolysis of the amyloid beta-protein
+precursor (APP) in variety of different cell types. We show that DIF-1
+slows cell cycle progression through G0/G1 that correlates with a
+reduction in cyclin D1 protein levels. Western blot analysis of
+DIF-treated cells and conditioned medium revealed decreases in the levels
+of secreted APP, mature APP, and C-terminal fragments. Assessment of
+conditioned media by sandwich ELISA showed reduced levels of Abeta40 and
+Abeta42, demonstrating that treatment with DIF-1 effectively decreases the
+ratio of Abeta42 to Abeta40. In addition, DIF-1 significantly diminished
+APP phosphorylation at residue T668. Interestingly, site-directed
+mutagenesis of APP residue Thr668 to alanine or glutamic acid abolished
+the effect of DIF-1 on APP proteolysis and restored secreted levels of
+Abeta. Finally, DIF-1 prevented the accumulation of APP C-terminal
+fragments induced by the proteasome inhibitor lactacystin, and calpain
+inhibitor N-acetyl-leucyl-leucyl-norleucinal (ALLN). Our findings suggest
+that DIF-1 affects G0/G1-associated amyloidogenic processing of APP by a
+gamma-secretase-, proteasome- and calpain-insensitive pathway, and that
+this effect requires the presence of residue Thr668.
+
+
+Submitted by: Peter Michael Myre [myre@chgr.mgh.harvard.edu]
+==============================================================
+[End dictyNews, volume 31, number 19]

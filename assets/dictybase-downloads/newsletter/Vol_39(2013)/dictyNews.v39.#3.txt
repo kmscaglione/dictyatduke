@@ -1,0 +1,177 @@
+dictyNews
+Electronic Edition
+Volume 39, number 3
+January 25, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Stress and development in Dictyostelium discoideum: the involvement 
+of the catalytic calcineurin A subunit.
+
+Sascha Thewes, Sebastian K. Schubert, Kyuhyeon Park, and 
+Rupert Mutzel
+
+
+Journal of Basic Microbiology, in press
+
+Calcium signaling is one of the most important signaling-pathways in all 
+eukaryotes. One important target activated by an increased intracellular 
+calcium concentration via calmodulin is the protein phosphatase calcineurin, 
+which is composed of a catalytic subunit (calcineurin A) and a regulatory 
+subunit (calcineurin B). The importance of calcium and calcineurin for the 
+differentiation and development of the social amoeba Dictyostelium 
+discoideum has already been shown by pharmacological approaches. 
+However, so far only a RNAi-silenced calcineurin B mutant has been 
+investigated on a molecular level. Here we describe the construction and 
+phenotypic investigation of a RNAi-silenced calcineurin A mutant. 
+Phenotypic aberrations during development resemble those produced by 
+silencing of calcineurin B with ectopic tip formation of the fruiting 
+bodies. Additionally we tested the response of the mutants under various 
+stress conditions in liquid culture as well as during development. Both, 
+calcineurin A and B RNAi-mutants, are hypersensitive during development 
+towards cation stress. Besides its role in development calcineurin is thus also 
+involved in the stress response in D. discoideum. Further, our data imply that 
+many functions of calcineurin are conserved among the eukaryotes.
+
+
+Submitted by Sascha Thewes [sascha.thewes@fu-berlin.de]
+---------------------------------------------------------------------------
+
+
+Conserved gene-regulatory function of the carboxy-terminal domain 
+of dictyostelid C-module-binding factor
+
+Anika Schmith, Marco Groth, Josephine Ratka, Sara Gatz, Thomas 
+Spaller, Oliver Siol, Gernot Glšckner and Thomas Winckler
+
+
+Eukaryotic Cell, in press
+
+C-module-binding factor (CbfA) is a jumonji-type transcription regulator 
+that is important for maintaining the expression and mobility of the 
+retrotransposable element TRE5-A in the social amoeba Dictyostelium
+ discoideum. CbfA-deficient cells have lost TRE5-A retrotransposition, 
+ are impaired in the ability to feed on bacteria, and do not enter 
+ multicellular development due to a block in cell aggregation. In this 
+ study, we performed Illumina RNA sequencing on growing CbfA mutant 
+ cells to obtain a list of CbfA-regulated genes. We demonstrate that the 
+ carboxy-terminal domain of CbfA alone is sufficient to mediate the 
+ majority of CbfA-dependent gene expression. The carboxy-terminal 
+ domain of CbfA from the distantly related social amoeba Polysphondylium 
+ pallidum restored the expression of CbfA-dependent genes in the 
+ D. discoideum CbfA mutant, indicating a deep conservation in the gene 
+ regulatory function of this domain in the dictyostelid clade. The CbfA-like 
+ protein CbfB displays ~25% sequence identity with CbfA in the amino-
+ terminal region, which contains a JmjC domain and two zinc finger regions 
+ and is thought to mediate chromatin-remodeling activity. In contrast to 
+ CbfA proteins, where the carboxy-terminal domains are strictly conserved 
+ in all dictyostelids, CbfB proteins have completely unrelated carboxy-
+ terminal domains. Outside the dictyostelid clade, CbfA-like proteins with 
+ the CbfA-archetypical JmjC/zinc finger arrangement and individual carboxy-
+ terminal domains are prominent in filamentous fungi but are not found in 
+ yeasts, plants, and metazoans. Our data suggest that two functional 
+ regions of the CbfA-like proteins evolved at different rates to allow the 
+ occurrence of species-specific adaptation processes during genome 
+ evolution.
+
+
+Submitted by Thomas Winckler [t.winckler@uni-jena.de]
+---------------------------------------------------------------------------
+
+
+Matricellular Signal Transduction Involving Calmodulin in the Social 
+Amoebozoan Dictyostelium
+
+Danton H. OÕDay1,2,* and Robert J. Huber3
+
+1 Department of Biology, University of Toronto Mississauga, 3359 
+Mississauga Road North, Mississauga, ON, Canada L5L 1C6 
+2 Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord Street, Toronto, ON, Canada M5S 3G5
+3 Center for Human Genetic Research, Massachusetts General Hospital, 
+Harvard Medical School, Richard B. Simches Research Center, 185 
+Cambridge Street, Boston, MA, USA  02114 
+
+
+Genes, in press
+
+Abstract: The social amoebozoan Dictyostelium discoideum undergoes a 
+developmental sequence wherein an extracellular matrix (ECM) sheath 
+surrounds a group of differentiating cells. This sheath is comprised of 
+proteins and carbohydrates, like the ECM of mammalian tissues. One of 
+the characterized ECM proteins is the cysteine-rich, EGF-like (EGFL) 
+repeat-containing, calmodulin (CaM)-binding protein (CaMBP) CyrA. The 
+first EGFL repeat of CyrA increases the rate of random cell motility and 
+cyclic AMP-mediated chemotaxis. Processing of full-length CyrA (~63kDa) 
+releases two major EGFL repeat-containing fragments (~45kDa and ~40kDa) 
+in an event that is developmentally regulated. Evidence for an EGFL repeat 
+receptor also exists and downstream intracellular signaling pathways 
+involving CaM, Ras, protein kinase A and vinculin B phosphorylation have 
+been characterized. In total, these results identify CyrA as a true matricellular 
+protein comparable in function to tenascin C and other matricellular proteins 
+from mammalian cells. Insight into the regulation and processing of CyrA has 
+also been revealed. CyrA is the first identified extracellular CaMBP in this 
+eukaryotic microbe. In keeping with this, extracellular CaM (extCaM) has been 
+shown to be present in the ECM sheath where it binds to CyrA and inhibits its 
+cleavage to release the 45kDa and 40kDa EGFL repeat-containing fragments. 
+The presence of extCaM and its role in regulating a matricellular protein during 
+morphogenesis extends our understanding of CaM-mediated signal transduction 
+in eukaryotes. 
+
+
+Submitted by Danton H. OÕDay (danton.oday@utoronto.ca)
+---------------------------------------------------------------------------
+
+
+A SAP-domain containing protein shuttles between the nucleus and cell 
+membranes and plays a role in adhesion and migration in D. discoideum.
+
+Jessica S. Kelsey and Daphne D. Blumberg
+
+Department of Biological Sciences, University of Maryland, Baltimore County, 
+Baltimore, Maryland 21250
+
+ 
+BiologyOpen,  accepted
+ 
+The AmpA protein reduces cell adhesion, thereby influencing cell migration in 
+Dictyostelium. To understand how ampA influences cell migration, second site 
+suppressors of an AmpA overexpressing cell line were created by REMI 
+mutagenesis.  Mutant candidates were identified by their ability to suppress the 
+large plaques that the AmpA overexpressing cells form on bacterial lawns as a 
+result of their increased rate of migration.  One suppressor gene, sma, encodes 
+an uncharacterized protein which contains a SAP DNA binding domain and a 
+PTEN like domain.  Using sma gene knockouts and Sma-mRFP expressing cell 
+lines, a role for sma in influencing cell migration was uncovered.  Knockouts of 
+the sma gene in a wildtype background enhanced chemotaxis. An additional role 
+for Sma in influencing cell-cell adhesion was also demonstrated. Sma protein 
+transitions between cytosolic and nuclear localizations as a function of cell 
+density. In growing cells migrating to folic acid it is localized to regions of actin 
+polymerization and absent from the nucleus. A role for Sma in influencing ampA 
+mRNA levels is also demonstrated.  Sma additionally appears to be involved in 
+ampA pathways regulating cell size, actin polymerization, and cell substrate 
+adhesion. We present insights to the SAP domain-containing group of proteins 
+in Dictyostelium and provide evidence of a role for a SAP domain-containing 
+protein shuttling from the nucleus to sites of actin polymerization during 
+chemotaxis to folic acid and influencing the efficiency of migration.
+ 
+ 
+Submitted by Daphne D. Blumberg [blumberg@umbc.edu]
+==============================================================
+[End dictyNews, volume 39, number 3]

@@ -1,0 +1,110 @@
+dictyNews
+Electronic Edition
+Volume 39, number 27
+September 20, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Cyclic Di-Nucleotide Signalling Enters The Eukaryote Domain. 
+(Review)
+
+Pauline Schaap, College of Life Sciences, University of Dundee, UK
+
+
+Abstract. 3Õ5Õ-diguanylic acid (c-di-GMP) is the prevalent intracellular 
+signalling intermediate in bacteria. It triggers a spectrum of responses 
+that cause bacteria to shift from a swarming motile phase to sessile 
+biofilm formation. However, additional functions for c-di-GMP and 
+roles for related molecules, such as c-di-AMP and c-AMP-GMP 
+continue to be uncovered. The first usage of cyclic-di-nucleotide 
+(c-di-NMP) signalling in the eukaryote domain emerged only recently. 
+In Dictyostelid social amoebas, c-di-GMP is a secreted signal that 
+induces motile amoebas to differentiate into sessile stalk cells. In 
+humans, c-di-NMPs, which are either produced endogenously in 
+response to foreign DNA or by invading bacterial pathogens, trigger 
+the innate immune system by activating the expression of interferon 
+genes. STING, the human c-di-NMP receptor, is conserved throughout 
+metazoa and their closest unicellular relatives, suggesting protist 
+origins for human c-di-NMP signalling. Compared to the limited number 
+of conserved protein domains that detect the second messengers 
+cAMP and cGMP, the domains that detect the c-di-NMPs are 
+surprisingly varied.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+Naringenin inhibits the growth of Dictyostelium and MDCK-derived 
+cysts in a polycystin-2 (TRPP2)-dependent manner
+
+A Waheed,1 M H R Ludtmann,2 N Pakes,2 S Robery,2 A Kuspa,3 
+C Dinh,3 D Baines*,4 R S B Williams*,2¦ M A Carew*1¦
+
+1. School of Pharmacy & Chemistry, Kingston University, Penrhyn 
+Road, Kingston upon Thames, Surrey, KT1 2EE, UK.
+2. Centre for Biomedical Science, School of Biological Sciences, Royal 
+Holloway University of London, Egham, Surrey, TW20 0EX, UK. 
+3. Department of Biochemistry and Molecular Biology, Baylor College 
+of Medicine, Houston, Texas 77030, U.S.A.
+4. Biomedical Sciences, St George's University of London, Cranmer 
+Terrace, Tooting, London, UK. 
+
+*joint last author
+¦ joint corresponding author
+
+British Journal of Pharmacology, in press
+
+
+Background and purpose: Identifying and characterising potential new 
+therapeutic agents to target cell proliferation may provide improved 
+treatments for neoplastic disorders such as cancer and polycystic 
+diseases.  
+
+Experimental approach: We used the simple, tractable biomedical 
+model Dictyostelium to investigate the molecular mechanism of 
+naringenin, a dietary flavonoid with antiproliferative and chemopreventive 
+actions in vitro and in animal models of carcinogenesis. We then 
+translated these results to a mammalian kidney model, MDCK renal 
+tubule cells, growing in culture and as cysts in a collagen matrix.  
+
+Key results: Naringenin inhibited Dictyostelium growth, but not 
+development, with an EC50 of 50-100  uM. Screening of a library of 
+random gene knockout mutants identified a mutant lacking polycystin-2 
+that was resistant to the effect of naringenin on growth and random cell 
+movement.  Polycystin-2 (TRPP2) is a divalent cation channel, where 
+mutations in the protein give rise to type 2 autosomal dominant polycystic 
+kidney disease. Naringenin inhibited MDCK cell growth with an EC50 of 
+28 uM, and inhibited cyst growth with an EC50 of 3-10 uM. Knockdown of 
+polycystin-2 levels by siRNA in this model conferred partial resistance to 
+naringenin such that cysts treated with 3 and 10 uM naringenin were larger 
+following polycystin-2 knockdown compared to controls.  Naringenin had 
+no significant effect on forskolin-induced chloride secretion in MDCK 
+monolayers.
+
+Conclusions and implications: The action of naringenin on cell growth in 
+the phylogenetically diverse systems of Dictyostelium and mammalian 
+kidney cells, suggests a conserved effect mediated by polycystin-2 
+(TRPP2).  Further studies will investigate naringenin as a potential new 
+therapeutic agent in autosomal dominant polycystic kidney disease. 
+
+
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 27]

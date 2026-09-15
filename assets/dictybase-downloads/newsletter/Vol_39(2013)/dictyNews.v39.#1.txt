@@ -1,0 +1,63 @@
+dictyNews
+Electronic Edition
+Volume 39, number 1
+January 11, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+A dual role model for active Rac1 in cell migration
+
+Jan Faix and Igor Weber
+
+1 Hannover Medical School, Institute for Biophysical Chemistry, 
+Carl-Neuberg-Str. 1, D-30623 Hannover, Germany 
+2 Ruder Boskovic Institute, Division of Molecular Biology, 
+Bijenicka 54, HR-10000 Zagreb, Croatia
+
+
+Small GTPases, in press
+
+Over time we have come to appreciate that the complex regulation 
+of Rho GTPases involves additional mechanisms beyond the activating 
+role of RhoGEFs, the inactivating function of RhoGAPs, and the 
+sequestering activity of RhoGDIs. One class of regulatory mechanisms 
+includes direct modifications of Rho proteins such as isoprenylation, 
+phosphorylation, and SUMOylation. Rho GTPases can also regulate 
+each other by means of crosstalk signaling, which is again mostly 
+mediated by GEFs, GAPs, and GDIs. More complex mutual regulation 
+ensues when and where two or more Rho proteins activate a common 
+molecular target, i.e. share a common effector. We have recently 
+unraveled a reciprocal mechanism wherein spatiotemporal dynamics of 
+Rac1 activity during migration of Dictyostelium cells is apparently 
+regulated by antagonizing interactions of Rac1-GTP with two distinct 
+effectors. By monitoring specific fluorescent probes, activated Rac1 is 
+simultaneously present at the leading edge, where it participates in 
+Scar/WAVE-mediated actin polymerization, and at the trailing edge, 
+where it induces formation of a DGAP1/cortexillin actin-bundling complex. 
+Strikingly, in addition to their opposed localization, the two populations of 
+activated Rac1 also display opposite kinetics of recruitment to the plasma 
+membrane upon stimulation by chemoattractants. These findings with 
+respect to Rac1 in Dictyostelium suggest a novel principle for regulation 
+of Rho GTPase activity that might also play a role in other cell types and 
+for other Rho family members.
+ 
+ 
+Submitted by Igor Weber [iweber@irb.hr]
+==============================================================
+[End dictyNews, volume 39, number 1]

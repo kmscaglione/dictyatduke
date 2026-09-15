@@ -1,0 +1,167 @@
+dictyNews
+Electronic Edition
+Volume 29, number 13
+November 9, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Talin influences the dynamics of the myosin VII-membrane interaction.
+
+Galdeen SA, Stephens S, Thomas DD, Titus MA
+
+Department of Genetics, Cell Biology, and Development and Department of 
+Biochemistry, Molecular Biology, and Biophysics, University of Minnesota, 
+Minneapolis, MN 55455, USA.
+
+
+Molecular Biology of the Cell 2007 Oct 18(10):4074-84. 
+
+Myosin VII (M7) and talin are ancient and ubiquitous actin-binding proteins 
+with conserved roles in adhesion. Talin serves to link membrane receptors to 
+the underlying actin cytoskeleton and forms a complex with M7 in Dictyostelium. 
+The levels of talinA are tightly linked to M7 levels in Dictyostelium. Cells 
+lacking M7 exhibit an 80% decrease in steady-state levels of talinA, whereas 
+increased levels of M7 result in concomitant increases in total talinA. In 
+contrast, changes in talinA levels do not affect M7 levels. Immunoprecipitation 
+reveals that talinA and M7 are associated with each other in membrane 
+fractions. Fluorescence recovery after photobleaching experiments on green 
+fluorescent protein (GFP)-M7 cells expressing different levels of the M7 and 
+talinA show that changes in the overall amounts of these two proteins 
+influences the dynamics of membrane-associated M7. The recovery of GFP-M7 on 
+the membrane is faster in cells lacking talinA and limited in the presence 
+of excess amounts of talinA and M7. These results establish that M7 
+stabilizes talinA in the cytosol and, in return, talinA regulates the 
+residence time of M7 at the plasma membrane, suggesting that these two proteins 
+are both part of the same dynamic adhesion complex on the plasma membrane.
+
+
+Submitted by: Shawn Galdeen [shawn.galdeen@umassmed.edu]
+--------------------------------------------------------------------------------
+
+
+Stochastic noise and synchronisation during Dictyostelium aggregation make 
+cAMP oscillations robust. 
+
+Kim J, Heslop-Harrison P, Postlethwaite I, Bates DG
+
+
+PLoS Computational Biology 2007 3(11): e218. 
+http://dx.doi.org/10.1371/journal.pcbi.0030218.eor 
+(when this link stops working, remove 'eor' for early online release)
+
+Stable and robust oscillations in the concentration of adenosine 
+3', 5'-cyclic monophosphate (cAMP) are observed during the aggregation phase 
+of starvation-induced development in Dictyostelium discoideum. In this paper 
+we use mathematical modelling together with ideas from robust control theory 
+to identify two factors which appear to make crucial contributions to ensuring 
+the robustness of these oscillations. Firstly, we show that stochastic 
+fluctuations in the molecular interactions play an important role in 
+preserving stable oscillations in the face of variations in the kinetics of 
+the intracellular network. Secondly, we show that synchronisation of the 
+aggregating cells through the diffusion of extracellular cAMP is a key 
+factor in ensuring robustness of the oscillatory waves of cAMP observed 
+in Dictyostelium cell cultures to cell-to-cell variations. A striking and 
+quite general implication of our results is that the robustness analysis of 
+models of oscillating biomolecular networks (circadian clocks, Ca2+ 
+oscillations, etc) can only be done reliably by using stochastic simulations, 
+even in the case where molecular concentrations are very high.
+
+Submitted by: Pat Heslop-Harrison [phh4@le.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Filamin repeat segments required for photosensory signalling in 
+Dictyostelium discoideum
+
+Sarah J Annesley, Esther Bandala-Sanchez, Afsar U Ahmed, Paul R Fisher
+Department of Microbiology, La Trobe University, Vic., Australia
+
+
+BMC Cell Biology, in press
+
+Background
+Filamin is an actin binding protein which is ubiquitous in eukaryotes and 
+its basic structure is well conserved - an N-terminal actin binding domain 
+followed by a series of repeated segments which vary in number in different 
+organisms.  D. discoideum is a well established model organism for the study 
+of signalling pathways and the actin cytoskeleton and as such makes an 
+excellent organism in which to study filamin.  Ddfilamin plays a putative 
+role as a scaffolding protein in a photosensory signalling pathway and this 
+role is thought to be mediated by the unusual repeat segments in the 
+rod domain.
+
+Results
+To study the role of filamin in phototaxis, a filamin null mutant, HG1264, 
+was transformed with constructs each of which expressed wild type filamin or 
+a mutant filamin with a deletion of one of the repeat segments. Transformants 
+expressing the full length filamin to wild type levels completely rescued the 
+phototaxis defect in HG1264, however if filamin was expressed at lower than 
+wild type levels the phototaxis defect was not restored. The transformants 
+lacking any one of the repeat segments 2-6 retained defective phototaxis and 
+thermotaxis phenotypes, whereas transformants expressing filaminDelta1 
+exhibited a range of partial complementation of the phototaxis phenotype 
+which was related to expression levels. Immunofluorescence microscopy showed 
+that filamin lacking any of the repeat segments still localised to the same 
+actin rich areas as wild type filamin. Ddfilamin interacts with RasD and IP 
+experiments demonstrated that this interaction did not rely upon any single 
+repeat segment or the actin binding domain. 
+
+Conclusions
+This paper demonstrates that wild type levels of filamin expression are 
+essential for the formation of functional photosensory signalling complexes 
+and that each of the repeat segments 2-6 are essential for filamins role 
+in phototaxis. By contrast, repeat segment 1 is not essential provided the 
+mutated filamin lacking repeat segment 1 is expressed at a high enough 
+level. The defects in photo/thermosensory signal transduction caused by 
+the absence of the repeats are due neither to mislocalisation of filamin 
+nor to the loss of RasD recruitment to the previously described 
+photosensory signalling complex.
+
+Submitted by: Paul Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium Extracellular Vesicles Containing Hoechst 33342 Transfer the 
+Dye into the Nuclei of Living Cells: A Fluorescence Study
+
+Irene Tatischeff, Francoise Lavialle, Sophie Pigaglio-Deshayes, 
+Christine Pechoux-Longin, Laurent Chinsky, Annette Alfsen
+
+
+Journal of Fluorescence, in press
+
+Cells of the eukaryotic unicellular microorganism Dictyostelium discoideum 
+are constitutively resistant to vital staining of their nuclei by the 
+DNA-specific dye Hoechst 33342. By studying the mechanisms of this 
+resistance, we evidenced that these cells expel vesicles containing the 
+dye for detoxification (Tatischeff et al., Cell Mol Life Sci, 54: 476–87, 
+1998). The question to be addressed in the present work is the potential 
+use of these extracellular vesicles as a biological drug delivery tool, 
+using Hoechst 33342 as a model of a DNA-targeting drug. After cell growth 
+with or without the dye, vesicles were prepared from the cell-free growth 
+medium by differential centrifugation, giving rise to two types of 
+vesicles. Negative staining electron microscopy showed their large 
+heterogeneity in size. Using fluorescence techniques, data were obtained 
+on the dye loading and its environment inside the vesicles. By UV 
+video-microscopy, it was demonstrated that the dye-containing vesicles 
+were able to deliver it into the nuclei of naive Dictyostelium cells, 
+thus overcoming their constitutive resistance to the free dye. A 
+vesicle-mediated dye-transfer into the nuclei of living human leukaemia 
+multidrug resistant K562r cells was also observed. 
+
+Submitted by: Irene Tatischeff [tati@ccr.jussieu.fr]
+==============================================================
+[End dictyNews, volume 29, number 13]

@@ -1,0 +1,299 @@
+CSM News
+Electronic Edition
+Volume 6, number 5
+February 24, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+Mutagenesis and gene identification in Dictyostelium by shotgun
+antisense
+
+Timothy P. Spann, Debra A. Brock, David F. Lindsey, Salli A. Wood, and
+Richard H. Gomer
+
+Howard Hughes Medical Institute and Department of Biochemistry and
+Cell Biology, Rice University, Houston, TX 77251-1892
+
+PNAS, in press
+
+ABSTRACT
+
+   We have developed a mutagenesis technique that uses antisense cDNA
+to identify genes required for development in Dictyostelium
+discoideum.  We transformed Dictyostelium cells with a cDNA library
+made from the mRNA of vegetative and developing cells.  The cDNA was
+cloned in an antisense orientation immediately downstream of a
+vegetative promoter, so that in transformed cells the promoter will
+drive the synthesis of an antisense RNA transcript.  We find that
+individual transformants typically contain one or occasionally two
+antisense cDNAs.  Using this mutagenesis technique, we have generated
+mutants which either fail to aggregate, aggregate but fail to form
+fruiting bodies, or aggregate but form abnormal fruiting bodies.  The
+individual cDNA molecules from the mutants were identified and cloned
+using PCR.  Initial sequence analysis of the PCR products from 35
+mutants has identified six novel Dictyostelium genes, each from a
+transformant with one antisense cDNA.  When the PCR-isolated antisense
+cDNAs were ligated into the antisense vector and the resulting
+constructs transformed into cells, the phenotypes of the transformed
+cells matched those of the original mutants from which each cDNA was
+obtained.  We made homologous recombination gene disruption
+transformants for three of the novel genes, in each case generating
+mutants with phenotypes indistinguishable from those of the original
+antisense transformants.  Shotgun antisense thus is a rapid way to
+identify genes in Dictyostelium and possibly other organisms.
+
+----------------------------------------------------------------------
+
+Cyclic AMP dependent protein kinase and prestalk-cell gene expression
+in Dictyostelium.
+
+Fabiana Horn and Julian D. Gross
+
+Department of Biochemistry, University of Oxford
+South Parks Road,Oxford OX1 3QU, U.K.
+
+FEMS Microbiol. Letters, in press.
+
+ABSTRACT
+
+   Cyclic AMP-dependent protein kinase (PKA) is required for
+aggregation of starved amoebae during development of Dictyostelium
+discoideum as well as for prespore gene expression and for maturation
+of stalk cells and spores. It has not been clear until now whether it
+plays any role in the stalk pathway prior to the final maturation of
+stalk cells. We have examined stalk cell formation and prestalk cell
+gene expression in a mutant of Dictyostelium that has an inactive PKA
+regulatory subunit and therefore has unrestrained catalytic activity
+[1]. We show that when mutant amoebae are incubated under buffer in
+the absence of cAMP they accumulate transcripts of the
+prestalk-cell-specific ecmA gene and form stalk cells, whereas the
+parental cells neither accumulate ecmA transcripts nor form stalk
+cells. These findings indicate that constitutive PKA activity renders
+cells able to express prestalk-cell-specific genes under conditions
+where wild type cells cannot do so, and hence that PKA is probably
+implicated in prestalk gene expression during normal development.
+
+-------------------------------------------------------------------
+
+MULTIPLE ROLES OF THE NOVEL PROTEIN-TYROSINE PHOSPHATASE PTP3 DURING
+DICTYOSTELIUM GROWTH AND DEVELOPMENT
+
+Marianne Gamper, Peter K. Howard, Tony Hunter, and Richard A. Firtel
+
+Molecular and Cellular Biology, in press.
+
+ABSTRACT
+
+   PTP3, the third nonreceptor protein tyrosine phosphatase identified
+in Dictyostelium discoideum, has a single catalytic PTP domain.
+Recombinant PTP3 exhibited phosphatase activity that was inhibited by
+vanadate.  PTP3 is expressed at a moderate level during growth.  The
+level of transcripts increased between growth and 8 h of development
+and declined thereafter.  Expression of lacZ under the control of the
+PTP3 promoter indicated a spatial localization of PTP3 in the
+anterior-like and prestalk cell-types.  There are two copies of the
+PTP3 gene in this haploid organism.  Disruption of one copy led to a
+slow growth phenotype.  We were unable to obtain a strain with
+disruptions in both PTP3 genes.  Overexpression of wild-type PTP3 led
+to slower growth rates and the formation of large aggregation streams.
+These streams split into smaller aggregates, many of which then
+arrested in development.  Overexpression of a catalytically inactive
+mutation (Cys->Ser) had no effect on growth rate; however, this strain
+also formed large aggregation streams that later split up into large
+and small mound structures and became fruiting bodies of variable
+size.  Anti-phosphotyrosine (pTyr) Western blot analysis of total cell
+proteins showed that the pattern of protein tyrosine phosphorylation
+was specifically altered in PTP3 mutants.  Addition of growth medium
+to starving cells and a subsequent replacement with non-nutrient
+buffer led to reciprocal changes in the pattern of several pTyr
+proteins, including a protein of ~130 kDa.  Analysis of strains
+overexpressing active or inactive PTP3 suggested p130 is a potential
+substrate of PTP3.  A transient post-translational phosphorylation of
+PTP3 further supported the role of PTP3 in these processes.  The data
+shown strongly suggest new regulatory functions for PTP3 that are
+distinct from those described earlier for D.  discoideum PTP1 and
+PTP2.
+
+--------------------------------------------------------------------
+
+
+MOLECULAR GENETICS OF SIGANL TRANSDUCTION IN DICTYOSTELIUM
+
+Carole A. Parent and Peter N. Devreotes
+
+Annual Review of Biochemistry, in press.
+
+ABSTRACT
+
+   In conditions of starvation, the free living amoebae of
+Dictyostelium enter a developmental program - the cells aggregate by
+chemotaxis to form a multicellular structure that undergoes
+morphogenesis and cell-type differentiation. These processes are
+mediated by a family of cell surface cAMP receptors (cARs) that act on
+a specific heterotrimeric G protein to stimulate actin polymerization,
+activation of adenylyl and guanylyl cyclases, and a host of other
+responses. Most of the components in these pathways have mammalian
+counterparts. The accessible genetics of this unicellular organism
+facilitate structure-function analysis and enable the discovery of
+novel genes involved in the regulation of these important pathways.
+
+----------------------------------------------------------------------
+
+Evidence that a combined activator-repressor protein regulates
+Dictyostelium stalk cell differentiation
+
+Takefumi Kawata*, Anne Early* and Jeffrey Williams+
+
+MRC Laboratory of Molecular Cell Biology and Dept of Biology
+University College London, Gower St, London WC1E 6BT, U.K.
+
+*Joint first authors
+
+EMBO J., in press.
+                              
+ABSTRACT
+
+   The ecmA gene is expressed in Dictyostelium prestalk cells and is
+inducible by DIF, a low molecular weight lipophilic substance. The
+ecmB gene is expressed in stalk cells and is under negative control by
+two repressor elements. Each repressor element contains two copies of
+the sequence TTGA in an inverted relative orientation. There are
+activator elements in the ecmA promoter that also contain two TTGA
+sequences but in the same relative orientation. Gel retardation assays
+suggest that the same protein binds to the ecmB repressor and the ecmA
+activator. We propose that DIF induces prestalk cell differentiation
+by activating this protein and that the protein also binds to the
+promoters of stalk-specific genes, acting as a repressor that holds
+cells in the prestalk state until culmination is triggered.
+
+-------------------------------------------------------------------
+
+
+Dimer Formation of a Cell-Cell Adhesion Protein, gp64 of the Cellular
+Slime Mold, Polysphondylium pallidum
+
+Ochiai Hiroshi, Hata Katsusuke, Saito Tamao, Funamoto Satoru, and
+Nakata Nobuyuki
+
+Division of Biological Sciences, Graduate School of Science, Hokkaido
+University, Sapporo, 060 Japan
+
+Plant Cell Physiology, in press.
+
+SUMMARY
+
+   The cellular slime mold, Polysphondylium pallidum, has two
+EDTA-resistant types of cell-cell adhesion.  The major component of
+them has been identified as a glycoprotein with a molecular mass of 64
+kDa on SDS-PAGE (referred to as gp64).  We found that a substantial
+amount of the gp64 run as dimer, when gp64 was dissolved in SDS-sample
+buffer without 2-mercaptoethanol and then subjected to
+electrophoresis.  The occurrence of a homophilic dimer was
+demonstrated by analyzing the dimer-like band on a gel for its amino
+acid sequence and amino acid composition.  The dimer-like band also
+was analyzed by three sorts of monoclonal antibodies, two of which
+recognize respectively a conformational epitope and a denatured
+epitope of the protein moiety of gp64.  The data indicate that the
+native conformation of gp64 is necessary for dimer formation.  The
+cellular slime mold Polysphondylium pallidum is like a related
+species, Dictyostelium discoideum, whose cells migrate in response to
+a chemoattractant secreted from center cells and finally form a
+multicellular aggregate (Gerisch et al. 1980).  When cells of the two
+species are mixed and plated onto a solid agar surface, they sort out
+into separate aggregates not only because of differences in
+chemoattractants but also because of species-specific cell-cell
+adhesion (Gerisch et al. 1980).  D.  discoideum has two types of
+adhesion systems, named the contact site A and the contact site B
+(Beug et al. 1973).  The contact site A was identified as a
+glycoprotein with a molecular mass of 80 kDa (Mueller et al ., 1979)
+and has been well studied.  Its cDNA sequence (Noegel et al., 1986),
+an adhesion site (Kamboj et al. 1989) and a glycosyl
+phosphatidylinositol anchor (Stadler et al. 1989) have been reported.
+The contact site B also has been preliminary identified as a gp120
+(Chadwick et al. 1984), or a gp 24 (Knecht et al. 1987).  In the
+related species P. pallidum two EDTA-resistant types of cell adhesion
+have been described (Bozzaro and Gerisch, 1978).  One is a minor
+component which begins to appear at aggregation stage and the other is
+a major component expressed already during growth phase and persisting
+until later stages.  The major component was identified as s
+glycoprotein with a molecular mass of 64 kDa on SDS-PAGE (referred to
+as gp64) (Bozzaro et al. 1981).  Monoclonal antibodies against
+purified gp64 completely blocked cell-cell adhesion of
+aggregation-competent P. pallidum cells and this blocking activity was
+neutralized with L-fucose (Toda et al 1984).  This result indicates
+that the carbohydrate moiety of gp64 is involved in cell-cell
+adhesion.  Recently, by subjecting purified gp64 to electrophoresis,
+we recognized the presence of a dimer-like molecule on SDS-gel.
+Bozzaro et al. (1981) also noticed the same thing, but they did not
+analyze the nature of the dimer though they suggested that gp64 has a
+tendency to dimerize.  We show here that the dimer-like product is a
+homophilic dimer of gp64 molecules and that the monomers might have a
+rather strong affinity to interact to each other.
+
+----------------------------------------------------------------------
+
+Antisense RNA Inactivation of Gene Expression of a Cell-Cell Adhesion
+Protein (gp64) in the cellular slime mold Polysphondylium pallidum
+
+Satoru Funamoto and Hiroshi Ochiai
+
+Division of Biological Sciences, Graduate School of Science, Hokkaido
+University, Sapporo, 060 Japan
+
+J. Cell Sci. in press
+
+SUMMARY
+
+   The gp64 protein of Polysphondylium pallidum has been shown to
+mediate EDTA-stable cell-cell adhesion.  To explore the functional
+role of gp64, we made an antisense RNA expression construct designed
+to prevent the gene expression of gp64; the construct was introduced
+into the cells, and the resultant was characterised.  The antisense
+RNA-expressing clone L3mc2 which had just been harvested at the growth
+phase tended to re-form in aggregates smaller in size than the
+parental cells in either the presence or absence of 10 mM EDTA.  In
+contrast, 6.5-hours starved L3mc2 cells remained considerably
+dissociated from each other after 5-minutes gyrating, although then
+gradually increased aggregation by 50% during a further 55-minutes
+gyrating, in the presence of 10 mM EDTA.  Correspondingly, L3mc2
+lacked specifically the cell-cell adhesion protein, gp64.  We
+therefore conclude that gp64 protein is involved in forming the
+EDTA-resistant cell-cell contact.  In spite of the absence of gp64,
+L3mc2 exhibited normal developmental processes, a fact which
+demonstrates that another cell-cell adhesion system exists in the
+development of Polysphondylium.  This is the first report which an
+antisense RNA technique was successfully applied to Polysphondylium.
+
+---------------------------------------------------------------------
+
+Identification of a novel all-cis-5,9,12-heptadecatrienoic acid in the
+cellular slime mold Polysphondylium pallidum
+
+Tamao Saito and Hiroshi Ochiai
+
+Division of Biological Sciences, Graduate School of Science, Hokkaido
+University, Sapporo, 060 Japan
+
+Lipids, in press.
+
+Summary
+
+   All-cis-5,9,12-heptadecatrienoic acid, was identified in the
+cellular slime mold Polysphondylium pallidum.  The structural
+elucidation was accomplished by capillary GC, argentation TLC and
+GC/MS.  This fatty acid has not been reported previously.
+
+
+-----------------------------------------------------------------------
+
+[End CSM News, volume 6, number 5]

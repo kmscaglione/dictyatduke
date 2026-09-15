@@ -1,0 +1,164 @@
+dictyNews
+Electronic Edition
+Volume 28, number 13
+May 18, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+A CHS/Beige homologue is involved in biogenesis of Dictyostelium secretory 
+lysosomes
+
+Steve J. Charette and Pierre Cosson
+
+Universite de Geneve, Centre Medical Universitaire, Departement de 
+Physiologie Cellulaire et Metabolisme, 1 rue Michel Servet, CH-1211 Geneva 4, 
+Switzerland.
+
+Journal of Cell Science, in press
+
+The Chediak-Higashi syndrome (CHS) is characterized at the cellular level by 
+a defect in the ability of cells to secrete lysosomes. However the precise 
+step affected in the secretion process is unclear to date. This question was 
+addressed by characterizing Dictyostelium discoideum cells where LVSB, the 
+homologue of the CHS gene, was mutated. As observed in mammalian cells, 
+secretion of lysosome-derived compartments was affected in lvsB mutant cells. 
+This defect was mirrored by a decrease in the number of fusion-competent 
+post-lysosomal compartments, which in Dictyostelium can be clearly 
+distinguished from lysosomes. In addition, the transfer of endocytosed 
+particles from lysosomes to post-lysosomes was strongly diminished in lvsB 
+mutant cells compared to wild-type cells. These results suggest that LvsB is 
+primarily involved in transport from lysosomes to post-lysosomes, and thus 
+plays a critical role in the maturation of lysosomes into fusion-competent 
+post-lysosomal compartments. 
+
+
+Submitted by: Steve Charette [steve.charette@medecine.unige.ch]
+--------------------------------------------------------------------------------
+
+
+GrlJ, a Dictyostelium GABAB-like receptor with roles in post-aggregation 
+development
+
+Yogikala Prabhu 1,4, Rolf Mueller 1, Christophe Anjard 3 and 
+Angelika A.Noegel 1,2*
+
+1Institute of Biochemistry I, Centre for Biochemistry, Medical Faculty, 
+University of Cologne, Joseph-Stelzmann-Str. 52, D-50931 Kšln, Germany 
+2Centre for Molecular Medicine Cologne, University of Cologne, 
+Joseph-Stelzmann-Str. 52, 50931 Kšln, Germany
+3Center for Molecular Genetics, Division of Biological Sciences, University 
+of California San Diego, La Jolla, CA 92093-0368, USA
+4Present address: Cell Biology and Metabolism Branch, National Institute of 
+Child Health and Human Development, National Institutes of Health, 
+Bethesda, MD 20892, USA
+
+
+BMC Developmental Biology, in press 
+
+Background: The G-protein-coupled receptor (GPCR) family represents the 
+largest and most important group of targets for chemotherapeutics. They are 
+extremely versatile receptors that transduce signals as diverse as biogenic 
+amines, purins, odorants, ions and pheromones from the extracellular 
+compartment to the interior via biochemical processes involving GTP-binding 
+proteins. Until recently, the cyclic AMP receptors (cARs) were the only known 
+G protein coupled receptors in Dictyostelium discoideum. The completed genome 
+sequence revealed the presence of several families of GPCRs in Dictyostelium, 
+among them members of the family 3 of GPCRs, the GABAB/ glutamate like 
+receptor family, which in higher eukaryotes is involved in neuronal signaling. 
+
+Results: D. discoideum has seventeen Family 3 members of GPCRs, denoted GrlA 
+through GrlR. Their transcripts are detected throughout development with 
+increased levels during early and late development. We have examined here 
+GrlJ. GFP-tagged GrlJ localises to the plasmamembrane and to internal 
+membranes. Inactivation of the grlJ gene leads to precocious development, 
+and the mutant completes development ~6 hours earlier. Alterations were also 
+noted at the slug stage and in spore formation. grlJ- slugs were longer 
+and broke apart several times on their way to culmination forming smaller 
+but proportionate fruiting bodies. Spores from grlJ- fruiting bodies were 
+malformed and less viable, although the spore differentiation factors were 
+synthesized and sensed normally. Expression of a GFP-tagged full length GrlJ 
+rescued the phenotype.
+
+Conclusion: Our data suggest that GrlJ acts at several stages of 
+Dictyostelium development and that it is a negative regulator in Dictyostelium 
+development. 
+
+
+Submitted by: Angelika A.Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Possible roles of the endocytic cycle in cell motility
+
+David Traynor and Robert R. Kay
+
+J. Cell Sci., in press
+
+
+Starving, highly motile Dictyostelium cells maintain an active endocytic 
+cycle, taking up their surface about every 11 minutes.  Cell motility 
+depends on a functional NSF protein Ð also essential for endocytosis and 
+membrane trafficking generally Ð and we therefore investigated possible 
+ways in which the endocytic cycle might be required for cell movement.  
+First, NSF, and presumably membrane trafficking, are not required for the 
+initial polarization of the leading edge in a cyclic-AMP gradient.  Second, 
+we can detect no evidence for membrane flow from the leading edge, as 
+photobleached or photoactivated marks in the plasma membrane move forward 
+roughly in step with the leading edge, rather than backwards from it.  Third, 
+we find that the surface area of a cell Ð measured from confocal 
+reconstructions Ð constantly fluctuates during movement as the cell projects 
+pseudopodia and otherwise changes shape; increases of 20-30% can often occur 
+over a few minutes.  These fluctuations cannot be explained by reciprocal 
+changes in filopodial surface area and they substantially exceed the 2 Ð3% 
+by which membranes can stretch.  We propose that the endocytic cycle has a 
+key function in motility by allowing adjustment of cell surface area to 
+match changes in shape; and that without this function, movement is 
+severely impaired.
+
+
+Submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Locally controlled inhibitory mechanisms are involved in eukaryotic
+GPCR-mediated chemosensing
+
+Xuehua Xu1, Martin Meier-Schellersheim2, Jianshe Yan1 and Tian Jin1*
+
+
+J. Biol. Chem., in press
+
+GPCR signaling mediates a balance of excitatory and inhibitory
+activities that regulate Dictyostelium chemosensing to cAMP. The
+molecular nature and kinetics of these inhibitors are unknown. We report
+that transient cAMP stimulations induce PIP3 responses without a
+refractory period, suggesting that GPCR-mediated inhibition accumulates
+and decays slowly. Moreover, exposure to cAMP gradients leads to
+asymmetric distribution of the inhibitory components. The gradients
+induce a stable accumulation of the PIP3 reporter PHCrac-GFP in the
+front of cells near the cAMP source. Rapid withdrawal of the gradient
+led to the re-association of G-protein subunits, and the return of the
+PIP3 phosphatase PTEN and PHCrac-GFP to their pre-stimulus distribution.
+Reapplication of cAMP stimulation produces a clear PHCrac-GFP
+translocation to the back but not to the front, indicating that a
+stronger inhibition is maintained in the front of a polarized cell. Our
+study demonstrates a novel spatiotemporal feature of currently unknown
+inhibitory mechanisms acting locally on the PI3K activation pathway.
+
+
+Submitted by: Tian Jin [TJIN@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 28, number 13]

@@ -1,0 +1,201 @@
+Dicty News
+Electronic Edition
+Volume 12, number 1
+January 9, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=========================
+  PostDoctoral Position
+=========================
+
+POSTDOCTORAL POSITION in Molecular Biology of Cell Differentiation in 
+Dictyostelium  at Virginia Tech University.  The project is funded by NSF 
+and involves a phosphatase activity (5’NU)  that appears during the time 
+course of cell differentiation in Dictyostelium.  The enzyme becomes 
+restricted to a narrow band of cells forming the interface between the 
+two differentiating cells types. We have two major goals: (1) to identify 
+the role played by this gene in the regulation of morphogenesis by 
+disruption of expression of the 5’NU gene, overexpression and ectopic 
+expression.  The resulting effects on morphogenesis will be determined 
+through the analysis of cell-type specific markers and genes that are 
+indicative of the progression of differentiation in the two major cell 
+types; (2) to identify the regulatory mechanisms that result in cell-
+specific expression of the 5’NU gene. This will involve an analysis of 
+the transcriptional regulation of the 5’NU gene, by identification of 
+cis-acting factors that regulate the temporal and spatial expression, 
+and identification, purification, and cloning of trans-acting factors 
+that regulate expression of the gene.
+
+Virginia Tech University is home to 25,000 students.  An interdepartmental 
+program in Molecular and Cellular Biology offers a variety of opportunities 
+for interaction with other laboratories on campus as well as participation 
+in a number of semimar series in this research area.  The University campus 
+in situated in the southwestern mountains of Virginia, an area known for 
+its clean air and an abundance of outdoor activites.
+
+For further information contact Dr. Charles L. Rutherford, 2119 Derring Hall, 
+Virginia Tech University, Blacksburg, VA 24061; phone 540 231-5349; 
+email rutherfo@vt.edu.
+
+
+
+=============
+  Abstracts
+=============
+
+A Potentially Exhaustive Screening Strategy Reveals Two Novel Divergent 
+Myosins in Dictyostelium.
+
+Eva C. Schwarz, Heidrun Geissler, and Thierry Soldati
+
+Department of Molecular Cell Reserach, Max-Planck-Institut for Medical 
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany.
+
+Cell Biochemistry and Biophysics, in press
+
+Abstract 
+
+   In recent years, the myosin superfamily has kept expanding at an 
+explosive rate, but the understanding of their complex functions 
+has been lagging.  Therefore, Dictyostelium discoideum, a genetically 
+and biochemically tractable eukaryotic amoeba, appears as a powerful 
+model organism to investigate the involvement of the acto-myosin 
+cytoskeleton in a variety of cellular tasks. Due to the relatively 
+high degree of functional redundancy, such studies would be greatly 
+facilitated by the prior knowledge of the whole myosin repertoire 
+in this organism. Here, we present a strategy based on PCR 
+amplification using degenerate primers and followed by negative 
+hybridization screening which led to the potentially exhaustive 
+identification of members of the myosin family in D. discoideum. 
+Two novel myosins were identified and their genetic loci mapped 
+by hybridization to an ordered YAC library. Preliminary inspection 
+of myoK and myoM sequences revealed that, despite carrying most 
+of the hallmarks of myosin motors, both molecules harbor features 
+surprisingly divergent from most known myosins.
+
+----------------------------------------------------------------------------
+
+Phosphofructokinase from Dictyostelium discoideum is a potent 
+inhibitor of tubulin polymerization
+
+Ferenc Orosz§, Belén Santamaría||, Judit Ovádi§, and Juan J. Aragón*,||
+
+Departamento de Bioquimica UAM and Instituto de Investigaciones
+Biomédicas CSIC, Facultad de Medicina de la Universidad Autónoma de 
+Madrid, Madrid, Spain.
+§Institute of Enzymology, Biological Research Center, Hungarian Academy of
+Sciences, Budapest, Hungary
+
+Biochemistry, in press.
+
+Abstract
+
+   We identified the non-allosteric phosphofructokinase from the slime
+mold Dictyostelium discoideum as a potent protein factor that inhibits the
+rate of polymerization of tubulin at a molar ratio of 1 molecule to about
+300 tubulin dimers for half-maximal action (IC50 = 32 nM). This effect was
+(i) assessed by turbidity measurements, pelleting of microtubules and 
+electron microscopy, (ii) observed when tubulin assembly was induced by 
+taxol as well as by GTP in the presence of microtubule associated proteins 
+or glutamate, and (iii) specific as it was not produced by the 
+phosphofructokinase from rabbit muscle. Also in contrast to the latter, 
+neither tubulin nor microtubules modified the catalytic activity of the 
+slime mold isozyme. Immunoelectron microscopy provided further evidence 
+that D. discoideum phosphofructokinase physically interacts with tubulin 
+leading to the formation of aggregates. The process seems to be reversible 
+since microtubules eventually formed in the presence of the inhibitor with 
+concomitant reduction of tubulin aggregates. Limited proteolysis by 
+subtilisin showed that the hypervariable C-termini of tubulin is not 
+involved in the interaction with the enzyme. The possible physiological 
+relevance of this novel function of D. discoideum phosphofructokinase 
+different from its glycolytic action is discussed.
+
+----------------------------------------------------------------------------
+
+Differences in the ionic interaction of actin with the motor domains of
+non-muscle and muscle myosin II
+
+Juliette Van Dijk*, Marcus Furch, Jean Derancourt*, Renu Batra, Menno L.W.
+Knetsch, Dietmar J. Manstein  & Patrick Chaussepied*
+
+*UPR 1086 du CNRS, IFR 24, 1919 route de Mende, 34293 Montpellier Cedex5, 
+France and Max-Planck-Institut für Medizinische Forschung, Jahnstr. 29, 
+D-69120 Heidelberg, Germany.
+
+Europ. J. Biochem., im press.
+
+Abstract
+
+   Changes in the actin-myosin interface are thought to play an important 
+role in microfilament-linked cellular movements. In this study, we compared 
+the actin binding properties of the motor domain of Dictyostelium discoideum 
+(M765) and rabbit skeletal muscle myosin subfragment-1 (S1). The Dictyostelium 
+motor domain resembles S1(A2) (S1 carrying the A2 light chain) in its 
+interaction with G-actin. Similar to S1(A2), none of the Dictyostelium 
+motor domain constructs induced G-actin polymerization.  The affinity of 
+monomeric actin (G-actin) was 20-fold lower for M765 than for S1(A2) but 
+increasing the number of positive charges in the loop 2 region of the D. 
+discoideum motor domain (residues 613-623) resulted in equivalent affinities 
+of G-actin for M765 and for S1. Proteolytic cleavage and cross-linking 
+approaches were used to show that M765, similar to S1, interacts via the 
+loop 2 region with filamentous actin (F-actin). For both types of myosin, 
+F-actin prevents trypsin cleavage in the loop 2 region and F-actin segment 
+1-28 can be cross-linked to loop 2 residues by a carbodiimide-induced 
+reaction. In contrast to S1, loop 559-565 of D.  discoideum myosin was 
+not cross-linked to F-actin, probably due to the lower number of positive 
+charges. These results confirm the importance of the loop 2 region of 
+myosin for the interaction with both G-actin and F-actin, regardless 
+of the source of myosin. The observed differences in the way in which 
+M765 and S1 interact with actin may be linked to more general differences 
+in the structure of the actomyosin-interface of muscle and non-muscle myosins.
+
+----------------------------------------------------------------------------
+Architectural Dynamics and Gene Replacement of Coronin Suggest its Role 
+in Cytokinesis
+
+Yoshio Fukui *1), Sarah Engler *2), Shinya Inoué *3), and Eugenio L. 
+de Hostos *2)
+
+*1) Cell and Molecular Biology, Northwestern University Medical School, 
+Chicago, Illinois 60611,
+*2) Biochemistry and Cell Biology, Rice University, Houston, Texas 77005,
+(Current Address of E. L. de Hostos) Tropical Disease Research Unit, 
+University of California, San Francisco, CA 94121
+*3) Marine Biological Laboratory, Woods Hole, Massachusetts 02543.
+
+Cell Motility and Cytoskeleton, in press.
+
+Abstract
+
+   Coronin is a ubiquitous actin-binding protein representing a member of 
+proteins portraying a WD-repeat sequence, including the b-subunits of 
+trimeric G-proteins.  Coronin has been suggested to participate in multiple, 
+actin-based physiological activities such as cell movement and cell division.  
+Although, the slow growth of coronin deletion mutants has been attributed to 
+a defect in the fluid-phase uptake of nutrients, the exact role of coronin 
+in cytoskeletal organization has not been elucidated.  In this study, we 
+examined a role of coronin in cytokinesis by analyzing the effect of coronin 
+deletion on the actin cytoskeleton and its dynamic distribution using a 
+green fluorescent protein (GFP)-coronin fusion protein.  We show that GFP-
+coronin works similarly to natural coronin in vivo and in vitro.  In live 
+cells, GFP-coronin was found to accumulate into the cleavage furrow during 
+cytokinesis.  The fluorescence pattern suggests its association to the 
+contractile ring throughout cytokinesis.  Interestingly, a substantial 
+amount of coronin was also bound to F-actin at the prospective posterior 
+cortex of the daughter cells.  We also show that the coronin null cells 
+reveal irregularities in organization of actin and myosin II and divide 
+by a process identical to the traction-mediated cytofission reported in 
+myosin II mutants.  Overall, this study suggests that coronin is essential 
+for organizing the normal actin cytoskeleton and plays a significant role 
+in cell division.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 1]
+
+  

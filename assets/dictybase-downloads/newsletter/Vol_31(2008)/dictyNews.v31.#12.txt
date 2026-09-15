@@ -1,0 +1,188 @@
+dictyNews
+Electronic Edition
+Volume 31, number 12
+October 18, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium discoideum Paxillin Regulates Actin-Based Processes
+M. Berenice Duran, Asif Rahman, Max Colten and Derrick Brazill
+
+Department of Biological Sciences, Center for the Study of Gene Structure 
+and Function
+
+Hunter College of the City University of New York, New York, NY 10021
+
+
+Protist, in press
+
+Paxillin is a key player in integrating the actin cytoskeleton with adhesion, 
+and thus is essential to numerous cellular processes including proliferation, 
+differentiation and migration in animal cells.  PaxB, the Dictyostelium 
+discoideum orthologue of paxillin, has been shown to be important for 
+adhesion and development, much like its mammalian counterpart.  Here, we 
+use the overproduction of PaxB to gain better insight into its role in 
+regulating the actin cytoskeleton and adhesion.  We find that PaxB 
+overexpressing (PaxBOE) cells can aggregate and form mounds normally, but 
+are blocked in subsequent development.  This arrest can be rescued by 
+addition of wild-type cells, indicating a non-cell autonomous role for PaxB.  
+PaxBOE cells also have  alterations in several actin-based processes, 
+including adhesion, endocytosis, motility and chemotaxis.  PaxBOE cells 
+exhibit an EDTA-sensitive increase in cell-cell cohesion, suggesting that 
+PaxB-mediated adhesion is Ca2+ or Mg2+ dependent.  Interestingly, cells 
+overexpressing paxB are less adhesive to the substratum.  In addition, 
+PaxBOE cells display decreased motility under starved conditions, decreased 
+endocytosis, and are unable to efficiently chemotax up a folate gradient.  
+Taken together, the data suggest that proper expression of PaxB is vital 
+for the regulation of development and actin-dependent processes.
+
+
+Submitted by: Derrick Brazill [Brazill@GENECTR.HUNTER.CUNY.EDU]
+--------------------------------------------------------------------------------
+
+
+Regulation of Rap1 Activity is Required for Differential Adhesion, 
+Cell Type Patterning and Morphogenesis in Dictyostelium
+
+Katie Parkinson1, Parvin Bolourani2, David Traynor3, Nicola L. Aldren1, 
+Robert R. Kay3, Gerald Weeks2 and Christopher R.L. Thompson1*
+
+1Faculty of Life Sciences, University of Manchester, Michael Smith Building, 
+Oxford Road, Manchester, M13 9PT
+2Department of Microbiology and Immunology, University of British Columbia, 
+Vancouver, British Columbia, V6T 1Z3
+3MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH
+
+*Author for correspondence (christopher.thompson@manchester.ac.uk)
+
+
+Journal of Cell Science, in press
+
+Regulated cell adhesion and motility play important roles during growth, 
+development and tissue homeostasis.  Consequently great efforts have been 
+made to identify genes that control these processes.  One candidate is Rap1, 
+as it has been implicated in the regulation of adhesion and motility in cell 
+culture.  In order to further study the role of Rap1 during multicellular 
+development, we have generated a mutant in a potential Rap1 GTPase activating 
+protein (RapGAPB) in Dictyostelium.  rapGAPB- cells have increased levels of 
+active Rap1 compared to wild type cells, indicating that RapGAPB regulates 
+Rap1 activity.  Furthermore, rapGAPB- cells exhibit hallmark phenotypes of 
+other known mutants with hyperactivated Rap1, including increased substrate 
+adhesion and abnormal F-actin distribution.  However, unlike these other 
+mutants, rapGAPB- cells do not exhibit impaired motility or chemotaxis, 
+indicating that RapGAPB may only regulate specific roles of Rap1.  
+Importantly, we also found that RapGAPB regulates Rap1 activity during 
+multicellular development and is required for normal morphogenesis.  
+Firstly, streams of aggregating rapGAPB- cells break up as a result of 
+decreased cell-cell adhesion.  Secondly, rapGAPB- cells exhibit cell 
+autonomous defects in prestalk cell patterning.  Using cell type specific 
+markers, we demonstrate that RapGAPB is required for the correct sorting 
+behaviour of different cell types.  Finally, we show that inactivation 
+of RapGAPB affects prestalk and prespore cell adhesion.  We therefore 
+propose that a possible mechanism for RapGAPB regulated cell sorting is 
+through differential adhesion. 
+
+
+Submitted by: Chris Thompson [christopher.thompson@manchester.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Microarray phenotyping places cyclase associated protein CAP at the crossroad 
+of signaling pathways reorganizing the actin cytoskeleton in Dictyostelium
+
+Hameeda Sultana(1), Girish Neelakanta(1), Ludwig Eichinger(1), 
+Francisco Rivero(1,2),
+Angelika A. Noegel(1)
+
+1Center for Biochemistry, Medical Faculty, Center for Molecular Medicine 
+Cologne (CMMC) and Cologne Excellence Cluster on Cellular Stress Responses in 
+Aging-Associated Diseases (CECAD), University of Cologne, 50931 Köln, Germany. 
+2The Hull York Medical School and Department of Biological Sciences, 
+University of Hull, Hull HU6 7RX, UK
+
+
+Exp. Cell Res., in press
+
+Large-scale gene expression analysis has been applied recently to uncover 
+groups of genes that are co-regulated in particular processes. Here we 
+undertake such an analysis on CAP, a protein that participates in the 
+regulation of the actin cytoskeleton and in cAMP signaling in Dictyostelium. 
+Microarray analysis revealed that loss of CAP altered the expression of many 
+cytoskeletal components. One of these, the Rho GDP-dissociation inhibitor 
+RhoGDI1, was analyzed further. RhoGDI1 null cells expressed lower amounts 
+of CAP, which failed to accumulate predominantly at the cell cortex. To 
+further position CAP in the corresponding signal transduction pathways we 
+studied CAP localization and cellular functioning in mutants that have 
+defects in several signaling components. CAP showed correct localization 
+and dynamics in all analyzed strains except in mutants with deficient cAMP 
+dependent protein kinase A activity, where CAP preferentially accumulated 
+in crown shaped structures. Ectopic expression of CAP improved the efficiency 
+of phagocytosis in Gbeta-deficient cells and restored the pinocytosis, 
+morphology and actin distribution defects in a PI3 kinase double mutant 
+(pi3k1/2 null). Our results show that CAP acts at multiple crossroads and 
+links signaling pathways to the actin cytoskeleton either by physical 
+interaction with cytoskeletal components or through regulation of their 
+gene expression.
+
+
+Submitted by: Francisco Rivero [f.rivero-crespo@hull.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Spatiotemporal Regulation of Ras Activity Provides Directional Sensing
+
+Sheng Zhang1, Pascale G. Charest1, and Richard A. Firtel
+
+1. Co-first authors
+
+Section of Cell and Developmental Biology
+Division of Biological Sciences
+Center for Molecular Genetics
+University of California, San Diego
+9500 Gilman Drive
+La Jolla, California 92093-0380
+
+
+Curr. Biol., in press
+
+Cells’ ability to detect and orient themselves in chemoattractant
+gradients has been the subject of numerous studies, but
+the underlying molecular mechanisms remain largely unknown
+[1]. Ras activation is the earliest polarized response
+to chemoattractant gradients downstream from heterotrimeric
+G proteins in Dictyostelium, and inhibition of Ras signaling
+results in directional migration defects [2]. Activated
+Ras is enriched at the leading edge, promoting the localized
+activation of key chemotactic effectors, such as PI3K and
+TORC2 [2–5]. To investigate the role of Ras in directional
+sensing, we studied the effect of its misregulation by using
+cells with disrupted RasGAP activity. We identified an ortholog
+of mammalian NF1, DdNF1, as a major regulator of Ras
+activity in Dictyostelium. We show that disruption of nfaA
+leads to spatially and temporally unregulated Ras activity,
+causing cytokinesis and chemotaxis defects. By using unpolarized,
+latrunculin-treated cells, we show that tight regulation
+of Ras is important for gradient sensing. Together, our
+findings suggest that Ras is part of the cell’s compass and
+that the RasGAP-mediated regulation of Ras activity affects
+directional sensing.
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+==============================================================
+[End dictyNews, volume 31, number 12]

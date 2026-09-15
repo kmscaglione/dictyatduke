@@ -1,0 +1,266 @@
+Dicty News
+Electronic Edition
+Volume 18, number 10
+June 1, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+===========================================
+ DictyBase and Stock Center Funded By NIH
+===========================================
+
+We are pleased to announce that the National Institutes of Health has 
+notified us that they will be funding both DictyBase and The Dictyostelium
+stock center.  The support of the Dictyostelium community has been 
+instrumental in obtaining the support for these resources.  We look 
+forward to working with you to establish these resources.
+
+Rex Chisholm, DictyBase
+Jakob Franke and Rich Kessin, Stock Center
+
+
+=============
+  Abstracts
+=============
+
+The BEACH Family of Proteins: Phylogenetic & Functional Analysis of Six 
+Dictyostelium BEACH Proteins.
+
+Ning Wang, Wei-I Wu, and Arturo De Lozanne
+
+Section of Molecular Cell & Developmental Biology 
+and Institute for Cellular and Molecular Biology,
+University of Texas at Austin, Austin, TX 78712.
+a.delozanne@mail.utexas.edu
+
+Journal of Cellular Biochemistry, in press.
+
+ABSTRACT
+
+The BEACH-domain containing proteins constitute a new family of proteins 
+found in all eukaryotes.  The function of these proteins, which include the 
+Chediak-Higashi syndrome protein, Neurobeachin, LvsA and FAN, is still poorly 
+understood.  To understand the diversity of this novel protein family, we 
+analyzed a large array of BEACH-family protein sequences from several 
+organisms.  Comparison of all these sequences suggests that they can be 
+classified into five distinct groups that may represent five distinct 
+functional classes.  In Dictyostelium we identified six proteins in this 
+family, named LvsA-F, that belong to four of those classes.  To test the 
+function of these proteins in Dictyostelium we created disruption mutants 
+in each of the lvs genes.  Phenotypic analyses of these mutants indicate 
+that LvsA is required for cytokinesis and osmoregulation and LvsB functions 
+in lysosomal traffic.  The LvsC-F proteins are not required for these or 
+other processes such as growth and development.  These results strongly 
+support the concept that BEACH proteins from different classes have distinct 
+cellular functions.  Having six distinct BEACH proteins, Dictyostelium 
+should be an excellent model system to dissect the molecular function of 
+this interesting family of proteins.
+
+-----------------------------------------------------------------------------
+
+Disruption of the gene encoding the cell adhesion molecule DdCAD-1 leads to 
+aberrant cell sorting and cell-type proportioning during Dictyostelium 
+development
+
+Estella Wong*, Chunzhong Yang*, Jun Wang*, Danny Fuller, William F. Loomis, 
+and Chi-Hung Siu*
+
+1 *Banting and Best Department of Medical Research and Department of 
+Biochemistry, University of Toronto, Toronto, Ontario M5G 1L6, Canada; and 
+Center for Molecular Genetics, Department of Biology, University of California 
+at San Diego, La Jolla, California 92037
+
+Development, in press.
+
+SUMMARY
+
+The cadA gene in Dictyostelium encodes the Ca2+-dependent cell adhesion 
+molecule DdCAD-1, which is expressed soon after the initiation of development.  
+To investigate the biological role of DdCAD-1, the cadA gene was disrupted by 
+homologous recombination.  The cadA-null cells showed a 50% reduction in 
+EDTA-sensitive cell adhesion.  The remaining EDTA-sensitive adhesion sites 
+were resistant to dissociation by anti-DdCAD-1 antibody, suggesting that they 
+were distinct adhesion sites. Cells lacking DdCAD-1 were able to complete 
+development and form fruiting bodies.  However, they displayed abnormal slug 
+morphology and culmination was delayed by ~6 hours.  The yield of spores was 
+reduced by ~50%.  The proportion of prestalk cells in cadA- slugs showed a 
+2.5-fold increase over the parental strain.  When cadA- cells were 
+transfected with pcotB::GFP to label prespore cells, aberrant cell sorting 
+patterns in slugs became apparent.  When mutant prestalk cells were mixed 
+with wild-type prespore cells, mutant prestalk cells were unable to return 
+to the anterior position of chimeric slugs, suggesting defects in the 
+sorting mechanism.  The wild-type phenotype was restored when cadA- cells 
+were transfected with a cadA-expression vector.  These results indicate 
+that, in addition to cell-cell adhesion, DdCAD-1 plays a role in cell type 
+proportioning and pattern formation.
+
+-----------------------------------------------------------------------------
+
+Spatial and temporal regulation of 3-phosphoinositides by PI3 kinase and 
+PTEN mediates chemotaxis
+
+Satoru Funamoto, Ruedi Meili1, Susan Lee, Lisa Parry, and Richard A. Firtel
+
+Cell, in press.
+
+Abstract
+
+   We have investigated the mechanisms of leading edge formation in 
+chemotaxing Dictyostelium cells.  We demonstrate that while phosphatidyl 
+inositol-3 kinase (PI3K) transiently translocates to the plasma membrane 
+in response to chemoattractant stimulation and to the leading edge in 
+chemotaxing cells, while PTEN, a negative regulator of PI3K pathways, exhibits 
+a reciprocal pattern of localization.   By uniformly localizing PI3K along the 
+plasma membrane, we show that chemotaxis pathways are activated along the 
+lateral sides of cells and PI3K can initiate pseudopod formation, providing 
+evidence for a direct instructional role of PI3K in leading edge formation.  
+These findings provide evidence that differential subcellular localization 
+and activation of PI3K and PTEN is required for proper chemotaxis. 
+
+-----------------------------------------------------------------------------
+
+Evidence for a novel, strongly bound acto-S1 complex carrying ADP and 
+phosphate stabilized in the G680V mutant of Dictyostelium myosin II.
+
+Taro Q. P. Uyeda0, Kiyotaka Tokuraku and Bruce Patterson0
+
+0 Gene Discovery Research Center, National Institute of Advanced Industrial 
+Science and Technology (AIST), Tsukuba, Ibaraki 305-8562, Japan, National 
+Institute for Medical Research, Mill Hill, London NW7 1AA, UK. Department of 
+Molecular and Cellular Biology, University of Arizona, Tucson, AZ 85721, USA
+
+Biochemistry, in press.
+
+Abstract
+
+	Gly 680 of Dictyostelium myosin II sits at a critical position within 
+the reactive thiol helices.  We have previously shown that G680V mutant 
+subfragment 1 largely remains in strongly actin-bound states in the presence 
+of ATP.  We speculated that acto-G680V subfragment 1 complexes accumulate in 
+the A0M0ADP0Pi state, based on the biochemical phenotypes conferred by mutations 
+which suppress the G680V mutation in vivo [Wu, Y. et al. (1999) Genetics, 153, 
+107-116].   Here, we report further characterization of the interaction between 
+actin and G680V subfragment 1. Light scattering data demonstrates that the 
+majority of G680V subfragment 1 is bound to actin in the presence of ATP.  These 
+acto-G680V subfragment 1 complexes in the presence of ATP do not efficiently 
+quench the fluorescence of pyrene-actin, unlike those in rigor complexes or in 
+the presence of ADP alone.  Kinetic analyses demonstrated that phosphate 
+release, but not ATP hydrolysis or ADP release, is very slow and rate limiting 
+in the acto-G680V subfragment 1 ATPase cycle.  Single turnover kinetic 
+analysis demonstrates that, during ATP hydrolysis by the acto-G680V 
+subfragment 1 complex, quenching of pyrene fluorescence significantly lags 
+the increase of light scattering.  This is unlike the situation with 
+wild-type subfragment 1, where the two signals have similar rate constants.  
+These data support the hypothesis that the main intermediate during ATP 
+hydrolysis by acto-G680V subfragment 1 is an acto- subfragment 1 complex 
+carrying ADP and Pi, which scatters light but does not quench the pyrene 
+fluorescence and so has a different conformation from the rigor complex.
+
+-----------------------------------------------------------------------------
+
+Pseudopodium Dynamics and Rapid Cell Movement in Dictyostelium Ras 
+Pathway Mutants
+
+Jonathan R. Chubb*, Andrew Wilkins*, Deborah J. Wessels+, David R. 
+Soll+ and Robert Insall*
+
+Cell Motil. Cytoskel., in press.
+
+Abstract
+
+Loss of either of the Ras pathway members RasS or GefB causes growing 
+Dictyostelium cells to move aberrantly rapidly.  In this study, we 
+describe the changes in motility which underlie these phenotypes 
+using computer-assisted 3D dynamic image analysis.  Unexpectedly, the 
+two mutants use different mechanisms to achieve rapid migration.  The 
+rasS- cells' motility is characterised by highly dynamic cell 
+morphology, with rapidly extending and retracting pseudopodia.  The 
+gefB- cells do not have an unusually dynamic morphology, and achieve 
+their efficient translocation by the continual remodelling of an 
+existing dominant anterior pseudopodium.  In spite of these dramatic 
+changes in pseudopodium behaviour, the underlying motility cycle of 
+both mutants remains normal.  The levels of F-actin in both mutant 
+cell lines are significantly elevated with respect to the wild-type 
+parental cells, suggesting a possible biochemical basis for these 
+emphatic phenotypes.
+
+-----------------------------------------------------------------------------
+
+Myosin II dynamics in Dictyostelium: Determinants for filament assembly and 
+translocation to the cell cortex during chemoattractant responses
+
+Stephanie Levi, Mark V. Polyakov, and Thomas T. Egelhoff
+
+Department of Physiology and Biophysics, Case Western Reserve School of 
+Medicine, Cleveland, OH
+
+Cell Motility and the Cytoskeleton, IN PRESS
+
+ABSTRACT
+
+In the simple amoeba Dictyostelium discoideum, myosin II filament assembly 
+is regulated primarily by the action of a set of myosin heavy chain (MHC) 
+kinases and by MHC phosphatase activity.  Chemoattractant signals acting 
+via G-protein coupled receptors lead to rapid recruitment of myosin II to 
+the cell cortex, but the structural determinants on myosin necessary for 
+translocation, and the second messengers upstream of MHC kinases and 
+phosphatases are not well understood.  We report here the use of GFP-myosin 
+II fusions to characterize the domains necessary for myosin II filament 
+assembly and cytoskeletal recruitment during responses to global 
+stimulation with the developmental chemoattractant cAMP.  Analysis 
+performed with GFP-myosin fusions, and with latrunculin A-treated cells 
+demonstrated that F-actin binding via the myosin motor domain together with 
+concomitant filament assembly mediates the rapid cortical translocation 
+observed in response to chemoattractant stimulation.  A "headless" 
+GFP-myosin construct lacking the motor domain was unable to translocate to 
+the cell cortex in response to chemoattractant stimulation, suggesting that 
+myosin motor-based motility may drive translocation.  This lack of 
+localization contrasts with earlier work demonstrating accumulation of the 
+same construct in the cleavage furrow of dividing cells, suggesting that 
+recruitment signals and interactions during cytokinesis differ from those 
+during chemoattractant responses.  Evaluating upstream signaling, we find 
+that iplA null mutants, devoid of regulated calcium fluxes during 
+chemoattractant stimulation, display full normal chemoattractant-stimulated 
+myosin assembly and translocation.  These results indicate that calcium 
+transients are not necessary for chemoattractant-regulated myosin II 
+filament assembly and translocation.
+
+-----------------------------------------------------------------------------
+
+A novel PCR-mediated method for one-tube generation of a gene disruption 
+construct
+
+Hidekazu Kuwayama1, Shinji Obara1, Takahiro Morio1, Mariko Katoh1, Satoru 
+Kuhara2 and Yoshimasa Tanaka1.
+
+1. Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki 
+305-8572, Japan.
+2. Graduate School of Genetic Resources Technology, Kyushu University, 
+Fukuoka, 812-8581, Japan.
+
+Biotechnology letters, in press
+
+ABSTRACT
+
+We report a novel PCR-based method for generating a gene disruption 
+construct, which requires no purification of PCR fragments and enables the 
+whole procedure to be completed in one tube very rapidly. The procedure 
+starts with PCR amplification of both the 5' and 3' regions of a particular 
+gene in one tube. Then, exonuclease I is added to the tube to remove the 
+residual primers. After heat inactivation of the enzyme, a marker cassette 
+DNA fragment is added and fusion PCR is performed to build up a gene 
+disruption construct. The gene disruption construct is subsequently 
+amplified with the outermost primers in the amount necessary for 
+transformation. In order to distinguish the gene disruption construct from 
+the remaining intact gene allele, the outermost primers are designed to have 
+GC-rich tag sequences that anneal at a higher temperature, ensuring the 
+specific amplification of the gene disruption construct. 
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 10]
+
+ 

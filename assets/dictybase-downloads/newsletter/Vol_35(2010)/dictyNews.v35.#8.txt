@@ -1,0 +1,128 @@
+dictyNews
+Electronic Edition
+Volume 35, number 8
+October 1, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Ras Proteins Have Multiple Functions In Vegetative Cells Of 
+Dictyostelium
+
+Parvin Bolourani, George Spiegelman and Gerald Weeks
+
+Department of Microbiology and Immunology, Life Sciences Centre, 
+University of British Columbia, Vancouver, B.C., Canada
+
+
+Eukaryotic Cell, in press
+
+During the aggregation of Dictyostelium cells, signaling through RasG 
+is important in regulating cAMP chemotaxis, while signaling through 
+RasC is important in regulating the cAMP relay.  However, RasC is 
+capable of substituting for RasG for chemotaxis, since rasG- null cells 
+are only partially deficient in chemotaxis, while rasC-/rasG- cells are 
+totally incapable of chemotaxis.  In this study we have examined the 
+possible functional overlap between RasG and RasC in vegetative 
+cells by comparing the vegetative cell properties of rasG-, rasC- and 
+rasC-/rasG- cells.  In addition, since RasD, a protein not normally 
+found in vegetative cells, is expressed in vegetative rasG- and 
+rasC-/rasG- cells and appears to partially compensate for the absence 
+of RasG, we have also examined the possible functional overlap 
+between RasG and RasD, by comparing the properties of rasG- and 
+rasC-/rasG- cells with those of the mutant cells expressing higher 
+levels of RasD.  The results of these two lines of investigation show 
+that RasD is capable of totally substituting for RasG for cytokinesis 
+and growth in suspension, while RasC is without effect.  In contrast, 
+for chemotaxis to folate, RasC is capable of partially substituting for 
+RasG, but RasD is totally without effect.  Finally neither RasC nor 
+RasD is able to substitute for the role that RasG plays in regulating 
+actin distribution and random motility.  These specificity studies 
+therefore delineate three distinct and none overlapping functions for 
+RasG in vegetative cells.
+
+
+Submitted by  Geryy Weeks [gerwee@interchange.ubc.ca]
+--------------------------------------------------------------------------------
+
+
+Regulation of the actin cytoskeleton by an interaction of IQGAP 
+related protein GAPA with Filamin and Cortexillin I
+
+Subhanjan Mondal, Bhagyashri Burgute, Daniela Rieger, Rolf Müller, 
+Francisco Rivero, Jan Faix, Michael Schleicher, Angelika A. Noegel
+
+
+PLoS ONE, accepted
+
+Filamin and Cortexillin are F-actin crosslinking proteins in Dictyostelium 
+discoideum allowing actin filaments to form three-dimensional networks. 
+GAPA, an IQGAP related protein, is required for cytokinesis and localizes 
+to the cleavage furrow during cytokinesis. Here we describe a novel 
+interaction with Filamin which is required for cytokinesis and regulation 
+of the F-actin content. The interaction occurs through the actin binding 
+domain of Filamin and the GRD domain of GAPA. A similar interaction 
+takes place with Cortexillin I. We further report that Filamin associates 
+with Rac1a implying that filamin might act as a scaffold for small 
+GTPases. Filamin and activated Rac associate with GAPA to regulate 
+actin remodelling. Overexpression of filamin and GAPA in the various 
+strains suggests that GAPA regulates the actin cytoskeleton through 
+interaction with Filamin and that it controls cytokinesis through association 
+with Filamin and Cortexillin.
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Phospholipase D Controls Dictyostelium Development By 
+Regulating G Protein Signaling
+
+
+Sibnath Ray, Yi Chen, Joanna Ayoung, Rachel Hanna and 
+Derrick Brazill*
+
+
+Journal of Cellular Signalling, in press
+
+Dictyostelium discoideum cells normally exist as individual amoebae, 
+but will enter a period of multicellular development upon starvation. 
+The initial stages of development involve the aggregation of individual 
+cells, using cAMP as a chemoattractant. Chemotaxis is initiated when 
+cAMP binds to its receptor, cAR1, and activates the associated 
+G protein, Galpha2betagamma. However, chemotaxis will not occur 
+unless there is a high density of starving cells present, as measured 
+by high levels of the secreted quorum sensing molecule, CMF.  We 
+previously demonstrated that cells lacking PldB bypass the need for 
+CMF and can aggregate at low cell density, whereas cells 
+overexpressing pldB do not aggregate even at high cell density.  
+Here, we found that PldB controlled both cAMP chemotaxis and cell 
+sorting.  PldB was also required by CMF to regulate G protein signaling.  
+Specifically, CMF used PldB, to regulate the dissociation of Galpha2 
+from Gbetagamma.  Using fluorescence resonance energy transfer 
+(FRET), we found that along with cAMP, CMF increased the 
+dissociation of the G protein.  In fact, CMF augmented the dissociation 
+induced by cAMP.  This augmentation was lost in cells lacking PldB.  
+PldB appears to mediate the CMF signal through the production of 
+phosphatidic acid, as exogenously added phosphatidic acid phenocopies 
+overexpression of pldB.  These results suggest that phospholipase D 
+activity is required for CMF to alter the kinetics of cAMP-induced G 
+protein signaling.
+
+
+Submitted by  Derrick Brazill [brazill@genectr.hunter.cuny.edu]
+==============================================================
+[End dictyNews, volume 35, number 8]

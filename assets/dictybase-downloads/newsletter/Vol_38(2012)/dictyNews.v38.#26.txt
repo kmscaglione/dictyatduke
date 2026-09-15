@@ -1,0 +1,349 @@
+dictyNews
+Electronic Edition
+Volume 38, number 26
+October 5, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+This edition also contains the contents of the upcoming 
+DICTYOSTELIUM DISCOIDEUM PROTOCOLS II
+
+
+=========
+Abstracts
+=========
+
+
+Malleilactone, a Polyketide Synthase-Derived Virulence Factor Encoded 
+by the Cryptic Secondary Metabolome of Burkholderia pseudomallei 
+Group Pathogens.
+
+Biggins JB, Ternei MA, Brady SF.
+
+Laboratory of Genetically Encoded Small Molecules, The Rockefeller 
+University and Howard Hughes Medical Institute , 1230 York Avenue, 
+New York, New York 10068, United States.
+
+
+J Am Chem Soc. 2012 Aug 15;134(32):13192-5.
+
+Sequenced bacterial genomes are routinely found to contain gene 
+clusters that are predicted to encode metabolites not seen in 
+fermentation-based studies. Pseudomallei group Burkholderia are 
+emerging pathogens whose genomes are particularly rich in cryptic 
+natural product biosynthetic gene clusters. We systematically probed 
+the influence of the cryptic secondary metabolome on the virulence 
+of these bacteria and found that disruption of the MAL gene cluster, 
+which is natively silent in laboratory fermentation experiments and 
+conserved across this group of pathogens, attenuates virulence in 
+animal models. Using a promoter exchange strategy to activate the 
+MAL cluster, we identified malleilactone, a polyketide synthase-
+derived cytotoxic siderophore encoded by this gene cluster. Small 
+molecules targeting malleilactone biosynthesis either alone or in 
+conjunction with antibiotics could prove useful as therapeutics to 
+combat melioidosis and glanders.
+
+
+Submitted by John Biggins [jbiggins@rockefeller.edu]
+---------------------------------------------------------------------------
+
+
+Dynamics of clathrin-mediated endocytosis and its requirement for 
+organelle biogenesis in Dictyostelium.
+
+Macro L, Jaiswal JK, Simon SM.
+
+
+J Cell Sci. 2012 Sep 19. [Epub ahead of print]
+
+The protein clathrin mediates one of the major pathways of 
+endocytosis from the extracellular milieu and plasma membrane. 
+In single cell eukaryotes, such as S.cerevisiae, clathrin is not an 
+essential gene raising the question whether clathrin conveys 
+specific advantages for multicellularity. Furthermore, in contrast 
+to mammalian cells, endocytosis in S.cerevisiae is not dependent 
+on clathrin or the endocytic adaptor molecule AP2. We therefore 
+sought to study the requirement for components of clathrin-
+mediated endocytosis (CME) in another unicellular system, the 
+organism Dictyostelium. We have identified a heterotetrameric 
+AP2 complex in Dictyostelium similar to that in higher eukaryotes. 
+By simultaneously imaging fluorescently tagged clathrin and AP2 
+we find that, similar to higher eukaryotes, these proteins co-localize 
+to membrane puncta that move into the cell together. We show 
+that the contractile vacuole marker protein, dajumin-GFP, is 
+trafficked via the cell membrane and identify it as a cargo that is 
+internalized by CME in a clathrin-dependent, AP2 independent
+ mechanism. This pathway is distinct from other endocytic 
+ mechanisms in Dictyostelium. Our finding that CME is required 
+ for the internalization of contractile vacuole proteins from the 
+ cell membrane explains the contractile vacuole biogenesis defect 
+ in Dictyostelium cells lacking clathrin. Our results lead to the 
+ implication that the machinery for CME and its role in organelle 
+ maintenance appeared early in eukaryotic evolution. We suggest 
+ that dependence of endocytosis on specific components of the 
+ CME pathway may have evolved later as demonstrated by 
+ internalization independent of AP2 function.
+ 
+
+Submitted by Laura Macro [macro.laura@gmail.com]
+---------------------------------------------------------------------------
+
+
+Cyclin-dependent kinase 5 is a calmodulin-binding protein that 
+associates with puromycin-sensitive aminopeptidase in the 
+nucleus of Dictyostelium
+
+Robert J. Huber(a),(1), Andrew Catalano(a), and Danton H. O’Day(a,b)
+
+(a) University of Toronto, Department of Cell & Systems Biology, 
+25 Harbord Street, Toronto, Ontario, Canada M5S 3G5
+
+(b) University of Toronto Mississauga, Department of Biology, 
+3359 Mississauga Road North, Mississauga, Ontario, Canada L5L 1C6
+
+(1)Present Address: Center for Human Genetic Research, 
+Massachusetts General Hospital, Harvard Medical School, 
+Richard B. Simches Research Center, 185 Cambridge Street, 
+Boston, Massachusetts, USA 02114
+
+
+BBA - Molecular Cell Research, in press
+
+Cyclin-dependent kinase 5 (Cdk5) is a serine/threonine kinase 
+that has been implicated in a number of cellular processes. In 
+Dictyostelium, Cdk5 localizes to the nucleus and cytoplasm, 
+interacts with puromycin-sensitive aminopeptidase A (PsaA), 
+and regulates endocytosis, secretion, growth, and multicellular 
+development. Here we show that Cdk5 is a calmodulin 
+(CaM)-binding protein (CaMBP) in Dictyostelium. Cdk5, PsaA, 
+and CaM were all present in isolated nuclei and Cdk5 and 
+PsaA co-immunoprecipitated with nuclear CaM. Although nuclear 
+CaMBPs have previously been identified in Dictyostelium, the 
+detection of CaM in purified nuclear fractions had not previously 
+been shown. Putative CaM-binding domains (CaMBDs) were 
+identified in Cdk5 and PsaA. Deletion of one of the two putative 
+CaMBDs in Cdk5 (132LLINRKGELKLADFGLARAFGIP154) 
+prevented CaM-binding indicating that this region encompasses 
+a functional CaMBD. This deletion also increased the nuclear 
+distribution of Cdk5 suggesting that CaM regulates the 
+nucleocytoplasmic transport of Cdk5. A direct binding between 
+CaM and PsaA could not be determined since deletion of the 
+one putative CaMBD in PsaA prevented the nuclear localization 
+of the deletion protein. Together, this study provides the first 
+direct evidence for nuclear CaM in Dictyostelium and the first 
+evidence in any system for Cdk5 being a CaMBP. 
+
+
+Submitted by Robert Huber [rhuber@chgr.mgh.harvard.edu]]
+---------------------------------------------------------------------------
+
+
+Dictyostelium discoideum Protocols II
+
+to be published in the 
+"METHODS IN MOLECULAR BIOLOGY" series of
+Humana Press (now Springer)
+
+
+Editors: Ludwig Eichinger and Francisco Rivero
+
+
+Part I. The Amoebozoa: Basics and Community Resources.
+
+1.	The Amoebozoa 
+Christina Schilde and Pauline Schaap*
+College of Life Sciences, University of Dundee, Dundee DD15EH, UK.
+
+2.	The model organism Dictyostelium discoideum
+Salvatore Bozzaro
+Department of Clinical and Biological Sciences, University of Turin, AOU S.
+Luigi, 10043 Orbassano (Torino), Italy.
+
+3.	Comparative genomics of the Dictyostelids
+William F. Loomis
+Cell and Developmental Biology, Division of Biological Sciences, University
+of California San Diego, La Jolla, CA 92093-0116, USA.
+
+4.	One stop shop for everything Dictyostelium: dictyBase and the Dicty
+Stock Center in 2012 
+Petra Fey, Robert J. Dodson, Siddhartha Basu and Rex L. Chisholm
+dictyBase and the Dicty Stock Center, Northwestern University, Center for
+Genetic Medicine, Lurie 7-125, 303 E Superior Street, Chicago, IL 60611, USA.
+
+5.	Fluorescent reporters and methods to analyze fluorescent signals
+Annette Mueller-Taubenberger and Hellen C. Ishikawa-Ankerhold
+Ludwig-Maximilians-Universitaet Muenchen, Institut fuer Anatomie und
+Zellbiologie, Schillerstr. 42, 80336 Muenchen, Germany.
+
+6.	Collection and cultivation of Dictyostelids from the wild
+Tracy E. Douglas, Debra A. Brock, Boahemaa Adu-Oppong, David C. Queller and
+Joan E. Strassmann
+Department of Biology, Washington University, St Louis MO 63130, USA.
+
+
+Part II. Large Scale Analysis
+
+7.	Identification and verification of microRNAs by high-throughput sequencing
+Jimmie Haellman1, Lotta Avesson2, Johan Reimegård1, Max Kaeller1 and Fredrik
+Soederbom2
+1KTH Royal Institute of Technology, Science for Life Laboratory (SciLifeLab
+Stockholm), School of Biotechnology, Division of Gene Technology, SE-171
+65, Solna, Sweden.
+2Department of Molecular Biology, Biomedical Center, Swedish University of
+Agricultural Sciences, Box 590, S-75124 Uppsala, Sweden.
+
+8.	Transcriptional profiling of Dictyostelium with RNA sequencing
+Edward Roshan Miranda1,2, Gregor Rot3, Marko Toplak3, Balaji Santhanam1,4,
+Tomaz Curk3, Gad Shaulsky1,2,4 and Blaz Zupan1,3
+1 Department of Molecular and Human Genetics, Baylor College of Medicine,
+Houston, TX, 77030, USA.
+2 Graduate Program in Developmental Biology, Baylor College of Medicine,
+Houston, TX, 77030, USA.
+3 Faculty of Computer and Information Science, University of Ljubljana,
+SI-1000 Ljubljana, Slovenia.
+4 Graduate Program in Structural Computational Biology and Molecular
+Biophysics, Baylor College of Medicine, Houston, TX, 77030, USA.
+
+9.	Analysis of chromatin organization by deep sequencing technologies
+James L. Platt1,2, Nick A. Kent1, Adrian J. Harwood1, and Alan R. Kimmel2
+1School of Biosciences, Cardiff University, Museum Avenue, Cardiff CF10
+3AX, UK.
+2Laboratory of Cellular and Developmental Biology, National Institutes of
+Diabetes and Digestive and Kidney Diseases, National Institutes of Health,
+Bethesda, MD 20892, USA.
+
+10.	Pharmacogenetics of resistance to cisplatin and other anti-cancer drugs
+and the role of sphingolipid metabolism.
+Stephen Alexander, William S. Swatson, and Hannah Alexander
+Division of Biological Sciences, University of Missouri, Columbia, MO
+65211, USA.
+
+11.	N-glycomic and -glycoproteomic studies in the social amoebae 
+Christa L. Feasley1, Alba Hykollari2, Katharina Paschinger2, Iain B. H.
+Wilson2, and Christopher M. West1
+1Department of Biochemistry & Molecular Biology, Oklahoma Center for
+Medical Glycobiology, University of Oklahoma Health Sciences Center,
+Oklahoma City, OK 73104  USA. 
+2Department fuer Chemie, Universitaet fuer Bodenkultur, Muthgasse 18, A-1190,
+Vienna, Austria.
+
+Part III. Molecular Biology, Cell Biology, Biochemistry, Biophysics
+
+12.	Measuring cheating, fitness, and segregation in D. discoideum
+Neil J. Buttery, Jeff Smith, David C. Queller and Joan E. Strassmann
+Department of Biology, Campus Box 1137, Washington University in Saint
+Louis, One Brookings Drive, Saint Louis, Missouri, USA.
+
+13.	The application of the Cre-loxP system for generating multiple
+knock-out and knock-in targeted loci
+Jan Faix1, Joern Linkner1, Benjamin Nordholz1, James L. Platt2,3, Xin-Hua
+Liao3, and Alan R. Kimmel3
+1Institute for Biophysical Chemistry, Hannover Medical School,D-30623
+Hannover, Germany.
+2School of Biosciences, Cardiff University, Museum Avenue, Cardiff, CF10
+3AX, UK.
+3Laboratory of Cellular and Developmental Biology, NIDDK, National
+Institutes of Health, Bethesda, MD  20892, USA.
+
+14.	Extrachromosomal inducible expression
+Douwe M. Veltman1 and Peter J.M. Van Haastert2
+1Beatson Institute for Cancer Research, Bearsden, Glasgow G61 1BD, UK.
+2Department of Cell Biochemistry, University of Groningen, Nijenborgh 7,
+9747 AG Groningen, The Netherlands.
+
+15.	Isolation of Dictyostelium nuclei for light and electron microscopy
+Petros Batsios1, Otto Baumann2, Ralph Graef1 and Irene Meyer1
+1Institute for Biochemistry and Biology, Dept. of Cell Biology, University
+of Potsdam, Karl-Liebknecht-Strasse 24-25, 14476 Potsdam-Golm, Germany. 
+2Institute for Biochemistry and Biology, Dept. of Animal Physiology,
+University of Potsdam, Karl-Liebknecht-Strasse 24-25, 14476 Potsdam-Golm,
+Germany.
+
+16.	Investigation of DNA Repair
+Anne-Marie C. Couto, Nicholas D. Lakin and Catherine Pears
+Department of Biochemistry, University of Oxford, South Parks Road, Oxford,
+OX1 3QU, UK.
+
+17.	Transcript localization in D. discoideum cells by RNA FISH
+Patrick Hofmann1, Janis Kruse1,2 and Christian Hammann1,2
+1Heisenberg Research Group Ribogenetics; Technical University of Darmstadt;
+64287 Darmstadt, Germany. 
+2present address: Ribogenetics@Biochemistry Laboratory, Jacobs University
+Bremen, Campus Ring 1, 28759 Bremen, Germany.
+
+18.	Analysis of mitochondrial gene expression
+Jessica E. Accari, Sam Manna, Paul R. Fisher, and Christian Barth
+Department of Microbiology, La Trobe University, Victoria, Australia.
+
+19.	Mitochondrial respiratory complex function and the phenotypic
+consequences of dysfunction
+Sarah J. Annesley1, Sergio Carilla-Latorre2, Ricardo Escalante2 and Paul R.
+Fisher1
+1Department of Microbiology, La Trobe University, Victoria, VIC 3086,
+Australia.
+2Instituto de Investigaciones Biomedicas Alberto Sols, CSIC-UAM, Arturo
+Duperier 4, 28029 Madrid, Spain.
+
+20.	Micropipette aspiration for studying cellular mechanosensory responses
+and mechanics 
+Yee-Seir Kee1,4 and Douglas N. Robinson1,2,3
+Departments of 1Cell Biology, 2Pharmacology and Molecular Sciences, Johns
+Hopkins University School of Medicine, Baltimore, MD 21205 USA, 3Chemical
+and Biomolecular Engineering, 4Department of Biophysics, Johns Hopkins
+University, Baltimore, MD 21218 USA. 
+Part IV Vesicle formation, trafficking and infection with bacterial pathogens
+
+21.	Quantitative analysis of phagocytosis and phagosome maturation
+Natascha Sattler, Roger Monroy and Thierry Soldati
+Department de Biochimie, Faculte des Sciences, Universite de Geneve,
+Sciences II, 30 quai Ernest Ansermet, CH-1211, Switzerland.
+
+22.	Setting up and monitoring an infection of Dictyostelium discoideum with
+mycobacteria
+Sonia Arafah1, Sebastien Kicka1, Valentin Trofimov1, Monica Hagedorn1,2,
+Nuria Andreu3, Siouxsie Wiles4, Brian Robertson3, and Thierry Soldati1
+1Department de Biochimie, Faculte des Sciences, Universite de Geneve,
+Sciences II, 30 quai Ernest Ansermet, CH-1211 Geneve-4, Switzerland.
+2present address: Bernhard-Nocht-Institute for Tropical Medicine,
+Bernhard-Nocht-Strasse 74, D-20359 Hamburg, Germany.
+3Centre for Molecular Microbiology and Infection, Department of Medicine,
+Imperial College London, Flowers Building, London, SW7 2AZ, UK.
+4Department of Molecular Medicine and Pathology, Faculty of Medical and
+Health Sciences, University of Auckland, 85 Park Road, Auckland, 1142, New
+Zealand.
+
+23.	Isolation of pathogen-containing vacuoles 
+Olga Shevchuk and Michael Steinert
+Institut fuer Mikrobiologie, Technische Universitaet Braunschweig,
+Spielmannstr. 7, D-38106 Braunschweig, Germany.
+
+24.	Immuno-magnetic purification of fluorescent Legionella-containing vacuoles
+Ivo Finsel, Christine Hoffmann and Hubert Hilbi
+Max von Pettenkofer Institute, Ludwig-Maximilians University,
+Pettenkoferstraße 9a, 80336 Munich, Germany.
+
+25.	Secretory lysosomes in Dictyostelium: visualization, characterization
+and dynamics
+Wanessa C. Lima and Pierre Cosson
+Cell Physiology and Metabolism Department, Faculty of Medicine, University
+of Geneva, 1211 Geneva, Switzerland.
+
+26.	Monitoring autophagy in Dictyostelium
+Ana Mesquita, Javier Calvo-Garrido, Sergio Carilla-Latorre and Ricardo
+Escalante
+Instituto de Investigaciones Biomedicas Alberto Sols, Arturo Duperier 4,
+28029-Madrid, Spain.
+
+
+Submitted by Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 38, number 26]

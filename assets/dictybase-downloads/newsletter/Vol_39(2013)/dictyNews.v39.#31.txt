@@ -1,0 +1,189 @@
+dictyNews
+Electronic Edition
+Volume 39, number 31
+November 8, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+dictyBase has a job opening! http://dictybase.org/dictybase_jobs.html
+
+=========
+Abstracts
+=========
+
+
+Loss of cAMP-specific phosphodiesterase rescues spore 
+development in G protein mutant in Dictyostelium
+
+David J. Schwebs, Hoai-Nghia Nguyen, Jamison A. Miller, 
+Jeffrey A. Hadwiger
+
+
+Cellular Signalling, in press
+
+Cyclic AMP (cAMP) is an important intracellular signaling molecule 
+for many G protein-mediated signaling pathways but the specificity of 
+cAMP signaling in cells with multiple signaling pathways is not well-
+understood. In Dictyostelium, at least two different G protein signaling 
+pathways, mediated by the Galpha-2 and Galpha-4 subunits, are 
+involved with cAMP accumulation, spore production, and chemotaxis 
+and the stimulation of these pathways results in the activation of ERK2, 
+a mitogen-activated protein kinase that can down regulate the cAMP-
+specific phosphodiesterase RegA. The regA gene was disrupted in 
+galpha-2- and galpha-4- cells to determine if the absence of this 
+phosphodiesterase rescues the development of these G protein 
+mutants as it does for erk2- mutants. The regA- mutation had no major 
+effects on developmental morphology but enriched the distribution of 
+the Galpha- mutant cells to the prespore/prestalk border in chimeric 
+aggregates. The loss of RegA function had no effect on Galpha-4-
+mediated folate chemotaxis. However, the regA gene disruption in 
+galpha-4- cells, but not in galpha-2- cells, resulted in a substantial 
+rescue and acceleration of spore production. This rescue in sporulation 
+required cell autonomous signaling because the precocious sporulation 
+could not be induced through intercellular signaling in chimeric 
+aggregates. However, intercellular signals from regA- strains increased 
+the expression of the prestalk gene ecmB and accelerated the 
+vacuolization of stalk cells. Intercellular signaling from galpha-4-regA- 
+strain did not induce ecmA gene expression indicating cell-type 
+specificity in the promotion of prestalk cell development. regA gene 
+disruption in a Galpha-4HC (Galpha-4 overexpression) strain did not 
+result in precocious sporulation or stalk cell development indicating 
+that elevated Galpha-4 subunit expression can mask regA- associated 
+phenotypes even when provided with wild-type intercellular signaling. 
+These finding indicate that the Galpha-2 and Galpha-4-mediated 
+pathways provide different contributions to the development of spores 
+and stalk cells and that the absence of RegA function can bypass 
+some but not all defects in G protein regulated spore development.
+
+
+
+Submitted by Jeff Hadwiger [jeff.hadwiger@okstate.edu]
+---------------------------------------------------------------------------
+
+
+Control of cell differentiation by mitochondria, typically evidenced in 
+Dictyostelium development 
+
+Yasuo Maeda1* and Junji Chida2
+
+1Department of Developmental Biology and Neurosciences, 
+Graduate School of Life Sciences, Tohoku University, Aoba, 
+Sendai 980-8578, Japan; E-mail: kjygy352@ybb.ne.jp;
+2Division of Molecular Neurobiology, Institute for Enzyme Research, 
+The University of Tokushima, Kuramoto-cho, Tokushima 770-8503, 
+Japan; E-mail: jchida@tokushima-u.ac.jp.
+
+*Author to whom all correspondence should be addressed:
+E-mail: kjygy352@ybb.ne.jp; Tel. & Fax: +81-22-224-2863
+
+
+Biomolecules [Special Issue "Focus Update in Biomolecules"] (MDPI), in press
+Review
+
+In eukaryotic cells, mitochondria are self-reproducing organelles with 
+their own DNA and they play a central role in adenosine triphosphate 
+(ATP) synthesis by respiration.Increasing evidence indicates that 
+mitochondria also have critical and multiple functions in the initiation 
+of cell differentiation, cell-type determination, cell movement, and 
+pattern formation. This has been most strikingly realized in 
+development of the cellular slime mold Dictyostelium. For example, 
+the expression of the mitochondrial ribosomal protein S4 (mt-rps4) 
+gene is required for the initial differentiation. The Dictyostelium 
+homologue (Dd-TRAP1) of TRAP-1 (tumor necrosis receptor-
+associated protein 1), a mitochondrial molecular chaperone belonging 
+to the Hsp90 family, allows the prompt transition of cells from growth 
+to differentiation through a novel prestarvation factor (PSF-3) in growth 
+medium. Moreover, a cell-type-specific organelle named a prespore-
+specific vacuole (PSV) is constructed by mitochondrial transformation 
+with the help of the Golgi complex. Mitochondria are also closely 
+involved in a variety of cellular activities including CN-resistant 
+respiration and apoptosis. These mitochondrial functions are reviewed 
+in this article, with special emphasis on the regulation of Dictyostelium 
+development.
+
+Keywords: differentiation; mitochondria; mitochondrial ribosomal protein 
+S4 (mt-RPS4); tumor necrosis receptor-associated protein 1 (TRAP-1); 
+CN-resistant respiration; prespore-specific vacuole (PSV); 
+Dictyostelium; ESC
+
+
+Submitted by Yasuo Maeda [kjygy352@ybb.ne.jp]
+---------------------------------------------------------------------------
+
+Identification of a Farnesol Analogue as a Ras Function Inhibitor using 
+both an in vivo Ras activation sensor and phenotypic screening approach. 
+
+Kamalakkannan Srinivasan, Thangaiah Subramanian, H. Peter Spielmann, 
+and Chris Janetopoulos*
+
+Molecular and Cellular Biochemistry, in press
+
+
+Mutation in Ras isoforms such as K-Ras, N-Ras, H-Ras contributes to 
+roughly 85%, 15% and 1% of human cancers, respectively. Proper 
+membrane targeting of these Ras isoforms, a prerequisite for Ras activity, 
+requires farnesylation or geranylgeranylation at the C-terminal CAAX box.
+ We devised an in vivo screening strategy based on monitoring Ras 
+ activation and phenotypic physiological outputs for assaying synthetic 
+ Ras function inhibitors (RFI). Ras activity was visualized by the 
+ translocation of RBDRaf1-GFP to activated Ras at the plasma membrane. 
+ By using this strategy, we screened one synthetic farnesyl substrate 
+ analog (AGOH) along with nine putative inhibitors and found that only 
+ m-CN-AGOH inhibited Ras activation. Phenotypic analysis of starving 
+ cells could be used to monitor polarization, motility and the inability of 
+ these treated cells to aggregate properly during fruiting body formation. 
+ Incorporation of AGOH and m-CN-AGOH to cellular proteins was detected 
+ by western blot. These screening assays can be incorporated into a high 
+ throughput screening format using Dictyostelium discoideum and 
+ automated microscopy to determine effective RFIs. These RFI 
+ candidates can then be further tested in mammalian systems.
+
+
+Submitted by Chris Janetopoulos [c.janetopoulos@vanderbilt.edu]
+---------------------------------------------------------------------------
+
+
+A microfluidic-enabled mechanical microcompressor for the 
+immobilization of live single- and multi-cellular specimens.
+
+
+Yingjun Yan, Liwei Jiang, Karl J. Aufderheide, Gus A. Wright, Alexander 
+Terekhov, Lino Costa, Kevin Qin, W. Tyler McCleery, John J. Fellenstein, 
+Alessandro Ustione, J. Brian Robertson, Carl Hirschie Johnson, 
+David W. Piston, M. Shane Hutson, John P. Wikswo, William Hofmeister,
+ Chris Janetopoulos*
+
+
+Microscopy and Microanalysis, in press
+
+A microcompressor is a precision mechanical device that flattens and 
+immobilizes living cells and small organisms for optical microscopy, 
+allowing enhanced visualization of sub-cellular structures and organelles. 
+We have developed an easily fabricated device which can be equipped 
+with microfluidics, permitting the addition of media or chemicals during 
+observation. This device can be used on both upright and inverted 
+microscopes, The apparatus permits micrometer precision flattening 
+for nondestructive immobilization of specimens as small as a bacterium, 
+while also accommodating larger specimens, such as Caenorhabditis 
+elegans, for long-term observations. The compressor mount is removable 
+and allows easy specimen addition and recovery for later observation. 
+Several customized specimen beds can be incorporated into the base. 
+To demonstrate the capabilities of the device, we have imaged numerous 
+cellular events in several protozoan species, in yeast cells, and in 
+Drosophila melanogaster embryos. We have been able to document 
+previously unreported events, and also perform photobleaching 
+experiments, in conjugating Tetrahymena thermophila. 
+
+
+Submitted by Chris Janetopoulos [c.janetopoulos@vanderbilt.edu]
+==============================================================
+[End dictyNews, volume 39, number 31]

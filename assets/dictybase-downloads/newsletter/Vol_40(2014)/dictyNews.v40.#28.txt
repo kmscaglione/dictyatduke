@@ -1,0 +1,167 @@
+dictyNews
+Electronic Edition
+Volume 40, number 28
+November 07, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Article for the “Free-living amoebae Special Issue”:Isolation and 
+characterisation of various amoebophagous fungi and evaluation of 
+their prey spectrum
+
+Rolf Michel, JuliaWalochnik, Patrick Scheid 
+
+
+Experimental Parasitology
+
+This article gives an overview on the isolation and 
+characterisation of endoparasitic fungi invading freeliving
+amoebae (FLA), including the ones forming thalli inside their 
+hosts such as Cochlonema euryblastum and also the predatory 
+fungi which capture amoebae by adhesive hyphae. They trap, 
+intrude, and exploit amoebal trophozoites such as Acaulopage 
+spp. and Stylopage spp. Previous phylogenetic studies proved 
+Cochlonema to be a member of the Zoopagales. The genetic 
+investigation of Acaulopage tetraceros demonstrated its close 
+relationship to Cochlonema. Co-cultivation of A. tetraceros 
+with a number of FLA revealed a great prey spectrum of this 
+amoebophageous fungus. In addition it was shown that solitary 
+amoebal stages of slime moulds such as Dictyostelium sp. and 
+Physarum sp. are also suited as welcome prey amoebae.
+
+
+Submitted by Rolf Michel [r.michel1@gmx.de]
+----------------------------------------------------------------------
+
+
+The Social Amoeba Polysphondylium pallidum Loses Encystation and 
+Sporulation, but Can Still Erect Fruiting Bodies in the 
+Absence of Cellulose.
+
+Du Q, Schaap P.
+
+
+Protist. 2014 Jul 14;165(5):569-579. 
+doi: 10.1016/j.protis.2014.07.003.
+
+Amoebas and other freely moving protists differentiate into 
+walled cysts when exposed to stress. As cysts, amoeba pathogens 
+are resistant to biocides, preventing treatment and eradication. 
+Lack of gene modification procedures has left the mechanisms of 
+encystation largely unexplored. Genetically tractable Dictyostelium 
+discoideum amoebas require cellulose synthase for formation of 
+multicellular fructifications with cellulose-rich stalk and spore 
+cells. Amoebas of its distant relative Polysphondylium pallidum 
+(Ppal), can additionally encyst individually in response to stress. 
+Ppal has two cellulose synthase genes, DcsA and DcsB, which we 
+deleted individually and in combination. Dcsa- mutants formed 
+fruiting bodies with normal stalks, but their spore and cyst walls 
+lacked cellulose, which obliterated stress-resistance of spores and 
+rendered cysts entirely non-viable. A dcsa-/dcsb- mutant made no 
+walled spores, stalk cells or cysts, although simple fruiting 
+structures were formed with a droplet of amoeboid cells resting on 
+an sheathed column of decaying cells. DcsB is expressed in prestalk 
+and stalk cells, while DcsA is additionally expressed in spores and 
+cysts. We conclude that cellulose is essential for encystation and 
+that cellulose synthase may be a suitable target for drugs to 
+prevent encystation and render amoeba pathogens susceptible to 
+conventional antibiotics.
+
+
+Submitted by Qingyou Du [q.du@dundee.ac.uk]
+----------------------------------------------------------------------
+
+
+Deckstein, J., van Appeldorn, J., Tsangarides, M., Yiannakou, 
+K., Müller, R., Stumpf, M., Sukumaran, S. K., Eichinger, L., 
+Noegel, A. A., Riyahi, T. Y. 
+
+The Dictyostelium discoideum GPHR ortholog is an ER and Golgi 
+protein with roles during development.
+
+
+Eukaryotic Cell, in press
+
+The Dictyostelium discoideum GPHR (Golgi pH regulator)/Gpr89 is 
+a developmentally regulated transmembrane protein present on the 
+endoplasmic reticulum (ER) and the Golgi apparatus. Transcript 
+levels are low during growth and vary during development reaching 
+high levels during aggregation and late developmental stages. The 
+Arabidopsis ortholog was described as a G protein coupled 
+receptor (GPCR) for abscisic acid present at the plasma membrane 
+whereas the mammalian ortholog is a Golgi-associated anion 
+channel functioning as Golgi pH regulator. To probe its role in 
+D. discoideum we generated a strain lacking GPHR. The mutant had 
+different growth characteristics compared to the AX2 parent 
+strain and exhibited changes during late development and formed 
+abnormally shaped small slugs and fruiting bodies. An analysis 
+of development specific markers revealed that their expression 
+was disturbed. The distribution of the endoplasmic reticulum and 
+the Golgi was unaltered at the immunofluorescence level. Likewise, 
+their function did not appear to be impaired since membrane 
+proteins were properly processed and glycosylated. Also, changes 
+in the external pH were sensed by the ER as indicated by a pH 
+sensitive ER probe as in wild type.
+
+
+Submitted by Angelika Nögel [noegel@uni-koeln.de]
+----------------------------------------------------------------------
+
+
+The Dictyostelium MAPK ERK1 is phosphorylated in a secondary 
+response to early developmental signaling
+
+David J. Schwebs and Jeffrey A. Hadwiger*
+
+Department of Microbiology and Molecular Genetics, Oklahoma State 
+University, 307 Life Sciences East, Stillwater, OK 74078 USA
+
+
+Cellular Signaling, in press
+
+Previous reports have suggested that the two mitogen-activated 
+protein kinases (MAPKs) in Dictyostelium discoideum, ERK1 and ERK2, 
+can be directly activated in response to external cAMP even though 
+these MAPKs play different roles in the developmental life cycle. 
+To better characterize MAPK regulation, the levels of phosphorylated 
+MAPKs were analyzed in response to external signals. Only ERK2 was 
+rapidly phosphorylated in response to the chemoattractants, cAMP and 
+folate. In contrast, the phosphorylation of ERK1 occurred as a 
+secondary or indirect response to these stimuli and this 
+phosphorylation was enhanced by cell-cell interactions, suggesting 
+that other external signals can activate ERK1. The phosphorylation 
+of ERK1 or ERK2 did not require the function of the other MAPK in 
+these responses. Folate stimulation of a chimeric population of 
+erk1- and galpha4- cells revealed that the phosphorylation of ERK1 
+could be mediated through an intercellular signal other than folate. 
+Loss of ERK1 function suppressed the developmental delay and the 
+deficiency in anterior cell localization associated with galpha5- 
+mutants suggesting that ERK1 function can be down regulated through 
+Galpha5 subunit-mediated signaling. However, no major changes in the 
+phosphorylation of ERK1 were observed in galpha5- cells suggesting 
+that the Galpha5 subunit signaling pathway does not regulate the 
+phosphorylation of ERK1. These findings suggest that the activation 
+of ERK1 occurs as a secondary response to chemoattractants and that 
+other cell-cell signaling mechanisms contribute to this activation. 
+Galpha5 subunit signaling can down regulate ERK1 function to promote 
+prestalk cell development but not through major changes to the level 
+of phosphorylated ERK1.
+
+
+Submitted by Jeff Hadwiger [jeff.hadwiger@okstate.edu]   
+==============================================================
+[End dictyNews, volume 40, number 28]

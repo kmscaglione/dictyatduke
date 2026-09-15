@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 43, number 13
+June 23, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Extracellular polyphosphate signals through Ras and Akt to prime 
+Dictyostelium discoideum cells for development.
+
+Suess PM, Watson J, Chen W, Gomer RH
+
+
+Journal of Cell Science, in press
+
+Linear chains of five to hundreds of phosphates called polyphosphate 
+are found in organisms ranging from bacteria to humans, but their 
+function is poorly understood. In Dictyostelium, polyphosphate is used 
+as a secreted signal that inhibits cytokinesis in an autocrine negative 
+feedback loop. To elucidate how cells respond to this unusual signal, 
+we did proteomic analysis of cells treated with physiological levels of 
+polyphosphate and observed that polyphosphate causes cells to 
+decrease levels of actin cytoskeleton proteins, possibly explaining how 
+polyphosphate inhibits cytokinesis. Polyphosphate also causes 
+proteasome protein levels to decrease, and in both Dictyostelium and 
+human leukemia cells, decreases proteasome activity and cell 
+proliferation. Polyphosphate also induces Dictyostelium cells to begin 
+development by increasing expression of the cell-cell adhesion 
+molecule CsA and causing aggregation, and this effect, as well as the 
+inhibition of proteasome activity, is mediated by Ras and Akt. 
+Surprisingly, Ras and Akt do not affect the ability of polyphosphate to 
+inhibit proliferation, suggesting that a branching pathway mediates the 
+effects of polyphosphate, with one branch affecting proliferation, and
+ the other branch affecting development.
+
+
+submitted by: Patrick Suess [psuess@bio.tamu.edu]
+———————————————————————————————————————
+
+
+Breaking fat! How mycobacteria and other intracellular pathogens 
+manipulate host lipid droplets
+
+Caroline Barisch & Thierry Soldati
+
+Department of Biochemistry, Faculty of Sciences, University of Geneva, 
+30 quai Ernest-Ansermet, Science II, 1211, Geneva-4, Switzerland
+
+
+Biochimie -  https://doi.org/10.1016/j.biochi.2017.06.001
+
+Tuberculosis (Tb) is a lung infection caused by Mycobacterium tuberculosis 
+(Mtb). With one third of the world population latently infected, it represents 
+the most prevalent bacterial infectious diseases worldwide. Typically, 
+persistence is linked to so-called “dormant” slow-growing bacteria, which 
+have a low metabolic rate and a reduced response to antibiotic treatments. 
+However, dormant bacteria regain growth and virulence when the immune 
+system is weakened, leading again to the active form of the disease. Fatty 
+acids (FAs) released from host triacylglycerols (TAGs) and sterols are 
+proposed to serve as sole carbon sources during infection. The metabolism 
+of FAs requires beta-oxidation as well as gluconeogenesis and the glyoxylate 
+shunt. Interestingly, the Mtb genome encodes more than hundred proteins 
+involved in the five reactions of beta-oxidation, clearly demonstrating the 
+importance of lipids as energy source. FAs have also been proposed to play 
+a role during resuscitation, the resumption of replicative activities from 
+dormancy. Lipid droplets (LDs) are energy and carbon reservoirs and have 
+been described in all domains. TAGs and sterol esters (SEs) are stored in 
+their hydrophobic core, surrounded by a phospholipid monolayer. Importantly, 
+host LDs have been described as crucial for several intracellular bacterial 
+pathogens and viruses and specifically translocate to the pathogen-containing 
+vacuole (PVC) during mycobacteria infection. FAs released from host LDs are 
+used by the pathogen as energy source and as building blocks for membrane 
+synthesis. Despite their essential role, the mechanisms by which pathogenic 
+mycobacteria induce the cellular redistribution of LDs and gain access to the 
+stored lipids are still poorly understood. This review describes recent evidence 
+about the dual interaction of mycobacteria with host LDs and membrane 
+phospholipids and integrates them in a broader view of the underlying cellular 
+processes manipulated by various intracellular pathogens to gain access to 
+host lipids.
+
+
+submitted by: Caroline Barisch [caroline.barisch@unige.ch]
+==============================================================
+[End dictyNews, volume 43, number 13]

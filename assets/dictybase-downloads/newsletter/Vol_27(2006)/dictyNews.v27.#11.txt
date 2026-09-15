@@ -1,0 +1,122 @@
+dictyNews
+Electronic Edition
+Volume 27, number 11
+October 6, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Molecular phylogeny and evolution of morphology in the social amoebas
+
+1Pauline Schaap, 2Thomas Winckler, 3Michaela Nelson, 1Elisa Alvarez-Curto,
+3Barrie Elgie, 4Hiromitsu Hagiwara, 5James Cavender, 1Alicia Milano-Curto,
+1Daniel E. Rozen,  6Theodor Dingermann, 7 Rupert Mutzel and 
+3Sandra L. Baldauf*
+
+
+Science, in press
+
+The social amoebas (Dictyostelia) display conditional multicellularity in a 
+wide variety of forms. Despite widespread interest in Dictyostelium 
+discoideum as a model system, there is almost no molecular data from the 
+rest of the group. We have constructed the first molecular phylogeny of the 
+Dictyostelia with parallel small subunit ribosomal RNA and alpha-tubulin 
+datasets and find that dictyostelid taxonomy requires complete revision. A 
+mapping of characters onto the phylogeny shows that the dominant trend in 
+dictyostelid evolution is increased size and cell-type specialization of 
+fruiting structures, but not architectural complexity. This major taxon is 
+now uniquely well suited to study molecular changes underlying phenotypic 
+innovation.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+-----------------------------------------------------------------------------
+
+
+Pharmacological profiling of the Dictyostelium adenylyl cyclases ACA, ACB 
+and ACG.
+
+Elisa Alvarez-Curto, Karin E. Weening  and Pauline Schaap
+
+
+Biochemical Journal, in press
+
+Intracellular and secreted cAMP play crucial roles in controlling cell 
+movement and gene regulation throughout development of the social amoeba 
+Dictyostelium discoideum. cAMP is produced by three structurally distinct 
+adenylyl cyclases, ACA, ACG and ACB which have distinctive but overlapping 
+patterns of expression and, as concluded from gene disruption studies, 
+seemingly overlapping functions. In addition  to gene disruption, acute 
+pharmacological abrogation of protein activity can be a powerful tool to 
+identify its role in the biology of the organism. We analysed the effects 
+of a range of compounds on the activity of ACA, ACB and ACG to identify 
+enzyme-specific modulators. Caffeine, which was previously used to 
+specifically block ACA function, also inhibited cAMP accumulation by ACB 
+and ACG. 2'3'-O-methyl isopropylidene adenosine  (IPA) specifically inhibits 
+ACA when measured in intact cells, without affecting ACB or ACG. All three 
+enzymes are inhibited by the P-site inhibitor 2'5'dideoxyadenosine  (DDA) 
+when assayed in cell lysates, but not in intact cells. Tyrphostin A25 and 
+SQ22536 proved to be effective and specific inhibitors for ACG and ACA 
+respectively. Both compounds acted directly on enzyme activity assayed in 
+cell lysates, but only SQ22536 was also a specific inhibitor when added 
+to intact cells.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+-----------------------------------------------------------------------------
+
+
+Correction of the abstract that appeared in the dictyNews, v27, #7:
+
+
+Anti-leukemic activities of Dictyostelium secondary metabolites: A novel 
+aromatic metabolite, 4-methyl-5-n-pentylbenzene-1,3-diol, isolated from 
+Dictyostelium mucoroides suppresses cell growth in human leukemia K562 and 
+HL-60 cells.
+
+Haruhisa Kikuchi, Yoshiteru Oshima, Aya Ichimura, Naomi Gokan, Aiko 
+Hasegawa, Kohei Hosaka, Yuzuru Kubohara
+
+Tohoku University & Gunma University, Japan.
+
+
+Life Sciences, In press
+
+It has previously been shown that DIF-1, a differentiation-inducing factor 
+of the cellular slime mold Dictyostelium discoideum, possesses antitumor 
+activities in mammalian tumor cells and that neuronal differentiation of 
+PC12 cells can be induced with furanodictines (FDs), aminosugar analogs 
+found in D. discoideum, or dictyoglucosamines (DGs), N-acetyl glucosamine 
+derivatives (DG-A from D. purpureum and DG-B from D. discoideum).  Thus, 
+cellular slime molds are attractive natural resources that may provide 
+valuable lead compounds to be utilized in the field of pharmacology and 
+medicine.  In this study, we have isolated a novel aromatic compound, 
+4-methyl-5-n-pentylbenzene-1,3-diol (MPBD), from fruiting bodies of the 
+cellular slime mold D. mucoroides and assessed the in vitro 
+antiproliferative activities of MPBD, FDs, and DGs in human leukemia 
+K562 and HL-60 cells.  MPBD at 20-80 microM dose-dependently suppressed 
+cell growth in both K562 and HL-60 cells.  While FDs at 10-80 microM did 
+not affect cell growth, DGs at 10-40 microM dose-dependently suppressed 
+cell growth in the cells.  Although we failed to find the roles of FDs 
+and DGs in the original organisms, MPBD at 5-20 microM was found to promote
+stalk cell formation in D. discoideum.  The present results indicate that 
+MPBD, DGs or their derivatives may have therapeutic potential in the 
+treatment of cancer and confirm our expectations regarding cellular slime 
+molds as drug resources.
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================================
+[End dictyNews, volume 27, number 11] 

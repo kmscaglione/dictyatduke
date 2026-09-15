@@ -1,0 +1,130 @@
+Dicty News
+Electronic Edition
+Volume 24, number 3
+February 18, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Loss of the Dictyostelium RasC protein alters vegetative cell size,
+motility and endocytosis.
+
+Chinten James Lim , Karl A. Zawadzkià, Meenal Khosla, David M. Secko,
+George B. Spiegelman and Gerald Weeks.
+
+Department of Microbiology and Immunology,
+University of British Columbia, Vancouver, British Columbia, V6T1Z3 Canada.
+
+
+Exp. Cell Res.,  in press
+
+In addition to its previously established roles in cAMP relay and cAMP
+chemotaxis, loss of signal transduction through the RasC protein was found
+to impact a number of vegetative cell functions. Vegetative rasC- cells
+exhibited reduced random motility, were less polarized and had aberrant
+F-actin distribution. Cells lacking RasC also contained more protein and
+were larger in size than wildtype cells. These increases were associated
+with increased liquid phase endocytosis. Despite the increase in cell size,
+cytokinesis was relatively normal and there was no change in the rate of
+cell division. rasC- cells also chemotaxed poorly to folate and exhibited
+reduced F-actin accumulation, reduced ERK2 phosphorylation and reduced
+Akt/PKB phosphorylation in response to folate, indicating that RasC was
+also involved in transducing chemotactic signals in vegetative cells.
+
+
+Submitted by: Gerry Weeks [gerwee@interchange.ubc.ca]
+
+-----------------------------------------------------------------------------
+
+
+Epistasis analysis with global transcriptional phenotypes
+
+Nancy Van Driessche, Janez Demsar, Ezgi O. Booth, Paul Hill, Peter Juvan,
+Blaz Zupan, Adam Kuspa and Gad Shaulsky
+
+Baylor College of Medicine, Houston, TX, USA and University of Ljubljana,
+Ljubljana, Slovenia.
+
+
+Nature Genetics, in press
+
+Classical epistasis analysis can determine the order of function of genes in
+pathways using morphological, biochemical and other such phenotypes.  It
+requires knowledge of the pathwayâs phenotypic output and a variety of
+experimental expertise, so it is unsuitable for genome-scale analysis.  Here
+we show the utility of microarray profiles of mutants as phenotypes for
+epistasis analysis.  Considering genes that regulate Dictyostelium protein
+kinase A activity, we determine known and unknown epistatic relationships and
+reconstruct a genetic network with microarray phenotypes alone.  This work
+demonstrates that microarray data can provide a uniform, quantitative tool
+for large-scale genetic network analysis.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+A comparative sequence analysis reveals a common GBD/FH3-FH1-FH2-DAD
+architecture in formins from Dictyostelium, fungi and metazoa.
+
+Francisco Rivero(1), Tetsuya Muramoto(3), Ann-Kathrin Meyer(1), Hideko
+Urushihara(3), Taro Q. P. Uyeda(2), Chikako Kitayama(2)
+
+1. Center for Biochemistry and Center for Molecular Medicine, Medical Faculty,
+University of Cologne. Joseph-Stelzmann-Strasse 52, 50931 Kšln, Germany
+2. Gene Function Research Center, Tsukuba Central #4
+National Institute of Advanced Industrial Science and Technology (AIST)
+Higashi 1-1-1 Tsukuba-shi, Ibaraki 305-8562, Japan
+3. Institute of Biological Science, University of Tsukuba, Tsukuba-shi,
+Ibaraki 305-8572, Japan
+
+
+BMC Genomics, in press
+
+Background
+Formins are multidomain proteins defined by a conserved FH2 (formin homology 2)
+domain with actin nucleation activity preceded by a proline-rich FH1 domain.
+Formins act as profilin-modulated processive actin nucleators conserved
+throughout a wide range of eukaryotes.
+Results
+We present a detailed sequence analysis of the 10 formins (ForA to J)
+identified in the genome of the social amoeba Dictyostelium discoideum. With
+the exception of ForI and ForC all other formins conform to the domain
+structure GBD/FH3-FH1-FH2-DAD, where DAD is the Diaphanous autoinhibition
+domain and GBD/FH3 is the Rho GTPase-binding domain/formin homology 3 domain
+that we propose to represent a single domain. ForC lacks an FH1 domain, ForI
+lacks recognizable GBD/FH3 and DAD domains and ForA, E and J have additional
+unique domains. To establish the relationship between formins of Dictyostelium
+and other organisms we constructed a phylogenetic tree based on the alignment
+of FH2 domains. Real-time PCR was used to study the expression pattern of
+formin genes. Expression of forC, D, I and J increased during transition to
+multi-cellular stages, while the rest of genes displayed less marked
+developmental variations. During sexual development, expression of forH and
+forI displayed a significant increase in fusion competent cells.
+Conclusions
+Our analysis allows some preliminary insight into the functionality of
+Dictyostelium formins: all isoforms might display actin nucleation activity 
+and, with the exception of ForI, might also be susceptible to autoinhibition
+and to regulation by Rho GTPases. The architecture GBD/FH3-FH1-FH2-DAD
+appears common to almost all Dictyostelium, fungal and metazoan formins,
+for which we propose the denomination of conventional formins, and implies a
+common regulatory mechanism.
+
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+
+==============================================================================
+[End Dicty News, volume 24, number 3] 

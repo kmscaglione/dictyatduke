@@ -1,0 +1,149 @@
+Dicty News
+Electronic Edition
+Volume 13, number 11
+November 13, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+================
+  Announcement
+================
+
+An All Dicty Blast site is available at [http://www.sdsc.edu/mpr/dicty/]
+and can be accessed from DictyDB
+[http://glamdring.ucsd.edu/others/dsmith/dictydb.html] or from the Genomics
+section of the Dicty Web site http://dicty.cmb.nwu.edu/dicty/dicty.html.
+
+This site gives the same graphical display of regions of overlaps that the
+Jena site does but gives instant accesses to all the Baylor, Jena and
+Sanger updated raw reads as well as all Genbank/EMBL Dicty sequences. The
+other Dicty sites give direct access only to the local reads. Various BLAST
+programs are available and run relatively quickly on the San Diego
+Supercomputer. We hope this is a service to the Dicty community.
+
+Michael Gribskov
+Negin Iranfar
+Bill Loomis
+Doug Smith
+
+
+=============
+  Abstracts
+=============
+
+Dynein Intermediate Chain Mediated Dynein-Dynactin Interaction is Required 
+for Interphase Microtubule Organization and Centrosome Replication and 
+Separation in Dictyostelium
+
+Shuo Ma, Leda Triviños-Lagos, Ralph Gräf# and Rex L. Chisholm*
+
+Dept of Cell and Molecular Biology and Robert H. Lurie Comprehensive 
+Cancer Center, Northwestern University Medical School, 303 E. Chicago Ave.
+Chicago, IL 60611
+
+# Adolf-Butenandt-Institut/Zellbiologie, Universitaet Muenchen, 
+Schillerstr. 42, D-80336 Muenchen/Germany
+
+J. Cell Biology, in press
+
+Abstract
+
+   Cytoplasmic dynein intermediate chain (IC) mediates dynein-dynactin 
+interaction in vitro (Karki and Holzbaur, 1995; Vaughan and Vallee, 1995).  
+To investigate the physiological role of IC and dynein-dynactin interaction, 
+we expressed IC truncations in wild type Dictyostelium cells.  ICDC 
+associated with dynactin but not with dynein heavy chain, while ICDN 
+truncations bound to dynein but bound dynactin poorly.  Both mutations 
+resulted in abnormal Golgi localization, confirming dynein function was 
+disrupted.  Striking disorganization of interphase microtubule (MT) networks 
+was observed when mutant expression was induced.  In a majority of cells the 
+MT networks collapsed into large bundles.  We also observed cells with 
+multiple cytoplasmic asters and MTs lacking an organizing center.  These 
+cells accumulated abnormal DNA content, suggesting a defect in mitosis.  
+Striking defects in centrosome morphology were also observed in IC mutants, 
+mostly larger than normal centrosomes.  Ultrastructural analysis of 
+centrosomes in IC mutants showed interphase accumulation of large 
+centrosomes typical of prophase as well as unusually paired centrosomes 
+suggesting defects in centrosome replication and separation.  These results 
+suggest that dynactin-mediated cytoplasmic dynein function is required for 
+the proper organization of interphase microtubule network as well as 
+centrosome replication and separation in Dictyostelium.
+ 
+
+----------------------------------------------------------------------------
+
+Evidence of intramolecular regulation of the Dictyostelium discoideum
+34,000 dalton F-actin bundling protein.    
+
+Rita W. L. Lim, Ruth Furukawa, and Marcus Fechheimer
+
+Department of Cellular Biology, University of Georgia, Athens, GA 30602
+
+Biochemistry, in press.
+
+ABSTRACT:
+
+   Intramolecular interaction within the Ca2+-regulated 34 kDa
+actin bundling protein from Dictyostelium discoideum was found to
+contribute to the regulation of its actin binding activity.  Recombinant
+N-terminally truncated proteins aa77-295, 124-295, and 139-295 bound actin
+at > 2:1 stoichiometry which is 5-fold greater than the intact protein
+aa1-295 as assessed by co-sedimentation with F-actin.  These proteins also
+have enhanced cross-linking activity as assessed by viscometry and electron
+microscopy.  All truncated 34 kDa proteins failed to bind 45Ca2+ on blots
+and displayed Ca2+-insensitive binding with actin, although most proteins
+possessed intact putative EF-hand Ca2+ binding motifs.  An intramolecular
+interaction within the 34 kDa protein was inferred from direct
+demonstrations of domain-domain interaction among the truncated 34 kD
+proteins both in the presence and absence of actin.  The intramolecular
+interaction between interaction zone 1 (aa71-123) and interaction zone 2
+(aa193-254) is proposed to maintain the N-terminal inhibitory region
+(aa1-76) in close proximity with the strong actin binding site (aa193-254)
+in order to modulate the interaction of the intact protein with actin
+filaments.
+
+----------------------------------------------------------------------------
+
+SEVERE DEVELOPMENTAL DEFECTS IN DICTYOSTELIUM NULL MUTANTS FOR ACTIN
+BINDING PROTEINS
+
+Eleonora Ponte, Francisco Rivero#, Marcus Fechheimer*, Angelika Noegel# and
+Salvatore Bozzaro
+
+Dipartimento di Scienze Cliniche e Biologiche, Università di Torino,
+Ospedale S.Luigi, 10043-Orbassano, Italy; #Institut für Biochemie I,
+Universität zu Köln, Joseph-Stelzmann-str. 52, 50931-Köln, Germany,
+*Department of Cellular Biology, University of Georgia, 724 Biological
+Sciences Building, Athens, GA 30602, USA.
+
+Mechanisms of Development, in press
+
+ABSTRACT
+
+   The actin cytoskeleton is implicated in many cellular processes, such as
+cell adhesion, locomotion, contraction and cytokinesis, which are central
+to any development. The extent of polymerization, crosslinking, and
+bundling of actin is regulated by several actin-binding proteins. Knock-out
+mutations in these proteins have revealed in many cases only subtle, if
+any, defects in development, suggesting that the actin system is redundant,
+with multiple proteins sharing overlapping functions. The apparent
+redundancy may, however, reflect limitations of available laboratory assays
+in assessing the developmental role of a given protein.  By using a novel
+assay, which reproduces conditions closer to the natural ones, we have
+re-examined the effects of disruption of many actin-binding proteins, and
+show here that deletion of alpha-actinin, interaptin, synexin, 34-kDa
+actin-bundling protein, and gelation factor affect to varying degrees the
+efficiency of Dictyostelium cells to complete development and form viable
+spores. No phenotypic defects were found in hisactophilin or comitin-null
+mutants.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 11]
+
+  

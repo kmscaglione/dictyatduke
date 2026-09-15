@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 31, number 18
+December 12, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Folic acid is a potent chemoattractant of free-living amoebae in a new and 
+amazing species of a protist, Vahlkampfia 
+
+Yasuo Maeda1*, Taira Mayanagi2 and Aiko Amagai3
+
+1Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+2The Research Center for Child Mental Development, Osaka University 
+Graduate School of Medicine, Yamadaoka 2-2, Suita, Osaka 565-0871, Japan
+3Department of Biomolecular Science, Graduate School of Life Sciences, 
+Tohoku University, Katahira 2-1-1, Aoba-Ku, Sendai 980-8577, Japan
+
+
+Zoological Science, in press
+
+Folic acid (folate; vitamin Bc) is well recognized as essential for the proper 
+metabolism of the essential amino acid methionine as well as for the synthesis 
+of adenine and thymine. A folate deficiency has been implicated in a wide 
+variety of disorders from Alzheimer’s disease to depression and neural tube 
+defects. In the cellular slime molds including Dictyostelium, vegetative 
+growth-phase cells are known to be chemotactically moved toward folate 
+that is secreted by bacterial food sources such as Escherichia coli. 
+Intracellular folate signal transduction including G proteins, Ca2+channels, 
+and PIP3 pathway has been reported in D. discoideum. To our surprise, the 
+genuine chemoattractant(s) of free-living protozoan amoebae have remained 
+to be determined, possibly because of a lack of a pertinent method for assaying 
+chemotaxis. We recently isolated a primitive free-living amoeba from the soil 
+of Costa Rica, and identified it as a new species of the genus Vahlkampfia 
+belonging to a subclass Gymnamoebia in which Entamoeba and Acanthamoeba 
+are included. The amoebae can grow and multiply quite rapidly engulfing nearby 
+bacteria such as E. coli. Importantly, we have demonstrated here using a quite 
+simple but finely designed chemotaxis assay that the Vahlkampfia amoebae 
+exhibit chemotaxis toward higher folate concentrations. Riboflavin and 
+cyanocobalamin were also found to serve as positive chemoattractants. Among 
+these chemoattractants , folate is of particular importance because its 
+function seems to be evolutionarily conserved as a potent chemoattractant 
+of amoeboid cells in a wide range of organisms as well as in the Protista 
+and cellular slime molds. 
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+
+Analysis of cell movement by simultaneous quantification of local membrane 
+displacement and fluorescent intensities using Quimp2.
+
+Leonard Bosgraaf *, Peter J.M. van Haastert* and Till Bretschneider # 
+* University of Groningen, Cell Biochemistry  Department, Haren, the Netherlands
+# University of Warwick, Warwick Systems Biology Centre, Warwick, United Kingdom
+
+
+Cell Motility and the Cytoskeleton, in press
+
+The use of fluorescent markers in living cells has increased dramatically in 
+the recent years. The quantitative analysis of the images requires specific 
+analysis software. Previously, the program Quimp was launched for quantitating 
+fluorescent intensities at the membrane or the cortex of the cell. However, 
+Quimp it is not well suited to quantitate local membrane displacement. Here 
+we present Quimp2 that is capable of tracking membrane subregions in time, 
+which  enables the simultaneous quantification of fluorescent intensities and 
+membrane movement. Quimp2 has two new tools, i) conversion filters to 
+analyze movies obtained with fluorescent, DIC and phase contrast different 
+microscopes, and ii) a macro that calculates the local membrane displacement 
+and provides various options to display the results. Quimp2 is used here to 
+investigate the molecular mechanism of cell movement by correlating the 
+dynamics of local membrane movement with the local concentration of 
+myosin and F-actin. 
+
+
+Submitted by: Peter J.M. van Haastert [p.j.m.van.haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 31, number 18]

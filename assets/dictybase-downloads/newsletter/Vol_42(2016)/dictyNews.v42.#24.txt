@@ -1,0 +1,147 @@
+dictyNews
+Electronic Edition
+Volume 42, number 24
+October 14, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Terpene synthase genes in eukaryotes beyond plants and fungi: 
+Occurrence in social amoebae
+
+Xinlu Chen, Tobias G. Köllner, Qidong Jia, Ayla Norris, 
+Balaji Santhanam, Patrick Rabe, Jeroen Dickschat, Gad Shaulsky, 
+Jonathan Gershenzon, and Feng Chen
+
+Department of Plant Sciences, University of Tennessee, 
+Knoxville, TN 37996
+Max Planck Institute for Chemical Ecology, D-07745 Jena, Germany
+Graduate School of Genome Science and Technology, University of 
+Tennessee, Knoxville, TN 37996
+Graduate Program in Structural Computational Biology and Molecular 
+Biophysics, Baylor College of Medicine, Houston, TX 77030
+Department of Molecular and Human Genetics, Baylor College of 
+Medicine, Houston, TX 77030
+Kekulé-Institute of Organic Chemistry and Biochemistry, University 
+of Bonn, 53121 Bonn, Germany
+
+
+PNAS, in press
+
+Terpenes are structurally diverse natural products involved in many 
+ecological interactions. The pivotal enzymes for terpene biosynthesis, 
+terpene synthases (TPSs), had been described only in plants and fungi 
+in the eukaryotic domain. In this report, we systematically analyzed the 
+genome sequences of a broad range of nonplant/nonfungus eukaryotes 
+and identified putative TPS genes in six species of amoebae, five of 
+which are multicellular social amoebae from the order of Dictyosteliida. 
+A phylogenetic analysis revealed that amoebal TPSs are evolutionarily 
+more closely related to fungal TPSs than to bacterial TPSs. The social 
+amoeba Dictyostelium discoideum was selected for functional study of 
+the identified TPSs. D. discoideum amoebae grow as unicellular 
+organisms, whereas digesting bacteria and switch from vegetative growth 
+to multicellular development upon starvation. We found that expression of 
+most D. discoideum TPS genes was induced during development. Upon 
+heterologous expression, all nine TPSs from D. discoideum showed 
+sesquiterpene synthase activities. Some also exhibited monoterpene 
+and/or diterpene synthase activities. Direct measurement of volatile
+terpenes in cultures of D. discoideum revealed essentially no emission 
+at an early stage of development. In contrast, a bouquet of terpenes, 
+dominated by sesquiterpenes including beta-barbatene and (E,E)-alpha-
+farnesene, was detected at the middle and late stages of development, 
+suggesting a development-specific function of volatile terpenes in 
+D. discoideum. The patchy distribution of TPS genes in the eukaryotic 
+domain and the evidence for TPS function in D. discoideum indicate that 
+the TPS genes mediate lineage-specific adaptations.
+
+
+submitted by: Gad Shaulsky [gadi@bcm.edu]
+———————————————————————————————————————
+
+
+The Dictyostelium discoideum as a novel host system to study the 
+interaction between phagocytes and yeasts
+
+Barbara Koller, Christin Schramm, Susann Siebert, János Triebel, 
+Eric Deland, Anna M. Pfefferkorn, Volker Rickerts and Sascha Thewes.
+
+
+Front. Microbiol. 7:1665. doi: 10.3389/fmicb.2016.01665
+
+The social amoeba Dictyostelium discoideum is a well-established model 
+organism to study the interaction between bacteria and phagocytes. In 
+contrast, research using D. discoideum as a host model for fungi is rare. 
+We describe a comprehensive study, which uses D. discoideum as a host 
+model system to investigate the interaction with apathogenic 
+(Saccharomyces cerevisiae) and pathogenic (Candida sp.) yeast. We 
+show that Dictyostelium can be co-cultivated with yeasts on solid media, 
+offering a convenient test to study the interaction between fungi and 
+phagocytes. We demonstrate that a number of D. discoideum mutants 
+increase (atg1-, kil1-, kil2-) or decrease (atg6-) the ability of the amoebae 
+to predate yeast cells. On the yeast side, growth characteristics, reduced 
+phagocytosis rate, as well as known virulence factors of C. albicans 
+(EFG1, CPH1, HGC1, ICL1) contribute to the resistance of yeast cells 
+against predation by the amoebae. Investigating haploid C. albicans 
+strains, we suggest using the amoebae plate test for screening purposes 
+after random mutagenesis. Finally, we discuss the potential of our 
+adapted amoebae plate test to use D. discoideum for risk assessment 
+of yeast strains.
+
+
+submitted by: Sascha Thewes [sascha.thewes@fu-berlin.de]
+———————————————————————————————————————
+
+
+The microfluidic lighthouse: an omnidirectional gradient generator
+
+A. Nakajima (a), M. Ishida (b), T. Fujimori (b), Y. Wakamoto (a,b) and 
+S. Sawai (*a,b,c) 
+
+a Research Center for Complex Systems Biology, Graduate School of Arts 
+and Sciences, The University of Tokyo, Japan
+b Department of Basic Science, Graduate School of Arts and Sciences, 
+The University of Tokyo, Japan
+c PRESTO, Japan Science and Technology Agency, Japan
+
+
+Lab Chip, 2016 (in press) DOI: 10.1039/c6lc00898d
+
+Studies of chemotactic cell migration rely heavily on various assay systems 
+designed to evaluate the ability of cells to move in response to attractant 
+molecules. In particular, the development of microfluidics-based devices in 
+recent years has made it possible to spatially distribute attractant molecules 
+in graded profiles that are sufficiently stable and precise to test theoretical 
+predictions regarding the accuracy and efficiency of chemotaxis and the 
+underlying mechanism of stimulus perception. However, because the gradient 
+is fixed in a direction orthogonal to the laminar flow and thus the chamber 
+geometry, conventional devices are limited for the study of cell re-orientation to 
+gradients that move or change directions. Here, we describe the development 
+of a simple radially symmetric microfluidics device that can deliver laminar flow 
+in 360°. A stimulant introduced either from the central inlet or by photo uncaring 
+is focused into the laminar flow in a direction determined by the relative rate of 
+regulated flow from multiple side channels. Schemes for flow regulation and an 
+extended duplexed device were designed to generate and move gradients in 
+desired orientations and speed, and then tested to steer cell migration of 
+Dictyostelium and neutrophil-like HL60 cells. The device provided a high 
+degree of freedom in the positioning and orientation of attractant gradients, 
+and thus may serve as a versatile platform for studying cell migration, 
+re-orientation, and steering.
+
+
+submitted by: Satoshi Sawai [cssawai@mail.ecc.u-tokyo.ac.jp]
+==============================================================
+[End dictyNews, volume 42, number 24]

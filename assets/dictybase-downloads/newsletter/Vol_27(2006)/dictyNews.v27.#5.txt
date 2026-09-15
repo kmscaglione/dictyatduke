@@ -1,0 +1,142 @@
+dictyNews
+Electronic Edition
+Volume 27, number 5
+August 18, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Selective membrane exclusion in phagocytic and macropinocytic cups
+
+Valentina Mercanti1#, Steve J. Charette1#, Nelly Bennett2, Jean-Jeacques 
+Ryckewaert3, François Letourneur4 and Pierre Cosson1
+
+1. Universite de Geneve, Centre Medical Universitaire, Departement de
+Physiologie Cellulaire et Metabolisme, 1 rue Michel Servet, 
+CH-1211 Geneve 4, Switzerland.
+2. Laboratoire de Biochimie et Biophysique des Systemes Integres, 
+Departement de Reponse et Dynamique Cellulaires, CEA-Grenoble, 17 rue des 
+Martyrs, 38054 Grenoble Cedex 9, France.
+3. Laboratoire de Chemie des Proteines, ERM 201 INSERM/CEA/UJF, 17 rue des 
+Martyrs, 38054 Grenoble Cedex 9, France. 
+4. Institut de Biologie et Chimie des Proteines (IBCP UMR 5086); CNRS; 
+Univ. Lyon1; IFR128 BioSciences Lyon-Gerland; 7, passage du Vercors, 
+69367 Lyon cedex 07, France
+#These authors contributed equally to this work.
+
+
+Journal of Cell Science, in press
+
+Specialized eukaryotic cells can ingest large particles and sequester them 
+within membrane-delimited phagosomes. Many studies have described the 
+delivery of lysosomal proteins to the phagosome, but little is known about 
+membrane sorting during the early stages of phagosome formation. Here we 
+used Dictyostelium discoideum amoebae to analyze the membrane composition 
+of newly formed phagosomes. The membrane delimiting the closing phagocytic 
+cup was essentially derived from the plasma membrane, but a subgroup of 
+proteins was specifically excluded. Interestingly the same phenomenon was 
+observed during the formation of macropinosomes, suggesting that the same 
+sorting mechanisms are at play during phagocytosis and macropinocytosis. 
+Analysis of mutant strains revealed that clathrin-associated adaptor 
+complexes AP-1, -2 and -3 were not necessary for this selective exclusion, 
+and accordingly ultrastructural analysis revealed no evidence for vesicular 
+transport around phagocytic cups. Our results suggest the existence of a 
+new, as yet uncharacterized, sorting mechanism in phagocytic and 
+macropinocytic cups.
+
+
+Submitted by: Steve Charette [steve.charette@medecine.unige.ch]
+-----------------------------------------------------------------------------
+
+
+The function of the Dictyostelium Atg1 kinase during autophagy and 
+development
+
+Turgay Tekinay, Mary Y. Wu1, Grant P. Otto, O. Roger Anderson and Richard H. 
+Kessin
+
+
+Eukaryotic Cell, in press
+
+When starved, the amoebae of Dictyostelium discoideum initiate a 
+developmental process that results in the formation of fruiting bodies, in 
+which stalks support balls of spores. The nutrients and energy necessary for 
+development are provided by autophagy. Atg1 is a protein kinase that 
+regulates the induction of autophagy in budding yeast. In addition to a 
+conserved kinase domain, Dictyostelium Atg1 has a C-terminal region that has 
+significant homology to the Caenorhabditis elegans and mammalian Atg1 
+homologues, but not to the budding yeast Atg1. We investigated the function 
+of the kinase and conserved C-terminal domains of DdAtg1 and showed that 
+these domains are essential for autophagy and development. Kinase-negative 
+DdAtg1 acts in a dominant-negative fashion, resulting in a mutant phenotype 
+when expressed in the wild-type cells. GFP-tagged kinase-negative DdAtg1 
+co-localizes with RFP tagged DdAtg8, a marker of preautophagosomal structures 
+and autophagosomes. The conserved C-terminal region is essential for 
+localization of kinase-negative DdAtg1 to autophagosomes labeled with 
+RFP-tagged Dictyostelium Atg8. The dominant-negative effect of the 
+kinase-defective mutant also depends on the C-terminal domain. In cells 
+expressing dominant-negative DdAtg1, autophagosomes are formed and accumulate 
+but seem not to be functional. By using a temperature-sensitive DdAtg1, we 
+showed that DdAtg1 is required throughout development; development halts when 
+the cells are shifted to the restrictive temperature, but resumes when cells 
+are returned to the permissive temperature.
+
+Submitted by: Richard Kessin [rhk2@columbia.edu]
+-----------------------------------------------------------------------------
+
+
+RacG regulates morphology, phagocytosis and chemotaxis
+
+Baggavalli P. Somesh(1), Georgia Vlahou(1), Miho Iijima(3), Robert H. 
+Insall(2), Peter Devreotes(3) and Francisco Rivero(1)
+
+1. Center for Biochemistry and Center for Molecular Medicine Cologne, 
+Medical Faculty, University of Cologne. 
+2. School of Biosciences, The University of Birmingham.
+3. Department of Cell Biology, Johns Hopkins University School of Medicine.
+
+
+Eukaryotic Cell, in press.
+
+RacG is an unusual member of the complex family of Rho GTPses in 
+Dictyostelium. We have generated a knockout strain (KO) as well as strains 
+that overexpress the wild-type (WT), constitutively active (V12) or dominant 
+negative (N17) RacG. The protein is targeted to the plasma membrane, 
+apparently in a nucleotide-dependent manner, and induces the formation of 
+abundant actin-driven filopods. RacG is enriched at the rim of the 
+progressing phagocytic cup and overexpression of RacG-WT or RacG-V12 induced 
+an increased rate of particle uptake. The positive effect of RacG on 
+phagocytosis was abolished in the presence of 50 µM LY294002, a 
+phosphoinositide 3-kinase inhibitor, indicating that generation of 
+phosphatidylinositol 3,4,5-trisphosphate is required for activation of RacG. 
+RacG-KO cells showed a moderate chemotaxis defect that was stronger in 
+RacG-V12 and RacG-N17 mutants, in part due to interference with signaling 
+through Rac1. The in vivo effects of RacG-V12 could not be reproduced by a 
+mutant lacking the Rho insert region, indicating that this region is 
+essential for interaction with downstream components. Processes like growth,
+pinocytosis, exocytosis, cytokinesis and development were unaffected in 
+Rac-KO cells and in the overexpressor mutants. In a cell-free system RacG 
+induced actin polymerization upon GTPgammaS stimulation, and this response 
+could be blocked by an Arp3 antibody. While the mild phenotype of RacG-KO 
+cells indicates some overlap with one or more Dictyostelium Rho GTPases, 
+like Rac1 and RacB, the significant changes found in overexpressors show 
+RacG plays important roles. We hypothesize that RacG interacts with a subset 
+of effectors, in particular those concerned with shape, motility and 
+phagocytosis.
+
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+==============================================================================
+[End dictyNews, volume 27, number 5] 

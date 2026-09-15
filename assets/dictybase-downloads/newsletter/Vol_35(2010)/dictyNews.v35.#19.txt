@@ -1,0 +1,155 @@
+dictyNews
+Electronic Edition
+Volume 35, number 19
+Dec 23, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY HOLIDAYS AND A JOYOUS NEW YEAR!
+
+=========
+Abstracts
+=========
+
+
+Social selection and the evolution of cooperative groups:
+The example of the cellular slime moulds
+
+Vidyanand Nanjundiah (1, 2) and Santosh Sathe (2)
+
+(1) Department of Molecular Reproduction, Development and Genetics
+and (2) Centre for Ecological Sciences, Indian Institute of Science,
+Bangalore 560012, India (email: vidya@ces.iisc.ernet.in)
+
+
+Integrative Biology, accepted as a “Perspective” article
+
+Social selection can operate when the phenotype of an individual depends
+on its own genotype as well as on the phenotypes, and so genotypes, of
+other individuals. In such a situation one can associate a phenotype with
+a genotype only with reference to a specified social context. Phenotypic
+heterogeneity within groups can lead to social selection, and can do so
+even when all individuals are of the same genotype. For that to happen,
+phenotypic plasticity, namely the ability of a genotype to exhibit
+different phenotypes, is a prerequisite. However, co-operative social
+behaviour with division of labour demands that individuals of different
+phenotypes interact appropriately, not that they belong to the same
+genotype or have overlapping genetic interests. Interacting phenotypes,
+rather than shared genes, are the essential requirement for group life. A
+possible route to the evolution of social groups involves the following
+steps: (a) individuals that happen to be in spatial proximity benefit
+simply by virtue of their number; (b) traits that are already present act
+as preadaptations and improve the efficiency of the group; and (c) new
+adaptations evolve by social selection – that is, via interactions between
+individuals – and further strengthen group behaviour. Under natural
+conditions cellular slime mould amoebae form multicellular groups that can
+be genetically homogeneous (clonal) or heterogeneous (polyclonal). In
+either case the development of the group is broadly the same and displays
+strong cooperation between cells. A survey of cellular slime mould
+behaviour throws up numerous examples of social selection and supports 
+the route sketched above for the evolution of social groups. The resulting
+perspective offers insights into multicellular development, both normal
+and abnormal.
+
+
+Submitted by Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Curvature recognition and force generation in phagocytosis
+
+Margaret Clarke1, Ulrike Engel2, Jennifer Giorgione1, Annette Müller-Taubenberger3, 
+Jana Prassler4, Douwe Veltman5, and Günther Gerisch4X
+
+1 Program in Genetic Models of Disease, Oklahoma Medical Research Foundation, 
+Oklahoma   City, OK 73121, USA
+2 Nikon Imaging Center at the University of Heidelberg, Bioquant, 69120 Heidelberg, 
+Germany
+3 Institut für Zellbiologie, Ludwig-Maximilians-Universität München, 80336 München, 
+Germany
+4 Max-Planck-Institut für Biochemie, 82152 Martinsried, Germany
+
+BMC Biology, in press
+
+
+Background
+The uptake of particles by actin-powered invagination of the plasma membrane is 
+common to protozoa and to phagocytes involved in the immune response of higher 
+organisms. The question addressed here is how a phagocyte may use geometrical 
+cues to optimize force generation for the uptake of a particle. We survey mechanisms 
+that enable a phagocyte to remodel actin organization in response to particles of 
+complex shape. 
+Results
+Using particles that consist of two lobes separated by a neck, we show that 
+Dictyostelium cells transmit signals concerning the curvature of a surface to the 
+actin system underlying the plasma membrane. Force applied to a concave region
+can divide a particle in two, allowing engulfment of the portion first encountered. 
+The phagosome membrane bent around the concave region is marked by a protein
+containing an I-BAR domain in combination with an SH3 domain, similar to 
+mammalian insulin receptor tyrosine kinase substrate p53 (IRSp53). Regulatory 
+proteins enable the phagocyte to switch activities within seconds in response to 
+particle shape. Ras, an inducer of actin polymerization, is activated along the cup 
+surface. Coronin, which limits the lifetime of actin structures, is reversibly recruited 
+to the cup, reflecting a program of actin depolymerization. Myosin-I’s are candidate 
+motor proteins for force generation in particle uptake, whereas myosin-II is engaged 
+only in retracting a phagocytic cup after a switch to particle release. Thus, the 
+constriction of a phagocytic cup differs from the contraction of a cleavage furrow 
+in mitosis.
+Conclusions
+Phagocytes scan a particle surface for convex and concave regions. By modulating 
+the spatio-temporal pattern of actin organization, they are capable of switching 
+between different modes of interaction with a particle: either arresting at a concave 
+region and applying force in an attempt to sever the particle there, or extending the 
+cup along the particle surface to identify the very end of the object to be ingested. 
+Our data illustrate the flexibility of regulatory mechanisms that are at a phagocyte’s 
+disposal in exploring an environment of irregular geometry.
+
+
+Submitted by: Günther Gerisch [gerisch@biochem.mpg.de]
+--------------------------------------------------------------------------------
+
+Characterisation of the Dictyostelium homolog of chromatin binding protein 
+DET1 suggests a conserved pathway regulating cell type specification and 
+developmental plasticity
+
+Manu J. Dubin#, Sonja Kasten  and Wolfgang Nellen*
+
+Department of Genetics, Kassel University, Heinrich-Plett-Str. 40, 34132 Kassel, 
+Germany
+# Current address: Gregor Mendel Instiute, Dr.-Bohr-Gasse 3, 1030 Vienna, Austria
+*Author for correspondence: Prof. Dr. Wolfgang Nellen
+
+
+Eukaryotic Cell, in press
+
+DET1 (De-etiolated 1) is a chromatin binding protein involved in developmental 
+regulation in both plants and animals. DET1 is largely restricted to multicellular 
+eukaryotes and here we report the characterisation of a DET1 homolog from the 
+social amoeba Dictyostelium discoideum. As in other species Dictyostelium DET1 
+is nuclear localised. In contrast to other species where it is an essential protein, 
+loss of DET1 is non-lethal in Dictyostelium, although viability is significantly reduced. 
+The phenotype of the det1- mutant is highly pleiotropic and results in a large degree 
+of heterogeneity in developmental parameters. Loss of DET1 results in delayed and 
+abnormal development with enlarged aggregation territories. Mutant slugs displayed 
+cell type patterning with a bias towards the pre-stalk pathway. A number of DET1 
+interacting proteins are conserved in Dictyostelium and the apparently conserved 
+role of DET1 in regulatory pathways involving the bZIP transcription factors 
+DimB/c-Jun/HY5 suggests a highly conserved mechanism regulating development 
+in multicellular eukaryotes. While the mechanism by which DET1 functions is 
+unclear, it appears that it has a key role in regulation of developmental plasticity 
+and integrating information on environmental conditions into the developmental 
+program of an organism.
+
+
+Submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+==============================================================
+[End dictyNews, volume 35, number 19]

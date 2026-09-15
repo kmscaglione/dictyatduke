@@ -1,0 +1,139 @@
+dictyNews
+Electronic Edition
+Volume 43, number 26
+November 10, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Cln5 is secreted and functions as a glycoside hydrolase in Dictyostelium
+
+Robert J. Huber and Sabateeshan Mathavarajah
+
+Department of Biology, Trent University, Peterborough, Ontario, Canada
+
+
+Cellular Signalling, in press
+
+Ceroid lipofuscinosis neuronal 5 (CLN5) is a member of a family of 
+proteins that are linked to neuronal ceroid lipofuscinosis (NCL). This 
+devastating neurological disorder, known commonly as Batten disease, 
+affects all ages and ethnicities and is currently incurable. The precise 
+function of CLN5, like many of the NCL proteins, remains to be 
+elucidated. In this study, we report the localization, molecular function, 
+and interactome of Cln5, the CLN5 homolog in the social amoeba 
+Dictyostelium discoideum. Residues that are glycosylated in human 
+CLN5 are conserved in the Dictyostelium homolog as are residues 
+that are mutated in patients with CLN5 disease. Dictyostelium Cln5 
+contains a putative signal peptide for secretion and we show that the 
+protein is secreted during growth and starvation. We also reveal that 
+both Dictyostelium Cln5 and human CLN5 are glycoside hydrolases, 
+providing the first evidence in any system linking a molecular function 
+to CLN5. Finally, immunoprecipitation coupled with mass spectrometry 
+identified 61 proteins that interact with Cln5 in Dictyostelium. Of the 61 
+proteins, 67% localize to the extracellular space, 28% to intracellular 
+vesicles, and 20% to lysosomes. A GO term enrichment analysis 
+revealed that a majority of the interacting proteins are involved in 
+metabolism, catabolism, proteolysis, and hydrolysis, and include other 
+NCL-like proteins (e.g., Tpp1/Cln2, cathepsin D/Cln10, cathepsin 
+F/Cln13) as well as proteins linked to Cln3 function in Dictyostelium 
+(e.g., AprA, CfaD, CadA). In total, this work reveals a CLN5 homolog 
+in Dictyostelium and further establishes this organism as a 
+complementary model system for studying the functions of proteins 
+linked to NCL in humans.    
+
+
+submitted by:  Robert Huber [roberthuber@trentu.ca]
+——————————————————————————————————————
+
+
+WASP family proteins and Formins Compete in Pseudopod- and 
+Bleb-based Migration
+
+Andrew Davidson, Clelia Amato, Peter Thomason and Robert Insall
+
+
+J Cell Biol., accepted
+
+Actin pseudopods induced by SCAR/WAVE drive normal migration 
+and chemotaxis in eukaryotic cells.  Cells can also migrate using blebs, 
+in which the edge is driven forwards by hydrostatic pressure instead 
+of actin.  In Dictyostelium, loss of SCAR is compensated by WASP 
+moving to the leading edge to generate morphologically normal 
+pseudopods.  Here we use an inducible double knockout to show 
+that cells lacking both SCAR and WASP are unable to grow, make 
+pseudopods or, unexpectedly, migrate using blebs.  Remarkably, 
+amounts and dynamics of actin polymerization are normal.  
+Pseudopods are replaced in double SCAR/WASP mutants by 
+aberrant filopods, induced by the formin dDia2.  Further disruption 
+of the gene for dDia2 restores cells’ ability to initiate blebs and thus 
+migrate, though pseudopods are still lost.  Triple knockout cells still 
+contain near-normal F-actin levels.  This work shows that SCAR, 
+WASP and dDia2 compete for actin. Loss of SCAR and WASP 
+causes excessive dDia2 activity, maintaining F-actin levels but 
+blocking pseudopod and bleb formation and migration.
+
+
+submitted by:  Robert Insall [r.insall@beatson.gla.ac.uk]
+——————————————————————————————————————
+
+
+Curcumin affects gene expression and reactive oxygen species via 
+a PKA dependent mechanism in Dictyostelium discoideum
+
+William S. Swatson 1, Mariko Katoh-Kurasawa 2, Gad Shaulsky 2*, 
+Stephen Alexander 1*
+
+1 Division of Biological Sciences, University of Missouri, Columbia, 
+MO 65211, United States
+2 Department of Molecular and Human Genetics, Baylor College 
+of Medicine, Houston, TX 77030, United States
+
+*Corresponding authors
+Correspondence to Stephen Alexander, alexanderst@missouri.edu, 
+and Gad Shaulsky, gadi@bcm.edu
+
+
+PLOS ONE November 6, 2017, accepted
+
+Botanicals are widely used as dietary supplements and for the 
+prevention and treatment of disease. Despite a long history of use, 
+there is generally little evidence supporting the efficacy and safety 
+of these preparations.  Curcumin has been used to treat a myriad 
+of human diseases and is widely advertised and marketed for its 
+ability to improve health, but there is no clear understanding how 
+curcumin interacts with cells and affects cell physiology.  
+D. discoideum is a simple eukaryotic lead system that allows both 
+tractable genetic and biochemical studies.  The studies reported 
+here show novel effects of curcumin on cell proliferation and 
+physiology, and a pleiotropic effect on gene transcription.  
+Transcriptome analysis showed that the effect is two-phased with 
+an early transient effect on the transcription of approximately 5% 
+of the genome, and demonstrates that cells respond to curcumin 
+through a variety of previously unknown molecular pathways.  
+This is followed by later unique transcriptional changes and a 
+protein kinase A dependent decrease in catalase A and three 
+superoxide dismutase enzymes.  Although this results in an
+increase in reactive oxygen species (ROS; superoxide and H2O2), 
+the effects of curcumin on transcription do not appear to be the 
+direct result of oxidation.  This study opens the door to future 
+explorations of the effect of curcumin on cell physiology.  
+
+
+submitted by: Steven Alexander  [alexanderst@missouri.edu]
+==============================================================
+[End dictyNews, volume 43, number 26]

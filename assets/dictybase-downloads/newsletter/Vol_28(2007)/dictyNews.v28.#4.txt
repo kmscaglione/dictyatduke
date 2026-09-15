@@ -1,0 +1,51 @@
+dictyNews
+Electronic Edition
+Volume 28, number 4
+February 9, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+A stress response kinase, KrsA, controls cAMP relay during the early 
+development of Dictyostelium discoideum
+
+Tetsuya Muramoto#, Hidekazu Kuwayama#, Kumiko Kobayashi,
+and Hideko Urushihara
+# These two authors are equally contributed.
+
+
+Developmental Biology, in press
+
+Solitary amoebae of Dictyostelium discoideum are frequently exposed to 
+stressful conditions in nature, and their multicellular development is 
+one response to environmental stress. Here we analyzed an aggregation 
+stage abundant gene, krsA, homologous to human krs1 (kinase responsive to 
+stress 1) to understand the mechanisms for the initiation of development 
+and cell fate determination. The krsA- cells exhibited reduced viability 
+under hyperosmotic conditions. They produced smaller aggregates on membrane 
+filters and did not form aggregation streams on a plastic surface under 
+submerged starvation conditions, but were normal in sexual development. 
+During early asexual development, the expression of cAMP-related genes 
+peaked earlier in the knockout mutants. Neither cAMP oscillation in starved 
+cells nor an increase in the cAMP level following osmotic stress was 
+observed in krsA-. The nuclear export signal, as well as the kinase domain, 
+in KrsA was necessary for stream formation. These results strongly suggest 
+that krsA is involved in cAMP relay, and that signaling pathways for 
+multicellular development have evolved in unison with the stress response. 
+
+
+Submitted by Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+============================================================
+[End dictyNews, volume 28, number 4]

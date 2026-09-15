@@ -1,0 +1,171 @@
+Dicty News
+Electronic Edition
+Volume 22, number 15
+June 11, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+
+Distribution of alkaline phosphatase in vegetative Dictyostelium cells in
+relation to the contractile vacuole complex
+
+Margaret Clarke and Lucinda Maddera
+Oklahoma Medical Research Foundation, Oklahoma City, Oklahoma, 73104
+
+Eur. J. Cell Biol., in press.  
+(a special issue in honor of John Heuser)
+
+
+The structure of the contractile vacuole complex of Dictyostelium
+discoideum has long been a subject of controversy.  A model that originated
+from the work of John Heuser and colleagues described this osmoregulatory
+organelle as an interconnected array of tubules and cisternae whose membranes
+are densely populated with vacuolar proton pumps.  A conflicting model
+described this same organelle as bipartite, consisting of a pump-rich
+spongiome and a pump-free bladder, the latter membranes being identified by
+their alkaline phosphatase activity.  In the present study we have employed
+an antiserum specific for Dictyostelium alkaline phosphatase to examine the
+distribution of this enzyme in vegetative cells.  The antiserum labels
+puncta, probably vesicles, that lie at or near the plasma membrane and are
+sometimes, but only rarely, enriched near contractile vacuole membranes.
+We conclude that alkaline phosphatase is not a suitable marker for
+contractile vacuole membranes.  We discuss these results in relation to the
+two models of contractile vacuole structure and suggest that all data are
+consistent with the first model.
+
+
+
+Submitted by: Margaret Clarke [clarkem@omrf.ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+
+The XMAP215-family protein DdCP224 is required for cortical interactions of
+microtubules
+
+Andrea Hestermann and Ralph Graf*
+
+A.-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität München,
+Schillerstr. 42, D-80336 München, Germany
+
+BMC Cell Biology 2004, 5:24, in press
+
+
+Background: Interactions of peripheral microtubule tips with the cell cortex
+are of crucial importance for nuclear migration, spindle orientation,
+centrosome positioning and directional cell movement. Microtubule plus end
+binding proteins are thought to mediate interactions of microtubule tips
+with cortical actin and membrane proteins in a dynein-dependent manner.
+XMAP215-family proteins are main regulators of microtubule plus end dynamics
+but so far they have not been implicated in the interactions of microtubule
+tips with the cell cortex. 
+
+Results: Here we show that overexpression of an N-terminal fragment of
+DdCP224, the Dictyostelium XMAP215 homologue, caused a collapse of the
+radial microtubule cytoskeleton, whereby microtubules lost contact with
+the cell cortex and were dragged behind like a comet tail of an unusually
+motile centrosome. This phenotype was indistinguishable from mutants
+overexpressing fragments of the dynein heavy chain or intermediate chain.
+Moreover, it was accompanied by dispersal of the Golgi apparatus and
+reduced cortical localization of the dynein heavy chain indicating a
+disrupted dynein/dynactin interaction. The interference of DdCP224 with
+cortical dynein function is strongly supported by the observations that
+DdCP224 and its N-terminal fragment colocalize with dynein and
+coimmunoprecipitate with dynein and dynactin.
+
+Conclusions: Our data show that XMAP215-like proteins are required for the
+interaction of microtubule plus ends with the cell cortex in interphase
+cells and strongly suggest that this function is mediated by dynein.
+
+
+
+Submitted by: Ralph Graef [rgraef@lrz.uni-muenchen.de]
+
+-----------------------------------------------------------------------------
+
+
+Live cell spinning disk microscopy
+
+RALPH GRAF1*, JENS RIETDORF2 AND TIMO ZIMMERMANN2
+
+1) A.-Butenandt-Institut / Zellbiologie
+Ludwig-Maximilians-Universität München
+Schillerstr. 42
+80336 München, Germany
+2) Advanced Light Microscopy Facility
+European Molecular Biology Laboratory
+Meyerhofstr. 1
+69117 Heidelberg, Germany
+
+Advances in Biochemical Engineering/Biotechnology, in press
+Special Volume: Microscopic Techniques
+Jens Rietdorf (Ed.)
+
+
+In vivo microscopy of dynamic processes in cells and organisms requires
+very fast and sensitive acquisition methods. Confocal laser scanning
+microscopy is inherently speed-limited by the requirement of beam scanning
+movements. In contrast to single beam scanning systems, the parallelized
+approach of multi beam scanning is much faster. Spinning disk confocal
+microscopes are therefore very suited for fast in vivo imaging. The
+principles of spinning disk microscopy will be explained in this chapter
+and a thorough comparison of the performance of single beam and multi beam
+scanning systems is made and illustrated with an example of in vivo imaging
+in Dictyostelium discoideum.
+
+
+
+Submitted by: Ralph Graef [rgraef@lrz.uni-muenchen.de]
+
+-----------------------------------------------------------------------------
+
+
+Molecular and functional analysis of the Dictyostelium centrosome
+
+Ralph Graf, Christine Daunderer and Irene Schulz
+
+Adolf-Butenandt-Institut / Zellbiologie, Schillerstr. 42, D-80336 München,
+Germany
+
+Int. Rev. Cytol., in press
+
+
+The centrosome is a non-membranous, nucleus-associated organelle which
+functions not only as the main microtubule-organizing center but also as
+a cell cycle control unit. How the ~100 different proteins that make up a
+centrosome contribute to centrosome function is still largely unknown. 
+Considerable progress in the understanding of centrosomal functions can be
+expected from comparative cell biology of morphologically different
+centrosomal structures fulfilling conserved functions. Dictyostelium is an
+alternative model organism for centrosome research in addition to yeast
+and animal cells. With the elucidation of the morphological changes and
+dynamics of centrosome duplication, the establishment of a centrosome
+isolation protocol, and the identification of many centrosomal components
+there is a solid basis for understanding the biogenesis and function of
+this fascinating organelle. Here we give an overview of the prospective
+protein inventory of the Dictyostelium centrosome based on database
+searches. Moreover, we focus on the comparative cell biology of known
+components of the Dictyostelium centrosome including the g-tubulin complex
+and the homologues of centrin, Nek2, XMAP215 and EB1.
+
+
+
+Submitted by: Ralph Graef [rgraef@lrz.uni-muenchen.de]
+
+==============================================================================
+[End Dicty News, volume 22, number 15]

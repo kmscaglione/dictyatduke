@@ -1,0 +1,105 @@
+Dicty NewsElectronic EditionVolume 22, number 3February 6, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+  The necessity of mitochondrial genome DNA for normal development ofDictyostelium cellsJunji Chida, Hitomi Yamaguchi, Aiko Amagai and Yasuo Maeda*Department of Developmental Biology and Neurosciences, Graduate School ofLife Sciences, Tohoku University, Aoba, Sendai 980-8578, JapanJ. Cell Sci. (in press)SummaryMost unexpectedly, there is now increasing evidence that mitochondria havenovel and crucial functions in the regulatory machinery of thegrowth/differentiation transition, cell-type determination, cellularmovement and pattern formation. Here we created rho delta cells with a 
+reducedamount (about 1/4) of mitochondrial DNA (mtDNA) from Dictyosteliumdiscoideum Ax-2 cells, by means of exposure of Ax-2 cells to ca. 30 mg/ml ofethidium bromide (EtBr) in axenic growth medium. Importantly, the rho delta 
+cellsexhibited a series of fascinating behaviors: when they were starved, 
+theyexhibited a marked delay of differentiation and stopped their 
+development atthe slug stage, thus failing to construct fruiting bodies. 
+Moreover, cellpatterning and cell-type proportioning were found to be greatly 
+modified inslugs (referred to as rho delta slugs) derived from rho delta cells. 
+That is,prestalk differentiation was significantly enhanced in rho delta slugs, 
+whileprespore differentiation was markedly inhibited. In addition, the clearanterior prestalk/posterior prespore pattern was considerably disturbed inrho delta slugs, presumably because of incomplete sorting between the two 
+typesof differentiated cells. After the assay of phototaxis, rho delta slugs 
+alsoexhibited highly disordered movement toward the light source. Taken 
+togetherthese results suggest that mtDNA might have important multiple 
+functions ina variety of cellular processes during Dictyostelium development.
+Submitted by: Yasuo Maeda [ymaeda@mail.cc.tohoku.ac.jp]
+
+-----------------------------------------------------------------------------
+
+Structure of an activated Dictyostelium STATin its DNA-unbound formMontserrat Soler-Lopez1,3, Carlo Petosa1,3, Masashi Fukuzawa2,Raimond Ravelli1, Jeffrey G. Williams2, Christoph W. Mueller1Molecular Cell, in press1 European Molecular Biology Laboratory, Grenoble Outstation, B.P. 181, 
+38042 Grenoble Cedex 9, France2 School of Biological Sciences, University of Dundee, MSI/WTB ComplexDow Street, Dundee, DD1 5EH, U.K.3 These authors contributed equally to this work. SummaryDd-STATa is a STAT protein which transcriptionally regulates cellular 
+differentiation in Dictyostelium discoideum, the only non-metazoan known 
+to employ SH2 domain signalling. The 2.7 Angstrom crystal structure of a tyrosine 
+phosphorylated Dd-STATa homodimer reveals a four-domain architecture similar 
+to that of mammalian STATs 1 and 3, but with an inverted orientation for the 
+coiled coil domain. Dimerization is mediated by SH2 domain:phosphopeptide 
+interactions and by a novel, direct interaction between SH2 domains. The 
+unliganded Dd-STATa dimer adopts a fully extended conformation remarkably 
+different from that of the DNA-bound mammalian STATs, implying a large 
+conformational change upon target site recognition.  Buried hydrophilic 
+residues predicted to destabilize the coiled coil domain suggest how 
+hydrophobic residues may become exposed and mediate nuclear export.  
+Functional and evolutionary implications for metazoan STAT proteins are 
+discussed.
+ 
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+THE STAT PROTEINS OF DICTYOSTELIUM
+
+JEFFREY G. WILLIAMS - N. B. This is a review article, written some time ago, 
+so some aspects are out of date, e.g. a paper on Dd-STATb is now published and 
+the complete genome sequence reveals no additional STATs.In  'Signal Transducers and Activators of Transcription (STATs)' edited by 
+Pravin B. Sehgal, M.D., Ph.D., David E. Levy, Ph.D., Toshio Hirano, M.D.Kluwer, 
+Acad. PublishersSchool of Life SciencesUniversity of DundeeMSI/WTB ComplexDow StreetDundee DD1 5EH, U.K.OverviewDictyostelium possesses at least four STATs. They all contain the three 
+defining STAT domains: a DNA binding domain, an SH2 domain and a site of 
+tyrosine phosphorylation. However, their N terminal halves are highly 
+diverged from those of metazoan STATs and they also appear to lack 
+C terminal transcriptional trans-activation domains; in all four proteins 
+the site of tyrosine phosphorylation is just a few amino acids from the 
+C terminus. Only two of the proteins, Dd-STATa and Dd-STATc, have been 
+characterised and they function, in different contexts, as either 
+activators or repressor of gene expression. Dd-STATa and Dd-STATc both 
+regulate the transcription of prestalk and stalk cell-specific genes and 
+Dd-STATc also activates specific gene trancription in response to a variety 
+of environmental stresses.  Dd-STATa and Dd-STATc have additional, less 
+well-characterised roles; disruption of the Dd-STATa gene impairs cellular 
+chemotaxis to cAMP and retards early development, while inactivation of the 
+Dd-STATc gene reduces the cellular growth rate and accelerates early 
+development. Upon binding of extracellular cAMP to its serpentine receptor 
+Dd-STATa is very rapidly tyrosine phosphorylated and translocates to the 
+nucleus Activation and nuclear accumulation do not require G protein 
+function. Over a slower time scale, cAMP signalling also activates GSK-3 
+to phosphorylate Dd-STATa and this facilitates its export from the nucleus. 
+During development Dd-STATc is activated by DIF-1, a chlorinated 
+hexaphenone. DIF-1 induces the nuclear accumulation of Dd-STATc by reducing 
+its rate of export from the nucleus. The signalling steps that activate 
+Dd-STATa and Dd-STATc are unknown and, although the Dictyostelium genome 
+project is now 95% complete, there is as yet no obvious candidate for a 
+JAK or a receptor tyrosine kinase.
+ 
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+Sensitisation of Dictyostelium chemotaxis by PI3-kinase mediated 
+self-organising signalling patches Marten Postma, Jeroen Roelofs, Joachim Goedhart, Harri‘t M. Loovers, 
+Antonie J.W.G. Visser, and Peter J.M. Van HaastertDepartment of Biochemistry, University of Groningen, Nijenborgh 4, 
+9747 AG Groningen, the NetherlandsJ Cell Science, in pressThe leading edge of Dictyostelium cells in chemoattractant gradients can be 
+visualised using GFP tagged to the PH domain of CRAC, which presumable binds 
+PI(3,4,5)P3. Uniform cAMP induces persistent translocation PHCrac-GFP from 
+the cytosol to multiple patches, which are similar to the single patch of 
+PHCrac-GFP at the leading edge in a cAMP gradient. We show that cAMP 
+determines the probability of patch formation (half-maximal effect at 
+0.5 nM cAMP), but not size, lifetime or intensity of patches, indicating 
+that patches are self-organising structures. A pseudopod is extended from 
+the area of the cell with a PHCrac-GFP patch at about 10 s after patch 
+formation. Cells treated with the F-actin inhibitor latrunculin A are round 
+without pseudopodia; uniform cAMP still induces localised patches of 
+PHCrac-GFP. Inhibition of PI3-kinase activity with LY294002 inhibits 
+PHCrac-GFP patches and inhibits chemotaxis towards nanomolar cAMP, but has 
+no effect at higher cAMP concentrations. Thus, very low cAMP concentrations 
+induce self-organising PHCrac-GFP patches that serve as a spatial cue for 
+pseudopod formation, which enhances the sensitivity and amplitude of 
+chemotactic movement. 
+
+Submitted by: Peter van Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+===============================================================================[End Dicty News, volume 22, number 3]

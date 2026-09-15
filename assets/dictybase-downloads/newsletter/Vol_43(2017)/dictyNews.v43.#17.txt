@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 43, number 17
+August 4, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium discoideum: A model system for cell and developmental 
+biology 
+
+
+Sabateeshan Mathavarajah, Ana Flores, Robert J. Huber
+
+
+Department of Biology, Trent University, Peterborough, Ontario, 
+Canada
+
+
+Current Protocols Essential Laboratory Techniques, in press
+
+The social amoeba Dictyostelium discoideum has long served as a 
+model system for studying fundamental processes in cell and 
+developmental biology. This eukaryotic microbe is also recognized as 
+a model organism for biomedical and human disease research since 
+the genome encodes a large number of homologs of genes linked to 
+human disease, such as those linked to cancer and neurodegeneration. 
+Dictyostelium has a unique life cycle composed of a unicellular growth 
+phase and a multicellular developmental phase that is induced by 
+starvation. During its life cycle, Dictyostelium undergoes conserved 
+cellular processes, including but not limited to, cell proliferation, 
+phagocytosis, intercellular signalling, cell adhesion and motility, 
+chemotaxis, and cell differentiation. The history of the organism, the 
+resources available to researchers in the community, and the diverse 
+ways that Dictyostelium is used in the contemporary research lab are 
+discussed.
+
+
+submitted by: Robert Huber [roberthuber@trentu.ca]
+———————————————————————————————————————
+
+
+Homeodomain-like DNA binding proteins control the haploid-to-diploid
+transition in Dictyostelium
+
+Katy Hedgethorne, Sebastian Eustermann, Ji-Chun Yang, Tom E. H. 
+Ogden,David Neuhaus, Gareth Bloomfield
+
+MRC Laboratory of Molecular Biology, Cambridge, UK.
+
+
+Science Advances, in press
+
+Homeodomain proteins control the developmental transition between 
+the haploid and diploid phases in several eukaryotic lineages, but it is 
+not known whether this reflects the ancestral condition or, instead, 
+convergent evolution. We have characterized the mating-type locus of 
+the amoebozoan Dictyostelium discoideum, which encodes two pairs of 
+small proteins that determine the three mating types of this species; 
+none of these proteins display recognizable homology to known families. 
+We report that the nuclear magnetic resonance structures of two of them,
+MatA and MatB, contain helix-turn-helix folds flanked by largely disordered 
+amino- and carboxyl-terminal tails. This fold closely resembles that of 
+homeodomain transcription factors, and, like those proteins, MatA and 
+MatB each bind DNA characteristically using the third helix of their folded 
+domains. By constructing chimeric versions containing parts of MatA and 
+MatB, we demonstrate that the carboxyl-terminal tail, not the central DNA 
+binding motif, confers mating specificity, providing mechanistic insight into 
+how a third mating type might have originated. Finally, we show that these 
+homeodomain-like proteins specify zygote function: Hemizygous diploids, 
+formed in crosses between a wild-type strain and a mat null mutant, grow 
+and differentiate identically to haploids. We propose that Dictyostelium 
+MatA and MatB are divergent homeodomain proteins with a conserved 
+function in triggering the haploid-to-diploid transition that can be traced 
+back to the last common ancestor of eukaryotes.
+
+
+submitted by: Gareth Bloomfield  [garethb@mrc-lmb.cam.ac.uk]
+==============================================================
+[End dictyNews, volume 43, number 17]

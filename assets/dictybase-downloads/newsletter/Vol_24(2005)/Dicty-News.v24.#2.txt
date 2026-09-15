@@ -1,0 +1,66 @@
+Dicty News
+Electronic Edition
+Volume 24, number 2
+February 11, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+cGMP-phosphodiesterase antagonists inhibit Ca2+ -influx in Dictyostelium
+discoideum and bovine cyclic-nucleotide-gated-channel
+
+Daniel F.Lusche1, Hiroshi Kaneko2, and Dieter Malchow1 
+
+1 Department of Biology University of Konstanz
+2 Department of Physiology University of Heidelberg
+
+
+Eur. J. Pharmacol., in press
+
+We used antagonists of cGMP-phosphodiesterases to examine the role of cGMP
+for light-scattering oscillations and cAMP-induced Ca2+-influx in
+Dictyostelium discoideum, however, SCH 51866 (cis-5,6a,7,8,9,9a-hexahydro-2-[4-(trifluoromethyl)phenylmethyl]-5-methyl-
+cyclopent[4,5]imidazo[2,1-b]purin-4(3H)-one) and sildenafil citrate
+(1-[[3-(6,7-dihydro-1-methyl-7-oxo-3-propyl-1-H-pyrazolo[4,3-d]pyrimidin-5-yl)
+-4-ethoxyphenyl]sulfonyl]-4-methylpiperazine citrate) were poor inhibitors of
+cGMP-hydrolysis. Instead, SCH 51866 (IC50=16 然) and sildenafil, blocked
+chemoattractant (cAMP) -induced Ca2+ -influx as determined with a
+Ca2+-specific electrode. SCH 51866 (150 然) affected neither spontaneous
+cGMP transients during light-scattering-oscillations nor cAMP-mediated
+K+-efflux. SCH 51866 and sildenafil are competitive inhibitors of cGMP
+phosphodiesterases. However, the activity of cGMP-dependent protein kinase
+Ia (PKGIa) was not altered by SCH 51866 (150 然). By contrast, patch-clamp
+measurements of bovine cone cGMP-gated channels
+(cyclic-nucleotide-gated-channel, CNGA3), stably expressed in human embryonic
+kidney cells, HEK 293 cells, revealed reversible, competitive and
+dose-dependent inhibition of sodium currents by SCH 51866 (IC50=25 然) and
+sildenafil, but not by another inhibitor of cGMP-phosphodiesterases,
+UK 114,542. The possibility that D. discoideum cells also express a
+cGMP-regulated channel is supported by our finding that LY 83583
+(6-(phenylamino)-5,8-quinolinedione) (35 然), known to inhibit
+cyclic-nucleotide-gated-channels as well as guanylyl-cyclases, reduced
+cAMP-induced Ca2+-influx in D. discoideum, but did not affect cAMP-induced
+cGMP accumulation. Utilizing a PdeD null strain that exhibits a prolonged
+and elevated cGMP transient following receptor activation, we found that
+the inhibition of Ca2+-influx by SCH 51866 in the wildtype was absent in
+the mutant. Our results show that SCH 51866 and sildenafil are antagonists
+of a Ca2+-permeable channel (CNGA3) and that both compete with cGMP for a
+regulatory site of Ca2+-influx in D. discoideum.
+
+
+Submitted by: Daniel Lusche [Daniel.Lusche@web.de]
+
+==============================================================================
+[End Dicty News, volume 24, number 2] 

@@ -1,0 +1,68 @@
+Dicty NewsElectronic EditionVolume 22, number 1January 23, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Analyses of cDNAs from growth and slug stages of Dictyostelium discoideum
+ Hideko Urushihara, Takahiro Morio, Tamao Saito, Yuji Kohara, Eiko Koriki, 
+Hiroshi Ochiai, Mineko Maeda, Jeffrey G. Williams, Ikuo Takeuchi, and 
+Yoshimasa Tanaka
+
+
+Nuc. Acids Res., in press
+Dictyostelium is a favored model for studying problems in cell and 
+developmental biology. To comprehend the genetic potential and networks that 
+direct growth and multicellular development, we are performing a large-scale 
+analysis of Dictyostelium cDNAs. Here, we newly determine 7,720 nucleotide 
+sequences of cDNAs from the multicellular, slug stage (S) and 10,439, from 
+the unicellular, vegetative stage (V). The combined 26,954 redundant ESTs 
+were computer assembled using the PHRAP pro-gram to yield 5,381 independent 
+sequences. These 5,381 predicted genes represent about half of the estimated 
+coding potential of the organism. One third of them were classified into 12 
+functional categories. Although the overall classification patterns of V 
+and S libraries were very similar, stage-specific genes exist in every 
+category. The majority of V-specific genes function in some aspect of protein 
+translation, while such genes are in a minority in the S-specific and common 
+populations. Instead, genes for signal transduction and multicellular 
+organization are enriched in the population of S-specific genes. Genes 
+encoding the enzymes of basic metabolism are mainly found in the common 
+gene population. These results therefore suggest major differences between 
+growing and developing Dictyostelium cells in the nature of the genes 
+transcribed.
+
+Submitted by: HIDEKO URUSHIHARA [hideko@biol.tsukuba.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Dictyostelium macroautophagy mutants vary in the severity of their 
+developmental defects.
+
+Grant P. Otto, Mary Y. Wu, Nevzat Kazgan, O. Roger Anderson, and Richard H. Kessin
+Journal of Biological Chemistry, in press
+Macroautophagy is the major mechanism that eukaryotes use to recycle cellular 
+components during stressful conditions. We have previously shown that the 
+Atg12-Atg5 conjugation system, required for autophagosome formation in yeast, 
+is necessary for Dictyostelium development. A second conjugation reaction, 
+Aut7/Atg8 lipidation with phosphatidylethanolamine, as well as a protein kinase 
+complex and a phosphatidylinositol 3â-kinase complex, are also required for 
+macroautophagy in yeast. In this study, we characterize mutations in the 
+putative Dictyostelium discoideum orthologues of budding yeast genes that are 
+involved in one of each of these functions, ATG1, ATG6 and ATG8. All three 
+genes are required for macroautophagy in Dictyostelium. Mutant amoebae display 
+reduced survival during nitrogen starvation and reduced protein degradation 
+during development. Mutations in the three genes produceaberrant development 
+with defects of varying severity. As with other Dictyostelium macroautophagy 
+mutants, development of atg1-1, atg6- and atg8- is more aberrant in plaques on 
+bacterial lawns than on nitrocellulose filters. The most severe defect is 
+observed in the atg1-1 mutant, which does not aggregate on bacterial lawns and 
+arrests as loose mounds on nitrocellulose filters. The atg6- and atg8- mutants 
+display almost normal development on nitrocellulose filters, producing 
+multi-tipped aggregates that mature into small fruiting bodies. The 
+distribution of a green fluorescent protein fusion of the autophagosome marker, 
+Atg8, is aberrant in both atg1-1 and atg6- mutants.
+ Submitted by:  Grant Otto [go25@columbia.edu]
+
+
+===============================================================================[End Dicty News, volume 22, number 1]

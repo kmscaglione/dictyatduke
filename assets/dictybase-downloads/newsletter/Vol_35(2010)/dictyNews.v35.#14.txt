@@ -1,0 +1,64 @@
+dictyNews
+Electronic Edition
+Volume 35, number 14
+Nov 19, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Autophosphorylation activates Dictyostelium Myosin II Heavy Chain Kinase A 
+by providing a ligand for an allosteric binding site in the alpha-kinase domain
+
+Scott W. Crawley1, Mojdeh Samimi Gharaei 1, Qilu Ye1, Yidai Yang1, 
+Barak Raveh2, Nir London2, Ora Schueler-Furman2, Zongchao Jia1 
+and Graham P. Côté1
+
+1Department of Biochemistry, Queen’s University, Kingston, Ontario, 
+Canada K7L 3N6
+2Department of Microbiology and Molecular Genetics, Institute for Medical 
+Research Israel-Canada, Hadassah Medical School, The Hebrew University, 
+Jerusalem, 91120 Israel
+
+
+The Journal of Biological Chemistry, in press
+
+Dictyostelium discoideum myosin II heavy chain kinase A (MHCK A), a member 
+of the atypical alpha-kinase family, phosphorylates sites in the myosin II tail that 
+block filament assembly. Here we show that the catalytic activity of A-CAT, the 
+alpha-kinase domain of MHCK A (residues 552-841), is severely inhibited by
+the removal of a disordered C-terminal tail sequence (C-tail; residues 806-841). 
+The key residue in the C-tail was identified as Thr825, which was found to be 
+constitutively autophosphorylated. Dephosphorylation of Thr825 using shrimp 
+alkaline phosphatase decreased A-CAT activity. The activity of a truncated 
+ACAT lacking Thr825 could be rescued by Pi, phosphothreonine and a 
+phosphorylated peptide, but not by threonine, glutamic acid, aspartic acid or 
+an unphosphorylated peptide. These results focused attention on a Pi-binding 
+pocket located in the C-terminal lobe of ACAT. Mutational analysis 
+demonstrated that the Pi-pocket was essential for A-CAT activity. Based on 
+these results, it is proposed that autophosphorylation of Thr825 activates 
+ACAT by providing a covalently-tethered ligand for the Pi-pocket. Ab initio 
+modeling studies using the Rosetta FloppyTail and FlexPepDock protocols 
+showed that it is feasible for the phosphorylated Thr825 to dock intramolecularly 
+into the Pi-pocket. Allosteric activation is predicted to involve a conformational 
+change in Arg734, which bridges the bound Pi to Asp762 in a key active site 
+loop. Sequence alignments indicate that a comparable regulatory mechanism 
+is likely to be conserved in Dictyostelium MHCK B-D and metazoan eukaryotic 
+elongation factor-2 kinases.
+
+
+Submitted by Scott Crawley [crawleys@queensu.ca]
+==============================================================
+[End dictyNews, volume 35, number 14]

@@ -1,0 +1,258 @@
+Dicty News
+Electronic Edition
+Volume 16, number 12
+June 23, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+
+Inhibition of multicellular development switches cell death of Dictyostelium 
+discoideum towards mammalian-like unicellular apoptosis. 
+
+Irène Tatischeff1) a, Patrice Xavier Petit b, Alain Grodet c, Jean-Pierre 
+Tissier d, Isabelle Duband-Goulet e, Jean-Claude Ameisen f 
+
+a: Laboratoire de Physicochimie Biomoléculaire et Cellulaire, CNRS ESA 7033, 
+Université Pierre et Marie Curie, Paris/France 
+
+b: Institut Cochin de Génétique Moléculaire, INSERM U129 - CHU Cochin 
+Port-Royal, Paris/France 
+
+c: Unité 82 INSERM, Faculté de Médecine Xavier Bichat, Paris/France 
+
+d: INRA LGPTA, Villeneuve d'Ascq/France 
+
+e: Institut Jacques Monod, Laboratoire de Biologie Structurale du Noyau 
+Cellulaire, Paris/France 
+
+f: INSERM EPI 9922, CHU Bichat, Université Paris VII, Paris/France 
+
+Eur. J. Cell Biol. (2001) 80, (6), 428-441
+
+Abstract 
+
+The multicellular development of the single celled eukaryote Dictyostelium 
+discoideum is induced by starvation and consists of initial aggregation of 
+the isolated amoebae, followed by their differentiation into viable spores 
+and dead stalk cells. These stalk cells retain their structural integrity 
+inside a stalk tube that support the spores in the fruiting body. Terminal 
+differentiation into stalk cells has been shown to share several features 
+with programmed cell death (Cornillon et al (1994), J. Cell Sci. 107, 2691-
+2704). Here we report that, in the absence of aggregation and 
+differentiation, D. discoideum can undergo another form of programmed cell 
+death that closely ressembles apoptosis of most mammalian cells, involves 
+mitochondrial transmembrane potential loss, phosphatidylserine surface 
+exposure, and engulfment of dying cells by neighboring D. discoideum cells. 
+This death has been studied by various techniques (light microscopy and 
+scanning- or transmission-electron microscopy, flow cytometry, DNA 
+electrophoresis), in two different conditions inhibiting D. discoideum 
+multicellular development. The first one, corresponding to an induced 
+unicellular cell death, was obtained by starving the cells in a 
+"conditioned" cell-free buffer, prepared by previous starvation of another 
+D. discoideum cell population in potassium phosphate buffer (pH 6.8). The 
+second one, corresponding to death of D. discoideum after axenic growth in 
+suspension, was obtained by keeping stationary cells in their culture 
+medium. In both cases of these unicellular-specific cell deaths, microscopy 
+revealed morphological features known as hallmarks of apoptosis for higher 
+eukaryotic cells and apoptosis was further corroborated by flow cytometry. 
+The occurrence in D. discoideum of programmed cell death with two different 
+phenotypes, depending on its multicellular or unicellular status, is further 
+discussed. 
+
+-----------------------------------------------------------------------------
+
+
+A non-Golgi a1,2-Fucosyltransferase that Modifies Skp1 in the Cytoplasm 
+of Dictyostelium
+
+Hanke van der Wel@, Howard R. Morris§, Maria Panico§, Thanai Paxton§, Simon J. 
+North§, Anne Dell§, J. Michael Thomsoný and Christopher M. West@
+
+
+@ Dept. of Anatomy & Cell Biology, University of Florida College of Medicine, 
+Gainesville, FL 32610-0235 USA, §Dept. of Biochemistry, Imperial College, 
+London SW7 2AY United Kingdom
+
+J. Biol. Chem., in press
+
+
+Skp1 is a subunit of the SCF-E3 ubiquitin ligase that targets cell cycle 
+and other regulatory factors for degradation. In Dictyostelium, Skp1 is 
+modified by a pentasaccharide containing the type 1 blood group H 
+trisaccharide at its core. To address how the third sugar, fucose a1,2-
+linked to galactose, is attached, a proteomics strategy was applied to 
+determine the primary structure of FT85, previously shown to copurify 
+with the GDP-Fuc:Skp1 a1,2-fucosyltransferase. Tryptically-generated 
+peptides of FT85 were sequenced de novo using Q-TOF tandem mass 
+spectrometry. Degenerate primers were used to amplify FT85 genomic 
+DNA, which was further extended by a novel linker-PCR method to yield 
+an intronless open reading frame of 768 amino acids. Disruption of the 
+FT85 gene by homologous recombination resulted in viable cells which had 
+altered light scattering properties as revealed by flow cytometry. FT85 
+was necessary and sufficient for Skp1-fucosylation, based on biochemical 
+analysis of FT85-mutant cells and E. coli expressing FT85 recombinantly. 
+FT85 lacks sequence motifs that characterize all other known a1,2-
+fucosyltransferases, and lacks the signal-anchor sequence that targets 
+them to the secretory pathway. The C-terminal region of FT85 harbors 
+motifs found in inverting family 2 glycosyltransferase domains, and its 
+expression in FT85-mutant cells restores fucosyltransferase activity 
+toward a simple disaccharide substrate. Whereas most prokaryote and 
+eukaryote family 2 glycosyltransferases are membrane-bound and oriented 
+toward the cytoplasm where they glycosylate lipid-linked or polysaccharide 
+precursors prior to membrane translocation, the soluble, eukaryotic Skp1-
+fucosyltransferase modifies a protein that resides in the cytoplasm and 
+nucleus.
+
+-----------------------------------------------------------------------------
+
+Expression Patterns of Cell-type Specific Genes in Dictyostelium
+
+Negin Iranfar, Danny Fuller, Roman Sasik@, Terence Hwa@, Michael Laub* and
+William F. Loomis#
+
+Division of Biology, and @ Department of Physics, U.C.S.D. La Jolla, CA 92093
+* Department of Cell and Developmental Biology, Stanford Medical School, 
+Stanford, CA
+
+Molecular Biology of the Cell, in press
+
+Abstract
+
+        Cell-type specific genes were recognized by interrogating
+microarrays carrying Dictyostelium gene fragments with probes prepared from
+fractions enriched in prestalk and prespore cells. Cell-type specific
+accumulation of mRNA from 17 newly identified genes was confirmed by
+Northern analyses.  DNA microarrays carrying 690 targets were used to
+determine expression profiles during development. The profiles were fit to
+a biologically based kinetic equation to extract the times of
+transctription onset and cessation. While the majority of the genes that
+were cell type enriched at the slug stage were first expressed as the
+prespore and prestalk cells sorted out in aggregates, some were found to be
+expressed earlier before the cells had even aggregated. These early genes
+may have been initially expressed in all cells and then preferentially
+turned over in one or the other cell type. Alternatively,  cell type
+divergence may start soon after the initiation of development.
+
+-----------------------------------------------------------------------------
+
+The protein kinase YakA regulates G-protein linked signaling responses 
+during growth and development of Dictyostelium 
+
+Saskia van Es, Karin E. Weening, and Peter N. Devreotes
+
+Department of Cell Biology and Anatomy, Johns Hopkins University, School of 
+Medicine, Baltimore, MD 21205
+
+J. Biol. Chem. In press.
+
+
+Abstract
+
+A genetic screen for Dictyostelium mutants that phenotypically resemble 
+cells lacking the G-protein b-subunit yielded the protein kinase YakA.  
+Like gb null cells, yakA null cells fail to enter development and display 
+slow growth on bacterial lawns. We created a temperature sensitive YakA 
+mutant and showed that YakA activity is required not only at the onset but 
+also during development. The yakA null cells have strong defects in folic 
+acid induced responses, such as actin polymerization and cGMP accumulation, 
+indicating that they play a role in G-protein mediated signaling responses.
+We propose that YakA acts downstream of G-proteins, because cAMP receptors 
+still couple to G-proteins in the yakA mutant. In addition, the previously 
+observed growth arrest induced by overexpression of YakA also occurs in gb 
+mutants.  We localized YakA-GFP to the cytosol suggesting that YakA may be 
+a functional homologue of its mammalian counterparts Dyrk2 and Dyrk3, a 
+subclass of Dual-specificity Yak Related Kinases (Dyrk) with unknown function.
+
+-----------------------------------------------------------------------------
+
+Sphingosine-1-phosphate lyase has a central role in the development of 
+Dictyostelium discoideum
+
+Guochun Li, Christopher Foote, Stephen Alexander and Hannah Alexander
+
+Division of Biological Sciences, University of Missouri, Columbia, MO 
+65211-7400
+
+Development, in press.
+
+SUMMARY
+
+Sphingosine-1-phosphate, a product of sphingomyelin degradation, is an 
+important element of signal transduction pathways regulating cell 
+proliferation and cell death.  In this work we demonstrate additional roles 
+for sphingosine-1-phosphate in growth and multicellular development.  The 
+specific disruption in Dictyostelium discoideum of the sphingosine-1-phosphate 
+lyase gene, which encodes the enzyme catalyzing sphingosine-1-phosphate 
+degradation, results in a mutant strain with aberrant morphogenesis as well 
+as an increase in viability during stationary phase.  The absence of 
+sphingosine-1-phosphate lyase affects multiple stages throughout development 
+including the cytoskeletal architecture of aggregating cells, the ability 
+to form migrating slugs, and the control of cell-type specific gene 
+expression and terminal spore differentiation.  This pleiotropic effect 
+due to the loss of sphingosine-1-phosphate lyase establishes sphingolipids 
+as pivotal regulatory molecules in a wide range of processes in multicellular 
+development. 
+
+
+========================
+  Technical innovation
+========================
+
+[Editor's note:  Although not yet in press, many of you may be interested in
+the following abstract of what promises to be a valuable technical advance]
+
+Making ts mutants in essential genes in Dictyostelium
+		
+Mark S Bretscher and Chris Thompson,
+	
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 2QH, England.
+
+We decided to try to make a ts mutant in an essential gene in Dictyostelium 
+discoideum Ax2, and selected the single gene encoding NSF (the NEM-sensitive 
+factor which appears to be required in all membrane fusion processes) that 
+exists in Dicty (Weidenhaupt et al, 1998) as a target. Our strategy was 
+basically to adapt the current procedure used for gene knockouts, hoping 
+to replace the endogenous gene with one putatively encoding a temperature 
+sensitive allele. There are several temperature-sensitive mutants in NSF 
+in Drosophila and two of these, comatose 4 and 6, occur in highly conserved 
+regions. We therefore constructed a Dicty NSF vector which contained, in the 
+linear mutagenic portion: about 300bp upstream of the gene, the gene itself 
+(including a 100 bp intron, ~2200bp in all) containing the comatose 4 site 
+(marked with a BssHII site, at position1270 from the 5' end of the vector) 
+or 6 site (marked with an AflII site, at position1640), followed by 200bp 
+trailer, a blasticidin casette (1350bp) and a further 1300bp of 3' genomic 
+sequence.
+	These constructs were electroporated into Ax2 in the same manner as 
+for gene knockouts. The cells were then parcelled out into wells and clones 
+selected for drug resistance. These were recloned and grown up andthe DNA 
+from 18 of each mutant subjected to Southern blotting. This showed that in 
+each case, 17/18 clones had arisen by homologous recombination. In the case 
+of comatose 4, none of the clones contained the desired mutation; conversely, 
+in the case of comatose 6, all of them contained the desired site. Furthermore, 
+in clones in which an in-frame termination codon had been placed just after 
+the comatose 6 site, all 12 clones examined had recombined homologously, but 
+none now carried the comatose 6 mutation. This shows that the gene is essential 
+and suggests that when it contains the comatose 4 site, the encoded NSF is 
+non-functional. The comatose 6 clones had, unfortunately, no new phenotype.
+	We therefore made a mutagenic library in which the last 1000bp of coding 
+sequence was made by pcr mutagenesis. Ax2 cells were transformed as before and 
+positive wells recloned. About 1500 such clones were generated and each was 
+screened for growth at 22°C and 26.5°C. From this, 11 ts mutants were 
+recovered; they all arose by homologous recombination. Their properties are 
+under study.
+
+Reference
+Weidenhaupt,M., Bruckert,F. and Satre, M. (1998) Gene 207, 53-60.
+
+We have been greatly assisted in this by David Traynor and, especially, Rob 
+Kay.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 16, number 12]

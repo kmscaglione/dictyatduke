@@ -1,0 +1,88 @@
+dictyNews
+Electronic Edition
+Volume 26, number 8
+March 10, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Blebbing of Dictyostelium cells in response to chemoattractant
+
+Paul D Langridge and Robert R. Kay
+
+
+Experimental Cell Research
+
+Stimulation of Dictyostelium cells with a high uniform concentration of 
+the chemoattractant cyclic-AMP induces a series of morphological changes, 
+including cell rounding and subsequent extension of pseudopodia in random 
+directions. Here we report that cyclic-AMP also elicits blebs and analyse 
+their mechanism of formation. The surface area and volume of cells remain 
+constant during blebbing indicating that blebs form by the redistribution 
+of cytoplasm and plasma membrane rather than the exocytosis of internal 
+membrane coupled to a swelling of the cell. Blebbing occurs immediately 
+after a rapid rise and fall in submembraneous F-actin, but the blebs 
+themselves contain little F-actin as they expand. A mutant with a partially 
+inactivated Arp2/3 complex has a greatly reduced rise in F-actin content, 
+yet shows a large increase in blebbing. This suggests that bleb formation 
+is not enhanced by the preceding actin dynamics, but is actually inhibited 
+by them. In contrast, cells that lack myosin-II completely fail to bleb. 
+We conclude that bleb expansion is likely to be driven by hydrostatic 
+pressure produced by cortical contraction involving myosin-II.  As blebs 
+are induced by chemoattractant we speculate that hydrostatic pressure is 
+one of the forces driving pseudopod extension during movement up a 
+gradient of cyclic-AMP.
+
+
+Submitted by: Paul Langridge [pl@mrc-lmb.cam.ac.uk]
+-----------------------------------------------------------------------------
+
+
+The Dictyostelium Kinome—Analysis of the Protein Kinases from a Simple 
+Model Organism
+
+Jonathan M. Goldberg1*, Gerard Manning2*, Allen Liu1, Petra Fey3, 
+Karen E. Pilcher3, Yanji Xu1, Janet L. Smith1
+
+*These authors contributed equally to this work.
+
+1 Boston Biomedical Research Institute, Watertown, Massachusetts,USA
+2 Razavi-Newman Center for Bioinformatics, Salk Institute for
+Biological Studies, La Jolla, California, USA
+3 Center for Genetic Medicine, Northwestern University, Chicago,
+Illinois, USA
+
+
+PLoS Genetics, in press
+
+Dictyostelium discoideum is a widely studied model organism with both 
+unicellular and multicellular forms in its developmental cycle. The 
+Dictyostelium genome encodes 285 predicted protein kinases, similar to the 
+count of the much more advanced Drosophila. It contains members of most 
+kinase classes shared by fungi and metazoans, as well as many previously 
+thought to be metazoan specific, indicating that they have been secondarily 
+lost from the fungal lineage. This includes the entire tyrosine kinase–like 
+(TKL) group, which is expanded in Dictyostelium and includes several novel 
+receptor kinases. Dictyostelium lacks tyrosine kinase group kinases, and 
+most tyrosine phosphorylation appears to be mediated by TKL kinases. About 
+half of Dictyostelium kinases occur in subfamilies not present in yeast
+and metazoa, suggesting that protein kinases have played key roles in the 
+adaptation of Dictyostelium to its habitat. This study offers insights into 
+kinase evolution and provides a focus for signaling analysis in this system.
+
+
+Submitted by: Janet Smith [janet.l.smith@gmail.com]
+==============================================================================
+[End dictyNews, volume 26, number 8] 

@@ -1,0 +1,237 @@
+Dicty News
+Electronic Edition
+Volume 24, number 10
+April 15, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Subsecond reorganization of the actin network in cell motility and chemotaxis
+ 
+Stefan Diez 1,  Guenther Gerisch 2, Kurt Anderson 1, Annette
+Mueller-Taubenberger 2 and Till Bretschneider 2
+ 
+1	Max-Planck-Institut fuer molekulare Zellbiologie und Genetik,
+   	D-01307 Dresden, Germany
+2	Max-Planck-Institut fuer Biochemie,
+	D-82152 Martinsried, Germany
+
+
+Proc. Natl. Acad. Sci. USA, in press
+ 
+Actin networks are continuously reorganized in cells that rapidly change
+their shape. Applying total internal reflection fluorescence (TIRF) microscopy
+at acquisition rates of 10 to 20 Hz, we measured an average growth rate of
+3 mm x sec-1 for filamentous actin structures throughout the entire
+substrate-attached cortex of Dictyostelium cells. New filaments often proceed
+along pre-existing ones, resulting in bundle formation concurrent with
+filament growth. In cells that orientate in a gradient of chemoattractant,
+prominent assemblies of actin enriched in the Arp2/3 complex are inserted into
+the network, primarily at the base of filopods that point into the direction
+of the gradient. We propose that high turnover rates of actin filaments confer
+the plasticity to the cell cortex that is required for rapid accommodation to
+external stimuli.
+
+
+Submitted by: Guenther Gerisch [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+
+A cysteine-rich extracellular protein containing a PA14 domain mediates
+quorum sensing in Dictyostelium
+
+Alexandra Kolbinger1, Tong Gao2, Debbie Brock2, Robin Ammann2 Axel Kisters1,
+Joseph Kellermann3, Diane Hatton2, Richard H. Gomer2*, and Birgit Wetterauer1, 
+
+1 Zoologisches Institut der Ludwig-Maximilians-Universität, Munich, Germany
+2 Howard Hughes Medical Institute, Department of Biochemistry and Molecular
+Biology, Rice University, Houston, Texas, USA
+3 Max-Planck-Institut für Biochemie, Martinsried, Germany
+
+
+Eukaryotic Cell, in press
+
+Much remains to be understood about quorum sensing factors that allow cells
+to sense their local density.  Dictyostelium discoideum is a simple eukaryote
+that grows as single-celled amoebae and switches to multicellular development
+when food becomes limited.  As the growing cells reach a high density, they
+begin expressing discoidin genes.  The cells secrete an unknown factor, and 
+at high cell densities the concomitant high levels of the factor induce
+discoidin expression.  We report here the enrichment of Discoidin Inducing
+Complex (DIC), an ~400 kDa protein complex that induces discoidin expression
+during growth and development. Two proteins in the DIC preparation, DicA1
+and DicB, were identified by sequencing of proteolytic digests.  DicA1 and
+DicB were expressed in E. coli and tested for their ability to induce
+discoidin during growth and development.  Recombinant DicB was unable to
+induce discoidin expression while recombinant DicA1 was able to induce
+discoidin expression.  This suggests that DicA1 is an active component of
+DIC and indicates that posttranslational modification is dispensable for
+activity.  DicA1 mRNA is expressed in vegetative and developing cells.
+The mature secreted form of DicA1 is 80 kDa, and has a 24 amino acid
+cysteine rich repeat that is similar to repeats in Dictyostelium proteins
+such as the extracellular matrix protein ecmB/PstA, the prespore cell
+inducing factor PSI, and the cAMP phosphodiesterase inhibitor PDI.
+Together, the data suggest that DicA1 is a component of a secreted quorum
+sensing signal regulating discoidin gene expression during Dictyostelium
+growth and development.
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+
+-----------------------------------------------------------------------------
+
+
+Isolation and characterization of Dictyostelium thymidine kinase 1 as a
+calmodulin binding protein
+
+Danton H. O‚Day, Munmun Chatterjee-Chakraborty, Stephanie Wagler and
+Michael A. Myre
+Department of Biology, University of Toronto at Mississauga, Mississauga,
+ON. Canada
+
+
+Biochemical Biophysical Research Communications, in press
+
+Probing of a cDNA expression library from multicellular development of
+Dictyostelium discoideum using a recombinant radiolabelled calmodulin probe
+(35S-VU1-CaM) led to the isolation of a cDNA encoding a putative
+CaM-binding protein (CaMBP). The cDNA contained an open reading frame of
+951bp encoding a 227aa polypeptide (25.5 kDa). Sequence comparisons led
+to highly significant matches with cytosolic thymidine kinases (TK1;
+EC 2.7.1.21) from a diverse number of species including humans (7e-56;
+59% Identities; 75% Positives) indicating that the encoded protein is
+D. discoideum TK1 (DdTK1; ThyB). DdTK1 has not been previously characterized
+in this organism. In keeping with its sequence similarity with DdTK1,
+antibodies against humanTK1 recognize DdTK1, which is expressed during
+growth but decreases in amount after starvation. A CaM-binding domain
+(CaMBD; 20GKTTELIRRIKRFNFANKKC30) was identified and wild type DdTK1 plus
+two constructs (DdTKdeltaC36, DdTKdeltaC75) possessing the domain were
+shown to bind CaM in vitro but only in the presence of calcium while a
+construct (DdTKdeltaN72) lacking the region failed to bind to CaM. Thus
+DdTK1 is a Ca2+-dependent CaMBP. Sequence alignments against TK1 from
+vertebrates to viruses show that CaM-binding region is highly conserved.
+The identified CaMBD overlaps the ATP-binding (P-loop) domain suggesting
+CaM might affect the activity of this kinase. Recombinant DdTK is
+enzymatically active and showed stimulation by CaM (113 ± 0.5%) an in vitro
+enhancement that was prevented by co-addition of the CaM antagonists W7
+(91.2 ± 0.8%) and W13 (96.6 ± 0.6%). The discovery that TK1 from
+D. discoideum, and possibly other species including humans and a large
+number of human viruses, is a Ca2+-dependent CaMBP opens up new avenues
+for research on this medically relevant protein. 
+
+
+Submitted by: Danton H. O'Day [doday@utm.utoronto.ca]
+
+-----------------------------------------------------------------------------
+
+
+An N-terminal nuclear localization sequence but not the calmodulin-binding
+domain mediates nuclear localization of nucleomorphin, a protein that
+regulates nuclear number in Dictyostelium
+
+Michael A. Myre and Danton H. O‚Day
+Department of Biology, University of Toronto at Mississauga, Mississauga,
+ON. Canada
+ 
+ 
+Biochemical Biophysical Research Communications, in press
+
+Nucleomorphin is a novel nuclear calmodulin (CaM) binding protein (CaMBP)
+containing an extensive DEED (glu/asp repeat) domain that regulates
+nuclear number. GFP-constructs of the 38kDa NumA1 isoform localize as
+intranuclear patches adjacent to the inner nuclear membrane. The
+translocation of CaMBPs into nuclei has previously been shown by others
+to be mediated by both classic nuclear localization sequences (NLSs) and
+CaM-binding domains (CaMBDs). Here we show that NumA1 possesses a CaMBD
+(171EDVSRFIKGKLLQKQQKIYKDLERF195) containing both calcium-dependent
+binding motifs and an IQ-like motif for calciumˆindependent binding. GFP
+constructs containing only NumA1 residues 1-129, lacking the DEED and
+CaMBDs, still localized as patches at the internal periphery of nuclei
+thus ruling out a direct role for the CaMBD in nuclear import. These
+constructs contained the amino acid residues 48KKSYQDPEIIAHSRPRK64 that
+includes both a putative bipartite and classical NLS. GFP-bipartite NLS 
+constructs localized uniformly within nuclei but not as patches. As with 
+previous work, removal of the DEED domain resulted in highly multinucleate
+cells. However as shown here, multinuclearity only occurred when the NLS
+was present allowing the protein to enter nuclei. Site-directed mutation
+analysis in which the NLS was changed to 48EF49 abolished the stability of
+the GFP fusion at the protein but not RNA level preventing subcellular
+analyses. Cells transfected with the 48EF49 construct exhibited slowed
+growth when compared to parental AX3 cells and other GFP-NumA1 deletion
+mutants. In addition to identifying an NLS that is sufficient for nuclear
+translocation of nucleomorphin and ruling out CaM-binding in this event,
+this work shows that the nuclear localization of NumA1 is crucial to its
+ability to regulate nuclear number in Dictyostelium.
+
+
+Submitted by: Danton H. O'Day [doday@utm.utoronto.ca]
+
+-----------------------------------------------------------------------------
+
+
+Calmodulin-Mediated Signaling in Dictyostelium discoideum: CaMBOT Isolation
+and Characterization of the Novel Poly-Domain Protein Nucleomorphin and
+Other Calmodulin Binding Proteins 
+
+Danton H. O‚Day
+Department of Biology, University of Toronto at Mississauga, Mississauga,
+Ontario L5L 1C6, CANADA
+
+In: Progress in Cellular Signalling Research, Nova Science Publishers,
+Inc. New York, in press
+
+Calmodulin (CaM) is an essential protein in the model eukaryote
+Dictyostelium discoideum where it mediates numerous events including
+chemotaxis, gametogenesis, fertilization, and spore germination. Profiling
+using the CaM-binding overlay technique (CaMBOT) has revealed that well
+over four-dozen calcium-dependent and -independent CaM-binding proteins
+(CaMBPs) are present in Dictyostelium, some of which are linked to these
+CaM-mediated processes. Individual CaMBPs have been localized to specific
+sub-cellular locales and to show varying patterns of developmental
+expression. CaMBOT also is used to isolate cDNAs encoding CaMBPs from an
+expression library from mid-to-late multicellular development of
+Dictyostelium. Previously studied CaMBPs such as calcineurin A (CNA) and
+regulatory myosin light chain (RMLC) were identified in this way. Novel
+proteins were also identified. Nucleomorphin is a novel nuclear CaMBP,
+expressed as two main isoforms NumA1 and 2, which localizes to the
+nucleoplasmic periphery. NumA has at least one bipartite NLS
+(48KKSYQDPEIIAHSRPRK66) and a single CaM-binding domain
+(171EDVSRFIKGKLLQKQQKIYKDLERF195) that interacts with CaM in both a
+Ca2+-dependent and Ca2+-independent manner. NumA1 contains an extensive
+glu/asp or DEED repeat that regulates nuclear number. Yeast two hybrid
+and co-immunoprecipitation studies have identified calcium binding protein
+CBP4a as an interacting protein that binds to the DEED repeat. NumA2 also
+has a breast cancer C-terminus (BRCT) domain, two poly-N tracts plus a
+second, putative CaMBD. Proteins not previously known to be CaMBPs were
+also identified by CaMBOT probing of the Dictyostelium developmental
+expression library, including phosphoglycerate kinase, thymidine kinase
+and histone H1. Dictyostelium phosphoglycerate kinase (DdPGK) binds CaM
+in a Ca2+-dependent manner with CaM negatively regulating its activity in
+vitro. The identified CaMBD shows 80% identity with PGKs from diverse
+organisms and is localized adjacent to mutation sites underlying certain
+human diseases. Thymidine kinase (DdTK1) is a Ca2+-dependent CaMBP and its
+in vitro activity is slightly enhanced by CaM and inhibited by CaM
+antagonists. Histone H1 (DdH1) was isolated as a CaMBP and binds CaM in
+vitro but its mode of CaM-binding remains elusive. Each of the CaMBPs we
+have identified is discussed in terms of its individual roles as well as
+its potential interaction with other CaMBPs and other proteins in
+regulating specific CaM-dependent cellular processes including the cell
+cycle.
+
+
+Submitted by: Danton H. O'Day [doday@utm.utoronto.ca]
+
+==============================================================================
+[End Dicty News, volume 24, number 10] 

@@ -1,0 +1,151 @@
+dictyNews
+Electronic Edition
+Volume 32, number 10
+April 19, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Novel functions of ribosomal protein S6 (RPS6) in growth and differentiation 
+of Dictyostelium cells 
+
+Kazutaka Ishii1, Yusaku Nakao1, Aiko Amagai2 and Yasuo Maeda1*
+
+1Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Sendai 980-8578
+2Department of Biomolecular Science, Graduate School of Life Sciences, 
+Tohoku University, Katahira 2-1-1, Aoba-Ku, Sendai 980-8577, Japan
+
+
+Develop. Growth Differ., in press 
+
+We have previously shown that in Dictyostelium cells a 32 kDa protein is rapidly 
+and completely dephosphorylated in response to starvation that is essential for
+ the initiation of differentiation (Akiyama and Maeda 1992). In the present work, 
+this phosphoprotein was identified as a homologue (Dd-RPS6) of ribosomal 
+protein S6 (RPS6) that is an essential member for protein synthesis. As 
+expected, Dd-RPS6 seems to be absolutely required for cell survival, because 
+we failed to obtain antisense-RNA mediated cells as well as Dd-rps6-null cells 
+by homologous recombination in spite of many trials. In many kinds of cell lines, 
+RPS6 is known to be located in the nucleus and cytosol, but Dd-RPS6 is 
+predominantly in the cell cortex with cytoskeletons, and in the contractile ring 
+of just-dividing cells. In this connection, the overexpression of Dd-RPS6 greatly 
+impairs cytokinesis during axenic shake-cultures in growth medium, resulting 
+in formation of multinucleate cells. Much severe impairment of cytokinesis was 
+observed when Dd-RPS6-overexpressing cells (Dd-RPS6OE cells) were 
+incubated on a living Escherichia coli lawn. The initiation of differentiation 
+triggered by starvation was also delayed in Dd-RPS6OE cells. In addition, 
+Dd-RPS6OE cells exhibit defective differentiation into prespore cells and 
+spores during late development. Thus, it is likely that the proper expression 
+of Dd-RPS6 may be of importance for the normal progression of late 
+differentiation as well as for the initiation of differentiation.  
+
+
+Submitted by: Yasuo Maeda [kjygy352@ybb.ne.jp]
+--------------------------------------------------------------------------------
+
+
+Transcriptional down-regulation and rRNA cleavage in Dictyostelium discoideum 
+mitochondria during Legionella pneumophila infection.  
+
+Chenyu Zhang and Adam Kuspa
+
+The Departments of Biochemistry and Molecular Biology, Pharmacology, and 
+Molecular and Human Genetics. Baylor College of Medicine, One Baylor Plaza, 
+Houston TX 77030.
+
+
+PLoS One, In press 
+
+Background  
+Bacterial pathogens employ a variety of survival strategies when they invade 
+eukaryotic cells.  The amoeba Dictyostelium discoideum is used as a model 
+host to study the pathogenic mechanisms that Legionella pneumophila, the 
+causative agent of Legionnaire’s disease, uses to kill eukaryotic cells.  
+
+Methodology/Principal Findings 
+Under standard conditions, infection of D. discoideum by L. pneumophila 
+results in a decrease in mitochondrial messenger RNAs, beginning more 
+than 8 hours prior to detectable host cell death.  These changes can be 
+mimicked by hydrogen peroxide treatment, but not by other cytotoxic agents.  
+The mitochondrial large subunit ribosomal RNA (LSU rRNA) is also cleaved 
+at three specific sites during the course of infection. Two LSU rRNA fragments 
+appear first, followed by smaller fragments produced by additional cleavage 
+events.  The initial LSU rRNA cleavage site is predicted to be on the surface 
+of the large subunit of the mitochondrial ribosome, while two secondary sites
+ map to the predicted interface with the small subunit.  No LSU rRNA cleavage 
+was observed after exposure of D. discoideum to hydrogen peroxide, or other 
+cytotoxic chemicals that kill cells in a variety of ways.  Functional 
+L. pneumophila type II and type IV secretion systems are required for the 
+cleavage, establishing a correlation between the pathogenesis of 
+L. pneumophila and D. discoideum LSU rRNA destruction.  LSU rRNA 
+cleavage was not observed in L. pneumophila infections of Acanthamoeba 
+castellanii or human U937 cells, suggesting that L. pneumophila uses 
+distinct mechanisms to interrupt metabolism in different hosts. 
+
+Conclusion/Significance
+L. pneumophila infection of D. discoideum results in dramatic decrease 
+of mitochondrial RNAs, and in the specific cleavage of mitochondrial rRNA. 
+The predicted location of the cleavage sites on the mitochondrial ribosome 
+suggests that rRNA destruction is initiated by a specific sequence of 
+events.  These findings suggest that L. pneumophila specifically disrupts 
+mitochondrial protein synthesis in D. discoideum during the course 
+of infection.
+
+
+Submitted by:  Adam Kuspa [akuspa@bcm.edu]
+--------------------------------------------------------------------------------
+
+Scaffolding Proteins that Regulate the Actin Cytoskeleton in Cell Movement. 
+
+S.J. Annesley and P.R. Fisher
+ 
+Department of Microbiology, La Trobe University, Melbourne, Australia.
+
+
+In press: Cell Movement: New Research Trends. Editors: T. Abreu and G. Silva. 
+Nova Science Publishers, Inc.
+
+Actin is the main component of the microfilament system in all eukaryotic 
+cells and is essential for most intra- and inter-cellular movement including 
+muscle contraction, cell movement, cytokinesis, cytoplasmic organisation and 
+intracellular transport. The polymerisation and depolymerisation of actin 
+filaments in nonmuscle cells is highly regulated and the reorganisation of 
+the actin cytoskeleton can occur within seconds after chemotactic stimulation.  
+There are many proteins which are involved in the regulation of the actin 
+cytoskeleton. These include receptors which receive chemotactic stimuli, 
+G proteins, second messengers, signalling molecules, kinases, phosphatases 
+and transcription factors. These proteins are varied and numerous and are 
+involved in multiple pathways. Despite the large number of proteins, there 
+are not enough to coordinate the various responses of the cytoskeleton. An
+ additional level of regulation is conferred by scaffolding proteins. Due to 
+the presence of numerous protein interaction domains, scaffolding proteins
+ can tether various proteins to a certain location within the cell to 
+facilitate the rapid transfer of signals from one protein to the next. 
+This colocalisation of the components of a particular pathway also helps 
+to prevent unwanted crosstalk with components of other pathways. Tethering 
+receptors, kinases, phosphatases and cytoskeletal components to a particular 
+location within a cell helps ensure efficient relaying and feedback inhibition 
+of signals to enable rapid activation and inactivation of responses.  
+Scaffolding proteins are also thought to stabilise the otherwise weak 
+interactions between particular proteins in a cascade and to catalyse the 
+activation of the pathway components.  There are numerous scaffolding 
+proteins involved in the regulation of the cytoskeleton and this chapter 
+has focussed on examples from several groups of scaffolding proteins 
+including the MAPK scaffolds, the AKAPs, scaffolds of the post synaptic 
+density and actin binding scaffolding proteins.
+
+
+Submitted by: Paul R Fisher [P.Fisher@latrobe.edu.au]
+==============================================================
+[End dictyNews, volume 32, number 11]

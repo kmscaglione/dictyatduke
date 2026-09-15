@@ -1,0 +1,92 @@
+dictyNews
+Electronic Edition
+Volume 29, number 11
+October 12, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Isoprenylcysteine carboxyl methylation is essential for development 
+in Dictyostelium discoideum
+
+Ying Chen*, Kyle J. McQuade*, Xiao-Juan Guan, Peter A. Thomason, 
+Michael S. Wert, Jeffry B. Stock, Edward C. Cox**
+
+Department of Molecular Biology, Princeton University, Princeton, 
+New Jersey 08544, USA
+
+*These authors contributed equally to this work.
+**To whom correspondence should be addressed (ecox@molbio.princeton.edu).
+
+
+Molecular Biology of the Cell, in press
+
+Members of the Ras superfamily of small GTPases and the heterotrimeric G 
+protein γ subunit are methylated on their carboxy-terminal cysteine residues 
+by isoprenylcysteine methyltransferase.  In Dictyostelium discoideum, small 
+GTPase methylation occurs seconds after stimulation of starving cells by 
+cAMP and returns quickly to basal levels, suggesting an important role in 
+cAMP-dependent signaling.  Deleting the isoprenylcysteine 
+methyltransferase-encoding gene causes dramatic defects.  Starving mutant 
+cells do not propagate cAMP waves in a sustained fashion and do not aggregate.  
+Motility is rescued when cells are pulsed with exogenous cAMP, or co-plated 
+with wild-type cells, but the rescued cells exhibit altered polarity.  
+cAMP-pulsed methyltransferase-deficient cells that have aggregated fail to 
+differentiate, but mutant cells plated in a wild-type background are able 
+to do so.  Localization of and signaling by RasG is altered in the mutant. 
+Localization of the heterotrimeric Ggamma protein subunit was normal, but 
+signaling was altered in mutant cells.  These data indicate that 
+isoprenylcysteine methylation is required for intercellular signaling and 
+development in Dictyostelium.
+
+
+Submitted by: Ted Cox [ecox@molbio.princeton.edu]
+--------------------------------------------------------------------------------
+
+
+An unusually low microsatellite mutation rate in Dictyostelium discoideum, 
+an organism with unusually abundant microsatellites
+
+Ryan McConnell, Sara Middlemist, Clea Scala, Joan E. Strassmann, 
+David C. Queller
+
+Dept. of Ecology and Evolutionary Biology, Rice University, Houston, 
+Texas, USA
+
+
+Genetics, in press
+
+The genome of the social amoeba Dictyostelium discoideum is known to have 
+a very high density of microsatellite repeats, including thousands of 
+triplet microsatellite repeats in coding regions that apparently code for  
+long runs of single amino acids.  We used a mutation accumulation study 
+to see if unusually high microsatellite mutation rates contribute to this 
+pattern.  There was a modest bias towards mutations that increase repeat 
+number, but because upward mutations were smaller than downward ones, 
+this did not lead to a net average increase in size.  Longer 
+microsatellites had higher mutation rates than shorter ones, but did not 
+show greater directional bias.  The most striking finding is that the 
+overall mutation rate is the lowest reported for microsatellites, about 
+1 x 10-6 for 10 dinucleotide loci and 6 x 10-6 for 52 trinucleotide loci 
+(which were longer).  High microsatellite mutation rates therefore do 
+not explain the high incidence of microsatellites. The causal relation 
+may in fact be reversed, with low mutation rates evolving to protect 
+against deleterious fitness effects of mutation at the numerous 
+microsatellites. 
+
+
+Submitted by: Dave Queller [queller@rice.edu]
+==============================================================
+[End dictyNews, volume 29, number 11]

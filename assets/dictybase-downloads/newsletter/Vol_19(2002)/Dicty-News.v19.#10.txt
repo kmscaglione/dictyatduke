@@ -1,0 +1,217 @@
+Dicty News
+Electronic Edition
+Volume 19, number 10
+November 15, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+Dynamic organization of the actin system in the motile cells of 
+Dictyostelium 
+ 
+Till Bretschneider +1, James Jonkman +2, Jana Khler +1, Ohad Medalia +1, 
+Karmela Barisic +1,4, Igor Weber +3, Ernst H.K. Stelzer +2, Wolfgang 
+Baumeister +1 and G. Gerisch +1
+ 
++1  Max-Planck-Institut fr Biochemie, D-82152 Martinsried, Germany;
++2  European Molecular Biology Laboratory,
+      Meyerhofstrasse 1, D-69117 Heidelberg, Germany;
++3  Rudjer Boskovic Institut, Bijenicka cesta 54, 10000 Zagreb, Croatia;
++4  Permanent address: University of Zagreb, Faculty of Pharmacy and
+      Biochemistry, Department of Medical Biochemistry and Hematology,
+      Domagojeva 2, 10000 Zagreb, Croatia.
+ 
+Journal of Muscle Research and Cell Motility, Special Issue: Dictyostelium,  
+Ed. Dietmar J. Manstein, in press
+ 
+Abstract
+
+The actin system forms a supramolecular, membrane-associated network that 
+serves multiple functions in Dictyostelium cells, including cell motility 
+controlled by chemoattractant, phagocytosis, macropinocytosis, and 
+cytokinesis.  In executing these functions the monomeric G-actin polymerizes 
+reversibly, and the actin filaments are assembled into membrane-anchored 
+networks together with other proteins involved in shaping the networks and 
+controlling their dynamics.  Most impressive is the speed at which actin-
+based structures are built, reorganized, or disassembled.  We used GFP-
+tagged coronin and Arp3, an intrinsic constituent of the Arp2/3 complex, 
+as examples of proteins that are recruited to highly dynamic actin-
+filament networks.  By fluorescence recovery after photobleaching (FRAP), 
+average exchange rates of cell-cortex bound coronin were estimated.  A 
+nominal value of 5 seconds for half-maximal incorporation of coronin into 
+the cortex, and a value of 7 seconds for half-maximal dissociation from 
+cortical binding sites has been obtained.  Actin dynamics implies also flow 
+of F-actin from sites of polymerization to sites of depolymerization, i.e. 
+to the tail of a migrating cell, the base of a phagocytic cup, and the 
+cleavage furrow in a mitotic cell.  To monitor this flow, we expressed in 
+Dictyostelium cells a GFP-tagged actin-binding fragment of talin.  This 
+fragment (GFP-TalC63) translocates from the front to the tail during cell 
+migration and from the polar regions to the cleavage furrow during mitotic 
+cell division.  The intrinsic dynamics of the actin system can be manipulated 
+in vivo by drugs or other probes that act either as inhibitors of actin 
+polymerization or as stabilizers of filamentous actin.  In order to 
+investigate structure-function relationships in the actin system, a 
+technique of reliably arresting transient network structures is in demand.  
+We discuss the potential of electron tomography of vitrified cells to 
+visualize actin networks in their native association with membranes.  
+
+-----------------------------------------------------------------------------
+
+Multiple activities of a novel substance, dictyopyrone C isolated from 
+Dictyostelium discoideum, in cellular growth and differentiation
+
+Y. Maeda1*, H. Kikuchi2*, K. Sasaki1, A. Amagai1, J. Sekiya2, Y. Takaya3 and 
+Y. Oshima2
+
+1Department of Developmental Biology and Neurosciences, Graduate School of 
+Life Sciences , Tohoku University, Aoba, Sendai 980-8578, 2Graduate School 
+of Pharmaceutical Sciences, Tohoku University, Aoba, Sendai 980-8578, and 
+3Faculty of Pharmacy, Meijo University, Yagotoyama, Tempaku, Nagoya 468-8503
+(Japan)
+
+*equal contribution
+
+Protoplasma (in press)
+                   
+Summary.  
+
+We report here that a novel substance named dictyopyrone C(DPC) has 
+remarkable effects on growth and differentiation of D. discoideum Ax-2 
+cells, in a dose-dependent manner. In the presence of 3-15M DPC, 
+differentiation of starving Ax-2 (clone MS) cells was greatly enhanced 
+under submerged conditions, when vegetative MS-cells were harvested at 
+the mid-late exponential growth phase (3 X 106 cells/ml) and starved. 
+In contrast, DPC above 30M markedly impaired the progression of 
+differentiation including cell aggregation, most of starved cells being 
+rounded in shape 3-4 h after DPC-application and then lysed during further 
+incubation. In the presence of 30M DPC however, MS-cells that had been 
+harvested at the early exponential growth phase (5 X 105 cells/ml) and 
+starved were neither rounded in shape nor lysed, and exhibited rather 
+enhanced differentiation. Essentially the same results were obtained in 
+cultures of starved cells on nonnutrient agar. With respect to DPC-effect 
+on MS-cells growing in axenic medium, cell lysis and growth inhibition by 
+more than 15M DPC were realized in the mid-late exponential growth phase 
+cells (3 X 106 cells/ml), but not in the early exponential growth phase 
+cells (5 X 105 cells/ml). Moreover, analysis using synchronized MS-cells 
+has demonstrated that the DPC-effect changes in a cell-cycle dependent 
+manner. In contrast to such unique DPC-actions, the pyrone ring of DPC 
+had no effects on growth and differentiation within a range of 3-120M 
+tested. These findings have strongly suggested the importance of a combined 
+structure of the pyrone ring (PDP) and the linear carbon chain in revelation 
+of the DPC activities. 
+
+submitted by: Yasuo MAEDA [ymaeda@mail.cc.tohoku.ac.jp]
+
+-----------------------------------------------------------------------------
+
+Cytoskeleton Interactions Involved in the Assembly and Function of 
+Glycoprotein-80 Adhesion Complexes in Dictyostelium
+
+Tony J. C. Harris*, Amir Ravandi*, Donald E. Awrey and Chi-Hung Siu* 
+*Banting and Best Department of Medical Research and Department of 
+Biochemistry, University of Toronto, Toronto, Ontario M5G 1L6, Canada, 
+Affinium Pharmaceuticals, 100 University Avenue, Toronto, Ontario M5J 1V6, 
+Canada.
+
+J. Biol. Chem. (in press.)
+
+SUMMARY
+
+Adhesion complexes typically assemble from clustered receptors that link to 
+the cytoskeleton via cytoplasmic adapter proteins.  However, it is unclear how 
+phospholipid-anchored adhesion molecules, such as the Dictyostelium receptor 
+gp80, interact with the cytoskeleton.  gp80 has been found to form adhesion 
+complexes from raft-like membrane domains, which can be isolated as a Triton 
+X-100-insoluble floating fraction (TIFF).  We report here that the actin-
+binding protein ponticulin mediates TIFF-cytoskeleton interactions.  Analysis 
+of gp80-null cells revealed that these interactions were minimal in the 
+absence of gp80.  During development, gp80 was required to enhance these 
+interactions as its adhesion complexes assembled.  While ponticulin and 
+gp80 could partition independently into TIFF, gp80 was shown to recruit 
+ponticulin to cell-cell contacts and to increase its partitioning into 
+TIFF.  However, these proteins did not co-immunoprecipitate.  Furthermore, 
+sterol sequestration abrogated the association of ponticulin with TIFF 
+without affecting gp80, suggesting that sterols may mediate the interactions 
+between ponticulin and gp80.  In ponticulin-null cells, large gp80 adhesion 
+complexes assembled in the absence of ponticulin despite the lack of 
+cytoskeleton association.  We propose that such nascent gp80 adhesion 
+complexes produce expanded raft-like domains that recruit ponticulin and 
+thereby establish stable cytoskeleton interactions to complete the assembly 
+process.
+
+submited by: chi.hung.siu@utoronto.ca
+
+-----------------------------------------------------------------------------
+
+Reciprocal Raft-Receptor Interactions and the Assembly of Adhesion Complexes
+
+Tony J. C. Harris and Chi-Hung Siu*
+Banting and Best Department of Medical Research and Department of 
+Biochemistry, University of Toronto, Toronto, Ontario M5G 1L6, Canada.
+
+BioEssays (in press)
+
+Summary
+
+Cell adhesion complexes are critical for the physical coordination of cell-
+cell interactions and the morphogenesis of tissues and organs.  Many adhesion 
+receptors are anchored to the plasma membrane by a 
+glycosylphosphatidylinositol (GPI) moiety and are thereby partitioned into 
+membrane rafts.  In this review, we focus on reciprocal interactions between 
+rafts and adhesion molecule, leading to receptor clustering and raft 
+expansion and stability.  A model for a 3-stage adhesion complex assembly 
+process is also proposed.  First, GPI-anchored adhesion molecules are 
+recruited into rafts, which in turn promote receptor cis-oligomerization 
+and thereby produce precursory complexes primed for avid trans-interactions.  
+Second, trans-interactions of the receptors cross-link and stabilize large 
+amalgams of rafts at sites of adhesion complex assembly.  Finally, the 
+enlarged and stabilized rafts acquire enhanced abilities to recruit the 
+cytoskeleton and induce signaling.  This process exemplifies how the domain 
+structure of the plasma membrane can impact the function of its receptors.
+
+submitted by: chi.hung.siu@utoronto.ca
+
+-----------------------------------------------------------------------------
+
+Mutations in the relay loop region result in dominant-negative inhibition of 
+myosin II function in Dictyostelium
+
+Georgios Tsiavaliaris, Setsuko Fujita-Becker, Renu Batra, Dmitrii I. 
+Levitsky 1, F. Jon Kull 2, Michael A. Geeves 3 & Dietmar J. Manstein +
+
+Max-Planck-Institut fr medizinische Forschung, Jahnstrasse 29, D-69120 
+Heidelberg, Germany, 1 A.N.Bach Institute of Biochemistry, Russian Academy 
+of Science, Moscow 119071, Russia, 2 Dartmouth College, 6128 Burke 
+Laboratory, Hanover, NH 03755, USA, 3 Department of Biosciences, University 
+of Kent, Canterbury, Kent CT2 7NJ, UK
+
+EMBO Reports, in press
+
+Dominant-negative inhibition is a powerful genetic tool for the 
+characterization of gene function in vivo, based on the specific impairment 
+of a gene product by the coexpression of a mutant version of the same gene 
+product. Here we describe the detailed characterization of two myosin 
+constructs containing either point mutations F487A or F506G in the relay 
+region. Dictyostelium cells transformed with F487A or F506G myosin are 
+unable to undergo processes that require myosin II function including 
+fruiting-body formation, normal cytokinesis and growth in suspension. Our 
+results show that the dominant-negative inhibition of myosin function is 
+caused by disruption of the communication between active site and lever 
+arm, which blocks motor activity completely, and perturbation of the 
+communication between active site and actin-binding site, leading to an 
+approximately 100-fold increase in the mutants affinity for actin in the 
+presence of ATP. 
+
+submitted by: Manstein.Dietmar@mh-hannover.de
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 10]
+
+ 

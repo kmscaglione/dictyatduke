@@ -1,0 +1,69 @@
+Dicty NewsElectronic EditionVolume 21, number 2July 18, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Dictyostelium SAPKalpha, a novel stress-activated MEK kinase-like kinase, is 
+important for the proper regulation of the cytoskeletonBinggang Sun, Hui Ma, and Richard A. FirtelSection of Cell and Developmental Biology Division of Biological 
+Sciences and Center for Molecular GeneticsUniversity of California, San Diego9500 Gilman DriveLa Jolla CA 92093-0634Molecular Biology of the Cell, in pressMAP kinase cascades regulate various cellular functions including growth, 
+cell differentiation, development, and stress responses.  We have identified 
+a new Dictyostelium kinase (SAPKalpha), which is related to members of the MLK 
+class of MEK kinases.  SAPKalpha is activated by osmotic stress, heat shock, 
+and detachment from the substratum and by a membrane-permeable cGMP analog, 
+a known regulator of stress responses in Dictyostelium.  SAPKalpha is important 
+for cellular resistance to stresses, as SAPKalpha null cells exhibit reduced 
+viability in response to osmotic stress.  We found that SAPKalpha mutants affect 
+cellular processes requiring proper regulation of the actin cytoskeleton, 
+including cell motility, morphogenesis, cytokinesis, and cell adhesion.  
+Overexpression of SAPKalpha results in highly elevated basal and 
+chemoattractant-stimulated F-actin levels and strong aggregation and 
+developmental defects, including a failure to polarize and chemotax and 
+abnormal morphogenesis.  These phenotypes require a kinase-active SAPKalpha.  
+SAPKalpha null cells exhibit reduced chemoattractant-stimulated F-actin levels, 
+cytokinesis, developmental and adhesion defects, and a motility defect that 
+is less severe than that exhibited by SAPKalpha overexpressing cells.  SAPKalpha 
+co-localizes with F-actin in F-actin-enriched structures, including membrane 
+ruffles and pseudopodia during chemotaxis.  Although SAPKalpha is required for 
+these F-actin-mediated processes, it is not detectably activated in response 
+to chemoattractant stimulation.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+Feedback control in intracellular signaling pathways: Regulating chemotaxis 
+in Dictyostelium discoideumPablo A. IglesiasElectrical & Computer and Biomedical EngineeringThe Johns Hopkins University,3400 N. Charles Street,  Baltimore, MD 21218pi@jhu.eduEuropean J. Control, in pressPositive and negative feedback loops are used throughout engineeringto tradeoff between amplification and robustness. We show how thesocial amoebae Dictyostelium discoideum uses these sameprinciples to aggregate during starvation, allowing it to survivedifficult environmental conditions.
+
+
+Submitted by: Pablo Iglesias [pi@jhu.edu]
+
+-----------------------------------------------------------------------------
+
+PIR121 Regulates Pseudopod Dynamics and SCAR Activity in DictyosteliumSimone L. Blagg, Michael Stewart, Christine Sambles and Robert H. Insall*Current Biology, in press.School of Biosciences,University of Birmingham,Edgbaston,Birmingham B15 2TTUKBACKGROUNDThe WASP/SCAR family of adaptor proteins coordinates actin reorganization by 
+coupling different signalling molecules, including Rho-family GTPases, to 
+the activation of the Arp2/3 complex.  WASP binds directly to Cdc42 through 
+its GTPase-binding domain (GBD), but SCAR does not contain a GBD and no 
+direct binding has been found.  However, SCAR has recently been found to 
+copurify with four other proteins in a complex. One of these, PIR121, binds 
+directly to Rac.RESULTSWe have identified four of the members of this complex in Dictyostelium, and 
+disrupted the pirA gene, which encodes PIR121.  The resulting mutant cells 
+are unusually large, maintain an excessive proportion of their actin in a polymerized state, and display severe defects in movement and chemotaxis.  
+They also continually extend new pseudopods by widening and splitting existing 
+leading edges, rather than by initiating new pseudopods.  Comparing these 
+cells to scar null mutants shows behaviour that is broadly consistent with 
+overactivation of SCAR.  Deletion of the pirA gene in a scar- mutant resulted 
+in cells resembling their scar- parents with no obvious changes, confirming 
+that PIR121 mainly acts through SCAR in vivo. Surprisingly, given their 
+hyperactive phenotype, we find that pirA- mutants contain very little intact 
+SCAR protein, despite normal levels of mRNA, suggesting a post-transcriptional 
+downregulation of activated SCAR.CONCLUSIONSOur results demonstrate a genetic connection between the pirA and scar genes.  
+PIR121 appears to inhibit the activity of SCAR in the absence of activating 
+signals.  The location of the newly formed protrusions indicates that 
+unregulated SCAR is acting at the edges of existing pseudopods, not elsewhere 
+in the cell.  We suggest that active SCAR protein released from the inhibitory 
+complex is rapidly removed, and this is an important and novel mechanism for
+ controlling actin dynamics.
+
+Submitted by: Simone  Blagg [slb761@bham.ac.uk]
+===============================================================================[End Dicty News, volume 21, number 2]

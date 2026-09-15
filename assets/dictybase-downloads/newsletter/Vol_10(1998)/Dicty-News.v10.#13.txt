@@ -1,0 +1,122 @@
+Dicty News
+Electronic Edition
+Volume 10, number 13
+May 9, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+Identification and Analysis of a Gene that is Essential for Morphogenesis
+and Prespore Cell Differentiation in Dictyostelium
+
+Hiroo Yasukawa, Sudhasri Mohanty, and Richard A. Firtel
+
+Dept. of Biology, Center for Molecular Genetics, UCSD, La Jolla
+
+DEVELOPMENT, in press
+
+SUMMARY
+
+   We have identified a gene (PslA) that is expressed throughout Dictyostelium 
+development and encodes a novel protein that is required for proper aggregation 
+and subsequent cell-type differentiation and morphogenesis.  pslA null  (pslA-) 
+cells produce large aggregation streams under conditions in which wild-type 
+cells form discrete aggregates.  Tips form along the stream, elongate to produce 
+a finger, and eventually form a terminal structure that lacks a true sorus 
+(spore head).  More than half of the cells remain as a mass at the base of the 
+developing fingers.  The primary defect in the pslA- strain is the inability to 
+induce prespore cell differentiation.  Analyses of gene expression show a complete 
+lack of prespore-specific gene expression and no mature spores are produced.  
+In chimeras with wild-type cells, pslA-  cells form the prestalk domain and normal, 
+properly proportioned fruiting bodies can be produced.  This indicates that pslA- 
+cells are able to interact with wild-type cells and regulate patterning, even though 
+pslA- cells are unable to express prespore cell-type-specific genes, do not 
+participate in prespore cell differentiation, and do not produce pslA- spores in the 
+chimeras.  While pslA- cells produce mature, vacuolated stalk cells during 
+multicellular development, pslA- cells are unable to do so in vitro in response 
+to exogenous DIF (a morphogen required for prestalk and stalk cell differentiation).  
+These results indicate that pslA- cells exhibit a defect in the prestalk/stalk cell 
+pathways under these experimental conditions.  Our results suggest that PslA’s primary 
+function is to regulate prespore-cell determination very early in the prespore pathway 
+via a cell-autonomous mechanism, possibly at the time of the initial prestalk/prespore 
+cell-fate decision.  Indirect immunofluorescence of myc-tagged PslA localizes the 
+protein to the nucleus, suggesting that PslA may function to control the prespore 
+pathway at the level of transcription.
+
+-------------------------------------------------------------------------
+
+The helC gene encodes a putative DEAD-box RNA helicase
+required for development in Dictyostelium discoideum
+
+Laura M. Machesky, Robert H. Insall and Robert R. Kay
+
+Current Biology, vol. 8 iss. 10, in press
+
+Abstract
+
+DEAD-box RNA helicases, defined by the sequence Asp-Glu-Ala-Asp (DEAD, in 
+single-letter amino-acid code), regulate RNA unwinding and secondary structure 
+in an ATP-dependent manner in vitro and control mRNA stability and protein 
+translation. Both yeast and mammals have large families of DEAD-box proteins, 
+many of unknown function. We have disrupted a Dictyostelium discoideum gene, 
+helC, which encodes helicase C, a member of the DEAD-box family of RNA helicases 
+that shows strong homology to the product of the essential Saccharomyces cerevisiae 
+gene dbp5 and to related helicases in mouse and Schizosaccharomyces pombe. The 
+HelC protein also shows weaker homology to the translation initiation factor eIF-4a. 
+Other DEAD-box-containing proteins, which are less closely related to HelC, have been 
+implicated in developmental roles in Drosophila and Xenopus laevis; one example is 
+the Xenopus Vasa-like protein (XVLP).  In Drosophila and Xenopus, Vasa and XVLP, 
+respectively, are specifically expressed in germ cells and are required for the 
+establishment of tissue polarity during development. In yeast, DEAD-box helicases 
+such as Prp8 are components of the spliceosome and connect pre-mRNA splicing with 
+the cell cycle.  Disruption of the helC gene in D. discoideum led to developmental 
+asynchrony, failure to differentiate and aberrant morphogenesis. We postulate that 
+one reason for the existence of large families of homologous DEAD-box proteins in 
+yeast, mammals and Dictyostelium could be that some DEAD-box proteins have develop-
+mentally specific roles regulating protein translation or mRNA stability.
+
+-------------------------------------------------------------------------
+
+LagC-Null and GBF-Null Define Key Steps in the Morphogenesis of Dictyostelium 
+Mounds.
+
+Sujatha Sukumaran, Jason M. Brown, Richard A. Firtel and James G. McNally
+
+Devel. Biol., in press.
+
+ABSTRACT
+
+The transition to multicellularity is a key feature of the Dictyostelium life-
+cycle, and two genes, gbf and lagC, are known to play pivotal roles in 
+regulating this developmental switch.  lagC-null and gbf-null cells fail to 
+induce cell-type-specific genes ordinarily expressed during multicellular 
+development.  The null mutants also share a similar morphological phenotype: 
+mutant cells repeatedly aggregate to form a loose mound, disperse, and reform 
+a mound, rather than proceeding to form a tip.  To characterize defects in 
+morphogenesis in these mutants, we examined cell motion in the mutant mounds.  
+In analogy with the failed transition in gene expression, we found that lagC-null 
+and gbf-null mounds failed to make a morphogenetic transition from random to 
+rotational motion normally observed in the parent strain.  One reason for this 
+was the inability of the mutant mounds to establish a single, dominant signaling-
+wave center.  This defect of lagC-null or gbf-null cells could be overcome by the 
+addition of adenosine, which alters cAMP signaling, but then even in the presence 
+of apparently normal signaling waves, cell motility was still aberrant.  This 
+motility defect, as well as the signaling-wave defect, could be overcome in 
+lagC-null cells by overexpression of GBF, suggesting that lagC is dispensable 
+if GBF protein levels are high enough.  This set of morphogenetic defects that 
+we have observed help define key steps in mound morphogenesis.  These include 
+the establishment of a dominant signaling-wave center and the capacity of cells 
+to move directionally within the cell mass in response to guidance cues.
+
+-------------------------------------------------------------------------
+
+[End Dicty News, volume 10, number 13]
+

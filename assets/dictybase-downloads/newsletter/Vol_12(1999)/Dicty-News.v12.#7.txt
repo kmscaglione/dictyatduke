@@ -1,0 +1,272 @@
+Dicty News
+Electronic Edition
+Volume 12, number 7
+March 20, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============================
+ Dicty Research Lab Web Pages
+==============================
+
+If your lab has a web page describing your work using Dictyostelium
+please be sure that it is listed on the Dicty web site at 
+http://dicty.cmb.nwu.edu/dicty/dicty.html.  If your site is not listed
+send the address of your web site to dicty@nwu.edu.
+
+
+==============
+  Abstracts
+==============
+
+Cisplatin inhibits folicacid chemotaxis and phagocytotic functions 
+in Dictyostelium discoideum.
+
+T.B.K.Reddy* and S.Chatterjee
+
+School of Life Sciences,  Jawaharlal Nehru University, New Delhi-110067. 
+
+INDIA.
+*corresponding author&present address.
+
+Center for Molecular Genetics, University of California, San Diego 9500 
+Gilman Drive, La Jolla, CA-92093-0634 USA.
+
+Cell Biology International., in press
+
+Summary.
+
+   Here we report the action of cisplatin (a widely used anticancer 
+drug) on some basic cellular functions of this eucaryotic model system.  
+Administration of 100 and 200 ug/ml of cisplatin [cis-diammine dichloro 
+platinum (II)] for 1hr to growing Dictyostelium discoideum cells severely 
+affects folic acid chemotaxis and phagocytotic functions in this organism.  
+Following cisplatin treatment cells show a much lower uptake of FITC 
+labelled bacteria and a reduced plaque forming ability when plated on 
+E.coli seeded normal agar. Folic acid chemotaxis and folate deaminase 
+activity are greatly inhibited in cisplatin treated Dictyostelium cells.  
+SDS-PAGE analysis show a greater association of actin and myosin with cell 
+cortex of the treated cells. These results have beeen discussed in relation 
+to cisplatin’s known function of rising the levels of cytosolic calcium. 
+
+----------------------------------------------------------------------------
+
+Chemoattractant-mediated transient activation and membrane localization 
+of Akt/PKB is required for efficient chemotaxis to cAMP in Dictyostelium
+
+Ruedi Meili, Charlene Ellsworth, Susan Lee, T. B. K. Reddy, Hui Ma, 
+and Richard A. Firtel
+
+EMBO J., in press.
+
+SUMMARY
+
+   Chemotaxis-competent cells respond to a variety of ligands by activating 
+second messenger pathways leading to changes in the actin/myosin cytoskeleton 
+and directed cell movement. We demonstrate that Dictyostelium Akt/PKB, a 
+homologue of mammalian Akt/PKB, is very rapidly and transiently activated 
+by the chemoattractant cAMP. This activation takes place through G protein-
+coupled chemoattractant receptors via a pathway that requires homologues of 
+mammalian p110 phosphoinositide-3 kinase. pkbA null cells exhibit aggregation-
+stage defects that include aberrant chemotaxis, a failure to properly polarize 
+in a chemoattractant gradient and aggregate at low densities. Mechanistically, 
+we demonstrate that the PH domain of Akt/PKB fused to GFP transiently 
+translocates to the plasma membrane in response to cAMP with kinetics similar 
+to those of Akt/PKB kinase activation and is localized to the leading edge of 
+chemotaxing cells in vivo. Our results indicate Akt/PKB is part of the 
+regulatory network required for sensing and responding to the chemoattractant 
+gradient that mediates chemotaxis and aggregation.
+
+----------------------------------------------------------------------------
+
+The tip Genes Act in Parallel Pathways of Early Dictyostelium Development
+
+Justin T. Stege, Michael T. Laub and William F. Loomis
+
+Center for Molecular Genetics, Department of Biology, University of California 
+San Diego, La Jolla California 92093
+
+Developmemtal Genetics, in press
+
+ABSTRACT
+
+   Analysis of Dictyostelium strains carrying null mutations in tipA 
+revealed a primary defect in cell sorting and the formation of tips on 
+the developing mound.  To further study the process affected in tipA- 
+mutants, other mutants with a similar phenotype were isolated and characterized.  
+These studies revealed three new Dictyostelium genes, tipB, tipC, and tipD.  
+All of the tip mutants aggregate into larger than average mounds which split 
+up and form many tips on their surfaces. Furthermore, each mutant exhibits 
+reduced or aberrant cell sorting behavior, never makes migrating slugs, and 
+has severely reduced fruiting body and spore production.  The mRNA of each 
+tip gene is present in vegetative cells and does not vary significantly with 
+development.  Prespore and prestalk gene expression is reduced or delayed in 
+the tip mutants indicating cell type differentiation is dependent on the 
+function of these genes.  Developing mutant cells in chimeric mixtures with 
+wild type cells revealed that the defects in each tip mutant behave cell 
+autonomously.  The overexpression of TipA in a tipB-background and the 
+overexpression of TipB in a tipA- background significantly improved the 
+morphogenesis of these mutants.  These were the only situations where the 
+expression of one tip gene could compensate for the lack of a different 
+tip gene.  Except for the tipA-/tipB- strain, double mutations in the tip 
+genes have additive effects, causing a more severe mutant phenotype with 
+defects earlier in development than single mutants.  The tipA-/tipB- double 
+mutant does not show additive effects and is very similar to the tipA- 
+single mutant.  Analysis of the effects of double mutations and overexpression 
+indicates that members of this class of genes appear to act through parallel 
+pathways of differentiation and tip formation in early Dictyostelium development.  
+Furthermore, TipA and TipB appear to have some overlapping functions or are 
+involvement in the same pathway.  The multitipped phenotype observed in all 
+the mutants may be a general result of perturbing early developmental events 
+such as cell type differentiation and cell type proportioning.
+
+----------------------------------------------------------------------------
+
+Architectural dynamics of F-actin in eupodia suggests their role 
+for invasive locomotion in Dictyostelium. 
+
+Fukui, Y., E. de Hostos, S. Yumura, T. Kitanishi-Yumura, and S. Inoué
+
+Exp. Cell Res., in press
+
+Summary
+
+   Eupodia are F-actin-containing cortical structures similar to vertebrate 
+podosomes or invadopodia found in metastatic cells. Eupodia are rich 
+alpha-actinin and myosin IB/D, but not a Dictyostelium homologue of talin 
+[1]. In the present study, we localized other actin-binding proteins ABP120, 
+cofilin, coronin and fimbrin in the eupodia, and examined the three-dimensional 
+organization of their F-actin system by confocal microscopy and transmission 
+electron microscopy. To examine their function, we analyzed the assembly and 
+disassembly dynamics of the F-actin system in eupodia and its relation to 
+lamellipodial protrusion. Actin dynamics was examined by monitoring S65T-GFP-
+coronin and rhodamine-actin using a real-time confocal unit and a digital 
+microscope system. Fluorescence morphometric analysis demonstrates the presence 
+of a precise spatiotemporal coupling between F-actin assembly in eupodia and 
+lamellipodial protrusion. When a lamellipodium advances to invade a tight space, 
+additional rows of eupodia are sequentially formed at the base of that 
+lamellipodium. These results indicate that mechanical stress at the leading 
+edge modulates the structural integrity of actin and its binding proteins, 
+such that eupodia are formed when anchorage is needed to boost for invasive 
+protrusion of the leading edge.
+
+----------------------------------------------------------------------------
+
+A unique talin homologue with a villin headpiece-like domain is required
+for multicellular morphogenesis in Dictyostelium
+
+M. Tsujioka, L. M. Machesky*, S. L. Cole**, K. Yahata, and K. Inouye
+
+Department of Botany, Graduate School of Science, Kyoto University, 
+Sakyo-ku, Kyoto 606-8502, Japan. 
+
+*MRC Laboratory for Molecular Biology, Hills Road, Cambridge CB2 2QH, UK.  
+(Present address : Department of Biochemistry, University of Birmingham, 
+Birmingham, B15-2TT, UK)
+
+**MRC Laboratory for Molecular Cell Biology, University College London,
+Gower St, London WC1E 6BT, UK
+
+Current Biology, in press
+
+Abstract
+
+   One important aspect of multicellular morphogenesis is the mechanical 
+one involving the intracellular and extracellular architecture on which 
+forces are exerted to cause changes of tissue shape.  Molecules involved 
+in the interaction between the extracellular matrix, cell membrane and 
+cytoskeleton are therefore of central importance in morphogenesis.  Talin 
+is a large cytoskeletal protein with a modular structure consisting of an 
+N-terminal membrane-interacting domain with sequence similarities to 
+members of the band 4.1 family and a C-terminal region containing F-actin 
+and vinculin-binding domains [1, 2]. It also interacts with the cytoplasmic 
+tail of beta integrins which on the external face of the membrane bind to 
+extracellular matrix proteins [3].  However, the possible roles of talin 
+in multicellular morphogenesis in development remain largely unexplored. 
+In Dictyostelium, a eukaryotic microorganism capable of multicellular 
+morphogenesis, a talin homologue has been identified and shown to play 
+an important role in cell-to-substrate adhesion and maintenance of normal 
+elastic properties of the cell [4, 5, 6]. Here we describe a second talin 
+homologue which is required for multicellular morphogenesis in the development 
+of Dictyostelium. Unlike any other talin known so far, it contains an additional 
+C-terminal domain homologous to the villin headpiece.
+
+----------------------------------------------------------------------------
+
+Interaction Mapping of a Dynein Heavy Chain: Identification of Dimerization 
+and Intermediate-Chain Binding Domains.
+
+Andrea Habura, Irina Tikhonenko, Rex L. Chisholm, and Michael P. Koonce.
+
+Division of Molecular Medicine, Wadsworth Center, Empire State Plaza, 
+Albany, NY 12201-0509. Department of Cell and Molecular Biology, 
+Northwestern University Medical School, Chicago, IL, 60611-3072.
+
+J. Biol. Chem, in press
+
+SUMMARY.
+
+   Cytoplasmic dynein is a multisubunit microtubule-based motor protein 
+that is involved in several eukaryotic cell motilities. Two dynein heavy 
+chains each form a motor domain that connects to a common cargo-binding 
+tail.  While this tail domain is composed of multiple polypeptides, subunit 
+organization within this region is poorly understood. Here we present an in 
+vitro dissection of the tail-forming region of the dynein heavy chain from 
+Dictyostelium. Our work identifies a sequence important for dimerization and 
+for binding the dynein intermediate chain. The core of this motif localizes 
+within a ~ 150 aa region that is strongly conserved among other cytoplasmic 
+dyneins. This level of conservation does not extend to the axonemal dynein 
+heavy chains, suggesting functional differences between the two. Dimerization 
+appears to occur through a different mechanism than the heavy chain-intermediate 
+chain interaction. We corroborate the in vitro interactions with in vivo 
+expression of heavy chain fragments in Dictyostelium. Fragments lacking the 
+interaction domain express well, without an obvious phenotype. On the other 
+hand, the region crucial for both interactions appears to be lethal when 
+overexpressed.
+
+----------------------------------------------------------------------------
+
+Kinetic Analysis of Dictyostelium discoideum Myosin Motor Domains with
+Glycine-to-Alanine Mutations in the Reactive Thiol Region
+
+Renu Batra, Michael A. Geeves§, and Dietmar J. Manstein
+
+Max-Planck-Institut für Medizinische Forschung, Jahnstr. 29, D-69120
+Heidelberg, Germany and Max-Planck-Institut für Molekulare Physiologie,
+Postfach 102664, D-44026 Dortmund, Germany 
+§ Current address: Department of Biosciences, University of Kent, Canterbury, 
+Kent, UK.
+
+Biochemistry, in press
+
+ABSTRACT
+
+   Three conserved glycine residues in the reactive thiol region of 
+Dictyostelium discoideum myosin II were replaced by alanine residues. The 
+resulting mutants G680A, G684A and G691A were expressed in the soluble myosin 
+head fragment M761-2R [Anson, M., Geeves, M.A., Kurzawa, S.E. and Manstein, 
+D.J. (1996) EMBO J. 15, 6069-6074] and characterized using transient kinetic 
+methods. Mutant G691A shows no major alterations except for a marked increase 
+in basal Mg2+-ATPase activity. Phosphate release seems to be facilitated by 
+this mutation and the addition of actin to G691A stimulates ATP turnover not 
+more than 3-fold. In comparison to M761-2R, mutant constructs G691A and G684A 
+show a 4-fold reduction in the rate of the ATP cleavage step. Most other 
+changes in the kinetic properties of G684A are small (~2-fold). In contrast, 
+substitution of G680 by an alanine residue leads to large changes in nucleotide 
+binding. Compared to M761-2R, rates of nucleotide binding are 20-30-fold slower 
+and the affinity for mantADP is approximately 10-fold increased due to a 200-
+fold reduction in dissociation rate constant of mantADP. The ATP-induced 
+dissociation of actin from the acto.G680A complex is normal but coupling between 
+binding of actin and ADP appears disrupted as G680A and acto.G680A show the same 
+affinity for ADP.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 7]
+
+  

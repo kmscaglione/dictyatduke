@@ -1,0 +1,91 @@
+dictyNews
+Electronic Edition
+Volume 27, number 13
+November 10, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+What can microbial genetics teach sociobiology?
+
+Kevin R. Foster1, Katie Parkinson2 and Christopher R. L. Thompson2
+
+1. Center for Systems Biology, Harvard University, Bauer Laboratory, 7
+Divinity Avenue, Cambridge, MA, 02138, USA
+2. Faculty of Life Sciences, University of Manchester, Michael Smith
+Building, Oxford Rd, Manchester, M13 9PT, UK
+
+Correspondence to Kevin (kfoster@cgr.harvard.edu) or 
+Chris (christopher.thompson@manchester.ac.uk)
+
+
+Trends in Genetics,in press
+
+The progress made in understanding sociobiology has occurred with little
+knowledge of the genetic mechanisms that underlie social traits. However,
+several recent studies have described microbial genes that affect social
+traits Ð bringing genetics to sociobiology. These studies confirm some key
+theories in social evolution, including the importance of genetic
+relatedness in cooperation as illustrated by cheater and social recognition
+genes. Furthermore, microbial genetics provides an important new
+perspective: the genome-to-phenome mapping of social organisms might be
+organized to constrain the evolution of social cheaters. This can occur
+both through pleiotropic genes that link cheating to a personal cost, and
+through the existence of phoenix genes that rescue cooperative systems
+from selfish and destructive strategies. These new insights demonstrate
+the power of studying microbes to understand the evolution of cooperation.
+
+
+Submitted by: Chris Thompson [christopher.thompson@man.ac.uk]
+------------------------------------------------------------------------------------------------------------
+
+
+A new environmentally resistant cell type from Dictyostelium
+
+Ioannis Serafimidis, Gareth Bloomfield, Jason Skelton1, Al Ivens1 and
+Robert R. Kay
+
+MRC Laboratory of Molecular Biology,
+Hills Rd,
+Cambridge, CB2 2QH, UK
+1. The Wellcome Trust Sanger Institute,
+Hinxton, Cambridgeshire CB10 1SA, UK
+
+We describe the serendipitous discovery and first characterization of a new
+resistant cell type from Dictyostelium, which we propose to call the
+aspidocyte (aspida: Greek for shield). These cells are induced from amoebae
+by a range of toxins including heavy metals and antibiotics, and were first
+detected by their striking resistance to detergent lysis. Aspidocytes are
+separate, rounded or irregular shaped cells that are immotile but remain
+fully viable; once the toxic stress is removed, they revert to amoeboid
+cells within an hour. Induction takes a few hours and is completely blocked
+by the protein synthesis inhibitor cycloheximide. Aspidocytes lack a cell
+wall and their resistance to detergent lysis is active, requiring continued
+energy metabolism, and may be assisted by a complete cessation of
+endocytosis, as measured by uptake of the dye FM1-43. Microarray analysis
+shows that aspidocytes have a distinct pattern of gene expression with a
+number of genes up-regulated that are predicted to be involved in lipid
+metabolism. Aspidocytes were initially detected in a hypersensitive mutant,
+in which the AMP deaminase gene is disrupted, suggesting that the inductive
+pathway involves AMP levels or metabolism. Since aspidocytes can also be
+induced from wild-type cells and are much more resistant than amoebae to a
+membrane disrupting antibiotic, it is possible that they are an adaptation
+allowing Dictyostelium cells to survive a sudden onslaught of toxins in the
+wild.
+
+
+Submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+=============================================================
+[End dictyNews, volume 27, number 13]

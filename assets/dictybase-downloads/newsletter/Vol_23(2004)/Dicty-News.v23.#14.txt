@@ -1,0 +1,239 @@
+Dicty News
+Electronic Edition
+Volume 23, number 14
+October 22, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Dictyostelium discoideum strains lacking the RtoA protein are defective
+for maturation of the Legionella pneumophila replication vacuole 
+
+Zhiru Li2, Jonathan M. Solomon2,∫, and Ralph R. Isberg1,2*
+
+1 Howard Hughes Medical Institute and
+2 Department of Molecular Biology and Microbiology, 
+Tufts University School of Medicine
+150 Harrison Ave., Boston, MA  02111
+
+
+Cellular Microbiology, in press
+
+To identify host proteins involved in Legionella pneumophila intracellular
+replication, the soil amoeba Dictyostelium discoideum was analyzed. The
+absence of the amoebal RtoA protein is demonstrated here to depress
+L. pneumophila intracellular growth.  Uptake of L. pneumophila into a
+D. discoideum rtoA- strain was marginally defective, but this effect was
+not sufficient to account for the defective intracellular growth of
+L. pneumophila.  The rtoA mutant was also more resistant to
+high-multiplicity killing by the bacterium.  A targeting assay testing 
+the co-localization of L. pneumophila-containing vacuole with an
+endoplasmic reticulum/pre-Golgi intermediate compartment marker protein,
+GFP-HDEL, was used to analyze these defects. In parental D. discoideum,
+the L. pneumophila vacuole showed recruitment of GFP-HDEL within 40 min
+after introduction of bacteria to the amoebae. By 6 hours after infection
+it was clear that the rtoA mutant acquired and retained the GFP-HDEL less
+efficiently than the parental strain, and that the mutant was defective for
+promoting the physical expansion of the membranous compartment surrounding
+the bacteria.  Depressed intracellular growth of L. pneumophila in a
+D. discoideum rtoA- mutant, therefore, appeared to result from a lowered
+efficiency of vesicle trafficking events that are essential for the
+modification and expansion of the L. pneumophila-containing compartment. 
+ 
+ 
+Submitted by:  Zhiru Li [li.zhiru@tufts.edu]
+
+-----------------------------------------------------------------------------
+
+
+Dictyostelium PAKc is required for proper chemotaxis
+
+Susan Lee1, Francisco Rivero2, Kyung Chan Park1, Emerald Huang1,
+Satoru Funamoto1, and Richard A. Firtel1
+
+1Section of Cell and Developmental Biology
+Division of Biological Sciences
+and Center for Molecular Genetics
+University of California, San Diego
+9500 Gilman Drive
+La Jolla CA 92093-0634
+USA
+
+2Zentrum für Biochemie I der Medizinischen Fakultät
+Universität zu Köln
+Joseph-Stelzmann-Strasse 52
+50931 Köln
+Germany
+
+
+Mol. Biol. Cell, in press.
+
+We have identified a new Dictyostelium p21-activated protein kinase, PAKc,
+that we demonstrate to be required for proper chemotaxis.  PAKc contains a
+Rac-GTPase binding (CRIB) and autoinhibitory domain, a PAK-related kinase
+domain, an N-terminal phosphatidylinositol binding domain, and a C-terminal
+extension related to the G?? binding domain of S. cerevisiae Ste20, the
+latter two domains being required for PAKc transient localization to the
+plasma membrane.  In response to chemoattractant stimulation, PAKc kinase
+activity is rapidly and transiently activated, with activity levels peaking
+at ~10 sec.  pakc null cells exhibit a loss of polarity and produce multiple
+lateral pseudopodia when placed in a chemoattractant gradient.  PAKc
+preferentially binds the Dictyostelium Rac protein RacB, and point mutations
+in the conserved CRIB that abrogate this binding result in mis-regulated
+kinase activation and chemotaxis defects.  We also demonstrate that a null
+mutation lacking the PAK family member myosin I heavy chain kinase (MIHCK)
+shows mild chemotaxis defects, including the formation of lateral
+pseudopodia.  A null strain lacking both PAKc and the PAK family member
+MIHCK exhibits severe loss of cell movement, suggesting that PAKc and MIHCK
+may cooperate to regulate a common chemotaxis pathway.
+
+
+Submitted by:  Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+Involvement of the TRAP-1 homologue, Dd-TRAP1, in spore differentiation
+during Dictyostelium development
+
+Tsuyoshi Morita1, Hitomi Yamaguchi2, Aiko Amagai, and Yasuo Maeda*
+
+Department of Developmental Biology and Neurosciences, Graduate School of
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+Present address: 1 Department of Neuroscience (D13), Osaka University
+Graduate School of Medicine, Yamadaoka 2-2, Suita City, Osaka 565-0871,
+Japan; 2 Department of Cell Genetics, National Institute of Genetics,
+Mishima, Shizuoka-ken 411-8540, Japan.
+
+
+Exp. Cell Res., in press
+
+TRAP1 (tumor necrosis factor receptor-associated protein 1) is a member
+of the molecular chaperone HSP90 (90-kDa heat shock protein) family. We have
+previously demonstrated that Dd-TRAP1 (Dictyostelium discoideum TRAP1)
+synthesized at the vegetative growth phase is retained during the whole
+course of D. discoideum development, and that at the multicellular slug
+stage it is located in prespore-specific vacuoles (PSVs) of prespore cells
+as well as in the cell membrane and mitochondria. Thereupon, we examined the
+function of Dd-TRAP1 in prepore and spore differentiation, using
+Dd-TRAP1-knockdown cells (TRAP1-RNAi cells) produced by the RNA interference
+method. As was expected, Dd-TRAP1 contained in the PSV was found to be
+exocytosed during sporulation to constitute the outer-most layer of the
+spore cell wall. In the TRAP1-RNAi cells, PSV formation and therefore
+prespore differentiation were significantly impaired, particularly under a
+heat stress condition. Although the TRAP1-RNAi cells formed apparently
+normal-shaped spores with a cellulosic wall, the spores were less resistant
+to heat and detergent treatments, as compared with those of parental MB35
+cells derived from Ax-2 cells. These findings strongly suggest that Dd-TRAP1
+may be closely involved in late development including spore differentiation,
+as well as in early development as realized by its induction of
+prestarvation response.
+ 
+ 
+Submitted by:  Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Sphingosine kinase regulates the sensitivity of Dictyostelium discoideum
+cells to the anticancer drug cisplatin
+
+Junxia Min1, David Traynor2, Andrew L. Stegner1, Lei Zhang3,
+Marie H. Hanigan3, Hannah Alexander1 and Stephen Alexander1#
+
+1Division of Biological Sciences, University of Missouri,
+Columbia, MO 65211-7400;
+2 MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 2QH, UK;
+3Department of Cell Biology, University of Oklahoma Health Sciences Center,
+Oklahoma City, OK 73190.
+
+
+Eukaryotic Cell, In press.
+
+The drug cisplatin is widely used to treat a number of tumor types.  However,
+resistance to the drug, which remains poorly understood, limits its
+usefulness.  Previous work using D. discoideum as a model for studying drug
+resistance, showed that mutants lacking sphingosine-1-phosphate (S-1-P)
+lyase, the enzyme which degrades S-1-P, had increased resistance to cisplatin,
+while mutants overexpressing the enzyme were more sensitive to the drug.
+S-1-P is synthesized from sphingosine and ATP by the enzyme sphingosine
+kinase.  We have identified two sphingosine kinase genes in
+D. discoideum - sgkA and sgkB - which are homologous to those of other
+species.  The biochemical properties of the SgkA and SgkB enzymes suggest
+that they are the equivalent of the human Sphk1 and Sphk2 enzymes,
+respectively.  Disruption of the kinases by homologous recombination (both
+single and double mutants) or overexpression of the sgkA gene resulted in
+altered growth rates, and altered response to cisplatin. The null mutants
+showed increased sensitivity to cisplatin, while mutants overexpressing the
+sphingosine kinase resulted in increased resistance compared to the parental
+cells.  The results indicate that both the SgkA and SgkB enzymes function in
+regulating cisplatin sensitivity.  The increase in sensitivity of the
+sphingosine kinase null mutants was reversed by addition of S-1-P, and the
+increased resistance of the sphingosine kinase overexpressor mutant was
+reversed by the inhibitor N, N-dimethylsphingosine.  Parallel changes in
+sensitivity of the null mutants are seen with the platinum based drug
+carboplatin, but not with doxorubicin, 5-flurouracil and etoposide.  This
+pattern of specificity is similar to that observed with the S-1-P lyase
+mutants, and should be useful in designing therapeutic schemes involving more
+than one drug.  This work identifies the sphingosine kinases as new drug
+targets for modulating the sensitivity to platinum based drugs.
+ 
+ 
+Submitted by:  Hannah Alexander [AlexanderH@missouri.edu]
+
+-----------------------------------------------------------------------------
+
+
+Temperature adaptation in Dictyostelium: role of delta 5 fatty acid desaturase
+
+Tamao SAITO1,3, Atsushi KATO1, Hiroshi OCHIAI1 and Naoki MORITA2
+
+1 Division of Biological Sciences, Graduate School of Science, Hokkaido
+University, Sapporo, 060-0810 Japan, 2 Research Institute of Genome-based
+Biofactory, National Institute of Advanced Industrial Science and Technology
+(AIST), Toyohira-ku, Sapporo 062-8517 Japan.
+
+
+Microbiology, in press
+
+Membrane fluidity is critical for proper membrane function and is regulated
+in part by the proportion of unsaturated fatty acids present in the membrane
+lipids.  The proportion of these lipids in turn varies with temperature and
+may contribute to temperature adaptation in poikilothermic organisms.  The
+fundamental question in this study is whether the unsaturation of fatty acids
+contributes to the ability of adaptation to the temperature stress in
+Dictyostelium.  We firstly analyzed fatty acid composition and detected that
+the relative proportions of dienoic acids changed with temperature.  In
+order to investigate the role of dienoic fatty acids in temperature
+adaptation, we have created null mutants in the two known delta 5 fatty acid
+desaturases (FadA and FadB) that are responsible for the production of the
+dienoic fatty acids.  The fadB null mutant showed no significant alteration
+in fatty acid composition or in phenotype.  However, the disruption of fadA
+resulted in a large drop in dienoic fatty acid content from 51.2% to 4.1 %
+and a possibly compensatory increase in monoenoic fatty acids
+(40.9% to 92.4%).  We detected no difference for the temperature adaptation
+with that of wild type cells in the growth phase.  However, surprisingly
+mutant cells develop more efficiently than the wild-type at elevated
+temperatures.  Our results show that fatty acid composition of Dictyostelium
+changes with temperature and suggest that the regulation of dienoic fatty
+acid synthesis is involved in the development of Dictyostelium at elevated
+temperature but not in the growth.
+ 
+ 
+Submitted by:  Tamao Saito [tasaito@sci.hokudai.ac.jp]
+
+==============================================================================
+[End Dicty News, volume 23, number 14] 

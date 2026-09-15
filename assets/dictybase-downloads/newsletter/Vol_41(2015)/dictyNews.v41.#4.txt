@@ -1,0 +1,126 @@
+dictyNews
+Electronic Edition
+Volume 41, number 4
+February 6, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+The autophagic machinery ensures nonlytic transmission of
+mycobacteria
+
+Lilli Gerstenmaier a,1, Rachel Pilla a,1, Lydia Herrmann a, 
+Hendrik Herrmann a,2, Monica Prado a, Geno J. Villafano a, 
+Margot Kolonko a, Rudolph Reimer b, Thierry Soldati c, 
+Jason S. King d, and Monica Hagedorn a,3
+
+a Section Parasitology, Bernhard Nocht Institute for Tropical 
+Medicine, 20359 Hamburg, Germany; 
+b Electronmicroscopy, Heinrich-Pette-Institute, 20251 Hamburg, 
+Germany; 
+c Department of Biochemistry, University of Geneva, 
+1211-Geneva, Switzerland;  
+d Department of Biomedical Sciences, University of Sheffield, 
+Sheffield S10 2TN, United Kingdom
+
+
+PNAS
+
+In contrast to mechanisms mediating uptake of intracellular 
+bacterial pathogens, bacterial egress and cell-to-cell 
+transmission are poorly understood. Previously, we showed that 
+the transmission of path- ogenic mycobacteria between phagocytic 
+cells also depends on nonlytic ejection through an F-actin based 
+structure, called the ejectosome. How the host cell maintains 
+integrity of its plasma membrane during the ejection process was 
+unknown. Here, we reveal an unexpected function for the 
+autophagic machinery in nonlytic spreading of bacteria. We show 
+that ejecting mycobacteria are escorted by a distinct polar 
+autophagocytic vacuole. If autophagy is impaired, cell-to-cell 
+transmission is inhibited, the host plasma membrane becomes 
+compromised and the host cells die. These findings highlight a 
+previously unidentified, highly ordered interac- tion between 
+bacteria and the autophagic pathway and might rep- resent the 
+ancient way to ensure nonlytic egress of bacteria.
+
+
+Submitted by Monica Hagedorn [hagedorn@bnitm.de] 
+----------------------------------------------------------------------
+
+
+Virulence determinants of the human pathogenic fungus Aspergillus 
+fumigatus protect against soil amoeba predation
+
+Falk Hillmann, Silvia Novohradsk‡, Derek J. Mattern, Tilmann 
+Forberger, Thorsten Heinekamp, Martin Westermann, Thomas Winckler, 
+and Axel A. Brakhage
+
+
+Environmental Microbiology
+
+Filamentous fungi represent classical examples for environmentally 
+acquired human pathogens whose major virulence mechanisms are 
+likely to have emerged long before the appearance of innate immune 
+systems. In natural habitats, amoeba predation could impose a major 
+selection pressure towards the acquisition of virulence attributes. 
+To test this hypothesis, we exploited the amoeba Dicytostelium 
+discoideum to study its interaction with Aspergillus fumigatus, 
+two abundant soil inhabitants for which we found co-occurrence in 
+various sites. Fungal conidia were efficiently taken up by 
+D. discoideum, but ingestion was higher when conidia were devoid 
+of the green fungal spore pigment DHN-melanin, in line with earlier 
+results obtained for immune cells. Conidia were able to survive 
+phagocytic processing and intracellular germination was initiated 
+only after several hours of coincubation which eventually led to a 
+lethal disruption of the host cell. Besides phagocytic interactions, 
+both amoeba and fungus secreted cross inhibitory factors which 
+suppressed fungal growth or induced amoeba aggregation with 
+subsequent cell lysis, respectively. On the fungal side, we 
+identified gliotoxin as the major fungal factor killing Dictyostelium, 
+supporting the idea that major virulence attributes, such as escape 
+from phagocytosis and the secretion of mycotoxins are beneficial 
+to escape from environmental predators.
+
+
+Submitted by Falk Hillmann [falk.hillmann@hki-jena.de]
+----------------------------------------------------------------------
+
+
+Quantitative measurement of transcription dynamics in living cells.
+
+Corrigan AM, Chubb JR.
+
+
+Methods in Cell Biology
+
+In a wide range of organisms the kinetics of transcription have 
+been found to be noisy, with "bursts" or "pulses" of transcription 
+interspersed with irregular periods of inactivity. The in vivo 
+analysis of transcription dynamics can be most directly monitored 
+using RNA stem loop motifs derived from MS2 and other bacteriophages. 
+Here we describe the implementation of the MS2 RNA detection system 
+and the steps required for precise measurement of transcription 
+dynamics in highly motile cells. Automated image processing 
+techniques are used to track large numbers of cells and measure 
+transcription in a systematic and unbiased manner. We discuss 
+popular methods for automatic image segmentation and frame-to-frame 
+tracking of cells, and the considerations required to make 
+measurements as quantitatively as possible.
+
+
+Submitted by Jonathan Chubb [j.chubb@ucl.ac.uk] 
+==============================================================
+[End dictyNews, volume 41, number 4]

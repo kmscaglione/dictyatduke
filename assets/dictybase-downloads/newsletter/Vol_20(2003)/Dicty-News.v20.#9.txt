@@ -1,0 +1,58 @@
+Dicty NewsElectronic EditionVolume 20, number 9May 23, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at DictyBase--http://dictybase.org.=============  Abstracts=============Formation of Hirano Bodies Induced by Expression ofan Actin Cross-linking Protein With a Gain of Function MutationAndrew Maselli, Ruth Furukawa, Susanne A. M. Thomson,Richard C. Davis, and Marcus FechheimerDepartment of Cellular Biology, University of Georgia, Athens, Georgia 30602
+
+Eucaryotic Cell, in pressHirano bodies are paracrystalline actin filament containing structuresreported in association with a variety of neurodegenerative diseases.  Yet,the biological function of Hirano bodies remains poorly understood, sincenearly all prior studies of these structures employed post-mortem samplesof tissue.  In the present study, we have generated a full length form of aDictyostelium 34 kDa actin cross-linking protein with point mutations inthe first putative EF hand termed 34 kDa _EF1.  The 34 kDa _EF1 proteinbinds calcium normally, but has activated actin binding that is unregulatedby calcium.  Expression of the 34 kDa _EF1 protein in Dictyostelium inducedthe formation of Hirano bodies as assessed both by fluorescence microscopyand transmission electron microscopy.  Dictyostelium cells bearing Hiranobodies grow normally, indicating that Hirano bodies are not associated withcell death and are not deleterious to cell growth.  Moreover, expression ofthe 34 kDa ÆEF1 protein rescues the phenotypes of 34 kDa null and 34kDa/_-actinin double null cells.  Finally, expression of the 34 kDa _EF1protein also initiates formation of Hirano bodies in cultured mousefibroblasts.  These results show that failure to regulate the activityand/or affinity of an actin cross-linking protein can provide a signal forformation of Hirano bodies.  More generally, formation of Hirano bodies isa cellular response to or a consequence of aberrant function of the actincytoskeleton.
+
+Submitted by: Andrew Maselli [amaselli@uconnvm.uconn.edu]
+-----------------------------------------------------------------------------
+
+Shared, Unique and Redundant Functions of Three Myosin Is (MyoA, MyoB and 
+MyoF) in Motility and Chemotaxis in DictyosteliumDavid L. Falk*, Deborah Wessels*, Leslie Jenkins*, Tien Pham1, 
+Spencer Kuhl*, Margaret A. Titus^ and David R. Soll**WM Keck Dynamic Image Analysis Facility, Dept. Biological Sciences, 
+University of Iowa, Iowa City, IA 52242, ^Dept. Genetics, Cell Biology and Development, University of Minnesota, 
+Minneapolis, MNJ. Cell Science, in pressMost cell types express two distinct forms of myosin I, amoeboid and short, 
+distinguished by differences in their tail domains.  Both types of myosin I 
+have been implicated in the regulation of pseudopod formation in 
+Dictyostelium discoideum.  Computer-assisted methods for reconstructing and 
+motion analyzing cells, and experimental protocols for assessing the basic 
+motile behavior of mutant cells in buffer and the responses of these cells 
+to the individual spatial, temporal and concentration components of a 
+natural wave of the chemoattractant cAMP were used to assess shared, unique 
+or redundant roles of three class I myosins, one amoeboid, myoB, and two 
+short, myoA and myoF, in motility. Analysis of both single and double 
+mutants revealed that all three myosins play independent roles in 
+suppressing lateral pseudopod formation in buffer and during chemotaxis.  
+One, myoB, also plays a unique role in priming cells to respond to the 
+increasing temporal gradient in the front of cAMP waves, while myoF plays a 
+unique role in maintaining the elongate, polarized shape of a cell in buffer, 
+during chemotaxis in a spatial gradient of chemoattractant and in the front 
+of a cAMP wave.  Finally, myoA and myoF play redundant roles in the velocity 
+response to the increasing temporal gradient in the front of a cAMP wave.  
+These results, therefore, reveal an unexpected variety of shared, unique and 
+redundant functions of the three myosin Is in motility and chemotaxis.  
+Interestingly, the combined defects of the myosin I mutants are similar to 
+those of a single mutant with constitutive PKA activity, suggesting that PKA 
+plays a role in the regulation of all three myosin Is.
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+-----------------------------------------------------------------------------
+
+Human Polymorphonuclear Leukocytes Respond To Waves Of Chemoattractant Like 
+DictyosteliumJeremy Geiger, Deborah Wessels and David R. SollW. M. Keck Dynamic Image Analysis Facility, Department of Biological Sciences, 
+The University of Iowa, Iowa City, IA 52242Cell Motility and the Cytoskeleton, in pressIt has been assumed that the natural chemotactic signal that attracts human 
+polymorphonuclear leukocytes (PMNs) over long distances to sites of infection 
+is in the form of a standing spatial gradient of chemoattractant.  We have 
+questioned this assumption on the grounds first that standing spatial 
+gradients may not be stable over long distances for long periods of time and 
+second that in the one animal cell chemotaxis system in which the natural 
+chemotactic signal has been described in space and time, aggregation of 
+Dicytostelium discoideum, the signal is in the form of an outwardly relayed, 
+nondissipating wave of attractant.  Here, it is demonstrated that PMNs alter 
+their behavior in each of the four phases of a wave of PMN chemoattractant, 
+fashioned after the Dictyostelium wave, in a manner similar to Dictyostelium.  
+These results demonstrate that PMNs have all of the machinery to respond to 
+a natural wave of attractant, providing support to the hypothesis that the 
+natural signal that attracts PMNs over large distances to sites of infection 
+in the human body may also be in the form of a wave.
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+============================================================[End Dicty News, volume 20, number 9]

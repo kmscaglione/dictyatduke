@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 43, number 24
+October 13, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Retrotransposon domestication and control in Dictyostelium discoideum
+
+Marek Malicki, Maro Iliopoulou† and Christian Hammann
+
+Ribogenetics Biochemistry Lab, Department of Life Sciences and 
+Chemistry, Jacobs University Bremen, Bremen, Germany
+†present address: Wellcome Trust Centre for Human Genetics, University 
+of Oxford, Oxford, United Kingdom
+
+
+Frontiers in Microbiology, in press
+
+Transposable elements, identified in all eukaryotes, are mobile genetic 
+units that can change their genomic position. Transposons usually employ 
+an excision and reintegration mechanism, by which they change position, 
+but not copy number. In contrast, retrotransposons amplify via RNA 
+intermediates, increasing their genomic copy number. Hence, they 
+represent a particular threat to the structural and informational integrity of 
+the invaded genome. The social amoeba Dictyostelium discoideum, 
+model organism of the evolutionary Amoebozoa supergroup, features a 
+haploid, gene-dense genome that offers limited space for damage-free 
+transposition. Several of its contemporary retrotransposons display intrinsic 
+integration preferences, for example by inserting next to transfer RNAs 
+genes or other retroelements. Likely, any retrotransposons that invaded the 
+genome of the amoeba in a non-directed manner were lost during evolution, 
+as this would result in decreased fitness of the organism. Thus, the 
+positional preference of the Dictyostelium retroelements might represent a 
+domestication of the selfish elements. Likewise, the reduced danger of such 
+domesticated transposable elements led to their accumulation, and they 
+represent about 10% of the current genome of D. discoideum. To prevent 
+the uncontrolled spreading of retrotransposons, the amoeba employs control 
+mechanisms including RNA interference and heterochromatization. Here, we 
+review TRE5-A, DIRS-1 and Skipper-1, as representatives of the three 
+retrotransposon classes in D. discoideum, which make up 5.7 % of the 
+Dictyostelium genome. We compile open questions with respect to their 
+mobility and cellular regulation, and suggest strategies, how these questions 
+might be addressed experimentally.
+
+
+submitted by:  Christian Hammann [c.hammann@jacobs-university.de]
+——————————————————————————————————————
+
+
+The polymorphic proteins TgrB1 and TgrC1 function as a ligand-receptor 
+pair in Dictyostelium allorecognition
+
+Shigenori Hirose, Gong Chen, Adam Kuspa and Gad Shaulsky
+
+Baylor College of Medicine, Houston, TX
+
+
+Journal of Cell Science, accepted
+
+Allorecognition is a key factor in Dictyostelium development and sociality. 
+It is mediated by two polymorphic transmembrane proteins, TgrB1 and 
+TgrC1, that contain extracellular immunoglobulin domains. TgrB1 and 
+TgrC1 are necessary and sufficient for allorecognition and they carry out 
+separate albeit overlapping functions in development, but their mechanism 
+of action is unknown. Here we show that TgrB1 acts as a receptor and 
+TgrC1 as its ligand in cooperative aggregation and differentiation. The 
+proteins bind each other in a sequence-specific manner, TgrB1 exhibits a 
+cell-autonomous function, and TgrC1 acts non-cell-autonomously. The 
+TgrB1 cytoplasmic tail is essential for its function and it becomes 
+phosphorylated upon association with TgrC1. Dominant mutations in TgrB1 
+activate the receptor function and confer partial ligand independence. 
+These roles in development and sociality suggests that allorecognition is 
+critical in the integration of individual cells into a coherent organism.
+
+
+submitted by: Gad Shaulsky  [gadi@bcm.edu]
+==============================================================
+[End dictyNews, volume 43, number 24]

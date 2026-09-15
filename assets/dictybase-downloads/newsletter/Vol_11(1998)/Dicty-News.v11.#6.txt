@@ -1,0 +1,267 @@
+Dicty News
+Electronic Edition
+Volume 11, number 6
+Sept. 26, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=========================
+  Pictures from Dicty98
+=========================
+
+We are looking for contributions to the photo archive for the Dicty 
+web page.  If you have any photos you'd like to contribute you can
+send them electronically in tif, jpg or gif formats, as a photoshop 
+document or if you prefer you can mail copies and we will scan them.
+The photos of previous meetings are one of the most frequently viewed
+parts of the web site, so it would be great to have a good collection
+of pictures from Dicty98.  Send files to "dicty@nwu.edu".
+
+
+================
+  Announcement
+================
+
+A report by Bill Loomis on the Dictyostelium genome sequencing project
+has been added to the Dictyostelium home page.  The link is:
+
+http://dicty.cmb.nwu.edu/dicty/Genomeseq.htm
+
+
+===========
+ Abstracts
+===========
+ 
+Regulation of the PAK-related Dictyostelium Myosin I Heavy Chain Kinase by 
+Autophosphorylation, Acidic Phospholipids and Ca2+-Calmodulin*
+
+Sheu-Fen Lee, Amjad Mahasneh, Marc de la Roche and Graham P. Côté
+
+Department of Biochemistry, Queen’s University,
+Kingston, Ontario, Canada, K7L 3N6
+
+J. Biol. Chem., In Press
+
+Abstract
+
+   The Dictyostelium myosin I heavy chain kinase (MIHCK) is a member 
+of the p21-activated (PAK) kinase family (Lee, S-.F., et al. (1996) 
+J.Biol.Chem.  271, 27044).  MIHCK incubated with MgATP in the absence 
+of effectors incorporates 1 mol of phosphate per mol resulting in an 
+~40-fold increase in kinase activity.  Sequence analysis of tryptic 
+peptides has identified the major site of phosphorylation as Ser-8.  
+A peptide and a GST-fusion protein containing the Ser-8 phosphorylation 
+site were good substrates for MIHCK, indicating that MIHCK can catalyze 
+its own activation. GTP S-Rac1 stimulates MIHCK autophosphorylation 
+and kinase activity 10-fold.  Phosphatidylserine, phosphatidylinositol 
+and phosphatidylinositol 4,5-bisphosphate, but not phosphatidylcholine 
+or sphingosine, were as effective as GTP S-Rac1 in enhancing MIHCK 
+autophosphorylation and activity.  Acidic lipids and GTP S-Rac1 
+induced the autophosphorylation of a similar set of sites as judged 
+by two-dimensional tryptic peptide maps.   It is proposed that GTP-Rac 
+and acidic phospholipids function cooperatively to associate  MIHCK 
+with membranes.  Ca2+-calmodulin bound MIHCK and inhibited activation 
+by acidic phospholipids but not GTP S-Rac1.  These studies reveal a 
+number of similarities between the regulatory properties of the 
+Dictyostelium  and Acanthamoeba MIHCK, suggesting that the signaling 
+pathways that control myosin I are conserved.
+
+-------------------------------------------------------------------------
+
+Myosin light chain kinase A, an unconventional myosin light chain kinase
+from Dictyostelium, is activated by a cGMP-dependent pathway
+
+Linda A. Silveira*#, Janet L. Smith*, John L. Tan*, and James A. Spudich*
+
+*Department of Biochemistry, Beckman Center, Stanford University,
+Stanford CA  94305-5307,  #Department of Biology, University of Redlands, 
+1200 E. Colton Avenue, P.O. Box 3080, Redlands CA 92373-0999
+
+Proc. Natl. Acad. Sci., in press
+
+Abstract
+
+   Dictyostelium  myosin II is activated by phosphorylation of its 
+regulatory light chain by MLCK-A, an unconventional myosin light chain 
+kinase that is not regulated by Ca2+/calmodulin.  MLCK-A is activated 
+by autophosphorylation of threonine-289 outside of the catalytic domain 
+and by phosphorylation of threonine-166 in the activation loop by an 
+unidentified kinase, but the signals controlling these phosphorylations 
+are unknown.  Treatment of cells with concanavalin A results in 
+quantitative phosphorylation of the regulatory light chain by MLCK-A, 
+providing an opportunity to study MLCK-A’s activation mechanism.  MLCK-A 
+does not alter its cellular location upon treatment of cells with 
+concanavalin A, nor does it localize to the myosin-rich caps that form 
+after treatment.  However, MLCK-A activity rapidly increases two to 
+13-fold when Dictyostelium cells are exposed to concanavalin A.  This 
+activation can occur in the absence of MLCK-A autophosphorylation.  
+cGMP is a promising candidate for an intracellular messenger mediating 
+conA-triggered MLCK-A activation, as addition of cGMP to fresh 
+Dictyostelium lysates increases MLCK-A activity three to 12-fold.  The 
+specific activity of MLCK-A in cGMP-treated lysates is 210-fold higher 
+than that of recombinant MLCK-A, which is fully autophosphorylated, 
+but lacks threonine-166 phosphorylation.  Purified MLCK-A is not 
+directly activated by cGMP, indicating that additional cellular 
+factors, perhaps a kinase that phosphorylates threonine-166, are 
+involved.
+
+-------------------------------------------------------------------------
+
+Induction of optical density waves and chemotactic cell movement in 
+Dictyostelium discoideum by micro-injection of cAMP pulses
+
+Jens Rietdorf, Florian Siegert and Cornelis J. Weijer
+
+Dept. of Anatomy & Physiology, University of Dundee, MSI/WTB Complex, 
+Dow Street, Dundee DD1 5EH, UK
+
+Develop. Biol., in press
+
+SUMMARY
+
+   The development of most multicellular organisms involves coordinated 
+cell movement. The early aggregation of Dictyostelium cells has been 
+shown to be mediated by chemotactic movement to propagating waves of 
+cAMP. We have proposed that propagating waves of a chemoattractant, most 
+likely cAMP, also controls the movement of cells in mounds and slugs 
+(Bretschneider et al., 1995; Siegert and Weijer, 1995). We have now 
+used periodic pressure injection of pulses of cAMP in the extracellular 
+space of aggregation streams, mounds and slugs to investigate whether 
+these signals can be relayed and control cell movement, using quantitative 
+digital time-lapse microscopy. Our major findings are (1) Short (0.1 sec) 
+pulses of cAMP (107 molecules) were able to elicit optical density (OD) 
+waves in fields of aggregating amoebae. They propagate from the micropipette 
+outward and interact with endogenous OD waves. (2) Periodic injection of 
+cAMP pulses into aggregation streams blocked the pulses coming from the 
+center and led to the rapid accumulation of cells downstream of the pipette 
+around the pipette. (3) Injection of pulses of cAMP into mounds elicited OD 
+waves, which propagated from the pipette outward and interacted with the 
+endogenous waves, indicating that the same propagator carries them. (4) 
+Periodic microinjection of cAMP in the prespore zone of slugs led to 
+accumulation of anterior-like cells around the micropipette followed by 
+tip formation.  Furthermore, the cAMP signal could control the spacing 
+of the endogenous sorting pattern. These results strongly support the 
+hypothesis that the optical density waves observed during early 
+development up to the mound stage represent propagating cAMP waves. 
+They suggest furthermore that cAMP is the morphogen that controls cell 
+movements in slugs.
+
+-------------------------------------------------------------------------
+
+The Characterization of Two Dictyostelium discoideum Genes Encoding
+Ribosomal Proteins with Sequence Similarity to Rat L27a and L37a 
+
+Tetsuo OHMACHI 1*,  Ryo FUKUOKA 1,  Yoshie KIMURA 1, Yoshihiro ASADA 1  
+and  Herbert L. ENNIS 2
+
+1 Department of Biochemistry and Biotechnology, Faculty of  Agriculture
+and Life Science,  Hirosaki University, Hirosaki  036-8561, Japan  
+
+2 Department of Anatomy and Cell Biology, Columbia  University College of
+Physicians and Surgeons,  New York, NY 10032,  USA
+
+Biosci. Biotechnol. Biochem.  in press
+
+Summary
+
+   Two Dictyostelium discoideum  ribosomal protein genes, denoted DdL27a 
+and DdL37a, were isolated and sequenced. The DdL27a gene contained an 
+open reading frame of 148 amino acids coding for a putative 16,407 Da 
+protein, which was similar to rat L27a (82.6% similarity) and to ribosomal 
+proteins from other species.  The gene contained a 311-bp intron downstream 
+from the ATG initiation codon with an A+T content of 75%. The DdL37a gene 
+encoded a 9,999 Da protein consisting of 91 amino acids, which had high 
+sequence similarity to rat, human, and chicken ribosomal protein L37a, 
+and was interrupted by two introns of 254 bp and 75 bp in length. The 
+DdL37a protein contained a typical zinc finger motif (Cys-X2-Cys-X14-
+Cys-X2-Cys), which may be involved in the interaction of proteins with 
+nucleic acids.  Genomic DNA blot analysis indicated  that the DdL27a 
+and DdL37a genes are present in single copies in the Dictyostelium 
+haploid genome.  The DdL27a and DdL37a mRNA were expressed maximally 
+in growing amoebae, and their levels decreased during multicellular 
+development, coordinately with the observed decrease in ribosome 
+accumulation during later development.
+
+-------------------------------------------------------------------------
+
+Cloning, sequencing and developmental expression of the genes encoding S4
+and S10 ribosomal proteins in the cellular slime mould Dictyostelium
+discoideum
+
+Aurelie Tapparo, Michel Satre and Gerard Klein
+
+Laboratoire de Biochimie et de Biophysique des Systemes Integres (UMR
+314 CNRS-CEA), Departement de Biologie Moleculaire et Structurale,
+CEA-Grenoble, 17 rue des Martyrs, 38054 Grenoble cedex 09, France
+
+Current Genetics, in press
+
+Abstract
+
+   The sequences of the rps4 and rps10 genes encoding the Dictyostelium 
+discoideum homologues of the basic ribosomal proteins S4 and S10 were 
+determined from cDNA and genomic DNA clones. They are expressed 
+respectively as 266 and 153 amino acid-long proteins. In both cases, 
+the N-terminal methionine is cleaved in the mature proteins. S4 contains 
+two putative nuclear targeting signals and displays a strong overall 
+identity (around 60%) to eukaryotic S4 homologues. The rps10 gene harbours 
+a 314 bp intron located close to its 5’-coding end. The overall identity 
+between D.  discoideum S10 and eukaryotic homologues is around 38% and 
+rises to 53% in the N-terminal domain. Southern blots suggest that both 
+S4 and S10 are encoded by single genes that are regulated during development. 
+The corresponding mRNAs decrease sharply after 8 h of differentiation.
+
+-------------------------------------------------------------------------
+
+A novel, putative MEK kinase controls developmental timing and spatial
+patterning in Dictyostelium and is regulated by ubiquitin-mediated protein
+degradation
+
+Chang Y. Chung, T. B. K. Reddy, Kemin Zhou, and Richard A. Firtel
+
+Department of Biology, Center for Molecular Genetics, University of 
+California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093-0634
+
+Genes Dev. in press.
+
+ABSTRACT
+
+   We have identified a developmentally regulated, putative MEK kinase 
+(MEKKa) that contains an F-box and WD40 repeats and plays a complex role 
+in regulating cell-type differentiation and spatial patterning.  Cells 
+deficient in MEKKa develop precociously and exhibit abnormal cell-type 
+patterning with an increase in one of the prestalk compartments (pstO), 
+a concomitant reduction in the prespore domain, and a loss of the sharp 
+compartment boundaries, resulting in overlapping prestalk and prespore 
+domains.  Overexpression of MEKKa or MEKKa lacking the WD40 repeats results 
+in very delayed development and a severe loss of compartment boundaries.  
+Prespore and prestalk cells are interspersed throughout the slug.  Analysis 
+of chimeric organisms suggests that MEKKa function is required for the 
+proper induction and maintenance of prespore cell differentiation.  We 
+show that the WD40 repeats target MEKKa to the cortical region of the 
+cell, while the F-box/WD40 repeats direct ubiquitin-mediated MEKKa 
+degradation.  We identify a UBC and a UBP (ubiquitin hydrolase) that 
+interact with the F-box/WD40 repeats.  Our findings indicate that 
+cells lacking the ubiquitin hydrolase have phenotypes similar to those 
+of MEKKa null (mekka-) cells, further supporting a direct genetic and 
+biochemical interaction between MEKKa, the UBC, and the UBP.  We 
+demonstrate that UBC and UBP differentially control MEKKa 
+ubiquitination/deubiquitination and degradation through the 
+F-box/WD40 repeats in a cell-type-specific and temporally-regulated 
+manner.  Our results represent a novel mechanism including targeted 
+protein degradation by which MAP kinase cascade components can be 
+controlled.  More importantly, our findings suggest a new paradigm 
+of spatial and temporal control  of the kinase activity controlling 
+spatial patterning during multicellular development, which parallels 
+the temporally-regulated degradation of proteins required for 
+cell-cycle progression.
+
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 6]
+

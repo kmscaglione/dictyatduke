@@ -1,0 +1,123 @@
+dictyNews
+Electronic Edition
+Volume 41, number 3
+January 30, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Comparative genome and transcriptome analyses of the social amoeba 
+Acytostelium subglobosum that accomplishes multicellular development 
+without germ-soma differentiation.
+
+Hideko Urushihara, Hidekazu Kuwayama, Kensuke Fukuhara, Takehiko 
+Itoh, Hiroshi Kagoshima, Tadasu Shin-I, Atsushi Toyoda, Kazuyo 
+Ohishi, Tateaki Taniguchi, Hideki Noguchi, Yoko Kuroki, Takashi 
+Hata, Kyoko Uchi, Kurato Mohri, Jason S. King, Robert H. Insall, 
+Yuji Kohara, Asao Fujiyama.
+
+
+BMC Genomics, in press.
+
+Background: Social amoebae are lower eukaryotes that inhabit the 
+soil. They are characterized by the construction of a starvation-
+induced multicellular fruiting body with a spore ball and 
+supportive stalk. In most species, the stalk is filled with motile 
+stalk cells, as represented by the model organism Dictyostelium 
+discoideum, whose developmental mechanisms have been well 
+characterized. However, in the genus Acytostelium, the stalk is 
+acellular and all aggregated cells become spores. Phylogenetic 
+analyses have shown that it is not an ancestral genus but has 
+lost the ability to undergo cell differentiation.
+
+Results: We performed genome and transcriptome analyses of 
+Acytostelium subglobosum and compared our findings to other 
+available dictyostelid genome data. Although A. subglobosum 
+adopts a qualitatively different developmental program from other 
+dictyostelids, its gene repertoire was largely conserved. Yet, 
+families of polyketide synthase and extracellular matrix proteins 
+have not expanded and a serine protease and ABC transporter B 
+family gene, tagA, and a few other developmental genes are missing 
+in the A. subglobosum lineage. Temporal gene expression patterns 
+are astonishingly dissimilar from those of D. discoideum, and only 
+a limited fraction of the ortholog pairs shared the same expression 
+patterns, so that some signaling cascades for development seem to 
+be disabled in A. subglobosum.
+
+Conclusions: The absence of the ability to undergo cell 
+differentiation in Acytostelium is accompanied by a small change 
+in coding potential and extensive alterations in gene expression 
+patterns.
+
+
+Submitted by Hideko Urushihara [hideko@biol.tsukuba.ac.jp] 
+----------------------------------------------------------------------
+
+
+A Long-range Foresight for the Medical Application of Apoptosis 
+Specifically Induced by Dd-MRP4, Dictyostelium Mitochondrial 
+Ribosomal Protein S4, to Cancer Therapy
+
+Yasuo Maeda
+
+Department of Developmental Biology and Neurosciences , 
+Graduate School of Life Sciences, Tohoku University (Emeritus), 
+Aoba, Sendai 980-8578, Japan; E-mail: kjygy352@ybb.ne.jp
+
+
+Biomolecules, in press
+
+Apoptosis (programmed cell death) is regarded as ultimate 
+differentiation of the cell. We have recently demonstrated that 
+a targeted delivery of Dd-MRP4 (Dictyostelium mitochondrial 
+ribosomal protein S4) suppresses specifically the proliferation 
+of the human cancer cells, by inducing their apoptotic cell 
+death [1]. This amazing fact was discovered, simply based on the 
+finding that Dd-MRP4 expression is absolutely required for 
+transition of Dictyostelium cells from growth to differentiation 
+[2,3]. Dd-MRP4 protein has quite unique structural characters, in 
+that it is highly basic (pI: about 11.5) and interestingly has 
+several nuclear-localization signals within the molecule. In this 
+review, we introduce briefly the efficacy of several apoptosis-
+inducing substances reported thus far for cancer therapy, and 
+speculate the possible mechanisms, by which apoptosis is 
+specifically induced by Dd-MRP4, on the basis of its structural 
+uniqueness. We also discuss about several issues to be solved for 
+the medical application of ectopically expressed Dd-MRP4 in human 
+cancer cells.
+
+Keywords: apoptosis; cell differentiation; cancer therapy; Dd-MRP4 
+(Dictyostelium mitochondrial ribosomal protein S4); microRNA 
+(miRNA); mitochondria; Dictyostelim discoideum; human cancer 
+cells
+
+(References)
+1.	Chida, J.; Araki, H.; Maeda Y. Specific growth suppression 
+of human cancer cells by targeted delivery of Dictyostelium 
+mitochondrial ribosomal protein S4. Cancer Cell International 
+2014, 14:56.
+2.	Chida, J.; Amagai, A.; Tanaka, M.; Maeda Y. Establishment 
+of a new method for precisely determining the functions of 
+individual mitochondrial genes using Dictyostelium cells. 
+BMC Genet. 2008, 9:.doi:10.1186/1471-2156-9-25.
+3.	Maeda, Y.; Chida, J. Control of cell differentiation by 
+mitochondria, typically evidenced in Dictyostelium development. 
+Biomolecules 2013, 3, 943-966; doi:10.3390/biom3040943.
+
+
+Submitted by Yasuo Maeda [kjygy352@ybb.ne.jp]   
+==============================================================
+[End dictyNews, volume 41, number 3]

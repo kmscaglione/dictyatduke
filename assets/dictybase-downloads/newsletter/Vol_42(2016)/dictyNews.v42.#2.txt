@@ -1,0 +1,146 @@
+dictyNews
+Electronic Edition
+Volume 42, number 2
+January 15, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The Physarum polycephalum Genome Reveals Extensive Use
+of Prokaryotic Two-Component andMetazoan-Type Tyrosine
+Kinase Signaling
+
+Pauline Schaap, Israel Barrantes, Pat Minx, Narie Sasaki, 
+Roger W. Anderson, Marianne Benard, Kyle K. Biggar, Nicolas E. 
+Buchler, Ralf Bundschuh, Xiao Chen, Catrina Fronick, Lucinda Fulton,
+Georg Golderer, Niels Jahn, Volker Knoop, Laura F. Landweber, 
+Chrystelle Maric, Dennis Miller, Angelika A. Noegel, Rob Peace, 
+Gerard Pierron, Taeko Sasaki, Mareike Schallenberg-Rüdinger,
+Michael Schleicher, Reema Singh, Thomas Spaller, Kenneth B. Storey, 
+Takamasa Suzuki, Chad Tomlinson, John J. Tyson, Wesley C. Warren, 
+Ernst R. Werner, Gabriele Werner-Felmayer, Richard K. Wilson,3 
+Thomas Winckler, Jonatha M. Gott, Gernot Glöckner , and
+Wolfgang Marwan
+
+
+Genome Biol. Evol. in press
+
+Physarum polycephalum is a well-studied microbial eukaryote with 
+unique experimental attributes relative to other experimental
+50 model organisms. It has a sophisticated life cycle with several 
+distinct stages including amoebal, flagellated, and plasmodial cells. 
+It is unusual in switching between open and closed mitosis according 
+to specific life-cycle stages. Here we present the analysis of the
+genome of this enigmatic and important model organism and compare it 
+with closely related species. The genome is littered with simple and 
+complex repeats and the coding regions are frequently interrupted by 
+introns with a mean size of 100 bases. Complemented with extensive 
+transcriptome data, we define approximately 31,000 gene loci, 
+providing unexpected insights into 55 early eukaryote evolution. We 
+describe extensiveuse of histidine kinase-based two-component systems 
+andtyrosine kinase signaling, the presence of bacterial and plant type 
+photoreceptors (phytochromes, cryptochrome, and phototropin) and of 
+plant-type pentatricopeptide repeat proteins, aswell asmetabolic 
+pathways, and a cell cycle control system typically found in more 
+complex eukaryotes. Our analysis characterizes P. polycephalumas a 
+prototypical eukaryote with features attributed to the last common 
+ancestor of Amorphea, that is, theAmoebozoa andOpisthokonts. 
+Specifically, the presence of tyrosine kinases in Acanthamoeba and 
+Physarum 60 as representatives of twodistantly related subdivisions of 
+Amoebozoa argues against the lateremergence of tyrosine kinase 
+signaling in the opisthokont lineage and also against the acquisition by 
+horizontal gene transfer.
+
+
+submitted by: Gernot Glöckner [gernot.gloeckner@uni-koeln.de]
+———————————————————————————————————————
+
+
+Systematic evaluation of buffer influences on the development of 
+Dictyostelium discoideum.
+
+Johanna Márquez López, Anja Sulzmann, Sascha Thewes.
+
+Institute for Biology – Microbiology; Department of Biology, 
+Chemistry, Pharmacy; Freie Universität Berlin; Germany
+
+
+Development Genes and Evolution, in press
+
+Development and cell differentiation are key features of the social 
+amoeba Dictyostelium discoideum. Already at early developmental 
+stages the gene expression profile changes in the amoebae to make 
+the cells aggregation-competent. In the laboratory development starts 
+when the cells are washed free of nutrients. For this purpose various 
+non-nutrient buffers are used in different laboratories. However, to 
+date it is not clear if different buffers have different influences on 
+the development of D. discoideum. Therefore we investigated 
+systematically the influence of six widely used buffers on the 
+development of D. discoideum. Investigation was done at the phenotypical, 
+biochemical and molecular level. The results show that some of the 
+investigated buffers show clear differences in the phenotypical outcome 
+of the developmental cycle, at a biochemical level as measured in the 
+response to cAMP, and/or at a molecular level as measured in the 
+expression of early developmental marker genes. According to our results 
+buffer compositions should be considered carefully for all developmental 
+experiments with D. discoideum, especially when gene expression will be 
+investigated.
+
+
+submitted by: Sascha Thewes [sascha.thewes@fu-berlin.de]
+———————————————————————————————————————
+
+
+Developmental accumulation of inorganic
+polyphosphate affects germination and energetic
+metabolism in Dictyostelium discoideum
+
+Thomas M. Livermore, Jonathan R. Chubb and Adolfo Saiardi
+
+Medical Research Council Laboratory for Molecular Cell Biology and 
+Department of Cell
+and Developmental Biology, University College London, London WC1E 6BT, 
+United Kingdom
+
+
+PNAS, in press
+
+Inorganic polyphosphate (polyP) is composed of linear chains of
+phosphate groups linked by high-energy phosphoanhydride bonds.
+However, this simple, ubiquitous molecule remains poorly understood.
+The use of nonstandardized analytical methods has contributed
+to this lack of clarity. By using improved polyacrylamide gel
+electrophoresis we were able to visualize polyP extracted from 
+Dictyostelium discoideum. We established that polyP is undetectable in
+cells lacking the polyphosphate kinase (DdPpk1). Generation of this
+ppk1 null strain revealed that polyP is important for the general 
+fitness of the amoebae with the mutant strain displaying a substantial
+growth defect. We discovered an unprecedented accumulation of
+polyP during the developmental program, with polyP increasing
+more than 100-fold. The failure of ppk1 spores to accumulate polyP
+results in a germination defect. These phenotypes are underpinned
+by the ability of polyP to regulate basic energetic metabolism, 
+demonstrated by a 2.5-fold decrease in the level of ATP in vegetative
+ppk1. Finally, the lack of polyP during the development of ppk1
+mutant cells is partially offset by an increase of both ATP and inositol
+pyrophosphates, evidence for a model in which there is a functional
+interplay between inositol pyrophosphates, ATP, and polyP.
+
+
+submitted by: Jonathan Chubb [j.chubb@ucl.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 2]

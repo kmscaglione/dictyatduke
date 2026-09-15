@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 29, number 7
+Sptember 2, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+The small RNA repertoire of Dictyostelium discoideum and its regulation 
+by components of the RNAi pathway
+
+Andrea Hinas1,5, Johan Reimegård2, E. Gerhart H. Wagner2, Wolfgang Nellen3, 
+Victor R. Ambros4, and Fredrik Söderbom1*
+
+1Department of Molecular Biology, Biomedical Center, Swedish University of 
+Agricultural Sciences, Box 590, SE-75124 Uppsala, Sweden
+2Department of Cell and Molecular Biology, Biomedical Center, Uppsala 
+University, Box 596, SE-75124 Uppsala, Sweden
+3Department of Genetics, Kassel University, Heinrich Plett Strasse 40, 
+34132 Kassel, Germany
+4Department of Genetics, Dartmouth Medical School, Hanover, NH 03755, USA
+5Present address: Department of Molecular and Cellular Biology, Harvard 
+University, 16 Divinity Ave, Cambridge, MA 02138, USA
+
+*corresponding author
+
+Nucleic acids research, in press
+
+Small RNAs play crucial roles in regulation of gene expression in many 
+eukaryotes. Here, we report the cloning and characterization of 18-26 nt 
+RNAs in the social amoeba Dictyostelium discoideum. This survey uncovered 
+developmentally regulated microRNA candidates whose biogenesis, at least 
+in one case, is dependent on a Dicer homolog, DrnB. Furthermore, we 
+identified a large number of 21 nt RNAs originating from the DIRS-1 
+retrotransposon, clusters of which have been suggested to constitute 
+centromeres. Small RNAs from another retrotransposon, Skipper, were 
+significantly up-regulated in strains depleted of the second Dicer-like 
+protein, DrnA, and a putative RNA-dependent RNA polymerase, RrpC. In 
+contrast, the expression of DIRS-1 small RNAs was not altered in any of 
+the analyzed strains. This suggests the presence of multiple RNAi 
+pathways in D. discoideum. In addition, we isolated several small RNAs 
+with antisense complementarity to mRNAs. Three of these mRNAs are 
+developmentally regulated. Interestingly, all three corresponding genes 
+express longer antisense RNAs from which the small RNAs may originate. 
+In at least one case, the longer antisense RNA is complementary to the 
+spliced but not the unspliced pre-mRNA, indicating synthesis by an 
+RNA-dependent RNA polymerase.
+
+
+Submitted by: Fredrik Söderbom [fredde@xray.bmc.uu.se]
+--------------------------------------------------------------------------------
+
+
+Arachidonic acid is a chemoattractant for Dictyostelium
+discoideum cells.
+
+Ralph H. Schaloske, Dagmar Blaesius , Christina Schlatterer and Daniel F.Lusche
+
+J.Biosci., in press
+
+Cyclic AMP is the natural chemoattractant of the social amoebae Dictyostelium 
+discoideum. It is detected by cell surface cAMP-receptors. Besides a signalling 
+cascade involving phosphatidylinositol 3,4,5-trisphosphate (PIP3), 
+Ca2+ signalling has been shown to have a major role in chemotaxis. Previously, 
+we have shown that arachidonic acid (AA) induces an increase in the cytosolic 
+Ca2+ concentration by releasing Ca2+ from intracellular stores and activating 
+influx of extracellular Ca2+. Here we report that AA is a chemoattractant for 
+D. discoideum cells differentiated for 8 to 9 hours. Motility towards a glass 
+capillary filled with an AA solution was dose-dependent and qualitatively 
+comparable to cAMP-induced chemotaxis. Ca2+ played an important role in 
+AA chemotaxis of wild type Ax2 as 
+ethyleneglycol-bis(b-aminoethyl)-N,N,N’,N’-tetraacetic acid (EGTA) added to 
+the extracellular buffer strongly inhibited motility. In the HM1049 mutant 
+whose iplA gene encoding a putative Ins(1,4,5)P3-receptor had been knocked 
+out,chemotaxis was only slightly affected by EGTA. Chemotaxis in the presence 
+of extracellular Ca2+ was similar in both strains. Unlike cAMP, addition of 
+AA to a cell suspension did not change cAMP or cGMP levels. A model for 
+AA chemotaxis based on the findings in this and previous work is presented.
+
+
+Submitted by: Daniel F.Lusche [daniel.lusche@web.de]
+==============================================================
+[End dictyNews, volume 29, number 7]

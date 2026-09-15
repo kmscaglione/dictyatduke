@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 27, number 1
+July 14, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Detection of Cytoplasmic Glycosylation Associated with Hydroxyproline
+
+Christopher M. West(1), Hanke van der Wel(1), and Ira J. Blader(2) 
+
+(1)Department of Biochemistry & Molecular Biology, Oklahoma Center for 
+Medical Glycobiology, and the (2)Department of Microbiology and Immunology,
+University of Oklahoma Health Sciences Center, Oklahoma City, Oklahoma, 
+73104  USA
+
+
+Methods in Enzymology, in press.
+
+A special class of glycosylation occurs on a proline residue of the 
+cytoplasmic/nuclear protein Skp1 in the social amoeba Dictyostelium. In 
+order for this glycosylation to occur, the proline must first be 
+hydroxylated by the action of a soluble prolyl 4-hydroxylase acting on the 
+protein. Cytoplasmic prolyl 4-hydroxylases are dioxygen-dependent enzymes 
+that have low affinity for their O2 substrate and therefore have been 
+implicated in O2-sensing in Dictyostelium as well as in vertebrates and 
+invertebrates. The sugar-hydroxyproline linkage has low abundance, is 
+resistant to alkali cleavage and known glycosidases, and does not bind 
+known lectins. However, initial screens for this modification can be made 
+by assessing changes in electrophoretic mobility of candidate proteins after 
+treatment of cells with prolyl hydroxylase inhibitors, and/or by metabolic 
+labeling with [3H]sugar precursors. In addition, cytoplasmic 
+hydroxylation/glycosylation can be assessed by assaying for cytoplasmic 
+glycosyltransferases. Here we describe these methods and examples of their 
+use in analyzing Skp1 glycosylation in Dictyostelium and the apicomplexan 
+Toxoplasma gondii, the causative agent of toxoplasmosis in humans.
+
+
+Submitted by: Chris West [Cwest2@ouhsc.edu]
+-----------------------------------------------------------------------------
+
+
+A 60 kDa protein component of the counting factor complex regulates group 
+size in Dictyostelium
+
+Debra A. Brock1, Wouter N. van Egmond2, Yousif Shamoo3, R. Diane Hatton1, 
+and Richard H. Gomer1
+
+1Howard Hughes Medical Institute and 3Department of Biochemistry and Cell 
+Biology, MS-140, Rice University, Houston, TX 77005-1892
+
+2Department of Biochemistry University of Groningen Kerklaan 30 9750 
+AA Haren The Netherlands
+
+
+Eukaryotic Cell, in press
+
+Much remains to be understood about how a group of cells or a tissue senses 
+and regulates its size.  Dictyostelium cells sense and regulate the size of 
+groups and fruiting bodies using a secreted 450 kDa complex of proteins 
+called counting factor (CF).  Low levels of CF result in large groups, and 
+high levels of CF result in small groups.  We previously found three 
+components of CF.  We describe here a fourth component, CF60.  CF60 has 
+similarity to acid phosphatases, although it has very little, if any, acid 
+phosphatase activity.  CF60 is secreted by starving cells and is lost from 
+the 450 kDa CF when a different CF component, CF50, is absent.  Although we 
+were unable to obtain cells lacking CF60, decreasing CF60 levels by 
+antisense resulted in large groups, and overexpressing CF60 resulted in 
+small groups.  When added to wild-type cells, conditioned starvation medium 
+from CF60 overexpressor cells as well as recombinant CF60 caused the 
+formation of small groups.  The ability of recombinant CF60 to decrease 
+group size did not require the presence of the CF components CF45-1 or 
+countin, but did require the presence of CF50.  Recombinant CF60 does not 
+have acid phosphatase activity, indicating that the CF60 bioactivity is not 
+due to a phosphatase activity.  Together, the data suggest that CF60 is a 
+component of CF, and thus this secreted signal has four different protein 
+components.  
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+==============================================================================
+[End dictyNews, volume 27, number 1] 

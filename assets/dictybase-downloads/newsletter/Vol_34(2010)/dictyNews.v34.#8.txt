@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 34, number 8
+March 5, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Crystal Structure of the Alpha-Kinase Domain of Dictyostelium Myosin 
+Heavy Chain Kinase A
+
+Qilu Ye*, Scott W. Crawley*, Yidai Yang, Graham P. Côté, and Zongchao Jia 
+
+Department of Biochemistry, Queen’s University, Kingston, Ontario, 
+Canada K7L 3N6. 
+
+*These authors contributed equally to this work. 
+
+To whom correspondence should be addressed. 
+E-mail: coteg@queensu.ca 
+
+
+Science Signaling, In press
+
+Dictyostelium discoideum myosin II heavy chain kinase A (MHCK A) disrupts 
+the assembly and cellular activity of bipolar filaments of myosin II by 
+phosphorylating sites within its alpha-helical, coiled-coil tail. MHCK A is a 
+member of the atypical alpha-kinase family of serine and threonine protein 
+kinases and displays no sequence homology to typical eukaryotic protein 
+kinases. We report the crystal structure of the alpha-kinase domain (A-CAT) 
+of MHCK A. When crystallized in the presence of adenosine triphosphate 
+(ATP), A-CAT contained adenosine monophosphate (AMP) at the active site. 
+However, when crystallized in the presence of ATP and a peptide substrate, 
+which does not appear in the structure, adenosine diphosphate (ADP) was 
+found at the active site and an invariant aspartic acid residue (Asp766) at the 
+active site was phosphorylated. The aspartylphosphate group was exposed to 
+the solvent within an active-site pocket that might function as a docking site for 
+substrates. Access to the aspartylphosphate was regulated by a conformational 
+switch in a loop that bound to a magnesium ion (Mg2+), providing a mechanism 
+that allows alpha-kinases to sense and respond to local changes in Mg2+. 
+
+
+Submitted by Scott Crawley [crawleys@queensu.ca]
+--------------------------------------------------------------------------------
+
+
+A flavin-dependent halogenase catalyzes the
+chlorination step in the biosynthesis of
+Dictyostelium differentiation-inducing factor 1
+
+Christopher S. Neumann (a), Christopher T. Walsh (a), and 
+Robert R. Kay (b)
+
+(a) Department of Biological Chemistry and Molecular Pharmacology, 
+Harvard Medical School, 240 Longwood Avenue, Boston, MA 02115; 
+and (b) Division of Cell Biology, Medical Research Council Laboratory 
+of Molecular Biology, Hills Road, Cambridge CB2 OQH, UK
+
+
+Proc Natl Acad Sci USA, in press
+
+Differentiation-inducing factor 1 (DIF-1) is a polyketide-derived
+morphogen which drives stalk cell formation in the developmental
+cycle of Dictyostelium discoideum. Previous experiments demonstrated
+that the biosynthetic pathway proceeds via dichlorination of the precursor 
+molecule THPH, but the enzyme responsible for this transformation has 
+eluded characterization. Our recent studies on prokaryotic flavin-dependent 
+halogenases and insights from the sequenced Dd genome led us to a 
+candidate gene for this transformation. In this work, we present in vivo and 
+in vitro evidence that chlA from Dd encodes a flavin-dependent halogenase 
+capable of catalyzing both chlorinations in the biosynthesis of DIF-1. The
+results provide in vitro characterization of a eukaryotic oxygendependent
+halogenase and demonstrate a broad reach in biology for this molecular 
+tailoring strategy, notably its involvement in the differentiation program of 
+a social amoeba.
+
+
+Submitted by Christopher S. Neumann [christopher_neumann@hms.harvard.edu]
+==============================================================
+[End dictyNews, volume 34, number 8]

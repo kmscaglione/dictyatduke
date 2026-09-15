@@ -1,0 +1,135 @@
+CSM News
+Electronic Edition
+Volume 5, number 4
+August 5, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+==============================
+ In Situ Hybridization Update
+==============================
+
+Bill Loomis has provided the following update to the In Situ
+Hybridization Protocol.
+
+RIBOPROBES FOR WHOLE-MOUNT IN SITU LABELLING OF DICTYOSTELIUM
+
+Ricardo Escalante and William F. Loomis
+
+We have found that using RNA probes rather than DNA probes improves
+the signal-to-noise for whole-mount in situ hybridization of low
+abundance mRNAs expressed during development of Dictyostelium.
+Samples were fixed and prepared for hybridization exactly as described
+before (Escalante and Loomis, Develop. Biol. in press). However, the
+temperature was raised to 50degC during the prehybridization and
+hybridization steps as well as during the final wash step which done
+with 0.1 x SSC.
+
+Probe labeling
+
+Riboprobes were labelled with digoxigenin-UTP by in vitro
+transcription using the Dig RNA Labeling Kit from Boehringer
+(Cat. No. 1175025) following the manufacturer' s instructions. Labeled
+RNA was partially hydrolized as suggested by O' Neill, J.W. and Bier,
+E. (1994). BioTechniques 17(5) 870-875. [0.1M carbonate pH 10, 65degC,
+20 min].
+
+These modifications give more sensitivity and have been successfully
+used to detect low abundant transcripts such as those from the
+prestalk specific tagB gene.
+
+We have also found that fixed slugs can be stored in methanol at
+-20degC for at least two weeks and still give clear signals concerning
+cell type localization of specific mRNAs.
+
+==========
+ Abstract
+==========
+
+TARGETED DISRUPTION OF THE DICTYOSTELIUM MYOSIN ESSENTIAL LIGHT CHAIN
+GENE PRODUCES CELLS DEFECTIVE IN CYTOKINESIS AND MORPHOGENESIS
+
+Tung-Ling L. Chen, Patricia A. Kowalczyk, Guyu Ho and Rex L. Chisholm*   
+
+Department of Cell and Molecular Biology, Northwestern University
+Medical School, Chicago, IL 60611
+
+J. Cell Sci., in press.
+
+   We have previously demonstrated that the myosin essential light
+chain (ELC) is required for myosin function in a Dictyostelium cell
+line, 7-11, in which the expression of ELC was inhibited by antisense
+RNA overexpression [Pollenz et al Cell 69, 951-962 1992].  We have now
+disrupted the gene encoding the ELC (mlcE) in Dictyostelium by gene
+targeting.  The mlcE- mutants provide a clean genetic background for
+phenotypic analysis and biochemical characterization by removing
+complications arising from the residual ELC present in 7-11 cells, as
+well as the possibility of mutations due to insertion of the antisense
+construct at multiple sites in the genome.  The mlcE- mutants, when
+grown in suspension, exhibited the typical multinucleate phenotype
+observed in both myosin heavy chain mutants and 7-11 cells.  This
+phenotype was rescued by introducing a construct that expressed the
+wild type Dictyostelium ELC cDNA.  Myosin purified from the mlcE-
+cells exhibited significant calcium ATPase activity, but the
+actin-activated ATPase activity was greatly reduced.  The results
+obtained from the mlcE- mutants strengthen our previous conclusion
+based on the antisense cell line 7-11 that ELC is critical for myosin
+function.
+
+   The proper localization of myosin in mlcE- cells suggests that its
+phenotypic defects primarily arise from defective contractile function
+of myosin rather than its mislocalization.  The enzymatic defect of
+myosin in mlcE- cells also suggests a possible mechanism for the
+observed chemotatic defect of mlcE- cells.  We have shown that while
+mlcE- cells were able to respond to chemoattractant with proper
+directionality, their rate of movement was reduced.  During
+chemotaxis, proper directionality toward chemoattractant may depend
+primarily on proper localization of myosin, while efficient motility
+requires contractile function.  
+
+   In addition, we have analyzed the morphogenetic events during the
+development of mlcE- cells using lacZ reporter constructs expressed
+from cell type specific promoters.  By analyzing the morphogenetic
+patterns of the two major cell types arising during Dictyostelium
+development, prespore and prestalk cells, we have shown that the
+localization of prespore cells is more susceptible to the loss of ELC
+than prestalk cells, although localization of both cell types is
+abnormal when developed in chimeras formed by mixing equal numbers of
+wild type and mutant cells.  These results suggest that the
+morphogenetic events during Dictyostelium development have different
+requirements for myosin function.
+
+--------------------------------------------------------------------------
+
+Sequence and developmental regulation of the gene that encodes the
+Dictyostelium discoideum L3 ribosomal protein
+
+Laura F. Steel, Polly D. Farnum, and Priya Kunapoli
+
+Jefferson Cancer Institute, Thomas Jefferson University, Philadelphia,
+PA
+
+Gene, in press
+
+SUMMARY
+
+   We have isolated and characterized genomic and cDNA recombinant
+plasmids encoding the Dictyostelium discoideum ribosomal protein L3
+(rpL3).  Genomic plasmids were identified using a probe derived from
+the Saccharomyces cerevisiae TCM1 gene, that encodes the yeast rpL3.
+The D.  discoideum rpL3 gene (DdL3) contains two introns and encodes a
+protein 398 amino acids in length that shows a high degree of homology
+to the conserved rpL3 protein of both lower and higher eukaryotes.
+During development, both the pattern of accumulation of DdL3 mRNA and
+changes in its translational activity are identical to those observed
+for other r-protein mRNAs.
+
+---------------------------------------------------------------------------
+
+[End CSM News, volume 5, number 4]

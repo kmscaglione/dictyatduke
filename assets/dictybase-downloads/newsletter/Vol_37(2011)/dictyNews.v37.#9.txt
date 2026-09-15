@@ -1,0 +1,108 @@
+dictyNews
+Electronic Edition
+Volume 37, number 9
+October 14, 2011
+ 
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+ 
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+ 
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+ 
+ 
+=========
+Abstracts
+=========
+ 
+ 
+DPKC-mediated ZYG1 phosphorylation induces fusion of myoblasts as well
+as of Dictyostelium cells
+ 
+ 
+Aiko Amagai1*, Harry MacWilliams2, Takahiro Isono3, Mariko Omatsu-Kanbe4,
+Shinya Urano1, Kazuo Yamamoto1,Yasuo Maeda1
+ 
+1Graduate School of Life Sciences, Tohoku University, Sendai 980-8577, Japan,
+2Zoologisch, Institute, Ludwig-Maximilians Universitat, Luisenstr., 14, 80333,
+MÙnchen, Germany,
+3Central Research Laboratory, Shiga University of Medical Science, Otsu,
+Shiga 520-2192, Japan,
+4Department of Physiology, Shiga University of Medical Science, Otsu, Shiga
+520-2192, Japan
+ 
+International Journal of Cell Biology, in press
+ 
+We have previously demonstrated that a novel protein ZYG1 induces sexual cell
+fusion (zygote formation) of Dictyostelium cells [1]. In the process of cell fusion,
+involvements of signal transduction pathways via Ca2+ and PKC (protein kinase C)
+have been suggested because zygote formation is greatly enhanced by PKC
+activators [2-6]. In fact, there are several deduced sites phosphorylated by PKC
+in ZYG1 protein [1]. Thereupon, we designed the present work to examine whether
+or not ZYG1 is actually phosphorylated by PKC and localized at the regions of
+cell-cell contact where cell fusion occurs. These were ascertained, suggesting
+that ZYG1 might be the target protein for PKC. Since the signaling pathway via
+Ca2+ and PKC is also known to be involved in myoblast fusion as well as in
+Dictyostelium cell fusion [7-11], we have interested to know if there is a
+functionally ZYG1-like protein capable of inducing cell fusion in myoblasts. For
+this, a humanized version of zyg1 cDNA (mzyg1) was introduced into myoblasts
+to know if ZYG1 is also effective in cell fusion of myoblasts. Quite interestingly,
+enforced expression of ZYG1 in myoblasts was found to induce markedly their
+cell fusion, thus strongly suggesting the existence of a common signaling
+pathway for cell fusion beyond the difference of species.
+ 
+ 
+Submitted by: Aiko Amagai [aiamagai@amber.plala.or.jp]
+--------------------------------------------------------------------------------
+ 
+ 
+Different Modes of State Transitions Determine
+Pattern in the Phosphatidylinositide-Actin System
+ 
+Gunther Gerisch1*, Mary Ecke1, Dirk Wischnewski1, and Britta Schroth-Diez2
+ 
+1Max Planck Institute of Biochemistry, Am Klopferspitz 18, 82152 Martinsried,
+Germany
+2Max Planck Institute of Molecular Cell Biology and Genetics,
+Pfotenhauerstrasse 108, 01307 Dresden, Germany
+ 
+ 
+BMC Cell Biology, accepted
+ 
+Background
+In a motile polarized cell the actin system is differentiated to allow protrusion
+at the front and retraction at the tail. This differentiation is linked to the
+phosphoinositide pattern in the plasma membrane. In the highly motile
+Dictyostelium cells studied here, the front is dominated by PI3-kinases
+producing PI(3,4,5)tris-phosphate (PIP3), the tail by the PI3-phosphatase
+PTEN that hydrolyses PIP3 to PI(4,5)bis-phosphate. To study de-novo cell
+polarization, we first depolymerized actin and subsequently recorded the
+spontaneous reorganization of actin patterns in relation to PTEN.                                           
+ 
+Results
+In a transient stage of recovery from depolymerization, symmetric actin
+patterns alternate periodically with asymmetric ones. The switches to
+asymmetry coincide with the unilateral membrane-binding of PTEN. The
+modes of state transitions in the actin and PTEN systems differ. Transitions
+in the actin system propagate as waves that are initiated at single sites by
+the amplification of spontaneous fluctuations. In PTEN-null cells, these
+waves still propagate with normal speed but loose their regular periodicity.
+Membrane-binding of PTEN is induced at the border of a coherent PTEN-
+rich area in the form of expanding and regressing gradients.       
+ 
+Conclusions
+The state transitions in actin organization and the reversible transition from
+cytoplasmic to membrane-bound PTEN are synchronized but their patterns
+differ. The transitions in actin organization are independent of PTEN, but
+when PTEN is present, they are coupled to periodic changes in the
+membrane-binding of this PIP3-degrading phosphatase. The PTEN
+oscillations are related to motility patterns of chemotaxing cells. 
+ 
+ 
+Submitted by: Gunther Gerisch [gerisch@biochem.mpg.de]
+==============================================================
+[End dictyNews, volume 37, number 9]

@@ -1,0 +1,340 @@
+CSM News
+Electronic Edition
+Volume 5, number 16
+December 2, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+==============
+ Announcement
+==============
+
+The December 1995 CSM Email Directory is being distributed at the same
+time as this issue of the Newsletter.  The Directory has not been
+subjected to a serious pruning since it started.  Could everyone,
+particularly laboratory heads, take a look at the list and let us know
+if there are entries for people who are no longer likely to be
+interested in participating in the list (i.e. have left the field).
+Please sent messages regarding this to 
+                    "csm-news@worms.cmsbio.nwu.edu".
+
+
+=====================
+ Positions Available
+=====================
+
+RESEARCH FELLOW
+
+A postdoctoral fellowship funded by the BBSRC for a fixed period of
+three years is available immediately to work on the identification
+and characterisation of trans-factors binding to two novel
+transcriptional control elements located in the promoter of
+Dictyostelium gene 7E.
+
+Applicants should have a PhD and previous experience of recombinant
+DNA methodology.  The salary will be on the RA 1A scale of stlg14, 317
+stg - stlg21, 519 stg p.a. according to qualifications and relevant
+experience.
+
+Application forms and further information are available from:
+
+Dr B. David Hames
+Department of Biochemistry & Molecular Biology
+University of Leeds
+Leeds LS2 9JT
+UK
+Tel: +44-113-233-3145
+Fax: +44-113-244-1966
+Email: b.d.hames@leeds.ac.uk
+
+The closing date for applications is 5 January 1996.
+ 
+
+===========
+ Abstracts
+===========
+
+A cell-cycle phase-associated cell-type choice mechanism monitors the
+cell cycle rather than using an independent timer
+
+Richard H. Gomer and Robin R. Ammann
+
+Howard Hughes Medical Institute and Department of Biochemistry and Cell
+Biology, Rice University, Houston, TX 77251-1892
+
+Developmental Biology, in press
+
+Abstract
+        Upon starvation, cells of the simple eukaryote Dictyostelium
+discoideum aggregate and differentiate into several cell types.  Two
+main cell-types are prestalk and prespore, which later usually become
+stalk and spore cells.  The differentiation is plastic, and several
+factors can alter cell-type ratios.  Two mechanisms have been proposed
+to regulate the initial differentiation.  One hypothesis is that
+different levels of extracellular factors within the aggregate
+determine initial cell-type.  We and others have proposed that cell
+type is initially determined by cell-cycle phase at the time of
+starvation: prestalk cells are derived from cells which, at the time
+of starvation, happen to be in a roughly two hour long sector of the
+cell cycle which overlaps S and early G2, and that certain
+extracellular factors are then used to maintain the proper prestalk:
+prespore ratio and to control later stages of development such as the
+prestalk-to-stalk conversion.  To examine the relationship between
+initial cell-type choice and the cell cycle, and how this two hour
+long sector is generated, we increased the length of S phase by mild
+treatments of cells with DNA-synthesis inhibitors.  When the fraction
+of the cell cycle occupied by S phase is increased and the cells are
+then starved, the prestalk: prespore ratio increases.  This increase
+was observed using two markers for prestalk cells, CP2 and ecmA::lacZ.
+In addition, there is a close correlation between the fraction of the
+cell cycle occupied by S phase and the prestalk: prespore ratio,
+irrespective of total cell-cycle length.  These results validate the
+hypothesis that the initial choice of cell-type is determined by
+cell-cycle phase at the time of starvation, and indicate that the
+cell-type choice mechanism monitors the cell cycle rather than using
+an independent two-hour long timer started at the beginning of S
+phase.
+
+--------------------------------------------------------------------------
+
+Analysis of cell movement during the culmination phase of
+Dictyostelium development
+
+Dirk Dormann*, Florian Siegert & Cornelis J. Weijer
+
+Zoologisches Institut, Universitaet Muenchen, Luisenstr. 14, 80333 
+Muenchen, Germany
+
+*corresponding author
+
+Development, in press
+
+Abstract
+
+   Co-ordinated cell movement of ten-thousands of cells and periodic
+signals characterise the multicellular development of the cellular
+slime mould Dictyostelium discoideum. We investigated cell movement by
+analysing time-lapse video recordings made during the slug stage and
+the culmination phase of Dictyostelium development. Slugs viewed from
+the side showed an even, straight forward movement with the tip
+slightly erected in the air. Slugs, which had migrated for a prolonged
+period of time either culminated or showed a behaviour best described
+as abortive culmination. Culmination is initiated by a local
+aggregation of anterior-like cells at the base of the slug at the
+prestalk-prespore boundary, where they form a stationary mass of
+cells. Prespore cells continue to move forward over this stationary
+pile and, as a result, are lifted into the air. The stationary group
+of anterior-like cells gets thereby translated to the back of the
+slug. At this point the slug either falls back on the agar surface or
+continues culmination. If the slug continues to migrate these cells
+regain motility, move forward to the prespore-prestalk boundary and
+form a new pile again. In the case of culmination the neutral red
+stained cells in the pile move to the back of the slug and form a
+second signalling centre beside the tip. Both centres are
+characterised by vigorous rotational cell movement. The cells
+belonging to the basal centre will form the basal disc and the lower
+cup in the fruiting body. The upper cup will be formed by the prestalk
+cells rotating most vigorously at the prestalk-prespore boundary. The
+remaining neutral red stained anterior-like cells in the prespore zone
+sort either to the upper or lower organising centre in the fruiting
+body.
+  
+----------------------------------------------------------------------
+          
+The initiation of basal disc formation in Dictyostelium discoideum is an
+early event in culmination
+
+Keith Jermyn, David Traynor+ and Jeffrey Williams
+
+MRC Laboratory of Molecular Cell Biology and Department of Biology,
+University College London, Gower St, London WC1E 6BT
+
++Present address, University of Cambridge, Dept of Pharmacology,
+Tennis Court Rd, Cambridge, CB2 1QJ
+
+Development, in press.
+
+Summary
+
+   We have analysed expression of the ecmA and ecmB genes of
+Dictyostelium by enzymatic double staining using b-galactosidase and
+b-glucuronidase reporter gene constructs. Cells expressing the ecmA
+gene first appear as scattered cells at the mound stage of development
+and we show that this is also true for cells expressing the ecmB
+gene. During tip formation the ecmA expressing cells move to the apex
+of the mound, while the ecmB expressing cells accumulate in the
+base. The ecmB expressing cells constitute part of the basal disc if
+the culminant is formed in situ but are discarded if a migratory slug
+is formed. During slug migration they are replaced by a band of ecmB
+expressing cells, situated in the front half of the prespore zone and
+tightly apposed to the substratum. When culmination is triggered these
+cells rapidly move into the back half of the prestalk zone, possibly
+acting as a point of attachment to the subtratum. Ultimately, they are
+joined by cells at the back of the slug, the rearguard cells, to form
+the basal disc.  Thus, contrary to previous belief, basal disc
+formation is initiated very early during culmination and occurs by the
+forward movement of cells located in the anterior of the prespore
+zone.
+
+--------------------------------------------------------------------
+
+Linking microfilaments to intracellular membranes: the actin-binding and 
+vesicle associated protein comitin exhibits a mannose-specific lectin 
+activity
+
+Eva Jung, Paola Fucini, Murray Stewart1, Angelika A. Noegel, Michael 
+Schleicher2
+
+Max-Planck-Institut fuer Biochemie, 82152 Martinsried, FRG, 1 MRC Laoratory 
+of Molecular Biology, Cambridge CB2 2QH, UK, 2 Institut fuer Zellbiologie, 
+Ludwig-Maximilians-Universitaet Muenchen, Schillerstr. 42, 80336 Muenchen, 
+FRG
+
+EMBO J., in press
+
+Abstract
+
+   Comitin is a 24 kDa actin-binding protein from Dictyostelium
+discoideum that is located primarily on Golgi and vesicle
+membranes. We have probed the molecular basis of comitin's interaction
+with both actin and membranes using a series of truncation mutants
+obtained by expressing the appropriate cDNA in E. coli. Comitin
+dimerizes in solution; its principal actin binding activity is located
+between residues 90 and 135. The N- terminal 135 "core" residues of
+comitin contain a three fold sequence repeat that is homologous to
+several monocotyledon lectins and which retains key residues that
+determine these lectin's three-dimensional structure and mannose
+binding. These repeats of comitin appear to mediate its interaction
+with mannose residues in glycoproteins or glycolipids on the
+cytoplasmic surface of membrane vesicles from D. discoideum, and
+comitin can be released from membranes with mannose. Our data indicate
+that comitin binds to vesicle membranes via mannose residues and, by
+way of its interaction with actin, links these membranes to the
+cytoskeleton.
+
+--------------------------------------------------------------------
+
+Stress-induced tyrosine phosphorylation of actin in Dictyostelium
+cells and localization of the phosphorylation site to Tyrosine 53
+adjacent to the DNase I binding loop
+
+Andreas Jungbluth", Christoph Eckerskorn, Guenther Gerisch, Friedrich
+Lottspeich, Susanne Stocker and Anton Schweiger
+
+Max-Planck-Institut fur Biochemie, D-82152 Martinsried, Germany
+
+"corresponding author
+
+FEBS Letters, in press.
+
+Abstract
+
+   Actin is known to be phosphorylated at tyrosine, serine, or
+threonine residues in various cells. In cells of Dictyostelium
+discoideum, a rise in the tyrosine phosphorylation of actin is
+observed in response to ATP depletion. An actin fraction rich in
+phosphotyrosine was obtained by chromatography on the weak anion
+exchanger MONO-P. Mass spectrometry and amino acid sequencing of
+protease cleavage products indicated that a single tyrosine residue
+was phosphorylated. Localization of this residue to position 53 of the
+actin sequence attributed the modification to a site that is critical
+for the capability of actin to polymerize. Induction of the tyrosine
+phosphorylation by heat shock and Cd2+ ions indicates that this
+modification of actin is implicated in the response of Dictyostelium
+cells to stress.
+
+---------------------------------------------------------------------
+
+Antisense RNA Inhibition of the Putative Vacuolar H+-ATPase
+Proteolipid of Dictyostelium discoideum Reduces Intracellular Ca2+
+Transport and Cell Viability
+
+Yanyan Xie, Barrie Coukell and Zoltan Gombos
+
+Department of Biology, York University, 4700 Keele St., North York,
+Ontario, CANADA, M3J 1P3
+
+J. Cell Sci., in press
+
+Abstract
+
+   Transport of Ca2+ via a P-type pump into the contractile vacuole of
+Dictyostelium discoideum appears to be facilitated by vacuolar proton
+(V-H+) ATPase activity (Rooney and Gross, Proc. Nat. Acad. Sci. USA
+89, 8025-8029, 1992). To investigate the involvement of the
+V-H+-ATPase in this process using molecular techniques, we cloned a
+cDNA (vatP) encoding the putative proteolipid subunit of this enzyme.
+The deduced protein product of this cDNA is composed of 196 amino
+acids with a calculated Mr of 20, 148 and the primary structure
+exhibits high amino acid sequence identity with V-H+-ATPase
+proteolipids from other organisms.  vatP is a single-copy gene and it
+produces one ~900 nt transcript at relatively constant levels during
+growth and development.  Attempts to disrupt the endogenous gene using
+vatP cDNA were unsuccessful.  But, expression of vatP antisense RNA
+reduced the levels of vatP message and V-H+-ATPase activity by 50% or
+more.  These antisense strains grew and developed slowly, especially
+under acidic conditions, and the cells seemed to have difficulty
+forming acidic vesicles.  During prolonged cultivation, all of the
+antisense strains either reverted to a wild-type phenotype or died.
+Thus in Dictyostelium, unlike yeast, the V-H+-ATPase seems to be
+indispensable for cell viability.  When different antisense strains
+were analyzed for Ca2+ uptake by the contractile vacuole, they all
+accumulated less Ca2+ than control transformants.  These results are
+consistent with earlier pharmacological studies which suggested that
+the V-H+_ATPase functions in intracellular Ca2+ transport in this
+organism.
+
+-------------------------------------------------------------------
+
+Ponticulin Plays A Role In The Positional Stabilization Of Pseudopods
+
+Damon C. Shutt, Deborah Wessels, Keith Wagenknecht, Anand
+Chandrasekhar, Anne Hitt#, Elizabeth J. Luna#, and David R. Soll
+
+Department of Biological Sciences University of Iowa Iowa City, Iowa
+52242 
+
+#Cell Biology Group Worcester Foundation for Biomedical, Shrewsbury,
+Massachusetts 01545
+
+J. Cell Biology, in press
+
+Abstract
+
+   Ponticulin is a 17-kDa glycoprotein which represents a major high
+affinity link between the plasma membrane and the cortical actin
+network of Dictyostelium.  To assess the role of ponticulin in
+pseudopod extension and retraction, the motile behavior of two
+independently-generated mutants lacking ponticulin was analyzed using
+computer-assisted two-dimensional and three-dimensional motion
+analysis systems.  More than half of the lateral pseudopods formed off
+the substratum by ponticulin-minus cells slipped relative to the
+substratum during extension and retraction.  In contrast, all
+pseudopods formed off the substratum by wild-type cells were
+positionally fixed in relation to the substratum. Ponticulin-minus
+cells also formed a greater proportion of both anterior and lateral
+pseudopods off the substratum and absorbed a greater proportion of
+lateral pseudopods into the uropod than do wild type cells.  In a
+spatial gradient of cAMP, ponticulin-minus cells were less efficient
+in tracking the source of chemoattractant.  Since ponticulin-minus
+cells extend and retract pseudopods with the same time course as do
+wild type cells, these behavioral defects in ponticulin-minus cells
+appear to be the consequence of pseudopod slippage.  These results
+demonstrate that pseudopods formed off the substratum by wild type
+cells are positionally fixed in relation to the substratum, that
+ponticulin is required for positional stabilization, and that the loss
+of ponticulin and the concomitant loss of positional stability of
+pseudopods correlate with a decrease in the efficiency of chemotaxis.
+
+---------------------------------------------------------------------
+
+[End CSM-News, volume 5, number 16]
+
+
+

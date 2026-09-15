@@ -1,0 +1,128 @@
+dictyNews
+Electronic Edition
+Volume 29, number 15
+November 30, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+A novel mitosis-specific dynamic actin structure in Dictyostelium cells
+
+Go Itoh and Shigehiko Yumura 
+
+
+J. Cell Sci., in press
+
+Cell division of various animal cells depends on their attachment to a 
+substratum. Dictyostelium cells deficient in type II myosin, analogous to 
+myosin in muscle, can divide on a substratum without the contractile ring. 
+To investigate the mechanism of this substratum-dependent cytokinesis, the 
+dynamics of actin in the ventral cortex were observed by confocal and total 
+internal reflection fluorescence microscopy. Specifically during mitosis, we 
+found novel actin-containing structures (mitosis-specific dynamic actin 
+structures, MiDASes) underneath the nuclei and centrosomes. When the nucleus 
+divided, the MiDAS also split in two and followed the movement of the daughter 
+nuclei. At that time, the distal ends of astral microtubules reached mainly 
+the MiDAS regions of the ventral cortex. An inhibitor of microtubules induced 
+disappearance of MiDASes, leading to aborted cytokinesis, suggesting that 
+astral microtubules are required for the formation and maintenance of MiDASes. 
+Fluorescence recovery after photobleaching experiments revealed that the MiDAS 
+was highly dynamic and comprised small actin-containing dot-like structures. 
+Interference reflection microscopy and assays blowing away the cell bodies by 
+jet streaming showed that MiDASes were major attachment sites of dividing cells. 
+Thus, the MiDASes are strong candidates for scaffolds for substratum-dependent 
+cytokinesis, serving to transmit mechanical force to the substratum. 
+
+
+Submitted by: Go Itoh [yumura@yamaguchi-u.ac.jp]
+--------------------------------------------------------------------------------
+
+Dynacortin facilitates polarization of chemotaxing cells.
+
+Kabacoff C., Xiong Y., Musib R., Reichl E.M., Kim J., Iglesias P.A., 
+Robinson D.N. 
+
+
+BMC Biol. 2007; 5:53.
+
+Background
+Cell shape changes during cytokinesis and chemotaxis require regulation of 
+the actin cytoskeletal network. Dynacortin, an actin cross-linking protein, 
+localizes to the cell cortex and contributes to cortical resistance, thereby 
+helping to define the cell shape changes of cytokinesis. Dynacortin also 
+becomes highly enriched in cortical protrusions, which are sites of new 
+actin assembly.
+
+Results
+We studied the effect of dynacortin on cell motility during chemotaxis and 
+on actin dynamics in vivo and in vitro. Dynacortin enriches with the actin, 
+particularly at the leading edge of chemotaxing cells. Cells devoid of 
+dynacortin do not become as polarized as wild-type control cells but move 
+with similar velocities as wild-type cells. In particular, they send out 
+multiple pseudopods that radiate at a broader distribution of angles 
+relative to the chemoattractant gradient. Wild-type cells typically only 
+send out one pseudopod at a time that does not diverge much from 0° on 
+average relative to the gradient. Though dynacortin-deficient cells show 
+normal bulk (whole-cell) actin assembly upon chemoattractant stimulation, 
+dynacortin can promote actin assembly in vitro. By fluorescence spectroscopy, 
+co-sedimentation and transmission electron microscopy, dynacortin acts as 
+an actin scaffolder in which it assembles actin monomers into polymers with 
+a stoichiometry of 1 Dyn2:1 actin under salt conditions that disfavor polymer 
+assembly.
+
+Conclusion
+Dynacortin contributes to cell polarization during chemotaxis. By 
+cross-linking and possibly stabilizing actin polymers, dynacortin also 
+contributes to cortical viscoelasticity, which may be critical for 
+establishing cell polarity. Though not essential for directional sensing or 
+motility, dynacortin is required to establish cell polarity, the third core 
+feature of chemotaxis.
+
+
+Submitted by: Doug Robinson [dnr@jhmi.edu]
+--------------------------------------------------------------------------------
+
+
+Developmental morphology and chemotactic responses are dependent on Galpha 
+subunit specificity in Dictyostelium
+
+Jeffrey A. Hadwiger
+
+Developmental Biology (in press)
+
+Dictyostelium discoideum expresses multiple Galpha subunits but only a single 
+Gbeta and Ggamma subunit suggesting that the specific response to an external 
+signal depends largely on Galpha subunit function or G protein-independent 
+signaling from the receptor. To test the contribution of Galpha subunit 
+functional specificity, the chimeric Galpha subunits, Galpha2/4 and Galpha5/4, 
+were created and analyzed along with wild-type subunits for the ability to 
+substitute for the Galpha4 subunit in mediating responses from folate 
+receptors. The Galpha2/4 subunit, but not the Galpha2 or Galpha5/4 subunits, 
+partly rescued chemotaxis and cGMP accumulation in folate-stimulated 
+galpha4(-) cells. Expression of the Galpha5/4 or Galpha5 subunits resulted 
+in an inhibition of galpha4(-) and wild-type cell movement and a reduced 
+aggregate size in developing wild-type and galpha5(-) cells suggesting these 
+subunits mediate similar responses. Only the Galpha4 subunit was capable of 
+correcting developmental morphology in galpha4(-) multicellular aggregates 
+suggesting that the chimeric Galpha2/4 or Galpha5/4 subunits were insufficient 
+to provide the Galpha4 function necessary for proper development. These 
+results indicate that Dictyostelium Galpha subunit specificity is not limited 
+to receptor coupling and that Galpha subunit sequences outside of the carboxyl 
+terminus are important for cell movement and developmental processes.
+
+
+Submitted by: Jeff Hadwiger [jeff.hadwiger@okstate.edu]
+==============================================================
+[End dictyNews, volume 29, number 15]

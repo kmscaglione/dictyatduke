@@ -1,0 +1,146 @@
+Dicty News
+Electronic Edition
+Volume 10, number 16
+June 27, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+A New Way of Following Individual Cells in the Migrating Slugs of
+Dictyostelium discoideum
+
+J. T. Bonner
+
+Department of Ecology and Evolutionary Biology, Princeton University,
+Princeton. NJ 08544
+
+PNAS, in press.
+
+Abstract:
+
+   In the development of the cellular slime mold D. discoideum there 
+is a stage in which the aggregated amoebae form a migrating slug that 
+moves forward in a polar fashion, showing sensitive orientation to 
+environmental cues, as well as early signs of differentiation into 
+anterior prestalk and posterior prespore cells.  Heretofore it has 
+been difficult to follow the movement of the individual cells within 
+the slug, but a new method is described in which small, flat (one 
+cell thick) slugs are produced in a glass-mineral oil interface where 
+one can follow the movement of all the cells.  Observations of time 
+lapse videos reveal the following facts about slug migration:  1) While 
+the posterior cells move straight forward, the anterior cells swirl 
+about rapidly in a chaotic fashion.  2) Turning involves shifting the 
+high point of these hyperactive cells.  3)  Both the anterior and the 
+posterior cells move forward on their own power as the slug moves forward.  
+4)  There are no visible regular oscillations within the slug.  5)  The 
+number of prestalk and prespore cells is proportional for a range of sizes 
+of these mini slugs.  All of these observations on thin slugs are consistent 
+with what one finds in normal, three dimensional slugs.
+
+-------------------------------------------------------------------------
+
+Blasticidin resistance cassette in symmetrical polylinkers for insertional
+inactivaton of genes in Dictyostelium 
+
+F. Pùta, CJ. Zeng*
+
+Department of Physiology and Developmental Biology, Charles University, 
+Praha, Czech Republic; Department of Genetics, University of Kassel, 
+Kassel, Germany
+
+Folia Biologica, in press
+
+ABSTRACT
+
+   In Dictyostelium discoideum inactivation of developmentally regulated 
+genes via homologous recombination has become an important tool in studying 
+systematically the entire developmental program of this model organism. The 
+Dictyostelium genome is very A/T-rich, however, which presents obstacles to 
+the preparation of knockout constructs. The coding regions offer few suitable 
+restriction sites and the  low complexity intergenic regions do not guarantee 
+specificity of recombination.  We present here the preparation of plasmids 
+pBsR479, pBsR503, and pBsR519, in which a blasticidin resistance-cassette is 
+positioned in the center of various symmetrical polylinkers. This design 
+simplifies the cloning process and gives more flexibility in positioning the 
+selectable marker within the coding regions.
+
+-------------------------------------------------------------------------
+
+Detection of subtles phenotypes: the case of the cell adhesion molecule 
+csA in Dictyostelium.
+
+Eleonora Ponte*, Enrico Bracco*, Jan Faix# and Salvatore Bozzaro*Ý
+
+*Dipartimento di Scienze Cliniche e Biologiche, Università di Torino -
+Ospedale S. Luigi, 10043-Orbassano (Italy) and #Max-Planck-Institut fuer
+Biochemie, D-82152 Martinsried (Federal Republic of Germany
+
+PNAS, in press
+
+ABSTRACT
+
+   Dictyostelium amoebae aggregate into a multicellular organism by 
+cAMP-driven chemotaxis and cell-cell adhesion. Cell adhesion is mediated 
+by an EDTA-sensitive and an EDTA-resistant adhesion system. The latter is 
+developmentally-regulated and triggered by homophilic interactions of the 
+membrane glycoprotein csA; upon disruption of the encoding gene, EDTA-
+resistant contacts fail to form. Nevertheless, csA-null cells under usual 
+laboratory conditions aggregate normally and complete development.  By 
+using experimental conditions that reproduce more closely the habitat of 
+Dictyostelium amoebae, evidence is provided that csA is required for 
+development, and that its expression confers a selective advantage to 
+populations of wild-type cells over csA-null mutants.  The latter display 
+reduced cell-cell adhesion, increased adhesiveness to the substratum and 
+slower motility, which lead to their sorting out from aggregating wild-
+type cells.  It is proposed that the experimental conditions commonly used 
+in the laboratory are not stringent enough to assess the developmental 
+role of csA and other proteins.  The new assay described can be used to 
+detect subtle phenotypes, to re-examine the developmental role of 
+apparently non-essential genes and to test the validity of recent models 
+on emergence and maintenance of apparent genetic redundancy.
+
+-------------------------------------------------------------------------
+
+Overexpression of CAF1 encoding a novel Ca2+-binding protein stimulates 
+the transition of Dictyostelium cells from growth to differentiation
+
+Mikiko Itoh, Maiko Noguchi and Yasuo Maeda*
+
+Biological Institute, Graduate School of Science, Tohoku University, 
+Aoba, Sendai 980-8578, Japan.
+
+Develop. Growth & Differ., in press
+
+SUMMARY
+
+   Among genes expressed associated with the switch-over of Dictyostelium 
+cells from cell proliferation to differentiation, the Calfumirin-1 (CAF1) 
+gene has been shown to be preferentially expressed at the initial step of 
+differentiation and encode a novel Ca2+-binding protein (Abe & Maeda 1995). 
+To analyze precisely the function of CAF1, transformants overexpressing 
+the CAF1 mRNA a t the vegetative growth phase and also CAF1-null mutants 
+were prepared, and their developmental features were compared with those 
+of parental wild-type cells. As a result, the CAF1-overexpression was 
+found to promote cell differ entiation, possibly through prompt induction 
+of the cAMP receptor 1 (CAR1) g ene expression. In addition, the CAF1-
+overexpressing cells were able to diff erentiate even under low external 
+Ca2+ ([Ca2+]e) conditions around 10-6M at which nontransformed wild-type 
+cells never differentiated. Unexpectedly, how ever, the CAF1-null mutant 
+produced by homologous recombination exhibited ap parently normal 
+development to form fruiting bodies on non-nutrient agar. These results 
+seems to indicate that the CAF1-overexpression has a stimulatory effect 
+on differentiation, but that the CAF1 protein is not necessarily required 
+for the phase-shift of cells from growth to differentiation.
+
+-------------------------------------------------------------------------
+
+[End Dicty News, volume 10, number 16]
+

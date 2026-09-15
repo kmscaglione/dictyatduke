@@ -1,0 +1,261 @@
+dictyNews
+Electronic Edition
+Volume 40, number 20
+August 22, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Huntingtin supplies a csaA-independent function essential for 
+EDTA-resistant homotypic cell adhesion in Dictyostelium discoideum
+
+Morgan N. Thompson, Marcy E. MacDonald, James F. Gusella 
+and Michael A. Myre
+
+Center for Human Genetic Research, Massachusetts General Hospital, 
+Harvard Medical School. Boston, MA, 02114 USA
+
+
+The Journal of Huntington’s Disease, in press
+
+Background: The CAG triplet repeat expansion mutation in the HTT locus, 
+which results in neurodegeneration in Huntington’s disease, elongates a 
+polyglutamine tract in huntingtin, a HEAT/HEAT-like protein that has been 
+highly structurally conserved through evolution. In several organisms, 
+huntingtin is necessary for proper cell-cell adhesion and normal development. 
+Objective: Dictyostelium discoideum huntingtin null (htt-) cells 
+
+display a variety of developmental abnormalities and completely fail to 
+acquire EDTA-resistant homotypic cell adhesion during starvation in 
+suspension culture. 
+
+Methods: Here, we have assessed the hypothesis that Htt may be a genetic 
+interactor of csaA, a major regulator of EDTA-resistant homotypic cell 
+adhesion in D. discoideum. Immunoblot analysis demonstrated that csaA 
+protein expression is dysregulated in htt- cells. 
+
+Results: Unexpectedly, csaA overexpression, previously shown to rescue 
+csaA- cell adhesion, failed to rescue the htt- adhesion defect. Thus, 
+while htt was required for proper expression of the csaA protein, csaA 
+overexpression was not sufficient to confer EDTA-resistant adhesion in 
+the context of the htt- genetic background in contrast to parental cells. 
+This implies a novel role for Htt in conferring csaA-dependent, EDTA-
+resistant cell adhesion that warrants further investigation. Calcium 
+supplementation restored both endogenous csaA protein levels and 
+EDTA-resistant adhesion in htt- cells. 
+
+Conclusions: Our data suggests the existence of an additional mechanism 
+that overcomes the EDTA-resistant adhesion defect of htt- cells in the early 
+development of D. discoideum. 
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+---------------------------------------------------------------------------
+
+
+Huntingtin Regulates Ca2+ Chemotaxis and K+-facilitated cAMP Chemotaxis, 
+in Conjunction with the Monovalent Cation/H+ Exchanger Nhe1, in a Model 
+Developmental System: Insights into its Possible Role in Huntington's Disease 
+
+Deborah Wessels, Daniel F. Lusche, Amanda  Scherer, Spencer Kuhl, 
+Michael A. Myre* and David Soll
+
+Developmental Studies Hybridoma Bank, Department of Biology, 
+University of Iowa, Iowa City, Iowa 52242; 
+*Center for Human Genetic Research, Massachusetts General Hospital, 
+Boston, Harvard Medical School, Boston MA, 02114 USA
+
+
+Developmental Biology, in press.
+
+Huntington’s disease is a neurodegenerative disorder, attributable to an 
+expanded trinucleotide repeat in the coding region of the human HTT gene, 
+which encodes the protein huntingtin. These mutations lead to huntingtin 
+fragment inclusions in the striatum of the brain. However, the exact function 
+of normal huntingtin and the defect causing the disease remain obscure. 
+Because there are indications that huntingtin plays a role in Ca2+ homeostasis, 
+we studied the deletion mutant of the HTT ortholog in the model developmental 
+system Dictyostelium discoideum, in which Ca2+ plays a role in receptor-
+regulated behavior related to the aggregation process that leads to multicellular 
+morphogenesis. In D.discoideum, the htt- mutant failed to undergo both 
+K+-facilitated chemotaxis in spatial gradients of the major chemoattractant 
+cAMP, and chemotaxis up a spatial gradient of Ca2+, but behaved normally in 
+Ca2+-facilitated cAMP chemotaxis and Ca2+-dependent flow-directed motility. 
+This was the same phenotypic profile of the null mutant of Nhel, a monovalent 
+cation/H+exchanger. The htt- mutant also failed to orient correctly during natural 
+aggregation, as was the case for the Nhel mutant. Moreover, in a K+-based 
+buffer the normal localization of actin was similarly defective in both htt- and 
+nhe1- cells in a K+-based buffer, and the normal localization of Nhe1 was 
+disrupted in the htt- mutant. These observations demonstrate that Htt and 
+Nhel play roles in the same specific cation-facilitated behaviors and that Nhel 
+localization is directly or indirectly regulated by Htt. Similar cation-dependent 
+behaviors and a similar relationship between Htt and Nhe1 have not been 
+reported for mammalian neurons and deserves investigation, especially as it 
+may relate to Huntington’s disease.
+
+
+Submitted by Michael Myre [myre@chgr.mgh.harvard.edu]
+---------------------------------------------------------------------------
+
+
+A cyanobacterial light activated adenylylcyclase partially restores 
+development of a Dictyostelium Discoideum, adenylyl cyclase A null mutant
+
+Zhi-hui Chen1, Sarah Raffelberg2, Aba Losi3, Pauline Schaap1* , 
+Wolfgang Gärtner2* 
+
+1 College of Life Sciences, University of Dundee, Dundee UK
+2 MPI Chemical Energy Conversion, Mülheim, Germany
+3 Dept. of Physics and Earth Sciences, University of Parma, Parma, Italy
+
+*to whom correspondence should be addressed: 
+p.schaap@dundee.ac.uk; Wolfgang.gaertner@cec.mpg.de
+
+
+Journal of Biotechnology, in press
+
+Abstract: A light-regulated adenylyl cyclase, mPAC, was previously identified 
+from the cyanobacterium Microcoleus chthonoplastes PCC7420. MPAC 
+consists of a flavin-based blue light-sensing LOV domain and a catalytic 
+domain. In this work, we expressed mPAC in an adenylate cyclase A null 
+mutant (aca-) of the eukaryote Dictyostelium discoideum and tested to what 
+extent light activation of mPAC could restore the cAMP-dependent 
+developmental programme of this organism. Amoebas of Dictyostelium, a well-
+established model organism, generate and respond to cAMP pulses, which 
+cause them to aggregate and construct fruiting bodies. mPAC was expressed 
+under control of a constitutive actin-15 promoter in D. discoideum and displayed 
+low basal adenylyl cyclase activity in darkness that was about five-fold stimulated 
+by blue light. mPAC expression in aca- cells marginally restored aggregation and 
+fruiting body formation in darkness. However, more and larger fruiting bodies 
+were formed when mPAC expressing cells were incubated in light. Extending 
+former applications of light-regulated AC, these results demonstrate that mPAC 
+can be used to manipulate multicellular development in eukaryotes in a light 
+dependent manner.
+
+
+Submitted by Zhihui Chen [z.y.chen@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+Two Dictyostelium Tyrosine Kinase-Like kinases function
+in parallel, stress-induced STAT activation pathways
+
+Tsuyoshi Araki*, Linh Hai Vu†, Norimitsu Sasaki‡, Takefumi Kawata‡, 
+Ludwig Eichinger† and Jeffrey G. Williams*§
+
+* College of Life Sciences, Welcome Trust Biocentre, University of Dundee,
+Dow St., Dundee, DD1 5EH, UK
+† Center for Biochemistry Institute of Biochemistry I Joseph-Stelzmann-Str. 52
+50931 Cologne Germany
+‡ Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama,
+Funabashi, Chiba 274-8510, Japan
+§ j.g.williams@dundee.ac.uk
+
+
+Molecular Biology of the Cell,, in press
+
+When Dictyostelium cells are hyper-osmotically stressed STATc is activated 
+by tyrosine phosphorylation. Unusually, activation is regulated by serine 
+phosphorylation and consequent inhibition of a tyrosine phosphatase: PTP3. 
+The identity of the cognate tyrosine kinase is unknown and we show that two 
+Tyrosine Kinase-Like  (TKL) enzymes, Pyk2 and Pyk3, share this function; 
+thus for stress-induced STATc activation, single null mutants are only 
+marginally impaired but the double mutant is non-activatable. When cells are 
+stressed Pyk2 and Pyk3 undergo increased auto-catalytic tyrosine 
+phosphorylation. The site(s) that are generated bind the SH2 domain of 
+STATc and then STATc becomes the target of further kinase action. The 
+signalling pathways that activate Pyk2 and Pyk3 are only partially overlapping
+ and there may be a structural basis for this difference because Pyk3 contains 
+ both a TKL domain and a pseudokinase domain. The latter functions, like the 
+ JH2 domain of metazoan JAKs, as a negative regulator of the kinase domain. 
+ The fact that two differently regulated kinases catalyse the same 
+ phosphorylation event may facilitate specific targeting because under stress 
+ Pyk3 and Pyk2 accumulate in different parts of the cell; Pyk3 moves from the 
+ cytosol to the cortex while Pyk2 accumulates in cytosolic granules that 
+ co-localise with PTP3.
+
+The University of Dundee is a registered Scottish Charity, No: SC015096
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+Dictyostelium uses ether-linked inositol phospholipids for 
+intracellular signalling
+
+Jonathan Clark, Robert R Kay, Anna Kielkowska, Izabella Niewczas, 
+Louise Fets, David Oxley, Len R Stephens, Phillip T Hawkins
+
+Signalling Programme and Babraham Biosciences Technology, 
+Babraham Research Campus, Babraham, Cambridge, CB22 3AT, UK.
+MRC Laboratory of Molecular Biology, Francis Crick Avenue, 
+Cambridge Biomedical Campus, Cambridge CB2 0QH, UK
+
+Authors for correspondence:  Rob Kay, Len Stephens and Phillip Hawkins
+
+
+EMBO J, in press
+
+Inositol phospholipids are critical regulators of membrane biology throughout 
+eukaryotes. The general principle by which they perform these roles is 
+conserved across species and involves binding of differentially phosphorylated 
+inositol headgroups to specific protein domains. This interaction serves to both 
+recruit and regulate the activity of several different classes of protein which act
+ on membrane surfaces. In mammalian cells, these phosphorylated inositol 
+ headgroups are predominantly borne by a C38:4 diacyl glycerol backbone.  
+ We show here that the inositol phospholipids of Dictyostelium are different, 
+ being highly enriched in an unusual C34:1e lipid backbone, 
+ 1- hexadecyl -2-(11Z-octadecenoyl)-sn-glycero-3-phospho-(1'-myo-inositol), 
+ in which the sn-1 position contains an ether-linked C16:0 chain; they are thus 
+ plasmanylinositols.  These plasmanylinositols respond acutely to stimulation 
+ of cells with chemoattractants and their levels are regulated by PIPKs, PI3Ks 
+ and PTEN.  In mammals and now in Dictyostelium, the hydrocarbon chains 
+ of inositol phospholipids are a highly selected subset of those available to 
+ other phospholipids, suggesting that different molecular selectors are at play 
+ in these organisms but serve a common, evolutionary conserved purpose.
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+---------------------------------------------------------------------------
+
+
+Evolutionary reconstruction of pattern formation in 98 Dictyostelium species 
+reveals that cell-type specialization by lateral inhibition is a derived trait 
+
+Christina Schilde, Anna Skiba  and Pauline Schaap
+College of Life Sciences, University of Dundee, UK
+
+
+EvoDevo, in press
+
+Multicellularity provides organisms with opportunities for cell-type 
+specialization, but requires novel mechanisms to position correct proportions 
+of different cell types throughout the organism. Dictyostelid social amoebas 
+display an early form of multicellularity, where amoebas aggregate to form 
+fruiting bodies, which contain only spores or up to four additional cell-types. 
+These cell types will form the stalk and support structures for the stalk and 
+spore head. Phylogenetic inference subdivides Dictyostelia into four major 
+groups, with the model organism D.discoideum residing in group 4. 
+Differentiation of its five cell types is dominated in D.discoideum by lateral 
+inhibition-type mechanisms that trigger scattered cell differentiation, with 
+tissue patterns being formed by cell sorting.
+
+
+Submitted by Christina Schilde [c.schilde@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 20]

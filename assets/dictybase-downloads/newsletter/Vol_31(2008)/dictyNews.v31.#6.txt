@@ -1,0 +1,207 @@
+dictyNews
+Electronic Edition
+Volume 31, number 6
+August 8, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Correlated waves of actin filaments and PIP3 in Dictyostelium cells
+
+Yukako Asano, Akira Nagasaki, and Taro Q. P. Uyeda
+
+National Institute of Advanced Industrial Science and Technology (AIST)
+
+
+Cell Motility and the Cytoskeleton, in press
+
+Chemotaxis-deficient amiB-null mutant Dictyostelium cells show two distinct 
+movements: 1) they extend protrusions randomly without net displacements; 
+2) they migrate persistently and unidirectionally in a keratocyte-like manner.  
+Here, we monitored the intracellular distribution of phosphatidylinositol 
+(3,4,5)-trisphosphate (PIP3) to gain insight into roles PIP3 plays in those 
+spontaneous motilities.  In keratocyte-like cells, PIP3 showed convex 
+distribution over the basal membrane, with no anterior enrichment.  
+In stalled cells, as well as in wild type cells, PIP3 repeated wave-like 
+changes, including emergence, expansion and disappearance, on the basal 
+membrane.  The waves induced lamellipodia when they approached the cell 
+edge, and the advancing speed of the waves was comparable to the migration 
+speed of the keratocyte-like cells.  LY294002, an inhibitor of PI3 kinase, 
+abolished PIP3 waves in stalled cells and stopped keratocyte-like cells.  
+These results together suggested that keratocyte-like cells are 'surfing' 
+on the PIP3 waves by coupling steady lamellipodial protrusions to the PIP3 
+waves.  Simultaneous live observation of actin filaments and PIP3 in wild 
+type or stalled amiB- cells indicated that the PIP3 waves were correlated 
+with wave-like distributions of actin filaments.  Most notably, PIP3 waves 
+often followed actin waves, suggesting that PIP3 induces local 
+depolymerization of actin filaments.  Consistent with this idea, cortical 
+accumulation of PIP3 was often correlated with local retraction of the 
+periphery.  We propose that the waves of PIP3 and actin filaments are 
+loosely coupled with each other and play important roles in generating 
+spontaneous cell polarity.
+
+
+Submitted by: Taro Uyeda [t-uyeda@aist.go.jp]
+--------------------------------------------------------------------------------
+
+
+Chemotaxis-mediated scission contributes to efficient cytokinesis in 
+Dictyostelium.
+
+Akira Nagasaki, and Taro Q. P. Uyeda
+
+National Institute of Advanced Industrial Science and Technology (AIST) 
+
+
+Cell Motility and the Cytoskeleton, in press
+
+Interphase amoeba of Entamoeba invadens are attracted to the furrowing 
+region of a neighboring dividing cell to assist with the division.  A 
+seemingly similar behavior has been observed in Dictyostelium discoideum, 
+but in this case, it has not been shown whether the movements were truly 
+directed toward the furrowing region or whether they have any relevance.  
+We thus used myosin II-null cells, which spend more time than wild type 
+cells in cytokinesis, and successfully demonstrated that nearly half of the 
+division events involve the attraction of a neighbor cell to the furrowing 
+region.  Cells lacking the beta subunit of the trimeric G protein (Gbeta), 
+which are incapable of chemotaxis, did not show such midwifery.  Culturing 
+wild type cells flattened under agarose sheets also slowed the cytokinesis 
+process, and this allowed us to demonstrate that phosphatidylinositol 
+trisphosphate was enriched in the anterior region of midwifing cells, 
+consistent with the view that midwifery in D. discoideum is also chemotaxis.  
+On substrates, while only 3.6% of wild type cells were multinucleate, 9% of 
+Gbeta-null cells were multinucleate, and this was reduced to 3.4% when they 
+were surrounded by wild type cells.  Conversely, multinucleated wild type 
+cells increased to 6.8% when they were surrounded by Gbeta-null cells.  
+Thus, Gbeta-null cells frequently fail to divide because they cannot assist 
+each other’s division and midwifery ensures successful cytokinesis in 
+Dictyostelium discoideum.
+
+
+Submitted by: Taro Uyeda [t-uyeda@aist.go.jp]
+--------------------------------------------------------------------------------
+
+
+Cell adhesion molecules regulate contractile ring-independent cytokinesis in 
+Dictyostelium discoideum.
+
+Akira Nagasaki, Masamitsu Kanada, and Taro Q. P. Uyeda
+
+National Institute of Advanced Industrial Science and Technology (AIST) 
+
+
+Cell Research, in press
+
+To investigate the roles of substrate adhesion in cytokinesis, we established 
+cell lines lacking paxillin (PAXB) or vinculin (VINA), and those expressing 
+the respective GFP fusion proteins in Dictyostelium discoideum.  As in 
+mammalian cells, GFP-PAXB and GFP-VINA formed focal adhesion-like 
+complexes on the cell bottom.  paxB- cells in suspension grew normally, 
+but on substrates, often failed to divide after regression of the furrow.  The 
+efficient cytokinesis of paxB- cells in suspension is not due to shear 
+forces to assist abscission, since they divided normally in static suspension 
+culture as well.  Double knockout strains lacking mhcA, which codes for 
+myosin II, and paxB or vinA displayed cytokinetic defects more severe than 
+each single knockout strain.  In mitotic wild-type cells, GFP-PAXB was 
+diffusely distributed on the basal membrane, but was strikingly condensed 
+along the polar edges in mitotic mhcA- cells.  These results are consistent 
+with our idea that Dictyostelium expresses two forms of cytokinesis, one 
+that is contractile ring-dependent and adhesion-independent, and the other 
+that is contractile ring-independent and adhesion-dependent, and that the 
+latter requires PAXB and VINA.  Furthermore, that paxB- cells fail to divide 
+more frequently in the presence of substrate adhesion suggests additional 
+signaling roles of this adhesion molecule.  
+
+
+Submitted by: Taro Uyeda [t-uyeda@aist.go.jp]
+--------------------------------------------------------------------------------
+
+
+PI3-kinase signaling contributes to orientation in shallow gradients and 
+enhances speed in steep chemoattractant gradients  
+
+Leonard Bosgraaf, Ineke Keizer-Gunnink and Peter J.M. Van Haastert
+
+
+J. Cell Sci, in  press
+
+Dictyostelium cells that chemotax toward cAMP produce phosphatidylinositol 
+(3,4,5) trisphosphate (PIP3) at the leading edge, which has been implicated 
+in actin reorganization and pseudopod extension. However, in the absence of 
+PIP3 signaling cells will chemotax via alternative pathways. Here we examined 
+the potential contribution of PIP3 to chemotaxis of wild type cells. The 
+results show that steep cAMP gradients (larger than 10% concentration 
+difference across the cell) induce strong PIP3 patches at the leading edge, 
+which has little effect on the orientation but strongly enhances the speed 
+of the cell. Using a new sensitive method for PIP3 detection that corrects 
+for the volume of cytosol in pixels at the boundary of the cell, we show 
+that in shallow cAMP gradient (less than 5% concentration difference across 
+the cell) PIP3 is still somewhat enriched at the leading edge. Cells lacking 
+PI3-kinase activity exhibit poor chemotaxis in these shallow gradients. Due 
+to the reduced speed and orientation in steep and shallow gradients, 
+respectively, cells lacking PIP3 signaling require 2 to 6 fold longer times 
+to reach a point source of chemoattractant compared to wild type cells. 
+These results show that although PI3K signaling is dispensable for 
+chemotaxis, it gives the wild type an advantage over mutant cells.
+
+
+Submitted by: Peter Van Haastert [P.J.M.van.Haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Sorting of the v-SNARE VAMP7 in Dictyostelium discoideum: a role for more 
+than one Adaptor Protein (AP) complex.
+
+Nelly Bennett a*, François Letourneur b, Michel Ragno a and Mathilde Louwagie c.
+
+a Commissariat a l’Energie Atomique, iRTSV, Laboratoire de Biochimie et 
+Biophysique des Systemes Integres, CNRS UMR5092, Universite Joseph Fourier, 
+38054 Grenoble, France.
+b Institut de Biologie et Chimie des Proteines, UMR5086-CNRS/Universite Lyon I, 
+IFR 128 BioSciences Lyon-Gerland, 69367 Lyon, France.
+c Commissariat a l’Energie Atomique, iRTSV, Laboratoire d’Etude de la 
+Dynamique des Proteomes, INSERM U880, Universite Joseph Fourier, 38054 
+Grenoble, France.
+* Corresponding author: nelly.bennett@cea.fr
+
+
+Experimental Cell Research, in press
+
+Soluble N-ethylmaleimide-sensitive-factor Attachment protein Receptors 
+(SNAREs) participate in the specificity of membrane fusions in the cell. 
+The mechanisms of specific SNARE sorting are still however poorly documented. 
+We investigated the possible role of Adaptor Protein (AP) complexes in sorting 
+of the Dictyostelium discoideum v-SNARE VAMP7. In live cells, GFP-VAMP7 is 
+observed in the membrane of endocytic compartments. It is also observed in 
+the plasma membrane of a small proportion of the cells. Mutation of a 
+potential dileucine motif dramatically increases the proportion of cells with 
+GFP-VAMP7 in their plasma membrane, strongly supporting the participation 
+of an AP complex in VAMP7 sorting to the endocytic pathway. A partial increase 
+occurs in knockout cells for the medium subunits of AP-2 and AP-3 complexes, 
+indicating a role for both AP-2 and AP-3. VAMP7, as well as its t-SNAREs 
+partners syntaxin 8 and Vti1, are co-immunoprecipitated with each of the 
+medium subunits of the AP-1, AP-2, AP-3 and AP-4 complexes. This result 
+supports the conclusion that VAMP7 directly interacts with both AP-2 and AP-3. 
+It also raises the hypothesis of an interaction with AP-1 and AP-4. GFP-VAMP7 
+is retrieved from the endocytic pathway at and/or before the late 
+post-lysosomal stage through an AP-independent mechanism.
+
+
+Submitted by: Nelly Bennett [nelly.bennett@cea.fr]
+==============================================================
+[End dictyNews, volume 31, number 6]

@@ -1,0 +1,279 @@
+dictyNews
+Electronic Edition
+Volume 31, number 2
+July 11, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+The GPI-anchored Superoxide Dismutase, SodC, is essential for regulating 
+basal Ras activity and chemotaxis of Dictyostelium discoideum
+
+Sudhakar Veeranki, Bohye Kim, and Leung Kim* 
+ 
+Dept of Biological Sciences, Florida International University,
+Miami, Fl 33199 USA
+
+
+Journal of Cell Sciences, in press
+
+A genetic screen for Dictyostelium mutant displaying high level of constitutive 
+Phosphatidylinositol-3,4,5-triphosphate (PIP3) led to the finding that the  
+glycosylphosphatidylinositol (GPI) anchored superoxide dismutase, SodC, 
+regulates small GTPase Ras. Cells lacking SodC exhibited constitutively high 
+levels of active Ras, more membrane localization of GFP-PHcrac, and defects in 
+chemoattractant sensing, cell polarization, and motility. These defects of sodC- 
+cells were partially restored by expression of wild type SodC but not with the 
+catalytically inactive mutant SodC (H245R, H247Q). Furthermore, an inhibition of 
+PI3K activity in sodC- cells by LY294002 only partially restored chemoattractant 
+sensing and cell polarization, consistent with the fact that sodC- cells have 
+aberrantly high level of active Ras, which functions upstream of PI3K. Higher 
+level of active GFP-RasG was observed in sodC- cells, which significantly 
+decreased upon incubation of sodC- cells with the superoxide scavenger XTT. 
+Having constitutively high levels of active Ras proteins and more membrane 
+localization of GFP-PHcrac, sodC- cells exhibited severe defects in 
+chemoattractant sensing, cell polarization, and motility.  
+
+
+Submitted by: Kim Leung [kiml@fiu.edu]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium kinase DPYK3 negatively regulates STATc signaling in cell fate 
+decision.
+
+Nam-Sihk Lee, Marbelys Rodriguez, Bohye Kim, and Leung Kim* 
+
+Department of Biological Sciences
+Florida International University
+Miami, FL 33199 USA
+
+
+Development, Growth and Differentiation, in press
+
+DPYK3, a member of the Dictyostelium TKL (Tyrosine Kinase Like) kinase family, 
+was ablated by homologous recombination. dpyk3- cells displayed aberrant 
+pattern formation during development. The prestalk O zone was not properly 
+formed and, instead, the prespore zone was expanded in dpyk3- slugs. During 
+development, the transcription factor STATc was persistently phosphorylated 
+and ecmAO expression level was kept low in dpyk3- cells. Furthermore, in 
+response to DIF-1 in suspension culture, dypk3- cells displayed persistent 
+STATc phosphorylation and re-introduction of DPYK3 in dypk3- cells restored 
+transient STATc phosphorylation similarly to wild type cells. In contrast to the 
+positive STAT regulation by Janus Kinase in metazoans, Dictyostelium DPYK3 
+negatively regulates STATc during development in response to DIF-1 signaling. 
+
+
+Submitted by: Kim Leung [kiml@fiu.edu]
+--------------------------------------------------------------------------------
+
+
+Modulation of actin structure and function by phosphorylation of Tyr-53 
+and profilin binding
+
+Kyuwon Baek*†, Xiong Liu*‡, François Ferron†, Shi Shu‡, Edward D. Korn‡§, 
+Roberto Dominguez†§
+
+†University of Pennsylvania School of Medicine, Department of Physiology, 
+3700 Hamilton Walk, Philadelphia, PA 19104-6085, USA.
+‡Laboratory of Cell Biology, National Heart, Lung, and Blood Institute, 
+National Institutes of Health, Bethesda, MD 20892, USA.
+*These authors contributed equally to this work
+
+
+Proc. Natl. Acad. Sci. USA, in press
+
+On starvation, Dictyostelium cells aggregate to form multicellular fruiting 
+bodies containing spores that germinate when transferred to nutrient-rich 
+medium. This developmental cycle correlates with the extent of actin 
+phosphorylation at Tyr-53 (pY53-actin), which is low in vegetative cells 
+but high in viable mature spores. Here we describe high-resolution crystal 
+structures of pY53-actin and unphosphorylated actin in complexes with 
+gelsolin segment 1 and profilin. In the structure of pY53-actin, the phosphate 
+group on Tyr-53 makes hydrogen-bonding interactions with residues 
+of the DNase I-binding loop (D-loop) of actin, resulting in a more stable 
+conformation of the D-loop than in the unphosphorylated structures. A more 
+rigidly folded D-loop may explain some of the previously described 
+properties of pY53-actin, including its increased critical concentration for 
+polymerization, reduced rates of nucleation and pointed end elongation, and 
+weak affinity for DNase I. We show here that phosphorylation of Tyr-53 
+inhibits subtilisin cleavage of the D-loop and reduces the rate of nucleotide 
+exchange on actin. The structure of profilin-Dictyostelium-actin is strikingly 
+similar to previously determined structures of profilin-beta-actin and 
+profilin-alpha-actin. By comparing this representative set of profilin-actin 
+structures with other structures of actin we highlight the effects of profilin 
+on the actin conformation. In the profilin-actin complexes, subdomains 
+1 and 3 of actin close around profilin, producing a 4.7º rotation of the two 
+major domains of actin relative to each other. As a result, the nucleotide cleft 
+becomes moderately more open in the profilin-actin complex, probably 
+explaining the stimulation of nucleotide exchange on actin by profilin.
+
+
+Submitted by: Edward Korn [edk@nih.gov]
+--------------------------------------------------------------------------------
+
+
+Actin-Cytoskeleton Dynamics in Non-monotonic Cell Spreading
+
+Doris Heinrich1, Simon Youssef1, Britta Schroth-Diez2, Ulrike Engel3, 
+Daniel Aydin4, Jacques Bluemmel4, Joachim Spatz4, and Guenther Gerisch5*
+
+1 Department fuer Physik, Ludwig-Maximilians-University, 
+Geschwister-Scholl-Platz 1, D-80539 Muenchen, Germany.
+2 Max Planck Institute of Molecular Cell Biology and Genetics, 
+Pfotenhauerstr. 108, D-01307 Dresden, Germany.
+3 Nikon Imaging Center at the University of Heidelberg, Bioquant BQ 0004, 
+Im Neuenheimer Feld 267, D-69120 Heidelberg, Germany.
+4 Max Planck Institute for Metals Research, Dept. of New Materials and 
+Biosystems, Heisenbergstr. 3, D-70569 Stuttgart, Germany, and 
+University of Heidelberg, Dept. of Biophysical Chemistry.
+5  Max-Planck-Institut fuer Biochemie, Am Klopferspitz 18, D-82152 
+Martinsried, Germany.
+ 
+
+Cell Adhesion & Migration, in press
+
+The spreading of motile cells on a substrate surface is accompanied by 
+reorganization of their actin network. We show that spreading in the highly 
+motile cells of Dictyostelium is non-monotonic, and thus differs from the 
+passage of spreading cells through a regular series of stages. Quantification 
+of the gain and loss of contact area revealed fluctuating forces of protrusion 
+and retraction that dominate the interaction of Dictyostelium cells with a 
+substrate. The molecular basis of these fluctuations is elucidated by 
+dual-fluorescence labeling of filamentous actin together with proteins that 
+highlight specific activities in the actin system. Front-to-tail polarity is 
+established by the sorting out of myosin-II from regions where dense actin 
+assemblies are accumulating. Myosin-IB identifies protruding front regions, 
+and the Arp2/3 complex localizes to lamellipodia protruded from these regions. 
+Coronin is used as a sensitive indicator of actin disassembly to visualize 
+the delicate balance of polymerization and depolymerization in spreading 
+cells. Short-lived actin patches that co-localize with clathrin suggest that 
+membrane internalization occurs even when the substrate-attached cell 
+surface expands. We conclude that non-monotonic cell spreading is 
+characterized by spatiotemporal patterns formed by motor proteins together 
+with regulatory proteins that either promote or terminate actin polymerization 
+on the scale of seconds.
+
+
+
+Submitted by: Guenther Gerisch [gerisch@biochem.mpg.de]
+--------------------------------------------------------------------------------
+
+
+Regulation of Contractile Vacuole Formation and Activity in Dictyostelium
+
+Fei Du, Kimberly Edwards, Zhouxin Shen, Binggang Sun, Arturo De Lozanne, 
+Steven Briggs, and Richard A. Firtel
+
+
+Section of Cell and Developmental Biology, Division of Biological Sciences, 
+University of California San Diego, La Jolla, CA 92093-0380, USA
+and Section of Molecular Cell & Developmental Biology and Institute for 
+Cellular and Molecular Biology, University of Texas at Austin, 
+Austin, TX 78712, USA
+
+
+EMBO J., in press
+
+The contractile vacuole (CV) system is the osmoregulatory organelle required 
+for survival for many free-living cells under hypotonic conditions. We 
+identified a new CV regulator, Disgorgin, a TBC domain-containing protein, 
+which translocates to the CV membrane at the late stage of CV charging and 
+regulates CV/plasma membrane fusion and discharging. disgorgin- cells produce 
+large CVs due to impaired CV/plasma membrane fusion. Disgorgin is a specific 
+GAP for Rab8A-GTP, which also localizes to the CV and whose hydrolysis is 
+required for discharging. We demonstrate that Drainin, a previously identified 
+TBC-domain-containing protein, lies upstream from Disgorgin in this pathway. 
+Unlike Disgorgin, Drainin lacks GAP activity but functions as a Rab11A 
+effector. The BEACH family proteins LvsA and LvsD were identified in a 
+suppressor/enhancer screen of the disgorgin- large CV phenotype and 
+demonstrated to have distinct functions in regulating CV formation. Our 
+studies help define the pathways controlling CV function.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+Article Addendum
+Vacuole membrane protein 1, autophagy and much more
+
+Javier Calvo-Garrido, Sergio Carilla-Latorre and Ricardo Escalante
+
+Instituto de Investigaciones Biomedicas Alberto Sols, Consejo Superior de 
+Investigaciones Científicas-Universidad Autonoma de Madrid,
+Calle Arturo Duperier 4, 28029 Madrid, Spain
+
+
+Autophagy, In press
+
+
+Vacuole membrane protein 1 (Vmp1) is a putative transmembrane protein that 
+has been associated with different functions including autophagy, cell 
+adhesion and membrane traffic. Highly similar proteins are present in lower 
+eukaryotes and plants although a homologue is absent in the fungi lineage. 
+We have recently described the first loss-of-function mutation for a Vmp1 
+homologue in a model system, Dictyostelium discoideum. Our results give a 
+more comprehensive view of the intricate roles played by this new gene. 
+Dictyostelium Vmp1 is an endoplasmic reticulum-resident protein. Cells 
+deficient in Vmp1 display pleiotropic defects in the context of the 
+secretory pathway such as organelle biogenesis, the endocytic pathway and 
+protein secretion.  The biogenesis of the contractile vacuole, an organelle 
+necessary to survive under hypoosmotic conditions, is compromised as well 
+as the structure of the endoplasmic reticulum and the Golgi apparatus. 
+Transmission electron microscopy also shows abnormal accumulation of 
+aberrant double-membrane vesicles, suggesting a defect in autophagosome 
+biogenesis or maturation. The expression of a mammalian Vmp1 in the 
+Dictyostelium mutant complements the phenotype suggesting a functional 
+conservation during evolution. We are taking the first steps in 
+understanding the function of this fascinating protein and recent studies 
+have brought us more questions than answers about its basic function and 
+its role in human pathology.
+
+
+Submitted by: Ricardo Escalante [rescalante@iib.uam.es]
+--------------------------------------------------------------------------------
+
+
+Kinesin-5 is Not Essential for Mitotic Spindle Elongation in Dictyostelium
+
+Irina Tikhonenko, Dilip K. Nag, Nora Martin, and Michael P. Koonce
+
+Wadsworth Center, Albany, NY
+
+
+Cell Motil. Cytoskel, in press
+
+The proper assembly and operation of the mitotic spindle is essential to 
+ensure the accurate segregation of chromosomes and to position the cytokinetic 
+furrow during cell division in eukaryotes. Not only are dynamic microtubules 
+required, but also the concerted actions of multiple motor proteins are 
+necessary to effect spindle pole separation, chromosome alignment, chromatid 
+segregation, and spindle elongation. Although a number of motor proteins are 
+known to play a role in mitosis, there remains a limited understanding of 
+their full range of functions and the details by which they interact with 
+other spindle components. The kinesin-5 (BimC/Eg5) family of motors is 
+largely considered essential to drive spindle pole separation during the 
+initial and latter stages of mitosis. We have deleted the gene encoding the 
+kinesin-5 member in Dictyostelium, (kif13), and find that, in sharp contrast 
+with results found in vertebrate, fly, and yeast organisms, kif13- cells 
+continue to grow at rates indistinguishable from wild type. Phenotype analysis 
+reveals a slight increase in spindle elongation rates in the absence of Kif13. 
+More importantly, there is a dramatic, premature separation of spindle halves i
+n kif13- cells, suggesting a novel role of this motor in maintaining spindle 
+integrity at the terminal stages of division.
+
+Submitted by: Michael Koonce [koonce@wadsworth.org]
+==============================================================
+[End dictyNews, volume 31, number 2]

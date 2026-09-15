@@ -1,0 +1,203 @@
+Dicty News
+Electronic Edition
+Volume 10, number 6
+February 22, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+The Hybrid Histidine Kinase dhkB Regulates Spore Germination in
+Dictyostelium discoideum 
+
+Michael J. Zinda and Charles K. Singleton
+
+Vanderbilt University
+
+Developmental Biology, in press
+
+Spore germination is a defined developmental process that marks a 
+critical point in the life cycle of Dictyostelium discoideum.  Upon 
+germination the environmental conditions must be conducive to cell 
+growth to ensure survival of emerged amoebae.  However, the signal 
+transduction pathways controlling the various aspects of spore 
+germination in large part remain to be elucidated.  We have used 
+degenerate PCR to identify dhkB, a two-component histidine kinase, 
+from Dictyostelium discoideum.   dhkB is predicted to be a transmembrane 
+hybrid sensor kinase. The dhkB null cells develop with normal timing 
+to give what seem to be mature fruiting bodies by 22 to 24 hours.  
+However over the next several hours, the ellipsoidal and encapsulated 
+spores proceed to swell and germinate in situ within the sorus and 
+thus do not respond to the normal inhibitors of germination present 
+within the sorus.  The emerged amoebae dehydrate due to the high
+osmolarity within the sorus, and by 72 hours 4% or less of the amoebae
+remain as spores while most cells are now nonviable.  Precocious
+germination is suppressed by ectopic activation of or expression of
+cAMP-dependent protein kinase A.  Additionally, at 24 hours the
+intracellular concentration of cAMP of dhkB- spores is 40% that of dhkB+
+spores.  The results indicate that DHKB regulates spore germination, and 
+a functional DHKB sensor kinase is required for the maintenance of spore
+dormancy.   DHKB probably acts by maintaining an active PKA that in turn 
+is inhibitory to germination.
+
+-------------------------------------------------------------------------
+
+Chemotactic and osmotic signals share a cGMP transduction 
+pathway in Dictyostelium discoideum
+
+Hidekazu Kuwayama and Peter J.M. Van Haastert
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4,
+9747 AG Groningen, The Netherlands
+
+FEBS Letters, in press
+
+In the ameboid eukaryote Dictyostelium discoideum, chemotactic
+stimulation by cAMP induces an increase of intracellular cGMP and
+subsequently the  phosphorylation of myosin heavy chain II.
+Resistance to high osmotic stress also requires transient increases
+of intracellular cGMP and phosphorylation of myosin heavy chain II,
+although the kinetics is much slower than for chemotaxis. To examine
+if chemotaxis and osmotic stress share common signalling components
+we systematically analyzed the osmotic cGMP response and survival in
+chemotactic mutants with altered cGMP signaling. Null-mutants with
+deletions of cell surface cAMP receptors or the associated
+GTP-binding proteins G 2 and G  show no cAMP-induced cGMP response
+and chemotaxis; in contrast, osmotic stress induces the normal cGMP
+accumulation and survival. The same result was obtained with the
+non-chemotactic mutant KI-10, which lacks the activation of guanylyl
+cyclase by cAMP. This indicates that these components are required
+for chemotaxis but not osmotic cGMP signaling and survival. The
+potential guanylyl cyclase null mutant KI-8 shows no chemotaxis, no
+osmotic cGMP increase and reduced survival in high osmolarity. Two
+types of cGMP-binding protein mutants, KI-4 and KI-7, also show
+reduced torelance during high osmotic stress. Taken together, these
+observations clarify that chemotactic and osmotic signals are
+detected by different mechanisms, but share a cGMP signaling pathway.
+ 
+-------------------------------------------------------------------------
+
+Use of a fusion protein between GFP and an actin binding domain to
+visualize transient F-actin structures associated with cell motility 
+and surface adherence.
+
+Ka Ming Pang, Eunkyung Lee and David A. Knecht
+
+Department of Molecular and Cell Biology,University of Connecticut,
+Storrs, CT 06269,USA
+
+Current Biology in press
+
+Abstract
+
+   Many important cellular processes involve changes in the quantity,
+location and the organization of actin filaments.  We have constructed a
+green fluorescent protein-actin binding domain fusion protein (GFP-ABD)
+which allows the visualization of these changes in live cells.  GFP was
+fused to the N-terminus of the 25kD highly conserved actin binding 
+domain from the actin cross-linking protein ABP-120.  In live 
+Dictyostelium cells expressing GFP-ABD, the three dimensional 
+architecture of the actin cortex was clearly visualized.  The 
+fluorescence pattern of GFP-ABD coincides with that of rhodamine-
+phalloidin indicating that this probe specifically binds
+F-actin in cells.   On the ventral surface of non-polarized vegetative
+cells, a broad ring of actin was periodically assembled and then
+contracted. In polarized cells transient punctate F-actin structures 
+were evident.  Cells cycled between these two morphologies.  During 
+pseudopod formation, an increase in fluorescence intensity coincided 
+with the initial outward deformation of the membrane. This is 
+consistent with the models of pseudopod extension that predict 
+an increase in local filament density.  This GFP probe specifically 
+binds F-actin and allows the visualization of F-actin dynamics and 
+cellular behavior simultaneously.
+
+-------------------------------------------------------------------------
+
+Formation of F-actin aggregates in cells treated with actin 
+stabilizing drugs
+
+Eunkyung Lee, Eric A.  Shelden and David A. Knecht
+
+Department of Molecular and Cell Biology, University of Connecticut
+Storrs, CT 06269
+
+Cell Motil. Cytoskel., January 1998
+
+ABSTRACT
+
+   We have electroporated Dictyostelium amoebae with fluorescent 
+phalloidin in order to visualize the localization and behavior of 
+F-actin filaments in living cells.  Immediately after electroporation 
+with phalloidin, cells became round and showed bright staining in the 
+cortical region.  Over time, the cortical staining disappeared and 
+was replaced by a large aggregate of actin filaments.  The aggregates 
+were predominantly localized to the apical posterior of actively 
+moving cells, and in the middle of dividing cells or stationary AX4 
+cells.  Mutants lacking myosin II or ABP-120 also formed actin 
+aggregates, however the rate of formation of aggregates was slower 
+in myosin II mutant cells. In order to further investigate this 
+phenomenon, we have used jasplakinolide, a membrane permeable drug 
+that also stabilizes F-actin filaments.  Cells treated with 
+jasplakinolide formed actin aggregates in a concentration dependent 
+manner.  Drug treatment led to an increase in the proportion of 
+actin associated with the cytoskeleton.  Jasplakinolide treated 
+cells were still motile, however their rate of movement was less 
+than that of untreated cells.  Cytochalasin B and nocodazole had 
+inhibitory effects on aggregate formation, while azide blocked 
+the process completely.  We hypothesize that aggregates are formed 
+from the cortical flow of F-actin filaments.  These filaments would 
+normally be depolymerized, but are artificially stabilized by 
+phalloidin or jasplakinolide binding.  The localization of the 
+aggregate is likely to be an indication of the direction of cortical 
+flow. 
+
+-------------------------------------------------------------------------
+
+A Role for Dictyostelium racE in Cortical Tension and Cleavage 
+Furrow Progression
+
+Noel Gerald(1), Jianwu Dai(1), H. Ping Ting-Beall(2) and Arturo De Lozanne(1*)
+
+1Department of Cell Biology, box 3709, Duke University Medical Center
+Durham, NC 27710
+
+2Department of Mechanical Engineering and Materials Science
+Duke University, Durham, NC 27708
+
+*To whom correspondence should be addressed: phone (919) 681-6851
+fax (919) 681-7978, email: a.delozanne@cellbio.duke.edu
+
+J. Cell Biol., in press.
+
+ABSTRACT
+   The small GTPase racE is essential for cytokinesis in Dictyostelium.  
+We found that this requirement is restricted to cells grown in 
+suspension.  When attached to a substrate, racE null cells form 
+an actomyosin contractile ring and complete cytokinesis normally.  
+Nonetheless, racE null cells fail completely in cytokinesis when in 
+suspension.  To understand this conditional requirement for racE, 
+we developed a method to observe cytokinesis in suspension.  Using 
+this approach we found that racE null cells attempt cytokinesis in 
+suspension by forming a contractile ring and cleavage furrow.  However, 
+the cells form multiple blebs and fail in cytokinesis by regression 
+of the cleavage furrow.  We believe this phenotype is caused by the 
+extremely low level of cortical tension found in racE null cells 
+compared to wild-type cells.  The reduced cortical tension of racE 
+null cells is not caused by a decrease in their content of F-actin.  
+Instead, mitotic racE null cells contain abnormal F-actin aggregates.  
+These results suggest that racE is essential for the organization of 
+the cortical cytoskeleton to maintain proper cortical integrity.  This 
+function of racE is independent of attachment to a substrate but can 
+be bypassed by other signaling pathways induced by adhesion to a 
+substrate.  
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 6]
+

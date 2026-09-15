@@ -1,0 +1,131 @@
+Dicty News
+Electronic Edition
+Volume 23, number 17
+November 19, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Actin-activation of myosin heavy chain kinase A in Dictyostelium: A
+biochemical mechanism for the spatial regulation of myosin II filament
+disassembly 
+
+Thomas T. Egelhoff, Daniel Croft, and Paul A. Steimle 
+
+Department of Biology, University of North Carolina at Greensboro,
+Greensboro, NC 27402 
+
+Corresponding Author: Paul Steimle (p_steiml@uncg.edu)
+
+
+Journal of Biological Chemistry
+Published online ahead of print November 14, 2004
+10.1074/jbc.M410803200
+
+Studies in Dictyostelium discoideum have established that the cycle of
+myosin II bipolar filament assembly and disassembly controls the temporal
+and spatial localization of myosin II during critical cellular processes,
+such as cytokinesis and cell locomotion. Myosin heavy chain kinase A (MHCK A)
+is a key enzyme regulating myosin II filament disassembly through myosin
+heavy chain phosphorylation in Dictyostelium. Under various cellular
+conditions, MHCK A is recruited to actin-rich cortical sites and is
+preferentially enriched at sites of pseudopod formation; and thus is
+proposed to play a role in regulating localized disassembly of myosin II
+filaments in the cell. MHCK A possesses an aminoterminal coiled-coil domain
+that participates in the oligomerization, cellular localization, and actin
+binding activities of the kinase. In the current study, we show that the
+interaction between the coiled-coil domain of MHCK A and filamentous-actin
+leads to an approximately 40-fold increase in the initial rate of kinase
+catalytic activity. Actin-mediated activation of MHCK A involves increased
+rates of kinase autophosphorylation and requires the presence of the
+coiled-coil domain. Structure-function analyses revealed that the
+coiled-coil domain alone binds to actin filaments (apparent KD= 0.9 uM)
+thus mediates the direct interaction with F-actin required for MHCK A
+activation. Collectively, these results indicate that MHCK A recruitment
+to actin-rich sites could lead to localized activation of the kinase via
+direct interaction with actin filaments; and thus may represent an
+important mechanism by which the cell achieves localized disassembly of
+myosin II filaments required for specific changes in cell shape.
+
+ 
+Submitted by:  Paul Steimle [p_steiml@uncg.edu]
+
+-----------------------------------------------------------------------------
+
+
+A cost to chimerism in Dictyostelium discoideum on natural substrates
+
+David I. Castillo, Ghislaine T. Switz, Kevin R. Foster, David C. Queller,
+Joan E. Strassmann
+
+
+Evolutionary Ecology Research
+
+Most multicellular organisms go through a single cell bottleneck in
+development, a process that ensures subsequent clonality of the cells within
+the individual.  Selection for clonality among cells could reduce costly
+intra-organismal conflicts that would occur in mixtures of unrelated cells
+(chimeras).  In Dictyostelium discoideum, the usually solitary amoebae
+aggregate with nearby cells when starving to form a motile, multicellular
+slug that may be clonal or chimeric.  This slug migrates to the soil surface
+and forms a ball of spores held aloft by a stalk of dead cells.  Previous
+work on D. discoideum has shown that uniclonal slugs migrate further than
+chimeric slugs of the same size across agar, indicating a functional cost
+to chimerism.  Here we test whether this cost to chimerism results in a
+fitness cost under more natural conditions.  First, we examine migration of
+slugs across decaying leaves or soil.  Second, we examine migration up
+through layers of these substrates, which most closely reflects the natural
+migration of D. discoideum slugs to the soil surface.  In most trials,
+chimeras performed worse than single clones.  Our results indicate that 
+chimerism in D. discoideum has a real fitness cost in the wild, likely to
+be compensated only by the larger size chimeras can attain in nature.
+
+
+Submitted by: David I. Castillo [Navais@rice.edu]
+
+-----------------------------------------------------------------------------
+
+
+A mitotic kinesin-like protein required for normal karyokinesis, myosin
+localization to the furrow, and cytokinesis in Dictyostelium 
+
+Gandikota S. Lakshmikanth, Hans M. Warrick, and James A. Spudich * 
+Department of Biochemistry, Stanford University School of Medicine,
+Stanford, CA 94305
+
+Published online before print November 16, 2004
+Proc. Natl. Acad. Sci. USA, 10.1073/pnas.0407304101
+OPEN ACCESS ARTICLE
+
+
+Dictyostelium mitotic kinesin Kif12 is required for cytokinesis. Myosin II
+localization to the cleavage furrow is severely depressed in Kif12-null
+(dkif12) cells, which accounts in part for the cytokinesis failure. Myosin
+II-null cells, however, undergo mitosis-coupled cytokinesis when adhering
+to a surface, whereas the dkif12 cells cannot. During mitosis, the rate of
+change of internuclear separation in dkif12 cells is reduced compared with
+wild-type cells, indicating multiple roles of this molecular motor during
+mitosis and cytokinesis. GFP-Kif12, which rescues wild-type behavior when
+expressed in the dkif12 strain, is concentrated in the nucleus in interphase
+cells, translocates to the cytoplasm at the onset of mitosis, appears in the
+centrosomes and spindle, and later is concentrated in the spindle midbody.
+Given these results, we hypothesize a mechanism for myosin II translocation
+to the furrow to set up the contractile ring.
+
+
+Submitted by: Lakshmikanth gandikota [lakshmi@pmgm2.stanford.edu]
+
+==============================================================================
+[End Dicty News, volume 23, number 17] 

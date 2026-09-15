@@ -1,0 +1,139 @@
+dictyNews
+Electronic Edition
+Volume 33, number 15
+December 4, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Tug-of-war between Dissimilar Teams of Microtubule Motors Regulates 
+Transport and Fission of Endosomes
+
+Soppina V, Rai AK, Ramaiya AJ, Barak P, Mallik R.
+
+
+Proceedings of the National Academy of Sciences,106, 19381 (2009)
+
+Intracellular transport is interspersed with frequent reversals in direction 
+due to the presence of opposing kinesin and dynein motors on organelles 
+that are carried as cargo. The cause and the mechanism of reversals are 
+unknown, but are a key to understanding how cargos are delivered in a 
+regulated manner to specific cellular locations. Unlike established 
+single-motor biophysical assays,this problem requires understanding of 
+the cooperative behavior of multiple interacting motors. 
+
+Here we present measurements inside live Dictyostelium cells, in a cell 
+extract and with purified motors to quantify such an ensemble function of 
+motors. We show through precise motion analysis that reversals during 
+endosome motion are caused by a tug-of-war between kinesin and dynein. 
+Further, we use a combination of optical trap-based force measurements 
+and Monte Carlo simulations to make the surprising discovery that 
+endosome transport uses many (approximately four to eight) weak and
+detachment-prone dyneins in a tug-of-war against a single strong and 
+tenacious kinesin. We elucidate how this clever choice of dissimilar 
+motors and motor teams achieves net transport together with endosome 
+fission, both of which are important in controlling the balance of endocytic 
+sorting. To the best of our knowledge, this is a unique demonstration that 
+dynein and kinesin function differently at the molecular level inside cells 
+and of how this difference is used in a specific cellular process, namely 
+endosome biogenesis. Our work may provide a platform to understand 
+intracellular transport of a variety of organelles in terms of measurable 
+quantities.
+
+
+Submitted by Roop Mallik [roop@tifr.res.in]
+--------------------------------------------------------------------------------
+
+
+Myosin II Is Essential for the Spatiotemporal Organization of Traction 
+Forces during Cell Motility
+
+Ruedi Meili(1),* Baldomero Alonso-Latorre (1)+, Juan C. del Álamo+, 
+Richard A. Firtel(2),* and Juan C. Lasheras(2)+
+
+*Section of Cell and Developmental Biology, Division of Biological Sciences, 
++Department of Mechanical and Aerospace Engineering, and ||Department 
+of Bioengineering, University of California, San Diego, La Jolla, CA 92093
+1- co-first authors
+2- co-senior authors
+
+
+Mol Bio Cell, in press
+
+Amoeboid motility requires spatiotemporal coordination of biochemical 
+pathways regulating force generation and consists of the quasi-periodic 
+repetition of a motility cycle driven by actin polymerization and actomyosin 
+contraction. Using new analytical tools and statistical methods, we provide, 
+for the first time, a statistically-significant quantification of the spatial 
+distribution of the traction forces generated at each phase of the cycle 
+(protrusion-contraction-retraction-relaxation). We show that cells are 
+constantly under tensional stress and that wild-type cells develop two 
+opposing "pole" forces pulling the front and back toward the center whose 
+strength is modulated up and down periodically in each cycle. We 
+demonstrate that MyoII cross-linking and motor functions have different 
+roles in controlling the spatiotemporal distribution of traction forces, the 
+changes in cell shape, and the duration of all the phases. We show that 
+the time required to complete each phase is dramatically increased in 
+cells with altered MyoII-motor-function, demonstrating that it is required 
+not only for contraction but also for protrusion. Concomitant loss of 
+MyoII-actin-cross-linking leads to a force redistribution throughout the cell 
+perimeter pulling inwards toward the center. However, it does not reduce 
+significantly the magnitude of the traction forces, uncovering a 
+nonMyoII-mediated mechanism for the contractility of the cell.
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+The WD-Repeat Domain of Dictyostelium Myosin Heavy Chain Kinase C 
+Functions in Both Substrate Targeting and Cellular Localization
+
+Atiya Franklin, Linzi Hyatt, Alyssa Chowdhury, Paul A. Steimle
+
+
+J Eukaryotic Cell, in press
+
+In nonmuscle cells, contraction-dependent processes such as cytokinesis 
+and cell migration rely on the proper assembly and localization of myosin II 
+bipolar filaments; however, the signalling pathways regulating these 
+processes are poorly understood.  Studies in Dictyostelium discoideum, 
+and recently in mammalian cells, have demonstrated that myosin II 
+filament disassembly is driven by phosphorylation of the tail¡region of 
+the myosin II heavy chain (MHC), preventing myosin-mediated contraction.  
+In Dictyostelium, MHC phosphorylation is catalyzed by three MHC kinases 
+(MHCK-A, -B, and -C) that share homologous alpha-kinase and WD-repeat 
+domains. As a means of understanding how each of the MHCKs functions 
+in the cell, we have focused our studies on the structure-function 
+relationships defining the activity of MHCK-C.  Our cellular and biochemical 
+studies revealed that the WD-repeat domain of MHCK-C is required for 
+targeting of the kinase to phosphorylate MHC.  Localization studies 
+demonstrated that MHCK-C translocation to the cell cortex occurs in the 
+presence of chemoattractant, with a timing that lags behind myosin II 
+cortical enrichment.  We also show that the MHCK-C WD-repeat domain 
+is unique among its MHCK-A and MHCK-B counterparts since it is both 
+necessary and sufficient for proper localization of MHCK-C in the cell.  
+The posterior localization of this domain in chemotaxing cells occurs with 
+a periodicity similar to that exhibited by myosin II.  The unique functions 
+that we have identified for the MHCK-C WD-repeat domain allow for the 
+possibility that the seemingly redundant MHCKs in Dictyostelium could 
+be regulated by a single signal but to perform distinct roles in regulating 
+myosin II activity in the cell.
+
+
+Submitted by Paul Steimle [p_steiml@uncg.edu]
+==============================================================
+[End dictyNews, volume 33, number 15]

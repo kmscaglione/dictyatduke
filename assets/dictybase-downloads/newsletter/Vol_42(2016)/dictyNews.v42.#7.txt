@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 42, number 7
+March 4, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Lysosomes appear as the auto-fluorescent vacuoles in Dictyostelium 
+discoideum cells
+
+Hiroki Kainuma*, Yuya Saito*, Ikuo Hatakeyama, Takako A. Omata and 
+Saburo Uchiyama**
+
+HK, IH, SU: Laboratory of Biology, Course of Science Education, 
+Graduate School of Education, Iwate University, Ueda 3-18-33, 
+Morioka 020-8550, Japan
+YS:Laboratory of Biology, Division of Science Education,Faculty of 
+Education, Iwate University, Morioka, Japan
+TAO: Clinical Laboratory, University Hospital, Dokkyo Medical 
+University, Mibu, Tochigi, Japan
+
+
+Pteridines, accepted
+
+Dictyostelium discoideum cells contain autofluorescent
+vacuoles. To determine the identity of these vacuoles, t
+he fluorescent dye 4-nitro-7-(1-piperazinyl)-2,1,3-
+benzoxadiazole (NBD-PZ) was used to stain the lysosomes
+in D. discoideum cells. Neither the auto-fluorescent
+vacuoles nor lysosomes were observed in D. discoideum
+cells immediately after they arose from spores or in 
+stationary phase cells. However, both the auto-fluorescent
+vacuoles and lysosomes were visible in cells that had
+entered growth phase. Auto-fluorescent vacuoles and
+lysosomes were also observed in stationary phase cells
+incubated with chloroquine. When the cells were allowed
+to phagocytose BioParticles Fluorescent Bacteria (orange
+fluorescence) for 1 h, orange phagosomes and blue auto- 
+fluorescent vacuoles were observed as independent moieties. 
+However, after an additional 2 h of incubation, we
+observed vacuoles with mixed fluorescence (orange and
+blue) in the cells, suggestive of secondary lysosomes.
+These results suggest that the auto-fluorescent vacuoles
+in D. discoideum cells are lysosomes.
+
+
+submitted by: Saburo Uchiyama [uchiyama@iwate-u.ac.jp]
+———————————————————————————————————————
+
+
+Social amoebae trap and kill bacteria by casting DNA nets
+
+Xuezhi Zhang, Olga Zhuchenko, Adam Kuspa, and Thierry Soldati
+
+
+Nature Communications, 2016 Mar 1;7:10938. doi: 10.1038/ncomms10938
+
+Extracellular traps (ETs) from neutrophils are reticulated nets of 
+DNA decorated with antimicrobial granules, and are capable of 
+trapping and killing extracellular pathogens. Various phagocytes 
+of mammals and invertebrates produce ETs, however, the evolutionary 
+history of this DNA-based host defence strategy is unclear. Here 
+we report for the first time that Sentinel cells of the multicellular 
+slug stage of the social amoeba Dictyostelium discoideum produce ETs 
+upon stimulation with bacteria or lipopolysaccharide in a reactive 
+oxygen species-dependent manner. The production of ETs by Sentinel 
+cells requires a Toll/Interleukin-1 receptor domain-containing 
+protein TirA and reactive oxygen species-generating NADPH oxidases. 
+Disruption of these genes results in decreased clearance of bacterial 
+infections. Our results demonstrate that D. discoideum is a powerful 
+model organism to study the evolution and conservation of mechanisms 
+of cell-intrinsic immunity, and suggest that the origin of DNA-based 
+ETs as an innate immune defence predates the emergence of metazoans.
+
+
+submitted by: Thierry Soldati [thierry.soldati@unige.ch]
+==============================================================
+[End dictyNews, volume 42, number 7]

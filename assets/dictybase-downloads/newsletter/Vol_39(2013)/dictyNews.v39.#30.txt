@@ -1,0 +1,137 @@
+dictyNews
+Electronic Edition
+Volume 39, number 30
+October 25, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium, a microbial model for brain disease
+
+S.J. Annesley, S. Chen, L.M. Francione, O. Sanislav, A.J. Chavan, 
+C. Farah, S.W. De Piazza, C.L. Storey, J. Ilievska, S.G. Fernando, 
+P.K. Smith, S.T. Lay , P.R. Fisher*
+
+
+Biochimica et Biophysica Acta - General Subjects, in press.
+
+Background
+Most neurodegenerative diseases are associated with mitochondrial 
+dysfunction. In humans mutations in mitochondrial genes result in a 
+range of phenotypic outcomes which do not correlate well with the 
+underlying genetic cause. Other neurodegenerative diseases are caused 
+by mutations that affect the function and trafficking of lysosomes, 
+endosomes and autophagosomes. Many of the complexities of these 
+human diseases can be avoided by studying them in the simple 
+eukaryotic model Dictyostelium discoideum.
+
+Scope of Review
+This review describes research using Dictyostelium to study 
+cytopathological pathways underlying a variety of neurodegenerative 
+diseases including mitochondrial, lysosomal and vesicle trafficking 
+disorders.
+
+Major Conclusions
+Generalized mitochondrial respiratory deficiencies in Dictyostelium 
+produce a consistent pattern of defective phenotypes that are caused 
+by chronic activation of a cellular energy sensor AMPK (AMP-activated 
+protein kinase) and not ATP deficiency per se. Surprisingly, when 
+individual subunits of Complex I are knocked out, both AMPK-dependent 
+and AMPK-independent, subunit-specific phenotypes are observed. 
+Many nonmitochondrial proteins associated with neurological disorders 
+have homologues in Dictyostelium and are associated with the function 
+and trafficking of lysosomes and endosomes. Conversely, some genes 
+associated with neurodegenerative disorders do not have homologues 
+in Dictyostelium and this provides a unique avenue for studying these 
+mutated proteins in the absence of endogeneous protein.
+
+General Significance
+Using the Dictyostelium model we have gained insights into the sublethal 
+cytopathological pathways whose dysregulation contributes to phenotypic 
+outcomes in neurodegenerative disease. This work is beginning to 
+distinguish correlation, cause and effect in the complex network of cross 
+talk between the various organelles involved.
+
+
+Submitted by Paul Fisher [P.Fisher@latrobe.edu.au]
+---------------------------------------------------------------------------
+
+
+Two Distinct Sensing Pathways Allow Recognition of Klebsiella 
+pneumoniae by Dictyostelium Amoebae.
+
+Lima WC, Balestrino D, Forestier C, Cosson P.
+
+
+Cell Microbiol. 2013 Oct 15. [Epub ahead of print]
+
+Recognition of bacteria by metazoans is mediated by receptors that 
+recognize different types of microorganisms and elicit specific cellular 
+responses. The soil amoebae Dictyostelium discoideum feeds upon a 
+variable mixture of environmental bacteria, and it is expected to recognize 
+and adapt to various food sources. To date, however, no bacteria-sensing 
+mechanisms have been described. In this study, we isolated a 
+Dictyostelium mutant (fspA KO) unable to grow in the presence of non-
+capsulated Klebsiella pneumoniae bacteria, but growing as efficiently as 
+wild-type cells in the presence of other bacteria, such as Bacillus subtilis. 
+FspA KO cells were also unable to respond to K. pneumoniae and more 
+specifically to bacterially secreted folate in a chemokinetic assay, while 
+they responded readily to B. subtilis. Remarkably, both WT and fspA KO 
+cells were able to grow in the presence of capsulated LM21 K. pneumoniae, 
+and responded to purified capsule, indicating that capsule recognition may 
+represent an alternative, FspA-independent mechanism for K. pneumoniae 
+sensing. When LM21 capsule synthesis genes were deleted, growth and 
+chemokinetic response were lost for fspA KO cells, but not for WT cells. 
+Altogether, these results indicate that Dictyostelium amoebae use specific 
+recognition mechanisms to respond to different K. pneumoniae elements.
+
+
+Submitted by Wanessa de Lima [wanessa.delima@unige.ch]
+---------------------------------------------------------------------------
+
+
+The cyclic AMP phosphodiesterase RegA critically regulates encystation 
+in social and pathogenic amoebas
+
+Qingyou Du, Christina Schilde, Elin Birgersson, Zhi-hui Chen, 
+Stuart McElroy and Pauline Schaap
+
+
+Cellular Signalling, in press
+
+Amoebas survive environmental stress by differentiating into encapsulated 
+cysts. As cysts pathogenic amoebas resist antibiotic treatment, which 
+particularly counteracts treatment of vision-destroying Acanthamoeba keratitis. 
+Limited genetic tractability of amoeba pathogens has left their encystation 
+mechanisms unexplored. The social amoeba Dictyostelium discoideum forms 
+spores in multicellular fruiting bodies to survive starvation, while other 
+dictyostelids, such as Polysphondylium pallidum can additionally encyst as 
+single cells. Sporulation is induced by cAMP acting on PKA with the cAMP 
+phosphodiesterase RegA critically regulating cAMP levels. We show here that 
+RegA is deeply conserved in social and pathogenic amoebas and that deletion 
+of the RegA gene in P. pallidum causes precocious encystation and prevents 
+cyst germination. We  heterologously expressed and characterized 
+Acanthamoeba RegA and performed a compound screen to identify RegA 
+inhibitors. Two effective inhibitors increased cAMP levels and triggered 
+Acanthamoeba encystation. Our results show that RegA critically regulates 
+amoebozoan encystation and that components of the cAMP signalling pathway 
+could be effective targets for therapeutic intervention with encystation.
+
+
+Submitted by Christina Schilde [c.schilde@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 30]

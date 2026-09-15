@@ -1,0 +1,140 @@
+dictyNews
+Electronic Edition
+Volume 27, number 12
+October 13, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+A Phg2-Adrm1 pathway participates in the nutrient-controlled developmental 
+response in Dictyostelium. 
+
+Cherix, N., Froquet, R., Charette, S.J., Blanc, C., Letourneur, F., 
+Cosson, P. 
+
+
+Mol. Biol. Cell In press
+
+ictyostelium amoebae grow as single cells but upon starvation they initiate 
+multicellular development. Phg2 was characterized previously as a kinase 
+controlling cellular adhesion and the organization of the actin 
+cytoskeleton. Here we report that Phg2 also plays a role during the 
+transition between growth and multicellular development, as evidenced by 
+the fact that phg2 mutant cells can initiate development even in the 
+presence of nutrients. Even at low cell density and in rich medium, phg2 
+mutant cells express discoidin, one of the earliest pre-developmental 
+markers. Complementation studies indicate that, in addition to the kinase 
+domain, the core region of Phg2 is involved in the initiation of 
+development. In this region, a small domain contiguous with a previously 
+described ras-binding domain, was found to interact with the Dictyostelium 
+ortholog of the mammalian adhesion-regulating molecule (ADRM1). In addition,
+adrm1 knockout cells also exhibit abnormal initiation of development. These 
+results suggest that a Phg2-Adrm1 signaling pathway is involved in the 
+control of the transition from growth to differentiation in Dictyostelium. 
+Phg2 thus plays a dual role in the control of cellular adhesion and 
+initiation of development.
+
+
+Submitted by: Pierre Cosson [Pierre.Cosson@medecine.unige.ch]
+-----------------------------------------------------------------------------
+
+
+Molecular systematics of Dictyostelids: 5.8S rDNA and internal transcribed 
+spacer region analyses.
+
+Maria Romeralo, Ricardo Escalante, Leandro Sastre and Carlos Lado 
+
+
+Eukaryotic Cell, in press
+
+The variability and adaptability of the amoeba from the class 
+Dictyosteliomycetes greatly complicate their systematics. The nucleotide 
+sequences of the Ribosomal Internal Transcribed Spacers (ITS) and the 
+5.8 S rDNA gene has been determined for twenty eight isolates and shown 
+their utility to discriminate between different species and genera. 
+
+
+Submitted by: Leandro Sastre [lsastre@iib.uam.es]
+-----------------------------------------------------------------------------
+
+
+Genetic evidence that the Acyl-CoA binding protein AcbA and the serine 
+protease/ABC transporter TagA function together in Dictyostelium discoideum 
+cell differentiation
+
+Matthew Cabral1,2, Christophe Anjard3, William F. Loomis3, and Adam Kuspa1,2
+
+1Departments of Molecular and Human Genetics, 2Biochemistry and Molecular 
+Biology, Baylor College of Medicine, Houston, Texas, USA, 77030. 3 Center 
+for Molecular Genetics, Division of Biological Sciences, University of 
+California San Diego, La Jolla, CA 92093.
+
+
+Eukaryotic Cell, in press
+
+The acyl-CoA binding protein AcbA is cleaved to form a peptide (SDF-2) that
+coordinates spore encapsulation during the morphogenesis of Dictyostelium 
+fruiting bodies.  We present genetic evidence that the misspecification of 
+cell types seen in mutants of the serine protease/ABC transporter TagA 
+results from the loss of normal interactions with AcbA.  Developmental 
+phenotypes resulting from aberrant expression of the TagA protease domain, 
+such as the formation of supernumerary tips on aggregates and the 
+production of excess prestalk cells, are suppressed by null mutations in 
+the acbA gene.  Phenotypes resulting from the deletion of tagA, such as 
+over-expresssion of the prestalk gene ecmB and the mis-expression of the 
+prespore gene cotB in stalk cells, are also observed in acbA mutants.  
+Moreover, tagA- mutants fail to produce SDF-2 during fruiting body 
+morphogenesis, but are able to do so if they are stimulated with exogenous 
+SDF-2.  These results indicate that the developmental program depends on 
+TagA and AcbA working in concert with each other during cell type 
+differentiation and suggest that TagA is required for normal SDF-2 
+signaling during spore encapsulation.
+
+
+Submitted by: Adam Kuspa [akuspa@bcm.tmc.edu]
+-----------------------------------------------------------------------------
+
+
+The monomeric clathrin assembly protein, AP180, regulates contractile 
+vacuole size in Dictyostelium discoideum
+
+Irene Stavrou and Theresa J. O'Halloran 
+
+University of Texas, Austin
+
+
+Mol. Biol. Cell In press
+
+AP180, one of many assembly proteins and adaptors for clathrin, stimulates 
+the assembly of clathrin lattices on membranes, but its unique contribution 
+to clathrin function remains elusive.  In this study we identified the 
+Dictyostelium discoideum ortholog of the adaptor protein AP180 and 
+characterized a mutant strain carrying a deletion in this gene. Imaging 
+GFP-labeled AP180 showed that it localized to punctae at the plasma 
+membrane, the contractile vacuole and cytoplasm and associated with 
+clathrin. AP180 null cells did not display defects characteristic of 
+clathrin mutants, and continued to localize clathrin punctae on their 
+plasma membrane and within the cytoplasm. However, like clathrin mutants, 
+AP180 mutants, were osmosensitive.  When immersed in water, AP180 null 
+cells formed abnormally large contractile vacuoles. Furthermore, the cycle 
+of expansion and contraction for contractile vacuoles in AP80 null cells 
+was twice as long as that of wild type cells. Taken together, our results 
+suggest that AP180 plays a unique role as a regulator of contractile 
+vacuole morphology and activity in Dictyostelium.
+
+
+Submitted by: Terry O'Halloran [t.ohalloran@mail.utexas.edu]
+==============================================================================
+[End dictyNews, volume 27, number 12] 

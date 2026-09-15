@@ -1,0 +1,99 @@
+Dicty News
+Electronic Edition
+Volume 23, number 7
+August 20, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+A database search for double-strand containing RNAs in Dictyostelium
+discoideum 
+Stefan Gräf1, Branimira E. Borisova2, Wolfgang Nellen3, Gerhard Steger1,
+Christian Hammann2
+
+Biological Chemistry, in press
+
+1Institut für Physikalische Biologie, Heinrich-Heine-Universität, 40225
+Düsseldorf, Germany
+2Department of Genetics, AG Molecular Interactions, Universität Kassel,
+34132 Kassel, Germany 
+3Department of Genetics, Universität Kassel
+
+Corresponding author:
+Christian Hammann, Department of Genetics, AG Molecular Interactions
+
+In eukaryotic cells, double-stranded RNA is degraded to 21mers and triggers
+RNA interference. Using a pattern description language, we have searched the
+EMBL database for sequences with the potential to form double strands in cis
+in Dictyostelium discoideum. No extended inverted repeats were found in
+mRNAs. However, the antisense direction of some mRNAs encoding regulatory or
+developmentally regulated proteins, showed the ability to form double
+stranded regions. In EST archives, we find potential double strands derived
+from a few genes but these transcripts are not continuously encoded in the
+genome. Most likely, they represent hybrid molecules of sense and antisense
+RNAs. 
+
+
+
+Submitted by: Wolfgang Nellen [nellen@uni-kassel.de]
+
+-----------------------------------------------------------------------------
+
+
+Novel non-coding RNAs in Dictyostelium discoideum and their expression during
+development.
+ 
+Anders Aspegren1,2,4, Andrea Hinas1,2, Pontus Larsson3, Anders Larsson3, and
+Fredrik Söderbom1,*
+ 
+1Department of Molecular Biology, Biomedical Center, Swedish University of
+Agricultural Sciences, Box 590, S-75124 Uppsala, Sweden, 3Institute of Cell
+and Molecular Biology, Biomedical Center, Uppsala University, Box 596,
+S-75124 Uppsala, Sweden. 4Present address: AstraZeneca, R&D, Department of
+Molecular Pharmacology, Pepparedsleden 1, S-431 83 Mölndal, Sweden
+ 
+ 
+2 The authors wish it to be known that, in their opinion, the first two
+authors should be regarded as joint First Authors.
+ 
+Nucleic Acids Research, In Press
+ 
+The last few years‚ quest for non-coding RNAs (ncRNAs) has revealed a
+surprisingly large number of small RNAs belonging to previously known as
+well as entirely novel classes. Computational and experimental approaches
+have uncovered new ncRNAs in all kingdoms of life. In this work we used a
+shot-gun cloning approach to construct full-length cDNA libraries of small
+RNAs from the eukaryotic model organism Dictyostelium discoideum.
+Interestingly, two entirely novel classes of RNAs were identified of which
+one is developmentally regulated. The RNAs within each class share conserved
+5‚ and 3‚ termini that potentially can form stem-structures. RNAs of both
+classes show predominantly cytoplasmic localization. In addition, based on
+conserved structure and/or sequence motifs, several of the identified ncRNAs
+could be divided into classes known from other organisms, e.g. 18 small
+nucleolar RNA (snoRNA) candidates (17 box C/D, of which a few are
+developmentally regulated, and one box H/ACA). Two ncRNAs showed high degree
+of similarity to the small nuclear U2 RNA and SRP RNA, respectively.
+Furthermore, the majority of the regions upstream of the sequences encoding
+the isolated RNAs share conserved motifs that may constitute new promoter
+elements.
+
+
+
+Submitted by: Fredrik Söderbom <fredde@xray.bmc.uu.se]
+
+==============================================================================
+[End Dicty News, volume 23, number 7]

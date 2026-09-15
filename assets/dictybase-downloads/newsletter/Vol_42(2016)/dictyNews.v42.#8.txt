@@ -1,0 +1,104 @@
+dictyNews
+Electronic Edition
+Volume 42, number 8
+March 11, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The inositol-3-phosphate synthase biosynthetic enzyme has 
+distinct catalytic and metabolic roles
+
+Anna D. Freja, Jonathan Clarkb, Caroline Le Royc, Sergio Lillad, 
+Peter Thomasond, Grant P. Ottoa, Grant Churchill5, Robert Insalld,  
+Sandrine P. Clausc, Phillip Hawkinsb, Len Stephensb and 
+Robin S.B. Williamsa#
+
+Centre for Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham, Surrey, UK
+a; The Babraham Institute, Cambridge, Cambridgeshire, UK
+b; Department of Food and Nutritional Sciences, The University of 
+Reading, Reading, Berkshire, UK
+c. CRUK Beatson Institute for Cancer Research, Glasgow, UK
+d. Department of Pharmacology, University of Oxford, Oxford, 
+Oxfordshire, UK5
+
+
+Molecular and Cellular Biology, in press
+
+Inositol levels, maintained by the biosynthetic enzyme inositol-3-
+phosphate synthase (Ino1), are altered in a range of disorders 
+including bipolar disorder and Alzheimer’s disease. To date, most 
+inositol studies have focused on the molecular and cellular effects 
+of inositol depletion without considering Ino1 levels. Here we 
+employ a simple eukaryote, Dictyostelium, to demonstrate distinct 
+effects of loss of Ino1 and inositol depletion. We show that loss 
+of Ino1 results in inositol auxotrophy that can only be partially 
+rescued by exogenous inositol. Removal of inositol supplementation 
+from the ino1- mutant results in a rapid 56% reduction in inositol 
+levels, triggering the induction of autophagy, reduced cytokinesis 
+and substrate adhesion. Inositol depletion also caused a dramatic 
+generalised decrease in phosphoinositide levels that was rescued by 
+inositol supplementation. However, loss of Ino1 triggered broad 
+metabolic changes consistent with the induction of a catabolic state 
+that was not rescued by inositol supplementation. These data suggest 
+a metabolic role for Ino1 independent of inositol biosynthesis. To 
+characterise this role, an Ino1 binding partner containing SEL1L1 
+domains (Q54IX5) was identified with homology to mammalian 
+macromolecular complex adaptor proteins. Our findings therefore 
+identify a new role for Ino1, independent of inositol biosynthesis, 
+with broad effects on cell metabolism.
+
+
+submitted by: Robin Williams [robin.williams@rhul.ac.uk]
+———————————————————————————————————————
+
+
+Non-Catalytic Roles of Presenilin throughout evolution
+
+Grant P. Otto, Devdutt Sharma and Robin S.B. Williams*
+
+Centre for Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham, TW20 0EX, UK
+
+
+Journal of Alzheimer's Disease 
+
+Research into Alzheimer’s disease pathology and treatment has 
+often focused on presenilin proteins. These proteins provide 
+the key catalytic activity of the gamma-secretase complex in 
+the cleavage of amyloid precursor protein and resultant amyloid 
+tangle deposition. Over the last 25 years, screening novel drugs 
+to control this aberrant proteolytic activity has yet to identify 
+effective treatments for the disease. In the search for other 
+mechanisms of presenilin pathology, several studies have 
+demonstrated that mammalian presenilin proteins also act in a 
+non-proteolytic role as a scaffold to co-localise key signalling 
+proteins. This role is likely to represent an ancestral presenilin 
+function, as it has been described in genetically distant species 
+including non-mammalian animals, plants and a simple eukaryotic 
+amoeba Dictyostelium that diverged from the human lineage over a 
+billion years ago. Here, we review the non-catalytic scaffold role 
+of presenilin, from mammalian models to other biomedical models, 
+and include recent insights using Dictyostelium, to suggest that 
+this role may provide an early evolutionary function of presenilin 
+proteins.
+
+
+submitted by: Robin Williams [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 8]

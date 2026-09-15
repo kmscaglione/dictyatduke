@@ -1,0 +1,85 @@
+dictyNews
+Electronic Edition
+Volume 39, number 6
+March 1, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+A Dictyostelium secreted factor requires a PTEN-like phosphatase 
+to slow proliferation and induce chemorepulsion
+
+Sarah E. Herlihy, Yitai Tang, and Richard H. Gomer
+
+
+PLoS ONE, in press
+
+In Dictyostelium discoideum, AprA and CfaD are secreted proteins 
+that inhibit cell proliferation. We found that the proliferation of cells 
+lacking CnrN, a phosphatase and tensin homolog (PTEN)-like 
+phosphatase, is not inhibited by exogenous AprA and is increased 
+by exogenous CfaD. The expression of CnrN in cnrNø cells partially 
+rescues these altered sensitivities, suggesting that CnrN is necessary 
+for the ability of AprA and CfaD to inhibit proliferation. Cells lacking 
+CnrN accumulate normal levels of AprA and CfaD. Like cells lacking 
+AprA and CfaD, cnrNø cells proliferate faster and reach a higher 
+maximum cell density than wild type cells, tend to be multinucleate, 
+accumulate normal levels of mass and protein per nucleus, and form 
+less viable spores. When cnrNø cells expressing myc-tagged CnrN 
+are stimulated with a mixture of rAprA and rCfaD, levels of 
+membrane-associated myc-CnrN increase. AprA also causes 
+chemorepulsion of Dictyostelium cells, and CnrN is required for this 
+process. Combined, these results suggest that CnrN functions in a 
+signal transduction pathway downstream of AprA and CfaD 
+mediating some, but not all, of the effects of AprA and CfaD.
+
+
+Submitted by Richard Gomer [rgomer@tamu.edu]
+---------------------------------------------------------------------------
+
+
+The green tea catechin epigallocatechin gallate (EGCG) blocks cell 
+motility, chemotaxis and development in Dictyostelium discoideum
+
+Kyle J McQuade, Akihiko Nakajima, April N Ilacqua, Nao Shimada 
+and Satoshi Sawai
+
+
+PLOS ONE, in press
+
+Catechins, flavanols found at high levels in green tea, have received 
+significant attention due to their potential health benefits related to 
+cancer, autoimmunity and metabolic disease, but little is known about 
+the mechanisms by which these compounds affect cellular behavior. 
+Here, we assess whether the model organism Dictyostelium discoideum 
+is a useful tool with which to characterize the effects of catechins. 
+Epigallocatechin gallate (EGCG), the most abundant and potent 
+catechin in green tea, has significant effects on the Dictyostelium life 
+cycle. In the presence of EGCG aggregation is delayed, cells do not 
+stream and development is typically stalled at the loose aggregate 
+stage. The developmental effects very likely result from defects in 
+motility, as EGCG reduces both random movement and chemotaxis of 
+Dictyostelium amoebae. These results suggest that catechins and 
+their derivatives may be useful tools with which to better understand 
+cell motility and development in Dictyostelium and that this organism 
+is a useful model to further characterize the activities of catechins.
+ 
+ 
+Submitted by Kyle McQuade [kmcquade@coloradomesa.edu]
+==============================================================
+[End dictyNews, volume 39, number 6]

@@ -1,0 +1,141 @@
+dictyNews
+Electronic Edition
+Volume 27, number 4
+August 11, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Thirteen is enough: the myosins of Dictyostelium discoideum and their light 
+chains
+
+Martin Kollmar
+
+
+BMC Genomics 2006, 7:183
+http://www.biomedcentral.com/1471-2164/7/183
+
+Background
+Dictyostelium discoideum is one of the most famous model organisms for 
+studying motile processes like cell movement, organelle transport, 
+cytokinesis, and endocytosis. Members of the myosin superfamily, that move 
+on actin filaments and power many of these tasks, are tripartite proteins 
+consisting of a conserved catalytic domain followed by the neck region 
+consisting of a different number of so-called IQ motifs for binding of light 
+chains. The tails contain functional motifs that are responsible for the 
+accomplishment of the different tasks in the cell. Unicellular organisms 
+like yeasts contain three to five myosins while vertebrates express over 40 
+different myosin genes. Recently, the question has been raised how many 
+myosins a simple multicellular organism like Dictyostelium would need to 
+accomplish all the different motility-related tasks.
+
+Results
+The analysis of the Dictyostelium genome revealed thirteen myosins of which 
+three have not been described before. The phylogenetic analysis of the motor 
+domains of the new myosins placed Myo1F to the class-I myosins and Myo5A to 
+the class-V myosins. The third new myosin, an orphan myosin, has been named 
+MyoG. It contains an N-terminal extension of over 400 residues, and a tail 
+consisting of four IQ motifs and two MyTH4/FERM (myosin tail homology 4/band 
+4.1, ezrin, radixin, and moesin) tandem domains that are separated by a long 
+region containing an SH3 (src homology 3) domain. In contrast to previous 
+analyses, an extensive comparison with 126 class-VII, class-X, class-XV, and 
+class-XXII myosins now showed that MyoI does not group into any of these 
+classes and should not be used as a model for class-VII myosins. The search 
+for calmodulin related proteins revealed two further potential myosin light 
+chains. One is a close homolog of the two EF-hand motifs containing MlcB, 
+and the other, CBP14, phylogenetically groups to the ELC/RLC/calmodulin 
+(essential light chain/regulatory light chain) branch of the tree.
+
+Conclusions
+Dictyostelium contains thirteen myosins together with 6-8 MLCs (myosin light 
+chain) to assist in a variety of actin-based processes in the cell. Although 
+they are homologous to myosins of higher eukaryotes, the myosins of 
+Dictyostelium should be considered with care as models for specific functions 
+of vertebrate myosins.
+
+
+Submitted by: Martin Kollmar [mako@nmr.mpibpc.mpg.de]
+-----------------------------------------------------------------------------
+
+
+Exocytosis of late endosomes does not directly contribute membrane to the 
+formation of phagocytic cups or pseudopods in Dictyostelium
+
+Steve J. Charette and Pierre Cosson
+
+Universite de Geneve, Centre Medical Universitaire, Departement de 
+physiologie cellulaire et metabolisme, 1 rue Michel Servet, CH-1211 
+Geneva 4, Switzerland.
+
+
+FEBS letters, in press
+
+Exocytosis of late endocytic compartments in Dictyostelium has mostly been 
+studied by live microscopy. Here we show that this exocytosis is accompanied 
+by a complete fusion of late endosomes with the plasma membrane resulting in 
+the transient formation of membrane microdomains that can be visualized by 
+immunofluorescence in fixed cells. This permitted to demonstrate that fusion 
+of late endocytic compartments with the cell surface does not occur in 
+regions of the plasma membrane engaged in the formation of pseudopods, 
+macropinosomes or phagosomes. Our results propose that exocytosis of late 
+endosomes and actin-driven membrane remodeling are mutually exclusive 
+processes.
+
+
+Submitted by: Steve J. Charette [steve.charette@medecine.unige.ch]
+-----------------------------------------------------------------------------
+
+
+A role for Adaptor Protein-3 complex in the organization of the endocytic 
+pathway in Dictyostelium
+
+Steve J. Charette#1, Valentina Mercanti#1, François Letourneur2, Nelly 
+Bennett3, and Pierre Cosson1
+
+1. Universite de Geneve, Centre Medical Universitaire, Departement de 
+Physiologie Cellulaire et Métabolisme, 1 rue Michel Servet, CH-1211 
+Geneve 4, Switzerland.
+2. Institut de Biologie et Chimie des Proteines (IBCP UMR 5086); CNRS; 
+Universite Lyon1; IFR128 BioSciences Lyon-Gerland; 7, passage du Vercors, 
+69367 Lyon Cedex 07, France
+3. Laboratoire de Biochimie et Biophysique des Systemes Integres, 
+Departement de Reponse et Dynamique Cellulaires, CEA-Grenoble, 17 rue des 
+Martyrs, 38054 Grenoble Cedex 9, France.
+# These authors contributed equally to this work.
+
+
+Traffic, in press
+
+Dictyostelium discoideum cells continuously internalize extracellular 
+material, which accumulates in well-characterized endocytic vacuoles. In 
+the present study, we describe a new endocytic compartment identified by 
+the presence of a specific marker, the p25 protein. This compartment 
+presents features reminiscent of mammalian recycling endosomes: it is 
+localized in the peri-centrosomal region but distinct from the Golgi 
+apparatus. It contains specifically surface proteins that are continuously 
+endocytosed but rapidly recycled to the cell surface and thus absent from 
+maturing endocytic compartments. We evaluated the importance of each 
+clathrin-associated adaptor complex in establishing a compartmentalized 
+endocytic system by studying the phenotype of the corresponding mutants. In 
+knockout cells for µ3, a subunit of the AP-3 clathrin-associated complex, 
+membrane proteins normally restricted to p25-positive endosomes were 
+mislocalized to late endocytic compartments. Our results suggest that AP-3 
+plays an essential role in the compartmentalization of the endocytic 
+pathway in Dictyostelium.
+
+
+Submitted by: Steve J. Charette [steve.charette@medecine.unige.ch]
+==============================================================================
+[End dictyNews, volume 27, number 4] 

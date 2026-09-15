@@ -1,0 +1,174 @@
+dictyNews
+Electronic Edition
+Volume 42, number 9
+March 18, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+CP91 is a component of the Dictyostelium centrosome involved in 
+centrosome biogenesis
+
+Sascha Putzler; Irene Meyer; Ralph Gräf
+
+
+Eur. J. Cell Biol, in press
+
+The Dictyostelium centrosome is a model for acentriolar centrosomes 
+and it consists of a three-layered core structure surrounded by a 
+corona harboring microtubule nucleation complexes. Its core structure 
+duplicates once per cell cycle at the G2/M transition. Through 
+proteomic analysis of isolated centrosomes we have identified CP91, 
+a 91- kDa coiled coil protein that was localized at the centrosomal 
+core structure. While GFP-CP91 showed almost no mobility in FRAP 
+experiments during interphase, both GFP-CP91 and endogenous CP91 
+dissociated during mitosis and were absent from spindle poles from 
+late prophase to anaphase. Since this behavior correlates with the 
+disappearance of the central layer upon centrosome duplication, 
+CP91 is a putative component of this layer. When expressed as 
+GFP-fusions, CP91 fragments corresponding to the central coiled coil 
+domain and the preceding N- terminal part (GFP-CP91cc and 
+GFP-CP91N, respectively) also localized to the centrosome but did 
+not show the mitotic redistribution of the full length protein suggesting 
+a regulatory role of the C-terminal domain. Expression of all GFP-fusion 
+proteins suppressed expression of endogenous CP91 and elicited 
+supernumerary centrosomes. This was also very prominent upon depletion 
+of CP91 by RNAi. Additionally, CP91-RNAi cells exhibited heavily 
+increased ploidy due to severe defects in chromosome segregation along 
+with increased cell size and defects in the abscission process during 
+cytokinesis. Our results indicate that CP91 is a central centrosomal 
+core component required for centrosomal integrity, proper centrosome 
+biogenesis and, independently, for abscission during cytokinesis. 
+
+
+submitted by: Ralph Gräf [rgraef@uni-potsdam.de]
+———————————————————————————————————————
+
+
+Src1 is a protein of the inner nuclear membrane interacting with the 
+Dictyostelium lamin NE81
+
+Petros Batsios, Xiang Ren, Otto Baumann, Denis A. Larochelle, 
+and Ralph Gräf* 
+
+
+Cells, in press
+   
+The nuclear envelope (NE) consists of the outer and inner nuclear 
+membrane (INM), whereby the latter is bound to the nuclear lamina. 
+Src1 is a Dictyostelium homologue of the helix-extension-helix family 
+of proteins, which also includes the human lamin-binding protein MAN1. 
+Both endogenous Src1 and GFP-Src1 localized to the NE during the 
+entire cell cycle. Immuno electron microscopy and light microscopy 
+after differential detergent treatment indicated that Src1 resides 
+in the INM. FRAP experiments with GFP-Src1 cells suggested that at 
+least a fraction of the protein could be stably engaged in forming 
+the nuclear lamina together with the Dictyostelium lamin NE81. Both 
+a BioID   proximity assay and mis-localization of soluble, truncated 
+mRFP-Src1 at cytosolic clusters consisting of an intentionally 
+mis-localized mutant of GFP-NE81 confirmed an interaction of Src1 and 
+NE81. Expression GFP-Src11-646, a fragment C-terminally truncated 
+after the first transmembrane domain, disrupted interaction of nuclear 
+membranes with the nuclear lamina, as cells formed protrusions of the 
+NE that were dependent on cytoskeletal pulling forces. Protrusions were 
+dependent on intact microtubules but not actin filaments. Our results 
+indicate that Src1 is required for integrity of the NE and highlight 
+Dictyostelium as a promising model for the evolution of nuclear 
+architecture.
+
+submitted by: Ralph Gräf [rgraef@uni-potsdam.de]
+———————————————————————————————————————
+
+
+A High-Throughput, Multi-Cell Phenotype Assay for the Identification 
+of Novel Inhibitors of Chemotaxis/Migration
+
+Xin-Hua Liao1,2, Netra Pal Meena2, Noel Southall3, Lunhua Liu4, 
+Manju Swaroop3, Arina Li Zhang1, Jan Jian Xiang1, Carole A. Parent4, 
+Wei Zheng3 & Alan R. Kimmel2
+
+1Institute for Translational Medicine, School of Basic Medical Sciences, 
+Fujian Medical University, Fuzhou, Fujian 350108, China.
+2Laboratory of Cellular and Developmental Biology, National Institute of 
+Diabetes and Digestive and Kidney Diseases, The National Institutes of 
+Health, Bethesda, MD 20892, USA. 
+3Therapeutics for Rare and Neglected Diseases, National Center for 
+Advancing Translational Sciences, The National Institutes of Health, 
+Bethesda, MD 20892, USA.
+4Laboratory of Cellular and Molecular Biology, National Cancer Institute, 
+The National Institutes of Health, Bethesda, MD 20892, USA.
+
+
+Scientific Reports, 2016
+
+Chemotaxis and cell migration are fundamental, universal eukaryotic 
+processes essential for biological functions such as embryogenesis, 
+immunity, cell renewal, and wound healing, as well as for pathogenesis 
+of many diseases including cancer metastasis and chronic inflammation. 
+To identify novel chemotaxis inhibitors as probes for mechanistic studies 
+and leads for development of new therapeutics,we developed a unique, 
+unbiased phenotypic chemotaxis-dependent Dictyostelium aggregationassay 
+for high-throughput screening using rapid, laser-scanning cytometry. 
+Under defined conditions,individual Dictyostelium secrete chemoattractants, 
+migrate, and aggregate. Chemotaxis is quantifiedby laser-scanning 
+cytometry with a GFP marker expressed only in cells after chemotaxis/multi-
+cellaggregation. We applied the assay to screen 1,280 known compounds 
+in a 1536-well plate format and identified two chemotaxis inhibitors. The 
+chemotaxis inhibitory activities of both compounds wereconfirmed in both 
+Dictyostelium and in human neutrophils in a directed EZ-TAXIscan chemotaxis 
+assay.The compounds were also shown to inhibit migration of two human 
+cancer cell lines in monolayerscratch assays. This test screen demonstrated 
+that the miniaturized assay is extremely suited for highthroughputscreening 
+of very large libraries of small molecules to identify novel classes of 
+chemotaxis/migratory inhibitors for drug development and research tools for
+ targeting chemotactic pathwaysuniversal to humans and other systems.
+
+
+submitted by: Xin-Hua Liao [xinhualiao@foxmail.com]
+———————————————————————————————————————
+
+
+The GATA transcription factor gene gtaG is required for terminal 
+differentiation in Dictyostelium
+
+Mariko Katoh-Kurasawa*, Balaji Santhanam and Gad Shaulsky*
+
+
+J. Cell. Sci, in press
+
+The GATA transcription factor GtaG is conserved in Dictyostelids and 
+essential for terminal differentiation in Dictyostelium discoideum, but 
+its function is not well understood. Here we show that gtaG is expressed 
+in prestalk cells at the anterior region of fingers and in the extending 
+stalk during culmination. The gtaG– phenotype is cell-autonomous in 
+prestalk cells and non-cell-autonomous in prespore cells. Transcriptome 
+analyses reveal that GtaG regulates prestalk gene expression during cell 
+differentiation before culmination and is required for progression into 
+culmination. GtaG-dependent genes include genetic suppressors of the 
+Dd-STATa-defective phenotype as well as Dd-STATa target-genes, including 
+extra cellular matrix genes. We show that GtaG may be involved in the 
+production of two culmination-signaling molecules, cyclic di-GMP and the 
+spore differentiation factor SDF-1 and that addition of c-di-GMP rescues 
+the gtaG– culmination and spore formation deficiencies. We propose that 
+GtaG is a regulator of terminal differentiation that functions in concert 
+with Dd-STATa and controls culmination through regulating c-di-GMP 
+and SDF-1 production in prestalk cells.
+
+
+submitted by: Mariko Katoh-Kurasawa [mkatoh@bcm.edu]
+==============================================================
+[End dictyNews, volume 42, number 9]

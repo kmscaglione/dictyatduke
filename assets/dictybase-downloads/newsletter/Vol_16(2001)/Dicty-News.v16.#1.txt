@@ -1,0 +1,160 @@
+Dicty News
+Electronic Edition
+Volume 16, number 1
+January 20, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+==============
+  Abstracts
+==============
+
+The Dictyostelium discoideum family of Rho-related proteins
+
+Francisco Rivero(1), Heidrun Dislich(1), Gernot Glöckner(2) and Angelika A.
+Noegel(1)
+
+(1) Institut für Biochemie I, Medizinische Fakultät, Universität zu Köln.
+Joseph-Stelzmann-Strasse 52, D-50931 Köln, Germany
+
+(2) Institut für Molekulare Biotechnologie, Beutenbergstrasse 11, D-07745
+Jena, Germany
+
+Nucleic Acids Research, accepted
+
+ABSTRACT
+
+Taking advantage of the ongoing genome sequencing project, we have
+assembled more than 73 kb genomic DNA in 15 contigs harboring 15 genes and
+one pseudogene of Rho-related proteins. Comparison with EST sequences
+revealed that every gene is interrupted by at least one and up to four
+introns. For racC extensive alternative splicing was identified. Northern
+blot analysis showed that mRNAs for racA, racE, racG, racH and racI were
+present at all stages of development, whereas racJ and racL were expressed
+only at late stages. Amino acid sequences have been analyzed in the context
+of Rho-related proteins of other organisms. Rac1a/1b/1c, RacF1/F2 and to a
+lesser extent RacB and the GTPase domain of RacA can be grouped in the Rac
+subfamily. None of the additional Dictyostelium Rho-related proteins
+belongs to any of the well-defined subfamilies, like Rac, Cdc42 or Rho.
+RacD and RacA are unique in that they lack the prenylation motif
+characteristic of Rho proteins. RacD possesses a 50 residues C-terminal
+extension and RacA a 400 residues C-terminal extension that contains a
+proline-rich region, two BTB domains and a novel C-terminal domain. We have
+also identified homologues for RacA in Drosophila and mammals, thus
+defining a new subfamily of Rho proteins, RhoBTB.
+
+-----------------------------------------------------------------------------
+
+Inducible nuclear translocation of a STAT protein in Dictyostelium prespore 
+cells: implications for morphogenesis and cell-type regulation
+
+Dirk Dormann*, Tomoaki Abe*, Cornelis J Weijer and Jeffrey Williams 
+School of Life Sciences
+University of Dundee
+Wellcome Trust Biocentre
+Dow Street
+DUNDEE, DD1 5EH
+UK
+
+* These two authors contributed equally to this work
+
+Development, in press.
+
+SUMMARY
+
+Dd-STATa, the Dictyostelium STAT (Signal Transducer and Activator of 
+Transcription) protein, is selectively localised in the nuclei of a small 
+subset of prestalk cells located in the slug tip. Injection of cAMP into the 
+extracellular spaces in the rear of the slug induces rapid nuclear 
+translocation of a Dd-GFP:STATa fusion protein in prespore cells surrounding 
+the site of injection. This suggests that cAMP signals emanating from the 
+tip direct the localised nuclear accumulation of Dd-STATa. It also shows 
+that prespore cells are competent to respond to cAMP, by Dd-STATa activation, 
+and it implies that cAMP signalling is in some way limiting in the rear of 
+the slug. Co-injection of a specific inhibitor of the cAR1 serpentine cAMP 
+receptor almost completely prevents the cAMP-induced nuclear translocation, 
+showing that most or all of the cAMP signal is transduced by cAR1. 
+Dd-GFP:STATa also rapidly translocates into the nuclei of cells adjoining 
+the front and back cut edges when a slug is bissected. Less severe 
+mechanical disturbances, such as pricking the rear of a slug with an unfilled 
+micro-pipette, also cause a more limited nuclear translocation of 
+Dd-GFP:STATa. We propose that these signalling events form part of a repair 
+mechanism that is activated when the migrating slug suffers mechanical damage.
+
+-----------------------------------------------------------------------------
+
+Expression of activated Ras during Dictyostelium development alters cell
+localization and changes cell fate
+
+Zahara M. Jaffer1, Meenal Khosla1, George B. Spiegelman1,2, and Gerald Weeks1,2
+
+Departments of Microbiology and Immunology1,
+and Medical Genetics2, University of British Columbia,
+300 - 6174 University Boulevard
+Vancouver, B.C., V6T 1Z3, Canada
+e-mail:  gweeks@interchange.ubc.ca
+
+Development, in press.
+
+ ABSTRACT
+
+	There is now a body of evidence to indicate that Ras proteins play
+important roles in development.  Dictyostelium expresses several ras genes
+and each appears to perform a distinct function.  Previous data had
+indicated that the over-expression of an activated form of the major
+developmentally regulated gene, rasD, caused a major aberration in
+morphogenesis and cell type determination.  We now show that the
+developmental expression of an activated rasG gene under the control of the
+rasD promoter causes a similar defect.  In order to determine if the
+defects were due to the presence of activated RasG in prestalk or prespore
+cells, rasG was expressed under the control of either the ecmAO or the psA
+promoters.  When activated rasG was specifically expressed in prestalk
+cells in ecmAO::rasG(G12T) transformants, a single tipped aggregate was
+formed and cell type specific gene expression was not appreciably altered.
+In contrast, when activated rasG was specifically expressed in prespore
+cells in psA::rasG(G12T) transformants, multi-tipped aggregates were formed
+and the expression of the prespore specific gene cotC was dramatically
+reduced while the expression of the prestalk cell specific gene ecmA gene
+was markedly enhanced.  Thus, it is the expression of activated ras in
+prespore cells that causes the deregulation of cell type specific gene
+expression and tip formation.  However, the psA::rasG(G12T) transformants
+continued to develop beyond the multi-tipped aggregate stage, suggesting
+that the block in development at the multi-tipped aggregate stage in the
+rasD::rasG(G12T) transformant is due to the presence of RasG(G12T) in the
+prestalk cell population.
+The psA::rasG(G12T) transformants produced mounds that supported multiple
+stalk like structures, some with small apical sori.  Spore formation was
+inhibited and this was not corrected by the presence of wild type cells in
+chimeric mixtures, indicating that the defect in spore formation was cell
+autonomous.  Prespore cells were initially formed in the mound but they
+then transdifferentiated into prestalk cells, which eventually formed stalk
+cells.
+The single tipped aggregates of the ecmAO::rasG(G12T) transformants
+produced slugs that appeared normal, but these went on to form abnormal
+terminal structures with very few spores and large numbers of stalk cells.
+Although the slugs appeared to be normal, there was considerable prestalk
+cell mislocalization.  PstA cells were found in the rear rather than at the
+tip and PstO cells were greatly reduced in number and also found in the
+rear.  In addition, there was an increase in the number of PstB cells in
+both the anterior and posterior regions of the slug, but the anterior PstB
+cells were not specifically localized as a cone behind the tip.  The slugs
+also exhibited impaired motility and phototaxis and there was no formation
+of stalk tubes at the onset of culmination.  The defect in spore formation
+was corrected by developing the transformant in chimeric mixtures with wild
+type cells, indicating that the defect is not cell autonomous.  Examination
+of cell localization in chimeras revealed that wild type cells occupied the
+anterior tip of the slug, presumably providing the signals that allowed the
+prespore cells of the transformant to form spores.
+These results indicate that the expression of activated rasG in prespore
+cells results in their transdifferentiation into prestalk cells, whereas
+activated rasG expression in prestalk causes gross mislocalization of the
+prestalk cell populations.
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 1]

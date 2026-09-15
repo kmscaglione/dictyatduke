@@ -1,0 +1,55 @@
+dictyNews
+Electronic Edition
+Volume 42, number 20
+September 2, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Local Ras activation, PTEN pattern, and global actin flow in the 
+chemotactic responses of over-sized cells
+
+
+Markus Lange, Jana Prassler, Mary Ecke, Annette Müller-Taubenberger, 
+Günther Gerisch
+
+
+J Cell Sci, in press
+
+Chemotactic responses of eukaryotic cells require a signal processing 
+system that translates an external gradient of attractant into directed 
+motion. To challenge the response system to its limits, we increased 
+the size of Dictyostelium disciodeum cells using electric-pulse induced 
+fusion. Large cells formed multiple protrusions at different sites along 
+the gradient of chemoattractant, which independently turned towards 
+the gradient direction and competed with each other. Finally, these 
+cells succeeded to re-establish polarity by coordinating front and tail 
+activities. To analyze the responses, we combined two approaches,
+ one aimed at local responses by visualizing the dynamics of Ras 
+activation at the front regions of re-orientating cells, the other at global 
+changes of polarity by monitoringfront-to-tail directed actin flow. 
+Asymmetric Ras activation in turning protrusions underscores that 
+gradients can be sensed locally and translated into orientation. 
+Different to cells of normal size, the polarity of large cells is not linked 
+to an increasing front-to-tail gradient of the PIP3-phosphatase PTEN. 
+But even in large cells, the front communicates with the tail through 
+an actin flow that might act as carrier of a protrusion inhibitor.
+
+
+submitted by: Günther Gerisch [gerisch@biochem.mpg.de]
+==============================================================
+[End dictyNews, volume 42, number 20]

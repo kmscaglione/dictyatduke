@@ -1,0 +1,113 @@
+Dicty News
+Electronic Edition
+Volume 24, number 9
+April 8, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+Sphingosine-1-phosphate lyase regulates sensitivity of human cells to
+select chemotherapy drugs in a p38-dependant manner
+
+
+Junxia Min1, Paul P. Van Veldhoven2, Lei Zhang3, Marie H. Hanigan4,
+Hannah Alexander1 and Stephen Alexander1*
+
+1Division of Biological Sciences, University of Missouri, Columbia,
+MO 6521-7400
+2Katholieke Universiteit Leuven, Departement Moleculaire Celbiologie,
+Afdeling Farmakologie, B-3000 Leuven, Belgium.
+3Tufts University, New England Medical Center, Boston, MA
+4Department of Cell Biology, University of Oklahoma Health Sciences
+Center, Oklahoma City, OK 73190.
+
+
+Molecular Cancer Research, in press
+
+Resistance to cisplatin is a common problem that limits its usefulness in
+cancer therapy.  Molecular genetic studies in the model organism
+Dictyostelium discoideum have established that modulation of sphingosine
+kinase or sphingosine-1-phosphate (S-1-P) lyase, by disruption or
+overexpression, results in altered cellular sensitivity to this widely
+used drug. Parallel changes in sensitivity were observed for the related
+compound carboplatin, but not for other chemotherapy drugs tested.
+Sensitivity to cisplatin could also be potentiated pharmacologically with
+dimethylsphingosine, a sphingosine kinase inhibitor. We now have validated
+these studies in cultured human cell lines. HEK293 or A549 lung cancer cells
+expressing human S-1-P lyase (hSPL) show an increase in sensitivity to
+cisplatin and carboplatin as predicted from the earlier model studies. The
+hSPL overexpressing (hSPL-OE) cells were also more sensitive to doxorubicin
+but not vincristine or chlorambucil.  Studies using inhibitors to specific
+MAP kinases show that the increased cisplatin sensitivity in the hSPL-OE
+cells is mediated by p38, and to a lesser extent by JNK MAPKs. p38 is not
+involved in vincristine or chlorambucil cytotoxicity.  Measurements of MAPK
+phosphorylation and enzyme activity, as well as siRNA inhibition studies,
+show that the response to the drug is accompanied by up-regulation of p38
+and JNK and the lack of ERK up-regulation.  These studies confirm an earlier
+model proposing a mechanism for the drug specificity observed in the studies
+with D. discoideum, and supports the idea that the sphingosine kinases and
+S-1-P lyase are potential targets for improving the efficacy of cisplatin
+therapy for human tumors.
+
+
+Submitted by: Steve Alexander [AlexanderSt@missouri.edu]
+
+-----------------------------------------------------------------------------
+
+
+Evolutionary origin of cAMP-based chemoattraction
+ in the social amoebae
+
+Elisa Alvarez-Curto1, Daniel E. Rozen1,3, Alysson V. Ritchie1, Celine Fouquet1
+ Sandra L. Baldauf2 and Pauline Schaap1*. 
+
+1School of Life Sciences, University of Dundee, Dundee DD1 5EH, UK
+2Department of Biology, University of York, PO Box 373, York YO10 5YW, UK
+3Current address: Department of Biology, Emory University, 1510 Clifton Road,
+Atlanta, GA 30322, USA
+
+*Corresponding author: School of Life Sciences, University of Dundee
+MSI/WTB complex, Dundee DD1 5EH, UK; Phone: 44 1382 348078; 
+Fax: 44 1382 345386; E-mail:p.schaap@dundee.ac.uk
+
+
+Proc. Natl. Acad. Sci. USA, in press.
+
+Phenotypic novelties can arise if integrated developmental pathways are
+expressed at new developmental stages and are then recruited to serve new
+functions. We analyse the origin of a novel developmental trait of
+Dictyostelid amoebae: the evolution of cAMP as a developmental
+chemoattractant. We show that cAMP's role to attract starving amoebae arose
+through recruitment of a pathway that originally evolved to coordinate
+fruiting body morphogenesis. Orthologues of the high-affinity cAMP receptor,
+cAR1, were identified in a selection of species that span the Dictyostelid
+phylogeny. The cAR1 orthologue from the basal species D.minutum restored
+aggregation and development when expressed in an aggregation-defective
+mutant of the derived species D.discoideum that lacks high-affinity cARs,
+thus demonstrating that the D. minutum cAR is a fully functional cAMP
+receptor. cAR1 orthologues from basal species are expressed during fruiting
+body formation and only this process, and not aggregation, was disrupted by
+abrogation of cAR1 function. This is in contrast to derived species, where
+cAR1 is also expressed during aggregation and critically regulates this
+process. Our data show that coordination of fruiting body formation is the
+ancestral function of extracellular cAMP signalling, while its derived role
+in aggregation evolved by recruitment of a pre-existing pathway to an
+earlier stage of development. This most likely occured by addition of
+distal cis-regulatory regions to existing cAMP signaling genes.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+
+==============================================================================
+[End Dicty News, volume 24, number 9] 

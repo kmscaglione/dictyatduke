@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 29, number 1
+July 6, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+The localization of INCENP at the cleavage furrow is dependent on Kif12 and 
+involves interactions of the N-terminus of INCENP with the actin cytoskeleton.
+
+Qian Chen1, Gandikota S. Lakshmikanth2, James A. Spudich2, and 
+Arturo De Lozanne1
+
+1Section of Molecular Cell & Developmental Biology and Institute for Cellular 
+and Molecular Biology, University of Texas at Austin, Austin, TX 78712.
+2Department of Biochemistry, Stanford University School of Medicine, Stanford, 
+CA 94305
+
+
+Molecular Biology of the Cell, in press
+
+The Inner Centromeric Protein (INCENP) and other chromosomal passenger 
+proteins are known to localize on the cleavage furrow and to play a role in 
+cytokinesis. However, it is not known how INCENP localizes on the furrow or 
+whether this localization is separable from that at the midbody. Here we 
+show that the association of DdINCENP with the cortex of the cleavage furrow 
+involves interactions with the actin cytoskeleton and depends on the presence
+of the kinesin-6-related protein Kif12. We found that Kif12 is found on the 
+central spindle and the cleavage furrow during cytokinesis. Kif12 is not 
+required for the redistribution of DdINCENP from centromeres to the central 
+spindle. However, in the absence of Kif12, DdINCENP fails to localize on the 
+cleavage furrow. Domain analysis indicates that the Nterminus of DdINCENP is 
+necessary and sufficient for furrow localization and binds directly to the 
+actin cytoskeleton. Our data suggest that INCENP moves from the central 
+spindle to the furrow of a dividing cell by a Kif12 dependent pathway. Once 
+INCENP reaches theequatorial cortex it associates with the actin cytoskeleton 
+where it then concentrates toward the end of cytokinesis.
+
+
+Submitted by: Arturo De Lozanne [a.delozanne@mail.utexas.edu]
+--------------------------------------------------------------------------------
+
+
+Prolyl 4-hydroxylase-1 mediates O2-signaling during development of 
+Dictyostelium 
+
+Christopher M. West, Hanke van der Wel and Zhuo A. Wang
+
+Department of Biochemistry & Molecular Biology and the Oklahoma Center for 
+Medical Glycobiology, University of Oklahoma Health Sciences Center, 
+Oklahoma City, OK, 73104  USA
+
+
+Development, in press
+
+Development in multicellular organisms is subject to both environmental and 
+internal signals. In Dictyostelium, starvation induces amoebae to form migratory 
+slugs that translocate from subterranean to exposed sites where they culminate 
+to form sessile fruiting bodies. Culmination, thought to be regulated by anterior 
+tip cells, is selectively suppressed by mild hypoxia by a mechanism that can 
+be partially overridden by another environmental signal, overhead light, or 
+genetic activation of protein kinase A. Dictyostelium expresses, in all cells, 
+an O2-dependent prolyl 4-hydroxylase (P4H1) required for O-glycosylation of Skp1, 
+a subunit of E3SCF-Ub-ligases. P4H1-null cells differentiate the basic prestalk 
+and prespore cell types, but exhibit a selectively increased O2-requirement for 
+culmination from ~12% to near or above ambient (21%) levels. Overexpression of 
+P4H1 reduces the O2 requirement to <5%. The requirement for P4H1 can be met by 
+forced expression of the active enzyme in either prestalk (anterior) or prespore 
+(posterior) cells, or replaced by protein kinase A activation or addition of 
+small numbers of wild-type cells. P4H1-expressing cells accumulate at the 
+anterior end, suggesting that P4H1 enables transcellular signaling by the tip. 
+The evidence provides novel genetic support for the animal-derived O2-sensor 
+model of prolyl 4-hydroxylase function, in an organism that lacks the canonical 
+HIF? transcriptional factor subunit substrate target that is a feature of animal 
+hypoxic signaling. 
+
+
+Submitted by: Chris West [Cwest2@ouhsc.edu]
+==============================================================
+[End dictyNews, volume 29, number 1]

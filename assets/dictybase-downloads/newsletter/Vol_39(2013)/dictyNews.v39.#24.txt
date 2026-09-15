@@ -1,0 +1,141 @@
+dictyNews
+Electronic Edition
+Volume 39, number 24
+August 23 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+How do amoebae swim and crawl?
+ 
+Jonathan D. Howe, Nicholas P. Barry, Mark S. Bretscher*
+
+Cell Biology Division, Medical Research Council Laboratory of 
+Molecular Biology, Cambridge, Cambridgeshire, United Kingdom. 
+
+
+PLoS ONE, in press.
+
+The surface behaviour of swimming amoebae was followed in 
+cells bearing a cAR1-paGFP (cyclicAMP receptor fused to a 
+photoactivatable-GFP) construct. Sensitized amoebae were placed 
+in a buoyant medium where they could swim toward a chemoattractant 
+cAMP source. paGFP, activated at the cell's front, remained fairly 
+stationary in the cell's frame as the cell advanced; the label was not 
+swept rearwards. Similar experiments with chemotaxing cells attached 
+to a substratum gave the same result. Furthermore, if the region around 
+a lateral projection near a crawling cell's front is marked, the projection 
+and the labelled cAR1 behave differently. The label spreads by diffusion 
+but otherwise remains stationary in the cell's frame; the lateral projection 
+moves rearwards on the cell (remaining stationary with respect to the 
+substrate), so that it ends up outside the labelled region. Furthermore, 
+as cAR1-GFP cells move, they occasionally do so in a remarkably 
+straight line; this suggests they do not need to snake to move on a 
+substratum. Previously, we suggested that the surface membrane of a 
+moving amoeba flows from front to rear as part of a polarised membrane 
+trafficking cycle. This could explain how swimming amoebae are able to 
+exert a force against the medium. Our present results indicate that, in 
+amoebae, the suggested surface flow does not exist: this implies that 
+they swim by shape changes.
+
+
+Submitted by Mark  Bretscher [msb@mrc-lmb.cam.ac.uk]
+---------------------------------------------------------------------------
+
+
+A new kind of membrane-tethered eukaryotic transcription factor that 
+shares an auto-proteolytic processing mechanism with bacteriophage 
+tail-spike proteins
+
+Hiroshi Senoo, Tsuyoshi Araki+, Masashi Fukuzawa and Jeffrey G. Williams+*
+
+Department of Biology, Faculty of Agriculture and Life Science, Hirosaki 
+University, Hirosaki, Aomori 036-8561, Japan
++ College of Life Sciences, Welcome Trust Building, University of Dundee,
+Dow St., Dundee DD1 5EH UK
+* corresponding author:
+tel 44 1382 385823
+fax 44-1382 344211
+j.g.williams@dundee.ac.uk
+
+
+Journal of Cell Science, in press
+
+MrfA, a transcription factor that regulates Dictyostelium prestalk cell 
+differentiation, is an orthologue of the animal Myelin-gene Regulatory 
+Factor (MRF) proteins. We show that the MRFs contain a predicted trans-
+membrane domain, suggesting that they are synthesized as membrane-
+tethered proteins that are then proteolytically released. We confirm this for 
+MrfA but report a radically different mode of processing from that of 
+paradigmatic tethered transcriptional regulators; which are cleaved within 
+the trans-membrane domain by a dedicated protease. Instead an auto-
+proteolytic cleavage mechanism, previously only described for the 
+intramolecular chaperone domains of bacteriophage tail-spike proteins, 
+processes MrfA and, by implication, the metazoan MRF proteins. We also 
+present evidence that the auto-proteolysis of MrfA occurs rapidly and 
+constitutively in the ER and that its specific role in prestalk cell differentiation 
+is conferred by theregulated nuclear translocation of the liberated fragment.
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+Iron metabolism and resistance to infection by invasive bacteria in the 
+social amoeba Dictyostelium discoideum 
+
+Salvatore Bozzaro*, Simona Buracco and Barbara Peracino
+
+Department of Clinical and Biological Sciences, University of Torino, 
+Orbassano, Italy
+
+
+Frontiers Cell Infect Microbiol, in press
+
+Dictyostelium cells are forest soil amoebae, which feed on bacteria and 
+proliferate as solitary cells until bacteria are consumed.  Starvation triggers a 
+change in life style, forcing cells to gather into aggregates to form multicellular 
+organisms capable of cell differentiation and morphogenesis.  As a soil amoeba 
+and a phagocyte that grazes on bacteria as the obligate source of food, 
+Dictyostelium could be a natural host of pathogenic bacteria. Indeed, many 
+pathogens that occasionally infect humans are hosted for most of their time in 
+protozoa or free-living amoebae, where evolution of their virulence traits occurs. 
+Due to these features and its amenability to genetic manipulation, Dictyostelium 
+has become a valuable model organism for studying strategies of both the host 
+to resist infection and the pathogen to escape the defence mechanisms.  
+
+Similarly to higher eukaryotes, iron homeostasis is crucial for Dictyostelium 
+resistance to invasive bacteria. Iron is essential for Dictyostelium, as both iron 
+deficiency or overload inhibit cell growth. The Dictyostelium genome shares 
+with mammals many genes regulating iron homeostasis. Iron transporters of 
+the Nramp (Slc11A) family are represented with two genes, encoding Nramp1 
+and Nramp2. Like the mammalian ortholog, Nramp1 is recruited to phagosomes 
+and macropinosomes, whereas Nramp2 is a membrane protein of the contractile 
+vacuole network, which regulates osmolarity. Nramp1 and Nramp2 localization 
+in distinct compartments suggests that both proteins synergistically regulate iron 
+homeostasis. Rather than by absorption via membrane transporters, iron is 
+likely gained by degradation of ingested bacteria and efflux via Nramp1 from 
+phagosomes to the cytosol. Nramp gene disruption increases Dictyostelium 
+sensitivity to infection, enhancing intracellular growth of Legionella or 
+Mycobacteria. Generation of mutants in other "iron genes" will help identify 
+genes essential for iron homeostasis and resistance to pathogens. 
+
+
+Submitted by Salvatore Bozzaro [salvatore.bozzaro@unito.it]
+==============================================================
+[End dictyNews, volume 39, number 24]

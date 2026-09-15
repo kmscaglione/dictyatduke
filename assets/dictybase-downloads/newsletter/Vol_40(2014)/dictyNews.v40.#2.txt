@@ -1,0 +1,80 @@
+dictyNews
+Electronic Edition
+Volume 40, number 2
+January 10, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+PIP3-dependent macropinocytosis is incompatible with chemotaxis 
+
+Douwe M. Veltman(1), Michael G. Lemieux (2), David A. Knecht (2) 
+and Robert H. Insall (1)* 
+
+(1) Beatson Institute for Cancer Research, Switchback Road, 
+Glasgow G61 1BD, UK 
+(2) Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, CT 06269, U.S.A.
+
+
+Journal of Cell Biology, in press
+
+In eukaryotic chemotaxis, the mechanisms connecting external signals to 
+the motile apparatus remain unclear. The role of the lipid PIP3 has been 
+particularly controversial. PIP3 has many cellular roles, notably in growth 
+control and macropinocytosis as well as cell motility. Here we show that 
+PIP3 is not only unnecessary for Dictyostelium to migrate towards folate, 
+but actively inhibits chemotaxis. We find that macropinosomes, but not 
+pseudopods, in growing cells are dependent on PIP3. PIP3 patches in 
+these cells show no directional bias, and overall only PIP3-free pseudopods 
+orient up-gradient. The pseudopod driver SCAR/WAVE is not recruited to 
+centre of PIP3 patches, just the edges, where it causes macropinosome 
+formation. Wild type cells, unlike the widely-used axenic mutants, show little 
+macropinocytosis and few large PIP3 patches, but migrate more efficiently 
+towards folate. Tellingly, folate chemotaxis in axenic cells is rescued by 
+knocking out PI3-kinases. Thus PIP3 promotes macropinocytosis and 
+interferes with pseudopod orientation during chemotaxis of growing cells. 
+
+
+Submitted by Douwe Veltman [dveltman@mrc-lmb.cam.ac.uk]
+---------------------------------------------------------------------------
+
+
+Cell-to-cell coordination for the spontaneous cAMP oscillation in Dictyostelium
+
+Seido Nagano & Shunsuke Sakurai
+
+
+Physical Review E88, 062710(2013)
+
+We propose a new cellular dynamics scheme for the spontaneous cAMP 
+oscillations in Dictyostelium discoideum.Our scheme seamlessly integrates 
+both receptor dynamics andG-protein dynamics into our previously developed 
+cellular dynamics scheme. Extensive computer simulation studies based on 
+our new cellular dynamics scheme were conducted in mutant cells to evaluate 
+the molecular network. The validity of our proposed molecular network as well 
+as the controversial PKA-dependent negative feedback mechanism was 
+supported by our simulation studies. Spontaneous cAMP oscillations were not 
+observed in a single mutant cell. However, multicellular states of various 
+mutant cells consistently initiated spontaneous cAMP oscillations. Therefore, 
+cell-to-cell coordination via the cAMP receptor is essential for the robust 
+initiation of spontaneous cAMP oscillations.
+
+
+Submitted by Seido Nagano [nagano@sk.ritsumei.ac.jp]]
+==============================================================
+[End dictyNews, volume 40, number 2]

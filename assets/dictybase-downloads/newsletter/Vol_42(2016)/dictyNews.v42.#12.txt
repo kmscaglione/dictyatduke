@@ -1,0 +1,88 @@
+dictyNews
+Electronic Edition
+Volume 42, number 12
+April 22, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium discoideum RabS and Rab2 Colocalize with Golgi and 
+Contractile Vacuole System and Regulate Osmoregulation
+
+Katherine Maringer, Azure Yarbrough, Sunder Sims-Lucas, Entsar 
+Saheb, Sanaa Jawed, and John Bush
+
+
+Journal of Biosciences, in press
+
+Small molecular weight GTPase Rab2 has been shown to be a 
+resident of pre-Golgi intermediates and required for protein 
+transport from the ER to the Golgi complex; however, Rab2 has 
+yet to be characterized in Dictyostelium discoideum.  DdRabS i
+s a Dictyostelium Rab that is 80% homologous to DdRab1 which 
+is required for protein transport between the ER and Golgi.   
+Expression of GFP-tagged DdRab2 and DdRabS proteins showed 
+localization to Golgi membranes and to the contractile vacuole 
+system (CV) in Dictyostelium.  Microscopic imaging indicates that 
+the DdRab2 and DdRabS proteins localize at, and are essential 
+for, the proper structure of Golgi membranes and the CV system.  
+Dominant negative (DN) forms show fractionation of Golgi 
+membranes supporting their role in the structure and function of 
+it.  DdRab2 and DdRabS proteins, and their dominant negative 
+and constitutively active (CA) forms, affect osmoregulation of 
+the cells, possibly by the influx and discharge of fluids, which 
+suggests a role in the function of the CV system.  This is the 
+first evidence of GTPases being localized to both Golgi 
+membranes and the CV system in Dictyostelium.
+
+
+submitted by: Azure Yarbrough [alyarbrough@ualr.edu]
+———————————————————————————————————————
+
+
+The small GTPases Ras and Rap1 bind to and control TORC2 activity
+
+Ankita Khanna*, Pouya Lotfi*, Anita J. Chavan, Nieves M. Montaño, 
+Parvin Bolourani, Gerald Weeks, Zhouxin Shen, Steven P. Briggs, 
+Henderikus Pots, Peter J.M Van Haastert, Arjan Kortholt & 
+Pascale G. Charest.
+
+*equal contribution
+
+
+Scientific Reports, in press.
+
+Target of Rapamycin Complex 2 (TORC2) has conserved roles in 
+regulating cytoskeleton dynamics and cell migration and has been 
+linked to cancer metastasis. However, little is known about the 
+mechanisms regulating TORC2 activity and function in any system. 
+In Dictyostelium, TORC2 functions at the front of migrating cells 
+downstream of the Ras protein RasC, controlling F-actin dynamics 
+and cAMP production. Here, we report the identification of the 
+small GTPase Rap1 as a conserved binding partner of the TORC2 
+component RIP3/SIN1, and that Rap1 positively regulates the RasC-
+mediated activation of TORC2 in Dictyostelium. Moreover, we show 
+that active RasC binds to the catalytic domain of TOR, suggesting 
+a mechanism of TORC2 activation that is similar to Rheb activation 
+of TOR complex 1. Dual Ras/Rap1 regulation of TORC2 may allow 
+for integration of Ras and Rap1 signaling pathways in directed 
+cell migration.
+
+
+submitted by: Pascale Charest [pcharest@email.arizona.edu]
+==============================================================
+[End dictyNews, volume 42, number 12]

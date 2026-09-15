@@ -1,0 +1,86 @@
+dictyNews
+Electronic Edition
+Volume 41, number 25
+November 20, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Isolation and characterisation of various amoebophageous fungi and 
+evaluation of their prey spectrum
+
+Rolf Michel, Julia Walochnik, Patrick Scheid 
+
+
+Experimental Parasitology 145 (2014) S131-S136
+
+This article gives an overview on the isolation and characterisation 
+of endoparasitic fungi invading freeliving amoebae (FLA), including 
+the ones forming thalli inside their hosts such as Cochlonema 
+euryblastum and also the predatory fungi which capture amoebae by 
+adhesive hyphae. Acaulopage spp. and Stylopage spp. trap, intrude, 
+and exploit amoebal trophozoites. Previous phylogenetic studies 
+proved Cochlonema to be a member of the Zoopagales. The genetic 
+investigation of Acaulopage tetraceros demonstrated its close 
+relationship to Cochlonema. Co-cultivation of A. tetraceros with a 
+number of FLA revealed a great prey spectrum of this amoebophageous 
+fungus. In addition it was shown that solitary amoebal stages of 
+slime moulds such as Dictyostelium sp. and Physarum sp. are also 
+suited as welcome prey amoebae.
+
+
+Submitted by Rolf Michel [r.michel1@gmx.de]  
+————————————————————————————————————
+
+
+PP2A/B56 and GSK3/Ras suppress PKB activity during Dictyostelium 
+chemotaxis
+
+Marbelys Rodriguez Pino, Boris Castillo, Bohye Kim, and Lou W. Kim
+ 
+Department of Biological Sciences, Biochemistry PhD Program, 
+and Biomolecular Sciences Institutes, Florida International University, 
+Miami, FL 33199
+
+
+MBoC, In Press
+
+We have previously shown that the Dictyostelium protein phosphatase 
+2A regulatory subunit B56, encoded by psrA, modulates Dictyostelium 
+cell differentiation through negatively affecting glycogen synthase 
+kinase 3 (GSK3) function. Our follow-up research uncovered that B56 
+preferentially associated with GDP forms of RasC and RasD, but not 
+with RasG in vitro, and psrA- cells displayed inefficient activation of 
+multiple Ras species, decreased random motility, and inefficient 
+chemotaxis toward cAMP and folic acid gradient. Surprisingly, psrA- 
+cells displayed aberrantly high basal and poststimulus phosphorylation 
+of Dictyostelium protein kinase B (PKB) kinase family member PKBR1 
+and PKB substrates. Expression of constitutively active Ras mutants or 
+inhibition of GSK3 in psrA- cells increased activities of both PKBR1 
+and PKBA, but only the PKBR1 activity was increased in wild-type 
+cells under the equivalent conditions, indicating that either B56- or 
+GSK3-mediated suppressive mechanism is sufficient to maintain low 
+PKBA activity, but both mechanisms are necessary for suppressing 
+PKBR1. Finally, cells lacking RasD or RasC displayed normal PKBR1 
+regulation under GSK3-inhibiting conditions, indicating that RasC or 
+RasD proteins are essential for GSK3-mediated PKBR1 inhibition. In 
+summary, B56 constitutes inhibitory circuits for PKBA and PKBR1 and 
+thus heavily affects Dictyostelium chemotaxis.
+
+
+submitted by: Lou W. Kim [kiml@FIU.EDU]
+==============================================================
+[End dictyNews, volume 41, number 25]

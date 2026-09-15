@@ -1,0 +1,104 @@
+Dicty News
+Electronic Edition
+Volume 12, number 9
+April 24, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+==============
+  Abstracts
+==============
+
+A Cell’s Sense of Direction
+
+Dept. Biological Chemistry, Johns Hopkins School of Medicine, 
+Baltimore MD  21205
+
+C.A. Parent and P.N. Devreotes
+
+Science, In press.
+
+   In eukaryotic cells directional sensing is mediated by heterotrimeric 
+guanine nucleotide binding protein (G protein)-linked signaling pathways.  
+In D. discoideum amoebae and mammalian leukocytes, the receptors and 
+G-protein subunits are uniformly distributed around the cell perimeter.  
+Chemoattractants induce the transient appearance of binding sites for 
+several pleckstrin homology domain-containing proteins on the inner face 
+of the membrane. In gradients of attractant these sites are persistently 
+present on the side of the cell facing the higher concentration, even in 
+the absence of a functional actin cytoskeleton or cell movement. Thus, the 
+cell senses direction by spatially regulating the activity of the signal 
+transducution pathway.
+
+----------------------------------------------------------------------------
+
+Green fluorescent protein in the visualization of particle uptake and 
+fluid-phase endocytosis. 
+
+Markus Maniak
+
+was: Max-Planck-Institut fuer Biochemie, Martinsried, Germany
+now: MRC-Laboratory for Molecular Cell Biology, London, England
+
+Meth. Enzymol. 302 March 1999.
+
+There is no abstract or summary to this contribution. The chapter mainly 
+describes details how we image endocytosis in Dictyostelium using GFP 
+fusion-proteins.  For those who may be interested, there is a colour 
+figure that uses the combination of FITC and TRITC dextrans to visualise 
+the acidification of individual macropinosomes after internalisation. 
+The result is, that the pH inside a macropinosome does not change over 
+the first 40 seconds after its formation (when it is still thought to 
+be surrounded by a dense cytoskeletal coat) then it becomes acidic within 
+less than 10 seconds.
+
+----------------------------------------------------------------------------
+
+SDF-2 induction of terminal differentiation in Dictyostelium
+is mediated by the membrane-spanning sensor kinase DhkA
+
+Nancy Wang, Fredrik Söderbom, Christophe Anjard, Gad Shaulsky
+and William F. Loomis
+
+Center for Molecular Genetics, Department of Biology
+
+University of California San Diego, La Jolla, CA 92093
+
+Molecular and Cellular Biology (in press)
+
+Abstract
+
+   SDF-2 is a peptide released by prestalk cells during culmination that 
+stimulates prespore cells to encapsulate.  Genetic evidence indicates that 
+the response is dependent on the dhkA gene. This gene encodes a member of 
+the histidine kinase family of genes that functions in two-component signal 
+transduction pathways.  The sequence of the N-terminal half of DhkA predicts 
+two hydrophobic domains separated by a 310 amino acid loop that could bind a 
+ligand.  By inserting MYC6 epitopes into DhkA we were able to show that the 
+loop is extracellular while the catalytic domain is cytoplasmic. Cells 
+expressing the MYC epitope in the extracellular domain of DhkA were found 
+to respond only if induced with 100 fold higher levels of SDF-2 than required 
+to induce dhkA+ cells; however, they could be induced to sporulate by addition 
+of antibodies specific to the MYC epitope.  To examine the enzymatic activity 
+of DhkA we purified the catalytic domain following expression in bacteria and 
+observed incorporation of labelled phosphate from ATP consistent with histidine 
+autophosphorylation.  Site-directed mutagenesis of histidine1395 to glutamine 
+in the catalytic domain blocked autophosphorylation.  Furthermore, genetic 
+analyses showed that histidine1395 and the relay aspartate2075 of DhkA are 
+both critical to its function but that another histidine kinase, DhkB, can 
+partially compensate for the lack of DhkA activity. Sporulation is drastically 
+reduced in double mutants lacking both DhkA and DhkB. Suppressor studies indicate 
+that the cAMP phosphodiesterase, RegA, and the cAMP dependent protein kinase, 
+PKA, act downstream of DhkA.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 9]
+
+  

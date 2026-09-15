@@ -1,0 +1,153 @@
+Dicty News
+Electronic Edition
+Volume 24, number 4
+February 25, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Microbial Development
+
+Fisher, P.R.
+
+
+Encyclopedia of Molecular Cell Biology and Medicine, in press.
+
+Development is not only restricted to large multicellular animals and plants
+but is also a feature of the life cycles of microorganisms. The environment
+of a microorganism is rapidly changeable so that both eukaryotic and
+prokaryotic microbes have evolved developmental strategies to enhance their
+nutrient-scavenging abilities or in more extreme circumstances to form
+dormant, resistant cells (spores). The spores can survive under harsh
+conditions that do not support growth and can be dispersed to other
+environments that do. The endospores of pathogenic Clostridium species are
+amongst the most resistant cells on earth, and their destruction (or removal)
+is the key criterion for successful microbiological sterilization. 
+Developmental programs in microbial pathogens are initiated in response to
+infection of the host and play important roles in pathogenesis. However, the
+best-understood examples of microbial development are not pathogens, but
+free-living microbes. The general principles underlying microbial
+development are being elucidated by their study.
+
+
+Submitted by: Paul R. Fisher [P.Fisher@latrobe.edu.au]
+
+-----------------------------------------------------------------------------
+
+
+Identification and characterization of a novel alpha kinase with a vWFA
+motif localized to the contractile vacuole and Golgi complex in
+Dictyostelium discoideum
+
+Venkaiah Betapudi, Cynthia Mason, Lucila Licate and Thomas T. Egelhoff
+
+Department of Physiology and Biophysics, Case Western Reserve University,
+10900 Euclid Avenue, Cleveland, OH 44106-4970, USA.
+
+
+Mol. Biol. Cell in Press
+
+We have identified a novel unconventional protein kinase in Dictyostelium
+discoideum which carries the same conserved class of "alpha kinase"
+catalytic domain as previously reported in myosin heavy chain kinases
+(MHCKs) in this amoeba, but which has a completely novel domain
+organization. This protein of 625 amino acids contains an N-terminal von
+Willebrand Factor A (vWFA) motif (also known as beta-integrin motif), and
+is therefore named as VwkA. Manipulation of VwkA expression level via high
+copy number plasmids (VwkA++ cells) or gene disruption (vwkA null cells)
+results in an array of cellular defects, including impaired growth and
+multinucleation in suspension culture, impaired development, and alterations
+in myosin II abundance and assembly level. Despite sequence similarity to
+MHCKs, the purified protein failed to phosphorylate myosin II in vitro.
+Autophosphorylation activity however, was enhanced by calcium/calmodulin,
+and the enzyme can be precipitated from cellular lysates with 
+calmodulin-agarose, suggesting that VwkA may directly bind calmodulin. VwkA
+is cytosolic in distribution, but enriched on the membranes of the 
+contractile vacuole and Golgi-like structures in the cell. We propose that
+VwkA likely acts indirectly to influence myosin II abundance and assembly
+behavior, and possibly has broader roles the previously characterized alpha 
+kinases in this organism which all appear to be MHC
+kinases.
+
+
+Submitted by: Dr. Tom Egelhoff [tte@po.cwru.edu]
+
+-----------------------------------------------------------------------------
+
+
+GOAT: an R tool for analyzing Gene Ontology term enrichment 
+Qikai Xu and Gad Shaulsky
+
+Graduate Program in Structural and Computational Biology and Molecular
+Biophysics, Department of Molecular and Human Genetics, Baylor College
+of Medicine, Houston, TX
+
+
+Applied Bioinformatics, in press
+
+Summary: Understanding the composition of gene lists that result from high
+throughput experiments requires elaborate processing of gene annotation
+lists.  Here we present GOAT, a tool based on the statistical software "R" 
+for analyzing Gene Ontology (GO) term enrichment in gene lists.  Given a
+gene list, GOAT calculates the enrichment and statistical significance of
+every GO term and generates graphical presentations of significantly
+enriched terms.  GOAT works for any organism with a genome-scale GO
+annotation and allows easy updates of ontologies and annotations.
+
+Availability: GOAT is freely available (see supplement).
+
+Supplementary information: http://dictygenome.org/software/GOAT/
+
+Key words: Gene Ontology (GO), GOAT, Microarray, R
+
+
+Submitted by: Gadi Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+A Dictyostelium homologue of WASP is required for polarized F-actin assembly
+during chemotaxis.
+
+Scott A. Myers, Ji W. Han, Yoonsung Lee, Richard A. Firtel, and
+Chang Y. Chung.
+
+
+Molecular Biology of the Cell
+
+The actin cytoskeleton controls the overall structure of cells and is
+highly polarized in chemotaxing cells, with F-actin assembled predominantly
+in the anterior leading edge and to a lesser degree in the cell's posterior.
+Wiscott-Aldrich syndrome protein (WASP) has emerged as a central player in
+controlling actin polymerization. We have investigated WASP function and its
+regulation in chemotaxing Dictyostelium cells and demonstrated the specific
+and essential role of WASP in organizing polarized F-actin assembly in 
+chemotaxing cells. Cells expressing very low levels of WASP show reduced
+F-actin levels and significant defects in polarized F-actin assembly,
+resulting in an inability to establish axial polarity during chemotaxis.
+GFP-WASP preferentially localizes at the leading edge and uropod of
+chemotaxing cells and the B domain of WASP is required for the localization
+of WASP. We demonstrated that the B domain binds to PI(4,5)P2 and PI(3,4,5)P3
+with similar affinities. The interaction between the B domain and PI(3,4,5)P3
+plays an important role for the localization of WASP to the leading edge in
+chemotaxing cells. Our results suggest that the spatial and temporal control
+of WASP localization and activation is essential for the regulation of 
+directional motility.
+
+
+Submitted by: Chang Chung [chang.chung@vanderbilt.edu]
+
+==============================================================================
+[End Dicty News, volume 24, number 4] 

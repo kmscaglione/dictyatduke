@@ -1,0 +1,89 @@
+dictyNews
+Electronic Edition
+Volume 26, number 16
+May 26, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Staying in shape with formins
+
+Jan Faix(1) and Robert Grosse(2)
+
+(1) Institute for Biophysical Chemistry, Hannover Medical School, 30623 
+Hannover, Germany. 
+(2) Institute of Pharmacology, University of Heidelberg, Im Neuenheimer Feld 
+366, 69120 Heidelberg, Germany.
+
+
+Developmental Cell, in press
+
+Formins constitute a diverse protein family present in all eukaryotes 
+examined. They are defined by the presence of a formin homology 2 (FH2) 
+domain, which possesses intrinsic and conserved functions regulating 
+cytoskeletal dynamics. Over the past few years formins have become 
+recognized as potent nucleators of linear actin filaments that control a 
+large variety of cellular and morphogenetic functions. Here, we review the 
+molecular principles of formin-induced cytoskeletal rearrangements and 
+their consequences for a growing number of biological processes.
+
+
+Submitted by: Hans Faix [faix@bpc.mh-hannover.de]
+-----------------------------------------------------------------------------
+
+Dictyostelium RacH regulates endocytic vesicular trafficking and is 
+required for localization of vacuolin
+
+Baggavalli P. Somesh (1), Carola Neffgen (1),  Miho Iijima (2), Peter 
+Devreotes (2) and Francisco Rivero (1).
+
+
+1. Center for Biochemistry and Center for Molecular Medicine Cologne, 
+Medical Faculty, University of Cologne. Joseph-Stelzmann-Strasse 52, 
+D-50931 Koeln, Germany
+
+2. Department of Cell Biology, Johns Hopkins University School of Medicine, 
+725 N. Wolfe St., Baltimore MD, 21205, USA
+
+
+Traffic, in press
+
+Dictyostelium RacH localizes predominantly to membranes of the nuclear 
+envelope, ER and Golgi apparatus. To investigate the role of this protein 
+we generated knockout and overexpressor strains. RacH-deficient cells 
+displayed 50% reduced fluid phase uptake and a moderate exocytosis defect, 
+but phagocytosis was unaffected. Detailed examination of the endocytic 
+pathway revealed defective acidification of early endosomes and reduced 
+secretion of acid phosphatase in the presence of sucrose. The distribution 
+of the post-lysosomal marker vacuolin was altered, with a high proportion 
+of cells showing a diffuse vesicular pattern in contrast to the wild type 
+strain, where few intensely stained vacuoles predominate. Cytokinesis, cell 
+motility, chemotaxis and development appeared largely unaffected. In a 
+cell-free system RacH stimulates actin polymerization, suggesting that this 
+protein is involved in actin-based trafficking of vesicular compartments. 
+We also investigated the determinants of subcellular localization of RacH 
+by expression of GFP-tagged chimeras in which the C-terminus of RacH and 
+the plasma membrane targeted RacG were exchanged, the insert region was 
+deleted or the net positive charge of the hypervariable region was 
+increased. We show that several regions of the molecule, not only the 
+hypervariable region, determine targeting of RacH. Overexpression of 
+mis-targeted RacH mutants did not recapitulate the phenotypes of a strain 
+overexpressing non mutated RacH, indicating that the function of this 
+protein is in great part related to its subcellular localization.
+
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+==============================================================================
+[End dictyNews, volume 26, number 16] 

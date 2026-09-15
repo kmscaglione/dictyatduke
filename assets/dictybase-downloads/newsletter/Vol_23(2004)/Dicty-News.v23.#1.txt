@@ -1,0 +1,100 @@
+Dicty News
+Electronic Edition
+Volume 23, number 1
+July 09, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+A novel partner for Dictyostelium filamin is an a-helical, developmentally
+regulated protein
+
+Monika Knuth,*1 Nandkumar Khaire,*1 Sijie Lu,¤ Adam Kuspa,¤ Michael
+Schleicher,$ and Angelika A. Noegel*
+
+
+Journal of Cell Science, in press
+
+The filamins are a family of highly homologous actin-crosslinking proteins
+that stabilize three-dimensional actin networks, link them to membrane
+proteins and direct intracellular signaling reactions to the actin
+scaffold through interaction with various binding partners. Here we
+describe FIP, the first Dictyostelium filamin interacting protein isolated,
+a 229.800 Da protein with two a-helical coiled coil domains. FIP was
+identified in a yeast two hybrid screen using the rod domain of filamin as
+bait. FIP can also be coimmunoprecipitated with filamin from cellular
+extracts. Deletion analysis located the interaction domain of FIP to a
+C-terminal region, whereas in filamin rod repeats 2-4 interacted with the
+recombinant FIP protein. The 7 kb transcript of FIP is upregulated during
+early development. Monoclonal antibodies raised against a bacterially
+expressed FIP polypeptide recognize a 230-kDa developmentally regulated
+protein in western blots. Immunofluorescence analysis shows a punctate
+staining pattern in the cytosol and in cell fractionation experiments FIP
+is mainly found in the cytosolic fraction. A fusion protein composed of GFP
+and the C-terminal part localizes to the plasma membrane and is associated
+with the cytoskeleton. Expression of the fusion protein affects development
+and influences the size of the multicellular aggregates and the phototactic
+behaviour of slugs. Thus, FIP might provide a candidate link between the
+dynamic actin cytoskeleton and signal transduction events during the
+multicellular stages of Dictyostelium amoebae.
+
+
+
+Submitted by: Angelika Noegel [noegel@uni-koeln.de]
+
+-----------------------------------------------------------------------------
+
+
+
+Control of cell-type proportioning in Dictyostelium by DIF as determined by
+in situ hybridization.
+
+Toshinari Maruo,1 Haruyo Sakamoto,1 Negin Iranfar,2 Danny Fuller,2 Takahiro
+Morio,3 Hideko Urushihara,3 Yoshimasa Tanaka3, Mineko Maeda1* and
+William F. Loomis,2* 
+
+1Department of Biology, Graduate School of Science, Osaka University,
+Toyonaka, Osaka 560-0043,  
+2Cell and Developmental Biology, Division of Biological Sciences, University
+of California San Diego, La Jolla, California 92093, USA
+3Institute of Biological Sciences, University of Tsukuba, Tsukuba,
+Ibaraki 305-8572, Japan
+
+
+Eukaryotic Cell, in press
+
+We have determined the proportions of the prespore and prestalk regions in
+Dictyostelium slugs by in situ hybridization with a large number of prespore
+and prestalk specific genes.  Microarrays were used to discover genes
+expressed in a cell type specific manner.  Fifty-four prespore specific
+genes were verified by in situ hybridization including 18 that had been
+previously shown to be cell type specific. The 36 new genes more than
+doubles the number of available prespore markers. At the slug stage the
+prespore genes hybridized to cells uniformly in the posterior 80% of
+wild -type slugs but hybridized to the posterior 90% of slugs lacking
+the secreted alkylphenone DIF-1. There was a compensatory two-fold
+decrease in prestalk cells in DIF-less slugs. Removal of prespore cells
+resulted in cell type conversion in both wild-type and DIF-less anterior
+fragments. Thus, DIF-1 appears to act in concert with other processes to
+establish cell-type proportions.
+
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+
+==============================================================================
+[End Dicty News, volume 23, number 1]

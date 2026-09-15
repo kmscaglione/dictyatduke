@@ -1,0 +1,149 @@
+dictyNews
+Electronic Edition
+Volume 38, number 13
+May 11, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Distinct Functional Roles of the two Terminal Halves of Eukaryotic 
+Phosphofructokinase
+
+Oscar H. Mart’nez-Costa, Valentina S‡nchez, Antonio L‡zaro, 
+Eloy D. Hern‡ndez, Keith Tornheim and Juan J. Arag—n
+
+
+Biochemical Journal, published
+
+Eukaryotic phosphofructokinase, a key regulatory enzyme in glycolysis, 
+has homologous N- and C-terminal domains thought to result from 
+duplication, fusion, and divergence of an ancestral prokaryotic gene. It 
+has been suggested that both the active site and the fructose 2,6-P2 
+allosteric site are formed by opposing N- and C-termini of subunits 
+oriented antiparallel in a dimer. On the contrary, we show here that in 
+fact the N-terminal halves form the active site, since expression of the 
+N-terminal half of the enzymes from Dictyostelium discoideum and 
+human muscle in phosphofructokinase-deficient yeast restored growth 
+on glucose. However, the N-terminus alone was not stable in vitro. The 
+C-terminus is not catalytic but is needed for stability of the enzyme, as 
+is the connecting peptide that normally joins the two domains (here 
+included in the N-terminus). Co-expression of homologous, but not 
+heterologous, N- and C-termini yielded stable, fully active enzymes in 
+vitro with sizes and kinetic properties similar to those of the wild type 
+tetrameric enzymes. This indicates that the separately translated 
+domains can fold sufficiently well to bind to each other, that such binding 
+of complementary domains is stable and that the alignment is sufficiently 
+accurate and tight as to preserve metabolite binding sites and allosteric 
+interactions.
+
+
+Submitted by Juan Arag—n [juanjose.aragon@uam.es]
+--------------------------------------------------------------------------------------
+
+
+EGF-like peptide-enhanced cell movement in Dictyostelium is mediated 
+by protein kinases and the activity of several cytoskeletal proteins
+
+Robert J. Huber a and Danton H. OÕDay a,b
+
+a Department of Cell and Systems Biology, University of Toronto, 25 
+Harbord st., Toronto, Ontario, Canada, M5S 3G5
+b Department of Biology, University of Toronto at Mississauga, 3359 
+Mississauga rd. N., Mississauga, Ontario, Canada, L5L 1C6
+ 
+ 
+Cellular Signalling, in press
+
+DdEGFL1, a synthetic Epidermal Growth Factor-Like (EGFL) peptide 
+based on the first EGFL repeat of the extracellular matrix, cysteine-rich, 
+calmodulin-binding protein CyrA, has previously been shown to sustain 
+the threonine phosphorylation of a 210 kDa protein during the starvation 
+of Dictyostelium cells. Immunoprecipitation coupled with a LC/MS/MS 
+analysis identified the 210 kDa protein as vinculin B (VinB). VinB shares 
+sequence similarity with mammalian vinculin, a protein that links the actin 
+cytoskeleton to the plasma membrane. Both threonine phosphorylated 
+VinB (P-VinB) and VinB-GFP localized to the cytoplasm and cytoskeleton 
+of Dictyostelium amoebae. VinB-GFP was also shown to be threonine 
+phosphorylated and co-immunoprecipitated with established 
+vinculin-binding cytoskeletal proteins (e.g. myosin II heavy chain, actin, 
+alpha-actinin, talin). P-VinB and VinB-GFP were detected in DdEGFL1 
+pull-down assays, which also identified a 135 kDa phosphothreonine 
+protein and two phosphotyrosine proteins (35 and 32 kDa) as potential 
+components of the DdEGFL1 signalling pathway. DdEGFL1-enhanced 
+cell movement required the cytoskeletal proteins talin B and paxillin B 
+and tyrosine kinase activity mediated by PKA signalling, however VinB 
+threonine phosphorylation was shown to be independent of PI3K/PLA2 
+signalling and PI3K and PKA kinase activity. Finally, VinB-GFP 
+over-expression suppressed DdEGFL1-enhanced random cell movement, 
+but not folic acid-mediated chemotaxis. Together, this study provides the 
+first evidence for VinB function plus new insight into the signalling 
+pathway(s) mediating EGFL repeat/peptide-enhanced cell movement in 
+Dictyostelium. This information is integrated into an emerging model that 
+summarizes existing knowledge. 
+
+
+Submitted by Danton H. OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+
+Nucleoplasmic/nucleolar translocation and identification of a nuclear 
+localization signal (NLS) in Dictyostelium BAF60a/SMARCD1 
+homologue Snf12
+
+Andrew Catalano a, and Danton H. OÕDay a,b*
+
+a Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord st., Toronto, Ontario, Canada, M5S 3G5
+b Department of Biology, University of Toronto at Mississauga, 
+3359 Mississauga rd. N., Mississauga, Ontario, Canada, L5L 1C6
+
+
+Histochemistry and Cell Biology, in press
+
+Dictyostelium is a model eukaryote for the study of several cellular 
+processes however comparatively little is known about its nucleolus. 
+Identification of nucleolar proteins is key to understanding this nuclear 
+subcompartment but only four have been identified in Dictyostelium. 
+As discussed in this article, a potential relationship between nucleolar 
+NumA1 and BAF60a/SMARCD1 suggested BAF60a may also reside 
+in the nucleolus. Here we identify BAF60a homologue Snf12 as the fifth 
+nucleolar protein in Dictyostelium. Immunolocalization experiments 
+demonstrate that Snf12 is nucleoplasmic but translocates to nucleoli 
+upon actinomycin-D-induced transcription inhibition (0.05 mg/mL, 
+4 hours). Translocation was accompanied by a microtubule-independent 
+protrusion of nucleolar Snf12 regions from the nucleus followed by 
+detection of Snf12 in cytoplasmic circles for at least 48 hours. Residues 
+372KRKR375 are both necessary and sufficient for nucleoplasmic 
+localization of Snf12 and represent a functional nuclear localization 
+signal (NLS), similar to recently identified NLSs in other Dictyostelium 
+proteins. Since nucleolar and nucleoplasmic proteins redistribute during 
+mitosis, we investigated Snf12 dynamics during this time. Dictyostelium 
+undergoes closed mitosis, meaning its nuclear envelope remains intact. 
+Despite this, during metaphase and anaphase Snf12 redistributed 
+throughout the cytoplasm before reaccumulating in the nucleus during 
+telophase, unlike the previously reported nucleoplasmic redistribution of 
+nucleolar NumA1. The nuclear exit of Snf12 was independent of its 
+putative nuclear export signal and not inhibited by exportin inhibition 
+suggesting the redistribution of nuclear proteins during mitosis in 
+Dictyostelium is mediated by other mechanisms. Snf12 is the second 
+Dictyostelium nucleolar protein for which its dynamics during mitosis 
+have been investigated.
+
+
+Submitted by Danton H. OÕDay [danton.oday@utoronto.ca]
+==============================================================
+[End dictyNews, volume 38, number 13]

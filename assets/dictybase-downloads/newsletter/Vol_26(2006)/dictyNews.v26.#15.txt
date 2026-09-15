@@ -1,0 +1,205 @@
+dictyNews
+Electronic Edition
+Volume 26, number 15
+May 19, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+A protein in crude cytosol regulates glucose-6-phosphatase activity in crude 
+microsomes to regulate group size in Dictyostelium
+
+Wonhee Jang and Richard H. Gomer
+
+Howard Hughes Medical Institute and Department of Biochemistry and Cell 
+Biology, Rice University, Houston, TX 
+
+
+J. Biol. Chem, in press
+
+Dictyostelium discoideum form groups of ~2 x 104 cells.  The group size is 
+regulated in part by a negative feedback pathway mediated by a secreted 
+multi-polypeptide complex called counting factor (CF).  The CF signal 
+transduction pathway involves CF repressing internal glucose levels by 
+increasing the Km of glucose-6-phosphatase.  Little is known about how this 
+enzyme is regulated.  Glucose-6-phosphatase is associated with microsomes 
+in both Dictyostelium and mammals.  We find that the activity of 
+glucose-6-phosphatase in crude microsomes from cells with high, normal, or 
+low CF activity had a negative correlation with the amount of CF present in 
+these cell lines.  In crude cytosols (supernatants from ultracentrifugation 
+of cell lysates), the glucose-6-phosphatase activity had a positive 
+correlation with CF accumulation.  The crude cytosols were further 
+fractionated into a fraction containing molecules greater than 10 KDa (S>10K) 
+and molecules less than 10 KDa (S<10K).  S>10K from wild-type cells strongly 
+repressed the activity of glucose-6-phosphatase in wild-type microsomes, 
+while S>10K from countin- cells (cells with low CF activity) significantly 
+increased the activity of glucose-6-phosphatase in wild-type microsomes by 
+decreasing Km.  The regulatory activities in the wild-type and countin- 
+S>10KÕs are heat labile and protease sensitive, suggesting that they are 
+proteins.  S<10K from both wild-type and countin- cells did not 
+significantly change glucose-6-phosphatase activity.  Together, the data 
+suggest that, as a part of a pathway modulating multicellular group size, 
+CF regulates one or more proteins greater than 10 KDa in crude cytosol 
+that affect microsome-associated glucose-6-phosphatase activity.  
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+-----------------------------------------------------------------------------
+
+
+==============
+ Announcement
+==============
+
+
+A new book on Dictyostelium methods will be available end of June from
+Humana Press Inc (http://humanapress.com). 
+
+Methods in Molecular Biology: Dictyostelium discoideum
+Editors: L. Eichinger and F. Rivero
+The Humana Press Inc, Totowa, USA
+
+Table of contents
+
+Preface
+
+Part I: The Organism, Community Resources and Genome-wide Studies
+
+1. The Secret Lives of Dictyostelium (review chapter)
+Richard H. Kessin
+
+2. The Genome of Dictyostelium discoideum (review chapter)
+Adam Kuspa and William F. Loomis
+
+3. The cDNA Sequencing Project  (review chapter)
+Hideko Urushihara, Takahiro Morio and Yoshimasa Tanaka
+
+4. dictyBase and the Dicty Stock Center (review chapter)
+Petra Fey, Pascale Gaudet, Karen E. Pilcher, Jakob Franke and Rex L. Chisholm
+
+5. Analysis of gene expression using cDNA microarrays
+Marcel Kaul and Ludwig Eichinger
+
+6. Proteomic Analysis of Dictyostelium discoideum
+Udo Roth, Stefan Mueller, Franz-Georg Hanisch
+
+
+Part II: Basic Methods and Molecular Genetic Techniques
+
+7. Cultivation, Spore production, and Mating
+Hideko Urushihara
+
+8. Parasexual Genetics Using Axenic Cells
+Jason King and Robert Insall
+
+9. Slug phototaxis, thermotaxis and spontaneous turning behaviour
+Paul R. Fisher and Sarah J. Annesley
+
+10. Purification techniques of subcellular compartments for analytical and
+preparative purposes
+Laurence Aubry and Gerard Klein
+
+11. Generation of multiple knock-out mutants using the Cre-loxP system
+Alan R. Kimmel and Jan Faix
+
+12. Restriction Enzyme-Mediated Integration (REMI) Mutagenesis 
+Adam Kuspa
+
+13. RNA interference and antisense mediated gene silencing in Dictyostelium.
+Markus Kuhlmann, Blagovesta Popova and Wolfgang Nellen
+
+
+Part III: Imaging and Localisation Methods
+
+14. Application of Fluorescent Protein Tags as Reporters in Live Cell
+Imaging Studies
+Annette Mueller-Taubenberger
+
+15. Investigating gene expression: in situ hybridization and  reporter genes
+Ricardo Escalante and Leandro Sastre
+
+16. Application of 2D and 3D DIAS to Motion Analysis of Live Cells in
+Transmission and Confocal Microcopy Imaging
+Deborah Wessels, Spencer Kuhl and David R.  Soll
+
+17. Using Quantitative Fluorescence Microscopy and FRET Imaging to Measure
+Spatiotemporal Signaling Events in Single Living Cells
+Xuehua Xu, Joseph A. Brzostowski and Tian Jin
+
+18. Visualising signalling and cell movement during the multicellular
+stages of Dictyostelium development
+Dirk Dormann and Cornelis J. Weijer
+
+19. Under Agarose Chemotaxis of Dictyostelium discoideum
+David Woznica and David A. Knecht
+
+20. Optimised fixation and immunofluorescence staining methods for
+Dictyostelium cells.
+Monica Hagedorn, Eva M. Neuhaus and Thierry Soldati
+
+21. Cryofixation methods for ultrastructural studies of Dictyostelium
+discoideum
+Mark J. Grimson and Richard L. Blanton
+
+
+Part IV: Dictyostelium as Model Organism
+
+22. Analysis of Signal Transduction - Formation of cAMP, cGMP and
+Ins(1,4,5)P3 in vivo and in vitro
+Peter J. M. Van Haastert
+
+23. Assaying Chemotaxis of Dictyostelium cells
+Michelle C. Mendoza and Richard A. Firtel
+
+24. Characterization of Cross-linked Actin Filament Gels and Bundles Using
+Birefringence and Polarized Light Scattering
+Ruth Furukawa and Marcus Fechheimer 
+
+25. Quantitative and microscopic methods for studying the endocytic pathway
+Francisco Rivero and Markus Maniak
+
+26. Preparation of intact, highly purified phagosomes from Dictyostelium
+Daniel Gotthardt, Regis Dieckmann, Vincent Blancheteau, Claudia Kistler,
+Frank Reichardt and Thierry Soldati
+
+27. Assaying cell-cell adhesion
+Salvatore Bozzaro
+
+28. Periodic activation of ERK2 and partial involvement of G-protein in
+ERK2 activation by cAMP in Dictyostelium cells
+Mineko Maeda
+
+29. An improved method for Dictyostelium centrosome isolation
+Irene Schulz, Yvonne Reinders, Albert Sickmann and Ralph Graef
+
+30. Epigenetics in Dictyostelium
+Markus Kaller, Wolfgang Nellen and Jonathan R. Chubb
+
+31. Dictyostelium discoideum as model to study host-pathogen interactions
+Can Uenal and Michael Steinert
+
+32. Pharmacogenetics: Defining the genetic basis of drug action and
+inositol trisphosphate analysis
+Kathryn E. Adley, Melanie Keim and Robin S.B.Williams
+
+33. How to assess and study cell death in Dictyostelium discoideum
+Artemis Kosta, Catherine Laporte, David Lam, Emilie Tresse, Marie-Franoise
+Luciani and Pierre Golstein
+
+
+Submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de],
+Francisco Rivero [francisco.rivero@uni-koeln.de]
+==============================================================================
+[End dictyNews, volume 26, number 15] 

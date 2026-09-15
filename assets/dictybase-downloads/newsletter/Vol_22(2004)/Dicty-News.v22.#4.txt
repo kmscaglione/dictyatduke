@@ -1,0 +1,141 @@
+Dicty NewsElectronic EditionVolume 22, number 4February 13, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+  Chimeric analysis of the small GTPase RacE in cytokinesis signaling in 
+Dictyostelium discoideumMadhavi Agarwal, Nicholas A Guerin, Denis A LarochelleDepartment of Biology, Clark University, Worcester, MA 01610, USA.Experimental Cell Research, in pressRacE is a small GTPase required for cytokinesis in Dictyostelium discoideum. 
+To investigate RacEâs potential binding and signaling interfaces that allow 
+its function in cytokinesis, 10 different chimeras were created between RacE 
+and the closely related small GTPase, RacC. RacE/RacC chimeras, containing 
+various combinations of four RacE regions, EI-IV: E-I (aa 1-67), E-II 
+(aa 68-124), E-III (aa 125-184), and E-IV (aa 185-224), were tested in their 
+ability to rescue the multinucleated, cytokinesis-defective phenotype of 
+RacE null cells grown in suspension. Regions E-II and E-IV were essential but 
+not sufficient for the rescue of RacE null cells. These two regions, in 
+combination with either region E-I or E-III, resulted in rescue. Results 
+presented here suggest that region E-II contains a crucial, yet incomplete, 
+binding site. Regions E-I or E-III separately provide additional, necessary 
+elements for RacEâs function. The extended E tail of RacE (E-IV) may act as 
+a Îsensorâ of the bound nucleotide state of RacE and facilitate GDP to GTP 
+exchange (possibly through interactions with a GEF molecule), thereby 
+resulting in activation of RacE. This study provides new evidence for small 
+GTPases engaging several distinct protein interfaces to mediate signaling 
+in various cellular processes. 
+Submitted by: Madhavi Agarwal [magarwal@clarku.edu]
+
+-----------------------------------------------------------------------------
+
+Global change in Escherichia coli gene expression in initial stage of 
+symbiosis with Dictyostelium cellsShin-Ichi Matsuyama1*, Chikara Furusawa2*, Masahiko Todoriki3, Itaru Urabe3 
+and Tetsuya Yomo1,,3,4,5* Both authors equally contributed to this work.1 Department of Bioinformatic Engineering, Graduate School of Information 
+Science and Technology, Osaka University, 2-1 Yamada-oka, Suita City, Osaka 
+565-0871 Japan2 Center for Developmental Biology, The Institute of Physical and Chemical 
+Research (RIKEN), 2-2-3 Minatojima-minamimachi, Chuo-ku, Kobe 650-0047, JAPAN3 Department of Biotechnology, Graduate School of Engineering, Osaka 
+University, 2-1 Yamada-oka, Suita City, Osaka 565-0871 Japan4 Intelligent Cooperation and Control Project, PRESTO, JST, 2-1 Yamada-oka, 
+Suita City, Osaka 565-0871 Japan5 Department of Pure and Applied Sciences, University of Tokyo, Komaba, 
+Meguro-ku, Tokyo, 153-8902 JapanBiosystems, in pressGenome-wide gene expression profiling was performed to investigate the early 
+formation of symbiosis using an artificial symbiosis of Escherichia coli and 
+Dictyostelium discoideum. We have previously reported that when these two 
+species were allowed to grow on minimal agar plates, they achieved a stable 
+state of coexistence, in which the emerging E. coli colonies housing 
+Dictyostelium cells were of a mucoidal nature that was not observed 
+originally. We used this microbiological system as a model to study the 
+initial stages of the development of the symbiotic relationship. The E. coli 
+gene expression profiles of symbiotic cells and non-symbiotic cells captured 
+using GeneChip technology were compared. It was clearly shown that the gene 
+expression profile was substantially altered in E. coli cells undergoing 
+symbiotic transition. The genes responsible for central energy metabolism as 
+well as those responsible for translation apparatus were down-regulated in 
+symbiotic E. coli. The transcriptional patterns of genes coding for the 
+E. coli cell surface structure were drastically altered, and this alteration 
+may determine the mucoidal nature and unique structure of coexisting colonies. 
+General stress inducible genes were expressed at low levels in symbiotic 
+E. coli. These observed changes in the transcription profile indicate that 
+the central metabolism of symbiotic E. coli is attenuated as a whole, and 
+the cells are probably under less stress because of the benefits brought by 
+coexistence with the symbiotic counterpart Dictyostelium.  
+
+Submitted by: Shin-Ichi Matsuyama [sxm67@bio.eng.osaka-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Structure-Function Analysis of the Beach Protein LvsAWei-I Wu, Juhi Yajnik, Michael Siano, and Arturo De LozanneSection of Molecular Cell & Developmental Biology and Institute for Cellular 
+and Molecular Biology, University of Texas at Austin, Austin, TX 78712.Traffic, in pressABSTRACTMost eukaryotes have several members of the BEACH family of proteins but the 
+molecular function of these large proteins remains unknown.  The 
+Dictyostelium BEACH protein LvsA is essential for cytokinesis and contractile 
+vacuole activity.  The functional contribution of different portions of LvsA 
+was tested here by deletion analysis.  The C-terminal WD domain was important 
+for protein stability and C-terminal deletions resulted in loss of LvsA 
+function.  In contrast, N-terminal deletions yielded abundant protein 
+expression that could be assayed for function.  Despite very low sequence 
+conservation of the N-terminal portion of LvsA, this region is important 
+for its function in vivo.  Deletion of 689 N-terminal amino acids produced 
+a protein that was functional in cytokinesis but partially functional in 
+osmoregulation.  Further deletions resulted in the complete loss of LvsA 
+function.  Using in vitro fractionation assays we found that LvsA 
+sedimented with membranes but this association does not require the 
+N-terminal portion of LvsA.  Interestingly, the association of LvsA with 
+the contractile vacuole was perturbed by the loss of drainin, a protein 
+important for vacuole function.  In drainin-null cells LvsA bound 
+irreversibly to engorged contractile vacuoles that fail to expel water.  
+These experiments help delineate the biochemical and physiological 
+requirements for function of one important BEACH protein, LvsA.
+
+
+Submitted by:  Arturo De Lozanne [a.delozanne@mail.utexas.edu]
+
+-----------------------------------------------------------------------------
+
+RasC Plays a Role in the Transduction of Temporal Gradient Information in the 
+cAMP Wave of DictyosteliumDeborah Wessels1, Rebecca Brincks1, Spencer Kuhl1, Vesna Stepanovic1, 
+Karla J. Daniels1, Gerald Weeks2, Chinten J. Lim2, George Spiegelman2, 
+Danny Fuller3, Negin Iranfar3, William F. Loomis3 and David R. Soll1W.M. Keck Dynamic Image Analysis Facility, Department of Biological Sciences, The University of Iowa, Iowa City, IA 522421; Department of Microbiology and 
+Immunology,The University of British Columbia, Vancouver, British Columbia2; Department of 
+Biology,University of California, San Diego, La Jolla, California 920393Eukaryotic Cell, in pressTo define the role RasC plays in motility and chemotaxis, the behavior of a 
+rasC null mutant, rasC -, was analyzed in buffer and in response to the 
+individual spatial, temporal and concentration components of a natural cAMP 
+wave, using computer-assisted 2D and 3D motion analysis systems.  These 
+quantitative studies reveal that rasC - cells translocate at the same 
+velocity and chemotax up spatial gradients of cAMP with the same efficiency 
+as control cells.  However, rasC - cells exhibit defects in maintaining 
+anterior-posterior polarity along the substratum and a single anterior 
+pseudopod when translocating in buffer in the absence of attractant.  
+rasC - cells also exhibit defects in their responses to both the 
+increasing and decreasing temporal gradients of cAMP in the front and back 
+of a wave.  These defects result in the inability of rasC - cells to 
+chemotax in a natural wave of cAMP.  The inability to respond normally to 
+temporal gradients of cAMP results in defects in the organization of the 
+cytoskeleton, most notably in higher levels of coritcal F-actin in both 
+buffer and the front of the wave, and the failure of myosin II to exit the 
+cortex in response to the decreasing temporal gradient of cAMP in the back 
+of the wave.  The behavioral defect in the front of the wave is similar to 
+that of the myosin I double mutant myoA -/myoF -, while the behavioral and 
+cytoskeletal defects in the back of the wave are similar to those of the
+ myosin II regulatory light chain phosphorylation mutant S13A.  Expression 
+array data support the premise that the behavioral defects exhibited by 
+the rasC - mutant are the immediate result of the absence of RasC function.
+
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+
+-----------------------------------------------------------------------------
+
+Identification of genes dependent on the MADS-boxtranscription factor SrfA in 
+Dictyostelium development
+
+R. Escalante, N. Iranfar, L. Sastre, and W.F. Loomis
+
+Eukaryotic Cell, in press
+
+Analysis of microarrays containing 6345 Dictyostelium discoideum genes has 
+identified twenty one whose expression is dependent on the MADS-box 
+transcription factor SrfA. In wild type cells, all these genes are induced 
+late in development. At least four of them are necessary for proper spore 
+differentiation, stability and/or germination.
+
+
+Submitted by: Leandro Sastre [lsastre@iib.uam.es]
+
+===============================================================================[End Dicty News, volume 22, number 4]

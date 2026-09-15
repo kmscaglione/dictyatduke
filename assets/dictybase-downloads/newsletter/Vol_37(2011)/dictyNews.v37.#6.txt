@@ -1,0 +1,213 @@
+dictyNews
+Electronic Edition
+Volume 37, number 6
+September 2, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Abundant Class of Non-coding RNA Regulates Development in the Social 
+Amoeba Dictyostelium discoideum
+ 
+Lotta Avesson1, Heiko T Schumacher2, Pierre Fechter3, Pascale Romby3, 
+Ulf Hellman4, and Fredrik Soederbom1*
+
+1Department of Molecular Biology, Biomedical Center, Swedish University of 
+Agricultural Sciences, Box 590, SE-75124 Uppsala, Sweden, 
+2Present address: Merck Millipore AG, Dammstrasse 19, 6301 Zug, Switzerland, 
+3Architecture et Reactivite de l'ARN, Universite de Strasbourg, CNRS, IBMC, 
+Strasbourg, France, 
+4Ludwig Institute for Cancer Research, Ltd. Biomedical Center, Uppsala 
+University, Box 595 SE-75124 Uppsala, Sweden
+
+ 
+RNA Biology, In press
+ 
+Non-coding (nc)RNAs are important players in most biological processes. 
+Although small RNAs such as microRNAs and small interfering RNAs have 
+emerged as exceptionally important regulators of gene expression, great 
+numbers of larger ncRNAs have also been identified. Many of these are 
+abundant and differentially expressed but their functions have in most 
+cases not been elucidated. The social amoeba Dictyostelium discoideum 
+contain the ncRNAs commonly found in eukaryotes. In addition, we 
+previously reported the identification of two novel classes of 42-65 nt 
+long stem-loop forming RNAs, Class I and Class II RNAs, with unknown 
+function. In this study we have further characterized these abundant 
+ncRNAs, which are down regulated during development. We have 
+confirmed expression of 29 Class I RNAs and experimentally verified 
+the formation of the computationally predicted short conserved stem 
+structure. Furthermore, we have for the first time created knockout 
+strains for several small ncRNA genes in D. discoideum and found 
+that deletion of one of the Class I RNAs, DdR-21, results in aberrant 
+development. In addition we have shown that this Class I RNA forms 
+a complex with one or several proteins but do not appear to be 
+associated with ribosomes or polysomes. In a pull down assay, 
+several proteins interacting with DdR-21 were identified, one of these 
+has two RNA recognition motifs (RRMs). The purified RRM containing 
+protein was demonstrated to bind directly and specifically to DdR-21.
+
+
+Submitted by: Lotta Avesson [vesson@xray.bmc.uu.se]
+--------------------------------------------------------------------------------
+
+
+The anti-epileptic drug valproic acid and other medium chain fatty acids 
+acutely reduce phosphoinositide levels independently of inositol in 
+Dictyostelium
+
+Pishan Chang1*, Benoit Orabi1*, Rania M. Deranieh2, Manik Dham1, 
+Oliver Hoeller3, Jakob A Shimshoni4, Boris Yagen4,Meir Bialer4, 
+Miriam L. Greenberg2, Matthew C. Walker5 and Robin SB Williams1à
+
+1 Centre for Biomedical Sciences, School of Biological Sciences, Royal 
+Holloway University of London, Egham, TW20 0EX, UK
+2 Department of Biological Sciences, Wayne State University, Detroit, MI 
+48202, USA
+3 Department of Cellular and Molecular Pharmacology and the 
+Cardiovascular Research Institute, University of California San Francisco, 
+San Francisco, CA 94158, USA
+4 Institute for Drug Research, School of Pharmacy, Faculty of Medicine, 
+The Hebrew University of Jerusalem, 91120 Jerusalem, Israel
+5 Department of Clinical and Experimental Epilepsy, Institute of Neurology, 
+University College London, London, WC1N 3BG, UK
+
+
+Disease Models and Mechanisms, in press
+
+Valproic acid (VPA) is the most widely prescribed epilepsy treatment 
+worldwide, but its mechanism of action remains unclear. Our previous work 
+identified a previously unknown effect of VPA in reducing phosphoinositide 
+production in the simple model Dictyostelium followed by the transfer of data 
+to a mammalian synaptic release model. In our current study, we show that 
+the reduction in phosphoinositide [PtdInsP (also known as PIP) and PtdInsP2 
+(also known as PIP2)] production caused by VPA is acute and dose dependent, 
+and that this effect occurs independently of phosphatidylinositol 3-kinase (PI3K) 
+activity,inositol recycling and inositol synthesis. In characterising the structural 
+requirements for this effect, we also identify a family of medium-chain fatty 
+acids that show increased efficacy compared with VPA. Within the group of 
+active compounds is a littlestudied group previously associated with seizure 
+control, and analysis of two of these compounds (nonanoic acid and 
+4-methyloctanoic acid) shows around a threefold enhanced potency compared 
+with VPA for protection in an in vitro acute rat seizure model. Together, our 
+data show that VPA and a newly identified group of medium-chain fatty acids 
+reduce phosphoinositide levels independently of inositol regulation, and 
+suggest the reinvestigation of these compounds as treatments for epilepsy.
+
+
+Submitted by: Williams Robin [robin.williams@rhul.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Conserved Valproic Acid-Induced Lipid Droplet Formation in Dictyostelium 
+and Human hepatocytes (huh7) Identifies Structurally Active Compounds
+
+Lucy M Elphick1, Nadine Pawolleck1, Irina A Guschina2, Leila Chaieb1, 
+Daniel Eikel3, Heinz Nau3, John L Harwood2, Nick J Plant4 and 
+Robin SB Williams1 
+
+1 Centre for Biomedical Sciences, School of Biological Science, Royal 
+Holloway University of London, Egham, Surrey, TW20 0EX, UK 
+2 School of Biosciences, Cardiff University, Cardiff CF10 3AX, UK
+3 Institute for Food Toxicology and Analytical Chemistry, University of 
+Veterinary Medicine Hannover, Bischofsholer Damm 15, 
+30173 Hannover, Germany
+4 Centre for Toxicology, Faculty of Health and Medical Sciences, 
+University of Surrey, Guildford, GU2 7XH, UK
+
+
+Disease Models and Mechanisms, in press
+
+Lipid droplet formation and subsequent steatosis has been reported to 
+contribute to hepatotoxicity and is an adverse effect of many pharmacological 
+agents including the anti-epileptic valproic acid (VPA).  In this study, we have 
+developed a simple model system Dictyostelium discoideum to investigate 
+the effects of VPA and related compounds in lipid droplet formation. In 
+mammalian hepatocytes, VPA increases lipid droplet accumulation over 
+a 24 hour period giving rise to liver cell damage, and we show a similar 
+effect in Dictyostelium following 30 minute VPA treatment. Using 3H-labelled 
+poly-unsaturated (arachidonic) or saturated (palmitic) fatty acids, we shown 
+VPA treatment of Dictyostelium gives rise to an increased accumulation of 
+both fatty acids in phosphatidylcholine, phosphatidylethanolamine and 
+non-polar lipids in this time period, with a similar trend observed in Human 
+hepatocytes (Huh7 cells) labelled with 3H-arachidonic acid.  In addition, 
+pharmacological inhibition of beta-oxidation in Dictyostelium phenocopies 
+fatty acid accumulation, in agreement with data reported in mammalian 
+systems. Using Dictyostelium, we then screened a range of VPA-related 
+compounds to identify compounds with high and low lipid-accumulation 
+potential, and validated these activities for effects on lipid droplet formation 
+using human hepatocytes. Structure-activity relationships for these 
+VPA-related compounds suggest that lipid accumulation is independent 
+of VPA-catalysed teratogenicity and inositol depletion. These results 
+suggest that Dictyostelium may provide both a novel model system for 
+the analysis of lipid droplet formation in human hepatocytes and a rapid 
+method for identifying VPA-related compounds showing liver toxicology.  
+
+
+Submitted by: Williams Robin [robin.williams@rhul.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Investigating the effect of emetic compounds on chemotaxis in Dictyostelium 
+identifies a non-sentient model for bitter and hot tastant research
+
+Steven Robery1, Janina Mukanowa1, Nathalie Percie du Sert2, 
+Paul L. R. Andrews2, Robin SB Williams1,*
+
+1Centre for Biomedical Sciences, School of Biological Sciences, Royal 
+Holloway University of London, Egham TW20 0EX, UK
+2Division of Biomedical Sciences, St George's University of London,
+London SW17 0RE, UK
+
+
+Plos One
+
+Novel chemical entities (NCEs) may be investigated for emetic liability 
+in a range of unpleasant experiments involving retching, vomiting or 
+conditioned taste aversion/food avoidance in sentient animals. We have 
+used a range of compounds with known emetic /aversive properties to 
+examine the possibility of using the social amoeba, Dictyostelium 
+discoideum, for research into identifying and understanding emetic 
+liability, and hence reduce adverse animal experimentation in this area.  
+Twenty eight emetic or taste aversive compounds were employed to 
+investigate the acute (10 min) effect of compounds on Dictyostelium 
+cell behaviour (shape, speed and direction of movement) in a shallow 
+chemotaxic gradient (Dunn chamber). Compound concentrations were 
+chosen based on those previously reported to be emetic or aversive in 
+in vivo studies and results were recorded and quantified by automated 
+image analysis. Dictyostelium cell motility was rapidly and strongly 
+inhibited by four structurally distinct tastants (three bitter tasting 
+compounds - denatonium benzoate, quinine hydrochloride, phenylthiourea, 
+and the pungent constituent of chilli peppers - capsaicin). In addition, 
+stomach irritants (copper chloride and copper sulphate), and a 
+phosphodiesterase IV inhibitor also rapidly blocked movement. A 
+concentration-dependant relationship was established for five of these 
+compounds, showing potency of inhibition as capsaicin (IC50=11.9±4.0µM) 
+> quinine hydrochloride (IC50=44.3±6.8µM) > denatonium benzoate 
+(IC50=129±4µM) > phenylthiourea (IC50=366±5µM) > copper sulphate 
+(IC50=1433±3µM). In contrast, 21 compounds within the cytotoxic and 
+receptor agonist/antagonist classes did not affect cell behaviour. Further 
+analysis of bitter and pungent compounds showed that the effect on cell 
+behaviour was reversible and not cytotoxic, suggesting an 
+uncharacterised molecular mechanism of action for these compounds. 
+These results therefore demonstrate that Dictyostelium has potential as 
+a non-sentient model in the analysis of the molecular effects of tastants, 
+although it has limited utility in identification of emetic agents in general. 
+
+
+Submitted by: Williams Robin [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 37, number 6]

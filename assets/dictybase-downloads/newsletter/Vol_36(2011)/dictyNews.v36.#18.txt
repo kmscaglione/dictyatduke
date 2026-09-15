@@ -1,0 +1,129 @@
+dictyNews
+Electronic Edition
+Volume 36, number 18
+July 1, 2011
+
+Please submit abstracts of your papers as soon as they have been accepted for 
+publication by sending them to dicty@northwestern.edu or by using the form at 
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other useful 
+information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Microcysts: The Third Developmental Pathway of Social Amoebozoans
+
+Aldona A. Budniaka1, and Danton H. O'Day1,2
+
+1 Department of Cell & Systems Biology, University of Toronto, Toronto, 
+Ontario M5S 3G5, Canada
+2 Department of Biology, University of Toronto Mississauga, Mississauga, 
+Ontario L5L 1C6, Canada
+
+The authors contributed equally to the work
+
+Protist, in press
+
+Microcyst formation and germination, the least well studied of the three 
+alternative developmental pathways open to the social amoebozoans, is also 
+the simplest since it involves single cells. While classical studies profiled 
+the morphological and biochemical changes that characterize microcyst 
+differentiation, recent studies have focused on the molecular and evolutionary 
+aspects of this system. Microcyst differentiation (encystment) is primarily 
+triggered by high osmolarity and to a lesser extent by starvation. The 
+transformation of an amoeba into a microcyst involves the formation of a 
+cellulose cell wall as well as specific enzymatic and biochemical changes 
+leading to dormancy. The spherical microcyst remains dormant as long as high 
+osmotic conditions persist. When the osmolarity decreases, germination begins 
+during which the cell wall is digested as the microcyst swells followed by the 
+emergence of an amoeba. This rapid event typically takes 3-6 hours. The 
+relationship between encystment and sporulation, which has evolutionary 
+significance, is also reviewed with particular emphasis on the role and 
+regulation of actin tyrosine phosphorylation. In light of the recent sequencing 
+of the genomes of microcyst-forming cellular slime mold species, which will 
+generate more research on microcysts, this critical review covers past and 
+recent research to set the stage for future work on this alternative 
+developmental pathway.
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------
+
+
+Myosin-1C associates with microtubules and stabilizes the mitotic spindle during 
+cell division
+
+Agrani Rump*+, Tim Scholz#+, Claudia Thiel*, Falk K. Hartmann*, Petra Uta#, 
+Maike H. Hinrichs#, Manuel H. Taft* and Georgios Tsiavaliaris*
+
+*Laboratory for Cellular Biophysics, Institute for Biophysical Chemistry, 
+Hannover Medical School, 30625 Hannover, Germany 
+#Institute for Molecular and Cell Physiology, Hannover Medical School, 
+30625 Hannover, Germany
+
++ equal contribution
+
+Journal of Cell Science, in press
+
+The mitotic spindle in eukaryotic cells is composed of a bipolar array of 
+microtubules (MTs) and associated proteins that are required during mitosis 
+for the correct partitioning of the two sets of chromosomes to the daughter 
+cells. In addition to the well-established functions of MT-associated proteins 
+(MAPs) and MT-based motors in cell division, there is increasing evidence that 
+the F-actin-based myosin motors are important mediators of F-actin-MT interactions 
+during mitosis. Here, we report the functional characterization of the long-tailed 
+class-1 myosin myosin-1C from Dictyostelium discoideum during mitosis. Our data 
+reveal that myosin-1C binds to MTs and has a role in maintenance of spindle 
+stability for accurate chromosome separation. Both myosin-1C motor function and 
+tail domain-mediated MT-F-actin interactions are required for the cell-cycle-dependent 
+relocalization of the protein from the cell periphery to the spindle. We show that 
+the association of myosin-1C with MTs is mediated through the tail domain. The 
+myosin-1C tail can inhibit kinesin motor activity, increase the stability of MTs, 
+and form crosslinks between MTs and F-actin. These data illustrate that myosin-1C 
+is involved in the regulation of MT function during mitosis in D. discoideum.
+
+
+Submitted by Georgios Tsiavaliaris [Tsiavaliaris.Georgios@mh-hannover.de]
+--------------------------------------------------------------------------------
+
+For lovers of French: a new review in French about Dicty
+
+Dictyostelium discoideum : un modèle pour l'étude de la virulence bactérienne 
+[Dictyostelium discoideum: a model for the study of bacterial virulence]
+
+Stéphanie Dallaire-Dufresne1,2, Valérie E. Paquet1,2 et Steve J. Charette1,2,3 
+
+1. Institut de biologie intégrative et des systèmes, Pavillon Charles-Eugène-Marchand, 
+Université Laval, 1030 avenue de la Médecine, Québec, Québec, Canada, G1V 0A6 
+2. Centre de recherche de l'Institut universitaire de cardiologie et de pneumologie 
+de Québec (Hôpital Laval), 2725 Chemin Sainte-Foy, Québec, Québec, Canada, G1V 4G5 
+3. Département de biochimie, de microbiologie et de bio-informatique, 
+Faculté des sciences et de génie, Université Laval, 1045 avenue de la Médecine, 
+Québec, Québec, Canada G1V 0A6
+
+Canadian Journal of Microbiology, in press
+
+L'amibe Dictyostelium discoideum, un prédateur bactérien, est devenue un outil 
+précieux pour étudier la virulence bactérienne. Cet eucaryote unicellulaire possède 
+toutes les caractéristiques qui font de lui un modèle polyvalent. Il permet d'étudier 
+autant les facteurs de virulence des bactéries pathogènes que les éléments de l'hôte 
+impliqués dans la résistance à l'ennemi. La virulence d'une vingtaine d'espèces de 
+bactéries pathogènes pour l'humain ou les animaux a été étudiée avec D. discoideum 
+jusqu'à maintenant. Ces bactéries sont autant des pathogènes extracellulaires 
+qu'intracellulaires. La présente synthèse fait le tour de la question en portant 
+une attention particulière sur les raisons qui font en sorte que D. discoideum est 
+un hôte modèle adéquat pour l'étude de la virulence bactérienne et sur le type de 
+renseignements que cette amibe permet d'obtenir sur la relation hôte-pathogène.
+
+
+Submitted by Steve Charette [Steve.Charette@bcm.ulaval.ca]
+==============================================================
+[End dictyNews, volume 36, number 18]

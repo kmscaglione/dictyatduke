@@ -1,0 +1,48 @@
+Dicty NewsElectronic EditionVolume 20, number 8May 02, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at DictyBase--http://dictybase.org.=============  Abstracts=============Genetic Interactions of the E3 Ubiquitin Ligase Component FbxA with cAMPMetabolism and a Histidine Kinase Signaling Pathway During Dictyosteliumdiscoideum developmentTurgay Tekinay, Herbert L. Ennis, Mary Y. Wu, Margaret Nelson1, Richard H.Kessin*, and David I. Ratner2,*Accepted: Eukaryotic CellAbstractDictyostelium amoebae altered in a gene called fbxA, which is thought toencode a component of an SCF E3 ubiquitin ligase, have defectiveregulation of cell-type proportionality. In chimeras with wild-type cells,the mutant amoebae form mainly spores, leaving the construction of stalksto wild-type cells. To examine the role of fbxA and regulated proteolysiswe have recovered the promoter of fbxA and shown that it is expressed in apattern resembling that of a prestalk-specific gene until late indevelopment when it is also expressed in developing spore cells. BecausefbxA cells are developmentally deficient in pure culture, we were able toselect suppressor mutations that promote sporulation of the originalmutant. One suppressor mutation resides within the gene regA, whichencodes a cAMP phosphodiesterase linked to an activating responseregulator domain. In another suppressor, there has been a disruption ofdhkA, a gene encoding a two-component histidine kinase known to influenceDictyostelium development.  RegA appears precociously and in greateramounts in the fbxA mutant but not in an fbxA/dhkA double mutant, whereRegA is restored to wild-type levels.  Because the basis of regAsuppression might involve alterations in cAMP levels during development,the concentration of cAMP was determined in all strains. The level of cAMPis relatively constant during multi-cellular development in all strainsexcept the dhkA mutant, in which it is reduced at least 6-fold.  The levelof cAMP in the double mutant dhkA/fbxA is relatively normal. The level ofcAMP in the various mutants does not correlate with spore formation, aswould be expected on the basis of our present understanding of thesignaling pathway leading to the induction of spores. Altered amounts ofRegA and cAMP early in the development of the mutants suggest that bothfbxA and dhkA genes act earlier than previously thought.Submitted by: Turgay Tekinay [tt420@columbia.edu]
+
+-----------------------------------------------------------------------------
+
+Dictyostelium and Acanthamoeba myosin II assembly domains go to the cleavagefurrow of Dictyostelium myosin II-null cells
+
+Shi Shu*, Xiong Liu* and Edward D. Korn?Laboratory of Cell Biology, National Heart, Lung, and Blood Institute,National Institutes of Health, 9000 Rockville Pike, Bethesda, MD 20892, USA
+
+*These authors contributed equally.?To whom correspondence should be addressed: Building 50, Room 2517,National Institutes of Health, Bethesda, MD 20892.  Tel.: (301) 496-1616.Fax: (301) 402-1519.  E-mail: edk@nih.gov <mailto:edk@nih.gov>
+
+Pro. Natl. Acad. Sci. USA  in pressABSTRACT
+How myosin II localizes to the cleavage furrow of dividing cells is largelyunknown.  We show here that a 283-residue protein, AD1, corresponding to theassembly domain in the tail of Dictyostelium myosin II assembles intobundles of long tubules when expressed in myosin II-null cells and localizesto the cleavage furrow of dividing cells.  AD1 mutants that do notpolymerize in vitro do not go to the cleavage furrow in vivo.  Anassembly-competent polypeptide corresponding to the C-terminal 256 residuesof Acanthamoeba myosin II also goes to the cleavage furrow of Dictyosteliummyosin II-null cells.   When over-expressed in wild-type cells, AD1co-localizes with endogenous myosin II (possibly as a co-polymer) ininterphase, motile and dividing cells and under caps of concanavalin Areceptors but has no effect on myosin II-dependent functions.  These resultssuggest that neither a specific sequence, other than that required forpolymerization, nor interaction with other proteins is required forlocalization of myosin II to the cleavage furrow.
+
+Submitted by: Edward Korn [KornE@NHLBI.NIH.GOV]
+
+-----------------------------------------------------------------------------
+
+The Dictyostelium discoideum prespore specific catalase B functions to control 
+late development and to protect spore viabilityMa. Xenia U. Garcia+@ Hannah Alexander+, Dana Mahadeo#&, David A. Cotter#, and 
+Stephen Alexander+*+Division of Biological Sciences, University of Missouri, 303 Tucker Hall, 
+Columbia, MO 65211-7400# Department of Biological Sciences, University of Windsor, Windsor, Ontario, 
+N9B 3P4 Canada@  Current address: Department of Molecular Biology and Pharmacology, Washington 
+University School of Medicine, St. Louis, MO 63110& Current address:  Laboratory of Cellular and Molecular Biology, NCI, NIH, 
+37 Covet Dr., Bethesda, MD 20892-4255
+
+Accepted: Biochimica Biophysica Acta (BBA) - Molecular Cell ResearchAbstract
+Changes in the levels of reactive oxygen species (ROS) have been associated 
+previously with cell differentiation and development in several systems.  Thus, 
+there is interest in studying the developmental regulation of antioxidant 
+enzymes, whose activities may modulate ROS levels and subsequent oxidant-mediated 
+signal transduction events in specific tissues.  Our recent identification in 
+Dictyostelium discoideum of the prespore specific catalase B (CatB) enzyme 
+suggested a) that the CatB enzyme functions to provide protection to the mature 
+spores, and b) that the CatB enzyme may have a regulatory role in cell 
+differentiation and morphogenesis.  We have now confirmed both these hypotheses.  
+We specifically disrupted the catB gene by homologous recombination.  The 
+resulting catB null strain displays a 4-hour delay in development at the time of 
+normal catB gene expression, followed by slow and asynchronous development of 
+fruiting bodies, taking 10 hours longer than the isogenic parent strain.  The 
+expression of both prestalk and prespore specific genes was altered in the mutant 
+both temporally and quantitatively, and the resultant mutant spores had increased 
+sensitivity to H2O2.  This study supports the idea that catalase B functions in 
+the development of D. discoideum by regulating the level of ROS, and adds to the 
+growing body of evidence for regulatory roles for ROS.
+
+Submitted by: Hannah Alexander [AlexanderH@missouri.edu]
+
+============================================================[End Dicty News, volume 20, number 8]

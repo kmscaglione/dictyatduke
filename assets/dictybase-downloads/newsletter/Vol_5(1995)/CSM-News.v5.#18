@@ -1,0 +1,116 @@
+CSM News
+Electronic Edition
+Volume 5, number 18
+Dec. 30, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+Origin and evolution of circular waves and spirals in Dictyostelium
+discoideum territories
+
+Eirikur Palsson*  and Edward C. Cox  
+
+Program in Applied and Computational Mathematics*, Department of
+Molecular Biology , Princeton University, Princeton, NJ 08544
+
+PNAS, in press
+
+ABSTRACT	
+
+   Randomly distributed Dictyostelium discoideum cells form
+cooperative territories by signaling to each other with 3' 5'-cyclic
+adenosine monophosphate (cAMP).  Cells initiate the process by sending
+out pulsatile signals which propagate as waves.  With time, circular
+and spiral patterns form.  We show that by adding spatial and temporal
+noise to the levels of an important regulator of external cAMP levels,
+the cAMP phosphodiesterase inhibitor, we can explain the natural
+progression of the system from randomly firing cells to circular waves
+whose symmetries break to form double and single- or multi-armed
+spirals.  When phosphodiesterase inhibitor is increased with time,
+mimicking experimental data, the wavelength of the spirals shortens,
+and a proportion of them evolve into pairs of connected spirals.  We
+compare these results to recent experiments, finding that the temporal
+and spatial correspondence between experiment and model is very close.
+
+-------------------------------------------------------------------------
+
+Genetic Networks that Regulate Development in Dictyostelium
+
+William F. Loomis
+
+Center for Molecular Genetics, Department of Biology
+University of California San Diego, La Jolla CA 92093
+
+Microbiological Reviews, in press
+
+Summary
+
+   Genes and their RNA and protein products can be considered as nodes
+in genetic networks when they are connected to two or more components
+by either regulatory or physical interactions. Some of the genes which
+have recently been shown to play essential roles in development of
+Dictyostelium discoideum are analyzed in terms of the networks within
+which they function. Development is divided into four partially
+overlapping stages: aggregation, post-aggregation, cell type
+specialization and terminal differentiation. The molecular
+consequences of mutations in one or more of these developmental genes
+as well as the resulting morphological aberrations shed light on the
+normal physiological processes by which the cells become mutually
+responsive, form mounds where prestalk and prespore cells diverge,
+regulate the proportions of the major cell types, and finally form
+fruiting bodies where 80% of the cells are spores held up by the
+remaining cells within a stalk. Although only a small proportion of
+the total number of developmental genes in Dictyostelium have
+been characterized to date, their interactions allow us to make
+specific predictions concerning the network of cell type
+interactions. A working model is presented as a possible framework for
+positioning new developmental genes as they are discovered.
+
+------------------------------------------------------------------
+
+Seven Helix Chemoattractant Receptors Transiently Stimulate MAP Kinase
+in Dictyostelium: Role of Heterotrimeric G-Proteins
+
+Mineko Maeda1, Laurence Aubry1, Robert Insall2, Chris Gaskins1,
+Peter N. Devreotes2, and Richard A. Firtel1
+
+1Department of Biology
+Center for Molecular Genetics
+University of California, San Diego
+
+2Department of Biological Chemistry
+Johns Hopkins University School of Medicine
+
+J. Biol. Chem., in press.
+
+ABSTRACT
+
+   MAP kinases are involved in controlling a cell's responses to a
+variety of stimuli and can be activated by both protein tyrosine kinase and
+G protein-coupled receptors.  It was previously shown that Dictyostelium
+MAP kinase ERK2 is required for normal activation of adenylyl cyclase and
+erk2 null cells are aggregation-deficient.  In this manuscript, we show
+that the Dictyostelium MAP kinase ERK2 is rapidly and transiently activated
+in response to the chemoattractant cAMP.  This response requires cAMP
+receptors but is independent of the coupled Ga2 subunit and the only known
+Gb subunit.  These data indicate that ligand-mediated receptor-activation
+of adenylyl cyclase requires two receptor-dependent pathways, one of which
+requires heterotrimeric G proteins including Ga2 and the only known Gb
+subunit, and the second of which requires ERK2.  Our results suggest that
+ERK2 may be activated by a novel receptor-mediated pathway.
+
+--------------------------------------------------------------------------
+
+[End CSM News, volume 5, number 18]
+
+

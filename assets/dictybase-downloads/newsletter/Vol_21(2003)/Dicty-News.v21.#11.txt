@@ -1,0 +1,150 @@
+Dicty News
+Electronic Edition
+Volume 21, number 11
+October 10, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+Macroautophagy is dispensable for intracellular replication of 
+Legionella pneumophila in Dictyostelium discoideum
+
+Grant P. Otto, Mary Y. Wu, Margaret Clarke, Hao Lu, O. Roger 
+Anderson, Hubert Hilbi, Howard A. Shuman, and Richard H. Kessin.
+
+Accepted, Molecular Microbiology
+
+SUMMARY
+The gram-negative bacterium Legionella pneumophila is a facultative intracellular
+pathogen of free-living amoebae and mammalian phagocytes. L. pneumophila is
+engulfed in phagosomes that initially avoid fusion with lysosomes. The phagosome
+associates with endoplasmic reticulum and mitochondria, and eventually resembles
+ER. The morphological similarity of the replication vacuole to autophagosomes,
+and enhanced bacterial replication in response to macroautophagy-inducing
+starvation, led to the hypothesis that L. pneumophila infection requires
+macroautophagy. Since L. pneumophila replicates in D. discoideum, and
+macroautophagy genes have been identified and mutated in D. discoideum, we have
+taken a genetic and cell biological approach to evaluate the relationship between
+host macroautophagy and intracellular replication of L. pneumophila. Mutation of
+the apg1 , apg5, apg6, apg7 and apg8 genes produced typical macroautophagy
+defects, including reduced bulk protein degradation and cell viability during
+starvation. We show that L. pneumophila replicates normally in D. discoideum
+macroautophagy mutants and produces replication vacuoles that are
+morphologically indistinguishable from those in wild-type D. discoideum.
+Furthermore, a GFP-tagged marker of autophagosomes, Apg8, does not
+systematically co-localise with DsRed-labelled L. pneumophila. We conclude that
+macroautophagy is dispensable for L. pneumophila intracellular replication in 
+D. discoideum.
+
+Submitted by: Grant Otto [go25@columbia.edu]
+-----------------------------------------------------------------------------
+
+A mechanical unfolding intermediate in an actin-crosslinking protein.
+
+Ingo Schwaiger, Angelika Kardinal, Michael Schleicher, Angelika Noegel and 
+Matthias Rief
+
+Accepted, Nature Structural Biology
+
+A large number of F-actin cross-linking proteins consists of two 
+actin-binding domains separated by a rod domain that can vary considerably
+in length and structure. We used single-molecule force-experiments to
+investigate the mechanics of the immunoglobulin (Ig) rod domains of filamin
+from Dictyostelium discoideum (ddFLN). We find that one of the 6 Ig-domains
+unfolds at lower forces than all other domains and exhibits a stable
+unfolding intermediate on its mechanical unfolding pathway. Amino acid
+inserts into various loops of this domain lead to length changes in the
+single molecule unfolding pattern which allowed us to map the stable core
+of ~60 amino acids that constitute the unfolding intermediate. Fast
+refolding in combination with low unfolding forces suggest a potential in
+vivo role for this domain as a mechanically extensible element within the
+ddFLN rod.
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+-----------------------------------------------------------------------------
+
+Disruption of aldehyde reductase increases group size in Dictyostelium
+
+Karen Ehrenman1, Gong Yang1, Wan-Pyo Hong1, Tong Gao1, Wonhee Jang2, 
+Debra A. Brock1, R. Diane Hatton1, James D. Shoemaker3, and Richard H. Gomer1,2
+
+1Howard Hughes Medical Institute and 2Department of Biochemistry and Cell 
+Biology, MS-140, Rice University, Houston, TX and 3Metabolic Screening Laboratory, 
+Department of Biochemistry and Molecular Biology, St. Louis University, St. Louis, MO
+
+Journal of Biological Chemistry, in press
+
+
+ABSTRACT
+Developing Dictyostelium cells form structures containing ~20,000 cells.  
+The size regulation mechanism involves a secreted counting factor (CF) 
+repressing cytosolic glucose levels.  Glucose or a glucose metabolite affect 
+cell-cell adhesion and motility; these in turn affect whether a group stays 
+together, loses cells, or even breaks up. NADPH-coupled aldehyde reductase 
+reduces a wide variety of aldehydes to the corresponding alcohols, including 
+converting glucose to sorbitol.  The levels of this enzyme previously appeared 
+to be regulated by CF.  We find that disrupting alrA, the gene encoding aldehyde 
+reductase, results in the loss of alrA mRNA and AlrA protein and a decrease in 
+the ability of cell lysates to reduce both glyceraldehyde and glucose in a 
+NADPH-coupled reaction. Counterintuitively, alrA¯ cells grow normally and 
+have decreased glucose levels compared to parental cells.  The alrA¯ cells 
+form long unbroken streams and huge groups. Expression of AlrA in alrA¯ cells 
+causes cells to form normal fruiting bodies, indicating that AlrA affects group 
+size.  alrA¯ cells have normal adhesion but a reduced motility, and computer 
+simulations suggest that this could indeed result in the formation of large groups.  
+alrA¯ cells secrete low levels of countin and CF50, two components of CF, and 
+this could partially account for why alrA¯ cells form large groups.  alrA¯ 
+cells are responsive to CF and are partially responsive to recombinant 
+countin and CF50, suggesting that disrupting alrA inhibits but does not 
+completely block the CF signal transduction pathway. Gas chromatography/ 
+mass spectroscopy indicates that the concentrations of several metabolites are 
+altered in alrA¯ cells, suggesting that the Dictyostelium aldehyde reductase 
+affects several metabolic pathways in addition to converting glucose to sorbitol.  
+Together, our data suggest that disrupting alrA affects CF secretion, causes 
+many effects on cellular metabolism, and has a major effect on group size.  
+
+Submitted by: Richard Gomer [richard@rice.edu]
+-----------------------------------------------------------------------------
+Uniform cAMP stimulation of Dictyostelium cells induces localized patches of 
+signal transduction and pseudopodia
+
+Marten Postma,  Jeroen Roelofs, Joachim Goedhart, Theodorus W.J. Gadella, 
+Antonie J.W.G. Visser, and Peter J.M. Van Haastert 
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4, 
+9747 AG Groningen, the Netherlands
+
+Molecular Biology of the Cell, in press
+
+ABSTRACT
+The chemoattractant cAMP induces the translocation of cytosolic PHCrac-GFP to 
+the plasma membrane. PHCrac-GFP is a green fluorescent protein fused to a PH domain 
+that presumably binds to phosphatydylinositol polyphosphates in the membrane. 
+We determined the relative concentration of PHCrac-GFP in the cytosol and at 
+different places along the cell boundary. In cells stimulated homogeneously 
+with 1 microM cAMP we observed two distinct phases of PHCrac-GFP translocation. 
+The first translocation is transient and occurs to nearly the entire boundary of 
+the cell; the response is maximal at 6-8 seconds after stimulation and disappears 
+after about 20 seconds. A second translocation of PHCrac-GFP starts after about 
+30 seconds and persists as long as cAMP remains present. Translocation during 
+this second response occurs to small patches with radius of about 4-5 µm, 
+each covering about 10 % of the cell surface. Membrane patches of PHCrac-GFP are 
+both temporally and spatially closely associated with pseudopodia, which are 
+extended at about 10 s from the area with a PHCrac-GFP patch. These signaling 
+patches in pseudopodia of homogeneously stimulated cells resemble the single 
+patch of PHCrac-GFP at the leading edge of a cell in a gradient of cAMP, suggesting 
+that PHCrac-GFP is a spatial cue for pseudopod formation also in uniform cAMP. 
+
+Submitted by: Peter J.M. Van Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+===============================================================================
+[End Dicty News, volume 21, number 11]
+

@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 40, number 24
+September 19, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+PTEN Hopping on the Cell Membrane Is Regulated via a 
+Positively-Charged C2 Domain
+
+Masato Yasui, Satomi Matsuoka, Masahiro Ueda
+
+
+PLoS Computational Biology, 10(9): e1003817.
+
+PTEN, a tumor suppressor that is frequently mutated in a wide spectrum 
+of cancers, exerts PI(3,4,5)P3 phosphatase activities that are regulated 
+by its dynamic shuttling between the membrane and cytoplasm. Direct 
+observation of PTEN in the interfacial environment can offer 
+quantitative information about the shuttling dynamics, but remains 
+elusive. Here we show that positively charged residues located in the 
+Calpha2 helix of the C2 domain are necessary for the membrane localization 
+of PTEN via stable electrostatic interactions in Dictyostelium discoideum. 
+Single-molecule imaging analyses revealed that PTEN molecules moved 
+distances much larger than expected had they been caused by lateral 
+diffusion, a phenomenon we call "hopping." Our novel single-particle 
+tracking analysis method found that the Calpha2 helix aids in regulating 
+the hopping and stable-binding states. The dynamically established 
+membrane localization of PTEN was revealed to be essential for 
+developmental processes and clarified a fundamental regulation mechanism 
+of the protein quantity and activity on the plasma membrane.
+
+
+Submitted by Satomi Matsuoka [s.matsuoka@riken.jp]
+---------------------------------------------------------------------------
+
+
+Loss of Cln3 function in the social amoeba Dictyostelium discoideum 
+causes pleiotropic effects that are rescued by human CLN3
+
+Robert J. Huber*, Michael A. Myre , Susan L. Cotman 
+
+Center for Human Genetic Research, Massachusetts 
+General Hospital, Harvard Medical School,
+185 Cambridge Street, Boston, Massachusetts, USA 02114
+
+* Corresponding author
+  These authors contributed equally to the work
+
+
+PLoS One, accepted
+
+The neuronal ceroid lipofuscinoses (NCL) are a group of inherited, 
+severe neurodegenerative disorders also known as Batten disease. 
+Juvenile NCL (JNCL) is caused by recessive loss-of-function 
+mutations in CLN3, which encodes a transmembrane protein that 
+regulates endocytic pathway trafficking, though its primary 
+function is not yet known. The social amoeba Dictyostelium 
+discoideum is increasingly utilized for neurological disease 
+research and is particularly suited for investigation of protein 
+function in trafficking. Therefore, here we establish new 
+overexpression and knockout Dictyostelium cell lines for JNCL 
+research. Dictyostelium Cln3 fused to GFP localized to the 
+contractile vacuole system and to compartments of the endocytic 
+pathway. cln3- cells displayed increased rates of proliferation 
+and an associated reduction in the extracellular levels and 
+cleavage of the autocrine proliferation repressor, AprA. Mid- 
+and late development of cln3- cells was precocious and cln3- 
+slugs displayed increased migration. Expression of either 
+Dictyostelium Cln3 or human CLN3 in cln3- cells suppressed the 
+precocious development and aberrant slug migration, which were 
+also suppressed by calcium chelation. Taken together, our 
+results show that Cln3 is a pleiotropic protein that negatively 
+regulates proliferation and development in Dictyostelium. This 
+new model system, which allows for the study of Cln3 function 
+in both single cells and a multicellular organism, together with 
+the observation that expression of human CLN3 restores 
+abnormalities in Dictyostelium cln3- cells, strongly supports 
+the use of this new model for JNCL research.
+
+
+Submitted by Robert Huber [rhuber@mgh.harvard.edu]
+==============================================================
+[End dictyNews, volume 40, number 24]

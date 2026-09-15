@@ -1,0 +1,158 @@
+Dicty News
+Electronic Edition
+Volume 10, number 9
+March 28, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+LOCALISATION OF GLYCOPROTEINS CONTAINING TYPE 3 O-LINKED GLYCOSYLATION 
+TO MULTILAMELLAR BODIES IN DICTYOSTELIUM DISCOIDEUM.  
+
+Emslie, K.R., Birch, D., Champion, A.C. and Williams, K.L. *
+
+Department of Biological Sciences, Macquarie University
+Sydney NSW 2109
+
+Int. J. Parasitology
+
+ABSTRACT
+
+   Glycosylation of proteins in Dictyostelium discoideum has been 
+recently classified into several types based on structural and 
+mutational studies.  Type 3 O-linked glycosylation contains fucose and 
+N-acetyl-glucosamine and is recognised by the carbohydrate-specific 
+monoclonal antibody MUD 62. The developmentally regulated cysteine 
+proteinase, ddCP38B, is the major protein recognised by both MUD 62 
+and a second carbohydrate-specific monoclonal antibody, MUD 166, 
+in vegetative cells using bacteria as a food source. Using 
+immunofluorescence and immunogold labelling, glycoproteins carrying 
+the MUD 62 and MUD 166-specific epitopes have been localised
+intracellularly to the lysosomal network and multilamellar bodies 
+of D. discoideum. These bodies contain remnants of undigested 
+bacteria and are egested from the cell prior to starvation-induced 
+aggregation. These results suggest that extracellular glycoproteins 
+carrying the Type 3 O-linkage, such as ddCP38B, may not be secreted 
+via the conventional pathway but may be released into the medium 
+following targeting to the multilamellar bodies.
+
+-------------------------------------------------------------------------
+
+A Distinct 14-Residue Site Triggers Coiled-Coil Formation in 
+Cortexillin I
+
+Michel O. Steinmetz1, Alexander Stock2, Therese Schulthess3, Ruth 
+Landwehr3, Ariel Lustig3, Jan Faix2, Guenther Gerisch2, Ueli Aebi1, 
+and Richard A. Kammerer3
+
+1M.E. Mueller Institute for Microscopy, Biozentrum, University of Basel,
+CH-4056 Basel, Switzerland, 2Max-Planck-Institut fuer Biochemie, D-82152
+Martinsried, Germany, 3Department of Biophysical Chemistry, Biozentrum,
+University of Basel, CH-4056 Basel, Switzerland
+
+EMBO J. in press. 
+
+Abstract:
+
+   We have investigated the assembly process of the Dictyostelium 
+discoideum cortexillin I oligomerization domain (Ir) into a tightly 
+packed two-stranded parallel coiled-coil structure using a variety of 
+recombinant polypeptide chain fragments. The structures of these Ir 
+fragments were analyzed by circular dichroism spectroscopy, analytical
+ultracentrifugation, and electron microscopy. Deletion mapping 
+identified a distinct 14-residue site, Arg311 to Asp324, within the 
+Ir coiled coil which was absolutely necessary for dimer formation, 
+indicating that heptad repeats, by themselves, are not sufficient 
+for stable coiled-coil formation. Moreover, deletion of the six 
+N-terminal heptad repeats of Ir led to the formation of a four-helix, 
+rather than a two-helix structure, suggesting that the full-length 
+cortexillin I coiled-coil domain behaves as a cooperative folding 
+unit. Most interestingly, a 16-residue long peptide containing the 
+distinct coiled-coil "trigger" site Arg311 to Asp324 yielded ~30% 
+helix formation, as monomer, in aqueous solution. pH titration and
+NaCl screening experiments revealed that the peptide's helicity depends
+strongly on pH and ionic strength, indicating that electrostatic
+interactions by charged side chains within the peptide are critical in
+stabilizing its monomer helix. Taken together, these findings demonstrate
+that Arg311 to Asp324 behaves as an autonomous helical folding unit, and
+they further suggest that this distinct Ir segment controls the process 
+of coiled-coil formation of cortexillin I. 
+
+-------------------------------------------------------------------------
+
+Rules for the addition of O-linked N-acetylglucosamine to secreted
+proteins in Dictyostelium discoideum: In vivo studies on glycosylation 
+of mucin MUC1 and MUC2 repeats
+
+Eva JUNG, Andrew A. GOOLEY, Nicolle H. PACKER, Peter KARUSO and Keith L.
+WILLIAMS
+
+MUCAB (Macquarie University Centre for Analytical Biotechnology),
+School of Biological Sciences and School of Chemistry, Macquarie
+University, Sydney, NSW 2109, Australia
+
+Eur. J. Biochem., in press
+
+One class of O-glycosylation in the simple eukaryote Dictyostelium
+discoideum involves the addition of a single N-acetylglucosamine to 
+serine and threonine residues on secreted or membrane bound proteins 
+at an early stage of development. A previously developed in vivo 
+approach for the identification of acceptor sites for O-glycosylation 
+was used to further characterise the specificity of the UDP-GlcNAc: 
+polypeptide N-acetylglucosaminyltransferase(s). Glutathione-S-transferase
+fusion proteins were constructed to express and secrete the mucin 
+peptide repeat for MUC1 (PDT1RPAPGS1T2APPAHGVT3S2A) and a MUC2-like 
+peptide (PT1T2T3PIT4T5T6T7T8T9VT10PT11PT12PT13GT14QT15), respectively.
+Monosaccharide analysis, electrospray-ionisation mass spectrometry and
+protein sequencing showed that the modification is a single
+N-acetylglucosamine attached to certain threonine residues. The MUC1 
+repeat was glycosylated on T2 and T3 and there were no modifications 
+on T1 or on S1 and S2. The MUC2 glycopeptide was glycosylated on T1, 
+T3, T5, T7, T9, T10, T11, T12, T13 and T14. Our results show that the 
+D. discoideum glycosylation apparatus incorporates GlcNAc residues 
+into peptide sequences similar to those reported for the addition 
+of GalNAc residues in mammalian tissues. The anomeric linkage of 
+the GlcNAc residues to the polypeptide chain was shown to be in 
+alpha configuration as determined by NMR studies.
+
+-------------------------------------------------------------------------
+
+Spalten, a protein containing Galpha-protein-like and PP2C domains, is
+essential for cell-type differentiation in Dictyostelium
+
+Laurence Aubry and Richard A. Firtel
+
+Genes and Deveopment, in press
+
+ABSTRACT
+
+  We have identified a novel gene, Spalten (Spn) that is essential
+for Dictyostelium multicellular development.  Spn encodes a protein 
+with an N-terminal domain that shows very high homology to Galpha-
+protein subunits, a highly charged inter-region, and a C-terminal 
+domain that encodes a functional PP2C.  Spn is essential for 
+development past the mound stage, being required cell autonomously 
+for prestalk gene expression and non-autonomously for prespore cell 
+differentiation.  Mutational analysis demonstrates that the PP2C 
+domain is the effector domain and is essential for Spn function, 
+while the Galpha-like domain is required for membrane targeting 
+and regulation of Spn function.  Moreover, Spn carrying mutations
+in the Galpha-like domain that do not affect membrane targeting but 
+affect specificity of guanine nucleotide binding in known GTP-binding 
+proteins are unable to fully complement the spn- phenotype, suggesting 
+that the Galpha-like domain  regulates Spn function either directly or 
+indirectly by mediating its interactions with other proteins.  Our 
+results suggest that Spn encodes a signaling molecule with a 
+potentially novel Galpha-like regulatory domain.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 9]
+

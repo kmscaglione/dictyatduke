@@ -1,0 +1,194 @@
+Dicty News
+Electronic Edition
+Volume 13, number 7
+September 18, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===================================
+  Postdoctoral Position Available
+===================================
+
+The Manstein laboratory at the Max-Planck-Institute for Medical Research in
+Heidelberg is searching for a Postdoctoral Fellow to work on the
+identification and characterization of novel gene products involved in cell
+motility and membrane trafficking. Our integrative approach involves the use
+of molecular biological, biochemical, and biophysical techniques. The
+technical capabilities required are experience in biochemical kinetic
+measurements and/or optical physics. A working knowledge of cell and
+molecular biology would be helpful.
+
+Total internal reflection fluorescence microscopy (TIRFM) will be used for
+the identification of gene products of interest and the kinetic
+characterization of myosin and dynamin family proteins on the single
+molecule level. TIRFM, in combination with surface immobilization of
+recombinant proteins via engineered high-affinity tags, will also provide
+the basis for the development of new in vitro assays for the functional
+characterization of motor proteins and proteins involved in vesicle
+trafficking.
+
+Applicants should provide a letter of intent explaining qualifications
+relevant to our system and possible areas of interest in our research
+program, a CV, and names and contact information for at least three
+individuals capable of commenting on your scientific ability.  Please
+indicate when you expect to be available to join us.  Applications may be
+submitted by e-mail to: manstein@mpimf-heidelberg.mpg.de, by FAX to
+(+49-6221) 486437 or by post to:
+
+Dr. Dietmar J. Manstein
+Dept. of Biophysics
+Max-Planck-Institute for Medical Research
+Jahnstr. 29
+D-69120 Heidelberg
+
+
+=============
+  Abstracts
+=============
+
+Migration Forces in Dictyostelium Measured by Centrifuge DIC Microscopy
+
+Yoshio Fukui 1, Taro Q. P. Uyeda2, Chikako Kitayama 2, and Shinya Inoué3 
+
+1 Cell and Molecular Biology, Northwestern University Medical School, 
+Chicago, IL 60611-3008.
+2 Biomolecular Research Group, National Institute for Advanced 
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan. 
+3 Marine Biological Laboratory, Woods Hole, MA 02543-1015.
+
+Biological Bulletin (accepted for publication)
+
+Abstract
+
+   Amoeboid locomotion represents an important biological activity 
+involved in cell growth and development (1).  Forces that underlie movement 
+of the giant amoeba, Chaos chaos, have been estimated to be 1.5 x 102 
+pN/mm2 as measured by Kamiya’s double chamber method (2).  For a slime 
+mold, Dictyostelium discoideum, the forces of cell locomotion have been 
+unknown, but the cortex resists poking with a microneedle (cortical tension) 
+at 1.4 x 103 pN/mm2 (3).  By micropipette aspiration, the cortical tension 
+of D. discoideum has been measured as 1.55 x 103 pN/mm2 (4).  In the present 
+study, we have determined the migration stalling forces of D. discoideum by 
+using a Centrifuge Polarizing Microscope (CPM) equipped with DIC optics (5).  
+The results demonstrated that individual wild type (NC4) amoebae (6) can 
+crawl centripetally on a glass surface in resistance to gravitational forces 
+larger than 11,465 x g.  NC4 amoebae can also undergo normal cytokinesis at 
+forces of at least 8,376 x g.
+
+----------------------------------------------------------------------------
+
+Activated G(alpha) subunits can inhibit multiple signal transduction 
+pathways during Dictyostelium development
+
+Jaishree Srinivasan, Robert E. Gundersen, and Jeffrey A. Hadwiger
+
+Department of Microbiology and Molecular Genetics, Oklahoma State University,
+Stillwater, Oklahoma 74078-3020; Department of Biochemistry, Microbiology, and
+Molecular Biology, University of Maine, Orono Maine 04469.
+
+Developmental Biology (in press)
+
+Abstract
+
+    Mutations impairing the GTPase activity of G protein G(alpha) subunits can
+result in activated G(alpha) subunits that affect signal transduction, cellular
+responses, and, in some cases, promote tumor formation.  An analogous mutation
+in the Dictyostelium G(alpha)4 subunit gene (Q200L substitution) was constructed
+and found to inhibit G(alpha)4-mediated responses to folic acid, including the
+accumulation of cyclic nucleotides and chemotactic cell movement.  The
+G(alpha)4-Q200L subunit also severely inhibited responses to cAMP, including
+cyclic nucleotide accumulation, cAMP chemotaxis, and cellular aggregation.  An
+analogous mutation in the G(alpha)2 subunit (Q208L substitution), previously
+reported to inhibit cAMP responses (Okaichi et al., 1992), was also found to
+partially inhibit folic acid chemotaxis.  Chemotactic responses to folic acid
+and cAMP and developmental aggregation were also inhibited by a mutant G(alpha)5
+subunit with the analogous alteration (Q199L substitution).  All aggregation-
+defective G(alpha) mutants were capable of multicellular development after a
+temporary incubation at 4o C and this development was found to be dependent on
+wild-type G(alpha)4 function.  This study indicates mutant G(alpha) subunits can
+inhibit signal transduction pathways mediated by other G(alpha) subunits.
+
+----------------------------------------------------------------------------
+
+An Adenylyl Cyclase that Functions during Late Development of Dictyostelium
+
+Fredrik Söderbom, Christophe Anjard, Negin Iranfar, Danny Fuller
+and William F. Loomis
+
+
+Development (in press)
+
+SUMMARY
+
+A variety of extracellular signals lead to the accumulation of cAMP which
+can act as a second message within cells by activating protein kinase A
+(PKA). Expression of many of the essential developmental genes in
+Dictyostelium discoideum are known to depend on PKA activity. Cells in
+which the receptor-coupled adenylyl cyclase gene, acaA, is genetically
+inactivated grow well but are unable to develop. Surprisingly, acaA- mutant
+cells can be rescued by developing them in mixtures with wild type cells
+suggesting that another adenylyl cyclase is present in developing cells
+that can provide the internal cAMP necessary to activate PKA. However, the
+only other known adenylyl cyclase gene in Dictyostelium, acgA, is only
+expressed during germination of spores and plays no role in the formation
+of fruiting bodies.  By screening morphological mutants generated by
+Restriction Enzyme Mediated Integration (REMI) we discovered a novel
+adenylyl cyclase gene, acrA, that is expressed at low levels in growing
+cells and at more than 25 fold higher levels during development. Growth and
+development up to the slug stage are unaffected in acrA- mutant strains but
+the cells make almost no viable spores and produce unnaturally long stalks.
+Adenylyl cyclase activity increases during aggregation, plateaus during the
+slug stage and then increases considerably during terminal differentiation.
+The increase in activity following aggregation fails to occur in acrA-
+cells. As long as ACA is fully active, ACR is not required until
+culmination but then plays a critical role in sporulation and construction
+of the stalk.
+
+----------------------------------------------------------------------------
+
+Functional Characterization of the Secondary Actin Binding Site of Myosin II
+
+Juliette Van Dijk, Marcus Furch, Chrystel Lafont, Dietmar J. Manstein, and
+Patrick Chaussepied
+
+CRBM du CNRS, IFR 24, Montpellier, France and
+Max-Planck-Institut für Medizinische Forschung, Heidelberg, Germany
+
+Biochemistry, in press
+
+ABSTRACT
+
+The role of the interaction between actin and the "secondary actin binding
+site" of myosin (segment 565-579 of rabbit skeletal muscle myosin referred
+to as loop 3 in this work) has been studied using proteolytically generated
+smooth- and skeletal muscle myosin subfragment-1, and recombinant
+Dictyostelium discoideum myosin II motor domain constructs.
+Carbodiimide-induced cross-linking between filamentous actin and myosin loop
+3 took place only with the motor domain of skeletal muscle myosin and not
+with those of smooth muscle or D. discoideum myosin II. Chimeric constructs
+of the D. discoideum myosin motor domain containing loop 3 of either human
+skeletal muscle or non-muscle myosin were generated. Significant actin
+cross-linking to the loop 3 region was obtained only with the skeletal
+muscle chimera both in the rigor and in the weak binding states, i.e. in the
+absence and in the presence of ATP analogues. Thrombin degradation of the
+cross-linked products was used to confirm the cross-linking site of myosin
+loop 3 within the actin segment 1-28. The skeletal muscle and non-muscle
+myosin chimera showed a four to six fold increase in their actin
+dissociation constant, due to a significant increase in the rate for actin
+dissociation (k-A) with no significant change in the rate for actin binding
+(k+A). The actin-activated ATPase activity was not affected by the
+substitutions in the chimeric constructs. These results suggest that actin
+interaction with the secondary actin binding site of myosin is specific for
+the loop 3 sequence of striated muscle myosin isoforms but is apparently not
+essential either for the formation of a high affinity actin-myosin interface
+nor for the modulation of actomyosin ATPase activity.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 7]
+
+  

@@ -1,0 +1,542 @@
+Dicty News
+Electronic Edition
+Volume 15, number 10
+November 18, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+Editors note:  The following is a draft proposal developed by a 
+committee constituted at the Dundee Dicty 2000 meeting to develop a
+proposal for genetic nomenclature.  The committee is anxious for
+feedback.  To facilitate the widest possible involvement of the community
+in this important discussion, please send your comments to the email 
+server address: dicty@listserv.it.northwestern.edu.  
+
+==============================================
+  Proposal for standard genetic nomenclature
+==============================================
+
+Dictyostelium Genetic Nomenclature and Strain designations
+Draft. Nov 15, 2000.
+
+Introduction 
+
+The purpose of the proposed nomenclature system is to give a compact, 
+accurate description of Dictyostelium strains and loci.  We present 
+this proposal to stimulate the universal adoption of a uniform nomenclature 
+that we believe will facilitate everyone’s work in the long term. 
+
+Have you ever received a strain marked ‘geneX-KO’, perhaps through a third 
+party, and not been able to tell what the parent is, what the selectable 
+marker is, what manner of KO it has, or which laboratory made it?  This 
+situation can get a lot worse, as strains with multiple KO’s are made in 
+a variety of backgrounds, as interaction genetics by library complementation 
+leads to the re-appearance of chemical mutants, and as gene replacement 
+gives us a variety of temperature-sensitive and dominant alleles of known 
+genes.  Several laboratories have noticed effects of genetic background 
+on mutant phenotype made in Ax2, Ax3, DH1, and so on.  As more quantitative 
+measures of phenotype are used this is going to become an increasing 
+problem.  Finally, we hope that a Strain Repository will be established 
+to preserve and distribute mutant strains.  This will only be feasible if 
+the strains in it can be accurately described and traced.  For these 
+reasons, we feel that it is essential to have a uniform nomenclature 
+system that everybody can use and which will help in the organization 
+and distribution of strains in a repository.
+
+There are two conflicting pressures on gene nomenclature: the need to 
+be compact and unambiguous, mainly for purposes within the field, and 
+the need to be accessible across fields.  The Demerec nomenclature, 
+which is already in use in the field, is compact and accurate. We 
+recommend that Demerec nomenclature be adopted, but with suitable 
+modifications. Many Demerec gene abbreviations are not necessarily 
+recognizable to outside workers and they may not connect Dictyostelium 
+work to other work on similar, conserved genes.  One way of bridging 
+this gap is to use the ‘standard’ name for a protein and gene where 
+necessary in descriptive sections of papers or grants.  Thus we have 
+the GSK3, STATa, PI3K proteins, and can talk about their genes as the 
+GSK3, STATa genes, if we wish.  But these genes will also have Demerec 
+names gskA, dstA etc.  By putting the ‘standard’ name in the Title, 
+Keywords, Abstract, Text and Figure legends of a paper, we can ensure 
+that it is accessible to computer searching as well as to readers outside 
+the field. The formal gene names will be in the Materials and Methods, 
+strain genotypes and various gene index databases that will provide the 
+"Rosetta Stone" for all names. Although this suggestion leads to 
+redundancy and some possibility of confusion, we feel that it reflects 
+the reality of the gradual merger of gene naming systems drawn from 
+different organisms and from biochemistry, which is the inevitable 
+result of the conservation of many genes among organisms.  It also 
+reflects the reality of usage by many Dictyostelium laboratories.
+
+Strain naming is done for purposes within the field and so does not 
+suffer from the same conflicts as gene naming.  However we feel that 
+it would be useful if it could be done in a standard way which indicates 
+the laboratory of origin.  This is the standard practice in most 
+bacterial and yeast genetics laboratories. In our field, the practice 
+for many laboratories is to use a 2- or 3-letter code unique to each 
+laboratory, which is used to designate all of their strains.  A list 
+of these codes will be available on the web and laboratories can 
+‘register’ new ones through the proposed nomenclature committee.
+
+We recommend that a strain table be included in papers that employ 
+multiple strains. Thus, some of the more cumbersome names proposed 
+below should be included once in the table and a shorter form of the 
+named used in the paper (with reference to the Table the first time 
+the abbreviated name is used).  In a few years, if we can develop a 
+strain repository, it will be possible to have a column in such a 
+table that has a repository number for each of the most important 
+strains in a paper. This device will improve the ability of workers 
+in the field and outside the field to locate original strains, obtain 
+them from a strain repository, and to repeat experiments with rigor.
+
+We expect Dictyostelium to have about 10,000 genes, and the sequence 
+for most of these should be available soon through the sequencing 
+projects.  Once these have been annotated they will be given temporary 
+names (‘homologous to yeast gene YC1234’), which will be merged with 
+the Demerec names, as more information becomes available.  Formal rules 
+and requirements for naming or re-naming genes will be discussed by all 
+at a future date, but we suggest that individuals name genes only after 
+they have generated significant new information about a gene within 
+the context of a formal publication.  Two obvious ways to do this 
+would be to describe a mutation a given gene and report the results 
+in a publication, or to compare a gene (or gene family) with genes 
+in other species and publish those studies in a review article or 
+as part of a primary research paper. 
+
+The detailed recommendations of the nomenclature committee set up 
+at the Dundee International Meeting are given below.  We also 
+propose setting up a clearing house for registering gene names 
+and laboratory strain codes.  For now, all laboratories with 
+strain prefixes should inform Adam Kuspa so that the nomenclature 
+committee can collate the information in the interim before a 
+clearing house is established. Avoiding duplicate gene names may 
+be difficult before the clearing house is set up, but curators 
+of the large gene databases in Tsukuba, San Diego, Hinxton, Houston 
+and Cologne/Jena should be able to offer some guidance. 
+
+We welcome ideas and suggestions on this draft proposal, including 
+missed references and suggestions for questions (and answers) under 
+the FAQ section that will be attached to the final document.
+
+Much of the committee’s discussion focused on how to name genes.   
+Views on this point differed, so in composing the draft below the 
+committee had to weigh the need to present a concrete proposal, with 
+the desire to present possible variations and additions.  We made 
+the decision to present the most compact gene nomenclature in the 
+draft, but added an addendum at the end that expresses additions 
+to the basic proposal which the committee also considered.  The 
+body of the proposal was endorsed by the majority of the committee, 
+while the addendum was supported by a minority.  
+
+We thank Jacob Franke for suggestions and careful review of this 
+draft.    
+
+Adam Kuspa (Chairman)
+Ludwig Eichinger
+Robert R. Kay
+Alan R. Kimmel
+Hideko Urushihara
+Richard Kessin (ex officio) Chairman, Dictyostelium Community 
+  Organizing Committee. 
+
+
+Genes 
+
+Gene names should be devised to conform to the following conventions 
+derived from Demerec et al. (1966).  A locus descriptor consisting 
+of 3 italic letters, followed by a capital italicised letter to 
+distinguish genes with the same descriptor that are related in a 
+significant way.   Thus, related genes should have the same 3-letter 
+descriptor and successive capital letters (rdeA, rdeB and rdeC; or 
+tagA, tagB and tagC).  Gene names that do not follow these rules do 
+exist (e.g. act6, act15, pyr5-6 and erk1), but the original naming 
+authors can change any gene name, if they wish, by describing the 
+name change in their next publication containing the gene and 
+informing the clearinghouse.   For example,  "The spore coat protein 
+gene cotB (formerly referred to as 'SP70') was introduced under the 
+control of..." This change was made by Bill Loomis in 1990 (but not 
+in these exact words).  In the absence of formal renaming, the system 
+will retain all extant names.
+
+Mutant alleles.  All necessary details about an allele should be 
+published somewhere (for example in a strain table), but need not be 
+carried in its name.  Since there are a large number of possible alleles 
+of a gene, authors should use any unique allele name.  Since a one-, 
+two-, three- or four-digit number cannot be expected to remain unique 
+without considerable effort by a clearinghouse, more detailed names 
+should be used. To indicate an allele, as opposed to another gene, 
+allele names should be placed in parentheses and in italics following 
+the gene name without a space, as in yakA(AK235) and yakA(AK800), which 
+are two different insertion mutations in yakA named for the strain in 
+which they were isolated.  Where the nature of the mutation is not known 
+or only a single allele is relevant within a given document (paper or grant), 
+a superscript minus sign should be used for brevity (regA-).  The use of 
+superscripts to describe the general nature of an allele can be used, as 
+in regA(AK202ts) or regAts, but should be limited to two or three  letters, 
+e.g. ts, cs (cold sensitive), hc (high copy) or dn (dominant negative).  
+Amino acid substitutions should be given as the old residue in single-letter 
+code with its codon location followed by the new (mutant) amino acid, as in 
+regA(D212A) which has an alanine in place of the aspartate at position 212. 
+The amino acid change is an interpretation of what the gene will produce 
+and refers to a protein so it is not put in italics.  Ax4 is the reference 
+strain for the "wild-type" amino acid sequence within proteins since it 
+will be the first strain sequenced. 
+
+Proteins
+
+A protein should be named after the gene encoding it by capitalizing 
+the first letter and without the use of italics.  Thus, the protein 
+encoded by regA is RegA, or RegA(D212A) in the case of a mutant protein.  
+When naming a protein before its gene is cloned, one should keep the 
+genetic nomenclature in mind.  For example, the name PSF for Clarke’s 
+Pre-starvation Factor can easily be changed to "PsfA" when the psfA gene 
+is identified, but "p38" would be more problematic and likely necessitate 
+renaming the protein when the primary sequence is known.  
+
+Phenotypes
+No convention for describing phenotypes of Dictyostelium genes has been 
+invoked, but when used they should not be italicized.  Three letter 
+abbreviations of phenotypes can be used to name genes once the relevant 
+genes are cloned, characterized and found to have a novel structure (e.g. 
+tagA for the "tip-less aggregate" phenotype).  The following names should 
+be used to indicate common drug resistance/sensitivity and nutrient 
+auxotrophy/prototrophy. For clarity, relevant phenotypic markers should 
+be included at the end of formal genotypes (no italics): 
+
+neor (indicates a neomycin phosphotransferase gene is functional).
+neos (for clarity, or when G418 selection on a neor strain is relaxed and 
+      G418-sensitive strain is isolated). 
+thy- (indicates thy1 is mutant and the strain requires thymidine). 
+thy+ (used when a thy1 mutant has been complemented).
+bsr  (indicates the blasticidin resistance gene bsr is present).
+bss  (for clarity, or when bsr has been introduced but is non-functional).
+ura+ (uracil independent. Note that this can be different from pyr5-6+).
+ura- (most often used to indicate pyr5-6-).
+foar (most often this will be redundant with ura-).
+hygr (hygromycin resistance).
+bler (bleomycin resistance).
+
+
+Genotypes
+
+Genotypes should describe the relevant genetic modifications present in a 
+given strain. Genes listed in a genotype are considered to by mutant in 
+some way.  Every genetic element described in a genotype (gene, plasmid, 
+DNA fragment) should be separated by a comma.  To distinguish chromosomal 
+loci from exogenous genes, every gene or construct contained on DNA that 
+was introduced into cells by transformation should be listed within brackets 
+regardless of whether that DNA is carried on a plasmid, integrated as a 
+fragment or was amplified by replication once inside cells. 
+
+Molecular genetic constructs
+
+Reporter genes and gene fusions should be named with the relevant components 
+separated by slashes and dashes to indicate DNA fusion, as follows.  
+Typically, the components will be a promoter, a coding sequence or ORF 
+encoding a reporter protein.  Promoters (± a few codons) should be separated 
+from coding sequence by a slash (/) and coding sequences separated by dashes (-).  
+So a Talin GFP fusion under the transcriptional control of a cotB promoter would 
+be written: cotB/talA-gfp.   When a coding region is under the transcriptional 
+control of the native promoter it could be written talA/talA-gfp to emphasize 
+this, or simply written as talA-gfp.  Of course, the more commonly used GFP 
+variant would be written talA-gfp(S65T).  
+
+Constructs carried within cells should be described in the formal genotype of 
+that strain and placed in brackets.   Thus, a cotB promoter b-galactosidase 
+reporter construct in a mutant strain might have a formal genotype of 
+"regA(AK202ts), p88d1[cotB/lacZ] neor", but could be shortened to 
+"regA-[cotB/lacZ]" in the context of a sentence describing the strain’s 
+properties in the results section of a paper.  Again, strain tables add clarity. 
+
+Plasmids
+
+Naturally occurring plasmids are named by a prefix indicating the genus and 
+species, as in Ddp1. Derivatives of the natural plasmids and other shuttle 
+vectors should be indicated with a lowercase "p" prefix (pDXA-3C). For genes 
+on a plasmid, and any other gene that is introduced into a strain by experiment 
+(see below), use the same naming system as for chromosomal genes, but placed 
+within square brackets (e.g. pDneo67[act6/regA] to indicate a regA coding sequence 
+fused to the promoter of the actin 6 gene on plasmid pDneo67).  
+
+Strains
+
+Strains available for distribution must have an unambiguous name, consisting 
+of 2 or 3 capitals plus a unique serial number (e.g. HM1 or HTY217).  Labs or 
+workers should always use the same capital prefixes or small group of prefixes.  
+The prefixes are assigned by a clearinghouse upon request.  See Appendix 1 
+for a current list of assigned strain prefixes.  In the past all lab designations 
+started with either H (for haploid) or D (for diploid) and many of these strains 
+are still in use.
+
+Management.  A clearinghouse will be established to ensure that lab codes and 
+gene names are not duplicated.  Until the 2001 international meeting in San Diego, 
+the clearinghouse will be the nomenclature committee, headed by Adam Kuspa. Contact 
+the committee through him via E-mail at akuspa@bcm.tmc.edu.  The membership of a 
+standing nomenclature committee can be determined at the 2001 meeting. 
+
+Frequently Asked Questions
+
+When should genes be named?  In general, genes should be named after they are 
+completely characterized structurally and after some functional information is 
+obtained by mutation, expression, or by purification of a gene product.  Genes 
+could also be named by virtue of their being nearly identical to another 
+Dictyostelium gene product or a gene described in another species.  For example, 
+50% amino acid identity from N to C terminus between a new Dictyostelium protein 
+and a protein described in another species may be considered sufficient grounds 
+for using the previously described gene name (suitably modified) for the 
+Dictyostelium gene.  As a practical matter, the likely key decision point for 
+naming a gene will come when it is time to submit a gene to a database 
+(GenBank/DDBJ/EMBL).  Authors should be judicious about giving the sequence a 
+name that they expect to use in publications since these databases are the way 
+that many researchers first come in contact with a gene from another species.  
+Nothing will be more confusing than to have genes named one way in GenBank and 
+another way in the literature.
+
+Will the nomenclature committee re-name genes that do not conform to Demerec?
+No.  The original naming authors can formally re-name genes if they wish, as 
+described above.  Future interspecies genome comparisons may require re-naming 
+some genes, but the manner in which such issues will be dealt with is not 
+presently clear.  
+
+References
+
+General: 
+
+Demerec, M. et al., (1966). A proposal for a uniform nomenclature in bacterial 
+genetics. Genetics 54:61-76.
+
+Kay, R.R., W.F. Loomis and P.N. Devreotes (1998). Genetic Nomenclature Guide. 
+Elsevier Science Ltd. London. pp S.5-S.6 (TIGS supplement)
+
+Gene Lists:
+
+DictyDB http://glamdring.ucsd.edu/others/dsmith/dictydb.html#C
+
+Kuspa, A., D. Maghakian, P. Bergesch, and W.F. Loomis. 1992.  Physical mapping 
+of genes to specific chromosomes in Dictyostelium discoideum. Genomics 13:49-61.
+
+Loomis, W.F., D. Welker, J. Hughes, D. Maghakian, and A. Kuspa. 1995. Integrated 
+maps of the chromosomes in Dictyostelium discoideum. Genetics 141:147-157.
+
+Kuspa, A., and W.F. Loomis. 1996. Ordered yeast artificial chromosome clones 
+representing the Dictyostelium discoideum genome.  Proc. Natl. Acad. Sci. USA 
+93:5562-5566.
+
+
+Appendix 1. List of Known Strain Prefixes by Laboratory 
+
+DP, NP and XP; P. Newell
+HM and DM; R.R. Kay
+HL, DL and DG; W.F. Loomis
+GS; Gad Shaulsky
+AK, V and W; A. Kuspa
+KY; K. Yanagisawa
+HU, DUK; K. Williams 
+HUD, DUD; D. Welker 
+HC, DCB; B. Coukell 
+HPF, DPFP; P. Fisher 
+HH, DH, HR (Kessin, Ennis)
+
+
+Addendum:
+
+	While we recognize that Demerec nomenclature is compact, accurate and 
+uniform, we also realize that it is not necessarily accessible to other areas 
+or systems. One problem with Demerec is that it is fixed at 3 letters and does 
+not permit numbers or Greek letters. So STAT, GSK3, PI3K, and Gb are not 
+accommodated by Demerec.
+
+	 Many Demerec abbreviations are already used in Dictyostelium for 
+genes that are conserved in other systems. Unfortunately, they may not be 
+recognizable to outside workers or fail to be connected to similar, conserved 
+genes in database searches. In such cases, the best way to bridge this gap is 
+to use the standard universal (non-Demerec) name for a protein and gene where 
+appropriate. Genes can thus be written directly as GSK3, STATa, PI3K, Gb (all 
+in italics). These genes will also have Demerec names but, in such cases, the 
+Demerec names will be relegated to Materials and Methods and Dictyostelium 
+websites. In websites, the genes will be cross referenced to their universal 
+(non-Demerec) name.
+
+	For non-Demerec usage within manuscripts, etc. there can be a 
+modification for clarity, based upon mammalian usage. Wild-type genes are 
+denoted in capital italicized letters, (eg. PI3K), with mutants in lower 
+case (eg pi3k).
+
+	We recognize one major difficulty. There will be genes with Demerec 
+names, but non-Demerec orthologs. The same gene will be called different 
+names by different authors. For uniformity, the standard name should take 
+preference.  Duality can be acknowledged parenthetically in an introduction. 
+Situations already exist in Dictyostelium and other systems where identical 
+genes have more than one name.
+
+
+
+=========================
+  Postdoctoral Position
+=========================
+
+
+POSTDOCTORAL POSITIONS IN FUNCTIONAL GENOMICS
+
+Postdoctoral positions are available to work on the Dictyostelium 
+functional genomics program at Baylor College of Medicine. 
+Individuals interested in large-scale mutant characterization, 
+expression arrays, genome sequence analysis or the development of 
+data mining and visualization tools are invited to apply.  Baylor 
+College of Medicine is part of the Texas Medical Center in Houston, 
+one of the largest and most rapidly developing medical centers in 
+the world.  Baylor offers competitive salaries and benefits as well 
+as great employment opportunities for spouses.  We expect to fill 
+several positions in 2001.  Candidates holding a Ph.D. degree, or 
+equivalent, in relevant fields should submit a short description of 
+research interests, cv and a list of 3 references to the appropriate 
+faculty member listed below.
+
+Adam Kuspa (Genome sequencing, Gene function)	akuspa@bcm.tmc.edu
+
+Gad Shaulsky (Expression arrays, Gene function)	gadi@bcm.tmc.edu
+
+John Halter (Computational modeling, data mining) jah@bcm.tmc.edu
+
+Jeff Tollett (Large-scale phenotyping and
+		expression profiling)		jtollett@bcm.tmc.edu
+
+Chad Shaw (Statistical analyses and modeling)	cashaw@bcm.tmc.edu
+
+
+
+==============
+  Abstracts
+==============
+
+Adherens junctions and beta-catenin  mediated cell signalling in a  
+non-metazoan organism
+
+Mark J. Grimson, Juliet C. Coates , Jonathan P. Reynolds,  Mark Shipman 
+Richard L. Blanton & Adrian J. Harwood
+
+Nature (in press)
+
+Abstract
+
+Mechanical forces between cells play a major part in the organisation 
+of animal tissues. Adherens junctions are an important component of these 
+tissues, connecting cells via their actin cytoskeleton and allowing 
+assembly of tensile structures. At least one adherens junction protein, 
+beta-catenin, also acts as a signalling molecule, directly regulating 
+gene expression. To date, adherens junctions have only been detected in 
+metazoa, so to examine their evolutionary origins, we sought them outside 
+the animal kingdom. The non-metazoan Dictyostelium discoideum forms a 
+multicellular, differentiated structure. Here, we describe the discovery 
+of actin-associated intercellular junctions in Dictyostelium. Furthermore, 
+we have isolated a gene encoding a beta-catenin homologue, aardvark, which 
+is a component of the junctional complex and, independently, is required 
+for cell signalling. This is the first report of adherens junctions outside 
+the animal kingdom and demonstrates that the dual role of beta-catenin in 
+cell-cell adhesion and cell signalling evolved  prior to the origins of 
+metazoa.
+
+----------------------------------------------------------------------------
+
+A genetic interaction between a ubiquitin-like protein and 
+ubiquitin-mediated proteolysis in Dictyostelium discoideum.
+
+Stefan  Pukatzki*, Herbert L. Ennis, and Richard H. Kessin
+Department of Anatomy and Cell Biology, College of Physicians & 
+Surgeons, Columbia University, New York, NY 10032.
+
+* Present address: Department of Microbiology and Molecular Genetics, 
+Harvard Medical School, 200 Longwood Avenue, Boston, MA 02115.
+
+Biochimica et Biophysica Acta, in press
+
+Abstract
+
+A ubiquitination factor, NosA, is essential for cellular 
+differentiation in Dictyostelium discoideum. In the absence of nosA, 
+development is blocked, resulting in a developmental arrest at the 
+tight-aggregate stage, when cells differentiate into two precursor 
+cell types, prespore and prestalk cells. Development is restored when 
+a second gene, encoding the ubiquitin-like protein SonA, is 
+inactivated in nosA-mutant cells. SonA has homology over its entire 
+length to Dsk2 from Saccharomyces cerevisiae, a ubiquitin-like 
+protein that is involved in the assembly of the spindle pole body. 
+Dsk2 and SonA are both stable proteins that do not seem to be 
+subjected to degradation via the ubiquitin pathway. SonA does not 
+become ubiquitinated and the intracellular levels of SonA are not 
+affected by the absence of NosA. The high degree of suppression 
+suggests that SonA rescues most or all of the defects caused by the 
+absence of nosA. We propose that NosA and SonA act in concert to 
+control the activity of a developmental regulator that must be 
+deactivated for cells to cross a developmental boundary.
+
+----------------------------------------------------------------------------
+
+Percolation clustering: a novel approach to the clustering of gene
+expression patterns in Dictyostelium development.
+
+Roman Sasik, Terry Hwa, Negin Iranfar, and William F. Loomis
+
+Department of Physics and Division of Biology
+University of California at San Diego, La Jolla, CA 92093, USA
+
+Pacific Symp. Biocomputing (in press)
+
+Abstract
+
+We present a novel approach to the clustering of gene expression patterns
+based on the mutual connectivity of the patterns. Unlike certain widely
+used methods (e.g., self-organizing maps and K-means) which essentially
+force gene expression data  into a fixed number of predetermined clustering
+structures, our approach aims to reveal the natural tendency of the data to
+cluster, in analogy to the physical phenomenon of percolation. The approach
+is probabilistic in nature, and as such accommodates the possibility that
+one gene participates in multiple clusters. The result is cast in terms of
+the connectivity of each gene to a certain number of (significant)
+clusters. A computationally efficient algorithm is developed to implement
+our approach. Performance of the method is illustrated by clustering both
+constructed data and gene expression data obtained from Dictyostelium
+development.
+
+----------------------------------------------------------------------------
+
+INDUCIBLE EXPRESSION OF EXOGENOUS GENES IN DICTYOSTELIUM DISCOIDEUM USING
+THE RIBONUCLEOTIDE REDUCTASE PROMOTER
+
+Pascale Gaudet1,2, Harry MacWilliams4 and Adrian Tsang1,2,3*
+
+1Department of Chemistry and Biochemistry, 2Centre for Structural and
+Functional Genomics, 3Department of Biology, Concordia University, 1455 de
+Maisonneuve Blvd. W., Montreal, Quebec, H3G 1M8, Canada
+4Zoologisches Institut, Ludwig-Maximilians-Universität, Luisenstrasse 14,
+80333 München, Germany
+
+Nucleic Acids Research, in press
+
+ABSTRACT
+
+We report here the development of a regulated gene expression system for
+Dictyostelium discoideum based on the DNA-damage inducibility of the rnrB
+gene. rnrB, which codes for the small subunit of the enzyme ribonucleotide
+reductase, responds to DNA-damaging agents at all stages of the D.
+discoideum life cycle. Doses that have little effect on development have
+previously been shown to increase the level of the rnrB transcript by up to
+15-fold. Here we show that all elements necessary for DNA-damage induction
+are contained in a 450-bp promoter fragment. We used a fusion of the rnrB
+promoter with the gene encoding GFP to demonstrate an up to 10-fold
+induction at the RNA level, which appears in all aspects similar to the
+induction of the endogenous rnrB transcript. Using a fusion with the lacZ
+gene we observed an up to 7-fold induction at the protein level. These
+results indicate that the rnrB promoter can be used to regulate the
+expression of specific genes in D. discoideum. 
+This controllable gene expression system provides the following new
+characteristics: the induction is rapid, taking place in the order of
+minutes and the promoter is responsive at all stages of the D. discoideum
+life cycle. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 10]

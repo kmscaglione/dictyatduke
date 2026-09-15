@@ -1,0 +1,172 @@
+Dicty News
+Electronic Edition
+Volume 10, number 1
+January 3, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+A Happy and Productive New Year to everyone!
+
+===========
+ Abstracts
+===========
+
+The Signals for Starvation Response are Transduced through Elevated 
+[Ca2+]i in Dictyostelium cells
+
+YUKIKO TANAKA*, RYU ITAKURA, AIKO AMAGAI and YASUO MAEDA
+
+Biological Institute, Graduate School of Science, Tohoku University, 
+Aoba, Sendai 980-77, Japan
+
+Exp. Cell. Res., in press.
+
+Abstract:
+
+   The mechanism by which cells recognize starvation to allow subsequent
+cellular development was analyzed using Dictyostelium discoideum, with 
+special emphasis on Ca2+ as a crucial signal transducer in intra- and 
+inter-cellular communications. As was expected, the cytosolic Ca2+-
+concentration ([Ca2+]i) in aequorin-expressing cells (RHI76 derived 
+from D. discoideum Ax-3) was temporarily increased, when 3-5 uM 
+thapsigargin (Tg), a specific inhibitor of the Ca2+-ATPase was added 
+into the cells incubated in semi-starvation medium (SS-medium: 1 
+volume of growth medium plus 8 volumes either of 20 mM Na2/K-phosphate 
+buffer (pH 6.2) or of Bonner's salt solution (BSS)). Essentially
+the same result was obtained by the application of 5 uM nigericin (Ng), 
+an acid ionophore to cells under the semi-starved condition. Here it 
+is of interest to note that in the SS-medium Tg and Ng are capable of 
+enhancing cell differentiation as exemplified well by the earlier 
+acquisition of chemotactic response to cAMP, possibly inducing the 
+starvation response through the [Ca2+]i increase. From Western blot 
+analysis of phosphotyrosine (pTyr)-containing proteins using anti-pTyr 
+antibody, it was found that the pTyr-phosphorylation levels of 97 kDa, 
+80 kDa, and 45 kDa proteins increase specifically in response to 
+starvation. Interestingly, Tg and Ng induced such a change of the
+80 kDa protein in the cells incubated in the SS-medium. Taken together 
+these results strongly suggest that the temporal increase of [Ca2+]i 
+may be a matter of importance for signal transduction coupled with 
+starvation response.
+
+-------------------------------------------------------------------------
+
+Co-expression of a constitutively active plasma membrane calcium pump 
+with GFP identifies roles for intracellular calcium in controlling cell 
+sorting during morphogenesis in Dictyostelium
+
+Andrew B. Cubitt1, Indira Reddy2, Susan Lee1, James G. McNally2, and
+Richard A. Firtel1
+
+1Department of Biology, Center for Molecular Genetics, University of 
+California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093-0634
+
+and
+
+2Department of Biology, Washington University, St. Louis, MO 63130
+
+Develop. Biol. in press
+
+ABSTRACT
+
+   To examine the potential role of calcium in regulating Dictyostelium 
+development, we reduced free cytosolic and total cell Ca2+ in 
+Dictyostelium cells by expressing a constitutively active form of a 
+human erythrocyte plasma membrane calcium pump.  The pump-expressing 
+cells lacked a thapsigargin-mediated increase in cytoplasmic calcium, 
+consistent with a reduced level of total cellular Ca2+.  During 
+aggregation, the cells initially form large number of aggregation 
+centers, many of which coalesced to form mounds that were smaller 
+than those of wild-type cells, and the cells did not exhibit the 
+normal formation of elongated aggregation streams.  The majority of 
+the mounds either arrested at this stage with the formation of small 
+protrusions or formed very aberrant finger-like structures, indicating 
+an essential role for cellular calcium in morphogenesis.  We used pump 
+and wild-type cells differentially-labelled by expressing different 
+wavelength (green and blue) forms of green fluorescent protein and 
+three-dimensional (3-D) reconstruction of serial fluorescent imaging 
+to visualize the movement of pump and wild-type cells within the 
+aggregate.  The results showed that the pump cells exhibited very 
+aberrant cell movement and sorting within the forming mound, suggesting 
+that the reduced cytosolic calcium is affecting movement required for 
+tip formation.  When allowed to form chimeric organisms with wild-type 
+cells, pump cells preferentially localized to two bands, one of which 
+was at the prestalk/prespore boundary and the other in the very 
+posterior of the organism, also suggesting that pump cells are unable 
+to properly sort.  Expression of the calcium pump had little effect on 
+the induction of prestalk- or prespore-specific genes, whereas extended 
+treatment with EGTA blocked induction of both classes of cell-type-
+specific genes.  Our results suggest a role for intracellular Ca2+ in 
+controlling cell sorting and morphogenesis in Dictyostelium.
+
+-------------------------------------------------------------------------
+
+Simultaneous detection of two GFP spectral mutants during in-vivo 
+confocal microscopy of migrating Dictyostelium cells
+
+Timo Zimmermann & Florian Siegert *
+
+Zoologisches Institut, Universität München, Luisenstr. 14, 80333 München,
+Germany
+  
+BioTechniques, in press
+
+Abstract
+
+   A method is described that allows simultaneous measurement of two 
+spectrally distinguishable green fluorescent proteins (GFP) mutants 
+with a confocal microscope. In contrast to previously described methods, 
+neither UV excitation nor repetition of scans are required. Thus the 
+method is well suited to the long-time observation of living cells in 
+3D microscopy and time series recording, as demonstrated with GFP 
+expressing Dictyostelium discoideum cells.
+
+-------------------------------------------------------------------------
+
+Dictyostelium discoideum fatty acid amidase II (FAA II) has de-acylase 
+activity on Rhizobium nodulation factors.
+
+Peggy J. Sutherland1#, Andrea E. Tobin1#, Charles L. Rutherford2 
+and Neil P.J. Price1*
+
+1Department of Chemistry at SUNY College of Environmental Science 
+and Forestry, Syracuse, NY 13210. 2Department of Biology Virginia Tech, 
+Blacksburg Virginia 24061
+
+Abstract
+
+Dictyostelium discoideum (Amoebidae) secretes cell lysing enzymes; 
+esterases, amidases and glycosylases, many of which degrade soil 
+bacteria to provide a source of nutrients. Two of these enzymes, 
+fatty acyl amidase I (FAA I) and fatty acyl amidase II (FAA II) act 
+sequentially on the N-linked long chain acyl groups of lipid A, the 
+lipid anchor of gram negative bacterial lipopolysaccharide (LPS). 
+FAA I selectively hydrolyzes the 3-hydroxymyristroyl group N-linked 
+to the proximal glucosamine residue of de-O-acylated lipid A. Substrate 
+specificity for FAA II is less selective, but does require prior 
+de-N-acylation of the proximal sugar, i.e. the bis-N-acylated lipid A 
+is not a substrate. We have synthesized a 14C-labeled substrate analog 
+for FAA II, and used this in a novel assay to monitor its purification. 
+Inhibitory studies indicate that FAA II is not a serine protease but may 
+have a catalytic mechanism similar to metalloprotein de-N-acetylases 
+such as LpxC. Interestingly, Rhizobial Nod factor signal oligosaccharides 
+that induce root nodules on leguminous plants have many of the structural
+ requirements for substrate recognition by FAA II. In vitro evidence 
+indicate that R. fredii Nod factors are selectively de-N-acylated by 
+purified FAA II suggesting that the enzyme may reduce the N2-fixing 
+efficiency of Rhizobium-legume symbioses. In contrast, N-methylated 
+Nod factors from transgenic R. fredii carrying the rhizobial nodS 
+gene were resistant to FAA II, suggesting a mechanism by which Nod 
+factors may be protected from enzymatic de-N-acylation. Since FAA II 
+and Nod factors are both secreted, and Nod factors that lack the N-acyl 
+group are unable to induce nodules, dictyostelial FAA II may decrease 
+the efficiency of symbiotic nitrogen fixation in the environment by 
+reducing the available biologically active nodule inducer signal.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 1]
+

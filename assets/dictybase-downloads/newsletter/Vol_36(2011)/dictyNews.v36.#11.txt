@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 36, number 11
+April 01, 2011
+ 
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+ 
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+ 
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+ 
+ 
+=========
+Abstracts
+=========
+ 
+ 
+Cell condition, competition, and chimerism in the social amoeba
+Dictyostelium discoideum 
+ 
+David I. Castillo1, David C. Queller1, Joan E. Strassmann1
+ 
+1Department of Ecology and Evolutionary Biology, Rice University,
+Houston, TX, 77005 USA
+ 
+ 
+Ecology, Ethology, and Evolution, in press
+ 
+When multicellularity originates through the aggregation of
+genetically variable cells, the interests of the component cells
+may conflict with each other. A prediction of conflict is that
+stronger cells will force weaker cells into non-reproductive
+tissues. However, if stronger cells are better in the reproductive
+tissues than in the somatic ones, then the same result may be
+expected in clonal organisms that optimize their development.
+We explored these issues in the social amoeba Dictyostelium
+discoideum by forming chimeras between weakened cells and normal
+cells that were genetically identical. We reduced the condition
+of amoebae (measured as increased doubling time) by growing them
+in media lacking glucose, or more acid than normal. Weakened cells
+were less competitive compared to healthy cells in becoming spore,
+supporting our prediction of evolutionary conflict. However, spores
+from weakened cells also proliferated slightly less rapidly than
+normal spores, indicating that there may also be an advantage in
+clonal groups to put strong cells in spores.
+ 
+ 
+Submitted by Joan E. Strassmann [strassm@rice.edu]
+------------------------------------------------------------------
+ 
+ 
+Activated membrane patches guide chemotactic cell motility
+ 
+Inbal Hecht*1,2, Monica L. Skoge3, Pascale G. Charest3, 
+Eshel Ben-Jacob2, Richard A. Firtel3, William F. Loomis3,
+Herbert Levine1,4, Wouter-Jan Rappel*1,4
+ 
+1) Center for Theoretical Biological Physics, University of
+California San Diego, La Jolla, CA 92093,
+2) School of Physics and Astronomy, Raymond and Beverly Sackler
+Faculty of Exact Sciences, Tel-Aviv University,
+3) Cell and Developmental Biology, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093,
+4) Department of Physics, University of California San Diego,
+La Jolla, CA 92093
+ 
+ 
+PLoS Computational Biology, in press
+ 
+Many eukaryotic cells are able to crawl on surfaces and guide
+their motility based on environmental cues. These cues are
+interpreted by signaling systems which couple to cell mechanics;
+indeed membrane protrusions in crawling cells are often
+accompanied by activated membrane patches, which are localized
+areas of increased concentration of one or more signaling
+components. To determine how these patches are related to cell
+motion, we examine the spatial localization of RasGTP in
+chemotaxing Dictyostelium discoideum cells under conditions
+where the vertical extent of the cell was restricted.
+Quantitative analyses of the data reveal a high degree of
+spatial correlation between patches of activated Ras and
+membrane protrusions. Based on these findings, we formulate a
+model for amoeboid cell motion that consists of two coupled
+modules. The first module utilizes a recently developed
+two-component reaction diffusion model that generates transient
+and localized areas of elevated concentration of one of the
+components along the membrane. The activated patches determine
+the location of membrane protrusions (and overall cell motion)
+that are computed in the second module, which also takes into
+account the cortical tension and the availability of protrusion
+resources. We show that our model is able to produce realistic
+amoeboid-like motion and that our numerical results are consistent
+with experimentally observed pseudopod dynamics. Specifically,
+we show that the commonly observed splitting of pseudopods can
+result directly from the dynamics of the signaling patches.
+ 
+ 
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+==============================================================
+[End dictyNews, volume 36, number 11]

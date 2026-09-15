@@ -1,0 +1,120 @@
+dictyNews
+Electronic Edition
+Volume 30, number 14
+May 2, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+MPL1, the novel phosphatase with Leucine-Rich-Repeats, is essential for proper 
+ERK2 phosphorylation and cell motility.
+
+Marbelys Rodriguez*, Bohye Kim*, Nam-Sihk Lee, Sudhakar Veeranki, and 
+Leung Kim#
+
+Dept of Biological Sciences, Florida International University,
+Miami, FL 33199
+
+* Equal contributing authors.
+# Corresponding Author: Dept of Biological Sciences, Florida International 
+University, Health and Life Science Building, Rm 218C Miami, FL 33199
+Tel: 305-348-7315 FAX: 305-348-1986
+email: kiml@fiu.edu
+
+
+Eukaryotic Cell, In press
+
+The novel Dictyostelium phosphatase Mpl1 contains six Leucine-Rich-Repeats 
+at the amino-terminal end and a phosphatase domain at the carboxyl end. 
+Similarly architectured phosphatases exist among other protozoa such as 
+Entamoeba histolytica, Leishmania major, and Trypanosoma cruzi. Mpl1 was 
+strongly induced after 5 hours of development; ablation by homologous 
+recombination led to defective streaming and aggregation during development. 
+In addition, cAMP pulsed mpl1- cells showed reduced random and directional 
+motility. At the molecular level, mpl1- cells displayed higher prestimulus and 
+persistent post-stimulus ERK2 phosphorylation in response to cAMP 
+stimulation. Consistent with their phenotype of persistent ERK2 
+phosphorylation, mpl1- cells also displayed an aberrant pattern of cAMP 
+production, resembling that of the regA- cells. Reintroduction of a full length 
+Mpl1 into mpl1- cells restored aggregation, ERK2 regulation, random and 
+directional motility, and cAMP production similar to wild type cells. We propose 
+that MPL1 is a novel phosphatase essential for proper regulation of ERK2 
+phosphorylation and optimal motility during development.
+
+
+Submitted by: Leung Kim [kiml@fiu.edu]
+--------------------------------------------------------------------------------
+
+
+Endocytosis and the actin cytoskeleton in Dictyostelium discoideum
+
+Francisco Rivero
+
+The Hull York Medical School. University of Hull, Hull HU6 7RX, United Kingdom
+
+
+Int. Rev. Cell Mol. Biol, 276, in press
+
+Endocytosis, an essential process of all eukaryotic cells, requires the actin 
+cytoskeleton for proper functioning. The soil amoeba Dictyostelium discoideum 
+is well known for its contribution to the actin cytoskeleton field. The 
+genetic tractability and the availability of appropriate tools have made of 
+Dictyostelium an attractive model for studies of endocytosis and vesicle 
+trafficking as well. These tools include a large palette of fluorescent 
+protein fusions and the combination of improved fractionation methods with 
+high throughput techniques along with the recently propagated use of the 
+amoeba as a host for microbial pathogens. In this review I discuss in a 
+comprehensive manner the evidence accumulated in the literature towards 
+a participation of components of the microfilament system of D. discoideum 
+in endocytic trafficking and conclude with a model that describes the 
+sequence of events and the components involved during the well investigated 
+uptake phase of the endocytic process in the soil amoeba.
+
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+A secreted protein is a Dictyostelium chalone
+
+Deenadayalan Bakthavatsalam, Debra A. Brock, N. Neda Nikravan, 
+Kevin D. Houston, R. Diane Hatton, and Richard H. Gomer
+
+Department of Biochemistry and Cell Biology, MS-140, Rice University, 
+Houston, TX 77005
+
+
+J. Cell Science, in press
+
+Dictyostelium discoideum cells secrete CfaD, a protein with similarity to 
+cathepsin proteases.  Cells lacking cfaD proliferate faster and reach a higher 
+stationary phase density than wild-type, while cells overexpressing CfaD 
+proliferate slowly and reach stationary phase at a low cell density.  On a 
+per nucleus basis, CfaD affects proliferation but not growth.  The drawback 
+to not having CfaD is a reduced spore viability.  Recombinant CfaD has no 
+detectable protease activity, but when added to cells, inhibits the 
+proliferation of wild-type and cfaD¯ cells.  The secreted protein AprA also 
+inhibits proliferation.  AprA is necessary for the effect of CfaD on 
+proliferation.  Sieving gel chromatography indicates that in conditioned 
+growth medium, the 60 kDa CfaD is part of a ~150 kDa complex, and both 
+chromatography and pull-down assays suggest that CfaD interacts with AprA.  
+These results suggest that two interacting proteins may function together 
+as a chalone signal in a negative feedback loop that slows Dictyostelium 
+cell proliferation.
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+==============================================================
+[End dictyNews, volume 30, number 14]

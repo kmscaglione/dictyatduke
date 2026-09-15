@@ -1,0 +1,73 @@
+dictyNews
+Electronic Edition
+Volume 30, number 10
+March 21, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+De novo search for non-coding RNA genes in the AT-rich genome of 
+Dictyostelium discoideum: performance of Markov-dependent genome 
+feature scoring
+
+Pontus Larsson1, Andrea Hinas2,4, David H Ardell3,5*, Leif A Kirsebom1, 
+Anders Virtanen1, and Fredrik Soderbom2,*
+
+1Department of Cell and Molecular Biology, Biomedical Center, 
+Uppsala University, Sweden. 
+2Department of Molecular Biology, Biomedical Center, Swedish 
+University of Agricultural Sciences, Uppsala, Sweden. 
+3Linnaeus Centre for Bioinformatics, Biomedical Center, Uppsala, Sweden. 
+4Present address: Department of Molecular and Cellular Biology, 
+Harvard University, USA. 
+5Present address: School of Natural Sciences, University of California, 
+Merced, CA, 95344, USA.
+
+*Corresponding authors
+
+
+Genome Research, accepted
+
+Genome data are increasingly important in the computational identification 
+of novel regulatory non-coding RNAs (ncRNAs). However, most ncRNA 
+gene-finders are either specialized to well-characterized ncRNA gene 
+families or require comparisons of closely related genomes. We developed 
+a method for de novo screening for ncRNA genes with a nucleotide 
+composition that stands out against the background genome based on a 
+partial sum process. We compared the performance when assuming 
+independent and first-order Markov dependent nucleotides, respectively 
+and used Karlin-Altschul and Karlin-Dembo statistics to evaluate 
+significance of hits. We hypothesized that a first-order Markov-dependent 
+process might have better power to detect ncRNA genes since 
+nearest-neighbor models have shown to be successful in predicting RNA 
+structures. A model based on a first-order partial sum process 
+(analyzing overlapping dinucleotides) had better sensitivity and 
+specificity than a zeroth-order model when applied to the AT-rich genome 
+of the amoeba Dictyostelium discoideum. In this genome we detected 94 
+percent of previously known ncRNA genes (at this sensitivity, the false 
+positive rate was estimated to 25% in a simulated background). The 
+predictions were further refined by clustering candidate genes according 
+to sequence similarity and/or searching for an ncRNA-associated upstream 
+element. We experimentally verified six out of ten tested ncRNA gene 
+predictions. We conclude that higher-order models, in combination with 
+other information, are useful for identification of novel ncRNA gene 
+families in single genome analysis of D. discoideum. Our generalizable 
+approach extends the range of genomic data that can be searched for 
+novel ncRNA genes using well-grounded statistical methods.
+
+
+Submitted by: Fredrik Soderbom [fredde@xray.bmc.uu.se]
+==============================================================
+[End dictyNews, volume 30, number 10]

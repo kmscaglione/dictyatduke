@@ -1,0 +1,165 @@
+Dicty News
+Electronic Edition
+Volume 20, number 6
+March *, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+RacB regulates cytoskeletal function in Dictyostelium 
+
+Eunkyung Lee1+, David J. Seastone2, Ed Harris2 James A. Cardelli2 and 
+David A. Knecht1*
+
+1Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, CT 06269
+2Department of Microbiology and Immunology, Louisiana State University 
+Medical Center, 1501 Kings Highway, Shreveport, LA 71130
+
+*to whom correspondence should be addressed
+phone-860-486-2200
+fax- 860-486-4331 
+Email knecht@uconn.edu
+
+Eukaryotic Cell, in press
+
+ABSTRACT
+
+Thus far 14 homologues of mammalian Rac proteins have been identified in 
+Dictyostelium. It is unclear whether each of these genes has a unique 
+function or to what extent they play redundant roles in actin cytoskeletal 
+organization. In order to investigate the specific function of RacB, we 
+have conditionally expressed wild type (WT-RacB), dominant negative 
+(N17-RacB) and constitutively activated (V12-RacB) versions of the 
+protein. Upon induction, cells expressing V12-RacB stopped growing, 
+detached from the surface and formed numerous spherical surface 
+protrusions, while cells overexpressing WT-RacB became flattened on the 
+surface. In contrast, cells overexpressing N17-RacB did not show any 
+significant morphological abnormalities. The surface protrusions seen 
+in V12-RacB cells appear to be actin driven protrusions because they 
+were enriched in F-actin and were inhibitable by cytochalasin A treatment. 
+The protrusions in V12-RacB cells did not require myosin II activity, which 
+distinguishes them from blebs formed by wild type cells under stress. 
+Finally, we examined the functional consequences of expression of wild 
+type and mutant RacB. Phagocytosis, endocytosis and fluid phase efflux 
+rates were reduced in all cell-lines expressing RacB proteins but the 
+greatest decrease was observed for cells expressing V12-RacB. From these 
+results, we conclude that like other members of the Rho family, RacB 
+induces polymerization of actin, but the consequences of activation 
+appears to be different from other Dictyostelium Rac proteins so far 
+investigated, resulting in different morphological and functional changes 
+in cells. 
+
+----------------------------------------------------------------------------
+
+A STAT regulated, stress-induced signalling pathway in Dictyostelium
+(Dictyostelium STAT and the stress response)
+Tsuyoshi Araki*, Masatsune Tsujioka*, Tomoaki Abe, Masashi Fukuzawa, Marcel 
+Meima, Pauline Schaap, Takahiro Morio+, Hideko Urushihara+, Mariko Katoh+, 
+Mineko Maeda^, Yoshimasi Tanaka+, Ikuo Takeuchi@ and Jeffrey G. Williams
+
+School of Life Sciences, University of Dundee, Wellcome Trust Biocentre
+Dow Street, DUNDEE, DD1 5EH, UK
+
++ Institute of Biological Sciences, University of Tsukuba,Tsukuba, Ibaraki 
+305-8572, JAPAN
+
+^Department of Biology, Osaka University, Machikaneyama 1-16, Toyonaka,
+Osaka 560-0043 JAPAN
+
+@Novartis Foundation (Japan) for the Promotion of Science, Roppongi, 
+Minato-ku, Tokyo 106-0032, JAPAN
+
+
+*These authors contributed equally to this work
+Author for correspondence (e-mail address j.g.williams@dundee.ac.uk)
+                                    
+J. Cell Science, in press.
+
+SUMMARY
+
+The Dictyostelium stalk cell inducer DIF directs tyrosine phosphorylation 
+and nuclear accumulation of the STAT (Signal Transducer and Activator of 
+Transcription) protein Dd-STATc. We show that hyper-osmotic stress, heat 
+shock and oxidative stress also activate Dd-STATc. Hyper-osmotic stress 
+is known to elevate intracellular cGMP and cAMP levels and the membrane 
+permeant analogue 8-bromo-cGMP rapidly activates Dd-STATc, while 8-bromo-
+cAMP is a much less effective inducer. Surprisingly, however, Dd-STATc 
+remains stress activatable in null mutants for components of the known 
+cGMP-mediated and cAMP-mediated stress-response pathways and in a double 
+mutant affecting both pathways. Also, Dd-STATc null cells are not 
+abnormally sensitive to hyper-osmotic stress. Micro-array analysis 
+identified two genes, gapA and rtoA, that are induced by hyper-osmotic 
+stress. Osmotic stress induction of gapA and rtoA is entirely dependent 
+upon Dd-STATc. Neither gene is inducible by DIF but both are rapidly 
+inducible with 8-bromo-cGMP. Again, 8-bromo-cAMP is a much less potent 
+inducer than 8-bromo-cGMP. These data show that Dd-STATc functions as a 
+transcriptional activator in a stress response pathway and the 
+pharmacological evidence, at least, is consistent with cGMP acting as 
+second messenger.
+
+----------------------------------------------------------------------------
+
+Synergistic control of cellular adhesion by TM9 proteins 
+
+Mohammed Benghezal, Sophie Cornillon, Leigh Gebbie, Laeticia Alibaud, Franz 
+Brckert, Franois Letourneur and Pierre Cosson
+
+Molecular Biology of the Cell (in press)
+
+ABSTRACT
+
+The transmembrane 9 (TM9) family of proteins contains numerous members in 
+eukaryotes. Although their function remains essentially unknown in higher 
+eukaryotes, the Dictyostelium discoideum Phg1a TM9 protein was recently 
+reported to be essential for cellular adhesion and phagocytosis. Here the 
+function of Phg1a and of a new divergent member of the TM9 family called 
+Phg1b was further investigated in Dictyostelium discoideum. The phenotypes 
+of PHG1a, PHG1b and PHG1a/PHG1b double knockout cells revealed that Phg1a 
+and Phg1b proteins play a synergistic but not redundant role in cellular 
+adhesion, phagocytosis, growth and development. Complementation analysis 
+supports a synergistic regulatory function rather than a receptor role for 
+Phg1a and Phg1b proteins. Altogether these results suggest that Phg1 
+proteins act as regulators of cellular adhesion, possibly by controlling 
+the intracellular transport in the endocytic pathway and the composition 
+of the cell surface.
+
+submitted by Benghezal@athelas.com
+
+----------------------------------------------------------------------------
+
+Dictyostelium discoideum transformation by oscillating electric field 
+electroporation
+
+Laeticia Alibaud, Pierre Cosson, and Mohammed Benghezal
+
+Biotechniques (in press)
+
+ABSTRACT
+
+Dictyostelium discoideum has been used as a genetically tractable model 
+organism to study many biological phenomena. High efficiency transformation 
+is a prerequisite for successful genetic screens such as mutant 
+complementation, identification of suppressor genes or insertional 
+mutagenesis. Although exponential decay electroporation is the standard 
+transformation technique for Dictyostelium discoideum, its efficiency is 
+relatively low and its reproducibility weak. In this study we optimized 
+the oscillating electroporation technique for Dictyostelium discoideum 
+transformation and compared it to the exponential decay electroporation. 
+A twenty-fold increase of the efficiency was reproducibly achieved. This 
+alternative electroporation technique should facilitate future genetic 
+approaches in Dictyostelium discoideum.
+
+submitted by Benghezal@athelas.com
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 20, number 6]
+
+ 

@@ -1,0 +1,84 @@
+Dicty NewsElectronic EditionVolume 21, number 6August 29, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Phosducin-like proteins in Dictyostelium discoideum: Implications for the 
+phosducin family of proteinsMieke Blaauw, Jaco C. Knol, Arjan Kortholt, Jeroen Roelofs, Ruchira, Marten 
+Postma, Antonie J.W.G. Visser and Peter J.M. Van HaastertDepartment of Biochemistry, University of Groningen, The Netherlands EMBO Journal, in pressRetinal phosducin is known to sequester transducin Gbeta-gamma, thereby 
+modulating transducin activity. Phosducin is a member of a family of 
+phosducin-like proteins (PhLP) found in eukaryotes. Phylogeny of 33 
+phosducin-like proteins from metazoa, plants and lower eukaryotes 
+identified three distinct groups named phosducin-I to -III. We discovered 
+three phlp genes in Dictyostelium, each encoding a phosducin-like protein 
+of a different group. Disruption of the phlp1 gene strongly impaired G 
+protein signalling, apparently due to mislocalisation of Gbeta-gamma in 
+phlp1-null cells. GFP-Gbeta and GFP-G-gamma are membrane associated in 
+wild-type cells, but cytosolic in phlp1-null cells. Phlp2 disruption is 
+lethal due to a synchronous collapse of the cells after 16-17 cell 
+divisions. Phlp3 disruptants show no abnormal phenotype. These results 
+establish a role of phosducin-like proteins in facilitating folding, 
+localisation or function of proteins, in addition to modulating G protein 
+signalling. 
+
+Submitted by: P.J.M.van.Haastert [P.J.M.van.Haastert@chem.rug.nl]-------------------------------------------------------------------------------Roc, a Ras/GTPase domain in complex proteinsLeonard Bosgraaf and Peter J.M. Van HaastertDepartment of Biochemistry, University of Groningen, The NetherlandsBBA, in pressWe identified a novel group of the Ras/GTPase superfamily, termed Roc, that is 
+present as domain in complex proteins together with other domains, including 
+Leucine rich repeats, Ankyrin repeats, WD40 repeats, kinase domains, RasGEF 
+and RhoGAP domains.  Roc is always succeeded by a novel 300-400 amino acids 
+long domain, termed COR. Proteins with Roc/COR are present in prokaryotes, 
+Dictyostelium, plant and metazoa. Submitted by: P.J.M.van.Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-------------------------------------------------------------------------------
+Chemoattractant-stimulated calcium influx in Dictyostelium discoideum does not 
+depend on cGMPDouwe M. Veltman, Jan Sietse De Boer and Peter J.M. Van HaastertDepartment of Biochemistry, University of Groningen, The NetherlandsBBA, in pressChemoattractant stimulation of Dictyostelium cells leads to the opening of 
+calcium channels in the plasma membrane, causing extracellular calcium to flux 
+into the cell. The genetically uncharacterised mutants stmF and KI8 show 
+strongly altered chemoattractant stimulated cGMP responses. The aberrant 
+calcium influx in these strains has provided evidence that the chemoattractant 
+stimulated calcium influx is potentiated by cGMP. We have tested this 
+hypothesis in genetically defined mutants by measuring the calcium influx in a 
+strain that lacks intracellular cGMP due to the disruption of two guanylyl 
+cyclases, and in a strain with increased cGMP levels caused by the disruption 
+of two cGMP-degrading phosphodiesterases. The results reveal that the calcium 
+influx stimulated by cAMP or folic acid is essentially identical in these 
+strains. We conclude that cGMP is not involved in chemoattractant-stimulated 
+calcium influx.
+
+Submitted by: P.J.M.van.Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-------------------------------------------------------------------------------
+
+Temporal and Spatial Expression of Ammonium Transporter Genes During Growth and 
+Development of Dictyostelium discoideum. 
+
+Susan C. Follstaedt, Janet H. Kirsten, Charles K. Singleton. 
+
+Differentiation, in press 
+
+Ammonia is an important signaling molecule involved in the regulation of 
+development in Dictyostelium. During aggregation, ammonia gradients are 
+established, and the ammonia concentration in the immediate environment or 
+within a particular cell throughout development may vary. This is due to the 
+rate of cellular ammonia production, its rate of loss by evaporation to the 
+atmosphere or by diffusion into the substratum and perhaps to cellular 
+transport by ammonia transporters (AMTs). Recent efforts in genome sequencing 
+have identified three ammonia transporters in Dictyostelium. In addition to 
+physically altering the levels of ammonia within cells, the AMTs also may play 
+a role in ammonia signaling. As an initial step in identifying such a function, 
+the temporal and spatial expression of the three amt genes is examined. RT-PCR 
+demonstrates that each of the three amt mRNAs is present and relatively constant 
+throughout growth and development. The spatial expression of these three amt 
+genes is examined during multiple stages of Dictyostelium development using in 
+situ hybridization. A distinct and dynamic pattern of expression is seen for 
+the three genes. In general, amtA is expressed heavily in prestalk cells in a 
+dynamic way, while amtB and amtC are expressed in prespore regions consistently 
+throughout development. AmtC also is expressed in the most anterior tip of 
+fingers and slugs, corresponding to cells that mediate ammonia?s effect on the 
+choice between slug migration versus culmination. Indeed, amtC null cells have 
+a slugger phenotype, suggesting AmtC functions in the signaling pathway 
+underlying the mechanics of this choice.
+
+Submitted by:  Charles Singleton [charle.k.singleton@vanderbilt.edu]
+
+===============================================================================[End Dicty News, volume 21, number 6]

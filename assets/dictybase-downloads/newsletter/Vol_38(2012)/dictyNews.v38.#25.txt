@@ -1,0 +1,128 @@
+dictyNews
+Electronic Edition
+Volume 38, number 25
+September 28, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Heteromeric p97/p97R155C complexes induce dominant negative changes
+in wild-type and autophagy 9-deficient Dictyostelium strains
+
+Khalid Arhzaouy1, Karl-Heinz Strucksberg1,2, Sze Man Tung1, Karthikeyan
+Tangavelou1, Maria Stumpf1, Jan Faix3, Rolf Schroeder2, Christoph S.
+Clemen1, and Ludwig Eichinger1
+
+1Intitute for Biochemistry I, Medical Faculty, University of Cologne,
+Cologne, Germany
+2Institute of Neuropathology, University Hospital Erlangen, Erlangen, Germany
+3Institute for Biophysical Chemistry, Hannover Medical School, Hannover,
+Germany
+
+
+PLos ONE, in press
+
+Heterozygous mutations in the human VCP (p97) gene cause autosomal-dominant
+IBMPFD (inclusion body myopathy with early onset Paget's disease of bone
+and frontotemporal dementia), ALS14 (amyotrophic lateral sclerosis with or
+without frontotemporal dementia) and HSP (hereditary spastic paraplegia).
+Most prevalent is the R155C point mutation. We studied the function of p97
+in the social amoeba Dictyostelium discoideum and have generated strains
+that ectopically express wild-type (p97) or mutant p97 (p97R155C) fused to
+RFP in AX2 wild-type and autophagy 9 knock-out (ATG9KO) cells. Native gel
+electrophoresis showed that both p97 and p97R155C assemble into hexamers.
+Co-immunoprecipitation studies revealed that endogenous p97 and
+p97R155C-RFP form heteromers. The mutant strains displayed changes in cell
+growth, phototaxis, development, proteasomal activity, ubiquitinylated
+proteins, and ATG8(LC3) indicating mis-regulation of multiple essential
+cellular processes. Additionally, immunofluorescence analysis revealed an
+increase of protein aggregates in ATG9KO/p97R155C-RFP and ATG9KO cells.
+They were positive for ubiquitin in both strains, however, solely
+immunoreactive for p97 in the ATG9KO mutant. A major finding is that the
+expression of p97R155C-RFP in the ATG9KO strain partially or fully rescued
+the pleiotropic phenotype. We also observed dose-dependent effects of p97
+on several cellular processes. Based on findings in the single versus the
+double mutants we propose a novel mode of p97 interaction with the core
+autophagy protein ATG9 which is based on mutual inhibition.
+
+
+Submitted by Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+---------------------------------------------------------------------------
+
+Fast Characterization of Cell-Derived Extracellular Vesicles by Nanoparticles 
+Tracking Analysis, Cryo-Electron Microscopy and Raman Tweezers 
+Microspectroscopy
+
+Irene Tatischeff1*, Eric Larquet2, Juan M. Falcon-Perez3, Pierre-Yves Turpin1 
+and Sergei G. Kruglik1
+
+
+Journal of Extracellular Vesicles, in press
+
+The joint use of three complementary techniques, i.e. Nanoparticles Tracking 
+Analysis, Cryo-Electron Microscopy and Raman Tweezers Microspectroscopy, 
+is proposed for a rapid characterization of extracellular vesicles of various 
+origins. Nanoparticles Tracking Analysis is valuable for studying the size 
+distribution and concentration, Cryo-Electron Microscopy is outstanding for the 
+morphological characterization, including observation of vesicles heterogeneity, 
+while Raman Tweezers Microspectroscopy provides the global chemical 
+composition without using any exogenous label. The capabilities of this 
+approach are evaluated on the example of cell-derived vesicles of Dictyostelium 
+discoideum, a convenient general model for eukaryotic extracellular vesicles. At 
+least two separate species differing in chemical composition (relative amounts 
+of DNA, lipids and proteins, presence of carotenoids) were found for each of the 
+two physiological states of this non-pathogenic microorganism, i.e. cell growth 
+and starvation-induced aggregation. These findings demonstrate the specific 
+potency of Raman Tweezers Microspectroscopy. In addition, the first Raman 
+spectra of human urinary exosomes are reported, presumably constituting the 
+primary step towards Raman characterization of extracellular vesicles for the 
+purpose of human diseases diagnosis.
+
+
+Submitted by Irene Tatischeff [irene.tatischeff@upmc.fr]
+---------------------------------------------------------------------------
+
+
+Rules of engagement: centrosome-nuclear connections in a closed mitotic system
+ 
+Meredith Leo, Diana Santino, Irina Tikhonenko, Valentin Magidson, 
+Alexey Khodjakov, and Michael P. Koonce.
+ 
+
+Biology Open, in press
+ 
+The assembly of a functional mitotic spindle is essential for cell reproduction 
+and requires a precise coordination between the nuclear cycle and the 
+centrosome. This coordination is particularly prominent in organisms that 
+undergo closed mitosis where centrosomes must not only respond to temporal 
+signals, but also to spatial considerations, e.g. switching from the production 
+of cytoplasmic microtubule arrays to the generation of dynamic intra-nuclear 
+microtubules required for spindle assembly. We utilize a geneknockout of Kif9, 
+a Dictyostelium discoideum Kin-I kinesin, to destabilize the physical association 
+between centrosomes and the nuclear envelope. This approach presents a 
+unique opportunity to reveal temporal and spatial components in the regulation 
+of centrosomal activities in a closed-mitosis organism. Here we report that 
+centrosome-nuclear engagement is not required for the entry into mitosis. 
+Although detached centrosomes can duplicate in the cytoplasm, neither they 
+nor nuclei alone can produce spindle-like microtubule arrays. However, the 
+physical association of centrosomes and the nuclear envelope is required to 
+progressthrough mitosis beyond prometaphase. 
+
+
+Submitted by Michael Koonce [koonce@wadsworth.org]
+==============================================================
+[End dictyNews, volume 38, number 25]

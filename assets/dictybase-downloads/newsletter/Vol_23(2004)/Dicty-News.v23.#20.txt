@@ -1,0 +1,131 @@
+Dicty News
+Electronic Edition
+Volume 23, number 20
+December 31, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Loss-of-Function Mutations Identified in the Helical Domain of the G
+Protein alpha- Subunit, Galpha2, of Dictyostelium discoideum.
+
+Robert E. Gundersen, Jianxin You, Steven Rauch, Kate Farnham, Christopher
+McCarty, Nicholas Willis and Alison Prince
+
+Biochemistry, Microbiology and Molecular Biology, University of Maine
+
+accepted:  BBA - General Subjects
+ 
+The guanine nucleotide binding regulatory proteins (G proteins) play
+essential roles in a wide variety of physiological processes such as,
+vision, hormone responses, olfaction, immune response, and development.
+The heterotrimeric G proteins, consists of an alpha, beta and gamma-
+subunits and act as molecular switches to relay information from
+transmembrane receptors to intracellular effectors.  The switch mechanism
+is a function of the inherent GTPase activity of the alpha-subunit. The
+alpha-subunit is comprised of two domains, the GTPase domain and the
+Helical domain.  The GTPase domain performs all of the known alpha-
+subunit functions while little is know about the role of the Helical
+domain.  To gain a better understanding of alpha-subunit function, we
+performed a screen for loss-of-function mutations, using the Galpha2-
+subunit of Dictyostelium.  Galpha2 is essential for the developmental life
+cycle of Dictyostelium.  It is known that loss of Galpha2 function results
+in a failure of cells to enter the developmental phase, producing a
+visibly abnormal phenotype.  This allows easy identification of amino
+acids essential to Galpha2 function.  A library of random point mutations
+in the galpha2 cDNA was constructed using low fidelity Polymerase Chain
+Reaction (PCR).  The library was then expressed in a galpha2 null cell
+line and screened for loss-of-function mutations. Mutations were
+identified in isolated clones by sequencing the galpha2 insert.  To date
+sixteen, single amino acids changes have been identified in Galpha2 which
+result in loss-of-function.  Of particular interest are seven mutations
+found in the Helical domain of the alpha-subunit. These loss-of-function
+mutations in the alpha-subunit Helical domain may provide important
+insight into its function.
+
+Submitted by: Robert Gundersen [gundersn@maine.edu]
+
+-----------------------------------------------------------------------------
+
+
+An auto-regulatory circuit for long-range self-organization in  
+Dictyostelium cell populations
+
+Satoshi Sawai, Peter A. Thomason & Edward C. Cox
+
+Department of Molecular Biology, Princeton University, Princeton, New
+Jersey 08544, USA
+
+Nature, in press
+
+Nutrient-deprived Dictyostelium amoebae aggregate to form a multicellular
+structure by chemotaxis, moving towards propagating waves of cyclic AMP
+that are relayed from cell to cell. Organizing centres are not formed by
+founder cells, but are dynamic entities consisting of cores of outwardly
+rotating spiral waves that self-organize in a homogeneous cell population.
+Spiral waves are ubiquitously observed in chemical reactions as well as in
+biological systems. Although feedback control of spiral waves in spatially
+extended chemical reactions has been demonstrated in recent years, the
+mechanism by which control is achieved in living systems is unknown. Here
+we show that mutants of the cyclic AMP/protein kinase A pathway show
+periodic signalling, but fail to organize coherent long-range wave
+territories, owing to the appearance of numerous spiral cores. A
+theoretical model suggests that autoregulation of cell excitability
+mediated by protein kinase A acts to optimize the number of signalling
+centres.
+
+Submitted by: Satoshi Sawai [ssawai@molbio.princeton.edu]
+
+-----------------------------------------------------------------------------
+
+
+Blebbistatin and blebbistatin-inactivated myosin II inhibit myosin II-
+independent processes in Dictyostelium
+
+Shi Shu, Xiong Liu and Edward D. Korn*
+
+Laboratory of Cell Biology, National Heart, Lung, and Blood Institute,
+Bethesda, Maryland 20892
+
+Proc. Natl. Acad. Sci., in press
+
+Blebbistatin, a cell-permeable inhibitor of class-II myosins, was
+developed to provide a tool for studying the biologic roles of myosin II.
+Consistent with this, we find that blebbistatin inhibits three myosin II-
+dependent processes in Dictyostelium: growth in suspension culture,
+capping of concanavalin A receptors and development to fruiting bodies and
+does not inhibit growth on plates, which does not require myosin II.  As
+expected, macropinocytosis (myosin I-dependent), contractile vacuole
+activity (myosin V-dependent) and phagocytosis (myosin VII- dependent),
+none of which requires myosin II, are not inhibited by blebbistatin in
+myosin II-null cells but, unexpectedly, blebbistatin does inhibit
+macropinocytosis and phagocytosis by cells expressing myosin II.
+Expression of catalytically inactive myosin II in myosin II-null cells
+also inhibits macropinocytosis and phagocytosis.  Both blebbistatin-
+inhibited myosin II and catalytically inactive myosin II form cytoplasmic
+aggregates, which may be why they inhibit myosin II-independent
+processes, but neither affects the distribution of actin filaments in
+vegetative cells or actin and myosin distribution in dividing or polarized
+cells. Blebbistatin also inhibits cell streaming and plaque expansion in
+myosin II-null cells.  Our results are consistent with myosin II being the
+only Dictyostelium myosin that is inhibited by blebbistatin but also show
+that blebbistatin-inactivated myosin II inhibits some myosin II-
+independent processes and that blebbistatin inhibits other activities in
+the absence of myosin II.
+
+Submitted by: Edward D. Korn [edk@nih.gov]
+
+==============================================================================
+[End Dicty News, volume 23, number 20] 

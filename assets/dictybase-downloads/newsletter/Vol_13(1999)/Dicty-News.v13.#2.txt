@@ -1,0 +1,141 @@
+Dicty News
+Electronic Edition
+Volume 13, number 2
+July 17, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Self-organized Vortex State in Two-dimensional Dictyostelium Dynamics
+
+Wouter-Jan Rappel, Alastair Nicol, Armand Sarkissian, Herbert Levine,
+and William F. Loomis
+
+Depts. of Physics and Biology, University of California San Diego,
+La Jolla, CA  92093
+
+Phys. Rev. Letters,    in press
+
+Abstract
+
+We present results of experiments on the dynamics of Dictyostelium
+discoideum in a novel set-up which constrains cell motion to a plane. After
+aggregation, the amoebae collect into round ''pancake" structures in which
+the cells rotate around the center of the pancake. This vortex state
+persists for many hours and we have explicitly verified that the motion is
+not due to rotating waves of cAMP. To provide an alternative mechanism for
+the self organization of the Dictyostelium cells, we  have developed a new
+model of the dynamics of  self-propelled deformable objects. In this model,
+we show that cohesive energy between the cells, together with a coupling
+between the self-generated propulsive force and the cell's configuration
+produces a self-organized vortex state. The angular velocity profiles of
+the experiment and of the model are in good quantitative agreement. The
+mechanism for self organization reported here can possibly explain similar
+vortex states in other biological systems.
+
+----------------------------------------------------------------------------
+
+Migration and thermotaxis of Dictyostelium discoideum slugs, 
+a model study
+
+Athanasius F.M. Marée, Alexander V. Panfilov and Paulien Hogeweg
+
+Theoretical Biology and Bioinformatics, University of Utrecht,
+Padualaan 8, 3584 CH Utrecht, The Netherlands. E-mail:
+S.Maree@bio.uu.nl.
+
+J. theor. Biol., in press
+
+ABSTRACT:
+
+Dictyostelium discoideum slugs show a pronounced
+thermotaxis. We have modelled the motion of the D. discoideum
+slug in the absence and in the presence of a thermal gradient. Our
+model is an extension of the hybrid cellular automata/partial
+differential equation model, as formulated by Savill and Hogeweg,
+J. theor. Biol., V.184, pp.229-235 (1997). The modelled slugs
+maintain their shape and crawl, with a velocity depending on slug
+size, as is found in experiments. Moreover, they show thermotactic
+behaviour: independently of the initial orientation, after some
+transient process the slugs start moving along the temperature
+gradient. The slug behaviour in our model is due to the collective
+behaviour of the amoebae. Individual amoebae can neither respond to a
+shallow temperature gradient, nor show differentiation in motion
+velocity. The behaviour is achieved by a modification of the cyclic
+AMP waves: differences in temperature alter the excitability of the
+cell, and therewith the shape of the cyclic AMP wave. Chemotaxis
+towards cyclic AMP causes the slug to turn. We show that the mechanism
+still functions at very low signal to noise ratios.
+
+----------------------------------------------------------------------------
+
+Phototaxis during the slug stage of Dictyostelium discoideum: 
+a model study.
+
+Athanasius F.M. Marée, Alexander V. Panfilov and Paulien Hogeweg
+
+Theoretical Biology and Bioinformatics, University of Utrecht,
+Padualaan 8, 3584 CH Utrecht, The Netherlands. E-mail:
+S.Maree@bio.uu.nl.
+
+Proc. R. Soc. Lond. B, in press
+
+ABSTRACT:
+
+During the slug stage, the cellular slime mould Dictyostelium
+discoideum moves towards light sources. We have modelled this
+phototactic behaviour using a hybrid cellular automata/partial
+differential equation model. In our model, individual amoebae are not
+able to measure the direction from which the light comes, and
+differences in light intensity do not lead to differentiation in
+motion velocity among the amoebae. Nevertheless, the whole slug
+orients itself towards the light. This behaviour is mediated by a
+modification of the cyclic AMP(cAMP) waves. As an explanation for
+phototaxis we propose the following mechanism, which is basically
+characterised by four processes: (i) light is focused on the distal
+side of the slug as a result of the so-called `lens-effect'; (ii)
+differences in luminous intensity cause differences in NH_3
+concentration; (iii) NH_3 alters the excitability of the cell, and
+thereby the shape of the cAMP wave; (iv) chemotaxis towards cAMP
+causes the slug to turn. We show that this mechanism can account for a
+number of other behaviours that have been observed in experiments,
+such as bidirectional phototaxis and the cancellation of
+bidirectionality by a decrease in the light intensity or the addition of
+charcoal to the medium.
+
+----------------------------------------------------------------------------
+
+Serpentine receptors and STAT activation: more than one way to twin a STAT
+
+Jeffrey G.  Williams
+
+Department of Anatomy and Physiology, University of Dundee, MSI/WTB 
+Complex, Dow Street, Dundee DD1 5EH
+ 
+TIBS, in press
+
+Summary
+
+When a cytokine binds to its receptor an associated JAK (Janus kinase) is
+activated and the JAK phosphorylates one or more STAT (Signal Transducer
+and Activator of Transcription) proteins. Cytokine receptors are single
+transmembrane-spanning domain proteins but recent work in mammals and in
+the social amoeba Dictyostelium shows that seven transmembrane spanning
+domain (serpentine) receptors also serve to activate STAT molecules. In
+both Dictyostelium and mammals this activation appears to be independent of
+heterotrimeric G proteins, suggesting that this, lesser-known pathway of
+STAT activation may be evolutionarily conserved.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 2]
+
+  

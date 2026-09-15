@@ -1,0 +1,107 @@
+dictyNews
+Electronic Edition
+Volume 35, number 10
+October 15, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Development of twelve polymorphic microsatellite markers from the 
+social amoeba Dictyostelium giganteum suitable for genetic diversity 
+studies on cellular slime moulds.
+
+Santosh Sathe1*, Albert Lalremruata2, Ramesh K Aggarwal2
+
+1Centre for Ecological Sciences, Indian Institute of Science, 
+Bangalore 560012, India.
+2Centre for Cellular and Molecular Biology, Hyderabad 500007, India.
+(*E-mail: santosh_sathe@ces.iisc.ernet.in)
+
+
+Molecular Ecology Resources, in press
+
+Knowledge of the genetic structure of social groups formed by cellular 
+slime mould amoebae is essential for understanding the importance 
+of genetic relatedness in the evolution of their social behaviour. 
+Only a few studies have examined genetic heterogeneity in 
+naturally-occurring cellular slime mould groups, and they have 
+been restricted to Dictyostelium discoideum, D. giganteum and 
+D. purpureum. Part of the reason for this state of affairs is the 
+paucity of genetic markers. We have developed twelve new 
+microsatellite DNA markers from a partial genomic DNA library of 
+D. giganteum. We studied the utility of these markers by genotyping
+the DNA isolated from 57 strains of cellular slime moulds. Most of 
+the strains belonged to D. giganteum; the rest were 
+D. macrocephalum, D. discoideum, D. purpureum, D. mucoroides, 
+D. rosarium and Polysphondylium pallidum. The markers 
+successfully amplified DNA from all the species listed above and 
+yielded 2 to 9 alleles per marker. The high levels of polymorphism 
+seen and the fact that DNA from several species could be 
+amplified show that the markers are well-suited for addressing 
+questions related to species relationships, genetic diversity and 
+kinship in the cellular slime moulds.
+
+
+Submitted by Santosh Sathe [santosh_sathe@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Prolyl hydroxylation- and glycosylation-dependent functions of Skp1 
+in O2-regulated development of Dictyostelium
+
+Zhuo A. Wang, Divyendu Singha, Hanke van der Wel, and 
+Christopher M. West
+
+Department of Biochemistry and Molecular Biology, Oklahoma 
+Center for Medical Glycobiology, University of Oklahoma Health 
+Sciences Center, Oklahoma City, OK  73104 USA
+
+
+Devel. Biol., in press
+
+O2 regulates multicellular development of the social amoeba 
+Dictyostelium, suggesting it may serve as an important cue in its 
+native soil environment. Dictyostelium expresses an HIFalpha-type 
+prolyl 4-hydroxylase (P4H1) whose levels affect the O2-threshold 
+for culmination implicating it as a direct O2-sensor, as in animals. 
+But Dictyostelium lacks HIFalpha, a mediator of animal prolyl 
+4-hydroxylase signaling, and P4H1 can hydroxylate Pro143 of Skp1,
+a subunit of E3SCFubiquitin-ligases. Skp1 hydroxyproline then 
+becomes the target of five sequential glycosyltransferase reactions 
+that modulate the O2-signal. Here we show that genetically induced 
+changes in Skp1 levels also affect the O2-threshold, in opposite 
+direction to that of the modification enzymes suggesting that the 
+latter reduce Skp1 activity. Consistent with this, overexpressed 
+Skp1 is poorly hydroxylated and Skp1 is the only P4H1 substrate 
+detectable in extracts. Effects of Pro143 mutations, and of 
+combinations of Skp1 and enzyme level perturbations, are 
+consistent with pathway modulation of Skp1 activity. However, 
+some effects were not mirrored by changes in modification of 
+the bulk Skp1 pool, implicating a Skp1 subpopulation and possibly 
+additional unknown factors. Altered Skp1 levels also affected other 
+developmental transitions in modification-dependent fashion. 
+Whereas hydroxylation of animal HIFalpha results in its 
+polyubiquitination and proteasomal degradation, Dictyostelium 
+Skp1 levels were little affected by its modification status. These 
+data indicate that Skp1 and possibly E3SCFubiquitin-ligase activity 
+modulate O2-dependent culmination and other developmental 
+processes, and at least partially mediate the action of the 
+hydroxylation/glycosylation pathway in O2-sensing.
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+==============================================================
+[End dictyNews, volume 35, number 10]

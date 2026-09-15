@@ -1,0 +1,82 @@
+Dicty NewsElectronic EditionVolume 22, number 2January 30, 2004Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Developmental cell death in Dictyostelium does not require paracaspase.Roisin-Bouffay C, Luciani MF, Klein G, Levraud JP, Adam M, Golstein P.Centre d'Immunologie de Marseille-Luminy, INSERM-CNRS-Univ.Med., 13288 
+Marseille cedex 9.
+
+J Biol Chem. 2003 Dec 17 [Epub ahead of print], 2004 in press
+Apoptotic cell death often requires caspases. Caspases are part of a family 
+of related molecules including also paracaspases and metacaspases. Are 
+molecules of this family generally involved in cell death ? More 
+specifically, do non-apoptotic caspase-independent types of cell death 
+require para- or metacaspases ? Dictyostelium discoideum lends itself well 
+to answering these questions, since (1) it undergoes non-apoptotic 
+developmental cell death, of a vacuolar autophagic type, and (2) it bears 
+neither caspase nor metacaspase genes and apparently only one paracaspase 
+gene. This only paracaspase gene can be inactivated by homologous 
+recombination. Paracaspase-null clones were thus obtained in each of four 
+distinct Dictyostelium strains. These clones were tested in two systems, 
+developmental stalk cell death in vivo and vacuolar autophagic cell death 
+in a monolayer system mimicking developmental cell death. Compared to 
+parent cells, all paracaspase-null cells showed unaltered cell death, in 
+both test systems. In addition, paracaspase inactivation led to no 
+alteration in development or interaction with a range of bacteria. Thus, 
+in Dictyostelium, vacuolar programmed cell death in development and in a 
+monolayer model in vitro would seem not to require paracaspase. To our 
+knowledge, this is the first instance of developmental, programmed cell 
+death shown to be independent of any caspase, para- or metacaspase. These 
+results have implications as to the relationship in evolution between cell 
+death and the caspase family.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+
+-----------------------------------------------------------------------------
+
+Molecular engineering of a backwards-moving myosin motorGeorgios Tsiavaliaris, Setsuko Fujita-Becker, & Dietmar J. MansteinNature, in pressAll members of the diverse myosin superfamily have a highly conserved globular 
+motor domain that contains the actin and nucleotide binding sites and produces 
+force and movement. The light chain binding domain connects the motor domain 
+to a variety of functionally specialized tail domains and amplifies small 
+structural changes in the core motor domain via rotation of a lever arm. 
+Myosins move on polarised actin filaments either forwards to the barbed (+) 
+or backwards to the pointed (-) end. Here, we describe the engineering of an 
+artificial backwards moving myosin from three pre-existing molecular building 
+blocks: a forward-moving class I myosin motor domain, a directional inverter 
+formed by a 4-helix bundle segment of human guanylate binding protein-1, and 
+an artificial lever arm formed by two a-actinin repeats. Our results prove 
+that reverse-direction movement of myosins can be achieved simply by rotating 
+the direction of the lever arm 180¡.
+
+ Submitted by:  Dietmar Manstein [Manstein.Dietmar@mh-hannover.de]
+
+
+-----------------------------------------------------------------------------
+
+
+Calmodulin-dependent cyclic nucleotide phosphodiesterase (PDE1) is a 
+pharmacological target of DIF-1, an anti-tumor agent isolated from 
+Dictyostelium Kasumi Shimizu, Taku Murata, Toshiro Tagawa, Katsunori Takahashi, Ryoki 
+Ishikawa, Yumiko Abe, Kohei Hosaka, and Yuzuru Kubohara**Biosignal Research Center, Institute for Molecular and Cellular Regulation 
+(IMCR), Gunma University, Maebashi 371-8512, Japan.Accepted for publication in Cancer ResearchAbstractThe differentiation-inducing factor-1 (DIF-1) isolated from Dictyostelium 
+discoideum is a potent anti-proliferative agent that induces growth arrest 
+and differentiation in mammalian cells in vitro.  However, the specific 
+target molecule(s) of DIF-1 has not been identified.  In this study, we 
+have tried to identify the target molecule(s) of DIF-1 in mammalian cells, 
+examining the effects of DIF-1 and its analogs on the activity of some 
+candidate enzymes.  DIF-1 at 10-40 micro M dose-dependently suppressed cell 
+growth and increased the intracellular cAMP concentration in K562 leukemia 
+cells.  It was then found that DIF-1 at 0.5-20 micro M inhibited the 
+calmodulin (CaM)-dependent cyclic nucleotide phosphodiesterase (PDE1) in 
+vitro in a dose-dependent manner.  Kinetic analysis revealed that DIF-1 acted 
+as a competitive inhibitor of PDE1 versus the substrate cAMP.  Since DIF-1 
+did not significantly affect the activity of other PDEs or CaM-dependent 
+enzymes and, in addition, an isomer of DIF-1 was a less potent inhibitor, 
+we have concluded that PDE1 is a pharmacological and specific target of DIF-1.
+ 
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+
+===============================================================================[End Dicty News, volume 22, number 2]

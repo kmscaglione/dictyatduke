@@ -1,0 +1,236 @@
+Dicty News
+Electronic Edition
+Volume 12, number 12
+June 12, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Evidence for the presence of a NF-kB signal transduction system in 
+Dictyostelium discoideum 
+
+Francois TRAINCARD1, Eleonora PONTE1, Jason PUN2, Barrie COUKELL2 
+and Michel VERON1 
+
+1: Unité de Régulation enzymatique des Activités cellulaires, CNRS 
+URA 1773, Institut Pasteur, 25 rue du Dr. Roux, 75724, Paris Cedex 
+15, France.  2: York University, 4700 Keele St., Toronto, Ontario, 
+M3J 1P3, Canada.
+
+SUMMARY
+
+   The Rel/NF-kB family of transcription factors and regulators has
+been described so far only in vertebrates and arthropods where they 
+mediate responses to many extracellular signals. No counterparts of 
+genes coding for such proteins have been identified in the Caenorhabditis 
+elegans genome and no NF-kB activity was found in Saccharomyces 
+cerevisiae. We describe here the presence of an NF-kB transduction 
+pathway in the lower eukaryote Dictyostelium discoideum. Using antibodies 
+raised against components of the mammalian NF-kB pathway, we demonstrate 
+the presence in Dictyostelium extracts of proteins homologous to Rel/NF-kB, 
+IkB and IKK components. Using gel shift experiments, we demonstrate the 
+presence in nuclear extracts of developing Dictyostelium cells of proteins 
+binding to kB consensus oligonucleotides and to a GC-rich kB-like sequence, 
+lying in the promoter of cbpA, a developmentally regulated Dictyostelium 
+gene encoding the Ca2+-binding protein CBP1. Using immunofluorescence, we 
+show a specific nuclear translocation of the p65 and p50 homologues of 
+the NF-kB transcription factors as vegetatively growing cells develop to 
+the slug stage. Taken together, our results strongly indicate the presence 
+of a complete NF-kB signal transduction system in Dictyostelium discoideum 
+that could be involved in the developmental process.
+
+----------------------------------------------------------------------------
+
+Intracellular ribonuclease isozyme activity of the cellular slime mold cells
+Dictyostelium discoideum  Ax2 and Dictyostelium mucoroides
+
+Saburo Uchiyama, Shin-Ichi Nagai, Norio Inokuchi,1 Takashi Koyama1 and Keizo
+Maruyama2
+
+Laboratory of Biology, Dokkyo University School of Medicine, Mibu, Tochigi 3
+21-0293, 1Department of Microbiology, College of Pharmacy, Nihon University,
+Narashinodai 7-7-1, Funabashi, Chiba 274-0063, and 2Laboratory of Biology, F
+aculty of Integrated Human Studies, Kyoto University, Kyoto 606-8501, Japan
+
+J. Basic Microbiol.  (in press)
+
+Summary
+
+   The isozymes of ribonuclease were analyzed in cell-free, crude extracts 
+of cells by reversed activity staining of polyacrylamide gradient gels after 
+electrophoresis.  We previously reported three isozymes of the intracellular 
+ribonuclease in Dictyostelium discoideum NC4, which were found in vegetative 
+cells.  In the present study, we examined the ribonucleolytic activity of 
+an axenic strain of D. discoideum Ax2 cells which can grow with or with out 
+bacteria.  The mobility of these isozymes (Dd I, II and III) was the same 
+regardless of the difference in the feeding condition.  We also found the 
+three isozymes of D. mucoroides cells, Dm I, II and III.  Dm I was different 
+from Dd I in D. discoideum cells, while Dm II and Dm III were the same as 
+Dd II and Dd III in terms of the mobility in polyacrylamide gradient gels 
+during electrophoresis.
+
+----------------------------------------------------------------------------
+
+Loss of a prolyl oligopeptidase confers resistance to lithium by elevation 
+of Inositol (1,4,5) trisphosphate.
+
+R.S.B. Williams, M. Eames, J. Ryves, J. Viggars & A.J. Harwood* 
+
+MRC Laboratory for Molecular Cell Biology, University College London
+Gower St., London, WC1E 6BT
+
+EMBO J., in press.
+
+Abstract
+
+	The therapeutic properties of lithium ions (Li+) are well known, 
+however the mechanism of its action remains unclear. To investigate this 
+problem, we have isolated Li+ resistant mutants from Dictyostelium. In this 
+paper, we describe the analysis of one of these mutants. This mutant lacks 
+the Dictyostelium prolyl oligopeptidase gene (dpoA). We have examined the 
+relationship between dpoA and two major biological targets of lithium: 
+glycogen synthase kinase 3 (GSK-3) and signal transduction via inositol 
+(1,4,5) trisphosphate (IP3). We find no evidence for an interaction with 
+GSK-3, but instead find that loss of dpoA causes an increased concentration 
+of IP3. The same increase in IP3 is induced in wild type cells by a prolyl 
+oligopeptidase inhibitor. IP3 concentrations rise via an unconventional 
+mechanism that involves enhanced dephosphorylation of inositol (1,3,4,5,6) 
+pentakisphosphate (IP5). Loss of DpoA activity therefore counteracts the 
+reduction in IP3 concentration caused by Li+ treatment. Abnormal prolyl 
+oligopeptidase (POase) activity is associated with both unipolar and bipolar 
+depression, however the function of POase in these conditions is unclear. 
+Our results offer a novel mechanism that links prolyl oligopeptidase activity 
+to IP3 signalling and provides further clues for the action of Li+ in the 
+treatment of depression. 
+
+----------------------------------------------------------------------------
+
+ROLE OF THE SALT-BRIDGE BETWEEN SWITCH-1 AND SWITCH-2 OF DICTYOSTELIUM
+MYOSIN
+
+M. Furch, S. Fujita-Becker, M.A. Geeves*, K.C. Holmes, & D.J. Manstein
+
+Max-Planck-Institute for Medical Research, Dept. of Biophysics,
+Jahnstrasse 29, D-69120 Heidelberg and *Max-Planck-Institut für Molekulare
+Physiologie, Postfach 102664, D-44026 Dortmund, Germany
+
+J. Mol. Biol., in press.
+
+ABSTRACT
+
+   Motifs N2 and N3, also referred to as switch-1 and switch-2, form part 
+of the active site of molecular motors such as myosins and kinesins. In 
+the case of myosin, N3 is thought to act as a gamma-phosphate sensor and 
+moves almost 0.6 nm relative to N2 during the catalysed turnover of ATP, 
+opening and closing the active site surrounding the gamma-phosphate. The 
+closed form seems to be necessary for hydrolysis and is stabilised by the 
+formation of a salt-bridge between an arginine in N2 and a glutamate in N3. 
+We examined the role of this salt-bridge in Dictyostelium discoideum myosin. 
+Myosin motor domains with mutations E459R or R238E, that block salt-bridge 
+formation, show defects in nucleotide-binding, reduced rates of ATP hydrolysis 
+and a 10-fold reduction in actin affinity. Inversion of the salt-bridge in 
+double-mutant M765-IS eliminates most of the defects observed for the single-
+mutants. With the exception of a 2,500-fold higher Km for ATP, the double-
+mutant displayed enzymatic and functional properties very similar to those 
+of the wild-type protein. Our results reveal that, independent of its 
+orientation, the salt-bridge is required to support efficient ATP hydrolysis, 
+normal communication between different functional regions of the myosin head, 
+and motor function.
+
+----------------------------------------------------------------------------
+
+FUNCTIONAL CHARACTERISATION OF DICTYOSTELIUM MYOSIN II WITH CONSERVED
+TRYPTOPHANYL RESIDUE 501 MUTATED TO TYROSINE
+
+Renu Batra and Dietmar J. Manstein
+
+Max-Planck-Institut für Medizinische Forschung, Jahnstr. 29, D-69120
+Heidelberg, Germany
+
+Biol. Chem., in press.
+
+ABSTRACT
+
+   We created a Dictyostelium myosin II mutant in which the highly 
+conserved residue Trp-501 was replaced by a tyrosine residue. The mutant 
+myosin alone, when expressed in a Dictyostelium strain lacking the functional 
+myosin II heavy chain gene, supported cytokinesis and multicellular development, 
+processes which require a functional myosin in Dictyostelium. Additionally, 
+we expressed the W501Y mutant in the soluble myosin head fragment M761-2R 
+(W501Y-2R) to characterise the kinetic properties of the mutant myosin motor 
+domain. The affinity of the mutant myosin for actin was approximately 6-fold 
+decreased but other kinetic properties of the protein were changed less than 
+2-fold by the W501Y mutation. Based on spectroscopic studies and structural 
+considerations Trp-501, corresponding to Trp-510 in chicken fast skeletal 
+muscle myosin, has been proposed to be the primary ATP-sensitive tryptophanyl 
+residues. Our results confirm these conclusions. While the wild-type construct 
+displayed a 10% fluorescence increase, addition of ATP to W501Y-2R was not 
+followed by an increase in tryptophan fluorescence emission.
+
+----------------------------------------------------------------------------
+
+A Serpentine Receptor-dependent, Gbeta- and Ca2+ Influx-independent 
+Pathway Regulates Mitogen-activated Protein Kinase ERK2 in Dictyostelium
+
+Paul W. Schenk, Thomas Nebl, Paul R. Fisher and B. Ewa Snaar-Jagalska
+
+Section of Cell Biology, Institute of Molecular Plant Sciences, Leiden 
+University, P.O. Box 9505, 2300 RA  Leiden, The Netherlands and
+School of Microbiology, La Trobe University, Bundoora, VIC 3083, Australia
+
+Biochem. Biophys. Res. Commun., in press
+
+Abstract
+
+Ca2+ influx and mitogen-activated protein (MAP) kinase activation are 
+important phenomena in signal transduction, which are often interconnected. 
+We investigated whether serpentine receptor-dependent, G beta-independent 
+activation of MAP kinase ERK2 by chemoattractant cyclic AMP (cAMP) is 
+mediated by Ca2+ influx in the social amoeba Dictyostelium discoideum. 
+We generated a D. discoideum double mutant, which harbours a temperature-
+sensitive G beta subunit and expresses the apoaequorin protein. Utilizing 
+this mutant, we demonstrate that cAMP induced Ca2+ influx into intact D. 
+discoideum cells can be blocked completely at both the permissive and the 
+restrictive temperature, by using either gadolinium ions or Ruthenium Red. 
+Under the same experimental conditions, these substances do not abolish cAMP 
+stimulation of ERK2 at either temperature. We conclude that there is a G beta- 
+and Ca2+ influx-independent pathway for the receptor-dependent activation of 
+MAP kinase ERK2 in Dictyostelium discoideum.
+
+----------------------------------------------------------------------------
+Signal perception and transduction: the role of protein kinases
+
+Paul W. Schenk and B. Ewa Snaar-Jagalska
+
+Section of Cell Biology, Institute of Molecular Plant Sciences, Leiden 
+University, P.O. Box 9505, 2300 RA Leiden, The Netherlands
+
+Biochim. Biophys. Acta 1449 (1999) 1-24
+
+Abstract
+
+Cells can react to environmental changes by transduction of extracellular 
+signals, to produce intracellular responses. Membrane-impermeable signal 
+molecules are recognized by receptors, which are localized on the plasma 
+membrane of the cell. Binding of a ligand can result in the stimulation of 
+an intrinsic enzymatic activity of its receptor or the modulation of a 
+transducing protein. The modulation of one or more intracellular transducing 
+proteins can finally lead to the activation or inhibition of a so-called 
+‘effector protein'. In many instances, this also results in altered gene 
+expression. Phosphorylation by protein kinases is one of the most common and 
+important regulatory mechanisms in signal transmission. This review discusses 
+the non-channel transmembrane receptors and their downstream signaling, with 
+special focus on the role of protein kinases. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 12]
+
+  

@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 31, number 8
+August 29, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Exploitation of the derivatives of Dictyostelium differentiation-inducing 
+factor-1, which promote glucose consumption in mammalian cells
+
+Yuzuru Kubohara*, Haruhisa Kikuchi, Yoshiteru Oshima
+
+Institute for Molecular and Cellular Regulation (IMCR), Gunma University, 
+Maebashi 371-8512, Japan (YK),
+Laboratory of Natural Product Chemistry, Graduate School of Pharmaceutical 
+Sciences, Tohoku University, Japan (HK, YO)
+
+
+Life Sciences, In press
+
+Aims: The differentiation-inducing factor-1 (DIF-1) is a signal molecule 
+that induces stalk cell formation in the cellular slime mold Dictyostelium 
+discoideum.  DIF-1 has also been shown to possess pharmacological activities, 
+such as the suppression of tumor cell growth and the promotion of glucose 
+uptake in non-transformed mammalian cells.  In this study, we tried to develop 
+compounds that possess weaker anti-tumor activity and stronger glucose 
+uptake-promoting activity than DIF-1.
+Main methods: We investigated the in vitro effects of 12 derivatives of DIF-1 
+on glucose consumption in mouse 3T3-L1 cells and on cell growth in K562 
+human leukemia cells.  We also examined the effect of a good compound on 
+the blood glucose concentration in KK-Ay diabetic mice.
+Key findings: We found that some derivatives at 20 uM promoted glucose 
+consumption more than twice as fast as the control.  Of the derivatives, a 
+compound named DIF-1(3M), which has a weaker anti-leukemic effect than 
+DIF-1, promoted glucose consumption as strongly as DIF-1 in confluent 
+3T3-L1 cells.  While DIF-1 at 20 uM was inhibitory to the cell growth of 
+3T3-L1, DIF-1(3M) at 20 uM exhibited no inhibitory effect on the growing 
+cells.  We also found that DIF-1(3M) injected (10-12.5 mg/kg body weight) 
+intraperitoneally in mice tended to lower the blood glucose concentration.  
+Significance: The present results open the possibility for the development 
+of new agents that possess strong glucose-uptake-promoting activity but 
+little anti-tumor activity and may have therapeutic potential for the 
+treatment of diabetes and/or obesity.
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+An ELMO-like protein associated with myosinII restricts spurious F-actin
+events to coordinate phagocytosis and chemotaxis
+
+Nilgun Isik, Ph.D.; Joseph A Brzostowski, Ph.D.^; Tian Jin, Ph.D.
+
+Chemotaxis Signal Section, Laboratory of Immunogenetics, National Institute
+of Allergy and Infectious Diseases, NIH, Twinbrook II Facility, 12331
+Parklawn Drive, Rockville, Maryland 20852, USA
+
+^Laboratory of Immunogenetics Light Imaging Facility, National Institute of
+Allergy and Infectious Diseases, NIH, Twinbrook II Facility, 12331 Parklawn
+Drive, Rockville, Maryland 20852, USA
+
+
+Developmental Cell, in press
+
+Elmo proteins positively regulate actin polymerization during cell migration
+and phagocytosis through activation of the small G-protein Rac. We
+identified an Elmo-like protein, ElmoA, in Dictyostelium discoideum that
+unexpectedly functions as a negative regulator of actin polymerization.
+Cells lacking ElmoA display an elevated rate of phagocytosis, increased
+pseudopod formation and excessive F-actin localization within pseudopods.
+ElmoA associates with cortical actin and myosin II. TIRF microscopic
+observations of functional ElmoA-GFP reveal that a fraction of ElmoA
+localizes near the presumptive actin/myosin II cortex and the levels of
+ElmoA and myosin II negatively correlate with that of polymerizing F-actin.
+F-actin-regulated dynamic dispersions of ElmoA and myosin II are
+interdependent. Taken together, our data suggest that ElmoA modulates
+actin/myosin II at the cortex to prevent excessive F-actin polymerization
+around the cell periphery, thereby maintaining proper cell shape during
+phagocytosis and chemotaxis.
+
+
+Submitted by: Joe Brzostowski [brzostowskij@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 31, number 8]

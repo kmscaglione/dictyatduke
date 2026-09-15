@@ -1,0 +1,91 @@
+Dicty News
+Electronic Edition
+Volume 24, number 1
+January 14, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+A DICTYOSTELIUM MUTANT WITH REDUCED LYSOZYME LEVELS COMPENSATES BY
+INCREASED PHAGOCYTIC ACTIVITY
+
+Iris Mueller#, Ninon Subert~, Heike Otto#, Rosa Herbst¤, Harald Ruehling#,
+Markus Maniak# @, and Matthias Leippe&
+
+
+The Journal of Biological Chemistry, in press
+ 
+Lysozymes are bacteria-degrading enzymes and play a major role in the
+immune defense of animals. In free-living protozoa, lysozyme-like proteins
+are involved in the digestion of phagocytosed bacteria. Here, we purified
+a protein with lysozyme activity from Dictyostelium amoebae, which
+constitutes the founding member a novel class of lysozymes. By tagging the
+protein with GFP1 or the myc epitope, a new type of lysozyme containing
+vesicle was identified that was devoid of other known lysosomal enzymes.
+The most highly expressed isoform, encoded by the alyA gene, was knocked
+out by homologous recombination. The mutant cells had greatly reduced
+enzymatic activity and grew inefficiently when bacteria were the sole food
+source. Over time, the mutant gained the ability to internalize bacteria
+more efficiently, so that the defect in digestion was compensated by
+increased uptake of food particles. 
+
+
+Submitted by:  Markus Maniak [maniak@uni-kassel.de]
+
+-----------------------------------------------------------------------------
+
+
+Kinetic analysis of a Golgi UDP-GlcNAc:polypeptide-Thr/Ser
+N-acetyl-alpha-glucosaminyltransferase from Dictyostelium
+
+Altan Ercan and Christopher M. West
+
+Department of Biochemistry and Molecular Biology, 940 Stanton L. Young Blvd.,
+BMSB 937, University of Oklahoma Health Sciences Center, Oklahoma City,
+Oklahoma  73104  USA; telephone: 405-271-2227 x1247; Fax 405-271-3139;
+email: Cwest2@ouhsc.edu
+
+
+Glycobiology, in press
+
+Mucin-type O-glycosylation in Dictyostelium is initiated in the Golgi by a
+UDP-GlcNAc:polypeptide-Thr/Ser N-acetyl-alpha-glucosaminyltransferase
+(Dd-pp alphaGlcNAcT2) whose sequence is distantly related to the sequences
+of animal polypeptide-Thr/Ser N-acetyl-alpha-galactosaminyltransferases such
+as murine Mm-pp alphaGalNAcT1. To evaluate the significance of this
+similarity, highly purified Dd-pp alphaGlcNAcT2 was assayed using synthetic
+peptides derived from known substrates. Dd-pp alphaGlcNAcT2 strongly prefers
+UDP-GlcNAc over UDP-GalNAc, preferentially modifies the central region of
+the peptide, and modifies Ser- in addition to Thr-residues. Initial velocity
+measurements performed over a matrix of UDP-GlcNAc donor and peptide
+acceptor concentrations indicate that the substrates bind to the enzyme in
+ordered fashion before the chemical conversion. Substrate inhibition exerted
+by a second peptide, and the pattern of product inhibition exerted by UDP,
+suggest that UDP-GlcNAc binds first and the peptide binds second, consistent
+with data reported for Mm-pp alphaGalNAcT1. Two selective competitive
+inhibitors of Mm-pp alphaGalNAcT1, retrieved from a screen of neutral-charge
+uridine derivatives, also inhibit Dd-pp alphaGlcNAcT1 competitively with
+only slightly less efficacy. Inhibition is specific for Dd-pp alphaGlcNAcT2
+relative to two other Dictyostelium retaining glycosyltransferases. These
+data support a phylogenetic model in which the alphaGlcNAcT function in
+unicellular eukaryotes converted to an alphaGalNAcT function in the metazoan
+ortholog while conserving a similar reaction mechanism and active site
+architecture.
+
+
+Submitted by: Chris West [Cwest2@ouhsc.edu]
+
+==============================================================================
+[End Dicty News, volume 24, number 1] 

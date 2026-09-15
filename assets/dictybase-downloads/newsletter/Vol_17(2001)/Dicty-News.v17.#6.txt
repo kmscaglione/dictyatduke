@@ -1,0 +1,86 @@
+Dicty News
+Electronic Edition
+Volume 17, number 6
+Sept. 22, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+
+Regulated Expression of Myosin II Heavy Chain and RacB Using an Inducible 
+tRNA Suppressor Gene
+
+Ka Ming Pang1,3 Theodore Dingermann2, and  David A. Knecht1*.
+
+ 1 Department of Molecular and Cell Biology, University of Connecticut
+Storrs, Connecticut 06269 USA.
+
+2.Institut fur Pharmazeutische Biologie  Johann Wolfgang Goethe 
+Universitat Frankfurt, Germany.
+
+Accepted: Gene
+
+Abstract
+
+An inducible expression system that indirectly regulates gene expression 
+through the use of an inducible suppressor tRNA has been used to express 
+both endogenous and exogenous genes in Dictyostelium.  The tetracycline 
+repressor and tRNA suppressor (Glu) are expressed from a single G418 
+selectable vector, while a gene engineered to contain a stop codon is 
+expressed from a separate hygromycin selectable vector.  b-galactosidase 
+could be induced over 300 fold with this system, and the extent of induction 
+could be varied depending upon the amount of tetracycline added.  It took 3 
+days to fully induce expression, and about 3 days for expression to decrease 
+to baseline after removal of the tetracycline.  Dictyostelium myosin II 
+heavy chain could also be expressed in an inducible manner, although the 
+induction ratio was not as high as b-galactosidase and the maximum 
+expression level was not as high as wild-type levels.  A significant 
+accumulation of the truncated peptide indicates that complete suppression 
+of the stop codon was not achieved.  Partial phenotypic reversion was 
+observed in null mutants inducibly expressing myosin II.  RacB could also 
+be inducibly expressed, whereas the protein could not be expressed from a 
+constitutive promoter, presumably because expression at high levels is 
+lethal.  Therefore, the inducible tRNA system can be used to control 
+expression of endogenous Dictyostelium genes.
+
+-----------------------------------------------------------------------------
+
+Altered Cell-Type Proportioning in Dictyostelium Lacking Adenosine 
+Monophosphate Deaminase
+
+Soo-Cheon Chae, Danny Fuller and William F. Loomis*
+
+Center for Molecular Genetics, Division of Biology
+University of California San Diego, La Jolla, CA 92093
+
+accepted: Developmental Biology
+
+Abstract
+
+The proportions of prespore and prestalk cells in Dictyostelium discoideum 
+are regulated such that they are size invariant and can adjust when the ratio 
+is perturbed. We have found that disruption of a gene, amdA, that encodes 
+AMP deaminase results in a significantly increased proportion of prestalk 
+cells. Strains lacking AMP deaminase form short, thick stalks and glassy 
+sori with less than 5% the normal number of spores. The levels of prestalk-
+specific mRNAs in amdA- cells are more than twice as high as in wild type 
+strains and prespore specific mRNAs are reduced. Using an ecmA::lacZ 
+construct to mark prestalk cells, we found that amdA- null slugs have twice 
+the normal number of prestalk cells. The number of cells expressing an 
+ecmO::lacZ construct was not affected by loss of AmdA indicating that the 
+mutation results in an increase in PST-A prestalk cells rather than PST-O 
+cells. This alteration in cell-type proportioning is a cell autonomous 
+consequence of the loss of AMP deaminase since mutant cells developed 
+together with wild type cells still produced excess prestalk cells and 
+wild type cells carrying the ecmA::lacZ construct formed normal numbers 
+of prestalk cells when developed together with an equal number of
+amdA- mutant cells.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 6]

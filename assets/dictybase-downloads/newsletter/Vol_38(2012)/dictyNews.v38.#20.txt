@@ -1,0 +1,118 @@
+dictyNews
+Electronic Edition
+Volume 38, number 20
+August 10, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Arachidonic Acid Enhances Caffeine-Induced Cell Death via 
+Caspase-Independent Cell Death
+
+Hidekazu Kuwayama
+
+
+Scientific Reports, in press
+
+Caffeine is a globally consumed psychostimulant but can be fatal to cells
+at overdose exposures. Although caspase-dependent apoptosis plays a role 
+in caffeine-induced cell death, the responsible intracellular signalling 
+cascade remains incompletely understood. The cellular slime mould, 
+Dictyostelium discoideum, does not possess caspase-dependent apoptotic 
+machinery. Here, we observed that ablation of D. discoideum plaA, which 
+encodes a phospholipase A2 (PLA2) homolog, leads to a decreased rate of 
+cell death under high caffeine concentrations and to enhanced cell death 
+with the addition of arachidonic acid. Moreover, the inhibition of PLA2 
+activity lead to a recovery of the survival rate in caspase-inhibited Hela 
+cervical carcinoma cells under high caffeine concentrations, indicating 
+that caffeine-induced cell death is enhanced via PLA2-dependent signalling. 
+Our results indicate that arachidonic acid may be a general second messenger 
+that negatively regulates caffeine tolerance via a caspase-independent cell 
+death cascade, which leads to multiple effects in eukaryotic cells. 
+
+Submitted by Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+---------------------------------------------------------------------------
+
+
+Extracellular Calmodulin regulates growth and cAMP-mediated chemotaxis in 
+Dictyostelium discoideum
+
+Danton H. O’Day1,2, Robert J. Huber1 and Andres Suarez2
+
+1Department of Cell and Systems Biology, University of Toronto, 25 Harbord 
+St., Toronto, Ontario, Canada, M5S 3G5.
+2Department of Biology, University of Toronto Mississauga, 3359 Mississauga 
+Rd. N., Mississauga, Ontario, Canada, L5L 1C6.
+
+
+Biochemical Biophysical Research Communications (in press)
+
+The existence of extracellular calmodulin (CaM) has had a long and 
+controversial history. CaM is a ubiquitous calcium-binding protein that 
+has been found in every eukaryotic cell system. Calcium-free apo-CaM and 
+Ca2+/CaM exert their effects by binding to and regulating the activity of 
+CaM-binding proteins (CaMBPs). Most of the research done to date on CaM and 
+its CaMBPs has focused on their intracellular functions. The presence of 
+extracellular CaM is well established in a number of plants where it 
+functions in proliferation, cell wall regeneration, gene regulation and 
+germination. While CaM has been detected extracellularly in several animal 
+species, including frog, rat, rabbit and human, its extracellular 
+localization and functions are less well established. In contrast the study 
+of extracellular CaM in eukaryotic microbes remains to be done. Here we show 
+that CaM is constitutively expressed and secreted throughout asexual 
+development in Dictyostelium where the presence of extracellular CaM 
+dose-dependently inhibits cell proliferation but increases cAMP mediated 
+chemotaxis. During development, extracellular CaM localizes within the slime 
+sheath where it coexists with at least one CaMBP, the matricellular 
+CaM-binding protein CyrA. Coupled with previous research, this work provides 
+direct evidence for the existence of extracellular CaM in the Dictyostelium 
+and provides insight into its functions in this model amoebozoan.
+
+Submitted by Dan O’Day [danton.oday@utoronto.ca]
+-----------------------------------------------------------------------------
+
+
+MicroRNAs in Amoebozoa: Deep sequencing of the small RNA population in the social 
+amoeba Dictyostelium discoideum reveals developmentally regulated microRNAs.
+
+Lotta Avesson, Johan Reimegård, E. Gerhart H. Wagner and Fredrik Söderbom
+
+
+RNA, in press
+
+The RNA interference machinery has served as a guardian of eukaryotic genomes 
+since the divergence from prokaryotes. Although the basic components have a 
+shared origin, silencing pathways directed by small RNAs have evolved in diverse 
+directions in different eukaryotic lineages. Micro (mi)RNAs regulate 
+protein-coding genes and play vital roles in plants and animals but less is known
+about their functions in other organisms. Here we report, for the first time, 
+deep sequencing of small RNAs from the social amoeba Dictyostelium discoideum. 
+RNA from growing single cell amoeba as well as from two multicellular 
+developmental stages was sequenced. Computational analyses combined with 
+experimental data reveal the expression of miRNAs, several of them exhibiting 
+distinct expression patterns during development. To our knowledge, this is the 
+first report of miRNAs in the Amoebozoa supergroup. We also show that 
+overexpressed miRNA precursors generate miRNAs and, in most cases, miRNA* 
+sequences whose biogenesis are dependent of the Dicer-like protein DrnB, further 
+supporting the presence of miRNAs in D. discoideum.  In addition, we find miRNAs 
+processed from hairpin structures originating from an intron as well as from a 
+class of repetitive elements. We believe that these repetitive elements are 
+sources for newly evolved miRNAs.
+
+Submitted by Lotta Avesson [l.avesson@garvan.org.au]
+==============================================================
+[End dictyNews, volume 38, number 20]

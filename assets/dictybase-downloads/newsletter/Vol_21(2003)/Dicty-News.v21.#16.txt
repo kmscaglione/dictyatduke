@@ -1,0 +1,57 @@
+iDicty NewsElectronic EditionVolume 21, number 16November 21, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+=============  Abstracts=============
+
+Two Dictyostelium Orthologs of the Prokaryotic Cell Division Protein,FtsZ, Localize to Mitochondria and Are Required for theMaintenance of Normal Mitochondrial Morphology
+
+Paul R. Gilson,1* Xuan-Chuan Yu,2 Dale Hereld,2 Christian Barth,3 AmeliaSavage,1Ben R. Kiefel,1 Sui Lay,3 Paul R. Fisher,3 William Margolin,2 and Peter L.Beech1
+
+Centre for Cellular and Molecular Biology, School of Biological andChemical Sciences, Deakin University, Victoria 3125,1 andDepartment of Microbiology, La Trobe University, Bundoora, Victoria 3083,3 
+Australia, and Department of Microbiology and Molecular Genetics, 
+University of Texas Medical School, Houston, Texas 770302
+Eukaryotic Cell, in press
+In bacteria, the protein FtsZ is the principal component of a ring that 
+constricts the cell at division. Though all mitochondria probably arose 
+through a single, ancient bacterial endosymbiosis, the mitochondria of 
+only certain protists appear to have retained FtsZ and the protein is 
+absent from the mitochondria of fungi, animals and higher-plants.  We 
+have investigated the role FtsZ plays in mitochondrial division in the 
+genetically-tractable protist Dictyostelium discoideum, which encodes 
+two nuclear-encoded FtsZs, FszA and FszB, that are targeted to the 
+inside of mitochondria.  In most wild-type amoebae, the mitochondria 
+are spherical or rod-shaped, but in fsz-null mutants they become 
+elongated into tubules - indicating a decrease in mitochondrial 
+division has occurred.  In support of this role in organelle division, 
+antibodies to FszA, and FszA-GFP, show belts and puncta at multiple 
+places along the mitochondria, which may define future or recent sites 
+of division.  FszB-GFP, in contrast, locates to an electron-dense, 
+sub-mitochondrial body usually located at one end of the organelle 
+but how it functions during division is unclear.  This is the first 
+demonstration of two differentially localised FtsZs within the one 
+organelle, and points to a divergence in the roles of these two 
+proteins.Ê
+
+Submitted by:  Paul Gilson [gilson@wehi.edu.au]
+
+-----------------------------------------------------------------------------
+
+Surrogate hosts: protozoa and invertebrates as models for studyingpathogen-host interactionsMichael Steinert, Matthias Leippe, Thomas RoederInt. J. Med. Microbiol., in pressAnimal models, primary cell culture systems and permanent cell lineshave provided important information on virulence properties ofpathogenic microorganisms. Recently, it has been shown that someinherent limitations of such models can be circumvented by usingnon-vertebrate hosts such as Caenorhabditis elegans, Drosophilamelanogaster and Dictyostelium discoideum. These new models are helpfulto follow infection processes at the molecular level. Persuasive supportcomes from the fact that processes such as phagocytosis, cell signalingor innate immunity can be studied in these surrogate hosts. This reviewdescribes the establishment and application of each of the threeaforementioned and genetically tractable hosts. In addition, we willreport on a number of approaches that led to the identification of hostcell factors which influence the susceptibility of the hosts toinfection.
+
+Submitted by: Matthias Leippe [mleippe@zoologie.uni-kiel.de]
+
+-----------------------------------------------------------------------------
+
+The Ca2+/Calcineurin-regulated cup Gene Family in Dictyostelium discoideumand Its Possible Involvement in DevelopmentBarrie Coukell, Yi Li, John Moniakis and Anne CameronDepartment of Biology,York University,4700 Keele, St.,Toronto, ON, M3J 1P3, CANADAEukaryotic Cell, in press
+Changes in free intracellular Ca2+ are thought to regulate severalmajor processes during Dictyostelium development including cellaggregation and cell type-specific gene expression, but the mechanismsinvolved are unclear. To learn more about Ca2+ signalling and Ca2+homeostasis in this organism, we used suppression subtractivehybridization to identify genes up-regulated by high extracellular Ca2+.Unexpectedly, many of the genes identified belong to a novel gene family(termed cup) with seven members.  In vegetative cells, the cup genes wereup-regulated by high Ca2+, but not by other ions or by heat, oxidative orosmotic stress.  cup induction by Ca2+ was blocked completely byinhibitors of calcineurin and protein synthesis.  In developing cells, cupexpression was high during aggregation and late development, but lowduring the slug stage. This pattern correlates closely with reportedlevels of free intracellular Ca2+ during development.  The cup geneproducts are highly homologous, acidic proteins possessing putative ricindomains. BLAST searches failed to reveal homologs in other organisms butWestern analyses suggested that cup-like proteins might exist in certainother cellular slime mold species.  Localization experiments indicatedthat cup proteins are primarily cytoplasmic, but become cellmembrane-associated during Ca2+ stress and cell aggregation. When cupexpression was down-regulated by antisense RNA, the cells failed toaggregate. However, this developmental block was overcome by partiallyup-regulating cup expression.  Together, these results suggest that thecup proteins in Dictyostelium might play an important role instabilizing/regulating the cell membrane during Ca2+ stress and/or certainstages of development.
+
+Submitted by: Barrie Coukell [bcoukell@yorku.ca]
+
+-----------------------------------------------------------------------------
+
+Defect in Peroxisomal Multifunctional Enzyme MFE1 Affects cAMP Relay inDictyostelium#1Satomi Matsuoka, #$1Hidekazu Kuwayama, 1Daisuke Ikeno, 2Masakazu Oyama,and 1*Mineko Maeda
+Develop. Growth Differ., in press
+We have previously reported that cells of Dictyostelium discoideum lackingthe fatty acid oxidation enzyme MFE1 accumulate excess cyclopropane fattyacids from ingested bacteria. Cells in which mfeA- is disrupted fail todevelop when grown in association with bacteria but form normal fruitingbodies when grown in axenic media. Bacterially grown mfeA- cells express thegenes for the cAMP receptor (carA) and adenylyl cyclase (acaA) but fail torespond to a cAMP pulse by synthesis of additional cAMP which normallyrelays the signal.  Moreover, they do not accumulate the adhesion protein,gp80, which is encoded by the cAMP-induced gene, csaA. As a consequence theydo not acquire developmentally regulated EDTA-resistant cell-cell adhesion.When mutant cells are mixed with wild type cells and allowed to developtogether, they co-aggregate and differentiate into both spores and stalkcells. Thus, most of the developmental consequences of excess cyclopropanefatty acids appear to result from impaired cAMP relay.
+
+Submitted by: Mineko Maeda [mmaeda@bio.sci.osaka-u.ac.jp]
+
+===============================================================================[End Dicty News, volume 21, number 16]

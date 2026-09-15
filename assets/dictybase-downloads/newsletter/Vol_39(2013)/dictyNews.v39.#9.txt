@@ -1,0 +1,62 @@
+dictyNews
+Electronic Edition
+Volume 39, number 9
+March 29, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Ndufaf5 deficiency in the Dictyostelium model: new roles in 
+autophagy and development
+
+Sergio Carilla-Latorre, Sarah J. Annesley, Sandra 
+Mu–oz-Braceras, Paul R. Fisher, and Ricardo Escalante
+
+Molecular Biology of the Cell, in press
+
+Ndufaf5 (also known as C20orf7) is a mitochondrial complex I 
+(CI) assembly factor whose mutations lead to human 
+mitochondrial disease. Little is known about the function 
+of the protein and the cytopathological consequences of the 
+mutations. Disruption of Dictyostelium Ndufaf5 leads to CI 
+deficiency and defects in growth and development. The 
+predicted sequence of Ndufaf5 contains a putative 
+methyltransferase domain. Site-directed mutagenesis indicates 
+that the methyltransferase motif is essential for its 
+function. Pathological mutations were recreated in the 
+Dictyostelium protein and expressed in the mutant background. 
+These proteins were unable to complement the phenotypes, 
+which further validates Dictyostelium as a model of the 
+disease. Chronic activation of AMP-activated protein kinase 
+(AMPK) has been proposed to play a role in Dictyostelium and 
+human cytopathology in mitochondrial diseases. However, 
+inhibition of the expression of AMPK gene in the Ndufaf5 
+null mutant does not rescue the phenotypes associated with 
+the lack of Ndufaf5 suggesting that novel AMPK-independent 
+pathways are responsible of Ndufaf5 cytopathology.  
+Interestingly, the Ndufaf5 deficient strain shows an increase 
+in autophagy. This phenomenon was also observed in a 
+Dictyostelium mutant lacking MidA (C2orf56/PRO1853/Ndufaf7), 
+another CI assembly factor, suggesting that autophagy 
+activation might be a common feature in mitochondrial 
+CI dysfunction.
+
+ 
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]
+==============================================================
+[End dictyNews, volume 39, number 9]

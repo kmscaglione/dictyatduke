@@ -1,0 +1,79 @@
+dictyNews
+Electronic Edition
+Volume 31, number 20
+December 26, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Autophagic or necrotic cell death triggered by distinct motifs of the 
+differentiation factor DIF-1.
+
+MF Luciani, Y Kubohara, H Kikuchi, Y Oshima and P Golstein 
+
+
+Cell Death and Differentiation, doi: 10.1038/cdd.2008.177, in press
+
+Autophagic or necrotic cell death (ACD and NCD, respectively), studied in 
+the model organism Dictyostelium which offers unique advantages, require 
+triggering by the same differentiation-inducing factor DIF-1. To initiate 
+these two types of cell death, does DIF-1 act through only one or through 
+two distinct recognition structures ? Such distinct structures may 
+recognize distinct motifs of DIF-1. To test this albeit indirectly, DIF-1 
+was modified at one or two of several positions, and the corresponding 
+derivatives were tested for their ability to induce ACD or NCD.  The results 
+strongly indicated that distinct biochemical motifs of DIF-1 were required 
+to trigger ACD or NCD, and that these motifs were separately recognized 
+at the onset of ACD or NCD. In addition, both ACD and NCD were induced 
+more efficiently by DIF-1 than by either its precursors or its immediate 
+catabolite. These results showed an unexpected relation between a 
+differentiation factor, the cellular structures that recognize it, the cell 
+death types it can trigger, and the metabolic state of the cell. The latter 
+seems to guide the choice of the signaling pathway to cell death, which 
+in turn imposes the cell death type and the recognition pattern of the 
+differentiation factor.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+
+
+Autophagic cell death: analysis in Dictyostelium 
+
+Corinne Giusti, Emilie Tresse, Marie-Françoise Luciani, Pierre Golstein
+
+
+BBA - Molecular Cell Research, doi:10.1016/j.bbamcr.2008.12.005, in press
+
+Autophagic cell death (ACD) can be operationally described as cell death 
+with an autophagic component. While most molecular bases of this autophagic 
+component are known, in ACD the mechanism of cell death proper is not well 
+defined, in particular because in animal cells there is poor experimental 
+distinction between what triggers autophagy and what triggers ACD. Perhaps 
+as a consequence, it is often thought that in animal cells a little autophagy 
+is protective while a lot is destructive and leads to ACD, thus that the 
+shift from autophagy to ACD is quantitative. The aim of this article is to 
+review current knowledge on ACD in Dictyostelium, a very favorable model, 
+with emphasis on (1) the qualitative, not quantitative nature of the shift 
+from autophagy to ACD, in contrast to the above, and (2) random or targeted 
+mutations of in particular the following genes: iplA (IP3R), TalB (talinB), 
+DcsA (cellulose synthase), GbfA, ugpB, glcS (glycogen synthase) and atg1. 
+These mutations allowed the genetic dissection of ACD features, dissociating 
+in particular vacuolisation from cell death.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+==============================================================
+[End dictyNews, volume 31, number 20]

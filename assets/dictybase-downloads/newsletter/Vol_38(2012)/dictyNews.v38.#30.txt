@@ -1,0 +1,98 @@
+dictyNews
+Electronic Edition
+Volume 38, number 30
+November 30, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Cyclical action of the WASH complex - FAM21 and Capping Protein 
+drive WASH recycling not initial recruitment
+
+Laura Park, Peter A. Thomason, Tobias Zech, Jason S. King, 
+Douwe Veltman, Michael Carnell, Seiji Ura, Laura M. Machesky 
+and Robert H. Insall
+
+
+Developmental Cell, in press
+
+WASH causes retrograde traffic and exocytosis.  It is found within a 
+five-protein regulatory complex in vivo, but the physiological roles of 
+the other members are unknown.  Here we present a genetic 
+analysis of the subunits’ individual functions.  
+Mutants in each subunit are completely blocked in exocytosis, but 
+show distinct phenotypes.  Loss of SWIP causes delocalisation of 
+WASH and strumpellin.  Surprisingly, no other subunit is essential 
+for recruitment of the WASH complex to lysosomes.  The C-terminal 
+repeat in FAM21 localises to lysosomes independently of other 
+complex members.  There are therefore multiple localising signals, 
+acting through different subunits.  Loss of Strumpellin and ccdc53 
+causes worse growth defects than loss of WASH, implying they 
+have additional roles.
+All subunits except FAM21 are required for the complex to drive 
+actin assembly on lysosomes.  Without actin, lysosomes never 
+recycle V-ATPase or form neutral postlysosomes.  However, in 
+FAM21 knockout lysosomes, WASH generates excessive, dynamic 
+streams of actin.  These successfully remove V-ATPase, forming 
+huge neutral postlysosomes that are still never exocytosed.  The 
+difference between WASH and FAM21 phenotypes is conserved in 
+human cancer cells.
+Thus FAM21 and WASH act at different steps of a cyclical pathway, 
+with FAM21 driving a recycling step that allows WASH to be 
+trafficked back to acidic lysosomes.  Recycling is driven by capping 
+protein, which couples the WASH complex to the dynamic actin 
+on vesicles through the C-terminus of FAM21.    
+
+
+Submitted by Robert Insall [r.insall@beatson.gla.ac.uk]
+---------------------------------------------------------------------------
+
+
+Phosphorylation of Arp2 is required for normal development and cAMP 
+chemotaxis in Dictyostelium
+
+Chang-Hoon Choi*, Peter A. Thomason*, Mehreen Zaki, Robert H. Insall 
+and Diane L. Barber
+
+*Authors contributed equally to this work
+
+
+JBC, in press
+
+Phosphorylation of the Arp2 subunit of the Arp2/3 complex on evolutionarily 
+conserved threonine and tyrosine residues was recently identified and 
+shown to be necessary for nucleating activity of the Arp2/3 complex and 
+membrane protrusion of Drosophila cells. Here we use the Dictyostelium 
+diploid system to replace the essential Arp2 protein with mutants that cannot 
+be phosphorylated at T235/6 and Y200. We find that aggregation of the 
+resulting mutant  cells after starvation is substantially slowed, with delayed 
+early developmental gene expression, and chemotaxis toward a cAMP 
+gradient is defective, with loss of polarity and attenuated F-actin assembly. 
+Chemotaxis toward cAMP is also diminished, with reduced cell speed and 
+directionality and shorter pseudopod lifetime, when Arp2 phosphorylation 
+mutant cells are allowed to develop longer, to a similar responsive state as 
+wild-type cells. However, clathrin- mediated endocytosis and chemotaxis 
+under agar to folate in vegetative cells are only subtly affected in Arp2 
+phosphorylation mutants. Thus phosphorylation of threonine and tyrosine is 
+important for a subset of the functions of the Arp2/3 complex, in particular 
+an unexpected major role in regulating development. 
+ 
+ 
+Submitted by Robert Insall [r.insall@beatson.gla.ac.uk]
+==============================================================
+[End dictyNews, volume 38, number 30]

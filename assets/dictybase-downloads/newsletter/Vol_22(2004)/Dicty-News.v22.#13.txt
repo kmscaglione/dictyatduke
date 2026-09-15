@@ -1,0 +1,58 @@
+Dicty News
+Electronic Edition
+Volume 22, number 13
+May 28, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+A link of Ca2+ to cAMP oscillations in Dictyostelium: the calmodulin
+antagonist W-7 potentiates cAMP relay and transiently inhibits the acidic
+Ca2+-store
+
+Dieter Malchow, Daniel F. Lusche and Christina Schlatterer 
+Department of Biology, University of Konstanz, D-78457 Konstanz, Germany
+
+BMC Developmental Biology, in press
+
+
+Background: During early differentiation of Dictyostelium the attractant
+cAMP is released periodically to induce aggregation of the cells. Here we
+pursue the question whether pulsatile cAMP signaling is coupled to a basic
+Ca2+-oscillation. 
+Results: We found that the calmodulin antagonist W-7 transiently enhanced
+cAMP spikes. We show that W-7 acts on an acidic Ca2+-store: it abolished
+ATP-dependent vesicular acidification, inhibited V-type H+ATPase activity
+more potently than the weaker antagonist W-5 and caused vesicular
+Ca2+-leakage. Concanamycin A, an inhibitor of the V-type H+-pump, blocked
+the Ca2+-leakage elicited by W-7 as well as cAMP-oscillations in the
+presence of W-7. Concanamycin A caused an increase of the cytosolic
+Ca2+-concentration whereas W-7 did not. In case of the latter, Ca2+ was
+secreted by the cells. In accord with our hypothesis that the link from 
+Ca2+ to cAMP synthesis is mediated by a Ca2+-dependent phospholipase C we
+found that W-7 was not active in the phospholipase C knockout mutant. 
+Conclusion: We conclude that the potentiation of cAMP relay by W-7 is due
+to a transient inhibition of the acidic Ca2+-store. The inhibition of the
+proton pump by W-7 causes a leakage of Ca2+ that indirectly stimulates
+adenylyl cyclase activity via phospholipase C. 
+
+
+Submitted by: Christina Schlatterer [Christina.Schlatterer@uni-konstanz.de]
+
+
+===============================================================================
+[End Dicty News, volume 22, number 13]

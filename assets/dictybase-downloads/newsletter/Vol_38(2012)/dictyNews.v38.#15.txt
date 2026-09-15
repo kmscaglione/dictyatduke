@@ -1,0 +1,118 @@
+dictyNews
+Electronic Edition
+Volume 38, number 15
+June 22, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+A matricellular protein and EGF-like repeat signalling in the social 
+amoebozoan Dictyostelium discoideum
+
+Robert J. Huber and Danton H. O’Day
+
+Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord Street, Toronto, ON, Canada M5S 3G5
+Department of Biology, University of Toronto Mississauga, 3359 
+Mississauga Road North, Mississauga, ON, Canada L5L 1C6
+
+
+Cellular and Molecular Life Sciences, In press
+
+Matricellular proteins interact with the extracellular matrix (ECM) and 
+modulate cellular processes by binding to cell surface receptors and 
+initiating intracellular signal transduction. Their association with the 
+ECM and the ability of some members of this protein family to regulate 
+cell motility have opened up new avenues of research to investigate 
+their functions in normal and diseased cells. In this review, we 
+summarize the research on CyrA, an ECM calmodulin-binding protein 
+in Dictyostelium. CyrA is proteolytically cleaved into smaller EGF-like 
+(EGFL) repeat-containing cleavage products during development. 
+The first EGFL repeat of CyrA binds to the cell surface and activates 
+a novel signalling pathway that modulates cell motility in this model 
+organism. The similarity of CyrA to the most well characterized 
+matricellular proteins in mammals allows it to be designated as 
+the first matricellular protein identified in Dictyostelium. 
+
+
+Submitted by Robert Huber [robert.huber@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+
+On-Chip Open Microfluidic Devices for Chemotaxis Studies. 
+
+Gus A. Wright, Lino Costa, Alexander Terekhov, Dawit Jowhar, 
+William Hofmeister, and Christopher Janetopoulos. 
+
+
+Microscopy and Microanalysis, in press
+
+Microfluidic devices can provide unique control over both the 
+chemoattractant gradient and the migration environment of the 
+cells. Our work incorporates laser-machined micro and nanofluidic 
+channels into bulk fused silica and cover slip-sized silica wafers. 
+We have designed “open” chemotaxis devices that produce 
+passive chemoattractant gradients without an external micropipette 
+system.  Since the migration area is unobstructed, cells can be 
+easily loaded and strategically placed into the devices with a 
+standard micropipette. The reusable monolithic glass devices have 
+integral ports that can generate multiple gradients in a single 
+experiment. We also used cover slip microfluidics for chemotaxis 
+assays. Passive gradients elicited from these cover slips could be 
+readily adapted for high throughput chemotaxis assays. We have 
+also demonstrated for the first time that cells can be recruited into 
+cover slip ports eliciting passive chemoattractant gradients. This 
+proves, in principle, that intravital cover slip configurations could 
+deliver controlled amounts of drugs, chemicals or pathogens as well 
+as recruit cells for proteomic or histological analysis in living animals 
+while under microscopic observation. Intravital cover slip fluidics will 
+create a new paradigm for in vivo observation of biological processes.
+
+
+Submitted by Gus Wright [gusalanwright@gmail.com]
+--------------------------------------------------------------------------------------
+
+
+SCAR knockouts in Dictyostelium:  WASP assumes SCAR’s functions 
+and upstream regulators.
+ 
+ Douwe M. Veltman, Jason S. King, Laura M. Machesky and 
+ Robert H. Insall*
+ 
+
+J. Cell Biology, in press
+ 
+The Arp2/3 complex activator SCAR/WAVE controls actin polymerization 
+in pseudopods, while WASP assembles actin at clathrin coated pits.  
+Unexpectedly, Dictyostelium SCAR knockouts can still spread, migrate 
+and chemotax using pseudopods driven by the Arp2/3 complex. In the
+ absence of SCAR, some WASP relocates from the coated pits to the 
+ leading edge, where it behaves with similar dynamics to normal SCAR, 
+ forming split pseudopods and travelling waves. Pseudopods colocalize 
+ with active Rac, whether driven by WASP or SCAR, though Rac is 
+ activated to a higher level in SCAR mutants.  Members of the SCAR 
+ regulatory complex like PIR121 are not required for WASP regulation.  
+ We thus show that WASP is unexpectedly able to respond to all core 
+ upstream signals, and regulators that couple through the other members 
+ of SCAR’s regulatory complex are not essential for pseudopod formation.  
+ We conclude that WASP and SCAR can regulate pseudopod actin using 
+ similar mechanisms.
+
+
+Submitted by Robert Insall [r.insall@beatson.gla.ac.uk]]
+==============================================================
+[End dictyNews, volume 38, number 15]

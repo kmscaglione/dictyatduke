@@ -1,0 +1,220 @@
+Dicty News
+Electronic Edition
+Volume 11, number 2
+August 1, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+ Announcement
+==============
+
+Jeff Williams has moved.  His new address is:
+
+	The Department of Anatomy and Physiology
+	University of Dundee
+	MSI/WTB Complex
+	Dow Street
+	DUNDEE
+	DD1 5EH
+	tel 01382 345828
+	e-mail: jgwilliams@bad.dundee.ac.uk
+
+===========
+ Abstracts
+===========
+ 
+THE HISTIDINE KINASE dhkC REGULATES THE CHOICE BETWEEN MIGRATING SLUGS AND
+TERMINAL DIFFERENTIATION IN DICTYOSTELIUM DISCOIDEUM
+
+Charles K. Singleton1, Michael J. Zinda, Brook Mykytka, and Ping Yang
+
+Department of Molecular Biology, Box 1820 Station B, Vanderbilt University,
+Nashville TN 37235
+
+Develop. Biol., in press.
+
+Abstract
+
+   An early decision that a newly formed aggregate of Dictyostelium cells must 
+make is whether to form a migrating slug or to proceed through culmination, 
+the process of forming the mature fruiting body.  The choice between these 
+alternative morphological pathways is influenced by external and internal 
+cues.  dhkC was identified as a potential hybrid sensor kinase possessing 
+domains homologous to the histidine kinase and receiver motifs of two-
+component signaling systems.  Null strains of dhkC  show a rapidly developing 
+phenotype for aggregation through finger formation, and culmination commences 
+immediately thereafter and proceeds at a normal rate to generate typical 
+fruiting bodies.  Ammonia, an endogenous regulator of the slug versus culmination 
+choice, results in a prolonged slug stage for dhkC + strains while the dhkC - 
+strain bypasses the slug stage in the presence or absence of ammonia.  Conversely, 
+expression in wild type cells of a modified DHKC protein composed of only 
+the histidine kinase domain results in normal timing through early aggregation, 
+but subsequent development is significantly delayed.  The resulting fingers, 
+once formed, readily convert to slugs that do not undergo culmination but 
+instead migrate until their energy sources are depleted.  The slugger phenotype 
+is dependent on the presence of a functional response regulator REGA, and it 
+is rescued by exogenously supplied cAMP.  Together, the results indicate that 
+DHKC contributes to the integration of environmental and cellular signals so 
+that the appropriate choice is made between slug formation and culmination.  
+We suggest that DHKC may function as a sensor for ammonia, and that it is 
+the initial component of a phosphorelay signaling system that may modulate 
+the activity of cAMP-dependent protein kinase to either inhibit or promote 
+culmination. Additionally, DhkC -  spores were found to be defective in 
+germination, indicating a role for the DHKC signaling pathway activating 
+spore germination.
+
+-------------------------------------------------------------------------
+
+Cell-cell signaling during Dictyostelium development
+
+Fredrik Söderbom and William F. Loomis
+
+Center for Molecular Genetics, Department of Biology
+University of California San Diego, La Jolla  CA 92423
+
+Trends in Microbiology (in press)
+
+Summary
+
+   Specific proteins and peptides, as well as cAMP, are used as intercellular 
+signals in Dictyostelium. Our understanding of the signal transduction pathways 
+activated by these signals has been expanded by inclusion of newly 
+characterized proteins. cAMP-dependent protein kinase (PKA) and its 
+associated phosphodiesterase, RegA, play multiple roles in these pathways.
+
+-------------------------------------------------------------------------
+
+A Serum Response Factor Homolog is Required for Spore Differentiation in
+Dictyostelium
+
+Ricardo Escalante* and Leandro Sastre
+
+Instituto de Investigaciones Biomédicas del Consejo Superior de Investigaciones 
+Científicas , C/Arturo Duperier,4. 28029 Madrid. Spain.  
+
+*Author for correspondence: e-mail: rescalante@iib.uam.es 
+
+Development, in press.
+
+Summary
+
+   A homolog of the Serum Response Factor (SRF) has been isolated from 
+Dictyostelium discoideum and its function studied by analyzing the consequences 
+of its gene disruption. The MADS-box region of Dictyostelium SRF (DdSRF) is 
+highly conserved with those of the human, Drosophila and yeast homologs. srfA 
+is a developmentally regulated gene expressed in prespore and spore cells. This 
+gene plays an essential role in sporulation as its disruption leads to abnormal 
+spore morphology and loss of viability.  The mutant spores were round and cellulose 
+deposition seemed to be partially affected. Initial prestalk and prespore cell 
+differentiation did not seem to be compromised in the mutant since the expression 
+of several cell-type specific markers were found to be unaffected. However, the 
+mRNA level of the spore marker spiA  was greatly reduced. Activation of the cAMP 
+dependent protein kinase (PKA) by 8-Br-cAMP was not able to fully bypass the 
+morphological defects of srfA- mutant spores, although this treatment induced 
+spiA mRNA expression. Our results suggest that DdSRF is required for full 
+maturation of spores and participates in the regulation of the expression of 
+the spore-coat marker spiA and probably other maturation genes necessary for 
+proper spore cell differentiation.
+
+-------------------------------------------------------------------------
+
+High levels of actin tyrosine phosphorylation: correlation with the dormant 
+state of Dictyostelium spores
+
+Yoshiro Kishi1,3, Chris Clements2, Dana C. Mahadeo2, David A. Cotter2 
+and Masazumi Sameshima3
+
+1Department of Physics, Rikkyo (St. Paul's) University, 3-34-1 Nishi-ikebukuro, 
+Toshima-ku, Tokyo, 171-0021, Japan. 2Department of Biological Sciences, 
+University of Windsor, Windsor, Ontario, N9B 3P4, Canada. 3Department of Cell 
+Biology, The Tokyo Metropolitan Institute of Medical Science, 3-18-22 Honkomagome, 
+Bunkyo-ku, Tokyo, 113-8613, Japan
+
+J. Cell Sci., in press
+
+Abstract:
+
+   Upon removal of nutrients, the amoebae of the cellular slime mold 
+Dictyostelium discoideum differentiate into dormant spores which survive 
+starvation stress. In this study, we demonstrate that half of the actin 
+molecules in the spores are tyrosine-phosphorylated. The phosphorylated actin 
+is distributed around immobile crenate mitochondria and vesicles, as well as, 
+in the cytoplasm of the spores. The actin isolated from spore lysates contains 
+phosphorylated and unphosphorylated forms at the same molar ratio as that of 
+the original whole spore lysate. Under actin polymerizing conditions they form 
+actin filaments and then they are completely depolymerized under actin 
+depolymerizing conditions, indicating that tyrosine phosphorylation of actin 
+may not prohibit actin polymerization nor stimulate depolymerization. The 
+phosphorylation levels increase at the end of the culmination stage when 
+spores have matured morphologically and physiologically, and reach maximum 
+levels after an additional 12 hours of development. The levels are stable 
+for 20 days following spore maturation, and decline to undetectable levels 
+within the next 10 days. Spores having high levels of phosphorylation show high 
+viability, and vice versa. The Dictyostelium dual-specificity kinase, splA, 
+may be a candidate kinase that phosphorylates actin tyrosine during the very 
+late stages in development. In spores of the splA gene null mutant, 
+phosphorylation of actin is not detected by immunoblots with anti-
+phosphotyrosine antibody. Following activation of spores with nutrient 
+medium containing spore germination promoters, the phosphorylation levels 
+quickly decrease with a half-life of about 5 minutes. After 20 minutes 
+spores begin to swell. At this later time, most of the phosphorylated actin 
+already has been dephosphorylated. Also, in heat-activated spores actin 
+dephosphorylation occurs prior to spore swelling. However, addition of 
+phosphatase inhibitors following heat-activation, prevented spore swelling 
+and dephosphorylation of actin. Our data indicate that the high levels of 
+actin tyrosine phosphorylation, specific to the spore stage, may be required 
+for maintaining dormancy to withstand starvation stress. The rapid 
+dephosphorylation of actin leads to a reactivated dynamic actin system 
+which participates in spore swelling, vesicle movement, and mitochondrial 
+shape changes during the spore germination process.   
+
+-------------------------------------------------------------------------
+
+A deubiquitinating enzyme that disassembles free polyubiquitin chains is
+required for development but not growth in Dictyostelium
+
+David F. Lindsey1, Alexander Amerik2, William J. Deery1, John D. Bishop1,
+Mark Hochstrasser2, and Richard H. Gomer1
+
+1Howard Hughes Medical Institute, Department of Biochemistry and Cell
+Biology, Rice University, Houston, TX  77251-1892  2Department of
+Biochemistry and Molecular Biology, the University of Chicago, Chicago, IL
+60637  
+
+Journal of Biological Chemistry, in press
+
+Abstract
+
+   Although cell differentiation usually involves synthesis of new proteins, 
+little is known about the role of protein degradation.  In eukaryotes, 
+conjugation to ubiquitin polymers often targets a protein for destruction.  
+This process is regulated by deubiquitinating enzymes (DUBs), which can 
+disassemble ubiquitin polymerases or ubiquitin-substrate conjugates.  We 
+find that a DUB, UbpA, is required for Dictyostelium development.  ubpA 
+cells have normal protein profiles on gels, grow normally and show normal 
+responses to starvation such as differentiation and secretion of CMF.  However, 
+ubpA cells have defective aggregation, chemotaxis, cAMP relay, and cell adhesion.  
+These defects result from low expression of cAMP pulse-induced genes such as 
+those encoding the cAR1 cAMP receptor, phosphodiesterase, and the gp80 adhesion 
+protein.  Treatment of ubpA cells with pulses of exogenous cAMP allows them to 
+aggregate and express these genes like wild-type cells, but they still fail to 
+develop fruiting bodies.  Unlike wild type, ubpA cells accumulates ubiquitin-
+containing species that comigrate with ubiquitin polymers, suggesting a defect 
+in polyubiquitin metabolism.  UbpA has sequence similarity with yeast Ubp14, 
+which disassembles free ubiquitin chains.  Yeast ubp14 cells have a defect in 
+proteolysis, due to excess ubiquitin chains competing for substrate binding to 
+proteasomes.  Cross-species complementation and enzyme specificity assays 
+indicate that UbpA and Ubp14 are functional homologs.  We suggest that specific 
+developmental transitions in Dictyostelium require the degradation of specific 
+proteins, and that this process in turn requires the disassembly of polyubiquitin 
+chains by UbpA.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 2]
+

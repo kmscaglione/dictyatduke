@@ -1,0 +1,296 @@
+CSM News
+Electronic Edition
+Volume 7, number 1
+July 6, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+
+CHOICE OF PARTNERS:  Sexual cell interactions in Dictyostelium discoideum
+
+Hideko Urushihara
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba,
+Ibaraki 305 Japan
+
+Cell Struct. Funct., in press.
+
+ABSTRACT
+
+   Recognition of mating partners are of central importance in the
+sexual processes. In consideration that the most important function of
+sexuality is to shuffle genetic materials to generate wider variation
+of characters, mating among different genetic backgrounds is
+preferable. Wild isolates of cellular slime mold Dictyostelium
+discoideum are predominantly heterothallic, but homothallic ones also
+exist. In addition, there are bisexual strains which are compatible
+with either mating type of heterothallic strains but are
+self-incompatible. How cells of these organisms choose proper mating
+partners may include the essential mechanisms for sexual cell
+recognition in general. This minireview addresses studies on sexual
+cell interactions of D. discoideum with special attention to cell
+recognition and evolution of the mating system.
+
+---------------------------------------------------------------------
+
+The Dictyostelium Dual-Specificity Kinase splA is Essential for Spore
+Differentiation
+
+Glen H. Nuckolls1,3, Nir Osherov2, William F. Loomis2, and James A. Spudich1
+
+1 Depts. of Biochemistry and Developmental Biology, Stanford Univ. School of 
+Med., Stanford, CA 94305, 2 Center for Molecular Genetics, Dept. of Biology, 
+UCSD, LaJolla, CA 92093, 3 Craniofacial Development Section, NIH/NIAMS, 
+Bethesda, MD 20892-2745
+
+Development, in press
+
+Summary
+
+   We have studied the structure and function of the Dictyostelium kinase 
+splA.  A truncated form of the splA protein exhibited primarily tyrosine 
+kinase activity in vitro; however it also autophosphorylated on serine and 
+threonine residues.  The kinase domain of splA exhibits approximately 38% 
+identity to the CTR1 kinase of Arabidopsis, which is a member of the Raf 
+family.  Outside its kinase domain, splA shares homology with the byr2 kinase 
+of S. pombe.  By aligning the sequences of splA, byr2, and STE11, a homologue 
+of byr2 in S. cerevisiae, we have identified a conserved motif that is also 
+found in members of the Eph family of growth factor receptor tyrosine 
+kinases.  SplA is expressed throughout development with a peak during the 
+mound stage of morphogenesis.  Strains in which the splA gene had been 
+disrupted completed fruiting body formation; however spore cells 
+spontaneously lysed before completing their differentiation.  Northern 
+analysis revealed the expression of the prespore marker cotB and the prestalk 
+markers ecmA and ecmB in the mutant strain during development.  The spore 
+differentiation marker spiA was detected in the mutant spores both by 
+Northern and immunoblotting, but these cells failed to assemble spore coats.  
+Immunoblot analysis of the developmental pattern of tyrosine phosphorylation 
+revealed a protein that was phosphorylated in mutants but was not 
+phosphorylated in the wild-type cells.  SplA is a novel dual specificity 
+kinase that regulates the differentiation of spore cells.
+
+----------------------------------------------------------------------------
+
+A SLOW SUSTAINED INCREASE IN CYTOSOLIC Ca2+ LEVELS MEDIATES STALK GENE
+INDUCTION BY DIFFERENTIATION INDUCING FACTOR IN DICTYOSTELIUM
+
+Pauline Schaap1, Thomas Nebl2 and Paul R. Fisher2
+
+1. Cell Biology Section, Institute for Molecular Plant Sciences,
+University of Leiden, Wassenaarseweg 64, 2333 AL Leiden, The
+Netherlands.
+2. School of Microbiology, La Trobe University, Bundoora, WIC
+3083, Australia.
+
+EMBO J., in press
+
+ABSTRACT
+
+     During Dictyostelium stalk cell differentiation, cells vacuolate,
+synthesize a cellulose cell wall and die. This process of programmed
+cell death is accompanied by expression of the prestalk gene ecmB and
+induced by the differentiation inducing factor DIF. Using cell lines
+expressing the recombinant Ca2+- sensitive photoprotein apoaequorin,
+we found that 100 nM DIF increases cytosolic Ca2+ ([Ca2+]i) levels
+from about 50 to 150 nM over a period of 8 h. The Ca2+-ATPase
+inhibitor 2,5-di(tert- butyl)-1,4-hydroquinone (BHQ) induced a similar
+increase in [Ca2+]i levels and induced expression of the prestalk gene
+ecmB to the same level as DIF.  The [Ca2+]i increases induced by DIF
+and BHQ showed similar kinetics and preceded ecmB gene expression by
+about 1-2 hours. The Ca2+ chelator 1,2-bis(o-aminophenoxy)-
+ethane-N,N,N'N'-tetraacetic acid (BAPTA) efficiently inhibited the BHQ
+induced [Ca2+]i increase and blocked DIF-induced expression of the
+ecmB gene. These data indicate that the effects of DIF on stalk gene
+expression are mediated by a sustained increase in [Ca2+]i. Sustained
+[Ca2+]i elevation mediates many forms of programmed cell death in
+vertebrates. The Dictyostelium system may be the earliest example of
+how this mechanism developed during early eukaryote evolution.
+
+-------------------------------------------------------------------
+
+EXTRACELLULAR cAMP DEPLETION TRIGGERS STALK GENE EXPRESSION IN
+DICTYOSTELIUM; DISPARITIES IN DOSE DEPENDENCY AND DEVELOPMENTAL TIMING
+INDICATE THAT PRESPORE INDUCTION AND STALK REPRESSION BY cAMP ARE
+MEDIATED BY SEPARATE SIGNALING PATHWAYS.
+
+Ron D.M. Soede1, Neil A. Hopper2, Jeffrey G. Williams2 and
+Pauline Schaap1*.
+
+1Cell Biology Section, Institute for Molecular Plant
+Sciences,University of Leiden, Wassenaarseweg 64, 2333 AL Leiden,
+TheNetherlands. 2Medical Research Council Laboratory for Molecular
+Cell Biology and Department of Biology, University College London,
+GowerStreet, London WC1E6B, United Kingdom.
+
+Dev. Biol., in press.
+
+ABSTRACT
+
+   During Dictyostelium development, amoebae differentiate into spores
+and stalk cells.  Earlier studies showed that extracellular cAMP is
+essential for induction of prespore differentiation and that cAMP
+represses stalk gene expressionin vitro.  We show that the repressive
+pathway is operative in vivo, because activation of the stalk-specific
+promoter region of the ecmB gene is strongly enhanced by
+overexpression of a phosphodiesterase that depletes extracellular
+cAMP. To test whether a single cAMP transduction pathway controls the
+choice between prespore or stalk cell differentiation, we compared the
+timing and dose-dependency of the effects of cAMP on both
+responses.  Cells acquire competence for cAMP repression of ecmB
+promoter activity 4 hr later than for prespore gene induction. Half
+maximal prespore induction requires 30 uM of the stable cAMP analog
+Sp-cAMPS, while ecmB induction is halfmaximally repressed by 200 nM of
+Sp-cAMPS, which is equivalent to about 3 to 13 nM cAMP.  At
+concentrations exceeding 10 uM, Sp-cAMPS stimulates ecmB expression
+from the intact promoter,but not from the stalk specific
+subregion.  These data suggest that distinct signaling pathways
+operating at different developmental stages control induction of
+prespore genes on one hand and repression of stalk genes on the
+other. Both stalk gene repression and prespore gene induction by
+Sp-cAMPS are antagonized by millimolar adenosine
+concentrations.  However, an adenosine analog that is resistant to
+extracellular metabolism is active at 10 uM. Since adenosine inhibits
+cAMP binding to cAMP receptors, it may facilitate stalk gene
+expression by reducing the perceived cAMP concentration.
+
+--------------------------------------------------------------------
+
+BINDING OF HISACTOPHILIN I AND II TO LIPID MEMBRANES IS CONTROLLED BY
+A pH DEPENDENT MYRISTOYL-HISTIDINE SWITCH
+
+Frank Hanakam*, Guenther Gerisch*, Sandra Lotz@, Thomas Alt@, and Anna
+Seelig
+
+* MPI-Biochemie, Abt. Zellbiologie, Am Klopferspitz 18a, D-82152
+Martinsried, Germany.  @ University of Basel, Klingelbergerstr. 70,
+CH-Basel, Switzerland.
+
+Biochemistry, in press.
+
+Abstract
+
+   The interaction of the two N-terminally myristoylated isoforms of
+Dictyostelium hisactophilin with lipid model membranes was
+investigated by means of the monolayer expansion method and high
+sensitivity titration calorimetry. The two isoforms, hisactophilin I
+and hisactophilin II, were found to insert with their N-terminal
+myristoyl residue into an electrically neutral POPC monolayer
+corresponding in its lateral packing density to that of a lipid
+bilayer. The partition coefficient for this insertion process was
+Kp=3D(1.1+/-0.2) 104 /M. The area requirement of the protein in the
+lipid membrane was estimated as 44+/-6 A2 which corresponds to the
+crosssectional area of the myristoyl moiety with an additional small
+contribution from amino acid side chains. The interaction of
+hisactophilin I (hisactophilin II) with negatively charged membrane
+surfaces is modulated in a pH dependent manner by charged amino acid
+residues clustered around the myristoyl moiety.  The electrostatic
+binding site consists of 3 lysine (1 arginine, 2 lysine), 7 (9)
+hisidine, and 4 (4) glutamic acid residues and has an isoelectric
+point of 6.9 (7.1). For small unilamellar POPC/POPG (75/25 mol/mol)
+vesicles an apparent binding constant, Kapp =3D (8+/- 1)/M was
+measured at pH 6.0 by means of high sensitivity
+calorimetry. Electrostatic interactions hence increase the binding
+constant by about two orders of magnitude compared to hydrophobic
+binding alone. With increasing pH the electrostatic attraction
+decreases and turns into an electrostatic repulsion at pH > 7.0 +/-
+0.1. The area occupied by the cluster of charged residues constituting
+the membrane binding region was 280 +/- 20 A2 as derived from
+monolayer measurments in close agreement with molecular modelling data
+derived from the NMR structure of hisactophilin I (Habazettl et al.,
+1992).
+
+--------------------------------------------------------------------
+
+Molecular Cloning and Characterization of DdCAD-1, a Ca2+-dependent
+Cell-Cell Adhesion Molecule, in Dictyostelium discoideum*
+
+Estella F.S.Wong, Simuran K. Brar, Hiromi Sesaki, Chunzhong Yang and
+Chi-Hung Siu
+
+Banting and Best Department of Medical Research and Department of
+Biochemistry University of Toronto, Toronto, Ontario M5G 1L6, Canada
+
+J. Biol. Chem., in press.
+
+SUMMARY
+
+   Dictyostelium discoideum expresses EDTA-sensitive cell-cell
+adhesion sites soon after the initiation of development, and a
+Ca2+-binding protein of Mr 24,000 (designated DdCAD-1) has been
+implicated in this type of adhesiveness.  We have previously purified
+DdCAD-1 to homogeneity and characterized its cell binding activity
+(Brar and Siu (1993) J. Biol. Chem.  268, 24902-24909).  In this
+report, we describe the cloning of DdCAD-1 cDNAs.  DNA sequencing
+revealed a single open reading frame coding for a polypeptide
+containing 213 amino acids.  The identity of the cDNA was confirmed by
+amino acid sequences of two cyanogen bromide peptides.  The deduced
+amino acid sequence of DdCAD-1 exhibits a relatively high degree of
+sequence similarity with members of the cadherin family and proteins
+of Myxococcus xanthus.  Unlike the other cadherins, the
+carboxy-terminal region of DdCAD-1 contains a Ca2+-binding motif.
+Although analyses of the sequence suggest that the polypeptide lacks a
+signal peptide sequence and a transmembrane domain,
+immuno-fluorescence microscopy demonstrates the association of DdCAD-1
+with the ecto-surface of the plasma membrane.  To investigate the
+structure/function relationships of DdCAD-1, GST-fusion proteins
+containing different DdCAD-1 fragments were expressed and assayed for
+their 45Ca2+ and cell binding activities.  These studies revealed that
+the cell binding activity is dependent on the amino-terminal segment
+and not the carboxy-terminal Ca2+-binding domain and showed additional
+Ca2+-binding site(s) within the amino-terminal segment.
+
+---------------------------------------------------------------------
+
+Novel Redistribution of the Ca2+-dependent Cell Adhesion Molecule
+DdCAD-1 during Development of Dictyostelium discoideum
+
+Hiromi Sesaki* and Chi-Hung Siu*@
+
+*Banting and Best Department of Medical Research and Department of
+Biochemistry University of Toronto, Toronto, Ontario M5G 1L6, Canada
+
+Develop. Biol., in press.
+
+SUMMARY
+
+   Dictyostelium discoideum cells express DdCAD-1, a Ca2+-dependent
+cell-cell adhesion molecule, soon after the initiation of development.
+DdCAD-1 is a soluble protein which shares a significant degree of
+sequence similarity with E-cadherin.  Laser scanning confocal
+microscopy of the subcellular localization of DdCAD-1 has revealed a
+nonrandom pattern of DdCAD-1 distribution.  DdCAD-1 is present mostly
+as diffusely stained material in the cytoplasm during the initial
+stage of development.  However, a drastic redistribution takes place
+before the onset of cell aggregation, when DdCAD-1 becomes localized
+predominantly at the cell periphery and an enrichment of DdCAD-1
+occurs on membrane ruffles.  A high concentration of DdCAD-1 also
+becomes associated with lamellipodia and filopodia, which often appear
+to participate in cell contact formation.  Although DdCAD-1 is present
+in high concentrations in contact regions during early development, it
+disappears rapidly from these areas during cell aggregation.  This
+redistribution is accompanied by an accumulation of the
+Ca2+-independent cell adhesion molecule gp80 in contact regions.
+During chemotactic migration, DdCAD-1 is present primarily on cells at
+the tip and on the outer margin of cell streams.  In contrast, gp80 is
+concentrated in contact regions among cells within well developed
+streams.  This dynamic redistribution suggests a unique role for
+DdCAD-1 in the recruitment of cells into streams and in the formation
+of initial contacts, but it may not be required to maintain stable
+contacts in the presence of gp80.
+
+-----------------------------------------------------------------------
+
+[End CSM News, volume 7, number 1]
+
+
+

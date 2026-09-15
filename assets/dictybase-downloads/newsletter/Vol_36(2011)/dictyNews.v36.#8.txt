@@ -1,0 +1,182 @@
+dictyNews
+Electronic Edition
+Volume 36, number 8
+March 11, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+An Extracellular Matrix, Calmodulin-Binding Protein from Dictyostelium 
+with EGF-Like Repeats that Enhance Cell Motility 
+
+Andres Suareza, Robert Huberb, Michael Myrec, Danton H. OÕDaya,b,*
+
+aDepartment of Biology, University of Toronto at Mississauga, Mississauga, 
+Ontario, Canada 
+bDepartment of Cell and Systems Biology, University of Toronto, Toronto, 
+Ontario, Canada
+cMolecular Neurogenetics Unit, Center for Human Genetic Research, 
+Massachusetts General Hospital, Boston, Massachusetts, USA 
+
+
+Cellular Signalling, in press
+ 
+CyrA is a novel cysteine-rich protein with four EGFL repeats that was isolated 
+using the calmodulin (CaM) binding overlay technique (CaMBOT), suggesting 
+it is a CaM-binding protein (CaMBP). The full-length 63kDa cyrA is cleaved into 
+two major C-terminal fragments, cyrA-C45 and cyrA-C40. A putative CaM-binding 
+domain was detected and both CaM-agarose binding and CaM 
+immunoprecipitation verified that cyrA-C45 and cyrA-C40 each bind to CaM in 
+both a Ca2+-dependent and -independent manner. cyrA-C45 was present 
+continuously throughout growth and development but was secreted at high 
+levels during the multicellular slug stage of Dictyostelium development. At this 
+time, cyrA localizes to the extracellular matrix (ECM). ECM purification verified 
+the presence of cyrA-C45. An 18 amino acid peptide (DdEGFL1) from the first 
+EGFL repeat sequence of cyrA (EGFL1) that is present in both cyrA-C45 and 
+-C40 enhances both random cell motility and cAMP-mediated chemotaxis. Here 
+we reveal that the dose-dependent enhancement of motility by DdEGFL1 is related 
+to the time of cell starvation. Addition of DdEGFL1 also inhibits cyrA proteolysis. 
+The status of cyrA as an extracellular CaMBP was further clarified by the 
+demonstration that CaM is secreted during development. Antagonism of CaM 
+with W7 resulted in enhanced cyrA proteolysis suggesting a functional role for 
+extracellular CaM in protecting CaMBPs from proteolysis. cyrA is the first 
+extracellular CaMBP identified in Dictyostelium and since it is an ECM protein 
+with EGF-like repeats that enhance cell motility it likely also represents the first 
+matricellular protein identified in a lower eukaryote.
+
+
+Submitted by  Danton OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+Functional analysis of Dictyostelium IBARa suggests a conserved role of 
+the I-BAR domain in endocytosis
+
+Douwe M. Veltman, Giulio Auciello, Heather J. Spence, Laura M. Machesky, 
+Joshua Z. Rappoport and Robert H. Insall
+
+
+Biochemical Journal, in press
+
+I-BAR domain containing proteins such as IRSp53 associate with outwardly 
+curved membranes and connect them to proteins involved in actin dynamics. 
+Research on I-BAR proteins has focussed on possible roles in filopod and 
+lamellipod formation, but their full physiological function remains unclear. 
+The social amoeba Dictyostelium encodes a single I- BAR/SH3 protein, 
+called IBARa, along with homologues of proteins that interact with IRSp53 
+family proteins in mammalian cells, providing an excellent model to study 
+its cellular function. Disruption of the gene encoding IBARa leads to a mild 
+defect in development, but filopod and pseudopod dynamics are unaffected. 
+Furthermore, ectopically expressed IBARa does not induce filopod formation 
+and does not localize to filopods. Instead, IBARa associates with clathrin 
+puncta immediately before they are endocytosed. This role is conserved- 
+human BAIAP2L2 also tightly colocalizes with clathrin plaques, though its 
+homologues IRSp53 and IRTKS associate with other punctate structures. 
+Our data suggest that I-BAR-containing proteins help generate the membrane 
+curvature required for endocytosis and implies an unexpected role for IRSp53 
+family proteins in vesicle trafficking.
+
+
+Submitted by Robert Insall [R.Insall@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Actin Polymerization Driven by WASH Causes V-ATPase Retrieval and 
+Vesicle Neutralization Before Exocytosis.
+
+Michael Carnell, Tobias Zech, Simon Johnston, Robin May, Thierry Soldati, 
+Laura Machesky and Robert Insall
+
+
+J. Cell Biol., in press
+
+WASH is a recently identified and evolutionarily conserved regulator of actin 
+polymerization. Here we show that WASH coats mature Dictyostelium 
+lysosomes and is essential for exocytosis of indigestible material. A related 
+process, expulsion of the lethal endosomal pathogen Cryptococcus 
+neoformans from mammalian macrophages, also uses WASH-coated 
+vesicles and cells expressing dominant negative WASH mutants inefficiently 
+expel Cryptococcus. Dictyostelium WASH causes F-actin patches to form 
+on lysosomes, leading to removal of vacuolar ATPase (V-ATPase) and 
+neutralization of lysosomes to form postlysosomes. Without WASH, no 
+patches or coat are formed, neutral postlysosomes are not seen, and 
+indigestible material such as dextran is not exocytosed. Similar results 
+occur when actin polymerization is blocked with latrunculin. V-ATPases 
+are known to bind avidly to F-actin. Our data imply a new mechanism, 
+actin-mediated sorting, in which WASH and the Arp2/3 complex polymerize 
+actin on vesicles to drive separation and recycling of proteins such as the 
+V-ATPase.
+
+
+Submitted by Robert Insall [R.Insall@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Modelling cell movement and chemotaxis using pseudopod-based 
+feedback.
+
+M.P. Neilson, J.A. Mackenzie, S.D. Webb and R.H. Insall
+
+
+SIAM journal on Scientific Computation, in press
+
+A computational framework is presented for the simulation of eukaryotic 
+cell migration and chemotaxis. An empirical pattern formation model, 
+based on a system of non-linear reaction-diffusion equations, is 
+approximated on an evolving cell boundary using an Ar- bitrary 
+Lagrangian Eulerian surface finite element method (ALE-SFEM). The 
+solution state is used to drive a mechanical model of the protrusive and 
+retractive forces exerted on the cell boundary. Movement of the cell is 
+achieved using a level set method. Results are presented for cell 
+migration with and without chemotaxis. The simulated behaviour is 
+compared with experimental results of migrating Dictyostelium 
+discoideum cells.
+
+
+Submitted by Robert Insall [R.Insall@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+A Polarized Epithelium Organized by Beta- and Alpha-Catenin Predates
+Cadherin and Metazoan Origins
+
+Daniel J. Dickinson, W. James Nelson,* William I. Weis*
+
+*To whom correspondence should be addressed
+
+
+Science, 11 March 2011, Vol. 331, #6022
+
+A fundamental characteristic of metazoans is the formation of a simple, 
+polarized epithelium.  In higher animals, the structural integrity and 
+functional polarization of simple epithelia require a cell-cell adhesion 
+complex containing a classical cadherin, the Wnt-signaling protein 
+beta-catenin and the actin-binding protein alpha-catenin. We show that 
+the non-metazoan Dictyostelium discoideum forms a polarized 
+epithelium that is essential for multicellular development. Although 
+D. discoideum lacks a cadherin homolog, we identify an alpha-catenin 
+ortholog that binds a beta-catenin-related protein. Both proteins are 
+essential for formation of the epithelium, polarized protein secretion 
+and proper multicellular morphogenesis. Thus the organizational 
+principles of metazoan multicellularity may be more ancient than 
+previously recognized, and the role of the catenins in cell polarity 
+predates the evolution of Wnt signaling and classical cadherins.
+
+
+Submitted by Daniel Dickinson [ddickins@stanford.edu]
+==============================================================
+[End dictyNews, volume 36, number 8]

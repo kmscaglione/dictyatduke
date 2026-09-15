@@ -1,0 +1,193 @@
+dictyNews
+Electronic Edition
+Volume 28, number 6
+March 9, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+Mitochondrial Biology and Disease in Dictyostelium
+
+Christian Barth, Phuong Le and Paul R. Fisher
+
+Department of Microbiology, La Trobe University, Melbourne, Australia
+
+
+Int. Rev. Cytol., in press.
+
+Over the last dozen years, the social amoeba or cellular slime mould 
+Dictyostelium discoideum has become an increasingly useful model for the 
+study of mitochondrial biology and disease. Dictyostelium is an amoebozoan, 
+a sister clade to the animal and fungal lineages. Like other aspects of its 
+biology, the mitochondrial biology of Dictyostelium exhibits some features 
+which are unique, others which are common to all eukaryotes, and still others 
+that are otherwise found only in the plant or the animal lineages. The AT-rich 
+mitochondrial genome of Dictyostelium is larger than its mammalian counterpart 
+and contains 56 kb (compared to 17 kb in mammals) encoding tRNAs, rRNAs and 33 
+polypeptides (compared to 13 in mammals). The mode of expression is reminiscent 
+of metazoan mitochondrial genomes and involves production of a single primary 
+transcript that is cotranscriptionally processed into multiple mono-, di- and 
+tricistronic mRNAs, tRNAs and rRNAs. The mitochondrial fission mechanism 
+employed by Dictyostelium involves both the extramitochondrial dynamin-based 
+system used by plant, animal and fungal mitochondria and the ancient FtsZ-based 
+intramitochondrial fission process inherited from the bacterial ancestor of all 
+modern mitochondria. The mitochondrial protein import apparatus is homologous 
+to that of other eukaryotes. As in mammalian cells, the mitochondria in 
+Dictyostelium play an important role in the programmed cell death pathways 
+used by the organism. Mitochondrial disease in Dictyostelium has been created 
+both by targeted gene disruptions and by antisense RNA and RNAi inhibition of 
+expression of essential nuclear-encoded mitochondrial proteins. This has 
+revealed a regular pattern of aberrant mitochondrial disease phenotypes that 
+are caused not by ATP insufficiency per se, but by chronic activation of the 
+universal eukaryotic energy-sensing protein kinase AMPK. This novel insight 
+into the cytopathological mechanisms of mitochondrial dysfunction suggests 
+new possibilities for therapeutic intervention in mitochondrial and 
+neurodegenerative diseases.
+
+
+Submitted by Paul R. Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+Chemoattractants and chemorepellents act by inducing opposite polarity in 
+phospholipase C and PI3-kinase signaling
+
+Ineke Keizer-Gunnink, Arjan Kortholt and Peter J.M. Van Haastert
+
+Department of Molecular Cell Biology, University of Groningen, Kerklaan 30, 
+9751NN Haren, the Netherlands
+
+
+J Cell Biology, in press
+
+During embryonic development cell movement is orchestrated by a multitude of 
+attractants and repellents. Chemoattractants applied as a gradient, such as 
+cAMP with Dictyostelium or fMLP with neutrophils, induce the activation of 
+phospholipase C (PLC) and PI3-kinase at the front of the cell, leading to 
+the localized depletion of PI(4,5)P2 and the accumulation of PI(3,4,5)P3. We 
+show here using Dictyostelium that chemorepellent cAMP-analogues induce 
+localized inhibition of PLC thereby reversing the polarity of PI(4,5)P2. This 
+leads to the accumulation of PI(3,4,5)P3 at the rear of the cell and 
+chemotaxis occurs away from the source. We conclude that a PLC polarity 
+switch controls the response to attractants and repellents.
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Regulation of phagocytosis in Dictyostelium by the inositol 5-phosphatase 
+OCRL homologue Dd5P4
+
+Harriet M. Loovers, Arjan Kortholt, Hendrie de Groote, Leslie Whitty, 
+Robert L. Nussbaum and Peter J.M. van Haastert
+
+
+Traffic, in press
+
+Phosphoinositides are involved in endocytosis in both mammalian cells and 
+the amoeba Dictyostelium discoideum. Dd5P4 is the Dictyostelium homologue of 
+human OCRL; both have a RhoGAP domain and a 5-phosphatase domain that acts 
+on PI(4,5)P2/PI(3,4,5)P3. Inactivation of Dd5P4 inhibits growth on liquid 
+medium and on bacteria. Dd5p4 null cells are impaired in phagocytosis of 
+yeast cells. In wild-type cells PI(3,4,5)P3 is formed and converted to 
+PI(3,4)P2 just before closure of the phagocytic cup. In dd5p4 null cells 
+a phagocytic cup is formed upon contact with the yeast cell, and PI(3,4,5)P3 
+is still produced, but the phagocytic cup does not close. We suggest that 
+Dd5P4 regulates the conversion of PI(3,4,5)P3 to PI(3,4)P2 and that this 
+conversion is essential for closure of the phagocytic cup.
+
+Phylogenetic analysis of OCRL-like 5-phosphatases with RhoGAP domains reveal 
+that D. discoideum Dd5P4 is a surprisingly close homologue of human OCRL, 
+the protein responsible for Lowe syndrome. We expressed human OCRL in dd5p4 
+null cells. Growth on bacteria and axenic medium is largely restored, 
+whereas the rate of phagocytosis of yeast cells is partly restored, 
+indicating that human OCRL can functionally replace Dictyostelium Dd5P4. 
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Attenuation of Phospholipid Signaling Provides a Novel Mechanism for the Action 
+of Valproic Acid
+
+Xuehua Xu1, Annette Mueller-Taubenberger2, Kathryn E. Adley3, Nadine Pawolleck4, 
+Vivian W. Lee5, Claudia Wiedemann6, Talvinder S. Sihra5, Markus Maniak4, 
+Tian Jin7 and Robin S.B. Williams3,8*
+
+1. Department of Oncology, Lombardi Comprehensive Cancer Center, Georgetown 
+University Medical School, Washington, DC 20057, USA. 
+2. Institut fuer Zellbiologie (ABI), Ludwig-Maximilians-Universitaet Muenchen, 
+80336 Muenchen, Germany. 
+3. Department of Biology and the Wolfson Institute for Biomedical Research, 
+University College London, London, WC1E 6BT, UK.  
+4. Abt. Zellbiologie, Universitaet Kassel, 34132 Kassel, Germany.  
+5. Department of Pharmacology, University College London, London, WC1E 6BT, UK. 
+6. Centre for Molecular Cell Biology, Royal Free and UCL Medical School, 
+NW3 2PF, UK. 
+7. Laboratories of Immunogenetics, National Institute of Allergy and Infectious 
+Diseases, National Institutes of Health, Rockville, MD 20852, USA. 
+8. Present address: School of Biological Sciences, Royal Holloway University 
+of London, Egham, TW20 0EX, UK.
+
+*Corresponding author: 
+
+Euk. Cell., in press
+
+
+Valproic acid (VPA) is used to treat epilepsy and bipolar disorder, and to 
+prevent migraine. It is also undergoing trials for cancer therapy. However, 
+the biochemical and molecular biological actions of VPA are poorly understood. 
+Using the social amoeba Dictyostelium discoideum, we show that an acute affect 
+of VPA is the inhibition of chemotactic cell movement, a process partially 
+dependent upon phospholipid signaling. Analysis of this process shows that VPA 
+attenuates the signal-induced translocation of PHCrac-GFP from cytosol to 
+membrane, suggesting the inhibition of the 
+phosphatidylinositol-(3,4,5)-trisphosphate (PIP3) production. Direct labeling 
+of lipids in vivo also shows a reduction in PIP and PIP2 phosphorylation 
+following VPA treatment. We further show that VPA acutely reduces endocytosis 
+and exocytosis - processes previously shown to be dependent upon PIP3 
+production. These results suggest that in Dictyostelium, VPA rapidly 
+attenuates phospholipid signaling to reduce endocytic trafficking. To examine 
+this effect in a mammalian model, we also tested depolarization-dependent 
+neurotransmitter release in rat nerve terminals and show that this process is 
+also suppressed upon application of VPA and an inhibitor of 
+phosphatidylinositol 3-kinase (PI3K). Although a more comprehensive analysis 
+of the effect of VPA on lipid signaling will be necessary in mammalian systems, 
+these results suggest that VPA may function to reduce phospholipid signaling 
+processes and thus may provide a novel therapeutic effect for this drug.
+
+Submitted by: Robin Williams [robin.williams@rhul.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium as a biomedical model
+
+Katrina Boeckeler, University College London, UK 
+Robin SB Williams, Royal Holloway, University of London, Sussex, UK
+
+
+Encyclopedia of Life Sciences, in press
+
+The social amoeba, Dictyostelium discoideum, has been commonly used to 
+investigate cell motility, signal transduction, cell type differentiation 
+and development. With the recent completion of the genome and the increasing 
+number of experimental tools available for the organism, it has now become 
+an attractive model for examining some well defined biomedical questions.
+
+Submitted by: Robin Williams [robin.williams@rhul.ac.uk]
+============================================================
+[End dictyNews, volume 28, number 6]

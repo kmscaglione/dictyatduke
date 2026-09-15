@@ -1,0 +1,258 @@
+Dicty News
+Electronic Edition
+Volume 12, number 13
+June 26, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===================================
+  Postdoctoral Position Available
+===================================
+
+A postdoctoral associate position is available beginning August 1 in 
+the Singleton lab.  The project centers around a recently identified 
+phosphorelay signaling system that controls cAMP dependent protein 
+Kinase A activity.  DHKC is a sensor histidine kinase that we propose 
+transfers phosphates down the phosphorelay in response to endogenous 
+ammonia production.  The result is a decrease in the intracellular 
+cAMP concentration brought about by an activation of the cAMP 
+phosphodiesterase activity of the postulated downstream response 
+regulator REGA.  The resulting alteration of PKA activity is hypothesized 
+to contribute to the maintenance of appropriate timing of aggregation 
+through finger formation and to making the appropriate choice between 
+slug formation versus culmination.  DHKC signaling, stimulated by ammonia, 
+is also postulated to be required for activating the spore germination 
+pathway.   Another sensor kinase, DHKB, is proposed to act as a phosphatase 
+within spores to inhibit the transfer of phosphates to REGA.  In doing so 
+in response to discadenine, an autoinhibitor of germination, DHKB signaling 
+prevents premature activation of the germination pathway.
+
+More information about the project, including an abstact and specific 
+aims, about the background leading up to the project, and about other 
+activities in the lab can be obtained at the following web site: 
+http://www.biocourses.cas.vanderbilt.edu/singleton/singletonlab/index.html.
+If you are interested in this position, please send via email your CV 
+(charles.k.singleton@vanderbilt.edu). 
+
+=============
+  Abstracts
+=============
+
+[Editor's note:  the following abstract appeared in the last issue with
+errors:  Betas had been inappropriately replaced by alphas.  The correct
+abstract appears in its entirety below.]
+
+A Serpentine Receptor-dependent, Gbeta- and Ca2+ Influx-independent 
+Pathway Regulates Mitogen-activated Protein Kinase ERK2 in Dictyostelium
+
+Paul W. Schenk, Thomas Nebl, Paul R. Fisher and B. Ewa Snaar-Jagalska
+
+Section of Cell Biology, Institute of Molecular Plant Sciences, Leiden 
+University, P.O. Box 9505, 2300 RA  Leiden, The Netherlands and
+School of Microbiology, La Trobe University, Bundoora, VIC 3083, Australia
+
+Biochem. Biophys. Res. Commun., in press
+
+Abstract
+
+Ca2+ influx and mitogen-activated protein (MAP) kinase activation are 
+important phenomena in signal transduction, which are often interconnected. 
+We investigated whether serpentine receptor-dependent, G beta-independent 
+activation of MAP kinase ERK2 by chemoattractant cyclic AMP (cAMP) is 
+mediated by Ca2+ influx in the social amoeba Dictyostelium discoideum. 
+We generated a D. discoideum double mutant, which harbours a temperature-
+sensitive G beta subunit and expresses the apoaequorin protein. Utilizing 
+this mutant, we demonstrate that cAMP induced Ca2+ influx into intact D. 
+discoideum cells can be blocked completely at both the permissive and the 
+restrictive temperature, by using either gadolinium ions or Ruthenium Red. 
+Under the same experimental conditions, these substances do not abolish cAMP 
+stimulation of ERK2 at either temperature. We conclude that there is a G beta- 
+and Ca2+ influx-independent pathway for the receptor-dependent activation of 
+MAP kinase ERK2 in Dictyostelium discoideum.
+
+----------------------------------------------------------------------------
+
+Co-loss of Profilin I, II and Cofilin with Actin from Maturing Phagosomes
+in Dictyostelium discoideum
+
+Aidong Yuan and Catherine P. Chia
+
+School of Biological Sciences, University of Nebraska-Lincoln, Lincoln,
+Neraska 68588-0118, USA
+
+Protoplasma, in press
+
+ABSTRACT:
+
+   Although it is known that actin polymerizes rapidly at the plasma 
+membrane during the ingestion phase of phagocytosis, not yet fully understood 
+are the mechanisms by which actin is recruited to form a phagocytic cup and 
+then subsequently dissociated from the phagosome.  The aim of this study 
+was to identify actin-binding proteins that mediated actin filament dynamics 
+during phagosome formation and processing.  We report that profilins I and II, 
+which promote filament assembly, and cofilin, which stimulates filament 
+disassembly, were constituents of phagosomes isolated from Dictyostelium 
+discoideum fed latex beads, and associated with actin.  Biochemical analyses 
+detected one isoform only of cofilin, which bound actin in unstimulated cells 
+as well as in cells engaged in phagocytosis, subjected to various stress 
+treatments, and through development.  At membranes of young phagosomes, 
+profilins I and II co-localized with monomeric actin labeled with fluorescent 
+DNase, and cofilin co-localized with filamentous actin labeled with rhodamine 
+phalloidin.  Both immunocytochemical and quantitative immunoblotting data 
+indicated that the kinetic loss of profilins I, II and cofilin of maturing 
+phagosomes closely followed the falling levels of actin associated with the 
+vesicles.  As evidence of vesicle processing, D. discoideum crystal protein 
+(an esterase) was recruited rapidly to phagosomes and its levels increased 
+while those of actin, profilins I, II and cofilin jointly decreased.  The 
+localization data and concurrent losses of profilins and cofilin with actin 
+from phagosomes are consistent with the roles of these actin-binding proteins 
+in filament dynamics, and indicated that they were involved in regulating 
+the assembly and disassembly of the actin coat of phagosomes.
+
+----------------------------------------------------------------------------
+Three actin cross-linking proteins, the 34 kDa actin-bundling protein, 
+a-actinin, and ABP-120, have both unique and redundant roles 
+in the growth and development of Dictyostelium 
+
+Francisco Rivero(1), Ruth Furukawa(2), Marcus Fechheimer(2) and Angelika A.
+Noegel(1)
+
+1 Max-Planck-Institut für Biochemie, D-82152 Martinsried, Germany
+2 Department of Cellular Biology, University of Georgia, Athens, Georgia 30602
+
+Journal of Cell Science, in press.
+
+Abstract
+
+   The contribution of three actin cross-linking proteins, a-actinin (aA), 
+ABP-120, and the 34 kDa actin-bundling protein to cellular functions has 
+been studied in three single mutant (aA-, 120-, and 34-) and three double 
+mutant (aA-/120-, 34-/aA-, 34-/120-) strains of Dictyostelium generated 
+by homologous recombination. Strains aA-/120- and 34-/aA- exhibited a 
+reduced rate of pinocytosis, grew to lower saturation densities, and 
+produced small cells in shaking cultures. All strains grew normally in 
+bacterial suspensions and on agar plates with a bacterial lawn. Slow 
+growth under conditions of reduced temperature and increased osmolarity 
+was observed in single mutants 34- and aA-, respectively, as well as in 
+some of the double mutant strains. Motility, chemotaxis, and development 
+were largely unaltered in 34-/aA- and 34-/120- cells. However, 34-/aA- 
+cells showed enhanced aggregation when starved in suspension. Moreover, 
+morphogenesis was impaired in both double mutant strains and fruiting 
+bodies of aberrant morphology were observed. These defects were reverted 
+by re-expression of one of the lacking cross-linking proteins. The additive 
+and synthetic phenotypes of these mutations indicate that actin cross-linking 
+proteins serve both unique and overlapping functions in the actin cytoskeleton. 
+
+----------------------------------------------------------------------------
+
+The Dictyostelium genome project: an invitation to species hopping
+
+Robert R. Kay1 & Jeffrey G. Williams2
+
+1 MRC Laboratory of Molecular Biology, Hills Road, Cambridge, UK  CB2 2QH.
+
+2 Wellcome Trust Building, University of Dundee, Dundee, UK DD1 5EH.
+
+TIGS, in press
+
+Summary
+
+   Dictyostelium allows a number of general problems of eukaryotic biology 
+to be addressed using molecular genetic tools more normally associated with 
+yeast. The genome project, now underway, marks an important increase in the 
+attractiveness of Dictyostelium as an experimental organism and will invite 
+increased ‘species hopping’ by experimenters. We provide a brief guide to 
+the problems that are being addressed in Dictyostelium, to the genome 
+project itself and to the molecular genetic tools available for its 
+exploitation.
+
+----------------------------------------------------------------------------
+
+Regulation of the ribonucleotide reductase small subunit gene by DNA-
+damaging agents in Dictyostelium discoideum
+
+GAUDET, P. (1,3) and TSANG, A. (1,2,3)
+
+(1) Department of Chemistry and Biochemistry, (2) Department of Biology, 
+and (3)	Centre for Structural and Functional Genomics, Concordia University, 
+1455 de Maisonneuve Blvd. W., Montreal, Quebec, H3G 1M8, Canada
+
+Nucleic Acids Research, in press
+
+ABSTRACT
+
+   In E. coli, yeast, and mammalian cells, the genes encoding ribonucleotide 
+reductase, an essential enzyme for de novo DNA synthesis, are up-regulated 
+in response to DNA damaging agents. We have examined the response of the 
+rnrB gene, encoding the small subunit of ribonucleotide reductase in 
+Dictyostelium discoideum, to DNA damaging agents. We show here that the 
+accumulation of rnrB transcript is increased in response to methyl methane 
+sulfonate, 4-nitroquinoline-1-oxide and irradiation with UV-light, but not 
+to the ribonucleotide reductase inhibitor hydroxyurea. This response is 
+rapid, transient, and independent of protein synthesis. Moreover, cells 
+from different developmental stages are able to respond to the drug in a 
+similar fashion, regardless of the basal level of expression of the rnrB 
+gene. We have defined the cis-acting elements of the rnrB promoter required 
+for the response to methyl methane sulfonate and 4-nitroquinoline-1-oxide 
+by deletion analysis. Our results indicate that there is one element, named 
+box C, that can confer response to both drugs. Two other boxes, box A and 
+box D, specifically conferred response to methyl methane sulfonate and 
+4-nitroquinoline-1-oxide, respectively.
+
+----------------------------------------------------------------------------
+
+Hyperosmotic Stress-induced Reorganization of Actin Bundles in 
+Dictyostelium Cells Overexpressing Cofilin.  
+
+Hiroyuki Aizawa1, Maiko Katadae1,$, Mikako Maruya1, Masazumi 
+Sameshima1, Kimiko Murakami-Murofushi$, and Ichiro Yahara1,*.  
+
+1Department of Cell Biology, The Tokyo Metropolitan Institute of 
+Medical Science, Honkomagome 3-18-22, Bunkyo-ku, Tokyo 113, Japan, 
+and $Department of Biology, Faculty of Science, Ochanomizu University, 
+Bunkyo-ku, Tokyo 112, Japan.  
+
+Genes to Cells, in press
+
+Abstract
+
+Background:  Cofilin is a low-molecular weight actin-modulating protein, 
+which binds to, severs, and depolymerizes actin filaments in vitro.  
+Aip1, an actin-interacting protein, was recently identified as a 
+product of a gene on a multicopy plasmid which suppresses the 
+temperature-sensitive phenotype of a cofilin mutant in Saccharomyces 
+cerevisiae.  Actin cytoskeleton plays an essential role in resistance 
+to hyperosmotic stress in Dictyostelium discoideum.  Roles of cofilin 
+and Aip1 in the resistance are not known.  
+
+Results:  In response to hyperosmotic stress, D. discoideum cells 
+round up.  This stress-induced morphological change involves 
+redistribution of cofilin together with actin filaments into 
+cortical contractile portions of the cells, followed by their 
+contraction. Overexpression of cofilin increases and thickens 
+cortical actin bundles in cells. The bundles became tight and 
+reorganized into a ring-shaped structure in response to hyperosmotic 
+stress.  The ring structure of actin bundles had two characteristic 
+bands across them; bright and dark bands which were heavily stained 
+and were not stained with phalloidin. In the bundles, straight 
+filaments with a diameter of 5.3-nm were aligned parallel by 
+cross-bridge structures.  In cells lacking myosin-II heavy chain, 
+the bundles, which were induced by overexpression of cofilin, 
+shortened and became straight upon hyperosmotic stress, forming 
+a polygonal structure.  D. discoideum Aip1/Wrp2 enhanced severing 
+actin filaments by cofilin in vitro and colocalized with cofilin 
+in cells including those overexpressing cofilin before and after 
+exposure to hyperosmotic stress.  Conclusions:  Cofilin plays a 
+pivotal role together with Aip1/Wrp2 in reorganization of actin 
+architectures into bundles that contract in a myosin-II-independent 
+manner, in response to hyperosmotic stress.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 13]
+
+  

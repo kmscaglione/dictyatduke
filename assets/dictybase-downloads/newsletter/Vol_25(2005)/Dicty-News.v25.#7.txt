@@ -1,0 +1,130 @@
+Dicty News
+Electronic Edition
+Volume 25, number 7
+September 30, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Ammonium transporter C of Dictyostelium discoideum is required for correct
+prestalk gene expression and for regulating the choice between slug migration
+and culmination
+
+Janet H. Kirsten, Yanhua Xiong, Andrew J. Dunbar, Meena Rai, Charles K.
+Singleton *
+
+Department of Biological Sciences, Vanderbilt University, VU Station 
+B 351634, Nashville TN 37235-1634, USA
+
+Developmental Biology, in press. 
+
+Ammonium transporter C (AmtC) is one of three transporters in Dictyostelium 
+that have been proposed to regulate entry and exit of ammonia in a cell type 
+dependent manner and to mediate ammonia signaling. Previous work demonstrated 
+that disruption of the amtC gene results in a slugger phenotype in which the 
+cells remain as migrating slugs when they should form fruiting bodies. More 
+detailed studies on the null strain revealed that differentiation of prestalk 
+cell types was delayed and maintenance of prestalk cell gene expression was 
+defective. There was little orno expression of ecmB, a marker for the 
+initiation of culmination. Normal expression of CudA, a nuclear protein 
+required for culmination, was absent in the anterior prestalk zone. The 
+absence of CudA within the tip region was attributable to the lack of 
+adenylyl cyclase A mRNA in the slug tips. Disruption of the histidine kinase 
+gene dhkC in the amtC null strain restored STATa and CudA expression and the 
+ability to culminate. The results suggest that the lack of nuclear t
+ranslocation of STATa results from low cAMP due to a misregulated and 
+overactive DhkC phosphorelay in the amtC null strain.
+
+
+Submitted by: Charles Singleton [charles.k.singleton@vanderbilt.edu]
+
+-----------------------------------------------------------------------------
+
+
+Role of calcium-dependent actin-bundling proteins: characterization of 
+Dictyostelium mutants lacking fimbrin and the 34 kDa protein 
+
+
+Claudia Pikzack(1), Josef Prassler(2), Ruth Furukawa(3), Marcus Fechheimer(3) 
+and Francisco Rivero(1)
+
+(1) Zentrum für Biochemie and Zentrum für Molekulare Medizin, Medizinische 
+Fakultät, Universität zu Köln, Joseph-Stelzmann-Str. 52, 50931 Köln, Germany
+(2) Max-Planck-Institut für Biochemie, Am Klopferspitz 18a, 
+82152 Martinsried, Germany
+(3) Department of Cellular Biology, University of Georgia, Athens, 
+GA 30602, USA
+
+Cell Motility and the Cytoskeleton, in press
+
+Dictyostelium discoideum two abundant proteins display calcium-regulated 
+bundling activity, fimbrin and the 34 kDa protein (ABP34). Using  a GFP 
+fusion we observed transient localization of fimbrin at the phagocytic cup 
+and macropinosomes. The distribution of truncated constructs encompassing t
+he EF hands and the first actin-binding domain (EA1) or both actin-binding 
+domains devoid of EF hands (A1A2) was indistinguishable from that of the 
+full length protein. The role of fimbrin and a possible functional overlap 
+with ABP34 was investigated in fim- and double 34-/fim- mutants. Except for 
+a moderate cell size defect, fim- mutants did not show defects in growth, 
+endocytosis, exocytosis and chemotaxis. Double mutants were characterized by 
+a small cell size and a defect in morphogenesis resulting in small fruiting 
+bodies and a low spore yield. The cell size defect could not be overcome by 
+expression of fimbrin fragments EA1 or A1A2, suggesting that both bundling 
+activity and regulation by calcium are important. Induction of filopod 
+formation in 34-/fim- cells was not impaired, indicating that both proteins 
+are dispensable for this process. We searched in the Dictyostelium genome 
+database for fimbrin-like proteins that could compensate for the fimbrin 
+defect and identified three unconventional fimbrins and two more proteins 
+with actin-binding domains of the type present in fimbrins.
+
+
+Submitted by: Francisco Rivero [francisco.rivero@uni-koeln.de]
+
+-----------------------------------------------------------------------------
+
+
+Specific host genes required for the killing of Klebsiella bacteria by 
+phagocytes. 
+
+
+Mohammed Benghezal, Marie-Odile Fauvarque, Régis Tournebize, Romain Froquet, 
+Anna Marchetti, Evelyne Bergeret, Bernard Lardy, Gérard Klein, Philippe 
+Sansonetti, Steve J. Charette, Pierre Cosson
+
+
+Cellular Microbiology, in press
+
+The amoeba Dictyostelium discoideum shares many traits with mammalian 
+macrophages, in particular the ability to phagocytose and kill bacteria. In 
+response, pathogenic bacteria use conserved mechanisms to fight amoebae and 
+mammalian phagocytes. Here we developed an assay using Dictyostelium to 
+monitor phagocyte-bacteria interactions. Genetic analysis revealed that the 
+virulence of Klebsiella pneumoniae measured by this test is very similar to 
+that observed in a mouse pneumonia model. Using this assay, two new host 
+resistance genes (PHG1 and KIL1) were identified and shown to be involved 
+in intracellular killing of K. pneumoniae by phagocytes. Phg1 is a member of 
+the 9TM family of proteins, and Kil1 is a sulfotransferase. The loss of PHG1 
+resulted in Dictyostelium susceptibility to a small subset of bacterial 
+species including K. pneumoniae. Remarkably, Drosophila mutants deficient for 
+PHG1 also exhibited a specific susceptibility to K. pneumoniae infections. 
+Systematic analysis of several additional Dictyostelium mutants created a 
+two-dimensional virulence array, where the complex interactions between host 
+and bacteria are visualized. 
+
+
+Submitted by: Pierre Cosson [Pierre.Cosson@medecine.unige.ch]
+
+==============================================================================
+[End Dicty News, volume 25, number 7] 

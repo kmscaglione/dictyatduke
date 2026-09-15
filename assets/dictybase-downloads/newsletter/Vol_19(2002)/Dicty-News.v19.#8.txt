@@ -1,0 +1,414 @@
+Dicty News
+Electronic Edition
+Volume 19, number 8
+October 12, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============================
+  Postdoc Position Available
+==============================
+
+Postdoctoral position in the Wellcome Trust Biocentre at the University 
+of Dundee
+
+A postdoctoral position is available in Dr. Inke Nthke s laboratory to 
+join a team studying the function of the Adenomatous Polyposis Coli tumour 
+suppressor protein (APC).  The project will involve using Dictyostelium 
+Discoideum to investigate the role of APC in cytoskeletal dynamics and 
+organisation.  The general aim of work in the laboratory is to determine 
+how the diverse functions of APC relate to its role in cancer and how 
+these functions are co-ordinated and regulated.  Experimental approaches 
+include general cell- and molecular biology techniques combined with 
+high-resolution fluorescence microscopy and use of Dictyostelium as a 
+model organism.  The candidate will join a small, dynamic, highly 
+interactive research team with active collaborations worldwide.
+
+A proven research ability and motivation are required and experience 
+in working with Dictyostelium is requisite.  Experience in general 
+cell biology and molecular biology is essential.  The position is 
+available immediately for 2 years in the first instance.  For informal 
+enquiries, please contact Dr. Inke S. Nthke (+ 44 1382 345821; 
+e-mail: i.s.nathke@dundee.ac.uk).  Applications should be directed to: 
+Janette Cordiner, School Administrator, School of Life Sciences, 
+MSI/WTB Complex, University of Dundee, Dow Street, Dundee, DD1 5EH; 
+j.m.cordiner@dundee.ac.uk.   Please cite reference  SC/763/1 on the 
+application.
+
+The Wellcome Trust Biocentre is part of the internationally renowned 
+WTB/MSI complex at the University of Dundee. The complex provides an 
+extremely interactive research environment and houses nearly 400 
+research staff.  Further information about research in the WTB/MSI 
+complex can be obtained at http://www.dundee.ac.uk/biocentre/.
+
+=============
+  Abstracts
+=============
+
+CaMBOT: Profiling and Characterizing Calmodulin Binding Proteins
+
+Danton H. O Day
+Department of Zoology, University of Toronto at Mississauga, Mississauga, 
+ON   L5L 1C6
+CANADA
+
+Cellular Signalling (in press)
+
+Abstract
+Calmodulin (CaM) is an essential calcium-binding protein that binds to and 
+activates a diverse population of downstream targets (calmodulin binding 
+proteins; CaMBPs) that carry out its critical signalling functions. In 
+spite of the central importance of CaM in Ca2+-mediated signal transduction 
+pathways in all eukaryotes, most CaMBPs remain to be identified and 
+characterized. SDS-PAGE followed by gel overlay with recombinant, 
+metabolically radiolabelled CaM (Calmodulin Binding Overlay Technique, 
+CaMBOT) is a valuable method for following behavioral, developmental, 
+forensic and physiological changes in total CaMBP populations and to 
+identify candidate CaMBPs for further study. CaMBOT has also been adapted 
+to isolate cDNAs encoding novel CaMBPs in various organisms. Recently the 
+method was used to examine the CaMBP complement encoded by the Arabidopsis 
+genome and to identify a new family of transcription activators. To add to 
+its diversity, CaMBOT may be useful for finding target proteins for work 
+on phytoremediation and for the screening of pharmaceuticals and toxic 
+agents that, directly or indirectly, affect CaM and its target proteins. 
+This review discusses all of these topics and the role of CaMBOT in 
+characterizing a functional unit of the proteome proteins regulated by 
+calmodulin.
+
+-----------------------------------------------------------------------------
+
+Myosin Heavy Chain Kinase B participates in the regulation of myosin 
+assembly into the cytoskeleton.
+
+Maribel Rico and Thomas T. Egelhoff
+Department of Physiology and Biophysics,
+Case Western Reserve University, Cleveland. OH. 44106-4970
+
+Journal of Cellular Biochemistry, in press
+
+Abstract
+
+Myosin II plays critical roles in events such as cytokinesis, chemotactic 
+migration, and morphological changes during multicellular development.  The 
+amoeba Dictyostelium discoideum provides a simple system for the study of 
+this contractile protein.  In this system, myosin II filament assembly is 
+regulated by myosin heavy chain (MHC) phosphorylation in the tail region of 
+the molecule.  Earlier studies identified an alpha- kinase, myosin heavy 
+chain kinase A (MHCK A), which phosphorylates three mapped threonine 
+residues in the myosin tail, driving myosin disassembly. Using molecular 
+and genomic approaches we have identified a series of related kinases in 
+Dictyostelium. The enzyme MHCK B shares with MHCK A a domain organization 
+that includes a highly novel catalytic domain coupled to a 
+carboxyl-terminal WD repeat domain.
+We have engineered, expressed and purified a FLAG-tagged version of the 
+novel kinase. In the present study, we report detailed biochemical and 
+cellular studies documenting that MHCK B plays a physiological role in the 
+control of Dictyostelium myosin II assembly and disassembly during the 
+vegetative life of Dictyostelium amoebae.  The presented data supports a 
+model of multiple related MHCKs in this system, with different regulatory 
+mechanisms and pathways controlling each enzyme.
+
+-----------------------------------------------------------------------------
+ 
+Dictyostelium discoideum has a single diacylglycerol kinase gene with 
+similarity to mammalian theta isoforms
+
+Marc A. de la Roche1, Janet L. Smith2, Maribel Rico3, Silvia Carrasco4, 
+Isabel Merida4, Lucila Licate3, Graham P. Ct1, and Thomas T. Egelhoff3#
+
+1. Department of Biochemistry
+     Queen s University
+     Kingston, Ontario  K7L 3N6, Canada
+2.  Boston Biomedical Research Institute
+      64 Grove St.
+      Watertown, MA 02472-2829
+3.  Department of Physiology and Biophysics
+     Case Western Reserve School of Medicine
+     Cleveland, OH 44016-4970
+4  Department of Immunology and Oncology
+      National Center for Biotechnology
+      Campus de Cantoblanco
+      Madrid 28049, Spain
+
+# Corresponding author
+
+Biochemical Journal (online as preprint), in press
+
+Synopsis
+
+Diacylglycerol kinases (DGKs) phosphorylate the neutral lipid 
+diacylglycerol (DG) to produce phosphatidic acid (PA).  In mammalian 
+systems DGKs are a complex family of at least 9 isoforms that are thought 
+to participate in downregulation of DG-based signaling pathways and perhaps 
+activation of PA-stimulated signaling events.  We report here that the 
+simple protozoan amoeba Dictyostelium discoideum appears to contain a 
+single gene encoding a DGK enzyme.  This gene, dgkA, encodes a deduced 
+protein that contains three C1-type cysteine-rich repeats, a DGK catalytic 
+domain most closely related to the theta subtype of mammalian DGKs, and a 
+carboxyl-terminal segment containing a proline/glutamine-rich region and a 
+large aspargine-repeat region.  This gene corresponds to a previously 
+reported myosin II heavy chain kinase designated "MHC-PKC", but our 
+analysis clearly demonstrate that this protein does not, as suggested by 
+earlier data, contain a protein kinase catalytic domain.  A FLAG-tagged 
+version of DgkA expressed in Dictyostelium displayed robust diacylglycerol 
+kinase activity. Earlier studies indicating that disruption of this locus 
+alters myosin II assembly levels in Dictyostelium raise the intriguing 
+possibility that DG and/or PA metabolism may play a role in controlling 
+myosin II assembly in this system.
+
+-----------------------------------------------------------------------------
+
+A Bifunctional Di-Glycosyltransferase Forms the Fuca1,2Galb1,3-Disaccharide 
+on Skp1 in the Cytoplasm of Dictyostelium
+
+Hanke van der Wel, Suzanne Z. Fisher,  and Christopher M. West
+
+Department of Anatomy and Cell Biology, University of Florida College of 
+Medicine, Gainesville, FL 32610-0235  USA
+
+J. Biol. Chem., in press
+
+Skp1 is a subunit of the SCF-family of E3-ubiquitin ligases and of other 
+regulatory complexes in the cytoplasm and nucleus. In Dictyostelium, Skp1 
+is modified by a pentasaccharide with the type I blood group H antigen 
+(Fuca1,2Galb1,3GlcNAc-) at its core. Addition of the Fuc is catalyzed by FT85, 
+a 768-amino acid protein whose fucosyltransferase activity maps to the 
+C-terminal half of the protein. A strain whose FT85 gene is interrupted by 
+a genetic insertion produces a truncated, GlcNAc-terminated glycan on Skp1, 
+suggesting that FT85 may also have b-galactosyltransferase activity. In 
+support of this model, highly-purified native and recombinant FT85 are each 
+able to galactosylate Skp1 from FT85-mutant cells. Site-directed mutagenesis 
+of predicted key amino acids in the N-terminal region of FT85 abolishes Skp1 
+b-galactosyltransferase activity with minimal effects on the fucosyltransferase. 
+In addition, a recombinant form of the N-terminal region exhibits 
+b-galactosyltransferase but not fucosyltransferase activity. Kinetic 
+analysis of FT85 suggests that its two glycosyltransferase activities 
+normally modify Skp1 processively but can have partial function individually. 
+In conclusion, FT85 is a bifunctional di-glycosyltransferase that appears to 
+be designed to efficiently extend the Skp1 glycan in vivo.
+
+-----------------------------------------------------------------------------
+
+Evolutionary and functional implications of the complex glycosylation of Skp1, 
+a cytoplasmic/nuclear glycoprotein associated with polyubiquitination
+
+Christopher M. West
+
+Department of Anatomy and Cell Biology, University of Florida College of 
+Medicine, Gainesville, FL  32610-0235  (USA), Fax +1 352 392 3305, e-mail: 
+westcm@ufl.edu
+
+Cell and Molecular Life Sciences, in press.
+
+Protein degradation is regulatory for the cell cycle, signal transduction and 
+gene transcription. A critical step is the selective marking of the target 
+protein, resulting in polyubiquitination by one of a large number of E3-ubiquitin 
+ligases. Both target marking and E3-ubiquitin ligase activity are associated 
+with common as well as unusual posttranslational modifications. For example, 
+hydroxylation of Pro-residues and modification of Asn-residues by high-mannose 
+sugar chains can target the modified proteins for rapid polyubiquitination 
+in the mammalian cytoplasm. Both prolyl hydroxylation and glycosylation also 
+occur on Skp1, a subunit of the SCF-class of E3-ubiquitin ligases, from 
+Dictyostelium. In this case, a pentasaccharide containing Gal, Fuc and GlcNAc 
+is attached to the HyPro-residue. The sugars are added sequentially by enzymes 
+that reside in the cytoplasm rather than the secretory pathway. Two of the 
+glycosyltransferases appear to be positioned in ancient evolutionary lineages 
+that bridge prokaryotes and eukaryotes. The first, which attaches GlcNAc to 
+HyPro, is related to enzymes that form a-GalNAc- and a-GlcNAc-Ser/Thr linkages 
+in the Golgi. GlcNAc is extended by a bifunctional glycosyltransferase that 
+mediates the ordered addition of b1,3-linked Gal and a1,2-linked Fuc, using 
+an architecture resembling that of 2-domain prokaryotic glycosyltransferases 
+involved in glycosaminoglycan synthesis. Mutational and pharmacological 
+perturbation of glycosylation alters the subcellular localization of Skp1 and 
+growth properties of cells. Prolyl hydroxylation and complex O-glycosylation 
+provide the cell with new options for epigenetic regulation of protein turnover 
+in its cytoplasmic and nuclear compartments.
+
+-----------------------------------------------------------------------------
+
+Molecular Cloning and Expression of a UDP-GlcNAc:Hydroxyproline Polypeptide 
+GlcNAc-Transferase that Modifies Skp1 in the Cytoplasm of Dictyostelium
+
+Hanke van der Wela, Howard R. Morrisb,c, Maria Panicob, Thanai Paxtonb, Anne 
+Dellb, Lee Kaplana, and Christopher M. Westa,d
+
+aDepartment of Anatomy & Cell Biology, University of Florida College of 
+Medicine, Gainesville, FL  USA  32610-0235; bDepartment of Biological 
+Sciences, Imperial College of Science, Technology and Medicine, London 
+SW7 2AY, UK; cM-SCAN Research and Training Center, Silwood Park, 
+Ascot SL5 7PZ, UK
+
+J. Biol. Chem., in press.
+
+Skp1 is a ubiquitous eukaryotic protein found in several cytoplasmic and 
+nuclear protein complexes, including the SCF-type E3 ubiquitin ligase. In 
+Dictyostelium, Skp1 is hydroxylated at proline-143 which is then modified 
+by a pentasaccharide chain. The enzyme activity that attaches the first 
+sugar, GlcNAc, was previously shown to copurify with the GnT51 polypeptide 
+whose gene has now been cloned using a proteomics approach based on a Q-TOF 
+hybrid mass spectrometer. When expressed in E. coli, recombinant GnT51 
+exhibits UDP-GlcNAc:hydroxyproline Skp1 GlcNAc-Transferase activity. Based 
+on amino acid sequence alignments, GnT51 defines a new family of microbial 
+polypeptide glycosyltransferases that appear to be distantly related to the 
+catalytic domain of mucin-type UDP-GalNAc:Ser/Thr polypeptide 
+a-GalNAc-Transferases expressed in the Golgi compartment of animal cells. 
+This relationship is supported by the effects of site-directed mutagenesis 
+of amino acids associated with GnT51's predicted DxD-like motif, DAH. In 
+contrast, GnT51 lacks the NH2-terminal signal anchor sequence present in 
+the Golgi enzymes, consistent with the cytoplasmic localization of the Skp1 
+acceptor substrate and the biochemical properties of the enzyme. The first 
+glycosylation step of Dictyostelium Skp1 is concluded to be mechanistically 
+similar to that of animal mucin type O-linked glycosylation except that it 
+occurs in the cytoplasm rather than the Golgi compartment of the cell.
+
+-----------------------------------------------------------------------------
+
+GenePath: a System for Automated Construction of Genetic Networks from Mutant 
+Data
+
+Blaz Zupan, Janez Demsar, Ivan Bratko, Peter Juvan, John A. Halter, Adam 
+Kuspa and Gad Shaulsky
+
+University of Ljubljana, Faculty of Computer and Information Science and  
+Jozef Stefan Institute, Ljubljana, Slovenia
+
+Departments of PM&R and Division of Neuroscience, Biochemistry and Molecular 
+Biology,   Molecular and Human Genetics, Baylor College of Medicine, Houston, 
+TX 77030, USA
+
+Bioinformatics, in press
+
+ABSTRACT
+
+Motivation: Genetic networks are often used in the analysis of biological 
+phenomena. In classical genetics, they are constructed manually from 
+experimental data on mutants. The field lacks formalism to guide such 
+analysis, and accounting for all the data becomes complicated when large 
+amounts of data are considered.
+
+Results: We have developed GenePath, an intelligent assistant that automates 
+the analysis of genetic data. GenePath employs expert-defined patterns to 
+uncover gene relations from the data, and uses these relations as constraints 
+in the search for a plausible genetic network. GenePath formalizes genetic 
+data analysis, facilitates the consideration of all the available data in a 
+consistent manner, and the examination of the large number of possible 
+consequences of planned experiments. It also provides an explanation 
+mechanism that traces every finding to the pertinent data.
+
+Availability: GenePath can be accessed at http://genepath.org.
+
+Contact: gadi@bcm.tmc.edu
+
+Supplementary information: Supplementary material is available at 
+http://genepath.org/bi-supp.
+
+-----------------------------------------------------------------------------
+
+Tail chimeras of Dictyostelium myosin II support cytokinesis and other 
+myosin II activities but not full development
+
+Shi Shu1, Xiong Liu1, Carole A. Parent 2, Taro Q. P. Uyeda3, and Edward D. 
+Korn*1 
+
+1 Laboratory of Cell Biology, National Heart, Lung, and Blood Institute, 
+and 2 Laboratory of Cellular and Molecular Biology, National Cancer Institute, 
+National Institutes of Health, Bethesda, MD 20892 and 3Gene Function Research 
+Center, Tsukuba Central #4, National Institute of Advanced Industrial Science 
+and Technology (AIST), Higashi 1-1-1, Tsukuba, Ibaraki 305-8562, Japan
+
+*Author for correspondence (e-mail: edk@nih.gov)
+Short title: In vivo activities of myosin II tail chimeras
+Key words: myosin II; cytokinesis; chemotaxis; development; Con A capping.
+
+Journal of Cell Science, in press
+
+SUMMARY
+
+Dictyostelium lacking myosin II cannot grow in suspension culture, develop 
+beyond the mound stage or cap concanavalin A receptors and chemotaxis is 
+impaired.  Recently, we showed that the actin-activated MgATPase activity 
+of myosin chimeras in which the tail domain of Dictyostelium myosin II heavy 
+chain is replaced by the tail domain of either Acanthamoeba or chicken 
+smooth muscle myosin II is unregulated and about 20 times higher than 
+wild-type myosin.  The Acanthamoeba chimera forms short bipolar filaments 
+similar to, but shorter than, filaments of Dictyostelium myosin, and the 
+smooth muscle chimera forms much larger side-polar filaments.  We now find 
+that the Acanthamoeba chimera expressed in myosin null cells localizes to 
+the periphery of vegetative amoeba similarly to wild-type myosin but the 
+smooth muscle chimera is heavily concentrated in a single cortical patch. 
+Despite their different tail sequences and filament structures and different 
+localization of the smooth muscle chimera in interphase cells, both chimeras 
+support growth in suspension culture and concanavalin A capping and co-
+localize with the Con A cap but the Acanthamoeba chimera subsequently 
+disperses more slowly than wild-type myosin and the smooth muscle chimera 
+apparently not at all.  Both chimeras also partially rescue chemotaxis. 
+However, neither supports full development.  Thus, neither regulation of 
+myosin activity, nor regulation of myosin polymerization nor bipolar 
+filaments is required for many functions of Dictyostelium myosin II and 
+there may be no specific sequence required for localization of myosin to 
+the cleavage furrow.
+
+-----------------------------------------------------------------------------
+
+Macromolecular Architecture in Eukaryotic Cells Visualized by Cryo-Electron 
+Tomography 
+ 
+Ohad Medalia, Igor Weber, Achilleas S. Frangakis, Guenther Gerisch
+and Wolfgang Baumeister
+
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+
+Science, in press.
+
+Abstract
+
+Electron tomography of vitrified cells is a non-invasive 3-dimensional 
+imaging technique which opens up new vistas for exploring the supramolecular 
+organization of the cytoplasm. We applied this technique to Dictyostelium 
+cells focusing on the actin cytoskeleton. In actin networks reconstructed 
+without prior removal of membranes or extraction of soluble proteins, the 
+crosslinking of individual microfilaments, their branching angles and 
+membrane attachment sites can be analyzed. At a resolution of 5 to 6 nm, 
+single macromolecules with distinct shapes, such as the 26S proteasome, 
+can be identified in an unperturbed cellular environment. 
+
+-----------------------------------------------------------------------------
+
+Purification and Renaturation of Dictyostelium Recombinant Alkaline 
+Phosphatase by Continuous Elution Electrophoresis
+
+Muatasem Ubeidat and Charles L. Rutherford
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406
+
+
+Protein Expression and Purification, In Press
+
+Abstract
+
+A 1583 bp fragment of Dictyostelium alp cDNA (94% of the gene) was cloned in 
+pET32a+.  The enzyme was expressed in an inactive form in the inclusion body 
+of the expression host BL21-CodonPlus"!(DE3)-RIL. The recombinant ALP 
+constituted more than 50% of the total protein in the inclusion body and 
+25-30% of the total protein in the expression host after 3 h induction with 
+IPTG at 37 C.  A continuous elution polyacrylamide gel electrophoresis 
+procedure was used to purify the recombinant enzyme.  This technique 
+yielded a homogenous protein that retained enzymatic activity after dialysis 
+without further treatment.  A yield of 5 mg per liter of culture broth was 
+obtained with a specific activity of approximately 0.7 nmol/min/mg of 
+protein (0.7 mU/mg).  Immunoinhibition studies using a polyclonal antibody 
+produced against the recombinant protein showed complete inhibition of 
+enzymatic activity when the enzyme was preincubated with the antibody at a 
+1: 1000 dilution.  The enzyme exhibited a pH optimum of approximately 9.0.  
+The substrate specificity indicated that the Dictyostelium enzyme is a 
+typical broad range alkaline phosphatase.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 8]
+
+ 

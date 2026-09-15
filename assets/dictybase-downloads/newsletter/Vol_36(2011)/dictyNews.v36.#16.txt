@@ -1,0 +1,150 @@
+dictyNews
+Electronic Edition
+Volume 36, number 16
+June 17, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Signalling and Sex in the Social Amoebozoans
+
+Danton H. OÕDay and Alex Keszei
+
+
+Biological Reviews, in press
+
+The social amoebozoans have a life tricycle consisting of asexual multicellular 
+development leading to fruiting bodies, sexual multicellular development 
+resulting in macrocysts, and unicellular development generating microcysts. 
+This review covers the events of sexual development in the most well-studied 
+heterothallic (Dictyostelium discoideum) and homothallic (D. mucoroides) 
+mating systems. Sexual development begins with pheromonal interactions 
+that produce fusion competent cells (gametes) which undergo cell and 
+pronuclear fusion. Calcium and calmodulin mediated signalling mediates 
+these early events. As they initiate chemotactic signalling, each zygote 
+increases in size becoming a zygote giant cell. Using cAMP, the zygote 
+chemotactically lures in amoebae and engulfs them in an act of cannibalistic 
+phagocytosis. Chemotaxis proceeds more quickly than endocytosis because 
+the breakdown products of cAMP (5-AMP, adenosine) bind to a presumptive 
+adenosine receptor to inhibit sexual phagocytosis. Zygote giant cells also 
+produce several other signalling molecules that feed back to regulate early 
+events. The amoebae surrounding the zygote seal their fate as zygotic foodstuff 
+y secreting a primary cellulose wall, which prevents their escape. Phagocytosis 
+within this precyst continues until all peripheral amoebae are internalized as 
+endocytes and the final macrocyst wall is formed. Endocyte digestion results in 
+a mature macrocyst with a uniform cytoplasm containing a diploid nucleus. 
+After detailing the morphological events of heterothallic and homothallic mating, 
+we review the various intercellular signalling events and other mechanisms 
+involved in each stage. This complete and comprehensive review sets the 
+stage for future research on the unique events that characterize sex in the 
+social amoebozoans.
+
+
+Submitted by Danton OÕDay [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+High-resolution X-ray structure of the trimeric Scar/WAVE-complex 
+precursor Brk1
+
+Joern Linkner (1,5), Gregor Witte (2,5), Theresia Stradal (3,4),  Ute Curth (1) 
+and Jan Faix (1)
+
+1) Institute for Biophysical Chemistry, Hannover Medical School, Hannover, Germany. 
+2) Gene Center and Department of Biochemistry, Munich Center for Advanced 
+Photonics (MAP) and Center for Integrated Protein Science Munich (CIPSM) at 
+the Ludwig-Maximilians-University, Munich, Germany. 
+3) Institute for Molecular Cell Biology, University of Muenster, Muenster, Germany. 
+4) Signaling and Motility Group, Helmholtz Centre for Infection Research (HZI), 
+Braunschweig, Germany 
+5) These authors contributed equally to this work
+
+
+PLoSOne, in press
+
+The Scar/WAVE-complex links upstream Rho-GTPase signaling to the 
+activation of the conserved Arp2/3-complex. Scar/WAVE-induced and 
+Arp2/3-complex-mediated actin nucleation is crucial for actin assembly 
+in protruding lamellipodia to drive cell migration. The heteropentameric 
+Scar/WAVE-complex is composed of Scar/WAVE, Abi, Nap, Pir and a 
+small polypeptide Brk1/HSPC300, and recent work suggested that free 
+Brk1 serves as a homooligomeric precursor in the assembly of this complex. 
+Here we characterized the Brk1 trimer from Dictyostelium by analytical 
+ultracentrifugation and gelfiltration. We show for the first time its dissociation 
+at concentrations in the nanomolar range as well as an exchange of subunits 
+within different DdBrk1 containing complexes. Moreover, we determined the 
+three-dimensional structure of DdBrk1 at 1.5 Angstroem resolution by X-ray 
+crystallography. Three chains of DdBrk1 are associated with each other 
+forming a parallel triple coiled-coil bundle. Notably, this structure is highly
+similar to the heterotrimeric alpha-helical bundle of HSPC300/WAVE1/Abi2 
+within the human Scar/WAVE-complex. This finding together with the fact 
+that Brk1 is collectively sandwiched by the remaining subunits, and also 
+constitutes the main subunit connecting the triple-coil domain of the 
+HSPC300/WAVE1/Abi2/ heterotrimer to Sra1(Pir1), implies a critical 
+function of this subunit in the assembly process of the entire complex.
+
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+--------------------------------------------------------------------------------
+
+
+Br-DIF-1 accelerates 1% dimethyl sulfoxide-induced cardiomyocyte 
+differentiation from P19CL6 embryonic carcinoma cells.
+
+Seya K, Kanemaru K, Matsuki M, Hongo K, Kitahara H, Kikuchi H, 
+Oshima Y, Kubohara Y, Okumura K, Motomura S, Furukawa KI.
+
+Department of Pharmacology, Hirosaki University Graduate School of 
+Medicine, Hirosaki 036-8562, Japan. etc.
+
+
+Br. J. Pharmacol., in press
+
+Background and purpose: Stem cell transplantation therapy is a promising 
+alternative treatment for severe ischemic heart disease. Although dimethyl 
+sulfoxide (DMSO) is known to differentiate P19CL6 embryonic carcinoma cells 
+into cardiomyocyte-like cells, the low differentiation capacity of DMSO reduces 
+its usefulness. To develop new inducing factors that promote a high degree 
+of differentiation, we investigated the effect on P19CL6 cells of derivatives of 
+the differentiation-inducing factor-1 (DIF-1), a bioactive compound originally 
+found in the cellular slime mould, Dictyostelium discoideum. 
+
+Experimental approach: P19CL6 cells were cultured in alpha-MEM with 
+10% FBS including each drug. Drug-induced differentiation was assessed 
+by measuring the number of beating and non-beating aggregates, and the 
+expression of various genes. The mechanism of action was investigated 
+using a T-type Ca(2+) channel blocker. 
+
+Key results: No other DIF-1 derivatives except Br-DIF-1 showed any effects 
+on cardiomyocyte differentiation. In the presence of 1% DMSO, Br-DIF-1 
+(0.3-3 uM) significantly and dose-dependently increased the number of 
+spontaneously beating aggregates compared with 1% DMSO alone on Day 
+16. Expression of T-type Ca(2+) channel mRNA was significantly increased 
+by Br-DIF-1 + 1% DMSO compared with 1% DMSO alone. Mibefradil 
+(a T-type Ca(2+) channel blocker; 100nM) and a small interfering RNA of 
+the T-type Ca(2+) channel both significantly decreased the beating rate of 
+aggregates induced by Br-DIF-1 + 1% DMSO. 
+
+Conclusions and implications: These results suggest that Br-DIF-1 potently 
+accelerates the 1% DMSO-induced differentiation of P19CL6 cells into s
+pontaneously beating cardiomyocyte-like cells, partly by enhancing the 
+expression of the T-type Ca(2+) channel gene.
+
+
+Submitted by Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================
+[End dictyNews, volume 36, number 16]

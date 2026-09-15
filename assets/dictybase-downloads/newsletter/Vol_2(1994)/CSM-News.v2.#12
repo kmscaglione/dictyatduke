@@ -1,0 +1,144 @@
+CSM News
+Electronic Edition
+Volume 2, number 12
+March 26, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[129.105.233.50], via Gopher at the same address, or by World Wide Web
+through WWW.acns.nwu.edu.
+
+
+=============
+Announcement
+=============
+
+To: the Dicty community
+From: Bill Loomis and Doug Smith
+March 22, 1994
+
+Amos Bairoch heads the organization that is in charge of the protein
+data base, SWISS-PROT. Discussion between us have lead to establishing
+Dictyostelium as one of five "privaledged organisms" in the database.
+This means that it will be easier to retrieve the amino acid sequences
+encoded by Dictyostelium genes submitted to any of the public domain
+files ( GenBank, EMBL etc.). Moreover, transfer to SWISSPROT will be
+more rapid and the genes will be partially anotated. The Dicty
+proteins can be conveniently accessed under DictyDB accession numbers:
+eg. myosin II heavy chain (mhcA) is DD01008. All of the "DDxxxxx"
+proteins are from Dicty. Together with Adam Kuspa we have proof read
+the list but would appreciate hearing of any remaining errors. The
+document (DICTY.TXT) at SWISS-PROT gives the full list.
+
+The file is growing rapidly and the annotation is proceeding.  We hope
+this will be of value to all of us.
+
+Here is what Bairoch circulated a week or so ago:
+
+
+   2.2  What's happening with the model organisms
+
+   As we  announced in  the last  release we  have  selected  a  number  of
+   organisms that  are the  target  of  genome  sequencing  and/or  mapping
+   projects and for which we intend to:
+
+   -  Be as  complete as  possible. All sequences available at a given time
+      should be  immediately included  in SWISS-PROT.  This  also  includes
+      sequence corrections and updates.
+   -  Provide a high level of annotations.
+   -  Cross-references to specialized database(s) that contain, among other
+      data, some  genetic information  about the  genes that code for these
+      proteins.
+   -  Provide specific indices or documents.
+
+   Thanks to  a collaborative  effort with Douglas Smith and Bill Loomis of
+   UCSD we  have added  a fifth  organism, Dictyostelium  discoideum (slime
+   mold), to  our list of model organisms. Many new sequences were added at
+   this  release  and  a  new  document  file  (DICTY.TXT)  lists  all  the
+   D.discoideum sequence entries in SWISS-PROT and their corresponding gene
+   names.
+
+   At this release we also have started our collaboration with the group at
+   the Sanger  Genome Center  in Hinxton  (UK) and  we have  added 516  new
+   C.elegans sequences;  most of  which are  translation of sequencing data
+   from the genome project. A new document file (CELEGANS.TXT) list all the
+   C.elegans sequence  entries in  SWISS-PROT and  their corresponding gene
+   names and, when appropriate, their cosmid-derived names.
+
+   Here is the current status of the five model organisms:
+
+   Organism         Database                Index file        Number of
+                    cross-referenced                          sequences
+   --------------   ----------------------  --------------    ---------
+   C.elegans        WormPep                 CELEGANS.TXT            672
+   D.discoideum     DictyDB                 DICTY.TXT               183
+   D.melanogaster   FlyBase                 In preparation          600
+   E.coli           EcoGene                 ECOLI.TXT              2555
+   S.cerevisiae     LISTA (in preparation)  YEAST.TXT              1731
+
+
+
+   2.4  Changes in the DR line
+
+   We have  added cross-references  to the  Dictyostelium discoideum genome
+   database (DictyDB)  (see section  2.2  of  these  notes).  These  cross-
+   references are present in the DR lines:
+
+   Data bank identifier:  DICTYDB
+   Primary identifier:    Unique identifier  attributed by  DictyDB to  the
+                          gene coding for the protein.
+   Secondary identifier:  The gene  designation (name).  A "-"  is  present
+                          when no gene name has yet been assigned.
+   Example:               DR   DICTYDB; DD01047; MYOA.
+
+
+==========
+Abstracts
+==========
+
+
+The Level of Sequestered Calcium in Vegetative Amoebae of
+Dictyostelium discoideum Can Predict Post-aggregative Cell Fate
+
+Shweta Saran, M. Azhar, P.S. Manogaran, Gopal Pande and Vidyanand
+Nanjundiah
+
+Developmental Biology and Genetics Laboratory, Indian
+Institute of Science, Bangalore 560012, India
+
+DIFFERENTIATION, in press
+
+When vegetative amoebae of D. discoideum are labelled with
+chlortetracycline (CTC) and monitored for calcium-CTC fluorescence,
+they fall into two distinct classes that can be separated using a
+fluorescence-activated cell sorter. We name the classes F(+), meaning
+high fluorescence and F(-), meaning low fluorescence. Either F(+) or
+F(-) amoebae can be labelled with ruthenium red or rhodamine 123 and
+the original mixture re-constituted. The resulting slugs or fruiting
+bodies display ruthenium red or rhodamine 123 fluorescence in a
+pattern which indicates that F(+) amoebae are pre-stalk and F(-)
+amoebae are prespores.  As expected, this committment is reversible:
+F(+) or F(-) amoebae can also develop by themselves.  Pure F(+) slugs
+show a high level of calcium-CTC fluorescence in their anterior and
+little or none in their posterior.  Pure F(-) slugs initially show no
+fluorescence, but after being labelled a second time with CTC display
+asimilar gradient of calcium-CTC fluorescence. We infer from this that
+genotypically identical cells raised in a common environment can
+differ in respect of the levels of sequestered calcium they contain
+and that this difference is correlated with future cell fate. We
+conjecture that the observed calcium differences are related to
+differences in cell cycle phases.
+
+------------------------------------------------------------------
+
+[End CSM-News, volume 2, number 12]
+
+
+
+
+
+
+

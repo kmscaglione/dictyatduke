@@ -1,0 +1,132 @@
+Dicty News
+Electronic Edition
+Volume 17, number 8
+October 13, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+========================
+  Dicty 2002 -- Italy
+========================
+
+Dear All,
+
+As anticipated at the Dicty 2001 meeting in La Jolla, I'm pleased to 
+announce that the
+
+INTERNATIONAL DICTY CONFERENCE 2002
+
+will take place in Italy from September 22 to September 27 at the
+
+Hotel Village Torre Normanna
+
+Altavilla Milicia (Palermo).
+
+A web page at www.unito.it, with a link to the Dicty server,  will be 
+activated in the near future.
+
+We hope that the international situation will clear up soon and that 
+all of you will be able to come to the meeting.
+
+Salvo Bozzaro
+Enrico Bracco
+Adriano Ceccarelli
+
+
+
+==============
+  Abstracts
+==============
+Expression patterns of 5'-Nucleotidase in Dictyostelium 
+
+Muatasem Ubeidat, Can M. Eristi and Charles L. Rutherford* 
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406, USA 
+
+Accepted Mechanisms of Development 
+
+Abstract 
+
+In order to analyze the expression pattern of 5'-nucleotidase (5nt) gene, 
+we made fusion constructs in which the 5nt promoter directed the expression 
+of b-galactosidase and green fluorescent protein (gfp). Reporter gene 
+activity showed that the fusion genes were first expressed in the early 
+aggregation stage. At the slug stage, 5nt was highly expressed in pstAB 
+cells. As the slug moved along the substratum, high activity of 
+b-galactosidase was detected in cells that were left behind in the slime 
+sheath. At the early culmination stage, the 5nt-fusion gene was expressed 
+at the interface of the prespore/prestalk regions. In the completed fruiting 
+body, 5nt was expressed in the lower cup, in the slime sheath, and the basal 
+disc. 
+
+-----------------------------------------------------------------------------
+
+Methanol and Acriflavine Resistance in Dictyostelium are Caused by 
+Loss of Catalase
+
+Ma. Xenia U. Garcia1*, Catherine Roberts2*, Hannah Alexander1, A. 
+Michael Stewart2, Adrian Harwood3, Stephen Alexander1 and Robert H. 
+Insall2
+
+Microbiology, in press
+
+Various chemicals with harmful effects are not themselves toxic, but 
+are metabolized in vivo to produce toxic products.  One example is 
+methanol in Dictyostelium, which is lethal to cells containing the 
+acrA gene, but relatively harmless to acrA mutants.  This makes 
+methanol resistance one of the tightest genetic selections in 
+Dictyostelium.  Loss of acrA also confers cross-resistance to 
+unrelated compounds such as acriflavine and thiabendazole.  We have 
+used insertional mutagenesis to demonstrate that the acrA locus 
+encodes the peroxisomal catalase A enzyme.  Disruption of the catA 
+gene results in parallel resistance to acriflavine.  Molecular and 
+biochemical studies of several previously characterized methanol 
+resistant strains reveal that each lacks catalase activity.  One 
+allele, acrA2, contains a 13bp deletion which introduces a frameshift 
+in the middle of the gene.  The involvement of catalase in methanol 
+resistance in Dictyostelium compares with its role in methanol 
+metabolism in yeast and rodents.  However, this is the first study to 
+show that catalase is required for the toxicity of acriflavine.  Our 
+results imply that acriflavine and thiabendazole are precursors which 
+must be oxidized to generate biologically active species.  The 
+catA/acrA gene is also a potentially invaluable negative selectable 
+marker for Dictyostelium molecular genetics.
+
+-----------------------------------------------------------------------------
+
+CRYSTAL STRUCTURE OF A DYNAMIN GTPASE DOMAIN IN BOTH NUCLEOTIDE-FREE 
+AND GDP-BOUND FORMS
+
+Hartmut H. Niemann, Menno L. W. Knetsch, Anna Scherer, Dietmar J. Manstein 
+& F. Jon Kull
+
+Department of Biophysics, Max-Planck-Institute for Medical Research, 
+Jahnstrasse 29, 69120 Heidelberg, Germany
+
+EMBO J., in press.
+
+
+Dynamins form a family of multidomain GTPases involved in endocytosis, 
+vesicle trafficking and maintenance of mitochondrial morphology. In contrast 
+to the classical switch GTPases, a force generating function has been 
+suggested for dynamins. Here we report the 2.3 crystal structure of the 
+nucleotide-free and GDP-bound GTPase domain of Dictyostelium discoideum 
+dynamin A. The GTPase domain is the most highly conserved region among 
+dynamins. The globular structure contains the G-protein core fold, which 
+is extended from a six-stranded b-sheet to an eight-stranded one by a 55 
+amino acid insertion. This topologically unique insertion distinguishes 
+dynamins from other subfamilies of GTP-binding proteins. An additional 
+N-terminal helix interacts with the C-terminal helix of the GTPase domain, 
+forming a hydrophobic groove, which could be occupied by C-terminal parts 
+of dynamin not present in our construct. The lack of major conformational 
+changes between the nucleotide-free and the GDP-bound state indicate that 
+mechano-chemical rearrangements in dynamin must occur during GTP-binding, 
+GTP hydrolysis or phosphate release and are not linked to loss of GDP.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 8]

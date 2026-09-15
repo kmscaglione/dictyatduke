@@ -1,0 +1,140 @@
+dictyNews
+Electronic Edition
+Volume 39, number 25
+August 30 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Inhibitory signalling to the Arp2/3 complex steers cell migration
+
+
+Irene Dang1, Roman Gorelik1, Carla Sousa-Blin1, Emmanuel Derivery1, 
+Christophe Guérin2, Joern Linkner3, Maria Nemethova4, Tamara 
+Tchipysheva5, Valeria Ermilova5, Sophie Vacher6, Julien G. Dumortier7, 
+Florence A. Giger7, Valérie Campanacci8, Isaline Herrada9, Anne-Gaelle 
+Planson8, Susan Fetics8, Véronique Henriot1, Violaine David1, Ksenia 
+Oguievetskaia1, Goran Lakisic1, Fabienne Pierre1, Adeline Boyreau11, 
+Nadine Peyriéras11, Anika Steffen10, Klemens Rottner10, Sophie 
+Zinn-Justin9, Jacqueline Cherfils8, Nicolas B. David7, Ivan Bièche6, 
+Antonina Alexandrova5, J. Victor Small4, Jan Faix3, Laurent Blanchoin2, 
+Alexis Gautreau1.
+
+1 Group Cytoskeleton in Cell Morphogenesis Laboratoire d’Enzymologie 
+et Biochimie Structurales, CNRS, Gif-sur-Yvette, France 
+2 Physics of the Cytoskeleton and Morphogenesis, Grenoble, France 
+3 Institute for Biophysical Chemistry, Hannover Medical School, 
+Hannover, Germany 
+4 Institute of Molecular Biotechnology, Vienna, Austria 
+5 Institute of Carcinogenesis, N.N. Blokhin Cancer Research Center, 
+Russian Academy of Medical Sciences, Moscow, Russian Federation 
+6 INSERM, CNRS, ENS, Institut de Biologie de l'ENS, Paris, France 
+7 Oncogenetic Laboratory, Institut Curie - Hôpital René Huguenin, 
+Saint-Cloud, France 
+8 Laboratoire d’Enzymologie et Biochimie Structurales, CNRS, 
+Gif-sur-Yvette, France
+9 Laboratoire de Biologie Structurale et Radiobiologie, iBiTec-S 
+and CNRS, CEA Saclay, Gif-sur-Yvette, France
+10 Institute of Genetics, University of Bonn, Germany
+11 Institut des Systèmes complexes & NeD, Institut de Neurobiologie 
+Alfred Fessard, CNRS, Gif-sur-Yvette, France.
+
+
+Nature, in press.
+
+Cell migration requires the generation of branched actin networks 
+that power the protrusion of the plasma membrane in lamellipodia. 
+The Arp2/3 complex is the molecular machine that nucleates these 
+branched actin networks. This machine is activated at the leading 
+edge of migrating cells by the WAVE complex. The WAVE complex 
+is itself directly activated by the small GTPase Rac, which induces 
+lamellipodia. However, how cells regulate the directionality of 
+migration is poorly understood. Here we identify a novel protein 
+that inhibits the Arp2/3 complex in vitro, Arpin, and show that Rac 
+signalling recruits and activates Arpin at the lamellipodial tip, like 
+WAVE. Consistently, upon depletion of the inhibitory Arpin, 
+lamellipodia protrude faster and cells migrate faster. The major 
+role of this inhibitory circuit, however, is to control directional 
+persistence of migration. Indeed, Arpin depletion in both 
+mammalian cells and Dictyostelium discoideum amoeba resulted 
+in straighter trajectories, whereas Arpin microinjection in fish 
+keratocytes, one of the most persistent systems of cell migration 
+known, induced these cells to turn. The coexistence of the 
+Rac-Arpin-Arp2/3 inhibitory circuit with the Rac-WAVE-Arp2/3 
+activatory circuit can account for this conserved role of Arpin in 
+steering cell migration. Loss of this inhibitory circuit promotes 
+exploratory behaviours and might commit carcinoma cells to 
+the invasive state.
+
+
+Submitted by Hans Faix [faix.jan@mh-hannover.de]
+---------------------------------------------------------------------------
+
+
+A novel human receptor involved in bitter tastant detection 
+identified using the model organism Dictyostelium discoideum
+
+Steven Robery1, Richard Tyson2, Christopher Dinh3, 
+Adam Kuspa3, Angelika A. Noegel4, Till Bretschneider2, 
+Paul L. R. Andrews5, Robin S. B. Williams1*
+
+1. Centre for Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham TW20 0EX, UK
+2. Molecular Organization and Assembly in Cells, University of 
+Warwick, Coventry, CV4 7AL, UK
+3. Department of Biochemistry and Molecular Biology, Baylor 
+College of Medicine, Houston, Texas 77030, USA
+4. Institute of Biochemistry I, Medical Faculty, University of 
+Cologne, Cologne, Germany
+5. Division of Biomedical Sciences, St George's University of 
+London, London SW17 0RE, UK
+
+*Corresponding author; robin.williams@rhul.ac.uk
+
+
+Journal of Cell Science, in press
+
+Detection of substances tasting bitter to humans occurs in 
+diverse organisms including the social amoeba, Dictyostelium 
+discoideum. To establish a molecular mechanism for bitter 
+tastant detection in Dictyostelium, we screened a mutant library 
+for resistance to a commonly used bitter standard, phenylthiourea. 
+This approach identified a G-protein coupled receptor mutant, 
+grlJ-, showing a significantly increased tolerance to phenylthiourea 
+in growth, survival and movement. This mutant was not resistant to 
+a structurally dissimilar potent bitter tastant, denatonium benzoate, 
+suggesting it is not a target for at least one other bitter tastant. 
+Analysis of the cell signalling pathway involved in the detection of 
+phenylthiourea showed dependence upon heterotrimeric G-protein 
+and phosphatidylinositol 3-kinase activity, suggesting this signalling 
+pathway is responsible for phenylthiourea cellular effects. This is 
+further supported by a phenylthiourea-dependent block in the 
+transient cAMP-induced production of PIP3 in wild type but not 
+grlJ- cells. Finally, we have identified an uncharacterized human 
+protein gamma-aminobutyric acid (GABA) type B receptor subunit 1 
+isoform with weak homology to GrlJ that restored grlJ- sensitivity to 
+phenylthiourea in cell movement and PIP3 regulation. Our data thus 
+identifies a novel pathway for the detection of the standard bitter 
+tastant, phenylthiourea, in Dictyostelium and implicates a poorly 
+characterized human protein in phenylthiourea dependent cell 
+responses. 
+
+
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 25]

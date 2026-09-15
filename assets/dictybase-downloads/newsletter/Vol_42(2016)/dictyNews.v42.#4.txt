@@ -1,0 +1,135 @@
+dictyNews
+Electronic Edition
+Volume 42, number 4
+February 5, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Selective Localization of Myosin-I Proteins in Macropinosomes and 
+Actin Waves
+
+Hanna Brzeska, Hilary Koech, Kevin J. Pridham, Edward D. Korn and 
+Margaret A. Titus 
+
+
+Cytoskeleton, in press
+
+Class I myosins are widely expressed with roles in endocytosis and 
+cell migration in a variety of cell types. Dictyostelium express 
+multiple myosin Is, including three short-tailed (Myo1A, Myo1E, 
+Myo1F) and three long-tailed (Myo1B, Myo1C, Myo1D). Here we 
+report the molecular basis of the specific localizations of short-tailed 
+Myo1A, Myo1E and Myo1F compared to our previously determined 
+localization of long-tailed Myo1B. Myo1A and Myo1B have common 
+and unique localizations consistent with the various features of their 
+tail region; specifically the BH sites in their tails are required 
+for their association with the plasma membrane and heads are 
+sufficient for relocalization to the front of polarized cells. Myo1A 
+does not localize to actin waves and macropinocytic protrusions, in 
+agreement with the absence of a tail region which is required for 
+these localizations of Myo1B. However, in spite of the overall 
+similarity of their domain structures, the cellular distributions of 
+Myo1E and Myo1F are quite different from Myo1A. Myo1E and 
+Myo1F, but not Myo1A, are associated with macropinocytic cups and 
+actin waves. The localizations of Myo1E and Myo1F in macropinocytic 
+structures and actin waves differ from the localization of Myo1B. 
+Myo1B colocalizes with F-actin in the actin waves and at the tips of 
+mature macropinocytic cups whereas Myo1E and Myo1F are in the 
+interior of actin waves and along the entire surface of macropinocytic 
+cups. Our results point to different mechanisms of targeting of short- 
+and long-tailed myosin Is, and are consistent with these myosin’s 
+having both shared and divergent cellular functions.
+
+
+submitted by: Hanna Brzeska [brzeska@helix.nih.gov]
+———————————————————————————————————————
+
+
+Gbeta Regulates Coupling between ActinOscillators for Cell Polarity 
+and Directional Migration
+
+Oliver Hoeller1, Jared E. Toettcher1, Huaqing Cai2, Yaohui Sun3, 
+Chuan-Hsiang Huang2, Mariel Freyre4, Min Zhao3, Peter N. Devreotes2, 
+Orion D. Weiner1*
+
+
+PLOS Biology
+
+For directional movement, eukaryotic cells depend on the proper 
+organization of their actin cytoskeleton. This engine of motility is 
+made up of highly dynamic nonequilibrium actin structures such as 
+flashes, oscillations, and traveling waves. In Dictyostelium, oscillatory 
+actin foci interact with signals such as Ras and phosphatidylinositol 
+3,4,5-trisphosphate (PIP3) to form protrusions. However, how signaling 
+cues tame actin dynamics to produce a pseudopod and guide cellular 
+motility is a critical open question in eukaryotic chemotaxis. Here, we 
+demonstrate that the strength of coupling between individual actin 
+oscillators controls cell polarization and directional movement. We 
+implement an inducible sequestration system to inactivate the 
+heterotrimeric G protein subunit Gbeta and find that this acute 
+perturbation triggers persistent, high-amplitude cortical oscillations 
+of F-actin. Actin oscillators that are normally weakly coupled to one 
+another in wild-type cells become strongly synchronized following 
+acute inactivation of Gbeta. This global coupling impairs sensing of 
+internalcues during spontaneous polarization and sensing of external 
+cues during directional motility. A simple mathematical model of 
+coupled actin oscillators reveals the importance of appropriate 
+coupling strength for chemotaxis: moderate coupling can increase 
+sensitivity to noisy inputs. Taken together, our data suggest that 
+Gbeta regulates the strength of coupling between actin oscillators 
+for efficient polarity and directional migration. As these observations 
+are only possible following acute inhibition of Gbeta and are masked 
+by slow compensation in genetic knockouts, our work also shows that 
+acute loss-of-function approaches can complement and extend the 
+reach of classical genetics in Dictyostelium and likely other systems 
+as well.
+
+
+submitted by: Oliver Hoeller [hoelleroliver@gmail.com]
+———————————————————————————————————————
+
+
+Identification of a chemoattractant G-protein-coupled receptor for 
+folic acid that controls both chemotaxis and phagocytosis
+
+Miao Pan, Xuehua Xu, Yong Chen and Tian Jin
+
+
+Developmental Cell, in press
+
+Eukaryotic phagocytes search and destroy invading microorganisms via 
+chemotaxis and phagocytosis. The social amoeba Dictyostelium discoideum 
+is a professional phagocyte that chases bacteria through chemotaxis and 
+engulfs them as food via phagocytosis. G-protein-coupled receptors (GPCRs) 
+are known for detecting chemoattractants and directing cell migration, but 
+their roles in phagocytosis are not clear. Here, we developed a quantitative 
+phosphoproteomic technique to discover signaling components. Using this 
+approach, we discovered the long-sought-after folic acid receptor, fAR1, in 
+D. discoideum.  We showed that the seven transmembrane receptor fAR1 
+is required for folic acid-mediated signaling events.  Significantly, we 
+discovered that fAR1 is essential for both chemotaxis and phagocytosis of 
+bacteria, thereby representing a chemoattractant GPCR that mediates not 
+only chasing but also ingesting bacteria.  We revealed that a phagocyte is 
+able to internalize particles via chemoattractant-mediated engulfment process.  
+We propose that mammalian phagocytes may also use this mechanism to 
+engulf and ingest bacterial pathogens.  
+
+
+submitted by: Miao Pan [miao.pan@nih.gov]
+==============================================================
+[End dictyNews, volume 42, number 4]

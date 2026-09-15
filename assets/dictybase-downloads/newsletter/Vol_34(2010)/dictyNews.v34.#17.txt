@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 34, number 17
+June 4, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Developmental significance of cyanide-resistant respiration under stressed 
+conditions: experiments in Dictyostelium cells 
+
+Kei Kimura,1 Hidekazu Kuwayama,2 Aiko Amagai 3 and Yasuo Maeda1*
+
+1Department of Developmental Biology and Neurosciences, Graduate 
+School of Life Sciences, Tohoku University, Sendai 980-8578; 
+2Graduate School of Life and Environmental Sciences, University of Tsukuba, 
+Tennoudai 1-1-1, Tsukuba-shi, 305-8572; and 
+3Department of Biomolecular Science, Graduate School of Life Sciences, 
+Tohoku University, Katahira 2-1-1, Aoba-Ku, Sendai 980-8577, Japan
+
+
+Develop. Growth Differ., in press
+
+We have previously reported that benzohydroxamic acid (BHAM), a potent 
+inhibitor of cyanide (CN)-resistant respiration mediated by alternative oxidase 
+(AOX), induces formation of unique cell masses (i.e., stalk-like cells with a 
+large vacuole and thick cell wall) in starved Dictyostelium cells. Unexpectedly, 
+however, aox-null cells prepared by homologous recombination exhibited 
+normal development under normal culture conditions on agar, indicating 
+that BHAM-induced stalk formation is not solely attributable to inhibition of 
+CN-resistant respiration. This also suggests that a series of pharmacological 
+approaches in the field of life science has serious limitations. Under stress 
+(e.g., in submerged culture), starved aox-null cells exhibited slightly delayed 
+aggregation compared with parental Ax-2 cells; most cells remained as loose 
+aggregates even after prolonged incubation. Also, the developmental defects 
+of aox-null cells became more marked upon incubation for 30 min just after 
+starvation in the presence of ≥1.75 mM H2O2. This seems to indicate 
+that CN-resistant respiration could mitigate cellular damages through reactive 
+oxygen species (ROS), because AOX has a potential role in reduction of ROS 
+production. Starved aox-null cells did not develop in the presence of 5 mM 
+KCN (which completely inhibited the conventional cytochrome-mediated 
+respiration) and remained as non-aggregated single cells on agar even after 
+prolonged incubation. Somewhat surprisingly, however, parental Ax-2 cells 
+were found to develop normally, forming fruiting bodies even in the presence 
+of 10 mM KCN. Taken together, these results suggest that CN-resistant 
+respiration might compensate for the production of ATP via oxidative 
+phosphorylation.  
+
+
+Submitted by  Yasuo Maeda [kjygy352@ybb.ne.jp]
+--------------------------------------------------------------------------------
+
+
+An invitation to die: Initiators of sociality in a social amoeba become 
+selfish spores
+
+by Jennie J. Kuzdzal-Fick, David C. Queller, and Joan E. Strassmann 
+
+Department of Ecology and Evolutionary Biology, Rice University
+
+
+Biology Letters, in press
+
+Greater size and strength are common attributes of contest winners.  
+Even in social insects with high cooperation, the right to reproduce falls 
+to the well-fed queens rather than to poorly fed workers. In Dictyostelium 
+discoideum, formerly solitary amoebae aggregate when faced with 
+starvation, and some cells die to form a stalk which others ride up to 
+reach a better location to sporulate. The first cells to starve have lower 
+energy reserves than those that starve later, and previous studies have 
+shown that the better-fed cells in a mix tend to form disproportionately 
+more reproductive spores. Therefore, one might expect that the first 
+cells to starve and initiate the social stage should act altruistically and 
+form disproportionately more of the sterile stalk, thereby enticing other 
+better-fed cells into joining the aggregate. This would resemble caste 
+determination in social insects, where altruistic workers are typically 
+fed less than reproductive queens. However, we show the opposite 
+result holds: the first cells to starve become reproductive spores, 
+presumably by gearing up for competition and outcompeting late 
+starvers to become prespore first. These findings pose the interesting 
+question of why others would join selfish organizers.
+
+
+Submitted by Jennie Kuzdzal-Fick [jkuzdzal@rice.edu]
+==============================================================
+[End dictyNews, volume 34, number 17]

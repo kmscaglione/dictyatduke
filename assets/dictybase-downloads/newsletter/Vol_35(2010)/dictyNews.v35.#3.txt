@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 35, number 3
+July 16, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+A fully resolved phylogeny of the social amoebas (Dictyostelia) based 
+on combined ncSSU and ITS rDNA Sequences
+
+Romeralo, M. Spiegel, F.W. & Baldauf, S.
+
+
+Protist (online 2010)
+
+The dictyostelids possess a complex life cycle including aggregative 
+and multicellular stages. They also include one of the most widely 
+studied protistan model organisms, Dictyostelium discoideum. The 
+current molecular phylogeny of dictyostelids is based largely on 
+SSU(18S) rDNA sequences and shows a deep taxon consisting of 
+four major groups, none of which correspond to the three traditional
+morphologically-defined genera. However, due to the generally slowly 
+evolving nature of SSUrDNA, these data fail to resolve the majority of 
+branches within the four groups. Given the highly morphologically mixed 
+nature of the dictyostelid groups, it is important to resolve relationships 
+within them. We have determined sequences for the internal transcribed 
+spacers (ITS) of rDNA for nearly all species in the original dictyostelid 
+global phylogeny. Phylogenetic analyses of these data, in combination 
+with the previously determined SSUrDNA sequences, confidently resolve 
+nearly all branches in the tree. This now fully resolved phylogeny confirms 
+the utility of ITS for dictyostelid systematics and lays the ground work for
+further evolutionary study of the group.
+
+
+Submitted by  Maria Romeralo [maria.romeralo@gmail.com]
+--------------------------------------------------------------------------------
+
+
+Dynamics of a novel centromeric histone variant CenH3 reveals the 
+evolutionary ancestral timing of centromere biogenesis
+
+Manu Dubin*, Jörg Fuchs†, Ralph Gräf‡, Ingo Schubert†, Wolfgang Nellen*,§.
+
+*Department of Genetics, University Kassel, Heinrich-Plett-Str. 40, 
+34132 Kassel, Germany 
+†Leibniz-Institute of Plant Genetics and Crop Plant Research (IPK), 
+Corrensstrasse 3, 06466 Gatersleben, Germany
+‡Department of Cell Biology, Institute for Biochemistry and Biology, 
+University of Potsdam, Potsdam-Golm, Germany.
+
+
+Nucleic Acids Res., in press
+
+The centromeric histone H3 variant (CenH3) serves to target the kinetochore 
+to the centromeres and thus ensures correct chromosome segregation during 
+mitosis and meiosis. The Dictyostelium H3-like variant H3v1 was identified 
+as the CenH3 ortholog. Dictyostelium CenH3 has an extended N-terminal 
+domain with no similarity to any other known proteins and a histone fold 
+domain at its C-terminus. Within the histone fold, alpha-helix 2 (alpha2) 
+and an extended loop 1 (L1) have been shown to be required for targeting 
+CenH3 to centromeres. Compared to other known and putative CenH3 
+histones, Dictyostelium CenH3 has a shorter L1 suggesting that the 
+extension is not an obligatory feature. Through ChIP analysis and 
+fluorescence microscopy of live and fixed cells we provide here the first 
+survey of centromere structure in amoebozoa. The six telocentric 
+centromeres were found to mostly consist of all the DIRS-1 elements 
+and to associate with H3K9me3. During interphase the centromeres 
+remain attached to the centrosome forming a single CenH3 containing 
+cluster. Loading of Dictyostelium CenH3 onto centromeres occurs at the 
+G2/prophase transition, in contrast to the anaphase/telophase loading of 
+CenH3 observed in metazoans. This suggests that loading during 
+G2/prophase is the ancestral eukaryotic mechanism and that 
+anaphase/telophase loading of CenH3 has evolved more recently 
+after the amoebozoa diverged from the animal linage.
+
+
+Submitted by  Wolfgang Nellen [nellen@uni-kassel.de]
+==============================================================
+[End dictyNews, volume 35, number 3]

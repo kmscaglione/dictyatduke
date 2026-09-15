@@ -1,0 +1,200 @@
+dictyNews
+Electronic Edition
+Volume 38, number 27
+October 26, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+Note from Guenther Gerisch:
+During the production process of the paper Gerisch et al "PIP3 Waves 
+and PTEN Dynamics in the Emergence of Cell Polarity", Biophysical 
+Journal, Volume 103, Issue 6, 1170-1178, 19 September 2012,the 
+Movies had been aligned at random, such that none of the links 
+opened the right Movie.These errors have now been corrected.
+
+
+=========
+Abstracts
+=========
+
+
+Comparative genomics in the Amoebozoa clade
+
+Gernot Gloeckner and Angelika A. Noegel
+
+
+Biological Reviews, in press
+
+Amoeboid life forms can be found throughout the evolutionary tree. 
+The greatest proportion of these life forms is found in the Amoebozoa 
+clade, one of the six major eukaryote evolutionary branches. Despite 
+its common origin this clade exhibits a wide diversity of lifestyles 
+including free-living and parasitic species and species with multicellular 
+and multinucleate life stages. In this group, development, cooperation, 
+and social behaviour can be studied in addition to traits common to 
+unicellular organisms. To date, only a few Amoebozoa genomes have 
+been sequenced completely, however a number of expressed 
+sequence tags (ESTs) and complete and draft genomes have become 
+available recently for several species that represent some of the major 
+evolutionary lineages in this clade. This resource allows us to compare 
+and analyse the evolutionary history and fate of branch-specific genes 
+if properly exploited. Despite the large evolutionary time scale since the 
+emergence of the major groups the genomic organization in Amoebozoa 
+has retained common features. The number of Amoebozoa-specific 
+genetic inventions seems to be rather small. The emergence of subgroups 
+is accompanied by gene and domain losses and acquisitions of bacterial 
+gene material. The sophisticated developmental cycles of Myxogastria 
+and Dictyosteliida likely have a common origin and are deeply rooted in 
+amoebozoan evolution. In this review we describe initial approaches to 
+comparative genomics in Amoebozoa, summarize recent findings, and 
+identify goals for further studies.
+
+
+Submitted by Gernot Gloeckner [gernot.gloeckner@uni-koeln.de]
+---------------------------------------------------------------------------
+
+
+Delineating the Core Regulatory Elements Critical for Directed Cell
+Migration by Examining Folic Acid-Mediated Responses
+
+Srinivasan, K.(a), Wright, G.(a), Hames, N.(a), Housman, M.(a),
+Roberts, A.(a), Aufderheide, K.J.(b), and Chris Janetopoulos(a)
+
+(a) Department of Biological Sciences, Vanderbilt University,
+Nashville, TN 37232, USA.
+(b) Department of Biology, Texas A&M University, College Station, 
+TX 77843, USA.
+
+
+J Cell Sci., in press
+
+Dictyostelium discoideum shows chemotaxis towards folic acid (FA)
+throughout vegetative growth, and towards cAMP during development. 
+We determined the spatio-temporal localization of cytoskeletal and
+signaling molecules and investigated the FA-mediated responses in a
+number of signaling mutants to further our understanding of the core
+regulatory elements that are critical for cell migration. Proteins
+enriched in the pseudopods during chemotaxis also re-localize
+transiently to the plasma membrane (PM) during uniform FA stimulation.
+Alternatively, proteins that are absent from the pseudopods during
+migration re-distribute transiently from the PM to the cytosol when
+cells are globally stimulated with FA. These chemotactic responses to
+FA were also examined in cells lacking the GTPases Ras C and G. 
+While Ras and Phosphoinositide 3-Kinase activity were significantly
+decreased in Ras G and Ras C/G nulls, these mutants still migrated to
+FA, indicating that other pathways must support FA-mediated
+chemotaxis. We also examined the spatial movements of PTEN to uniform
+FA and cAMP stimulation in Phospholipase C (PLC) null cells. The lack
+of PLC strongly influences the localization of PTEN in response to FA,
+but not cAMP.
+
+In addition, we compared the gradient sensing behavior of polarized
+cells migrating towards cAMP to that of unpolarized cells migrating
+towards FA.  The majority of polarized cells make U turns when the
+cAMP gradient is switched from the front of the cell to the rear.
+Conversely, unpolarized cells immediately extend pseudopods towards
+the new FA source. We also observed that PM PI(3,4,5)P3 levels
+oscillate in unpolarized cells treated with Latrunculin-A, while
+polarized cells had stable PM PI(3,4,5)P3 responses toward the
+chemoattractant gradient source. Similar findings were found in 4 hour
+starved cells where there was a mixture of polarized and unpolarized
+cells responding to cAMP. Taken together, these findings suggest that
+similar components control gradient sensing during FA and
+cAMP-mediated motility, but polarized cells have an easier time
+forming a stabilized response which ultimately helps maintain their
+directionality.
+ 
+
+Submitted by Chris Janetopoulos [c.janetopoulos@vanderbilt.edu]
+---------------------------------------------------------------------------
+
+
+A kinesin-mediated mechanism that couples centrosomes to nuclei  
+
+Tikhonenko, I, Magidson, V, Graef, R, Khodjakov, A, and Koonce, M.P.
+
+Division of Translational Medicine,Wadsworth Center and Department 
+of Cell Biology, University of Potsdam, 
+
+
+Cell Mol Life Science, in press
+
+The M-type kinesin isoform, Kif9, has recently been implicated in 
+maintaining a physical connection between the centrosome and 
+nucleus in Dictyostelium discoideum. However, the mechanism by 
+which Kif9 functions to link these two organelles remains obscure. 
+Here we demonstrate that the Kif9 protein is localized to the nuclear 
+envelope and is concentrated in the region underlying the centrosome 
+point of attachment. Nuclear anchorage appears mediated through a 
+specialized transmembrane domain located in the carboxyl terminus. 
+Kif9 interacts with microtubules in in vitro binding assays and effects 
+an endwise depolymerization of the polymer. These results suggest a 
+model whereby Kif9 is anchored to the nucleus and generates a pulling 
+force that reels the centrosome up against the nucleus. This is a novel 
+activity for a kinesin motor, one important for progression of cells into 
+mitosis and to ensure centrosome-nuclear parity in a multinuclear 
+environment. 
+
+
+Submitted by Mike Koonce [koonce@wadsworth.org]
+---------------------------------------------------------------------------
+
+
+The adhesion modulation protein, AmpA localizes to an endocytic 
+compartment and influences substrate adhesion, actin polymerization 
+and endocytosis in vegetative Dictyostelium cells
+ 
+Noratel, E.F., Petty, C.L. Kelsey, J.S., Cost, H.H., Basappa, N. 
+and Blumberg, D.D.
+ 
+Department of Biological Sciences, University of Maryland, Baltimore 
+County, 1000 Hilltop Circle, Baltimore, Maryland 21250
+
+
+BMC-Cell Biology, in press
+ 
+Background: AmpA is a secreted 24Kd protein that has pleiotropic 
+effects on Dictyostelium development. Null mutants delay development 
+at the mound stage with cells adhering too tightly to the substrate. 
+Prestalk cells initially specify as prespore cells and are delayed in their 
+migration to the mound apex.  Extracellular AmpA can rescue these 
+defects, but AmpA is also necessary in a cell autonomous manner for 
+anterior like cells (ALCs) to migrate to the upper cup. The ALCs are 
+only 10% of the developing cell population making it difficult to study 
+the cell autonomous effect of AmpA on the migration of these cells. 
+AmpA is also expressed in growing cells, but, while it contains a 
+hydrophobic leader sequence that is cleaved, it is not secreted from 
+growing cells. This makes growing cells an attractive system for 
+studying the cell autonomous function of AmpA. 
+Results: In growing cells AmpA plays an environment dependent 
+role in cell migration. Excess AmpA facilitates migration on soft, 
+adhesive surfaces but hinders migration on less adhesive surfaces. 
+AmpA also effects the level of actin polymerization. Knockout cells 
+polymerize less actin while over expressing cells polymerize more 
+actin than wild type.  Overexpression of AmpA also causes an 
+increase in endocytosis that is traced to repeated formation of 
+multiple endocytic cups at the same site on the membrane.  
+Immunofluorescence analysis shows that AmpA is found in the 
+Golgi and colocalizes with calnexin and the slow endosomal 
+recycling compartment marker, p25, in a perinuclear compartment. 
+AmpA is found on the cell periphery and is endocytically recycled 
+to the perinuclear compartment. 
+Conclusion: AmpA is processed through the secretory pathway 
+and traffics to the cell periphery where it is endocytosed and 
+localizes to what has been defined as a slow endosomal recycling 
+compartment. AmpA plays a role in actin polymerization and cell 
+substrate adhesion.  
+
+ 
+Submitted by Daphne Blumberg  [blumberg@umbc.edu] 
+==============================================================
+[End dictyNews, volume 38, number 27]

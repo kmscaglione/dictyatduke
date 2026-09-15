@@ -1,0 +1,95 @@
+Dicty News
+Electronic Edition
+Volume 20, number 3
+March 1, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+Villidin, a novel WD-repeat and villin related protein from 
+Dictyostelium, is associated with membranes and the cytoskeleton
+
+Annika Gloss, Francisco Rivero, Nandkumar Khaire, Rolf Mller, William 
+F. Loomis, Michael Schleicher and Angelika A. Noegel
+
+Mol. Biol. Cell, in press
+
+Villidin is a novel multidomain protein (190 kDa) from Dictyostelium 
+amoebae containing WD repeats at its N-terminus , three PH domains in 
+the middle of the molecule, five gelsolin-like segments at the C-terminus, 
+followed by a villin-like headpiece. Villidin mRNA and protein are present 
+in low amounts during growth and early aggregation, but increase during 
+development and reach their highest levels at the tipped mound stage. The 
+protein is present in the cytosol as well as in the cytoskeletal and 
+membrane fractions. GFP-tagged full length villidin exhibits a similar 
+distribution as native villidin including a distinct colocalization with 
+Golgi structures. Interestingly, GFP fusions with the gelsolin/villin-like 
+region are uniformly dispersed in the cytoplasm, whereas GFP fusions of 
+the N-terminal WD repeats codistribute with F-actin and are associated 
+with the Triton-insoluble cytoskeleton. Strains lacking villidin due to 
+targetted deletion of its gene grow normally and can develop into fruiting 
+bodies. However, cell motility is reduced during aggregation and phototaxis 
+is impaired in the mutant strains. We conclude that villidin harbors a 
+major F-actin binding site in the putative propellerN-terminal domain and 
+not in the villin-like region as expected; association of villidin with 
+vesicular membranes suggests that the protein functions as a linker between 
+membranes and the actin cytoskeleton.
+
+----------------------------------------------------------------------------
+
+Changing patterns of gene expression in prestalk cell subtypes of 
+Dictyostelium recognized by in situ hybridization with genes from 
+microarray analyses.
+
+Mineko Maeda1*, Haruyo Sakamoto1, Negin Iranfar2, Danny Fuller2, Toshinari 
+Maruo1, Satoshi Ogihara1, Takahiro Morio3, Hideko Urushihara 3, Yoshimasa 
+Tanaka 3, and William F. Loomis 2*
+
+1) Department of Biology, Graduate School of Science, Osaka University, 
+Machikaneyama 1-16, Toyonaka, Osaka 560-0043, Japan,
+2) Cell and Developmental Biology, Division of Biological Sciences,
+University of California San Diego, 9500 Gilman Drive, La Jolla, CA92093, 
+USA
+3) Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki 
+305-8572, Japan
+
+Eukaryotic Cell (in press)
+
+ABSTRACT
+
+We used microarrays carrying most of the genes that are developmentally 
+regulated in Dictyostelium to discover those that are preferentially expressed 
+in prestalk cells. Prestalk cells are localized at the front of slugs and 
+play crucial roles in morphogenesis and slug migration. Using whole-mount 
+in situ hybridization we were able to verify 104 prestalk genes.  Three of 
+these were found to be expressed only in cells at the very front of slugs, 
+the PstA cell type.  Another 10 genes were found to be expressed in the small 
+number of cells that form a central core at the anterior, the PstAB cell 
+type. The rest of the prestalk specific genes are expressed in PstO cells 
+that are found immediately posterior to PstA cells but anterior to 80% of 
+the slug that consists of prespore cells. Half of these are also expressed 
+in PstA cells.  At later stages of development the patterns of expression 
+for a considerable number of these prestalk genes changes significantly 
+allowing us to further subdivide them. Some are expressed at much higher 
+levels during culmination while others are repressed. These results 
+demonstrate the extremely dynamic nature of cell type specific expression 
+in Dictyostelium and further define the changing physiology of the cell 
+types.  One of the signals that affect gene expression in PstO cells is 
+the hexaphenone DIF-1. We found that expression of about half of the PstO 
+specific genes were affected in a mutant that is unable to synthesize 
+DIF-1, while the rest appeared to be DIF- independent. These results 
+indicate that differentiation of some aspects of PstO cells can occur in 
+the absence of DIF-1.
+
+----------------------------------------------------------------------------
+
+[End Dicty News, volume 20, number 3]
+
+ 

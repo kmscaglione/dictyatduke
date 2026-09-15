@@ -1,0 +1,205 @@
+Dicty News
+Electronic Edition
+Volume 18, number 11
+June 15, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+======================
+  Position Available
+======================
+
+Research Assistant 1A, Department of Biological Sciences, Imperial 
+College of Science, Technology and Medicine
+
+Salary range 19,681 - 21,503 plus 2,134 London Allowance per annum
+
+Our Cell Dynamics group is located in the Sir Alexander Fleming Building, 
+South Kensington campus which offers excellent research facilities in 
+modern laboratories, including state-of the-art instrumentation.
+
+Applications are invited for the post of Research Assistant 1A 
+(postdoctoral level) in our young and dynamic group to study the molecular 
+and cellular functions of a myosin I in actin polymerisation, cell cortex 
+dynamics and motility. Our aim is to understand the cellular and molecular 
+mechanims of cell motility, and particularly the function of actin-
+dependent molecular motors. We previously demonstrated that MyoK, a class 
+I myosin from Dictyostelium, plays an important role in the maintenance of 
+cell cortex tension, motility and phagocytosis. As the components of the 
+complex machineries involved are evolutionarily conserved, their molecular 
+and cellular dissection in Dictyostelium is directly relevant to unravel 
+their functional importance in higher organisms. A description of this 
+and other projects of the group is available at: 
+
+http://www.bio.ic.ac.uk/research/tps/
+
+The candidate should be motivated and enthusiastic about this area of 
+research. Proficiency in a variety of techniques, including cell culture, 
+single cell assays, genetic screenings, recombinant protein expression, 
+biophysical and enzymatic assays, and in a range of standard molecular 
+biology and biochemistry methods will be a determining asset for the 
+successful candidate.
+
+For further details, please contact Dr. Thierry Soldati, Department of 
+Biological Sciences, Imperial College of Science, Technology and Medicine, 
+Exhibition Road, London, SW7 2AZ. E-mail t.soldati@ic.ac.uk. To apply, 
+please, send a full CV, a description of current research and interests, 
+and the name of two referees at the same address. Closing date July 15.
+
+The work is supported by a BBSRC Research Grant for 3 years. The position 
+is available immediately or upon other agreement.
+
+The College is committed to equality of opportunity.
+
+
+=============
+  Abstracts
+=============
+
+Visualising PI3 kinase mediated cell-cell signalling during Dictyostelium 
+development 
+
+Dirk Dormann, Gerti Weijer, Carole A. Parent, Peter N. Devreotes and 
+Cornelis J. Weijer 
+
+Current Biology, in press 
+
+Background.  Starving amoebae of Dictyostelium discoideum communicate by 
+relaying extracellular cAMP signals, which direct chemotactic movement, 
+resulting in the aggregation of thousands of cells into multicellular 
+aggregates. Both cAMP relay and chemotaxis require the activation of PI3 
+kinase signalling. The spatio-temporal dynamics of PI3 kinase signalling 
+can be followed in individual cells via the cAMP induced membrane 
+recruitment of a GFP tagged PH-domain containing protein, CRAC, which is 
+required for the activation of adenylylcyclase.
+
+Results.  We show that polarised periodic CRAC-GFP translocation occurs 
+during the aggregation and mound stages of development in response to 
+periodic cAMP signals. The duration of CRAC translocation to the membrane 
+is determined by the duration of the rising phase of the cAMP signal. The 
+system shows fast adaptation and responds to the rate of change of the 
+extracellular cAMP concentration. When the cells are in close contact it 
+takes 10 seconds for the signal to propagate from one cell to the next. 
+In slugs all cells show a permanent polarised PI3 kinase signalling in 
+their leading edge, which is dependent on cell-cell contact. 
+
+Conclusions.  Measuring the redistribution of GFP tagged CRAC has enabled 
+us to study the dynamics of PI3 kinase mediated cell-cell communication 
+at the individual cell level in the multicellular stages of Dictyostelium 
+development. This approach should also be useful to study the interactions 
+between cell-cell signalling, cell polarisation and movement in the 
+development other organisms. 
+
+-----------------------------------------------------------------------------
+
+Dictyostelium mobile elements: strategies to amplify in a compact genome
+
+Thomas Winckler(1), Theodor Dingermann(1) and Gernot Glckner(2)
+
+(1) Institut fuer Pharmazeutische Biologie, Universitaett Frankfurt/M. 
+(Biozentrum), Marie-Curie-Strasse 9, D-60439 Frankfurt am Main, Germany and 
+(2) IMB Jena, Department of Genome Analysis, Beutenbergstrasse 11, D-07745 
+Jena, Germany
+
+Review, Cell. Mol. Life Sci., in press
+
+Dictyostelium discoideum is a eukaryotic microorganism that is attractive for 
+the study of  fundamental biological phenomena such as cell-cell 
+communication, formation of multicellularity, cell differentiation, and 
+morphogenesis. Large-scale sequencing of the D. discoideum genome has 
+provided new insights into evolutionary strategies evolved by transposable 
+elements (TEs) to settle in compact microbial genomes and to maintain active 
+populations over evolutionary time. The high gene density (about 1 gene/2.6 
+kb) of the D. discoideum genome leaves limited space for selfish molecular 
+invaders to move and amplify without causing deleterious mutations that 
+eradicate their host. Targeting of tRNA gene loci appears to be a generally 
+successful strategy for TEs residing in compact genomes to insert away from 
+coding regions. In D. discoideum tRNA gene-targeted retrotransposition has 
+evolved independently at least three times by both non-long terminal repeat 
+(LTR) retrotransposons and retrovirus-like LTR retrotransposons. Unlike the 
+nonspecifically inserting D. discoideum TEs, which have a strong tendency to 
+insert into preexisting TE copies and form large and complex clusters near 
+the ends of chromosomes, the tRNA gene-targeted retrotransposons have managed 
+to occupy 75% of the tRNA gene loci spread on chromosome 2 and represent 80% 
+of the TEs recognized on the assembled central 6.5 Mb part of chromosome 2. 
+In this review we update the available information about D. discoideum TEs 
+which emerges both from previous work and current large-scale genome 
+sequencing with special emphasis on the fact that tRNA genes are principle 
+determinants of retrotransposon insertions into the D. discoideum genome.
+
+-----------------------------------------------------------------------------
+
+Ga-Mediated Inhibition of Developmental Signal-Response
+
+Joseph A. Brzostowski, Cynthia Johnson + and Alan R. Kimmel
+
+Laboratory of Cellular and Developmental Biology, NIDDK (Bldg. 50/3351) 
+National Institutes of Health, Bethesda, MD 20892-8028.  +The University of 
+Texas Southwestern Medical Center Dallas, TX 75390. ark@helix.nih.gov
+
+Current Biology, in press.
+
+SUMMARY
+
+Background: Seven-transmembrane receptor (7-TMR)-G protein networks are 
+molecular sensors of extracellular signals in all eukarya. These pathways 
+cycle through activated (sensitized) and inhibited (de-sensitized) states, 
+and, while many of the molecular components for signal activation have been 
+described, inhibitory mechanisms are not well characterized. In Dictyostelium, 
+7-TM cAMP receptors direct chemotaxis and development, but also regulate the 
+periodic synthesis of their own ligand, the chemoattractant/morphogen cAMP. 
+We now demonstrate through loss-of-function, gain-of -function studies that 
+the novel heterotrimeric Ga9 protein subunit regulates an inhibitory pathway 
+during early Dictyostelium development for cAMP signal-response.
+
+Results: ga9-null cells form more cAMP signaling centers, are more resistant 
+to compounds that inhibit cAMP signaling, and complete aggregation sooner and 
+at lower cell densities than wild-type. These phentoypes are consistent with 
+the loss of an inhibitory signaling pathway during development of ga9-null 
+cells. Cells expressing constitutively activated Ga9 are defective in cAMP 
+signal center formation and development at low cell density and display an 
+increased sensitivity to cAMP signal inhibition that is characteristic of 
+enhanced suppression of cAMP signal-response. Finally, we demonstrate that 
+ga9-null cells, which have been co-developed with a majority of wild-type 
+cells, primarily establish cAMP signaling centers and are able to non-
+autonomously direct wild-type cells to adopt a ga9-null-like phenotype.
+
+Conclusions: We suggest that Ga9 functions in an inhibitory-feedback pathway 
+that regulates cAMP signal center formation and propagation. Ga9 may be part 
+of the mechanism that regulates lateral signal inhibition or that modulates 
+receptor de-sensitization.
+
+-----------------------------------------------------------------------------
+
+Cell polarity and locomotion, as well as endocytosis, depend on NSF.
+
+Chris R.L. Thompson and Mark S. Bretscher
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 2QH, England.
+
+Development, in press
+
+NEM-sensitive factor (NSF) is an essential protein required during membrane 
+transport. We replaced part of the endogenous D. discoideum NSF gene (nsfA) 
+by a pcr-mutagenised library and isolated 11 mutants temperature-sensitive 
+(ts) for growth. Two of these have been studied in detail. As expected, both 
+are ts for FITC-dextran uptake by macropinocytosis, for internalising their 
+surface membrane (monitored with FM1-43) and for phagocytosis. However, 
+after 10-20 minutes at 28C, they round up and cease to chemotax, move or 
+cap ConA receptors. They fully recover when returned to 22C. These cells 
+carry out a normal "cringe" reaction in response to cAMP, indicating that 
+the actin cytoskeleton and this signal transduction pathway are still 
+functional at 28C . The behaviour of these mutants shows that NSF-catalysed 
+processes are required not only for the different endocytic cycles but also 
+for the maintenance of cell polarity. As cell locomotion depends on a cell 
+having a polarity, the mutants stop moving at high temperature. A tentative 
+model is proposed to explain the surprising link between membrane recycling 
+and cell polarity revealed here.
+ 
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 11]
+
+ 

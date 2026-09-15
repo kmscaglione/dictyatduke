@@ -1,0 +1,142 @@
+Dicty News
+Electronic Edition
+Volume 24, number 7
+March 18, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Effects of valproic acid derivatives on inositol trisphosphate depletion,
+teratogenicity, GSK-3{beta} inhibition and viral replication -
+A screening approach for new bipolar disorder drugs based on the valproic
+acid core structure.
+
+Eickholt BJ, Towers G, Ryves WJ, Eikel D, Adley K, Ylinen L, Chadborn N,
+Harwood A, Nau H, Williams RS
+
+Molecular Neurobiology Group (E.B.J., N.H.C.), Medical Research Council
+Centre for Developmental Biology, Kingâs College London, London SE1 1UL,
+United Kingdom. 
+Wohl Virion Centre (G.J.T., L.M.J.Y.), Department of Immunology and
+Molecular Pathology, University College London, W1T 4JF, United Kingdom. 
+Medical Research Council Laboratory of Molecular Cell Biology (W.J.R,
+A.J.H.) University College London, WC1E6BT, United Kingdom.
+Institute for Food Toxicology and Chemical Analysis (D.E., H.N.) Centre of
+Systemic Neuroscience, School of Veterinary Medicine Hanover,
+30169 Hanover, Germany. 
+Department of Biology and Wolfson Institute for Biomedical Research (K.A,
+R.S.B.W.), University College London, WC1 E6BT, United Kingdom.
+
+
+Mol Pharmacol, in press
+
+Inositol trisphosphate (InsP3) depletion has been implicated in the
+therapeutic action of bipolar disorder drugs including valproic acid (VPA).
+It is not currently known if the effect of VPA on InsP3 depletion is related
+to the deleterious effects of teratogenicity or elevated viral replication or
+if it occurs via putative inhibitory effects on Glycogen Synthase Kinase-3beta
+(GSK-3beta). In addition, the structural requirements of VPA-related compounds
+to cause InsP3 depletion are unknown. In the current study we have selected a
+set of 10 VPA congeners to examine their effects on InsP3 depletion, in vivo
+teratogenic potency and their effects on HIV replication and GSK-3beta
+activity in vitro. We found four compounds that function to deplete InsP3 in
+the model eukaryote Dictyostelium discoideum and these drugs all cause growth
+cone enlargement in mammalian primary neurons, consistent with the effect of
+InsP3 depletion. No relationship was found between InsP3 depletion and
+teratogenic or elevated viral replication effects and none of the VPA
+congeners were found to affect GSK-3beta activity. Structural conditions for
+InsP3 depletion of VPA congeners are a carboxylic acid function without
+dependence on side chain length, branching or saturation. Noteworthy is the
+enantiomeric differentiation if a chiral centre exists, suggesting that
+InsP3 depletion is mediated by a stereo selective mode of action. Thus the
+effect of inositol depletion can be separated from that of teratogenic
+potency and elevated viral replication effect. We have used this to identify
+two VPA derivatives which share the common InsP3-depleting action of VPA,
+lithium and carbamazepine but do not show the side effects of VPA, thus
+providing promising novel candidates for bipolar disorder treatment.
+
+
+Submitted by: Robin Williams [robin.williams@ucl.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+NADPH oxidase homologs are required for normal cell differentiation and
+morphogenesis in Dictyostelium discoideum 
+
+Bernard Lardy, Mireille Bof, Laurence Aubry, Marie Helene Paclet,
+Francoise Morel, Michel Satre and Gerard Klein
+
+
+BBA Molecular Cell Research, in press
+
+Membrane-associated NADPH oxidase complexes catalyse the production of the 
+superoxide anion radical from oxygen and NADPH. In mammalian systems, NADPH
+oxidases form a family of at least seven isoforms that participate in host
+defence and signalling pathways. We report here the cloning and the
+characterisation of slime mould Dictyostelium discoideum homologs of the
+mammalian heme-containing subunit of flavocytochrome b (gp91phox) (NoxA,
+NoxB and NoxC), of the small subunit of flavocytochrome b (p22phox) and of
+the cytosolic factor p67phox. Null-mutants of either noxA, noxB, noxC or
+p22phox show aberrant starvation-induced development and are unable to 
+produce spores. The overexpression of NoxAmyc2 in noxA null strain restores
+spore formation. Remarkably, the gene alg-2B, coding for one of the two
+penta EF-hand proteins in Dictyostelium, acts as a suppressor in noxA, noxB,
+and p22phox null-mutant strains. Knockout of alg-2B allows noxA, noxB or
+p22phox null-mutants to return to normal development. However, the knockout
+of gene encoding NoxC, which contains two penta EF-hands, is not rescued
+by the invalidation of alg-2B. These data are consistent with a hypothesis
+connecting superoxide and calcium signalling during Dictyostelium development.
+
+
+Submitted by: Bernard Lardy [BLardy@chu-grenoble.fr]
+
+-----------------------------------------------------------------------------
+
+
+Phospholipase D activity is essential for actin localization and actin-based
+motility in Dictyostelium
+
+
+Soha Zouwail, Trevor R.Pettitt*, Stephen K. Dove, Margarita V.
+Chibalina1, Dale J. Powner*, Lee Haynes*2, Michael J. O. Wakelam*
+and Robert H. Insall**
+
+
+Biochem. J., in press
+
+Phospholipase D (PLD) activity catalyzes the generation of the lipid messenger
+phosphatidic acid, which has been implicated in a number of cellular processes,
+particularly the regulation of membrane traffic. In this study, we report that
+disruption of PLD signalling causes unexpectedly profound effects on the
+actin-based motility of Dictyostelium. Cells in which PLD activity is inhibited
+by butan-1-ol show a complete loss of actin-based structures, accompanied by
+relocalization of F-actin into small clusters, and eventually the nucleus,
+without a visible drop in levels of F-actin. Addition of exogenous phosphatidic
+acid reverses the effects of butan-1-ol, confirming that these effects are
+caused by inhibition of PLD. Loss of motility correlates with complete
+inhibition of endocytosis and a reduction in phagocytosis. Inhibition of PLD
+caused a major decrease in the synthesis of PtdIns(4,5)P2, which could again
+be reversed by exogenously applied phosphatidic acid. Thus the essential role
+of PLD signalling in both motility and endocytosis appears to be directly
+mediated via regulation of PtdIns(4)P kinase activity. This implies that
+localized, PLD-regulated synthesis of PtdIns(4,5)P2 is essential for
+Dictyostelium actin function.
+
+
+Submitted by: Robert Insall [r.h.insall@bham.ac.uk]
+
+==============================================================================
+[End Dicty News, volume 24, number 7] 

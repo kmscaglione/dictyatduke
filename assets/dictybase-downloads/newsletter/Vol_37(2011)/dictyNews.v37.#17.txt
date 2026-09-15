@@ -1,0 +1,177 @@
+dictyNews
+Electronic Edition
+Volume 37, number 17
+December 23, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Understanding the Cooperative Interaction between Myosin II and Actin 
+Crosslinkers Mediated by Actin Filaments during Mechanosensation
+
+Tianzhi Luo,1, Krithika Mohan,3 Vasudha Srivastava,1,4 Yixin Ren,1 
+Pablo A. Iglesias,3 and Douglas N. Robinson1,2,4
+
+1 Department of Cell Biology and 2 Department of Pharmacology and 
+Molecular Science, School of Medicine, Johns Hopkins University, 
+Baltimore, MD, 21205, USA
+3 Department of Electrical and Computer Engineering and 4 Department 
+of Chemical and Biomolecular Engineering, Whiting School of Engineering, 
+Johns Hopkins University, Baltimore, MD, 21218, USA
+
+
+Biophysical Journal, in press
+
+Myosin II is a central mechanoenzyme in a wide range of cellular morphogenic 
+processes.  Its cellular localization is dependent not only on signal transduction 
+pathways, but also on mechanical stress.  We suggest that this stress-dependent 
+distribution is the result of both the force-dependent binding to actin filaments and 
+cooperative interactions between bound myosin heads.  By assuming that the 
+binding of myosin heads induces and/or stabilizes local conformational changes 
+in the actin filaments which enhances myosin II binding locally, we successfully 
+simulate the cooperative binding of myosin to actin observed experimentally. In 
+addition, we can interpret the cooperative interactions between myosin and 
+actin-crosslinking proteins observed in cellular mechanosensation, provided that 
+a similar mechanism operates among different proteins.  Finally, we present a 
+model that couples cooperative interactions to the assembly dynamics of myosin 
+bipolar thick filaments and that accounts for the transient behaviors of the 
+myosin II accumulation during mechanosensation.  This mechanism is likely to be 
+general for a range of myosin II-dependent cellular mechanosensory processes.
+
+
+Submitted by Doug Robinson [dnr@jhmi.edu>]
+--------------------------------------------------------------------------------------
+
+
+A New Biological Strategy for Drug Delivery: Eucaryotic Cell-Derived 
+Nanovesicles
+
+Irène Tatischeff 1,  Annette Alfsen2
+
+1 Laboratoire Acides Nucléiques et Biophotonique (CNRS, UPMC), 
+F-75252 Paris, France
+2 CNRS UMR8104, INSERM, U567, Institut Cochin, Département de Biologie 
+Cellulaire, Université Paris-Descartes, F-75014 Paris, France 
+
+
+Journal of Biomaterials and Nanobiotechnology, 
+Special Issue on Drug Delivery, in press.
+	
+An efficient drug delivery is the prerequisite of the successful chemotherapeutic 
+treatments of many human diseases. Despite a great number of approaches, 
+the improvement of drug cell internalization remains an actual research challenge. 
+We propose a new biological delivery system based on the extracellular vesicles 
+released by a non-pathological eukaryotic microorganism, Dictyostelium discoideum. 
+After a summary of the main characteristics of these extracellular vesicles, including 
+of their lipid bilayer that appears as a good candidate for initiating membrane fusion, 
+followed by delivery of their encapsulated drug, the capacity of these vesicles to 
+convey drugs into human cells was demonstrated in vitro on two tumor cell lines, 
+resistant leukaemia K562r and cervix carcinoma HeLa cells. A comparison with 
+other extracellular vesicles, like exosomes or bacteria-derived particles, stresses 
+the unique properties of Dictyostelium extracellular nanovesicles for drug delivery.
+
+	
+Submitted by Irene Tatischeff [irene.tatischeff@upmc.fr]
+--------------------------------------------------------------------------------------
+
+
+Pleiotropic Roles of a Ribosomal Protein in Dictyostelium discoideum 
+
+Smita Amarnath 1, Trupti Kawli 1, Smita Mohanty 3, Narayanaswamy 
+Srinivasan 3 and Vidyanand Nanjundiah 2
+
+1Joint first authors; e-mail: smita-nms@mail.utexas.edu  and trupti@stanford.edu)
+2Department of Molecular Reproduction, Development and Genetics
+3 Molecular Biophysics Unit,
+Indian Institute of Science, Bangalore 560012, INDIA
+
+
+PLOS One, accepted
+
+When expressed in Saccharomyces cerevisiae, a D. discoideum cDNA that 
+encodes the ribosomal protein S4 (DdS4) can rescue the phenotypic effects 
+of mutations in three cell cycle genes. The products of the genes in question, 
+cdc24, cdc42 and bem-1, affect morphogenesis in yeast via a coordinated 
+moulding of the cytoskeleton during bud site selection. Computational analysis 
+and mutational studies indicate how this might be achieved: an SH3 domain in 
+the yeast scaffold protein Bem-1p is central to constructing the bud site selection 
+complex, and a C-terminal domain in DdS4 is the functional equivalent of the 
+SH3 domain. In D. discoideum itself, cells that over- or under-express DdS4 do 
+not show detectable changes in protein synthesis. However, they display 
+developmental aberrations that are both similar and graded according to the 
+extent of over- or under-expression. This suggested to us that DdS4 might 
+influence morphogenesis via a stoichiometric effect – specifically, by taking 
+part in a multimeric complex similar to the one involving Cdc24p, Cdc42p and 
+Bem-1p in yeast. In support of the hypothesis, the S. cerevisiae proteins Cdc24p, 
+Cdc42p and Bem-1p as well as their D. discoideum cognates could be 
+co-precipitated with antibodies to DdS4. The implication is that DdS4 has at 
+least two functions in the cell. The first, vital, role is as part of the small subunit 
+of the ribosome. The second, ‘moonlighting’, role of DdS4 is as part of another 
+multi-protein complex. An adaptation that (presumably) evolved for the second 
+role enables it fortuitously to rescue a set of cell cycle mutants in yeast. We 
+speculate that the second role acts as a built-in safeguard against the potentially 
+lethal consequences of sub-optimal ribosomal activity that might be caused by 
+spontaneous variations in DdS4 levels.
+
+
+Submitted by Smita Amarnath [smita.smitar@gmail.com]
+--------------------------------------------------------------------------------------
+
+
+Colchicine affects cell motility, pattern formation and stalk cell differentiation 
+in Dictyostelium by altering calcium signaling
+
+Yekaterina Poloz 1 and Danton H. O'Day 1,2
+
+1 Department of Cell & Systems Biology, 25 Harbord Street, University of Toronto, 
+Toronto, ON, Canada  M5S 3G5
+
+2 Department of Biology, University of Toronto at Mississauga, 3359 Mississauga 
+Road Mississauga, ON, Canada   L5L 1C6
+
+
+Differentiation, in press
+
+Previous work, verified here, showed that colchicine affects Dictyostelium pattern 
+formation, disrupts morphogenesis, inhibits spore differentiation and induces terminal 
+stalk cell differentiation. Here we show that colchicine specifically induces ecmB 
+expression and enhances accumulation of ecmB-expressing cells at the posterior 
+end of multicellular structures. Colchicine did not induce a nuclear translocation of 
+DimB, a DIF-1 responsive transcription factor in vitro. It also induced terminal stalk 
+cell differentiation in a mutant strain that does not produce DIF-1 (dmtA-) and after 
+the treatment of cells with DIF-1 synthesis inhibitor cerulenin (100 uM). This suggests 
+that colchicine induces the differentiation of ecmB-expressing cells independent of 
+DIF-1 production and likely through a signaling pathway that is distinct from the one 
+that is utilized by DIF-1. Depending on concentration, colchicine enhanced random 
+cell motility, but not chemotaxis, by 3-5 fold (10-50 mM colchicine, respectively) 
+through a Ca+2-mediated signaling pathway involving phospholipase C, calmodulin 
+and heterotrimeric G proteins. Colchicine’s effects were not due to microtubule 
+depolymerization as other microtubule-depolymerizing agents did not have these 
+effects. Finally normal morphogenesis and stalk and spore cell differentiation of 
+cells treated with 10 mM colchicine were rescued through chelation of Ca+2 by 
+BAPTA-AM and EDTA and calmodulin antagonism by W-7 but not PLC inhibition 
+by U-73122. Morphogenesis or spore cell differentiation of cells treated with 50 mM 
+colchicine could not be rescued by the above treatments but terminal stalk cell 
+differentiation was inhibited by BAPTA-AM, EDTA and W-7, but not U-73122. Thus 
+colchicine disrupts morphogenesis and induces stalk cell differentiation through a 
+Ca+2-mediated signaling pathway involving specific changes in gene expression 
+and cell motility. 
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+==============================================================
+[End dictyNews, volume 37, number 17]

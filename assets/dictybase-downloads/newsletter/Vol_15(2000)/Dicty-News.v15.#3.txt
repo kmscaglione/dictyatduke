@@ -1,0 +1,143 @@
+Dicty News
+Electronic Edition
+Volume 15, number 3
+July 27, 2000
+
+
+***Special Pre Meeting Edition***
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty"
+
+==============
+  Abstracts
+==============
+
+Spontaneous symmetry breaking Turing-type pattern formation in a confined
+Dictyostelium cell mass
+
+Satoshi Sawai1, Yasuo Maeda2 and Yasuji Sawada3
+
+1Graduate School of Information Sciences, Tohoku University, Katahira,
+Sendai 980-8577, 2Biological Institute, Graduate School of Science, Tohoku
+University, Aoba, Sendai 980-8578, and 3Research Institute of Electrical
+Communication, Tohoku University, Katahira, Sendai 980-8577, Japan.
+
+Phys. Rev. Lett., in press
+
+Summary
+
+   We have discovered a new type patterning which occurs in a two
+dimensionally confined cell mass of the cellular slime mold Dictyostelium
+discoideum. Adding to the longitudinal structure reported earlier, we
+observed a spontaneous symmetry breaking spot pattern whose wavelength show
+a similar strain dependency to that of the longitudinal one. We propose
+these structures are due to a reaction-diffusion Turing instability which
+has been exemplified by CIMA(chloride-iodide-maloic acid) reaction. The
+present finding may exhibit a first biochemical Turing structure in a
+developmental system with a controllable boundary condition.
+
+----------------------------------------------------------------------------
+
+Dynacortin, a genetic link between equatorial contractility and global 
+shape control discovered by library complementation of a Dictyostelium 
+cytokinesis mutant. 
+
+Douglas N. Robinson and James A. Spudich. 
+
+Department of Biochemistry, Beckman Center, Rm. B-400, Stanford University, 
+Stanford, CA 94305-5307, USA
+
+J. Cell Biol. In press
+
+Abstract
+
+   We have developed a system for performing interaction genetics in 
+Dictyostelium discoideum that uses a cDNA library complementation/multicopy 
+suppression strategy.  Chemically-mutagenized cells were screened for 
+cytokinesis-deficient mutants and one mutant was subjected to library 
+complementation.  Isolates of four different genes were recovered as 
+modifiers of this strain’s cytokinesis defect.  These include the cleavage 
+furrow protein cortexillin I, a novel protein we named dynacortin, an 
+ezrin-radixin-moesin-family protein, and coronin.  The cortexillin I 
+locus and transcript were found to be disrupted in the strain, identifying 
+it as the affected gene.  Dynacortin is localized partly to the cell cortex 
+and becomes enriched in protrusive regions, a localization pattern that is 
+similar to coronin and partly dependent on RacE.  During cytokinesis, 
+dynacortin is found in the cortex and is somewhat enriched at the poles.  
+Furthermore, it appears to be reduced in the cleavage furrow.  The genetic 
+interactions and the cellular distributions of the proteins suggest a 
+hypothesis for cytokinesis in which the contraction of the medial ring is 
+a function of spatially-restricted cortexillin I and myosin II and 
+globally-distributed dynacortin, coronin, and RacE.
+
+----------------------------------------------------------------------------
+
+Ca2+ signalling is not required for chemotaxis in Dictyostelium 
+
+David Traynor, Jacqueline L.S. Milne**, Robert H. Insall* and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 2QH,England
+
+*School of Biosciences, University of Birmingham, Birmingham, B15
+2TT,England
+
+**current address:
+Laboratory of Cell Biology, National Cancer Institute, Bethesda, Maryland
+20892, USA
+
+EMBO Journal, in press.
+
+ABSTRACT
+
+Dictyostelium cells can rapidly move towards a source of cyclic-AMP. This
+chemoattractant is detected by G-protein-linked receptors, which trigger a
+signalling cascade including a rapid influx of Ca2+. We have disrupted an
+InsP3 (inositol 1,4,5-trisphosphate) receptor-like gene, iplA, to produce
+null cells in which Ca2+ entry in response to chemoattractants is
+abolished, as is the normal increase in cytosolic Ca2+ that follows
+chemotactic stimulation. However, the resting cytosolic Ca2+ concentration
+is similar to wild-type. This mutant provides a test for the role of Ca2+
+influx in both chemotaxis and the signalling cascade that controls it. The
+production of cyclic-GMP, cyclic-AMP and the activation of the MAP kinase,
+DdERK2, triggered from the cyclic-AMP receptor, are little perturbed in the
+mutant; mobilization of actin into the cytoskeleton also follows similar
+kinetics to wild-type. Mutant cells chemotax efficiently towards cyclic-AMP
+or folic acid and their sensitivity to cyclic-AMP is similar to wild-type.
+Finally, they move at similar speeds to wild-type cells, with or without
+chemoattractant. We conclude that Ca2+ signalling is not necessary for
+chemotaxis to cyclic-AMP.
+
+----------------------------------------------------------------------------
+
+Identification and Characterization of Two Flavohemoglobin Genes in 
+Dictyostelium discoideum
+
+Miho Iijima, Hajime Shimizua, Yoshimasa Tanaka and Hideko Urushihara*
+
+
+Cell Structure and Function, in press.
+
+     Flavohemoglobins are being identified in an expanding number of 
+prokaryotes and unicellular eukaryotes. These molecules consist of an 
+N-terminal hemoglobin domain and a C-terminal oxidoreductase domain, and 
+are considered to function in storage or as sensors for O2, and in defense 
+against oxidative stress and/or NO. However, their physiological significance 
+has not yet been determined. Here, we isolated and analyzed two 
+flavohemoglobin genes of Dictyostelium discoideum, DdFHa and DdFHb, 
+which lie close to each other in the genome. DdFHs were induced by 
+submerged conditions, and enriched in the sexually mature cells of D. 
+discoideum. Although they were not essential for growth or development 
+under standard laboratory conditions, disruption of both genes caused an 
+increase in number of large but uninuclear cells, and hypersensitivity to 
+higher concentrations of glucose and to NO releasers. These results 
+indicate that DdFHs are responsible for transducing NO signals to maintain 
+normal cellular conditions against environmental stresses.
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 3]

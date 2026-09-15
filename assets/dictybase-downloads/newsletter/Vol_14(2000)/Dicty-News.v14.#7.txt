@@ -1,0 +1,243 @@
+Dicty News
+Electronic Edition
+Volume 14, number 7
+April 1, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+
+=============
+  Abstracts
+=============
+
+Dictyostelium, A Model Organism For Microtubule-Based Transport.
+
+Michael Koonce
+Division of Molecular Medicine, Wadsworth Center, Albany, NY 12201-0509.
+
+in press: Protist. 151 (June 2000)
+
+No abstract, but here is a paragraph from the introduction.
+
+Although investigated at a lower level than in many other cell types or
+organisms, the number of Dictyostelium microtubule-associated proteins
+characterized in the past decade has steadily increased (e.g. Kimble et al.
+1992, Sellitto et al. 1992, Kalt and Schliwa, 1996, Gräf et al. 1999).
+Recent cloning of the single copy a-, b-, and g-tubulin genes has also
+opened up several molecular avenues that increase microtubule visibility
+and manipulation (Triviños-Lagos et al. 1993a, Euteneuer et al. 1998). The
+development of an in vitro motility assay now allows detailed analyses of
+microtubule-based motor protein functions, especially when coupled with
+molecular genetic disruptions or modifications (Pollock et al. 1998, 1999).
+It seems reasonable to propose that a critical threshold of reagents has
+been assembled that will greatly facilitate investigation of
+microtubule-based movement in this organism. This mini-review focuses on
+the dynein and kinesin-like mechanoenzymes of Dictyostelium and their roles
+here in microtubule-based intracellular transport. A few recent experiments
+are also highlighted, to stress the utility of Dictyostelium as a model
+organism for microtubule-based motility.
+
+----------------------------------------------------------------------------
+
+Optimizing heterologous expression in Dictyostelium: importance of 5'
+codon adaptation
+
+Elisa B. Vervoort, Arno van Ravestein, Noël N.M.E. van Peij, Judith C.
+Heikoop, Peter J.M. van Haastert, Gijs F.Verheijden, Maarten H.K.
+Linskens
+
+Cell Engineering Facility GBB, University of Groningen, Nijenborgh 4,
+9747 AG Groningen, The Netherlands
+
+Nucleic Acids Research, in press
+
+ABSTRACT
+
+Expression of heterologous proteins in Dictyostelium discoideum presents
+unique research opportunities, such as the functional analysis of
+complex human glycoproteins after random mutagenesis. In one study,
+human chorionic gonadotropin (hCG) and human follicle stimulating
+hormone were expressed in Dictyostelium. During the course of these
+experiments, we also investigated the role of codon usage and of the DNA
+sequence upstream of the ATG start codon. The Dictyostelium genome has a
+higher AT content than the human, resulting in a different codon
+preference. The hCG-beta gene contains three clusters with infrequently
+used codons that were changed to codons that are preferred by
+Dictyostelium. The results reported here show that optimizing the first
+5-17 codons of the hCG gene contributes to 4 to 5- fold increased
+expression levels, but that further optimization has no significant
+effect. These observations suggest that optimal codon usage contributes
+to ribosome stabilization, but does not play an important role during
+the elongation phase of translation. Furthermore, adapting the 5'
+sequence of the hCG gene to the Dictyostelium 'Kozak'- like sequence
+increased expression levels about 1.5 fold. Thus, using both codon
+optimization and 'Kozak' adaptation, a 6 to 8 fold increase of
+expression levels could be obtained for hCG.
+
+----------------------------------------------------------------------------
+
+
+Inactivation of lmpA, Encoding a LIMPII-Related Endosomal Protein,
+Suppresses the Internalization and Endosomal Trafficking Defects in
+Profilin-Null Mutants
+
+Lesly Temesvari1,*, Linyi Zhang2, Brent Fodera1, Klaus-Peter Janssen3,
+Michael Schleicher3 and James A. Cardelli1,2
+
+1Feist-Weiller Cancer Center and 2Department of Microbiology and Immunology,
+Louisiana State University Medical Center, Shreveport, LA 71130 and
+3A.-Butenandt-Institut fuer Zellbiologie, Ludwig-Maximilians-Universtaet,
+80336 Muenchen, FRG.
+
+Mol. Biol. Cell, in press.
+
+ABSTRACT  
+
+Profilin is a key phosphoinositide and actin binding protein connecting and
+coordinating  changes in signal transduction pathways with alterations in
+the actin cytoskeleton.  We demonstrate using biochemical assays and
+microscopic approaches that profilin-null cells are defective in
+macropinocytosis, fluid phase efflux and secretion of lysosomal enzymes, but
+are unexpectedly more efficient in phagocytosis compared to wild-type cells.
+Disruption of the lmpA gene encoding a protein (DdLIMP) belonging to the
+CD36/LIMPII family suppressed, to different degrees, most of the profilin
+minus defects, including the increase in F-actin, but did not rescue the
+secretion defect. Immunofluorescence microscopy indicated that DdLIMP, also
+capable of binding phosphoinositides, was associated with macropinosomes,
+but not detected in the plasma membrane. Also, inactivation of the lmpA gene
+in wild-type strains resulted in defects in macropinocytosis and fluid phase
+efflux, but not in phagocytosis. These results suggest an important role for
+profilin in regulating the internalization of fluid and particles, and
+movement of material along the endosomal pathway, and demonstrate a
+functional interaction between profilin and DdLIMP that may connect
+phosphoinositide-based signaling through the actin cytoskeleton with
+endo-lysosomal membrane trafficking events.
+
+----------------------------------------------------------------------------
+
+Analysis of the promoter of the cudA gene reveals novel mechanisms of
+Dictyostelium cell type differentiation
+
+Masashi Fukuzawa and Jeffrey G. Williams*
+
+Department of Anatomy and Physiology, University of Dundee, MSI/WTB 
+Complex, Dow Street, Dundee DD1 5EH
+
+Development, in press.
+
+SUMMARY
+
+The cudA gene encodes a nuclear protein that is essential for normal
+multicellular development. At the slug stage cudA is expressed in the
+prespore cells and in a sub-region of the prestalk zone. We show that cap
+site distal promoter sequences direct cudA expression in prespore cells,
+while proximal sequences direct expression in the prestalk sub-region. The
+promoter domain that directs prespore-specific transcription consists of a
+positively acting region, that has the potential to direct expression in
+all cells within the slug, and a negatively acting region that prevents
+expression in the prestalk cells. Dd-STATa is the STAT protein that
+regulates commitment to stalk cell gene expression, where it is known to
+function as a transcriptional repressor. We show that Dd-STATa binds in
+vitro to the positively acting part of the prespore domain of the cudA
+promoter. However, Dd-STATa cannot be utilised for this purpose in vivo,
+because analysis of a Dd-STATa null mutant strain shows that Dd-STATa is
+not necessary for cudA transcription in prespore cells. In contrast, the
+part of the cudA promoter that directs prestalk-specific expression
+contains a binding site for Dd-STATa that is essential for its biological
+activity. Dd-STATa appears therefore to serve as a direct activator of cudA
+transcription in prestalk cells, while a protein with a DNA binding
+specificity highly related to that of Dd-STATa is utilised to activate cudA
+transcription in prespore cells.
+
+----------------------------------------------------------------------------
+
+Developmental changes in the spatial expression of genes involved in myosin
+function in Dictyostelium
+
+Mineko Maeda1*, Hidekazu Kuwayama1, Masako Yokoyama1, Keiko Nishio1,
+Takahiro Morio2, Hideko Urushihara2, Mariko Katoh2 Yoshimasa Tanaka2, Tamao
+Saito3, Hiroshi Ochiai3, Keiko Takemoto4, Hiroo Yasukawa5, and Ikuo
+Takeuchi6
+
+1Department of Biology, Graduate School of Science, Osaka Univ.,
+Machikaneyama 1-16, Toyonaka, Osaka 560-0043, Japan, 2Institute of
+Biological Sciences, Univ., Tsukuba, Tsukuba, Ibaraki 305-8572, Japan,
+3Division of Biological Science, Graduate School of Science, Hokkaido Univ.,
+Sapporo, Hokkaido 060-0810, Japan, 4Institute for Virus Research, Kyoto
+Univ., Kyoto 606-8507, Japan, 5Faculty of Engineering, Toyama Univ., Toyama,
+Toyama 930-8555, Japan, 6Novartis Foundation for the Promotion of Science,
+Takarazuka, Hyogo 665-0042, Japan
+
+Develop. Biol. in press.
+
+Abstract
+
+  We analyzed the spatial expression patterns of the genes involved in
+myosin function by in situ hybridization at the tipped aggregate and early
+culmination stages of Dictyostelium. Myosin heavy chain II (MHC-II) mRNA was
+enriched in the anterior prestalk region of the tipped aggregates, whereas
+it disappeared from there and began to appear in both upper and lower cups
+of the early culminants. Similarly, mRNAs for essential light chain,
+regulatory light chain, myosin light chain kinase A and myosin heavy chain
+kinase C were enriched in the prestalk region of the tipped aggregates.
+However, expression of these genes was distinctively regulated in the early
+culminants. These findings suggest the existence of mechanisms responsible
+for the expression of particular genes.
+
+----------------------------------------------------------------------------
+
+
+Differential developmental expression and cell type specificity of 
+Dictyostelium catalases and their response to oxidative stress and UV-light
+
+Ma. Xenia U. Garcia1, Christopher Foote1, Saskia van Es2, Peter N. 
+Devreotes2, Stephen Alexander1 and Hannah Alexander1
+
+1Division of Biological Sciences, University of Missouri, Columbia, 
+MO 65211-7400
+2 Department of Biological Chemistry, The Johns Hopkins University School 
+of Medicine, Baltimore, MD 21205
+
+In press, Biochimica et Biophysica Acta
+
+ABSTRACT
+
+	Cells of Dictyostelium discoideum are highly resistant to DNA 
+damaging agents such as UV-light, gamma-radiation and chemicals.  The genes 
+encoding nucleotide excision repair (NER) and base excision repair (BER) 
+enzymes are rapidly upregulated in response to UV-irradiation and DNA-damaging 
+chemicals, suggesting that this is at least partially responsible for the 
+resistance of this organism to these agents.  Although Dictyostelium is also 
+unusually resistant to high concentrations of H2O2, little is known about 
+the response of this organism to oxidative stress.  To determine if 
+transcriptional upregulation is a common mechanism for responding to DNA 
+damaging agents, we have studied the Dictyostelium catalase and Cu/Zn 
+superoxide dismutase antioxidant enzymes.  We show that there are two catalase 
+genes, and that each is differentially regulated both temporally and 
+spatially during multicellular development.  The catA gene is expressed 
+throughout growth and development and its corresponding enzyme is maintained 
+at a steady level.  In contrast, the catB gene encodes a larger protein and 
+is only expressed during the final stages of morphogenesis.  Cell type 
+fractionation showed that the CatB enzyme is exclusively localized to the 
+prespore cells, and the CatA enzyme is found exclusively in the prestalk 
+cells.  Each enzyme has a different subcellular localization.  The unique 
+developmental timing and cell type distribution suggest that the role for 
+catB in cell differentiation is to protect the dormant spores from 
+oxidative damage.  We found that exposure to H2O2 does not result in the 
+induction of the catalase, superoxide dismutase, NER or BER mRNAs.  A 
+mutant with greatly reduced levels of catA mRNA and enzyme has greatly 
+increased sensitivity to H2O2 but normal sensitivity to UV.  These results 
+indicate that the natural resistance to oxidative stress is not due to an 
+ability to rapidly raise the level of antioxidant or DNA repair enzymes, 
+and that the response to UV-light is independent from the response to 
+reactive oxygen compounds.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 7]
+
+  

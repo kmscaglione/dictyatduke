@@ -1,0 +1,60 @@
+dictyNews
+Electronic Edition
+Volume 32, number 13
+May 15, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Legionella pneumophila multiplication is enhanced by chronic AMPK signalling in 
+mitochondrially diseased Dictyostelium cells.
+
+Lisa Francione1, Paige K. Smith1, Sandra L. Accari1, Philip E. Taylor2, 
+Paul B. Bokko1, Salvatore Bozzaro3, Peter L. Beech2 and Paul R. Fisher1*.
+
+1 Department of Microbiology, La Trobe University, VIC 3086, Australia
+2 Centre for Cellular and Molecular Biology, Deakin University, Burwood, 
+VIC 3125, Australia  
+3 Department of Clinical and Biological Sciences, University of Turin, 
+Ospedale S. Luigi, 10043 Orbassano, Italy 
+
+
+Disease Models and Mechanisms, in press
+
+Human patients with mitochondrial diseases are more susceptible to bacterial 
+infections, particularly of the respiratory tract. To investigate the 
+susceptibility of mitochondrially diseased cells to an intracellular 
+bacterial respiratory pathogen, we exploited the advantages of Dictyostelium 
+discoideum as an established model for mitochondrial disease and for 
+Legionella pneumophila pathogenesis. Legionella infection of macrophages 
+involves recruitment of mitochondria to the Legionella-containing phagosome. 
+We confirm here that this also occurs in Dictyostelium and investigate the 
+effect of mitochondrial dysfunction on host cell susceptibility to Legionella. 
+In mitochondrially diseased Dictyostelium strains, the pathogen was taken 
+up at normal rates, but it grew faster and reached counts that were twofold 
+higher than in the wild type host. We previously reported that other 
+mitochondrial disease phenotypes for Dictyostelium are due to activity 
+of an energy-sensing cellular alarm protein, AMP-activated protein kinase 
+(AMPK). Here we show that the increased ability of mitochondrially diseased 
+cells to support Legionella proliferation is suppressed by antisense-inhibiting 
+expression of the catalytic AMPKalpha subunit. Conversely, mitochondrial 
+dysfunction is phenocopied and intracellular Legionella growth enhanced, 
+by overexpressing an active form of AMPKalpha in otherwise normal cells. 
+These results indicate that AMPK signalling in response to mitochondrial 
+dysfunction enhances Legionella proliferation in host cells.
+   
+
+Submitted by: Paul Fisher [P.Fisher@latrobe.edu.au]
+==============================================================
+[End dictyNews, volume 32, number 13]

@@ -1,0 +1,132 @@
+Dicty News
+Electronic Edition
+Volume 17, number 10
+October 27, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+The NF-kB like DNA binding activity observed in Dictyostelium nuclear 
+extracts is due to the GBF transcription factor
+
+Franois TRAINCARD 1, Eleonora PONTE 1, Jason PUN 2, Barrie COUKELL 2 and 
+Michel VERON 1
+
+1: Unit de Rgulation enzymatique des Activits cellulaires, CNRS FRE 2364, 
+Institut Pasteur, 25 rue du Dr. Roux, 75724, Paris Cedex 15, France.
+2: York University, 4700 Keele St., Toronto, Ontario, M3J 1P3, Canada.
+
+Accepted in Journal of Cell Science
+
+We have previously reported that a NF-kB transduction pathway was likely 
+to be present in the cellular slime mold Dictyostelium discoideum 
+(Traincard, F., Ponte, E., Pun, J., Coukell, B. and Vron, M., 1999, 
+J. Cell Science, 112, 3529-3535). This conclusion was based on several 
+observations, including the detection of developmentally regulated DNA 
+binding proteins in Dictyostelium nuclear extracts, which bound to bona 
+fide kB sequences. We have now performed additional experiments that 
+demonstrate that the protein responsible for this NF-kB like DNA binding 
+activity is the Dictyostelium GBF (G box regulatory element Binding Factor) 
+transcription factor. This result, along with the fact that no sequence with 
+significant similarity to components of the mammalian NF-kB pathway can be 
+found in Dictyostelium genome, now almost entirely sequenced, led us to 
+reconsider our previous conclusion on the occurrence of a NF-kB signal 
+transduction pathway in Dictyostelium.
+
+-----------------------------------------------------------------------------
+
+GTP[gamma]S regulation of a twelve transmembrane guanylyl 
+cyclase is retained after mutation to an adenylyl cyclase 
+
+Jeroen Roelofs, Harrit M. Loovers and Peter J.M. Van 
+Haastert
+
+Department of Biochemistry, University of Groningen, 
+Nijenborgh 4,9747AG Groningen, the Netherlands
+
+J. Biol. Chem., in press
+
+ABSTRACT
+
+DdGCA is a Dictyostelium guanylyl cyclase with a topology 
+typical for mammalian adenylyl cyclases containing twelve 
+transmembrane spanning regions and two cyclase domain. In 
+Dictyostelium cells heterotrimeric G-proteins are essential for 
+guanylyl cyclase activation by extra-cellular cAMP. In lysates, 
+guanylyl cyclase activity is strongly stimulated by GTPgS, which 
+is also a substrate of the enzyme. DdGCA was converted to an 
+adenylyl cyclase by introducing three point mutations. 
+Expression of the obtained DdGCAkqd in adenylyl cyclase 
+defective cells restored the phenotype of the mutant. GTPgS 
+stimulated the adenylyl cyclase activity of DdGCAkqd with similar 
+properties as the wildtype enzyme (decrease of Km and increase 
+of Vmax). This demonstrates that GTPgS-stimulation is 
+independent of substrate specificity. Furthermore, GTPgS- activation 
+of DdGCAkqd is retained in several null mutants of Ga 
+and Gb proteins, indicating that GTPgS-activation is not 
+mediated by a heterotrimeric G-protein, but possibly by a 
+monomeric G-protein. 
+
+-----------------------------------------------------------------------------
+
+Single molecule analysis of chemotactic signaling in Dictyostelium cells 
+
+Masahiro Ueda, Yasushi Sako, Toshiki Tanaka, Peter Devreotes & Toshio 
+Yanagida 
+
+Science 294, 864-867. 
+
+Single-molecule imaging techniques were used to reveal the binding of 
+individual cyclic adenosine 3',5'-monophosphate molecules to heterotrimeric 
+guanine nucleotide-binding protein coupled receptors on the surface of 
+living Dictyostelium cells. The binding sites were uniformly distributed 
+and diffused rapidly in the plane of the membrane. The probabilities of 
+individual association and dissociation events were greater for receptors 
+at the anterior end of the cell. Agonist-induced receptor phosphorylation 
+had little effect on any of the monitored properties, whereas G-protein 
+coupling influenced the binding kinetics. These observations illustrate 
+the dynamic properties of receptors involved in gradient sensing and 
+suggest that these may be polarized in chemotactic cells. 
+
+-----------------------------------------------------------------------------
+
+Calreticulin and Calnexin in the Endoplasmic Reticulum Are Important for 
+Phagocytosis 
+
+Annette Mueller-Taubenberger*, Andrei N. Lupas, Hewang Li*, Mary Ecke*, 
+Evelyn Simmeth*, and Guenther Gerisch*
+
+*  Max-Planck-Institut fuer Biochemie, Martinsried, Germany
+  SmithKline Beecham Pharmaceuticals UP1345, Collegeville, PA, USA
+
+EMBO Journal, in press.
+
+Abstract
+
+Calreticulin and calnexin are Ca2+-binding proteins with chaperone activity 
+in the endoplasmic reticulum. These proteins have been eliminated by gene 
+replacement in Dictyostelium, the only microorganism known to harbor both 
+proteins; family members in Dictyostelium are located at the base of 
+phylogenetic trees. In double mutants lacking calreticulin and calnexin 
+a dramatic decline in the rate of phagocytosis was observed, whereas only 
+mild changes occurred in single mutants. Dictyostelium cells are 
+professional phagocytes, capable of internalizing particles by a sequence 
+of activities: adhesion of the particle to the cell surface, actin-
+dependent outgrowth of a phagocytic cup, and separation of the phagosome 
+from the plasma membrane. In the double-null mutants, particles still 
+adhered to the cell surface, but the outgrowth of phagocytic cups was 
+compromised. GFP-tagged calreticulin and calnexin, expressed in wild type 
+cells, revealed a direct link of the ER to the phagocytic cup enclosing a 
+particle, such that the Ca2+-storage capacity of calreticulin and calnexin 
+might directly modulate activities of the actin system during particle 
+uptake.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 10]

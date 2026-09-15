@@ -1,0 +1,180 @@
+dictyNews
+Electronic Edition
+Volume 39, number 18
+June 21, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Lipid composition of multilamellar bodies secreted by Dictyostelium 
+discoideum reveals their amoebal origin.
+
+Paquet VE, Lessire R, Domergue F, Fouillen L, Filion G, Sedighi A, 
+Charette SJ.
+
+Institut de Biologie Integrative et des Systemes, Universite Laval, 
+Quebec City, Quebec, Canada, G1V 0A6.
+
+
+Eukaryot Cell. 2013 Jun 7. [Epub ahead of print]
+
+When they are fed with bacteria, Dictyostelium discoideum amoebae 
+produce and secrete multilamellar bodies (MLBs), which are composed 
+of membranous material. It has been proposed that MLBs are a waste 
+disposal system allowing D. discoideum to eliminate undigested 
+bacterial remains. However, the real function of MLBs remains unknown. 
+Determining the biochemical composition of MLBs, especially lipids, 
+represents a way to gain information about the role of these structures. 
+To allow these analyses, a protocol involving various centrifugation 
+procedures has been developed to purify secreted MLBs from 
+amoebae-bacteria co-cultures. The purity of MLB preparation was 
+confirmed by transmission electron microscopy and by 
+immunofluorescence using H36, an antibody that binds to MLBs. 
+The lipid and fatty acid compositions of pure MLBs were then analyzed 
+by high performance thin layer chromatography (HPTLC) and gas 
+chromatography (GC), respectively, and compared to those of amoebae 
+as well as bacteria used as food source. While the bacteria were devoid 
+of phosphatidylcholine (PC) and phosphatidylinositol (PI), these two polar 
+lipid species were major classes of lipids in MLBs and amoebae. Similarly, 
+the fatty acid composition of MLBs and amoebae was characterized by the 
+presence of polyunsaturated fatty acids while cyclic fatty acids were found 
+only in bacteria. These results strongly suggest that the lipids constituting 
+the MLBs rather originate from the amoebal metabolism rather than from 
+undigested bacterial membranes. This opens the possibility that MLBs, 
+instead of being a waste disposal system, have unsuspected roles in 
+D. discoideum physiology.
+
+
+Submitted by Steve Charette [steve.charette@bcm.ulaval.ca]
+---------------------------------------------------------------------------
+
+
+Laurence Aubry & Gerard Klein
+
+True Arrestins and Arrestin-Fold Proteins: A Structure-Based Appraisal.
+
+
+Progress in Molecular Biology and Translational Science, Louis M. Luttrell, 
+editor, Vol. 118, Burlington: Academic Press, 2013, pp. 21-56.
+ISBN: 978-0-12-394440-5
+
+Arrestin-clan proteins are folded alike, a feature responsible for their recent 
+grouping in a single clan. In human, it includes the well-characterized visual 
+and beta-arrestins, the arrestin domain-containing proteins (ARRDCs), 
+isoforms of the retromer subunit VPS26, and DSCR3, a protein involved in 
+Down syndrome. A new arrestin-fold-predicted protein, RGP1, described 
+here may join the clan. Unicellular organisms like the yeast Saccharomyces 
+cerevisiae or the amoeba Dictyostelium discoideum harbor VPS26, DSCR3, 
+and RGP1 isoforms as well as arrestin-related trafficking adaptors or ADCs,
+ but true arrestins are missing. Functionally, members of the arrestin clan 
+ have generally a scaffolding role in various membrane protein trafficking 
+ events. Despite their similar structure, the mechanism of cargo recognition 
+ and internalization and the nature of recruited partners differ for the different 
+ members. Based on the recent literature, true arrestins (visual and 
+ beta-arrestins), ARRDCs, and yeast ARTS are the closest from a functional 
+ point of view.
+
+
+Submitted by Laurence Aubry [laubry@cea.fr]
+---------------------------------------------------------------------------
+
+
+Analysis of phenotypic evolution in Dictyostelia highlights developmental 
+plasticity as a likely consequence of colonial multicellularity
+
+Maria Romeralo1,2, Anna Skiba1, Alejandro Gonzalez-Voyer3, 
+Christina Schilde1, Hajara Lawal1, Sylwia Kedziora1, Jim C. Cavender4, 
+Gernot Gloeckner5,6, Hideko Urushihara7 and Pauline Schaap1
+
+1College of Life Sciences, University of Dundee, Dundee, UK
+2Department of Systematic Biology, Uppsala University, Uppsala, Sweden
+3Department of Integrative Ecology, Estacion Biologica de Donana 
+(EBD-CSIC), Sevilla, Spain
+4Department of Environmental and Plant Biology, Ohio University, 
+Athens, OH, USA
+5Department of Genomics, Leibniz-Institute of Freshwater Ecology 
+and Inland Fisheries, IGB, Berlin, Germany
+6Institute for Biochemistry I, University of Cologne, Cologne, Germany
+7Faculty of Life and Environmental Sciences, University of Tsukuba, 
+Tsukuba-shi, Japan
+
+
+Proc. R. Soc. B., in press
+
+Colony formation was the first step towards evolution of multicellularity 
+in many macroscopic organisms. Dictyostelid social amoebas have 
+used this strategy for over 600 Myr to form fruiting structures of 
+increasing complexity. To understand in which order multicellular 
+complexity evolved, we measured 24 phenotypic characters over 99 
+dictyostelid species. Using phylogenetic comparative methods, we 
+show that the last common ancestor (LCA) of Dictyostelia probably 
+erected small fruiting structures directly from aggregates. It secreted 
+cAMP to coordinate fruiting body morphogenesis, and another 
+compound to mediate aggregation. This phenotype persisted up to 
+the LCAs of three of the four major groups of Dictyostelia. The 
+group 4 LCA co-opted cAMP for aggregation and evolved much 
+larger fruiting structures. However, it lost encystation, the survival 
+strategy of solitary amoebas that is retained by many species in 
+groups 1-3. Large structures, phototropism and a migrating 
+intermediate 'slug' stage coevolved as evolutionary novelties within 
+most groups. Overall, dictyostelids show considerable plasticity in 
+the size and shape of multicellular structures, both within and 
+between species. This probably reflects constraints placed by colonial 
+life on developmental control mechanisms, which, depending on local 
+cell density, need to direct from 10 to a million cells into forming a 
+functional fructification.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+---------------------------------------------------------------------------
+
+
+Two distinct functions for PI3-kinases in macropinocytosis
+
+Oliver Hoeller, Parvin Bolourani, Jonathan Clark, Len R. Stephens, 
+Phillip T. Hawkins, Orion D. Weiner, Gerald Weeks & Robert R. Kay 
+
+
+Journal of Cell Science, in press
+
+Class-1 PI3-kinases are major regulators of the actin cytoskeleton, 
+whose precise contributions to chemotaxis, phagocytosis and 
+macropinocytosis remain unresolved. We use systematic genetic 
+ablation to examine this question in growing Dictyostelium cells.  
+Mass-spectroscopy shows that a quintuple mutant lacking the entire 
+genomic complement of class-1 PI3-kinases retains only 10% of 
+wild-type PIP3 levels.  Chemotaxis to folate and phagocytosis of 
+bacteria proceed normally in the quintuple mutant but 
+macropinocytosis is abolished. In this context PI3-kinases show 
+specialized functions, only one of which is directly linked to gross 
+PIP3 levels: Macropinosomes originate in patches of PIP3, with 
+associated F-actin rich ruffles, both of which depend on PI3K1/2 
+but not PI3K4, whereas conversion of ruffles into vesicles requires 
+PI3K4.  A biosensor derived from the Ras-binding domain of PI3K1 
+suggests that Ras is activated throughout vesicle formation.  
+Binding assays show that RasG and RasS interact most strongly 
+with PI3K1/2 and PI3K4 and single mutants of either Ras have 
+severe macropinocytosis defects. Thus, the fundamental function 
+of PI3-kinases in growing Dictyostelium cells is in macropinocytosis 
+where they have two distinct functions, supported by at least two 
+separate Ras proteins.
+ 
+ 
+Submitted by Oliver Hoeller [oliver.hoeller@ucsf.edu]
+==============================================================
+[End dictyNews, volume 39, number 18]

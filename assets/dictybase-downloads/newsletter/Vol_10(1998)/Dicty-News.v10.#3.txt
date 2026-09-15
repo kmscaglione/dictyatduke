@@ -1,0 +1,195 @@
+Dicty News
+Electronic Edition
+Volume 10, number 3
+January 24, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============
+ Announcement
+==============
+
+Motion Analysis of Living Cells
+
+David R. Soll and Deborah Wessels, Editors
+
+a book in the series Techniques in Modern Biomedical Microscopy
+
+David M. Shotton, Series Editor, Wiley-Liss, Publisher
+
+Most active cellular functions involve motion.  From such subtle
+subcellular actions as the sorting and targeting of vesicles and
+organelles leading to the release of harmones to the complex
+rearrangements of a sphere of embryonic cells forming the body plan 
+of a complete organism, motility of cells is exhibited along a wide 
+range of observable behaviors.  Despite this phenomenon, however, the 
+views of modern biology historically have been on static images and 
+models constructed from biochemical evidence.
+
+Motion Analysis of Living Cells is the first volumeto compile the 
+latest research by prominent specialists in molecular and cell 
+biology, presenting newly developed techniques for studying
+cellular motions and critical analyses of the information these
+techniques can yield.  Focusing on actin-based motility systems and
+drawing on the latest advances in the techniques of biochemistry,
+biophysics, microscopy, computer-assisted motion analysis, and
+molecular genetics, the works in this collection will prove invaluable 
+to future research in embryogenesis, cancer, and diseases related to 
+the cellular immune system.
+
+Among the topics covered:
+
+** Bacterial motility and chemotaxis
+
+** New technologies for characterizing motility-related parameters
+
+** Methods for analyzing the cortical tension of normal cells compared 
+to abnormal cells
+
+** Model for how the cell extends a pseudopod
+
+** Computer-assisted analyses of cytoskeletal mutants of Dictyostelium 
+discoideum
+
+** Emerging methods for studying how cells respond to topographical 
+cues at the substratum
+
+** Polymerization of host actin to facilitate propulsion
+
+** Genetic approaches to the regulatory mechanisms involved in early
+zebra fish morphogenesis and specification of cell fates
+
+** Specific examples of single cell motility in embryogenesis
+
+A groundbreaking treatment of motion analysis of animal cells,
+Motion Analysis of Living Cells is a thorough review
+for professional as well as a comprehensive introduction for students
+and researchers in the field.  It is must reading for cell and
+developmental biologists, microbiologists, immunologists,
+neuroscientists, cancer researchers, zoologists, and basic researchers 
+in reproductive medicine.  Three chapters in the book deal directly 
+with Dictyostelium discoideum motility.  The preface of the 
+book, chapters contained, as well as introductions of selected chapters 
+are provided on the W.M. Keck Dynamic Image Analysis Facility home 
+page at http://www.uiowa.edu/~keck/
+
+
+===========
+ Abstracts
+===========
+
+Retrotransposable elements in the Dictyostelium discoideum genome
+
+THOMAS WINCKLER
+
+Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Biozentrum), Marie-Curie-Strasse 9, D-60439 Frankfurt/M, Germany
+
+Cell. Mol. Life Sci. (formerly Experientia), in press
+
+Abstract:
+
+   Repetitive DNA is a major component of any living cell. In 
+eukaryotes retrotransposable el ements make up several percent of 
+the genome size, and consequently, retroelements are often identified 
+in experiments aimed to establish physical maps and whole genome 
+sequences.  In this review recent progress in the characterization 
+of retrotransposable elements in th e genome of the eukaryotic 
+microorganism Dictyostelium discoideum is summarized with a focus 
+on retroelements which integrate near transfer RNA genes with 
+intriguing position specificity.
+
+-------------------------------------------------------------------------
+
+Structural Characterization of a Dynein Motor Domain.
+
+Samso, M., Radermacher, M., Frank, J., & Koonce, M.P.
+
+Division of Molecular Medicine, Wadsworth Center, Albany, NY 12201-0509
+
+J. Mol. Biol., in press.
+
+ABSTRACT.
+
+   Cytoplasmic dynein is a microtubule-based mechanochemical protein 
+that plays an essential role in cell division, vesicle transport, and 
+cytoplasmic membrane organization. As a molecular motor, dynein 
+utilizes an ATP hydrolysis mechanism to bind and release microtubules 
+and to undergo conformational changes that result in a net displacement 
+towards the microtubule’s minus end. To visualize structural features 
+of this motor protein, we have begun to characterize the dynein head 
+domain by electron microscopy and image processing. Transmission 
+electron microscopy of negatively-stained native dynein from 
+Dictyostelium has been performed and images of the head domain 
+have been aligned and analyzed with the software SPIDER. The 
+resulting 2D averages show an oblong round shape composed of 7-8 
+globular domains or lobes that encircle a stain-filled area. A 
+recombinant 380 kDa fragment of the dynein heavy chain encodes just 
+the globular head domain; analysis of these particles reveals a high 
+structural similarity with the native head domain. A prominent stalk 
+can be seen in several projections of this fragment, suggesting a 
+structure analogous to the B-link described for some axonemal dyneins. 
+Single tilt pair images were used to compute low resolution 3D 
+reconstructions of the dynein head domain. These show a flattened 
+spheroidal shape of 13.5 nm in length with seven similar domains 
+arranged in a ring. Slices through the reconstructions reveal a large 
+central cavity. This is the first detailed description of the head 
+domain structure for a dynein molecule. The presence of a central 
+cavity and the outer globular features, along with its large size 
+make dynein structurally distinct from either myosin or kinesin.
+
+-------------------------------------------------------------------------
+
+Cell-density sensing mediated by a G-protein-coupled receptor 
+activating phospholipase C  
+
+Derrick T. Brazill, David F. Lindsey, John D. Bishop, and Richard 
+H. Gomer*
+
+Howard Hughes Medical Institute, Department of Biochemistry and Cell
+Biology, MS-140, Rice University, 6100 S. Main Street  Houston, TX
+77005-1892
+
+J. Biol Chem, in press
+
+Abstract
+
+   When the unicellular eukaryote Dictyostelium discoideum starves, it
+senses the local density of other starving cells by simultaneously
+secreting and sensing a glycoprotein called conditioned medium factor
+(CMF).  When the density of starving cells is high, the corresponding 
+high density of CMF permits signal transduction through cAR1, the
+chemoattractant cAMP receptor.  cAR1 activates a heterotrimeric G protein
+whose alpha subunit is Galpha2.  CMF regulates cAMP signal transduction 
+in part by regulating the lifetime of the cAMP-stimulated Galpha2-GTP
+configuration.  We find here that GTPgammaS inhibits the binding of CMF 
+to membranes, suggesting that the putative CMF receptor is coupled to 
+a G protein.  Cells lacking Galpha1 (Ga1 null) do not exhibit GTPgammaS
+inhibition of CMF binding and do not exhibit CMF regulation of cAMP 
+signal transduction, suggesting that the putative CMF receptor interacts 
+with Galpha1.  Work by others has suggested that Galpha1 inhibits 
+phospholipase C (PLC), yet when cells lacking either Galpha1 or PLC 
+were starved at high cell densities (and thus in the presence of CMF), 
+they developed normally and had normal cAMP signal transduction.  We 
+find that CMF activates PLC.  Galpha1 null cells starved in the absence 
+or presence of CMF behave in a manner similar to control cells starved 
+in the presence of CMF in that they extend pseudopods, have an activated 
+PLC, have a low cAMP-stimulated GTPase, permit cAMP signal transduction, 
+and aggregate.  Cells lacking Gbeta have a low PLC activity which 
+cannot be stimulated by CMF.  Cells lacking PLC exhibit IP3 levels and 
+cAMP-stimulated GTP hydrolysis rates intermediate to what is observed 
+in wild-type cells starved in the absence or in the presence of an 
+optimal amount of CMF.  We hypothesize that CMF binds to its receptor, 
+releasing Gbetagamma from Galpha1.  This activates PLC, which causes the 
+Galpha2 GTPase to be inhibited, prolonging the lifetime of the cAMP-
+activated Galpha2-GTP configuration.  This, in turn, allows cAR1-
+mediated cAMP signal transduction to take place. 
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 3]
+

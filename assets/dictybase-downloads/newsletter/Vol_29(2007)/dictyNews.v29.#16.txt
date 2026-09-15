@@ -1,0 +1,68 @@
+dictyNews
+Electronic Edition
+Volume 29, number 16
+December 7, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+David Lam, Jean-Pierre Levraud, Marie-Françoise Luciani, and Pierre Golstein
+
+
+aCentre d'Immunologie de Marseille-Luminy (CIML), 
+bINSERM U631 and 
+cCNRS UMR6102, Faculté des Sciences de Luminy, F-13288 Marseille Cedex 9, France 
+dInstitut Pasteur, Macrophages et Developpement de l'Immunité, and
+eCNRS URA2578, 25, rue du Dr Roux, 75724 Paris cedex 15, France
+
+Abstract
+
+How is one to investigate autophagic or necrotic cell death in the absence of interference from the apoptosis machinery ? In the protist Dictyostelium, a model for the study of these two cell death types, we previously showed that autophagic cell death does not require paracaspase, the only caspase family member in this organism. In this report, we prepared two distinct paracaspase- atg1- double mutants, and we used them to demonstrate that paracapase is not required for necrotic cell death either. Also, in silico investigation showed that the genome of Dictyostelium harbored no detectable member of the bcl-2 family and no single BH3 domain-bearing molecules. Altogether, in this model system both autophagic and necrotic cell death could occur, and could be investigated, with no interference from the two main molecular families involved in apoptosis, the caspase and the bcl-2 families.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+The IP3 Receptor is Required to Signal Autophagic Cell Death
+
+
+David Lam*†‡, Artemis Kosta*†‡, Marie-Françoise Luciani*†‡ and Pierre Golstein*†‡
+*Centre d’Immunologie de Marseille-Luminy (CIML), †INSERM U631 and ‡CNRS UMR6102, Faculté des Sciences de Luminy, Aix Marseille Université, F-13288 Marseille, France
+
+ABSTRACT
+
+
+The signaling pathways governing the pathophysiologically important autophagic (ACD) and necrotic (NCD) cell death are not entirely known. In the Dictyostelium eukaryote model which benefits from both unique analytical and genetic advantages and absence of potentially interfering apoptotic machinery, the differentiation factor DIF leads from starvation-induced autophagy to ACD, or, if atg1 is inactivated, to NCD. Here, through random insertional mutagenesis, we found that inactivation of the iplA gene, the only gene encoding an inositol 1,4,5-trisphosphate receptor (IP3R) in this organism, prevented ACD. The IP3R is a ligand-gated channel governing Ca2+ efflux from endoplasmic reticulum stores to the cytosol. Accordingly, Ca2+-related drugs also affected DIF signaling leading to ACD. Thus, in this system, a main pathway signaling ACD requires IP3R and further Ca2+-dependent steps. This is one of the first insights in the molecular understanding of a signaling pathway leading to autophagic cell death.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+Analysis of autophagic and necrotic cell death in Dictyostelium  
+
+By CORINNE GIUSTI, ARTEMIS KOSTA, DAVID LAM, EMILIE TRESSE, MARIE-FRANÇOISE LUCIANI, and PIERRE GOLSTEIN
+
+Centre d’Immunologie INSERM-CNRS-Univ.Medit. de Marseille-Luminy, Case 906, 13288 Marseille cedex 9, France
+
+Abstract 
+Non-apoptotic cell death types can be conveniently studied in Dictyostelium discoideum, an exceptionally favorable model not only because of its well-known genetic and experimental advantages, but also because in Dictyostelium there is no apoptosis machinery that could interfere with non-apoptotic cell death. We show here how to conveniently demonstrate, assess and study these non-apoptotic cell death types. These can be generated using modifications of the monolayer technique of Rob Kay et al., and either wild type HMX44A Dictyostelium cells, leading to autophagic cell death, or the corresponding atg1- autophagy gene mutant cells, leading to necrotic cell death. Methods to follow these non-apoptotic cell death types qualitatively and quantitatively will be reported.
+
+Methods in Enzymology, 2007, in press
+
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+==============================================================
+[End dictyNews, volume 29, number 16]

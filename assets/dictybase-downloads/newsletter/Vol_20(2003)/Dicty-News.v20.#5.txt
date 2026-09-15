@@ -1,0 +1,207 @@
+Dicty News
+Electronic Edition
+Volume 20, number 5
+March 22, 2003
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+********************************
+**                            **
+**  10th ANNIVERSARY EDITION  **
+**                            **
+********************************
+
+This edition of the Dicty News represents the 10th year of regular
+publication of the Electronic Edition.  The first issue was March
+15, 1993.  
+
+Thanks to everyone for their contributions and support!
+
+=============
+  Abstracts
+=============
+
+Macroautophagy is Required for Multicellular Development of the Social 
+Amoeba Dictyostelium discoideum
+
+Grant P. Otto1, Mary Y. Wu1, Nevzat Kazgan1, O. Roger Anderson2, and 
+Richard H. Kessin1
+
+1) Department of Anatomy and Cell Biology, Columbia University 630 West 
+168th St., New York, NY, 10032, USA
+2) Department of Biology, Lamont-Doherty Earth Observatory Columbia 
+University, Palisades, NY, 10964, USA
+
+J. Biol. Chem., in press
+
+Macroautophagy is a mechanism employed by eukaryotic cells to recycle 
+non-essential cellular components during starvation, differentiation, 
+and development. Two conjugation reactions related to ubiquitination 
+are essential for autophagy: Apg12p conjugation to Apg5p, and Apg8p 
+conjugation to the lipid phosphatidylethanolamine. These reactions require 
+the action of the E1-like enzyme Apg7p, and the E2-like enzymes, Apg3p and 
+Apg10p. In Dictyostelium, development is induced by starvation, conditions 
+under which autophagy is required for survival in yeast and plants. We 
+have identified Dictyostelium homologues of 10 budding yeast autophagy 
+genes. We have generated mutations in apg5 and apg7 that produce defects 
+typically associated with an abrogation of autophagy. Mutants are not 
+grossly affected in growth, but survival during nitrogen starvation is 
+severely reduced. Starved mutant cells show little turnover of cellular 
+constituents by electron microscopy, whereas wild-type cells show 
+significant cytoplasmic degradation and reduced organelle number. Bulk 
+protein degradation during starvation-induced development is reduced in 
+the autophagy mutants. Development is aberrant; the autophagy mutants do 
+not aggregate in plaques on bacterial lawns, but they do proceed further 
+in development on nitrocellulose filters, forming defective fruiting 
+bodies. The autophagy mutations are cell autonomous, since wild-type 
+cells in a chimaera do not rescue development of the autophagy mutants. 
+We have complemented the mutant phenotypes by expression of the cognate 
+gene fused to GFP. A GFP fusion of t he autophagosome marker Apg8 
+mislocalizes in the two autophagy mutants. We show that the Apg5-Apg12 
+conjugation system is conserved in Dictyostelium.
+
+----------------------------------------------------------------------------
+
+Cultivation of Dictyostelium discoideum in immobilized form by colonization 
+of porous supports 
+
+Usama Beshay, Karl Friehs, Abd-El-Mouty Azzam and Erwin Flaschel: 
+
+Bielefeld University, Faculty of Technology, D-33594 Bielefeld, Germany 
+
+Process Biochemistry (in press) 
+
+Abstract 
+
+Dictyostelium discoideum is a social amoeba. It shows promising 
+characteristics as an expression system for the production of recombinant 
+glycoproteins owing to its ability to perform a whole spectrum of post-
+translational modifications. However, its application is seriously 
+affected by slow growth rates as well as low maximal cell densities. 
+Since the technique of immobilization often is applied in order to achieve 
+high cell concentrations, D. discoideum has been cultivated in the 
+presence of different porous supports with the aim of studying its growth 
+in immobilized state. On small scale a shake flask cultivation system 
+with external loop was applied for this purpose. On larger scale a 
+bioreactor was coupled with an external loop of a column containing a 
+fixed bed of the porous support. During growth on standard axenic 
+(soluble) media cell densities in the pores of the supports were attained, 
+which were more than one magnitude higher than those normally obtained 
+during suspension culture. Electron micrograph images gave an idea, how 
+D. discoideum may manage to colonize porous support particles
+
+----------------------------------------------------------------------------
+
+Sequence and Structure of the Extrachromosomal Palindrome Encoding the 
+Ribosomal RNA Genes in Dictyostelium
+
+Richard Sucgang, Guokai Chen, Wen Liu, Ryan Lindsay, Jing Lu, Donna Muzny, 
+Gad Shaulsky, William Loomis, Richard Gibbs and Adam Kuspa
+
+Nucleic Acids Research, in press
+
+Ribosomal RNAs are encoded by multicopy families of identical genes. In 
+Dictyostelium and other protists, the rDNA is carried on extrachromosomal 
+palindromic elements that comprise up to 20% of the nuclear DNA. We present 
+the sequence of the 88-kb Dictyostelium rDNA element, noting that the rRNA 
+genes are likely to be the only transcribed regions. By interrogating a 
+library of ordered YAC clones, we provide evidence for a chromosomal copy 
+of the rDNA on chromosome 4.  This locus may provide master copies for the 
+stable transmission of the extrachromosomal elements.  The extrachromosomal 
+elements were also found to form chromosome-sized clusters of DNA within 
+nuclei of nocodazole-treated cells arrested in mitosis. These clusters 
+resemble true chromosomes and may allow the efficient segregation of the 
+rDNA during mitosis.  These rDNA clusters may also explain the cytological 
+observations of a seventh chromosome in this organism.
+
+----------------------------------------------------------------------------
+
+A novel gene trap method using terminator-REMI and 3  rapid amplification 
+of cDNA ends (RACE) in Dictyostelium
+
+Kosuke Takeda a, 1, Tamao Saito a, Tomoyuki Tanaka a, Takahiro Morio b, 
+Mineko Maeda c, Yoshimasa Tanaka b and Hiroshi Ochiai a, *
+
+a) Division of Biological Sciences, Graduate School of Science, Hokkaido
+University. Sapporo, Hokkaido 060-0810, Japan
+b) Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki
+305-8572, Japan
+c) Division of Biological Sciences, Graduate School of Science, Osaka
+University, Japan
+
+Gene, in press
+
+Abstract
+
+We describe a novel restriction enzyme-mediated integration (REMI) method 
+for gene trapping in Dictyostelium based on the use of a terminator-
+deficient vector. The vector has a blasticidin deaminase (bsr) gene as a 
+selectable marker but lacks a terminator containing a poly(A) addition 
+signal (AATAAA). Thus, the vector was expected to integrate into the 
+coding region of a gene to create a fusion transcript flanked by the 3  
+proximal region of the trapped gene. The trapped gene can be identified 
+by simply amplifying the fusion transcript by 3  rapid amplification of 
+cDNA ends (3 -RACE). In the analysis of 35 integration events into known 
+genes, the vectors were found to be integrated 20 times in close proximity 
+to the 3  ends of the genes and in the direction of transcription. This 
+strictly localized insertion seemed to be mediated by negative selection 
+via the surveillance system referred to nonsense-mediated mRNA decay. In 
+contrast, in 15 events the vector integrated in the opposite direction to 
+transcription and at random positions throughout the coding sequence. 
+Analysis of the trapped 3  sequences showed that the transcription of the 
+fusion gene terminated prematurely without the apparent use of an 
+endogenous terminator; nevertheless the transcript did exhibit a poly(A) 
+tail. Based on these results, we designated the method terminator-REMI. 
+Using this method, we have generated a library of tagged Dictyostelium 
+clones from which we have thus far isolated 242 developmental mutants.
+
+----------------------------------------------------------------------------
+
+A Novel Developmental Mechanism in Dictyostelium Revealed in a Screen for 
+Communication Mutants 
+
+Kirsten Kibler (1,2), Tu-Lan Nguyen (2,3), Jessica Svetz (2), Nancy Van 
+Driessche (1,2), Miroslava Ibarra (2), Christopher Thompson (2), Chad Shaw 
+(2), and Gad Shaulsky (1,2,4)
+
+1 Graduate Program in Developmental Biology 
+2 Department of Molecular and Human Genetics 
+3 Summer Medical And Research Training (SMART) Program 
+Baylor College of Medicine, One Baylor Plaza, Houston, TX 77030 
+4 Corresponding Author. email: gadi@bcm.tmc.edu; phone: 713 798 8082; 
+FAX 713 798 1021. 
+
+Developmental Biology, in press 
+
+Abstract 
+
+We performed a screen for signaling genes by selecting mutant strains of 
+Dictyostelium that fail to develop spores in a pure population but 
+sporulate well in chimerae with wild type cells. We found 9 strains whose 
+sporulation was induced up to ten million fold in chimerae. Most strains 
+were also able to sporulate in chimerae with each other, but two pairs 
+failed to do so, suggesting that the genes in each pair participate in 
+the production of one signal. One of the pairs, comD and comB, is 
+described in detail. Sequence analysis revealed that both genes encode 
+putative membrane proteins. ComD is predicted to have 15 transmembrane 
+domains and ComB has a region of high similarity to the Rab family of 
+small GTPases and one transmembrane domain. Similarities between the 
+developmental regulation and cell-type specificity of the genes' 
+expression, the terminal developmental morphology and the expression 
+pattern of cell-type specific markers in the mutants suggest that comD 
+and comB participate in one signal production pathway. This idea is also 
+supported by a high similarity between the global transcriptional 
+profiles of the mutant strains. Differences between the mutant phenotypes 
+late in development suggest that comD and comB participate in separate 
+processes as well. comD has a cell-autonomous role in the specialization 
+of a novel of a prespore cell type whereas comB has a cell-autonomous 
+role in prestalk A cell differentiation.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 20, number 5]
+
+ 

@@ -1,0 +1,210 @@
+dictyNews
+Electronic Edition
+Volume 40, number 5
+February 14, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+NNucleocytoplasmic Protein Translocation during Mitosis in the Social 
+Amoebozoan Dictyostelium discoideum
+
+Danton H. O'Day a,b* and Aldona Budniaka a
+
+a: Department of Biology, University of Toronto Mississauga, 3359 
+Mississauga Road N., Mississauga, Ontario, Canada, L5L 1C6
+b: Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord St., Toronto, Ontario, Canada, M5S 3G5
+
+
+Biological Reviews, in press
+
+Mitosis is a fundamental and essential life process. It underlies the 
+duplication and survival of all cells and, as a result, all eukaryotic 
+organisms. Since uncontrolled mitosis is a dreaded component of 
+many cancers, a full understanding of the process is critical. Evolution 
+has led to the existence of three types of mitosis: closed, open, and 
+semi-open. The significance of these different mitotic species, how 
+they can lead to a full understanding of the critical events that underlie 
+the asexual duplication of all cells, and how they may generate new 
+insights into controlling unregulated cell division remains to be 
+determined. The eukaryotic microbe Dictyostelium discoideum has 
+proven to be a valuable biomedical model organism. While it appears 
+to utilize closed mitosis, a review of the literature suggests that it 
+possesses a form of mitosis that lies in the middle between truly open 
+and fully closed mitosis—it utilizes a form of semi-open mitosis. Here, 
+the nucleocytoplasmic translocation patterns of the proteins that have 
+been studied during mitosis in the social amoebozoan Dictyostelium 
+are detailed followed by a discussion of how some of them provide 
+support for the hypothesis of semi-open mitosis.
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+---------------------------------------------------------------------------
+
+
+Identification of the protein kinases Pyk3 and Phg2 as regulators of 
+the STATc-mediated response to hyperosmolarity
+
+Linh Hai Vu, Tsuyoshi Araki, Jianbo Na, Christoph S. Clemen, 
+Jeffrey G.Williams and Ludwig Eichinger
+
+
+PLoS ONE, accepted
+
+Cellular adaptation to changes in environmental osmolarity is crucial 
+for cell survival. In Dictyostelium, STATc is a key regulator of the
+transcriptional response to hyperosmotic stress. Its phosphorylation 
+and consequent activation is controlled by two signaling branches, 
+one cGMP-  and the other Ca2+-dependent, of which many signaling 
+components have yet to be identified. The STATc stress signalling 
+pathway feeds back on itself by upregulating the expression of STATc 
+and STATc-regulated genes. Based on microarray studies we chose 
+two tyrosine-kinase like proteins, Pyk3 and Phg2, as possible modulators 
+of STATc phosphorylation and generated single and double knock-out 
+mutants to them. Transcriptional regulation of STATc and STATc 
+dependent genes was disturbed in pyk3-, phg2-, and pyk3-/phg2- cells. 
+The absence of Pyk3 and/or Phg2 resulted in diminished or completely
+abolished increased transcription of STATc dependent genes in response 
+to sorbitol, 8-Br-cGMP and the Ca2+ liberator BHQ. Also, phospho-STATc 
+levels were significantly reduced in pyk3- and phg2- cells and even further
+decreased in pyk3-/phg2- cells. The reduced phosphorylation was mirrored 
+by a significant delay in nuclear translocation of GFP-STATc. The protein
+tyrosine phosphatase 3 (PTP3), which dephosphorylates and inhibits 
+STATc, is inhibited by stress-induced phosphorylation on S448 and S747. 
+Use of phosphoserine specific antibodies showed that Phg2 but not Pyk3 
+is  involved in the phosphorylation of PTP3 on S747. In pull-down assays 
+Phg2  and PTP3 interact directly, suggesting that Phg2 phosphorylates 
+PTP3 on  S747 in vivo. Phosphorylation of S448 was unchanged in phg2- 
+cells. We  show that Phg2 and an, as yet unknown, S448 protein kinase 
+are  responsible for PTP3 phosphorylation and hence its inhibition, and 
+that  Pyk3 is involved in the regulation of STATc by either directly or 
+indirectly  activating it. Our results add further complexities to the 
+regulation of STATc,  which presumably ensure its optimal activation 
+in response to different environmental cues.
+
+
+Submitted by Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+---------------------------------------------------------------------------
+
+
+Excitable Signal Transduction Induces Both Spontaneous and 
+Directional Cell Asymmetries in the Phosphatidylinositol Lipid 
+Signaling System for Eukaryotic Chemotaxis
+
+Masatoshi Nishikawa(1), Marcel Hörning(1), Masahiro Ueda(2), 
+and Tatsuo Shibata(1)
+
+(1)Laboratory for Physical Biology, RIKEN Center for Developmental 
+Biology, (2) Laboratory of Single Molecule Biology, Graduate School 
+of Science, Osaka University
+
+
+Biophysical Journal, in press
+106: 723–734, http://dx.doi.org/10.1016/j.bpj.2013.12.023
+
+Intracellular asymmetry in the signaling network works as a compass 
+to navigate eukaryotic chemotaxis in response to guidance cues. 
+Although the compass variable can be derived from a self-organization 
+dynamics, such as excit- ability, the responsible mechanism remains 
+to be clarified. Here, we analyzed the spatiotemporal dynamics of the 
+phosphatidy- linositol 3,4,5-trisphosphate (PtdInsP3) pathway, which 
+is crucial for chemotaxis. We show that spontaneous activation of 
+PtdInsP3-enriched domains is generated by an intrinsic excitable 
+system. Formation of the same signal domain could be trig- gered by 
+various perturbations, such as short impulse perturbations that 
+triggered the activation of intrinsic dynamics to form signal domains. 
+We also observed the refractory behavior exhibited in typical excitable 
+systems. We show that the chemotactic response of PtdInsP3 involves 
+biasing the spontaneous excitation to orient the activation site toward 
+the chemoattractant. Thus, this biased excitability embodies the 
+compass variable that is responsible for both random cell migration 
+and biased random walk. Our finding may explain how cells achieve 
+high sensitivity to and robust coordination of the downstream activation 
+that allows chemotactic behavior in the noisy environment outside and 
+inside the cells.
+
+
+Submitted by Tatsuo Shibata [tatsuoshibata@cdb.riken.jp]]
+---------------------------------------------------------------------------
+
+
+Reversible Membrane Pearling in Live Cells Upon Destruction of 
+the Actin Cortex
+
+Doris Heinrich, Mary Ecke, Marion Jasnin, Ulrike Engel and 
+Günther Gerisch
+
+
+Biophysical Journal, in press 
+http://dx.doi.org/10.1016/j.bpj.2013.12.054
+
+Membrane pearling in live cells is observed when the plasma 
+membrane is depleted of its support, the cortical actin network. 
+Upon efficient depolymerization of actin, pearls of variable size 
+are formed, which are connected by nanotubes of about 40 nm 
+diameter. We show that formation of the membrane tubes and 
+their transition into chains of pearls do not require external tension, 
+and that they neither depend on microtubule-based molecular
+ motors nor pressure generated by myosin-II. Pearling thus differs 
+ from blebbing. The pearling state is stable as long as actin is 
+ prevented from polymerizing. When polymerization is restored, 
+ the pearls are retracted into the cell, indicating continuity of the 
+ membrane. Our data suggest that the alternation of pearls and 
+ strings is an energetically favored state of the unsupported 
+ plasma membrane, and that one of the functions of the actin 
+ cortex is to prevent the membrane from spontaneously assuming 
+ this configuration.
+
+
+Submitted by Günther Gerisch [gerisch@biochem.mpg.de]
+---------------------------------------------------------------------------
+
+
+Bleb driven chemotaxis of Dictyostelium cells
+
+Evgeny Zatulovskiy1, Richard Tyson2, Till Bretschneider2 and 
+Robert R. Kay1
+
+
+J Cell Biol., in press
+
+Blebs and F-actin-driven pseudopods are alternative ways of 
+extending the leading edge of migrating cells.  We show that 
+Dictyostelium cells switch from using predominantly pseudopods 
+to blebs when migrating under agarose overlays of increasing 
+stiffness.  Blebs expand faster than pseudopods leaving behind 
+F-actin scars, but are less persistent.  Blebbing cells are strongly 
+chemotactic to cyclic-AMP, producing nearly all of their blebs up-
+gradient. When cells re-orientate to a needle releasing cyclic-AMP, 
+they stereotypically produce first microspikes, then blebs and 
+pseudopods only later.  Genetically, blebbing requires myosin-II 
+and increases when actin polymerization or cortical function are 
+impaired.  Cyclic-AMP induces transient blebbing independently 
+of much of the known chemotactic signal transduction machinery, 
+but requiring PI3-kinase and downstream PH-domain proteins, 
+CRAC and PhdA.  Impairment of this PI3-kinase pathway results 
+in slow movement under agarose and cells that produce few blebs, 
+though actin polymerization appears unaffected.  We propose that 
+mechanical resistance induces bleb-driven movement in 
+Dictyostelium, which is chemotactic and controlled through 
+PI3-kinase. 
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 5]

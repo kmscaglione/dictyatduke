@@ -1,0 +1,111 @@
+Dicty News
+Electronic Edition
+Volume 16, number 10
+May 12, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Dicty 2001
+=============
+
+DICTYOSTELIUM 2001
+
+The deadline for abstracts to this year's meeting is soon
+approaching. Please send your abstracts as soon as possible.
+
+To encourage prompt registrations the cost of the meeting was initially set
+slightly higher for those who register after today. However, we have decided
+to wave the extra cost for those who register by May 21. However, we
+request that you register NOW.  Abstract dead will also be extended to May
+21.
+
+In addition, we need to institute a "drop-dead" deadline of May 28.
+No registrations or abstracts will be accepted after that date.
+We encourage all those with an interest in the organism to attend.
+This meeting will maintain its strong emphasis on developmental biology and
+genomics but will also have an increased emphasis on cell biology since
+this aspect of the field is growing at an appreciable rate and the
+organism is now at the forefront of many aspects of this field.
+
+Please register as soon as possible.
+
+Best regards,
+
+Bill and Rick
+
+
+
+==============
+   Abstracts
+==============
+
+Regulated protein degradation controls PKA function and cell-type
+differentiation in Dictyostelium
+
+Sudhasri Mohanty, Susan Lee, Nagendra Yadava, Marian J. Dealy, Randall S.
+Johnson, and Richard A. Firtel
+
+Genes and Development, in press
+
+SUMMARY
+
+Cullins function as scaffolds that, along with F-box/WD40-repeat-containing
+proteins, mediate the ubiquitination of proteins to target them for
+degradation by the proteasome.  We have identified a cullin CulA that is
+required at several stages during Dictyostelium development.  culA null
+cells are defective in inducing cell-type-specific gene expression and
+exhibit defects during aggregation, including reduced chemotaxis.  PKA
+is an important regulator of Dictyostelium development.  The levels of
+intracellular cAMP and PKA activity are controlled by the rate of synthesis
+of cAMP and its degradation by the cAMP-specific phosphodiesterase RegA. 
+We demonstrate that overexpression of the PKA catalytic subunit (PKAcat)
+rescues many of the culA null defects and those of cells lacking FbxA/ChtA,
+a previously described F-box/WD40-repeat-containing protein, suggesting
+CulA and FbxA proteins are involved in regulating PKA function.  Whereas
+RegA protein levels drop as the multicellular organism forms in the wild-
+type strain, they remain high in culA null and fbxA null cells.  Although
+PKA can suppress the culA and fbxA null developmental phenotypes, it does
+not suppress the altered RegA degradation, suggesting that PKA lies
+downstream of RegA, CulA, and FbxA.  Finally, we demonstrate that CulA,
+FbxA, and RegA are found in a complex in vivo and formation of this complex
+is dependent on the MAP kinase ERK2, which is also required for PKA
+function. 
+We propose that CulA and FbxA regulate multicellular development by
+targeting RegA for degradation via a pathway that requires ERK2 function,
+leading to an increase in cAMP and PKA activity.
+
+----------------------------------------------------------------------------
+-
+
+Signaling at zero G: G-protein-independent functions for 7-TM receptors
+
+Joseph A. Brzostowski and Alan R. Kimmel*
+Laboratory of Cellular and Developmental Biology, NIDDK (MMDS; Bldg
+6/B1-22), National Institutes of Health, Bethesda, MD 20892-2715, USA.
+*e-mail: ark1@helix.nih.gov
+
+Trends in Biochemical Sciences Vol.26 No.5 May 2001
+
+Eukaryotic cells, whether free-living, single-celled microbes or components
+of complex metazoa, can sense environmental cues through specialized
+seven-transmembrane (7-TM) receptors (also called heptahelical or
+G-protein-coupled receptors). 7-TM receptors detect 'inputs' such as light,
+peptide hormones, neurotransmitters, pheromones, odorants, morphogens and
+chemoattractants, linking extracellular stimuli to intracellular signaling
+networks via heterotrimeric G proteins. Recently, this obligatory paradigm
+has been challenged. A growing body of evidence indicates that 7-TM
+receptors can also transmit extracellular signals through mechanisms that
+function independently of G-protein coupling. This review discusses pathways
+and protein interactions for 7-TM receptors signaling 'at zero G' in
+Dictyostelium and mammalian cells.
+
+
+----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 10]
+

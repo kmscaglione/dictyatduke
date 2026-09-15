@@ -1,0 +1,173 @@
+dictyNews
+Electronic Edition
+Volume 32, number 1
+January 9, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+ReASH- another viable option for in vivo protein labeling in Dictyostelium
+
+Ran-Der Hwang, Chin-Chi Chen and David A. Knecht
+
+
+Journal of Microscopy, in press
+
+Biarsenical-tetracysteine fluorescent protein tagging has been effectively 
+used in a variety of cell types.  It has the advantage of requiring a 
+much smaller peptide alteration to existing proteins than fusion to GFP 
+or RFP.  However, there are no reports of the tetracysteine tagging 
+system being used in Dictyostelium. In order to establish this tagging 
+system in Dictyostelium, the filamin gene (FLN) was modified to express 
+a C-terminal tetracysteine sequence and then transfected into cells.  
+After addition of either FlAsH-EDT2 or ReAsH-EDT2, the fluorescence 
+intensity of cells increased in a time dependent manner and reached 
+a plateau after three hours of incubation.  ReAsH had a much stronger 
+and more specifically localized fluorescent signal compared to FlAsH.  
+After removal of the ReAsH-EDT2 reagent, the fluorescence signal 
+remained detectable for at least twenty-four hours. The localization 
+of filamin labeled by ReAsH was similar to that of an mRFP-filamin 
+fusion protein, but the fluorescence signal from the ReAsH labeled 
+protein was stronger. Our findings suggest that the ReAsH-tetracysteine 
+tagging system can be a useful alternative for in vivo protein tagging 
+in Dictyostelium.
+
+
+Submitted by: Dave Knecht [david.knecht@uconn.edu]
+--------------------------------------------------------------------------------
+
+
+Autophagy contributes to degradation of Hirano bodies
+
+Dong-Hwan Kim, Richard C. Davis, Ruth Furukawa and 
+Marcus Fechheimer
+
+
+Autophagy, Vol 5;1 P: 44 - 51	
+
+Hirano bodies are actin-rich inclusions reported most frequently in the 
+hippocampus in association with a variety of conditions including 
+neurodegenerative diseases, and aging. We have developed a model 
+system for formation of Hirano bodies in Dictyostelium and cultured 
+mammalian cells to permit detailed studies of the dynamics of these 
+structures in living cells. Model Hirano bodies are frequently observed in 
+membrane-enclosed vesicles in mammalian cells consistent with a role 
+of autophagy in the degradation of these structures. Clearance of Hirano 
+bodies by an exocytotic process is supported by images from electron 
+microscopy showing extracellular release of Hirano bodies, and 
+observation of Hirano bodies in the culture medium of Dictyostelium 
+and mammalian cells. An autophagosome marker protein Atg8-GFP, was 
+co-localized with model Hirano bodies in wild type Dictyostelium cells, 
+but not in atg5- or atg1-1 autophagy mutant strains. Induction of model
+Hirano bodies in Dictyostelium with a high level expression of 34 kDa 
+DeltaEF1 from the inducible discoidin promoter resulted in larger Hirano 
+bodies and a cessation of cell doubling. The degradation of model Hirano 
+bodies still occurred rapidly in autophagy mutant (atg5-) Dictyostelium, 
+suggesting that other mechanisms such as the ubiquitin-mediated 
+proteasome pathway could contribute to the degradation of Hirano bodies. 
+Chemical inhibition of the proteasome pathway with lactacystin, significantly 
+decreased the turnover of Hirano bodies in Dictyostelium providing direct 
+evidence that autophagy and the proteasome can both contribute to 
+degradation of Hirano bodies. Short term treatment of mammalian cells with 
+either lactacystin or 3-methyl adenine results in higher levels of Hirano 
+bodies and a lower level of viable cells in the cultures, supporting the 
+conclusion that both autophagy and the proteasome contribute to 
+degradation of Hirano bodies.
+
+
+Submitted by: Ruth Furukawa [furukawa@cb.uga.edu]
+--------------------------------------------------------------------------------
+
+
+Steroids initiate a signaling cascade that triggers rapid sporulation in 
+Dictyostelium
+
+Christophe Anjard, Yongxuan Su and William F. Loomis*
+
+Center for Molecular Genetics, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368
+
+
+Development, in press
+
+Encapsulation of prespore cells of Dictyostelium discoideum is controlled 
+by several intercellular signals to ensure appropriate timing during 
+fruiting body formation. Acyl CoA binding protein, AcbA, is secreted by 
+prespore cells and processed by the prestalk protease TagC to form the 34 
+amino acid peptide SDF-2. The SDF-2 receptor is a constitutive histidine 
+kinase, DhkA, which no longer stimulates the cAMP phosphodiesterase, 
+RegA, when SDF-2 is bound. The subsequent increase in cAMP and PKA 
+triggers rapid encapsulation. AcbA is secreted when gamma-aminobutyric 
+acid (GABA) is released from prespore cells and binds to GrlE, a G protein 
+coupled receptor (GPCR). Analysis of SDF-2 production in a series of mutant 
+strains lacking Galpha subunits and GPCRs, either as pure populations or 
+when mixed with other mutant strains, uncovered the non-cell autonomous 
+roles of GrlA, a membrane localized GPCR, Galpha4 and Galpha7. We found 
+that Galpha7 is essential for the response to GABA and is likely to be coupled 
+to GrlE. GrlA and Galpha4 null cells respond normally to GABA but fail to 
+secrete it. We found that they are necessary for response to a small, 
+hydrophobic molecule, SDF-3, which is released late in culmination. 
+Pharmacological inhibition of steroidogenesis during development blocked
+ the production of SDF-3. Moreover, the response to SDF-3 can be blocked 
+by the steroid antagonist mifepristone, while hydrocortisone and other 
+steroids mimic the effects of SDF-3 when added in the nanomolar range. It 
+appears that SDF-3 is a steroid that elicits rapid release of GABA by acting 
+through GrlA coupled to G protein containing the Galpha4 subunit. It may 
+either stimulate the prespore specific glutamate decarboxylase, GadA, that 
+synthesizes GABA or inhibit the GABA transaminase, GabT, that degrades 
+GABA. SDF-3 is at the head of the cascade that amplifies the signal for 
+encapsulation to ensure rapid, synchronous formation of spores.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+DNA Passage to Nuclei: Role of Endo/lysosomal circuit in Eukaryotic 
+Dictyostelium.
+
+Bhavesh Vats#, Harish Padh*
+
+Department of Cell and Molecular Biology, B. V. Patel Pharmaceutical Education 
+and Research Development (PERD) Centre, Thaltej- Gandhinagar Highway, 
+Thaltej, Ahmedabad – 380054, INDIA.
+Telephone Number: +91-79-27439375, Fax number: +91-79-27450449.
+Email: perd@perdcentre.com
+*Corresponding author
+#Present affiliation: Analytical Development, INTAS Biopharmaceuticals Limited, 
+Sarkhej- Bavla Highway, Ahmedabad- 382 210, INDIA.
+Telephone number: +912717660100, Fax number: +912717251189
+Email: bhavesh.vats@intasbiopharma.co.in
+
+
+Canadian Journal of Microbiology, in press
+
+The understanding of DNA passage in eukaryotic cells is still very ambiguous. 
+The route to the nucleus is difficult due to the barriers- metabolic as well 
+as membranous, posed by the eukaryotic cells. Endocytosis appears to be the 
+most likely process responsible for the transport but is also the major culprit 
+of low transfection efficiencies. Here, we report a study on a eukaryotic 
+amoeba, Dictyostelium discoideum, where by disruption of the endocytic 
+process at the opportune moment, the transformant number increased. 
+We have observed by disruption of fluid phase uptake of calcium phosphate 
+DNA nanoparticles, the number of clones increased with probable increase 
+in number of foreign genes integrating in the host genome.  The method 
+described here leads to the possibility of safe and inexpensive methods 
+for transfer of genes required for heterologous recombinant protein 
+production as well as generation therapeutic recombinant cells.
+
+
+Submitted by: Harish Padh [hpadh@yahoo.com]
+==============================================================
+[End dictyNews, volume 32, number 1]

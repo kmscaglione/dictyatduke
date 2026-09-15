@@ -1,0 +1,160 @@
+dictyNews
+Electronic Edition
+Volume 28, number 8
+April 6, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+The role of SP65 in assembly of the Dictyostelium spore coat
+
+Talibah Metcalf1, Hanke van der Wel1, Ricardo Escalante2, Leandro Sastre2 
+and Christopher M. West1
+
+1Dept. of Biochemistry & Molecular Biology, University of Oklahoma Health 
+Sciences Center, Oklahoma City, OK  73104  USA;
+2Instituto de Investigaciones Biomedicas Alberto Sols. C.S.I.C./U.A.M., 
+Arturo Duperier 4, 28029 Madrid, Spain
+
+
+Eukaryotic Cell, in press
+
+Like the cyst walls of other protists, the spore coat of Dictyostelium is 
+formed de novo to protect the enclosed dormant cell from stress. Spore coat 
+assembly is initiated by exocytosis of protein and polysaccharide precursors 
+at the cell surface, followed by the infusion of nascent cellulose fibrils 
+resulting in an asymmetrical trilaminar sandwich with cellulose filling the 
+middle layer. A molecular complex consisting of cellulose and two proteins, 
+SP85 and SP65, is associated with the inner and middle layers and is required 
+for proper organization of distinct proteins in the outer layer. Here we show 
+that, unlike SP85 and other protein precursors, which are stored in prespore 
+vesicles, SP65 is, like cellulose, synthesized just in time. By tagging the 
+SP65 locus with GFP, we find that SP65 is delivered to the cell surface via 
+largely distinct vesicles, suggesting that separate delivery of components of 
+the cellulose-SP85-SP65 complex regulates its formation at the cell surface. 
+In support of previous in vivo studies, recombinant SP65 and SP85 are shown 
+to interact directly. In addition, truncation of SP65 causes a defect of the 
+outer layer permeability barrier as seen previously for SP85 mutants. These 
+observations suggest that assembly of the cellulose-SP85-SP65 triad at the 
+cell surface is biosynthetically regulated both temporally and spatially, and 
+that the complex contributes an essential function to outer layer architecture 
+and function.  
+
+
+Submitted by: Chris West [Cwest2@ouhsc.edu]
+--------------------------------------------------------------------------------
+
+
+Chemotaxis in the absence of PIP3 gradients
+
+Oliver Hoeller and Robert R. Kay
+
+MRC Laboratory of Molecular Biology,
+Hills Rd,
+Cambridge, CB2 2QH, UK.
+
+
+Current Biology (in press)
+
+Chemotaxing neutrophils and Dictyostelium amoebae produce gradients of the 
+signalling lipid PI(3,4,5)P3 (PIP3) in their plasma membranes  [1-3], which 
+are orientated with the external chemotactic gradient and have been proposed 
+to act as an internal compass, guiding movement of the cell [4, 5].  Evidence 
+for and against this idea exists, but in all cases it depends on the use of 
+inhibitors or gene knockouts, which may only incompletely abolish the PIP3 
+gradient.  We have created a multiple gene knockout strain in Dictyostelium 
+lacking all five type-1 phosphoinositide 3-kinases encoded in the genome and 
+the PTEN phosphatase and have thus removed all known ways for chemoattractant 
+to produce PIP3 gradients in the plasma membrane.  The resulting sextuple 
+mutant is able to chemotax to cyclic-AMP with near wild-type efficiency and 
+to trigger actin polymerization without apparent defect.  There is however, 
+a consistent defect in movement speed in chemotaxis and especially random 
+movement.  This work shows that polarization of membrane PIP3 is not necessary 
+for accurate chemotaxis, but can affect cell speed.  A signalling pathway from 
+receptor to cytoskeleton must exist which is able to guide cells independently 
+of polarized PIP3 and type-1 phosphoinositide 3-kinases. 
+
+
+Submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Development of soil amoeba Dictyostelium discoideum as an expression system 
+for recombinant human erythropoietin
+
+Bhavesh Vats, Harish Padh*
+
+*Corresponding author
+
+B. V. Patel Pharmaceutical Education and Research Development Centre, 
+Thaltej- Gandhinagar Highway, Thaltej, Ahmedabad 380054, India.
+Telephone No.: +91-79-2743 9375
+Fax No.: +91-79- 2745 0449
+
+
+World Journal of Microbiology and Biotechnology, in press
+
+EPO is the block buster biopharmaceutical product presently being produced by 
+recombinant DNA technology from mammalian cell lines. Other available 
+expression systems have not been useful in producing this protein due to the 
+requirement of N- glycosylation for in-vivo activity. In order to develop an 
+alternative expression system, the human epo gene was expressed in the cellular 
+slime mold Dictyostelium discoideum. The 2.43 kbp epo gene from the mammalian 
+expression vector was cloned in the Dictyostelium expression cassette and used 
+to transform cells. Positive clones were selected on the basis of antibiotic 
+resistance. The clones were screened for the presence of the transgene. The 
+copies of the gene inserted in the genome were identified and the transcript 
+too was ascertained. The protein was identified by immuno-blotting and appears 
+to be glycosylated though differently from that of humans or CHO cell lines.
+
+
+Submitted by: Harish Padh [hpadh@yahoo.com]
+--------------------------------------------------------------------------------
+
+
+Evidence that non-coding RNA dutA is a multicopy suppressor of Dictyostelium 
+STAT protein, Dd-STATa
+
+Nao Shimada and Takefumi Kawata*
+
+Department of Biology, Faculty of Science, Toho University, Funabashi, Japan
+
+*Corresponding author. Mailing address: Department of Biology, Faculty of 
+Science, Toho University, 2-2-1 Miyama, Funabashi, Chiba 274-8510, Japan. 
+Phone: 81-47-472-5156 
+FAX: 81-47-472-5156 
+E-mail: tkawata@bio.sci.toho-u.ac.jp
+
+
+Eukaryotic Cell, in press.
+
+Dd-STATa, a Dictyostelium homologue of metazoan STAT transcription factors,
+is necessary for culmination. We created a mutant strain with partial Dd-STATa
+activity, and used it to screen for unlinked suppressor genes. We screened
+approximately 450,000 clones from a slug-stage cDNA library for their ability
+to rescue the culmination defect when overexpressed. There were 12 multicopy
+suppressors of Dd-STATa, of which 4 encode segments of a known non-coding
+RNA, dutA. Expression of dutA is specific to the pstA zone, the region where
+Dd-STATais activated. In suppressed strains the expression patterns of several
+putative Dd-STATa target genes become similar to the wild-type strain. In addition,
+the amount of the tyrosine phosphorylated form of Dd-STATa is significantly
+increased in the suppressed strain. These results indicate that partial copies of
+dutA may act upstream of Dd-STATa to regulate tyrosine phosphorylation by an
+unknownmechanism.
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+============================================================
+[End dictyNews, volume 28, number 8]

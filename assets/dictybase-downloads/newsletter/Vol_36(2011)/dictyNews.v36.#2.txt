@@ -1,0 +1,111 @@
+dictyNews
+Electronic Edition
+Volume 36, number 2
+Jan 21, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Nhe1 Is Essential For Potassium But Not Calcium Facilitation Of Cell Motility 
+And The Monovalent Cation Requirement For Chemotactic Orientation In 
+Dictyostelium discoideum 
+
+Daniel F. Lusche, Deborah Wessels, Daniel E. Ryerson, and David R. Soll
+
+
+Eukaryotic Cell, in press
+
+In Dictyostelium discoideum, extracellular K+ or Ca++ at concentrations of 
+40 and 20 mM, respectively, facilitates motility in the absence or presence of
+a spatial gradient of chemoattractant.  Facilitation results in maximum velocity, 
+cellular elongation, persistent translocation, suppression of lateral pseudopod 
+formation and myosin II localization in the posterior cortex.  A lower threshold 
+concentration of 15 mM K+ or Na, or 5 mM Ca++, is required for chemotactic 
+orientation. Although the common buffer solutions used by D. discoideum 
+researchers to study chemotaxis contain sufficient concentrations of cations 
+for chemotactic orientation, the majority contain insufficient levels to facilitate 
+motility. Here, it is demonstrated that Nhe1, a plasma membrane protein, is 
+required for K+,  but not Ca++,  facilitation of cell motility, and for the lower 
+K+, but not Ca++, requirement for chemotactic orientation. 
+
+
+Submitted by Deb Wessels  [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------
+
+
+Cell-cycle checkpoint for transition from cell division to differentiation
+
+Yasuo Maeda
+
+Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+
+Develop. Growth Differ., in press
+(Review article)
+
+In general, growth and differentiation are mutually exclusive, but they are 
+cooperatively regulated during the course of development. Thus, the process 
+of a cell’s transition from growth to differentiation is of general importance for 
+the development of organisms, and terminally differentiated cells such as 
+nerve cells never divide. Meanwhile, the growth rate speeds up when cells 
+turn malignant. The cellular slime mold Dictyostelium discoideum grows and 
+multiplies as long as nutrients are supplied, and its differentiation is triggered 
+by starvation. A critical checkpoint (growth/differentiation transition or GDT 
+point), from which cells start differentiating in response to starvation, has been 
+precisely specified in the cell cycle of D. discoideum Ax-2 cells. Accordingly, 
+integration of GDT point–specific events with starvation-induced events is 
+needed to understand the mechanism regulating GDTs. A variety of 
+intercellular and intracellular signals are involved positively or negatively 
+in the initiation of differentiation, making a series of cross-talks. As was 
+expected from the presence of the GDT point, the cell’s positioning in cell 
+masses and subsequent cell-type choices occur depending on the cell’s 
+phase in the cell cycle at the onset of starvation. Since novel and multiple 
+functions of mitochondria in various respects of development including the 
+initiation of differentiation have been directly realized in Dictyostelium cells, 
+they are also reviewed in this article.
+
+
+Submitted by Yasuo Maeda [kjygy352@ybb.ne.jp]
+--------------------------------------------------------------------------------
+
+
+Ethylene as a potent inducer of sexual development
+
+Aiko Amagai
+
+
+DGD, in press
+(Review article)
+
+A novel and critical function of ethylene, a potent plant hormone, has been well 
+documented in Dictyostelium, because it leads cells to the sexual development 
+(macrocyst formation) by inducing zygote formation. Zygote formation (sexual 
+cell fusion) and the subsequent nuclear fusion are the characteristic events
+occurring during macrocyst formation. A novel gene, zyg1 was found to be 
+predominantly expressed during the sexual development, and its enforced 
+expression actually induces zygote formation. As expected, the zygote inducer, 
+ethylene enhances the expression of zyg1. Thus the function of ethylene has 
+been verified at all of individual (macrocyst formation), cellular (zygote formation), 
+and molecular levels (zyg1 expression). Based on our recent studies concerning 
+the behavior and function of the zyg1 product (ZYG1 protein), the signal 
+transduction pathways involved in zygote formation are proposed in this review.
+
+
+Submitted by: Aiko Amagai [aiamagai@mail.tains.tohoku.ac.jp]
+==============================================================
+[End dictyNews, volume 36, number 2]

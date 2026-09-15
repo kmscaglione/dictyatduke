@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 27, number 3
+August 4, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Delineation of the roles played by RasG and RasC in cAMP-dependent signal 
+transduction during the early development of Dictyostelium discoideum
+
+Parvin Bolourani, George B. Spiegelman and Gerald Weeks
+
+Department of Microbiology and Immunology, University of British Columbia
+Vancouver, BC, V6T 1Z3, Canada
+
+Corresponding author:  Gerald Weeks
+email: gerwee@interchange.ubc.ca
+Tel:  604-822-6649
+Fax:  604-822-6041
+
+Mailing address:  
+Life Sciences Centre, 2350 Health Sciences Mall, University of British 
+Columbia
+Vancouver, BC, V6T 1Z3, Canada
+
+
+Molecular Biology of the Cell, in press
+
+Upon starvation, the cellular slime mold Dictyostelium discoideum initiates 
+a program of development leading to formation of multicellular structures.  
+The initial cell aggregation requires chemotaxis to cyclic AMP (cAMP) and 
+relay of the cAMP signal by the activation of adenylyl cyclase (ACA), and it 
+has been shown previously that the Ras protein RasC is involved in both 
+processes.  Insertional inactivation of the rasG gene resulted in delayed 
+aggregation and a partial inhibition of early gene expression, suggesting 
+that RasG also has a role in early development.  Both chemotaxis and ACA 
+activation were reduced in the rasG- cells, but the effect on chemotaxis was 
+more pronounced.  When the responses of rasG- cells to cAMP were compared 
+with the responses of rasC- and rasC- rasG- strains, generated in otherwise 
+isogenic backgrounds, these studies revealed that signal transduction through 
+RasG is more important in chemotaxis and early gene expression, but that 
+signal transduction through RasC is more important in ACA activation.  Since 
+the loss of either of the two Ras proteins alone did not result in a total 
+loss of signal output down either of the branches of the cAMP signal-response 
+pathway, there appears to be some overlap of function. 
+
+
+Submitted by: Gerry Weeks [gerwee@interchange.ubc.ca]
+-----------------------------------------------------------------------------
+
+
+WASP-Interacting Protein (WIPa) is Important for Actin Filament Elongation 
+and Prompt Pseudopod Formation in Response to a Dynamic Chemoattractant 
+Gradient
+
+Scott A. Myers, Laura R. Leper, and Chang Y. Chung
+
+Department of Pharmacology, Vanderbilt University Medical Center, Nashville, 
+TN 37069
+
+
+Molecular Biology of the Cell, In Press
+
+The role of WASP-interacting protein (WIP) in the process of F-actin assembly 
+during chemotaxis of Dictyostelium was examined.  Mutations of the WH1 domain 
+of WASP led to a reduction in binding to WIPa, a newly identified homolog of 
+mammalian WIP, a reduction of F-actin polymerization at the leading edge, and 
+a reduction in chemotactic efficiency.  WIPa localizes to sites of new 
+pseudopod protrusion and colocalizes with WASP at the leading edge.  WIPa 
+increases actin elongation in vivo and in vitro in a WASP-dependent manner. 
+WIPa overexpressing cells exhibit multiple microspike formation and defects 
+in chemotactic efficiency due to frequent changes of direction.  WIPa 
+translocates to the cortical membrane upon uniform cAMP stimulation.  This 
+translocation appears to be dependent upon cortical F-actin assembly.  
+Reduced expression of WIPa by expressing a hairpin WIPa (hp WIPa) construct 
+resulted in more polarized cells that exhibit a delayed response to a new 
+chemoattractant source due to delayed extension of pseudopod toward the new 
+gradient.  These results suggest that WIPa is important for actin filament 
+elongation required for new pseudopod protrusion and prompt reorientation of 
+cells toward a new gradient by initiating localized bursts of actin 
+polymerization and/or elongation.
+
+
+Submitted by: Chang Chung [chang.chung@vanderbilt.edu]
+==============================================================================
+[End dictyNews, volume 27, number 3] 

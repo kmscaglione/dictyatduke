@@ -1,0 +1,198 @@
+dictyNews
+Electronic Edition
+Volume 31, number 7
+August 15, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium kinase DPYK3 negatively regulates STATc signaling in cell 
+fate decision.
+
+Lee NS, Rodriguez M, Kim B, Kim L.
+
+Department of Biological Sciences, Florida International University, 
+Miami, FL 33199 USA.
+
+
+Dev Growth Differ. in press
+
+DPYK3, a member of the Dictyostelium TKL (tyrosine kinase like) kinase 
+family, was ablated by homologous recombination. dpyk3(-) cells displayed 
+aberrant pattern formation during development. The prestalk O zone was 
+not properly formed and, instead, the prespore zone was expanded in 
+dpyk3(-) slugs. During development, the transcription factor STATc 
+(signal transducers and activators of transcription c) was persistently 
+phosphorylated and ecmAO expression level was kept low in dpyk3(-) cells. 
+Furthermore, in response to differentiation inducing factor-1 (DIF-1) in 
+suspension culture, dpyk3(-) cells displayed persistent STATc phosphorylation 
+and reintroduction of DPYK3 in dpyk3(-) cells restored transient STATc 
+phosphorylation similarly to wild type cells. In contrast to the positive 
+STAT regulation by Janus Kinase in metazoans, Dictyostelium DPYK3 
+negatively regulates STATc during development in response to 
+DIF-1 signaling.
+
+
+Submitted by: Marbelys Rodriguez [mrodr126@fiu.edu]
+--------------------------------------------------------------------------------
+
+
+Cooperation between ENTH and Carboxy-terminal Domains of Dictyostelium
+Epsin Regulates Dynamic Interaction with Clathrin-Coated Pits
+
+Rebecca J. Brady, Yujia Wen, and Theresa J. O’Halloran
+
+Department of Molecular Cell and Developmental Biology, Institute for Cellular 
+and Molecular Biology, University of Texas at Austin, Austin, TX 78712
+email:  t.ohalloran@mail.utexas.edu
+
+
+Journal of Cell Science
+
+Epsin contains a phospholipid-binding ENTH domain coupled to a 
+carboxy-terminal domain containing motifs that bind coated pit proteins. We 
+examined how these domains interact to influence Dictyostelium epsin function 
+and localization. While not required for global clathrin function, epsin was 
+essential for constructing oval spores during development. Within the epsin 
+protein, we found that features important for essential function were distinct from 
+features targeting epsin to clathrin-coated pits. On its own, the 
+phospholipid-binding ENTH domain could rescue the epsin null phenotype. 
+While necessary and sufficient for function, the isolated ENTH domain was 
+not targeted within clathrin coated pits. The coated pit motif-containing 
+C-terminal domain was also insufficient, highlighting a requirement for both 
+domains for targeting to coated pits. Replacement of the ENTH domain by an 
+alternate membrane-binding domain led to an epsin that sequestered clathrin 
+and AP2 and ablated clathrin function, supporting a modulatory role for the 
+ENTH domain. Within the ENTH domain, residues important for PIP2-binding 
+were essential for both epsin localization and function, while residue T107 
+was essential for function but not coated pit localization. Our results 
+support a model where the ENTH domain coordinates with the clathrin-binding 
+c-terminal domain to allow a dynamic interaction of epsin with coated pits.
+
+
+Submitted by: Terry O’Halloran [t.ohalloran@mail.utexas.edu]
+--------------------------------------------------------------------------------
+
+
+Intramolecular activation mechanism of the Dictyostelium LRRK2-homolog 
+Roco protein GbpC
+
+Wouter N. van Egmond, Arjan Kortholt, Katarzyna Plak, Leonard Bosgraaf, 
+Sylvia Bosgraaf, Ineke Keizer-Gunnink and Peter J.M. van Haastert
+
+Department of Cell Biochemistry, University of Groningen Kerklaan 30, 
+9751 NN Haren, The Netherlands
+
+
+J. Biol. Chem, in press
+
+GbpC is a large multidomain protein involved in cGMP-mediated chemotaxis in 
+the cellular slime mold Dictyostelium discoideum. GbpC belongs to the Roco 
+family of proteins that often share a central core region, consisting of 
+Leucine-Rich-Repeats, a Ras domain (Roc), a COR domain and a MAPKKKinase 
+domain. In addition to this core, GbpC contains a RasGEF domain and two 
+cGMP-binding domains. Here, we report on an intramolecular signaling cascade 
+of GbpC. In vitro, the RasGEF domain of GbpC specifically accelerates the 
+GDP/GTP exchange of the Roc domain. Moreover, cGMP-binding to GbpC strongly 
+stimulates the binding of GbpC to GTP-agarose, suggesting cGMP-stimulated 
+GDP/GTP exchange at the Roc domain. The function of the protein in vivo was 
+investigated by rescue analysis of the chemotactic defect of gbpC null cells. 
+Mutants that lack a functional GEF, Roc or kinase domain are inactive in vivo. 
+Together, the results suggest a 4-step intramolecular activation mechanism of the 
+Roco protein GbpC: cGMP-binding to the cNB domains, activation of the GEF 
+domain, GDP/GTP exchange of Roc and activation of the MAPKKK domain.  
+
+
+Submitted by: Peter van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Structure of the Roc–COR domain tandem of C. tepidum, a prokaryotic homologue 
+of the human LRRK2 Parkinson kinase
+
+Katja Gotthardt1, Michael Weyand1, Arjan Kortholt1, 2, Peter J M Van Haastert2 
+and Alfred Wittinghofer1
+
+1 Department of Structural Biology, Max-Planck-Institut for Molecular 
+Physiology, Dortmund, Germany
+2 Department of Cell Biochemistry, University of Groningen Kerklaan 30, 
+9751 NN Haren, The Netherlands
+
+
+EMBO J., inpress
+
+Ras of complex proteins (Roc) belongs to the superfamily of Ras-related small 
+G-proteins that always occurs in tandem with the C-terminal of Roc (COR) 
+domain. This Roc–COR tandem is found in the bacterial and eukaryotic world. 
+Its most prominent member is the leucine-rich repeat kinase LRRK2, which 
+is mutated and activated in Parkinson patients. Here, we investigated 
+biochemically and structurally the Roco protein from Chlorobium tepidum. 
+We show that Roc is highly homologous to Ras, whereas the COR domain is a 
+dimerisation device. The juxtaposition of the G-domains and mutational analysis 
+suggest that the Roc GTPase reaction is stimulated and/or regulated by 
+dimerisation in a nucleotide-dependent manner. The region most conserved 
+between bacteria and man is the interface between Roc and COR, where 
+single-point Parkinson mutations of the Roc and COR domains are in close 
+proximity. The analogous mutations in C. tepidum Roc–COR decrease the 
+GTPase reaction rate, most likely due to a modification of the interaction 
+between the Roc and COR domains.
+
+
+Submitted by: Peter Van Haastert [P.J.M.van.Haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+Heat shock protein 90 regulates development in dictyostelium discoideum
+
+Ritwick Sawarkar (2, #), Nainita Roy (1, #), Sanjana Rao (1), Swetha Raman (3), 
+Venketesh S (1),Suguna K (3) and Utpal Tatu(1)
+(1) Department of Biochemistry, 
+(2) Molecular Reproduction, Development and Genetics,
+(3) Molecular Biophysics Unit, 
+Indian Institute of Science, Bangalore 560 012, India
+
+# These authors contributed equally to the manuscript
+
+
+Journal of Molecular Biology (accepted)
+
+Cytosolic heat shock protein 90 (Hsp90) has been implicated in diverse 
+biological processes ranging from protein folding, cell cycle control, signal 
+transduction, development and morphological evolution. Available model 
+systems to study Hsp90 function either allow an ease of manipulation for 
+biochemical studies or facilitate phenomenological study of its role in 
+influencing phenotype. In this paper we have explored the use of the 
+cellular slime mold Dictyostelium discoideum to examine cellular functions 
+of Hsp90 in relation to its multicellular development. In addition to cloning, 
+purification, biochemical characterization and examination of its crystal 
+structure our studies using a pharmacological inhibitor of Hsp90 demonstrate 
+a role for the cytoplasmic isoform (HspD) in D. discoideum development. 
+Inhibition of HspD function using geldanamycin resulted in delayed aggregation 
+and an arrest of D. discoideum development at the ‘mound’ stage. Crystal 
+structure of the amino terminal domain of HspD showed a binding pocket similar 
+to that described for yeast Hsp90. Fluorescence spectroscopy as well as 
+geldanamycin coupled beads affinity-pull down confirmed a specific interaction 
+between HspD and geldanamycin. The results presented here provide an 
+important insights into the function of HspD in D. discoideum development and 
+emphasize the potential of the cellular slime mold to serve as an effective model 
+to study the many roles of Hsp90 at a cellular and an organismal level.
+
+
+Submitted by: Ritwick Sawarkar [ritwick@mrdg.iisc.ernet.in]
+==============================================================
+[End dictyNews, volume 31, number 7]

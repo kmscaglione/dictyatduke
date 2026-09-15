@@ -1,0 +1,88 @@
+dictyNews
+Electronic Edition
+Volume 27, number 15
+November 24, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+A model for cell type localization in the migrating slug of Dictyostelium 
+discoideum based on differential chemotactic sensitivity to cAMP and 
+differential sensitivity to suppression of chemotaxis by ammonia
+
+Ira N Feit*, Jeffrey Pawlikowsky, and Caroline Zawilski
+
+Franklin and Marshall College, Lancaster, PA 17603 USA
+
+*Correspondence: Ira N. Feit (Ira.Feit@fandm.edu)
+
+
+Journal of Biosciences, in press
+
+The three basic cell types in the migrating slug of Dictyostelium 
+discoideum show differential chemotactic response to cAMP and 
+differential sensitivity to suppression of the chemotaxis by ammonia. 
+The values of these parameters indicate a progressive maturation of 
+chemotactic properties during the transdifferentiation of slug cell types. 
+We present a model that explains the localization of the three cell types 
+within the slug based on these chemotactic differences and on the 
+maturation of its chemotactic properties.
+
+
+Submitted by: Ira N. Feit (Ira.Feit@fandm.edu)
+--------------------------------------------------------------------------------
+
+
+Proteomic and micro-array analyses of the Dictyostelium Zak1-GSK-3 
+signalling pathway reveals a role in early development
+
+Lana Strmecki1, Gareth Bloomfield2, Tsuyoshi Araki3, Emma Dalton4, 
+Jason Skelton5, Christina Schilde3, Adrian Harwood4, Jeffrey G. 
+Williams3, Al Ivens5 and Catherine Pears1
+
+1. Biochemistry Department, Oxford University, South Parks Road, 
+Oxford OX1 3QU UK
+2. MRC Laboratory of Molecular Biology, Hills Road, Cambridge, 
+CB2 2QH, UK
+3. School of Life Sciences, Wellcome Trust Biocentre, University of 
+Dundee, Dundee DD1 5EJ, UK
+4. Cardiff School of Biosciences, Cardiff University, Museum Avenue, 
+Cardiff, CF10 3US
+5. The Wellcome Trust Sanger Institute, Wellcome Trust Genome 
+Campus, Hinxton, Cambridge, CB10 1SA, UK
+
+
+Eukaryotic Cell, in press. 
+
+GskA, the Dictyostelium GSK-3 orthologue, is modified and activated by 
+the dual-specificity tyrosine kinase Zak1 and the two kinases form part 
+of a signalling pathway that responds to extracellular cAMP. We identify 
+potential cellular effectors for the two kinases by analysing their null 
+mutants. There are proteins and mRNAs that are altered in abundance in 
+only one or other of the two mutants, indicating that each kinase has some 
+unique functions. However, proteomic and micro-array analysis respectively 
+identified a number of proteins and genes that are similarly mis-regulated in 
+both mutant strains. The positive correlation between the array data and the 
+proteomics data is consistent with the Zak1-GskA signalling pathway 
+functioning by directly or indirectly regulating gene expression. The discoidin 
+1 genes are positively regulated by the pathway while the abundance of the 
+H5 protein is negatively regulated. Two of the targets, H5 and discoidin 1, are 
+well-characterised markers for early development, indicating that the Zak1-
+GskA pathway plays a role in development earlier than previously observed. 
+
+
+Submitted by: Catherine Pears [pears@bioch.ox.ac.uk]
+============================================================
+[End dictyNews, volume 27, number 15]

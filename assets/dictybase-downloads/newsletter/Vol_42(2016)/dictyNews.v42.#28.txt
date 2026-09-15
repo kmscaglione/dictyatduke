@@ -1,0 +1,129 @@
+dictyNews
+Electronic Edition
+Volume 42, number 28
+December 2, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Interspecies comparison of peptide substrate reporter metabolism 
+using compartment-based modeling
+
+Allison J. Tierney, Nhat Pham, Kunwei Yang, Brooks K. Emerick, 
+and Michelle L. Kovarik
+
+
+Analytical and Bioanalytical Chemistry, in press
+
+Peptide substrate reporters are fluorescently labeled peptides 
+that can be acted upon by one or more enzymes of interest. 
+Peptide substrates are readily synthesized and more easily 
+separated than full-length protein substrates; however, they are 
+often more rapidly degraded by peptidases. As a result, peptide 
+reporters must be made resistant to proteolysis in order to study 
+enzymes in intact cells and lysates. This is typically achieved by 
+optimizing the reporter sequence in a single cell type or model 
+organism, but studies of reporter stability in a variety of organisms 
+are needed to establish the robustness and broader utility of these 
+molecular tools. We measured peptidase activity toward a peptide 
+substrate reporter for protein kinase B (Akt) in E. coli, D. discoideum, 
+and S. cerevisiae using capillary electrophoresis with laser-induced 
+fluorescence (CE-LIF). Using compartment-based modeling, we 
+determined individual rate constants for all potential peptidase 
+reactions and explored how these rate constants differed between 
+species. We found the reporter to be stable in D. discoideum 
+(t1/2 = 82-103 min) and S. cerevisiae (t1/2 = 279-314 min), but 
+less stable in E. coli (t1/2 = 21-44 min). These data suggest that the 
+reporter is sufficiently stable to be used for kinase assays in 
+eukaryotic cell types while also demonstrating the potential utility 
+of compartment-based models in peptide substrate reporter design.
+
+
+submitted by: Michelle Kovarik [michelle.kovarik@trincoll.edu]
+———————————————————————————————————————
+
+
+Xpf suppresses mutagenic consequences of bacterial phagocytosis 
+in Dictyostelium
+
+Lucas B. Pontel, Judith Langenick, Ivan V. Rosado, Xiao-Yin 
+Zhang1,4, David Traynor, Robert R. Kay and Ketan J. Patel
+
+
+Journal of Cell Science, in press
+
+As time passes, mutations accumulate in the genomes of all living 
+organisms. These changes promote genetic diversity, but also 
+precipitate ageing and the initiation of cancer. Food is a common 
+source of mutagens, but little is known about how nutritional factors 
+cause lasting genetic changes in the consuming organism. Here, 
+we describe an unusual genetic interaction between DNA repair in 
+the unicellular amoeba – Dictyostelium discoideum – and its natural 
+bacterial food source. Dictyostelium deficient in the DNA repair 
+nuclease Xpf displays a severe and specific growth defect when 
+feeding on bacteria. Despite being proficient in the phagocytosis 
+and digestion of bacteria, over time, xpf- Dictyostelium feeding on 
+bacteria ceases to grow and in many instances die. The Xpf nuclease 
+activity is required for sustained growth using a bacterial food source. 
+Furthermore, the ingestion of this food source leads to a striking 
+accumulation of mutations in the genome of xpf- Dictyostelium. This 
+work therefore establishes Dictyostelium as a model genetic system 
+to dissect nutritional genotoxicity, providing insight into how 
+phagocytosis can induce mutagenesis and compromise survival 
+fitness.
+
+
+submitted by: Lucas Pontel [lpontel@mrc-lmb.cam.ac.uk]
+———————————————————————————————————————
+
+
+SodC modulates Ras and PKB signaling in Dictyostelium.
+
+Boris Castillo, Seon-Hee Kim, Mujataba Sharief, Tong Sun, 
+Lou W. Kim 
+
+
+European Journal of Cell Biology, in press
+
+We have previously reported that the basal RasG activity is 
+aberrantly high in cells lacking Superoxide dismutase C (SodC). 
+Here we report that other Ras proteins such as RasC and RasD 
+activities are not affected in sodC− cells and mutagenesis studies 
+showed that the presence of the Cys118 in the Ras proteins is 
+essential for the superoxide-mediated activation of Ras proteins 
+in Dictyostelium. In addition to the loss of SodC, lack of extracellular 
+magnesium ions increased the level of intracellular superoxide and 
+active RasG proteins. Aberrantly active Ras proteins in sodC− cells 
+persistently localized at the plasma membrane, but those in wild type 
+cells under magnesium deficient medium exhibited intracellular 
+vesicular localization. Interestingly, the aberrantly activated Ras 
+proteins in wild type cells were largely insulated from their normal 
+downstream events such as Phosphatidylinositol-3,4,5-P3 (PIP3) 
+accumulation, Protein Kinase B (PKB) activation, and PKBs 
+substrates phosphorylation. Intriguingly, however, aberrantly activated 
+Ras proteins in sodC− cells were still engaged in signaling to their 
+downstream targets, and thus excessive PKBs substrates 
+phosphorylation persisted. In summary, we suggest that SodC and 
+RasG proteins are essential part of a novel inhibitory mechanism that 
+discourages oxidatively stressed cells from chemotaxis and thus 
+inhibits the delivery of potentially damaged genome to the next 
+generation.
+
+
+submitted by: Lou Kim  [kiml@fiu.edu]
+==============================================================
+[End dictyNews, volume 42, number 28]

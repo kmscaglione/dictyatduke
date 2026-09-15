@@ -1,0 +1,168 @@
+dictyNews
+Electronic Edition
+Volume 33, number 3
+July 24, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+How a Cell Crawls and the Role of Cortical Myosin II
+
+David R. Soll, Deborah Wessels, Spencer Kuhl, and Daniel F. Lusche
+
+
+Eukaryotic Cell, in press
+
+Employing 3D-DIAS software, Dictyostelium discoideum amoebae translocating 
+on a glass surface in the absence of chemoattractant have been reconstructed 
+at five second intervals and motion-analyzed. A morphometric analysis of 
+pseudopods, the main cell body and the uropod provides a comprehensive 
+description of the basic motile behavior of a cell in 4D, resulting in a list 
+of 18 characteristics. A similar analysis of the myosin II phosphorylation 
+mutant 3XASP reveals a role for the cortical localization of myosin II in the 
+suppression of lateral pseudopods, the formation of the uropod, cytoplasmic 
+distribution of cytoplasm in the main cell body and efficient motility. The 
+analysis suggests that pseudopods, the main cell body, and the uropod 
+represent three motility compartments that must be coordinated for 
+efficient translocation.  It provides a contextual framework for interpreting 
+the effects of mutations, inhibitors and chemoattractants on the basic 
+motile behavior of D. discoideum. The generality of the characteristics 
+of the basic motile behavior of D. discoideum must now be tested by 
+similar 4D analyses of the motility of higher eukaryotic cells, in particular 
+human polymorphonuclear leukocytes. 
+
+
+Submitted by Deb Wessels [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------
+
+
+Development of Dictyostelium discoideum is associated with alteration of 
+fucosylated N-glycan structures
+
+Birgit Schiller, Alba Hykollari, Josef Voglmeir, Gerald Pöltl, Karin Hummel, 
+Ebrahim Razzazi-Fazeli, Rudolf Geyer and Iain B. H. Wilson
+
+Department für Chemie, Universität für Bodenkultur, Vienna A-1190, Austria
+
+
+Biochem. J., in press (doi:10.1042/BJ20090786)
+
+The social amoeba Dictyostelium discoideum has become established 
+as a simple model for the examination of cell-cell interactions and early 
+studies suggested that shifts in glycosylation profiles take place during 
+its life cycle. In the present study, we have applied HPLC and mass 
+spectrometric methods to show that the major N-glycans in axenic cultures 
+of the AX3 strain are oligomannosidic forms, most of which carry core fucose 
+and/or intersecting and bisecting N-acetylglucosamine residues, including 
+the major structure with the composition Man8GlcNAc4Fuc1. The postulated 
+alpha1,3-linkage of the core fucose which correlates with the cross-reactivity 
+of Dictyostelium glycoproteins with an anti-horseradish peroxidase antiserum; 
+a corresponding core alpha1,3-fucosyltransferase activity capable of modifying 
+oligomannosidic N-glycans was detected in axenic Dictyostelium extracts. 
+The presence of fucose on the N-glycans and the reactivity to the antiserum,
+but not the fucosyltransferase activity, are abolished in the fucose-deficient 
+HL250 strain. In later stages of development, N-glycans at the mound and 
+culmination stages show a reduction in both the size and the degree of 
+modification by intersecting/bisecting residues as compared to mid-log 
+phase cultures, consistent with the hypothesis that glycosidase and 
+glycosyltransferase expression levels are altered during the slime mould 
+life cycle.
+
+
+Submitted by Iain Wilson [iain.wilson@boku.ac.at]
+--------------------------------------------------------------------------------
+
+
+Differentiation-Inducing Factor-1 and -2 Function Also as Modulators for 
+Dictyostelium Chemotaxis
+
+Hidekazu Kuwayama 1 and Yuzuru Kubohara 2,*
+
+1 Graduate School of Life and Environmental Sciences, University of Tsukuba, 
+Tsukuba 305-8572, Japan
+2 Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation (IMCR), Gunma University, Maebashi 371-8512, Japan
+
+
+PLoS ONE, in press
+
+Background: In the early stages of development of the cellular slime mold 
+Dictyostelium discoideum, chemotaxis toward cAMP plays a pivotal role in 
+organizing discrete cells into a multicellular structure. In this process, 
+a series of signaling molecules, such as G-protein-coupled cell surface 
+receptors for cAMP, phosphatidylinositol metabolites, and cyclic nucleotides, 
+function as the signal transducers for controlling dynamics of cytoskeleton. 
+Differentiation-inducing factor-1 and -2 (DIF-1 and DIF-2) were originally 
+identified as the factors (chlorinated alkylphenones) that induce 
+Dictyostelium stalk cell differentiation, but it remained unknown whether 
+the DIFs had any other physiologic functions.
+
+Methodology/Principal Findings: To further elucidate the functions of DIFs, 
+in the present study we investigated their effects on chemotaxis under various 
+conditions. Quite interestingly, in shallow cAMP gradients, DIF-1 suppressed 
+chemotaxis whereas DIF-2 promoted it greatly. Analyses with various mutants 
+revealed that DIF-1 may inhibit chemotaxis, at least in part, via GbpB 
+(a phosphodiesterase) and a decrease in the intracellular cGMP concentration 
+([cGMP]i). DIF-2, by contrast, may enhance chemotaxis, at least in part, 
+via RegA (another phosphodiesterase) and an increase in [cGMP]i. Using null 
+mutants for DimA and DimB, the transcription factors that are required for 
+DIF-dependent prestalk differentiation, we also showed that the mechanisms 
+for the modulation of chemotaxis by DIFs differ from those for the induction 
+of cell differentiation by DIFs, at least in part.
+
+Conclusions/Significance: Our findings indicate that DIF-1 and DIF-2 
+function as negative and positive modulators for Dictyostelium chemotaxis, 
+respectively. To our knowledge, this is the first report in any organism of 
+physiologic modulators (small molecules) for chemotaxis having 
+differentiation-inducing activity.
+
+
+Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Regulation of IL-2 production in Jurkat cells by Dictyostelium-derived factors
+
+Katsunori Takahashi, Masami Murakami, Kohei Hosaka, Haruhisa Kikuchi, 
+Yoshiteru Oshima, Yuzuru Kubohara*
+
+*Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation, Gunma University, Maebashi 371-8512, Japan
+
+
+Life Sciences , in press
+
+Aims: Differentiation-inducing factors (DIFs) are chlorinated alkylphenones 
+found in the cellular slime mold Dictyostelium discoideum. DIF derivatives 
+exhibit antiproliferative activities and promote glucose consumption in 
+mammalian cells in vitro. In this study, we assessed the ability of DIFs to 
+regulate the immune system and investigated their mechanisms of action.
+Main methods: We examined the effects of 30 DIF derivatives on concanavalin 
+A–induced IL-2 production (CIIP) in Jurkat T-cells. We also examined the 
+effects of some DIF derivatives on the activity of AP-1 (activator protein-1), 
+NFAT (nuclear factor of activated T-cells), and NFkB (nuclear factor kappa B), 
+which are transcription factors required for CIIP. 
+
+Key findings: Of the derivatives tested, some compounds suppressed CIIP as 
+well as the known immunosuppressants cyclosporine A and FK506. A reporter 
+gene assay revealed that 4 DIF derivatives tested suppressed CIIP, at least 
+in part, by inhibiting the activity of AP-1, NFAT, and/or NFkB. Unlike 
+cyclosporine A and FK506, the DIF derivatives had little effect on 
+concanavalin A–induced interferon-gamma production in Jurkat cells.
+Significance: The present results suggest that DIF derivatives could be 
+developed as novel immunosuppressive drugs.
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================
+[End dictyNews, volume 33, number 3]

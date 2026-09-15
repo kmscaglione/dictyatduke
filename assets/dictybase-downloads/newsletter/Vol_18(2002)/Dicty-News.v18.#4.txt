@@ -1,0 +1,133 @@
+Dicty News
+Electronic Edition
+Volume 18, number 4
+March 2, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+Correlates of developmental cell death in Dictyostelium discoideum
+
+Trupti Kawli, B.R. Venkatesh, P. Kevin Kennady*, Gopal Pande* and Vidyanand 
+Nanjundiah
+
+Indian Institute of Science, Bangalore 560012, India and *Centre for Cellular 
+and Molecular Biology, Hyderabad 500007
+
+Differentiation, in press
+
+ABSTRACT
+
+We have studied the correlates of cell death during normal development in 
+Dictyostelium discoideum. Our main findings are four. (i) There is a 
+gradual increase in the number of cells with exposed phosphatidyl serine 
+residues, an indicator of membrane asymmetry loss and increased permeability. 
+Only presumptive stalk cells show this change in membrane asymmetry. Also, 
+under conditions that promote calcium-induced stalk cell differentiation in 
+cell monolayers, cells show an increase in cell membrane permeability. (ii) 
+There is a gradual fall in mitochondrial membrane potential during 
+development, again restricted to the presumptive stalk cells. (iii) The 
+fraction of cells showing caspase-3 activity increases as development 
+proceeds and then declines in the terminally differentiated fruiting body. 
+(iv) There is an absence of internucleosomal cleavage of DNA, or DNA 
+fragmentation. There is also no calcium and magnesium-dependent 
+endonucleolytic activity seen in nuclear extracts from various developmental 
+stages. However, nuclear condensation and peripheralization does occur in 
+stalk cells.  Thus, cell death in D.discoideum shows some, but not all, 
+features of apoptosis as recognized in other multicellular systems. These 
+findings argue against the emergence of a single mechanism of 'programmed 
+cell death (PCD)' before multicellularity arose during evolution. 
+
+-----------------------------------------------------------------------------
+
+Lamellipodial localization of Dictyostelium myosin heavy chain kinase A is 
+mediated via F-actin binding by the coiled-coil domain
+
+Paul A. Steimle(a), Lucila Licate(b), Graham P. Ct(c), and Thomas T. 
+Egelhoff(b)
+
+(a)Department of Biology University of North Carolina at Greensboro, 
+Greensboro, NC 27402; (b)Department of Physiology and Biophysics Case Western 
+Reserve School of Medicine Cleveland, OH 44106; (c) Department of 
+Biochemistry, Queen s University Kingston, Ontario, CANADA
+
+FEBS Letters, In Press
+
+ABSTRACT
+
+Myosin heavy chain kinase A (MHCK A) modulates myosin II filament assembly in 
+the amoeba Dictyostelium discoideum. MHCK A localization in vivo is 
+dynamically regulated during chemotaxis, phagocytosis, and other polarized 
+cell motility events, with preferential recruitment into anterior F-actin 
+rich structures. The current work reveals that an amino-terminal segment of 
+MHCK A, previously identified as forming a coiled-coil, mediates anterior 
+localization. MHCK A co-sediments with F-actin, and deletion of the amino-
+terminal domain eliminated actin binding. These results indicate that the 
+anterior localization of MHCK A is mediated via direct binding to F-actin, 
+and reveal the presence of an actin-binding function not previously detected 
+by primary sequence evaluation of the coiled-coil domain.
+
+-----------------------------------------------------------------------------
+
+Genetic and morphological evidence for two parallel pathways of cell cycle-
+coupled cytokinesis in Dictyostelium.
+
+Akira Nagasaki1, Eugenio L. de Hostos2 and Taro Q.P. Uyeda1
+
+1: Gene Discovery Research Center, National Institute of Advanced Industrial 
+Science and Technology, Tsukuba, Ibaraki 305-8562, Japan; 2: Department of 
+Cell Genetics, Exelixis Inc., South San Francisco, CA 94083-0511, USA
+
+
+J. Cell. Sci., in press.
+
+SUMMARY
+
+Myosin II-null cells of Dictyostelium discoideum cannot divide in 
+suspension, consistent with the dogma that myosin II drives constriction 
+of the cleavage furrow, and consequently, cytokinesis (cytokinesis A).  
+Nonetheless, when grown on substrates, these cells exhibit efficient, cell 
+cycle-coupled division, suggesting that they possess a novel, myosin II-
+independent, adhesion-dependent method of cytokinesis (cytokinesis B).  
+Here we show that double mutants lacking myosin II and either AmiA or 
+coronin, both of which are implicated in cytokinesis B, are incapable of 
+cell cycle-coupled cytokinesis.  These double mutants multiplied in number 
+mainly by cytokinesis C, a third, inefficient method of cell division, which 
+requires substrate adhesion and is independent on the cell cycle progression.  
+In contrast, double mutants lacking AmiA and coronin were not sicker than 
+each of the single mutant, indicating that the severe defects of myosin II-/
+AmiA- or myosin II-/coronin- are not simple additive effects of two mutations.  
+We take this as genetic evidence for two parallel pathways that both lead to 
+cell cycle-coupled cytokinesis.  This conclusion is supported by differences 
+in morphological changes during cytokinesis of the mutant cell lines.
+
+-----------------------------------------------------------------------------
+
+Mini review: Gene expression patterns in Dictyostelium using microarrays
+
+Gad Shaulsky and William F. Loomis
+
+Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, TX 77030. Division of Biology, University of California, San Diego, 
+La Jolla, CA 92093.
+
+Protist  (in press)
+
+(no abstract)
+
+The promises and perils of microarray analyses of gene expression are 
+considered and the results from recent microarray studies in Dictyostelium 
+compared and summarized. The avenues open for future microarray studies are 
+briefly discussed.
+
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 4]

@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 36, number 17
+June 24, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Self-recognition in social amoebae is mediated by allelic pairs of tiger genes
+
+Shigenori Hirose*, Rocio Benabentos*, Hsing-I Ho, Adam Kuspa# and 
+Gad Shaulsky#
+
+Baylor College of Medicine, Houston, TX 
+* equal contribution; # corresponding authors
+
+
+Science, in press
+
+Abstract: Free-living cells of the social amoebae Dictyostelium discoideum 
+can aggregate and develop into multicellular fruiting bodies in which many 
+altruistically die as they become stalk cells that support the surviving spores. 
+Dictyostelium cells exhibit kin-discrimination – a potential defense against 
+cheaters, which sporulate without contributing to the stalk. Kin-discrimination 
+depends on strain relatedness and the polymorphic genes tgrB1 and tgrC1 
+are potential components of that mechanism. Here we demonstrate a direct 
+role for these genes in kin-discrimination. We show that a matching pair of 
+tgrB1 and tgrC1 alleles is necessary and sufficient for attractive 
+self-recognition, which is mediated by differential cell-cell adhesion. We 
+propose that TgrB1 and TgrC1 proteins mediate this adhesion through 
+direct binding. This system is a genetically-tractable ancient model of 
+eukaryotic self-recognition.
+
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+--------------------------------------------------------------------------------
+
+
+Identification of Calmodulin and MlcC as Light Chains for Dictyostelium 
+Myosin-I Isozymes
+
+Scott W. Crawley†, Janine Liburd†, Kristopher Shaw, Yoojin Jung, 
+Steven P. Smith and Graham P. Côté
+
+From the Department of Biochemistry, Queen’s University, Kingston, 
+Ontario, Canada K7L 3N6
+
+†These authors contributed equally to this work
+
+
+Biochemistry, in press
+
+Dictyostelium discoideum express seven single-headed myosin-I isozymes 
+(MyoA-MyoE and MyoK) that drive motile processes at the cell membrane. 
+The light chains for MyoA and MyoE were identified by expressing 
+Flag-tagged constructs consisting of the motor domain and the two IQ 
+motifs in the neck region in Dictyostelium. The MyoA and MyoE constructs 
+both co-purified with calmodulin. Isothermal titration calorimetry (ITC) 
+showed that apo-calmodulin bound to peptides corresponding to the MyoA 
+and MyoE IQ motifs with micromolar affinity. In the presence of calcium, 
+calmodulin cross-linked two IQ motif peptides, with one domain binding with 
+nanomolar affinity and the other with micromolar affinity. The IQ motifs were 
+required for the actin-activated MgATPase activity of MyoA but not MyoE; 
+however, neither myosin exhibited calcium-dependent activity. A 
+Flag-tagged construct consisting of the MyoC motor domain and the three
+IQ motifs in the adjacent neck region bound a novel 8.6 kDa two EF-hand 
+protein named MlcC, for myosin light chain for MyoC. MlcC is most similar 
+to the C-terminal domain of calmodulin but does not bind calcium. ITC 
+studies showed that MlcC binds IQ1 and IQ2 but not IQ3 of MyoC. IQ3 
+contains a proline residue that may render it non-functional. Each 
+long-tailed Dictyostelium myosin-I has now been shown to have a unique 
+light chain (MyoB- MlcB, MyoC-MlcC and MyoD-MlcD), whereas the 
+short-tailed myosins-I, MyoA and MyoE, have the multi-functional 
+calmodulin as a light chain. The diversity in light chain composition is likely 
+to contribute to the distinct cellular functions of each myosin-I isozyme.
+
+
+Submitted by Scott W. Crawley [crawleys@queensu.ca]
+==============================================================
+[End dictyNews, volume 36, number 17]

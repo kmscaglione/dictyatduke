@@ -1,0 +1,168 @@
+dictyNews
+Electronic Edition
+Volume 41, number 1
+January 9, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Evidence for nucleolar subcompartments in Dictyostelium
+
+Andrew Catalano (a) and Danton H. OÕDay (a,b)*
+
+a Department of Biology, University of Toronto at Mississauga, 
+3359 Mississauga rd. N., Mississauga, Ontario, Canada, L5L 1C6
+b Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord st., Toronto, Ontario, Canada, M5S 3G5
+
+
+Biochemical Biophysical Research Communications, in press
+Free online: http://authors.elsevier.com/sd/article/S0006291X14022165
+
+The nucleolus is a multifunctional nuclear compartment usually 
+consisting of two to three subcompartments which represent stages 
+of ribosomal biogenesis. It is linked to several human diseases 
+including viral infections, cancer, and neurodegeneration. 
+Dictyostelium is a model eukaryote for the study of fundamental 
+biological processes as well as several human diseases however 
+comparatively little is known about its nucleolus. Unlike most 
+nucleoli it does not possess visible subcompartments at the 
+ultrastructural level. Several recently identified nucleolar 
+proteins in Dictyostelium leave the nucleolus after treatment with 
+the rDNA transcription inhibitor actinomycin-D (AM-D). Different 
+proteins exit in different ways, suggesting that previously 
+unidentified nucleolar subcompartments may exist. The identification 
+of nucleolar subcompartments would help to better understand the 
+nucleolus in this model eukaryote. Here, we show that Dictyostelium 
+nucleolar proteins nucleomorphin isoform NumA1 and Bud31 localize 
+throughout the entire nucleolus while calcium-binding protein 4a 
+localizes to only a portion, representing nucleolar subcompartment 
+1 (NoSC1). SWI/SNF complex member Snf12 localizes to a smaller area 
+within NoSC1 representing a second nucleolar subcompartment, NoSC2. 
+The nuclear/nucleolar localization signal KRKR from Snf12 localized 
+GFP to NoSC2, and thus also appears to function as a nucleolar 
+subcompartment localization signal. FhkA localizes to the nucleolar 
+periphery displaying a similar pattern to that of Hsp32. Similarities 
+between the redistribution patterns of Dictyostelium nucleolar 
+proteins during nucleolar disruption as a result of either AM-D 
+treatment or mitosis support these subcompartments. A model for the 
+AM-D-induced redistribution patterns is proposed.
+
+
+Submitted by: Danton H. OÕDay: danton.oday@utoronto.ca
+----------------------------------------------------------------------
+
+
+Partial genetic suppression of a loss of function mutant of the 
+Neuronal Ceroid Lipofuscinosis-associated protease TPP1 in 
+Dictyostelium discoideum
+
+Jonathan E. Phillips and Richard H. Gomer
+
+
+Disease Models & Mechanisms, in press
+
+Neuronal Ceroid Lipofuscinosis (NCL) is the most common childhood-
+onset neurodegenerative disease. NCL is inevitably fatal, and there 
+is no current treatment. Children with NCL show progressive decline 
+in movement, vision, and mental abilities and accumulation of 
+autofluorescent deposits in neurons and other cell types. Late-
+infantile NCL is caused by mutations in the lysosomal protease 
+tripeptdyl peptidase 1 (TPP1). TPP1 cleaves tripeptides from the 
+N-terminus of proteins in vitro, but little is known about the 
+physiological function of TPP1. TPP1 shows wide conservation in 
+vertebrates but is not found in Drosophila, C. elegans, or 
+S. cerevisiae. Here, we characterize ddTpp1, a TPP1 ortholog present 
+in the social amoeba Dictyostelium discoideum. Lysates from cells 
+lacking ddTpp1 show reduced but not abolished ability to cleave a 
+TPP1 substrate, suggesting that other Dictyostelium enzymes can 
+perform this cleavage. ddTpp1 and human TPP1 localize to the 
+lysosome in Dictyostelium, indicating conserved function and 
+trafficking. Cells lacking ddTpp1 show precocious multicellular 
+development and a reduced ability to form spores during development. 
+When cultured in autophagy-stimulating conditions, cells lacking 
+ddTpp1 rapidly decrease in size and are less viable than wild-type 
+cells, suggesting that one function of ddTpp1 may be to limit 
+autophagy. Cells lacking ddTpp1 show strongly impaired development 
+in the presence of the lysosome-perturbing drug chloroquine, and 
+this phenotype can be suppressed by a secondary mutation in the gene 
+stpA, which encodes a protein with some similarity to mammalian 
+oxysterol-binding proteins (OSBPs). Together, these results suggest 
+that targeting specific proteins may be a viable way to suppress the 
+effects of loss of TPP1 function.
+
+
+Submitted by Richard Gomer [rgomer@tamu.edu]
+----------------------------------------------------------------------
+
+
+Compact Halo-Ligand-Conjugated Quantum Dots for Multicolored 
+Single-Molecule Imaging of Overcrowding GPCR Proteins on Cell 
+Membranes.
+
+Akihito Komatsuzaki, Tatsuya Ohyanagi, Yoshikazu Tsukasaki, 
+Yukihiro Miyanaga, Masahiro Ueda, and Takashi Jin
+
+
+Small. 2014 Dec 12. 
+doi: 10.1002/smll.201402508.
+http://onlinelibrary.wiley.com/doi/10.1002/smll.201402508/abstract
+
+To detect single molecules within the optical diffraction limit 
+(< ca. 200 nm), a multicolored imaging technique is developed using 
+Halo-ligand conjugated quantum dots (Halo-QDs; <6 nm in diameter). 
+Using three types of Halo-QDs, multicolored single-molecule 
+fluorescence imaging of GPCR proteins in Dictyostelium cells is 
+achieved.
+
+
+Submitted by Yukihiro Miyanaga [miyang@bio.sci.osaka-u.ac.jp]
+----------------------------------------------------------------------
+
+
+Surcel A, Ng W-P, West-Foyle H, Zhu Q, Ren Y, Avery L, Krenc AK, 
+Meyers D, Rock RS, Anders RA, Freel Meyers C, Robinson DN. 
+
+Pharmacological activation of myosin II paralogs to correct cell 
+mechanics defects. 
+
+
+Proc. Natl. Acad. Sci. USA 2015, in press
+
+Current approaches to cancer treatment focus on targeting signal 
+transduction pathways.  Here, we develop an alternative system for 
+targeting cell mechanics for the discovery of novel therapeutics.  
+We designed a live-cell, high-throughput chemical screen to 
+identify mechanical modulators.  We characterized 
+4-hydroxyacetophenone (4-HAP), which enhances the cortical 
+localization of the mechanoenzyme myosin II, independent of myosin 
+heavy-chain phosphorylation, thus increasing cellular cortical 
+tension. To shift cell mechanics, 4-HAP requires myosin II, 
+including its full power stroke, specifically activating human 
+MYH10 and MYH14, but not MYH9.  We further demonstrated that 
+invasive pancreatic cancer cells are more deformable than normal 
+pancreatic ductal epithelial cells, a mechanical profile that was 
+partially corrected with 4-HAP, which also decreased the invasion 
+and migration of these cancer cells.  Overall, 4-HAP modifies 
+nonmuscle myosin II-based cell mechanics across phylogeny and 
+disease states and provides proof-of-concept that cell mechanics 
+offers a rich drug target space, allowing for possible corrective 
+modulation of tumor cell behavior.
+
+
+Submitted by Doug Robinson [dnr@jhmi.edu]   
+==============================================================
+[End dictyNews, volume 41, number 1]

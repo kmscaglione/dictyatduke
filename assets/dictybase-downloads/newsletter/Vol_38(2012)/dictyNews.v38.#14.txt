@@ -1,0 +1,211 @@
+dictyNews
+Electronic Edition
+Volume 38, number 14
+May 25, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Unusual combinatorial involvement of poly-A/T tracts in organizing 
+genes and chromatin in Dictyostelium
+
+
+Gue Su Chang1, Angelika A Noegel3, Travis N Mavrich1, Rolf MŸller3, 
+Lynn Tomsho1, Elissa Ward1, Marius Felder4, Cizhong Jiang1,6, 
+Ludwig Eichinger5, Gernot Glšckner2, Stephan Schuster1, 
+B. Franklin Pugh1#
+
+
+Genome Res. 2012, published online before print.
+
+Dictyostelium discoideum is an amoebozoa that exists in both a free-living 
+unicellular and a multi-cellular form. It is situated in a deep branch in the 
+evolutionary tree, and is particularly noteworthy in having a very A/T-rich 
+genome.  Dictyostelium provides an ideal system to examine the extreme 
+to which nucleotide bias may be employed in organizing promoters, genes, 
+and nucleosomes across a genome.  We find that Dictyostelium genes are 
+demarcated precisely at their 5Õ ends by poly-T tracts and precisely at their 
+3Õ ends by poly-A tracts.  These tracts are also associated with 
+nucleosome-free regions, and are embedded with precisely positioned TATA 
+boxes.  Homo- and heteropolymeric tracts of A and T demarcate nucleosome 
+border regions.  Together these findings reveal the presence of a variety of 
+functionally distinct polymeric A/T elements.  Strikingly, Dictyostelium 
+chromatin may be organized in di-nucleosome units, but is otherwise 
+organized as in animals. This includes a +1 nucleosome in a position that 
+predicts the presence of a paused RNA polymerase II.  Indeed, we find a 
+strong phylogenetic relationship between the presence of the NELF pausing 
+factor and positioning of the +1 nucleosome.  Pausing and +1 nucleosome 
+positioning may have co-evolved in animals.
+
+
+Submitted by Gue Su Chang [gxc187@psu.edu]
+--------------------------------------------------------------------------------------
+
+
+AprA functions as an endogenous chemorepellant in Dictyostelium discoideum
+
+Jonathan E. Phillips and Richard H. Gomer
+
+
+PNAS, in press
+
+Chemorepellants may play multiple roles in physiological and pathological 
+processes. However, few endogenous chemorepellants have been 
+identified, and how they function is unclear. We found that the autocrine 
+signal AprA, which is produced by growing Dictyostelium discoideum cells 
+and inhibits their proliferation, also functions as a chemorepellant. Wild-type 
+cells at the edge of a colony show directed movement outwards from the 
+colony, whereas cells lacking AprA do not. Cells show directed movement 
+away from a source of recombinant AprA and dialyzed conditioned media 
+from wild-type cells, but not dialyzed conditioned media from aprAø cells. 
+The secreted protein CfaD, the G protein G&#945;8, and the kinase QkgA 
+are necessary for the chemorepellant activity of AprA as well as its 
+proliferation-inhibiting activity, whereas the putative transcription factor 
+BzpN is dispensable for the chemorepellant activity of AprA but necessary 
+for inhibition of proliferation. Phospholipase C and PI3-kinases 1 and 2, 
+which are necessary for the activity of at least one other chemorepellant in 
+Dictyostelium, are not necessary for rAprA chemorepellant activity. Starved 
+cells are not repelled by rAprA, suggesting that aggregation-phase cells are 
+not sensitive to the chemorepellant effect.  Cell tracking indicates that AprA 
+affects the directional bias of cell movement, but not cell velocity or the 
+persistence of cell movement. Together, our data indicate that the 
+endogenous signal AprA acts as an autocrine chemorepellant for 
+Dictyostelium cells.
+
+
+Submitted by Richard Gomer [rgomer@mail.bio.tamu.edu]
+--------------------------------------------------------------------------------------
+
+
+CP55, a novel key component of centrosomal organization in Dictyostelium
+
+Oliver Kuhnert, Otto Baumann, Irene Meyer and Ralph GrŠf
+
+University of Potsdam, Dept. of Cell Biology, Potsdam-Golm, Germany
+
+
+Cell. Mol. Life Sci. in press
+
+Dictyostelium centrosomes consist of a layered core structure surrounded 
+by a microtubule-nucleating corona. At the G2/M transition the corona 
+dissociates, and the core structure duplicates yielding two spindle pole 
+bodies. Finally, in telophase the spindle poles mature into two new, 
+complete centrosomes. CP55 was identified in a centrosomal proteome 
+analysis. It is a component of the centrosomal core structure, and persists
+at the centrosome throughout the entire cell cycle. FRAP experiments 
+revealed that during interphase the majority of centrosomal GFP-CP55 is 
+immobile, which indicates a structural task of CP55 at the centrosome. 
+The CP55 null mutant is characterized by increased ploidy, a less 
+structured, slightly enlarged corona, and by supernumerary, cytosolic 
+MTOCs, containing only corona proteins and lacking a core structure. 
+Live cell imaging showed that supernumerary MTOCs arise in telophase.
+Lack of CP55 also caused premature recruitment of the corona organizer 
+CP148 to mitotic spindle poles, already in metaphase instead of telophase. 
+Forces transmitted through astral microtubules may expel prematurely 
+acquired or loosely attached corona fragments into the cytosol, where they 
+act as independent MTOCs. CP55null cells were also impaired in growth,
+most probably due to difficulties in centrosome splitting during prophase. 
+Furthermore, although they were still capable of phagocytosis, they 
+appeared unable to utilize phagocytosed nutrients. This inability may be 
+attributed to their partially disorganized Golgi apparatus.
+
+
+Submitted by Ralph GrŠf [rgraef@uni-potsdam.de]
+--------------------------------------------------------------------------------------
+
+
+Identification of the kinase that activates a non-metazoan STAT gives 
+insights into the evolution of phosphotyrosine-SH2 domain signaling 
+
+Tsuyoshi Araki1, Takefumi Kawata2  and Jeffrey G. Williams+1
+
+1 College of Life Sciences, Welcome Trust Biocentre, University of Dundee,
+Dow St., Dundee, DD1 5EH, UK
+2 Department of Biology,  Faculty of Science, Toho University, 2-2-1 Miyama, 
+Funabashi, Chiba 274-8510, Japan
+
+
+PNAS in press
+
+SH2 domains are integral to many animal signaling pathways. By 
+interacting with specific phosphotyrosine residues, they provide regulatable 
+protein-protein interaction domains. Dictyostelium is the only non-metazoan 
+with functionally characterised SH2 domains but the cognate tyrosine 
+kinases are unknown.  There are no orthologues of the animal tyrosine 
+kinases but there are very many tyrosine kinase-like kinases (TKLs); a group 
+of kinases which, despite their family name, are mainly classified as 
+serine-threonine kinases. STATs are transcription factors that dimerise via 
+phosphotyrosine-SH2 domain interactions. STATc is activated, by 
+phosphorylation on Tyr922, when cells are exposed to the prestalk inducer 
+DIF-1: a chlorinated hexaphenone. We show that in a null mutant for Pyk2, 
+a tyrosine-specific TKL, exposure to DIF-1 does not activate STATc. 
+Conversely, over-expression of Pyk2 causes constitutive STATc activation. 
+Pyk2 phosphorylates STATc on Tyr922 in vitro and complexes with STATc 
+both in vitro and in vivo. This demonstration that a TKL directly activates a 
+STAT has significant implications for understanding the evolutionary origins 
+of SH2 domain-phosphotyrosine signaling. It also has mechanistic 
+implications. Our previous work suggested that a predictedly constitutive 
+STATc tyrosine kinase activity is counterbalanced in vivo by the DIF-1 
+regulated activity of PTP3: a Tyr922 phosphatase. Here we show that the 
+STATc-Pyk2 complex is formed constitutively, by an interaction between 
+the STATc SH2 domain and phosphotyrosine residues on Pyk2 that are 
+generated by autophosphorylation. Also Pyk2 is, as predicted, constitutively 
+active as a STATc kinase.  This observation provides further evidence for 
+this highly atypical, possibly ancestral, STAT regulation mechanism. 
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------------
+
+
+An orthologue of the Myelin-gene Regulatory Transcription Factor 
+regulates Dictyostelium prestalk differentiation 
+
+Hiroshi Senoo, Hong Yu Wang, Tsuyoshi Araki, Jeffrey G. Williams 
+and Masashi Fukuzawa
+
+
+Int. J. of Dev. Biol., in press
+
+Background The prestalk region of the Dictyostelium slug is comprised 
+of an anterior population of pstA cells and a posterior population of pstO 
+cells. They are distinguished by their ability to utilize different parts of the 
+promoter of the ecmA gene. Methods We identify, by mutational analysis 
+and DNA transformation, CA-rich sequence elements within the ecmA 
+promoter that are essential for pstA-specific expression and sufficient to 
+direct pstA-specific expression when multimerised. The CA-rich region 
+was used in affinity chromatography with nuclear extracts and bound 
+proteins were identified by mass spectrometry. Results The CA-rich 
+elements purify MrfA, a protein with extensive sequence similarity to 
+animal Myelin-gene Regulatory Factor (MRF)-like proteins. The MRF-like 
+proteins and MrfA also display more spatially limited but significant 
+sequence similarity with the DNA binding domain of the yeast Ndt80 
+sporulation-specific transcription factor. Furthermore, the ecmA CA- rich 
+elements show sequence similarity to the core consensus Ndt80 binding 
+site (the MSE) and point mutation of highly conserved arginine residues 
+in MrfA, that in Ndt80 make critical contacts with the MSE, ablate binding 
+of MrfA to its sites within the ecmA promoter. MrfA null strains are delayed 
+in multicellular development and highly defective in pstA-specific gene 
+expression. Conclusions These results provide a first insight into the 
+intracellular signaling pathway that directs pstA differentiation and identify 
+a non-metazoan orthologue of a family of molecularly uncharacterised 
+transcription factors.
+
+
+Submitted by Masashi Fukuzawa [fukuzawa@cc.hirosaki-u.ac.jp]
+==============================================================
+[End dictyNews, volume 38, number 14]

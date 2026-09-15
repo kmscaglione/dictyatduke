@@ -1,0 +1,92 @@
+﻿dictyNews
+Electronic Edition
+Volume 30, number 12
+April 11, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+Linking Ras to myosin function: RasGEF Q, a Dictyostelium exchange factor 
+for RasB, affects myosin II functions
+
+Subhanjan Mondal, Deenadayalan Bakthavatsalam, Paul Steimle, Berthold Gassen, 
+Francisco Rivero, Angelika A. Noegel
+
+
+Accepted, J. Cell Biol.
+
+RasGEF Q, a nucleotide exchange factor from Dictyostelium, is a 143 kDa protein 
+containing RasGEF domains and a DEP domain. Here, we show that RasGEF Q can bind 
+to F-actin, has the potential to form complexes with MHCK A that contain active 
+RasB, and is the predominant exchange factor for RasB. Overexpression of the 
+RasGEF Q GEF domain activates RasB, causes enhanced recruitment of MHCK A to 
+the cortex, and leads to cytokinesis defects in suspension, phenocopying cells 
+expressing constitutively active RasB and myosin null mutants. RasGEF Q&#8722; 
+mutants have defects in cell sorting and slug migration during later stages 
+of development, in addition to cell polarity defects. Further, RasGEF Q&#8722; 
+mutants have increased levels of unphosphorylated myosin II, resulting in 
+myosin II overassembly. Together our results suggest that starvation signals 
+through RasGEF Q to activate RasB, which then regulates processes requiring 
+myosin II.
+
+
+Submitted by: Angelika Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+Mitochondrial Genome Evolution in the Social Amoebae
+
+Andrew J. Heidel, Gernot Glöckner
+
+Genome Analysis Group Leibniz Institute for Age Research
+Fritz Lipmann Institute 07745 Jena, Germany
+
+
+MBE, in press
+
+Most mitochondria contain a core set of genes required for mitochondrial 
+function, but beyond this base there are variable genomic features.  The 
+mitochondrial genome of the model species Dictyostelium discoideum 
+demonstrated that the social amoebae mitochondria genomes have a size 
+between those of metazoans and plants, but no comparative study of social 
+amoebae has been performed.  Here, we present a comparative analysis of 
+social amoebae mitochondrial genomes using D. discoideum,  D. citrinum, 
+D. fasciculatum and Polysphondylium pallidum.  The social amoebae 
+mitochondria have similar sizes, AT content, gene content and have a high 
+level of synteny except for one segmental rearrangement and extensive 
+displacement of tRNAs.  From the species that contain the rearrangement, 
+it can be concluded that the event occurred late in the evolution of 
+social amoebas.  A phylogeny using 36 mitochondrial genes produced a 
+well-supported tree suggesting that the pairs of D. discoideum/D. citrinum 
+and D. fasciculatum/P. pallidum are sister species although the position 
+of the root is not certain.  Group I introns and endonucleases are 
+variable in number and location in the social amoebae.  Phylogenies of 
+the introns and endonucleases suggest that there have been multiple 
+duplications or extinctions and that endonucleases have the ability to 
+insert into new areas.  An analysis of dN/dS ratios in mitochondrial 
+genes revealed that among groups of genes, ATP synthase complex genes 
+change more rapidly while cytochrome oxidase and NADH dehydrogenase 
+genes had the slowest rate.  The genetic codes of D. citrinum, 
+P. pallidum and D. fasciculatum are the universal code although 
+D. fasciculatum does not use the TGA stop codon.  In D. fasciculatum, 
+we demonstrate for the first time that a mitochondrial genome without 
+the TGA stop codon still uses the release factor RF2 that recognizes TGA.  
+Theories of how the genetic code can change and why RF2 may be a 
+constraint against 
+switching codes are discussed. 
+
+
+Submitted by: Gernot Gloeckner [gernot@fli-leibniz.de]
+
+==============================================================
+[End dictyNews, volume 30, number 12]

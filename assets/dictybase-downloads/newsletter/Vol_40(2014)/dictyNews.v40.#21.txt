@@ -1,0 +1,164 @@
+dictyNews
+Electronic Edition
+Volume 40, number 21
+August 29, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Arrestins function in cAR1 GPCR-mediated signaling and cAR1 
+internalization in the development of D. discoideum 
+
+Xiumei Cao1, #, Jianshe Yan1, 2, #, *, Shi Shu3, Joseph A. Brzostowski4, 
+and Tian Jin2, * 
+
+
+Mol. Biol. Cell mbc.E14-03-0834; 
+First Published on August 20, 2014;doi:10.1091/mbc.E14-03-0834
+
+1. Shanghai Institute of Immunology, Shanghai Jiao Tong University 
+School of Medicine, Shanghai, 200025, China
+2. Chemotaxis Signal Section, Laboratory of Immunogenetics, National 
+Institute of Allergy and Infectious Diseases, National Institutes of Health, 
+Rockville, MD 20852, USA 
+3. Laboratory of Cell Biology, National Heart, Lung and Blood Institute, 
+National Institutes of Health, Bethesda, MD 20892, USA
+4. Laboratory of Immunogenetics Imaging Facility, National Institute of 
+Allergy and Infectious Diseases, National Institutes of Health, Rockville, 
+MD 20852, USA
+
+
+
+Oscillation of chemical signals is a common biological phenomenon but 
+its regulation is poorly understood.  At the aggregation stage of Dictyostelium 
+discoideum development, the chemoattractant cAMP is synthesized and 
+released at 6 min intervals, directing cell migration.  Although the G protein-
+coupled cAMP receptor cAR1 and ERK2 are both implicated in regulating the 
+oscillation, the signaling circuit remains unknown.  Here, we report that 
+D. discoideum arrestins regulate the frequency of cAMP oscillation and may 
+link cAR1 signaling to oscillatory ERK2 activity. Cells lacking arrestins (adcB-C-) 
+display cAMP oscillations during the aggregation stage that are twice as frequent 
+as wild type cells.  The adcB-C- cells also have a shorter period of transient 
+ERK2 activity and precociously reactivate ERK2 in response to cAMP stimulation. 
+We show that AdcC associates with ERK2 and that activation of cAR1 promotes 
+the transient membrane recruitment of AdcC and interaction with cAR1, indicating 
+that arrestins function in cAR1-controlled periodic ERK2 activation and oscillatory 
+cAMP signaling in the aggregation stage of D. discoideum development.  In 
+addition, ligand-induced cAR1 internalization is compromised in adcB-C- cells, 
+suggesting that arrestins are involved in elimination of high-affinity cAR1 receptors 
+from cell surface after the aggregation stage of multicellular development.
+
+
+
+Submitted by Jianshe Yan [yanjianshe@sjtu.edu.cn]
+---------------------------------------------------------------------------
+
+
+An evolutionarily significant unicellular strategy in response to starvation 
+stress in Dictyostelium social amoebae
+
+Darja Dubravcic [1,2], Minus van Baalen [2], Clement Nizak [1,3]
+
+1 CNRS, LIPHY, F-38000 Grenoble, France
+2 Laboratory of Ecology and Evolution, CNRS UMR7625, Ecole Normale 
+Superieure, Universite Pierre et Marie Curie, Paris Universitas, CNRS, 
+Paris, France
+3 Laboratory of Biochemistry, UMR 8231 ESPCI ParisTech/CNRS, 
+PSL Research University, Paris, France
+
+
+F1000research, accepted
+http://f1000research.com/articles/3-133/v1#article-reports
+
+The social amoeba Dictyostelium discoideum is widely studied for its 
+multicellular development program as a response to starvation and constitutes 
+a model of choice in microbial cooperation studies. Aggregates of up to 106 
+cells form fruiting bodies containing two cell types: (i) dormant spores (~80%) 
+that can persist for months in the absence of nutrients, and (ii) dead stalk cells 
+(~20%) that promote the dispersion of the spores towards nutrient-rich areas.
+It is often overlooked that not all cells aggregate upon starvation. Using a new 
+quantitative approach based on time-lapse fluorescence microscopy and a low 
+ratio of reporting cells, we have quantified this fraction of non-aggregating cells. 
+In realistic starvation conditions, up to 15% of cells do not aggregate, which 
+makes this third cell fate a significant component of the population-level response 
+of social amoebae to starvation. Non-aggregating cells have an advantage over 
+cells in aggregates since they resume growth earlier upon arrival of new nutrients, 
+but have a shorter lifespan under prolonged starvation. We find that phenotypic 
+heterogeneities linked to cell nutritional state bias the representation of cells in the 
+aggregating vs. non-aggregating fractions, and thus regulate population partitioning. 
+Next, we report that the fraction of non-aggregating cells depends on genetic factors 
+that regulate the timing of starvation, signal sensing efficiency and aggregation 
+efficiency. In addition, interactions between clones in mixtures of non-isogenic 
+cells affect the partitioning of each clone into both fractions. We further test the 
+evolutionary significance of the non-aggregating cell fraction. The partitioning of 
+cells into aggregating and non-aggregating fractions is optimal in fluctuating 
+environments with an unpredictable duration of starvation periods. D. discoideum 
+thus constitutes a model system lying at the intersection of microbial cooperation 
+and bet hedging, defining a new frontier in microbiology and evolution studies
+
+
+Submitted by Clement Nizak [clement.nizak@espci.fr]
+---------------------------------------------------------------------------
+
+
+Evolutionary reconstruction of pattern formation in 98 Dictyostelium species 
+reveals that cell-type specialization by lateral inhibition is a derived trait 
+
+Christina Schilde, Anna Skiba  and Pauline Schaap
+College of Life Sciences, University of Dundee, UK
+
+
+EvoDevo, in press
+
+BACKGROUND Multicellularity provides organisms with opportunities for 
+cell-type  specialization, but requires novel mechanisms to position correct 
+proportions of different cell types throughout the organism. Dictyostelid social 
+amoebas display an early form of multicellularity, where amoebas aggregate 
+to form fruiting bodies, which contain only spores or up to four additional cell-
+types. These cell types will form the stalk and support structures for the stalk 
+and spore head. Phylogenetic inference subdivides Dictyostelia into four 
+major groups, with the model organism D.discoideum residing in group 4. 
+Differentiation of its five cell types is dominated in D.discoideum by lateral 
+inhibition-type mechanisms that trigger scattered cell differentiation, with 
+tissue patterns being formed by cell sorting.
+
+RESULTS To reconstruct the evolution of pattern formation in Dictyostelia, we 
+used cell-type specific antibodies and promoter-reporter fusion constructs to 
+investigate pattern formation in 98 species that represent all groupings. Our 
+results indicate that in all early diverging Dictyostelia and most members of 
+groups 1-3, cells differentiate into maximally two cell types, prestalk and 
+prespore cells, with pattern formation being dominated by position-dependent 
+transdifferentiation of prespore cells into prestalk cells. In clade 2A, prestalk and 
+stalk cell differentiation are lost and the prespore cells construct an acellular stalk. 
+Group 4 species set aside correct proportions of prestalk and prespore cells early 
+in development, and differentiate into up to three more supporting cell types. 
+
+CONCLUSIONS Our experiments show that positional transdifferentiation is the 
+ancestral mode of pattern formation in Dictyostelia. The early specification of a 
+prestalk population equal to the number of stalk cells is a derived trait that 
+emerged in group 4 and a few late diverging species in the other groups. 
+Group 4 spore masses are larger than those of other groups and the differentiation 
+of supporting cell types by lateral inhibition may have facilitated this increase in 
+size. The signal DIF-1, which is secreted by prespore cells, triggers differentiation 
+of supporting cell types. The synthesis and degradation of DIF-1 were shown to 
+be restricted to group 4. This suggests that the emergence of DIF-1 signalling 
+caused increased cell-type specialization in this group.
+
+
+Submitted by Christina Schilde [c.schilde@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 21]

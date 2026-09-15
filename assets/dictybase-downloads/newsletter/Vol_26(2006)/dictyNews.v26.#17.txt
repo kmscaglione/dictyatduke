@@ -1,0 +1,117 @@
+dictyNews
+Electronic Edition
+Volume 26, number 17
+June 02, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+==============
+  Announcement
+==============
+
+Katz, E.R.: Kenneth Raper, Elisha Mitchell and Dictyostelium, 
+J. Biosci.31: June 2006
+
+At last years Dicty meeting I presented a paper on the early history of 
+Dictyostelium. It specifically tried to answer the question of why Ken Raper 
+chose to publish his monumental 1940 paper in the Journal of the Elisha 
+Mitchell Scientific Society. A number of people asked me to write it up, 
+and, with the help of Vidya Nanjundiah I have now done so.
+    
+http://www.ias.ac.in/jbiosci/jun2006/contents.htm
+
+Gene Katz [ekatz@notes.cc.sunysb.edu]
+
+
+=============
+  Abstracts
+=============
+
+Isolation, characterization and bioinformatic analysis of calmodulin binding
+protein cmbB reveals a novel tandem IP22 repeat common to many Dictyostelium 
+and Mimivirus proteins
+
+Danton H. O'Day1,4, Karsten Suhre2, Michael A. Myre3, Munmun 
+Chatterjee-Chakraborty1, and Sara E. Chavez1
+
+1Department of Biology, University of Toronto at Mississauga, Mississauga, 
+Ontario L5L 1C6 CANADA
+2Structural and Genomic Information Laboratory, CNRS UPR2589, Institute for 
+Structural Biology and Microbiology (IBSM), Parc Scientifique de Luminy, 
+163 Avenue de Luminy, 
+13288 Marseille Cedex 09  FRANCE
+3MassGeneral Institute for Neurodegenerative Disease, Harvard Medical School, 
+Massachusetts General Hospital, 114 16th Street, Rm. 3801, Charlestown MA 
+02129-9142 USA
+ 
+ 
+Biochemical Biophysical Research Communications, in press
+
+A novel calmodulin binding protein cmbB from Dictyostelium discoideum is 
+encoded in a single gene. Northern analysis reveals two cmbB transcripts 
+first detectable at 4h during multicellular development. Western blotting 
+detects an ~46.6 kDa protein. Sequence analysis and calmodulin-agarose 
+binding studies identified a 'classic' calcium-dependent calmodulin binding 
+domain (179IPKSLRSLFLGKGYNQPLEF198) but structural analyses suggest binding 
+may not involve classic alpha-helical calmodulin-binding. The cmbB protein 
+is comprised of tandem repeats of a newly identified IP22 motif 
+([I,L]Pxxhxxhxhxxxhxxxhxxxx; where h = any hydrophobic amino acid) that is 
+highly conserved and a more precise representation of the FNIP repeat. At 
+least eight Acanthamoeba polyphaga Mimivirus proteins and over 100 
+Dictyostelium proteins contain tandem arrays of the IP22 motif and its 
+variants. cmbB also shares structural homology to YopM, from the plague 
+bacterium Yersenia pestis.
+
+
+Submitted by: Danton H. O'Day [doday@utm.utoronto.ca]
+-----------------------------------------------------------------------------
+
+Trishanku, a novel regulator of cell-type stability and morphogenesis in 
+Dictyostelium discoideum.
+
+Jyoti Kumar Jaiswal(1,2,*), Nameeta Mujumdar(1), Harry K. MacWilliams(3) 
+and Vidyanand Nanjundiah(1)
+
+(1)Indian Institute of Science, Bangalore, (2)The Rockefeller University, 
+New York, and (3)Ludwig-Maximilians-Universitaet, Muenchen.
+
+
+Differentiation, in press
+
+By random insertional mutagenesis of Dictyostelium discoideum we have 
+identified a novel gene, trishanku (triA), which codes for a BTB 
+domain-containing novel protein. TriA is expressed strongly during the late 
+G2 phase of cell cycle and in presumptive spore (prespore) cells. 
+Disruption of triA reduces aggregate size, destabilizes cell fate, results 
+in fruiting bodies with thicker stalk and spore mass that remains 
+sub-terminal. The spore to stalk ratio is lower than wild type; the spores 
+are small and spherical. These changes can be reversed by expressing the 
+triA gene under a constitutive or a prespore-specific promoter. Chimeras 
+formed with the wild type cells show that TriA acts in a cell-autonomous 
+fashion. Aggregating triA- cells exhibit a delayed appearance of EDTA 
+resistant cell-cell adhesion, which may cause the stream break in triA- 
+aggregates and in chimeric aggregates formed with wild type cells. Using 
+stable and labile beta galactosidase reporters we show that in triA- slugs 
+the prestalk/prespore proportion is normal, but there is increased 
+transdifferentiation between the two cell types. The ‘stalky’ nature of 
+the fruiting body appears to be due to the tendency of all cells with 
+current or past prestalk gene expression to contribute to the stalk. 
+Finally the spore mass in triA- culminants is sub-terminal because midway 
+through culmination it detaches from upper cup cells. In chimeras with wild 
+type, the wild type spore mass rises to the top of the stalk, but the triA- 
+spore mass remains sub-terminal. Thus, prespore cells play an active role 
+in their rise along the stalk, contrary to what has been suggested. Defects 
+in the adhesion-related properties of prespore cells and their accelerated 
+maturation are possible explanations that require further investigation.
+
+
+Submitted by: Jyoti Jaiswal [jaiswaj@mail.rockefeller.edu]
+==============================================================================
+[End dictyNews, volume 26, number 17] 

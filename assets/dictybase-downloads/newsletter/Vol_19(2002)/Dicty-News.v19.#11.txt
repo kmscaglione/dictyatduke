@@ -1,0 +1,197 @@
+Dicty News
+Electronic Edition
+Volume 19, number 11
+November 23, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+A checkpoint of growth/differentiation transition in the cell cycle and its 
+relevance to pattern formation in Dictyostelium development
+
+Yasuo Maeda*, Kazunori Sasaki and Aiko Amagai
+
+Department of Developmental Biology and Neurosciences, Graduate School of 
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+  
+Recent Research Developments in Biophysics and Biochemistry, in press 
+(a review article)
+
+ABSTRACT
+
+In general, growth and differentiation are mutually exclusive, but are 
+cooperatively controlled during the course of development. The cellular 
+slime mold Dictyostelium, a wonderful model organism, grows and multiplies 
+as long as nutrients are supplied, and its differentiation is triggered by 
+starvation. A strict checkpoint (PS-point) from which cells switch growth 
+to differentiation has been specified in the cell cycle of D. discoideum 
+Ax-2 cells. Thus, Ax-2 cells start differentiating from the PS-point in 
+response to starvation, indicating that one needs to combine data on events 
+occurring around the PS-point with those on starvation-induced events to 
+understand the mechanism controlling growth/differentiation transition (GDT). 
+As was expected from the presence of PS-point, the cell s positioning in 
+cell masses and the subsequent cell-type choice occur greatly depending on 
+the cell s phase in the cell cycle at the onset of starvation. Novel and 
+somewhat unexpected functions of mitochondria in cell movement and 
+differentiation are also referred. 
+
+submitted by: Yasuo MAEDA [ymaeda@mail.cc.tohoku.ac.jp]
+
+-----------------------------------------------------------------------------
+
+CONTRASTING  ACTIVITIES OF THE AGGREGATIVE AND LATE PDSA PROMOTERS IN 
+DICTYOSTELIUM DEVELOPMENT. 
+
+
+Karin E. Weening1, Irene Verkerke-Van Wijk2, Christopher R. Thompson3, 
+Richard H. Kessin4, Gregory J. Podgorski5 and Pauline Schaap1
+
+
+1School of Life Sciences, University of Dundee, Dundee DD1 5EH, UK
+2Department of Biology, University of Leiden, 2333 AL Leiden, The Netherlands
+3MRC Laboratory of Molecular Biology, Cambridge, CB2 2QH, UK
+4Department of Anatomy and Cell Biology, College of Physicians and Surgeons 
+of Columbia University, New York, NY 10032, USA
+5Department of Biology, Utah State University, Logan UT 84322-5305, USA
+
+Developmental Biology, in press
+
+ABSTRACT
+
+  Expression of the Dictyostelium PdsA gene from the aggregative (PdA) 
+and late (PdL) promoter is essential for aggregation and slug morphogenesis 
+respectively. We studied the regulation of the PdA and PdL promoters in 
+slugs using labile beta-galactosidase (gal) reporter enzymes. PdL was active 
+in prestalk cells as was also found  with stable gal. PdA activity 
+decreased strongly in slugs from all cells except those at the rear. This 
+is almost opposite to PdA activity traced with stable gal, where slugs 
+showed sustained activity with highest levels at the front. PdA was down-
+regulated after aggregation irrespective of stimulation with any of the 
+factors known to control gene expression.  PdL activity was induced in 
+cell suspension by cAMP and DIF acting in synergy. However, a DIF-less 
+mutant showed normal PdL activity during development, suggesting that DIF 
+does not control PdL  in vivo. Dissection of the PdL promoter showed that 
+all sequences essential for correct spatio-temporal control of promoter 
+activity are downstream of the transcription start site in a region between 
+-383 and  -19 nucleotides relative to the start codon. Removal of 
+nucleotides to position -364 eliminated responsiveness to DIF and cAMP, 
+but normal PdL activity in prestalk cells in slugs was retained. Further 
+5' deletions abolished all promoter activity. This result also indicates 
+that the induction by DIF and cAMP as seen in cell suspensions is not 
+essential for PdL activity in normal development. 
+
+submitted by: Pauline Schaap [PSchaap@lsstaff.dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+Formation of the outer layer of the Dictyostelium spore coat depends on the 
+inner layer protein SP85/PsB
+
+Talibah Metcalf, Karen Kelley, Gregory W. Erdos, Lee Kaplan, and Christopher 
+M. West
+
+Dept. of Anatomy and Cell Biology, College of Medicine, and Electron 
+Microscopy Core Laboratory, ICBR, University of Florida, Gainesville, FL  
+32610-0235  USA
+
+Microbiology, in press
+
+ABSTRACT
+
+The Dictyostelium spore is surrounded by a 220-micron thick trilaminar coat 
+that consists of inner and outer electron dense layers surrounding a central 
+region of cellulose microfibrils. In previous studies, a mutant strain (TL56) 
+lacking three proteins associated with the outer layer exhibited increased 
+permeability to macromolecular tracers, suggesting that this layer 
+contributes to the coat permeability barrier. Electron microscopy now shows 
+that the outer layer is incomplete in the coats of this mutant, and consists 
+of a residual regular array of punctate electron densities. The outer layer 
+is also incomplete in a mutant lacking a cellulose-binding protein 
+associated with the inner layer, and these coats are deficient in an outer 
+layer protein and another coat protein. To examine the mechanism by which 
+this inner layer protein, SP85, contributes to outer layer formation, 
+various domain fragments were overexpressed in forming spores. Most of these 
+exert dominant negative effects similar to the deletion of outer layer 
+proteins but one construct, consisting of a fusion of the N-terminal and 
+Cys-rich C1-domain, induces a dense mat of novel filaments at the surface 
+of the outer layer. Biochemical studies show that the C1-domain binds 
+cellulose, and a combination of site-directed mutations that inhibits its 
+cellulose-binding activity suppresses outer layer filament induction. The 
+results suggest that, in addition to a previously described early role in 
+regulating cellulose synthesis, SP85 subsequently contributes a cross-
+bridging function between cellulose and other coat proteins to organize 
+previously unrecognized structural elements in the outer layer of the coat.
+
+submitted by: Chris West [westcm@anatomy.med.ufl.edu]
+
+-----------------------------------------------------------------------------
+
+A model for cGMP signal transduction in Dictyostelium in perspective of 25 
+years of cGMP research
+
+Leonard Bosgraaf and Peter J.M. van Haastert
+
+Department of Biochemistry, University of Groningen,Nijenborgh 4, 9747 
+AG Groningen, the Netherlands
+
+Journal of Muscle Research and Cell Motility, Special Issue: Dictyostelium
+
+Ed. Dietmar J. Manstein, in press
+
+
+Abstract
+
+About twenty-five years ago, it was discovered that cGMP is produced 
+intracellularly when cells are exposed to chemoattractants. Shortly 
+hereafter, cGMP-degrading and cGMP-producing activities were found in 
+Dictyostelium lysates, as well as cGMP-binding activity. In the eighties 
+several mutants were isolated displaying aberrant cGMP metabolism as well 
+as altered chemotaxis, suggesting that cGMP plays a role in chemotaxis. 
+Recently we identified the genes encoding guanylyl cyclases, cGMP-
+phosphodiesterases and cGMP-binding proteins, that probably constitute 
+the main components of the cGMP signal transduction pathway. The encoding 
+proteins appear to be very different from proteins with the same function in 
+metazoa, and therefore their biochemistry is not always easily interpreted. 
+The aim of this review is to discuss the previously obtained biochemical 
+and functional data on cGMP in Dictyostelium in the perspective of the 
+recently identified genes.  
+  
+submitted by: P.J.M.van.Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-----------------------------------------------------------------------------
+
+cGMP signalling: different ways to create a pathway
+
+Jeroen Roelofs1 , Janet L. Smith2 and Peter J.M. Van Haastert1 
+
+1, Department of Biochemistry, University of Groningen, Nijenborgh 4, 9747 
+AG Groningen, the Netherlands
+2, Boston Biomedical Research Institute, 64 Grove Street, Watertown, 
+Massachusetts 02472-2829, U.S.A.
+
+Trends in Genetics, in press.
+
+Abstract
+
+A novel cGMP signalling cascade was uncovered in Dictyostelium, a eukaryote 
+that diverged from the lineage to metazoa after plants but before yeast. In 
+both Dictyostelium and metazoa, the ancient cAMP binding (cNB) motif of 
+bacterial CAP has been modified and assembled with other domains into cGMP-
+target proteins. The domain structures of these cGMP targets, as well as the 
+enzymes responsible for cGMP synthesis and degradation, are entirely 
+different between Dictyostelium and metazoa, suggesting that different 
+cGMP-signalling pathways evolved in these two lineages.  
+
+submitted by: P.J.M.van.Haastert [P.J.M.van.Haastert@chem.rug.nl]
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 11]
+
+ 

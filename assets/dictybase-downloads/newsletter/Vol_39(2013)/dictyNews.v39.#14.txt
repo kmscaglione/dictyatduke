@@ -1,0 +1,187 @@
+dictyNews
+Electronic Edition
+Volume 39, number 14
+May 10, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Hydrolysis of aromatic b-glucosides by non-pathogenic bacteria 
+confers a chemical weapon against predators
+
+Authors: Robert Sonowal1, Krithi Nandimath1, Sucheta S. Kulkarni2, 
+Sandhya P. Koushika2,3, Vidyanand Nanjundiah1 and S. Mahadevan1
+
+Affiliations: 1 Department of Molecular Reproduction, Development 
+and Genetics, Indian Institute of Science, Bangalore 560 012, India
+2 National Centre for Biological Sciences, Bangalore 560065, India
+3 Department of Biological Sciences, Tata Institute of Fundamental 
+Research, Mumbai, India
+
+
+Proceedings of The Royal Society B, in press
+
+Bacteria present in natural environments such as soil have evolved 
+multiple strategies to escape from predation.We report that natural 
+isolates of Enterobacteriaceae that actively hydrolyze plant-derived 
+aromatic beta-glucosides such as salicin, arbutin and esculin, are 
+able to avoid predation by the bacteriovorous amoeba Dictyostelium 
+discoideum and nematodes of multiple genera belonging to the family 
+Rhabditidae. This advantage can be observed under laboratory culture 
+conditions as well as in the soil environment. The aglycone moiety 
+released by the hydrolysis of beta-glucosides is toxic to predators and 
+acts via the dopaminergic receptor Dop-1 in the case of Caenorhabditis 
+elegans. While soil isolates of nematodes belonging to the family 
+Rhabditidae are repelled by the aglycone, laboratory strains and natural 
+isolates of Caenorhabditis sp. are attracted to the compound, mediated 
+by receptors that are independent of Dop-1, leading to their death. The 
+beta-glucosides-positive (Bgl+) bacteria that are otherwise 
+non-pathogenic can obtain additional nutrients from the dead predators, 
+thereby switching their role from prey to predator. This study also offers 
+an evolutionary explanation for the retention by bacteria of 'cryptic' or 
+'silent' genetic systems such as the bgl operon.
+
+
+Submitted by Robert Sonowal [robert_sonowal@mrdg.iisc.ernet.in]
+---------------------------------------------------------------------------
+
+
+Bacterial discrimination by Dictyostelid amoebae reveals the complexity 
+of ancient interspecies interactions
+
+Waleed Nasser1, Balaji Santhanam2,3, Edward  Roshan Miranda2,4, 
+Anup Parikh 2,3, Kavina Juneja5, Gregor Rot6, Chris Dinh1, 
+Rui Chen2,3,4, Blaz Zupan2,6, Gad Shaulsky2,3,4 and Adam Kuspa1,2,4*
+
+
+1 - Verna and Marrs McLean Department of Biochemistry and Molecular 
+Biology, 
+2 - Department of Molecular and Human Genetics, 
+3 - Structural and Computational Biology and Molecular Biophysics Program, 
+4 - Developmental Biology Program, Baylor College of Medicine, Houston, 
+TX 77030; 
+5 - Department of Biochemistry and Cell Biology, Rice University, Houston, 
+TX 77005; 
+6 - Faculty of Computer and Information Science, University of Ljubljana, 
+Slovenia.
+
+
+Current Biology, in press
+
+Background: Amoebae and bacteria interact within predator/prey and 
+host/pathogen relationships, but the general response of amoeba to 
+bacteria is not well understood.  The amoeba Dictyostelium discoideum 
+feeds on, and is colonized by diverse bacterial species including Gram-
+positive [Gram(+)] and Gram-negative [Gram(-)] bacteria, two major 
+groups of bacteria that differ in structure and macromolecular composition. 
+
+Results: Transcriptional profiling of D. discoideum revealed sets of genes 
+whose expression is enriched in amoebae interacting with different species 
+of bacteria, including sets that appear specific to amoebae interacting with 
+Gram(+), or with Gram(-) bacteria.  In a genetic screen utilizing the growth 
+of mutant amoebae on a variety of bacteria as a phenotypic readout, we 
+identified amoebal genes that are only required for growth on Gram(+) 
+bacteria, including one that encodes the cell surface protein gp130, as well 
+as several genes that are only required for growth on Gram(-) bacteria 
+including one that encodes a putative lysozyme, AlyL.  These genes are 
+required for parts of the transcriptional response of wild-type amoebae, 
+and this allowed their classification into potential response pathways.
+
+Conclusions: We have defined genes that are critical for amoebal survival 
+during feeding on Gram(+), or Gram(-), bacteria which we propose form 
+part of a regulatory network that allows D. discoideum to elicit specific 
+cellular responses to different species of bacteria in order to optimize 
+survival.
+
+
+Submitted by Adam Kuspa [akuspa@bcm.edu]
+---------------------------------------------------------------------------
+
+
+Systematic analysis of gamma-aminobutyric acid (GABA) metabolism and 
+function in the social amoeba Dictyostelium discoideum.
+
+Wu Y, Janetopoulos C.
+
+Department of Biological Sciences, Vanderbilt University, United States.
+
+
+Journal of Biological Chemistry, in press
+
+While GABA has been suggested to regulate spore encapsulation in 
+the social amoeba Dictyostellium discoideum, the metabolic profile and 
+other potential functions of GABA during development remain unclear. 
+In this study, we investigated the homeostasis of GABA metabolism by 
+disrupting genes related to GABA metabolism and signaling. Extracellular 
+levels of GABA are tightly regulated during early development, and GABA 
+is generated by the glutamate decarboxylase, GadB, during growth and 
+in early development. However, overexpression of the prespore-specific 
+homologue, GadA, in the presence of GadB reduces production of 
+extracellular GABA. Perturbation of extracellular GABA levels delays the 
+process of aggregation. Cytosolic GABA is degraded by the GABA 
+transaminase, GabT, in the mitochondria. Disruption of a putative vesicular 
+GABA transporter (vGAT) homologue DdvGAT reduces secreted GABA. 
+We identified the GABAB receptor-like family member GrlB as the major 
+GABA receptor during early development, and either disruption or 
+overexpression of GrlB delays aggregation. This delay is likely the result 
+of an abolished pre-starvation response and late expression of several 
+early developmental genes. Distinct genes are employed for GABA 
+generation during sporulation. During sporulation, GadA alone is required 
+for generating GABA and DdvGAT is likely responsible for GABA 
+secretion. GrlE but not GrlB is the GABA receptor during late development.
+
+
+Submitted by Chris Janetopoulos [c.janetopoulos@vanderbilt.edu]
+---------------------------------------------------------------------------
+
+
+The G alpha subunit Galpha8 inhibits proliferation, promotes adhesion 
+and regulates cell differentiation
+
+Wu Y, Janetopoulos C.
+
+Department of Biological Sciences, Vanderbilt University, United States.
+
+
+Developmental Biology, in press
+
+Heterotrimeric G protein-mediated signal transduction plays a pivotal 
+role in both vegetative and developmental stages in the eukaryote 
+Dictyostelium discoideum. Here we describe novel functions of the 
+G protein alpha subunit Galpha8 during vegetative and development 
+stages. Galpha8 is expressed at low levels during vegetative growth. 
+Loss of Galpha8 promotes cell proliferation, whereas excess Galpha8 
+expression dramatically inhibits growth and induces aberrant cytokinesis 
+on substrates in a Gbeta-dependent manner. Overexpression of Galpha8 
+also leads to increased cell-cell cohesion and cell-substrate adhesion. 
+We demonstrate that the increased cell-cell cohesion is mainly caused 
+by induced CadA expression, and the induced cell-substrate adhesion 
+is responsible for the cytokinesis defects. However, the expression of 
+several putative constitutively active mutants of Galpha8 does not 
+augment the phenotypes caused by intact Galpha8. Galpha8 is strongly 
+induced after starvation, and loss of Galpha8 results in decreased 
+expression of certain adhesion molecules including CsA and tgrC1. 
+Interestingly, Galpha8 is preferentially distributed in the upper and 
+lower cup of the fruiting body. Lack of Galpha8 decreases the 
+expression of the specific marker of the anterior-like cells, suggesting 
+that Galpha8 is required for anterior-like cell differentiation.
+ 
+ 
+Submitted by Chris Janetopoulos [c.janetopoulos@vanderbilt.edu]
+==============================================================
+[End dictyNews, volume 39, number 14]

@@ -1,0 +1,291 @@
+Dicty News
+Electronic Edition
+Volume 21, number 13
+October 17, 2003
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+Identification of Dictyostelium discoideum
+developmentally regulated genes whose expression is dependent on the
+MADS-box transcription factor SrfA
+
+Ricardo Escalante, Nicolas Moreno, and Leandro Sastre
+
+Eukaryotic Cell, in press
+
+
+The MADS-box transcription factor SrfA is required for spore
+differentiation in Dictyostelium discoideum. srfA null strains form rounded
+spores that do not resist adverse environmental conditions. Five genes
+whose expression is dependent on SrfA have been isolated by differential
+hybridization. One of these genes, sigC, is identical to phg1b, previously
+characterized in mutants with altered adhesive properties and found to
+encode a nine transmembrane domain protein. This gene is transcribed into
+two mRNAs, as the result of alternative splicing of two internal exons. The
+slower migrating mRNA codes for a shorter protein that lacks the first
+transmembrane fragment and is not expressed in srfA null strains. The other
+four genes (sigA, B, D and 45D) are expressed only during late
+developmental stages. In situ hybridization experiments showed that
+expression of sigA, B and D is restricted to the sorus of developing
+structures. sigA codes for a homolog of malate dehydrogenase that converts
+pyruvate to malate to replenish the tricarboxylic acid cycle. sigB encodes
+a protein with significant similarity to the GP63 metalloproteinase of
+Leishmania, leishmanolysin. The sequence of sigD is highly similar to that
+of several spore coat proteins of D. discoideum and it may play a role in
+that structure. The gene 45D codes for a RNA-binding protein homologue
+whose expression is also dependent on the GATA transcription factor stalky
+(StkA). The expression of sigB is also dependent on both SrfA and StkA. The
+expression of 45D, but not of sigA, B, C and D, can be induced in srfA null
+cells by constitutive PKA activation. Strains in which either sigA, sigB or
+sigD are disrupted were isolated and found to form spores that are not
+detectably different from those of wild type strains.
+
+Submitted by:  Leandro Sastre [lsastre@iib.uam.es]
+
+-----------------------------------------------------------------------------
+
+Regulatory Mechanism of Dictyostelium Myosin Light Chain Kinase A
+
+Hiroshi Tokumitsu*à, Naoya Hatano¤, Hiroyuki Inuzuka*, Yumi Ishikawa*,
+Taro Q. P. Uyeda¦, Janet L. Smith , and Ryoji Kobayashi*
+
+*Department of Signal Transduction Sciences and ¤Department of Cell 
+Physiology, Kagawa Medical University, 1750-1 Miki-cho, Kita-gun, Kagawa 
+761-0793, Japan, ¦Gene Discovery Research Center, National Institute of 
+Advanced Industrial Science and Technology (AIST), Tsukuba, Ibaraki 305-8562, 
+Japan,  Boston Biomedical Research Institute, 64 Grove St. Watertown, 
+MA 02472-2829, U.S.A
+
+J. Biol. Chem., in press
+
+
+In this report, we have examined the activation mechanism of Dictyostelium 
+MLCK-A by using constitutively active Ca2+/calmodulin-dependent protein 
+kinase kinase (CaM-KKc) as a surrogate MLCK-A kinase.  MLCK-A was 
+phosphorylated at Thr166 by CaM-KKc, resulting in a ~140-fold increase in 
+catalytic activity, using intact Dictyostelium myosin II.  Recombinant 
+Dictyostelium MRLC and Kemptamide were also readily phosphorylated by the 
+activated MLCK-A.  Mass spectrometry analysis revealed that 
+E. coli-expressed MLCK-A was autophosphorylated at Thr289 and subsequent to 
+Thr166 phosphorylation, MLCK-A also undergoes a slow rate of 
+autophosphorylation at multiple Ser residues.  Using site-directed 
+mutagenesis, we showed that autophosphorylation at Thr289 is required for 
+efficient phosphorylation and activation by an upstream kinase.  By 
+performing enzyme kinetics on a series of truncated MLCK-As, we found that 
+residues 283-288 function as an autoinhibitory domain, and that autoinhibition 
+is fully relieved by Thr166 phosphorylation.  Simple removal of this region 
+results in a significant increase in the kcat of MLCK-A, however, it does not 
+generate maximal enzymatic activity.  Together with the results of our kinetic 
+analysis of the enzymes, these findings demonstrate that Thr166 phosphorylation 
+of MLCK-A by an upstream kinase subsequent to autophosphorylation at Thr289 
+results in generation of maximum MLCK-A activity through both release of an 
+autoinhibitory domain from its catalytic core and a further increase 
+(15-19-fold) in the kcat of the enzyme.
+
+Submitted by: Janet Smith [smith@bbri.org]
+
+-----------------------------------------------------------------------------
+
+Evolutionary questions raised by cellular slime mould development 
+
+Sonia Kaushik(*) and Vidyanand Nanjundiah
+Indian Institute of Science, Bangalore 560012, India
+(*) Current address: Department of Microbiology, La Trobe University, VIC
+3086, AUSTRALIA.
+
+Proceedings of the Indian National Science Academy, in press
+
+REVIEW
+
+The cellular slime moulds (CSMs) are amoeboid organisms whose life cycle can
+be viewed in two ways. Firstly, because free-living amoebae come together to
+build bodies, they are ideal models for studying multicellular development
+in terms of the properties of single cells. Secondly, coming together and
+participating in an integrated unit implies social behaviour. Consequently
+differentiation (especially in the advanced CSMs) can be seen as a form of
+division of labour in which only some amoebae get to transmit their genes to
+the next generation. Viewed thus, their life cycle is ideally suited for
+studying the evolutionary basis of cooperation with some members of the
+cooperating group exhibiting altruistic behaviour. The present review takes
+the second approach. We examine alternative explanations for social
+behaviour (i.e., multicellular development) based on individual-level and
+group (including kin-group) selection. Non-clonal fruiting bodies are likely
+to be common in nature; we show a case with at least nine genotypes. The
+CSMs display both individual and group-level adaptations and both levels of
+selection operate in their appropriate contexts. The review ends with
+questions for the future and indicates how studies of CSM development might
+help to explain the evolution of altruism in this group.
+
+Submitted by: Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+
+-----------------------------------------------------------------------------
+
+Calcium regulates the expression of a Dictyostelium discoideum asparaginyl
+tRNA synthetase gene. 
+
+Jyoti K. Jaiswal* and Vidyanand Nanjundiah
+
+Indian Institute of Science, Bangalore 560012, India.
+* (Current address) The Rockefeller University, 1230 York Avenue, Box 304,
+New York, NY 10021, USA
+
+Journal of Biosciences, in press
+
+
+In a screen for calcium-regulated gene expression during growth and
+development of Dictyostelium discoideum we have identified an asparaginyl
+tRNA synthetase (ddAsnRS) gene, the second tRNA synthetase gene identified
+in this organism. The gene shows many unique features. It is repressed by
+lowering cellular calcium, making it the first known calcium-regulated tRNA
+synthetase. Also, despite the calcium-dependence, its expression is
+unaltered during the cell cycle, making it the first D. discoideum gene to
+show a calcium-dependent but cell cycle phase-independent expression.
+Finally, the N-terminal domain of the predicted ddAsnRS protein shows higher
+sequence similarity to Gln tRNA synthetases than to other Asn tRNA
+synthetases.  These unique features of the AsnRS from this primitive
+eukaryote point to a novel mechanism that regulates the components of the
+translation machinery and gene expression by calcium, and also indicate a
+link between the evolution of GlnRS and AsnRS in eukaryotes.
+
+Submitted by: Vidyanand Nanjundiah [vidya@ces.iisc.ernet.in]
+
+-----------------------------------------------------------------------------
+
+A bZIP/bRLZ Transcription Factor Required for DIF Signaling in Dictyostelium
+
+
+Christopher R.L.  Thompson (1), Qing Fu (1), Caroline Buhay (1), Robert R.  
+Kay (2) and Gad Shaulsky(1)
+
+1 Department of Molecular and Human Genetics,
+ Baylor College of Medicine, One Baylor Plaza,
+ Houston, Texas, USA 77030
+
+2 MRC Laboratory of Molecular Biology,
+ Hills Road, Cambridge, CB2 2QH UK
+
+Development, in press
+
+
+The intermingled differentiation and sorting out of Dictyostelium prestalk-O 
+and prespore cells requires the diffusible signaling molecule DIF-1 and 
+provides an example of a spatial information-independent patterning mechanism.  
+To further understand this patterning process, we used a genetic selection to 
+isolate mutants in the DIF-1 response pathway.  The disrupted gene in one 
+such mutant, dimA-, encodes a bZIP/bRLZ transcription factor, which is 
+required for every DIF-1 response investigated.  Furthermore, the dimA- mutant 
+shows strikingly similar developmental defects to the dmtA- mutant, which is 
+specifically defective in DIF-1 synthesis.  However, key differences exist: 
+(1) the dmtA- mutant responds to DIF-1 but does not produce DIF-1 (2) the 
+dimA- mutant produces DIF-1 but does not respond to DIF-1 (3) the dimA- mutant 
+exhibits cell autonomous defects in cell type differentiation.  These results 
+suggest that dimA encodes the key transcriptional regulator required to 
+integrate DIF-1 signaling and subsequent patterning in Dictyostelium.
+
+Submitted by: Gadi Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+Two Phases of Actin Polymerization Display Different Dependences on 
+PI(3,4,5)P3 Accumulation and Have Unique Roles during Chemotaxis
+
+Lingfeng Chen, Chris Janetopoulos, Yi Elaine Huang, Miho Iijima, Jane 
+Borleis and Peter N. Devreotes
+
+Department of Cell Biology, Johns Hopkins University, School of Medicine
+Baltimore, MD, 21205
+
+
+MBC, in press
+ 
+
+                The directional movement of cells in chemoattractant 
+gradients requires sophisticated control of the actin cytoskeleton.  Uniform 
+exposure of D. discoideum amoebae as well as mammalian leukocytes to 
+chemoattractant triggers two phases of actin polymerization.  In the initial 
+rapid phase, motility stops and the cell rounds up. During the second slow 
+phase, pseudopodia are extended from local regions of the cell perimeter.  
+These responses are highly correlated with temporal and spatial 
+accumulations of PI(3,4,5)P3/PI(3,4)P2 reflected by the translocation of 
+specific PH domains to the membrane.  The slower phase of PI accumulation 
+and actin polymerization is more prominent in less differentiated, 
+unpolarized cells, is selectively increased by disruption of PTEN, and is 
+relatively more sensitive to perturbations of PI3K. Optimal levels of the 
+second responses allow the cell to respond rapidly to switches in gradient 
+direction by extending lateral pseudopods. Consequently, PI3K inhibitors 
+impair chemotaxis in wild type cells but partially restore polarity and 
+chemotactic response in pten- cells. Surprisingly, the fast phase of 
+PI(3,4,5)P3 accumulation and actin polymerization, which is relatively 
+resistant to PI3K inhibition, can support inefficient but reasonably 
+accurate chemotaxis.
+
+Submitted by: Lingfeng Chen [lche1@jhmi.edu]
+
+-----------------------------------------------------------------------------
+
+Hypertonic signal promotes stability of Dictyostelium spores via a PKA 
+independent pathway
+
+Yohko Yamada and Masazumi Sameshima
+
+The Tokyo Metropolitan Institute of Medical Science, Electron Microscopy 
+Center
+
+FEMS Microbiol. Lett., in press
+
+
+Differentiation of Dictyostelium spores is initiated with rapid 
+encapsulation of prespore cells under the control of cAMP dependent protein 
+kinase (PKA), followed by further maturation process that involves 
+cytoskeletal organization.  Constitutive activation of PKA induces precocious 
+formation of viable spores in development and confer cells the ability to 
+encapsulate under specific submerged conditions.  In this study we show that 
+the stability of these spores depended on high osmotic condition during spore differentiation, indicating that hypertonic signal is required in addition to 
+PKA to induce matured stable spores. Formation of stable spores under a high 
+osmotic condition required high cell density, suggesting the involvement of 
+additional cellular signaling.
+
+Submitted by: Yohko Yamada [yyamada@rinshoken.or.jp]
+
+-----------------------------------------------------------------------------
+
+A/T-rich inverted DNA repeats are destabilized by chaotrope-containing buffer 
+during purification using silica gel membrane technology.
+
+M. Prevorovsky and F. Puta
+
+BioTechniques 35:698-702 (October 2003) Ê
+ 
+
+The recovery of electrophoretically separated DNA fragment(s) from agarose 
+gel is afrequently used method in most gene engineering procedures. These 
+techniques wereconsiderably simplified by the implementation of commercial 
+kits based on silicamicroparticles or glass fibers. In this report we show 
+that during extraction the chaotropecontainingagarose-melting buffer can 
+cause destabilization of short A/T rich DNA fragmentsof inverted 
+repeat-structure. We propose that destabilized inverted repeats formed 
+hairpinsafter the alleviation of denaturing conditions. Expression of RNA 
+molecules of invertedrepeat-structure is the method of permanent gene 
+silencing by RNA interference (RNAi) invarious organisms, so we believe 
+that our findings are of interest to researchers conductingRNAi experiments 
+and/or working with, e.g., Plasmodium and other unicellular pathogens,
+characterized by A/T rich genomes.
+
+Submitted by: Frantisek Puta [puta@natur.cuni.cz]
+
+
+===============================================================================
+[End Dicty News, volume 21, number 13]
+

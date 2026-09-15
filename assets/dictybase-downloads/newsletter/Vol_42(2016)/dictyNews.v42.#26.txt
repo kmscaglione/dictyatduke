@@ -1,0 +1,106 @@
+dictyNews
+Electronic Edition
+Volume 42, number 26
+November 11, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+A Diaphanous-related formin links Ras-signaling directly to actin 
+assembly in macropinocytosis and phagocytosis
+
+Alexander Junemann(a), Vedrana Filić(b), Moritz Winterhoff(a), 
+Benjamin Nordholz(a), Christof Litschko(a), Helena Schwellenbach(a), 
+Till Stephan(a), Igor Weber(b), and Jan Faix(a)
+
+a) Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg-Str. 1, 30625 Hannover, Germany; 
+b) Division of Molecular Biology, Ruđer Bošković Institute, 
+Bijenička 54, 10000 Zagreb, Croatia.
+
+
+PNAS, in press
+
+Phagocytosis and macropinocytosis are Ras-regulated and actin-driven 
+processes that depend on the dynamic rearrangements of the plasma 
+membrane that protrudes and internalizes extracellular material by 
+cup-shaped structures. However, the regulatory mechanisms underlying 
+actin assembly in large-scale endocytosis remain elusive. Here, we 
+show that the Diaphanous-related formin G (ForG) from the professional 
+phagocyte Dictyostelium discoideum localizes to endocytic cups. 
+Biochemical analyses revealed that ForG is a rather weak nucleator but 
+efficiently elongates actin filaments in the presence of profilin. 
+Notably, genetic inactivation of ForG is associated with a strongly 
+impaired endocytosis and a markedly diminished F-actin content at the 
+base of the cups. By contrast, ablation of the Arp2/3 (actin-related 
+protein-2/3) complex activator SCAR (suppressor of cAMP receptor) 
+diminishes F-actin mainly at the cup rim, being consistent with its 
+known localization. These data therefore suggest that ForG acts as an 
+actin polymerase of Arp2/3-nucleated filaments to allow for efficient 
+membrane expansion and engulfment of extracellular material. Finally, 
+we show that ForG is directly regulated in large-scale endocytosis by 
+RasB and RasG, which are highly related to the human proto-oncogene 
+KRas.
+
+
+submitted by: Jan Faix [faix.jan@mh-hannover.de]
+———————————————————————————————————————
+
+
+A set of genes conserved in sequence and expression traces back the 
+establishment of multicellularity in social amoebae.
+
+Schilde C, Lawal HM, Noegel AA, Eichinger L, Schaap P, Glöckner G
+
+
+BMC Genomics. 2016 Nov 4;17(1):871
+
+BACKGROUND:
+The developmental cycle of Dictyostelid amoebae represents an early 
+form of multicellularity with cell type differentiation. Mutant 
+studies in the model Dictyostelium discoideum revealed that its 
+developmental program integrates the actions of genes involved in 
+signal transduction, adhesion, motility, autophagy and cell wall and 
+matrix biosynthesis. However, due to functional redundancy and fail 
+safe options not required in the laboratory, this single organism 
+approach cannot capture all essential genes. To understand how 
+multicellular organisms evolved, it is essential to recognize both 
+the conserved core features of their developmental programs and the 
+gene modifications that instigated phenotypic innovation. For complex 
+organisms, such as animals, this is not within easy reach, but it is 
+feasible for less complex forms, such as the Dictyostelid social amoebas.
+RESULTS:
+We compared global profiles of gene expression during the development 
+of four social amoebae species that represent 600 mya of Dictyostelia 
+evolution, and identified orthologous conserved genes with similar 
+developmental up-regulation of expression using three different methods. 
+For validation, we disrupted five genes of this core set and examined 
+the phenotypic consequences.
+CONCLUSION:
+At least 71 of the developmentally regulated genes that were identified 
+with all methods were likely to be already present in the last ancestor 
+of all Dictyostelia. The lack of phenotypic changes in null mutants 
+indicates that even highly conserved genes either participate in 
+functionally redundant pathways or are necessary for developmental 
+progression under adverse, non-standard laboratory conditions. Both 
+mechanisms provide robustness to the developmental program, but impose a 
+limit on the information that can be obtained from deleting single genes.
+
+
+submitted by: Gernot Glöckner [gernot.gloeckner@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 42, number 26]

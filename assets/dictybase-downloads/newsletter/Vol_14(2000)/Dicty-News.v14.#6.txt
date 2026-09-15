@@ -1,0 +1,314 @@
+Dicty News
+Electronic Edition
+Volume 14, number 6
+March 4, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+================
+  Announcement
+================
+
+NIH has a new model organism.  See: http://www.nih.gov/science/models/
+
+Our thanks should go to the effort spearheaded by Peter Devreotes, Rich 
+Kessin, Bill Loomis and Carole Parent and the other members of the 
+"Dictyostelium Advisory Committee".  OF course, this just signals the
+beginning a much hard work to be done.
+
+Also, many of you may have noticed a new addition to the Dicty web site, 
+Dicty in the News.  When any of you has a paper the receives a "News and
+Views" type commentary, please let let me know.  I'll feature it in a
+similar way.  
+
+
+=============
+  Abstracts
+=============
+
+Intracellular growth of Legionella pneumophila in Dictyostelium discoideum,
+a system for genetic analysis of host-pathogen interactions
+Jonathan M. Solomon1, Adam Rupper2, James A. Cardelli2, and Ralph R. Isberg1
+
+1Howard Hughes Medical Institute
+Dept of Microbiology
+Tufts University Medical School
+Boston, MA 02111
+
+2Department of Microbiology and Immunology
+LSU Health Sciences Center
+Shreveport, LA 71130
+
+Accepted: Infection and Immunity
+
+Abstract
+
+Conditions were established in which Legionella pneumophila, an
+intracellular bacterial pathogen, could replicate within the unicellular
+organism Dictyostelium discoideum . By several criteria, L. pneumophila grew
+by the same mechanism within D. discoideum as it does in amoebae and
+macrophages.  Bacteria grew within membrane-bound vesicles associated with
+rough endoplasmic reticulum, and L. pneumophila dot/icm mutants, blocked for
+growth in macrophages and amoebae, also did not grow in D. discoideum.
+Internalized L. pneumophila avoided degradation by D. discoideum and showed
+evidence of reduced fusion with endocytic compartments.  The ability of L.
+pneumophila to grow within D. discoideum depended on the growth state of the
+cells.  D. discoideum grown as adherent monolayers were susceptible to L.
+pneumophila infection and to contact-dependent cytotoxicity during high
+multiplicity infections, whereas D. discoideum grown in suspension were
+relatively resistant to cytotoxicity and did not support intracellular
+growth.  Some known D. discoideum mutants were examined for their effect on
+growth of L. pneumophila.  The coronin mutant and the double myosin I
+mutant, myoA/B, were more permissive than wild-type strains for
+intracellular growth.  Growth of L. pneumophila in a G-beta mutant was
+slightly reduced compared to the parent strain.  This work demonstrates the
+usefulness of the L. pneumophila/D. discoideum system for genetic analysis
+of host-pathogen interactions.
+
+----------------------------------------------------------------------------
+
+Functional overlap of the Dictyostelium RasG, RasD and RasB proteins.
+
+Meenal Khosla1, George B. Spiegelman1,2, Rob Insall3 and Gerald Weeks1,2
+
+1:  Department of Microbiology and Immunology, University of British 
+Columbia, Vancouver, BC  V6T 1Z3
+2:  Department of Medical Genetics, University of British Columbia, 
+Vancouver, BC  V6T 1Z3
+3:  Department of Biochemistry, University of Birmingham, Birmingham, UK
+
+Journal of Cell Science, in press
+
+Abstract
+
+	Disruption of the rasG gene in Dictyostelium discoideum results in 
+several distinct phenotypes:  a defect in cytokinesis, reduced motility 
+and reduced growth.  Reintroduction of the rasG gene restores all of the 
+properties of the rasG- cells to those of the wild type.  To determine 
+whether the defects are due to impaired interactions with a single or 
+multiple downstream effectors, we tested the ability of the highly 
+related but non identical Dictyostelium ras genes, rasD and rasB, to 
+rescue the defects.
+	Introduction of the rasD gene under the control of the rasG 
+promoter into rasG null (rasG-) cells, corrected all phenotypes except 
+the motility defect, suggesting that motility is regulated by a RasG 
+mediated pathway that is different to those regulating growth or 
+cytokinesis.  Western blot analysis of RasD protein levels revealed that 
+vegetative rasG- cells contained considerably more protein than the parental 
+AX-3 cells, suggesting that RasD protein levels are negatively regulated in 
+vegetative cells by RasG.  The level of RasD was enhanced when the rasD gene 
+was introduced under the control of the rasG promoter, and this increase in 
+protein is presumably responsible for the reversal of the growth and 
+cytokinesis defects of the rasG- cells.  Thus, RasD protein levels are 
+controlled by the level of RasG, but not by the level of RasD.
+	Introduction of the rasB gene under the control of the rasG 
+promoter into rasG- cells produced a complex phenotype.  The transformants 
+were extremely small and mononucleate and exhibited enhanced motility.  
+However, the growth of these cells was considerably slower than the growth 
+of the rasG- cells, suggesting the possibility that high levels of RasB 
+inhibit an essential process.  This was confirmed by expressing rasB in 
+wild type cells; the resulting transformants exhibited severely impaired 
+growth.  When RasB protein levels were determined by western blot analysis, 
+it was found that levels were higher in the rasG- cells than they were in 
+the wild type parental, suggesting that RasG also negatively regulates rasB 
+expression in vegetative cells.  Overexpression of rasB in the rasG- cells 
+also reduced the level of RasD protein.
+	In view of the fact that alternate Ras proteins correct some, but 
+not all, of the defects exhibited by the rasG- cells, we propose that RasG 
+interacts with more than one downstream effector.  In addition, it is clear 
+that the levels of the various Ras proteins are tightly regulated in 
+vegetative cells and that overexpression can be deleterious.
+
+----------------------------------------------------------------------------
+Light affects cAMP signaling and cell movement activity in Dictyostelium
+discoideum
+
+Kota Miura and Florian Siegert*
+
+Zoologisches Institut, Universität München, Luisenstr. 14, 80333 München, 
+Germany
+
+PNAS 2000 97:2111-2116
+
+Abstract
+
+The multicellular, slug stage of the slime mould Dictyostelium
+discoideum lacks specific sensory cells and organs but can never-theless
+respond in a very sensitive manner to external stimuli such as
+temperature and light. Within the migrating slug, the behavior of up to
+100,000 individual amoebae is coordinated by cAMP mediated cell? cell
+signaling and chemotaxis. We report here the striking result that light
+directly modulates the cAMP cell? cell signaling system. Light-induced
+secretion of cAMP from the slug tips decreased the period length of
+optical density waves and speeded up cell movement. A local effect of
+light on cAMP release within the slug tip could modulate cell movement
+within the slug and thus control its phototactic turning and orientation
+toward a light source.
+----------------------------------------------------------------------------
+
+Dictyostelium DdCP224 is a microtubule-associated protein and a permanent
+centrosomal resident involved in centrosome duplication
+
+Ralph Gräf*, Christine Daunderer and Manfred Schliwa
+
+Adolf-Butenandt-Institut / Zellbiologie, Schillerstr. 42, D-80336 München /
+Germany
+
+J. Cell Sci., in press
+
+A cDNA encoding a 224-kD Dictyostelium discoideum centrosomal protein
+(DdCP224) was isolated by immunoscreening. DdCP224 was detected at the
+centrosome and, more weakly, along microtubules throughout the entire cell
+cycle. Centrosomal localization does not require microtubules, suggesting
+that DdCP224 is a genuine centrosomal component. DdCP224 exhibits sequence
+identity to a weakly conserved class of microtubule-associated proteins
+including human TOGp and yeast Stu2p. Stu2p has a size of only ~100 kD and
+corresponds to the N-terminal half of DdCP224. The functions of the N- and
+C-terminal halves of DdCP224 were investigated in the corresponding
+GFP-fusion mutants. Surprisingly, the N-terminal construct showed only
+cytosolic localization, whereas the C-terminal construct localized
+exclusively to the centrosome. This is unexpected because Stu2p is
+localized at the spindle pole body. Full-length DdCP224-GFP was present
+both at centrosomes and along microtubules. Furthermore, it bound to
+microtubules in vitro, unlike the two truncated mutants. Thus centrosome
+binding is determined by the C-terminal half and microtubule binding may
+require the interaction of the N- and C-terminal halves. Interestingly,
+cells expressing full-length DdCP224-GFP exhibit supernumerary centrosomes
+and show a cytokinesis defect, suggesting that DdCP224 plays an important
+role in centrosome duplication. These features are unique among the known
+centrosomal proteins.
+
+
+----------------------------------------------------------------------------
+Purification and Cloning of Phosphatidylinositol Transfer
+Proteins from Dictyostelium discoideum: Homologues of Both
+Mammalian PITPs and S. cerevisiae Sec14p are Found in the
+Same Cell
+
+Philip  Swigart, Robert Insall, Andrew Wilkins and Shamshad
+Cockcroft
+
+In press, Biochemical Journal
+
+
+Soluble phosphatidylinositol transfer proteins (PITPs) play important 
+roles in lipid-mediated signalling as well as in membrane traffic. 
+Two PITPs (PITPa and b) have been cloned from mammalian cells, which 
+are unrelated in sequence to yeast PITP (the product of the SEC14 
+gene). However, all three PITPs can perform interchangeably to 
+reconstitute function in mammalian cells. We have now purified the 
+major PITP from the cytoplasm of Dictyostelium discoideum and cloned 
+the gene. This protein, DdPITP1, is homologous to mammalian PITPs, a 
+and b. We have also cloned a second gene (DdPITP2) which is related 
+in sequence to DdPITP1. In addition, an independently cloned cDNA 
+encodes a relative of the SEC14 family of yeast PITPs. DdPITP1, 
+DdPITP2 and DdSec14 proteins were all able to mediate the transfer of 
+PI from one membrane compartment to another, and thus exhibited the 
+hallmark of PITPs. Secondly, all three PITPs were able to rescue 
+phospholipase C-mediated phosphoinositide hydrolysis in PITP-depleted 
+HL60 cells, indicating that all three PITPs were capable of 
+stimulating phosphoinositide synthesis. The identification of PITPs 
+related to both mammalian PITPs and yeast Sec14p in a single organism 
+will provide a unique opportunity to examine the functions of this 
+class of proteins using genetic approaches.
+
+
+
+----------------------------------------------------------------------------
+gdt1, a new signal transduction component for negative regulation of the
+growth-differentiation-transition in Dictyostelium discoideum.
+
+Changjiang Zeng1, Christophe Anjard1, Karsten Riemann1, Angelika Konzok2
+and Wolfgang Nellen1*
+
+Mol. Biol. of the Cell, in press.
+
+Abstract
+
+Discoidin I expression was used as a marker to screen for mutants affected
+in the growth-differentiation-transition (GDT) of Dictyostelium. By REMI
+mutagenesis we have isolated mutant 2-9, an overexpressor of discoidin I.
+It displays normal morphogenesis but shows premature entry into the
+developmental cycle. The disrupted gene was denominated gdt1. The mutant
+phenotype was reconstructed by disruptions in different parts of the gene,
+suggesting that all had a complete loss of function. gdt1 was expressed in
+growing cells, the levels of protein and mRNA appear to increase with cell
+density and rapidly decrease with the onset of development. gdt1 encodes a
+175 kDa protein with 4 putative transmembrane domains. In the C-terminus,
+the derived amino acid sequence displays some similarity to the catalytic
+domain of protein kinases. Mixing experiments demonstrate that the gdt1-
+phenotype is cell autonomous. The prestarvation factor PSF is secreted at
+wild type levels. The response to folate, a negative regulator of discoidin
+expression, was not impaired in gdt1 mutants. Cells which lack the G
+protein a2, display a loss of discoidin expression and do not aggregate.
+gdt1-/Ga2- double mutants show no aggregation but strong discoidin
+expression. This suggests that gdt1 is a negative regulator of the GDT
+downstream of, or in a parallel pathway to Ga2.
+
+
+----------------------------------------------------------------------------
+
+The Biology of Cytokinesis
+
+Review as well as original papers will be published in a topical issue 
+of Microscope Research and Technique (MRT) entitled "The Biology of 
+Cytokinesis", Volume 49, Number 2. This issue is scheduled to be published 
+as the cover issue dated April 15, 2000, and will include 3 papers from 
+Dictyostelium labs. Focus of this issue is on the dynamics of calcium, 
+cytoskeletal and signal molecules during cytokinesis in S. pombe, S. 
+saccharomyces, Dictyostelium, Tetrahymena, zebrafish, and tissue culture 
+cells. Below is a tetative Table of Contents of this issue.
+
+Table of Contents
+
+1. Yoshio Fukui (Guest Editor: Introductory Review)
+"Signal to forces: Central themes in cytokinesis" 
+2. Donald C. Chang, and Pin Lu
+"Multiple types of calcium signals are associated with cell cleavage in 
+zebrafish embryo"
+3. Pascal Madaule, Tomoyuki Furusawa, Masatoshi Eda, Haruhiko Bito, 
+Toshimasa Ishizaki, and Shu Narumiya
+"Citron: a Rho target that affects contractility during cytokinesis"
+4. Osamu Numata, Kohsuke Gonda, Atsushi Watanabe, and Yasuhiro Kurasawa
+"Cytokinesis in Tetrahymena: Determination of division plane and 
+organization of contractile ring"
+5. Taro Uyeda and Shigehiko Yumura
+"Molecular biological approaches to study myosin functions in cytokinesis 
+of Dictyostelium"
+6. Denis Larochelle, Noel Gerald, and Arturo De Lozanne
+"Molecular analysis of racE function in Dictyostelium"
+7. Dan P. Mulvihill, Thein Z. Win, Thomas P. Pack, and Jeremy S. Hyams.
+"Cytokinesis in fission yeast: a myosin pas de deux"
+8. Fred Chang
+"Microtubule and actin-dependent movement of the formin cdc12p in fission 
+yeast".
+9. John Lippincott and Rong Li
+"The involvement of PCH family proteins in cytokinesis and actin 
+distribution"
+10. Hidemasa Goto, Hidetaka Kosako, and Masaki Inagaki 
+"Regulation of intermediate filament organization during cytokinesis: 
+Possible roles of rho-associated kinase"
+11. Yoshio Fukui
+"Real-time high-resolution optical sectioning suggests biphasic 
+cytokinetic mechanism in Dictyostelium discoideum"
+12. Jean M. Sanger and Joseph W. Sanger
+"Assembly of cytoskeletal proteins into cleavage furrows of tissue 
+culture cells"
+13. Maurizio Gatti, Maria G. Giansanti, and Silvia Bonaccorsi
+"The relationships between the central spindle and the contractile 
+ring during cytokinesis in animal cells".
+
+
+
+
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 6]
+
+  

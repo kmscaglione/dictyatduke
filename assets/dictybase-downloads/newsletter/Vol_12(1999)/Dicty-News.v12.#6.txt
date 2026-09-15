@@ -1,0 +1,146 @@
+Dicty News
+Electronic Edition
+Volume 12, number 6
+February 27, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+==============================
+ Dicty Research Lab Web Pages
+==============================
+
+If your lab has a web page describing your work using Dictyostelium
+please be sure that it is listed on the Dicty web site at 
+http://dicty.cmb.nwu.edu/dicty/dicty.html.  If your site is not listed
+send the address of your web site to dicty@nwu.edu.
+
+
+==============
+  Abstracts
+==============
+
+Aggregation of Dictyostelium discoideum is dependent on myristoylation 
+and membrane localization of the G protein a-subunit, Ga2.
+
+Patsy A. Root,  Alison Prince, and Robert E. Gundersen*
+
+Biochemistry, Microbiology and Molecular Biology, University of Maine
+Orono, Maine 04469-5735
+
+J. Cell. Biochem.,  Accepted for publication
+
+Abstract
+
+   The heterotrimeric G protein, G2, from the eukaryotic organism 
+Dictyostelium discoideum participates in signal transduction pathways 
+which are essential to Dictyostelium s developmental life cycle. G2 is 
+activated by cell surface cAMP receptors and in turn is required for the 
+activation  of a host of effectors, including adenylyl cyclase, guanylyl 
+cyclase and phospholipase C.  Myristoylation of G protein a-subunits is 
+known to affect a-subunit association with the bg subunits and membrane 
+localization. The putative site for N-terminal myristoylation of Galpha2 
+was mutated from Gly to Ala (G2A) and expressed in the galpha2-null cell 
+line, MYC2. Transformants expressing Ga2-G2A exhibit physiological and 
+biochemical changes from wild type cells.  Ga2-G2A expressing cells fail 
+to rescue the aggregation-minus phenotype of MYC2 cells on developmental 
+agar plates. Ga2-G2A expressing cells are also not chemotactic to cAMP 
+in a standard drop assay. Ga2-WT is found in both the pellet and supernatant 
+fractions following lysis of the cells. Ga2-G2A however is found almost 
+exclusively in the lysate supernatant. Ga2 is radiolabeled upon incubation 
+of cells in [3H]myristate, while Ga2-G2A is not labeled. Examination of 
+activation of the effectors adenylyl cyclase and guanylyl cyclase reveals 
+that Ga2-G2A expressing cells partially activate adenylyl cyclase but show 
+no cAMP-stimulation of guanylyl cyclase. The physiological deviations from 
+wild-type can be explained by the variations in effector activation, possibly 
+due to improper localization of the non-myristoylated Ga2-G2A to the cytosol.  
+
+
+----------------------------------------------------------------------------
+Comparison of Base Specificity and Other Enzymatic Properties of Two 
+Protozoan Ribonucleases from Physarum polycephalum and Dictyostelium 
+discoideum
+
+Norio INOKUC, Shigeru SAITOH, Hiroko KOBAYASHI, Tadashi ITAGAKI,
+Takashi KOYAMA, Saburo UCHIYAMA*  and Masachika IRIE# 
+
+Department of Microbiology, College of Pharmacy, Nihon University, 
+Narashinodai 7- 7-1, Funabashi, Chiba 274-0063, Japan
+*Department of Biology, Dokkyo University School of Medicine, Mibu, 
+Tochigi 321-0293, Japan
+#Department of Microbiology, Hoshi College of Pharmacy, Ebara 2-4-41, 
+Shinagawa, Tokyo 142-0063, Japan
+
+Biosci. Biotechnol. Biochem.,  in press
+
+Abstract
+
+   Base specificity and other enzymatic properties of two protozoan 
+RNases, RNase Phyb from a true slime mold (Physarum polycephalum) and RNase 
+DdI from a cellular slime mold (Dictyostelium discoideum), were compared.  
+These two RNases have high amino acid sequence similarity (83 amino acid 
+residues, 46%).  The base specificities of two base recognition sites, the 
+B1 site (base recognition site for the base at 5’-side of scissile 
+phosphodiester bond) and the B2 site (base recognition site for the base 
+at 3’-side of the scissile bond) of the both enzymes were estimated by 
+the rates of hydrolysis of 16 dinucleoside phosphates. The base 
+specificities estimated of B1 and B2 sites of RNase Phyb and RNase DdI 
+were A, G, U > C and A, G > C > U, and A, G, U > C and 
+G > U > A, C, respectively. The base specificities estimated from the 
+depolymerization of homopolynucleotides and those from the releases of 
+four mononucleotides upon digestion of RNA coincided well with those 
+of the B2 sites of both enzymes. Thus, in these enzymes, the contribution 
+of the B2 site to base specificity seems to be larger than that of the B1 
+site.  pH-stability, optimum temperature, and temperature stability, of 
+both enzymes are discussed considering that RNase Phyb has one disulfide 
+bridge deleted, compared to the RNase DdI with four disulfide bridges.
+
+----------------------------------------------------------------------------
+
+Regulatory Light Chain Mutations Affect Myosin Motor Function and Kinetics
+
+Bernard M. Chaudoir, Patricia A. Kowalczyk and Rex L. Chisholm+
+
+Dept. Of Cell and Molecular Biology, Northwestern University Medical School
+303 E. Chicago Ave., Chicago, IL 60611-3008
+
+J. Cell Science, in press.
+
+Summary: 
+
+	The actin-based motor protein myosin II plays a critical role in 
+many cellular processes in both muscle and non-muscle cells. Targeted 
+disruption of the Dictyostelium RLC caused defects in cytokinesis and 
+multicellular morphogenesis.  In contrast, a myosin heavy chain mutant 
+lacking the RLC binding site and therefore bound RLC showed normal 
+cytokinesis and development.  One interpretation of these apparently 
+contradictory results suggests that the phenotypic defects in the RLC 
+null mutant result from mislocalization of myosin caused by aggregation 
+of RLC null myosin.  To distinguish this from the alternative explanation 
+that the RLC can directly influence myosin activity, we expressed three 
+RLC point mutations (E12T, G18K and N94A) in a Dictyostelium RLC null 
+mutant.  The position of these mutations corresponds to the position of 
+mutations which have been shown to result in familial hypertrophic 
+cardiomyopathy in humans.  Analysis of purified Dictyostelium myosin 
+showed that while these mutations did not affect binding of the RLC to 
+the MHC, its phosphorylation by myosin light chain kinase, or regulation 
+of its activity by phosphorylation, they resulted in decreased myosin 
+function.  All three mutants showed impaired cytokinesis in suspension, 
+and one produced defective fruiting bodies with short stalks and 
+decreased spore formation. The abnormal myosin localization seen in the 
+RLC null mutant was restored to wildtype localization by expression of 
+all three RLC miutants.   Although two of the mutant myosins had wildtype 
+actin-activated ATPase, they produced in vitro motility rates half that 
+of wildtype.  N94A myosin showed a five-fold decrease in actin-ATPase 
+and a similar decrease in the rate at which it moved actin in vitro.  
+These results indicate that the RLC can play a direct role in determining 
+the force transmission and kinetic properties of myosin. 
+ 
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 6]
+
+  

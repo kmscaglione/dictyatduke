@@ -1,0 +1,220 @@
+Dicty News
+Electronic Edition
+Volume 16, number 7
+April 7, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==================================================
+   Post-doctoral position in proteomics research
+==================================================
+
+We are looking to recruit an experienced post-doctoral researcher in order 
+to use proteomics to study signalling pathways in Dictyostelium and identify 
+novel components of signalling networks. 2D gel analysis will be used to 
+establish proteome maps covering Dictyostelium development and changes in 
+strains lacking known components of signalling pathways will be characterised. 
+Changes in post-translational modification will be identified as will unknown 
+proteins that co-immunoprecipitate with components of a signalling network. 
+The pathways to be investigated involve STAT, GSK3 and ERK2 proteins. The 
+analysis will exploit a sophisticated proteome facility in Oxford that will 
+permit rapid-throughput computer-assisted 2-D gel analysis of complex 
+protein mixtures. Proteins of interest will be identified from the very 
+rapidly expanding Dictyostelium sequence databases by MALDI-TOF fingerprinting 
+of in-gel tryptic digests and ESI sequencing. The project, based in Oxford, 
+is a collaboration between three UK Dictyostelium groups (Cathy Pears, Jeff 
+Williams and Adrian Harwood) and the Oxford proteomics unit.
+
+The successful candidate should have proven research skills in protein 
+characterisation and experience with Dictyostelium would be a major advantage. 
+Experience in running 2D gels, mass spectroscopy, HPLC or database analysis 
+would also be preferable. The ability to manage the running of the research 
+project, to work as part of a team and good communication skills are essential. 
+Applicants  should have a sound publication record.
+
+The post is funded by The Wellcome Trust for three years in the first instance.  
+Salary will be in the range £16,775 - £25,213, the scale position dependent 
+on age and experience. Informal enquiries by email to pears@bioch.ox.ac.uk. 
+Applications, including two copies of a detailed CV, the names and addresses 
+of two referees (one of which must be your current employer) and two copies 
+of a letter setting out, with examples, how you meet the above selection 
+criteria, should be sent to:
+
+The Deputy Administrator
+Department of Biochemistry
+University of Oxford
+South Parks Road
+Oxford
+OX1 3QU
+
+Please quote reference number: BR/965/W
+
+
+==============
+  Abstracts
+==============
+
+
+Cell type proportioning in Dictyostelium slugs:
+lack of regulation within a 2.5-fold tolerance range
+
+Ismael Rafols1, Aiko Amagai2, Yasuo Maeda2,
+Harry K. MacWilliams3 and Yasuji Sawada1
+
+1Research Institute of Electrical Communication, Tohoku Univ., Japan
+2Biological Institute, Graduate School of Science, Tohoku Univ., Japan
+3Zoologisches Institut, Ludwig-Maximilians-Univ., München, Germany
+Corresponding Author: rafols@sawada.riec.tohoku.ac.jp
+
+Differentiation, in press.
+
+Abstract
+
+The proportion of prestalk and prespore cells in Dictyostelium discoideum slugs 
+is often cited as an example of "almost perfect" regulation. The pattern is 
+similar over a very wide range of cell number; furthermore, removal of either of 
+the cell types leads to compensatory transdifferentiation. Several studies of 
+Dictyostelium fruiting bodies, however, have suggested that proportioning in 
+Dictyostelium differs systematically from true constancy.  We have confirmed 
+this in the slug stage using a short-lived beta-galactosidase as a reporter of 
+the prestalk specific ecmA gene expression: the prestalk proportion decreases 
+from 24% in slugs of 10^3 cells to 10% when 10^5 cells are present. Regeneration 
+experiments suggest that this difference is not due to a modulation of the 
+proportioning set-point by size, as one might have expected; instead there 
+appears to be a regulatory "tolerance zone" at all sizes.  After amputation of 
+the whole posterior region, transdifferentiation stops after the fraction of 
+prestalk has been reduced from 100% to 28%, well above the initial value of 10%, 
+while after anterior removal the transdifferentiation endpoint is about 10%. 
+Most strikingly, we find no regulation at all after partial amputations of the 
+prespore region. It seems that any prestalk proportion is stable between a 10% 
+lower threshold and a 30% upper threshold. To explain this we propose a 
+regulation mechanism based on a negative feedback plus cell type bistability.
+
+In both intact and regenerating slugs we find that the slug morphology is 
+regulated so that the length-to-width ratio of the anterior region is constant.
+
+-----------------------------------------------------------------------------
+
+Unconventional mRNA processing in the expression of two calcineurin B 
+isoforms in Dictyostelium
+
+Annette Aichem and Rupert Mutzel1
+
+Fachbereich Biologie, Universität Konstanz, 78457 Konstanz, Germany
+1Present address: Institut für Biologie - Mikrobiologie, Freie Universität 
+Berlin, Königin-Luise-Strasse 12 - 16, 14195 Berlin, Germany
+
+J. Mol. Biol. in press
+
+Summary
+
+The genome of Dictyostelium discoideum contains a single gene (cnbA) for 
+the regulatory (B) subunit of the Ca2+/calmodulin dependent protein 
+phosphatase, calcineurin. Two mRNA species and two protein products 
+differing in size were found. The apparent molecular masses of the protein 
+isoforms corresponded to translation products starting from the first and 
+second AUG codons of the primary transcript, respectively. The smaller 
+mRNA and protein isoforms accumulated during early differentiation of 
+the cells. Whereas the amount of the higher Mr protein isoform remained 
+constant throughout development, the larger mRNA disappeared to virtually 
+undetectable levels during aggregation. 5´RACE amplification of the smaller 
+transcript yielded cDNAs lacking the 5´ nontranslated region and the first 
+ATG initiator codon. Expression of truncated cDNAs and various chimeric 
+genes encoding CNB-green fluorescent protein fusions in Dictyostelium 
+indicate that the mature cnbA transcript is processed by an unconventional 
+mechanism that leads to truncation of the 5´ untranslated region and at 
+least the first AUG initiator codon and to utilization of the second AUG 
+codon for translation initiation of the small CNB isoform. Determinants 
+for this processing mechanism reside within the coding region of the 
+cnbA gene.
+
+-----------------------------------------------------------------------------
+
+Cytoskeletal Alterations in Dictyostelium Induced by Expression of Human 
+Cdc42
+
+Eunkyung Lee1 and David A. Knecht2
+
+Department of Molecular and Cell Biology, University of Connecticut
+Storrs, CT 06269
+
+Eur. J. Cell Biol., in press.
+
+Abstract
+
+The rho family of small G proteins has been shown to be involved in 
+controlling actin filament dynamics in cells.  To evaluate the functional 
+overlap between human and Dictyostelium G proteins, we conditionally 
+expressed constitutively active human cdc42 (V12-cdc42) in Dictyostelium cells.  
+Upon induction, cells adopted a unique morphology: a flattened shape with 
+wrinkles running from the cell edge toward the center.  The appearance of 
+these wrinkles is highly dynamic so that the cells cycle between the 
+wrinkled and relatively normal morphologies.  Phalloidin staining indicate 
+that the stellate wrinkles contain dense actin structures and also that 
+numerous filopods project vertically from the center of these cells.  
+Consistent with the hypothesis that cdc42 induces actin polymerization in 
+vivo, cells expressing V12-cdc42 have an increase in the amount of 
+F-actin associated with the cytoskeleton.  This is accompanied by an 
+increase in the association of the actin binding proteins; 34 kDa bundler, 
+ABP-120 and a-actinin with the cytoskeleton.  In conclusion, human cdc42 has 
+various effects on the Dictyostelium actin cytoskeleton consistent with a 
+conserved role of small GTPases in control of the cytoskeleton.
+
+-----------------------------------------------------------------------------
+
+Lysophosphatidic Acid- and Gb-Dependent Activation of Dictyostelium MAP 
+Kinase ERK2
+
+Paul W. Schenk, Stefan J.P. Epskamp, Menno L.W. Knetsch, Veronique Harten, 
+Ellen L. Lagendijk, Bert van Duijn, and B. Ewa Snaar-Jagalska
+
+BBRC, in press
+
+   Exogenous lysophosphatidic acid (LPA) has been shown to evoke a 
+chemotactic response in aggregative cells of the social amoeba Dictyostelium 
+discoideum. In this paper, we demonstrate that extracellular LPA is also 
+able to induce activation of mitogen-activated protein (MAP) kinase DdERK2 
+(extracellular signal regulated kinase 2) in these cells. This activation 
+is independent of cyclic AMP receptors, yet fully dependent on the single 
+Gb subunit, hinting to the presence of functional heptahelical LPA receptors 
+in a primitive eukaryote. We did not observe LPA-dependent cyclic GMP 
+accumulation, which suggests that the pathways for LPA-induced and "classical" 
+chemotaxis of D. discoideum cells are substantially different. 
+
+-----------------------------------------------------------------------------
+
+Role of PI3 kinase and a downstream PH domain-containing protein in 
+controlling chemotaxis in Dictyostelium
+
+Satoru Funamoto, Kristina Milan, Ruedi Meili, and Richard A. Firtel1 
+
+J. Cell Biology, in press.
+
+ABSTRACT
+
+   We show that cells lacking two Dictyostelium Class I phosphatidylinositol 
+3' kinases (PI3K; pi3k1/2 null cells) or wild-type cells treated with the PI3K 
+inhibitor LY294002 are unable to properly polarize, are very defective in the 
+temporal, spatial, and quantitative regulation of chemoattractant-mediated 
+F-actin polymerization, and chemotax very slowly.  PI3K is thought to produce 
+membrane lipid binding sites for localization of PH-domain-containing proteins.  
+We demonstrate that, in response to chemoattractants, three PH-domain-containing 
+proteins do not localize to the leading edge in pi3k1/2 null cells, and the 
+translocation is blocked in wild-type cells by LY294002.  Cells lacking one 
+of these proteins, phdA null cells, exhibit defects in the level and kinetics 
+of actin polymerization at the leading edge, and have chemotaxis phenotypes 
+that are distinct from those previously described for PKB (pkbA) null cells.  
+Phenotypes of PhdA dominant-interfering mutations suggests that PhdA is an 
+adaptor protein that regulates F-actin localization in response to 
+chemoattractants and links PI3K to the control of F-actin polymerization 
+at the leading edge during pseudopod formation.  We suggest that PKB and 
+PhdA lie downstream from PI3K and control different downstream effector 
+pathways that are essential for proper chemotaxis.
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 7]

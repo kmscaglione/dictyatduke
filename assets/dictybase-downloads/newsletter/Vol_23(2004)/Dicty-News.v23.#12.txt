@@ -1,0 +1,128 @@
+Dicty News
+Electronic Edition
+Volume 23, number 12
+October 08, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+Behavior of cellular slime molds in the soil
+
+J. T. Bonner
+D. S. Lamont
+
+Department of Ecology and Evolutionary Biology, Princeton University,
+Princeton, New Jersey 08544
+
+
+Mycologia, in press
+
+The cellular slime molds are soil organisms, yet ever since they were
+discovered in 1869 they have been studied on agar surfaces.  Here the
+behavior of a number of species is examined and it is evident that they
+have different responses to directional light and they all thrive in the
+presence of soil.  While phototaxis clearly plays a significant role in
+their ability to come to the soil surface for dispersal, even more important
+are gradients in the soil: both temperature gradients known from earlier
+studies, and as we show here, gas gradients-presumably ammonia as a repellent
+and oxygen as an attractant.  There are numerous differences in both
+morphology and behavior among slime mold species, some of which are likely
+to be the result  of natural selection to particular habitats, while others
+could more easily be explained by neutral phenotypic variation.
+ 
+ 
+Submitted by:  John Bonner [jtbonner@Princeton.EDU]
+
+-----------------------------------------------------------------------------
+
+
+Changes in spatial and temporal localization of Dictyostelium homologues of
+TRAP1 and GRP94 revealed by immuno-electron microscopy
+
+Hitomi Yamaguchi*, Tsuyoshi Morita**, Aiko Amagai, and Yasuo Maeda1
+
+Department of Developmental Biology and Neurosciences, Graduate School of
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+Present address: *Department of Cell Genetics, National Institute of
+Genetics, Mishima, Shizuoka-ken 411-8540, Japan. **Department of
+Neuroscience (D13), Osaka University Graduate School of Medicine, Yamadaoka
+2-2, Suita City, Osaka 565-0871, Japan.
+
+
+Exp. Cell Res., in press
+
+TRAP1 (tumor necrosis factor receptor-associated protein 1) is a member of
+the molecular chaperone HSP90 (90-kDa heat shock protein) family. In this
+study, we mainly examined the behavior of Dictyostelium TRAP1 homologue,
+Dd-TRAP1 during Dictyostelium development by immuno-electron microscopy. In
+vegetatively growing D. discoideum Ax-2 cells, Dd-TRAP1 locates in nucleolus
+and vesicles in addition to the cell cortex including cell membrane. Many of
+Dd-TRAP1 molecules moved to the mitochondrial matrix in response to
+differentiation, though Dd-TRAP1 on the cell membrane seems to be retained.
+Some Dd-TRAP1 was also found to be secreted to locate outside the cell
+membrane in Ax-2 cells starved for 6 h. At the multicellular slug stage,
+Dd-TRAP1 was primarily located in mitochondria and cell membrane in both
+prestalk and prespore cells. More importantly, in differentiating prespore
+cells a significant number of Dd-TRAP1 locates in the PSV (prespore-specific
+vacuole) that is a sole cell type specific organelle and essential for spore
+wall formation, whereas some Dd-TRAP1 in the cell cortical region of
+prestalk cells. These findings strongly suggest importance of Dd-TRAP1
+regulated temporally and spatially during Dictyostelium development.
+Incidentally, we also have certificated that the glucose-regulated protein
+94 (Dd-GRP94) is predominantly located in Golgi vesicles and cisternae,
+followed by its colocalization with Dd-TRAP1 in the PSV. 
+
+
+Submitted by:  Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp>]
+
+-----------------------------------------------------------------------------
+
+
+A brilliant monomeric red fluorescent protein to visualize cytoskeleton
+dynamics in Dictyostelium
+ 
+Markus Fischer 1, Ilka Haase 1, Evelyn Simmeth 2, Guenther Gerisch 2, and 
+Annette Mueller-Taubenberger 2
+ 
+1  Lehrstuhl fuer Organische Chemie und Biochemie
+   Technische Universitaet Muenchen
+   Lichtenbergstr. 4, D-85747 Garching, Germany
+ 
+2  Max-Planck-Institut fuer Biochemie
+   Am Klopferspitz 18, D-82152 Martinsried, Germany
+ 
+ 
+FEBS Letters, in press
+ 
+Red fluorescent proteins (RFPs) combined with GFP are attractive probes for
+double-fluorescence labeling of proteins in live cells. However, the
+application of these proteins is restrained by stable oligomer formation and
+by their weak fluorescence in vivo. Previous attempts to eliminate these 
+problems by mutagenesis of RFP from Discosoma (DsRed) resulted in the
+monomeric mRFP1, and in the tetrameric RedStar RFP, which is distinguished
+by its enhanced fluorescence in vivo. Based on these mutations we have
+generated an enhanced monomeric RFP, mRFPmars, and report its spectral 
+properties. Together with green fluorescent labels, we used mRFPmars to 
+visualize filamentous actin structures and microtubules in Dictyostelium
+cells. This enhanced RFP proved to be suitable to monitor the dynamics of
+cytoskeletal proteins in cell motility, mitosis, and endocytosis using 
+dual-wavelength fluorescence microscopy.
+ 
+ 
+Submitted by:  Annette Mueller-Taubenberger [amueller@biochem.mpg.de]
+
+==============================================================================
+[End Dicty News, volume 23, number 12] 

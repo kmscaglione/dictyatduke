@@ -1,0 +1,236 @@
+Dicty News
+Electronic Edition
+Volume 23, number 10
+September 24, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+GFP-golvesin constructs to study Golgi tubulation and post-Golgi vesicle
+dynamics in phagocytosis
+ 
+Guenther Gerisch , Aleksander Benjak 1a, Jana Koehler, Igor Weberb, and
+Natalie Schneiderc
+ 
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+ 
+a Present address: EMBL Heidelberg, Meyerhofstr. 1, D-69117 Heidelberg, Germany
+b Present address: Rudjer Boskovic Institute, Bijenicka cesta 54,
+  10000 Zagreb, Croatia
+c Present address: Kyoto University Biosimulation Center, Kyoto Research Park,
+  Bldg. #4, 8F, Chudoji Awata-cho 93, Shimogyoku, Kyoto, Japan 600-8815
+ 
+ 
+European Journal of Cell Biology, in press
+
+Dictyostelium cells are professional phagocytes that are optimally suited for
+the imaging of phagosome processing from particle uptake to exocytosis. In
+order to design fluorescent probes for monitoring membrane trafficking in the
+endocytic pathway, we have dissected a membrane protein, golvesin, and have
+linked fragments of its sequence to GFP. Endogenous golvesin is partitioned
+between the ER, the Golgi apparatus, endosomes, and the contractile vacuole
+complex. We have localized signals that are required for exit from the Golgi
+to post-Golgi compartments to the C-terminal region of the golvesin sequence.
+One GFP-tagged fragment turned out to be a highly specific Golgi marker and
+was used to demonstrate the interaction of Golgi tubules with phagosomes.
+Signals essential for the retrieval of golvesin at the end of phagosome
+processing were localized to the N-terminal region. A truncated golvesin
+construct escaping retrieval was employed in recording the delivery of a
+phagosomal protein to the plasma membrane. Applying this construct to a
+phagosome filled with multiple particles, we observed that the phagosome is
+segmented during exocytosis, meaning that sequential release of particles
+alternates with membrane fusion.
+ 
+ 
+Submitted by:  Guenther Gerisch [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+
+Mobile actin clusters and traveling waves in cells recovering from actin
+depolymerization
+ 
+Guenther Gerisch 1, Till Bretschneider 1, Annette Mueller-Taubenberger 1,
+Evelyn Simmeth 1, Mary Ecke 1, Stefan Diez 2, and Kurt Anderson 2
+ 
+1  Max-Planck-Institut fuer Biochemie,  D-82152 Martinsried;
+2  Max-Planck-Institut fuer molekulare Zellbiologie und Genetik,
+    Pfotenhauer Str. 108, D-01307 Dresden;
+ 
+Biophysical Journal, in press
+
+At the leading edge of a motile cell, actin polymerizes in close apposition
+to the plasma membrane. Here we ask how the machinery for force generation at
+a leading edge is established de-novo after the global depolymerization of
+actin. The depolymerization is accomplished by latrunculin A, and the
+re-organization of actin upon removal of the drug is visualized in
+Dictyostelium cells by total internal reflection fluorescence (TIRF)
+microscopy. The actin filament system is reorganized in three steps. First,
+F-actin assembles into globular complexes that move along the bottom surface
+of the cells at velocities up to 10 µm per minute. These clusters are
+transient structures that eventually disassemble, fuse or divide. In a second
+step, clusters merge into a contiguous zone at the cell border that spreads
+and gives rise to actin waves traveling on a planar membrane. Finally, normal
+cell shape and motility are resumed. These data show that the initiation of
+actin polymerization is separated in Dictyostelium from front protrusion, and
+that the coupling of polymerization to protrusion is a later step in the
+reconstitution of a leading edge.
+
+
+Submitted by:  Guenther Gerisch [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+
+Chemotaxis of aggregating Dictyostelium cells
+ 
+Guenther Gerisch, and Mary Ecke
+ 
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+ 
+In: Key Experiments in Practical Developmental Biology
+(Eds. Manuel Marí-Beffa and Jennifer Knight)
+ 
+Cambridge University Press, in press
+ 
+Objective of the Experiment
+In the course of Dictyostelium development, a multicellular organism is
+established by the aggregation of single cells.  In the following experiment,
+the chemoattractant that guides cell movement in an aggregation field is
+replaced by treating cells with cyclic AMP diffusing out of a micropipette.
+By the use of a micropipette that is easily moved by a micromanipulator, the
+direction of diffusion gradients can be changed fast enough to study the
+response of the cells within the first few seconds of reorientation.
+
+
+Submitted by:  Guenther Gerisch [gerisch@biochem.mpg.de]
+
+-----------------------------------------------------------------------------
+
+
+GUANYLYL CYCLASES ACROSS THE TREE OF LIFE
+
+Pauline Schaap
+
+School of Life Sciences, University of Dundee, UK
+
+
+Frontiers in Bioscience, in press
+
+
+TABLE OF CONTENTS
+
+1. Abstract
+2. Introduction
+3. Animals
+3.1. The cyclase catalytic domain
+3.2. Vertebrate cGMP signaling, a brief survey
+3.3. Invertebrate guanylyl cyclases
+4. Fungi
+5. Dictyostelids
+6. Plants
+6.1. Flowering plants
+6.2. Chlorophyte green algae
+7. Alveolates
+8. Discicristates
+9. Prokaryotes
+10. Summary and perspective
+11. Acknowledgement
+12. References
+
+
+1. Abstract
+This review explores the origins, diversity and functions of guanylyl cyclases
+in  cellular organisms. In eukaryotes both cGMP and cAMP are produced by the
+conserved class III cyclase domains, while prokaryotes use five more unrelated
+catalysts for cyclic nucleotide synthesis. The class III domain is found
+embedded in proteins with a large variety of membrane topologies and other
+functional domains, but the vertebrate guanylyl cyclases take only two forms,
+the receptor guanylyl cyclases with single transmembrane domain and the
+soluble enzymes with heme binding domain. The invertebrates additionally show
+a soluble guanylyl cyclase that cannot bind heme, while the more basal
+metazoans may lack the heme binding enzymes altogether. Fungi, the closest
+relatives of the metazoans, completely lack guanylyl cyclases, but they appear
+again in the Dictyostelids, the next relative in line. Remarkably, the two
+Dictyostelid guanylyl cyclases have little in common with the vertebrate
+enzymes. There is a soluble guanylyl cyclase, which shows greatest sequence
+and structural similarity to the vertebrate soluble adenylyl cyclase, and a
+membrane-bound form with the same configuration as the dodecahelical adenylyl
+cyclases of vertebrates. There is a difference, the pseudosymmetric C1 and C2
+catalytic domains have swapped position in the Dictyostelium enzyme. Unlike
+the vertebrate guanylyl cyclases, the Dictyostelium enzymes are activated by
+heterotrimeric G-proteins. Swapped C1 and C2 domains are also found in the
+structurally similar guanylyl cyclases of ciliates and apicomplexans, but 
+these enzymes additionally harbour an amino-terminal ATPase module with ten
+transmembrane domains. G-protein regulation could not be demonstrated for
+these enzymes. Higher plants lack class III cyclase domains, but an
+unexplored wealth of guanylyl cyclases is present in the green alga
+Chlamydomonas. Progenitors of all structural variants of the eukaryote
+guanylyl cyclases are found among the prokaryote adenylyl cyclases. This
+and the close similarity of many guanylyl cyclases to adenylyl cyclases
+suggests a paraphyletic origin for the eukaryote enzymes with multiple
+events of conversion of substrate specificity.
+
+
+Submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+A Rapid and Efficient Method to Generate Multiple Gene Disruptions in
+Dictyostelium Using a Single Selectable Marker and the Cre-loxP System
+
+Jan Faix ^ ", Lisa Kreppel * ` ", Gad Shaulsky +, 
+Michael Schleicher ^, and Alan R. Kimmel *
+
+* Laboratory of Cellular and Developmental Biology, NIDDK 
+National Institutes of Health, Bethesda, MD  20892-8028, USA
+
+^ A. Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität
+80336 München, Germany
+
++ Department of Molecular and Human Genetics
+Baylor College of Medicine, Houston, TX  77030, USA
+
+
+Nucelic Acids Research, in press
+
+Dictyostelium has proven an exceptionally powerful system for studying
+numerous aspects of cellular and developmental functions. The relatively
+small (~34 Mb) chromosomal genome of Dictyostelium and high efficiency of
+targeted gene disruption have enabled researchers to characterize many
+specific gene functions. However, the number of selectable markers in
+Dictyostelium is restricted, as is the ability to perform effective
+genetic crosses between strains. Thus, it has been difficult to create
+multiple mutations within an individual cell to study epistatic
+relationships among genes or potential redundancies between various
+pathways. We now describe a robust system for the production of multiple
+gene mutations in Dictyostelium by recycling a single selectable marker,
+Blasticidin S-resistance, using the Cre-loxP system. We confirm the
+effectiveness of the system by generating a single cell carrying 4 separate
+gene disruptions. Furthermore, the cells remain sensitive to transformation
+for additional targeted or random mutagenesis requiring Blasticidin
+selection and for functional expression studies of mutated or tagged
+proteins using other selectable markers.
+
+
+Submitted by:  Alan Kimmel [ark1@helix.nih.gov]
+
+Please Note: all vectors essential for the procedure will be made available
+thru the Dicty Stock Center - Alan
+
+==============================================================================
+[End Dicty News, volume 23, number 10] 

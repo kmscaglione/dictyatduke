@@ -1,0 +1,143 @@
+Dicty News
+Electronic Edition
+Volume 15, number 6
+September 16, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty"
+
+
+==========================
+  Post-doctoral position
+==========================
+	
+   A position is available in the laboratory of Richard Kessin at the
+Department of Anatomy and Cell Biology of The Medical Center of Columbia
+University in New York. Our laboratory studies the role of regulated
+proteolysis in the regulation of Dictyostelium development. Specifically,
+we study E3 and E4 components of the ubiquitin-proteolytic system. See the
+Website listed below for details. There is also a project that uses
+Dictyostelium to examine the mechanism of pathogenesis of Legionella
+pneumoniae, the agent of Legionaire's disease. This project is being
+carried out in conjunction with the laboratory of Dr. Howard Shuman, who is
+in The Department of Microbiology at Columbia.  
+   The laboratory is part of a major research center and is in a well
+equipped department. Experience in molecular biology and biochemistry is
+important. Salary is commensurate with experience. The university provides
+assistance with visas and housing. Contact Richard Kessin
+(rhk2@Columbia.edu). For more information, see our Website at:
+http://cpmcnet.columbia.edu/dept/gsas/anatomy/Faculty/Kessin/index.html
+
+
+
+==============
+  Abstracts
+==============
+Mapping the functional surface of domain 2 in the gelsolin superfamily. 
+
+1Puius YA, 1Fedorov EV, 2Eichinger L, 2Schleicher M, 1Almo SC 
+
+1Department of Biochemistry, Albert Einstein College of Medicine, 1300
+Morris Park Avenue, Bronx, New York 10461, USA.
+2 ABI/Cell Biology, Ludwig-Maximilians-University Muenchen, Schillerstr.
+42; 80336 Muenchen, Germany.
+
+Biochemistry 2000 May 9;39(18):5322-31
+
+The crystal structure of the F-actin binding domain 2 of severin, the
+gelsolin homologue from Dictyostelium discoideum, has been determined by
+multiple isomorphous replacement and refined to 1.75 A resolution. The
+structure reveals an alpha-helix-beta-sheet sandwich similar to the domains
+of gelsolin and villin, and contains two cation-binding sites, as observed
+in other domain 1 and domain 2 homologues. Comparison of the structures of
+several gelsolin family domains has identified residues that may mediate
+F-actin binding in gelsolin domain 2 homologues. To assess the involvement
+of these residues in F-actin binding, three mutants of human gelsolin
+domain 2 were assayed for F-actin binding activity and thermodynamic
+stability. Two of the mutants, RRV168AAA and RLK210AAA, demonstrated a
+lowered affinity for F-actin, indicating a role for those residues in
+filament binding. Using both structural and biochemical data, we have
+constructed a model of the gelsolin domain 1-domain 2-F-actin complex. This
+model highlights a number of interactions that may serve as positive and
+negative determinants of filament end- and side-binding.
+
+----------------------------------------------------------------------------
+
+A syntaxin 7 homologue is present in Dictyostelium discoideum 
+endosomes and controls their homotypic fusion
+
+Aleksandra Bogdanovic1, Franz Bruckert1, Takahiro Morio2 and Michel Satre1
+
+1Laboratoire de Biochimie et Biophysique des Systèmes Intégrés, 
+Département de Biologie Moléculaire et Structurale, 38054 Grenoble 
+Cedex 9, France
+2Institute of Biological Sciences, University of Tsukuba, Tsukuba, Japan
+
+to be published in the Journal of Biological Chemistry
+
+Summary
+
+Endo-phagocytic activity is prominent in Dictyostelium discoideum and 
+makes it a good model organism to study the molecular organization of 
+membrane traffic in this pathway. We have identified a syntaxin 7 
+homologue (26% identity and 54% similarity to human syntaxin 7) in 
+Dictyostelium cDNA and genomic databanks. In addition to the Habc and 
+H3 helices and the C-terminal transmembrane domain characteristic of 
+syntaxins, this protein contains a repetitive N-terminal extension of 
+68 amino acids. We first showed that Dictyostelium syntaxin 7 was 
+able to form a complex with NSF,alpha-SNAP and gamma-SNAP. Its 
+intracellular localization was then studied by cell fractionation 
+techniques and magnetic purification of the endocytic compartments. 
+Most of D. discoideum syntaxin 7 is contained in endosomes. Finally, 
+an in vitro endosome homotypic fusion assay (Laurent et al. 1998, J. 
+Biol. Chem. 273: 793-799) was used to study a possible role for 
+syntaxin 7 in this process. Purified anti-syntaxin 7 antibodies and a 
+recombinant soluble fragment of syntaxin 7 both strongly inhibited 
+fusion activity, indicating that this protein was necessary for 
+endosome-endosome fusion. These results demonstrate the importance of 
+this syntaxin 7 homologue in the early phases of Dictyostelium 
+endo-phagocytic pathway.
+
+----------------------------------------------------------------------------
+
+Glycogen synthase kinase-3 (GSK-3) enhances nuclear export of a 
+Dictyostelium STAT protein
+
+Rebecca S. Ginger1,3 *, Emma C. Dalton2*, W. Jonathan Ryves2, Masashi 
+Fukuzawa1 Jeffrey G. Williams1 and Adrian J. Harwood2,4.
+
+1. Department of Anatomy and Physiology, MSI/WTB Complex, University 
+of Dundee, Dow Street, Dundee, DD1 5EH, UK.
+2. MRC, Laboratory for Molecular Cell Biology, UCL (University College 
+London), Gower St, London WC1E 6BT, UK. 020 7679 7257
+3. Present Address: Unilever Research, Colworth House, Sharnbrook,
+Beds MK44 1LQ
+4. To whom correspondence should be addressed.
+e-mail: a.harwood@ucl.ac.uk
+
+* Both authors contributed equally to this work
+
+EMBO, in press
+
+ABSTRACT
+
+Extracellular cAMP stimulates the rapid tyrosine phosphorylation and 
+nuclear translocation of the Dictyostelium STAT protein Dd-STATa. Here, 
+we show that it also induces serine phosphorylation by GskA, a homologue 
+of GSK-3. Tyrosine phosphorylation occurs within 10 seconds of stimulation, 
+whereas serine phosphorylation takes 5 minutes, matching the kinetics 
+observed for the cAMP regulation of GskA. Phosphorylation by GskA enhances 
+nuclear export of Dd-STATa. The phosphorylated region, however, is not 
+itself a nuclear export signal (NES) and we identify a region elsewhere 
+in the protein that mediates nuclear export. These results suggest a 
+biphasic regulation of Dd-STATa, in which extracellular cAMP initially 
+directs nuclear import and then, via GskA, promotes its subsequent export. 
+It also raises the possibility of an analogous regulation of STAT nuclear 
+export in higher eukaryotes.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 6]

@@ -1,0 +1,130 @@
+dictyNews
+Electronic Edition
+Volume 41, number 2
+January 16, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Mechanical stress and network structure drive protein dynamics 
+during cytokinesis. 
+
+Vasudha Srivastava and Douglas N. Robinson 
+
+
+Curr. Biol. 2015, in press
+
+Cell shape changes associated with processes like cytokinesis and 
+motility proceed on several second time-scales, but are derived 
+from molecular events, including protein-protein interactions, 
+ assembly, and force generation by molecular motors, all of which 
+ occur much faster [1-4].  Therefore, defining the dynamics of 
+ such molecular machinery is critical for understanding cell shape 
+ regulation.  In addition to signaling pathways, mechanical 
+ stresses also direct cytoskeletal protein accumulation [5-7].  
+ A myosin II-based mechanosensory system controls cellular 
+ contractility and shape during cytokinesis and under applied stress 
+ [6, 8].  In Dictyostelium, this system tunes myosin II accumulation 
+ by feedback through the actin network, particularly through the 
+ crosslinker cortexillin I.  Cortexillin-binding IQGAPs are major 
+ regulators of this system.  Here, we defined the short time-scale 
+ dynamics of key cytoskeletal proteins during cytokinesis and under 
+ mechanical stress using fluorescence recovery after photobleaching 
+ and fluorescence correlation spectroscopy, to examine the dynamic 
+ interplay between these proteins.  Equatorially enriched proteins 
+ including cortexillin I, IQGAP2, and myosin II recovered much more 
+ slowly than actin and polar crosslinkers.  The mobility of 
+ equatorial proteins was greatly reduced at the furrow compared to 
+ the interphase cortex, suggesting their stabilization during 
+ cytokinesis.  This mobility shift did not arise from a single 
+ biochemical event, but rather from a global inhibition of protein 
+ dynamics by mechanical stress-associated changes in the cytoskeletal 
+ structure.  Mechanical tuning of contractile protein dynamics 
+ provides robustness to the cytoskeletal framework responsible for 
+ regulating cell shape and contributes to cytokinesis fidelity.
+
+
+Submitted by Doug Robinson [dnr@jhmi.edu] 
+----------------------------------------------------------------------
+
+
+The centrosomal component CEP161 of Dictyostelium discoideum 
+interacts with the Hippo signaling pathway
+
+Salil K. Sukumaran, Rosemarie Blau-Wasser, Meino Rohlfs, Christoph 
+Gallinger, Michael Schleicher, Angelika A. Noegel
+
+
+Cell Cycle, in press
+
+CEP161 is a novel component of the Dictyostelium discoideum 
+centrosome which was identified as binding partner of the 
+pericentriolar component CP250. Here we show that the amino acids 
+1-763 of the 1381 amino acids CEP161 are sufficient for CP250 
+binding, centrosomal targeting and centrosome association. Analysis 
+of AX2 cells over-expressing truncated and full length CEP161 
+proteins revealed defects in growth and development. By 
+immunoprecipitation experiments we identified the Hippo related 
+kinase SvkA (Hrk-svk) as binding partner for CEP161. Both proteins 
+colocalize at the centrosome. In in vitro kinase assays the 
+N-terminal domain of CEP161 (residues 1-763) inhibited the kinase 
+activity of Hrk-svk. A comparison of D. discoideum Hippo kinase 
+mutants with mutants overexpressing CEP161 polypeptides revealed 
+similar defects. We propose that the centrosomal component CEP161 
+is a novel player in the Hippo signaling pathway and affects 
+various cellular properties through this interaction
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+----------------------------------------------------------------------
+
+
+TipC and the chorea-acanthocytosis protein VPS13A regulate 
+autophagy in Dictyostelium and human HeLa cells
+
+Sandra Munoz-Braceras, Rosa Calvo and Ricardo Escalante
+
+Autophagy, in press
+
+Deficient autophagy causes a distinct phenotype in Dictyostelium 
+discoideum, characterized by the formation of multitips at the 
+mound stage. This led us to analyze autophagy in a number of 
+multitipped mutants described previously (tipAÐ, tipBÐ, tipCÐ, 
+and tipDÐ). We found a clear autophagic dysfunction in tipCÐ and 
+tipDÐ while the others showed no defects. tipD codes for a 
+homologue of Atg16, which confirms the role of this protein in 
+Dictyostelium autophagy and validates our approach. The tipC-
+encoded protein is highly similar to human VPS13A (also known 
+as Chorein), whose mutations cause the chorea-acanthocytosis 
+syndrome. No member of the VPS13 protein family has been 
+previously related to autophagy despite the presence of a 
+region of similarity to Atg2 at the C-terminus. This region 
+also contains the conserved domain of unknown function DUF1162. 
+Of interest, the expression of the TipC C-terminal coding 
+sequence containing these two motifs largely complemented the 
+mutant phenotype. Dictyostelium cells lacking TipC displayed 
+a reduced number of autophagosomes visualized with the markers 
+GFP-Atg18 and GFP-Atg8 and an impaired autophagic degradation 
+as determined by a proteolytic cleavage assay. Downregulation 
+of human VPS13A in HeLa cells by RNA interference confirmed 
+the participation of the human protein in autophagy. VPS13A-
+depleted cells showed accumulation of autophagic markers and 
+impaired autophagic flux.
+
+
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]   
+==============================================================
+[End dictyNews, volume 41, number 2]

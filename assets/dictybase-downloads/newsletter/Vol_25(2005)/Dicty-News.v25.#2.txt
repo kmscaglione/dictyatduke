@@ -1,0 +1,92 @@
+Dicty News
+Electronic Edition
+Volume 25, number 2
+July 29, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+TOR Complex 2 Integrates Cell Movement during Chemotaxis and Signal Relay
+in Dictyostelium
+
+Susan Lee1, Frank I. Comer, Atsuo Sasaki, Ian X. McLeod, Yung Duong, 
+Koichi Okumura, John R. Yates III, Carole A. Parent, and Richard A. Firtel
+
+
+Mol. Cell. Bio. in press
+
+Dictyostelium cells form a multicellular organism through the 
+aggregation of independent cells.  This process requires both chemotaxis 
+and signal relay in which the chemoattractant cAMP activates adenylyl 
+cyclase through the G protein-coupled cAMP receptor cAR1.  cAMP is produced 
+and secreted and it activates receptors on neighboring cells, thereby 
+relaying the chemoattractant signal to distant cells.  Using 
+co-immunoprecipitation and mass spectrometric analyses, we have identified 
+a TOR-containing complex in Dictyostelium that is related to the TORC2 
+complex of S. cerevisiae and regulates both chemotaxis and signal relay. 
+We demonstrate that mutations in Dictyostelium LST8, RIP3, and Pia, 
+orthologs of the yeast TORC2 components LST8, AVO1, and AVO3, exhibit a 
+common set of phenotypes including reduced cell polarity, chemotaxis speed 
+and directionality, phosphorylation of Akt/PKB and the related PKBR1, and 
+activation of adenylyl cyclase.  Further, we provide evidence for a role 
+of Ras in the regulation of TORC2.  We propose that, through the regulation 
+of chemotaxis and signal relay, TORC2 plays an essential role in 
+controlling aggregation by coordinating the two essential arms of the 
+developmental pathway that leads to multicellularity in Dictyostelium.
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+Direct mechanical force measurements during the migration of Dictyostelium
+slugs using flexible substrata
+
+Jean-Paul Rieu 1*, Catherine Barentin 1, Yasuo Maeda 2 and Yasuji Sawada 3
+
+1 Laboratoire de Physique de la Matiere Condensee et
+Nanostructures,Universite Claude Bernard Lyon I & CNRS, 43 Boulevard du 11
+Novembre, 69622 Villeurbanne Cedex, France; 2 Department of Developmental
+Biology and Neurosciences, Graduate School of Life Sciences, Tohoku
+University, Aoba, Sendai 980-8578, Japan; 3 Tohoku Institute of Technology,
+35-1 Yagiyama-Kasumi, Taihaku, 983, Sendai, Japan.
+
+Biophysical Journal, in press
+
+We use the flexible substrate method to study how and where are exerted
+mechanical forces during the migration of Dictyostelium slugs. This old and
+contentious issue has been left poorly understood so far. We are able to
+identify clearly separate friction forces in the tip and in the tail of the
+slug, traction forces mostly localized in the inner slug/surface contact
+area in the prespore region and large perpendicular forces directed in the
+outward direction at the outline of contact area. Surprisingly, the
+magnitude of friction and traction forces is decreasing with slug velocity
+indicating that these quantities are probably related to the dynamics of
+cell/substrate adhesion complexes. Contrary to what is always assumed in
+models and simulations, friction is not of fluid type (viscous drag) but
+rather close to solid friction. We suggest that the slime sheath confining
+laterally the cell mass of the slug experiences a tension that in turn is
+pulling out the elastic substrate in the direction tangential to the slug
+profile where sheath is anchored. In addition, we show in the appendix that
+the iterative method we developed is well adapted to study forces over large
+and continuous fields when the experimental error is sufficiently low and
+when the plane of recorded bead deformations is close enough to the
+elastomer surface, requirements fulfilled in this experimental study of
+Dictyostelium slugs.
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+
+==============================================================================
+[End Dicty News, volume 25, number 2] 

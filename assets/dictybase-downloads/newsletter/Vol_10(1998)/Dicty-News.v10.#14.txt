@@ -1,0 +1,153 @@
+Dicty News
+Electronic Edition
+Volume 10, number 14
+June 6, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+
+A rapid, small scale method for characterization of plasmid
+insertions in the Dictyostelium genome
+
+C. BARTH, D.J. FRASER AND P.R. FISHER
+
+School of Microbiology, La Trobe University, Bundoora 3083, Melbourne, 
+Australia
+
+Nucleic Acids Research. In Press.
+
+Summary
+
+   A rapid, simple method for characterization of plasmid insertions 
+in the  Dictyostelium discoideum genome was developed. It is based on 
+the capability of linear plasmid multimers in the insertions to 
+recircularize efficiently in Escherichia coli cells. This recombinational 
+recircularization of plasmid multimers provides a highly sensitive and 
+reliable tool for determining whether individual Dictyostelium transformants 
+resulted from restriction enzyme-mediated integration (REMI) or from 
+recombinational integration of plasmid (RIP). The method also reveals 
+any rearrangements in RIP insertions and provides an estimate of the 
+vector copy number in any particular transformant.
+
+-------------------------------------------------------------------------
+
+Two Proteins of the Dictyostelium Spore Coat Bind to Cellulose 
+in vitro
+
+Yunyan Zhang, Ross D. Brown, Jr., and Christopher M. West
+
+Department of Anatomy & Cell Biology, University of Florida College 
+of Medicine, and Food Science and Human Nutrition Department, 
+Institute of Food and Agricultural Sciences, Gainesville, FL  32610  USA
+
+Biochemistry, in press
+
+
+Summary:
+
+   The spore coat of Dictyostelium contains nine different proteins and 
+cellulose.  Interactions between protein and cellulose were investigated 
+using an in vitro binding assay. Proteins extracted from coats with urea 
+and 2-mercaptoethanol could, after removal of urea by gel filtration, 
+efficiently bind to particles of cellulose (Avicel), but not Sephadex or 
+Sepharose. Two proteins, SP85 and SP35, were enriched in the reconstitution, 
+and retained their cellulose binding activities after purification by ion 
+exchange chromatography under denaturing conditions to suppress protein-protein 
+interactions. Neither protein exhibited cellulase activity, though under certain 
+conditions SP85 copurified with a cellulase activity which appeared after 
+germination.  Amino acid sequencing indicated that SP85 and SP35 are encoded 
+by the previously described pspB and psvA genes. This was confirmed for SP85 
+by showing that natural Mr polymorphisms correlated with changes in the number 
+of tetrapeptide-encoding sequence repeats in pspB. Using PCR to reconstruct 
+missing elements from the recombinogenic middle region of pspB, SP85 was shown 
+to consist of three sequence domains separated by two groups of the tetrapeptide 
+repeats. Expression of partial pspB cDNAs in E. coli showed that cellulose-
+binding activity resided in the Cys-rich COOH-terminal domain of SP85. This 
+cellulose-binding activity can explain SP85’s ultrastructural colocalization 
+with cellulose in vivo. Amino acid composition and antibody binding data showed 
+that SP35 is derived from the Cys-rich N-terminal region of the previously 
+described psvA protein. SP85 and SP35 may link other proteins to cellulose 
+during coat assembly and germination.
+
+-----------------------------------------------------------------------------------
+
+The Cytoplasmic F-box Binding Protein SKP1 Contains a Novel Pentasaccharide 
+Linked to Hydroxyproline in Dictyostelium
+
+Patana Teng-umnuay, Howard R. Morris, Anne Dell, Maria Panico, Thanai Paxton,
+and Christopher M. West
+
+Department of Anatomy and Cell Biology, College of Medicine, University of Florida, 
+Gainesville, Florida  32610-0235, USA; Department of Biochemistry, Imperial College, 
+London SW7 2AY, UK 
+
+J. Biol. Chem., in press.
+
+Summary:
+
+   SKP1 is involved in the ubiquitination of certain cell cycle and nutritional 
+regulatory proteins for rapid turnover. SKP1 from Dictyostelium has been known 
+to be modified by an oligosaccharide containing Fuc and Gal, which is unusual 
+for a cytoplasmic or nuclear protein. To establish how it is glycosylated, SKP1 
+labeled with [3H]Fuc was purified to homogeneity and digested with endo-Lys-C. A 
+single radioactive peptide was found after 2-dimensional HPLC. Analysis in a Q-TOF 
+mass spectrometer revealed a predominant ion with a novel mass. MS/MS analysis 
+yielded a set of daughter ions which identified the peptide and showed that it was 
+modified at Pro143. A second series of daughter ions showed that Pro143 was 
+hydroxylated and derivatized with a potentially linear pentasaccharide, Hex-Hex-Fuc-
+Hex-HexNAc-(HyPro). The attachment site was confirmed by Edman degradation. GC-MS 
+analysis of TMS-derivatives of overexpressed SKP1 after methanolysis showed the 
+HexNAc to be GlcNAc. Exoglycosidase digestions of the glycopeptide from normal 
+SKP1 and from a fucosylation mutant, followed by MALDI-TOF-MS analysis, showed 
+that the sugar chain consisted of D-Galpalpha1,6-D-Galpalpha1,L-Fucpalpha1,2-D-
+Galpbeta1,3GlcNAc. MALDI-TOF-MS analysis of all SKP1 peptides resolved by RP-HPLC 
+showed that SKP1 was only partially hydroxylated at Pro143, and that all hydroxylated 
+SKP1 was completely glycosylated. Thus SKP1 is variably modified by an unusual linear 
+pentasaccharide, suggesting the localization of a novel glycosylation pathway in the 
+cytoplasm. 
+
+-------------------------------------------------------------------------
+
+G-protein beta-subunit null mutants are impaired in phagocytosis and
+chemotaxis due to inappropriate regulation of the actin cytoskeleton
+
+Barbara Peracino, Jane Borleis*, Tian Jin*,  Monika Westphal#, Jean-Marc
+Schwartz#, Lijun Wu°, Enrico Bracco, Günther Gerisch#, Peter Devreotes* and
+Salvatore BozzaroÝ
+
+J. Cell Biology, in press
+
+ABSTRACT
+
+   Chemotaxis and phagocytosis are basically similar in cells of the  immune
+system and in Dictyostelium amoebae. Deletion of the unique G-protein
+beta-subunit in D. discoideum impaired phagocytosis but had little effect
+on fluid-phase endocytosis, cytokinesis or random motility. Constitutive
+expression of wild-type beta-subunit restored phagocytosis and normal
+development. Chemoattractants, released by cells or bacteria, trigger
+typical transient actin polymerization responses in wild-type cells. In
+beta-subunit null cells, and in a series of beta subunit point mutants,
+these responses were impaired to a degree that correlated with the defect
+in phagocytosis. Image analysis of GFP-actin transfected cells showed that
+beta-subunit null cells were defective in re-shaping the actin network into
+a phagocytic cup, and eventually a phagosome, in response to particle
+attachment. Our results indicate that signalling through heterotrimeric G
+proteins is required for regulating the actin cytoskeleton during phagocytic 
+uptake, as previously shown for chemotaxis. Inhibitors of phopholipase C 
+and intracellular Ca2+ mobilization inhibit phagocytosis, suggesting the 
+possible involvement of these effectors in the process.
+
+
+-------------------------------------------------------------------------
+
+[End Dicty News, volume 10, number 14]
+

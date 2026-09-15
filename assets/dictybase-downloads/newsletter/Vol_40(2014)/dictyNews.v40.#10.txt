@@ -1,0 +1,194 @@
+dictyNews
+Electronic Edition
+Volume 40, number 10
+April 4, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The IQGAP-related protein DGAP1 mediates signaling to the actin 
+cytoskeleton as an effector and a sequestrator of Rac1 GTPases
+
+Vedrana Filic, Maja Marinovic, Jan Faix, Igor Weber
+
+
+Cellular and Molecular Life Sciences, in press
+http://link.springer.com/article/10.1007%2Fs00018-014-1606-3
+
+Proteins are typically categorized into protein families based on their 
+domain organization. Yet, evolutionarily unrelated proteins can also 
+be grouped together according to their common functional roles. 
+Sequestering proteins constitute one such functional class, acting as 
+macromolecular buffers and serving as an intracellular reservoir 
+ready to release large quantities of bound proteins or other molecules 
+upon appropriate stimulation. Another functional protein class 
+comprises effector proteins, which constitute essential components of 
+many intracellular signal transduction pathways. For instance, effectors 
+of small GTP-hydrolases are activated upon binding a GTP-bound 
+GTPase and thereupon participate in downstream interactions. Here 
+we describe a member of the IQGAP family of scaffolding proteins, 
+DGAP1 from Dictyostelium, which unifies the roles of an effector and 
+a sequestrator in regard to the small GTPase Rac1. Unlike classical 
+effectors, which bind their activators transiently leading to short-lived 
+signaling complexes, interaction between DGAP1 and Rac1-GTP is 
+stable and induces formation of a complex with actin-bundling proteins 
+cortexillins at the back end of the cell. An oppositely localized Rac1 
+effector, the Scar/WAVE complex, promotes actin polymerization at the 
+cell front. Competition between DGAP1 and Scar/WAVE for the common 
+activator Rac1-GTP might provide the basis for the oscillatory re-
+polarization typically seen in randomly migrating Dictyostelium cells. We 
+discuss the consequencesof the dual roles exerted by DGAP1 and Rac1 
+in the regulation of cell motility and polarity, and propose that similar 
+signaling mechanisms may be of general importance in regulating 
+spatiotemporal dynamics of the actin cytoskeleton by small GTPases.
+
+
+Submitted by Vedrana Filic  [vedrana.filic@irb.hr]]
+---------------------------------------------------------------------------
+
+
+Pore-forming toxins from pathogenic amoebae.
+
+Leippe M.
+
+
+Appl Microbiol Biotechnol. 2014 Mar 28. 
+[Epub ahead of print], DOI: 10.1007/s00253-014-5673-z 
+
+Some amoeboid protozoans are facultative or obligate parasites in 
+humans and bear an enormous cytotoxic potential that can result in 
+severe destruction of host tissues and fatal diseases. Pathogenic 
+amoebae produce soluble pore-forming polypeptides that bind to 
+prokaryotic and eukaryotic target cell membranes and generate pores 
+upon insertion and oligomerization. This review summerizes the 
+current knowledge of such small protein toxins from amoebae, 
+compares them with related proteins from other species, focuses on 
+their three-dimensional structures, and gives insights into divergent 
+activation mechanisms. The potential use of pore-forming toxins in 
+biotechnology will be briefly outlined.
+
+
+Submitted by Matthias Leippe [mleippe@zoologie.uni-kiel.de]
+---------------------------------------------------------------------------
+
+
+Requirements for Hirano Body formation.  
+
+Paul Griffin, Ruth Furukawa, Cleveland Piggott, Andrew Maselli, 
+and Marcus Fechheimer.  
+
+
+Eukaryotic Cell, In press
+
+
+Hirano bodies are paracrystalline F-actin-rich structures associated with 
+diverse conditions including neurodegeneration and aging.  Generation 
+of model Hirano bodies using altered forms of Dictyostelium 34 kDa actin-
+bundling protein allows studies of their physiological function and 
+mechanism of formation. We describe a novel 34 kDa protein mutant, 
+E60K, with a point mutation within the inhibitory domain of 34 kDa protein. 
+Expression of E60K in Dictyostelium induces formation of model Hirano 
+bodies.  The E60K protein has activated actin binding and is calcium-
+regulated unlike other forms of the 34 kDa protein that induce Hirano 
+bodies that have activated actin binding but lack calcium-regulation. Actin 
+filaments in the presence of E60K in vitro show enhanced resistance to 
+disassembly induced by latrunculin B. Actin filaments in model Hirano 
+bodies are also protected from latrunculin induced depolymerization.   
+We used nocodazole and blebbistatin to probe the role of the microtubules 
+and myosin II, respectively, in formation of model Hirano bodies. In the 
+presence of these inhibitors, model Hirano bodies can form, but are smaller 
+than control at early times of formation.  The ultrastructure of model Hirano 
+bodies did not reveal any major difference in the structure and organization 
+in the presence of inhibitors. In summary, these results support the 
+conclusion that formation of model Hirano bodies is promoted by gain-of-
+function actin filament bundling which enhances actin filament stabilization. 
+Microtubules and myosin II contribute to but are not required for formation 
+of model Hirano bodies.
+
+
+Submitted by Ruth Furukawa [furukawa@uga.edu]
+---------------------------------------------------------------------------
+
+
+The association of myosin IB with actin waves in Dictyostelium requires both 
+the plasma membrane-binding site and actin-binding region in the myosin tail
+
+Hanna Brzeska1*, Kevin Pridham1, Godefroy Chery1, Margaret A. Titus2 
+and Edward D. Korn1
+
+1 Laboratory of Cell Biology, National Heart, Lung, and Blood Institute, National 
+Institutes of Health, Bethesda, Maryland, United States of America, 
+2 Department of Genetics, Cell Biology and Development, University of Minnesota, 
+Minneapolis, Minnesota, United States of America.
+*E-mail: brzeskah@mail.nih.gov
+
+
+PLOS ONE, accepted
+
+F-actin structures and their distribution are important determinants of the dynamic 
+shapes and functions of eukaryotic cells.  Actin waves are F-actin formations that 
+move along the ventral cell membrane driven by actin polymerization.  
+Dictyostelium myosin IB is associated with actin waves but its role in the wave is 
+unknown.  Myosin IB is a monomeric, non-filamentous myosin with a globular 
+head that binds to F-actin and has motor activity, and a non-helical tail comprising 
+a basic region, a glycine-proline-glutamine-rich region and an SH3-domain.  The 
+basic region binds to acidic phospholipids in the plasma membrane through a 
+short basic-hydrophobic site and the Gly-Pro-Gln region binds F-actin.  In the 
+current work we found that both the basic-hydrophobic site in the basic region and 
+the Gly-Pro-Gln region of the tail are required for the association of myosin IB with 
+actin waves.  This is the first evidence that the Gly-Pro-Gln region is required for 
+localization of myosin IB to a specific actin structure in situ.  The head is not 
+required for myosin IB association with actin waves but binding of the head to 
+F-actin strengthens the association of myosin IB with waves and stabilizes waves.  
+Neither the SH3-domain nor motor activity is required for association of myosin IB 
+with actin waves.  We conclude that myosin IB contributes to anchoring actin 
+waves to the plasma membranes by binding of the basic-hydrophobic site to 
+acidic phospholipids in the plasma membrane and binding of the Gly-Pro-Gln 
+region to F-actin in the wave. 
+
+
+Submitted by Hanna Brzeska [brzeska@helix.nih.gov]
+---------------------------------------------------------------------------
+
+
+Protection of spores from ultraviolet-C irradiation by auto-fluorescent substances 
+in the spore mass of the cellular slime mold Dictyostelium discoideum
+
+Saburo Uchiyama and Ikuo Hatakeyama
+
+Graduate School of Education, Iwate University, Morioka 020-8550, Japan
+
+
+Pteridines, accepted
+
+In this study, native spores surrounded by fluorescent substances in the spore 
+mass of Dictyostelium discoideum were found to be resistant to relatively strong 
+ultraviolet-C (UV-C) irradiation (2880 J/m2). The remaining emergency activity of 
+the native mass of spores was over 80% even after exposure to strong UV-C 
+irradiation (2880 J/m2). On the other hand, the washed spores were very sensitive 
+to weak UV-C irradiation (144 J/m2). The mass of spores in the fruiting body 
+formed by amoebae with a low concentration of fluorescent substances was less 
+resistant to UV-C compared to that in the fruiting body formed by normally grown 
+amoebae. Based on the remaining emergency activity of washed spores with 
+appropriate lumazine solution, the concentration of fluorescent substances in the 
+native mass of spores was estimated to be  equivalent to approximately 
+5 mmol/L lumazine.
+
+
+Submitted by Saburo Uchiyama [uchiyama@iwate-u.ac.jp]
+==============================================================
+[End dictyNews, volume 40, number 10]

@@ -1,0 +1,97 @@
+dictyNews
+Electronic Edition
+Volume 36, number 1
+Jan 7, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY NEW YEAR!
+
+
+=========
+Abstracts
+=========
+
+
+Developmental Gene Regulation by an Ancient Intercellular Communication 
+System in Social Amoebae 
+
+Asma Asghar, Marco Groth, Oliver Siol, Friedemann Gaube, Christoph 
+Enzensperger, Gernot Glšckner, Thomas Winckler  
+
+
+Protist, in press
+
+The social amoebae (Dictyostelia) use quorum sensing-like communication 
+systems to coordinate the periodic transition from uni- to multicellularity. 
+The monophyletic descent of the Dictyostelia provides a unique opportunity 
+to study the origin and adaptive evolution of such intercellular communication 
+systems. We determined that the ability of aggregation-competent cells to 
+respond to the intercellular messenger glorin occurred in the most ancient 
+taxa of the Dictyostelia. We show using Illumina sequencing technology that 
+glorin mediates rapid changes in gene expression at the transition from 
+vegetative growth to aggregation, apparently without pronounced cross-talk 
+with the cyclic AMP-based communication system that coordinates post-
+aggregation events in these species. We conclude that peptide-based 
+communication is the most ancient form of intercellular signaling in the 
+evolution of multicellularity in the social amoebae, but has been repeatedly 
+replaced by other communication systems during the monophyletic evolution 
+of the social amoebae. Glorin communication has parallels with quorum 
+sensing in that the molecule diffuses into the field, stimulates gene 
+expression in receptive cells and coordinates a population-wide response.   
+
+
+Submitted by Thomas Winckler [t.winckler@uni-jena.de]
+--------------------------------------------------------------------------------
+
+
+Derivatives of Dictyostelium differentiation-inducing factors promote 
+mitogen-activated IL-2 production via AP-1 in Jurkat cells
+
+Katsunori Takahashi 1, Masami Murakami 1, Haruhisa Kikuchi 2, 
+Yoshiteru Oshima 2, Yuzuru Kubohara 3
+
+1 Department of Clinical Laboratory, Gunma University School of Medicine, 
+Maebashi 371-8511, Japan
+2 Laboratory of Natural Product Chemistry, Tohoku University Graduate School 
+of Pharmaceutical Sciences, Aoba-yama, Aoba-ku, Sendai 980-8578, Japan
+3 Department of Molecular and Cellular Biology, Institute for Molecular and 
+Cellular Regulation, Gunma University, Maebashi 371-8512, Japan
+
+
+Life Sciences, in press.
+
+Aims: Differentiation-inducing factors (DIFs) are chlorinated alkylphenones 
+found in the cellular slime mold Dictyostelium discoideum. DIF derivatives 
+exhibit antiproliferative activities and promote glucose consumption in 
+mammalian cells in vitro. Here, we assessed the ability of DIFs to regulate 
+the immune system in a mammalian cell-line and investigated their 
+mechanisms of action. 
+
+Main methods: We examined the effects of 30 DIF derivatives on concanavalin 
+AÐinduced interleukin-2 (IL-2) production (CIIP) in Jurkat T-cells. We also 
+examined the effects of these DIF derivatives on the activity of three transcription 
+factors required for CIIP: namely, activator protein-1 (AP-1), nuclear factor of 
+activated T-cells (NFAT), and nuclear factor kappa B (NFkB).
+
+Key findings: A reporter gene assay suggested that 2 DIF derivatives, termed 
+DIF-1(+1) and DIF-3(3M), significantly promoted CIIP in Jurkat cells, at least 
+in part, by enhancing the activity of AP-1. These 2 DIF derivatives had no 
+significant effect on concanavalin AÐinduced interferon-gamma production. 
+Significance: The results suggest that DIF derivatives could be developed 
+as novel drugs for the activation of IL-2 production and resultant stimulation 
+of the immune system.
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+==============================================================
+[End dictyNews, volume 36, number 1]

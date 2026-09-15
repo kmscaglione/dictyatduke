@@ -1,0 +1,112 @@
+dictyNews
+Electronic Edition
+Volume 30, number 5
+February 8, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+An immediate-early gene, srsA: its involvement in the starvation response 
+that initiates differentiation of Dictyostelium cells
+
+Kazunori Sasaki 1*, Soo-Cheon Chae 2, William F. Loomis 3, Negin Iranfar 3, 
+Aiko Amagai 1 and Yasuo Maeda 1
+
+1, Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan; 
+2, Department of Pathology, School of Medicine, Wonkwang University, 
+Iksan, Chonbuk 570-749, South Korea; 
+3 Cell and Developmental Biology, Division of Biological Sciences, 
+University of California at San Diego, La Jolla, CA92093, USA3 
+
+*Present address: Department of Molecular Biology, Yokohama City University 
+School of Medicine, 3-9 Fuku-ura, Kanazawa-ku, Yokohama 236-0004, Japan
+
+
+Differentiation, in press
+
+When nutrients are depleted, Dictyostelium cells undergo cell cycle-arrest 
+and initiate a differentiation program for survival. We have found a novel 
+gene, srsA, which is rapidly expressed in the first 5 min following the 
+removal of nutrients and is turned off within an hour. This gene encodes 
+a small protein with no significant similarity to previously characterized 
+proteins. Disruption of srsA results in delayed expression of the early 
+genes acaA and carA that encode adenylyl cyclase and the cAMP receptor 
+necessary for chemotactic aggregation. Streaming is delayed several hours 
+and the aggregates are larger than normal in the mutant strains. These 
+phenotypes are cell-autonomous. Overexpression of srsA also results in 
+delayed aggregation. Some of the slugs of the srsAOE strains showed 
+stalked migration reminiscent of the slugs of the related species 
+D. mucoroides. The terminal structures formed by srsAOE cells were 
+grossly abnormal and contained very few viable spores. When cells 
+over-expressing srsA were developed together with an excess of wild 
+type cells, the fruiting bodies were still abnormal indicating that 
+the mutant cells have a domineering effect on late development. These 
+findings suggest that srsA may be involved in both the starvation 
+response and late differentiation. 
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Structural and functional studies of a family of Dictyostelium discoideum 
+developmentally regulated, prestalk genes coding for small proteins
+
+Juan J: Vicente, María Galardi-Castilla, Ricardo Escalante and Leandro Sastre
+
+Instituto de Investigaciones Biomédicas, CSIC/UAM. C/ Arturo Duperier, 4. 
+28029 – Madrid. Spain
+
+
+BMC Microbiology, in press
+
+Background
+The social amoeba Dictyostelium discoideum executes a multicellular 
+development program upon starvation. This morphogenetic process requires 
+the differential regulation of a large number of genes and is coordinated 
+by extracellular signals. The MADS-box transcription factor SrfA is 
+required for several stages of development, including slug migration and 
+spore terminal differentiation.
+
+Results
+Subtractive hybridization allowed the isolation of a gene, sigN 
+(SrfA-induced gene N), that was dependent on the transcription factor 
+SrfA for expression at the slug stage of development. Homology searches 
+detected the existence of a large family of sigN-related genes in the 
+Dictyostelium discoideum genome. The 13 most similar genes are grouped 
+in two regions of chromosome 2 and have been named Group1 and Group2 
+sigN genes. The putative encoded proteins are 87-89 amino acids long. 
+All these genes have a similar structure, composed of a first exon 
+containing a 13 nucleotides long open reading frame and a second exon 
+comprising the remaining of the putative coding region. The expression 
+of these genes is induced at10 hours of development. Analyses of their 
+promoter regions indicate that these genes are expressed in the prestalk 
+region of developing structures. The addition of antibodies raised 
+against SigN Group 2 proteins induced disintegration of multi-cellular 
+structures at the mound stage of development.
+
+Conclusions
+A large family of genes coding for small proteins has been identified 
+in D. discoideum. Two groups of very similar genes from this family 
+have been shown to be specifically expressed in prestalk cells during 
+development. Functional studies using antibodies raised against Group 2 
+SigN proteins indicate that these genes could play a role during 
+multicellular development.
+
+
+Submitted by: Leandro Sastre [lsastre@iib.uam.es]
+==============================================================
+[End dictyNews, volume 30, number 5]

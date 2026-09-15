@@ -1,0 +1,129 @@
+dictyNews
+Electronic Edition
+Volume 30, number 6
+February 15, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Dictyostelium Sun-1 connects the centrosome to chromatin and ensures 
+genome stability
+
+Huajiang Xiong, Francisco Rivero, Ursula Euteneuer, Subhanjan Mondal, 
+Sebastian Mana-Capelli, Denis Larochelle, Annette Vogel, Berthold Gassen, 
+and Angelika A. Noegel 
+
+
+Traffic, in press
+
+The centrosome-nucleus attachment is a prerequisite for faithful chromosome 
+segregation during mitosis. We addressed the function of the nuclear envelope 
+protein Sun-1 in centrosome-nucleus connection and maintenance of genome 
+stability in Dictyostelium discoideum. We provide evidence that Sun-1 
+requires direct chromatin binding for its inner nuclear membrane targeting. 
+Truncation of the cryptic N-terminal chromatin-binding domain of Sun-1 
+induces dramatic separation of the inner from the outer nuclear membrane 
+and deformations in nuclear morphology, which are also observed using a 
+Sun-1 RNAi construct. Thus, chromatin binding of Sun-1 defines the 
+integrity of the nuclear architecture. In addition to its role as a nuclear 
+envelope scaffold, we find that abrogation of the chromatin binding of 
+Sun-1 dissociates the centrosome-nucleus connection, demonstrating that 
+Sun-1 provides an essential link between chromatin and the centrosome. 
+Moreover, loss of the centrosome-nucleus connection causes severe 
+centrosome hyperamplification and defective spindle formation, which 
+enhances aneuploidy and cell death significantly. We highlight an 
+important new aspect for Sun-1 in coupling the centrosome and nuclear 
+division during mitosis to ensure faithful chromosome segregation. 
+
+
+Submitted by: Angelika Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+"Reversal of Cell Polarity and Actin-Myosin Cytoskeleton Reorganization under 
+Mechanical and Chemical Stimulation"
+
+Jeremie Dalous*, Emmanuel Burghardt+, Annette Mueller-Taubenberger+, 
+Franz Bruckert*$, Guenther Gerisch+, and Till Bretschneider+
+
+* CEA-Grenoble, Departement Reponse et Dynamique Cellulaires, Laboratoire 
+de Biochimie et Biophysique des Systemes Integres, Grenoble, France;
++ Max-Planck-Institut fuer Biochemie, Martinsried, Germany;
+$ Institut National Polytechnique de Grenoble,
+Laboratoire des Materiaux et du Genie Physique, Grenoble, France
+
+
+Biophysical Journal, Volume 94, Issue 3, February 1, 2008 
+
+ABSTRACT To study reorganization of the actin system in cells that invert 
+their polarity, we stimulated Dictyostelium cells by mechanical forces 
+from alternating directions. The cells oriented in a fluid flow by 
+establishing a protruding front directed against the flow and a retracting 
+tail. Labels for polymerized actin and filamentous myosin-II marked front 
+and tail. At 2.1 Pa, actin first disassembled at the previous front before 
+it began to polymerize at the newly induced front. In contrast, myosin-II 
+slowly disappeared from the previous tail and continuously redistributed 
+to the new tail. Front specification was myosin-II independent and 
+accumulation of polymerized actin was even more focused in mutants 
+lacking myosin-II heavy chains. We conclude that under mechanical 
+stimulation, the inversion of cell polarity is initiated by a global 
+internal signal that turns down actin polymerization in the entire cell. 
+It is thought to be elicited at the most strongly stimulated site of the 
+cell, the incipient front region, and to be counterbalanced by a slowly 
+generated, short-range signal that locally activates actin polymerization 
+at the front. Similar pattern of front and tail interconversion were 
+observed in cells reorienting in strong gradients of the chemoattractant 
+cyclic AMP.
+
+
+Submitted by: Till Bretschneider [T.Bretschneider@warwick.ac.uk]
+--------------------------------------------------------------------------------
+
+Mechano-chemical Signaling Maintains the Rapid Movement of Dictyostelium 
+Cells.
+
+M. L. Lombardi, D. A. Knecht, and J. Lee*
+Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, CT 06269.
+* Author for correspondence (e-mail: juliet.lee@uconn.edu; 
+phone number: 860-486-4332; fax: 860-486-4331)
+
+
+Experimental Cell Research, in press
+
+The survival of Dictyostelium cells depends on their ability to efficiently 
+chemotax, either towards food or to form multicellular aggregates.  
+Although the involvement of Ca2+ signaling during chemotaxis is well known, 
+it is not clear how this regulates cell movement.  Previously, fish 
+epithelial keratocytes have been shown to display transient increases in 
+intracellular calcium ([Ca2+]i) that are mediated by stretch-activated 
+calcium channels (SACs), which play a role in retraction of the cell body.  
+To investigate the involvement of SACs in Dictyostelium movement we 
+performed high resolution calcium imaging in wild-type (NC4A2) Dictyostelium 
+cells to detect changes in [Ca2+]i.  We observed small, brief, Ca2+ 
+transients in randomly moving wild-type cells that were dependent on both 
+intracellular and extracellular sources of calcium.  Treatment of cells 
+with the SAC blocker gadolinium (Gd3+) inhibited transients and decreased 
+cell speed, consistent with the involvement of SACs in regulating 
+Dictyostelium motility.  Additional support for SAC activity was given 
+by the increase in frequency of Ca2+ transients when Dictyostelium cells 
+were moving on a more adhesive substratum or when they were mechanically 
+stretched.  We conclude that mechano-chemical signaling via SACs, plays 
+a major role in maintaining the rapid movement of Dictyostelium cells. 
+
+
+Submitted by: Maria Lombardi [marialucia.lombardi@gmail.com]
+==============================================================
+[End dictyNews, volume 30, number 6]

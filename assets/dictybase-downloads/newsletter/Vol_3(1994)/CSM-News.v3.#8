@@ -1,0 +1,169 @@
+CSM News
+Electronic Edition
+Volume 3, number 8
+September 10, 1994
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+through www.nwu.edu.
+
+==============
+ Announcement
+==============
+
+The next update for the Franke database has been deposited into the
+archive.  This update, update6 is now available for download.  Thanks
+go to Jacob Franke and Richard Sucgang for their efforts to maintain
+this database!
+
+===========
+ Abstracts
+===========
+
+Regulatory role of the Ga1 subunit in controlling cellular
+morphogenesis in Dictyostelium
+
+Suranganie Dharmawardhane1, Andrew B. Cubitt, Alexandra M. Clark and
+Richard A. Firtel2
+
+Department of Biology, Center for Molecular Genetics, University of
+California, San Diego, La Jolla, California 92093-0634 
+telephone: 619-534-2788 fax: 619-534-7073
+
+DEVELOPMENT, IN PRESS
+
+SUMMARY
+
+   To determine the function of the Dictyostelium Ga1 subunit during
+aggregation and multicellular development, we analyzed the phenotypes
+of ga1 null cells and strains overexpressing either wild-type Ga1 or
+two putative constitutively active mutations of Ga1.  Strains
+overexpressing the wild-type or mutant Ga1 proteins showed very
+abnormal culmination with an aberrant stalk differentiation.  The
+similarity of the phenotypes between Ga1 overexpression and expression
+of a putative constitutively active Ga1 subunit suggests that these
+phenotypes are due to increased Ga1 activity rather than resulting
+from a non-specific interference of other pathways.  In contrast, ga1
+null strains showed normal morphogenesis except that the stalks were
+thinner and longer than those of wild-type culminants.
+   Analysis of cell-type-specific gene expression using lacZ reporter
+constructs indicated that strains overexpressing Ga1 show a loss of
+ecmB expression in the central core of anterior prestalk AB cells.
+However, expression of ecmB in anterior-like cells and the expression
+of prestalk A-specific gene ecmA and the prespore-specific gene
+SP60/cotC appeared normal.  Using a Ga1/lacZ reporter construct, we
+show that Ga1 expression is cell-type-specific during the
+multicellular stages, with a pattern of expression similar to ecmB,
+being preferentially expressed in the anterior prestalk AB cells and
+anterior-like cells.  The developmental and molecular phenotypes of
+Ga1 overexpression and the cell-type-specific expression of Ga1
+suggest that Ga1-mediated signaling pathways play an essential role in
+regulating multicellular development by controlling prestalk
+morphogenesis, possibly by acting as a negative regulator of prestalk
+AB cell differentiation.
+        During the aggregation phase of development, ga1 null cells
+display a delayed peak in cAMP-stimulated accumulation of cGMP
+compared to wild-type cells, while Ga1 overexpressors and dominant
+activating mutants show parallel kinetics of activation but decreased
+levels of cGMP accumulation compared to that seen in wild-type cells.
+These data suggest that Ga1 plays a role in the regulation of the
+activation and/or adaptation of the guanylyl cyclase pathway.  In
+contrast, the activation of adenylyl cyclase, another pathway
+activated by cAMP stimulation, was unaffected in ga1 null cells and
+cell lines overexpressing wild-type Ga1 or the Ga1(Q206L) putative
+dominant activating mutation.  However, the Ga1(G45V) putative
+constitutively active mutation showed significantly reduced adenylyl
+cyclase activity in response to cAMP.  All Ga1 mutant cell lines
+aggregated normally; however, aggregates of cells expressing Ga1(G45V)
+developed ring-like structures that then developed a polarity and a
+small mound-like structure before forming a slug.  Immunoprecipitation
+results suggest that the G45V phenotypes may be due to altered
+properties of this subunit and its association with the bg subunit.
+        
+--------------------------------------------------------------------
+
+Assignment of Disulfide Bonds in gp64, a Putative Cell-Cell Adhesion
+Protein of Polysphondylium pallidum : Presence of Sushi Domains in the
+Cellular Slime Mold Protein
+
+Tamao Saito, Takashi Kumazaki, and Hiroshi Ochiai
+
+Department of Biology, Faculty of Science, and the Department of
+Biochemistry, Faculty of Pharmaceutical Sciences, Hokkaido University,
+Kita-ku, Sapporo, Hokkaido 060, Japan
+
+J. Biol. Chem. in press
+
+Summary
+
+     The 64-kDa membrane-bound glycoprotein of the cellular slime mold
+Polysphondylium pallidum (referred to as gp64), seems to be
+implicated in cell-cell adhesion.  Previously we have isolated a
+full-length gp64 cDNA, determined its nucleotide sequence and found
+that all cysteine residues in the protein are involved in the
+formation of disulfide bonds.  The disulfide arrangement of the 36
+cysteines in gp64 was established by analysis of proteolytically
+cleaved protein and sequence analysis of cystine-containing fragments.
+Since gp64 has 36-Cys re sidues, 18 disulfide bonds must exist and the
+positions of 15 of them were determined.  The 15 disulfide bonds in
+gp64 constitute five characteristic, so-called Sushi domains.  In a
+Sushi domain, the first Cys in a sequence is connected to the third
+one and the second Cys to the fourth one.  mAb 293 blocks cell
+adhesion of Polysphondylium pallidum and its inhibitory activity were
+cancelled with L-fucose (Toda, K., Tharanathan, R. N., Bozzaro, S., &
+Gerisch, G. (1984) Eur.J. Biol. 143,477-481 ). Thus, we analyzed the
+epitope on gp64 and found that mAb 293 bound to the peptide K8r
+(Ala115-Lys187).  This is the first report describing the presence of
+Sushi domains in a cellular slime mold protein.  From these data, gp64
+appears to be distinct from all other cell-adhesion proteins described
+until now.
+
+----------------------------------------------------------------------
+
+ELECTROMAGNETIC PURIFICATION OF ENDOCYTIC VACUOLES AND ACIDOSOMES FROM
+DICTYOSTELIUM
+
+Harish Padh
+
+Center for Biotechnology, Northwestern University, 2153
+Sheridan Road, Evanston, IL 60208, Tel: 708-467-1453, Fax:
+708-467-2180, E-mail: padh@nwu.edu
+
+ABSTRACT
+
+   Earlier studies have shown that, in Dictyostelium discoideum, ~90%
+of the vacuolar proton pump (V-H+-ATPase) activity is present in a
+buoyant membrane fraction called 'acidosomes'.  In the presence of
+Mg2+, acidosomes and endocytic vacuoles copurified on equilibrium
+sucrose gradients suggesting their reversible association.  The
+association depended on Mg2+ and cytosolic proteins (1,2).  To further
+characterize the putative association of acidosomes and endocytic
+vacuoles, cells were fed dextran-coated superparamagnetic iron colloid
+plus FITC-dextran to load and label their endocytic vacuoles.  The
+endocytic vesicles were then purified ~20-fold at >60% yield by their
+retention on a column of fine steel wire in an electromagnetic field
+in the absence of Mg2+.  The fraction retained on a magnet column
+contained only about 5% of total cellular V-H+-ATPase and traces of
+other organelle markers.  In the presence of 1.5 mM Mg2+, however, the
+retention of V-H+-ATPase as well as FITC-dextran was ~60% with only
+traces of contaminant markers.  When such preparations were washed
+with buffer lacking Mg2+ while still in the magnetic field, the
+endocytic marker (FITC-dextran) remained on the column while
+V-H+-ATPase was eluted selectively.  The elute was shown by
+negative-stain electron microscopy to contain purified acidosomes
+(saccular membranes studded with V-H+-ATPase).  The parent material,
+recovered from the column in the presence of Mg2+, was rich in
+endocytic vacuoles bearing colloidal iron.  In an electron microscope,
+the endocytic vacuoles were often seen associated with pump-studded
+acidosomes.  The results independently support and extend earlier
+observation that acidosomes and endocytic vacuoles physically
+associate in a Mg2+-dependent manner.  In addition, the procedure
+provides a rapid method to purify acidosomes.
+
+--------------------------------------------------------------------
+
+[End CSM News, volume 3, number 8]

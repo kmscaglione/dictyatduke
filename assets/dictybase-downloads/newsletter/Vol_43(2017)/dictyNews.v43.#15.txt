@@ -1,0 +1,98 @@
+dictyNews
+Electronic Edition
+Volume 43, number 15
+July 14, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Image based modeling of bleb site selection
+
+Sharon Collier1, Peggy Paschke2, Robert R. Kay2, Till Bretschneider3
+
+1: MOAC Doctoral Training Centre, University of Warwick, 
+Coventry CV4 7AL, UK
+2: Medical Research Council Laboratory of Molecular Biology, 
+Cambridge CB2 0QH, UK
+3: Department of Computer Science, University of Warwick, 
+Coventry CV4 7AL, UK
+
+
+Scientific Reports, accepted
+
+Cells often employ fast, pressure-driven blebs to move through tissues 
+or against mechanical resistance, but how bleb sites are selected and
+directed to the cell front remains an open question. Previously, we 
+found that chemotaxing Dictyostelium cells preferentially bleb from 
+concave regions, where membrane tension facilitates membrane-cortex 
+detachment.  Now, through a novel modeling approach based on actual 
+cell contours, we use cell geometry to predict where blebs will form in 
+migrating cells.  We find that cell geometry alone, and by implication, 
+physical forces in the membrane, is sufficient to predict the location of 
+blebs in rounded cells moving in a highly resistive environment.  The 
+model is less successful with more polarized cells moving against less 
+resistance, but can be greatly improved by positing a front-to-back 
+gradient in membrane-cortex adhesion.  In accord with this prediction, 
+we find that Talin, which links membrane and cortex, forms such a 
+front-to-back gradient.  Thus our model provides a means of dissecting 
+out the role of physical forces in controlling where blebs form, and shows 
+that in certain circumstances they could be the major determining factor.
+
+
+submitted by: Till Bretschneider [T.Bretschneider@warwick.ac.uk]
+———————————————————————————————————————
+
+
+Functional Analysis of Proteins Involved in Neurodegeneration Using 
+the Model Organism Dictyostelium: Alzheimer’s, Huntington’s and 
+Batten Disease 
+
+Michael A. Myre, Robert J. Huber and Danton H. O’Day
+
+Michael A. Myre, Department of Biological Sciences, Kennedy College 
+of Sciences, University of Massachusetts Lowell, Lowell, MA 01854, USA
+Robert J. Huber, Department of Biology, Trent University, Peterborough, 
+Ontario, Canada K9L 0G2
+Danton H. O’Day, Cell and Systems Biology, University of Toronto, 
+Toronto, Ontario, Canada M5S 3G5; Department of Biology, 
+University of Toronto Mississauga, Mississauga, Ontario, Canada L5L 1C6 
+
+
+Molecular-Genetic and Statistical Techniques for Behavioral and Neural 
+Research, Wim E. Crusio and Robert T. Gerlai (Editors), Elsevier, 
+in press July 11, 2017
+
+Many neurodegenerative disorders, although related by their destruction 
+of brain function, begin at the cellular level with pathogenic mechanisms 
+that are caused by altered function, expression, or mis-localization of the
+mutant protein. Understanding the earliest events that lead to neuronal 
+dysfunction or loss is critical to developing therapies to treat these 
+currently incurable diseases. In this chapter, we will review the literature 
+on the use of Dictyostelium discoideum as a model system for studying 
+the normal functions of proteins linked to neurodegeneration, specifically 
+Alzheimer’s, Huntington’s, and Batten disease. Unlike immortalized 
+mammalian cell lines, the life cycle of this model eukaryote includes 
+both single-cell and multicellular phases, thus allowing for the study of 
+normal protein function in an organism that retains all of its dynamic 
+physiological processes. The state of current knowledge and future 
+potential of using Dictyostelium to study the mechanisms underlying 
+neurodegeneration are discussed.
+
+
+submitted by: Danton O'Day [danton.oday@utoronto.ca]
+==============================================================
+[End dictyNews, volume 43, number 15]

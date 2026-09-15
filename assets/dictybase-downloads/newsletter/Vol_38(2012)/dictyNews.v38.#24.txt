@@ -1,0 +1,98 @@
+dictyNews
+Electronic Edition
+Volume 38, number 24
+September 21, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+PIP3 waves and PTEN dynamics in the emergence of cell polarity
+
+Guenther Gerisch1*, Britta Schroth-Diez2, Annette Mueller-Taubenberger3, 
+and Mary Ecke1
+
+1Max Planck Institute of Biochemistry, 82152 Martinsried, Germany; 
+2Max Planck Institute of Molecular Cell Biology and Genetics, 01307 
+Dresden, Germany; and 3Ludwig Maximilian University of Munich, 
+Institute for Cell Biology, 80336 Muenchen, Germany
+*Correspondence: gerisch@biochem.mpg.de
+
+
+Biophysical Journal, Volume 103, September 2012 1-9
+
+In a motile eukaryotic cell, front protrusion and tail retraction are 
+superimposed on each other. In order to single out mechanisms that 
+result in front to tail or in tail to front transition, we separated the two 
+processes in time using cells that oscillate between a "full front"and a 
+"full tail" state. State transitions were visualized by total internal reflection 
+fluorescence microscopy using as a front marker PIP3 (phosphatidyl 
+inositol [3,4,5] tris-phosphate), and as a tail marker the tumor-suppressor 
+PTEN (phosphatase tensin homologue) that degrades PIP3. Negative 
+fluctuations in the PTEN layer of the membrane gated a local increase in 
+PIP3. In a subset of areas lacking PTEN ("PTEN holes"), PIP3 was 
+amplified until a propagated wave was initiated. Wave propagation implies 
+that a PIP3 signal is transmitted by a self-sustained process, such that the 
+temporal and spatial profiles of the signal are maintained during passage 
+of the wave across the entire expanse of the cell membrane. Actin clusters 
+were remodeled into a ring along the perimeter of the expanding PIP3 wave. 
+The reverse transition of PIP3 to PTEN was linked to the previous site of 
+wave initiation: where PIP3 decayed first, the entry of PTEN was primed.
+
+
+Submitted by Guenther Gerisch [gerisch@biochem.mpg.de]
+---------------------------------------------------------------------------
+
+
+Whole Genome Sequencing of Mutation Accumulation Lines Reveals a 
+Low Mutation Rate in the Social Amoeba Dictyostelium discoideum
+
+Gerda Saxer, Paul Havlak, Sara A. Fox, Michael A. Quance, Sharu Gupta, 
+Yuriy Fofanov, Joan E. Strassmann, David C. Queller
+
+
+PLoS ONE, in press
+
+Spontaneous mutations play a central role in evolution.  Despite their 
+importance, mutation rates are some of the most elusive parameters to 
+measure in evolutionary biology.  The combination of mutation 
+accumulation (MA) experiments and whole-genome sequencing now 
+makes it possible to estimate mutation rates by directly observing new 
+mutations at the molecular level across the whole genome.  We performed 
+an MA experiment with the social amoeba Dictyostelium discoideum and 
+sequenced the genomes of three randomly chosen lines using 
+high-throughput sequencing to estimate the spontaneous mutation rate 
+in this model organism.  The mitochondrial mutation rate of 6.76x10^-9, 
+with a Poisson confidence interval of 4.1x10^-9 - 9.5x10^-9, per nucleotide 
+per generation is slightly lower than estimates for other taxa. The mutation 
+rate estimate for the nuclear DNA of 2.9x10^-11, with a Poisson confidence 
+interval ranging from 7.4x10^-13 to 1.6x0^-10, is the lowest reported for 
+any eukaryote.  These results are consistent with low microsatellite mutation 
+rates previously observed in D. discoideum and low levels of genetic 
+variation observed in wild D. discoideum populations.  In addition, 
+D. discoideum has been shown to be quite resistant to DNA damage, which 
+suggests an efficient DNA-repair mechanism that could be an adaptation to 
+life in soil and frequent exposure to intracellular and extracellular mutagenic 
+compounds.  The social aspect of the life cycle of D. discoideum and a 
+large portion of the genome under relaxed selection during vegetative 
+growth could also select for a low mutation rate.  This hypothesis is 
+supported by a significantly lower mutation rate per cell division in 
+multicellular eukaryotes compared with unicellular eukaryotes.
+
+
+Submitted by Gerda Saxer [gsaxer@rice.edu]
+==============================================================
+[End dictyNews, volume 38, number 24]

@@ -1,0 +1,122 @@
+dictyNews
+Electronic Edition
+Volume 42, number 17
+July 8, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+A novel, lineage-primed prestalk cell subtype involved in the 
+morphogenesis of D. discoideum
+
+Satoshi Kuwana, Hiroshi Senoo, Satoshi Sawai, Masashi Fukuzawa
+
+
+Developmental Biology, in press
+
+Dictyostelium morphogenesis requires the tip, which acts as 
+an organizer and conducts orchestrated cell movement and cell 
+differentiation. At the slug stage the tip region contains prestalk A 
+(pstA) cells,which are usually recognized by their expression of 
+reporter constructs that utilize a fragment of the promoter of the 
+ecmA gene. Here, using the promoter region of the o-methyl 
+transferase 12 gene (omt12) to drive reporter expression, we 
+demonstrate the presence, also within the pstA region, of a novel 
+prestalk cell subtype: the pstVA cells. Surprisingly, a sub-population 
+of the vegetative cells express a pstVA: GFP marker and, sort out to 
+the tip, both when developing alone and when co-developed with an
+ excess of unmarked cells. The development of such a purified 
+GFP-marked population is greatly accelerated: by precocious cell 
+aggregation and tip formation with  accompanying precocious 
+elevation of developmental gene  transcription. We therefore 
+suggest that the tip contains at least two prestalk cell subtypes: the 
+developmentally-specified pstA cells and the lineage-primed pstVA 
+cells. It is presumably the pstVA cells that play the dominant role in 
+morphogenesis during the earlier stages of development. The basis 
+for the lineage priming is, however, unclear because we can find no 
+correlation between pstVA differentiation and nutrient status during 
+growth or cell cycle position at the time of starvation, the two known 
+determinants of probable cell fate.
+
+
+submitted by: Masashi Fukuzawa [fukuzawa@hirosaki-u.ac.jp]
+———————————————————————————————————————
+
+
+The multicellularity genes of Dictyostelid social amoebas
+
+Gernot Glöckner1,2, Hajara M. Lawal3, Marius Felder4, 
+Reema Singh3, Gail Singer3, Cornelis J. Weijer3, and 
+Pauline Schaap3*
+
+1Institute of Biochemistry I, Medical Faculty, University of 
+ Cologne, D-50931 Cologne, Germany, 
+2Leibniz Institute of Freshwater Ecology and Inland Fisheries (IGB),
+ D-12587 Berlin, Germany, 
+3School of Life Sciences, University of Dundee, DD15EH, Dundee, UK
+4Leibniz Institute on Aging, D-07745 Jena, Germany
+
+
+Nature Communications, in press
+
+The evolution of multicellularity enabled specialization of cells, but 
+required novel signalling mechanisms for regulating cell differentiation. 
+Early multicellular organisms are mostly extinct and the origins of these 
+mechanisms are unknown. Here, using comparative genome and 
+transcriptome analysis across eight uni- and multicellular amoebozoan 
+genomes, we find that 80% of proteins essential for development of the 
+multicellular Dictyostelia are already present in their unicellular relatives. 
+This set is enriched in cytosolic and nuclear proteins and protein kinases. 
+The remaining 20%, unique to Dictyostelia, mostly consists of extracellularly 
+exposed and secreted proteins, with roles in sensing and recognition, while 
+several genes for synthesis of signals that induce cell-type specialisation 
+were acquired by lateral gene transfer. Across Dictyostelia, changes in gene 
+expression correspond more strongly with phenotypic innovation than 
+changes in protein functional domains. We conclude that the transition to 
+multicellularity required novel signals and sensors rather than novel signal 
+processing mechanisms.
+
+
+submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+———————————————————————————————————————
+
+
+Evolution of developmental signalling in Dictyostelid social amoebas
+
+Pauline Schaap
+
+School of Life Sciences, University of Dundee, DD15EH Dundee, UK
+
+
+Current Opinion in Genetics and Development, in press
+
+Dictyostelia represent a tractable system to resolve the evolution 
+of cell-type specialization, with some taxa differentiating into spores 
+only, and other taxa with additionally one or up to four somatic cell 
+types. One of the latter forms, Dictyostelium discoideum, is a popular 
+model system for cell- and developmental biology with key signalling 
+pathways controlling cell-specialization being resolved recently. For
+ the most dominant pathways evolutionary origins were retraced to a 
+stress response in the unicellular ancestor, while modifications in the 
+ancestral pathway were associated with acquisition of multicellular 
+complexity. This review summarizes our current understanding of 
+developmental signalling in D.discoideum and its evolution.
+
+
+submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 17]

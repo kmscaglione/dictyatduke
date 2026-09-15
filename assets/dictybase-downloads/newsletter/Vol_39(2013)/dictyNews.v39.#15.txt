@@ -1,0 +1,90 @@
+dictyNews
+Electronic Edition
+Volume 39, number 15
+May 18, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Xin-Hua Liao^, Jonathan Buggey+, Yun Kyung Lee, and Alan R. Kimmel*
+
+Laboratory of Cellular and Developmental Biology, NIDDK, National 
+Institutes of Health, Bethesda, MD 20892-8028
+Present Addresses:
+^ Baylor College of Medicine, Houston, TX 77030
++ School of Medicine, Georgetown University Washington, DC 20057
+
+
+Molecular Biology of the Cell, in press
+
+Global stimulation of Dictyostelium with different chemoattractants elicits 
+multiple transient signaling responses, including synthesis of cAMP and 
+cGMP, actin polymerization, activation of kinases ERK2, TORC2, and 
+PI3K, and Ras-GTP accumulation; mechanisms that down-regulate these 
+responses are poorly understood. Here we examine transient activation 
+of TORC2 in response to chemically distinct chemoattractants, cAMP and 
+folate, and suggest that TORC2 is regulated by adaptive, de-sensitizing 
+responses to stimulatory ligands that are independent of downstream, 
+feedback or feed-forward circuits. Cells with acquired insensitivity to either 
+folate or cAMP remain fully responsive to TORC2 activation if stimulated 
+with the other ligand. Thus, TORC2 responses to cAMP or folate are not 
+cross-inhibitory. Using a series of signaling mutants, we show that folate 
+and cAMP activate TORC2 through an identical GEF/Ras pathway, but 
+separate receptors and G protein couplings. Since the common GEF/Ras 
+pathway also remains fully responsive to one chemoattractant after 
+de-sensitization to the other, GEF/Ras must act downstream and 
+independently of adaptation to persistent ligand stimulation. When initial 
+chemoattractant concentrations are immediately diluted, cells rapidly 
+regain full responsiveness. We suggest that ligand adaptation functions in 
+upstream inhibitory pathways that involve chemoattractant-specific 
+receptor/G protein complexes and regulate multiple response pathways. 
+
+
+Submitted by Xin-Hua Liao [liaoxinhua@gmail.com]
+---------------------------------------------------------------------------
+
+
+Novel Chlorinated Dibenzofurans Isolated from the Cellular Slime Mold, 
+Polysphondylium filamentosum, and Their Biological Activities
+
+Authors: Haruhisa Kikuchi1,*, Yuzuru Kubohara2, Van Hai Nguyen1, 
+Yasuhiro Katou1, and Yoshiteru Oshima1
+
+1 Graduate School of Pharmaceutical Sciences, Tohoku University, 
+Aoba-yama, Aoba-ku, Sendai 980-8578, Japan
+2 Institute for Molecular and Cellular Regulation, Gunma University, 
+Maebashi 371-8512, Japan
+
+
+Bioorg. Med. Chem., in press.
+
+Cellular slime molds are expected to have the huge potential for producing 
+secondary metabolites including polyketides, and we have studied the diversity 
+of secondary metabolites of cellular slime molds for their potential utilization as 
+new biological resources for natural product chemistry. From the methanol 
+extract of fruiting bodies of Polysphondylium filamentosum, we obtained new 
+chlorinated benzofurans Pf-1 and Pf-2 which display multiple biological 
+activities; these include stalk cell differentiation-inducing activity in the well-
+studied cellular slime mold, Dictyostelium discoideum, and inhibitory activities 
+on cell proliferation in mammalian cells and gene expression in 
+Drosophila melanogaster.
+
+ 
+Submitted by Haruhisa Kikuchi [hal@mail.pharm.tohoku.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 15]

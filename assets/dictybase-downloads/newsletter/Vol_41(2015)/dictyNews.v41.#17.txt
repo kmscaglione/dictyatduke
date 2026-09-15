@@ -1,0 +1,55 @@
+dictyNews
+Electronic Edition
+Volume 41, number 17
+Sugust 14, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Proximity-dependent biotin identification (BioID) in 
+Dictyostelium amoebae
+
+Petros Batsios, Irene Meyer and Ralph Gräf
+
+Institute for Biochemistry and Biology, Dept. of Cell Biology, 
+University of Potsdam, D-14476 Potsdam-Golm, 
+Karl-Liebknecht-Str. 24-25, 
+
+
+Methods in Enzymology, in press
+
+The identification of a bona fide lamin-like protein in 
+Dictyostelium made this lower eukaryote an attractive model 
+organism to study evolutionarily conserved nuclear envelope (NE) 
+proteins important for nuclear organization and human 
+laminopathies. Proximity-dependent biotin identification (BioID), 
+reported by Roux and colleagues, is a powerful discovery tool 
+for lamin-associated proteins. In this method, living cells 
+express a bait protein (e.g., lamin) fused to an R118G-mutated 
+version of BirA, an E. coli biotinylase. In the presence of 
+biotin, BirA-R118G biotinylates target proteins in close 
+proximity in vivo, which are purified using streptavidin and 
+identified by immunoblotting or mass spectrometry. We adapted 
+the BioID method for use in Dictyostelium amoebae. The protocols 
+described here successfully revealed Dictyostelium lamin-like 
+protein NE81 proximity to Sun1, a conserved inner nuclear 
+membrane protein.
+
+
+Submitted by Ralph Graef [rgraef@uni-potsdam.de] 
+==============================================================
+[End dictyNews, volume 41, number 17]

@@ -1,0 +1,188 @@
+Dicty News
+Electronic Edition
+Volume 11, number 5
+September 12, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+Cytoskeletal association of an esterase in Dictyostelium discoideum
+
+Catherine P. Chia1,*, Lothar Bomblies2, Kristy K. Taylor
+
+1School of Biological Sciences, University of Nebraska-Lincoln
+Lincoln, NE  68588-0118
+2Max-Planck-Institüt für Biochemie, D-8033 Martinsried, Federal 
+Republic of Germany
+
+Experimental Cell Research, in press
+
+Abstract
+
+   A 70 kDa glycoprotein, gp70, was found enriched in the detergent-
+insoluble cytoskeletal fraction of axenically-grown Dictyostelium 
+discoideum cells.  Its N-terminal amino acid sequence identified 
+it as ‘crystal protein’ (Bomblies, et al., 1990 J. Cell Biol. 110:669).  
+This finding was corroborated when antibody to crystal protein cross-
+reacted with gp70 and its deglycosylated form.  The postulated esterase 
+activity of gp70/crystal protein was verified through comparative enzyme 
+assays of extracts derived from cells that either overexpressed or 
+lacked gp70.  Gp70 co-sedimented with cytoskeletons on sucrose gradients, 
+suggesting an interaction with the cytoskeleton.  Co-isolation of gp70 
+with detergent-extracted cells, observed by immunofluorescence microscopy, 
+also implied a gp70-cytoskeletal association.  These data supported the 
+idea that the localization or secretion of gp70, or both, was 
+cytoskeletally-mediated.  Although axenically-grown cells contained 
+high levels of gp70, the same cell lines had reduced levels of gp70 
+when grown in bacterial suspension or in nutrient media containing 
+bacteria.  Bacterially-grown cells, compared to axenically-grown cells, 
+had lower fluid-phase uptake rates even when nutrient media was present, 
+indicating that phagocytosis was a preferred mode of feeding.  Thus, 
+bacteria inhibited gp70 expression, which suggested a role for 
+prestarvation factor, in regulating its synthesis.
+
+-------------------------------------------------------------------------
+Identification of Darlin, a Dictyostelium Protein with Armadillo-like 
+Repeats that Binds to Small GTPases and is Important for the Proper 
+Aggregation of Developing Cells.
+
+
+Kalpa K. Vithalani, Carole A. Parent, Eric M. Thorn, Marcus Penn, 
+Denis A. Larochelle, Peter N. Devreotes and Arturo De Lozanne
+
+Department of Cell Biology, Duke University Medical Center,
+Durham, NC 27710
+
+Mol. Biol. Cell, in press
+
+Abstract:
+
+   We purified from Dictyostelium lysates an 88 kDa protein that bound 
+to a subset of small GTPases including racE, racC, cdc42Hs, and TC4ran, 
+but did not bind to R-ras or rabB.   Cloning of the gene encoding this 
+88 kDa protein revealed that it contained multiple armadillo-like repeats 
+most closely related to the mammalian GTP exchange factor smgGDS.  We 
+named this protein darlin (Dictyostelium armadillo-like protein).  
+Disruption of the gene encoding darlin demonstrated that this protein 
+is not essential for cytokinesis, pinocytosis, phagocytosis or development.  
+However, the ability of darlin null cells to aggregate in response to 
+starvation is severely affected.  When starved under liquid medium, the 
+mutant cells were unable to form aggregation centers and streams, possibly 
+due to a defect in cAMP relay signaling.  This defect was not due to an 
+inability of the darlin mutants to activate adenylate cyclase in response 
+to G protein stimulation.  These results suggest that the darlin protein 
+is involved in a signaling pathway that may modulate the chemotactic 
+response during early development. 
+
+-------------------------------------------------------------------------
+
+Dictyostelium TRFA Homologous to Yeast Ssn6 is Required for Normal Growth an
+d Early Development
+
+Junichi Saito, Takahide Kon, Akira Nagasaki, Hiroyuki Adachi, and Kazuo Sutoh
+
+Department of Life Sciences, Graduate School of Arts and Sciences, University 
+of Tokyo, 3-8-1 Komaba, Meguro-ku, Tokyo 153, Japan
+
+J. Biol. Chem., in  press
+
+Abstract
+
+   The TPR (tetratricopeptide repeat) family became widespread during 
+evolution, being found from bacteria to mammalians. By means of restriction
+enzyme-mediated integration (REMI), we have identified a Dictyostelium gene 
+(trfA) highly homologous to a Saccharomyces cerevisiae gene encoding a TPR 
+protein, Ssn6 (Cyc8), which functions as a global transcriptional repressor 
+for diverse genes. The deduced amino acid sequence of the Dictyostelium gene 
+product, TRFA, contains ten consecutive TPR units as well as Gln repeats, Asn 
+repeats, and a region rich in Glu, Lys, Ser and Thr. The sequences of some of 
+the ten TPR units in TRFA are more than 70% identical to the corresponding 
+units in Ssn6.  The trfA- cells produced smooth plaques on a bacterial lawn, 
+and also failed to aggregate normally when starved on a plain agar plate.  
+Individual cells showed weaker chemotactic responces to cAMP, although adenylyl 
+cyclases of the trfA- cells were activated by cAMP as in the wild-type cells. 
+In a rich medium, they grew more slowly and stopped growing at a lower density 
+than the wild-type cells. Furthermore, they divided into cells of various sizes 
+and tended to be much smaller than the wild-type cells. These pleiotropic 
+defects of the trfA- cells suggest the possibility that Dictyostelium TRFA 
+may regulate the transcription of diverse genes required for normal growth 
+and early development.
+
+
+-------------------------------------------------------------------------
+
+Underexpression of a Novel Gene, Dia2, Impairs the Transition of 
+Dictyostelium Cells from Growth to Differentiation
+
+Soo-Choen Chae*, Yuji Inazu, Aiko Amagai, and Yasuo Maeda1
+
+Biological Institute, Graduate School of Science, Tohoku University, 
+Aoba, Sendai 980-8578, Japan
+
+Biochem. Biophys. Res. Commun., in press
+
+Abstract
+   
+   In Dictyostelium discoideum Ax-2 cells, a specific point (PS-point) 
+in the cell cycle from which they initiate differentiation in response to 
+starvation has been specified. Using synchronized Ax-2 cells and the 
+differential display method, a novel gene (differentiation-associated 
+gene 2; dia2) was isolated as one of genes expressed specifically during 
+the shift of Ax-2 cells from growth to differentiation. The dia2 gene codes 
+a lysine- and leucine-rich protein with a predicted molecular mass of 16.9 
+kDa. Northern blot analys is has shown that the dia2 mRNA, of 0.7kb, 
+accumulates in differentiating cells starved just before the PS-point, while 
+that there is no detectable expression in vegetatively growing cells.  Antisense-
+mediated gene inactivation of dia2 greatly inhibited the progress of 
+differentiation, presumably through the reduced expression of cAMP receptor 
+1 (car1). Thus, the DIA2 expression was suggested to have an essential role 
+in the initiation of differentiation , closely relating to the cAMP signaling 
+system.
+
+-------------------------------------------------------------------------
+
+A Molecular Network that Produces Spontaneous Oscillations in Excitable
+Cells of Dictyostelium
+
+Michael T. Laub and William F. Loomis
+
+Center for Molecular Genetics, Department of Biology, University of 
+California, San Diego, La Jolla, CA 92093
+
+Mol. Biol. Cell, in press
+
+Abstract
+
+   A network of interacting proteins has been found that can account 
+for the spontaneous oscillations in adenylyl cyclase activity that 
+are observed in homogenous populations of Dictyostelium cells 4 hours 
+after the initiation of development.  Previous biochemical assays 
+have shown that when extracellular cAMP binds to the surface receptor, 
+CAR1, the adenylyl cyclase, ACA, and the MAP kinase, ERK2, are 
+transiently activated.  A rise in the internal concentration of cAMP 
+activates protein kinase A, PKA, such that it inhibits ERK2 and leads 
+to a loss-of-ligand binding by CAR1. ERK2 phosphorylates the cAMP 
+phosphodiesterase, REG A, that reduces the internal concentration of 
+cAMP. A secreted phosphodiesterase, PDE, reduces external cAMP 
+concentrations between pulses. Numerical solutions to a series of 
+nonlinear differential equations describing these activities faithfully 
+account for the observed periodic changes in cAMP. The activity of 
+each of the components is necessary for the network to generate 
+oscillatory behavior, however, the model is robust in that 25 fold 
+changes in the kinetic constants linking the activities have only 
+minor effects on the predicted frequency. Moreover, constant high 
+levels of external cAMP lead to attenuation while a brief pulse of 
+cAMP can advance or delay the phase such that interacting cells 
+become entrained.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 5]
+

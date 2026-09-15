@@ -1,0 +1,99 @@
+dictyNews
+Electronic Edition
+Volume 43, number 1
+January 13, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY NEW YEAR!
+
+
+=========
+Abstracts
+=========
+
+
+Early nucleolar disorganization in Dictyostelium cell death 
+
+MF Luciani, Y Song, A Sahrane, A Kosta, P Golstein
+
+
+Cell Death and Disease, in press
+
+Cell death occurs in all eukaryotes, but it is still not known 
+whether some core steps of the cell death process are conserved. 
+We investigated this using the protist Dictyostelium. The dissection 
+of events in Dictyostelium vacuolar developmental cell death was 
+facilitated by the sequential requirement for two distinct exogenous 
+signals. An initial exogenous signal (starvation and cAMP) recruited 
+most cells into clumps. Only within these clumps did subsequent 
+cell death events take place. Contrary to our expectations, already 
+this initial signal provoked nucleolar disorganization and irreversible 
+inhibition of rRNA and DNA synthesis, reflecting marked cell 
+dysfunction. The initial signal also primed clumped cells to respond 
+to a second exogenous signal (DIF-1 or c-di-GMP), which led to 
+vacuolization and synthesis of cellulose encasings. Thus, the latter 
+prominent hallmarks of developmental cell death were induced 
+separately from initial cell dysfunction. We propose that (1) in 
+Dictyostelium vacuolization and cellulose encasings are late, 
+organism-specific, hallmarks, and (2) on the basis of our observations 
+in this protist and of similar previous observations in some cases of 
+mammalian cell death, early inhibition of rRNA synthesis and nucleolar 
+disorganization may be conserved in some eukaryotes to usher in 
+developmental cell death. 
+
+
+submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+———————————————————————————————————————
+
+
+CP39, CP75 and CP91 are major structural components of the 
+Dictyostelium centrosome's core structure
+
+Irene Meyer, Tatjana Peter, Petros Batsios, Oliver Kuhnert, 
+Anne Krüger-Genge, Carl Camurça, Ralph Gräf
+
+University of Potsdam
+
+
+Eur. J. Cell Biol., in press
+
+The acentriolar Dictyostelium centrosome is a nucleus-associated 
+body consisting of a core structure with three plaque-like layers, 
+which are surrounded by a microtubule-nucleating corona. The core 
+duplicates once per cell cycle at the G2/M transition, whereby its 
+central layer disappears and the two outer layers form the mitotic 
+spindle poles. Through proteomic analysis of isolated centrosomes 
+we have identified CP39 and CP75, two essential components of the 
+core structure. Both proteins can be assigned to the central core 
+layer as their centrosomal presence is correlated to the disappearance 
+and reappearance of the central core layer in the course of centrosome 
+duplication. Both proteins contain centrosomal targeting domains in 
+their N- and C-terminal halves whereby the N-terminal half is required 
+for cell cycle-dependent regulation. CP39 is capable of self-interaction 
+and overexpression of GFP- CP39 elicits supernumerary microtubule-
+organizing centers and precentrosomal cytosolic clusters. 
+Underexpression stops cell growth and reverses the MTOC amplification 
+phenotype. Depletion of CP75 by RNAi also elicits supernumerary 
+MTOCs. In addition CP75RNAi affects correct chromosome segregation 
+and causes co-depletion of CP39 and CP91, another central core layer 
+component. CP39 and CP75 interact with each other directly in a yeast 
+two hybrid assay. Furthermore CP39, CP75 and CP91 mutually interact 
+in a proximity-dependent biotin identification (BioID) assay. Our data 
+indicate that these three proteins are all required for proper centrosome 
+biogenesis and make up the major structural components of core 
+structure's central layer.
+
+
+submitted by: Ralf Gräf  [rgraef@uni-potsdam.de]
+==============================================================
+[End dictyNews, volume 43, number 1]

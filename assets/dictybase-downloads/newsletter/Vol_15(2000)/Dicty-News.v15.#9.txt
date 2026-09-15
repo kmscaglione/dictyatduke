@@ -1,0 +1,226 @@
+Dicty News
+Electronic Edition
+Volume 15, number 9
+October 28, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty"
+
+
+==============
+  Abstracts
+==============
+
+Cell cycle phase, cellular Ca2+and development in Dictyostelium discoideum
+
+M. Azhar1, P. K. Kennady2, Gopal Pande2, Michael Espiritu3, Wesley Holloman, 
+Derrick Brazill, Richard H. Gomer3 and Vidyanand Nanjundiah1*
+
+1 Department of Molecular Reproduction, Development and Genetics, Indian 
+Institute of Science, Bangalore-560012, India.
+2 Centre for Cellular and Molecular Biology, Hyderabad-500007, India.
+3 Howard Hughes Medical Institute and Department of Biochemistry and Cell 
+Biology, Rice University, Houston, Texas 77251-1892, USA.
+
+International Journal of Developmental Biology, in press.
+
+
+In Dictyostelium discoideum the initial differentiation of cells is 
+regulated by the phase of the cell cycle at starvation.Cells that are 
+between S and early G2 at starvation (or with a low DNA content) have 
+relatively high cellular Ca2+ and display a prestalk tendency, while 
+cells in mid to late G2 (or with a  high DNA content) have relatively 
+low levels of Ca2+ and display a prespore tendency.  As expected on the 
+basis of this correlation, cell cycle inhibitors influence the proportions 
+of amoebae containing high or low Ca2+.  However, in the mutant rtoA, 
+which upon differentiation gives rise to  many more  stalk cells than 
+spores (compared  to the wild type),  initial cell-type choice is 
+independent of cell cycle phase at starvation (Wood et al., 1996).   
+In contrast to the wild type,  a disproportionately large fraction of 
+rtoA  amoebae fall in the high Ca2+ class, possibly due to an altered 
+ability of this mutant to transport Ca2+.  These results show that Ca2+   
+is yet another aspect of early functional heterogeneity between cells of 
+D. discoideum.  The list of such aspects keeps growing and, as of  today, 
+includes cell size (Bonner et al; 1971), nutritional status (Leach et al; 
+1973), cell cycle phase (McDonald and Durston, 1984;  Weijer et al; 1984),  
+sequestered Ca 2+  (Azhar et al; 1996) and the sensitivity of freshly 
+starved amoebae to DIF (Azhar et al; 1997).  From an evolutionary point 
+of view, these  can be thought of as so many correlates  of the phenotype  
+with relative cellular fitness (what we have previously termed 'qualities'
+; Atzmony et al; 1995). Phenotypic selection at the level of the individual 
+cell ensures that following aggregation, high-quality amoebae display traits  
+of prespore cells on the whole and low-quality amoebae display prestalk 
+traits  (again, on the whole).  Seen thus, it appears  that while the 
+notion of morphogens and positional information is a useful way of 
+describing collective behaviour during the later stages of differentiation 
+and pattern formation in D. discoideum, the essence of that behaviour must 
+be sought in the myriad and interlocking ways in which cells differ from 
+each other at all stages of the life cycle.
+
+----------------------------------------------------------------------------
+
+Phg1p: A Nine-Transmembrane Protein Superfamily Member
+Involved in Dictyostelium Adhesion and Phagocytosis
+
+Sophie Cornillon, Emmanuel Pech, Mohammed Benghezal, Kissia Ravanel, Erin
+Gaynor, François Letourneur, Franz Brückert and Pierre Cosson
+
+Université de Genève, Centre Médical Universitaire, Département de
+Morphologie, 1 rue Michel Servet, CH-1211 Genève 4, Switzerland
+
+J. Biol. Chem., In press
+
+To identify the molecular mechanisms involved in phagocytosis, we generated
+random insertion mutants of Dictyostelium discoideum and selected two
+mutants defective for phagocytosis. Both represented insertions in the same
+gene, named PHG1. This gene encodes a polytopic membrane protein with an
+N-terminal lumenal domain and nine potential transmembrane segments.
+Homologous genes can be identified in many species, however their function
+is yet to be elucidated. Disruption of PHG1 caused a selective defect in
+phagocytosis of latex beads and E. coli, but not K. aerogenes bacteria.
+This defect in phagocytosis was caused by a decrease in the adhesion of
+mutant cells to phagocytosed particles. These results indicate that the
+Phg1 protein is involved in the adhesion of Dictyostelium to various
+substrates, a crucial event of phagocytosis and demonstrate the usefulness
+of a genetic approach to dissect the molecular events involved in the
+phagocytic process.
+
+----------------------------------------------------------------------------
+
+Novel Aromatic Substances, Dictyomedin A and B, from Dictyostelium Cellular
+Slime Molds and Their Inhibitory Effects on Dictyostelium Development
+
+Yoshiaki Takaya1, Haruhisa Kikuchi1, Yuichi Terui1, Jun Komiya, Yasuo
+Maeda2, Akira Ito3 and Yoshiteru Oshima1*
+
+1Graduate School of Pharmaceutical Sciences, Tohoku University, Aoba, Sendai
+980-8578, 2Biological Institute, Graduate School of Science, Tohoku
+University, Aoba, Sendai 980-8578 and 3Kyorin Pharmaceutical Co. Ltd.,
+Kanda-Surugadai, Chiyoda-ku, Tokyo 101-0062, Japan
+
+Tetrahedron Lett. (in press)
+
+Abstract
+
+To elucidate the diversity of secondary metabolites of Dictyostelium
+cellular slime molds and search for physiologically active substances
+affecting their development, we investigated the constituents of D. medium.
+>From the methanol extract of its fruit body, we obtained two novel aromatic
+compounds named dictyomedin A (1) and B (2), and their structures were
+elucidated by means of physicochemical data.  Biological evaluation of the
+compounds showed that they delayed the differentiation of D. discoideum
+cells.
+
+----------------------------------------------------------------------------
+
+Efficient transformation of Dictyostelium discoideum with a particle inflow 
+gun
+
+Birgit Wetterauer1*, Klaus Salger1, Petra Demel2
+and Hans-Ulrich Koop2
+
+1 Zoologisches Institut der Ludwig Maximilians-Universitaet, Luisenstraße
+14, 80333 Muenchen, Germany
+2 Botanisches Institut der Ludwig Maximilians-Universitaet, Menzingerstraße
+67, 80683 Muenchen, Germany
+
+BBA, Section: Molecular Cell Research
+
+We report experiments to transform Dictyostelium discoideum  using a simple
+home made particle gun. Stable transformants were obtained at frequencies
+of up to 2500 clones/µg DNA. This is five times more than we achieve with
+the same vector using electroporation protocols. We also show that the
+particle inflow gun can be used for analysis of developmentally regulated
+gene expression in a transient assay.
+
+----------------------------------------------------------------------------
+
+Identification and characterisation of DdPDE3, a cGMP-selective 
+phosphodiesterase from Dictyostelium
+
+
+Hidekazu Kuwayama, Helena Snippe, Mari Derks, Jeroen Roelofs 
+and Peter J.M. Van Haastert
+
+
+GBB, Department of Biochemistry, University of Groningen, 
+Nijenborgh 4, 9747 AG Groningen, the Netherlands
+
+
+Biochemical Journal, in press
+
+
+Abstract
+
+
+In Dictyostelium cAMP and cGMP play important functions as first 
+and second messengers in chemotaxis and developments. Two 
+cyclic nucleotide phosphodiesterases (DdPDE 1 and 2) have been 
+identified previously, an extracellular dual-specificity enzyme and 
+an intracellular cAMP-specific enzyme (encoded by the psdA and 
+regA gene, respectively). Biochemical data suggest the presence 
+of at least one cGMP-specific PDE that is activated by cGMP. 
+Using bioinformatics we identified a partial sequence in the 
+Dictyostelium EST database that shows a high degree of amino 
+acid sequence identity with mammalian PDE catalytic domains 
+(DdPDE3). The deduced amino acid sequence of a full-length 
+DdPDE3 cDNA isolated in this study predicts a 60 kDa protein with 
+a 300 amino acid C-terminal PDE catalytic domain, which is 
+preceded by about 200 amino acids that are rich in asparagine and 
+glutamine residues.  Expression of the DdPDE3 catalytic domain 
+in E. coli shows that the enzyme has Michaelis-Menten kinetics 
+and a higher affinity for cGMP (Km = 0.22 microM) than for cAMP 
+(Km = 145 microM); cGMP does not stimulate enzyme activity. The 
+enzyme requires divalent cations for activity; Mn2+ is preferred to 
+Mg2+ , whereas Ca2+ yields no activity. DdPDE3 is inhibited by 3-
+isobutyl-1-methyl-xanthine (IBMX) with an IC50 of about 60 mM. 
+Overexpression of DdPDE3 catalytic domain  in Dictyostelium 
+confirms these kinetic properties without indications for its 
+activation by cGMP. The properties of DdPDE3 resemble those of 
+mammalian PDE9 that also shows the highest sequence similarity 
+within the catalytic domains. DdPDE3 is the first cGMP-selective 
+PDE identified in lower eukaryotes. 
+
+----------------------------------------------------------------------------
+
+EXPRESSION AND ONE STEP PURIFICATION OF PLASMODIUM PROTEINS IN DICTYOSTELIUM
+
+Miguel X. van Bemmelen1, Carole Beghdadi-Rais 2, Chantal Desponds+, Esmeralda 
+Vargas3, Sócrates Herrera3, Christophe D. Reymond1 and Nicolas Fasel2
+
+1 Institut de Biologie Cellulaire et de Morphologie, Université de Lausanne, 
+Rue du Bugnon 9, CH-1005 Lausanne, Switzerland
+2 Institut de Biochimie, Université de Lausanne, ch. des Boveresses 155, 
+CH-1066 Epalinges, Switzerland
+3 Sección del Immunología, Facultad de Salud, Universidad del Valle, Cali, 
+Colombia
+
+Molecular and Biochemical Parasitology, In Press
+
+Abstract
+
+Nearly full length CSP from Plasmodium falciparum, the C-terminal fragments 
+from both P. falciparum and P. yoelii CSP and a fragment comprising 351 amino 
+acids of P.vivax MSP1 were expressed in the slime mold Dictyostelium 
+discoideum. Discoidin-tag expression vectors allowed both high yields of these 
+proteins and their purification by a nearly single-step procedure. We exploited 
+the galactose binding activity of Discoidin Ia to separate the fusion proteins 
+by affinity chromatography on Sepharose-4B columns. Inclusion of a thrombin 
+recognition site allowed cleavage of the Discoidin-tag from the fusion protein. 
+Partial secretion of the protein was obtained via an ER independent pathway, 
+whereas routing the recombinant proteins to the ER resulted in glycosylation 
+and retention. Yields of proteins were ranging from 0.08 to 3 mg per Litre 
+depending on the protein sequence and the purification conditions. The 
+recognition of purified MSP1 by sera from P. vivax malaria patients was 
+used to confirm the native conformation of the protein expressed in 
+Dictyostelium. The simple purification procedure described here, based 
+on Sepharose-4B, should facilitate the expression and the large-scale 
+purification of various Plasmodium polypeptides. 
+
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 9]

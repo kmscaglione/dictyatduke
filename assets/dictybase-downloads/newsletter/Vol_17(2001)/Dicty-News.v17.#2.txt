@@ -1,0 +1,239 @@
+Dicty News
+Electronic Edition
+Volume 17, number 2
+July 14, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+===================
+  Postoc Position
+===================
+
+Postdoctoral position (BATIIa) in Molecular Genetics at Kassel University
+(3 years + 2 years).
+
+A postdoctoral position is available to work on RNA mediated gene silencing 
+(antisense RNA, RNAi) in Dictyostelium or on signal transduction in early 
+development (see http://www.uni-kassel.de/fb19/genetics/ for detailed 
+information). The laboratory is well equipped for molecular biology. In 
+addition, scanning force microscopy on RNA-protein interactions is 
+established. Cooperations with others groups in the Biology Department are 
+encouraged.
+
+The successful applicant should have solid experience in molecular biology 
+and/or protein biochemistry. The development of an independent reseach 
+program along the lines of the general laboratory interests and the 
+establishment of a small research group are encouraged. Modest 
+participation in teaching biology students is required. Applicants should 
+attempt the habilitation or an equivalent qualification. Interested 
+individuals may first contact W. Nellen (nellen@hrz.uni-kassel.de) by 
+e-mail or dirctly send applications to
+
+Prsident
+Universitt Kassel
+D-34109 Kassel
+Germany
+Kennziffer 1114
+
+==============
+  Abstracts
+==============
+Under-Agarose Folate Chemotaxis of Dictyostelium Amoebae in Permissive and 
+Mechanically Inhibited Conditions
+
+Gary Laevsky and David A. Knecht
+
+Department of Molecular and Cell Biology, University of Connecticut, Storrs, 
+CT 06269
+ 
+in Press: Biotechniques
+ 
+ABSTRACT
+       Under agarose chemotaxis has been used previously to assess the 
+ability of neutrophils to respond to gradients of chemoattractant.  We have 
+adapted this assay to the chemotactic movement of Dictyostelium amoebae in 
+response to folic acid.  Troughs are used instead of wells in order to increase 
+the area along which the cells can be visualized and to create a uniform 
+front of moving cells.  Imaging the transition zone where the cells first 
+encounter the agarose, we find that the cells move perpendicular to the 
+gradient and periodically manage to squeeze under the agarose and move up 
+the gradient.  As cells exit the troughs, their cross sectional area 
+increases as the cells become flattened.  Three-dimensional reconstruction 
+of confocal optical sections through GFP labeled-cells demonstrates that 
+the increase in cross sectional area is due to the flattening of the cells. 
+Since the cells locally deform the agarose and become deformed by it, the 
+concentration of the agarose and therefore its stiffness should affect the 
+ability of the cells to migrate.  Consistent with this hypothesis, cells 
+in 0.5% agarose move faster and are less flat than cells under 2% agarose.  
+Cells do not exit the troughs and move under 3% agarose at all.  Therefore 
+this assay can be used to compare and quantify the ability of different 
+cells types or mutant cell lines to move in a restrictive environment.
+
+
+-----------------------------------------------------------------------------
+
+
+Automated Real-time Measurement of Chemotactic Cell Motility.
+
+Nacima Hadjout, Gary Laevsky,  David A. Knecht, and  Michael A. Lynes
+
+
+Department of Molecular and Cell Biology, University of Connecticut
+Storrs, CT 06269-3125
+
+in Press: Biotechniques
+
+ABSTRACT
+
+       We have developed a novel method (ECIS/taxis) for monitoring cell 
+movement in response to chemotactic and chemokinetic factors.  In this system, 
+cells migrate in an under-agarose environment and their position is monitored 
+using the Electric Cell Impedance Sensor (ECIS) technology to measure the 
+impedance change at a target electrode lithographed onto the substrate as the 
+cells arrive at that target.  In the studies reported here, Dictyostelium 
+discoideum was used as a prototypical motile eukaryotic cell.  Using the 
+ECIS/taxis system, the arrival of cells at the target electrode was proportional 
+to the dose of folate used to stimulate the cells and could be assessed by 
+changes in resistance at the electrode.  ECIS/taxis was readily able to 
+distinguish between wild-type cells and a mutant that is deficient in its 
+chemotactic response.  Finally, we have shown that an agent that interferes 
+with chemotactic motility leads to delayed arrival of cells at the target 
+electrode.  The multiwell configuration of the assay allows for 
+simultaneous automated screening of many samples for chemotactic or 
+anti-chemotactic activity. This assay system is compatible with measurements 
+of mammalian cell movement and should be valuable in the assessment of both 
+agonists and antagonists of cell movement.
+
+-----------------------------------------------------------------------------
+
+Reduced protein diffusion rate by cytoskeleton in vegetative and polarized 
+Dictyostelium cells
+
+
+Eric O. Potma, Wim P. de Boeij, Leonard Bosgraaf, Jeroen Roelofs, Peter 
+J. M. Van Haastert and Douwe A Wiersma 
+
+Ultrafast Laser and Spectroscopy Laboratory and Department 
+of Biochemistry, University of Groningen, Nijenborgh 4, 9747 
+AG Groningen, the Netherlands
+
+Biophysical Journal, in press
+
+Fluorescence recovery after photobleaching measurements with 
+high spatial resolution are performed to elucidate the impact of 
+the actin cytoskeleton on translational mobility of green 
+fluorescent protein (GFP) in aqueous domains of Dictyostelium 
+discoideum amoebae. In vegetative Dictyostelium cells, GFP 
+molecules experience a 3.6 fold reduction of their translational 
+mobility relative to dilute aqueous solutions. In disrupting the 
+actin filamentous network using latrunculin-A, the intact actin 
+cytoskeletal network is shown to contribute an effective viscosity 
+of 1.36 cP, which accounts for 53% of the restrained molecular 
+diffusion of GFP. The remaining 47% of hindered protein 
+motions is ascribed to other mechanical barriers and the 
+viscosity of the cell liquid. A direct correlation between the 
+density of the actin network and its limiting action on protein 
+diffusion is furthermore established from measurements under 
+different osmotic conditions. In highly locomotive polarized cells 
+the obstructing effect of the actin filamentous network is seen to 
+decline to 0.46 cP in the non-cortical regions of the cell. Our 
+results indicate that the meshwork of actin filaments constitutes 
+the primary mechanical barrier for protein diffusion and that any 
+noticeable reorganization of the network is accompanied with an 
+altered intracellular protein mobility. 
+
+-----------------------------------------------------------------------------
+
+Recruitment of Cortexillin into the Cleavage Furrow is Controlled by Rac1 
+and IQGAP-related Proteins
+
+Jan Faix 1, Igor Weber 2, Ursula Mintert 2, Jana Khler 2,  Friedrich 
+Lottspeich  2, and  Gerard Marriott 1
+
+1) Department of Physiology, University of Wisconsin-Madison, 1300 
+University Ave, WI, 53706, USA.
+2) Max-Planck-Institut fr Biochemie, D-82152 Martinsried, Germany.
+
+EMBO Journal, Vol.20, pp3705-3715, 2001
+
+Abstract
+
+Cytokinesis in eukaryotic organisms is under the control of small 
+GTP-binding proteins, although the underlying molecular mechanisms are not 
+fully understood. Cortexillins are actin-binding proteins whose activity is 
+crucial for cytokinesis in Dictyostelium. Here we show that the 
+IQGAP-related and Rac1-binding protein DGAP1 specifically interacts with 
+the C-terminal, actin-bundling domain of cortexillin I. Like cortexillin I, 
+DGAP1 is enriched in the cortex of interphase cells and translocates to the 
+cleavage furrow during cytokinesis. The activated form of the small GTPase 
+Rac1A recruits DGAP1 into a quaternary complex with cortexillin I and II. 
+In DGAP1- mutants, a complex can still be formed with a second 
+IQGAP-related protein, GAPA. The simultaneous elimination of DGAP1 and 
+GAPA, however, prevents complex formation and localization of the 
+cortexillins to the cleavage furrow. This leads to a severe defect in 
+cytokinesis, which is similar to that found in cortexillin I/II double-null 
+mutants. Our observations define a novel and functionally significant 
+signaling pathway that is
+required for cytokinesis.
+
+
+-----------------------------------------------------------------------------
+
+Sensing and responding to chemoattractants: Signaling pathways controlling 
+cell polarity and directional cell movement
+
+Chang Y. Chung, Satoru Funamoto, and Richard A. Firtel
+
+Trends in Biochemical Sciences (TiBS)
+
+Summary
+
+Many important biological processes, including chemotaxis, or directional 
+cell movement up a gradient of a chemoattractant, require the ability to 
+respond to a directional signal and a clearly established cell polarity.  
+Recent advances using Dictyostelium cells and mammalian leukocytes have 
+provided insights into the biochemical and molecular pathways that control 
+chemotaxis.  Phosphoinositide 3-kinase (PI3K) plays a central and possibly 
+pivotal role in establishing and maintaining cell polarity by regulating 
+the subcellular localization and activation of downstream effectors that 
+are essential for regulating cell polarity and proper chemotaxis.  This 
+review outlines our present understanding of these pathways.
+
+-----------------------------------------------------------------------------
+
+Dictyostelium centrin-related protein (DdCrp), the most divergent member of
+the centrin family, possesses only two EF-hands and dissociates from the
+centrosome during mitosis.
+
+Christine Daunderer, Manfred Schliwa and Ralph Grf1)
+
+Adolf-Butenandt-Insitut/Zellbiologie, Universitt Mnchen, Germany
+
+Eur. J. Cell Biol, in press
+
+We have identified a Dictyostelium discoideum cDNA sequence with homology
+to centrins. The derived protein, Dictyostelium discoideum centrin-related
+protein (DdCrp), is the most divergent member of the centrin family. Most
+strikingly it lacks the first two EF-hand consensus motifs, whereas a
+number of other centrin-specific sequence features are conserved. Southern
+and Northern blot analysis and the data presently available from the
+Dictyostelium genome and cDNA projects suggest that DdCrp is the only
+centrin isoform present in Dictyostelium. Immunofluorescence with
+anti-DdCrp antibodies revealed that the protein is localized to the
+centrosome, to a second, centrosome-associated structure close to the
+nucleus and to the nucleus itself. Confocal microscopy resolved that the
+centrosomal label is confined to the corona surrounding the centrosome
+core. Unlike for other centrins the localization of DdCrp is cell-cycle
+dependent. Both the centrosomal and the centrosome associated label
+disappear during prometaphase, most likely in concert with the dissociation
+of the corona at this stage. The striking differences of DdCrp to all other
+centrins may be related to the distinct structure and duplication mode of
+the Dictyostelium centrosome.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 2]

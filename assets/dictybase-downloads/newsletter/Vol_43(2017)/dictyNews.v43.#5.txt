@@ -1,0 +1,56 @@
+dictyNews
+Electronic Edition
+Volume 43, number 5
+March 17, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Protein Kinase A regulates the Ras, Rap1, and TORC2 pathways in 
+response to the chemoattractant cAMP in Dictyostelium
+
+Margarethakay Scavello, Alexandra R. Petlick, Ramya Ramesh, 
+Valery F. Thompson, Pouya Lotfi, and Pascale G. Charest.
+
+
+Journal of Cell Science, in press
+
+Efficient directed migration requires tight regulation of 
+chemoattractant signal transduction pathways in both space and 
+time, but the mechanisms involved in such regulation are not 
+well understood. Here, we investigated the role of Protein 
+Kinase A (PKA) in controlling signaling of the chemoattractant 
+cAMP in Dictyostelium. We found that cells lacking PKA display 
+severe chemotaxis defects, including impaired directional sensing. 
+Although PKA is an important regulator of developmental gene 
+expression, including the cAMP receptor cAR1, our studies using 
+exogenously expressed cAR1 in cells lacking PKA, cells lacking 
+adenylyl cyclase A (ACA), and cells treated with the PKA-selective 
+pharmacological inhibitor H89, suggest that PKA controls 
+chemoattractant signal transduction, in part, through the 
+regulation of RasG, Rap1, and TORC2. As these pathways control 
+the ACA-mediated production of intracellular cAMP, they lie 
+upstream of PKA in this chemoattractant signaling network. 
+Consequently, we propose that the PKA-mediated regulation of 
+the upstream RasG, Rap1, and TORC2 signaling pathways is part 
+of a negative feedback mechanism controlling chemoattractant 
+signal transduction during Dictyostelium chemotaxis.
+
+
+submitted by: Pascale Charest [pcharest@email.arizona.edu]
+==============================================================
+[End dictyNews, volume 43, number 5]

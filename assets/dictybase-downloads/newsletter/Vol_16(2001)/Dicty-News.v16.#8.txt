@@ -1,0 +1,242 @@
+Dicty News
+Electronic Edition
+Volume 16, number 8
+April 21, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+================================
+  News from the Genome Project
+================================
+
+PRELIMINARY DIRECTORY OF DICTYOSTELIUM GENES
+
+WEB SITE:  http://dicty.sdsc.edu/annotationdicty.html
+
+Negin Iranfar, Rolf Olsen and William F. Loomis
+University of California San Diego
+La Jolla Cal. 92093
+and
+The Dictyostelium Genome Project*
+
+We have prepared a Preliminary Directory of Dictyostelium Genes present in
+the contigs generated at the Sanger Centre by using a trained version of
+the genefinder program HMMgene (Krogh, 2000). The Preliminary Directory can
+accessed at  http://dicty.sdsc.edu/annotationdicty.html.
+The list of 6,700 genes can be downloaded as an Excel file for sorting and
+searching. Rapid links are provided to the sequences of specific genes and
+the complete set can be searched by Blast programs. Using a challenge set
+of 20 genes we find that HMMgene trained on Dictyostelium genes is
+significantly more effective (98.9% of codons) than TIGR's GlimmerM trained
+with malarial genes (87.5% of codons).
+
+Krogh, A. (2000). Using database matches with HMMGene for automated gene
+detection in Drosophila. Genome Res. 10: 523-528.
+
+*The Dictyostelium Genome Project : The Baylor Sequencing Center, Houston,
+Texas, (A. Kuspa and R. Gibbs) where sequencing is supported by the NIH;
+the Institute of Biochemistry, Cologne together with the Institute of
+Molecular Biotechnology, Jena, Germany (G. Glöckner , A. Rosenthal, L.
+Eichinger and A. Noegel) where sequencing is supported by the Deutsche
+Forschungsgemeinschaft (No 113/10-1 and 10-2).;  and the EUDICT consortium
+supported by The European Union (M-A. Rajandream, D. Lawson and B.
+Barrell).
+
+
+
+==============
+  Abstracts
+==============
+
+RasG regulates discoidin gene expression during Dictyostelium growth
+
+D.M. Secko1, M. Khosla1, P. Gaudet3,4, A. Tsang3,4,5, G.B. Spiegelman1,2
+and G. Weeks1,2*
+
+Department of Microbiology and Immunology1 and Department of Medical
+Genetics2, University of British Columbia, 6174 University Blvd.,
+Vancouver, British Columbia, V6T 1Z3, Canada
+
+Department of Chemistry and Biochemistry3, Centre of Structural and
+Functional Genomics4, Department of Biology5, Concordia University, 1455 de
+Maisonneuve Blvd. W. Montreal, Quebec, H3G 1M8, Canada
+
+* To whom correspondence and reprint requests should be addressed. Fax:
+(604) 822-6041. Email: gweeks@unixg.ubc.ca.
+
+Exp. Cell Research, in press
+
+
+ABSTRACT
+
+When a pVEII-rasG(G12T) transformant was grown in HL5 media containing no
+folate, discoidin and RasG levels increased and then rapidly declined while
+cells were in the early stages of exponential growth, a result that
+contrasted with the much slower decline of discoidin during the growth of
+Ax-2.  The levels of discoidin in Ax-2 were considerably higher than the
+levels in the pVEII-rasG(G12T) transformant.  These results suggested the
+possibility that RasG(G12T) represses discoidin gene expression.  When the
+rasG(G12T) gene was placed under the control the ribonucleotide reductase
+(rnrB) promoter, RasG(G12T) was rapidly generated upon exposure to 10 mM
+methyl methanesulfonate (MMS) and this was accompanied by an equally rapid
+decrease in discoidin mRNA levels, independently confirming that RasG(G12T)
+represses discoidin gene expression.  Despite the repression of discoidin
+expression by activated RasG, rasG null cells contained decreased levels of
+discoidin, indicating that endogenous RasG is essential for optimum
+discoidin expression.  These results reveal a role for RasG in regulating
+discoidin gene expression and add a further level of complexity to the
+regulation of the discoidin promoter.
+
+-----------------------------------------------------------------------------
+
+Functional and regulatory analysis of the Dictyostelium G-box binding factor
+
+Jason M. Brown and Richard A. Firtel
+
+Developmental Biology, in press.
+
+ABSTRACT
+
+The Dictyostelium discoidium G-box Binding Factor (GBF) is required for 
+the induction of known postaggregative and cell-type-specific genes.  gbf 
+null cells undergo developmental arrest at the loose-mound stage due to 
+the absence of GBF-targeted gene transcription.  GBF-mediated gene 
+expression is activated by stimulation of cell-surface, seven-span 
+cAMP receptors, but this activation is independent of heterotrimeric 
+G-proteins.  To further characterize GBF, we assayed a series of GBF 
+mutants for their ability to bind a G-box in vitro and to complement 
+the gbf null phenotype.  In vitro DNA-binding activity resides in the 
+central portion of the protein, which contains two predicted zinc fingers.  
+However, in vivo GBF function requires only one intact zinc finger.  
+In addition, expression of some GBF mutants results in a partial 
+complementation phenotype, suggesting that these mutants are hypomorphic 
+alleles.  We used a 2.4 kb GBF-promoter fragment to examine the regulation 
+of GBF expression.  GBF promoter-reporter studies confirmed the previous 
+finding that GBF transcription is induced by continuous, micromolar 
+extracellular cAMP.  We also show that, like the activation of GBF-regulated 
+transcription, the induction of GBF expression requires cell-surface cAMP 
+receptors, but not heterotrimeric G-proteins.  Finally, reporter studies 
+demonstrated that induction of GBF-promoter-regulated expression does not 
+require the presence of GBF protein, indicating that GBF expression is not 
+regulated by a positive autoregulatory loop.
+
+-----------------------------------------------------------------------------
+
+FebA: a gene for eukaryotic translation initiation factor 4E-binding 
+protein (4E-BP) in Dictyostelium discoideum
+
+Takahiro Morio (1) , Hiroo Yasukawa (2), Hideko Urushihara (1), Tamao Saito 
+(3), Hiroshi Ochiai (3), Ikuo Takeuchi (4), Mineko Maeda (5) and Yoshimasa 
+Tanaka (1)
+
+(1) Institute of Biological Sciences, University of Tsukuba, Tsukuba, 
+Ibaraki 305-8572, Japan. (2) Molecular Biology Group, Faculty of 
+Engineering, Toyama University, Toyama 930-8555, Japan. (3) Division of 
+Biological Sciences, Graduate School of Science, Hokkaido University, 
+Sapporo, Hokkaido 060-0810, Japan. (4) Novartis Foundation for the 
+Promotion of Science, Takarazuka, Hyogo 665-0042, Japan. (5) Department of 
+Biology, Graduate School of Science, Osaka University,  Toyonaka, Osaka 
+560-0043, Japan.
+ 
+BBA, in press.
+
+Summary
+
+We have identified a gene encoding a eukaryotic initiation factor 
+4E-binding protein (4E-BP) in the EST database of the Dictyostelium cDNA 
+project.   The Dictyostelium 4E-BP, designated febA (four e-binding), 
+showed significant similarity to mammalian 4E-BPs. Northern blot analysis 
+revealed that febA was expressed at a high level in the vegetative growth 
+phase but the level of expression decreased during late development.   The 
+gene was shown to be non-essential since disruption of the gene had no 
+severe effect; the null mutant proliferated normally and formed normal 
+fruiting bodies.   However, strains overexpressing the gene could not be 
+established, suggesting that an excess of FebA protein may have a lethal 
+effect on the cells.
+
+-----------------------------------------------------------------------------
+
+Total tetra knockout of GP138 multigene family implicated in cell
+interactions in Dictyostelium discoideum
+
+Key words: sexual cell fusion, multigene, gene disruption
+
+Toshihiro Hata, Mina Takahashi, Yoshimasa Tanaka, and Hideko Urushihara *
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba-shi,
+305-8572 Japan
+
+* Address correspondence to: Hideko Urushihara,
+Institute of Biological Sciences, University of Tsukuba,
+Tsukuba-shi, 305-8572 Japan
+
+Gene, in press.
+
+ABSTRACT
+
+The cellular slime mold Dictyostelium discoideum reproduces sexually under
+submerged and dark conditions. A cell surface glycoprotein gp138 has been
+identified as a target molecule for cell fusion-blocking antibodies, and is
+considered to be indispensable for the sexual cell fusion in this organism.
+Currently, four isoforms of gp138, DdFRP1a, DdFRP1b, DdFRP2, and DdFRP3, are
+known. Genes encoding the latter three isoforms, GP138C, GP138A, and GP138B,
+have been isolated, comprising a GP138 multigene family. Here we isolated
+the fourth GP138 gene, GP138D, encoding DdFRP1a. These GP138 genes were
+found to cluster in a tandem array on chromosome 5, being bordered by two
+GP138-like sequences highly homologous to them but truncated. To clarify
+functional relationships among the GP138 family members, the entire GP138
+region was deleted by a single knockout. Northern hybridization and western
+immuno-blotting analyses confirmed complete losses of GP138 mRNA and DdFRPs
+in the knockout strains, indicating that there are no more GP138 genes.
+Unexpectedly, however, the GP138-null mutants were fully potent for both
+sexual cell fusion and subsequent development. In addition, the original
+fusion-blocking antibodies detected a cell surface protein of close
+electrophoretic mobility to gp138 in the knockouts, suggesting the
+possibility that the actual target molecule of the fusion-blocking
+antibodies was not DdFRPs but this unidentified component. Since GP138-null
+mutants exhibited no obvious defects either in growth or asexual
+development, the real function of the GP138 family is unknown. Nevertheless,
+the expression levels of other developmental genes such as acaA, csaA,
+cotA-C, and spiA appeared to be altered in the GP138-null mutants.
+Therefore, it seems to have a non-critical but some role(s) during asexual
+development.
+
+-----------------------------------------------------------------------------
+
+cAMP receptor affinity controls wave dynamics, geometry and 
+morphogenesis in Dictyostelium
+
+Dirk Dormann, Ji-Yun Kim, Peter N Devreotes and Cornelis J.Weijer
+
+Journal of Cell Science (2001), in press
+
+Serpentine, G protein coupled, cAMP receptors are key 
+components in the detection and relay of the extracellular cAMP 
+waves that control chemotactic cell movement during Dictyostelium 
+development. During development the cells sequentially express four 
+closely related cAMP receptors of decreasing affinity. In this study 
+we investigate the effect of cAMP receptor type and affinity on the 
+dynamics of cell-cell signalling in-vivo, by measuring the dynamics 
+of wave initiation and propagation in a variety of cAMP receptor 
+mutants. We find that receptor affinity controls the frequency of 
+wave initiation, while it does not determine wave propagation 
+velocity, thus resulting in dramatic changes in wave geometry. In the 
+limiting case the affinity of the receptor is so low that waves can still 
+be initiated but no stable centres form and as a result the cells 
+cannot aggregate. In mounds expression of low affinity receptors 
+results in very slow concentric waves instead of the normally 
+observed multi-armed spiral waves. Under these conditions there is 
+no rotational cell movement and the hemispherical mounds cannot 
+transform into slugs. These results highlight the importance of 
+receptor number and affinity in the proper control of cell-cell 
+signalling dynamics required for the successful completion of 
+development.
+
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 8]

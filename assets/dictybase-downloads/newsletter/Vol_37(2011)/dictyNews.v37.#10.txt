@@ -1,0 +1,164 @@
+dictyNews
+Electronic Edition
+Volume 37, number 10
+October 21, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium puromycin-sensitive aminopeptidase A is a nucleoplasmic 
+nucleomorphin-binding protein that relocates to the cytoplasm during mitosis
+
+Andrew Catalano a, Yekaterina Poloz a, and Danton H. O'Day a,b
+
+a Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord st., Toronto, Ontario, Canada, M5S 3G5
+b Department of Biology, University of Toronto at Mississauga, 
+3359 Mississauga rd. N., Mississauga, Ontario, Canada, L5L 1C6
+
+
+Histochemistry and Cell Biology, in press
+
+Nucleomorphin (NumA1) is a nucleolar/nucleoplasmic protein linked to cell 
+cycle in Dictyostelium. It interacts with puromycin-sensitive aminopeptidase 
+A (PsaA) which in other organisms is a Zn2+-metallopeptidase thought to be 
+involved in cell cycle progression and is involved in several human diseases. 
+Here, we have shown that Dictyostelium PsaA contains domains characteristic 
+of the M1 family of Zn2+ metallopeptidases: a GAMEN motif and a Zn2+ binding 
+domain. PsaA colocalized with NumA1 in the nucleoplasm in vegetative cells and 
+was also present to a lesser extent in the cytoplasm. The same localization pattern 
+was observed in cells from slugs however in fruiting bodies PsaA was only detected 
+in spore nuclei. During mitosis PsaA redistributed mainly throughout the cytoplasm. 
+It possesses a functional nuclear localization signal (680RKRF683) necessary for 
+nuclear entry. To our knowledge this is the first nuclear localization signal 
+identified in a Psa from any organism. Treatment with Ca2+ chelators or 
+calmodulin antagonists indicated that neither Ca2+ nor calmodulin are involved 
+in PsaA localization. These results are interpreted in terms of the inter-relationship 
+between NumA1 and PsaA in cell function in Dictyostelium.
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+
+The cyclin-dependent kinase inhibitor roscovitine inhibits kinase activity, 
+cell proliferation, multicellular development, and Cdk5 nuclear translocation 
+in Dictyostelium discoideum
+
+Robert J. Huber 1,2 and Danton H. O'Day *1,2
+
+1Department of Cell and Systems Biology, University of Toronto, 
+25 Harbord Street, Toronto, ON, Canada M5S 3G5
+2Department of Biology, University of Toronto Mississauga, 
+3359 Mississauga Road North, Mississauga, ON, Canada L5L 1C6
+
+
+Journal of Cellular Biochemistry, in press
+
+Roscovitine, a cyclin-dependent kinase (Cdk) inhibitor, inhibited kinase 
+activity and the axenic growth of Dictyostelium discoideum at micromolar 
+concentrations. Growth was almost fully rescued in 50 µM and ~50% rescued 
+in 100 µM roscovitine-treated cultures by the over-expression of Cdk5-GFP. 
+This supports the importance of Cdk5 function during cell proliferation in 
+Dictyostelium and indicates that Cdk5 is a primary target of the drug. 
+Roscovitine did not affect the expression of Cdk5 protein during axenic 
+growth but did inhibit its nuclear translocation. This novel result suggests 
+that the effects of roscovitine could be due in part to altering Cdk5 
+translocation in other systems as well. Kinase activity was inhibited by 
+roscovitine in assays using AX3 whole cell lysates, but not in assays using 
+lysates from Cdk5-GFP over-expressing cells. At higher concentrations, 
+roscovitine impaired slug and fruiting body formation. Fruiting bodies that 
+did form were small and produced relatively fewer spores many of which 
+were round. However roscovitine did not affect stalk cell differentiation. 
+Together with previous findings, these data reveal that roscovitine inhibits 
+Cdk5 during growth and as yet undefined Cdks during mid-late development. 
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+---------------------------------------------------------------------------------
+
+
+RpkA, a highly conserved GPCR with a lipid kinase domain, has a role in 
+phagocytosis and anti-bacterial defense 
+
+Tanja Y. Riyahi, Frederike Frese, Michael Steinert, Napoleon N. Omosigho, 
+Gernot Gloeckner, Ludwig Eichinger, Benoit Orabi, Robin S. B. Williams, 
+Angelika A. Noegel 
+
+
+PLoS ONE
+
+RpkA (Receptor phosphatidylinositol kinase A) is an unusual seven-helix 
+transmembrane protein of Dictyostelium discoideum with a G protein coupled 
+receptor (GPCR) signature and a C-terminal lipid kinase domain (GPCR-PIPK) 
+predicted as a phosphatidylinositol-4-phosphate 5-kinase. RpkA-homologs are 
+present in all so far sequenced Dictyostelidae as well as in several other 
+lower eukaryotes like the oomycete Phytophthora, and in the Legionella host 
+Acanthamoeba castellani. Here we show by immunofluorescence that RpkA l
+ocalizes to endosomal membranes and is specifically recruited to phagosomes. 
+RpkA interacts with the phagosomal protein complex V-ATPase as proteins of 
+this complex co-precipitate with RpkA-GFP as well as with the GST-tagged PIPK 
+domain of RpkA. Loss of RpkA leads to a defect in phagocytosis as measured by 
+yeast particle uptake. The uptake of the pathogenic bacterium Legionella 
+pneumophila was however unaltered whereas its intra-cellular replication was 
+significantly enhanced in rpkA-. The difference between wild type and rpkA- was 
+even more prominent when L. hackeliae was used. When we investigated the 
+reason for the enhanced susceptibility for L. pneumophila of rpkA- we could not 
+detect a difference in endosomal pH but rpkA- showed depletion of 
+phosphoinositides (PIP and PIP2) when we compared metabolically labeled
+phosphoinositides from wild type and rpkA-. Furthermore rpkA- exhibited reduced 
+nitrogen starvation tolerance, an indicator for a reduced autophagy rate. Our results 
+indicate that RpkA is a component of the defense system of D. discoideum as well 
+as other lower eukaryotes. 
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+-----------------------------------------------------------------------------------
+
+
+Identification of a Eukaryotic Reductive Dechlorinase and Characterization 
+of Its Mechanism of Action on Its Natural Substrate 
+
+Francisco Velazquez,1,* Sew Yu Peak-Chew,1 Israel S. Fernandez,1 
+Christopher S. Neumann,2 and Robert R. Kay1 
+*Correspondence: fv@mrc-lmb.cam.ac.uk 
+
+1 Laboratory of Molecular Biology, Medical Research Council, 
+Cambridge CB2 0QH, UK 
+2 Department of Microbiology, University of Washington, 
+Seattle, WA 98195, USA 
+
+
+Chemistry and Biology, in press
+
+Chlorinated compounds are important environmental pollutants whose 
+biodegradation may be limited by inefficient dechlorinating enzymes. 
+Dictyostelium amoebae produce a chlorinated alkyl phenone called DIF 
+which induces stalk cell differentiation during their multicellular development. 
+Here we describe the identification of DIF dechlorinase. DIF dechlorinase is 
+active when expressed in bacteria, and activity is lost from Dictyostelium cells 
+when its gene, drcA, is knocked out. It has a Km for DIF of 88 nM and Kcat of 
+6.7 s1. DrcA is related to glutathione S-transferases, but with a key 
+asparagine-to-cysteine substitution in the catalytic pocket. When this change 
+is reversed, the enzyme reverts to a glutathione S-transferase, thus 
+suggesting a catalytic mechanism. DrcA offers new possibilities for the 
+rational design of bioremediation strategies. 
+
+
+Submitted by Francisco Velazquez [fveldua@upo.es]
+==============================================================
+[End dictyNews, volume 37, number 10]

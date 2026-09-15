@@ -1,0 +1,160 @@
+Dicty News
+Electronic Edition
+Volume 19, number 4
+August 10, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+MECHANISTICS OF AMOEBOID LOCOMOTION: SIGNAL TO FORCES
+
+Yoshio Fukui
+
+Cell Biology International, accepted for publication, 08/08/2002
+
+Dictyostelium serves as an ideal model system for studying the molecular 
+and structural properties of the actomyosin and microtubule systems. This 
+organism also has been the vehicle on which the gene-targeting technique 
+was pioneered. Dictyostelium also represents a small number of organisms 
+whose chemotactic ligand-receptor mechanism has been well characterized. 
+This article reviews recent advances in studies of the actin-based 
+cytoskeletal system in Dictyostelium, focusing on the mechanistic aspects 
+of the amoeboid motion. Special emphasis is placed on the recently 
+identified cell-substrate-anchoring structures  eupodia , and the 
+measurement of single-cell migration forces. The recent advances in signal 
+transduction cascade is also discussed with relevance to the mechanistics 
+in amoeboid locomotion.
+
+-----------------------------------------------------------------------------
+
+Identification of a novel type of cGMP phosphodiesterase that is defective 
+in the chemotactic stmF mutants
+
+Marcel E. Meima, Ricardo M. Biondi and Pauline Schaap.
+
+School of Life Sciences, University of Dundee, MSI/WTB complex, 
+Dow Street, Dundee DD1 5EH, UK.
+
+Mol. Biol. Cell, in press.
+
+ABSTRACT
+
+	StmF mutants are chemotactic mutants that are defective in a cGMP 
+phosphodiesterase (PDE) activity. We identified a novel gene, PdeD, which 
+harbours two  cyclic nucleotide binding domains and a metallo-$-lactamase 
+homology domain. Similar to stmF mutants, pdeD  null mutants displayed 
+extensively streaming aggregates, prolonged elevation of cGMP levels after 
+chemotactic stimulation and reduced cGMP-PDE  activity. PdeD  transcripts 
+were lacking in stmF mutant NP377, indicating that this mutant carries a 
+PdeD lesion. Expression of a PdeD-YFP fusion protein in pdeD null cells 
+restored the normal cGMP response and showed that PdeD resides in the 
+cytosol. When purified by immunoprecipitation, the PdeD-YFP fusion protein 
+displayed cGMP-PDE activity, which was retained in a truncated construct 
+that contained only the metallo-$-lactamase domain.
+
+-----------------------------------------------------------------------------
+
+A secreted cell-number counting factor represses intracellular glucose 
+levels to regulate group size in Dictyostelium
+
+Wonhee Jang, Binh Chiem, and Richard H. Gomer
+
+Howard Hughes Medical Institute and Department of Biochemistry and Cell 
+Biology, Rice University, Houston, TX 77005-1892
+
+Journal of Biological Chemistry, in press
+
+Summary
+
+Developing Dictyostelium cells form evenly sized groups of ~2 x 104 cells. 
+A secreted 450 kDa protein complex called counting factor (CF) regulates 
+group size by repressing cell-cell adhesion and myosin polymerization, and 
+increasing cAMP-stimulated cAMP production, actin polymerization, and cell 
+motility.  We find that CF regulates group size in part by repressing 
+internal glucose levels.  Transformants lacking bioactive CF and wild-type 
+cells with extracellular CF depleted by antibodies have high glucose levels, 
+while transformants oversecreting CF have low glucose levels.  A component 
+of CF, countin, affects group size in a manner similar to CF, and a 1-minute 
+exposure of cells to countin decreases glucose levels.  Adding 1 mM 
+exogenous glucose negates the effect of high levels of extracellular CF on 
+group size and mimics the effect of depleting CF on glucose levels, cell-
+cell adhesion, cAMP pulse size, actin polymerization, myosin assembly, and 
+motility.  These results suggest that glucose is a downstream component in 
+part of the CF signaling pathway, and may be relevant to the observed role 
+of the insulin pathway in tissue size regulation in higher eukaryotes.
+
+-----------------------------------------------------------------------------
+
+Identification and Characterization of Two Unusual cGMP-stimulated 
+Phoshodiesterases in Dictyostelium
+
+Leonard Bosgraaf, Henk Russcher, Helena Snippe, Sonya Bader, Joyce Wind, and 
+Peter J.M. Van Haastert
+
+Department of Biochemistry, University of Groningen,Nijenborgh 4, 9747 AG 
+Groningen, the Netherlands
+
+Molecular Biology of the Cell, in press
+
+Recently we recognized two genes, gbpA and gbpB, encoding putative cGMP-
+binding proteins with a Zn2+-hydrolase domain and two cyclic nucleotide 
+binding (cNB) domains. The Zn2+-hydrolase domains belong to the superfamily 
+of beta-lactamases, also harboring a small family of class II 
+phosphodiesterases from bacteria and lower eukaryotes. Gene inactivation 
+and overexpression studies demonstrate that gbpA encodes the cGMP-stimulated 
+cGMP-phosphodiesterase that was characterized biochemically previously, and 
+shown to be involved in chemotaxis. cAMP neither activates nor is a 
+substrate of GbpA. The gbpB gene is expressed mainly in the multicellular 
+stage and appears to encode a dual specificity phosphodiesterase with 
+preference for cAMP. The enzyme hydrolyses cAMP about 9-fold faster than 
+cGMP, and is activated by cAMP and cGMP with a Ka of about 0.7 and 2.3 m M, 
+respectively. Cells with a deletion of the gbpB gene have increased basal 
+and receptor stimulated cAMP levels, and are sporogeneous. We propose that 
+GbpA and GbpB hydrolyze the substrate in the Zn2+-hydrolase domain, while 
+the cNB domains mediate activation. The human cGMP-stimulated cAMP/cGMP 
+phosphodiesterase has similar biochemical properties, but a completely 
+different topology: hydrolysis takes place by a class I catalytic domain 
+and GAF domains mediate cGMP-activation.
+
+-----------------------------------------------------------------------------
+
+TEMPERATURE-SENSITIVE INHIBITION OF DEVELOPMENT IN DICTYOSTELIUM DUE TO A 
+POINT MUTATION IN THE piaA GENE
+
+Barbara Pergolizzi, Barbara Peracino, James Silverman#, Adriano Ceccarelli, 
+Angelika Noegel*, Peter Devreotes# and Salvatore Bozzaro
+
+
+ABSTRACT
+
+The Dictyostelium mutant HSB1 is temperature-sensitive for development, 
+undergoing aggregation and fruiting body formation at temperatures below 18C 
+but not above. In vivo G protein-linked adenylylcyclase activation is 
+defective in HSB1 and the enzyme is not stimulated in vitro by GTPgS; 
+stimulation is restored upon addition of wild-type cytosol.  Transfection 
+with the gene encoding the cytosolic regulator PIA rescued the mutant.  We 
+excluded the possibility that HSB1 cells fail to express PIA and show that 
+the HSB1 piaA gene harbours a point mutation, resulting in the aminoacid 
+exchange G917D. Both wild-type and HSB1 cells were also transfected with 
+the HSB1 piaA gene. The piaAHSB1 gene product displayed a partial inhibitory 
+effect on wild-type cell development. We hypothesize that PIA couples the 
+heterotrimeric G protein to adenylyl cyclase via two binding sites, one of 
+which is altered in a temperature-sensitive way by the HSB1 mutation. When 
+overexpressed in the wild-type background, PIAHSB1 competes with wild-type 
+PIA via the non-mutated binding site, resulting in dominant-negative 
+inhibition of development. Expression of GFP-fused PIA shows that PIA is 
+homogeneously distributed in the cytoplasm of chemoctically moving cells.
+
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 4]
+
+ 

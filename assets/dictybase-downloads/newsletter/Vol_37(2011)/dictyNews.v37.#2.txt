@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 37, number 2
+July 22, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Defective ribosome assembly in Shwachman-Diamond syndrome 
+
+Chi C. Wong1, 2, David Traynor1, Nicolas Basse1, 2, Robert R. Kay1, 
+Alan J. Warren1, 2
+
+1MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 0QH, UK.
+2The Department of Haematology, University of Cambridge, Hills Road, 
+Cambridge, CB2 0XY, UK. 
+
+
+Blood, In press.
+
+Shwachman-Diamond syndrome (SDS), a recessive leukemia predisposition 
+disorder characterized by bone marrow failure, exocrine pancreatic insufficiency, 
+skeletal abnormalities and poor growth, is caused by mutations in the highly 
+conserved SBDS gene. Here, we test the hypothesis that defective ribosome 
+biogenesis underlies the pathogenesis of SDS. We create conditional mutants 
+in the essential SBDS ortholog of the ancient eukaryote Dictyostelium discoideum 
+using temperature-sensitive, self-splicing inteins, showing that mutant cells fail to 
+grow at the restrictive temperature because ribosomal subunit joining is markedly 
+impaired. Remarkably, wild type human SBDS complements the growth and 
+ribosome assembly defects in mutant Dictyostelium cells, but disease-associated 
+human SBDS variants are defective. SBDS directly interacts with the GTPase 
+elongation factor-like 1 (EFL1) on nascent 60S subunits in vivo and together they 
+catalyze eviction of the ribosome anti-association factor eukaryotic initiation 
+factor 6 (eIF6), a prerequisite for the translational activation of ribosomes. 
+Importantly, lymphoblasts from SDS patients harbor a striking defect in ribosomal 
+subunit joining whose magnitude is inversely proportional to the level of SBDS 
+protein. These findings in Dictyostelium and SDS patient cells provide compelling 
+support for the hypothesis that SDS is a ribosomopathy caused by corruption of
+an essential cytoplasmic step in 60S subunit maturation.
+
+
+Submitted by: Alan Warren [ajw@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Phototaxis: Microbial
+
+Claire Y Allan and Paul R Fisher
+
+Department of Microbiology, La Trobe University,  Melbourne,  VIC 3086,
+Australia
+
+
+Encyclopedia of Life Sciences, In press
+
+Phototaxis in its broadest sense is light-regulated movement of motile 
+organisms (microorganisms in the case of microbial phototaxis), usually 
+resulting in their attraction to (positive phototaxis) or avoidance of 
+(negative phototaxis) illuminated regions. Prokaryotes often use a 
+time-biased random walk strategy under which they choose directions 
+randomly, but move for longer time periods in the chosen direction when 
+that direction happens to be correct. They employ type I sensory rhodopsin
+photoreceptors and two-component histidine kinase-mediated
+phosphotransfer systems to regulate flagellar movement. 
+Eukaryotic microbes by contrast can sense and respond to the direction 
+of light by regulating the direction of movement. Phototransduction 
+pathways in eukaryotic microbes appear to involve protein 
+phosphorylation/dephosphorylation at serine or threonine residues, 
+and the responsible kinases and phosphatases are regulated by 
+second messengers. This review focuses on select representative 
+organisms from each of the three taxonomic domains whose 
+photosensory signal transduction pathways have been studied. 
+Although many components of the signal transduction pathways 
+controlling phototaxis have been identified, there is still much to 
+be elucidated.
+
+
+Submitted by Paul Fisher [P.Fisher@latrobe.edu.au]
+==============================================================
+[End dictyNews, volume 37, number 2]

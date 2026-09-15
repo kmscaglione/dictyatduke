@@ -1,0 +1,65 @@
+dictyNews
+Electronic Edition
+Volume 42, number 18
+July 22, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The protein domains of the Dictyostelium microprocessor that are 
+required for correct subcellular localization and for microRNA 
+maturation
+
+Janis Kruse, Doreen Meier, Fides Zenk, Maren Rehders, 
+Wolfgang Nellen, Christian Hammann
+
+
+RNA Biology, in press
+
+The maturation pathways of microRNAs (miRNAs) have been 
+delineated for plants and several animals, belonging to the 
+evolutionary supergroups of Archaeplastida and Opisthokonta, 
+respectively. Recently, we reported the discovery of the 
+microprocessor complex in Dictyostelium discoideum of the 
+Amoebozoa supergroup. The complex is composed of the Dicer 
+DrnB and the dsRBD (double-stranded RNA binding domain) 
+containing protein RbdB. Both proteins localize at nucleoli, where
+ they physically interact, and both are required for miRNA maturation. 
+Here we show that the miRNA phenotype of a Delta-drnB gene
+ deletion strain can be rescued by ectopic expression of a series 
+of DrnB GFP fusion proteins, which consistently showed punctate 
+perinucleolar localization in fluorescence microscopy. These 
+punctate foci appear surprisingly stable, as they persist both 
+disintegration of nucleoli and degradation of cellular nucleic acids. 
+We observed that DrnB expression levels influence the number of 
+microprocessor foci and alter RbdB accumulation. An investigation 
+of DrnB variants revealed that its newly identified nuclear localization 
+signal is necessary, but not sufficient for the perinucleolar localization. 
+Biogenesis of miRNAs, which are RNA Pol II transcripts, is correlated 
+with that localization. Besides its bidentate RNase III domains, DrnB 
+contains only a dsRBD, which surprisingly is dispensable for miRNA 
+maturation. This dsRBD can, however, functionally replace the 
+homologous domain in RbdB. Based on the unique setup of the 
+Dictyostelium microprocessor with a subcellular localization 
+similar to plants, but a protein domain composition similar to 
+animals, we propose a model for the evolutionary origin of 
+RNase III proteins acting in miRNA maturation.
+
+
+submitted by: Christian Hammann [c.hammann@jacobs-university.de]
+==============================================================
+[End dictyNews, volume 42, number 18]

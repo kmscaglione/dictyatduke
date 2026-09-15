@@ -1,0 +1,91 @@
+dictyNews
+Electronic Edition
+Volume 35, number 12
+October 29, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+The Ras related GTPase Miro is not required for mitochondrial transport 
+in Dictyostelium discoideum
+
+Georgia Vlahou, Marek Elias, Jürgen-Christoph von Kleist-Retzow, 
+Rudolf J. Wiesner and Francisco Rivero
+
+
+European Journal of Cell Biology, in press
+
+Ras-related GTPases of the Miro family have been implicated in mitochondrial 
+homeostasis and microtubule-dependent transport. They consist of two 
+GTP-binding domains separated by calcium-binding motifs and of a C-terminal 
+transmembrane domain that targets the protein to the outer mitochondrial 
+membrane. We disrupted the single Miro-encoding gene in Dictyostelium 
+discoideum and observed a substantial growth defect that we attribute to a 
+decreased mitochondrial mass and cellular ATP content. However, mutant 
+cells even showed an increased rate of oxygen consumption, while glucose 
+consumption, mitochondrial transmembrane potential and production of reactive
+oxygen species were unaltered. Processes characteristic of the multicellular 
+stage of D. discoideum life cycle were also unaltered. Although mitochondria 
+occasionally use microtubules for transport in D. discoideum, their size and 
+distribution were not visibly affected. We found Miro in all branches of the 
+eukaryotic tree with the exception of a few protist lineages (mainly those lacking 
+typical mitochondria). Trypanosomatids and ciliates possess structurally unique 
+homologs lacking the N-terminal or the C-terminal GTPase domain, respectively. 
+We propose that in D. discoideum, as in yeasts and plants, Miro plays roles in 
+mitochondrial homeostasis, but the ability to build a complex that regulates its 
+association to kinesin for microtubule-dependent transport probably arose in 
+metazoans.
+
+
+Submitted by Francisco Rivero [f.rivero-crespo@hull.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Lead genetic studies in Dictyostelium discoideum and translational studies 
+in human cells demonstrate that sphingolipids are key regulators of 
+sensitivity to cisplatin and other anticancer drugs
+
+Stephen Alexander and Hannah Alexander
+Division of Biological Sciences, University of Missouri, Columbia, MO 65211 USA
+
+
+Seminars in Cell and Developmental Biology, in press.
+
+A Dictyostelium discoideum mutant with a disruption in the sphingosine-1-phosphate 
+(S-1-P) lyase gene was obtained in an unbiased genetic analysis, using random 
+insertional mutagenesis, for mutants with increased resistance to the widely used 
+cancer chemotherapeutic drug cisplatin.   This finding opened the way to extensive 
+studies in both D. discoideum and human cells on the role and mechanism of action 
+of the bioactive sphingolipids S-1-P and ceramide in regulating the response to 
+chemotherapeutic drugs.  These studies showed that the levels of activities of the 
+sphingolipid metabolizing enzymes S-1-P lyase, sphingosine kinase and ceramide 
+synthase, affect whether a cell dies or lives in the presence of specific drugs.  The 
+demonstration that multiple enzymes of this biochemical pathway were involved in 
+regulating drug sensitivity provided new opportunities to test whether 
+pharmacological intervention might increase sensitivity.  Thus it is of considerable 
+clinical significance that pharmacological inhibition of sphingosine kinase 
+synergistically sensitizes cells to cisplatin, both in D. discoideum and human cells.  
+Linkage to the p38 MAP kinase and protein kinase C (PKC) signaling pathways 
+has been demonstrated.  This work demonstrates the utility of D. discoideum as a 
+lead genetic system to interrogate molecular mechanisms controlling the sensitivity 
+of tumor cells to chemotherapeutic agents and for determining novel ways of 
+increasing efficacy.  The D. discoideum system could be easily adapted to a high 
+throughput screen for novel chemotherapeutic agents.
+
+
+Submitted by Steve Alexander [AlexanderSt@missouri.edu]
+==============================================================
+[End dictyNews, volume 35, number 12]

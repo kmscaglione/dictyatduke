@@ -1,0 +1,48 @@
+Dicty News
+Electronic Edition
+Volume 17, number 3
+August 3, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+==============
+  Abstracts
+==============
+RasC is required for optimal activation of adenylyl cyclase and Akt/PKB 
+during aggregation.
+
+Chinten James Lim, George B. Spiegelman, and Gerald Weeks.
+
+Department of Microbiology and Immunology, Department of Medical Genetics, 
+University of British Columbia, Vancouver, British Columbia, V6T 1Z3 Canada.
+
+EMBO J., in press.
+
+ABSTRACT
+
+Disruption of Dictyostelium rasC, encoding a Ras subfamily protein, 
+generated cells incapable of aggregation. While rasC expression is enriched 
+in a cell type specific manner during post-aggregative development, the 
+defect in rasC- cells is restricted to aggregation and fully corrected by 
+application of exogenous cAMP pulses. cAMP is not produced in rasC- cells 
+stimulated by 2'-deoxy-cAMP, but is produced in response to GTPgS in cell 
+lysates, indicating that G-protein coupled cAMP receptor activation of 
+adenylyl cyclase is regulated by RasC. However, cAMP induced ERK2 
+phosphorylation is unaffected in rasC- cells, indicating RasC is not an 
+upstream activator of the MAPK required for cAMP relay. rasC- cells also 
+exhibit reduced chemotaxis to cAMP during early development and delayed 
+response to periodic cAMP stimuli produced by wildtype cells in chimeric 
+mixtures. Furthermore, cAMP induced Akt/PKB phosphorylation through a PI3K 
+dependent pathway is dramatically reduced in rasC- cells, suggesting that 
+G-protein coupled serpentine receptor activation of PI3K is regulated by 
+RasC. Cells lacking the RasGEF, AleA, exhibit similar defects as rasC- cells, 
+suggesting that AleA may activate RasC.
+
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 3]

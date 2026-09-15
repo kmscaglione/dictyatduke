@@ -1,0 +1,76 @@
+dictyNews
+Electronic Edition
+Volume 43, number 9
+May 5, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The two Dictyostelium discoideum autophagy 8 proteins have distinct 
+autophagic functions
+
+Susanne Meßling, Jan Matthias, Qiuhong Xiong, Sarah Fischer and 
+Ludwig Eichinger
+
+Center for Biochemistry, Institute of Biochemistry I, Medical Faculty, 
+University of Cologne, Joseph-Stelzmann-Str. 52, 50931 Cologne, Germany
+
+
+European Journal of Cell Biology, in press.
+
+Autophagy is a highly conserved cellular degradation pathway which is
+crucial for various cellular processes. The autophagic process is 
+subdivided in the initiation, autophagosome maturation and lysosomal 
+degradation phases and involves more than forty core and accessory 
+autophagy-related (ATG) proteins. Autophagy 8 (ATG8, in mammals LC3) 
+is a well-established marker of autophagy and is linked to the autophagic 
+membrane from initiation until fusion with the lysosome.
+
+We generated single and double knock-out mutants of the two Dictyostelium 
+paralogues, ATG8a and ATG8b, as well as strains that expressed 
+RFP-ATG8a and/or GFP-ATG8b, RFP-ATG8b, RFP-GFP-ATG8a or 
+RFP-GFP-ATG8b in different knock-out mutants. The ATG8b¯ mutant 
+displayed only subtle phenotypic changes in comparison to AX2 wild-type 
+cells. In contrast, deletion of ATG8a resulted in a complex phenotype with 
+delayed development, reduced growth, phagocytosis and cell viability, an 
+increase in ubiquitinylated proteins and a concomitant decrease in 
+proteasomal activity. The phenotype of the ATG8a¯/b¯ strain was, except for
+cell viability, in all aforementioned aspects more severe, showing that both 
+proteins function in parallel during most analysed cellular processes. 
+Immunofluorescence analysis of knock-out strains expressing either 
+RFP-GFP-ATG8a or RFP-GFP-ATG8b suggests a crucial function for 
+ATG8b in autophagosome-lysosome fusion. Quantitative analysis of strains 
+expressing RFP-ATG8a, RFP-ATG8b, or RFP-ATG8a and GFP-ATG8b 
+revealed that ATG8b generally localised to small and large vesicles, 
+whereas ATG8a preferentially co-localised with ATG8b on large vesicles, 
+indicating that ATG8b associated with nascent autophagosomes before 
+ATG8a, which is supported by previous results (Matthias et al., 2016). 
+Deconvoluted confocal fluorescence images showed that ATG8b localised 
+around ATG8a and was presumably mainly present on the outer membrane 
+of the autophagosome while ATG8a appears to be mainly associated with
+the inner membrane.
+
+In summary, our data show that ATG8a and ATG8b have distinct functions 
+and are involved in canonical as well as non-canonical  autophagy. The 
+data further suggest that ATG8b predominantly acts as adapter for the 
+autophagy machinery at the outer and ATG8a as cargo receptor at the inner 
+membrane of the autophagosome.
+
+
+submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 43, number 9]

@@ -1,0 +1,44 @@
+Dicty NewsElectronic EditionVolume 21, number 4August 15, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+Cross-linking of actin filaments by myosin II is a major contributor to 
+cortical integrity and cell motility in restrictive environmentsGary Laevsky and David A. Knecht
+
+Journal of Cell Science, in pressCells are frequently required to move in a local environment that physically 
+restricts locomotion, such as during extravasation or metastatic invasion. 
+In order to model these events, we have developed an assay in which 
+vegetative Dictyostelium amoebae undergo chemotaxis under a layer of agarose 
+toward a source of folic acid [Laevsky, G. and Knecht, D. A. (2001). 
+Biotechniques 31, 1140-1149]. As the concentration of agarose is increased 
+from 0.5% to 3% the cells are increasingly inhibited in their ability to 
+move under the agarose. The contribution of myosin II and actin 
+cross-linking proteins to the movement of cells in this restrictive 
+environment has now been examined. Cells lacking myosin II heavy chain 
+(mhcA-) are unable to migrate under agarose overlays of greater than 0.5%, 
+and even at this concentration they move only a short distance from the 
+trough. While attempting to move, the cells become stretched and fragmented 
+due to their inability to retract their uropods. At higher agarose 
+concentrations, the mhcA- cells protrude pseudopods under the agarose, but 
+are unable to pull the cell body underneath. Consistent with a role for 
+myosin II in general cortical stability, GFP-myosin dynamically localizes 
+to the lateral and posterior cortex of cells moving under agarose. Cells 
+lacking the essential light chain of myosin II (mlcE-), have no measurable 
+myosin II motor activity, yet were able to move normally under all agarose 
+concentrations. Mutants lacking either ABP-120 or a-actinin were also able 
+to move under agarose at rates similar to wild-type cells. We hypothesize 
+that myosin stabilizes the actin cortex through its cross-linking activity 
+rather than its motor function and this activity is necessary and 
+sufficient for the maintenance of cortical integrity of cells undergoing 
+movement in a restrictive environment. The actin cross-linkers a-actinin 
+and ABP-120 do not appear to play as major a role as myosin II in providing 
+this cortical integrity.
+Submitted by: David Knecht [knecht@uconnvm.uconn.edu]
+
+-----------------------------------------------------------------------------
+Cell movements and traction forces during the migration of 2-dimensionalDictyostelium slugs.Jean-Paul Rieu1, Kaoru Tsuchiya2, Satoshi Sawai2, Yasuo Maeda3, and YasujiSawada41Laboratorie de Physique de la Matiere Condensee et des Nanostructures,Universite Claude Bernard Lyon I, 43 Boulevard du 11 Novembre 1918, 69622Villeurbanne Cedex, France; 2Graduate School of Information Science, TohokuUniversity, 2-1-1 Katahira, Sendai 980-9577, Japan; 3Department ofDevelopmental Biology and Neurosciences, Graduate School of Life Sciences,Tohoku University, Aoba, Sendai 980-8578, Japan; 4Tohoku Institute ofTechnology, 35-1 Yagiyama-Kasumi, Taihaku, 983, JapanJournal of  Biological Physics, in pressAbstract: Migration of Dictyostelium discoideum slugs results from complexcoordinated movements and traction forces of its constituent cells. In thiswork, we show that two-dimensional (2D) slugs are good models for slugmotility studies. They share most of the properties of 3D slugs but are moresuitable for microscopy. We performed observations of substrate deformationsduring 2D slug migration. Traction forces on elastic substrates exerted bythe cells are maximal in the central prespore region and absent in theanterior prestalk region.
+Submitted by: Yasuo MAEDA [ymaeda@mail.cc.tohoku.ac.jp]
+
+===============================================================================[End Dicty News, volume 21, number 4]

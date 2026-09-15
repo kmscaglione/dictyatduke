@@ -1,0 +1,49 @@
+dictyNews
+Electronic Edition
+Volume 43, number 4
+March 1, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Functional interaction of PkcA and PldB regulate aggregation and 
+development in Dictyostelium discoideum
+
+Sean Singh, Wasima Mohamed, Annelie Aguessy, Ella Dyetta, Shriraj 
+Shah, Mohammedasad Khan, Ramamurthy Baskar, Derrick Brazill,*
+
+
+Cellular Signalling, in press
+
+Multicellular development in Dictyostelium discoideum involves 
+tightly regulated signaling events controlling the entry into development, 
+initiation of aggregation and chemotaxis, and cellular differentiation. 
+Here we show that PkcA, a Dictyostelium discoideum Protein Kinase 
+C-orthologue, is involved in quorum sensing and the initiation of 
+development, as well as cAMP sensing during chemotaxis. Additionally, 
+by epistasis analysis we provide evidence that PkcA and PldB (a 
+Phospholipase D-orthologue) functionally interact to regulate 
+aggregation, differentiation, and cell-cell adhesion during development. 
+Finally, we show that PkcA acts as a positive regulator of intracellular 
+PLD-activity during development. Taken together, our results suggest 
+that PkcA act through PldB, by regulating PLD-activity, in order to 
+control events during development.
+
+
+submitted by: Derrick Brazill  [brazill@genectr.hunter.cuny.edu]
+==============================================================
+[End dictyNews, volume 43, number 4]

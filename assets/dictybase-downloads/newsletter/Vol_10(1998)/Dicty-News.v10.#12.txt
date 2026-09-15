@@ -1,0 +1,185 @@
+Dicty News
+Electronic Edition
+Volume 10, number 12
+April 25, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+A Developmentally Regulated Kinesin-Related Motor Protein from
+Dictyostelium discoideum
+
+Eugenio L. de Hostos1*, Gretchen McCaffrey2#, Richard Sucgang4, 
+Daniel W. Pierce2, and Ronald D. Vale2,3
+
+1Department of Biochemistry and Cell Biology, Rice University, 
+Houston TX 77005 
+2Department of Molecular and Cellular Pharmacology and 
+3Howard Hughes Medical Institute , University of California, San 
+Francisco, CA 94143 
+4Department of Biochemistry, Baylor College of Medicine, Houston 
+TX 77030
+
+Mol. Biol. Cell, in press.
+
+ABSTRACT
+
+   The cellular slime mold Dictyostelium discoideum is an attractive
+system for studying the roles of microtubule-based motility in cell
+development and differentiation. In this work, we report the first
+molecular characterization of kinesin-related proteins in Dictyostelium. 
+A PCR-based strategy was used to isolate DNA fragments encoding six
+kinesin-related proteins (KRPs), several of which are induced during the
+developmental program that is initiated by starvation. The complete
+sequence of one such developmentally regulated KRP (designated K7) was
+determined and found to be a novel member of the kinesin superfamily. 
+The motor domain of K7 is most similar to that of conventional kinesin, 
+but unlike conventional kinesin, K7 is not predicted to have an extensive
+a-helical coiled-coil domain. The non-motor domain is unusual and is rich
+in Asn, Gln, and Thr residues; similar sequences are found in other
+developmentally regulated genes in Dictyostelium. K7, expressed in E. 
+coli, supports plus-end directed microtubule motility in vitro at a speed
+of 0.14 µm/sec, indicating that it is a bona fide motor protein. The K7 
+motor is found only in developing cells and reaches a peak level of 
+expression between 12 and 16 hr after starvation. By immunofluorescence 
+microscopy, K7 localizes to a membranous perinuclear structure. To 
+examine K7 function, we prepared a null cell line, but found that these 
+cells show no gross developmental abnormalities. However, when cultivated
+in the presence of wild-type cells, the K7-null cells are mostly absent 
+from the pre-stalk zone of the slug. This result suggests that in a 
+population composed largely of wild-type cells, the absence of the K7 
+motor protein interferes either with the ability of the cells to localize
+to the pre-stalk zone or to differentiate into pre-stalk cells.
+
+-------------------------------------------------------------------------
+
+Fatty acids induce release of Ca2+ from acidosomal stores and activate
+capacitative Ca2+-entry in Dictyostelium discoideum
+
+Ralph Schaloske, Jürgen Sonnemann, Dieter Malchow and Christina Schlatterer
+Fakultät für Biologie, Universität Konstanz, D-78457 Konstanz
+
+Biochemical Journal, in press
+
+Summary
+
+   cAMP-induced Ca2+-fluxes in Dictyostelium discoideum largely depend 
+on phospholipase A2 activity generating free fatty acids (Schaloske, 
+R. and Malchow, D. (1997) Biochem. J. 327:233-238). In the present 
+study the effect of fatty acids on the Ca2+-homeostasis of Dictyostelium 
+discoideum was investigated. [Ca2+]i was analyzed by digital imaging 
+of single fura2-dextran-loaded cells. Arachidonic and linoleic acid 
+induced a transient change in [Ca2+]i. The concentration of arachidonic 
+acid determined the percentage of responding cells with the mean 
+height of the increase being dose-independent. In nominally Ca2+-free 
+medium or in the presence of BAPTA the [Ca2+]i-transient was not 
+detectable. In spite of this, we found that 1. arachidonic acid 
+induced Ca2+-release from permeabilized cells and from vesicular 
+fractions at concentrations that elicited Ca2+-influx in intact cells 
+and 2. that Ca2+-entry was inhibited by inhibitors of Ca2+-transport 
+ATPases and V-type H+-ATPase indicating that intracellular Ca2+-release 
+precedes Ca2+-entry. Inhibition studies and mutant analyses point to the 
+acidosomal Ca2+-stores to be a target of fatty acids. Although fatty 
+acids can fully substitute for cAMP with respect to Ca2+-influx in 
+wildtype cells, experiments with a mutant strain revealed that cAMP 
+additionally sensitizes the Ca2+-entry mechanism: cAMP-induced Ca2+-
+influx was normal in a knockout mutant of phospholipase C but influx
+was fairly insensitive to arachidonic acid in this strain. This defect 
+could be overcome by higher doses of arachidonic acid that cause more 
+Ca2+ to be released from the stores sufficient to trigger extracellular 
+Ca2+-entry.
+
+-------------------------------------------------------------------------
+
+The Actomyosin Cytoskeleton of Amoebae of the Cellular Slime Molds 
+Acrasis rosea and Protostelium mycophaga: Structure, Biochemical 
+Properties, and Function.
+
+Maarit Hellstén and Urs-Peter Roos, Institut für Pflanzenbiologie,
+Universität Zürich, Zollikerstrasse 107, CH-8008 Zürich, Switzerland
+
+Fungal Genetics and Biology (Special Issue on Fungal Architecture), 
+in press
+
+ABSTRACT
+
+   Amoebae of the cellular slime molds (mycetozoans) Acrasis rosea and
+Protostelium mycophaga move 3-6 times faster than those of Dictyostelium
+discoideum and their mode of pseudopod formation is different. In both
+species there are bundles of F-actin that radiate from the
+endoplasm-ectoplasm interface into the pseudopodia, where G-actin is also
+located. We conclude that these actin bundles form a core scaffold 
+driving pseudopod extension which is subsequently completed by filling 
+with a more loosely organized meshwork of F-actin. Some bipolar, 
+elongate amoebae of A. rosea also contained long bundles of F-actin 
+that traverse the cells lengthwise and remotely resemble stress fibers. 
+We also observed scattered rodlets of F-actin in the body of amoebae of 
+A. rosea, some of which formed star-shaped or polygonal complexes near 
+or around contractile vacuoles. These may play a role in vacuole 
+contraction. In total extracts prepared by the TCA-acetone procedure 
+and analyzed by SDS-PAGE and immunoblots the actins of the two slime 
+molds migrated like the rabbit skeletal muscle control. The relative 
+proportion of actin in total protein extracts was 7.9% for A. rosea 
+and 34.5% for P. mycophaga. We detected 4-5 isoactins in extracts of 
+both species and we determined that the genome of each species contains 
+approximately six actin genes. Whether they are all expressed or
+if post-translational modifications occur remains to be determined. 
+Myosin II was enriched in actomyosin extracts; its Mr was 187.8 kDa 
+for A. rosea and 220.7 kDa for P. mycophaga. Cell models prepared as 
+cytoskeletons insoluble in Triton X-100 ("ghosts") contained minor 
+amounts of actin and myosin II compared to actomyosin extracts, but 
+they were able to contract upon the addition of ATP. We conclude that 
+ameobae of A. rosea and P. mycophaga contain the basic repertoire 
+of molecules and mechanisms allowing pseudopod extension by actin 
+polymerization and ATP-induced contraction of the cell cortex by an 
+interaction between actin filaments and myosin II.
+
+-------------------------------------------------------------------------
+
+The Role of PKA in Timing Developmental Events in Dictyostelium Cells
+
+William F. Loomis
+
+Center for Molecular Genetics, Department of Biology,
+University of California San Diego, La Jolla, CA 92093
+
+Microbiology and Molecular Biology Reviews, in press
+
+Abstract
+
+   The cAMP dependent protein kinase, PKA, is dispensible for growth of
+Dictyostelium cells but plays a variety of crucial roles in development.
+The catalytic subunit of PKA is inhibited when associated with its
+regulatory subunit but is activated when cAMP binds to the regulatory
+subunit. Deletion of pkaR or over-expression of the gene encoding the
+catalytic subunit, pkaC, results in constitutive activity. Development is
+independent of cAMP in strains carrying these genetic alterations and
+proceeds rapidly to the formation of both spores and stalk cells. 
+However, morphogenesis is aberrant in these mutants. In the wild type, 
+PKA activity functions in a circuit that can spontaneously generate 
+pulses of cAMP necessary for long range aggregation. It is also 
+essential for transcriptional activation of both prespore and prestalk 
+genes during the slug stage. During culmination, PKA functions in both 
+prespore and prestalk cells to regulate the relative timing of terminal 
+differentiation. A positive feedback loop results in the rapid release 
+of a signal peptide, SDF-2, when prestalk cells are exposed to low 
+levels of SDF-2. The signal transduction pathway that mediates the 
+response to SDF-2 in both prestalk and prespore cells involves the 
+two-component system of DhkA and RegA. When the cAMP phosphodiesterase 
+RegA is inhibited, cAMP accumulates and activates PKA leading to 
+vacuolization of stalk cells and encapsulation of spores. These studies 
+indicate that multiple inputs regulate PKA activity to control the 
+relative timing of differentiations in Dictyostelium.
+
+-------------------------------------------------------------------------
+
+[End Dicty News, volume 10, number 12]
+

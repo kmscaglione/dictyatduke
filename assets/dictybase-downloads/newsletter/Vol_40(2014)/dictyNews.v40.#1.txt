@@ -1,0 +1,170 @@
+dictyNews
+Electronic Edition
+Volume 40, number 1
+January 3, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The inverse BAR-domain protein IBARa drives membrane remodelling 
+to control osmoregulation, phagocytosis and cytokinesis
+
+Joern Linkner (1), Gregor Witte (2), Hongxia Zhao (3), Alexander 
+Junemann (1), Benjamin Nordholz (1), Petra Runge-Wollmann (2), 
+Pekka Lappalainen (3) and Jan Faix (1)
+
+
+1) Institute for Biophysical Chemistry, Hannover Medical School, 
+30625 Hannover, Germany; 2) Gene Center and Department of Biochemistry 
+at the Ludwig-Maximilians-University, 81377, Munich, Germany; 
+3) Cellular Biotechnology, Institute of Biotechnology, University of Helsinki, 
+Helsinki 00014, Finland.
+
+Journal of Cell Science, in press
+
+Here, we analyzed the single I-BAR family member IBARa from D. discoideum. 
+The X-ray structure of the N-terminal I-BAR domain solved at 2.2 Å resolution 
+revealed an all-alpha helical structure that self-associates into a 165 Å 
+zeppelin-shaped antiparallel dimer. The structural data are consistent with its 
+shape in solution obtained by small-angle X-ray-scattering. Cosedimentation, 
+fluorescence-anisotropy as well as fluorescence and electron microscopy 
+revealed the I-BAR domain to bind preferentially to phosphoinositide-containing 
+vesicles and drive the formation of negatively curved tubules. 
+Immunofluorescence labelling further showed accumulation of endogenous 
+IBARa at the tips of filopodia, the rim of constricting phagocytic cups, in foci 
+connecting dividing cells during the final stage of cytokinesis, and most 
+prominently at the osmoregulatory contractile vacuole (CV). Consistently, 
+IBARa-null mutants displayed defects in CV formation and discharge, growth, 
+phagocytosis and mitotic cell division, whereas filopodia formation was not 
+compromised. Of note, IBARa-null mutants were also strongly impaired in cell 
+spreading. Together, these data suggest IBARa to constitute an important 
+regulator of numerous cellular processes intimately linked with the dynamic 
+rearrangement of cellular membranes.
+
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+---------------------------------------------------------------------------
+
+A PIP5Kinase essential for efficient chemotactic signalling
+
+Louise Fets, John Nichols and Robert R. Kay
+
+
+Current Biology, in press
+
+In neutrophils and Dictyostelium, chemoattractant gradients generate directed
+cell migration by eliciting signalling events that bias intrinsic motility and
+favour the production and retention of up-gradient pseudopods[1, 2].
+Phosphoinositides are actively regulated during chemotaxis in these cells,
+most iconically in the production of PI(3,4,5)P3 gradients within the plasma
+membrane[3, 4]. Although it is now known that PI(3,4,5)P3 signalling is non-
+essential for gradient sensing[5, 6], the role of the related phosphoinositide
+PI(4,5)P2 is little understood, despite its clear importance in many cell-
+biological processes[7]. We describe a PIP5kinase, PikI, which produces
+PI(4,5)P2 and is essential for efficient chemotaxis of Dictyostelium cells.
+Without PikI, PI(4,5)P2 levels are reduced by 90%, and while pikI- cells move
+at normal speeds, they are highly disorientated in cAMP gradients. Following
+chemotactic stimulation, Ras is efficiently activated in pikI- cells, yet Ras-
+dependent responses (including activation of PKB) are severely impaired. PikI
+is phosphorylated by PKB[8], and in vitro studies of a phospho-mimic mutant
+suggest that this phosphorylation increases PikI activity. We propose that
+adequate PI(4,5)P2 levels are required to couple activated Ras to its
+downstream effectors and that these levels are regulated by PikI, making it a
+crucial player in gradient sensing.
+
+
+Submitted by Louise Fets [lfets@nimr.mrc.ac.uk]
+---------------------------------------------------------------------------
+
+
+A Retinoblastoma orthologue is required for the sensing of a chalone i
+n Dictyostelium
+
+Deenadayalan Bakthavatsalam,* Michael J. V. White, Sarah E. Herlihy, J
+onathan E. Phillips, and Richard H. Gomer
+
+Department of Biology, Texas A&M University, College Station, Texas, USA
+
+*Current address: Texas Heart Institute, Houston, Texas, USA
+
+
+Eukaryotic Cell, In press
+
+Retinoblastoma-like proteins regulate cell differentiation and inhibit cell 
+proliferation. The Dictyostelium Retinoblastoma orthologue RblA affects the 
+differentiation of cells during multicellular development, but it is unclear 
+whether RblA has a significant effect on Dictyostelium cell proliferation, 
+which is inhibited by the secreted proteins AprA and CfaD. We found that 
+rblA¯ cells in shaking culture proliferate to a higher density, die faster after 
+reaching stationary density, and after starvation have a lower spore viability 
+compared to wild-type cells, possibly because in shaking culture rblA¯ cells 
+have both increased cytokinesis and lower extracellular accumulation of CfaD. 
+However, rblA¯ cells have abnormally slow proliferation on bacterial lawns. 
+Recombinant AprA inhibits the proliferation of wild-type cells, but not that of 
+rblA¯ cells, whereas CfaD inhibits the proliferation of both wild type cells and 
+rblA¯ cells. Similar to aprA¯ cells, rblA¯ cells have a normal mass and protein 
+accumulation rate on a per nucleus basis, indicating that RblA affects cell 
+proliferation but not cell growth. AprA also functions as a chemorepellent, and 
+RblA is required for proper AprA chemorepellent activity despite the fact that 
+RblA does not affect cell speed. Together, our data indicate that an autocrine 
+proliferation-inhibiting factor acts through RblA to regulate cell density in 
+Dictyostelium, suggesting that such factors may signal through 
+Retinoblastoma-like proteins to control the sizes of structures such as 
+developing organs or tumors.
+
+
+Submitted by Richard Gomer [rgomer@tamu.edu]
+---------------------------------------------------------------------------
+
+
+Regulation of transcriptional bursting by a naturally oscillating signal
+
+Adam M. Corrigan and Jonathan R. Chubb
+
+MRC Laboratory for Molecular Cell Biology, Department of Cell and 
+Developmental Biology, University College London, Gower Street, London, 
+WC1E 6BT 
+
+
+Current Biology, in press
+
+Transcription is highly stochastic, occurring in irregular bursts[1-3]. For 
+temporal and spatial precision of gene expression, cells must somehow 
+deal with this noisy behaviour.  To address how this is achieved, we 
+investigated how transcriptional bursting is entrained by a naturally 
+oscillating signal, by direct measurement of transcription together with 
+signal dynamics in living cells. We identify a Dictyostelium gene showing 
+rapid transcriptional oscillations with the same period as extracellular 
+cAMP signalling waves. Bursting approaches anti-phase to cAMP waves, 
+with accelerating transcription cycles during differentiation.  While coupling 
+between signal and transcription oscillations was clear at the population 
+level, single cell transcriptional bursts retained considerable heterogeneity, 
+indicating transcription is not solely governed by signalling frequency.  
+Previous studies imply burst heterogeneity reflects distinct chromatin states
+ [4-6].  Here we show heterogeneity is determined by multiple intrinsic and 
+ extrinsic cues, and is maintained by a transcriptional persistence. 
+ Unusually for a persistent transcriptional behaviour, the lifetime was only 
+ 20 minutes, with rapid randomisation of transcriptional state by the 
+ response to oscillatory signalling. Linking transcription to rapid signalling 
+ oscillations allows reduction of gene expression heterogeneity by temporal 
+ averaging, providing a mechanism to generate precision in cell choices 
+ during development.
+
+
+Submitted by Jonathan Chubb [j.chubb@ucl.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 1]

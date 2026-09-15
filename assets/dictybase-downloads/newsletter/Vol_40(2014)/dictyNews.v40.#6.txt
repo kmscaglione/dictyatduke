@@ -1,0 +1,206 @@
+dictyNews
+Electronic Edition
+Volume 40, number 6
+February 21, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Glycosylation of Skp1 affects its conformation and promotes binding 
+to a model F-box protein
+
+M. Osman Sheikh, Christopher M. Schafer, John T. Powell, 
+Karla K. Rodgers, Blaine H. M. Mooers, and Christopher M. West
+
+Department of Biochemistry & Molecular Biology, Oklahoma Center 
+for Medical Glycobiology, University of Oklahoma Health Sciences 
+Center, 975 NE 10th St., BRC 415, OUHSC, Oklahoma City, 
+OK  73104  USA
+telephone 1-405-271-4147; email Cwest2@ouhsc.edu
+
+
+Biochemistry, in press
+
+In the social amoeba Dictyostelium, Skp1 is hydroxylated on proline-143 
+and further modified by three cytosolic glycosyltransferases to yield an 
+O-linked pentasaccharide that contributes to O2-regulation of 
+development. Skp1 is an adapter in the Skp1/cullin1/F-box protein family 
+of E3 ubiquitin ligases that targets specific proteins for polyubiquitination 
+and subsequent proteasomal degradation. To investigate the biochemical 
+consequences of glycosylation, untagged full-length Skp1 and several of 
+its posttranslationally modified isoforms were expressed and purified to 
+near homogeneity using recombinant and in vitro strategies. Interaction 
+studies with the soluble mammalian F-box protein Fbs1/Fbg1/OCP1 
+revealed preferential binding to the glycosylated isoforms of Skp1. This 
+difference correlated with increased alpha-helical and decreased 
+beta-sheet content of glycosylated Skp1s based on circular dichroism, 
+and increased folding order based on small-angle X-ray scattering. A 
+comparison of the molecular envelopes of fully glycosylated Skp1 and 
+the apoprotein indicated that both isoforms exist as an anti-parallel dimer 
+that is more compact and extended in the glycosylated state. Analytical 
+gel filtration and chemical cross-linking studies showed an increasing 
+tendency of less modified isoforms to dimerize. Considering that regions 
+of free Skp1 are intrinsically disordered and Skp1 can adopt distinct folds 
+when bound to F-box proteins, we propose that glycosylation, which 
+occurs adjacent to the F-box binding site, influences the spectrum of 
+energetically similar conformations which vary inversely in their 
+propensity to dock with Fbs1 or another Skp1. Glycosylation may thus 
+influence Skp1 function by modulating F-box protein binding in cells..
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+---------------------------------------------------------------------------
+
+
+Novel Regulation of Skp1 by the Dictyostelium AgtA 
+alpha-Galactosyltransferase Involves the Skp1-Binding Activity of its 
+WD40-Repeat Domain
+
+Christopher M. Schafer, M. Osman Sheikh, Dongmei Zhang, and 
+Christopher M. West
+
+Department of Biochemistry & Molecular Biology, Oklahoma Center 
+for Medical Glycobiology, University of Oklahoma Health Sciences 
+Center, 975 NE 10th St., BRC 415, OUHSC, Oklahoma City, 
+OK  73104  USA
+telephone 1-405-271-4147; email Cwest2@ouhsc.edu
+
+
+J. Biol. Chem., in press. 
+
+The role of Skp1 as an adaptor protein that links Cullin-1 to F-box 
+proteins in E3 Skp1/Cullin-1/F-box protein (SCF) ubiquitin ligases is 
+well characterized. In the social amoeba Dictyostelium and probably 
+many other unicellular eukaryotes, Skp1 is modified by a 
+pentasaccharide attached to a hydroxyproline near its C-terminus. 
+This modification is important for oxygen-sensing during Dictyostelium 
+development and is mediated by a HIF-alpha type prolyl 4-hydroxylase 
+and five sequentially acting cytoplasmic glycosyltransferase activities. 
+Gene disruption studies show that AgtA, the enzyme responsible for 
+addition of the final two galactose residues, in alpha-linkages to the 
+Skp1 core trisaccharide, is unexpectedly critical for oxygen-dependent 
+terminal development. AgtA possesses a WD40-repeat domain 
+C-terminal to its single catalytic domain and, by use of domain deletions, 
+binding studies, and enzyme assays, we find that the WD40-repeats 
+confer a salt-sensitive second-site binding interaction with Skp1 that 
+mediates novel catalytic activation in addition to simple substrate 
+recognition. In addition, AgtA binds similarly well to precursor isoforms 
+of Skp1 by a salt-sensitive mechanism that competes with binding to 
+an F-box protein and recognition by early modification enzymes, and 
+the effect of binding is diminished when AgtA modifies Skp1. Genetic 
+studies show that loss of AgtA is more severe when an earlier 
+glycosylation step is blocked, and overexpressed AgtA is deleterious 
+if catalytically inactivated. Together, the findings suggest that AgtA 
+mediates non-enzymatic control of unmodified and substrate precursor 
+forms of Skp1 by a binding mechanism that is normally relieved by 
+switch-like activation of its glycosylation function.
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+---------------------------------------------------------------------------
+
+
+Role of PKD2 in Rheotaxis in Dictyostelium
+
+Lima WC, Vinet A, Pieters J, Cosson P.
+
+
+PLoS One. 2014 Feb 10;9(2):e88682. 
+
+The sensing of mechanical forces modulates several cellular responses 
+as adhesion, migration and differentiation. Transient elevations of calcium 
+concentration play a key role in the activation of cells following mechanical 
+stress, but it is still unclear how eukaryotic cells convert a mechanical 
+signal into an ion flux. In this study, we used the model organism 
+Dictyostelium discoideum to assess systematically the role of individual 
+calcium channels in mechanosensing. Our results indicate that PKD2 is 
+the major player in the cell response to rheotaxis (i.e., shear-flow induced 
+mechanical motility), while other putative calcium channels play at most 
+minor roles. Mutant pkd2 KO cells lose the ability to orient relative to a 
+shear flow, whereas their ability to move towards a chemoattractant is 
+unaffected. PKD2 is also important for calcium-induced lysosome 
+exocytosis: WT cells show a transient, 2-fold increase in lysosome 
+secretion upon sudden exposure to high levels of extracellular calcium, 
+but pkd2 KO cells do not. In Dictyostelium, PKD2 is specifically localized 
+at the plasma membrane, where it may generate calcium influxes in 
+response to mechanical stress or extracellular calcium changes.
+
+
+Submitted by Wanessa Lima [wanessa.delima@unige.ch]
+---------------------------------------------------------------------------
+
+
+The essential function of Dictyostelium Dgat1 in triglyceride production, 
+but not in ether lipid synthesis, can be substituted by Dgat2
+
+Xiaoli Du1, Cornelia Herrfurth2, Thomas Gottlieb1, Steffen Kawelke2, 
+Kristin Feussner2, Harald Rühling1, Ivo Feussner2, and Markus Maniak1 
+
+
+Eukaryotic Cell, in press
+
+Triacylglycerol (TAG), the common energy storage molecule is formed 
+from diacylglycerol and a coenzyme A-activated fatty acid by the action 
+of an acyl-coenzyme A:diacylglycerol acyltransferase (DGAT). In order 
+to conduct this step, most organisms rely on more than one enzyme. The 
+two main candidates in Dictyostelium are Dgat1 and Dgat2. We show, by 
+creating single and double knockout mutants, that the ER-localized Dgat1 
+enzyme provides the predominant activity, whereas the lipid droplet 
+constituent Dgat2 contributes less activity. This situation may be opposite 
+to what is seen in mammalian cells. Dictyostelium Dgat2 is specialized for 
+the synthesis of TAG, as is the mammalian enzyme. In contrast, mammalian 
+DGAT1 is more promiscuous regarding its substrates, producing 
+diacylglycerol, retinyl esters, and waxes in addition to TAG. The 
+Dictyostelium Dgat1, however, produces TAG, wax esters, and, most 
+interestingly also neutral ether lipids, which represent a significant 
+constituent of lipid droplets. Ether lipids had also been found in 
+mammalian lipid droplets, but the role of DGAT1 in their synthesis was 
+unknown. The ability to form TAG either through Dgat1 or Dgat2 activity is 
+essential for Dictyostelium to grow on bacteria, their natural food substrate.
+
+
+Submitted by Markus Maniak [maniak@uni-kassel.de]
+---------------------------------------------------------------------------
+
+
+SILAC-based proteomic quantification of chemoattractant-induced 
+cytoskeleton dynamics on a second to minute timescale
+
+Grzegorz J. Sobczyk, Jun Wang, & Cornelis J. Weijer
+
+
+Nature Communications, in press
+
+Cytoskeletal dynamics during cell behaviours ranging from endocytosis 
+and exocytosis to cell division and movement is controlled by a complex 
+network of signalling pathways, the full details of which are as yet 
+unresolved. Here we show that SILAC-based proteomic methods can be 
+used to characterize the rapid chemoattractant-induced dynamic changes 
+in the actin–myosin cytoskeleton and regulatory elements on a proteome-
+wide scale with a second to minute timescale resolution. This approach 
+provides novel insights in the ensemble kinetics of key cytoskeletal 
+constituents and association of known and novel identified binding 
+proteins. We validate the proteomic data by detailed microscopy-based 
+analysis of in vivo translocation dynamics for key signalling factors. This 
+rapid large-scale proteomic approach may be applied to other situations 
+where highly dynamic changes in complex cellular compartments are
+expected to play a key role.
+
+
+Submitted by Grzegorz Sobczyk [g.j.sobczyk@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 6]

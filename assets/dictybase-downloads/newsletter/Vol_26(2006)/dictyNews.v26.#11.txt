@@ -1,0 +1,162 @@
+dictyNews
+Electronic Edition
+Volume 26, number 11
+April 14, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+GABA induces terminal differentiation of Dictyostelium through a GABAB type
+receptor  
+
+Christophe Anjard and William F. Loomis
+
+Center for Molecular Genetics, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368
+
+Development, in press
+
+When prespore cells approach the top of the stalk in a Dictyostelium 
+fruiting body, they rapidly encapsulate in response to the signalling 
+peptide, SDF-2. Glutamate decarboxylase, the product of the gadA gene, 
+generates GABA from glutamate. gadA is expressed exclusively in prespore 
+cells late in development. We found that GABA induces the release of the 
+precursor of SDF-2, AcbA, from prespore cells. GABA also induces exposure of 
+the protease domain of TagC on the surface of prestalk cells where it can 
+convert AcbA to SDF-2. The receptor for GABA in Dictyostelium, GrlE, is a 
+seven-transmembrane G-protein coupled receptor that is most similar to 
+GABA-B type receptors. The signal transduction pathway from GABA/ GrlE 
+appears to be mediated by PI3 kinase and the PKB related protein kinase 
+PkbR1. Glutamate acts as a competitive inhibitor of GABA functions in 
+Dictyostelium and is also able to inhibit induction of sporulation by 
+SDF-2. The signal transduction pathway from SDF-2 is independent of the 
+GABA/ glutamate signal transduction pathway but the two appear to converge 
+to control release of AcbA and exposure of TagC protease. These results 
+indicate that GABA is not only a neurotransmitter but also an ancient 
+intercellular signal.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu] 
+-----------------------------------------------------------------------------
+
+
+Filopodia Formation in the Absence of Functional WAVE and Arp2/3 Complexes
+
+Anika Steffen 1, Jan Faix 2,  Guenter P. Resch 3,  Joern Linkner 2,  
+Juergen Wehland 1,  J. Victor Small 3,  Klemens Rottner 1, and 
+Theresia E.B. Stradal 1
+
+1) Signalling and Motility Group, Cytoskeleton Dynamics Group, and  
+Department of Cell Biology, German Research Centre for Biotechnology, 
+D-38124 Braunschweig, Germany;  2)Institute of Biophysical Chemistry, 
+Hannover Medical School, D-30623 Hannover, Germany;  3) Institute of 
+Molecular Biotechnology, Austrian Academy of Sciences, A-1030 Vienna, 
+Austria
+
+
+Mol. Biol. Cell, in press.
+
+Cell migration is initiated by plasma membrane protrusions, in the form of 
+lamellipodia and filopodia. The latter rod-like projections may exert 
+sensory functions and are found in organisms as distant in evolution as 
+mammals and amoeba like Dictyostelium discoideum. In mammals, lamellipodia 
+protrusion downstream of the small GTPase Rac1 requires a multimeric 
+protein assembly, the WAVE-complex, which activates Arp2/3-mediated actin 
+filament nucleation and actin network assembly. A current model of 
+filopodia formation postulates that these structures arise from a dendritic 
+network of lamellipodial actin filaments by selective elongation and 
+bundling. Here we have analyzed filopodia formation in mammalian cells 
+abrogated in expression of essential components of the lamellipodial actin 
+polymerization machinery. Cells depleted of the WAVE-complex component 
+Nap1 and, in consequence, of lamellipodia, exhibited normal filopodia 
+protrusion. Likewise, the Arp2/3-complex, which is essential for 
+lamellipodia protrusion, is dispensable for filopodia formation. Moreover, 
+genetic disruption of nap1 or the WAVE-orthologue scar (suppressor of cAMP 
+receptor) in Dictyostelium was also ineffective in preventing filopodia 
+protrusion. These data suggest that the molecular mechanism of filopodia 
+formation is conserved throughout evolution from Dictyostelium to mammals 
+and show that lamellipodia and filopodia formation are functionally 
+separable.
+
+
+Submitted by: Hans Faix [faix@bpc.mh-hannover.de]
+-----------------------------------------------------------------------------
+
+
+Transcriptional regulation of Dictyostelium pattern formation 
+
+Jeffrey G. Williams
+School of Life Sciences
+University of Dundee
+Dow Street
+Dundee DD1 5EH
+UK
+j.g.williams@dundee.ac.uk
+
+
+EMBO reports, in press
+
+On starvation, Dictyostelium cells form a terminally differentiated 
+structure, the fruiting body, which comprises stalk cells and spore cells. 
+Their precursors—prestalk and prespore cells—are spatially separated and 
+accessible in a migratory structure known as the slug. This simplicity and 
+manipulability has made Dictyostelium attractive to both experimental and 
+theoretical developmental biologists. However, this outward simplicity 
+conceals a surprising degree of developmental sophistication. Multiple 
+prestalk sub-types are formed and they undertake a co-ordinated series of 
+morphogenetic cell movements to generate the fruiting body. This review 
+describes recent advances in understanding the signalling pathways that 
+generate prestalk cell heterogeneity, focusing on the roles of the prestalk 
+cell inducer differentiation-inducing factor-1 (DIF-1), the tip inducer 
+cAMP and the transcription factors that mediate their action. These include 
+signal transducers and activators of transcription (STAT) proteins, basic 
+leucine zipper (bZIP) proteins and a Myb protein of a class previously only 
+described in plants.  
+
+
+Submitted by: jeff Williams [j.g.williams@dundee.ac.uk]
+-----------------------------------------------------------------------------
+
+
+The Dictyostelium genome
+
+William F. Loomis
+
+Cell and Developmental Biology, Division of Biology, 
+University of California San Diego, La Jolla, CA 92093
+
+Curr. Issues in Mol. Biol., in press
+
+The 34 Mb genome of Dictyostelium discoideum is carried on 6 chromosomes 
+and has been fully sequenced by an international consortium. The sequence 
+was assembled on the classical and physical maps that had been built up over 
+the years and refined by HAPPY mapping.  Annotation of the sequence 
+predicted about 12,000 genes for proteins of at least 50 amino acids in 
+length. The total number of amino acids encoded (the proteome) is more than 
+double that in yeast and rivals that of metazoans. The genome sequence 
+shows all the proteins available to Dictyostelium as well as definitively 
+showing which domains have been lost since Dictyostelium diverged from the 
+line leading to metazoans. Genomics opens the door to determining the 
+expression patterns of all the genes during growth and development using 
+microarrays. This approach has already uncovered a wealth of new markers 
+for the stages of development and the various cell types. Transcription 
+factors and their cis-regulatory sites that account for the surprising 
+complexity of Dictyostelium development can be analyzed much more easily 
+now that we have the complete sequence. 
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu] 
+==============================================================================
+[End dictyNews, volume 26, number 11] 

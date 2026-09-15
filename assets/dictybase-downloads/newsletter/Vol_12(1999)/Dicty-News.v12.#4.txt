@@ -1,0 +1,237 @@
+Dicty News
+Electronic Edition
+Volume 12, number 4
+January 30, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+========================
+ Important Announcement
+========================
+
+NIH Workshop on Non-Mammalian Model Organisms.  February 16 and 17, 1999
+Harold Varmus has invited about 100 top scientists from around the country 
+to a meeting at NIH in February to consider the strengths, weaknesses and 
+needs of a variety of non-mammalian model organisms. While S. cerevisiae, 
+Drosophila, C. elegans, zebrafish and Xenopus are established model 
+organisms, other organisms may be added to the list in the future. I 
+have been invited to present a 10 minute pitch for Dictyostelium. I will 
+be joined by Rich Kessin and Carole Parent at this workshop. Other 
+organisms under consideration include Tetrahymena, Neurosporra, S. pombe, 
+Chlamydemonas, Aplysia, Sea urchins, Fugu and chickens.
+
+They specifically asked that we discuss the advantages of the organism 
+and outline the needs of the field. They encouraged us to prioritize the 
+specific requests. Each speaker is limited to 3 overheads and so space is 
+at a premium. With this in mind, I have prepared drafts of the overheads 
+presenting the advantages of Dictyostelium and the resources that will 
+advance functional genomics in the field.
+
+Since decisions made following this meeting will affect us all, I encourage 
+everyone to consider the Advantages and Resources for the Future of 
+Dictyostelium and let me know their views. We will then be able to present a 
+consensus view of the field.
+
+Bill Loomis
+
+
+ADVANTAGES OF DICTYOSTELIUM AS A MODEL SYSTEM
+
+1)	Microbial and molecular genetics permit rapid construction 
+	of complex genotypes
+2)	Detailed maps of the 6 chromosomes ( resolution ± 50 kb)
+3)	34 Mb genome in the process of being sequenced (near 
+	completion in 2001)
+4)	Efficient homologous recombination permits gene replacement
+5)	Diverse phenotypes including:
+	a)	phagocytosis
+	b)	cytokinesis
+	c)	cell motility
+	d)	chemotaxis
+	e)	other cell-cell signaling networks
+6)	Reliable, inexpensive cell growth and strain storage
+7)	Ready recovery of each cell type in biochemical quantities 
+	throughout the 24 hour developmental cycle.
+
+
+RESOURCES FOR THE FUTURE
+
+1)	Completion of the sequence of the genome (finishing steps).
+2)	Focused funtional analyses of conserved genes in diverse 
+	contexts.
+3)	Arrayed DNA on chips to permit expression studies of every 
+	ORF throughout the 24 hour developmental cycle.
+4)	High resolution computer-assisted microscopy of pertinent 
+	mutant strains.
+5)	Proteome studies - patterns of protein accumulation in wild 
+	type and mutant strains throughout the 24 hour developmental 
+	cycle.
+6)	User-friendly databases of genomic, mutational, and analytic 
+	information.
+7)	Centralized stock storage and distribution center.
+
+[Editor's note:  I would encourage everyone who has thoughts or 
+suggestions to share them with the Dictyostelium community via the 
+listserv (dicty@listserv.acns.nwu.edu).  It would be great to have an 
+active discussion of these issues with everyone participating.]
+
+==============
+  Abstracts
+==============
+
+
+Multiple developmental roles for CRAC, a cytosolic regulator of adenylyl 
+cyclase.
+
+Bin Wang1, Gad Shaulsky2 and Adam Kuspa1
+
+1. Verna and Marrs McLean Department of Biochemistry, 2. Department of 
+Molecular and Human Genetics   Baylor College of Medicine, Houston, Texas, 
+USA 77030
+
+Devel. Biol., in press
+
+SUMMARY
+
+   Receptor-mediated activation of adenylyl cyclase (ACA) in Dictyostelium 
+requires CRAC protein.  Upon translocation to the membrane, this pleckstrin 
+homology (PH) domain protein stimulates ACA thereby mediating developmental 
+aggregation.  CRAC may also have roles later in development since CRAC-null 
+cells can respond to chemotactic signals and participate in developmental 
+aggregation when admixed with wild-type cells, but they do not complete 
+development within such chimeras.  To test whether the role of CRAC in 
+post-aggregative development is related to the activation of ACA, 
+chemotactic aggregation was bypassed in CRAC-null cells by activating the 
+cAMP-dependent protein kinase (PKA).  While such strains formed mounds, 
+they did not complete fruiting body morphogenesis or form spores.  
+Expression of CRAC in the prespore cells of these strains rescued 
+sporulation and fruiting body formation.  This later function of CRAC 
+does not appear to require its PH domain since the C-terminal portion 
+of the protein (CRAC-DPH) can substitute for full-length CRAC in promoting 
+spore cell formation and morphogenesis.  No detectable ACA activation was 
+observed in any of the CRAC-null strains rescued by PKA activation and 
+expression of CRAC-DPH.  Finally, we found that the development of CRAC-
+null ACA-null double mutants could be rescued by the activation of PKA 
+together with the expression of CRAC-DPH.  Thus, there appears to be a 
+required function for CRAC in post-aggregative development that is 
+independent of its previously described function in the ACA activation 
+pathway.
+
+----------------------------------------------------------------------------
+
+Identification of a suppressor of the Dictyostelium profilin-minus
+phenotype as a CD36/LIMPII homologue
+
+Iakowos Karakesisoglou*‡, Klaus-Peter Janssen*, Ludwig Eichinger, 
+Angelika A. Noegel§, and Michael Schleicher 
+
+*These authors contributed equally to this work. 
+
+A.-Butenandt-Institut für Zellbiologie, Ludwig-Maximilians-Universität, 
+80336 München, FRG. 
+§Institut für Biochemie I, Universität zu Köln, 50931 Köln, FRG. 
+‡ present address: Howard Hughes Medical Institute, Department of Molecular 
+Genetics, Cell Biology, Biochemistry, and Molecular Biology, The University 
+of Chicago, Chicago, Illinois 60637, USA. 
+
+J. Cell Biol., in press
+
+Profilin is an ubiquitous G-actin binding protein in eukaryotic cells. 
+Lack of both profilin isoforms in Dictyostelium discoideum resulted in 
+impaired cytokinesis and an arrest in development. A restriction enzyme-
+mediated integration approach was applied to profilin-minus cells to 
+identify suppressor mutants for the developmental phenotype. A mutant 
+with wild-type like development and restored cytokinesis was isolated. 
+The gene affected was found to code for an integral membrane glycoprotein 
+of a predicted size of 88 kD containing two transmembrane domains, one 
+at the NH2-terminus and the other at the COOH-terminus. It is homologous 
+to mammalian CD36/LIMPII and represents the first member of this family 
+in D. discoideum, therefore the name DdLIMP is proposed. Targeted 
+disruption of the lmpA gene in the profilin-minus background also 
+rescued the mutant phenotype.  Immunofluorescence revealed a localization 
+in vesicles and ring-like structures on the cell surface. Partially purified 
+DdLIMP bound specifically to PIP2 in sedimentation and gel filtration assays. 
+A direct interaction between DdLIMP and profilin could not be detected, and 
+it is yet unclear how far upstream in a regulatory cascade DdLIMP might be 
+positioned. The PIP2 binding of DdLIMP however points towards a funcion via 
+the phosphatidylinositol pathway, a major regulator of profilin. 
+
+----------------------------------------------------------------------------
+
+In vivo observations of myosin II dynamics support a role in rear 
+retraction.
+
+Patricia A. Clow and James G. McNally
+
+Department of Biology and Institute for Biomedical Computing, Washington 
+University, Box 1229, St. Louis, Missouri 63130
+
+Molecular Biology of the Cell, in press.
+
+Summary.
+
+   To investigate myosin II function in cell movement within a cell mass, 
+we imaged GFP-myosin heavy chain (GFP-MHC) cells moving within the tight 
+mound of Dictyostelium discoideum.  In the posterior cortex of cells 
+undergoing rotational motion around the center of the mound, GFP-MHC 
+cyclically formed a "C" which converted to a spot as the cell retracted 
+its rear.  Consistent with an important role for myosin in rotation, cells 
+failed to rotate when they lacked the myosin II heavy chain (MHC-) or when 
+they contained predominantly monomeric myosin II (3xAsp).  In cells lacking 
+the myosin II regulatory light chain (RLC-), rotation was impaired and 
+eventually ceased.  These rotational defects reflect a mechanical problem 
+in the 3xAsp and RLC- cells, since these mutants exhibited proper rotational 
+guidance cues.  MHC- cells exhibited disorganized and erratic rotational 
+guidance cues, suggesting a requirement for the MHC in organizing these signals.  
+However, the MHC- cells also exhibited mechanical defects in rotation, since 
+they still moved aberrantly when seeded into wild-type mounds with proper 
+rotational guidance cues.  The mechanical defects in rotation may be mediated 
+by the "C"-to-spot, since RLC- cells exhibited a defective "C"-to-spot, 
+including a slower "C"-to-spot transition, consistent with this mutant’s 
+slower rotational velocity.
+
+----------------------------------------------------------------------------
+
+Binding and catalytic properties of the Cdc2 and Crp proteins of 
+Dictyostelium
+
+Shiv K. Sharma, Christine Michaelis, Ki-Young Lee, Jerry  H. Wang
+and Gerald Weeks
+
+Department of Microbiology and Immunology1, and Department of Medical 
+Genetics5, University of British Columbia, Vancouver, B. C. V6T 1Z3
+Canada
+
+Exp. Cell Res., in press
+
+ABSTRACT
+
+   Dictyostelium expresses at least two proteins of the Cdk family of 
+protein kinases, Cdc2 and Crp.  Cdc2 levels remain relatively constant 
+during differentiation, whereas the levels of Crp increase dramatically 
+as differentiation progresses.  Crp is highly related to the mammalian 
+Cdk5 and p25, a truncated form of p35, the activating subunit of Cdk5 
+from mammalian brain, stimulates the histone H1 kinase activity of 
+GST-Crp by several fold.  In contrast, p25 does not stimulate the histone 
+H1 kinase activity of GST-Cdc2 or the Cdc2 activity present in cell 
+extracts from vegetative Dictyostelium cells.  GST-Cdc2, in vitro 
+translated Cdc2 and Cdc2 from all stages of differentiation bind to 
+p13suc1.  In contrast, GST-Crp, in vitro translated Crp and the Crp 
+protein present in cell extracts do not bind to p13suc1.  We have 
+confirmed a previous report by Arakane and Maeda (J. Plant Res.  
+1997 110, 81-85.) that there is a peak of p13suc1 bound histone H1 
+kinase activity during late development, but we found that there was 
+no corresponding peak of p13suc1 bound Cdc2 protein that corresponds 
+to this activity.  Taken together, these data suggest that neither 
+Cdc2 nor Crp is responsible for the late developmental peak of histone 
+H1 kinase activity that binds to p13suc1.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 12, number 4]
+
+  

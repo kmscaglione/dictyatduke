@@ -1,0 +1,129 @@
+dictyNews
+Electronic Edition
+Volume 38, number 31
+December 7, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+A new social gene in Dictyostelium discoideum, chtB 
+
+Lorenzo A. Santorelli, Adam Kuspa, Gad Shaulsky, 
+David C. Queller & Joan E. Strassmann
+
+
+BMC Evolutionary Biology, in press
+
+Background
+Competitive social interactions are ubiquitous in nature, but their 
+genetic basis is difficult to determine. Much can be learned from 
+single gene knockouts in a eukaryote microbe. The mutants can be 
+competed with the parent to discern the social impact of that specific 
+gene. Dictyostelium discoideum is a social amoeba that exhibits 
+cooperative behavior in the construction of a multicellular fruiting 
+body. It is a good model organism to study the genetic basis of 
+cooperation since it has a sequenced genome and it is amenable to 
+genetic manipulation. When two strains of D. discoideum are mixed, 
+a cheater strain can exploit its social partner by differentiating more 
+spore than its fair share relative to stalk cells. Cheater strains can be 
+generated in the lab or found in the wild and genetic analyses have 
+shown that cheating behavior can be achieved through many 
+pathways.
+Results
+We have characterized the knockout mutant chtB, which was isolated 
+from a screen for cheater mutants that were also able to form normal 
+fruiting bodies on their own. When mixed in equal proportions with 
+parental strain cells, chtB mutants contributed almost 60% of the total 
+number of spores. To do so, chtB cells inhibit wild type cells from 
+becoming spores, as indicated by counts and by the wild type cells’ 
+reduced expression of the prespore gene, cotB. We found no obvious 
+fitness costs (morphology, doubling time in liquid medium, spore 
+production, and germination efficiency) associated with the cheating 
+ability of the chtB knockout.
+Conclusions
+In this study we describe a new gene in D. discoideum, chtB, which 
+when knocked out inhibits the parental strain from producing spores. 
+Moreover, under lab conditions, we did not detect any fitness costs 
+associated with this behavior.
+
+
+Submitted by Lorenzo Santorelli [lorenzo.santorelli@zoo.ox.ac.uk]
+---------------------------------------------------------------------------
+
+
+GenColors-based comparative genome databases for small 
+eukaryotic genomes.
+
+Felder M, Romualdi A, Petzold A, Platzer M, Sühnel J, Glöckner G.
+
+
+Nucleic Acids Research database issue
+
+Many sequence data repositories can give a quick and easily 
+accessible overview on genomes and their annotations. Less 
+widespread is the possibility to compare related genomes with 
+each other in a common database environment. We have previously 
+described the GenColors database system 
+(http://gencolors.fli-leibniz.de) and its applications to a number of 
+bacterial genomes such as Borrelia, Legionella, Leptospira and 
+Treponema. This system has an emphasis on genome comparison. 
+It combines data from related genomes and provides the user with 
+an extensive set of visualization and analysis tools. Eukaryote 
+genomes are normally larger than prokaryote genomes and thus 
+pose additional challenges for such a system. We have, therefore, 
+adapted GenColors to also handle larger datasets of small eukaryotic 
+genomes and to display eukaryotic gene structures. Further recent 
+developments include whole genome views, genome list options and, 
+for bacterial genome browsers, the display of horizontal gene transfer 
+predictions. Two new GenColors-based databases for two fungal 
+species (http://fgb.fli-leibniz.de) and for four social amoebas 
+(http://sacgb.fli-leibniz.de) were set up. Both new resources open up 
+a single entry point for related genomes for the amoebozoa and fungal 
+research communities and other interested users. Comparative 
+genomics approaches are greatly facilitated by these resources.
+
+
+Submitted by Gernot Gloeckner [gernot.gloeckner@uni-koeln.de]
+---------------------------------------------------------------------------
+
+
+dictyBase 2013: Integrating Multiple Dictyostelid species
+
+Siddhartha Basu, Petra Fey, Yogesh Pandit, Robert Dodson, 
+Warren A. Kibbe, Rex L. Chisholm
+
+
+Nucleic Acids Research database issue 2013
+
+dictyBase (http://dictybase.org) is the model organism database for the 
+social amoeba Dictyostelium discoideum. This contribution provides 
+an update on dictyBase that has been previously presented. During the 
+past three years, dictyBase has taken significant strides toward 
+becoming a genome portal for the whole Amoebozoa clade. In its 
+latest release, dictyBase has scaled up to host multiple Dictyostelids, 
+including Dictyostelium purpureum (Sucgang et al. 2011, Genome 
+biology, 12, R20.), Dictyostelium fasciculatum, and Polysphondylium 
+pallidum (Heidel et al. 2011, Genome research 21(11) 1882-91).  
+The new release includes a new Genome Browser with RNA-Seq 
+expression, interspecies BLAST alignments and a unified BLAST 
+search for cross-species comparisons.
+ 
+ 
+Submitted by Petra Fey [pfey@northwestern.edu]
+==============================================================
+[End dictyNews, volume 38, number 31]

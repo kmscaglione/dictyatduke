@@ -1,0 +1,215 @@
+Dicty News
+Electronic Edition
+Volume 13, number 3
+July 31, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+DICTYOSTELIUM AS MODEL SYSTEM FOR STUDIES OF THE ACTIN CYTOSKELETON BY
+MOLECULAR GENETICS
+
+Ludwig Eichinger, Soo Sim Lee, and Michael Schleicher
+
+Adolf-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität,
+Schillerstr. 42, 80336 München, Germany
+
+Microscopy Research and Technique, in press
+
+Abstract
+
+The actin cytoskeleton is an essential structure for most movements at the
+cellular and intracellular level. Whereas a muscle cell requires for
+contraction a rather static organisation of cytoskeletal proteins, cell
+motility of amoeboid cells relies on a tremendously dynamic turnover of
+filamentous networks in a matter of seconds and at distinct regions inside
+the cell. The best model system for studying cell motility is Dictyostelium
+discoideum. The cells live as single amoebae but can also start a
+developmental program that leads to multicellular stages and
+differentiation into simple types of tissues. Thus cell motility can be
+studied on single cells and on cells in a tissue-like aggregate. The
+ability to combine protein purification and biochemistry with fairly easy
+molecular genetics is a unique feature for investigation of the
+cytoskeleton and cell motility. The actin cytoskeleton in Dictyostelium
+harbours essentially all classes of actin-binding proteins that have been
+found throughout eukaryotes. By conventional mutagenesis, gene disruption,
+antisense approaches, or gene replacements many genes that code for
+cytoskeletal proteins have been disrupted, and altered phenotypes in
+transformants that lacked one or more of those cytoskeletal proteins
+allowed solid conclusions about their in vivo function. In addition,
+tagging the proteins or selected domains with green fluorescent protein
+allows the monitoring of protein redistribution during cell movement. Gene
+tagging by restriction enzyme mediated integration of vectors and the
+ongoing international genome and cDNA sequencing projects offer the chance
+to understand the dynamics of the cytoskeleton by identification and
+functional characterisation of all proteins involved.
+
+----------------------------------------------------------------------------
+
+
+Molecular architecture of the rod domain of the Dictyostelium 
+gelation factor (ABP120)
+
+Paola Fucini (1), Bernd Koeppel (1), Michael Schleicher (2), Ariel Lustig
+(3), Tad A. Holak (1), Rolf Mueller (5), Murray Stewart (4) and Angelika A.
+Noegel (5)
+
+(1) Max-Planck-Institut f. Biochemie, Martinsried, FRG,(2) Institut f.
+Zellbiologie, Muenchen, FRG, (3) Biozentrum, Basel, Switzerland, (4) MRC
+Laboratory of Molecular Biology, Cambridge, England, (5) Institut f.
+Biochemie I, Koeln, FRG
+
+accepted: J. Mol. Biol.
+
+The Dictyostelium discoideum gelation factor is a two-chain
+actin-crosslinking protein that, in addition to an N-terminal actin-binding
+domain, has a rod domain constructed from six tandem repeats of a
+100-residue motif that has an immunoglobulin fold.  To define the
+architecture of the rod domain of gelation factor, we have expressed in E.
+coli a series of constructs corresponding to different numbers of gelation
+factor rod repeats and have characterised them by chemical crosslinking,
+ultracentrifugation, column chromatography, matrix-assisted laser
+desorption ionisation (MALDI) mass spectrometry and NMR spectroscopy.
+Fragments corresponding to repeats 1-6 and 5-6 dimerise, whereas repeats
+1-5 and single repeats 3 and 4 are monomeric.  Repeat 6 interacts weakly
+and was present as monomer and dimer when analysed by analytical
+ultracentrifugation. Proteolytic digestion of rod5-6 resulted in generation
+of two polypeptides that roughly corresponded to rod5 and part of rod6.
+None of these polypeptides formed dimers after chemical crosslinking.
+Stable dimerisation therefore appears to require repeats 5 and 6.  Based on
+these data a model of gelation factor architecture is presented.  We
+suggest an arrangement of the chains where only the carboxy-terminal
+repeats interact as was observed for filamin/ABP280, the mammalian
+homologue of gelation factor. 
+
+----------------------------------------------------------------------------
+
+A model for Dictyostelium slug movement
+
+Till Bretschneider, Bakhtier Vasiev, Cornelis J. Weijer
+
+Journal of Theoretical Biology (in press)
+
+SUMMARY
+
+   Dictyostelium slug movement results from the co-ordinated movement of its 
+10e5 constituent cells. We have shown experimentally rotational cell movement 
+in the tip and periodic forward movement of the cells in the back of the 
+slug. To explain this mode of movement we have put forward the hypothesis 
+that cell movement in slugs is controlled by chemotaxis to periodic cAMP 
+waves coming from the tip. In the tip they propagate as scroll waves and 
+convert to twisted scroll or planar waves in the back of the slug. The co-
+ordinated movement of individual cells in response to these waves could 
+then result in forward movement of the slug. To test this hypothesis we 
+extend our model for aggregation and mound formation to include two cell 
+types with different signalling and movement properties. In the model each 
+cell is described as a cAMP relaying unit which interacts with neighbouring 
+cells and moves chemotactically in response to cAMP gradients. Cells interact 
+by adhesion, pressure and friction with neighbouring cells and the extracellular 
+matrix. The model is capable of explaining scroll wave propagation and slug 
+movement and allows us to understand the movement of an organism based on the 
+properties of its constituent cells. We use the model to investigate the 
+influence of cell type specific differences in excitability, adhesion and 
+cell interactions on slug motion. 
+
+----------------------------------------------------------------------------
+
+Transient expression of a mitochondorial gene cluster including rps4 is 
+essential for the phase-shift of Dictyostelium cells from growth to 
+differentiation
+
+Y. Inazu, S-C. Chae and Y. Maeda
+
+Biological Institute, Graduate School of Science, Tohoku University, 
+Aoba, Sendai, Japan
+
+Develop. Genetics, in press.
+
+ABSTRACT  
+
+   Using synchronized Dictyostelium discoideum Ax-2 cells and the 
+differential display method, a mitochondrial gene cluster (referred to 
+as differentiation-associated gene 3; dia3) was isolated as one of genes 
+expressed specifically during the transition of Ax-2 cells from growth 
+to differentiation. The dia3 gene encodes for a mitochondrial protein 
+cluster (NADH dehydrogenase (NAD) subunit 11, 5, ribosomal protein S4 
+(RPS4), RPS2 and NAD4L). Northern blot analysis using non-synchronized 
+Ax-2 cells has shown that the dia3 RNA of about 8kb is scarcely 
+expressed during the vegetative growth phase, and the maximal 
+expression was attained at 2 hours after starvation. To analyze the
+gene function of dia3, we tried inactivation of rps4 by means of 
+homologous recombination and obtained several transformed clones 
+showing mitochondrial DNA heteroplasmy. The transformed cells grew 
+normally in nutrient medium, but their development after starvation 
+was greatly impaired, thus resulting in failure of many cells to 
+differentiate. In this connection, the cAMP receptor 1 (car1) 
+expression, which is one of the earliest marker of differentiation, 
+was found to be markedly reduced in the rps4 -inactivated cells.
+
+----------------------------------------------------------------------------
+
+Expression of prestalk and prespore proteins in minute, two-dimensional
+Dictyostelium slugs
+
+J. T. Bonner*, P. Fey, E. C. Cox
+
+Departments of Ecology and Developmental Biology, and Molecular Biology
+Princeton University, Princeton, NJ 08544
+
+Mechanisms of Develop., in press
+
+Abstract
+
+   We show that exceedingly small two-dimensional slugs of
+Dictyostelium differentiate normally and have an anterior prestalk zone and
+a posterior prespore zone.  Using GFP as a marker attached to the
+appropriate promoter, prestalk expression is concentrated in the anterior,
+while prespore expression is produced in the posterior, closely resembling
+what is found in normal, large slugs.
+
+----------------------------------------------------------------------------
+
+The RdeA-RegA System: a Eukaryotic Phospho-Relay Controlling cAMP 
+Breakdown
+
+Peter A. Thomason, David Traynor, Jeffry B. Stock1, and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 2QH
+U.K.
+
+1Department of Molecular Biology, Princeton University, Princeton
+New Jersey 08544
+
+J. Biol. Chem., in press.
+ 
+SUMMARY
+
+   The regA and rdeA gene products of Dictyostelium are involved in the 
+regulation of cAMP signaling.  The response regulator, RegA, is composed 
+of an N-terminal receiver domain linked to a C-terminal cAMP-phosphodiesterase 
+domain.  RdeA may be a phospho-transfer protein that supplies phosphates to 
+RegA.  We show genetically that phospho-RegA is the activated form of the 
+enzyme in vivo, in that the predicted site of aspartate phosphorylation is 
+required for full activity.  We show biochemically that RdeA and RegA 
+communicate, as evidenced by phospho-transfer between the two proteins 
+in vitro.  Phospho-transfer is dependent on the presumed phospho-accepting 
+amino acids, histidine 65 of RdeA and aspartate 212 of RegA, and occurs in 
+both directions.  Phosphorylation of RegA by a heterologous phospho-donor 
+protein activates RegA phosphodiesterase activity at least 20-fold.  Our 
+results suggest that the histidine phosphotransfer protein, RdeA, and the 
+response regulator, RegA, constitute two essential elements in a eukaryotic 
+His-Asp phospho-relay network that regulates Dictyostelium development and 
+fruiting body maturation.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 3]
+
+  

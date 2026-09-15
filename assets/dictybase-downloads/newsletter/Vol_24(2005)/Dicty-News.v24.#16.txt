@@ -1,0 +1,87 @@
+Dicty News
+Electronic Edition
+Volume 24, number 16
+June 17, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+The Phosducin-like Protein Phlp1 is Essential for Gbeta-gamma Dimer
+Formation in Dictyostelium
+
+Jaco C. Knol1,3, Ruchira Engel2,3, Mieke Blaauw1, Antonie J.W.G. Visser2
+and Peter J.M. van Haastert1
+
+1Department of Biochemistry, University of Groningen, Nijenborgh 4, 
+9747 AG Groningen, The Netherlands and 2MicroSpectroscopy Centre, 
+Laboratory of Biochemistry, Wageningen University, Dreijenlaan 3, 6703 
+HA Wageningen, The Netherlands 3 These authors contributed equally to 
+this work
+
+
+Molecular and Cellular Biology, in press
+
+Phosducin proteins are known to inhibit G protein-mediated signalling by
+sequestering Gbeta-gamma subunits. However, Dictyostelium cells lacking 
+the phosducin-like protein PhLP1 display defective rather than enhanced 
+G protein signalling. Here we show that GFP-tagged Gbeta and Ggamma 
+subunits exhibit drastically reduced steady state levels and are absent 
+from the plasma membrane in phlp1_ cells. Triton X-114 partitioning 
+suggests that lipid attachment to GFP-Ggamma occurs in wild-type, but not 
+in phlp1_ and gbeta _ cells. Moreover, Gbeta-gamma dimers could not be 
+detected in vitro in co-immunoprecipitation assays with phlp1- cell 
+lysates. Accordingly, in vivo diffusion measurements using fluorescence 
+correlation spectroscopy showed that while GFP-Ggamma proteins are present 
+in a complex in wild type cells they are free in phlp1- and gbeta- cells. 
+Collectively, our data strongly suggest the absence of Gbeta-gamma dimer 
+formation in Dictyostelium cells lacking PhLP1. We propose that PhLP1 
+serves as a co-chaperone assisting the assembly of Gbeta and Ggamma into a 
+functional Gbeta-gamma complex. Thus, phosducin family proteins may fulfil 
+hitherto unsuspected biosynthetic functions.
+
+
+Submitted by: Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+
+-----------------------------------------------------------------------------
+
+
+Functional analysis of a novel gene, DD3-3, from Dictyostelium discoideum
+
+N. Sakuragi,  N. Ogasawara,  E. Tanesaka, and  M. Yoshida,
+
+Graduate School of Biological Sciences, Nara Institute of Science and 
+Technology, Ikoma, Nara 630-0101, Japan
+Department of Agriculture, Kinki University, Nakamachi, Nara 631-8505, 
+Japan
+  
+  
+Biochem. Biophys. Res. Commun. in press
+  
+A novel gene, DD3-3, from Dictyostelium discoideum has been isolated by an 
+mRNA differential display between a wild-type strain AX2 and a mutant HG794 
+which is defective in O-glycosylation.  Functional analysis of the novel 
+gene, DD3-3, was conducted by preparing a knockout mutant, DD3-3KO, and a 
+GST:DD3-3 fusion protein.  The mutant DD3-3KO cells were allowed to develop 
+about 1.5 hours earlier than the wild-type strain AX2 cells. Northern 
+analysis of the knockout mutant cells showed a remarkable downregulation 
+of Reg A, cAMP-dependent phosphodiesterase, and overexpression of protein 
+tyrosine kinase (PTK) during early development and its shutdown during late 
+development. The relationship between O-glycosylation and phosphorylation 
+involving Reg A gene is discussed. 
+
+
+Submitted by: Motonobu.Yoshida [yoshida_m@nara.kindai.ac.jp]
+
+==============================================================================
+[End Dicty News, volume 24, number 16] 

@@ -1,0 +1,56 @@
+dictyNews
+Electronic Edition
+Volume 33, number 12
+November 6, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase now on twitter:
+http://twitter.com/dictybase
+
+We are very grateful to Jakob for providing yet another update of the 
+Reference Database. Information and download of the Endnote library 
+can be found at http://dictybase.org/reference_database/index.html
+
+=========
+Abstracts
+=========
+
+
+The Galpha4 G protein subunit interacts with the MAP kinase ERK2 using 
+a D-motif that regulates developmental morphogenesis in Dictyostelium
+
+Hoai-Nghia Nguyen and Jeffrey A. Hadwiger*
+Department of Microbiology and Molecular Genetics, Oklahoma State University
+
+
+Developmental Biology, in press
+
+G protein Galpha subunits contribute to the specificity of different signal 
+transduction pathways in Dictyostelium discoideum but Ga subunit-effector 
+interactions have not been previously identified. The requirement of the 
+Dictyostelium Galpha4 subunit for MAP kinase (MAPK) activation and the 
+identification of a putative MAPK docking site (D-motif) in this subunit 
+suggested a possible interaction between the Galpha4 subunit and MAPKs. 
+In vivo association of the Galpha4 subunit and ERK2 was demonstrated by 
+pull-down and co-immunoprecipitation assays.  Alteration of the D-motif 
+reduced Galpha4 subunit-ERK2 interactions but only slightly altered MAPK 
+activation in response to folate. Expression of the Galpha4 subunit with the 
+altered D-motif in Galpha4- cells allowed for slug formation but not the 
+morphogenesis associated with culmination. Expression of this mutant 
+Galpha4 subunit was sufficient to rescue chemotactic movement to folate. 
+Alteration of the D-motif also reduced the aggregation defect associated 
+with constitutively active Galpha4 subunits. These results suggest Galpha4
+subunit-MAPK interactions are necessary for developmental morphogenesis 
+but not for chemotaxis to folate.
+
+
+Submitted by Jeff Hadwiger [jeff.hadwiger@okstate.edu]
+==============================================================
+[End dictyNews, volume 33, number 12]

@@ -1,0 +1,121 @@
+dictyNews
+Electronic Edition
+Volume 32, number 8
+March 20, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Cortical Factor Feedback Model for Cellular Locomotion and Cytofission
+
+Shin I. Nishimura, Masahiro Ueda and Sasai Masaki
+
+
+PLoS Computational Biology 5(3):e1000310 (doi:10.1371)
+
+Eukaryotic cells can move spontaneously without being guided by external 
+cues. For such spontaneous movements, a variety of different modes have 
+been observed, including the amoeboid-like locomotion with protrusion of 
+multiple pseudopods, the keratocyte-like locomotion with a widely spread 
+lamellipodium, cell division with two daughter cells crawling in opposite 
+directions, and fragmentations of a cell to multiple pieces. Mutagenesis 
+studies have revealed that cells exhibit these modes depending on which 
+genes are deficient, suggesting that seemingly different modes are the 
+manifestation of a common mechanism to regulate cell motion. In this paper, 
+we propose a hypothesis that the positive feedback mechanism working 
+through the inhomogeneous distribution of regulatory proteins underlies 
+this variety of cell locomotion and cytofission. In this hypothesis, a 
+set of regulatory proteins, which we call cortical factors, suppress actin 
+polymerization. These suppressing factors are diluted at the extending 
+front and accumulated at the retracting rear of cell, which establishes 
+a cellular polarity and enhances the cell motility, leading to the further 
+accumulation of cortical factors at the rear. Stochastic simulation of 
+cell movement shows that the positive feedback mechanism of cortical 
+factors stabilizes or destabilizes modes of movement and determines 
+the cell migration pattern. The model predicts that the pattern is selected 
+by changing the rate of formation of the actin-filament network or the 
+threshold to initiate the network formation.
+
+
+Submitted by: Shin Nishimura [shin@hiroshima-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+
+The Effects of Extracellular Calcium on Motility, Pseudopod and Uropod Formation,
+Chemotaxis and the Cortical Localization of Myosin II in Dictyostelium discoideum
+
+Daniel F. Lusche, Deborah Wessels and David R. Soll
+
+The W.M. Keck Dynamic Image Analysis Facility
+Department of Biology The University of Iowa Iowa City, IA 52242
+
+
+Cell Motility and the Cytoskeleton, in press
+
+Extracellular Ca++, a ubiquitous cation in the soluble environment of cells both 
+free living and within the human body, regulates most aspects of amoeboid cell 
+motility, including shape, uropod formation, pseudopod formation, velocity and 
+turning in Dictyostelium discoideum. Hence it affects the efficiency of both basic 
+motile behavior and chemotaxis. Extracellular Ca++ is optimal at 10 mM. A gradient 
+of the chemoattractant cAMP generated in the absence of added Ca++ only affects 
+turning, butin combination with extracellular Ca++, enhances the effects of 
+extracellular Ca++. 
+
+Potassium, at 40 mM, can substitute for Ca++. Mg++, Mn++, Zn++ and Na+ cannot.
+Extracellular Ca++, or K+, also induce the cortical localization of myosin II in a polar
+fashion. The effects of Ca++, K+ or a cAMP gradient do not appear to be similarly
+mediated by an increase in the general pool of free cytosolic Ca++. These results 
+suggest a model, in which each agent functioning through different signaling 
+systems, converge toaffect the cortical localization of myosin II, which in turn 
+effects the behavioral changes leading to efficient cell motility and chemotaxis.
+
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+--------------------------------------------------------------------------------
+
+
+
+Acidic Ca2+ stores, excitability and cell patterning in Dictyostelium discoideum 
+
+Julian D. Gross
+
+Dept of Biochemistry, University of Oxford, Oxford OX13QU,
+United Kingdom
+
+
+Eukaryotic Cell, in press
+
+In this minireview I argue that the properties of the anterior and posterior 
+cells of aggregates (slugs) can be accounted for by the following assumptions:
+1) Cytosolic Ca2+ is sequestered into a specific type of internal store by 
+an ATP-dependent Ca2+/H+ exchanger acting in conjunction with a vacuolar 
+H+-ATPase that transfers protons into the compartment interior. 2) Cyclic AMP 
+relay by the adenylyl cyclase, ACA, is dependent inter alia on cytosolic 
+Ca2+ transients resulting from release of this stored Ca2+ in response to 
+binding of cyclic AMP to its cell surface receptors 3) The vacuolar H+-ATPase 
+is active in the anterior cells of aggregates but inactive in the posterior cells. 
+The former can therefore fill these stores and experience Ca2+ transients, 
+whereas the latter cannot. 4) The Ca2+ transients are responsible for driving 
+prestalk cell-specific (PST) gene expression and inhibiting prespore cell specific 
+(PSP) gene expression. Hence anterior cells express PST genes but not PSP 
+genes, and posterior cells do not express PST genes.  5) Posterior cells express 
+PSP genes as a result of activation of cAMP-dependent protein kinase A by 
+cAMP generated by a separate, constitutively active, adenylyl cyclase (ACG), 
+present only in the posterior cells.
+
+
+Submitted by: Julian Gross [julian@jdgross.fsworld.co.uk]
+==============================================================
+[End dictyNews, volume 32, number 8]

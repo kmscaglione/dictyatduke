@@ -1,0 +1,155 @@
+dictyNews
+Electronic Edition
+Volume 39, number 33
+November 29, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+dictyBase has a job opening! http://dictybase.org/dictybase_jobs.html
+
+=========
+Abstracts
+=========
+
+
+Interspecies and intraspecies interactions in social amoebae
+
+Santosh Sathe, Neha Khetan and Vidyanand Nanjundiah
+
+Centre for Ecological Sciences and Department of Molecular 
+Reproduction, Development and Genetics, Indian Institute of Science, 
+Bangalore- 560012, India.
+
+Corresponding author: Santosh Sathe (santosh_sathe@ces.iisc.ernet.in)
+
+
+Journal of Evolutionary Biology, in press
+
+The stable coexistence of individuals of different genotypes and 
+reproductive division of labour within heterogeneous groups are of 
+fundamental interest from the viewpoint of evolution. Cellular slime 
+moulds are convenient organisms in which to address both issues. 
+Strains of a species co-occur, and so do different species. As a result 
+social groups in the wild are often genetically heterogeneous. Generally, 
+amoebae of strains that participate in genetically mixed groups differ in 
+the efficiency with which they form spores, which raises questions 
+regarding the basis of their long-term coexistence. We have carried out 
+intra- and inter-species 1:1 pair wise mixes between wild isolates of 
+Dictyostelium giganteum and D. purpureum. Mixing leads to 
+co-aggregation, after which the constituents of the chimaeric aggregate 
+sort out to varying extents. On the whole, intra-species aggregates tend to 
+develop in concert and give rise to chimaeric fruiting bodies in which there 
+are disproportionately more spores of one component than the other. Inter-
+species aggregates exhibit almost complete sorting out and most if not all 
+spores in a fruiting body belong to a single species. Somatic compatibility 
+is assessed by  successful participation in forming a chimaeric fruiting
+body. It is highest within clones, lower among strains of the same species 
+and lowest between strains of different species. Further, somatic 
+compatibility is negatively correlated with the variance in the proportions 
+of spores contributed by either component in the mix. The long-term 
+coexistence of cellular slime moulds would appear to involve tradeoffs 
+between fitness-related traits (when strains that co-aggregate belong to 
+the same species and are compatible, and constitute what we term a 
+guild), sorting out (when the strains belong to different guilds in the same 
+species and are incompatible) and avoidance (when strains belong to 
+different species). We speculate that incompatible guilds of the same 
+species represent an early step in the splitting of one species into two.
+
+
+Submitted by Santosh Sathe [santosh_sathe@ces.iisc.ernet.in]
+---------------------------------------------------------------------------
+
+
+The arrestin-domain containing protein AdcA is a response element to stress
+
+Habourdin C, Klein G, Araki T, Williams JG, Aubry L.
+
+
+Cell Communication and Signaling, in press
+
+BACKGROUND:
+Cell behaviour is tightly determined by sensing and integration of 
+extracellular changes through membrane detectors such as receptors 
+and transporters and activation of downstream signalling cascades. 
+Arrestin proteins act as scaffolds at the plasma membrane and along 
+the endocytic pathway, where they regulate the activity and the fate of 
+some of these detectors. Members of the arrestin clan are widely 
+present from unicellular to metazoa, with roles in signal transduction 
+and metabolism. As a soil amoeba, Dictyostelium is frequently 
+confronted with environmental changes likely to compromise survival. 
+Here, we investigated whether the recently described arrestin-related 
+protein AdcA is part of the cell response to stresses.
+RESULTS:
+Our data provide evidence that AdcA responds to a variety of stresses 
+including hyperosmolarity by a transient phosphorylation. Analysis in 
+different mutant backgrounds revealed that AdcA phosphorylation 
+involves pathways other than the DokA and cGMP-dependent 
+osmostress pathways, respectively known to regulate PKA and STATc, 
+key actors in the cellular response to conditions of hyperosmolarity. 
+Interestingly, however, both AdcA and STATc are sensitive to changes 
+in the F-actin polymerization status, suggesting a common primary 
+sensor/trigger and linking the stress-sensitive kinase responsive for 
+AdcA phosphorylation to the actin cytoskeleton. We also show that 
+STATc-dependent transcriptional activity is involved for the timely 
+dephosphorylation of AdcA in cells under stress.
+CONCLUSION:
+Under osmotic stress, AdcA undergoes a phosphorylation-
+dephosphorylation cycle involving a stress-sensitive kinase and the 
+transcription regulator STATc. This transient post-transcriptional 
+modification may allow a regulation of AdcA function possibly to 
+optimize the cellular stress response.
+
+
+Submitted by Laurence Aubry [laubry@cea.fr]
+---------------------------------------------------------------------------
+
+
+Developmental lineage priming in Dictyostelium by heterogeneous 
+Ras activation
+
+Alex Chattwood1,§, Koki Nagayama1,§, Parvin Bolourani2, Lauren 
+Harkin1, Marzieh Kamjoo1, Gerald Weeks2 and Christopher R.L. 
+Thompson1*
+
+1 Faculty of Life Sciences, University of Manchester, Michael Smith 
+Building, Oxford Rd, Manchester, M13 9PT
+2 Department of Microbiology and Immunology, University of British 
+Columbia, Life Sciences Centre, 2350 Health Sciences Mall, 
+Vancouver BC, V6T 1Z3, Canada
+
+* Corresponding author
+§ These authors contributed equally
+
+
+eLife, in press
+
+In cell culture, genetically identical cells often exhibit heterogeneous 
+behavior, with only ‘lineage primed’ cells responding to differentiation 
+inducing signals. It has recently been proposed that such heterogeneity 
+exists during normal embryonic development to allow position 
+independent patterning based on ‘salt and pepper’ differentiation and 
+sorting out. However, the molecular basis of lineage priming and how it 
+leads to reproducible cell type proportioning is poorly understood.  To 
+address this, we employed a novel forward genetic approach in the 
+model organism Dictyostelium discoideum. These studies revealed the 
+Ras-GTPase regulator, gefE, to be required for normal lineage priming 
+and salt and pepper differentiation.  We find that this is because 
+Ras-GTPase activity sets the intrinsic response threshold to lineage 
+specific differentiation signals.  Importantly, we show that although gefE 
+expression is uniform, transcription of its target, rasD, is both 
+heterogeneous and dynamic, thus providing a novel mechanism for 
+heterogeneity generation and position independent differentiation.
+
+
+Submitted by Chris Thompson [christopher.thompson@manchester.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 33]

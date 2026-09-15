@@ -1,0 +1,53 @@
+dictyNews
+Electronic Edition
+Volume 41, number 20
+September 18, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Gene prioritization by compressive data fusion and chaining
+
+Marinka Žitnik, Edward A. Nam, Christopher Dinh, Adam Kuspa, 
+Gad Shaulsky & Blaž Zupan
+
+University of Ljubljana, Ljubljana, Slovenia
+Baylor College of Medicine, Houston, TX, USA
+
+PLoS Comput. Biol. Accepted for publication
+
+Data integration procedures combine heterogeneous data sets 
+into predictive models, but they are limited to data explicitly 
+related to the target object type, such as genes. Collage is a 
+new data fusion approach to gene prioritization. It considers 
+data sets of various association levels with the prediction 
+task, utilizes collective matrix factorization to compress the 
+data, and chaining to relate different object types contained 
+in a data compendium. Collage prioritizes genes based on their 
+similarity to several seed genes. We tested Collage by 
+prioritizing bacterial response genes in Dictyostelium as a 
+novel model system for prokaryote-eukaryote interactions. 
+Using 4 seed genes and 14 data sets, only one of which was 
+directly related to the bacterial response, Collage proposed 
+8 candidate genes that were readily validated as necessary 
+for the response of Dictyostelium to Gram-negative bacteria. 
+These findings establish Collage as a method for inferring 
+biological knowledge from the integration of heterogeneous 
+and coarsely related data sets.
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]   
+==============================================================
+[End dictyNews, volume 41, number 20]

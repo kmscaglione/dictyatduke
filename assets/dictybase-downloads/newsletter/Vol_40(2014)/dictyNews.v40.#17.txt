@@ -1,0 +1,92 @@
+dictyNews
+Electronic Edition
+Volume 40, number 17
+July 18, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+How blebs and pseudopods cooperate during chemotaxis
+
+Richard A. Tyson, Evgeny Zatulovskiy, Robert R. Kay, Till Bretschneider
+
+PNAS, accepted
+
+
+Two motors can drive extension of the leading edge of motile cells: actin 
+polymerization, and myosin-driven contraction of the cortex, producing 
+fluid pressure and the formation of blebs. Dictyostelium cells can move 
+with both blebs and actin-driven pseudopods at the same time, and blebs, 
+like pseudopods, can be orientated by chemotactic gradients. Here we ask 
+how bleb sites are selected and how the two forms of projection cooperate.  
+We show that membrane curvature is an important, yet overlooked, factor. 
+Dictyostelium cells were observed moving under agarose, which efficiently 
+induces blebbing, and the dynamics of membrane deformations analysed. 
+Blebs preferentially originate from negatively curved regions, generated 
+on the flanks of either extending pseudopods or blebs themselves. This is 
+true of cells at different developmental stages, chemotaxing to either folate 
+or cyclic-AMP, and moving with both blebs and pseudopods, or blebs only. 
+A physical model of blebbing suggests that detachment of the cell 
+membrane is facilitated in concave areas of the cell, where membrane 
+tension produces an outward directed force, as opposed to pulling inwards 
+in convex regions. Our findings assign a new role to membrane tension 
+which can spatially couple blebs and pseudopods, thus contributing to 
+clustering protrusions to the cell front.
+
+
+Submitted by Till Bretschneider [T.Bretschneider@warwick.ac.uk]
+---------------------------------------------------------------------------
+
+
+The social amoeba Polysphondylium pallidum loses encystation and 
+sporulation, but can still erect fruiting bodies in the absence of cellulose.
+
+Qingyou Du and Pauline Schaap1
+
+1corresponding author
+Phone: 44 1382 388078; Fax 44 1382 345386.
+
+College of Life Sciences, University of Dundee, MSI/WTB/JBC complex, 
+Dow Street, Dundee, DD15EH, UK. 
+E-mail: q.du@dundee.ac.uk;  p.schaap@dundee.ac.uk
+
+
+Protist, accepted
+
+Amoebas and other freely moving protists differentiate into walled cysts 
+when exposed to stress. As cysts, amoeba pathogens are resistant to 
+biocides, preventing treatment and eradication. Lack of gene modification 
+procedures has left the mechanisms of encystation largely unexplored. 
+Genetically tractable Dictyostelium discoideum amoebas require cellulose 
+synthase for formation of multicellular fructifications with cellulose-rich stalk 
+and spore cells. Amoebas of its distant relative Polysphondylium pallidum 
+(Ppal), can additionally encyst individually in response to stress.  Ppal has 
+two cellulose synthase genes, DcsA and DcsB, which we deleted individually 
+and in combination. Dcsa- mutants formed fruiting bodies with normal stalks, 
+but their spores and cyst walls lacked cellulose, which obliterated stress-
+resistance of spores and rendered cysts entirely non-viable. A dcsa-/dcsb- 
+mutant made no walled spores, stalk cells or cysts, although simple fruiting 
+structures were formed with a droplet of amoeboid cells resting on an 
+sheathed column of decaying cells. DcsB is expressed in prestalk and stalk 
+cells, while  DcsA is additionally expressed in spores and cysts. We conclude 
+that cellulose is essential for encystation and that cellulose synthase may be 
+a suitable target for drugs to prevent encystation and render amoeba 
+pathogens susceptible to conventional antibiotics.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 40, number 17]

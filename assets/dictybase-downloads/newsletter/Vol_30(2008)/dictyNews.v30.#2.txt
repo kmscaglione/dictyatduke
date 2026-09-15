@@ -1,0 +1,281 @@
+dictyNews
+Electronic Edition
+Volume 30, number 2
+January 11, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+A first glimpse at the transcriptome of Physarum polycephalum 
+
+1*Gernot Gloeckner, 2Georg Golderer, 2Gabriele Werner-Felmayer, 3Sonja Meyer, 
+3Wolfgang Marwan
+
+1Leibniz Institute for Age Research - Fritz Lipmann Institute, Beutenbergstr. 11, 
+D-07745 Jena, Germany
+2Sektion für Biologische Chemie, Biozentrum der Medizinischen Universitaet 
+Innsbruck, Fritz-Pregl-Str 3, A-6020 Innsbruck, Austria
+3Magdeburg Centre for Systems Biology, Otto von Guericke University and 
+Max-Planck-Institut fuer Dynamik komplexer technischer Systeme, Sandtorstr. 1, 
+D-39106 Magdeburg, Germany 
+*corresponding author
+
+
+BMC Genomics, in press
+
+Background
+Physarum polycephalum, an acellular plasmodial species belongs to the 
+amoebozoa, a major branch in eukaryote evolution. Its complex life cycle 
+and rich cell biology is reflected in more than 2500 publications on 
+various aspects of its biochemistry, developmental biology, cytoskeleton, 
+and cell motility. It now can be genetically manipulated, opening up the 
+possibility of targeted functional analysis in this organism. 
+
+Methods
+Here we describe a large fraction of the transcribed genes by sequencing a 
+cDNA library from the plasmodial stage of the developmental cycle. 
+
+Results
+In addition to the genes for the basic metabolism we found an unexpected 
+large number of genes involved in sophisticated signaling networks and 
+identified potential receptors for environmental signals such as light. 
+In accordance with the various developmental options of the plasmodial 
+cell we found that many P. polycephalum genes are alternatively spliced. 
+Using 30 donor and 30 acceptor sites we determined the splicing signatures 
+of this species. Comparisons to various other organisms including 
+Dictyostelium, the closest relative, revealed that roughly half of the 
+transcribed genes have no detectable counterpart, thus potentially defining 
+species specific adaptations. On the other hand, we found highly conserved 
+proteins, which are maintained in the metazoan lineage, but absent in 
+D. discoideum or plants. These genes arose possibly in the last common 
+ancestor of Amoebozoa and Metazoa but were lost in D. discoideum.
+
+Conclusion
+This work provides an analysis of up to half of the protein coding genes 
+of Physarum polycephalum. The definition of splice motifs together with 
+the description of alternatively spliced genes will provide a valuable 
+resource for the ongoing genome project.
+
+
+Submitted by: Gernot Gloeckner [gernot@fli-leibniz.de]
+--------------------------------------------------------------------------------
+
+
+Rap1 activation in response to cAMP occurs downstream of Ras activation 
+during Dictyostelium aggregation
+
+Parvin Bolourani, George B. Spiegelman and Gerald Weeks
+
+Department of Microbiology and Immunology, University of British Columbia, 
+Vancouver, BC, V6T 1Z3, Canada
+
+Running head: Role of Ras in chemotaxis and cAMP relay
+
+Correspondence to:  Gerald Weeks, Life Sciences Centre, 2350 Health 
+Sciences Mall, University of British Columbia, Vancouver, BC, V6T 1Z3, Canada. 
+Tel: 604-822-6649 ; Fax: 604-822-6041 ; E-mail: gerwee@interchange.ubc.ca
+
+
+J. Biol. Chem., in press
+
+We have used a doubly disrupted rasC-/rasG- strain of Dictyostelium discoideum, 
+that ectopically expresses the carA gene, to explore the relationship between 
+the activation of RasC and RasG, the two proteins that are necessary for 
+optimum cAMP signaling, and the activation of Rap1, a Ras subfamily protein, 
+that is also activated by cAMP.  The ectopic expression of carA restored 
+early developmental gene expression to the rasC-/rasG- strain, rendering 
+it suitable for an analysis of cAMP signal transduction.  Since there was 
+negligible signaling through both the cAMP chemotactic pathway and the 
+adenylyl cyclase activation pathway in the rasC-/rasG-/[act15]:carA strain, 
+it is clear that RasG and RasC are the only two Ras subfamily proteins that 
+directly control these  pathways.  The position of Rap1 in the signal 
+transduction cascade was clarified by the finding that Rap1 activation was 
+totally abolished in rasC-/rasG-/[act15]:carA and rasG- cells, but only 
+slightly reduced in rasC- cells. Rap1 activation, therefore, occurs 
+downstream of the Ras proteins and predominantly, if not exclusively, 
+downstream of RasG.  The finding that in vitro guanylyl cyclase activation 
+is also abolished in the rasC-/rasG-/[act15]:carA strain identifies 
+RasG/RasC as the presumptive monomeric GTPases required for this activation.  
+
+
+Submitted by: Gerald Weeks [gerwee@interchange.ubc.ca]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium MEGAPs: F-BAR domain proteins that regulate motility and 
+membrane tubulation in contractile vacuoles
+
+Robert JW Heath1* and Robert H Insall1,2
+
+1 School of Biosciences, University of Birmingham, Edgbaston, Birmingham, 
+England, B15 2TT, UK
+2The Beatson Institute for Cancer Research, Glasgow, Scotland, G61 1BD
+*Corresponding author
+
+
+PCH family proteins are fundamentally important proteins, linking membrane 
+curvature events with cytoskeletal reorganisation. One important group, 
+the MEGAPs (also called srGAPs and WRPs) contain RhoGAP domains in addition 
+to the F-BAR domain. We have disrupted MEGAP1 and MEGAP2 in Dictyostelium 
+both singly and in combination. We find a strong cytoskeletal phenotype in 
+MEGAP1- cells and a subtle phototaxis defect in MEGAP2- slugs. MEGAP1-/2- 
+cells have an overabundance of filopodia and serious effects in motility 
+and slug function. The most dramatic changes, however, are on contractile 
+vacuoles. MEGAP1-/2- cells empty their contractile vacuoles less efficiently 
+than normal and consequently have three times the usual number. GFP tagged 
+MEGAP1 localizes to tubules of the contractile vacuole network, when 
+vacuoles start to empty they recruit cytosolic GFP-MEGAP1. Mutants in the 
+Saccharomyces homologues RGD1 and RGD2 also show abnormal vacuoles, implying 
+a role conserved through evolution. Thus MEGAP is an important regulator for 
+the contractile vacuole network, and we propose that tubulation of the 
+contractile vacuole by MEGAP1 represents a novel mechanism for driving 
+vacuole emptying.
+
+
+Submitted by: Robert Heath [rjh451@bham.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Facultative cheater mutants reveal the genetic complexity of cooperation in 
+social amoebae
+
+Lorenzo A. Santorelli, Christopher R. L. Thompson2, Elizabeth Villegas, 
+Jessica Svetz, Christopher Dinh, Anup Parikh, Richard Sucgang, Adam Kuspa, 
+Joan E. Strassmann, David C. Queller and Gad Shaulsky
+
+
+Nature, in press
+
+Cooperation is central to many major transitions in evolution, including 
+the emergence of eukaryotic cells, multicellularity and eusociality1. 
+Cooperation can be destroyed by the spread of cheater mutants that do not 
+cooperate but gain the benefits of cooperation from others. However, 
+cooperation can be preserved if cheaters are facultative, cheating others 
+but cooperating among themselves. Several cheater mutants have been studied 
+before, but no study has attempted a genome-scale investigation of the 
+genetic opportunities for cheating. Here we describe such a screen in a 
+social amoeba and show that cheating is multifaceted by revealing cheater 
+mutations in well over 100 genes of diverse types. Many of these mutants 
+cheat facultatively, producing more than their fair share of spores in 
+chimeras, but cooperating normally when clonal. These findings indicate 
+that phenotypically stable cooperative systems may nevertheless harbor 
+genetic conflicts. The opportunities for evolutionary moves and countermoves 
+in such conflicts may select for the involvement of multiple pathways 
+and numerous genes.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+--------------------------------------------------------------------------------
+
+Abi Mutants in Dictyostelium Reveal Specific Roles for the SCAR/WAVE Complex 
+in Cytokinesis
+
+Alice Y. Pollitt & Robert H. Insall
+
+School of Biosciences, University of Birmingham, and Beatson Institute for 
+Cancer Research, Glasgow
+
+
+Current Biology, in press
+
+Actin polymerisation drives multiple cell processes involving movement and 
+shape change. SCAR/WAVE proteins connect signalling to actin polymerization 
+through the activation of the Arp2/3 complex. SCAR/WAVE is normally found in 
+a complex with four other proteins, PIR121, Nap1, Abi2 and HSPC300 
+(supplementary Figure 1A) [1-3].  However, there is no consensus as to 
+whether the complex functions as an unchanging unit or if it alters its 
+composition in response to stimulation as originally proposed by 
+Eden et al. [1].  It is also unclear wither complex members exclusively 
+regulate SCAR/WAVEs, or if they have additional targets [4-6].  Here we 
+analyze the roles of the unique Dictyostelium Abi.  We find that abiA null 
+mutants show less severe defects in motility than scar null cells, 
+indicating – unexpectedly - that SCAR retains partial activity in the 
+absence of Abi.   Furthermore, abiA null mutants have a serious defect 
+in cytokinesis, which is not seen in other SCAR complex mutants, and is 
+only seen when SCAR itself is present.  Detailed examination reveals that 
+normal cytokinesis requires SCAR activity, apparently regulated through 
+multiple pathways.
+
+
+Submitted by: Robert Insall [r.insall@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Four key signaling pathways mediating chemotaxis in Dictyostelium.
+
+Douwe M. Veltman, Ineke Keizer-Gunnik and Peter J.M. Van Haastert
+
+
+J. Cell Biology, in press
+
+Chemotaxis is the ability of cells to move in the direction of an external 
+gradient of signaling molecules. Cells are guided by actin-filled protrusions 
+in the front, while myosin filaments retract the rear of the cell. Previous 
+work demonstrated that chemotaxis of unpolarized amoeboid Dictyostelium cells 
+is mediated by two parallel pathways, PI3K and PLA2. Here we show that 
+polarized cells exhibit very good chemotaxis with inhibited PI3K and PLA2 
+activity. Using genetic screens we demonstrate that this activity is mediated 
+by a soluble guanylyl cyclase (sGC), providing two signals: the protein 
+localizes to the leading edge where it interacts with actin filament, while 
+the cGMP product induces myosin filaments in the rear of the cell. We 
+conclude that chemotaxis is mediated by multiple signaling pathways 
+regulating protrusions at the front and rear of the cell. Cells that 
+express only rear activity are polarized but do not exhibit chemotaxis, 
+while cells with only front signaling are unpolarized but do chemotax. 
+
+
+Submitted by: Peter J.M. Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+Altered composition and secretion of lysosome-derived compartments in 
+Dictyostelium AP-3 mutant cells.
+
+Steve J. Charette(1)* and Pierre Cosson(2)
+
+(1)Centre de recherche en cancerologie de l'Universite Laval, 
+L'Hotel-Dieu de Quebec, Centre hospitalier universitaire de Quebec, 9, 
+rue McMahon, Quebec, Canada G1R 2J6
+(2)Universite de Geneve, Centre Medical Universitaire, Departement de 
+Physiologie cellulaire et metabolisme, 1 rue Michel Servet, CH-1211 
+Geneva 4, Switzerland.
+*Corresponding author
+
+
+TRAFFIC, in press
+
+Genetic alteration of the AP-3 complex is responsible for the type 2 
+Hermansky-Pudlak syndrome (HPS2), a lysosomal storage disease similar 
+to the Chediak-Higashi syndrome (CHS). AP-3 presumably participates 
+in the biogenesis of late endosomal compartments, and may also be 
+critical for the regulated secretion of lysosomes by specialized cells. 
+Here, Dictyostelium discoideum cells defective for the µ3 subunit of 
+the AP-3 complex were used and their phenotype analyzed. In µ3 mutant 
+cells, endosomal maturation and lysosome secretion were markedly slower 
+than in wild-type cells. This phenotype is similar to that reported 
+previously in lvsB mutant cells, where the ortholog of the LYST gene, 
+involved in CHS, is mutated. Detailed analysis revealed however 
+significant differences between these two isogenic mutant cells: in 
+lvsB mutant cells the primary defect is an inefficient biogenesis 
+of otherwise normal secretory lysosomes, while in µ3 mutant cells 
+the biogenesis, and also the composition and the fusion properties 
+of secretory lysosomes are affected. These results suggest that in 
+D. discoideum, AP-3 controls both the efficiency and the specificity 
+of post-lysosome maturation, which represent two critical elements 
+in the control of lysosome secretion.
+
+
+Submitted by: Steve Charette [steve.charette@crhdq.ulaval.ca]
+==============================================================
+[End dictyNews, volume 30, number 2]

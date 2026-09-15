@@ -1,0 +1,156 @@
+Dicty News
+Electronic Edition
+Volume 13, number 12
+December 4, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Functional Elements Within the Dynein Microtubule-Binding Domain.
+
+Michael P. Koonce and Irina Tikhonenko
+
+Division of Molecular Medicine, Wadsworth Center Albany, NY 12201-0509
+
+Mol. Biol. Cell. in press (February 2000)
+
+ABSTRACT.
+
+   Dynein interacts with microtubules through an ATP-sensitive linkage mapped
+to a structurally complex region of the heavy chain following the fourth
+P-loop motif. Virtually nothing is known regarding how binding affinity is
+achieved and modulated during ATP-hydrolysis. We have performed a detailed
+dissection of the microtubule-contact site, using fragment expression,
+alanine substitution, and peptide competition. Our work identifies three
+clusters of amino acids important for the physical contact with
+microtubules; two of these fall within a region sharing sequence homology
+with MAP1B, the third in a region just downstream. Amino acid substitutions
+within any one of these regions can eliminate or weaken microtubule binding
+(KK3379,80, E3385, K3387, K3397, KK3410,11, W3414, RKK3418-20, F3426,
+R3464, S3466, K3467), suggesting that their activities are highly
+coordinated. A peptide that actively displaces MAP1B from microtubules
+perturbs dynein binding, supporting prior evidence for similar sites of
+interaction. We have also identified four amino acids whose substitutions
+affect release of the motor from the microtubule (E3413, R3444, E3460,
+C3469). These suggest that nucleotide-sensitive affinity may be locally
+controlled, at the site of contact. Our work is the first detailed
+description of dynein-tubulin interactions and provides a framework for
+understanding how affinity is achieved and modulated.
+
+
+----------------------------------------------------------------------------
+
+The Dictyostelium RasS Protein is Required for Macropinocytosis, 
+Phagocytosis and the Control of Cell Movement
+
+Jonathan R. Chubb, Andrew Wilkins, Geraint M. Thomas and
+Robert H. Insall
+
+J. Cell Sci., in press.
+
+Abstract
+
+   Endocytosis and cell migration both require transient localised 
+remodelling of the cell cortex.  Several lines of evidence suggest a 
+key regulatory role in these activities for members of the Ras family 
+of small GTPases.  We have generated Dictyostelium cells lacking one 
+member of this family, RasS, and the mutant cells are perturbed in 
+endocytosis and cell migration.  Mutant amoebae are defective in 
+phagocytosis and fluid-phase endocytosis and are impaired in growth. 
+Conversely, the rasS- cells show an enhanced rate of cell migration, 
+moving three times faster than wild-type controls.  The mutant cells 
+display an aberrant morphology, are highly polarised, carry many 
+elongated actin protrusions and show a concomitant decrease in 
+formation of pinocytic crowns on the cell surface.  These 
+morphological aberrations are paralleled by changes in the actin 
+cytoskeleton, with a significant proportion of the cortical F-actin 
+relocalised to prominent pseudopodia.  Rapid migration and 
+endocytosis appear to be mutually incompatible and it is likely that 
+RasS protein is required to maintain the normal balance between these 
+two actin-dependent processes.
+
+----------------------------------------------------------------------------
+
+Dictyostelium Myosin IK is Involved in the Maintenance of Cortical Tension
+and Affects Motility and Phagocytosis
+
+Eva C. Schwarz, Eva M. Neuhaus, Claudia Kistler, Andreas W. Henkel, and
+Thierry Soldati#
+
+Department of Molecular Cell Research, Max-Planck-Institute for Medical
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+#Corresponding author:	Tel: +49-6221-486407 / Fax: +49-6221-486325 / 
+E-mail: soldati@mzf.mpimf-heidelberg.mpg.de
+
+Journal of Cell Science, in press
+
+Summary
+
+   Dictyostelium discoideum MyoK is a novel type of myosin distinguished 
+by a remarkable architecture. MyoK is related to class I myosins but lacks 
+a cargo-binding tail domain and carries an insertion in a surface loop
+suggested to modulate motor velocity. This insertion shows similarity to a
+secondary actin-binding site present in the tail of some class I myosins,
+and indeed a GST-loop construct binds actin. As a likely consequence,
+binding of MyoK to actin was not only ATP- but also salt-dependent.
+Moreover, as both binding sites reside within its motor domain and carry
+potential sites of regulation, MyoK might represent a new form of actin
+crosslinker. MyoK was distributed in the cytoplasm with a significant
+enrichment in dynamic regions of the cortex. Absence of MyoK resulted in a
+drop of cortical tension whereas overexpression led to significantly
+increased tension. Absence and overexpression of MyoK dramatically affected
+the cortical actin cytoskeleton and resulted in reduced initial rates of
+phagocytosis. Cells lacking MyoK showed excessive ruffling, mostly in the
+form of large lamellipodia, accompanied by a thicker basal actin cortex. At
+early stages of development, aggregation of myoK null cells was slowed due
+to reduced motility. Altogether, the data indicate a distinctive role for
+MyoK in the maintenance and dynamics of the cell cortex.
+
+----------------------------------------------------------------------------
+
+5' Nucleotidase in Dictyostelium:: Protein Purification, Cloning, and 
+Developmental Expression.
+
+Chanpen Chanchao, Can M. Eristi, Reyna Favis and Charles L. Rutherford.
+
+Biology Department, Molecular and Cellular Biology Section, Virginia 
+Polytechnic Institute and State University, Blacksburg, VA 24061-0406
+
+Biochimica et Biophysica Acta, In Press
+
+5' Nucleotidase (5NU) in Dictyostelium discoideum is an enzyme that shows 
+high substrate specificity to 5'AMP. The enzyme has received considerable 
+attention in the past because of the critical role played by cyclic AMP in 
+cell differentiation in this organism. Degradation of cAMP by cAMP 
+phosphodiesterase (PDE) produces 5'AMP, the substrate of 5NU. During the 
+time course of development, the enzyme activity of 5NU increases and 
+becomes restricted to a narrow band of cells that form the interface 
+between the prestalk/prespore zones. We have purified a polypeptide 
+associated with 5NU enzyme activity. Protein sequence of this peptide 
+was obtained from Mass Spectrometry and Edman Degradation. PCR 
+amplification of genomic DNA using degenerate oligonucleotides and a 
+search of sequences of a cDNA project yielded DNA fragments with sequence 
+corresponding to the peptide sequence of 5NU. In addition, a clone was 
+found that corresponded to the classical "alkaline phosphatase" (AP) as 
+described in several organisms. The sequences of the 5NU and AP cDNAs 
+were not similar, indicating they are the products of separate genes and 
+that both genes exist in Dictyostelium. Analysis of the expression of 
+5nu during Dictyostelium development by Northern blotting determined that 
+the gene is developmentally regulated. Southern blot analysis showed a 
+single form of the 5nu gene. Targeted gene disruption and knockout 
+mutagenesis using the 5nu sequences suggested that a 5nu mutation may 
+be lethal.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 12]
+
+  

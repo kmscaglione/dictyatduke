@@ -1,0 +1,233 @@
+dictyNews
+Electronic Edition
+Volume 36, number 3
+Jan 28, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Bio-electrospraying and aerodynamically assisted bio-jetting the model 
+eukaryotic Dictyostelium discoideum: assessing stress and developmental 
+competency post-treatment
+
+Nicholl K. Pakes, Suwan N. Jayasinghe and Robin S. B. Williams
+
+
+Journal of the Royal Society Interface, in press
+
+Bio-electrospraying (BES) and aerodynamically assisted bio-jetting (AABJ) 
+have recently been established as important novel biospray technologies 
+for directly manipulating living cells. To elucidate their potential in medical 
+and clinical sciences, these bio-aerosol techniques have been subjected 
+to increasingly rigorous investigations. In parallel to these studies, we wish 
+to introduce these unique biotechnologies for use in the basic biological 
+sciences, for handling a wide range of cell types and systems, thus 
+increasing the range and the scope of these techniques for modern 
+research. Here, the authors present the analysis of the new use of these 
+biospray techniques for the direct handling of the simple eukaryotic 
+biomedical model organism Dictyostelium discoideum. These cells are 
+widely used as a model for immune cell chemotaxis and as a simple 
+model for development. We demonstrate that AABJ of these cells did not 
+cause cell stress, as defined by the stress-gene induction, nor affect cell 
+development. Furthermore, although BES induced the increased 
+expression of one stress-related gene (gapA), this was not a generalized 
+stress response nor did it affect cell development. These data suggest 
+that these biospray techniques can be used to directly manipulate single 
+cells of this biomedical model without inducing a generalized stress 
+response or perturbing later development.
+
+
+Submitted by Robin Williams [Robin.williams@rhul.ac.uk]
+--------------------------------------------------------------------------------
+
+
+eIF2alpha Kinases Control Chalone Production In Dictyostelium 
+discoideum
+
+Robert L. Bowman*, Yanhua Xiong, Janet H. Kirsten and 
+Charles K. Singleton
+
+Department of Biological Sciences, Vanderbilt University, 
+VU Station B 351634, Nashville, TN 37235
+
+
+Eukaryotic Cell, in press
+
+Growing Dictyostelium cells secrete CfaD and AprA, two proteins that 
+have been characterized as chalones.  They exist within a high molecular
+weight complex that reversibly inhibits cell proliferation but not growth via 
+cell surface receptors and a signaling pathway that includes G proteins.  
+How the production of these two proteins is regulated is unknown.  
+Dictyostelium cells possess three GCN2 type eIF2alpha kinases, proteins 
+that phosphorylate the translational initiation factor eIF2alpha and possess 
+a tRNA binding domain involved in their regulation.  The Dictyostelium 
+kinases have been shown to function during development in regulating 
+several processes.  We show here that expression of an unregulated, 
+activated kinase domain greatly inhibits cell proliferation.  The inhibitory 
+effect on proliferation is not due to a general inhibition of translation. 
+Instead it is due to an enhanced production of a secreted factor(s).  
+Indeed, extracellular CfaD and AprA proteins, but not their mRNAs, are 
+overproduced in cells expressing the activated kinase domain.  The 
+inhibition of proliferation is not seen when the activated kinase domain 
+is expressed in cells lacking CfaD or AprA or in cells that contain a non-
+phosphorylatable eIF2alpha.  We conclude that production of the chalones 
+CfaD and AprA is translationally regulated by eIF2alpha phosphorylation. 
+Both proteins are upregulated during culmination of development, and 
+this enhanced production is lacking in a strain that possesses a non-
+phosphorylatable eIF2alpha.
+
+
+Submitted by Charles Singleton [charles.k.singleton@Vanderbilt.Edu]
+--------------------------------------------------------------------------------
+
+
+Atg1 allows second-signalled autophagic cell death in Dictyostelium
+
+Marie-Françoise Luciani,1,2,3 Corinne Giusti,1,2,3 Birthe Harms,1,2,3 
+Yoshiteru Oshima,4 Haruhisa Kikuchi,4  Yuzuru Kubohara,5  and 
+Pierre Golstein1,2,3,*
+
+1Centre d’Immunologie de Marseille-Luminy (CIML), Faculté des Sciences 
+de Luminy, Aix-Marseille Université, Marseille F-13288, France; 
+2INSERM U631, Marseille F-13288, France;  
+3CNRS UMR6102, Marseille F-13288, France; 
+4Laboratory of Natural Product Chemistry, Graduate School of 
+Pharmaceutical Sciences, Tohoku University, Sendai 980-8578, Japan; 
+5Institute for Molecular & Cellular Regulation, Gunma University, 
+Maebashi 371-8512, Japan
+
+
+Autophagy 2011, in press
+ 
+We investigated the role of atg1 in autophagic cell death (ACD) in a 
+Dictyostelium monolayer model. The model is especially propitious, not 
+only because of genetic tractability and absence of apoptosis machinery, 
+but also because induction of ACD requires two successive exogenous 
+signals, first the combination of starvation and cAMP, second the 
+differentiation factor DIF-1. This enables one to analyze separately 
+first-signal-induced autophagy and subsequent second-signal-induced 
+ACD. We used mutants of atg1, a gene that plays an essential role in 
+the initiation of autophagy. Upon starvation/cAMP, in contrast to parental 
+cells, atg1 mutant cells showed irreversible lesions, clearly establishing 
+a protective role for atg1. Upon subsequent exposure to DIF-1 or to 
+more ACD-specific second signals, starved parental cells progressed 
+to ACD, but starved atg1 mutant cells did not, showing that atg1 was 
+required for ACD. Thus, in the same cells atg1 was required in two 
+apparently opposite ways, upon first-signalling for cell survival and upon
+second-signalling for ACD. Our findings strongly suggest that atg1, thus 
+presumably autophagy, protects the cells from starvation-induced cell 
+death, allowing subsequent induction of ACD by the second signal. 
+ACD is therefore not only "with" autophagy (since it showed signs of 
+autophagy throughout), but is also "allowed by" autophagy. This does not 
+exclude a role for autophagy also after second signalling. These results 
+may account for discrepancies reported in the literature, encourage 
+searches for second signals in different developmental models of 
+ACD, and incite caution in autophagy-related therapeutic attempts.
+
+
+Submitted by Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+
+Origin and function of the stalk-cell vacuole in Dictyostelium
+
+Toru Uchikawa(a), Akitsugu Yamamoto(b), Kei Inouye(a)
+
+(a) Department of Botany, Graduate School of Science, Kyoto University 
+(b) Faculty of Bioscience, Nagahama Institute of Bio-Science and Technology
+
+
+Dev. Biol., in press
+
+Large vacuoles are characteristic of plant and fungal cells, and their origin 
+has long attracted interest. The cellular slime mould provides a unique
+opportunity to study the de novo formation of vacuoles because, in its life 
+cycle, a subset of the highly motile animal-like cells (prestalk cells) rapidly 
+develop a single large vacuole and cellulosic cell wall to become plant-like 
+cells (stalk cells). Here we describe the origin and process of vacuole 
+formation using live-imaging of Dictyostelium cells expressing GFP-tagged 
+ammonium transporter A (AmtA-GFP), which was found to reside on the 
+membrane of stalk-cell vacuoles. We show that stalk-cell vacuoles originate 
+from acidic vesicles and autophagosomes, which fuse to form autolysosomes. 
+Their repeated fusion and expansion accompanied by concomitant cell wall 
+formation enables the stalk cells to rapidly develop turgor pressure necessary 
+to make the rigid stalk to hold the spores aloft. Contractile vacuoles, which
+are rich in H+-ATPase as in plant vacuoles, remained separate from these 
+vacuoles. We further argue that AmtA may play an important role in the 
+control of stalk-cell differentiation by modulating the pH of autolysosomes.
+
+
+Submitted by Kei Inouye [inoue@cosmos.bot.kyoto-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Requirements for Skp1 processing by cytosolic prolyl 4(trans)-hydroxylase 
+and alpha-N-acetylglucosaminyltransferase enzymes involved in 
+O2-signaling in Dictyostelium
+
+Hanke van der Wel‡, Jennifer M. Johnson‡, Yuechi Xu‡, Chamini V. 
+Karunaratne§, Kyle D. Wilson‡, Yusuf Vohra¶, Geert-Jan Boons¶, 
+Carol M. Taylor§, Brad Bendiak#, and Christopher M. West‡
+
+‡Department of Biochemistry and Molecular Biology, Oklahoma Center 
+for Medical Glycobiology, University of Oklahoma Health Sciences Center, 
+Oklahoma City, OK 73104  USA; 
+§Department of Chemistry, 742 Choppin Hall, Louisiana State University, 
+Baton Rouge, LA 70803  USA; 
+¶Dept. of Chemistry and Complex Carbohydrate Research Center, 
+315 Riverbend Road, University of Georgia, Athens, GA  30602  USA; 
+#Department of Cell and Developmental Biology and Structural Biology 
+and Biophysics Program, University of Colorado Denver, Anschutz 
+Medical Campus, Mail Stop 8108, RC-1 South Bldg., L18-12120, 12801 
+East 17th Avenue, Aurora, CO 80045  USA
+
+
+Biochemistry, in press.
+
+The social amoeba Dictyostelium expresses a hypoxia inducible factor-
+alpha (HIFalpha)-type prolyl 4-hydroxylase (P4H1) and an 
+alpha-N-acetylglucosaminyltransferase (Gnt1) that sequentially modify 
+proline-143 of Skp1, a subunit of the SCF (Skp1/Cullin/F-box protein)-class 
+of E3 ubiquitin-ligases. Prior genetic studies have implicated Skp1 and its 
+modification by these enzymes in O2-regulation of development, suggesting 
+the existence of an ancient O2-sensing mechanism related to modification of 
+the transcription factor HIFalpha by animal prolyl 4-hydroxylases (PHDs). To 
+better understand the role of Skp1 in P4H1-dependent O2-signaling, 
+biochemical and biophysical studies were conducted to characterize the 
+reaction product and the basis of Skp1 substrate selection by P4H1 and 
+Gnt1. 1H-NMR demonstrated formation of 4(trans)-hydroxyproline as 
+previously found for HIFalpha, and highly purified P4H1 was inhibited by 
+Krebs cycleintermediates and other compounds that affect animal P4Hs. 
+However, in contrast to hydroxylation of HIFalpha by PHDs, P4H1 
+depended on features of full-length Skp1, based on truncation, mutagenesis, 
+and competitive inhibition studies. These features are conserved during 
+animal evolution, as even mammalian Skp1, which lacks the target proline, 
+became a good substrate upon its restoration. P4H1 recognition may 
+depend on features conserved for SCF complex formation as 
+heterodimerization with an F-box protein blocked Skp1 hydroxylation. 
+The hydroxyproline-capping enzyme Gnt1 exhibited similar requirements 
+for Skp1 as a substrate. These and other findings support a model in
+which the protist P4H1 conditionally hydroxylates Skp1 of 
+E3SCFubiquitin-ligases to control half-lives of multiple targets, rather 
+than the mechanism of animal PHDs where individual proteins are 
+hydroxylated leading to ubiquitination by the evolutionarily-related 
+E3VBCubiquitin-ligases. 
+
+
+Submitted by: Chris West [Cwest2@ouhsc.edu]
+==============================================================
+[End dictyNews, volume 36, number 3]

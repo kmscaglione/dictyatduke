@@ -1,0 +1,211 @@
+CSM News
+Electronic Edition
+Volume 4, number 2
+January 21, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+through www.nwu.edu.
+
+============================
+ Updated Database Available
+============================
+
+A new revised database and a new database update are now available via
+anonymous ftp from worms.cmsbio.nwu.edu [129.105.233.50].
+
+The latest update is Update7 and contains 273 new references.  Almost
+half of these were culled from Current Contents (through the last
+issue of 1994), and about 110 of the new references were obtained from
+the Loomis database as maintained by Del Richardson. Update7 can be
+added to Dicty3.
+
+The revised database is called Dicty4 and contains 5089 references.
+It is a thorough revision of Dicty3, and if you have not personalized
+the Dicty3 version, we suggest you download the new Dicty4 version in
+stead of adding Update7 to Dicty3.
+
+    * Sixty-five refences were deleted (they were duplications or 
+      non-cellular slime mold papers), and 273 new references 
+      from Update7 were added.
+    * Many corrections were made: no more D.d. or csm. 
+    * Page numbers are consistently p-pp, no more p,pp. 
+    * Journal abbreviations are now consistent, and with periods. 
+    * Titles are not capitalized.
+    * Greek letter symbols have been spelled out because ASCII codes 
+      tended to corrupt some files.
+
+The references are now divided into 5 reference types: 
+
+    * journal articles
+    * book chapters
+    * books 
+    * theses
+    * meeting abstracts.
+
+We are providing the new files in EndNote Plus and Refer/bibIX formats.
+We have discontinued distributing the Ref11 format since it appears
+that few have use for it. However, the original Ref11 v4.1 formatted
+file is still available for the asking.
+Each file format is recognized by a three letter extension:
+
+File                      EndNote             Refer/bibIX
+---------------------------------------------------------------                
+UPDATE7                UPDATE7.END            UPDATE7.BIX
+DICTY4                  DICTY4.END             DICTY4.BIX
+
+During the transfer, make sure that the ftp or the download
+protocol is set to BINARY. The files are large: dicty4.bix 
+is 1.4 Mb; dicty4.end is 2.1 Mb.
+
+Additional technical notes can be found in a separate file 
+called notes.txt in the same directory.
+
+If there are any problems with the downloading, let us 
+know and we'll mail a floppy disk.
+
+Happy New Year, 
+
+Jakob Franke and Ricky Sucgang
+
+
+===========
+ Abstracts
+===========
+
+Evidence for a developmentally regulated pre-spore specific glutamine 
+synthetase in the cellular slime mould Dictyostelium discoideum.
+
+Andrew J. Dunbar and John F. Wheldrake
+
+Flinders University of South Australia, Faculty of Science and Engineering, 
+School of Biological Sciences, Bedford Park, Australia.
+
+Microbiology, in press.
+
+Abstract
+
+The enzyme glutamine synthetase (GS) has been described for the first
+time in Dictyostelium discoideum. The appearance of this enzyme is
+developmentally regulated. The level of activity is low in vegetative
+cells and increases more than three-fold during differentiation.
+Furthermore this enzyme has been shown to be differentially localised
+in prespore cells, the specific activity being approximately four-fold
+higher than in prestalk cells.
+
+The enzyme has an optimum pH of 7.8 and 8.2 in the glutamyltransferase
+and glutamylsynthetase assays respectively and an optimum temperature
+of 45 C.  Kinetic studies of GS revealed apparent kms of 5.9 mM, 0.009
+mM, and 8.6 mM for glutamine, ADP, and NH2OH respectively in the
+glutamyltransferase assay and 2.2 mM, 0.12 mM, and 0.64 mM for
+glutamate, ATP and NH2OH respectively in the glutamylsynthetase assay.
+
+----------------------------------------------------------------------
+
+Molecular genetic analysis of myoC, a Dictyostelium myosin I
+
+M.D. Peterson, K.D. Novak, M.C. Reedy, J.I. Ruman, and M.A. Titus
+
+Dept. of Cell Biology, Duke University Medical Center, Durham, NC
+27710
+
+J. Cell Sci., in press.
+
+Abstract:
+
+   The protozoan myosin Is are widely expressed actin-based motors,
+yet their in vivo roles remain poorly understood.  Molecular genetic
+studies have been carried out to determine their in vivo function in
+the simple eukaryote Dictyostelium, an organism that contains a family
+of four myosin Is.  Here we report the characterization of myoC, a
+gene that encodes a fifth member of this family.  Analysis of the
+deduced amino acid sequence reveals that the myoC gene encodes a
+myosin that is homologous to the well-described Acanthamoeba myosin Is
+as well as to Dictyostelium myoB and -D.  The expression pattern of
+the myoC mRNA is similar to that of myoB and myoD, with a peak of
+expression at times of maximal cell migration, around 6 hours of
+development.  Deletion of the myoB gene has been previously shown to
+result in mutant cells that are defective in pseudopod extension and
+phagocytosis.  However, no obvious differences in cell growth,
+development, phagocytosis, or motility were detected in cells in which
+the myoC gene had been disrupted by homologous recombination.  F-actin
+localization and ultrastructural organization also appeared
+unperturbed in myoC- cells.  This apparent "lack" of phenotype in a
+myosin I single knockout cannot be simply explained by redundancy of
+function.  Our results rather suggest that the present means of
+assessing myosin I function in vivo are insufficient to identify
+unique roles of these actin-based motors.
+
+---------------------------------------------------------------------
+
+Codon usage, genetic code and phylogeny of Dictyostelium discoideum
+mitochondrial DNA as deduced from a 7.3 Kb region.
+
+Kiyohiko Angata, Kenji Kuroe, Kaichirou Yanagisawa and Yoshimasa
+Tanaka
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba,
+Ibaraki 305 Japan
+
+Current Genetics, in press.
+
+Abstract
+
+   We have sequenced a region (7,376 bp) of the mitochondrial DNA (54
+Kb) of the cellular slime mold, Dictyostelium discoideum.  From DNA
+and amino-acid sequencecomparisons with known sequences, genes for
+ATPase subunit (ATP9), cytochrome (CYTB), dehydrogenase subunits 1, 3
+and 6 (ND1, ND3 and ND6), small subunit rRNA (SSU rRNA) and seven
+tRNAs (Arg, Asn, Cys, Lys, f-Met, Met and Pro) have been identified.
+The sequenced region of the mt DNA has a high average A+T-content
+(70.8 %). The A+T-content of protein genes (73.6 %) is considerably
+higher than that DNA genes (61.3 %). Even with the strong A+T-bias,
+the genetic code is most probably the universal one.  All 7 tRNAs are
+able to form typical clover leaf structures. The molecular
+phylogenetic trees of CYTB and SSU rRNA suggest that D. discoideum is
+closer to green plants than animals and fungi.
+
+-------------------------------------------------------------------
+
+A group-I intron in the mitochondrial large-subunit ribosomal 
+RNA-encoding gene of Dictyostelium discoideum: same site
+localization in alga and in vitro self-splicing
+
+Kiyohiko Angata, Shinji Ogawa, Kaichiro Yanagisawa and Yoshimasa
+Tanaka
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba,
+Ibaraki 305 Japan.
+
+Gene, in press.
+ 
+Abstract
+
+    A 547-bp group-I intron belonging to subgroup IA1 was found
+near the 3'end of the large subunit ribosomal RNA-encoding  gene
+(LSUrRNA) in the mitochondrial (mt) DNA of the cellular slime
+mold, Dictyostelium discoideum. This intron is inserted in a
+highly conserved stretch within the sequence that encodes the
+peptidyl transferase center domain V in the corresponding region
+of the Escherichia coli LSUrRNA. Interestingly, the insertion
+site of the intron is the same as that of the So.LSU.2 intron of
+the green alga, Scenedesmus obliquus, mt DNA and the Pw.LSU.2
+intron of the colorless alga, Prototheca wickerhamii, mt DNA.
+The intron could self-splice in vitro at a concentration higher
+than 20 mM MgCl2.  Polymerase chain reaction analysis  showed the
+possible existence of an intron similar to that of D. discoideum
+LSUrRNA in another cellular slime mold, Polysphondylium pallidum
+(CK-8), but not in D. mucoroides (Dm7 and Dm11). 
+
+-----------------------------------------------------------------
+
+[End CSM News, volume 4, number 2]
+
+
+
+   
+

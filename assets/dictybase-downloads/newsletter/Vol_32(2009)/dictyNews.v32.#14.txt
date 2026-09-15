@@ -1,0 +1,76 @@
+dictyNews
+Electronic Edition
+Volume 32, number 14
+May 29, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+PTEN is a mechanosensing signal transducer for myosin II localization 
+in Dictyostelium cells
+
+Md. Kamruzzaman Pramanik, Miho Iijima, Yoshiaki Iwadate, 
+Shigehiko Yumura      
+
+
+Genes to Cells, in press
+
+To investigate the role of PTEN in regulation of cortical motile activity, 
+especially in myosin II localization, eGFP-PTEN and mRFP-myosin II 
+were simultaneously expressed in Dictyostelium cells.  PTEN and 
+myosin II co-localized at the posterior of migrating cells and furrow 
+region of dividing cells.  In suspension culture, PTEN knockout (pten–) 
+cells became multinucleated, and myosin II significantly decreased in 
+amount at the furrow. During pseudopod retraction and cell aspiration 
+by microcapillary, PTEN accumulated at the tips of pseudopods and 
+aspirated lobes prior to the accumulation of myosin II.  In pten– cells, 
+only a small amount of myosin II accumulated at the retracting 
+pseudopods and aspirated cell lobes.  PTEN accumulated at the 
+retracting pseudopods and aspirated lobes even in myosin II null 
+cells and latrunculin B-treated cells though in reduced amounts, 
+indicating that PTEN accumulates partially depending on myosin II 
+and cortical actin.  Accumulation of PTEN prior to myosin II suggests 
+that PTEN is an upstream component in signaling pathway to localize 
+myosin II, possibly with mechanosensing signaling loop where 
+actomyosin-driven contraction further augments accumulation of 
+PTEN and myosin II by a positive feedback mechanism.
+
+
+Submitted by: Shigehiko Yumura [yumura@yamaguchi-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Learning to get along despite struggling to get by
+
+Elizabeth A Ostrowski* and Gad Shaulsky†
+
+*Department of Ecology and Evolutionary Biology, Rice University, Houston, 
+TX 77005, USA. 
+†Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, TX 77030, USA.
+
+
+Genome Biology 10:218
+doi:10.1186/gb-2009-10-5-218
+
+How cooperation can evolve by natural selection is important for 
+understanding the evolutionary transition from unicellular to multicellular 
+life. Here we review the evolutionary theories for cooperation, with 
+emphasis on the mechanisms that can favor cooperation and reduce 
+conflict in multicellular organisms.
+
+
+Submitted by: Elizabeth Ostrowski [ostrowski@rice.edu]
+==============================================================
+[End dictyNews, volume 32, number 14]

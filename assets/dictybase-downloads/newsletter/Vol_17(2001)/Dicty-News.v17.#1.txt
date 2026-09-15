@@ -1,0 +1,195 @@
+Dicty News
+Electronic Edition
+Volume 17, number 1
+June 30, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+==============
+  Abstracts
+==============
+Requirements for the Adenylyl Cyclases in Development of Dictyostelium
+
+Christophe Anjard, Fredrik Sderbom, and William F. Loomis
+
+Center for Molecular Genetics,  Division of Biology
+University of California San Diego, La Jolla, CA 92093
+
+Development, in press
+ABSTRACT
+
+It has been suggested that all intracellular signaling by cAMP during
+development of Dictyostelium is mediated by the cAMP dependent protein
+kinase, PKA, since cells carrying null mutations in the acaA gene that
+encodes adenylyl cyclase can develop so as to form fruiting bodies under
+some conditions if PKA is made constitutive by overexpressing the catalytic
+subunit. However, a second adenylyl cyclase encoded by acrA has recently
+been found that functions in a cell autonomous fashion during late
+development. We have found that expression of a modified acaA gene rescues
+acrA- mutant cells indicating that the only role played by ACR is to
+produce cAMP. To determine whether cells lacking both adenylyl cyclase
+genes can develop when PKA is constitutive we disrupted acrA in a acaA-
+PKA-C(over) strain. When developed at high cell densities, acrA- acaA-
+PKA-C(over) cells form mounds, express cell type specific genes at reduced
+levels and secrete cellulose coats but do not form fruiting bodies or
+significant numbers of viable spores. Thus, it appears that synthesis of
+cAMP is required for spore differentiation in Dictyostelium even if PKA
+activity is high.
+
+-----------------------------------------------------------------------------
+
+Myosin II Dynamics and Cortical Flow during Contractile Ring Formation in
+Dictyostelium Cells.
+
+Shigehiko Yumura
+
+Department of Biology, Faculty of Science, Yamaguchi University, Yamaguchi
+753-8512, Japan.
+
+J. Cell Biol., In press.
+
+Abstract
+
+    Myosin II is a major component of a contractile ring. In order to
+examine if myosin II turns over in contractile rings, fluorescence of
+GFP-myosin II expressed in Dictyostelium cells was bleached locally by laser
+illumination, and the recovery was monitored. The fluorescence recovered
+with a half time of 7.01  2.62 sec. This recovery was not caused by
+lateral movement of myosin II from the non-bleached area but by an exchange
+with endoplasmic myosin II. Similar experiments were performed in cells
+expressing GFP-3ALA myosin II, of which three phosphorylatable threonine
+residues were replaced with alanine residues. In this case, recovery was not
+detected within a comparable time range. These results indicate that myosin
+II in the contractile ring performs dynamic turnover via its heavy chain
+phosphorylation. Because GFP-3ALA myosin II did not show the recovery, it
+served as a useful marker of myosin II movement, which enabled us to
+demonstrate cortical flow of myosin II toward the equator for the first
+time. Thus, cortical flow accompanies the dynamic exchange of myosin II
+during the formation of contractile rings.
+ 
+-----------------------------------------------------------------------------
+
+Brief Communications Genomics: Genes lost during evolution
+
+Jeroen Roelofs and Peter J.M. van Haastert
+
+Department of Biochemistry, University of Groningen, Nijenborgh 4, 9747
+AG Groningen, The Netherlands
+
+Nature 411, 1013 - 1014 (2001)
+
+One of the main conclusions presented by the International Human Genome
+Sequencing Consortium is that "hundreds of gene appear to have resulted from 
+horizontal gene transfer from bacteria at some point in the vertebrate 
+lineage". We noticed that a significant proportion of these human genes have
+closely related orthologues in the primitive eukaryote Dictyostelium.
+This observation supports independent gene loss in multiple lineages (worm, 
+fly, yeast, plants) rather than horizontal gene transfer from bacteria.
+
+-----------------------------------------------------------------------------
+
+
+The Dictyostelium homologue of mammalian soluble adenylyl cyclase
+encodes a guanylyl cyclase
+
+Jeroen Roelofs1, Marcel Meima2, Pauline Schaap2  and Peter J.M. Van
+Haastert1
+
+1) GBB, Department of Biochemistry, University of Groningen,
+Nijenborgh 4, 9747 AG Groningen, the Netherlands
+2) Department of Biochemistry, University of Dundee, Dundee DD1 5EH, UK
+
+EMBO journal, 2001, in press
+
+Abstract
+
+A new Dictyostelium cyclase  gene  was identified that encodes a protein
+(sGC) with 35% similarity to mammalian soluble adenylyl cyclase (sAC). Gene 
+disruption of sGC has no effect on adenylyl cyclase activity and results 
+in more then a ten-fold reduction of guanylyl cyclase activity. The scg- 
+null mutants show reduced chemotactic sensitivity and aggregate poorly under
+stringent conditions. With Mn2+/GTP as substrate most of sGC activity is 
+soluble, but with the more physiological Mg2+/GTP the activity is
+detected in membranes and stimulated by GTPgS. Unexpectedly, orthologues
+of sGC and sAC are present in bacteria and vertebrates, but absent from 
+Drosophila, C. elegans, Arabidopsis and S. cerevisiae.
+
+-----------------------------------------------------------------------------
+
+
+A Diffusion-Translocation Model for Gradient Sensing by Chemotactic
+Cells
+
+Marten Postma and Peter J.M. Van Haastert
+
+GBB, Department of Biochemistry, University of Groningen, Nijenborgh 4,
+9747 AG Groningen, the Netherlands
+
+Biophysical Journal, 2001, in press
+
+Abstract
+
+Small chemotactic cells like Dictyostelium and neutrophils transduce shallow 
+spatial chemoattractant gradients into strongly localized intracellular 
+responses. We show that the capacity of a second messenger to establish and 
+maintain localized signals, is mainly determined by its dispersion range l =
+(Dm/k-1)0.5, which must be small compared to the cells length.  Therefore 
+short living second messengers (high k-1) with diffusion coefficients Dm 
+in the range of 0 - 5 mm2s-1 are most suitable.  Additional to short 
+dispersion ranges, gradient sensing may include positive feedback mechanisms 
+that lead to local activation and global inhibition of second messenger
+production. To introduce the essential non-linear amplification we have 
+investigated models in which one or more components of the signal 
+transduction cascade translocate from the cytosol to the second messenger 
+in the plasma membrane. A one-component model is able to amplify a 1.5-fold 
+difference of receptor activity over the cell length into a 15-fold difference 
+of second messenger concentration.  Amplification can be improved considerably 
+by introducing an additional activating component that translocates to the 
+membrane. In both models, communication between the front and the back of the 
+cell is mediated by partial depletion of cytosolic components, which leads to 
+both, local activation and global inhibition. The results suggest that a 
+biochemically simple and general mechanism may explain various signal 
+localization phenomena, not only in chemotactic cells but also those occurring 
+in morphogenesis and cell differentiation.
+
+-----------------------------------------------------------------------------
+
+cAMP and DIF-1 repress the expression of the Dictyostelium MADS-box gene
+srfA at early stages of development
+
+Ricardo Escalante1and Leandro Sastre
+
+Instituto de Investigaciones Biomdicas del Consejo Superior de
+Investigaciones Cientficas , C/Arturo Duperier,4. 28029 Madrid. Spain.
+
+B.B.R.C. (in press)
+
+1 To whom correspondence should be addressed. Fax: 34-1-5854587. e-mail:
+rescalante@iib.uam.es
+
+ Abstract
+The MADS-box containing gene srfA from Dictyostelium discoideum  codes for
+a putative  transcription factor that plays multiple roles in the
+development of this social amoeba. We have investigated the regulation of
+srfA gene expression after disaggregation of the cells from developing
+structures. The steady-state level of srfA mRNA was strongly and
+transiently induced shortly after disaggregation. srfA is maximally
+expressed 20 minutes after cell disaggregation and decreases thereafter.
+Induction was not dependent on protein synthesis, PKA, the kinase SplA and
+SrfA itself. This phenomena does not occur when cells are disaggregated in
+a small volume of buffer, suggesting the presence of extracellular
+molecules that repress srfA gene expression. In order to test this
+hypothesis, several well-known extracellular signaling molecules were
+studied. We found that srfA mRNA induction can be efficiently repressed by
+addition of exogenous cAMP and DIF-1 to the buffer in which the cells were
+disaggregated. Addition of other extracellular compounds such as ammonia,
+adenosine, SDF-1 and SDF-2 had no effect. srfA promoter P2, specifically
+induced during slug migration, was responsible for this regulation by
+extracellular compounds.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 1]

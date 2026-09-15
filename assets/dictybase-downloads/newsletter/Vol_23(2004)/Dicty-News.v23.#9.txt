@@ -1,0 +1,134 @@
+Dicty News
+Electronic Edition
+Volume 23, number 9
+september 10, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Disruption of the NCS-1/frequenin-related ncsA gene in Dictyostelium
+discoideum accelerates development 
+
+Barrie Coukell*, Anne Cameron, Stephen Perusini1, Katharine Shim
+Department of Biology, York University,4700 Keele St.,
+Toronto, ON, M3J 1P3, CANADA
+
+
+Develop. Growth Differ., in press
+
+To learn more about the function of intracellular Ca2+ in Dictyostelium
+discoideum, we searched databases for sequences encoding potential members
+of the neuronal calcium sensor (NCS) family of Ca2+-binding proteins.  As a
+result, genes for five new putative Ca2+-binding proteins were identified.
+Based on amino acid sequence alignments and phylogenetic analyses, one of
+these genes (ncsA) was determined to be closely related to NCS-1/frequenin
+genes in other organisms.  The protein product of ncsA (NcsA) binds 45Ca2+
+and exhibits a dramatic gel mobility shift in the presence of Ca2+,
+suggesting that it is a Ca2+ sensor.  ncsA-null cells grow normally in
+axenic culture.  However, on bacterial lawns, the ncsA-null clones expand
+slowly and development begins prematurely within the plaques.  In larger
+clones, ncsA-null cells form narrow growth zones with evenly spaced
+aggregrates along the inner edge, and closely packed fruiting bodies.
+An analysis of intracellular cAMP levels, developmental timing on PBS agar,
+and stage-specific gene expression indicate that development of ncsA-null
+cells is accelerated by 3-4 h.  Together, these results suggest that NcsA 
+might function in Dictyostelium to prevent cells from entering development
+prematurely in the presence of environmental nutrients.
+
+
+Submitted by: Barrie Coukell [bcoukell@yorku.ca]
+
+-----------------------------------------------------------------------------
+
+
+Evidence that the Dictyostelium STAT protein Dd-STATa plays a role in the
+differentiation of inner basal disc cells and identification of a promoter
+element essential for expression in these cells
+
+Nao Shimada1, Toshinari Maruo2, Mineko Maeda2, Hideko Urushihara3 and
+Takefumi Kawata1, 4
+1 Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama,
+Funabashi, Chiba 274-8510, Japan
+2Department of Biology, Graduate School of Science, Osaka University,
+Toyonaka, Osaka 560-0043
+3 Graduate School of Life and Environmental Sciences, University of Tsukuba,
+Tsukuba, Ibaraki 305-8572
+4 Corresponding author
+E-mail: tkawata@bio.sci.toho-u.ac.jp
+
+
+Differentiation, in press
+
+Abstract  Dd-STATa, a Dictyostelium homologue of the metazoan STATs (signal
+transducers and activators of transcription) proteins, is necessary in the
+slug for correct entry into culmination. Dd-STATa-null mutant fails to
+culminate and its phenotype correlates with the loss of a funnel-shaped 
+core region, the pstAB core region, which expresses both the ecmA and ecmB
+genes. To understand how the differentiation of pstAB core cells is
+regulated, we identified an EST that is expressed in the core cells of
+normal slugs but down-regulated in the Dd-STATa-null mutant. This EST,
+SSK348, encodes a close homologue of the Dictyostelium acetyl-CoA synthetase
+(ACS). A promoter fragment of the cognate gene, aslA (acetyl-CoA
+synthetase-like A), was fused to a lacZ reporter and the expression pattern
+determine. As expected from the behaviour of the endogenous aslA gene, the
+aslA:lacZ fusion gene is not expressed in Dd-STATa-null slugs. In parental
+cells, the aslA promoter is first activated in the funnel-shaped core cells
+located at the slug anterior; the „pstAB core‰. During culmination, the
+pstAB core cells move down, through the prespore cells, to form the inner
+part of the basal disc. As the spore mass climbs the stalk the aslA gene
+comes to be expressed in cells of the upper and lower cups; structures that
+cradle the spore head. Deletion and point mutation analyses of the promoter
+identified an AT-rich sequence that is necessary for expression in the pstAB
+core. This acts in combination with repressor regions that prevent ectopic
+aslA expression in the prestalk regions of slugs and the stalks of culminants.
+Thus this study confirms that Dd-STATa is necessary for the differentiation
+of pstAB core cells, by showing that it is needed for the activation of the
+aslA gene. It also identifies aslA promoter elements that are likely to be
+regulated, directly or indirectly, by Dd-STATa. 
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Molecular structure of the rod domain of Dictyostelium filamin
+ 
+Grzegorz M. Popowicz, Rolf Mueller, Angelika A. Noegel, Michael Schleicher,
+Robert Huber and Tad A. Holak
+ 
+ 
+J. Mol. Biol, in press
+ 
+Dictyostelium discoideum filamin (ddFLN) is a two-chain F-actin
+crosslinking protein with an N-terminal actin-binding domain and a rod
+domain constructed from six tandem repeats of a 100-residue motif that has
+an immunoglobulin (Ig) fold. We report the 2.8 Å resolution crystal
+structure of a homodimer of rod repeats 4, 5 and 6. The two chains are
+arranged in an antiparallel fashion and form an elongated element, which
+is shortened, however, compared to a fully extended, linear configuration
+because the long axis of each Ig domain is arranged at an angle to the long
+axis of the rod. Same arrangement of repeats should also be present in the
+rod domain of human FLNa, much longer than Dictyostelium FLN, which forms a
+straight and long rigid structure able to crosslink F-actin chains over
+distances of more than 1000 Å.
+
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+
+==============================================================================
+[End Dicty News, volume 23, number 9] 

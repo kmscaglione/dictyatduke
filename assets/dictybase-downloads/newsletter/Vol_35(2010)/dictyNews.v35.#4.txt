@@ -1,0 +1,91 @@
+dictyNews
+Electronic Edition
+Volume 35, number 4
+July 23, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Expression of Actin Tyr53Ala in Dictyostelium Disrupts the Cytoskeleton 
+and Inhibits Intracellular and Intercellular Chemotactic-Signaling
+
+Shi Shu,* Xiong Liu,* Paul W. Kriebel,† Myoung-Soon Hong,*, 
+Mathew P. Daniels,‡ Carole A. Parent,† and Edward D. Korn*
+From the *Laboratory of Cell Biology, National Heart, Lung, and Blood Institute, 
+†Laboratory of Cellular and Molecular Biology, Center for Cancer Research, 
+National Cancer Institute, 
+‡Electron Microscopy Core Facility, National Heart, Lung and Blood Institute, 
+NIH, Bethesda, MD 20892
+
+Running Head: Inhibition of cAMP signaling by actin Tyr53Ala mutant
+
+Address correspondence to: Edward D. Korn, Ph.D., Laboratory of Cell Biology, 
+NHLBI, NIH, Building 50, Room 2517, 9000 Rockville Pike, Bethesda, MD 20892.
+Fax: 301-402-1519; edk@nih.gov
+
+
+J. Biol. Chem., in press
+
+We showed previously that phosphorylation of Tyr-53, or its mutation to Ala, 
+inhibits actin polymerization in vitro with formation of aggregates of short 
+filaments, and that expression of Y53A-actin in Dictyostelium blocks 
+differentiation and development at the mound stage (Liu et al. (2006) 
+Proc. Natl. Acad. Sci. U.S.A. 103, 13694-13699; Liu et al. (2010) J. Biol. 
+Chem. 285, 9729-9739). We now show that expression of Y53A-actin, which 
+does not affect cell growth, phagocytosis or pinocytosis, inhibits the formation 
+of head-to-tail cell streams during cAMP-induced aggregation, although individual 
+amoebae chemotax normally. We show that expression of Y53A-actin causes a 
+50% reduction of cell-surface cAMP-receptors, and inhibits cAMP-induced 
+increases in adenylyl cyclase A activity, phosphorylation of ERK2 and actin 
+polymerization. Trafficking of vesicles containing adenylyl cyclase A to the rear 
+of the cell and secretion of the ACA-vesicles are also inhibited. The actin 
+cytoskeleton of cells expressing Y53A-actin is characterized by numerous short 
+filaments, and bundled and aggregated filaments similar to the structures formed 
+by copolymerization of purified Y53A-actin and wild-type actin in vitro. This 
+disorganized actin cytoskeleton may be responsible for the inhibition of 
+intracellular and intercellular cAMP signaling in cells expressing F-Y/A-actin. 
+
+
+
+Submitted by  Edward Korn [edk@nih.gov]
+--------------------------------------------------------------------------------
+
+
+Ca++ Chemotaxis in Dictyostelium discoideum
+
+Amanda Scherer, Spencer Kuhl, Deborah Wessels, Daniel F. Lusche, 
+Brent Raisley and David R. Soll
+
+
+Journal of Cell Science, in press
+
+Using a newly developed microfluidic chamber, it is demonstrated in vitro 
+that Ca++ functions as a chemoattractant of aggregation-competent 
+D. discoideum amoebae, that parallel spatial gradients of cAMP and 
+Ca++ are more effective than either alone and that cAMP functions as 
+a stronger chemoattractant than Ca++ . Effective Ca++ gradients are 
+extremely steep compared to effective cAMP gradients. This presents 
+a paradox, since there is no indication to date that steep Ca++ gradients 
+are generated in aggregation territories. However, given that 
+Ca++ chemotaxis is co-acquired with cAMP chemotaxis during development, 
+we speculate on the role Ca++ chemotaxis might play and the possibility 
+that steep, transient Ca++ gradients may be generated during natural 
+aggregation in the interstitial regions between cells. 
+
+
+Submitted by  Deborah Wessels [deborah-wessels@uiowa.edu]
+==============================================================
+[End dictyNews, volume 35, number 4]

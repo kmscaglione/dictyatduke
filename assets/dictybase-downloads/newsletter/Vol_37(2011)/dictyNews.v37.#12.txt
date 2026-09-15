@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 37, number 12
+November 11, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Highly effective removal of floxed Blasticidin S resistance cassettes 
+from Dictyostelium discoideum mutants by extrachromosomal 
+expression of Cre
+
+Joern Linkner, Benjamin Nordholz, Alexander Junemann, Moritz Winterhoff 
+and Jan Faix
+
+Institute for Biophysical Chemistry, Hannover Medical School, Hannover, 
+Germany
+
+
+EJCB, in press
+
+The inactivation of proteins in cells is inevitable to study their physiological 
+role in various cellular processes. In contrast to strategies to alter the 
+amount of active proteins in cells, only a gene knockout guarantees 
+complete removal of the protein of interest. For Dictyostelium discoideum 
+cells, the gene replacement construct typically consists of a Blasticidin S 
+resistance (Bsr) cassette flanked by fragments of the target gene to allow 
+insertion by homologous recombination. More advanced knockout constructs 
+additionally carry loxP sites on both sides of the Bsr cassettes for subsequent 
+removal of the selection marker by transient expression of Cre recombinase, 
+thus allowing generation of multiple knockouts using just a single selection 
+marker. However, due to its design, the available neomycin selection-based 
+Cre expression plasmid occasionally tends to integrate into the genome and 
+also yield only a moderate number of transfectants in liquid media. In some 
+cases, for instance in SCAR-null cells, it was not possible to remove the 
+Bsr cassette without stable integration of the Cre expression vector into the 
+genome. To circumvent these difficulties we designed the extrachromosomal 
+Cre-recombinase expression vector pTX-NLS-Cre. We verified the greatly 
+improved efficacy of this novel Cre-loxP approach by removal of the Bsr 
+cassette in five different cell lines including the SCAR-null mutant. By 
+consequence, this vector will be a highly valuable means for the rapid 
+generation of single or multiple mutants remaining sensitive to the most 
+reliable selection markers Blasticidin S and neomycin.
+
+
+Submitted by Jan Faix [aix.jan@mh-hannover.de]
+--------------------------------------------------------------------------------------
+
+
+Characterization of NE81, the first lamin-like nucleoskeleton protein 
+in a unicellular organism
+
+Anne Krueger, Petros Batsios, Otto Baumann, Eva Luckert, Heinz Schwarz, 
+Reimer Stick, Irene Meyer*, Ralph Graef*
+
+Dept. of Cell Biology, University of Potsdam, Karl-Liebknecht-Strasse 24-25, 
+14469 Potsdam-Golm, Germany
+
+	
+Mol. Biol., Cell in press
+
+Lamins build the nuclear lamina and are required for chromatin organization, 
+gene expression, cell cycle progression and mechanical stabilization. Despite
+these universal functions, lamins have so far been found only in metazoans. 
+We have identified a protein NE81 in Dictyostelium, whose properties justify 
+denomination as a lamin-like protein in a lower eukaryote. This is based on its 
+primary structure, subcellular localization, regulation during mitosis, and the 
+requirement of the C-terminal CaaX box as a post-translational processing 
+signal for proper localization of the protein. Our knock-out and overexpression 
+mutants revealed an important role for NE81 in nuclear integrity, chromatin 
+organization and mechanical stability of cells. All our results are in agreement 
+with a role of NE81 in formation of a nuclear lamina. This function is 
+corroborated by localization of Dictyostelium NE81 at the nuclear envelope in 
+human cells. The discovery of a lamin-like protein in a unicellular organism is 
+not only intriguing in the light of evolution, it may also provide a simple 
+experimental platform for studies of the molecular basis of laminopathies.
+
+
+Submitted by Ralph Graef [rgraef@uni-potsdam.de]
+==============================================================
+[End dictyNews, volume 37, number 12]

@@ -1,0 +1,105 @@
+dictyNews
+Electronic Edition
+Volume 31, number 14
+October 31, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Clustering of VASP actively drives processive, WH2 domain-mediated actin 
+filament elongation
+
+
+Dennis Breitsprecher (1), Antje K Kiesewetter (1), Joern Linkner (1), 
+Claus Urbanke (1), Guenter P Resch (2,3), J Victor Small (2) and Jan Faix (1)
+
+1) Institute for Biophysical Chemistry, Hannover Medical School, Hannover, 
+Germany
+2) Institute of Molecular Biotechnology, Austrian Academy of Sciences, 
+Vienna, Austria
+3) Research Institute of Molecular Pathology, Vienna, Austria
+
+
+EMBO J., in press
+
+Vasodilator-stimulated phosphoprotein (VASP) is a key regulator of dynamic 
+actin structures like filopodia and lamellipodia, but its precise function in 
+their formation is controversial. Using in vitro TIRF microscopy, we show for 
+the first time that both human and Dictyostelium VASP are directly involved 
+in accelerating filament elongation by delivering monomeric actin to the 
+growing barbed end. In solution, DdVASP markedly accelerated actin filament 
+elongation in a concentration-dependent manner but was inhibited by low 
+concentrations of capping protein (CP). In striking contrast, VASP clustered 
+on functionalized beads switched to processive filament elongation that 
+became insensitive even to very high concentrations of CP. Supplemented 
+with the in vivo analysis of VASP mutants and an EM structure of the protein, 
+we propose a mechanism by which membrane-associated VASP oligomers 
+use their WH2 domains to effect both the tethering of actin filaments and their 
+processive elongation in sites of active actin assembly.
+
+
+Submitted by: Jan Faix [faix@bpc.mh-hannover.de]
+--------------------------------------------------------------------------------
+
+
+Segregate or cooperate- a study of the interaction between two species 
+of Dictyostelium
+
+Chandra N Jack, Julia G Ridgeway, Natasha J Mehdiabadi, Emily I Jones, 
+Tracy A Edwards, David C Queller and Joan E Strassmann 
+
+
+BMC Evolutionary Biology 2008, 8:293doi:10.1186/1471-2148-8-293
+
+Background
+A major challenge for evolutionary biology is explaining altruism, 
+particularly when it involves death of one party and occurs across species. 
+Chimeric fruiting bodies of D. discoideum and D. purpureum develop from 
+formerly independent amoebae, and some die to help others. Here we 
+examine co-aggregation between D. discoideum and D. purpureum, 
+determine its frequency, which party benefits, and the extent of fair play 
+in contribution to the altruistic caste.
+
+Results
+We mixed cells from both species in equal proportions, and then we analyzed 
+193 individual fruiting bodies, which always had either a D. discoideum or 
+D. purpureum morphology (D. discoideum- 96, D. purpureum- 97). Fifty 
+percent of the fruiting bodies that looked like D. discoideum and 23% of 
+the fruiting bodies that looked like D. purpureum were chimeric, though 
+the majority of cells in any given fruiting body belonged to one species 
+(D. discoideum fruiting bodies- 0.72+/-0.05, D. purpureum fruiting bodies- 
+0.71+/-0.06). Clearly, there is species level recognition occurring that 
+keeps the cells mostly separate. The number of fruiting bodies with the 
+D. discoideum morphology was 486+/-61 in the mix treatment compared to 
+225+/- 32 fruiting bodies when D. discoideum was alone. However, the number 
+of D. discoideum spores did not significantly decrease from 2.75e7 +/-1.29e7 
+spores in the controls to 2.06e7 +/-8.33e6 spores in the mix treatments. 
+D. purpureum fruiting body and spore production decreased from 719+/- 111 
+fruiting bodies and 5.81e7+/-1.26e7 spores to 394+/-111 fruiting bodies 
+and 9.75e6 +/-2.25e6 spores in mixes compared to when it was grown alone.
+
+Conclusions
+Cooperating amoebae are able to make larger fruiting bodies, which is 
+advantageous for migration and dispersal. However, when both species are 
+present D. discoideum contributes more than its fair share to the spores 
+but both suffer a cost in producing fewer spores per fruiting body. 
+
+
+Submitted by: Chandra Jack [chanj@rice.edu]
+==============================================================
+[End dictyNews, volume 31, number 14]

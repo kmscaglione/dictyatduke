@@ -1,0 +1,345 @@
+dictyNews
+Electronic Edition
+Volume 39, number 16
+May 31, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Aberrant spindle dynamics and cytokinesis in Dictyostelium 
+discoideum cells that lack glycogen synthase kinase 3
+
+Adrian J. Harwood, Josephine E. Forde-Thomas, Hazel Williams, 
+Matthias Samereier and Annette Mueller-Taubenberger
+
+
+European Journal of Cell Biology, in press
+
+Eukaryotic cell division requires the co-ordinated assembly and 
+disassembly of the mitotic spindle, accurate chromosome 
+segregation and temporal control of cytokinesis to generate two 
+daughter cells. While the absolute details of these processes 
+differ between organisms, there are evolutionarily conserved core 
+components common to all eukaryotic cells, whose identification 
+will reveal the key processes that control cell division. Glycogen 
+synthase kinase 3 (GSK-3) is a major protein kinase found 
+throughout the eukaryotes and regulates many processes, 
+including cell differentiation, growth, motility and apoptosis. In 
+animals, GSK-3 associates with mitotic spindles and its inhibition 
+causes mis-regulation of chromosome segregation. Two 
+suppressor screens in yeast point to a more general effect of 
+GSK-3 on cell division, however the direct role of GSK-3 in 
+control of mitosis has not been explored outside the animal 
+kingdom. Here we report that the Dictyostelium discoideum 
+GSK-3 orthologue, GskA, associates with the mitotic spindle 
+during cell division, as seen for its mammalian counterparts. 
+Dictyostelium possesses only a single GSK-3 gene that can be 
+deleted to eliminate all GSK-3 activity. We found that gskA-null 
+mutants failed to elongate their mitotic spindle and were unable 
+to divide in shaking culture, but have no chromosome segregation 
+defect. These results suggest further conservation for the role of 
+GSK-3 in the regulation of spindle dynamics during mitosis, but 
+also reveal differences in the mechanisms ensuring accurate 
+chromosome segregation.
+
+
+Submitted by Adrian Harwood [harwoodaj@cf.ac.uk]
+---------------------------------------------------------------------------
+
+
+The use of streptavidin conjugates as immunoblot loading controls 
+& mitochondrial markers for use with Dictyostelium discoideum
+
+Andrew J. Davidson*, Jason S. King*1 and Robert H. Insall
+
+Beatson Institute for Cancer Research, Garscube Estate, Bearsden, 
+Glasgow, UK. G61 1BD
+*These authors contributed equally to this work
+1Corresponding author
+
+
+BioTechniques, in press
+
+The loading controls used from quantitative immunoblotting in 
+mammalian cells are not appropriate for use with Dictyostelium 
+discoideum. Actin, for example changes greatly during development, 
+and other antibodies are not commercially available. Here we 
+demonstrate the use of labeled streptavidin to detect the biotinylated, 
+mitochondrial MCCC1, providing a robust and convenient tool for the 
+quantitative normalization of Dictyostelium western blots as well as 
+labeling mitochondria in fixed cells.
+
+
+Submitted by Jason King [j.king@beatson.gla.ac.uk]
+---------------------------------------------------------------------------
+
+
+Dictyostelids:
+Evolution, genomics and cell biology
+
+Editors: Maria Romeralo, Sandra Baldauf, Ricardo Escalante
+Soon available at:
+http://www.springer.com/life+sciences/evolutionary+%26+developmental+biology/book/978-3-642-38486-8
+
+Chapter 1. Dictyostelium discoideum as a model in biomedical research
+Sandra Munoz-Braceras, Ana Mesquita and Ricardo Escalante
+
+The simple eukaryote Dictyostelium discoideum has been traditionally 
+used to understand basic principles of cell and developmental biology 
+and now has also become a useful system in biomedical research. 
+What are the similarities and differences between D. discoideum and 
+other simple microbial models such as Saccharomyces cerevisiae? 
+Which aspects are more advantageous to address in D. discoideum? 
+Are there any processes or specific proteins present in D. discoideum 
+that are difficult or impossible to study in other systems? Does it make 
+sense to use such a simple organism in biomedicine? These and other 
+questions will be addressed in this chapter, together with some specific 
+examples in which D. discoideum has proved its potential to model 
+human disease. 
+
+
+Chapter 2. Genome analysis of social amoebae
+Gernot Gloeckner
+
+Genomics is now an indispensible part of the biological sciences. 
+Today a species description without genome information is incomplete. 
+This chapter describes the current knowledge on the genome of the 
+model species D. discoideum. A comparison with other social amoebae 
+genomes covering the whole breadth of this branch of evolution carves 
+out driving forces of speciation and the common toolkit of all social 
+amoebae. The vast evolutionary distance within this branch makes 
+ortholog detection difficult. While the coding capacity of all social 
+amoebae is largely conserved, species specific gene family expansions 
+of proteins for environmental sensing, signaling, and secondary 
+metabolites provide for diversification. The sequences of the functional 
+chromosomal elements (telomeres and centromeres) are not conserved, 
+rather they seem to have underwent severe modifications. Nucleosome 
+patterns link the social amoebae to other, more sophisti-cated 
+multicellular systems. Comparative curated databases make this wealth 
+of genome information accessible and play an important role for the 
+dissemination of the knowledge on this evolutionary branch. 
+
+
+Chapter 3. Signalling during Dictyostelium development
+Cornelis J Weijer 
+
+Dictyostelium has become an important model system to study the 
+molecular details of the signalling pathways controlling gradient 
+sensing and cell polarisation that control localised activation of the 
+actin myosin cytoskeleton responsible for evolutionary highly 
+conserved mechanisms of chemotactic cell movement up chemo-
+attractant gradients. 3'-5' cyclic AMP is the chemo-attractant that 
+controls the chemotactic cell movements that result in aggregation 
+of up to several hundred thousand cells, slug formation, migration 
+and fruiting body formation. The coordination of these complex cell 
+movements require long range cAMP mediated cell-cell signalling 
+based on periodic initiation of cAMP signals in the aggregation 
+centre and slug tip and relay by surrounding cells, resulting in 
+highly dynamic patterns of cAMP wave propagation. Model 
+calculations have shown that the dynamic feedbacks between 
+autocatalytic cell-cell cAMP signalling and cAMP mediated 
+collective chemotactic cell movement result in emergent properties 
+that readily explain multi cellular morphogenesis. cAMP signalling 
+not only controls cell movement but also acts as a key morphogen 
+to control cell differentiation, which in turn affects celltype specific 
+cell-cell signalling and cell movement, adding an additional layer 
+of feedback. To fully understand the multicellular morphogenesis 
+of this organism at the level of cell behaviours it will be needed to 
+integrate the detailed celltype proportioning mechanisms in models 
+describing cell-cell signalling and movement. Dictyostelium is likely 
+to be the first eukaryotic organism where it will be possible to 
+quantitatively understand how multicellular development and 
+morphogenesis arise as emergent properties from a few relatively 
+simple collective cell behaviours.
+
+
+Chapter 4. The chemotactic compass
+Dawit Jowhar and Chris Janetopoulos
+
+Cells have an amazing ability to sense very shallow gradients of 
+chemoattractants and move directionally.  This fundamental 
+process is critical for development and numerous disease states. 
+Dictyostelium has emerged as one of the best understood model 
+systems for elucidating the complex signaling pathways that drive 
+chemotaxis. This review focuses on the signaling mechanisms 
+regulating directed migration and discusses the role of polarity 
+and development on our current understanding of this process.  
+We highlight new findings using a second chemoattractant, folic 
+acid and suggest that this chemical cue should be used when a 
+developmental defect is suspected. We also speculate on recent 
+studies, which suggest that researchers should use our new 
+understanding of the temporal and spatial relationships of signaling 
+and cytoskeletal proteins to guide future experiments.
+
+
+Chapter 5. Transcriptional Regulators - Dynamic Drivers of 
+Multicellular Formation, Cell Differentiation and Development
+Rafael Rosengarten, Balaji Santhanam, and Mariko Katoh-Kurasawa 
+
+In this chapter we examine what is known about the roles of individual 
+transcription regulators in mediating development in Dictyostelium 
+discoideum. We present a broad review of the field, covering genetic, 
+biochemical, molecular and bioinformatic experiments that illuminate 
+transcriptional regulation in the context of developmental events. We 
+highlight evidence for evolutionary conservation where it exists, and 
+have sought to underscore the power of RNA sequencing as a tool 
+for comparative studies and global analysis. We believe that as next 
+generation 'omics approaches are more widely applied, we may paint 
+a more complete picture of the gene regulatory networks governing 
+dictyostelid development, and gain insight into general evolutionary 
+processes that shape developmental biology.
+
+
+Chapter 6. Non-coding RNAs in Dictyostelium discoideum and other 
+dictyostelid social amoebae
+Lotta Avesson, Andrea Hinas, and Fredrik Soederbom
+
+Non-coding (nc)RNAs have recently emerged as ubiquitous and 
+important regulators of a multitude of different processes, such as 
+stress response, cell differentiation, infection, and cell death. The 
+means by which ncRNAs affect these processes are numerous and 
+diverse, ranging from protein localization to regulation of gene 
+expression. ncRNA-mediated gene expression control has been the 
+subject of especially intense study in recent years and shown to occur 
+through several mechanisms. Different ncRNAs can regulate gene 
+expression transcriptionally by inducing modification of DNA or 
+chromatin, or post-transcriptionally by directing cleavage, degradation, 
+or translational inhibition of messenger (m)RNAs. ncRNAs come in a 
+broad spectrum of sizes, from ~20 nucleotides (nt) to several thousand 
+nt, and function in complexes with various proteins that usually exert a 
+catalytic function while the RNAs act as guides. In Dictyostelia, we 
+have only started to understand the extent of ncRNA regulation, 
+mostly from studies in Dictyostelium discoideum, which is the focus 
+of this chapter.
+
+Chapter 7. Sex in Dictyostelia
+Gareth Bloomfield
+Dictyostelid social amoebae possess both sexual and parasexual 
+cycles. In the former, diploid zygotes attract surrounding haploids 
+and then cannibalise them, forming large immobile structures known 
+as macrocysts. In the parasexual cycle, amoebae of the same sex 
+fuse to form diploids that can continue to grow and multiply. Species 
+with more than two sexes (or mating types) are not unusual among 
+dictyostelia, and recently the genetic basis for sex determination was 
+described in the model species Dictyostelium discodeum. Macrocysts 
+have so far only been observed in a minority of the known species, 
+and their ecological context and significance is still not understood. 
+Important questions regarding altruism, genetics, and the basic cell 
+biology of both the sexual and parasexual cycles remain to be 
+addressed experimentally, so there remains tremendous scope for 
+future research. 
+
+
+Chapter 8. A global overview of Dictyostelid Ecology with special 
+emphasis in North American forest
+James C. Cavender
+
+Development in 1965 of a quantitative method for dictyostelid 
+isolation from soil samples, made possible ecological studies based 
+on frequency and density of occurrence. Information has subsequently 
+been obtained on a number of aspects of dictyostelid ecology. I 
+discuss some of them along this chapter, especially those aspects 
+studied after Raper's publication in 1984 of his famous book 
+'The Dictyostelids'. These include dispersal, relative abundance, 
+optimum conditions for maximum diversity, comparison of temperate 
+and tropical populations, ecological individuality of species (especially 
+Dictyostelium discoideum), possible decline in species numbers and 
+global distribution of Dictyostelia.
+
+
+Chapter 9. Evolution of Dictyostelid Social Amoebas inferred from 
+the use of molecular tools
+Maria Romeralo and Omar Fiz.
+
+Dictyostelid social amoebas are eukaryotic microbes distributed 
+all around the globe. As with many other protist groups, one 
+fundamental and revolutionary event in the study of dictyostelid 
+(Amoebozoa) systematics has been the use of molecular tools. 
+This has radically changed our understanding of evolution across 
+the group and has greatly expanded the potential use of dictyostelids 
+as model organisms for a wide range of areas including biomedicine, 
+development, evolutionary biology and molecular ecology. This is 
+further supported by genome sequencing that has been carried out 
+for at least one species in each of the major groups. Phylogenomic 
+data is also essential to pinpointing the origin of diversification of 
+dictyostelids in terrestrial ecosystems, which is basic for 
+understanding the evolutionary history across eukaryotic amoeboid 
+lineages.
+
+
+Chapter 10. The Evolution of the Cellular Slime Molds
+John Tyler Bonner
+
+The cellular slime molds have existed for a very long time; they 
+have an ancient history.  It is surprising that the early morphological 
+species have not been supplanted and gone extinct, as is the case 
+for larger organisms; a sizable number of ancient cellular slime 
+molds still exist today - they are living fossils.  This unusual 
+phenomenon can be explained if one assumes that their morphology 
+is only weakly affected by natural selection leading to a modest 
+variation of morphology among the different species.  I argue that 
+the reason for their apparent relative immunity to the effects of natural 
+selection can be explained by their small size; this is a general rule 
+among all microorganisms.
+
+
+Chapter 11. Social selection in the cellular slime moulds
+Vidyanand Nanjundiah and Santosh Sathe
+
+Starvation triggers a complex series of intercellular interactions in 
+the cellular slime mould amoebae. As a result the amoebae aggregate, 
+form a coherent multicellular structure with division of labour and, 
+eventually, differentiate into a fruiting body made up of a stalk and a 
+spore mass. Whether an amoeba dies and forms part of the stalk or 
+becomes a stress-resistant spore depends both on pre-existing biases 
+and on post-starvation signalling between amoebae. Mutual 
+communication permits one amoeba to influence the phenotype, and 
+therefore affect the fitness, of another. The implication is that social 
+selection has been a major factor in the evolution of cooperative
+ behaviour in these amoebae.
+ 
+
+Chapter 12. The non-dictyostelid sorocarpic amoebae
+Matthew W. Brown, Jeffrey D. Silberman
+
+The social life cycle made famous through research on the 
+dictyostelids is not an evolutionary innovation that is solely unique 
+to the dictyostelids. Since 1873 other protistans with a similar life 
+styles have been recognized. Historically, they have been allied 
+under various taxonomic classifications over the last 140 years; 
+however, the recent influx of molecular data has proven that 
+analogous methods through a social means to form a spore 
+dispersal structure have independently arose in seven different 
+lineages of eukaryotic organisms. Here we provide a brief 
+introduction to each of the amoeboid organisms that display this 
+behavior focusing on their life histories and the history of the 
+research on each taxon. These organisms represent one of the 
+most striking examples of ultimate convergent evolution across 
+the greatest possible evolutionary distances in eukaryotic 
+evolution. Research into the molecular and developmental 
+biology that underlies the evolution of a social life cycle and 
+formation of a fruiting body is still in its infancy when compared 
+to the dictyostelids. However, the genomes from several non-
+dictyostelid sorocarpic amoebae are soon becoming available, 
+and a new age of research into these fascinating organisms is 
+beginning to gain traction. 
+
+ 
+Submitted by Ricardo Escalante [rescalante@iib.uam.es]
+==============================================================
+[End dictyNews, volume 39, number 16]

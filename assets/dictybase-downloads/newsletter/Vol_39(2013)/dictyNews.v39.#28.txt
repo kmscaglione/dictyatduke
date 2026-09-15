@@ -1,0 +1,100 @@
+dictyNews
+Electronic Edition
+Volume 39, number 28
+October 4, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+The search for better epilepsy treatments: from slime mould to 
+coconuts
+
+Matthew C. Walker*1 and Robin S.B. Williams†1
+
+* Department of Clinical and Experimental Epilepsy, Institute of 
+Neurology, University College London, London WC1N 3BG, U.K.
+
+† Centre for Biomedical Sciences, School of Biological Sciences, 
+Royal Holloway University of London, Egham TW20 0EX, U.K.
+
+1 joint corresponding authors
+
+
+Biochemical Society Transactions (Review), In Press 
+
+Drug-resistant epilepsy has remained a problem since the inception 
+of antiepileptic drug development, despite the large variety of 
+antiepileptic drugs available today. Moreover, the mechanism-of-
+action of these drugs is often unknown. This is due to the widespread 
+screening of compounds through animal models. We have taken a 
+different approach to antiepileptic drug discovery and have identified 
+a biochemical pathway in Dictyostelium discoideum (a ‘slime mould’) 
+that may relate to the mechanism-of-action of valproate, one of the 
+most commonly used and effective antiepileptic drugs. Through 
+screening in this pathway, we have been able to identify a whole host 
+of fatty acids and fatty-acid-derivatives with potential antiepileptic 
+activity; this was then confirmed in in vitro and in vivo mammalian 
+seizure models. Some of these compounds are more potent than 
+valproate and potentially lack many of the major side effects of 
+valproate (including birth defects and liver toxicity). In addition, one 
+of the compounds that we have identified is a major constituent of 
+the ketogenic diet, strongly arguing that it may be the fatty acids and 
+not the ketogenesis that are mediating the effect of this diet.
+
+
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+---------------------------------------------------------------------------
+
+
+WASH-driven actin polymerization is required for efficient 
+mycobacterial phagosome maturation arrest 
+
+Margot Kolonko1, Anna Christina Geffken2, Tanja Blumer1,3, 
+Kristine Hagens2, Ulrich Emil Schaible2 and Monica Hagedorn1
+
+1Bernhard Nocht Institute for Tropical Medicine, 
+Bernhard-Nocht-Str. 74, 20359 Hamburg, Germany
+2Research Center Borstel, Priority Program Infections, 
+Parkallee 1-40, 23458 Borstel, Germany
+3current address: Dept. of Biomedicine, University of Basel, 
+Hebelstr. 20, 4031 Basel, Switzerland
+
+
+Cellular Microbiology, in press
+
+Pathogenic mycobacteria survive in phagocytic host cells primarily as 
+a result of their ability to prevent fusion of their vacuole with lysosomes, 
+thereby avoiding a bactericidal environment. The molecular mechanisms 
+to establish and maintain this replication compartment are not well 
+understood. By combining molecular and microscopical approaches we 
+show here that after phagocytosis the actin nucleation-promoting factor 
+WASH associates and generates F-actin on the mycobacterial vacuole. 
+Disruption of WASH or depolymerization of F-actin leads to the 
+accumulation of the proton-pumping V-ATPase around the mycobacterial 
+vacuole, its acidification and reduces the viability of intracellular 
+mycobacteria. This effect is observed for M. marinum in the model 
+phagocyte Dictyostelium but also for M. marinum and M. tuberculosis in 
+mammalian phagocytes. This demonstrates an evolutionarily conserved 
+mechanism by which pathogenic mycobacteria subvert the actin-
+polymerization activity of WASH to prevent phagosome acidification 
+and maturation, as a prerequisite to generate and maintain a replicative 
+niche. 
+
+Submitted by Monica Hagedorn [hagedorn@bnitm.de]
+==============================================================
+[End dictyNews, volume 39, number 28]

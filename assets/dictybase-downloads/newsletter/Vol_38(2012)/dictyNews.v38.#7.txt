@@ -1,0 +1,118 @@
+dictyNews
+Electronic Edition
+Volume 38, number 7
+March 2, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Ca2+ signaling regulates ecmB expression, cell differentiation and 
+slug regeneration in Dictyostelium
+
+Yekaterina Poloz and Danton H. O'Day
+
+
+Differentiation, in press
+
+Ca2+ regulates cell differentiation and morphogenesis in a diversity of 
+organisms and dysregulation of Ca2+ signal transduction pathways leads 
+to many cellular pathologies. In Dictyostelium Ca2+ induces ecmB 
+expression and stalk cell differentiation in vitro. Here we have analyzed 
+the pattern of ecmB expression in intact and bisected slugs and the 
+effect of agents that affect Ca2+ levels or antagonize calmodulin (CaM) 
+on this expression pattern. We have shown that Ca2+ and CaM regulate 
+ecmB expression and pstAB/pstB cell differentiation in vivo. Agents that 
+increase intracellular Ca2+ levels increased ecmB expression and/or 
+pstAB and pstB cell differentiation, while agents that decrease intracellular 
+Ca2+ or antagonize CaM decreased it. In isolated slug tips agents that 
+affect Ca2+ levels and antagonize CaM had differential effect on ecmB 
+expression and cell differentiation in the anterior versus posterior zones. 
+Agents that increase intracellular Ca2+ levels increased the number of 
+ecmB expressing cells in the anterior region of slugs, while agents that 
+decrease intracellular Ca2+ levels or antagonize CaM activity increased 
+the number of ecmB expressing cells in the posterior. We have also 
+demonstrated that agents that affect Ca2+ levels or antagonize CaM affect 
+cells motility and regeneration of shape in isolated slug tips and backs and 
+regeneration of tips in isolated slug backs. To our knowledge, this is the 
+first study detailing the pattern of ecmB expression in regenerating slugs 
+as well as the role of Ca2+ and CaM in the regeneration process and 
+ecmB expression. 
+
+
+Submitted by Danton H. O'Day [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------------
+
+A mechanosensory system governs myosin II accumulation in dividing cells
+
+Kee YS, Ren Y, Dorfman D, Iijima M, Firtel RA, Iglesias PA, Robinson DN 
+
+
+Mol. Biol. Cell 2012, in press. 
+
+The mitotic spindle is generally considered the initiator of furrow ingression. 
+However, recent studies suggest that furrows can form without spindles, 
+particularly during asymmetric cell division. In Dictyostelium, the 
+mechanoenzyme myosin II and the actin crosslinker cortexillin I form a 
+mechanosensor that responds to mechanical stress, which could account 
+for spindle-independent contractile protein recruitment. Here, we show that 
+the regulatory and contractility network, composed of myosin II, cortexillin I, 
+IQGAP2, kinesin-6 (kif12) and INCENP, is a mechanical stress-responsive 
+system. Myosin II and cortexillin I form the core mechanosensor, and 
+mechanotransduction is mediated by IQGAP2 to kif12 and INCENP. 
+Additionally, IQGAP2 is antagonized by IQGAP1 to modulate the 
+mechanoresponsiveness of the system, suggesting a possible mechanism 
+for discriminating between mechanical and biochemical inputs.  Furthermore, 
+IQGAP2 is important for maintaining spindle morphology and kif12 and 
+myosin II cleavage furrow recruitment. Cortexillin II is not directly involved in 
+myosin II mechanosensitive accumulation, but without cortexillin I, 
+cortexillin II’s role in membrane-cortex attachment is revealed. Finally, the 
+mitotic spindle is dispensable for the system. Overall, this mechanosensory 
+system is structured like a control system characterized by mechanochemical 
+feedback loops that regulate myosin II localization at sites of mechanical 
+stress and the cleavage furrow.
+
+
+Submitted by Douglas Robinson [dnr@jhmi.edu]
+--------------------------------------------------------------------------------------
+
+
+Deconvolution of the cellular force-generating subsystems that govern 
+cytokinesis furrow ingression
+
+Poirier C, Ng WP, Robinson DN, Iglesias PA.
+
+
+PLoS Comp. Biol, in press.
+
+Abstract: Cytokinesis occurs through the coordinated action of several 
+biochemically-mediated stresses acting on the cytoskeleton. Here, we 
+develop a computational model of cellularmechanics, and using a large 
+number of experimentally measured biophysical parameters, we simulate 
+cell division under a number of different scenarios. We demonstrate that 
+traction-mediated protrusive forces or contractile forces due to myosin II 
+are sufficient to initiate furrow ingression. Furthermore, we show that 
+passive forces due to the cell’s cortical tension and surface curvature 
+allow the furrow to complete ingression. We compare quantitatively the 
+furrow thinning trajectories obtained from simulation with those observed 
+experimentally in both wild-type and myosin II null Dictyostelium cells. 
+Our simulations highlight the relative contributions of different 
+biomechanical subsystems to cell shape progression during cell division.
+
+
+Submitted by Douglas Robinson [dnr@jhmi.edu]
+==============================================================
+[End dictyNews, volume 38, number 7]

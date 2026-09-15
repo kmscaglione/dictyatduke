@@ -1,0 +1,74 @@
+dictyNews
+Electronic Edition
+Volume 28, number 18
+June 22, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+Dihydrodictyopyrone A and C: New members of dictyopyrone family 
+isolated from Dictyostelium cellular slime molds.
+
+
+Kikuchi H*, Nakamura K, Kubohara Y, Gokan N, Hosaka K, Maeda Y, & Oshima Y*. 
+*Corresponding authors
+Graduate School of Pharmaceutical Sciences Tohoku University, Japan
+
+Tetrahedron Lett. In press.
+
+Abstract
+We have explored the diversity of secondary metabolites produced by 
+cellular slime molds to evaluate if they are valuable resources for 
+biologically potential substances.   From the methanol extract of 
+fruiting bodies of Dictyostelium firmibasis, we obtained new 
+alpha-pyranoids, dihydrodictyopyrone A (1) and C (2).   Compounds 
+1 and 2 are new members of the dictyopyrone family, which are 
+characteristic secondary metabolites of various species of 
+Dictyostelium cellular slime molds. 
+
+Submitted by:  Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+--------------------------------------------------------------------------------
+An information-theoretic characterization of the optimal gradient sensing response 
+of cells
+
+
+Burton W. Andrews and Pablo A. Iglesias
+Department of Electrical and Computer Engineering
+The Johns Hopkins University, Baltimore, MD 21218
+
+PLoS Computational Biology, Accepted
+
+Abstract
+Many cellular systems rely on the ability to interpret spatial heterogeneities 
+in chemoattractant concentration to direct cell migration. The accuracy of 
+this process is limited by stochastic fluctuations in the concentration of 
+the external signal and in the internal signaling components. Here we use 
+information theory to determine the optimal scheme to detect the location 
+of an external chemoattractant source in the presence of noise. We compute 
+the minimum amount of mutual information needed between the chemoattractant 
+gradient and the internal signal to achieve a prespecified chemotactic accuracy. 
+We show that more accurate chemotaxis requires greater mutual information. 
+We also demonstrate that a priori information can improve chemotaxis efficiency. 
+We compare the optimal signaling schemes to existing experimental measurements 
+and models of eukaryotic gradient sensing. Remarkably, there is good quantitative 
+agreement between the optimal response when no a priori assumption is made about 
+the location of the existing source, and the observed experimental response of 
+unpolarized D. discoideum cells. In contrast, the measured response of polarized 
+D. discoideum cells matches closely the optimal scheme assuming prior knowledge 
+of the external gradient - for example, through prolonged chemotaxis in 
+a given direction. Our results demonstrate that different observed classes of 
+responses in cells (polarized and unpolarized) are optimal under varying 
+information assumptions.
+
+Submitted by: [Pablo Iglesias <pi@jhu.edu]
+==============================================================
+[End dictyNews, volume 28, number 18]

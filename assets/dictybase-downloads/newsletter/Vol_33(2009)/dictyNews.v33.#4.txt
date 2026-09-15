@@ -1,0 +1,140 @@
+dictyNews
+Electronic Edition
+Volume 33, number 4
+July 31, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+A Dictyostelium chalone requires G proteins to regulate proliferation 
+
+Deenadayalan Bakthavatsalam, Jonathan M. Choe, Nana E. Hanson, 
+and Richard H. Gomer
+
+Department of Biochemistry and Cell Biology, Rice University, Houston, TX
+
+
+BMC Biology, in press
+
+Several studies have shown that organ size, and the proliferation of tumor 
+metastases, may be regulated by negative feedback loops in which 
+autocrine secreted factors called chalones inhibit proliferation.  However, 
+very little is known about chalones, and how cells sense them.  We 
+previously identified two secreted proteins, AprA and CfaD, which act as 
+chalones in Dictyostelium.  Cells lacking AprA or CfaD proliferate faster 
+than wild type cells, and adding recombinant AprA or CfaD to cells slows 
+their proliferation.
+
+We show here that cells lacking the G protein components Galpha8, 
+Galpha9, and Gbeta proliferate faster than wild-type cells despite 
+secreting normal or high levels of AprA and CfaD.  Compared to wild-type 
+cells, the proliferation of galpha8-, galpha9- and gbeta- cells are only 
+weakly inhibited by recombinant AprA (rAprA).  Like AprA and CfaD, 
+Galpha8 and Gbeta inhibit cell proliferation but not cell growth (the rate 
+of increase in mass and protein per nucleus), whereas Galpha9 inhibits 
+both proliferation and growth.  galpha8- cells show normal cell-surface 
+binding of rAprA, whereas galpha9- and gbeta- cells have fewer cell-surface 
+rAprA binding sites, suggesting that Galpha9 and Gbeta regulate the 
+synthesis or processing of the AprA receptor.  Like other ligands that 
+activate G proteins, rAprA induces the binding of [3H]GTP to membranes, 
+and GTPgammaS inhibits the binding of rAprA to membranes. Both AprA-induced 
+[3H]GTP binding and the GTPgammaS inhibition of rAprA binding require 
+Galpha8 and Gbeta but not Galpha9.  Like aprA- cells, galpha8- cells have 
+reduced spore viability.  
+
+This study shows that Galpha8 and Gbeta are part of the signal 
+transduction pathway used by AprA to inhibit proliferation but not growth 
+in Dictyostelium, whereas Galpha9 is part of a different pathway that 
+regulates both proliferation and growth, and that a chalone signal 
+transduction pathway uses G proteins.
+
+
+
+Submitted by Richard Gomer [richard@rice.edu]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium discoideum CenB Is a Bona Fide Centrin Essential for
+Nuclear Architecture and Centrosome Stability 
+
+Sebastian Mana-Capelli,1 Ralph Gräf,2 and Denis A. Larochelle1*
+
+Department of Biology, Clark University, 950 Main Street, Worcester, 
+Massachusetts 01610,1 
+Institut für Biochemie und Biologie, Zellbiologie, Universität Potsdam, 
+Karl-Liebknecht-Strasse 24-25, Haus 26, 14476 Potsdam-Golm, Germany2
+
+
+Eukaryotic Cell, in press
+
+Centrins are a family of proteins within the calcium-binding EF-hand 
+superfamily. In addition to their archetypical role at the MTOC, centrins 
+have acquired multiple functionalities throughout the course of evolution. 
+For example, centrins have been linked to different nuclear activities, 
+including mRNA export and DNA repair. Dictyostelium discoideum centrin B 
+is a divergent member of the centrin family. At the amino acid level, 
+DdCenB shows 51% identity with its closest relative and only paralog, 
+DdCenA. Phylogenetic analysis revealed that DdCenB and DdCenA form a 
+well-supported monophyletic and divergent group within the centrin 
+family of proteins. Interestingly, fluorescently tagged versions of 
+DdCenB were not found at the centrosome (in whole cells or in isolated 
+centrosomes). Instead, DdCenB localized to the nuclei of interphase cells. 
+This localization disappeared as the cells entered mitosis, although 
+Dictyostelium cells undergo a closed mitosis in which the nuclear envelope 
+(NE) does not break down. DdCenB knockout cells exhibited aberrant nuclear 
+architecture, characterized by enlarged and deformed nuclei and loss of 
+proper centrosome-nucleus anchoring (observed as NE protrusions). At the 
+centrosome, loss of DdCenB resulted in defects in the organization and 
+morphology of the MTOC and supernumerary centrosomes and centrosome-related 
+bodies. The multiple defects that the loss of DdCenB generated at the 
+centrosome can be explained by its atypical division cycle, transitioning 
+into the NE as it divides at mitosis. On the basis of these findings, we 
+propose that DdCenB is required at interphase to maintain proper nuclear 
+architecture, and before delocalizing from the nucleus, DdCenB is part of 
+the centrosome duplication machinery.
+
+
+Submitted by Denis Larochelle [dlarochelle@clarku.edu]
+--------------------------------------------------------------------------------
+
+
+Dynamic localization of G proteins in Dictyostelium discoideum
+
+Carrie A. Elzie, Jennifer Colby, Morgan A. Sammons, and Chris Janetopoulos
+
+
+Journal of Cell Science,in press  
+
+Extracellular stimuli exert their effects on eukaryotic cells via 
+serpentine G-protein-coupled receptors and mediate a vast number of 
+physiological responses. Activated receptors stimulate heterotrimeric 
+G-proteins, consisting of three subunits, alpha, beta and gamma. In 
+Dictyostelium discoideum, cAMP binds to the cAMP receptor cAR1, which 
+is coupled to the heterotrimer containing the G{alpha}2 subunit. These 
+studies provide in vivo evidence as to how receptors influence the 
+localization of the G-protein complex prior to and after ligand binding. 
+Previous work has shown that the state of the heterotrimer could be 
+monitored by changes in fluorescence (or Förster) resonance energy 
+transfer (FRET) between the alpha2- and beta-subunits of D. discoideum. 
+We now report the kinetics of G-protein activation as a loss of FRET 
+prior to and after cAMP addition by using total internal reflection 
+fluorescence microscopy (TIRFM). We also performed photobleaching 
+experiments to measure G-protein recovery times. Our data show that 
+inactive and active G-proteins cycle between the cytosol and plasma 
+membrane. These data suggest that cAR1 activation slows the membrane 
+dissociation ('off') rate of the alpha2 subunit, while simultaneously 
+promoting beta/gamma-subunit dissociation.
+
+Submitted by: Chris Janetopoulos [c.janetopoulos@Vanderbilt.Edu]
+==============================================================
+[End dictyNews, volume 33, number 4]

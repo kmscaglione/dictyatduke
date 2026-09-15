@@ -1,0 +1,107 @@
+dictyNews
+Electronic Edition
+Volume 40, number 7
+February 28, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Properties of a non-bioactive fluorescent derivative of differentiation-
+inducing factor-3, an anti-tumor agent found in Dictyostelium discoideum
+
+Yuzuru Kubohara 1, Haruhisa Kikuchi 2, Yusuke Matsuo 2, Yoshiteru 
+Oshima 2 and Yoshimi Homma 3
+
+1 Department of Molecular and Cellular Biology, Institute for Molecular 
+and Cellular Regulation, Gunma University, Maebashi 371-8512, Japan
+2 Laboratory of Natural Product Chemistry, Tohoku University Graduate 
+School of Pharmaceutical Sciences, Sendai 980-8578, Japan
+3 Department of Biomolecular Science, Institute of Biomedical Sciences,
+ Fukushima Medical University School of Medicine, Fukushima 
+  960-1295, Japan
+
+
+Biology Open, in press
+
+Differentiation-inducing factor-3 (DIF-3), found in the cellular slime mold 
+Dictyostelium discoideum, and its derivatives such as butoxy-DIF-3 
+(Bu-DIF-3) are potent anti-tumor agents. To investigate the activity of DIF-
+like molecules in tumor cells, we recently synthesized a green fluorescent 
+DIF-3 derivative, BODIPY-DIF-3G, and analyzed its bioactivity and cellular 
+localization. In this study, we synthesized a red (orange) fluorescent DIF-3 
+derivative, BODIPY-DIF-3R, and compared the cellular localization and 
+bioactivities of the two BODIPY-DIF-3s in HeLa human cervical cancer 
+cells. Both fluorescent compounds penetrated the extracellular membrane 
+within 0.5 h and localized mainly to the mitochondria. In formalin-fixed cells, 
+the two BODIPY-DIF-3s also localized to the mitochondria, indicating that 
+the BODIPY-DIF-3s were incorporated into mitochondria independently of 
+the mitochondrial membrane potential. After treatment for 3 days, BODIPY-
+DIF-3G, but not BODIPY-DIF-3R, induced mitochondrial swelling and 
+suppressed cell proliferation. Interestingly, the swollen mitochondria were 
+stainable with BODIPY-DIF-3G but not with BODIPY-DIF-3R. When added 
+to isolated mitochondria in vitro, BOIDPY-DIF-3G dose-dependently 
+increased the rate of O2 consumption, but BODIPY-DIF-3R did not. These 
+results suggest that the bioactive BODIPY-DIF-3G suppresses cell 
+proliferation at least in part by altering mitochondrial activity, whereas the 
+non-bioactive BODIPY-DIF-3R localizes to the mitochondria but does not 
+affect mitochondrial activity or cell proliferation.
+
+
+Submitted by Yuzuru Kubohara [kubohara@gunma-u.ac.jp]
+---------------------------------------------------------------------------
+
+
+N-glycomic profiling of a glucosidase II mutant of Dictyostelium discoideum 
+by 'off-line' liquid chromatography and mass spectrometry.
+
+Hykollari A, Dragosits M, Rendic D, Wilson IBH, Paschinger K.
+
+Electrophoresis. 2014 Feb 26. doi: 10.1002/elps.201300612. 
+[Epub ahead of print]
+
+In this study, we have performed the first mass spectrometric analysis of 
+N-glycans of the M31 mutant strain of the cellular slime mould Dictyostelium 
+discoideum, previously shown to have a defect in glucosidase II. Together 
+with glucosidase I, this enzyme mediates part of the initial processing of 
+N-glycans; defects in either glucosidase are associated with human diseases 
+and result in an accumulation of incorrectly-processed oligosaccharides 
+which are not, or only poor, substrates for a range of downstream enzymes. 
+To examine the effect of the glucosidase II mutation in Dictyostelium, we 
+employed off-line LC-MALDI-TOF-MS in combination with chemical and 
+enzymatic treatments and MS/MS to analyse the neutral and anionic 
+N-glycans of the mutant as compared to the wild-type. The major neutral 
+species were, as expected, of the composition Hex10-11 HexNAc2-3 with 
+one or two terminal glucose residues. Consistent with the block in processing 
+of neutral N-glycans caused by the absence of glucosidase II, fucose was 
+apparently absent from the N-glycans and bisecting N-acetylglucosamine 
+was rare. The major anionic oligosaccharides were sulphated and/or 
+methylphosphorylated forms of Hex8-11 HexNAc2-3 , many of which 
+surprisingly lacked glucose residues entirely. As anionic N-glycans are 
+considered to be mostly associated with lysosomal enzymes in Dictyostelium, 
+we hypothesise that glycosidases present in the acidic compartments may 
+act on the oligosaccharides attached to such slime mould proteins. 
+Furthermore, our chosen analytical approach enabled us, via observation of 
+diagnostic negative-mode MS/MS fragments, to determine the fine structure 
+of the methylphosphorylated and sulphated N-glycans of the M31 
+glucosidase mutant in their native state. 
+
+This article is protected by copyright. All rights reserved.
+
+
+Submitted by Iain Wilson [iain.wilson@boku.ac.at]
+==============================================================
+[End dictyNews, volume 40, number 7]

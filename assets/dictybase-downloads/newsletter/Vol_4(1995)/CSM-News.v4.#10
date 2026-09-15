@@ -1,0 +1,221 @@
+CSM News
+Electronic Edition
+Volume 4, number 10
+March 18, 1995
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmsbio.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmsbio.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmsbio.nwu.edu/dicty.html"
+
+===========
+ Abstracts
+===========
+
+Comparative Analysis of Chemotaxis in Dictyostelium using a Radial
+Bioassay Method: Protein tyrosine kinase activity is required for
+chemotaxis to folate but not to cAMP
+
+Darren D. Browning1, Tony The, and Danton H. O'Day2
+
+Department of Zoology, Erindale College, University of Toronto,
+Mississauga, Ontario, Canada L5L 1C6.  1Current address: Department of
+Immunology, IMM2, The Scripps Research Institute, La Jolla, CA 92032,
+2Author to whom all correspondence should be addressed Phone: (905)
+828-3897; fax: (905) 828-3792
+
+Cellular Signaling, in press.
+
+Abstract
+
+   The role of signal transduction during chemotaxis of Dictyostelium
+discoideum cells to cAMP and folic acid was investigated using a
+radial bioassay technique. The effects of signalling agonists were
+assessed by measuring the diameters of visible rings formed by the
+outward migration of amoebae up radial gradients of chemoattractant.
+This rapid and simple bioassay method yields chemotactic rates
+equivalent to more complex assay systems. In support of previous
+studies, chemotaxis toward both cAMP and folic acid was inhibited in a
+dose dependent manner by LaCl3, EDTA, chlorotetracycline and AlFl3
+supporting the importance of calcium ions and G protein-mediated
+signalling in both chemotactic events. The work was extended by
+examining the effects of the protein tyrosine kinase inhibitor
+genistein. This agent inhibited chemotaxis to folate in a dose
+dependent manner but had no observable effect on chemotaxis toward
+cAMP. The notion that phosphorylation of proteins on tyrosine residues
+is critical for chemotaxis to folic acid was supported by western
+blotting experiments with monoclonal anti-phosphotyrosine antibodies
+which detected two candidate proteins of Mr 52 kDa and 38 kDa in the
+membranes of folate responsive amoebae. These two bands disappeared
+with sta rvation which leads to the loss of responsiveness to folic
+acid and the acquisition of responsiveness to cAMP. Time-lapse
+videomicrography also revealed some unique differences in
+chemotactic response. Starved cells responded to cAMP as
+individuals but feeding cells chemoattracted to folic acid on a
+populational basis. The ability to compare two different types of
+chemotaxis using a simple, rapid and accurate bioassay system should
+enhance future studies of chemotaxis in wild type and mutant strains
+of D. discoideum.
+
+--------------------------------------------------------------------
+
+Mitochondrial DNA Replication but no Nuclear DNA Replication During
+Development of Dictyostelium
+
+Gad Shaulsky and William F. Loomis*
+
+Center for Molecular Genetics, Department of Biology, University of
+California, San Diego, La Jolla CA 92093 * To whom reprint requests
+should be addressed
+
+Proc. Natl. Acad. Sci. USA, in press
+
+Abstract
+
+   Dictyostelium discoideum cells initiate development when nutrients
+are depleted.  DNA synthesis decreases rapidly thereafter but resumes
+during late aggregation, only in prespore cells.  This observation has
+been previously interpreted as indicating progression of prespore
+cells through the cell cycle during development.  We show that
+developmental DNA replication occurs only in mitochondria and not in
+nuclei.  We also show that the prestalk morphogen DIF-1 can inhibit
+mitochondrial respiration.  A model is proposed for cell type
+divergence, based on competition to become prespores, that involves
+mitochondrial replication in prespore cells and reduction of
+mitochondrial activity in prestalk cells.
+
+-------------------------------------------------------------------------
+
+An MDR Transporter / Serine Protease Gene is Required for Prestalk
+Specialization in Dictyostelium
+
+Gad Shaulsky, Adam Kuspa* and William F. Loomis**
+
+Center for Molecular Genetics, Department of Biology, University of
+California, San Diego, La Jolla CA 92093, *Present address: Department
+of Biochemistry, Baylor College of Medicine, One Baylor Plaza,
+Houston, TX 77030.  **Corresponding author
+
+Genes & Development, in press
+
+Abstract
+
+   The prestalk specific gene, tagB, was disrupted by REMI
+mutagenesis.  Mutant aggregates exhibit a cell autonomous defect in
+specialization of PST-A cells, a prestalk sub-population that
+eventually forms the tip.  Cooperative (non-cell-autonomous) defects
+were found in sporulation and in specialization of prestalk cells that
+eventually form the upper cup (PST-O).  The pattern of ecmA::lacZ
+expression in mutant tagB- cells defines a primary prestalk
+population, PST-I, from which other prestalk cells differentiate.
+After PST-A cells differentiate, they induce remaining PST-I cells to
+become PST-O cells.  Subsequently, prestalk cells induce encapsulation
+of prespore cells during culmination.  tagB is homologous to serine
+protease and to MDR transporter genes, implying a mechanism of action
+that includes proteolysis and export of peptide signals.
+Intercellular communication via TagB may mediate integration of
+cellular differentiation with morphogenesis.
+
+-------------------------------------------------------------------------
+
+Overexpression of wild-type and mutant NDP-Kinase in Dictyostelium
+discoideum
+
+Olivier Sellam, Michel Veron and Martin Hildebrandt
+
+Mol. Microbiol., in press.
+
+Abstract
+
+   Nucleoside diphosphate (NDP) kinase has a central role in the
+synthesis of (deoxi-)trinucleotides. In addition, mutations in the
+gene encoding NDP kinase have been shown to have important
+consequences for Drosophila development and mammalian tumorogenesis.
+We have overexpressed a genomic clone encoding the enzyme NDP kinase
+in Dictyostelium discoideum. The increased level of RNA and enzyme
+activity defines a 5' noncoding genomic region of 0.9 kb as a complete
+promoter. Overexpression of wild type NDP kinase has no effect on
+development. The same is true for an inactive mutant H122C, that does
+not have a dominant inhibitor effect.  Overexpression of the P105G
+mutant NDP kinase which is known to be affected in its stability in
+vitro, only leads to a small increase in total NDP kinase activity.
+Thermal and chemical denaturation experiments demonstrate the
+formation of hexameric hybrids between wild type and mutant monomers.
+
+----------------------------------------------------------------------
+
+Agonist-Induced Loss of Ligand Binding is Correlated with
+Phosphorylation of cAR1, a G Protein-Coupled Chemoattractant Receptor
+from Dictyostelium
+
+Michael J. Caterina, Peter N. Devreotes, Jane Borleis, and Dale
+Hereld.  Department of Biological Chemistry, The Johns Hopkins
+University School of Medicine, Baltimore, Maryland 21205
+
+J. Biol. Chem., in press.
+
+   The parallel agonist-induced phosphorylation, alteration in
+electrophoretic mobility, and loss of ligand binding of cAR1 depend
+upon a cluster of five C- terminal-domain serine residues (Caterina,
+M.J., Hereld, D., and Devreotes, P.N., J. Biol. Chem., in press).
+Analysis of mutants lacking combinations of these serines revealed
+that either S303 or S304 is required; mutants lacking both serines are
+defective in all of these responses.  Interestingly, several mutants,
+including those substituted at only S299, S302 or S303 or at
+non-serine positions within the third cytoplasmic loop, displayed an
+unstable mobility shift--the alteration was rapidly reversed upon cAMP
+removal.  These mutants also exhibited subnormal extents of loss of
+ligand binding, which is assessed after removal of the ligand.
+      For the wild-type receptor, we found that the stability of
+phosphorylation depends upon the concentration and duration of agonist
+pretreatment.  This suggests that, following phosphorylation of S303
+or S304, cAR1 undergoes a further transition (EC50=140 nM, t1/2=4 min)
+to a relatively phosphatase- resistant state.  We used this insight to
+show that, under all conditions tested, the extent of loss of binding
+is correlated with the fraction of cAR1 in the altered mobility form.
+We discuss possible relationships between cAR1 phosphorylation and
+loss of ligand binding.
+
+-------------------------------------------------------------------------
+
+Purification and Characterization of a Dictyostelium protein kinase
+required for actin-activation of the Mg2+ATPase activity of
+Dictyostelium myosin ID.
+
+Sheu-Fen Lee and Graham P. Cote
+
+Department of Biochemistry, Queen's University, Kingston, Ontario,
+Canada K7L 3N6
+
+J. Biol. Chem., in press
+
+ABSTRACT
+
+   We have isolated a protein from Dictyostelium with a molecular mass
+of 110 kDa as judged by SDS gel electrophoresis that can stimulate the
+actin- activated MgATPase activity of Dictyostelium myosin ID (myoD).
+In the presence of MgATP the 110 kDa protein incorporated phosphate
+into itself and into the heavy chain, but not the light chain, of
+myoD.  Phosphorylation to 0.5 mol Pi/mol increased the myoD
+actin-activated MgATPase rate from 0.2 to 3 umol/min/mg.  Renaturation
+following SDS gel electrophoresis demonstrated that the 110 kDa
+protein contained intrinsic protein kinase and autophosphorylation
+activity.  Autophosphorylation to 1 mol of Pi/mol enhanced the rate at
+which the 110 kDa protein kinase phosphorylated myoD by 40-fold.  The
+rate of autophosphorylation was strongly dependent on the 110 kDa
+protein kinase concentration, indicating an intermolecular reaction.
+Synthetic peptides of 9 to 11 residues corresponding to the heavy
+chain phosphorylation site of Acanthamoeba myosin IC and the
+homologous sites in Dictyostelium myosin IB (myoB) and myoD were poor
+substrates for the 110 kDa protein kinase.  The 110 kDa protein kinase
+was unable to phosphorylate the myoB isozyme suggesting that it may be
+specific for myoD.
+
+----------------------------------------------------------------------
+
+[End CSM-News, volume 4, number 10]
+
+

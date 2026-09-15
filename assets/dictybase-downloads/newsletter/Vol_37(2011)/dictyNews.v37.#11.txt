@@ -1,0 +1,88 @@
+dictyNews
+Electronic Edition
+Volume 37, number 11
+November 4, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Dynamin A, Myosin IB and Abp1 couple phagosome maturation to 
+F-actin binding
+
+Navin Gopaldass, Devang Patel, Ramona Kratzke, Regis Dieckmann, 
+Stephanie Hausherr, Monica Hagedorn, Roger Monroy, Julia Krueger, 
+Eva M. Neuhaus, Eik Hoffmann, Katja Hille, Sergei A. Kuznetsov and 
+Thierry Soldati
+
+
+Traffic, in press
+
+The role of actin, class I myosins and dynamin in endocytic uptake processes 
+is well characterized, but their role during endo-phagosomal membrane 
+trafficking and maturation is less clear. In Dictyostelium, knock out of Myosin IB
+leads to a defect in membrane protein recycling from endosomes back to the 
+plasma membrane. Here, we show that actin plays a central role in the 
+morphology and function of the endocytic pathway. Indeed, Latrunculin B 
+induces endosome tubulation, a phenotype also observed in dynamin A-null 
+cells. Knock out of Dynamin A impairs phagosome acidification whereas knock 
+out of Myosin IB delays re-neutralisation, a phenotype mimicked by a low dose 
+of Latrunculin B. As a read out for actin-dependent processes during maturation, 
+we monitored the capacity of purified phagosomes to bind F-actin in vitro, and 
+correlated this with the presence of actin-binding and membrane trafficking 
+proteins. Phagosomes isolated from myoB-null cells showed increased binding 
+to F-actin, especially late phagosomes. In contrast, early phagosome from 
+dymA-null cells showed reduced binding to F-actin while late phagosomes were 
+unaffected. We provide evidence that Abp1 is the main F-actin binding protein 
+in this assay and is central for the interplay between Dynamin A and Myosin IB 
+during phagosome maturation. 
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+--------------------------------------------------------------------------------------
+
+
+Amoeboid cells use protrusions for walking, gliding and swimming
+
+Peter J.M. Van Haastert 
+
+Department of Cell Biochemistry, University of Groningen,
+Nijenborg 7, 9747AG Groningen, The Netherlands
+
+
+PLoS One, in press
+
+Amoeboid cells crawl using pseudopods, which are convex extensions 
+of the cell surface. In many laboratory experiments, cells move on a smooth 
+substrate, but in the wild cells may experience obstacles of other cells or 
+dead material, or may even move in liquid. To understand how cells cope 
+with heterogeneous environments we have investigated the pseudopod life 
+cycle of wild type and mutant cells moving on a substrate and when 
+suspended  in liquid. We show that the same pseudopod cycle can provide 
+three types of movement that we address as walking, gliding and swimming. 
+In walking the extending pseudopod will adhere firmly to the substrate, which 
+allows cells to generate forces to bypass obstacles. Mutant cells with 
+compromised adhesion can move much faster than wild type cells on a 
+smooth substrate (gliding), but can not move effectively against obstacles 
+that provide resistance. In a liquid, when swimming, the extending pseudopods 
+convert to side-bumps that move rapidly to the rear of the cells. Calculations 
+suggest that these bumps provide sufficient drag force to mediate the observed 
+forward swimming of the cell. 
+
+
+Submitted by Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 37, number 11]

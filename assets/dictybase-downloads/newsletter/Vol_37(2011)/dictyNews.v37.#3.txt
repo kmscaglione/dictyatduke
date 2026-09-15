@@ -1,0 +1,127 @@
+dictyNews
+Electronic Edition
+Volume 37, number 3
+July 29, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+BzpF is a CREB-like transcription factor that regulates spore maturation and 
+stability in Dictyostelium
+
+Eryong Huang, Shaheynoor Talukder, Timothy R. Hughes, Tomaz Curk, 
+Blaz Zupan, Gad Shaulsky and Mariko Katoh-Kurasawa
+
+
+Developmental Biology, in press
+
+The cAMP response element-binding protein (CREB) is a highly conserved 
+transcription factor that integrates signaling through the cAMP-dependent 
+protein kinase A (PKA) in many eukaryotes. PKA plays a critical role in 
+Dictyostelium development but no CREB homologue has been identified in 
+this system. Here we show that Dictyostelium utilizes a CREB-like protein, 
+BzpF, to integrate PKA signaling during late development. bzpF– mutants 
+produce compromised spores, which are extremely unstable and germination 
+defective. Previously, we have found that BzpF binds the canonical CRE 
+motif in vitro. In this paper, we determined the DNA binding specificity of 
+BzpF using protein binding microarray (PBM) and showed that the motif 
+with the highest specificity is a CRE-like sequence. BzpF is necessary to 
+activate the transcription of at least 15 PKA-regulated, late-developmental 
+target genes whose promoters contain BzpF binding motifs. BzpF is 
+sufficient to activate two of these genes. The comparison of RNA 
+sequencing data between wild type and bzpF– mutant revealed that the 
+mutant fails to express 205 genes, many of which encode cellulose-binding 
+and sugar-binding proteins. We propose that BzpF is a CREB-like 
+transcription factor that regulates spore maturation and stability in a 
+PKA-related manner.
+
+
+Submitted by: Mariko Katoh-Kurasawa [mkatoh@bcm.edu]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium transfer RNA gene-targeting retrotransposons: 
+Studying mobile element-host interactions in a compact genome 
+
+Thomas Winckler, Jana Schiefner, Thomas Spaller, Oliver Siol
+
+Universität Jena, Institut für Pharmazie, Lehrstuhl für Pharmazeutische 
+Biologie, Semmelweisstrasse 10, 07743 Jena, Germany
+
+
+Mobile Genetic Elements, in press
+
+The model species of social amoebae, Dictyostelium discoideum, has a 
+compact genome consisting of about two thirds protein-coding regions, 
+with intergenic regions that are rarely larger than 1,000 bp. We 
+hypothesize that the haploid state of D. discoideum cells provides defense 
+against the amplification of mobile elements whose transposition activities 
+would otherwise lead to the accumulation of heterozygous, potentially lethal 
+mutations in diploid populations. We further speculate that complex 
+transposon clusters found on D. discoideum chromosomes do not a priori 
+result from integration preferences of these transposons, but that the 
+clusters instead result from negative selection against cells harboring 
+insertional mutations in genes. D. discoideum cells contain a fraction of 
+retrotransposons that are found in the close vicinity of tRNA genes. 
+Growing evidence suggests that these retrotransposons use active 
+recognition mechanisms to determine suitable integration sites. However, 
+the question remains whether these retrotransposons also cause 
+insertional mutagenesis of genes, resulting in their enrichment at tRNA 
+genes, which are relatively safe sites in euchromatic regions. Recently 
+developed in vivo retrotransposition assays will allow a detailed, 
+genome-wide analysis of de novo integration events in the D. discoideum 
+genome.
+
+
+Submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+--------------------------------------------------------------------------------
+
+
+Phylogeny-wide analysis of social amoeba genomes highlights ancient 
+origins for complex intercellular communication.
+
+Andrew J. Heidel, Hajara M. Lawal, Marius Felder, Christina Schilde, 
+Nicholas R. Helps, Budi Tunggal, Francisco Rivero, Uwe John, 
+Michael Schleicher, Ludwig Eichinger, Matthias Platzer, Angelika A. Noegel, 
+Pauline Schaap, Gernot Gloeckner
+
+Genome Research, in press
+
+Dictyostelium discoideum (DD), an extensively studied model organism 
+for cell and developmental biology, belongs to the most derived group 4 
+of social amoebas, a clade of altruistic multicellular organisms. To 
+understand genome evolution over long time periods and the genetic basis 
+of social evolution, we sequenced the genomes of Dictyostelium 
+fasciculatum (DF) and Polysphondylium pallidum (PP), that represent the 
+early diverging groups 1 and 2, respectively. In contrast to DD, PP and DF
+have conventional telomere organisation and strongly reduced numbers 
+of transposable elements. The number of protein coding genes is similar 
+between species, but only half of them comprise an identifiable set of 
+orthologous genes. In general, genes involved in primary metabolism, 
+cytoskeletal functions and signal transduction are conserved, while genes 
+involved in secondary metabolism, export and signal perception 
+underwent large differential gene family expansions. This most likely 
+signifies involvement of the conserved set in core cell and developmental 
+mechanisms, and of the diverged set in niche- and species-specific 
+adaptations for defence and food, mate and kin selection. Phylogenetic 
+dating using a concatenated data set and extensive loss of synteny 
+indicate that DF, PP and DD split from their last common ancestor at 
+least 0.6 billion years ago.
+
+
+Submitted by Gernot Gloeckner [gloeckner@igb-berlin.de]
+==============================================================
+[End dictyNews, volume 37, number 3]

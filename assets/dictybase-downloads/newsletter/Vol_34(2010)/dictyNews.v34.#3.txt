@@ -1,0 +1,85 @@
+dictyNews
+Electronic Edition
+Volume 34, number 3
+January 22, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+A coronin7 homolog with functions in actin-driven processes 
+
+Maria C. Shina, Can Ünal, Ludwig Eichinger, Annette Müller-Taubenberger, 
+Michael Schleicher, Michael Steinert, Angelika A. Noegel
+
+
+J. Biol. Chem., in press
+
+Dictyostelium discoideum Coronin7 (DdCRN7) together with human 
+Coronin7 (CRN7) and Pod-1 of Drosophila melanogaster and 
+Caenorhabditis elegans belong to the coronin family of WD repeat 
+domain containing proteins. Coronin7 proteins are characterized by two 
+WD repeat domains that presumably fold into two beta-propeller structures. 
+DdCRN7 shares highest homology with human CRN7, a protein with roles 
+in membrane trafficking. DdCRN7 is present in the cytosol and accumulates 
+in cell surface projections during movement and phago- and pinocytosis. 
+Cells lacking CRN7 have altered chemotaxis and phagocytosis. Furthermore, 
+loss of CRN7 affects the infection process by the pathogen Legionella 
+pneumophila and allows a more efficient internalization of bacteria. To 
+provide a mechanism for CNR7 action we studied actin related aspects. 
+We could show that CRN7 binds directly to F-actin and protects actin 
+filaments from depolymerization. CRN7 also associated with F-actin in 
+vivo. It was present in the Triton X-100 insoluble cytoskeleton, colocalized
+with F-actin and its distribution was sensitive to drugs affecting the actin 
+cytoskeleton. We propose that CRN7's role in chemotaxis and 
+phagocytosis is through its effect on the actin cytoskeleton. 
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+Cheating by Exploitation of Developmental Prestalk Patterning in 
+Dictyostelium discoideum
+
+Anupama Khare and Gad Shaulsky; Department of Molecular and Human 
+Genetics, Baylor College of Medicine, Houston, Texas, USA
+
+
+PLoS Genetics, in press
+
+The cooperative developmental system of the social amoeba Dictyostelium 
+discoideum is susceptible to exploitation by cheaters – strains that make 
+more than their fair share of spores in chimerae. Laboratory screens in 
+Dictyostelium have shown that the genetic potential for facultative cheating 
+is high and field surveys have shown that cheaters are abundant in nature, 
+but the cheating mechanisms are largely unknown. Here we describe 
+cheater C (chtC), a strong facultative cheater mutant that cheats by 
+affecting prestalk differentiation. The chtC gene is developmentally 
+regulated and its mRNA becomes stalk-enriched at the end of development. 
+chtC mutants are defective in maintaining the prestalk cell fate as some of 
+their prestalk cells transdifferentiate into prespore cells, but that defect 
+does not affect gross developmental morphology or sporulation efficiency.  
+In chimerae between wild-type and chtC mutant cells, the wild-type cells 
+preferentially give rise to prestalk cells, and the chtC mutants increase 
+their representation in the spore mass. Mixing chtC mutants with other 
+cell-type proportioning mutants revealed that the cheating is directly 
+related to the prestalk-differentiation propensity of the victim. These 
+findings illustrate that a cheater can victimize cooperative strains by 
+exploiting an established developmental pathway.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+==============================================================
+[End dictyNews, volume 34, number 3]

@@ -1,0 +1,139 @@
+dictyNews
+Electronic Edition
+Volume 26, number 4
+January 27, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+A retinoblastoma orthologue controls stalk/spore preference in Dictyostelium
+
+Harry MacWilliams (1) Kimchi Doquang (1,2) Roberto Pedrola (3) Gytha 
+Dollman (1) Daniela Grassi (3) Thomas Peis (1) Adrian Tsang(2) and 
+Adriano Ceccarelli (3)
+
+(1) Biozentrum der Ludwig-Maximilians-Universität, Planegg-Martinsried, 
+Germany
+(2) Centre for Structural and Functional Genomics, Concordia University, 
+Montreal, Quebec, Canada
+(3) Dipartimento di Scienze Cliniche e Biologiche, Università di Torino, 
+Ospedale S.Luigi, Torino, Italy
+
+
+Development, in press
+
+We describe rblA, the Dictyostelium ortholog of the retinoblastoma 
+susceptibility gene Rb.  In the growth phase,  rblA expression is correlated 
+with several factors which lead to “preference” for the spore pathway.   
+During multicellular development, expression increases 200-fold in 
+differentiating spores.  RblA-null strains differentiate stalk cells and 
+spores normally, but in chimeras with wild-type the mutant shows a strong 
+preference for the stalk pathway.  RblA-null cells are hypersensitive to 
+the stalk morphogen DIF,  suggesting that rblA normally suppresses the DIF 
+response in cells destined for the spore pathway.  RblA overexpression 
+during growth leads to G1 arrest, but since growing Dictyostelium are 
+overwhelmingly G2, rblA does not seem to be important in the normal cell 
+cycle.  RblA-null cells show reduced cell size and a premature 
+growth-development transition; the latter appears anomalous but may 
+reflect selection pressures acting on social ameba.
+
+
+Submitted by: Harry MacWilliams [macw@zi.biologie.uni-muenchen.de]
+
+-----------------------------------------------------------------------------
+
+
+Single-molecule analysis of chemoattractant-stimulated membrane recruitment 
+of a PH domain-containing protein
+
+Satomi Matsuoka(1), Miho Iijima(2), Tomonobu M. Watanabe(1), Hidekazu 
+Kuwayama(1), Toshio Yanagida(1), Peter N. Devreotes(2) and Masahiro Ueda(1)
+
+(1)Laboratories for Nanobiology, Graduate School of Frontier Biosciences, 
+Osaka University, 1-3 Yamadaoka, Suita, Osaka, 565-0871, Japan
+(2)Department of Cell Biology, Johns Hopkins University School of Medicine
+725 N. Wolfe St., 114 WBSB, Baltimore, Maryland, 21205, USA
+
+
+Journal of Cell Science, in press
+
+Molecular mechanisms of chemotactic response are highly conserved among 
+many eukaryotic cells including human leukocytes and Dictyostelium cells. 
+The cells can sense the differences in chemoattractant concentration across 
+the cell body and respond by extending pseudopods from the cell side facing 
+to a higher concentration. Pseudopod formation is regulated by binding of 
+pleckstrin homology-domain-containing proteins to phosphatidylinositol 
+3,4,5-trisphosphates localized at the leading edge of chemotaxing cells. 
+However, molecular mechanisms underlying dynamic features of a pseudopod 
+have not been fully explained by the known properties of pleckstrin 
+homology-domain-containing proteins. To investigate the mechanisms, we 
+visualized single molecules of green fluorescent protein tagged to Crac, a 
+pleckstrin homology-domain-containing protein in Dictyostelium discoideum 
+cells. Whereas populations of Crac molecules exhibited a stable steady-state 
+localization at pseudopods, individual molecules bound transiently to 
+phosphatidylinositol 3,4,5-trisphosphates for ~120 milliseconds, indicating 
+dynamic properties of pleckstrin homology-domain-containing protein. 
+Receptor stimulation did not alter the binding stability but regulated the 
+number of bound pleckstrin homology-domain molecules via 
+phosphatidylinositol 3,4,5-trisphosphates metabolisms. These results 
+demonstrate that the steady-state localization of pleckstrin 
+homology-domain-containing proteins at the leading edge of chemotaxing 
+cells is dynamically maintained by rapid recycling of individual pleckstrin 
+homology-domain-containing proteins. The short interaction between 
+pleckstrin homology-domain and phosphatidylinositol 3,4,5-trisphosphates 
+contributes to accurate and sensitive chemotactic movements through the 
+dynamic redistributions. These dynamic properties might be general for 
+signaling components involved in chemotaxis.
+
+
+Submitted by: Satomi Matsuoka [matsuoka@phys1.med.osaka-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+Identification of Novel Centrosomal Proteins in Dictyostelium discoideum
+by Comparative Proteomic Approaches
+
+Yvonne Reinders, Irene Schulz,† Ralph Graf,† and Albert Sickmann*
+
+Protein Mass Spectrometry and Functional Proteomics Group, 
+Rudolf-Virchow-Center for ExperimentalBiomedicine, 
+Julius-Maximilians-University Wuerzburg, Versbacher Strasse 9, 
+97078 Wuerzburg, Germany
+
+
+Journal of Proteome Research, in press
+
+The centrosome functions as the main microtubule-organization center of 
+the cell and is of importance for all microtubule-dependent processes such 
+as organelle transport and directionality of cell migration. One of the 
+major model organisms in centrosome research is the slime mold Dictyostelium 
+discoideum. Since only 10 centrosomal proteins are known so far in 
+Dictyostelium discoideum, the elucidation of new centrosomal components may 
+give a more comprehensive understanding of centrosomal function. To 
+distinguish between centrosomal and contaminating proteins we established 
+different separation and relative quantification strategies including 
+techniques such as iTRAQ and DIGE. In this work, we present the 
+identification of several known components as well as more than 70 new 
+candidatess currently subject of further investigationssfor the protein 
+inventory of the Dictyostelium centrosome. Among these protein 
+identifications, 44% represent hypothetical proteins of still unknown 
+function associated with the centrosome.
+
+
+Submitted by: Ralph Graef [r.graef@zeiss.de]
+
+==============================================================================
+[End dictyNews, volume 26, number 4] 

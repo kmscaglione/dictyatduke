@@ -1,0 +1,153 @@
+dictyNews
+Electronic Edition
+Volume 36, number 10
+March 25, 2011
+ 
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+ 
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+ 
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+ 
+ 
+=========
+Abstracts
+=========
+ 
+ 
+Identifying an uptake mechanism for the antiepileptic and bipolar disorder
+treatment valproic acid using the simple biomedical model Dictyostelium
+ 
+Nicole Terbach1, Rishita Shah2, Rachel Keleman2, Peter S. Klein2,
+Dmitri Gordienko3, Nigel A. Brown3, Christopher J. Wilkinson1,
+Robin S. B. Williams1,*
+ 
+1 Centre for Biomedical Sciences, School of Biological Sciences,
+Royal Holloway University of London, Egham TW20 0EX, UK.
+2 Department of Medicine, University of Pennsylvania School of Medicine,
+415 Curie Boulevard, Philadelphia, PA 19104, U.S.A..
+3 Division of Basic Medical Sciences, St George's University of London,
+London SW17 0RE, UK
+ 
+ 
+Journal of Cell Science, in press
+ 
+Valproic acid (VPA) is the most highly prescribed epilepsy treatment worldwide
+and is also used to prevent bipolar disorder and migraine. Surprisingly, very
+little is known about its mechanisms of cellular uptake. Here we employ a range
+of cellular, molecular and genetic approaches to characterize VPA uptake using
+a simple biomedical model, Dictyostelium discoideum. We show that VPA is taken
+up against an electrochemical gradient in a dose-dependent manner. Transport is
+protein mediated, pH- and proton gradient-dependent and shows strong substrate
+structure specificity. Using a genetic screen, we identified a protein homologous
+to a mammalian solute carrier family 4 (SLC4) bicarbonate transporter that we show
+is involved in VPA uptake, since pharmacological and genetic ablation reduces the
+uptake of VPA and partially protects against VPA dependent developmental effects,
+and extracellular bicarbonate competes for VPA uptake in Dictyostelium. We further
+show that this uptake mechanism is likely to be conserved in both zebrafish
+(Danio rerio) and Xenopus laevis model systems. These results implicate, for the
+first time, a novel uptake mechanism for VPA through SLC4-catalysed activity.
+ 
+ 
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+------------------------------------------------------------------------------
+ 
+ 
+Uncovering a role for the Dictyostelium discoideum SadA protein in cell-substrate
+adhesion: A Role for the Tail
+ 
+Anthony S. Kowal1,2,3 and Rex L. Chisholm2,3*
+ 
+Northwestern University
+Integrated Graduate Program in the Life Sciences1, Department of Cell and
+Molecular Biology2, The Center for Genetic Medicine3
+ 
+ 
+Eukaryotic Cell, in press
+ 
+Previous work from our laboratory has shown that the Dictyostelium discoideum
+SadA protein plays a central role in cell-substrate adhesion. SadA null cells
+exhibit a loss of adhesion, a disrupted actin cytoskeleton and a cytokinesis defect.
+How SadA mediates these phenotypes is unknown. This work addresses the mechanism
+of SadA function, demonstrating an important role for the C-terminal cytoplasmic
+tail in SadA function. We found that a SadA tail-less mutant is unable to rescue
+the sadA adhesion deficiency, and overexpression of the SadA tail domain reduces
+adhesion in wild-type cells. We also show that SadA is closely associated with the
+actin cytoskeleton. Mutagenesis studies suggest that four serine residues in the tail
+- S924 / S925 and S940 / S941 - may regulate association of SadA with the actin
+cytoskeleton. GST pull-down assays identified at least one likely interaction partner
+of the SadA tail - Cortexillin I, a known actin bundling protein. Thus, our data
+demonstrate an important role for the carboxy terminal cytoplasmic tail in SadA
+function, and strongly suggest that a phosphorylation event in this tail regulates
+an interaction with Cortexillin I. Based on our data, we propose a model for the
+function of SadA.
+ 
+ 
+Submitted by Anthony Kowall [askowal@northwestern.edu]
+--------------------------------------------------------------------------------------
+ 
+ 
+Dictyostelium hybrid polyketide synthase, SteelyA, produces
+4-methyl-5-pentylbenzene-1,3-diol and induces spore maturation
+Takaaki B Narita1, Kota Koide2, Naoki Morita3 & Tamao Saito2*
+ 
+ 
+FEMS Microbiology Letters, in press
+ 
+The genome of Dictyostelium contains two novel hybrid-type polyketide synthases (PKSs)
+known as 'Steely'; the Steely enzyme is formed by the fusion of type I and type III PKSs.
+One of these enzymes, SteelyB, is known to be responsible for the production of the stalk
+cell-inducing factor DIF-1 in vivo. On the other hand, the product(s) and expression pattern
+of SteelyA are not clearly understood, because there are two different reports associated
+with the in vitro products of SteelyA and its expression pattern. To solve this problem,
+we first examined the expression pattern using two different primer sets and found that it
+was quite similar to that shown in the dictyExpress database. StlA expression peaked at
+approximately 3 hours and declined but showed a small peak around the end of development.
+Next we examined the in vivo product of SteelyA by the use of a stlA null mutant and found
+that the mutant lacked 4-methyl-5-pentylbenzene-1,3-diol (MPBD). This null mutant showed
+aberrant, glassy sori, and most of the cells in the sori remained amoeba-like without a
+cellwall. This defect was restored by adding 200 nM of MPBD to the agar. These results
+indicate that SteelyA produces MPBD in vivo and induces spore maturation.
+ 
+ 
+Submitted by Tamao Saito [tasaito@sophia.ac.jp]
+--------------------------------------------------------------------------------------------
+ 
+ 
+DIF-1 regulates Dictyostelium basal disc differentiation by inducing the nuclear
+accumulation of a bZIP transcription factor
+ 
+Yoko Yamada, Beatriz Nunez-Corcuera and Jeffrey G. Williams+
+ 
+College of Life Sciences, Welcome Trust Building, University of Dundee,
+Dow St.,Dundee DD1 5EH
++ corresponding author:
+tel 44 1382 385823
+fax 44-1382 34421
+j.g.williams@dundee.ac.uk
+ 
+ 
+Dev. Biol., in press
+ 
+Exposure of monolayer Dictyostelium cells to the signaling polyketide DIF-1 causes DimB,
+a bZIPtranscription factor, to accumulate in the nucleus where it induces prestalk gene
+expression. Here we analyse DimB signaling during normal development. In slugs DimB is
+specifically nuclear enriched in the pstB cells; a cluster of vital dye-staining cells
+located on the ventral surface of the posterior, prespore region. PstB cells move at culmination,
+to form the lower cup and the outer basal disc of the fruiting body, and DimB retains a high
+nuclear concentration in both these tissues. In a dimB null (dimB-) strain there are very few
+pstB or lower cup cells, as detected by neutral red staining, and it is known that the outer
+basal disc is absent or much reduced. In the dimB- strain ecmB, a marker of pstB differentiation,
+is not DIF inducible. Furthermore, ChIP analysis shows that DimB binds to the ecmB promoter in
+DIF-induced cells. These results suggest that the differentiation of pstB cells is caused by a
+high perceived level of DIF-1 signaling, leading to nuclear localization of DimB and direct
+activation of cell type-specific gene expression.
+ 
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 36, number 10]

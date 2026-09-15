@@ -1,0 +1,108 @@
+dictyNews
+Electronic Edition
+Volume 38, number 6
+February 24, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+A surface glycoprotein indispensable for gamete fusion in the 
+social amoeba Dictyostelium discoideum
+
+Yoshinori Araki*, Hideki D. Shimizu*, Kentaro Saeki, Marina 
+Okamoto, Lixy Yamada, Kentaro Ishida, Hitoshi Sawada, 
+and Hideko Urushihara
+
+
+Eukaryotic Cell, in press
+
+Sexual reproduction is essential for the maintenance of species 
+in a wide variety of multicellular organisms, and even unicellular 
+organisms that normally proliferate asexually possess a sexual 
+cycle because of its contribution to increased genetic diversity. 
+Information concerning the molecules involved in fertilization is 
+accumulating in many species of the metazoan, plant, and fungal 
+lineages, and the evolutionary consideration of sexual reproduction 
+systems is now an interesting issue. Macrocyst formation in the 
+social amoeba Dictyostelium discoideum is a sexual process in 
+which cells become sexually mature under dark and submerged 
+conditions and fuse with complementary mating-type cells. In the 
+present study, we isolated D. discoideum insertional mutants 
+defective in sexual cell fusion and identified the relevant gene, 
+macA, which encodes a highly glycosylated, 2041-amino-acid 
+membrane protein (MacA). Although its overall similarity is 
+restricted to proteins of unknown function within dictyostelids, it 
+contains LamGL and discoidin domains that are implicated in cell 
+adhesion. Growth and development of macA-null mutants were 
+indistinguishable from those of the parental strain. The 
+overexpression of macA using the V18 promoter in a macA-null 
+mutant completely restored its sexual defects. Although the macA 
+gene encoded exactly the same protein in a complementary 
+mating-type strain, it was expressed at a much lower level. These 
+results suggest that MacA is indispensable for gamete interactions 
+in D. discoideum, probably via cell adhesion. There is a possibility 
+that it is controlled in a mating-type-dependent manner.
+
+
+Submitted by: Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+--------------------------------------------------------------------------------------
+
+
+Pseudopod growth and evolution during cell movement is 
+controlled through SCAR/WAVE dephosphorylation.
+
+Seiji Ura, Alice Y. Pollitt, Douwe M. Veltman, Nicholas A. Morrice, 
+Laura M. Machesky, & Robert H. Insall
+
+
+Current Biology, in press
+
+Background
+SCAR/WAVE is a principal regulator of pseudopod growth in crawling 
+cells. It exists in a stable pentameric complex, which is regulated at 
+multiple levels that are only beginning to be understood. SCAR/WAVE 
+is phosphorylated at multiple sites, but how this affects its biological 
+activity is unclear. Here we show that dephosphorylation of Dictyostelium 
+SCAR controls normal pseudopod dynamics.
+
+Results
+We demonstrate that the C-terminal acidic domain of most Dictyostelium 
+SCAR is basally phosphorylated at four serine residues. A small amount 
+of singly phosphorylated SCAR is also found. SCAR phosphorylation site 
+mutants cannot replace SCARÕs role in the pseudopod cycle, though they 
+rescue cell size and growth. Unphosphorylatable SCAR is hyperactive Ð 
+excessive recruitment to the front gives large pseudopods that fail to 
+bifurcate because they continually grow forwards. Conversely, 
+phosphomimetic SCAR is weakly active, causing frequent small, 
+disorganised pseudopods.
+Even in its regulatory complex, SCAR is normally held inactive by an 
+interaction between the phosphorylated acidic and basic domains. Loss 
+of basic residues complementary to the acidic phosphosites yields a 
+hyperactive protein similar to unphosphorylatable SCAR.
+
+Conclusions
+Regulated dephosphorylation of a fraction of the cellular SCAR pool 
+is a key step in SCAR activation during pseudopod growth. 
+Phosphorylation increases autoinhibition of the intact complex. 
+Dephosphorylation weakens this interaction and facilitates SCAR 
+activation, but also destabilizes the protein. We show that SCAR is 
+specifically dephosphorylated in pseudopods, increasing activation by 
+Rac and lipids and supporting positive feedback of pseudopod growth. 
+
+
+Submitted by  Robert Insall [r.insall@beatson.gla.ac.uk]
+==============================================================
+[End dictyNews, volume 38, number 6]

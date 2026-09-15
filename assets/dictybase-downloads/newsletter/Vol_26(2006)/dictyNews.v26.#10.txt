@@ -1,0 +1,132 @@
+dictyNews
+Electronic Edition
+Volume 26, number 10
+April 7, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Identification of the major spliceosomal RNAs in Dictyostelium discoideum 
+reveals developmentally regulated U2 variants and polyadenylated snRNAs.
+
+Andrea Hinas(1), Pontus Larsson(2), Lotta Avesson(1), Leif A. Kirsebom(2),
+Anders Virtanen(2), and Fredrik Soederbom(1)
+
+(1)Department of Molecular Biology, Biomedical Center, Swedish University 
+of Agricultural Sciences, Box 590, SE-75124 Uppsala, Sweden
+(2)Department of Cell and Molecular Biology, Biomedical Center, Uppsala 
+University, Box 596, SE-75124 Uppsala, Sweden.
+
+
+Eukaryotic Cell, in press
+
+Most eukaryotic mRNAs depend upon precise removal of introns by the 
+spliceosome, a complex of RNAs and proteins. Splicing of pre-mRNA is known 
+to take place in Dictyostelium discoideum and we previously isolated the U2 
+spliceosomal RNA experimentally. In this study, we identified the remaining 
+major spliceosomal RNAs in Dictyostelium by a bioinformatical approach. 
+Expression was verified from 17 genes encoding these small nuclear RNAs 
+(snRNAs). All these genes are preceded by a putative non-coding RNA gene 
+promoter. Immunoprecipitation showed that snRNAs U1, U2, U4, and U5, but not 
+U6, carry the conserved trimethylated 5’ cap structure. A number of 
+divergent U2 species are expressed in Dictyostelium. These RNAs carry the 
+U2 RNA hallmark sequence and structure motifs but have an additional 
+predicted stem-loop structure at the 5’ end. Surprisingly, and in contrast 
+to the other spliceosomal RNAs in this study, the new U2 variants were 
+enriched in the cytoplasm and were developmentally regulated. Furthermore, 
+all of the snRNAs could also be detected as polyadenylated species and 
+polyadenylated U1 RNA was demonstrated to be located in the cytoplasm.
+
+
+Submitted by: Fredrik Soederbom [fredde@xray.bmc.uu.se] 
+-----------------------------------------------------------------------------
+
+
+Aberrant stalk development and breakdown of tip dominance in
+Dictyostelium cell lines with RNAi-silenced expression of calcineurin B
+
+Katrina Boeckeler1,2, Gilbert Tischendorf1, Rupert Mutzel1 and
+Barbara Weissenmayer1
+
+1Institut für Biologie – Mikrobiologie, Fachbereich Biologie, Chemie, 
+Pharmazie, Freie Universitaet Berlin, Koenigin-Luise-Strasse 12-16,
+14195 Berlin, Germany and 2University College London, Department of Biology, 
+Gower Street, London, Wc1 E6BT, UK
+
+
+BMC Developmental Biology, in press
+
+Background: Calcineurin, the Ca2+/calmodulin-dependent protein phosphatase, 
+plays important roles in various cellular processes in lower and higher 
+eukaryotes. Here we analyze the role of calcineurin in the development of 
+Dictyostelium discoideum by RNAi-mediated manipulation of its
+expression.
+
+Results: The cnbA gene of Dictyostelium discoideum which encodes the 
+regulatory B subunit (CNB) of calcineurin was silenced by RNAi. We found a 
+variety of silencing levels of CNB in different recombinant cell lines. 
+Reduction of CNB expression in a given cell line was correlated with 
+developmental aberrations. Cell lines with strongly reduced protein levels 
+developed slower than wild type cells and formed short stalks and spore 
+heads with additional tips. Formation of short stalks results from 
+incomplete vacuolization of prestalk cells during terminal differentiation. 
+Expression of the stalk-specific gene ecmB was reduced in mutant cells. 
+Aberrant stalk development is a cell autonomous defect, whereas the 
+breakdown of tip dominance can be prevented by the presence of as low as 
+10% wild type cells in chimeras.
+
+Conclusion: Silencing of calcineurin B in Dictyostelium by expression of 
+RNAi reveals an unexpected link between increased intracellular calcium 
+levels, possibly triggered by the morphogen DIF, activation of calcineurin, 
+and the terminal stage of morphogenesis.
+
+
+Submitted by: Barbara Weissenmayer [bweiss@zedat.fu-berlin.de]
+-----------------------------------------------------------------------------
+
+
+Transcriptional pulsing of a developmental gene
+
+Jonathan R. Chubb, Tatjana Trcek, Shailesh M. Shenoy and Robert H. Singer
+
+Division of Cell and Developmental Biology, School of Life Sciences, 
+University of Dundee, Dundee, DD1 5EH, UK and Department of Anatomy and 
+Structural Biology, Albert Einstein College of Medicine, The Bronx, 
+New York 10461, USA.
+
+
+Current Biology, in press
+
+It has not been possible to view the transcriptional activity of a single 
+gene within a living eukaryotic cell. It is therefore unclear how long and 
+how frequently a gene is actively transcribed, how this is modulated during 
+differentiation and how transcriptional events are dynamically coordinated 
+in cell populations. Using an in vivo RNA detection technique, we have 
+directly visualised transcription of an endogenous developmental gene. We 
+found discrete 'pulses' of gene activity, that turn on and off at irregular 
+intervals.  Surprisingly, the length and height of these pulses were 
+consistent throughout development. However, there was strong developmental 
+variation in the proportion of cells recruited to the expressing pool.  
+Cells were more likely to re-express than to initiate new expression, 
+indicating we directly observe a transcriptional memory.  In addition, we 
+used a clustering algorithm to reveal synchronous transcription initiation 
+in neighbouring cells.  This study represents the first direct visualisation 
+of transcriptional pulsing in eukaryotes. Discontinuity of transcription may 
+allow greater flexibility in the gene expression decisions of a cell.
+
+
+Submitted by: Jonathan Chubb [j.chubb@dundee.ac.uk]
+==============================================================================
+[End dictyNews, volume 26, number 10] 

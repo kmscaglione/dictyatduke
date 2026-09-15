@@ -1,0 +1,102 @@
+dictyNews
+Electronic Edition
+Volume 26, number 7
+March 3, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Migration in Dictyostelium polycephalum
+J. T. Bonner
+
+Department of Ecology and Evolutionary Biology, Princeton University, 
+Princeton, NJ 08544
+
+
+Mycologia, in press
+
+By comparing two species of cellular slime molds that have a stalkless 
+migration stage, it is possible to gain some interesting new insights into 
+how the cell masses move.  In contrast to the well known behavior of 
+Dictyostelium discoideum, the slugs of Dictyostelium polycephalum can 
+travel greater distances through soil and can even migrate through agar.  
+Besides the intrinsic interest of the differences, they shed light on the 
+mechanism of slug movement.  Unlike D. discoideum, D. polycephalum does not 
+have prestalk and prespore zones, and severed sections of any part of their 
+slugs move at a rate proportional to their length.  This leads to the 
+hypothesis that longer slugs move faster because in the extended column of 
+amoebae each one contributes a forward push, and the longer the line of 
+these amoebae the faster the slug moves.  
+
+
+Submitted by: John Bonner [jtbonner@princeton.edu]
+-----------------------------------------------------------------------------
+
+
+A small GTPase RacF2 affects sexual cell fusion and asexual development in 
+Dictyostelium discoideum through the regulation of cell adhesion
+
+
+Tetsuya Muramoto and Hideko Urushihara
+
+Develop. Growth Differ., in press.
+
+Cells of Dictyostelium discoideum become sexually mature when submerged and 
+in darkness, and fuse with opposite mating-type cells as gametes. The gene 
+for a Rho GTPase, RacF2, is one of the extremely gamete-enriched genes 
+(>100-fold) identified by us previously. Here, we isolated knockout, 
+overexpression, constitutively active and dominant negative mutants of 
+RacF2, and analyzed their phenotypes. These mutants showed anomalies in the 
+extent of sexual cell fusion and asexual development as well as in 
+EDTA-sensitive cell-cell adhesion. It is suggested that RacF2 controls the 
+process of sexual and asexual development through the regulation of cellular 
+adhesiveness. An analysis of the expression of all 18 rac family genes by 
+real-time polymerase chain reaction revealed that four additional genes, 
+rac1b, rac1c, racF1 and racG, were induced during maturation, suggesting 
+their possible involvement in sexual cell interactions. 
+
+
+Submitted by: Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+-----------------------------------------------------------------------------
+
+
+Nap1 Regulates Dictyostelium Cell Motility and Adhesion Through SCAR 
+Dependent and Independent Pathways
+
+Neysi Ibarra, Simone L. Blagg, Francisca Vazquez~ and Robert H. Insall*
+
+
+Current Biology, in press
+
+SCAR Ð also known as WAVE - is a key regulator of actin dynamics.
+Activation of SCAR enhances the nucleation of new actin filaments through
+the Arp2/3 complex, causing a localised increase in the rate of actin
+polymerization. In vivo, SCAR is held in a large regulatory complex, which
+includes PIR121 and Nap1 proteins, whose precise role is unclear. It was
+initially thought to hold SCAR inactive until needed, but recent data
+suggest that it is essential for SCAR function. Here we show that
+disruption of the gene that encodes Nap1 (napA) causes loss of SCAR
+function. Cells lacking Nap1 are small and rounded, with diminished actin
+polymerization and small pseudopods. Furthermore, several aspects of the
+napA phenotype are more severe than those evoked by the absence of SCAR
+alone. In particular, napA mutants have defects in cell-substrate adhesion
+and multicellular development. Despite these defects, napA- cells move and
+chemotax surprisingly effectively. Our results show that the members of 
+the complex have unexpectedly diverse biological roles.
+
+
+Submitted by: Robert H. Insall [R.H.Insall@bham.ac.uk]
+==============================================================================
+[End dictyNews, volume 26, number 7] 

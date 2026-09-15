@@ -1,0 +1,95 @@
+dictyNews
+Electronic Edition
+Volume 30, number 9
+March 10, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Live imaging of the Dictyostelium cell cycle reveals widespread S-phase during 
+development, a G2 bias in spore differentiation and a premitotic checkpoint
+
+Tetsuya Muramoto and Jonathan R. Chubb
+Division of Cell and Developmental Biology, College of Life Sciences, 
+University of Dundee, Dundee DD1 5EH, UK
+
+
+Development, in press
+
+The regulation of the Dictyostelium cell cycle has remained ambiguous due to 
+difficulties in long term imaging of motile cells and a lack of markers for 
+defining cell cycle phases.  There is controversy over whether cells 
+replicate their DNA during development, and whether spores are in G1 or G2 
+of the cell cycle.  We have introduced a living cell S-phase marker into 
+Dictyostelium cells, which allows us to precisely define cycle phase. We 
+show that during multicellular development, a large proportion of cells 
+undergo nuclear DNA synthesis.  Germinating spores enter S-phase only after 
+their first mitosis, indicating spores are in G2.  In addition, we 
+demonstrate that Dictyostelium heterochromatin is copied late in S-phase, 
+and replicates via accumulation of replication factors, rather than 
+recruitment of DNA to pre-existing factories.  Analysis of variability in 
+cycle times indicates regulation of the cycle manifests at a single random 
+transition in G2, and we present the first identified checkpoint in the 
+organism, which operates at the G2/M transition in response to DNA damage.
+
+
+Submitted by: Jonathan Chubb [j.chubb@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Cell type specificity of a diffusible inducer is determined by a GATA 
+family transcription factor
+
+
+Thomas Keller and Christopher R.L. Thompson*
+
+Faculty of Life Sciences, University of Manchester, Michael Smith Building, 
+Oxford Road, Manchester, M13 9PT
+
+*Author for correspondence (christopher.thompson@manchester.ac.uk)
+
+
+Development, in press
+
+One poorly understood mechanism of developmental patterning involves the 
+intermingled differentiation of different cell types that then sort out to 
+generate pattern.  Examples of this are known in nematodes and vertebrates, 
+and in Dictyostelium it is the major mechanism.  However, a general problem 
+with this mechanism is whether different inducers are required for each cell 
+type that arises independently of positional information.  Consistent with 
+this idea, in Dictyostelium the signaling molecule DIF acts as a position 
+independent signal and was thought to only regulate the differentiation of 
+a single cell type (pstO).  The results presented here challenge this idea.  
+In a novel genetic selection to isolate genes required for DIF signal 
+transduction we found a mutant (dimC-) that is a hypomorphic allele of a 
+GATA family transcription factor (gtaC).  gtaC expression is directly 
+regulated by DIF and GtaC rapidly translocates to the nucleus in response 
+to DIF. gtaC- null cells showed some hallmark DIF signaling defects.  
+Surprisingly, other aspects of the mutant were distinct from those of 
+other DIF signaling mutants, suggesting that gtaC regulates a subset of 
+DIF responses.  For example, pstO cell differentiation appeared normal.  
+However we found that pstB cells were mislocalised and the pstB derived 
+basal disc was much reduced or missing.  These defects are due to a 
+failure to respond to DIF as they are phenocopied in other DIF signaling 
+mutants.  These findings therefore identify a novel small molecule 
+activated GATA factor that is required to regulate the cell type specific 
+effects of DIF.  They also reveal that a non-positional signal can regulate 
+the differentiation of multiple cell types through differential 
+interpretation in receiving cells.
+
+
+Submitted by: Chris Thompson [christopher.thompson@manchester.ac.uk]
+==============================================================
+[End dictyNews, volume 30, number 9]

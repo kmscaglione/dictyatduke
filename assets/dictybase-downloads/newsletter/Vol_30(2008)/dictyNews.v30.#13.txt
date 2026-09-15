@@ -1,0 +1,235 @@
+dictyNews
+Electronic Edition
+Volume 30, number 13
+April 25, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+Molecular and functional characterization of a Rho GDP dissociation i
+nhibitor in the filamentous fungus Tuber borchii 
+
+Michele Menotta(1), Antonella Amicucci(1), Giorgio Basili(1), 
+Emanuela Polidori(2), Vilberto Stocchi(1), Francisco Rivero(3)
+
+1Istituto di Chimica Biologica “G. Fornaini”, Università degli Studi di 
+Urbino, Urbino (PU) Italy. 
+2Istituto di Ricerca sull’Attività Motoria, Università degli Studi di 
+Urbino, Urbino (PU) Italy. 
+3Center for Biochemistry, Medical Faculty, University of Cologne, 
+Cologne, Germany, 
+and The Hull York Medical School and Department of Biological Sciences, 
+University of Hull. Hull, United Kingdom.
+
+
+BMC Microbiology, in press
+
+Background. Small GTPases of the Rho family function as tightly regulated 
+molecular switches that govern important cellular functions in eukaryotes. 
+Several families of regulatory proteins control their activation cycle and 
+subcellular localization. Members of the guanine nucleotide dissociation 
+inhibitor (GDI) family sequester Rho GTPases from the plasma membrane and 
+keep them in an inactive form. 
+
+Results. We report on the characterization the RhoGDI homolog of Tuber 
+borchii Vittad., an ascomycetous ectomycorrhizal fungus. The Tbgdi gene is 
+present in two copies in the T. borchii genome. The predicted amino acid 
+sequence shows high similarity to other known RhoGDIs. Real time PCR analyses 
+revealed an increased expression of Tbgdi during the phase preparative to the 
+symbiosis instauration, in particular after stimulation with root exudates 
+extracts, that correlates with expression of Tbcdc42. In a translocation
+assay TbRhoGDI was able to solubilize TbCdc42 from membranes. Surprisingly, 
+TbRhoGDI appeared not to interact with S. cerevisiae Cdc42, precluding the 
+use of yeast as a surrogate model for functional studies. To study the role 
+of TbRhoGDI we performed complementation experiments using a RhoGDI null 
+strain of Dictyostelium discoideum, a model organism where the roles of Rho 
+signaling pathways are well established. For comparison, complementation 
+with mammalian RhoGDI1 and LyGDI was also studied in the null strain. 
+Although interacting with Rac1 isoforms, TbRhoGDI was not able to revert the 
+defects of the D. discoideum RhoGDI null strain, but displayed an additional 
+negative effect on the cAMP-stimulated actin polymerization response. 
+
+Conclusions. T. borchii expresses a functional RhoGDI homolog that appears 
+as an important modulator of cytoskeleton reorganization during polarized 
+apical growth that antecedes symbiosis instauration. The specificity of 
+TbRhoGDI actions was underscored by its inability to elicit a growth defect 
+in S. cerevisiae or to compensate the loss of a D. discoideum RhoGDI. 
+Knowledge of the cell signaling at the basis of cytoskeleton reorganization 
+of ectomycorrhizal fungi is essential for improvements in the production of 
+mycorrhized plant seedlings used in timberland extension programs and fruit 
+body production.
+
+
+Submitted by: Francisco Rivero  [francisco.rivero@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+Widespread duplications in the genomes of laboratory stocks of 
+Dictyostelium discoideum
+
+Gareth Bloomfield, Yoshimasa Tanaka, Jason Skelton, 
+Alasdair Ivens & Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, CB2 OQH, UK
+Wellcome Trust Sanger Institute, Wellcome Trust Genome Campus, Hinxton, 
+Cambridge, CB10 1SA, UK
+
+
+Accepted, Genome Biology.
+
+Background: Duplications of stretches of the genome are an important 
+source of individual genetic variation, but their unrecognized presence 
+in laboratory organisms would be a confounding variable for genetic 
+analysis.
+
+Results: We report here that duplications of 15 kb or more are common in 
+the genome of the social amoeba Dictyostelium discoideum.  Most stocks of 
+the axenic ‘workhorse’ strains Ax2 and Ax3/4 obtained from different 
+laboratories can be expected to carry different duplications.  The 
+auxotrophic strains DH1 and JH10 also bear previously unreported 
+duplications.  Strain Ax3/4 is known to carry a large duplication on
+chromosome 2 and this structure shows evidence of continuing instability;
+we find a further variable duplication on chromosome 5.  These 
+duplications are lacking in Ax2, which has instead a small duplication 
+on chromosome 1.  Stocks of the type isolate NC4 are similarly variable,
+though we have identified some approximating the assumed ancestral 
+genotype.  More recent wild-type isolates are almost without duplications,
+but we can identify small deletions or regions of high divergence, possibly 
+reflecting responses to local selective pressures.  Duplications are 
+scattered through most of the genome, and can be stable enough to reconstruct 
+genealogies spanning decades of the history of the NC4 lineage.  The 
+expression level of many duplicated genes is increased with dosage, but for 
+others it appears that some form of dosage compensation occurs.
+
+Conclusions: The genetic variation described here must underlie some of the 
+phenotypic variation observed between strains from different laboratories. 
+We suggest courses of action to alleviate the problem.
+
+
+Submitted by: Gareth Bloomfield [garethb@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Changing directions in the study of chemotaxis 
+
+Robert R. Kay, Paul Langridge1, David Traynor and Oliver Hoeller
+
+
+Nature Reviews of Molecular Cell Biology, in press
+
+Chemotaxis — guided movement of cells in chemical gradients — probably first 
+emerged in our single-celled ancestors and is recognisably similar in 
+neutrophils and amoebae today.  Chemotaxis enables immune cells to reach 
+sites of infection, allows wounds to heal and is crucial for forming embryonic 
+patterns; its manipulation may help alleviate disease states, including the 
+metastasis of cancer cells.  We discuss recent results concerning how cells 
+orientate in chemotactic gradients and the role of PIP3, what produces the 
+force for projecting pseudopodia, and a new role for the endocytic cycle 
+in movement.
+
+
+Submitted by: Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Persistent Cell Motion in the Absence of External Signals: A Search Strategy 
+for Eukaryotic Cells
+
+Liang Li(1), Simon F. Nørrelykke(2), and Edward C. Cox(2)
+
+1 Department of Physics, Princeton University, Princeton, New Jersey, USA
+2 Department of Molecular Biology, Princeton University, Princeton, 
+New Jersey, USA
+
+
+PLoS One, in press
+
+Background
+Eukaryotic cells are large enough to detect signals and then orient to them 
+by differentiating the signal strength across the length and breadth of the 
+cell. Amoebae, fibroblasts, neutrophils and growth cones all behave in this 
+way. Little is known however about cell motion and searching behavior in the 
+absence of a signal. Is individual cell motion best characterized as a random 
+walk? Do individual cells have a search strategy when they are beyond the 
+range of the signal they would otherwise move toward? Here we ask if single, 
+isolated, Dictyostelium and Polysphondylium amoebae bias their motion in the 
+absence of external cues.
+
+Methodology
+We placed single well-isolated Dictyostelium and Polysphondylium cells on a 
+nutrient-free agar surface and followed them at 10 sec intervals for ~10 hr, 
+then analyzed their motion with respect to velocity, turning angle, 
+persistence length, and persistence time, comparing the results to the 
+expectation for a variety of different types of random motion.
+
+Conclusions
+We find that amoeboid behavior is well described by a special kind of random 
+motion: Amoebae show a long persistence time (~10 min) beyond which they 
+start to lose their direction; they move forward in a zig-zag manner; and 
+they make turns every 1-2 min on average. They bias their motion by 
+remembering the last turn and turning away from it. Interpreting the motion 
+as consisting of runs and turns, the duration of a run and the amplitude of 
+a turn are both found to be exponentially distributed.  We show that this 
+behavior greatly improves their chances of finding a target relative to 
+performing a random walk. We believe that other eukaryotic cells may 
+employ a strategy similar to Dictyostelium when seeking conditions or 
+signal sources not yet within range of their detection system.
+
+
+Submitted by: Liang Li [liangl@princeton.edu]
+--------------------------------------------------------------------------------
+
+
+Disruption of Four Kinesin Genes in Dictyostelium.
+
+D.K. Nag, I. Tikhonenko, I. Soga, and M.P. Koonce
+
+
+Accepted, BMC Cell Biology 2008, 9:21.
+
+Background
+Kinesin and dynein are the two families of microtubule-based motors that 
+drive much of the intracellular movements in eukaryotic cells. Using a gene 
+knockout strategy, we address here the individual function(s) of four of the 
+13 kinesin proteins in Dictyostelium. The goal of our ongoing project is to 
+establish a minimal motility proteome for this basal eukaryote, enabling us 
+to contrast motor functions here with the often far more elaborate motor 
+families in the metazoans.
+
+Results
+We performed individual disruptions of the kinesin genes, kif4, kif8, kif10, 
+and kif11. None of the motors encoded by these genes are essential for 
+development or viability of Dictyostelium. Removal of Kif4 (kinesin-7; 
+CENP-E family) significantly impairs the rate of cell growth and, when 
+combined with a previously characterized dynein inhibition, results in 
+dramatic defects in mitotic spindle assembly. Kif8 (kinesin-4; chromokinesin 
+family) and Kif10 (kinesin-8; Kip3 family) appear to cooperate with dynein 
+to organize the interphase radial microtubule array.
+
+Conclusions
+The results reported here extend the number of kinesin gene disruptions 
+in Dictyostelium, to now total 10, among the 13 isoforms. None of these 
+motors, individually, are required for short-term viability. In contrast, 
+homologs of at least six of the 10 kinesins are considered essential in 
+humans. Our work underscores the functional redundancy of motor isoforms 
+in basal organisms while highlighting motor specificity in more complex 
+metazoans. Since motor disruption in Dictyostelium can readily be 
+combined with other motility insults and stresses, this organism offers 
+an excellent system to investigate functional interactions among the 
+kinesin motor family.
+
+
+Submitted by: Michael Koonce [koonce@wadsworth.org]
+==============================================================
+[End dictyNews, volume 30, number 13]

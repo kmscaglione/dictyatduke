@@ -1,0 +1,42 @@
+dictyNews
+Electronic Edition
+Volume 31, number 16
+November 28, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium Tom1 participates to an ancestral ESCRT-0 complex
+
+Cédric Blanc, Steve J Charette, Sara Mattei, Laurence Aubry, Ewan W. Smith, 
+Pierre Cosson and François Letourneur 
+
+
+Traffic, in press
+
+Sorting of ubiquitinated proteins to multivesicular bodies (MVBs) in mammalian 
+cells relies on proteins with a VHS (Vps27/Hrs/STAM) domain. Here, we show that 
+the amoeba Dictyostelium presents only one protein with a VHS domain: DdTom1. 
+We demonstrate that the VHS domain of DdTom1 is followed by a GAT (GGA and 
+Tom1) domain which binds ubiquitin, and by a non conserved C-terminal domain 
+which can recruit clathrin, Eps15 (EGFr pathway substrate 15) and Tsg101 (tumor 
+susceptibility gene 101), a component of the MVB biogenesis machinery (ESCRT 
+complexes). Both VHS and GAT domains interact with phospholipids and therefore 
+could ensure the recruitment of DdTom1 to endosomal membranes. We propose 
+that DdTom1 participates in an ancestral ESCRT-0 complex implicated in the 
+sorting of ubiquitinated proteins into MVBs.
+
+
+Submitted by: François Letourneur [francois.letourneur@ibcp.fr]
+==============================================================
+[End dictyNews, volume 31, number 16]

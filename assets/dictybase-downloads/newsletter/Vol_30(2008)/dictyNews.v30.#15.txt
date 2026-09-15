@@ -1,0 +1,82 @@
+dictyNews
+Electronic Edition
+Volume 30, number 15
+May 9, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Actin: its cumbersome pilgrimage through cellular compartments (Review)
+
+Michael Schleicher (1) and Brigitte M. Jockusch (2)
+
+(1)  Adolf-Butenandt-Institute, Cell Biology and Center for Integrated
+Protein Science (CIPSM), Ludwig-Maximilians-University, 80336 Munich, 
+Germany 
+(2)  Cell Biology Group, Technical University of Braunschweig,
+Spielmannstr. 7, 38092 Braunschweig, Germany 
+
+
+Histochemistry and Cell Biology, in press
+Open access link:
+http://www.springerlink.com/content/b165347g01w270g4/
+
+In this article, we follow the history of one of the most abundant, most
+intensely studied proteins of the eukaryotic cells: actin. We report on
+hallmarks of its discovery, its structural and functional characterization
+and localization over time, and point to present days knowledge on its
+position as a member of a large family. We focus on the rather puzzling
+number of diverse functions as proposed for actin as a dual compartment
+protein. Finally, we venture on some speculations as to its origin. 
+
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+--------------------------------------------------------------------------------
+
+
+The function of PP2A/B56 in non-metazoan multicellular development. 
+
+Nam-Sihk Lee, Sudhakar Veeranki, Bohye Kim, and Leung Kim*
+Dept of Biological Sciences, Florida International University, 
+Miami, FL 33199
+
+* Corresponding author: 
+kiml@fiu.edu 
+Tel) 305-348-7315
+
+Key words: B56, PP2A, GSK3, Dictyostelium development
+
+
+Differentiation, in press
+
+DB56, the Dictyostelium B56 homolog, displayed high sequence homology to 
+other eukaryotic B56 subunits of the PP2A and a specific association with 
+the PP2A catalytic subunit. Cells lacking DB56, psrA-, displayed higher 
+PP2A phosphatase activity compared to the wild type, ~ 10 hours of delayed 
+expression of ecmA and ecmB prestalk markers, and inefficient culmination. 
+The prespore marker cotB declined as wild type cells culminate, but no such 
+decline was observed from psrA- cells. Interestingly, psrA- cells exhibited 
+higher GSK3 kinase activity. Furthermore, the expression of the dominant 
+negative GSK3 mutant (K84/85M) in psrA- cells improved both prestalk and 
+prespore expression patterns similarly to wild type cells. However, 
+culmination was not restored in psrA- cells expressing dominant negative 
+GSK3, which suggests that PP2A/DB56 has an extra target during terminal 
+differentiation. This report shows that PP2A/DB56 controls not only 
+metazoan development, but also non-metazoan cell fate decision processes.  
+
+
+Submitted by: Leung Kim [kiml@fiu.edu]
+==============================================================
+[End dictyNews, volume 30, number 15]

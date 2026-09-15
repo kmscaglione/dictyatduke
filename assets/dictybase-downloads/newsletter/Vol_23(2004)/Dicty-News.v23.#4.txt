@@ -1,0 +1,141 @@
+Dicty News
+Electronic Edition
+Volume 23, number 4
+July 30, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Dictyostelium calcium-binding protein 4a interacts with NumA, a BRCT-domain
+protein that regulates nuclear number
+
+
+Michael A. Myre & Danton H. O‚Day*
+
+Department of Biology, University of Toronto at Mississauga, Mississauga,
+ON. Canada
+
+Biochemical and Biophysical Research Communications, in press
+
+
+Nucleomorphin from Dictyostelium discoideum is a nuclear calmodulin binding
+protein that is a member of the BRCT-domain containing cell cycle
+checkpoint proteins. Two differentially expressed isoforms, NumA and NumB,
+share an extensive acidic domain (DEED) that when deleted produces highly
+multinucleated cells. We performed a yeast two-hybrid screen of a
+Dictyostelium cDNA library using NumA as bait. Here we show that
+nucleomorphin interacts with calcium binding protein 4a (CBP4a) in a
+Ca2+-dependent manner. Further deletion analysis suggests this interaction
+requires residues found within the DEED domain. NumA and CBP4a mRNAs are
+expressed at the same stages of development. CBP4a belongs to a large family
+of Dictyostelium CBPs, for which no cellular or developmental functions had
+previously been determined. Since the interaction of CBP4a with NumA
+requires the DEED domain, this suggests that CBP4a may respond to
+Ca2+-signalling through modulating factors that might function in concert
+to regulate nuclear number.
+
+
+
+Submitted by: M. Myre" [mmyre@utm.utoronto.ca]
+
+-----------------------------------------------------------------------------
+
+
+Rac regulation of chemotaxis and morphogenesis in Dictyostelium
+
+Kyung Chan Park1, Francisco Rivero2, Ruedi Meili1, Susan Lee1, Fabio Apone1,3,
+and Richard A. Firtel1,4
+
+1Section of Cell and Developmental Biology, Division of Biological Sciences
+Center for Molecular Genetics, University of California, San Diego
+9500 Gilman Drive, La Jolla, CA 92093-0634
+2Zentrum für Biochemie der Medizinischen Fakultät, Universität zu Köln
+Joseph-Stelzmann-Strasse 52
+50931 Köln, Germany
+
+EMBO J, in press
+
+
+Chemotaxis requires localized F-actin polymerization at the site of the
+plasma membrane closest to the chemoattractant source, a process controlled
+by Rac/Cdc42 GTPases. We identify Dictyostelium RacB as an essential mediator
+of this process. RacB is activated upon chemoattractant stimulation,
+exhibiting biphasic kinetics paralleling F-actin polymerization. racB null
+cells have strong chemotaxis and morphogenesis defects and a severely reduced
+chemoattractant-mediated F-actin polymerization and PAKc activation. RacB
+activation is partly controlled by the PI3K pathway. pi3k1/2 null cells and
+wild-type cells treated with LY294002 exhibit a significant reduced second
+peak of RacB activation  and that is linked to pseudopod extension, whereas
+a PTEN hypomorph exhibits elevated RacB activation. We identify a RacGEF,
+RacGEF1, which has a specificity for RacB in vitro. racgef1 null cells
+exhibit reduced RacB activation and cells expressing mutant RacGEF1 proteins
+display chemotaxis and morphogenesis defects. RacGEF1 localizes to sites of
+F-actin polymerization. Inhibition of this localization reduces RacB
+activation, suggesting a feedback loop from RacB via F-actin polymerization
+to RacGEF1. Our findings provide a critical linkage between chemoattractant
+stimulation, F-actin polymerization, and chemotaxis in Dictyostelium.
+
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+-----------------------------------------------------------------------------
+
+
+A cell number counting factor regulates Akt/ PKB to regulate group size in
+Dictyostelium
+
+Tong Gao1, David Knecht2, Lei Tang3, R. Diane Hatton1,
+and Richard H. Gomer1,3
+
+1HHMI/ 3Rice University, Houston, TX 77005-1892 and 2University of
+Connecticut, Storrs, Connecticut 06269-3125 
+
+Eukaryotic Cell, in press
+
+
+Little is known about how individual cells can organize themselves to form
+structures of a given size.  During development, Dictyostelium discoideum
+aggregates in dendritic streams and forms groups of ~20,000 cells.
+D. discoideum regulates group size by secreting and simultaneously sensing
+a multi-protein complex called counting factor (CF).  If there are too
+many cells in a stream, the associated high concentration of CF will
+decrease cell-cell adhesion and increase cell motility, causing aggregation
+streams to break up.  The pulses of cAMP that mediate aggregation cause a
+transient translocation of the Akt/PKB kinase to the leading edge of the
+plasma membrane and a concomitant activation of the kinase activity, which
+in turn stimulates motility.  We found that countin¯ cells (which lack
+bioactive CF) and wild-type cells starved in the presence of anti-countin
+antibodies (which block CF activity) showed a decreased level of
+cAMP-stimulated Akt/PKB membrane translocation and kinase activity compared
+to parental wild type cells.  Recombinant countin has the bioactivity of
+CF, and a 1-minute treatment of cells with recombinant countin potentiated
+Akt/PKB translocation to membranes and Akt/PKB activity.   Western blots
+of total cell lysates indicated that countin does not affect the total
+level of Akt/PKB.  Fluorescence microscopy of cells expressing an Akt/PKB
+PH-GFP fusion protein indicated that recombinant countin and anti-countin
+antibodies do not obviously alter the distribution of Akt/PKB PH-GFP when
+it translocates to the membrane.  Our data indicate that CF increases
+motility by potentiating the cAMP-stimulated activation and translocation
+of Akt/PKB.
+
+
+
+Submitted by: Richard Gomer [richard@rice.edu]
+
+==============================================================================
+[End Dicty News, volume 23, number 4]

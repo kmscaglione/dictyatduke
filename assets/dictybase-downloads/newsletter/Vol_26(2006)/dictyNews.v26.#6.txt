@@ -1,0 +1,136 @@
+dictyNews
+Electronic Edition
+Volume 26, number 6
+February 24, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Dabp1 regulates pseudopodium number in chemotaxing Dictyostelium cells
+
+Yanqin Wang and Theresa J. O'Halloran
+
+
+Journal of Cell Science, in press
+
+In Dictyostelium, chemotactic aggregation is a dynamic pathway in which 
+cells respond to extracellular signals, polarize, and move with strong 
+persistence into aggregation centers. Actin and actin-associated proteins 
+play an important role in controlling the morphological changes and the 
+directed movement of cells during chemotactic aggregation. Recently we 
+identified a homologue of Abp1 in Dictyostelium (Dabp1). The first actin 
+binding protein identified in yeast, abp1 plays a key role in actin-based 
+endocytosis in these cells.  More recently, a role in receptor-mediated 
+endocytosis has been identified for Abp1 in mammalian cells.  To explore 
+possible functions of Dabp1 in Dictyostelium, we examined the phenotypes 
+of cells that overexpressed the Dabp1 protein and cells that eliminated 
+Dabp1 expression.  In these mutants most actin-based processes were intact. 
+However, cell motility was altered during early development. During 
+chemotactic streaming up to 25% (+4%) of Dabp1 null cells had multiple 
+pseudopods while 92% wildtype cells had a single leading edge and a single 
+uropod. Similarly, about 90% of cells that overexpressed Dabp1 projected 
+multiple pseudopodia during chemotactic streaming, and displayed reduced 
+rates of cell movement.  Expression of the SH3 domain of Dabp1 showed this 
+domain to be an important determinant in regulating pseudopod number.  
+These results suggest that Dabp1 controls pseudopod number and motility 
+in early stages of chemotactic aggregation in Dictyostelium.
+
+
+Submitted by: Terry OÕHalloran [t.ohalloran@mail.utexas.edu]
+-----------------------------------------------------------------------------
+
+
+Calmodulin-Mediated Signaling in Dictyostelium discoideum: CaMBOT Isolation 
+and Characterization of the Novel Poly-Domain Protein Nucleomorphin and 
+Other Calmodulin Binding Proteins.
+
+Danton H. O'Day, Department of Biology, University of Toronto at Mississauga,
+Mississauga, Ontario L5L 1C6 CANADA 
+
+Chapter 6, In: "Focus on Cellular Signalling Research", Nova Science 
+Publishers, Inc. (in press)
+
+Calmodulin (CaM) is an essential protein in the model eukaryote Dictyostelium
+discoideum where it mediates numerous events including chemotaxis, 
+gametogenesis, fertilization, and spore germination. Profiling using the 
+CaM-binding overlay technique (CaMBOT) has revealed that well over four-dozen 
+calcium-dependent and -independent CaM-binding proteins (CaMBPs) are present 
+in Dictyostelium, some of which are linked to these CaM-mediated processes.
+Individual CaMBPs have been localized to specific sub-cellular locales and to 
+show varying patterns of developmental expression. CaMBOT also is used to 
+isolate cDNAs encoding CaMBPs from an expression library from mid-to-late 
+multicellular development of Dictyostelium. Previously studied CaMBPs such as 
+calcineurin A (CNA) and regulatory myosin light chain (RMLC) were identified 
+in this way. Novel proteins were also identified. Nucleomorphin is a novel 
+nuclear CaMBP, expressed as two main isoforms NumA1 and 2, which localizes to 
+the nucleoplasmic periphery. NumA has at least one bipartite NLS 
+(48KKSYQDPEIIAHSRPRK66) and a single CaM-binding domain 
+(171EDVSRFIKGKLLQKQQKIYKDLERF195) that interacts with CaM in both a 
+Ca2+-dependent and Ca2+-independent manner. NumA1 contains an extensive 
+glu/asp or DEED repeat that regulates nuclear number. Yeast two hybrid and 
+co-immunoprecipitation studies have identified calcium binding protein CBP4a 
+as an interacting protein that binds to the DEED repeat. NumA2 also has a 
+breast cancer C-terminus (BRCT) domain, two poly-N tracts plus a second, 
+putative CaMBD. Proteins not previously known to be CaMBPs were also 
+identified by CaMBOT probing of the Dictyostelium developmental expression
+library, including phosphoglycerate kinase, thymidine kinase and histone H1. 
+Dictyostelium phosphoglycerate kinase (DdPGK) binds CaM in a Ca2+-dependent 
+manner with CaM negatively regulating its activity in vitro. The identified 
+CaMBD shows 80% identity with PGKs from diverse organisms and is localized 
+adjacent to mutation sites underlying certain human diseases. Thymidine 
+kinase (DdTK1) is a Ca2+-dependent CaMBP and its in vitro activity is 
+slightly enhanced by CaM and inhibited by CaM antagonists. Histone H1 (DdH1) 
+was isolated as a CaMBP and binds CaM in vitro but its mode of CaM-binding 
+remains elusive. Each of the CaMBPs we have identified is discussed in terms 
+of its individual roles as well as its potential interaction with other 
+CaMBPs and other proteins in regulating specific CaM-dependent cellular 
+processes including the cell cycle.
+
+
+Submitted by: Dan OÕDay [doday@utm.utoronto.ca]
+-----------------------------------------------------------------------------
+
+
+The contribution of the endoplasmic reticulum to Ca2+ signals in 
+Dictyostelium depends on extracellular Ca2+
+
+Paul R. Fisher* and Zofia Wilczynska.
+Department of Microbiology, La Trobe University, Victoria 3086, Australia.
+
+
+FEMS Microbiology Letters, in press
+
+We recently reported the first molecular genetic evidence that Dictyostelium 
+Ca2+ responses to chemoattractants include a contribution from the 
+endoplasmic reticulum (ER) - responses are enhanced in mutants lacking 
+calreticulin or calnexin, two major Ca2+-binding proteins in the ER, even 
+though the influx of Ca2+ into the mutants is reduced. Compared to wild type 
+cells, the ER in the mutants contributes at least 30-70 nM additional Ca2+ 
+to the responses. Here we report that this additional ER contribution to the 
+cytosolic Ca2+ signal depends upon extracellular Ca2+ - it does not occur in 
+the absence of extracellular Ca2+, increases to a maximum as the 
+extracellular Ca2+ levels rise to 10 uM and then remains constant at 
+extracellular Ca2+ concentrations up to at least 250 uM. These results 
+suggest that Ca2+ influx causes the intracellular release, in the simplest 
+scenario by a mechanism involving Ca2+-induced Ca2+ release from the ER. By 
+way of contrast, we show that Ca2+ responses to mechanical stimulation are
+reduced, but still occur in the absence of extracellular Ca2+. Unlike the 
+responses to chemoattractants, mechanoresponses thus include contributions 
+from the ER that are independent of extracellular Ca2+.
+
+
+Submitted by: Paul Fisher [fisher@lumi.micro.latrobe.edu.au]
+==============================================================================
+[End dictyNews, volume 26, number 6] 

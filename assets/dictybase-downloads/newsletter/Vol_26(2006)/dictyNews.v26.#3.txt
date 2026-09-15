@@ -1,0 +1,89 @@
+dictyNews
+Electronic Edition
+Volume 26, number 3
+January 20, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Identification and characterization of an 8 kDa light chain associated with 
+Dictyostelium discoideum MyoB, a class I myosin 
+
+Scott W. Crawley, Marc A. de la Roche, Sheu-Fen Lee, Zhihao Li, Seth Chityat,
+Steven P. Smith, and Graham P. Cote 
+
+Biochemistry Dept., Queen's University, Kingston, Ontario K7L 3N6 
+
+
+Journal of Biological Chemistry, in press
+
+Dictyostelium discoideum MyoB is a single-headed class I myosin. Analysis of 
+purified MyoB by SDS-PAGE indicated the presence of an ~9 kDa light chain. A 
+tryptic digest of MyoB yielded a partial sequence for the light chain that 
+exactly matched a sequence in a 73-amino acid, 8,296-Da protein (dictyBase 
+DDB0188713). This protein, termed MlcB, contains two EF-hand motifs and 
+shares ~30% sequence identity with the N- and C-terminal lobes of calmodulin. 
+Flag-MlcB expressed in Dictyostelium co-immunoprecipitated with MyoB, but 
+not with the related class I myosins MyoC and MyoD. Recombinant MlcB bound 
+Ca2+ with a Kd value of 0.2 µM and underwent a Ca2+-induced change in 
+conformation that increased alpha-helical content and surface 
+hydrophobicity. Mutational analysis showed that the first EF-hand was 
+responsible for Ca2+ binding. In the presence and absence of Ca2+ MlcB was 
+a monomer in solution and bound to a MyoB IQ motif peptide with a Kd value 
+of ~0.5 µM. A MyoB head-neck construct with a Ser to Glu mutation at the 
+TEDS site bound MlcB and displayed an actin-activated MgATPase activity 
+that was insensitive to Ca2+. We conclude that MlcB represents a novel type 
+of small myosin light chain that binds to IQ motifs in a manner comparable 
+to a single lobe of a typical four EF-hand protein. 
+
+
+Submitted by: Graham Cote [coteg@post.queensu.ca]
+
+-----------------------------------------------------------------------------
+
+
+The C-module DNA-binding factor mediates expression of the Dictyostelium 
+aggregation-specific adenylyl cyclase ACA
+
+Oliver Siol (1) Theodor Dingermann (1) and Thomas Winckler (1,2)
+
+(1) Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Biozentrum), Frankfurt am Main, Germany, and (2) Lehrstuhl fuer 
+Pharmazeutische Biologie, Universitaet Jena, Germany
+
+
+Eukaryot. Cell, in press
+Aggregation of Dictyostelium discoideum amoebae into multicellular 
+structures is organized by cyclic AMP, which acts both as a chemoattractant, 
+second messenger, and morphogen. Aggregation of D. discoideum cells depends 
+on the expression of adenylyl cyclase ACA, which provides extracellular cAMP 
+for signal relay and intracellular cAMP for the induction of genes required 
+at multicellular stages. We have identified a DNA-binding activity specific 
+for a highly A+T-enriched motif in the upstream region of the ACA-encoding 
+gene, acaA. The factor shows DNA-binding characteristics very similar to 
+that of C-module-binding factor (CbfA). Although CbfA was originally 
+identified as a putative regulator of the activity of D. discoideum 
+retrotransposon TRE5-A, it was also found to be essential for aggregation 
+of D. discoideum cells. The identified DNA-binding activity was absent in 
+mutant cells depleted for CbfA, and CbfA could be precipitated using an acaA 
+promoter fragment. We propose that CbfA binds to the acaA promoter to 
+provide a basal transcription activity that is required for induction of 
+ACA expression after the onset of D. discoideum development.
+
+
+Submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+
+==============================================================================
+[End dictyNews, volume 26, number 3] 

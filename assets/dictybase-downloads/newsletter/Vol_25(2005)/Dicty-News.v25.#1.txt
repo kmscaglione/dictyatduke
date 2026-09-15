@@ -1,0 +1,141 @@
+Dicty News
+Electronic Edition
+Volume 25, number 1
+July 8, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+The Dictyostelium Genome Encodes Numerous RasGEFs with Multiple 
+Biological Roles 
+
+Andrew Wilkins2*, Karol Szafranski1*, Derek J. Fraser3, Deenadayalan 
+Bakthavatsalam4, Rolf Mueller4, Paul R. Fisher3, Gernot Gloeckner1, 
+Ludwig Eichinger4, Angelika Noegel4 and Robert H. Insall2,5
+
+
+1 Genome Analysis, Institute for Molecular Biotechnology, 
+Beutenbergstr. 11, D-07745 Jena, Germany
+2 School of Biosciences, University of Birmingham, Birmingham B15 2TT, 
+UK
+3 La Trobe University, VIC 3086, Australia
+4 Centre for Biochemistry and Centre for Molecular Medicine Cologne, 
+Medical Faculty, University of Cologne, Joseph-Stelzmann-Str. 52, 
+50931 Cologne, Germany
+5 Corresponding author
+
+
+BACKGROUND
+Dictyostelium discoideum is a eukaryote with a simple lifestyle and a 
+relatively small genome whose sequence has been fully determined. It 
+is widely used for studies on cell signalling, movement and multicellular 
+development.   Ras nucleotide exchange factors (RasGEFs) are the proteins 
+which activate Ras and thus lie near the top of multiple signalling 
+pathways.  They are particularly important for signalling in development 
+and chemotaxis in many organisms including Dictyostelium.
+RESULTS
+We have searched the genome for sequences encoding RasGEFs.  Despite its 
+relative simplicity, we find that the Dictyostelium genome encodes at 
+least 25 RasGEFs, with a few other genes encoding only parts of the RasGEF 
+consensus domains.  All appear to be expressed at some point in development. 
+The 25 genes include a wide variety of domain structures, most of which have 
+not been seen in other organisms.  The LisH domain, which is associated with 
+microtubule binding, is seen particularly frequently; other domains which 
+confer interactions with the cytoskeleton are also common.  Disruption of a 
+sample of the novel genes reveals that many have clear phenotypes, including 
+altered morphology and defects in chemotaxis, slug phototaxis and thermotaxis. 
+CONCLUSIONS
+These results suggest that the unexpectedly large number of RasGEF genes 
+reflects an evolutionary expansion of the range of Ras signalling rather 
+than functional redundancy or the presence of multiple pseudogenes.
+
+
+Submitted by: Robert Insall [r.h.insall@bham.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Dictyopyrones, novel a-pyronoids isolated from Dictyostelium spp., promote 
+stalk cell differentiation in Dictyostelium discoideum
+
+Akiko Arai, Yukino Goto, Aiko Hasegawa, Kohei Hosaka, Haruhisa Kikuchi, 
+Yoshiteru Oshima, Susumu Tanaka and Yuzuru Kubohara*
+
+*Gunma University IMCR, Maebshi 371-8512, Japan
+
+
+Differentiation, in press
+
+Dictyopyrones A and B (DpnA and DpnB) whose function(s) is not known were 
+isolated from fruiting bodies of Dictyostelium discoideum.  In the present 
+study, to assess their function(s), we examined the effects of Dpns on 
+in vitro cell differentiation in D. discoideum monolayer cultures with cAMP. 
+Dpns at 1-20 microM promoted stalk cell formation to some extent in the 
+wild-type strain V12M2.  Although Dpns by themselves could hardly induce 
+stalk cell formation in a DIF-deficient strain HM44, both of them 
+dose-dependently promoted DIF-1-dependent stalk cell formation in the 
+strain.  In the sporogenous strain HM18, Dpns at 1-20 microM suppressed 
+spore formation and promoted stalk cell formation in a dose-dependent 
+manner.  Analogs of Dpns were less effective in affecting cell 
+differentiation in both HM44 and HM18 cells, indicating that the activity of 
+Dpns should be chemical structure-specific.  It was also shown that DpnA at 
+2-20 microM dose-dependently suppressed spore formation induced with 8-bromo 
+cAMP and promoted stalk cell formation in V12M2 cells.  Interestingly, it 
+was shown by the use of RT-PCR that DpnA at 10 microM slightly promoted both 
+prespore- and prestalk-specific gene expressions in an early phase of V12M2 
+and HM18 in vitro differentiation.  The present results suggest that Dpns may 
+have functions 1) to promote both prespore and prestalk cell differentiation 
+in an early stage of development and 2) to suppress spore formation and 
+promote stalk cell formation in a later stage of development in D. discoideum.
+
+
+Submitted by: Yuzuru Kubohara <kubohara@showa.gunma-u.ac.jp]
+
+-----------------------------------------------------------------------------
+
+
+CAP is essential for the functioning of the endo-lysosomal system and 
+provides a link to the actin cytoskeleton
+
+Hameeda Sultana, Francisco Rivero, Rosemarie Blau-Wasser, Stephan Schwager,
+Alessandra Balbo, Salvatore Bozzaro, Michael Schleicher, Angelika A. Noegel
+
+Traffic (accepted)
+
+Data from mutant analysis in yeast and Dictyostelium indicate a role for the 
+cyclase-associated protein (CAP) in endocytosis and vesicle transport. We 
+have used genetic and biochemical approaches to identify novel interacting 
+partners of Dictyostelium CAP to help explain its molecular interactions in 
+these processes. CAP associates and interacts with subunits of the highly 
+conserved vacuolar H+-ATPase (V-ATPase) and colocalizes to some extent with 
+the V-ATPase. Furthermore, CAP is essential for maintaining the structural 
+organization, integrity and functioning of the endo-lysosomal system as 
+distribution and morphology of V-ATPase and Nramp1 decorated membranes were 
+disturbed in a CAP mutant (CAP bsr) accompanied by an increased endosomal pH. 
+Moreover, concanamycin A (CMA), a specific inhibitor of the V-ATPase, had a 
+more severe effect on CAP bsr than on wild type cells and the mutant did not 
+show adaptation to the drug. Also, the distribution of GFP-CAP was affected 
+upon CMA treatment in the wild type and recovered after adaptation. 
+Distribution of the V-ATPase in CAP bsr was drastically altered upon 
+hypo-osmotic shock and growth was slower and reached lower saturation 
+densities in the mutant under hyper-osmotic conditions. Taken together, our 
+data unravel a link of CAP with the actin cytoskeleton and endocytosis and 
+suggest that CAP is an essential component of the endo-lysosomal system in 
+Dictyostelium.
+
+
+Submitted by: Angelika Noegel [noegel@uni-koeln.de]
+
+==============================================================================
+[End Dicty News, volume 25, number 1] 

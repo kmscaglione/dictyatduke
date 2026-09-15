@@ -1,0 +1,162 @@
+Dicty News
+Electronic Edition
+Volume 14, number 11
+May 13, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Towards a molecular understanding of cytokinesis
+
+Douglas N. Robinson and James A. Spudich
+
+Department of Biochemistry, Beckman Center, Rm. B-400, Stanford 
+University, Stanford, CA 94305-5307, USA 
+
+Trends in CELL BIOLOGY 10: 228-237. June, 2000
+
+In this review, we focus on recent discoveries regarding the
+molecular basis of cleavage furrow positioning and contractile ring
+assembly and contraction during cytokinesis. However, some of
+these mechanisms might have different degrees of importance in
+different organisms. This synthesis attempts to uncover common
+themes and to reveal potential relationships that might contribute
+to the biochemical and mechanical aspects of cytokinesis.
+Because the information about cytokinesis is still fairly
+rudimentary, our goal is not to present a definitive model but to
+present testable hypotheses that might lead to a better
+mechanistic understanding of the process.
+
+----------------------------------------------------------------------------
+
+Loss of a member of the aquaporin gene family, aqpA affects spore dormancy
+in Dictyostelium 
+
+Biswa Nath Mitra, Ryuji Yoshino, Takahiro Morio, Masako Yokoyama1, Mineko
+Maeda1, Hideko Urushihara and Yoshimasa Tanaka
+
+Institute of Biological Sciences, University of Tsukuba, Tsukuba, Ibaraki
+305-8572, Japan and 1 Department of Biology, Graduate School of Science,
+Osaka University, Toyonaka, Osaka 560-0043, Japan
+
+Gnee, in press.
+                                                        
+Abstract
+
+    We isolated and characterized a gene from Dictyostelium discoideum
+which encodes a protein of 279 amino acids (30.6 kDa) containing six
+transmembrane domains with two highly conserved motifs of
+asparagine-proline-alanine (NPA) found in the aquaporin family of water
+channel proteins, although the second motif of the protein has been
+modified into NPV (asparagine-proline-valine). The deduced amino acid
+sequences of the gene, which we have named aqpA, is 39% identical to D.
+discoideum WacA, 26% identical to human Aqp5, 26% identical to Oryza sativa
+PIP2a, 25% identical to yeast Aqy1 and 24% identical to E.coli AqpZ.
+Southern analyses indicated that aqpA is present as a single copy in the
+genome. Northern blot analysis showed that the developmentally regulated
+1-kb mRNA transcript first appears at tight mound stage (12 h), and is
+abundant in fingers (16 h) and late culminants (20 h). In situ
+hybridization of slugs revealed that aqpA mRNA accumulated in cells of the
+prespore region but not in those of the prestalk region. Disruption of aqpA
+by homologous recombination did not significantly affect growth or
+developmental morphogenesis. Although mutant spores were viable, when
+assayed soon after encapsulation, they became permeable to propidium iodide
+and lost viability after a week on the top of a fruiting body. Thus AqpA is
+essential to maintain spore dormancy perhaps through the regulation of
+water flow.
+
+----------------------------------------------------------------------------
+
+Developmental Cheating and The Evolutionary Biology of Dictyostelium and
+Myxococcus
+
+Dee N. Dao, Richard H. Kessin, and Herbert L. Ennis
+
+Department of Anatomy and Cell Biology, Columbia University
+630 West 168th St., N.Y., N.Y. 10032, USA
+
+Microbiology, in press. 
+
+
+Abstract
+
+    Although widely separated in phylogeny, Dictyostelium and Myxococcus
+species have a developmental strategy in common. They both collect cells
+from a certain volume of soil and therefore, within their developmental
+structures, not all cells are necessarily genetically equivalent. While
+laboratory strains are genetically uniform, there is no reason to expect
+clonal aggregation in the wild. Twenty percent of cells die to form the
+stalk during development of Dictyostelium discoideum and a higher
+percentage of aggregating cells die during fruiting body formation of
+Myxococcus xanthus.  In this situation, it is likely that cheaters will
+arise that form only viable spores and avoid cell fates that lead to death.
+Such cheating variants have now been found in M. xanthus and in D.
+discoideum. This review discusses the common features of cheater mutants
+and how organisms that create multi-cellular structures by aggregation must
+solve the problem of parasitism that is avoided in animals that form from
+zygotes. 
+
+----------------------------------------------------------------------------
+
+Molecular characterization of a calmodulin-like Dictyostelium protein CalB
+
+Daniel Rösel, Frantisek Puta, Anna Blahuskova, Petr Smykal#, Petr Folk
+
+Department of Physiology and Developmental Biology, #Department of Plant 
+Physiology, Charles University, Vinicna 7, Praha 2, 128 00, Czech Republic
+
+FEBS Letters, in press.
+
+A gene named calB was cloned and characterized in Dictyostelium. A 
+relationship to calmodulin (CaM) is suggested by sequence identity (50%), 
+similar exon-intron structure and cross-reactivity with anti-CaM sera. The 
+level of calB mRNA is developmentally regulated with maxima during 
+aggregation and in spores. CalB null cells grow normally, develop and 
+produce viable spores. We demonstrated the capacity of tagged CalB to 
+bind Ca2+ using the 45Ca2+ overlay assay and showed that its mobility on 
+SDS-PAGE is dependent on Ca2+/EGTA pretreatment.
+
+----------------------------------------------------------------------------
+
+Suppression of the Growth/Differentiation Transition in Dictyostelium 
+Development by Transient Expression of a Novel Gene, Dia1
+
+Shigenori Hirose, Yuji Inazu, Soo-Cheon Chae2 and Yasuo Maeda
+
+Biological Institute, Graduate School of Science, Tohoku University, Aoba,
+Sendai 980-8578, Japan
+
+Development, in press.
+
+SUMMARY
+
+In Dictyostelium discoideum Ax-2 cells, a specific check-point (PS-point)
+from which cells enter the differentiation phase in response to starvation
+has been specified in the cell cycle. Using the differential display method,
+we isolated a novel gene, dia1 (differentiation-associated gene 1), as being
+specifically expressed in cells differentiating from the PS-point. The dia1
+mRNA has an open reading flame of 1,368 bp and is deduced to code for a 48.6
+kDa protein (DIA1). The DIA1 protein is highly serine-rich and the serine
+residues are predominantly located in the C-terminal region. After the PSORT
+search, the protein is predicted to be GPI-anchored at the plasma membrane.  
+Unexpectedly, the dia1-overexpression rather impaired the
+progression of differentiation, possibly coupling with the reduced
+expression of early genes such as cAMP receptor1 (car1). The inhibitory
+effect of dia1-expression on early differentiation was almost completely
+nullified by externally applied cAMP pulses. In contrast to the
+dia1-overexpression, antisense RNA-mediated dia1 inactivation was found to
+enhance the initial step of cell differentiation, as exemplified by
+precocious expressions of car1 and other early genes. We discuss the unique
+structure and function of DIA1 and its relation with cooperative development
+of cells during the establishment of multicellular organization.
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 14, number 11]

@@ -1,0 +1,101 @@
+dictyNews
+Electronic Edition
+Volume 32, number 3
+January 30, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+The 3-Dimensional Dynamics of Actin Waves,
+a Model of Cytoskeletal Self-organization 
+
+Till Bretschneider1, 3,§, Kurt Anderson2, 5,§, Mary Ecke1,
+Annette Mueller-Taubenberger1, 4,  Britta Schroth-Diez2, 
+Hellen C. Ishikawa-Ankerhold1, and Guenther Gerisch1*
+
+1 Max-Planck-Institut fuer Biochemie, Am Klopferspitz 18, 
+D-82152 Martinsried, Germany.
+2 Max-Planck-Institut fuer molekulare Zellbiologie und Genetik, 
+Pfotenhauerstrasse 108, D 01307 Dresden, Germany.
+3 Present address: Warwick Systems Biology, Coventry House, 
+University of Warwick, Coventry CV4 7AL, UK.
+4 Present address: Adolf Butenandt Institute / Cell Biology and Munich 
+Center for Integrated Protein Science (CIPSM), Ludwig Maximilians Universitaet, 
+Schillerstrasse 42, D-80336 Muenchen, Germany.
+5 Present address: Leader Light Microscopy, Beatson Institute for Cancer 
+Research, Garscube Estate, Switchback Road, Glasgow, G61 1BD, Scotland UK.
+§ These two authors contributed equally to the work.
+
+*Correspondence should be addressed to Dr. Guenther Gerisch, 
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany.  
+phone: (+49) 89-8578-2326; fax: (+49) 89-8578-3885;  
+e-mail: gerisch@biochem.mpg.de
+
+
+Biophys.J., in press.
+   
+Actin polymerization is typically initiated at specific sites in a 
+cell by membrane-bound protein complexes, and the resulting structures 
+are involved in specialized cellular functions, such as migration, 
+particle uptake, or mitotic division. Here we analyze the potential 
+of the actin system to self-organize into waves that propagate on 
+the planar, substrate-attached membrane of a cell. We show that 
+self-assembly involves the ordered recruitment of proteins from 
+the cytoplasmic pool, and relate the organization of actin waves 
+to their capacity for applying force. Three proteins are shown to 
+form distinct 3-dimensional patterns in the actin waves. Myosin-IB 
+is enriched at the wave front and close to the plasma membrane, 
+the Arp2/3 complex is distributed throughout the waves, and 
+coronin forms a sloping layer on top of them. CARMIL, a protein 
+that links myosin-IB to the Arp2/3 complex, is also recruited to 
+the waves. Wave formation does not depend on signals transmitted 
+by heterotrimeric G-proteins, nor does their propagation require 
+SCAR, a regulator upstream of the Arp2/3 complex. Propagation 
+of the waves is based on an actin treadmilling mechanism, 
+indicating a program that couples actin assembly to disassembly 
+in a 3-dimensional pattern. When waves impinge on the cell 
+perimeter, they push the edge forward, when they reverse direction, 
+the cell border is paralyzed. These data show that force-generating, 
+highly organized supramolecular networks are autonomously 
+formed in live cells from molecular motors and proteins 
+controlling actin polymerization and depolymerization.
+
+
+Submitted by: Guenther Gerisch [gerisch@biochem.mpg.de]
+--------------------------------------------------------------------------------
+
+
+A measure of endosomal pH by flow cytometry in Dictyostelium
+
+Anna Marchetti, Emmanuelle Lelong and Pierre Cosson
+
+BMC Research Notes 2009, 2:7
+
+Dictyostelium amoebae are frequently used to study the organization 
+and function of the endocytic pathway, and specific protocols are 
+essential to measure the dynamics of endocytic compartments and 
+their internal pH. We have revisited these classical protocols to 
+measure more accurately endosomal pH, making use of a fluorescent 
+probe (Oregon green) more adequate for very acidic pH values. This 
+pH-sensitive probe was combined with a pH-insensitive marker, 
+in order to visualize simultaneously endosome dynamics and pH 
+changes. Finally, a flow cytometer was used to measure endosomal 
+pH in individual cells. Using these simple protocols the endosomal 
+pH of endocytic compartments can be assessed accurately, revealing 
+the extreme acidity of Dictyostelium lysosomes (pH <3.5).
+
+
+Submitted by: Emmanuelle Lelong [emmanuelle.lelong@unige.ch]
+==============================================================
+[End dictyNews, volume 32, number 3]

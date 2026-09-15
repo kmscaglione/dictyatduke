@@ -1,0 +1,182 @@
+dictyNews
+Electronic Edition
+Volume 43, number 7
+April 7, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Does high relatedness promote cheater-free multicellularity in synthetic lifecycles?
+
+R. F. Inglis, E. Ryu, O. Asikhia, J. E. Strassmann & D. C. Queller
+
+
+Journal of Evolutionary Biology, in press
+
+The evolution of multicellularity is one of the key transitions in evolution and 
+requires extreme levels of cooperation between cells. However, even when cells 
+are genetically identical, noncooperative cheating mutants can arise that cause 
+a breakdown in cooperation. How then, do multicellular organisms maintain 
+cooperation between cells? A number of mechanisms that increase relatedness 
+amongst cooperative cells have been implicated in the maintenance of cooperative
+multicellularity including single-cell bottle- necks and kin recognition. In this study, 
+we explore how relatively simple biological processes such  as growth and dispersal 
+can act to increase related-ness and promote  multicellular cooperation. Using 
+experimental populations of pseudo- organisms, we found that manipulating growth 
+and dispersal of clones  of a social amoeba to create high levels of relatedness was 
+sufficient to prevent the spread of cheating mutants. By contrast, cheaters were able 
+to spread under low-relatedness conditions. Most surprisingly, we saw the largest 
+increase in cheating mutants under an experimental treatment that should create 
+intermediate levels of relatedness. This is because one of the factors raising 
+relatedness, structured growth, also causes high vulnerability to growth rate cheaters.
+
+
+submitted by: Fredrik Inglis [inglis@wustl.edu]
+———————————————————————————————————————
+
+
+Evidence that differentiation-inducing factor-1 controls chemotaxis and cell 
+differentiation, at least in part, via mitochondria in Dictyostelium discoideum.
+
+Yuzuru Kubohara*, Haruhisa Kikuchi, Van Hai Nguyen, Hidekazu Kuwayama, 
+and Yoshiteru Oshima
+
+*Laboratory of Health and Life Science, Graduate School of Health and Sports 
+Science, Juntendo University, Inzai, Chiba 270-1695, Japan
+
+
+Biology Open, in press
+
+Differentiation-inducing factor-1 (DIF-1) is an important regulator of cell 
+differentiation and chemotaxis in the development of the cellular slime mold 
+Dictyostelium discoideum. However, the entire signaling pathways downstream 
+of DIF-1 remain to be elucidated. To characterize DIF-1 and its potential 
+receptor(s), we synthesized two fluorescent derivatives of DIF-1, DIF-1-BODIPY 
+and DIF-1-NBD, and investigated their biological activities and cellular localization. 
+DIF-1-BODIPY (5 microM) and DIF-1 (2 nM) induced stalk cell differentiation in 
+the DIF-deficient strain HM44 in the presence of cAMP, whereas DIF-1-NBD 
+(5 microM) had no effect. Microscopic analyses revealed that the biologically 
+active derivative, DIF-1-BODIPY, was incorporated by stalk cells at late stages of 
+differentiation and was localized to mitochondria. The mitochondrial uncouplers 
+CCCP (carbonyl cyanide m-chlorophenylhydrazone) at 25–50 nM and DNP 
+(dinitrophenol) at 2.5–5 microM induced partial stalk cell differentiation in HM44 in 
+the presence of cAMP. DIF-1-BODIPY (1–2 microM) and DIF-1 (10 nM), as well 
+as CCCP and DNP, suppressed chemotaxis in the wild-type strain Ax2 in shallow 
+cAMP gradients. These results suggest that DIF-1-BODIPY and DIF-1 induce stalk 
+cell differentiation and modulate chemotaxis, at least in part, by disturbing 
+mitochondrial activity.
+
+
+submitted by: Yuzuru Kubohara [ykuboha@juntendo.ac.jp]
+———————————————————————————————————————
+
+
+Production of Novel Bispyrone Metabolites in the Cellular Slime Mold Dictyostelium 
+giganteum Induced by Zinc(II) Ion
+
+Van Hai Nguyen, Haruhisa Kikuchi, Hikaru Sasaki, Kyoichi Iizumi, Yuzuru Kubohara, 
+Yoshiteru Oshima.
+
+
+Tetrahedron 2017, 73, 583-588; http://doi.org/10.1016/j.tet.2016.12.040
+
+In this study, Zn2+ induced the production of two new bispyrone-type metabolites, 
+dictyobispyrone B and E, in the cellular slime mold Dictyostelium giganteum. Their 
+structures were proposed on the basis of spectroscopic analysis and confirmed by 
+chemical synthesis. They possess a novel alpha,alpha-bispyrone skeleton modified 
+with long carbon chains. Both could be formed from two different polyketide chains 
+through a novel biosynthetic pathway. Our results indicate that cultivation of cellular 
+slime molds in the presence of Zn2+ is a useful technique for discovering other 
+structurally unique compounds.
+
+
+submitted by: Haruhisa Kikuchi [hal@mail.pharm.tohoku.ac.jp]
+———————————————————————————————————————
+
+
+TRE5-A retrotransposition profiling reveals putative RNA polymerase III transcription 
+complex binding sites on the Dictyostelium extrachromosomal rDNA element
+
+Thomas Spaller1, Marco Groth2, Gernot Glöckner3, Thomas Winckler1
+
+1 Pharmaceutical Biology, Institute of Pharmacy, University of Jena, Germany
+2 Core Facility DNA Sequencing, Leibniz Institute for Age Research – Fritz Lipmann 
+Institute, Jena, Germany
+3 Institute for Biochemistry I, Medical Faculty, University of Cologne, Germany
+
+
+PLOS ONE, accepted
+
+The amoeba Dictyostelium discoideum has a haploid genome in which two thirds of 
+the DNA encodes proteins. Consequently, the space available for selfish mobile 
+elements to expand without excess damage to the host genome is limited. The non-
+long terminal repeat retrotransposon TRE5-A maintains an active population in the 
+D. discoideum genome and apparently adapted to this gene-dense environment by 
+targeting positions ~47 bp upstream of tRNA genes that are devoid of protein-coding 
+regions. Because only ~24% of tRNA genes are associated with a TRE5-A element 
+in the reference genome, we evaluated whether TRE5-A retrotransposition is limited 
+to this subset of tRNA genes. We determined that a tagged TRE5-A element 
+(TRE5-Absr) integrated at 384 of 405 tRNA genes, suggesting that expansion of the 
+current natural TRE5-A population is not limited by the availability of targets. We 
+further observed that TRE5-Absr targets the ribosomal 5S gene on the multicopy 
+extrachromosomal DNA element that carries the ribosomal RNA genes, indicating 
+that TRE5-A integration may extend to the entire RNA polymerase III (Pol III) 
+transcriptome. We determined that both natural TRE5-A and cloned TRE5-Absr 
+retrotranspose to locations on the extrachromosomal rDNA element that contain tRNA 
+gene-typical A/B box promoter motifs without displaying any other tRNA gene context. 
+Based on previous data suggesting that TRE5-A targets tRNA genes by locating 
+Pol III transcription complexes, we propose that A/B box loci reflect Pol III transcription 
+complex assembly sites that possess a function in the biology of the 
+extrachromosomal rDNA element.
+
+
+submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+———————————————————————————————————————
+
+
+Regulation of nucleosome positioning by a CHD Type III chromatin remodeler and 
+its relationship to developmental gene expression in Dictyostelium.
+
+James L. Platt, Nicholas A. Kent, Alan R. Kimmel and Adrian J. Harwood (2017) 
+
+
+Genome Research 27: 591-600; http://genome.cshlp.org/content/27/4/591.full
+
+Nucleosome placement and repositioning can direct transcription of individual genes; 
+however, the precise interactions of these events are complex and largely unresolved 
+at the whole-genome level. The Chromodomain-Helicase-DNA binding (CHD) Type III 
+proteins are a subfamily of SWI2/SNF2 proteins that control nucleosome positioning 
+and are associated with several complex human disorders, including CHARGE 
+syndrome and autism. Type III CHDs are required for multicellular development of 
+animals and Dictyostelium but are absent in plants and yeast. These CHDs can mediate 
+nucleosome translocation in vitro, but their in vivo mechanism is unknown. Here, we use 
+genome-wide analysis of nucleosome positioning and transcription profiling to investigate 
+the in vivo relationship between nucleosome positioning and gene expression during 
+development of wild-type (WT) Dictyostelium and mutant cells lacking ChdC, a Type III 
+CHD protein ortholog. We demonstrate major nucleosome positional changes associated 
+with developmental gene regulation in WT. Loss of chdC caused an increase of intragenic 
+nucleosome spacing and misregulation of gene expression, affecting  ~50% of the genes 
+that are repositioned during WT development. These analyses demonstrate active 
+nucleosome repositioning during Dictyostelium multicellular development, establish an in 
+vivo function of CHD Type III chromatin remodeling proteins in this process, and reveal 
+the detailed relationship between nucleosome positioning and gene regulation, as cells 
+transition between developmental states.
+
+
+submitted by: Adrian Harwood  [harwoodaj@cf.ac.uk]
+==============================================================
+[End dictyNews, volume 43, number 7]

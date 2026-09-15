@@ -1,0 +1,116 @@
+dictyNews
+Electronic Edition
+Volume 40, number 27
+October 31, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Glycosylation of Skp1 Promotes Formation of Skp1/Cullin-1/F-box 
+Protein Complexes in Dictyostelium
+
+M. Osman Sheikh*, Yuechi Xu*, Hanke van der Wel*, Paul Walden*, 
+Steven D. Hartson‡, Christopher M. West*
+
+*Dept. of Biochemistry & Molecular Biology, Oklahoma Center for 
+Medical Glycobiology, University of Oklahoma Health Sciences Center, 
+Oklahoma City, OK 73104 USA; ‡Dept. of Biochemistry & Molecular 
+Biology, Oklahoma State University, Stillwater, OK 74078 USA
+
+
+Molecular & Cellular Proteomics, in press
+
+O2-sensing in diverse protozoa depends on the prolyl 4-hydroxylation 
+of Skp1 and modification of the resulting hydroxyproline with a series 
+of 5 sugars. In yeast, plants and animals, Skp1 is associated with 
+F-box proteins. The Skp1/F-box protein heterodimer can, for many 
+F-box proteins, dock onto Cullin-1 en route to assembly of the 
+Skp1/Cullin-1/F-box protein/Rbx1 subcomplex of E3SCFUb-ligases. 
+E3SCFUb-ligases conjugate Lys48-polyubiquitin chains onto targets 
+bound to the substrate receptor domains of F-box proteins, preparing 
+them for recognition by the 26S-proteasome. In the social amoeba 
+Dictyostelium, we show that O2-availability is rate limiting for 
+hydroxylation of newly synthesized Skp1. To investigate the effect 
+of reduced hydroxylation, we analyzed knock-out mutants of the Skp1 
+prolyl hydroxylase and each of the Skp1 glycosyltransferases. 
+Proteomic analysis of co-immunoprecipitates showed that wild-type 
+cells that can fully glycosylate Skp1 have greater abundance of an 
+SCF complex containing the Cullin-1 homolog CulE and FbxD, a newly 
+described WD40-type F-box protein, relative to the complexes that 
+predominate in cells defective in Skp1 hydroxylation or glycosylation. 
+Similarly, the previously described FbxA/Skp1CulA complex was also 
+more abundant in glycosylation competent cells. The CulE interactome 
+also includes higher levels of proteasomal regulatory particles when 
+Skp1 is glycosylated, suggesting increased activity consistent with 
+greater association with F-box proteins. Finally, the interactome of 
+FLAG-FbxD was modified when it harbored an F-box mutation that 
+compromised Skp1 binding consistent with an impact on the abundance 
+of potential substrate proteins. We propose that O2-dependent 
+posttranslational glycosylation of Skp1 promotes association with 
+F-box proteins and their engagement in functional E3SCFUb-ligases 
+that regulate O2-dependent developmental progression.
+
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+----------------------------------------------------------------------
+
+
+Argonaute proteins affect siRNA levels and accumulation of a novel 
+extrachromosomal DNA from the Dictyostelium retrotransposon DIRS-1
+
+Benjamin Boesler1,  Doreen Meier1, Konrad U. Förstner2, Michael 
+Friedrich1,  Christian Hammann3, Cynthia M. Sharma2 and 
+Wolfgang Nellen1,*
+
+The authors wish it to be known that, in their opinion, the first 
+two authors should be regarded as joint first authors.
+
+1 Department of Genetics, FB10, Kassel University, 
+Heinrich-Plett-Str. 40, 34132 Kassel, Germany
+2 Research Center for Infectious Diseases (ZINF), University of 
+Würzburg, Josef-Schneider-Str. 2/Bau D15, 97080 Würzburg, Germany
+3 Ribogenetics Biochemistry Laboratory, School of Engineering and 
+Science, Molecular Life Sciences Research Center, Jacobs University, 
+Campus Ring 1, DE-28759 Bremen, Germany
+
+
+J. Biol. Chem., accepted 
+doi:10.1074/jbc.M114.612663
+
+The retrotransposon DIRS-1 is the most abundant retroelement in 
+Dictyostelium discoideum and constitutes the pericentromeric 
+heterochromatin of the six chromosomes in Dictyostelium discoideum. 
+The vast majority of cellular siRNAs is derived from DIRS-1, 
+suggesting that the element is controlled by RNAi related 
+mechanisms. We investigated the role of two of the five Argonaute 
+proteins of D. discoideum, AgnA and AgnB, in DIRS-1 silencing. 
+Deletion of agnA resulted in the accumulation of DIRS-1 transcripts, 
+the expression of DIRS-1 encoded proteins and the loss of most 
+DIRS-1 derived secondary siRNAs. Simultaneously, extrachromosomal 
+single stranded DIRS-1 DNA accumulated in the cytoplasm of agnA- 
+strains. These DNA molecules appear to be products of reverse 
+transcription and thus could represent intermediate structures 
+before transposition. We further show that transitivity of 
+endogenous siRNAs is impaired in agnA- strains. The deletion of 
+agnB alone had no strong effect on DIRS-1 transposon regulation. 
+However, in agnA-/agnB- double mutant strains strongly reduced 
+accumulation of extrachromosomal DNA compared to the single 
+agnA- strains was observed. 
+
+
+Submitted by Wolfgang Nellen [nellen@uni-kassel.de]   
+==============================================================
+[End dictyNews, volume 40, number 27]

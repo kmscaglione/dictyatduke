@@ -1,0 +1,114 @@
+dictyNews
+Electronic Edition
+Volume 39, number 32
+November 2, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+dictyBase has a job opening! http://dictybase.org/dictybase_jobs.html
+
+=========
+Abstracts
+=========
+
+
+The Diaphanous-related formin dDia1 is required for highly directional 
+phototaxis and formation of properly sized fruiting bodies in Dictyostelium
+
+Moritz Winterhoff (1), Alexander Junemann (1), Benjamin Nordholz (1), 
+Jšrn Linkner (1), Michael Schleicher (2), and Jan Faix (1)
+
+(1) Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg Stra§e 1, 30625 Hannover, Germany; 
+(2) Institute for Anatomy and Cell Biology, Ludwig-Maximilians-University, 
+80336 MŸnchen, Germany
+
+
+EJCB, in press
+
+Diaphanous-related formins (DRFs) act as downstream effectors of Rho 
+family GTPases and drive the formation and elongation of linear actin 
+filaments in various cellular processes. Here we analyzed the DRF dDia1 
+from Dictyostelium cells. The biochemical characterization of recombinant 
+dDia1-FH1FH2 by bulk polymerization assays and single filament TIRF 
+microscopy revealed that dDia1 is a rather weak nucleator. Addition of 
+any of the three Dictyostelium profilin isoforms, however, markedly 
+accelerated formin-mediated actin filament barbed end elongation in TIRF 
+assays. Interestingly, filament elongation was significantly faster in presence 
+of DdPFN I (profilin I) when compared to the other two isoforms, suggesting 
+selectivity of dDia1 for DdPFN I. Additionally, we frequently observed 
+dissociation of the formin from growing barbed ends. These findings are 
+consistent with dilution-induced depolymerization assays in presence of 
+dDia1-FH1FH2 showing that dDia1 is a weak capper in comparison with 
+heterodimeric capping protein. To study the physiological role of this formin, 
+we created cell lines lacking dDia1 or overexpressing GFP-tagged dDia1. 
+Of note, constitutively active dDia1 accumulated homogenously in the entire 
+pseudopod suggesting that it controls microfilament architecture to regulate 
+cell migration. Comparison of wild type and dDia1-null cells in random cell 
+migration and chemotaxis towards a cAMP gradient revealed no major 
+differences. By contrast, phototaxis of dDia1-deficient cells during the 
+multicellular stage was markedly impaired. While wild type slugs moved 
+with high directionality towards the light source, the trails of dDia1-null slugs 
+displayed a characteristic V-shaped profile and deviated in angles between 
+50¡-60¡ from the path of the incident light. Possibly in conjunction with this 
+defect, dDia1-null cells also formed substantially smaller fruiting bodies. 
+These findings demonstrate dDia1 to be critically involved in collective cell 
+migration during terminal differentiation.
+
+
+Submitted by Jan Faix [faix.Jan@mh-hannover.de]
+---------------------------------------------------------------------------
+
+
+A Dictyostelium cellobiohydrolase orthologue that affects 
+developmental timing
+
+Mizuho Kunii 1, Mami Yasuno, Yuki Shindo and Takefumi Kawata *
+
+Department of Biology, Faculty of Science, Toho University, 2-2-1 
+Miyama, Funabashi, Chiba 274-8510, Japan
+
+1 Present address: Department of Biological Production, Graduate 
+School of Agriculture, Tokyo University of Agriculture and Technology, 
+3-8-1 Harumi-cho, Fuchu, Tokyo 183-8538, Japan
+
+
+Development Genes and Evolution, in press
+
+Dictyostelium discoideum is a facultative multicellular amoebozoan with 
+cellulose in the stalk and spore coat of its fruiting body as well as in the 
+extracellular matrix of the migrating slug. The organism also harbors a 
+number of cellulase genes. One of them, cbhA, was identified as a 
+candidate cellobiohydrolase gene based on the strong homology of its 
+predicted protein product to fungal cellobiohydrolase I (CBHI). Expression 
+of the cbhA was developmentally regulated, with strong expression in the 
+spores of the mature fruiting body. However, a weak but detectable level 
+of expression was observed in the extracellular matrix at the mound - 
+tipped finger stages, in prestalk O cells, and in the slime sheath of the 
+migrating slug - late culminant stages. A null mutant of the cbhA showed 
+almost normal morphology. However, the developmental timing of the 
+mutant was delayed by 2 - 4 hours. When a c-Myc epitope-tagged CbhA 
+was expressed, it was secreted into the culture medium and was able to 
+bind crystalline cellulose. The CbhA-myc protein was glycosylated, as 
+demonstrated by its ability to bind succinyl concanavalin A-agarose. 
+Moreover, conditioned medium from the cbhA-mycoe strain displayed 
+4-methylumbelliferyl beta-D-cellobioside (4-MUC) digesting activity in 
+Zymograms in which conditioned medium was examined via native-
+polyacrylamide gel electrophoresis or spotted on an agar plate containing 
+4-MUC, one of the substrates of cellobiohydrolase. Taken together, these 
+findings indicate that Dictyostelium CbhA is an orthologue of CBH I that 
+is required for a normal rate of development. 
+
+
+Submitted by Tekefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+==============================================================
+[End dictyNews, volume 39, number 32]

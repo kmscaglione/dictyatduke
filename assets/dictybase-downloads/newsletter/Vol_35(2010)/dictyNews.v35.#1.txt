@@ -1,0 +1,229 @@
+dictyNews
+Electronic Edition
+Volume 35, number 1
+July 2, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+A versatile set of tagged expression vectors to monitor protein localisation 
+and  function in Dictyostelium.  
+
+Manu Dubin, Wolfgang Nellen, 
+
+Abt. Genetik, Universität Kassel, 34132 Kassel, Germany
+
+
+Gene, in press
+
+We describe here a series of vectors for ectopic expression of tagged 
+proteins in Dictyostelium discoideum. These vectors allow the addition 
+of N- or C- terminal tags (GFP, mRFP, 3xFLAG, 3xHA, 6xMYC or TAP) 
+with an optimised polylinker sequence and no additional amino acid
+residues at the N- or C-terminus of the protein. The expression cassettes 
+were introduced into vectors containing Blasticidin or Geneticin resistance 
+markers and into integrating as well as extrachromosomal plasmids. 
+The vectors are designed as high and low copy versions and thus allow
+for a limited expression level control. They are also convenient with 
+regard to complementation, co- and super-transformation. Finally the 
+vectors share standardizsed cloning sites, so that a gene of interest 
+can be easily transferred between vectors as experimental requirements 
+evolve. These vectors were used to study the localisation of several 
+putative RNA processing proteins including EriA and DicerB.
+
+
+Submitted by  Wolfgang Nellen [nellen@uni-kassel.de]
+--------------------------------------------------------------------------------
+
+
+Synergy between two transcription factors directs gene expression in 
+Dictyostelium tip-organiser cells
+
+Hong Yu Wang and Jeffrey G. Williams 
+
+College of Life Sciences, University of Dundee , Dow St., 
+Dundee DD1 5EH, U. K.
+
+
+Int J Dev Biol, in press				
+
+cotC requires the transcription factor CudA for its expression in the 
+posterior, prespore cells of the slug while the expL7 gene requires 
+CudA for its expression in the anterior, tip-organiser region. In order to 
+identify additional transcription factors that might mediate tip-organiser 
+specific expression, we performed affinity chromatography on slug 
+nuclear extracts. The affinity matrix bore cap-site distal sequences 
+from region A’ of the expL7 promoter; an essential region located 
+upstream of the CudA binding domain. One of the proteins purified 
+was GBF, a zinc finger transcription factor which binds to G-rich 
+elements, known as G boxes, that are present in the promoters of 
+many developmental genes, including cotC. Previous work identified 
+an essential sequence motif within region A’ and we show that this 
+element is a G box, that binds recombinant GBF. Moreover, a G box 
+from within the cotC promoter can substitute for region A’ of expL7 in 
+directing tip-organiser specific expression of expL7. Thus the same 
+two transcription factors, CudA and GBF, seem to co-operate to direct 
+both tip-organiser and prespore gene expression. How then is 
+specificity achieved?  Replacing a CudA binding region in the cotC 
+promoter with the CudA binding domain from expL7 strongly represses 
+cotC promoter activity. Hence we suggest that differences in the 
+topology of the multiple CudA half- sites contained within the two 
+different CudA binding regions, coupled with differences in the 
+signalling environment between tip-organiser cells and prespore cells, 
+ensure correct expL7 expression. 
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Analysis of Dictyostelium TACC reveals differential interactions with 
+CP224 and unusual dynamics of Dictyostelium microtubules
+
+Matthias Samereier, Otto Baumann, Irene Meyer and Ralph Gräf*
+
+University of Potsdam, Institute for Biochemistry and Biology, 
+Dept. of Cell Biology, Karl-Liebknecht-Strasse 24-25, Haus 26, 
+14476 Potsdam-Golm, Germany
+
+
+Cellular and Molecular Life Science, in press
+
+We have localized TACC to the microtubule-nucleating centrosomal 
+corona and to microtubule plus ends. Using RNAi we proved that 
+Dictyostelium TACC promotes microtubule growth during interphase 
+and mitosis. For the first time we show in vivo that both TACC and 
+XMAP215 family proteins can be differentially localized to microtubule 
+plus ends during interphase and mitosis and that TACC is mainly 
+required for recruitment of an XMAP215-family protein to interphase 
+microtubule plus ends but not for recruitment to centrosomes and 
+kinetochores. Moreover, we have now a marker to study dymamics 
+and behavior of microtubule plus ends in living Dictyostelium cells. 
+In a combination of live cell imaging of microtubule plus ends and 
+fluorescence recovery after photobleaching (FRAP) experiments of 
+GFP-alpha-tubulin cells we show that Dictyostelium microtubules 
+are dynamic only in the cell periphery, while they remain stable at 
+the centrosome, which also appears to harbor a dynamic pool of 
+tubulin dimers.
+
+
+Submitted by  Ralph Gräf [rgraef@uni-potsdam.de]
+------------------------------------------------------------------------------
+
+
+The exocytic gene secA is required for Dictyostelium cell motility 
+and osmoregulation
+
+Roberto Zanchi, Gillian Howard, Mark S. Bretscher and Robert R. Kay
+
+MRC Laboratory of Molecular Biology, Hills Road, Cambridge, 
+CB2 0QH, UK 
+
+
+Journal of Cell Science, in press
+
+We investigated the link between plasma membrane recycling and 
+cell movement using a fast-acting, temperature sensitive mutant of 
+the Dictyostelium SecA exocytic protein.  Strikingly, most mutant cells 
+become almost paralyzed within minutes at the restrictive temperature.  
+However, they can still sense cyclic-AMP gradients and polymerize 
+actin up-gradient, but form only abortive pseudopodia, which cannot 
+expand.  They also relay a cyclic-AMP signal normally, suggesting 
+that cyclic-AMP is released by a non-exocytic mechanism.  To 
+investigate why SecA is required for motility, we examined membrane 
+trafficking in the mutant.  Plasma membrane circulation is rapidly 
+inhibited at the restrictive temperature and the cells acquire a 
+prominent vesicle.  Organelle-specific markers show this is an 
+un-discharged contractile vacuole and we find the cells are 
+correspondingly osmo-sensitive.  Electron microscopy shows that 
+many smaller vesicles, probably originating from the plasma 
+membrane, also accumulate at the restrictive temperature.  
+Consistent with this, the surface area of mutant cells shrinks. We 
+suggest that SecA mutant cells cannot move at the restrictive 
+temperature because their block in exocytosis results in a net 
+uptake of plasma membrane, reducing its area, and so restricting 
+pseudopodial expansion.  This demonstrates the importance of 
+proper surface area regulation in cell movement. 
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+------------------------------------------------------------------------------
+
+The following article has been included because it contains experiments in 
+human cells and Dictyostelium
+
+Strumpellin is a Novel VCP Binding Protein linking Hereditary Spastic
+Paraplegia to Protein Aggregation Diseases.
+
+Christoph S. Clemen1),#, Karthikeyan Tangavelou1),#, Karl-Heinz
+Strucksberg1), Steffen Just2), Linda Gaertner2), Hanna Regus-Leidig3),
+Maria Stumpf1), Jens Reimann4), Roland Coras5), Reginald O. Morgan6),
+Maria-Pilar Fernandez6), Andreas Hofmann7), Stefan Müller8), Benedikt
+Schoser9), Franz-Georg Hanisch8), Wolfgang Rottbauer2,10), Ingmar
+Blümcke5), Stephan von Hörsten11), Ludwig Eichinger1), Rolf Schröder5)
+
+1)	Institute of Biochemistry I, Medical Faculty, University of Cologne,
+Cologne, Germany
+2)	Department of Medicine III, University of Heidelberg, Heidelberg, Germany
+3)	Department of Biology, Animal Physiology, University of
+Erlangen-Nuremberg, Erlangen, Germany
+4)	Department of Neurology, University Hospital Bonn, Bonn, Germany
+5)	Institute of Neuropathology, University Hospital Erlangen, Erlangen,
+Germany
+6)	Department of Biochemistry and Molecular Biology, University of Oviedo
+and University Institute of Biotechnology of Asturias, Oviedo, Spain
+7)	Structural Chemistry Program, Eskitis Institute for Cell & Molecular
+Therapies, Griffith University, Brisbane, Australia
+8)	Institute of Biochemistry II, Medical Faculty, and Center for Molecular
+Medicine Cologne, University of Cologne, Cologne, Germany
+9)	Friedrich-Baur Institute, Department of Neurology, Ludwig-Maximilians
+University of Munich, Munich, Germany
+10)	Department of Medicine II, University of Ulm, Ulm, Germany
+11)	Franz-Penzoldt-Center, Experimental Therapy,
+Friedrich-Alexander-University of Erlangen-Nuremberg, Erlangen, Germany
+
+#	Both authors contributed equally to this work.
+
+
+Brain, in press
+
+Mutations of the human VCP gene cause autosomal-dominant inclusion 
+body myopathy associated with Paget disease of bone and frontotemporal 
+dementia (IBMPFD). We identified strumpellin as a novel VCP binding 
+partner. Strumpellin mutations have been shown to cause hereditary spastic
+paraplegia. We demonstrate that strumpellin is a ubiquitously expressed
+protein present in cytosolic and endoplasmic reticulum cell fractions.
+Over-expression or ablation of wild-type strumpellin caused significantly
+reduced wound closure velocities in wound healing assays, whereas
+over-expression of the disease causing strumpellin N471D mutant showed 
+no functional effect. Strumpellin knock-down experiments in human
+neuroblastoma cells resulted in a dramatic reduction of axonal outgrowth.
+Knock-down studies in zebrafish revealed severe cardiac contractile
+dysfunction, tail curvature and impaired motility. The latter phenotype is
+due to a loss of central and peripheral motoneuron formation. These data
+imply a strumpellin loss-of-function pathogenesis in hereditary spastic
+paraplegia. In the human central nervous system strumpellin shows a
+pre-synaptic localization. We further identified strumpellin in pathological 
+protein aggregates in IBMPFD, various myofibrillar myopathies,
+and in cortical neurons of a Huntington disease mouse model. Beyond
+hereditary spastic paraplegia, our findings imply that mutant forms of
+strumpellin and VCP may have a concerted pathogenic role in various 
+protein aggregate diseases.
+
+
+Submitted by  Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 35, number 1]

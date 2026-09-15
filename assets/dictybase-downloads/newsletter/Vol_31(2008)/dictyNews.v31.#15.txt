@@ -1,0 +1,285 @@
+dictyNews
+Electronic Edition
+Volume 31, number 15
+November 14, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Differentiation inducing factor-1 (DIF-1) induces gene and protein expression 
+of the Dictyostelium nuclear calmodulin-binding protein nucleomorphin
+
+Danton H. O’Day1,2,4, Yekaterina Poloz2, Michael A. Myre3
+
+1Department of Biology, University of Toronto at Mississauga, Mississauga, 
+Ontario L5L 1C6, CANADA
+2Department of Cell & Systems Biology, University of Toronto, Toronto, 
+Ontario M5S 3G5, CANADA
+3Center for Human Genetic Research, Massachusetts General Hospital, 
+Harvard Medical School, 185 Cambridge St. , Boston, MA 02114, USA 
+4danton.oday@utoronto.ca
+
+
+Cellular Signalling, accepted, http://dx.doi.org/10.1016/j.cellsig.2008.10.019
+
+The nucleomorphin gene numA1 from Dictyostelium codes for a multi-domain, 
+calmodulin binding protein that regulates nuclear number. To gain insight into 
+the regulation of numA, we assessed the effects of the stalk cell differentiation
+ inducing factor-1 (DIF-1), an extracellular signalling molecule, on the 
+expression of numA1 RNA and protein. For comparison, the extracellular 
+signalling molecules cAMP (mediates chemotaxis, prestalk and prespore 
+differentiation) and ammonia (NH3/NH4+; antagonizes DIF) were also 
+studied. Starvation, which is a signal for multicellular development, results 
+in a greater than 80% decrease in numA1 mRNA expression within 4 hours. 
+Treatment with ammonium chloride led to a greater than 90% inhibition of 
+numA1 RNA expression within 2 hours. In contrast, the addition of DIF-1 
+completely blocked the decrease in numA1 gene expression caused by 
+starvation. Treatment of vegetative cells with cAMP led to decreases in 
+numA1 RNA expression that were equivalent to those seen with starvation. 
+Western blotting after various morphogen treatments showed that the 
+maintenance of vegetative levels of numA1 RNA by DIF-1 in starved cells 
+was reflected in significantly increased numA1 protein levels. Treatment 
+with cAMP and/or ammonia led to decreased protein expression and each 
+of these morphogens suppressed the stimulatory effects of DIF-1. Protein 
+expression levels of CBP4a, a calcium-dependent binding partner of 
+numA1, were regulated in the same manner as numA1 suggesting this 
+potential co-regulation may be related to their functional relationship. 
+NumA1 is the first calmodulin binding protein shown to be regulated by 
+developmental morphogens in Dictyostelium being upregulated by 
+DIF-1 and down-regulated by cAMP and ammonia.
+
+
+Submitted by: Danton O'Day [danton.oday@utoronto.ca]
+--------------------------------------------------------------------------------
+
+
+An extrachromosomal, inducible expression system for 
+Dictyostelium discoideum.
+
+Douwe M. Veltman*, Ineke Keizer-Gunnink and Peter J.M. Van Haastert
+* corresponding author
+
+
+Plasmid, in press
+
+Inducible expression systems are essential for the expression of toxic proteins 
+and are very convenient for proteins that induce strong side effects such as 
+retardation of growth or development. Currently available systems for use in 
+Dictyostelium either do not have a very tight control over expression levels 
+or use a combination of an integrating and an extrachromosomal vector. We 
+designed a new vector in which all components of the available 2-plasmid 
+tetracycline-inducible system were combined onto a single extrachromosomal 
+vector. Two types of inducible plasmids are presented, in which transcription 
+is induced by adding or removing doxycycline respectively. The location and 
+orientation of the components was optimized in order to obtain a low 
+background expression combined with high inducibility. The resulting vectors 
+have a very low expression in the uninduced state (>1,000-fold lower 
+expression compared to that resulting from the act15 promoter), show a 
+10,000-fold induction of gene expression in a doxycycline 
+concentration-dependent manner and are comparatively small (8.5 kb). 
+With these new vectors, inducible gene expression is as easy as 
+constitutive gene expression.
+
+
+Submitted by: Douwe M. Veltman [d.veltman@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+Efficient cell lysis method for isolation of total RNA from slime mold Dictyostelium: 
+Applicability in preparation of cDNA
+
+Bhavesh Vats and Harish Padh
+
+Department of Cell and Molecular Biology
+B. V. Patel Pharmaceutical Education and Research Development (PERD) Centre, 
+Thaltej- Gandhinagar Highway, Thaltej, Ahmedabad – 380054, INDIA.
+Telephone Number: +91-79-27439375, Fax number: +91-79-27450449.
+Email: perd@perdcentre.com
+
+
+International Journal of Biotechnology and Biochemistry, in press
+
+Dictyostelium is a model organism for understanding of many cellular processes, 
+evolutionary studies, behavioral analysis, gene expression and now even drug 
+metabolism. RNA analysis is vital to most studies at molecular level. Extracting 
+RNA is no easy task due to the omnipresence of robust RNases. Attaining full 
+length mRNAs is the chief task in isolation of pure RNA. Stable ribonucleases 
+are the major obstacle in isolating RNA of any kind. Many methods and kits are 
+available for different organisms with differing efficiency, utility and expense. 
+For isolation of RNA from Dictyostelium, Blumberg and Lodish devised a simple, 
+in-expensive yet effective method, though for identification of mRNA use of 
+DNase and poly-dT columns were required. We modified the cell 
+homogenization process and isolated total RNA with the method. The 
+modification enables us to detect specific mRNA from the total RNA pool 
+without purifying through poly-dT columns or processing for DNA removal. The 
+integrity of RNA isolated by the modified method was similar to that of RNA 
+extracted with Qiagen RNAasy Mini kit indicative of the quality of the total RNA
+ extracted. With this modification, we have been able to identify three mRNA 
+transcripts and specifically amplify the cDNA using sequence specific primers.
+
+
+Submitted by: Harish Padh [hpadh@yahoo.com]
+--------------------------------------------------------------------------------
+
+
+Multiple Mechanisms for Accumulation of Myosin II Filaments at the Equator 
+During Cytokinesis
+
+Shigehiko Yumura, Masahiro Ueda, Yasushi Sako, Toshiko  Kitanishi-Yumura, 
+Toshio Yanagida
+
+
+Traffic, in press
+
+Total internal reflection fluorescence microscopy revealed how individual bipolar 
+myosin II filaments accumulate at the equatorial region in dividing Dictyostelium 
+cells. Direct observation of individual filaments in live cells provided us with 
+much convincing information. Myosin II filaments accumulated at the equatorial 
+region by at least two independent mechanisms: (i) cortical flow, which is driven 
+by myosin II motor activities and (ii) de novo association to the equatorial cortex. 
+These two mechanisms were mutually redundant. At the same time, myosin II 
+filaments underwent rapid turnover, repeating their association and dissociation 
+with the actin cortex. Examination of the lifetime of mutant myosin filaments in 
+the cortex revealed that the turnover mainly depended on heavy chain 
+phosphorylation and that myosin motor activity accelerated the turnover. Double 
+mutant myosin II deficient in both motor and phosphorylation still accumulated 
+at the equatorial region, although they displayed no cortical flow and 
+considerably slow turnover. Under this condition, the filaments stayed for a 
+significantly longer time at the equatorial region than at the polar regions, 
+indicating that there are still other mechanisms for myosin II accumulation 
+such as binding partners or stabilizing activity of filaments in the equatorial 
+cortex. 
+
+
+Submitted by: Shigehiko Yumura [yumura@yamaguchi-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Identification of a target for CudA the transcription factor that directs formation 
+of the Dictyostelium tip organiser
+
+Hong Yu Wang and Jeffrey G. Williams 
+University of Dundee
+College of Life Sciences
+University of Dundee 
+Dow St.
+Dundee DD1 5EH
+U. K.
+
+
+Int J Dev Biol, in press
+
+The tip of the Dictyostelium slug functions much like an embryonic organiser; when 
+grafted onto the flank of a recipient slug it recruits a mass of prespore cells and 
+leads them away as part of a secondary slug. CudA is a nuclear protein that is 
+expressed in prespore cells where it acts as a specific transcription factor. CudA 
+is also expressed in an anteriorly located group of cells, the tip-organiser, that 
+is believed to constitute the functional tip. We identify an expansin-like gene, 
+expl7, that is expressed within the tip-organiser region and that is not expressed 
+in a cudA null strain. The expl7promoter contains a region that binds to CudA in 
+vitro and this region is necessary for expression in the tip-organiser. These 
+results provide an end-point for a previously defined signal transduction pathway; 
+wherein regionalised expression of the ACA adenylyl cyclase within the 
+tip-organiser leads to localised cAMP-induced activation of STATa and consequent 
+binding of STATa to the cudA promoter. STATa then induces expression of cudA and 
+cudA directs the transcription of target genes such as expl7.
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium Dock180-related RacGEFs Regulate the Actin Cytoskeleton 
+during Cell Motility
+
+Alessia Para*, Miriam Krischke*, Sylvain Merlot, Zhouxin Shen, Michael Oberholzer, 
+Susan Lee, Steven Briggs, and Richard A. Firtel
+
+* These two authors contributed equally to the work
+
+Section of Cell and Developmental Biology
+Division of Biological Sciences
+University of California, San Diego
+9500 Gilman Drive
+La Jolla, CA 92093-0380
+
+
+Molecular Biology of the Cell, in press
+
+Cell motility of amoeboid cells is mediated by localized F-actin polymerization 
+that drives the extension of membrane protrusions to promote forward movements. 
+We show that deletion of either of two members of the Dictyostelium Dock180 
+family of RacGEFs, DockA and DockD, causes decreased speed of chemotaxing 
+cells. The phenotype is enhanced in the double mutant and expression of DockA 
+or DockD complements the reduced speed of randomly moving DockD null cells’ 
+phenotype, suggesting that DockA and DockD are likely to act redundantly and 
+to have similar functions in regulating cell movement. In this regard, we find that 
+overexpressing DockD causes increased cell speed by enhancing F-actin 
+polymerization at the sites of pseudopod extension. DockD localizes to the cell
+ cortex upon chemoattractant stimulation and at the leading edge of migrating 
+cells and that this localization is dependent on PI3K activity, suggesting that 
+DockD might be part of the pathway that links PtdIns(3,4,5)P3 production to 
+F-actin polymerization. Using a proteomic approach, we found that DdELMO1 
+is associated with DockD and that Rac1A and RacC are possible in vivo DockD 
+substrates. In conclusion, our work provides a further understanding of how 
+cell motility is controlled and provides evidence that the molecular mechanism 
+underlying Dock180-related protein function is evolutionarily conserved.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+Autophagy contributes to degradation of Hirano bodies
+
+Kim, D. H., Davis R. C., Furukawa R. , Fechheimer M.
+
+Department of Cellular Biology, University of Georgia, Athens, Georgia, 
+USA
+
+
+Autophagy, in press.
+
+Hirano bodies are actin-rich inclusions reported most frequently in the
+ hippocampus in association with a variety of conditions including 
+neurodegenerative diseases and aging. We have developed a model 
+system for formation of Hirano bodies in Dictyostelium and cultured 
+mammalian cells to permit detailed studies of the dynamics of these 
+structures in living cells. Model Hirano bodies are frequently observed 
+in membrane-enclosed vesicles in mammalian cells consistent with a 
+role of autophagy in the degradation of these structures. Clearance of 
+Hirano bodies by an exocytotic process is supported by images from 
+electron microscopy showing extracellular release of Hirano bodies, 
+and observation of Hirano bodies in the culture medium of Dictyostelium 
+and mammalian cells. An autophagosome marker protein Atg8-GFP was
+ colocalized with model Hirano bodies in wild-type Dictyostelium cells, but 
+not in atg5(-) or atg1-1 autophagy mutant strains. Induction of model Hirano 
+bodies in Dictyostelium with a high-level expression of 34 kDa DeltaEF1
+ from the inducible discoidin promoter resulted in larger Hirano bodies 
+and a cessation of cell doubling. The degradation of model Hirano bodies 
+still occurred rapidly in autophagy mutant (atg5(-)) Dictyostelium, 
+suggesting that other mechanisms such as the ubiquitin-mediated 
+proteasome pathway could contribute to the degradation of Hirano bodies. 
+Chemical inhibition of the proteasome pathway with lactacystin significantly 
+decreased the turnover of Hirano bodies in Dictyostelium, providing direct 
+evidence that autophagy and the proteasome can both contribute to 
+degradation of Hirano bodies. Short-term treatment of mammalian cells 
+with either lactacystin or 3-methyl adenine results in higher levels of 
+Hirano bodies and a lower level of viable cells in the cultures, supporting 
+the conclusion that both autophagy and the proteasome contribute to 
+degradation of Hirano bodies.
+
+
+Submitted by: Chandra Jack [chanj@rice.edu]
+==============================================================
+[End dictyNews, volume 31, number 15]

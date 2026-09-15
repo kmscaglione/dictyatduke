@@ -1,0 +1,184 @@
+CSM News
+Electronic Edition
+Volume 7, number 13
+November 9, 1996
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to CSM-News@worms.cmb.nwu.edu.
+
+Back issues of CSM-News, the CSM Reference database and other useful
+information is available by anonymous ftp from worms.cmb.nwu.edu
+[165.124.233.50], via Gopher at the same address, or by World Wide Web
+at the URL "http://worms.cmb.nwu.edu/dicty.html"
+
+==========
+ Abstract
+==========
+
+Stimulation by DIF causes an increase of intracellular Ca++ in
+Dictyostelium discoideum
+
+M. Azhar 1, P.K. Kennady 2, G. Pande 2 and Vidyanand Nanjundiah 1*
+
+1Developmental Biology and Genetics Laboratory, Indian Institute of
+Science, Bangalore-560012, India.
+
+2Centre for Cellular and Molecular Biology, Hyderabad 5000 07, India.
+
+Exp. Cell Res., in press.
+
+ABSTRACT 
+
+     Using fluorescence-activated cell sorting (FACS), we have studied
+the effect of the differentiation-inducing factor DIF on cellular Ca2+
+in Dictyostelium discoideum.  We have shown previously that freshly
+starved or post-aggregation amoebae are heterogenous with respect to
+the amounts of cellular Ca2+ that they contain; the L or 'low Ca2+'
+class exhibits a prespore tendency and the H or 'high Ca2+' class
+exhibits a prestalk tendency [Azhar et al., Exp Cell Res. 227,
+344-351, 1996] Upon adding DIF there is an approximately two-fold
+increase in the relative fraction of amoebae falling in the H class
+within two minutes.  A major part of the increase is caused by Ca2+
+influx from the extracellular medium. Therefore a rise in the level of
+cellular Ca2+ is an early step in the signal transduction pathway
+following stimulation by DIF. Also, in parallel with cellular
+heterogeneity in respect of Ca2+ content, there is also a
+heterogeneity in the response to DIF.
+
+      The main result of this study is that the two classes persist
+after stimulation with 10nM DIF-1 but the proportions of cells
+belonging to them change significantly. With t1.5 amoebae, the H
+('high Ca2+') class increases in relative size from an average of
+18.47% to 34.36% within 2 minutes. In the case of t9 amoebae, about
+12.44% fall in the H class and DIF-1 application raises this to 23.07%
+(on average) after 2 minutes.  The nearly two-fold elevation in the
+H:L ratio caused by DIF-1 remains stable until 15 minutes in all
+experiments (long-term monitoring was not attempted).
+
+     Functional heterogeneity, indicating a future prestalk or
+prespore tendency, is a pervasive feature of the life cycle of D.
+discoideum. The response to DIF-1 likewise mirrors a qualitative
+pre-aggregative difference between the two classes of amoebae.
+
+-------------------------------------------------------------------
+
+Fluid-phase uptake by macropinocytosis in Dictyostelium 
+
+Ulrike Hacker, Richard Albrecht and Markus Maniak
+
+Max-Planck-Institut für Biochemie, D-82152 Martinsried
+
+J. Cell Science, in press.
+
+Abstract
+
+   To study fluid-phase endocytosis in living cells and its
+relationship to changes in the cell cortex, we have used a
+green-fluorescent protein (GFP)-tagged version of coronin, an
+actin-associated protein that localises to dynamic regions of the
+Dictyostelium cell cortex. In the confocal microscope, internalisation
+of fluorescently labelled dextran as a fluid-phase marker can be
+recorded simultaneously with the recruitment of the coronin-GFP
+fusion-protein from the cytoplasm of the phagocyte. At crown-shaped
+surface protrusions, extracellular medium is taken up into vesicles
+with an average diameter of 1.6 um, which is significantly larger than
+the 0.1 um diameter of clathrin-coated pinosomes. The observed
+frequency of macropinosome formation can account for a large portion,
+if not all, of the fluid-phase uptake. The redistribution of
+coronin-GFP strongly resembles cytoskeletal rearrangements during
+phagocytosis.  Scanning-electron micrographs indicate that
+crown-shaped cell-surface extensions can undergo shape changes,
+without a particle bound, that are similar to shape changes that occur
+during phagocytosis. In quantitative assays, the uptake of particles
+and fluid are about equally dependent on F-actin and coronin.
+
+
+---------------------------------------------------------------------
+
+Isoforms of gp138, a cell-fusion related protein in Dictyostelium
+discoideum
+
+Kazuhiro Aiba*, Hui Fang*, Nobuyuki Yamaguchi*, Yoshimasa
+Tanaka,* and Hideko Urushihara*,3
+
+*Institute of biological sciences, University of Tsukuba, Tsukuba, 
+Ibaraki 305 JAPAN
+
+J. Biochem., in press.
+
+SUMMARY
+
+     Sexual development of Dictyostelium discoideum is a unique and
+usefull system for the study of sexual phenomena. We have been
+studying molecular mechanisms of sexual cell fusion in D. discoideum
+and have identified several cell-surface proteins involved in the
+sexual cell fusion. One of the proteins, gp138, was identified as a
+target molecule for fusion-blocking antibodies, and two genes for
+gp138, GP138A and GP138B, were cloned. The participation of gp138 in
+the sexual cell fusion was confirmed by antisense RNA mutagenesis, but
+it is unclear which of the genes encode gp138. Moreover, the presence
+of a third gene for gp138 was indicated by gene disruption.
+
+     In the present study, we generated strains of D. discoideum
+overexpressing either GP138A or GP138B to investigate the products of
+these genes. The transformants overexpressing GP138A and GP138B
+overproduced glycoproteins with the molecular mass of 135 kDa and 130
+kDa, respectively. Although their molecular masses were different from
+that of gp138, the results of peptide mapping and amino acid
+sequencing showed that they were related proteins, suggesting that
+proteins encoded by GP138A and GP138B are isoforms of gp138 protein.
+
+---------------------------------------------------------------------
+
+Expression of an activated rasD gene changes cell fate decisions
+during Dictyostelium development
+
+Sharon A. Louis, George B. Spiegelman and Gerald Weeks
+
+Department of Microbiology and Immunology and Department of Medical
+Genetics, University of British Columbia, Vancouver, B. C. V6T 1Z3,
+Canada
+
+Mol. Biol. Cell, in press.
+
+SUMMARY
+
+   It has been previously demonstrated that the expression of an
+activated rasD gene in wild type Dictyostelium cells results in
+formation of aggregates with multi-tips instead of the normal single
+tips, and a block in further development (Reymond et al., 1986,
+Nature, 323: 340-343).  In an attempt to better understand the role of
+activated RasD development, we examined cell type specific gene
+expression in a strain stably expressing high levels of RasD[G12T].
+We found that the expression of prestalk cell specific genes ecmA and
+tagB was markedly enhanced while the expression of the prespore cell
+specific gene cotC was reduced to very low levels.  When the fate of
+cells in the multi-tipped aggregate was monitored using an ecmA/lacZ
+fusion, it appeared that most of the cells eventually adopted prestalk
+gene expression characteristics.  When mixtures of the [G12T]rasD
+cells and Ax3 cells were induced to differentiate, chimeric
+pseudoplasmodia were not formed.  Thus although the [G12T]rasD
+transformant had a marked propensity to form prestalk cells, it could
+not supply the prestalk cell population when mixed with wild type
+cells.
+	
+Both stalk and spore cell formation occurred in low cell density
+monolayers of the [G12T]rasD strain, suggesting that at least part of
+the inhibition of stalk and spore formation during multicellular
+development involved inhibitory cell interactions within the cell
+mass.  Models for the possible role of rasD in development are
+discussed.
+
+---------------------------------------------------------------------
+
+[End CSM News, volume 7, number 13]
+
+
+
+
+
+
+
+
+
+

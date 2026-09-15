@@ -1,0 +1,86 @@
+dictyNews
+Electronic Edition
+Volume 31, number 11
+October 3, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Kin Discrimination Increases with Genetic Distance in a Social Amoeba
+
+Elizabeth A. Ostrowski1*, Mariko Katoh2*, Gad Shaulsky2, David C. Queller1, 
+Joan E. Strassmann1
+
+1. Department of Ecology and Evolutionary Biology, Rice University, 
+Houston, TX 7005
+2. Department of Molecular and Human Genetics, Baylor College of Medicine, 
+Houston, TX  77030
+
+*Contributed equally to this work.
+
+
+PLoS Biology, in press
+
+In the social amoeba Dictyostelium discoideum, thousands of cells 
+aggregate upon starvation to form a multicellular fruiting body, and
+ approximately 20% of them die to form a stalk that benefits the others.  
+The aggregative nature of multicellular development makes the cells 
+vulnerable to exploitation by cheaters, and the potential for cheating is 
+indeed high.  Cells might avoid being victimized if they can discriminate 
+among individuals and avoid those that are genetically different.  We tested 
+how widely social amoebae cooperate by mixing isolates from different 
+localities that cover most of their natural range.  We show that different 
+isolates partially exclude one another during aggregation, and there is a 
+positive relationship between the extent of this exclusion and the genetic 
+distance between strains.  Our findings demonstrate that D. discoideum 
+cells co-aggregate more with genetically similar than dissimilar individuals, 
+suggesting the existence of a mechanism that discerns the degree of 
+genetic similarity between individuals in this social microorganism.
+
+
+Submitted by: Elizabeth Ostrowski [ostrowski@rice.edu]
+--------------------------------------------------------------------------------
+
+
+How human leukocytes track down and destroy pathogens: Lessons learned from 
+the model organism Dictyostelium discoideum 
+
+Tian Jin1*, Xuehua Xu2, Jun Fang3, Nilgun Isik1, Jianshe Yan1, Joseph A. 
+Brzostowski4, and Dale Hereld5
+
+
+Immunologic Research, in press
+
+Human leukocytes, including macrophages and neutrophils, are phagocytic 
+immune cells that capture and engulf pathogens and subsequently destroy 
+them in intracellular vesicles.  To accomplish this vital task, these 
+leukocytes utilize two basic cell behaviors –– chemotaxis for chasing down 
+infectious pathogens and phagocytosis for destroying them.  The molecular 
+mechanisms controlling these behaviors are not well understood for immune 
+cells.  Interestingly, a soil amoeba, Dictyostelium discoideum, use these 
+same behaviors to pursue and injest its bacterial food source and to organize 
+its multi-cellular development.  Consequently, studies of this model system 
+have provided and will continue to provide us with mechanistic insights into 
+the chemotaxis and phagocytosis of immune cells.  Here, we review recent 
+research in these areas that have been conducted in the Chemotaxis Signal 
+Section of NIAID's Laboratory of Immunogenetics. 
+
+
+Submitted by: Tian Jin [tjin@niaid.nih.gov]
+==============================================================
+[End dictyNews, volume 31, number 11]

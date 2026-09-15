@@ -1,0 +1,97 @@
+dictyNews
+Electronic Edition
+Volume 25, number 14
+December 9, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+bZIP Transcription Factor Interactions Regulate DIF Responses in 
+Dictyostelium
+
+Eryong Huang1,2, Simone L. Blagg3, Thomas Keller3, Mariko Katoh2, 
+Gad Shaulsky2,4 and Christopher R. L. Thompson3,4
+
+1 Graduate Program in Structural Computational Biology and 
+Molecular Biophysics
+2 Department of Molecular and Human Genetics, Baylor College of Medicine, 
+One Baylor Plaza, Houston, Texas, 77030, USA
+3 Faculty of Life Sciences, Michael Smith Building, University of 
+Manchester, Oxford Road, Manchester, M13 9PT, UK
+4 Authors for correspondence
+
+
+Development, in press
+
+The signaling molecule DIF-1 is required for normal cell fate choice and 
+patterning in Dictyostelium. To understand how these developmental processes 
+are regulated will require knowledge of how cells receive and respond to the 
+DIF-1 signal. Previously, we described a bZIP transcription factor, DimA, 
+which is required for cells to respond to DIF-1. However, it was unknown 
+whether DimA activity is required to activate the DIF response pathway in 
+certain cells or is a component of the response pathway itself. In this 
+study we describe the identification of a DimA related bZIP transcription 
+factor, DimB. Rapid changes in the subcellular localisation of both DimA 
+and DimB in response to DIF-1 suggest that they are directly downstream of 
+the DIF-1 signal. Genetic and biochemical interactions between DimA and 
+DimB provides evidence that their ability to regulate diverse targets in 
+response to DIF-1 is partly due to their ability to form homo and 
+heterodimeric complexes. DimA and DimB are therefore direct regulators of 
+cellular responses to DIF-1. 
+
+
+Submitted by: Chris Thompson [christopher.thompson@man.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+The Dictyostelium bZIP transcription factor DimB regulates prestalk-specific 
+gene expression
+
+Natasha V. Zhukovskaya*, Masashi Fukuzawa*, Yoko Yamada, Tsuyoshi Araki and 
+Jeffrey G. Williams
+* Joint first authors
+
+University of Dundee, MSI/WTB Complex,
+Dow Street, Dundee DD1 5EH, UK.
+
+
+Development, in press
+
+The ecmA gene is specifically expressed in prestalk cells and its 
+transcription is induced by the chlorinated hexaphenone DIF-1. We have 
+purified a novel bZIP transcription factor, DimB, by affinity 
+chromatography on two spatially separated ecmA promoter fragments. 
+Mutagenesis of the cap-site proximal DimB-binding site (the –510 site) 
+greatly decreases ecmA expression in the pstO cells, which comprise the 
+rear half of the prestalk zone, and also in the Anterior-Like Cells, which 
+lie scattered throughout the prespore region. However DimB is not essential 
+for normal expression of the ecmA gene, instead it spatially limits its 
+expression; ecmA is relatively highly expressed in the subset of prestalk 
+cells that coats the prestalk zone but in slugs of a DimB-null strain, ecmA 
+is highly expressed throughout the prestalk zone. Because the –510 site is 
+required for correct ecmA expression, we posit a separate activator protein 
+that competes with DimB for binding to the –510 site. DimB rapidly 
+accumulates in the nucleus when cells are exposed to DIF-1, and ChIP 
+analysis shows that, in the presence of extracellular cAMP, DIF-1 causes 
+DimB to associate with the ecmA promoter in vivo. Thus, DIF-1 regulates 
+DimB activity to generate a gradient of ecmA expression in the prestalk 
+zone of the slug.
+
+
+Submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+==============================================================================
+[End dictyNews, volume 25, number 14] 

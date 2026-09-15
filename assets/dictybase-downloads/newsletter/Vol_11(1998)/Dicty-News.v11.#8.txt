@@ -1,0 +1,166 @@
+Dicty News
+Electronic Edition
+Volume 11, number 8
+October 24, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+Dissection of the cAMP induced cytosolic calcium response in Dictyostelium
+discoideum: the role of cAMP receptor subtypes and G protein subunits
+
+Jürgen Sonnemann, Annette Aichem and Christina Schlatterer
+
+Fakultät für Biologie, Universität Konstanz, D-78457 Konstanz
+
+FEBS Letters, in press
+
+Abstract
+
+    The cAMP signaling cascade leading to changes in [Ca2+]i in Dictyostelium 
+discoideum was analyzed using cell lines overexpressing single cAMP receptor 
+subtypes (cAR1-cAR3) or lacking the Galpha2 or Gbeta subunit of the G-protein. 
+Imaging of fura2-dextran-loaded amoebae revealed cAMP-induced [Ca2+]i-changes 
+characteristic for each receptor subtype activated. Cells expressing distinct 
+subtypes sort to defined zones during multicellular development suggesting 
+involvement of the specific [Ca2+]i-transients in patterning processes. Whereas 
+generation of the [Ca2+]i-increase was Galpha2-independent, only few cells 
+devoid of Gbeta displayed a [Ca2+]i-change after stimulation indicating its 
+participation in the regulation of the calcium homeostasis. 
+
+----------------------------------------------------------------------------
+
+A computational model of ameboid deformation and locomotion
+
+Dean C. Bottino *(University of Utah) and Lisa J. Fauci (Tulane University)
+
+European Biophysics Journal (1998) 27:532-539
+
+Abstract:
+
+   Traditional continuum models of ameboid deformation and locomotion are 
+limited by the computational difficulties intrinsic in free boundary 
+conditions.  A new model using the immersed boundary method overcomes 
+these difficulties by representing the cell as a force field immersed 
+in a  fluid domain.  The forces can be derived from a direct mechanical 
+interpretation of such cell components as the cell membrane, the actin 
+cortex, and the transmembrane adhesions between the cytoskeleton and the 
+substratum.  The numerical cytoskeleton, modeled as a dynamic network of 
+immersed springs, is able to qualitatively  model  the passive mechanical 
+behavior of a shear-thinning viscoelastic fluid (Bottino, J. Comp. Phys., 
+147,1(1998)).  The same network is used to generate active protrusive  
+and contractile forces.   When coordinated with the attachment-detachment 
+cycle of the  cell’s adhesions to the substratum, these forces produce 
+directed locomotion of the model ameba.  With this model it is possible 
+to study the effects of altering the  numerical parameters upon the  
+motility of the model cell in a manner suggestive of genetic deletion 
+experiments.  In the context of this  ameboid cell model and its 
+numerical implementation, simulations involving multicellular interaction, 
+detailed internal signaling, and complex substrate geometries are  tractable.
+
+----------------------------------------------------------------------------
+
+Random insertion of GFP into the cAMP dependent protein kinase regulatory 
+subunit from Dictyostelium discoideum
+
+Ricardo M. Biondi,1 Pascal J. Baehler,2 Christophe D. Reymond2,** 
+and Michel Véron1
+
+*Unité de Régulation Enzymatique des Activités Cellulaires, CNRS-URA 
+1773, Institut Pasteur, 25 rue du Dr. Roux, 75724, Paris Cedex 15, France
+2Institut de Biologie Cellulaire et de Morphologie, Université de Lausanne, 
+rue du Bugnon 9, CH-1005 Lausanne, Switzerland
+
+Footnote: The authors wish it to be known that, in their opinion, the 
+first two authors should be regarded as joint First Authors
+
+NUCLEIC ACIDS RESEARCH (In Press)
+
+ABSTRACT
+
+   The green fluorescent protein (GFP) is currently being used for diverse 
+cellular biology approaches, mainly as a protein tag or to monitor gene 
+expression. Recently it has been shown that GFP can also be used to monitor 
+the activation of second messenger pathways by the use of fluorescence 
+resonance energy transfer (FRET) between two different GFP mutants fused 
+to a Ca2+ sensor. We show here that GFP fusions can also be used to obtain 
+informations on regions essential for protein function. As FRET requires 
+the two GFP's to be very close, N- or C- terminal fusion proteins will not 
+generally produce FRET between two interacting proteins. In order to increase 
+the probability of FRET, we decided to study the effect of random insertion 
+of two GFP mutants into a protein of interest. We describe here a methodology 
+for random insertion of GFP into the cAMP dependent protein kinase regulatory 
+subunit using a bacterial expression vector. The selection and analysis of 
+120 green fluorescent colonies revealed that the insertions were distributed 
+throughout the R coding region. 14 R/GFP fusion proteins were partially 
+purified and characterized for cAMP binding, fluorescence and ability to 
+inhibit PKA catalytic activity. This study reveals that GFP insertion only 
+moderately disturbed the overall folding of the protein or the proper folding 
+of another domain of the protein, as tested by cAMP binding capacity. Furthermore, 
+three R subunits out of 14, which harbour a GFP inserted in the cAMP binding 
+site B, inhibit PKA catalytic subunit in a cAMP dependent manner. Random insertion 
+of GFP within the R subunit sets the path to develope two component FRET with the 
+C subunit.
+
+----------------------------------------------------------------------------
+
+DISRUPTION OF A DYNAMIN HOMOLOGUE AFFECTS ENDOCYTOSIS, ORGANELLE MORPHOLOGY 
+AND CYTOKINESIS IN DICTYOSTELIUM DISCOIDEUM
+
+Dirk C. Wienke*, Menno L.W. Knetsch*, Eva M. Neuhaus§, Mary C. Reedy,
+and Dietmar J. Manstein*
+
+* Abteilung Biophysik, Max-Planck-Institut für Medizinische Forschung, 
+Jahnstr. 29, D-69120 Heidelberg, Germany; § Abteilung Molekulare Zellforschung, 
+Max-Planck-Institut für Medizinische Forschung, Jahnstr. 29, D-69120 
+Heidelberg, Germany; Dept. of Cell Biology, Duke University Medical Center, 
+Durham, NC 27710, USA.
+
+Mol. Biol. Cell, in press
+
+SUMMARY
+The identification and functional characterization of Dictyostelium 
+discoideum dynamin A, a protein composed of 853 amino acids, that shares 
+up to 44% sequence identity with other dynamin-related proteins is described. 
+Dynamin A is present during all stages of D. discoideum development and is 
+predominantly found in the cytosolic fraction and in association with endosomal 
+and post-lysosomal vacuoles. Overexpression of the protein has no adverse 
+effect on the cells while depletion of dynamin A by gene targeting techniques 
+leads to multiple and complex phenotypic changes. Cells lacking a functional 
+copy of dymA show alterations of mitochondrial, nuclear, and endosomal 
+morphology and a defect in fluid-phase uptake. They also become multinucleated 
+due to a failure to complete normal cytokinesis. These pleiotropic effects of 
+dynamin A-depletion can be rescued by complementation with the cloned gene. 
+Morphological studies using cells producing GFP-dynamin A revealed that dynamin 
+A associates with punctate cytoplasmic vesicles. Double-labeling with vacuolin, 
+a marker of a post-lysosomal compartment in D. discoideum, showed an almost 
+complete colocalization of vacuolin and dynamin A. Our results suggest that 
+that dynamin A is likely to function in membrane trafficking processes along 
+the endo-lysosomal pathway of D. discoideum but not at the plasma membrane. 
+
+----------------------------------------------------------------------------
+
+NUCLEAR PLASMIDS OF DICTYOSTELIUM
+
+Joanne E. Hughes and Dennis L. Welker
+
+Department of Biology, Utah State University, Logan, Utah 84322-5305
+
+Genetic Engineering, Volume 21, in press (1999)
+
+This is a review of the information to date on the nuclear plasmids from 
+cellular slime molds. It covers basic plasmid characterization, plasmid 
+families, plasmid maintenance functions, other potential plasmid functions, 
+and extrachromosomal vectors. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 11, number 8]
+

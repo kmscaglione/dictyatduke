@@ -1,0 +1,59 @@
+Dicty NewsElectronic EditionVolume 21, number 14October 31, 2003Please submit abstracts of your papers as soon as they have beenaccepted for publication by sending them to dicty@northwestern.eduor by using the form athttp://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+=============  Abstracts=============
+
+A cAMP Receptor-like G Protein-coupled Receptor with Roles in Growth Regulation
+ and DevelopmentBrent Raisley, Minghang Zhang, Dale Hereld, and Jeffrey A. HadwigerDevelopmental Biology, in press
+Dictyostelium discoideum uses G protein-mediated signal transduction for many 
+vegetative and developmental functions, suggesting the existence of G 
+protein-coupled receptors (GPCRs) other than the four known cAMP receptors 
+(cAR1-4). ÊSequences of the cAMP receptors were used to identify Dictyostelium 
+genes encoding cAMP receptor-like proteins, CrlA-C. ÊLimited sequence identity 
+between these putative GPCRs and the cAMP receptors suggests the Crl receptors 
+are unlikely to be receptors for cAMP. ÊThe crl genes are expressed at various 
+times during growth and the developmental life cycle. ÊDisruption of individual 
+crl genes did not impair chemotactic responses to folic acid or cAMP or alter 
+cAMP-dependent aggregation. ÊHowever, crlA- mutants grew to a higher cell 
+density than did wild-type cells and high-copy-number crlA expression vectors 
+were detrimental to cell viability, suggesting that CrlA is a negativ! e 
+regulator of cell growth.   In addition, crlA- mutants produce large aggregates 
+with delayed anterior tip formation indicating a role for the CrlA receptor 
+in the development of the anterior prestalk cell region. ÊThe scarcity of 
+GFP-expressing crlA- mutants in the anterior prestalk cell region of chimeric 
+organisms supports a cell-autonomous role for the CrlA receptor in prestalk 
+cell differentiation. 
+  Ê
+
+Submitted by:  Jeff A Hadwiger [hadwige@okstate.edu]
+
+-----------------------------------------------------------------------------
+
+Template jumping by a Dictyostelium LINE reverse transcriptase created a 
+SINE-like 5S rRNA retropseudogeneKarol Szafranski(1), Theodor Dingermann(2), Gernot Gloeckner(1) and 
+Thomas Winckler(2)1 IMB Jena, Department of Genome Analysis, Beutenbergstrasse 11, 
+D-07745 Jena, Germany2 Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Biozentrum), Marie-Curie-Strasse 9, D-60439 Frankfurt am Main, Germany
+
+Molecular & General Genomics, in press
+Short interspersed nuclear elements (SINEs) are nonautonomous retroelements 
+that mimick the 3' ends of fellow long interspersed nuclear elements (LINEs) 
+to ensure their propagation by autonomous LINE-encoded proteins. The 
+Dictyostelium discoideum genome contains a family of LINE-like retrotransposons 
+that specifically target tRNA genes for integration (TRE elements). We 
+discovered a retrotransposed ribosomal 5S RNA pseudogene in the D. discoideum 
+genome that contains at its 3' end eight nucleotides derived from a TRE 3' end 
+and a polyadenine tail. The r5S retropseudogene  is flanked by target site 
+duplications characteristic for TREs and is inserted upstream of a tRNA gene, 
+the typical integration sites of TREs. The D. discoideum r5S retropseudogene has 
+structural features of a short interspersed nuclear element (SINE) but did not 
+amplify, probably due to the 5'-truncation that occured upon its very first 
+retrotransposition. The discovery of the D. discoideum r5S retropseudogene 
+reveals that SINEs can be created de novo during reverse transcription of 
+LINE transcripts if the LINE-encoded reverse transcriptase dissociates from the 
+LINE RNAs and jumps to other cellular RNAs, particularly genes transcribed by RNA 
+polymerase III, to create continuous mixed cDNAs.
+
+
+Submitted by: Thomas Winckler [winckler@em.uni-frankfurt.de]
+
+===============================================================================[End Dicty News, volume 21, number 14]

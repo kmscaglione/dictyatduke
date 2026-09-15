@@ -1,0 +1,247 @@
+Dicty News
+Electronic Edition
+Volume 16, number 4
+February 10, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+==============
+  Abstracts
+==============
+
+WD-repeat domains target Dictyostelium myosin heavy chain kinases 
+by binding directly to myosin filaments
+
+Paul A. Steimle*, Teresa Naismith†, Lucila Licate*; and Thomas T. Egelhoff*
+
+*Department of Physiology and Biophysics 
+ Case Western Reserve University School of Medicine
+ Cleveland, Ohio  44106-4970
+†Current address:
+  Department of Cell Biology and Physiology
+  Washington University 
+  St. Louis, MO  63130
+
+Journal of Biological Chemistry (In Press)
+
+Abstract:
+
+Myosin heavy chain kinase A (MHCK A) phosphorylates mapped sites at the
+carboxyl-terminal tail of Dictyostelium myosin II heavy chain (MHC), driving
+disassembly of myosin filaments both in vitro and in vivo.  MHCK A is
+organized into three functional domains that include an amino-terminal
+coiled-coil region, a central kinase catalytic domain unrelated to
+conventional protein kinases, and a WD-repeat domain at the
+carboxy-terminus.  MHCK B is a homologue of MHCK A that possesses
+structurally related catalytic and WD-repeat domains. In the current study,
+we explored the role of the WD-repeat domains in defining the activities of
+both MHCK A and MHCK B using recombinant bacterially-expressed truncations
+of these kinases either with or without their WD-repeat domains.  We
+demonstrate that substrate targeting is a conserved function of the
+WD-repeat domains of both MHCK A and MHCK B and that this targeting is
+specific for Dictyostelium myosin II filaments.  We also show that the
+mechanism of targeting involves direct binding of the WD-repeat domains to
+the myosin substrate.  To our knowledge, this is the first report of
+WD-repeat domains physically targeting attached kinase domains to their
+substrates.  The examples presented here may serve as a paradigm for enzyme
+targeting in other systems. 
+
+-----------------------------------------------------------------------------
+
+The complex repeats of Dictyostelium discoideum
+
+Gernot Glöckner1*+, Karol Szafranski1+, Thomas Winckler2, Theodor
+Dingermann2, Michael A. Quail3, Edward Cox4, Ludwig Eichinger5, Angelika
+Anna Noegel5, André Rosenthal1,6
+1 IMB Jena, Dept of Genome Analysis, Beutenbergstr. 11, D-07745 Jena,
+Germany
+2Institut für Pharmazeutische Biologie, Biozentrum, Marie-Curie-Strasse
+9, D-60439 Frankfurt, Germany
+3The Sanger Centre, Wellcome Trust Genome Campus, Hinxton,
+Cambridgeshire  CB10 1SA, UK
+4 Dept. of Molecular Biology, Princeton University, Princeton,  NJ
+08544, USA
+5Institut für Biochemie I, Medizinische Einrichtungen der Universität zu
+Köln, Joseph-Stelzmann-Str. 52, D-50931 Köln, Germany
+6 Friedrich Schiller Universität Jena, D-07743 Jena, Germany
+* corresponding author
+Genome Research, in press
+
+Abstract
+
+In the course of determining the sequence of the Dictyostelium
+discoideum genome we have characterised in detail the quantity and
+nature of interspersed repetitive elements present in this species.
+Several of the most abundant small complex repeats and transposons
+(DIRS-1; TRE3-A,B; TRE5-A; skipper; Tdd-4; H3R) have been described
+previously. In our analysis we have identified additional elements. Thus
+we can now present a complete list of complex repetitive elements in D.
+discoideum. All elements add up to 10 % of the genome.  Some of the
+newly described elements belong to established classes (TRE3-C, D;
+TRE5-B,C; DGLT-A,P; Tdd-5). However, we have also defined two new
+classes of DNA transposable elements (DDT; thug) that have not been
+described so far. Based on the nucleotide amount we calculated the least
+copy number in each family. These vary between less than 10 up to over
+200 copies. Unique sequences adjacent to the element ends and truncation
+points in elements gave a measure for the fragmentation of the elements.
+Furthermore, we describe the diversity of single elements with regard to
+polymorphisms and conserved structures. All elements show insertion
+preference into loci in which other elements of the same family reside.
+The analysis of the complex repeats is a valuable data resource for the
+ongoing assembly of whole D. discoideum chromosomes.
+
+
+-----------------------------------------------------------------------------
+
+Large Scale Sequencing and Analysis of AT rich Eukaryote Genomes
+
+Gernot Glöckner, Institut für Molekulare Biotechnologie E.V., Department
+of Genome Analysis, D-07745 Jena, Germany
+
+Current Genomics (2000), 1, 289-299
+
+Abstract
+
+Environmental pressures can direct genomes from a normal to a more or
+less pronounced imbalance in the base composition. These pressures seem
+to occur relatively often since genomes with a deviation from a normal
+base composition are widespread throughout lower eukaryotes. These
+genomes show altered codon usage and enrichment for the preferred bases
+in intron and intergenic regions. Techniques designed for large scale
+sequencing and assembly of genomes with normal base composition will
+fail with these unusual genomes. Additionally, the currently available
+analysis tools are mainly suitable for gene finding in genomes with
+normal base composition.
+In recent years some large scale genome analysis projects involving
+species with a skew directed to a very high AT content were initiated.
+These projects are encountered with sequencing, assembly, and gap
+closure problems due to the high AT content. These problems can only be
+overcome with additional techniques, which partly were developed and
+used in the ongoing projects. In this review some characteristic aspects
+of AT rich genomes, the progress of the Dictyostelium discoideum and the
+Plasmodium falciparum projects, as well as techniques specifically used
+for the sequencing of these genomes are highlighted.
+
+-----------------------------------------------------------------------------
+
+A role for myosin VII in dynamic cell adhesion
+
+Richard I. Tuxworth, Igor Weber, Deborah Wessels, Gregory C. Addicks, 
+David R. Soll, Günther Gerisch, and Margaret A. Titus
+
+Current Biology, in press.
+
+
+Abstract
+
+Background
+The initial stages of phagocytosis and cell motility resemble each other. The 
+extension of a pseudopod at the leading edge of a migratory cell and the 
+formation of a phagocytic cup are actin-dependent and each rely on the plasma 
+membrane adhering to a surface during dynamic extension.  
+
+Results
+A myosin VII null mutant exhibited a drastic loss of adhesion to particles, 
+consistent with the extent of observed decrease in particle uptake.  
+Additionally, cell-cell adhesion and the adhesion of the leading edge to the 
+substratum during cell migration were defective in the myosin VII null cells.  
+GFP-myosin VII rescues the phagocytosis defect of the null mutant and was 
+distributed in the cytosol and recruited to the cortical cytoskeleton, where 
+it appeared to be enriched at the tips of filopods.  It was also localized 
+to phagocytic cups, but only during the initial stages of particle 
+engulfment.  During migration, GFP-myosin VII is found at the leading edge 
+of the cell.
+
+Conclusions
+Myosin VII plays an important role in mediating the initial binding of 
+cells to substrata, a novel role for an unconventional myosin.  
+
+-----------------------------------------------------------------------------
+
+Genetic analysis of phototaxis in Dictyostelium.
+P.R. Fisher
+
+Comprehensive Series in Photosciences Vol. 1. "Photomovement". Chapter 19.
+pp. 517-558. Ed. D-P. Häder and M. Lebert. Publisher: Elsevier Science Ltd.
+In Press.
+
+Preprint version available from http://www.latrobe.edu.au/www/mcbg/my.html.
+
+Abstract.
+
+Dictyostelium discoideum slugs are doubtless the simplest multicellular
+eukaryotes in which classical and molecular genetic approaches to the study
+of the signal transduction pathways controlling photomovement are possible.
+The slugs are formed by chemotactic aggregation of starving amoebae, so
+that it is a simple matter to generate, from clonally-derived mutant cell
+lines, hundreds of genetically identical multicellular individuals for
+study. Adding to the already extensive knowledge of the unicellular stages
+of the D. discoideum life cycle, classical and molecular genetics have
+begun to unravel transduction of signals controlling phototaxis (and
+thermotaxis) in the slugs. Distributed over all seven genetic linkage
+groups are at least 20, but possibly as many as 55 genes of importance for
+slug behaviour. The encoded proteins appear from pharmacological studies
+and mutant phenotypes to govern transduction pathways involving
+extracellular cAMP signals and corresponding receptors, heterotrimeric and
+small GTP-binding proteins, the intracellular second messengers cyclic AMP,
+cyclic GMP, Ca2+ and IP3 as well as cytoskeletal proteins such as Actin
+Binding Protein-120 and myosin II. Pathways from the photo- and
+thermoreceptors converge first with each other and thence with those from
+extracellular tip activation (cyclic AMP) and inhibition (Slug Turning
+Factor and/or ammonia and/or adenosine) signals that control slug movement
+and morphogenesis.
+
+-----------------------------------------------------------------------------
+
+The phosphorylated C-terminus of cAR1 plays a role in cell-type-specific 
+gene expression and STATa tyrosine phosphorylation
+
+Celia Briscoe, John Moniakis, Ji Yun Kim, Jason M. Brown, Dale Hereld,
+Peter N. Devreotes, and Richard A. Firtel
+
+Developmental Biology, in press.
+
+ABSTRACT
+
+        cAMP receptors mediate some signalling pathways via coupled 
+heterotrimeric G proteins, while others are G-protein-independent.  This 
+latter class includes the activation of the transcription factors GBF and 
+STATa.  Within the cellular mounds formed by aggregation, micromolar levels 
+of cAMP activate GBF function, thereby inducing the transcription of 
+postaggregative genes and initiating multicellular differentiation.  
+Activation of STATa, a regulator of culmination and ecmB expression, results 
+from cAMP receptor-dependent tyrosine phosphorylation and nuclear localization, 
+also in mound-stage cells.  During mound development, the cAMP receptor 
+cAR1 is in a low-affinity state and is phosphorylated on multiple serine 
+residues in its C-terminus.  This paper addresses possible roles of cAMP 
+receptor phosphorylation in the cAMP-mediated stimulation of GBF activity, 
+STATa tyrosine phosphorylation, and cell-type-specific gene expression.  
+To accomplish this, we have expressed cAR1 mutants in a strain in which 
+the endogenous cAMP receptors that mediate postaggregative gene expression 
+in vivo are deleted.  We then examined the ability of these cells to undergo 
+morphogenesis, induce postaggregative and cell-type-specific gene expression, 
+and STATa tyrosine phosphorylation.  Analysis of cAR1 mutants in which the 
+C-terminal tail is deleted or the ligand-mediated phosphorylation sites are 
+mutated suggests that the cAR1 C-terminus is not essential for GBF-mediated 
+postaggregative gene expression or STATa tyrosine phosphorylation, but may 
+play a role in regulating cell-type-specific gene expression and 
+morphogenesis.  A mutant receptor, in which the C-terminal tail is 
+constitutively phosphorylated, exhibits constitutive activation of STATa 
+tyrosine phosphorylation in pulsed cells in suspension and a significantly 
+impaired ability to induce cell-type-specific gene expression.  The 
+constitutively phosphorylated receptor also exerts a partial dominant 
+negative effect on multicellular development when expressed in wild-type 
+cells. These findings suggest that the phosphorylated C-terminus of cAR1 
+may be involved in regulating aspects of receptor-mediated processes, is 
+not essential for GBF function, and may play a role in mediating subsequent 
+development.
+
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 16, number 4]

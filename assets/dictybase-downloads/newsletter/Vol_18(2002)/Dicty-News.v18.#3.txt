@@ -1,0 +1,274 @@
+Dicty News
+Electronic Edition
+Volume 18, number 3
+February 23, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+Phosphorylation Of The Myosin Regulatory Light Chain Plays A Role In 
+Motility and Polarity During Dictyostelium Chemotaxis 
+
+Hui Zhang(a), Deborah Wessels(a), Petra Fey(b), Karla Daniels(a), 
+Rex L. Chisholm(b) and David R. Soll(a) 
+
+(a)Department of Biological Sciences, University of Iowa, Iowa City, 
+Iowa 52242 
+
+(b)Department of Cell and Molecular Biology Northwestern University Medical 
+School, Chicago, IL 60611 
+
+J. Cell Sci., in press 
+
+   The myosin regulatory light chain (RLC) of Dictyostelium discoideum is 
+phosphorylated at a single serine site in response to chemoattractant.  To 
+investigate the role of the phosphorylation of RLC in both motility and 
+chemotaxis, mutants were generated in which the single phosphorylatable 
+serine was replaced with a nonphosphorylatable alanine.  Several independent 
+clones expressing the mutant RLC in the RLC null mutant, mlcR-, were 
+obtained.  These S13A mutants were subjected to high resolution computer-
+assisted motion analysis to assess the basic motile behavior of cells in 
+the absence of a chemotatic signal, and the chemotactic responsiveness of 
+cells to the spatial, temporal and concentration components of natural cAMP 
+waves.  In the absence of a cAMP signal, mutant cells formed lateral 
+pseudopods less frequently and crawled faster than wild type cells.  In a 
+spatial gradient of cAMP, mutant cells chemotaxed more efficiently than 
+wild type cells.   In the front of simulated temporal and natural waves of 
+cAMP, mutant cells responded normally by suppressing lateral pseudopod 
+formation.  However, at the peak and in the back of either wave, mutant 
+cells did not lose cellular polarity like wild type cells.  Since 
+depolarization at the peak and in the descending phase of the natural wave 
+is necessary for efficient chemotaxis, this deficiency resulted in a 
+decrease in the capacity of S13A mutant cells to track natural cAMP waves 
+relayed by wild type cells, and in the fragmentation of streams late in 
+mutant cell aggregation. These results reveal a regulatory pathway induced 
+by the peak and back of the chemotactic wave that alters RLC phosphorylation 
+and leads to cellular depolarization.  We suggest that depolarization 
+requires myosin II rearrangement in the cortex facilitated by RLC 
+phosphorylation, which increases myosin motor function. 
+  
+-----------------------------------------------------------------------------
+
+Element analysis of the Polysphondylium pallidum gp64 promoter
+
+Naohisa Takaoka1, Masashi Fukuzawa2, Atsushi Kato1, Tamao Saito1 and Hiroshi 
+Ochiai1 
+
+1. Division of Biological Sciences, Graduate School of Science, Hokkaido 
+University, Sapporo, 060-0810 Japan and 2. Wellcome Trust Building, 
+Department of Anatomy and Physiology, University of Dundee, Dow Street, 
+Dundee, DD1 4HN, UK
+
+Biochim. Biophys. Acta, in press.
+
+   gp64 mRNA in Polysphondylium pallidum is expressed extensively during 
+vegetative growth, and begins to rapidly decrease at the onset of development. 
+To examine this unique regulation, 5 deletion analysis of the gp64 promoter 
+was undertaken, and two growth-phase activated elements have been found: a 
+food-dependent, upstream regulatory region (FUR, -222 to 170) and a 
+vegetatively activated, downstream region (VAD, -110 to 63). Here we 
+concentrate our analysis on an A1 and A2 sequences in the FUR region: A1 
+consists of a GATTTTTTTA sequence called a corresponding sequence and A2 
+consists of the direct repeat TTTGTTGTG. The cells carrying a combined 
+construct of A1 and A2 acted synergistically in a reporter activity. A 
+point mutation analysis in A1 indicates that a G residue is required for 
+the activation of A1. From analyses of promoter regulation in a liquid or 
+a solid medium, the promoter activity of the cells fed on bacteria in 
+A-medium (axenic medium for Polysphondylium) or grown in A-medium alone 
+was only one-fourth of that of the cells fed on bacteria.
+
+-----------------------------------------------------------------------------
+
+Quantitation of the distribution and flux of myosin-II during cytokinesis.
+
+Douglas N. Robinson#, Guy Cavet*, Hans M. Warrick and James A. Spudich
+
+Departments of Biochemistry and Developmental Biology, Stanford University 
+School of Medicine, Stanford, CA 94305-5307
+
+Email:  Douglas.Robinson@jhu.edu; jspudich@cmgm.stanford.edu
+#Current address: Department of Cell Biology, Johns Hopkins University School 
+of Medicine, 725 N. Wolfe St., Baltimore, MD 21205
+*Current address: Rosetta Inpharmatics, 12040 115th Ave NE, Kirkland, 
+WA 98034.
+
+These two authors contributed equally to this work.
+
+BMC Cell Biology 3:4, 2002.
+
+Background:  During cytokinesis, the cell's equator contracts against the 
+cell's global stiffness.  Identifying the biochemical basis for these 
+mechanical parameters is essential for understanding how cells divide. To 
+achieve this goal, the distribution and flux of the cell division machinery 
+must be quantified.  Here we report the first quantitative analysis of the 
+distribution and flux of myosin-II, an essential element of the contractile 
+ring.
+
+Results: The fluxes of myosin-II in the furrow cortex, the polar cortex, 
+and the cytoplasm were examined using ratio imaging of GFP fusion proteins 
+expressed in Dictyostelium.  The peak concentration of GFP-myosin-II in the 
+furrow cortex is 1.8-fold higher than in the polar cortex and 2.0-fold 
+higher than in the cytoplasm.  The myosin-II in the furrow cortex, however, 
+represents only 10% of the total cellular myosin-II.  An estimate of the 
+minimal amount of this motor needed to produce the required force for cell 
+cleavage fits well with this 10% value.  The cell may, therefore, regulate 
+the amount of myosin-II sent to the furrow cortex in accordance with the 
+amount needed there.  Quantitation of the distribution and flux of a mutant 
+myosin-II that is defective in phosphorylation-dependent thick filament 
+disassembly confirms that heavy chain phosphorylation regulates normal 
+recruitment to the furrow cortex. 
+
+Conclusion:  The analysis indicates that myosin-II flux through the cleavage 
+furrow cortex is regulated by thick filament phosphorylation.  Further, the 
+amount of myosin-II observed in the furrow cortex is in close agreement with 
+the amount predicted to be required from a simple theoretical analysis.
+
+-----------------------------------------------------------------------------
+
+Outside-In Signaling of Cellulose Synthesis by a Spore Coat Protein in 
+Dictyostelium
+
+Christopher M. West, Ping Zhang, Aiko C. McGlynn and Lee Kaplan
+
+Dept. of Anatomy and Cell Biology, College of Medicine, University of 
+Florida, Gainesville, FL 32610-0235  USA
+
+Eukaryotic Cell, in press.
+
+ABSTRACT
+
+The spore coat of Dictyostelium is formed de novo from proteins secreted 
+from vesicles and cellulose synthesized across the plasma membrane as 
+differentiating spores rise up the stalk. The mechanism by which these 
+events are coordinated is not understood. In the course of experiments 
+designed to test the function of the inner layer coat protein SP85 (PsB), 
+expression of a specific partial length fragment was found to interrupt 
+coat assembly after protein secretion and prior to cellulose synthesis in 
+85% of the cells. This fragment consisted of SP85's N-terminal domain, 
+containing prespore vesicle targeting information, and its Cys-rich 
+C1-domain. The effect of the NC1 fusion was non-cell autonomous in 
+interstrain chimeras, suggesting it acted at the cell surface. SP85-null 
+spores presented an opposite phenotype in which spores differentiated 
+prematurely before reaching the top of the stalk, and cellulose was 
+slightly overproduced in a disorganized fashion. A similar though less 
+severe phenotype occurred when a fusion of the N- and C2-domains was 
+expressed. In a double mutant, absence of SP85 was epistatic to NC1-
+expression suggesting that NC1 inhibited SP85 function. Together, these 
+results suggest the existence of an outside-in signaling pathway that 
+constitutes a checkpoint to ensure that cellulose synthesis does not occur 
+until coat proteins are properly organized at the cell surface and stalk 
+formation is complete. Checkpoint execution is proposed to be regulated by 
+SP85, which is in turn under the influence of contacts with other coat 
+proteins that are competed by the presence of NC1 and NC2.
+
+-----------------------------------------------------------------------------
+
+
+Ralph Grf
+
+Adolf-Butenandt-Institut / Zellbiologie, Universitt Mnchen, Schillerstr. 
+42, D-80336 Mnchen, Germany
+
+J. Cell Sci. in press
+
+
+Dictyostelium Nek2 (DdNek2) is the first structural and functional non-
+vertebrate homologue of human Nek2, a NIMA-related serine/threonine kinase 
+required for centrosome splitting in early mitosis. DdNek2 shares 43% 
+overall amino-acid identity with its human counterpart and even 54% within 
+the catalytic domain. Both proteins can be subdivided in an N-terminal 
+catalytic domain, a leucine zipper, and a C-terminal domain. Kinase assays 
+with bacterially expressed DdNek2 and C-terminal deletion mutants revealed 
+that catalytic activity requires the presence of the leucine zipper and that 
+autophosphorylation occurs at the C-terminus. Microscopic analyses with 
+DdNek2 antibodies and expression of a GFP-DdNek2 fusion protein in 
+Dictyostelium showed that DdNek2 is a permanent centrosomal resident and 
+suggested that it is a component of the centrosome core. The GFP-DdNek2 
+overexpressing mutants frequently exhibit supernumerary microtubule-
+organizing centers (MTOCs). This phenotype did not require catalytic 
+activity because it was also observed in cells expressing inactive GFP-K33R. 
+However, it was caused by overexpression of the C-terminal domain since it 
+also occurred in GFP-mutants expressing only the C-terminus or a leucine 
+zipper/C-terminus construct but not in those mutants expressing only the 
+catalytic domain or a catalytic domain/leucine zipper construct. These 
+results suggest that DdNek2 is involved in the formation of MTOCs. 
+Furthermore, the localization of the GFP-fusion proteins revealed two 
+independent centrosomal targeting domains of DdNek2, one within the 
+catalytic or leucine zipper domain and one in the C-terminal domain.
+
+-----------------------------------------------------------------------------
+
+Liu, T., Mirschberger, C., Chooback, L., Arana, Q., Dal Sacco, Z., 
+MacWilliams, H., and Clarke, M. 
+
+Altered expression of the 100-kDa subunit of the Dictyostelium vacuolar 
+proton pump impairs enzyme assembly, endocytic function, and cytosolic pH 
+regulation.  
+
+J. Cell Sci., in press.
+
+The vacuolar proton pump (V-ATPase) appears to be essential for viability of 
+Dictyostelium cells.  To investigate the function of VatM, the 100-kDa 
+transmembrane V-ATPase subunit, we altered its level. By means of homologous 
+recombination, the promoter for the chromosomal vatM gene was replaced with 
+the promoter for the act6 gene, yielding the mutant strain VatMpr.  The act6 
+promoter is much more active in cells growing axenically than on bacteria.  
+Thus, transformants were selected under axenic growth conditions, then 
+shifted to bacteria to determine the consequences of reduced vatM expression.  
+When VatMpr cells were grown on bacteria, the level of the 100-kDa V-ATPase 
+subunit dropped, cell growth slowed, and the A subunit, a component of the 
+peripheral catalytic domain of the V-ATPase, became mislocalized.  These 
+defects were complemented by transformation of the mutant cells with a 
+plasmid expressing vatM under the control of its own promoter.  Although the 
+principal locus of vacuolar proton pumps in Dictyostelium is membranes of 
+the contractile vacuole system, mutant cells did not manifest osmoregulatory 
+defects.  However, bacterially-grown VatMpr cells did exhibit substantially 
+reduced rates of phagocytosis and a prolonged endosomal transit time.  In 
+addition, mutant cells manifested alterations in the dynamic regulation of 
+cytosolic pH that are characteristic of normal cells grown in acid media, 
+suggesting that the V-ATPase also plays a role in cytosolic pH regulation.
+
+-----------------------------------------------------------------------------
+
+Transfer RNA gene-targeted retrotransposition of Dictyostelium TRE5-A 
+into a chromosomal UMP synthase gene trap
+
+Peter Beck, Theodor Dingermann and Thomas Winckler
+
+Institut fuer Pharmazeutische Biologie, Universitaet Frankfurt/M. 
+(Biozentrum), Frankfurt am Main, Germany
+
+J. Mol. Biol., in press
+
+The genome of the eukaryotic microorganism Dictyostelium discoideum 
+hosts a family of seven non-long terminal repeat retrotransposons (TREs) 
+which show remarkable insertion preferences near tRNA genes. We 
+developed an in vivo assay to detect tRNA gene-targeted 
+retrotransposition of endogenous TREs in a reporter strain of D. 
+discoideum. A tRNA gene positioned within an artificial intron was 
+placed into the D. discoideum UMP synthase gene. This construct was 
+inserted into the D. discoideum genome and presented as a landmark for 
+de novo TRE insertions. We show that the tRNA gene-tagged UMP synthase 
+gene was frequently disrupted by de novo insertions of endogenous TRE5-A 
+copies, thus rendering the resulting mutants resistent to 5-fluoro 
+orotic acid selection. Approx. 96% of all isolated 5-FOA-resistent 
+clones contained TRE5-A insertions, whereas the remaining 4% resulted 
+from transposition-independent mutations. The inserted TRE5-As showed 
+complex structural variations and were found about 50 bp upstream of the 
+reporter tRNA gene similar to previously analysed genomic copies of 
+TRE5-A. No integration by other members of the TRE family was observed. 
+We found that only 51% of the de novo insertions were derived from 
+autonomous TRE5-A.1 copies. The remaining 49% of new insertions were due 
+to TRE5-A.2 elements, which lack the proteins required for reverse 
+transcription and integration, but retained functional promoter sequences.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 3]

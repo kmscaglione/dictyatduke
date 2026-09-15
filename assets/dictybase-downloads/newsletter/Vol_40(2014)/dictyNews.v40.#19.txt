@@ -1,0 +1,107 @@
+dictyNews
+Electronic Edition
+Volume 40, number 19
+August 8, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+TITLE: Comparison of Dictyostelium LvsB and endosomal fission defect 
+mutants support a fusion regulatory role for LvsB
+
+AUTHORS: Kristin Falkenstein and Arturo De Lozanne
+Section of Molecular Cell & Developmental Biology
+and Institute for Cellular and Molecular Biology,
+University of Texas at Austin, Austin, TX 78712.
+
+
+JOURNAL: Journal of Cell Science
+
+ABSTRACT: Defects in human Lyst are associated with the lysosomal 
+disorder Chediak Higashi Syndrome.  The absence of Lyst results in 
+the formation of enlarged lysosome related compartments but the 
+mechanism for how these compartments arise is not well established.  
+Two opposing models have been proposed to explain Lyst function.  
+The fission model describes Lyst as a positive regulator of fission 
+from lysosomal compartments, while the fusion model identifies Lyst 
+as a negative regulator of fusion between lysosomal vesicles. Here 
+we used assays that can distinguish between defects in vesicle fusion 
+versus fission. We compared the phenotype of Dictyostelium cells 
+defective in LvsB, the ortholog of Lyst, with that of two known fission 
+defect mutants (µ3 and WASH null mutants).  We found that the temporal 
+localization characteristics of the post-lysosomal marker vacuolin, as 
+well as vesicular acidity and fusion dynamics of LvsB null cells are 
+distinct from those of both µ3 and WASH null fission defect mutants.  
+These distinctions are predicted by the fusion defect model and 
+implicate LvsB as a negative regulator of vesicle fusion.
+
+Submitted by Arturo De Lozanne [a.delozanne@utexas.edu]
+ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+
+
+A simple optical configuration for cell tracking by dark-field 
+microscopy
+
+Vlatka Antolovic, Maja Marinovic, Vedrana Filic, Igor Weber
+
+
+Journal of Microbiological Methods  (2014), pp. 9-11
+DOI information: 10.1016/j.mimet.2014.06.006
+http://authors.elsevier.com/a/1PT8Kc8NxIVdE 
+(free download until September 21, 2014)
+
+We describe a simple optical configuration for dark-field microscopy 
+at low magnification, realized with the use of standard microscope 
+components. An inherent high contrast makes this method attractive 
+for computer-assisted tracking and counting of microorganisms. We 
+applied this setup for dark-field microscopy to measure the speed 
+of migrating Dictyostelium amoebae.
+
+Submitted by Vedrana Filic [vedrana.filic@irb.hr]
+ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+
+
+Actin and PIP3 waves in giant cells reveal the inherent length 
+scale of an excited state
+
+Matthias Gerhardt, Mary Ecke, Michael Walz, Andreas Stengl, Carsten Beta, 
+and GŸnther Gerisch
+
+
+Journal of Cell Science, accepted
+
+The membrane and actin cortex of a motile cell can autonomously 
+differentiate into two states, one typical of the front, the other of 
+the tail. On the substrate-attached surface of Dictyostelium cells, 
+dynamic patterns of front-like and tail-like states are generated that 
+are best suited to monitor transitions between these states. To image 
+large-scale pattern dynamics independent of boundary effects, we produced 
+giant cells by electric-pulse induced cell fusion. In these cells actin 
+waves are coupled to the front and back of PIP3-rich bands that have a 
+finite width. These composite waves propagate across the plasma membrane 
+of the giant cells with undiminished velocity. After any disturbance, the 
+bands of PIP3 return to their intrinsic width. Upon collision, the waves 
+locally annihilate each other and change direction; at the cell border 
+they are either extinguished or reflected. Accordingly, expanding areas of 
+progressing PIP3 synthesis become unstable beyond a critical radius, their 
+center switching from a front-like to a tail-like state. Our data suggest 
+that PIP3 patterns in normal-sized cells are segments of the self-organizing 
+patterns that evolve in giant cells.
+
+Submitted by GŸnther Gerisch [gerisch@biochem.mpg.de]
+==============================================================
+[End dictyNews, volume 40, number 19]

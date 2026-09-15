@@ -1,0 +1,96 @@
+dictyNews
+Electronic Edition
+Volume 35, number 13
+Nov 5, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Functional dissection of adenylate cyclase r, an inducer of spore 
+encapsulation.
+
+Zhi-hui Chen, Christina Schilde and Pauline Schaap*
+College of Life Sciences, University of Dundee, Dundee, United Kingdom
+
+
+J.Biol.Chem., in press
+	 
+Cyclic AMP acting on PKA controls sporulation and encystation in social 
+and solitary amoebas. In Dictyostelium discoideum, adenylate cyclase R 
+(ACR), is essential for spore encapsulation. In addition to its cyclase (AC) 
+domain, ACR harbours seven transmembrane helices, a histidine kinase 
+domain and two receiver domains. We investigated the role of these 
+domains in the regulation of AC activity. Expression of an ACR-YFP fusion 
+protein in acr- cells rescued their sporulation defective phenotype and 
+revealed that ACR is associated with the nuclear envelope and 
+endoplasmic reticulum. Loss of the transmembrane helices (deltaTM) 
+caused 60% reduction of AC activity, but deltaTM-ACR still rescued the 
+acr- phenotype. The isolated AC domain was properly expressed but 
+inactive. Mutation of three essential ATP-binding residues in the histidine 
+kinase domain did not affect the AC activity or phenotypic rescue. 
+Mutation of the essential phosphoryl-accepting aspartate in receivers 
+1, 2 or both had only modest effects on AC activity and did not affect 
+phenotypic rescue, indicating that AC activity is not critically regulated 
+by phosphorelay. Remarkably, the dimerizing histidine phospho-acceptor 
+subdomain, which in ACR lacks the canonical histidine for 
+autophosphorylation, was essential for AC activity. Transformation of 
+wild-type cells with an ACR allele (deltaCRA) that is truncated after 
+this domain  inhibited AC activity of endogenous ACR and replicated 
+the acr- phenotype. Combined with the observation that the isolated AC 
+domain was inactive, the dominant-negative effect of deltaCRA strongly 
+suggests that the defunct phospho-acceptor domain acquired a novel 
+role in enforcing dimerization of the AC domain.  
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+The C-module-binding factor supports the amplification of TRE5-A 
+retrotransposons in the Dictyostelium discoideum genome
+
+Annika Bilzer, Heike Dölz, Alexander Reinhardt, Anika Schmith, Oliver Siol, 
+Thomas Winckler
+
+
+Eukaryotic Cell, in press
+
+Retrotransposable elements are molecular parasites that have invaded 
+the genomes of virtually all organisms. Although retrotransposons encode 
+essential proteins to mediate their amplification, they also require 
+assistance by host cell-encoded machineries that perform functions such 
+as DNA transcription and repair. The retrotransposon TRE5-A of the 
+social amoeba Dictyostelium discoideum generates a notable amount of 
+both sense and antisense RNAs, which are generated from 
+element-internal promoters located in the A- module and the C-module, 
+respectively. We observed that TRE5-A retrotransposons depend on 
+the C-module-binding factor (CbfA) to maintain high steady-state levels 
+of TRE5-A transcripts and that CbfA supports the retrotransposition 
+activity of TRE5-A elements. The carboxy-terminal domain of CbfA was 
+found to be required and sufficient to mediate the accumulation of 
+TRE5-A transcripts, but it did not support productive retrotransposition 
+of TRE5-A. This result suggests different roles for CbfA protein domains 
+in the regulation of the TRE5-A retrotransposition frequency in 
+D. discoideum cells. Although CbfA binds to the C-module in vitro, the 
+factor regulates neither C-module nor A-module promoter activity in vivo. 
+We speculate that CbfA supports the amplification of TRE5-A 
+retrotransposons by suppressing the expression of a not yet identified 
+component of the cellular posttranscriptional gene silencing machinery.  
+
+
+Submitted by Thomas Winckler [t.winckler@uni-jena.de]
+==============================================================
+[End dictyNews, volume 35, number 13]

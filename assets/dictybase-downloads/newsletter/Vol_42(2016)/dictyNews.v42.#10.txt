@@ -1,0 +1,68 @@
+dictyNews
+Electronic Edition
+Volume 42, number 10
+April 1, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Regulation of ecmF gene expression and genetic hierarchy among STATa, 
+CudA, and MybC on several prestalk A-specific gene expressions in 
+Dictyostelium
+
+Yukika Saga 1, Tomoka Inamura 1, Nao Shimada 1, 2, and 
+Takefumi Kawata 1, *
+
+1 Department of Biology, Faculty of Science, Toho University, 
+2-2-1 Miyama, Funabashi, Chiba 274-8510, Japan
+2 Present Address: Graduate School of Arts and Sciences, 
+University of Tokyo, 3-8-1 Komaba, Meguro-ku, Tokyo 153-8902, Japan
+
+
+Develop. Growth Diff., in press
+
+STATa, a Dictyostelium homologue of metazoan signal transducer 
+and activator of transcription, is important for the organizer function 
+in the tip region of the migrating Dictyostelium slug. We previously 
+showed that ecmF gene expression depends on STATa in prestalk A 
+(pstA) cells, where STATa is activated. Deletion and site-directed 
+mutagenesis analysis of the ecmF/lacZ fusion gene in wild-type and 
+STATa null strains identified an imperfect inverted repeat sequence, 
+ACAAATANTATTTGT, as a STATa-responsive element. An upstream 
+sequence element was required for efficient expression in the rear region 
+of pstA zone; an element downstream of the inverted repeat was 
+necessary for sufficient prestalk expression during culmination. Band shift 
+analyses using purified STATa protein detected no sequence-specific 
+binding to those ecmF elements. The only verified upregulated target 
+gene of STATa is cudA gene; CudA directly activates expL7 gene 
+expression in prestalk cells. However, ecmF gene expression was almost 
+unaffected in a cudA null mutant. Several previously reported putative 
+STATa target genes were also expressed in cudA null mutant but were 
+downregulated in STATa null mutant. Moreover, mybC, which encodes 
+another transcription factor, belonged to this category, and ecmF 
+expression was downregulated in a mybC null mutant. These findings 
+demonstrate the existence of a genetic hierarchy for pstA-specific 
+genes, which can be classified into two distinct STATa downstream 
+pathways, CudA dependent and independent. The ecmF expression 
+is indirectly upregulated by STATa in a CudA-independent activation 
+manner but dependent on MybC, whose expression is positively 
+regulated by STATa.
+
+
+submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+==============================================================
+[End dictyNews, volume 42, number 10]

@@ -1,0 +1,164 @@
+Dicty News
+Electronic Edition
+Volume 10, number 10
+April 11, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=========================
+ Franke Database Updated
+=========================
+
+An updated version of the Franke Dictyostelium reference database is 
+now available through the Dicty web page at 
+http://dicty.cmb.nwu.edu/dicty/dicty.html
+
+===========
+ Abstracts
+===========
+ 
+CHARACTERIZATION AND CLONING OF A DICTYOSTELIUM STE20-LIKE PROTEIN 
+KINASE THAT PHOSPHORYLATES THE ACTIN-BINDING PROTEIN SEVERIN
+
+Ludwig Eichinger1, Martin Bähler1, Melanie Dietz1, Christoph 
+Eckerskorn2, and Michael Schleicher1
+
+1Adolf-Butenandt-Institut/Zellbiologie, Ludwig-Maximilians-Universität, 
+Schillerstr. 42, 80336 München, Germany; 2Max-Planck-Institut für 
+Biochemie, Am Klopferspitz 18a, 82152 Martinsried, Germany
+
+J. Biol. Chem., in press
+
+Abstract
+
+   After receiving an external stimulus Dictyostelium amoebae are able 
+to rearrange their actin cytoskeleton within seconds, and 
+phosphorylation is a prime candidate for quick modification of 
+cytoskeletal components. We isolated a kinase from cytosolic extracts 
+that specifically phosphorylated severin, a Ca2+-dependent F-actin 
+fragmenting protein. In gel filtration chromatography severin kinase 
+eluted with a molecular mass of about 300 kDa and contained a 62 kDa 
+component whose autophosphorylation caused a mobility shift in SDS-PAGE 
+and stimulated phosphorylation of severin. Severin kinase activity 
+could be specifically precipitated with antibodies raised against the 
+62 kDa polypeptide. Phosphorylation of severin was strongly reduced in 
+the presence of Ca2+, indicating additional regulation at the substrate 
+level. Peptide sequencing and cloning of the cDNA demonstrated that the 
+62 kDa protein belongs to the Ste20p- or p21-activated protein kinase 
+family. It is most closely related to the germinal center kinase 
+subfamily with its N-terminally positioned catalytic domain followed 
+by a presumptive regulatory domain at the C-terminus. The presence of 
+a Ste20-like severin kinase in Dictyostelium suggests a direct signal 
+transduction from the plasma membrane to the cytoskeleton by 
+phosphorylation of actin-binding proteins.
+
+-------------------------------------------------------------------------
+
+Diphospho-myo-inositolphosphates in Dictyostelium and Polysphondylium: 
+Identification of a new bisdiphospho-myo-inositol tetrakisphosphate
+
+Tim Laussmann1, André Hansen1, Komandla Malla Reddy2, K. Kishta 
+Reddy2, J.R. Falck2 and Guenter Vogel1*
+
+1Fachbereich 9 - Chemie, Bergische Universitaet GHS Wuppertal, 
+Gaussstrasse 20, 42097 Wuppertal. 2Department of Biochemistry, 
+UT Southwestern Medical Center, 5323 Harry Hines Blvd., Dallas, 
+TX 75235-9038
+
+Abstract
+
+   The two major diphospho inositol phosphates from the axenic strain 
+D. discoideum  AX2 were previously investigated and identified as 
+6-PP-InsP5 and 5,6-bis-PP-InsP4. In order to examine whether these 
+findings are representative of Dictyostelids in general, five non-
+axenic wild type species of Dictyostelium and two of Polysphondylium 
+were studied. It was found that all of the Dictyostelium species exhibit 
+similar patterns of diphospho inositol phosphates. By contrast, both 
+of the Polysphondylium species contain 5-PP-InsP5 as the predominant 
+isomer. Besides 5,6-bis-PP-InsP4, a new bis-PP-InsP4 was detected in 
+Polysphondylium. This compound is either 1,5-bis-PP-InsP4 or its 
+corresponding enantiomer 3,5-bis-PP-InsP5. The structures were 
+elucidated by two dimensional 1H-1H and 1H-31P NMR analysis. 
+Additionally, they were confirmed using a specific 6-PP-InsP5-5-kinase 
+from D. discoideum AX2 as an enantiospecific tool and enantiomerically 
+pure reference standards.
+
+-------------------------------------------------------------------------
+
+The S. cerevisiae CLU1 and D. discoideum cluA genes are functional
+homologues that influence mitochondrial morphology and distribution.
+
+Stephen D. Fields, Michael N. Conrad, and Margaret Clarke
+Oklahoma Medical Research Foundation
+825 N.E. 13th Street
+Oklahoma City, OK  73104
+
+
+J. Cell Sci., in press
+
+Summary
+
+   The cluA gene, encoding a novel 150-kDa protein, was recently
+characterized in Dictyostelium discoideum;  disruption of cluA impaired
+cytokinesis and caused mitochondria to cluster at the cell center (Zhu
+et al., Proc. Natl. Acad. Sci. USA 94, 7308-7313, 1997).  The genome of
+Saccharomyces cerevisiae contains an open reading frame (CLU1) that
+encodes a protein that is 27% identical, 50% similar, to this
+Dictyostelium protein.  Deletion of CLU1 from S. cerevisiae did not
+affect cell viability, growth properties, sporulation efficiency, or
+frequency of occurrence of cells lacking functional mitochondria. 
+However, in clu1D cells the mitochondrial reticulum, which is normally
+highly branched, was condensed to one side of the cell.  Transformation
+of cluA- Dictyostelium mutants with the yeast CLU1 gene yielded amoebae
+that divided normally and had dispersed mitochondria.  The mitochondria
+in cluA- Dictyostelium cells complemented with CLU1 were not as widely
+scattered as in cluA+ Dictyostelium cells, but formed loose clusters
+throughout the cytoplasm.  These results indicate that the products of
+the CLU1 and cluA genes, in spite of their limited homology, are
+functional homologues.
+
+-------------------------------------------------------------------------
+
+YakA, a protein kinase required for the growth to development 
+transition inDictyostelium
+
+Glaucia Mendes Souza, Sijie Lu and Adam Kuspa
+
+Verna and Marrs McLean Department of Biochemistry, Baylor College of 
+Medicine, Houston, Texas, USA, 77030, Dept. Bioquimica, Instituto 
+de Quimica, University of Sao Paulo, Brazil 05508
+
+Development, in press
+
+SUMMARY
+
+   When Dictyostelium cells starve they arrest their growth and 
+induce the expression of genes necessary for development. We have 
+identified and characterized a protein kinase, YakA, that is essential 
+for the proper regulation of both events.  Amino acid sequence and 
+functional similarities indicate that YakA is a homolog of Yak1p, a 
+growth-regulating protein kinase in S. cerevisiae.  Purified YakA 
+expressed in E. coli is able to phosphorylate myelin basic protein. 
+YakA-null cells are smaller and their cell cycle is accelerated 
+relative to wild-type cells.  When starved, YakA-null cells fail to 
+decrease the expression of the growth-stage gene cprD, and do not 
+induce the expression of genes required for the earliest stages of 
+development.  YakA mRNA levels increase during exponential growth
+and reach a maximum at the point of starvation, consistent with a 
+role in mediating starvation responses.   YakA mRNA also accumulates 
+when cells are grown in media conditioned by cells grown to high 
+density suggesting that yakA expression is under the control of an 
+extracellular signal that accumulates during growth.  Expression of 
+yakA from a conditional promoter causes cell cycle arrest in nutrient-
+rich medium and promotes developmental events, such as the expression 
+of genes required for cAMP signaling.  YakA appears to regulate the 
+transition from growth to development in Dictyostelium.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 10]
+

@@ -1,0 +1,77 @@
+dictyNews
+Electronic Edition
+Volume 38, number 12
+April 27, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Non-Brownian dynamics and strategy of amoeboid cell locomotion
+
+Nishimura, SI, Ueda, M and Sasai, M
+
+
+Physical Review E 85, 041909 (2012)
+
+Amoeboid cells such as Dictyostelium discoideum and Madin-Darby 
+canine kidney cells show the non-Brownian dynamics of migration 
+characterized by the superdiffusive increase of mean-squared 
+displacement. In order to elucidate the physical mechanism of this 
+non-Brownian dynamics, a computational model is developed which 
+highlights a group of inhibitorymolecules for actin polymerization. Based 
+on this model, we propose a hypothesis that inhibitory molecules are sent 
+backward in the moving cell to accumulate at the rear of cell. The 
+accumulated inhibitory molecules at the rear further promote cell locomotion 
+to form a slow positive feedback loop of the whole-cell scale. The persistent 
+straightforward migration is stabilized with this feedback mechanism, but the 
+fluctuation in the distribution of inhibitory molecules and the cell shape 
+deformation concurrently interrupt the persistent motion to turn the cell into 
+a new direction. A sequence of switching behaviors between persistent 
+motions and random turns gives rise to the superdiffusive migration in the 
+absence of the external guidance signal. In the complex environment with 
+obstacles, this combined process of persistent motions and random turns 
+drives the simulated amoebae to solve the maze problem in a highly 
+efficient way, which suggests the biological advantage for cells to bear 
+the non-Brownian dynamics.
+
+Other information:  Some movies (which are not included in the supporting 
+material  of this paper) are available on youtube!  
+http://www.youtube.com/user/AmoebaSimulator
+
+
+Submitted by Shin I.Nishimura [shin@hiroshima-u.ac.jp]
+--------------------------------------------------------------------------------------
+
+
+BOOK CHAPTER
+
+Aiko Amagai
+Graduate School of Life Sciences, Tohoku University Japan 
+
+Regulatory Mechanism in Sexual and Asexual Cycles of Dictyostelium 
+
+p327-344, chapter 15 
+in ADVANCES IN SELECTED PLANT PHYSIOLOGY ASPECTS
+Edited by Giuseppe Montanaro and Bartolomeo Dichio 
+Publisher: InTech, April, 2012
+ISBN 978-953-51-0557-2
+Hard cover, 388 pages
+
+
+Submitted by Aiko Amagai [aiamagai@amber.plala.or.jp]
+==============================================================
+[End dictyNews, volume 38, number 12]

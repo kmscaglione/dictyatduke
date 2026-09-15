@@ -1,0 +1,203 @@
+dictyNews
+Electronic Edition
+Volume 34, number 9
+March 12, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+A myosin IK-Abp1-PakB circuit acts as a switch to regulate phagocytosis 
+efficiency 
+
+Régis Dieckmann, Yosuke von Heyden, Claudia Kistler, Navin Gopaldass, 
+Stéphanie Hausherr, Scott William Crawley, Eva C. Schwarz, Ralph P. 
+Diensthuber, Graham P. Côté, Georgios Tsiavaliaris, and Thierry Soldati
+
+Molecular Biology of the Cell, in press
+
+
+Actin dynamics and myosin contractile forces are necessary for formation 
+and closure of the phagocytic cup. In Dictyostelium, the actin-binding protein 
+Abp1 and myosinIK are enriched in the closing cup and especially at an 
+actin-dense constriction furrow formed around the neck of engulfed budded 
+yeasts. This phagocytic furrow consists of concentric overlapping rings of 
+MyoK, Abp1, Arp3, coronin and myosin II, following an order strikingly 
+reminiscent of the overall organization of the lamellipodium of migrating 
+cells. Mutation analyses of MyoK revealed that both a C-terminal 
+farnesylation membrane anchor and a Gly-Pro-Arg domain that interacts 
+with profilin and Abp1, were necessary for proper localization in the furrow 
+and efficient phagocytosis. Consequently, we measured the binding affinities 
+of these interactions and unraveled further interactions with profilins, 
+dynamin A and PakB. Due to the redundancy of the interaction network, we 
+hypothesize that MyoK and Abp1 are restricted to regulatory roles and might 
+affect the dynamic of cup progression. Indeed, phagocytic uptake was 
+regulated antagonistically by MyoK and Abp1. MyoK is phosphorylated by 
+PakB and positively regulates phagocytosis, whereas binding of Abp1 
+negatively regulates PakB and MyoK. We conclude that a MyoK-Abp1-PakB 
+circuit acts as a switch regulating phagocytosis efficiency of large particles. 
+
+
+Submitted by Thierry Soldati [Thierry.Soldati@unige.ch]
+--------------------------------------------------------------------------------
+
+
+Bimodal analysis reveals a general scaling law governing non-directed 
+and chemotactic cell motility
+
+J. Scott Gruver1*, Alka A. Potdar2,4*, Junhwan Jeon2,4, Jiqing Sai3, 
+Bridget Anderson5, Donna Webb3,5,6, Ann Richmond3,7, Vito Quaranta3, 
+Peter T. Cummings2,4,8, and Chang Chung1,5, #
+
+1Department of Pharmacology, 
+2Vanderbilt Integrative Cancer Biology Center, 
+3Department of Cancer Biology, Vanderbilt University Medical Center, 
+Nashville, TN 37232, 
+4Department of Chemical and Biomolecular Engineering, 
+5Department of Biological Sciences, Vanderbilt University, 
+Nashville, TN, 37235, 
+6Vanderbilt Kennedy Center for Research on Human Development, 
+Nashville TN, 37235, 
+7Department of Veterans Affairs (Nashville, TN), 
+8Center for Nanophase Materials Sciences, Oak Ridge National Laboratory, 
+Oak Ridge, TN 37831
+
+
+Biophy. J.,  in press
+
+Cell motility is a fundamental process with relevance to embryonic development,
+immune response, and metastasis. Cells move either spontaneously, in a 
+non-directed fashion, or in response to chemotactic signals, in a directed fashion. 
+Even though they are often studied separately, both forms of motility share many 
+complex processes at the molecular and subcellular scale, e.g., orchestrated 
+cytoskeletal rearrangements and polarization. In addition, at the cellular level 
+both types of motility include persistent runs interspersed with reorientation 
+pauses(1-4). Because there is a great range of variability in motility among 
+different cell types, a key challenge in the field is to integrate these multi-scale 
+processes into a coherent framework. We analyzed the motility of Dictyostelium 
+cells with bimodal analysis, a method that compares time spent in persistent
+versus reorientation mode. Unexpectedly, we found that reorientation time is 
+coupled with persistent time in an inverse correlation and, surprisingly, the 
+inverse correlation holds for both non-directed and chemotactic motility, so that 
+the full range of Dictyostelium motility can be described by a single scaling 
+relationship. Additionally, we found an identical scaling relationship for three 
+human cell lines, indicating that the coupling of reorientation and persistence 
+holds across species and making it possible to describe the complexity of cell 
+motility in a surprisingly general and simple manner. With this new perspective, 
+we analyzed the motility of Dictyostelium mutants, and found four in which the 
+coupling between two modes was altered. Our results point to a fundamental 
+underlying principle, described by a simple scaling law, unifying mechanisms 
+of eukaryotic cell motility at several scales.
+
+
+Submitted by Chang Chung [chang.chung@vanderbilt.edu]
+--------------------------------------------------------------------------------
+
+
+New components of the Dictyostelium PKA pathway revealed by Bayesian 
+analysis of expression data
+
+Anup Parikh, Eryong Huang, Christopher Dinh, Blaz Zupan, Adam Kuspa,
+Devika Subramanian and Gad Shaulsky
+
+Baylor College of Medicine, University of Ljubljana and Rice University
+
+
+BMC Bioinformatics, in press
+
+
+Background
+Identifying candidate genes in genetic networks is important for understanding 
+regulation and biological function. Large gene expression datasets contain 
+relevant information about genetic networks, but mining the data is not a trivial 
+task. Algorithms that infer Bayesian networks from expression data are powerful 
+tools for learning complex genetic networks, since they can incorporate prior 
+knowledge and uncover higher-order dependencies among genes. However, 
+these algorithms are computationally demanding, so novel techniques that allow 
+targeted exploration for discovering new members of known pathways are 
+essential.
+
+Results
+Here we describe a Bayesian network approach that addresses a specific network 
+within a large dataset to discover new components. Our algorithm draws individual 
+genes from a large gene-expression repository, and ranks them as potential 
+members of a known pathway. We apply this method to discover new components 
+of the cAMP-dependent protein kinase (PKA) pathway, a central regulator of 
+Dictyostelium discoideum development. The PKA network is well studied in 
+D. discoideum but the transcriptional networks that regulate PKA activity and the
+transcriptional outcomes of PKA function are largely unknown. Most of the genes
+highly ranked by our method encode either known components of the PKA 
+pathway or are good candidates.  We tested 5 uncharacterized highly ranked 
+genes by creating mutant strains and identified a candidate cAMP-response 
+element-binding protein, yet undiscovered in D. discoideum, and a histidine 
+kinase, a candidate upstream regulator of PKA activity.
+
+Conclusions
+The single-gene expansion method is useful in identifying new components of 
+known pathways. The method takes advantage of the Bayesian framework to 
+incorporate prior biological knowledge and discovers higher-order dependencies 
+among genes while greatly reducing the computational resources required to 
+process high-throughput datasets.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+--------------------------------------------------------------------------------
+
+Conserved Developmental Transcriptomes in Evolutionary Divergent 
+Species
+
+Anup Parikh*, Edward Roshan Mirada*, Mariko Katoh-Kurasawa, 
+Danny Fuller, Gregor Rot, Lan Zagar, Tomaz Curk, Richard Sucgang, 
+Rui Chen, Blaz Zupan, William F. Loomis, Adam Kuspa and Gad Shaulsky
+
+* equal contribution
+
+Baylor College of Medicine, UC San Diego, and University of Ljubljana
+
+
+Genome Biology, in press
+
+
+Background
+Evolutionary divergent organisms often share developmental anatomies 
+despite vast differences between their genome sequences. The social 
+amoebae Dictyostelium discoideum and Dictyostelium purpureum have 
+similar developmental morphologies although their genomes are as 
+divergent as those of man and jawed fish.
+
+Results
+Here we show that the anatomical similarities are accompanied by extensive 
+transcriptome conservation. Using RNA sequencing we compared the 
+abundance and developmental regulation of all the transcripts in the two 
+species. In both species, most genes are developmentally regulated and the 
+greatest expression changes occur during the transition from unicellularity 
+to multicellularity. The developmental regulation of transcription is highly 
+conserved between orthologs in the two species. In addition to timing of 
+expression, the level of mRNA production is also conserved between 
+orthologs and is consistent with the intuitive notion that transcript abundance 
+correlates with the amount of protein required.  Furthermore, the 
+conservation of transcriptomes extends to cell-type specific expression.
+
+Conclusions
+These findings suggest that developmental programs are remarkably 
+conserved at the transcriptome level, considering the great evolutionary 
+distance between the genomes. Moreover, this transcriptional conservation 
+may be responsible for the similar developmental anatomies of 
+Dictyostelium discoideum and Dictyostelium purpureum.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+==============================================================
+[End dictyNews, volume 34, number 9]

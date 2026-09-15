@@ -1,0 +1,214 @@
+dictyNews
+Electronic Edition
+Volume 30, number 19
+June 20, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+The Actinome of Dictyostelium discoideum in Comparison to Actins and 
+Actin-related Proteins from Other Organisms
+
+Jayabalan M. Joseph 1, Petra Fey 2, Nagendran Ramalingam 1, XI Liu 3, 
+Meino Rohlfs 1, Angelika A. Noegel 4, Annette Mueller-Taubenberger 1, 
+Gernot Gloeckner 5 and 
+Michael Schleicher 1
+
+1 ABI/Cell Biology and Center for Integrated Protein Science (CIPSM), LMU, 
+Muenchen, Germany 
+2 dictyBase, Center f. Genetic Medicine, Northwestern Univ., Chicago, IL, USA 
+3 Dept. Biol. II, LMU, Muenchen, Germany 
+4 Inst. f. Biochemistry I, Center f. Molecular Medicine Cologne (CMMC) and 
+Cologne Excellence Cluster on Cellular Stress Responses in 
+Aging-Associated Diseases (CECAD), Univ. of Cologne, Koeln, Germany 
+5 Leibniz-Inst. for Age Research - Fritz Lipmann Inst., Jena, Germany
+
+
+PLoS ONE, in press
+
+Actin belongs to the most abundant proteins in eukaryotic cells which harbor 
+usually many conventional actin isoforms as well as actin-related proteins 
+(Arps). To get an overview over the sometimes confusing multitude of actins 
+and Arps, we analyzed the Dictyostelium discoideum actinome in detail and 
+compared it with the genomes from other model organisms. The D. discoideum 
+actinome comprises  41 actins and  actin-related proteins. The genome 
+contains 17 actin genes which most likely arose from consecutive gene 
+duplications, are all active, in some cases develomentally regulated and 
+coding for identical proteins (Act8-group). According to published data, the 
+actin fraction in a D. discoideum cell consists of more than 95% of these 
+Act8-type proteins. The other 16 actin isoforms contain a conventional 
+actin motif profile as well but differ in their protein sequences. Seven 
+actin genes are potential pseudogenes. A homology search of the human 
+genome using the most typical D. discoideum actin (Act8) as query sequence 
+finds the major actin isoforms such as cytoplasmic beta-actin as best hit. 
+This suggests that the Act8-group represents a nearly perfect actin 
+throughout evolution. Interestingly, limited data from D. fasciculatum, a more 
+ancient member among the social amoebae, show different relationships 
+between conventional actins.  The Act8-type isoform is most conserved 
+throughout evolution. Modeling of the putative structures suggests that 
+the majority of the actin-related proteins is functionally unrelated to 
+canonical actin. The data suggest that the other actin variants are not 
+necessary for the cytoskeleton itself but rather regulators of its dynamical 
+features or subunits in larger protein complexes.
+
+
+Submitted by: Michael Schleicher [schleicher@lrz.uni-muenchen.de]
+--------------------------------------------------------------------------------
+
+
+Genome-wide transcriptional changes induced by phagocytosis or growth on 
+bacteria in Dictyostelium.
+
+Alessio Sillo*1, Gareth Bloomfield#°1, Alessandra Balest*, Alessandra Balbo*, 
+Barbara Pergolizzi*, Barbara Peracino*, Jason Skelton#, Alasdair Ivens#, 
+and Salvatore Bozzaro*§
+
+
+BMC GENOMICS, in press
+
+Background
+Phagocytosis plays a major role in the defense of higher organisms against 
+microbial infection and provides also the basis for antigen processing in the 
+immune response. Cells of the model organism Dictyostelium are professional 
+phagocytes that exploit phagocytosis of bacteria as the preferred way to 
+ingest food, besides killing pathogens. We have investigated Dictyostelium 
+differential gene expression during phagocytosis of non-pathogenic bacteria, 
+using DNA microarrays, in order to identify molecular functions and novel 
+genes involved in phagocytosis.
+Results 
+The gene expression profiles of cells incubated for a brief time with bacteria 
+were compared with cells either incubated in axenic medium or growing on 
+bacteria. Transcriptional changes during exponential growth in axenic medium 
+or on bacteria were also compared. We recognized 443 and 59 genes that are 
+differentially regulated by phagocytosis or by the different growth conditions 
+(growth on bacteria vs. axenic medium), respectively, and 102 genes regulated 
+by both processes. Roughly one third of the genes are up-regulated compared 
+to macropinocytosis and axenic growth. Functional annotation of differentially 
+regulated genes with different tools revealed that phagocytosis induces profound 
+changes in carbohydrate, aminoacid and lipid metabolism, and in cytoskeletal 
+components. Genes regulating translation and mitochondrial biogenesis are mostly 
+up-regulated. Genes involved in sterol biosynthesis are selectively up-regulated, 
+suggesting a shift in membrane lipid composition linked to phagocytosis. Very 
+few changes were detected in genes required for vesicle fission/fusion, 
+indicating that the intracellular traffic machinery is mostly in common between 
+phagocytosis and macropinocytosis. A few putative receptors, including GPCR 
+family 3 proteins, scaffolding and adhesion proteins, components of signal 
+transduction and transcription factors have been identified, which could be 
+part of a signalling complex regulating phagocytosis and adaptational 
+downstream responses. 
+Conclusions
+The results highlight differences between phagocytosis and macropinocytosis, 
+and provide the basis for targeted functional analysis of new candidate genes 
+and for comparison studies with transcriptomes during infection with pathogenic 
+bacteria.
+
+
+Submitted by: Salvo Bozzaro [salvatore.bozzaro@unito.it]
+--------------------------------------------------------------------------------
+
+Anna Maria Rosaria Colucci, Barbara Peracino, Salvatore Bozzaro, 
+Pietro Alifano  and Cecilia Bucci  
+
+Dictyostelium discoideum as a model host for meningococcal pathogenesis
+
+
+Medical Science Monitor, in Press
+
+Background:
+The aim of the present study was to evaluate the possibility of studying 
+meningococcal virulence in a new model organism, Dictyostelium discoideum, 
+a haploid social soil amoeba that has been established as a host model for 
+several human pathogens leading to discovery of novel virulence mechanisms.
+Material and Methods:
+A number of virulent and hyper-virulent N. meningitidis strains including a 
+pair of isogenic encapsulated and un-encapsulated derivatives were used to 
+test the ability of D. discoideum to internalize and grow in the presence of 
+dead or living bacteria. The intracellular survival of internalized bacteria 
+was also monitored.
+Results:
+Dead meningococci supported Dictyostelium growth and development 
+although with some difference between strains, which was partially related 
+to internalization rates. As well as in human cells, the capsule positively 
+affected survival of internalized bacteria in Dictyostelium cells. Interestingly, 
+at variance with dead meningococci, living meningococci progressively 
+killed Dictyostelium cells.
+Conclusions:
+Our results suggest that several meningococcal virulence determinants 
+such as the capsular polysaccharide may be remarkably effective also in 
+Dictyostelium cells stimulating the use of this model host to search for 
+novel meningococcal virulence determinants.
+
+
+Submitted by: Salvo Bozzaro [salvatore.bozzaro@unito.it]
+--------------------------------------------------------------------------------
+
+A novel bioassay for evaluating soil bio-hazards using Dictyostelium as biosensor: 
+Validation and application to the Bio-Bio Project
+
+Alessandra Balbo and Salvatore Bozzaro
+
+
+Fresenius Environ. Bull., in press
+
+An easy and cheap biosensor has been developed for assessing soil biohazards. 
+The toxicity assay is based on inhibition of Dictyostelium development, a soil 
+amoeba undergoing multicellular development and cell differentiation under 
+starving conditions. The sensitivity of the assay was assessed in soil samples 
+with increasing concentrations of heavy metals and by comparison with 
+standard bio-assays on a battery of soils collected from contaminated 
+industrial sites. Dictyostelium appears to be highly sensitive to polycyclic 
+aromatic hydrocarbons, mineral oil and, to a lesser extent, to heavy metals. 
+The assay has been applied in a concerted action with other bioassays within 
+the frame of the BIO-BIO project.
+
+
+Submitted by: Salvo Bozzaro [salvatore.bozzaro@unito.it]
+--------------------------------------------------------------------------------
+
+
+A new protein carrying an NmrA-like domain is required for cell differentiation 
+and development in Dictyostelium discoideum
+
+
+Beatriz Núñez-Corcuera, Ioannis Serafimidis, Ernesto Arias-Palomo, 
+Angel Rivera-Calzada and Teresa Suarez
+
+
+Dev. Biol., in press
+
+We have isolated a Dictyostelium mutant unable to induce expression of the 
+prestalk-specific marker ecmB in monolayer assays. The disrupted gene, padA, 
+leads to a range of phenotypic defects in growth and development. We show 
+that padA is essential for growth, and we have generated a thermosensitive 
+mutant allele, padA-. At the permissive temperature, mutant cells grow poorly; 
+they remain longer at the slug stage during development and are defective in 
+terminal differentiation. At the restrictive temperature, growth is completely 
+blocked, while development is permanently arrested prior to culmination. 
+padA- slugs are deficient in prestalkA cell differentiation and present an 
+abnormal ecmB expression pattern. Sequence comparisons and predicted 
+three-dimensional structure analyses show that PadA carries an NmrA-like 
+domain. NmrA is a negative transcriptional regulator involved in nitrogen 
+metabolite repression in Aspergillus nidulans. PadA predicted structure 
+shows a NAD(P)+-binding domain, which we demonstrate that is essential for 
+function. We show that padA- development is more sensitive to ammonia than 
+wild-type cells and two ammonium transporters, amtA and amtC, appear 
+derepressed during padA- development. Our data suggest that PadA belongs 
+to a new family of NAD(P)+-binding proteins that link metabolic changes 
+to gene expression and is required for growth and normal development.
+
+
+Submitted by: Teresa Suarez [teresa@cib.csic.es]
+==============================================================
+[End dictyNews, volume 30, number 19]

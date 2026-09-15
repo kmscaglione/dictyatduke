@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 27, number 9
+September 15, 2006
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+
+
+Role of RacC for the regulation of WASP and PI3 kinase during chemotaxis 
+of Dictyostelium
+
+Ji W. Han1, Laura Leeper1, Francisco Rivero2, Chang Y. Chung1*
+1Department of Pharmacology, Vanderbilt University Medical Center, 
+Nashville TN 37232-6600 
+2Zentrum für Biochemie and Zentrum für Molekulare Medizin, Medizinische 
+Fakultät, Universität zu Köln, Joseph-Stlzmann-Str. 52, 50931 Köln, Germany
+
+
+Journal of Biological Chemistry, in press
+
+WASP family proteins are key players for connecting multiple signaling 
+pathways to F-actin polymerization. To dissect the highly integrated 
+signaling pathways controlling WASP activity, we identified a Rac protein 
+that binds to the GTPase-binding domain of WASP.  Using two-hybrid and 
+FRET-based functional assays, we identified RacC as a major regulator of 
+WASP.  RacC stimulates F-actin assembly in cell-free systems in a 
+WASP-dependent manner. A FRET-based microscopy approach showed local 
+activation of RacC at the leading edge of chemotaxing cells.  Cells 
+overexpressing RacC exhibit a significant increase in the level of F-actin 
+polymerization upon cAMP stimulation, which can be blocked by a PI3 kinase 
+inhibitor.  Membrane translocation of PI3-kinase and PI(3,4,5)P3 reporter 
+is absent in racC null cells.  Cells overexpressing dominant negative RacC 
+mutants and racC null cells move at a significantly slower speed and show 
+a poor directionality during chemotaxis.  Our results suggest that RacC 
+plays an important role in PI3 kinase activation and WASP activation for 
+dynamic regulation of F-actin assembly during Dictyostelium chemotaxis.
+
+
+Submitted by: Chang Chung [chang.chung@vanderbilt.edu]
+-----------------------------------------------------------------------------
+
+
+Nonadaptive Regulation of ERK2 in Dictyostelium: Implications for Mechanisms 
+of cAMP Relay. 
+
+Brzostowski JA and Kimmel AR.
+
+Laboratory of Cellular and Developmental Biology, National Institute of 
+Diabetes and Digestive and Kidney Diseases, National Institutes of Health,
+Bethesda, MD 20892-8028; Laboratory of Immunogenetics, National Institute 
+of Allergy and Infectious Diseases, National Institutes of Health, 
+Rockville, MD 20852.
+
+
+Mol Biol Cell. 2006 Jul 26; (Epub ahead of print)
+
+It is assumed that ERK2 in Dictyostelium is subject to adaptive regulation 
+in response to constant extracellular ligand stimulation. We now show, to 
+the contrary, that ERK2 remains active under continuous stimulation, 
+differing from most ligand-activated pathways in chemotactically-competent 
+Dictyostelium and other cells. We show that the upstream phosphorylation 
+pathway, responsible for ERK2 activation, transiently responds to receptor 
+stimulation, whereas ERK2 de-phosphorylation (deactivation) is inhibited 
+by continuous stimulation. We argue that the net result of these two 
+regulatory actions is a persistently active ERK2 pathway when the 
+extracellular ligand (i.e. cAMP) concentration is held constant, and that 
+oscillatory production/destruction of secreted cAMP in chemotaxing cells 
+accounts for the observed oscillatory activity of ERK2. We also show that 
+pathways controlling seven-transmembrane receptor (7-TMR) ERK2 
+activation/deactivation function independently of G proteins and 
+ligand-induced production of intracellular cAMP and the consequent 
+activation of PKA. Finally, we propose that this regulation enables ERK2 
+to function both in an oscillatory manner, critical for chemotaxis, and 
+in a persistent manner, necessary for gene expression, as secreted ligand 
+concentration increases during later development. This work redefines 
+mechanisms of ERK2 regulation by 7-TMR signaling in Dictyostelium and 
+establishes new implications for control of signal-relay during chemotaxis.
+
+
+Submitted by: Joe Brzostowski [jb363a@nih.gov]
+==============================================================================
+[End dictyNews, volume 27, number 9] 

@@ -1,0 +1,96 @@
+dictyNews
+Electronic Edition
+Volume 43, number 8
+April 21, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Mroh1, a lysosomal regulator localised by WASH-generated actin
+
+Peter A. Thomason, Jason S. King* and Robert H. Insall
+
+Address: Cancer Research UK Beatson Institute, Garscube Estate, 
+Switchback Road, Glasgow, G61 1BD, United Kingdom
+*Present Address: School of Biomedical Sciences, University of 
+Sheffield, Firth Court, Western Bank, Sheffield, S10 2TN, 
+United Kingdom
+
+
+Journal of Cell Science, in press
+
+The steps leading to constitutive exocytosis are poorly understood.  
+In Dictyostelium WASH complex mutants, exocytosis is blocked, so 
+cells that take up fluorescent dextran from the medium retain it and 
+remain fluorescent.  Here we establish a FACS-based method to select 
+cells that retain fluorescent dextran, allowing identification of mutants 
+with disrupted exocytosis.  Screening a pool of random mutants 
+identified the WASH complex, as expected, and multiple mutants in the 
+conserved HEAT-repeat containing protein Mroh1. In mroh1 mutants, 
+endosomes develop normally until the stage where lysosomes 
+neutralize to postlysosomes, but thereafter the WASH complex is 
+recycled inefficiently, and subsequent exocytosis is substantially 
+delayed.  Mroh1 protein localizes to lysosomes in mammalian and 
+Dictyostelium cells. In Dictyostelium it accumulates on lysosomes as 
+they mature, and is removed together with WASH shortly before the 
+postlysosomes are exocytosed.  WASH-generated F-actin is required 
+for correct subcellular localisation; in WASH complex mutants, and 
+immediately after latrunculin treatment, Mroh1 relocalises from 
+cytoplasm to small vesicles. Thus Mroh1 is involved in a late and 
+hitherto undefined actin-dependent step in exocytosis.
+
+
+submitted by: Robert Insall [r.insall@beatson.gla.ac.uk]
+———————————————————————————————————————
+
+
+Mycobacterium marinum antagonistically induces an autophagic 
+response while repressing the autophagic flux in a TORC1- and 
+ESX-1-dependent manner
+
+Elena Cardenal-Muñoz*, Sonia Arafah, Ana Teresa López-Jiménez, 
+Sébastien Kicka, Alexandra Falaise, Frauke Bach, Olivier Schaad, 
+Jason S. King, Monica Hagedorn and Thierry Soldati
+
+*Corresponding author
+
+PLoS Pathogens, in press 
+http://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1006344
+
+
+Autophagy is a eukaryotic catabolic process also participating in cell-
+autonomous defence. Infected host cells generate double-membrane 
+autophagosomes that mature in autolysosomes to engulf, kill and digest 
+cytoplasmic pathogens. However, several bacteria subvert autophagy and 
+benefit from its machinery and functions. Monitoring infection stages by 
+genetics, pharmacology and microscopy, we demonstrate that the ESX-1 
+secretion system of Mycobacterium marinum, a close relative to 
+M. tuberculosis, upregulates the transcription of autophagy genes, and 
+stimulates autophagosome formation and recruitment to the mycobacteria-
+containing vacuole (MCV) in the host model organism Dictyostelium. 
+Antagonistically, ESX-1 is also essential to block the autophagic flux and 
+deplete the MCV of proteolytic activity. Activators of the TORC1 complex 
+localize to the MCV in an ESX-1-dependent manner, suggesting an 
+important role in the manipulation of autophagy by mycobacteria. Our 
+findings suggest that the infection by M. marinum activates an autophagic 
+response that is simultaneously repressed and exploited by the bacterium 
+to support its survival inside the MCV.
+
+
+submitted by: Thierry Soldati [thierry.soldati@unige.ch]
+==============================================================
+[End dictyNews, volume 43, number 8]

@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 30, number 1
+January 4, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Cytokinins induce sporulation in Dictyostelium
+
+Christophe Anjard and William F. Loomis*
+
+Center for Molecular Genetics, Division of Biological Sciences,
+University of California San Diego, La Jolla, CA 92093-0368
+
+
+Development, in press
+
+The social amoeba Dictyostelium discoideum diverged from the line leading 
+to animals shortly after the separation of plants and animals but retained 
+characteristics of both kingdoms. A GABAB-like receptor and a peptide, 
+SDF-2, with homologs found only in animals, control sporulation, while 
+cytokinins, which act as hormones in plants, keep spores dormant.  When 
+SDF-2 binds its receptor, DhkA, it reduces the activity of the cAMP 
+phosphodiesterase RegA such that  cAMP can increase. It has been proposed 
+that the cytokinin, discadenine, also results in an increase in cAMP but 
+acts through a different histidine kinase, DhkB. We have found that 
+discadenine and its precursor, isopentenyl adenine, not only maintain 
+spore dormancy but also initiate rapid encapsulation independently of the 
+SDF-2 signal transduction pathway. DhkB and the adenylyl cyclase of late 
+development, AcrA, are members of two component signal transduction 
+families and both are required to transduce the cytokinin signal.  As 
+expected, strains lacking the isopentenyl-transferase enzyme chiefly 
+responsible for cytokinin synthesis are defective in sporulation. It 
+appears that SDF-2 and cytokinins are secreted during late development to 
+trigger signal transduction pathways that lead to an increase in the 
+activity of the cAMP dependent protein kinase, PKA, which triggers rapid 
+encapsulation as well as ensures spore dormancy.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+GBF-dependent family genes morphologically suppress the partially active 
+Dictyostelium STATa strain
+
+Nao Shimada, Naoko Kanno-Tanabe, Kakeru Minemura and Takefumi Kawata*
+
+Department of Biology, Faculty of Science, Toho University, 2-2-1 
+Miyama, Funabashi, Chiba 274-8510, Japan 
+ 
+*Corresponding author 
+
+
+Dev. Genes & Evol., In press
+
+Transcription factor Dd-STATa, a functional Dictyostelium homologue of 
+metazoan Signal Transducers and Activators of Transcription (STAT) proteins, 
+is necessary for culmination during development. We have isolated more than 
+18 putative multicopy suppressors of Dd-STATa using genetic screening. 
+One was hssA gene, whose expression is known to be G-box binding factor 
+(GBF)-dependent and which was specific to prestalk A (pst A) cells, where 
+Dd-STATa is activated. Also, hssA mRNA was expressed in pstA cells in the 
+Dd-STATa-null mutant. At least 40 hssA-related genes are present in the 
+genome and constitute a multigene family. The tagged HssA protein was 
+translated; hssA encodes an unusually high-glycine/serine-rich small 
+protein (8.37 kDa), which has strong homology to previously reported 
+cAMP-inducible 2C and 7E proteins. Overexpression of hssA mRNA as well 
+as frame-shifted versions of hssA RNA suppressed the phenotype of the 
+partially active Dd-STATa strain, suggesting that translation is not 
+necessary for suppression. Although overexpression of prespore-specific 
+genes among the family did not suppress the parental phenotype, 
+prestalk-specific family members did. Although overexpression of the 
+hssA did not revert the expression of Dd-STATa target genes, and 
+although its suppression mechanism remains unknown, morphological 
+reversion implies functional relationships between Dd-STATa and hssA. 
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+==============================================================
+[End dictyNews, volume 30, number 1]

@@ -1,0 +1,100 @@
+dictyNews
+Electronic Edition
+Volume 43, number 3
+February 3, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+In Memoriam: Maurice Sussman (1922–2016)
+
+Steve Alexander, Jakob Franke, Herb Ennis, Hannah Alexander
+
+Developmental Biology: http://www.sciencedirect.com/science/article/pii/S0012160616305978
+
+
+submitted by: Steve Alexander [AlexanderSt@missouri.edu]
+———————————————————————————————————————
+
+
+Effects of deletion of the receptor CrlA on Dictyostelium aggregation 
+and MPBD mediated responses are strain-dependent and not evident in 
+strain Ax2
+
+Takaaki B. Narita*, Pauline Schaap, Tamao Saito
+
+
+FEMS Microbiology Letters, in press
+
+The polyketide MPBD (4-methyl-5-pentylbenzene-1, 3-diol) is produced 
+by the polyketide synthase SteelyA (StlA) in Dictyostelium discoideum. 
+MPBD is required for appropriate expression of cAMP signalling genes 
+involved in cell aggregation and additionally induces the spore maturation 
+at the fruiting body stage. The MPBD signalling pathway for regulation of 
+cell aggregation is unknown, but MPBD effects on sporulation were 
+reported to be mediated by the G-protein coupled receptor CrlA in D. 
+discoideum KAx3. In this study, we deleted the crlA gene from the same 
+parental strain (Ax2) that was used to generate the MPBD-less mutant. 
+We found that unlike the MPBD-less mutant, Ax2-derived crlA- mutants 
+exhibited normal cell aggregation, indicating that in Ax2 MPBD effects on 
+early development do not require CrlA. We also found that the Ax2/crlA- 
+mutant formed normal spores in fruiting bodies. When transformed with 
+PkaC, both Ax2 and Ax2/crlA- similarly responded to MPBD in vitro with 
+spore encapsulation. Our data make it doubtful that CrlA acts as the 
+receptor for MPBD signalling during the development of D. discoideum 
+Ax2.
+
+
+submitted by: Takaaki Narita [b.narita@dundee.ac.uk]
+———————————————————————————————————————
+
+
+Coupled Excitable Ras and F-actin activation mediate spontaneous 
+pseudopod formation and directed cell movement.
+
+Peter J.M. van Haastert, Ineke Keizer-Gunnink and Arjan Kortholt
+
+Department of Cell Biochemistry, University of Groningen, 
+Nijenborgh 7, 9747 AG Groningen, The Netherlands.
+
+
+Molecular Biology of the Cell, in press
+
+Many eukaryotic cells regulate their mobility by external cues. Genetic 
+studies have identified more than hundred components that participate in 
+chemotaxis, which hinders to identify  the conceptual framework how cells 
+sense and respond to shallow chemical gradients. The activation of Ras 
+occurs during basal locomotion, and is an essential connector between 
+receptor and the cytoskeleton during chemotaxis. Using a sensitive assay 
+for activated Ras we show here that activation of Ras and F-actin form two 
+excitable systems that are coupled through mutual positive feedback and 
+memory. This coupled excitable system leads to short-lived patches of 
+activated Ras and associated F-actin that precede the extension of 
+protrusions.  In buffer excitability starts frequently with Ras activation in 
+the back/side of the cell or with F-actin in the front of the cell. In a shallow 
+gradient of chemoattractant local Ras activation triggers full excitation of 
+Ras and subsequently F-actin at the side of the cell facing the 
+chemoattractant , leading to directed pseudopod extension and 
+chemotaxis.  A computational model shows that the coupled excitable 
+Ras/F-actin system forms the driving heart for the ordered-stochastic 
+extension of pseudopods in buffer and for efficient directional extension 
+of pseudopods in chemotactic gradients.
+
+
+submitted by: Peter van Haastert  [p.j.m.van.haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 43, number 3]

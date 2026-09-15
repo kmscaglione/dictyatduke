@@ -1,0 +1,54 @@
+dictyNews
+Electronic Edition
+Volume 38, number 19
+July 27, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The calcineurin dependent transcription factor TacA is involved in 
+development and the stress response of Dictyostelium discoideum.
+
+Sascha Thewes, Stefanie Krohn, Anika Schmith, Sergej Herzog, 
+Thomas Stach, Barbara Weissenmayer, and Rupert Mutzel.
+
+
+European Journal of Cell Biology, in press
+
+Calcineurin is an important signalling protein in a plethora of Ca2+-regulated 
+cellular processes. In contrast to what is known about the function of 
+calcineurin in various organisms, information on calcineurin substrates is still
+ limited. Here we describe the identification and characterisation of the 
+ transcription factor activated by calcineurin (TacA) in the model organism 
+ Dictyostelium discoideum. TacA is a putative zinc-finger transcription factor 
+ orthologue of yeast Crz1. In resting unstimulated cells the protein is located 
+ in the cytosol and translocates to the nucleus in a calcineurin-dependent 
+ manner after Ca2+-stimulation. Nuclear export of TacA is partially dependent 
+ on GskA, the Dictyostelium orthologue of mammalian GSK3. The expression 
+ of tacA is developmentally regulated with its kinetics roughly paralleling 
+ calcineurin regulation. Silencing of tacA via RNAi leads to developmental 
+ defects and dysregulation of developmentally regulated and Ca2+-regulated 
+ marker genes. Additionally, TacA is involved in the stress response of D. 
+ discoideum during development in a separate pathway to the well-known 
+ stress response in Dictyostelium via STATc. Finally we provide evidence that 
+ TacA is not only an orthologue of yeast Crz1 but also functionally related to 
+ mammalian NFAT.
+
+
+Submitted by Sascha Thewes [sascha.thewes@fu-berlin.de]
+==============================================================
+[End dictyNews, volume 38, number 19]

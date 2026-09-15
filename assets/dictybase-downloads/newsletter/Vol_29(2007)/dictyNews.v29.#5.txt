@@ -1,0 +1,89 @@
+dictyNews
+Electronic Edition
+Volume 29, number 5
+August 10, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Spatio-temporal analysis of eukaryotic cell motility by improved force
+cytometry
+
+Juan C. del Álamo, Ruedi Meili, Baldomero Alonso-Latorre, Javier
+Rodríguez-Rodríguez, Alberto Aliseda, Richard A. Firtel, and Juan C. Lasheras
+
+
+PNAS, in press
+
+Cell motility plays an essential role in many biological systems, but
+precise quantitative knowledge of the bio-physical processes involved in
+cell migration is limited. Better measurements are needed to ultimately
+build models with predictive capabilities. We present an improved force
+cytometry method and apply it to the analysis of the dynamics of the
+chemotactic migration of the amoeboid form of Dictyostelium discoideum.
+Our explicit calculation of the force field takes into account the finite
+thickness of the elastic substrate and improves the accuracy and resolution
+compared to previous methods. This enables us to quantitatively study the
+differences in the mechanics of the migration of wild-type and mutant cell
+lines. The time evolution of the strain energy exerted by the migrating cells
+on their substrate is quasi-periodic and can be used as a simple indicator of
+the stages of the cell motility cycle. We have found that the mean velocity
+of migration v and the period of the strain energy T cycle are related through
+a hyperbolic law v = L/T, where L is a constant step length that remains
+unchanged in mutants with adhesion or contraction defects. Furthermore,
+when cells adhere to the substrate, they exert opposing pole forces that
+are orders of magnitude higher than required to overcome the resistance
+from their environment.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+A fast Ca2+-induced Ca2+-release mechanism in Dictyostelium discoideum
+
+Dieter Malchow, Daniel F. Lusche, Arturo De Lozanne, Christina Schlatterer
+
+
+Cell Calcium, in press
+
+In vertebrate cells calcium induced calcium release (CICR) is thought to be
+responsible for rapid cytosolic Ca2+-elevations despite the occurrence of
+strong Ca2+-buffering within the cytosol. In Dictyostelium, a CICR-mechanism
+has not been reported. While analyzing Ca2+-regulation in a vesicular fraction
+of Dictyostelium rich in Ca2+-flux activity, containing contractile vacuoles (CV)
+as the main component of acidic Ca2+-stores and ER, we detected a rapid Ca2+
+change upon addition of Ca2+ (CIC). CIC was three times larger in active stores
+accumulating Ca2+ than before Ca2+ uptake and in inactivated stores.
+Ca2+-release was demonstrated with the calmodulin antagonist W7 that inhibits
+the V type H+ATPase activity and Ca2+-uptake of acidic Ca2+-stores. W7 caused
+a rapid and large increase of extravesicular Ca2+ ([Ca2+]e), much faster and
+larger than thapsigargin (Tg), a Ca2+-uptake inhibitor of the ER. W7 treatment
+blocked CIC indicating that a large part of CIC is due to Ca2+-release. The
+height of CIC depended on the filling state of the Ca2+-stores. CIC was
+virtually unchanged in the iplA  strain that lacks a putative IP3- or ryanodine
+receptor thought to be located at the endoplasmic reticulum. By contrast, CIC
+was reduced in two mutants, HGR8 and lvsA-, that are impaired in acidic
+Ca2+ store function. Purified Ca2+-stores enriched in CV still displayed CIC,
+indicating that CV are a source of Ca2+-induced Ca2+-release. CIC-defective
+mutants were altered in their oscillatory properties. The irregularity of
+the HGR8 oscillation suggests that the principal oscillator is affected in
+this mutant.
+
+
+Submitted by: Christina Schlatterer [Christina.Schlatterer@uni-konstanz.de]
+==============================================================
+[End dictyNews, volume 29, number 5]
+

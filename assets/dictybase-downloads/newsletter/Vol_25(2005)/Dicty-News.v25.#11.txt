@@ -1,0 +1,79 @@
+Dicty News
+Electronic Edition
+Volume 25, number 11
+November 11, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+A novel Dictyostelium RasGEF required for chemotaxis and development   
+        
+Maddalena Arigoni1, Enrico Bracco1, Daniel F.Lusche2, Helmut Kae3, Gerald
+Weeks3 and Salvatore Bozzaro1§
+
+1 Department of Clinical and Biological Sciences, University of Torino,
+Regione Gonzole 10, 10043 Orbassano, Italy; 2 Faculty of Biology, University
+of Konstanz, 78457 Konstanz, Germany; 3 Dept.Microbiology and Immunology,
+University of British Columbia, Canada V6T1Z3
+
+
+BMC Cell Biology, in press
+
+Background
+Ras proteins are guanine-nucleotide-binding enzymes that couple cell surface
+receptors to intracellular signaling pathways controlling cell proliferation
+and differentiation, both in lower and higher eukaryotes. They act as
+molecular switches by cycling between active GTP and inactive GDP-bound
+states, through the action of two classes of regulatory proteins: a) guanine
+nucleotide exchange factor (GEFs) and b) GTP-ase activating proteins (GAPs).
+Genome wide analysis of the lower eukaryote Dictyostelium discoideum
+revealed a surprisingly large number of Ras Guanine Nucleotide Exchange
+Factors (RasGEFs). RasGEFs promote the activation of Ras proteins by
+catalyzing the exchange of GDP for GTP, thus conferring to RasGEFs the role
+of main activator of Ras proteins.  Up to date only four RasGEFs, which are
+all non- redundant either for growth or development, have been characterized
+in Dictyostelium. We report here the identification and characterization of
+a fifth non-redundant GEF, RasGEFM.
+
+Results
+RasGEFM is a multi-domain protein containing six poly-proline stretches, a
+DEP, RasGEFN and RasGEF catalytic domain. The rasGEFM gene is differentially
+expressed during growth and development. Inactivation of the gene results in
+cells that form small, flat aggregates and fail to develop further.
+Expression of genes required for aggregation is delayed. Chemotaxis towards
+cAMP is impaired in the mutant, due to inability to inhibit lateral
+pseudopods. Endogenous cAMP accumulates during early development to a much
+lower extent than in wild type cells. Adenylyl cyclase activation in
+response to cAMP pulses is also strongly reduced, by contrast guanylyl
+cyclase is stimulated to higher levels than in the wild type. The actin
+polymerization response to cAMP is also altered in the mutant. Cyclic AMP
+pulsing for several hours partially rescues the mutant.  In vitro
+experiments suggest that RasGEFM acts downstream of the cAMP receptor but
+upstream of the G protein.
+
+Conclusion
+The data indicate that RasGEFM is involved in the establishment of the cAMP
+relay system. We propose that RasGEFM is a component of a Ras regulated
+pathway, which integrate signals acting as positive regulator for adenylyl
+cyclase and negative regulator for guanylyl cyclase. Altered guanylyl
+cyclase, combined with defective regulation of actin polymerization, results
+in altered chemotaxis.
+
+
+Submitted by: Salvatore Bozzaro [salvatore.bozzaro@unito.it]
+
+==============================================================================
+[End Dicty News, volume 25, number 11]

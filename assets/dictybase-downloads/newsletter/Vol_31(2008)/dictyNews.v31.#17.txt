@@ -1,0 +1,116 @@
+dictyNews
+Electronic Edition
+Volume 31, number 17
+December 5, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Subcellular localization of ammonium transporters in 
+Dictyostelium discoideum
+
+Janet H. Kirsten (1), Yanhua Xiong (1), Carter T. Davis (2), Charles
+K. Singleton (1)
+
+(1) Department of Biological Sciences, Vanderbilt University, VU
+Station B 351634, Nashville TN 37235-1634, USA
+(2) LSU School of Medicine – New Orleans, 2020 Gravier Street, New
+Orleans, LA 70112, USA
+
+
+BMC Cell Biology, in press
+
+Background
+With the exception of vertebrates, most organisms have plasma membrane
+bound ammonium transporters which primarily serve to import a source
+of nitrogen for nutritional purposes. Dictyostelium discoideum has three 
+ammonium transporters, Amts A, B and C. Our present work used
+fluorescent fusion proteins to determine the cellular localization of the 
+Amts and tested the hypothesis that the transporters mediate removal of 
+ammonia generated endogenously from the elevated catabolic activity 
+common to many protists.
+
+Results
+Using RFP and YFP fusion constructs driven by the actin 15 promoter,
+we found that the three ammonium transporters were localized on the
+plasma membrane and on subcellular organelles. AmtA and AmtB were
+localized on the membranes of endolysosomes and phagosomes, with 
+AmtB further localized on the membranes of contractile vacuoles. AmtC 
+alsowas localized on subcellular organelles when it was stabilized by
+coexpression with either the AmtA or AmtB fusion transporter. The
+three ammonium transporters exported ammonia linearly with regard to
+time during the first 18 hours of the developmental program as
+revealed by reduced export in the null strains. The fluorescently
+tagged transporters rescued export when expressed in the null strains,
+and thus they were functional transporters.
+
+Conclusions
+Unlike ammonium transporters in most organisms, which import NH3/NH4+
+as a nitrogen source, those of Dictyostelium export ammonia/ammonium
+as a waste product from extensive catabolism of exogenously derived
+and endogenous proteins. Localization on proteolytic organelles and on
+the neutral contractile vacuole suggests that Dictyostelium ammonium
+transporters may have unique subcellular functions and play a role in
+the maintenance of intracellular ammonium distribution. A lack of
+correlation between the null strain phenotypes and ammonia excretion
+properties of the ammonium transporters suggests that it is not the
+excretion function that is important for coupling ammonia levels to
+the slug versus culmination choice, but rather a sensor and/or
+signaling function of these proteins that is important.
+
+
+Submitted by: Janet Kirsten [Jan.Kirsten@vanderbilt.edu]
+--------------------------------------------------------------------------------
+
+
+
+Role of an expansin-like molecule in Dictyostelium morphogenesis and 
+regulation of its gene expression by the STAT protein Dd-STATa
+
+Shun Ogasawara1, Nao Shimada1, 2 and Takefumi Kawata1, 3
+1 Department of Biology, Faculty of Science, Toho University, 2-2-1 Miyama, 
+Funabashi, Chiba 274-8510, Japan
+2Present Address: Department of Basic Science, Graduate School of Arts and 
+Sciences, University of Tokyo, 3-8-1 Komaba, Meguro-ku, Tokyo, 153-8902, Japan
+3Corresponding author
+E-mail: tkawata@bio.sci.toho-u.ac.jp
+
+
+Devleop. Growrh Differ., in press
+
+Expansins are proteins involved in plant morphogenesis, exerting their 
+effects on cellulose to extend cell walls. Dictyostelium is an organism 
+that possesses expansin-like molecules, but their functions are not 
+known. In this study, we analysed the expL7 (expansin-like 7) gene, 
+which has been identified as a putative target of Dd-STATa, a 
+Dictyostelium homologue of the metazoan signal transducer and 
+activator of transcription (STAT) proteins. Promoter fragments of the 
+expL7 were fused to a lacZ reporter and the expression patterns 
+determined. As expected from the behaviour of the endogenous 
+expL7 gene, the expL7/lacZ fusion gene was downregulated in 
+Dd-STATa null slugs. In the parental strain, the expL7 promoter was 
+activated in the anterior tip region. Mutational analysis of the promoter 
+identified a sequence that was necessary for expression in tip 
+cells. In addition, an activator sequence for pstAB cells was 
+identified. These sequences act in combination with the repressor 
+region to prevent ectopic expL7 expression in the prespore and 
+prestalk regions of the slug and culminant. Although the expL7 null 
+mutant showed no phenotypic change, the expL7 overexpressor 
+showed aberrant stalk formation. These results indicate that the 
+expansin-like molecule is important for morphogenesis in Dictyostelium.
+
+
+Submitted by: Takefumi Kawata [tkawata@bio.sci.toho-u.ac.jp]
+==============================================================
+[End dictyNews, volume 31, number 17]

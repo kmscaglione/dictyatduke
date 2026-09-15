@@ -1,0 +1,116 @@
+dictyNews
+Electronic Edition
+Volume 39, number 23
+August 16, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+The cyclin-dependent kinase family in the social amoebozoan 
+Dictyostelium discoideum
+
+Robert J. Huber
+
+Center for Human Genetic Research, Massachusetts General 
+Hospital, Harvard Medical School, Richard B. Simches Research 
+Center, 185 Cambridge Street, Boston, Massachusetts, USA 02114
+
+
+Cellular and Molecular Life Sciences, in press
+
+Cyclin-dependent kinases (Cdk) are a family of serine/threonine 
+protein kinases that regulate eukaryotic cell cycle progression. 
+Their ability to modulate the cell cycle has made them an attractive 
+target for anti-cancer therapies. Cdk protein function has been 
+studied in a variety of eukaryotes ranging from yeast to humans. 
+In the social amoebozoan Dictyostelium discoideum several 
+homologues of mammalian Cdks have been identified and 
+characterized. The life cycle of this model organism is comprised 
+of a feeding stage where single cells grow and divide mitotically as 
+they feed on their bacterial food source and a multicellular 
+developmental stage that is induced by starvation. Thus it is a 
+valuable system for studying a variety of cellular and developmental 
+processes. In this review I summarize the current knowledge of the 
+Cdk protein family in Dictyostelium by highlighting the research 
+efforts focused on the characterization of Cdk1, Cdk5, and Cdk8 in 
+this model eukaryote. Accumulated evidence indicates that each 
+protein performs distinct functions during the Dictyostelium life cycle 
+with Cdk1 being required for growth and Cdk5 and Cdk8 being 
+required for processes that occur during development. Recent 
+studies have shown that Dictyostelium Cdk5 shares attributes with 
+mammalian Cdk5 and that the mammalian Cdk inhibitor roscovitine 
+can be used to inhibit Cdk5 activity in Dictyostelium. Together, these 
+results show that Dictyostelium can be used as a model system for 
+studying Cdk protein function.
+
+
+Submitted by "Robert J.Huber" [rhuber@chgr.mgh.harvard.edu]
+---------------------------------------------------------------------------
+
+
+Loss of the Histidine Kinase DhkD Results in Mobile Mounds During 
+Development of Dictyostelium discoideum.
+
+Charles K. Singleton and Yanhua Xiong
+
+Department of Biological Sciences, Vanderbilt University
+VU Station B 351634, Nashville, TN 37235-1634
+
+
+PLOS ONE, in press
+
+Background.  Histidine kinases are receptors for sensing cellular and 
+environmental signals, and in response to the appropriate cue they 
+initiate phosphorelays that regulate the activity of response regulators.  
+The Dictyostelium discoideum genome encodes 15 histidine kinases 
+that function to regulate several processes during the multicellular 
+developmental program, including the slug to culmination transition, 
+osmoregulation, and spore differentiation.  While there are many 
+histidine kinases, there is only a single response regulator, RegA.  
+Not surprisingly given the ubiquitous involvement of cAMP in 
+numerous processes of development in Dictyostelium, RegA is a 
+cAMP phosphodiesterase that is activated upon receiving phosphates 
+through a phosphorelay.  Hence, all of the histidine kinases 
+characterized to date regulate developmental processes through 
+modulating cAMP production.  Here we investigate the function of 
+the histidine kinase DhkD.
+
+Principal Findings.  The dhkD gene was disrupted, and the resulting 
+cells when developed gave a novel phenotype.  Upon aggregation, 
+which occurred without streaming, the mounds were motile, a 
+phenotype termed the pollywog stage.  The pollywog phenotype was 
+dependent on a functional RegA.  After a period of random migration, 
+the pollywogs attempted to form fingers but mostly generated aberrant 
+structures with no tips.  While prestalk and prespore cell differentiation 
+occurred with normal timing, proper patterning did not occur. In contrast, 
+wild type mounds are not motile, and the cAMP chemotactic movement 
+of cells within the mound facilitates proper prestalk and prespore 
+patterning, tip formation, and the vertical elongation of the mound 
+into a finger.
+
+Conclusions.  We postulate that DhkD functions to ensure the proper 
+cAMP distribution within mounds that in turn results in patterning, tip 
+formation and the transition of mounds to fingers.  In the absence of 
+DhkD, aberrant cell movements in response to an altered cAMP 
+distribution result in mound migration, a lack of proper patterning, and 
+an inability to generate normal finger morphology.
+
+
+Submitted by Charles Singleton [charles.k.singleton@vanderbilt.edu]
+==============================================================
+[End dictyNews, volume 39, number 23]

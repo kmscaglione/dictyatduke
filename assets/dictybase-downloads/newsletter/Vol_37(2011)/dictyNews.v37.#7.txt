@@ -1,0 +1,87 @@
+dictyNews
+Electronic Edition
+Volume 37, number 7
+September 16, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The induction of autophagy by mechanical stress
+
+Jason S. King*, Douwe M. Veltman and Robert H. Insall
+Beatson Institute for Cancer Research, Garscube Estate, Switchback Road, 
+Bearsden, Glasgow. G61 1BD
+
+
+Autophagy, In Press
+
+The ability to respond and adapt to changes in the physical environment is 
+a universal and essential cellular property. Here we demonstrate that cells 
+respond to mechanical compressive stress by rapidly inducing autophagosome 
+formation. We measure this response in both Dictyostelium and mammalian 
+cells, indicating that this is an evolutionarily conserved, general response to 
+mechanical stress. In Dictyostelium, the number of autophagosomes increases 
+20 fold within 10 minutes of 1kPa pressure being applied and a similar response 
+is seen in mammalian cells after 30 minutes. We show in both cell types that 
+autophagy is highly sensitive to changes in mechanical pressure and the 
+response is graduated, with a half-maximal responses at ~0.2kPa, similar to 
+other mechano-sensitive responses. We further show that the mechanical 
+induction of autophagy is TOR-independent and transient, lasting until the cells 
+adapt to their new environment and recover their shape. The autophagic 
+response is therefore part of an integrated response to mechanical challenge, 
+allowing cells to cope with a continuously changing physical environment.
+
+
+Submitted by: Jason King [j.king@beatson.gla.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium discoideum nucleoside diphosphate kinase C plays a negative 
+regulatory role in phagocytosis, macropinocytosis and exocytosis.
+
+Sarah J. Annesley, Ruzica Bago, Maja Herak Bosnar, Vedrana Filic, 
+Maja Marinovic, Igor Weber, Anil Mehta and Paul R. Fisher.
+
+
+PLoS One, accepted
+
+Nucleoside diphosphate kinases (NDPKs) are ubiquitous phosphotransfer 
+enzymes responsible for producing most of the nucleoside triphosphates 
+except for ATP. This role is important for the synthesis of nucleic acids and 
+proteins and the metabolism of sugars and lipids. Apart from this housekeeping 
+role NDPKs have been shown to have many regulatory functions in diverse 
+cellular processes including proliferation and endocytosis. Although the protein 
+has been shown to have a positive regulatory role in clathrin- and dynamin-
+mediated  micropinocytosis, its roles in macropinocytosis and phagocytosis 
+have not been studied. The additional non-housekeeping roles of NDPK are 
+often independent of enzyme activity but dependent on the expression level of 
+the protein. In this study we altered the expression level of NDPK in the model 
+eukaryotic organism Dictyostelium discoideum through antisense inhibition and 
+overexpression. We demonstrate that NDPK levels affect growth, endocytosis 
+and exocytosis. In particular we find that Dictyostelium NDPK negatively regulates 
+endocytosis in contrast to the positive regulatory role identified in higher eukaryotes. 
+This can be explained by the differences in types of endocytosis that have been 
+studied in the different systems - phagocytosis and macropinocytosis in 
+Dictyostelium compared with micropinocytosis in mammalian cells. This is the first 
+report of a role for NDPK in regulating macropinocytosis and phagocytosis, the 
+former being the major fluid phase uptake mechanism for macrophages, dendritic 
+cells and other (non dendritic) cells exposed to growth factors.
+
+
+Submitted by: Paul Fisher [P.Fisher@latrobe.edu.au]
+==============================================================
+[End dictyNews, volume 37, number 7]

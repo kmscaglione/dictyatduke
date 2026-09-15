@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 38, number 11
+April 20, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The isoform B of the Dictyostelium long-chain fatty-acyl-coenzyme A 
+synthetase is initially inserted into the ER and subsequently provides 
+peroxisomes with an activity important for efficient phagocytosis. 
+
+Peggy Paschke, Nadine Pawolleck, Frauke Haenel, Heike Otto, 
+Harald Rühling, and Markus Maniak
+
+Abteilung Zellbiologie, Universität Kassel, 34109 Kassel, Germany
+
+
+Eur. J. Cell Biol. in press
+
+Long-chain fatty-acyl-coenzymeA synthetases activate fatty acids for 
+anabolic or catabolic metabolism. They often localize to more than one 
+organelle within eukaryotic cells. Dictyostelium contains two of these 
+proteins, FcsA and FcsB with the latter being targeted to the membrane 
+of the endoplasmic reticulum by virtue of an N-terminal signal sequence 
+and from there appears to move on to peroxisomes. Deletion of this 
+signal favours the peripheral association of the protein with the 
+mitochondrial surface instead. A strain lacking the activity of the FcsB 
+enzyme was constructed by homologous recombination. It has a severe 
+deficiency in the phagocytic uptake of particles, which can be partially 
+alleviated by a peroxisomally targeted, soluble FcsA enzyme. It is, 
+however, not rescued by expressing FcsA in the cytoplasm or targeting 
+it to the ER, indicating that peroxisomal beta-oxidation is important for 
+phagocytosis. In a fcsA-/B- double mutant phagocytosis efficiency is 
+similar to fcsB- cells. However, unlike the single mutants, the fcsA-/B- 
+strain is delayed in morphogenesis, but forms viable spores, albeit 
+within a small fruiting body. This developmental defect is also seen in 
+other mutants affecting peroxisomal enzymes involved in ß-oxidation 
+and the glyoxylate cycle.
+
+
+Submitted by Markus Maniak [maniak@uni-kassel.de]
+--------------------------------------------------------------------------------------
+
+
+A lamin in lower eukaryotes?
+
+Petros Batsios, Tatjana Peter, Otto Baumann, Reimer Stick, 
+Irene Meyer, Ralph Gräf
+
+Dept. of Cell Biology, Institute for Biochemistry and Biology, 
+University of Potsdam, Karl-Liebknecht-Strasse 24-25, 14469 
+Potsdam-Golm, Germany
+
+
+Nucleus, in press
+
+Lamins are the major components of the nuclear lamina and serve 
+not only as a mechanical support, but are also involved in chromatin 
+organization, epigenetic regulation, transcription, and mitotic events. 
+Despite these universal tasks, lamins have so far been found only in 
+metazoans. Yet, recently we have identified Dictyostelium NE81 as 
+the first lamin-like protein in a lower eukaryote. Based on the current 
+knowledge, we draw a model for nuclear envelope organization in 
+Dictyostelium in this Extra View and we review the experimental data 
+that justified this classification. Furthermore we provide unpublished 
+data underscoring the requirement of posttranslational CaaX-box 
+processing for proper protein localization at the nuclear envelope. 
+Sequence comparison of NE81 sequences from four Dictyostelia with 
+bona fide lamins illustrates the evolutional relationship between these 
+proteins. Under certain conditions these usually unicellular social 
+amoebae congregate to form a multicellular body. We propose that 
+the evolution of the lamin-like NE81 went along with the invention of 
+multicellularity.
+
+
+Submitted by Ralph Gräf [rgraef@uni-potsdam.de]
+==============================================================
+[End dictyNews, volume 38, number 11]

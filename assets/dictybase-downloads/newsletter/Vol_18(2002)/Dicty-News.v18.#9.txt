@@ -1,0 +1,120 @@
+Dicty News
+Electronic Edition
+Volume 18, number 9
+May 25, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+
+Identification of four candidate cGMP targets in Dictyostelium.
+
+Goldberg JM, Bosgraaf L, Van Haastert PJ, Smith JL.
+
+Boston Biomedical Research Institute, 64 Grove Street, Watertown, MA 
+02472-2829;
+and Department of Biochemistry, University of Groningen, Nijenborgh 4, 
+9747 AG, Groningen, The Netherlands.
+
+Proc Natl Acad Sci U S A  2002 May 14;99(10):6749-54
+
+In Dictyostelium, a transient increase in intracellular cGMP is important 
+for cytoskeletal rearrangements during chemotaxis. There must be cGMP-
+binding proteins in Dictyostelium that regulate key cytoskeletal components 
+after treatment with chemoattractants, but to date, no such proteins have 
+been identified. Using a bioinformatics approach, we have found four 
+candidate cGMP-binding proteins (GbpA-D). GbpA and -B have two tandem 
+cGMP-binding sites downstream of a metallo beta-lactamase domain, a 
+superfamily that includes cAMP phosphodiesterases. GbpC contains the 
+following nine domains (in order): leucine-rich repeats, Ras, MEK kinase, 
+Ras guanine nucleotide exchange factor N-terminal (RasGEF-N), DEP, RasGEF, 
+cGMP-binding, GRAM, and a second cGMP-binding domain. GbpD is related to 
+GbpC, but is much shorter; it begins with the RasGEF-N domain, and lacks 
+the DEP domain. Disruption of the gbpC gene results in loss of all high-
+affinity cGMP-binding activity present in the soluble cellular fraction. 
+GbpC mRNA levels increase dramatically 8 h after starvation is initiated. 
+GbpA, -B, and -D mRNA levels show less dramatic changes, with gbpA mRNA 
+levels highest 4 h into starvation, gbpB mRNA levels highest in vegetative 
+cells, and gbpD levels highest at 8 h. The identification of these genes is 
+the first step in a molecular approach to studying downstream effects of 
+cGMP signaling in Dictyostelium.
+
+-----------------------------------------------------------------------------
+
+A Comparative Analysis of Spore Coat Formation, Structure and Function in 
+Dictyostelium         
+
+Christopher M. West
+
+Deptartment of Anatomy & Cell Biology, University of Florida College of 
+Medicine, 1600 SW Archer Road, Gainesville, FL  32610-0235  USA
+Telephone: 352-392-3329, Fax: 352-392-3305, Email: westcm@ufl.edu
+
+Int. Rev. Cyt., in press
+
+Dictyostelium produces spores at the end of its developmental cycle to 
+propagate the lineage. The spore coat is an essential feature of spore 
+biology contributing a semipermeable chemical and physical barrier to 
+protect the enclosed amoeaba. The coat is assembled from proteins and a 
+branched polysaccharide that are secreted and from cellulose produced at 
+the cell surface. They are organized into a polarized molecular sandwich 
+with proteins forming layers surrounding the microfibrillar cellulose 
+core. Genetic and biochemical studies are beginning to provide insight 
+into how the delivery of protein and cellulose to the cell surface are 
+coordinated, and how cysteine-rich domains of the proteins interact to 
+form the layers. A multi-domain inner layer protein, SP85/PsB, has a 
+central role in regulating coat assembly and contributing to a core 
+structural module that bridges proteins to cellulose. Coat formation 
+and structure have many parallels in walls from plant, algal, yeast, 
+protist and animal cells.
+
+-----------------------------------------------------------------------------
+
+The different components of a multisubunit cell number-counting factor have 
+both unique and overlapping functions 
+
+Debra A. Brock, R. Diane Hatton, Dan-Victor Giurgiutiu, Brenton Scott, Robin 
+Ammann, and Richard H. Gomer 
+
+Howard Hughes Medical Institute and Department of Biochemistry and Cell 
+Biology, MS-140, Rice University, 6100 S. Main Street, Houston, TX 77005-1892
+
+Development, in press
+
+Summary
+
+Dictyostelium aggregation streams break up into groups of 103 to 2 x 104 
+cells.  The cells sense the number of cells in a stream or group by the 
+level of a secreted counting factor (CF).  CF is a complex of at least 5 
+polypeptides.  When the gene encoding countin (one of the CF polypeptides) 
+was disrupted, the cells could not sense each other's presence, resulting 
+in non-breaking streams that coalesced into abnormally large groups.  To 
+understand the function of the components of CF, we have isolated cDNA 
+sequences encoding a second component of CF, CF50.  CF50 is 30% identical 
+to lysozyme (but has very little lysozyme activity) and contains distinctive 
+serine-glycine motifs.  Transformants with a disrupted cf50 gene, like 
+countin cells, form abnormally large groups.  Addition of recombinant CF50 
+protein to developing cf50 cells rescues their phenotype by decreasing 
+group size.  Abnormalities seen in aggregating countin cells (such as high 
+cell-cell adhesion and low motility) are also observed in the cf50 cells.  
+Western blot analysis of conditioned medium sieve column fractions showed 
+that the CF50 protein is present in the same fraction as the 450 KD CF 
+complex.  In the absence of CF50, secreted countin is degraded, suggesting 
+that one function of CF50 may be to protect countin from degradation.  
+However, unlike countin cells, cf50 cells differentiate into an abnormally 
+high percentage of prespore cells, and this difference can be rescued by 
+exposing cells to recombinant CF50. These observations indicate that unlike 
+other known multisubunit factors, CF contains subunits with both overlapping 
+and unique properties.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 9]
+
+ 

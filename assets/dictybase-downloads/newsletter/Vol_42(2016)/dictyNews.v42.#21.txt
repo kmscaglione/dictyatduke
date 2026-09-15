@@ -1,0 +1,167 @@
+dictyNews
+Electronic Edition
+Volume 42, number 21
+September 9, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Convergent evolution of tRNA gene targeting preferences in compact 
+genomes
+
+Thomas Spaller1, Eva Kling1, Gernot Glöckner2,3, Falk Hillmann4, 
+Thomas Winckler1
+
+1 Institute of Pharmacy, Department of Pharmaceutical Biology, 
+Friedrich Schiller University Jena, Germany
+2 Institute for Biochemistry I, Medical Faculty, University of 
+Cologne, Germany
+3 Institute for Freshwater Ecology and Inland Fisheries, IGB, 
+Berlin, Germany
+4 Junior Research Group Evolution of Microbial Interaction, 
+Leibniz Institute for Natural Product Research and Infection 
+Biology - Hans Knöll Institute, Jena, Germany
+
+
+Mobile DNA, in press
+
+Background: In gene-dense genomes, mobile elements are confronted 
+with highly selective pressure to amplify without causing excessive 
+damage to the host. The targeting of tRNA genes as potentially safe 
+integration sites has been developed by retrotransposons in various 
+organisms such as the social amoeba Dictyostelium discoideum and 
+the yeast Saccharomyces cerevisiae. In D. discoideum, tRNA gene-
+targeting retrotransposons have expanded to approximately 3% of the 
+genome. Recently obtained genome sequences of species representing 
+the evolutionary history of social amoebae enabled us to determine 
+whether the targeting of tRNA genes is a generally successful strategy 
+for mobile elements to colonize compact genomes.
+
+Results: During the evolution of dictyostelids, different retrotransposon 
+types independently developed the targeting of tRNA genes at least six 
+times. DGLT-A elements are long terminal repeat (LTR) retrotransposons 
+that display integration preferences ~15 bp upstream of tRNA gene-coding 
+regions reminiscent of the yeast Ty3 element. Skipper elements are 
+chromoviruses that have developed two subgroups: one has canonical 
+chromo domains that may favor integration in centromeric regions, 
+whereas the other has diverged chromo domains and is found ~100 bp 
+downstream of tRNA genes. The integration of D. discoideum non-LTR 
+retrotransposons ~50 bp upstream (TRE5 elements) and ~100 bp 
+downstream (TRE3 elements) of tRNA genes, respectively, likely emerged 
+at the root of dictyostelid evolution. We identified two novel non-LTR 
+retrotransposons unrelated to TREs: one with a TRE5-like integration 
+behavior and the other with preference ~4 bp upstream of tRNA genes.
+
+Conclusions: Dictyostelid retrotransposons demonstrate convergent 
+evolution of tRNA gene targeting as a probable means to colonize the 
+compact genomes of their hosts without being excessively mutagenic. 
+However, high copy numbers of tRNA gene-associated retrotransposons, 
+such as those observed in D. discoideum, are an exception, suggesting 
+that the targeting of tRNA genes does not necessarily favor the 
+amplification of position-specific integrating elements to high copy 
+numbers under the repressive conditions that prevail in most host cells.
+
+
+submitted by: Thomas Winckler [t.winckler@uni-jena.de]
+———————————————————————————————————————
+
+
+Identification of brefelamide as a novel inhibitor of osteopontin 
+that suppresses invasion of A549 lung cancer cells
+
+Jing Zhang, Osamu Yamada, Shinya Kida, Yoshihisa Matsushita, 
+Shinya Murase, Toshio Hattori, Yuzuru Kubohara, Haruhisa Kikuchi 
+and Yoshiteru Oshima
+
+
+Oncol. REP. 36: 2357-2364, 2016
+
+The contribution of aberrant osteopontin (OPN) expression to tumor 
+progression and metastasis has been documented in a wide spectrum 
+of malignancies, and targeted inhibition of OPN has therefore emerged
+as an attractive strategy for cancer therapy. Transcription of OPN 
+is regulated by various transcription factors, and our recently published 
+study demonstrated that downregulation of OPN is an important event 
+in the TGF-beta cytostatic program. We report here that brefelamide,
+ isolated from Dictyostelium brefeldianum, exerts an inhibitory effect on 
+OPN expression and function in A549 human lung carcinoma cells. The 
+promoter, RNA, and protein levels of OPN were decreased in
+ brefelamide-treated A549 cells, which was accompanied by reduced 
+invasive ability in vitro. OPN inhibition by brefelamide was largely 
+abrogated by disruption of a putative TGF-beta inhibitory element in the 
+OPN promoter. Treatment with brefelamide induced Smad4 expression, 
+and knockdown of Smad4 by RNA interference partially diminished the 
+inhibitory effect of brefelamide on OPN. These results indicate that 
+brefelamide inhibited OPN-mediated cell invasion through restoration of 
+the OPN repression by TGF-beta /Smad signaling. Together with the 
+reported antiproliferative property, our findings suggest that brefelamide 
+might serve as a potential candidate for the development of a new 
+antitumor and antimetastatic agent.
+
+
+submitted by: Haruhisa Kikuchi [hal@mail.pharm.tohoku.ac.jp]
+———————————————————————————————————————
+
+
+Aberrant adhesion impacts early development in a Dictyostelium model 
+for juvenile neuronal ceroid lipofuscinosis
+
+
+Robert J. Huber1*, Michael A. Myre2† and Susan L. Cotman3†
+
+
+1Department of Biology, Trent University, Peterborough, Ontario, Canada
+2Department of Biological Sciences, University of Massachusetts Lowell, 
+Lowell, Massachusetts, USA
+3Center for Human Genetic Research, Massachusetts General Hospital, 
+Harvard Medical School, Boston, Massachusetts, USA
+†These authors contributed equally
+*Corresponding author
+
+
+Cell Adhesion & Migration, in press
+
+Neuronal ceroid lipofuscinosis (NCL), also known as Batten disease, 
+refers to a group of severe neurodegenerative disorders that primarily 
+affect children. The most common subtype of the disease is caused by 
+loss-of-function mutations in CLN3, which is conserved across model 
+species from yeast to human. The precise function of the CLN3 protein 
+is not known, which has made targeted therapy development challenging. 
+In the social amoeba Dictyostelium discoideum, loss of Cln3 causes 
+aberrant mid-to-late stage multicellular development. In this study, 
+we show that Cln3-deficiency causes aberrant adhesion and aggregation 
+during the early stages of Dictyostelium development. cln3- cells form 
+~30% more multicellular aggregates that are comparatively smaller than 
+those formed by wild-type cells. Loss of Cln3 delays aggregation, but 
+has no significant effect on cell speed or cAMP-mediated chemotaxis. 
+The aberrant aggregation of cln3- cells cannot be corrected by manual 
+pulsing cells with cAMP. Moreover, there are no significant differences 
+between wild-type and cln3- cells in the expression of genes linked to 
+cAMP chemotaxis (e.g., adenylyl cyclase, acaA; the cAMP receptor, carA; 
+cAMP phosphodiesterase, pdsA; g-protein alpha 9 subunit, gpaI). However, 
+during this time in development, cln3- cells show reduced cell-substrate 
+and cell-cell adhesion, which correlate with changes in the levels of the 
+cell adhesion proteins CadA and CsaA. Specifically, loss of Cln3 
+decreases the intracellular level of CsaA and increases the amount of 
+soluble CadA in conditioned media. Together, these results suggest that 
+the aberrant aggregation of cln3- cells is due to reduced adhesion during 
+the early stages of development. Revealing the molecular basis underlying 
+this phenotype may provide fresh new insight into CLN3 function.
+
+submitted by: Robert Huber [roberthuber@trentu.ca]
+==============================================================
+[End dictyNews, volume 42, number 21]

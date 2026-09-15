@@ -1,0 +1,112 @@
+Dicty News
+Electronic Edition
+Volume 10, number 4
+February 7, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+
+DdLIM is a Cytoskeleton-associated Protein Involved in the 
+Protrusion of Lamellipodia in Dictyostelium
+
+Josef Prassler, Alexander Murr, Susanne Stocker, Jan Faix, John 
+Murphy, and Gerard Marriott
+
+Max Planck Institute for Biochemistry, D-82152 Martinsried, Germany
+
+Mol. Biol. Cell, in press
+
+Abstract:
+
+   DdLim, a multi-domain member of the cysteine rich family of LIM 
+domain proteins, was isolated from Dictyostelium cells where it 
+localizes in lamellipodia and at sites of membrane ruffling. The 
+transcription and expression of DdLim is developmentally regulated 
+and the timing of its increased association with the actin 
+cytoskeleton coincides with the acquisition in starved cells of a 
+motile, chemotactic behavior. Vegetative cells that overexpress DdLim 
+contain large lamella and exhibit ruffling at the cortex. The high 
+frequency of large, multi-nucleated mutant cells found in suspension 
+culture suggests that excess DdLim interferes with cytokinesis. DdLim 
+was also identified as a protein in a Dictyostelium cell lysate that 
+associated indirectly, but in a GTP-dependent manner, with a GST-rac1 
+fusion protein. The data presented suggest that DdLim acts as an
+adapter protein at the cytoskeleton-membrane interface where it is 
+involved in a receptor-mediated rac1 signaling pathway that leads to 
+actin polymerization in lamellipodia and ultimately cell motility.
+
+------------------------------------------------------------------------
+Ethane-freezing/Methanol-fixation of Cell Monolayers. 
+A Procedure for Improved Preservation of Structure and 
+Antigenicity for Light and Electron Microscopies
+
+Eva M. Neuhaus, Heinz Horstmann, Wolfhard Almers, Markus Maniak*, and
+Thierry Soldati
+
+Department of Molecular Cell Research, Max-Planck-Institute for Medical
+Research, Jahnstrasse 29, D-69120 Heidelberg, Germany
+
+* Department of Cell Biology, Max-Planck-Institute for Biochemistry, 
+D-82152 Martinsried, Germany
+
+Journal of Structural Biology, in press
+
+Abstract:
+
+   In order to dissect at the ultrastructural level the morphology of 
+highly dynamic processes such as cell motility, membrane trafficking 
+events and organelle movements, it is necessary to fix/stop time-
+dependent events in the millisecond range. Ideally, immunoelectron 
+microscopical labelling experiments requires the availability of high-
+affinity antibodies and accessibility to all compartments of the cell. 
+The biggest challenge is to define an optimum between significant 
+preservation of the antigenicity in the fixed material without 
+compromising the intactness of fine structures.  Here, we present a 
+procedure which offers an opportunity to unify preparation of cell 
+monolayers for immunocytochemistry in fluorescence and electron 
+microscopy. This novel strategy combines a rapid ethane-freezing
+technique with a low temperature methanol-fixation treatment (EFMF), 
+and completely avoids chemical fixatives. It preserves the position 
+and delicate shape of cells and organelles and leads to improved 
+accessibility of the intracellular antigens and to high antigenicity 
+preservation. We illustrate the establishment of this procedure 
+using Dictyostelium discoideum, a powerful model organism to study 
+molecular mechanisms of membrane trafficking and cytoskeleton.
+
+-------------------------------------------------------------------------
+
+The cAMP-dependent protein kinase of Dictyostelium : role of the
+amino-terminal domain in catalytic activity and development.
+
+DAMMANN, H. TTRAINCARD, F. ANJARD, C. Van BEMMELEN, M. REYMOND, C. and
+VERON, M.
+
+Mechanism of Development, in press
+
+ABSTRACT
+
+   The catalytic subunit of the cAMP dependent protein kinase (PKA) from
+Dictyostelium discoideum  contains several domains including an unusually
+long N-terminal extension preceding a highly conserved catalytic core. We
+transformed the aggregationless PkaC-null strain with several deletion
+constructs of both domains. Strains transformed with genes expressing
+catalytically inactive polypeptides could not rescue development.
+Cotransformation with constructs encoding the N-terminal extension and 
+the catalytic core, both unable to rescue development by themselves, 
+yielded transformants able to proceed to late development. A 27 amino 
+acids long hydrophobic region, immediately upstream the catalytic core, 
+was found indispensable for PKA function. A putative role of this 
+sequence in the acquisition of the active conformation of the protein 
+is discussed.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 10, number 4]
+

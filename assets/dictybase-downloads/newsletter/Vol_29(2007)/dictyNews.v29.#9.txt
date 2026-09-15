@@ -1,0 +1,80 @@
+dictyNews
+Electronic Edition
+Volume 29, number 9
+September 28, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Chemotaxis: Navigating by Multiple Signaling Pathways
+
+Peter J. M. Van Haastert and Douwe M. Veltman
+
+
+Science’s  STKE, pe40 
+
+During chemotaxis, phosphatidylinositol 3,4,5-trisphosphate (PIP3) 
+accumulates at the leading edge of a eukaryotic cell, where it induces the 
+formation of pseudopodia. PIP3 has been suggested to be the compass of cells 
+navigating in gradients of signaling molecules. Recent observations suggest 
+that chemotaxis is more complex than previously anticipated. Complete 
+inhibition of all PIP3 signaling has little effect, and alternative pathways 
+have been identified. In addition, selective pseudopod growth and retraction 
+are more important in directing cell movement than is the place where new 
+pseudopodia are formed.
+
+
+Submitted by: Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+--------------------------------------------------------------------------------
+
+
+PLC regulation of PI(3,4,5)P3-mediated chemotaxis
+
+Arjan Kortholt*, Jason King*, Ineke Keizer-Gunnink, Adrian Harwood and 
+Peter J.M. Van Haastert
+* these authors contributed equally to this work 
+
+Department of Molecular Cell Biology, University of Groningen, Kerklaan 30, 
+9751NN Haren, the Netherlands
+School of Biosciences, Cardiff University, Museum Avenue, Cardiff, 
+UK. CF10 3US
+
+
+Molecular Biology of the Cell, in press
+
+Generation of a PI(3,4,5)P3 gradient within the plasma membrane is important 
+for cell polarization and chemotaxis  in many eukaryotic cells. The gradient 
+is produced by the combined activity of PI3K to increase PI(3,4,5)P3 on the 
+membrane nearest the polarizing signal and PI(3,4,5)P3 dephosphorylation by 
+PTEN elsewhere. Common to both of these enzymes is the lipid PI(4,5)P2, 
+which is not only the substrate of PI3K and product of PTEN, but is also 
+important for membrane binding of PTEN. Consequently, regulation of PLC 
+activity, which hydrolyses PI(4,5)P2, could have important consequences 
+for PI(3,4,5)P3 localization. We investigate the role of PLC in PI(3,4,5)P3 
+mediated chemotaxis in Dictyostelium. plc-null cells are resistant to the 
+PI3K inhibitor LY294002 and produce little PI(3,4,5)P3 after cAMP 
+stimulation, as monitored by the PI(3,4,5)P3-specific PH-domain of CRAC 
+(PHCRACGFP). In contrast, PLC overexpression elevates PI(3,4,5)P3 and 
+impairs chemotaxis in a similar way to loss of  pten. PI3K localisation 
+at the leading edge of plc-null cells is unaltered, but dissociation of 
+PTEN from the membrane is strongly reduced in both gradient and uniform 
+stimulation with cAMP. These results indicate that local activation of 
+PLC can control PTEN localization and suggest a novel mechanism to 
+regulate the internal PI(3,4,5)P3 gradient.
+
+
+Submitted by: Peter Van Haastert [p.j.m.van.haastert@rug.nl]
+==============================================================
+[End dictyNews, volume 29, number 9]

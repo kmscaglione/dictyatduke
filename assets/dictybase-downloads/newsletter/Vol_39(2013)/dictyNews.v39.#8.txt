@@ -1,0 +1,111 @@
+dictyNews
+Electronic Edition
+Volume 39, number 8
+March 15, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Phase geometries of two-dimensional excitable waves govern 
+self-organized morphodynamics of amoeboid cells.
+
+Daisuke Taniguchià ,Shuji Ishiharaà , Takehiko Oonuki, Mai 
+Honda-Kitahara, Kunihiko Kaneko, and Satoshi Sawai
+(à  equal contribution)
+
+1. Graduate School of Arts and Sciences, and
+2. Research Center for Complex Systems Biology, University of 
+Tokyo, Meguro-ku, Tokyo 153-8902, Japan;
+3. Precursory Research for Embryonic Science and Technology 
+(PRESTO), JST, Kawaguchi, Saitama 332-0012, Japan
+
+
+PNAS, in press
+
+In both randomly moving Dictyostelium and mammalian cells, 
+phosphatidylinositol (3,4,5)-trisphosphate and F-actin are known to 
+propagate as waves at the membrane and act to push out the 
+protruding edge. To date, however, the relationship between the 
+wave geometry and the patterns of amoeboid shape change remains 
+elusive. Here, by using phase map analysis, we show that morphology 
+dynamics of randomly moving Dictyostelium discoideum cells can be 
+characterized by the number, topology, and position of spatial phase 
+singularities, i.e., points that represent organizing centers of rotating 
+waves. A single isolated singularity near the cellular edge induced a 
+rotational protrusion, whereas a pair of singularities supported a 
+symmetric extension. These singularities appeared by strong phase 
+resetting due to de novo nucleation at the back of preexisting waves. 
+Analysis of a theoretical model indicated excitability of the system that 
+is governed by positive feedback from phosphatidylinositol 
+(3,4,5)-trisphosphate to PI3-kinase activation, and we showed 
+experimentally that this requires F-actin. Furthermore, by incorporating 
+membrane deformation into the model, we demonstrated that 
+geometries of competing waves explain most of the observed 
+semiperiodic changes in amoeboid morphology.
+
+
+Submitted by Satoshi Sawai [cssawai@mail.ecc.u-tokyo.ac.jp]
+---------------------------------------------------------------------------
+
+
+The Dictyostelium prestalk inducer DIF-1 directs phosphorylation 
+of a bZIP transcription factor
+
+Yoko Yamada, Yuzuru Kubohara1, Haruhisa Kikuchi2, Yoshiteru 
+Oshima2, Hong Yu Wang, Susan Ross and Jeffrey G. Williams*
+
+College of Life Sciences, Welcome Trust Biocentre,University of 
+Dundee, Dow St., Dundee, DD1 5EH, UK
+1 Department of Molecular and Cellular Biology, Institute for 
+Molecular and Cellular Regulation, Gunma University, 
+Maebashi 371-8512, Japan
+2 Laboratory of Natural Product Chemistry, Tohoku University 
+Graduate School of Pharmaceutical Sciences, Aoba-yama, 
+Aoba-ku, Sendai 980-8578, Japan
+
+
+Int J Dev Biol, in press
+
+Background DIF-1, a chlorinated hexaphenone produced by developing 
+Dictyostelium cells, induces prestalk differentiation. DimB is a bZIP 
+transcription factor that accumulates in the nucleus upon exposure to 
+DIF-1, where it directly activates transcription of DIF-responsive genes. 
+The signaling steps upstream of DimB and downstream of DIF-1 are 
+entirely unknown. Results Analysis by mass spectrometry shows that 
+incubation with DIF-1 rapidly stimulates phosphorylation at several sites 
+in DimB. We characterize the most highly responsive site, S590, which 
+is located very close to the C terminus.  A point mutation in this site, 
+S590A, does not inhibit DimB nuclear accumulation in response to DIF.  
+However, this seems likely to reflect functional redundancy with other 
+sites; because a panel of chemical variants on the structure of DIF-1 
+show a correlation between their potencies as inducers of DimB nuclear 
+accumulation and their potencies as inducers of phosphorylation at S590. 
+Furthermore the S590A mutant is fully active in mutant rescue of a dimB 
+null strain, arguing against an alternative role in transcriptional activation 
+of target genes. Conclusions i) DIF-1 directs phosphorylation at S590 ii) 
+although it is not essential for nuclear accumulation in response to DIF-1 
+correlative evidence, based upon a panel of DIF-1 related molecules, 
+suggests that this modification may play a redundant role in the process 
+iii) We also present evidence that the kinase activity, which phosphorylates 
+S590, is non-nuclear and that this signalling pathway is, in part at least, 
+independent of the DIF-regulated STATc activation pathway.
+
+ 
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+==============================================================
+[End dictyNews, volume 39, number 8]

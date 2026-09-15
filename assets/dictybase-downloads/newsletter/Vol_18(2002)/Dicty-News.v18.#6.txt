@@ -1,0 +1,170 @@
+Dicty News
+Electronic Edition
+Volume 18, number 6
+May 4, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+Rapid patterning and zonal-differentiation in a two-dimensional 
+Dictyostelium cell mass: a role of pH and ammonia.
+
+Satoshi Sawai, Takashi Hirano, Yasuo Maeda and Yasuji Sawada
+
+Graduate School of Information Sciences, Biological Institute, 
+Graduate School of Science and Research Institute of Electrical 
+Communication, Tohoku University, 2-1-1 Katahira, Aoba-ku, 
+Sendai 980-8577, Japan 
+
+J. Exp. Biol., in press
+
+SUMMARY
+
+Recently it was demonstrated that a rapidly forming self-organizing 
+pattern which emerges within two-dimensional Dictyostelium discoideum 
+cell cultures could later give rise to stripes of distinct zones, each 
+comprised of different cell-types.  Here we report physiological aspects 
+of the initial rapid patterning and its relation to cell differentiation.  
+We found that as temperature is lowered the characteristic length of the 
+pattern increases.  From this the activation energy of the patterning 
+kinetics was estimated.  Fluorescence of fluorescein conjugated dextran 
+revealed that the cytosolic pH of cells in the zone inside becomes lower 
+than that in the other zone facing the air.  The patterning could be 
+inhibited by addition of the plasma-membrane proton pump inhibitors 
+diethystilbestrol (DES) or miconazole.  Preincubation of cells with weak 
+acid delayed the timing of the patterning, whereas weak base hastened it.  
+A pH indicating dye revealed localized accmulation of ammonia in the 
+extracelluar space. These results suggest that gradients of secreted 
+metabolites may be directly responsible for the rapid patterning and its 
+consequence on cell differentiation in confined geometry.  Possible 
+diffusible candidate molecules and a reaction scheme coupled to the imposed 
+oxygen gradient is discussed. 
+ 
+-----------------------------------------------------------------------------
+ 
+Sequence and Analysis of Chromosome 2 of Dictyostelium discoideum
+ 
+Gernot Glckner*, Ludwig Eichinger  , Karol Szafranski*, Justin A. Pachebat! , 
+Alan T. Bankier! , Paul H. Dear! , Rdiger Lehmann*, Cornelia Baumgart*, Gens 
+Parra, Josep F. Abril, Roderic Guig, Kai Kumpf*, Budi Tunggal  , 
+the Dictyostelium Genome Sequencing Consortium, Edward Cox, Michael A. 
+Quail, Matthias Platzer*, Andr Rosenthal*# and Angelika A. Noegel  
+
+*IMB Jena, Dept of Genome Analysis, Beutenbergstr. 11, 07745 Jena, Germany 
+  Center for Biochemistry, Medical Faculty, University of Cologne, 
+Joseph-Stelzmann-Str. 52, 50931 Kln, Germany ! PNAC Biotech, Laboratory of 
+Molecular Biology, MRC Centre, Hills Road, Cambridge CB2 2QH, UK Grup de 
+Recerca en Informatica Biomedica, Institut Municipal d'Investigaci Mdica, 
+Universitat Pompeu Fabra, Centre de Regulaci Genmica, 08003 Barcelona, 
+Spain Princeton University, Princeton, NJ 08544, USA The Sanger Centre, 
+Wellcome Trust Genome Campus, Hinxton, Cambridgeshire CB10 1SA, UK 
+#Friedrich Schiller Universitt Jena, 07743 Jena, Germany
+
+Nature, accepted
+
+Abstract
+
+The genome of the lower eukaryote Dictyostelium discoideum comprises six 
+chromosomes. Here we report the sequence of the largest, chromosome 2, which 
+at 8Mb represents about 25% of the genome. Despite an A+T content of nearly 
+80% the chromosome encodes 2,799 predicted protein coding genes and 73 tRNA 
+genes (http://genome.imb-jena.de/dictyostelium/chr2/Chr2map.html
+and http://www.uni-koeln.de/dictyostelium/chr2/index.shtml). This gene 
+density, about 1 gene per 2.6kb, is surpassed only by Saccharomyces 
+cerevisiae (one per 2kb) and is similar to that of Schizosaccharomyces 
+pombe (one per 2.5kb). If we assume that the other chromosomes have a similar 
+gene density, we expect around 11,000 genes in the D. discoideum genome.  
+A significant number of the genes show higher similarities to genes of 
+vertebrates than to those of other fully sequenced eukaryotes. This analysis 
+strengthens the view that the evolutionary position of D. discoideum is 
+located prior to the branching of metazoa and fungi but after the divergence 
+of the plant kingdom, placing it close to the base of metazoan evolution. 
+
+-----------------------------------------------------------------------------
+
+Establishing direction during chemotaxis in eukaryotic cells
+
+Wouter -Jan Rappel, Peter Thomas, Herbert Levine, and William F. Loomis 
+
+Departments of Physics and Biology, UCSD, La Jolla, CA 92093 and Salk 
+Institute for Biological Studies, La Jolla, CA 92186
+
+Biophys. J  (in press).
+
+ABSTRACT
+
+Several recent studies have demonstrated that eukaryotic cells including 
+amoeboid cells of Dictyostelium discoideum and neutrophils, respond to 
+chemoattractants by translocation of PH-domain proteins to the cell membrane 
+where these proteins participate in the  modulation of the cytoskeleton and 
+relay of the signal. When the chemoattractant is released from a pipette, 
+the localization is found predominantly on the proximal side of the cell. 
+The recruitment of PH-domain proteins, particularly for Dictyostelium cells, 
+occurs very rapidly (<2 seconds). Thus, the mechanism responsible for the 
+first step in the directional sensing process of a cell must be able to 
+establish an asymmetry on the same time scale. Here, we propose a simple 
+mechanism in which a second messenger, generated by local activation of the 
+membrane,  diffuses through the interior of the cell, suppresses the 
+activation of the back of the cell and converts the temporal gradient into 
+an initial cellular asymmetry. Numerical simulations show that such a 
+mechanism is plausible. Available evidence suggests that the internal 
+inhibitor may be cGMP which accumulates within less than a second following 
+treatment of cells with external cAMP.
+
+-----------------------------------------------------------------------------
+
+mRNA processing in Dictyostelium: sequence requirements for termination and 
+splicing
+
+Francisco Rivero
+
+Institut fr Biochemie I, Medizinische Fakultt, University of Cologne. 
+Joseph-Stelzmann-Strasse 52, D-50931 Kln, Germany
+
+Protist, in press
+
+Criteria for the identification of termination regions in Dictyostelium 
+discoideum genes have been established and the sequence requirements for 
+termination in 33 genes have been analyzed. A canonical hexamer signal AATAAA 
+was present 15-30 nucleotides upstream of the cleavage site, usually a TA, 
+and was embedded in a particularly A-rich environment. T- or GT-rich 
+downstream elements characteristic of animal cells could not be identified. 
+In a sample of 102 introns we have established the consensus AG/GTAAGT and 
+ATAG/ for the 5' and 3' splice sites, respectively. Most introns are 75-150 
+nucleotides long and the A+T content is high (90%). A putative branch point 
+was identified in half of the introns 20-60 nucleotides upstream of the 3' 
+splice site and the consensus TACTAAY was derived. A polypyrimidine tract 
+required for branching in vertebrates was not identified, but weak preference 
+for pyrimidine was found 10-45 nucleotides upstream of the 3' splice site.
+ 
+-----------------------------------------------------------------------------
+
+Brabek, J., Mojzita, D., Puta, F.
+
+Folia Biologica(Prague)vol.48 p.73-76 (2002). 
+
+Abstract. 
+
+We achieved the production of the v-Src of the low-oncogenic strains Prague 
+C (PRC) and H19 in Dictyostelium discoideum, an emerging host system suitable 
+for the synthesis of heterologous proteins. To accomplish the expression, 
+the first 6 codons of the N-terminus of v-src had to be changed according to 
+the D. discoideum codon preference. Alternatively, N-terminal fusions, of 
+6xHis-tag or GFP, were sufficient to overcome the incompatibility in codon 
+usage. D. discoideum expressed v-Src kinases of expected molecular weight 
+were recognized by Src-specific antibodies; GFP-PRC was distributed uniformly 
+in the cytosol. In contrast to other lower eukaryotes, where the accumulation 
+of v-Src leads to growth inhibition, D. discoideum cells silenced the kinase 
+activity of PRC derived v-Src and showed no developmental or growth defects.
+ 
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 6]
+
+ 

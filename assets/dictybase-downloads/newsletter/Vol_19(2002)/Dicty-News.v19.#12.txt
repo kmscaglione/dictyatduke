@@ -1,0 +1,250 @@
+Dicty News
+Electronic Edition
+Volume 19, number 12
+November 30, 2002
+
+Please submit abstracts of your papers as soon as they have been 
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+An RGS-Containing Kinase is Important for Chemotaxis and Multicellular 
+Development in Dictyostelium
+
+Binggang Sun and Richard A. Firtel
+
+in press: Molecular Biology of the Cell
+
+ABSTRACT
+
+We have identified a gene encoding RCK1, a novel RGS domain-containing 
+protein kinase.  RCK1 mutant strains exhibit strong aggregation and 
+chemotaxis defects.  rck1 null cells chemotax ~50% faster than wild-type 
+cells, suggesting RCK1 plays a negative regulatory role in chemotaxis.  
+Consistent with this finding, overexpression of wild-type RCK1 reduces 
+chemotaxis speed by ~40%.  Upon cAMP stimulation, RCK1 transiently 
+translocates to the membrane/cortex region with membrane localization 
+peaking at ~10 sec, similar to the kinetics of membrane localization of 
+the PH domain-containing proteins CRAC, Akt/PKB, and PhdA. RCK1 kinase 
+activity also increases dramatically. The RCK1 kinase activity does not 
+rapidly adapt, but decreases after the cAMP stimulus is removed.  This is 
+particularly novel considering that most other chemoattractant-activated 
+kinases (e.g. Akt/PKB, ERK1, ERK2, and PAKa) rapidly adapt after activation.
+
+Using site-directed mutagenesis, we further show that both the RGS and 
+kinase domains are required for RCK1 function and that RCK1 kinase activity 
+is required for the delocalization of RCK1 from the plasma membrane.  
+Genetic evidence suggests RCK1 function lies downstream from Ga2, the 
+heterotrimeric G protein that couples to the cAMP chemoattractant receptors.
+
+We suggest that RCK1 might be part of an adaptation pathway that regulates 
+aspects of chemotaxis in Dictyostelium.  
+
+
+submitted by: Rick Firtel [rafirtel@ucsd.edu]
+
+----------------------------------------------------------------------------
+-
+
+THE ROLE OF BEACH PROTEINS IN DICTYOSTELIUM.
+
+Arturo De Lozanne
+
+Section of Molecular Cell & Developmental Biology 
+and Institute for Cellular and Molecular Biology,
+University of Texas at Austin, Austin, TX 78712.
+
+TRAFFIC, in press.
+
+ABSTRACT
+
+The BEACH family of proteins is a novel group of proteins with diverse roles
+
+in eukaryotic cells.  The identifying feature of these proteins is the BEACH
+
+domain named after the founding members of this family, the mouse beige and 
+the human Chediak-Higashi Syndrome (CHS) proteins.  Although all BEACH 
+proteins share a similar structural organization they appear to have very 
+distinct cellular roles ranging from lysosomal traffic, to apoptosis and 
+cytokinesis.  Very little is currently known about the function of most of 
+these proteins, few binding-partner proteins have been identified and no 
+molecular mechanism for any of these proteins has been discovered.  Thus, 
+it is important to establish good model systems for the study of these 
+novel proteins.  Dictyostelium contains six BEACH proteins that can be 
+classified into four subclasses.  Two of them, LvsA and LvsB, have clearly 
+distinct roles in the cell.  LvsA is localized on the contractile vacuole 
+membrane and is essential for cytokinesis and osmoregulation.  LvsB is 
+most similar in sequence to the mammalian beige/CHS proteins and shares 
+with them a common function in lysosomal trafficking.  Structural and 
+functional analysis of these proteins in Dictyostelium will help elucidate 
+the function of this enigmatic novel family of proteins.
+
+submitted by: (a.delozanne@mail.utexas.edu)
+
+----------------------------------------------------------------------------
+-
+
+The Dictyostelium prestalk cell inducer DIF regulates nuclear accumulation 
+of a STAT protein by controlling its rate of export from the nucleus
+
+Masashi Fukuzawa+, Tomoaki Abe+ and Jeffrey G. Williams*, 
+
+School of Life Sciences, University of Dundee, MSI/WTB Complex, Dow Street, 
+Dundee DD1 5EH, UK
+
++ These two authors contributed equally to this work
+
+DEVELOPMENT IN PRESS
+
+Summary
+
+Dd-STATc becomes tyrosine phosphorylated, dimerises and accumulates in the 
+nuclei of Dictyostelium cells exposed to DIF, the chlorinated hexaphenone 
+that directs prestalk cell differentiation. By performing cytoplasmic 
+photobleaching of living cells, we show that DIF inhibits the nuclear 
+export of Dd-STATc. Within Dd-STATc there is a 50 amino acid region 
+containing several consensus CRM1 (exportin 1)-dependent nuclear export 
+signals (NESs). Deletion of this region causes Dd-STATc to accumulate in 
+the nucleus constitutively and, when coupled to GFP, the same region directs
+
+nuclear export. We show that the N terminal-proximal 46 amino acids are 
+necessary for nuclear accumulation of Dd-STATc and sufficient to direct 
+constitutive nuclear accumulation when fused to GFP. Combining the 
+photobleaching and molecular analyses, we suggest that DIF-induced 
+dimerisation of Dd-STATc functionally masks the NES-containing region 
+and that this leads to nett nuclear accumulation, directed by the N 
+terminal-proximal import signals. These results show that the regulated 
+nuclear accumulation of a STAT protein can be controlled at the level of 
+nuclear export and they also provide a better understanding of the mechanism
+
+whereby DIF directs cell type divergence.
+
+submitted by: Jeff Williams [j.g.williams@dundee.ac.uk]
+
+----------------------------------------------------------------------------
+-
+
+
+Mitochondrial membrane dynamics are altered in cluA- mutants of 
+Dictyostelium.   
+
+Fields, S.D., Arana, Q., Heuser, J., and Clarke, M.  
+
+Musc. Res. Cell Motil. (special Dictyostelium issue), in press.
+
+In cluA- mutants of Dictyostelium, mitochondria are clustered near the cell 
+center rather than being dispersed throughout the cytoplasm.  We have examined 
+two possible mechanisms that could account for this phenotype. First, we 
+sought evidence that the cytoskeleton or a presumptive mitochondrion- 
+cytoskeleton linkage was altered in mutant cells.  We found that cytoskeletal 
+structures in cluA- cells appeared normal by immunostaining, and that the 
+distribution of peroxisomes in mutant cells was indistinguishable from that 
+in wild type cells.   Treatment of wild type cells with drugs that disrupted
+
+microtubules or actin filaments did not mimic the cluA- phenotype.  Thus, 
+cytoskeletal defects seemed unlikely to account for the mitochondrial 
+clustering in cluA- cells.  Observation of the movement of GFP-tagged 
+mitochondria in wild type cells suggested that mitochondria are transported 
+along microtubules, as in mammalian cells, rather than along actin filaments, 
+as in budding yeast.  Therefore, the similar phenotypes of cluA- Dictyostelium 
+cells and clu1D yeast cells argued against CluA/Clu1p acting as a 
+mitochondrion-cytoskeleton linker.   We next examined the ultrastructure of 
+mitochondria in freeze-substituted, thin-sectioned cells.   We found that 
+the clustered mitochondria in cluA-cells are interconnected.  Often, adjacent 
+mitochondria are linked by narrow membranous strands, although sometimes the
+
+mitochondria are partially merged.   The presence of narrow constrictions at
+
+presumptive division sites argues that the constriction step of division 
+proceeds normally.  Our data suggest that cluA- cells may be blocked at a 
+very late step in fission of the outer mitochondrial membrane.   
+
+submitted by:  Margaret Clarke, PhD [Margaret-Clarke@mail.omrf.ouhsc.edu]
+
+----------------------------------------------------------------------------
+-
+
+Chaperonin 60 and mitochondrial disease in Dictyostelium.
+
+Martha Kotsifas, Christian Barth, Arturo de Lozanne, Sui T. Lay, and Paul 
+R. Fisher
+
+Journal of Muscle Research and Cell Motility. In Press.
+
+Abstract
+
+The single Dictyostelium chaperonin 60 gene, hspA, was cloned, sequenced 
+and characterized. Sequence comparisons and a 3-D model for the structure 
+of the encoded protein showed that it exhibits the conserved sequence and 
+structural features expected for its role as the Dictyostelium mitochondrial
+
+chaperonin 60. Dictyostelium hspA contains two introns and, unusually for 
+a member of this major heat shock gene family, is not stress-inducible in 
+response to heat, cold or cadmium ions. Although transcription of hspA is 
+down regulated during early Dictyostelium development in response to 
+starvation, the levels of the chaperonin 60 protein remain constant 
+throughout the life cycle. Consistent with the essential role of 
+chaperonin 60 in mitochondrial biogenesis, we were unable to isolate 
+mutants in which the hspA gene had been disrupted. However, transformants 
+were isolated that exhibited differing levels of antisense inhibition of 
+chaperonin 60 expression, depending upon the number of copies of the 
+antisense-expressing plasmid in the genome. Orientation in phototaxis 
+(and thermotaxis) was severely impaired in all antisense transformants, 
+while growth and morphogenesis were markedly defective only in 
+transformants with higher levels of antisense inhibition. This pattern 
+of phenotypes is similar to that reported previously to result from 
+targeted disruption of the mitochondrial large subunit rRNA gene in a 
+subpopulation of mitochondria. This suggests that, regardless of the 
+nature of the underlying genetic defect, mitochondrial deficiency 
+impairs signal transduction more sensitively than other cellular 
+activities.
+
+submitted by:  Paul Fisher [SMTP:fisher@lumi.micro.latrobe.edu.au] 
+
+----------------------------------------------------------------------------
+-
+
+Multiple Signalling Pathways Connect Chemoattractant Receptors and Calcium 
+Channels in Dictyostelium
+
+Thomas Nebl1, Martha Kotsifas1, Pauline Schaap2? and Paul R. Fisher1,*
+
+Journal of Muscle Research and Cell Motility. In Press.
+
+SUMMARY
+
+Dictyostelium mutants expressing aequorin were used to study and compare 
+the roles of heterotrimeric G-proteins and the second messengers IP3 and 
+cGMP in regulating folate- and cAMP receptor-activated [Ca2+]i signals.  
+The calcium responses of vegetative cells to folate were dramatically 
+impaired in Gb and Ga4 null mutants but were restored with altered kinetics 
+and temperature-sensitivity in Gb null mutants overexpressing wild type 
+and temperature-sensitive Gb isoforms.  Folic acid receptors thus mediate 
+changes in [Ca2+]i via a Ga4bg-dependent pathway. Neither folate nor cAMP- 
+induced [Ca2+]i  signals were significantly altered in PLC null 
+transformants, but [Ca2+]i changes elicited by both attractants were 
+significantly prolonged in two stmF mutants lacking cGMP-specific 
+phosphodiesterase activity.  This confirms an important role of cGMP in 
+regulating receptor-activated Ca2+ uptake and/or extrusion systems.  This 
+cGMP-dependent part of the Ca2+ response to cAMP stimuli was developmentally
+
+down-regulated and all but disappeared by the time the cells reached full 
+aggregation competence after 8 hours of starvation.  The results suggest 
+that folate and cAMP receptor-activated [Ca2+]i signals are regulated in a 
+complex manner via multiple signalling pathways, one that is G-protein- 
+and cGMP-dependent (present at the vegetative and early poststarvation 
+stage) and another that is  G-protein-independent (dominant in fully 
+aggregation-competent cells at ~ 8 hours post starvation). 
+
+submitted by: Paul Fisher [SMTP:fisher@lumi.micro.latrobe.edu.au] 
+
+----------------------------------------------------------------------------
+-
+[End Dicty News, volume 19, number 12]
+
+ 

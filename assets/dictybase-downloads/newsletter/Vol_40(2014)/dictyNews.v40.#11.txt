@@ -1,0 +1,162 @@
+dictyNews
+Electronic Edition
+Volume 40, number 11
+April 18, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Tianzhi Luo, Vasudha Srivastava, Yixin Ren, Douglas N. Robinson
+
+Mimicking the mechanical properties of the cell cortex by the 
+self-assembly of an actin cortex in vesicles. 
+
+
+App. Phys. Lett. 2014, in press
+
+The composite of the actin cytoskeleton and plasma membrane plays 
+important roles in many biological events.  Here, we employed the 
+emulsion method to synthesize artificial cells with biomimetic actin 
+cortex in vesicles and characterized their mechanical properties.  We 
+demonstrated that the emulsion method provides the flexibility to adjust 
+the lipid composition and protein concentrations in artificial cells to 
+achieve the desired size distribution, internal microstructure and 
+mechanical properties.  Moreover, comparison of the cortical elasticity 
+measured for reconstituted artificial cells to that of real cells, including 
+those manipulated using genetic depletion and pharmacological 
+inhibition, strongly supports that actin cytoskeletal proteins are 
+dominant over lipid molecules in cortical mechanics.  Our study 
+indicates that the assembly of biological systems in artificial cells with 
+purified cellular components provides a powerful way to answer 
+biological questions.
+
+
+Submitted by Douglas Robinson [dnr@jhmi.edu]
+---------------------------------------------------------------------------
+
+
+Cell signaling during development of Dictyostelium
+
+William F. Loomis
+Cell and Developmental Biology, University of California San Diego
+La Jolla, CA 92093
+
+Developmental Biology, in press
+Review
+
+
+Continuous communication between cells is necessary for 
+development of any multicellular organism and depends on the 
+recognition of secreted signals. A wide range of molecules 
+including proteins, peptides, amino acids, nucleic acids, steroids 
+and polylketides are used as intercellular signals in plants and 
+animals. They are also used for communication in the social 
+amoeba Dictyostelium discoideum when the solitary cells 
+aggregate to form multicellular structures. Many of the signals 
+are recognized by surface receptors that are seven-
+transmembrane proteins coupled to trimeric G proteins, which 
+pass the signal on to components within the cytoplasm.  
+Dictyostelium cells have to judge when sufficient cell density 
+has been reached to warrant transition from growth to 
+differentiation. They have to recognize when exogenous nutrients 
+become limiting, and then synchronously initiate development. A 
+few hours later they signal each other with pulses of cAMP that 
+regulate gene expression as well as direct chemotactic 
+aggregation. They then have to recognize kinship and only 
+continue developing when they are surrounded by close kin. 
+Thereafter, the cells diverge into two specialized cell types, 
+prespore and prestalk cells, that continue to signal each other in 
+complex ways to form well proportioned fruiting bodies. In this way 
+they can proceed through the stages of a dependent sequence in 
+an orderly manner without cells being left out or directed down 
+the wrong path.
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+---------------------------------------------------------------------------
+
+
+TSET: an ancient and widespread membrane trafficking complex
+
+Jennifer Hirst1§*, Alexander Schlacht2§, John P. Norcott3+, David 
+Traynor4+, Gareth Bloomfield4, Robin Antrobus1, Robert R. Kay4, 
+Joel B. Dacks2*, and Margaret S. Robinson1*
+
+1University of Cambridge, Cambridge Institute for Medical Research, 
+Cambridge, UK
+2Department of Cell Biology, University of Alberta, Edmonton, Canada
+3University of Cambridge, Department of Engineering, Cambridge, UK
+4MRC Laboratory of Molecular Biology, Cambridge, UK
+
+
+eLife, in press
+
+The heterotetrameric AP and F-COPI complexes help to define the 
+cellular map of modern eukaryotes. To search for related machinery, 
+we developed a structure-based bioinformatics tool, and identified 
+the core subunits of TSET, a “missing link” between the APs and 
+COPI. Studies in Dictyostelium indicate that TSET is a heterohexamer, 
+with two associated scaffolding proteins. TSET is non-essential in 
+Dictyostelium, but may act in plasma membrane turnover, and is 
+essentially identical to the recently described TPLATE complex, TPC. 
+However, whereas TPC was reported to be plant-specific, we can 
+identify a full or partial complex in every eukaryotic supergroup. An 
+evolutionary path can be deduced from the earliest origins of the 
+heterotetramer/scaffold coat to its multiple manifestations in modern 
+organisms, including the mammalian muniscins, descendants of the 
+TSET medium subunits. Thus, we have uncovered the machinery for 
+an ancient and widespread pathway, which provides new insights into 
+early eukaryotic evolution.
+
+
+Submitted by Rob Kay [rrk@mrc-lmb.cam.ac.uk]
+---------------------------------------------------------------------------
+
+
+Calcineurin-Crz1 signaling in lower eukaryotes.
+
+Thewes S
+
+
+Eukaryotic Cell, in press
+Review
+
+Calcium ions are ubiquitous intracellular messengers. An increase in 
+the cytosolic Ca2+ concentration activates many proteins including 
+calmodulin and the Ca2+/calmodulin-dependent protein phosphatase 
+calcineurin. The phosphatase is conserved from yeast to man (except 
+plants) and many target proteins of calcineurin have been identified. 
+The most prominent and best-investigated targets, however, are the 
+transcription factors NFAT (nuclear factor of activated T-cells) in 
+mammals and Crz1 (calcineurin responsive zinc finger 1) in yeast. In 
+recent years many orthologues of Crz1 have been identified and 
+characterized in various fungi, amoebae and other lower eukaryotes. 
+It has been shown that the functions of calcineurin-Crz1 signaling are 
+conserved in the different organisms ranging from ion homeostasis, 
+through cell wall biogenesis, to the building of filamentous structures. 
+Furthermore frequency-modulated gene expression through Crz1 has 
+been discovered as a striking new mechanism by which cells can 
+coordinate their response to a signal. In this review I will focus on the 
+latest findings concerning calcineurin-Crz1 signaling in fungi, amoebae 
+and other lower eukaryotes. I will discuss the potential of Crz1 and its 
+orthologues as putative drug targets and I will also discuss possible 
+parallels with calcineurin-NFAT signaling in mammals.
+
+
+Submitted by Sascha Thewes [sascha.thewes@fu-berlin.de]
+==============================================================
+[End dictyNews, volume 40, number 11]

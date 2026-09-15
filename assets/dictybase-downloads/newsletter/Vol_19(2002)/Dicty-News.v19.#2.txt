@@ -1,0 +1,222 @@
+Dicty News
+Electronic Edition
+Volume 19, number 2
+July 27, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=======================
+  Positions Available
+=======================
+
+A Postdoc position funded by the Deutsche Forschungsgemeinschaft 
+(Epigenitcs Program) is available in the Genetics Group at Kassel 
+University. The aims of the project are
+
+1. to understand the mechanisms of RNA interference and 
+2. the mechanisms and function of DNA methylation. 
+
+In both cases, Dictyostelium provides an excellent model system which is 
+both "lean" (in terms of the small genome) and "general" (in that apparently 
+all or most components found in higher eukaryotes also exist in Dictyostelium). 
+Some more details are outlined on our web page 
+
+(http://www.uni-kassel.de/fb19/genetics/projects/projects.html). 
+
+Within the DFG Schwerpunkt Programm, we closely cooperate with other groups 
+working on epigenetics in plants, flys, and mammals. Applicants should have 
+obtained their Ph.D in a relevant field of molecular biology or biochemistry. 
+Applications containing CV, a brief description of research experience, research 
+interests and the names and e-mail address of two potential referees may be sent 
+by e-mail to Nellen@hrz.uni-kassel.de
+ 
+A position for a Ph.D. student (funded by an OBF stipend) is available in the 
+Genetics Group at Kassel University in the new laboratory of Christian Hammann. 
+The project is aimed at understanding the role of different RNA directed RNA 
+polymerases (RdRP) in posttranscriptional gene silencing. Biochemical, biophysical 
+and molecular biology methods will be applied. The project will be carried out in 
+close cooperation with the Epigenetics Program in the Genetics group and with the 
+Center for Interdisciplinary Nanostructure Science and Technology (CINSaT). 
+Applicants should have a diploma or equivalent qualification in biology, 
+biochemistry or biophysics. Applications containing CV, a brief description of 
+research experience, research interests and the names and e-mail address of two 
+potential referees may be sent by e-mail to c.hammann@uni-kassel.de
+
+=============
+  Abstracts
+=============
+ 
+A Rho GDP-dissociation inhibitor is involved in cytokinesis of 
+Dictyostelium
+
+Keita Imai,a Toshirou Kijima,b,c Yoichi Noda,a Kazuo Sutoh,b Koji Yoda,a and 
+Hiroyuki Adachi a,*
+
+a Department of Biotechnology, Graduate School of Agricultural and Life 
+Sciences, University of Tokyo, 1-1-1 Yayoi, Bunkyo-ku, Tokyo 113-8657, 
+Japan and b Department of Life Sciences, Graduate School of Arts and 
+Sciences, University of Tokyo, 3-8-1 Komaba, Meguro-ku, Tokyo 153-8902 Japan
+
+*Corresponding author. Fax: +81-3-5841-8139.
+
+E-mail address: adachih@mail.ecc.u-tokyo.ac.jp  (H. Adachi).
+
+c On leave from Department of Applied Chemistry, Kogakuin University, 
+Shinjuku-ku, Tokyo 163-8677, Japan.
+
+Biochem. Biophys. Res. Commun. in press
+
+Abstract
+
+Homology searches toward the EST databases of Dictyostelium discoideum 
+identified two putative Rho GDP-dissociation inhibitors (RhoGDIs), RhoGDI1 
+and RhoGDI2. In this study, the roles of RhoGDI1 in cytokinesis were 
+examined. The RhoGDI1-null Dictyostelium strains produced by homologous 
+recombination were viable but generated multinucleate giant cells in 
+suspension culture, suggesting that RhoGDI1 is involved in cytokinesis. 
+The expression of green fluorescent protein (GFP)-tagged RhoGDI1 
+complemented the defects of the RhoGDI1-null cells, and the GFP-RhoGDI1 
+is predominantly present in cytoplasm of the cell like yeast RhoGDI. Of 
+fifteen Rho family GTPases in Dictyostelium currently known, Dictyostelium 
+versions of Rac1 proteins (Rac1A, Rac1B and Rac1C) and RacE that are 
+reportedly involved in Dictyostelium cytokinesis, showed two-hybrid 
+interactions with RhoGDI1 as well as human and yeast Cdc42. These results 
+suggest that RhoGDI1 is involved in cytokinesis of Dicytostelium through 
+the regulation of Rho family GTPases Rac1s and/or RacE.
+ 
+---------------------------------------------------------------------------- 
+ 
+Defects in cytokinesis, actin reorganization and the contractile vacuole in 
+cells deficient in RhoGDI
+
+Francisco Rivero(1), Daria Illenberger(2), Baggavalli P. Somesh(1), Heidrun 
+Dislich(1), Nicola Adam(2) and Ann-Kathrin Meyer(1)
+ 
+(1)Institut fr Biochemie I, Medizinische Fakultt, University of Cologne. 
+Joseph-Stelzmann-Strasse 52, D-50931 Kln, Germany
+(2)Department of Pharmacology and Toxicology, University of Ulm, Albert-
+Einstein-Allee 11, D-89081 Ulm, Germany
+
+EMBO J., in press
+
+Rho GDP-dissociation inhibitors (RhoGDIs) modulate the cycling of Rho GTPases 
+between active GTP-bound and inactive GDP-bound states. We identified two 
+RhoGDI homologues in Dictyostelium. GDI1 shares 51-58% similarity to RhoGDIs 
+from diverse species. GDI2 is more divergent (40-44% similarity) and lacks 
+the N-terminal regulatory arm characteristic for RhoGDI proteins. Both are 
+cytosolic proteins and do not relocalize upon reorganization of the actin 
+cytoskeleton. Using a two-hybrid approach we identified Rac1a/b/c, RacB, 
+RacC and RacE as interacting partners for GDI1. Cells lacking GDI1 are 
+multinucleate, grow slowly and display a moderate pinocytosis defect, but 
+rates of phagocytosis are unaffected. Mutant cells present prominent actin-
+rich protrusions, and large vacuoles that are continuous with the 
+contractile vacuole system. The actin polymerization response upon 
+stimulation with cAMP was reduced but the motile behavior toward the 
+chemoattractant was unaffected. Our results indicate that GDI1 plays a 
+central role in the regulation of signal transduction cascades mediated 
+by Rho GTPases.
+
+----------------------------------------------------------------------------
+
+Endosome fusion and microtubule-based dynamics in the early endocytic 
+pathway of Dictyostelium
+
+Margaret Clarke1*, Jana Khler2, John Heuser3, and Gnther Gerisch2
+ 
+1Program in Molecular and Cell Biology, Oklahoma Medical Research Foundation, 
+Oklahoma City, Oklahoma;  2Max-Planck-Institut fr Biochemie, D82152 
+Martinsried, Germany;  3Washington University School of Medicine, St. Louis, 
+Missouri.
+
+*Author for correspondence.  E-mail:  clarkem@omrf.ouhsc.edu
+
+Traffic, in press.
+
+Abstract
+
+Dictyostelium amoebae, like mammalian macrophages, take up fluid by 
+macropinocytosis.  The present study used fluorescent fluid phase markers 
+and GFP-labeled microtubules to visualize the uptake, dynamics, and fusion 
+of early endosomes in Dictyostelium.  Consecutive labeling with two 
+fluorescent fluid phase markers demonstrated that within the first few 
+minutes after uptake, new macropinosomes underwent fusion with pre-existing 
+endosomes.  The fusing endosomes, which represent the mixing compartment, 
+displayed extreme shape changes and rapid transport about the cell in 
+association with microtubules. The great plasticity of endosomes at this 
+stage of maturation was also evident by electron microscopy.  The constant 
+undulatory motion of microtubules was implemental in establishing contact 
+with endosomes.  Treatment of cells with agents that selectively disrupted 
+either actin filaments or microtubules confirmed that endosome dynamics 
+were microtubule-based.  Further maturation of endosomes led to loss of 
+pleiomorphy in favor of a spherical shape, inability to fuse with new
+macropinosomes, and diminished motility. 
+ 
+-----------------------------------------------------------------------------
+
+Evidence for a role for the Dictyostelium monomeric GTPase, Rap1, in cell 
+viability and the response to osmotic stress
+
+Rujun Kang, Helmut Kae, Hermia Ip, George B. Spiegelman and Gerald Weeks
+ 
+Department of Microbiology and Immunology, University of British Columbia,
+300 - 6174 University Blvd., Vancouver, BC  V6T 1Z3, Canada
+
+J. Cell Science, in press.
+
+Summary
+
+   The Dictyostelium genome contains a single gene, rapA, encoding a 
+Rap1 monomeric G protein.  Since attempts at generating rapA null Dictyostelium 
+cells had been unsuccessful, expression of antisense RNA from the rapA gene 
+under control of the folate repressible discoidin promoter was used to reduce 
+cellular levels of the Rap1 protein.  As Rap1 levels gradually decreased 
+following antisense rapA RNA induction, growth rate and cell viability also 
+decreased, a result consistent with the idea that rapA is an essential gene. 
+The Rap1 depleted cells exhibited reduced viability in response to osmotic 
+shock.  The accumulation of cGMP in response to 0.4M sorbitol was reduced 
+after rapA antisense RNA induction and was enhanced in cells expressing the 
+constitutively activated Rap1(G12V) protein, suggesting a possible role for 
+Rap1 in the generation of cGMP.  Dictyostelium Rap1 was shown to complex to 
+the Ras binding domain of RalGDS only when it was in a GTP-bound state.  
+This assay was used to demonstrate that activation of Rap1 in response to 
+0.4M sorbitol occurred with initial kinetics similar to those observed for 
+the accumulation of cGMP.  Furthermore, the addition of 2mM EDTA to 
+osmotically shocked cells, a treatment that enhances cGMP accumulation, 
+also enhanced Rap1 activation.  These results suggest a direct role for 
+Rap1 in the activation of guanylyl cyclase during the response to 
+hyperosmotic conditions.  Rap1 was also activated in response to low 
+temperature, but was not activated in response to low osmolarity or high 
+temperature.
+
+-----------------------------------------------------------------------------
+
+OSBPa, a predicted oxysterol binding protein of Dictyostelium, is required 
+for regulated entry into culmination
+
+Masashi Fukuzawa and Jeffrey G. Williams*
+
+School of Life Sciences, University of Dundee, Wellcome Trust Biocentre,
+Dow Street, DUNDEE, DD1 5EH, UK
+
+FEBS Letters, in press
+
+Abstract
+
+The oxysterol binding (OSBP) proteins are believed to control cholesterol 
+homeostasis but their precise mechanism of action is not well understood. 
+The Dictyostelium osbA gene encodes a predicted OSBP, OSBPa, which lacks the 
+PH domain that in most other OSBPs directs targetting to the Golgi. OSBPa 
+instead localises selectively to the cell periphery and also, in some cells, 
+to the peri-nuclear region. OSBPa null strains form normal fruiting bodies 
+but are defective in the regulation of the transition from slug migration 
+to culmination. Thus a plasma membrane-enriched OSBP family member is 
+essential for correct regulation of the slug-fruiting body switch.
+ 
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 2]
+
+ 

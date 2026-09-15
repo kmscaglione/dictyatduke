@@ -1,0 +1,94 @@
+dictyNews
+Electronic Edition
+Volume 37, number 4
+August 12, 2011
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Salmonella typhimurium is pathogenic for Dictyostelium cells and subverts
+the starvation response
+
+Alessio Sillo*1, Jan Matthias#1, Roman Konertz#, Salvatore Bozzaro*2 and
+Ludwig Eichinger#2¤
+
+*Department of Clinical and Biological Sciences, University of Turin, AOU
+S. Luigi, 10043 Orbassano (Torino), Italy 
+#Center for Biochemistry, Medical Faculty, University of Cologne,
+Joseph-Stelzmann-Str. 52, D-50931 Cologne (Germany)
+
+
+Cell. Microbiol., in press
+
+In unicellular amoebae, such as Dictyostelium discoideum, bacterial
+phagocytosis is a food hunting device, while in higher organisms it is the
+first defence barrier against microbial infection. In both cases,
+pathogenic bacteria exploit phagocytosis to enter the cell and multiply
+intracellularly. Salmonella typhimurium, the agent of food-borne
+gastroenteritis, is phagocytosed by both macrophages and Dictyostelium
+cells. By using cell biological assays and global transcriptional analysis
+with DNA microarrays covering the Dictyostelium genome, we show here that
+S. typhimurium is pathogenic for Dictyostelium cells. Depending on the
+degree of virulence, which in turn depended on bacterial growth conditions,
+Salmonella could kill Dictyostelium cells or inhibit their growth and
+development. In the early phase of infection in non-nutrient buffer, the
+ingested bacteria escaped degradation, induced a starvation-like
+transcriptional response but inhibited selectively genes required for
+chemotaxis and aggregation. This way differentiation of the host cells into
+spore and stalk cells was blocked or delayed, which in turn is likely to be
+favourable for the establishment of a replicative niche for Salmonella.
+Inhibition of the aggregation competence and chemotactic streaming of
+aggregation-competent cells in the presence of Salmonella suggests
+interference with cAMP signalling.
+
+
+Submitted by: Eichinger Ludwig [ludwig.eichinger@uni-koeln.de]
+--------------------------------------------------------------------------------
+
+
+A dual role for Rac1 GTPases in the regulation of cell motility
+
+Vedrana Filic, Maja Marinovic, Jan Faix and Igor Weber
+
+
+Journal of Cell Science, in press
+
+Rac proteins are the only canonical Rho family GTPases in Dictyostelium, 
+where they act as key regulators of the actin cytoskeleton. In order to monitor 
+the dynamics of activated Rac1 in Dictyostelium cells, a fluorescent probe 
+was developed that specifically binds to GTP-bound form of Rac1. The 
+probe is based on the GTPase-binding domain (GBD) from PAK1 kinase, 
+and was selected on the basis of yeast two-hybrid, GST pull-down and 
+fluorescence resonance energy transfer assays. PAK1_GBD localizes to 
+leading edges of migrating cells and to endocytotic cups. As in vertebrates, 
+activated Rac1 therefore appears to control de novo actin polymerization 
+at protruding regions of the cell. Additionally, we found that the IQGAP-
+related protein DGAP1, which sequesters active Rac1 into a quaternary 
+complex with actin-binding proteins cortexillin I and II, localizes to the 
+trailing regions of migrating cells. Notably, PAK1_GBD and DGAP1, 
+which both bind to Rac1-GTP, display mutually exclusive localizations in 
+cell migration, phagocytosis and cytokinesis, and opposite dynamics of 
+recruitment to the cell cortex upon stimulation with chemoattractants. 
+Moreover, cortical localization of PAK1_GBD depends on integrity of the 
+actin cytoskeleton, whereas cortical localization of DGAP1 does not. 
+Taken together, these results imply that Rac1 GTPases play a dual role 
+in regulation of cell motility and polarity in Dictyostelium.
+
+
+Submitted by Igor Weber [iweber@irb.hr]
+==============================================================
+[End dictyNews, volume 37, number 4]

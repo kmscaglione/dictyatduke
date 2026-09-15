@@ -1,0 +1,87 @@
+dictyNews
+Electronic Edition
+Volume 34, number 4
+February 5, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Dictyostelium differentiation-inducing factor-1 binds to mitochondrial malate 
+dehydrogenase and inhibits its activity.
+
+Tomoko Matsuda, Fumi Takahashi-Yanaga*, Tatsuya Yoshihara1, Katsumi Maenaka, 
+Yutaka Watanabe, Yoshikazu Miwa, Sachio Morimoto, Yuzuru Kubohara, 
+Masato Hirata, Toshiyuki Sasaguri
+
+*Correspondence: Department of Clinical Pharmacology, Faculty of Medical Sciences, 
+Kyushu University, Fukuoka 812-8582, Japan
+
+
+J. Pharmacol. Sci., in press
+
+We have reported that the differentiation-inducing factors (DIFs) DIF-1 and DIF-3, 
+morphogens secreted from Dictyostelium discoideum, inhibit proliferation of several 
+cancer cells via suppressing the Wnt/beta-catenin signaling pathway. However,
+the target molecules of DIFs involved in the anti-proliferative effects are still 
+unknown. In the present study, DIF-1-tethered resins were synthesized to explore 
+the target molecules of DIFs and mitochondrial malate dehydrogenase (mMDH) 
+was identified as one of the target molecules. In the in vitro assay, DIF-1 and other 
+analogs including 2-MIDIF-1, DIF-3, and 6-MIDIF-3 were found to be capable of 
+binding to mMDH but not to cytoplasmic MDH. However, only DIF-1 and 2-MIDIF-1 
+inhibited the enzymatic activity of mMDH. The effects of DIF analogs on ATP 
+content and cell proliferation were then analyzed using HeLa cells. DIF-1 and 
+2-MIDIF-1 were found to lower the ATP content and both chemicals inhibited 
+HeLa cell proliferation, suggesting that inhibition of mMDH activity affected cell 
+energy production, probably leading to the inhibition of proliferation. These 
+results suggest that the inhibition of mMDH activity by DIF-1 and 2-MIDIF-1 
+could be one of mechanism to induced anti- proliferative effects, independent 
+of the inhibition of the Wnt/beta-catenin signaling pathway.
+
+
+Submitted by Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Functional roles of VASP phosphorylation in the regulation of chemotaxis and 
+osmotic stress response
+
+Wan-Hsin Lin*, Sharon E. Nelson#, Ryan J. Hollingsworth#, Chang Y. Chung#*
+
+Department of Pharmacology#, Vanderbilt University Medical Center, and 
+Department of Biological Sciences*, School of Art and Science, 
+Vanderbilt University, Nashville, TN 37232-6600
+
+
+Cytoskeleton, in press
+
+VASP plays crucial roles in controlling F-actin-driven processes and growing 
+evidence indicates that VASP function is modulated by phosphorylation at 
+multiple sites. However, the complexity of mammalian system prevents the 
+clear understanding of the role of VASP phosphorylation. In this study, we 
+took advantage of Dictyostelium which possesses only one member of the 
+Ena/VASP family to investigate the functional roles of VASP phosphorylation. 
+Our results demonstrated that hyperosmotic stress and cAMP stimulation 
+cause VASP phosphorylation. VASP phosphorylation plays a negative role 
+for the early steps of filopodia/microspikes formation.  VASP phosphorylation 
+appears to modulate VASP localization at the membrane cortex and its 
+interactions with WASP and WIPa. Analysis of chemotaxis of cells expressing 
+VASP mutants showed that VASP phosphorylation is required for the 
+establishment of cell polarity under a cAMP gradient.
+
+
+Submitted by Chang Chung [chang.chung@vanderbilt.edu]
+==============================================================
+[End dictyNews, volume 34, number 4]

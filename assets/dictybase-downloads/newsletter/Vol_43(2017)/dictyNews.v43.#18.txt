@@ -1,0 +1,57 @@
+dictyNews
+Electronic Edition
+Volume 43, number 18
+August 11, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+The F-actin-binding RapGEF GflB is required for efficient macropinocytosis 
+in Dictyostelium
+
+Hironori Inaba1,2,3, Koji Yoda1, Hiroyuki Adachi1
+
+1Department of Biotechnology, Graduate School of Agricultural and Life 
+Sciences, The University of Tokyo, Bunkyo-ku, Tokyo 113-8657, Japan
+2Department of Cell Biology and 3The Center for Brain Integration Research, 
+Graduate School of Medical and Dental Science, Tokyo Medical and Dental 
+University, Bunkyo-ku, Tokyo 113-8510, Japan
+
+
+J. Cell Sci., in press
+
+Macropinocytosis involves the uptake of large volumes of fluid, which is 
+regulated by various small GTPases. The Dictyostelium discoideum protein 
+GflB is a guanine nucleotide exchange factor (GEF) of Rap1, involved in 
+chemotaxis. Here we studied the role of GflB in macropinocytosis, 
+phagocytosis, and cytokinesis. In plate culture of vegetative cells, compared 
+with the parental strain AX2, gflB KO cells were flatter and more polarized, 
+whereas GflB-overproducing cells were rounder. The gflB KO cells exhibited 
+impaired crown formation and retraction, particularly retraction, resulting in 
+more crowns (macropinocytic cups) per cell and longer crown lifetimes. 
+Accordingly, gflB KO cells showed defects in macropinocytosis and also in 
+phagocytosis and cytokinesis. F-actin was elevated in gflB KO cells. GflB 
+localized to the actin cortex especially at crowns and phagocytic cups. The 
+villin headpiece domain (VHP)-like N-terminal domain of GflB directly 
+interacted with F-actin in vitro. Furthermore, a domain enriched in basic 
+amino acids interacted with specific membrane cortex structures such as the 
+cleavage furrow. In conclusion, GflB acts as a key local regulator of actin-
+driven membrane protrusion possibly by modulating Rap1 signaling pathways.
+
+
+submitted by: Hiroyuki Adachi  [adachih@mail.ecc.u-tokyo.ac.jp
+==============================================================
+[End dictyNews, volume 43, number 18]

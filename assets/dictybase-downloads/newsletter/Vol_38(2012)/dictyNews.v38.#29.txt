@@ -1,0 +1,108 @@
+dictyNews
+Electronic Edition
+Volume 38, number 29
+November 16, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+
+Structure and function of a unique pore-forming protein from a 
+pathogenic acanthamoeba
+
+Matthias Michalek1,2, Frank D. Sönnichsen3, Rainer Wechselberger4, 
+Andrew J. Dingley5, Chien-Wen Hung6, Annika Kopp7, Hans Wienk4, 
+Maren Simanski1, Rosa Herbst1, Inken Lorenzen2, Francine Marciano-Cabral8, 
+Christoph Gelhaus1, Thomas Gutsmann7, Andreas Tholey6, 
+Joachim Grötzinger2, Matthias Leippe1*
+
+1 Zoological Institute, Zoophysiology, Christian-Albrechts Universität zu Kiel, 
+Olshausenstr. 40, 24098 Kiel, Germany.
+2 Institute of Biochemistry, Christian-Albrechts Universität zu Kiel, 
+Olshausenstr. 40, 24098 Kiel, Germany.
+3 Otto Diels Institute for Organic Chemistry, Christian-Albrechts Universität zu Kiel, 
+Olshausenstr. 40, 24098 Kiel, Germany.
+4 NMR Spectroscopy Research Group, Bijvoet Center for Biomolecular Research, 
+Utrecht University, Padualaan 8, 3584 CH Utrecht, The Netherlands.
+5 School of Chemical Sciences and School of Biological Sciences, 
+The University of Auckland, New Zealand.
+6 Division of Systematic Proteome Research, Institute for Experimental Medicine, 
+Christian-Albrechts Universität zu Kiel, Niemannsweg 11, 24105 Kiel, Germany.
+7 Division of Biophysics, Research Center Borstel, Center for Medicine and 
+Bioscience, 23845 Borstel, Germany.
+8 Department of Microbiology and Immunology, Virginia Commonwealth University 
+School of Medicine, 1101 E. Marshall Street, Richmond, Virginia 23298-0678, USA.
+* To whom correspondence should be addressed: mleippe@zoologie.uni-kiel.de 
+
+
+Nature Chemical Biology, in press
+
+Human pathogens often produce soluble protein toxins that generate pores inside 
+membranes, resulting in death of target cells and tissue damage. In pathogenic 
+amoebae, this has been exemplified with amoebapores of the enteric protozoan 
+parasite Entamoeba histolytica. Here we characterize acanthaporin, to our 
+knowledge the first pore-forming toxin to be described from acanthamoebae, 
+which are free-living, bacteria-feeding, unicellular organisms that are opportunistic 
+pathogens of increasing importance and cause severe and often fatal diseases. 
+We isolated acanthaporin from extracts of virulent Acanthamoeba culbertsoni by 
+tracking its pore-forming activity, molecularly cloned the gene of its precursor and 
+recombinantly expressed the mature protein in bacteria. Acanthaporin was 
+cytotoxic for human neuronal cells and exerted antimicrobial activity against a 
+variety of bacterial strains by permeabilizing their membranes. The tertiary 
+structures of acanthaporin´s active monomeric form and inactive dimeric form, 
+both solved by NMR spectroscopy, revealed a currently unknown protein fold 
+and a pH-dependent trigger mechanism of activation.
+
+
+Submitted by Matthias Leippe [mleippe@zoologie.uni-kiel.de]
+---------------------------------------------------------------------------
+
+
+Daydreamer, a Ras effector and GSK-3 substrate, is important for directional 
+sensing and cell motility 
+
+Verena Kölsch, Zhouxin Shen, Susan Lee, Katarzyna Plak, Pouya Lotfi, 
+Jessica Chang, Pascale G. Charest, Jesus Lacal Romero, Taeck J. Jeon, 
+Arjan Kortholt, Steven P. Briggs and Richard A. Firtel
+
+
+Mol Bio Cell, in press
+
+How independent signaling pathways are integrated to holistically control 
+a biological process is not well understood. We have identified Daydreamer 
+(DydA), a new member of the MRL (Mig10/RIAM/Lamellipodin) family of 
+adaptor proteins that localizes to the leading edge. DydA is a putative Ras 
+effector that is required for cell polarization and directional movement during 
+chemotaxis. dydA- cells exhibit elevated F-actin and assembled MyoII, 
+increased and extended PI3K activity, and extended phosphorylation of 
+the activation loop of PKB and PKBR1, suggesting that DydA is involved 
+in the negative regulation of these pathways. DydA is phosphorylated by 
+GSK-3, which is required for some, but not all, of DydA’s functions, including 
+the proper regulation of PKB and PKBR1 and MyoII assembly. gskA- cells 
+exhibit very strong chemotaxis phenotypes, as previously described, but 
+exhibit an increased rate of random motility. gskA- cells have a reduced 
+MyoII response, a reduced level of PI(3,4,5)P3 production but a highly 
+extended recruitment of PI3K to the plasma membrane and highly extended 
+kinetics of PKB and PKBR1 activation. Our results demonstrate that GSK-3 
+function is essential for chemotaxis, regulating multiple substrates and that 
+one of these effectors, DydA, plays a key function in the dynamic regulation 
+of chemotaxis.
+
+ 
+Submitted by Rick Firtel [rafirtel@ucsd.edu] 
+==============================================================
+[End dictyNews, volume 38, number 29]

@@ -1,0 +1,64 @@
+Dicty NewsElectronic EditionVolume 21, number 1July 11, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+===========================================
+Special Note to the Dictyostelium community===========================================
+Dear Dicty People,The following paper is now in press at Biomed Central Genetics 
+(http://www.biomedcentral.com/bmcgenet/).  We are preparing to send axenic 
+diploid strains and the appropriate haploids to various labs around the world.  
+Could you please get in touch in the next week or two if you need them?  
+This will diminish the workload a bit.Thanks,Robert Insall
+=============  Abstracts=============
+
+Parasexual Genetics of Dictyostelium Gene Disruptions: Identification of a 
+Ras Pathway Using DiploidsJason King and Robert H. Insall*
+
+School of BiosciencesUniversity of BirminghamBirmingham B15 2TTUKBiomed Central Genetics, in press
+The relative ease of targeted gene disruption in the social amoeba Dictyostelium 
+has stimulated its widespread use as an experimental organism for cell and 
+developmental biology.  However, the field has been hamstrung by the lack of 
+techniques to recombine disrupted genes.  Here we describe new techniques for 
+parasexual fusion of strains in liquid medium, selection and maintenance of 
+the resulting stable diploid strains, and segregation to make recombined 
+haploids. We have used these techniques to isolate rasS/gefB double nulls.  
+The phenotypes of these mutants are no more severe than either parent, with 
+movement, phagocytosis and fluid-phase endocytosis affected to the same degree 
+as in rasS or gefB single nulls.  This suggests that the RasS and GefB proteins 
+lie on the same linear pathway.  In addition, we have produced diploids from one 
+AX2- and one AX3- derived parent, providing an axenic strain with fewer secondary 
+phenotypes than has been previously available.
+
+Submitted by: Robert Insall [R.H.Insall@bham.ac.uk]
+
+-----------------------------------------------------------------------------
+Construction of a gamete-enriched gene pool and RNAi-mediated functionalanalysis in Dictyostelium discoideumTetsuya Muramoto1, Katsuya Suzuki1, Hajime Shimizu**1, Yuji Kohara2, EikoKohriki1, Shinji Obara1, Yoshimasa Tanaka1, and Hideko Urushihara*11Institute of Biological Sciences, University of Tsukuba, Tsukuba-shi305-8572, Japan; 2Center for Genetic Resource Information, NationalInstitute of Genetics, Mishima-shi 411-8540, JapanMechanisms of Development, in pressMacrocysts in Dictyostelium discoideum possess prototypic features of sexualreproduction and are useful for understanding the basic mechanisms of thereproductive process. Here, we randomly analyzed 1,071 gamete cDNAs, andthen constructed a gamete-specific subtraction library, FC-IC. Nucleotidesequences of all 903 FC-IC clones were determined and clustered into 272independent genes. Expression analysis based on real-time RT-PCR revealed 67gamete-enriched genes, among which those involved in 'signal transduction'and 'multicellular organization' are prevalent. One of them, FC-IC0003,ap-peared also to be mating-type specific, and was named gmsA. RNAi-mediatedsilencing as well as disruption of gmsA reduced the cellular competency forsexual cell fusion, indicating the involvement of this gene in the sexualdevel-opment of D. discoideum.
+
+Submitted by: Hideko Urushihara [hideko@biol.tsukuba.ac.jp]
+
+-----------------------------------------------------------------------------
+
+Mutation of the Dictyostelium discoideum fbxA gene affects cell-fate decisions 
+and spatial patterning.Herbert L. Ennis, Dee N. Dao, MaryY. Wu and Richard H. KessinDepartment of Anatomy and Cell Biology, Columbia University, College of 
+Physicians and Surgeons,  New York, NY 10032
+
+Protist, In PressCell-fate decisions and spatial patterning in Dictyostelium are regulated by 
+a number of genes.  Our studies have implicated a gene called fbxA, which 
+codes for an F-box protein, in these pathways.  The FbxA protein is one of 
+the controls on a cAMP phosphodiesterase called RegA, mediating its 
+degradation via ubiquitin-linked proteolysis. Using marked strains, we 
+showed that the fbxA mutant has defective cell-type proportioning, with a 
+dearth of prestalk cells compared to prespore cells. In this work, we show 
+that this effect occurs earlier during the 24 hour developmental cycle than
+ previously thought. The normal sorting of the prestalk and prespore cells 
+in aggregates and mounds is not affected by the mutation.  The mutant cells 
+sort abnormally at the tipped mound stage, when prespore and prestalk cells 
+normally distribute into their proper compartments.  The fbxA mutant forms 
+prestalk cells in low numbers when not in chimeras, but in the presence of 
+wild-type amoebae the mutant preferentially forms viable spores, driving the 
+wild type to form non-viable stalk cells. In an attempt to identify the signal 
+transduction pathway that mediates proportionality in prestalk and prespore 
+cells, we asked whether certain signal transduction mutants were immune to the 
+effects of the fbxA cells and formed spores in chimeras.
+
+Submitted by: Herb Ennis [he28@columbia.edu]
+
+===============================================================================[End Dicty News, volume 21, number 1]

@@ -1,0 +1,72 @@
+dictyNews
+Electronic Edition
+Volume 43, number 21
+September 8, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Differential functions of WAVE regulatory complex subunits in the 
+regulation of actin-driven processes
+
+Christof Litschko 1, Joern Linkner 1,2, Stefan Brühmann 1, Theresia 
+Stradal 3, Tobias Reinl 4,5, Lothar Jänsch 4, Klemens Rottner 3,6, 
+and Jan Faix 1
+
+1 Institute for Biophysical Chemistry, Hannover Medical School, 
+Carl-Neuberg-Str. 1, 30625 Hannover, Germany; 
+2 present address: PerkinElmer LAS GmbH, Ferdinand-Porsche Ring 17, 
+63110 Rodgau, Germany; 
+3 Department of Cell Biology, Helmholtz Centre for Infection Research, 
+Inhoffenstrasse 7, 38124 Braunschweig, Germany; 
+4 Cellular Proteomics, Helmholtz Centre for Infection Research, 
+Inhoffenstrasse 7, 38124 Braunschweig, Germany; 
+5 present address: GlycoThera GmbH, Feodor-Lynen-Str. 35, 30625 
+Hannover, Germany; 
+6 Division of Molecular Cell Biology, Zoological Institute, Technische 
+Universität Braunschweig, Spielmannstrasse 7, 38106 Braunschweig, 
+Germany.
+
+
+European Journal of Cell Biology, in press
+
+The WAVE regulatory complex (WRC) links upstream Rho-family GTPase 
+signaling to the activation of the ARP2/3 complex in different organisms. 
+WRC-induced and ARP2/3 complex-mediated actin nucleation beneath 
+the plasma membrane is critical for actin assembly in the leading edge to 
+drive efficient cell migration. The WRC is a stable heteropentamer 
+composed of SCAR/WAVE, Abi, Nap, Pir and the small polypeptide 
+Brk1/Hspc300. Functional interference with individual subunits of the 
+complex frequently results in diminished amounts of the remaining 
+polypeptides of the WRC complex, implying the complex to act as 
+molecular entity. However, Abi was also found to associate with mammalian 
+N-WASP, formins, Eps8/SOS1 or VASP, indicating additional functions of 
+individual WRC subunits in eukaryotic cells. To address this issue 
+systematically, we inactivated all WRC subunits, either alone or in 
+combination with VASP in Dictyostelium cells and quantified the protein 
+content of the remaining subunits in respective WRC knockouts. The 
+individual mutants displayed highly differential phenotypes concerning 
+various parameters, including cell morphology, motility, cytokinesis or 
+multicellular development, corroborating the view of additional roles for 
+individual subunits, beyond their established function in WRC-mediated 
+Arp2/3 complex activation. Finally, our data uncover the interaction of the 
+actin polymerase VASP with WRC-embedded Abi to mediate VASP 
+accumulation in cell protrusions, driving efficient cell migration.
+
+
+submitted by: Jan Faix [faix.jan@mh-hannover.de]
+==============================================================
+[End dictyNews, volume 43, number 21]

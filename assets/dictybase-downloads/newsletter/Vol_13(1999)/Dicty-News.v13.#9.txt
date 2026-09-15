@@ -1,0 +1,213 @@
+Dicty News
+Electronic Edition
+Volume 13, number 9
+October 23, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+========================
+ Need Dicty 99 Pictures
+========================
+
+We are looking for pictures from the Bar Harbor Dicty meeting.  If you have
+pictures you are willing to share, please email them to dicty@nwu.edu.  If 
+you don't have access to a scanner, contact us--you can send us the picture,
+we'll scan it and return the photo to you.
+
+
+=============
+  Abstracts
+=============
+
+Ca2+/calmodulin-independent activation of calcineurin from Dictyostelium by
+unsaturated long chain fatty acids
+
+Ursula Kessen, Ralph Schaloske, Annette Aichem, and Rupert Mutzel
+
+Fakultaet für Biologie, Universitaet Konstanz, D-78457 Konstanz, Germany
+
+J. Biol. Chem., in press
+
+Summary
+
+        This study describes a novel mode of activation for the
+Ca2+/calmodulin-dependent protein phosphatase, calcineurin. Using purified
+calcineurin from Dictyostelium discoideum we found a reversible,
+Ca2+/calmodulin independent activation by the long chain unsaturated fatty
+acids arachidonic acid, linoleic acid and oleic acid which was of the same
+magnitude as activation by Ca2+/calmodulin. Half maximal stimulation of
+calcineurin occurred at fatty acid concentrations of approximately 10
+microM with either p-nitrophenyl phosphate or RII phosphopeptide as
+substrates. The methyl ester of arachidonic acid and the saturated fatty
+acids palmitic acid and arachidic acid did not activate calcineurin. The
+activation was shown to be independent of the regulatory subunit,
+calcineurin B. Activation by Ca2+/calmodulin and fatty acids was not
+additive. In binding assays with immobilized calmodulin, arachidonic acid
+inhibited binding of calcineurin to calmodulin. Therefore fatty acids
+appear to mimic Ca2+/calmodulin action by binding to the calmodulin-binding
+site.
+
+----------------------------------------------------------------------------
+
+Reconstitution of Membrane Transport Powered by a Novel Dimeric Kinesin
+Motor of the Unc104/KIF1A Family Purified from Dictyostelium
+
+Nira Pollock*, Eugenio L. de Hostos^, Christoph W. Turck#, and 
+Ronald D. Vale#*
+
+*Departments of Cellular and Molecular Pharmacology, ^Pathology and 
+#The Howard Hughes Medical Institute,
+University of California, San Francisco, CA 
+
+Journal of Cell Biology, in press
+
+Abstract
+        Motor-powered movement along microtubule tracks is important for
+membrane organization and trafficking.  However, the molecular basis for
+membrane transport is poorly understood, in part because of the difficulty
+in reconstituting this process from purified components.  Using video
+microscopic observation of organelle transport in vitro as an assay, we
+have purified two polypeptides (245 kDa and 170 kDa) from Dictyostelium
+extracts that independently reconstitute plus-end-directed membrane
+movement at in vivo velocities.  Both polypeptides were found to be kinesin
+motors, and the 245 kDa protein (called DdUnc104) is a close relative of C.
+elegans Unc104 and mouse KIF1A, neuron-specific motors that deliver
+synaptic vesicle precursors to nerve terminals.  A knockout of the DdUnc104
+gene produces a pronounced defect in organelle transport in vivo and in the
+reconstituted assay.  Interestingly, DdUnc104 functions as a dimeric motor,
+in contrast to other members of this kinesin subfamily which are monomeric.
+
+----------------------------------------------------------------------------
+
+Commentary
+
+Slime molds, ascidians, and the utility of evolutionary theory 
+Leo W. Buss 
+
+Departments of Ecology & Evolutionary Biology and Geology & Geophysics,
+Yale University, New Haven, CT 06520-8106 
+
+PNAS. Vol. 96, Issue 16, 8801-8803, August 3, 1999
+
+This is a commentary on the interest of Dictyostelium to evolutionary
+biology. There is no abstract but the full text can be found at:
+
+http://www.pnas.org/cgi/content/full/96/16/8801
+
+----------------------------------------------------------------------------
+
+DYNEIN MOTOR REGULATION STABILIZES INTERPHASE MICROTUBULE ARRAYS AND
+DETERMINES CENTROSOME POSITION.
+
+Michael P. Koonce 1, Jana Köhler 2, Ralph Neujahr 2, Jean-Marc Schwartz 2,
+Irina Tikhonenko 1, and Günther Gerisch 2.
+
+1 Division of Molecular Medicine, Wadsworth Center, Empire State Plaza,
+Albany, New York. 12201-0509.
+2 Max-Planck-Institut für Biochemie, D-82152 Martinsried, Germany
+
+EMBO Journal, in press
+
+ABSTRACT
+
+   Cytoplasmic dynein is a microtubule-based motor protein responsible for
+vesicle movement and spindle orientation in eukaryotic cells. We show here
+that dynein also supports microtubule architecture and determines
+centrosome position in interphase cells. Overexpression of the motor domain
+in Dictyostelium leads to a collapse of the interphase microtubule array,
+forming loose bundles that often enwrap the nucleus. Using GFP-a-tubulin to
+visualize microtubules in live cells, we show that the collapsed arrays
+remain associated with centrosomes and are highly motile, often circulating
+along the inner surface of the cell cortex. This is strikingly different
+from wild type cells where centrosome movement is constrained by a balance
+of tension on the microtubule array. Centrosome motility involves
+force-generating microtubule interactions at the cortex, with the rate and
+direction consistent with a dynein-mediated mechanism. Mapping the
+overexpression effect to a carboxy-terminal region of the heavy chain
+highlights a functional domain within the massive sequence important for
+regulating motor activity.
+
+----------------------------------------------------------------------------
+
+Identification of a UDP-GlcNAc:Skp1-Hydroxyproline GlcNAc-Transferase in 
+the Cytoplasm of Dictyostelium 
+
+Patana Teng-umnuay, Hanke van der Wel, and Christopher M. West
+
+Department of Anatomy & Cell Biology, University of Florida College of 
+Medicine, Gainesville, FL 32610-0235, USA
+
+J. Biol. Chem., in press
+
+Summary:
+
+   Skp1 is a cytoplasmic and nuclear protein required for the ubiquitination 
+of cell cycle regulatory proteins and transcriptional factors. In 
+Dictyostelium, Skp1 is modified by a linear pentasaccharide, 
+Gala1-6Gala1-Fuca1-2Galb1-3GlcNAc, attached to a HyPro residue at 
+position 143. To study the formation of the GlcNAc-HyPro linkage, an 
+assay was developed for the transfer of [3H]GlcNAc from UDP-[3H]GlcNAc 
+to Skp1-HyPro143 or a synthetic Skp1 4-HyPro-peptide. The cytosolic but 
+not the particulate fraction of the cell mediated transfer in a time-, 
+concentration-, and HyPro-dependent fashion. Incorporated radioactivity 
+was alkali-resistant and was recovered as GlcNH2 after acid hydrolysis, 
+consistent with linkage of GlcNAc to HyPro. The GlcNAc-transferase 
+activity was purified 130,000-fold as a single component with a recovery 
+of 5%. Key to the purification was the synthesis of a novel affinity resin 
+linking UDP-GlcNAc at its 5-uridyl position. The purified activity had 
+an apparent Mr of ~45,000 by gel filtration, required DTT and a divalent 
+cation, and consisted predominantly of a Mr 51,000 band after SDS-PAGE 
+which was photoaffinity-labeled with 5-[125I]ASA-UDP-GlcNAc in a 
+UDP-GlcNAc-sensitive fashion. Its apparent Km's for UDP-GlcNAc and Skp1 
+were submicromolar. The presence of the enzyme in the cytosolic fraction, 
+its dependence on a reducing environment, and its high affinity for 
+UDP-GlcNAc, strongly suggest that Skp1 is glycosylated by a HyPro 
+GlcNAc-transferase which resides in the cytoplasm. 
+
+----------------------------------------------------------------------------
+
+A Linking Function for the Cellulose-Binding Protein SP85 in the Spore 
+Coat of Dictyostelium discoideum
+
+Yunyan Zhang, Ping Zhang and Christopher M. West 
+
+Department of Anatomy and Cell Biology, University of Florida College 
+of Medicine, Gainesville, FL 32610-0235 USA
+
+J. Cell Sci., in press
+
+Summary:
+
+   SP85 is a multidomain protein of the Dictyostelium spore coat whose 
+C-terminal region binds cellulose in vitro. To map domains critical 
+for localizing SP85 and for binding to other proteins in vivo, its 
+N- and C-terminal regions, and a hybrid fusion of the N- and C-regions, 
+were expressed in prespore cells. Immunofluorescence showed that only 
+the N-terminal region and the N/C-hybrid accumulated in prespore 
+vesicles, where coat proteins are normally stored prior to secretion. 
+In contrast, only the C-terminal region and N/C-hybrid were incorporated 
+into the coat after secretion. To determine if SP85 is important for the 
+incorporation of other coat proteins, an SP85-null strain was created 
+and found to mislocalize the coat protein SP65 to the interspore matrix. 
+In vitro binding studies demonstrated that the SP85 C-terminal region 
+bound SP65 and cellulose simultaneously, and SP65 incorporation was 
+rescued in vivo by the C-terminal region. SP85-null spores showed increased 
+latent permeability to a fluorescent lectin probe and accelerated germination 
+times, and decreased bouyant density of their coats, suggesting that coat 
+barrier functions were compromised. Dominant negative reductions in barrier 
+functions also resulted from expression of the SP85 terminal regions, 
+suggesting that a linking activity was important for SP85's function. Thus, 
+separate domains of SP85 specify prespore vesicle compartmentalization and 
+coat incorporation, and additional domains link SP65 to the coat and 
+simultaneously interact with other binding partners which contribute 
+to coat barrier functions. 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 13, number 9]
+
+  

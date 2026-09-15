@@ -1,0 +1,115 @@
+Dicty News
+Electronic Edition
+Volume 11, number 3
+August 8, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+SCAR, a WASP-related protein, isolated as a suppressor of receptor defects 
+in late Dictyostelium development
+
+James E. Bear , John F. Rawls, and Charles L. Saxe, III
+Department of Cell Biology, Emory University School of Medicine
+
+J. Cell Biology, in press.
+
+Abstract
+
+    G protein-coupled receptors trigger the reorganization of the actin 
+cytoskeleton in many cell types, but the steps in this signal transduction 
+cascade are poorly understood.  During Dictyostelium development, extracellular 
+cAMP functions as a chemoattractant and morphogenetic signal which is transduced 
+via a family of G protein-coupled receptors, the cAR's.  In a strain where the 
+cAR2 receptor gene is disrupted by homologous recombination, the developmental 
+program arrests prior to tip formation.  In a genetic screen for suppressors of 
+this phenotype, a gene encoding a protein related to the Wiskott-Aldrich Syndrome 
+protein (WASP) was discovered.  Loss of this protein, which we call SCAR (for 
+Suppressor of cAR), restores tip formation and most of later development to cAR2- 
+strains, and causes a multiple-tip phenotype in a cAR2+ strain, as well as leading 
+to the production of extremely small cells in suspension culture.  SCAR- cells have 
+reduced levels of F-actin staining during vegetative growth, and abnormal cell 
+morphology and actin distribution during chemotaxis.  Uncharacterized homologs of 
+SCAR have also been identified in humans, mouse, C. elegans, and Drosophila.  
+These data suggest SCAR may be a conserved negative regulator of G protein-coupled 
+signaling and that it plays an important role in regulating the actin cytoskeleton. 
+-------------------------------------------------------------------------
+
+Selection of Gb Subunits with Point Mutations that Fail to Activate
+Specific Signaling Pathways in vivo: Dissecting Cellular Responses
+Mediated by a Heterotrimeric G protein in Dictyostelium discoideum
+
+Tian Jin1, Mario Amzel2, Peter N Devreotes1*, Lijun Wu3
+
+1Department of Biological Chemistry, and 2 Department of Biophysics 
+and Biophysical Chemistry, Johns Hopkins University School of Medicine, 725 N.
+Wolfe Street, MD21205  and 3LeukoSite, Inc., 215 First Street, Cambridge, MA 02142
+
+Mol. Biol. Cell, in press.
+
+Abstract
+
+   In Dictyostelium discoideum, a unique Gb subunit is required for a G protein 
+coupled receptor system that mediates a variety of cellular responses.  Binding 
+of cAMP to cAR1, the receptor linked to the G protein G2 triggers a cascade of 
+responses, including activation of adenylyl cyclase, gene induction, actin 
+polymerization and chemotaxis.  Null mutations of the cAR1, Ga2 or Gb genes 
+completely impair all these responses.  To dissect specificity in Gbg signaling 
+to downstream effectors in living cells, we screened a randomly mutagenized library 
+of Gb genes and isolated Gb alleles that lacked the capacity to activate some 
+effectors but retained ability to regulate others.  These mutant Gb subunits 
+were able to link cAR1 to G2, support gene expression, mediate cAMP-induced 
+actin polymerization, and some were able to mediate to chemotaxis toward cAMP.  
+None were able to activate adenylyl cyclase and some did not support chemotaxis.  
+Thus, we separated in vivo functions of the Gbg by making point mutations on Gb.  
+Using the structure of the heterotrimeric G protein displayed in the computer 
+program (CHAIN), we examined the positions and the molecular interactions of the 
+amino acids substituted in each of the mutant Gbs, and analyzed the possible 
+effects of each replacement.  We identified several residues that are crucial 
+for activation of the adenylyl cyclase (ACA).  These residues formed an area 
+that overlaps but is not identical with regions where bovine Gtbg interacts with 
+its regulators, Ga and phosducin.
+
+-------------------------------------------------------------------------
+
+Production and activity of spore differentiation factors (SDFs) in Dictyostelium
+
+Christophe Anjard1, Wen Tsan Chang2, Julian Gross2 and Wolfgang Nellen1*
+
+1 Universität Kassel, Abt. Genetik, Heinrich-Plett-Str. 40, D-34 132 Kassel, Germany.
+2 University of Oxford, South Park Road, Oxford OX1 3 QU, England
+
+Development, in press.
+
+Summary
+
+   SDF-1 and SDF-2 are peptides that promote terminal spore differentiation 
+under submerged conditions. The present study shows that they accumulate 
+differentially and are released during the development of wild-type cells 
+and can promote spore formation in cells disaggregated from wild-type 
+culminants. SDF-1 accumulates during the slug stage and is released in a 
+single burst at the onset of culmination while SDF-2 accumulates during 
+early culmination and is released in a single burst from mid-culminants.  
+The effects of SDF-1 and SDF-2 on stalk cell formation in cell monolayers 
+were investigated. SDF-1 by itself induces stalk cell formation in some 
+strains and also synergizes with the stalk-cell-inducing factor, DIF-1.  
+cAMP has an inhibitory effect on stalk cell formation when either DIF-1 
+or SDF-1 are present on their own but is almost not inhibitory when both 
+are present. SDF-2 alone does not induce stalk cell formation and appears 
+to inhibit the response to DIF-1. At the same time it increases the extent 
+of vacuolization of the stalk cells that are produced. We propose that 
+the release of SDF-1 and then of SDF-2 may mark irreversible steps in 
+the developmental programme associated respectively with culmination and 
+spore maturation.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 3]
+

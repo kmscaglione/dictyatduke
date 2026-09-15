@@ -1,0 +1,175 @@
+dictyNews
+Electronic Edition
+Volume 35, number 17
+Dec 10, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Molecular mechanism of Ena/VASP-mediated actin filament elongation
+
+1 Dennis Breitsprecher, 1 Antje K. Kiesewetter, 1 Joern Linkner, 
+2 Marlene Vinzenz, ,4 Theresia E.B. Stradal, 2 J. Victor Small, 
+1 Ute Curth, 4 Richard B. Dickinson and 1 Jan Faix.
+
+
+1) Institute for Biophysical Chemistry, Hannover Medical School, Germany. 
+2) Institute of Molecular Biotechnology, Austrian Academy of Sciences, Austria. 
+3) Institute for Molecular Cell Biology, University of Muenster, Germany. 
+4) Department of Chemical Engineering, University of Florida, USA.
+
+
+EMBO Journal, in press
+
+Ena/VASP proteins are implicated in a variety of fundamental cellular processes
+including axon guidance and cell migration. In vitro, they enhance elongation of 
+actin filaments, but at rates differing in nearly an order of magnitude according 
+to species, raising questions about the molecular determinants of rate control. 
+Chimeras from fast and slow elongating VASP proteins were generated and their 
+ability to promote actin polymerization and to bind G-actin was assessed. By in 
+vitro TIRF microscopy as well as thermodynamic and kinetic analyses we show 
+that the velocity of VASP-mediated filament elongation depends on G-actin 
+recruitment by the WH2 motif. Comparison of the experimentally observed 
+elongation rates with a quantitative mathematical model moreover revealed that 
+Ena/VASP-mediated filament elongation displays a saturation dependence on 
+the actin monomer concentration, implying that Ena/VASP proteins, independent 
+of species, are fully saturated with actin in vivo and generally act as potent 
+filament elongators. Moreover, our data showed that spontaneous addition of 
+monomers does not occur during processive VASP-mediated filament elongation 
+on surfaces, suggesting that most filament formation in cells is actively controlled.
+
+
+Submitted by Jan Faix [faix.jan@mh-hannover.de]
+--------------------------------------------------------------------------------
+
+
+The Dictyostelium Model for Mitochondrial Disease
+
+Lisa M. Francione,1 Sarah J. Annesley1, Sergio Carilla-Latorre2, 
+Ricardo Escalante2, Paul R. Fisher1*
+
+1 Department of  Microbiology, La Trobe University, VIC 3086, Australia.
+2 Instituto de Investigaciones Biomédicas Alberto Sols, CSIC-UAM, 
+Arturo Duperier 4, 28029-Madrid, Spain.
+
+
+Seminars in Cell and Developmental Biology, in press.
+
+Mitochondrial diseases are a diverse family of genetic disorders caused 
+by mutations affecting mitochondrial proteins encoded in either the nuclear 
+or the mitochondrial genome. By impairing mitochondrial oxidative 
+phosphorylation, they compromise cellular energy production and the 
+downstream consequences in humans are a bewilderingly complex array 
+of signs and symptoms that can affect any of the major organ systems in 
+unpredictable combinations. This complexity and unpredictability has 
+limited our understanding of the cytopathological consequences of 
+mitochondrial dysfunction. By contrast, in Dictyostelium the mitochondrial 
+disease phenotypes are consistent, measurable “readouts” of dysregulated 
+intracellular signalling pathways. When the underlying genetic defects 
+would produce coordinate, generalized deficiencies in multiple 
+mitochondrial respiratory complexes, the disease phenotypes are mediated 
+by chronic activation of an energy-sensing protein kinase, AMPK 
+(AMP-activated protein kinase). This chronic AMPK hyperactivity maintains 
+mitochondrial mass and cellular ATP concentrations at normal levels, but 
+chronically impairs growth, cell cycle progression, multicellular development, 
+photosensory and thermosensory signal transduction. It also causes the 
+cells to support greater proliferation of the intracellular bacterial pathogen, 
+Legionella pneumophila. Notably however, phagocytic and macropinocytic 
+nutrient uptake are impervious both to AMPK signalling and to these types 
+of mitochondrial dysfunction. Surprisingly, a Complex I-specific deficiency 
+(midA knockout) not only causes the foregoing AMPK-mediated defects, 
+but also produces a dramatic deficit in endocytic nutrient uptake accompanied 
+by an additional secondary defect in growth. More restricted and specific 
+phenotypic outcomes are produced by knocking out genes for nuclear-encoded 
+mitochondrial proteins that are not required for respiration. The Dictyostelium 
+model for mitochondrial disease has thus revealed consistent patterns of 
+sublethal dysregulation of intracellular signalling pathways that are produced
+by different types of underlying mitochondrial dysfunction.
+
+
+Submitted by Paul Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+The NDR family kinase NdrA of Dictyostelium localizes to the centrosome 
+and is required for efficient phagocytosis 
+
+Peter M. Kastner, Michael Schleicher, Annette Müller-Taubenberger
+
+Institute for Anatomy and Cell Biology, Ludwig Maximilian University of Munich, 
+Schillerstr. 42, 80336 Munich, Germany
+
+
+Traffic, in press
+
+Dictyostelium discoideum cells are professional phagocytes that provide an 
+easily accessible system to gain insights into the mechanisms and the regulatory 
+machinery controlling phagocytosis. Here, we describe a novel function for NDR 
+(nuclear Dbf2-related) family kinases in phagocytosis of D. discoideum. Deletion 
+of one of the four NDR kinases of D. discoideum, NdrA, resulted in impaired cell 
+growth caused by reduced phagocytosis rates. Detailed analysis of NdrA-null 
+cells revealed that the formation of phagocytic cups was delayed. Microscopic 
+investigations showed that NdrA localizes to centrosomes, and NdrA was also 
+identified in isolated centrosome preparations. The localization of NdrA is 
+regulated during the cell cycle. In prophase, NdrA disappears from the 
+centrosome and forms a cloud-like structure around the spindle, which is 
+totally absent during later stages until completion of mitosis. Our results 
+suggest that a signal which originates from the NdrA kinase at the centrosome 
+affects the efficiency of phagocytosis. We assume that in NdrA-null cells the 
+defects in phagocytosis may be caused by an impairment of vesicle trafficking 
+which is involved in providing new membrane at the sites of particle uptake. 
+
+
+Submitted by Annette Müller-Taubenberger [amueller@lrz.uni-muenchen.de]
+--------------------------------------------------------------------------------
+
+
+Primitive agriculture in a social amoeba
+
+Debra A. Brock, Tracy E. Douglas, David C. Queller, and Joan E. Strassmann
+
+Department of Ecology and Evolutionary Biology, Rice University, 
+6100 Main Street, Houston, Texas  77005, USA
+
+
+Nature, in press
+
+Agriculture has been a large part of the ecological success of humans.  A 
+handful of animals, notably the fungus growing ants, termites, and ambrosia 
+beetles, have advanced agriculture that involves dispersing and seeding of 
+food propagules, cultivation of the crop, and sustainable harvesting. More 
+primitive examples, which could be called husbandry because they involve 
+fewer adaptations, include marine snails farming intertidal fungi and damselfish 
+farming algae. Recent work has shown that microorganisms are surprisingly 
+like animals in having sophisticated behaviours such as cooperation, 
+communication, and recognition, as well as many kinds of symbioses. We now 
+show that the social amoeba Dictyostelium discoideum exhibits a primitive 
+farming symbiosis that includes dispersal and prudent harvesting of the crop.  
+About a third of wild-collected clones engage in husbandry of bacteria.  Instead 
+of consuming all bacteria in their patch, they stop feeding early and incorporate 
+bacteria into their fruiting bodies. They then carry bacteria during spore 
+dispersal and can seed a new food crop, a major advantage if edible bacteria 
+are lacking at the new site. However, if they arrive at sites already containing 
+appropriate bacteria, the costs of early feeding cessation are not compensated, 
+which may account for the dichotomous nature of this farming symbiosis. The 
+striking convergent evolution between bacterial husbandry in social amoebas 
+and fungus farming in social insects makes sense because multigenerational 
+benefits of farming go to already-established kin groups. 
+
+
+Submitted by Debbie Brock [dbrock@rice.edu]
+==============================================================
+[End dictyNews, volume 35, number 17]

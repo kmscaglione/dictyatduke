@@ -1,0 +1,61 @@
+dictyNews
+Electronic Edition
+Volume 40, number 18
+Jul 31, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Cross-species Functional Complementation of Cellulose Synthase 
+during the development of Cellular Slime Molds
+
+Hidekazu Kuwayama, Takeru Tohyama, Hideko Urushihara
+Faculty of Life and Environmental Sciences, University of 
+Tsukuba, 1-1-1 Tennodai, Tsukuba, Ibaraki 305-8572, Japan
+
+Development, Growth & Differentiation, in press
+
+Cellulose is a major and important component of the extracellular 
+matrix during the development of Dictyostelium discoideum. Upon 
+starvation, solitary amoebae of D. discoideum gather and form 
+fruiting bodies in which cells differentiate into stalk cells 
+and spores. The stalk tubes and walls of spores and stalk cells 
+are made of cellulose. In the genus Acytostelium, however, all 
+cells are destined to become spores and the stalks comprise only 
+a cellulose tube, suggesting species-specific regulation of 
+cellulose synthesis. In this study, we cloned a putative cellulose 
+synthase gene (cesA) of Acytostelium subglobosum and performed 
+comparative analyses with the D. discoideum cellulose synthase 
+gene (dcsA). Although the deduced amino acid sequences were 
+highly conserved between cesA and dcsA, the numbers of 
+transmembrane spans preceding the catalytic domain were 
+dissimilar; 2 and 3, respectively. Since ectopic expression 
+of cesA in dcsA-null cells failed to restore the developmental 
+defects of the mutant, we constructed a series of chimerical 
+genes for complementation analyses and found that the catalytic 
+domain of cesA was functional in D. discoideum cells if the 
+preceding transmembrane region was swapped with dcsA. The 
+non-functional products that contained the cesA-derived 
+transmembrane region were localized to lysosomes. These results 
+indicate that the transmembrane region of cellulose synthase is 
+essential for proper accumulation of cellulose during the 
+development of D. discoideum and that its differential 
+localization in A. subglobosum may be related to the 
+characteristic morphogenesis in this species.
+
+Submitted by Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+==============================================================
+[End dictyNews, volume 40, number 18]

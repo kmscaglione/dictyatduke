@@ -1,0 +1,148 @@
+dictyNews
+Electronic Edition
+Volume 38, number 4
+February 3, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Evolution of self-organisation in Dictyostelia by adaptation of a 
+non-selective phosphodiesterase and a matrix component for 
+regulated cAMP degradation
+
+Yoshinori Kawabe, Karin E. Weening, Jacques Marquay-Markiewicz 
+and Pauline Schaap*
+
+College of Life Sciences, University of Dundee, Dundee DD15EH, UK
+
+
+Development, in press
+
+Dictyostelium discoideum amoebas coordinate aggregation and 
+morphogenesis by secreting cAMP pulses that propagate as waves 
+through fields of cells and multicellular structures. To retrace how this 
+mechanism for self-organisation evolved, we studied the origin of the 
+cAMP phosphodiesterase PdsA and its inhibitor PdiA, which are 
+essential for cAMP wave propagation. D.discoideum and other species 
+that use cAMP to aggregate reside in group 4 of the four major groups 
+of Dictyostelia. We found that groups 1-3 express a non-specific, low 
+affinity ortholog of PdsA, which gained cAMP selectivity and increased 
+200-fold in affinity in group 4. A low affinity group 3 PdsA only partially 
+restored aggregation of a D.discoideum pdsA null mutant, but was more 
+effective at restoring fruiting body morphogenesis. Deletion of a group 2 
+PdsA gene resulted in disruption of fruiting body morphogenesis, but 
+left aggregation unaffected. Together, these results show that groups 
+1-3 use a low affinity PdsA for morphogenesis that is neither suited 
+nor required for aggregation. PdiA belongs to a family of matrix proteins 
+that are present in all Dictyostelia and consist mainly of cysteine-rich 
+repeats. However, in its current form with several extensively modified 
+repeats, PdiA is only present in the group 4. PdiA is essential for 
+initiating spiral cAMP waves, which, by organizing large territories, 
+generate the large fruiting structures that characterize group 4. We 
+conclude that efficient cAMP-mediated aggregation in group 4 evolved 
+by recruitment and adaptation of a non-selective phosphodiesterase 
+and a matrix component into a system for regulated cAMP 
+degradation.
+
+
+Submitted by Pauline Schaap [p.schaap@dundee.ac.uk]
+--------------------------------------------------------------------------------------
+
+
+Regulation of aggregate size and pattern by adenosine and caffeine 
+in cellular slime molds.
+
+Jaiswal P, Soldati T, Thewes S, Baskar R.
+
+
+BMC Dev Biol. 2012 Jan 23;12(1):5.
+ 
+BACKGROUND: Multicellularity in cellular slime molds is achieved 
+by aggregation of several hundreds to thousands of cells. In the model 
+slime mold Dictyostelium discoideum, adenosine is known to increase 
+the aggregate size and its antagonist caffeine reduces the aggregate 
+size. However, it is not clear if the actions of adenosine and caffeine 
+are evolutionarily conserved among other slime molds known to use 
+structurally unrelated chemoattractants.
+ 
+RESULTS: We have examined how the known factors affecting 
+aggregate size are modulated by adenosine and caffeine. Result: 
+Adenosine and caffeine induced the formation of large and small 
+aggregates respectively, in evolutionarily distinct slime molds known 
+to use diverse chemoattractants for their aggregation. Due to its 
+genetic tractability, we chose D. discoideum to further investigate the 
+factors affecting aggregate size. The changes in aggregate size are 
+caused by the effect of the compounds on several parameters such 
+as cell number and size, cell-cell adhesion, cAMP signal relay and 
+cell counting mechanisms. While some of the effects of these two 
+compounds are opposite to each other, interestingly, both 
+compounds increase the intracellular glucose level and strengthen 
+cell-cell adhesion. These compounds also inhibit the synthesis of 
+cAMP phosphodiesterase (PdsA), weakening the relay of extracellular 
+cAMP signal. Adenosine as well as caffeine rescue mutants impaired 
+in stream formation (pde4- and pdiA-) and colony size (smlA- and ctnA-) 
+and restore their parental aggregate size.
+ 
+CONCLUSION: Adenosine increased the cell division timings thereby 
+making large number of cells available for aggregation and also it 
+marginally increased the cell size contributing to large aggregate size. 
+Reduced cell division rates and decreased cell size in the presence of 
+caffeine makes the aggregates smaller than controls. Both the 
+compounds altered the speed of the chemotactic amoebae causing 
+a variation in aggregate size. Our data strongly suggests that cytosolic 
+glucose and extracellular cAMP levels are the other major determinants 
+regulating aggregate size and pattern. Importantly, the aggregation 
+process is conserved among different lineages of cellular slime molds 
+despite using unrelated signalling molecules for aggregation.
+
+
+Submitted by R. Baskar [rbaskar@IITM.AC.IN]
+--------------------------------------------------------------------------------------
+
+
+ZizB, a novel RacGEF regulates development, cell motility and 
+cytokinesis in Dictyostelium
+
+Nicholl K. Pakes*, Douwe Veltman*, Francisco Rivero, Jamal Nasir, 
+Robert Insall, and Robin S.B. Williams
+
+
+J. Cell Sci., in press
+
+Dock (Dedicator of Cytokinesis) proteins represent a family of Guanine 
+nucleotide Exchange Factors (GEFs) that include the well studied Dock180 
+family and the poorly characterised zizimin family. Our current understanding 
+of Dock180 function is to regulate Rho small GTPases, playing a role in a 
+number of cell processes including cell migration, development and division. 
+Here, we have employed a tractable model for cell motility research, 
+Dictyostelium discoideum, to help elucidate the role of the related zizimin 
+proteins. We show that gene ablation of zizA causes no change in 
+development whereas ablation of zizB gives rise to an aberrant 
+developmental morphology and a reduction in cell directionality and velocity, 
+and altered cell shape. Fluorescently labeled ZizA protein associates with 
+the microtubule organizing centre (MTOC), whereas the ZizB protein 
+exhibits cortical enrichment. Overexpression of ZizB also causes an 
+increase in the number filopodia and a partial inhibition of cytokinesis. 
+Analysis of ZizB protein binding partners indicates a direct binding to Rac1a 
+and a range of actin-interacting proteins. In conclusion our work provides 
+the first insight into the molecular and cellular functions of zizimin GEF 
+proteins playing a role in cell movement, filopodia formation and cytokinesis.
+
+
+Submitted by  Robin Williams [Robin.Williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 38, number 4]

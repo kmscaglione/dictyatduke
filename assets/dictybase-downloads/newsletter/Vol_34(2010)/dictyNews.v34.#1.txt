@@ -1,0 +1,308 @@
+dictyNews
+Electronic Edition
+Volume 34, number 1
+January 8, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+Mitochondrial processing peptidase activity is controlled by the processing 
+of alpha-MPP during development in Dictyostelium discoideum
+
+Koki Nagayama a),b),† and Tetsuo Ohmachi b)
+
+a) Science of Bioresources, United Graduate School of Agricultural Sciences, 
+Iwate University, Morioka, Iwate 020-8551, Japan
+b) Department of Biochemistry and Biotechnology, Faculty of Agriculture and 
+Life Science, Hirosaki University, Hirosaki, 036-8561, Japan
+† Present address: Faculty of Life Sciences, University of Manchester, 
+Manchester, M13 9PT, UK
+
+
+Microbiology, in press
+
+We investigated the expression of the a subunit of the Dictyostelium 
+mitochondrial processing peptidase (Dda-MPP) during development. 
+Dda-MPP mRNA is expressed at highest levels in vegetatively growing 
+cells and during early development, and is markedly down-regulated 
+after 10 h of development. The Dda-MPP protein is expressed as two 
+forms, designated a-MPPH and a-MPPL, throughout the Dictyostelium l
+ife cycle. The larger form, a-MPPH, is cleaved to produce the functional 
+a-MPPL form. We were not able to isolate mutants in which the a-mpp 
+gene had been disrupted. Instead, an antisense transformant aA2 
+expressing a-MPP at a lower level than the wild-type AX-3 was isolated 
+to examine the function of the a-MPP protein. Development of the aA2 
+strain was normal until the slug formation stage, but the slug stage was 
+prolonged to ~24 h. In this prolonged slug stage, only a-MPPH was 
+present, and a-MPPL protein and MPP activity were not detected. After 
+28 h, a-MPPL and MPP activity reappeared, and normal fruiting bodies 
+were formed after a delay of approximately 8 h compared with normal 
+development. These results indicate that MPP activity is controlled by the 
+processing of a-MPPH to a-MPPL, during development in Dictyostelium. 
+
+
+Submitted by Tetsuo Ohmachi [tohmachi@cc.hirosaki-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Genetic heterogeneity in wild isolates of cellular slime mould social groups
+
+Santosh Sathe1*, Sonia Kaushik1, Albert Lalremruata2, Ramesh K. Aggarwal2, 
+James C. Cavender3 and Vidyanand Nanjundiah1
+
+1Centre for Ecological Sciences, Indian Institute of Science, Bangalore 
+560012, India
+2Centre for Cellular and Molecular Biology, Hyderabad 500007, India; 
+3Department of Environmental and Plant Biology, Ohio University, 
+Athens, Ohio 45701, USA.
+
+
+Microbial Ecology, in press
+
+Knowledge of the genetic structure of social groups in the wild is necessary 
+for explaining the evolutionary origin and maintenance of sociality in the 
+cellular slime moulds (CSMs). This study addresses the issues of spatial 
+distribution, dispersal and genetic heterogeneity in social groups of CSMs. 
+We confirm that CSMs are widespread in undisturbed forest soil from South 
+India. They are also seen in the dung of a variety of large mammals. The 
+species found by us include Dictyostelium discoideum, D. purpureum, 
+D. giganteum, D. rosareum, D. polycephalum, D. minutum, D. macrocephalum, 
+Dsp (bifurcating – awaiting further description), Polysphondylium pallidum and 
+P. violaceum; others await identification. Consistent with the mode of dispersal 
+that this implies, most social groups in the two species examined for detailed 
+study, Dictyostelium giganteum and D. purpureum, are multi-clonal. 9 out of 
+11 D. giganteum and 6 out of 6 D. purpureum fruiting bodies that were 
+examined, meaning 15 out of 17 fruiting bodies in all, were chimeras (8 of 
+those fruiting bodies were from animal dung and 9 from soil). The minimum 
+number of distinct genotypes in a single fruiting body was 3 to 7 (animal dung) 
+and 1 to 9 (soil). Taken together with earlier findings on functional heterogeneity 
+between Dictyostelids found in the same microhabitat, these observations have 
+implications for models of the evolution of social behaviour in the CSMs.
+
+
+Submitted by Santosh Sathe [santosh_sathe@ces.iisc.ernet.in]
+--------------------------------------------------------------------------------
+
+
+Digital nature of the immediate-early transcriptional response
+
+Michelle Stevense, Tetsuya Muramoto, Iris Müller and Jonathan R. Chubb
+
+
+Development, in press
+
+Stimulation of transcription by extracellular signals is a major component of cells’
+decision making. Yet the quantitative relationship between signal and acute
+transcriptional response is unclear. One view is that transcription is directly graded
+with inducer concentration. In an alternative model the response occurs only above 
+a threshold inducer concentration. Standard methods for monitoring transcription 
+lack continuous information from individual cells or mask immediate-early 
+transcription by measuring downstream protein expression. We have therefore 
+used a technique for directly monitoring nascent RNA in living cells, to quantify 
+the direct transcriptional response to an extracellular signal in real time, in single 
+cells. At increasing doses of inducer, increasing numbers of cells displayed a 
+transcriptional response. However, over the same range of doses, the change in 
+cell response strength, measured as the length, frequency and intensity of 
+transcriptional pulses, was small, with considerable variation between cells. These 
+data support a model where cells have different sensitivities to developmental 
+inducer and respond in a digital manner above individual stimulus thresholds. 
+Biased digital responses may  be necessary for certain forms of developmental 
+specification. Limiting bias in responsiveness is required to reduce noise in 
+positional signalling.
+
+
+Submitted by Jonathan Chubb [j.chubb@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Methylation of H3K4 is required for inheritance of active transcriptional states
+
+Tetsuya Muramoto, Iris Müller, Giles Thomas, Andrew Melvin and 
+Jonathan R. Chubb
+
+University of Dundee, United Kingdom
+
+
+Current Biology, in press
+
+Background 
+Maintenance of differentiation programmes requires stability, when
+appropriate, of transcriptional states. However, the extent to which
+inheritance of active transcriptional states occurs from mother to
+daughter cells has not been directly addressed in unperturbed cell
+populations. 
+
+Results 
+By live imaging of single gene transcriptional events in individual
+cells, we have directly recorded the potential for mitotic inheritance
+of transcriptional states down cell lineages. Our data showed strong
+similarity in frequency of transcriptional firing between mother and
+daughter cells. This memory persisted for complete cell cycles. Both
+transcriptional pulse length and pulsing rate contributed to overall
+inheritance, and memory was determined by lineage, not cell environment.
+Analysis of transcription in chromatin mutants demonstrated the histone
+H3K4 methylase Set1, and Ash2, a component of the methylase complex,
+were required for memory. The effects of Set1 methylation may be
+mediated directly by chromatin, as loss of memory also occurred when
+endogenous H3K4 was replaced by alanine. Although methylated H3K4
+is usually associated with active transcriptional units, the modification
+was not required for gene activity, but stabilised transcriptional
+frequency between generations. 
+
+Conclusions 
+Our data indicate methylated H3K4 can act as a chromatin mark reflecting
+the original meaning of “epigenetic”. 
+
+The University of Dundee is a registered Scottish charity, No: SC015096
+
+
+Submitted by Tetsuya Muramoto [t.muramoto@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+A new Dictyostelium prestalk cell sub-type 
+
+Yoko Yamada1, Robert R. Kay3, Gareth Bloomfield2,3, Susan Ross1,
+AlasdairIvens2, and Jeffrey G. Williams1*
+
+School of Life Sciences1,University of Dundee, Dow St., Dundee DD3 5EH, UK
+WellcomeTrust Sanger Institute2, Hinxton,UK
+MRC Laboratory of Molecular Biology3, Hills Road, Cambridge, CB2 2QH, UK
+*Author for correspondence 
+e-mail:j.g.williams@dundee.ac.uk
+
+Dev. Biol., in press
+
+The mature fruiting body of Dictyostelium consists of stalk and spore
+cells but its construction, and the migration of the preceding slug
+stage, requires a number of specialized sub-types of prestalk cell whose
+nature and function are not well understood. The prototypic 
+prestalk-specific gene, ecmA, isinducible by the polyketide DIF-1 in a 
+monolayer assay and requires the DimB and MybE transcription
+factors for full inducibility. We perform genome-wide micro-array
+analyses, on parental, mybE-and dimB- cells, and identify many 
+additional genes that depend on MybE and DimB for their DIF-1
+inducibility. Surprisingly, an even larger number of genes are only
+DIF-inducible in mybE- cells, some genes are only inducible in DimB-
+cells and some are inducible when either transcription factor is absent.
+Thus in assay conditions where MybE and DimB function as inducers of
+ecmA these genes fall under negative control by the same two
+transcription factors. We have studied in detail rtaA, one of the MybE and
+DimB repressed genes. One especially enigmatic group of prestalk cells 
+is the anterior-like cells (ALCs), which exist intermingled with
+prespore cells in the slug.  A promoter fusion reporter gene, rtaA:galu,
+is expressed in a sub-set of the ALCs that is distinct from the ALC
+population detected by a reporter construct containing ecmA and ecmB
+promoter fragments. At culmination, when the ALC sort out from the
+prespore cells and differentiate to form three ancillary stalk cell
+structures: the upper cup, the lower cup and the outer basal disc, the
+rtaA:galu expressing cells preferentially populate the upper cup region.
+This fact, and their virtual absence from the anterior and
+posterior regions of the slug, identifies them as a new prestalk
+sub-type: the pstU cells.PstU cell differentiation is, as expected,
+increased in a dimB- mutant during normal development but, surprisingly,
+they differentiate normally in a mutant lacking DIF. Thus genetic removal
+of MybE or DimB reveals an alternate DIF-1 activation pathway, for pstU
+differentiation, that functions under monolayer assay conditions but that
+is not essential during multicellular development.
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Dual regulation of a Dictyostelium STAT by cGMP and calcium signalling
+
+Tsuyoshi Araki1, Wouter N.van Egmond2,Peter J. M. van Haastert2, and 
+Jeffrey G.Williams1+
+
+University of Dundee1, College of Life Sciences, DowStreet, Dundee DD1 5EH, UK
+University of Groningen2, Kerklaan 30, 9751NN Haren, NL 
++ author for correspondence:
+j.g.williams@dundee.ac.uk
+
+
+J. Cell Sci., in press
+
+When cells are exposed to hyper-osmotic stress the Dictyostelium STAT
+orthologue STATc is rapidly tyrosine phosphorylated. Previous
+observations suggest a non-paradigmatic mode of STAT activation, whereby
+stress-induced serine phosphorylation of the PTP3 protein tyrosine
+phosphatase inhibits its activity towards STATc. We show that two serine
+residues in PTP3, S448 and S747, are rapidly phosphorylated after osmotic
+stress. cGMP is a second messenger for hyper-osmotic stress responses and
+8-bromo-cGMP, a membrane permeant form of cGMP, is a known activator of
+STATc. GbpC, a cGMP binding Ras-GEFprotein, is a founder member of a
+protein family that includes LRRK2, the gene commonly mutated in familial
+Parkinsons disease. Genetic ablation of gbpC prevents STATc activation
+by 8-bromo-cGMP. However, osmotic stress-induced activation of STATc
+occurs normally in the gbpC null mutant. Moreover, 8-bromo-cGMP does
+not stimulate phosphorylation of S747 and S448 of PTP3.
+These facts imply redundant activation pathways and we present evidence
+that intracellular calcium is a parallel second messenger; by showing
+that agents that elevate intracellular calcium are potent STATc
+activators that do stimulate phosphorylation of S747 and S448. We propose
+that stress-induced cGMP signalling may exert its stimulatory effect by
+potentiating the activity of a semi-constitutive tyrosine kinase that
+phosphorylates STATc while parallel, stress-induced calcium signalling
+represses STATc dephosphorylation via its inhibitory effect on PTP3.
+
+The University of Dundee is a registered Scottish charity, No: SC015096
+
+
+Submitted by Jeff Williams [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Retrieval of the vacuolar H-ATPase from phagosomes revealed by 
+live cell imaging. 
+
+Clarke M, Maddera L, Engel U, Gerisch G.
+
+
+PLoS ONE. 2010; 5(1):e8585.
+
+The vacuolar H+-ATPase, or V-ATPase, is a highly-conserved multi-subunit 
+enzyme that transports protons across membranes at the expense of ATP. 
+The resulting proton gradient serves many essential functions, among them 
+energizing transport of small molecules such as neurotransmitters, and 
+acidifying organelles such as endosomes. The enzyme is not present in 
+the plasma membrane from which a phagosome is formed, but is rapidly 
+delivered by fusion with endosomes that already bear the V-ATPase in 
+their membranes. Similarly, the enzyme is thought to be retrieved from 
+phagosome membranes prior to exocytosis of indigestible material, 
+although that process has not been directly visualized. To monitor 
+trafficking of the V-ATPase in the phagocytic pathway of Dictyostelium 
+discoideum, we fed the cells yeast, large particles that maintain their 
+during trafficking. To track pH changes, we conjugated the yeast with 
+fluorescein isothiocyanate. Cells were labeled with VatM-GFP, a 
+fluorescently-tagged transmembrane subunit of the V-ATPase, in parallel 
+with stage-specific endosomal markers or in combination with mRFP-tagged 
+cytoskeletal proteins. We find that the V-ATPase is commonly retrieved from 
+the phagosome membrane by vesiculation shortly before exocytosis. 
+However, if the cells are kept in confined spaces, a bulky phagosome may 
+be exocytosed prematurely. In this event, a large V-ATPase-rich vacuole 
+coated with actin typically separates from the acidic phagosome shortly 
+before exocytosis. This vacuole is propelled by an actin tail and soon 
+acquires the properties of an early endosome, revealing an unexpected 
+mechanism for rapid recycling of the V-ATPase. Any V-ATPase that 
+reaches the plasma membrane is also promptly retrieved. Thus, live cell 
+microscopy has revealed both a usual route and alternative means of 
+recycling the V-ATPase in the endocytic pathway.
+
+
+Submitted by Margaret Clarke [clarkem@omrf.ouhsc.edu]
+==============================================================
+[End dictyNews, volume 34, number 1]

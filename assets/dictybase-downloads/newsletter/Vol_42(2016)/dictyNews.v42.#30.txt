@@ -1,0 +1,140 @@
+dictyNews
+Electronic Edition
+Volume 42, number 30
+December 16, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY HOLIDAYS!
+
+
+=========
+Abstracts
+=========
+
+
+Mycobacterium marinum degrades both triacylglycerols and 
+phospholipids from its Dictyostelium host to synthesise its 
+own triacylglycerols and generate lipid inclusions
+
+Caroline Barisch and Thierry Soldati
+
+
+PLoS Pathogens, in press
+
+During a tuberculosis infection and inside lipid-laden foamy 
+macrophages, fatty acids (FAs) and sterols are the major energy 
+and carbon source for Mycobacterium tuberculosis. Mycobacteria 
+can be found both inside a vacuole and the cytosol, but how this 
+impacts their access to lipids is not well appreciated. Lipid droplets 
+(LDs) store FAs in form of triacylglycerols (TAGs) and are energy 
+reservoirs of prokaryotes and eukaryotes. Using the Dictyostelium 
+discoideum/Mycobacterium marinum infection model we showed 
+that M. marinum accesses host LDs to build up its own intracytosolic 
+lipid inclusions (ILIs). Here, we show that host LDs aggregate at 
+regions of the bacteria that become exposed to the cytosol, and 
+appear to coalesce on their hydrophobic surface leading to a transfer 
+of diacylglycerol O-acyltransferase 2 (Dgat2)-GFP onto the bacteria. 
+Dictyostelium knockout mutants for both Dgat enzymes are unable to 
+generate LDs. Instead, the excess of exogenous FAs is esterified 
+predominantly into phospholipids, inducing uncontrolled proliferation 
+of the endoplasmic reticulum (ER). Strikingly, in absence of host LDs, 
+M. marinum alternatively exploits these phospholipids, resulting in 
+rapid reversal of ER-proliferation. In addition, the bacteria are unable 
+to restrict their acquisition of lipids from the dgat1 and 2 double 
+knockout leading to vast accumulation of ILIs. Recent data indicate 
+that the presence of ILIs is one of the characteristics of dormant 
+mycobacteria. During Dictyostelium infection, ILI formation in M. 
+marinum is not accompanied by a significant change in intracellular 
+growth and a reduction in metabolic activity, thus providing evidence 
+that storage of neutral lipids does not necessarily induce dormancy.
+
+
+submitted by: Thierry Soldati [thierry.soldati@unige.ch]
+———————————————————————————————————————
+
+
+Adenylate cyclase A acting on PKA mediates induction of stalk 
+formation by  c-di-GMP at the Dictyostelium organizer
+
+Zhi-hui Chen a, Reema Singh a,b, Christian Cole b, Hajara Lawal a, 
+Christina Schilde a, Melanie Febrer c, Geoffrey J. Barton b and 
+Pauline Schaap a*
+
+Divisions of Cell and Developmental Biology a, Computational Biology b, 
+Molecular Medicine c, School of Life Sciences, University of Dundee, 
+Dundee, UK.
+
+
+Proc. Natl. Acad. Sci. USA, in press
+
+Coordination of cell movement with cell differentiation is a major feat 
+of embryonic development. The Dictyostelium stalk always forms at 
+the organizing tip by a mechanism that is not understood. We previously 
+reported that c-di-GMP, synthesized by diguanylate cyclase A (DgcA), 
+induces stalk formation. We here used transcriptional profiling of dgca- 
+structures to identify target genes for c-di-GMP, and used these genes 
+to investigate the c-di-GMP signal transduction pathway. We found that 
+knock-down of PKA activity in prestalk cells reduced stalk gene induction 
+by c-di-GMP, while PKA activation bypassed the c-di-GMP requirement 
+for stalk gene expression. c-di-GMP caused a persistent increase in cAMP, 
+which still occurred in mutants lacking the adenylate cyclases ACG or ACR, 
+or the cAMP phosphodiesterase RegA. However, both inhibition of 
+adenylate cyclase A (ACA) with SQ22536, and incubation of a temperature-
+sensitive ACA mutant at the restrictive temperature prevented c-di-GMP
+ induced cAMP synthesis as well as c-di-GMP induced stalk gene 
+transcription. ACA produces the cAMP signals that coordinate Dictyostelium 
+morphogenetic cell movement and is highly expressed at the organizing tip. 
+The stalk-less dgca- mutant regained its stalk by expression of a light-
+activated adenylate cyclase from the ACA promoter and exposure to light, 
+indicating that cAMP is also the intermediate for c-di-GMP in vivo. Our data
+ show that the more widely expressed DgcA activates tip-expressed ACA,
+ which then acts on PKA to induce stalk genes. These results explain why 
+stalk formation in Dictyostelia always initiates at the site of the 
+morphogenetic organizer.
+
+
+submitted by: Pauline Schaap [p.schaap@dundee.ac.uk]
+———————————————————————————————————————
+
+
+A polycycstin-type transient receptor potential (Trp) channel that is 
+activated by ATP
+
+David Traynor & Robert R. Kay
+
+
+Open Biology, in press
+
+ATP and ADP are ancient extra-cellular signalling molecules that in 
+Dictyostelium amoebae cause rapid, transient increases in cytosolic 
+calcium due to an influx through the plasma membrane.  This response 
+is independent of hetero-trimeric G-proteins, the putative IP3 receptor
+ IplA and all P2X channels.  We show, unexpectedly, that it is abolished 
+in mutants of the polycystin-type transient receptor potential channel, 
+TrpP.  Responses to the chemoattractants cyclic-AMP and folic acid are 
+unaffected in TrpP mutants.  We report that the DIF morphogens, 
+cyclic-di-GMP, GABA, glutamate and adenosine all induce strong 
+cytoplasmic calcium responses, likewise independently of TrpP.  Thus 
+TrpP is dedicated to purinergic signalling.  ATP treatment causes cell 
+blebbing within seconds but this does not require TrpP, implicating a 
+separate purinergic receptor.  We could detect no effect of ATP on 
+chemotaxis and TrpP mutants grow, chemotax and develop almost 
+normally in standard conditions. No gating ligand is known for the human 
+homologue of TrpP, polycystin-2, which causes polycystic kidney disease.  
+Our results now show that TrpP mediates purinergic signalling in 
+Dictyostelium and is directly or indirectly gated by ATP.
+
+
+submitted by: Rob Kay  [rrk@mrc-lmb.cam.ac.uk]
+==============================================================
+[End dictyNews, volume 42, number 30]

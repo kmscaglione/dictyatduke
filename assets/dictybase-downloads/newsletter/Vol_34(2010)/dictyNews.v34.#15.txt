@@ -1,0 +1,109 @@
+dictyNews
+Electronic Edition
+Volume 34, number 15
+May 22, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+The glycopeptidome of a heavily N-glycosylated cell surface glycoprotein of
+Dictyostelium implicated in cell adhesion
+
+Christa L. Feasley, Jennifer M. Johnson, Christopher M. West, and Catherine P. Chia
+
+Department of Biochemistry & Molecular Biology and the Oklahoma Center for Medical
+Glycobiology, University of Oklahoma Health Sciences Center, Oklahoma City, OK 73104 USA;
+School of Biological Sciences, University of Nebraska-Lincoln, Lincoln, NE 68588-0118 USA
+
+J. Proteome Res., in press
+
+Genetic analysis has implicated the cell surface glycoprotein gp130 in cell
+interactions of the social amoeba Dictyostelium, and information about the
+utilization of the 18 N-glycosylation sequons present in gp130 is needed
+to identify critical molecular determinants of its activity. Various glycomics
+strategies, including mass spectrometry of native and derivatized glycans,
+monosaccharide analysis, exoglycosidase digestion and antibody binding,
+were applied to characterize a non-anchored version secreted from Dictyostelium.
+s-gp130 is modified by a predominant Man8GlcNAc4 species containing bisecting and
+intersecting GlcNAc residues, and additional high-mannose N-glycans substituted
+with sulfate, methyl-phosphate and/or core alpha3-fucose. Site mapping confirmed
+the occupancy of 15 sequons, some variably, and glycopeptide analysis confirmed
+14 sites and revealed extensive heterogeneity at most sites. Glycopeptide
+glycoforms ranged from Man6 to Man9, GlcNAc0-2 (peripheral),
+Fuc0-2 (including core alpha3 and peripheral), (SO4)0-1, and (MePO4)0-1,
+which represented elements of virtually the entire known cellular N-glycome
+as inferred from prior metabolic labeling and mass spectrometry studies. gp130,
+and a family of 14 related predicted glycoproteins whose polypeptide sequences
+are rapidly diverging in the Dictyostelium lineage, may contribute a functionally
+important shroud of high-mannose N-glycans at the interface of the amoebae with
+each other, their predators and prey, and the soil environment.
+
+Submitted by Chris West [Cwest2@ouhsc.edu]
+--------------------------------------------------------------------------------
+TWO NOVEL SH2 DOMAIN PROTEINS INTERACT TO REGULATE DICTYOSTELIUM GENE EXPRESSION DURING GROWTH AND EARLY DEVELOPMENT
+Christopher Sugden1, Susan Ross1, Gareth Bloomfield2, AlasdairIvens3, JasonSkelton3,Annette Mueller-Taubenberger4 and Jeffrey G. Williams1
+
+School of Life Sciences1,Universityof Dundee, Dow St.,
+Dundee DD1 5EH, UK
+Wellcome Trust Sanger Institute2,
+Hinxton, UK
+MRC Laboratory of Molecular Biology3,
+Hills Road, Cambridge, CB2 2QH, UK
+Institute for Cell Biology and Center for Integrated Protein
+Science4, Munich (CIPSM),
+Ludwig Maximilians University, Schillerstrasse 42, D-80336
+Munich, Germany
+
+JBC, in press
+
+There are 13 Dictyostelium SH2 domain proteins, almost ten fold fewer than in
+mammals, and only three are functionally unassigned. One of these, LrrB, contains a
+novel combination of protein interaction domains: an SH2 domain and a leucine-rich
+repeat domain. Growth and early development appear normal in the mutant but expressionprofiling
+reveals that three genes active at these stages are greatly under-expressed: the ttdA
+metallo-hydrolase, the abcG10 small molecule transporter and the cinB esterase. In contrast,
+the multi-gene family encoding the lectin Discoidin 1 is over-expressed in the disruptant
+strain. LrrB binds to 14-3-3 protein and the level of binding is highest during growth and
+decreases during early development. Comparative TAP tagging shows that LrrB also
+interacts, via its SH2 domain and in a tyrosine phosphorylation dependent manner, with two
+novel proteins: CldA and CldB. Both these proteins contain a Clu domain; a >200 amino
+acid sequence present within highly conserved eukaryotic proteins required for correct
+mitochondrial dispersal. A functional interaction of LrrB with CldA is supported by
+the fact that a cldA disruptant mutant also under-expresses ttdA, abcG10 and cinB.
+Significantly, CldA is itself one of the three functionally unassigned SH2 domain proteins.
+Thus, just as in metazoa, but on a vastly reduced numerical scale, an interacting
+network of SH2 domain proteins regulates specific Dictyostelium gene expression.
+
+Submitted by Jeff Williams  [j.g.williams@dundee.ac.uk]
+--------------------------------------------------------------------------------
+Two species of dictyostelid cellular slime molds from Alaska
+Maria Romeralo, John C. Landolt, James C. Cavender, Gary A. Laursen,
+and Sandie L. Baldauf.
+
+Mycologia 2010;102 588-595.
+
+In sampling soils to survey dictyostelid cellular slime molds in Alaska
+we encountered two groups of isolates that have morphologies that differ
+from any previously described species within their group. We sequenced the
+nuclear small subunit ribosomal RNA gene (SSU rDNA) of selected isolates from
+the two groups and found sequences from both groups to be distinct from all
+previously described dictyostelid sequences. Phylogenetic analyses place one
+novel species in dictyostelid Group 2 and the other in Group 4 (Schaap et al. 2006).
+In this paper we formally describe as new these two species of cellular slime
+molds, Dictyostelium ammophilum sp. nov. and Dictyostelium boreale sp. nov.,
+based on the combination of morphological and molecular characters.
+
+Submitted by Maria Romeralo [maria.romeralo@gmail.com]
+--------------------------------------------------------------------------------

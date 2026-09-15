@@ -1,0 +1,93 @@
+dictyNews
+Electronic Edition
+Volume 35, number 11
+October 21, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Functional analyses of lissencephaly-related proteins in Dictyostelium  
+
+Irene Meyer, Oliver Kuhnert, Ralph Gräf 
+
+
+Seminars in Cell and Developmental Biology, in press
+
+Lissencephaly is a severe brain developmental disease in human infants, 
+which is usually caused by mutations in either of two genes, LIS1 and 
+DCX. These genes encode proteins interacting with both the microtubule 
+and actin systems. Here we review the implications of data on 
+Dictyostelium LIS1 for the elucidation of LIS1 function in higher cells 
+and emphasize the role of LIS1 and nuclear envelope proteins in nuclear 
+positioning, which is also important for coordinated cell migration during 
+neocortical development. Furthermore, for the first time we characterize 
+Dictyostelium DCX, the only bona fide orthologue of human DCX 
+outside the animal kingdom. We show that DCX functionally interacts 
+with LIS1 and that both proteins have a cytoskeleton-independent 
+function in chemotactic signaling during development. Dictyostelium 
+LIS1 is also required for proper attachment of the centrosome to the 
+nucleus and, thus, nuclear positioning, where the association of these 
+two organelles has turned out to be crucial. It involves not only dynein 
+and dynein-associated proteins such as LIS1 but also SUN proteins 
+of the nuclear envelope. Analyses of Dictyostelium SUN1 mutants 
+have underscored the importance of these proteins for the linkage 
+of centrosomes and nuclei and for the maintenance of chromatin 
+integrity. Taken together, we show that Dictyostelium amoebae, 
+which provide a well established model to study the basic aspects 
+of chemotaxis, cell migration and development, are well suited for 
+the investigation of the molecular and cell biological basis of 
+developmental diseases such as lissencephaly. 
+
+
+Submitted by Ralph Gräf [rgraef@uni-potsdam.de]
+--------------------------------------------------------------------------------
+
+
+Molecular characterization of the evolution
+of phagosomes
+
+Jonathan Boulais, Matthias Trost, Christian Landry, 
+Régis Dieckmann, Emmanuel Levy, Thierry Soldati, 
+Stephen Michnick, Pierre Thibault, and Michel Desjardins
+
+
+Molecular Systems Biology 
+(http://www.ncbi.nlm.nih.gov/pubmed/20959821)
+
+Amoeba use phagocytosis to internalize bacteria as a source of 
+nutrients, whereas multicellular organisms utilize this process as 
+a defense mechanism to kill microbes and, in vertebrates, initiate 
+a sustained immune response. By using a large-scale approach to 
+identify and compare the proteome and phosphoproteome of 
+phagosomes isolated from distant organisms, and by comparative 
+analysis over 39 taxa, we identified an ‘ancient’ core of phagosomal 
+proteins around which the immune functions of this organelle have 
+likely organized. Our data indicated that a larger proportion of the 
+phagosome proteome, compared with the whole cell proteome, 
+has been acquired through gene duplication at a period coinciding 
+with the emergence of innate and adaptive immunity. Our study 
+also characterized in detail the acquisition of novel proteins and 
+the significant remodeling of the phagosome phosphoproteome 
+that contributed to modify the core constituents of this organelle in 
+evolution. Our work thus provides the first thorough analysis of the 
+changes that enabled the transformation of the phagosome from a 
+phagotrophic compartment into an organelle fully competent for 
+antigen presentation.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+==============================================================
+[End dictyNews, volume 35, number 11]

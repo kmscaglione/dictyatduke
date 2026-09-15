@@ -1,0 +1,103 @@
+dictyNews
+Electronic Edition
+Volume 32, number 5
+February 20, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Review: A Novel Function of Ethylene
+
+Aiko Amagai
+
+Department of Biomolecular Science, Graduate School of Life Sciences, 
+Tohoku University, Katahira 2-1-1, Aoba-Ku, Sendai 980-8577, Japan
+
+
+Gene Regulation and Systems Biology, in press
+
+The cellular slime mold, Dictyostelium mucoroides-7 (Dm7) exhibits clear 
+dimorphism; macrocyst formation as a sexual process and sorocap formation 
+as an asexual process. These two life cycles are regulated by two regulators, 
+ethylene and cyclic AMP (cAMP). This is the first report demonstrating a 
+novel function of ethylene at the cellular level. That is, ethylene induces 
+a zygote formed by cell fusion and subsequent nuclear fusion. Recently, the 
+function of ethylene at the molecular level has been clarified as it induces 
+zygote formation through an enhanced expression of a novel gene, zyg1. 
+The signaling pathway for induction or inhibition of zygote formation is 
+now trying to be clarified focusing on the ZYG1 protein.  
+
+
+Submitted by: Aiko Amagai [aiamagai@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+
+Regulation of Dictyostelium morphogenesis by RapGAP3
+
+Taeck J. Jeon, Susan Lee, Gerald Weeks, Richard A. Firtel
+
+
+Developmental Biology, in press
+
+Rap1 is a key regulator of cell adhesion and cell motility in Dictyostelium.  
+Here, we identify a Rap1-specific GAP protein (RapGAP3) and provide 
+evidence that Rap1 signaling regulates cell-cell adhesion and cell migration 
+within the multicellular organism.  RapGAP3 mediates the deactivation of Rap1
+ at the late mound stage of development and plays an important role in regulating 
+cell sorting during apical tip formation, when the anterior-posterior axis of the 
+organism is formed, by controlling cell-cell adhesion and cell migration. The 
+loss of RapGAP3 results in a severely altered morphogenesis of the multicellular 
+organism at the late mound stage.  Direct measurement of cell motility within 
+the mound shows that rapGAP3- cells have a reduced speed of movement and, 
+compared to wild-type cells, have a reduced motility towards the apex.  
+rapGAP3- cells exhibit some increased EDTA/EGTA sensitive cell-cell adhesion 
+at the late mound stage.  RapGAP3 transiently and rapidly translocates to 
+the cell cortex in response to chemoattractant stimulation, which is dependent 
+on F-actin polymerization.  We suggest that the altered morphogenesis and the 
+cell-sorting defect of rapGAP3- cells may result a reduced directional movement 
+of the mutant cells to the apex of the mound.
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+
+Targeting the actin-binding protein VASP to late endosomes induces the formation 
+of giant actin aggregates 
+
+Christian Schmauch, Susan Claussner, Hellmuth Zoeltzer, and Markus Maniak
+Abteilung Zellbiologie und CINSaT, Universitaet Kassel, Heinrich-Plett-Str. 40, 
+34132 Kassel, Germany
+
+
+Eur. J. Cell Biol., in press
+
+In vitro, the vasodilator-stimulated phosphoprotein (VASP) acts as a regulator 
+of actin filament assembly in many ways. In cells it localizes to sites where 
+actin is rapidly polymerized such as filopodia, lamellipodia, and focal adhesions. 
+We have mistargeted VASP to the surface of the late endosome in Dictyostelium 
+cells thereby inducing the formation of a dense actin aggregate which sequesters 
+various actin-binding proteins and endosomal components. Depletion of these 
+proteins from the cytoplasm leads to phenotypes mimicking the corresponding 
+knockout cells. Some properties of the actin aggregate are reminiscent of Hirano 
+bodies that are often observed in nerve tissue from patients suffering from 
+neurodegenerative diseases, opening the possibility that protein sequestration 
+contributes to neuronal malfunction.
+
+
+Submitted by: Markus Maniak [maiak@uni-kassel.de]
+==============================================================
+[End dictyNews, volume 32, number 5]

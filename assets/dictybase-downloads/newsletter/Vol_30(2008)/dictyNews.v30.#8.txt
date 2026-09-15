@@ -1,0 +1,132 @@
+dictyNews
+Electronic Edition
+Volume 30, number 8
+February 29, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Establishment of a new method for precisely determining the functions of 
+individual mitochondrial genes, using Dictyostelium cells
+
+Junji Chida 1,2, Aiko Amagai 1, Masashi Tanaka3 and Yasuo Maeda 1,*
+
+1: Department of Developmental Biology and Neurosciences, Graduate School 
+of Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+2: Division of Enzyme Chemistry, Institute for Enzyme Research, Tokushima 
+University, Tokushima, Tokushima 770-8503, Japan
+3: Genomics for Longevity and Health, Tokyo Metropolitan Institute of 
+Gerontology, 35-2 Sakae-cho, Itabashi-ku, Tokyo 173-0015, Japan
+
+*Corresponding author
+
+
+BMC Genetics, in press
+
+
+Background: Disruption of mitochondrial genes may become a powerful tool for 
+elucidating precisely the functions of individual mitochondrial genes. 
+However, it is generally difficult to manipulate genetically mitochondrial 
+genes, because 1) a mitochondrion is surrounded by inner and outer membranes, 
+and 2) there are a large number of mtDNA copies in a single cell. This is 
+the reason why we tried to establish a novel method for disrupting a certain 
+mitochondrial gene (rps4), using Dictyostelium cells.
+
+Results: Here, we have developed a new method for specifically disrupting a 
+mitochondrial gene (rps4 ; ribosomal protein subunit S4), by a combination of 
+homologous recombination and delivery of an appropriate restriction endonuclease 
+(SfoI) into mitochondria. First, mitochondrially targeted SfoI whose expression 
+is under control of the tetracycline (Tet)-regulated gene expression system 
+were introduced into cells heteroplasmic with respect to the rps4 gene. Then, 
+the heteroplasmic cells were produced by homologous recombination by use of 
+the construct in which the unique SfoI site and the 5'-half of the rps4 coding 
+region was deleted not to be digested by SfoI, and therefore their mitochondria 
+have both the wild-type mtDNA and the mutant mtDNA with the disrupted rps4 
+gene. In response to removal of Tet from growth medium, SfoI was selectively 
+delivered into mitochondria and digested only the wild-type mtDNA but not 
+the mutated rps4. Thus one can gain rps4-null cells with only the mutated 
+mtDNA, under the Tet-minus condition.
+
+Conclusions: The mitochondrial gene-disruption method presented here must be 
+widely useful for precisely determining the functions of individual 
+mitochondrial genes. This is the first report to demonstrate complete and 
+specific mitochondrial gene disruption.
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Dictyostelium Aurora kinase has properties of both Aurora A and 
+Aurora B kinases.
+
+Hui Li, Qian Chen, Markus Kaller, Wolfgang Nellen, Ralph Graf 
+& Arturo De Lozanne
+
+Eukaryotic Cell, accepted
+
+Aurora kinases are highly conserved proteins with important roles in mitosis. 
+Metazoans contain two kinases, Aurora-A and B, that contribute distinct 
+functions at the spindle poles and the equatorial region respectively. It 
+is not currently known whether the specialized functions of the two kinases 
+arose after their duplication in animal cells or were already present in 
+their ancestral kinase.  We show that Dictyostelium contains a single Aurora 
+kinase, DdAurora, that displays characteristics of both Aurora-A and B. Like 
+Aurora-A, DdAurora has an extended N-terminal domain with an A-box sequence 
+and localizes at the spindle poles during early mitosis.  Like Aurora-B, 
+DdAurora binds to its partner DdINCENP and localizes on centromeres at 
+metaphase, the central spindle during anaphase and the cleavage furrow at 
+the end of cytokinesis. DdAurora also has several unusual properties.  
+DdAurora remains associated with centromeres in anaphase and this association 
+does not require an interaction with DdINCENP.   DdAurora then localizes 
+at the cleavage furrow but only at the end of cytokinesis.  This localization 
+is dependent on DdINCENP and the motor proteins Kif12 and myosin II. Thus, 
+DdAurora may represent the ancestral kinase that gave rise to the different 
+Aurora kinases in animals and also those in other organisms.
+
+
+Submitted by: Arturo De Lozanne [a.delozanne@mail.utexas.edu]
+--------------------------------------------------------------------------------
+
+
+An anatomy ontology to represent biological knowledge in Dictyostelium discoideum
+
+Pascale Gaudet1*, Jeffery G. Williams2, Petra Fey1, Rex L. Chisholm1
+
+1dictyBase, Northwestern University, Center for Genetic Medicine, 
+676 N. St.Clair, Chicago, IL, 60611, USA. 
+2School of Life Sciences, University of Dundee, Dow Street, 
+Dundee DD1 5EH, United Kingdom.
+
+*Corresponding author
+
+
+BMC Genomics, accepted
+
+Dictyostelium discoideum is a model system for studying many important 
+physiological processes including chemotaxis, phagocytosis, and signal 
+transduction. The recent sequencing of the genome has revealed the presence 
+of over 12,500 protein-coding genes. The model organism database dictyBase 
+hosts the genome sequence as well as a large amount of manually curated 
+information. We present here an anatomy ontology for Dictyostelium based 
+upon the life cycle of the organism. Anatomy ontologies are necessary to 
+annotate species-specific events such as phenotypes, and the Dictyostelium 
+anatomy ontology provides an essential tool for curation of the 
+Dictyostelium genome. 
+
+
+Submitted by: Pascale Gaudet [pgaudet@northwestern.edu]
+==============================================================
+[End dictyNews, volume 30, number 8]

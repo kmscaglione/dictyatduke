@@ -1,0 +1,336 @@
+Dicty News
+Electronic Edition
+Volume 12, number 11
+May 22, 1999
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+=============
+  Abstracts
+=============
+
+HIGH cAMP IN SPORES OF DICTYOSTELIUM DISCOIDEUM: ASSOCIATION
+WITH SPORE DORMANCY AND INHIBITION OF GERMINATION
+
+Kiran J. Virdy1, Todd W. Sands1, Susan H. Kopko1, Saskia van Es2,
+Marcel Meima2, Pauline Schaap2 and David A. Cotter1*
+
+1Department of Biological Sciences, University of Windsor, 401
+Sunset Avenue, Windsor, Ontario, Canada, N9B 3P4, and 2Institute
+of Molecular Plant Sciences, Cell Biology Section, Clusius Laboratory,
+Wassenaarseweg 64, 2333 AL Leiden, Netherlands.
+
+Microbiology (in press)
+
+SUMMARY
+
+   Signalling mechanisms involving cAMP have a well documented role in the
+coordination of multicellular development and differentiation leading to
+spore formation in the social amoeba, Dictyostelium discoideum. We have 
+examined cAMP's involvement in the poorly understood developmental 
+stages of spore dormancy and germination.  Dormant spores contained up 
+to 11-fold more cAMP than nascent amoebae.  These Spore cAMP levels were 
+not constant, but typically under went a surge at 14-18 d when spores 
+acquired the ability to germinate spontaneously.  The high cAMP levels 
+decreased only during successful spore germination, i.e., emergence of 
+nascent amoebae.  The temporal pattern of  cAMP decrease was
+complex and unique to the method of spore activation, supporting our
+hypothesis that exogenously (e.g. heat) activated and autoactivated 
+spores germinate by different mechanisms.  During heat-induced 
+activation, transcription of acg (a gene encoding adenylyl cyclase 
+associated with germination) correlated well with spore cAMP content.  
+Young wild-type spores, incapable of spontaneous germination, maintained 
+a uniformly high cAMP level, and spore cAMP levels also remained high 
+if germination was inhibited. When activated spores were deactivated by 
+applying  increased osmotic pressure, cAMP concentrations rose and 
+ultimately levelled off at the high levels typical of dormant spores.
+The correlation between high cAMP  and failure to germinate was evident 
+as well when autoactivation was inhibited by the cAMP analogue, 8-bromo-
+cAMP.  Also, spores from a strain (HTY217) with unrestrained protein 
+kinase A  activity were incapable of spontaneous germination.  Overall, 
+our experiments provide evidence for continued cAMP signalling
+in spores up to 18 d after sporulation, and for linkages between elevated 
+cAMP spore deactivation and inhibition of spontaneous germination.
+
+---------------------------------------------------------------------------------
+
+Ammonium Phosphate in Sori of Dictyostelium discoideum Promotes Spore Dormancy
+Through Stimulation of the Osmosensor ACG
+
+David A. Cotter1, Andrew J. Dunbar2, Stanley D. Buconjic1, and John F.
+Wheldrake2
+
+'Department of Biological Sciences, University of Windsor, 401 Sunset Avenue,
+Windsor, Ontario, Canada, N9B 3P4, and 2School of Biological Sciences, The
+Flinders University of South, Australia, Bedford Park, GPO Box 2100, Adelaide
+5001, Australia
+
+Microbiology (in press)
+
+ABSTRACT
+
+The  sori  of Dictyostelium discoideum (strains SG1, SG2, NC4 and V12) contained
+greater  than  100  mM ammonium phosphate. Glutamine synthetase (GS) which could
+remove  ammonia from the sorus, was not present in 2 day old dormant spores but
+enzyme activity returned to vegetative levels after spore germination.  Based on
+mRNA blotting, the  activity of this enzyme in germinating spores appeared to be
+transcriptionally   controlled.   At  the  same  time  that  (GS)  activity was
+increasing,  ammonia  was  released from germinating spores.  Exogenous ammonium
+ions  at  a  concentration  of  28  mM did not block germination nor modulate GS
+activity  in  nascent  amoebae.   It  was  concluded  that the transcription and
+translation  of  GS  is not environmentally regulated but is an integral part of
+the germination process preparing nascent amoebae for vegetative growth. 
+An  exogenous  concentration of 69 mM ammonium phosphate could maintain dormancy
+in spores of strains SG1 and SG2 for at least a week in the absence of any other
+inhibitory  component  from the sori.  The inhibition was reversible at any time
+by either dilution or by washing the spores free of the ammonium ion.  Spores of
+strain acg- were not inhibited by 100 mM ammonium phosphate.  
+
+A  model is presented in which GS in prespore cells serves as a sink for ammonia
+to allow the osmotically sensitive adenylyl cyclase aggregation protein (ACA) to 
+activate  protein  kinase  A  (PKA)  to  induce  fruiting body formation.  After 
+fruiting  body  formation  is  complete, the decline in GS and ACA activities in 
+developing  spores  is  offset  by  their  replacement  with the osmotically and 
+ammonia-stimulated  adenylyl  cyclase osmosensor for germination (ACG).  Ammonia 
+and  discadenine  may act as separate signals to synergistically activate PKA by 
+stimulating  ACG activity while inhibiting cyclic AMP phosphodiestrase activity 
+in fully dormant spores.
+
+-----------------------------------------------------------------------------------
+
+Starvation promotes Dictyostelium development by relieving PufA inhibition of PKA 
+translation through the YakA kinase pathway.
+
+Glaucia Mendes Souza Aline Maria da Silva and Adam Kuspa
+
+Dept. Bioquímica, Instituto de Química, Universidade de São Paulo, Brazil
+05508-900, Verna and Marrs McLean Department of Biochemistry, Baylor College
+of Medicine, Houston, Texas, USA, 77030
+
+Development, in press
+
+SUMMARY
+
+   When nutrients are depleted, Dictyostelium cells undergo cell cycle arrest 
+and initiate a developmental program that ensures survival.  The YakA protein 
+kinase governs this transition by regulating the cell cycle, repressing growth-
+phase genes and inducing developmental genes.  YakA mutants have a shortened 
+cell cycle and do not initiate development.  A suppressor of yakA that reverses 
+most of the developmental defects of yakA-cells, but none of their growth defects 
+was identified.  The inactivated gene, pufA, encodes a member of the Puf protein 
+family of translational regulators.  Upon starvation, pufA-cells develop precociously 
+and overexpress developmentally important proteins, including the catalytic subunit 
+of cAMP-dependent protein kinase, PKA-C.  Gel mobility-shift assays using a 200-base 
+segment of PKA-C’s mRNA as a probe reveals a complex with wild-type cell extracts, 
+but not with pufA-cell extracts, suggesting the presence of a potential PufA 
+recognition element in the PKA-C mRNA.  PKA-C protein levels are low at the times 
+of development when this complex is detectable, whereas when the complex is 
+undetectable PKA-C levels are high.  There is also an inverse relationship between 
+PufA and PKA-C protein levels at all times of development in every mutant tested.  
+Furthermore, expression of the putative PufA recognition elements in wild-type cells 
+causes precocious aggregation and PKA-C overexpression, phenocopying a pufA mutation.  
+Finally, YakA function is required for the decline of PufA protein and mRNA levels 
+in the first 4 hours of development.  We propose that PufA is a translational regulator 
+that directly controls PKA-C synthesis and that YakA regulates the initiation of 
+development by inhibiting the expression of PufA.  Our work also suggests that Puf 
+protein translational regulation evolved prior to the radiation of metazoan species.
+
+---------------------------------------------------------------------------------------
+
+Role of myosin II tail sequences in its function and localization at the
+cleavage furrow in Dictyostelium
+
+Shu Shi1, Randall J. Lee2, Janine M. LeBlanc-Straceski3 and Taro Q. P. Uyeda1
+
+1Biomolecular Research Group, National Institute for Advanced
+Interdisciplinary Research, Tsukuba, Ibaraki 305-8562, Japan; 2Department
+of Medicine and Cardiovascular Research Institute, University of California
+at San Francisco, CA 94143-4354, USA; 3Department of Biology, Merrimack
+College, North Andover, MA 01845, USA
+
+J. Cell Sci. (in press)
+
+SUMMARY
+
+Cytoplasmic myosin II accumulates in the cleavage furrow and provides the force 
+for cytokinesis in animal and amoeboid cells.  One model proposes that a specific 
+domain in the myosin II tail is responsible for its localization, possibly by 
+interacting with a factor concentrated in the equatorial region.  To test this 
+possibility, we have expressed myosins carrying mutations in the tail domain in 
+a strain of Dictyostelium cells from which the endogenous myosin heavy chain gene 
+has been deleted.  The mutations used in this study include four internal tail deletions:
+My824-941, My943-1464, My943-1194 and My1156-1464.  Contrary to the prediction of 
+the hypothesis, immunofluorescence staining demonstrated that all mutant myosins were 
+able to move toward the furrow region.  Chimeric myosins, which consisted of a 
+Dictyostelium  myosin head and chicken skeletal myosin tail, also efficiently localized 
+to the cleavage furrow.  All these deletion and chimeric mutant myosins, except for 
+My943-1464, the largest deletion mutant, were able to support cytokinesis in suspension.  
+Our data suggests that there is no single specific domain in the tail of Dictyostelium 
+myosin II that is required for its functioning at and localization to the cleavage furrow.
+
+--------------------------------------------------------------------------------------------
+
+Scanning the available Dictyostelium discoideum proteome for O-linked GlcNAc glycosylation 
+sites using neural networks.
+
+Ramneek Gupta (1), Eva Jung (2), Andrew A Gooley (2), Keith L Williams (2), Soren Brunak 
+(1) and Jan E Hansen (1).
+
+1 Center for Biological Sequence Analysis, Dept of Biotechnology Technical University of 
+Denmark, Bldg 208, DK-2800 Lyngby, Denmark; 2 School of Biological Sciences, Macquerie 
+University, Sydney, 2109 NSW, Australia.
+
+Glycobiology, in press.
+
+Abstract:
+
+Dictyostelium discoideum has been suggested as a eukaryotic model organism for 
+glycobiology studies. Presently, the characteristics of acceptor sites for the N-
+acetylglucosaminyl-transferases in Dictyostelium discoideum, which link GlcNAc in an 
+alpha linkage to hydroxyl residues, are largely unknown. This motivates the development 
+of a species specific method for prediction of O-linked GlcNAc  glycosylation sites in 
+secreted and membrane proteins of D. discoideum. The method presented here employs a 
+jury of artificial neural networks. These networks  were trained to recognise the 
+sequence context and protein surface accessibility in 39 experimentally determined 
+O-(alpha)-GlcNAc sites found in D. discoideum glycoproteins expressed in vivo. Cross-
+validation of the data revealed a correlation in which 97% of the glycosylated and 
+non-glycosylated sites were correctly  identified. Based on the currently limited 
+data set, an abundant periodicity of two (positions -3, -1, +1, +3, etc.) in Proline 
+residues alternating with hydroxyl amino acids was observed upstream and downstream 
+of the acceptor site. This was a consequence of the spacing of the glycosylated 
+residues themselves which were peculiarly found to be situated only at even positions 
+with respect to each other, indicating that these may be located within beta-strands.  
+The method has been used for a rapid and ranked scan of the fraction of the Dictyostelium 
+proteome available in public databases, remarkably 25-30% of which were predicted 
+glycosylated. The scan revealed acceptor sites in several proteins known experimentally 
+to be O-glycosylated at unmapped sites. The available proteome was classified into 
+functional and cellular compartments to study any preferential patterns of glycosylation. 
+A sequence based prediction server for GlcNAc O-glycosylations in D. discoideum proteins 
+has been made available through the WWW at http://www.cbs.dtu.dk/services/DictyOGlyc/ 
+and via E-mail to DictyOGlyc@cbs.dtu.dk.
+
+----------------------------------------------------------------------------------------------
+Myosin I Contributes to the Generation of Resting Cortical Tension.
+
+Jianwu Dai*#, H. Ping Ting-BeallÝ, Robert M. HochmuthÝ, Micheal P.
+Sheetz*, and Margaret A. Titus*@
+
+*Department of Cell Biology, Duke University Medical Center
+Durham, NC 27710; ÝDepartment of Mechanical Engineering and Materials
+Sciences, Duke University, Durham, NC 27708
+
+@ author for all correspondence at present address: Department of Genetics,
+Cell Biology, and Development, University of Minnesota, 4-102 Owre Hall
+321 Church St. S.E., Minneapolis, MN 55455
+
+BIOPHYSICAL JOURNAL, in press
+
+ABSTRACT
+
+The amoeboid myosin Is are required for cellular cortical functions such as 
+pseudopod formation and macropinocytosis, as demonstrated by the finding that 
+Dictyostelium cells lacking one or more of these actin-based motors are defective 
+in these processes. Alterations in these processes are concomitant with changes in 
+the actin-filled cortex of various Dictyostelium myosin I mutants. Given that the 
+amoeboid myosin Is possess both actin and membrane binding domains, the mutant 
+phenotypes could be due to alterations in the generation and/or regulation of cell 
+cortical tension. This has been directly tested by analyzing mutant Dictyostelium 
+that either lack or overexpress various myosin Is using micropipette aspiration 
+techniques. Dictyostelium cells lacking only one myosin I have normal levels of 
+cortical tension. However, myosin I double mutants have significantly reduced (50%) 
+cortical tension, and those that mildly overexpress an amoeboid myosin I exhibit 
+increased cortical tension. Treatment of either type of mutant with the lectin 
+concanavalin A (ConA) that cross-links surface receptors, results in significant 
+increases in cortical tension, suggesting that the contractile activity of these 
+myosin Is is not controlled by this stimulus. These results demonstrate that myosin 
+Is work co-operatively to contribute substantially to the generation of resting 
+cortical tension that is required for efficient cell migration and macropinocytosis.
+
+-------------------------------------------------------------------------------------
+
+Evidence that the Dictyostelium Dd-STATa protein is a repressor that
+regulates commitment to stalk cell differentiation and is also required for
+efficient chemotaxis
+
+Sudhasri Mohanty*, Keith A. Jermyn*, Anne Early, Takefumi Kawata, Laurence
+Aubry, Adriano Ceccarelli, Pauline Schaap, Jeffrey G. Williams and Richard
+A. Firtel
+
+DEVELOPMENT, in press
+
+SUMMARY
+
+Dd-STATa is a structural and functional homologue of the metazoan STAT 
+(Signal Transducer and Activator of Transcription) proteins.  We show that Dd-STATa 
+null cells exhibit several distinct developmental phenotypes.  The aggregation of Dd-STATa 
+null cells is delayed and they chemotax slowly to a cAMP source, suggesting a role for 
+Dd-STATa in these early processes.  In Dd-STATa null strains, slug-like structures are 
+formed but they have an aberrant pattern of gene expression. In such slugs, ecmB/lacZ, 
+a marker that is normally specific for cells on the stalk cell differentiation pathway, 
+is expressed throughout the prestalk region. Stalk cell differentiation in Dictyostelium 
+has been proposed to be under negative control, mediated by repressor elements present 
+in the promoters of stalk cell-specific genes.  Dd-STATa  binds these repressor elements 
+in vitro and the ectopic expression of ecmB/lacZ  in the null strain provides in vivo 
+evidence that Dd-STATa is the repressor protein that regulates commitment to stalk cell 
+differentiation.  Dd-STATa null cells display aberrant behavior in a monolayer assay 
+wherein stalk cell differentiation is induced using the stalk cell morphogen DIF. The 
+ecmB gene, a general marker for stalk cell differentiation, is greatly over-induced by 
+DIF in Dd-STATa null cells.  Also, Dd-STATa null cells are hyper-sensitive to DIF for 
+expression of ST/lacZ, a marker for the earliest stages in the differentiation of one 
+of the stalk cell sub-types.  We suggest that both these manifestations of DIF hyper-
+sensitivity in the null strain result from the balance between activation and repression 
+of the promoter elements being tipped in favor of activation when the repressor is absent.
+Paradoxically, although Dd-STATa null cells are hypersensitive to the inducing effects of 
+DIF and readily form stalk cells in monolayer assay, the Dd-STATa null cells show little 
+or no terminal stalk cell differentiation within the slug.  Dd-STATa null slugs remain 
+developmentally arrested for several days before forming very small spore masses supported 
+by a column of apparently undifferentiated cells.  Thus, complete stalk cell differentiation 
+appears to require at least two events: a commitment step whereby the repression exerted by 
+Dd-STATa is lifted and a second step that is blocked in a Dd-STATa null organism.  This 
+latter step may involve extracellular cAMP, a known repressor of stalk cell differentiation, 
+because Dd-STATa null cells are abnormally sensitive to the inhibitory effects of 
+extracellular cAMP.
+
+---------------------------------------------------------------------------------------------
+
+FINGERPRINTING OF ADENYLYL CYCLASE ACTIVITIES DURING DICTYOSTELIUM DEVELOPMENT INDICATES 
+A DOMINANT ROLE FOR ADENYLYL CYCLASE B IN TERMINAL DIFFERENTIATION
+
+Marcel E. Meima and Pauline Schaap
+
+Cell Biology Section, Institute for Molecular Plant Sciences, University
+of Leiden
+
+Developmental Biology, in press
+
+ABSTRACT
+
+Activation of cAMP dependent protein kinase (PKA) triggers terminal differentiation in 
+Dictyostelium, without an obvious requirement for the G-protein coupled adenylyl cyclase, 
+ACA, or the osmosensory adenylyl cyclase ACG. A third adenylyl cyclase, ACB, was recently 
+detected in rapidly developing mutants. The specific characteristics of ACA, ACG and ACB 
+were used to determine their respective activities during development of wild-type cells. 
+ACA was highly active during aggregation, with negligible activity in the slug stage.  
+ACG activity was not present at significant levels until mature spores had formed. ACB 
+activity increased strongly after slugs had formed with optimal activity at early fruiting 
+body formation. The same high activity was observed in slugs of ACG null mutants and ACA 
+null mutants that overexpress PKA (acaA/PKA), indicating that it was not due to either ACA or 
+ACG. The detection of high adenylyl cyclase activity in acaA/PKA null mutants contradicts 
+earlier conclusions (Wang, B. and Kuspa, A. 1997.  Science 277, 251-254) that these mutants 
+can develop into fruiting bodies in the complete absence of cAMP. In contrast to slugs of 
+null mutants for the intracellular cAMP-phosphodiesterase REGA, where both intact cells 
+and lysates show ACB activity, wild-type slugs only show activity in lysates.  This indicates 
+that cAMP accumulation by ACB in living cells is controlled by REGA. REGA inhibition and PKA 
+overexpression both cause precocious terminal differentiation. The developmental regulation 
+of ACB and its relationship to REGA suggest that ACB activates PKA and induces terminal 
+differentiation.
+
+-------------------------------------------------------------------------------------------------
+
+[End Dicty News, volume 12, number 11]
+

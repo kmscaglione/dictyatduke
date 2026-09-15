@@ -1,0 +1,168 @@
+dictyNews
+Electronic Edition
+Volume 28, number 5
+March 2, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+  Abstracts
+=========
+
+
+
+Diverse Cytopathologies in Mitochondrial Disease Are Caused by AMPK Signalling
+
+Paul B. Bokko1, Lisa Francione1, Esther Bandala-Sanchez1, Afsar U. Ahmed1, 
+Sarah J. Annesley1, Xiuli Huang2, Taruna Khurana2, Alan R. Kimmel2 and 
+Paul R. Fisher1*
+
+1Department of Microbiology, La Trobe University, Victoria 3086, Australia.
+2National Institutes of Health, Bethesda, Maryland MD20892, USA.
+
+
+Molecular Biology of the Cell, in press
+
+The complex cytopathology of mitochondrial diseases is usually attributed to 
+insufficient ATP. AMP-activated protein kinase (AMPK) is a highly sensitive 
+cellular energy sensor that is stimulated by ATP-depleting stresses. By 
+antisense-inhibiting chaperonin 60 expression we produced mitochondrially 
+diseased strains with gene dose-dependent defects in phototaxis, growth and 
+multicellular morphogenesis.  Mitochondrial disease was phenocopied in a gene 
+dose-dependent manner by overexpressing a constitutively active AMPK alpha 
+subunit (AMPKalphaT). The aberrant phenotypes in mitochondrially diseased 
+strains were suppressed completely by antisense-inhibiting AMPKalpha expression. 
+Phagocytosis and macropinocytosis, although energy-consuming, were unaffected 
+by mitochondrial disease and AMPKalpha expression levels. Consistent with 
+AMPKÕs role in energy homeostasis, mitochondrial "mass" and ATP levels were 
+reduced by AMPKalpha antisense inhibition and increased by AMPKalphaT 
+overexpression, but near normal in mitochondrially diseased cells. We also 
+found that AICAR, a pharmacological AMPK activator in mammalian cells, 
+mimics mitochondrial disease in impairing Dictyostelium phototaxis and that 
+AMPKalpha antisense-inhibited cells were resistant to this effect. The 
+results show that diverse cytopathologies in Dictyostelium mitochondrial 
+disease are caused by chronic AMPK signalling not by insufficient ATP.
+
+
+Submitted by Paul R. Fisher [P.Fisher@latrobe.edu.au]
+--------------------------------------------------------------------------------
+
+
+Role of PI3 kinases in Chemotaxis in Dictyostelium
+
+Kosuke Takeda, Atsuo T. Sasaki, Hyunjung Ha, Hyun-A Seung, and 
+Richard A. Firtel
+
+
+J. Biol. Chem., in press
+
+Experiments in several cell types revealed that local accumulation of 
+phosphatidylinositol 3,4,5-triphosphate [PI(3,4,5)P3] mediates the ability of 
+cells to migrate during gradient sensing.  We took a systematic approach to 
+characterize the functions of the six putative Class I PI3Ks (PI3K1-6) in 
+Dictyostelium by creating a series of gene knockouts.  These studies revealed 
+that PI3K1-PI3K3 are the major PI3Ks for chemoattractant-mediated PI(3,4,5)P3 
+production.  We studied chemotaxis of the pi3k1/2/3 triple knockout strain 
+(pi3k1/2/3 null cells) to cAMP under two distinct experimental conditions, an 
+exponential gradient emitted from a micropipette and a shallow, linear 
+gradient in a Dunn chamber, using four cAMP concentrations ranging over a 
+factor of 10,000.  Under all conditions tested, pi3k1/2/3 null cells moved 
+slower and had less polarity than wild-type cells.  pi3k1/2/3 null cells 
+moved towards a chemoattractant emitted by a micropipette, although 
+persistence was lower than that of wild-type or pi3k1/2 null cells.  In 
+shallow linear gradients, pi3k1/2 null cells had greater directionality 
+defects, especially at lower chemoattractant concentrations.  Our studies 
+suggest that although PI3K is not essential for directional movement under 
+some chemoattractant conditions, it is a key component of the directional 
+sensing pathway and plays a critical role in linear chemoattractant gradients, 
+especially at low chemoattractant concentrations. The relative importance of 
+PI3K in chemotaxis is also dependant on the developmental stage of the cells.  
+Our data suggest that the output of other signaling pathways suffices to 
+mediate directional sensing when cells perceive a strong signal, but PI3K 
+signaling is crucial for detecting weaker signals.
+
+
+Submitted by Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+cAMP signaling in Dictyostelium:  G-proteins activate separate Ras pathways 
+using specific RasGEFs
+
+Helmut Kae, Arjan Kortholt, Holger Rehmann, Robert H. Insall, 
+Peter J.M. Van Haastert, George B. Spiegelman, and Gerald Weeks
+
+
+EMBO Reports, In Press
+
+In general, mammalian RasGEFs display little substrate specificity, even though 
+they are often thought to regulate specific pathways.  Here we provide in 
+vitro and in vivo evidence that two RasGEFs can each act on specific Ras 
+proteins.  During Dictyostelium development, RasC and RasG are activated in 
+response to cAMP, with each regulating different downstream functions; RasG 
+regulating chemotaxis, and RasC responsible for adenylyl cyclase activation.  
+RasC activation was abolished in a gefA- mutant, while RasG activation was 
+normal in this strain, indicating that RasGEFA activates RasC, but not RasG.  
+Conversely, RasC activation was normal in a gefR- mutant, whereas RasG 
+activation was greatly reduced, indicating that RasGEFR activates RasG. These 
+results were confirmed by the finding that RasGEFA and RasGEFR specifically 
+released GDP from RasC and RasG, respectively, in vitro.  This RasGEF target 
+specificity provides a mechanism for one upstream signal to regulate two 
+downstream processes using independent pathways.
+
+
+Submitted by: Helmut Kae [hkae@interchange.ubc.ca]
+--------------------------------------------------------------------------------
+
+
+Mitochondrial carrier family. Repertoire and peculiarities of the cellular
+slime mould Dictyostelium discoideum
+
+Michel Satre1, Sara Mattei2, Laurence Aubry1, Pascale Gaudet3, Ludovic 
+Pelosi1, Gerard Brandolin1, Gerard Klein1
+
+1Laboratoire de Biochimie et Biophysique des Systemes Integres, iRTSV/BBSI, 
+UMR 5092, CNRS-CEA-UJF, CEA-Grenoble, Grenoble, France
+2Department of Cellular and Molecular Medicine, Howard Hughes Medical Institute, 
+UCSD, School of Medicine, 9500 Gilman Drive, CMM-W318, La Jolla, CA 92093-0668, 
+USA
+3dictyBase, Center for Genetic Medicine, Northwestern University, Chicago, 
+IL, 60611, USA.
+* To whom correspondence should be sent at the Laboratoire de Biochimie et 
+Biophysique des Systemes Integres, iRTSV/BBSI, CEA-Grenoble, 17 rue des 
+Martyrs, 38054 Grenoble cedex 9, France
+tel : +33 438 784 661 fax : +33 438 784 499 e-mail : gklein@cea.fr
+
+
+Biochimie, in press
+
+Proteins of the mitochondrial carrier family (MCF) mediate the transport of a 
+large range ofcompounds, including metabolites and cofactors. They are 
+localized mainly in the innermitochondrial membrane, except for a few members 
+found in the membranes of peroxisomes. Similarity searches among Dictyostelium 
+discoideum protein sequences identified a total of 31MCF members. All these 
+are membrane proteins that possess three characteristic repeats of adomain 
+of approximately 100 residues. Among them, three proteins have 
+supplementarystructural domains consisting of Ca2+-binding motifs made up of 
+2 or 4 EF-hand unitslocalized on the N-terminal end, facing the mitochondrial 
+intermembrane space. The nature oftransported substrates is proposed on the 
+basis of sequence comparison with orthologscharacterized biochemically in 
+other organisms, of phylogenetic analysis, and of theconservation of 
+discriminating amino acid residues belonging to the substrate binding sites. 
+Carriers have been grouped in subclasses based on their specificity for the 
+transport ofnucleotides, amino acids or keto acids. Furthermore, we have 
+identified an iron carrier of themitoferrin type, an inorganic phosphate 
+carrier, and three carriers with similarity to uncouplerproteins. This study 
+provides a focus for mitochondrial carrier analysis in Dictyostelium discoideum.
+
+
+Submitted by: Gerard Klein [ gerard.klein@cea.fr]
+============================================================
+[End dictyNews, volume 28, number 5]

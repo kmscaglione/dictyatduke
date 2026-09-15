@@ -1,0 +1,90 @@
+dictyNews
+Electronic Edition
+Volume 33, number 10
+October 16, 2009
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase now on twitter:
+http://twitter.com/dictybase
+
+=========
+Abstracts
+=========
+
+
+Roles of an Unconventional Protein Kinase and  Myosin II in 
+Amoeba Osmotic Shock Responses 
+
+Venkaiah Betapudi and Thomas T. Egelhoff*
+
+
+Traffic, in press
+
+The contractile vacuole (CV) is a dynamic organelle that enables 
+Dictyostelium amoeba and other protist to maintain osmotic homeostasis 
+by expelling excess water. In the present study, we have uncovered a 
+mechanism that coordinates the mechanics of the CV with myosin II, 
+regulated by VwkA, an unconventional protein kinase that is conserved 
+in an array of protozoa. GFP-VwkA fusion proteins localize persistently 
+to the CV during both filling and expulsion phases of water. In vwkA null 
+cells, the established CV marker dajumin still localizes to the CV, but 
+these structures are large, spherical, and severely impaired for discharge. 
+Furthermore, myosin II cortical localization and assembly are abnormal in 
+vwkA null cells. Parallel analysis of wild type cells treated with myosin II 
+inhibitors or of myosin II null cells also results in enlarged CVs with 
+impaired dynamics. We suggest that the myosin II cortical cytoskeleton, 
+regulated by VwkA, serves a critical conserved role in the periodic 
+contractions of the CV, as part of the osmotic protective mechanism 
+of protozoa.
+
+
+Submitted by Venkaiah Betapudi & Thomas Eegelhoff [betapuv@ccf.org]
+--------------------------------------------------------------------------------
+
+
+Functional characterisation of intracellular Dictyostelium discoideum 
+P2X receptors
+
+Melanie J. Ludlow, Latha Durai and Steven J. Ennion
+
+University of Leicester, United Kingdom
+
+
+JBC (http://www.jbc.org/content/early/2009/10/15/jbc.M109.045674)
+
+Indicative of cell surface P2X ion channel activation, extracellular ATP 
+evokes a rapid and transient calcium influx in the model eukaryote 
+Dictyostelium discoideum. Five P2X-like proteins (dP2XA-E) are present 
+in this organism. However, their roles in purinergic signalling are unclear 
+since dP2XA proved to have an intracellular localisation on the contractile 
+vacuole where it is thought to be required for osmoregulation. To determine 
+functional properties of the remaining four dP2X-like proteins and to assess 
+their cellular roles, we recorded membrane currents from expressed cloned 
+receptors and generated a quintuple knockout Dictyostelium strain devoid of 
+dP2X receptors. ATP evoked inward currents at dP2XB and dP2XE receptors 
+but not at dP2XC or dP2XD. β,γ-imido-ATP was more potent than ATP at 
+dP2XB but a weak partial agonist at dP2XE. Currents in dP2XB and dP2XE 
+were strongly inhibited by Na+ but insensitive to copper and the P2 receptor 
+antagonists PPADS and suramin. Unusual for P2X channels, dP2XA and 
+dP2XB were also Cl- permeable. The extracellular purinergic response to 
+ATP persisted in p2xA/B/C/D/E quintuple knockout Dictyostelium 
+demonstrating that dP2X channels are not responsible. dP2XB,C,D, and E 
+were found to be intracellular localised to the contractile vacuole with the 
+ligand binding domain facing the lumen. However, quintuple p2xA/B/C/D/E 
+null cells were still capable of regulating cell volume in water demonstrating 
+that, contrary to previous findings, dP2X receptors are not required for 
+osmoregulation. Responses to the calmodulin antagonist calmidazolium 
+however were reduced in p2xA/B/C/D/E null cells suggesting that dP2X 
+receptors play a role in intracellular calcium signalling.
+
+
+Submitted by Steven Ennion [se15@leicester.ac.uk
+==============================================================
+[End dictyNews, volume 33, number 10]

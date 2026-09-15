@@ -1,0 +1,70 @@
+dictyNews
+Electronic Edition
+Volume 40, number 15
+June 20, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit or by sending 
+them to dicty@northwestern.edu
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+The Dictyostelium discoideum RACK1 orthologue has roles in growth 
+and development
+
+Omosigho, N. N., Swaminathan, K., Plomann, M, MŸller-Taubenberger, 
+A., Noegel, A. A., Riyahi, T. Y. 
+
+Institute of Biochemistry I, Medical Faculty, Center for Molecular Medicine 
+Cologne (CMMC) and Cologne Excellence Cluster on Cellular Stress 
+Responses in Aging-Associated Diseases (CECAD), University of Cologne, 
+50931 Kšln, Germany
+Institute of Biochemistry II, Medical Faculty, University of Cologne, 
+50931 Kšln, Germany
+Institute of Anatomy and Cell Biology, Ludwig-Maximilians-University, 
+80336 MŸnchen, Germany
+
+
+Cell Commun Signal, in press
+
+Background
+The receptor for activated C-kinase 1 (RACK1) is a conserved protein 
+belonging to the WD40 repeat family of proteins. It folds into a beta 
+propeller with seven blades which allow interactions with many proteins. 
+Thus it can serve as a scaffolding protein and have roles in several 
+cellular processes.
+Results
+We identified the product of the Dictyostelium discoideum gpbB gene as 
+the Dictyostelium RACK1 homolog. The protein is mainly cytosolic but can 
+also associate with cellular membranes. DdRACK1 binds to 
+phosphoinositides (PIPs) in protein-lipid overlay and liposome-binding 
+assays. The basis of this activity resides in a basic region located in the 
+extended loop between blades 6 and 7 as revealed by mutational analysis. 
+Similar to RACK1 proteins from other organisms DdRACK1 interacts with 
+G protein subunits alpha, beta and gamma as shown by yeast two-hybrid, 
+pulldown, and immunoprecipitation assays. Unlike the Saccharomyces 
+cerevisiae and Cryptococcus neoformans RACK1 proteins it does not appear 
+to take over G-beta function in D. discoideum as developmental and other 
+defects were not rescued in G-beta null mutants overexpressing 
+GFP-DdRACK1. Overexpression of GFP-tagged DdRACK1 and a mutant 
+version (DdRACK1mut) which carried a charge-reversal mutation in the 
+basic region in wild type cells led to changes during growth and development.
+Conclusion
+DdRACK1 interacts with heterotrimeric G proteins and can through these 
+interactions impact on processes specifically regulated by these proteins.
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 40, number 15]

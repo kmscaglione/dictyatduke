@@ -1,0 +1,74 @@
+Dicty News
+Electronic Edition
+Volume 19, number 5
+August 17, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+Comparison of probe preparation methods for DNA microarrays
+
+
+Patrick Farbrother, Silke Mller, Angelika A. Noegel and Ludwig Eichinger 
+
+
+BioTechniques, accepted for publication, 08/05/2002.
+
+The increasing amount of sequencing data provides the opportunity to 
+produce DNA microarrays for a growing number of organisms. For spotted 
+microarrays this demands a fast and cost-efficient method for the production 
+of the thousands of DNA probes the microarrays consist of. Previous 
+protocols state the need to highly amplify these probes and purify them by 
+filtering methods. Here we compared three methods for probe amplification 
+and purification. We found that signal intensities from probes amplified by 
+single PCRs were either equal or only slightly lower than from probes with 
+fivefold higher DNA concentrations. This is true over the full range of 
+signal intensities, suggesting that the amount of a specific probe always 
+exceeds the amount of the target being analyzed. For the purification of 
+probes after amplification simple ethanol precipitation proved similar to 
+a membrane binding method. Thus, rapid probe preparation for microarrays by 
+single PCR amplification and ethanol precipitation is possible.
+
+-----------------------------------------------------------------------------
+
+Taxonomy, slime molds, and the questions we ask
+
+Andrew R. Swanson*, Frederick W. Spiegel* and James C. Cavender**
+
+*Department of Biological Sciences, University of Arkansas, Fayetteville, 
+Arkansas 72701, **Department of Environmental and Plant Biology, Ohio 
+University, Athens, Ohio 45701
+
+Mycologia, in press
+
+ABSTRACT
+
+Taxonomic treatments often influence the way we both ask and attempt to answer 
+certain biological questions.  The classical taxonomy of the dictyostelid 
+cellular slime molds (Dictyosteliales) involves a convenient set of categories 
+that were developed independent of phylogeny.  In order to test whether the 
+characters supporting the classical taxonomy hold any phylogenetic signal, we 
+subjected 19 described taxa belonging to two families (Acytosteliaceae and 
+Dictyosteliaceae) and three genera (Acytostelium, Dictyostelium, and 
+Polysphondylium) to rooted cladistic analyses using PAUP* v 4.0b4a.  Neither 
+family nor any of the three genera were found to represent monophyletic 
+groups.  These results confirm that the classical taxonomy used to delineate 
+families and genera within these slime molds carries very little phylogenetic 
+signal. Taxonomic character sets should be scrutinized phylogenetically in 
+order to determine what information they provide about the relatedness of taxa 
+within a group.  Because taxonomy often drives the nature of biological 
+inquiry, caution should be exercised when drawing conclusions regarding the 
+evolution of developmental systems in Dictyostelium.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 19, number 5]
+
+ 

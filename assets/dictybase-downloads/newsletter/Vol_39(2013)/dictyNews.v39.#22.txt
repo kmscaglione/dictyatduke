@@ -1,0 +1,260 @@
+dictyNews
+Electronic Edition
+Volume 39, number 22
+August 2, 2013
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+
+Biological soliton in multicellular movement
+
+Hidekazu Kuwayama, Shuji Ishida
+
+
+Scientific Reports, 3, Article number: 2272
+
+Solitons have been observed in various physical phenomena. Here, 
+we show that the distinct characteristics of solitons are present in the 
+mass cell movement of non-chemotactic mutants of the cellular slime 
+mould Dictyostelium discoideum. During starvation, D. discoideum 
+forms multicellular structures that differentiate into spore or stalk cells 
+and, eventually, a fruiting body. Non-chemotactic mutant cells do not 
+form multicellular structures; however, they do undergo mass cell 
+movement in the form of a pulsatile soliton-like structure (SLS). We 
+also found that SLS induction is mediated by adhesive cell-cell i
+nteractions. These observations provide novel insights into the 
+mechanisms of biological solitons in multicellular movement.
+
+
+Submitted by Hidekazu Kuwayama [hidekuwayama@biol.tsukuba.ac.jp]
+---------------------------------------------------------------------------
+
+
+A Unique Mitochondrial Transcription Factor B Protein in 
+Dictyostelium discoideum.
+
+Sam Manna (1), Phuong Le (2), Christian Barth (1)
+
+(1) Department of Microbiology, La Trobe University, Melbourne, 
+Victoria, Australia,
+(2) Tokyo Metropolitan University, Department of Biological Science, 
+Tokyo, Japan
+
+
+PLoS ONE 8(7): e70614. doi:10.1371/journal.pone.0070614
+
+Unlike their bacteriophage homologs, mitochondrial RNA polymerases 
+require the assistance of transcription factors in order to transcribe 
+mitochondrial DNA efficiently. The transcription factor A family has been 
+shown to be important for transcription of the human mitochondrial DNA, 
+with some of its regulatory activity located in its extended C-terminal tail. 
+The mitochondrial transcription factor B family often has functions not only 
+in transcription, but also in mitochondrial rRNA modification, a hallmark of 
+its alpha-proteobacterial origin. We have identified and characterised a 
+mitochondrial transcription factor B homolog in the soil dwelling cellular 
+slime mould Dictyostelium discoideum, an organism widely established 
+as a model for studying eukaryotic cell biology. Using in bacterio functional 
+assays, we demonstrate that the mitochondrial transcription factor B 
+homolog not only functions as a mitochondrial transcription factor, but that 
+it also has a role in rRNA methylation. Additionally, we show that the 
+transcriptional activation properties of the D. discoideum protein are 
+located in its extended C-terminal tail, a feature not seen before in the 
+mitochondrial transcription factor B family, but reminiscent of the human 
+mitochondrial transcription factor A. This report contributes to our current 
+understanding of the complexities of mitochondrial transcription, and its 
+evolution in eukaryotes.
+
+
+Submitted by Christian Barth [c.barth@latrobe.edu.au]
+---------------------------------------------------------------------------
+
+
+Protein phosphatase 4 is involved in the late development of 
+Dictyostelium discoideum
+
+Ichiro Kamei, Kozo Takamoto, Naoya Sakuragi, Eiji Tanesaka, 
+Motonobu Yoshida 
+
+
+Open J. Molecu. Integra. Physiol., in press
+
+A cDNA clone SSJ337 (accession no. AF161253) of 1,230 bp, 
+encoding a catalytic subunit of protein phosphatase 4, was selected as 
+one of the clones expressed specifically in prestalk cells from a cDNA 
+library of D. discoideum slugs.  Cells transformed with a knockout 
+construct of SSJ337 showed an aberrant and tiny fruiting-body formation 
+with a short stalk.  A knockout mutant, SSJ337KO was allowed to develop 
+much slower than a wild-type AX2 after the post-aggregation stage.  This 
+suggested that the SSJ337 cDNA clone played an important role especially 
+in the late development of Dictyostelium discoideum.  Results from 
+Northern blotting analysis showed that transcripts for SSJ337 were 
+accumulated at 16 h to 24 h after starvation began. 
+
+
+Submitted by Motonobu Yoshida [yoshida_m@nara.kindai.ac.jp]
+---------------------------------------------------------------------------
+
+
+Social amoeba farmers carry defensive symbionts to protect and privatize 
+their crops
+
+Debra A. Brock  (1), Silven Read (2), Alona Bozhchenko (2), David C. 
+Queller (1}, and Joan E. Strassmann (1 )
+
+(1) Department of Biology, Washington University at St. Louis, St. Louis, 
+Missouri  63130, USA
+(2) Department of Ecology and Evolutionary Biology, Rice University, 
+Houston, Texas  77005, USA
+
+
+Nature Communications, in press
+
+Agricultural crops are investments that can be exploited by others. Farmer 
+clones of the social amoeba Dictyostelium discoideum carry bacteria to 
+seed out new food populations but they also carry other non-food bacteria 
+such as Burkholderia spp.  Here we demonstrate that these farmer-carried 
+Burkholderia inhibit the growth of non-farmer D. discoideum clones that 
+could exploit the farmer’s crops.  Using supernatants, we show that inhibition 
+is due to molecules secreted by Burkholderia. When farmer and non-farmer 
+amoebae are mixed together at various frequencies and allowed to complete 
+the social stage, the ability of non-farmers to produce spores falls rapidly with 
+an increase in the percentage of farmers with their defensive symbionts, but 
+conversely, farmer spore production is unaffected by the frequency of farmers.  
+Our results suggest that successful farming is a complex evolutionary a
+daptation, because it requires additional strategies, like recruiting third parties, 
+to effectively defend and privatize crops.
+
+
+Submitted by David Queller [queller@wustl.edu]
+---------------------------------------------------------------------------
+
+
+A bacterial symbiont is converted from an inedible producer of beneficial 
+molecules into food by a single mutation in the gacA gene 
+
+Pierre Stallforth (1), Debra A. Brock (2), Alexandra M. Cantley (1), Xiangjun 
+Tian (2), David C. Queller (2), Joan E. Strassmann (2), Jon Clardy (1)
+
+(1) Department of Biological Chemistry and Molecular Pharmacology, 
+Harvard Medical School, Boston, MA 02115
+(2) Department of Biology, Washington University in St. Louis, 
+St. Louis, MO 63130
+
+
+PNAS , in press; available online 
+http://www.pnas.org.ezproxy.rice.edu/content/early/2013/07/26/1308199110.abstract
+
+Stable multipartite mutualistic associations require that all partners benefit. 
+We show that a single mutational step is sufficient to turn a symbiotic bacterium 
+from an inedible but host-beneficial secondary metabolite producer into a host 
+food source. The bacteria’s host is a “farmer” clone of the social amoeba 
+Dictyostelium discoideum that carries and disperses bacteria during its spore 
+stage. Associated with the farmer are two strains of Pseudomonas fluorescens, 
+only one of which serves as a food source. The other strain produces diffusible s
+mall molecules: pyrrolnitrin, a known antifungal agent, and a chromene that potently 
+enhances the farmer’s spore production and depresses a nonfarmer’s spore 
+production. Genome sequence and phylogenetic analyses identify a derived point 
+mutation in the food strain that generates a premature stop codon in a global 
+activator (gacA), encoding the response regulator of a two-component regulatory 
+system. Generation of a knockout mutant of this regulatory gene in the nonfood 
+bacterial strain altered its secondary metabolite profile to match that of the food 
+strain, and also, independently, converted it into a food source. These results 
+suggest that a single mutation in an inedible ancestral strain that served a 
+protective role converted it to a “domesticated” food source. 
+
+
+Submitted by David Queller [queller@wustl.edu]
+---------------------------------------------------------------------------
+
+
+Kin Recognition Protects Cooperators Against Cheaters
+
+Hsing-I Ho, Shigenori Hirose, Adam Kuspa, and Gad Shaulsky
+
+Baylor College of Medicine, Houston, TX 77030
+
+
+Current Biology, in press
+
+The evolution of sociality and altruism is enigmatic because cooperators 
+are constantly threatened by cheaters who benefit from cooperation without 
+incurring its full cost. Kin recognition is the ability to recognize and cooperate 
+with genetically close relatives. It has also been proposed as a potential 
+mechanism that limits cheating, but there has been no direct experimental 
+support for that possibility. Here we show that kin recognition protects 
+cooperators against cheaters. The social amoebae Dictyostelium discoideum 
+cooperate by forming multicellular aggregates that develop into fruiting bodies 
+of viable spores and dead stalk cells. Cheaters preferentially differentiate into 
+spores while their victims die as stalk cells in chimeric aggregates. We 
+engineered syngeneic cheaters and victims that differed only in their 
+kin-recognition genes, tgrB1 and tgrC1, and in a single cheater allele and 
+found that the victims escaped exploitation by different types of nonkin 
+cheaters. This protection depends on kin-recognition-mediated segregation 
+because it is compromised when we disrupt strain segregation. These 
+findings provide direct evidence for the role of kin recognition in cheater 
+control and suggest a mechanism for the maintenance of stable 
+cooperative systems.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]
+---------------------------------------------------------------------------
+
+
+The cytohesin paralog Sec7 of Dictyostelium discoideum is required for 
+phagocytosis and cell motility 
+
+
+Mueller, R., Herr, C., Sukumaran, S. K., Omosigho, N. N., Plomann, M., 
+Riyahi, T. Y., Stumpf, M., Swaminathan, K., Tsangarides, M., Yiannakou, K., 
+Blau-Wasser, R., Gallinger, C., Schleicher ,M., Kolanus, W., Noegel A. A. 
+
+
+Cell Communication and Signaling , in press
+
+Background: Dictyostelium harbors several paralogous Sec7 genes that 
+encode members of three subfamilies of the Sec7 superfamily of guanine 
+nucleotide exchange factors. One of them is the cytohesin family 
+represented by three members in D. discoideum, SecG, Sec7 and a further 
+protein distinguished by several transmembrane domains. Cytohesins are 
+characterized by a Sec7-PH tandem domain and have roles in cell adhesion 
+and migration. 
+
+Results: We study here Sec7. In vitro its PH domain bound preferentially to 
+phosphatidylinositol 3,4-bisphosphate (PI(3,4)P2), phosphatidylinositol 4,5-
+bisphosphate (PI(4,5)P2) and phosphatidylinositol 3,4,5-trisphosphate 
+(PI(3,4,5)P3). When following the distribution of GFP-Sec7 in vivo we 
+observed the protein in the cytosol and at the plasma membrane. Strikingly, 
+when cells formed pseudopods, macropinosomes or phagosomes, GFP-Sec7 
+was conspicuously absent from areas of the plasma membrane which were 
+involved in these processes. Mutant cells lacking Sec7 exhibited an impaired 
+phagocytosis and showed significantly reduced speed and less persistence 
+during migration. cellular properties associated with mammalian cytohesins 
+like cell-cell and cell-substratum adhesion were not altered. Proteins with 
+roles in membrane trafficking and signal transduction have been identified 
+as putative interaction partners consistent with the data obtained from mutant 
+analysis. 
+
+Conclusions: Sec7 is a cytosolic component and is associated with the 
+plasma membrane in a pattern distinctly different from the accumulation of 
+PI(3,4,5)P3. Mutant analysis reveals that loss of the protein affects cellular 
+processes that involve membrane flow and the actin cytoskeleton.
+
+
+Submitted by Angelika Noegel [noegel@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 39, number 21]

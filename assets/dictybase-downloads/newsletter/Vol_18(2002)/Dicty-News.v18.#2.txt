@@ -1,0 +1,170 @@
+Dicty News
+Electronic Edition
+Volume 18, number 2
+January 26, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+Molecular analysis of the cytosolic Dictyostelium gamma-tubulin complex
+
+Christine Daunderer and Ralph Grf
+
+Adolf-Butenandt-Institut/Zellbiologie, Universitt Mnchen, Germany 
+Ralph.Graef@lrz.uni-muenchen.de
+
+Eur. J. Cell Biol., in press
+
+   Gamma-tubulin plays an essential role in microtubule nucleation and 
+organization and occurs, besides its centrosomal localization, in the 
+cytosol, where it forms soluble complexes with other proteins. We 
+investigated the size and composition of gamma-tubulin-complexes in 
+Dictyostelium, using a mutant cell line in which the endogenous copy of 
+the gamma-tubulin gene had been replaced by a tagged version of the gene. 
+Dictyostelium gamma-tubulin complexes were generally much smaller than the 
+large gamma-tubulin ring complexes found in higher organisms. The stability 
+of the small Dictyostelium gamma-tubulin complexes depended strongly on the 
+purification conditions, with a striking stabilization of the complexes 
+under high salt conditions. Furthermore, we cloned the Dictyostelium homolog 
+of Spc97 and an almost complete sequence of the Dictyostelium homolog of 
+Spc98, which are both components of gamma-tubulin complexes in other 
+organisms. Both proteins localize to the centrosome in Dictyostelium 
+throughout the cell cycle and are also present in a cytosolic pool. We 
+could show that the prevailing small complex present in Dictyostelium 
+consists of DdSpc98 and gamma-tubulin, whereas DdSpc97 does not associate. 
+Dictyostelium is thus the first organism investigated so far where the 
+three proteins do not interact stably in the cytosol.
+
+-----------------------------------------------------------------------------
+
+Visualization of Actin Dynamics During Macropinocytosis and Exocytosis
+
+Eunkyung Lee and David A. Knecht
+
+Department of Molecular and Cell Biology, University of Connecticut       
+Storrs, CT 06269
+
+Traffic, in press
+
+   Macropinocytosis and exocytosis of post-lysosomes have been visualized 
+using an GFP probe that binds specifically to F-actin filaments.  F-actin 
+association with macropinocytosis begins as a V-shaped infolding of the 
+membrane.  Vesicle enlargement occurs through an inward movement of the 
+proximal point of the V as well as an outward protrusion at the tip of the 
+V to form an elongated invagination.  The protrusion eventually closes at 
+its distal margin to become a vesicle and is moved centripetally while 
+recovering its circular shape.  The vesicle loses its actin coat within one 
+minute after internalization.  One hour later, post-lysosomal vesicles 
+became very weakly surrounded by actin while still cytoplasmic.  Some of 
+these vesicles moved to the plasma membrane, docked, and then expelled their 
+contents.  Slightly before the vesicle content began to disappear, an 
+increase in F-actin association with the vesicle was observed.  This was 
+followed by rapid contraction of the vesicle and then disappearance of the 
+actin signal once the internal content was released.  These results show 
+that dynamic changes in actin filament association with the vesicle membrane 
+accompany both endocytosis and exocytosis.
+
+-----------------------------------------------------------------------------
+
+Dynacortin is a novel actin bundling protein that localizes to dynamic actin 
+structures.  
+
+Douglas N. Robinson*, Stephani S. Ocon, Ronald S. Rock and James A. Spudich
+
+Department of Biochemistry, Stanford University School of Medicine, Stanford, 
+CA  94305-5307
+
+*Contact information: Department of Cell Biology, Johns Hopkins Medical 
+Institute, 725 N. Wolfe St., Baltimore, MD 21205, Ph: 410-502-2850
+Email: Douglas.Robinson@jhu.edu
+
+J. Biol. Chem., In press
+
+   Dynacortin is a novel protein that was discovered in a genetic suppressor 
+screen of a Dictyostelium discoideum cytokinesis-deficient mutant cell line 
+devoid of the cleavage furrow actin-bundling protein, cortexillin I.  While 
+dynacortin is highly enriched in the cortex, particularly in cell-surface 
+protrusions, it is excluded from the cleavage furrow cortex during 
+cytokinesis.  Here, we describe the biochemical characterization of this new 
+protein.  Purified dynacortin is an 80-kDa dimer with a large 5.7 nm Stoke s 
+radius.  Dynacortin cross-links actin filaments into parallel arrays with a 
+mole ratio of one dimer to 1.3 actin monomers and a 3.1 mM Kd. Using total 
+internal reflection fluorescence microscopy, GFP-dynacortin and the actin-
+bundling protein coronin-GFP are seen to concentrate in highly dynamic 
+cortical structures with assembly and disassembly half-lives of about 15 
+seconds.  These results indicate that cells have evolved different actin-
+filament cross-linking proteins with complementary cellular distributions 
+that collaborate to orchestrate complex cell shape changes.
+
+-----------------------------------------------------------------------------
+
+Morphology and dynamics of the endocytic pathway in Dictyostelium discoideum
+
+Eva M. Neuhaus, Wolfhard Almers and Thierry Soldati
+
+Mol. Biol. Cell, in press
+
+   Dictyostelium discoideum is a genetically and biochemically tractable 
+social amoeba belonging to the crown group of eukaryotes. It performs some 
+of the tasks characteristic of a leukocyte such as chemotactic motility, 
+macropinocytosis and phagocytosis that are not performed by other model 
+organisms or are difficult to study. D. discoideum is becoming a popular 
+system to study molecular mechanisms of endocytosis, but the morphological 
+characterization of the organelles along this pathway and the comparison 
+with equivalent and/or different organelles in animal cells and yeasts were 
+lagging. Here, we used a combination of evanescent wave microscopy and 
+electron microscopy of rapidly frozen samples to visualize primary endocytic 
+vesicles, vesicular-tubular structures of the early and late endo-lysosomal 
+system, such as multi-vesicular bodies, and the specialized secretory 
+lysosomes. In addition, we present biochemical and morphological evidence 
+for the existence of a micropinocytic pathway, which contributes to the 
+uptake of membrane alongside macropinocytosis, which is the major fluid 
+phase uptake process. This complex endosomal compartment underwent 
+continuous cycles of tubulation/vesiculation as well as homo- and 
+heterotypic fusions, in a way very reminiscent of mechanisms and structures 
+documented in leukocytes. Finally, egestion of fluid phase from the 
+secretory lysosomes was directly observed.
+
+-----------------------------------------------------------------------------
+
+The dynamin A ring complex: molecular organisation and nucleotide-dependent 
+conformational changes
+
+Boris Klockow, Willem Tichelaar*, Dean R. Madden*, Hartmut H. Niemann, 
+Toshihiko Akiba, Keiko Hirose$, Dietmar J. Manstein
+
+
+Department of Biophysics and *Ion Channel Structure Research Group, 
+Max-Planck-Institute for Medical Research, Jahnstr. 29, D-69120 Heidelberg, 
+Germany  National Institute for Advanced Interdisciplinary Research and 
+$ Gene Discovery Research Center, National Institute of Advanced Industrial 
+Science and Technology (AIST), 1-1-4 Higashi, Tsukuba, Ibaraki 305-8562, Japan
+
+The EMBO Journal, in press.
+
+The GTPase dynamin A of the lower eukaryote Dictyostelium discoideum 
+functions in multiple membrane severing events. Here we show by electron 
+microscopy that dynamin A self-assembles into rings and helices similar to 
+human dynamin 1. Single particle analysis of the rings led to a three-
+dimensional map of the nucleotide-free dynamin A ring complex. The complex 
+consists of two layers, each layer comprising two concentric rings with 11-
+fold symmetry. The inner ring forms spike-like structures towards the centre, 
+ideally situated to penetrate into a tubulated lipid membrane. The GTP-bound 
+state, visualised using the non-hydrolysable GTP analogue GppNHp, is 
+associated with reorganisation of the ring complex leading to the generation 
+of short helical assemblies. Subsequent steps in the hydrolytic cycle induce 
+further conformational changes  including an increase in helical pitch  and 
+culminate in the disassembly of the complex. The results support a model for 
+the mechanochemical action of dynamin family proteins that involves both 
+constriction and stretching in membrane fission.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 2]

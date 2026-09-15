@@ -1,0 +1,160 @@
+Dicty News
+Electronic Edition
+Volume 11, number 4
+August 22, 1998
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page 
+"http://dicty.cmb.nwu.edu/dicty/dicty.html"
+
+===========
+ Abstracts
+===========
+ 
+Overexpression of a Novel Rho-family GTPase, RacC, Induces Unusual
+Actin-based Structures and Positively Affects phagocytosis in Dictyostelium
+discoideum 
+David J. Seastone (1) , Eunkyung Lee (2), John Bush (3), David Knecht (2), 
+and James Cardelli(1,4)
+
+(1)Department of Microbiology and Immunology and (4) The Feist-Weiller Cancer 
+Center,  Louisiana State University Medical Center, Shreveport, LA 71130.   
+(2) Department of Molecular and Cell Biology  University of Connecticut.  
+Storrs, CT 06269.   (3)Department of Biology,  University of Arkansas, 
+Little Rock AR 72204.
+
+Mol. Biol. Cell, in press
+
+Abstract
+
+   Rho family proteins have been implicated in regulating a variety of 
+cellular processes including actin cytoskeleton organization, endocytosis, 
+cell cycle, and gene expression.  In this study, we analyzed the function of 
+a novel D. discoideum Rho family protein (RacC).  A cell-line was generated 
+that conditionally overexpressed wild-type RacC 3-4 fold relative to endogenous 
+RacC.  Light microscopy and SEM indicated that the morphology of the RacC 
+overexpressing cells (RacC WT(+) cells) was significantly altered compared 
+to control cells.  In contrast to the cortical F-actin distribution normally 
+observed, RacC WT(+) cells displayed unusual dorsal and peripheral F-actin rich 
+surface blebs (petalopodia; for flower-like). Furthermore, phagocytosis in the 
+RacC WT(+) cells was induced three-fold relative to control Ax2 cells, while 
+fluid-phase pinocytosis was reduced three-fold, primarily as the result of an 
+inhibition of macropinocytosis.  Efflux of fluid phase markers was also reduced 
+in the RacC WT(+) cells, suggesting that RacC may regulate post-internalization 
+steps along the endo-lysosomal pathway.  Treatment of cells with wortmannin and 
+LY294002 (PI 3-kinase inhibitors) prevented the RacC-induced morphological 
+changes but did not affect phagocytosis, suggesting that petalopodia are probably 
+not required for RacC-induced phagocytosis. In contrast, inactivating diacylglycerol-
+binding motif-containing proteins by treating cells with the drug calphostin C 
+completely inhibited phagocytosis in control and RacC WT(+) cells.  These results 
+suggest that RacC plays a role in actin cytoskeleton organization and phagocytosis 
+in Dictyostelium.
+
+-------------------------------------------------------------------------
+
+G PROTEIN SIGNALING EVENTS ARE ACTIVATED AT THE LEADING EDGE OF CHEMOTACTIC
+CELLS
+
+Carole A. Parent, Brenda J. Blacklock, Wendy M. Froehlich, Douglas B.
+Murphy, and Peter N. Devreotes
+
+Department of Biological Chemistry, Johns Hopkins University School of
+Medicine, Baltimore MD  21205
+
+Cell, In Press
+
+Abstract
+
+   Directional sensing by eucaryotic cells does not require polarization 
+of chemoattractant receptors. The translocation of the PH-domain containing 
+protein CRAC in D. discoideum to binding sites on the inner face of the 
+plasma membrane reflects activation of the G protein-linked signaling system. 
+Increments in chemoattractant elicit a uniform response around the cell 
+periphery. Yet when cells are exposed to a gradient the activation occurs 
+selectively at the stimulated edge, even in immobilized cells. We propose 
+that such localized activation, transmitted by the recruitment of cytosolic 
+proteins, may be a general mechanism for gradient sensing by G protein-linked 
+chemotactic systems including those involving chemotactic cytokines in leukocytes. 
+
+-------------------------------------------------------------------------
+
+Transcription of the Dictyostelium glycogen phosphorylase-2 gene is induced
+by three large promoter domains
+
+Reyna Favis¥, Ian McCaffery*, Gretchen Ehrenkaufer# and Charles L. RutherfordÆ
+Dept. of Biology, Virginia Polytechnic Institute and State University
+Blacksburg, VA 24061-0406 USA
+
+Developmental Genetics, in press
+
+ABSTRACT
+
+   The promoter of the Dictyostelium glycogen phosporylase-2 (gp2) gene 
+possesses a profound AT-bias, typical of promoters in this organism.  To understand 
+how Dictyostelium  achieves specificity during transcriptional regulation under 
+the constraint of this highly biased nucleotide composition, we have documented 
+the changes in chromatin structure associated with developmental induction of gp2 
+gene expression.  DNase I hypersensitive analyses indicated the presence of several 
+developmentally regulated nuclease-sensitive sites located upstream of the start 
+codon: two strong sites at approximately   -250 bp and -350 bp and three substantially 
+weaker sites at -290 bp, -445 bp and -505 bp.  In vitro footprint analyses using 
+nuclear extracts derived from several stages of development (corresponding to 
+varying levels of gp2 expression) revealed three large regions of occupation that 
+were developmentally regulated and corresponded to these nuclease-sensitive sites: 
+-227 to -294 bp (domain 1), -327 to -383 bp (domain 2) and -416 to   -534 bp (domain 
+3).  The presence and the extent of the three regulatory domains was confirmed by in 
+vivo footprint analyses spanning the same developmental time points.  Southwestern 
+analyses using probes encompassing these footprints demonstrated that probes 
+corresponding to domains 1 and 3 both interacted with 83 and 77 kDa peptides.  
+The domain 3 probe also interacted with a 92 kDa peptide, while only a 62 kDa 
+peptide is recognized by the domain 2 probe.  In all cases, peptides capable of 
+binding these probes were found in nuclear extracts derived from differentiated 
+cells and not in undifferentiated cell nuclear extract.  Using nuclear extract 
+from differentiated cells and probes corresponding to the three domains, gel mobility 
+shift analyses detected ladders of retarded bands for both domains 1 and 3 and three 
+major retarded bands for domain 2.  These results suggest that specificity in 
+transcriptional activation in the AT-rich promoters of Dictyostelium may be achieved 
+by requiring multiple protein-DNA and/or protein-protein interactions to occur before 
+induction can proceed.
+
+-------------------------------------------------------------------------
+
+
+THE IQGAP-RELATED PROTEIN DGAP1 INTERACTS WITH RAC AND IS INVOLVED IN THE 
+MODULATION OF THE F-ACTIN CYTOSKELETON AND CONTROL OF CELL MOTILITY
+
+Jan Faix 1, Chris Clougherty1, Angelika Konzok1, Ursula Mintert1, John 
+Murphy1, Richard Albrecht1, Bettina Mühlbauer1, and Jürgen Kuhlmann2
+
+Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany1, 
+Max-Planck-Institut für molekulare Physiologie, D-44026 Dortmund, Germany2
+
+J.Cell Sci., in press
+
+Abstract
+
+   DGAP1 of D. discoideum is a cell cortex associated 95 kDa protein that 
+shows homology to both RasGTPase-activating proteins (RasGAPs) and RasGAP-
+related proteins. When tested for RasGAP activity, recombinant DGAP1 protein 
+did not promote the GTPase activity of human H-Ras or of Dictyostelium RasG 
+in vitro. Instead, DGAP1 bound to Dictyostelium Rac1A and human Rac1, but 
+not to human Cdc42. DGAP1 preferentially interacted with the activated, GTP-
+bound forms of Rac1 and Rac1A, but did not affect the GTPase activities. Since 
+Rho-type GTPases are implicated in the formation of specific F-actin structures 
+and in the control of cell morphology, the microfilament system of mutants that 
+either lack or overexpress DGAP1 has been analysed. DGAP1-null mutants showed 
+elevated levels of F-actin that was organized in large leading edges, membrane 
+ruffles or numerous large filopods. Expression of actin fused to green fluorescent 
+protein (GFP) was used to monitor the actin dynamics in these cells, and revealed 
+that the F-actin cytoskeleton of DGAP1-null cells was rapidly re-arranged to 
+form ruffles and filopods. Conversely, in DGAP1-overexpressing cells, the formation 
+of cellular projections containing F-actin was largely suppressed. Measurement of 
+cell migration demonstrated that DGAP1 expression is inversely correlated with the 
+speed of cell motility.
+
+-------------------------------------------------------------------------
+[End Dicty News, volume 11, number 4]
+

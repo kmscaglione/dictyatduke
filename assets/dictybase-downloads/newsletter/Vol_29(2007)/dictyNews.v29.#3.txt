@@ -1,0 +1,120 @@
+dictyNews
+Electronic Edition
+Volume 29, number 3
+July 20, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+Note: The Hirata et al. abstract from last week's dictyNews had an error
+in the title. The corrected version is below.
+
+Involvements of a novel protein, DIA2, in cAMP signaling and spore 
+differentiation during Dictyostelium development
+
+Kaori Hirata, Aiko Amagai, Soo-Cheon Chae†, Shigenori Hirose§ and 
+Yasuo Maeda*
+
+Department of Developmental Biology and Neurosciences, Graduate School of 
+Life Sciences, Tohoku University, Aoba, Sendai 980-8578, Japan
+
+*Author for correspondence
+
+†Present address: Department of Pathology, Wonkwang University, Iksan-shi, 
+Chonbuk 570-749, South Korea 
+§Present address: Departments of Molecular and Human Genetics, Biochemistry 
+and Molecular Biology, Baylor College of Medicine, Houston, TX 77030, USA
+
+
+Differentiation, in press
+
+The novel gene dia2 (differentiation-associated gene 2) was originally 
+isolated as a gene expressed specifically in response to initial 
+differentiation of Dictyostelium discoideum Ax-2 cells. Using dia2AS cells 
+in which the dia2 expression was inactivated by the antisense RNA method, 
+DIA2 protein was found to be required for cAMP signaling during cell 
+aggregation. During late development, the DIA2 protein changed its location 
+from the endoplasmic reticulum (ER) to prespore-specific vacuoles (PSVs) 
+that are specifically present in prespore cells at the slug. In 
+differentiating prestalk cells, however, DIA2 was found to be nearly lost 
+from the cells. Importantly, exocytosis of PSVs from prespore cells and the 
+subsequent spore differentiation were almost completely impaired in dia2AS 
+cells. In addition, spore induction by externally applied 8-bromo cAMP was 
+significantly suppressed in dia2AS cells. Taken together these results 
+strongly suggested that DIA2 might be closely involved in cAMP signaling 
+and spore differentiation as well as in the initiation of differentiation 
+during Dictyostelium development.
+
+
+Submitted by: Yasuo Maeda [ymaeda@mail.tains.tohoku.ac.jp]
+--------------------------------------------------------------------------------
+
+
+Recent advances using green and red fluorescent protein variants 
+
+Annette Muller-Taubenberger1 and Kurt I. Anderson2
+
+1) Institut fuer Zellbiologie (ABI), Ludwig-Maximilians-Universitaet Muenchen, 
+Schillerstr. 42, D-80336 Muenchen, Germany
+2) Beatson Institute for Cancer Research, Garscube Estate Switchback Road, 
+Glasgow, G61 1BD, United Kingdom
+
+
+Applied Microbiology and Biotechnology, in press
+
+Fluorescent proteins have proven to be excellent tools for live cell imaging. 
+In addition to green fluorescent protein (GFP) and its variants, recent 
+progress has led to the development of monomeric red fluorescent proteins 
+(mRFPs) that show improved properties in respect to maturation, brightness, 
+and the monomeric state. This review considers green and red spectral variants, 
+their paired use for live cell imaging in vivo, in vitro, and in fluorescence 
+resonance energy transfer (FRET) studies, in addition to other recent 
+“two color” advances including photo-switching and bi-molecular fluorescence 
+complementation (BiFC). It will be seen that green and red fluorescent proteins 
+now exist with nearly ideal properties for dual-color microscopy and FRET. 
+
+
+Submitted by: Annette Muller-Taubenberger [amueller@lrz.uni-muenchen.de]
+--------------------------------------------------------------------------------
+
+
+The Golgi associated protein GRASP is required for unconventional protein 
+secretion during development. 
+
+Matthew A. Kinseth, Christophe Anjard, Danny Fuller, Gianni Guizzunti, 
+William F. Loomis, and Vivek Malhotra.
+
+Cell and Developmental Biology , Division of Biological Sciences, University 
+of California San Diego, La Jolla, California 92093
+
+
+Cell, in press
+
+During Dictyostelium development, prespore cells secrete Acyl CoA binding 
+protein (AcbA). Upon release, AcbA is processed to generate a peptide called 
+SDF-2, which triggers terminal differentiation of spore cells. We have found 
+that cells lacking GRASP, a protein attached peripherally to the cytoplasmic 
+surface of Golgi membranes, fail to secrete AcbA, and thus produce inviable 
+spores. Surprisingly, AcbA lacks a signal sequence and is not secreted via 
+the conventional secretory pathway [endoplasmic reticulum-Golgi-cell surface]. 
+GRASP is not required for conventional protein secretion, growth, and the 
+viability of vegetative cells.  Our findings reveal a physiological role of 
+GRASP and provide a means to understand unconventional secretion and its 
+role in development.
+
+
+Submitted by: Bill Loomis [wloomis@ucsd.edu]
+==============================================================
+[End dictyNews, volume 29, number 3]

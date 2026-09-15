@@ -1,0 +1,201 @@
+Dicty News
+Electronic Edition
+Volume 25, number 10
+October 28, 2005
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+Effects of chemoattractant pteridines upon speed of D. discoideum 
+vegetative amoebae.
+
+Jared L. Rifkin1 & Robert R. Goldberg2
+
+1Biology Department and 2Computer Science Department, Queens College of 
+CUNY, Flushing, NY 11367.
+
+
+Cell Motility and the Cytoskeleton, in press
+
+Movements of D. discoideum vegetative amoebae responding to pteridine 
+chemoattractants, folate acid and pterin, were recorded. A vector 
+analysis of these images was performed to partition the speed and 
+orientation components of these motility patterns. This study 
+demonstrates that in addition to orientation (chemotaxis), stimulated 
+speed (chemokinesis) is an important component of the directed migration 
+of these amoebae. Furthermore, the primary difference in their response 
+to folate vs. pterin is in speed rather than orientation. The data 
+support a model of directed migration of these cells in which there are 
+(1) separate signal translation pathways consequent from folate vs. 
+pterin reception and (2) specific pathways leading to increase in 
+orientation vs. speed.
+
+
+Submitted by: Jared Rifkin [jared_rifkin@qc.edu]
+
+-----------------------------------------------------------------------------
+
+
+DNA-PKcs-Dependent Signaling of DNA Damage in Dictyostelium discoideum 
+
+
+Jessica J.R. Hudson1, Duen-Wei Hsu1, Kunde Guo1, Natasha Zhukovskaya2, Po-
+Hsien Liu1, Jeffrey G. Williams2, Catherine J. Pears1 and Nicholas D. Lakin1,
+
+1Department of Biochemistry, University of Oxford, South Parks Road, Oxford
+OX1 3QU, United Kingdom
+2School of Life Sciences, Wellcome Trust Biocentre, University of Dundee,
+Dundee DD1 5EH, United Kingdom
+
+
+Current Biology Volume 15, Issue 20, 25 October 2005, Pages 1880-1885 
+
+DNA double-strand breaks (DSBs) can be repaired by either homologous
+recombination (HR) or nonhomologous end-joining (NHEJ) [1]. In vertebrates,
+the first step in NHEJ is recruitment of the DNA-dependent protein kinase
+(DNA-PK) to DNA termini [2]. DNA-PK consists of a catalytic subunit (DNA-
+PKcs) that is recruited to DNA ends by the Ku70/Ku80 heterodimer [3].
+Although Ku has been identified in a wide variety of organisms, to date DNA-
+PKcs has only been identified experimentally in vertebrates. Here, we report
+the identification of DNA-PK in the nonvertebrate Dictyostelium.
+Dictyostelium Ku80 contains a conserved domain previously implicated in
+recruiting DNA-PKcs to DNA [4] and consistent with this observation, we have
+identified DNA-PKcs in the Dictyostelium genome. Disruption of the gene
+encoding Dictyostelium DNA-PKcs results in sensitivity to DNA DSBs and
+defective H2AX phosphorylation in response to this form of DNA damage.
+However, these phenotypes are only apparent when DNA damage is administered
+in G1 phase of the cell cycle. These data illustrate a cell cycle-dependent
+requirement for Dictyostelium DNA-PK in signaling and combating DNA DSBs and
+represent the first experimental verification of DNA-PKcs in a nonvertebrate
+organism.
+
+
+Submitted by: Jessica J.R. Hudson [jessica.hudson@bioch.ox.ac.uk]
+
+-----------------------------------------------------------------------------
+
+
+Developmentally Regulated DNA Methylation in Dictyostelium
+
+Mariko Katoh, Tomaz Curk, Qikai Xu, Blaz Zupan, Adam Kuspa and Gad Shaulsky
+
+Department of Molecular and Human Genetics, Graduate Program in Structural
+Computational Biology and Molecular Biophysics, Department of Biochemistry
+and Molecular Biology, Baylor College of Medicine, Houston, TX
+
+Faculty of Computer and Information Science, University of Ljubljana,
+Ljubljana, Slovenia
+
+
+Eukaryotic Cell, in press
+
+Methylation of cytosine residues in DNA plays a critical role in the
+silencing of gene expression, organization of chromatin structure and
+cellular differentiation of eukaryotes.  Previous studies failed to detect 5-
+methylcytosine in Dictyostelium genomic DNA, but the recent sequencing of the
+Dictyostelium genome revealed a candidate DNA methyltransferase gene (dnmA).
+The genome sequence also uncovered an unusual distribution of potential
+methylation sites, CpG islands, throughout the genome.  DnmA belongs to the
+Dnmt2 subfamily and contains all the catalytic motifs necessary for cytosine
+methyltransferases.  Dnmt2 activity is typically weak in Drosophila, mouse
+and human cells and the gene function in these systems is unknown.  We have
+investigated the methylation status of Dictyostelium genomic DNA with
+antibodies raised against 5-methylcytosine and detected low levels of the
+modified nucleotide.  We also found that DNA methylation increased during
+development.  We searched the genome for potential methylation sites and
+found them in retrotransposable elements and in several other genes.  Using
+Southern blot analysis with methylation sensitive and insensitive restriction
+endonucleases we found that the DIRS retrotransposon and the guaB gene were
+indeed methylated.  We then mutated the dnmA gene and found that DNA
+methylation was reduced to about 50% of the wild-type level.  The mutant
+cells exhibited morphological defects in late development, indicating that
+DNA methylation has a regulatory role in Dictyostelium development.  Our
+findings establish a role for a Dnmt2 methyltransferase in eukaryotic
+development.
+
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+-----------------------------------------------------------------------------
+
+
+The making of filopodia
+
+Jan Faix(1) and Klemens Rottner(2)
+
+(1)Institute of Biophysical Chemistry, Hannover Medical School, Carl-Neuberg-
+Str. 1, D-30623 Hannover, Germany. (2)Cytoskeleton Dynamics Group, German
+Research Centre for Biotechnology (GBF), Mascheroder Weg 1, D-38124
+Braunschweig, Germany.
+
+
+Current Opinion in Cell Biology, in press
+
+Filopodia are rod-like cell surface projections filled with bundles of
+parallel actin filaments. They are found on a variety of cell types and have
+been ascribed sensory or exploratory functions. Filopodia formation is
+frequently associated with protrusion of sheet-like actin filament arrays
+called lamellipodia or membrane ruffles, but in comparison to these
+structures, the molecular details underpinning the initiation and maintenance
+of filopodia are only just beginning to emerge. Recent advances have improved
+our understanding of the molecular requirements for filopodium protrusion and
+have yielded insights into the interrelationships between lamellipodia and
+filopodia, the two ‘sub-compartments’ of the protrusive actin cytoskeleton.
+
+
+Submitted by: Jan Faix [faix@bpc.mh-hannover.de]
+
+-----------------------------------------------------------------------------
+
+
+The Shwachman-Diamond Syndrome Gene Encodes an RNA-Binding Protein That
+Localizes to the Pseudopod of Dictyostelium Amoebae During Chemotaxis
+
+Deborah Wessels, Thyagarajan Srikantha, Song Yi, Spencer Kuhl, L. Aravind and
+David R. Soll
+
+
+Journal Cell Science, in press
+
+The Shwachman-Diamond Syndrome (SDS) is an autosomal disorder with
+multisystem defects.  The SBDS gene, which contains mutations in a majority
+of SDS patients, encodes a protein of unknown function, although it has been
+strongly implicated in RNA metabolism.  There is also some evidence that it
+interacts with molecules that regulate cytoskeletal organization. Recently,
+it was demonstrated by computer-assisted methods that the single behavioral
+defect of polymorphonuclear leukocytes (PMNs) of SDS patients is the
+incapacity to orient correctly in a spatial gradient of chemoattractant. We
+considered the social amoeba Dictyostelium discoideum, a model for PMN
+chemotaxis, an excellent system for elucidating the function of the SDS
+protein. We first identified the homolog of SBDS in D. discoideum and found
+that the amino acids that are altered in human disease were conserved. Given
+that several proteins involved in chemotactic orientation localize to the
+pseudopods of cells undergoing chemotaxis, we tested whether the SBDS gene
+product did the same.  We produced an SBDS-GFP chimeric in-frame fusion gene,
+and generated transformants either with multiple ectopic insertions of the
+fusion gene or multiple copies of a non-integrated plasmid carrying the
+fusion gene.  In both cases, the SBDS-GFP protein was dispersed equally
+through the cytoplasm and pseudopods of cells migrating in buffer.  However,
+we observed differential enrichment of SBDS in the pseudopods of cells
+treated with the chemoattractant cAMP, suggesting that the SBDS protein may
+play a role in chemotaxis.   In light of these results, we discuss how SBDS
+may function during chemotaxis.
+
+
+Submitted by: Deborah Wessels [deborah-wessels@uiowa.edu]
+
+==============================================================================
+[End Dicty News, volume 25, number 10]

@@ -1,0 +1,204 @@
+Dicty News
+Electronic Edition
+Volume 15, number 7
+October 14, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@nwu.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.nwu.edu/dicty"
+
+===========================
+   Postdoctoral Position
+===========================
+
+Two postdoctoral associate positions are available, focusing on the
+following two projects.
+
+	We previously found that Dictyostelium cells sense the density of
+cells of one type using a secreted 80 kD glycoprotein; this is essentially
+the eukaryotic equivalent of a quorum sensor.  The cells sense this factor
+using a 2-transmembrane receptor.  Opportunities are available to
+characterize the basic biochemistry of this receptor, determine the
+functional domains of the receptor, and elucidate its signal transduction
+pathway.
+
+	When Dictyostelium cells starve, they form aggregates of roughly
+20,000 cells.  To determine how the cells can sense their number, we
+isolated mutants which have an abnormal number of cells in the aggregates.
+We found a mutant which oversecretes a factor the cells use to sense the
+number of cells in a group.  The factor is a 450 kD complex of polypeptides
+(Brock and Gomer, Genes&Development. 13, 1960-1969. (1999)).  Opportunities
+are available to study both this cell number counting factor and its signal
+transduction pathway.
+
+Applicants must be within two months of obtaining their Ph.D., or have
+received their Ph.D. within the last two years.  Send CV and cover letter
+by email to richard@bioc.rice.edu, or send by regular mail to Richard
+Gomer, HHMI, Department of Biochemistry and Cell Biology, MS-140, Rice
+University, 6100 S. Main Street, Houston, TX 77005-1892.
+
+
+
+==============
+  Abstracts
+==============
+
+Glucose-induced pathways for actin tyrosine dephosphorylation during 
+Dictyostelium spore germination.
+
+Yoshiro Kishi1, Dana Mahadeo2, David N. Cervi2, Chris Clements2, 
+David A. Cotter2 and Masazumi Sameshima1
+
+1Electron Microscopy Center, The Tokyo Metro Inst of Med Sci, 
+ 3-18-22 Honkomagome, Bunkyo-ku, Tokyo, 113-8613, Japan
+2Department of Biological Sciences, University of Windsor, 
+ 401 Sunset Avenue, Windsor, Ontario, N9B 3P4, Canada
+
+Experimantal Cell Research, in press
+
+In the presence of germination signals, dormant spores of Dictyostelium 
+discoideum rapidly germinate to start a new life cycle. Previously we 
+have shown that half of the actin molecules in spores are maintained in 
+a tyrosine- phosphorylated state, and a decline of the actin 
+phosphorylation levels is a prerequisite for spore swelling. In this 
+study, we have established D-glucose as a trigger molecule for the actin 
+dephosphorylation. Present in a nutrient germination medium, D-glucose 
+may act both as a trigger molecule and/or may serve as a substrate within 
+a pathway for actin dephosphorylation depending upon spore age. However, 
+the glucose-induced actin dephosphorylation was insufficient for spores 
+to swell. Other factors in the nutrient medium were required for complete 
+germination of young spores aged 1 to 5 days. In contrast, dispersion in 
+non-nutrient buffer was necessary and sufficient for a decline of 
+actin phosphorylation levels and even the emergence of amoebae in older 
+spores (6 days and beyond). Moreover, the dephosphorylation pathway in 
+the older spores was independent of energy production. We propose that 
+the diversification of the actin dephosphorylation pathway may enable 
+spores to increase their probability of germination upon spore aging. 
+
+----------------------------------------------------------------------------
+
+Aberrant folate response and premature development in a mutant of
+Dictyostelium discoideum
+
+Klaus Salger and Birgit W. Wetterauer*
+
+Zoologisches Institut, Ludwig-Maximilians-Universität of München
+Luisenstraße 14, D-80333 München, Germany
+
+Differentiation, in press.
+
+Summary:
+
+Growth and development are mutually exclusive in Dictyostelium discoideum.
+The transition between the two stages of the life cycle is regulated by the
+relative abundance of nutrients and proteins secreted by the cells which
+reflect population density. At the transition from growth to development,
+the discoidin genes - developmental markers - are induced by the "quorum"
+protein PSF. The effect of PSF is counteracted by food bacteria and by
+folate [8]. We show that folate treatment during growth delays morphologic
+development. Furthermore, we demonstrate that in a mutant of Dictyostelium
+discoideum (VI88, renamed HBW3), which expresses discoidinI during growth
+and which develops rapidly [46], discoidinI expression is less sensitive to
+folate than in wild type cells. Finally, we present evidence that fragments
+of the discoidinIg promoter which are unresponsive to PSF and CM are
+sufficient for misregulation in the mutant. The only known regulator of
+these promoter elements is folate. Changes in the expression of other early
+developmental genes are shown as well. Taken together these data suggest
+that the reduced sensitivity to folate might be the cause for the "rapid
+development" phenotype of the mutant and that folate regulates
+developmental timing.
+
+----------------------------------------------------------------------------
+
+A Novel Dictyostelium RasGEF is Required for Normal Endocytosis, Cell 
+Motility and Multicellular Development
+
+Andrew Wilkins, Jonathan Chubb, and Robert H. Insall
+
+Current Biology, in press.
+
+Background:
+
+Ras proteins are regulators of multiple signalling pathways, which 
+are found in all eukaryotes.  Ras pathways are activated by guanine 
+nucleotide exchange factors (GEFs).  The social amoeba Dictyostelium 
+possesses an unexpectedly large number of ras genes, which suggests a 
+complex pattern of Ras signalling.  Loss of these genes causes a 
+range of phenotypes, including defects in cell polarity, cytokinesis, 
+development, endocytosis and phototaxis.  However, very little is 
+known about which GEFs activate these Ras proteins, and which signals 
+are mediated through GEFs.  It is also unclear, in Dictyostelium or 
+higher eukaryotes, whether Ras pathways are linear, with each Ras 
+controlled by its own GEF, or networked, with multiple GEFs able to 
+act on multiple Ras proteins.
+
+Results:
+
+We have identified the gene which encodes RasGEFB, a protein with 
+strong homology to known RasGEFs such as Sos.  Like the other known 
+Dictyostelium RasGEF, Aimless, it has no obvious sites for regulation 
+such as PH domains or cyclic nucleotide binding sites.  Loss of 
+RasGEFB causes multiple phenotypes.  Mutant cells move unusually 
+rapidly, but lose the ability to perform macropinocytosis and 
+therefore to grow in liquid medium.  These phenotypes correlate with 
+a change in morphology; crowns, the sites of macropinocytosis, are 
+replaced by polarised lamellipodia.  Mutant cells are also profoundly 
+defective in early development, although they eventually form tiny 
+but normally proportioned fruiting bodies.  This defect correlates 
+with loss of discoidin Ig  mRNA, a starvation-induced gene, although 
+other genes required for development are expressed normally or even 
+precociously.  RasGEFB is able to rescue a Saccharomyces CDC25 
+mutant, which indicates that it is a genuine GEF for Ras proteins.
+
+Conclusions:
+
+RasGEFB appears to be the principal activator of the RasS protein, 
+which regulates macropinocytosis and cell speed, but also appears to 
+regulate one or more other Ras proteins.  Dictyostelium Ras pathways 
+therefore appear not to be simply linear.
+
+----------------------------------------------------------------------------
+
+Folate Reception by Vegetative Dictyostelium Discoideum Amoebae: 
+Distribution of Receptors and Trafficking of Ligand.  
+
+Jared L. Rifkin.  
+
+Biology Department, Queens College of CUNY, Flushing NY 11367-1597, USA.  
+Tel.:718-997-3432. Fax: 718-997-3445.  E-mail: jared-rifkin@qc.edu.
+
+Cell Motil. and Cytoskeleton, in press
+
+ABSTRACT
+
+   We report the first explicit demonstration of post-reception processing 
+of a Dictyostelium chemoattractant. Folic acid stimulates reorganization 
+of the cytoskeleton of vegetative amoebae of D. discoideum.  In 
+particular, folic acid is a potent chemoattractant and it causes 
+enlargement of the filopodial array.  The distribution of folic acid 
+receptors and the fate of bound folate was investigated by presenting an 
+agonist consisting of the conjugate, folic acid-lactalbumin-FITC 
+(Folate*), to these amoebae.  This novel probe was specifically bound to 
+folic acid receptors of these amoebae and it stimulated chemotaxis and 
+enlargement of their filopodial array.  Hence, Folate* is a 
+physiologically competent probe.  The probe sans-folate moiety was not 
+bound anywhere to living or fixed amoebae.  Since Folate* did not bind to 
+amoebae after incubation with equimolar folic acid, this probe is a 
+receptor-specific agonist.  We report here the first description, by 
+confocal visualization of a competent agonist, of the distribution of 
+folate receptors of D. discoideum vegetative amoebae and of the fate of 
+this ligand.  Examination of fixed amoebae revealed that bound Folate* 
+was distributed generally over their entire surface including their 
+filopodia.   However, in living amoebae, Folate* was bound only at the 
+cell body and this bound Folate* was almost completely internalized as 
+concentrated packets into vacuoles.  This endocytosis of the probe and 
+the clustering of endocytosed Folate* is consistent with 
+receptor-mediated internalization of a ligand.  Possible routes for 
+internalization of the folate probe and the implications of this 
+endocytosis for signal molecule 
+
+----------------------------------------------------------------------------
+[End Dicty News, volume 15, number 7]

@@ -1,0 +1,141 @@
+dictyNews
+Electronic Edition
+Volume 31, number 13
+October 24, 2008
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Upon publication of your paper, please send strains and plamids to 
+the Dicty Stock Center. For more information see 
+http://dictybase.org/StockCenter/Deposit.html.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+=========
+Abstracts
+=========
+
+
+
+Biological activities of novel derivatives of DIF-1 isolated from Dictyostelium.
+
+Haruhisa Kikuchi, Shinya Ishiko, Yoshiteru Oshima, Naomi Gokan, Kohei Hosaka, 
+and Yuzuru Kubohara*
+*Gunma University IMCR, Japan.
+
+
+BBRC, in press
+
+The differentiation-inducing factor-1 (DIF-1) is a lipophilic signal molecule 
+(chlorinated alkylphenone) that induces stalk cell differentiation in the 
+cellular slime mold Dictyostelium discoideum.  In addition, DIF-1 and its 
+derivatives have been shown to possess anti-leukemic activity and glucose 
+consumption-promoting activity in vitro in mammalian cells.  In this study, 
+to assess the chemical structure-effect relationship of DIF-1, we synthesized 
+8 derivatives of DIF-1 and investigated their stalk cell-inducing activity in 
+Dictyostelium cells and pharmacological activities in mammalian cells.  Of 
+the derivatives, two amide derivatives of DIF-1, whose hydrophobic indexes 
+are close to that of DIF-1, induced stalk cell differentiation as strongly 
+as DIF-1 in Dictyostelium cells.  It was also found that some derivatives 
+suppressed cell growth in human K562 leukemia cells and promoted glucose 
+consumption in mouse 3T3-L1 cells.  These results give us valuable 
+information as to the chemical structure-effect relationship of DIF-1.
+
+
+Submitted by: Yuzuru Kubohara [kubohara@showa.gunma-u.ac.jp]
+--------------------------------------------------------------------------------
+
+
+A UDP-glucose derivative is required for vacuolar autophagic cell death
+
+Emilie Tresse, Artemis Kosta, Corinne Giusti, Marie-Françoise Luciani 
+and Pierre Golstein
+
+
+Autophagy, 2008, 4, 680-691 
+
+Autophagic cell death in Dictyostelium can be dissociated into a 
+starvation-induced sensitization stage and a death induction stage. A 
+UDP-glucose pyrophosphorylase (ugpB) mutant and a glycogen synthase (glcS) 
+mutant shared the same abnormal phenotype. In vitro, upon starvation alone 
+mutant cells showed altered contorted morphology, indicating that the mutations 
+affected the pre-death sensitization stage. Upon induction of cell death, 
+most of these mutant cells underwent death without vacuolization, distinct 
+from either autophagic or necrotic cell death. Autophagy itself was not 
+grossly altered as shown by conventional and electron microscopy. Exogenous 
+glycogen or maltose could complement both ugpB- and glcS- mutations, leading 
+back to autophagic cell death. The glcS- mutation could also be complemented 
+by 2-deoxyglucose that cannot undergo glycolysis. In agreement with the in 
+vitro data, upon development glcS- stalk cells died but most were not 
+vacuolated. We conclude that a UDP-glucose derivative (such as glycogen or 
+maltose) plays an essential energy-independent role in autophagic cell death.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+
+Marked mitochondrial alterations upon starvation without cell death, 
+caspases or Bcl-2 family members
+
+Artemis Kosta, Marie-Françoise Luciani, Willie J.C. Geerts, Pierre Golstein
+
+
+Biochimica et Biophysica Acta (BBA) - Molecular Cell Research, Volume 1783, 
+Issue 10, October 2008, Pages 2013-2019
+
+Dictyostelium HMX44A cells can withstand starvation under monolayer conditions 
+for a few days without dying. They die only when the differentiation factor 
+DIF-1 is exogenously added. Still, when HMX44A were subjected to starvation 
+without addition of DIF-1 they showed, by electron microscopy and electron 
+tomography, gross mitochondrial lesions including marked cristae alterations 
+with frequent “holes” probably originating from dilated cristae. Since these 
+cells did not die as shown for instance by FACS analysis, these results showed 
+unexpected resilience of cells bearing markedly altered mitochondria, and 
+thus showed that apparently destructive mitochondrial alterations may not 
+lead to cell death. Also, these marked mitochondrial lesions could not be 
+caused by caspases or bcl-2 family members, which these cells do not encode.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+--------------------------------------------------------------------------------
+
+
+Necrotic cell death : From reversible mitochondrial uncoupling to irreversible 
+lysosomal permeabilization
+
+Corinne Giusti, Marie-Françoise Luciani, Gérard Klein, Laurence Aubry, 
+Emilie Tresse, Artemis Kosta, Pierre Golstein
+
+
+Experimental Cell Research, In Press, Accepted Manuscript, 
+Available online 11 October 2008
+
+Dictyostelium atg1- mutant cells provide an experimentally and genetically 
+favorable model to study necrotic cell death (NCD) with no interference 
+from apoptosis orautophagy. In such cells subjected to starvation and cAMP, 
+induction by the differentiation-inducing factor DIF or by classical 
+uncouplers led within minutes to mitochondrial uncoupling, which causally 
+initiated NCD. We now report that (1) in this model, NCD included a 
+mitochondrial-lysosomal cascade of events, (2) mitochondrial uncoupling 
+and therefore initial stages of death showed reversibility for a 
+surprisingly long time, (3) subsequent lysosomal permeabilization could 
+be demonstrated using Lysosensor blue, acridin orange, Texas red-dextran 
+and cathepsin B substrate, (4) this lysosomal permeabilization was 
+irreversible, and (5) the presence of the uncoupler was required to 
+maintain mitochondrial lesions but also to induce lysosomal lesions, 
+suggesting that signaling from mitochondria to lysosomes must be 
+sustained by the continuous presence of the uncoupler. These results 
+further characterized the NCD pathway in this priviledged model, 
+contributed to a definition of NCD at the lysosomal level, and suggested 
+that in mammalian NCD even late reversibility attempts by removal of 
+the inducer may be of therapeutic interest.
+
+
+Submitted by: Pierre Golstein [golstein@ciml.univ-mrs.fr]
+==============================================================
+[End dictyNews, volume 31, number 13]

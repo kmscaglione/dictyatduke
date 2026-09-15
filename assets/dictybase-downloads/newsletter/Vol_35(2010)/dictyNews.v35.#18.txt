@@ -1,0 +1,169 @@
+dictyNews
+Electronic Edition
+Volume 35, number 18
+Dec 17, 2010
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+HAPPY HOLIDAYS AND A JOYOUS NEW YEAR!
+
+=========
+Abstracts
+=========
+
+
+Sex Determination in the Social Amoeba Dictyostelium discoideum
+
+Gareth Bloomfield, Jason Skelton, Alasdair Ivens, Yoshimasa Tanaka, 
+Robert R. Kay
+
+
+Science, in press
+
+The genetics of sex determination remain mysterious in many organisms, 
+including some that are otherwise well studied. Here we report the 
+discovery and analysis of the mating-type locus of the model organism 
+Dictyostelium discoideum. Three forms of a single genetic locus specify 
+this species' three mating types: two versions of the locus are entirely 
+different in sequence, and the third resembles a composite of the other 
+two. Single, unrelated genes are sufficient to determine two of the mating 
+types, whereas homologs of both these genes are required in the 
+composite type. The key genes encode polypeptides that possess no 
+recognizable similarity to established protein families. Sex determination 
+in the social amoebae thus appears to use regulators that are unrelated
+to any others currently known.
+
+
+Submitted by Gareth Bloomfield [garethb@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Quick guide
+Dictyostelium
+
+Louise Fets, Rob Kay, and Francisco Velazquez
+
+Cell Biology Division, MRC-Laboratory of 
+Molecular Biology, Cambridge, CB2 0QH, UK.
+
+
+Current Biology, 7 December, 2010, Volume 20, Issue 23
+
+The Quick guide answers the following questions:
+
+What is Dictyostelium?
+How can an amoeba be ‘social’?
+So how do the cells move?
+How do the amoebae know where to go?
+What can we learn from its development?
+Can Dicty be used for medical research?
+What techniques can be used with Dicty?
+What resources are there?
+Anything else?
+Where can I find out more?
+
+
+Submitted by: Francisco Velazquez [fv@mrc-lmb.cam.ac.uk]
+--------------------------------------------------------------------------------
+
+
+Developmental Changes in Transcriptional Profiles
+
+William F. Loomis 1 and Gad Shaulsky 2
+
+1. Division of Biological Sciences, University of California San Diego, 
+La Jolla, CA 92093
+2. Department of Molecular and Human Genetics, Baylor College 
+of Medicine, Houston, TX 77030. 
+
+
+Devel. Growth & Differ.,  in press
+
+Recent advances in quantitation of mRNA by hybridization to 
+microarrayed gene sequences or by deep sequencing of cDNA 
+(RNA-seq) have provided global views of the abundance of each 
+transcript. Analyses of RNA samples taken at 2 or 4 hour intervals 
+throughout development of Dictyostelium discoideum have defined 
+the developmental changes in transcriptional profiles. Comparisons 
+of the transcriptome of wild-type cells to that of mutant strains lacking 
+a gene critical to progression through the developmental stages have 
+defined key steps in the progression. The transcriptional response to 
+cAMP pulses depends on the expression of pulse-independent genes 
+that have been identified by transcriptional profiling with microarrays. 
+Similar techniques were used to discover that the DNA binding protein 
+GBF functions in a feed-forward loop to regulate post-aggregation 
+genes and that expression of a set of late genes during culmination is 
+dependent on the DNA binding protein SrfA. RNA-seq is able to reliably 
+measure individual mRNAs present as a single copy per cell as well as 
+mRNAs present at a thousand fold higher abundance. Using this 
+technique it was found that 65% of the genes in Dictyostelium change 
+two fold or more during development. Many decrease during the first 8 
+hours of development while the rest increase at specific stages and this 
+pattern is evolutionarily conserved as found by comparing the 
+transcriptomes of D. discoideum and D. purpureum. The transcriptional 
+profile of each gene is readily available at dictyBase and more 
+sophisticated analyses are available on DictyExpress.
+
+
+Submitted by Bill Loomis [wloomis@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+FYVE-Dependent Endosomal Targeting of an Arrestin-Related Protein 
+in Amoeba
+
+Dorian Guetta1,2,3, Karine Langou1, Didier Grunwald3,4,5, 
+Gerard Klein1,2,3, Laurence Aubry1,2,3
+
+1 CEA, DSV, iRTSV, Laboratoire de Biochimie et Biophysique des 
+Systemes Integres, Grenoble, France, 
+2 LBBSI, UMR5092 CNRS, Grenoble, France, 
+3 Universite Joseph Fourier, Grenoble, France, 
+4 CEA, DSV, iRTSV, Lab. Transduction du Signal, Grenoble, France, 
+5 LTS, EMI104 INSERM, Grenoble, France
+
+
+PLOS One, online
+
+Background: Visual and beta-arrestins are scaffolding proteins 
+involved in the regulation of receptor-dependent intracellular signaling 
+and their trafficking. The arrestin superfamilly includes several arrestin 
+domain-containing proteins and the structurally related protein Vps26. 
+In Dictyostelium discoideum, the arrestin-domain containing proteins 
+form a family of six members, namely AdcA to -F. In contrast to 
+canonical arrestins, Dictyostelium Adc proteins show a more complex 
+architecture, as they possess, in addition to the arrestin core, other 
+domains, such as C2, FYVE, LIM, MIT and SAM, which potentially 
+mediate selective interactions with either lipids or proteins.
+
+Methodology and Principal Findings: A detailed analysis of AdcA has 
+been performed. AdcA extends on both sides of the arrestin core, in 
+particular by a FYVE domain which mediates selective interactions 
+with PI(3)P, as disclosed by intrinsic fluorescence measurements and 
+lipid overlay assays. Localization studies showed an enrichment of 
+tagged- and endogenous AdcA on the rim of early macropinosomes 
+and phagosomes. This vesicular distribution relies on a functional 
+FYVE domain. Our data also show that the arrestin core binds the 
+ADP-ribosylation factor ArfA, the unique amoebal Arf member, in 
+its GDP-bound conformation.
+
+Significance: This work describes one of the 6 arrestin 
+domain-containing proteins of Dictyostelium, a novel and atypical 
+member of the arrestin clan. It provides the basis for a better 
+understanding of arrestin-related protein involvement in trafficking 
+processes and for further studies on the expanding roles of 
+arrestins in eukaryotes.
+
+
+Submitted by Laurence Aubry [laubry@cea.fr]
+==============================================================
+[End dictyNews, volume 35, number 18]

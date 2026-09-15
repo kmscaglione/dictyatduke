@@ -1,0 +1,194 @@
+Dicty News
+Electronic Edition
+Volume 17, number 12
+November 17, 2001
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+
+=============
+  Abstracts
+=============
+
+CREATION OF AN ALLOSTERIC PHOSPHOFRUCTOKINASE STARTING WITH A NONALLOSTERIC 
+ENZYME: THE CASE OF DICTYOSTELIUM DISCOIDEUM PHOSPHOFRUCTOKINASE
+
+Beln Santamara, Antonio M. Estvez, Oscar H. Martnez-Costa and Juan 
+J. Aragn
+
+Departamento de Bioqumica and Instituto de Investigaciones Biomdicas 
+Alberto Sols UAM-CSIC, Facultad de Medicina de la Universidad Autnoma, 
+28029 Madrid, Spain
+
+J. Biol. Chem., accepted for publication, available on line at www.jbc.org
+
+Abstract
+
+An allosteric phosphofructokinase (PFK) was created by sequence manipulation 
+of the nonallosteric enzyme from the slime mold Dictyostelium discoideum 
+(DdPFK). Most amino acid residues proposed as important for catalytic and 
+allosteric sites are conserved in DdPFK except for a few of them, and their 
+reversion did not modify its kinetic behavior. However, deletions at the 
+unique C-terminal extension of this PFK produced a markedly allosteric 
+enzyme. Thus, a mutant lacking the last 26 C-terminal residues exhibited 
+hysteresis in the time course, intense cooperativity (nH = 3.8) and a 
+200-fold decrease in the apparent affinity for fructose 6-phosphate 
+(S0.5 = 4500 mM), strong activation by fructose 2,6-bisphosphate 
+(Kact = 0.1 mM) and fructose 1,6-bisphosphate (Kact = 40 mM), dependence 
+on enzyme concentration, proton inhibition and subunit association-
+dissociation in response to fructose 6-phosphate, versus the nonhysteretic 
+and hyperbolic wild-type enzyme (nH = 1.0; Km = 22 mM) that remained as a 
+stable tetramer. Systematic deletions and point mutations at the C-tail 
+region of DdPFK identified the last C-terminal residue, Leu834, as critical 
+to produce a nonallosteric enzyme. All allosteric mutants were practically 
+insensitive to MgATP inhibition, suggesting that this effect does not 
+involve the same allosteric transition as that responsible for fructose 
+6-phosphate cooperativity and fructose bisphosphate activation.
+
+-----------------------------------------------------------------------------
+
+The Dictyostelium LvsA Protein is Localized on the Contractile Vacuole 
+and is Required for Osmoregulation.
+
+Noel J. Gerald, Michael Siano and Arturo De Lozanne
+
+Section of Molecular Cell & Developmental Biology
+and Institute for Cellular and Molecular Biology,
+University of Texas at Austin, Austin, TX 78712.
+
+Accepted into Traffic
+
+LvsA is a Dictyostelium protein that is essential for cytokinesis and that 
+is related to the mammalian beige/LYST family of proteins.  To better 
+understand the function of this novel protein family we tagged LvsA with 
+GFP using recombination techniques.  GFP-LvsA is primarily associated with 
+the membranes of the contractile vacuole (CV) system and it also has a 
+punctate distribution in the cytoplasm.  Two markers of the Dictyostelium 
+CV, the vacuolar proton pump and calmodulin, show extensive colocalization 
+with GFP-LvsA on CV membranes.  Interestingly, the association of lvsA with 
+CV membranes occurs only during the discharge phase of the vacuole.  In 
+LvsA mutants the CV becomes disorganized and calmodulin dissociates from 
+the CV membranes.  Consequently, the CV is unable to function normally, it 
+can swell but seems unable to discharge and the LvsA mutants become 
+osmosensitive.  These results demonstrate that LvsA can associate 
+transiently with the CV membrane compartment and that this association 
+is necessary for the function of the CV during osmoregulation.  This 
+transient association with specific membrane compartments may be a general 
+property of other BEACH-domain containing proteins.
+
+-----------------------------------------------------------------------------
+
+PCR-mediated generation of a gene disruption construct without the use of 
+DNA ligase and plasmid vectors
+
+Hidekazu Kuwayama, Shinji Obara, Takahiro Morio, Mariko Katoh, Hideko 
+Urushihara and Yoshimasa Tanaka
+
+Institute of Biological Sciences,0University of Tsukuba,0Tsukuba, Ibaraki 
+305-8572, Japan.
+
+Nucleic Acid Research, in press
+
+Abstract
+
+We introduce a PCR-based procedure for generating a gene disruption 
+construct. This method depends on DNA fragment fusion by PCR technique 
+and requires only two steps of PCR to obtain a sufficient amount of the 
+gene disruption construct for one transformation experiment. The first 
+step involves three separate PCR syntheses of a selectable marker cassette 
+and the 5'- and 3'- regions of a target gene. Of the four primers used in 
+the amplification of the 5 - and 3 -regions of the target gene, two primers 
+placed proximal to the site of the marker cassette are designed to have 
+sequence tags complementary to the 5 - or 3 - side of the marker cassette. 
+The two primers used in the PCR synthesis of the marker cassette are 
+complementary to the tagged primers. By fusion PCR, the 5 - and 3 - PCR 
+products are linked to the marker cassette via the regions of tagged 
+primers which overlap. A sufficient amount of the disruption construct 
+can be directly amplified with the outermost primers. This method is 
+simple, rapid, and relatively inexpensive. In addition, there is the 
+freedom of attaching long flanking regions with any selectable marker 
+cassette.
+
+-----------------------------------------------------------------------------
+
+Dictyostelium LvsB Mutants Model the Lysosomal Defects Associated with 
+Chediak-Higashi Syndrome
+
+Edward Harris1, Ning Wang2, Wei-l Wu2, Alisha Weatherford1, Arturo 
+De Lozanne2, and James Cardelli1*
+
+1Department of Microbiology and Immunology, LSU Health Sciences Center, 
+Shreveport, LA 71130
+2Department of Molecular Cell and Developmental Biology and Institute for 
+Cell and Molecular Biology, University of Texas, Austin, TX 78712
+
+Accepted Molecular Biology of the Cell
+
+ABSTRACT
+   
+    Chediak-Higashi Syndrome (CHS) is a genetic disorder caused by mutations 
+in a gene encoding a protein named LYST in humans (Lysosomal-Trafficking 
+Regulator) or Beige in mice.  A prominent feature of this disease is the 
+accumulation of enlarged lysosome-related granules in a variety of cells. 
+The genome of D. discoideum contains 6 genes encoding proteins that are 
+related to LYST/Beige in amino acid sequence, and disruption of one of these 
+genes, lvsA (large volume sphere), results in profound defects in cytokinesis. 
+To better understand the function of this family of proteins in membrane 
+trafficking, we have analyzed mutants disrupted in lvsA, lvsB, lvsC, lvsD, 
+lvsE and lvsF.  Of all these, only lvsA and lvsB mutants displayed interesting 
+phenotypes in our assays. LvsA-null cells exhibited defects in phagocytosis, 
+and contained abnormal looking contractile vacuole membranes. Loss of LvsB, 
+the Dictyostelium protein most similar to LYST/Beige, resulted in the formation 
+of enlarged vesicles that by multiple criteria appeared to  be acidic 
+lysosomes. The rates of endocytosis, phagocytosis and fluid phase exocytosis 
+were normal in lvsB-null cells. Also, the rates of processing and the 
+efficiency of targeting of lysosomal alpha-mannosidase were normal, although 
+lvsB mutants inefficiently retained alpha-mannosidase, as well as two other
+lysosomal cysteine proteinases. Finally, results of pulse-chase experiments 
+indicated that an increase in fusion rates accounted for the enlarged 
+lysosomes in lvsB-null cells, suggesting LvsB acts as a negative regulator 
+of fusion. Our results support the notion that LvsB/LYST/Beige function in a 
+similar manner to regulate lysosome biogenesis.
+
+-----------------------------------------------------------------------------
+
+On the Evolutionary Conservation of the Cell Death Pathway: Mitochondrial 
+Release of an Apoptosis-inducing Factor during Dictyostelium discoideum Cell 
+Death
+
+Damien Arnoult,* Irene Tatischeff,  Jerome Estaquier,* Mathilde Girard,  
+Franck Sureau,  Jean Pierre Tissier,  Alain Grodet,* Marc Dellinger, 
+FranoisTraincard,  Axel Kahn,  Jean-Claude Ameisen,* and Patrice Xavier 
+Petit #
+
+Mol. Bio. Cell 12, 3016-3030 
+
+Mitochondria play a pivotal role in apoptosis in multicellular organisms by 
+releasing apoptogenic factors such as cytochrome c that activate the 
+caspases effector pathway, and apoptosis-inducing factor (AIF) that is 
+involved in a caspase-independent cell death pathway. Here we report that 
+cell death in the single-celled organism Dictyostelium discoideum involves 
+early disruption of mito-chondrialtransmembrane potential (DYm) that 
+precedes the induction of several apoptosis-likefeatures, including exposure 
+of the phosphatidyl residues at the external surface of the plasmamembrane, 
+an intense vacuolization, a fragmentation of DNA into large fragments, an 
+autophagy,and the release of apoptotic corpses that are engulfed by 
+neighboring cells. We have cloned a Dictyostelium homolog of mammalian AIF 
+that is localized into mitochondria and is translocated from the 
+mitochondria to the cytoplasm and the nucleus after the onset of cell 
+death. Cytoplasmic extracts from dying Dictyostelium cells trigger the 
+breakdown of isolated mammalian and Dictyo-stelium nuclei in a cell-free 
+system, and this process is inhibited by a polyclonal antibody specific 
+for Dictyostelium discoideum apoptosis-inducing factor (DdAIF), suggesting 
+that DdAIF is involved in DNA degradation during Dictyostelium cell death. 
+Our findings indicate that the cell death pathway in Dictyostelium involves 
+mitochondria and an AIF homolog, suggesting the evolutionary conservation 
+of at least part of the cell death pathway in unicellular and multicellular 
+organisms.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 17, number 12]

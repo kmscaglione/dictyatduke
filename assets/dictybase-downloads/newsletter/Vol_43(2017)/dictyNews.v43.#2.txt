@@ -1,0 +1,113 @@
+dictyNews
+Electronic Edition
+Volume 43, number 2
+January 27, 2017
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+Co-existence of Ras activation in a chemotactic signal transduction 
+pathway and in an autonomous wave - forming system
+
+Mary Ecke1 and Günther Gerisch1
+
+1Max Planck Institute of Biochemistry, Am Klopferspitz 18, D-82152 
+Martinsried, Germany.
+
+
+SmallGTPases, in press
+
+The activation of Ras is common to two activities in cells of 
+Dictyostelium discoideum: the directed movement in a gradient of 
+chemoattractant and the autonomous generation of propagating 
+waves of actin polymerization on the substrate-attached cell surface. 
+We produced large cells by electric-pulse induced fusion to 
+simultaneously study both activities in one cell. For imaging, a 
+fluorescent label for activated Ras was combined with labels for 
+filamentous actin, PIP3, or PTEN. Chemotactic responses were 
+elicited in a diffusion gradient of cyclic AMP. Waves initiated at sites 
+separate from the front of the cell propagated in all directions. 
+Nevertheless, the wave-forming cells were capable of recognizing 
+the attractant gradient and managed to migrate in its direction.
+
+
+submitted by: Günther Gerisch [gerisch@biochem.mpg.de]
+———————————————————————————————————————
+
+
+The Arp2/3 inhibitory protein Arpin is dispensable for chemotaxis
+
+Irène Dang 1, Joern Linkner 2, Jun Yan 3, Daniel Irimia 3, 
+Jan Faix 2, Alexis Gautreau 1.
+
+1 Ecole Polytechnique, Université Paris-Saclay, CNRS UMR7654, 
+Palaiseau 91120, France.
+2 Institute for Biophysical Chemistry, Hannover Medical School, 
+Hannover 30625, Germany.
+3 Massachusetts General Hospital and Harvard Medical School, 
+BioMEMS Resource Center, Boston, MA 02129,USA.
+
+
+Biology of the Cell, in press
+
+Arpin is an Arp2/3 inhibitory protein, which decreases the protrusion 
+lifetime and hence directional persistence in the migration of diverse 
+cells. Arpin is activated by the small GTPase Rac, which controls cell 
+protrusion, thus closing a negative feedback loop that renders the 
+protrusion intrinsically unstable. Because of these properties, it was
+proposed that Arpin might play a role in directed migration, where 
+directional persistence has to be finetuned. We report here, however, 
+that Arpin depleted tumor cells and Arpin knock-out Dictyostelium 
+amoeba display no obvious defect in chemotaxis. These results do 
+not rule out a potential role of Arpin in other systems, but argue 
+against a general role of Arpin in chemotaxis.
+
+
+submitted by: Jan Faix [faix.jan@mh-hannover.de]
+———————————————————————————————————————
+
+
+Tipping the scales: Lessons from simple model systems on inositol 
+imbalance in neurological disorders
+
+Anna D Frej, Grant P Otto, Robin SB Williams*
+
+
+European Journal of Cell Biology, In Press
+
+Inositol and inositol-containing compounds have signalling and 
+regulatory roles in many cellular processes, suggesting that inositol 
+imbalance may lead to wide-ranging changes in cellular functions. 
+Indeed, changes in inositol-dependent signalling have been implicated 
+in various diseases and cellular functions such as autophagy, and 
+these changes have often been proposed as therapeutic targets. 
+However, few studies have highlighted the links between inositol 
+depletion and the downstream effects on inositol phosphates and 
+phosphoinositides in disease states. For this research, many advances 
+have employed simple model systems that include the social amoeba 
+D. discoideum and the yeast S. cerevisiae, since these models enable 
+a range of experimental approaches that are not possible in 
+mammalian models. In this review, we discuss recent findings initiated 
+in simple model systems and translated to higher model organisms 
+where the effect of altered inositol, inositol phosphate and 
+phosphoinositide levels impact on bipolar disorder, Alzheimer disease, 
+epilepsy and autophagy.
+
+
+submitted by: Robin Williams  [robin.williams@rhul.ac.uk]
+==============================================================
+[End dictyNews, volume 43, number 2]

@@ -1,0 +1,117 @@
+dictyNews
+Electronic Edition
+Volume 38, number 17
+July 6, 2012
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+'A Retinoblastoma Orthologue is a Major Regulator of S-phase, Mitotic, 
+and Developmental Gene Expression in Dictyostelium'
+
+Kimchi Strasser1, Gareth Bloomfield2, Asa MacWilliams3, 
+Adriano Ceccarelli4, Harry MacWilliams5, Adrian Tsang1
+
+1 Biology Department and Centre for Structural and Functional Genomics, 
+Concordia University, Montreal, QC, Canada
+2 MRC Laboratory of Molecular Biology, Cambridge, UK and 
+Wellcome Trust Sanger Institute, Hinxton, UK
+3 Siemens Corporate Technology, Munich, Germany
+4 Neuroscience Institute Cavalieri Ottolenghi, University of Torino, Italy
+5 Biozentrum der Ludwig-Maximilans-Universität, Munich, Germany
+
+
+PLoS ONE, in press
+
+The retinoblastoma tumour suppressor, Rb, has two major functions. 
+First, it represses genes whose products are required for S-phase entry 
+and progression thus stabilizing cells in G1. Second, Rb interacts with 
+factors that induce cell-cycle exit and terminal differentiation. 
+Dictyostelium lacks a G1 phase in its cell cycle but it has a retinoblastoma 
+orthologue, rblA.
+Using microarray analysis and mRNA-Seq transcriptional profiling, we 
+show that RblA strongly represses genes whose products are involved in 
+S phase and mitosis. Both S-phase and mitotic genes are upregulated at 
+a single point in late G2 and again in mid-development, near the time 
+when cell cycling is reactivated. RblA also activates a set of genes unique 
+to slime moulds that function in terminal differentiation.
+Like its mammalian counterpart Dictyostelium RblA plays a dual role, 
+regulating cell-cycle progression and transcriptional events leading to 
+terminal differentiation. In the absence of a G1 phase, however, RblA 
+functions in late G2 controlling the expression of both S-phase and
+ mitotic genes.
+
+
+Submitted by Kimchi Strasser [kimchi@gene.concordia.ca]
+--------------------------------------------------------------------------------------
+
+
+Conservation and divergence between cytoplasmic and muscle-specific 
+actin capping proteins: insights from the crystal structure of cytoplasmic 
+Cap32/34 from Dictyostelium discoideum.
+
+Eckert C, Goretzki A, Faberova M, Kollmar M.
+
+
+BMC Struct Biol. 2012 Jun 1;12(1):12. [Epub ahead of print]
+http://www.biomedcentral.com/1472-6807/12/12/abstract
+
+BACKGROUND:
+Capping protein (CP), also known as CapZ in muscle cells and Cap32/34 
+in Dictyostelium discoideum, plays a major role in regulating actin filament 
+dynamics. CP is a ubiquitously expressed heterodimer comprising an alpha- 
+and beta-subunit. It tightly binds to the fast growing end of actin filaments, 
+thereby functioning as a "cap" by blocking the addition and loss of actin 
+subunits. Vertebrates contain two somatic variants of CP, one being 
+primarily found at the cell periphery of non-muscle tissues while the 
+other is mainly localized at the Z-discs of skeletal muscles.
+
+RESULTS:
+To elucidate structural and functional differences between cytoplasmic 
+and sarcomercic CP variants, we have solved the atomic structure of 
+Cap32/34 (32 = beta- and 34 = alpha-subunit) from the cellular slime 
+mold Dictyostelium at 2.2 A resolution and compared it to that of chicken 
+muscle CapZ. The two homologs display a similar overall arrangement 
+including the attached alpha-subunit C-terminus (alpha-tentacle) and
+ the flexible beta-tentacle. Nevertheless, the structures exhibit marked 
+ differences suggesting considerable structural flexibility within the 
+ alpha-subunit. In the alpha-subunit we observed a bending motion of 
+ the beta-sheet region located opposite to the position of the C-terminal 
+ beta-tentacle towards the antiparallel helices that interconnect the 
+ heterodimer. Recently, a two domain twisting attributed mainly to the 
+ beta-subunit has been reported. At the hinge of these two domains 
+ Cap32/34 contains an elongated and highly flexible loop, which has 
+ been reported to be important for the interaction of cytoplasmic CP 
+ with actin and might contribute to the more dynamic actin-binding of 
+ cytoplasmic compared to sarcomeric CP (CapZ).
+
+CONCLUSIONS:
+The structure of Cap32/34 from Dictyostelium discoideum allowed 
+a detailed analysis and comparison between the cytoplasmic and 
+sarcomeric variants of CP. Significant structural flexibility could 
+particularly be found within the alpha-subunit, a loop region in the 
+beta-subunit, and the surface of the alpha-globule where the amino 
+acid differences between the cytoplasmic and sarcomeric mammalian 
+CP are located. Hence, the crystal structure of Cap32/34 raises the 
+possibility of different binding behaviours of the CP variants toward the 
+barbed end of actin filaments, a feature, which might have arisen from 
+adaptation to different environments.
+
+
+Submitted by Martin Kollmar [mako@nmr.mpibpc.mpg.de]
+==============================================================
+[End dictyNews, volume 38, number 17]

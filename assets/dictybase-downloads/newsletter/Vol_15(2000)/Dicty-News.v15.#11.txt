@@ -1,0 +1,502 @@
+Dicty News
+Electronic Edition
+Volume 15, number 11
+December 9, 2000
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at the Dictyostelium Web Page
+"http://dicty.cmb.northwestern.edu/dicty"
+
+Editors note:  The following is a draft proposal developed by a 
+committee constituted at the Dundee Dicty 2000 meeting to develop a
+proposal for genetic nomenclature.  The committee is anxious for
+feedback.  To facilitate the widest possible involvement of the community
+in this important discussion, please send your comments to the email 
+server address: dicty@listserv.it.northwestern.edu.  
+
+
+========================
+   Postdocs Available
+========================
+
+Postdoctoral position 
+
+A Wellcome Trust funded postdoctoral position is available immediately 
+in the laboratory of Kees Weijer in the Wellcome Trust Biocentre, 
+University of Dundee, UK. The position is available initially for two 
+years to work on the investigation of cAMP signal transduction pathways 
+during chemotactic cell movement in the multicellular stages of 
+Dictyostelium discoideum. The project involves the visualization and 
+analysis of early rapid events in the cAMP signal transduction pathway 
+leading to cAMP generation and chemotactic cell movement. We are 
+investigating the activation of a number of phosphatidyl- inositol-lipid 
+kinases and phosphatases in vivo, by measuring the translocation of GFP 
+tagged PH (Plekstrin Homology) domains with different lipid specificities 
+from the cytosol to the plasma membrane upon chemotactic stimulation of 
+cells at different stages of development. Activation of these pathways 
+are essential steps in the activation of adenylylcylase and localized 
+actin polymerization. This allows us to detect in vivo cell-cell signaling 
+with high spatial and temporal resolution in wildtype and mutant strains. 
+Furthermore the project involves the development and use of FRET 
+(Fluorescence Resonance Energy Transfer) between fusion proteins tagged 
+with different spectral forms of GFP to analyse in-vivo complex formation 
+between components of the cAMP signal transduction pathway. Experience 
+in molecular biology/biochemistry and fluorescence imaging techniques 
+are advantageous.
+
+Applicants should submit a CV, a summary of their current research 
+interests and the names and addresses of three referees to 
+c.j.weijer@dundee.ac.uk or to C.J. Weijer, School of Life Sciences, 
+University of Dundee, Wellcome Trust Biocentre, Dow Street, Dundee, 
+DD1 5EH, UK
+
+----------------------------------------------------------------------------
+
+POSTDOCTORAL POSITION IN BERLIN
+
+ROLE OF CALCINEURIN IN DICTYOSTELIUM
+
+A 5 year postdoctoral position is open from January, 2001, in the 
+Microbiology II unit at the Institut fuer Biologie, Freie 
+Universitaet Berlin. The successful candidate will work on the 
+function and regulation of expression of the 
+calcium/calmodulin-dependent protein phosphatase calcineurin in 
+Dictyostelium, and participate in the teaching activities of our 
+group. Applicants should have a strong background in molecular 
+biology and biochemistry. For more information, please contact me.
+
+Rupert Mutzel
+Fachbereich Biologie, Chemie, Pharmazie
+Institut fuer Biologie - Mikrobiologie
+Freie Universitaet Berlin
+Koenigin-Luise-Strasse 12 - 16
+14195 Berlin
+Germany
+Tel.: +30-838-53116
+Fax: +30-838-53118
+
+
+==============
+  Abstracts
+==============
+
+CYTOKINESIS FAILURE IN CLATHRIN-MINUS CELLS IS CAUSED BY CLEAVAGE FURROW
+INSTABILITY.
+
+Noel J. Gerald1, Cynthia K. Damer2, Theresa J. O'Halloran3 and Arturo De
+Lozanne3
+
+1Dept. of Cell Biology, Duke University Medical Center, Durham, NC 27710,
+2Dept. of Biology, Vassar College, Poughkeepsie, NY 12604
+and
+3Section of Molecular Cell & Developmental Biology and Institute for
+Cellular and Molecular Biology, University of Texas, Austin, TX 78712.
+
+Cell Motility and the Cytoskeleton, in press
+
+ABSTRACT
+
+    The role of membrane traffic during cell division has only recently
+begun to be investigated.  A growing number of trafficking proteins  seem to
+be involved in the successful completion of cytokinesis.  Clathrin was the
+first trafficking protein to be shown to be essential for cytokinesis in
+Dictyostelium.  Here we investigate the nature of the cytokinesis defect of
+Dictyostelium clathrin null cells.  We found that adherent clathrin null
+cells do form cleavage furrows but cannot maintain a consistent rate of
+furrow ingression.  Clathrin null cells are completely defective in
+cytokinesis when placed in suspension.  In these conditions the cells
+develop an abnormal division morphology that consists of two lateral
+"furrows" on either side of a bulging equatorial region.  Cells expressing
+GFP-myosin II were examined at various stages of cytokinesis.  Clathrin null
+cells show multiple defects in myosin organization and localization that
+parallel the striking failure in furrow morphology.  We postulate that this
+morphology is the result of contraction at the rear of the presumptive
+daughter cells in concert with incomplete furrow ingression.
+
+----------------------------------------------------------------------------
+
+Analysis of Skp1 glycosylation and nuclear enrichment in Dictyostelium.
+
+Sassi, S., M. Sweetinburgh, J. Erogul, P. Zhang, P. Teng-umnuay & C.M. West
+
+Glycobiology, in press. 
+
+Abstract
+
+   Skp1 is a subunit of SCF-E3 ubiquitin ligases and other protein complexes 
+in the nucleus and cytoplasm of yeast and mammalian cells. In Dictyostelium, 
+Skp1 is partially modified by an unusual pentasaccharide O-linked to 
+hydroxyproline143. This modification was found to be susceptible to known 
+prolyl hydroxylase inhibitors based on Mr-shift analysis using SDS-PAGE/Western 
+blotting. In addition, Dictyostelium Skp1 consists of 2 genetic isoforms, 
+Skp1A and Skp1B, which differ by a single amino acid and appear to be expressed 
+throughout the life cycle based on RT-PCR. The significance of these structural 
+variations was examined by expressing myc-tagged Skp1s and mutants that lacked 
+the glycosylation site. Gel-based Mr-shift studies showed that Skp1A and Skp1B 
+are both nearly completely glycosylated during growth and early development, 
+and mass spectrometry of glycopeptides showed that they were glycosylated 
+similarly. Skp1 expressed later in prespore cells was not glycosylated, unlike 
+bulk Skp1 persisting from earlier in development, but became glycosylated after 
+return to growth medium. Skp1A and Skp1B were each concentrated in the nucleus 
+and regions of the cytoplasm, based on immunofluorescence localization. However, 
+when Skp1 glycosylation was blocked by mutation, prolyl hydroxylase inhibitors, 
+or expression in prespore cells, Nuclear concentration of Skp1 was not detected. 
+Furthermore, nuclear concentration occurred in a mutant that attached only the 
+core disaccharide to Skp1. Overall, there was no evidence for differential Skp1 
+isoform expression, glycosylation variants in the bulk Skp1 pool, or for 
+regulation of nuclear localization. However, these studies uncovered evidence 
+that the glycosylation pathway is developmentally regulated and can function 
+posttranslationally, and that core glycosylation is required for Skp1's nuclear 
+concentration.
+
+----------------------------------------------------------------------------
+
+Calcium stores in differentiated Dictyostelium discoideum: prespore cells
+sequester calcium more efficiently than prestalk cells
+
+Christina Schlatterer(1), Paul Walther (2), Martin Müller (3), Kurt Mendgen
+(1), Karl Zierold (4), Gerd Knoll
+
+1 Faculty of Biology, University of Konstanz, Konstanz, Germany
+2 Section Electron Microscopy, University of Ulm, Albert Einstein Allee 11,
+Ulm, Germany
+3 Laboratory for EM I, ETH Zürich, Schmelzbergstr. 7, Zürich, Switzerland
+4 Max Planck Institute for Molecular Physiology, Otto Hahn Str. 11,
+Dortmund, Germany
+
+Cell Calcium, in press.
+
+Summary 
+
+Dictyostelium discoideum pseudoplasmodia exhibit a gradient of the
+cytosolic free Ca 2+-concentration
+([Ca2+]i) along their anterior-posterior axis involved in cell-type
+specific differentiation. [Ca2+]i is high in prestalk and low in prespore
+cells. We determined the content and localization of calcium and other
+elements in cryosectioned cells of pseudoplasmodia and fruiting bodies by
+X-ray microanalysis. Granular stores rich in Ca, Mg and P were identified.
+Average Ca was higher in prespore than prestalk granules (225 vs 111
+mmol/kg dry weight). Total Ca stored in granules was also higher in
+prespore than prestalk cells. The amount of P and S in granules differed
+between the two cell types indicating different store composition. In
+spores mean granular Ca was 120 mmol/kg dry weight. Stalk cells had smaller
+granules with 360 mmol Ca/kg dry weight. Complementary to microanalysis,
+vesicular Ca2+-fluxes were studied in fractionated cell homogenates. The
+rate of Ca2+-uptake was higher in pellet fractions of prespore than
+prestalk amoebae (4.7 vs 3.4 nmol/min x mg). Ca2+-release was greater in
+supernatant fractions from prestalk than prespore cells (16.5 vs 7.7
+nmol/10 8 cells). In summary, prestalk and prespore cells possess
+qualitatively different, high-capacity stores containing distinct amounts
+of Ca and probably being involved in regulation of the anterior-posterior
+[Ca2+]i-gradient.
+
+----------------------------------------------------------------------------
+
+Gene function analysis by amber stop codon suppression:  CMBF is a
+nuclear protein that supports growth and development of Dictyostelium
+amoebae
+
+
+Thomas Winckler (1), Christine Trautwein (2), Christina Tschepke (1),
+Christin Neuhduser (1), Ilse Z|ndorf (1), Peter Beck (1), G|nter Vogel
+(2) and Theodor Dingermann (1)
+
+(1) Institut f|r Pharmazeutische Biologie, Universitdt Frankfurt/M.
+(Biozentrum), D-60439 Frankfurt am Main, Germany and (2) Fachbereich 9 -
+Chemie, Bergische Universitdt, D-42119 Wuppertal, Germany
+
+
+J. Molecular Biology, in press
+
+Abstract
+
+The C-module-binding factor, CMBF, is a nuclear DNA-binding protein
+which was originally identified through its specific binding to a
+promoter element within the retrotransposable element TRE5-A of
+Dictyostelium discoideum AX2 cells. In order to analyse putative
+physiological functions of CMBF for the TRE5-A-hosting D. discoideum
+cells, we used a novel strategy to create mutant cell lines which stably
+underexpressed functional CMBF. An amber (UAG) translation stop codon
+was introduced into the chromosomal copy of the CMBF-encoding gene
+(cbfA), and an amber suppressor tRNA gene was expressed in the same
+mutant cells. Due to the low efficiency of translation stop codon
+suppression in this system all recovered cell lines expressed <20% of
+wildtype CMBF levels. The mutant cell lines displayed strong growth
+phenotypes when plated on their natural food source, bacteria. We show
+evidence that growth reduction was due to impaired phagocytosis of
+bacteria in the mutants. All obtained mutants showed a strong
+developmental defect which was defined by the formation of very small
+fruiting bodies. The strength of the developmental phenotype appeared to
+depend upon the residual CMBF levels maintained in the mutants. We
+propose that CMBF is a general transcription regulator which supports
+the normal expression of several genes required for the maintenance of
+high proliferation rates of D. discoideum amoebae as well as proper
+aggregation and development. Our results demonstrate that amber stop
+codon suppression may be a useful strategy to stably underexpress
+proteins whose coding genes cannot be successfully disrupted by
+homologous recombination.
+
+----------------------------------------------------------------------------
+
+SINGLE-MOLECULE TRACKING OF MYOSINS WITH GENETICALLY ENGINEERED AMPLIFIER
+DOMAINS
+
+Christine Ruff, Marcus Furch, Bernhard Brenner, Dietmar J. Manstein, and
+Edgar Meyhöfer
+
+Molecular and Cellular Physiology, Medical School Hanover, Carl-Neuberg-Str.
+1, 30625 Hannover, Germany and
+Department of Biophysics, Max-Planck-Institute for Medical Research,
+Jahnstr. 29, 69120 Heidelberg, Germany
+
+Nature Strucural Biology (in press)
+
+Abstract
+
+We combined protein engineering and single-molecule measurements to directly
+record the step size of a series of myosin constructs with shortened and
+elongated necks generated by deleting or replacing the natural neck with
+artificial domains. Our results show a clear linear dependence of the step
+size on the length of the neck domain and establish that mechanical
+amplification in the myosin motor is based on a rotation of the neck domain
+relative to the actin-bound head. For all our constructs, including those
+with artificial necks, the magnitude of the neck rotation concurrent with
+the displacement step is about 30°. The engineered step size-change of
+myosins marks a significant advance in our ability to selectively modify the
+functional properties of molecular motors.
+
+----------------------------------------------------------------------------
+
+
+STRUCTURE OF A GENETICALLY ENGINEERED MOLECULAR MOTOR
+
+Werner Kliche, Setsuko Fujita-Becker, Martin Kollmar, Dietmar J. Manstein,
+and F. Jon Kull
+
+Department of Biophysics, Max Planck Institute for Medical Research,
+Jahnstrasse 29, 69120 Heidelberg, Germany
+
+
+EMBO Journal (in press)
+
+Abstract
+
+Molecular motors move unidirectionally along polymer tracks, producing
+movement and force in an ATP-dependent fashion. They achieve this by
+amplifying small conformational changes in the nucleotide-binding region
+into force-generating movements of larger protein domains. Here we present
+the 0.28 nm resolution crystal structure of an artificial actin-based motor.
+By combining the catalytic domain of myosin II with a 13.0 nm conformational
+amplifier consisting of repeats 1 and 2 of alpha-actinin, we demonstrate
+that it is possible to genetically engineer single-polypeptide molecular
+motors with precisely defined lever arm lengths and specific motile
+properties. Furthermore, our structure shows the consequences of mutating a
+conserved salt bridge in the nucleotide-binding region and visualizes the
+structure of alpha-actinin repeats 1 and 2 to be composed of two rigid,
+triple-helical bundles linked by an uninterrupted alpha-helix.
+
+----------------------------------------------------------------------------
+
+Maltose-binding protein as a fusion-tag for the localization and
+purification of cloned proteins in Dictyostelium
+
+Ralph Gräf
+
+Adolf-Butenandt-Institut / Zellbiologie, Schillerstr. 42, D-80336 München,
+Germany
+
+Anal. Biochem. in press
+
+One of the best and most frequently used tags for protein purification from
+E. coli extracts is maltose binding protein (MBP). MBP fusion proteins
+exhibit high affinity to amylose allowing purification by amylose-agarose
+chromatography and elution at low concentrations of maltose. The isolated
+fusion protein is highly pure and the elution conditions are generally
+harmless to native proteins and do not involve addition of proteinacious
+eluting agents. However, the use of MBP as a protein tag was so far mainly
+restricted to E. coli expression systems and it has never been used in
+Dictyostelium. Using the Dictyostelium Ser/Thr kinase DdNek2 as an example,
+this work demonstrates that MBP is an excellent fusion tag not only in the
+E. coli system but also in Dictyostelium since it allows quick and simple
+purification of a catalytically active protein from crude cell extracts.
+Moreover, it is proven to be suitable for protein localization studies with
+anti-MBP antibodies. Thus, MBP as a protein tag may be useful for other
+eukaryotic experimetal systems as well.
+
+----------------------------------------------------------------------------
+
+Small GTPases in Dictyostelium:  lessons from a social amoeba
+Andrew Wilkins and Robert H. Insall
+
+Trends in Genetics, January 00
+
+Although the process of sequencing the Dictyostelium genome is not
+complete, it is already producing surprises, including an unexpectedly large
+number of Ras and Rho small GTPases. Members of these families control a
+wide variety of cellular processes in eukaryotes, including proliferation,
+differentiation, cell motility and cell polarity. Comparison of small GTPases
+from Dictyostelium with those from higher eukaryotes provides an intriguing
+view of their cellular and evolutionary roles. In particular, 
+although mammalian Ras proteins interact with several signalling pathways, 
+the Dictyostelium pathways appear more linear, with each Ras apparently 
+performing a specific cellular function.
+
+----------------------------------------------------------------------------
+
+Review
+
+Dictyostelium discoideum: a model system for differentiation and patterning
+
+RICARDO ESCALANTE* and JUAN J. VICENTE
+
+Instituto de Investigaciones Biomédicas. C.S.I.C/U.A.M., Madrid, Spain.
+
+*Address correspondence to: Ricardo Escalante. Instituto de Investigaciones
+Biomédicas. C.S.I.C/U.A.M., C/Arturo Duperier, 4, 28029 Madrid, Spain. FAX:
++34-91-5854587. e-mail: rescalante@iib.uam.es
+
+Int.J.Dev.Biol. (in press)
+
+CONTENTS
+
+Introduction
+The morphological development and genome of Dictyostelium discoideum
+Tools used to study Dictyostelium Biochemistry and Molecular Genetics
+	Transformation
+	Restriction enzyme-mediated integration (REMI)
+	Disruption of genes by homologous recombination
+	Suppressor screening
+	In situ hybridization and lacZ staining for gene expression studies
+	Mixing experiments for detection of subtle phenotypes and
+           extracellular signaling
+Regulatory pathways in Dictyostelium development
+	Chemotaxis and aggregation
+	Regulation of post-aggregative cell-type differentiation
+	Regulation of cell-type proportion
+	Terminal differentiation
+
+----------------------------------------------------------------------------
+
+Biphasic expression of rnrB in Dictyostelium discoideum suggests a direct
+relationship between cell cycle control and cell differentiation
+
+Harry MacWilliams1*, Pascale Gaudet2, Heike Deichsel1, Claire Bonfils3,4,
+and Adrian Tsang2,3
+
+1Zoologisches Insitut, Ludwig-Maximilians-Universitat, Luisenstrasse 14,
+80333 München 2, Germany
+2Department of Chemistry and Biochemistry, Centre for Functional and
+Structural Genomics and 
+3Department of Biology, Concordia University, 1455
+de Maisonneuve Blvd West, Montréal, Québec H3G 1M8, Canada
+4present address: MethylGene Inc., 7220 Frederick-Banting, Ville
+St-Laurent, Québec H4S 2A1, Canada
+
+Accepted, DIFFERENTIATION
+
+Abstract
+
+Cell differentiation in Dictyostelium is strongly affected by the cell
+cycle.  Cell cycle control is well-understood in other systems, but this
+has had almost no impact on the study of Dictyostelium cell
+differentiation, in part because the cell cycle in Dictyostelium is
+unusual, lacking a G1 phase.   Here we describe the cell-cycle regulated
+expression of  rnrB, which codes for the small subunit of ribonucleotide
+reductase, and is a marker of late G1 in many systems.  There appear to be
+two expression peaks, one in mid-G2 and the other near the G2/M
+transition.   Using Xgal/anti-BrdU double staining, we show that cells in
+asynchronously growing cultures express in both phases, with a gap between
+them during which the gene is transcriptionally silent.  Cold-synchronized
+cells show exclusively G2/M expression, while mid-G2 expression is seen in
+high-density synchronized cells and can also be inferred in cells
+undergoing synchronization by either method.  
+
+rnrB expression occurs in other systems shortly after cells pass a point
+(the "restriction point" or "Start") at which they commit to complete
+their current cell cycle.  We demonstrate a similar commitment point in
+Dictyostelium and show that this occurs shortly before the mid-G2 rnrB
+expression peak.  The Dictyostelium cell cycle thus appears to include a
+well-defined although inconspicuous event, between early and mid-G2,  with
+some features which are normally associated with the G1/S
+transition.  Others have described a switch from stalk to spore
+differentiation preference at about this time.  Since Dictyostelium cells
+switch back from spore to stalk preference approximately at the G2/M rnrB
+expression maximum, cell differentiation as well as rnrB expression may be
+regulated directly by fundamental cell cycle control processes.
+
+----------------------------------------------------------------------------
+
+During multicellular migration, myosin II serves a structural role
+independent of its motor function
+
+Xiaoxin Susan Xu#,1, Eunkyung Lee#, Tung-ling Chen*, Edward Kuczmarski†, 
+Rex L. Chisholm*, and David A. Knecht#
+
+#Department of Molecular and Cell Biology, University of Connecticut, 
+Storrs, CT 06269, †Department of Physiology and Biophysics, Chicago Medical 
+School, Chicago IL 60064 and *Department of Cell and Molecular Biology, 
+Northwestern University Medical School. Chicago, Illinois 60611
+
+Develop. Biol., in press.
+
+ABSTRACT
+We have shown previously that cells lacking myosin II are impaired in 
+multicellular motility.  We now extend these results by determining whether 
+myosin contractile activity function is necessary for normal multicellular 
+motility and shape control.  Myosin from mutants lacking the essential (mlcE-) 
+myosin light chain retains the ability to form bipolar filaments that bind 
+actin, but shows no measurable in vitro or in vivo contractile function.  This 
+contractile function is necessary for cell shape control since mlcE- cells, 
+like myosin heavy chain null mutants (mhcA-), were defective in their ability 
+to control their three-dimensional shape.  When mixed with wild-type cells in 
+chimeric aggregation streams, the mlcE-  cells were able to move normally, 
+unlike mhcA- cells which accumulated at the edges of the stream and became 
+distorted by their interactions with wild-type cells.  When mhcA- cells were 
+mixed with mlcE- streams, the mhcA- cells were excluded.  The normal behavior 
+of the mlcE- cells in this assay suggests thatthe actin binding activity of 
+myosin II, in the absence of motor function, is sufficient to allow movement 
+in this constrained, multicellular environment.  We hypothesize that myosin 
+II is a major contributor to cortical integrity, even in the absence of 
+contractile function.
+
+-----------------------------------------------------------------------------
+
+Golvesin-GFP Fusions as Distinct Markers for Golgi and Post-Golgi Vesicles
+in Dictyostelium Cells
+
+Natalie Schneider+, Jean-Marc Schwartz+, Michael Becker+, Jana Koehler+,
+Heinz Schwarz§  and Guenther Gerisch+
+
++  Max-Planck-Institut fuer Biochemie, D-82152 Martinsried, Germany
+§  Max-Planck-Institut fuer Entwicklungsbiologie, D-72076 Tuebingen, Germany
+
+Biology of the Cell, in press.
+
+Abstract   
+
+Golvesin is a new protein associated with membranes of the Golgi apparatus
+and post-Golgi vesicles in Dictyostelium cells. An internal hydrophobic
+sequence of 24 amino-acid residues is responsible for anchoring golvesin to
+the membranes of these organelles. In an attempt to visualize organelle
+dynamics in vivo, we have used specific antibody and other labels to
+localize golvesin-GFP constructs to different cellular compartments. With a
+GFP tag at its N-terminus, golvesin shows the same localization as the
+untagged protein. It is transferred to two post-Golgi compartments, the
+endosomal and contractile vacuole systems. Endosomes are decorated with
+GFP-golvesin within less than 10 minutes of their internalization, and keep
+the label during the acidic phase of the pathway. 
+     Blockage of the C-terminus with GFP causes entrapment of the
+protein in the Golgi apparatus, indicating that a free C-terminus is
+required for transfer of golvesin to any of the post-Golgi compartments.
+The C-terminally tagged golvesin proved to be a reliable Golgi marker in
+Dictyostelium cells, revealing  protrusion of Golgi tubules at peak
+velocities of 3 to 4 mm per second. The fusion protein is retained in Golgi
+vesicles during mitosis, visualizing Golgi disassembly and reorganization
+in line with cytokinesis.
+
+-----------------------------------------------------------------------------
+
+[End Dicty News, volume 15, number 11]

@@ -1,0 +1,133 @@
+Dicty News
+Electronic Edition
+Volume 22, number 10
+April 30, 2004
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of Dicty-News, the Dicty Reference database and other 
+useful information is available at dictyBase - http://dictybase.org.
+
+
+
+
+=============
+  Abstracts
+=============
+
+
+
+
+Preparation of genomic DNA from Dictyostelium discoideum for PCR analysis.
+
+Charette S.J. and Cosson P.
+Universite de Geneve, Centre Medical Universitaire, Departement de
+Physiologie Cellulaire et Metabolisme, 1 rue Michel Servet, CH-1211
+Geneve 4, Switzerland.
+
+Biotechniques. 2004 Apr;36(4):574-5. 
+
+
+In this paper, we present a very quick protocol (less than 5 minutes) to
+prepare genomic DNA from D. discoideum cells suitable for PCR analysis.
+This approach facilitates the screening of resistant clones to identify
+those with the selection cassette in the desired gene. The method works for
+cells grown in liquid culture or on agar plates. Genomic DNA produced by this
+method can be also used as template for cloning or for any other PCR based
+applications. A summary of the protocol will be available on DictyBase (http://dictybase.org/techniques/quick_gDNA.htm).
+
+
+
+Submitted by: Steve Charette [charett2@etu.unige.ch]
+
+-----------------------------------------------------------------------------
+
+Cytoplasmic glycosylation of protein-hydroxyproline and its relationship to
+other glycosylation pathways
+
+Christopher M. West1, Hanke van der Wel1, Slim Sassi2, Eric A. Gaucher3
+ 
+1 Dept. of Biochemistry & Molecular Biology, University of Oklahoma Health
+Sciences Center, Oklahoma City, OK, 73104  USA;
+2 Dept. of Anatomy & Cell Biology, University of Florida, Gainesville, FL,
+32610  USA; and
+3 Foundation for Applied Molecular Evolution, Gainesville, FL, 32601  USA
+
+Biochim. Biophys. Acta, in press
+
+
+The Skp1 protein, best-known as a subunit of E3SCF-ubiquitin ligases, 
+is subject to complex glycosylation in the cytoplasm of the cellular slime 
+mold Dictyostelium. Pro143 of this protein is sequentially modified by a 
+prolyl hydroxylase and five soluble glycosyltransferases, to yield the 
+structure Gala1,Gala1,3Fuca1,2Galb1,3GlcNAca1-HyPro143. These enzymes are
+unusual in that they are expressed in the cytoplasmic compartment of the cell,
+rather than the secretory pathway where complex glycosylation of proteins
+usually occurs. The first enzyme in the pathway appears to be related to the
+soluble animal prolyl 4-hydroxylases that modify the transcriptional factor
+subunit HIF-1a in the cytoplasm, and more distantly to the
+prolyl 4-hydroxylases that modify collagen and other proteins in the rER,  
+based on biochemical and informatics analyses. The soluble aGlcNAc-transferase
+acting on Skp1 has been cloned and is distantly related to the mucin-type
+polypeptide aGalNAc-transferases in the Golgi of animals. Its characterization
+has led to the discovery of a family of related polypeptide
+aGlcNAc-transferasesin the Golgi of selected lower eukaryotes. The Skp1 GlcNAc
+is extended by a bifunctional diglycosyltransferase that sequentially and 
+apparently processively adds b1,3Gal and a1,2Fuc. Though this structure 
+is also formed in the animal secretory pathway, the glycosyltransferases 
+involved are dissimilar. Conceptual translation of available genomes 
+suggests the existence of this kind of complex cytoplasmic glycosylation 
+in other eukaryotic microorganisms, including diatoms, oomycetes, and 
+possibly Chlamydomonas and Toxoplasma, and an evolutionary precursor of this
+pathway may also occur in prokaryotes.
+
+
+
+Submitted by: Chris West [Christopher-West@ouhsc.edu]
+
+-----------------------------------------------------------------------------
+
+Talin B is required for force transmission in morphogenesis of Dictyostelium
+
+
+Masatsune Tsujioka(1), Kunito Yoshida(2) and Kei Inouye(3)
+
+Department of Botany, Graduate School of Science, Kyoto University, Sakyo-ku,
+Kyoto 606-8502, Japan.
+
+
+(1)Present address: Gene Function Research Center, Tsukuba Central 4, AIST,
+1-1-1 Higashi, Tsukuba,
+Ibaraki 305-8562, Japan
+(2)Present address: Department of Biological Sciences, Sir Alexander Fleming
+Building, Imperial College London, London SW7 2AZ, England
+(3)Correspondence: inoue@cosmos.bot.kyoto-u.ac.jp
+
+EMBO J., in press
+
+
+Talin plays a key role in the assembly and stabilisation of focal adhesions,
+but whether it is directly involved in force transmission during morphogenesis
+remains to be elucidated. We show that the traction force of Dictyostelium
+cells mutant for one of its two talin genes talB is considerably smaller than
+that of wild-type cells, both in isolation and within tissues undergoing
+morphogenetic movement. The motility of mutant cells in tightly packed tissues
+in vivo or under strong resistance conditions in vitro was lower than that of
+wild-type cells, but their motility under low external force conditions was
+not impaired, indicating inefficient transmission of force in mutant cells.
+Antibody staining revealed that the talB gene product (talin B) exists as
+small units subjacent to the cell membrane at adhesion sites without forming
+large focal adhesion-like assemblies. The total amount of talin B on the cell
+membrane was larger in prestalk cells, which exert larger force than prespore
+cells during morphogenesis. We conclude that talin B is involved in force
+transmission between the cytoskeleton and cell exterior.
+
+
+
+Submitted by: K. Inouye [inoue@cosmos.bot.kyoto-u.ac.jp]
+
+===============================================================================
+[End Dicty News, volume 22, number 10]

@@ -1,0 +1,89 @@
+dictyNews
+Electronic Edition
+Volume 28, number 12
+May 11, 2007
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+
+=========
+Abstracts
+=========
+
+
+
+G Protein-Independent Ras/PI3K/F-Actin Circuit Regulates Basic Cell Motility
+
+Atsuo T. Sasaki, Chris Janetopoulos, Susan Lee, Pascale G. Charest, Kosuke Takeda, 
+Lauren W. Sundheimer, Ruedi Meili, Peter N. Devreotes and Richard A. Firtel
+
+
+J. Cell Biology
+
+PI3Kgamma and Dictyostelium PI3K are activated via G-protein coupled receptors 
+through binding to the Gbeta/gamma subunit and Ras.  However, the mechanistic 
+role(s) of Gbeta/gamma and Ras in PI3K activation remain elusive.  Furthermore, 
+the dynamics and function of PI3K activation in the absence of extracellular 
+stimuli have not been fully investigated.  We report that Gbeta null cells 
+display PI3K and Ras activation, as well as the reciprocal localization of 
+PI3K and PTEN, which lead to local accumulation of PI(3,4,5)P3.  Simultaneous 
+imaging analysis reveals that, in the absence of extracellular stimuli, 
+autonomous PI3K and Ras activation occur, concurrently, at the same sites 
+where F-actin projection emerges.  The loss of PI3K binding to Ras-GTP 
+abolishes this PI3K activation, while prevention of PI3K activity suppresses 
+autonomous Ras activation, suggesting that PI3K and Ras form a positive-feedback 
+circuit.  This circuit is associated with both random cell migration and 
+cytokinesis and may have initially evolved to control stochastic changes 
+in the cytoskeleton. 
+
+
+Submitted by: Rick Firtel [rafirtel@ucsd.edu]
+--------------------------------------------------------------------------------
+
+
+STATc is a key regulator of the transcriptional response to hyperosmotic shock
+
+Jianbo Na, Budi Tunggal and Ludwig Eichinger
+
+Institute for Biochemistry I, Medical Faculty, University of Cologne,
+Joseph-Stelzmann-Strasse 52, 50931 Cologne, Germany
+
+BMC Genomics, in press
+
+
+Dictyostelium discoideum is frequently subjected to environmental changes
+in its natural habitat, the forest soil. In order to survive, the organism
+had to develop effective mechanisms to sense and respond to such changes.
+When cells are faced with a hypertonic environment a complex response is
+triggered. It starts with signal sensing and transduction and leads to
+changes in cell shape, the cytoskeleton, transport processes, metabolism
+and gene expression. Certain aspects of the Dictyostelium osmotic stress
+response have been elucidated, however, no comprehensive picture was
+available up to now.
+
+To better understand the D. discoideum response to hyperosmotic conditions,
+we performed gene expression profiling using DNA microarrays. The
+transcriptional profile of cells treated with 200 mM sorbitol during a
+2-hour time course revealed a time-dependent induction or repression of 809
+genes, more than 15% of the genes on the array, which peaked 45 to 60
+minutes after the hyperosmotic shock. The differentially regulated genes
+were applied to cluster analysis and functional annotation using gene
+ontology (GO) terms. Two main responses appear to be the down-regulation of
+the metabolic machinery and the up-regulation of the stress response
+system, including STATc. Further analysis of STATc revealed that it is a
+key regulator of the transcriptional response to hyperosmotic shock.
+Approximately 20% of the differentially regulated genes were dependent on
+the presence of STATc. At least two signalling pathways are activated 
+in Dictyostelium cellssubjected to hypertonicity. STATc is responsible 
+for the transcriptional changes of one of them.
+
+
+Submitted by: Ludwig Eichinger [ludwig.eichinger@uni-koeln.de]
+==============================================================
+[End dictyNews, volume 28, number 12]

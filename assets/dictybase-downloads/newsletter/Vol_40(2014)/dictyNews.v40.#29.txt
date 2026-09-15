@@ -1,0 +1,82 @@
+dictyNews
+Electronic Edition
+Volume 40, number 29
+November 14, 2014
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+Epilepsy Research Methods Update: Understanding the causes of 
+epileptic seizures and identifying new treatments using 
+non-mammalian model organisms
+
+Vincent T Cunliffe*, Richard A Baines, Carlo NG Giachello, 
+Wei-Hsiang Lin, Alan Morgan, Markus Reuber, Claire Russell, 
+Matthew C Walker, Robin SB Williams
+
+
+Seizure , in press
+
+This narrative review is intended to introduce clinicians treating 
+epilepsy and researchers familiar with mammalian models of epilepsy 
+to experimentally tractable, non-mammalian research models used in 
+epilepsy research, ranging from unicellular eukaryotes to more 
+complex multicellular organisms. The review focuses on four model 
+organisms: the social amoeba Dictyostelium discoideum, the roundworm 
+Caenorhabditis elegans, the fruit fly Drosophila melanogaster and 
+the zebrafish Danio rerio. We consider recent discoveries made with 
+each model organism and discuss the importance of these advances for 
+the understanding and treatment of epilepsy in humans. The relative 
+ease with which mutations in genes of interest can be produced and 
+studied quickly and cheaply in these organisms, together with their 
+anatomical and physiological simplicity in comparison to mammalian 
+species, are major advantages when researchers are trying to unravel 
+complex disease mechanisms. The short generation times of most of 
+these model organisms also mean that they lend themselves particularly 
+conveniently to the investigation of drug effects or epileptogenic 
+processes across the lifecourse.
+
+
+Submitted by Robin Williams [robin.williams@rhul.ac.uk]
+----------------------------------------------------------------------
+
+
+The ABC Transporter, AbcB3, Mediates cAMP Export In D. discoideum 
+Development
+
+Edward Roshan Miranda, Edward A. Nam, Adam Kuspa and Gad Shaulsky
+
+Baylor College of Medicine, Houston, TX 77030
+
+
+Developmental Biology, in press
+
+Extracellular cAMP functions as a primary ligand for cell surface 
+cAMP receptors throughout Dictyostelium discoideum development, 
+controlling chemotaxis and morphogenesis. The developmental 
+consequences of cAMP signaling and the metabolism of cAMP have been 
+studied in great detail, but it has been unclear how cells export 
+cAMP across the plasma membrane. Here we show pharmacologically and 
+genetically that ABC transporters mediate cAMP export. Using an 
+evolutionary-developmental biology approach, we identified several 
+candidate abc genes and characterized one of them, abcB3, in more 
+detail. Genetic and biochemical evidence suggest that AbcB3 is a 
+component of the cAMP export mechanism in D. discoideum development.
+
+
+Submitted by Gad Shaulsky [gadi@bcm.edu]   
+==============================================================
+[End dictyNews, volume 40, number 29]

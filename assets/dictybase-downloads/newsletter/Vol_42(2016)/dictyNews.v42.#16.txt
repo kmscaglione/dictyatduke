@@ -1,0 +1,135 @@
+dictyNews
+Electronic Edition
+Volume 42, number 16
+July 1, 2016
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu
+or by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+=========
+Abstracts
+=========
+
+
+De novo actin polymerization is required for model Hirano body 
+formation in Dictyostelium
+
+Yun Dong, Sonbol Shahid-Salles, Dan Sherling, Nathan Fechheimer, 
+Nathan Iyer, Lance Wells, Marcus Fechheimer, Ruth Furukawa
+
+
+Biology Open, in press
+
+Hirano bodies are eosinophilic, actin-rich inclusions found in 
+autopsied brains in numerous neurodegenerative diseases. 
+The mechanism of Hirano body formation is unknown. Mass 
+spectrometry analysis was performed to identify proteins from 
+partially purified model Hirano bodies from Dictyostelium. This 
+analysis identified proteins primarily belonging to ribosomes, 
+proteasomes, mitochondria, and cytoskeleton. Profilin, Arp/2/3, 
+and WASH identified by mass spectrometry were found to colocalise 
+with model Hirano bodies. Due to their roles in actin regulation, we 
+selected these proteins for further investigation. Inhibition of the 
+Arp2/3 complex by CK666 prevented formation of model Hirano 
+bodies. Since Arp2/3 activation occurs via the WASH or WAVE 
+complex, we next investigated how these proteins affect Hirano 
+body formation. Whereas model Hirano bodies could form in WASH-
+deficient cells, they failed to form in cells lacking HSPC300, a 
+member of the WAVE complex. We identified other proteins 
+required for Hirano body formation that include profilin and VASP, 
+an actin nucleation factor. In the case of VASP, both its G- and 
+F-actin binding domains were required for model Hirano body 
+formation. Collectively, our results indicate that de novo actin 
+polymerization is required to form model Hirano bodies. 
+
+
+
+submitted by: Ruth Furukawa [furukawa@uga.edu]
+———————————————————————————————————————
+
+
+Identification of Proteins Associated with Multilamellar Bodies 
+Produced by Dictyostelium discoideum.
+
+Denoncourt AM, Paquet VE, Sedighi A, Charette SJ
+
+
+PLoS One. 2016 Jun 24;11(6):e0158270. 
+doi: 10.1371/journal.pone.0158270. eCollection 2016.
+
+Dictyostelium discoideum amoebae produce and secrete 
+multilamellar bodies (MLBs) when fed digestible bacteria. The aim
+ of the present study was to elucidate the proteic content of MLBs. 
+The lipid composition of MLBs is mainly amoebal in origin, 
+suggesting that MLB formation is a protozoa-driven process that 
+could play a significant role in amoebal physiology. We identified four 
+major proteins on purified MLBs using mass spectrometry in order 
+to better understand the molecular mechanisms governing MLB
+ formation and, eventually, to elucidate the true function of MLBs. 
+These proteins were SctA, PhoPQ, PonC and a protein containing a 
+cytidine/deoxycytidylate deaminase (CDD) zinc-binding region. SctA 
+is a component of pycnosomes, which are membranous materials that 
+are continuously secreted by amoebae. The presence of SctA on MLBs 
+was confirmed by immunofluorescence and Western blotting using a 
+specific anti-SctA antibody. The CDD protein may be one of the proteins 
+recognized by the H36 antibody, which was used as a MLB marker in a 
+previous study. The function of the CDD protein is unknown. 
+Immunofluorescence and flow cytometric analyses confirmed that the 
+H36 antibody is a better marker of MLBs than the anti-SctA antibody. 
+This study is an additional step to elucidate the potential role of MLBs 
+and revealed that only a small set of proteins appeared to be present 
+on MLBs.
+
+
+
+submitted by: Steve Charette [steve.charette@bcm.ulaval.ca]
+———————————————————————————————————————
+
+
+Self-organization of chemoattractant waves in Dictyostelium 
+depends on F-actin and cell–substrate adhesion
+
+Fumihito Fukujin, Akihiko Nakajima, Nao Shimada, Satoshi Sawai
+
+
+J. Roy. Soc. Interface, 
+http://dx.doi.org/10.1098/rsif.2016.0233
+
+In the social amoeba Dictyostelium discoideum, travelling waves 
+of extracellular cyclic adenosine monophosphate (cAMP) self-
+organize in cell populations and direct aggregation of individual 
+cells to form multicellular fruiting bodies. In contrast to the large 
+body of studies that addressed how movement of cells is 
+determined by spatial and temporal cues encoded in the dynamic 
+cAMP gradients, how cell mechanics affect the formation of a 
+self-generated chemoattractant field has received less attention. 
+Here, we show, by live cell imaging analysis, that the periodicity 
+of the synchronized cAMP waves increases in cells treated with 
+the actin inhibitor latrunculin. Detail analysis of the extracellular 
+cAMP-induced transients of cytosolic cAMP (cAMP relay response) 
+in well-isolated cells demonstrated that their amplitude and duration 
+were markedly reduced in latrunculin-treated cells. Similarly, in cells 
+strongly adhered to a poly-L-lysine-coated surface, the response 
+was suppressed, and the periodicity of the population-level 
+oscillations was markedly lengthened. Our results suggest that 
+cortical F-actin is dispensable for the basic low amplitude relay 
+response but essential for its full amplification and that this enhanced 
+response is necessary to establish high-frequency signalling centres. 
+The observed F-actin dependence may prevent aggregation centres 
+from establishing in microenvironments that are incompatible with 
+cell migration.
+
+
+
+submitted by: Satoshi Sarwai [cssawai@mail.ecc.u-tokyo.ac.jp]
+==============================================================
+[End dictyNews, volume 42, number 16]

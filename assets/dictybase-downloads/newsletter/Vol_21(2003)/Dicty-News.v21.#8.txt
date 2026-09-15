@@ -1,0 +1,109 @@
+Dicty NewsElectronic EditionVolume 21, number 8September 12, 2003Please submit abstracts of your papers as soon as they have been accepted for publication by sending them to dicty@northwestern.edu.Back issues of Dicty-News, the Dicty Reference database and other useful information is available at dictyBase - http://dictybase.org.
+
+
+=============  Abstracts=============
+
+
+A Dictyostelium Long Chain Fatty Acyl Coenzyme A-Synthetase mediates fatty 
+acid retrieval from endosomesKatharina von Loehneysen, Nadine Pawolleck, Harald Ruehling, and Markus ManiakAbt. Zellbiologie, Universitaet Kassel, Heinrich-Plett-Str. 40, 34142 Kassel, 
+GermanyEur. J. Cell Biol., in press We have identified a subset of Dictyostelium endosomes that carry a Long Chain 
+Fatty Acyl Coenzyme A-Synthetase (LC-FACS 1) on their cytosolic surface. 
+Immunofluorescence studies and observations using GFP-fusion proteins 
+collectively suggest that LC-FACS 1 associates with endosomes a few minutes 
+after their formation, remains bound through the acidic phase of endocytic 
+maturation and dissociates early in the phase where the endosomal content is 
+neutralised prior to exocytosis. Mutants in the fcsA gene, encoding the 
+LC-FACS 1 protein, were constructed by homologous recombination. These cells 
+show a strong defect in the intracellular accumulation of fatty acids, either 
+taken up together with the liquid medium or bound to the surface of particles. 
+Because the mutant cells are otherwise fully competent for macropinocytosis 
+and phagocytosis, we conclude that the LC-FACS 1 protein mediates the 
+retrieval of fatty acids from the lumen of endosomes into the cytoplasm.
+
+Submitted by: Markus Maniak [maniak@uni-kassel.de]-------------------------------------------------------------------------------A Coat of Filamentous Actin Prevents Clustering of Late Endosomal Vacuoles 
+in Vivo Anja Drengk, Juergen Fritsch, Christian Schmauch, Harald Ruehling, 
+and Markus ManiakAbteilung Zellbiologie and Center for Interdisciplinary Nanostructure Science 
+and Technology (CINSaT)Universitaet Kassel, Heinrich Plett Str. 40, 34132 Kassel, GermanyCurrent Biology, in press Many steps of endocytosis and endosomal trafficking depend on the actin 
+cytoskeleton. A lot of details are now known for the internalisation step at 
+the plasma membrane [1, 2] and a number of experiments implicate filamentous 
+actin in subsequent steps like propulsion through the cytoplasm [3, 4], 
+fusion of phagosomes with early endosomes [5], and traffic from early to late 
+endosomes [6, 7]. In vitro studies using endosomes from mammalian cells and 
+vacuoles from yeast suggest a role for actin in the process of membrane fusion 
+[8, 9]. Here, we investigate the function of the actin coat that surrounds 
+a late endocytic compartment in Dictyostelium cells [10]. Treating cells with 
+the actin sequestering drug latrunculin leads to the aggregation of these 
+endosomes into large, grape-like clusters and provokes a complete block of 
+endocytic marker progression. In addition the cells round up and stop moving. 
+To avoid that all actin assemblies in the cell are perturbed simultaneously, 
+we constructed a hybrid protein to specifically target cofilin, an actin 
+depolymerising protein, to the late endosomes. Again, the endosomal 
+compartments lost their actin coats and aggregated, but these cells remained 
+morphologically normal, and no kinetic effect on the trafficking of endocytic 
+marker was apparent. These results demonstrate that an actin coat can prevent 
+the clustering of endosomes, which could be a safeguard mechanism precluding 
+their docking and fusion. In addition, our targeting approach provides a means 
+to specifically study the function of the cytoskeleton in one subcellular 
+location without interfering with other actin functions in the cell.Submitted by: Markus Maniak [maniak@uni-kassel.de]
+
+-------------------------------------------------------------------------------
+
+A Cell-Adhesion Pathway Regulates Intercellular Communication During 
+Dictyostelium DevelopmentKirsten Kibler, Jessica Svetz, Tu-Lan Nguyen, Chad Shaw and Gad ShaulskyGraduate Program in Developmental BiologyDepartment of Molecular and Human GeneticsBaylor College of MedicineOne Baylor PlazaHouston, TX 77030USADevelopmental Biology, in pressCell adhesion molecules play an important physical role in shaping the 
+structure of multicellular organisms.  Recent studies show that they also 
+play a role in intracellular and intercellular signaling.  We describe a cell 
+adhesion pathway that is mediated by the intercellular communication genes 
+comC, lagC, and lagD during Dictyostelium development.  Disruptions of these 
+genes result in strains that are unable to generate spores when developed in 
+a pure population but are capable of sporulation when developed in chimerae 
+with wild type cells.  In contrast, any pair-wise chimera of the three 
+mutants fails to form spores.  We postulate that the wild type cells supply 
+the mutant cells with a signal that partially rescues their sporulation.  
+We also propose that the three mutants are deficient in the production of 
+that signal, suggesting that the three genes function in one signaling 
+pathway.  In support of that notion, the mutant cells share common non 
+cell-autonomous prespore and prestalk-specific defects and a common pattern 
+of developmental progression and regression.  We provide transcriptional 
+and functional evidence for a network in which comC inhibits lagC and 
+activates lagD expression, lagC and lagD are mutually inductive, and the 
+cell adhesion gene lagC is the terminal node in this signaling network.
+
+Submitted by: Gad Shaulsky [gadi@bcm.tmc.edu]
+
+-------------------------------------------------------------------------------
+
+Biochemical Basis of the high resistance to oxidative stress in Dictyostelium 
+discoideum
+
+Bandhana Katoch and Rasheedunnnisa Begum
+
+Department of Biochemistry, M.S.University of BarodaGujarat
+India
+
+Journal of Biosciences, Vol.28, No.5, Sep 2003, 581-588
+Aerobic organisms experience oxidative stress due to generation of reactive 
+oxygen species during normal aerobic metabolism. In addition, several 
+chemicals also generate reactive oxygen species which induce oxidative 
+stress. Thus, oxidative stress constitutes a major threat to organisms 
+living in aerobic environments. Programmed cell death or apoptosis is a 
+physiological mechanism of cell death, that probably evolved with 
+multicellularity, and is indispensible for normal growth and development. 
+Dictyostelium discoideum, an eukaryotic developmental model, shows both 
+unicellular and multicellular forms in its life cycle and exhibits appparent 
+caspase-independent programmed cell death, and also shows high resisitance 
+to oxidative stress. An attempt has been made to investigate the biochemical 
+basis for high resistance of D.discoideum cell death induced by different 
+oxidants. Dose-dependent induction of cell death by exogenous addition of 
+hydrogen peroxide(H2O2), in situ generation of H2O2 by hydroxylamine and 
+nitirc oxide (NO) generation by sodium nitoprusside treatment in 
+Dictyostelium discoideum were studied. The AD50 doses(concentration of 
+oxidants causing 50% of cells to die) after 24 hours of treatment were 
+found to be 0.45mM, 4mM and 1mM, respectively. Studies on enzymatic 
+antioxidant status of D.discoideum when subjected to oxidative stress, NO 
+and nutrient stress reveal that superoxode dismutase and catalase were 
+unchanged; a significant induction of glutathione peroxodase was observed. 
+Interestingly, oxidative stress-induced lipid membrane peroxidatiove damage 
+could not be detected.The result shed on the biochemical basis for the 
+observed high resisitance to oxidative stress in D.discoideum. Submitted by: Bandhana Katoch and Rasheedunnisa Begum [rasheeda@wilnetonline.net]
+
+===============================================================================[End Dicty News, volume 21, number 8]

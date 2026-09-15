@@ -1,0 +1,136 @@
+dictyNews
+Electronic Edition
+Volume 41, number 6
+March 27, 2015
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by using the form at
+http://dictybase.org/db/cgi-bin/dictyBase/abstract_submit.
+
+Back issues of dictyNews, the Dicty Reference database and other
+useful information is available at dictyBase - http://dictybase.org.
+
+Follow dictyBase on twitter:
+http://twitter.com/dictybase
+
+
+
+=========
+Abstracts
+=========
+
+Concurrent co-evolution of intra-organismal cheaters and resisters
+
+Levin, Samuel; Brock, Debra; Queller, David; Strassmann, Joan
+
+
+Journal of Evolutionary Biology, in press
+
+The evolution of multicellularity is a major transition that is not 
+yet fully understood. Specifically, we do not know if there are any 
+mechanisms by which multicellularity can be maintained without a 
+single cell bottleneck or other relatedness enhancing mechanisms. 
+Under low relatedness, cheaters can evolve that benefit from the 
+altruistic behaviour of others without themselves sacrificing. If 
+these are obligate cheaters, incapable of co-operating, their spread 
+can lead to the demise of multicellularity. One possibility, however, 
+is that co-operators can evolve resistance to cheaters. We tested 
+this idea in a facultatively multicellular social amoeba, 
+Dictyostelium discoideum. This amoeba usually exists as a single 
+cell but, when stressed, thousands of cells aggregate to form a 
+multicellular organism in which some of the cells sacrifice for the 
+good of others. We used lineages that had undergone experimental 
+evolution at very low relatedness, during which time obligate 
+cheaters evolved. Unlike earlier experiments, which found resistance 
+to cheaters that were prevented from evolving, we competed cheaters 
+and non-cheaters that evolved together, and cheaters with their 
+ancestors. We found that non-cheaters can evolve resistance to 
+cheating before cheating sweeps through the population and 
+multicellularity is lost. Our results provide insight into cheater-
+resister co-evolutionary dynamics, in turn providing experimental 
+evidence for the maintenance of at least a simple form of 
+multicellularity by means other than high relatedness.
+
+
+Submitted by Samuel Levin [samuel.r.levin@gmail.com] 
+----------------------------------------------------------------------
+
+
+Lipid Droplet Dynamics at Early Stages of Mycobacterium marinum 
+Infection in Dictyostelium 
+
+Caroline Barisch1, Peggy Paschke2, Monica Hagedorn3, Markus 
+Maniak2 and Thierry Soldati1*
+
+1Department of Biochemistry, Science II, University of Geneva, 
+30 quai Ernest-Ansermet, 1211 Geneva-4, Switzerland
+2Department of Cell Biology, University of Kassel, 
+Heinrich-Plett-Str. 40, 34132 Kassel, Germany
+3Section Parasitology, Bernhard Nocht Institute for Tropical 
+Medicine, Bernhard-Nocht-Straße 74, 20359 Hamburg, Germany
+
+
+Cellular Microbiology, in press
+
+Lipid droplets exist in virtually every cell type, ranging from 
+mammals to plants, but also to eukaryotic and prokaryotic unicellular 
+organisms such as Dictyostelium and bacteria. They serve amongst 
+other roles as energy reservoir that cells consume in times of 
+starvation. Mycobacteria and some other intracellular pathogens 
+hijack these organelles as a nutrient source and to build up their 
+own lipid inclusions. The mechanisms by which host lipid droplets 
+are captured by the pathogenic bacteria is extremely poorly understood. 
+Using the powerful Dictyostelium discoideum / Mycobacterium marinum 
+infection model we observed that, immediately after their uptake, 
+lipid droplets translocate to the vicinity of the vacuole containing 
+live but not dead mycobacteria. Induction of lipid droplets in 
+Dictyostelium prior to infection resulted in a vast accumulation of 
+neutral lipids and sterols inside the bacterium-containing compartment. 
+Subsequently, under these conditions, mycobacteria accumulated much 
+larger lipid inclusions. Strikingly, the Dictyostelium homologue of 
+perilipin and the murine perilipin 2 surrounded bacteria that had 
+escaped to the cytosol of Dictyostelium or microglial BV-2 cells, 
+respectively. Moreover, bacterial growth was inhibited in 
+Dictyostelium plnA knockout cells. In summary, our results provide 
+evidence that mycobacteria actively manipulate the lipid metabolism 
+of the host from very early infection stages.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+----------------------------------------------------------------------
+
+
+Live Imaging of Mycobacterium marinum Infection in Dictyostelium 
+discoideum
+
+Caroline Barisch, Ana T. López-Jiménez, and Thierry Soldati
+
+Department of Biochemistry, Science II, University of Geneva, 
+30 quai Ernest-Ansermet, 1211 Geneva-4, Switzerland
+
+
+Methods Mol Biol. 2015;1285:369-85.
+
+The pdf file of the chapter is available upon request
+
+The Dictyostelium discoideum–Mycobacterium marinum host–pathogen 
+system is a recently established and powerful model system for 
+mycobacterial infection. In this chapter, two simple protocols for 
+live imaging of Dictyostelium discoideum infection are described. 
+The first method is used to monitor the dynamics of recruitment of 
+GFP-tagged Dictyostelium discoideum proteins at single time-points 
+corresponding to the main stages of the infection (1.5–72 h post 
+infection). The second method focuses at the early stages of the 
+establishment of an infection (0–3 h post infection). In addition, 
+several procedures to improve the imaging of the bacterium-containing 
+compartment are described. Basic bacterial parameters such as 
+bacterial growth and the recruitment of host proteins to the 
+bacterium-containing compartment can be easily and precisely 
+quantified using macros for ImageJ. These methods can be adapted to 
+monitoring mycobacteria infection in other systems using mammalian 
+cells.
+
+
+Submitted by Thierry Soldati [thierry.soldati@unige.ch]
+==============================================================
+[End dictyNews, volume 41, number 6]

@@ -1,0 +1,170 @@
+Dicty News
+Electronic Edition
+Volume 18, number 8
+May 18, 2002
+
+Please submit abstracts of your papers as soon as they have been
+accepted for publication by sending them to dicty@northwestern.edu.
+
+Back issues of Dicty-News, the Dicty Reference database and other useful
+information is available at DictyBase--http://dictybase.org.
+
+=============
+  Abstracts
+=============
+
+The Cdk5 homologue, Crp, regulates endocytosis and secretion in 
+Dictyostelium and is necessary for optimum growth and differentiation
+
+Shiv K. Sharma1, Debra A. Brock2, Robin R. Ammann2 , Tiffany DeShazo3, 
+Meenal Khosla1, Richard H. Gomer2,3 and Gerald Weeks1
+
+
+1Department of Microbiology and Immunology, The University of British
+ Columbia, Vancouver, BC  V6T 1Z3  Canada
+
+2Howard Hughes Medical Institute and
+
+3Department of Biochemistry and Cell Biology,
+MS-140, Rice University,
+6100 S. Main Street,
+Houston, TX 77005-1892
+
+
+Developmental Biology, in press
+
+Summary
+
+        Dictyostelium Crp is a member of the cyclin dependant kinase (Cdk) 
+family of proteins.  It is most related in sequence to mammalian Cdk5, which 
+unlike other members of the family, has functions that are unrelated to the 
+cell cycle.  In order to better understand the function of Crp in 
+Dictyostelium, we overexpressed a dominant negative form, Crp-D144N, under 
+the control of the actin 15 promoter.  Cells overexpressing Crp-D144N 
+exhibit a reduced growth rate in suspension culture and reduced rates of 
+fluid-phase endocytosis and phagocytosis.  There is no reduction in Cdc2 
+kinase activity in extracts from cells overexpressing Crp-D144N, suggesting 
+that the growth defect is not due to inhibition of Cdc2.  In addition to 
+the growth defect, the act15::crp-D144N transformants aggregate at a slower 
+rate than wild-type cells and form large aggregation streams.  These 
+eventually break up to form small aggregates and most of these do not 
+produce mature fruiting bodies.  The aggregation defect is fully reversed 
+in the presence of wild-type cells but terminal differentiation is only 
+partially rescued.  In act15::crp-D144N transformants, the countin component 
+of the counting factor, a secreted protein complex that regulates the 
+breakup of streams, mostly appears outside the cell as degradation products 
+and the reduced level of the intact protein may at least partially account 
+for the initial formation of the large aggregation streams.  Our 
+observations indicate that Crp is important for both endocytosis and efflux 
+and that defects in these functions lead to reduced growth and aberrant 
+development.
+
+-----------------------------------------------------------------------------
+
+Clarke, M., Koehler, J., Arana, Q., Liu, T., Heuser, J., and Gerisch, G. 
+
+Dynamics of the vacuolar H+-ATPase in the contractile vacuole complex and the 
+endosomal pathway of Dictyostelium cells.  
+
+J. Cell Sci., in press.
+
+ABSTRACT
+
+The vacuolar H+-ATPase (V-ATPase) is a multi-subunit enzyme that plays 
+important roles in eukaryotic cells.  In Dictyostelium, it is found 
+primarily in membranes of the contractile vacuole complex, where it 
+energizes fluid accumulation by this osmoregulatory organelle, and also in 
+membranes of endo-lysosomes, where it serves to acidify the endosomal lumen. 
+In the present study, a fusion was created between vatM, the gene encoding 
+the 100-kDa transmembrane subunit of the V-ATPase, and the gene encoding 
+Green Fluorescent Protein (GFP).  When expressed in Dictyostelium cells, 
+this fusion protein VatM-GFP was correctly targeted to contractile vacuole 
+and endo-lysosomal membranes, and was competent to direct assembly of the 
+V-ATPase enzyme complex.  Protease treatment of isolated endosomes indicated 
+that the GFP moiety, located on the C-terminus of VatM, was exposed to the 
+cytoplasmic side of the endosomal membrane rather than to the lumenal side. 
+VatM-GFP labeling of the contractile vacuole complex revealed clearly the 
+dynamics of this pleiomorphic vesiculo-tubular organelle.  VatM-GFP labeling 
+of endosomes allowed direct visualization of the trafficking of vacuolar 
+proton pumps in this pathway, which appeared to be entirely independent 
+from the contractile vacuole membrane system.  In cells whose endosomes 
+were pre-labeled with TRITC-dextran and then fed yeast particles, VatM-GFP 
+was delivered to newly formed yeast phagosomes with the same time course as 
+TRITC-dextran, consistent with transfer via a direct fusion of endosomes 
+with phagosomes.  Several minutes were required before the intensity of the 
+VatM-GFP labeling of new phagosomes reached the level observed in older 
+phagosomes, suggesting that this fusion process was progressive and 
+continuous.  VatM-GFP was retrieved from the phagosome membrane prior to 
+exocytosis of the indigestible remnants of the yeast particle.  These data 
+suggest that vacuolar proton pumps are recycled by fusion of advanced with 
+newly-formed endosomes.  
+
+-----------------------------------------------------------------------------
+
+A Talin Fragment as an Actin Trap Visualizing Actin Flow in Chemotaxis, 
+Endocytosis, and Cytokinesis
+ 
+Igor Weber, Jens Niewoehner, Aiping Du, Ursula Roehrig, and Guenther Gerisch
+ 
+Max-Planck-Institut fuer Biochemie, Martinsried, Germany 
+  
+Cell Motility and the Cytoskeleton, in press.
+ 
+ABSTRACT
+ 
+A C-terminal 63 kDa fragment of talin A from Dictyostelium discoideum forms 
+a slowly dissociating complex with F-actin in vitro. This talin fragment 
+(TalC63) has been tagged with GFP and used as a trap for actin filaments 
+in chemotactic cell movement, endocytosis, and mitotic cell division. 
+TalC63 efficiently sequesters actin filaments in vivo. Its translocation 
+reflects the direction and efficiency of an actin flow.  Along the body 
+of a migrating Dictyostelium cell, this flow is directed from the front 
+to the tail.  If during chemotaxis one or two new fronts are induced, the 
+flow is always directed away from these fronts.  The flow thus reflects 
+the re-programming of cell polarity in response to changing gradients of 
+chemoattractant. In endocytosis, the fluorescent complexes are translocated 
+to the base of a phagocytic or macropinocytic cup. During mitosis, the 
+complexes of F-actin with TalC63 accumulate within the midzone of anaphase 
+cells. If TalC63 is strongly expressed, the entire cleavage furrow is filled 
+out by sequestered actin filaments, and cytokinesis is severely impaired. 
+These cells are considered to mimic the phenotype of mutants deficient in 
+the shredding of actin filaments that normally occurs in the mid-zone of a 
+dividing cell.
+
+-----------------------------------------------------------------------------
+ 
+Tubular-Vesicular Transformation in the Contractile Vacuole System of 
+Dictyostelium. (Review)
+ 
+Guenther Gerisch*, John Heuser#, and Margaret Clarke+ 
+ 
+*  Max-Planck-Institut fuer Biochemie, Martinsried, Germany 
+# Department of Cell Biology and Physiology, Washington University 
+   School of Medicine, St. Louis, Missouri, USA
++  Program in Molecular and Cell Biology, Oklahoma Medical Research Foundation, 
+    Oklahoma City, Oklahoma, USA
+  
+Cell Biology International, in press.
+  
+ABSTRACT
+
+The contractile vacuole complex of Dictyostelium is the paradigm of a membrane 
+system that undergoes tubular-vesicular transitions during its regular cycle 
+of activities.  This system acts as an osmoregulatory organelle in freshwater 
+amoebae and protozoa.  It collects fluid in a network of tubules and cisternae, 
+and pumps it out of the cell through transient pores in the plasma membrane.  
+Tubules and vacuoles are interconvertible.  The tubular channels are associated 
+with the cortical actin network and are capable of moving and fusing.  The 
+contractile vacuole complex is separate from vesicles of the endosomal pathway 
+and preserves its identity in a dispersed state during cell division.  We 
+outline techniques to visualize the contractile vacuole system by electron 
+and light microscopy.  Emphasis is placed on GFP-fusion proteins that allow 
+visualization of the dynamics of the contractile vacuole network in living 
+cells.  Proteins that control activities of this specialized organelle in 
+Dictyostelium have been conserved during evolution and also regulate 
+membrane trafficking in man.
+
+-----------------------------------------------------------------------------
+[End Dicty News, volume 18, number 8]
+
+ 

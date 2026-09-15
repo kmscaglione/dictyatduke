@@ -14,6 +14,7 @@ import csv, gzip, html, json, os, re, sys, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 CORPUS_SRC = os.path.join(ASSETS, "dictybase-corpus")
+DOWNLOADS_SRC = os.path.join(ASSETS, "dictybase-downloads")
 GENOMES = os.path.join(ASSETS, "genomes")
 
 
@@ -214,6 +215,62 @@ def build_phenotypes():
     _write("phenotypes.json", genes)
     print(f"  phenotypes.json: {len(genes)} genes, "
           f"{sum(len(v) for v in genes.values())} annotations")
+
+
+# ---------------------------------------------------------------------------
+# ddb0_ids.json  <-  DDB-GeneID-UniProt.txt  (+ curated_gene_DDB_map current model)
+# { ddb_g: {"ids": [DDB0..., all historical], "current": DDB0 | ""} }
+#
+# The DDB0 "feature" ids are dictyBase's internal protein/gene-model identifiers
+# (e.g. DDB0185015). They key the legacy Get-Fasta, protein, and BLAST links and
+# appear in old datasets, so preserve them per gene. Every DDB0 <-> DDB_G pair is
+# already in the mirrored DDB-GeneID-UniProt.txt; the current curated model id is
+# in curated_gene_DDB_map (keyed by gene name).
+# ---------------------------------------------------------------------------
+def build_ddb0_ids():
+    src = os.path.join(DOWNLOADS_SRC, "general", "DDB-GeneID-UniProt.txt")
+    if not os.path.exists(src):
+        print("  SKIP ddb0_ids: DDB-GeneID-UniProt.txt not mirrored")
+        return
+    by_gene = {}
+    with open(src, encoding="utf-8", errors="replace") as fh:
+        rows = csv.reader(fh, delimiter="\t")
+        next(rows, None)
+        for row in rows:
+            if len(row) >= 2 and row[0].startswith("DDB0") and row[1].startswith("DDB_G"):
+                lst = by_gene.setdefault(row[1], [])
+                if row[0] not in lst:
+                    lst.append(row[0])
+
+    # Current curated model id per gene name -> map onto DDB_G via gene_index.
+    sym2ddb = {}
+    with open(os.path.join(ASSETS, "gene_index.json")) as fh:
+        for r in json.load(fh):
+            if r and r[0]:
+                sym2ddb.setdefault((r[1] or "").lower(), r[0])
+    current = {}
+    cur_zip = os.path.join(DOWNLOADS_SRC, "general", "curated_gene_DDB_map.zip")
+    if os.path.exists(cur_zip):
+        import zipfile
+        with zipfile.ZipFile(cur_zip) as zf:
+            name = next((n for n in zf.namelist() if n.endswith(".txt") and "map" in n.lower()), None)
+            if name:
+                for line in zf.read(name).decode("utf-8", "replace").splitlines()[1:]:
+                    f = line.split("\t")
+                    if len(f) >= 3 and f[2].startswith("DDB0"):
+                        ddb = sym2ddb.get(f[0].strip().lower())
+                        if ddb:
+                            current[ddb] = f[2].strip()   # last (newest) wins
+
+    out = {}
+    for ddb, ids in by_gene.items():
+        cur = current.get(ddb, "")
+        if cur and cur not in ids:
+            ids.append(cur)
+        out[ddb] = {"ids": ids, "current": cur or (ids[0] if len(ids) == 1 else "")}
+    _write("ddb0_ids.json", out)
+    print(f"  ddb0_ids.json: {len(out)} genes, {sum(len(v['ids']) for v in out.values())} DDB0 ids, "
+          f"{sum(1 for v in out.values() if v['current'])} with a current model")
 
 
 # ---------------------------------------------------------------------------
@@ -532,6 +589,7 @@ def main():
     # Build the complete strain -> gene(s) map first: build_phenotypes uses it to
     # attribute each strain's richly-referenced phenotype rows to its gene(s).
     build_strain_gene_links()
+    build_ddb0_ids()
     build_phenotypes()
     # Per-gene enrichment from the mirrored dictyBase download files (literature,
     # domains, curation status, orthologs, PTMs, MW, ontologies, codon usage).

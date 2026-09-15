@@ -289,11 +289,31 @@ def check_strain_metadata():
     check(withmm > 12000, f"strains with mutagenesis method {withmm} (> 12,000)")
 
 
+def check_ddb0_ids():
+    """ddb0_ids.json (dictyBase internal feature/model ids per gene): derived from
+    the mirrored DDB-GeneID-UniProt.txt. act15's current model DDB0185015 is the
+    canary (matches the live gene page)."""
+    print("DDB0 feature ids")
+    path = os.path.join(ASSETS, "ddb0_ids.json")
+    if not os.path.exists(path):
+        return ok("ddb0_ids.json absent — skipped")
+    try:
+        d = load("ddb0_ids.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load ddb0_ids.json ({e})")
+    check(len(d) > 13000, f"genes with DDB0 ids {len(d)} (> 13,000)")
+    act = d.get("DDB_G0272520") or {}
+    check(act.get("current") == "DDB0185015" and "DDB0185015" in (act.get("ids") or []),
+          "act15 DDB0 ids correct (current DDB0185015)")
+    bad = [g for g, v in d.items() if any(not str(i).startswith("DDB0") for i in v.get("ids", []))]
+    check(not bad, "all ids are DDB0 ids" if not bad else f"{len(bad)} genes with non-DDB0 ids")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
-               check_phenotype_refs, check_strain_metadata):
+               check_phenotype_refs, check_strain_metadata, check_ddb0_ids):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

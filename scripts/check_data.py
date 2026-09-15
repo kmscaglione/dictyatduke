@@ -268,11 +268,32 @@ def check_phenotype_refs():
               if has else f"{sym} lost its phenotype reference")
 
 
+def check_strain_metadata():
+    """strain_metadata.json (rich Stock Center fields shown on strain pages): must
+    cover both the GWDI insertion bank AND the curated named strains. listStrains
+    pagination silently omits the curated ones, so racE- (DBS0235413) is the canary
+    that the by-id fill ran."""
+    print("strain metadata")
+    path = os.path.join(ASSETS, "dictybase-corpus", "strain_metadata.json")
+    if not os.path.exists(path):
+        return ok("strain_metadata.json absent — skipped")
+    try:
+        with open(path) as fh:
+            d = json.load(fh)
+    except (OSError, ValueError) as e:
+        return fail(f"could not load strain_metadata.json ({e})")
+    check(len(d) > 15000, f"strains captured {len(d)} (> 15,000)")
+    check("DBS0235413" in d, "curated named strains present (racE- DBS0235413)"
+          if "DBS0235413" in d else "curated strains MISSING — only GWDI captured?")
+    withmm = sum(1 for s in d.values() if s.get("mutagenesis_method"))
+    check(withmm > 12000, f"strains with mutagenesis method {withmm} (> 12,000)")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
-               check_phenotype_refs):
+               check_phenotype_refs, check_strain_metadata):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

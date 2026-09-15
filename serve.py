@@ -6160,15 +6160,43 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not phenos and fallback.get("terms"):
             phenos = [{"phenotype": t, "condition": "", "pmid": "", "note": ""}
                       for t in fallback["terms"]]
-        if gene is None and not phenos and not linked:
+        # Rich per-strain metadata (Stock Center: systematic name, genotype,
+        # mutagenesis method, genetic modification, characteristics, depositor,
+        # publications, parent, synonyms). Preserved in strain_metadata.json.
+        meta = _load_json("dictybase-corpus/strain_metadata.json").get(sid) or {}
+        # A strain's own associated-gene list (incl. both genes of a double mutant)
+        # is authoritative; prefer it over the phenotype-derived link when present.
+        meta_genes = [g for g in (meta.get("genes") or []) if str(g).startswith("DDB_G")]
+        if meta_genes:
+            linked = meta_genes
+            if gene is None:
+                gene = linked[0]
+        if gene is None and not phenos and not linked and not meta:
             self.send_json(404, {"error": "strain not found", "strain": sid})
             return
         rows, _ = api_gene_rows()
         gene_obj = {"ddb": gene, "symbol": rows.get(gene, {}).get("symbol")} if gene else None
-        genes_obj = [{"ddb": g, "symbol": rows.get(g, {}).get("symbol")} for g in linked] or (
+        genes_obj = [{"ddb": g, "symbol": rows.get(g, {}).get("symbol") or g} for g in linked] or (
             [gene_obj] if gene_obj else [])
+        detail = None
+        if meta:
+            detail = {
+                "label": meta.get("label", ""),
+                "systematic_name": meta.get("systematic_name", ""),
+                "summary": meta.get("summary", ""),
+                "names": meta.get("names") or [],
+                "genotypes": meta.get("genotypes") or [],
+                "genetic_modification": meta.get("genetic_modification", ""),
+                "mutagenesis_method": meta.get("mutagenesis_method", ""),
+                "characteristics": meta.get("characteristics") or [],
+                "depositor": meta.get("depositor") or "",
+                "publications": meta.get("publications") or [],
+                "parent": meta.get("parent") or "",
+                "in_stock": meta.get("in_stock"),
+            }
         self.send_json(200, {"strain": sid, "gene": gene_obj, "genes": genes_obj,
-                             "descriptor": fallback.get("label", ""), "phenotypes": phenos})
+                             "descriptor": meta.get("label") or fallback.get("label", ""),
+                             "metadata": detail, "phenotypes": phenos})
 
     def _handle_sequence(self):
         """Return a gene's genomic / cDNA / protein sequence as a FASTA download."""

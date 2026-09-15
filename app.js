@@ -9430,6 +9430,47 @@ function openStrain(sid, updateRoute = true) {
   loadStrain(sid);
 }
 
+// A strain publication is stored as a DOI ("10.1083/..."), a full doi.org URL, or
+// a bare id; render whatever we have as a link where possible.
+function strainPubLink(p) {
+  const s = String(p || "").trim();
+  if (!s) return "";
+  const url = s.startsWith("http") ? s : (/^10\.\d/.test(s) ? `https://doi.org/${s}` : "");
+  const label = s.replace(/^https?:\/\/(dx\.)?doi\.org\//, "");
+  return url
+    ? `<a class="text-link" href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(label)}</a>`
+    : escapeHtml(s);
+}
+
+// The Stock Center strain record: descriptor, systematic name, synonyms, genotype,
+// genetic modification, mutagenesis method, characteristics, depositor, parent, and
+// references (preserved from dictyBase in strain_metadata.json).
+function strainDetailBlock(m, sid) {
+  if (!m) return "";
+  const rows = [];
+  const row = (k, v) => { if (v) rows.push(`<div style="display:flex;gap:10px;margin:3px 0"><span style="min-width:148px;color:var(--muted,#6b7280);font-size:.8125rem">${k}</span><span style="font-size:.8125rem">${v}</span></div>`); };
+  if (m.label) row("Strain descriptor", escapeHtml(m.label));
+  if (m.systematic_name && m.systematic_name !== sid && !/^DBS\d+$/.test(m.systematic_name)) row("Systematic name", escapeHtml(m.systematic_name));
+  if (m.names && m.names.length) row("Also known as", m.names.map(escapeHtml).join(", "));
+  if (m.genotypes && m.genotypes.length) row("Genotype", m.genotypes.map(escapeHtml).join("<br>"));
+  if (m.genetic_modification) row("Genetic modification", escapeHtml(m.genetic_modification));
+  if (m.mutagenesis_method) row("Mutagenesis method", escapeHtml(m.mutagenesis_method));
+  if (m.characteristics && m.characteristics.length) row("Characteristics", m.characteristics.map(escapeHtml).join(", "));
+  if (m.parent) row("Parent strain", `<a class="text-link" href="/strain/${encodeURIComponent(m.parent)}">${escapeHtml(m.parent)}</a>`);
+  if (m.depositor) row("Depositor", escapeHtml(m.depositor));
+  const refs = (m.publications || []).map(strainPubLink).filter(Boolean);
+  if (refs.length) row("References", refs.join(" · "));
+  const summary = m.summary ? `<p style="font-size:.875rem;margin:0 0 10px">${escapeHtml(m.summary)}</p>` : "";
+  if (!rows.length && !summary) return "";
+  const stock = m.in_stock === true ? ` <span class="stock-badge">In&nbsp;stock</span>`
+    : (m.in_stock === false ? ` <span style="font-size:.72rem;color:var(--muted,#6b7280);font-weight:500">not currently stocked</span>` : "");
+  return `<div class="data-block" style="margin-bottom:14px">
+    <h3>Strain details${stock}</h3>
+    ${summary}${rows.join("")}
+    <p style="font-size:.72rem;color:var(--muted,#6b7280);margin:8px 0 0">Order physical stocks from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>.</p>
+  </div>`;
+}
+
 async function loadStrain(sid) {
   const geneEl = document.getElementById("strain-gene");
   const phEl = document.querySelector("[data-strain-phenos]");
@@ -9457,13 +9498,14 @@ async function loadStrain(sid) {
         return `<a class="text-link" href="/gene/${encodeURIComponent(g)}">${escapeHtml(label)}</a>`;
       }).join(", ") + ' <span class="legacy-badge">from screen</span>';
     }
+    const detailBlock = strainDetailBlock(data.metadata, sid);
     const ph = data.phenotypes || [];
     if (!ph.length) {
-      phEl.innerHTML = screenBlock || `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`;
+      phEl.innerHTML = detailBlock + (screenBlock || (detailBlock ? "" : `<p class="notice">No phenotypes recorded for ${escapeHtml(sid)}.</p>`));
       initScreenVideos(phEl);
       return;
     }
-    phEl.innerHTML = screenBlock + `
+    phEl.innerHTML = detailBlock + screenBlock + `
       <div class="data-block">
         <h3>${ph.length} phenotype${ph.length === 1 ? "" : "s"}</h3>
         <ul class="list">

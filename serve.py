@@ -1633,6 +1633,11 @@ def assemble_gene(ddb):
     g["sequences"] = {t: f"/api/sequence?ddb={ddb}&type={t}&symbol={g['symbol']}"
                       for t in ("genomic", "cdna", "protein")}
     g["strains"] = api_strains()["by_gene"].get(ddb, [])
+    # dictyBase DDB0 feature/model ids (current model + all historical), preserved
+    # from the GFF and the GeneID-UniProt table.
+    ddb0 = _load_json("ddb0_ids.json").get(ddb)
+    if ddb0:
+        g["ddb0"] = ddb0
     return g
 
 def run_blast(program, database, query):

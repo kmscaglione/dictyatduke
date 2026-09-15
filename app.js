@@ -8265,6 +8265,7 @@ function renderTab(gene, tab) {
             <span>NCBI Gene</span><strong>${gene.ncbiGene}</strong>
             <span>UniProt</span><strong>${gene.uniprot}</strong>
             <span>VEuPathDB</span><strong>AmoebaDB:${gene.veupath}</strong>
+            <span data-ddb0-label hidden>dictyBase feature ID</span><strong data-ddb0 hidden></strong>
             <span data-dicty-transcripts-label hidden>Alt transcripts</span><strong data-dicty-transcripts hidden></strong>
           </div>
         </section>
@@ -8976,6 +8977,29 @@ async function loadGeneExtras(gene) {
     tl.hidden = tv.hidden = !has;
     if (has) tv.textContent = x.transcripts.join(", ");
   }
+
+  // dictyBase DDB0 feature/model id(s): current model, with any historical ids on hover.
+  const d0l = document.querySelector("[data-ddb0-label]");
+  const d0v = document.querySelector("[data-ddb0]");
+  if (d0l && d0v) {
+    const rec = (await ensureDDB0())[ddb];
+    const ids = (rec && rec.ids) || [];
+    const cur = (rec && rec.current) || ids[0] || "";
+    d0l.hidden = d0v.hidden = !cur;
+    if (cur) {
+      const others = ids.filter((i) => i !== cur);
+      d0v.innerHTML = escapeHtml(cur)
+        + (others.length ? ` <span class="muted" style="font-weight:400" title="Previous/related feature ids: ${escapeHtml(others.join(", "))}">+${others.length} more</span>` : "");
+    }
+  }
+}
+
+let ddb0Data = null;
+async function ensureDDB0() {
+  if (ddb0Data) return ddb0Data;
+  try { const r = await fetch("/assets/ddb0_ids.json"); ddb0Data = r.ok ? await r.json() : {}; }
+  catch { ddb0Data = {}; }
+  return ddb0Data;
 }
 
 // Genome tab: on-demand 5' flanking (promoter) sequence retrieval.

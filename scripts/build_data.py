@@ -232,7 +232,7 @@ def build_ddb0_ids():
     if not os.path.exists(src):
         print("  SKIP ddb0_ids: DDB-GeneID-UniProt.txt not mirrored")
         return
-    by_gene = {}
+    by_gene = {}     # ddb_g -> [DDB0 ...] (all historical)
     with open(src, encoding="utf-8", errors="replace") as fh:
         rows = csv.reader(fh, delimiter="\t")
         next(rows, None)
@@ -242,35 +242,46 @@ def build_ddb0_ids():
                 if row[0] not in lst:
                     lst.append(row[0])
 
-    # Current curated model id per gene name -> map onto DDB_G via gene_index.
-    sym2ddb = {}
-    with open(os.path.join(ASSETS, "gene_index.json")) as fh:
-        for r in json.load(fh):
-            if r and r[0]:
-                sym2ddb.setdefault((r[1] or "").lower(), r[0])
-    current = {}
-    cur_zip = os.path.join(DOWNLOADS_SRC, "general", "curated_gene_DDB_map.zip")
-    if os.path.exists(cur_zip):
+    # The dictyBase GFF is authoritative for the CURRENT protein model: each gene's
+    # primary mRNA carries Note=Primary feature. (Also picks up any DDB0 mRNA ids
+    # not in the GeneID-UniProt table.) Parsed from the mirrored dicty_gff3.zip.
+    current, accession = {}, {}
+    gff_zip = os.path.join(DOWNLOADS_SRC, "gff3", "dicty_gff3.zip")
+    if os.path.exists(gff_zip):
         import zipfile
-        with zipfile.ZipFile(cur_zip) as zf:
-            name = next((n for n in zf.namelist() if n.endswith(".txt") and "map" in n.lower()), None)
-            if name:
-                for line in zf.read(name).decode("utf-8", "replace").splitlines()[1:]:
+        attr = lambda s, k: (re.search(rf"{k}=([^;]+)", s) or [None, ""])[1]
+        with zipfile.ZipFile(gff_zip) as zf:
+            for n in zf.namelist():
+                if not n.endswith(".gff"):
+                    continue
+                for line in zf.read(n).decode("utf-8", "replace").splitlines():
                     f = line.split("\t")
-                    if len(f) >= 3 and f[2].startswith("DDB0"):
-                        ddb = sym2ddb.get(f[0].strip().lower())
-                        if ddb:
-                            current[ddb] = f[2].strip()   # last (newest) wins
+                    if len(f) < 9 or f[2] != "mRNA":
+                        continue
+                    mid, parent = attr(f[8], "ID"), attr(f[8], "Parent")
+                    if not mid.startswith("DDB0") or not parent.startswith("DDB_G"):
+                        continue
+                    by_gene.setdefault(parent, [])
+                    if mid not in by_gene[parent]:
+                        by_gene[parent].append(mid)
+                    if "Primary feature" in f[8]:
+                        current[parent] = mid
+                        m = re.search(r"Protein Accession Version:([^,;]+)", f[8])
+                        if m:
+                            accession[parent] = m.group(1)
 
     out = {}
     for ddb, ids in by_gene.items():
         cur = current.get(ddb, "")
         if cur and cur not in ids:
             ids.append(cur)
-        out[ddb] = {"ids": ids, "current": cur or (ids[0] if len(ids) == 1 else "")}
+        rec = {"ids": ids, "current": cur or (ids[0] if len(ids) == 1 else "")}
+        if accession.get(ddb):
+            rec["protein_accession"] = accession[ddb]
+        out[ddb] = rec
     _write("ddb0_ids.json", out)
     print(f"  ddb0_ids.json: {len(out)} genes, {sum(len(v['ids']) for v in out.values())} DDB0 ids, "
-          f"{sum(1 for v in out.values() if v['current'])} with a current model")
+          f"{sum(1 for v in out.values() if v['current'])} with a current (primary) model")
 
 
 # ---------------------------------------------------------------------------

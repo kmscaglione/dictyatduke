@@ -38,14 +38,17 @@ _CTX = ssl.create_default_context()
 _CTX.check_hostname = False
 _CTX.verify_mode = ssl.CERT_NONE
 
+# The four endpoints carrying dictyBase-unique curation not recoverable from the
+# bulk downloads or external DBs. (genomic_info dropped — we already hold coords;
+# info/product dropped — name etymology is partly in dictybase_live_curation.json
+# and DDB0 ids / protein length are derivable. Kept lean so the scrape finishes
+# before the legacy server, which throttles to ~1-2 req/s, goes dark.)
 ENDPOINTS = {
-    "info": "{b}/{g}/gene/info.json",
-    "genomic_info": "{b}/{g}/gene/genomic_info.json",
-    "product": "{b}/{g}/gene/product.json",
-    "summary": "{b}/{g}/gene/summary.json",
-    "links": "{b}/{g}/gene/links.json",
-    "references": "{b}/{g}/references.json",
-    "orthologs": "{b}/{g}/orthologs.json",
+    "summary": "{b}/{g}/gene/summary.json",       # curated description + Alerts
+    "links": "{b}/{g}/gene/links.json",           # external xref accessions
+    "references": "{b}/{g}/references.json",       # per-paper topics, DOI, pub id, assoc genes
+    "orthologs": "{b}/{g}/orthologs.json",         # orthologs w/ UniProt accession + product
+    "product": "{b}/{g}/gene/product.json",        # authoritative current DDB0 feature id + protein length
 }
 
 
@@ -73,33 +76,51 @@ def main():
     ids = all_gene_ids()
     if shard_n:
         ids = [g for k, g in enumerate(ids) if k % shard_n == shard_i]
-    have = {f[:-8] for f in os.listdir(DEST) if f.endswith(".json.gz")}
-    todo = [g for g in ids if g not in have]
-    print(f"{len(ids)} genes; {len(have)} already captured; {len(todo)} to go"
+
+    def load(g):
+        p = os.path.join(DEST, f"{g}.json.gz")
+        if not os.path.exists(p):
+            return None
+        try:
+            with gzip.open(p, "rt", encoding="utf-8") as fh:
+                return json.load(fh)
+        except Exception:  # noqa: BLE001 — corrupt/partial file: re-fetch it
+            return None
+
+    # A gene is "done" only once every endpoint key is present. This makes the
+    # scrape backfill new endpoints onto files captured with an earlier, smaller
+    # set (only the missing endpoints are fetched).
+    def is_done(g):
+        r = load(g)
+        return r is not None and all(k in r for k in ENDPOINTS)
+    todo = [g for g in ids if not is_done(g)]
+    print(f"{len(ids)} genes in shard; {len(ids) - len(todo)} complete; {len(todo)} to fetch/backfill"
           + (f" (capping at {cap})" if cap else ""), file=sys.stderr)
     n = 0
     for g in todo:
         if cap and n >= cap:
             break
-        rec = {"ddb": g}
+        rec = load(g) or {"ddb": g}
+        rec["ddb"] = g
         got = False
         for key, tmpl in ENDPOINTS.items():
+            if key in rec:
+                continue
             try:
-                txt = fetch(tmpl.format(b=BASE, g=g))
-                rec[key] = json.loads(txt)
+                rec[key] = json.loads(fetch(tmpl.format(b=BASE, g=g)))
                 got = True
             except json.JSONDecodeError:
                 rec[key] = None
             except Exception:
                 rec[key] = None
             time.sleep(0.05)
-        if got:
+        if got or load(g) is None:
             with gzip.open(os.path.join(DEST, f"{g}.json.gz"), "wt", encoding="utf-8") as fh:
                 json.dump(rec, fh, ensure_ascii=False)
         n += 1
         if n % 200 == 0:
-            print(f"  ...{n} genes captured", file=sys.stderr)
-    print(f"\ndone: {n} genes captured this run; "
+            print(f"  ...{n} genes done", file=sys.stderr)
+    print(f"\ndone: {n} genes processed this run; "
           f"{len(os.listdir(DEST))} total on disk", file=sys.stderr)
 
 

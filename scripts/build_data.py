@@ -108,21 +108,41 @@ def build_phenotypes():
         seen.add(key)
         genes.setdefault(ddb, []).append([term, cond, pmid, note])
 
-    # (1) legacy snapshot — keep its references/conditions
+    # (1) legacy snapshot — the ONLY source with per-annotation references, assay
+    # conditions, and curator notes. Each row is keyed by strain (DBS id); attribute
+    # it to the strain's gene(s) via the complete strain->gene map
+    # (strain_gene_links.json), falling back to the legacy single-gene snapshot.
+    # The old code resolved strains only through strain_genes.tsv (~525 genes), so
+    # a strain outside it — e.g. cln5's DBS0351175 — had its referenced rows dropped,
+    # and the gene fell back to the term-only download rows below (no PMID/note).
     strain_gene = {}
     with open(os.path.join(CORPUS_SRC, "strain_genes.tsv")) as fh:
         for row in csv.reader(fh, delimiter="\t"):
             if len(row) >= 2:
                 strain_gene[row[0].strip()] = row[1].strip()
+    by_strain = {}
+    links_path = os.path.join(ASSETS, "strain_gene_links.json")
+    if os.path.exists(links_path):
+        with open(links_path) as fh:
+            by_strain = json.load(fh).get("by_strain") or {}
+
+    def genes_for(strain):
+        ddbs = list(by_strain.get(strain) or [])
+        legacy = strain_gene.get(strain)
+        if legacy and legacy not in ddbs:
+            ddbs.append(legacy)
+        return ddbs
+
     with open(os.path.join(CORPUS_SRC, "strain_phenotype.tsv")) as fh:
         for row in csv.reader(fh, delimiter="\t"):
             if len(row) < 2:
                 continue
-            add(strain_gene.get(row[0].strip()),
-                html.unescape((row[1] if len(row) > 1 else "").strip()),
-                html.unescape((row[2] if len(row) > 2 else "").strip()),
-                (row[4] if len(row) > 4 else "").strip(),
-                html.unescape((row[5] if len(row) > 5 else "").strip()))
+            term = html.unescape((row[1] if len(row) > 1 else "").strip())
+            cond = html.unescape((row[2] if len(row) > 2 else "").strip())
+            pmid = (row[4] if len(row) > 4 else "").strip()
+            note = html.unescape((row[5] if len(row) > 5 else "").strip())
+            for ddb in genes_for(row[0].strip()):
+                add(ddb, term, cond, pmid, note)
 
     # (2) current dictyBase mutant-phenotype downloads (authoritative + complete)
     def _load_mp():
@@ -495,8 +515,10 @@ def main():
         build_gene_names.main()
     except Exception as exc:  # noqa: BLE001 — best-effort naming refresh
         print(f"  (skipped gene-name overlay: {exc})")
-    build_phenotypes()
+    # Build the complete strain -> gene(s) map first: build_phenotypes uses it to
+    # attribute each strain's richly-referenced phenotype rows to its gene(s).
     build_strain_gene_links()
+    build_phenotypes()
     # Per-gene enrichment from the mirrored dictyBase download files (literature,
     # domains, curation status, orthologs, PTMs, MW, ontologies, codon usage).
     try:

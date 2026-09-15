@@ -6744,40 +6744,43 @@ function renderCommunity(section) {
   }
 }
 
+// group: "dicty" = about Dictyostelium (the cellular slime mould this database
+// covers); "other" = myxomycetes / Physarum and general "slime mould" coverage,
+// a distinct group of acellular slime moulds often confused with Dictyostelium.
 const DICTY_NEWS = [
-  { title: "What is a slime mould? — an educational video", source: "YouTube",
-    note: "A great explainer of the organism.",
-    url: "https://www.youtube.com/watch?v=vlANF-v9lb0" },
-  { title: "Slime mould, dark matter, and transport networks", source: "The Guardian, 2025",
-    note: "What slime moulds reveal about networks, from cosmology to cities.",
-    url: "https://www.theguardian.com/commentisfree/2025/jan/08/slime-mould-dark-matter-transport-networks" },
-  { title: "Slime moulds on the radio", source: "BBC Radio",
-    note: "A radio programme on slime mould biology.",
-    url: "https://www.bbc.co.uk/programmes/m002691y" },
-  { title: "The wonder of slime moulds (with photographs)", source: "BBC News",
-    note: "A feature with striking pictures.",
-    url: "https://www.bbc.co.uk/news/articles/c9d9409p76qo" },
-  { title: "Barry Webb's slime mould macro photography", source: "Barry Webb Images",
-    note: "Award-winning close-up photographs of myxomycetes, the acellular slime moulds. Not Dictyostelium, but a beautiful window on slime mould diversity.",
-    url: "https://www.barrywebbimages.co.uk/Images/Macro/Slime-Moulds-Myxomycetes" },
-  { title: "Slime mould versus the people", source: "Engelsberg Ideas",
-    note: "An essay comparing slime moulds to human social phenomena.",
-    url: "https://engelsbergideas.com/essays/slime-mould-versus-the-people/" },
-  { title: "Slime mould recreates the Tokyo rail network", source: "National Geographic",
-    note: "About Physarum rather than Dictyostelium, but a classic result.",
-    url: "https://www.nationalgeographic.com/science/article/slime-mould-attacks-simulates-tokyo-rail-network" },
-  { title: "Professor Bonner and the slime moulds (Horizon)", source: "BBC Horizon documentary",
-    note: "The documentary featuring John Bonner.",
+  { group: "dicty", title: "Professor Bonner and the slime moulds (Horizon)", source: "BBC Horizon documentary",
+    note: "The documentary featuring John Bonner, the pioneer of Dictyostelium research.",
     url: "https://video.alexanderstreet.com/watch/professor-bonner-and-the-slime-moulds" },
-  { title: "The amoeba that farms its own bacteria", source: "WIRED, 2011",
+  { group: "dicty", title: "The amoeba that farms its own bacteria", source: "WIRED, 2011",
     note: "Dictyostelium farming, covered by WIRED.",
     url: "https://www.wired.com/2011/01/bacteria-farming-amoeba/" },
-  { title: "Slime moulds in The New York Times", source: "The New York Times, 2011",
-    note: "A feature on slime mould biology.",
-    url: "https://www.nytimes.com/2011/10/04/science/04slime.html" },
-  { title: "The surprising “intelligence” of slime mould", source: "The New York Times, 2010",
+  { group: "other", title: "What is a slime mould? — an educational video", source: "YouTube",
+    note: "A general explainer of slime moulds.",
+    url: "https://www.youtube.com/watch?v=vlANF-v9lb0" },
+  { group: "other", title: "Barry Webb's slime mould macro photography", source: "Barry Webb Images",
+    note: "Award-winning close-up photographs of myxomycetes and their fruiting bodies.",
+    url: "https://www.barrywebbimages.co.uk/Images/Macro/Slime-Moulds-Myxomycetes" },
+  { group: "other", title: "The wonder of slime moulds (with photographs)", source: "BBC News",
+    note: "A feature with striking pictures.",
+    url: "https://www.bbc.co.uk/news/articles/c9d9409p76qo" },
+  { group: "other", title: "Slime mould, dark matter, and transport networks", source: "The Guardian, 2025",
+    note: "What slime moulds reveal about networks, from cosmology to cities.",
+    url: "https://www.theguardian.com/commentisfree/2025/jan/08/slime-mould-dark-matter-transport-networks" },
+  { group: "other", title: "Slime mould recreates the Tokyo rail network", source: "National Geographic",
+    note: "The classic Physarum network-building result.",
+    url: "https://www.nationalgeographic.com/science/article/slime-mould-attacks-simulates-tokyo-rail-network" },
+  { group: "other", title: "The surprising “intelligence” of slime mould", source: "The New York Times, 2010",
     note: "Physarum problem-solving.",
     url: "https://www.nytimes.com/2010/01/26/science/26obmold.html" },
+  { group: "other", title: "Slime mould versus the people", source: "Engelsberg Ideas",
+    note: "An essay comparing slime moulds to human social phenomena.",
+    url: "https://engelsbergideas.com/essays/slime-mould-versus-the-people/" },
+  { group: "other", title: "Slime moulds on the radio", source: "BBC Radio",
+    note: "A radio programme on slime mould biology.",
+    url: "https://www.bbc.co.uk/programmes/m002691y" },
+  { group: "other", title: "Slime moulds in The New York Times", source: "The New York Times, 2011",
+    note: "A feature on slime mould biology.",
+    url: "https://www.nytimes.com/2011/10/04/science/04slime.html" },
 ];
 
 function renderDictyNewsPage() {
@@ -6787,17 +6790,22 @@ function renderDictyNewsPage() {
       <div style="font-size:.72rem;color:var(--muted,#9ca3af);margin:2px 0 0">${escapeHtml(n.source)}</div>
       ${n.note ? `<p style="font-size:.875rem;color:var(--muted,#6b7280);margin:3px 0 0">${escapeHtml(n.note)}</p>` : ""}
     </li>`;
+  const list = (g) => `<ul style="list-style:none;padding:0;margin:0">${DICTY_NEWS.filter((n) => n.group === g).map(item).join("")}</ul>`;
   return `
     <article class="record-card research-card">
       <header class="record-header">
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Dicty in the news</h2>
-          <p>Dictyostelium and slime moulds in the popular press, radio, and film — articles and videos for the curious and for outreach. External links open in a new tab. A couple cover the acellular slime mould <em>Physarum</em> rather than <em>Dictyostelium</em>, noted where relevant.</p>
+          <p>Slime moulds in the popular press, radio, and film — articles and videos for the curious and for outreach. External links open in a new tab.</p>
         </div>
       </header>
       <div class="record-body">
-        <ul style="list-style:none;padding:0;margin:0">${DICTY_NEWS.map(item).join("")}</ul>
+        <h3 style="margin:0 0 10px">Dictyostelium</h3>
+        ${list("dicty")}
+        <h3 style="margin:22px 0 4px">Other slime moulds</h3>
+        <p style="font-size:.875rem;color:var(--muted,#6b7280);margin:0 0 12px">Myxomycetes and <em>Physarum</em> are acellular (plasmodial) slime moulds. They are a different group from the cellular slime mould <em>Dictyostelium</em> this database covers, and the two are often confused. Included here for interest and outreach.</p>
+        ${list("other")}
       </div>
     </article>`;
 }

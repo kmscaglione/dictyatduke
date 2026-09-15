@@ -10141,22 +10141,32 @@ function initStockCenter() {
     if (active === "gwdi") { renderGwdi(); return; }
     const data = stockCenterData || { strains: [], plasmids: [] };
     const q = (searchEl.value || "").trim().toLowerCase();
-    // Strains default to in-stock only (most aren't stocked); plasmids show all.
     const strainsTab = active === "strains";
     let items = strainsTab ? data.strains : data.plasmids;
-    if (strainsTab && !showAllStrains) items = items.filter((it) => it.in_stock);
+    // Strains default to in-stock only (most aren't stocked). But a SEARCH should
+    // find every matching strain — someone searching "racE" wants the strains that
+    // carry a racE mutation whether or not they happen to be stocked — so the
+    // in-stock filter applies only while browsing (no query).
+    const filterInStock = strainsTab && !showAllStrains && !q;
+    if (filterInStock) items = items.filter((it) => it.in_stock);
+    // Word-aware match: the query must sit at the start of a token (preceded by a
+    // non-alphanumeric or the string start). This keeps prefix search ("rac" ->
+    // racE) while rejecting mid-word hits — a gene search for "racE" must NOT match
+    // "extracellular"/"intracellular"/"trace" buried in a phenotype description.
+    const re = q ? new RegExp("(?:^|[^a-z0-9])" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) : null;
     const match = (it) => {
       if (!q) return true;
       const hay = strainsTab
         ? `${it.id} ${it.label} ${(it.names || []).join(" ")} ${it.summary} ${it.genotype} ${it.phenotype}`
         : `${it.id} ${it.name} ${it.description} ${it.depositor} ${it.genbank || ""}`;
-      return hay.toLowerCase().includes(q);
+      return re.test(hay.toLowerCase());
     };
     const shown = items.filter(match);
-    const baseLabel = strainsTab ? (showAllStrains ? "strains" : "in-stock strains") : "plasmids";
-    const count = q ? `${shown.length} of ${items.length.toLocaleString()} ${baseLabel}`
+    const baseLabel = strainsTab ? (filterInStock ? "in-stock strains" : "strains") : "plasmids";
+    const count = q ? `${shown.length} of ${items.length.toLocaleString()} ${baseLabel} matching “${escapeHtml(searchEl.value.trim())}”`
                     : `${items.length.toLocaleString()} ${baseLabel}`;
-    const toggle = strainsTab
+    // The in-stock toggle only makes sense while browsing; a search already shows all.
+    const toggle = (strainsTab && !q)
       ? `<button type="button" class="text-link" data-stock-showall>${showAllStrains ? "Show in-stock only" : `Show all ${data.strains.length.toLocaleString()} strains`}</button>`
       : "";
     if (!shown.length) {

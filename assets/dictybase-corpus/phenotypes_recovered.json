@@ -1,0 +1,788 @@
+{
+"DDB_G0273201": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0273091": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0273809": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0274429": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0277239": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0278585": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0279405": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0280089": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0280299": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0283373": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0283595": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0287153": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0288547": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0289789": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0292148": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0291830": [
+[
+"decreased growth rate",
+"in suspension",
+"27484477",
+"Assay: growth curve"
+]
+],
+"DDB_G0273615": [
+[
+"decreased response to hypoxia",
+"in hypoxia",
+"20969846",
+"exhibits a lower level of O2 requirement than wt AX2 during culmination and sporulation Assay: fruiting body development"
+],
+[
+"increased culmination",
+"in hypoxia",
+"20969846",
+"fpaB- cells exhibited increased culmination in low O2 environment (9%) Assay: fruiting body development"
+],
+[
+"increased stalk length",
+"",
+"20969846",
+"extended tenuous stalks in regular oxygen conditions (21%) Assay: fruiting body development"
+],
+[
+"increased response to hypoxia",
+"in hypoxia",
+"20969846",
+"mutant needs higher oxygen to sporulate in 12% oxygen than wt Assay: fruiting body development"
+]
+],
+"DDB_G0284897": [
+[
+"aberrant socially cooperative development",
+"during chimeric early development",
+"18272966",
+"looser mutant when mixed with wild type AX4, makes slightly less spores than it's typical share in chimeras."
+]
+],
+"DDB_G0275699": [
+[
+"development arrests at slug stage",
+"",
+"24550398",
+"at regular 21% oxiygen levels, single agtA and gnt1 mutants can culminate and sporulate, while the double mutant cannot; even higher (up to 70% O2) cannot rescue phenotype Assay: fruiting body development"
+],
+[
+"aberrant stalk morphogenesis",
+"",
+"22128189",
+"at ambient O2 levels (21%), stalks exhibiting extensive varicosities and frequent bends, in contrast to the mostly straight and slender shape in wt Assay: fruiting body development"
+],
+[
+"development arrests at slug stage",
+"in hypoxia",
+"22128189",
+"in 10% oxygen wt culminates and forms 50% spores while the gnt1.3 mutant cannot culminate Assay: fruiting body development"
+],
+[
+"increased response to hypoxia",
+"",
+"22128189",
+"the gnt1 mutant starts fruiting at 15% oxygen, while wild type can fruit in 10%."
+]
+],
+"DDB_G0286229": [
+[
+"decreased response to Gram-negative bacterium",
+"",
+"23664307",
+"alyL mutant cells do not grow well on Gram-negative bacteria"
+]
+],
+"DDB_G0277889": [
+[
+"decreased ammonia level",
+"",
+"19108721",
+"in amtB- strain between 12 and 18 hrs. of development, less ammonia excreted compared to wt; rescued by AmtB expression Assay: extracellular measurement"
+],
+[
+"decreased ammonia level",
+"",
+"19108721",
+"in amtB-/amtA- strain between 12 and 18 hrs. of development, less ammonia excreted compared to wt Assay: extracellular measurement"
+],
+[
+"decreased ammonia level",
+"",
+"19108721",
+"in amtB-/amtC- strain between 12 and 18 hrs. of development, less ammonia excreted compared to wt Assay: extracellular measurement"
+]
+],
+"DDB_G0290617": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant in chimeric development"
+],
+[
+"increased growth rate",
+"in axenic medium",
+"23298336",
+"slightly increased growth rate in HL5 when clonal Assay: growth curve"
+]
+],
+"DDB_G0278487": [
+[
+"decreased response to Gram-negative bacterium",
+"",
+"23664307",
+"clkB mutant cells do not grow well on Gram-negative bacteria"
+]
+],
+"DDB_G0277903": [
+[
+"aberrant spore coat morphology",
+"",
+"17416892",
+"Outer spore coat integrity is reduced as indicated by the increased straining of inner layer components (lectin)"
+]
+],
+"DDB_G0269204": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0293840": [
+[
+"abolished catalytic activity",
+"",
+"22035794",
+"lacked any detectable DIF dechlorinase activity, but seemed to develop normally, produced visually normal fruiting bodies Assay: biochemical assay"
+]
+],
+"DDB_G0268216": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"1.7-fold more sensitive to cisplatin than AX2 parent."
+],
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"The double knock out fncD2-/rev3- is not more sensitive than the single rev3- knock out"
+],
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"Extremely sensitive to cisplatin: 70-fold more sensitive than AX2 parent; however, no more sensitive than the single xpf- mutant."
+]
+],
+"DDB_G0271608": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"The double knock out fncD2-/rev3- is not more sensitive than the single rev3- knock out"
+],
+[
+"aberrant vegetative growth",
+"",
+"27872153",
+"rev3- cells have mild growth defect on bacterial lawns"
+],
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"3-fold more sensitive to cisplatin than AX2 parent."
+],
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"Extremely sensitive to cisplatin: 70-fold more sensitive than AX2 parent; however, no more sensitive than the single xpf- mutant."
+]
+],
+"DDB_G0284419": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"Extremely sensitive to cisplatin: 70-fold more sensitive than AX2 parent; however, no more sensitive than the single xpf- mutant."
+],
+[
+"aberrant vegetative growth",
+"",
+"27872153",
+"xpf- cells have significant growth defect on bacterial lawns, but grow normally in axenic medium; rescued by Xpf expression"
+],
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"Extremely sensitive to cisplatin: 70-fold more sensitive than AX2 parent indicating a defect in DSB HR repair."
+]
+],
+"DDB_G0279669": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"2.7-fold more sensitive to cisplatin than AX2 parent."
+]
+],
+"DDB_G0293476": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"2-fold more sensitive to cisplatin than AX2 parent."
+]
+],
+"DDB_G0292744": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"2.1-fold more sensitive to cisplatin than AX2 parent."
+]
+],
+"DDB_G0274841": [
+[
+"decreased resistance to cisplatin",
+"",
+"19763158",
+"2.8-fold more sensitive to cisplatin than AX2 parent."
+]
+],
+"DDB_G0274607": [
+[
+"aberrant activation of adenylate cyclase activity",
+"",
+"16336640",
+""
+],
+[
+"decreased chemotaxis rate",
+"",
+"16336640",
+""
+],
+[
+"decreased lateral pseudopodium retraction",
+"",
+"16336640",
+""
+],
+[
+"development arrests at mound stage",
+"at low cell density",
+"16336640",
+"Aggregates formed at high cell density, but not at low cell densities. Defect is partly rescued by cAMP pulses."
+],
+[
+"development arrests at mound stage",
+"",
+"16336640",
+""
+],
+[
+"increased cGMP-mediated signaling",
+"",
+"16336640",
+""
+]
+],
+"DDB_G0284553": [
+[
+"decreased growth rate",
+"in bacterial suspension",
+"19614564",
+""
+],
+[
+"decreased spore germination",
+"",
+"2471657",
+"7 day old spores have a much lower germination rate compared to wild type AX3 Assay: spore germination assay"
+]
+],
+"DDB_G0283673": [
+[
+"decreased response to Gram-positive bacterium",
+"",
+"23664307",
+"gpi mutant cells do not grow well on Gram-positive bacteria"
+]
+],
+"DDB_G0293340": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0276829": [
+[
+"aberrant fruiting body morphogenesis",
+"",
+"17177855",
+"Multiple aggregates fuse together resulting in multiple slugs fused together"
+],
+[
+"increased cell-cell adhesion",
+"",
+"17177855",
+""
+],
+[
+"increased cell-substrate adhesion",
+"",
+"17177855",
+""
+],
+[
+"increased mound size",
+"",
+"17177855",
+""
+],
+[
+"increased number of mound tips",
+"",
+"17177855",
+""
+],
+[
+"increased prestalk gene expression",
+"",
+"17177855",
+""
+]
+],
+"DDB_G0276519": [
+[
+"wild type",
+"",
+"19763158",
+"Not sensitive to cisplatin."
+]
+],
+"DDB_G0286195": [
+[
+"decreased response to Gram-positive bacterium",
+"",
+"23664307",
+"nagB1 mutant cells do not grow well on Gram-positive bacteria"
+]
+],
+"DDB_G0268548": [
+[
+"aberrant pinosome maturation",
+"",
+"23843627",
+"in pikF- cells, 20% of PtdIns(3,4,5)P3 patches were converted to macropinosomes, compared with 60% conversion rate in wt cells Assay: uptake of FITC-dextran"
+],
+[
+"decreased growth rate",
+"",
+"23843627",
+"in pikF- cells, generation time of 21.3 hrs. vs. 8.6 for wt.; rescued by PikF expression"
+],
+[
+"decreased pinocytosis",
+"",
+"23843627",
+"in pikF- cells, severely decreased FITC uptake compared with wt; rescued by PikF expression Assay: uptake of FITC-dextran"
+],
+[
+"aberrant aggregation",
+"in axenic medium",
+"17462897",
+""
+],
+[
+"aberrant macropinocytosis",
+"",
+"30617109",
+"macropinosome diameter is reduced by ~40% corresponding to a 3-4 fold decrease in volume compared with wt Assay: microscopy"
+],
+[
+"aberrant protein localization to plasma membrane",
+"",
+"30367048",
+"in quintuple PI3K null strain, Pten is localized along the entire membrane instead of being excluded from a PIP3-enriched zone on the membrane as in wt"
+],
+[
+"aberrant signal transduction",
+"",
+"20562345",
+"abolished phosphatidylinositol-mediated signaling"
+],
+[
+"decreased cell motility",
+"",
+"17462897",
+"Cells move at 42% the rate of wild type cells"
+],
+[
+"decreased chemotaxis to cAMP",
+"",
+"19383941",
+"decrease in speed, directionality and chemotactic index compared with wt"
+],
+[
+"decreased growth rate",
+"in axenic medium",
+"17462897",
+"decreased growth rate in bacterial suspension"
+],
+[
+"decreased growth rate",
+"",
+"23843627",
+"doubling time of > than 4 days"
+],
+[
+"decreased phagocytosis",
+"",
+"22296834",
+""
+],
+[
+"decreased pinocytosis",
+"",
+"23843627",
+"Assay: uptake of FITC-dextran"
+],
+[
+"decreased protein tyrosine phosphorylation",
+"",
+"18635356",
+"PkbA is not phosphorylated upon cAMP stimulus in pik1-5 quintuple knock out mutant"
+],
+[
+"increased bleb assembly",
+"",
+"26317626",
+"quintiple PI3K null cells extended blebs more frequently than wt"
+],
+[
+"increased chemotaxis to folate",
+"",
+"24535823",
+"in quintuple PI3K null strain, increase in both speed and chemotactic index compared with bacterially grown AX2 cells"
+],
+[
+"decreased cell motility",
+"",
+"17462897",
+"Defect is similar to that of the quintuple mutant ( pikA-/pikB-/pikC/pikF-/pikG-)"
+],
+[
+"decreased defense response to Gram-negative bacterium",
+"",
+"21045112",
+"4 fold stimulation of Legionella pneumophila replication at 72-96 hrs. after infection"
+],
+[
+"decreased defense response to Gram-negative bacterium",
+"",
+"21045112",
+"15 fold stimulation of Legionella pneumophila replication at 72-96 hrs. after infection"
+],
+[
+"decreased growth rate",
+"in axenic medium",
+"17462897",
+""
+],
+[
+"increased resistance to N-Phenylthiourea",
+"",
+"24006265",
+"partial resistance to the effects of phenylthiourea on cell behavior"
+]
+],
+"DDB_G0282625": [
+[
+"aberrant aggregation",
+"in axenic medium",
+"17462897",
+""
+],
+[
+"aberrant macropinocytosis",
+"",
+"30617109",
+"macropinosome diameter is reduced by ~40% corresponding to a 3-4 fold decrease in volume compared with wt Assay: microscopy"
+],
+[
+"aberrant protein localization to plasma membrane",
+"",
+"30367048",
+"in quintuple PI3K null strain, Pten is localized along the entire membrane instead of being excluded from a PIP3-enriched zone on the membrane as in wt"
+],
+[
+"aberrant signal transduction",
+"",
+"20562345",
+"abolished phosphatidylinositol-mediated signaling"
+],
+[
+"decreased cell motility",
+"",
+"17462897",
+"Cells move at 42% the rate of wild type cells"
+],
+[
+"decreased chemotaxis to cAMP",
+"",
+"19383941",
+"decrease in speed, directionality and chemotactic index compared with wt"
+],
+[
+"decreased growth rate",
+"in axenic medium",
+"17462897",
+"decreased growth rate in bacterial suspension"
+],
+[
+"decreased growth rate",
+"",
+"23843627",
+"doubling time of > than 4 days"
+],
+[
+"decreased phagocytosis",
+"",
+"22296834",
+""
+],
+[
+"decreased pinocytosis",
+"",
+"23843627",
+"Assay: uptake of FITC-dextran"
+],
+[
+"decreased protein tyrosine phosphorylation",
+"",
+"18635356",
+"PkbA is not phosphorylated upon cAMP stimulus in pik1-5 quintuple knock out mutant"
+],
+[
+"increased bleb assembly",
+"",
+"26317626",
+"quintiple PI3K null cells extended blebs more frequently than wt"
+],
+[
+"increased chemotaxis to folate",
+"",
+"24535823",
+"in quintuple PI3K null strain, increase in both speed and chemotactic index compared with bacterially grown AX2 cells"
+],
+[
+"decreased cell motility",
+"",
+"17462897",
+"Defect is similar to that of the quintuple mutant ( pikA-/pikB-/pikC/pikF-/pikG-)"
+],
+[
+"decreased defense response to Gram-negative bacterium",
+"",
+"21045112",
+"4 fold stimulation of Legionella pneumophila replication at 72-96 hrs. after infection"
+],
+[
+"decreased defense response to Gram-negative bacterium",
+"",
+"21045112",
+"15 fold stimulation of Legionella pneumophila replication at 72-96 hrs. after infection"
+],
+[
+"decreased growth rate",
+"in axenic medium",
+"17462897",
+""
+],
+[
+"increased resistance to N-Phenylthiourea",
+"",
+"24006265",
+"partial resistance to the effects of phenylthiourea on cell behavior"
+],
+[
+"aberrant socially cooperative development",
+"during chimeric early development",
+"18272966",
+"looser mutant when mixed with wild type AX4, makes less spores than it's typical share in chimeras."
+]
+],
+"DDB_G0291093": [
+[
+"decreased cell motility",
+"",
+"17462897",
+"Defect is similar to that of the quintuple mutant ( pikA-/pikB-/pikC/pikF-/pikG-)"
+],
+[
+"decreased defense response to Gram-negative bacterium",
+"",
+"21045112",
+"4 fold stimulation of Legionella pneumophila replication at 72-96 hrs. after infection"
+]
+],
+"DDB_G0270572": [
+[
+"decreased socially cooperative development",
+"during chimeric early development",
+"18272966",
+"cheater mutant when mixed with wt AX4"
+]
+],
+"DDB_G0288457": [
+[
+"aberrant socially cooperative development",
+"during chimeric early development",
+"18272966",
+"looser mutant when mixed with wild type AX4, makes less spores than it's typical share in chimeras."
+]
+],
+"DDB_G0290851": [
+[
+"decreased response to Gram-negative bacterium",
+"",
+"23664307",
+"spc3 mutant cells do not grow well on Gram-negative bacteria"
+]
+],
+"DDB_G0289191": [
+[
+"decreased growth rate",
+"in suspension",
+"27484477",
+"Assay: growth curve"
+]
+],
+"DDB_G0292296": [
+[
+"aberrant vegetative growth",
+"",
+"27872153",
+"xpc- cells have mild growth defect on bacterial lawns"
+],
+[
+"wild type",
+"",
+"19763158",
+"Not sensitive to cisplatin."
+]
+]
+}

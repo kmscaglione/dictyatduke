@@ -244,10 +244,35 @@ def check_strain_gene_links():
     check(len(race) >= 14, f"racE carries its phenotyped strains ({len(race)} >= 14)")
 
 
+def check_phenotype_refs():
+    """phenotypes.json: nearly every gene with a curated phenotype should carry at
+    least one PMID reference (the note + reference come from strain_phenotype.tsv,
+    the complete strain->gene map, and the recovered strain-detail scrape). A
+    regression in that attribution shows up as a drop in referenced coverage.
+    cln5 and zplC-1 are canaries — the first fixed by the complete map, the second
+    by the reference-recovery scrape."""
+    print("phenotype references")
+    try:
+        d = load("phenotypes.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load phenotypes.json ({e})")
+    genes = {k: v for k, v in d.items() if v}
+    withref = sum(1 for rows in genes.values()
+                  if any((r[2] if len(r) > 2 else "").strip() for r in rows))
+    frac = withref / len(genes) if genes else 0
+    check(frac >= 0.97, f"genes with a referenced phenotype {withref}/{len(genes)} "
+                        f"({frac:.0%} >= 97%)")
+    for ddb, sym in (("DDB_G0275299", "cln5"), ("DDB_G0273091", "zplC-1")):
+        has = any((r[2] if len(r) > 2 else "").strip() for r in d.get(ddb, []))
+        check(has, f"{sym} carries a phenotype reference"
+              if has else f"{sym} lost its phenotype reference")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
-               check_gomer, check_function_summaries, check_strain_gene_links):
+               check_gomer, check_function_summaries, check_strain_gene_links,
+               check_phenotype_refs):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

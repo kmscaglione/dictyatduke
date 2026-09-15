@@ -144,6 +144,20 @@ def build_phenotypes():
             for ddb in genes_for(row[0].strip()):
                 add(ddb, term, cond, pmid, note)
 
+    # (1b) references + notes scraped from dictyBase strain-detail pages for genes
+    # whose phenotypes existed only in the term-only bulk download (no PMID column).
+    # See scripts/recover_phenotype_refs.py. Added before the download rows below so
+    # the referenced version wins the per-(gene, term) de-dup.
+    rec_path = os.path.join(CORPUS_SRC, "phenotypes_recovered.json")
+    if os.path.exists(rec_path):
+        with open(rec_path) as fh:
+            for ddb, recs in json.load(fh).items():
+                for r in recs:
+                    add(ddb, (r[0] if r else "").strip(),
+                        (r[1] if len(r) > 1 else "").strip(),
+                        (r[2] if len(r) > 2 else "").strip(),
+                        (r[3] if len(r) > 3 else "").strip())
+
     # (2) current dictyBase mutant-phenotype downloads (authoritative + complete)
     def _load_mp():
         # strain (Systematic_Name) -> [DDB_G, ...] from the authoritative export

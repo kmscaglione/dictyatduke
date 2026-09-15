@@ -9422,8 +9422,11 @@ async function loadStrain(sid) {
     const res = await fetch(`/api/strain/${encodeURIComponent(sid)}`);
     const data = await res.json();
     if (geneEl) {
-      geneEl.innerHTML = data.gene
-        ? `Mutant of <a class="text-link curated-xref" data-ddb-ref="${escapeHtml(data.gene.ddb)}" href="/gene/${encodeURIComponent(data.gene.symbol || data.gene.ddb)}">${escapeHtml(data.gene.symbol || data.gene.ddb)}</a> · ${escapeHtml(data.gene.ddb)}`
+      const genes = (data.genes && data.genes.length ? data.genes : (data.gene ? [data.gene] : []));
+      geneEl.innerHTML = genes.length
+        ? "Mutant of " + genes.map((g) =>
+            `<a class="text-link curated-xref" data-ddb-ref="${escapeHtml(g.ddb)}" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}">${escapeHtml(g.symbol || g.ddb)}</a>`
+          ).join(", ") + (genes.length === 1 ? ` · ${escapeHtml(genes[0].ddb)}` : "")
         : "No associated gene in this dataset.";
     }
     if (!phEl) return;

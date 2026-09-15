@@ -212,10 +212,42 @@ def check_function_summaries():
           if not leaked else f"curated genes wrongly in inferred layer: {leaked}")
 
 
+def check_strain_gene_links():
+    """strain_gene_links.json (the "Mutant strains" list on a gene page): keyed
+    by DDB_G, values are DBS strain ids. Built from dictyBase's Mutant Phenotypes
+    downloads; a regression here silently shrinks the strain list back toward the
+    old ~525-gene snapshot. racE is the canary — it must carry its 14 phenotyped
+    strains (matches dictybase.org), not the 2 the legacy snapshot had."""
+    print("strain -> gene links")
+    path = os.path.join(ASSETS, "strain_gene_links.json")
+    if not os.path.exists(path):
+        return ok("strain_gene_links.json absent (not built) — skipped")
+    try:
+        data = load("strain_gene_links.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load strain_gene_links.json ({e})")
+    by_gene = data.get("by_gene") or {}
+    check(len(by_gene) > 900, f"genes with linked strains {len(by_gene)} (> 900)")
+    bad = [k for k in by_gene if not re.match(r"^DDB_G\d+$", k)]
+    check(not bad, "all gene keys are DDB_G ids" if not bad else f"{len(bad)} non-DDB_G keys")
+    # Strain ids are mostly DBS ids; a minority are legacy systematic names the
+    # downloads use instead (AK1200, HM1440, ...), which are valid identifiers.
+    # Guard against a mapping regression by requiring the bulk to be DBS ids and
+    # every id to be a plausible strain token (no markup/whitespace).
+    allids = [s for v in by_gene.values() for s in v]
+    dbs = sum(1 for s in allids if str(s).startswith("DBS"))
+    check(allids and dbs / len(allids) > 0.8,
+          f"strain ids are predominantly DBS ({dbs}/{len(allids)})")
+    junk = [s for s in set(allids) if not re.match(r"^[A-Za-z0-9()/:._+-]+$", str(s))]
+    check(not junk, "all strain ids are clean tokens" if not junk else f"{len(junk)} malformed strain ids")
+    race = by_gene.get("DDB_G0280975") or []
+    check(len(race) >= 14, f"racE carries its phenotyped strains ({len(race)} >= 14)")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
-               check_gomer, check_function_summaries):
+               check_gomer, check_function_summaries, check_strain_gene_links):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

@@ -1570,10 +1570,25 @@ def api_strains():
                     })
         except Exception:
             pass
-        by_gene = {}
-        for strain, gene in sg.items():
-            by_gene.setdefault(gene, []).append(strain)
-        _API["_strains"] = {"gene": sg, "pheno": sp, "by_gene": by_gene}
+        # The "Mutant strains" list on a gene page comes from the complete,
+        # phenotype-filtered strain -> gene(s) map (strain_gene_links.json, built
+        # from dictyBase's Mutant Phenotypes downloads + the legacy snapshot's
+        # phenotyped strains). We deliberately do NOT seed it from the raw
+        # strain_genes.tsv: that file carries strains with no curated phenotype,
+        # which we don't link. When the links file is missing (e.g. not built
+        # yet), fall back to the legacy single-gene map so the page isn't empty.
+        links = _load_json("strain_gene_links.json") if os.path.exists(
+            os.path.join(ASSETS, "strain_gene_links.json")) else {}
+        by_gene = {g: list(v) for g, v in (links.get("by_gene") or {}).items()}
+        if not by_gene:
+            for strain, gene in sg.items():
+                by_gene.setdefault(gene, []).append(strain)
+        for gene in by_gene:
+            by_gene[gene].sort()
+        by_strain = dict(links.get("by_strain") or {})
+        _API["_strains"] = {"gene": sg, "pheno": sp, "by_gene": by_gene,
+                            "by_strain": by_strain,
+                            "pheno_terms": dict(links.get("strain_pheno") or {})}
     return _API["_strains"]
 
 
@@ -6120,12 +6135,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         st = api_strains()
         gene = st["gene"].get(sid)
         phenos = st["pheno"].get(sid, [])
-        if gene is None and not phenos:
+        # Fall back to the complete strain -> gene(s) map for strains the legacy
+        # single-gene snapshot never covered (a double mutant lists both genes;
+        # the primary is shown here, all are on each gene's page).
+        linked = st.get("by_strain", {}).get(sid) or []
+        if gene is None and linked:
+            gene = linked[0]
+        # Term-only fallback for strains the legacy snapshot doesn't carry (mostly
+        # strains the downloads name by a legacy systematic name, not a DBS id).
+        fallback = st.get("pheno_terms", {}).get(sid) or {}
+        if not phenos and fallback.get("terms"):
+            phenos = [{"phenotype": t, "condition": "", "pmid": "", "note": ""}
+                      for t in fallback["terms"]]
+        if gene is None and not phenos and not linked:
             self.send_json(404, {"error": "strain not found", "strain": sid})
             return
         rows, _ = api_gene_rows()
         gene_obj = {"ddb": gene, "symbol": rows.get(gene, {}).get("symbol")} if gene else None
-        self.send_json(200, {"strain": sid, "gene": gene_obj, "phenotypes": phenos})
+        genes_obj = [{"ddb": g, "symbol": rows.get(g, {}).get("symbol")} for g in linked] or (
+            [gene_obj] if gene_obj else [])
+        self.send_json(200, {"strain": sid, "gene": gene_obj, "genes": genes_obj,
+                             "descriptor": fallback.get("label", ""), "phenotypes": phenos})
 
     def _handle_sequence(self):
         """Return a gene's genomic / cDNA / protein sequence as a FASTA download."""

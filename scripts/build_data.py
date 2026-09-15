@@ -183,6 +183,142 @@ def build_phenotypes():
 
 
 # ---------------------------------------------------------------------------
+# strain_gene_links.json  <-  mutant-phenotypes/*.txt  +  strain_genes.tsv
+# { by_gene: { ddb: [DBS, ...] }, by_strain: { DBS: [ddb, ...] } }
+#
+# This is what fills the "Mutant strains" list on a gene page. The legacy
+# strain_genes.tsv only mapped ~1,500 strains (525 genes), so the gene pages
+# showed far fewer strains than dictybase.org (e.g. racE showed 2, not 14).
+# The authoritative source is dictyBase's "Mutant Phenotypes" downloads, whose
+# "Associated gene(s)" column links every curated, PHENOTYPED strain to its
+# gene(s) — including multiple mutants, which link to each gene named. We only
+# link strains that have a phenotype (dictyBase catalogs many more strains that
+# carry no curated phenotype; those are intentionally not linked here). The
+# legacy snapshot is unioned in so nothing it uniquely carried is lost.
+# ---------------------------------------------------------------------------
+def build_strain_gene_links():
+    MP = os.path.join(CORPUS_SRC, "mutant-phenotypes")
+    all_mut = os.path.join(MP, "all-mutants.txt")
+    if not os.path.exists(all_mut):
+        print("  SKIP strain_gene_links: mutant-phenotype downloads missing — "
+              "run scripts/fetch_mutant_phenotypes.py")
+        return
+
+    # Systematic_Name -> [DDB_G, ...] from the authoritative DDB export.
+    strain2ddb = {}
+    p = os.path.join(MP, "all-mutants-ddb_g.txt")
+    if os.path.exists(p):
+        with open(p, encoding="utf-8", errors="replace") as fh:
+            rows = csv.reader(fh, delimiter="\t")
+            next(rows, None)
+            for row in rows:
+                if len(row) >= 4 and row[0].strip():
+                    ddbs = [d for d in row[3].replace(",", " ").split() if d.startswith("DDB_G")]
+                    if ddbs:
+                        strain2ddb[row[0].strip().split()[0]] = ddbs
+
+    # symbol / synonym / DDB_G -> DDB_G, from the catalog.
+    sym2ddb = {}
+    with open(os.path.join(ASSETS, "gene_index.json")) as fh:
+        for r in json.load(fh):
+            if not r or not r[0]:
+                continue
+            sym2ddb.setdefault(r[0].lower(), r[0])
+            if len(r) > 1 and r[1]:
+                sym2ddb.setdefault(r[1].lower(), r[0])
+            for s in (r[5] if len(r) > 5 else []):
+                sym2ddb.setdefault(s.lower(), r[0])
+
+    def resolve(strain, gsyms):
+        """Associated-gene column -> list of DDB_G ids (authoritative first)."""
+        if strain in strain2ddb:
+            return list(dict.fromkeys(strain2ddb[strain]))
+        out = []
+        for tok in gsyms.replace("|", " ").replace(",", " ").split():
+            t = tok.strip()
+            if t.startswith("DDB_G"):          # a bare id in the symbol column
+                out.append(t)
+            elif t.lower() in sym2ddb:
+                out.append(sym2ddb[t.lower()])
+        return list(dict.fromkeys(out))
+
+    by_gene = {}       # ddb -> set(strain id)
+    label = {}         # strain id -> descriptor (for a readable chip/title)
+    terms = {}         # strain id -> [phenotype terms] (fallback for the strain page)
+    files = ["all-mutants.txt", "null-mutants.txt", "overexpression-mutants.txt",
+             "developmental-mutants.txt", "multiple-mutants.txt", "other-mutants.txt"]
+    for fn in files:
+        fp = os.path.join(MP, fn)
+        if not os.path.exists(fp):
+            continue
+        with open(fp, encoding="utf-8", errors="replace") as fh:
+            rows = csv.reader(fh, delimiter="\t")
+            next(rows, None)
+            for row in rows:
+                if len(row) < 4:
+                    continue
+                # A few systematic names come through as a compound
+                # ("DBS0236869 (DBS0235543)"); the primary id is the first token.
+                strain, phenos = row[0].strip().split()[0] if row[0].strip() else "", row[3].strip()
+                if not strain or not phenos:   # link only phenotyped strains
+                    continue
+                for ddb in resolve(strain, row[2]):
+                    by_gene.setdefault(ddb, set()).add(strain)
+                label.setdefault(strain, html.unescape(row[1].strip()))
+                seen = terms.setdefault(strain, [])
+                for t in (html.unescape(p.strip()) for p in phenos.split("|") if p.strip()):
+                    if t not in seen:
+                        seen.append(t)
+
+    # Union the legacy snapshot (only strains that carry a phenotype there).
+    pheno_strains = set()
+    sp_path = os.path.join(CORPUS_SRC, "strain_phenotype.tsv")
+    if os.path.exists(sp_path):
+        with open(sp_path) as fh:
+            for row in csv.reader(fh, delimiter="\t"):
+                if row and row[0].strip():
+                    pheno_strains.add(row[0].strip())
+    sg_path = os.path.join(CORPUS_SRC, "strain_genes.tsv")
+    if os.path.exists(sg_path):
+        with open(sg_path) as fh:
+            for row in csv.reader(fh, delimiter="\t"):
+                if len(row) >= 2 and row[1].strip().startswith("DDB_G"):
+                    strain, ddb = row[0].strip(), row[1].strip()
+                    if strain in pheno_strains:
+                        by_gene.setdefault(ddb, set()).add(strain)
+
+    by_gene = {d: sorted(v) for d, v in sorted(by_gene.items())}
+    by_strain = {}
+    for ddb, strains in by_gene.items():
+        for s in strains:
+            by_strain.setdefault(s, []).append(ddb)
+    by_strain = {s: sorted(v) for s, v in sorted(by_strain.items())}
+
+    # Term-only phenotype fallback for the strain page. The legacy strain_phenotype.tsv
+    # already carries rich rows (PMID + assay condition) keyed by DBS id; only emit the
+    # term list for strains it does NOT cover — chiefly strains the downloads name by a
+    # legacy systematic name (AK1200, HM1440, ...) rather than a DBS id.
+    strain_pheno = {s: {"label": label.get(s, ""), "terms": t}
+                    for s, t in sorted(terms.items())
+                    if t and s not in pheno_strains and s in by_strain}
+    _write("strain_gene_links.json", {
+        "_meta": {
+            "description": "Phenotyped mutant strains linked to their gene(s), from "
+                           "dictyBase Mutant Phenotypes downloads + legacy snapshot.",
+            "counts": {"genes": len(by_gene), "strains": len(by_strain),
+                       "links": sum(len(v) for v in by_gene.values()),
+                       "strain_pheno_fallback": len(strain_pheno)},
+        },
+        "by_gene": by_gene,
+        "by_strain": by_strain,
+        "strain_pheno": strain_pheno,
+    })
+    print(f"  strain_gene_links.json: {len(by_gene)} genes, {len(by_strain)} strains, "
+          f"{sum(len(v) for v in by_gene.values())} links, "
+          f"{len(strain_pheno)} term-only strain fallbacks")
+
+
+# ---------------------------------------------------------------------------
 # dictybase_corpus.json summaries  <-  genesummary.csv
 # genesummary.csv is the legacy dictyBase SEED. It fills in genes that haven't
 # been hand-curated, but it MUST NOT overwrite a gene edited through the curator
@@ -360,6 +496,7 @@ def main():
     except Exception as exc:  # noqa: BLE001 — best-effort naming refresh
         print(f"  (skipped gene-name overlay: {exc})")
     build_phenotypes()
+    build_strain_gene_links()
     # Per-gene enrichment from the mirrored dictyBase download files (literature,
     # domains, curation status, orthologs, PTMs, MW, ontologies, codon usage).
     try:

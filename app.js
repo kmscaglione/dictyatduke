@@ -6872,7 +6872,7 @@ function colleagueCard(c) {
     ? `<button type="button" class="text-link" data-reveal-email="${escapeHtml(c.email_b64)}" style="background:none;border:none;padding:0;cursor:pointer;font:inherit">Show email</button>`
     : `<span class="muted">no email on file</span>`;
   const genes = (c.genes || []).length
-    ? `<div style="font-size:.75rem;margin:3px 0 0"><span class="muted">Genes:</span> ${c.genes.slice(0, 12).map(escapeHtml).join(", ")}</div>` : "";
+    ? `<div style="font-size:.75rem;margin:3px 0 0"><span class="muted">Genes:</span> ${c.genes.slice(0, 15).map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}">${escapeHtml(g.symbol || g.ddb)}</a>`).join(", ")}${c.genes.length > 15 ? ` <span class="muted">+${c.genes.length - 15} more</span>` : ""}</div>` : "";
   return `<div class="data-block" style="margin:0 0 10px;padding:10px 12px">
     <strong>${escapeHtml(c.name)}</strong>${role ? ` <span class="muted" style="font-weight:400;font-size:.8em">${escapeHtml(role)}</span>` : ""}
     ${meta ? `<div style="font-size:.8125rem;color:var(--muted,#6b7280);margin:2px 0 0">${meta}</div>` : ""}

@@ -325,6 +325,33 @@ def build_ddb0_ids():
 # carry no curated phenotype; those are intentionally not linked here). The
 # legacy snapshot is unioned in so nothing it uniquely carried is lost.
 # ---------------------------------------------------------------------------
+def build_locus_gene_map():
+    """locus_gene_map.json { internal_locus_id: DDB_G }.
+
+    The colleague directory stores each person's genes as dictyBase internal locus
+    numbers (e.g. 175004). Every scraped gene page links back with
+    colleagueSearch?locus=<N>, so that reverse link maps the locus id to the gene's
+    DDB_G id. Lets the directory show genes as linked symbols instead of raw ids."""
+    import gzip as _gz
+    pages = os.path.join(DOWNLOADS_SRC, "gene_pages.jsonl.gz")
+    if not os.path.exists(pages):
+        print("  SKIP locus_gene_map: gene_pages.jsonl.gz not present")
+        return
+    out = {}
+    with _gz.open(pages, "rt", encoding="utf-8") as fh:
+        for line in fh:
+            try:
+                ddb = json.loads(line).get("ddb")
+            except ValueError:
+                continue
+            if not ddb:
+                continue
+            for locus in re.findall(r"colleagueSearch\?locus=(\d+)", line):
+                out[locus] = ddb
+    _write("locus_gene_map.json", out)
+    print(f"  locus_gene_map.json: {len(out)} internal locus ids mapped to DDB_G")
+
+
 def build_strain_gene_links():
     MP = os.path.join(CORPUS_SRC, "mutant-phenotypes")
     all_mut = os.path.join(MP, "all-mutants.txt")
@@ -628,6 +655,7 @@ def main():
     # attribute each strain's richly-referenced phenotype rows to its gene(s).
     build_strain_gene_links()
     build_ddb0_ids()
+    build_locus_gene_map()
     build_phenotypes()
     # Per-gene enrichment from the mirrored dictyBase download files (literature,
     # domains, curation status, orthologs, PTMs, MW, ontologies, codon usage).

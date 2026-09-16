@@ -1573,7 +1573,21 @@ _COLLEAGUE_HITS = {}
 def _colleague_public_record(r):
     name = " ".join(x for x in (r.get("fname", ""), r.get("lname", "")) if x).strip() \
         or r.get("oname", "")
-    genes = [g.strip() for g in str(r.get("associated_loci", "")).split("|") if g.strip()]
+    # Map dictyBase internal locus ids to DDB_G + symbol so genes link to their
+    # record; a bare DDB_G in a self-submitted entry is used as-is; unresolved
+    # numeric ids are dropped.
+    locus_map = _load_json("locus_gene_map.json")
+    grows, _ = api_gene_rows()
+    genes, gseen = [], set()
+    for tok in str(r.get("associated_loci", "")).replace(",", "|").split("|"):
+        tok = tok.strip()
+        if not tok:
+            continue
+        ddb = locus_map.get(tok) or (tok if tok.startswith("DDB_G") else None) \
+            or (grows.get(tok) and tok)
+        if ddb and ddb not in gseen:
+            gseen.add(ddb)
+            genes.append({"ddb": ddb, "symbol": grows.get(ddb, {}).get("symbol") or ddb})
     kw = [r.get(f"keyword{i}") for i in range(1, 11)]
     loc = ", ".join(x for x in (r.get("city", ""), r.get("region", ""), r.get("country", ""))
                     if x and x.upper() != "UNSPECIFIED")
@@ -6271,7 +6285,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if not q:
                 return True
             hay = f"{r['name']} {r['institution']} {r['location']} {r['interests']} " \
-                  f"{' '.join(r['keywords'])} {' '.join(r['genes'])}".lower()
+                  f"{' '.join(r['keywords'])} " \
+                  f"{' '.join(g['symbol'] for g in r['genes'])}".lower()
             return q in hay
         hits = [r for r in directory if match(r)]
         self.send_json(200, {"query": q, "total": len(directory),

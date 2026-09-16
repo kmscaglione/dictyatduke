@@ -51,7 +51,11 @@ def gql(cursor):
 def main():
     out, cursor, page = {}, None, 0
     while True:
-        block = gql(cursor)
+        try:
+            block = gql(cursor)
+        except Exception as e:  # noqa: BLE001 — one flaky page shouldn't lose the run
+            print(f"  ! page {page + 1} failed ({e}); saving what we have", file=sys.stderr)
+            break
         rows = block.get("strains") or []
         for s in rows:
             dep = s.get("depositor") or {}
@@ -70,6 +74,9 @@ def main():
             }
         page += 1
         cursor = block.get("nextCursor")
+        if page % 10 == 0:                       # checkpoint periodically
+            with open(OUT, "w") as fh:
+                json.dump(out, fh, ensure_ascii=False, indent=0)
         print(f"  page {page}: {len(rows)} strains, total {len(out)}", file=sys.stderr)
         if not rows or not cursor:
             break

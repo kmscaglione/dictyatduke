@@ -270,6 +270,33 @@ def build_ddb0_ids():
                         if m:
                             accession[parent] = m.group(1)
 
+    # Overlay the LIVE-authoritative current model from the scraped gene product
+    # pages (gene_pages.jsonl.gz) where present. The GFF is a 2016 snapshot; the
+    # product page reflects the current curated model, closing the last few percent.
+    pages = os.path.join(DOWNLOADS_SRC, "gene_pages.jsonl.gz")
+    if os.path.exists(pages):
+        import gzip as _gz
+        overlaid = 0
+        with _gz.open(pages, "rt", encoding="utf-8") as fh:
+            for line in fh:
+                try:
+                    d = json.loads(line)
+                except ValueError:
+                    continue
+                if not d.get("product"):
+                    continue
+                m = re.search(r"/(?:feature|protein)/(DDB0\d+)", json.dumps(d["product"]))
+                if m:
+                    ddb = d.get("ddb")
+                    if ddb and current.get(ddb) != m.group(1):
+                        overlaid += 1
+                    if ddb:
+                        current[ddb] = m.group(1)
+                        by_gene.setdefault(ddb, [])
+                        if m.group(1) not in by_gene[ddb]:
+                            by_gene[ddb].append(m.group(1))
+        print(f"  ddb0_ids: overlaid live current model for {overlaid} genes from gene product pages")
+
     out = {}
     for ddb, ids in by_gene.items():
         cur = current.get(ddb, "")

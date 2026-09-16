@@ -6738,6 +6738,10 @@ function renderCommunity(section) {
   } else if (section === "news") {
     communityShell.innerHTML = renderDictyNewsPage();
     communityShell.removeAttribute("hidden");
+  } else if (section === "directory") {
+    communityShell.innerHTML = renderColleagueDirectoryPage();
+    communityShell.removeAttribute("hidden");
+    initColleagueDirectory();
   } else {
     communityShell.innerHTML = "";
     communityShell.setAttribute("hidden", "");
@@ -6817,6 +6821,115 @@ function renderDictyNewsPage() {
         ${list("other")}
       </div>
     </article>`;
+}
+
+// --- Community colleague directory --------------------------------------
+function renderColleagueDirectoryPage() {
+  const f = (id, label, opts = {}) => `
+    <div class="form-field" style="margin:0 0 10px">
+      <label for="${id}" style="display:block;font-weight:600;font-size:.8125rem;margin:0 0 3px">${label}${opts.req ? ' <span style="color:var(--red,#c0392b)">*</span>' : ""}</label>
+      ${opts.textarea
+        ? `<textarea id="${id}" rows="2" style="width:100%;${FIELD}"></textarea>`
+        : `<input id="${id}" type="${opts.type || "text"}" style="width:100%;${FIELD}">`}
+    </div>`;
+  return `
+    <article class="record-card research-card">
+      <header class="record-header"><div class="record-title">
+        <p class="eyebrow">Community</p>
+        <h2>Colleague directory</h2>
+        <p>The <em>Dictyostelium</em> community directory. Search for colleagues and reveal their email, or add and update your own entry to be listed here and to join the dictyNews mailing list. Only people who have opted in are listed, and no contact details other than email are shown.</p>
+      </div></header>
+      <div class="record-body">
+        <div style="margin-bottom:16px">
+          <input id="colleague-q" type="search" autocomplete="off" placeholder="Search by name, institution, research interest, or gene…" aria-label="Search the colleague directory" style="width:100%;${FIELD}">
+        </div>
+        <div data-colleague-results><p class="notice muted">Start typing to search the directory.</p></div>
+
+        <details class="data-block" style="margin-top:22px;border:1px solid var(--line,#e5e9ee);border-radius:8px;padding:10px 14px">
+          <summary style="cursor:pointer;font-weight:700">Add or update your entry, and join the dictyNews mailing list</summary>
+          <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:10px 0 12px">Fill this in to be listed in the directory and to receive the dictyNews mailing list. Your entry appears right away. Fields marked * are required.</p>
+          <form id="colleague-form" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">${f("cd-fname", "First name")}${f("cd-lname", "Last name", { req: true })}</div>
+            ${f("cd-institution", "Institution", { req: true })}
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">${f("cd-jobtitle", "Role / title")}${f("cd-email", "Email", { req: true, type: "email" })}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">${f("cd-city", "City")}${f("cd-region", "State / region")}${f("cd-country", "Country")}</div>
+            ${f("cd-interests", "Research interests", { textarea: true })}
+            ${f("cd-genes", "Genes you work on (separate with |)")}
+            <label style="display:flex;align-items:center;gap:8px;font-size:.8125rem;margin:4px 0"><input type="checkbox" id="cd-pi"> I lead a lab (PI)</label>
+            <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this field blank<input id="cd-website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-actions" style="margin-top:8px"><button type="submit" class="button primary">Submit my entry</button></div>
+            <div id="cd-status" aria-live="polite" style="margin-top:8px"></div>
+          </form>
+        </details>
+      </div>
+    </article>`;
+}
+
+function colleagueCard(c) {
+  const meta = [c.institution, c.location].filter(Boolean).map(escapeHtml).join(" · ");
+  const role = c.pi ? "PI" : (c.role || "");
+  const email = c.email_b64
+    ? `<button type="button" class="text-link" data-reveal-email="${escapeHtml(c.email_b64)}" style="background:none;border:none;padding:0;cursor:pointer;font:inherit">Show email</button>`
+    : `<span class="muted">no email on file</span>`;
+  const genes = (c.genes || []).length
+    ? `<div style="font-size:.75rem;margin:3px 0 0"><span class="muted">Genes:</span> ${c.genes.slice(0, 12).map(escapeHtml).join(", ")}</div>` : "";
+  return `<div class="data-block" style="margin:0 0 10px;padding:10px 12px">
+    <strong>${escapeHtml(c.name)}</strong>${role ? ` <span class="muted" style="font-weight:400;font-size:.8em">${escapeHtml(role)}</span>` : ""}
+    ${meta ? `<div style="font-size:.8125rem;color:var(--muted,#6b7280);margin:2px 0 0">${meta}</div>` : ""}
+    ${c.interests ? `<div style="font-size:.8125rem;margin:3px 0 0">${escapeHtml(c.interests)}</div>` : ""}
+    ${genes}
+    <div style="margin:5px 0 0">${email}</div>
+  </div>`;
+}
+
+let colleagueSearchTimer = null;
+function initColleagueDirectory() {
+  const q = document.getElementById("colleague-q");
+  const out = document.querySelector("[data-colleague-results]");
+  const err = (m) => `<p class="notice" style="color:var(--red,#c0392b)">${escapeHtml(m)}</p>`;
+  const run = async () => {
+    const term = q.value.trim();
+    if (term.length < 2) { out.innerHTML = `<p class="notice muted">Type at least two characters to search.</p>`; return; }
+    try {
+      const d = await (await fetch(`/api/colleagues?q=${encodeURIComponent(term)}`)).json();
+      const rows = d.colleagues || [];
+      out.innerHTML = rows.length
+        ? `<p class="notice muted" style="margin:0 0 10px">${d.count}${d.count >= 300 ? "+" : ""} of ${d.total} people</p>` + rows.map(colleagueCard).join("")
+        : `<p class="notice">No one in the directory matches “${escapeHtml(term)}”.</p>`;
+    } catch { out.innerHTML = `<p class="notice">Directory search is unavailable right now.</p>`; }
+  };
+  q?.addEventListener("input", () => { clearTimeout(colleagueSearchTimer); colleagueSearchTimer = setTimeout(run, 220); });
+  out?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-reveal-email]");
+    if (!btn) return;
+    let email = "";
+    try { email = atob(btn.dataset.revealEmail); } catch { /* malformed */ }
+    if (email) btn.outerHTML = `<a class="text-link" href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`;
+  });
+  const form = document.getElementById("colleague-form");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("cd-status");
+    const val = (id) => (document.getElementById(id)?.value || "").trim();
+    const payload = {
+      fname: val("cd-fname"), lname: val("cd-lname"), institution: val("cd-institution"),
+      jobtitle: val("cd-jobtitle"), email: val("cd-email"), city: val("cd-city"),
+      region: val("cd-region"), country: val("cd-country"), interests: val("cd-interests"),
+      associated_loci: val("cd-genes"), pi: document.getElementById("cd-pi")?.checked,
+      website: val("cd-website"),
+    };
+    if (!payload.fname && !payload.lname) { status.innerHTML = err("Please enter your name."); return; }
+    if (!payload.institution || !payload.email) { status.innerHTML = err("Name, institution, and email are required."); return; }
+    status.innerHTML = `<p class="notice muted">Submitting…</p>`;
+    try {
+      const r = await fetch("/api/colleagues", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      const d = await r.json();
+      if (r.ok && d.ok) {
+        status.innerHTML = `<p class="notice" style="color:var(--teal-dark)">Thank you. Your entry is now in the directory and on the dictyNews list. Search your name above to see it.</p>`;
+        form.reset();
+      } else { status.innerHTML = err(d.error || "Something went wrong. Please try again."); }
+    } catch { status.innerHTML = err("Could not submit right now. Please try again."); }
+  });
 }
 
 function renderDiseaseModelsPage() {

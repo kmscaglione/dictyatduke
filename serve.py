@@ -1558,6 +1558,60 @@ def rewrite_dictylife_note(note):
     return f"{rest} {line}".strip() if rest else line
 
 
+# --- Community colleague directory ---------------------------------------
+# The Dictyostelium community member directory (who's who + the dictyNews mailing
+# list). PII lives server-side under uploads/ (web-blocked, deploy-surviving): the
+# preserved scrape (colleagues.json) plus self-submitted entries (colleagues_
+# submissions.json). Only records that opted in (dictyBasecontact == "Y") are
+# served publicly; phone / street address / zip are dropped; emails are
+# base64-obfuscated for the client to reveal on click.
+COLLEAGUES_BASE = UPLOADS_DIR / "preserved" / "colleagues.json"
+COLLEAGUES_SUBS = UPLOADS_DIR / "preserved" / "colleagues_submissions.json"
+_COLLEAGUE_HITS = {}
+
+
+def _colleague_public_record(r):
+    name = " ".join(x for x in (r.get("fname", ""), r.get("lname", "")) if x).strip() \
+        or r.get("oname", "")
+    genes = [g.strip() for g in str(r.get("associated_loci", "")).split("|") if g.strip()]
+    kw = [r.get(f"keyword{i}") for i in range(1, 11)]
+    loc = ", ".join(x for x in (r.get("city", ""), r.get("region", ""), r.get("country", ""))
+                    if x and x.upper() != "UNSPECIFIED")
+    email = (r.get("email") or "").strip()
+    return {
+        "name": name,
+        "institution": r.get("institution", ""),
+        "location": loc,
+        "role": r.get("jobtitle", ""),
+        "pi": r.get("pi") in ("true", True),
+        "interests": r.get("interests", ""),
+        "keywords": [k for k in kw if k],
+        "genes": genes,
+        "email_b64": base64.b64encode(email.encode()).decode() if email else "",
+    }
+
+
+def colleague_directory():
+    """Merged opt-in directory (preserved scrape + self-submitted), public-safe."""
+    sig = tuple((p.stat().st_mtime if p.exists() else 0)
+                for p in (COLLEAGUES_BASE, COLLEAGUES_SUBS))
+    cached = _API.get("_colleagues")
+    if cached and cached[0] == sig:
+        return cached[1]
+    merged = {}
+    for path in (COLLEAGUES_BASE, COLLEAGUES_SUBS):
+        data = _read_json_file(str(path), {})
+        rows = list(data.values()) if isinstance(data, dict) else (data or [])
+        for r in rows:
+            if isinstance(r, dict):
+                merged[str(r.get("id") or r.get("email") or len(merged))] = r
+    out = [_colleague_public_record(r) for r in merged.values()
+           if str(r.get("dictyBasecontact", "")).upper() == "Y"]
+    out.sort(key=lambda x: (x["name"].split()[-1].lower() if x["name"] else "~"))
+    _API["_colleagues"] = (sig, out)
+    return out
+
+
 def api_strains():
     if "_strains" not in _API:
         sg, sp = {}, {}
@@ -3598,6 +3652,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.startswith("/api/go/"):
             self._handle_api_go(unquote(self.path[len("/api/go/"):].split("?")[0]))
             return
+        if self.path.startswith("/api/colleagues"):
+            self._handle_api_colleagues()
+            return
         if self.path.startswith("/api/strain/"):
             self._handle_api_strain(unquote(self.path[len("/api/strain/"):].split("?")[0]))
             return
@@ -4359,7 +4416,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     do_HEAD = do_GET
 
     def do_POST(self):
-        if self.path == "/api/upload":
+        if self.path == "/api/colleagues":
+            self._handle_api_colleague_submit()
+        elif self.path == "/api/upload":
             self._handle_upload()
         elif self.path == "/api/curator/login":
             self._handle_login()
@@ -6202,6 +6261,67 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_json(200, {"strain": sid, "gene": gene_obj, "genes": genes_obj,
                              "descriptor": meta.get("label") or fallback.get("label", ""),
                              "metadata": detail, "phenotypes": phenos})
+
+    def _handle_api_colleagues(self):
+        """GET: search the opt-in community directory. Returns public-safe records
+        with the email base64-obfuscated (revealed client-side on click)."""
+        q = (parse_qs(urlparse(self.path).query).get("q", [""])[0]).strip().lower()
+        directory = colleague_directory()
+        def match(r):
+            if not q:
+                return True
+            hay = f"{r['name']} {r['institution']} {r['location']} {r['interests']} " \
+                  f"{' '.join(r['keywords'])} {' '.join(r['genes'])}".lower()
+            return q in hay
+        hits = [r for r in directory if match(r)]
+        self.send_json(200, {"query": q, "total": len(directory),
+                             "count": len(hits), "colleagues": hits[:300]})
+
+    def _handle_api_colleague_submit(self):
+        """POST: add or update your own directory entry and join the dictyNews list.
+        Public write (like the legacy site): the entry appears immediately. Guarded
+        by a honeypot, per-IP rate limit, a field whitelist, and length caps."""
+        if _rate_limited(_COLLEAGUE_HITS, self.client_address[0], limit=5, window=3600):
+            self.send_json(429, {"error": "Too many submissions from your address. "
+                                          "Please try again later."})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 16384)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid request"})
+            return
+        if str(body.get("website", "")).strip():          # honeypot: silently drop bots
+            self.send_json(200, {"ok": True})
+            return
+        clip = lambda s: str(s or "").strip()[:200]
+        rec = {k: clip(body.get(k)) for k in
+               ("fname", "lname", "institution", "jobtitle", "city", "region",
+                "country", "email", "associated_loci")}
+        rec["interests"] = str(body.get("interests", "")).strip()[:1000]
+        if not (rec["lname"] or rec["fname"]) or not rec["institution"]:
+            self.send_json(400, {"error": "Please provide your name and institution."})
+            return
+        if not re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", rec["email"]):
+            self.send_json(400, {"error": "Please provide a valid email address."})
+            return
+        rec["dictyBasecontact"] = "Y"                     # submitting = opting in
+        rec["pi"] = "true" if body.get("pi") else ""
+        rec["id"] = "sub-" + str(int(time.time() * 1000))
+        rec["_source"] = "self-submitted"
+        rec["_date"] = datetime.date.today().isoformat()
+        COLLEAGUES_SUBS.parent.mkdir(parents=True, exist_ok=True)
+        subs = _read_json_file(str(COLLEAGUES_SUBS), [])
+        if isinstance(subs, dict):
+            subs = list(subs.values())
+        elif not isinstance(subs, list):
+            subs = []
+        subs.append(rec)
+        tmp = COLLEAGUES_SUBS.with_suffix(".tmp")
+        tmp.write_text(json.dumps(subs, ensure_ascii=False))
+        tmp.replace(COLLEAGUES_SUBS)
+        _API.pop("_colleagues", None)                     # invalidate the cache
+        self.send_json(200, {"ok": True})
 
     def _handle_sequence(self):
         """Return a gene's genomic / cDNA / protein sequence as a FASTA download."""

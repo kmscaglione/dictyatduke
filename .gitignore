@@ -79,3 +79,7 @@ assets/media/
 # Colleague/researcher directory — contains personal contact data (emails,
 # phones, addresses). Preserved locally only, never committed (per decision).
 assets/dictybase-corpus/colleagues.json
+
+# All server-side runtime data lives under uploads/ (curator state, submissions,
+# and the preserved colleague directory PII). None of it belongs in git.
+uploads/

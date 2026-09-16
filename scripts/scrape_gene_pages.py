@@ -49,6 +49,10 @@ ENDPOINTS = {
     "references": "{b}/{g}/references.json",       # per-paper topics, DOI, pub id, assoc genes
     "orthologs": "{b}/{g}/orthologs.json",         # orthologs w/ UniProt accession + product
     "product": "{b}/{g}/gene/product.json",        # authoritative current DDB0 feature id + protein length
+    "info": "{b}/{g}/gene/info.json",             # name etymology + alternate protein names
+    "genomic_info": "{b}/{g}/gene/genomic_info.json",  # coordinates + curated sequence Notes
+    "sequences": "{b}/{g}/gene/sequences.json",   # EST / cDNA evidence (GenBank + EST feature ids)
+    "promoters": "{b}/{g}/gene/promoters.json",   # computationally inferred regulatory motifs
 }
 
 

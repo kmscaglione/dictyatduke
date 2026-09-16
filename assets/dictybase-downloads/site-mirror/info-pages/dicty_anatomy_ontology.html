@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Dictyostelium Anatomy Ontology</title>
+    </head>
+    <body>
+        <h1>
+            Dictyostelium Anatomy Ontology
+        </h1>
+        <p>
+            <a name="top" id="top"></a>
+        </p>
+        <p>
+            dictyBase curators, in collaboration with Jeff Williams from the University of Dundee, have developed an ontology to describe Dictyostelium, the <b>Dictyostelium anatomy ontology</b>, where we define the structural makeup of Dictyostelium and its composing parts including the different cell types, throughout its life cycle.<br>
+            <br>
+            There are two main goals for this new tool: (1) promote the consistent annotation of Dictyostelium-specific events, such as phenotypes (already in use), and in the future, of gene epxression information; and (2) encourage researchers to use the same terms with the same intended meaning. To this end, all terms are defined. The paper we have published (<a target="new" href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=11778">Gaudet, Williams, Fey and Chisholm, 2008</a>) (<a target="new" href="http://www.biomedcentral.com/1471-2164/9/130">full text from BioMed Central</a>) gives a description of the ontology and definitions of the terms, in the context of the life cycle of Dictyostelium.
+        </p>
+        <p>
+            The complete ontology can be browsed using <a target="new" href="http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=DDANAT">EBI's ontology browser tool</a>.
+        </p>
+        <hr>
+        <h2>
+            Main terms of the Dictyostelium anatomy ontology
+        </h2>
+        <p>
+            The following list of terms and definitions are the most general terms of the Dicty anatomy ontology. This list contains 37 out of the 137 terms in the complete ontology (version from May 29, 2008). We have also included links to phenotype terms that use the corresponding anatomy terms. The complete ontology can be browsed using <a target="new" href="http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=DDANAT">EBI's ontology browser tool</a>.
+        </p>
+        <p>
+            Note that the ontology is dynamic and modifications will be made as knowledge evolves. If you would like to suggest modifications to the ontology or the terms and their definitions, please email dictybase or use the <a href="http://sourceforge.net/tracker/?group_id=76834&amp;atid=974664">Source Forge Dicty Anatomy Tracker</a>.
+        </p>
+        <hr>
+        <p>
+            GO TO: <a href="#multi">multicellular organism</a> | <a href="#cell">cell</a> | <a href="#subdivision">subdivision</a> | <a href="#top">BACK TO TOP</a>
+        </p>
+        <hr>
+        <ul>
+            <li>
+                <b>Dictyostelium discoideum anatomical structure DDANAT:0010001.</b> Definition: Material anatomical entity that has inherent 3D shape and is generated by coordinated expression of the Dictyostelium discoideum genome.
+            </li>
+            <li style="list-style: none">
+                <a name="multi" id="multi"></a>
+                <ul>
+                    <li>
+                        <b>multicellular organism DDANAT:0010082.</b> Definition: Anatomical structure that is an individual member of the Dictyostelium discoideum species and consists of more than one cell.
+                    </li>
+                    <li style="list-style: none">
+                        <ul>
+                            <li>
+                                <b>aggregation territory DDANAT:0000003.</b> Definition: Area covered by a group of chemotactic cells converging toward the same aggregation center. Can reach a diameter of up to 1 cm. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=aggregation">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>loose aggregate DDANAT:0000004.</b> Definition: First adherent mass of cells observed during development, relatively flat with indistinct borders. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=aggregate">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>mound DDANAT:0000005.</b> Definition: Hemispherical structure composed of post-aggregative cells that are undergoing differentiation. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=mound">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>tipped mound DDANAT:0000006.</b> Definition: Hemispherical structure composed of post-aggregative cells that are undergoing differentiation and that have formed a tip.
+                            </li>
+                            <li>
+                                <b>standing slug DDANAT:0000007.</b> Definition: Cylindrical structure that is formed by elongation of the mound under the control of the tip. The elongating tip is called the first finger. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=slug%20formation">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>migratory slug DDANAT:0000008.</b> Definition: When the conditions are not optimal for the completion of development, the standing slug bends from a vertical position to a horizontal position, producing a migratory that slug has the ability to migrate towards more favorable environmental conditions. The slug is cylindrical in shape with a rounded, tapering region at its anterior end that is raised with respect to the substratum. It usually measures between 0.8 to 1.2 mm in length with a diameter of 0.15 to 0.25 mm. Slugs sense and respond to light, temperature and acidity, and do not enter culmination until the conditions are optimal. The slug can move at a speed of 0.5 to 2 mm per hour. A trail of slime is deposited on the surface during migration. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=slug">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>early culminant DDANAT:0000009.</b> Definition: Structure formed after the arrest of slug migration formed when cells of the posterior region of the slug move under the tip. Stalk tube formation is initiated at this stage. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=culmi*">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>mid culminant DDANAT:0000010.</b> Definition: Structure in which stalk tube formation has progressed down the prespore zone. Basal disc formation begins at this stage, with the migration of pstA and pstB cells to the lower part of the culminant to form the basal disc.
+                            </li>
+                            <li>
+                                <b>late culminant DDANAT:0000011.</b> Definition: Structure in which stalk tube formation has progressed down to the basal disc. The sorogen ascents up the stalk to it apical position dring this stage. Terminal differentiation occurs at this stage: death of the stalk cells and encapsulation of the spores.
+                            </li>
+                            <li>
+                                <b>fruiting body DDANAT:0000012.</b> Definition: Dicty asexual organism which is terminally differentiated and consists of a long stalk on top of which sits the sorus that contains spores. The mature fruiting body measures between 1.5 to 3 mm in height. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=fruiting">phenotypes</a>]
+                            </li>
+                        </ul>
+                        <hr>
+                        GO TO: <a href="#multi">multicellular organism</a> | <a href="#cell">cell</a> | <a href="#subdivision">subdivision</a> | <a href="#top">BACK TO TOP</a>
+                        <hr>
+                        <a name="cell" id="cell"></a>
+                    </li>
+                    <li>
+                        <b>cell DDANAT:0000401.</b> Definition: Anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane.
+                    </li>
+                    <li style="list-style: none">
+                        <ul>
+                            <li>
+                                <b>single cell organism DDANAT:0000083.</b> Definition: Cell that is an individual member of the species Dictyostelium discoideum. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=growth">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>aggregate cell DDANAT:0000403.</b> Definition: Differentiating cell composing the aggregate that has acquired adhesive properties. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=chemotaxis">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>anterior like cell DDANAT:0000404.</b> Definition: Cell that has properties of anterior cells (for e.g., accumulate vital dyes in autophagic vesicles) but that is are scattered throughout the rear of the slug. Some but not all these cells express the ecmA gene and/or the ecmB gene. ALCs maintain an amoeboid appearance during culmination. ALCs that express the ecmO promoter have been called pstO/ALC.
+                            </li>
+                            <li>
+                                <b>apical disc cell DDANAT:0000119.</b> Definition: Cell forming the apical disc formed of upper cup cells that remain at the top of the fruiting body once the stalk formation is complete.
+                            </li>
+                            <li>
+                                <b>peripheral layer cell DDANAT:0000095.</b> Definition:Electron-dense cell connected to neighboring peripheral layer cells thus forming a coherent tissue around the multicellular organism
+                            </li>
+                            <li>
+                                <b>prespore cell DDANAT:0000405.</b> Definition: Cell that is undergoing differentiation to become a spore. Characterized by the presence of prespore vesicles (PV).[<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=prespore%20cell">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>prestalk cell DDANAT:0000406.</b> Definition: Cell that is undergoing differentiation to become a stalk cell and characterized by the ability to update vital dyes. Represents about one-quarter of the cells. During development, prestalk cells are located in the anterior portion of the organism. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=prestalk%20cell">phenotypes</a>]
+                            </li>
+                            <li style="list-style: none">
+                                <ul>
+                                    <li>
+                                        <b>pstA cell</b> Definition: Cell that is undergoing differentiation to become a stalk cell. PstA cells express the ecmA marker from a promoter region that is proximal to the ATG (ecmAO promoter). They are located at the anterior-most region of the slug. During culmination pstA cells differentiate into pstAB cells. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=prestalk%20A">phenotypes</a>]
+                                    </li>
+                                    <li>
+                                        <b>pstAB cell</b> Definition: Cell that is undergoing differentiation to become a stalk cell. PstAB cells express both ecmA and ecmB either simultaneously or sequentially. During culmination pstA differentiate into pstAB cells.
+                                    </li>
+                                    <li>
+                                        <b>pstB cell</b> Definition: Cell that is undergoing differentiation to become a stalk cell. PstB cells express the ecmB marker and form the outer basal disc in the fruiting body. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=prestalk%20B">phenotypes</a>]
+                                    </li>
+                                    <li>
+                                        <b>pstO cell</b> Definition: Cell that is undergoing differentiation to become a stalk cell. PstO cells express ecmA at a very low level and are located at the posterior half of the prestalk zone. Expresses ecmA from the distal region of its promoter (ecmO). [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=prestalk%20O">phenotypes</a>]
+                                    </li>
+                                    <li>
+                                        <b>tip-organiser cell</b> Definition: Type of pstA cell that composes the very tip of the organism.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>sentinel cell DDANAT:0000418.</b> Definition: Cell present in multicellular organism that has a high ability to engulf bacteria and toxin and is presumed to have a detoxification and immune-like role.
+                            </li>
+                            <li>
+                                <b>stalk cell DDANAT:0000413.</b> Definition: Cell of polyhedric shape filling the stalk tube. Stack cells are large (around 8 icrons in diameter), highly vacuolated, and are surrounded by cell wall composed of cellulose. Stalk cells die upon terminal differentiation. Their role is to provide structural support for the fruiting body.
+                            </li>
+                        </ul>
+                        <hr>
+                        GO TO: <a href="#multi">multicellular organism</a> | <a href="#cell">cell</a> | <a href="#subdivision">subdivision</a> | <a href="#top">BACK TO TOP</a>
+                        <hr>
+                        <a name="subdivision" id="subdivision"></a>
+                    </li>
+                    <li>
+                        <b>subdivision DDANAT:0010085.</b> Definition: Anatomical structure which is a primary subdivision of whole Dictyostelium organism. The mereological sum of these is the whole organism.
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                        <ul>
+                            <li>
+                                <b>prespore region DDANAT:0000086.</b> Definition: Region mostly composed of prespore cells. In addition to prespore cells, the prespore region contains anterior-like cells (ALC) that express ecmA and/or ecmB. The prespore region occupies about three quarters of the organism.
+                            </li>
+                            <li>
+                                <b>prestalk region DDANAT:0000087.</b> Definition: The prestalk region is located at the most apical part of the organism. It consists of about one quarter of the cells.
+                            </li>
+                            <li>
+                                <b>prestalk A region DDANAT:0000088.</b> Definition: Anterior-most region of the prestalk zone characterized by high expression of the ecmA gene directed by the proximal part of its promoter (ecmA promoter).
+                            </li>
+                            <li>
+                                <b>prestalk AB core region DDANAT:0000091.</b> Definition: Cone-shaped area of the prestalk zone that occupies a core among the pstA region. Cells of the pstAB region express both the ecmA and ecmB genes.
+                            </li>
+                            <li>
+                                <b>prestalk O region DDANAT:0000092.</b> Definition: Area of the prestalk zone located posterior to the pstA region and characterized by low expression of the ecmA gene directed by the distal part of its promoter (ecmO promoter).
+                            </li>
+                            <li>
+                                <b>sorus DDANAT:0000094.</b> Definition: Ovoid structure supported by the stalk and that contains the spores. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=sorus">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>stalk DDANAT:0000093.</b> Definition: Tubular structure that consists of cellulose-covered cells stacked on top of each other and surrounded by an acellular stalk tube composed of cellulose and glycoprotein. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=stalk">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>stream DDANAT:0000013.</b> Definition: Macroscopic appearance of groups of chemotactic cells orienting themselves in a head to tail fashion as they are migrating in the direction of the chemotactic stimulus to form aggregates. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=stream">phenotypes</a>]
+                            </li>
+                            <li>
+                                <b>tip-organizer DDANAT:0000103.</b> Definition: Part of the prestalk region that acts as an organizer, that is, a signalling center that directs the morphological characteristics of the entire organism. [<a href="/db/cgi-bin/search/results.pl?class=dicty::UI::Search::Phenotype&amp;query=tip">phenotypes</a>]
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

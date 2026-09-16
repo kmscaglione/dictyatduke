@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Whole-mount in situ Hybridization</title>
+    </head>
+    <body>
+        <p>
+            <a name="top" id="top"></a>
+        </p>
+        <h1>
+            Whole-mount <i>in situ</i> hybridization of cell-type specific mRNAs in <i>Dictyostelium</i>
+        </h1>
+        <p>
+            <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=1597">Dev Biol 171:262-6</a>
+        </p>
+        <p>
+            <b>Contributed by Ricardo Escalante and William F. Loomis</b>*
+        </p>
+        <p>
+            Center for Molecular Genetics, Department of Biology, University of California, San Diego, La Jolla CA 92093<br>
+            *Corresponding author
+        </p>
+        <hr>
+        <h2>
+            Abstract
+        </h2>
+        <p>
+            We have been able to hybridize non-radioactive probes from cell-type specific genes to fixed whole-mounts prepared at the mound, slug and culminant stages of <i>Dictyostelium</i> development. The cellular patterns of labelling with probes from the prespore gene, <i>cotB</i>, and the prestalk genes, <i>ecmA</i> and <i>ecmB</i>, confirmed the patterns seen in strains carrying reporter constructs in which the regulatory regions of these genes drive b-galactosidase. This technique permits the direct observation of protein synthetic capacity from characterized genes without the need of generating transformed lines carrying specific reporter constructs. Moreover, the pattern is not complicated by previous developmental history of gene expression.
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <h2>
+            Introduction
+        </h2>
+        <p>
+            The advent of cell-type specific molecular markers has facilitated the description and analysis of multicellular morphogenesis in many systems. Hybridization of probes prepared from specific cloned genes to whole-mounts can provide three dimensional information on cells that have accumulated the respective mRNA. This <i>in situ</i> technique has been developed and widely used in several developmental systems including <i>Drosophila</i> (Tautz and Pfeifle, 1989), <i>Xenopus</i> (Hemmati-Brivanlou <i>et al.</i>, 1990), and quail (Coutinho <i>et al.</i>, 1992) but has not been used previously in <i>Dictyostelium</i>. Another approach to recognizing specific cell-types is to transform with constructs in which the control regions associated with specific genes are used to drive reporter genes such as bacterial b-galactosidase. Cells carrying the prespore specific reporter construct <i>cotB::lacZ</i> can first be seen to stain 8 hours after the initiation of development (Fosnaugh and Loomis, 1993). Stained cells are initially found throughout the loose aggregates and subsequently found in the posterior of the slug shaped structures that form. At culmination, the stained cells are found in the rising sorus and can be seen to form spores. Cells carrying either of the prestalk specific reporter constructs <i>ecmA::lacZ</i> or <i>ecmB::lacZ</i> can first be seen to stain a few hours after the prespore cells (Williams<i>et al.</i>, 1989). Like the prespore cells, the prestalk cells are initially found scattered throughout the mound. A little later the <i>ecmA::lacZ</i> positive cells sort to the tip and the<i>ecmB::lacZ</i> positive cells sort to the base (Williams <i>et al.</i>, 1989). The <i>ecmA::lacZ</i> positive cells remain in the tip as it elongates to form a slug and enter the stalk tube during culmination (Jermyn and Williams, 1991; Early <i>et al.</i>, 1993). About an equal number of <i>ecmA::lacZ</i> positive cells are found in the posterior of the slug where they are referred to as anterior-like cells (Early <i>et al</i>., 1993). Cells in the central core of the slug tip express <i>ecmB::lacZ</i> and are the first to enter the stalk. During culmination <i>ecmB::lacZ</i> is expressed in the upper and lower cups generated by anterior-like cells (Jermyn and Williams, 1991; Early <i>et al</i>., 1993).
+        </p>
+        <p>
+            We have found that hybridization of probes prepared from <i>cotB</i>, <i>ecmA</i> and <i>ecmB</i> to cells fixed at the mound, slug or culmination stages gives the identical spatial and temporal patterns seen by staining the reporter strain with X-gal. The congruence of the data indicates that expression of the reporter genes accurately mimics the presence of mRNA from these genes throughout development. Our results show that whole-mount <i>in situ</i> hybridization can be usefully applied to <i>Dictyostelium</i>.
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <h2>
+            Materials and Methods
+        </h2>
+        <h3>
+            Growth and development
+        </h3>
+        <p>
+            <i>Dictyostelium</i> discoideum strain AX4 was grown in HL5 medium and developed at high density on nitrocellulose filters saturated with buffered salts in a humid chamber (Sussman, 1987).
+        </p>
+        <h3>
+            Probe labeling
+        </h3>
+        <p>
+            We used a 2.3 kb fragment from the clone gDd63 and a 2.4 kb fragment from the clone gDd56 (Jermyn <i>et al</i>., 1987; Williams <i>et al</i>., 1987) as the <i>ecmA</i> and <i>ecmB</i> probes respectivelly and a 0.7 kb fragment from the clone pSP70 as a <i>cotB</i> probe (Fosnaugh and Loomis, 1989). The DNA probes (50-100 ng) were labeled for 16 hours by random priming and incorporation of dUTP-digoxigenin using the DIG labeling kit from Boheringer Mannheim (cat. no. 1175033) according to the manufacturer's instructions. Probes were purified by ethanol precipitation.
+        </p>
+        <h3>
+            In situ hybridization
+        </h3>
+        <p>
+            Samples collected at different times of development were transferred to sterilized glass test tubes by washing with buffered salt solution (PBS: 133&nbsp;mM&nbsp;NaCl, 10&nbsp;mM&nbsp;sodium potassium phosphate pH 7.4); all subsequent steps were carried out in these tubes. The structures were washed twice with methanol for 5&nbsp;minutes and gently dispersed before replacing it with 4% paraformaldehide in PBS. After fixation for 2.5 hours at room temperature, the preparations were washed 3 times for 5&nbsp;min each in PBS and incubated with 20 mg/ml Proteinase K (Sigma) in PBS for 20 to 60&nbsp;minutes, washed in PBS for 5&nbsp;min, and further fixed in 4% paraformaldehyde solution at room temperature for 20&nbsp;min. After three washes with PBS for 5&nbsp;min each, the structures were prehybridized at 42°C for 3 hours in 4X SSC (1X SSC: 150&nbsp;mM&nbsp;NaCl, 15&nbsp;mM&nbsp;sodium citrate pH 7), 1X Denhardt's, 0.5 mg/ml sonicated salmon sperm DNA, 0.25 mg/ml yeast RNA, 60% formamide. Hybridization was carried out at 42°C in 4X SSC, 0.5 mg/ml denatured salmon sperm DNA, 0.25 mg/ml yeast RNA, 60% formamide and 50 ng/ml of heat denaturalized probe.<br>
+            <br>
+            After hybridizing for 20 hours, excess probe was removed by washing in 2X SSC, 1X SSC, 0.5X SSC, and 0.2X SSC at 42°C for 30&nbsp;min each. The preparations were then incubated for 30 to 60&nbsp;min at room temperature in PBT (PBS containing 0.05% Tween 20) with 0.2% blocking reagent (Boheringer Mannheim cat no 1096176). They were then incubated overnight at 4°C in PBT with 0.2% blocking reagent containing 1/1000 dilution of antidigoxigenin antibody coupled to alkaline phosphatase (Boheringer Mannheim cat. no. 1093274).<br>
+            <br>
+            The next day, the samples were washed 3 or 4 times for 15&nbsp;min each with PBT at room temperature, equilibrated with 100&nbsp;mM&nbsp;tris, 100&nbsp;mM&nbsp;NaCl, 50&nbsp;mM&nbsp;MgCl2 pH 9.5 for 5&nbsp;min and incubated in the same solution containing 4.5&nbsp;ml/ml nitroblue tetrazolium (Sigma, 75 mg/ml in dimethylformamide 70%) and 3.5&nbsp;ml/ml 5-bromo-4-chloro-3-indolyl phosphate (Sigma, 50 mg/ml in dimethylformamide). The color reaction was allowed to develop for 3 to 5 hours. When satisfactory signal was obtained, the reaction was stopped by washing with TE twice and depositing on nitrocellulose filters for microscopic observation and photography or mounted in 80% glycerol on slides.<br>
+            <br>
+            Linearized pBR328 was used to test the specificity of staining. Except for faint staining of the stalk tube there was no significant non-specific staining.
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <h2>
+            Results and Discussion
+        </h2>
+        <h3>
+            Spatial localization of Prespore mRNA (<a href="#fig1">Figure 1</a>)
+        </h3>
+        <p>
+            Structures collected at different times of development were fixed and hybridized with digoxigenin labeled <i>cotB</i> probe and the hybrids detected with antibody to digoxigenin coupled to alkaline phosphatase. Some mounds which had developed for 12 hours were seen to have stained cells scattered about with no evidence of spatial localization (Fig. 1A) while others showed localization of the <i>cotB</i> reactive cells at the base and unstained cells at the tip (Fig. 1B, 1C). At the slug stage (15 hours of development) cells that had accumulated <i>cotB</i> mRNA were seen only in the posterior (Fig.1D, 1E). During culmination (20 hours of development) stained cells were restricted to the prespore cells in the sorus (Fig. 1F, 1G). This pattern of spatial and temporal localization of <i>cotB</i> mRNA is in agreement with those seen with antibodies to SP70, the product of <i>cotB</i> (Gomer <i>et al.</i>, 1986), as well as those obtained in cells carrying <i>cotB::lacZ</i> (Fosnaugh and Loomis, 1993). Staining was reduced or absent after the prespore cells had encapsulated, indicating that permeabilization may not have been sufficient to open spores (data not shown).
+        </p>
+        <h3>
+            Spatial localization of Prestalk mRNAs (<a href="#fig2">Figure 2</a>)
+        </h3>
+        <p>
+            Cells which had accumulated <i>ecmA</i> and <i>ecmB</i> mRNAs were initially distributed randomly in the loose aggregates (Fig. 2A and 2H). <i>ecmA</i> positive cells were subsequently localized to the tip (Fig. 2B,2C) while <i>ecmB</i> positive cells were found in the base (Fig 2I, 2J). At the slug stage <i>ecmA</i> expressing cells were seen in the prestalk region at the anterior as well as scattered throughout the back where anterior-like cells are found (Fig 2D, 2E). Cells expressing <i>ecmB</i> were localized to a central core in the prestalk region as well as scattered throughout the posterior (Fig 2K,2L). During culmination cells expressing <i>ecmA</i> could be seen in the tip, in the stalk and in the basal disk (Fig. 2F, 2G). We have observed that the level of <i>ecmA</i> expression is higher in the most anterior portion of the tip than in the region below where PST-O cells are found during culmination in agreement with the previous observations of Early <i>et al</i>. (1993) using reporter constructs. Cells expressing <i>ecmB</i> during culmination were seen in the upper and lower cups, the basal disk and the stalk (Fig. 2M, 2N, 2O).<br>
+            <br>
+            The spatial and temporal localization of these mRNAs are not significantly different from that inferred from the activity of their promoters (Williams <i>et al.</i>, 1989; Jermyn and Williams, 1991; Early <i>et al</i>., 1993; Fosnaugh and Loomis, 1993). Transcription of these genes appears to be induced in subsets of cells during early aggregation and continues in these cells throughout the remainder of development. Expression of <i>ecmB</i> persists in the funnel of cells at the front of slugs until they enter the stalk and is turned on in anterior-like cells as they surround the sorus during culmination to form the upper and lower cups. Whole mount <i>in situ</i> hybridization appears to be a reliable and specific method to recognize cells expressing these cell-type specific genes and will help in the rapid characterization of newly isolated developmental genes.
+        </p>
+        <p>
+            R.E. was supported by a MEC/Fulbright Scholarship. This work was supported by a grant from the NIH (HD30892).
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <h2>
+            References
+        </h2>
+        <dl>
+            <dt>
+                Coutinho, L. L., Morris, J., and Ivarie, R. (1992). Whole mount in situ detection of low abundance transcripts (qmf1) and protein (MHC) in quail embryos using light and confocal laser scanning microscopy. BioTechniques 13, 722-724.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Early, A. E., Gaskell, M.J., Traynor, D. and Williams, J.G. (1993). Two distinct population of prestalk cells within the tip of the migratory Dictyostelium slug with differing fates at culmination. Development 118, 353-362.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Fosnaugh, K. L., and Loomis, W.F. (1989). Spore coat genes SP60 and SP70 of Dictyostelium discoideum. Mol. Cell. Biol. 9, 5215-5218.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Fosnaugh, K. L. and Loomis, W. F. (1993). Enhancer regions responsible for temporal and cell-type-specific expression of a spore coat gene in Dictyostelium. Dev. Biol. 157, 38-48.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Gomer,R., Datta, S., and Firtel,R. (1986). Cellular and subcellular distribution of a cAMP regulated prestalk protein and prespore protein in Dictyostelium discoideum: A study on the ontogeny of prestalk and prespore cells. J. Cell. Biol. 103, 1999-2012.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Hemmati-Brivanlou, A., Frank, D., Bolce, M.E., Brown, B. D., Sive, H. L., and Harland, R. M. (1990). Localization of specific mRNAs in Xenopus embryos by whole-mount in situ hybridization. Development 110, 325-330.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Jermyn, K. A., Berks, M., Kay, R. R., and Williams, J. G. (1987). Two distinct classes of prestalk-enriched mRNA sequences in Dictyostelium discoideum. Development 100, 745-755.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Jermyn, K. A. and Williams, J. G. (1991). An analysis of culmination in Dictyostelium using prestalk and stalk-specific cell autonomous markers. Development 111, 779-787.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Sussman, M. (1987). Cultivation and synchronous morphogenesis of Dictyostelium under controlled experimental conditions. Meth. Cell Biol. 28, 9-29.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Tautz, D. and Pfeifle, C. (1989). A non-radioactive in situ hybridization method for the localization of specific RNAs in Drosophila embryos reveals transcriptional control of the segmentation gene hunchback. Chromosoma 98, 81-85.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Williams, J. G., Ceccarelli, A., McRobbie, S. J., Mahbubani, H., Kay, R. R., Early, A., Berks, M., and Jermyn, K. A. (1987). Direct induction of Dictyostelium prestalk gene expression by DIF provides evidence that DIF is a morphogen. Cell 49, 185-192.
+            </dt>
+        </dl>
+        <dl>
+            <dt>
+                Williams, J. G., Duffy, K. T., Lane, D. P., McRobbie, S. J., Harwood, A. J., Traynor, D., Kay, R.R., and Jermyn, K. A. (1989). Origins of the prestalk-prespore pattern in Dictyostelium development. Cell 59, 1157-1163.
+            </dt>
+        </dl>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <h2>
+            Figures
+        </h2>
+        <p>
+            <a name="fig1" id="fig1"><b>Figure 1</b></a>. Localization of <i>cotB</i> mRNA during <i>Dictyostelium</i> development by <i>in situ</i> hybridization. Structures were collected at diferent times of development and hybridized with digoxigenin labeled <i>cotB</i> probe. A, B and C are tight aggregates fixed after 12 hours of development; D and E are from the slug stage at 15 hours of development; F and G are culminants collected after 20 hours of development. Bar: 0.2 mm.
+        </p>
+        <p>
+            <img src="/techniques/images/fig1_1.jpg"><br>
+            <br>
+        </p>
+        <p>
+            <a name="fig2" id="fig2"><b>Figure 2</b></a>. Localization of <i>ecmA</i> and <i>ecmB</i> mRNAs. Structures were collected at diferent times of development and hybridized with digoxigenin labeled <i>ecmA</i> probe (A-G) or <i>ecmB</i> probe (H-O). A, B, C, H, I, J were collected at the tight aggregate stage after 12 hours of development; D, E, K, L were collected at the slug stage after 15 hours of development; and F, G, M, N, O were collected during culmination after 20 hours of development. Bar: 0.2 mm.
+        </p>
+        <p>
+            <img src="/techniques/images/fig2_1.jpg">
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

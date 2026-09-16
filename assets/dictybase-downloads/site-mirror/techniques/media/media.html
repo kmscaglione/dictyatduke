@@ -1,0 +1,1226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Media and buffers</title>
+    </head>
+    <body>
+        <h1>
+            <a name="top" id="top">Media and buffers</a>
+        </h1>
+        <p align="left"></p>
+        <h3>
+            Media
+        </h3>
+        <div style="margin-left: 2em">
+            <a href="#HL5">HL5 Axenic Medium</a><br>
+            <a href="#MAHL5">Maltose-HL5 Medium</a><br>
+            <a href="#MHL5">Maltose-HL5 Medium (alternative recipe)</a><br>
+            <a href="#MESHL5">MES-HL5 Medium</a><br>
+            <a href="#FM">FM Defined Medium</a><br>
+            <a href="#SM">SM</a><br>
+            <a href="#SMP">SM plates</a><br>
+            <a href="#SM2">SM/2 plates</a><br>
+            <a href="#SM5">SM/5 plates</a><br>
+            <a href="#GYP">GYP plates</a><br>
+            <a href="#LPB">LPB agar</a><br>
+            <a href="#LP">LP agar</a><br>
+            <a href="#LP2">LP/2 agar</a><br>
+            <a href="#2%">2% agar plates</a><br>
+        </div>
+        <h3>
+            Buffers and Solutions
+        </h3>
+        <div style="margin-left: 2em">
+            <a href="#Bonnersalts">Bonner's salts</a><br>
+            <a href="#Sor">Sor (Sörensen's buffer)</a><br>
+            <a href="#SorC">SorC (Sor with 50 µM Ca++)</a><br>
+            <a href="#DB">DB (Development Buffer)</a><br>
+            <a href="#KK2">KK2</a><br>
+            <a href="#PDF">PDF (Development buffer)</a><br>
+            <a href="#LPS">LPS (Lower Pad Solution)</a><br>
+            <a href="#UPS">UPS (Upper Pad Solution)</a><br>
+            <a href="#cAMP">1mM cAMP solution</a><br>
+            <a href="#2HBS">2 x HBS</a><br>
+        </div>
+        <br>
+        <div style="border: 2px solid #394a6f;padding: 5px">
+            <center>
+                <b>Use deionized (or distilled) water to prepare all media and solutions.</b>
+            </center>
+        </div>
+        <p>
+            <br>
+            <a name="HL5" id="HL5"></a>
+        </p>
+        <ul>
+            <li>
+                <u>HL5 (Axenic Medium) (1 liter)</u> <!--<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup>--><br>
+                <br>
+                <ul>
+                    <li>5 g proteose peptone
+                    </li>
+                    <li>5 g thiotone E peptone
+                    </li>
+                    <li>10 g glucose
+                    </li>
+                    <li>5 g yeast extract
+                    </li>
+                    <li>0.35 g Na<sub>2</sub>HPO<sub>4</sub>&#8727;7H<sub>2</sub>O
+                    </li>
+                    <li>0.35 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>0.05 g dihydrostreptomycin-sulfate
+                    </li>
+                </ul><br>
+                Bring to a volume of 1 liter with distilled water<br>
+                Adjust pH with HCl to pH 6.4 - 6.7<br>
+                Autoclave for 20 minutes to sterilize<br>
+                <br>
+            </li>
+            <li style="list-style: none">
+                <i>Reference</i> : <a href="/publication/10608"><i>Watts and Ashworth (1970)</i></a><br>
+                <br>
+                <b>Notes:</b><br>
+                <ol>
+                    <li>HL5 medium must be stored at 4°C, but one bottle can be kept at room temperature for regular use.
+                    </li>
+                    <li>To insure consistent growth rates, use medium warmed to 22°C.
+                    </li>
+                    <li>Dihydrostreptomycin-sulfate is stored in the refrigerator. Warm up to room temperature before opening the bottle.
+                    </li>
+                    <li>Antibiotics are added to reduce bacterial contamination. Instead of Dihydrostreptomycin-sulfate, which is added as a powder before autoclaving, antibiotics such as ampicillin (100 μg/ml) and/or streptomycin sulfate (300 μg/ml) may be added after sterilization; stock solutions: 100 mg/ml ampicillin and 300 mg/ml streptomycin sulfate in distilled water, filter sterilize and freeze in small aliquots; use 1/1000 dilution in HL5.
+                    </li>
+                    <li>Recommendations: proteose peptone 2 (Difco #212120); thiotone E peptone (BBL #212302); yeast extract (Oxoid #LP0021). Some batches of peptone seem to be lacking certain nutrients and results in unusually long doubling time. This problem has been successfully overcome by adding vitamins (from the <a href="/techniques/media/fm-medium.html">FM medium</a> recipe).
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+                <ul>
+            <li style="list-style: none">
+                <a name="MAHL5" id="MAHL5"></a>
+            </li>
+            <li>
+                <u>Maltose HL5 (1 liter)</u><sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup><br>
+                <br>
+                <ul>
+                    <li>14.3 g bacto peptone [Oxoid L37 (Fisher Sci. LP0037B)]
+                    </li>
+                    <li>7.15 g yeast extract [Sigma Y-1625 or Difco 0127-17-9]
+                    </li>
+                    <li>18 g Maltose monohydrate [Sigma M-5895]
+                    <li>0.641 g Na<sub>2</sub>HPO<sub>4</sub>&#8727;2H<sub>2</sub>O [Merck 1.06580]
+                    </li>
+                    <li>0.490 g KH<sub>2</sub>PO<sub>4</sub> [Fluka 60220]
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                pH should be 6.6-6.7<br>
+                <br>
+                <b>Notes:</b><br>
+                <div style="margin-left: 2em">
+                    If adding antibiotics to prevent bacterial contamination, refer to 'Notes' for HL5 (see above).
+                </div><br>
+                <i>This recipe was provided by Anna Marchetti / P. Cosson lab.</i>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="MHL5" id="MHL5"></a>
+            </li>
+            <li>
+                <u>Maltose HL5 (1 liter)</u><br>
+                <br>
+                <ul>
+                    <li>20 g maltose
+                    </li>
+                    <li>5 g yeast extract
+                    </li>
+                    <li>5 g proteose peptone
+                    </li>
+                    <li>5 g thiotone E peptone
+                    </li>
+                    <li>0.67 g Na<sub>2</sub>HPO<sub>4</sub>&#8727;7H<sub>2</sub>O
+                    </li>
+                    <li>0.34 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>0.05 g dihydrostreptomycin-sulfate
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                pH should be 6.4-6.5<br>
+                <br>
+                <b>Notes:</b><br>
+                <div style="margin-left: 2em">
+                    Refer to 'Notes' for HL5 (see above).
+                </div>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="MESHL5" id="MESHL5"></a>
+            </li>
+            <li>
+                <u>MES-HL5 (1 liter)</u><br>
+                <br>
+                <ul>
+                    <li>10 g glucose
+                    </li>
+                    <li>5 g yeast extract
+                    </li>
+                    <li>5 g proteose peptone
+                    </li>
+                    <li>5 g thiotone E peptone
+                    </li>
+                    <li>1.3 g MES
+                    </li>
+                    <li>0.05 g dihydrostreptomycin-sulfate
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                Adjust the pH to 7.1 with NaOH (important!)<br>
+                Autoclave for 20 minutes<br>
+                <br>
+                <b>Notes:</b><br>
+                <ol>
+                    <li>This medium is used for phosphate labeling.
+                    </li>
+                    <li>Refer to 'Notes' for HL5 (see above).
+                    </li>
+                </ol>
+                <p align="right">
+                    <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+                </p>
+            </li>
+        </ul>
+        <hr>
+        <p>
+            <a name="FM" id="FM"></a>
+        </p>
+        <ul>
+            <li>
+                <u><a href="/techniques/media/fm-medium.html">FM Defined Medium</a><!--<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup></u>-->
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="SM" id="SM"></a>
+        </p>
+        <ul>
+            <li>
+                <u>SM broth (1 liter)</u><!--<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup></u>-->
+            </li>
+            <li style="list-style: none">
+                <br>
+                <ul>
+                    <li>10 g glucose
+                    </li>
+                    <li>10 g proteose peptone
+                    </li>
+                    <li>1 g yeast extract
+                    </li>
+                    <li>1 g MgSO<sub>4</sub>&#8727;7H<sub>2</sub>O (or 0.5 g MgSO<sub>4</sub>)
+                    </li>
+                    <li>1.9 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>0.6 g K<sub>2</sub>HPO<sub>4</sub>
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul>Adjust pH to 6.0 - 6.4 with KOH<br>
+                <br>
+                <i>Reference</i>: Sussmann (1966) in Methods in Cell Physiology, Vol. 2. Edited by D. Prescott, Academic Press, NY pp. 397-410.
+            </li>
+        </ul>
+        <p>
+            <a name="SMP" id="SMP"></a><br>
+            <br>
+        </p>
+        <ul>
+            <li>
+                <u>SM plates</u>
+                <br>
+                <br>
+                <ul>
+                    <li>Add 20 g bacto agar to 1 liter SM broth.
+                    </li>
+                    <li>Adjust the pH to 6.5 ± 0.1; if too low, use 1 N KOH, if too high, use 1 N HCl
+                    </li>
+                    <li>Autoclave for 30 minutes
+                    </li>
+                    <li>Let cool for about 30 minutes or longer in a 55°C water bath and pour plates
+                    </li>
+                </ul><br>
+                <b>Notes:</b><br>
+                <ol>
+                    <li>Pour thick plates (35&nbsp;ml per 100 mm Petri dish); 1 liter should yield around 30 plates.
+                    </li>
+                    <li>Dry plates overnight at room temperature and then store at 4°C. If the plates are too dry the bacteria won't grow well.
+                    </li>
+                </ol><br>
+            </li>
+        </ul>
+        <p>
+            <a name="SM2" id="SM2"></a>
+        </p>
+        <ul>
+            <li>
+                <u>SM/2 plates (1 liter)</u><br>
+                <br>
+                <ul>
+                    <li>5 g dextrose
+                    </li>
+                    <li>5 g bacto peptone
+                    </li>
+                    <li>0.5 g yeast extract
+                    </li>
+                    <li>1 g MgSO<sub>4</sub>&#8727;7H<sub>2</sub>O
+                    </li>
+                    <li>1 g Na<sub>2</sub>HPO<sub>4</sub>
+                    </li>
+                    <li>2.2 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>15 g agar
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                Adjust pH to 6.5 ± 0.1 and pour plates as described for SM plates
+            </li>
+        </ul>
+        <p>
+            <br>
+            <a name="SM5" id="SM5"></a>
+        </p>
+        <ul>
+            <li>
+                <u>SM/5 plates (1 liter)</u> <!--<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup></u>--><br>
+                <br>
+                <ul>
+                    <li>2 g glucose
+                    </li>
+                    <li>2 g bacto peptone
+                    </li>
+                    <li>0.2 g yeast extract
+                    </li>
+                    <li>0.1 g MgSO<sub>4</sub> (or 0.2 g MgSO<sub>4</sub>&#8727;7H<sub>2</sub>O)
+                    </li>
+                    <li>1.9 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>1.0 g K<sub>2</sub>HPO<sub>4</sub>
+                    </li>
+                    <li>15 g agar
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                Adjust pH to 6.5 ± 0.1 and pour plates as described for SM plates
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="GYP" id="GYP"></a>
+               </li>
+            <li>
+                <u>GYP agar (Glucose, Yeast, Peptone, 1 liter)</u> <sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup><br>
+                <br>
+                <ul>
+                    <li>1 g glucose
+                    </li>
+                    <li>2 g bacto peptone
+                    </li>
+                   <li>0.25 g yeast extract
+                    </li>
+                    <li> 5.1 g Na<sub>2</sub>HPO<sub>4</sub>&#8727;7 H<sub>2</sub>O 
+                    </li>
+                    <li> 4.2 g KH<sub>2</sub>PO<sub>4</sub>
+                    <li>20 g agar
+                    </li>
+                </ul><br>
+                Autoclave 20 minutes. <br>
+                <br>
+                <i>Reference</i>: <a href="/publication/5094">Fey <i>et al.</i> (1995)</a>.
+            </li>
+        </ul><p>
+            <br>
+        <ul>
+            <li style="list-style: none">
+                <a name="LPB" id="LPB"></a>
+               </li>
+            <li>
+                <u>LPB agar (buffered Lactose/Peptone, 1 liter)</u> <sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup><br>
+                <br>
+                <ul>
+                    <li>1 g lactose
+                    </li>
+                    <li>1 g bacto peptone
+                    </li>
+                 
+                    <li> 5.1 g Na<sub>2</sub>HPO<sub>4</sub>&#8727;7 H<sub>2</sub>O 
+                    </li>
+                    <li> 4.2 g KH<sub>2</sub>PO<sub>4</sub>
+                    <li>20 g agar
+                    </li>
+                </ul><br>
+                Autoclave 20 minutes. <br>
+                <br>
+                <i>Reference</i>: <a href="/publication/5094">Fey <i>et al.</i> (1995)</a>.
+            </li>
+        </ul><p>
+            <br>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="LP" id="LP"></a>
+            </li>
+            <li>
+                <u>LP agar (1 liter)</u> (also called 0.1LP agar)<br>
+                <br>
+                <ul>
+                    <li>1 g lactose
+                    </li>
+                    <li>1 g bacto peptone
+                    </li>
+                    <li>15 g agar
+                      
+                </ul><br>
+                Autoclave 20 minutes.
+            </li>
+        </ul></p>
+        <p>
+           
+        </p>
+        <ul>
+            <li style="list-style: none">
+                <a name="LP2" id="LP2"></a>
+            </li>
+            <li>
+                <u>LP/2 agar (1 liter)</u> (also called 0.1LP/2 agar)<br>
+                <br>
+                <ul>
+                    <li>0.5 g lactose
+                    </li>
+                    <li>0.5 g bacto peptone
+                    </li>
+                    <li>15 g agar
+                    </li>
+                </ul><br>
+                Autoclave 20 minutes.
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="2%"></a>
+            </li>
+            <li>
+                <u>2% agar plates (1 liter)</u> (also called non-nutrient agar)<br>
+                <br>
+                <div style="margin-left: 2em">
+                    Add 20 g liter<sup>-1</sup> bacto agar to distilled water and autoclave. Pour approximately 20 ml per 100 mm plate.
+                </div>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="Bonnersalts" id="Bonnersalts"></a>
+        </p>
+        <ul>
+            <li>
+                <u>Bonner's salts (1 liter)</u>&nbsp;<!--<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup>--><br>
+                <br>
+                <ul>
+                    <li>0.6 g NaCl
+                    </li>
+                    <li>0.75 g KCl
+                    </li>
+                    <li>0.3 g CaCl<sub>2</sub>
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul>Autoclave for long-term storage. <br>
+                <br>
+                <i>Reference</i>: <a href="/publication/11058"><i>Bonner (1947)</i></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="Sor" id="Sor"></a>
+            </li>
+            <li>
+                <u>Sor</u> (Sörensen's buffer; 4 liters)<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup> <!--(1/60 M phosphate buffer)-->
+                <br>
+                <br>
+                <ul>
+                    <li>8.0 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>1.16 g Na<sub>2</sub>HPO<sub>4</sub> (or 2.2 g Na<sub>2</sub>HPO<sub>4</sub>.7H<sub>2</sub>O)
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                pH should be 6.0 ± 0.1<br>
+             <br>
+                <i>Reference</i>: <a href="/publication/18330">Gerisch <i>et al.</i> (1967)</a>
+            </li>
+        </ul>
+        <p>
+            <br>
+        </p>
+        <ul>
+            <li style="list-style: none">
+                <a name="SorC" id="SorC"></a>
+            </li>
+            <li>
+                <u>SorC</u> (Sor with 50 µM Ca++)<br>
+                <br>
+                <ul>
+                    <li>Add 4 ml 50 mM CaCl<sub>2</sub> (or 0.2 ml 1 M CaCl<sub>2</sub>) to 4 liters Sor, and autoclave.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="DB" id="DB"></a>
+        </p>
+        <ul>
+            <li>
+                <u>DB (Development Buffer)</u><br>
+                <br>
+                <ul>
+                    <li>5&nbsp;mM&nbsp;Na<sub>2</sub>HPO<sub>4</sub>
+                    </li>
+                    <li>5&nbsp;mM&nbsp;KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>1&nbsp;mM&nbsp;CaCl<sub>2</sub>
+                    </li>
+                    <li>2&nbsp;mM&nbsp;MgCl<sub>2</sub>
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul>Adjust pH to 6.5.
+            </li>
+            <li style="list-style: none">
+                <br>
+                <br>
+                <b>Notes:</b><br>
+                <ol>
+                    <li>Prepare the phosphate solution as 25mM (5x), adjust the pH to 6.5 and autoclave.
+                    </li>
+                    <li>Make 10x CaCl<sub>2</sub> (10 mM) and MgCl<sub>2</sub> (20 mM) solutions each separately and autoclave.
+                    </li>
+                    <li>To make 1 liter of DB, mix 600 ml of distilled, autoclaved water with 200 ml of 5x phosphate solution and 100 ml of 10x CaCl<sub>2</sub> and 10x MgCl<sub>2</sub> solution, respectively.
+                    </li>
+                    <li>This buffer is lower in ionic strength than <a href="#PDF">PDF</a>. The high ionic strength of PDF seems to retard development. <i>Dictyostelium</i> grows essentially in fresh water and dirt. Therefore this buffer may be more physiological.
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="KK2" id="KK2"><sup></a>
+        </p>
+        <ul>
+            <li>
+                <u>10x KK2 buffer (1 liter)</u><sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Recipe</i></b></font></sup><br>
+                <br>
+                <ul>
+                    <li>22 g KH<sub>2</sub>PO<sub>4</sub> (monobasic)
+                    </li>
+                    <li>7.0 g K<sub>2</sub>HPO<sub>4</sub> (dibasic)
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul><b>Notes:</b><br>
+                <ol>
+                    <li>Autoclave for long-term storage.
+                    </li>
+                    <li>Use at 1x concentration ( dilute 1:10 with deinodized water).
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                        <br>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <u>KK2 plates</u><br>
+                <br>
+                <ul>
+                    <li>To 1 liter of 1x KK2, add 15 g agar
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul><b>Notes:</b><br>
+                <ol>
+                    <li>Pour about 20ml/plate.
+                    </li>
+                    <li>Develop 2-4x10<sup>6</sup> cells/cm<sup>2</sup>, ie up to 2x10<sup>8</sup> cells/plate.
+                    </li>
+                </ol>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="PDF" id="PDF"></a>
+        </p>
+        <ul>
+            <li>
+                <u>PDF (Development buffer) (1 liter)</u><br>
+                <br>
+                <ul>
+                    <li>1.5 g KCl
+                    </li>
+                    <li>1.6 g K<sub>2</sub>HPO<sub>4</sub>
+                    </li>
+                    <li>1.8 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul>Adjust pH to pH 6.4 with KOH.<br>
+                Autoclave to sterilize.<br>
+                After autoclaving add:<br>
+                <ul>
+                    <li>1.0&nbsp;ml 1 M CaCl<sub>2</sub>
+                    </li>
+                    <li>2.5&nbsp;ml 1 M MgSO<sub>4</sub>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="LPS" id="LPS"></a>
+        </p>
+        <ul>
+            <li>
+                <u>LPS (Lower Pad Solution) plates (1 liter)</u>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <br>
+                <ul>
+                    <li>1.14 g Na<sub>2</sub>HPO<sub>4</sub> (anhydrous)
+                    </li>
+                    <li>4.35 g KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                    <li>0.5 g KCl
+                    </li>
+                    <li>0.5 g MgCl<sub>2</sub>
+                    </li>
+                    <li>18 g agar
+                    </li>
+                    <li style="list-style: none">
+                        <br>
+                    </li>
+                </ul>Autoclave.<br>
+                Pour 20&nbsp;ml/plate.<br>
+                <br>
+                <i>Reference</i>: <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=7441"><i>Sussman 1987</i></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li>
+                <u>UPS (Upper Pad Solution)</u>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <br>
+                <ul>
+                    <li>1 M KH<sub>2</sub>PO<sub>4</sub>
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <i>Reference</i>: <a href="/db/cgi-bin/dictyBase/reference/reference.pl?refNo=7441"><i>Sussman 1987</i></a>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="cAMP" id="cAMP"></a>
+            </li>
+            <li>
+                <u>1mM cAMP solution</u><br>
+                <br>
+                <ul>
+                    <li>Dissolve 33 mg cAMP (cat. no. A9501; Sigma-Aldrich) in 100 ml DB
+                    </li>
+                    <li>Adjust pH to 6.5 with NaOH and filter-sterilize
+                    </li>
+                    <li>Store in 5 ml aliquots at -20°C
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <ul>
+            <li style="list-style: none">
+                <a name="2HBS"></a>
+            </li>
+            <li>
+                <u>2 x HBS (250 ml)</u><br>
+                <br>
+                <ul>
+                    <li>4 g NaCl
+                    </li>
+                    <li>0.18 g KCl
+                    </li>
+                    <li>0.05 g Na<sub>2</sub>HPO<sub>4</sub> (or 0.094 g Na<sub>2</sub>HPO<sub>4</sub>.7H<sub>2</sub>O)
+                    </li>
+                    <li>0.5 g glucose
+                    </li>
+                    <li>2.5 g HEPES
+                    </li>
+                </ul>
+            </li>
+            <li style="list-style: none">
+                <br>
+                <b>Notes:</b><br>
+                <ol>
+                    <li>Adjust pH to 7.0-7.1 with NaOH. Very important!
+                    </li>
+                    <li>Filter sterilize.
+                    </li>
+                    <li>Keep frozen in 50 ml aliquots
+                    </li>
+                </ol>
+            </li>
+        </ul><!--
+<p><b>References</b>
+<ul>
+  <a name="1">1.</a>  Bonner (1947) J. Exp. Zool. 106: 1-26. <br>
+
+  <a name="2">2.</a>  Franke and Kessin, Proc. Natl. Acad. Sci. 74:2157. <br>
+  <a name="3">3.</a>  Sussman (1987) in Methods in Cell Biology, Vol. 28, Edited by J. Spudich, Academic Press. pp. 9-29
+  ISBN 0-12-564128-1<br>
+  <a name="4">4.</a>  Sussmann (1966) in Methods in Cell Physiology, Vol. 2. Edited by D. Prescott,   Academic Press, NY pp. 397-410.<br>
+  <a name="5">5.</a> Watts and Ashworth (1970) Biochem J. 119: 171-174. <br>
+  <a name="6">6.</a>  Williams & Newell (1976) Genetics 82, 287-307.
+
+-->
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+    </body>
+</html>

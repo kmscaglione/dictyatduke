@@ -1,0 +1,1908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Dictyostelium Strain History discussion</title>
+    </head>
+    <body>
+
+<h1>A short history of the axenic strains of Dictyostelium discoideum</h1>
+<p>Sussman and Sussman (1967; d3234) report the first isolation of an axenically
+growing strain Ax-1 by sub-culturing of their lab strain DdB (NC-4) in an HL5-like
+medium containing liver extract and fetal calf serum. There is no mention of mutagens.
+DdB is an NC-4 derivative selected by the continuous sub-culturing of colonies that
+showed more synchronous development and less spreading colony morphology. The first
+mentioning of DdB is by Brackenbury <i>et al.</i> (1974; d0154).</p>
+<p>Both Schwalb and Roth (1970; d1394) and Watts and Ashworth (1970; d2187) eliminate
+the serum and liver extract from the medium by prolonged sub-culturing of Ax-1.
+Again, there is no mention of mutagens. Watts and Ashworth call the isolate, which
+can grow in the simplified medium, Ax-2 (AX2). Ax-1 seems to have been lost.</p>
+<p>Cocucci and Sussman (1970; d0244) use the term HL-5 (HL5) medium to describe the
+simplified axenic medium.</p>
+<p>Loomis (1971; d2992) isolates independently an axenic strain with the use of
+ N-methyl-Ni-nitro-N-nitrosoguanidine, and calls this strain A3 (AX3).</p>
+<p>Williams <i>et al.</i> (1974; d1988) establish that at least two recessive mutations
+(axeA on linkage group II and axeB on linkage group III) are involved in axenic
+growth. North and Williams (1978; d1164) establish that a third locus axeC on
+linkage group II is involved in the axenic growth of strains AX2 and AX3.</p>
+<p>Franke and Kessin (1977; d0473) develop a defined minimal medium (FM) for the
+axenic strain AX3 (AX2 grows well in it too). Their axenic strain probably came
+by way of Frank Rothmanis laboratory. The same article contains a simplified
+recipe for HL5. Be careful though: the modified HL5 recipe is less concentrated
+than the original version, but shows the same growth kinetics. Occasionally a
+version of HL5 containing maltose rather than glucose is used (Cosson <i>et al.</i> 2002;
+d7294 and Korohada <i>et al.</i> 2002; d7353). A more detailed protocol on how to prepare
+FM can be found <a href="techniques/media/fm-medium.html">here</a>.</p>
+<p>The Kessin lab AX3 strain has since been renamed AX3-K or AX4 (Knecht <i>et al.</i> 1986; d0876).
+</p>
+<p><b>Jakob Franke, 7/30/2003</b></p>
+<br>
+<h1><i>Dictyostelium Strain History discussion</i></h1>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Rex L. Chisholm</o:Author>
+  <o:LastAuthor>Rex L. Chisholm</o:LastAuthor>
+  <o:Revision>1</o:Revision>
+  <o:TotalTime>1592</o:TotalTime>
+  <o:Created>1999-12-16T20:57:00Z</o:Created>
+  <o:LastSaved>1999-12-18T00:11:00Z</o:LastSaved>
+  <o:Pages>18</o:Pages>
+  <o:Words>5024</o:Words>
+  <o:Characters>28642</o:Characters>
+  <o:Company>Northwestern University Medical School</o:Company>
+  <o:Lines>238</o:Lines>
+  <o:Paragraphs>57</o:Paragraphs>
+  <o:CharactersWithSpaces>35174</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:TargetScreenSize>1024x768</o:TargetScreenSize>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	mso-fareast-font-family:"Times New Roman";}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:13.2pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:Arial;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;
+	font-style:italic;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Tue, 2 Nov 1999 14:41:46 -0600</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+richard sucgang phd &lt;rsucgang@bcm.tmc.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To: <a
+href="mailto:Dicty@listserv.ACNS.NWU.EDU"><span style='color:windowtext;
+text-decoration:none;text-underline:none'>Dicty@listserv.ACNS.NWU.EDU</span></a></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Chris
+LaRosa contacted me with some questions about the genealogy of the commonly
+used axenic strains, and I answered to the best of my knowledge, but I would
+like to throw the question and answers out to the people who may have a better recall
+of the history:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>NC-4
+--&gt; Ax1 (Sussman and Sussman)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Ax1<span
+style="mso-spacerun: yes"> </span>--&gt; Ax2 (Watts and Ashworth)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>NC-4
+--&gt; Ax3 (Loomis)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Ax3<span
+style="mso-spacerun: yes"> </span>--&gt; Ax3K / aka KAx3 (Franke and Kessin)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Ax3K
+--&gt; Ax4 (???)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Does
+this look right? It would be nice to hear from whoever can lay claim to first
+naming Ax4.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>-ricky</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Tue, 2 Nov 1999 13:21:26 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Rick Firtel &lt;rafirtel@ucsd.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+think think that KAx-3 (Ax-3K) and Ax-4 are the same.<span style="mso-spacerun:
+yes"> </span>I think Bill didn't like the Ax-3 name.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Best-</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rick</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Tue, 02 Nov 1999 16:48:20 -0500</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Richard Kessin &lt;rhk2@columbia.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+Colleagues,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='mso-tab-count:1'> </span>According to our records, which are
+pretty good, we sent strain AX3(1), which has been stored in our lab since 1974
+to Bill in June of 1980. Bill, thinking it looked different from other Ax3s,
+named in AX4. We sent the strain to Rick at the same time and he named it KAX3,
+for Kessin Ax3. The strain has been maintained in silica gel by Jakob Franke
+for the last 25 years and not by Rich Kessin, who nevertheless got the credit,
+thanks to Rick. I am glad to set the record straight. Neither Jakob nor I can
+remember where we got our original AX3 strain.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rich
+Kessin</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Tue, 2 Nov 1999 14:17:50 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+wloomis@ucsd.edu</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>In
+1984 or 1985 Dave Knecht used a stock of AX3 that we received back from Rich
+Kessin and selected for cells that transfomed well. He then picked a small,
+tight plaque and named it AX4 to keep it straight from other strains. This is
+the strain that we mapped and is now being sequenced. </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>While
+I was writing this I read Rich Kessin's e-mail on this subject. I am fairly
+sure that I sent him AX3 while he was at Harvard. He then took it to Columbia
+and it wended its way back here in 1980. It was one of the stocks that we
+tested in 1985 and seemed a good strain for transformation.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>In my
+opinion the name AX4 is cleaner than KAx-3, KAX 3, AK3k etc. There are many
+lyophilized stocks kept here.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bill</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 03 Nov 1999 08:29:57</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Prof. Wolfgang Nellen&quot; &lt;nellen@hrz.uni-kassel.de&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>just
+for the record:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+believe the first genetic difference between &quot;AX3-K&quot; (AX4) and
+&quot;AX3-L&quot; (AX3) was found by Steve Poole in Rick's lab when he looked
+at the discoidin genes and sourrounding Tdds (repetitive elements).</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>regards</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>wolfgang</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 11:47:04 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Jeff Williams &lt;j.g.williams@dundee.ac.uk&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+donit want to get involved in the origins of the Ax4 strain discussion but I
+have to respond to Bill Loomis's statement that the genome of Ax4 is now being
+sequenced. The decision to chose Ax4 over Ax2 was hotly debated among those of
+us involved in the genome project and the deciding factor was the availability
+of the YAC map for Ax4. Ax2 has significant experimental and biological
+advantages over Ax3(4) and Ax4 has a large duplication in its genome that will
+cost us extra effort. I am not trying to re-open a closed issue but I think it
+important that new comers to field understand that Ax2 holds many advantages -
+we should not be locked into Ax4 just because we will soon know its sequence.
+At the level of the individual gene differences with Ax4 will be very rare,
+only chromosomal organisation is likely to differ significantly.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff
+Willaim</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 08:51:11 -0600</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Rex L. Chisholm&quot; &lt;r-chisholm@nwu.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+&lt;Dicty@listserv.ACNS.NWU.EDU&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Hi
+Jeff,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+would find it interesting if you could list some of the experimental and
+biological advantages that Ax2 offers.<span style="mso-spacerun: yes">
+</span>Perhaps it would help us understand some of the differences.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rex</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 17:01:17 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Jeff Williams &lt;j.g.williams@dundee.ac.uk&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+Rex</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+know why we prefer Ax2 but rather than give a limited list perhaps we should
+poll the other groups and try to come up with a comprensive comparison with Ax3.
+It could be a very useful exercise.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 03 Nov 1999 17:51:43 +0100</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Pierre Cosson &lt;Pierre.Cosson@medecine.unige.ch&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+Everybody,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Since
+we are on this subject, does anyone know the relationship of the DH1 strain
+with the other strains ?</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Thanks</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Pierre
+Cosson</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 09:01:16 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+wloomis@ucsd.edu</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+don't think it helps to focus on the 300 kb duplication on chromosome 2 that we
+found in AX4 but not in AX2. How many duplications are present in AX2 and
+absent in AX4?</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>A more
+important point is that the microbial life style of Dicty leads to the
+accumulation of random chromosomal changes during serial passage.<span
+style="mso-spacerun: yes"> </span>People like David Soll are well aware that
+it is essential to use a standard stock and not sub-culture more than necessary.
+The AX2 strain that you use and like may not be genetically the same as another
+stock called AX2 in another lab. We should keep<span style="mso-spacerun:
+yes"> </span>genetic uniformity in mind as we push our analyses to more subtle
+processes.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bill</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 11:22:11 -0600</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Rex L. Chisholm&quot; &lt;r-chisholm@nwu.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+&lt;Dicty@listserv.ACNS.NWU.EDU&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+agree it could be a useful exercise.<span style="mso-spacerun: yes"> </span>I
+use Ax3 because that's what Harvey used.<span style="mso-spacerun: yes">
+</span>Not the best reason.<span style="mso-spacerun: yes"> </span>Now we have
+a ton of strains with knockouts and various transgenes in Ax3 which is a better
+reason, but still not the best.<span style="mso-spacerun: yes"> </span>Since
+you know why you like Ax2, why don't you start with your list.<span
+style="mso-spacerun: yes"> </span>I'm sure everyone else will be stimulated to
+add their input.<span style="mso-spacerun: yes"> </span>I'll collate
+everything and if it would be useful can even set up a web page that lists the
+advantages of each strain.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rex</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 18:30:57 +0100 (MET)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+macw@zi.biologie.uni-muenchen.de (Harry MacWilliams)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Hi
+everyone,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>If we
+are really looking for a standard, shouldnt we think about NC4?<span
+style="mso-spacerun: yes"> </span>Aren't all axenic strains the results of
+long and little-understood selection procedures?<span style="mso-spacerun:
+yes"> </span>And arent they all a little wierd, being as they go around
+phagocytosing liquid, and express development genes during growth?</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Harry
+MacWilliams</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 09:57:36 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+wloomis@ucsd.edu</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Harry,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Of
+course you are right that the bench mark strain is Raper's NC4. Many years ago
+he gave me one of the first lyophils that he made in 1935. I keep it in a
+reliquary.<span style="mso-spacerun: yes"> </span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Keep
+in mind that axenic strains do not express developmental genes when they are
+grown the same way as NC4 ie. on bacterial lawns.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bill</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 12:04:47 -0600</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Rex L. Chisholm&quot; &lt;r-chisholm@nwu.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+&lt;Dicty@listserv.ACNS.NWU.EDU&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I'm
+not sure we should be looking for a standard.<span style="mso-spacerun: yes">
+</span>We're probably too far down too many different roads for that.<span
+style="mso-spacerun: yes"> </span>To my thinking the more valuable would be to
+understand the differences and any resulting strengths and weaknesses.<span
+style="mso-spacerun: yes"> </span>Regarding NC4, what is the status of
+molecular genetic manipulation of NC4?<span style="mso-spacerun: yes">
+</span>Any successful knockouts?<span style="mso-spacerun: yes"> </span>How
+easily is NC4 transformed?</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 03 Nov 1999 19:07:53 +0100</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Michael Schleicher &lt;Michael.Schleicher@bio.med.uni-muenchen.de&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Hi
+Rex,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+like your sentence &quot;I use AX3 because that's what Harvey
+used...&quot;.<span style="mso-spacerun: yes"> </span>Perhaps in some sort of
+sentimental way I like AX2 because I trust the strain. During my time with
+Guenther Gerisch I learned how rigorous one has to be to keep biological
+material clean and homogeneous.<span style="mso-spacerun: yes"> </span>Ages
+ago (sorry HERR GERISCH), Guenther Gerisch recloned AX2 (clone 214, therefore
+in his papers &quot;AX2-214&quot;). This was and still is the &quot;holy
+stock&quot; of spores in his freezer. Once a year one aliquot was taken from
+this untouchable stock and analyzed for growth in axenic medium and on bacteria,
+for the strain's ability to develop in exactly the same well known time frame,
+in its expression of contact site A and other markers during early and later
+hours of development etc. etc. Only if the material was flawless, a batch of
+about 100 aliquots of spores was prepared and stored in liquid nitrogen. Once a
+week during the following year fresh aliquots from this batch were used for
+experiments. After about one year the whole procedure was repeated. I try<span
+style="mso-spacerun: yes"> </span>to be as rigorous with my AX2 as I learned
+it from Guenther Gerisch.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style="mso-spacerun: yes"></span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>His
+care for a good AX2 strain is reason enough (for me) to believe in AX2 as the
+&quot;wild type&quot; in our genetic work. If I recall correctly, Richard
+Kessin treated his AX3 in a similar way as Guenther Gerisch did. I was a little
+bit shocked when I read Bill's statement about the different AX2 strains in
+Europe. I do not agree.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Michael</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 18:33:02 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Robert Insall &lt;R.H.Insall@bham.ac.uk&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: DH1</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>DH1
+was made by Dale Hereld in the Devreotes lab.<span style="mso-spacerun: yes">
+</span>It's an AX3 parent with the entire coding sequence of pyr56 removed
+using a PCR-constructed splint and FOA selection.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Robert
+Insall</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 11:48:34 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Rick Firtel &lt;rafirtel@ucsd.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+Boys and Girls and children of all ages:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+think this has gotten a bit silly.<span style="mso-spacerun: yes">
+</span>There are reasons, historical or otherwise, for using different
+strains.<span style="mso-spacerun: yes"> </span>Having collaborated with Jeff
+for a while, I see advantages for Ax2 on some things but like KAx-3 (our Ax-3
+or Ax-4) for others (signaling during aggregation, </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>they
+self oscillate nicely).<span style="mso-spacerun: yes"> </span>These type of
+chauvinistic comments helps no one and gets us no where.<span
+style="mso-spacerun: yes"> </span>To try to suggest that everyone should shift
+to one strain or another is silly and not very congenial.<span
+style="mso-spacerun: yes"> </span>I have thousands of strains in the lab as do
+other people and am not about to change and, as others have commented, many
+people are in the same situation.<span style="mso-spacerun: yes"> </span>Maybe
+we can stop this now before others get pissed off.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Best-</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rick</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 14:01:14 -0600</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Rex L. Chisholm&quot; &lt;r-chisholm@nwu.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+&lt;Dicty@listserv.ACNS.NWU.EDU&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rick,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+believe the discussion is potentially useful, but agree with you that no one is
+going to decide to change strains when they have a big investment.<span
+style="mso-spacerun: yes"> </span>What I hope to learn is the advantages that
+keep getting referred to, including those you allude to in your message.<span
+style="mso-spacerun: yes"> </span>It would help me make intelligent decisions
+about which strain to use for a particular experiment.<span
+style="mso-spacerun: yes"> </span>I agree with you that this should not become
+a &quot;mine is better than yours&quot;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>discussion.<span
+style="mso-spacerun: yes"> </span>But I still would like to better understand
+the strengths and weaknesses of the main strains that people use--and this
+discussion could help accomplish that.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Best,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rex</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 15:08:21 -0500 (EST)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+mxr37@madeline.INS.CWRU.Edu (Maribel Rico)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Yeah
+Rick,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>This
+might be childish but now I got very curious about the dark origins of the
+several Dicty strains....and why one would use this rather than that. I agree
+it will be useful information and seem kind of inaccessible for me nowadays.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Maribel
+Rico</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 03 Nov 1999 15:29:39 -0500</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Tom Egelhoff &lt;tte@po.cwru.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>David
+Knecht should weigh in on the NC4 issue.<span style="mso-spacerun: yes">
+</span>He isolated a spontaneous axenic isolate of NC4 (bravely renamed NC4-A2)
+that we have been working with.<span style="mso-spacerun: yes"> </span>It
+grows happily in HL5, fruits robustly (i.e. large fruiting bodies, like NC4 and
+unlike Ax2 &amp; 3 which for us give much smaller fruiting bodies), and I
+believe it is transformable, but Knecht would need to speak to that point.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Tom
+Egelhoff</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 19:31:59 -0500 (EST)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Jakob<span style="mso-spacerun: yes"> </span>Franke &lt;jf31@columbia.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The
+stream of strain history messages has become so large, I may as well add to it.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>In:
+Meth. Cell Biol. Vol. 28, page 13 (1987), Maurice Sussman writes a short
+history of the axenic strains. The parental strain was DdB, which was his lab
+strain. DdB also was the strain Bill Loomis used.<span style="mso-spacerun:
+yes"> </span>DdB did not look much like the original NC-4 that I saw many
+years later.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The
+history Raper gives (pg. 73-75 of his book) is a bit more precise and indicates
+that AX2 was a derivative of AX1.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>'Our'
+strain AX4 (AX3K) was a clone of AX3 that was used to develop the minimal
+medium (FM).</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The
+genealogy would look like this:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>NC-4
+--&gt; DdB --&gt; AX1 --&gt; AX2 --&gt; AX3 --&gt; AX4 = AX3K</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jakob
+Franke.</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Wed, 3 Nov 1999 16:52:35 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Rick Firtel &lt;rafirtel@ucsd.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>J-</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Thanks
+for clarifying what seemed to be muddy waters and establishing the
+genealogy.<span style="mso-spacerun: yes"> </span>I also think that KAx-3
+(Ax-3K) and Ax-4 are essentially the same strain, especially as wild-type
+strains used to travel around the building and back and forth across the street
+in La Jolla, although they have been separate for the last 5-8 years.<span
+style="mso-spacerun: yes"> </span>As long as people define their strains in
+papers, it should be clear to all.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Best-</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Rick</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 04 Nov 1999 09:56:15</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Prof. Wolfgang Nellen&quot; &lt;nellen@hrz.uni-kassel.de&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+agree with Michael and assume that at least the &quot;Gerisch-offspring&quot;
+keeps to the ritual!</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>to
+start with differences:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>we
+used AX4 and AX2 to look to cAMP-pulse induced ALF transcription.<span
+style="mso-spacerun: yes"> </span>Pulse induction is observed in AX3 (actually
+K-AX3 = AX4) but not in AX2.<span style="mso-spacerun: yes"> </span>This is
+due (at least for ALF) to higher endogenous cAMP production of AX2 so there is
+no response to additional pulses. (This is of course not true for csA, the
+Gerisch-group standard gene to check for cAMP responsiveness).<span
+style="mso-spacerun: yes"> </span>Ref. is May <i>et al.</i>, Mech. of Dev. 33, 147,
+1991 and May <i>et al.</i>, MCB 9, 4653, 1989.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>regards</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>wolfgang</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 04 Nov 1999 10:05:21</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Prof. Wolfgang Nellen&quot; &lt;nellen@hrz.uni-kassel.de&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>let's
+compile a page with strain differences anyway. I believe this is important to
+sort out seemingly contradicting data obtained with different strains!<span
+style="mso-spacerun: yes"> </span>I agree with Rick that the use of different
+strains is very useful but to nail down these differences is also!</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>wolfgang
+</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 4 Nov 1999 10:09:41 +0100</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+wetterau@zi.biologie.uni-muenchen.de (Birgit Wetterauer)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>NC4
+can be transformed quite easily.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>see</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Wetterauer,
+B.W., Morandini, P., Hribar, I., Hamker, U., Singelton, R. and MacWilliams,
+H.K. (1996)<span style="mso-spacerun: yes"> </span>Transformation of nonaxenic
+Dictyostelium discoideum strains using a new selection cassette. Plasmid 36,
+169-181</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Birgit
+Wetterauer</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 4 Nov 1999 12:12:51 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Jeff Williams &lt;j.g.williams@dundee.ac.uk&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+All,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>If I
+can first explain why I wrote the original letter. I want to avoid a situation
+some years down the line when mine and other &quot;European&quot; papers are
+criticised for not using the &quot;standard axenic strain&quot; - there is no
+such thing; its just a question of &quot;horses for courses&quot;.<span
+style="mso-spacerun: yes"> </span>If you want a basic<span
+style="mso-spacerun: yes"> </span>cell for cell biology or want to study early
+signalling Ax3 and its derivatives are fine. However,<span style="mso-spacerun:
+yes"> </span>the Ax4 isolate we have used is clearly aberrant in some aspects
+of late development. The most dramatic example of this came from the
+collaboration Rick alluded to - to characterise the StatA REMI disruptant, that
+was isolated in Ax4.<span style="mso-spacerun: yes"> </span>All the markers we
+have generated over the years were originally characterised in Ax2 but, working
+with Rick, we found significant differences between Ax2 and Ax4 and eventually
+had to re-generate the disruption in Ax2 and analyse the markers there. The
+most worrying difference was that the ecmB:lacZ reporter was expressed
+throughout the prestalk region of Ax4. In slugs of an Ax2 strain ecmB is a
+marker for commitment to stalk cell differentiation and is expressed in a cone
+of pstAB cells in the slug tip. We and John Sternfeld showed that the pstAB
+cells are the precursors of the inner basal disc. The important point is that
+John used wild type NC4 cells - so the Ax2 pattern is the correct one. To the
+non-cognoscenti this may all sound<span style="mso-spacerun: yes">
+</span>obtruse but it showsthat these Ax4 slugs have a prestalk zone composed
+of cells expressing a marker that is normally only expressed when a prestalk
+cell commits itself to stalk cell differentiation. This is presumably the tip
+of on an iceberg of mis-expression.<span style="mso-spacerun: yes"> </span>I
+totally agree that Ax2 can be mis-handled, with bad consequences.<span
+style="mso-spacerun: yes"> </span>I also agree that the parental strain NC4 is
+the benchmark and Bergit's EMAIL encourages me to try using it with the cell
+type markers. Adrian Harwood made a &quot;minimal manipulation&quot;,<span
+style="mso-spacerun: yes"> </span>axenic derivative of NC4, by simply
+selecting cells on plastic for growth in axenic medium, but we have never done
+side by side transformations with Ax2 to determine relative efficiencies. Adrian's
+strain would have been a good candidate for genome sequencing as it never
+suffered the mutagenesis that was used to generate Ax3 (Watts and Ashworth
+generated Ax2 by selecting unmutagenised cells).<span style="mso-spacerun:
+yes"> </span>Ax3 has a duplication (Bill - In your 1995 Genetics paper it was
+1Mb not 300Kb - did the subsequent YAC mapping reduce the estimate?) but Ax2
+does not have that particular duplication. Once again, I am not trying to
+re-open a closed debate - Ax4 is being sequenced.<span style="mso-spacerun:
+yes"> </span>The priority now is to make sure that is done as rapidly and
+accurately as joint international resources allow. What I think will be
+valuable is to summarise the Ax2/Ax4 differences so that we can all chose the
+best strain for our particular purposes.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 4 Nov 1999 10:00:51 -0500 </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+&quot;Mcnally, James (NCI)&quot; &lt;mcnallyj@dce41.nci.nih.gov&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+&quot;'Dicty@listserv.ACNS.NWU.EDU'&quot; &lt;Dicty@listserv.ACNS.NWU.EDU&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Regarding
+strain differences, we have compared morphogenesis and cell motion in</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>the
+AX-2 and KAX-3 strains used in our lab.<span style="mso-spacerun: yes">
+</span>We found the following differences:</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>AX-2
+- aggregation was later, cell trajectories in the mound were a combination of
+random and radial, optical density waves were concentric target patterns,
+culmination tended to be direct (i.e. no migrating slug)</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>KAX-3
+- aggregation was earlier, cell trajectories in the mound were random early and
+then rotational, optical density waves were rotating spirals, slugs tended to
+migrate before culminating.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The
+differences in culmination mode tendencies encouraged us to look at how
+altering buffering conditions could affect some of the other morphogenetic
+features we looked at.<span style="mso-spacerun: yes"> </span>In particular we
+found that under the appropriate buffering conditions we could interchange not
+only slug migration mode, but also mound cell motion patterns (e.g. AX-2 mounds
+could exhibit rotational motion, and KAX-3 mounds could exhibit random and
+radial motion.)<span style="mso-spacerun: yes"> </span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Our
+conclusion was that development in general in Dictyostelium is plastic, and
+that this plasticity is retained in each of the strains, although each strain
+has different developmental tendencies.<span style="mso-spacerun: yes">
+</span>So we would also argue that with respect to morphogenesis, there is no
+&quot;right strain&quot; to work with, since each strain exhibits behavior that
+the other strain is capable of exhibiting.<span style="mso-spacerun: yes">
+</span>But for example, if one wants to specifically study rotational motion,
+then the KAX-3 strain is a better choice.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>For
+details, see Kellerman and McNally, Develop. Biol. 208:416-429 (1999)<span
+style="mso-spacerun: yes"> </span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jim</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 4 Nov 1999 09:42:01 -0800</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+wloomis@ucsd.edu</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Concerning
+the possibility that ecmB is expressed in a different pattern in AX4 than in
+AX2, the in situ hybridization data of Ricardo Escalante shows the exact same
+pattern of ecmB in AX4 slugs that your lab had previously described in an AX2
+slug. Namely, a central core of cells containing ecmB mRNA at the anterior of
+slugs. Take a look at Figures 2K and 2L in: </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Escalante,
+R. and Loomis, W. F. (1995) Whole-mount in situ hybridization of</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Cell-type
+Specific mRNAs in Dictyostelium.<span style="mso-spacerun: yes"> </span>Devel.
+Biol. 171:262-266.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The strain
+that you and Rick were working with may have genetically diverged from AX4.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Our
+1995 Genetics paper gave the size of the duplication from one end to the other
+- ie. 300 &#177; 200 kb on one side is tandemly duplication as an inversion on the
+other side. The ends of the duplication are not defined with an accuracy of
+greater than about 200 kb. Sequencing will provide the exact size and gene
+content of the 300 &#177; 200 kb duplication (about 0.1% of the genome).</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bill</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Fri, 5 Nov 1999 08:04:12 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+keith.williams@proteomesystems.com</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Cc:
+keith.williams@proteomesystems.com</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dear
+Dicty freaks</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Perhaps
+I can take a step further back for newcomers to the field and point out that
+there are other isolates!</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+think it is interesting that the &quot;type&quot; strain, in our case NC4, does
+not always reflect the average out there in the wild, probably because the type
+strain almost always represents and early isolate that is cultured for years
+before being properly stored.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>One of
+the key features of the strain that we call NC4 is that it provides phage-like
+plaques on bacterial agar plates.<span style="mso-spacerun: yes"> </span>I
+think Maurice Sussman is responsible for this as I have earlier isolates of NC4
+that are more spready.<span style="mso-spacerun: yes"> </span>If you take a
+wild strain (WS380B, WS576 </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>etc)
+when you plate it clonally on SM agar, you first see the colony when it is
+about 1-2cm across as the cells don't eat their way down through the bacteria
+but instead spread out.<span style="mso-spacerun: yes"> </span>This is a
+disaster for picking out individual colonies as you only get about 8 on a plate
+before they get mixed up.<span style="mso-spacerun: yes"> </span>Maurice
+understood that for many lab operations you want to be able to pick out
+clones.<span style="mso-spacerun: yes"> </span>NC4 (and the axenic
+derivatives) give you 100 or so plaques on a plate.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>My
+lab has been interested in the slug stage and we found that NC4 and its progeny
+was not well suited for such studies, so we have done most of our studies on
+WS380B.<span style="mso-spacerun: yes"> </span>The point is that NC4 behaves
+as an &quot;old&quot; slug from the beginning, and axenic derivatives are even
+more pronounced.<span style="mso-spacerun: yes"> </span>This means that even
+when you get the slugs to move, they leave very large numbers of cells in their
+trails (ie they have poor control of their rear).<span style="mso-spacerun:
+yes"> </span>WS380B on the other hand migrates for days and exhibits quite
+different phases in it's migration.<span style="mso-spacerun: yes"> </span>In
+the beginning it forms the tip so fast that the front gets going before the
+back is properly formed.<span style="mso-spacerun: yes"> </span>This means you
+have a multicellular organism that is well formed at the front and is being
+assembled at the back.<span style="mso-spacerun: yes"> </span>So the slug gets
+longer as it moves.<span style="mso-spacerun: yes"> </span>Then there is a
+period when the organisation is sorted out and the rear of the slug </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>gets
+pulled up.<span style="mso-spacerun: yes"> </span>You then have a lovely slug
+that moves for several days with only small loss of cells from the rear as it
+migrates.<span style="mso-spacerun: yes"> </span>Finally in old age the
+control of the rear breaks down and the tail elongates and cells get dropped
+behind.<span style="mso-spacerun: yes"> </span>You can't have such a </p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>precise
+and clear slug in NC4 strains.<span style="mso-spacerun: yes"> </span>We chose
+to follow the biology and we learned a lot from it.<span style="mso-spacerun:
+yes"> </span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I am
+not concerned which strain gets sequenced as we know that there is a basic
+conservation of organisation (you have genetic maps!!), although the plasticity
+of the chromosomal organisation is pretty scary as Dennis Welker and I found
+when we were looking at translocations, where large chunks of chromosome got
+duplicated, chromosomes fused, etc.<span style="mso-spacerun: yes"> </span>We
+know from H.pylori where two isolates have been fully sequenced that there are
+only(???) a hundred or so genes different between the isolates.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Finally
+just a small comment about the AX2 vs AX3 story.<span style="mso-spacerun:
+yes"> </span>I think these strains are very similar genetically and I wouldn't
+be surprised if many of the differences being talked about also occur BETWEEN
+isolates of the same strain<span style="mso-spacerun: yes"> </span>(ie the
+within lab strain variation of AX3 or AX2 may be almost as great as the AX2 vs
+AX3 variation).</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>The
+Gerisch approach is the model for anyone starting out.<span
+style="mso-spacerun: yes"> </span>If you follow his protocols you'll be able
+to be confident that you have the same organism year after year.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bring
+on the genome as it is going to revolutionise the field.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>cheers</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>keith</p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Thu, 4 Nov 1999 22:30:09 -0500</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+David Knecht &lt;knecht@uconnvm.uconn.edu&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+RE: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><br>
+I have been out of touch, but I guess I should weigh in on several issues
+here.<span style="mso-spacerun: yes"> </span>First, as to the naming of AX4, I
+guess I have to admit to being the major culprit.<span style="mso-spacerun:
+yes"> </span>My recollection of events is slightly different from Bill's.<span
+style="mso-spacerun: yes"> </span>When Wolfgang Nellen and I were struggling
+to get transformation to work, there was a point at which I got cells from him
+(the Firtel lab,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>that
+is) to see if there was any difference in those cells and ours.<span
+style="mso-spacerun: yes"> </span>In those days, Rick's lab every so often
+came downstairs to get starter cultures so my assumption was that I was getting
+back a variant of what we gave them.<span style="mso-spacerun: yes">
+</span>The cells I received were, as I recollect, called AX3, but behaved very
+differently from our Loomis lab AX3.<span style="mso-spacerun: yes"> </span>I
+had no knowledge of KAx3 at that time, and so I felt it appropriate to extend
+the naming technology when we published work with the strain, and so we beget
+AX4.<span style="mso-spacerun: yes"> </span>The difference became particularly
+obvious when we later made myosin mutants by antisense.<span
+style="mso-spacerun: yes"> </span>Our lab AX3 did not form large
+multinucleated cells unless you grew them in shaking suspension, while
+&quot;AX4&quot; made multinucleates on dishes routinely.<span
+style="mso-spacerun: yes"> </span>I have no data to claim that AX4 is not KAX3
+and so all the comments made about history are probably correct.<span
+style="mso-spacerun: yes"> </span>That said, I have to also agree with
+comments of Michael and others, that maintenance of strains is a big problem in
+the community.<span style="mso-spacerun: yes"> </span>We have received
+numerous strains from other labs with designations of AX3, AX2 etc. that were
+clearly divergent from the original isolates, and so I agree with the comment
+that the difference between different lab AX3's is likely to be as great as
+that between AX2 and AX3.<span style="mso-spacerun: yes"> </span>This should
+scare all of us, since this is a preventable problem and will only cause us
+increasing problems as technology for examination of phenotypes gets more
+sophisticated.<span style="mso-spacerun: yes"> </span>Anyone who has tried
+collaborating with a lab that uses different lab stocks I am sure has faced the
+problems this creates.<span style="mso-spacerun: yes"> </span>While I sympathize
+with Rex's argument that we all have lots of history built up with particular
+stocks, I think that it would make sense to reconsider this issue as we enter
+the</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>age
+of teh genome sequence.<span style="mso-spacerun: yes"> </span>I would not
+argue that we should all work on AX2 or KAx3, but I would argue that if we say
+AX2, we should all have the same AX2.<span style="mso-spacerun: yes">
+</span>Some time ago, I proposed that perhaps we should identify a strain
+center or repository and have someone distribute to all those in the community
+who are concerned, a vial of the &quot;real thing&quot; with the intent that we
+would all maintain Gerisch level of fastidiousness thereafter. <span
+style="mso-spacerun: yes"></span>Rich could be it for Kax3, and someone in
+Europe for AX2.<span style="mso-spacerun: yes"> </span>I can provide</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>NC4A2,
+a strain that we like and use routinely.<span style="mso-spacerun: yes">
+</span>Obviously, no one is going to recapitulate all their mutants in all new
+strains, but my experience says that by looking at different parental strains
+you often learn important information about your gene (witness the complete supression
+of the lethality of the myosin knockout in KAX3 on plastic).<span
+style="mso-spacerun: yes"> </span>We</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>see
+differences in phagocytosis, macropinocytosis, SM plaques, and the phenotype of
+Rac mutations depending upon the strain in which we look.<span
+style="mso-spacerun: yes"> </span>Some mutants have the same effect in all
+strains, some have subtle differences, some completely lack comparable
+phenotype.<span style="mso-spacerun: yes"> </span>I consider this a benefit
+since any phenotype that is conserved, is really clear and important, and one
+that is strain specific has to be considered more cautiously. However, you
+might pick up hints that you wouldn't see otherwise by looking in different
+parentals.<span style="mso-spacerun: yes"> </span>Therefore, we routinely make
+mutants in several different parental background and compare phenotypes.<span
+style="mso-spacerun: yes"> </span>I would also point out that we are not
+unique as a community in this regard.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+have heard exactly the same comments made about NIH3T3 cells and the variation
+in lab stocks.<span style="mso-spacerun: yes"> </span>Also, I remember the
+problems created when two labs knocked out yeast clathrin, and one was lethal,
+and the other not.<span style="mso-spacerun: yes"> </span>The advantage they
+had is that the had the genetics to find out what the gene was that surpressed
+the clathrin null mutation. We don't, and so I think we have to face this
+problem head on and deal with it.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>As to
+Tom's question about NC4A2, we routinely transform it.<span
+style="mso-spacerun: yes"> </span>In fact, we see little difference in
+transformation efficiency between the different parental strains that we have
+used.<span style="mso-spacerun: yes"> </span>We are trying out the NC4 transformation
+ala Harry and Birgit now, but this will obviously not solve all problems, since
+those of us interested in vegetative cell biology really like axenic growth
+conditions for some experiments.<span style="mso-spacerun: yes"> </span>NC4A2
+helps some, but it does not form AX2 like tight plaques on bacteria so it is terrible
+for SM screening or cloning.<span style="mso-spacerun: yes"> </span>One other
+point to clarify is that this strain does not form NC4 sized fruiting bodies in
+my hands.<span style="mso-spacerun: yes"> </span>It is similar to KAX3/AX4 in
+size. In fact, I tried several times, and could not isolate a spontaneous
+axenic strain with NC4 sized fruiting bodies.<span style="mso-spacerun: yes">
+</span>Perhaps there is a linkage between the pinocytosis necessary for axenic growth
+and some later signalling event related to the breakup of the mounds.<span
+style="mso-spacerun: yes"> </span></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Dave
+Knecht</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<div style='border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in'>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none;
+border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+mso-padding-alt:0in 0in 1.0pt 0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</div>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Date:
+Fri, 5 Nov 1999 12:00:01 +0000</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Reply-To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Sender:
+owner-Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>X-Phforward:
+V2.0@iris</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>From:
+Jeff Williams &lt;j.g.williams@dundee.ac.uk&gt;</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>To:
+Dicty@listserv.ACNS.NWU.EDU</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Subject:
+Re: Strain History</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Bill</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Thanks
+for the information and please can we all have your isolate of Ax4,</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>as I
+said earlier, the one we have has<span style="mso-spacerun: yes"> </span>a
+staining pattern with ecmB:lacZ</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>that
+looks exactly like an ecmA:lacZ stain pattern. I totally agree about</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>divergence
+of poorly maintained strains so perhaps what we collectively</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>need
+to do is to set up some kind of strain centre/web page - where the</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>youngest
+possible isolates of the commonly used strains are held and where</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>the
+information about their properties is also held.<span style="mso-spacerun:
+yes"> </span>What is incontestable</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>is
+that there are significant differences between the axenic strains</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>currently
+in circulation and, without the classical genetics needed to</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>produce
+isogenic strains, we have no way other than caution and wide</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>dissemination
+of information to collectively protect ourselves.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>I
+remain confused about the duplication but that is best dealt with in one</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>to
+one communication.</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'>Jeff</p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+</body>
+                    <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>

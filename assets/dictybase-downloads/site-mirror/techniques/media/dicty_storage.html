@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/inc/js/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/inc/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/inc/css/body.css">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/inc/js/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/inc/js/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/inc/js/custom/menu.js">
+</script>
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  		ga('create', 'UA-16352781-1', 'auto');
+  		ga('send', 'pageview');
+	</script>
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium discoideum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/"><img src="/inc/images/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                                <div id="container-help">
+                                    <img src="/inc/images/help-left.gif">
+                                    <div>
+                                        <form action="/db/cgi-bin/search/search.pl">
+                                            <input id="search-input" name="query" type="text" size="30" value="use * as a wildcard character"> <nobr><input type="submit" name="submit" value="Search All"> <input type="submit" name="genes_only" value="Gene Names Only"></nobr>
+                                        </form>
+                                    </div>
+                                    <!--
+                                    <img src="/inc/images/help-right.gif">
+                                    -->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/inc/images/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel" href="#">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/">Dictyostelium discoideum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+
+                                                                <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Explore</a>
+                                                <div id="learn" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tutorial/">Learn About Dicty</a>
+                                                            </li>
+																														<li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/teaching_tools/index.html">Teaching Protocols</a>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictyostelium_genomics.html">Dictyostelium Genome Resources</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/genome_statistics.html">D. discoideum Genome Statistics</a>
+                                                            </li>                                                            
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Multimedia/index.html">Pictures/Videos</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/dictyArt/index.html">dictyArt</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/other_links.htm">Useful Links</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Virtual_Library/VLdicty.html">Virtual Library Dictyostelium Page</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Research</a>
+                                                <div id="research" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/techniques/index.html">Techniques</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_anatomy_ontology.html">Dicty Anatomy Ontology</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/all-mutants.html">Mutant Phenotypes</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/phenotype/movies/index_dictybase.php">HTP Phenotyping at Princeton</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=44689">Codon Bias Table</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/strain_history.htm">Axenic Strains History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/reference_database/index.html">Franke Dictyostelium Reference Library</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Tools</a>
+                                                <div id="tools" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/jbrowse/">New JBrowse</a>
+                                                            </li>
+																													<li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Genome Browser</a>
+                                                                <div class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a
+                                                                                class="yuimenuitemlabel"
+                                                                                href="/browser/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="#">Legacy Genome Browser</a>
+                                                                <div id="pim" class="yuimenu">
+                                                                    <div class="bd">
+                                                                        <ul class="first-of-type">
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=1:1..30000">Chromosome 1</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=2:1..30000">Chromosome 2</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=3:1..30000">Chromosome 3</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=4:1..30000">Chromosome 4</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=5:1..30000">Chromosome 5</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=6:1..30000">Chromosome 6</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=M:1..30000">Mitochondrial DNA</a>
+                                                                            </li>
+                                                                            <li class="yuimenuitem">
+                                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/ggb/gbrowse/discoideum/?name=R:1..30000">Ribosomal DNA</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/blast">BLAST</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/tools/convert">ID Converter</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/biomart/martview">dictyMart</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="http://www.textpresso.org/cgi-bin/dictybase/tfd.cgi">Textpresso</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dictycyc_info.html">Biochemical Pathways</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Downloads/Tools.html">Third Party Tools</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Stock Center</a>
+                                                <div id="stock-center" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/StockCenter.html">Dicty Stock Center Home</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/AboutStockCenter.htm">About Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/searchform.pl">Search Stock Center</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OrderInfo.html">Order</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/Deposit.html">Deposit</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/strainlist.pl">Strain Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/SC/plasmid_catalog.pl">Plasmid Catalog</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/additional_materials.html">Additional Materials</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/StockCenter/FAQ_StockCenter.html">Stock Center FAQ</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/nomenclature_guidelines.html">Nomenclature Guidelines</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/StockCenter/OtherStockCenters.html">Other Stock Centers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/Downloads/">Download</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="#">Community</a>
+                                                <div id="community" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/abstract_submit">Submit an Abstract to dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/newsletter/">Read the dictyNews</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/ListServ_archive/">ListServ Archive</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/db/cgi-bin/dictyBase/colleague/colleagueSearch">Add or update your colleague profile</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/DictyAnnualConference/">Dicty Annual Conference</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/jobs.htm">Job opportunities</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a
+                                                                class="yuimenuitemlabel"
+                                                                href="/History/index.html">History</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/Dicty_Info/dicty_labs.html">Dicty Labs on the Web</a>
+                                                            </li>
+                                                            <li class="yuimenuitem">
+                                                                <a class="yuimenuitemlabel" href="/CitingDictyBase.htm">Citing dictyBase and the Dictyostelium Genome Project</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/inc/images/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/About_dictyBase/">About Us</a> 
+                                <a href="/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                                <a href="/FAQ/HelpFilesIndex.html">Help</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+<script>
+
+var searchInput = YAHOO.util.Dom.get('search-input');
+YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+    var initData = searchInput.value;
+    if (initData.match('use')) {
+        searchInput.value = '';
+    };
+});
+</script>
+    </body>
+</html>
+
+<div class="wrapper threecol-wide">
+    <div id="subnav">
+        <div class="inner_container">
+            <!--
+            <h3>
+                Welcome to dictyBase, your central resource for the biology and genomics of the social amoeba <i>Dictyostelium discoideum</i>
+            </h3>
+            -->
+        </div>
+    </div>
+    <div class="wrapper-left-center">
+        <div class="wrapper-columns">
+            <div class="column-center">
+                <div id="column-center-content">
+                    <!-- Central Column start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Dictyostelium Permanent Stocks</title>
+    </head>
+    <body>
+        <h1>
+            Protocols for long-term storage of <i>Dictyostelium discoideum</i>
+        </h1>
+        <p>
+            <b>Please cite: Fey, P., Kowal, A. S., Gaudet, P., Pilcher, K. E., Chisholm, R. L. (2007) 'Protocols for growth and development of Dictyostelium discoideum.' <a href="http://www.nature.com/nprot/journal/v2/n6/full/nprot.2007.178.html">Nat Protoc 2:1307-16</a></b>
+        </p>
+        <p>
+            Here we describe conditions for the preparation and use of permanent Dictyostelium stocks. Other protocols that used to be combined as 'General Dictyostelium Techniques' are methods for <a href="/techniques/media/dicty_growth.html">Dictyostelium growth</a> and for <a href="/techniques/media/dicty_development.html">Dictyostelium development</a>.
+        </p>
+        <hr>
+        <h3>
+            Contents
+        </h3>
+        <div style="margin-left: 2em">
+            <a href="#intro">General considerations for long-term storage of Dictyostelium</a><br>
+            <a href="#silicas">Long-term storage of Dictyostelium on silica gel</a><br>
+            <a href="#silicar">Starting cultures from silica stocks</a><br>
+            <a href="#freeze">Freezing Dictyostelium cells for long-term storage</a><br>
+            <a href="#thaw">Thawing Dictyostelium cells</a><br>
+            <a href="#nonax">Freezing and recovery of non-axenic cells</a><br>
+            <a href="#spores">Freezing spores</a><br>
+            <a href="#notes">Stock Center Notes</a><br>
+            <br>
+            <a href="#materials">Materials</a><br>
+        </div>
+        <hr>
+        <p>
+            <a name="intro" id="intro"></a>
+        </p>
+        <h3>
+            General considerations for long-term storage of Dictyostelium
+        </h3>
+        <p>
+            To prevent strains from accumulating random mutations, fresh cultures must be initiated from a permanent stock every 2-4 weeks. When making permanent stocks, use fresh, healthy cells. When receiving new cells it is good practice to check morphogenesis by <a href="/techniques/media/dicty_growth.html#liveSMP">plating cells on bacterial plates</a> to form fruiting bodies (and leave cells on plates to develop). Once mature fruiting bodies have formed, such plates can be directly used for storage of spores on silica gel, which acts as a desiccant. Alternatively, <a href="/techniques/media/dicty_growth.html#clone">isolate clones</a> and <a href="/techniques/media/dicty_growth.html#axesus">grow axenic cells</a> for storage of frozen amoebae. Non-axenic strains and spores can also be frozen.
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="silicas" id="silicas"></a>
+        </p>
+        <h3>
+            Long-term storage of Dictyostelium on silica gel
+        </h3>
+        <ol>
+            <li>Fill 2-3 ml screw-cap glass vials to approximately one-half with <a href="#milk">silica gel</a>. Bake at 180°C for 90 min (remove the caps beforehand and place in a sterile container if caps cannot be baked; cover vials with aluminum foil).
+            </li>
+            <li>Cool the vials containing silica gel on ice for 30 min. Considerable heat, which can kill spores, is produced when the gel is hydrated; the heat can be minimized by this precooling.
+            </li>
+            <li>Use <a href="/techniques/media/media.html#SMP">SM plates</a> with mature fruiting bodies. The plates should not be older than 1 week, after which the viability of spores decreases rapidly. Harvest the spores by gently banging the inverted plates on the bench (several plates into the same lid). Resuspend the spores of three plates (all in the same lid) in 0.4 ml cold <a href="#milk">non-fat dry milk</a> solution. Use 0.4 ml (with spores from three plates) per silica gel tube.
+            </li>
+            <li>Pipette the spore-milk suspension into the cold silica gel. Immediately cap the vial and shake vigorously for 5-10 s. Place the vial back on ice for an additional 5 min.
+            </li>
+            <li>Store vials in desiccant at -20°C or, if freezer is unavailable, at 4°C.
+            </li>
+        </ol>
+        <p>
+            <a name="silicar" id="silicar"></a>
+        </p>
+        <h3>
+            Starting cultures from silica stocks
+        </h3>
+        <ol>
+            <li>Spread 200 ml of bacteria from a fresh overnight culture on an SM plate.
+            </li>
+            <li>Sprinkle a few silica crystals onto the surface of the plate and incubate at 22°C.
+            </li>
+            <li>Spores will germinate and cell growth on the bacterial lawn should be visible after 2 days.<br>
+                <b>Note:</b> Cells stored by this method need to be able to form viable spores. If unsure, store cells as both spores and amoebae.
+            </li>
+        </ol>
+        <p>
+            <b>Timing</b>: 2 h to store spores in silica gel; 15 min to recover spores from silica stocks and 2 days for visible growth on a bacterial plate.<br>
+            <br>
+            <b>Trouble shooting:</b> No cell growth after recovery from silica. There might have been too few viable spores in the silica crystals. Try a safer method:
+        </p>
+        <ul>
+            <li>Transfer a few granules of silica stock to 1 ml of cold sterile <a href="/techniques/media/media.html#SM">SM broth</a>
+            </li>
+            <li>Mix 0.1–0.2 ml aliquots of this solution with 0.4 ml diluted bacteria (made by mixing a loop full of bacterial cells with 5 ml SM broth)
+            </li>
+            <li>Plate suspension on an SM plate and incubate at 22°C
+            </li>
+            <li>A full bacterial lawn should appear the next day and plaques in 2–4 days
+            </li>
+            <li>If this also fails, the strain might not produce viable spores. Use the method to freeze cells.
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="freeze" id="freeze"></a>
+        </p>
+        <h3>
+            Freezing Dictyostelium cells for long-term storage
+        </h3>
+        <ol>
+            <li>Pellet 5 x 10<sup>7</sup> cells, harvested during exponential growth (approximately two subconfluent 100 mm plates of axenically growing cells at a density of 2-3 x 10<sup>6</sup> cells ml<sup>-1</sup>), at 500<i>g</i> for 4 min.
+            </li>
+            <li>Chill cell pellet on ice for 5 min.
+            </li>
+            <li>Add 1 ml of cold <a href="/techniques/media/media.html#HL5">HL5</a> medium supplemented with <a href="#milk">DMSO</a> to a final concentration of 10%.
+            </li>
+            <li>Resuspend the cells, transfer to liquid nitrogen storage vials and place vials on ice for 5-10 min.
+            </li>
+            <li>Freeze slowly: incubate cells at -20°C for 1-2 h and then transfer to -80°C for 12-24 h.
+            </li>
+            <li>Transfer vials to liquid nitrogen for long-term storage. If liquid nitrogen is unavailable, storage in a -80°C freezer is an acceptable alternative.
+            </li>
+        </ol>
+        <p>
+            <a name="thaw" id="thaw"></a>
+        </p>
+        <h3>
+            Thawing Dictyostelium cells
+        </h3>
+        <ol>
+            <li>Remove vials from liquid nitrogen and thaw quickly in a 37°C water bath, being careful to prevent the cells from ever warming up significantly.<br>
+                <b>Note</b>:To be safe, remove the vial from the water bath when there is still a small bit of frozen material left.
+            </li>
+            <li>Transfer the cells to a plate containing 10 ml of HL5 medium.
+            </li>
+            <li>Allow the cells to stand for 30-60 min at 21-23°C to recover, then change the medium to remove the DMSO.
+            </li>
+            <li>The next day, add a selective drug if appropriate.
+            </li>
+            <li>Alternatively, working fast, frozen cells can be scraped from the vial with a 16G needle and be deposited on an SM plate previously spread with bacteria. Thus, one frozen vial can be used several times.<br>
+                <b>Note:</b> It is important for the survival of the cells that the temperature never rises above 4°C while the cells are in 10% DMSO.
+            </li>
+        </ol>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="nonax" id="nonax"></a>
+        </p>
+        <h3>
+            Freezing and recovery of non-axenic cells
+        </h3>
+        <ol>
+            <li>Grow and wash cells from a bacterial plate as <a href="/techniques/media/dicty_growth.html#init">described here in steps 1-4</a>.
+            </li>
+            <li>Freeze cells as <a href="#freeze">described above</a>.
+            </li>
+            <li>For recovery, it is best to scrape frozen cells from the vial with a 16G needle and add the cells quickly to an SM plate previously spread with bacteria.
+            </li>
+            <li>Incubate the inverted plate at 21-23°C. Cell growth (as 'feeding front') should be visible after 1-2 days.
+            </li>
+        </ol>
+        <p>
+            <b>Timing</b>: Approximately 2.5 h until the cells are frozen at -80°C; 40-60 min until cells are thawed and placed in DMSO-free medium; 10 min to spread an agar plate with bacteria and place frozen cells that are scraped from the top of a tube in the center of the plate.
+        </p>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="spores" id="spores"></a>
+        </p>
+        <h3>
+            Freezing spores<sup><font size="1" face="Verdana" color="#A7221E"><b><i>Stock Center Procedure</i></b></font></sup>
+        </h3>
+        <ol>
+            <li>Pre-cool 1.5-ml screw-cap storage vials on ice.
+            </li>
+            <li>Harvest spores from 2 SM plates or 5 <a href="/techniques/media/media.html#SM5">SM/5 plates</a> by scraping fruiting bodies from plates and transferring them to beaker 20 ml with cold <a href="/techniques/media/media.html#HL5">HL5</a>.
+            </li>
+            <li>Pour fruiting bodies in medium from the beaker into a 50-ml conical tube.
+            </li>
+            <li>Rinse the beaker with 10 ml HL5 to collect remaining spores and add to the conical tube.
+            </li>
+            <li>Close tube and shake or vortex for 5-10 sec.
+            </li>
+            <li>Centrifuge at 500<i>g</i> for 5 minutes.
+            </li>
+            <li>Pour off supernatant and resuspend pellet in 9.5 ml HL5 by vortexing.
+            </li>
+            <li>Add 0.55 ml DMSO while gently swirling tube. Keep on ice!
+            </li>
+            <li>Aliquot 1 ml of cell suspension into 10 storage vials.
+            </li>
+            <li>Freeze slowly: incubate cells at -20°C for 1-2 h and then transfer to -80°C for 12-24 h.
+            </li>
+            <li>Transfer vials to liquid nitrogen for long-term storage. If liquid nitrogen is unavailable, storage in a -80°C freezer is an acceptable alternative.
+            </li>
+        </ol>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="notes" id="notes"></a>
+        </p>
+        <h3>
+            Stock Center Notes
+        </h3>
+        <ul>
+            <li>To prevent vials from erupting in liquid nitrogen, it is important that the tube cap contains the rubber o-ring. To keep o-rings from falling out, tighten caps all the way before initially opening vial.
+            </li>
+            <li>After thawing, a vial should never be refrozen.
+            </li>
+            <li>Viability dramatically decreases if cells are not immediately pipetted from the storage tube after thawing.
+            </li>
+            <li>Storing cells at higher than suggested densities decreases viability.
+            </li>
+            <li>5% DMSO may give better viabilities than 7.5% or 10%.
+            </li>
+        </ul>
+        <p>
+            <b>Stock Center strain testing</b>
+        </p>
+        <ul>
+            <li>After storage in liquid nitrogen for several days, test the strain viability by scraping some cells from a vial (quickly) with a 16G needle and streaking them on an SM/5 plate prespread with bacteria.
+            </li>
+            <li>To test viability and purity of an axenic strain:
+                <ul>
+                    <li>Thaw an entire vial rapidly in a 37°C water bath. Do not allow cells to get warm!
+                    </li>
+                    <li>Pipette 50 µl of cells onto a plate with 0.25 ml bacteria and into 1 ml of HL5 in a 24-well plate
+                    </li>
+                    <li>The remaining content of the vial can be transferred into a flask or into a 100 mm style petri dish containing 10 ml HL5.
+                    </li>
+                </ul>
+            </li>
+        </ul><!--<P>* Even sturdy loops will bend out of shape, heat-kill some cells, and can melt the edge of storage tubes.  A sturdy tool
+that gives much better plating results and no tube damage is Craftsman Professional No. 0 x 4 inch microtech Phillips head
+screwdriver, Sears # 00941527000 Mfr. Model # 41527.  Heat the tip of the screwdriver and then cool in sterile water before
+using to scrape frozen cells from tube.  Gently use tip of screwdriver to plate cells as usual.</p>-->
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <a name="materials" id="materials"></a>
+        </p>
+        <h3>
+            Materials
+        </h3>
+        <hr>
+        <ul>
+            <li>
+                <a name="milk" id="milk"></a>Non-fat dry milk solution: Prepare a 5% solution (wt/vol) in distilled water. Autoclave for 15 min. This solution can be stored at 4°C for several weeks.
+            </li>
+            <li>Silica gel, 6–12 mesh, grade 40, without indicator (colorless)
+            </li>
+            <li>Dimethyl sulfoxide (DMSO) <i>!Caution!</i> Always wear protective laboratory gloves when handling DMSO, which easily penetrates the skin. While DMSO itself is not very toxic, anything dissolved or mixed with DMSO will be absorbed as well.
+            </li>
+        </ul>
+        <p>
+            <a href="/techniques/media/media.html">Other media and solutions for <i>Dictyostelium</i> can be found here</a>
+        </p>
+        <h4>
+            Equipment
+        </h4>
+        <ul>
+            <li>Sterile culture flasks
+            </li>
+            <li>Sterile 100 mm Petri dishes
+            </li>
+            <li>Sterile 15 and 50 ml conical tubes
+            </li>
+            <li>Incubator set at 21–23°C This may be either a shaking incubator for growth in suspension or a stationary incubator for growth in plastic dishes. Alternatively, cultures can be maintained at room temperature, provided that the temperature in the laboratory is constant and below 25°C.
+            </li>
+            <li>Bacteria loop
+            </li>
+            <li>Hemocytometer
+            </li>
+            <li>Light microscope
+            </li>
+            <li>Micropipette (P1000, P200)
+            </li>
+            <li>100 mm Petri dishes
+            </li>
+            <li>35 mm Petri dishes
+            </li>
+            <li>Glass pipettes
+            </li>
+            <li>Glass spreader
+            </li>
+            <li>Autoclave
+            </li>
+            <li>-20°C freezer
+            </li>
+            <li>-80°C freezer
+            </li>
+            <li>Liquid nitrogen storage tank <i>!Caution!</i> Liquid nitrogen is extremely cold (-196°C); always wear goggles and cryogenic gloves when handling liquid nitrogen.
+            </li>
+            <li>37°C water bath,
+            </li>
+            <li>-180°C oven
+            </li>
+        </ul>
+        <p align="right">
+            <a href="#top">[TOP]</a>&nbsp;<a href="/techniques/">[INDEX]</a>
+        </p>
+        <hr>
+        <p>
+            <br>
+                                <!-- Central Column end -->
+                </div>
+            </div>
+            <div class="column-left">
+                <div id="column-left-content">
+                    <!-- Left Column start -->
+                    <!-- Left Column end -->
+                </div>
+            </div>
+            <div class="column-right">
+                <!-- Right Column start -->
+                <!-- Right Column end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/inc/css/footer.css">
+    </head>
+    <body>
+        <div class="container-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <a href="/">Home</a>|
+                        <a href="/db/cgi-bin/dictyBase/suggestion">Contact dictyBase</a>|
+                        <a href="http://wiki.dictybase.org/dictywiki/index.php/Standard_Operating_Procedures">SOPs</a>|
+                        <a href="/sitemap.html">Site Map</a>
+                    </td>
+                    <td style="text-align:right;">
+                        &nbsp;Supported by NIH (NIGMS and NHGRI)&nbsp;
+                        <a href="http://www.nih.gov/">
+                            <img src="/inc/images/nih_sm.gif"/>
+                        </a>
+                        <a href="http://geneontology.org">
+                            <img src="/inc/images/go_sm.gif"/>
+                        </a>
+                        <a href="http://gmod.org/wiki/Main_Page">
+                            <img src="/inc/images/gmod.gif"/>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+   </body>
+</html>
+
+        </p>
+    </body>
+</html>

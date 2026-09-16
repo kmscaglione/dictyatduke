@@ -83,3 +83,7 @@ assets/dictybase-corpus/colleagues.json
 # All server-side runtime data lives under uploads/ (curator state, submissions,
 # and the preserved colleague directory PII). None of it belongs in git.
 uploads/
+
+# Multimedia movie galleries (~177 MB) — preserved, but too large for git;
+# stored on the server instead (see the multimedia gallery decision).
+assets/dictybase-downloads/site-mirror/multimedia/

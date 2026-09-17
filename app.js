@@ -6107,7 +6107,7 @@ const START_WHY = [
 const START_STEPS = [
   ["See if it fits your question", "Browse the research areas Dictyostelium excels in — each with marker genes, protocols, and key papers.", "/research-areas", "Research areas"],
   ["Find your genes of interest", "Search by symbol, or filter the whole catalog by phenotype, ortholog, disease link, or expression.", "/search/advanced", "Advanced gene finder"],
-  ["Get strains & plasmids", "Order from the community Dicty Stock Center.", "https://dictybase.dev/stockcenter", "Dicty Stock Center"],
+  ["Get strains & plasmids", "Order from the community Dicty Stock Center.", "/stock-center", "Dicty Stock Center"],
   ["Grow the cells", "Media, buffers, and growth protocols — axenic in HL5 or on bacteria.", "/research/techniques/media", "Media & buffers"],
   ["Make mutants", "Transformation protocols, plus a CRISPR guide designer with genome off-target checking.", "/tools/lab", "Lab tools"],
   ["Analyze", "Search by sequence (BLAST), browse the genome, and compare expression.", "/tools/blast", "BLAST"],
@@ -6397,7 +6397,7 @@ function renderResearchAreasPage() {
       </div></header>
       <div class="record-body">
         <div class="ra-grid">${cards}</div>
-        <p class="ra-note">Marker genes link to records on this site; gene picks and protocols are starting points, not an exhaustive list. New to the organism? Start with <a class="text-link" href="/start">Why Dictyostelium</a>, or order strains from the <a class="text-link" href="https://dictybase.dev/stockcenter" target="_blank" rel="noopener">Dicty Stock Center ↗</a>.</p>
+        <p class="ra-note">Marker genes link to records on this site; gene picks and protocols are starting points, not an exhaustive list. New to the organism? Start with <a class="text-link" href="/start">Why Dictyostelium</a>, or order strains from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>.</p>
       </div>
     </article>`;
 }
@@ -8048,7 +8048,9 @@ function renderTechnique(technique) {
             <div class="kv">
               <span>Category</span><strong>${escapeHtml(technique.category)}</strong>
               <span>Local path</span><strong>/research/techniques/${escapeHtml(technique.slug)}</strong>
-              <span>Original</span><strong><a href="${escapeHtml(technique.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(new URL(technique.sourceUrl).hostname.replace(/^www\\./, ""))}</a></strong>
+              <span>Source</span><strong>${technique.contentHtml
+                ? "Preserved from dictyBase"
+                : `<a href="${escapeHtml(technique.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml((() => { try { return new URL(technique.sourceUrl).hostname.replace(/^www\\./, ""); } catch { return "source"; } })())}</a>`}</strong>
             </div>
           </aside>
         </div>
@@ -8091,7 +8093,6 @@ function renderResearchContent(resource) {
     <div class="research-intro">
       ${(resource.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
       ${resource.note ? `<p class="research-note">${escapeHtml(resource.note)}</p>` : ""}
-      ${resource.sourceUrl ? `<p><a class="text-link" href="${escapeHtml(resource.sourceUrl)}" target="_blank" rel="noreferrer">Original dictyBase source page</a></p>` : ""}
     </div>
     ${renderResearchLinkSections(resource.linkSections || [])}
     ${resource.htmlContent ? `<section class="archived-page-content">${resource.htmlContent}</section>` : ""}
@@ -8134,7 +8135,6 @@ function renderResearchLinkSections(sections) {
             ${(section.links || []).map(([label, href]) => `
               <a class="technique-link" href="${escapeHtml(localTechniqueHref(label, href))}">
                 <span>${escapeHtml(label)}</span>
-                <small>${escapeHtml(new URL(href).hostname.replace(/^www\\./, ""))}</small>
               </a>
             `).join("")}
           </div>
@@ -10691,7 +10691,7 @@ async function loadDownloads() {
             </li>`).join("")}
         </ul>
       </section>`).join("")}
-    <p class="research-note">Mirrored from <a class="text-link" href="http://dictybase.org/Downloads/" target="_blank" rel="noopener">dictybase.org/Downloads</a>${data.total_bytes ? ` · ${fmtBytes(data.total_bytes)} total` : ""}. Files retain dictyBase's terms of use.</p>`;
+    <p class="research-note">Mirrored from dictyBase's Downloads page${data.total_bytes ? ` · ${fmtBytes(data.total_bytes)} total` : ""}. Files retain dictyBase's terms of use.</p>`;
   if (window.location.hash) {
     const target = el.querySelector(window.location.hash);
     if (target) requestAnimationFrame(() => target.scrollIntoView());
@@ -11852,7 +11852,7 @@ async function loadStrains(gene) {
     <div style="display:flex;flex-wrap:wrap;gap:6px">
       ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}" style="font-size:0.8125rem;padding:2px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">${escapeHtml(s)}</a>`).join("")}
     </div>
-    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Strains carrying a mutation in this gene. Order physical stocks from the <a class="text-link" href="https://dictybase.dev/stockcenter" target="_blank" rel="noopener">Dicty Stock Center</a>.</p>`;
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Strains carrying a mutation in this gene. Order physical stocks from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>.</p>`;
 }
 
 async function loadRNAseqInline(gene) {

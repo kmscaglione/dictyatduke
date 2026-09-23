@@ -1669,6 +1669,7 @@ function renderRecord() {
             ${gene._curator && !gene._legacySummary ? `<span class="tag" style="background:var(--soft,#e7eef7);color:var(--teal-dark)" title="Curated by ${escapeHtml(gene._curator)}">✓ dictyBase curated</span>` : ""}
           </div>
           <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
+          <div data-chr2-dup style="margin-top:10px"></div>
         </div>
         ${gene.uniprot ? `
         <div class="structure-preview">
@@ -1734,6 +1735,7 @@ function renderRecord() {
 // then author / community / Gomer / AI as collapsed tiles that only appear if
 // that layer has content for this gene.
 function loadAnnotationStack(gene) {
+  loadChr2DupFlag(gene);
   loadOfficialCuration(gene);
   loadAuthorCuration(gene);
   loadCommunityCuration(gene);
@@ -7924,12 +7926,20 @@ function renderMeetingsPage() {
       </header>
       <div class="record-body">
         ${upcoming.length ? `
-          <section class="data-block">
-            <h3>Upcoming</h3>
-            <div class="ontology-term-list">
-              ${upcoming.map(renderConferenceItem).join("")}
-            </div>
+          <section class="data-block" style="border:2px solid var(--teal-dark,#0b746a);border-radius:10px;padding:18px 20px;margin-bottom:18px;text-align:center;background:var(--soft,#eef4f3)">
+            <p class="eyebrow" style="color:var(--teal-dark,#0b746a);margin:0">Next meeting</p>
+            <h2 style="font-size:1.7rem;line-height:1.2;margin:6px 0 4px">${escapeHtml([upcoming[0].year, upcoming[0].location].filter(Boolean).join(" — "))}</h2>
+            ${upcoming[0].dates ? `<p style="font-weight:700;margin:2px 0">${escapeHtml(upcoming[0].dates)}</p>` : ""}
+            ${(upcoming[0].organizers || []).length ? `<p style="color:var(--muted,#6b7280);margin:2px 0">Organized by ${escapeHtml(upcoming[0].organizers.join(", "))}</p>` : ""}
+            ${(upcoming[0].links || []).length ? `<p style="margin:8px 0 0">${upcoming[0].links.map((l) => `<a class="text-link" href="${escapeHtml(l.url || l)}" target="_blank" rel="noopener">${escapeHtml(l.label || "Meeting website")} ↗</a>`).join(" · ")}</p>` : ""}
           </section>
+          ${upcoming.length > 1 ? `
+          <section class="data-block">
+            <h3>Also upcoming</h3>
+            <div class="ontology-term-list">
+              ${upcoming.slice(1).map(renderConferenceItem).join("")}
+            </div>
+          </section>` : ""}
         ` : ""}
         <section class="data-block">
           <h3>Previous meetings</h3>
@@ -8267,7 +8277,7 @@ function renderTab(gene, tab) {
       <div class="data-block" data-curated-interactions></div>
       <div class="data-block">
         <h3>Predicted associations <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— STRING (computational, not curated)</span></h3>
-        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Functional-association network from STRING: predicted from coexpression, text mining, and homology, so it is broader but not experimentally curated.</p>
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">These are <strong>computational predictions</strong> from STRING, inferred from coexpression, text mining, genomic context, and homology. They are <strong>not</strong> experimental evidence, and many associations rest on indirect or weak support (a shared abstract, a conserved neighbor). Treat them as hypotheses to test, not established interactions. The experimentally supported physical and genetic interactions are shown in the curated section above. See the per-edge evidence and confidence scores on <a class="text-link" href="https://string-db.org/cgi/network?species_text=Dictyostelium+discoideum&identifiers=${encodeURIComponent(gene.symbol)}" target="_blank" rel="noopener">STRING</a> before relying on any association.</p>
         <div id="string-network-img" style="text-align:center">
           ${loadingHTML("Loading network image…")}
         </div>
@@ -11158,6 +11168,37 @@ async function ensureDupExpression() {
     dupExprMap = res.ok ? await res.json() : {};
   } catch { dupExprMap = {}; }
   return dupExprMap;
+}
+
+// Bidirectional map of the chromosome-2 duplication pairs: every gene in the
+// duplicated segment -> the DDB id of its near-identical duplicate copy.
+let dupPartners = null;
+async function ensureDupPartners() {
+  if (dupPartners) return dupPartners;
+  const dup = await ensureDupExpression();
+  const m = Object.create(null);
+  for (const [ddb, v] of Object.entries(dup)) {
+    if (ddb.startsWith("_") || !v || !v.from) continue;
+    if (!m[ddb]) m[ddb] = v.from;
+    if (!m[v.from]) m[v.from] = ddb;
+  }
+  dupPartners = m;
+  return m;
+}
+
+// A prominent flag on the gene record for genes in the AX4 chromosome-2
+// duplication (reviewer request: outsiders should see this clearly, e.g. carA).
+async function loadChr2DupFlag(gene) {
+  const el = document.querySelector("[data-chr2-dup]");
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!/^DDB_G\d+$/.test(ddb)) return;
+  const partnerDdb = (await ensureDupPartners())[ddb];
+  if (!partnerDdb || state.activeGene !== gene) return;
+  const partner = geneIndex.find((g) => g.id === partnerDdb);
+  const label = (partner && partner.symbol) || partnerDdb;
+  el.innerHTML = `<div style="border-left:3px solid #b45309;background:#fffbeb;color:#7c2d12;padding:9px 12px;border-radius:6px;font-size:.8125rem;line-height:1.5">
+    <strong>⚠ Chromosome 2 duplication (AX4).</strong> This gene lies in the segment of chromosome 2 that is duplicated in the AX4 reference strain, so it has a near-identical duplicate copy: <a class="text-link curated-xref" data-ddb-ref="${escapeHtml(partnerDdb)}" href="/gene/${encodeURIComponent(label)}">${escapeHtml(label)}</a>. Short-read data (RNA-seq, variant calls) usually cannot tell the two copies apart, so read-based results and some analyses may reflect both copies together.</div>`;
 }
 
 // Third curation window: author-submitted curation awaiting curator approval.

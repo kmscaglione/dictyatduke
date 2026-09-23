@@ -235,6 +235,11 @@ input {
   box-shadow: 0 18px 42px rgba(23, 33, 29, .14);
   display: none;
   transform: translateX(-50%);
+  /* Long menus (Analyze, Resources) can exceed the viewport height; cap them
+     and let the contents scroll so nothing is cut off below the fold. */
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .nav-item:hover .nav-menu,

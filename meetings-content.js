@@ -3,6 +3,15 @@ window.meetingsContent = {
   acknowledgment: "Special thanks to Rob Kay, Rex Chisholm, Alan Kimmel, Bill Loomis, and Stephen Alexander for their input on historic Dicty conferences.",
   conferences: [
     {
+      year: 2027,
+      name: "2027 Annual International Dictyostelium Conference",
+      location: "Canada",
+      dates: "August 2027",
+      organizers: ["Rob Huber", "Yulia Artemenko"],
+      links: [],
+      upcoming: true
+    },
+    {
       year: 2025,
       name: "2025 Annual International Dictyostelium Conference",
       location: "Potsdam, Germany",

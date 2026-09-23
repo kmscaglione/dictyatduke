@@ -9634,7 +9634,9 @@ function strainDetailBlock(m, sid) {
   return `<div class="data-block" style="margin-bottom:14px">
     <h3>Strain details${stock}</h3>
     ${summary}${rows.join("")}
-    <p style="font-size:.72rem;color:var(--muted,#6b7280);margin:8px 0 0">Order physical stocks from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>.</p>
+    <p style="font-size:.72rem;color:var(--muted,#6b7280);margin:8px 0 0">${m.in_stock === false
+      ? `Not currently stocked. <a class="text-link" href="/stock-center">Browse the Dicty Stock Center</a> for related strains.`
+      : `<a class="text-link" href="/stock-center?q=${encodeURIComponent(sid)}">Order this strain from the Dicty Stock Center →</a>`}</p>
   </div>`;
 }
 
@@ -10191,7 +10193,12 @@ function stockCartHas(type, id) { return stockCart().some((i) => i.type === type
 
 function openStockCenter(updateRoute = true) {
   hideContentSections();
-  if (updateRoute) history.pushState(null, "", "/stock-center");
+  // Preserve a ?q= deep link (an "Order this strain" link) so initStockCenter can
+  // read it; a plain visit still normalizes to a clean /stock-center URL.
+  if (updateRoute) {
+    const q = (new URLSearchParams(location.search).get("q") || "").trim();
+    history.pushState(null, "", q ? `/stock-center?q=${encodeURIComponent(q)}` : "/stock-center");
+  }
   if (!toolsShell) return;
   toolsShell.innerHTML = renderStockCenterPage();
   toolsShell.removeAttribute("hidden");
@@ -10528,7 +10535,21 @@ function initStockCenter() {
     if (Number.isFinite(n)) { page = n; renderList(); scrollToY(root.offsetTop - 60); }
   });
   updateCounts();
-  ensureStockCenter().then(() => { renderList(); updateCounts(); });
+  // Deep link: /stock-center?q=<term> lands on a pre-searched, orderable view
+  // (used by the "Order this strain" links on gene and strain records). A DBP id
+  // means a plasmid, so switch to that tab first.
+  const preQ = (new URLSearchParams(location.search).get("q") || "").trim();
+  ensureStockCenter().then(() => {
+    if (preQ) {
+      if (/^DBP\d+/i.test(preQ)) {
+        active = "plasmids";
+        root.querySelectorAll(".stock-tab").forEach((t) => t.classList.toggle("active", t.dataset.stockTab === "plasmids"));
+      }
+      searchEl.value = preQ;
+    }
+    renderList();
+    updateCounts();
+  });
 }
 
 function openDataPage(updateRoute = true) {
@@ -11893,7 +11914,7 @@ async function loadStrains(gene) {
     <div style="display:flex;flex-wrap:wrap;gap:6px">
       ${strains.map((s) => `<a class="text-link" href="/strain/${encodeURIComponent(s)}" style="font-size:0.8125rem;padding:2px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">${escapeHtml(s)}</a>`).join("")}
     </div>
-    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Strains carrying a mutation in this gene. Order physical stocks from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>.</p>`;
+    <p style="font-size:0.72rem;color:var(--muted,#6b7280);margin:6px 0 0">Strains carrying a mutation in this gene. Click a strain to open its record, then use <em>Order this strain</em> to request it from the <a class="text-link" href="/stock-center">Dicty Stock Center</a>. (This is separate from the gene list — the <em>Add to list</em> button collects genes for analysis, not orders.)</p>`;
 }
 
 async function loadRNAseqInline(gene) {
@@ -14283,7 +14304,7 @@ const TOOLS_INDEX = [
   ["Bench & workspace", [
     ["Lab tools", "/tools/lab", "CRISPR guides, qPCR primers, codon optimizer, restriction sites, ORFs."],
     ["Cell tracking", "/tools/cell-tracking", "TrackMaxima Fiji plugin + chemotaxis Excel template for motility analysis."],
-    ["Gene basket", "/tools/basket", "Collect genes and send the whole set to any tool."],
+    ["Gene list", "/tools/basket", "Collect genes and send the whole set to any tool."],
   ]],
   ["Developers", [
     ["REST API", "/tools/api", "JSON API over the same data the site uses."],
@@ -14415,7 +14436,7 @@ function navigateToGene(entry) {
 // ---- Command palette (⌘K / Ctrl-K): quick-jump to any gene, page, or tool ----
 const CMDK_TARGETS = [
   { kind: "Page", label: "Home", href: "/", kw: "home start" },
-  { kind: "Tool", label: "My gene basket", href: "/tools/basket", sub: "Collected genes — enrichment, compare & export", kw: "basket workspace cart list saved collection" },
+  { kind: "Tool", label: "My gene list", href: "/tools/basket", sub: "Collected genes — enrichment, compare & export", kw: "basket workspace cart list saved collection" },
   { kind: "Search", label: "Advanced gene finder", href: "/search/advanced", sub: "Filter genes by phenotype, disease, expression", kw: "filter facet find advanced browse" },
   { kind: "Search", label: "General search", href: "/search/general", kw: "search find" },
   { kind: "Search", label: "Phenotype search", href: "/search/phenotype", kw: "phenotype mutant" },
@@ -14716,7 +14737,7 @@ function updateBasketCount() {
   if (tgl && state.activeGene) {
     const inB = basketHas(state.activeGene.veupath, state.activeGene.symbol);
     tgl.classList.toggle("in", inB);
-    const lbl = tgl.querySelector(".bt-label"); if (lbl) lbl.textContent = inB ? "In basket" : "Add to basket";
+    const lbl = tgl.querySelector(".bt-label"); if (lbl) lbl.textContent = inB ? "In list" : "Add to list";
     const ic = tgl.querySelector(".bt-icon"); if (ic) ic.textContent = inB ? "✓" : "＋";
   }
   if (document.querySelector("[data-basket-list]")) renderBasketList();
@@ -14727,7 +14748,7 @@ function basketToggleButtonHTML(gene) {
   return `<button type="button" class="basket-toggle${inB ? " in" : ""}" data-basket-toggle
       data-ddb="${escapeHtml(gene.veupath || "")}" data-symbol="${escapeHtml(gene.symbol || "")}"
       data-name="${escapeHtml(gene.name || "")}" data-ncbi="${escapeHtml(gene.ncbiGene || "")}">
-      <span class="bt-icon" aria-hidden="true">${inB ? "✓" : "＋"}</span> <span class="bt-label">${inB ? "In basket" : "Add to basket"}</span>
+      <span class="bt-icon" aria-hidden="true">${inB ? "✓" : "＋"}</span> <span class="bt-label">${inB ? "In list" : "Add to list"}</span>
     </button>`;
 }
 
@@ -14736,7 +14757,7 @@ function renderBasketPage() {
     <article class="record-card research-card">
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Workspace</p>
-        <h2>My gene basket</h2>
+        <h2>My gene list</h2>
         <p>Collect genes as you browse, then analyze or export them as a set. Stored in this browser only — nothing is uploaded.</p>
       </div></header>
       <div class="record-body">
@@ -14761,8 +14782,8 @@ function renderBasketList() {
   const list = loadBasket();
   if (!list.length) {
     el.innerHTML = `<div class="basket-empty">
-      <p><strong>Your basket is empty.</strong></p>
-      <p class="muted">Add genes from any gene record with the <em>Add to basket</em> button, or from the
+      <p><strong>Your gene list is empty.</strong></p>
+      <p class="muted">Add genes from any gene record with the <em>Add to list</em> button, or from the
       <a class="text-link" href="/search/advanced">advanced gene finder</a>. Press <kbd>⌘K</kbd> to jump to a gene quickly.</p>
     </div>`;
     return;
@@ -14776,11 +14797,11 @@ function renderBasketList() {
           <td><a class="text-link" href="/gene/${encodeURIComponent(e.symbol || e.ddb)}">${escapeHtml(e.symbol || e.ddb)}</a></td>
           <td>${escapeHtml(e.name || "")}</td>
           <td class="mono">${escapeHtml(e.ddb || "")}</td>
-          <td><button type="button" class="basket-x" data-basket-remove="${escapeHtml(basketKey(e))}" aria-label="Remove ${escapeHtml(e.symbol || e.ddb)} from basket" title="Remove from basket">✕</button></td>
+          <td><button type="button" class="basket-x" data-basket-remove="${escapeHtml(basketKey(e))}" aria-label="Remove ${escapeHtml(e.symbol || e.ddb)} from list" title="Remove from list">✕</button></td>
         </tr>`).join("")}
       </tbody>
     </table></div>
-    <p class="muted" style="font-size:12px;margin:10px 0 0">${list.length} gene${list.length === 1 ? "" : "s"} in basket.</p>`;
+    <p class="muted" style="font-size:12px;margin:10px 0 0">${list.length} gene${list.length === 1 ? "" : "s"} in your list.</p>`;
 }
 
 // Resolve a share-link token (a DDB_G id or a gene symbol) to a basket entry,
@@ -14802,7 +14823,7 @@ function basketShare(list, results) {
   const ids = list.map((e) => e.ddb || e.symbol).filter(Boolean);
   const url = `${location.origin}/tools/basket?genes=${encodeURIComponent(ids.join(","))}`;
   const show = (msg) => { if (results) results.innerHTML = `<p class="notice">${msg}</p>`; };
-  const ok = `Share link copied — ${ids.length} gene${ids.length === 1 ? "" : "s"}. Anyone who opens it gets this set added to their basket.<br><input readonly value="${escapeHtml(url)}" onclick="this.select()" style="width:100%;margin-top:6px;font-size:.8125rem;padding:6px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">`;
+  const ok = `Share link copied — ${ids.length} gene${ids.length === 1 ? "" : "s"}. Anyone who opens it gets this set added to their gene list.<br><input readonly value="${escapeHtml(url)}" onclick="this.select()" style="width:100%;margin-top:6px;font-size:.8125rem;padding:6px 8px;border:1px solid var(--line,#d7dee0);border-radius:6px">`;
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(url).then(() => show(ok), () => show(ok));
   } else {
@@ -14832,7 +14853,7 @@ async function initBasket() {
   renderBasketList();
   if (r && r.total) {
     const results = document.querySelector("[data-basket-results]");
-    if (results) results.innerHTML = `<p class="notice">Loaded ${r.added} gene${r.added === 1 ? "" : "s"} from a shared link${r.added < r.total ? ` (${r.total - r.added} already in your basket)` : ""}.</p>`;
+    if (results) results.innerHTML = `<p class="notice">Loaded ${r.added} gene${r.added === 1 ? "" : "s"} from a shared link${r.added < r.total ? ` (${r.total - r.added} already in your list)` : ""}.</p>`;
   }
 }
 
@@ -14913,10 +14934,10 @@ function basketAction(kind) {
   const list = loadBasket();
   const results = document.querySelector("[data-basket-results]");
   if (kind === "clear") {
-    if (list.length && confirm("Remove all genes from the basket?")) basketClear();
+    if (list.length && confirm("Remove all genes from your list?")) basketClear();
     return;
   }
-  if (!list.length) { if (results) results.innerHTML = `<p class="notice muted">Add some genes to the basket first.</p>`; return; }
+  if (!list.length) { if (results) results.innerHTML = `<p class="notice muted">Add some genes to your gene list first.</p>`; return; }
   const symbols = list.map((e) => e.symbol || e.ddb).filter(Boolean);
   if (kind === "share") { basketShare(list, results); return; }
   if (kind === "csv") { basketExportCSV(list); return; }
@@ -14954,7 +14975,7 @@ function basketInit() {
       basketAdd({ ddb: add.dataset.ddb, symbol: add.dataset.symbol, name: add.dataset.name, ncbiGene: add.dataset.ncbi });
       add.classList.add("added");
       add.textContent = "✓";
-      add.title = "In basket";
+      add.title = "In list";
       return;
     }
     const rm = e.target.closest("[data-basket-remove]");
@@ -14989,7 +15010,7 @@ function renderAdvancedFinder() {
       <header class="record-header"><div class="record-title">
         <p class="eyebrow">Search</p>
         <h2>Advanced gene finder</h2>
-        <p>Filter the ${total}<em>D. discoideum</em> genes by what's known about them — curated phenotype, human ortholog, disease link, and developmental expression peak. Send hits to your <a class="text-link" href="/tools/basket">basket</a> or export them as CSV.</p>
+        <p>Filter the ${total}<em>D. discoideum</em> genes by what's known about them — curated phenotype, human ortholog, disease link, and developmental expression peak. Send hits to your <a class="text-link" href="/tools/basket">gene list</a> or export them as CSV.</p>
       </div></header>
       <div class="record-body">
         <div class="finder-controls">
@@ -15008,7 +15029,7 @@ function renderAdvancedFinder() {
         <div class="finder-actions">
           <button type="button" class="ghost-btn" id="finder-reset">Reset</button>
           <button type="button" class="button" id="finder-csv">Export results (CSV)</button>
-          <button type="button" class="button" id="finder-basket">Add results to basket</button>
+          <button type="button" class="button" id="finder-basket">Add results to list</button>
         </div>
         <div data-finder-results>${loadingHTML("Loading gene facets…")}</div>
       </div>
@@ -15102,7 +15123,7 @@ function finderApply() {
             <td>${escapeHtml(g.name || "")}</td>
             <td>${chips || '<span class="muted">—</span>'}</td>
             <td>${x >= 0 ? escapeHtml(FINDER_STAGES[x]) : '<span class="muted">—</span>'}</td>
-            <td><button type="button" class="basket-add" title="Add ${escapeHtml(g.symbol)} to basket" aria-label="Add ${escapeHtml(g.symbol)} to basket" data-basket-add data-ddb="${escapeHtml(g.id)}" data-symbol="${escapeHtml(g.symbol)}" data-name="${escapeHtml(g.name || "")}" data-ncbi="${escapeHtml(g.ncbiGene || "")}">＋</button></td>
+            <td><button type="button" class="basket-add" title="Add ${escapeHtml(g.symbol)} to gene list" aria-label="Add ${escapeHtml(g.symbol)} to gene list" data-basket-add data-ddb="${escapeHtml(g.id)}" data-symbol="${escapeHtml(g.symbol)}" data-name="${escapeHtml(g.name || "")}" data-ncbi="${escapeHtml(g.ncbiGene || "")}">＋</button></td>
           </tr>`;
         }).join("")}
       </tbody>
@@ -15121,7 +15142,7 @@ function finderExportCSV() {
 function finderAddAll() {
   if (!finderResults.length) return;
   const cap = 200;
-  if (finderResults.length > cap && !confirm(`Add the first ${cap} of ${finderResults.length} matching genes to your basket?`)) return;
+  if (finderResults.length > cap && !confirm(`Add the first ${cap} of ${finderResults.length} matching genes to your list?`)) return;
   finderResults.slice(0, cap).forEach(({ g }) => basketAdd({ ddb: g.id, symbol: g.symbol, name: g.name, ncbiGene: g.ncbiGene }));
 }
 

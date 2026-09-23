@@ -659,6 +659,30 @@ button,
 }
 .start-banner:hover { box-shadow: 0 8px 22px rgba(10, 79, 71, .12); transform: translateY(-1px); }
 
+/* Next-meeting banner on the home page — amber accent to stand apart from the teal start-banner */
+.meeting-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 10px 0 4px;
+  padding: 14px 18px;
+  border: 1px solid var(--amber);
+  border-radius: 10px;
+  background: linear-gradient(100deg, #fbf1dc, #fff);
+  text-decoration: none;
+  color: var(--ink);
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+.meeting-banner:hover { box-shadow: 0 8px 22px rgba(138, 91, 22, .14); transform: translateY(-1px); }
+.meeting-banner-icon { font-size: 24px; line-height: 1; }
+.meeting-banner-text { flex: 1; font-size: 14.5px; line-height: 1.45; }
+.meeting-banner-text strong { color: var(--amber); }
+.meeting-banner-cta { white-space: nowrap; font-weight: 800; color: var(--amber); }
+@media (max-width: 620px) {
+  .meeting-banner { flex-wrap: wrap; }
+  .meeting-banner-cta { width: 100%; }
+}
+
 /* "Community Curation" CTA at the top of the search panel */
 .curate-cta {
   display: flex;

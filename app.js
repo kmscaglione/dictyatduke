@@ -14280,6 +14280,8 @@ function showHomeChrome(show) {
   if (caps) caps.hidden = !show;
   const startBanner = document.getElementById("start-banner");
   if (startBanner) startBanner.hidden = !show;
+  const meetingBanner = document.getElementById("meeting-banner");
+  if (meetingBanner) meetingBanner.hidden = !(show && meetingBanner.dataset.has === "1");
   const searchGuide = document.getElementById("search-guide");
   if (searchGuide) {
     const showPill = show && !guideSeen() && guideShownCount() < GUIDE_SHOW_LIMIT;
@@ -14302,6 +14304,22 @@ async function loadAiAvailability() {
   if (state.aiAssistant && location.pathname.replace(/\/$/, "") === "/tools" && toolsShell) {
     toolsShell.innerHTML = renderToolsIndex();
   }
+}
+
+// Home-page banner for the next community meeting, populated from the same
+// meetings data as the meetings page (the first conference flagged upcoming).
+function renderMeetingBanner() {
+  const el = document.getElementById("meeting-banner");
+  const txt = document.getElementById("meeting-banner-text");
+  if (!el || !txt) return;
+  const data = window.meetingsContent;
+  const up = (data && Array.isArray(data.conferences)) ? data.conferences.filter((c) => c.upcoming) : [];
+  if (!up.length) { el.hidden = true; el.dataset.has = ""; return; }
+  const m = up[0];
+  const bits = [m.name || (m.year ? m.year + " meeting" : ""), m.location, m.dates].filter(Boolean).join(" · ");
+  txt.innerHTML = `<strong>Next meeting:</strong> ${escapeHtml(bits)}`;
+  el.dataset.has = "1";
+  el.hidden = !isHomeView;
 }
 
 // News now surfaces only through the ticker (below the nav) and the full /news
@@ -15213,6 +15231,7 @@ function initialHydrate() {
   renderRecentGenes();
   hydrateFromRoute();
   initHeroVideo();
+  renderMeetingBanner();
   loadNews();
   loadRecentPapers();
   loadAiAvailability();

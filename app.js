@@ -1868,6 +1868,7 @@ function loadTabData(gene, tab) {
     case "Genome":
       loadNeighborhood(gene);
       loadPromoter(gene);
+      loadGeneRestriction(gene);
       break;
     case "Orthologs":
       loadHumanDisease(gene);
@@ -8302,6 +8303,21 @@ function renderTab(gene, tab) {
         <h3>Promoter sequence <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— 5' flanking to the next gene (dictyBase, 2006)</span></h3>
         <button type="button" class="button" data-promoter-btn>Retrieve 5' flanking sequence</button>
         <div data-promoter-out style="margin-top:10px"></div>
+      </div>
+      <div class="data-block" data-restriction-block hidden>
+        <h3>Restriction sites <span style="font-size:0.75rem;font-weight:500;color:var(--muted,#6b7280)">— common cloning enzymes across this gene and its flanks</span></h3>
+        <p style="font-size:0.8125rem;color:var(--muted,#6b7280);margin:0 0 10px">Scan the gene's genomic DNA, plus flanking sequence on each side, for the recognition sites of common cloning enzymes. Useful for planning a knockout construct or picking a cloning strategy.</p>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 4px">
+          <label style="font-size:.8125rem;color:var(--muted,#6b7280)">Flanking sequence each side
+            <select data-re-flank style="${FIELD};margin-left:4px">
+              <option value="0">none (gene only)</option>
+              <option value="500">500 bp</option>
+              <option value="1000" selected>1 kb</option>
+              <option value="2000">2 kb</option>
+            </select></label>
+          <button type="button" class="button" data-re-gene-btn>Map restriction sites →</button>
+        </div>
+        <div data-re-gene-out style="margin-top:10px"></div>
       </div>`;
   }
 
@@ -9173,6 +9189,52 @@ async function loadPromoter(gene) {
       <textarea readonly style="width:100%;height:160px;font-family:monospace;font-size:.72rem" onclick="this.select()">${escapeHtml(fasta)}</textarea>`;
     btn.style.display = "none";
   }, { once: true });
+}
+
+// Genome tab: restriction sites across the gene and its flanks. Reproduces the
+// legacy "restriction sites around a gene" view — fetch the genomic DNA (with a
+// chosen flank on each side) and scan it with the shared /api/restriction tool.
+async function loadGeneRestriction(gene) {
+  const block = document.querySelector("[data-restriction-block]");
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!block || !/^DDB_G\d+$/.test(ddb)) return;
+  block.hidden = false;
+  const btn = block.querySelector("[data-re-gene-btn]");
+  const flankSel = block.querySelector("[data-re-flank]");
+  const out = block.querySelector("[data-re-gene-out]");
+  btn.addEventListener("click", async () => {
+    const flank = flankSel.value || "0";
+    btn.disabled = true; btn.textContent = "Scanning…";
+    out.innerHTML = `<p class="notice muted">Retrieving genomic sequence and scanning…</p>`;
+    try {
+      const fasta = await fetch(`/api/sequence?ddb=${encodeURIComponent(ddb)}&type=genomic&flank=${encodeURIComponent(flank)}&symbol=${encodeURIComponent(gene.symbol)}`).then((r) => r.text());
+      if (!fasta.startsWith(">")) throw new Error("no sequence");
+      const seq = fasta.replace(/^>[^\n]*\n/, "").replace(/\s+/g, "");
+      if (!seq) throw new Error("empty");
+      const r = await fetch("/api/restriction", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ seq }) }).then((res) => res.json());
+      if (state.activeGene !== gene || state.activeTab !== "Genome") return;
+      if (r.error || !Array.isArray(r.enzymes)) { out.innerHTML = `<p class="notice">${escapeHtml(r.error || "Could not scan the sequence.")}</p>`; return; }
+      const cutters = r.enzymes.filter((e) => e.count > 0).sort((a, b) => a.count - b.count);
+      const noncut = r.enzymes.filter((e) => e.count === 0).map((e) => e.enzyme);
+      const flankLabel = flank === "0" ? "gene only" : `± ${Number(flank).toLocaleString()} bp flanks`;
+      const td = "padding:5px 10px;border-bottom:1px solid var(--line,#eef2f3);font-size:.8125rem;vertical-align:top";
+      out.innerHTML = `
+        <p style="font-size:.8125rem;color:var(--muted,#6b7280);margin:0 0 6px">${r.length.toLocaleString()} bp scanned (${flankLabel}) · ${cutters.length} enzyme${cutters.length === 1 ? "" : "s"} cut · ${noncut.length} don't. Positions are 1-based within the scanned window.</p>
+        ${cutters.length ? `<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%">
+          <thead><tr style="text-align:left;border-bottom:2px solid var(--line,#d7dee0)"><th style="${td}">Enzyme</th><th style="${td}">Site</th><th style="${td}">Cuts</th><th style="${td}">Positions</th></tr></thead>
+          <tbody>${cutters.map((e) => `<tr>
+            <td style="${td}"><strong>${escapeHtml(e.enzyme)}</strong></td>
+            <td style="${td};font-family:ui-monospace,Menlo,monospace">${escapeHtml(e.site)}</td>
+            <td style="${td}">${e.count}</td>
+            <td style="${td};font-family:ui-monospace,Menlo,monospace">${e.positions.join(", ")}</td></tr>`).join("")}</tbody></table></div>
+          ${noncut.length ? `<p style="font-size:.75rem;color:var(--muted,#9ca3af);margin:8px 0 0"><strong>Do not cut in this window:</strong> ${escapeHtml(noncut.join(", "))}</p>` : ""}`
+        : `<p class="notice muted">None of the listed enzymes cut this window.</p>`}`;
+    } catch {
+      if (state.activeGene === gene && state.activeTab === "Genome") out.innerHTML = `<p class="notice">Could not retrieve or scan the genomic sequence for ${escapeHtml(gene.symbol)}.</p>`;
+    } finally {
+      btn.disabled = false; btn.textContent = "Map restriction sites →";
+    }
+  });
 }
 
 // Flatten one gene's rich annotation into the GO rows the GO tab renders:

@@ -1670,6 +1670,7 @@ function renderRecord() {
           </div>
           <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
           <div data-chr2-dup style="margin-top:10px"></div>
+          <div data-insitu style="margin-top:10px"></div>
         </div>
         ${gene.uniprot ? `
         <div class="structure-preview">
@@ -1736,6 +1737,7 @@ function renderRecord() {
 // that layer has content for this gene.
 function loadAnnotationStack(gene) {
   loadChr2DupFlag(gene);
+  loadInsitu(gene);
   loadOfficialCuration(gene);
   loadAuthorCuration(gene);
   loadCommunityCuration(gene);
@@ -11282,6 +11284,31 @@ async function loadChr2DupFlag(gene) {
   const label = (partner && partner.symbol) || partnerDdb;
   el.innerHTML = `<div style="border-left:3px solid #b45309;background:#fffbeb;color:#7c2d12;padding:9px 12px;border-radius:6px;font-size:.8125rem;line-height:1.5">
     <strong>⚠ Chromosome 2 duplication (AX4).</strong> This gene lies in the segment of chromosome 2 that is duplicated in the AX4 reference strain, so it has a near-identical duplicate copy: <a class="text-link curated-xref" data-ddb-ref="${escapeHtml(partnerDdb)}" href="/gene/${encodeURIComponent(label)}">${escapeHtml(label)}</a>. Short-read data (RNA-seq, variant calls) usually cannot tell the two copies apart, so read-based results and some analyses may reflect both copies together.</div>`;
+}
+
+// In-situ hybridization spatial expression (Maeda et al. 2003): the prestalk
+// cell subtype in which a gene is expressed, mapped from the study's cDNA clones.
+let insituMap = null;
+async function ensureInsitu() {
+  if (insituMap) return insituMap;
+  try {
+    const res = await fetch("/assets/insitu_maeda.json");
+    insituMap = res.ok ? await res.json() : {};
+  } catch { insituMap = {}; }
+  return insituMap;
+}
+async function loadInsitu(gene) {
+  const el = document.querySelector("[data-insitu]");
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || "").toUpperCase();
+  if (!/^DDB_G\d+$/.test(ddb)) return;
+  const map = await ensureInsitu();
+  const rec = map[ddb];
+  if (!rec || state.activeGene !== gene) return;
+  const meta = map._meta || {};
+  const pmid = meta.pmid ? `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(meta.pmid)}/" target="_blank" rel="noopener">Maeda et al. 2003</a>` : "Maeda et al. 2003";
+  el.innerHTML = `<div style="border-left:3px solid var(--teal,#0b746a);background:var(--soft,#e7eef7);color:var(--ink,#1f2937);padding:9px 12px;border-radius:6px;font-size:.8125rem;line-height:1.5">
+    <strong>🧫 Spatial expression (in situ).</strong> Expressed in <strong>${escapeHtml(rec.subtype_label || rec.subtype)}</strong> cells of the developing slug. Whole-mount in situ hybridization, ${pmid}${rec.clone ? ` (clone ${escapeHtml(rec.clone)})` : ""}.</div>`;
 }
 
 // Third curation window: author-submitted curation awaiting curator approval.

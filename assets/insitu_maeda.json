@@ -1,0 +1,378 @@
+{
+ "_meta": {
+  "layer": "In-situ hybridization spatial expression",
+  "source": "Maeda et al. 2003",
+  "pmid": "12796308",
+  "reference": "Maeda M, Sakamoto H, Iranfar N, Fuller D, Maruo T, Ogihara S, Morio T, Urushihara H, Tanaka Y, Loomis WF. Changing patterns of gene expression in Dictyostelium prestalk cell subtypes recognized by in situ hybridization with genes from microarray analyses. Eukaryot Cell. 2003;2(3):627-637.",
+  "method": "Whole-mount in situ hybridization assigning each gene a prestalk cell subtype.",
+  "mapping": "The study's cDNA clones (H. Urushihara SL/SS collection) were mapped from their EST sequences to the AX4 reference genome by BLAST. Only assignments with a unique, high-identity match (>=98% identity, >=50% clone coverage, no near-identical paralog) and, where the study named a gene, no naming conflict were retained: 60 of the 104 genes. Gene-family members and lower-confidence clones are omitted pending curator review.",
+  "subtype_labels": {
+   "PstA": "prestalk A (anterior tip)",
+   "PstAB": "prestalk AB (central core)",
+   "PstO": "prestalk O (rear prestalk zone)",
+   "PstAO": "prestalk AO (broad prestalk)",
+   "LatePrestalk": "late prestalk"
+  },
+  "validated_genes": 60
+ },
+ "DDB_G0286765": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLI716",
+  "accession": "AU062252"
+ },
+ "DDB_G0293888": {
+  "subtype": "PstA",
+  "subtype_label": "prestalk A (anterior tip)",
+  "clone": "SSK861",
+  "accession": "C94343"
+ },
+ "DDB_G0288331": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SLA128",
+  "accession": "AU060076"
+ },
+ "DDB_G0268592": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SLB233",
+  "accession": "AU060722"
+ },
+ "DDB_G0286025": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SSL558",
+  "accession": "AU038850"
+ },
+ "DDB_G0281821": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SLC388",
+  "accession": "AU060958"
+ },
+ "DDB_G0279159": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SLI604",
+  "accession": "AU062236"
+ },
+ "DDB_G0273213": {
+  "subtype": "PstAB",
+  "subtype_label": "prestalk AB (central core)",
+  "clone": "SSK348",
+  "accession": "AU074317"
+ },
+ "DDB_G0270020": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSD764",
+  "accession": "AU072229"
+ },
+ "DDB_G0277253": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSB476",
+  "accession": "AU071425"
+ },
+ "DDB_G0277233": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSM184",
+  "accession": "AU038948"
+ },
+ "DDB_G0276919": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSI311",
+  "accession": "AU073765"
+ },
+ "DDB_G0275253": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSL481",
+  "accession": "AU074665"
+ },
+ "DDB_G0275695": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SLK756",
+  "accession": "AU060648"
+ },
+ "DDB_G0275255": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSH476",
+  "accession": "AU073534"
+ },
+ "DDB_G0272530": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SLA769",
+  "accession": "AU060263"
+ },
+ "DDB_G0292810": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SLF774",
+  "accession": "AU061762"
+ },
+ "DDB_G0269674": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSH823",
+  "accession": "AU073683"
+ },
+ "DDB_G0269672": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSI424",
+  "accession": "AU073811"
+ },
+ "DDB_G0272420": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSH630",
+  "accession": "AU073596"
+ },
+ "DDB_G0292248": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSL550",
+  "accession": "AU038842"
+ },
+ "DDB_G0283871": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSM642",
+  "accession": "AU074982"
+ },
+ "DDB_G0276759": {
+  "subtype": "PstO",
+  "subtype_label": "prestalk O (rear prestalk zone)",
+  "clone": "SSG754",
+  "accession": "AU073353"
+ },
+ "DDB_G0283511": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSF295",
+  "accession": "C92972"
+ },
+ "DDB_G0293874": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLI566",
+  "accession": "AU062233"
+ },
+ "DDB_G0283515": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSJ728",
+  "accession": "C91268"
+ },
+ "DDB_G0270190": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLA387",
+  "accession": "AU060133"
+ },
+ "DDB_G0286193": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSF509",
+  "accession": "C92856"
+ },
+ "DDB_G0283465": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSJ814",
+  "accession": "AU074211"
+ },
+ "DDB_G0289609": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSD873",
+  "accession": "C92333"
+ },
+ "DDB_G0275411": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSG159",
+  "accession": "AU073109"
+ },
+ "DDB_G0292996": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLE410",
+  "accession": "AU061483"
+ },
+ "DDB_G0292224": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSK868",
+  "accession": "AU074481"
+ },
+ "DDB_G0293898": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSJ538",
+  "accession": "C91092"
+ },
+ "DDB_G0274171": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLF535",
+  "accession": "AU061713"
+ },
+ "DDB_G0279713": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSL554",
+  "accession": "AU038846"
+ },
+ "DDB_G0272512": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSB721",
+  "accession": "AU037288"
+ },
+ "DDB_G0284363": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLB609",
+  "accession": "AU060824"
+ },
+ "DDB_G0291974": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SLH511",
+  "accession": "AU062087"
+ },
+ "DDB_G0269940": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSD123",
+  "accession": "AU071989"
+ },
+ "DDB_G0293360": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSM416",
+  "accession": "AU039124"
+ },
+ "DDB_G0283501": {
+  "subtype": "PstAO",
+  "subtype_label": "prestalk AO (broad prestalk)",
+  "clone": "SSJ246",
+  "accession": "AU074011"
+ },
+ "DDB_G0282107": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSE634",
+  "accession": "C84694"
+ },
+ "DDB_G0280319": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSK196",
+  "accession": "AU074273"
+ },
+ "DDB_G0289517": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLI252",
+  "accession": "AU062192"
+ },
+ "DDB_G0295755": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLH367",
+  "accession": "AU062051"
+ },
+ "DDB_G0293356": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSC746",
+  "accession": "AU071922"
+ },
+ "DDB_G0293934": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSA348",
+  "accession": "AU072597"
+ },
+ "DDB_G0271678": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLC233",
+  "accession": "AU060917"
+ },
+ "DDB_G0293886": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSG207",
+  "accession": "C89827"
+ },
+ "DDB_G0282147": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSG614",
+  "accession": "C89911"
+ },
+ "DDB_G0273017": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLE660",
+  "accession": "AU034900"
+ },
+ "DDB_G0284907": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSB338",
+  "accession": "AU071371"
+ },
+ "DDB_G0270162": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLD267",
+  "accession": "AU052407"
+ },
+ "DDB_G0275887": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLF442",
+  "accession": "AU061693"
+ },
+ "DDB_G0274375": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLJ273",
+  "accession": "AU053631"
+ },
+ "DDB_G0293862": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSE462",
+  "accession": "AU037927"
+ },
+ "DDB_G0267898": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLH752",
+  "accession": "AU062141"
+ },
+ "DDB_G0271340": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SSE273",
+  "accession": "AU072355"
+ },
+ "DDB_G0277269": {
+  "subtype": "LatePrestalk",
+  "subtype_label": "late prestalk",
+  "clone": "SLH173",
+  "accession": "AU062008"
+ }
+}

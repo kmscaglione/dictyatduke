@@ -309,11 +309,36 @@ def check_ddb0_ids():
     check(not bad, "all ids are DDB0 ids" if not bad else f"{len(bad)} genes with non-DDB0 ids")
 
 
+def check_insitu_maeda():
+    """insitu_maeda.json (Maeda 2003 in-situ prestalk subtypes): every gene must
+    exist in gene_index, carry a known subtype, and cite the study."""
+    print("in-situ (Maeda 2003) spatial expression")
+    path = os.path.join(ASSETS, "insitu_maeda.json")
+    if not os.path.exists(path):
+        return ok("insitu_maeda.json absent — skipped")
+    try:
+        d = load("insitu_maeda.json")
+        idx = {r[0] for r in load("gene_index.json")}
+    except (OSError, ValueError) as e:
+        return fail(f"could not load inputs ({e})")
+    meta = d.get("_meta") or {}
+    genes = {k: v for k, v in d.items() if not k.startswith("_")}
+    subtypes = set((meta.get("subtype_labels") or {}).keys())
+    bad_id = [g for g in genes if g not in idx]
+    bad_sub = [g for g, v in genes.items() if v.get("subtype") not in subtypes]
+    check(meta.get("pmid") == "12796308", "cites Maeda 2003 (PMID 12796308)")
+    check(not bad_id, "all in-situ genes exist in gene_index"
+          if not bad_id else f"{len(bad_id)} in-situ genes not in gene_index")
+    check(not bad_sub, f"all {len(genes)} genes have a known prestalk subtype"
+          if not bad_sub else f"{len(bad_sub)} genes with unknown subtype")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
-               check_phenotype_refs, check_strain_metadata, check_ddb0_ids):
+               check_phenotype_refs, check_strain_metadata, check_ddb0_ids,
+               check_insitu_maeda):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

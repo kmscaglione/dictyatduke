@@ -9295,6 +9295,19 @@ function aiCurationFor(gene) {
   if (!aiCurationData || !gene) return null;
   return aiCurationData[(gene.symbol || "").toLowerCase()] || null;
 }
+// A validation-derived accuracy badge for the AI layer: how often the model's GO
+// suggestions agree with independent curated GO (scripts/validate_ai_go.py). Tier
+// aware — the hand-checked "gene-specific" tier scores higher than "family-level".
+function aiAccuracyBadge(basis) {
+  const v = aiCurationData && aiCurationData._meta && aiCurationData._meta.validation;
+  if (!v) return "";
+  const tierKey = basis === "family" ? "family-level" : basis === "annotation" ? null : "gene-specific";
+  const t = tierKey && v.tiers && v.tiers[tierKey];
+  const same = t ? t.same_lineage_pct : v.same_lineage_pct;
+  const exact = t ? t.exact_pct : v.exact_pct;
+  const tip = `Model accuracy (independently validated): ${same}% of ${tierKey || "the model's"} GO suggestions were identical to, or a direct parent or child of, a curated GO term on the same gene (${exact}% identical). Overall across all suggestions: ${v.same_lineage_pct}% (${v.exact_pct}% identical), n=${v.n_genes} genes. Reproducible via ${v.method}. These remain unreviewed suggestions.`;
+  return `<span class="ai-accuracy" title="${escapeHtml(tip)}">✓ ${same}% concordant with curated GO</span>`;
+}
 
 // --- dictyBase legacy gene-product descriptions (imported fallback; always badged) ---
 let legacyDescData = null;
@@ -9502,7 +9515,11 @@ function paintGOTab() {
     .map((l) => `<button type="button" class="layer-pill ${l.cls} ${layers[l.key] ? "on" : "off"}" data-layer="${l.key}" aria-pressed="${layers[l.key]}">${escapeHtml(l.label)} <span class="layer-count">${counts[l.key]}</span></button>`)
     .join("")}</div>`;
 
-  const legend = `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Three curation layers — <span class="src-badge src-dicty">dictyBase</span> (official), <span class="src-badge src-curated">curated here</span> (community-submitted), and <span class="src-badge src-ai">AI</span> (machine-generated, unreviewed) — plus <span class="src-badge src-auto">automated</span> electronic inference (UniProt/InterPro/GO_Central). Toggle a layer to show or hide it. <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
+  const aiVal = aiCurationData && aiCurationData._meta && aiCurationData._meta.validation;
+  const aiAccNote = (counts.ai > 0 && aiVal)
+    ? ` In independent validation, ${aiVal.same_lineage_pct}% of the model's GO suggestions matched or were a direct parent or child of a curated GO term (${aiVal.exact_pct}% identical; <a class="text-link" href="https://github.com/kmscaglione/dictyatduke/blob/master/scripts/validate_ai_go.py" target="_blank" rel="noopener">how this is measured</a>).`
+    : "";
+  const legend = `<p style="font-size:0.75rem;color:var(--muted,#6b7280);margin-top:8px">Three curation layers — <span class="src-badge src-dicty">dictyBase</span> (official), <span class="src-badge src-curated">curated here</span> (community-submitted), and <span class="src-badge src-ai">AI</span> (machine-generated, unreviewed) — plus <span class="src-badge src-auto">automated</span> electronic inference (UniProt/InterPro/GO_Central). Toggle a layer to show or hide it.${aiAccNote} <a class="text-link" href="http://geneontology.org/docs/guide-go-evidence-codes/" target="_blank" rel="noopener">Evidence codes</a>.</p>`;
 
   container.innerHTML = `
     ${pills}
@@ -11363,9 +11380,10 @@ async function loadAISummary(gene) {
     ? `<span class="ai-tier" title="Predicted from the gene's protein family/domain, not gene-specific literature">family-level</span>`
     : ai.basis === "annotation" ? ""
     : `<span class="ai-tier" title="Model-authored from gene-specific knowledge for this well-studied gene">gene-specific</span>`;
+  const acc = aiAccuracyBadge(ai.basis);
   el.innerHTML = `
     <div class="ai-summary">
-      ${tier ? `<p style="margin:0 0 6px">${tier}</p>` : ""}
+      ${(tier || acc) ? `<p style="margin:0 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:4px">${tier}${acc}</p>` : ""}
       <p style="margin:0">${escapeHtml(ai.summary)}</p>
       <p class="ai-note">Machine-generated, not curator-reviewed \u2014 may be incomplete or wrong. The dictyBase-curated annotations above are authoritative.</p>
     </div>`;

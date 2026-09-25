@@ -8263,13 +8263,13 @@ function renderTab(gene, tab) {
           </div>
         </details>
         <details class="lit-section">
-          <summary>Curated references <span class="lit-sub">cited in the dictyBase summary</span></summary>
+          <summary>Key references <span class="lit-sub">the main papers cited for this gene</span></summary>
           <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
-            ${loadingHTML("Loading curated references…")}
+            ${loadingHTML("Loading key references…")}
           </div>
         </details>
         <details class="lit-section">
-          <summary>dictyBase-curated papers on PubMed</summary>
+          <summary>Full publication list <span class="lit-sub">every paper dictyBase links to this gene</span></summary>
           <div data-dicty-lit><p class="notice muted">Loading…</p></div>
         </details>
         <details class="lit-section">
@@ -8625,12 +8625,25 @@ function renderLitSection(s) {
       ? `<p class="oma-count">${hits.length} match${hits.length === 1 ? "" : "es"}</p><ul class="list pubmed-list">${hits.map(litPaperHtml).join("")}</ul>`
       : `<p class="notice muted">No ${s.noun} match “${escapeHtml(litQuery.trim())}”.</p>`);
   } else {
-    const note = s.papers.length > s.defaultShown
-      ? `<p class="oma-count">Showing the ${s.defaultShown} most recent of ${s.papers.length} — filter above to find a specific one.</p>`
-      : "";
-    s.el.innerHTML = s.headerHtml + note + `<ul class="list pubmed-list">${s.papers.slice(0, s.defaultShown).map(litPaperHtml).join("")}</ul>`;
+    const total = s.papers.length;
+    const limit = s._expanded ? total : s.defaultShown;
+    let note = "";
+    if (total > s.defaultShown) {
+      note = s._expanded
+        ? `<p class="oma-count">Showing all ${total}. <button type="button" class="text-link lit-toggle">Show fewer ↑</button></p>`
+        : `<p class="oma-count">Showing the ${s.defaultShown} most recent of ${total}. <button type="button" class="text-link lit-toggle">Show all ${total} ↓</button></p>`;
+    }
+    s.el.innerHTML = s.headerHtml + note + `<ul class="list pubmed-list">${s.papers.slice(0, limit).map(litPaperHtml).join("")}</ul>`;
   }
 }
+
+// Expand/collapse a literature section's full list (the "Show all N" toggle).
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".lit-toggle");
+  if (!btn) return;
+  const s = litSections.find((sec) => sec.el.contains(btn));
+  if (s) { s._expanded = !s._expanded; renderLitSection(s); }
+});
 
 function litPaint() {
   litSections.forEach(renderLitSection);
@@ -8793,23 +8806,24 @@ async function loadGeneResearchers(gene) {
 const curatedRefCache = new Map();
 const curatedRefPromise = new Map();  // in-flight de-dupe so concurrent callers share one fetch
 
-// Fetch (and cache) the curated papers for a gene, each with a `senior` last
-// author. Shared by the curated-references list and the researchers view so the
-// esummary call happens once, not once per consumer.
-function fetchCuratedPapers(gene) {
-  if (curatedRefCache.has(gene.id)) return Promise.resolve(curatedRefCache.get(gene.id));
-  if (curatedRefPromise.has(gene.id)) return curatedRefPromise.get(gene.id);
-  const pmids = curatedPmids(gene).slice(0, 60);
-  // Don't cache an empty result: the record is rendered once with a stripped gene
-  // (before enrichment adds the reference PMIDs) and again once enriched. Caching
-  // [] on the first pass would starve the enriched pass of its references.
-  if (!pmids.length) return Promise.resolve([]);
+// Fetch (and cache) PubMed summaries for an arbitrary set of PMIDs, each with a
+// `senior` last author, newest first. Cached by the PMID set itself (not by gene
+// id), so it is safe to call during the pre-enrichment render and again once the
+// gene's references are known, and is reused across sections and genes.
+const pmidPaperCache = new Map();
+const pmidPaperPromise = new Map();
+function fetchPmidPapers(pmids) {
+  const ids = [...new Set((pmids || []).map(String).filter((x) => /^\d+$/.test(x)))].slice(0, 200);
+  if (!ids.length) return Promise.resolve([]);
+  const key = ids.join(",");
+  if (pmidPaperCache.has(key)) return Promise.resolve(pmidPaperCache.get(key));
+  if (pmidPaperPromise.has(key)) return pmidPaperPromise.get(key);
   const p = (async () => {
-    const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictyatduke" });
+    const params = new URLSearchParams({ db: "pubmed", id: key, retmode: "json", tool: "dictyatduke" });
     const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
     if (!res.ok) throw new Error("esummary failed");
     const data = await res.json();
-    const papers = pmids.map((pmid) => {
+    const papers = ids.map((pmid) => {
       const item = data.result?.[pmid];
       return {
         pmid,
@@ -8822,12 +8836,18 @@ function fetchCuratedPapers(gene) {
       };
     });
     papers.sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
-    curatedRefCache.set(gene.id, papers);
+    pmidPaperCache.set(key, papers);
     return papers;
   })();
-  curatedRefPromise.set(gene.id, p);
-  p.catch(() => {}).finally(() => curatedRefPromise.delete(gene.id));
+  pmidPaperPromise.set(key, p);
+  p.catch(() => {}).finally(() => pmidPaperPromise.delete(key));
   return p;
+}
+
+// Curated references for a gene: the PMIDs cited for it, resolved to full papers.
+// Shared by the curated-references list and the researchers view.
+function fetchCuratedPapers(gene) {
+  return fetchPmidPapers(curatedPmids(gene).slice(0, 60));
 }
 
 function curatedPmids(gene) {
@@ -8854,23 +8874,14 @@ async function loadCuratedReferences(gene) {
   if (!container) return;
   const pmids = curatedPmids(gene).slice(0, 60);
   if (!pmids.length) {
-    container.innerHTML = `<p class="notice muted">No references are cited in the curated summary for ${escapeHtml(gene.symbol)}.</p>`;
+    container.innerHTML = `<p class="notice muted">No key references curated for ${escapeHtml(gene.symbol)} yet.</p>`;
     return;
   }
-  const renderHeader = (n) => "";
-  try {
-    const papers = await fetchCuratedPapers(gene);
-    if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-    litRegister({ el: container, headerHtml: renderHeader(papers.length), papers, noun: "references", defaultShown: 10 });
-  } catch {
-    if (state.activeGene !== gene || state.activeTab !== "Literature") return;
-    // Fallback: linked PMIDs without titles
-    container.innerHTML = `
-      ${renderHeader(pmids.length)}
-      <ul class="list">
-        ${pmids.map((pmid) => `<li><strong><a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(pmid)}/" target="_blank" rel="noopener">PMID ${escapeHtml(pmid)}</a></strong></li>`).join("")}
-      </ul>`;
-  }
+  let papers;
+  try { papers = await fetchCuratedPapers(gene); }
+  catch { papers = pmids.map((pmid) => ({ pmid, title: `PMID ${pmid}`, journal: "", authors: "", date: "", sortDate: "" })); }
+  if (state.activeGene !== gene || state.activeTab !== "Literature") return;
+  litRegister({ el: container, headerHtml: "", papers, noun: "references", defaultShown: 10 });
 }
 
 document.addEventListener("change", (event) => {
@@ -9109,12 +9120,20 @@ async function loadGeneExtras(gene) {
 
   const lit = document.querySelector("[data-dicty-lit]");
   if (lit) {
-    const pmids = x.pmids || [];
-    const show = pmids.slice(0, 40);
-    const more = pmids.length - show.length;
-    lit.innerHTML = pmids.length
-      ? `<p style="font-size:.8125rem;line-height:1.9">${show.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}${more > 0 ? ` · <span style="color:var(--muted,#6b7280)">+${more} more</span>` : ""}</p>`
-      : `<p class="notice muted">No dictyBase-curated papers linked to this gene yet.</p>`;
+    const pmids = (x.pmids || []).map(String);
+    if (!pmids.length) {
+      lit.innerHTML = `<p class="notice muted">No papers linked to this gene at dictyBase yet.</p>`;
+    } else {
+      // Full references (title, authors, journal) like the key-references list,
+      // with a "Show all N" toggle. Falls back to bare PMID links if PubMed is
+      // unreachable; both go through litRegister so the filter and toggle work.
+      let papers;
+      try { papers = await fetchPmidPapers(pmids.slice(0, 200)); }
+      catch { papers = pmids.map((pmid) => ({ pmid, title: `PMID ${pmid}`, journal: "", authors: "", date: "", sortDate: "" })); }
+      if ((state.activeGene?.veupath || state.activeGene?.ddb || "").toUpperCase() === ddb) {
+        litRegister({ el: lit, headerHtml: "", papers, noun: "papers", defaultShown: 10 });
+      }
+    }
   }
 
   const orth = document.querySelector("[data-dicty-orthologs]");

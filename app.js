@@ -8256,13 +8256,13 @@ function renderTab(gene, tab) {
       <div class="data-block">
         <h3>Literature</h3>
         <input type="search" class="lit-search" placeholder="Filter all papers by title, journal, or author…" aria-label="Filter literature">
-        <details class="lit-section" open>
+        <details class="lit-section">
           <summary>Researchers who study <em>${escapeHtml(gene.symbol)}</em></summary>
           <div class="gene-researchers" data-gene-researchers="${escapeHtml(gene.id)}">
             ${loadingHTML(`Finding researchers who study ${escapeHtml(gene.symbol)}…`)}
           </div>
         </details>
-        <details class="lit-section" open>
+        <details class="lit-section">
           <summary>Curated references <span class="lit-sub">cited in the dictyBase summary</span></summary>
           <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
             ${loadingHTML("Loading curated references…")}
@@ -8800,7 +8800,10 @@ function fetchCuratedPapers(gene) {
   if (curatedRefCache.has(gene.id)) return Promise.resolve(curatedRefCache.get(gene.id));
   if (curatedRefPromise.has(gene.id)) return curatedRefPromise.get(gene.id);
   const pmids = curatedPmids(gene).slice(0, 60);
-  if (!pmids.length) { curatedRefCache.set(gene.id, []); return Promise.resolve([]); }
+  // Don't cache an empty result: the record is rendered once with a stripped gene
+  // (before enrichment adds the reference PMIDs) and again once enriched. Caching
+  // [] on the first pass would starve the enriched pass of its references.
+  if (!pmids.length) return Promise.resolve([]);
   const p = (async () => {
     const params = new URLSearchParams({ db: "pubmed", id: pmids.join(","), retmode: "json", tool: "dictyatduke" });
     const res = await fetch(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?${params.toString()}`);
@@ -8830,15 +8833,19 @@ function fetchCuratedPapers(gene) {
 function curatedPmids(gene) {
   const out = [];
   const seen = new Set();
+  const add = (raw) => {
+    const id = String(raw).replace(/^PMID:/i, "").trim();
+    if (/^\d+$/.test(id) && !seen.has(id)) { seen.add(id); out.push(id); }
+  };
+  // PMIDs linked inline in the curated summary text, when present.
   const re = /pubmed\/(\d+)/gi;
   let m;
-  while ((m = re.exec(String(gene.summary || ""))) !== null) {
-    if (!seen.has(m[1])) { seen.add(m[1]); out.push(m[1]); }
-  }
-  for (const ref of (gene._annot && gene._annot.literature ? gene._annot.literature : [])) {
-    const id = String(ref).startsWith("PMID:") ? String(ref).slice(5) : String(ref);
-    if (/^\d+$/.test(id) && !seen.has(id)) { seen.add(id); out.push(id); }
-  }
+  while ((m = re.exec(String(gene.summary || ""))) !== null) add(m[1]);
+  // The record's curated reference list (the citations behind the summary; the
+  // inline links are stripped from the served summary text, so this is where
+  // they actually live).
+  for (const id of (gene.references || [])) add(id);
+  for (const ref of (gene._annot && gene._annot.literature ? gene._annot.literature : [])) add(ref);
   return out;
 }
 
@@ -11145,6 +11152,13 @@ async function enrichGeneFromCorpus(gene) {
       const annot = await fetchGeneAnnot(ddb);
       if (annot) enriched._annot = annot;
     } catch { /* annotations optional */ }
+    // The curated reference PMIDs live on the /api/gene record (the inline links
+    // are stripped from the served summary text), so carry them onto the gene
+    // object for the Literature tab's curated-references section.
+    try {
+      const rec = await fetch(`/api/gene/${encodeURIComponent(ddb)}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      if (rec && Array.isArray(rec.references)) enriched.references = rec.references;
+    } catch { /* references optional */ }
     try {
       const corpus = await ensureDictyCorpus();
       const entry = corpus[ddb];

@@ -1052,19 +1052,33 @@ let geneIndex = [];
   } catch { /* keep the HTML default */ }
 })();
 
-(async function loadGeneIndex() {
-  try {
-    const res = await fetch("/assets/gene_index.json");
-    if (!res.ok) return;
-    const rows = await res.json();
-    geneIndex = rows.map(([id, symbol, name, location, ncbiGene, synonyms = []]) => ({
-      id, symbol, name, location, ncbiGene, synonyms,
-      organism: "Dictyostelium discoideum AX4"
-    }));
-    // If the user is mid-search, refresh suggestions now that the index is ready.
-    if (input && input.value.trim()) renderSuggestions(input.value);
-  } catch { /* typeahead falls back to NCBI search */ }
-})();
+// The gene index is ~1.5 MB and only powers search typeahead, so we keep it off
+// the critical render path: load it once when the browser is first idle, or the
+// moment the user touches a search box, whichever comes first. Until it is ready
+// typeahead falls back to live NCBI search, so deferring it is safe.
+let geneIndexPromise = null;
+function ensureGeneIndex() {
+  if (geneIndexPromise) return geneIndexPromise;
+  geneIndexPromise = (async () => {
+    try {
+      const res = await fetch("/assets/gene_index.json");
+      if (!res.ok) return;
+      const rows = await res.json();
+      geneIndex = rows.map(([id, symbol, name, location, ncbiGene, synonyms = []]) => ({
+        id, symbol, name, location, ncbiGene, synonyms,
+        organism: "Dictyostelium discoideum AX4"
+      }));
+      // If the user is mid-search, refresh suggestions now that the index is ready.
+      if (input && input.value.trim()) renderSuggestions(input.value);
+    } catch { /* typeahead falls back to NCBI search */ }
+  })();
+  return geneIndexPromise;
+}
+(window.requestIdleCallback || ((fn) => setTimeout(fn, 1200)))(ensureGeneIndex);
+if (input) {
+  input.addEventListener("focus", ensureGeneIndex, { once: true });
+  input.addEventListener("input", ensureGeneIndex, { once: true });
+}
 
 function searchIndex(query, limit = 8) {
   const q = normalizeQuery(query);
@@ -15344,7 +15358,6 @@ function finderAddAll() {
 }
 
 function initialHydrate() {
-  buildSiteIndex();
   renderRecentGenes();
   hydrateFromRoute();
   initHeroVideo();
@@ -15360,8 +15373,11 @@ function initialHydrate() {
   // After first paint, quietly pull in the technique protocol bodies and
   // re-index them so full-text protocol search ("HL5") works. Non-blocking;
   // until it finishes, techniques are still findable by title/category.
+  // Build the site search index off the critical path. Cmd-K search reads
+  // SITE_PAGES, which is empty (and degrades gracefully) until this runs; the
+  // second build folds in technique protocol bodies once they load.
   const whenIdle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
-  whenIdle(() => { ensureTechniqueContent().then(() => buildSiteIndex()); });
+  whenIdle(() => { buildSiteIndex(); ensureTechniqueContent().then(() => buildSiteIndex()); });
 }
 if (document.readyState === "complete") {
   initialHydrate();

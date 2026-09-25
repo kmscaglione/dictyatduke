@@ -2,6 +2,13 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-09-25",
+      "tag": "community",
+      "title": "UK Christmas Dicty Meeting 2026, Sheffield",
+      "body": "Prof. Jason King (School of Biosciences, University of Sheffield) will continue the tradition of a UK Christmas Dicty meeting, on 16 to 17 December 2026 in Sheffield. The programme features talks from early-career researchers selected from submitted abstracts, with a conference dinner on the Wednesday evening. The fee is about £50. All are welcome. See the meeting website for abstract submission and registration.",
+      "link": "https://sites.google.com/sheffield.ac.uk/uk-dicty-2026/home"
+    },
+    {
       "date": "2026-09-15",
       "tag": "update",
       "title": "Fuller strain, phenotype, and gene records",

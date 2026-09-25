@@ -6318,6 +6318,16 @@ const RESEARCH_AREAS = [
     pubmed: "development OR multicellular OR morphogenesis",
   },
   {
+    id: "social-evolution",
+    icon: "🤝",
+    title: "Social evolution & ecology",
+    question: "How do amoebae cooperate, cheat, and farm?",
+    blurb: "A wild fruiting body is built from unrelated cells, so cooperation carries a conflict of interest, and Dictyostelium has become a premier model for the evolution of social behavior: kin recognition through the tgr allorecognition genes, cheater mutants that grab more than their share of the spore mass, and even primitive farming of bacteria carried between generations (Strassmann, Queller, Shaulsky and others).",
+    genes: ["tgrB1", "tgrC1", "csaA", "fbxA", "dimA", "rtoA", "chtB", "comH"],
+    protocols: [["Grow & starve cells", "growth"], ["Develop on agar", "development"]],
+    pubmed: '"social evolution" OR cheating OR altruism OR "kin recognition" OR cooperation OR farming',
+  },
+  {
     id: "autophagy",
     icon: "♻️",
     title: "Autophagy & lysosomal biology",

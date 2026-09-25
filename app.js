@@ -8255,23 +8255,35 @@ function renderTab(gene, tab) {
     return `
       <div class="data-block">
         <h3>Literature</h3>
-        <div class="gene-researchers" data-gene-researchers="${escapeHtml(gene.id)}">
-          ${loadingHTML(`Finding researchers who study ${escapeHtml(gene.symbol)}…`)}
-        </div>
         <input type="search" class="lit-search" placeholder="Filter all papers by title, journal, or author…" aria-label="Filter literature">
-        <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
-          ${loadingHTML("Loading curated references…")}
-        </div>
-        <div data-dicty-lit></div>
-        <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener" style="margin-top:16px">Search PubMed for all ${escapeHtml(gene.symbol)} papers</a>
-        <div class="pubmed-results" data-pubmed-results="${gene.id}">
-          ${loadingHTML(`Loading recent PubMed matches for ${gene.symbol}…`)}
-        </div>
+        <details class="lit-section" open>
+          <summary>Researchers who study <em>${escapeHtml(gene.symbol)}</em></summary>
+          <div class="gene-researchers" data-gene-researchers="${escapeHtml(gene.id)}">
+            ${loadingHTML(`Finding researchers who study ${escapeHtml(gene.symbol)}…`)}
+          </div>
+        </details>
+        <details class="lit-section" open>
+          <summary>Curated references <span class="lit-sub">cited in the dictyBase summary</span></summary>
+          <div class="curated-refs" data-curated-refs="${escapeHtml(gene.id)}">
+            ${loadingHTML("Loading curated references…")}
+          </div>
+        </details>
+        <details class="lit-section">
+          <summary>dictyBase-curated papers on PubMed</summary>
+          <div data-dicty-lit><p class="notice muted">Loading…</p></div>
+        </details>
+        <details class="lit-section">
+          <summary>PubMed search results</summary>
+          <a class="literature-search" href="${pubMedSearchUrl(gene)}" target="_blank" rel="noopener">Search PubMed for all ${escapeHtml(gene.symbol)} papers ↗</a>
+          <div class="pubmed-results" data-pubmed-results="${gene.id}">
+            ${loadingHTML(`Loading recent PubMed matches for ${gene.symbol}…`)}
+          </div>
+        </details>
         ${gene.literature && gene.literature.length ? `
-        <div class="seeded-literature">
-          <h4>Seeded literature links</h4>
+        <details class="lit-section">
+          <summary>Seeded literature links</summary>
           ${list(gene.literature, ([pmid, title, journal]) => [`PMID ${pmid}`, `${title} ${journal}`], true)}
-        </div>` : ""}
+        </details>` : ""}
       </div>
     `;
   }
@@ -8622,9 +8634,18 @@ function renderLitSection(s) {
 
 function litPaint() {
   litSections.forEach(renderLitSection);
-  // Seeded links are a tiny static set — hide them while filtering for consistency.
-  const seeded = document.querySelector(".seeded-literature");
-  if (seeded) seeded.style.display = litQuery.trim() ? "none" : "";
+  const q = litQuery.trim();
+  // While filtering, open every section so matches aren't hidden inside a collapsed
+  // one; restore each section's default open/closed state when the filter is cleared.
+  document.querySelectorAll(".lit-section").forEach((d) => {
+    if (q) {
+      if (d.dataset.defOpen == null) d.dataset.defOpen = d.open ? "1" : "0";
+      d.open = true;
+    } else if (d.dataset.defOpen != null) {
+      d.open = d.dataset.defOpen === "1";
+      delete d.dataset.defOpen;
+    }
+  });
 }
 
 function litRegister(section) {
@@ -8645,7 +8666,7 @@ async function loadPubMedResults(gene) {
       return;
     }
 
-    litRegister({ el: container, headerHtml: `<h4>PubMed search results</h4>`, papers, noun: "papers", defaultShown: 10 });
+    litRegister({ el: container, headerHtml: "", papers, noun: "papers", defaultShown: 10 });
   } catch (error) {
     container.innerHTML = `<p class="notice">PubMed results could not be loaded right now. The seeded literature links below are still available.</p>`;
   }
@@ -8762,7 +8783,6 @@ async function loadGeneResearchers(gene) {
   const body = `I am a PI whose group has published on ${gene.symbol} (${geneDdb(gene) || gene.symbol}). Please add me to the researchers list for this gene.\n\nName (as it should appear):\nLab / institution:\nPMID of the paper from my group:\nMy role on the paper (e.g. corresponding author):\n`;
   const addLink = `<a class="text-link" href="mailto:matt.scaglione@duke.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">add your lab</a>`;
   container.innerHTML = `
-    <h4>Researchers <span style="font-weight:500;color:var(--muted,#6b7280)">— who studies ${escapeHtml(gene.symbol)}</span></h4>
     ${list.length
       ? `<p class="oma-count">${list.length} researcher${list.length === 1 ? "" : "s"}${more}, ranked by number of ${escapeHtml(gene.symbol)} papers. Derived from the literature (senior/last author). Published a ${escapeHtml(gene.symbol)} paper from your group but not listed? ${addLink}.</p>
          <ul class="list researcher-list">${rows}</ul>`
@@ -8830,7 +8850,7 @@ async function loadCuratedReferences(gene) {
     container.innerHTML = `<p class="notice muted">No references are cited in the curated summary for ${escapeHtml(gene.symbol)}.</p>`;
     return;
   }
-  const renderHeader = (n) => `<h4>Curated references <span style="font-weight:500;color:var(--muted,#6b7280)">— cited in the dictyBase summary (${n})</span></h4>`;
+  const renderHeader = (n) => "";
   try {
     const papers = await fetchCuratedPapers(gene);
     if (state.activeGene !== gene || state.activeTab !== "Literature") return;
@@ -9086,9 +9106,8 @@ async function loadGeneExtras(gene) {
     const show = pmids.slice(0, 40);
     const more = pmids.length - show.length;
     lit.innerHTML = pmids.length
-      ? `<div class="seeded-literature"><h4>dictyBase-curated literature <span style="font-weight:500;color:var(--muted,#6b7280)">— ${pmids.length} paper${pmids.length === 1 ? "" : "s"} linked to this gene</span></h4>
-          <p style="font-size:.8125rem;line-height:1.9">${show.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}${more > 0 ? ` · <span style="color:var(--muted,#6b7280)">+${more} more</span>` : ""}</p></div>`
-      : "";
+      ? `<p style="font-size:.8125rem;line-height:1.9">${show.map((p) => `<a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(p)}/" target="_blank" rel="noopener">PMID ${escapeHtml(p)}</a>`).join(" · ")}${more > 0 ? ` · <span style="color:var(--muted,#6b7280)">+${more} more</span>` : ""}</p>`
+      : `<p class="notice muted">No dictyBase-curated papers linked to this gene yet.</p>`;
   }
 
   const orth = document.querySelector("[data-dicty-orthologs]");

@@ -1631,6 +1631,38 @@ button:focus-visible,
   list-style: none;
 }
 
+/* Collapsible Literature-tab sections (researchers, curated refs, PubMed lists) */
+.lit-section {
+  border: 1px solid var(--line, #e5e9ea);
+  border-radius: 8px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.lit-section > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink, #1f2937);
+  background: #f5f8f7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lit-section > summary::-webkit-details-marker { display: none; }
+.lit-section > summary::before {
+  content: "▸";
+  color: var(--muted, #6b7280);
+  font-size: 0.85em;
+  transition: transform .15s ease;
+}
+.lit-section[open] > summary::before { transform: rotate(90deg); }
+.lit-section > summary:hover { background: var(--soft, #eef3f3); }
+.lit-section .lit-sub { font-weight: 500; color: var(--muted, #6b7280); font-size: 0.8em; }
+.lit-section > *:not(summary) { padding: 4px 14px 12px; }
+.lit-section .literature-search { margin: 8px 0 6px; }
+
 .literature-search {
   display: inline-flex;
   min-height: 38px;

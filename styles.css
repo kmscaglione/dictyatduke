@@ -659,7 +659,22 @@ button,
 }
 .start-banner:hover { box-shadow: 0 8px 22px rgba(10, 79, 71, .12); transform: translateY(-1px); }
 
-/* Next-meeting banner on the home page — amber accent to stand apart from the teal start-banner */
+/* Next-meeting banners on the home page — amber accent to stand apart from the teal start-banner */
+.meeting-banners { display: flex; flex-direction: column; gap: 8px; }
+.meeting-banner-label {
+  display: inline-block;
+  font-size: 0.625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--amber);
+  background: #fff;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 .meeting-banner {
   display: flex;
   align-items: center;

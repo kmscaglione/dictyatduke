@@ -1,6 +1,21 @@
 window.meetingsContent = {
   intro: "International conferences dedicated to Dictyostelium started in 1977 with the meeting in Sardinia, and continued on a roughly 3-year cycle into the 1980s. However, as the field became more active, more local meetings sprang up to fill the gaps in the cycle. Notable amongst these was an annual series in the UK, which gradually became more international. By the late 1980s with the successive meetings at Amsterdam, Oxford, Airlie and Cambridge, the current pattern of annual meetings was established. Interestingly, in the late 1990s as the field expanded further, local meetings were re-started in several countries.",
   acknowledgment: "Special thanks to Rob Kay, Rex Chisholm, Alan Kimmel, Bill Loomis, and Stephen Alexander for their input on historic Dicty conferences.",
+  // Smaller regional / "and friends" meetings, shown on the home-page banner
+  // alongside the next international conference. Not part of the historical
+  // international-conference list below.
+  regionalMeetings: [
+    {
+      name: "UK Christmas Dicty Meeting",
+      location: "Sheffield, UK",
+      dates: "16 to 17 December 2026",
+      organizers: ["Jason King"],
+      link: "https://sites.google.com/sheffield.ac.uk/uk-dicty-2026/home",
+      bannerLabel: "UK and friends meeting",
+      startDate: "2026-12-16",
+      upcoming: true
+    }
+  ],
   conferences: [
     {
       year: 2027,
@@ -9,7 +24,9 @@ window.meetingsContent = {
       dates: "August 2027",
       organizers: ["Rob Huber", "Yulia Artemenko"],
       links: [],
-      upcoming: true
+      upcoming: true,
+      bannerLabel: "Next international meeting",
+      startDate: "2027-08-01"
     },
     {
       year: 2025,

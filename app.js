@@ -14325,8 +14325,8 @@ function showHomeChrome(show) {
   if (caps) caps.hidden = !show;
   const startBanner = document.getElementById("start-banner");
   if (startBanner) startBanner.hidden = !show;
-  const meetingBanner = document.getElementById("meeting-banner");
-  if (meetingBanner) meetingBanner.hidden = !(show && meetingBanner.dataset.has === "1");
+  const meetingBanners = document.getElementById("meeting-banners");
+  if (meetingBanners) meetingBanners.hidden = !(show && meetingBanners.dataset.has === "1");
   const searchGuide = document.getElementById("search-guide");
   if (searchGuide) {
     const showPill = show && !guideSeen() && guideShownCount() < GUIDE_SHOW_LIMIT;
@@ -14354,17 +14354,28 @@ async function loadAiAvailability() {
 // Home-page banner for the next community meeting, populated from the same
 // meetings data as the meetings page (the first conference flagged upcoming).
 function renderMeetingBanner() {
-  const el = document.getElementById("meeting-banner");
-  const txt = document.getElementById("meeting-banner-text");
-  if (!el || !txt) return;
-  const data = window.meetingsContent;
-  const up = (data && Array.isArray(data.conferences)) ? data.conferences.filter((c) => c.upcoming) : [];
-  if (!up.length) { el.hidden = true; el.dataset.has = ""; return; }
-  const m = up[0];
-  const bits = [m.name || (m.year ? m.year + " meeting" : ""), m.location, m.dates].filter(Boolean).join(" · ");
-  txt.innerHTML = `<strong>Next meeting:</strong> ${escapeHtml(bits)}`;
-  el.dataset.has = "1";
-  el.hidden = !isHomeView;
+  const box = document.getElementById("meeting-banners");
+  if (!box) return;
+  const data = window.meetingsContent || {};
+  const intl = (data.conferences || []).filter((c) => c.upcoming)
+    .map((c) => ({ ...c, bannerLabel: c.bannerLabel || "Next international meeting", external: false }));
+  const regional = (data.regionalMeetings || []).filter((c) => c.upcoming)
+    .map((c) => ({ ...c, bannerLabel: c.bannerLabel || "Regional meeting", external: true }));
+  const key = (m) => m.startDate || String(m.year || "9999");
+  const all = intl.concat(regional).sort((a, b) => (key(a) < key(b) ? -1 : 1)); // soonest first
+  if (!all.length) { box.hidden = true; box.dataset.has = ""; box.innerHTML = ""; return; }
+  box.innerHTML = all.map((m) => {
+    const bits = [m.name || (m.year ? m.year + " meeting" : ""), m.location, m.dates].filter(Boolean).join(" · ");
+    const href = m.link || "/community/meetings";
+    const ext = m.external && /^https?:/.test(href);
+    return `<a class="meeting-banner" href="${escapeHtml(href)}"${ext ? ' target="_blank" rel="noopener"' : ""}>
+      <span class="meeting-banner-icon" aria-hidden="true">📅</span>
+      <span class="meeting-banner-text"><strong class="meeting-banner-label">${escapeHtml(m.bannerLabel)}</strong>${escapeHtml(bits)}</span>
+      <span class="meeting-banner-cta">${ext ? "Meeting website ↗" : "Meeting details →"}</span>
+    </a>`;
+  }).join("");
+  box.dataset.has = "1";
+  box.hidden = !isHomeView;
 }
 
 // News now surfaces only through the ticker (below the nav) and the full /news

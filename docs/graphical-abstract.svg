@@ -18,7 +18,7 @@
 <g transform="translate(890,350) scale(2.1)"><path d="M -29,17 A 29,25 0 0 1 29,17 Z" fill="#9fb8d6" stroke="#0a4f47" stroke-width="1.5"/><line x1="-34" y1="17" x2="34" y2="17" stroke="#0a4f47" stroke-width="1.5"/></g>
 <text x="890" y="470" text-anchor="middle" font-size="34" font-weight="700" fill="#1a2b3c">Mound</text>
 <text x="890" y="508" text-anchor="middle" font-size="30" fill="#5b6672">cell-type choice</text>
-<g transform="translate(1235,350) scale(2.1)"><path d="M -39,4 C -39,-10 -17,-13 4,-13 C 27,-13 41,-7 41,3 C 41,10 19,13 -6,13 C -25,13 -39,11 -39,4 Z" fill="#9fb8d6" stroke="#0a4f47" stroke-width="1.5"/><path d="M 12,-12.6 C 29,-12 41,-7 41,3 C 41,8 29,11.6 12,12.6 Z" fill="#5f93cb" opacity=".9"/></g>
+<g transform="translate(1235,350) scale(2.1)"><ellipse cx="0" cy="14.5" rx="37" ry="3" fill="#0a4f47" opacity=".18"/><path d="M -36,13 C -20,13 0,13 14,12 C 26,11 34,4 42,-9 C 43,-12 40,-13 37,-11 C 28,-6 12,-6 -6,-6 C -20,-6 -30,-5 -34,-1 C -36,2 -36,7 -36,13 Z" fill="#9fb8d6" stroke="#0a4f47" stroke-width="1.5"/><path d="M 42,-9 C 34,4 26,11 15,12 C 20,5 28,-2 37,-11 C 40,-13 43,-12 42,-9 Z" fill="#5f93cb" opacity=".9"/></g>
 <text x="1235" y="470" text-anchor="middle" font-size="34" font-weight="700" fill="#1a2b3c">Slug</text>
 <text x="1235" y="508" text-anchor="middle" font-size="30" fill="#5b6672">photo/thermotaxis</text>
 <g transform="translate(1580,350) scale(2.1)"><ellipse cx="0" cy="29" rx="21" ry="4" fill="#0a4f47"/><polygon points="-4,27 4,27 2.6,-8 -2.6,-8" fill="#9fb8d6" stroke="#0a4f47" stroke-width="1.3"/><circle cx="0" cy="-19" r="15" fill="#f4c84a" stroke="#d9a92a" stroke-width="1.6"/></g>

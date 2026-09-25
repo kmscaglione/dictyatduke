@@ -1,0 +1,3 @@
+date,category,minutes,description
+2026-09-25,feature,60,Defer gene index and site search index off the critical render path (perf)
+2026-09-25,bug fix,45,Fix gene record opening tucked under the sticky header (scroll-margin)

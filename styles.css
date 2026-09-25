@@ -1015,6 +1015,9 @@ button:focus-visible,
 
 .record-shell {
   padding: 12px 0 54px;
+  /* Clear the 100px sticky top bar when scrollIntoView() lands on the record,
+     so a gene page never opens with its title tucked under the header. */
+  scroll-margin-top: 112px;
 }
 
 .empty-state {
@@ -2117,6 +2120,11 @@ button:focus-visible,
     padding: 10px 12px;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px;
+  }
+
+  /* Match the shorter mobile top bar (64px) for the record scroll offset. */
+  .record-shell {
+    scroll-margin-top: 76px;
   }
 
   /* The desktop brand (68px logo + 32px text) is far too wide for a phone and

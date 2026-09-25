@@ -9298,15 +9298,14 @@ function aiCurationFor(gene) {
 // A validation-derived accuracy badge for the AI layer: how often the model's GO
 // suggestions agree with independent curated GO (scripts/validate_ai_go.py). Tier
 // aware — the hand-checked "gene-specific" tier scores higher than "family-level".
-function aiAccuracyBadge(basis) {
+function aiAccuracyBadge() {
   const v = aiCurationData && aiCurationData._meta && aiCurationData._meta.validation;
   if (!v) return "";
-  const tierKey = basis === "family" ? "family-level" : basis === "annotation" ? null : "gene-specific";
-  const t = tierKey && v.tiers && v.tiers[tierKey];
-  const same = t ? t.same_lineage_pct : v.same_lineage_pct;
-  const exact = t ? t.exact_pct : v.exact_pct;
-  const tip = `Model accuracy (independently validated): ${same}% of ${tierKey || "the model's"} GO suggestions were identical to, or a direct parent or child of, a curated GO term on the same gene (${exact}% identical). Overall across all suggestions: ${v.same_lineage_pct}% (${v.exact_pct}% identical), n=${v.n_genes} genes. Reproducible via ${v.method}. These remain unreviewed suggestions.`;
-  return `<span class="ai-accuracy" title="${escapeHtml(tip)}">✓ ${same}% concordant with curated GO</span>`;
+  const t = v.tiers || {};
+  const gs = (t["gene-specific"] || {}).same_lineage_pct;
+  const fam = (t["family-level"] || {}).same_lineage_pct;
+  const tip = `Overall performance of the AI model, not a score for this particular annotation. Across ${v.n_genes} genes, ${v.same_lineage_pct}% of the model's GO suggestions were identical to, or a direct parent or child of, a curated GO term on the same gene (${v.exact_pct}% identical). By confidence tier: gene-specific ${gs}%, family-level ${fam}%. Reproducible via ${v.method}. Every entry in this layer is an unreviewed suggestion.`;
+  return `<span class="ai-accuracy" title="${escapeHtml(tip)}">Model accuracy overall: ${v.same_lineage_pct}% match curated GO</span>`;
 }
 
 // --- dictyBase legacy gene-product descriptions (imported fallback; always badged) ---
@@ -11380,7 +11379,7 @@ async function loadAISummary(gene) {
     ? `<span class="ai-tier" title="Predicted from the gene's protein family/domain, not gene-specific literature">family-level</span>`
     : ai.basis === "annotation" ? ""
     : `<span class="ai-tier" title="Model-authored from gene-specific knowledge for this well-studied gene">gene-specific</span>`;
-  const acc = aiAccuracyBadge(ai.basis);
+  const acc = aiAccuracyBadge();
   el.innerHTML = `
     <div class="ai-summary">
       ${(tier || acc) ? `<p style="margin:0 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:4px">${tier}${acc}</p>` : ""}

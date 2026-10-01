@@ -776,8 +776,9 @@ _EXT_CACHE_TTL = 6 * 3600
 _EXT_CACHE_MAX = 600               # cap entries; oldest evicted first
 _EXT_CACHE_MAX_BYTES = 2_000_000   # don't cache huge payloads
 
-# Privacy-respecting, first-party pageview counts: cookieless, no IP/User-Agent
-# stored, no per-hit timestamps — just {route-bucket: count}. Dynamic id segments
+# Privacy-respecting, first-party pageview counts: cookieless, no IP stored and
+# the User-Agent read only to exclude bots (never stored), no per-hit timestamps
+# — just {route-bucket: count}. Dynamic id segments
 # are bucketed (/gene/<x> -> /gene/:id) to bound the keyspace and to never store
 # arbitrary user input. Persisted to cache/pageviews.json.
 PAGEVIEWS_PATH = pathlib.Path(ROOT) / "cache" / "pageviews.json"
@@ -791,6 +792,18 @@ _PAGEVIEWS_LOADED = False
 _PV_LOCK = threading.Lock()
 _HIT_HITS = {}                     # ip -> recent /api/hit epochs (limiter only; not stored)
 _GWDI_HITS = {}                    # ip -> recent /api/stock-gwdi epochs (rate limiter)
+# Bot/crawler User-Agents to exclude from pageview counts. The counter is
+# JS-triggered, so most non-JS crawlers never reach /api/hit; this additionally
+# drops JS-rendering bots (search-engine render passes, headless scrapers) and
+# scripted clients, which otherwise look like human pageviews. The User-Agent is
+# read only for this check, never stored.
+_BOT_UA_RE = re.compile(
+    r"bot|crawl|spider|slurp|headless|mediapartners|facebookexternalhit|embedly|"
+    r"preview|monitor|uptime|pingdom|statuscake|site24x7|semrush|ahrefs|mj12|dotbot|"
+    r"petalbot|bytespider|gptbot|claudebot|ccbot|perplexity|amazonbot|python-|curl|"
+    r"wget|go-http|java/|okhttp|libwww|httpclient|scrapy|phantomjs|puppeteer|playwright",
+    re.I,
+)
 # Top-level route segments the SPA actually serves; anything else buckets to /other.
 _PV_HEADS = {"gene", "strain", "go", "organisms", "research", "community", "tools",
              "search", "education", "start", "research-areas", "data", "cite", "index.html"}
@@ -4573,6 +4586,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         """Cookieless, no-PII pageview beacon. The IP is used only to rate-limit
         (never stored); only the bucketed route path is counted."""
         if _rate_limited(_HIT_HITS, self.client_address[0], limit=120, window=60):
+            self.send_response(204)
+            self.end_headers()
+            return
+        # Drop bots and scripted clients before counting. A legitimate browser
+        # always sends a User-Agent, so an empty one is treated as non-human too.
+        ua = self.headers.get("User-Agent", "")
+        if not ua or _BOT_UA_RE.search(ua):
             self.send_response(204)
             self.end_headers()
             return

@@ -6266,10 +6266,10 @@ function renderInstallPage() {
       </div></header>
       <div class="record-body">
         <h3 id="iphone">iPhone or iPad</h3>
-        ${note("Use <strong>Safari</strong> (this does not work in Chrome on iOS).")}
+        ${note("Use <strong>Safari</strong> (Add to Home Screen is not available in Chrome on iOS). The buttons below belong to Safari itself, not to the dictyBase page.")}
         <ol class="start-steps">
           ${step(1, "Open <strong>dicty.org</strong> in Safari.")}
-          ${step(2, "Tap the <strong>Share</strong> button, the square with an arrow pointing up, in the toolbar at the bottom of the screen (top on iPad).")}
+          ${step(2, "In <strong>Safari's toolbar</strong> (not on the web page), tap the <strong>Share</strong> button: a square with an arrow pointing up. It is in the bar at the <strong>bottom</strong> of the screen on iPhone, or the <strong>top right</strong> on iPad. If you do not see the toolbar, tap once near the bottom edge of the screen to bring it back.")}
           ${step(3, "Scroll down the list and tap <strong>Add to Home Screen</strong>.")}
           ${step(4, "Tap <strong>Add</strong> in the top right. The dictyBase icon is now on your home screen.")}
         </ol>

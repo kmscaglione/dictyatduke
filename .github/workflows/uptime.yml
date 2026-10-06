@@ -1,0 +1,29 @@
+name: Uptime
+
+# Dedicated external availability check: probe ONLY /api/health from GitHub's
+# runners (outside Duke's network) every 30 minutes. Unlike the Canary workflow
+# (which also validates gene records, search and the stock catalog, so a failure
+# can mean a content or upstream issue rather than downtime), this job isolates
+# server availability. The run history is the availability record: compute the
+# figure with `gh run list --workflow=uptime.yml --json conclusion`. A failed run
+# also triggers GitHub's built-in failure email to the repo owner.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe the live health endpoint
+        run: |
+          set -e
+          code=$(curl -sS -o /tmp/body -w "%{http_code}" --max-time 25 https://www.dicty.org/api/health || echo 000)
+          body=$(cat /tmp/body 2>/dev/null || true)
+          echo "GET /api/health -> HTTP $code | body: $body"
+          if [ "$code" != "200" ]; then
+            echo "::error::health check failed (HTTP $code)"
+            exit 1
+          fi

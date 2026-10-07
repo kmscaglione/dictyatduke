@@ -2719,6 +2719,8 @@ def _curation_ai_draft(paper, genes, full_text=None):
         "better than many thin ones.\n\n"
         "Return STRICT JSON with keys: "
         '"summary" (<=2 sentences on what the paper shows); '
+        "\"corresponding_author\" ({name, email}: the paper's corresponding author and their "
+        "email address, taken from the paper itself, not inferred; empty strings if not stated); "
         '"gene_summaries" (list of {gene, sentence}: one dictyBase-style sentence per gene the '
         "paper characterizes, stating what the paper shows the gene does or what its mutant "
         'shows); "go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|'
@@ -2744,6 +2746,7 @@ def _curation_ai_draft(paper, genes, full_text=None):
                 for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
         return {"ok": True, "model": model, "drafted_from": "full_text" if whole else "abstract",
                 "summary": (data.get("summary") or "")[:600], "gene_summaries": gsum,
+                "corresponding_author": data.get("corresponding_author") or {},
                 "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
                 "interactions": data.get("interactions") or []}
     except Exception as e:
@@ -2812,6 +2815,23 @@ def fetch_pubmed_meta(ids):
             "doi": doi, "url": f"https://pubmed.ncbi.nlm.nih.gov/{pid}/",
         })
     return papers
+
+
+def _apply_corr_from_ai(d):
+    """Prefer the corresponding author and email the full-text draft pulled from
+    the paper over PubMed's sparse author-email metadata, and rebuild the
+    invitation to match. No-op if the draft found no valid email."""
+    ca = (d.get("ai") or {}).get("corresponding_author") or {}
+    email = str(ca.get("email") or "").strip().rstrip(".")
+    if not re.match(r"^[\w.+-]+@[\w-]+\.[\w.-]+$", email):
+        return
+    d["corr_email"] = email
+    if ca.get("name"):
+        d["corr_name"] = str(ca.get("name"))[:120]
+    sess = d.get("session_url") or f"/curate-paper?t={d.get('token', '')}"
+    d["email_text"] = _invitation_email(
+        {"corr_name": d.get("corr_name"), "title": d.get("title", ""), "pmid": d.get("pmid", "")},
+        d.get("genes") or [], sess)
 
 
 def _build_draft(p):
@@ -2910,6 +2930,7 @@ def redraft_paper(pmid, email_only=False):
         d["corr_name"] = p["corr_name"]
     if p.get("corr_email"):
         d["corr_email"] = p["corr_email"]
+    _apply_corr_from_ai(d)               # full text is more reliable than PubMed metadata
     d["redrafted"] = datetime.datetime.utcnow().isoformat() + "Z"
     _atomic_write_json(PAPER_DRAFTS_PATH, store)
     return {"ok": True, "pmid": pmid, "gene_summaries": len((d["ai"] or {}).get("gene_summaries", []))}
@@ -5626,6 +5647,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             # (abstract-only drafts produce nothing by design).
             try:
                 d["ai"] = _curation_ai_draft(d, d.get("genes") or [], full_text=res["text"])
+                _apply_corr_from_ai(d)
                 drafted = bool((d["ai"] or {}).get("ok"))
             except Exception:
                 pass
@@ -5677,6 +5699,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
             if d:
                 d["ai"] = _curation_ai_draft(d, d.get("genes") or [])   # loads the stored full text
+                _apply_corr_from_ai(d)
                 res["drafted"] = bool((d["ai"] or {}).get("ok"))
                 _atomic_write_json(PAPER_DRAFTS_PATH, store)
         except Exception:

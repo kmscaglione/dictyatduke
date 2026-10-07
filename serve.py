@@ -2677,22 +2677,16 @@ def extract_gene_mentions(text):
 # free tier the moment a paper is queued. "off"/"claude" = no instant draft; all
 # AI curation (abstract or whole paper) comes from Claude Code via export/import.
 PAPER_AUTODRAFT = os.environ.get("PAPER_AUTODRAFT", "gemini").strip().lower()
-_CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate, "
-                     "then Import results. Fetch full text first for a whole-paper draft.")
-
-
 def _curation_ai_draft(paper, genes, full_text=None):
-    """Well-supported GO/phenotype/interaction suggestions from a paper, as
-    structured JSON. Prefers the curator's Anthropic account (ANTHROPIC_API_KEY)
-    and the paper's full text when available, falling back to Gemini on the
-    abstract. Human-in-the-loop only: draft suggestions a curator/author approves,
-    never auto-published. Returns {ok:False, note} when no AI backend is on."""
+    """Well-supported GO/phenotype/interaction suggestions from a paper's full
+    text, as structured JSON, via the curator's Anthropic account
+    (ANTHROPIC_API_KEY), falling back to Gemini if only that key is set. Human-in-
+    the-loop only: draft suggestions a curator/author approves, never auto-
+    published. Returns {ok:False, note} when no AI backend is on."""
     use_anthropic = bool(ANTHROPIC_API_KEY)
     use_gemini = (not use_anthropic and GEMINI_API_KEY
-                  and PAPER_AUTODRAFT not in ("off", "none", "claude", "claude-code"))
+                  and PAPER_AUTODRAFT not in ("off", "none"))
     if not use_anthropic and not use_gemini:
-        if PAPER_AUTODRAFT in ("off", "none", "claude", "claude-code"):
-            return {"ok": False, "note": _CLAUDE_CODE_NOTE}
         return {"ok": False, "note": "AI drafting is off on this server (no API key)."}
     # Use the whole paper when we already have it; otherwise the abstract.
     if full_text is None:
@@ -3952,9 +3946,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             code, payload = paper_session_get(token)
             self.send_json(code, payload)
             return
-        if self.path.split("?")[0] == "/api/curator/papers/export":
-            self._handle_curator_papers_export()
-            return
         if self.path.split("?")[0] == "/api/curator/papers":
             self._handle_curator_papers()
             return
@@ -4567,8 +4558,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_decide()
         elif self.path == "/api/curator/papers/submission-delete":
             self._handle_curator_papers_submission_delete()
-        elif self.path == "/api/curator/papers/import":
-            self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/append-summary":
@@ -5586,39 +5575,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, res)
             return
         _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
-        self.send_json(200, res)
-
-    def _handle_curator_papers_export(self):
-        """Download the curation batch (papers + full text) for Claude Code."""
-        if not self._auth(self._parse_token()):
-            self.send_json(401, {"error": "Unauthorized"})
-            return
-        body = json.dumps(paper_export_bundle(), ensure_ascii=False, indent=1).encode()
-        self.send_response(200)
-        self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Content-Disposition", 'attachment; filename="dictybase-curation-batch.json"')
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
-
-    def _handle_curator_papers_import(self):
-        """Import Claude-Code curation results ({results:[...]}) onto the drafts."""
-        if not self._auth(self._parse_token()):
-            self.send_json(401, {"error": "Unauthorized"})
-            return
-        try:
-            length = min(int(self.headers.get("Content-Length", 0)), 8_000_000)
-            body = json.loads(self.rfile.read(length) or b"{}")
-        except (ValueError, json.JSONDecodeError):
-            self.send_json(400, {"error": "Invalid JSON."})
-            return
-        results = body.get("results") if isinstance(body, dict) else None
-        if not isinstance(results, list):
-            self.send_json(400, {"error": "Expected {\"results\": [...]}. "
-                                          "That is the file Claude Code produces."})
-            return
-        res = import_curation_results(results)
-        _log_curation("paper-draft", "import", f"{res['imported']} papers", self._session_name())
         self.send_json(200, res)
 
     def _handle_curator_papers_fetch_fulltext(self):

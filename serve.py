@@ -766,7 +766,7 @@ def _anthropic_generate(prompt, system=""):
     """One Messages API call to Anthropic via stdlib urllib (serve.py has no
     third-party deps). Returns (text, out_tokens). Raises on transport/HTTP error."""
     body = {"model": ANTHROPIC_MODEL, "max_tokens": ANTHROPIC_MAX_TOKENS,
-            "temperature": 0.2, "messages": [{"role": "user", "content": prompt}]}
+            "messages": [{"role": "user", "content": prompt}]}
     if system:
         body["system"] = system
     req = urllib.request.Request(

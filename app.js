@@ -3291,7 +3291,7 @@ function paperDraftCard(d) {
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
       <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
         <button type="button" class="pd-refresh-email" data-pmid="${esc(d.pmid)}" title="Rebuild just the invitation email, leaving the curation alone" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">✉ Refresh email</button>
-        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" data-imported="${(d.curated_source === "claude-code") ? 1 : 0}" title="Replace the curation with a fresh draft from the abstract (keeps the invitation link)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Redraft from abstract</button>
+        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" data-imported="${(d.curated_source === "claude-code") ? 1 : 0}" title="Regenerate the curation from the stored full text (keeps the invitation link). Fetch or upload the full text first." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Redraft</button>
         <button type="button" class="pd-fulltext" data-pmid="${esc(d.pmid)}" title="Fetch the paper's full text from an openly available copy (private; used to improve the draft)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">📄 Fetch full text</button>
         <button type="button" class="pd-upload" data-pmid="${esc(d.pmid)}" title="Attach a copy you already have (PDF, HTML or plain text). Stored privately on this server, never published." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">⬆ Upload a copy</button>
         <input type="file" class="pd-upload-file" accept=".pdf,.html,.htm,.xml,.txt" hidden></div>
@@ -3509,10 +3509,10 @@ async function loadPaperDrafts() {
       const redraftBtn = card.querySelector(".pd-redraft");
       if (redraftBtn) redraftBtn.addEventListener("click", async () => {
         // A redraft throws away imported whole-paper curation and replaces it
-        // with an abstract draft. Never let that happen by accident.
+        // with a fresh full-text draft. Never let that happen by accident.
         if (redraftBtn.dataset.imported === "1" &&
             !confirm("This paper holds imported whole-paper curation.\n\n"
-              + "Redrafting REPLACES it with a fresh draft from the abstract alone, and that cannot be undone here. "
+              + "Redrafting REPLACES it with a fresh draft from the full text, and that cannot be undone here. "
               + "You would have to import the results file again.\n\nRedraft anyway?")) return;
         const orig = redraftBtn.textContent; redraftBtn.disabled = true; redraftBtn.textContent = "Regenerating…";
         try {

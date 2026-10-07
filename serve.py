@@ -2741,7 +2741,15 @@ def _curation_ai_draft(paper, genes, full_text=None):
                 "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
                 "interactions": data.get("interactions") or []}
     except Exception as e:
-        return {"ok": False, "note": f"AI draft could not be generated ({type(e).__name__})."}
+        detail = type(e).__name__
+        if hasattr(e, "code"):                 # HTTPError: surface status + API message
+            try:
+                body = e.read().decode("utf-8", "replace")
+                msg = (json.loads(body).get("error") or {}).get("message") or body[:200]
+            except Exception:
+                msg = ""
+            detail = f"HTTP {e.code}{': ' + msg if msg else ''}"
+        return {"ok": False, "note": f"AI draft could not be generated ({detail})."}
 
 
 def _invitation_email(paper, genes, session_url):

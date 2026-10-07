@@ -752,6 +752,37 @@ def _analyze_generate(question, context):
     return text, out_tokens
 
 
+# --- Anthropic (Claude) for curator-side paper curation drafting ------------
+# Distinct from the public Gemini "Ask AI" tool: this calls the CURATOR's own
+# Anthropic account (ANTHROPIC_API_KEY in /etc/dicty.env) to draft well-supported
+# curation from a paper's full text, in the curator dashboard. Curator-only,
+# always human-reviewed, never auto-published. Off unless the key is set.
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8").strip()
+ANTHROPIC_MAX_TOKENS = int(os.environ.get("ANTHROPIC_MAX_TOKENS", "4096"))
+
+
+def _anthropic_generate(prompt, system=""):
+    """One Messages API call to Anthropic via stdlib urllib (serve.py has no
+    third-party deps). Returns (text, out_tokens). Raises on transport/HTTP error."""
+    body = {"model": ANTHROPIC_MODEL, "max_tokens": ANTHROPIC_MAX_TOKENS,
+            "temperature": 0.2, "messages": [{"role": "user", "content": prompt}]}
+    if system:
+        body["system"] = system
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=json.dumps(body).encode(),
+        headers={"content-type": "application/json", "x-api-key": ANTHROPIC_API_KEY,
+                 "anthropic-version": "2023-06-01"},
+        method="POST")
+    with urllib.request.urlopen(req, timeout=120, context=SSL_CTX) as r:
+        data = json.loads(r.read())
+    text = "".join(b.get("text", "") for b in (data.get("content") or [])
+                   if b.get("type") == "text").strip()
+    out_tokens = (data.get("usage") or {}).get("output_tokens", 0)
+    return text, out_tokens
+
+
 # Login issues a random, expiring session token (NOT derived from the password),
 # kept server-side. In-memory: tokens reset on restart (fine for one process).
 _SESSIONS = {}            # token -> expiry epoch
@@ -2650,37 +2681,63 @@ _CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate
                      "then Import results. Fetch full text first for a whole-paper draft.")
 
 
-def _curation_ai_draft(paper, genes):
-    """AI GO/phenotype/interaction suggestions from the abstract, as structured
-    JSON. Human-in-the-loop only: these are draft suggestions a curator/author
-    approves, never auto-published. Returns {ok:False, note} when off."""
-    if PAPER_AUTODRAFT in ("off", "none", "claude", "claude-code"):
-        return {"ok": False, "note": _CLAUDE_CODE_NOTE}
-    if not GEMINI_API_KEY:
+def _curation_ai_draft(paper, genes, full_text=None):
+    """Well-supported GO/phenotype/interaction suggestions from a paper, as
+    structured JSON. Prefers the curator's Anthropic account (ANTHROPIC_API_KEY)
+    and the paper's full text when available, falling back to Gemini on the
+    abstract. Human-in-the-loop only: draft suggestions a curator/author approves,
+    never auto-published. Returns {ok:False, note} when no AI backend is on."""
+    use_anthropic = bool(ANTHROPIC_API_KEY)
+    use_gemini = (not use_anthropic and GEMINI_API_KEY
+                  and PAPER_AUTODRAFT not in ("off", "none", "claude", "claude-code"))
+    if not use_anthropic and not use_gemini:
+        if PAPER_AUTODRAFT in ("off", "none", "claude", "claude-code"):
+            return {"ok": False, "note": _CLAUDE_CODE_NOTE}
         return {"ok": False, "note": "AI drafting is off on this server (no API key)."}
+    # Use the whole paper when we already have it; otherwise the abstract.
+    if full_text is None:
+        try:
+            full_text = (load_full_text(paper.get("pmid", "")).get("text") or "")
+        except Exception:
+            full_text = ""
+    whole = bool((full_text or "").strip())
+    src_label = "Full text" if whole else "Abstract"
+    body_text = (full_text or "")[:120000] if whole else (paper.get("abstract", "") or "")[:6000]
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
     prompt = (
-        "From this Dictyostelium paper, extract curation as STRICT JSON with keys: "
-        '"summary" (<=2 sentences on the paper), '
-        '"gene_summaries" (list of {gene, sentence}: for each gene the paper '
-        "characterizes, ONE sentence, in the style of a dictyBase gene summary, "
-        "stating what this paper shows the gene does or what its mutant shows), "
-        '"go" (list of {gene, term, aspect:"P"|"F"|"C"}), '
-        '"phenotypes" (list of {gene, phenotype}), "interactions" '
-        '(list of {gene_a, gene_b, type:"physical"|"genetic"}). Only use genes named '
-        "in the paper; prefer these detected symbols where relevant: " + gene_list +
-        ". Empty list where nothing applies. Output ONLY the JSON object.\n\n"
-        f"Title: {paper.get('title', '')}\nAbstract: {(paper.get('abstract', '') or '')[:6000]}"
+        "You are drafting dictyBase curation from a Dictyostelium paper. Extract ONLY "
+        "well-supported curation: annotations this paper DIRECTLY demonstrates with its own "
+        "experimental results. Exclude anything speculative, stated only in the introduction "
+        "or discussion as background, inferred from other organisms, or merely hypothesized. "
+        "If the evidence is indirect or weak, leave it out. A few solid annotations are far "
+        "better than many thin ones.\n\n"
+        "Return STRICT JSON with keys: "
+        '"summary" (<=2 sentences on what the paper shows); '
+        '"gene_summaries" (list of {gene, sentence}: one dictyBase-style sentence per gene the '
+        "paper characterizes, stating what the paper shows the gene does or what its mutant "
+        'shows); "go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|'
+        '"IGI"|"IEP", support}); "phenotypes" (list of {gene, phenotype, support}); '
+        '"interactions" (list of {gene_a, gene_b, type:"physical"|"genetic", support}). '
+        "In every go/phenotype/interaction, `support` is a short quote taken verbatim from the "
+        "paper that directly shows it. If you cannot quote direct evidence, do not include the "
+        "item. Only use genes named in the paper; prefer these detected symbols where relevant: "
+        + gene_list + ". Use an empty list where nothing qualifies. Output ONLY the JSON object.\n\n"
+        f"Title: {paper.get('title', '')}\n{src_label}:\n{body_text}"
     )
     try:
-        text, out_tokens = _analyze_generate(prompt, "")
-        _analyze_record_tokens(out_tokens)
+        if use_anthropic:
+            text, _out = _anthropic_generate(prompt)
+            model = ANTHROPIC_MODEL + (" (whole paper)" if whole else "")
+        else:
+            text, out_tokens = _analyze_generate(prompt, "")
+            _analyze_record_tokens(out_tokens)
+            model = ANALYZE_MODEL + (" (whole paper)" if whole else "")
         m = re.search(r"\{.*\}", text, re.S)
         data = json.loads(m.group(0)) if m else {}
         gsum = [{"gene": str(x.get("gene", ""))[:60], "sentence": str(x.get("sentence", ""))[:500]}
                 for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
-        return {"ok": True, "model": ANALYZE_MODEL, "summary": (data.get("summary") or "")[:600],
-                "gene_summaries": gsum,
+        return {"ok": True, "model": model, "drafted_from": "full_text" if whole else "abstract",
+                "summary": (data.get("summary") or "")[:600], "gene_summaries": gsum,
                 "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
                 "interactions": data.get("interactions") or []}
     except Exception as e:

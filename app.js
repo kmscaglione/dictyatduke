@@ -2344,40 +2344,9 @@ function renderCuratePage() {
             <span class="muted" style="font-size:13px">Signed in as <strong id="cur-whoami" style="color:var(--ink)"></strong></span>
             <a id="cur-backup" class="text-link" href="#" style="font-size:13px">⬇ Download backup</a>
             <a id="cur-logout" class="text-link" href="#" style="font-size:13px">Sign out</a></p>
-          <h3 class="tools-group">Two-factor authentication</h3>
-          <div id="cur-2fa" style="margin-bottom:6px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
-          <div id="cur-accounts-section" hidden>
-            <h3 class="tools-group">Curators <span class="muted" style="font-weight:400;font-size:12px">(admin)</span></h3>
-            <div id="cur-accounts-list" style="margin-bottom:8px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-              <input id="acct-user" type="text" placeholder="username" style="${FIELD};min-width:130px">
-              <input id="acct-name" type="text" placeholder="Full name" style="${FIELD};min-width:150px">
-              <input id="acct-pw" type="password" placeholder="password" style="${FIELD};min-width:130px">
-              <label style="display:flex;gap:5px;align-items:center;font-size:13px"><input type="checkbox" id="acct-admin"> admin</label>
-              <button type="button" id="acct-add">Add / update</button>
-              <span id="acct-msg" class="muted" style="font-size:13px"></span>
-            </div>
-          </div>
-          <div id="cur-papers-section">
-            <h3 class="tools-group">Paper curation drafts <span class="muted" style="font-weight:400;font-size:12px">— AI-seeded from recent papers; review before any email is sent</span></h3>
-            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
-              <button type="button" id="cur-papers-refresh">Fetch new papers</button>
-              <span class="muted" style="font-size:12px">or draft a specific paper:</span>
-              <input type="text" id="cur-papers-pmid" inputmode="numeric" placeholder="PMID" aria-label="PubMed ID" style="${FIELD};width:130px">
-              <button type="button" id="cur-papers-draft">Draft PMID</button>
-              <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
-            </div>
-            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
-              <span class="muted" style="font-size:12px">Whole-paper curation in Claude Code:</span>
-              <button type="button" id="cur-papers-export">⬇ Export batch</button>
-              <button type="button" id="cur-papers-import">⬆ Import results</button>
-              <input type="file" id="cur-papers-import-file" accept=".json,application/json" hidden>
-              <span id="cur-papers-io-msg" class="muted" style="font-size:12px"></span>
-            </div>
-            <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
-            <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
-          </div>
-          <h3 class="tools-group">Edit a gene</h3>
+          <details class="lit-section" open>
+            <summary>Edit a gene <span class="lit-sub">— summary, GO, phenotypes, names</span></summary>
+            <div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
             <input id="cur-gene" type="text" placeholder="Gene symbol or DDB_G… (e.g. mhcA)" style="${FIELD};min-width:260px">
             <button type="button" id="cur-load">Load</button>
@@ -2439,7 +2408,41 @@ function renderCuratePage() {
             </div>
           </div>
 
-          <h3 class="tools-group" style="margin-top:22px">Curation reports</h3>
+
+            </div>
+          </details>
+          <details class="lit-section">
+            <summary>Paper curation drafts <span class="lit-sub">— AI-seeded from recent papers; review before any email is sent</span></summary>
+            <div>
+          <div id="cur-papers-section">            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <button type="button" id="cur-papers-refresh">Fetch new papers</button>
+              <span class="muted" style="font-size:12px">or draft a specific paper:</span>
+              <input type="text" id="cur-papers-pmid" inputmode="numeric" placeholder="PMID" aria-label="PubMed ID" style="${FIELD};width:130px">
+              <button type="button" id="cur-papers-draft">Draft PMID</button>
+              <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <span class="muted" style="font-size:12px">Whole-paper curation in Claude Code:</span>
+              <button type="button" id="cur-papers-export">⬇ Export batch</button>
+              <button type="button" id="cur-papers-import">⬆ Import results</button>
+              <input type="file" id="cur-papers-import-file" accept=".json,application/json" hidden>
+              <span id="cur-papers-io-msg" class="muted" style="font-size:12px"></span>
+            </div>
+            <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
+            <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
+          </div>
+
+            </div>
+          </details>
+          <details class="lit-section">
+            <summary>Community submissions</summary>
+            <div>
+          <div id="cur-queue"><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
+            </div>
+          </details>
+          <details class="lit-section">
+            <summary>Curation reports <span class="lit-sub">— GAF download, to-do list</span></summary>
+            <div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
             <button type="button" id="cur-gaf">Download GAF (curated GO)</button>
             <button type="button" id="cur-todo-btn">Curation to-do</button>
@@ -2447,7 +2450,12 @@ function renderCuratePage() {
           </div>
           <div id="cur-todo" style="font-size:13px"></div>
 
-          <h3 class="tools-group" style="margin-top:22px">Strains &amp; plasmids</h3>
+
+            </div>
+          </details>
+          <details class="lit-section">
+            <summary>Strains &amp; plasmids <span class="lit-sub">— Dicty Stock Center catalog</span></summary>
+            <div>
           <p class="muted" style="font-size:13px;margin:-4px 0 8px">Add or update a Dicty Stock Center catalog entry. Edits go live immediately — no deploy needed.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
             <select id="stk-type" style="${FIELD}" aria-label="Type">
@@ -2492,8 +2500,30 @@ function renderCuratePage() {
             </div>
           </div>
 
-          <h3 class="tools-group" style="margin-top:22px">Community submissions</h3>
-          <div id="cur-queue"><p class="notice muted"><span class="spinner" aria-hidden="true"></span>Loading…</p></div>
+
+            </div>
+          </details>
+          <details class="lit-section">
+            <summary>Account &amp; security <span class="lit-sub">— two-factor, curator accounts</span></summary>
+            <div>
+          <h4 style="margin:10px 0 4px">Two-factor authentication</h4>
+          <div id="cur-2fa" style="margin-bottom:6px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
+          <div id="cur-accounts-section" hidden>
+            <h4 style="margin:10px 0 4px">Curators <span class="muted" style="font-weight:400;font-size:12px">(admin)</span></h4>
+            <div id="cur-accounts-list" style="margin-bottom:8px"><p class="notice muted" style="font-size:13px">Loading…</p></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+              <input id="acct-user" type="text" placeholder="username" style="${FIELD};min-width:130px">
+              <input id="acct-name" type="text" placeholder="Full name" style="${FIELD};min-width:150px">
+              <input id="acct-pw" type="password" placeholder="password" style="${FIELD};min-width:130px">
+              <label style="display:flex;gap:5px;align-items:center;font-size:13px"><input type="checkbox" id="acct-admin"> admin</label>
+              <button type="button" id="acct-add">Add / update</button>
+              <span id="acct-msg" class="muted" style="font-size:13px"></span>
+            </div>
+          </div>
+
+            </div>
+          </details>
+
         </div>
       </div>
     </article>`;
@@ -3170,15 +3200,21 @@ function paperDraftCard(d) {
   if (!ai.ok) {
     aiHtml = `<p class="muted" style="font-size:12px;margin:4px 0">AI suggestions: ${esc(ai.note || "unavailable")}</p>`;
   } else {
+    // Each item carries a verbatim supporting quote (well-supported drafting);
+    // show it on hover so the curator can verify the grounding at a glance.
+    const item = (txt, support) => support
+      ? `<span title="${esc(String(support))}" style="border-bottom:1px dotted #9aa1a8;cursor:help">${esc(txt)}</span>`
+      : esc(txt);
     const list = (label, arr, fmt) => arr && arr.length
-      ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map(fmt).map(esc).join("; ")}</div>` : "";
+      ? `<div style="font-size:12.5px;margin:2px 0"><strong>${label}:</strong> ${arr.slice(0, 12).map((x) => item(fmt(x), x.support)).join("; ")}</div>` : "";
     const gsLines = (ai.gene_summaries || []).map(gsPlainLine).join("");
     aiHtml = `
       ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
       ${gsLines}
-      ${list("GO", ai.go, (x) => `${x.gene || "?"}: ${x.term || ""} (${x.aspect || "?"})`)}
+      ${list("GO", ai.go, (x) => `${x.gene || "?"}: ${x.term || ""} (${x.aspect || "?"}${x.evidence ? ", " + x.evidence : ""})`)}
       ${list("Phenotypes", ai.phenotypes, (x) => `${x.gene || "?"}: ${x.phenotype || ""}`)}
-      ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}`;
+      ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}
+      ${ai.drafted_from ? `<p class="muted" style="font-size:11px;margin:3px 0 0">Well-supported draft from ${esc(String(ai.drafted_from).replace("_", " "))}${ai.model ? " · " + esc(ai.model) : ""}. Hover an item for its supporting quote.</p>` : ""}`;
   }
   const corr = d.corr_name
     ? `${esc(d.corr_name)}${d.corr_email ? ` &lt;${esc(d.corr_email)}&gt;` : ` <span class="muted">(no email found)</span>`}`

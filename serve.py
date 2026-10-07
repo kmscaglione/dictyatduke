@@ -2701,8 +2701,14 @@ def _curation_ai_draft(paper, genes, full_text=None):
         except Exception:
             full_text = ""
     whole = bool((full_text or "").strip())
-    src_label = "Full text" if whole else "Abstract"
-    body_text = (full_text or "")[:120000] if whole else (paper.get("abstract", "") or "")[:6000]
+    # Curation is drafted ONLY from the full paper. Abstracts do not carry enough
+    # experimental evidence for well-supported annotation, so we never draft from
+    # one: the curator fetches or uploads the full text first.
+    if not whole:
+        return {"ok": False, "note": "Fetch or upload the full text to draft curation "
+                "— annotations are drafted only from the full paper, not the abstract."}
+    src_label = "Full text"
+    body_text = (full_text or "")[:120000]
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
     prompt = (
         "You are drafting dictyBase curation from a Dictyostelium paper. Extract ONLY "
@@ -5613,15 +5619,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(502, {"error": f"Full-text fetch failed ({type(e).__name__})."})
             return
         stamp = datetime.datetime.utcnow().isoformat() + "Z"
+        drafted = False
         if res["chars"] > 0:
             store_full_text(pmid, res)
+            # Full text is now in hand, so draft curation from it immediately
+            # (abstract-only drafts produce nothing by design).
+            try:
+                d["ai"] = _curation_ai_draft(d, d.get("genes") or [], full_text=res["text"])
+                drafted = bool((d["ai"] or {}).get("ok"))
+            except Exception:
+                pass
         d["fulltext"] = {"source": res["source"], "chars": res["chars"],
                          "url": res["url"], "fetched_at": stamp}
         _atomic_write_json(PAPER_DRAFTS_PATH, store)
         _log_curation("paper-draft", "fulltext", f"{pmid} {res['source']} {res['chars']}c", curator)
         self.send_json(200, {"ok": True, "pmid": pmid, "source": res["source"],
                              "chars": res["chars"], "url": res["url"],
-                             "preview": res["text"][:600]})
+                             "drafted": drafted, "preview": res["text"][:600]})
 
     def _handle_curator_papers_upload_fulltext(self):
         """Attach a curator-supplied copy of a paper (PDF/HTML/text) to its draft.
@@ -5657,6 +5671,16 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         _log_curation("paper-draft", "fulltext-upload",
                       f"{pmid} {res['kind']} {res['chars']}c", self._session_name())
+        # The full text is now stored, so draft curation from it immediately.
+        try:
+            store = _load_paper_drafts()
+            d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+            if d:
+                d["ai"] = _curation_ai_draft(d, d.get("genes") or [])   # loads the stored full text
+                res["drafted"] = bool((d["ai"] or {}).get("ok"))
+                _atomic_write_json(PAPER_DRAFTS_PATH, store)
+        except Exception:
+            pass
         self.send_json(200, res)
 
     def _handle_curator_papers_redraft(self):

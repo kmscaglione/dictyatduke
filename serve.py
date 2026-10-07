@@ -5512,7 +5512,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         store = _load_paper_drafts()
         drafts = [{**d, "submission": annotate_submission(d.get("submission"))}
                   for d in store.get("drafts", []) if d.get("status") != "dismissed"]
-        self.send_json(200, {"drafts": drafts, "ai_on": bool(GEMINI_API_KEY)})
+        self.send_json(200, {"drafts": drafts, "ai_on": bool(ANTHROPIC_API_KEY or GEMINI_API_KEY)})
 
     def _handle_curator_papers_submission_delete(self):
         """Delete an author's submission outright. Body: {pmid}."""

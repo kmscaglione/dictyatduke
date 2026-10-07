@@ -2421,11 +2421,19 @@ function renderCuratePage() {
               <button type="button" id="cur-papers-draft">Draft PMID</button>
               <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
             </div>
-            <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
+            <div id="cur-papers-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
             <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
           </div>
 
             </div>
+          </details>
+          <details class="lit-section">
+            <summary>Returned by authors <span class="lit-sub">— author sent curation back; ready for your review</span></summary>
+            <div><div id="cur-returned-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load.</p></div></div>
+          </details>
+          <details class="lit-section">
+            <summary>Out for curation <span class="lit-sub">— invitation sent, awaiting the author</span></summary>
+            <div><div id="cur-sent-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load.</p></div></div>
           </details>
           <details class="lit-section">
             <summary>Community submissions</summary>
@@ -3284,12 +3292,21 @@ async function loadPaperDrafts() {
     if (!r.ok) { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load drafts (session may have expired).</p>`; return; }
     const data = await r.json();
     const drafts = data.drafts || [];
-    if (!drafts.length) {
-      el.innerHTML = `<p class="notice muted" style="font-size:13px">No drafts yet. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI suggestions are off on this server; gene detection still runs.)"}</p>`;
-      return;
-    }
-    el.innerHTML = drafts.map(paperDraftCard).join("");
-    el.querySelectorAll(".paper-draft").forEach((card) => {
+    // Split by state into the three accordions: working drafts, papers out for
+    // curation (invitation sent, no author reply yet), and papers the author has
+    // returned (ready for curator review).
+    const returned = drafts.filter((d) => d.submission);
+    const outForCuration = drafts.filter((d) => !d.submission && d.status === "sent");
+    const working = drafts.filter((d) => !d.submission && d.status !== "sent");
+    const renderInto = (id, list, empty) => {
+      const box = document.getElementById(id);
+      if (box) box.innerHTML = list.length ? list.map(paperDraftCard).join("")
+        : `<p class="notice muted" style="font-size:13px">${empty}</p>`;
+    };
+    renderInto("cur-papers-list", working, `No working drafts. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI drafting is off on this server; gene detection still runs.)"}`);
+    renderInto("cur-returned-list", returned, "No papers have been returned by authors yet.");
+    renderInto("cur-sent-list", outForCuration, "No papers are out for curation yet.");
+    document.querySelectorAll(".pd-list .paper-draft").forEach((card) => {
       const pmid = card.dataset.pmid;
       const emailEl = card.querySelector(".pd-email");
       const cardMsg = card.querySelector(".pd-msg");

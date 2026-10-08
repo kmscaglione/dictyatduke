@@ -2677,16 +2677,22 @@ def extract_gene_mentions(text):
 # free tier the moment a paper is queued. "off"/"claude" = no instant draft; all
 # AI curation (abstract or whole paper) comes from Claude Code via export/import.
 PAPER_AUTODRAFT = os.environ.get("PAPER_AUTODRAFT", "gemini").strip().lower()
+_CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate, "
+                     "then Import results. Fetch full text first for a whole-paper draft.")
+
+
 def _curation_ai_draft(paper, genes, full_text=None):
-    """Well-supported GO/phenotype/interaction suggestions from a paper's full
-    text, as structured JSON, via the curator's Anthropic account
-    (ANTHROPIC_API_KEY), falling back to Gemini if only that key is set. Human-in-
-    the-loop only: draft suggestions a curator/author approves, never auto-
-    published. Returns {ok:False, note} when no AI backend is on."""
+    """Well-supported GO/phenotype/interaction suggestions from a paper, as
+    structured JSON. Prefers the curator's Anthropic account (ANTHROPIC_API_KEY)
+    and the paper's full text when available, falling back to Gemini on the
+    abstract. Human-in-the-loop only: draft suggestions a curator/author approves,
+    never auto-published. Returns {ok:False, note} when no AI backend is on."""
     use_anthropic = bool(ANTHROPIC_API_KEY)
     use_gemini = (not use_anthropic and GEMINI_API_KEY
-                  and PAPER_AUTODRAFT not in ("off", "none"))
+                  and PAPER_AUTODRAFT not in ("off", "none", "claude", "claude-code"))
     if not use_anthropic and not use_gemini:
+        if PAPER_AUTODRAFT in ("off", "none", "claude", "claude-code"):
+            return {"ok": False, "note": _CLAUDE_CODE_NOTE}
         return {"ok": False, "note": "AI drafting is off on this server (no API key)."}
     # Use the whole paper when we already have it; otherwise the abstract.
     if full_text is None:
@@ -2695,14 +2701,8 @@ def _curation_ai_draft(paper, genes, full_text=None):
         except Exception:
             full_text = ""
     whole = bool((full_text or "").strip())
-    # Curation is drafted ONLY from the full paper. Abstracts do not carry enough
-    # experimental evidence for well-supported annotation, so we never draft from
-    # one: the curator fetches or uploads the full text first.
-    if not whole:
-        return {"ok": False, "note": "Fetch or upload the full text to draft curation "
-                "— annotations are drafted only from the full paper, not the abstract."}
-    src_label = "Full text"
-    body_text = (full_text or "")[:120000]
+    src_label = "Full text" if whole else "Abstract"
+    body_text = (full_text or "")[:120000] if whole else (paper.get("abstract", "") or "")[:6000]
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
     prompt = (
         "You are drafting dictyBase curation from a Dictyostelium paper. Extract ONLY "
@@ -2713,8 +2713,6 @@ def _curation_ai_draft(paper, genes, full_text=None):
         "better than many thin ones.\n\n"
         "Return STRICT JSON with keys: "
         '"summary" (<=2 sentences on what the paper shows); '
-        "\"corresponding_author\" ({name, email}: the paper's corresponding author and their "
-        "email address, taken from the paper itself, not inferred; empty strings if not stated); "
         '"gene_summaries" (list of {gene, sentence}: one dictyBase-style sentence per gene the '
         "paper characterizes, stating what the paper shows the gene does or what its mutant "
         'shows); "go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|'
@@ -2740,7 +2738,6 @@ def _curation_ai_draft(paper, genes, full_text=None):
                 for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
         return {"ok": True, "model": model, "drafted_from": "full_text" if whole else "abstract",
                 "summary": (data.get("summary") or "")[:600], "gene_summaries": gsum,
-                "corresponding_author": data.get("corresponding_author") or {},
                 "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
                 "interactions": data.get("interactions") or []}
     except Exception as e:
@@ -2809,23 +2806,6 @@ def fetch_pubmed_meta(ids):
             "doi": doi, "url": f"https://pubmed.ncbi.nlm.nih.gov/{pid}/",
         })
     return papers
-
-
-def _apply_corr_from_ai(d):
-    """Prefer the corresponding author and email the full-text draft pulled from
-    the paper over PubMed's sparse author-email metadata, and rebuild the
-    invitation to match. No-op if the draft found no valid email."""
-    ca = (d.get("ai") or {}).get("corresponding_author") or {}
-    email = str(ca.get("email") or "").strip().rstrip(".")
-    if not re.match(r"^[\w.+-]+@[\w-]+\.[\w.-]+$", email):
-        return
-    d["corr_email"] = email
-    if ca.get("name"):
-        d["corr_name"] = str(ca.get("name"))[:120]
-    sess = d.get("session_url") or f"/curate-paper?t={d.get('token', '')}"
-    d["email_text"] = _invitation_email(
-        {"corr_name": d.get("corr_name"), "title": d.get("title", ""), "pmid": d.get("pmid", "")},
-        d.get("genes") or [], sess)
 
 
 def _build_draft(p):
@@ -2924,7 +2904,6 @@ def redraft_paper(pmid, email_only=False):
         d["corr_name"] = p["corr_name"]
     if p.get("corr_email"):
         d["corr_email"] = p["corr_email"]
-    _apply_corr_from_ai(d)               # full text is more reliable than PubMed metadata
     d["redrafted"] = datetime.datetime.utcnow().isoformat() + "Z"
     _atomic_write_json(PAPER_DRAFTS_PATH, store)
     return {"ok": True, "pmid": pmid, "gene_summaries": len((d["ai"] or {}).get("gene_summaries", []))}
@@ -3946,6 +3925,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             code, payload = paper_session_get(token)
             self.send_json(code, payload)
             return
+        if self.path.split("?")[0] == "/api/curator/papers/export":
+            self._handle_curator_papers_export()
+            return
         if self.path.split("?")[0] == "/api/curator/papers":
             self._handle_curator_papers()
             return
@@ -4558,6 +4540,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_curator_papers_decide()
         elif self.path == "/api/curator/papers/submission-delete":
             self._handle_curator_papers_submission_delete()
+        elif self.path == "/api/curator/papers/import":
+            self._handle_curator_papers_import()
         elif self.path == "/api/curator/papers/update":
             self._handle_curator_papers_update()
         elif self.path == "/api/curator/append-summary":
@@ -5512,7 +5496,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         store = _load_paper_drafts()
         drafts = [{**d, "submission": annotate_submission(d.get("submission"))}
                   for d in store.get("drafts", []) if d.get("status") != "dismissed"]
-        self.send_json(200, {"drafts": drafts, "ai_on": bool(ANTHROPIC_API_KEY or GEMINI_API_KEY)})
+        self.send_json(200, {"drafts": drafts, "ai_on": bool(GEMINI_API_KEY)})
 
     def _handle_curator_papers_submission_delete(self):
         """Delete an author's submission outright. Body: {pmid}."""
@@ -5577,6 +5561,39 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         _log_curation("paper-draft", "draft-one", res.get("pmid", ""), curator)
         self.send_json(200, res)
 
+    def _handle_curator_papers_export(self):
+        """Download the curation batch (papers + full text) for Claude Code."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        body = json.dumps(paper_export_bundle(), ensure_ascii=False, indent=1).encode()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Disposition", 'attachment; filename="dictybase-curation-batch.json"')
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _handle_curator_papers_import(self):
+        """Import Claude-Code curation results ({results:[...]}) onto the drafts."""
+        if not self._auth(self._parse_token()):
+            self.send_json(401, {"error": "Unauthorized"})
+            return
+        try:
+            length = min(int(self.headers.get("Content-Length", 0)), 8_000_000)
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            self.send_json(400, {"error": "Invalid JSON."})
+            return
+        results = body.get("results") if isinstance(body, dict) else None
+        if not isinstance(results, list):
+            self.send_json(400, {"error": "Expected {\"results\": [...]}. "
+                                          "That is the file Claude Code produces."})
+            return
+        res = import_curation_results(results)
+        _log_curation("paper-draft", "import", f"{res['imported']} papers", self._session_name())
+        self.send_json(200, res)
+
     def _handle_curator_papers_fetch_fulltext(self):
         """Fetch a draft's full text (PMC OA / Unpaywall / publisher) and store it
         privately. Returns source + size + a short preview, never the full text."""
@@ -5596,24 +5613,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(502, {"error": f"Full-text fetch failed ({type(e).__name__})."})
             return
         stamp = datetime.datetime.utcnow().isoformat() + "Z"
-        drafted = False
         if res["chars"] > 0:
             store_full_text(pmid, res)
-            # Full text is now in hand, so draft curation from it immediately
-            # (abstract-only drafts produce nothing by design).
-            try:
-                d["ai"] = _curation_ai_draft(d, d.get("genes") or [], full_text=res["text"])
-                _apply_corr_from_ai(d)
-                drafted = bool((d["ai"] or {}).get("ok"))
-            except Exception:
-                pass
         d["fulltext"] = {"source": res["source"], "chars": res["chars"],
                          "url": res["url"], "fetched_at": stamp}
         _atomic_write_json(PAPER_DRAFTS_PATH, store)
         _log_curation("paper-draft", "fulltext", f"{pmid} {res['source']} {res['chars']}c", curator)
         self.send_json(200, {"ok": True, "pmid": pmid, "source": res["source"],
                              "chars": res["chars"], "url": res["url"],
-                             "drafted": drafted, "preview": res["text"][:600]})
+                             "preview": res["text"][:600]})
 
     def _handle_curator_papers_upload_fulltext(self):
         """Attach a curator-supplied copy of a paper (PDF/HTML/text) to its draft.
@@ -5649,17 +5657,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         _log_curation("paper-draft", "fulltext-upload",
                       f"{pmid} {res['kind']} {res['chars']}c", self._session_name())
-        # The full text is now stored, so draft curation from it immediately.
-        try:
-            store = _load_paper_drafts()
-            d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
-            if d:
-                d["ai"] = _curation_ai_draft(d, d.get("genes") or [])   # loads the stored full text
-                _apply_corr_from_ai(d)
-                res["drafted"] = bool((d["ai"] or {}).get("ok"))
-                _atomic_write_json(PAPER_DRAFTS_PATH, store)
-        except Exception:
-            pass
         self.send_json(200, res)
 
     def _handle_curator_papers_redraft(self):
@@ -5689,7 +5686,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         pmid = str(body.get("pmid") or "").strip()
         status = (body.get("status") or "").strip()
-        if status and status not in ("new", "reviewed", "sent", "dismissed"):
+        if status and status not in ("new", "reviewed", "sent", "dismissed", "out_for_curation"):
             self.send_json(400, {"error": "invalid status"})
             return
         store = _load_paper_drafts()

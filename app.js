@@ -2301,6 +2301,7 @@ async function loadStats(token) {
 let curatorToken = null;
 let curatorAdmin = false;
 let curatorName = "";
+let paperDraftFilter = "all";   // paper-curation bucket filter: all | new | out_for_curation
 
 // Called by the fetch shim on any 401 from /api/curator/. The token the page is
 // holding is dead (server restart or the 8-hour TTL), so drop back to the
@@ -2421,19 +2422,18 @@ function renderCuratePage() {
               <button type="button" id="cur-papers-draft">Draft PMID</button>
               <span id="cur-papers-msg" class="muted" style="font-size:13px"></span>
             </div>
-            <div id="cur-papers-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap">
+              <span class="muted" style="font-size:12px">Whole-paper curation in Claude Code:</span>
+              <button type="button" id="cur-papers-export">⬇ Export batch</button>
+              <button type="button" id="cur-papers-import">⬆ Import results</button>
+              <input type="file" id="cur-papers-import-file" accept=".json,application/json" hidden>
+              <span id="cur-papers-io-msg" class="muted" style="font-size:12px"></span>
+            </div>
+            <div id="cur-papers-list"><p class="notice muted" style="font-size:13px">Sign in to load recent papers.</p></div>
             <p class="muted" style="font-size:11px;margin:2px 0 0">No email is ever sent automatically. Each draft includes a ready-to-send invitation you copy and send yourself, then mark as sent.</p>
           </div>
 
             </div>
-          </details>
-          <details class="lit-section">
-            <summary>Returned by authors <span class="lit-sub">— author sent curation back; ready for your review</span></summary>
-            <div><div id="cur-returned-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load.</p></div></div>
-          </details>
-          <details class="lit-section">
-            <summary>Out for curation <span class="lit-sub">— invitation sent, awaiting the author</span></summary>
-            <div><div id="cur-sent-list" class="pd-list"><p class="notice muted" style="font-size:13px">Sign in to load.</p></div></div>
           </details>
           <details class="lit-section">
             <summary>Community submissions</summary>
@@ -2553,6 +2553,14 @@ function initCurate() {
   const pmidEl = document.getElementById("cur-papers-pmid");
   if (draftBtn) draftBtn.addEventListener("click", () => draftPaperByPmid());
   if (pmidEl) pmidEl.addEventListener("keydown", (e) => { if (e.key === "Enter") draftPaperByPmid(); });
+  const exportBtn = document.getElementById("cur-papers-export");
+  if (exportBtn) exportBtn.addEventListener("click", () => exportPaperBatch());
+  const importBtn = document.getElementById("cur-papers-import");
+  const importFile = document.getElementById("cur-papers-import-file");
+  if (importBtn && importFile) {
+    importBtn.addEventListener("click", () => importFile.click());
+    importFile.addEventListener("change", () => importPaperResults(importFile));
+  }
   const codeEl = document.getElementById("cur-code");
   const login = async () => {
     const username = (userEl.value || "").trim();
@@ -3146,6 +3154,40 @@ async function draftPaperByPmid() {
   }
 }
 
+async function exportPaperBatch() {
+  const msg = document.getElementById("cur-papers-io-msg");
+  if (msg) msg.textContent = "Preparing batch…";
+  try {
+    const r = await fetch("/api/curator/papers/export", { headers: { Authorization: `Bearer ${curatorToken}` } });
+    if (!r.ok) throw new Error();
+    const text = await r.text();
+    let n = 0, withFt = 0;
+    try { const j = JSON.parse(text); n = (j.papers || []).length; withFt = (j.papers || []).filter((p) => p.has_full_text).length; } catch { /* ignore */ }
+    const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    basketDownload(text, `dictybase-curation-batch-${stamp}.json`, "application/json");
+    if (msg) msg.textContent = `Exported ${n} paper${n === 1 ? "" : "s"} (${withFt} with full text). Open the file in Claude Code, curate per its instructions, then Import results.`;
+  } catch { if (msg) msg.textContent = "Export failed."; }
+}
+
+async function importPaperResults(fileInput) {
+  const msg = document.getElementById("cur-papers-io-msg");
+  const file = fileInput.files && fileInput.files[0];
+  fileInput.value = "";
+  if (!file) return;
+  if (msg) msg.textContent = "Importing…";
+  try {
+    const data = JSON.parse(await file.text());
+    const r = await fetch("/api/curator/papers/import", {
+      method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify(data),
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || "import failed");
+    if (msg) msg.textContent = `Imported curation for ${d.imported} paper${d.imported === 1 ? "" : "s"}.`;
+    loadPaperDrafts();
+  } catch (e) { if (msg) msg.textContent = (e && e.message) || "Import failed — check the JSON file."; }
+}
+
 function paperDraftCard(d) {
   const esc = escapeHtml;
   const gsPlainLine = (x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`;
@@ -3246,15 +3288,20 @@ function paperDraftCard(d) {
   return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid ${border};border-radius:8px;padding:10px 12px;margin-bottom:10px">
       ${submitted}
       <div><a href="${esc(d.url)}" target="_blank" rel="noopener" style="font-weight:600">${esc(d.title)}</a>
-        <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status)}</strong>` : ""}</span></div>
+        <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status === "out_for_curation" ? "out for curation" : d.status)}</strong>` : ""}</span></div>
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
       <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
         <button type="button" class="pd-refresh-email" data-pmid="${esc(d.pmid)}" title="Rebuild just the invitation email, leaving the curation alone" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">✉ Refresh email</button>
-        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" data-imported="${(d.curated_source === "claude-code") ? 1 : 0}" title="Draft the curation from the stored full text (keeps the invitation link). Fetch or upload the full text first." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">${ai.ok ? "↻ Redraft" : "✎ Draft"}</button>
+        <button type="button" class="pd-redraft" data-pmid="${esc(d.pmid)}" data-imported="${(d.curated_source === "claude-code") ? 1 : 0}" title="Replace the curation with a fresh draft from the abstract (keeps the invitation link)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">↻ Redraft from abstract</button>
         <button type="button" class="pd-fulltext" data-pmid="${esc(d.pmid)}" title="Fetch the paper's full text from an openly available copy (private; used to improve the draft)" style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">📄 Fetch full text</button>
         <button type="button" class="pd-upload" data-pmid="${esc(d.pmid)}" title="Attach a copy you already have (PDF, HTML or plain text). Stored privately on this server, never published." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">⬆ Upload a copy</button>
         <input type="file" class="pd-upload-file" accept=".pdf,.html,.htm,.xml,.txt" hidden></div>
       ${d.fulltext ? `<div class="pd-ft-status" style="font-size:11.5px;margin:2px 0;color:${d.fulltext.chars ? "#047857" : "#b45309"}">Full text: ${d.fulltext.chars ? esc(d.fulltext.source) + " · " + Number(d.fulltext.chars).toLocaleString() + " chars" : "no openly available copy. Upload a copy if you have one through the library, or ask the author for theirs."}</div>` : ""}
+      <div style="margin:5px 0">
+        ${d.status === "out_for_curation"
+          ? `<button type="button" class="pd-bucket" data-to="new" title="Return this paper to the New queue" style="font-size:12px;padding:3px 10px;border:1px solid #0a4f47;border-radius:6px;background:#e7f0ee;color:#0a4f47;cursor:pointer;font-weight:600">● Out for curation — return to queue</button>`
+          : `<button type="button" class="pd-bucket" data-to="out_for_curation" title="Move this paper to your Out-for-curation bucket" style="font-size:12px;padding:3px 10px;border:1px solid #d7dee0;border-radius:6px;background:#fff;cursor:pointer">→ Out for curation</button>`}
+      </div>
       ${aiHtml}
       <details style="margin-top:6px">
         <summary style="cursor:pointer;font-size:13px">Invitation email (review, then send it yourself)</summary>
@@ -3292,21 +3339,21 @@ async function loadPaperDrafts() {
     if (!r.ok) { el.innerHTML = `<p class="notice muted" style="font-size:13px">Could not load drafts (session may have expired).</p>`; return; }
     const data = await r.json();
     const drafts = data.drafts || [];
-    // Split by state into the three accordions: working drafts, papers out for
-    // curation (invitation sent, no author reply yet), and papers the author has
-    // returned (ready for curator review).
-    const returned = drafts.filter((d) => d.submission);
-    const outForCuration = drafts.filter((d) => !d.submission && d.status === "sent");
-    const working = drafts.filter((d) => !d.submission && d.status !== "sent");
-    const renderInto = (id, list, empty) => {
-      const box = document.getElementById(id);
-      if (box) box.innerHTML = list.length ? list.map(paperDraftCard).join("")
-        : `<p class="notice muted" style="font-size:13px">${empty}</p>`;
+    if (!drafts.length) {
+      el.innerHTML = `<p class="notice muted" style="font-size:13px">No drafts yet. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI suggestions are off on this server; gene detection still runs.)"}</p>`;
+      return;
+    }
+    const buckets = {
+      all: drafts,
+      new: drafts.filter((d) => !d.status || d.status === "new"),
+      out_for_curation: drafts.filter((d) => d.status === "out_for_curation"),
     };
-    renderInto("cur-papers-list", working, `No working drafts. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI drafting is off on this server; gene detection still runs.)"}`);
-    renderInto("cur-returned-list", returned, "No papers have been returned by authors yet.");
-    renderInto("cur-sent-list", outForCuration, "No papers are out for curation yet.");
-    document.querySelectorAll(".pd-list .paper-draft").forEach((card) => {
+    const shown = buckets[paperDraftFilter] || drafts;
+    const fbtn = (key, label) => `<button type="button" class="pd-filter" data-f="${key}" style="font-size:12px;padding:2px 10px;border:1px solid ${paperDraftFilter === key ? "#0a4f47" : "#d7dee0"};border-radius:999px;background:${paperDraftFilter === key ? "#e7f0ee" : "#fff"};color:${paperDraftFilter === key ? "#0a4f47" : "inherit"};font-weight:${paperDraftFilter === key ? 600 : 400};cursor:pointer">${label} (${(buckets[key] || []).length})</button>`;
+    const filterBar = `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${fbtn("all", "All")}${fbtn("new", "New")}${fbtn("out_for_curation", "Out for curation")}</div>`;
+    el.innerHTML = filterBar + (shown.length ? shown.map(paperDraftCard).join("") : `<p class="notice muted" style="font-size:13px">No papers in this bucket.</p>`);
+    el.querySelectorAll(".pd-filter").forEach((b) => b.addEventListener("click", () => { paperDraftFilter = b.dataset.f; loadPaperDrafts(); }));
+    el.querySelectorAll(".paper-draft").forEach((card) => {
       const pmid = card.dataset.pmid;
       const emailEl = card.querySelector(".pd-email");
       const cardMsg = card.querySelector(".pd-msg");
@@ -3332,6 +3379,12 @@ async function loadPaperDrafts() {
       if (dismissBtn) dismissBtn.addEventListener("click", async () => {
         try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
         catch { say("Could not dismiss."); }
+      });
+      const bucketBtn = card.querySelector(".pd-bucket");
+      if (bucketBtn) bucketBtn.addEventListener("click", async () => {
+        bucketBtn.disabled = true;
+        try { await updatePaperDraft(pmid, bucketBtn.dataset.to); loadPaperDrafts(); }
+        catch { say("Could not update."); bucketBtn.disabled = false; }
       });
       const handledBtn = card.querySelector(".pd-handled");
       if (handledBtn) handledBtn.addEventListener("click", async () => {
@@ -3477,10 +3530,10 @@ async function loadPaperDrafts() {
       const redraftBtn = card.querySelector(".pd-redraft");
       if (redraftBtn) redraftBtn.addEventListener("click", async () => {
         // A redraft throws away imported whole-paper curation and replaces it
-        // with a fresh full-text draft. Never let that happen by accident.
+        // with an abstract draft. Never let that happen by accident.
         if (redraftBtn.dataset.imported === "1" &&
             !confirm("This paper holds imported whole-paper curation.\n\n"
-              + "Redrafting REPLACES it with a fresh draft from the full text, and that cannot be undone here. "
+              + "Redrafting REPLACES it with a fresh draft from the abstract alone, and that cannot be undone here. "
               + "You would have to import the results file again.\n\nRedraft anyway?")) return;
         const orig = redraftBtn.textContent; redraftBtn.disabled = true; redraftBtn.textContent = "Regenerating…";
         try {
@@ -14086,7 +14139,7 @@ function renderPaperSessionForm(el, token, s) {
     ${section("Gene Ontology", goRows, "Each row should be an official Gene Ontology term. <strong>Click a term box and start typing to search the ontology</strong>; choosing a term fills in its GO id and its category for you. Rows still showing our own wording are marked, and you can leave those for a curator. Tick <strong>confirm</strong> only on the rows you agree with; anything left unticked is dropped.", "Gene Ontology terms describe a gene in three ways: its molecular Function (what the protein does, for example actin filament binding), the biological Process it takes part in (for example phagocytosis), or the cellular Component where it acts (for example cell cortex). Only a real GO term can be contributed to the Gene Ontology Consortium, which is why the box searches the ontology. A mutant's observable traits are not GO terms; those belong in Phenotypes.")}
     ${section("Phenotypes", phRows, "Observable traits of a mutant of this gene.", "What a mutant of this gene looks like or does differently, for example 'reduced growth', 'aggregation defect', or 'no fruiting bodies'.")}
     ${section("Interactions", inRows, "Physical or genetic interactions between two genes.", "Two genes or proteins that either physically bind each other (physical) or interact genetically, such as a double-mutant effect (genetic).")}
-    ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">We did not draft any gene-level annotations for this paper. If it reports specific findings for particular genes, please add them in the notes below.</p>`}
+    ${(gsRows || goRows || phRows || inRows) ? "" : `<p class="notice muted" style="font-size:13px">No draft annotations were generated from the abstract. Please add the key findings for your paper in the notes below.</p>`}
     <h3 class="tools-group">Notes to the curator ${help("A private message to the curator: key findings, corrections, missing genes, answers to their questions, or context. Only curators see it. It is never shown on a gene page or published anywhere.")}<span class="muted" style="font-weight:400;font-size:12px"> (optional, private)</span></h3>
     <p class="muted" style="font-size:12px;margin:0 0 4px">🔒 This box is a private conversation between you and the curator. It is never published on a gene page.</p>
     <textarea id="ps-note" rows="4" style="width:100%;${FIELD};resize:vertical">${esc(s.note || "")}</textarea>

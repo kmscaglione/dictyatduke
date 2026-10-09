@@ -138,11 +138,43 @@ def _bh(pvals):
     return q
 
 
+def resolve_background(tokens):
+    """Resolve a custom background (DDB ids or symbols) to DDB ids.
+
+    Same matching rules as resolve_genes, but indexed, so a detected-proteome
+    list of several thousand ids resolves quickly. Returns (matched:set, n_unmatched).
+    """
+    st = _load()
+    upper = st.get("_upper2ddb")
+    if upper is None:
+        # a few GO-annotated ids are absent from the gene index; keep them
+        # resolvable so a custom universe can reproduce the default population
+        upper = st["_upper2ddb"] = {d.upper(): d for d in st["all_ddb"] | st["annotated"]}
+    matched, missing = set(), 0
+    for tok in tokens:
+        t = str(tok).strip()
+        if not t:
+            continue
+        ddb = upper.get(t.upper()) if _DDB_RE.match(t) else st["sym2ddb"].get(t.lower())
+        if ddb:
+            matched.add(ddb)
+        else:
+            missing += 1
+    return matched, missing
+
+
 def enrich(tokens, background="annotated", min_study=2, max_terms=200,
-           include_predicted=False, gomer_min=0.5):
+           include_predicted=False, gomer_min=0.5, background_genes=None):
     """Hypergeometric GO over-representation for a gene list.
 
     background: "annotated" (all GO-annotated genes) or "genome" (all genes).
+    background_genes: optional custom universe, e.g. the genes detected in a
+    proteomics experiment. When given, the population is that list restricted
+    by `background` as usual ("annotated": its GO-annotated members; "genome":
+    all of it), study genes outside the universe are dropped and reported, and
+    the result gains background_custom, background_requested_n,
+    background_unmatched_n and study_outside_background. When omitted, the
+    behaviour and the result keys are exactly as before.
     include_predicted: also count the AI, Gomer, author, and community layers, in
     both the study set and the background, so the test stays internally valid.
     gomer_min: Gomer I-TASSER confidence cutoff (0.4/0.5/0.6) for those terms.
@@ -157,8 +189,24 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200,
         pop = st["all_ddb"]
     else:
         pop = st["annotated"]
+    custom = None
+    if background_genes is not None:
+        background_genes = list(background_genes)
+        universe, bg_missing = resolve_background(background_genes)
+        direct = {t for t in background_genes if isinstance(t, str) and t in pop} - universe
+        universe |= direct          # ids known only to an augmented (predicted) state
+        bg_missing -= len(direct)
+        pop = pop & universe
+        custom = {
+            "background_custom": True,
+            "background_requested_n": len(universe) + bg_missing,
+            "background_unmatched_n": bg_missing,
+            "study_outside_background": sorted((matched & st["annotated"]) - universe),
+        }
     M = len(pop)
     study = matched & st["annotated"]
+    if custom is not None:
+        study = study & pop
     N = len(study)
 
     results = []
@@ -197,7 +245,7 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200,
         rows.sort(key=lambda r: (r["p_value"], -r["study_count"]))
         results = rows[:max_terms]
 
-    return {
+    out = {
         "study_n": N,
         "study_resolved": sorted(study),
         "unmatched": unmatched,
@@ -205,6 +253,9 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200,
         "background_n": M,
         "results": results,
     }
+    if custom is not None:
+        out.update(custom)
+    return out
 
 
 # --- Phenotype enrichment (curated mutant phenotypes) ---------------------

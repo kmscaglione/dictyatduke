@@ -55,6 +55,34 @@ class EndpointTest(unittest.TestCase):
         except urllib.error.HTTPError as e:
             return e.code, json.load(e)
 
+    def post(self, path, payload):
+        req = urllib.request.Request(
+            "http://127.0.0.1:%d%s" % (self.port, path), data=json.dumps(payload).encode(),
+            headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.status, json.load(r)
+        except urllib.error.HTTPError as e:
+            return e.code, json.load(e)
+
+    # a custom enrichment background is optional and leaves the default untouched
+    def test_enrichment_custom_background(self):
+        genes = ["abpA", "abpC", "corA", "ctxA", "ctxB", "fimA", "myoB", "racE", "limE", "forH"]
+        code, base = self.post("/api/enrichment", {"genes": genes})
+        self.assertEqual(code, 200)
+        self.assertNotIn("background_custom", base)
+        universe = base["study_resolved"] + [r[0] for r in
+                                             json.loads((ROOT / "assets" / "gene_index.json").read_text())[:3000]]
+        code, cust = self.post("/api/enrichment", {"genes": genes, "background_genes": universe})
+        self.assertEqual(code, 200)
+        self.assertTrue(cust["background_custom"])
+        self.assertLess(cust["background_n"], base["background_n"])
+        self.assertEqual(cust["study_n"], base["study_n"])
+        code, _ = self.post("/api/enrichment", {"genes": genes, "background_genes": []})
+        self.assertEqual(code, 400)
+        code, _ = self.post("/api/enrichment", {"genes": genes, "background_genes": {"a": 1}})
+        self.assertEqual(code, 400)
+
     # the site is up and the core index loaded
     def test_health(self):
         code, body = self.get("/api/health")

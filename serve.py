@@ -5035,7 +5035,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(500, {"error": str(e)})
 
     def _handle_enrichment(self):
-        """POST {genes:[...], background?, min_study?} -> GO enrichment."""
+        """POST {genes:[...], background?, background_genes?, min_study?} -> GO enrichment."""
         try:
             length = int(self.headers.get("Content-Length", 0))
             if length > 1_000_000:
@@ -5061,9 +5061,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 result = enrichment.enrich_kegg(genes, min_study=min_study)
             else:
                 background = "genome" if payload.get("background") == "genome" else "annotated"
+                # optional custom universe (e.g. a detected proteome); GO sets only
+                bg = payload.get("background_genes")
+                if bg is not None:
+                    if isinstance(bg, str):
+                        bg = re.split(r"[\s,]+", bg)
+                    if not isinstance(bg, list) or len(bg) > 20000:
+                        self.send_json(400, {"error": "'background_genes' must be a list of at most 20000 ids"})
+                        return
+                    bg = [str(g).strip() for g in bg if g]
+                    bg = [rev["uniprot"].get(g.upper()) or rev["ncbi"].get(g) or g for g in bg]
+                    if not bg:
+                        self.send_json(400, {"error": "'background_genes' is empty"})
+                        return
                 result = enrichment.enrich(genes, background=background, min_study=min_study,
                                            include_predicted=bool(payload.get("include_predicted")),
-                                           gomer_min=enrichment.clamp_gomer_min(payload.get("gomer_min")))
+                                           gomer_min=enrichment.clamp_gomer_min(payload.get("gomer_min")),
+                                           background_genes=bg)
             self.send_json(200, result)
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})

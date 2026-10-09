@@ -1,0 +1,5 @@
+body { margin: 0; font: 15px/1.5 system-ui, sans-serif; background: #f4f3ef; color: #111; }
+main { max-width: 1180px; margin: 0 auto; padding: 20px 16px 60px; }
+h1 { font-size: 24px; margin: 0 0 4px; }
+#log { color: #555; margin-left: 12px; }
+@media (prefers-color-scheme: dark) { body { background: #0d0d0d; color: #fff; } #log { color: #bbb; } }

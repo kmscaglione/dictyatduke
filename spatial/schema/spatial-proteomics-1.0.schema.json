@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "spatial-proteomics-bundle/1.0",
+  "title": "Spatial proteomics bundle",
+  "description": "One spatial proteomics experiment: protein groups, optional measured fraction profiles, optional embeddings, and any number of assignment layers that each declare their evidence type. See SCHEMA.md for semantics that a structural schema cannot express.",
+  "type": "object",
+  "required": ["schema", "schema_version", "dataset", "compartments", "entities", "layers"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "spatial-proteomics-bundle"},
+    "schema_version": {"type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+$"},
+    "dataset": {"$ref": "#/$defs/dataset"},
+    "compartments": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/compartment"}},
+    "fractions": {"type": "array", "items": {"$ref": "#/$defs/fraction"}},
+    "entities": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entity"}},
+    "profiles": {"$ref": "#/$defs/profiles"},
+    "embeddings": {"type": "array", "items": {"$ref": "#/$defs/embedding"}},
+    "layers": {"type": "array", "items": {"$ref": "#/$defs/layer"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1},
+    "source": {"enum": ["author", "computed", "external"]},
+    "dataset": {
+      "type": "object",
+      "required": ["id", "title", "organism", "citation", "license", "attribution", "provenance", "id_namespaces", "mapping", "distribution"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "organism": {
+          "type": "object",
+          "required": ["name"],
+          "additionalProperties": false,
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "taxon_id": {"type": ["integer", "null"]},
+            "strain": {"type": "string"},
+            "condition": {"type": "string"}
+          }
+        },
+        "citation": {
+          "type": "object",
+          "required": ["text"],
+          "additionalProperties": false,
+          "properties": {
+            "text": {"type": "string", "minLength": 1},
+            "doi": {"type": "string"},
+            "pmid": {"type": "string"},
+            "url": {"type": "string"},
+            "peer_reviewed": {"type": "boolean"},
+            "repository_accession": {"type": "string"}
+          }
+        },
+        "license": {
+          "type": "object",
+          "required": ["id", "redistribution"],
+          "additionalProperties": false,
+          "properties": {
+            "id": {"type": "string", "minLength": 1},
+            "name": {"type": "string"},
+            "url": {"type": "string"},
+            "redistribution": {"enum": ["permitted", "restricted", "unknown"]},
+            "terms_note": {"type": "string"}
+          }
+        },
+        "attribution": {"type": "string", "minLength": 1},
+        "provenance": {
+          "type": "object",
+          "required": ["builder", "built", "sources", "steps"],
+          "additionalProperties": false,
+          "properties": {
+            "builder": {"type": "string", "minLength": 1},
+            "built": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+            "sources": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["name", "description"],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {"type": "string", "minLength": 1},
+                  "description": {"type": "string"},
+                  "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                  "url": {"type": "string"}
+                }
+              }
+            },
+            "steps": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "id_namespaces": {
+          "type": "object",
+          "required": ["member", "gene"],
+          "additionalProperties": false,
+          "properties": {
+            "entity": {"type": "string"},
+            "member": {"type": "string", "minLength": 1},
+            "gene": {"type": "string", "minLength": 1}
+          }
+        },
+        "mapping": {
+          "type": "object",
+          "required": ["method", "entities_total", "entities_mapped", "entities_partial", "entities_unmapped", "entities_multi_gene", "members_total", "members_mapped", "genes_total", "unmapped_entities", "multi_gene_entities"],
+          "additionalProperties": false,
+          "properties": {
+            "method": {"type": "string", "minLength": 1},
+            "source": {"type": "string"},
+            "entities_total": {"type": "integer", "minimum": 0},
+            "entities_mapped": {"type": "integer", "minimum": 0},
+            "entities_partial": {"type": "integer", "minimum": 0},
+            "entities_unmapped": {"type": "integer", "minimum": 0},
+            "entities_multi_gene": {"type": "integer", "minimum": 0},
+            "members_total": {"type": "integer", "minimum": 0},
+            "members_mapped": {"type": "integer", "minimum": 0},
+            "genes_total": {"type": "integer", "minimum": 0},
+            "unmapped_entities": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+            "multi_gene_entities": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+            "notes": {"type": "string"}
+          }
+        },
+        "distribution": {
+          "type": "object",
+          "required": ["status"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {"enum": ["public", "local-only"]},
+            "reason": {"type": "string"}
+          }
+        },
+        "synthetic": {"type": "boolean"}
+      }
+    },
+    "compartment": {
+      "type": "object",
+      "required": ["id", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "ontology_id": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "fraction": {
+      "type": "object",
+      "required": ["id", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "condition": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "entity": {
+      "type": "object",
+      "required": ["id", "members"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string"},
+        "members": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "gene"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "gene": {"type": ["string", "null"]},
+              "description": {"type": "string"}
+            }
+          }
+        },
+        "detected": {"type": "boolean", "description": "false when the group is listed by a layer but was not measured in this experiment. Defaults to true."},
+        "mapping_note": {"type": "string"}
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "required": ["evidence_type", "source", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_type": {"const": "measured_profile"},
+        "source": {"$ref": "#/$defs/source"},
+        "unit": {"type": "string"},
+        "processing": {"type": "string"},
+        "values": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "minItems": 1, "items": {"type": ["number", "null"]}}
+        }
+      }
+    },
+    "embedding": {
+      "type": "object",
+      "required": ["id", "label", "method", "source", "derived_from", "coordinates"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "method": {"$ref": "#/$defs/method"},
+        "source": {"$ref": "#/$defs/source"},
+        "derived_from": {"const": "profiles"},
+        "axes": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "coordinates": {
+          "type": "object",
+          "additionalProperties": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "software": {"type": "string"},
+        "description": {"type": "string"},
+        "parameters": {"type": "object"}
+      }
+    },
+    "layer": {
+      "type": "object",
+      "required": ["id", "label", "evidence_type", "source", "method", "assignments"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "label": {"type": "string", "minLength": 1},
+        "evidence_type": {"enum": ["computational_assignment", "sequence_prediction", "curated_annotation"]},
+        "source": {"$ref": "#/$defs/source"},
+        "method": {"$ref": "#/$defs/method"},
+        "description": {"type": "string"},
+        "score": {
+          "type": "object",
+          "required": ["name", "interpretation"],
+          "additionalProperties": false,
+          "properties": {
+            "name": {"type": "string", "minLength": 1},
+            "interpretation": {"enum": ["unspecified", "probability", "distance", "similarity", "other"]},
+            "interpretation_basis": {"type": "string"},
+            "description": {"type": "string"},
+            "threshold": {
+              "type": "object",
+              "required": ["value", "rule", "basis"],
+              "additionalProperties": false,
+              "properties": {
+                "value": {"type": "number"},
+                "rule": {"enum": ["score >= value", "score > value", "score <= value", "score < value"]},
+                "basis": {"enum": ["stated_by_source", "observed_in_data"]},
+                "description": {"type": "string"}
+              }
+            }
+          }
+        },
+        "attribute_labels": {"type": "object", "additionalProperties": {"type": "string"}},
+        "assignments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["entity", "compartment", "status"],
+            "additionalProperties": false,
+            "properties": {
+              "entity": {"$ref": "#/$defs/id"},
+              "compartment": {"type": ["string", "null"]},
+              "status": {"enum": ["assigned", "below_threshold", "unassigned"]},
+              "score": {"type": ["number", "null"]},
+              "attributes": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "null"]}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

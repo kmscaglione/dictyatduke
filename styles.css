@@ -2887,3 +2887,6 @@ body.cmdk-active { overflow: hidden; }
 }
 .screen-order-list li .muted { font-size: .72rem; }
 .screen-order-list li button { margin-left: auto; }
+
+/* nav entries that appear only when their feature is available */
+.menu-option[hidden] { display: none; }

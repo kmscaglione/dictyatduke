@@ -79,6 +79,18 @@
     return a && a.status === "assigned" ? a.compartment : null;
   }
 
+  // Every compartment a layer stands behind for one entity. Most layers give
+  // one; annotation layers may give several ("others").
+  function calls(a) {
+    if (!a || a.status !== "assigned" || a.compartment == null) return [];
+    return [a.compartment].concat(a.others || []);
+  }
+
+  var STATUS_DEFAULT = { assigned: "assigned", below_threshold: "below threshold", unassigned: "unassigned" };
+  function statusLabel(layer, status) {
+    return (layer && layer.status_labels && layer.status_labels[status]) || STATUS_DEFAULT[status] || status;
+  }
+
   // Scores are shown exactly as supplied: the shortest text that round-trips.
   function formatScore(x) {
     return x == null ? "" : String(x);
@@ -160,7 +172,28 @@
     var map = model.byLayer[layerId] || {};
     Object.keys(map).forEach(function (eid) {
       var a = map[eid];
-      if (a.compartment != null && out[a.compartment] && out[a.compartment][a.status] != null) out[a.compartment][a.status]++;
+      if (a.status === "assigned") calls(a).forEach(function (c) { if (out[c]) out[c].assigned++; });
+      else if (a.status === "below_threshold" && a.compartment != null && out[a.compartment]) out[a.compartment].below_threshold++;
+    });
+    return out;
+  }
+
+  // Compartments both layers are able to name, or null when neither is limited.
+  function sharedScope(model, layerA, layerB) {
+    var scope = null;
+    [layerA, layerB].forEach(function (id) {
+      var sc = model.layerById[id] && model.layerById[id].compartment_scope;
+      if (!sc) return;
+      scope = scope ? scope.filter(function (c) { return sc.indexOf(c) >= 0; }) : sc.slice();
+    });
+    return scope;
+  }
+
+  // Entities that were inputs to the method behind a layer (its trained_on layers).
+  function trainingSet(model, layerId) {
+    var out = {}, layer = model.layerById[layerId];
+    ((layer && layer.trained_on) || []).forEach(function (id) {
+      Object.keys(model.byLayer[id] || {}).forEach(function (eid) { out[eid] = id; });
     });
     return out;
   }
@@ -183,18 +216,27 @@
     ranked.forEach(function (r, slot) { model.colors[r.id] = slot + 1; });
   }
 
-  function concordance(model, layerA, layerB) {
+  // Agreement means the two layers' compartment sets share a member. Calls
+  // outside the layers' shared compartment scope are ignored, so a layer is
+  // never marked wrong about a compartment the other cannot name. `skip` is an
+  // optional map of entity ids to leave out (for example a training set).
+  function concordance(model, layerA, layerB, skip) {
     var a = model.byLayer[layerA] || {}, b = model.byLayer[layerB] || {};
-    var out = { shared: 0, both: 0, agree: 0, table: {} };
+    var scope = sharedScope(model, layerA, layerB);
+    var keep = function (c) { return !scope || scope.indexOf(c) >= 0; };
+    var out = { shared: 0, both: 0, agree: 0, table: {}, scope: scope, skipped: 0 };
     Object.keys(a).forEach(function (eid) {
       if (!b[eid]) return;
+      if (skip && skip[eid]) { out.skipped++; return; }
       out.shared++;
-      var ca = finalCall(a[eid]), cb = finalCall(b[eid]);
-      if (ca == null || cb == null) return;
+      var ca = calls(a[eid]).filter(keep), cb = calls(b[eid]).filter(keep);
+      if (!ca.length || !cb.length) return;
       out.both++;
-      if (ca === cb) out.agree++;
-      var row = out.table[ca] = out.table[ca] || {};
-      row[cb] = (row[cb] || 0) + 1;
+      if (ca.some(function (c) { return cb.indexOf(c) >= 0; })) out.agree++;
+      ca.forEach(function (x) {
+        var row = out.table[x] = out.table[x] || {};
+        cb.forEach(function (y) { row[y] = (row[y] || 0) + 1; });
+      });
     });
     return out;
   }
@@ -211,12 +253,31 @@
     return { lo: lo, hi: hi, counts: counts };
   }
 
-  function detectedGenes(model) {
+  function detectedGenes(model, singleGeneOnly) {
     var seen = {};
     model.entities.forEach(function (e) {
-      if (e.detected !== false) entityGenes(e).forEach(function (g) { seen[g] = true; });
+      if (e.detected === false) return;
+      var g = entityGenes(e);
+      if (!singleGeneOnly || g.length === 1) g.forEach(function (x) { seen[x] = true; });
     });
     return Object.keys(seen).sort();
+  }
+
+  // Genes for an enrichment test of some protein groups. Only detected groups
+  // that resolve to exactly one gene contribute; everything left out is counted.
+  function studyGenes(model, entityIds) {
+    var out = { genes: [], used: 0, multi_gene: 0, unmapped: 0, undetected: 0 }, seen = {};
+    entityIds.forEach(function (id) {
+      var e = model.entityById[id];
+      if (!e) return;
+      var g = entityGenes(e);
+      if (e.detected === false) out.undetected++;
+      else if (!g.length) out.unmapped++;
+      else if (g.length > 1) out.multi_gene++;
+      else { out.used++; seen[g[0]] = true; }
+    });
+    out.genes = Object.keys(seen).sort();
+    return out;
   }
 
   // Everything known about one gene: every protein group it belongs to, each
@@ -230,7 +291,8 @@
         assignments: model.layers.filter(function (l) { return model.byLayer[l.id][eid]; }).map(function (l) {
           var a = model.byLayer[l.id][eid];
           return { layer: l.id, label: l.label, evidence_type: l.evidence_type, source: l.source,
-                   compartment: a.compartment, status: a.status, score: a.score == null ? null : a.score,
+                   compartment: a.compartment, others: a.others || [], status: a.status, statusLabel: statusLabel(l, a.status),
+                   trainingInput: trainingSet(model, l.id)[eid] || null, score: a.score == null ? null : a.score,
                    scoreName: l.score ? l.score.name : null, attributes: a.attributes || {} };
         })
       };
@@ -250,10 +312,12 @@
   function filterEntities(model, state, adapter) {
     var map = model.byLayer[state.layer] || {};
     var q = (state.query || "").trim().toLowerCase();
-    return model.entities.filter(function (e) {
+    var unassignedView = state.view === "unassigned";
+    var list = model.entities.filter(function (e) {
       var a = map[e.id];
-      if (state.compartment && (!a || a.compartment !== state.compartment)) return false;
-      if (state.status !== "all" && (!a || a.status !== state.status)) return false;
+      if (unassignedView && (!a || a.status === "assigned")) return false;
+      if (state.compartment && (!a || (a.compartment !== state.compartment && calls(a).indexOf(state.compartment) < 0))) return false;
+      if (!unassignedView && state.status && state.status !== "all" && (!a || a.status !== state.status)) return false;
       if (state.gene && entityGenes(e).indexOf(state.gene) < 0) return false;
       if (q) {
         var blob = model.blobs[e.id] || (model.blobs[e.id] = searchBlob(e, adapter || {}));
@@ -261,6 +325,32 @@
       }
       return true;
     });
+    return sortEntities(model, list, state.sort, adapter || {});
+  }
+
+  // sort = { key, dir }. Keys: "group", "genes", "c:<layer id>" (compartment
+  // label) and "s:<layer id>" (score). Entities with no value always sort last.
+  function sortEntities(model, list, sort, adapter) {
+    if (!sort || !sort.key) return list;
+    var dir = sort.dir === "desc" ? -1 : 1, kind = sort.key.slice(0, 2), layerId = sort.key.slice(2), value;
+    if (sort.key === "group") value = function (e) { return e.members[0].id.toLowerCase(); };
+    else if (sort.key === "genes") value = function (e) {
+      var g = entityGenes(e)[0];
+      return g == null ? null : String((adapter.geneLabel && adapter.geneLabel(g)) || g).toLowerCase();
+    };
+    else if (kind === "c:") value = function (e) {
+      var a = (model.byLayer[layerId] || {})[e.id];
+      return a && a.compartment != null ? model.compById[a.compartment].label.toLowerCase() : null;
+    };
+    else if (kind === "s:") value = function (e) {
+      var a = (model.byLayer[layerId] || {})[e.id];
+      return a && a.score != null ? a.score : null;
+    };
+    else return list;
+    return list.map(function (e, i) { return { e: e, v: value(e), i: i }; }).sort(function (x, y) {
+      if (x.v == null || y.v == null) return (x.v == null) - (y.v == null) || x.i - y.i;
+      return (x.v < y.v ? -1 : x.v > y.v ? 1 : 0) * dir || x.i - y.i;
+    }).map(function (x) { return x.e; });
   }
 
   function toTSV(model, entities, adapter) {
@@ -283,7 +373,8 @@
                  mappingStatus(e), e.detected === false ? "no" : "yes"];
       model.layers.forEach(function (l) {
         var a = model.byLayer[l.id][e.id];
-        row.push(a && a.compartment != null ? model.compById[a.compartment].label : "", a ? a.status : "");
+        var names = a && a.compartment != null ? [a.compartment].concat(a.others || []).map(function (c) { return model.compById[c].label; }).join("; ") : "";
+        row.push(names, a ? statusLabel(l, a.status) : "");
         if (l.score) row.push(a ? formatScore(a.score) : "");
       });
       lines.push(row.map(clean).join("\t"));
@@ -366,6 +457,7 @@
       layer: model.layerById[init.layer] ? init.layer : (first ? first.id : null),
       compartment: model.compById[init.compartment] ? init.compartment : null,
       status: "all", query: "", gene: init.gene || null,
+      view: init.view === "unassigned" ? "unassigned" : "browse", sort: null, compSort: "source", analysis: null,
       entity: model.entityById[init.entity] ? init.entity : null,
       embedding: model.capabilities.embeddings[0] || null,
       compare: null, page: 0
@@ -379,6 +471,7 @@
   Explorer.prototype.set = function (patch) {
     var st = this.state, k;
     for (k in patch) st[k] = patch[k];
+    if (!("analysis" in patch) && !("page" in patch) && !("entity" in patch && Object.keys(patch).length === 1)) st.analysis = null;
     if (!("page" in patch) && !("entity" in patch && Object.keys(patch).length === 1)) st.page = 0;
     this.render();
     if ("entity" in patch && this.options.onSelect) this.options.onSelect(st.entity, this);
@@ -423,6 +516,9 @@
       notices.push(h("p", { class: "sx-notice sx-notice-strong", "data-sx": "local-only",
         text: "Local copy, not for distribution. " + (ds.distribution.reason || "") }));
     }
+    (ds.notices || []).forEach(function (text) {
+      notices.push(h("p", { class: "sx-notice", "data-sx": "notice", text: text }));
+    });
     var cite = h("p", { class: "sx-cite" }, [
       document.createTextNode(ds.citation.text + " "),
       ds.citation.url ? link("Source", ds.citation.url) : null,
@@ -443,7 +539,12 @@
       h("p", { "data-sx": "mapping", text: m.entities_total + " protein groups: " + m.entities_mapped + " fully mapped to genes, " +
         m.entities_partial + " partly mapped, " + m.entities_unmapped + " unmapped. " + m.entities_multi_gene +
         " groups span more than one gene. " + m.genes_total + " genes in total. Method: " + m.method }),
-      m.notes ? h("p", { class: "sx-muted", text: m.notes }) : null
+      m.notes ? h("p", { class: "sx-muted", text: m.notes }) : null,
+      h("p", { text: "Compartment vocabulary:" }),
+      h("ul", { "data-sx": "vocabulary" }, this.model.compartments.map(function (c) {
+        return h("li", { text: c.label + (c.ontology_id ? " = " + c.ontology_id : " (no ontology term)") +
+          (c.ontology_note ? ". " + c.ontology_note : "") + (c.description ? " " + c.description : "") });
+      }))
     ]);
     el.appendChild(h("header", { class: "sx-head" }, [
       h("h2", { class: "sx-title", text: ds.title }),
@@ -454,13 +555,14 @@
     el.appendChild(this.evidenceEl);
 
     this.layerSelect = h("select", { id: "sx-layer", "data-sx": "layer-select", onchange: function () {
-      self.set({ layer: this.value, compartment: null, compare: null });
+      self.set({ layer: this.value, compartment: null, compare: null, sort: null, view: "browse" });
     } });
     this.statusSelect = h("select", { "data-sx": "status-select", onchange: function () { self.set({ status: this.value }); } }, [
       h("option", { value: "all", text: "All protein groups" }),
       h("option", { value: "assigned", text: "Assigned only" }),
       h("option", { value: "below_threshold", text: "Below threshold only" })
     ]);
+    this.statusWrap = h("label", {}, [h("span", { text: "Show" }), this.statusSelect]);
     var timer = null;
     this.search = h("input", { type: "search", "data-sx": "search", placeholder: "Protein, gene or description", "aria-label": "Search", oninput: function () {
       var v = this.value;
@@ -469,7 +571,7 @@
     } });
     el.appendChild(h("div", { class: "sx-controls" }, [
       h("label", {}, [h("span", { text: "Colour and filter by" }), this.layerSelect]),
-      h("label", {}, [h("span", { text: "Show" }), this.statusSelect]),
+      this.statusWrap,
       h("label", { class: "sx-grow" }, [h("span", { text: "Search" }), this.search])
     ]));
     this.body = h("div", { class: "sx-body" });
@@ -543,10 +645,31 @@
   Explorer.prototype.render = function () {
     var st = this.state, model = this.model, self = this;
     var layer = model.layerById[st.layer];
-    this.statusSelect.value = st.status;
-    this.filtered = filterEntities(model, st, this.adapter);
     this.body.textContent = "";
     if (!layer) { this.body.appendChild(h("p", { text: "This dataset has no assignment layers." })); return; }
+    var map = model.byLayer[layer.id], nUnassigned = 0;
+    Object.keys(map).forEach(function (eid) { if (map[eid].status !== "assigned") nUnassigned++; });
+    if (!nUnassigned) st.view = "browse";
+    var unassigned = st.view === "unassigned";
+    if (unassigned && !st.sort && layer.score) st.sort = { key: "s:" + layer.id, dir: "desc" };
+    this.statusSelect.options[1].textContent = "Only " + statusLabel(layer, "assigned");
+    this.statusSelect.options[2].textContent = "Only " + statusLabel(layer, "below_threshold");
+    this.statusSelect.value = st.status;
+    this.statusWrap.hidden = unassigned;
+    this.filtered = filterEntities(model, st, this.adapter);
+    this.training = trainingSet(model, layer.id);
+    this.undetected = model.entities.filter(function (e) { return e.detected === false; }).length;
+    var word = statusLabel(layer, "below_threshold");
+    this.body.appendChild(h("div", { class: "sx-tabs", role: "tablist", "data-sx": "views" }, [
+      h("button", { type: "button", role: "tab", "aria-selected": unassigned ? "false" : "true", class: unassigned ? null : "sx-on", "data-view": "browse",
+        text: "By compartment", onclick: function () { self.set({ view: "browse", compartment: null, sort: null }); } }),
+      nUnassigned ? h("button", { type: "button", role: "tab", "aria-selected": unassigned ? "true" : "false", class: unassigned ? "sx-on" : null, "data-view": "unassigned",
+        text: "Without a final call (" + nUnassigned + ")", onclick: function () { self.set({ view: "unassigned", compartment: null, status: "all", sort: null }); } }) : null
+    ]));
+    if (unassigned) {
+      this.body.appendChild(h("p", { class: "sx-lede", "data-sx": "unassigned-lede", text: nUnassigned + " protein groups in " + layer.label +
+        " have no final call (" + word + "). They were detected and remain part of the dataset. The compartment shown for each is the one the method named, kept for reference; it is not an assignment." }));
+    }
 
     var chips = [];
     if (st.gene) chips.push(h("button", { class: "sx-chip", type: "button", "data-sx": "gene-chip", text: "Gene: " + this.geneText(st.gene) + " ×",
@@ -555,10 +678,11 @@
       onclick: function () { self.set({ compartment: null }); } }));
 
     var grid = h("div", { class: "sx-grid" }, [this.compartmentPanel(layer), h("div", { class: "sx-stack" }, [
-      this.mapPanel(layer), this.scorePanel(layer), this.concordancePanel(layer)
+      this.mapPanel(layer), this.scorePanel(layer), unassigned ? this.otherEvidencePanel(layer) : this.concordancePanel(layer)
     ])]);
     this.body.appendChild(grid);
     this.body.appendChild(this.tablePanel(layer, chips));
+    if (st.analysis) this.body.appendChild(h("section", { class: "sx-panel", "data-sx": "analysis" }, [st.analysis]));
     this.body.appendChild(this.detailPanel());
     this.drawMap();
   };
@@ -572,28 +696,47 @@
 
   Explorer.prototype.compartmentPanel = function (layer) {
     var self = this, model = this.model, st = this.state, counts = layerCounts(model, layer.id);
-    var max = 1;
+    var unassigned = st.view === "unassigned", max = 1, word = statusLabel(layer, "below_threshold");
+    if (unassigned) model.compartments.forEach(function (c) { counts[c.id] = { assigned: 0, below_threshold: counts[c.id].below_threshold }; });
     model.compartments.forEach(function (c) { max = Math.max(max, counts[c.id].assigned + counts[c.id].below_threshold); });
     var hasBelow = model.compartments.some(function (c) { return counts[c.id].below_threshold > 0; });
-    var rows = model.compartments.map(function (c) {
+    var order = model.compartments.slice();
+    if (st.compSort === "name") order.sort(function (a, b) { return a.label.localeCompare(b.label); });
+    if (st.compSort === "assigned") order.sort(function (a, b) { return counts[b.id].assigned - counts[a.id].assigned; });
+    if (st.compSort === "other") order.sort(function (a, b) { return counts[b.id].below_threshold - counts[a.id].below_threshold; });
+    var rows = order.map(function (c) {
       var n = counts[c.id], on = st.compartment === c.id;
       var bar = h("span", { class: "sx-bar" }, [
         h("span", { class: "sx-bar-a", style: "width:" + (n.assigned / max * 100) + "%;background:" + self.color(c.id) }),
         h("span", { class: "sx-bar-b", style: "width:" + (n.below_threshold / max * 100) + "%" })
       ]);
       return h("li", {}, [h("button", { type: "button", class: "sx-comp" + (on ? " sx-on" : ""), "aria-pressed": on ? "true" : "false",
-        "data-compartment": c.id, title: c.description || (c.ontology_id || ""),
+        "data-compartment": c.id, title: [c.description, c.ontology_id, c.ontology_note].filter(Boolean).join(" "),
         onclick: function () { self.set({ compartment: on ? null : c.id }); } }, [
         h("span", { class: "sx-swatch", style: "background:" + self.color(c.id) }),
         h("span", { class: "sx-comp-name", text: c.label }),
-        h("span", { class: "sx-comp-n", text: String(n.assigned) + (n.below_threshold ? " + " + n.below_threshold : "") }),
+        h("span", { class: "sx-comp-n", text: unassigned ? String(n.below_threshold) : String(n.assigned) + (n.below_threshold ? " + " + n.below_threshold : "") }),
         bar
       ])]);
     });
     var uncolored = model.compartments.length - Object.keys(model.colors).length;
-    return this.panel("compartments", "Compartments", layer, [
-      h("p", { class: "sx-muted", text: layer.label + ". Counts are assigned protein groups" + (hasBelow ? ", plus those named by the method but below its threshold (pale bar)." : ".") }),
-      h("ul", { class: "sx-comps" }, rows),
+    var list = h("ul", { class: "sx-comps" }, rows);
+    var tools = h("div", { class: "sx-comp-tools" }, [
+      h("input", { type: "search", "data-sx": "compartment-search", placeholder: "Find a compartment", "aria-label": "Find a compartment", oninput: function () {
+        var needle = this.value.trim().toLowerCase();
+        Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!needle && li.textContent.toLowerCase().indexOf(needle) < 0; });
+      } }),
+      h("select", { "data-sx": "compartment-sort", "aria-label": "Sort compartments", onchange: function () { self.set({ compSort: this.value, page: st.page }); } }, [
+        ["source", "Source order"], ["name", "Name"], ["assigned", "Most " + statusLabel(layer, "assigned")], ["other", "Most " + word]
+      ].filter(function (o) { return o[0] !== "other" || hasBelow; }).filter(function (o) { return !(unassigned && o[0] === "assigned"); }).map(function (o) {
+        return h("option", { value: o[0], text: o[1], selected: st.compSort === o[0] });
+      }))
+    ]);
+    return this.panel("compartments", unassigned ? "Compartment named by the method" : "Compartments", layer, [
+      h("p", { class: "sx-muted", text: unassigned
+        ? layer.label + ". Number of protein groups without a final call, by the compartment the method named."
+        : layer.label + ". Counts are protein groups with a final call" + (hasBelow ? ", plus those the method named for this compartment whose final call is \"" + word + "\" (pale bar)." : ".") }),
+      tools, list,
       uncolored > 0 ? h("p", { class: "sx-muted", text: "The " + MAX_COLORS + " largest compartments have their own colour. Select any compartment to highlight it." }) : null
     ]);
   };
@@ -700,20 +843,24 @@
     this.tip.style.top = (ev.clientY - host.top + 14) + "px";
   };
 
-  Explorer.prototype.callText = function (a) {
+  // One line that keeps both published facts apart: the final call, and (when
+  // there is no final call) the compartment the method named.
+  Explorer.prototype.callText = function (a, layer) {
     if (!a) return "Not in this layer";
-    var name = a.compartment != null ? this.model.compById[a.compartment].label : "No compartment";
-    if (a.status === "below_threshold") return name + " (below threshold)";
-    if (a.status === "unassigned") return "Unassigned";
-    return name;
+    var model = this.model;
+    layer = layer || model.layerById[this.state.layer];
+    if (a.status === "assigned") return calls(a).map(function (c) { return model.compById[c].label; }).join(", ");
+    var word = statusLabel(layer, a.status);
+    return a.compartment != null ? word + " (method named " + model.compById[a.compartment].label + ")" : word;
   };
 
   Explorer.prototype.scorePanel = function (layer) {
     if (!layer.score) return null;
-    var st = this.state, map = this.model.byLayer[layer.id], values = [];
+    var st = this.state, map = this.model.byLayer[layer.id], values = [], training = this.training || {}, nTraining = 0;
     Object.keys(map).forEach(function (eid) {
       var a = map[eid];
-      if (a.score != null && (!st.compartment || a.compartment === st.compartment)) values.push(a.score);
+      if (st.view === "unassigned" && a.status === "assigned") return;
+      if (a.score != null && (!st.compartment || a.compartment === st.compartment)) { values.push(a.score); if (training[eid]) nTraining++; }
     });
     if (!values.length) return null;
     var bins = 24, hist = histogram(values, bins), W = 520, H = 170, pad = { l: 36, r: 12, t: 14, b: 34 };
@@ -749,6 +896,7 @@
       h("p", { class: "sx-muted", "data-sx": "score-note", text: layer.score.name + " for " + values.length + " protein groups, " + where + ". " +
         INTERPRETATION[layer.score.interpretation] + (layer.score.interpretation_basis ? " " + layer.score.interpretation_basis : "") }),
       s("svg", { viewBox: "0 0 " + W + " " + H, class: "sx-chart", role: "img", "aria-label": "Histogram of " + layer.score.name }, kids),
+      nTraining ? h("p", { class: "sx-muted", "data-sx": "training-note", text: nTraining + " of these protein groups were training inputs to this method. Their class was supplied, not predicted, so their scores are not comparable with the rest." }) : null,
       thrNote
     ]);
   };
@@ -757,8 +905,14 @@
     var self = this, model = this.model, st = this.state;
     var others = model.layers.filter(function (l) { return l.id !== layer.id; });
     if (!others.length) return null;
-    var other = model.layerById[st.compare] && st.compare !== layer.id ? model.layerById[st.compare] : others[0];
-    var c = concordance(model, layer.id, other.id);
+    // default to a layer that was not an input to this one, so the first
+    // comparison a reader sees is never a circular one
+    var independent = others.filter(function (l) { return (layer.trained_on || []).indexOf(l.id) < 0 && (l.trained_on || []).indexOf(layer.id) < 0; });
+    var other = model.layerById[st.compare] && st.compare !== layer.id ? model.layerById[st.compare] : (independent[0] || others[0]);
+    var related = (layer.trained_on || []).indexOf(other.id) >= 0 || (other.trained_on || []).indexOf(layer.id) >= 0;
+    var skip = (layer.trained_on || []).indexOf(other.id) < 0 && Object.keys(this.training).length ? this.training : null;
+    var c = concordance(model, layer.id, other.id, skip);
+    var outside = c.scope ? model.compartments.filter(function (k) { return c.scope.indexOf(k.id) < 0; }).map(function (k) { return k.label; }) : [];
     var rowIds = model.compartments.filter(function (k) { return c.table[k.id]; });
     var colIds = model.compartments.filter(function (k) { return rowIds.some(function (r) { return c.table[r.id][k.id]; }); });
     var max = 1;
@@ -775,7 +929,12 @@
     return this.panel("concordance", "Agreement between layers", null, [
       h("label", { class: "sx-inline" }, [h("span", { text: "Compare with" }), h("select", { "data-sx": "compare-select", onchange: function () { self.set({ compare: this.value }); } },
         others.map(function (l) { return h("option", { value: l.id, text: l.label + " (" + EVIDENCE[l.evidence_type].label + ")", selected: l.id === other.id }); }))]),
+      other.method.description ? h("p", { class: "sx-muted", "data-sx": "compare-about", text: other.label + ": " + other.method.description }) : null,
+      related ? h("p", { class: "sx-notice", "data-sx": "training-warning", text: "These layers are not independent: one was used to train the other. Agreement here is expected and is not validation." }) : null,
       h("p", { "data-sx": "concordance-summary", text: c.shared + " protein groups appear in both layers. " + c.both + " have a call in both, and " + c.agree + " of those agree." }),
+      c.skipped ? h("p", { class: "sx-muted", "data-sx": "concordance-skipped", text: c.skipped + " protein groups that were training inputs to " + layer.label + " are left out of this comparison." }) : null,
+      c.scope ? h("p", { class: "sx-muted", "data-sx": "concordance-scope", text: "Compared within the " + c.scope.length + " compartments both layers can name." +
+        (outside.length ? " Calls to these compartments are left out, not counted as disagreement: " + outside.join(", ") + "." : "") }) : null,
       table,
       h("p", { class: "sx-muted", text: "The two layers are different kinds of evidence (" + EVIDENCE[layer.evidence_type].label + " and " + EVIDENCE[other.evidence_type].label + "). Agreement is counted, never merged." })
     ]);
@@ -786,9 +945,21 @@
     var pages = Math.max(1, Math.ceil(rows.length / PAGE));
     if (st.page >= pages) st.page = pages - 1;
     var slice = rows.slice(st.page * PAGE, st.page * PAGE + PAGE);
-    var head = h("tr", {}, [h("th", { text: "Protein group" }), h("th", { text: "Genes" })].concat(model.layers.map(function (l) {
-      return h("th", { class: l.id === layer.id ? "sx-col-on" : null }, [h("div", { text: l.label }), badge(l.evidence_type),
-        l.score ? h("div", { class: "sx-muted", text: l.score.name }) : null]);
+    var sortBtn = function (key, text, firstDir) {
+      var on = st.sort && st.sort.key === key, dir = on ? st.sort.dir : null;
+      return h("button", { type: "button", class: "sx-sort" + (on ? " sx-on" : ""), "data-sort": key, title: "Sort by " + text,
+        text: text + (on ? (dir === "desc" ? " ↓" : " ↑") : ""),
+        onclick: function () { self.set({ sort: { key: key, dir: on ? (dir === "asc" ? "desc" : "asc") : (firstDir || "asc") } }); } });
+    };
+    var ariaSort = function (keys) {
+      var on = st.sort && keys.indexOf(st.sort.key) >= 0;
+      return on ? (st.sort.dir === "desc" ? "descending" : "ascending") : null;
+    };
+    var head = h("tr", {}, [h("th", { "aria-sort": ariaSort(["group"]) }, [sortBtn("group", "Protein group")]),
+      h("th", { "aria-sort": ariaSort(["genes"]) }, [sortBtn("genes", "Genes")])].concat(model.layers.map(function (l) {
+      return h("th", { class: l.id === layer.id ? "sx-col-on" : null, "aria-sort": ariaSort(["c:" + l.id, "s:" + l.id]) }, [
+        h("div", {}, [sortBtn("c:" + l.id, l.label)]), badge(l.evidence_type),
+        l.score ? h("div", {}, [sortBtn("s:" + l.id, l.score.name, "desc")]) : null]);
     })));
     var body = slice.map(function (e) {
       var genes = entityGenes(e);
@@ -809,15 +980,16 @@
         var a = model.byLayer[l.id][e.id];
         if (!a) return h("td", { class: "sx-muted", text: "" });
         return h("td", { class: a.status === "assigned" ? null : "sx-muted" }, [
-          h("div", { text: self.callText(a) }), a.score != null ? h("div", { class: "sx-mono", text: formatScore(a.score) }) : null]);
+          h("div", { text: self.callText(a, l) }), a.score != null ? h("div", { class: "sx-mono", text: formatScore(a.score) }) : null,
+          trainingSet(model, l.id)[e.id] ? h("span", { class: "sx-tag", text: "training input" }) : null]);
       })));
     });
     var actions = [h("button", { type: "button", "data-sx": "export", text: "Download table (TSV)", onclick: function () { self.exportTSV(); } })];
     (this.adapter.actions || []).forEach(function (act) {
-      actions.push(h("button", { type: "button", "data-action": act.id, text: act.label, onclick: function () { act.run(self.context()); } }));
+      actions.push(h("button", { type: "button", "data-action": act.id, text: act.label, onclick: function () { self.runAction(act); } }));
     });
     return this.panel("table", "Protein groups", null, [
-      h("div", { class: "sx-tablebar" }, [h("span", { "data-sx": "count", text: rows.length + " of " + model.entities.length + " protein groups" })].concat(chips, [h("span", { class: "sx-grow" })], actions)),
+      h("div", { class: "sx-tablebar" }, [h("span", { "data-sx": "count", text: rows.length + " of " + model.entities.length + " protein groups" + (this.undetected ? " (" + this.undetected + " of the " + model.entities.length + " are listed by an annotation layer but were not detected)" : "") })].concat(chips, [h("span", { class: "sx-grow" })], actions)),
       h("div", { class: "sx-scroll" }, [h("table", { class: "sx-table" }, [h("thead", {}, [head]), h("tbody", {}, body)])]),
       rows.length ? null : h("p", { class: "sx-muted", text: "No protein groups match." }),
       pages > 1 ? h("div", { class: "sx-pager" }, [
@@ -831,8 +1003,44 @@
   Explorer.prototype.context = function () {
     var genes = {}, model = this.model;
     this.filtered.forEach(function (e) { entityGenes(e).forEach(function (g) { genes[g] = true; }); });
-    return { genes: Object.keys(genes).sort(), backgroundGenes: detectedGenes(model), entities: this.filtered.map(function (e) { return e.id; }),
-             layer: this.state.layer, compartment: this.state.compartment, dataset: model.bundle.dataset.id };
+    var ids = this.filtered.map(function (e) { return e.id; }), map = model.byLayer[this.state.layer] || {}, comp = this.state.compartment;
+    var called = ids.filter(function (id) { return map[id] && map[id].status === "assigned"; });
+    return { genes: Object.keys(genes).sort(), backgroundGenes: detectedGenes(model), entities: ids,
+             // for enrichment: listed groups with a final call, one gene per group, and the matching background
+             study: studyGenes(model, called), studyBackground: detectedGenes(model, true),
+             layer: this.state.layer, layerLabel: model.layerById[this.state.layer].label,
+             compartment: comp, compartmentLabel: comp ? model.compById[comp].label : null,
+             view: this.state.view, dataset: model.bundle.dataset.id };
+  };
+
+  // An action may return a DOM node (or a promise of one). It is shown in an
+  // analysis panel under the table until the selection changes.
+  Explorer.prototype.runAction = function (act) {
+    var self = this, token = {};
+    this.actionToken = token;
+    var show = function (node) { if (self.actionToken === token && node && node.nodeType === 1) self.set({ analysis: node, page: self.state.page }); };
+    var out;
+    try { out = act.run(this.context(), this); } catch (err) { out = h("p", { class: "sx-error", text: "The analysis failed: " + err.message }); }
+    if (out && typeof out.then === "function") {
+      show(h("p", { class: "sx-muted", text: "Running…" }));
+      out.then(show, function (err) { show(h("p", { class: "sx-error", text: "The analysis failed: " + err.message })); });
+    } else show(out);
+  };
+
+  // What other layers say about the protein groups this layer left without a call.
+  Explorer.prototype.otherEvidencePanel = function (layer) {
+    var model = this.model, ids = this.filtered.map(function (e) { return e.id; });
+    var rows = model.layers.filter(function (l) { return l.id !== layer.id; }).map(function (l) {
+      var map = model.byLayer[l.id], n = 0, top = {};
+      ids.forEach(function (id) { calls(map[id]).forEach(function (c, i) { if (!i) n++; top[c] = (top[c] || 0) + 1; }); });
+      var best = Object.keys(top).sort(function (a, b) { return top[b] - top[a]; }).slice(0, 3).map(function (c) { return model.compById[c].label + " " + top[c]; });
+      return h("tr", { "data-layer": l.id }, [h("th", {}, [document.createTextNode(l.label + " "), badge(l.evidence_type)]), h("td", { text: String(n) }), h("td", { class: "sx-muted", text: best.join(", ") })]);
+    });
+    if (!rows.length) return null;
+    return this.panel("other-evidence", "Other evidence for these protein groups", null, [
+      h("p", { class: "sx-muted", text: "How many of the " + ids.length + " listed protein groups carry a call in each of the other layers. The layers stay separate; nothing here changes the published result." }),
+      h("table", { class: "sx-matrix sx-wide" }, [h("thead", {}, [h("tr", {}, [h("th", { text: "Layer" }), h("th", { text: "With a call" }), h("th", { text: "Most frequent" })])]), h("tbody", {}, rows)])
+    ]);
   };
 
   Explorer.prototype.exportTSV = function () {
@@ -922,7 +1130,9 @@
         var layers = model.layers.filter(function (l) { return l.evidence_type === ev && model.byLayer[l.id][e.id]; });
         if (!layers.length) return null;
         content = h("ul", { class: "sx-assign" }, layers.map(function (l) {
-          var a = model.byLayer[l.id][e.id], bits = [h("strong", { text: l.label }), document.createTextNode(": " + self.callText(a))];
+          var a = model.byLayer[l.id][e.id], bits = [h("strong", { text: l.label }), document.createTextNode(": " + self.callText(a, l))];
+          var fed = trainingSet(model, l.id)[e.id];
+          if (fed) bits.push(h("div", { class: "sx-notice", "data-sx": "training-input", text: "This protein group was a training input (" + model.layerById[fed].label + "). Its class here was supplied to the method, not predicted by it." }));
           if (a.score != null) bits.push(h("span", { class: "sx-mono", "data-score": l.id, text: "  " + l.score.name + " = " + formatScore(a.score) }));
           var attrs = a.attributes || {};
           Object.keys(attrs).forEach(function (k) {
@@ -975,9 +1185,10 @@
     EVIDENCE: EVIDENCE,
     core: {
       checkBundle: checkBundle, indexBundle: indexBundle, capabilities: capabilities, entityGenes: entityGenes,
-      mappingStatus: mappingStatus, finalCall: finalCall, formatScore: formatScore, layerCounts: layerCounts,
-      concordance: concordance, histogram: histogram, detectedGenes: detectedGenes, geneSummary: geneSummary,
-      filterEntities: filterEntities, toTSV: toTSV, medianProfile: medianProfile
+      mappingStatus: mappingStatus, finalCall: finalCall, calls: calls, statusLabel: statusLabel, formatScore: formatScore,
+      layerCounts: layerCounts, sharedScope: sharedScope, trainingSet: trainingSet, concordance: concordance,
+      histogram: histogram, detectedGenes: detectedGenes, studyGenes: studyGenes, geneSummary: geneSummary,
+      filterEntities: filterEntities, sortEntities: sortEntities, toTSV: toTSV, medianProfile: medianProfile
     }
   };
 })(typeof window !== "undefined" ? window : this);

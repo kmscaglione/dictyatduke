@@ -16,9 +16,9 @@ deployed or shared until that is settled.
 """
 import argparse
 import datetime
+import json
 import pathlib
 import re
-import statistics
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -35,18 +35,12 @@ HEADERS = {"markers": ("Accession", "markers", "Used to train SVM?"),
            "svm": ("Accession", "svm", "svm.scores", "svm.pred"),
            "mito": ("Accession", "Mitochondrial evidence")}
 
-# GO cellular component ids for the published compartment labels. This mapping
-# is the adapter's choice, not the authors'. Labels without a clean GO
-# equivalent are left unmapped rather than forced.
-COMPARTMENT_GO = {
-    "Actin": "GO:0015629", "Contractile Vacuole": "GO:0000331", "Cytosol": "GO:0005829",
-    "ER": "GO:0005783", "Endosome": "GO:0005768", "Exocyst": "GO:0000145",
-    "Golgi apparatus": "GO:0005794", "Lysosome": "GO:0005764", "Microtubule": "GO:0015630",
-    "Mitochondria": "GO:0005739", "NUP": "GO:0005643", "Nucleus": "GO:0005634",
-    "Peroxisome": "GO:0005777", "Plasma Membrane": "GO:0005886", "Proteasome": "GO:0000502",
-    "Ribosome": "GO:0005840",
-}
-COMPARTMENT_NOTE = {"NUP": "Nuclear pore complex, labelled NUP in the source."}
+# The reviewed label-to-GO mapping, with the rationale for each decision.
+MAPPING_PATH = HERE / "compartment_go.json"
+
+
+def load_mapping(path=MAPPING_PATH):
+    return json.loads(pathlib.Path(path).read_text(encoding="utf-8"))["labels"]
 
 
 def slug(label):
@@ -92,9 +86,10 @@ def read_tables(xlsx_path):
     return tables
 
 
-def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source="RefSeq GFF"):
-    """Pure assembly of the bundle from parsed tables. No I/O."""
+def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source="RefSeq GFF", go_mapping=None):
+    """Pure assembly of the bundle from parsed tables. No I/O beyond the mapping file."""
     descriptions = descriptions or {}
+    go_mapping = load_mapping() if go_mapping is None else go_mapping
     svm, markers, mito = tables["svm"], tables["markers"], tables["mito"]
     detected = {r[0] for r in svm}
     if len(detected) != len(svm):
@@ -116,10 +111,14 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
     compartments = []
     for lab in labels:
         c = {"id": comp_id[lab], "label": lab}
-        if lab in COMPARTMENT_GO:
-            c["ontology_id"] = COMPARTMENT_GO[lab]
-        if lab in COMPARTMENT_NOTE:
-            c["description"] = COMPARTMENT_NOTE[lab]
+        m = go_mapping.get(lab)
+        if m is None:
+            c["ontology_note"] = "Label not reviewed for an ontology mapping; left out of GO comparisons."
+        elif m["status"] == "accepted":
+            c["ontology_id"] = m["go_id"]
+            c["ontology_note"] = f"{m['go_name']}. {m['rationale']} Mapping by dictyBase, not by the authors."
+        else:
+            c["ontology_note"] = f"Mapping {m['status']}: {m['rationale']} Left out of GO comparisons."
         compartments.append(c)
 
     def entity(group, is_detected):
@@ -145,16 +144,23 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
         if g not in detected:
             raise SystemExit(f"marker {g} is not in Table S2")
 
-    scores = [r[2] for r in svm]
+    training = {g for g, _, used in markers if used == "Yes"}
+    fixed = [r for r in svm if r[0] in training]
+    training_fact = ""
+    if fixed and all(r[2] == 1 for r in fixed) and not any(r[2] == 1 for r in svm if r[0] not in training):
+        training_fact = (f" All {len(fixed)} training markers carry svm.scores exactly 1 and their marker class, and no other"
+                         " protein group does: for them the table records the supplied class, not a prediction.")
     svm_layer = {
         "id": "svm", "label": "SVM classification (Tinker et al. 2026)",
         "evidence_type": "computational_assignment", "source": "author",
         "method": {"name": "support vector machine", "software": "pRoloc 1.34.0 (R/Bioconductor)",
                    "description": "Classifier trained by the authors on marker fractionation profiles and applied to every detected protein group.",
                    "parameters": {"training_markers": sum(1 for r in markers if r[2] == "Yes")}},
-        "description": "Columns svm, svm.scores and svm.pred of Table S2, unchanged. 'compartment' is the class in column svm; status is 'assigned' where svm.pred repeats that class and 'below_threshold' where svm.pred is 'unknown'.",
+        "description": "Columns svm, svm.scores and svm.pred of Table S2, unchanged. The final call is svm.pred. Where svm.pred is 'unknown' the class in column svm is kept as the compartment the method named, and is not an assignment. The authors describe applying a median cutoff; no cutoff is recomputed or applied here." + training_fact,
         "score": {"name": "svm.scores", "interpretation": "unspecified",
-                  "description": "Published value, reproduced exactly. The preprint's Methods do not define its scale, so it is not presented as a probability or a confidence."},
+                  "description": "Reported numerical score from column svm.scores, reproduced exactly. Its scale and calibration have not been confirmed, so it is not presented as a probability or a confidence."},
+        "status_labels": {"assigned": "assigned (svm.pred)", "below_threshold": "unknown"},
+        "trained_on": ["markers-training"],
         "assignments": [],
     }
     for group, klass, score, pred in svm:
@@ -163,22 +169,23 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
         svm_layer["assignments"].append({
             "entity": group, "compartment": comp_id[klass],
             "status": "below_threshold" if pred == "unknown" else "assigned", "score": score})
-    med = statistics.median(scores)
-    if all((s >= med) == (p != "unknown") for _, _, s, p in svm):
-        svm_layer["score"]["threshold"] = {
-            "value": med, "rule": "score >= value", "basis": "observed_in_data",
-            "description": "The median of all published scores. Checked against every row of Table S2: a group carries a final call exactly when its score is at or above this value. The preprint describes a median cutoff without giving the number."}
 
-    marker_layer = {
-        "id": "markers", "label": "Marker set (Tinker et al. 2026)",
-        "evidence_type": "curated_annotation", "source": "author",
-        "method": {"name": "curated marker set",
-                   "description": "Markers compiled by the authors from direct experimental evidence in Dictyostelium or from homology to validated markers in other eukaryotes. Table S1 does not say which basis applies to which marker."},
-        "attribute_labels": {"used_for_training": "Used to train SVM?"},
-        "assignments": [{"entity": g, "compartment": comp_id[lab], "status": "assigned",
-                         "attributes": {"used_for_training": {"Yes": True, "No": False}[used]}}
-                        for g, lab, used in markers],
-    }
+    def marker_layer(layer_id, label, used, note):
+        return {
+            "id": layer_id, "label": label,
+            "evidence_type": "curated_annotation", "source": "author",
+            "method": {"name": "curated marker set",
+                       "description": "Markers compiled by the authors from direct experimental evidence in Dictyostelium or from homology to validated markers in other eukaryotes. Table S1 does not say which basis applies to which marker. " + note},
+            "assignments": [{"entity": g, "compartment": comp_id[lab], "status": "assigned"}
+                            for g, lab, u in markers if u == used],
+        }
+
+    training_layer = marker_layer(
+        "markers-training", "Markers used to train the SVM (Tinker et al. 2026)", "Yes",
+        "These rows have 'Used to train SVM?' = Yes. Agreement between them and the SVM is expected and is not validation.")
+    heldout_layer = marker_layer(
+        "markers-heldout", "Markers not used to train the SVM (Tinker et al. 2026)", "No",
+        "These rows have 'Used to train SVM?' = No. The preprint does not state how they were chosen or whether they were selected independently of the SVM result, so agreement with the SVM is reported but is not labelled independent validation here.")
     mito_layer = {
         "id": "mito-compendium", "label": "Mitochondrial compendium (Tinker et al. 2026)",
         "evidence_type": "curated_annotation", "source": "author",
@@ -226,10 +233,14 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
             entities, "RefSeq protein accession to dictyBase gene id via GFF CDS attributes (protein_id, Dbxref).",
             source=mapping_source,
             notes=f"{len(svm)} detected protein groups from Table S2, plus {n_undetected} groups that appear only in Table S3 and are flagged detected=false. Among the detected groups, {seen['entities_unmapped']} have no gene mapping and {seen['entities_multi_gene']} span more than one gene; all are kept and listed in unmapped_entities and multi_gene_entities."),
+        "notices": [
+            "This dataset is being evaluated for integration into dictyBase. This is a local preview and is not public.",
+            "Fractionation profiles and spatial maps are awaiting the full experimental matrix from the authors. Those views will appear here when the matrix is supplied; nothing has been reconstructed in the meantime.",
+        ],
         "distribution": {"status": "local-only",
                          "reason": "Reuse terms not yet clarified with the authors."},
     }
-    return B.new_bundle(dataset, compartments, entities, [svm_layer, marker_layer, mito_layer])
+    return B.new_bundle(dataset, compartments, entities, [svm_layer, training_layer, heldout_layer, mito_layer])
 
 
 def main(argv=None):

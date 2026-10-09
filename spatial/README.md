@@ -70,7 +70,28 @@ organisms. Regenerate them with `python3 spatial/tests/fixtures/make_fixtures.py
 `expected.json` holds reference answers from the Python code that the browser
 tests must reproduce.
 
+The browser suite also runs from Python (`spatial/tests/test_browser.py`) in
+headless Chrome when one is installed, with no extra dependency.
+
 ## Host adapters
+
+Files in `adapters/dictybase/`:
+
+| File | Role |
+|---|---|
+| `build_bundle.py` | Builds the local bundle from the supplementary tables |
+| `compartment_go.json` | Reviewed mapping of compartment labels to GO terms, with the rationale for each |
+| `build_go_closure.py`, `go_cc_closure.json` | GO terms that are a kind or part of each mapped term |
+| `dicty_site.py` | Server side: gated bundle access, per-gene lookup, GO annotation layers |
+| `adapter.js` | Browser side: the `/tools/spatial` page, gene page section, GO enrichment |
+
+The site serves a bundle marked `public` to everyone. Any other bundle is
+served only when the server is started with `DICTY_SPATIAL_PREVIEW=1`, which is
+for local review and must not be set on a public server:
+
+```
+DICTY_SPATIAL_PREVIEW=1 python3 serve.py      # then open http://localhost:8774/tools/spatial
+```
 
 `adapters/dictybase/build_bundle.py` builds a local bundle from the
 supplementary tables of Tinker et al. 2026. Its output directory is gitignored.

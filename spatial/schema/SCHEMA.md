@@ -63,7 +63,24 @@ Each assignment has an `entity`, a `compartment` and a `status`.
   pass the layer's threshold. The compartment is kept for reference only.
 - `unassigned`: no compartment.
 
-One entity appears at most once per layer.
+One entity appears at most once per layer. An annotation layer that places an
+entity in several compartments lists the rest in `others`; their order implies
+no ranking.
+
+## Optional layer fields
+
+| Field | Meaning |
+|---|---|
+| `status_labels` | The source's own words for a status, for example `"below_threshold": "unknown"`. Viewers show these instead of the generic terms |
+| `trained_on` | Ids of layers that were inputs to this layer's method. Their entities are flagged as training inputs, are left out when this layer is compared with any other layer, and a direct comparison with a training layer is marked as not independent |
+| `compartment_scope` | The compartments this layer is able to name. Comparisons between two layers are confined to the overlap of their scopes, so neither is marked wrong about a compartment the other cannot name |
+
+A compartment may carry `ontology_id` and `ontology_note`. Give an id only when
+one ontology term names the same structure, and use the note for the rationale.
+A compartment without an id takes no part in ontology-based comparisons.
+
+`dataset.notices` holds short statements shown prominently with the data, such
+as what is still pending.
 
 ## Scores
 
@@ -75,7 +92,8 @@ One entity appears at most once per layer.
   sentence citing where the method defines it.
 - A `threshold` records the value, the rule, and whether it was
   `stated_by_source` or `observed_in_data`. The validator checks every scored
-  assignment against it.
+  assignment against it. Do not add one that the source did not give: a status
+  taken from the source's own final call needs no threshold at all.
 
 ## Licensing and distribution
 

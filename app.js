@@ -1685,6 +1685,7 @@ function renderRecord() {
           <div class="record-actions">${basketToggleButtonHTML(gene)}</div>
           <div data-chr2-dup style="margin-top:10px"></div>
           <div data-insitu style="margin-top:10px"></div>
+          <div data-spatial style="margin-top:10px"></div>
         </div>
         ${gene.uniprot ? `
         <div class="structure-preview">
@@ -1752,6 +1753,7 @@ function renderRecord() {
 function loadAnnotationStack(gene) {
   loadChr2DupFlag(gene);
   loadInsitu(gene);
+  loadSpatial(gene);
   loadOfficialCuration(gene);
   loadAuthorCuration(gene);
   loadCommunityCuration(gene);
@@ -1997,6 +1999,11 @@ function openTool(tool, updateRoute = true) {
     toolsShell.removeAttribute("hidden");
     scrollToY(toolsShell.offsetTop - 60);
     initHeatStressViewer();
+  } else if (tool === "spatial") {
+    toolsShell.innerHTML = loadingHTML("Loading spatial proteomics…");
+    toolsShell.removeAttribute("hidden");
+    scrollToY(toolsShell.offsetTop - 60);
+    openSpatialTool();
   } else if (tool === "proteomics") {
     toolsShell.innerHTML = renderProteomicsPage();
     toolsShell.removeAttribute("hidden");
@@ -11435,6 +11442,75 @@ async function loadChr2DupFlag(gene) {
     <strong>⚠ Chromosome 2 duplication (AX4).</strong> This gene lies in the segment of chromosome 2 that is duplicated in the AX4 reference strain, so it has a near-identical duplicate copy: <a class="text-link curated-xref" data-ddb-ref="${escapeHtml(partnerDdb)}" href="/gene/${encodeURIComponent(label)}">${escapeHtml(label)}</a>. Short-read data (RNA-seq, variant calls) usually cannot tell the two copies apart, so read-based results and some analyses may reflect both copies together.</div>`;
 }
 
+// Subcellular spatial proteomics. The module lives in /spatial and knows nothing
+// about this site; /spatial/adapters/dictybase/adapter.js is the bridge. It is
+// loaded on demand, and everything stays hidden unless the server reports a
+// dataset it is allowed to show.
+let spatialAdapterPromise = null;
+let spatialGeneMap = null;
+function ensureSpatialAdapter() {
+  if (window.DictySpatial) return Promise.resolve(window.DictySpatial);
+  if (!spatialAdapterPromise) {
+    spatialAdapterPromise = new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "/spatial/adapters/dictybase/adapter.js";
+      s.onload = () => resolve(window.DictySpatial);
+      s.onerror = () => { spatialAdapterPromise = null; reject(new Error("adapter not available")); };
+      document.head.appendChild(s);
+    });
+  }
+  return spatialAdapterPromise;
+}
+function spatialHost() {
+  return {
+    gene(ddb) {
+      if (!spatialGeneMap || spatialGeneMap.size !== geneIndex.length) spatialGeneMap = new Map(geneIndex.map((g) => [g.id, g]));
+      return spatialGeneMap.get(ddb) || null;
+    },
+    geneHref(ddb) {
+      const g = this.gene(ddb);
+      return g && g.symbol ? genePath(g) : `/gene/${encodeURIComponent(ddb)}`;
+    },
+  };
+}
+async function openSpatialTool() {
+  try {
+    const [adapter] = await Promise.all([ensureSpatialAdapter(), ensureGeneIndex()]);
+    await adapter.openPage(toolsShell, spatialHost());
+  } catch {
+    toolsShell.innerHTML = `<article class="record-card research-card"><div class="record-body"><p>Spatial proteomics data are not available on this server.</p></div></article>`;
+  }
+}
+async function loadSpatial(gene) {
+  const el = document.querySelector("[data-spatial]");
+  if (!el) return;
+  const ddb = (gene.veupath || gene.ddb || gene.id || "").toUpperCase();
+  if (!/^DDB_G\d+$/.test(ddb)) return;
+  try {
+    const adapter = await ensureSpatialAdapter();
+    const current = () => state.activeGene && state.activeGene.symbol === gene.symbol;
+    if (!(await adapter.status()).available || !current()) return;
+    const holder = document.createElement("div");
+    const shown = await adapter.geneSection(holder, spatialHost(), ddb);
+    if (shown && current() && el.isConnected) el.replaceChildren(holder);
+  } catch { /* the gene page works without this section */ }
+}
+// Tool listings gain the explorer only when the server can show a dataset.
+async function registerSpatialTool() {
+  try {
+    const adapter = await ensureSpatialAdapter();
+    const st = await adapter.status();
+    if (!st.available) return;
+    const blurb = `${st.counts.detected.toLocaleString()} detected protein groups assigned to subcellular compartments. Dataset under evaluation.`;
+    const group = TOOLS_INDEX.find(([name]) => name === "Expression & function");
+    if (group && !group[1].some((row) => row[1] === "/tools/spatial")) group[1].push(["Subcellular spatial proteomics", "/tools/spatial", blurb]);
+    if (!CMDK_TARGETS.some((t) => t.href === "/tools/spatial")) {
+      CMDK_TARGETS.push({ kind: "Tool", label: "Subcellular spatial proteomics", href: "/tools/spatial", sub: blurb, kw: "spatial proteomics localization compartment organelle fractionation svm" });
+    }
+    document.querySelectorAll("[data-spatial-nav]").forEach((a) => a.removeAttribute("hidden"));
+  } catch { /* module not installed */ }
+}
+
 // In-situ hybridization spatial expression (Maeda et al. 2003): the prestalk
 // cell subtype in which a gene is expressed, mapped from the study's cDNA clones.
 let insituMap = null;
@@ -13420,7 +13496,7 @@ document.addEventListener("click", (event) => {
   const toolLink = event.target.closest('a[href^="/tools/"]');
   if (toolLink) {
     const slug = toolLink.getAttribute("href").split("/").filter(Boolean).pop();
-    if (["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai", "curate"].includes(slug)) {
+    if (["genome-browser", "blast", "proteomics", "spatial", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "stats", "ai", "curate"].includes(slug)) {
       event.preventDefault();
       openTool(slug);
       return;
@@ -14289,7 +14365,7 @@ function hydrateFromRoute() {
     openResearch(findResearchByToken(pathParts[1]), false);
     return;
   }
-  if (isToolRoute && ["genome-browser", "blast", "proteomics", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "batch", "stats", "ai", "curate"].includes(pathParts[1])) {
+  if (isToolRoute && ["genome-browser", "blast", "proteomics", "spatial", "heatstress", "downloads", "enrichment", "api", "lab", "expression", "basket", "convert", "sequence", "geneset", "batch", "stats", "ai", "curate"].includes(pathParts[1])) {
     openTool(pathParts[1], false);
     return;
   }
@@ -15416,6 +15492,7 @@ function finderAddAll() {
 
 function initialHydrate() {
   renderRecentGenes();
+  registerSpatialTool();
   hydrateFromRoute();
   initHeroVideo();
   renderMeetingBanner();

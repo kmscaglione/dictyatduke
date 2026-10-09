@@ -69,6 +69,7 @@ def validate(bundle, require_public=False, schema=None):
         for d in _dupes(ids):
             err(f"$.{name}", f"duplicate id {d!r}")
     comp_set, ent_set = set(comp_ids), set(ent_ids)
+    layer_ids = {l["id"] for l in bundle["layers"]}
 
     # protein groups
     member_home = {}
@@ -129,6 +130,12 @@ def validate(bundle, require_public=False, schema=None):
         if layer["source"] == "computed" and layer["evidence_type"] == "curated_annotation":
             err(p, "a computed layer cannot be a curated annotation")
         thr = score.get("threshold") if score else None
+        for ref in layer.get("trained_on", []):
+            if ref == layer["id"] or ref not in layer_ids:
+                err(f"{p}.trained_on", f"unknown layer {ref!r}")
+        scope = layer.get("compartment_scope")
+        if scope is not None and any(c not in comp_set for c in scope):
+            err(f"{p}.compartment_scope", "unknown compartment")
         seen = set()
         for j, a in enumerate(layer["assignments"]):
             q = f"{p}.assignments[{j}]"
@@ -141,6 +148,16 @@ def validate(bundle, require_public=False, schema=None):
                 err(q, f"unknown compartment {a['compartment']!r}")
             if a["status"] == "assigned" and a["compartment"] is None:
                 err(q, "status 'assigned' needs a compartment")
+            others = a.get("others", [])
+            if scope is not None and any(c is not None and c not in scope for c in [a["compartment"]] + others):
+                err(q, "compartment outside the layer's compartment_scope")
+            if others:
+                if a["status"] != "assigned":
+                    err(q, "'others' is only allowed on an assigned entry")
+                if any(o not in comp_set for o in others):
+                    err(q, "unknown compartment in 'others'")
+                if len(set(others)) != len(others) or a["compartment"] in others:
+                    err(q, "'others' repeats a compartment")
             s = a.get("score")
             if s is not None:
                 if not score:

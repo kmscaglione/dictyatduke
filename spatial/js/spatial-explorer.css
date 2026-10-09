@@ -123,3 +123,19 @@
   .sx-ev-row { grid-template-columns: 1fr; gap: 4px; }
   .sx-root { padding: 12px; }
 }
+
+.sx-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--sx-line); }
+.sx-root .sx-tabs button { border: 0; border-bottom: 3px solid transparent; border-radius: 0; padding: 8px 12px; background: none; color: var(--sx-ink-2); }
+.sx-root .sx-tabs button.sx-on { border-bottom-color: var(--sx-ink); color: var(--sx-ink); font-weight: 600; }
+.sx-lede { color: var(--sx-ink-2); max-width: 80ch; }
+.sx-comp-tools { display: grid; grid-template-columns: 1fr auto; gap: 6px; margin-top: 8px; }
+.sx-comp-tools input { min-width: 0; }
+.sx-root .sx-sort { border: 0; padding: 0; background: none; font-weight: 600; text-align: left; white-space: normal; }
+.sx-root .sx-sort:hover, .sx-root .sx-sort.sx-on { text-decoration: underline; }
+.sx-table thead th div + div .sx-sort { font-weight: 400; color: var(--sx-muted); }
+.sx-matrix.sx-wide { width: 100%; }
+.sx-matrix.sx-wide td { text-align: left; }
+.sx-comps li[hidden] { display: none; }
+.sx-root [hidden] { display: none !important; }
+.sx-stack > *, .sx-body > *, .sx-grid > * { min-width: 0; }
+.sx-comp-tools { grid-template-columns: 1fr; }

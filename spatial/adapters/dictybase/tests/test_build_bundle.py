@@ -81,14 +81,51 @@ class BuildTest(unittest.TestCase):
         text = (svm["label"] + svm["score"]["description"]).lower()
         self.assertNotIn("%", text)
         self.assertNotIn("confidence score", text)
+        self.assertEqual(svm["status_labels"]["below_threshold"], "unknown")
 
-    def test_threshold_only_recorded_when_the_data_bear_it_out(self):
-        thr = summary.layer(build(), "svm")["score"]["threshold"]
-        self.assertEqual((thr["basis"], thr["rule"]), ("observed_in_data", "score >= value"))
+    def test_no_threshold_is_inferred_from_the_scores(self):
+        # the final call is svm.pred and nothing else: no cutoff is derived, and
+        # a row whose score sits on either side of any median keeps its call
+        svm = summary.layer(build(), "svm")
+        self.assertNotIn("threshold", svm["score"])
         odd = dict(TABLES, svm=[("XP_1.1", "Mitochondria", 0.1, "Mitochondria"),
-                                ("XP_5.1", "Nucleus", 0.9, "unknown")])
-        odd["mito"] = []
-        self.assertNotIn("threshold", summary.layer(bb.build(odd, P2G, {}, SOURCES), "svm")["score"])
+                                ("XP_5.1", "Nucleus", 0.9, "unknown")], mito=[],
+                   markers=[("XP_1.1", "Mitochondria", "No")])
+        got = {a["entity"]: a["status"] for a in summary.layer(bb.build(odd, P2G, {}, SOURCES), "svm")["assignments"]}
+        self.assertEqual(got, {"XP_1.1": "assigned", "XP_5.1": "below_threshold"})
+
+    def test_training_markers_are_kept_apart_from_the_rest(self):
+        b = build()
+        self.assertEqual([a["entity"] for a in summary.layer(b, "markers-training")["assignments"]], ["XP_1.1"])
+        self.assertEqual([a["entity"] for a in summary.layer(b, "markers-heldout")["assignments"]], ["XP_5.1"])
+        self.assertEqual(summary.layer(b, "svm")["trained_on"], ["markers-training"])
+        held = summary.layer(b, "markers-heldout")["method"]["description"]
+        self.assertIn("not labelled independent validation", held)
+        # the score-1 statement is only made when the table bears it out
+        self.assertNotIn("exactly 1", summary.layer(b, "svm")["description"])
+        fixed = dict(TABLES, svm=[("XP_1.1", "Mitochondria", 1, "Mitochondria")] + TABLES["svm"][1:])
+        self.assertIn("All 1 training markers carry svm.scores exactly 1",
+                      summary.layer(bb.build(fixed, P2G, {}, SOURCES), "svm")["description"])
+
+    def test_only_accepted_labels_get_an_ontology_term(self):
+        mapping = bb.load_mapping()
+        self.assertEqual({k for k, v in mapping.items() if v["status"] != "accepted"},
+                         {"Actin", "Microtubule", "Vesicular Compartment"})
+        for label, m in mapping.items():
+            self.assertTrue(m["rationale"], label)
+            self.assertEqual(m["go_id"] is not None, m["status"] == "accepted", label)
+        extra = dict(TABLES, svm=TABLES["svm"] + [("XP_9.1", "Actin", 0.9, "Actin"), ("XP_4.1", "Brand New", 0.9, "Brand New")], mito=[])
+        comps = {c["label"]: c for c in bb.build(extra, P2G, {}, SOURCES)["compartments"]}
+        self.assertEqual(comps["Mitochondria"]["ontology_id"], "GO:0005739")
+        self.assertIn("not by the authors", comps["Mitochondria"]["ontology_note"])
+        for label in ("Actin", "Brand New"):
+            self.assertNotIn("ontology_id", comps[label])
+            self.assertIn("Left out of GO comparisons", comps[label]["ontology_note"].replace("left out", "Left out"))
+
+    def test_notices_say_what_is_pending(self):
+        notices = " ".join(build()["dataset"]["notices"])
+        self.assertIn("being evaluated for integration", notices)
+        self.assertIn("awaiting the full experimental matrix", notices)
 
     def test_undetected_compendium_entries_are_flagged_and_out_of_background(self):
         b = build()
@@ -100,8 +137,8 @@ class BuildTest(unittest.TestCase):
 
     def test_layers_keep_their_evidence_types(self):
         self.assertEqual({l["id"]: l["evidence_type"] for l in build()["layers"]},
-                         {"svm": "computational_assignment", "markers": "curated_annotation",
-                          "mito-compendium": "curated_annotation"})
+                         {"svm": "computational_assignment", "markers-training": "curated_annotation",
+                          "markers-heldout": "curated_annotation", "mito-compendium": "curated_annotation"})
 
     def test_inconsistent_source_rows_stop_the_build(self):
         bad = dict(TABLES, svm=TABLES["svm"] + [("XP_9.1", "Cytosol", 0.9, "Nucleus")])
@@ -141,6 +178,17 @@ class LocalBundleTest(unittest.TestCase):
         self.assertGreater(st["entities_multi_gene"], 0)
         self.assertIn(f"{st['entities_unmapped']} have no gene mapping", self.b["dataset"]["mapping"]["notes"])
         self.assertIn(f"{st['entities_multi_gene']} span more than one gene", self.b["dataset"]["mapping"]["notes"])
+
+    def test_published_calls_are_not_reinterpreted(self):
+        svm = summary.layer(self.b, "svm")
+        self.assertNotIn("threshold", svm["score"])
+        self.assertEqual(svm["score"]["interpretation"], "unspecified")
+        status = [a["status"] for a in svm["assignments"]]
+        self.assertEqual(len(status), 6337)
+        self.assertEqual(status.count("assigned") + status.count("below_threshold"), 6337)
+        training = {a["entity"] for a in summary.layer(self.b, "markers-training")["assignments"]}
+        self.assertTrue(training)
+        self.assertFalse(training & {a["entity"] for a in summary.layer(self.b, "markers-heldout")["assignments"]})
 
     def test_not_tracked_by_git(self):
         import subprocess

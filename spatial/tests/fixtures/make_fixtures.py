@@ -140,8 +140,10 @@ def alpha():
     clf = classifier_layer("classifier", "Classifier assignment", ids, rows,
                            {"name": "classifier.score", "interpretation": "unspecified",
                             "description": "Score reported by the classifier. Its scale is not defined by the source."})
+    clf["trained_on"] = ["markers"]
+    clf["status_labels"] = {"below_threshold": "unknown"}
     seq = {"id": "targeting", "label": "Targeting signal prediction", "evidence_type": "sequence_prediction",
-           "source": "external",
+           "source": "external", "compartment_scope": ["mit"],
            "method": {"name": "synthetic targeting predictor",
                       "description": "Stand-in for a sequence-based presequence predictor."},
            "score": {"name": "presequence_probability", "interpretation": "probability",
@@ -203,6 +205,8 @@ def beta():
                       "description": "Locations taken from a (synthetic) curated knowledgebase."},
            "assignments": [{"entity": ids[k], "compartment": rows[k]["truth"], "status": "assigned"}
                            for k in range(3 * len(comps))]}
+    ref["assignments"][0]["others"] = [comps[3]]           # annotated to two places
+    ref["assignments"][7]["others"] = [comps[0], comps[5]]
     clf = classifier_layer("model", "Model assignment", ids, rows,
                            {"name": "posterior", "interpretation": "probability",
                             "interpretation_basis": "The (synthetic) method defines this value as a posterior probability."})
@@ -224,7 +228,8 @@ def assignments_only(bundle):
     """The same experiment as published without profiles or coordinates."""
     out = {k: v for k, v in bundle.items() if k not in ("fractions", "profiles", "embeddings")}
     out["dataset"] = dict(bundle["dataset"], id=bundle["dataset"]["id"] + "-assignments-only",
-                          title=bundle["dataset"]["title"] + " (assignments only)")
+                          title=bundle["dataset"]["title"] + " (assignments only)",
+                          notices=["Profiles and map coordinates have not been supplied for this example."])
     return out
 
 
@@ -247,6 +252,10 @@ def expected(bundles):
             "concordance": {f"{x}|{y}": {k: v for k, v in S.concordance(b, x, y).items() if k.startswith("n_") or k == "table"}
                             for x in ids for y in ids if x != y},
             "detected_genes": S.detected_genes(b),
+            "detected_single_gene_genes": S.detected_genes(b, single_gene_only=True),
+            "study_all": S.study_genes(b, [e["id"] for e in b["entities"]]),
+            "scopes": {f"{x}|{y}": (sorted(S.shared_scope(b, x, y)) if S.shared_scope(b, x, y) is not None else None)
+                       for x in ids for y in ids if x != y},
             "gene_groups": {g: B.gene_index(b)[g] for g in shared},
             "mapping_status": {e["id"]: B.entity_mapping_status(e) for e in b["entities"]},
         }

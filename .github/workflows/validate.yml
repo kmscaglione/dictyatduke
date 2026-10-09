@@ -20,3 +20,14 @@ jobs:
           python-version: "3.12"
       - name: Run tests
         run: python3 -m unittest discover -s tests -v
+      # Spatial proteomics module. Its core is stdlib only; the offline analysis
+      # tests need NumPy and are skipped without it, so they run in a second pass.
+      # The browser suite runs in the runner's own headless Chrome when present.
+      - name: Spatial module tests (standard library)
+        run: python3 -m unittest discover -s spatial/tests -v
+      - name: Spatial host adapter tests
+        run: python3 -m unittest discover -s spatial/adapters/dictybase/tests -v
+      - name: Install NumPy for the offline analysis tests
+        run: python3 -m pip install --quiet numpy==2.3.3
+      - name: Spatial analysis tests (NumPy)
+        run: python3 -m unittest discover -s spatial/tests -p "test_analysis.py" -v

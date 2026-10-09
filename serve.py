@@ -13,6 +13,17 @@ import enrichment
 import bench
 import msa
 
+# Spatial proteomics module (optional): the reusable code lives in spatial/, and
+# spatial/adapters/dictybase/dicty_site.py is the only part that knows this site.
+try:
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location(
+        "spatial_site", pathlib.Path(__file__).resolve().parent / "spatial" / "adapters" / "dictybase" / "dicty_site.py")
+    spatial_site = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(spatial_site)
+except Exception:  # the site runs without the module
+    spatial_site = None
+
 # Outbound TLS verification is ON by default. Secrets ride these calls — the
 # ORCID client secret (token exchange) and the Gemini API key — so accepting any
 # certificate would hand them to any on-path attacker. DICTY_INSECURE_TLS=1 is a
@@ -214,6 +225,11 @@ def _is_blocked_path(raw):
     p = posixpath.normpath(unquote(raw))
     if p in _BLOCKED_EXACT or p.startswith(_BLOCKED_PREFIXES):
         return True
+    # spatial/ holds source, tests and a gitignored local data folder. Only the
+    # viewer assets and the site adapter script are web-served; restricted data
+    # reaches the browser solely through the gated /api/spatial/ endpoints.
+    if p == "/spatial" or p.startswith("/spatial/"):
+        return not (p.startswith("/spatial/js/") or p == "/spatial/adapters/dictybase/adapter.js")
     # the upload tree and its bare directory (normpath drops the trailing slash)
     if p == "/uploads" or p.startswith("/uploads/"):
         return True
@@ -393,6 +409,8 @@ _ROUTE_META = {
         "Add dictyBase to your phone or computer home screen. It is a web app that installs straight from your browser, no App Store, always up to date."),
     "/tools/blast": ("BLAST search",
         "BLAST a nucleotide or protein query against 19 sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
+    "/tools/spatial": ("Subcellular spatial proteomics",
+        "Explore protein localization assignments from subcellular fractionation proteomics of vegetative Dictyostelium discoideum. Dataset under evaluation."),
     "/tools/enrichment": ("GO and phenotype enrichment",
         "Hypergeometric GO-term and phenotype enrichment analysis for a list of Dictyostelium genes, with Benjamini-Hochberg correction."),
     "/tools/geneset": ("Gene set analysis",
@@ -3697,6 +3715,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self._handle_sequence()
             return
 
+        if self.path.startswith("/api/spatial/"):
+            self._handle_spatial()
+            return
+
         # Public read API
         if self.path.startswith("/api/gene-card"):
             self._handle_gene_card()
@@ -5033,6 +5055,57 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": f"Bad request: {e}"})
         except Exception as e:
             self.send_json(500, {"error": str(e)})
+
+    def _handle_spatial(self):
+        """GET /api/spatial/{status,bundle,layers,gene?ddb=}.
+
+        status always answers. The rest answer only when the installed bundle
+        is public, or when local preview is switched on for a bundle that is
+        not. Non-public data is sent without CORS and without caching.
+        """
+        parsed = urlparse(self.path)
+        what = parsed.path[len("/api/spatial/"):]
+        if spatial_site is None:
+            self.send_json(200 if what == "status" else 404, {"available": False, "reason": "Spatial module not installed."})
+            return
+        try:
+            if what == "status":
+                self._send_spatial(spatial_site.status())
+                return
+            if not spatial_site.allowed():
+                self.send_json(404, {"error": spatial_site.status().get("reason", "Not available.")})
+                return
+            if what == "bundle":
+                self._send_spatial(None, raw=spatial_site.bundle_bytes())
+            elif what == "layers":
+                self._send_spatial({"layers": spatial_site.go_layers()})
+            elif what == "go-names":
+                ids = [i for i in (parse_qs(parsed.query).get("ids") or [""])[0].split(",") if re.match(r"^GO:\d{7}$", i)][:200]
+                self._send_spatial({"names": spatial_site.go_names(ids)})
+            elif what == "gene":
+                ddb = (parse_qs(parsed.query).get("ddb") or [""])[0].strip()
+                if not re.match(r"^DDB_G\d+$", ddb):
+                    self.send_json(400, {"error": "Provide ddb=DDB_G..."})
+                    return
+                self._send_spatial(spatial_site.gene(ddb))
+            else:
+                self.send_json(404, {"error": "Unknown spatial endpoint"})
+        except Exception as e:
+            self.send_json(500, {"error": str(e)})
+
+    def _send_spatial(self, data, raw=None):
+        body = raw if raw is not None else json.dumps(data, ensure_ascii=False).encode()
+        gz = "gzip" in (self.headers.get("Accept-Encoding") or "") and len(body) > 2048
+        if gz:
+            body = gzip.compress(body, 5)
+        self._no_cache = True
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        if gz:
+            self.send_header("Content-Encoding", "gzip")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
 
     def _handle_enrichment(self):
         """POST {genes:[...], background?, background_genes?, min_study?} -> GO enrichment."""

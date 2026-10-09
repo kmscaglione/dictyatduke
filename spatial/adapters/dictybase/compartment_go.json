@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "purpose": "Mapping from the compartment labels published in Tinker et al. 2026 (Tables S1 and S2) to Gene Ontology cellular component terms, for comparison with dictyBase GO annotations.",
+    "author_of_mapping": "dictyBase adapter. This mapping is not part of the publication and has not been confirmed by its authors.",
+    "rule": "A label is 'accepted' only when one GO cellular component term names the same structure. 'uncertain' and 'none' labels get no ontology id in the bundle and are left out of every GO comparison.",
+    "reviewed": "2026-10-09"
+  },
+  "labels": {
+    "Cytosol": {"status": "accepted", "go_id": "GO:0005829", "go_name": "cytosol",
+      "rationale": "Same structure. Many curated annotations use the broader term cytoplasm (GO:0005737), which is not a kind or part of cytosol and so is not counted as support."},
+    "ER": {"status": "accepted", "go_id": "GO:0005783", "go_name": "endoplasmic reticulum", "rationale": "Standard abbreviation of the same organelle."},
+    "Endosome": {"status": "accepted", "go_id": "GO:0005768", "go_name": "endosome", "rationale": "Same organelle."},
+    "Exocyst": {"status": "accepted", "go_id": "GO:0000145", "go_name": "exocyst", "rationale": "Same complex."},
+    "Golgi apparatus": {"status": "accepted", "go_id": "GO:0005794", "go_name": "Golgi apparatus", "rationale": "Same organelle."},
+    "Lysosome": {"status": "accepted", "go_id": "GO:0005764", "go_name": "lysosome", "rationale": "Same organelle."},
+    "Mitochondria": {"status": "accepted", "go_id": "GO:0005739", "go_name": "mitochondrion", "rationale": "Same organelle."},
+    "Nucleus": {"status": "accepted", "go_id": "GO:0005634", "go_name": "nucleus",
+      "rationale": "Same organelle. The nuclear pore is part of the nucleus in GO, so a nuclear pore annotation also supports a Nucleus call."},
+    "NUP": {"status": "accepted", "go_id": "GO:0005643", "go_name": "nuclear pore",
+      "rationale": "The label is an abbreviation. The preprint's Figure 1 legend names this cluster the nuclear pore complex."},
+    "Peroxisome": {"status": "accepted", "go_id": "GO:0005777", "go_name": "peroxisome", "rationale": "Same organelle."},
+    "Plasma Membrane": {"status": "accepted", "go_id": "GO:0005886", "go_name": "plasma membrane", "rationale": "Same structure."},
+    "Proteasome": {"status": "accepted", "go_id": "GO:0000502", "go_name": "proteasome complex", "rationale": "Same complex."},
+    "Ribosome": {"status": "accepted", "go_id": "GO:0005840", "go_name": "ribosome",
+      "rationale": "Same complex. Includes mitochondrial ribosomes in GO, which the source may place under Mitochondria."},
+    "Contractile Vacuole": {"status": "accepted", "go_id": "GO:0000331", "go_name": "contractile vacuole", "rationale": "Same organelle."},
+    "Actin": {"status": "uncertain", "go_id": null, "candidates": ["GO:0015629 actin cytoskeleton", "GO:0005884 actin filament", "GO:0005938 cell cortex"],
+      "rationale": "The label names a protein, not a compartment. Whether the cluster means the actin cytoskeleton, filaments, or the cell cortex is not stated. To be confirmed with the authors."},
+    "Microtubule": {"status": "uncertain", "go_id": null, "candidates": ["GO:0015630 microtubule cytoskeleton", "GO:0005874 microtubule", "GO:0005813 centrosome"],
+      "rationale": "The label names a polymer. It is the most frequent class in Table S2, which suggests a broader fraction than microtubules alone. To be confirmed with the authors."},
+    "Vesicular Compartment": {"status": "none", "go_id": null, "candidates": ["GO:0031410 cytoplasmic vesicle", "GO:0030133 transport vesicle"],
+      "rationale": "No single GO term corresponds to this label. To be confirmed with the authors."}
+  }
+}

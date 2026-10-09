@@ -329,6 +329,167 @@
     });
   });
 
+  test("study genes, single-gene background and compartment scopes match the Python reference", function () {
+    ["alpha.bundle.json", "beta.bundle.json"].forEach(function (n) {
+      var m = C.indexBundle(clone(F[n])), want = EXPECT[n];
+      eq(C.detectedGenes(m, true), want.detected_single_gene_genes, n);
+      var got = C.studyGenes(m, m.entities.map(function (e) { return e.id; }));
+      eq([got.genes, got.used, got.multi_gene, got.unmapped, got.undetected],
+         [want.study_all.genes, want.study_all.used, want.study_all.multi_gene, want.study_all.unmapped, want.study_all.undetected], n);
+      ok(got.used + got.multi_gene + got.unmapped + got.undetected === m.entities.length, "every group is accounted for");
+      Object.keys(want.scopes).forEach(function (key) {
+        var ids = key.split("|"), sc = C.sharedScope(m, ids[0], ids[1]);
+        eq(sc ? sc.slice().sort() : null, want.scopes[key], n + " scope " + key);
+      });
+    });
+  });
+
+  test("a layer's own word for 'no final call' is used, with the named class kept apart", function () {
+    return mount(F["alpha.bundle.json"]).then(function (ex) {
+      var el = ex.el, b = F["alpha.bundle.json"], a = b.layers[1].assignments.filter(function (x) { return x.status === "below_threshold"; })[0];
+      ex.set({ query: a.entity.split(";")[0].toLowerCase() });
+      var cell = qa(el, "[data-sx=table] tbody tr td")[3].textContent;
+      ok(cell.indexOf("unknown (method named ") === 0, cell);
+      ok(cell.indexOf(String(a.score)) > 0, "score still shown exactly");
+      eq(qa(el, "[data-sx=status-select] option").map(function (o) { return o.textContent; }), ["All protein groups", "Only assigned", "Only unknown"]);
+      ok(C.toTSV(ex.model, ex.filtered).split("\n")[5].split("\t").indexOf("unknown") > 0);
+    });
+  });
+
+  test("dedicated view for protein groups without a final call", function () {
+    return mount(F["alpha.bundle.json"]).then(function (ex) {
+      var el = ex.el, map = ex.model.byLayer.classifier;
+      var tab = q(el, "[data-view=unassigned]");
+      ok(tab.textContent === "Without a final call (40)");
+      tab.click();
+      ok(q(el, "[data-sx=count]").textContent.indexOf("40 of 80") === 0);
+      ok(q(el, "[data-sx=unassigned-lede]").textContent.indexOf("it is not an assignment") > 0);
+      ok(q(el, "[data-sx=status-select]").closest("label").hidden, "status filter is replaced by the view");
+      ok(ex.filtered.every(function (e) { return map[e.id].status !== "assigned"; }));
+      var scores = ex.filtered.map(function (e) { return map[e.id].score; });
+      eq(scores, scores.slice().sort(function (x, y) { return y - x; }), "highest score first by default");
+      ok(q(el, "[data-sx=other-evidence]") && !q(el, "[data-sx=concordance]"));
+      var n = +q(el, '[data-sx=other-evidence] [data-layer="markers"] td').textContent;
+      ok(n === ex.filtered.filter(function (e) { return ex.model.byLayer.markers[e.id]; }).length);
+      var total = 0; qa(el, ".sx-comp-n").forEach(function (x) { total += +x.textContent; });
+      ok(total === 40, "compartment counts cover every listed group");
+      q(el, "[data-view=browse]").click();
+      ok(q(el, "[data-sx=count]").textContent.indexOf("80 of 80") === 0 && q(el, "[data-sx=concordance]"));
+      ex.set({ layer: "markers" });
+      ok(!q(el, "[data-view=unassigned]"), "no tab when every entry has a call");
+    });
+  });
+
+  test("tables sort by group, gene, compartment and score, with missing values last", function () {
+    return mount(F["alpha.bundle.json"]).then(function (ex) {
+      var el = ex.el, m = ex.model;
+      q(el, '[data-sort="group"]').click();
+      var ids = ex.filtered.map(function (e) { return e.members[0].id.toLowerCase(); });
+      eq(ids, ids.slice().sort());
+      ok(q(el, '[data-sort="group"]').closest("th").getAttribute("aria-sort") === "ascending");
+      q(el, '[data-sort="group"]').click();
+      eq(ex.filtered.map(function (e) { return e.members[0].id.toLowerCase(); }), ids.slice().reverse());
+      q(el, '[data-sort="s:targeting"]').click();
+      var sc = ex.filtered.map(function (e) { var a = m.byLayer.targeting[e.id]; return a ? a.score : null; });
+      var have = sc.filter(function (v) { return v != null; });
+      ok(have.length === 40 && sc.slice(40).every(function (v) { return v == null; }), "unscored groups stay listed, at the end");
+      eq(have, have.slice().sort(function (x, y) { return y - x; }));
+      q(el, '[data-sort="c:classifier"]').click();
+      var labs = ex.filtered.map(function (e) { return m.compById[m.byLayer.classifier[e.id].compartment].label.toLowerCase(); });
+      eq(labs, labs.slice().sort());
+      q(el, '[data-sort="genes"]').click();
+      ok(C.entityGenes(ex.filtered[ex.filtered.length - 1]).length === 0, "unmapped groups sort last, not out");
+      ok(ex.filtered.length === 80);
+    });
+  });
+
+  test("compartment list can be searched and sorted", function () {
+    return mount(F["beta.bundle.json"]).then(function (ex) {
+      var el = ex.el, input = q(el, "[data-sx=compartment-search]");
+      input.value = "plast"; input.dispatchEvent(new Event("input"));
+      ok(qa(el, ".sx-comps li").filter(function (li) { return !li.hidden; }).length === 1);
+      var sel = q(el, "[data-sx=compartment-sort]"); sel.value = "name"; sel.dispatchEvent(new Event("change"));
+      var names = qa(el, ".sx-comp-name").map(function (n) { return n.textContent; });
+      eq(names, names.slice().sort());
+      sel = q(el, "[data-sx=compartment-sort]"); sel.value = "assigned"; sel.dispatchEvent(new Event("change"));
+      var counts = qa(el, ".sx-comp-n").map(function (n) { return parseInt(n.textContent, 10); });
+      eq(counts, counts.slice().sort(function (x, y) { return y - x; }));
+    });
+  });
+
+  test("training inputs are flagged and never presented as validation", function () {
+    return mount(F["alpha.bundle.json"]).then(function (ex) {
+      var el = ex.el, b = F["alpha.bundle.json"];
+      ok(q(el, "[data-sx=compare-select]").value === "targeting", "the default comparison is never the training set");
+      ok(!q(el, "[data-sx=training-warning]"));
+      var pick = q(el, "[data-sx=compare-select]"); pick.value = "markers"; pick.dispatchEvent(new Event("change"));
+      ok(q(el, "[data-sx=training-warning]").textContent.indexOf("not independent") > 0);
+      ok(!q(el, "[data-sx=concordance-skipped]"), "the training comparison itself keeps its members");
+      ok(q(el, "[data-sx=training-note]").textContent.indexOf("12 of these protein groups were training inputs") === 0);
+      ok(qa(el, "[data-sx=table] tbody tr")[0].textContent.indexOf("training input") > 0);
+      ex.select(b.entities[0].id);
+      ok(q(el, "[data-sx=training-input]").textContent.indexOf("supplied to the method, not predicted") > 0);
+      ex.select(b.entities[20].id);
+      ok(!q(el, "[data-sx=training-input]"));
+      var sel = q(el, "[data-sx=compare-select]"); sel.value = "targeting"; sel.dispatchEvent(new Event("change"));
+      ok(!q(el, "[data-sx=training-warning]"));
+      ok(q(el, "[data-sx=concordance-skipped]").textContent.indexOf("training inputs") > 0, "training inputs are left out of other comparisons");
+      var scope = q(el, "[data-sx=concordance-scope]").textContent;
+      ok(scope.indexOf("the 1 compartments both layers can name") > 0 && scope.indexOf("Cytosol, Membrane, Nucleus") > 0, scope);
+      var all = C.concordance(ex.model, "classifier", "targeting"), held = C.concordance(ex.model, "classifier", "targeting", ex.training);
+      ok(held.shared + held.skipped === all.shared && held.skipped > 0);
+    });
+  });
+
+  test("a layer may name several compartments for one protein group", function () {
+    return mount(F["beta.bundle.json"], { initial: { layer: "reference-set" } }).then(function (ex) {
+      var el = ex.el, b = F["beta.bundle.json"], a = b.layers[0].assignments[7];
+      ex.select(a.entity);
+      var text = q(el, '[data-sx=detail] [data-evidence="curated_annotation"]').textContent;
+      [a.compartment].concat(a.others).forEach(function (c) { ok(text.indexOf(ex.model.compById[c].label) >= 0, c); });
+      ex.set({ compartment: a.others[1] });
+      ok(ex.filtered.some(function (e) { return e.id === a.entity; }), "found under each of its compartments");
+      var c = C.concordance(ex.model, "reference-set", "model");
+      ok(c.agree <= c.both);
+    });
+  });
+
+  test("dataset notices and the compartment vocabulary are shown", function () {
+    var b = clone(F["alpha.assignments-only.bundle.json"]);
+    b.compartments[0].ontology_id = "GO:0000000"; b.compartments[1].ontology_note = "No close term; left out of ontology comparisons.";
+    return mount(b).then(function (ex) {
+      ok(q(ex.el, "[data-sx=notice]").textContent.indexOf("have not been supplied") > 0);
+      var voc = qa(ex.el, "[data-sx=vocabulary] li").map(function (li) { return li.textContent; });
+      ok(voc.length === 4 && voc[0].indexOf("= GO:0000000") > 0 && voc[1].indexOf("(no ontology term). No close term") > 0);
+    });
+  });
+
+  test("an action can return a result that is shown until the selection changes", function () {
+    var seen = null;
+    var adapter = { actions: [{ id: "enrich", label: "Enrich", run: function (ctx) {
+      seen = ctx;
+      var d = document.createElement("div"); d.setAttribute("data-result", "1"); d.textContent = ctx.study.genes.length + " genes";
+      return Promise.resolve(d);
+    } }] };
+    return mount(F["alpha.bundle.json"], { adapter: adapter }).then(function (ex) {
+      var el = ex.el;
+      q(el, '[data-compartment="mem"]').click();
+      q(el, "[data-action=enrich]").click();
+      return new Promise(function (r) { setTimeout(r, 20); }).then(function () {
+        var want = EXPECT["alpha.bundle.json"].layer_counts.classifier.mem.assigned;
+        ok(seen.study.used + seen.study.multi_gene + seen.study.unmapped + seen.study.undetected === want, "study is the groups with a final call");
+        ok(seen.compartmentLabel === "Membrane" && seen.layerLabel === "Classifier assignment");
+        eq(seen.studyBackground, EXPECT["alpha.bundle.json"].detected_single_gene_genes);
+        ok(seen.study.genes.every(function (g) { return seen.studyBackground.indexOf(g) >= 0; }), "study lies inside its background");
+        ok(q(el, "[data-sx=analysis] [data-result]").textContent === seen.study.genes.length + " genes");
+        q(el, "[data-sx=next]") && q(el, "[data-sx=next]").click();
+        ok(q(el, "[data-sx=analysis]"), "paging keeps the result");
+        q(el, '[data-compartment="nuc"]').click();
+        ok(!q(el, "[data-sx=analysis]"), "a new selection clears it");
+      });
+    });
+  });
+
   function run() {
     var list = document.getElementById("results"), i = 0;
     function next() {

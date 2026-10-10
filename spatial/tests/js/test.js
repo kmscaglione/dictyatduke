@@ -159,6 +159,12 @@
       ok(q(el, "[data-sx=central] h3").textContent === "Spatial proteome map" && q(el, "[data-sx=details] h3").textContent === "Protein details");
       eq(texts(el, "[data-sx=show] label"), ["All proteins", "Assigned only", "Markers only", "Unknown only"]);
       ok(q(el, "[data-sx=synthetic]") && !q(el, "[data-sx=local-only]"));
+      return mount(F[ALPHA], { header: false }).then(function (bare) {
+        ok(!q(bare.el, ".sx-titlebar") && q(bare.el, ".sx-sidebar") && q(bare.el, "[data-sx=central]"), "a host may supply the page header itself");
+        return ex;
+      });
+    }).then(function (ex) {
+      var el = ex.el = ex.el;
       var before = JSON.stringify(F[ALPHA]);
       ex.go({ mode: "proteins", compartment: "nuc" }); ex.select(ex.filtered[0].id); ex.go({ mode: "methods" });
       ok(JSON.stringify(F[ALPHA]) === before, "rendering must not alter the bundle");

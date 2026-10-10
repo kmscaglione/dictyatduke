@@ -176,30 +176,28 @@
     try { root.history.replaceState(root.history.state, "", "/tools/spatial" + (query ? "?" + query : "")); } catch (err) { /* address bar only */ }
   }
 
-  // The page's own header, in place of the site's while the dashboard is open.
-  function pageHeader() {
-    var input = el("input", { type: "search", name: "q", placeholder: "Search genes, proteins, GO terms…", "aria-label": "Search dictyBase" });
-    var form = el("form", { class: "dsx-search", role: "search", action: "/search" }, [input,
-      el("button", { type: "submit", "aria-label": "Search", class: "dsx-go" })]);
-    var links = [["Genes", "/search/general", true], ["Browse", "/search/advanced"], ["Tools", "/tools"], ["Data", "/data"], ["Community", "/community/labs"], ["About", "/guide"]];
-    return el("header", { class: "dsx-header" }, [
-      el("a", { class: "dsx-logo", href: "/", "aria-label": "dictyBase home" }, ["dictyBase"]),
-      el("nav", { class: "dsx-nav", "aria-label": "dictyBase" }, links.map(function (l) { return el("a", { href: l[1], class: l[2] ? "dsx-on" : null, text: l[0] }); })),
-      form
-    ]);
-  }
-
   // Fills `shell` with the dashboard. Query parameters mode, compartment, show,
   // gene, protein and q select the starting state, so gene pages can link in.
   function openPage(shell, host) {
     shell.textContent = "";
-    var mountPoint = el("div", { id: "spatial-explorer", "data-spatial-explorer": "1" }, [el("p", { style: "padding:24px", text: "Loading spatial proteomics data…" })]);
-    var page = el("div", { class: "dsx-page" }, [pageHeader(), mountPoint]);
+    var mountPoint = el("div", { id: "spatial-explorer", "data-spatial-explorer": "1" }, [el("p", { class: "muted", style: "padding:24px", text: "Loading spatial proteomics data…" })]);
+    // the same page header every dictyBase tool uses: eyebrow, title, summary
+    var actions = el("div", { class: "spatial-actions", "data-spatial-actions": "1" });
+    var summary = el("p", {}, ["Explore the subcellular organization of the ", el("em", { text: "Dictyostelium" }), " proteome using subcellular fractionation and mass spectrometry."]);
+    var page = el("article", { class: "record-card research-card spatial-page" }, [
+      el("header", { class: "record-header" }, [
+        el("div", { class: "record-title" }, [
+          el("p", { class: "eyebrow", text: "Tools · Proteomics · Dataset under evaluation" }),
+          el("h2", { text: "Spatial Proteomics Explorer" }), summary]),
+        actions]),
+      mountPoint]);
     shell.appendChild(page);
-    document.body.classList.add("spatial-dashboard");
+    // The dashboard needs more width than the site's reading column. Only the
+    // column widens; the site header, navigation and footer stay as they are.
+    document.body.classList.add("spatial-wide");
     var watch = new MutationObserver(function () {
       if (page.isConnected && !shell.hasAttribute("hidden")) return;
-      document.body.classList.remove("spatial-dashboard");
+      document.body.classList.remove("spatial-wide");
       watch.disconnect();
     });
     watch.observe(shell, { childList: true, attributes: true, attributeFilter: ["hidden"] });
@@ -214,8 +212,7 @@
       return loadExplorer().then(function () {
         return root.SpatialExplorer.mount(mountPoint, {
           bundleUrl: "/api/spatial/bundle", adapter: explorerAdapter(host), theme: "light",
-          title: "Dictyostelium Spatial Proteomics Explorer", statusLabel: "Draft",
-          subtitle: "Explore the subcellular organization of the Dictyostelium proteome using subcellular fractionation and mass spectrometry.",
+          header: false,
           searchHint: "e.g. DDB_G0271848, porA, XP_637740.1",
           mapPending: "Awaiting the experimental fractionation matrix and map coordinates from the authors of the study.",
           profilePending: "Awaiting the experimental fractionation matrix from the authors of the study. Nothing is drawn in its place.",
@@ -225,13 +222,14 @@
         });
       }).then(function (explorer) {
         root.dictySpatialExplorer = explorer;
-        var sub = mountPoint.querySelector("[data-sx=subtitle]");   // genus name in italics
-        if (sub) {
-          sub.textContent = "";
-          sub.appendChild(document.createTextNode("Explore the subcellular organization of the "));
-          sub.appendChild(el("em", { text: "Dictyostelium" }));
-          sub.appendChild(document.createTextNode(" proteome using subcellular fractionation and mass spectrometry."));
-        }
+        // header buttons, as ordinary site buttons
+        [["about", "About", function () { explorer.go({ mode: "methods" }); }],
+         ["export", "Download", function () { explorer.exportTSV(); }],
+         ["cite", "Cite", function () { explorer.go({ mode: "methods" }); var t = mountPoint.querySelector("[data-sx=citation]"); if (t) t.scrollIntoView({ block: "nearest" }); }]].forEach(function (b) {
+          var btn = el("button", { type: "button", class: "button", "data-spatial-action": b[0], text: b[1] });
+          btn.addEventListener("click", b[2]);
+          actions.appendChild(btn);
+        });
         var q = params.get("q");
         if (q && !params.get("gene")) { explorer.search.value = q; explorer.showResults(); }
         return explorer;

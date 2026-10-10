@@ -553,7 +553,9 @@
     var action = function (name, label, path, run) {
       return h("button", { type: "button", class: "sx-action", "data-action": name, onclick: run }, [icon(path), label]);
     };
-    el.appendChild(h("header", { class: "sx-titlebar" }, [
+    // A host with its own page header passes header: false and wires its
+    // buttons to go({ mode: "methods" }) and exportTSV().
+    if (o.header !== false) el.appendChild(h("header", { class: "sx-titlebar" }, [
       h("div", { class: "sx-titles" }, [
         h("h1", { class: "sx-title" }, [document.createTextNode(o.title || ds.title), status ? h("span", { class: "sx-pill sx-pill-status", "data-sx": "status", text: status }) : null]),
         h("p", { class: "sx-sub", "data-sx": "subtitle", text: o.subtitle || ds.description || "" })

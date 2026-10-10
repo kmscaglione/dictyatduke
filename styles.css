@@ -2891,23 +2891,46 @@ body.cmdk-active { overflow: hidden; }
 /* nav entries that appear only when their feature is available */
 .menu-option[hidden] { display: none; }
 
-/* ---- Spatial proteomics dashboard (/tools/spatial) ----
-   The dashboard is a full-width page with its own header, so the site chrome
-   steps aside while it is open. Nothing here applies to any other page. */
-body.spatial-dashboard { background: #fff; }
-body.spatial-dashboard > .topbar, body.spatial-dashboard > .news-ticker, body.spatial-dashboard > .mobile-menu,
-body.spatial-dashboard > .site-footer { display: none !important; }
-body.spatial-dashboard main { width: 100%; max-width: none; margin: 0; padding: 0; }
-body.spatial-dashboard #tools { margin: 0; padding: 0; }
-.dsx-header { display: flex; align-items: center; gap: 26px; height: 51px; padding: 0 22px; background: #eef2f8; border-bottom: 1px solid #c9d3e1; font-family: Inter, "Segoe UI", system-ui, sans-serif; }
-.dsx-logo { font-size: 34px; font-weight: 800; letter-spacing: -.02em; color: #16408f; text-decoration: none; line-height: 1; margin-right: 6px; }
-.dsx-nav { display: flex; align-self: stretch; }
-.dsx-nav a { display: flex; align-items: center; padding: 0 16px; color: #1b2538; text-decoration: none; font-size: 14.5px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.dsx-nav a:hover { color: #1d59b6; }
-.dsx-nav a.dsx-on { color: #1d59b6; border-bottom-color: #1d59b6; }
-.dsx-search { margin-left: auto; display: flex; align-items: center; width: 360px; max-width: 34vw; height: 32px; border: 1px solid #a9b4c6; border-radius: 4px; background: #fff; }
-.dsx-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; padding: 0 10px; font-size: 13px; color: #1b2538; }
-.dsx-search button { position: relative; flex: none; width: 34px; height: 30px; border: 0; background: none; cursor: pointer; }
-.dsx-search button::before { content: ""; position: absolute; left: 9px; top: 7px; width: 10px; height: 10px; border: 2px solid #1b2538; border-radius: 50%; }
-.dsx-search button::after { content: ""; position: absolute; left: 20px; top: 18px; width: 6px; height: 2px; background: #1b2538; transform: rotate(45deg); transform-origin: left center; }
-@media (max-width: 900px) { .dsx-nav { display: none; } .dsx-search { max-width: 50vw; } }
+/* ---- Spatial proteomics explorer (/tools/spatial) ----
+   The explorer is a reusable module with its own neutral theme. Here it is
+   given the site's identity by pointing its tokens at the site's, and by
+   dressing its controls like the site's own (pill tabs, teal accents, accent
+   bar before panel headings). The site header, navigation and footer are
+   untouched; only the reading column widens for the dashboard. */
+body.spatial-wide main { width: min(1640px, calc(100% - 36px)); }
+.spatial-page .record-header { align-items: center; }
+.spatial-page .record-title h2 { font-size: clamp(28px, 3vw, 38px); }
+.spatial-page .record-title p { max-width: 900px; margin-bottom: 0; }
+.spatial-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.spatial-page .sx-root {
+  --sx-surface: var(--panel); --sx-surface-2: #f4f9f7; --sx-ink: var(--ink); --sx-ink-2: #33504a; --sx-muted: var(--muted);
+  --sx-line: var(--line); --sx-axis: var(--muted); --sx-accent: var(--teal); --sx-accent-soft: var(--soft); --sx-on-accent: #fff;
+  --sx-seq: var(--teal); --sx-series-1: var(--teal); --sx-train: #c9861e;
+  --sx-head: #e9f3f0; --sx-hair: #e6efec; --sx-control: #cbd8d1; --sx-pill-bg: var(--soft); --sx-pill-ink: var(--teal-dark); --sx-grid: #e3ece9;
+  --sx-ev-computed: var(--teal-dark); --sx-ok: #1c7a45; --sx-ok-bg: #e6f7ec; --sx-radius: 8px;
+  font-family: inherit; background: transparent;
+}
+.spatial-page .sx-root a { color: var(--teal-dark); font-weight: 700; }
+.spatial-page .sx-sidebar { background: #fbfdfb; border-right: 1px solid var(--line); padding-top: 22px; }
+.spatial-page .sx-content { padding-top: 14px; }
+.spatial-page .sx-sidebar h2, .spatial-page .sx-panel-head h3 { color: var(--teal-dark); font-weight: 800; letter-spacing: 0; }
+.spatial-page .sx-panel-head h3::before { content: ""; display: inline-block; width: 4px; height: .92em; margin-right: 9px; border-radius: 2px; background: var(--teal); vertical-align: -1px; }
+.spatial-page .sx-root .sx-nav-item { border-radius: 8px; font-weight: 600; }
+.spatial-page .sx-root .sx-nav-item.sx-on { background: linear-gradient(135deg, #0f9084 0%, var(--teal) 50%, var(--teal-dark) 100%); box-shadow: 0 6px 16px rgba(10, 79, 71, .22); }
+.spatial-page .sx-root .sx-search-input, .spatial-page .sx-root .sx-sidebar select, .spatial-page .sx-root .sx-controls select { border-radius: 8px; background: #fbfdfc; }
+.spatial-page .sx-tabrow, .spatial-page .sx-panel > .sx-tabs { border-bottom: 0; }
+.spatial-page .sx-tabs { gap: 6px; padding-bottom: 6px; }
+.spatial-page .sx-root .sx-tab { border: 1px solid var(--line); border-radius: 999px; padding: 4px 13px; margin: 0; font-weight: 700; font-size: 13px; background: #fff; }
+.spatial-page .sx-root .sx-tab.sx-on { border-color: var(--teal); background: var(--soft); color: var(--teal-dark); }
+.spatial-page .sx-d-id { border-left-color: var(--teal); }
+.spatial-page .sx-root .sx-more { border-radius: 8px; font-weight: 800; }
+.spatial-page .sx-foot { border-top: 1px solid var(--line); background: #fbfdfb; }
+.spatial-page .record-header { padding: 14px 24px 12px; }
+.spatial-page .record-title .eyebrow { margin-bottom: 4px; }
+.spatial-page .record-title h2 { font-size: clamp(26px, 2.6vw, 34px); margin-bottom: 2px; }
+.spatial-page .sx-root a { font-weight: 600; }
+.spatial-page .sx-d-body h4 { color: var(--teal-dark); font-weight: 800; }
+.spatial-page .sx-details .sx-tab, .spatial-page .sx-panel[data-sx="enrichment"] .sx-tab { padding: 3px 10px; font-size: 12px; }
+.spatial-page .sx-panel[data-sx="enrichment"] .sx-tabs, .spatial-page .sx-details > .sx-tabs { flex-wrap: wrap; gap: 4px; }
+.spatial-page .sx-panel[data-sx="enrichment"] .sx-tab { padding: 3px 8px; font-size: 11.5px; }
+.spatial-page .sx-panel[data-sx="enrichment"] .sx-tabs { flex-wrap: nowrap; }

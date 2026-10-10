@@ -143,6 +143,17 @@ class PublicFixtureTest(_Server):
         self.assertEqual(len(links), 2)
         self.assertTrue(all("hidden" in a and "data-spatial-nav" in a for a in links))
 
+    def test_site_styles_theme_the_explorer_with_site_tokens(self):
+        css = (ROOT / "styles.css").read_text()
+        block = css[css.index("/* ---- Spatial proteomics explorer (/tools/spatial) ----"):]
+        for token in ("--sx-accent: var(--teal)", "--sx-ink: var(--ink)", "--sx-line: var(--line)", "--sx-surface: var(--panel)", "--sx-muted: var(--muted)"):
+            self.assertIn(token, block)
+        self.assertNotIn(".topbar", block)                      # the site header is not restyled or hidden
+        self.assertNotIn("display: none", block)
+        adapter = (ROOT / "spatial" / "adapters" / "dictybase" / "adapter.js").read_text()
+        self.assertNotIn("dsx-", adapter)
+        self.assertIn('header: false', adapter)
+
     def test_page_renders_in_a_real_browser(self):
         br = _browser()
         chrome = br.find_chrome()
@@ -150,10 +161,19 @@ class PublicFixtureTest(_Server):
             self.skipTest("no Chrome or Chromium binary found")
         dom = br.dump_dom(chrome, "http://127.0.0.1:%d/tools/spatial" % self.port)
         self.assertIn("Synthetic demonstration data", dom)
-        # the dashboard, with the page's own header in place of the site chrome
-        self.assertIn('class="spatial-dashboard"', dom)
-        self.assertIn('class="dsx-header"', dom)
-        self.assertIn("Dictyostelium Spatial Proteomics Explorer", dom)
+        # a native dictyBase tool page: the site's own header, navigation and
+        # footer, the standard tool page header, and no second navigation system
+        self.assertRegex(dom, r'<header class="topbar"')
+        self.assertRegex(dom, r'<footer class="site-footer"')
+        self.assertRegex(dom, r'<nav class="nav-links"')
+        self.assertNotIn("dsx-header", dom)
+        self.assertNotIn("spatial-dashboard", dom)
+        self.assertIn('class="spatial-wide"', dom)             # only the reading column widens
+        self.assertRegex(dom, r'<article class="record-card research-card spatial-page">\s*<header class="record-header">')
+        self.assertRegex(dom, r'<p class="eyebrow">Tools · Proteomics · Dataset under evaluation</p>')
+        self.assertIn("<h2>Spatial Proteomics Explorer</h2>", dom)
+        self.assertEqual(re.findall(r'data-spatial-action="(\w+)"', dom), ["about", "export", "cite"])
+        self.assertNotIn('class="sx-titlebar"', dom)            # the module's own title bar is not used here
         for panel in ("central", "details", "compartments", "scores", "enrichment"):
             self.assertIn('data-sx="%s"' % panel, dom)
         self.assertIn("Spatial proteome map", dom)

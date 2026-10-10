@@ -191,25 +191,27 @@ def go_layers():
                 if code not in codes or "NOT" in qualifier or "colocalizes_with" in qualifier:
                     continue
                 for comp in term_comps.get(term, ()):
-                    out.setdefault(gid, {}).setdefault(comp, set()).add(term)
+                    out.setdefault(gid, {}).setdefault(comp, set()).add((term, code))
         return out
 
     def layer(layer_id, label, short, evidence_type, codes, blurb):
         by_gene = per_gene(codes)
         assignments = []
         for e in st["bundle"]["entities"]:
-            comps, terms, annotated = {}, set(), 0
+            comps, terms, used, annotated = {}, set(), set(), 0
             for g in B.entity_genes(e):
                 if g in by_gene:
                     annotated += 1
-                    for comp, ts in by_gene[g].items():
-                        comps.setdefault(comp, set()).update(ts)
-                        terms |= ts
+                    for comp, pairs in by_gene[g].items():
+                        comps.setdefault(comp, set()).update(t for t, _ in pairs)
+                        terms |= {t for t, _ in pairs}
+                        used |= {c for _, c in pairs}
             if not comps:
                 continue
             ranked = [c for c in order if c in comps]
             a = {"entity": e["id"], "compartment": ranked[0], "status": "assigned",
-                 "attributes": {"terms": "; ".join(f"{(names.get(t) or ['?'])[0]} ({t})" for t in sorted(terms))}}
+                 "attributes": {"terms": "; ".join(f"{(names.get(t) or ['?'])[0]} ({t})" for t in sorted(terms)),
+                                "codes": ", ".join(sorted(used))}}
             if len(B.entity_genes(e)) > 1:      # only worth saying when the group pools several genes
                 a["attributes"]["genes"] = annotated
             if len(ranked) > 1:
@@ -223,7 +225,7 @@ def go_layers():
                                       "For a protein group with several genes, the annotations of all its genes are pooled. "
                                       "Where several compartments apply they are listed in the source's order, which implies no ranking.",
                        "parameters": {"evidence_codes": sorted(codes), "excluded_qualifiers": ["NOT", "colocalizes_with"]}},
-            "attribute_labels": {"terms": "GO terms", "genes": "Genes in this group with such an annotation"},
+            "attribute_labels": {"terms": "GO terms", "codes": "Evidence codes", "genes": "Genes in this group with such an annotation"},
             "assignments": assignments,
         }
 

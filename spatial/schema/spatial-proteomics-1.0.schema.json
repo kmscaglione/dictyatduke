@@ -232,6 +232,7 @@
         "id": {"$ref": "#/$defs/id"},
         "label": {"type": "string", "minLength": 1},
         "short_label": {"type": "string", "minLength": 1},
+        "role": {"enum": ["marker"]},
         "evidence_type": {"enum": ["computational_assignment", "sequence_prediction", "curated_annotation"]},
         "source": {"$ref": "#/$defs/source"},
         "method": {"$ref": "#/$defs/method"},

@@ -99,6 +99,7 @@ class BuildTest(unittest.TestCase):
         self.assertEqual([a["entity"] for a in summary.layer(b, "markers-training")["assignments"]], ["XP_1.1"])
         self.assertEqual([a["entity"] for a in summary.layer(b, "markers-heldout")["assignments"]], ["XP_5.1"])
         self.assertEqual(summary.layer(b, "svm")["trained_on"], ["markers-training"])
+        self.assertEqual([l["id"] for l in b["layers"] if l.get("role") == "marker"], ["markers-training", "markers-heldout"])
         held = summary.layer(b, "markers-heldout")["method"]["description"]
         self.assertIn("not labelled independent validation", held)
         # the score-1 statement is only made when the table bears it out

@@ -2890,3 +2890,24 @@ body.cmdk-active { overflow: hidden; }
 
 /* nav entries that appear only when their feature is available */
 .menu-option[hidden] { display: none; }
+
+/* ---- Spatial proteomics dashboard (/tools/spatial) ----
+   The dashboard is a full-width page with its own header, so the site chrome
+   steps aside while it is open. Nothing here applies to any other page. */
+body.spatial-dashboard { background: #fff; }
+body.spatial-dashboard > .topbar, body.spatial-dashboard > .news-ticker, body.spatial-dashboard > .mobile-menu,
+body.spatial-dashboard > .site-footer { display: none !important; }
+body.spatial-dashboard main { width: 100%; max-width: none; margin: 0; padding: 0; }
+body.spatial-dashboard #tools { margin: 0; padding: 0; }
+.dsx-header { display: flex; align-items: center; gap: 26px; height: 51px; padding: 0 22px; background: #eef2f8; border-bottom: 1px solid #c9d3e1; font-family: Inter, "Segoe UI", system-ui, sans-serif; }
+.dsx-logo { font-size: 34px; font-weight: 800; letter-spacing: -.02em; color: #16408f; text-decoration: none; line-height: 1; margin-right: 6px; }
+.dsx-nav { display: flex; align-self: stretch; }
+.dsx-nav a { display: flex; align-items: center; padding: 0 16px; color: #1b2538; text-decoration: none; font-size: 14.5px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.dsx-nav a:hover { color: #1d59b6; }
+.dsx-nav a.dsx-on { color: #1d59b6; border-bottom-color: #1d59b6; }
+.dsx-search { margin-left: auto; display: flex; align-items: center; width: 360px; max-width: 34vw; height: 32px; border: 1px solid #a9b4c6; border-radius: 4px; background: #fff; }
+.dsx-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; padding: 0 10px; font-size: 13px; color: #1b2538; }
+.dsx-search button { position: relative; flex: none; width: 34px; height: 30px; border: 0; background: none; cursor: pointer; }
+.dsx-search button::before { content: ""; position: absolute; left: 9px; top: 7px; width: 10px; height: 10px; border: 2px solid #1b2538; border-radius: 50%; }
+.dsx-search button::after { content: ""; position: absolute; left: 20px; top: 18px; width: 6px; height: 2px; background: #1b2538; transform: rotate(45deg); transform-origin: left center; }
+@media (max-width: 900px) { .dsx-nav { display: none; } .dsx-search { max-width: 50vw; } }

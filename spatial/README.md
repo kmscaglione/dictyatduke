@@ -12,6 +12,15 @@ tests/       synthetic fixtures, Python tests, browser tests
 adapters/    host-specific code. Nothing outside this folder knows any host
 ```
 
+## Interface
+
+The viewer is a dashboard: a title bar, a sidebar (sections, quick search,
+compartment filter, display options), a central panel that holds the map or a
+list, a protein details panel, and a bottom row with the compartment table,
+the score distribution and functional enrichment. The dictyBase layout follows
+a reference design supplied by the project lead. Panels whose data are absent
+keep their place and show a labelled empty state.
+
 ## Rules the module keeps
 
 1. Reusable code names no organism and no host. `tests/test_independence.py` fails if it does.

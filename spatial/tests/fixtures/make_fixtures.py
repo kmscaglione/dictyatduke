@@ -129,7 +129,7 @@ def alpha():
     entities[10]["members"][0]["gene"] = entities[9]["members"][0]["gene"]  # one gene, two groups
     ids = [e["id"] for e in entities]
 
-    markers = {"id": "markers", "label": "Reference markers", "short_label": "Marker", "evidence_type": "curated_annotation",
+    markers = {"id": "markers", "label": "Reference markers", "short_label": "Marker", "role": "marker", "evidence_type": "curated_annotation",
                "source": "author",
                "method": {"name": "curated marker set",
                           "description": "Proteins with an accepted location, chosen by the authors."},

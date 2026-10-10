@@ -172,7 +172,7 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
 
     def marker_layer(layer_id, label, short, used, note):
         return {
-            "id": layer_id, "label": label, "short_label": short,
+            "id": layer_id, "label": label, "short_label": short, "role": "marker",
             "evidence_type": "curated_annotation", "source": "author",
             "method": {"name": "curated marker set",
                        "description": "Markers compiled by the authors from direct experimental evidence in Dictyostelium or from homology to validated markers in other eukaryotes. Table S1 does not say which basis applies to which marker. " + note},

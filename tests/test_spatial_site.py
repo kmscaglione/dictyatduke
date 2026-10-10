@@ -149,11 +149,17 @@ class PublicFixtureTest(_Server):
         if not chrome:
             self.skipTest("no Chrome or Chromium binary found")
         dom = br.dump_dom(chrome, "http://127.0.0.1:%d/tools/spatial" % self.port)
-        self.assertIn("Synthetic spatial map, Exemplum primum", dom)
-        self.assertIn("80 protein groups detected, 40 assigned to 4 compartments", dom)
-        self.assertEqual(len(re.findall(r'class="sx-card"', dom)), 4)          # one card per compartment
-        self.assertIn('data-view="unassigned"', dom)
-        self.assertIn('data-sx="search"', dom)
+        self.assertIn("Synthetic demonstration data", dom)
+        # the dashboard, with the page's own header in place of the site chrome
+        self.assertIn('class="spatial-dashboard"', dom)
+        self.assertIn('class="dsx-header"', dom)
+        self.assertIn("Dictyostelium Spatial Proteomics Explorer", dom)
+        for panel in ("central", "details", "compartments", "scores", "enrichment"):
+            self.assertIn('data-sx="%s"' % panel, dom)
+        self.assertIn("Spatial proteome map", dom)
+        self.assertIn("Unknown (40)", dom)                      # real count in the legend
+        self.assertIn('data-sx="map-canvas"', dom)              # the fixture carries coordinates
+        self.assertIn('data-sx="histogram"', dom)
         self.assertNotIn('role="alert"', dom)
         self.assertRegex(dom, r'href="/tools/spatial" data-spatial-nav="">')   # nav revealed once available
 
@@ -277,6 +283,8 @@ class LocalBundleTest(_Server):
         merged = dict(self.b, layers=self.b["layers"] + layers)
         self.assertEqual(V.errors(V.validate(merged)), [])
         self.assertEqual(len(self.b["layers"]), 4)                       # the bundle itself is unchanged
+        codes = {c for x in layers[0]["assignments"] for c in x["attributes"]["codes"].split(", ")}
+        self.assertTrue(codes and codes <= set(layers[0]["method"]["parameters"]["evidence_codes"]))
         exp = set(layers[0]["method"]["parameters"]["evidence_codes"])
         self.assertTrue({"IDA", "HDA"} <= exp and not exp & {"IEA", "IBA", "ISS"})
         c = summary.concordance(merged, "svm", "go-cc-experimental")

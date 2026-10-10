@@ -61,19 +61,22 @@
     return assetsPromise;
   }
 
-  /* ---------- enriched functions for a compartment ---------- */
+  /* ---------- functional enrichment against the detected proteome ---------- */
 
-  var ASPECT = { P: "Biological process", F: "Molecular function", C: "Cellular component" };
+  var KIND = { P: "Biological process", F: "Molecular function", C: "Cellular component" };
+  var NOT_YET = "This analysis is not available yet. Only GO term enrichment has been validated against the detected-proteome background.";
+  var ENRICHMENT_TABS = [
+    { id: "go", label: "GO terms" },
+    { id: "domains", label: "Protein domains", unavailable: NOT_YET },
+    { id: "pathways", label: "Pathways", unavailable: NOT_YET },
+    { id: "complexes", label: "Complexes", unavailable: NOT_YET }
+  ];
 
-  // Shown beside a compartment's protein list. The first view is a short list
-  // of functions; the test, the background and the full table are one click away.
-  function functionsPanel(ctx) {
+  // GO enrichment for the protein groups assigned to one compartment. Study and
+  // background follow the same rule: detected groups that resolve to one gene.
+  function enrichment(ctx) {
     var study = ctx.study;
-    var box = el("div", { "data-spatial-enrichment": ctx.compartment }, [el("h4", { text: "Enriched functions" })]);
-    if (study.genes.length < 2) {
-      box.appendChild(el("p", { class: "sx-muted", text: "Too few proteins here to test." }));
-      return Promise.resolve(box);
-    }
+    if (study.genes.length < 2) return Promise.resolve({ terms: [], summary: "Too few proteins assigned here to test." });
     return getJSON("/api/enrichment", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ genes: study.genes, background_genes: ctx.studyBackground, min_study: 2 })
@@ -82,69 +85,70 @@
       var unnamed = hits.filter(function (t) { return !t.name; }).map(function (t) { return t.id; }).slice(0, 200);
       var named = unnamed.length ? getJSON("/api/spatial/go-names?ids=" + unnamed.join(",")).then(function (x) { return x.names; }, function () { return {}; }) : Promise.resolve({});
       return named.then(function (names) {
-        hits.forEach(function (t) { if (!t.name) t.name = names[t.id] || t.id; });
-        return renderFunctions(box, ctx, r, hits);
+        var left = [];
+        if (study.multi_gene) left.push(study.multi_gene + " multi-gene groups");
+        if (study.unmapped) left.push(study.unmapped + " without a gene match");
+        if (study.undetected) left.push(study.undetected + " not detected");
+        return {
+          terms: hits.map(function (t) {
+            return { id: t.id, name: t.name || names[t.id] || t.id, kind: KIND[t.aspect] || t.aspect, q: t.q_value, count: t.study_count, n: t.study_n,
+                     background: t.pop_count, backgroundN: t.pop_n, fold: t.fold_enrichment, url: "/go/" + encodeURIComponent(t.id) };
+          }),
+          summary: hits.length + " GO terms at FDR below 0.05 among " + r.study_n + " annotated proteins assigned to " + ctx.compartmentLabel + ", against " + r.background_n + " annotated detected proteins.",
+          method: study.genes.length + " genes from " + study.used + " protein groups assigned to " + ctx.compartmentLabel + " (" + ctx.layerLabel + "). Background: " + r.background_requested_n +
+            " genes from protein groups detected in this experiment, not the whole genome." + (left.length ? " Left out because they cannot be tied to one gene: " + left.join(", ") + "." : "") +
+            " Hypergeometric test with Benjamini-Hochberg correction. Training markers are included. Cellular component terms partly restate the localization itself."
+        };
       });
-    }, function () {
-      box.appendChild(el("p", { class: "sx-muted", text: "Enrichment could not be computed just now." }));
-      return box;
     });
   }
 
-  function renderFunctions(box, ctx, r, hits) {
-    var study = ctx.study, left = [];
-    if (study.multi_gene) left.push(study.multi_gene + " multi-gene groups");
-    if (study.unmapped) left.push(study.unmapped + " without a gene match");
-    if (study.undetected) left.push(study.undetected + " not detected");
-    box.appendChild(el("p", { class: "sx-muted", "data-enrich-summary": "1", text: "GO terms over-represented among the " + r.study_n + " annotated proteins assigned here, compared with all proteins detected in the experiment." }));
-    if (!hits.length) {
-      box.appendChild(el("p", { text: "No function stands out." }));
-    } else {
-      // processes and functions first: component terms mostly restate the location
-      ["P", "F", "C"].forEach(function (aspect) {
-        var terms = hits.filter(function (t) { return t.aspect === aspect; }).slice(0, aspect === "P" ? 5 : 3);
-        if (!terms.length) return;
-        box.appendChild(el("p", { class: "sx-fn-group", text: ASPECT[aspect] }));
-        box.appendChild(el("ul", { class: "sx-fn-list" }, terms.map(function (t) {
-          return el("li", { class: "sx-fn", "data-go": t.id }, [
-            el("a", { class: "sx-fn-name", href: "/go/" + encodeURIComponent(t.id), text: t.name }),
-            el("span", { class: "sx-fn-bar" }, [el("i", { style: "width:" + Math.round(100 * t.study_count / t.study_n) + "%" })]),
-            el("span", { class: "sx-fn-meta", text: t.study_count + " of " + t.study_n + " proteins · " + (t.fold_enrichment >= 10 ? Math.round(t.fold_enrichment) : t.fold_enrichment) + "× more than expected" })
-          ]);
-        })));
-      });
-    }
-    var details = el("details", { class: "sx-fine", "data-enrich-details": "1" }, [
-      el("summary", { text: "How this was calculated" + (hits.length ? " and all " + hits.length + " terms" : "") }),
-      el("p", { "data-enrich-background": "1", text: study.genes.length + " genes from " + study.used + " protein groups assigned to " + ctx.compartmentLabel + " (" + ctx.layerLabel + "); " + r.study_n +
-        " have a GO annotation. Background: " + r.background_requested_n + " genes from protein groups detected in this experiment, " + r.background_n + " with a GO annotation. It is not the whole genome." +
-        (left.length ? " Left out because they cannot be tied to one gene: " + left.join(", ") + "." : "") }),
-      el("p", { text: "Hypergeometric test with Benjamini-Hochberg correction, q below 0.05. Training markers are included. Cellular component terms partly restate the localization itself." })
-    ]);
-    if (hits.length) {
-      details.appendChild(el("div", { class: "sx-scroll" }, [el("table", { class: "sx-table" }, [
-        el("thead", {}, [el("tr", {}, ["GO term", "Kind", "Here", "Detected", "Fold", "q"].map(function (t) { return el("th", { text: t }); }))]),
-        el("tbody", {}, hits.slice(0, 100).map(function (t) {
-          return el("tr", {}, [
-            el("td", {}, [el("a", { href: "/go/" + encodeURIComponent(t.id), text: t.name }), el("div", { class: "sx-mono sx-muted", text: t.id })]),
-            el("td", { text: ASPECT[t.aspect] || t.aspect }), el("td", { text: t.study_count + " / " + t.study_n }), el("td", { text: t.pop_count + " / " + t.pop_n }),
-            el("td", { text: t.fold_enrichment == null ? "" : String(t.fold_enrichment) }), el("td", { text: t.q_value.toExponential(1) })
-          ]);
-        }))
-      ])]));
-    }
-    box.appendChild(details);
-    return box;
-  }
+  /* ---------- the dashboard page ---------- */
 
-  /* ---------- the tool page ---------- */
+  var EXAMPLE_GENE = "DDB_G0271848";   // porA, shown when a visitor arrives without choosing a protein
+
+  // Rows the generic details panel cannot know: GO annotations and outside links.
+  function overviewRows(host) {
+    return function (entity, explorer) {
+      var model = explorer.model, rows = [];
+      var go = function (layerId) { return (model.byLayer[layerId] || {})[entity.id]; };
+      var termLinks = function (a) {
+        var out = [];
+        String((a.attributes || {}).terms || "").split("; ").filter(Boolean).forEach(function (t, i) {
+          var m = t.match(/^(.*) \((GO:\d{7})\)$/);
+          if (i) out.push(document.createElement("br"));
+          out.push(m ? el("a", { href: "/go/" + m[2], text: m[1] + " (" + m[2] + ")" }) : document.createTextNode(t));
+        });
+        return out;
+      };
+      var exp = go("go-cc-experimental"), inf = go("go-cc-inferred");
+      if (exp) rows.push(["GO cellular component", termLinks(exp), "go"]);
+      else if (inf) rows.push(["GO cellular component", [el("span", { class: "sx-muted", text: "Inferred only: " })].concat(termLinks(inf)), "go"]);
+      else rows.push(["GO cellular component", [el("span", { class: "sx-muted", text: "None in the compartments compared here" })], "go"]);
+      var codes = (exp || inf) && ((exp || inf).attributes || {}).codes;
+      if (codes) rows.push(["Evidence", codes + (exp ? "" : " (inferred, not experimental)"), "evidence"]);
+      var links = [], sep = function () { if (links.length) links.push(document.createTextNode(" | ")); };
+      entity.members.forEach(function (m) {
+        if (m.gene == null || links.some(function (n) { return n.getAttribute && n.getAttribute("data-gene") === m.gene; })) return;
+        sep(); links.push(el("a", { href: host.geneHref(m.gene), "data-gene": m.gene, text: "dictyBase" + (entity.members.length > 1 ? " " + ((host.gene(m.gene) || {}).symbol || m.gene) : "") }));
+      });
+      links = links.slice(0, 9);
+      sep(); links.push(el("a", { href: "https://www.ncbi.nlm.nih.gov/protein/" + encodeURIComponent(entity.members[0].id), target: "_blank", rel: "noopener", text: "NCBI Protein" }));
+      var firstGene = entity.members.filter(function (m) { return m.gene != null; })[0];
+      if (firstGene) { sep(); links.push(el("a", { href: "https://www.uniprot.org/uniprotkb?query=" + encodeURIComponent(firstGene.gene), target: "_blank", rel: "noopener", text: "UniProt" })); }
+      rows.push(["External links", links, "links"]);
+      return rows;
+    };
+  }
 
   function explorerAdapter(host) {
     return {
       geneUrl: function (id) { return host.geneHref(id); },
       geneLabel: function (id) { var g = host.gene(id); return (g && g.symbol) || id; },
       geneLinkText: "dictyBase gene page",
+      geneName: function (id) { var g = host.gene(id); return (g && g.name) || ""; },
       memberUrl: function (acc) { return "https://www.ncbi.nlm.nih.gov/protein/" + encodeURIComponent(acc); },
+      termUrl: function (id) { return "/go/" + encodeURIComponent(id); },
       searchText: function (entity) {
         return entity.members.map(function (m) {
           var g = m.gene != null ? host.gene(m.gene) : null;
@@ -152,7 +156,9 @@
         }).join(" ");
       },
       extraLayers: function () { return getJSON("/api/spatial/layers").then(function (r) { return r.layers || []; }); },
-      compartmentPanel: functionsPanel
+      enrichment: enrichment,
+      enrichmentTabs: ENRICHMENT_TABS,
+      overviewRows: overviewRows(host)
     };
   }
 
@@ -160,21 +166,43 @@
   // bookmarked, shared, or returned to from a gene page.
   function syncUrl(state) {
     var p = new URLSearchParams();
-    if (state.view === "compartment" && state.compartment) p.set("compartment", state.compartment);
-    else if (state.view === "unassigned") p.set("view", "unassigned");
-    else if (state.view === "search" && state.gene) p.set("gene", state.gene);
-    else if (state.view === "search" && state.query) p.set("q", state.query);
+    if (state.mode !== "map") p.set("mode", state.mode);
+    if (state.compartment) p.set("compartment", state.compartment);
+    if (state.show !== "all") p.set("show", state.show);
+    if (state.gene) p.set("gene", state.gene);
+    else if (state.query) p.set("q", state.query);
     if (state.entity) p.set("protein", state.entity);
     var query = p.toString();
     try { root.history.replaceState(root.history.state, "", "/tools/spatial" + (query ? "?" + query : "")); } catch (err) { /* address bar only */ }
   }
 
-  // Fills `shell` with the page. Query parameters gene, protein, compartment,
-  // view and q select the starting state, so gene pages can link straight in.
+  // The page's own header, in place of the site's while the dashboard is open.
+  function pageHeader() {
+    var input = el("input", { type: "search", name: "q", placeholder: "Search genes, proteins, GO terms…", "aria-label": "Search dictyBase" });
+    var form = el("form", { class: "dsx-search", role: "search", action: "/search" }, [input,
+      el("button", { type: "submit", "aria-label": "Search", class: "dsx-go" })]);
+    var links = [["Genes", "/search/general", true], ["Browse", "/search/advanced"], ["Tools", "/tools"], ["Data", "/data"], ["Community", "/community/labs"], ["About", "/guide"]];
+    return el("header", { class: "dsx-header" }, [
+      el("a", { class: "dsx-logo", href: "/", "aria-label": "dictyBase home" }, ["dictyBase"]),
+      el("nav", { class: "dsx-nav", "aria-label": "dictyBase" }, links.map(function (l) { return el("a", { href: l[1], class: l[2] ? "dsx-on" : null, text: l[0] }); })),
+      form
+    ]);
+  }
+
+  // Fills `shell` with the dashboard. Query parameters mode, compartment, show,
+  // gene, protein and q select the starting state, so gene pages can link in.
   function openPage(shell, host) {
     shell.textContent = "";
-    var mountPoint = el("div", { id: "spatial-explorer", "data-spatial-explorer": "1" }, [el("p", { class: "muted", text: "Loading spatial proteomics data…" })]);
-    shell.appendChild(el("article", { class: "record-card research-card spatial-page" }, [mountPoint]));
+    var mountPoint = el("div", { id: "spatial-explorer", "data-spatial-explorer": "1" }, [el("p", { style: "padding:24px", text: "Loading spatial proteomics data…" })]);
+    var page = el("div", { class: "dsx-page" }, [pageHeader(), mountPoint]);
+    shell.appendChild(page);
+    document.body.classList.add("spatial-dashboard");
+    var watch = new MutationObserver(function () {
+      if (page.isConnected && !shell.hasAttribute("hidden")) return;
+      document.body.classList.remove("spatial-dashboard");
+      watch.disconnect();
+    });
+    watch.observe(shell, { childList: true, attributes: true, attributeFilter: ["hidden"] });
     return status().then(function (st) {
       if (!st.available) {
         mountPoint.textContent = "";
@@ -182,15 +210,28 @@
         return null;
       }
       var params = new URLSearchParams(root.location.search);
+      var chosen = params.get("protein") || params.get("gene");
       return loadExplorer().then(function () {
         return root.SpatialExplorer.mount(mountPoint, {
           bundleUrl: "/api/spatial/bundle", adapter: explorerAdapter(host), theme: "light",
-          searchPlaceholder: "Search a gene or protein, for example mhcA, DDB_G0286355 or XP_637740.1",
-          initial: { gene: params.get("gene"), entity: params.get("protein"), view: params.get("view"), compartment: params.get("compartment"), layer: params.get("layer") },
+          title: "Dictyostelium Spatial Proteomics Explorer", statusLabel: "Draft",
+          subtitle: "Explore the subcellular organization of the Dictyostelium proteome using subcellular fractionation and mass spectrometry.",
+          searchHint: "e.g. DDB_G0271848, porA, XP_637740.1",
+          mapPending: "Awaiting the experimental fractionation matrix and map coordinates from the authors of the study.",
+          profilePending: "Awaiting the experimental fractionation matrix from the authors of the study. Nothing is drawn in its place.",
+          initial: { mode: params.get("mode"), compartment: params.get("compartment"), show: params.get("show"), view: params.get("view"),
+                     gene: params.get("gene") || (chosen ? null : EXAMPLE_GENE), entity: params.get("protein"), layer: params.get("layer") },
           onState: syncUrl
         });
       }).then(function (explorer) {
         root.dictySpatialExplorer = explorer;
+        var sub = mountPoint.querySelector("[data-sx=subtitle]");   // genus name in italics
+        if (sub) {
+          sub.textContent = "";
+          sub.appendChild(document.createTextNode("Explore the subcellular organization of the "));
+          sub.appendChild(el("em", { text: "Dictyostelium" }));
+          sub.appendChild(document.createTextNode(" proteome using subcellular fractionation and mass spectrometry."));
+        }
         var q = params.get("q");
         if (q && !params.get("gene")) { explorer.search.value = q; explorer.showResults(); }
         return explorer;

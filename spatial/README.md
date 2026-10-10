@@ -95,8 +95,9 @@ Files in `adapters/dictybase/`:
 | `adapter.js` | Browser side: the `/tools/spatial` page, gene page section, GO enrichment |
 
 The site serves a bundle marked `public` to everyone. Any other bundle is
-served only when the server is started with `DICTY_SPATIAL_PREVIEW=1`, which is
-for local review and must not be set on a public server:
+served only when the server is started with `DICTY_SPATIAL_PREVIEW=1`. That is
+the site owner's switch for local review or an unlisted preview. It is not
+access control: with it on, anyone who has the address can read the data.
 
 ```
 DICTY_SPATIAL_PREVIEW=1 python3 serve.py      # then open http://localhost:8774/tools/spatial

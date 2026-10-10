@@ -508,7 +508,7 @@
     b.dataset.distribution = { status: "local-only", reason: "Reuse terms pending." };
     b.entities[0].detected = false;
     return mount(b, { initial: { mode: "proteins", compartment: "cyt" } }).then(function (ex) {
-      ok(q(ex.el, "[data-sx=local-only]").textContent.indexOf("Local copy, not for distribution") === 0 && !q(ex.el, "[data-sx=synthetic]"));
+      ok(q(ex.el, "[data-sx=local-only]").textContent.indexOf("Preview copy, not cleared for redistribution") === 0 && !q(ex.el, "[data-sx=synthetic]"));
       ok(q(ex.el, "[data-sx=status]").textContent === "Preview" && q(ex.el, "[data-sx=notice]").textContent.indexOf("have not been supplied") > 0);
       ok(q(ex.el, '[data-sx=rows] tr[data-entity="' + b.entities[0].id + '"]').textContent.indexOf("not detected") > 0);
     });

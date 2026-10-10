@@ -214,7 +214,7 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
             "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
             "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
             "redistribution": "restricted",
-            "terms_note": "The preprint asks investigators to contact the authors before using these data. This reformatted copy may count as a derivative. Do not distribute until the authors have agreed."},
+            "terms_note": "The source tables are public supplementary material of the preprint, licensed CC BY-NC-ND 4.0. This is a reformatted copy with every published value unchanged. Development of this resource was requested by the study's corresponding author, as reported by the dictyBase project lead. Written confirmation that this reformatted copy may be redistributed is still outstanding."},
         "attribution": "Data from Tinker et al. 2026 (bioRxiv, doi:10.64898/2026.09.28.755154), Wideman laboratory. Reformatted without changing any published value.",
         "provenance": {
             "builder": "spatial/adapters/dictybase/build_bundle.py",
@@ -234,12 +234,12 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
             source=mapping_source,
             notes=f"{len(svm)} detected protein groups from Table S2, plus {n_undetected} groups that appear only in Table S3 and are flagged detected=false. Among the detected groups, {seen['entities_unmapped']} have no gene mapping and {seen['entities_multi_gene']} span more than one gene; all are kept and listed in unmapped_entities and multi_gene_entities."),
         "notices": [
-            "Under evaluation for dictyBase",
-            "This dataset is being evaluated for integration into dictyBase. This is a local preview and is not public.",
+            "Preview, under development",
+            "This is an unlisted preview under development for dictyBase. It is not a public release.",
             "Fractionation profiles and spatial maps are awaiting the full experimental matrix from the authors. Those views will appear here when the matrix is supplied; nothing has been reconstructed in the meantime.",
         ],
         "distribution": {"status": "local-only",
-                         "reason": "Reuse terms not yet clarified with the authors."},
+                         "reason": "Unlisted preview. Redistribution of this reformatted copy under the preprint's licence has not been confirmed in writing."},
     }
     return B.new_bundle(dataset, compartments, entities, [svm_layer, training_layer, heldout_layer, mito_layer])
 

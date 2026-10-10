@@ -6,8 +6,11 @@ result. Standard library only; imported by serve.py.
 
 Which bundle:  DICTY_SPATIAL_BUNDLE, else adapters/dictybase/local/<default>.
 Who may see it: a bundle marked "public" is always served. Any other bundle is
-served only when DICTY_SPATIAL_PREVIEW=1, which is meant for a local review
-session and must not be set on a public server.
+served only when DICTY_SPATIAL_PREVIEW=1. That switch is the site owner's
+decision to show a dataset that is not cleared for redistribution, for local
+review or as an unlisted preview. It is not access control: with it on, anyone
+who has the address can read the data. Turning it off removes every
+/api/spatial/ response except status.
 """
 import json
 import os

@@ -604,7 +604,7 @@
 
     var notes = [];
     if (ds.synthetic) notes.push(h("span", { "data-sx": "synthetic", text: "Synthetic demonstration data. " }));
-    if (ds.distribution && ds.distribution.status !== "public") notes.push(h("span", { "data-sx": "local-only", text: "Local copy, not for distribution. " }));
+    if (ds.distribution && ds.distribution.status !== "public") notes.push(h("span", { "data-sx": "local-only", title: ds.distribution.reason || null, text: "Preview copy, not cleared for redistribution. " }));
     (ds.notices || []).slice(0, 1).forEach(function (t) { notes.push(h("span", { "data-sx": "notice", text: t })); });
     var cite = ds.citation || {};
     el.appendChild(h("footer", { class: "sx-foot" }, [

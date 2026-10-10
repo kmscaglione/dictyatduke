@@ -79,7 +79,7 @@ class BrowserTest(unittest.TestCase):
         fails = [html.unescape(x) for x in re.findall(r"<li>(FAIL[^<]*)</li>", dom)]
         self.assertEqual(fails, [])
         self.assertRegex(m.group(1), r"^PASSED: (\d+) of \1 tests passed$")
-        self.assertGreaterEqual(int(re.search(r"\d+", m.group(1)).group()), 30)
+        self.assertGreaterEqual(int(re.search(r"\d+", m.group(1)).group()), 20)
 
 
 if __name__ == "__main__":

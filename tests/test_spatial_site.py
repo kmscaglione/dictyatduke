@@ -150,8 +150,10 @@ class PublicFixtureTest(_Server):
             self.skipTest("no Chrome or Chromium binary found")
         dom = br.dump_dom(chrome, "http://127.0.0.1:%d/tools/spatial" % self.port)
         self.assertIn("Synthetic spatial map, Exemplum primum", dom)
-        self.assertRegex(dom, r'data-sx="count"[^>]*>80 of 80 protein groups')
+        self.assertIn("80 protein groups detected, 40 assigned to 4 compartments", dom)
+        self.assertEqual(len(re.findall(r'class="sx-card"', dom)), 4)          # one card per compartment
         self.assertIn('data-view="unassigned"', dom)
+        self.assertIn('data-sx="search"', dom)
         self.assertNotIn('role="alert"', dom)
         self.assertRegex(dom, r'href="/tools/spatial" data-spatial-nav="">')   # nav revealed once available
 

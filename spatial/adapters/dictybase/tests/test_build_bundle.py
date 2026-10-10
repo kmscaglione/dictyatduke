@@ -125,6 +125,7 @@ class BuildTest(unittest.TestCase):
     def test_notices_say_what_is_pending(self):
         notices = " ".join(build()["dataset"]["notices"])
         self.assertIn("being evaluated for integration", notices)
+        self.assertEqual(build()["dataset"]["notices"][0], "Under evaluation for dictyBase")   # the one-line flag
         self.assertIn("awaiting the full experimental matrix", notices)
 
     def test_undetected_compendium_entries_are_flagged_and_out_of_background(self):

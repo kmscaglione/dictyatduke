@@ -194,7 +194,7 @@ def go_layers():
                     out.setdefault(gid, {}).setdefault(comp, set()).add(term)
         return out
 
-    def layer(layer_id, label, evidence_type, codes, blurb):
+    def layer(layer_id, label, short, evidence_type, codes, blurb):
         by_gene = per_gene(codes)
         assignments = []
         for e in st["bundle"]["entities"]:
@@ -209,27 +209,28 @@ def go_layers():
                 continue
             ranked = [c for c in order if c in comps]
             a = {"entity": e["id"], "compartment": ranked[0], "status": "assigned",
-                 "attributes": {"terms": "; ".join(f"{t} {(names.get(t) or ['?'])[0]}" for t in sorted(terms)),
-                                "genes": annotated}}
+                 "attributes": {"terms": "; ".join(f"{(names.get(t) or ['?'])[0]} ({t})" for t in sorted(terms))}}
+            if len(B.entity_genes(e)) > 1:      # only worth saying when the group pools several genes
+                a["attributes"]["genes"] = annotated
             if len(ranked) > 1:
                 a["others"] = ranked[1:]
             assignments.append(a)
         return {
-            "id": layer_id, "label": label, "evidence_type": evidence_type, "source": "external",
+            "id": layer_id, "label": label, "short_label": short, "evidence_type": evidence_type, "source": "external",
             "compartment_scope": scope,
             "method": {"name": "GO annotation lookup", "software": f"Gene Ontology {closure['_meta'].get('data_version')}",
                        "description": blurb + " A GO term counts for a compartment when it is the mapped term, a kind of it, or a part of it. "
                                       "For a protein group with several genes, the annotations of all its genes are pooled. "
                                       "Where several compartments apply they are listed in the source's order, which implies no ranking.",
                        "parameters": {"evidence_codes": sorted(codes), "excluded_qualifiers": ["NOT", "colocalizes_with"]}},
-            "attribute_labels": {"terms": "GO terms", "genes": "Genes in the group with such an annotation"},
+            "attribute_labels": {"terms": "GO terms", "genes": "Genes in this group with such an annotation"},
             "assignments": assignments,
         }
 
     layers = [
-        layer("go-cc-experimental", "GO cellular component, experimental evidence (dictyBase)", "curated_annotation",
+        layer("go-cc-experimental", "GO cellular component, experimental evidence (dictyBase)", "GO", "curated_annotation",
               EXPERIMENTAL, "dictyBase GO cellular component annotations with an experimental evidence code."),
-        layer("go-cc-inferred", "GO cellular component, inferred (dictyBase)", "sequence_prediction",
+        layer("go-cc-inferred", "GO cellular component, inferred (dictyBase)", "GO inferred", "sequence_prediction",
               INFERRED, "dictyBase GO cellular component annotations inferred from sequence similarity, phylogeny or automated pipelines. Not experimental evidence in this organism."),
     ]
     _cache["go"] = layers

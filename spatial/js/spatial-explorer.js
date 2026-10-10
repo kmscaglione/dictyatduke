@@ -27,8 +27,6 @@
   var VERSION = "0.1.0";
   var SCHEMA = "spatial-proteomics-bundle";
   var SVGNS = "http://www.w3.org/2000/svg";
-  var PAGE = 25;
-  var MAX_COLORS = 8;
 
   var EVIDENCE = {
     measured_profile: {
@@ -198,22 +196,12 @@
     return out;
   }
 
-  // Colour belongs to the compartment for the whole session. With more
-  // compartments than distinguishable hues, the largest ones in the first
-  // computational layer (else the first layer) take a hue and the rest stay
-  // neutral; a selected compartment is always emphasised regardless.
+  // Colour belongs to the compartment for the whole session: slot n for the
+  // nth compartment in the dataset, whatever is filtered or selected. Names are
+  // always shown beside the colour, so colour is never the only cue.
+  var COLOR_SLOTS = 20;
   function assignColors(model) {
-    var lead = model.layers.filter(function (l) { return l.evidence_type === "computational_assignment"; })[0] || model.layers[0];
-    var counts = lead ? layerCounts(model, lead.id) : {};
-    var ranked = model.compartments.map(function (c, i) {
-      var n = counts[c.id] ? counts[c.id].assigned + counts[c.id].below_threshold : 0;
-      return { id: c.id, n: n, i: i };
-    });
-    if (ranked.length > MAX_COLORS) {
-      ranked.sort(function (a, b) { return b.n - a.n || a.i - b.i; });
-      ranked = ranked.slice(0, MAX_COLORS).sort(function (a, b) { return a.i - b.i; });
-    }
-    ranked.forEach(function (r, slot) { model.colors[r.id] = slot + 1; });
+    model.compartments.forEach(function (c, i) { if (i < COLOR_SLOTS) model.colors[c.id] = i + 1; });
   }
 
   // Agreement means the two layers' compartment sets share a member. Calls
@@ -446,39 +434,63 @@
 
   /* ---------- the explorer ---------- */
 
+  var PAGE = 50;
+  var NAV_RESET = { filter: "", shown: PAGE, sort: null, facet: null, named: null, includeOther: false, gene: null };
+
+  function shortLabel(layer) { return layer.short_label || layer.label; }
+  function plural(n, word) { return n.toLocaleString() + " " + word + (n === 1 ? "" : "s"); }
+
   function Explorer(el, model, adapter, options) {
     this.el = el;
     this.model = model;
     this.adapter = adapter;
     this.options = options;
+    this.panelCache = {};
     var first = model.layers.filter(function (l) { return l.evidence_type === "computational_assignment"; })[0] || model.layers[0];
     var init = options.initial || {};
-    this.state = {
+    var st = this.state = {
       layer: model.layerById[init.layer] ? init.layer : (first ? first.id : null),
-      compartment: model.compById[init.compartment] ? init.compartment : null,
-      status: "all", query: "", gene: init.gene || null,
-      view: init.view === "unassigned" ? "unassigned" : "browse", sort: null, compSort: "source", analysis: null,
-      entity: model.entityById[init.entity] ? init.entity : null,
-      embedding: model.capabilities.embeddings[0] || null,
-      compare: null, page: 0
+      view: "home", compartment: null, entity: null, query: "", gene: null,
+      filter: "", shown: PAGE, sort: null, facet: null, named: null, includeOther: false,
+      embedding: model.capabilities.embeddings[0] || null, compare: null
     };
-    if (this.state.gene && !this.state.entity && model.geneIndex[this.state.gene]) {
-      this.state.entity = model.geneIndex[this.state.gene][0];
+    if (model.compById[init.compartment]) { st.view = "compartment"; st.compartment = init.compartment; }
+    else if (init.view === "unassigned") st.view = "unassigned";
+    if (model.entityById[init.entity]) st.entity = init.entity;
+    else if (init.gene && model.geneIndex[init.gene]) {
+      st.entity = model.geneIndex[init.gene][0];
+      if (model.geneIndex[init.gene].length > 1) { st.view = "search"; st.gene = init.gene; }
     }
     this.build();
   }
 
   Explorer.prototype.set = function (patch) {
-    var st = this.state, k;
-    for (k in patch) st[k] = patch[k];
-    if (!("analysis" in patch) && !("page" in patch) && !("entity" in patch && Object.keys(patch).length === 1)) st.analysis = null;
-    if (!("page" in patch) && !("entity" in patch && Object.keys(patch).length === 1)) st.page = 0;
-    this.render();
-    if ("entity" in patch && this.options.onSelect) this.options.onSelect(st.entity, this);
+    var st = this.state, keys = Object.keys(patch), before = st.entity;
+    keys.forEach(function (k) { st[k] = patch[k]; });
+    if (keys.length === 1 && keys[0] === "entity") {
+      this.markSelected();
+      this.renderDrawer(before == null);
+      this.drawMap();
+    } else this.render();
+    if (keys.indexOf("entity") >= 0 && this.options.onSelect) this.options.onSelect(st.entity, this);
+    if (this.options.onState) this.options.onState({ view: st.view, compartment: st.compartment, entity: st.entity, gene: st.gene, query: st.query, layer: st.layer }, this);
   };
+
+  // Move to another view, clearing list filters that belonged to the old one.
+  Explorer.prototype.go = function (patch) {
+    var full = {}, k;
+    for (k in NAV_RESET) full[k] = NAV_RESET[k];
+    for (k in patch) full[k] = patch[k];
+    this.set(full);
+  };
+
+  Explorer.prototype.home = function () { this.go({ view: "home", compartment: null, query: "" }); };
+  Explorer.prototype.showCompartment = function (id) { if (this.model.compById[id]) this.go({ view: "compartment", compartment: id, query: "" }); };
+  Explorer.prototype.showUnassigned = function () { this.go({ view: "unassigned", compartment: null, query: "" }); };
 
   Explorer.prototype.destroy = function () {
     root.removeEventListener("resize", this.onResize);
+    document.removeEventListener("keydown", this.onKey);
     this.el.textContent = "";
     this.el.classList.remove("sx-root");
     this.el.removeAttribute("data-sx-theme");
@@ -486,17 +498,128 @@
 
   Explorer.prototype.showGene = function (geneId) {
     var ids = this.model.geneIndex[geneId] || [];
-    this.set({ gene: geneId, compartment: null, status: "all", query: "", entity: ids[0] || null });
+    if (ids.length > 1) this.go({ view: "search", gene: geneId, query: "", compartment: null, entity: ids[0] });
+    else if (ids.length) this.set({ entity: ids[0] });
     return ids.length;
   };
 
   Explorer.prototype.select = function (entityId) {
-    if (this.model.entityById[entityId]) this.set({ entity: entityId });
+    if (entityId == null || this.model.entityById[entityId]) this.set({ entity: entityId });
   };
 
   Explorer.prototype.geneText = function (g) {
     return (this.adapter.geneLabel && this.adapter.geneLabel(g)) || g;
   };
+
+  Explorer.prototype.entityTitle = function (e) {
+    var self = this, genes = entityGenes(e);
+    if (!genes.length) return e.label || e.members[0].id;
+    var names = genes.slice(0, 2).map(function (g) { return self.geneText(g); }).join(", ");
+    return names + (genes.length > 2 ? " +" + (genes.length - 2) : "");
+  };
+
+  Explorer.prototype.entityDescription = function (e) {
+    return e.label && entityGenes(e).length ? e.label : (e.members[0].description || "");
+  };
+
+  Explorer.prototype.dot = function (compId, hollow) {
+    var color = this.color(compId);
+    return h("span", { class: "sx-dot" + (hollow ? " sx-dot-hollow" : ""), style: hollow ? "border-color:" + color : "background:" + color, "aria-hidden": "true" });
+  };
+
+  /* ----- search ----- */
+
+  // Ranked matches: exact gene name, exact identifier, then prefixes, then text.
+  Explorer.prototype.matches = function (query) {
+    var q = (query || "").trim().toLowerCase(), self = this, model = this.model;
+    if (q.length < 2) return [];
+    if (!this.index) {
+      this.index = model.entities.map(function (e) {
+        var names = entityGenes(e).map(function (g) { return String(self.geneText(g)).toLowerCase(); });
+        var ids = [e.id.toLowerCase()];
+        e.members.forEach(function (m) { ids.push(m.id.toLowerCase()); if (m.gene != null) ids.push(String(m.gene).toLowerCase()); });
+        return { e: e, names: names, ids: ids, blob: model.blobs[e.id] || (model.blobs[e.id] = searchBlob(e, self.adapter)) };
+      });
+    }
+    var bare = q.replace(/\.\d+$/, "");
+    var hits = [];
+    this.index.forEach(function (row, i) {
+      var rank = 9;
+      if (row.names.indexOf(q) >= 0) rank = 0;
+      else if (row.ids.indexOf(q) >= 0 || row.ids.some(function (x) { return x.replace(/\.\d+$/, "") === bare; })) rank = 1;
+      else if (row.names.some(function (x) { return x.indexOf(q) === 0; })) rank = 2;
+      else if (row.ids.some(function (x) { return x.indexOf(q) === 0; })) rank = 3;
+      else if (row.blob.indexOf(q) >= 0) rank = 4;
+      if (rank < 9) hits.push({ e: row.e, rank: rank, i: i });
+    });
+    hits.sort(function (a, b) { return a.rank - b.rank || a.i - b.i; });
+    return hits;
+  };
+
+  Explorer.prototype.closeSuggestions = function () {
+    this.suggestBox.hidden = true;
+    this.suggestBox.textContent = "";
+    this.search.setAttribute("aria-expanded", "false");
+    this.search.removeAttribute("aria-activedescendant");
+    this.active = -1;
+  };
+
+  Explorer.prototype.renderSuggestions = function () {
+    var self = this, hits = this.matches(this.search.value), q = this.search.value.trim();
+    this.suggestions = hits.slice(0, 8);
+    this.active = -1;
+    this.suggestBox.textContent = "";
+    if (q.length < 2) { this.closeSuggestions(); return; }
+    this.suggestBox.hidden = false;
+    this.search.setAttribute("aria-expanded", "true");
+    if (!hits.length) {
+      this.suggestBox.appendChild(h("li", { class: "sx-suggest-none", role: "option", "aria-disabled": "true", text: "No protein matches “" + q + "”." }));
+      return;
+    }
+    this.suggestions.forEach(function (hit, i) {
+      var e = hit.e, a = (self.model.byLayer[self.state.layer] || {})[e.id], call = finalCall(a);
+      self.suggestBox.appendChild(h("li", { id: "sx-opt-" + i, role: "option", "data-entity": e.id, class: "sx-suggest",
+        onmousedown: function (ev) { ev.preventDefault(); self.pick(e); } }, [
+        h("span", { class: "sx-suggest-main" }, [h("strong", { text: self.entityTitle(e) }), h("span", { class: "sx-muted", text: " " + self.entityDescription(e) })]),
+        h("span", { class: "sx-suggest-loc" }, call != null ? [self.dot(call), self.model.compById[call].label] : [a ? "No final call" : "Not detected"])
+      ]));
+    });
+    if (hits.length > this.suggestions.length) {
+      this.suggestBox.appendChild(h("li", { class: "sx-suggest sx-suggest-all", role: "option", id: "sx-opt-all", "data-sx": "all-results",
+        onmousedown: function (ev) { ev.preventDefault(); self.showResults(); } }, ["See all " + hits.length.toLocaleString() + " matches"]));
+    }
+  };
+
+  Explorer.prototype.pick = function (entity) {
+    this.closeSuggestions();
+    this.set({ entity: entity.id });
+  };
+
+  Explorer.prototype.showResults = function () {
+    var q = this.search.value.trim();
+    this.closeSuggestions();
+    this.go({ view: "search", query: q, compartment: null });
+  };
+
+  Explorer.prototype.searchKey = function (ev) {
+    var options = this.suggestBox.querySelectorAll(".sx-suggest"), n = options.length;
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+      if (!n) return;
+      ev.preventDefault();
+      this.active = (this.active + (ev.key === "ArrowDown" ? 1 : -1) + n + (this.active < 0 && ev.key === "ArrowUp" ? 1 : 0)) % n;
+      Array.prototype.forEach.call(options, function (o, i) { o.classList.toggle("sx-on", i === this.active); }, this);
+      this.search.setAttribute("aria-activedescendant", options[this.active].id);
+    } else if (ev.key === "Enter") {
+      ev.preventDefault();
+      var hits = this.matches(this.search.value);
+      if (this.active >= 0 && options[this.active]) {
+        if (options[this.active].id === "sx-opt-all") this.showResults(); else this.pick(this.suggestions[this.active].e);
+      } else if (hits.length === 1 || (hits.length > 1 && hits[0].rank <= 1 && hits[1].rank > 1)) this.pick(hits[0].e);
+      else if (hits.length) this.showResults();
+    } else if (ev.key === "Escape") this.closeSuggestions();
+  };
+
+  /* ----- skeleton ----- */
 
   Explorer.prototype.build = function () {
     var self = this, ds = this.model.bundle.dataset, el = this.el;
@@ -504,124 +627,517 @@
     el.classList.add("sx-root");
     el.setAttribute("data-sx-theme", { dark: "dark", auto: "auto" }[this.options.theme] || "light");
     var pending = null;
-    this.onResize = function () {
-      clearTimeout(pending);
-      pending = setTimeout(function () { self.drawMap(); }, 120);
-    };
+    this.onResize = function () { clearTimeout(pending); pending = setTimeout(function () { self.drawMap(); }, 120); };
     root.addEventListener("resize", this.onResize);
+    this.onKey = function (ev) {
+      if (!self.el.isConnected) { document.removeEventListener("keydown", self.onKey); return; }
+      if (ev.key === "Escape" && self.state.entity != null && document.activeElement !== self.search) self.select(null);
+    };
+    document.addEventListener("keydown", this.onKey);
 
-    var notices = [];
-    if (ds.synthetic) notices.push(h("p", { class: "sx-notice", "data-sx": "synthetic", text: "Synthetic demonstration data. Not a biological result." }));
-    if (ds.distribution && ds.distribution.status !== "public") {
-      notices.push(h("p", { class: "sx-notice sx-notice-strong", "data-sx": "local-only",
-        text: "Local copy, not for distribution. " + (ds.distribution.reason || "") }));
-    }
-    (ds.notices || []).forEach(function (text) {
-      notices.push(h("p", { class: "sx-notice", "data-sx": "notice", text: text }));
-    });
-    var cite = h("p", { class: "sx-cite" }, [
-      document.createTextNode(ds.citation.text + " "),
-      ds.citation.url ? link("Source", ds.citation.url) : null,
-      ds.citation.peer_reviewed === false ? h("span", { class: "sx-muted", text: " Preprint, not peer reviewed." }) : null
-    ]);
-    var lic = h("p", { class: "sx-muted", "data-sx": "license" }, [
-      document.createTextNode("License: "), link(ds.license.name || ds.license.id, ds.license.url),
-      document.createTextNode(". " + ds.attribution)
-    ]);
-    var m = ds.mapping;
-    var prov = h("details", { class: "sx-prov", "data-sx": "provenance" }, [
-      h("summary", { text: "Provenance and identifier mapping" }),
-      h("p", { text: "Built " + ds.provenance.built + " by " + ds.provenance.builder + "." }),
-      h("ul", {}, ds.provenance.sources.map(function (src) {
-        return h("li", { text: src.name + ": " + (src.description || "") + (src.sha256 ? " (sha256 " + src.sha256.slice(0, 12) + ")" : "") });
-      })),
-      h("ol", {}, ds.provenance.steps.map(function (t) { return h("li", { text: t }); })),
-      h("p", { "data-sx": "mapping", text: m.entities_total + " protein groups: " + m.entities_mapped + " fully mapped to genes, " +
-        m.entities_partial + " partly mapped, " + m.entities_unmapped + " unmapped. " + m.entities_multi_gene +
-        " groups span more than one gene. " + m.genes_total + " genes in total. Method: " + m.method }),
-      m.notes ? h("p", { class: "sx-muted", text: m.notes }) : null,
-      h("p", { text: "Compartment vocabulary:" }),
-      h("ul", { "data-sx": "vocabulary" }, this.model.compartments.map(function (c) {
-        return h("li", { text: c.label + (c.ontology_id ? " = " + c.ontology_id : " (no ontology term)") +
-          (c.ontology_note ? ". " + c.ontology_note : "") + (c.description ? " " + c.description : "") });
-      }))
-    ]);
-    el.appendChild(h("header", { class: "sx-head" }, [
+    var flags = [];
+    if (ds.synthetic) flags.push(h("span", { class: "sx-flag", "data-sx": "synthetic", text: "Synthetic demonstration data" }));
+    if (ds.distribution && ds.distribution.status !== "public") flags.push(h("span", { class: "sx-flag sx-flag-strong", "data-sx": "local-only", text: "Local copy, not for distribution" }));
+    (ds.notices || []).slice(0, 1).forEach(function (text) { flags.push(h("span", { class: "sx-flag", "data-sx": "notice", text: text })); });
+
+    this.subtitle = h("p", { class: "sx-sub", "data-sx": "summary" });
+    this.search = h("input", { type: "search", class: "sx-search-input", "data-sx": "search", role: "combobox", autocomplete: "off", spellcheck: "false",
+      "aria-label": "Search for a gene or protein", "aria-expanded": "false", "aria-controls": "sx-suggestions", "aria-autocomplete": "list",
+      placeholder: this.options.searchPlaceholder || "Search a gene or protein by name or identifier",
+      oninput: function () { self.renderSuggestions(); }, onkeydown: function (ev) { self.searchKey(ev); },
+      onfocus: function () { if (this.value.trim().length >= 2) self.renderSuggestions(); },
+      onblur: function () { setTimeout(function () { self.closeSuggestions(); }, 120); } });
+    this.suggestBox = h("ul", { id: "sx-suggestions", class: "sx-suggestions", role: "listbox", "data-sx": "suggestions", hidden: true });
+    var cite = ds.citation || {};
+    el.appendChild(h("header", { class: "sx-top" }, [
+      flags.length ? h("div", { class: "sx-flags" }, flags) : null,
       h("h2", { class: "sx-title", text: ds.title }),
-      h("p", { class: "sx-sub", text: ds.organism.name + (ds.organism.condition ? ", " + ds.organism.condition : "") })
-    ].concat(notices, [ds.description ? h("p", { text: ds.description }) : null, cite, lic, prov])));
-
-    this.evidenceEl = h("section", { class: "sx-evidence", "data-sx": "evidence", "aria-label": "Evidence in this dataset" });
-    el.appendChild(this.evidenceEl);
-
-    this.layerSelect = h("select", { id: "sx-layer", "data-sx": "layer-select", onchange: function () {
-      self.set({ layer: this.value, compartment: null, compare: null, sort: null, view: "browse" });
-    } });
-    this.statusSelect = h("select", { "data-sx": "status-select", onchange: function () { self.set({ status: this.value }); } }, [
-      h("option", { value: "all", text: "All protein groups" }),
-      h("option", { value: "assigned", text: "Assigned only" }),
-      h("option", { value: "below_threshold", text: "Below threshold only" })
-    ]);
-    this.statusWrap = h("label", {}, [h("span", { text: "Show" }), this.statusSelect]);
-    var timer = null;
-    this.search = h("input", { type: "search", "data-sx": "search", placeholder: "Protein, gene or description", "aria-label": "Search", oninput: function () {
-      var v = this.value;
-      clearTimeout(timer);
-      timer = setTimeout(function () { self.set({ query: v }); }, 150);
-    } });
-    el.appendChild(h("div", { class: "sx-controls" }, [
-      h("label", {}, [h("span", { text: "Colour and filter by" }), this.layerSelect]),
-      this.statusWrap,
-      h("label", { class: "sx-grow" }, [h("span", { text: "Search" }), this.search])
+      this.subtitle,
+      h("p", { class: "sx-source" }, [document.createTextNode(cite.text.split(". ")[0] + (cite.peer_reviewed === false ? ". Preprint, not peer reviewed. " : ". ")),
+        cite.url ? link("Publication", cite.url) : null]),
+      h("div", { class: "sx-search" }, [this.search, this.suggestBox]),
+      this.options.searchHint ? h("p", { class: "sx-hint", text: this.options.searchHint }) : null
     ]));
-    this.body = h("div", { class: "sx-body" });
-    el.appendChild(this.body);
+    this.main = h("main", { class: "sx-main", "data-sx": "main" });
+    el.appendChild(this.main);
+    this.about = h("details", { class: "sx-about", "data-sx": "about", ontoggle: function () { if (this.open) self.renderAbout(); } }, [
+      h("summary", { text: "About this dataset: methods, evidence and provenance" }), h("div", { class: "sx-about-body" })
+    ]);
+    el.appendChild(this.about);
+    this.drawer = h("aside", { class: "sx-drawer", "data-sx": "drawer", role: "dialog", "aria-label": "Protein details", hidden: true });
+    el.appendChild(this.drawer);
     this.tip = h("div", { class: "sx-tip", hidden: true });
     el.appendChild(this.tip);
-    this.refreshLayers();
     this.render();
   };
 
-  Explorer.prototype.refreshLayers = function () {
-    var self = this, model = this.model, cap = model.capabilities, b = model.bundle;
-    this.layerSelect.textContent = "";
-    LAYER_EVIDENCE.forEach(function (ev) {
-      var layers = model.layers.filter(function (l) { return l.evidence_type === ev; });
-      if (!layers.length) return;
-      self.layerSelect.appendChild(h("optgroup", { label: EVIDENCE[ev].label }, layers.map(function (l) {
-        return h("option", { value: l.id, text: l.label });
-      })));
-    });
-    this.layerSelect.value = this.state.layer;
+  Explorer.prototype.refreshLayers = function () { this.index = null; };
 
-    var rows = EVIDENCE_ORDER.map(function (ev) {
-      var items;
-      if (ev === "measured_profile") {
-        items = cap.profiles
-          ? [h("li", { text: Object.keys(b.profiles.values).length + " profiles across " + b.fractions.length + " fractions, " + SOURCE[b.profiles.source] + "." })]
-          : [h("li", { class: "sx-muted", "data-sx": "no-profiles", text: cap.reasons.profiles + " The profile view is unavailable." })];
-        if (cap.embeddings.length) {
-          cap.embeddings.forEach(function (id) {
-            var e = model.embeddingById[id];
-            items.push(h("li", { text: "Map: " + e.label + " (" + e.method.name + ", " + SOURCE[e.source] + ")." }));
-          });
-        } else {
-          items.push(h("li", { class: "sx-muted", "data-sx": "no-map", text: cap.reasons.embeddings + " The map view is unavailable." }));
-        }
-      } else {
-        var layers = model.layers.filter(function (l) { return l.evidence_type === ev; });
-        items = layers.length ? layers.map(function (l) {
-          return h("li", {}, [h("strong", { text: l.label }), document.createTextNode(": " + Object.keys(model.byLayer[l.id]).length +
-            " protein groups, " + SOURCE[l.source] + ". " + (l.method.description || l.method.name))]);
-        }) : [h("li", { class: "sx-muted", text: "None in this dataset." })];
-      }
-      return h("div", { class: "sx-ev-row", "data-evidence": ev }, [
-        h("div", {}, [badge(ev)]), h("div", {}, [h("p", { class: "sx-muted", text: EVIDENCE[ev].text }), h("ul", {}, items)])
+  Explorer.prototype.color = function (compId) {
+    var slot = this.model.colors[compId];
+    return slot ? cssVar(this.el, "--sx-c" + slot, "#888") : cssVar(this.el, "--sx-neutral", "#9a9993");
+  };
+
+  Explorer.prototype.panel = function (name, title, layerOrEvidence, kids) {
+    var ev = typeof layerOrEvidence === "string" ? layerOrEvidence : layerOrEvidence && layerOrEvidence.evidence_type;
+    return h("section", { class: "sx-panel", "data-sx": name }, [
+      h("h3", {}, [document.createTextNode(title + " "), ev ? badge(ev) : null])
+    ].concat(kids));
+  };
+
+  /* ----- rendering ----- */
+
+  Explorer.prototype.render = function () {
+    var st = this.state, model = this.model, layer = model.layerById[st.layer];
+    this.main.textContent = "";
+    this.canvas = null;
+    if (!layer) { this.main.appendChild(h("p", { text: "This dataset has no localization assignments." })); return; }
+    var map = model.byLayer[layer.id], counts = layerCounts(model, layer.id), nAssigned = 0, nUnassigned = 0;
+    Object.keys(map).forEach(function (id) { if (map[id].status === "assigned") nAssigned++; else nUnassigned++; });
+    this.layerInfo = { layer: layer, map: map, counts: counts, assigned: nAssigned, unassigned: nUnassigned, word: statusLabel(layer, "below_threshold") };
+    this.training = trainingSet(model, layer.id);
+    if (st.view === "unassigned" && !nUnassigned) st.view = "home";
+    var detected = model.entities.filter(function (e) { return e.detected !== false; }).length;
+    this.subtitle.textContent = model.bundle.dataset.organism.name + ". " + plural(detected, "protein group") + " detected, " +
+      nAssigned.toLocaleString() + " assigned to " + plural(model.compartments.length, "compartment") +
+      (nUnassigned ? ", " + nUnassigned.toLocaleString() + " without a final call." : ".");
+    this.computeList();
+    var view = { home: this.homeView, compartment: this.compartmentView, unassigned: this.unassignedView, search: this.searchView }[st.view];
+    var kids = view.call(this);
+    for (var i = 0; i < kids.length; i++) if (kids[i]) this.main.appendChild(kids[i]);
+    this.renderRows();
+    this.renderDrawer(false);
+    if (this.about.open) this.renderAbout();
+    this.drawMap();
+  };
+
+  Explorer.prototype.homeView = function () {
+    var self = this, model = this.model, info = this.layerInfo, cap = model.capabilities, max = 1;
+    model.compartments.forEach(function (c) { max = Math.max(max, info.counts[c.id].assigned); });
+    var cards = model.compartments.map(function (c) {
+      var n = info.counts[c.id].assigned;
+      return h("button", { type: "button", class: "sx-card", "data-compartment": c.id, title: c.description || null,
+        onclick: function () { self.showCompartment(c.id); } }, [
+        h("span", { class: "sx-card-name" }, [self.dot(c.id), c.label]),
+        h("span", { class: "sx-card-n", text: n.toLocaleString() }),
+        h("span", { class: "sx-card-unit", text: n === 1 ? "protein" : "proteins" }),
+        h("span", { class: "sx-meter" }, [h("i", { style: "width:" + Math.max(2, n / max * 100) + "%;background:" + self.color(c.id) })])
       ]);
     });
-    this.evidenceEl.textContent = "";
-    this.evidenceEl.appendChild(h("h3", { text: "Evidence in this dataset" }));
-    rows.forEach(function (r) { self.evidenceEl.appendChild(r); });
+    if (info.unassigned) {
+      cards.push(h("button", { type: "button", class: "sx-card sx-card-open", "data-view": "unassigned", onclick: function () { self.showUnassigned(); } }, [
+        h("span", { class: "sx-card-name" }, [h("span", { class: "sx-dot sx-dot-hollow", "aria-hidden": "true" }), "Unassigned"]),
+        h("span", { class: "sx-card-n", text: info.unassigned.toLocaleString() }),
+        h("span", { class: "sx-card-unit", text: "detected, no final call" }),
+        h("span", { class: "sx-card-cta", text: "Explore these proteins →" })
+      ]));
+    }
+    var missing = [];
+    if (!cap.profiles) missing.push(h("li", { "data-sx": "no-profiles", text: "Fractionation profile of each protein" }));
+    if (!cap.embeddings.length) missing.push(h("li", { "data-sx": "no-map", text: "Spatial map of all proteins" }));
+    var pending = missing.length ? h("section", { class: "sx-pending", "data-sx": "pending" }, [
+      h("h3", { text: "Awaiting the fractionation data" }),
+      h("ul", {}, missing),
+      h("p", { text: "These views need the measured abundance of each protein across the fractions, which this dataset does not include yet. They will appear here when the data are added. Nothing is drawn in their place." })
+    ]) : null;
+    return [
+      h("div", { class: "sx-section-head" }, [h("h3", { text: "Where proteins were found" }),
+        h("p", { class: "sx-muted", text: "Select a compartment to see its proteins." })]),
+      h("div", { class: "sx-cards", "data-sx": "cards" }, cards),
+      cap.embeddings.length ? this.mapPanel(info.layer) : null,
+      pending
+    ];
+  };
+
+  Explorer.prototype.crumbs = function () {
+    var self = this, st = this.state, info = this.layerInfo;
+    var options = [h("option", { value: "", text: "Jump to…" })].concat(this.model.compartments.map(function (c) {
+      return h("option", { value: c.id, text: c.label + " (" + info.counts[c.id].assigned + ")", selected: st.view === "compartment" && st.compartment === c.id });
+    }));
+    if (info.unassigned) options.push(h("option", { value: "__unassigned", text: "Unassigned (" + info.unassigned + ")", selected: st.view === "unassigned" }));
+    return h("nav", { class: "sx-crumbs", "aria-label": "Compartments" }, [
+      h("button", { type: "button", class: "sx-back", "data-sx": "home", text: "← All compartments", onclick: function () { self.home(); } }),
+      h("label", { class: "sx-jump" }, [h("span", { class: "sx-visually-hidden", text: "Jump to a compartment" }),
+        h("select", { "data-sx": "jump", onchange: function () {
+          if (this.value === "__unassigned") self.showUnassigned(); else if (this.value) self.showCompartment(this.value);
+        } }, options)])
+    ]);
+  };
+
+  Explorer.prototype.compartmentView = function () {
+    var self = this, st = this.state, info = this.layerInfo, c = this.model.compById[st.compartment], n = info.counts[c.id];
+    var toggle = n.below_threshold ? h("button", { type: "button", class: "sx-toggle", "data-sx": "include-other", "aria-pressed": st.includeOther ? "true" : "false",
+      text: st.includeOther ? "Hide the " + n.below_threshold + " without a final call" : "Also show " + n.below_threshold + " closest to " + c.label + " without a final call",
+      onclick: function () { self.set({ includeOther: !st.includeOther, shown: PAGE }); } }) : null;
+    var side = this.sidePanel(c);
+    return [
+      this.crumbs(),
+      h("header", { class: "sx-view-head" }, [
+        h("h3", { class: "sx-view-title" }, [this.dot(c.id), c.label]),
+        h("p", { class: "sx-view-count", "data-sx": "headline", text: plural(n.assigned, "protein") + " assigned" }),
+        c.description ? h("p", { class: "sx-muted", text: c.description }) : null,
+        toggle
+      ]),
+      h("div", { class: "sx-cols" + (side ? "" : " sx-cols-one") }, [this.listCard(), side])
+    ];
+  };
+
+  // The host's summary of a compartment (for example enriched functions).
+  Explorer.prototype.sidePanel = function (c) {
+    if (!this.adapter.compartmentPanel) return null;
+    var self = this, key = this.state.layer + "|" + c.id, box = h("aside", { class: "sx-side", "data-sx": "side" });
+    if (this.panelCache[key]) { box.appendChild(this.panelCache[key]); return box; }
+    box.appendChild(h("p", { class: "sx-muted", text: "Loading…" }));
+    var done = function (node) {
+      if (!node || node.nodeType !== 1) { box.textContent = ""; return; }
+      self.panelCache[key] = node;
+      if (box.isConnected || !self.main.querySelector("[data-sx=side]")) { box.textContent = ""; box.appendChild(node); }
+    };
+    var out;
+    try { out = this.adapter.compartmentPanel(this.context(c.id), this); } catch (err) { out = null; }
+    if (out && typeof out.then === "function") out.then(done, function () { box.textContent = ""; });
+    else done(out);
+    return box;
+  };
+
+  Explorer.prototype.unassignedView = function () {
+    var self = this, st = this.state, model = this.model, info = this.layerInfo;
+    var ids = Object.keys(info.map).filter(function (id) { return info.map[id].status !== "assigned"; });
+    var facets = model.layers.filter(function (l) { return l.id !== info.layer.id; }).map(function (l) {
+      var m = model.byLayer[l.id], n = 0;
+      ids.forEach(function (id) { if (calls(m[id]).length) n++; });
+      return { layer: l, n: n };
+    }).filter(function (f) { return f.n > 0; });
+    var side = facets.length ? h("aside", { class: "sx-side", "data-sx": "other-evidence" }, [
+      h("h4", { text: "What is already known" }),
+      h("p", { class: "sx-muted", text: "Unassigned proteins that carry a location in another source. Select one to list them." }),
+      h("ul", { class: "sx-facets" }, facets.map(function (f) {
+        var on = st.facet === f.layer.id;
+        return h("li", {}, [h("button", { type: "button", class: "sx-facet" + (on ? " sx-on" : ""), "data-facet": f.layer.id, "aria-pressed": on ? "true" : "false",
+          onclick: function () { self.set({ facet: on ? null : f.layer.id, shown: PAGE }); } }, [
+          h("span", { class: "sx-facet-n", text: f.n.toLocaleString() }), h("span", { class: "sx-facet-label" }, [document.createTextNode(f.layer.label), badge(f.layer.evidence_type)])
+        ])]);
+      })),
+      st.facet ? h("button", { type: "button", class: "sx-back", "data-sx": "clear-facet", text: "Show all unassigned", onclick: function () { self.set({ facet: null, shown: PAGE }); } }) : null
+    ]) : null;
+    return [
+      this.crumbs(),
+      h("header", { class: "sx-view-head" }, [
+        h("h3", { class: "sx-view-title" }, [h("span", { class: "sx-dot sx-dot-hollow", "aria-hidden": "true" }), "Unassigned"]),
+        h("p", { class: "sx-view-count", "data-sx": "headline", text: plural(info.unassigned, "protein group") + " detected without a final call" }),
+        h("p", { class: "sx-muted sx-measure", "data-sx": "unassigned-lede", text: "These proteins were measured, but the published result leaves their location open (“" + info.word +
+          "”). The closest class is shown for reference only. It is not an assignment." })
+      ]),
+      h("div", { class: "sx-cols" + (side ? "" : " sx-cols-one") }, [this.listCard(), side])
+    ];
+  };
+
+  Explorer.prototype.searchView = function () {
+    var st = this.state, n = this.filtered.length;
+    var title = st.gene ? this.geneText(st.gene) + " is in " + plural(n, "protein group") : plural(n, "protein group") + " match “" + st.query + "”";
+    return [
+      this.crumbs(),
+      h("header", { class: "sx-view-head" }, [h("h3", { class: "sx-view-title", text: "Search results" }), h("p", { class: "sx-view-count", "data-sx": "headline", text: title })]),
+      h("div", { class: "sx-cols sx-cols-one" }, [this.listCard()])
+    ];
+  };
+
+  /* ----- the protein list ----- */
+
+  Explorer.prototype.computeList = function () {
+    var st = this.state, model = this.model, list;
+    if (st.view === "compartment") {
+      list = filterEntities(model, { layer: st.layer, compartment: st.compartment, status: st.includeOther ? "all" : "assigned", query: st.filter }, this.adapter);
+    } else if (st.view === "unassigned") {
+      list = filterEntities(model, { layer: st.layer, view: "unassigned", compartment: st.named, query: st.filter }, this.adapter);
+      if (st.facet && model.byLayer[st.facet]) {
+        var m = model.byLayer[st.facet];
+        list = list.filter(function (e) { return calls(m[e.id]).length > 0; });
+      }
+    } else if (st.view === "search") {
+      list = st.gene ? (model.geneIndex[st.gene] || []).map(function (id) { return model.entityById[id]; }) : this.matches(st.query).map(function (x) { return x.e; });
+    } else list = model.entities;
+    var sort = st.sort;
+    if (!sort && st.view !== "search" && st.view !== "home" && model.layerById[st.layer].score) sort = { key: "s:" + st.layer, dir: "desc" };
+    this.filtered = st.view === "home" ? list : sortEntities(model, list, sort, this.adapter);
+  };
+
+  Explorer.prototype.listCard = function () {
+    var self = this, st = this.state, info = this.layerInfo, layer = info.layer, timer = null;
+    var showCall = st.view !== "compartment" || st.includeOther;
+    var tools = [];
+    if (st.view !== "search") {
+      var input = h("input", { type: "search", "data-sx": "filter", class: "sx-filter", placeholder: "Filter this list", "aria-label": "Filter this list", value: st.filter,
+        oninput: function () {
+          var v = this.value;
+          clearTimeout(timer);
+          timer = setTimeout(function () { st.filter = v; st.shown = PAGE; self.computeList(); self.renderRows(); }, 140);
+        } });
+      tools.push(input);
+    }
+    if (st.view === "unassigned") {
+      var named = {};
+      Object.keys(info.map).forEach(function (id) { var a = info.map[id]; if (a.status !== "assigned" && a.compartment != null) named[a.compartment] = (named[a.compartment] || 0) + 1; });
+      tools.push(h("select", { "data-sx": "named", "aria-label": "Closest class", onchange: function () { self.set({ named: this.value || null, shown: PAGE }); } },
+        [h("option", { value: "", text: "Any closest class" })].concat(this.model.compartments.filter(function (c) { return named[c.id]; }).map(function (c) {
+          return h("option", { value: c.id, text: "Closest to " + c.label + " (" + named[c.id] + ")", selected: st.named === c.id });
+        }))));
+    }
+    if (layer.score && st.view !== "search") {
+      var current = st.sort ? st.sort.key + "|" + st.sort.dir : "s:" + layer.id + "|desc";
+      tools.push(h("select", { "data-sx": "sort", "aria-label": "Sort", onchange: function () {
+        var p = this.value.split("|");
+        self.set({ sort: { key: p[0], dir: p[1] }, shown: PAGE });
+      } }, [["s:" + layer.id + "|desc", "Highest score first"], ["s:" + layer.id + "|asc", "Lowest score first"], ["genes|asc", "Gene name, A to Z"]].map(function (o) {
+        return h("option", { value: o[0], text: o[1], selected: current === o[0] });
+      })));
+    }
+    tools.push(h("span", { class: "sx-grow" }));
+    tools.push(h("span", { class: "sx-count", "data-sx": "count", "aria-live": "polite" }));
+    tools.push(h("button", { type: "button", class: "sx-quiet", "data-sx": "export", text: "Download (TSV)", onclick: function () { self.exportTSV(); } }));
+    this.rows = h("tbody", { "data-sx": "rows" });
+    this.more = h("button", { type: "button", class: "sx-more", "data-sx": "more", onclick: function () { st.shown += PAGE; self.renderRows(); } });
+    var head = [h("th", { scope: "col", text: "Protein" })];
+    if (showCall) head.push(h("th", { scope: "col", text: st.view === "unassigned" ? "Closest class" : "Location" }));
+    if (layer.score) head.push(h("th", { scope: "col", class: "sx-num", title: layer.score.description || "", text: "Score (" + layer.score.name + ")" }));
+    head.push(h("th", { scope: "col", text: "Other evidence" }));
+    this.listShowsCall = showCall;
+    return h("section", { class: "sx-list-card", "data-sx": "list" }, [
+      h("div", { class: "sx-toolbar" }, tools),
+      h("div", { class: "sx-scroll" }, [h("table", { class: "sx-list" }, [h("thead", {}, [h("tr", {}, head)]), this.rows])]),
+      this.more
+    ]);
+  };
+
+  // Short tags for what the other curated sources say about one protein group.
+  Explorer.prototype.evidenceChips = function (e) {
+    var model = this.model, info = this.layerInfo, call = finalCall(info.map[e.id]), out = [];
+    model.layers.forEach(function (l) {
+      if (l.id === info.layer.id || l.evidence_type !== "curated_annotation") return;
+      var cs = calls(model.byLayer[l.id][e.id]);
+      if (!cs.length) return;
+      var agrees = call != null && cs.indexOf(call) >= 0, isInput = (info.layer.trained_on || []).indexOf(l.id) >= 0;
+      var names = cs.map(function (c) { return model.compById[c].label; }).join(", ");
+      out.push(h("span", { class: "sx-chip" + (agrees ? " sx-chip-agree" : ""), "data-chip": l.id,
+        title: l.label + ": " + names + (agrees ? ". Same compartment as the assignment." : ""),
+        text: shortLabel(l) + (agrees ? (isInput ? "" : " ✓") : ": " + names) }));
+    });
+    return out;
+  };
+
+  Explorer.prototype.renderRows = function () {
+    if (!this.rows || !this.rows.isConnected) return;
+    var self = this, st = this.state, model = this.model, info = this.layerInfo, list = this.filtered, slice = list.slice(0, st.shown);
+    this.rows.textContent = "";
+    slice.forEach(function (e) {
+      var a = info.map[e.id], title = self.entityTitle(e), desc = self.entityDescription(e), first = e.members[0].id;
+      var cells = [h("td", {}, [
+        h("div", { class: "sx-row-title" }, [h("strong", { text: title }),
+          e.members.length > 1 ? h("span", { class: "sx-tag", title: "A protein group that mass spectrometry could not split further", text: "group of " + e.members.length }) : null,
+          e.detected === false ? h("span", { class: "sx-tag", text: "not detected" }) : null]),
+        desc ? h("div", { class: "sx-row-desc", text: desc }) : null,
+        title !== first ? h("div", { class: "sx-row-id sx-mono", text: first }) : null
+      ])];
+      if (self.listShowsCall) {
+        var cell;
+        if (!a) cell = [h("span", { class: "sx-muted", text: "Not detected" })];
+        else if (a.status === "assigned") cell = [self.dot(a.compartment), model.compById[a.compartment].label];
+        else if (st.view === "unassigned") cell = a.compartment != null ? [self.dot(a.compartment, true), h("span", { class: "sx-muted", text: model.compById[a.compartment].label })] : [];
+        else cell = [h("span", { class: "sx-muted", text: "No final call" })];
+        cells.push(h("td", { class: "sx-loc" }, cell));
+      }
+      if (info.layer.score) cells.push(h("td", { class: "sx-num sx-mono", text: a && a.score != null ? formatScore(a.score) : "" }));
+      cells.push(h("td", {}, [h("div", { class: "sx-chips" }, self.evidenceChips(e))]));
+      self.rows.appendChild(h("tr", { "data-entity": e.id, tabindex: "0", role: "button", "aria-label": "Details for " + title,
+        class: e.id === st.entity ? "sx-row-on" : null,
+        onclick: function () { self.set({ entity: e.id }); },
+        onkeydown: function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); self.set({ entity: e.id }); } } }, cells));
+    });
+    if (!list.length) this.rows.appendChild(h("tr", {}, [h("td", { colspan: "4", class: "sx-muted", text: "No protein matches." })]));
+    var count = this.main.querySelector("[data-sx=count]");
+    if (count) count.textContent = list.length > slice.length ? "Showing " + slice.length + " of " + list.length.toLocaleString() : plural(list.length, "protein group");
+    this.more.hidden = list.length <= slice.length;
+    this.more.textContent = "Show " + Math.min(PAGE, list.length - slice.length) + " more";
+  };
+
+  Explorer.prototype.markSelected = function () {
+    var id = this.state.entity;
+    Array.prototype.forEach.call(this.main.querySelectorAll("tr[data-entity]"), function (tr) {
+      tr.classList.toggle("sx-row-on", tr.getAttribute("data-entity") === id);
+    });
+  };
+
+  /* ----- the details panel ----- */
+
+  Explorer.prototype.locationLine = function (a, layer) {
+    var self = this, model = this.model;
+    return h("span", { class: "sx-places" }, calls(a).map(function (c) {
+      return h("span", { class: "sx-place" }, [self.dot(c), model.compById[c].label]);
+    }));
+  };
+
+  Explorer.prototype.attributeNodes = function (a, layer) {
+    var out = [], attrs = a.attributes || {};
+    Object.keys(attrs).forEach(function (k) {
+      var v = attrs[k], label = (layer.attribute_labels || {})[k] || k;
+      if (typeof v === "string" && v.indexOf("; ") >= 0) {
+        out.push(h("div", { class: "sx-attr" }, [h("span", { class: "sx-attr-k", text: label }), h("ul", { class: "sx-terms" }, v.split("; ").map(function (t) { return h("li", { text: t }); }))]));
+      } else {
+        out.push(h("div", { class: "sx-attr" }, [h("span", { class: "sx-attr-k", text: label }), h("span", { text: v === true ? "yes" : v === false ? "no" : String(v) })]));
+      }
+    });
+    return out;
+  };
+
+  Explorer.prototype.renderDrawer = function (focus) {
+    var self = this, model = this.model, st = this.state, info = this.layerInfo, e = model.entityById[st.entity], box = this.drawer;
+    box.textContent = "";
+    if (!e || !info) {
+      box.hidden = true;
+      this.el.classList.remove("sx-has-drawer");
+      if (this.returnFocus && this.returnFocus.isConnected) this.returnFocus.focus();
+      this.returnFocus = null;
+      return;
+    }
+    if (box.hidden) this.returnFocus = document.activeElement && this.el.contains(document.activeElement) ? document.activeElement : null;
+    var layer = info.layer, a = info.map[e.id], genes = entityGenes(e), call = finalCall(a);
+    var close = h("button", { type: "button", class: "sx-close", "data-sx": "drawer-close", "aria-label": "Close details", text: "×", onclick: function () { self.select(null); } });
+
+    // 1. where it was found
+    var loc;
+    if (!a) loc = [h("p", { class: "sx-loc-main sx-muted", text: "Not detected in this experiment" })];
+    else if (call != null) {
+      loc = [h("p", { class: "sx-loc-main" }, [this.dot(call), model.compById[call].label])];
+    } else {
+      loc = [h("p", { class: "sx-loc-main sx-muted", text: "No final call" }),
+        h("p", { "data-sx": "closest", text: "Published as “" + statusLabel(layer, a.status) + "”." + (a.compartment != null ? " Closest class: " + model.compById[a.compartment].label + ". This is not an assignment." : "") })];
+    }
+    if (a) {
+      loc.push(h("p", { class: "sx-loc-source" }, [badge(layer.evidence_type), document.createTextNode(" " + layer.label)]));
+      if (a.score != null) {
+        loc.push(h("p", { class: "sx-score" }, [h("span", { class: "sx-attr-k", text: "Reported score" }),
+          h("span", { class: "sx-mono", "data-score": layer.id, text: layer.score.name + " = " + formatScore(a.score) })]));
+        loc.push(h("details", { class: "sx-fine", "data-sx": "score-note" }, [h("summary", { text: "About this score" }),
+          h("p", { text: INTERPRETATION[layer.score.interpretation] + " " + (layer.score.interpretation_basis || layer.score.description || "") })]));
+      }
+      if (this.training[e.id]) loc.push(h("p", { class: "sx-note", "data-sx": "training-input", text: "This protein was a training marker: its class was given to the classifier, not predicted by it." }));
+    }
+
+    // 2. other sources, grouped by where they come from
+    var others = model.layers.filter(function (l) { return l.id !== layer.id; });
+    var block = function (layers, empty) {
+      var rows = layers.filter(function (l) { return model.byLayer[l.id][e.id]; }).map(function (l) {
+        var x = model.byLayer[l.id][e.id], cs = calls(x), scope = sharedScope(model, layer.id, l.id);
+        var comparable = call != null && cs.length && (!scope || scope.indexOf(call) >= 0);
+        var agrees = comparable && cs.indexOf(call) >= 0;
+        return h("li", { class: "sx-source-row", "data-layer": l.id }, [
+          h("div", { class: "sx-source-head" }, [h("strong", { text: l.label }), badge(l.evidence_type)]),
+          h("div", { class: "sx-source-val" }, [cs.length ? self.locationLine(x, l) : h("span", { class: "sx-muted", text: self.callText(x, l) }),
+            comparable && (layer.trained_on || []).indexOf(l.id) < 0 ? h("span", { class: "sx-verdict" + (agrees ? " sx-agree" : ""), text: agrees ? "same as the assignment" : "differs from the assignment" }) : null,
+            x.score != null ? h("span", { class: "sx-mono", text: l.score.name + " = " + formatScore(x.score) }) : null])
+        ].concat(self.attributeNodes(x, l)));
+      });
+      return rows.length ? h("ul", { class: "sx-sources" }, rows) : h("p", { class: "sx-muted", text: empty });
+    };
+    var fromAuthors = others.filter(function (l) { return l.source === "author"; });
+    var elsewhere = others.filter(function (l) { return l.source !== "author"; });
+
+    // 3. measured profile, or a plain statement that it is pending
+    var profile = model.capabilities.profiles ? this.profileChart(e)
+      : h("p", { class: "sx-muted", "data-sx": "pending-profile", text: "Awaiting the fractionation data. The profile of this protein across fractions will be shown here." });
+
+    var members = h("table", { class: "sx-members", "data-sx": "members" }, [
+      h("thead", {}, [h("tr", {}, [h("th", { text: "Protein" }), h("th", { text: "Gene" }), h("th", { text: "Description" })])]),
+      h("tbody", {}, e.members.map(function (m) {
+        return h("tr", {}, [h("td", { class: "sx-mono" }, [link(m.id, self.adapter.memberUrl && self.adapter.memberUrl(m.id))]),
+          h("td", {}, [m.gene != null ? link(self.geneText(m.gene), self.adapter.geneUrl && self.adapter.geneUrl(m.gene)) : h("span", { class: "sx-muted", text: "no gene match" })]),
+          h("td", { text: m.description || "" })]);
+      }))
+    ]);
+    var notes = [];
+    if (genes.length > 1) notes.push(h("p", { class: "sx-note", "data-sx": "multi-gene-note", text: "This entry is a protein group covering " + genes.length + " genes. The measurement cannot be split between them, so the result applies to the group as a whole." }));
+    if (e.mapping_note) notes.push(h("p", { class: "sx-muted", text: e.mapping_note }));
+    genes.forEach(function (g) {
+      var also = model.geneIndex[g].filter(function (id) { return id !== e.id; });
+      if (also.length) notes.push(h("p", { class: "sx-muted", "data-sx": "also-in" }, [document.createTextNode(self.geneText(g) + " is also in: ")].concat(also.map(function (id) {
+        return h("button", { type: "button", class: "sx-linkbtn", text: model.entityById[id].members[0].id, onclick: function () { self.set({ entity: id }); } });
+      }))));
+    });
+    var geneLinks = genes.slice(0, 6).map(function (g) {
+      var url = safeHref(self.adapter.geneUrl && self.adapter.geneUrl(g));
+      return url ? h("a", { class: "sx-btn", "data-sx": "gene-link", href: url, text: self.geneText(g) + ": " + (self.adapter.geneLinkText || "gene page") + " →" }) : null;
+    });
+    var section = function (name, title, kids) { return h("section", { class: "sx-d-section", "data-sx": name }, [h("h4", { text: title })].concat(kids)); };
+
+    box.appendChild(h("div", { class: "sx-d-head" }, [
+      h("div", {}, [h("p", { class: "sx-eyebrow", text: e.members.length > 1 ? "Protein group of " + e.members.length : "Protein" }),
+        h("h3", { class: "sx-d-title", "data-sx": "drawer-title", text: this.entityTitle(e) }),
+        this.entityDescription(e) ? h("p", { class: "sx-d-desc", text: this.entityDescription(e) }) : null]),
+      close
+    ]));
+    box.appendChild(h("div", { class: "sx-d-body" }, [
+      geneLinks.some(Boolean) ? h("div", { class: "sx-d-links" }, geneLinks) : null,
+      section("loc", "Localization", loc)
+    ].concat(notes, [
+      fromAuthors.length ? section("from-authors", "Reference sets in the publication", [block(fromAuthors, "Not in any reference set of the publication.")]) : null,
+      elsewhere.length ? section("elsewhere", "Existing annotations", [block(elsewhere, "No location annotated in the compartments compared here.")]) : null,
+      section("profile", "Fractionation profile", [profile]),
+      section("group", e.members.length > 1 ? "Proteins in this group" : "Protein", [members])
+    ])));
+    box.hidden = false;
+    this.el.classList.add("sx-has-drawer");
+    if (focus) close.focus();
+  };
+
+  /* ----- methods and provenance, on demand ----- */
+
+  Explorer.prototype.renderAbout = function () {
+    var self = this, model = this.model, ds = model.bundle.dataset, st = this.state, info = this.layerInfo, body = this.about.lastChild, m = ds.mapping, cap = model.capabilities;
+    body.textContent = "";
+    var computational = model.layers.filter(function (l) { return l.evidence_type === "computational_assignment"; });
+    var evidence = EVIDENCE_ORDER.map(function (ev) {
+      var items;
+      if (ev === "measured_profile") {
+        items = [cap.profiles ? Object.keys(model.bundle.profiles.values).length + " profiles across " + model.bundle.fractions.length + " fractions, " + SOURCE[model.bundle.profiles.source] + "." : cap.reasons.profiles];
+        cap.embeddings.forEach(function (id) { var x = model.embeddingById[id]; items.push("Map: " + x.label + " (" + x.method.name + ", " + SOURCE[x.source] + ")."); });
+        if (!cap.embeddings.length) items.push(cap.reasons.embeddings);
+      } else {
+        items = model.layers.filter(function (l) { return l.evidence_type === ev; }).map(function (l) {
+          return l.label + ": " + plural(Object.keys(model.byLayer[l.id]).length, "protein group") + ", " + SOURCE[l.source] + ". " + (l.method.description || l.method.name) + (l.description ? " " + l.description : "");
+        });
+        if (!items.length) items = ["None in this dataset."];
+      }
+      return h("div", { class: "sx-ev-row", "data-evidence": ev }, [h("div", {}, [badge(ev)]),
+        h("div", {}, [h("p", { class: "sx-muted", text: EVIDENCE[ev].text }), h("ul", {}, items.map(function (t) { return h("li", { text: t }); }))])]);
+    });
+    var kids = [
+      (ds.notices || []).length ? h("ul", { class: "sx-notices" }, ds.notices.map(function (t) { return h("li", { text: t }); })) : null,
+      ds.description ? h("p", { text: ds.description }) : null,
+      h("p", { class: "sx-cite" }, [document.createTextNode(ds.citation.text + " "), ds.citation.url ? link("Publication", ds.citation.url) : null]),
+      h("p", { "data-sx": "license" }, [document.createTextNode("License: "), link(ds.license.name || ds.license.id, ds.license.url), document.createTextNode(". " + ds.attribution)]),
+      h("h4", { text: "Kinds of evidence" }),
+      h("div", { "data-sx": "evidence" }, evidence),
+      computational.length > 1 ? h("label", { class: "sx-inline" }, [h("span", { text: "Assignments shown in the explorer" }),
+        h("select", { "data-sx": "layer-select", onchange: function () { self.panelCache = {}; self.go({ layer: this.value, compare: null, view: "home", compartment: null }); } },
+          computational.map(function (l) { return h("option", { value: l.id, text: l.label, selected: l.id === st.layer }); }))]) : null,
+      h("h4", { text: "Scores and agreement" }),
+      this.scorePanel(info.layer),
+      this.concordancePanel(info.layer),
+      h("h4", { text: "Identifiers and provenance" }),
+      h("p", { "data-sx": "mapping", text: m.entities_total + " protein groups: " + m.entities_mapped + " fully mapped to genes, " + m.entities_partial + " partly mapped, " +
+        m.entities_unmapped + " unmapped. " + m.entities_multi_gene + " groups span more than one gene. " + m.genes_total + " genes in total. Method: " + m.method }),
+      m.notes ? h("p", { class: "sx-muted", text: m.notes }) : null,
+      h("div", { "data-sx": "provenance" }, [
+        h("p", { text: "Built " + ds.provenance.built + " by " + ds.provenance.builder + "." }),
+        h("ul", {}, ds.provenance.sources.map(function (src) { return h("li", { text: src.name + ": " + (src.description || "") + (src.sha256 ? " (sha256 " + src.sha256.slice(0, 12) + ")" : "") }); })),
+        h("ol", {}, ds.provenance.steps.map(function (t) { return h("li", { text: t }); }))
+      ]),
+      h("h4", { text: "Compartment names" }),
+      h("ul", { "data-sx": "vocabulary" }, model.compartments.map(function (c) {
+        return h("li", { text: c.label + (c.ontology_id ? " = " + c.ontology_id : " (no ontology term)") + (c.ontology_note ? ". " + c.ontology_note : "") + (c.description ? " " + c.description : "") });
+      }))
+    ];
+    kids.forEach(function (k) { if (k) body.appendChild(k); });
   };
 
   Explorer.prototype.addLayers = function (layers) {
@@ -633,112 +1149,23 @@
       if (dropped && root.console) root.console.warn("SpatialExplorer: layer " + layer.id + ": " + dropped + " assignments referenced unknown ids and were ignored");
       added++;
     });
-    if (added) { this.refreshLayers(); this.render(); }
+    if (added) this.render();
     return added;
   };
 
-  Explorer.prototype.color = function (compId) {
-    var slot = this.model.colors[compId];
-    return slot ? cssVar(this.el, "--sx-series-" + slot, "#888") : cssVar(this.el, "--sx-neutral", "#9a9993");
-  };
-
-  Explorer.prototype.render = function () {
-    var st = this.state, model = this.model, self = this;
-    var layer = model.layerById[st.layer];
-    this.body.textContent = "";
-    if (!layer) { this.body.appendChild(h("p", { text: "This dataset has no assignment layers." })); return; }
-    var map = model.byLayer[layer.id], nUnassigned = 0;
-    Object.keys(map).forEach(function (eid) { if (map[eid].status !== "assigned") nUnassigned++; });
-    if (!nUnassigned) st.view = "browse";
-    var unassigned = st.view === "unassigned";
-    if (unassigned && !st.sort && layer.score) st.sort = { key: "s:" + layer.id, dir: "desc" };
-    this.statusSelect.options[1].textContent = "Only " + statusLabel(layer, "assigned");
-    this.statusSelect.options[2].textContent = "Only " + statusLabel(layer, "below_threshold");
-    this.statusSelect.value = st.status;
-    this.statusWrap.hidden = unassigned;
-    this.filtered = filterEntities(model, st, this.adapter);
-    this.training = trainingSet(model, layer.id);
-    this.undetected = model.entities.filter(function (e) { return e.detected === false; }).length;
-    var word = statusLabel(layer, "below_threshold");
-    this.body.appendChild(h("div", { class: "sx-tabs", role: "tablist", "data-sx": "views" }, [
-      h("button", { type: "button", role: "tab", "aria-selected": unassigned ? "false" : "true", class: unassigned ? null : "sx-on", "data-view": "browse",
-        text: "By compartment", onclick: function () { self.set({ view: "browse", compartment: null, sort: null }); } }),
-      nUnassigned ? h("button", { type: "button", role: "tab", "aria-selected": unassigned ? "true" : "false", class: unassigned ? "sx-on" : null, "data-view": "unassigned",
-        text: "Without a final call (" + nUnassigned + ")", onclick: function () { self.set({ view: "unassigned", compartment: null, status: "all", sort: null }); } }) : null
-    ]));
-    if (unassigned) {
-      this.body.appendChild(h("p", { class: "sx-lede", "data-sx": "unassigned-lede", text: nUnassigned + " protein groups in " + layer.label +
-        " have no final call (" + word + "). They were detected and remain part of the dataset. The compartment shown for each is the one the method named, kept for reference; it is not an assignment." }));
-    }
-
-    var chips = [];
-    if (st.gene) chips.push(h("button", { class: "sx-chip", type: "button", "data-sx": "gene-chip", text: "Gene: " + this.geneText(st.gene) + " ×",
-      onclick: function () { self.set({ gene: null }); } }));
-    if (st.compartment) chips.push(h("button", { class: "sx-chip", type: "button", text: model.compById[st.compartment].label + " ×",
-      onclick: function () { self.set({ compartment: null }); } }));
-
-    var grid = h("div", { class: "sx-grid" }, [this.compartmentPanel(layer), h("div", { class: "sx-stack" }, [
-      this.mapPanel(layer), this.scorePanel(layer), unassigned ? this.otherEvidencePanel(layer) : this.concordancePanel(layer)
-    ])]);
-    this.body.appendChild(grid);
-    this.body.appendChild(this.tablePanel(layer, chips));
-    if (st.analysis) this.body.appendChild(h("section", { class: "sx-panel", "data-sx": "analysis" }, [st.analysis]));
-    this.body.appendChild(this.detailPanel());
-    this.drawMap();
-  };
-
-  Explorer.prototype.panel = function (name, title, layerOrEvidence, kids) {
-    var ev = typeof layerOrEvidence === "string" ? layerOrEvidence : layerOrEvidence && layerOrEvidence.evidence_type;
-    return h("section", { class: "sx-panel", "data-sx": name }, [
-      h("h3", {}, [document.createTextNode(title + " "), ev ? badge(ev) : null])
-    ].concat(kids));
-  };
-
-  Explorer.prototype.compartmentPanel = function (layer) {
-    var self = this, model = this.model, st = this.state, counts = layerCounts(model, layer.id);
-    var unassigned = st.view === "unassigned", max = 1, word = statusLabel(layer, "below_threshold");
-    if (unassigned) model.compartments.forEach(function (c) { counts[c.id] = { assigned: 0, below_threshold: counts[c.id].below_threshold }; });
-    model.compartments.forEach(function (c) { max = Math.max(max, counts[c.id].assigned + counts[c.id].below_threshold); });
-    var hasBelow = model.compartments.some(function (c) { return counts[c.id].below_threshold > 0; });
-    var order = model.compartments.slice();
-    if (st.compSort === "name") order.sort(function (a, b) { return a.label.localeCompare(b.label); });
-    if (st.compSort === "assigned") order.sort(function (a, b) { return counts[b.id].assigned - counts[a.id].assigned; });
-    if (st.compSort === "other") order.sort(function (a, b) { return counts[b.id].below_threshold - counts[a.id].below_threshold; });
-    var rows = order.map(function (c) {
-      var n = counts[c.id], on = st.compartment === c.id;
-      var bar = h("span", { class: "sx-bar" }, [
-        h("span", { class: "sx-bar-a", style: "width:" + (n.assigned / max * 100) + "%;background:" + self.color(c.id) }),
-        h("span", { class: "sx-bar-b", style: "width:" + (n.below_threshold / max * 100) + "%" })
-      ]);
-      return h("li", {}, [h("button", { type: "button", class: "sx-comp" + (on ? " sx-on" : ""), "aria-pressed": on ? "true" : "false",
-        "data-compartment": c.id, title: [c.description, c.ontology_id, c.ontology_note].filter(Boolean).join(" "),
-        onclick: function () { self.set({ compartment: on ? null : c.id }); } }, [
-        h("span", { class: "sx-swatch", style: "background:" + self.color(c.id) }),
-        h("span", { class: "sx-comp-name", text: c.label }),
-        h("span", { class: "sx-comp-n", text: unassigned ? String(n.below_threshold) : String(n.assigned) + (n.below_threshold ? " + " + n.below_threshold : "") }),
-        bar
-      ])]);
-    });
-    var uncolored = model.compartments.length - Object.keys(model.colors).length;
-    var list = h("ul", { class: "sx-comps" }, rows);
-    var tools = h("div", { class: "sx-comp-tools" }, [
-      h("input", { type: "search", "data-sx": "compartment-search", placeholder: "Find a compartment", "aria-label": "Find a compartment", oninput: function () {
-        var needle = this.value.trim().toLowerCase();
-        Array.prototype.forEach.call(list.children, function (li) { li.hidden = !!needle && li.textContent.toLowerCase().indexOf(needle) < 0; });
-      } }),
-      h("select", { "data-sx": "compartment-sort", "aria-label": "Sort compartments", onchange: function () { self.set({ compSort: this.value, page: st.page }); } }, [
-        ["source", "Source order"], ["name", "Name"], ["assigned", "Most " + statusLabel(layer, "assigned")], ["other", "Most " + word]
-      ].filter(function (o) { return o[0] !== "other" || hasBelow; }).filter(function (o) { return !(unassigned && o[0] === "assigned"); }).map(function (o) {
-        return h("option", { value: o[0], text: o[1], selected: st.compSort === o[0] });
-      }))
-    ]);
-    return this.panel("compartments", unassigned ? "Compartment named by the method" : "Compartments", layer, [
-      h("p", { class: "sx-muted", text: unassigned
-        ? layer.label + ". Number of protein groups without a final call, by the compartment the method named."
-        : layer.label + ". Counts are protein groups with a final call" + (hasBelow ? ", plus those the method named for this compartment whose final call is \"" + word + "\" (pale bar)." : ".") }),
-      tools, list,
-      uncolored > 0 ? h("p", { class: "sx-muted", text: "The " + MAX_COLORS + " largest compartments have their own colour. Select any compartment to highlight it." }) : null
-    ]);
+  // What a host panel needs to describe one compartment: its assigned protein
+  // groups, the genes usable for an enrichment test, and the matching background.
+  Explorer.prototype.context = function (compId) {
+    var model = this.model, st = this.state, map = model.byLayer[st.layer] || {};
+    compId = compId || st.compartment;
+    var ids = Object.keys(map).filter(function (id) { return compId ? calls(map[id]).indexOf(compId) >= 0 : map[id].status === "assigned"; });
+    var genes = {};
+    ids.forEach(function (id) { entityGenes(model.entityById[id]).forEach(function (g) { genes[g] = true; }); });
+    return { genes: Object.keys(genes).sort(), backgroundGenes: detectedGenes(model), entities: ids,
+             study: studyGenes(model, ids), studyBackground: detectedGenes(model, true),
+             layer: st.layer, layerLabel: model.layerById[st.layer].label,
+             compartment: compId, compartmentLabel: compId ? model.compById[compId].label : null,
+             view: st.view, dataset: model.bundle.dataset.id };
   };
 
   Explorer.prototype.mapPanel = function (layer) {
@@ -843,8 +1270,6 @@
     this.tip.style.top = (ev.clientY - host.top + 14) + "px";
   };
 
-  // One line that keeps both published facts apart: the final call, and (when
-  // there is no final call) the compartment the method named.
   Explorer.prototype.callText = function (a, layer) {
     if (!a) return "Not in this layer";
     var model = this.model;
@@ -940,109 +1365,6 @@
     ]);
   };
 
-  Explorer.prototype.tablePanel = function (layer, chips) {
-    var self = this, model = this.model, st = this.state, rows = this.filtered;
-    var pages = Math.max(1, Math.ceil(rows.length / PAGE));
-    if (st.page >= pages) st.page = pages - 1;
-    var slice = rows.slice(st.page * PAGE, st.page * PAGE + PAGE);
-    var sortBtn = function (key, text, firstDir) {
-      var on = st.sort && st.sort.key === key, dir = on ? st.sort.dir : null;
-      return h("button", { type: "button", class: "sx-sort" + (on ? " sx-on" : ""), "data-sort": key, title: "Sort by " + text,
-        text: text + (on ? (dir === "desc" ? " ↓" : " ↑") : ""),
-        onclick: function () { self.set({ sort: { key: key, dir: on ? (dir === "asc" ? "desc" : "asc") : (firstDir || "asc") } }); } });
-    };
-    var ariaSort = function (keys) {
-      var on = st.sort && keys.indexOf(st.sort.key) >= 0;
-      return on ? (st.sort.dir === "desc" ? "descending" : "ascending") : null;
-    };
-    var head = h("tr", {}, [h("th", { "aria-sort": ariaSort(["group"]) }, [sortBtn("group", "Protein group")]),
-      h("th", { "aria-sort": ariaSort(["genes"]) }, [sortBtn("genes", "Genes")])].concat(model.layers.map(function (l) {
-      return h("th", { class: l.id === layer.id ? "sx-col-on" : null, "aria-sort": ariaSort(["c:" + l.id, "s:" + l.id]) }, [
-        h("div", {}, [sortBtn("c:" + l.id, l.label)]), badge(l.evidence_type),
-        l.score ? h("div", {}, [sortBtn("s:" + l.id, l.score.name, "desc")]) : null]);
-    })));
-    var body = slice.map(function (e) {
-      var genes = entityGenes(e);
-      var geneCell = genes.length ? genes.map(function (g, i) {
-        return h("span", {}, [i ? document.createTextNode(", ") : null, link(self.geneText(g), self.adapter.geneUrl && self.adapter.geneUrl(g))]);
-      }) : [h("span", { class: "sx-tag", text: "no gene mapping" })];
-      if (genes.length > 1) geneCell.push(h("span", { class: "sx-tag", title: "This protein group cannot be resolved to a single gene.", text: genes.length + " genes" }));
-      if (mappingStatus(e) === "partial") geneCell.push(h("span", { class: "sx-tag", text: "partly mapped" }));
-      var name = e.label || e.members[0].description || "";
-      return h("tr", { class: e.id === st.entity ? "sx-row-on" : null, "data-entity": e.id, tabindex: "0",
-        onclick: function (ev) { if (ev.target.tagName !== "A") self.set({ entity: e.id }); },
-        onkeydown: function (ev) { if (ev.key === "Enter") self.set({ entity: e.id }); } }, [
-        h("td", {}, [h("div", { class: "sx-mono", text: e.members[0].id + (e.members.length > 1 ? " +" + (e.members.length - 1) : "") }),
-          name ? h("div", { class: "sx-muted", text: name }) : null,
-          e.detected === false ? h("span", { class: "sx-tag", text: "not detected in this experiment" }) : null]),
-        h("td", {}, geneCell)
-      ].concat(model.layers.map(function (l) {
-        var a = model.byLayer[l.id][e.id];
-        if (!a) return h("td", { class: "sx-muted", text: "" });
-        return h("td", { class: a.status === "assigned" ? null : "sx-muted" }, [
-          h("div", { text: self.callText(a, l) }), a.score != null ? h("div", { class: "sx-mono", text: formatScore(a.score) }) : null,
-          trainingSet(model, l.id)[e.id] ? h("span", { class: "sx-tag", text: "training input" }) : null]);
-      })));
-    });
-    var actions = [h("button", { type: "button", "data-sx": "export", text: "Download table (TSV)", onclick: function () { self.exportTSV(); } })];
-    (this.adapter.actions || []).forEach(function (act) {
-      actions.push(h("button", { type: "button", "data-action": act.id, text: act.label, onclick: function () { self.runAction(act); } }));
-    });
-    return this.panel("table", "Protein groups", null, [
-      h("div", { class: "sx-tablebar" }, [h("span", { "data-sx": "count", text: rows.length + " of " + model.entities.length + " protein groups" + (this.undetected ? " (" + this.undetected + " of the " + model.entities.length + " are listed by an annotation layer but were not detected)" : "") })].concat(chips, [h("span", { class: "sx-grow" })], actions)),
-      h("div", { class: "sx-scroll" }, [h("table", { class: "sx-table" }, [h("thead", {}, [head]), h("tbody", {}, body)])]),
-      rows.length ? null : h("p", { class: "sx-muted", text: "No protein groups match." }),
-      pages > 1 ? h("div", { class: "sx-pager" }, [
-        h("button", { type: "button", "data-sx": "prev", disabled: st.page === 0, text: "Previous", onclick: function () { self.set({ page: st.page - 1 }); } }),
-        h("span", { text: "Page " + (st.page + 1) + " of " + pages }),
-        h("button", { type: "button", "data-sx": "next", disabled: st.page >= pages - 1, text: "Next", onclick: function () { self.set({ page: st.page + 1 }); } })
-      ]) : null
-    ]);
-  };
-
-  Explorer.prototype.context = function () {
-    var genes = {}, model = this.model;
-    this.filtered.forEach(function (e) { entityGenes(e).forEach(function (g) { genes[g] = true; }); });
-    var ids = this.filtered.map(function (e) { return e.id; }), map = model.byLayer[this.state.layer] || {}, comp = this.state.compartment;
-    var called = ids.filter(function (id) { return map[id] && map[id].status === "assigned"; });
-    return { genes: Object.keys(genes).sort(), backgroundGenes: detectedGenes(model), entities: ids,
-             // for enrichment: listed groups with a final call, one gene per group, and the matching background
-             study: studyGenes(model, called), studyBackground: detectedGenes(model, true),
-             layer: this.state.layer, layerLabel: model.layerById[this.state.layer].label,
-             compartment: comp, compartmentLabel: comp ? model.compById[comp].label : null,
-             view: this.state.view, dataset: model.bundle.dataset.id };
-  };
-
-  // An action may return a DOM node (or a promise of one). It is shown in an
-  // analysis panel under the table until the selection changes.
-  Explorer.prototype.runAction = function (act) {
-    var self = this, token = {};
-    this.actionToken = token;
-    var show = function (node) { if (self.actionToken === token && node && node.nodeType === 1) self.set({ analysis: node, page: self.state.page }); };
-    var out;
-    try { out = act.run(this.context(), this); } catch (err) { out = h("p", { class: "sx-error", text: "The analysis failed: " + err.message }); }
-    if (out && typeof out.then === "function") {
-      show(h("p", { class: "sx-muted", text: "Running…" }));
-      out.then(show, function (err) { show(h("p", { class: "sx-error", text: "The analysis failed: " + err.message })); });
-    } else show(out);
-  };
-
-  // What other layers say about the protein groups this layer left without a call.
-  Explorer.prototype.otherEvidencePanel = function (layer) {
-    var model = this.model, ids = this.filtered.map(function (e) { return e.id; });
-    var rows = model.layers.filter(function (l) { return l.id !== layer.id; }).map(function (l) {
-      var map = model.byLayer[l.id], n = 0, top = {};
-      ids.forEach(function (id) { calls(map[id]).forEach(function (c, i) { if (!i) n++; top[c] = (top[c] || 0) + 1; }); });
-      var best = Object.keys(top).sort(function (a, b) { return top[b] - top[a]; }).slice(0, 3).map(function (c) { return model.compById[c].label + " " + top[c]; });
-      return h("tr", { "data-layer": l.id }, [h("th", {}, [document.createTextNode(l.label + " "), badge(l.evidence_type)]), h("td", { text: String(n) }), h("td", { class: "sx-muted", text: best.join(", ") })]);
-    });
-    if (!rows.length) return null;
-    return this.panel("other-evidence", "Other evidence for these protein groups", null, [
-      h("p", { class: "sx-muted", text: "How many of the " + ids.length + " listed protein groups carry a call in each of the other layers. The layers stay separate; nothing here changes the published result." }),
-      h("table", { class: "sx-matrix sx-wide" }, [h("thead", {}, [h("tr", {}, [h("th", { text: "Layer" }), h("th", { text: "With a call" }), h("th", { text: "Most frequent" })])]), h("tbody", {}, rows)])
-    ]);
-  };
-
   Explorer.prototype.exportTSV = function () {
     var text = toTSV(this.model, this.filtered, this.adapter);
     if (this.options.onExport) return this.options.onExport(text);
@@ -1098,56 +1420,6 @@
       s("svg", { viewBox: "0 0 " + W + " " + H, class: "sx-chart", role: "img", "data-sx": "profile-chart", "aria-label": "Measured profile across fractions" }, kids),
       missing ? h("p", { class: "sx-muted", text: missing + " fraction(s) have no measurement and are left as gaps." }) : null
     ]);
-  };
-
-  Explorer.prototype.detailPanel = function () {
-    var self = this, model = this.model, st = this.state, e = model.entityById[st.entity];
-    if (!e) return h("section", { class: "sx-panel", "data-sx": "detail" }, [h("h3", { text: "Details" }), h("p", { class: "sx-muted", text: "Select a protein group in the table" + (model.capabilities.embeddings.length ? " or on the map." : ".") })]);
-    var genes = entityGenes(e);
-    var members = h("table", { class: "sx-table sx-compact", "data-sx": "members" }, [
-      h("thead", {}, [h("tr", {}, [h("th", { text: "Member" }), h("th", { text: "Gene" }), h("th", { text: "Description" })])]),
-      h("tbody", {}, e.members.map(function (m) {
-        return h("tr", {}, [h("td", { class: "sx-mono" }, [link(m.id, self.adapter.memberUrl && self.adapter.memberUrl(m.id))]),
-          h("td", {}, [m.gene != null ? link(self.geneText(m.gene), self.adapter.geneUrl && self.adapter.geneUrl(m.gene)) : h("span", { class: "sx-tag", text: "no gene mapping" })]),
-          h("td", { text: m.description || "" })]);
-      }))
-    ]);
-    var notes = [];
-    if (genes.length > 1) notes.push(h("p", { class: "sx-notice", "data-sx": "multi-gene-note", text: "This protein group contains proteins from " + genes.length + " genes. The measurement cannot be attributed to one of them, so every result here applies to the group as a whole." }));
-    if (e.mapping_note) notes.push(h("p", { class: "sx-muted", text: e.mapping_note }));
-    if (e.detected === false) notes.push(h("p", { class: "sx-notice", text: "Listed by an annotation layer but not detected in this experiment." }));
-    genes.forEach(function (g) {
-      var others = model.geneIndex[g].filter(function (id) { return id !== e.id; });
-      if (others.length) notes.push(h("p", { class: "sx-muted" }, [document.createTextNode(self.geneText(g) + " also appears in " + others.length + " other protein group(s): ")].concat(
-        others.map(function (id) { return h("button", { type: "button", class: "sx-linkbtn", text: model.entityById[id].members[0].id, onclick: function () { self.set({ entity: id }); } }); }))));
-    });
-
-    var sections = EVIDENCE_ORDER.map(function (ev) {
-      var content;
-      if (ev === "measured_profile") {
-        content = model.capabilities.profiles ? self.profileChart(e) : h("p", { class: "sx-muted", text: model.capabilities.reasons.profiles });
-      } else {
-        var layers = model.layers.filter(function (l) { return l.evidence_type === ev && model.byLayer[l.id][e.id]; });
-        if (!layers.length) return null;
-        content = h("ul", { class: "sx-assign" }, layers.map(function (l) {
-          var a = model.byLayer[l.id][e.id], bits = [h("strong", { text: l.label }), document.createTextNode(": " + self.callText(a, l))];
-          var fed = trainingSet(model, l.id)[e.id];
-          if (fed) bits.push(h("div", { class: "sx-notice", "data-sx": "training-input", text: "This protein group was a training input (" + model.layerById[fed].label + "). Its class here was supplied to the method, not predicted by it." }));
-          if (a.score != null) bits.push(h("span", { class: "sx-mono", "data-score": l.id, text: "  " + l.score.name + " = " + formatScore(a.score) }));
-          var attrs = a.attributes || {};
-          Object.keys(attrs).forEach(function (k) {
-            var v = attrs[k];
-            bits.push(h("span", { class: "sx-muted", text: "  " + ((l.attribute_labels || {})[k] || k) + ": " + (v === true ? "yes" : v === false ? "no" : v) }));
-          });
-          bits.push(h("div", { class: "sx-muted", text: l.method.name + (l.method.software ? ", " + l.method.software : "") + ", " + SOURCE[l.source] + "." }));
-          return h("li", {}, bits);
-        }));
-      }
-      return h("div", { class: "sx-ev-row", "data-evidence": ev }, [h("div", {}, [badge(ev)]), h("div", {}, [content])]);
-    });
-    return h("section", { class: "sx-panel", "data-sx": "detail" }, [
-      h("h3", { text: e.label || e.members[0].id + (e.members.length > 1 ? " and " + (e.members.length - 1) + " more" : "") })
-    ].concat(notes, [members], sections));
   };
 
   /* ---------- entry point ---------- */

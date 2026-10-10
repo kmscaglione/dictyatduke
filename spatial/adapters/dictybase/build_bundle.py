@@ -151,7 +151,7 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
         training_fact = (f" All {len(fixed)} training markers carry svm.scores exactly 1 and their marker class, and no other"
                          " protein group does: for them the table records the supplied class, not a prediction.")
     svm_layer = {
-        "id": "svm", "label": "SVM classification (Tinker et al. 2026)",
+        "id": "svm", "label": "SVM classification (Tinker et al. 2026)", "short_label": "SVM",
         "evidence_type": "computational_assignment", "source": "author",
         "method": {"name": "support vector machine", "software": "pRoloc 1.34.0 (R/Bioconductor)",
                    "description": "Classifier trained by the authors on marker fractionation profiles and applied to every detected protein group.",
@@ -170,9 +170,9 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
             "entity": group, "compartment": comp_id[klass],
             "status": "below_threshold" if pred == "unknown" else "assigned", "score": score})
 
-    def marker_layer(layer_id, label, used, note):
+    def marker_layer(layer_id, label, short, used, note):
         return {
-            "id": layer_id, "label": label,
+            "id": layer_id, "label": label, "short_label": short,
             "evidence_type": "curated_annotation", "source": "author",
             "method": {"name": "curated marker set",
                        "description": "Markers compiled by the authors from direct experimental evidence in Dictyostelium or from homology to validated markers in other eukaryotes. Table S1 does not say which basis applies to which marker. " + note},
@@ -181,13 +181,13 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
         }
 
     training_layer = marker_layer(
-        "markers-training", "Markers used to train the SVM (Tinker et al. 2026)", "Yes",
+        "markers-training", "Markers used to train the SVM (Tinker et al. 2026)", "Training marker", "Yes",
         "These rows have 'Used to train SVM?' = Yes. Agreement between them and the SVM is expected and is not validation.")
     heldout_layer = marker_layer(
-        "markers-heldout", "Markers not used to train the SVM (Tinker et al. 2026)", "No",
+        "markers-heldout", "Markers not used to train the SVM (Tinker et al. 2026)", "Marker", "No",
         "These rows have 'Used to train SVM?' = No. The preprint does not state how they were chosen or whether they were selected independently of the SVM result, so agreement with the SVM is reported but is not labelled independent validation here.")
     mito_layer = {
-        "id": "mito-compendium", "label": "Mitochondrial compendium (Tinker et al. 2026)",
+        "id": "mito-compendium", "label": "Mitochondrial compendium (Tinker et al. 2026)", "short_label": "Mito compendium",
         "evidence_type": "curated_annotation", "source": "author",
         "method": {"name": "author-curated compendium",
                    "description": "Mitochondrial inventory assembled by the authors from the SVM result, cluster membership, targeting predictions and prior evidence. The evidence category for each entry is kept verbatim; some categories rest on sequence prediction or are listed without detection in this experiment."},
@@ -234,6 +234,7 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
             source=mapping_source,
             notes=f"{len(svm)} detected protein groups from Table S2, plus {n_undetected} groups that appear only in Table S3 and are flagged detected=false. Among the detected groups, {seen['entities_unmapped']} have no gene mapping and {seen['entities_multi_gene']} span more than one gene; all are kept and listed in unmapped_entities and multi_gene_entities."),
         "notices": [
+            "Under evaluation for dictyBase",
             "This dataset is being evaluated for integration into dictyBase. This is a local preview and is not public.",
             "Fractionation profiles and spatial maps are awaiting the full experimental matrix from the authors. Those views will appear here when the matrix is supplied; nothing has been reconstructed in the meantime.",
         ],

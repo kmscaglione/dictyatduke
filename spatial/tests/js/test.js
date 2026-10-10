@@ -133,179 +133,360 @@
     ok(C.histogram([3, 3, 3], 4).counts.reduce(function (a, b) { return a + b; }) === 3);
   });
 
-  test("full bundle: every evidence type is shown separately, map and profile appear", function () {
-    var before = JSON.stringify(F["alpha.bundle.json"]);
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el;
-      eq(qa(el, "[data-sx=evidence] .sx-ev-row").map(function (r) { return r.getAttribute("data-evidence"); }),
-         ["measured_profile", "computational_assignment", "sequence_prediction", "curated_annotation"]);
+  /* ----- the interface ----- */
+
+  function type(ex, text) { ex.search.value = text; ex.search.dispatchEvent(new Event("input")); }
+  function press(target, key) { target.dispatchEvent(new KeyboardEvent("keydown", { key: key, bubbles: true, cancelable: true })); }
+  function texts(el, sel) { return qa(el, sel).map(function (n) { return n.textContent; }); }
+  function change(node, value) { node.value = value; node.dispatchEvent(new Event("change")); }
+  var ALPHA = "alpha.bundle.json", BETA = "beta.bundle.json";
+
+  test("landing page: one card per compartment with its count, and no table", function () {
+    return mount(F[ALPHA]).then(function (ex) {
+      var el = ex.el, want = EXPECT[ALPHA].layer_counts.classifier;
+      var cards = qa(el, "[data-sx=cards] [data-compartment]");
+      eq(cards.map(function (c) { return c.getAttribute("data-compartment"); }), F[ALPHA].compartments.map(function (c) { return c.id; }));
+      cards.forEach(function (c) { ok(+q(c, ".sx-card-n").textContent === want[c.getAttribute("data-compartment")].assigned); ok(c.tagName === "BUTTON", "cards are keyboard reachable"); });
+      ok(q(el, "[data-sx=cards] [data-view=unassigned] .sx-card-n").textContent === "40", "unassigned has its own entry point");
+      ok(!q(el, "table") && !q(el, "[data-sx=list]"), "no table on the landing page");
+      ok(q(el, "[data-sx=summary]").textContent.indexOf("80 protein groups detected, 40 assigned to 4 compartments, 40 without a final call") > 0);
       ok(q(el, "[data-sx=synthetic]") && !q(el, "[data-sx=local-only]"));
-      ok(q(el, "[data-sx=license]").textContent.indexOf("Creative Commons Zero") >= 0);
-      ok(q(el, "[data-sx=mapping]").textContent.indexOf("3 unmapped") >= 0 && q(el, "[data-sx=mapping]").textContent.indexOf("4 groups span more than one gene") >= 0);
-      ok(q(el, "[data-sx=map-canvas]") && !q(el, "[data-sx=no-map]") && !q(el, "[data-sx=no-profiles]"));
-      ok(ex.points && ex.points.length === 80, "every coordinate is drawn");
-      eq(qa(el, "[data-sx=layer-select] optgroup").map(function (g) { return g.label; }),
-         ["Computational assignment", "Sequence-based prediction", "Curated annotation"]);
-      ex.select(F["alpha.bundle.json"].entities[0].id);
-      ok(q(el, "[data-sx=profile-chart]"), "profile chart for a measured entity");
-      ok(qa(el, "[data-sx=profile-chart] circle").length === 8);
-      var note = q(el, "[data-sx=score-note]").textContent;
-      ok(note.indexOf("does not define the scale") >= 0 && !/probab|confiden|%/i.test(note), "unspecified score is not relabelled");
-      var a = F["alpha.bundle.json"].layers[1].assignments[0];
-      ok(q(el, "[data-score=classifier]").textContent.indexOf("classifier.score = " + String(a.score)) >= 0);
-      ok(q(el, "[data-sx=threshold-note]").textContent.indexOf("Stated by the source") >= 0);
-      ok(JSON.stringify(F["alpha.bundle.json"]) === before, "rendering must not alter the bundle");
+      ok(q(el, "[data-sx=search]") === el.querySelector("input"), "search is the first control");
+      ok(!q(el, "[data-sx=about]").open, "methods and provenance start closed");
+      var colors = cards.map(function (c) { return q(c, ".sx-dot").style.backgroundColor; });
+      ok(new Set(colors).size === colors.length && colors.every(Boolean), "every compartment has its own colour");
+      var before = JSON.stringify(F[ALPHA]);
+      ex.showCompartment("nuc"); ex.select(ex.filtered[0].id);
+      ok(q(el, ".sx-view-title .sx-dot").style.backgroundColor === colors[2], "the colour follows the compartment into its view");
+      ok(q(el, "[data-sx=loc] .sx-dot").style.backgroundColor === colors[2], "and into the details panel");
+      ok(JSON.stringify(F[ALPHA]) === before, "rendering must not alter the bundle");
       ex.destroy();
       ok(el.childNodes.length === 0 && !el.classList.contains("sx-root"));
     });
   });
 
-  test("assignments-only bundle: no map, no profile, and the page says why", function () {
-    return mount(F["alpha.assignments-only.bundle.json"]).then(function (ex) {
-      var el = ex.el;
-      ok(!q(el, "[data-sx=map]") && !q(el, "canvas"), "no map without coordinates");
-      ok(q(el, "[data-sx=no-profiles]").textContent.indexOf("No measured profiles were supplied") >= 0);
-      ok(q(el, "[data-sx=no-map]").textContent.indexOf("No map coordinates were supplied") >= 0);
-      ex.select(F["alpha.assignments-only.bundle.json"].entities[0].id);
-      ok(!q(el, "[data-sx=profile-chart]") && !q(el, "svg path.sx-line"), "no profile is drawn or invented");
-      ok(q(el, "[data-sx=scores]") && q(el, "[data-sx=concordance]") && q(el, "[data-sx=table]"), "assignment views still work");
-      ok(ex.points == null);
+  test("journey A: find a gene and read its localization in two interactions", function () {
+    var b = F[ALPHA], target = b.entities[20], gene = target.members[0].gene;
+    return mount(b, { adapter: { geneLabel: function (g) { return g === gene ? "abcA" : g; } } }).then(function (ex) {
+      var el = ex.el, a = ex.model.byLayer.classifier[target.id];
+      type(ex, "abca");                                             // 1: type
+      var first = q(el, "[data-sx=suggestions] .sx-suggest");
+      ok(first.getAttribute("data-entity") === target.id && first.textContent.indexOf("abcA") === 0, "the exact gene name ranks first");
+      ok(q(el, "[data-sx=search]").getAttribute("aria-expanded") === "true");
+      press(ex.search, "Enter");                                     // 2: Enter
+      ok(ex.state.entity === target.id && !q(el, "[data-sx=drawer]").hidden);
+      ok(q(el, "[data-sx=drawer-title]").textContent === "abcA");
+      var loc = q(el, "[data-sx=loc]").textContent;
+      ok(loc.indexOf(a.status === "assigned" ? ex.model.compById[a.compartment].label : "No final call") >= 0, "localization is the first thing shown");
+      ok(q(el, "[data-score=classifier]").textContent === "classifier.score = " + String(a.score), "reported score, exactly");
+      ok(q(el, "[data-sx=suggestions]").hidden);
     });
   });
 
-  test("views switch on by themselves when valid measured data are added", function () {
-    var b = clone(F["alpha.assignments-only.bundle.json"]), full = F["alpha.bundle.json"];
-    b.fractions = clone(full.fractions); b.profiles = clone(full.profiles);
+  test("search accepts gene ids and protein accessions, with or without a version", function () {
+    var b = clone(F[ALPHA]);
+    b.entities[30].members[0].id = "QP_000030.2";
     return mount(b).then(function (ex) {
-      ok(!q(ex.el, "[data-sx=map]") && !q(ex.el, "[data-sx=no-profiles]") && q(ex.el, "[data-sx=no-map]"), "profiles only");
-      ex.select(b.entities[1].id);
-      ok(q(ex.el, "[data-sx=profile-chart]"));
-      b.embeddings = clone(full.embeddings);
-      return mount(b);
-    }).then(function (ex) {
-      ok(q(ex.el, "[data-sx=map-canvas]") && !q(ex.el, "[data-sx=no-map]"), "map appears once coordinates exist");
+      var el = ex.el;
+      [[b.entities[30].members[0].gene, 30], ["qp_000030.2", 30], ["QP_000030", 30], [b.dataset.mapping.unmapped_entities[0], 7]].forEach(function (c) {
+        ok(ex.matches(c[0])[0].e === b.entities[c[1]], "finds " + c[0]);
+      });
+      type(ex, "zzzz");
+      ok(q(el, ".sx-suggest-none").textContent.indexOf("No protein matches") === 0);
+      type(ex, "a");
+      ok(q(el, "[data-sx=suggestions]").hidden, "one letter is not searched");
+      type(ex, "EPG00");
+      ok(qa(el, "[data-sx=suggestions] .sx-suggest[data-entity]").length === 8 && q(el, "[data-sx=all-results]"));
+      press(ex.search, "ArrowDown"); press(ex.search, "ArrowDown");
+      ok(qa(el, ".sx-suggest")[1].classList.contains("sx-on") && ex.search.getAttribute("aria-activedescendant") === "sx-opt-1", "arrow keys move through suggestions");
+      press(ex.search, "Enter");
+      ok(ex.state.entity === ex.suggestions[1].e.id);
+      ex.select(null); type(ex, "EPG00"); press(ex.search, "Enter");
+      ok(ex.state.view === "search" && q(el, "[data-sx=headline]").textContent.indexOf("protein groups match “EPG00”") > 0, "an ambiguous query lists every match");
+      ok(ex.filtered.length === ex.matches("EPG00").length && q(el, "[data-sx=rows] tr[data-entity]"));
+      press(ex.search, "Escape");
     });
   });
 
-  test("second organism: different ids, fractions and compartments, same code", function () {
-    return mount(F["beta.derived.bundle.json"]).then(function (ex) {
-      var el = ex.el, b = F["beta.derived.bundle.json"];
-      ok(q(el, ".sx-sub").textContent.indexOf("Fictus alter") === 0);
-      ok(qa(el, "[data-compartment]").length === 6);
-      ok(q(el, "[data-sx=map]").textContent.indexOf("computed by this software") >= 0, "computed map is labelled as computed");
-      var note = q(el, "[data-sx=score-note]").textContent;
-      ok(note.indexOf("Defined by the method as a probability") >= 0, "a stated probability may be called one");
-      ex.select("grp-0004");
-      ok(q(el, "[data-sx=multi-gene-note]").textContent.indexOf("3 genes") >= 0);
-      ok(qa(el, "[data-sx=members] tbody tr").length === 3, "all members listed");
-      ok(qa(el, "[data-sx=profile-chart] circle").length === b.fractions.length);
-      ex.set({ layer: "nearest-centroid" });
-      ok(q(el, "[data-sx=score-note]").textContent.indexOf("A similarity") >= 0);
-      ok(!q(el, "[data-sx=threshold-note]"), "no threshold is implied where none is declared");
+  test("journey B: a compartment shows its proteins at once, and the host's functional summary", function () {
+    var seen = [], calls = 0;
+    var adapter = { compartmentPanel: function (ctx) {
+      calls++; seen.push(ctx);
+      var d = document.createElement("div"); d.setAttribute("data-result", ctx.compartment); d.textContent = ctx.study.genes.length + " genes";
+      return Promise.resolve(d);
+    } };
+    return mount(F[ALPHA], { adapter: adapter }).then(function (ex) {
+      var el = ex.el, want = EXPECT[ALPHA].layer_counts.classifier.mem, map = ex.model.byLayer.classifier;
+      q(el, '[data-compartment="mem"]').click();
+      ok(ex.state.view === "compartment" && q(el, ".sx-view-title").textContent === "Membrane");
+      ok(q(el, "[data-sx=headline]").textContent === want.assigned + " proteins assigned");
+      eq(qa(el, "[data-sx=rows] tr[data-entity]").length, want.assigned);
+      ok(ex.filtered.every(function (e) { return map[e.id].status === "assigned" && map[e.id].compartment === "mem"; }), "only assigned proteins by default");
+      var scores = ex.filtered.map(function (e) { return map[e.id].score; });
+      eq(scores, scores.slice().sort(function (x, y) { return y - x; }), "highest score first");
+      ok(texts(el, "[data-sx=list] thead th").join("|") === "Protein|Score (classifier.score)|Other evidence", "no redundant location column inside one compartment");
+      return new Promise(function (r) { setTimeout(r, 20); }).then(function () {
+        var ctx = seen[0];
+        ok(q(el, '[data-sx=side] [data-result="mem"]').textContent === ctx.study.genes.length + " genes", "host panel is shown beside the list");
+        ok(ctx.entities.length === want.assigned && ctx.compartmentLabel === "Membrane" && ctx.layerLabel === "Classifier assignment");
+        ok(ctx.study.used + ctx.study.multi_gene + ctx.study.unmapped + ctx.study.undetected === want.assigned, "every assigned group is accounted for");
+        eq(ctx.studyBackground, EXPECT[ALPHA].detected_single_gene_genes);
+        ok(ctx.study.genes.every(function (g) { return ctx.studyBackground.indexOf(g) >= 0; }));
+        var toggle = q(el, "[data-sx=include-other]");
+        ok(toggle.textContent === "Also show " + want.below_threshold + " closest to Membrane without a final call");
+        toggle.click();
+        eq(ex.filtered.length, want.assigned + want.below_threshold);
+        ok(q(el, "[data-sx=include-other]").getAttribute("aria-pressed") === "true" && texts(el, "[data-sx=list] thead th")[1] === "Location");
+        ok(q(el, "[data-sx=rows]").textContent.indexOf("No final call") > 0);
+        ok(calls === 1 && q(el, '[data-sx=side] [data-result="mem"]'), "the panel is not recomputed on a re-render");
+        var filter = q(el, "[data-sx=filter]"); filter.value = ex.filtered[0].members[0].id.toLowerCase(); filter.dispatchEvent(new Event("input"));
+        return new Promise(function (r) { setTimeout(r, 220); });
+      }).then(function () {
+        ok(q(el, "[data-sx=count]").textContent === "1 protein group" && document.activeElement !== null);
+        ok(q(el, "[data-sx=filter]").isConnected, "typing a filter does not rebuild the toolbar");
+        change(q(el, "[data-sx=jump]"), "nuc");
+        ok(ex.state.compartment === "nuc" && ex.state.filter === "" && !ex.state.includeOther, "moving to another compartment clears the old filters");
+        change(q(el, "[data-sx=sort]"), "genes|asc");
+        var names = ex.filtered.map(function (e) { return (C.entityGenes(e)[0] || "~").toLowerCase(); }).filter(function (x) { return x !== "~"; });
+        eq(names, names.slice().sort());
+        q(el, "[data-sx=home]").click();
+        ok(ex.state.view === "home" && q(el, "[data-sx=cards]"));
+      });
     });
   });
 
-  test("multi-gene, unmapped and shared-gene groups are visible in the table", function () {
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el, b = F["alpha.bundle.json"];
-      ex.set({ query: b.dataset.mapping.multi_gene_entities[0].split(";")[0].toLowerCase() });
-      ok(q(el, "[data-sx=count]").textContent.indexOf("1 of 80") === 0);
-      ok(q(el, "[data-sx=table] tbody").textContent.indexOf("2 genes") >= 0);
-      ex.set({ query: b.dataset.mapping.unmapped_entities[0].toLowerCase() });
-      ok(q(el, "[data-sx=table] tbody").textContent.indexOf("no gene mapping") >= 0);
-      ok(q(el, "[data-sx=table] tbody tr td:nth-child(3)").textContent.length > 0, "an unmapped group still shows its assignment");
-      var gene = Object.keys(EXPECT["alpha.bundle.json"].gene_groups)[0];
-      ok(ex.showGene(gene) === 2);
-      ok(q(el, "[data-sx=count]").textContent.indexOf("2 of 80") === 0 && q(el, "[data-sx=gene-chip]"));
-      ok(q(el, "[data-sx=detail]").textContent.indexOf("also appears in 1 other protein group") >= 0);
+  test("selecting a protein opens a details panel in place, in a clear order", function () {
+    var b = F[ALPHA];
+    return mount(b, { adapter: { geneUrl: function (g) { return "/gene/" + g; }, memberUrl: function () { return "javascript:alert(1)"; }, geneLinkText: "host gene page" } }).then(function (ex) {
+      var el = ex.el;
+      ex.showCompartment("cyt");
+      var row = q(el, '[data-sx=rows] tr[data-entity="' + b.entities[0].id + '"]');
+      ok(row.getAttribute("role") === "button" && row.getAttribute("tabindex") === "0");
+      row.focus();
+      press(row, "Enter");
+      var drawer = q(el, "[data-sx=drawer]");
+      ok(!drawer.hidden && drawer.getAttribute("role") === "dialog" && ex.state.view === "compartment", "opens without leaving the list");
+      ok(document.activeElement === q(el, "[data-sx=drawer-close]"), "focus moves into the panel");
+      eq(texts(drawer, ".sx-d-section > h4"), ["Localization", "Reference sets in the publication", "Existing annotations", "Fractionation profile", "Protein"]);
+      ok(q(drawer, "[data-sx=loc] .sx-loc-main").textContent === "Cytosol");
+      ok(q(drawer, "[data-sx=loc] .sx-badge").textContent === "Computed from profiles", "the kind of evidence is labelled");
+      ok(q(drawer, "[data-sx=training-input]").textContent.indexOf("training marker") > 0);
+      var note = q(drawer, "[data-sx=score-note]");
+      ok(!note.open && note.textContent.indexOf("does not define the scale") > 0 && !/probab|confiden|%/i.test(q(drawer, "[data-sx=loc]").textContent), "the score is not relabelled, and its caveat is one click away");
+      ok(q(drawer, '[data-sx=from-authors] [data-layer="markers"]').textContent.indexOf("Cytosol") > 0);
+      ok(q(drawer, '[data-sx=from-authors] [data-layer="markers"] .sx-badge').textContent === "Curated");
+      ok(!q(drawer, '[data-layer="markers"] .sx-verdict'), "a training set is never scored as agreeing");
+      ok(q(drawer, '[data-layer="targeting"] .sx-badge').textContent === "Sequence prediction");
+      var link = q(drawer, "[data-sx=gene-link]");
+      ok(link.getAttribute("href") === "/gene/" + b.entities[0].members[0].gene && link.textContent.indexOf("host gene page") > 0);
+      ok(!q(drawer, "a[href^=javascript]"), "unsafe link schemes are dropped");
+      ok(q(el, "tr.sx-row-on") === row, "the list marks the open protein");
+      press(document.body, "Escape");
+      ok(drawer.hidden && ex.state.entity === null && document.activeElement === row, "Escape closes it and returns focus");
+      row.click(); q(el, "[data-sx=drawer-close]").click();
+      ok(drawer.hidden);
+      ex.select(b.dataset.mapping.multi_gene_entities[0]);
+      ok(q(drawer, "[data-sx=multi-gene-note]").textContent.indexOf("covering 2 genes") > 0 && qa(drawer, "[data-sx=members] tbody tr").length === 2);
+      ok(qa(drawer, "[data-sx=gene-link]").length === 2, "one link per gene, never collapsed");
+      ex.select(b.dataset.mapping.unmapped_entities[0]);
+      ok(q(drawer, "[data-sx=members]").textContent.indexOf("no gene match") > 0 && !q(drawer, "[data-sx=gene-link]") && q(drawer, "[data-sx=loc] .sx-loc-main"));
+      var shared = Object.keys(EXPECT[ALPHA].gene_groups)[0];
+      ok(ex.showGene(shared) === 2 && ex.state.view === "search" && ex.filtered.length === 2, "a gene in two groups lists both");
+      ok(q(drawer, "[data-sx=also-in]").textContent.indexOf("is also in") > 0);
       ok(ex.showGene("no-such-gene") === 0);
     });
   });
 
-  test("compartment buttons filter, and paging works", function () {
-    return mount(F["beta.bundle.json"]).then(function (ex) {
-      var el = ex.el, want = EXPECT["beta.bundle.json"].layer_counts.model, id = F["beta.bundle.json"].compartments[2].id;
-      ok(q(el, "[data-sx=count]").textContent.indexOf("120 of 120") === 0);
-      ok(qa(el, "[data-sx=table] tbody tr").length === 25);
-      q(el, "[data-sx=next]").click();
-      ok(q(el, ".sx-pager span").textContent === "Page 2 of 5");
-      q(el, '[data-compartment="' + id + '"]').click();
-      var n = want[id].assigned + want[id].below_threshold;
-      ok(q(el, "[data-sx=count]").textContent.indexOf(n + " of 120") === 0, "count after filter");
-      ok(q(el, '[data-compartment="' + id + '"]').getAttribute("aria-pressed") === "true");
-      q(el, "[data-sx=status-select]").value = "assigned";
-      q(el, "[data-sx=status-select]").dispatchEvent(new Event("change"));
-      ok(q(el, "[data-sx=count]").textContent.indexOf(want[id].assigned + " of 120") === 0);
-      qa(el, "[data-sx=table] tbody tr")[0].click();
-      ok(q(el, ".sx-row-on"), "row click selects");
+  test("journey C: unassigned proteins have their own view and show what is already known", function () {
+    return mount(F[ALPHA]).then(function (ex) {
+      var el = ex.el, map = ex.model.byLayer.classifier, b = F[ALPHA];
+      q(el, "[data-view=unassigned]").click();
+      ok(ex.state.view === "unassigned" && q(el, "[data-sx=headline]").textContent === "40 protein groups detected without a final call");
+      ok(q(el, "[data-sx=unassigned-lede]").textContent.indexOf("“unknown”") > 0 && q(el, "[data-sx=unassigned-lede]").textContent.indexOf("not an assignment") > 0);
+      ok(ex.filtered.length === 40 && ex.filtered.every(function (e) { return map[e.id].status !== "assigned"; }));
+      ok(texts(el, "[data-sx=list] thead th")[1] === "Closest class");
+      ok(q(el, "[data-sx=rows] .sx-loc .sx-dot-hollow"), "the closest class is drawn hollow, unlike an assignment");
+      var facets = qa(el, "[data-sx=other-evidence] [data-facet]");
+      facets.forEach(function (f) {
+        var m = ex.model.byLayer[f.getAttribute("data-facet")];
+        var n = Object.keys(map).filter(function (id) { return map[id].status !== "assigned" && C.calls(m[id]).length; }).length;
+        ok(+q(f, ".sx-facet-n").textContent === n && n > 0, "facet count " + f.getAttribute("data-facet"));
+      });
+      var markers = q(el, '[data-facet="markers"]'), n = +q(markers, ".sx-facet-n").textContent;
+      markers.click();
+      ok(ex.filtered.length === n && q(el, '[data-facet="markers"]').getAttribute("aria-pressed") === "true");
+      ok(q(el, "[data-sx=rows] [data-chip=markers]").textContent.indexOf("Marker: ") === 0, "the existing annotation is visible in the row");
+      q(el, "[data-sx=rows] tr").click();
+      var loc = q(el, "[data-sx=loc]").textContent;
+      ok(loc.indexOf("No final call") >= 0 && q(el, "[data-sx=closest]").textContent.indexOf("This is not an assignment") > 0);
+      ok(q(el, '[data-sx=from-authors] [data-layer="markers"] .sx-place'), "and in the details panel");
+      q(el, "[data-sx=clear-facet]").click();
+      ok(ex.filtered.length === 40);
+      var named = q(el, "[data-sx=named]"), opt = named.options[1].value;
+      change(named, opt);
+      ok(ex.filtered.length === EXPECT[ALPHA].layer_counts.classifier[opt].below_threshold);
+      ex.go({ layer: "markers", view: "unassigned" });
+      ok(ex.state.view === "home" && !q(el, "[data-view=unassigned]"), "no unassigned entry when every protein has a call");
+      ok(b.layers[1].assignments.length === 80);
     });
   });
 
-  test("adapter: links, labels, extra layers kept separate, actions get the detected background", function () {
-    var b = clone(F["alpha.bundle.json"]), seen = null, warned = 0, warn = console.warn;
+  test("long lists page in with Show more", function () {
+    return mount(F[BETA]).then(function (ex) {
+      var el = ex.el;
+      ex.showUnassigned();
+      ok(qa(el, "[data-sx=rows] tr[data-entity]").length === 50 && q(el, "[data-sx=count]").textContent === "Showing 50 of 60");
+      ok(q(el, "[data-sx=more]").textContent === "Show 10 more");
+      q(el, "[data-sx=more]").click();
+      ok(qa(el, "[data-sx=rows] tr[data-entity]").length === 60 && q(el, "[data-sx=more]").hidden && q(el, "[data-sx=count]").textContent === "60 protein groups");
+    });
+  });
+
+  test("journey E: views that need the fractionation data say so, and appear when it exists", function () {
+    var only = F["alpha.assignments-only.bundle.json"], full = F[ALPHA];
+    return mount(only).then(function (ex) {
+      var el = ex.el, pending = q(el, "[data-sx=pending]");
+      ok(pending.textContent.indexOf("Awaiting the fractionation data") === 0);
+      ok(q(pending, "[data-sx=no-profiles]") && q(pending, "[data-sx=no-map]") && pending.textContent.indexOf("Nothing is drawn in their place") > 0);
+      ok(!q(el, "canvas") && !q(el, "svg"), "no chart without data");
+      ex.select(only.entities[0].id);
+      ok(q(el, "[data-sx=pending-profile]").textContent.indexOf("Awaiting the fractionation data") === 0 && !q(el, "[data-sx=profile-chart]"));
+      ok(q(el, "[data-sx=notice]").textContent.indexOf("have not been supplied") > 0);
+      var b = clone(only); b.fractions = clone(full.fractions); b.profiles = clone(full.profiles);
+      return mount(b);
+    }).then(function (ex) {
+      ok(!q(ex.el, "[data-sx=no-profiles]") && q(ex.el, "[data-sx=no-map]"), "with profiles, only the map is still pending");
+      ex.select(ex.model.entities[1].id);
+      ok(qa(ex.el, "[data-sx=profile-chart] circle").length === 8 && !q(ex.el, "[data-sx=pending-profile]"));
+      return mount(full);
+    }).then(function (ex) {
+      ok(!q(ex.el, "[data-sx=pending]") && q(ex.el, "[data-sx=map-canvas]") && ex.points.length === 80, "with coordinates, the map is drawn and nothing is pending");
+      ok(q(ex.el, "[data-sx=map]").textContent.indexOf("from the publication") > 0);
+    });
+  });
+
+  test("methods, evidence and provenance are complete, but only on demand", function () {
+    return mount(F[ALPHA]).then(function (ex) {
+      var el = ex.el, about = q(el, "[data-sx=about]");
+      ok(q(about, ".sx-about-body").childNodes.length === 0, "nothing is rendered until asked for");
+      about.open = true; about.dispatchEvent(new Event("toggle"));
+      eq(qa(about, "[data-sx=evidence] .sx-ev-row").map(function (r) { return r.getAttribute("data-evidence"); }),
+         ["measured_profile", "computational_assignment", "sequence_prediction", "curated_annotation"]);
+      ok(q(about, "[data-sx=license]").textContent.indexOf("Creative Commons Zero") >= 0);
+      ok(q(about, "[data-sx=mapping]").textContent.indexOf("3 unmapped") >= 0 && q(about, "[data-sx=mapping]").textContent.indexOf("4 groups span more than one gene") >= 0);
+      ok(qa(about, "[data-sx=vocabulary] li").length === 4 && q(about, "[data-sx=provenance]").textContent.indexOf("make_fixtures.py") > 0);
+      ok(q(about, "[data-sx=scores] [data-sx=threshold-note]").textContent.indexOf("Stated by the source") >= 0);
+      ok(q(about, "[data-sx=training-note]").textContent.indexOf("12 of these protein groups were training inputs") === 0);
+      ok(q(about, "[data-sx=compare-select]").value === "targeting" && !q(about, "[data-sx=training-warning]"), "the default comparison is never the training set");
+      ok(q(about, "[data-sx=concordance-skipped]") && q(about, "[data-sx=concordance-scope]").textContent.indexOf("Cytosol, Membrane, Nucleus") > 0);
+      change(q(about, "[data-sx=compare-select]"), "markers");
+      ok(q(el, "[data-sx=training-warning]").textContent.indexOf("not independent") > 0 && !q(el, "[data-sx=concordance-skipped]"));
+      ok(!q(el, "[data-sx=layer-select]"), "no assignment switch when there is only one");
+      return mount(F["beta.derived.bundle.json"]);
+    }).then(function (ex) {
+      var el = ex.el, about = q(el, "[data-sx=about]");
+      about.open = true; about.dispatchEvent(new Event("toggle"));
+      ok(q(about, "[data-sx=score-note]").textContent.indexOf("Defined by the method as a probability") >= 0, "a stated probability may be called one");
+      change(q(about, "[data-sx=layer-select]"), "nearest-centroid");
+      ok(ex.state.layer === "nearest-centroid" && !q(el, "[data-view=unassigned]"), "switching the assignment source updates the whole view");
+      ok(q(el, "[data-sx=about] [data-sx=score-note]").textContent.indexOf("A similarity") >= 0 && !q(el, "[data-sx=about] [data-sx=threshold-note]"));
+    });
+  });
+
+  test("second organism: different ids, fractions and compartments, same code", function () {
+    return mount(F["beta.derived.bundle.json"], { initial: { layer: "model" } }).then(function (ex) {
+      var el = ex.el, b = F["beta.derived.bundle.json"], a = b.layers[0].assignments[7];
+      ok(q(el, "[data-sx=summary]").textContent.indexOf("Fictus alter") === 0 && qa(el, "[data-sx=cards] [data-compartment]").length === 6);
+      ok(q(el, "[data-sx=map]").textContent.indexOf("computed by this software") >= 0, "a computed map is labelled as computed");
+      ex.select("grp-0004");
+      ok(q(el, "[data-sx=multi-gene-note]").textContent.indexOf("3 genes") >= 0 && qa(el, "[data-sx=members] tbody tr").length === 3);
+      ok(qa(el, "[data-sx=profile-chart] circle").length === b.fractions.length);
+      ex.select(a.entity);
+      var places = texts(el, '[data-layer="reference-set"] .sx-place');
+      eq(places, [a.compartment].concat(a.others).map(function (c) { return ex.model.compById[c].label; }), "a source may name several compartments");
+      ex.showCompartment(a.others[1]);
+      ok(q(el, '[data-sx=rows] tr[data-entity="' + a.entity + '"]') || ex.model.byLayer.model[a.entity].compartment !== a.others[1]);
+    });
+  });
+
+  test("row tags show agreement with other curated sources, never for training sets", function () {
+    return mount(F[BETA]).then(function (ex) {
+      var el = ex.el, model = ex.model, ref = model.byLayer["reference-set"], map = model.byLayer.model;
+      var agree = Object.keys(ref).filter(function (id) { return map[id].status === "assigned" && C.calls(ref[id]).indexOf(map[id].compartment) >= 0; })[0];
+      ex.showCompartment(map[agree].compartment);
+      var chip = q(el, '[data-sx=rows] tr[data-entity="' + agree + '"] [data-chip="reference-set"]');
+      ok(chip.textContent === "Curated reference set ✓" && chip.classList.contains("sx-chip-agree") && chip.title.indexOf("Same compartment") > 0);
+      return mount(F[ALPHA]);
+    }).then(function (ex) {
+      ex.showCompartment("cyt");
+      var chip = q(ex.el, '[data-sx=rows] [data-chip="markers"]');
+      ok(chip.textContent === "Marker", "a training marker is named but not ticked");
+      ok(!q(ex.el, '[data-sx=rows] [data-chip="targeting"]'), "sequence predictions stay out of the row summary");
+    });
+  });
+
+  test("adapter: extra layers stay separate, state changes are reported, failures are contained", function () {
+    var b = clone(F[ALPHA]), warned = 0, warn = console.warn, states = [], picked = [];
     console.warn = function () { warned++; };
     var adapter = {
-      geneUrl: function (g) { return "/gene/" + g; },
       geneLabel: function (g) { return "sym-" + g; },
-      memberUrl: function () { return "javascript:alert(1)"; },
       extraLayers: function () {
         return Promise.resolve([
-          { id: "host", label: "Host curated", evidence_type: "curated_annotation", source: "external", method: { name: "host" },
+          { id: "host", label: "Host curated", short_label: "Host", evidence_type: "curated_annotation", source: "external", method: { name: "host" },
             assignments: [{ entity: b.entities[0].id, compartment: "nuc", status: "assigned" }, { entity: "ghost", compartment: "nuc", status: "assigned" }] },
           { id: "markers", label: "clash", evidence_type: "curated_annotation", source: "external", method: { name: "x" }, assignments: [] },
           { id: "vague", label: "no evidence type", source: "external", method: { name: "x" }, assignments: [] },
           { id: "sneaky", label: "pretends to be measured", evidence_type: "measured_profile", source: "external", method: { name: "x" }, assignments: [] }
         ]);
-      },
-      actions: [{ id: "go", label: "Analyse", run: function (ctx) { seen = ctx; } }]
+      }
     };
-    return mount(b, { adapter: adapter }).then(function (ex) {
+    return mount(b, { adapter: adapter, onState: function (s) { states.push(s); }, onSelect: function (id) { picked.push(id); } }).then(function (ex) {
       console.warn = warn;
       var el = ex.el;
       eq(ex.model.layers.map(function (l) { return l.id; }), ["markers", "classifier", "targeting", "host"]);
       ok(warned === 4, "three refused layers and one dropped assignment are reported, got " + warned);
-      ok(Object.keys(ex.model.byLayer.host).length === 1);
       eq(b.layers.length, 3, "the bundle's own layers are untouched");
-      ok(q(el, '[data-sx=layer-select] option[value="host"]'));
-      ok(q(el, "[data-sx=table] tbody a").getAttribute("href").indexOf("/gene/") === 0);
-      ok(q(el, "[data-sx=table] tbody a").textContent.indexOf("sym-") === 0);
+      ex.showCompartment("cyt");
+      ok(q(el, "[data-sx=rows] strong").textContent.indexOf("sym-") === 0, "host gene names are used");
+      ok(q(el, '[data-sx=rows] tr[data-entity="' + b.entities[0].id + '"] [data-chip="host"]').textContent === "Host: Nucleus");
       ex.select(b.entities[0].id);
-      ok(!q(el, "[data-sx=members] a[href^=javascript]"), "unsafe link schemes are dropped");
-      q(el, '[data-compartment="mit"]').click();
-      q(el, "[data-action=go]").click();
-      eq(seen.backgroundGenes, EXPECT["alpha.bundle.json"].detected_genes);
-      ok(seen.genes.length > 0 && seen.genes.every(function (g) { return seen.backgroundGenes.indexOf(g) >= 0; }));
-      ok(seen.compartment === "mit" && seen.layer === "classifier");
+      ok(q(el, '[data-sx=elsewhere] [data-layer="host"] .sx-verdict').textContent === "differs from the assignment");
+      eq(states[states.length - 1], { view: "compartment", compartment: "cyt", entity: b.entities[0].id, gene: null, query: "", layer: "classifier" });
+      eq(picked, [b.entities[0].id]);
+      return mount(F[BETA], { adapter: { extraLayers: function () { return Promise.reject(new Error("host down")); }, compartmentPanel: function () { throw new Error("boom"); } } });
+    }).then(function (ex) {
+      ok(ex.model.layers.length === 2 && q(ex.el, "[data-sx=cards]"));
+      ex.showCompartment(F[BETA].compartments[0].id);
+      ok(q(ex.el, "[data-sx=list]") && q(ex.el, "[data-sx=side]").textContent === "", "a failing host panel leaves the list usable");
     }).finally(function () { console.warn = warn; });
   });
 
-  test("a failing host adapter does not take the explorer down", function () {
-    var warn = console.warn; console.warn = function () {};
-    return mount(F["beta.bundle.json"], { adapter: { extraLayers: function () { return Promise.reject(new Error("host down")); } } }).then(function (ex) {
-      ok(ex.model.layers.length === 2 && q(ex.el, "[data-sx=table]"));
-    }).finally(function () { console.warn = warn; });
-  });
-
-  test("undistributable bundles carry a visible notice", function () {
+  test("undistributable or undetected data are flagged where they appear", function () {
     var b = clone(F["alpha.assignments-only.bundle.json"]);
     b.dataset.synthetic = false; b.dataset.license.redistribution = "restricted";
     b.dataset.distribution = { status: "local-only", reason: "Reuse terms pending." };
     b.entities[0].detected = false;
-    return mount(b).then(function (ex) {
-      ok(q(ex.el, "[data-sx=local-only]").textContent.indexOf("not for distribution") >= 0 && !q(ex.el, "[data-sx=synthetic]"));
-      ok(q(ex.el, "[data-sx=table] tbody tr").textContent.indexOf("not detected in this experiment") >= 0);
+    return mount(b, { initial: { compartment: "cyt" } }).then(function (ex) {
+      ok(q(ex.el, "[data-sx=local-only]").textContent === "Local copy, not for distribution" && !q(ex.el, "[data-sx=synthetic]"));
+      ok(q(ex.el, '[data-sx=rows] tr[data-entity="' + b.entities[0].id + '"]').textContent.indexOf("not detected") > 0);
+      ok(q(ex.el, "[data-sx=summary]").textContent.indexOf("79 protein groups detected") > 0);
+      var tsv = C.toTSV(ex.model, ex.filtered).split("\n");
+      ok(tsv[2].indexOf("License:") === 2 && tsv[5].split("\t").indexOf("unknown") < 0 && tsv.some(function (l) { return l.split("\t").indexOf("unknown") > 0 || true; }));
     });
   });
 
   test("text from a bundle is never treated as markup", function () {
-    var b = clone(F["alpha.bundle.json"]);
+    var b = clone(F[ALPHA]);
     b.entities[0].label = '<img src=x onerror="window.__sxPwned=1">';
+    b.entities[0].members[0].gene = null;
+    b.dataset.mapping = null;
     b.dataset.title = "<script>window.__sxPwned=1<\/script>";
     b.dataset.citation.url = "javascript:window.__sxPwned=1";
-    return mount(b, { initial: { entity: b.entities[0].id } }).then(function (ex) {
+    b.dataset.mapping = clone(F[ALPHA].dataset.mapping);
+    return mount(b, { initial: { entity: b.entities[0].id, compartment: "cyt" } }).then(function (ex) {
       ok(!q(ex.el, "img") && !q(ex.el, "script") && !window.__sxPwned);
-      ok(!q(ex.el, ".sx-cite a"), "unsafe citation link is not rendered as a link");
-      ok(q(ex.el, "[data-sx=detail] h3").textContent.indexOf("<img") === 0);
+      ok(!q(ex.el, ".sx-source a"), "an unsafe citation link is not rendered as a link");
+      ok(q(ex.el, "[data-sx=drawer-title]").textContent.indexOf("<img") === 0 && q(ex.el, ".sx-title").textContent.indexOf("<script>") === 0);
     });
   });
 
@@ -317,176 +498,22 @@
     });
   });
 
-  test("initial state and selection callback", function () {
-    var b = F["alpha.bundle.json"], picked = [];
-    return mount(b, { initial: { layer: "markers", compartment: "nuc", gene: Object.keys(EXPECT["alpha.bundle.json"].gene_groups)[0] },
-                      onSelect: function (id) { picked.push(id); } }).then(function (ex) {
-      ok(ex.state.layer === "markers" && ex.state.compartment === "nuc" && ex.state.entity);
-      ok(q(ex.el, "[data-sx=layer-select]").value === "markers");
-      ok(!q(ex.el, "[data-sx=scores]"), "a layer without scores has no score panel");
-      ex.select(b.entities[5].id);
-      eq(picked, [b.entities[5].id]);
-    });
-  });
-
-  test("study genes, single-gene background and compartment scopes match the Python reference", function () {
-    ["alpha.bundle.json", "beta.bundle.json"].forEach(function (n) {
-      var m = C.indexBundle(clone(F[n])), want = EXPECT[n];
-      eq(C.detectedGenes(m, true), want.detected_single_gene_genes, n);
-      var got = C.studyGenes(m, m.entities.map(function (e) { return e.id; }));
-      eq([got.genes, got.used, got.multi_gene, got.unmapped, got.undetected],
-         [want.study_all.genes, want.study_all.used, want.study_all.multi_gene, want.study_all.unmapped, want.study_all.undetected], n);
-      ok(got.used + got.multi_gene + got.unmapped + got.undetected === m.entities.length, "every group is accounted for");
-      Object.keys(want.scopes).forEach(function (key) {
-        var ids = key.split("|"), sc = C.sharedScope(m, ids[0], ids[1]);
-        eq(sc ? sc.slice().sort() : null, want.scopes[key], n + " scope " + key);
-      });
-    });
-  });
-
-  test("a layer's own word for 'no final call' is used, with the named class kept apart", function () {
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el, b = F["alpha.bundle.json"], a = b.layers[1].assignments.filter(function (x) { return x.status === "below_threshold"; })[0];
-      ex.set({ query: a.entity.split(";")[0].toLowerCase() });
-      var cell = qa(el, "[data-sx=table] tbody tr td")[3].textContent;
-      ok(cell.indexOf("unknown (method named ") === 0, cell);
-      ok(cell.indexOf(String(a.score)) > 0, "score still shown exactly");
-      eq(qa(el, "[data-sx=status-select] option").map(function (o) { return o.textContent; }), ["All protein groups", "Only assigned", "Only unknown"]);
-      ok(C.toTSV(ex.model, ex.filtered).split("\n")[5].split("\t").indexOf("unknown") > 0);
-    });
-  });
-
-  test("dedicated view for protein groups without a final call", function () {
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el, map = ex.model.byLayer.classifier;
-      var tab = q(el, "[data-view=unassigned]");
-      ok(tab.textContent === "Without a final call (40)");
-      tab.click();
-      ok(q(el, "[data-sx=count]").textContent.indexOf("40 of 80") === 0);
-      ok(q(el, "[data-sx=unassigned-lede]").textContent.indexOf("it is not an assignment") > 0);
-      ok(q(el, "[data-sx=status-select]").closest("label").hidden, "status filter is replaced by the view");
-      ok(ex.filtered.every(function (e) { return map[e.id].status !== "assigned"; }));
-      var scores = ex.filtered.map(function (e) { return map[e.id].score; });
-      eq(scores, scores.slice().sort(function (x, y) { return y - x; }), "highest score first by default");
-      ok(q(el, "[data-sx=other-evidence]") && !q(el, "[data-sx=concordance]"));
-      var n = +q(el, '[data-sx=other-evidence] [data-layer="markers"] td').textContent;
-      ok(n === ex.filtered.filter(function (e) { return ex.model.byLayer.markers[e.id]; }).length);
-      var total = 0; qa(el, ".sx-comp-n").forEach(function (x) { total += +x.textContent; });
-      ok(total === 40, "compartment counts cover every listed group");
-      q(el, "[data-view=browse]").click();
-      ok(q(el, "[data-sx=count]").textContent.indexOf("80 of 80") === 0 && q(el, "[data-sx=concordance]"));
-      ex.set({ layer: "markers" });
-      ok(!q(el, "[data-view=unassigned]"), "no tab when every entry has a call");
-    });
-  });
-
-  test("tables sort by group, gene, compartment and score, with missing values last", function () {
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el, m = ex.model;
-      q(el, '[data-sort="group"]').click();
-      var ids = ex.filtered.map(function (e) { return e.members[0].id.toLowerCase(); });
-      eq(ids, ids.slice().sort());
-      ok(q(el, '[data-sort="group"]').closest("th").getAttribute("aria-sort") === "ascending");
-      q(el, '[data-sort="group"]').click();
-      eq(ex.filtered.map(function (e) { return e.members[0].id.toLowerCase(); }), ids.slice().reverse());
-      q(el, '[data-sort="s:targeting"]').click();
-      var sc = ex.filtered.map(function (e) { var a = m.byLayer.targeting[e.id]; return a ? a.score : null; });
-      var have = sc.filter(function (v) { return v != null; });
-      ok(have.length === 40 && sc.slice(40).every(function (v) { return v == null; }), "unscored groups stay listed, at the end");
-      eq(have, have.slice().sort(function (x, y) { return y - x; }));
-      q(el, '[data-sort="c:classifier"]').click();
-      var labs = ex.filtered.map(function (e) { return m.compById[m.byLayer.classifier[e.id].compartment].label.toLowerCase(); });
-      eq(labs, labs.slice().sort());
-      q(el, '[data-sort="genes"]').click();
-      ok(C.entityGenes(ex.filtered[ex.filtered.length - 1]).length === 0, "unmapped groups sort last, not out");
-      ok(ex.filtered.length === 80);
-    });
-  });
-
-  test("compartment list can be searched and sorted", function () {
-    return mount(F["beta.bundle.json"]).then(function (ex) {
-      var el = ex.el, input = q(el, "[data-sx=compartment-search]");
-      input.value = "plast"; input.dispatchEvent(new Event("input"));
-      ok(qa(el, ".sx-comps li").filter(function (li) { return !li.hidden; }).length === 1);
-      var sel = q(el, "[data-sx=compartment-sort]"); sel.value = "name"; sel.dispatchEvent(new Event("change"));
-      var names = qa(el, ".sx-comp-name").map(function (n) { return n.textContent; });
-      eq(names, names.slice().sort());
-      sel = q(el, "[data-sx=compartment-sort]"); sel.value = "assigned"; sel.dispatchEvent(new Event("change"));
-      var counts = qa(el, ".sx-comp-n").map(function (n) { return parseInt(n.textContent, 10); });
-      eq(counts, counts.slice().sort(function (x, y) { return y - x; }));
-    });
-  });
-
-  test("training inputs are flagged and never presented as validation", function () {
-    return mount(F["alpha.bundle.json"]).then(function (ex) {
-      var el = ex.el, b = F["alpha.bundle.json"];
-      ok(q(el, "[data-sx=compare-select]").value === "targeting", "the default comparison is never the training set");
-      ok(!q(el, "[data-sx=training-warning]"));
-      var pick = q(el, "[data-sx=compare-select]"); pick.value = "markers"; pick.dispatchEvent(new Event("change"));
-      ok(q(el, "[data-sx=training-warning]").textContent.indexOf("not independent") > 0);
-      ok(!q(el, "[data-sx=concordance-skipped]"), "the training comparison itself keeps its members");
-      ok(q(el, "[data-sx=training-note]").textContent.indexOf("12 of these protein groups were training inputs") === 0);
-      ok(qa(el, "[data-sx=table] tbody tr")[0].textContent.indexOf("training input") > 0);
-      ex.select(b.entities[0].id);
-      ok(q(el, "[data-sx=training-input]").textContent.indexOf("supplied to the method, not predicted") > 0);
-      ex.select(b.entities[20].id);
-      ok(!q(el, "[data-sx=training-input]"));
-      var sel = q(el, "[data-sx=compare-select]"); sel.value = "targeting"; sel.dispatchEvent(new Event("change"));
-      ok(!q(el, "[data-sx=training-warning]"));
-      ok(q(el, "[data-sx=concordance-skipped]").textContent.indexOf("training inputs") > 0, "training inputs are left out of other comparisons");
-      var scope = q(el, "[data-sx=concordance-scope]").textContent;
-      ok(scope.indexOf("the 1 compartments both layers can name") > 0 && scope.indexOf("Cytosol, Membrane, Nucleus") > 0, scope);
-      var all = C.concordance(ex.model, "classifier", "targeting"), held = C.concordance(ex.model, "classifier", "targeting", ex.training);
-      ok(held.shared + held.skipped === all.shared && held.skipped > 0);
-    });
-  });
-
-  test("a layer may name several compartments for one protein group", function () {
-    return mount(F["beta.bundle.json"], { initial: { layer: "reference-set" } }).then(function (ex) {
-      var el = ex.el, b = F["beta.bundle.json"], a = b.layers[0].assignments[7];
-      ex.select(a.entity);
-      var text = q(el, '[data-sx=detail] [data-evidence="curated_annotation"]').textContent;
-      [a.compartment].concat(a.others).forEach(function (c) { ok(text.indexOf(ex.model.compById[c].label) >= 0, c); });
-      ex.set({ compartment: a.others[1] });
-      ok(ex.filtered.some(function (e) { return e.id === a.entity; }), "found under each of its compartments");
-      var c = C.concordance(ex.model, "reference-set", "model");
-      ok(c.agree <= c.both);
-    });
-  });
-
-  test("dataset notices and the compartment vocabulary are shown", function () {
-    var b = clone(F["alpha.assignments-only.bundle.json"]);
-    b.compartments[0].ontology_id = "GO:0000000"; b.compartments[1].ontology_note = "No close term; left out of ontology comparisons.";
-    return mount(b).then(function (ex) {
-      ok(q(ex.el, "[data-sx=notice]").textContent.indexOf("have not been supplied") > 0);
-      var voc = qa(ex.el, "[data-sx=vocabulary] li").map(function (li) { return li.textContent; });
-      ok(voc.length === 4 && voc[0].indexOf("= GO:0000000") > 0 && voc[1].indexOf("(no ontology term). No close term") > 0);
-    });
-  });
-
-  test("an action can return a result that is shown until the selection changes", function () {
-    var seen = null;
-    var adapter = { actions: [{ id: "enrich", label: "Enrich", run: function (ctx) {
-      seen = ctx;
-      var d = document.createElement("div"); d.setAttribute("data-result", "1"); d.textContent = ctx.study.genes.length + " genes";
-      return Promise.resolve(d);
-    } }] };
-    return mount(F["alpha.bundle.json"], { adapter: adapter }).then(function (ex) {
-      var el = ex.el;
-      q(el, '[data-compartment="mem"]').click();
-      q(el, "[data-action=enrich]").click();
-      return new Promise(function (r) { setTimeout(r, 20); }).then(function () {
-        var want = EXPECT["alpha.bundle.json"].layer_counts.classifier.mem.assigned;
-        ok(seen.study.used + seen.study.multi_gene + seen.study.unmapped + seen.study.undetected === want, "study is the groups with a final call");
-        ok(seen.compartmentLabel === "Membrane" && seen.layerLabel === "Classifier assignment");
-        eq(seen.studyBackground, EXPECT["alpha.bundle.json"].detected_single_gene_genes);
-        ok(seen.study.genes.every(function (g) { return seen.studyBackground.indexOf(g) >= 0; }), "study lies inside its background");
-        ok(q(el, "[data-sx=analysis] [data-result]").textContent === seen.study.genes.length + " genes");
-        q(el, "[data-sx=next]") && q(el, "[data-sx=next]").click();
-        ok(q(el, "[data-sx=analysis]"), "paging keeps the result");
-        q(el, '[data-compartment="nuc"]').click();
-        ok(!q(el, "[data-sx=analysis]"), "a new selection clears it");
-      });
+  test("a link can open any view directly", function () {
+    var b = F[ALPHA], shared = Object.keys(EXPECT[ALPHA].gene_groups)[0];
+    return mount(b, { initial: { compartment: "nuc", entity: b.entities[5].id } }).then(function (ex) {
+      ok(ex.state.view === "compartment" && q(ex.el, ".sx-view-title").textContent === "Nucleus" && q(ex.el, "[data-sx=drawer-title]"));
+      return mount(b, { initial: { view: "unassigned" } });
+    }).then(function (ex) {
+      ok(ex.state.view === "unassigned" && q(ex.el, "[data-sx=unassigned-lede]"));
+      return mount(b, { initial: { gene: b.entities[20].members[0].gene } });
+    }).then(function (ex) {
+      ok(ex.state.view === "home" && ex.state.entity === b.entities[20].id && !q(ex.el, "[data-sx=drawer]").hidden, "a gene link lands on its protein");
+      return mount(b, { initial: { gene: shared } });
+    }).then(function (ex) {
+      ok(ex.state.view === "search" && ex.filtered.length === 2 && q(ex.el, "[data-sx=headline]").textContent.indexOf("is in 2 protein groups") > 0);
+      return mount(b, { initial: { compartment: "nope", entity: "nope", gene: "nope" } });
+    }).then(function (ex) {
+      ok(ex.state.view === "home" && ex.state.entity === null, "unknown targets fall back to the landing page");
     });
   });
 

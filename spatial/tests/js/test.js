@@ -87,7 +87,7 @@
   });
 
   test("scores are shown exactly as supplied", function () {
-    eq(C.formatScore(0.695576586918301), "0.695576586918301");
+    eq(C.formatScore(0.123456789012345), "0.123456789012345");
     eq(C.formatScore(0.30000000000000004), "0.30000000000000004");
     eq(C.formatScore(null), "");
     var b = F["alpha.bundle.json"];

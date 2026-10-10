@@ -11524,7 +11524,21 @@ async function registerSpatialTool() {
     if (!CMDK_TARGETS.some((t) => t.href === "/tools/spatial")) {
       CMDK_TARGETS.push({ kind: "Tool", label: "Subcellular spatial proteomics", href: "/tools/spatial", sub: blurb, kw: "spatial proteomics localization compartment organelle fractionation svm" });
     }
-    document.querySelectorAll("[data-spatial-nav]").forEach((a) => a.removeAttribute("hidden"));
+    // menu entries are created here, not kept hidden in the page source, so an
+    // unlisted preview leaves no trace in the HTML the site serves
+    document.querySelectorAll('a.menu-option[href="/tools/heatstress"]').forEach((ref) => {
+      if (ref.parentNode.querySelector("[data-spatial-nav]")) return;
+      const a = document.createElement("a");
+      a.className = "menu-option";
+      a.href = "/tools/spatial";
+      a.setAttribute("data-spatial-nav", "");
+      const strong = document.createElement("strong");
+      strong.textContent = "Subcellular spatial proteomics";
+      const span = document.createElement("span");
+      span.textContent = "Protein localization from subcellular fractionation.";
+      a.append(strong, span);
+      ref.parentNode.insertBefore(a, ref);
+    });
   } catch { /* module not installed */ }
 }
 

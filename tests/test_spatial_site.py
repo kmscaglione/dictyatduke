@@ -163,10 +163,9 @@ class PublicFixtureTest(_Server):
         self.assertIn("spatial proteomics", title.lower())
         self.assertIn("preview", desc.lower())
         self.assertNotIn("/tools/spatial", self.fetch("/sitemap.xml")[2].decode())
-        html = (ROOT / "index.html").read_text()
-        links = re.findall(r'<a[^>]*href="/tools/spatial"[^>]*>', html)
-        self.assertEqual(len(links), 2)
-        self.assertTrue(all("hidden" in a and "data-spatial-nav" in a for a in links))
+        self.assertNotIn("spatial", (ROOT / "index.html").read_text().lower())   # nothing in the served shell
+        for path in ("/", "/tools", "/gene/mhcA"):
+            self.assertNotIn(b"spatial", self.fetch(path)[2].lower(), path)
 
     def test_site_styles_theme_the_explorer_with_site_tokens(self):
         css = (ROOT / "styles.css").read_text()
@@ -207,8 +206,9 @@ class PublicFixtureTest(_Server):
         self.assertIn('data-sx="map-canvas"', dom)              # the fixture carries coordinates
         self.assertIn('data-sx="histogram"', dom)
         self.assertNotIn('role="alert"', dom)
-        # unlisted: the menu entries stay hidden even though the page works
-        self.assertEqual(len(re.findall(r'href="/tools/spatial" data-spatial-nav="" hidden=""', dom)), 2)
+        # unlisted: no menu entry exists anywhere in the page, hidden or not
+        self.assertNotIn("data-spatial-nav", dom)
+        self.assertNotIn('href="/tools/spatial"', dom)
 
 
 @unittest.skipUnless(site, "spatial module not importable")

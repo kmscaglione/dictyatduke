@@ -141,3 +141,35 @@ nothing is ever edited on the server directly.
   X-Forwarded-For change to restore per-client limits.
 - **CDN** — if this is ever fronted by a CDN, see `../docs/cdn-setup.md`; the app
   already emits immutable/edge-cacheable headers.
+
+## Spatial proteomics preview (`/tools/spatial`)
+
+An unlisted page: it works at its address, sends `noindex, nofollow`, and is
+absent from the menus, sitemap, search and data registry. It is not password
+protected. The code ships with the site; the dataset does not.
+
+The dataset is one file that is never committed. Build it on a workstation
+(`spatial/adapters/dictybase/build_bundle.py`), then on the server:
+
+```bash
+cd /srv/web/dicty.labs.duke.edu/html
+mkdir -p spatial/adapters/dictybase/local
+# copy tinker2026-vegetative.bundle.json into that folder (scp from the workstation)
+sudo /srv/web/bin/web_chown apache spatial/adapters/dictybase/local
+sudo systemctl edit dicty        # add:  [Service]
+                                 #       Environment=DICTY_SPATIAL_PREVIEW=1
+sudo systemctl restart dicty
+python3 scripts/verify_spatial_preview.py https://dicty.labs.duke.edu
+```
+
+To turn the preview off, remove that `Environment` line (or the file) and
+restart. Every `/api/spatial/` response except `status` then returns 404:
+
+```bash
+python3 scripts/verify_spatial_preview.py https://dicty.labs.duke.edu --expect off
+```
+
+The folder is gitignored, so `scripts/deploy.sh` leaves the file in place. The
+server refuses to serve it by path; it reaches browsers only through
+`/api/spatial/bundle` while the switch is on.
+

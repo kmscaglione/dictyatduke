@@ -2888,9 +2888,6 @@ body.cmdk-active { overflow: hidden; }
 .screen-order-list li .muted { font-size: .72rem; }
 .screen-order-list li button { margin-left: auto; }
 
-/* nav entries that appear only when their feature is available */
-.menu-option[hidden] { display: none; }
-
 /* ---- Spatial proteomics explorer (/tools/spatial) ----
    The explorer is a reusable module with its own neutral theme. Here it is
    given the site's identity by pointing its tokens at the site's, and by

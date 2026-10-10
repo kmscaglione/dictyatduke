@@ -88,5 +88,98 @@ class UploadGuardTest(unittest.TestCase):
         self.assertLessEqual(serve.UPLOAD_MAX_BYTES, 100 * 1024 * 1024)
 
 
+class PublicStaticAllowlistTest(unittest.TestCase):
+    """Only allowlisted locations are served as files. Regression for the
+    exposure of cache/pageviews.json and other runtime files."""
+
+    @classmethod
+    def setUpClass(cls):
+        import threading
+        cls.srv = serve.Server(("127.0.0.1", 0), serve.Handler)
+        cls.port = cls.srv.server_address[1]
+        threading.Thread(target=cls.srv.serve_forever, daemon=True).start()
+        with cls._open("/") as r:
+            cls.shell = r.read()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.srv.shutdown()
+        cls.srv.server_close()
+
+    @classmethod
+    def _open(cls, path):
+        import urllib.request
+        return urllib.request.urlopen("http://127.0.0.1:%d%s" % (cls.port, path), timeout=30)
+
+    def status(self, path):
+        import urllib.error
+        try:
+            with self._open(path) as r:
+                return r.status, r.read(4096)
+        except urllib.error.HTTPError as e:
+            return e.code, b""
+
+    def test_runtime_and_working_files_are_not_served(self):
+        import tempfile
+        made = []
+        cache = ROOT / "cache"
+        cache.mkdir(exist_ok=True)
+        for name in ("pageviews.json", "recent_papers.json"):
+            f = cache / name
+            if not f.exists():                       # present on a real server; fabricate for CI
+                f.write_text('{"probe": true}')
+                made.append(f)
+        try:
+            for path in ("/cache/pageviews.json", "/cache/recent_papers.json", "/cache/",
+                         "/assets/../cache/pageviews.json", "/assets/%2e%2e/cache/pageviews.json",
+                         "/cache%2fpageviews.json", "/CACHE/pageviews.json",
+                         "/assets/dictybase-corpus/colleagues.json", "/assets/dictybase_live_curation.json",
+                         "/assets/annotations_imported.json", "/assets/curators.json",
+                         "/docs/nar-paper.docx", "/docs/figure2-interface.png", "/qa-gene-cln5.png",
+                         "/.zenodo.json", "/curation/papers/results/x.json", "/deploy/dicty.apache.conf",
+                         "/tests/test_security.py", "/scripts/deploy.sh", "/serve.py", "/README.md",
+                         "/data/orthofinder/Orthogroups.tsv", "/ops/maintenance-log.csv"):
+                code, body = self.status(path)
+                served_file = code == 200 and body[:300] != self.shell[:300]
+                self.assertFalse(served_file, "%s was served as a file" % path)
+            self.assertEqual(self.status("/cache/pageviews.json")[0], 404)
+        finally:
+            for f in made:
+                f.unlink()
+
+    def test_site_assets_still_load(self):
+        for path in ("/app.js", "/styles.css", "/labs-content.js", "/meetings-content.js",
+                     "/teaching-content.js", "/technique-content.js", "/assets/gene_index.json",
+                     "/assets/favicon.svg", "/assets/manifest.webmanifest", "/assets/vendor/igv.min.js",
+                     "/assets/news.json", "/spatial/js/spatial-explorer.js"):
+            self.assertEqual(self.status(path)[0], 200, path)
+        for path in ("/robots.txt", "/sitemap.xml", "/news.xml", "/gene/mhcA", "/tools/enrichment"):
+            self.assertEqual(self.status(path)[0], 200, path)       # dynamic routes are unaffected
+
+    def test_no_tracked_file_outside_the_allowlist_is_served(self):
+        import subprocess
+        try:
+            out = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, check=True).stdout.decode()
+        except (OSError, subprocess.CalledProcessError):
+            self.skipTest("not a git checkout")
+        leaked = []
+        for rel in out.split("\0"):
+            if not rel or serve._is_public_static("/" + rel):
+                continue
+            if os.path.splitext(rel)[1].lower() not in serve.STATIC_EXTS:
+                continue                              # never a file route: the app shell answers
+            code, body = self.status("/" + rel)
+            if code == 200 and body[:300] != self.shell[:300]:
+                leaked.append(rel)
+        self.assertEqual(leaked, [])
+
+    def test_allowlist_respects_the_blocklist(self):
+        self.assertFalse(serve._is_public_static("/assets/curators.json"))
+        self.assertFalse(serve._is_public_static("/assets/paper_fulltext/x.json"))
+        self.assertFalse(serve._is_public_static("/spatial/adapters/dictybase/local/b.bundle.json"))
+        self.assertFalse(serve._is_public_static("/assets/.hidden.json"))
+        self.assertTrue(serve._is_public_static("/assets/gene_index.json"))
+
+
 if __name__ == "__main__":
     unittest.main()

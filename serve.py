@@ -210,6 +210,36 @@ _BLOCKED_EXACT = {
     "/assets/curation_paper_drafts.json",
 }
 _BLOCKED_PREFIXES = ("/uploads/", "/assets/paper_fulltext/")
+# Runtime and working files that sit under assets/ but are not site content:
+# the colleague directory (personal contact data), the live-curation sync and
+# the GAF import intermediate. Never web-served, whatever else changes.
+_BLOCKED_EXACT |= {
+    "/assets/dictybase-corpus/colleagues.json",
+    "/assets/dictybase_live_curation.json",
+    "/assets/annotations_imported.json",
+}
+
+# ---- Public static files: an explicit allowlist ----------------------------
+# Only these locations are ever served as files. Everything else under the web
+# root (cache/, curation/, docs/, data/, deploy/, tests/, scripts/, ops/, stray
+# top-level files) is NOT a public asset, even when its extension is a static
+# type. The earlier rule was "serve any file unless it is on the blocklist",
+# which exposed cache/pageviews.json and other runtime files. The blocklist
+# above still applies inside the allowed locations.
+_PUBLIC_STATIC_FILES = {
+    "/app.js", "/styles.css",
+    "/labs-content.js", "/meetings-content.js", "/teaching-content.js", "/technique-content.js",
+    "/spatial/adapters/dictybase/adapter.js",
+}
+_PUBLIC_STATIC_PREFIXES = ("/assets/", "/spatial/js/")
+
+
+def _is_public_static(raw):
+    """True if `raw` names a file that may be served from disk."""
+    p = posixpath.normpath(unquote(raw))
+    if _is_blocked_path(raw):
+        return False
+    return p in _PUBLIC_STATIC_FILES or p.startswith(_PUBLIC_STATIC_PREFIXES)
 
 
 def _is_blocked_path(raw):
@@ -4112,6 +4142,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # files fall through to the default handler.
         if raw in ("/", "/index.html") or ext not in STATIC_EXTS:
             return self._serve_index()
+        # A static-looking path outside the public allowlist is not a file we serve.
+        if not _is_public_static(raw):
+            self.send_error(404, "Not Found")
+            return
         # Per-genome CDS/protein FASTAs are stored gzipped, but serving them as a
         # `.fasta.gz` to save made macOS/Safari mangle the download (auto-expand
         # left plaintext still named .gz -> "Error 79, unable to expand"). Serve

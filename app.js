@@ -11456,6 +11456,11 @@ async function loadChr2DupFlag(gene) {
 // about this site; /spatial/adapters/dictybase/adapter.js is the bridge. It is
 // loaded on demand, and everything stays hidden unless the server reports a
 // dataset it is allowed to show.
+// While the dataset is an unlisted preview this stays false: the page works at
+// /tools/spatial for anyone given the address, but nothing on the site links to
+// it, gene pages do not show its data, and no other page makes a spatial request.
+// Set to true only when the dataset is cleared for public release.
+const SPATIAL_LISTED = false;
 let spatialAdapterPromise = null;
 let spatialGeneMap = null;
 function ensureSpatialAdapter() {
@@ -11492,6 +11497,7 @@ async function openSpatialTool() {
   }
 }
 async function loadSpatial(gene) {
+  if (!SPATIAL_LISTED) return;
   const el = document.querySelector("[data-spatial]");
   if (!el) return;
   const ddb = (gene.veupath || gene.ddb || gene.id || "").toUpperCase();
@@ -11507,6 +11513,7 @@ async function loadSpatial(gene) {
 }
 // Tool listings gain the explorer only when the server can show a dataset.
 async function registerSpatialTool() {
+  if (!SPATIAL_LISTED) return;
   try {
     const adapter = await ensureSpatialAdapter();
     const st = await adapter.status();

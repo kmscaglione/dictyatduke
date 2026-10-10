@@ -133,10 +133,35 @@ class PublicFixtureTest(_Server):
             self.assertTrue(serve._is_blocked_path(path), path)
             self.assertEqual(self.fetch(path)[0], 404, path)
 
+    def test_unlisted_page_is_not_indexed_or_linked(self):
+        code, headers, body = self.fetch("/tools/spatial")
+        html = body.decode()
+        self.assertEqual(headers.get("X-Robots-Tag"), "noindex, nofollow")
+        self.assertIn('<meta name="robots" content="noindex, nofollow">', html)
+        self.assertNotIn('rel="canonical"', html)
+        for path in ("/api/spatial/status", "/api/spatial/bundle", "/spatial/js/spatial-explorer.js"):
+            self.assertEqual(self.fetch(path)[1].get("X-Robots-Tag"), "noindex, nofollow", path)
+        # the rest of the site is untouched
+        for path in ("/", "/tools/enrichment", "/gene/mhcA", "/api/version"):
+            code, headers, body = self.fetch(path)
+            self.assertIsNone(headers.get("X-Robots-Tag"), path)
+            self.assertNotIn(b"noindex", body, path)
+        # no public listing anywhere
+        self.assertNotIn("spatial", self.fetch("/sitemap.xml")[2].decode().lower())
+        self.assertNotIn("spatial", self.fetch("/robots.txt")[2].decode().lower())
+        self.assertNotIn("spatial", self.fetch("/api/data-status")[2].decode().lower())
+        self.assertNotIn("tools/spatial", self.fetch("/api/search?q=spatial%20proteomics")[2].decode().lower())
+        src = (ROOT / "app.js").read_text()
+        self.assertIn("const SPATIAL_LISTED = false;", src)
+        for fn in ("loadSpatial", "registerSpatialTool"):
+            body = src[src.index("async function %s(" % fn):][:200]
+            self.assertIn("if (!SPATIAL_LISTED) return;", body, fn)
+        self.assertNotIn("spatial", src[src.index("const TOOLS_INDEX"):src.index("const TOOLS_INDEX") + 4000].lower())
+
     def test_route_is_described_but_not_advertised(self):
         title, desc, _, _ = serve.route_meta("/tools/spatial")
         self.assertIn("spatial proteomics", title.lower())
-        self.assertIn("under evaluation", desc.lower())
+        self.assertIn("preview", desc.lower())
         self.assertNotIn("/tools/spatial", self.fetch("/sitemap.xml")[2].decode())
         html = (ROOT / "index.html").read_text()
         links = re.findall(r'<a[^>]*href="/tools/spatial"[^>]*>', html)
@@ -170,8 +195,9 @@ class PublicFixtureTest(_Server):
         self.assertNotIn("spatial-dashboard", dom)
         self.assertIn('class="spatial-wide"', dom)             # only the reading column widens
         self.assertRegex(dom, r'<article class="record-card research-card spatial-page">\s*<header class="record-header">')
-        self.assertRegex(dom, r'<p class="eyebrow">Tools · Proteomics · Dataset under evaluation</p>')
-        self.assertIn("<h2>Spatial Proteomics Explorer</h2>", dom)
+        self.assertRegex(dom, r'<p class="eyebrow">Tools · Proteomics</p>')
+        self.assertRegex(dom, r'<h2>Spatial Proteomics Explorer <span class="spatial-preview-label"[^>]*>Preview \u2014 under development</span></h2>')
+        self.assertIn('<meta name="robots" content="noindex, nofollow">', dom)
         self.assertEqual(re.findall(r'data-spatial-action="(\w+)"', dom), ["about", "export", "cite"])
         self.assertNotIn('class="sx-titlebar"', dom)            # the module's own title bar is not used here
         for panel in ("central", "details", "compartments", "scores", "enrichment"):
@@ -181,7 +207,8 @@ class PublicFixtureTest(_Server):
         self.assertIn('data-sx="map-canvas"', dom)              # the fixture carries coordinates
         self.assertIn('data-sx="histogram"', dom)
         self.assertNotIn('role="alert"', dom)
-        self.assertRegex(dom, r'href="/tools/spatial" data-spatial-nav="">')   # nav revealed once available
+        # unlisted: the menu entries stay hidden even though the page works
+        self.assertEqual(len(re.findall(r'href="/tools/spatial" data-spatial-nav="" hidden=""', dom)), 2)
 
 
 @unittest.skipUnless(site, "spatial module not importable")

@@ -2934,3 +2934,4 @@ body.spatial-wide main { width: min(1640px, calc(100% - 36px)); }
 .spatial-page .sx-panel[data-sx="enrichment"] .sx-tabs, .spatial-page .sx-details > .sx-tabs { flex-wrap: wrap; gap: 4px; }
 .spatial-page .sx-panel[data-sx="enrichment"] .sx-tab { padding: 3px 8px; font-size: 11.5px; }
 .spatial-page .sx-panel[data-sx="enrichment"] .sx-tabs { flex-wrap: nowrap; }
+.spatial-preview-label { display: inline-block; vertical-align: middle; margin-left: 10px; padding: 5px 12px; border-radius: 999px; background: #fdf3d7; color: #5c4300; border: 1px solid #e6cf8a; font-size: 13px; font-weight: 800; letter-spacing: .02em; }

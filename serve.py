@@ -404,13 +404,24 @@ _esc = html.escape  # module-level alias (the `html` name is shadowed in _serve_
 
 # Friendly titles/descriptions for the main static routes. Unlisted routes keep
 # the index.html defaults. (Values may contain pre-escaped entities.)
+# Unlisted pages: reachable by address, but never indexed, never given a
+# canonical link, and absent from the sitemap, navigation and data registry.
+# This is not access control. Anyone with the address can open them.
+UNLISTED_ROUTES = {"/tools/spatial"}
+UNLISTED_PREFIXES = ("/api/spatial/", "/spatial/")
+
+
+def _is_unlisted(raw):
+    return raw in UNLISTED_ROUTES or raw.startswith(UNLISTED_PREFIXES)
+
+
 _ROUTE_META = {
     "/install": ("Install the app",
         "Add dictyBase to your phone or computer home screen. It is a web app that installs straight from your browser, no App Store, always up to date."),
     "/tools/blast": ("BLAST search",
         "BLAST a nucleotide or protein query against 19 sequenced dictyostelid genomes; D. discoideum hits link to their gene record."),
-    "/tools/spatial": ("Subcellular spatial proteomics",
-        "Explore protein localization assignments from subcellular fractionation proteomics of vegetative Dictyostelium discoideum. Dataset under evaluation."),
+    "/tools/spatial": ("Spatial Proteomics Explorer (preview)",
+        "Preview, under development."),
     "/tools/enrichment": ("GO and phenotype enrichment",
         "Hypergeometric GO-term and phenotype enrichment analysis for a list of Dictyostelium genes, with Benjamini-Hochberg correction."),
     "/tools/geneset": ("Gene set analysis",
@@ -4353,6 +4364,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                     html = re.sub(r'(<meta ' + re.escape(attr) + r' content=").*?(">)',
                                   lambda m: m.group(1) + _esc(desc) + m.group(2),
                                   html, count=1, flags=re.S)
+            if _is_unlisted(path):
+                head.append('<meta name="robots" content="noindex, nofollow">')
+                canon, jsonld = None, None
             if base and canon:
                 head.append(f'<link rel="canonical" href="{_esc(base + canon)}">')
                 head.append(f'<meta property="og:url" content="{_esc(base + canon)}">')
@@ -6854,6 +6868,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # injected inline <script> (the main XSS vector for curator/author text)
         # won't run, while the app's own external scripts are allow-listed.
         self.send_header("Content-Security-Policy", CSP)
+        if _is_unlisted(self.path.split("?")[0]):
+            self.send_header("X-Robots-Tag", "noindex, nofollow")
         # HTML is always revalidated so new asset versions are picked up;
         # mtime-stamped css/js can be cached aggressively (URL changes on edit);
         # any unversioned css/js still revalidates to avoid staleness.

@@ -187,8 +187,8 @@
     var page = el("article", { class: "record-card research-card spatial-page" }, [
       el("header", { class: "record-header" }, [
         el("div", { class: "record-title" }, [
-          el("p", { class: "eyebrow", text: "Tools · Proteomics · Dataset under evaluation" }),
-          el("h2", { text: "Spatial Proteomics Explorer" }), summary]),
+          el("p", { class: "eyebrow", text: "Tools · Proteomics" }),
+          el("h2", {}, ["Spatial Proteomics Explorer ", el("span", { class: "spatial-preview-label", "data-spatial-preview": "1", text: "Preview \u2014 under development" })]), summary]),
         actions]),
       mountPoint]);
     shell.appendChild(page);

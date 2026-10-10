@@ -9,7 +9,7 @@
   --sx-c11: #7a8b00; --sx-c12: #b0408f; --sx-c13: #5b6ee1; --sx-c14: #c2410c; --sx-c15: #00a3c4;
   --sx-c16: #8a6d3b; --sx-c17: #5f6b7a; --sx-c18: #9c27b0; --sx-c19: #2e7d6b; --sx-c20: #7d4e57;
   --sx-ev-measured: #14181f; --sx-ev-computed: #1f5fb0; --sx-ev-sequence: #4a3aa7; --sx-ev-curated: #116329;
-  --sx-warn-bg: #fdf3d7; --sx-warn-ink: #5c4300; --sx-ok: #116329;
+  --sx-warn-bg: #fdf3d7; --sx-warn-ink: #5c4300; --sx-ok: #116329; --sx-on-accent: #ffffff; --sx-danger: #b3261e;
   --sx-radius: 10px; --sx-shadow: 0 1px 2px rgba(20, 24, 31, .06), 0 4px 14px rgba(20, 24, 31, .06);
   position: relative; color: var(--sx-ink); background: var(--sx-surface);
   font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 28px; border-radius: 12px;
@@ -22,7 +22,7 @@
   --sx-c11: #a9ba3a; --sx-c12: #d67fbb; --sx-c13: #8c9af0; --sx-c14: #e8703d; --sx-c15: #45c3df;
   --sx-c16: #bfa06b; --sx-c17: #97a3b3; --sx-c18: #c56ad6; --sx-c19: #5fb5a1; --sx-c20: #b98792;
   --sx-ev-measured: #ffffff; --sx-ev-computed: #86b6ef; --sx-ev-sequence: #a9a0f0; --sx-ev-curated: #5fc97a;
-  --sx-warn-bg: #3a2f10; --sx-warn-ink: #f6dc9a; --sx-ok: #5fc97a;
+  --sx-warn-bg: #3a2f10; --sx-warn-ink: #f6dc9a; --sx-ok: #5fc97a; --sx-on-accent: #0b1220; --sx-danger: #ff8a80;
   --sx-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 18px rgba(0, 0, 0, .35);
 }
 @media (prefers-color-scheme: dark) {
@@ -34,7 +34,7 @@
     --sx-c11: #a9ba3a; --sx-c12: #d67fbb; --sx-c13: #8c9af0; --sx-c14: #e8703d; --sx-c15: #45c3df;
     --sx-c16: #bfa06b; --sx-c17: #97a3b3; --sx-c18: #c56ad6; --sx-c19: #5fb5a1; --sx-c20: #b98792;
     --sx-ev-measured: #ffffff; --sx-ev-computed: #86b6ef; --sx-ev-sequence: #a9a0f0; --sx-ev-curated: #5fc97a;
-    --sx-warn-bg: #3a2f10; --sx-warn-ink: #f6dc9a; --sx-ok: #5fc97a;
+    --sx-warn-bg: #3a2f10; --sx-warn-ink: #f6dc9a; --sx-ok: #5fc97a; --sx-on-accent: #0b1220; --sx-danger: #ff8a80;
     --sx-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 18px rgba(0, 0, 0, .35);
   }
 }
@@ -50,7 +50,7 @@
 .sx-measure { max-width: 68ch; }
 .sx-grow { flex: 1 1 auto; }
 .sx-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.sx-error { color: #b3261e; }
+.sx-error { color: var(--sx-danger); }
 
 /* header and search */
 .sx-top { display: grid; gap: 6px; margin-bottom: 28px; }
@@ -162,7 +162,7 @@
 .sx-root .sx-close { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--sx-line); background: var(--sx-surface); font-size: 20px; line-height: 1; }
 .sx-d-body { overflow-y: auto; padding: 16px 22px 28px; display: grid; gap: 20px; align-content: start; }
 .sx-d-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.sx-root .sx-btn { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--sx-accent); color: #fff; font-weight: 600; font-size: 14px; text-decoration: none; }
+.sx-root .sx-btn { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--sx-accent); color: var(--sx-on-accent); font-weight: 600; font-size: 14px; text-decoration: none; }
 .sx-d-section { display: grid; gap: 8px; }
 .sx-d-section h4 { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--sx-muted); }
 .sx-loc-main { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 650; line-height: 1.2; }
@@ -259,3 +259,15 @@
 .sx-root .sx-facet, .sx-root .sx-facet-label { text-align: left; justify-content: flex-start; }
 .sx-root .sx-fn-group { margin-top: 14px; }
 .sx-root .sx-side > h4 + p { margin-top: -4px; }
+
+/* native controls follow the theme; long tags wrap instead of widening the list */
+.sx-root[data-sx-theme="dark"] { color-scheme: dark; }
+.sx-root[data-sx-theme="light"] { color-scheme: light; }
+@media (prefers-color-scheme: dark) { .sx-root[data-sx-theme="auto"] { color-scheme: dark; } }
+.sx-list td.sx-loc { white-space: nowrap; min-width: 0; }
+.sx-chip { white-space: normal; }
+@media (max-width: 980px) {
+  .sx-list th:first-child, .sx-list td:first-child { min-width: 170px; }
+  .sx-title { font-size: 22px; }
+  .sx-view-title { font-size: 23px; }
+}

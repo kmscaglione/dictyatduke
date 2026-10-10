@@ -857,8 +857,11 @@
     } else if (st.view === "search") {
       list = st.gene ? (model.geneIndex[st.gene] || []).map(function (id) { return model.entityById[id]; }) : this.matches(st.query).map(function (x) { return x.e; });
     } else list = model.entities;
+    // Lists open in gene-name order. Ordering by score is offered but is not
+    // the default: training inputs can all carry the top score and would
+    // otherwise fill the first page of every compartment.
     var sort = st.sort;
-    if (!sort && st.view !== "search" && st.view !== "home" && model.layerById[st.layer].score) sort = { key: "s:" + st.layer, dir: "desc" };
+    if (!sort && st.view !== "search" && st.view !== "home") sort = { key: "genes", dir: "asc" };
     this.filtered = st.view === "home" ? list : sortEntities(model, list, sort, this.adapter);
   };
 
@@ -884,11 +887,11 @@
         }))));
     }
     if (layer.score && st.view !== "search") {
-      var current = st.sort ? st.sort.key + "|" + st.sort.dir : "s:" + layer.id + "|desc";
+      var current = st.sort ? st.sort.key + "|" + st.sort.dir : "genes|asc";
       tools.push(h("select", { "data-sx": "sort", "aria-label": "Sort", onchange: function () {
         var p = this.value.split("|");
         self.set({ sort: { key: p[0], dir: p[1] }, shown: PAGE });
-      } }, [["s:" + layer.id + "|desc", "Highest score first"], ["s:" + layer.id + "|asc", "Lowest score first"], ["genes|asc", "Gene name, A to Z"]].map(function (o) {
+      } }, [["genes|asc", "Gene name, A to Z"], ["s:" + layer.id + "|desc", "Highest score first"], ["s:" + layer.id + "|asc", "Lowest score first"]].map(function (o) {
         return h("option", { value: o[0], text: o[1], selected: current === o[0] });
       })));
     }

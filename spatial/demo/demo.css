@@ -3,3 +3,6 @@ main { max-width: 1180px; margin: 0 auto; padding: 20px 16px 60px; }
 h1 { font-size: 24px; margin: 0 0 4px; }
 #log { color: #555; margin-left: 12px; }
 @media (prefers-color-scheme: dark) { body { background: #0d0d0d; color: #fff; } #log { color: #bbb; } }
+body[data-theme="dark"] { background: #0d0d0d; color: #fff; }
+body[data-theme="light"] { background: #f4f3ef; color: #111; }
+body[data-theme="dark"] { color-scheme: dark; }

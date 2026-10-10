@@ -36,7 +36,10 @@
     if (current) current.destroy();
     current = null;
     log.textContent = "";
-    return window.SpatialExplorer.mount(mountEl, { bundleUrl: url, adapter: adapter(), theme: "auto" }).then(function (ex) {
+    var theme = { dark: "dark", light: "light" }[params.get("theme")] || "auto";   // ?theme=dark forces a theme for review
+    document.body.setAttribute("data-theme", theme);
+    return window.SpatialExplorer.mount(mountEl, { bundleUrl: url, adapter: adapter(), theme: theme,
+      initial: { compartment: params.get("compartment"), view: params.get("view"), entity: params.get("protein") } }).then(function (ex) {
       current = ex;
       window.demoExplorer = ex;
       return ex;

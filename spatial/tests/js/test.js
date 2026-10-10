@@ -222,8 +222,11 @@
       ok(q(el, "[data-sx=headline]").textContent === want.assigned + " proteins assigned");
       eq(qa(el, "[data-sx=rows] tr[data-entity]").length, want.assigned);
       ok(ex.filtered.every(function (e) { return map[e.id].status === "assigned" && map[e.id].compartment === "mem"; }), "only assigned proteins by default");
-      var scores = ex.filtered.map(function (e) { return map[e.id].score; });
-      eq(scores, scores.slice().sort(function (x, y) { return y - x; }), "highest score first");
+      var byName = function (list) { return list.map(function (e) { return (C.entityGenes(e)[0] || "").toLowerCase(); }).filter(Boolean); };
+      eq(byName(ex.filtered), byName(ex.filtered).slice().sort(), "gene-name order by default");
+      ok(q(el, "[data-sx=sort]").value === "genes|asc" && ex.state.sort === null);
+      var top = ex.filtered.slice(0, 5).filter(function (e) { return ex.training[e.id]; }).length;
+      ok(top < 5, "training markers do not fill the top of the list");
       ok(texts(el, "[data-sx=list] thead th").join("|") === "Protein|Score (classifier.score)|Other evidence", "no redundant location column inside one compartment");
       return new Promise(function (r) { setTimeout(r, 20); }).then(function () {
         var ctx = seen[0];
@@ -246,9 +249,10 @@
         ok(q(el, "[data-sx=filter]").isConnected, "typing a filter does not rebuild the toolbar");
         change(q(el, "[data-sx=jump]"), "nuc");
         ok(ex.state.compartment === "nuc" && ex.state.filter === "" && !ex.state.includeOther, "moving to another compartment clears the old filters");
-        change(q(el, "[data-sx=sort]"), "genes|asc");
-        var names = ex.filtered.map(function (e) { return (C.entityGenes(e)[0] || "~").toLowerCase(); }).filter(function (x) { return x !== "~"; });
-        eq(names, names.slice().sort());
+        change(q(el, "[data-sx=sort]"), "s:classifier|desc");
+        var scores = ex.filtered.map(function (e) { return ex.model.byLayer.classifier[e.id].score; });
+        eq(scores, scores.slice().sort(function (x, y) { return y - x; }), "sorting by reported score stays available");
+        ok(ex.filtered.length === EXPECT[ALPHA].layer_counts.classifier.nuc.assigned, "sorting never drops a protein");
         q(el, "[data-sx=home]").click();
         ok(ex.state.view === "home" && q(el, "[data-sx=cards]"));
       });

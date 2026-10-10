@@ -1123,8 +1123,15 @@ function seedIdentityOnly(gene) {
   return { ...gene, summary: "", go: [], phenotypes: [], literature: [], structures: [], tags: [] };
 }
 
+// Resolve a token to a featured gene by EXACT identifier only (id, symbol,
+// NCBI, UniProt, DDB_G, alias). It must never fall back to a fuzzy search:
+// this decides which record a /gene/<token> address shows, and a near match
+// (catA -> pkaC, via "catalytic") would display another gene's record under
+// the requested gene's address. Free-text search uses rankedGenes instead.
 function findGeneByToken(token) {
-  const q = normalize(decodeURIComponent(token || ""));
+  let raw = token || "";
+  try { raw = decodeURIComponent(raw); } catch { /* keep the literal token */ }
+  const q = normalize(raw);
   if (!q) return null;
   const hit = genes.find((gene) => [
     gene.id,
@@ -1133,7 +1140,7 @@ function findGeneByToken(token) {
     gene.uniprot,
     gene.veupath,
     ...(gene.aliases || [])
-  ].some((value) => normalize(value) === q)) || rankedGenes(q)[0] || null;
+  ].some((value) => normalize(value) === q)) || null;
   return seedIdentityOnly(hit);
 }
 
@@ -1577,7 +1584,10 @@ async function openRemoteGene(ncbiId) {
     input.value = symbol;
     openGene(gene, "Summary", true);
   } catch (err) {
-    recordShell.innerHTML = `<div class="empty-state"><p class="notice">Couldn't load gene ${escapeHtml(ncbiId)} right now — the source may be temporarily unavailable. Try again in a moment or search another gene.</p></div>`;
+    // Say which gene failed, by name. Nothing else is shown in its place.
+    const wanted = geneIndex.find((g) => normalize(g.ncbiGene) === normalize(ncbiId));
+    const label = wanted ? `${wanted.symbol} (${wanted.id}, NCBI Gene ${ncbiId})` : `NCBI Gene ${ncbiId}`;
+    recordShell.innerHTML = `<div class="empty-state" data-gene-load-error><p class="notice">Couldn't load gene ${escapeHtml(label)} right now — the source may be temporarily unavailable. Try again in a moment or search another gene.</p></div>`;
   }
 }
 
@@ -13675,9 +13685,13 @@ document.addEventListener("click", (event) => {
     if (hit && hit.ncbiGene) {
       openRemoteGene(hit.ncbiGene);
     } else {
-      const fallback = findGeneByToken(xref.textContent.trim()) || searchIndex(xref.textContent.trim(), 1)[0];
-      if (fallback && fallback.ncbiGene && !genes.includes(fallback)) openRemoteGene(fallback.ncbiGene);
-      else if (fallback) openGene(fallback);
+      // exact matches only: a link must open the gene it names, or say it cannot
+      const label = xref.textContent.trim(), wanted = normalize(label);
+      const featured = findGeneByToken(label);
+      const listed = featured ? null : geneIndex.find((g) => normalize(g.id) === wanted || normalize(g.symbol) === wanted);
+      if (featured) openGene(featured);
+      else if (listed && listed.ncbiGene) openRemoteGene(listed.ncbiGene);
+      else showNotFound({ kind: "gene", token: label });
     }
     return;
   }
@@ -14775,6 +14789,7 @@ function navigateToGene(entry) {
   if (entry.ncbiGene) { openRemoteGene(entry.ncbiGene); return; }
   const m = findGeneByToken(entry.symbol || entry.id);
   if (m) openGene(m);
+  else showNotFound({ kind: "gene", token: entry.symbol || entry.id });   // never substitute another gene
 }
 
 // ---- Command palette (⌘K / Ctrl-K): quick-jump to any gene, page, or tool ----

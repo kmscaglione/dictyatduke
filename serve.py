@@ -4672,6 +4672,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def _handle_hit(self):
         """Cookieless, no-PII pageview beacon. The IP is used only to rate-limit
         (never stored); only the bucketed route path is counted."""
+        # Read the body before any early return. On a keep-alive connection an
+        # unread body is parsed as the start of the next request, which then
+        # fails (seen with crawlers and headless browsers, whose beacons are
+        # dropped below).
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+        except ValueError:
+            length = 0
+        body = self.rfile.read(length) if 0 < length <= 2000 else b""
+        if length > 2000:
+            self.close_connection = True
         if _rate_limited(_HIT_HITS, self.client_address[0], limit=120, window=60):
             self.send_response(204)
             self.end_headers()
@@ -4688,9 +4699,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # the source is attributed once per entry, not on every SPA navigation.
         ref_present, ref = False, ""
         try:
-            length = int(self.headers.get("Content-Length", 0))
-            if 0 < length <= 2000:
-                data = json.loads(self.rfile.read(length) or b"{}")
+            if body:
+                data = json.loads(body)
                 if isinstance(data, dict):
                     path = data.get("path") or "/"
                     if "ref" in data:

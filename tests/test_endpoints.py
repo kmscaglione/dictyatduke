@@ -83,6 +83,24 @@ class EndpointTest(unittest.TestCase):
         code, _ = self.post("/api/enrichment", {"genes": genes, "background_genes": {"a": 1}})
         self.assertEqual(code, 400)
 
+    # a dropped pageview beacon must not corrupt the next request on the connection
+    def test_beacon_body_is_consumed_for_bots_too(self):
+        import http.client
+        for agent in ("HeadlessChrome/120.0", "Mozilla/5.0 (Macintosh) Safari/605"):
+            conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=30)
+            try:
+                conn.request("POST", "/api/hit", body=json.dumps({"path": "/tools/enrichment", "ref": ""}),
+                             headers={"Content-Type": "application/json", "User-Agent": agent})
+                r = conn.getresponse()
+                r.read()
+                self.assertEqual(r.status, 204)
+                conn.request("GET", "/api/health")            # same keep-alive connection
+                r = conn.getresponse()
+                self.assertEqual(r.status, 200, agent)
+                self.assertEqual(json.load(r).get("status"), "ok")
+            finally:
+                conn.close()
+
     # the site is up and the core index loaded
     def test_health(self):
         code, body = self.get("/api/health")

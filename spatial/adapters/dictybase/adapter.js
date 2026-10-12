@@ -64,25 +64,41 @@
   /* ---------- functional enrichment against the detected proteome ---------- */
 
   var KIND = { P: "Biological process", F: "Molecular function", C: "Cellular component" };
-  var NOT_YET = "This analysis is not available yet. Only GO term enrichment has been validated against the detected-proteome background.";
   var ENRICHMENT_TABS = [
     { id: "go", label: "GO terms" },
-    { id: "domains", label: "Protein domains", unavailable: NOT_YET },
-    { id: "pathways", label: "Pathways", unavailable: NOT_YET },
-    { id: "complexes", label: "Complexes", unavailable: NOT_YET }
+    { id: "domains", label: "Protein domains" },
+    { id: "pathways", label: "Pathways" },
+    { id: "complexes", label: "Complexes" }
   ];
+  // What each tab asks the site's enrichment service for, and how to word it.
+  var ENRICHMENT_SETS = {
+    go: { set: null, things: "GO terms", has: "with a GO annotation",
+          url: function (t) { return "/go/" + encodeURIComponent(t.id); },
+          note: " Cellular component terms partly restate the localization itself." },
+    domains: { set: "domains", things: "InterPro entries", has: "with an InterPro entry on file", kind: "InterPro",
+          url: function (t) { return "https://www.ebi.ac.uk/interpro/entry/InterPro/" + encodeURIComponent(t.id) + "/"; },
+          covered: "have an InterPro entry held by this site" },
+    pathways: { set: "kegg", things: "KEGG pathways", has: "in a KEGG pathway", kind: "KEGG pathway",
+          url: function (t) { return "https://www.kegg.jp/pathway/" + encodeURIComponent(t.id); },
+          covered: "are placed in a KEGG pathway" },
+    complexes: { set: "complexes", things: "GO protein complex terms", has: "with a GO annotation",
+          url: function (t) { return "/go/" + encodeURIComponent(t.id); },
+          note: " Complexes are the GO terms that are a kind of protein-containing complex (GO:0032991), taken from curated GO annotations. Co-fractionation is not used and is not evidence of physical interaction." }
+  };
 
-  // GO enrichment for the protein groups assigned to one compartment. Study and
+  // Enrichment for the protein groups assigned to one compartment. Study and
   // background follow the same rule: detected groups that resolve to one gene.
-  function enrichment(ctx) {
-    var study = ctx.study;
+  function enrichment(ctx, tabId) {
+    var study = ctx.study, kind = ENRICHMENT_SETS[tabId] || ENRICHMENT_SETS.go;
     if (study.genes.length < 2) return Promise.resolve({ terms: [], summary: "Too few proteins assigned here to test." });
+    var ask = { genes: study.genes, background_genes: ctx.studyBackground, min_study: 2 };
+    if (kind.set) ask.set = kind.set;
     return getJSON("/api/enrichment", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ genes: study.genes, background_genes: ctx.studyBackground, min_study: 2 })
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(ask)
     }).then(function (r) {
       var hits = r.results.filter(function (t) { return t.q_value < 0.05; });
-      var unnamed = hits.filter(function (t) { return !t.name; }).map(function (t) { return t.id; }).slice(0, 200);
+      var isGO = !kind.kind;
+      var unnamed = isGO ? hits.filter(function (t) { return !t.name; }).map(function (t) { return t.id; }).slice(0, 200) : [];
       var named = unnamed.length ? getJSON("/api/spatial/go-names?ids=" + unnamed.join(",")).then(function (x) { return x.names; }, function () { return {}; }) : Promise.resolve({});
       return named.then(function (names) {
         var left = [];
@@ -91,13 +107,14 @@
         if (study.undetected) left.push(study.undetected + " not detected");
         return {
           terms: hits.map(function (t) {
-            return { id: t.id, name: t.name || names[t.id] || t.id, kind: KIND[t.aspect] || t.aspect, q: t.q_value, count: t.study_count, n: t.study_n,
-                     background: t.pop_count, backgroundN: t.pop_n, fold: t.fold_enrichment, url: "/go/" + encodeURIComponent(t.id) };
+            return { id: t.id, name: t.name || t.term || names[t.id] || t.id, kind: kind.kind || KIND[t.aspect] || t.aspect, q: t.q_value, count: t.study_count, n: t.study_n,
+                     background: t.pop_count, backgroundN: t.pop_n, fold: t.fold_enrichment, url: kind.url(t) };
           }),
-          summary: hits.length + " GO terms at FDR below 0.05 among " + r.study_n + " annotated proteins assigned to " + ctx.compartmentLabel + ", against " + r.background_n + " annotated detected proteins.",
+          summary: hits.length + " " + kind.things + " at FDR below 0.05 among " + r.study_n + " proteins " + kind.has + " assigned to " + ctx.compartmentLabel + ", against " + r.background_n + " detected proteins " + kind.has + ".",
           method: study.genes.length + " genes from " + study.used + " protein groups assigned to " + ctx.compartmentLabel + " (" + ctx.layerLabel + "). Background: " + r.background_requested_n +
             " genes from protein groups detected in this experiment, not the whole genome." + (left.length ? " Left out because they cannot be tied to one gene: " + left.join(", ") + "." : "") +
-            " Hypergeometric test with Benjamini-Hochberg correction. Training markers are included. Cellular component terms partly restate the localization itself."
+            " Hypergeometric test with Benjamini-Hochberg correction. Training markers are included." +
+            (kind.covered ? " Only the " + r.background_n + " of those " + r.background_requested_n + " genes that " + kind.covered + " are counted." : kind.note)
         };
       });
     });

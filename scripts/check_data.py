@@ -333,12 +333,21 @@ def check_insitu_maeda():
           if not bad_sub else f"{len(bad_sub)} genes with unknown subtype")
 
 
+def check_go_complex_terms():
+    print("\n[GO complex terms (enrichment set=complexes)]")
+    d = load("go_complex_terms.json")
+    ids = d.get("terms", [])
+    check(len(ids) > 1000 and "GO:0032991" in ids and "GO:0000502" in ids, f"{len(ids)} complex terms, root and proteasome complex present")
+    check(len(set(ids)) == len(ids) and all(i.startswith("GO:") for i in ids), "ids are unique GO ids")
+    check(d.get("_meta", {}).get("relations") == ["is_a"] and bool(d["_meta"].get("data_version")), "built over is_a only, with the ontology release recorded")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
                check_phenotype_refs, check_strain_metadata, check_ddb0_ids,
-               check_insitu_maeda):
+               check_insitu_maeda, check_go_complex_terms):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

@@ -192,3 +192,58 @@ class CustomBackgroundTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OtherSetsWithBackgroundTest(unittest.TestCase):
+    """KEGG pathways, InterPro entries and GO complex terms against a custom universe."""
+
+    def setUp(self):
+        self.kegg = enrichment._load_kegg()
+        self.dom = enrichment._load_domains()
+
+    def check(self, fn, sets):
+        term = max(sets["term_genes"], key=lambda t: len(sets["term_genes"][t]) if 5 <= len(sets["term_genes"][t]) <= 60 else 0)
+        genes = sorted(sets["term_genes"][term])
+        default = fn(genes)
+        self.assertNotIn("background_custom", default)                 # result keys unchanged without a universe
+        self.assertEqual(default["background_n"], len(sets["annotated"]))
+        whole = fn(genes, background_genes=sorted(sets["annotated"]))
+        self.assertEqual([(r["id"], r["p_value"], r["q_value"]) for r in whole["results"]],
+                         [(r["id"], r["p_value"], r["q_value"]) for r in default["results"]])
+        # a smaller universe: population and term sizes are recounted inside it
+        others = [g for g in sorted(sets["annotated"]) if g not in set(genes)][:300]
+        universe = set(genes[: len(genes) // 2 + 1]) | set(others)
+        small = fn(genes, background_genes=sorted(universe) + ["DDB_G9999999"])
+        self.assertEqual(small["background_n"], len(universe))
+        self.assertEqual((small["background_requested_n"], small["background_unmatched_n"]), (len(universe) + 1, 1))
+        self.assertEqual(set(small["study_resolved"]), set(genes) & universe)   # study genes outside it are dropped
+        row = next(r for r in small["results"] if r["id"] == term)
+        self.assertEqual((row["study_count"], row["pop_count"], row["pop_n"]),
+                         (len(set(genes) & universe), len(sets["term_genes"][term] & universe), len(universe)))
+        self.assertAlmostEqual(row["p_value"], enrichment.hypergeom_sf(row["study_count"], row["pop_n"], row["pop_count"], small["study_n"]))
+        self.assertTrue(all(0 <= r["q_value"] <= 1 and r["q_value"] >= r["p_value"] - 1e-12 for r in small["results"]))
+        self.assertEqual(fn(["__nope__"], background_genes=sorted(universe))["results"], [])
+
+    def test_kegg(self):
+        self.check(enrichment.enrich_kegg, self.kegg)
+
+    def test_domains(self):
+        self.check(enrichment.enrich_domains, self.dom)
+        self.assertTrue(all(t.startswith("IPR") for t in self.dom["term_genes"]))
+        self.assertGreater(len(self.dom["annotated"]), 4000)
+
+    def test_complex_terms_restrict_the_go_test(self):
+        ids = enrichment.complex_terms()
+        self.assertIn("GO:0000502", ids)            # proteasome complex
+        self.assertIn("GO:0032991", ids)
+        self.assertNotIn("GO:0005739", ids)         # mitochondrion is not a complex
+        self.assertGreater(len(ids), 1000)
+        st = enrichment._load()
+        genes = sorted(st["term_genes"]["GO:0000502"])
+        full = enrichment.enrich(genes)
+        only = enrichment.enrich(genes, restrict_terms=ids)
+        self.assertTrue(only["results"] and all(r["id"] in ids for r in only["results"]))
+        self.assertLess(len(only["results"]), len(full["results"]))
+        self.assertEqual((only["study_n"], only["background_n"]), (full["study_n"], full["background_n"]))
+        p = {r["id"]: r["p_value"] for r in full["results"]}
+        self.assertTrue(all(r["p_value"] == p[r["id"]] for r in only["results"]))   # same test, fewer hypotheses

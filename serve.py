@@ -5166,7 +5166,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def _handle_enrichment(self):
-        """POST {genes:[...], background?, background_genes?, min_study?} -> GO enrichment."""
+        """POST {genes:[...], set?, background?, background_genes?, min_study?} -> enrichment.
+        set: omitted (GO), goslim, phenotype, kegg, domains, or complexes (GO terms that name a protein complex)."""
         try:
             length = int(self.headers.get("Content-Length", 0))
             if length > 1_000_000:
@@ -5186,29 +5187,33 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.send_json(200, enrichment.map_goslim(genes))
                 return
             min_study = max(1, min(int(payload.get("min_study", 2)), 50))
-            if payload.get("set") == "phenotype":
+            which = payload.get("set")
+            # optional custom universe (e.g. a detected proteome)
+            bg = payload.get("background_genes")
+            if bg is not None and which != "phenotype":
+                if isinstance(bg, str):
+                    bg = re.split(r"[\s,]+", bg)
+                if not isinstance(bg, list) or len(bg) > 20000:
+                    self.send_json(400, {"error": "'background_genes' must be a list of at most 20000 ids"})
+                    return
+                bg = [str(g).strip() for g in bg if g]
+                bg = [rev["uniprot"].get(g.upper()) or rev["ncbi"].get(g) or g for g in bg]
+                if not bg:
+                    self.send_json(400, {"error": "'background_genes' is empty"})
+                    return
+            if which == "phenotype":
                 result = enrichment.enrich_phenotypes(genes, min_study=min_study)
-            elif payload.get("set") == "kegg":
-                result = enrichment.enrich_kegg(genes, min_study=min_study)
+            elif which == "kegg":
+                result = enrichment.enrich_kegg(genes, min_study=min_study, background_genes=bg)
+            elif which == "domains":
+                result = enrichment.enrich_domains(genes, min_study=min_study, background_genes=bg)
             else:
                 background = "genome" if payload.get("background") == "genome" else "annotated"
-                # optional custom universe (e.g. a detected proteome); GO sets only
-                bg = payload.get("background_genes")
-                if bg is not None:
-                    if isinstance(bg, str):
-                        bg = re.split(r"[\s,]+", bg)
-                    if not isinstance(bg, list) or len(bg) > 20000:
-                        self.send_json(400, {"error": "'background_genes' must be a list of at most 20000 ids"})
-                        return
-                    bg = [str(g).strip() for g in bg if g]
-                    bg = [rev["uniprot"].get(g.upper()) or rev["ncbi"].get(g) or g for g in bg]
-                    if not bg:
-                        self.send_json(400, {"error": "'background_genes' is empty"})
-                        return
                 result = enrichment.enrich(genes, background=background, min_study=min_study,
                                            include_predicted=bool(payload.get("include_predicted")),
                                            gomer_min=enrichment.clamp_gomer_min(payload.get("gomer_min")),
-                                           background_genes=bg)
+                                           background_genes=bg,
+                                           restrict_terms=enrichment.complex_terms() if which == "complexes" else None)
             self.send_json(200, result)
         except (ValueError, json.JSONDecodeError) as e:
             self.send_json(400, {"error": f"Bad request: {e}"})

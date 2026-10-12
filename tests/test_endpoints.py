@@ -83,6 +83,29 @@ class EndpointTest(unittest.TestCase):
         code, _ = self.post("/api/enrichment", {"genes": genes, "background_genes": {"a": 1}})
         self.assertEqual(code, 400)
 
+    # pathways, protein domains and GO complex terms take the same optional universe
+    def test_enrichment_other_sets_take_a_background(self):
+        import enrichment
+        for which, sets in (("kegg", enrichment._load_kegg()), ("domains", enrichment._load_domains())):
+            term = max(sets["term_genes"], key=lambda t: len(sets["term_genes"][t]) if 5 <= len(sets["term_genes"][t]) <= 40 else 0)
+            genes = sorted(sets["term_genes"][term])
+            code, base = self.post("/api/enrichment", {"genes": genes, "set": which})
+            self.assertEqual(code, 200, which)
+            self.assertNotIn("background_custom", base)
+            universe = genes + sorted(sets["annotated"])[:400]
+            code, cust = self.post("/api/enrichment", {"genes": genes, "set": which, "background_genes": universe})
+            self.assertEqual(code, 200, which)
+            self.assertTrue(cust["background_custom"])
+            self.assertEqual(cust["background_n"], len(set(universe)))
+            self.assertEqual(cust["results"][0]["id"], term)
+            code, _ = self.post("/api/enrichment", {"genes": genes, "set": which, "background_genes": []})
+            self.assertEqual(code, 400)
+        ids = enrichment.complex_terms()
+        genes = sorted(enrichment._load()["term_genes"]["GO:0000502"])
+        code, r = self.post("/api/enrichment", {"genes": genes, "set": "complexes"})
+        self.assertEqual(code, 200)
+        self.assertTrue(r["results"] and all(x["id"] in ids for x in r["results"]))
+
     # a dropped pageview beacon must not corrupt the next request on the connection
     def test_beacon_body_is_consumed_for_bots_too(self):
         import http.client

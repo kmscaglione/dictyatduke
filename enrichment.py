@@ -164,7 +164,7 @@ def resolve_background(tokens):
 
 
 def enrich(tokens, background="annotated", min_study=2, max_terms=200,
-           include_predicted=False, gomer_min=0.5, background_genes=None):
+           include_predicted=False, gomer_min=0.5, background_genes=None, restrict_terms=None):
     """Hypergeometric GO over-representation for a gene list.
 
     background: "annotated" (all GO-annotated genes) or "genome" (all genes).
@@ -175,6 +175,8 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200,
     the result gains background_custom, background_requested_n,
     background_unmatched_n and study_outside_background. When omitted, the
     behaviour and the result keys are exactly as before.
+    restrict_terms: optional set of GO ids; only those terms are tested and
+    corrected for. The study and population are unchanged.
     include_predicted: also count the AI, Gomer, author, and community layers, in
     both the study set and the background, so the test stays internally valid.
     gomer_min: Gomer I-TASSER confidence cutoff (0.4/0.5/0.6) for those terms.
@@ -215,7 +217,8 @@ def enrich(tokens, background="annotated", min_study=2, max_terms=200,
         cand = {}
         for ddb in study:
             for gid in st["gene_terms"].get(ddb, ()):
-                cand.setdefault(gid, []).append(ddb)
+                if restrict_terms is None or gid in restrict_terms:
+                    cand.setdefault(gid, []).append(ddb)
         pvals, rows = [], []
         for gid, genes in cand.items():
             k = len(genes)
@@ -356,12 +359,28 @@ def _load_kegg():
     return _kegg
 
 
-def enrich_kegg(tokens, min_study=2, max_terms=200):
-    """Hypergeometric over-representation of KEGG pathways in a gene list."""
+def _custom_universe(background_genes, annotated):
+    """-> (population, extra result keys) for an optional custom background."""
+    if background_genes is None:
+        return annotated, None
+    background_genes = list(background_genes)
+    universe, missing = resolve_background(background_genes)
+    direct = {t for t in background_genes if isinstance(t, str) and t in annotated} - universe
+    universe |= direct              # ids this table knows but the gene index does not
+    missing -= len(direct)
+    return annotated & universe, {"background_custom": True,
+                                  "background_requested_n": len(universe) + missing,
+                                  "background_unmatched_n": missing}
+
+
+def _overrep(tokens, sets, min_study, max_terms, background_genes=None):
+    """Hypergeometric over-representation against one gene -> terms table.
+
+    The population is the genes that have at least one term, restricted to
+    background_genes when given; the term sizes are counted inside it."""
     _load()
-    kg = _load_kegg()
     matched, unmatched = resolve_genes(tokens)
-    pop = kg["annotated"]
+    pop, custom = _custom_universe(background_genes, sets["annotated"])
     M = len(pop)
     study = matched & pop
     N = len(study)
@@ -369,18 +388,19 @@ def enrich_kegg(tokens, min_study=2, max_terms=200):
     if N:
         cand = {}
         for ddb in study:
-            for pid in kg["gene_terms"].get(ddb, ()):
-                cand.setdefault(pid, []).append(ddb)
+            for tid in sets["gene_terms"].get(ddb, ()):
+                cand.setdefault(tid, []).append(ddb)
         pvals, rows = [], []
-        for pid, genes in cand.items():
+        for tid, genes in cand.items():
             k = len(genes)
             if k < min_study:
                 continue
-            n = len(kg["term_genes"].get(pid, ()))
+            members = sets["term_genes"].get(tid, ())
+            n = len(members) if custom is None else len(members & pop)
             p = hypergeom_sf(k, M, n, N)
             expected = N * n / M if M else 0
             rows.append({
-                "id": pid, "term": kg["term_name"].get(pid, pid),
+                "id": tid, "term": sets["term_name"].get(tid, tid),
                 "study_count": k, "study_n": N, "pop_count": n, "pop_n": M,
                 "fold_enrichment": round(k / expected, 2) if expected else None,
                 "p_value": p, "genes": sorted(genes),
@@ -391,8 +411,73 @@ def enrich_kegg(tokens, min_study=2, max_terms=200):
             row["q_value"] = q
         rows.sort(key=lambda r: (r["p_value"], -r["study_count"]))
         results = rows[:max_terms]
-    return {"study_n": N, "study_resolved": sorted(study),
-            "unmatched": unmatched, "background_n": M, "results": results}
+    out = {"study_n": N, "study_resolved": sorted(study),
+           "unmatched": unmatched, "background_n": M, "results": results}
+    if custom is not None:
+        out.update(custom)
+    return out
+
+
+def enrich_kegg(tokens, min_study=2, max_terms=200, background_genes=None):
+    """Hypergeometric over-representation of KEGG pathways in a gene list.
+    background_genes: optional custom universe, as for enrich()."""
+    return _overrep(tokens, _load_kegg(), min_study, max_terms, background_genes)
+
+
+# --- Protein domain enrichment (InterPro entries) -------------------------
+_domains = {}
+
+
+def _load_domains():
+    """InterPro entries per gene, from the two domain files the site holds."""
+    if _domains:
+        return _domains
+    gene_terms, term_genes, term_name = {}, {}, {}
+
+    def add(ddb, acc, name):
+        if not acc:
+            return
+        gene_terms.setdefault(ddb, set()).add(acc)
+        term_genes.setdefault(acc, set()).add(ddb)
+        if name and acc not in term_name:
+            term_name[acc] = name
+
+    try:
+        for ddb, rec in json.loads((ASSETS / "domains.json").read_text()).get("genes", {}).items():
+            for d in rec.get("domains", ()):
+                if d.get("db") == "interpro":
+                    add(ddb, d.get("accession"), d.get("name"))
+    except FileNotFoundError:
+        pass
+    try:
+        for ddb, rows in json.loads((ASSETS / "dictybase_domains.json").read_text()).items():
+            for d in rows:
+                add(ddb, d.get("interpro"), d.get("interpro_name"))
+    except FileNotFoundError:
+        pass
+    _domains.update(gene_terms=gene_terms, term_genes=term_genes,
+                    term_name=term_name, annotated=set(gene_terms))
+    return _domains
+
+
+def enrich_domains(tokens, min_study=2, max_terms=200, background_genes=None):
+    """Hypergeometric over-representation of InterPro entries in a gene list.
+    Only genes with at least one InterPro entry on file are counted."""
+    return _overrep(tokens, _load_domains(), min_study, max_terms, background_genes)
+
+
+# --- GO terms that name a protein complex ---------------------------------
+_complex = {}
+
+
+def complex_terms():
+    """GO ids that are a kind of 'protein-containing complex' (GO:0032991)."""
+    if "ids" not in _complex:
+        try:
+            _complex["ids"] = frozenset(json.loads((ASSETS / "go_complex_terms.json").read_text())["terms"])
+        except FileNotFoundError:
+            _complex["ids"] = frozenset()
+    return _complex["ids"]
 
 
 # --- Co-expression (Pearson over the Rosengarten 2015 developmental time course) --

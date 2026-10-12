@@ -54,6 +54,15 @@ publication), `computed` (produced by this software) or `external` (another
 resource). A computed embedding or layer is only valid when the measured
 profiles are in the same bundle. A curated layer cannot be `computed`.
 
+An embedding may carry a `short_label` for a tab and a `note` shown under the
+plot. Use the note to say what the map is and is not. A map read back from a
+published figure has `source: author` and must say in its label and note that
+the coordinates were reconstructed. Record the method, seed, parameters and
+software versions under `method.parameters`.
+
+`fractions[].condition` groups fractions into experimental conditions. The
+profile view keeps conditions apart and does not join lines across them.
+
 ## Assignments
 
 Each assignment has an `entity`, a `compartment` and a `status`.

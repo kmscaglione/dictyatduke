@@ -208,6 +208,119 @@
     });
   });
 
+  test("several maps: tabs, colouring, selection and search stay consistent across them", function () {
+    var b = clone(F["beta.derived.bundle.json"]), first = b.embeddings[0], second = clone(first);
+    first.short_label = "PCA";
+    second.id = "rebuilt"; second.label = "Authors' map — coordinates reconstructed from published figure"; second.short_label = "Authors' map";
+    second.source = "author"; second.note = "Reconstructed from a figure, not original numbers.";
+    Object.keys(second.coordinates).forEach(function (id) { second.coordinates[id] = [second.coordinates[id][1], -second.coordinates[id][0]]; });
+    b.embeddings.push(second);
+    var before = JSON.stringify(b);
+    return mount(b, { initial: { layer: "model" } }).then(function (ex) {
+      var el = ex.el, model = ex.model, map = model.byLayer.model, n = Object.keys(first.coordinates).length;
+      eq(texts(el, "[data-sx=map-tabs] .sx-tab"), ["PCA", "Authors' map"], "tabs use the short labels, in bundle order");
+      ok(q(el, "[data-sx=map-tabs] .sx-tab").title === first.label, "the full label stays available");
+      ok(ex.points.length === n && ex.points.every(function (p) { return model.bundle.profiles.values[p.id]; }), "every point is a protein group with a measured profile");
+      var key = q(el, "[data-sx=map-key]").textContent;
+      ok(key.indexOf("positions") > 0 && key.indexOf("final calls") > 0 && qa(el, "[data-sx=map-key] .sx-badge").length === 2, "positions and colours name their evidence");
+      // colour: final call by default, closest class on request, same colours as the legend
+      var legend = {};
+      qa(el, "[data-sx=legend] [data-compartment]").forEach(function (x) { legend[x.getAttribute("data-compartment")] = q(x, ".sx-dot").style.backgroundColor; });
+      var probe = document.createElement("i"); el.appendChild(probe);
+      var same = function (a, c) { probe.style.backgroundColor = a; return probe.style.backgroundColor === c; };
+      ex.points.forEach(function (p) {
+        eq(p.comp, C.finalCall(map[p.id]), "coloured by the final call");
+        if (p.comp) ok(same(p.color, legend[p.comp]), "map colour equals legend colour for " + p.comp);
+      });
+      var uncalled = ex.points.filter(function (p) { return p.comp == null; }).length;
+      ok(uncalled > 0 && uncalled === Object.keys(map).filter(function (id) { return map[id].status !== "assigned" && first.coordinates[id]; }).length, "points without a final call stay neutral");
+      eq(texts(el, "[data-sx=color-by] option"), ["Final call", "Closest class (all proteins)"]);
+      change(q(el, "[data-sx=color-by]"), "class");
+      ok(ex.points.every(function (p) { return p.comp === map[p.id].compartment; }) && q(el, "[data-sx=map-key]").textContent.indexOf("closest class") > 0, "closest class colours every point");
+      ok(JSON.stringify(model.bundle.layers) === JSON.stringify(JSON.parse(before).layers), "colouring never rewrites an assignment");
+      change(q(el, "[data-sx=color-by]"), "call");
+      // clicking a point opens its details and profile
+      var target = ex.points.filter(function (p) { return p.comp && model.entityById[p.id].members[0].gene; })[5], rect = ex.canvas.getBoundingClientRect();
+      ex.canvas.dispatchEvent(new MouseEvent("click", { clientX: rect.left + target.x, clientY: rect.top + target.y, bubbles: true }));
+      var picked = ex.state.entity, near = ex.points.filter(function (p) { return p.id === picked; })[0];
+      ok(picked && Math.abs(near.x - target.x) < 1e-6 && Math.abs(near.y - target.y) < 1e-6, "the click selects the point under it");
+      ok(ex.selectedPoint && ex.selectedPoint.id === picked && q(el, "[data-sx=details] [data-sx=profile-chart]"), "details and profile open");
+      // the selection follows onto the other map
+      qa(el, "[data-sx=map-tabs] .sx-tab")[1].click();
+      ok(ex.state.embedding === "rebuilt" && ex.state.entity === picked && ex.selectedPoint.id === picked && ex.points.length === n, "selection persists across maps");
+      ok(q(el, "[data-sx=map-note]").textContent.indexOf("reconstructed from published figure") > 0 && q(el, "[data-sx=map-note]").textContent.indexOf("not original numbers") > 0, "a reconstructed map says so under the plot");
+      // search and filters highlight on every map
+      var gene = model.entityById[picked].members[0].gene;
+      ex.go({ query: gene });
+      var lit = function () { return ex.points.filter(function (p) { return !p.dim; }).map(function (p) { return p.id; }).sort(); };
+      var want = ex.filtered.map(function (e) { return e.id; }).filter(function (id) { return second.coordinates[id]; }).sort();
+      ok(want.length >= 1 && want.length < n && want.indexOf(picked) >= 0, "search finds the gene: " + gene + " " + want.length);
+      eq(lit(), want, "search dims everything else on the reconstructed map");
+      qa(el, "[data-sx=map-tabs] .sx-tab")[0].click();
+      eq(lit(), want, "and on the computed map");
+      ex.go({ query: "", compartment: target.comp });
+      eq(lit().length, ex.points.filter(function (p) { return C.finalCall(map[p.id]) === target.comp; }).length, "a compartment filter lights only that compartment");
+      ex.go({ compartment: null });
+      ok(ex.points.every(function (p) { return !p.dim; }), "with no filter nothing is dimmed");
+      ok(JSON.stringify(b) === before, "viewing never alters the data");
+      return mount(b, { initial: { layer: "model", embedding: "rebuilt", colorBy: "class" } });
+    }).then(function (ex) {
+      ok(ex.state.embedding === "rebuilt" && ex.state.colorBy === "class" && q(ex.el, "[data-sx=map-tabs] .sx-on").textContent === "Authors' map", "a link can open a named map");
+      return mount(b, { initial: { layer: "model", embedding: "no-such-map", colorBy: "anything" } });
+    }).then(function (ex) {
+      ok(ex.state.embedding === "pca" && ex.state.colorBy === "call", "an unknown map name falls back to the first map");
+    });
+  });
+
+  test("fractionation profile: every supplied value, grouped by condition, beside a compartment mean", function () {
+    var b = F[BETA];
+    return mount(b, { initial: { layer: "model" } }).then(function (ex) {
+      var el = ex.el, model = ex.model, map = model.byLayer.model, values = b.profiles.values, fr = b.fractions;
+      var single = b.entities.filter(function (e) { return e.members.length === 1 && map[e.id] && map[e.id].status === "assigned" && values[e.id]; })[0];
+      ex.select(single.id);
+      var dots = qa(el, "[data-sx=profile-chart] circle.sx-dot-pt");
+      eq(dots.map(function (d) { return d.getAttribute("data-fraction"); }), fr.map(function (f) { return f.id; }), "one point per fraction, in the supplied order");
+      eq(dots.map(function (d) { return +d.getAttribute("data-value"); }), values[single.id], "the plotted values are the supplied measurements");
+      eq(texts(el, "[data-sx=profile-chart] .sx-cond-label"), ["mild", "harsh"], "conditions are kept apart and named");
+      eq(texts(el, "[data-sx=profile-chart] .sx-frac-label"), fr.map(function (f) { return f.label.length > 6 ? f.id : f.label; }));
+      ok(qa(el, "[data-sx=profile-chart] .sx-band").length === 2 && qa(el, "[data-sx=profile-chart] path.sx-line-main").length === 2, "the line is not drawn across the gap between conditions");
+      ok(dots[0].querySelector("title").textContent.indexOf("mild, " + fr[0].label + ": ") === 0);
+      ok(q(el, "[data-sx=profile-subject]").textContent === "This protein" && q(el, "[data-sx=profile-note] .sx-badge"));
+      // the compartment mean is the plain mean of the proteins assigned there
+      var comp = map[single.id].compartment, peers = Object.keys(map).filter(function (id) { return C.finalCall(map[id]) === comp && values[id]; });
+      var mean = fr.map(function (_, i) { var t = 0; peers.forEach(function (id) { t += values[id][i]; }); return t / peers.length; });
+      var got = C.meanProfile(model, peers);
+      ok(got.every(function (v, i) { return Math.abs(v - mean[i]) < 1e-12; }), "mean profile");
+      ok(q(el, "[data-sx=profile-mean]").textContent === "Mean of " + peers.length + " proteins assigned to " + model.compById[comp].label);
+      ok(qa(el, "[data-sx=profile-chart] path.sx-line-ref").length === 2);
+      // the comparison can be changed or switched off; the measured line does not move
+      var d0 = q(el, "[data-sx=profile-chart] path.sx-line-main").getAttribute("d");
+      eq(texts(el, "[data-sx=profile-compare] option").slice(0, 2), ["Its own compartment", "No comparison"]);
+      change(q(el, "[data-sx=profile-compare]"), "none");
+      ok(!q(el, "[data-sx=profile-mean]") && !q(el, "path.sx-line-ref") && qa(el, "[data-sx=profile-chart] circle.sx-dot-pt").length === fr.length);
+      var other = model.compartments.filter(function (c) { return c.id !== comp; })[0];
+      change(q(el, "[data-sx=profile-compare]"), other.id);
+      ok(q(el, "[data-sx=profile-mean]").textContent.indexOf("assigned to " + other.label) > 0 && q(el, "[data-sx=profile-compare]").value === other.id);
+      eq(qa(el, "[data-sx=profile-chart] circle.sx-dot-pt").map(function (d) { return +d.getAttribute("data-value"); }), values[single.id]);
+      change(q(el, "[data-sx=profile-compare]"), "auto");
+      ok(q(el, "[data-sx=profile-chart] path.sx-line-main").getAttribute("d") === d0);
+      // a protein group is named as a group
+      var group = b.entities.filter(function (e) { return e.members.length > 1 && values[e.id]; })[0];
+      ex.select(group.id);
+      ok(q(el, "[data-sx=profile-subject]").textContent === "This protein group (" + group.members.length + " proteins measured together)");
+      // a protein without a final call is compared with its closest class, and told so
+      var loose = Object.keys(map).filter(function (id) { return map[id].status !== "assigned" && map[id].compartment && values[id]; })[0];
+      ex.select(loose);
+      ok(q(el, "[data-sx=profile-mean]").textContent.indexOf("its closest class, not an assignment") > 0);
+      // a missing measurement stays a gap
+      var gap = clone(b); gap.profiles.values[single.id][3] = null;
+      return mount(gap, { initial: { layer: "model" } }).then(function (ex2) {
+        ex2.select(single.id);
+        ok(qa(ex2.el, "[data-sx=profile-chart] circle.sx-dot-pt").length === fr.length - 1 && q(ex2.el, "[data-sx=profile-note]").textContent.indexOf("1 fraction(s) not measured") > 0, "nothing is filled in for a missing value");
+      });
+    });
+  });
+
   test("compartment table and legend show the real counts, with consistent colours", function () {
     return mount(F[ALPHA]).then(function (ex) {
       var el = ex.el, want = EXPECT[ALPHA].layer_counts.classifier, rows = qa(el, "[data-sx=compartments] tbody tr[data-compartment]");
@@ -489,7 +602,7 @@
       ok(q(el, '[data-sx=rows] tr[data-entity="' + b.entities[0].id + '"] [data-chip="host"]').textContent === "Host: Nucleus");
       ex.select(b.entities[0].id); ex.set({ detailTab: "annotations" });
       ok(q(el, '[data-sx=elsewhere] [data-layer="host"] .sx-verdict').textContent === "differs from the assignment");
-      eq(states[states.length - 1], { mode: "proteins", compartment: "cyt", show: "assigned", entity: b.entities[0].id, gene: null, query: "", layer: "classifier" });
+      eq(states[states.length - 1], { mode: "proteins", compartment: "cyt", show: "assigned", entity: b.entities[0].id, gene: null, query: "", layer: "classifier", embedding: "author-map", colorBy: "call" });
       eq(picked, [b.entities[0].id]);
       q(el, ".sx-actions [data-action=export]").click();
       var lines = tsv.replace(/\n$/, "").split("\n");

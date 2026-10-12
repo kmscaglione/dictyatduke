@@ -370,6 +370,18 @@
     return lines.join("\n") + "\n";
   }
 
+  // Mean of the measured values, fraction by fraction, over a set of protein
+  // groups. Missing measurements are left out of that fraction's mean.
+  function meanProfile(model, entityIds) {
+    var values = model.bundle.profiles.values, nf = model.bundle.fractions.length, out = [];
+    for (var i = 0; i < nf; i++) {
+      var sum = 0, n = 0;
+      entityIds.forEach(function (id) { var v = values[id]; if (v && v[i] != null) { sum += v[i]; n++; } });
+      out.push(n ? sum / n : null);
+    }
+    return out;
+  }
+
   function medianProfile(model, entityIds) {
     var values = model.bundle.profiles.values, nf = model.bundle.fractions.length, out = [];
     for (var i = 0; i < nf; i++) {
@@ -474,7 +486,8 @@
       compartment: model.compById[init.compartment] ? init.compartment : null,
       show: SHOW.some(function (x) { return x[0] === init.show; }) ? init.show : "all",
       entity: null, query: "", gene: null, sort: null, shown: PAGE,
-      embedding: model.capabilities.embeddings[0] || null, mapTab: 0, pointSize: "default",
+      embedding: model.embeddingById[init.embedding] ? init.embedding : (model.capabilities.embeddings[0] || null), mapTab: 0, pointSize: "default",
+      colorBy: init.colorBy === "class" ? "class" : "call", profileCompare: "auto",
       detailTab: "overview", enrichTab: null, compare: null
     };
     if (init.mode === "markers") { st.mode = "proteins"; st.show = "markers"; }
@@ -498,7 +511,7 @@
       this.drawMap();
     } else this.render();
     if (keys.indexOf("entity") >= 0 && this.options.onSelect) this.options.onSelect(st.entity, this);
-    if (this.options.onState) this.options.onState({ mode: st.mode, compartment: st.compartment, show: st.show, entity: st.entity, gene: st.gene, query: st.query, layer: st.layer }, this);
+    if (this.options.onState) this.options.onState({ mode: st.mode, compartment: st.compartment, show: st.show, entity: st.entity, gene: st.gene, query: st.query, layer: st.layer, embedding: st.embedding, colorBy: st.colorBy }, this);
   };
 
   // Change what is listed, starting again from the top of the list.
@@ -719,11 +732,13 @@
   Explorer.prototype.mapView = function () {
     var self = this, st = this.state, model = this.model, cap = model.capabilities, info = this.layerInfo;
     var has = cap.embeddings.length > 0;
-    var tabItems = has ? cap.embeddings.map(function (id) { return { id: id, label: model.embeddingById[id].label }; })
+    var tabItems = has ? cap.embeddings.map(function (id) { var x = model.embeddingById[id]; return { id: id, label: x.short_label || x.label, title: x.label }; })
       : (this.options.mapTabs || ["t-SNE", "PCA", "UMAP"]).map(function (t, i) { return { id: String(i), label: t, title: "Not available yet" }; });
     var tabs = this.tabs("map-tabs", tabItems, has ? st.embedding : String(st.mapTab), function (id) { self.set(has ? { embedding: id } : { mapTab: +id }); });
+    var hasClass = Object.keys(info.map).some(function (id) { return info.map[id].status !== "assigned" && info.map[id].compartment != null; });
     var controls = h("div", { class: "sx-controls" }, [
-      h("label", {}, [h("span", { text: "Color by:" }), h("select", { "data-sx": "color-by", disabled: !has, "aria-label": "Color by" }, [h("option", { text: "Compartment" })])]),
+      h("label", {}, [h("span", { text: "Color by:" }), h("select", { "data-sx": "color-by", disabled: !has, "aria-label": "Color by", onchange: function () { self.set({ colorBy: this.value }); } },
+        [["call", "Final call"]].concat(hasClass ? [["class", "Closest class (all proteins)"]] : []).map(function (o) { return h("option", { value: o[0], text: o[1], selected: st.colorBy === o[0] }); }))]),
       h("label", {}, [h("span", { text: "Point size:" }), h("select", { "data-sx": "point-size", disabled: !has, "aria-label": "Point size", onchange: function () { st.pointSize = this.value; self.drawMap(); } },
         [["default", "Default"], ["small", "Small"], ["large", "Large"]].map(function (o) { return h("option", { value: o[0], text: o[1], selected: st.pointSize === o[0] }); }))])
     ]);
@@ -734,8 +749,12 @@
       this.canvas.addEventListener("mousemove", function (ev) { self.hoverMap(ev); });
       this.canvas.addEventListener("mouseleave", function () { self.tip.hidden = true; });
       this.canvas.addEventListener("click", function (ev) { var p = self.nearest(ev); if (p) self.set({ entity: p.id }); });
-      plot = h("div", { class: "sx-plot", "data-sx": "map" }, [this.canvas,
-        h("p", { class: "sx-caption", text: emb.method.name + " of the measured profiles, " + SOURCE[emb.source] + "." })]);
+      plot = h("div", { class: "sx-plot", "data-sx": "map" }, [
+        h("p", { class: "sx-map-key", "data-sx": "map-key" }, [
+          badge("measured_profile"), document.createTextNode(" positions   "),
+          badge(info.layer.evidence_type), document.createTextNode(" colours: " + shortLabel(info.layer) + (st.colorBy === "class" ? " closest class" : " final calls"))]),
+        this.canvas,
+        h("p", { class: "sx-caption", "data-sx": "map-note", title: emb.method.description || null, text: emb.label + ". " + (emb.note || (emb.method.name + " of the measured profiles, " + SOURCE[emb.source] + ".")) })]);
     } else {
       var label = tabItems[st.mapTab] ? tabItems[st.mapTab].label : "Map";
       plot = h("div", { class: "sx-plot sx-plot-empty", "data-sx": "no-map", role: "img", "aria-label": "No spatial map is available yet" }, [
@@ -966,7 +985,11 @@
           return h("button", { type: "button", class: "sx-linkbtn", text: model.entityById[x].members[0].id, onclick: function () { self.set({ entity: x }); } });
         }))));
       });
-      body.appendChild(h("div", { class: "sx-subhead" }, [h("h4", { text: "Fractionation profile" })]));
+      var compareOptions = [["auto", "Its own compartment"], ["none", "No comparison"]].concat(model.compartments.map(function (c) { return [c.id, c.label]; }));
+      body.appendChild(h("div", { class: "sx-subhead" }, [h("h4", { text: "Fractionation profile" }),
+        model.capabilities.profiles && model.bundle.profiles.values[e.id] ? h("label", { class: "sx-compare" }, [h("span", { text: "Compare with" }),
+          h("select", { "data-sx": "profile-compare", "aria-label": "Compare with a compartment mean", onchange: function () { st.profileCompare = this.value; self.renderDetails(); } },
+            compareOptions.map(function (o) { return h("option", { value: o[0], text: o[1], selected: st.profileCompare === o[0] }); }))]) : null]));
       body.appendChild(model.capabilities.profiles ? this.profileChart(e) : h("div", { class: "sx-empty sx-empty-small", "data-sx": "pending-profile" }, [
         h("strong", { text: "Fractionation profile not yet available" }),
         h("p", { text: this.options.profilePending || "This view needs the measured abundance of the protein across the fractions, which this dataset does not include yet. Nothing is drawn in its place." })]));
@@ -1336,7 +1359,7 @@
   };
 
   Explorer.prototype.drawMap = function () {
-    var model = this.model, st = this.state, canvas = this.canvas;
+    var model = this.model, st = this.state, canvas = this.canvas, self = this;
     if (!canvas || !model.capabilities.embeddings.length || !canvas.isConnected) { this.points = null; return; }
     var emb = model.embeddingById[st.embedding], map = model.byLayer[st.layer] || {};
     var w = canvas.clientWidth || 600, hgt = canvas.clientHeight || 340;   // sized by the stylesheet
@@ -1348,22 +1371,19 @@
     var ids = Object.keys(emb.coordinates), xs = [], ys = [];
     ids.forEach(function (id) { xs.push(emb.coordinates[id][0]); ys.push(emb.coordinates[id][1]); });
     var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
-    var pad = { l: 16, r: 16, t: 12, b: 26 };
+    var pad = { l: 14, r: 14, t: 10, b: 24 };
     var sx = function (v) { return pad.l + (x1 === x0 ? 0.5 : (v - x0) / (x1 - x0)) * (w - pad.l - pad.r); };
     var sy = function (v) { return hgt - pad.b - (y1 === y0 ? 0.5 : (v - y0) / (y1 - y0)) * (hgt - pad.t - pad.b); };
-    var r = (ids.length > 1500 ? 2.5 : 4) * ({ small: 0.7, large: 1.4 }[st.pointSize] || 1);
+    var r = (ids.length > 1500 ? 2.2 : 4) * ({ small: 0.7, large: 1.5 }[st.pointSize] || 1);
     var neutral = cssVar(this.el, "--sx-neutral", "#9a9993"), surface = cssVar(this.el, "--sx-surface", "#fff"),
         ink = cssVar(this.el, "--sx-ink", "#111"), muted = cssVar(this.el, "--sx-muted", "#777");
-    var inFilter = {};
-    this.filtered.forEach(function (e) { inFilter[e.id] = true; });
-    var filtering = this.filtered.length !== model.entities.length;
-    var self = this, points = [];
+    // the display options and the compartment filter decide which points stand out
+    var filtering = st.show !== "all" || !!st.compartment || !!st.query || !!st.gene, inFilter = {};
+    if (filtering) this.filtered.forEach(function (e) { inFilter[e.id] = true; });
+    var points = [];
     ids.forEach(function (id, i) {
-      var call = finalCall(map[id]);
-      var focus = st.compartment && call === st.compartment;
-      points.push({ id: id, x: sx(xs[i]), y: sy(ys[i]), call: call, focus: focus,
-        dim: filtering && !inFilter[id],
-        color: call == null ? neutral : (focus && !model.colors[call] ? ink : self.color(call)) });
+      var a = map[id], comp = a ? (st.colorBy === "class" ? a.compartment : finalCall(a)) : null;
+      points.push({ id: id, x: sx(xs[i]), y: sy(ys[i]), comp: comp, dim: filtering && !inFilter[id], color: comp == null ? neutral : self.color(comp) });
     });
     ctx.clearRect(0, 0, w, hgt);
     var pass = function (test, alpha) {
@@ -1373,21 +1393,26 @@
         ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fillStyle = p.color; ctx.fill();
       });
     };
-    pass(function (p) { return p.dim; }, 0.18);
-    pass(function (p) { return !p.dim && p.call == null; }, 0.55);
-    pass(function (p) { return !p.dim && p.call != null; }, 0.9);
+    pass(function (p) { return p.dim; }, 0.12);
+    pass(function (p) { return !p.dim && p.comp == null; }, 0.45);
+    pass(function (p) { return !p.dim && p.comp != null; }, 0.9);
     ctx.globalAlpha = 1;
     var sel = points.filter(function (p) { return p.id === st.entity; })[0];
     if (sel) {
-      ctx.beginPath(); ctx.arc(sel.x, sel.y, r + 4, 0, Math.PI * 2); ctx.fillStyle = surface; ctx.fill();
-      ctx.beginPath(); ctx.arc(sel.x, sel.y, r + 2, 0, Math.PI * 2); ctx.fillStyle = sel.color; ctx.fill();
+      ctx.beginPath(); ctx.arc(sel.x, sel.y, r + 5, 0, Math.PI * 2); ctx.fillStyle = surface; ctx.fill();
+      ctx.beginPath(); ctx.arc(sel.x, sel.y, r + 3, 0, Math.PI * 2); ctx.fillStyle = sel.color; ctx.fill();
       ctx.lineWidth = 2; ctx.strokeStyle = ink; ctx.stroke();
+      var name = this.entityTitle(model.entityById[sel.id]);
+      ctx.font = "600 12px system-ui, sans-serif";
+      var tw = ctx.measureText(name).width, right = sel.x + r + 10 + tw < w - 4, tx = right ? sel.x + r + 8 : sel.x - r - 8 - tw, ty = Math.max(14, Math.min(hgt - 6, sel.y + 4));
+      ctx.fillStyle = surface; ctx.globalAlpha = 0.85; ctx.fillRect(tx - 3, ty - 12, tw + 6, 16); ctx.globalAlpha = 1;
+      ctx.fillStyle = ink; ctx.textAlign = "left"; ctx.fillText(name, tx, ty);
     }
-    ctx.fillStyle = muted; ctx.font = "12px system-ui, sans-serif";
+    ctx.fillStyle = muted; ctx.font = "11.5px system-ui, sans-serif";
     var axes = emb.axes || ["Dimension 1", "Dimension 2"];
-    ctx.textAlign = "right"; ctx.fillText(axes[0] + " →", w - pad.r, hgt - 8);
-    ctx.textAlign = "left"; ctx.fillText("↑ " + axes[1], pad.l, hgt - 8);
-    this.points = points; this.pointRadius = r;
+    ctx.textAlign = "right"; ctx.fillText(axes[0] + " \u2192", w - pad.r, hgt - 6);
+    ctx.textAlign = "left"; ctx.fillText("\u2191 " + axes[1], pad.l, hgt - 6);
+    this.points = points; this.pointRadius = r; this.selectedPoint = sel || null;
   };
 
   Explorer.prototype.nearest = function (ev) {
@@ -1475,50 +1500,81 @@
   };
 
   Explorer.prototype.profileChart = function (entity) {
-    var model = this.model, st = this.state, fr = model.bundle.fractions, vec = model.bundle.profiles.values[entity.id];
-    if (!vec) return h("p", { class: "sx-muted", text: "No profile was measured for this protein group." });
-    var a = (model.byLayer[st.layer] || {})[entity.id], call = finalCall(a), peers = [], med = null;
-    if (call != null) {
-      var map = model.byLayer[st.layer];
-      Object.keys(map).forEach(function (id) { if (id !== entity.id && finalCall(map[id]) === call) peers.push(id); });
-      if (peers.length) med = medianProfile(model, peers);
+    var self = this, model = this.model, st = this.state, fr = model.bundle.fractions, vec = model.bundle.profiles.values[entity.id];
+    if (!vec) return h("p", { class: "sx-muted", "data-sx": "no-profile", text: "No profile was measured for this protein group." });
+    // which compartment mean to draw beside it
+    var a = (model.byLayer[st.layer] || {})[entity.id], own = a ? (finalCall(a) || a.compartment) : null;
+    var compare = st.profileCompare === "auto" ? own : (st.profileCompare === "none" ? null : st.profileCompare);
+    if (compare && !model.compById[compare]) compare = null;
+    var mean = null, peers = [];
+    if (compare) {
+      this.meanCache = this.meanCache || {};
+      var key = st.layer + "|" + compare, map = model.byLayer[st.layer];
+      if (!this.meanCache[key]) {
+        var ids = Object.keys(map).filter(function (id) { return finalCall(map[id]) === compare && model.bundle.profiles.values[id]; });
+        this.meanCache[key] = { ids: ids, mean: ids.length ? meanProfile(model, ids) : null };
+      }
+      peers = this.meanCache[key].ids; mean = this.meanCache[key].mean;
     }
-    var all = vec.concat(med || []).filter(function (v) { return v != null; });
-    var top = Math.max.apply(null, all) || 1, W = 520, H = 190, pad = { l: 40, r: 12, t: 12, b: 44 };
-    var x = function (i) { return pad.l + (fr.length === 1 ? 0.5 : i / (fr.length - 1)) * (W - pad.l - pad.r); };
-    var y = function (v) { return H - pad.b - (v / top) * (H - pad.t - pad.b); };
-    var path = function (values) {
+    // fractions grouped by condition, in the order supplied
+    var groups = [];
+    fr.forEach(function (f, i) {
+      var c = f.condition || "";
+      if (!groups.length || groups[groups.length - 1].name !== c) groups.push({ name: c, idx: [] });
+      groups[groups.length - 1].idx.push(i);
+    });
+    var all = vec.concat(mean || []).filter(function (v) { return v != null; });
+    var top = Math.max.apply(null, all) || 1, step = top > 0.5 ? 0.5 : top > 0.2 ? 0.1 : top > 0.05 ? 0.05 : top / 2, ymax = Math.ceil(top / step - 1e-9) * step;
+    var W = 470, H = 158, pad = { l: 30, r: 6, t: 8, b: 48 }, gap = 8;
+    var slotW = (W - pad.l - pad.r - gap * (groups.length - 1)) / fr.length, xOf = [];
+    var cursor = pad.l;
+    groups.forEach(function (g) { g.x0 = cursor; g.idx.forEach(function (i) { xOf[i] = cursor + slotW / 2; cursor += slotW; }); g.x1 = cursor; cursor += gap; });
+    var y = function (v) { return H - pad.b - (v / ymax) * (H - pad.t - pad.b); };
+    var kids = [];
+    groups.forEach(function (g, k) {
+      kids.push(s("rect", { x: g.x0, y: pad.t, width: g.x1 - g.x0, height: H - pad.b - pad.t, class: "sx-band" + (k % 2 ? " sx-band-alt" : "") }));
+      if (g.name) kids.push(svgText((g.x0 + g.x1) / 2, H - 6, g.name, "sx-cond-label"));
+    });
+    for (var t = 0; t <= ymax + 1e-9; t += step) {
+      kids.push(s("line", { x1: pad.l, x2: W - pad.r, y1: y(t), y2: y(t), class: t ? "sx-gridline" : "sx-axis" }));
+      kids.push(svgText(pad.l - 5, y(t) + 3.5, String(+t.toFixed(2)), null, "end"));
+    }
+    fr.forEach(function (f, i) {
+      var lab = svgText(xOf[i], H - pad.b + 11, f.label.length > 6 ? f.id : f.label, "sx-frac-label", "end");
+      lab.setAttribute("transform", "rotate(-50 " + xOf[i] + " " + (H - pad.b + 11) + ")");
+      kids.push(lab);
+    });
+    var path = function (values, idx) {
       var d = "", pen = false;
-      values.forEach(function (v, i) { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1); pen = true; });
+      idx.forEach(function (i) { var v = values[i]; if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + xOf[i].toFixed(1) + " " + y(v).toFixed(1); pen = true; });
       return d;
     };
-    var kids = [
-      s("line", { x1: pad.l, x2: W - pad.r, y1: y(0), y2: y(0), class: "sx-axis" }),
-      s("line", { x1: pad.l, x2: W - pad.r, y1: y(top), y2: y(top), class: "sx-gridline" }),
-      svgText(pad.l - 6, y(0) + 4, "0", null, "end"), svgText(pad.l - 6, y(top) + 4, formatScore(+top.toPrecision(3)), null, "end")
-    ];
-    var step = Math.ceil(fr.length / 12);
-    fr.forEach(function (f, i) {
-      if (i % step === 0) kids.push(svgText(x(i), H - pad.b + 16, f.label.length > 9 ? f.id : f.label));
-      if (i && f.condition !== fr[i - 1].condition) kids.push(s("line", { x1: (x(i) + x(i - 1)) / 2, x2: (x(i) + x(i - 1)) / 2, y1: pad.t, y2: y(0), class: "sx-gridline" }));
+    groups.forEach(function (g) {
+      if (mean) kids.push(s("path", { d: path(mean, g.idx), class: "sx-line sx-line-ref" }));
+      kids.push(s("path", { d: path(vec, g.idx), class: "sx-line sx-line-main" }));
     });
-    if (model.bundle.profiles.unit) kids.push(svgText(pad.l, H - 4, model.bundle.profiles.unit, null, "start"));
-    if (med) kids.push(s("path", { d: path(med), class: "sx-line sx-line-ref" }));
-    kids.push(s("path", { d: path(vec), class: "sx-line sx-line-main" }));
     vec.forEach(function (v, i) {
       if (v == null) return;
-      var dot = s("circle", { cx: x(i), cy: y(v), r: 4, class: "sx-dot" }), t = s("title");
-      t.textContent = fr[i].label + ": " + formatScore(v) + (med && med[i] != null ? " (compartment median " + formatScore(+med[i].toPrecision(4)) + ")" : "");
-      dot.appendChild(t); kids.push(dot);
+      var dot = s("circle", { cx: xOf[i], cy: y(v), r: 3, class: "sx-dot-pt", "data-value": formatScore(v), "data-fraction": fr[i].id }), tt = s("title");
+      tt.textContent = (fr[i].condition ? fr[i].condition + ", " : "") + fr[i].label + ": " + formatScore(v) + (mean && mean[i] != null ? " (compartment mean " + formatScore(+mean[i].toPrecision(4)) + ")" : "");
+      dot.appendChild(tt); kids.push(dot);
     });
-    var missing = vec.filter(function (v) { return v == null; }).length;
-    return h("div", {}, [
-      h("div", { class: "sx-legend" }, [
-        h("span", {}, [h("i", { class: "sx-key sx-key-main" }), document.createTextNode("This protein group")]),
-        med ? h("span", {}, [h("i", { class: "sx-key sx-key-ref" }), document.createTextNode("Median of " + peers.length + " others assigned to " + model.compById[call].label)]) : null
+    var missing = vec.filter(function (v) { return v == null; }).length, n = entity.members.length;
+    var noCall = compare && a && a.status !== "assigned" && st.profileCompare === "auto";
+    var about = "Measured values as supplied" + (model.bundle.profiles.unit ? ": " + model.bundle.profiles.unit : "") + "." +
+      (missing ? " " + missing + " fraction(s) have no measurement and are left as gaps." : "");
+    var measured = badge("measured_profile");
+    measured.title = about;
+    return h("div", { "data-sx": "profile" }, [
+      h("div", { class: "sx-legend sx-profile-legend", "data-sx": "profile-note", title: about }, [
+        measured,
+        h("span", { "data-sx": "profile-subject" }, [h("i", { class: "sx-key sx-key-main" }), document.createTextNode(n > 1 ? "This protein group (" + n + " proteins measured together)" : "This protein")]),
+        mean ? h("span", { "data-sx": "profile-mean" }, [h("i", { class: "sx-key sx-key-ref" }), document.createTextNode("Mean of " + peers.length + " proteins assigned to " + model.compById[compare].label +
+          (noCall ? " (its closest class, not an assignment)" : ""))]) : null,
+        missing ? h("span", { class: "sx-muted", text: missing + " fraction(s) not measured" }) : null
       ]),
-      s("svg", { viewBox: "0 0 " + W + " " + H, class: "sx-chart", role: "img", "data-sx": "profile-chart", "aria-label": "Measured profile across fractions" }, kids),
-      missing ? h("p", { class: "sx-muted", text: missing + " fraction(s) have no measurement and are left as gaps." }) : null
+      s("svg", { viewBox: "0 0 " + W + " " + H, class: "sx-chart sx-profile-chart", role: "img", "data-sx": "profile-chart",
+        "aria-label": "Measured abundance across " + fr.length + " fractions" + (groups.length > 1 ? " in " + groups.length + " conditions" : "") + ". " + about }, kids)
     ]);
   };
 
@@ -1615,7 +1671,7 @@
       mappingStatus: mappingStatus, finalCall: finalCall, calls: calls, statusLabel: statusLabel, formatScore: formatScore,
       layerCounts: layerCounts, sharedScope: sharedScope, trainingSet: trainingSet, concordance: concordance,
       histogram: histogram, detectedGenes: detectedGenes, studyGenes: studyGenes, geneSummary: geneSummary,
-      filterEntities: filterEntities, sortEntities: sortEntities, toTSV: toTSV, medianProfile: medianProfile
+      filterEntities: filterEntities, sortEntities: sortEntities, toTSV: toTSV, medianProfile: medianProfile, meanProfile: meanProfile
     }
   };
 })(typeof window !== "undefined" ? window : this);

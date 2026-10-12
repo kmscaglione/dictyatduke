@@ -203,6 +203,8 @@
       "properties": {
         "id": {"$ref": "#/$defs/id"},
         "label": {"type": "string", "minLength": 1},
+        "short_label": {"type": "string", "minLength": 1},
+        "note": {"type": "string", "minLength": 1},
         "method": {"$ref": "#/$defs/method"},
         "source": {"$ref": "#/$defs/source"},
         "derived_from": {"const": "profiles"},

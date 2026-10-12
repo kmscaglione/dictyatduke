@@ -39,11 +39,16 @@ def normalize_rows(matrix):
     return matrix / total
 
 
-def pca_embedding(bundle, embedding_id="pca", decimals=6):
-    """Two-component PCA of row-normalised profiles. Deterministic: the sign of
-    each component is fixed so its largest loading is positive."""
+def pca_embedding(bundle, embedding_id="pca", decimals=6, scale="row_sum"):
+    """Two-component PCA of the profiles. Deterministic: the sign of each
+    component is fixed so its largest loading is positive.
+
+    scale="row_sum" divides each profile by its total first; scale="none" uses
+    the values exactly as supplied. Both centre each fraction."""
+    if scale not in ("row_sum", "none"):
+        raise ValueError("scale must be 'row_sum' or 'none'")
     ids, m = profile_matrix(bundle)
-    x = normalize_rows(m)
+    x = normalize_rows(m) if scale == "row_sum" else m.copy()
     x = x - x.mean(axis=0, keepdims=True)
     u, s, vt = np.linalg.svd(x, full_matrices=False)
     for k in range(2):
@@ -58,8 +63,10 @@ def pca_embedding(bundle, embedding_id="pca", decimals=6):
         "method": {
             "name": "PCA",
             "software": _SOFTWARE,
-            "description": "Principal component analysis of profiles scaled to sum 1 and centred per fraction.",
-            "parameters": {"components": 2, "entities": len(ids),
+            "description": ("Principal component analysis of profiles scaled to sum 1 and centred per fraction." if scale == "row_sum"
+                            else "Principal component analysis of the profiles as supplied, centred per fraction, with no scaling."),
+            "parameters": {"components": 2, "entities": len(ids), "dimensions": int(m.shape[1]), "scale": scale, "centring": "per fraction",
+                           "numpy": np.__version__,
                            "explained_variance": [round(float(v), 4) for v in var[:2]]},
         },
         "source": "computed",

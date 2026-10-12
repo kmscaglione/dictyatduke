@@ -34,9 +34,12 @@ keep their place and show a labelled empty state.
 ## Python
 
 The core is standard library only. `analysis.py` needs NumPy and is for offline builds.
+`embed.py` builds t-SNE and UMAP maps offline and needs scikit-learn and umap-learn. No other file imports them.
+Each map records its seed, parameters and library versions, and uses the profiles exactly as stored.
 
 ```
 python3 -m venv spatial/.venv && spatial/.venv/bin/pip install numpy==2.3.3 openpyxl==3.1.5
+spatial/.venv/bin/pip install scikit-learn==1.9.1 umap-learn==0.5.12   # only for t-SNE and UMAP maps
 PYTHONPATH=spatial/py python3 -m spatialprot validate FILE [--require-public]
 PYTHONPATH=spatial/py python3 -m spatialprot summarize FILE
 PYTHONPATH=spatial/py spatial/.venv/bin/python -m spatialprot derive IN OUT --markers LAYER_ID
@@ -67,7 +70,7 @@ content security policy.
 
 ```
 python3 -m unittest discover -s spatial/tests                      # core, stdlib only
-spatial/.venv/bin/python -m unittest discover -s spatial/tests     # adds the NumPy analysis tests
+spatial/.venv/bin/python -m unittest discover -s spatial/tests     # adds the NumPy analysis and map tests
 python3 -m unittest discover -s spatial/adapters/dictybase/tests   # host adapter
 python3 spatial/demo/serve_demo.py                                 # then open:
 #   http://localhost:8791/tests/js/test.html   browser tests
@@ -88,7 +91,8 @@ Files in `adapters/dictybase/`:
 
 | File | Role |
 |---|---|
-| `build_bundle.py` | Builds the local bundle from the supplementary tables |
+| `build_bundle.py` | Builds the local bundle from the supplementary tables and, when supplied, the authors' fractionation matrix and t-SNE figure |
+| `figure_coordinates.py` | Reads point positions back from the authors' vector figure and reports every ambiguity |
 | `compartment_go.json` | Reviewed mapping of compartment labels to GO terms, with the rationale for each |
 | `build_go_closure.py`, `go_cc_closure.json` | GO terms that are a kind or part of each mapped term |
 | `dicty_site.py` | Server side: gated bundle access, per-gene lookup, GO annotation layers |
@@ -107,3 +111,17 @@ DICTY_SPATIAL_PREVIEW=1 python3 serve.py      # then open http://localhost:8774/
 supplementary tables of Tinker et al. 2026. Its output directory is gitignored.
 The source is CC BY-NC-ND 4.0 and the authors ask to be contacted before reuse,
 so that bundle must stay local until they agree.
+
+With `--matrix` the builder checks that the rows are exactly the protein groups
+of Table S2, stores all 30 values unchanged as three lysis conditions of ten
+fractions, and computes PCA, t-SNE and UMAP maps. With `--figure` it also adds
+the authors' t-SNE as a separate map reconstructed from the figure. It never
+changes a published class, score, marker or final call. Every check is written
+to `local/validation_report.json`.
+
+```
+L=spatial/adapters/dictybase/local/source
+spatial/.venv/bin/python spatial/adapters/dictybase/build_bundle.py --xlsx $L/media-1.xlsx --fasta $L/media-2.txt \
+    --matrix $L/DDPCP_raw_all_nbavg_norm_zero_cut51.csv --figure "$L/Tsne plot with coordinates.pdf"
+SPATIAL_SLOW=1 spatial/.venv/bin/python -m unittest discover -s spatial/adapters/dictybase/tests   # recomputes t-SNE and UMAP
+```

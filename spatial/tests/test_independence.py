@@ -16,6 +16,7 @@ FORBIDDEN = re.compile("|".join([
     "wide" + "man", r"\bXP_" + r"\d", "ref" + "seq", "serve" + r"\.py", "/a" + "pi/",
 ]), re.I)
 STDLIB_OK = set(sys.stdlib_module_names) | {"numpy", "spatialprot", "_util"}
+MAP_LIBS = {"sklearn", "umap", "numba", "pynndescent"}            # offline map building only
 
 
 def reusable_files():
@@ -45,13 +46,16 @@ class IndependenceTest(unittest.TestCase):
                     names = [a.name for a in node.names]
                 elif isinstance(node, ast.ImportFrom) and node.level == 0:
                     names = [node.module]
-                bad += [f"{p.name}: {n}" for n in names if n.split(".")[0] not in STDLIB_OK]
-        self.assertEqual(bad, [])
+                allowed = STDLIB_OK | (MAP_LIBS if p.name in ("embed.py", "test_embed.py") else set())
+                bad += [f"{p.name}: {n}" for n in names if n.split(".")[0] not in allowed]
+        self.assertEqual(bad, [])                                    # t-SNE and UMAP libraries stay inside embed.py
 
     def test_numpy_stays_out_of_the_runtime_core(self):
         core = SPATIAL / "py" / "spatialprot"
         for name in ("__init__", "bundle", "validate", "summary", "jsonschema_lite"):
             self.assertNotIn("numpy", (core / f"{name}.py").read_text(), name)
+            for lib in MAP_LIBS:
+                self.assertNotIn(lib, (core / f"{name}.py").read_text(), name)
 
     def test_javascript_is_dependency_free_and_csp_safe(self):
         for p in sorted((SPATIAL / "js").glob("*.js")):

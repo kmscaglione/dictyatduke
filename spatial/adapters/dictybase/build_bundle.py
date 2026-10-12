@@ -244,8 +244,205 @@ def build(tables, p2g, descriptions=None, sources=(), built=None, mapping_source
     return B.new_bundle(dataset, compartments, entities, [svm_layer, training_layer, heldout_layer, mito_layer])
 
 
+# ---- measured fractionation profiles and maps ------------------------------
+
+FRACTION_LABELS = ["1K", "3K", "5K", "9K", "12K", "15K", "30K", "79K", "120K", "SUP"]
+LYSIS_CONDITIONS = 3
+AUTHORS_MAP_LABEL = "Authors' t-SNE \u2014 coordinates reconstructed from published figure"
+
+
+def read_matrix(path):
+    """The authors' abundance matrix, exactly as supplied.
+    -> (column names, row ids in file order, {row id: [float, ...]}, {row id: [text, ...]})"""
+    import csv
+    with open(path, newline="", encoding="utf-8-sig") as fh:
+        rows = list(csv.reader(fh))
+    header = rows[0]
+    # R prefixes column names that start with a digit with "X"; "SUP" needs none
+    want = ["Accession"] + [("" if f == "SUP" else "X") + f"{f}.{k}" for k in range(1, LYSIS_CONDITIONS + 1) for f in FRACTION_LABELS]
+    if header != want:
+        raise SystemExit(f"matrix header is not the expected 30 fraction columns: {header[:6]} ...")
+    ids, values, text = [], {}, {}
+    for r in rows[1:]:
+        if len(r) != len(header) or any(c.strip() == "" for c in r):
+            raise SystemExit(f"matrix row {r[:1]} is incomplete")
+        if r[0] in values:
+            raise SystemExit(f"matrix lists {r[0]} twice")
+        ids.append(r[0])
+        text[r[0]] = r[1:]
+        values[r[0]] = [float(c) for c in r[1:]]
+    return header[1:], ids, values, text
+
+
+def fraction_list():
+    out = []
+    for k in range(1, LYSIS_CONDITIONS + 1):
+        for f in FRACTION_LABELS:
+            out.append({"id": f"L{k}-{f}", "label": f, "condition": f"Lysis condition {k}",
+                        "description": ("Soluble fraction remaining after the final spin." if f == "SUP"
+                                        else f"Pellet labelled {f} by the authors (differential centrifugation step).")})
+    return out
+
+
+def add_measurements(bundle, tables, matrix_path, figure_path, received):
+    """Add the measured profiles, three computed maps and the map reconstructed
+    from the authors' figure. Returns a validation report. Published layers are
+    not touched."""
+    import collections
+    import numpy as np
+    from spatialprot import embed, summary
+    report = {"received": received}
+    layers_before = B.dumps({"layers": bundle["layers"]})
+
+    # 1. the matrix, exactly as supplied, and its identity with Table S2
+    columns, ids, values, text = read_matrix(matrix_path)
+    s2 = {r[0]: r for r in tables["svm"]}
+    if set(ids) != set(s2):
+        raise SystemExit("matrix rows are not exactly the protein groups of Table S2")
+    M = np.array([values[i] for i in ids])
+    sums = np.array([M[:, k * 10:(k + 1) * 10].sum(axis=1) for k in range(LYSIS_CONDITIONS)])
+    report["matrix"] = {
+        "rows": len(ids), "columns": len(columns), "rows_identical_to_table_s2": True,
+        "row_order": "sorted by accession" if ids == sorted(ids) else "as supplied",
+        "values_parsed_equal_supplied_text": all(repr(float(t)) == repr(v) for i in ids for t, v in zip(text[i], values[i])),
+        "min": float(M.min()), "max": float(M.max()), "negative_values": int((M < 0).sum()),
+        "exact_zeros": int((M == 0).sum()), "exact_zero_share": round(float((M == 0).mean()), 4),
+        "per_condition_row_sum": [{"condition": f"Lysis condition {k + 1}", "min": float(sums[k].min()), "max": float(sums[k].max()),
+                                   "max_deviation_from_1": float(np.abs(sums[k] - 1).max())} for k in range(LYSIS_CONDITIONS)],
+    }
+    if np.abs(sums - 1).max() > 1e-6:
+        raise SystemExit("a lysis-condition profile does not sum to 1")
+    bundle["fractions"] = fraction_list()
+    bundle["profiles"] = {
+        "evidence_type": "measured_profile", "source": "author",
+        "unit": "share of the protein's summed abundance within one lysis condition",
+        "processing": ("Values exactly as supplied by the authors (file " + pathlib.Path(matrix_path).name + "). According to the file name and "
+                       "the preprint's Figure S2, missing values were imputed by nearest-neighbour averaging followed by zero-value "
+                       "imputation, and within each lysis condition a protein's ten fractions were scaled to sum to 1. "
+                       "No further normalization or imputation is applied here. The three lysis methods in the preprint are nitrogen "
+                       "cavitation, filtration, and nitrogen cavitation followed by Dounce homogenization; which is condition 1, 2 or 3 "
+                       "in this file has not been confirmed."),
+        "values": {i: values[i] for i in ids},
+    }
+
+    # 2. does each class sit where biology says it should?
+    final = collections.defaultdict(list)
+    for i in ids:
+        if s2[i][3] != "unknown":
+            final[s2[i][3]].append(values[i])
+    peaks = {}
+    for label, rows in sorted(final.items()):
+        mean = np.mean(rows, axis=0)
+        peaks[label] = {"n": len(rows), "peak_fraction_per_condition": [FRACTION_LABELS[int(mean[k * 10:(k + 1) * 10].argmax())] for k in range(LYSIS_CONDITIONS)]}
+    report["class_mean_profiles"] = peaks
+
+    # 3. three computed maps, each from the matrix as supplied
+    maps = [embed.tsne(bundle), embed.pca(bundle), embed.umap(bundle)]
+    report["computed_maps"] = {m["id"]: dict(m["method"]["parameters"], software=m["method"]["software"],
+                                             trustworthiness_k15=round(embed.trustworthiness(bundle, m), 4)) for m in maps}
+
+    # 4. the authors' map, reconstructed from their figure
+    if figure_path:
+        from figure_coordinates import recover
+        coords, groups, facts = recover(pathlib.Path(figure_path).read_bytes(), ids)
+        rec = {"id": "authors-tsne", "label": AUTHORS_MAP_LABEL, "short_label": "Authors' t-SNE",
+               "method": {"name": "t-SNE (authors' figure)", "software": "R 4.3.3 (figure); positions read by figure_coordinates.py",
+                          "description": "Positions read from the circles drawn in the authors' vector figure and converted with the figure's axis ticks. "
+                                         "The figure carries no protein names: each position is tied to a protein group by the drawing order, "
+                                         "which was tested against the published classes and the measured profiles.",
+                          "parameters": {"source_file": pathlib.Path(figure_path).name, "position_resolution": facts["position_resolution"],
+                                         "axis_calibration_worst_residual": facts["axis_calibration_worst_residual"]}},
+               "source": "author", "derived_from": "profiles", "axes": ["Dimension 1", "Dimension 2"], "coordinates": coords}
+        order_s2 = [r[0] for r in tables["svm"]]
+
+        def purity(order):
+            alt = dict(zip(ids, order))            # the protein each row would be under another row order
+            ok = total = 0
+            for members in groups.values():
+                c = collections.Counter(s2[alt[i]][1] for i in members)
+                ok += c.most_common(1)[0][1]
+                total += len(members)
+            return round(ok / total, 4)
+
+        xy = np.array([coords[i] for i in ids])
+        from sklearn.neighbors import NearestNeighbors
+        nn = NearestNeighbors(n_neighbors=2).fit(xy).kneighbors(xy, return_distance=False)[:, 1]
+        z = M - M.mean(axis=1, keepdims=True)
+        z /= np.linalg.norm(z, axis=1, keepdims=True)
+        observed = float(np.mean(np.sum(z * z[nn], axis=1)))
+        perm = np.random.default_rng(20261012).permutation(len(ids))
+        shuffled = float(np.mean(np.sum(z[perm] * z[perm][nn], axis=1)))
+        tw = embed.trustworthiness(bundle, rec)
+        mismatched = sum(1 for members in groups.values()
+                         for i in members if s2[i][1] != collections.Counter(s2[j][1] for j in members).most_common(1)[0][0])
+        facts.update({
+            "row_order_tested": "matrix file order (sorted by accession)",
+            "coloured_points_whose_group_matches_column_svm": purity(ids),
+            "same_test_under_table_s2_row_order": purity(order_s2),
+            "coloured_points_not_matching_their_group_class": mismatched,
+            "mean_profile_correlation_with_nearest_map_neighbour": round(observed, 4),
+            "same_with_rows_shuffled": round(shuffled, 4),
+            "trustworthiness_k15_against_supplied_matrix": round(tw, 4),
+        })
+        identical = [g for g in facts["positions_shared_by_several_rows"] if all(values[g[0]] == values[i] for i in g)]
+        facts["shared_positions_with_identical_profiles"] = len(identical)
+        reliable = (facts["overlay_points_unmatched"] == 0 and facts["coloured_points_whose_group_matches_column_svm"] >= 0.99
+                    and observed - shuffled > 0.5 and tw >= 0.9)
+        facts["judged_reliable_for_viewing"] = bool(reliable)
+        rec["note"] = ("Reconstructed from the authors' figure, not their original numbers. Each point's protein was inferred from the drawing "
+                       "order and checked against the published classes. For viewing only; it is not used in any calculation here."
+                       + ("" if reliable else " The row mapping did not pass every check, so treat this map as an experimental preview.")
+                       + " " + embed.CAVEAT)
+
+        # which published column does the figure colour by?
+        coloured = {i: c for c, members in groups.items() for i in members}
+        per_class = {}
+        for label in sorted({r[1] for r in tables["svm"]}):
+            rows = [r for r in tables["svm"] if r[1] == label]
+            fig = [r for r in rows if r[0] in coloured]
+            not_fig = [r for r in rows if r[0] not in coloured]
+            pred = [r for r in rows if r[3] != "unknown"]
+            lo = min((r[2] for r in fig), default=None)
+            hi = max((r[2] for r in not_fig), default=None)
+            per_class[label] = {
+                "svm_class_total": len(rows), "final_calls_svm_pred": len(pred), "coloured_in_figure": len(fig),
+                "final_calls_also_coloured": sum(1 for r in pred if r[0] in coloured),
+                "coloured_without_final_call": sum(1 for r in fig if r[3] == "unknown"),
+                "lowest_score_coloured": lo, "highest_score_not_coloured": hi,
+                "clean_score_cutoff_within_class": bool(lo is not None and (hi is None or lo > hi)),
+                "class_median_score": float(np.median([r[2] for r in rows])),
+            }
+        clean = [k for k, v in per_class.items() if v["clean_score_cutoff_within_class"]]
+        near_median = [k for k in clean if per_class[k]["highest_score_not_coloured"] is not None
+                       and per_class[k]["highest_score_not_coloured"] < per_class[k]["class_median_score"] <= per_class[k]["lowest_score_coloured"]]
+        report["figure_versus_table_s2"] = {
+            "coloured_points": len(coloured), "final_calls_in_table": sum(1 for r in tables["svm"] if r[3] != "unknown"),
+            "coloured_points_with_a_final_call": sum(1 for i in coloured if s2[i][3] != "unknown"),
+            "final_calls_not_coloured": sum(1 for r in tables["svm"] if r[3] != "unknown" and r[0] not in coloured),
+            "classes_with_a_clean_score_cutoff": len(clean), "classes_where_that_cutoff_is_the_class_median": len(near_median),
+            "classes": per_class,
+        }
+        bundle["embeddings"] = maps + [rec]
+        report["authors_map_reconstruction"] = facts
+    else:
+        bundle["embeddings"] = maps
+
+    ds = bundle["dataset"]
+    ds["description"] = ("Published compartment assignments (Tables S1 to S3), with the measured fractionation profiles supplied by the authors. "
+                         "Maps are computed here from those profiles, except the authors' own map, which is reconstructed from their figure.")
+    ds["notices"] = [ds["notices"][0], "This is an unlisted preview under development for dictyBase. It is not a public release.",
+                     f"Fractionation profiles were supplied by the authors on {received} and are unpublished."]
+    if B.dumps({"layers": bundle["layers"]}) != layers_before:
+        raise SystemExit("published layers changed while adding measurements")
+    report["published_layers_unchanged"] = True
+    return report
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--matrix", help="the authors' protein-by-fraction CSV; adds measured profiles and computed maps")
+    ap.add_argument("--figure", help="the authors' t-SNE figure (vector PDF); adds the reconstructed map")
+    ap.add_argument("--received", default="2026-10-12", help="date the matrix and figure were received")
     ap.add_argument("--xlsx", required=True)
     ap.add_argument("--gff", default=str(DEFAULT_GFF))
     ap.add_argument("--fasta", help="optional FASTA whose headers describe accessions the GFF lacks")
@@ -264,9 +461,23 @@ def main(argv=None):
         desc = fasta_descriptions(args.fasta)
         sources.append({"name": pathlib.Path(args.fasta).name, "sha256": B.sha256_file(args.fasta),
                         "description": "Supplementary FASTA; headers used as descriptions for accessions absent from the GFF."})
+    report = None
+    for path, what in ((args.matrix, "Protein-by-fraction abundance matrix supplied by the authors. Unpublished."),
+                       (args.figure, "t-SNE figure (vector PDF) supplied by the authors. Positions are reconstructed from it.")):
+        if path:
+            sources.append({"name": pathlib.Path(path).name, "sha256": B.sha256_file(path), "description": what})
     tables = read_tables(args.xlsx)
     bundle = build(tables, protein_gene_map(args.gff), desc, sources,
                    mapping_source=pathlib.Path(args.gff).name)
+    if args.matrix:
+        bundle["dataset"]["provenance"]["steps"] += [
+            "Read the authors' abundance matrix and check that its rows are exactly the protein groups of Table S2.",
+            "Store all 30 values per protein group unchanged, as three lysis conditions of ten fractions.",
+            "Compute PCA, t-SNE and UMAP from the matrix as supplied, with fixed seeds and recorded parameters.",
+            "Read point positions from the authors' t-SNE figure and test the row mapping.",
+        ]
+        report = add_measurements(bundle, tables, args.matrix, args.figure, args.received)
+        report["sources"] = sources
 
     issues = V.validate(bundle)
     for i in issues:
@@ -278,6 +489,10 @@ def main(argv=None):
     back = {a["entity"]: a["score"] for a in B.load(args.out)["layers"][0]["assignments"]}
     assert all(back[g] == s for g, _, s, _ in tables["svm"]), "score changed on write"
     m = bundle["dataset"]["mapping"]
+    if report is not None:
+        out = pathlib.Path(args.out).with_name("validation_report.json")
+        out.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"wrote {out}")
     print(f"wrote {args.out}")
     print({k: v for k, v in m.items() if not isinstance(v, list)})
     return bundle

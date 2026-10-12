@@ -164,6 +164,7 @@
 
   // Keep the address bar in step with what is on screen, so a view can be
   // bookmarked, shared, or returned to from a gene page.
+  var firstMap = null;                                             // the map shown when the address names none
   function syncUrl(state) {
     var p = new URLSearchParams();
     if (state.mode !== "map") p.set("mode", state.mode);
@@ -172,12 +173,14 @@
     if (state.gene) p.set("gene", state.gene);
     else if (state.query) p.set("q", state.query);
     if (state.entity) p.set("protein", state.entity);
+    if (state.embedding && state.embedding !== firstMap) p.set("map", state.embedding);
+    if (state.colorBy === "class") p.set("color", "class");
     var query = p.toString();
     try { root.history.replaceState(root.history.state, "", "/tools/spatial" + (query ? "?" + query : "")); } catch (err) { /* address bar only */ }
   }
 
   // Fills `shell` with the dashboard. Query parameters mode, compartment, show,
-  // gene, protein and q select the starting state, so gene pages can link in.
+  // gene, protein, q, map and color select the starting state, so gene pages can link in.
   function openPage(shell, host) {
     shell.textContent = "";
     var mountPoint = el("div", { id: "spatial-explorer", "data-spatial-explorer": "1" }, [el("p", { class: "muted", style: "padding:24px", text: "Loading spatial proteomics data…" })]);
@@ -217,11 +220,13 @@
           mapPending: "Awaiting the experimental fractionation matrix and map coordinates from the authors of the study.",
           profilePending: "Awaiting the experimental fractionation matrix from the authors of the study. Nothing is drawn in its place.",
           initial: { mode: params.get("mode"), compartment: params.get("compartment"), show: params.get("show"), view: params.get("view"),
-                     gene: params.get("gene") || (chosen ? null : EXAMPLE_GENE), entity: params.get("protein"), layer: params.get("layer") },
+                     gene: params.get("gene") || (chosen ? null : EXAMPLE_GENE), entity: params.get("protein"), layer: params.get("layer"),
+                     embedding: params.get("map"), colorBy: params.get("color") },
           onState: syncUrl
         });
       }).then(function (explorer) {
         root.dictySpatialExplorer = explorer;
+        firstMap = explorer.model.capabilities.embeddings[0] || null;
         // header buttons, as ordinary site buttons
         [["about", "About", function () { explorer.go({ mode: "methods" }); }],
          ["export", "Download", function () { explorer.exportTSV(); }],

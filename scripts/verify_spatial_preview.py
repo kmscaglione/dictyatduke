@@ -7,6 +7,7 @@
 Read-only. Standard library only. Exit 0 when every check passes.
 """
 import argparse
+import collections
 import json
 import ssl
 import sys
@@ -71,7 +72,17 @@ def main():
         svm = b["layers"][0]["assignments"]
         check("6,337 detected protein groups", len(detected) == 6337, len(detected))
         check("3,169 assigned and 3,168 unknown", (sum(a["status"] == "assigned" for a in svm), sum(a["status"] != "assigned" for a in svm)) == (3169, 3168))
-        check("no threshold, profiles or map in the data", "threshold" not in b["layers"][0].get("score", {}) and not any(k in b for k in ("profiles", "embeddings", "fractions")))
+        check("no threshold inferred from the scores", "threshold" not in b["layers"][0].get("score", {}))
+        ids = {e["id"] for e in detected}
+        if "profiles" in b:
+            vals = b["profiles"]["values"]
+            check("profiles: one row of 30 measured values per detected protein group", set(vals) == ids and len(b.get("fractions", [])) == 30 and all(len(v) == 30 for v in vals.values()))
+            check("profiles: three lysis conditions of ten fractions", sorted(collections.Counter(f.get("condition") for f in b["fractions"]).values()) == [10, 10, 10])
+            check("maps: every point is a measured protein group", bool(b.get("embeddings")) and all(set(m["coordinates"]) == ids for m in b["embeddings"]))
+            rebuilt = [m for m in b["embeddings"] if m["source"] == "author"]
+            check("maps: the authors' map is labelled as reconstructed from the figure", all("reconstructed from published figure" in m["label"] for m in rebuilt))
+        else:
+            check("no profiles, so no map either", not any(k in b for k in ("embeddings", "fractions")))
         check("citation, licence and attribution present", bool(b["dataset"]["citation"].get("doi")) and b["dataset"]["license"].get("id") == "CC-BY-NC-ND-4.0" and bool(b["dataset"].get("attribution")))
         code, _, body = get("/api/spatial/gene?ddb=DDB_G0271848")
         g = json.loads(body) if code == 200 else {"groups": []}

@@ -74,15 +74,17 @@ class DistributionGuardTest(unittest.TestCase):
 
     def test_tracked_bundles_are_public(self):
         try:
+            top = pathlib.Path(subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=SPATIAL,
+                                              capture_output=True, check=True).stdout.decode().strip())
             out = subprocess.run(["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
-                                 cwd=SPATIAL.parent, capture_output=True, check=True).stdout.decode()
+                                 cwd=top, capture_output=True, check=True).stdout.decode()
         except (OSError, subprocess.CalledProcessError):
             self.skipTest("not a git checkout")
         from spatialprot import validate as V
         checked = 0
         for rel in out.split("\0"):
             if rel.endswith(".bundle.json"):
-                b = B.load(SPATIAL.parent / rel)
+                b = B.load(top / rel)
                 self.assertEqual(V.errors(V.validate(b, require_public=True)), [], rel)
                 checked += 1
         self.assertGreaterEqual(checked, 4)

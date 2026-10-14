@@ -5836,7 +5836,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         pmid = str(body.get("pmid") or "").strip()
         status = (body.get("status") or "").strip()
-        if status and status not in ("new", "reviewed", "sent", "dismissed", "out_for_curation"):
+        if status and status not in ("new", "reviewed", "sent", "dismissed",
+                                     "out_for_curation", "uncuratable"):
             self.send_json(400, {"error": "invalid status"})
             return
         store = _load_paper_drafts()

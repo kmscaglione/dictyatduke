@@ -3305,7 +3305,7 @@ function paperDraftCard(d) {
   return `<div class="paper-draft" data-pmid="${esc(d.pmid)}" style="border:1px solid ${border};border-radius:8px;padding:10px 12px;margin-bottom:10px">
       ${submitted}
       <div><a href="${esc(d.url)}" target="_blank" rel="noopener" style="font-weight:600">${esc(d.title)}</a>
-        <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status === "out_for_curation" ? "out for curation" : d.status)}</strong>` : ""}</span></div>
+        <span class="muted" style="font-size:12px">${esc(d.journal)} · PMID ${esc(d.pmid)}${d.status && d.status !== "new" ? ` · <strong>${esc(d.status === "out_for_curation" ? "out for curation" : d.status === "submitted" ? "author returned" : d.status)}</strong>` : ""}</span></div>
       <div class="muted" style="font-size:12px;margin:3px 0">Corresponding: ${corr}</div>
       <div style="font-size:12.5px;margin:4px 0">Genes: ${geneChips}
         <button type="button" class="pd-refresh-email" data-pmid="${esc(d.pmid)}" title="Rebuild just the invitation email, leaving the curation alone" style="font-size:11px;margin-left:6px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">✉ Refresh email</button>
@@ -3314,10 +3314,13 @@ function paperDraftCard(d) {
         <button type="button" class="pd-upload" data-pmid="${esc(d.pmid)}" title="Attach a copy you already have (PDF, HTML or plain text). Stored privately on this server, never published." style="font-size:11px;margin-left:4px;padding:1px 7px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer">⬆ Upload a copy</button>
         <input type="file" class="pd-upload-file" accept=".pdf,.html,.htm,.xml,.txt" hidden></div>
       ${d.fulltext ? `<div class="pd-ft-status" style="font-size:11.5px;margin:2px 0;color:${d.fulltext.chars ? "#047857" : "#b45309"}">Full text: ${d.fulltext.chars ? esc(d.fulltext.source) + " · " + Number(d.fulltext.chars).toLocaleString() + " chars" : "no openly available copy. Upload a copy if you have one through the library, or ask the author for theirs."}</div>` : ""}
-      <div style="margin:5px 0">
+      <div style="margin:5px 0;display:flex;gap:6px;flex-wrap:wrap">
         ${d.status === "out_for_curation"
           ? `<button type="button" class="pd-bucket" data-to="new" title="Return this paper to the New queue" style="font-size:12px;padding:3px 10px;border:1px solid #0a4f47;border-radius:6px;background:#e7f0ee;color:#0a4f47;cursor:pointer;font-weight:600">● Out for curation — return to queue</button>`
           : `<button type="button" class="pd-bucket" data-to="out_for_curation" title="Move this paper to your Out-for-curation bucket" style="font-size:12px;padding:3px 10px;border:1px solid #d7dee0;border-radius:6px;background:#fff;cursor:pointer">→ Out for curation</button>`}
+        ${d.status === "uncuratable"
+          ? `<button type="button" class="pd-bucket" data-to="new" title="It does need curation after all; return it to the queue" style="font-size:12px;padding:3px 10px;border:1px solid #b45309;border-radius:6px;background:#fdf1e3;color:#b45309;cursor:pointer;font-weight:600">⊘ Uncuratable — return to queue</button>`
+          : `<button type="button" class="pd-bucket" data-to="uncuratable" title="Mark as not needing curation (e.g. no Dictyostelium genes)" style="font-size:12px;padding:3px 10px;border:1px solid #d7dee0;border-radius:6px;background:#fff;cursor:pointer">⊘ Uncuratable</button>`}
       </div>
       ${aiHtml}
       <details style="margin-top:6px">
@@ -3360,14 +3363,17 @@ async function loadPaperDrafts() {
       el.innerHTML = `<p class="notice muted" style="font-size:13px">No drafts yet. Click “Fetch new papers” to pull recent Dictyostelium papers and draft curation.${data.ai_on ? "" : " (AI suggestions are off on this server; gene detection still runs.)"}</p>`;
       return;
     }
+    const needsCuration = (d) => !["out_for_curation", "uncuratable", "submitted", "dismissed"].includes(d.status || "");
     const buckets = {
       all: drafts,
-      new: drafts.filter((d) => !d.status || d.status === "new"),
+      new: drafts.filter(needsCuration),
       out_for_curation: drafts.filter((d) => d.status === "out_for_curation"),
+      returned: drafts.filter((d) => d.status === "submitted"),
+      uncuratable: drafts.filter((d) => d.status === "uncuratable"),
     };
     const shown = buckets[paperDraftFilter] || drafts;
     const fbtn = (key, label) => `<button type="button" class="pd-filter" data-f="${key}" style="font-size:12px;padding:2px 10px;border:1px solid ${paperDraftFilter === key ? "#0a4f47" : "#d7dee0"};border-radius:999px;background:${paperDraftFilter === key ? "#e7f0ee" : "#fff"};color:${paperDraftFilter === key ? "#0a4f47" : "inherit"};font-weight:${paperDraftFilter === key ? 600 : 400};cursor:pointer">${label} (${(buckets[key] || []).length})</button>`;
-    const filterBar = `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${fbtn("all", "All")}${fbtn("new", "New")}${fbtn("out_for_curation", "Out for curation")}</div>`;
+    const filterBar = `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${fbtn("all", "All")}${fbtn("new", "New")}${fbtn("out_for_curation", "Out for curation")}${fbtn("returned", "Returned author curations")}${fbtn("uncuratable", "Uncuratable")}</div>`;
     el.innerHTML = filterBar + (shown.length ? shown.map(paperDraftCard).join("") : `<p class="notice muted" style="font-size:13px">No papers in this bucket.</p>`);
     el.querySelectorAll(".pd-filter").forEach((b) => b.addEventListener("click", () => { paperDraftFilter = b.dataset.f; loadPaperDrafts(); }));
     el.querySelectorAll(".paper-draft").forEach((card) => {
@@ -3397,11 +3403,12 @@ async function loadPaperDrafts() {
         try { await updatePaperDraft(pmid, "dismissed", emailEl.value); card.remove(); }
         catch { say("Could not dismiss."); }
       });
-      const bucketBtn = card.querySelector(".pd-bucket");
-      if (bucketBtn) bucketBtn.addEventListener("click", async () => {
-        bucketBtn.disabled = true;
-        try { await updatePaperDraft(pmid, bucketBtn.dataset.to); loadPaperDrafts(); }
-        catch { say("Could not update."); bucketBtn.disabled = false; }
+      card.querySelectorAll(".pd-bucket").forEach((bucketBtn) => {
+        bucketBtn.addEventListener("click", async () => {
+          bucketBtn.disabled = true;
+          try { await updatePaperDraft(pmid, bucketBtn.dataset.to); loadPaperDrafts(); }
+          catch { say("Could not update."); bucketBtn.disabled = false; }
+        });
       });
       const handledBtn = card.querySelector(".pd-handled");
       if (handledBtn) handledBtn.addEventListener("click", async () => {

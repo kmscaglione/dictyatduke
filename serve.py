@@ -2739,6 +2739,44 @@ PAPER_AUTODRAFT = os.environ.get("PAPER_AUTODRAFT", "gemini").strip().lower()
 _CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate, "
                      "then Import results. Fetch full text first for a whole-paper draft.")
 
+# Dicty Phenotype Ontology (DDPHENO) as the controlled vocabulary for AI phenotype
+# curation: the model must choose phenotype terms from this list, never invent free
+# text. Built once from assets/phenotype_ontology.json (the same file the Phenotypes
+# tab uses, so the AI and the site share one vocabulary).
+_PHENO_TERMS = None          # [(name, id)]
+_PHENO_BY_LC = None          # lowercased name -> (canonical name, id)
+_PHENO_PROMPT = None         # "name (DDPHENO:id)" per line, for the prompt
+
+
+def _load_pheno_ontology():
+    global _PHENO_TERMS, _PHENO_BY_LC, _PHENO_PROMPT
+    if _PHENO_TERMS is None:
+        try:
+            data = _load_json("phenotype_ontology.json") or {}
+        except Exception:
+            data = {}
+        _PHENO_TERMS = [(name, (v or {}).get("id", "")) for name, v in data.items() if name]
+        _PHENO_BY_LC = {name.lower(): (name, tid) for name, tid in _PHENO_TERMS}
+        _PHENO_PROMPT = "\n".join(f"{name} ({tid})" for name, tid in _PHENO_TERMS)
+    return _PHENO_TERMS
+
+
+def _normalize_phenotypes(items):
+    """Snap AI phenotypes to the DDPHENO vocabulary: keep only terms whose name
+    matches the ontology, returning the canonical name + id and the supporting
+    quote. Free-text phenotypes that match nothing are dropped."""
+    _load_pheno_ontology()
+    out = []
+    for x in items or []:
+        if not isinstance(x, dict):
+            continue
+        hit = _PHENO_BY_LC.get(str(x.get("phenotype", "")).strip().lower())
+        if not hit:
+            continue
+        out.append({"gene": str(x.get("gene", ""))[:60], "phenotype": hit[0],
+                    "phenotype_id": hit[1], "support": str(x.get("support", ""))[:400]})
+    return out[:30]
+
 
 def _curation_ai_draft(paper, genes, full_text=None):
     """Well-supported GO/phenotype/interaction suggestions from a paper, as
@@ -2763,32 +2801,37 @@ def _curation_ai_draft(paper, genes, full_text=None):
     src_label = "Full text" if whole else "Abstract"
     body_text = (full_text or "")[:120000] if whole else (paper.get("abstract", "") or "")[:6000]
     gene_list = ", ".join(f"{g['symbol']} ({g['ddb']})" for g in genes) or "none detected"
-    prompt = (
+    _load_pheno_ontology()
+    instructions = (
         "You are drafting dictyBase curation from a Dictyostelium paper. Extract ONLY "
         "well-supported curation: annotations this paper DIRECTLY demonstrates with its own "
-        "experimental results. Exclude anything speculative, stated only in the introduction "
-        "or discussion as background, inferred from other organisms, or merely hypothesized. "
-        "If the evidence is indirect or weak, leave it out. A few solid annotations are far "
-        "better than many thin ones.\n\n"
+        "experimental results. Exclude anything speculative, stated only as background, inferred "
+        "from other organisms, or merely hypothesized. If the evidence is indirect or weak, leave "
+        "it out. A few solid annotations are far better than many thin ones.\n\n"
         "Return STRICT JSON with keys: "
         '"summary" (<=2 sentences on what the paper shows); '
         '"gene_summaries" (list of {gene, sentence}: one dictyBase-style sentence per gene the '
-        "paper characterizes, stating what the paper shows the gene does or what its mutant "
-        'shows); "go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|'
-        '"IGI"|"IEP", support}); "phenotypes" (list of {gene, phenotype, support}); '
+        "paper characterizes); "
+        '"go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|"IGI"|"IEP", '
+        'support}); "phenotypes" (list of {gene, phenotype, phenotype_id, support}); '
         '"interactions" (list of {gene_a, gene_b, type:"physical"|"genetic", support}). '
-        "In every go/phenotype/interaction, `support` is a short quote taken verbatim from the "
-        "paper that directly shows it. If you cannot quote direct evidence, do not include the "
-        "item. Only use genes named in the paper; prefer these detected symbols where relevant: "
-        + gene_list + ". Use an empty list where nothing qualifies. Output ONLY the JSON object.\n\n"
-        f"Title: {paper.get('title', '')}\n{src_label}:\n{body_text}"
+        "For phenotypes, `phenotype` MUST be an exact term name copied from the Dicty Phenotype "
+        "Ontology provided below, and `phenotype_id` its DDPHENO id; if no ontology term fits the "
+        "result, omit that phenotype rather than inventing one. In every go/phenotype/interaction, "
+        "`support` is a short verbatim quote from the paper that directly shows it; if you cannot "
+        "quote direct evidence, omit the item. Output ONLY the JSON object."
     )
+    user_text = (f"Genes detected in the paper (prefer these where relevant): {gene_list}\n\n"
+                 f"Title: {paper.get('title', '')}\n{src_label}:\n{body_text}")
+    onto_block = "Dicty Phenotype Ontology, the ONLY allowed phenotype terms (name then id):\n" + (_PHENO_PROMPT or "")
     try:
         if use_anthropic:
-            text, _out = _anthropic_generate(prompt)
+            system = [{"type": "text", "text": instructions},
+                      {"type": "text", "text": onto_block, "cache_control": {"type": "ephemeral"}}]
+            text, _out = _anthropic_generate(user_text, system=system)
             model = ANTHROPIC_MODEL + (" (whole paper)" if whole else "")
         else:
-            text, out_tokens = _analyze_generate(prompt, "")
+            text, out_tokens = _analyze_generate(instructions + "\n\n" + onto_block + "\n\n" + user_text, "")
             _analyze_record_tokens(out_tokens)
             model = ANALYZE_MODEL + (" (whole paper)" if whole else "")
         m = re.search(r"\{.*\}", text, re.S)
@@ -2797,7 +2840,7 @@ def _curation_ai_draft(paper, genes, full_text=None):
                 for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
         return {"ok": True, "model": model, "drafted_from": "full_text" if whole else "abstract",
                 "summary": (data.get("summary") or "")[:600], "gene_summaries": gsum,
-                "go": data.get("go") or [], "phenotypes": data.get("phenotypes") or [],
+                "go": data.get("go") or [], "phenotypes": _normalize_phenotypes(data.get("phenotypes")),
                 "interactions": data.get("interactions") or []}
     except Exception as e:
         detail = type(e).__name__

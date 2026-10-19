@@ -2778,6 +2778,34 @@ def _normalize_phenotypes(items):
     return out[:30]
 
 
+def _normalize_go(items):
+    """Keep only GO suggestions that resolve to a real GO term, attaching the
+    canonical id, name and aspect. A given go_id is checked against the ontology
+    first; otherwise the term name is matched. Unresolvable items are dropped so
+    only controlled-vocabulary GO reaches the curator (GO is too large to list in
+    the prompt, so this is enforced here instead)."""
+    out = []
+    for x in items or []:
+        if not isinstance(x, dict):
+            continue
+        goid = str(x.get("go_id", "")).strip().upper()
+        name = aspect = ""
+        if goid:
+            nm, asp = go_term(goid)
+            if nm:
+                name, aspect = nm, asp
+        if not name:
+            hits = go_search(str(x.get("term", "")), str(x.get("aspect", "")), 1)
+            if hits:
+                goid, name, aspect = hits[0]["id"], hits[0]["name"], hits[0]["aspect"]
+        if not (goid and name):
+            continue
+        out.append({"gene": str(x.get("gene", ""))[:60], "go_id": goid, "term": name,
+                    "aspect": aspect, "evidence": str(x.get("evidence", ""))[:8],
+                    "support": str(x.get("support", ""))[:400]})
+    return out[:40]
+
+
 def _curation_ai_draft(paper, genes, full_text=None):
     """Well-supported GO/phenotype/interaction suggestions from a paper, as
     structured JSON. Prefers the curator's Anthropic account (ANTHROPIC_API_KEY)
@@ -2812,9 +2840,12 @@ def _curation_ai_draft(paper, genes, full_text=None):
         '"summary" (<=2 sentences on what the paper shows); '
         '"gene_summaries" (list of {gene, sentence}: one dictyBase-style sentence per gene the '
         "paper characterizes); "
-        '"go" (list of {gene, term, aspect:"P"|"F"|"C", evidence:"IDA"|"IMP"|"IPI"|"IGI"|"IEP", '
-        'support}); "phenotypes" (list of {gene, phenotype, phenotype_id, support}); '
+        '"go" (list of {gene, go_id:"GO:#######", term, aspect:"P"|"F"|"C", '
+        'evidence:"IDA"|"IMP"|"IPI"|"IGI"|"IEP", support}); '
+        '"phenotypes" (list of {gene, phenotype, phenotype_id, support}); '
         '"interactions" (list of {gene_a, gene_b, type:"physical"|"genetic", support}). '
+        "For `go`, use real Gene Ontology terms and give the matching GO id; only terms that "
+        "resolve to a current GO term are kept, so do not invent ids or terms. "
         "For phenotypes, `phenotype` MUST be an exact term name copied from the Dicty Phenotype "
         "Ontology provided below, and `phenotype_id` its DDPHENO id; if no ontology term fits the "
         "result, omit that phenotype rather than inventing one. In every go/phenotype/interaction, "
@@ -2840,7 +2871,7 @@ def _curation_ai_draft(paper, genes, full_text=None):
                 for x in (data.get("gene_summaries") or []) if isinstance(x, dict) and x.get("sentence")][:20]
         return {"ok": True, "model": model, "drafted_from": "full_text" if whole else "abstract",
                 "summary": (data.get("summary") or "")[:600], "gene_summaries": gsum,
-                "go": data.get("go") or [], "phenotypes": _normalize_phenotypes(data.get("phenotypes")),
+                "go": _normalize_go(data.get("go")), "phenotypes": _normalize_phenotypes(data.get("phenotypes")),
                 "interactions": data.get("interactions") or []}
     except Exception as e:
         detail = type(e).__name__

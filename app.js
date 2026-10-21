@@ -1300,13 +1300,18 @@ function openGene(gene, tab = "Summary", updateRoute = true) {
 
 let suggestionDebounceTimer = null;
 
-// Site-wide page/tool matches for the hero search (shares the command palette's index).
-function matchSitePages(query, limit = 4) {
-  const ql = query.trim().toLowerCase();
-  if (!ql) return [];
-  return CMDK_TARGETS
-    .filter((t) => t.href !== "/" && (t.label.toLowerCase().includes(ql) || (t.kw || "").includes(ql)))
-    .slice(0, limit);
+// Site-wide matches for the hero search: the SAME full index the command palette
+// uses (SITE_PAGES — pages, tools, labs/people, meetings, protocols, awards and
+// anything else indexed), not just the static nav list, so the front-page box
+// finds more than genes. The index is built lazily on idle, so build it on demand
+// if someone searches before that runs.
+function matchSitePages(query, limit = 6) {
+  const q = query.trim();
+  if (q.length < 2) return [];
+  if (!SITE_PAGES.length) { try { buildSiteIndex(); } catch { /* ignore */ } }
+  return searchSitePages(q).slice(0, limit).map((p) => ({
+    kind: p.group || "Page", label: p.title, sub: p.description || "", href: p.href,
+  }));
 }
 
 function renderSuggestions(query) {
@@ -1318,8 +1323,8 @@ function renderSuggestions(query) {
   const localKeys = new Set(local.map((g) => g.ncbiGene));
   // Full-catalog matches (e.g. "dsca" -> dscA-1, dscA-2), minus anything already curated.
   const indexed = searchIndex(query, 8).filter((g) => !localKeys.has(g.ncbiGene));
-  // Matching tools & pages (e.g. "blast", "downloads", "genome browser").
-  const pages = matchSitePages(query, 4);
+  // Matching site content: tools, pages, labs/people, meetings, protocols, etc.
+  const pages = matchSitePages(query, 6);
 
   const localHtml = local.map((gene) => `
     <button class="suggestion" type="button" data-gene="${gene.id}">

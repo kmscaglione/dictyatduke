@@ -16,6 +16,7 @@ import json
 import re
 import os
 import sys
+import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -140,6 +141,15 @@ def main():
     imr = (im or {}).get("results", [])
     check("/api/idmap resolves an AX2-214 id (mhcA, via AX2-214)",
           st == 200 and any(r.get("ddb") == "DDB_G0286355" and r.get("via") == "AX2-214" for r in imr))
+    # Any spelling a user might paste resolves (the first user report: tirA,
+    # DD_AX2_00005286 -> DDB_G0289237, typed with and without underscores).
+    for spelling in ("DD_AX2_00005286", "DDAX200005286", "dd-ax2-5286", "DD AX2 00005286"):
+        st, sp = get_json("/api/search?q=" + urllib.parse.quote(spelling))
+        check(f"/api/search resolves AX2 spelling {spelling!r} -> tirA",
+              st == 200 and any(r.get("ddb") == "DDB_G0289237" for r in (sp or {}).get("results", [])))
+    st, im2 = post_json("/api/idmap", {"ids": ["ddax2_5286"]})
+    check("/api/idmap resolves a loosely spelled AX2 id (tirA)",
+          st == 200 and any(r.get("ddb") == "DDB_G0289237" for r in (im2 or {}).get("results", [])))
     # List tools take single-copy AX2 ids; a paralog-family id stays unmatched
     # rather than expanding into every AX4 member (would bias enrichment).
     st, ba = post_json("/api/batch", {"genes": ["DD_AX2_00002714"], "columns": ["symbol"]})

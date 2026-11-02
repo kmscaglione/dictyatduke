@@ -17,6 +17,15 @@ ROOT = pathlib.Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
 _DDB_RE = re.compile(r"^DDB_G\d+$", re.I)
+_AX2_LOOSE = re.compile(r"^DD[\s_-]*AX2[\s_-]*(\d{1,8})$", re.I)
+
+
+def norm_ax2(token):
+    """Canonical AX2-214 gene id (DD_AX2_00005286) for any spelling a user might
+    paste: with or without underscores, hyphens or spaces, any case, with or
+    without the zero padding. None if the token isn't an AX2 id."""
+    m = _AX2_LOOSE.match(str(token or "").strip())
+    return f"DD_AX2_{int(m.group(1)):08d}" if m else None
 
 # lazily-built indices
 _state = {}
@@ -111,7 +120,7 @@ def resolve_genes(tokens):
             else:
                 unmatched.append(tok)
         else:
-            ddb = st["sym2ddb"].get(t.lower())
+            ddb = st["sym2ddb"].get((norm_ax2(t) or t).lower())
             if ddb:
                 matched.add(ddb)
             else:
@@ -174,7 +183,7 @@ def resolve_background(tokens):
         t = str(tok).strip()
         if not t:
             continue
-        ddb = upper.get(t.upper()) if _DDB_RE.match(t) else st["sym2ddb"].get(t.lower())
+        ddb = upper.get(t.upper()) if _DDB_RE.match(t) else st["sym2ddb"].get((norm_ax2(t) or t).lower())
         if ddb:
             matched.add(ddb)
         else:

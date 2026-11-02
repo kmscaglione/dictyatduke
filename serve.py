@@ -1565,7 +1565,7 @@ def api_gene_rows():
     return _API["_rows"], _API["_sym"]
 
 
-_AX2_RE = re.compile(r"^DD_AX2_\d+$", re.I)
+norm_ax2 = enrichment.norm_ax2     # any AX2 spelling -> canonical DD_AX2_00005286
 
 
 def ax2_index():
@@ -1596,8 +1596,9 @@ def resolve_gene(token):
     hit = sym.get(token.lower())
     if hit:
         return hit
-    if _AX2_RE.match(token):            # AX2-214 id -> AX4 gene, single-copy only
-        ddbs = ax2_index().get(token.upper(), [])
+    a2 = norm_ax2(token)
+    if a2:                              # AX2-214 id -> AX4 gene, single-copy only
+        ddbs = ax2_index().get(a2, [])
         if len(ddbs) == 1 and ddbs[0] in rows:
             return ddbs[0]
     return None
@@ -2002,10 +2003,10 @@ def resolve_ids(tokens):
             ddb = rev["uniprot"][tu]
         elif t.isdigit() and t in rev["ncbi"]:
             ddb = rev["ncbi"][t]
-        elif _AX2_RE.match(t):
+        elif norm_ax2(t):
             # AX2-214 id -> AX4 ortholog(s). Orthogroup-level, so emit a row per
             # AX4 paralog (single-copy ids give exactly one), tagged via AX2-214.
-            ax2 = [d for d in ax2_index().get(tu, []) if d in rows]
+            ax2 = [d for d in ax2_index().get(norm_ax2(t), []) if d in rows]
             if ax2:
                 for d in ax2:
                     r = rows[d]
@@ -6512,10 +6513,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # AX2-214 gene ids resolve to their AX4 ortholog(s) so AX2-mapped RNA-seq
         # hits are searchable without a manual conversion (orthogroup-level link,
         # Holland*, Ahmed* et al. 2025). Only scanned for an AX2-looking query.
-        if "ax2" in term:
-            for a2, ddbs in ax2_index().items():
-                if term not in a2.lower():
-                    continue
+        a2c = norm_ax2(term)
+        if a2c:                          # a full id in any spelling: exact lookup
+            cands = [(a2c, ax2_index().get(a2c, []))]
+        elif "ax2" in term:              # a partial id: substring scan
+            cands = [(a2, d) for a2, d in ax2_index().items() if term in a2.lower()]
+        else:
+            cands = []
+        if cands:
+            for a2, ddbs in cands:
                 for ddb in ddbs:
                     if ddb in seen or ddb not in rows:
                         continue

@@ -1412,8 +1412,15 @@ function looksLikeDDB(q) {
   return /^DDB(_G)?\d+$/i.test(q.trim());
 }
 
+// Canonical AX2-214 gene id for any spelling a user might paste (with or without
+// underscores, hyphens or spaces, any case, unpadded). Mirrors norm_ax2 server-side.
+function normalizeAX2(q) {
+  const m = /^DD[\s_-]*AX2[\s_-]*(\d{1,8})$/i.exec(String(q || "").trim());
+  return m ? `DD_AX2_${m[1].padStart(8, "0")}` : null;
+}
+
 function looksLikeAX2(q) {
-  return /^DD_AX2_\d+$/i.test(q.trim());
+  return normalizeAX2(q) !== null;
 }
 
 // An AX2-214 gene id (e.g. from reads mapped to the AX2 genome) has no local
@@ -5996,6 +6003,22 @@ function initGenomeBrowser() {
           searchMsg.style.color = "#b91c1c";
           searchMsg.textContent = `“${q}” not found in ${curOrg ? curOrg.label : "this genome"}. Try a gene symbol (finds its ortholog) or coordinates (e.g. ${eg}).`;
         });
+      return;
+    }
+    // An AX2-214 gene id on the AX4 view: jump to its AX4 ortholog (the first,
+    // if it is in a paralog family; the message says how many there are).
+    if (looksLikeAX2(q) && !resolveGene(q)) {
+      const a2 = normalizeAX2(q);
+      searchMsg.style.color = "var(--muted,#6b7280)"; searchMsg.textContent = "Searching…";
+      fetch(`/api/search?q=${encodeURIComponent(a2)}&limit=40`).then((r) => r.json()).then((data) => {
+        const hits = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+        const entry = hits.map((h) => geneIndex.find((g) => g.id === h.ddb)).find(Boolean);
+        const loc = entry && geneLocus(entry);
+        if (!loc) { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = `No AX4 ortholog with coordinates for ${a2}.`; return; }
+        const more = hits.length > 1 ? ` (1 of ${hits.length} in its orthogroup)` : "";
+        searchMsg.textContent = `${a2} → ${entry.symbol} · ${loc.chrom}${more}`;
+        if (igvBrowser) igvBrowser.search(`${loc.chrom}:${Math.max(1, loc.start - 2000)}-${loc.end + 2000}`);
+      }).catch(() => { searchMsg.style.color = "#b91c1c"; searchMsg.textContent = `Could not look up ${a2} right now.`; });
       return;
     }
     const entry = resolveGene(q) || searchIndex(q, 1)[0];
@@ -12702,6 +12725,9 @@ function renderSearchPage() {
       searchPageDebounce = setTimeout(() => runSearchPageQuery(searchPageMode, val), 220);
     });
     if (appReady) requestAnimationFrame(() => pageInput.focus());
+    // ?q= prefills and runs the search (shareable links; AX2-id redirects).
+    const preQ = (new URLSearchParams(location.search).get("q") || "").trim();
+    if (preQ) { pageInput.value = preQ; runSearchPageQuery(searchPageMode, preQ); }
   }
   document.querySelectorAll('input[name="pheno-op"]').forEach((r) => r.addEventListener("change", () => {
     phenoCombineOp = r.value;
@@ -12718,10 +12744,41 @@ function runSearchPageQuery(mode, value) {
     el.innerHTML = `<p class="notice muted">Type at least two characters to search.</p>`;
     return;
   }
-  if (mode === "general") renderGeneralResults(el, q);
+  if (mode === "general") {
+    renderGeneralResults(el, q);
+    if (looksLikeAX2(q)) runGeneralAX2(el, q, req);
+  }
   else if (mode === "phenotype") runPhenotypeSearch(el, q, req);
   else if (mode === "go") runGOTermSearch(el, q, null, req);
   else if (mode === "localization") runGOTermSearch(el, q, "cellular_component", req);
+}
+
+// An AX2-214 gene id has no local record, so the general search asks the server
+// for its AX4 ortholog(s) (orthogroup-level, Holland*, Ahmed* et al. 2025) and
+// shows them as the Genes section, in place of "nothing matches".
+async function runGeneralAX2(el, q, req) {
+  el.innerHTML = `<p class="notice muted">Looking up AX2-214 gene ${escapeHtml(normalizeAX2(q))}…</p>`;
+  let hits = [];
+  try {
+    const data = await (await fetch(`/api/search?q=${encodeURIComponent(normalizeAX2(q))}&limit=40`)).json();
+    hits = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+  } catch { /* handled below */ }
+  if (req !== searchPageReq) return;   // a newer query has started
+  if (!hits.length) {
+    el.innerHTML = `<p class="notice">No AX4 ortholog found for AX2-214 gene ${escapeHtml(normalizeAX2(q))}.</p>`;
+    return;
+  }
+  const id = hits[0].via.id;
+  const note = hits.length > 1
+    ? `<p class="notice muted" style="margin:0 0 10px">${escapeHtml(id)} is in an orthogroup with ${hits.length} AX4 genes, so all are listed.</p>`
+    : "";
+  el.innerHTML = `
+    <div class="data-block" style="margin-bottom:14px">
+      <h3 style="font-size:0.9375rem">Genes <span style="font-weight:500;color:var(--muted,#6b7280)">· ${hits.length} · AX4 ortholog of AX2-214 ${escapeHtml(id)}</span></h3>
+      ${note}
+      <div class="technique-links">${hits.map((r) =>
+        `<a class="technique-link curated-xref" data-ddb-ref="${escapeHtml(r.ddb)}" href="/gene/${encodeURIComponent(r.symbol || r.ddb)}"><span>${escapeHtml(r.symbol)}</span><small>${escapeHtml(r.name || r.ddb)}</small></a>`).join("")}</div>
+    </div>`;
 }
 
 // Site-wide search: genes plus any site page/tool/organism/research entry.
@@ -14434,6 +14491,23 @@ function hydrateFromRoute() {
   // results or a crawler): findGeneByToken only covers the curated set, so fall
   // back to the full catalog and open via NCBI. Wait for geneIndex if it's still
   // loading (initial hydration can run before the catalog fetch resolves).
+  // /gene/<AX2-214 id> (a link or pasted URL): resolve to the AX4 ortholog. One
+  // gene redirects to its page; a paralog family goes to the search listing.
+  if (isGeneRoute && looksLikeAX2(decodeURIComponent(pathParts[1] || ""))) {
+    const a2 = normalizeAX2(decodeURIComponent(pathParts[1] || ""));
+    (async () => {
+      let hits = [];
+      try {
+        const data = await (await fetch(`/api/search?q=${encodeURIComponent(a2)}&limit=40`)).json();
+        hits = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+      } catch { /* handled below */ }
+      if (hits.length === 1) history.replaceState(null, "", `/gene/${encodeURIComponent(hits[0].symbol || hits[0].ddb)}`);
+      else if (hits.length > 1) history.replaceState(null, "", `/search/general?q=${encodeURIComponent(a2)}`);
+      else { showNotFound({ kind: "gene", token: a2 }); return; }
+      hydrateFromRoute();
+    })();
+    return;
+  }
   if (isGeneRoute) {
     const tok = normalize(decodeURIComponent(pathParts[1] || ""));
     const fromCatalog = () => {

@@ -374,12 +374,75 @@ def check_ax2_orthologs():
           if canary == {"DDB_G0286355"} else f"mhcA canary drifted: {sorted(canary)}")
 
 
+def check_gene_loci():
+    """Every ortholog locus in gene_loci.json must sit on a seqid the genome
+    browser actually has, inside that seqid's length. The orthogroup table's
+    browser jump buttons use these loci; a wrong seqid opens a contig that does
+    not exist. That happened for 6,644 AX2-214 genes, because the .gbf contig
+    names differ from the relabeled browser FASTA for chromosome-level scaffolds.
+    _meta.browser_seqids is the browser's seqid table, written by
+    build_gene_loci.py with relabel_paper_genomes.py's naming rule. Where the
+    genome files are present (the server, or a local copy) the table is also
+    re-derived from them, so a relabel that drifts is caught. tirA's AX2 ortholog
+    and an OT3A mitochondrial gene are the canaries for the two renamed cases."""
+    print("gene_loci.json vs genome browser seqids")
+    try:
+        d = load("gene_loci.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load gene_loci.json ({e})")
+    loci = d.get("loci", {})
+    table = d.get("_meta", {}).get("browser_seqids", {})
+    missing = sorted(set(loci) - set(table))
+    check(not missing, f"browser seqid table covers all {len(loci)} genomes"
+          if not missing else f"no browser seqid table for {missing}")
+    bad = {}
+    for g, genes in loci.items():
+        lens = table.get(g, {})
+        for gid, loc in genes.items():
+            seqid, _, rng = loc.rpartition(":")
+            try:
+                lo, hi = (int(x) for x in rng.split("-"))
+            except ValueError:
+                lo = hi = 0
+            if seqid not in lens or not 1 <= lo <= hi <= lens[seqid]:
+                bad.setdefault(g, []).append(f"{gid} {loc}")
+    total = sum(len(v) for v in loci.values())
+    check(not bad, f"all {total} loci on a browser seqid, within its length" if not bad
+          else "loci off the browser: " + "; ".join(
+              f"{g} {len(v)} (e.g. {v[0]})" for g, v in sorted(bad.items())))
+    for g, gid, want in (("dd-ax2-214", "DD_AX2_00005286", "CM142511.1:2575192-2579391"),
+                         ("dd-ot3a", "DD_OT_00013124", "JBTAPG010000045.1:38143-40750")):
+        got = loci.get(g, {}).get(gid)
+        check(got == want, f"canary {gid} -> {want}" if got == want
+              else f"canary {gid} drifted: {got} (want {want})")
+    # Re-derive the table from the genome files where they exist.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    try:
+        from build_gene_loci import STEMS, browser_seqids
+    except ImportError as e:
+        return fail(f"could not import build_gene_loci ({e})")
+    gdir = os.path.join(ASSETS, "genomes")
+    seen, drift = 0, []
+    for g, lens in table.items():
+        live = browser_seqids(STEMS.get(g, ""), gdir) if g in STEMS else None
+        if live is None:
+            continue
+        seen += 1
+        if {s: n for s, (n, _) in live.items()} != lens:
+            drift.append(g)
+    if not seen:
+        return ok("genome files absent here, table not re-derived (skipped)")
+    check(not drift, f"table matches the {seen} genome FASTA(s) present" if not drift
+          else f"table differs from the genome FASTA for {drift}: rebuild gene_loci.json")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
                check_phenotype_refs, check_strain_metadata, check_ddb0_ids,
-               check_insitu_maeda, check_go_complex_terms, check_ax2_orthologs):
+               check_insitu_maeda, check_go_complex_terms, check_ax2_orthologs,
+               check_gene_loci):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

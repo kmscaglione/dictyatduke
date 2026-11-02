@@ -36,6 +36,25 @@ def _load():
         if sym:
             sym2ddb.setdefault(sym.lower(), ddb)
 
+    # AX2-214 gene ids (reads mapped to the AX2 genome) resolve to their AX4
+    # ortholog via the hosted orthogroups (Holland*, Ahmed* et al. 2025). Single-
+    # copy ids only: expanding a paralog-family id to every AX4 member would
+    # inflate the gene set and bias enrichment toward large families, so those
+    # stay unmatched and are reported as not recognized.
+    try:
+        ax2 = {}
+        og = json.loads((ASSETS / "orthogroups.json").read_text())
+        for ddb, rec in og.get("genes", {}).items():
+            for a2 in rec.get("orthologs", {}).get("dd-ax2-214", []):
+                ax2.setdefault(a2.lower(), set()).add(ddb)
+        for a2, ddbs in ax2.items():
+            if len(ddbs) == 1:
+                (ddb,) = ddbs
+                if ddb in all_ddb:
+                    sym2ddb.setdefault(a2, ddb)
+    except Exception:
+        pass
+
     go = json.loads((ASSETS / "go_annotations.json").read_text())
     gene_terms = {}          # ddb -> set(GO id)
     term_genes = {}          # GO id -> set(ddb)

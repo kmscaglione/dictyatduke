@@ -13378,6 +13378,23 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
+  // AX2-214 gene id — resolve through the orthogroups (server) and open the AX4
+  // gene. One hit navigates straight there; several (a paralog family) open the
+  // suggestion list so the user picks.
+  if (looksLikeAX2(query)) {
+    try {
+      const data = await (await fetch(`/api/search?q=${encodeURIComponent(query)}&limit=10`)).json();
+      const hits = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+      if (hits.length === 1) {
+        suggestions.innerHTML = "";
+        history.pushState(null, "", `/gene/${encodeURIComponent(hits[0].symbol || hits[0].ddb)}`);
+        hydrateFromRoute();
+        return;
+      }
+      if (hits.length > 1) { fetchAX2Suggestions(query); input.focus(); return; }
+    } catch { /* fall through to NCBI */ }
+  }
+
   // No gene matched — if the query names a tool or page, go there instead of NCBI.
   const pageHit = matchSitePages(query, 1)[0];
   if (pageHit) {
@@ -14995,19 +15012,43 @@ function cmdkBuild(query) {
   return items.slice(0, 24);
 }
 
-function cmdkRender(query) {
-  cmdk.items = cmdkBuild(query);
-  cmdk.active = 0;
+function cmdkPaintList(query) {
   if (!cmdk.items.length) {
     cmdk.list.innerHTML = `<li class="cmdk-empty">No matches${query ? ` for “${escapeHtml(query)}”` : ""}.</li>`;
     return;
   }
   cmdk.list.innerHTML = cmdk.items.map((it, i) => `
-    <li class="cmdk-item${i === 0 ? " active" : ""}" role="option" data-idx="${i}" aria-selected="${i === 0}">
+    <li class="cmdk-item${i === cmdk.active ? " active" : ""}" role="option" data-idx="${i}" aria-selected="${i === cmdk.active}">
       <span class="cmdk-kind cmdk-kind-${it.kind.toLowerCase()}">${escapeHtml(it.kind)}</span>
       <span class="cmdk-label">${escapeHtml(it.label)}</span>
       ${it.sub ? `<span class="cmdk-sub">${escapeHtml(it.sub)}</span>` : ""}
     </li>`).join("");
+}
+
+function cmdkRender(query) {
+  cmdk.items = cmdkBuild(query);
+  cmdk.active = 0;
+  cmdkPaintList(query);
+  // An AX2-214 gene id has no local record; resolve it to the AX4 ortholog(s)
+  // through /api/search and show those, so the palette works from any page.
+  if (looksLikeAX2(query)) cmdkAugmentAX2(query);
+}
+
+async function cmdkAugmentAX2(query) {
+  const q = query.trim();
+  try {
+    const data = await (await fetch(`/api/search?q=${encodeURIComponent(q)}&limit=10`)).json();
+    if (!cmdk.open || cmdk.input.value.trim() !== q) return;   // query moved on
+    const hits = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+    if (!hits.length) return;
+    cmdk.items = hits.map((r) => ({
+      kind: "Gene", label: r.symbol,
+      sub: `${r.name ? r.name + " · " : ""}AX2-214 ${r.via.id}`,
+      href: `/gene/${encodeURIComponent(r.symbol || r.ddb)}`,
+    }));
+    cmdk.active = 0;
+    cmdkPaintList(q);
+  } catch { /* leave the sync result in place */ }
 }
 
 function cmdkPaintActive() {

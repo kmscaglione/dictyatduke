@@ -140,6 +140,15 @@ def main():
     imr = (im or {}).get("results", [])
     check("/api/idmap resolves an AX2-214 id (mhcA, via AX2-214)",
           st == 200 and any(r.get("ddb") == "DDB_G0286355" and r.get("via") == "AX2-214" for r in imr))
+    # List tools take single-copy AX2 ids; a paralog-family id stays unmatched
+    # rather than expanding into every AX4 member (would bias enrichment).
+    st, ba = post_json("/api/batch", {"genes": ["DD_AX2_00002714"], "columns": ["symbol"]})
+    check("/api/batch accepts a single-copy AX2-214 id (-> mhcA)",
+          st == 200 and any(str(r.get("symbol", "")) == "mhcA" for r in (ba or {}).get("rows", [])))
+    st, en = post_json("/api/enrichment", {"genes": ["DD_AX2_00002714", "DD_AX2_00001375", "racE"], "set": "go"})
+    check("/api/enrichment maps single-copy AX2 ids, leaves a paralog-family id unmatched",
+          st == 200 and "DD_AX2_00001375" in ((en or {}).get("unmatched") or [])
+          and "DD_AX2_00002714" not in ((en or {}).get("unmatched") or []))
 
     # Batch annotator: one row per matched gene, only requested columns.
     st, b = post_json("/api/batch", {"genes": ["mhcA", "racE", "pten"],

@@ -2,6 +2,12 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-11-02",
+      "tag": "update",
+      "title": "Search dictyBase with AX2-214 gene ids",
+      "body": "You can now search dictyBase with AX2-214 gene ids. If you map reads to the D. discoideum AX2-214 genome (Holland, Ahmed et al. 2025), paste a DD_AX2_ id straight into the search box or the gene ID converter and it resolves to the matching AX4 gene page. No manual conversion needed. The link comes from the orthogroups we host, so a single-copy id opens one gene, and a gene from a larger family lists all of its AX4 members."
+    },
+    {
       "date": "2026-10-30",
       "tag": "community",
       "title": "dictyBase 2026 is published in Nucleic Acids Research",

@@ -1565,12 +1565,42 @@ def api_gene_rows():
     return _API["_rows"], _API["_sym"]
 
 
+_AX2_RE = re.compile(r"^DD_AX2_\d+$", re.I)
+
+
+def ax2_index():
+    """AX2-214 gene id -> list of AX4 DDB_G gene ids, from the curated orthogroups
+    (OrthoFinder; Holland*, Ahmed* et al. 2025). The AX2-214 proteome is linked to
+    AX4 at the orthogroup level, so an AX2 id can map to more than one AX4 paralog;
+    the large majority (single-copy) map to exactly one. Built once and cached."""
+    if "_ax2" not in _API:
+        m = {}
+        try:
+            for ddb, rec in _load_json("orthogroups.json").get("genes", {}).items():
+                for a2 in rec.get("orthologs", {}).get("dd-ax2-214", []):
+                    key = a2.upper()
+                    bucket = m.setdefault(key, [])
+                    if ddb not in bucket:
+                        bucket.append(ddb)
+        except Exception:
+            pass
+        _API["_ax2"] = m
+    return _API["_ax2"]
+
+
 def resolve_gene(token):
     rows, sym = api_gene_rows()
     token = (token or "").strip()
     if token in rows:
         return token
-    return sym.get(token.lower())
+    hit = sym.get(token.lower())
+    if hit:
+        return hit
+    if _AX2_RE.match(token):            # AX2-214 id -> AX4 gene, single-copy only
+        ddbs = ax2_index().get(token.upper(), [])
+        if len(ddbs) == 1 and ddbs[0] in rows:
+            return ddbs[0]
+    return None
 
 
 def api_go_inverse():
@@ -1972,6 +2002,18 @@ def resolve_ids(tokens):
             ddb = rev["uniprot"][tu]
         elif t.isdigit() and t in rev["ncbi"]:
             ddb = rev["ncbi"][t]
+        elif _AX2_RE.match(t):
+            # AX2-214 id -> AX4 ortholog(s). Orthogroup-level, so emit a row per
+            # AX4 paralog (single-copy ids give exactly one), tagged via AX2-214.
+            ax2 = [d for d in ax2_index().get(tu, []) if d in rows]
+            if ax2:
+                for d in ax2:
+                    r = rows[d]
+                    out.append({"input": t, "found": True, "ddb": d, "symbol": r["symbol"],
+                                "name": r["name"], "uniprot": _uniprot_for(d),
+                                "ncbiGene": r["ncbiGene"], "location": r["location"],
+                                "via": "AX2-214"})
+                continue
         if ddb and ddb in rows:
             r = rows[ddb]
             out.append({"input": t, "found": True, "ddb": ddb, "symbol": r["symbol"],
@@ -6460,11 +6502,28 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return
         rows, _ = api_gene_rows()
         matches = []
+        seen = set()
         for ddb, g in rows.items():
             sym = g["symbol"].lower()
             if term in sym or term in ddb.lower() or term in (g["name"] or "").lower():
                 rank = 0 if sym == term else (1 if sym.startswith(term) else 2)
                 matches.append((rank, g["symbol"], {"ddb": ddb, "symbol": g["symbol"], "name": g["name"]}))
+                seen.add(ddb)
+        # AX2-214 gene ids resolve to their AX4 ortholog(s) so AX2-mapped RNA-seq
+        # hits are searchable without a manual conversion (orthogroup-level link,
+        # Holland*, Ahmed* et al. 2025). Only scanned for an AX2-looking query.
+        if "ax2" in term:
+            for a2, ddbs in ax2_index().items():
+                if term not in a2.lower():
+                    continue
+                for ddb in ddbs:
+                    if ddb in seen or ddb not in rows:
+                        continue
+                    seen.add(ddb)
+                    g = rows[ddb]
+                    matches.append((3, g["symbol"], {"ddb": ddb, "symbol": g["symbol"],
+                                   "name": g["name"], "ncbiGene": g["ncbiGene"],
+                                   "via": {"source": "AX2-214", "id": a2}}))
         matches.sort(key=lambda m: (m[0], m[1].lower()))
         results = [m[2] for m in matches[:limit]]
         self.send_json(200, {"query": term, "count": len(results), "results": results})

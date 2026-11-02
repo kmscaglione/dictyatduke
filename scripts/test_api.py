@@ -130,6 +130,17 @@ def main():
     n = len(s) if isinstance(s, list) else len(s.get("results", []) if isinstance(s, dict) else [])
     check("GET /api/search?q=myosin returns hits", st == 200 and n > 0)
 
+    # AX2-214 gene ids (reads mapped to the AX2 genome) resolve to their AX4
+    # ortholog without a manual conversion. mhcA is the single-copy canary.
+    st, ax = get_json("/api/search?q=DD_AX2_00002714")
+    axr = (ax or {}).get("results", []) if isinstance(ax, dict) else []
+    check("GET /api/search finds an AX2-214 id -> AX4 gene (mhcA)",
+          st == 200 and any(r.get("ddb") == "DDB_G0286355" and r.get("via") for r in axr))
+    st, im = post_json("/api/idmap", {"ids": ["DD_AX2_00002714"]})
+    imr = (im or {}).get("results", [])
+    check("/api/idmap resolves an AX2-214 id (mhcA, via AX2-214)",
+          st == 200 and any(r.get("ddb") == "DDB_G0286355" and r.get("via") == "AX2-214" for r in imr))
+
     # Batch annotator: one row per matched gene, only requested columns.
     st, b = post_json("/api/batch", {"genes": ["mhcA", "racE", "pten"],
                                      "columns": ["symbol", "human_ortholog", "expression_peak"]})

@@ -1360,6 +1360,7 @@ function renderSuggestions(query) {
   // Only reach out to NCBI when we have nothing locally (aliases, other taxa, UniProt IDs).
   clearTimeout(suggestionDebounceTimer);
   if (!local.length && !indexed.length && !pages.length) {
+    if (looksLikeAX2(query)) { fetchAX2Suggestions(query); return; }
     suggestionDebounceTimer = setTimeout(() => fetchNCBISuggestions(query, local), 400);
   }
 }
@@ -1409,6 +1410,39 @@ async function fetchUniProtGene(uniprotId) {
 
 function looksLikeDDB(q) {
   return /^DDB(_G)?\d+$/i.test(q.trim());
+}
+
+function looksLikeAX2(q) {
+  return /^DD_AX2_\d+$/i.test(q.trim());
+}
+
+// An AX2-214 gene id (e.g. from reads mapped to the AX2 genome) has no local
+// record, so resolve it to its AX4 ortholog(s) through /api/search and offer
+// those as suggestions. Orthogroup-level link (Holland*, Ahmed* et al. 2025).
+async function fetchAX2Suggestions(query) {
+  try {
+    const data = await (await fetch(`/api/search?q=${encodeURIComponent(query.trim())}&limit=10`)).json();
+    const rows = (data.results || []).filter((r) => r.via && /^DDB_G\d+$/.test(r.ddb || ""));
+    if (!rows.length) {
+      suggestions.innerHTML = `<div class="notice muted">No AX2-214 ortholog found for <em>${escapeHtml(query.trim())}</em>.</div>`;
+      return;
+    }
+    const note = rows.length > 1
+      ? `<div class="notice muted" style="font-size:.75rem">${escapeHtml(query.trim())} maps to ${rows.length} AX4 genes (same orthogroup).</div>`
+      : "";
+    // Open the local curated gene record (/gene/<symbol>), the same page the
+    // search form lands on — richer than the remote view and works offline.
+    suggestions.innerHTML = note + rows.map((r) => `
+      <button class="suggestion" type="button" data-href="/gene/${encodeURIComponent(r.symbol || r.ddb)}">
+        <span>
+          <strong>${escapeHtml(r.symbol)}${r.name ? ` · ${escapeHtml(r.name)}` : ""}</strong>
+          <small>D. discoideum · AX2-214 ${escapeHtml(r.via.id)}</small>
+        </span>
+        <span class="tag">AX2-214</span>
+      </button>`).join("");
+  } catch {
+    suggestions.innerHTML = `<div class="notice muted">Could not look up <em>${escapeHtml(query.trim())}</em> right now.</div>`;
+  }
 }
 
 function buildNCBITerm(query) {
@@ -4480,7 +4514,7 @@ function renderConvertPage() {
         <div class="record-title">
           <p class="eyebrow">Tools</p>
           <h2>Gene ID converter</h2>
-          <p>Paste a mixed list of gene identifiers — symbols (<em>mhcA</em>), DDB_G ids, UniProt accessions, or NCBI Gene ids — and get them resolved to a single normalized table with every cross-reference. Unrecognized inputs are flagged.</p>
+          <p>Paste a mixed list of gene identifiers — symbols (<em>mhcA</em>), DDB_G ids, UniProt accessions, NCBI Gene ids, or AX2-214 gene ids (<em>DD_AX2_…</em>) — and get them resolved to a single normalized table with every cross-reference. Unrecognized inputs are flagged.</p>
         </div>
       </header>
       <div class="record-body">
@@ -4526,7 +4560,7 @@ async function runConvert() {
       <td style="${td}">${escapeHtml(r.ddb)}</td>
       <td style="${td}">${up}</td>
       <td style="${td}">${nc}</td>
-      <td style="${td};color:var(--muted,#6b7280)">${escapeHtml(r.name || "")}</td></tr>`;
+      <td style="${td};color:var(--muted,#6b7280)">${escapeHtml(r.name || "")}${r.via ? ` <span class="tag" style="font-size:.65rem">via ${escapeHtml(r.via)}</span>` : ""}</td></tr>`;
   }).join("");
   const tsv = ["input\tsymbol\tddb_g\tuniprot\tncbi_gene\tname",
     ...(data.results || []).filter((r) => r.found).map((r) => [r.input, r.symbol, r.ddb, r.uniprot, r.ncbiGene, r.name].join("\t"))].join("\n");

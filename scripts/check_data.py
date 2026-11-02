@@ -342,12 +342,44 @@ def check_go_complex_terms():
     check(d.get("_meta", {}).get("relations") == ["is_a"] and bool(d["_meta"].get("data_version")), "built over is_a only, with the ontology release recorded")
 
 
+def check_ax2_orthologs():
+    """orthogroups.json must still link the AX2-214 proteome to AX4, because the
+    AX2-id search and the converter resolve AX2 ids through it (reads mapped to
+    the AX2 genome, Holland*, Ahmed* et al. 2025). mhcA (DDB_G0286355) is the
+    canary: its single AX2 ortholog DD_AX2_00002714 must map back to it alone."""
+    print("AX2-214 ortholog map")
+    try:
+        og = load("orthogroups.json")
+    except (OSError, ValueError) as e:
+        return fail(f"could not load orthogroups.json ({e})")
+    species = {s.get("id") for s in og.get("_meta", {}).get("species", [])}
+    check("dd-ax2-214" in species, "AX2-214 is a hosted orthogroup species")
+    idx = {r[0] for r in load("gene_index.json")}
+    ax2 = {}
+    for ddb, rec in og.get("genes", {}).items():
+        for a2 in rec.get("orthologs", {}).get("dd-ax2-214", []):
+            ax2.setdefault(a2.upper(), set()).add(ddb)
+    check(len(ax2) > 10000, f"AX2-214 ids mapped {len(ax2)} (> 10,000)")
+    single = sum(1 for v in ax2.values() if len(v) == 1)
+    frac = single / len(ax2) if ax2 else 0
+    check(frac >= 0.70, f"AX2 ids resolving to one AX4 gene {single}/{len(ax2)} ({frac:.0%} >= 70%)")
+    # Search/converter can only open an AX4 gene we actually serve. A few dozen of
+    # the paper's AX4 targets were retired/merged out of our gene_index since its
+    # OrthoFinder run; those AX2 ids fall through. Guard the coverage, not 100%.
+    served = sum(1 for v in ax2.values() if any(d in idx for d in v))
+    cov = served / len(ax2) if ax2 else 0
+    check(cov >= 0.99, f"AX2 ids with a served AX4 target {served}/{len(ax2)} ({cov:.1%} >= 99%)")
+    canary = ax2.get("DD_AX2_00002714", set())
+    check(canary == {"DDB_G0286355"}, "mhcA canary DD_AX2_00002714 -> DDB_G0286355 (single)"
+          if canary == {"DDB_G0286355"} else f"mhcA canary drifted: {sorted(canary)}")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
                check_phenotype_refs, check_strain_metadata, check_ddb0_ids,
-               check_insitu_maeda, check_go_complex_terms):
+               check_insitu_maeda, check_go_complex_terms, check_ax2_orthologs):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

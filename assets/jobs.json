@@ -1,4 +1,16 @@
 {
   "_comment": "Community job board for the Dictyostelium field. Newest first. Positions past their 'closes' date are hidden automatically. Fields per entry: title (required), lab, institution, location, type (phd|postdoc|staff|faculty|other), url (application/details link), contact (email), posted (YYYY-MM-DD), closes (YYYY-MM-DD or empty), summary. To add a posting, append an object to 'positions'.",
-  "positions": []
+  "positions": [
+    {
+      "title": "Postdoctoral Scholar, Evolutionary Cell Biology",
+      "lab": "Dacks Lab (Joel Dacks)",
+      "institution": "University of Alberta",
+      "location": "Edmonton, Canada (hybrid)",
+      "type": "postdoc",
+      "url": "https://iaejup.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UOA-Careers/job/4333",
+      "posted": "2026-11-09",
+      "closes": "2026-11-24",
+      "summary": "A two-year, NSERC-funded postdoc using ancestral protein reconstruction to study how adaptin complexes evolved before the last eukaryotic common ancestor. Reconstructed proteins will be expressed and tested in Dictyostelium. Experience with Dictyostelium molecular cell biology will be prioritized. The position can start now, and the search stays open until it is filled."
+    }
+  ]
 }

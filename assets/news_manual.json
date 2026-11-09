@@ -2,6 +2,13 @@
   "_comment": "Hand-curated news entries. scripts/build_news.py merges these with entries derived from `News:` commit trailers and writes assets/news.json (the file the front page reads). Edit here for posts that don't map to a single commit; otherwise just add a `News:` trailer to the feature commit. Newest first. tag: new|update|data|community.",
   "items": [
     {
+      "date": "2026-11-09",
+      "tag": "community",
+      "title": "Postdoc opening in the Dacks Lab, University of Alberta",
+      "body": "The Dacks Lab at the University of Alberta is hiring a postdoctoral scholar in evolutionary cell biology. The project uses ancestral protein reconstruction to ask how adaptin complexes evolved, then tests the reconstructed proteins in Dictyostelium. The position is NSERC funded for two years and based in Edmonton, with hybrid work. Candidates with Dictyostelium molecular cell biology experience will be prioritized. The university's posting closes 24 November 2026. The full ad is also on our job board.",
+      "link": "https://iaejup.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UOA-Careers/job/4333"
+    },
+    {
       "date": "2026-11-02",
       "tag": "update",
       "title": "Search dictyBase with AX2-214 gene ids",

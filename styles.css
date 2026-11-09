@@ -1561,6 +1561,11 @@ button:focus-visible,
   margin-top: 14px;
 }
 
+/* Job postings carry long descriptions, so one full-width column. */
+.ontology-term-list.jobs-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .ontology-term {
   border-top: 1px solid #edf1ee;
   padding-top: 10px;

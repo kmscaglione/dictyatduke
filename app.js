@@ -8033,7 +8033,7 @@ function renderJobsPage() {
         <div class="record-title">
           <p class="eyebrow">Community</p>
           <h2>Jobs &amp; positions</h2>
-          <p>Open positions across the Dictyostelium community — PhD studentships, postdocs, staff, and faculty roles. To list a position, email us the details and a curator will post it.</p>
+          <p>Open positions across the <em>Dictyostelium</em> community: PhD studentships, postdocs, staff, and faculty roles. To list a position, email us the details and a curator will post it.</p>
         </div>
       </header>
       <div class="record-body">
@@ -8057,9 +8057,14 @@ function loadJobs() {
         host.innerHTML = `<p class="research-note">No open positions are listed right now. Check back soon, or use “Post a position” above to add one.</p>`;
         return;
       }
-      host.innerHTML = `<div class="ontology-term-list">${open.map(jobItemHTML).join("")}</div>`;
+      host.innerHTML = `<div class="ontology-term-list jobs-list">${open.map(jobItemHTML).join("")}</div>`;
     })
     .catch(() => { host.innerHTML = `<p class="research-note">Could not load positions right now.</p>`; });
+}
+
+// Italicize species names in already-escaped text (job postings arrive as plain text).
+function italicizeSpecies(html) {
+  return html.replace(/\b(Dictyostelium(?: discoideum)?|D\. discoideum)\b/g, "<em>$1</em>");
 }
 
 function jobItemHTML(p) {
@@ -8072,9 +8077,9 @@ function jobItemHTML(p) {
   return `
     <article class="ontology-term">
       <div>
-        <strong>${escapeHtml(p.title)}${type ? ` <span class="tag" style="font-weight:400">${type}</span>` : ""}</strong>
+        <strong>${italicizeSpecies(escapeHtml(p.title))}${type ? ` <span class="tag" style="font-weight:400">${type}</span>` : ""}</strong>
         ${where ? `<div style="color:var(--muted,#6b7280);font-size:0.875rem;margin-top:2px">${where}</div>` : ""}
-        ${p.summary ? `<p style="margin:6px 0 0">${escapeHtml(p.summary)}</p>` : ""}
+        ${p.summary ? `<p style="margin:6px 0 0">${italicizeSpecies(escapeHtml(p.summary))}</p>` : ""}
         <div style="margin-top:6px;font-size:0.8125rem;color:var(--muted,#9ca3af)">${dates}${dates && apply ? " · " : ""}${apply}</div>
       </div>
     </article>`;

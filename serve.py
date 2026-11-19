@@ -4,6 +4,8 @@ import base64, struct, mimetypes
 # Web app manifest MIME type, so the PWA manifest is served correctly by any
 # static path (guess_type doesn't know .webmanifest by default).
 mimetypes.add_type("application/manifest+json", ".webmanifest")
+# SnapGene .dna maps download as binary (Python's default guess is an unrelated type).
+mimetypes.add_type("application/octet-stream", ".dna")
 import concurrent.futures
 from email import message_from_bytes
 from email.utils import parsedate_to_datetime
@@ -187,7 +189,9 @@ STATIC_EXTS = {".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", 
                ".jar", ".xlsm",
                # Sawai/Cox screen movies (assets/media/screen/), transcoded to H.264.
                # Served via the ranged handler so the player can seek.
-               ".mp4"}
+               ".mp4",
+               # GoldenBraid kit SnapGene plasmid maps (assets/goldenbraid/).
+               ".dna"}
 # Text assets worth gzipping on the fly (the JSON data files are multi-MB and
 # compress ~85%). NB: genome FASTA/index/annotation (.fna/.fai/.gff/.gtf) are
 # deliberately excluded — IGV.js reads them with byte offsets, so on-the-fly
@@ -4300,6 +4304,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         ".jar": "application/java-archive",
         ".xlsm": "application/vnd.ms-excel.sheet.macroEnabled.12",
         ".webmanifest": "application/manifest+json",
+        ".dna": "application/octet-stream",
     }
 
     def _serve_static_ranged(self):

@@ -1,0 +1,2159 @@
+{
+ "title": "GoldenBraid plasmid files",
+ "credit": "Dictyostelium GoldenBraid kit, Shaulsky lab (Baylor College of Medicine).",
+ "format": "SnapGene .dna files (open in SnapGene or the free SnapGene Viewer).",
+ "groups": [
+  {
+   "key": "assemblies",
+   "title": "Assemblies",
+   "blurb": "Assembled GoldenBraid plasmids: transcriptional units and multi-unit constructs.",
+   "in_git": true,
+   "count": 156,
+   "bytes": 5452718,
+   "files": [
+    {
+     "name": "pDGB_A1B_coaAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1B_coaAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 30846
+    },
+    {
+     "name": "pDGB_A1B_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1B_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 34027
+    },
+    {
+     "name": "pDGB_A1B_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1B_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "bytes": 36797
+    },
+    {
+     "name": "pDGB_A1H_coaAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1H_coaAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 33916
+    },
+    {
+     "name": "pDGB_A1H_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1H_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 37100
+    },
+    {
+     "name": "pDGB_A1H_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1H_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "bytes": 39867
+    },
+    {
+     "name": "pDGB_A1N_coaAp_dscA_FlexibleLinker_7xHis_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_dscA_FlexibleLinker_7xHis_act8t.dna",
+     "bytes": 33575
+    },
+    {
+     "name": "pDGB_A1N_coaAp_dscA_FlexibleLinker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_dscA_FlexibleLinker_GST_act8t.dna",
+     "bytes": 36734
+    },
+    {
+     "name": "pDGB_A1N_coaAp_dscA_FlexibleLinker_HA_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_dscA_FlexibleLinker_HA_act8t.dna",
+     "bytes": 33162
+    },
+    {
+     "name": "pDGB_A1N_coaAp_dscA_FlexibleLinker_myc_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_dscA_FlexibleLinker_myc_act8t.dna",
+     "bytes": 33171
+    },
+    {
+     "name": "pDGB_A1N_coaAp_flamindo2_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_flamindo2_mhcAt.dna",
+     "bytes": 32843
+    },
+    {
+     "name": "pDGB_A1N_coaAp_pinkflamindo_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_coaAp_pinkflamindo_mhcAt.dna",
+     "bytes": 32768
+    },
+    {
+     "name": "pDGB_A1N_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_dscAp_dscA_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 35182
+    },
+    {
+     "name": "pDGB_A1N_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_dscAp_dscA_FlexibleLinker_sfGFP_mhcAt.dna",
+     "bytes": 38925
+    },
+    {
+     "name": "pDGB_A1N_iliE-1p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1N_iliE-1p_sfGFP_mhcAt.dna",
+     "bytes": 33684
+    },
+    {
+     "name": "pDGB_A1_DDB_G0288429p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_DDB_G0288429p_sfGFP_mhcAt.dna",
+     "bytes": 27910
+    },
+    {
+     "name": "pDGB_A1_DdExChr.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_DdExChr.dna",
+     "bytes": 32789
+    },
+    {
+     "name": "pDGB_A1_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_Stuffer.dna",
+     "bytes": 40646
+    },
+    {
+     "name": "pDGB_A1_act15p_DDB_G0278295_GGGSx4Linker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_DDB_G0278295_GGGSx4Linker_GST_act8t.dna",
+     "bytes": 31801
+    },
+    {
+     "name": "pDGB_A1_act15p_DDB_G0278295_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_DDB_G0278295_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "bytes": 31445
+    },
+    {
+     "name": "pDGB_A1_act15p_DDB_G0289731_GGGSx4Linker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_DDB_G0289731_GGGSx4Linker_GST_act8t.dna",
+     "bytes": 35078
+    },
+    {
+     "name": "pDGB_A1_act15p_FfLuc_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_FfLuc_act8t.dna",
+     "bytes": 30323
+    },
+    {
+     "name": "pDGB_A1_act15p_FfLuc_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_FfLuc_mhcAt.dna",
+     "bytes": 30609
+    },
+    {
+     "name": "pDGB_A1_act15p_GST_GGGSx4Linker_H2Bv3_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_GST_GGGSx4Linker_H2Bv3_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "bytes": 33746
+    },
+    {
+     "name": "pDGB_A1_act15p_GST_GGGSx4Linker_iliE-1_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_GST_GGGSx4Linker_iliE-1_act8t.dna",
+     "bytes": 31974
+    },
+    {
+     "name": "pDGB_A1_act15p_HA_GGGSx4Linker_H2Bv3_GGGSx4Linker_mIFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_HA_GGGSx4Linker_H2Bv3_GGGSx4Linker_mIFP_act8t.dna",
+     "bytes": 31251
+    },
+    {
+     "name": "pDGB_A1_act15p_SpCas9-SV40NLS-eGFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_SpCas9-SV40NLS-eGFP_act8t.dna",
+     "bytes": 45549
+    },
+    {
+     "name": "pDGB_A1_act15p_ctsZ_GGGSx4Linker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_ctsZ_GGGSx4Linker_GST_act8t.dna",
+     "bytes": 34748
+    },
+    {
+     "name": "pDGB_A1_act15p_ctsZ_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_ctsZ_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "bytes": 34394
+    },
+    {
+     "name": "pDGB_A1_act15p_gghA_GGGSx4Linker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_gghA_GGGSx4Linker_GST_act8t.dna",
+     "bytes": 32756
+    },
+    {
+     "name": "pDGB_A1_act15p_gghA_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_gghA_GGGSx4Linker_mNeonGreen_act8t.dna",
+     "bytes": 32399
+    },
+    {
+     "name": "pDGB_A1_act15p_mIFP_GGGSx4Linker_H2Bv3_GGGSx4Linker_HA_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mIFP_GGGSx4Linker_H2Bv3_GGGSx4Linker_HA_act8t.dna",
+     "bytes": 31266
+    },
+    {
+     "name": "pDGB_A1_act15p_mIFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mIFP_act8t.dna",
+     "bytes": 27211
+    },
+    {
+     "name": "pDGB_A1_act15p_mNeonGreen_GGGSx4Linker_H2Bv3_GGGSx4Linker_GST_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mNeonGreen_GGGSx4Linker_H2Bv3_GGGSx4Linker_GST_act8t.dna",
+     "bytes": 34421
+    },
+    {
+     "name": "pDGB_A1_act15p_mNeonGreen_GGGSx4Linker_ralGDS_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mNeonGreen_GGGSx4Linker_ralGDS_act8t.dna",
+     "bytes": 29136
+    },
+    {
+     "name": "pDGB_A1_act15p_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mNeonGreen_act8t.dna",
+     "bytes": 26779
+    },
+    {
+     "name": "pDGB_A1_act15p_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_mNeonGreen_mhcAt.dna",
+     "bytes": 26582
+    },
+    {
+     "name": "pDGB_A1_act15p_myc_GGGSx4Linker_H2Bv3_GGGSx4Linker_tagBFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_myc_GGGSx4Linker_H2Bv3_GGGSx4Linker_tagBFP_act8t.dna",
+     "bytes": 30465
+    },
+    {
+     "name": "pDGB_A1_act15p_myc_GGGSx4Linker_ralGDS_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_myc_GGGSx4Linker_ralGDS_act8t.dna",
+     "bytes": 25911
+    },
+    {
+     "name": "pDGB_A1_act15p_renilla_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_renilla_act8t.dna",
+     "bytes": 26909
+    },
+    {
+     "name": "pDGB_A1_act15p_renilla_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_renilla_mhcAt.dna",
+     "bytes": 26714
+    },
+    {
+     "name": "pDGB_A1_act15p_tagBFP_GGGSx4Linker_H2Bv3_GGGSx4Linker_myc_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_tagBFP_GGGSx4Linker_H2Bv3_GGGSx4Linker_myc_act8t.dna",
+     "bytes": 30410
+    },
+    {
+     "name": "pDGB_A1_act15p_tagBFP_GGGSx4Linker_ralGDS_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_tagBFP_GGGSx4Linker_ralGDS_act8t.dna",
+     "bytes": 28686
+    },
+    {
+     "name": "pDGB_A1_act15p_tagBFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_act15p_tagBFP_act8t.dna",
+     "bytes": 26353
+    },
+    {
+     "name": "pDGB_A1_aurKp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_aurKp_sfGFP_mhcAt.dna",
+     "bytes": 29266
+    },
+    {
+     "name": "pDGB_A1_coaAp_FfLuc_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_FfLuc_act8t.dna",
+     "bytes": 30596
+    },
+    {
+     "name": "pDGB_A1_coaAp_FfLuc_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_FfLuc_mhcAt.dna",
+     "bytes": 30399
+    },
+    {
+     "name": "pDGB_A1_coaAp_PH_FlexibleLinker_tagBFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_PH_FlexibleLinker_tagBFP_mhcAt.dna",
+     "bytes": 28858
+    },
+    {
+     "name": "pDGB_A1_coaAp_SpCas9_SV40NLS_eGFP_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_SpCas9_SV40NLS_eGFP_act8t.dna",
+     "bytes": 45824
+    },
+    {
+     "name": "pDGB_A1_coaAp_bsR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_bsR_mhcAt.dna",
+     "bytes": 24893
+    },
+    {
+     "name": "pDGB_A1_coaAp_dendra2_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_dendra2_mhcAt.dna",
+     "bytes": 25872
+    },
+    {
+     "name": "pDGB_A1_coaAp_eYFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_eYFP_mhcAt.dna",
+     "bytes": 26255
+    },
+    {
+     "name": "pDGB_A1_coaAp_hygR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_hygR_mhcAt.dna",
+     "bytes": 27965
+    },
+    {
+     "name": "pDGB_A1_coaAp_hypaCas9_SV40NLS_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_hypaCas9_SV40NLS_sfGFP_mhcAt.dna",
+     "bytes": 44084
+    },
+    {
+     "name": "pDGB_A1_coaAp_mCerulean_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_mCerulean_mhcAt.dna",
+     "bytes": 26294
+    },
+    {
+     "name": "pDGB_A1_coaAp_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_mNeonGreen_act8t.dna",
+     "bytes": 27052
+    },
+    {
+     "name": "pDGB_A1_coaAp_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_mNeonGreen_mhcAt.dna",
+     "bytes": 26855
+    },
+    {
+     "name": "pDGB_A1_coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_neoR_mhcAt.dna",
+     "bytes": 27468
+    },
+    {
+     "name": "pDGB_A1_coaAp_renilla_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_renilla_act8t.dna",
+     "bytes": 27184
+    },
+    {
+     "name": "pDGB_A1_coaAp_renilla_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_renilla_mhcAt.dna",
+     "bytes": 26985
+    },
+    {
+     "name": "pDGB_A1_coaAp_tagBFP_H2Bv3_FlexibleLinker_7xHis_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_coaAp_tagBFP_H2Bv3_FlexibleLinker_7xHis_mhcAt.dna",
+     "bytes": 29788
+    },
+    {
+     "name": "pDGB_A1_dscAp_dendra2_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_dscAp_dendra2_mhcAt.dna",
+     "bytes": 29056
+    },
+    {
+     "name": "pDGB_A1_dscAp_eYFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_dscAp_eYFP_mhcAt.dna",
+     "bytes": 29437
+    },
+    {
+     "name": "pDGB_A1_dscAp_mCerulean_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_dscAp_mCerulean_mhcAt.dna",
+     "bytes": 29478
+    },
+    {
+     "name": "pDGB_A1_dscAp_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_dscAp_mCherry_mhcAt.dna",
+     "bytes": 29280
+    },
+    {
+     "name": "pDGB_A1_hypaCRISPR1.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_hypaCRISPR1.dna",
+     "bytes": 89184
+    },
+    {
+     "name": "pDGB_A1_thyAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A1_thyAp_sfGFP_mhcAt.dna",
+     "bytes": 29671
+    },
+    {
+     "name": "pDGB_A2B_act15p_FfLuc_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2B_act15p_FfLuc_act8t.dna",
+     "bytes": 32747
+    },
+    {
+     "name": "pDGB_A2_CRISPR1.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_CRISPR1.dna",
+     "bytes": 59965
+    },
+    {
+     "name": "pDGB_A2_CRISPR1_acaAsg1.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_CRISPR1_acaAsg1.dna",
+     "bytes": 83057
+    },
+    {
+     "name": "pDGB_A2_CRISPR1_rapgapBsg2.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_CRISPR1_rapgapBsg2.dna",
+     "bytes": 104093
+    },
+    {
+     "name": "pDGB_A2_DdExChr.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_DdExChr.dna",
+     "bytes": 32792
+    },
+    {
+     "name": "pDGB_A2_DdExChr__Stuffer__coaAp_neoR_mhcAt__coaAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_DdExChr__Stuffer__coaAp_neoR_mhcAt__coaAp_sfGFP_mhcAt.dna",
+     "bytes": 45355
+    },
+    {
+     "name": "pDGB_A2_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_Stuffer.dna",
+     "bytes": 39922
+    },
+    {
+     "name": "pDGB_A2_act15p_SpCas9-SV40NLS-eGFP_act8t__tRNA-sgRNAtemplate_act8t__coaAp_neoR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_SpCas9-SV40NLS-eGFP_act8t__tRNA-sgRNAtemplate_act8t__coaAp_neoR_mhcAt__Stuffer.dna",
+     "bytes": 56241
+    },
+    {
+     "name": "pDGB_A2_act15p_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_mCherry_mhcAt.dna",
+     "bytes": 25820
+    },
+    {
+     "name": "pDGB_A2_act15p_mNeonGreen_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_mNeonGreen_act8t.dna",
+     "bytes": 26776
+    },
+    {
+     "name": "pDGB_A2_act15p_mNeonGreen_act8t__coaAp_neoR_mhcAt__DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_mNeonGreen_act8t__coaAp_neoR_mhcAt__DdExChr__Stuffer.dna",
+     "bytes": 46170
+    },
+    {
+     "name": "pDGB_A2_act15p_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "bytes": 47578
+    },
+    {
+     "name": "pDGB_A2_act15p_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "bytes": 47958
+    },
+    {
+     "name": "pDGB_A2_act15p_sfGFP_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_sfGFP_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 30139
+    },
+    {
+     "name": "pDGB_A2_act15p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_act15p_sfGFP_mhcAt.dna",
+     "bytes": 26147
+    },
+    {
+     "name": "pDGB_A2_coaAp_bsR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_bsR_mhcAt.dna",
+     "bytes": 24892
+    },
+    {
+     "name": "pDGB_A2_coaAp_hygR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_hygR_mhcAt.dna",
+     "bytes": 27966
+    },
+    {
+     "name": "pDGB_A2_coaAp_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_mCherry_mhcAt.dna",
+     "bytes": 26095
+    },
+    {
+     "name": "pDGB_A2_coaAp_mNeonGreen_FlexibleLinker_ralGDS_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_mNeonGreen_FlexibleLinker_ralGDS_mhcAt.dna",
+     "bytes": 29184
+    },
+    {
+     "name": "pDGB_A2_coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_neoR_mhcAt.dna",
+     "bytes": 27022
+    },
+    {
+     "name": "pDGB_A2_coaAp_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "bytes": 49197
+    },
+    {
+     "name": "pDGB_A2_coaAp_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP__DdExChr__Stuffer.dna",
+     "bytes": 49575
+    },
+    {
+     "name": "pDGB_A2_coaAp_sfGFP_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_sfGFP_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 30412
+    },
+    {
+     "name": "pDGB_A2_coaAp_sfGFP_FlexibleLinker_ralGDS_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_sfGFP_FlexibleLinker_ralGDS_mhcAt.dna",
+     "bytes": 28730
+    },
+    {
+     "name": "pDGB_A2_coaAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_coaAp_sfGFP_mhcAt.dna",
+     "bytes": 26422
+    },
+    {
+     "name": "pDGB_A2_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 28269
+    },
+    {
+     "name": "pDGB_A2_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "bytes": 31343
+    },
+    {
+     "name": "pDGB_A2_tRNA-sgRNAtemplate_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_tRNA-sgRNAtemplate_act8t.dna",
+     "bytes": 24049
+    },
+    {
+     "name": "pDGB_A2_tRNA-sgRNAtemplate_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_A2_tRNA-sgRNAtemplate_mhcAt.dna",
+     "bytes": 23852
+    },
+    {
+     "name": "pDGB_ABN_coaAp_gtaC_FlexibleLinker_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_ABN_coaAp_gtaC_FlexibleLinker_mCherry_mhcAt.dna",
+     "bytes": 39069
+    },
+    {
+     "name": "pDGB_ACN_coaAp_PH(dagA)_FlexibleLinker_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_ACN_coaAp_PH(dagA)_FlexibleLinker_sfGFP_mhcAt.dna",
+     "bytes": 33362
+    },
+    {
+     "name": "pDGB_AC_DdExChr.dna",
+     "path": "goldenbraid/assemblies/pDGB_AC_DdExChr.dna",
+     "bytes": 32805
+    },
+    {
+     "name": "pDGB_AC_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_AC_Stuffer.dna",
+     "bytes": 67692
+    },
+    {
+     "name": "pDGB_AC_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_AC_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 28284
+    },
+    {
+     "name": "pDGB_AC_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_AC_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "bytes": 31356
+    },
+    {
+     "name": "pDGB_ADN_coaAp_mCerulean_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_ADN_coaAp_mCerulean_FlexibleLinker_H2Bv3_FlexibleLinker_HA_mhcAt.dna",
+     "bytes": 34883
+    },
+    {
+     "name": "pDGB_AD_DdExChr.dna",
+     "path": "goldenbraid/assemblies/pDGB_AD_DdExChr.dna",
+     "bytes": 32829
+    },
+    {
+     "name": "pDGB_AD_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_AD_Stuffer.dna",
+     "bytes": 39864
+    },
+    {
+     "name": "pDGB_AD_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_AD_loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 28306
+    },
+    {
+     "name": "pDGB_AD_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_AD_loxP-coaAp_hygR_mhcAt-loxP.dna",
+     "bytes": 31382
+    },
+    {
+     "name": "pDGB_AEN_coaAp_abpC_FlexibleLinker_mIFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_AEN_coaAp_abpC_FlexibleLinker_mIFP_mhcAt.dna",
+     "bytes": 44362
+    },
+    {
+     "name": "pDGB_AE_DdExChr.dna",
+     "path": "goldenbraid/assemblies/pDGB_AE_DdExChr.dna",
+     "bytes": 32785
+    },
+    {
+     "name": "pDGB_AE_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_AE_Stuffer.dna",
+     "bytes": 40347
+    },
+    {
+     "name": "pDGB_O1N_4-color.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1N_4-color.dna",
+     "bytes": 65090
+    },
+    {
+     "name": "pDGB_O1_DDB_G0288429p_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_DDB_G0288429p_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 33976
+    },
+    {
+     "name": "pDGB_O1_DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_DdExChr__Stuffer.dna",
+     "bytes": 32638
+    },
+    {
+     "name": "pDGB_O1_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_Stuffer.dna",
+     "bytes": 38342
+    },
+    {
+     "name": "pDGB_O1_act15p_DDB_G0278295_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_DDB_G0278295_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 37867
+    },
+    {
+     "name": "pDGB_O1_act15p_DDB_G0278295_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_DDB_G0278295_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 37513
+    },
+    {
+     "name": "pDGB_O1_act15p_DDB_G0289731_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_DDB_G0289731_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 41146
+    },
+    {
+     "name": "pDGB_O1_act15p_DDB_G0289731_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_DDB_G0289731_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 40790
+    },
+    {
+     "name": "pDGB_O1_act15p_GST_GGGSx4Linker_iliE-1_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_GST_GGGSx4Linker_iliE-1_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 38046
+    },
+    {
+     "name": "pDGB_O1_act15p_SpCas9_SV40NLS_eGFP_act8t__tRNA_sgRNAtemplate_act8t.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_SpCas9_SV40NLS_eGFP_act8t__tRNA_sgRNAtemplate_act8t.dna",
+     "bytes": 48672
+    },
+    {
+     "name": "pDGB_O1_act15p_ctsZ_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_ctsZ_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 40816
+    },
+    {
+     "name": "pDGB_O1_act15p_ctsZ_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_ctsZ_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 40460
+    },
+    {
+     "name": "pDGB_O1_act15p_gghA_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_gghA_GGGSx4Linker_GST_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 38824
+    },
+    {
+     "name": "pDGB_O1_act15p_gghA_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_gghA_GGGSx4Linker_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 38468
+    },
+    {
+     "name": "pDGB_O1_act15p_mIFP_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_mIFP_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 33278
+    },
+    {
+     "name": "pDGB_O1_act15p_mNeonGreen_GGGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_mNeonGreen_GGGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 35189
+    },
+    {
+     "name": "pDGB_O1_act15p_mNeonGreen_act8t__coaAp_bsR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_mNeonGreen_act8t__coaAp_bsR_mhcAt.dna",
+     "bytes": 30718
+    },
+    {
+     "name": "pDGB_O1_act15p_mNeonGreen_act8t__coaAp_hygR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_mNeonGreen_act8t__coaAp_hygR_mhcAt.dna",
+     "bytes": 33790
+    },
+    {
+     "name": "pDGB_O1_act15p_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_mNeonGreen_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 32846
+    },
+    {
+     "name": "pDGB_O1_act15p_myc_GGGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_myc_GGGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 31962
+    },
+    {
+     "name": "pDGB_O1_act15p_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 34256
+    },
+    {
+     "name": "pDGB_O1_act15p_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 34632
+    },
+    {
+     "name": "pDGB_O1_act15p_tagBFP_GGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_tagBFP_GGGSx4Linker_ralGDS_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 34739
+    },
+    {
+     "name": "pDGB_O1_act15p_tagBFP_act8t__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_act15p_tagBFP_act8t__coaAp_neoR_mhcAt.dna",
+     "bytes": 32403
+    },
+    {
+     "name": "pDGB_O1_aurKp_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_aurKp_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35334
+    },
+    {
+     "name": "pDGB_O1_coaAp_bsR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_bsR_mhcAt__Stuffer.dna",
+     "bytes": 24739
+    },
+    {
+     "name": "pDGB_O1_coaAp_bsR_mhcAt__act15p_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_bsR_mhcAt__act15p_mCherry_mhcAt.dna",
+     "bytes": 29760
+    },
+    {
+     "name": "pDGB_O1_coaAp_bsR_mhcAt__act15p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_bsR_mhcAt__act15p_sfGFP_mhcAt.dna",
+     "bytes": 30085
+    },
+    {
+     "name": "pDGB_O1_coaAp_bsR_mhcAt__coaAp_mCherry_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_bsR_mhcAt__coaAp_mCherry_mhcAt.dna",
+     "bytes": 30033
+    },
+    {
+     "name": "pDGB_O1_coaAp_eYFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_eYFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 32320
+    },
+    {
+     "name": "pDGB_O1_coaAp_hygR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_hygR_mhcAt__Stuffer.dna",
+     "bytes": 27811
+    },
+    {
+     "name": "pDGB_O1_coaAp_mCerulean_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_mCerulean_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 32359
+    },
+    {
+     "name": "pDGB_O1_coaAp_neoR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_neoR_mhcAt__Stuffer.dna",
+     "bytes": 26869
+    },
+    {
+     "name": "pDGB_O1_coaAp_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_renilla_act8t__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 35729
+    },
+    {
+     "name": "pDGB_O1_coaAp_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_coaAp_renilla_mhcAt__loxP-coaAp_bsR_mhcAt-loxP.dna",
+     "bytes": 36107
+    },
+    {
+     "name": "pDGB_O1_dscAp_dendra2_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_dscAp_dendra2_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35109
+    },
+    {
+     "name": "pDGB_O1_dscAp_eYFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_dscAp_eYFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35507
+    },
+    {
+     "name": "pDGB_O1_dscAp_mCerulean_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_dscAp_mCerulean_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35546
+    },
+    {
+     "name": "pDGB_O1_dscAp_mCherry_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_dscAp_mCherry_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35350
+    },
+    {
+     "name": "pDGB_O1_thyAp_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O1_thyAp_sfGFP_mhcAt__coaAp_neoR_mhcAt.dna",
+     "bytes": 35737
+    },
+    {
+     "name": "pDGB_O2_DdExChr__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_DdExChr__Stuffer.dna",
+     "bytes": 32607
+    },
+    {
+     "name": "pDGB_O2_Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_Stuffer.dna",
+     "bytes": 61776
+    },
+    {
+     "name": "pDGB_O2_coaAp_bsR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_coaAp_bsR_mhcAt__Stuffer.dna",
+     "bytes": 24706
+    },
+    {
+     "name": "pDGB_O2_coaAp_hygR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_coaAp_hygR_mhcAt__Stuffer.dna",
+     "bytes": 27782
+    },
+    {
+     "name": "pDGB_O2_coaAp_neoR_mhcAt__Stuffer.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_coaAp_neoR_mhcAt__Stuffer.dna",
+     "bytes": 26838
+    },
+    {
+     "name": "pDGB_O2_coaAp_neoR_mhcAt__coaAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/assemblies/pDGB_O2_coaAp_neoR_mhcAt__coaAp_sfGFP_mhcAt.dna",
+     "bytes": 32457
+    }
+   ],
+   "zip": {
+    "path": "goldenbraid/assemblies.zip",
+    "bytes": 3125401
+   }
+  },
+  {
+   "key": "backbones",
+   "title": "Backbones",
+   "blurb": "GoldenBraid destination vectors (pDGB alpha and omega backbones, and pUPD2).",
+   "in_git": true,
+   "count": 31,
+   "bytes": 2942926,
+   "files": [
+    {
+     "name": "pDGB_A1.dna",
+     "path": "goldenbraid/backbones/pDGB_A1.dna",
+     "bytes": 24563
+    },
+    {
+     "name": "pDGB_A1B.dna",
+     "path": "goldenbraid/backbones/pDGB_A1B.dna",
+     "bytes": 116010
+    },
+    {
+     "name": "pDGB_A1H.dna",
+     "path": "goldenbraid/backbones/pDGB_A1H.dna",
+     "bytes": 155758
+    },
+    {
+     "name": "pDGB_A1N.dna",
+     "path": "goldenbraid/backbones/pDGB_A1N.dna",
+     "bytes": 91681
+    },
+    {
+     "name": "pDGB_A2.dna",
+     "path": "goldenbraid/backbones/pDGB_A2.dna",
+     "bytes": 24809
+    },
+    {
+     "name": "pDGB_A2B.dna",
+     "path": "goldenbraid/backbones/pDGB_A2B.dna",
+     "bytes": 114236
+    },
+    {
+     "name": "pDGB_A2H.dna",
+     "path": "goldenbraid/backbones/pDGB_A2H.dna",
+     "bytes": 175870
+    },
+    {
+     "name": "pDGB_A2N.dna",
+     "path": "goldenbraid/backbones/pDGB_A2N.dna",
+     "bytes": 117190
+    },
+    {
+     "name": "pDGB_AB.dna",
+     "path": "goldenbraid/backbones/pDGB_AB.dna",
+     "bytes": 24585
+    },
+    {
+     "name": "pDGB_ABB.dna",
+     "path": "goldenbraid/backbones/pDGB_ABB.dna",
+     "bytes": 115275
+    },
+    {
+     "name": "pDGB_ABH.dna",
+     "path": "goldenbraid/backbones/pDGB_ABH.dna",
+     "bytes": 117079
+    },
+    {
+     "name": "pDGB_ABN.dna",
+     "path": "goldenbraid/backbones/pDGB_ABN.dna",
+     "bytes": 107927
+    },
+    {
+     "name": "pDGB_AC.dna",
+     "path": "goldenbraid/backbones/pDGB_AC.dna",
+     "bytes": 24579
+    },
+    {
+     "name": "pDGB_ACH.dna",
+     "path": "goldenbraid/backbones/pDGB_ACH.dna",
+     "bytes": 119955
+    },
+    {
+     "name": "pDGB_ACN.dna",
+     "path": "goldenbraid/backbones/pDGB_ACN.dna",
+     "bytes": 143015
+    },
+    {
+     "name": "pDGB_AD.dna",
+     "path": "goldenbraid/backbones/pDGB_AD.dna",
+     "bytes": 24602
+    },
+    {
+     "name": "pDGB_ADB.dna",
+     "path": "goldenbraid/backbones/pDGB_ADB.dna",
+     "bytes": 119804
+    },
+    {
+     "name": "pDGB_ADH.dna",
+     "path": "goldenbraid/backbones/pDGB_ADH.dna",
+     "bytes": 158104
+    },
+    {
+     "name": "pDGB_ADN.dna",
+     "path": "goldenbraid/backbones/pDGB_ADN.dna",
+     "bytes": 85150
+    },
+    {
+     "name": "pDGB_AE.dna",
+     "path": "goldenbraid/backbones/pDGB_AE.dna",
+     "bytes": 24557
+    },
+    {
+     "name": "pDGB_AEB.dna",
+     "path": "goldenbraid/backbones/pDGB_AEB.dna",
+     "bytes": 109518
+    },
+    {
+     "name": "pDGB_AEN.dna",
+     "path": "goldenbraid/backbones/pDGB_AEN.dna",
+     "bytes": 117704
+    },
+    {
+     "name": "pDGB_O1.dna",
+     "path": "goldenbraid/backbones/pDGB_O1.dna",
+     "bytes": 24041
+    },
+    {
+     "name": "pDGB_O1B.dna",
+     "path": "goldenbraid/backbones/pDGB_O1B.dna",
+     "bytes": 119301
+    },
+    {
+     "name": "pDGB_O1H.dna",
+     "path": "goldenbraid/backbones/pDGB_O1H.dna",
+     "bytes": 147185
+    },
+    {
+     "name": "pDGB_O1N.dna",
+     "path": "goldenbraid/backbones/pDGB_O1N.dna",
+     "bytes": 115749
+    },
+    {
+     "name": "pDGB_O2.dna",
+     "path": "goldenbraid/backbones/pDGB_O2.dna",
+     "bytes": 24010
+    },
+    {
+     "name": "pDGB_O2B.dna",
+     "path": "goldenbraid/backbones/pDGB_O2B.dna",
+     "bytes": 99753
+    },
+    {
+     "name": "pDGB_O2H.dna",
+     "path": "goldenbraid/backbones/pDGB_O2H.dna",
+     "bytes": 149721
+    },
+    {
+     "name": "pDGB_O2N.dna",
+     "path": "goldenbraid/backbones/pDGB_O2N.dna",
+     "bytes": 87044
+    },
+    {
+     "name": "pUPD2.dna",
+     "path": "goldenbraid/backbones/pUPD2.dna",
+     "bytes": 64151
+    }
+   ],
+   "zip": {
+    "path": "goldenbraid/backbones.zip",
+    "bytes": 2492537
+   }
+  },
+  {
+   "key": "parts",
+   "title": "Parts",
+   "blurb": "Domesticated parts: promoters, coding sequences, tags and terminators.",
+   "in_git": true,
+   "count": 101,
+   "bytes": 10180424,
+   "files": [
+    {
+     "name": "pUPD2_7xHis_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_7xHis_AATG_AGTG.dna",
+     "bytes": 109490
+    },
+    {
+     "name": "pUPD2_7xHis_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_7xHis_CTCG_GCTT.dna",
+     "bytes": 106311
+    },
+    {
+     "name": "pUPD2_Barcode10_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode10_CAGT_CGCT.dna",
+     "bytes": 71973
+    },
+    {
+     "name": "pUPD2_Barcode11_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode11_CAGT_CGCT.dna",
+     "bytes": 72065
+    },
+    {
+     "name": "pUPD2_Barcode12_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode12_CAGT_CGCT.dna",
+     "bytes": 72110
+    },
+    {
+     "name": "pUPD2_Barcode13_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode13_CAGT_CGCT.dna",
+     "bytes": 71616
+    },
+    {
+     "name": "pUPD2_Barcode14_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode14_CAGT_CGCT.dna",
+     "bytes": 70942
+    },
+    {
+     "name": "pUPD2_Barcode15_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode15_CAGT_CGCT.dna",
+     "bytes": 69781
+    },
+    {
+     "name": "pUPD2_Barcode16_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode16_CAGT_CGCT.dna",
+     "bytes": 71515
+    },
+    {
+     "name": "pUPD2_Barcode17_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode17_CAGT_CGCT.dna",
+     "bytes": 70533
+    },
+    {
+     "name": "pUPD2_Barcode18_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode18_CAGT_CGCT.dna",
+     "bytes": 70319
+    },
+    {
+     "name": "pUPD2_Barcode19_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode19_CAGT_CGCT.dna",
+     "bytes": 71302
+    },
+    {
+     "name": "pUPD2_Barcode1_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode1_CAGT_CGCT.dna",
+     "bytes": 71747
+    },
+    {
+     "name": "pUPD2_Barcode20_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode20_CAGT_CGCT.dna",
+     "bytes": 71907
+    },
+    {
+     "name": "pUPD2_Barcode2_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode2_CAGT_CGCT.dna",
+     "bytes": 71892
+    },
+    {
+     "name": "pUPD2_Barcode3_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode3_CAGT_CGCT.dna",
+     "bytes": 72624
+    },
+    {
+     "name": "pUPD2_Barcode4_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode4_CAGT_CGCT.dna",
+     "bytes": 72259
+    },
+    {
+     "name": "pUPD2_Barcode5_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode5_CAGT_CGCT.dna",
+     "bytes": 72336
+    },
+    {
+     "name": "pUPD2_Barcode6_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode6_CAGT_CGCT.dna",
+     "bytes": 71841
+    },
+    {
+     "name": "pUPD2_Barcode7_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode7_CAGT_CGCT.dna",
+     "bytes": 64162
+    },
+    {
+     "name": "pUPD2_Barcode8_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode8_CAGT_CGCT.dna",
+     "bytes": 72127
+    },
+    {
+     "name": "pUPD2_Barcode9_CAGT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_Barcode9_CAGT_CGCT.dna",
+     "bytes": 71715
+    },
+    {
+     "name": "pUPD2_DDB_G0278295_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_DDB_G0278295_AATG_TCGG.dna",
+     "bytes": 110554
+    },
+    {
+     "name": "pUPD2_DDB_G0288429p_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_DDB_G0288429p_GGAG_AATG.dna",
+     "bytes": 96686
+    },
+    {
+     "name": "pUPD2_DDB_G0289731_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_DDB_G0289731_AATG_TCGG.dna",
+     "bytes": 108926
+    },
+    {
+     "name": "pUPD2_DdExChr_GGAG_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_DdExChr_GGAG_CGCT.dna",
+     "bytes": 113822
+    },
+    {
+     "name": "pUPD2_FfLuc_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_FfLuc_AATG_GCTT.dna",
+     "bytes": 112057
+    },
+    {
+     "name": "pUPD2_Flexible_Linker_AGTGGC_GGTAGC.dna",
+     "path": "goldenbraid/parts/pUPD2_Flexible_Linker_AGTGGC_GGTAGC.dna",
+     "bytes": 101449
+    },
+    {
+     "name": "pUPD2_Flexible_Linker_TCGGGC_GGCTCG.dna",
+     "path": "goldenbraid/parts/pUPD2_Flexible_Linker_TCGGGC_GGCTCG.dna",
+     "bytes": 98022
+    },
+    {
+     "name": "pUPD2_GGGSx4_Linker_AGTGGC_GGTAGC.dna",
+     "path": "goldenbraid/parts/pUPD2_GGGSx4_Linker_AGTGGC_GGTAGC.dna",
+     "bytes": 144612
+    },
+    {
+     "name": "pUPD2_GGGSx4_Linker_TCGGGC_GGCTCG.dna",
+     "path": "goldenbraid/parts/pUPD2_GGGSx4_Linker_TCGGGC_GGCTCG.dna",
+     "bytes": 160260
+    },
+    {
+     "name": "pUPD2_GST_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_GST_AATG_AGTG.dna",
+     "bytes": 102732
+    },
+    {
+     "name": "pUPD2_GST_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_GST_CTCG_GCTT.dna",
+     "bytes": 101323
+    },
+    {
+     "name": "pUPD2_H2Bv3_TAGC_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_H2Bv3_TAGC_TCGG.dna",
+     "bytes": 72378
+    },
+    {
+     "name": "pUPD2_HA_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_HA_AATG_AGTG.dna",
+     "bytes": 73870
+    },
+    {
+     "name": "pUPD2_HA_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_HA_CTCG_GCTT.dna",
+     "bytes": 71508
+    },
+    {
+     "name": "pUPD2_PHdagA_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_PHdagA_AATG_TCGG.dna",
+     "bytes": 98197
+    },
+    {
+     "name": "pUPD2_SV40NLS_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_SV40NLS_AATG_AGTG.dna",
+     "bytes": 70248
+    },
+    {
+     "name": "pUPD2_SV40NLS_AGTGGC_GGTAGC.dna",
+     "path": "goldenbraid/parts/pUPD2_SV40NLS_AGTGGC_GGTAGC.dna",
+     "bytes": 70332
+    },
+    {
+     "name": "pUPD2_SV40NLS_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_SV40NLS_CTCG_GCTT.dna",
+     "bytes": 69497
+    },
+    {
+     "name": "pUPD2_SV40NLS_TCGGGC_GGCTCG.dna",
+     "path": "goldenbraid/parts/pUPD2_SV40NLS_TCGGGC_GGCTCG.dna",
+     "bytes": 70896
+    },
+    {
+     "name": "pUPD2_SpCas9_SV40NLS_eGFP_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_SpCas9_SV40NLS_eGFP_AATG_GCTT.dna",
+     "bytes": 321625
+    },
+    {
+     "name": "pUPD2_abpC_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_abpC_AATG_TCGG.dna",
+     "bytes": 211016
+    },
+    {
+     "name": "pUPD2_actin15p_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_actin15p_GGAG_AATG.dna",
+     "bytes": 95313
+    },
+    {
+     "name": "pUPD2_actin6p_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_actin6p_GGAG_AATG.dna",
+     "bytes": 105494
+    },
+    {
+     "name": "pUPD2_actin8t_GCTT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_actin8t_GCTT_CGCT.dna",
+     "bytes": 98090
+    },
+    {
+     "name": "pUPD2_aurKp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_aurKp_GGAG_AATG.dna",
+     "bytes": 101531
+    },
+    {
+     "name": "pUPD2_bsR_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_bsR_AATG_GCTT.dna",
+     "bytes": 73251
+    },
+    {
+     "name": "pUPD2_coaAp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_coaAp_GGAG_AATG.dna",
+     "bytes": 100128
+    },
+    {
+     "name": "pUPD2_ctsZ_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_ctsZ_AATG_TCGG.dna",
+     "bytes": 139324
+    },
+    {
+     "name": "pUPD2_dendra2_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_dendra2_AATG_AGTG.dna",
+     "bytes": 115208
+    },
+    {
+     "name": "pUPD2_dendra2_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_dendra2_AATG_GCTT.dna",
+     "bytes": 103006
+    },
+    {
+     "name": "pUPD2_dendra2_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_dendra2_CTCG_GCTT.dna",
+     "bytes": 118122
+    },
+    {
+     "name": "pUPD2_dscA_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_dscA_AATG_TCGG.dna",
+     "bytes": 105161
+    },
+    {
+     "name": "pUPD2_dscA_TAGC_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_dscA_TAGC_TCGG.dna",
+     "bytes": 184049
+    },
+    {
+     "name": "pUPD2_dscAp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_dscAp_GGAG_AATG.dna",
+     "bytes": 100806
+    },
+    {
+     "name": "pUPD2_eYFP_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_eYFP_AATG_AGTG.dna",
+     "bytes": 100451
+    },
+    {
+     "name": "pUPD2_eYFP_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_eYFP_AATG_GCTT.dna",
+     "bytes": 100264
+    },
+    {
+     "name": "pUPD2_eYFP_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_eYFP_CTCG_GCTT.dna",
+     "bytes": 101331
+    },
+    {
+     "name": "pUPD2_ecmAp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_ecmAp_GGAG_AATG.dna",
+     "bytes": 97276
+    },
+    {
+     "name": "pUPD2_flamindo2_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_flamindo2_AATG_GCTT.dna",
+     "bytes": 108446
+    },
+    {
+     "name": "pUPD2_gghA_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_gghA_AATG_TCGG.dna",
+     "bytes": 105688
+    },
+    {
+     "name": "pUPD2_gtaC_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_gtaC_AATG_TCGG.dna",
+     "bytes": 164277
+    },
+    {
+     "name": "pUPD2_hcpB_TAGC_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_hcpB_TAGC_GCTT.dna",
+     "bytes": 100875
+    },
+    {
+     "name": "pUPD2_hygR_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_hygR_AATG_GCTT.dna",
+     "bytes": 106617
+    },
+    {
+     "name": "pUPD2_hypaCas9_AATG_TCGG.dna",
+     "path": "goldenbraid/parts/pUPD2_hypaCas9_AATG_TCGG.dna",
+     "bytes": 338796
+    },
+    {
+     "name": "pUPD2_iliE-1p_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_iliE-1p_GGAG_AATG.dna",
+     "bytes": 122671
+    },
+    {
+     "name": "pUPD2_ilie-1_TAGC_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_ilie-1_TAGC_GCTT.dna",
+     "bytes": 101743
+    },
+    {
+     "name": "pUPD2_loxP-coaAp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_loxP-coaAp_GGAG_AATG.dna",
+     "bytes": 93397
+    },
+    {
+     "name": "pUPD2_mCerulean_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_mCerulean_AATG_AGTG.dna",
+     "bytes": 102189
+    },
+    {
+     "name": "pUPD2_mCerulean_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mCerulean_AATG_GCTT.dna",
+     "bytes": 101267
+    },
+    {
+     "name": "pUPD2_mCerulean_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mCerulean_CTCG_GCTT.dna",
+     "bytes": 101685
+    },
+    {
+     "name": "pUPD2_mCherry_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_mCherry_AATG_AGTG.dna",
+     "bytes": 103004
+    },
+    {
+     "name": "pUPD2_mCherry_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mCherry_AATG_GCTT.dna",
+     "bytes": 89425
+    },
+    {
+     "name": "pUPD2_mCherry_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mCherry_CTCG_GCTT.dna",
+     "bytes": 106885
+    },
+    {
+     "name": "pUPD2_mIFP_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_mIFP_AATG_AGTG.dna",
+     "bytes": 107408
+    },
+    {
+     "name": "pUPD2_mIFP_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mIFP_AATG_GCTT.dna",
+     "bytes": 104172
+    },
+    {
+     "name": "pUPD2_mIFP_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mIFP_CTCG_GCTT.dna",
+     "bytes": 101750
+    },
+    {
+     "name": "pUPD2_mNeonGreen_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_mNeonGreen_AATG_AGTG.dna",
+     "bytes": 108948
+    },
+    {
+     "name": "pUPD2_mNeonGreen_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mNeonGreen_AATG_GCTT.dna",
+     "bytes": 105659
+    },
+    {
+     "name": "pUPD2_mNeonGreen_AATG_GGTAGC.dna",
+     "path": "goldenbraid/parts/pUPD2_mNeonGreen_AATG_GGTAGC.dna",
+     "bytes": 111146
+    },
+    {
+     "name": "pUPD2_mNeonGreen_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_mNeonGreen_CTCG_GCTT.dna",
+     "bytes": 103720
+    },
+    {
+     "name": "pUPD2_mhcAt_GCTT_CAGT.dna",
+     "path": "goldenbraid/parts/pUPD2_mhcAt_GCTT_CAGT.dna",
+     "bytes": 43618
+    },
+    {
+     "name": "pUPD2_mhcAt_GCTT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_mhcAt_GCTT_CGCT.dna",
+     "bytes": 96451
+    },
+    {
+     "name": "pUPD2_mhcAt_loxP_GCTT_CGCT.dna",
+     "path": "goldenbraid/parts/pUPD2_mhcAt_loxP_GCTT_CGCT.dna",
+     "bytes": 74223
+    },
+    {
+     "name": "pUPD2_myc_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_myc_AATG_AGTG.dna",
+     "bytes": 95725
+    },
+    {
+     "name": "pUPD2_myc_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_myc_CTCG_GCTT.dna",
+     "bytes": 91785
+    },
+    {
+     "name": "pUPD2_neoR_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_neoR_AATG_GCTT.dna",
+     "bytes": 79357
+    },
+    {
+     "name": "pUPD2_pinkflamindo_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_pinkflamindo_AATG_GCTT.dna",
+     "bytes": 107175
+    },
+    {
+     "name": "pUPD2_ralGDS_TAGC_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_ralGDS_TAGC_GCTT.dna",
+     "bytes": 64928
+    },
+    {
+     "name": "pUPD2_renilla_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_renilla_AATG_GCTT.dna",
+     "bytes": 102243
+    },
+    {
+     "name": "pUPD2_sfGFP_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_sfGFP_AATG_AGTG.dna",
+     "bytes": 108711
+    },
+    {
+     "name": "pUPD2_sfGFP_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_sfGFP_AATG_GCTT.dna",
+     "bytes": 102567
+    },
+    {
+     "name": "pUPD2_sfGFP_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_sfGFP_CTCG_GCTT.dna",
+     "bytes": 109195
+    },
+    {
+     "name": "pUPD2_tRNA_sgRNAtemplate_GGAG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_tRNA_sgRNAtemplate_GGAG_GCTT.dna",
+     "bytes": 112576
+    },
+    {
+     "name": "pUPD2_tagBFP_AATG_AGTG.dna",
+     "path": "goldenbraid/parts/pUPD2_tagBFP_AATG_AGTG.dna",
+     "bytes": 77213
+    },
+    {
+     "name": "pUPD2_tagBFP_AATG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_tagBFP_AATG_GCTT.dna",
+     "bytes": 75899
+    },
+    {
+     "name": "pUPD2_tagBFP_AATG_GGTAGC.dna",
+     "path": "goldenbraid/parts/pUPD2_tagBFP_AATG_GGTAGC.dna",
+     "bytes": 110054
+    },
+    {
+     "name": "pUPD2_tagBFP_CTCG_GCTT.dna",
+     "path": "goldenbraid/parts/pUPD2_tagBFP_CTCG_GCTT.dna",
+     "bytes": 74864
+    },
+    {
+     "name": "pUPD2_tgrBCp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_tgrBCp_GGAG_AATG.dna",
+     "bytes": 104908
+    },
+    {
+     "name": "pUPD2_thyAp_GGAG_AATG.dna",
+     "path": "goldenbraid/parts/pUPD2_thyAp_GGAG_AATG.dna",
+     "bytes": 99782
+    }
+   ],
+   "zip": {
+    "path": "goldenbraid/parts.zip",
+    "bytes": 7199421
+   }
+  },
+  {
+   "key": "legacy-constructs",
+   "title": "Legacy constructs",
+   "blurb": "Earlier pBSK-based versions of the assemblies.",
+   "in_git": false,
+   "count": 81,
+   "bytes": 173198042,
+   "files": [
+    {
+     "name": "pBSK_Alfa1_DdOri.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_DdOri.dna",
+     "bytes": 626012
+    },
+    {
+     "name": "pBSK_Alfa1_HypaCRISPR1.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_HypaCRISPR1.dna",
+     "bytes": 121726
+    },
+    {
+     "name": "pBSK_Alfa1_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_Stuffer.dna",
+     "bytes": 65187
+    },
+    {
+     "name": "pBSK_Alfa1_a15p_BsR_a8t.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_a15p_BsR_a8t.dna",
+     "bytes": 136067
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_FfLuc_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_actin15p_FfLuc_mhcAt.dna",
+     "bytes": 6000490
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_Renilla_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_actin15p_Renilla_mhcAt.dna",
+     "bytes": 9926509
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_mNeonGreen_GGGSx4_RalGDS_actin8t.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_actin15p_mNeonGreen_GGGSx4_RalGDS_actin8t.dna",
+     "bytes": 1169545
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_actin15p_mNeonGreen_mhcAt.dna",
+     "bytes": 692881
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_tagBFP_GGGSx4_RalGDS_actin8t.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_actin15p_tagBFP_GGGSx4_RalGDS_actin8t.dna",
+     "bytes": 1260018
+    },
+    {
+     "name": "pBSK_Alfa1_coaA_HypaCas9_SV40NLS_sfGFP_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaA_HypaCas9_SV40NLS_sfGFP_mhcA.dna",
+     "bytes": 3319368
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_Dendra2_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_Dendra2_mhcAt.dna",
+     "bytes": 986491
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_FfLuc_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_FfLuc_mhcAt.dna",
+     "bytes": 5121115
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_Renilla_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_Renilla_mhcAt.dna",
+     "bytes": 10876196
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_mNeonGreen_H2B_FL_7xHis_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_mNeonGreen_H2B_FL_7xHis_mhcAt.dna",
+     "bytes": 2444949
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_mNeonGreen_mhcAt.dna",
+     "bytes": 691651
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_tagBFP_H2B_FL_7xHis_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_coaAp_tagBFP_H2B_FL_7xHis_mhcAt.dna",
+     "bytes": 2512483
+    },
+    {
+     "name": "pBSK_Alfa1_dscAp_Dendra2_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_dscAp_Dendra2_mhcA.dna",
+     "bytes": 1081905
+    },
+    {
+     "name": "pBSK_Alfa1_dscAp_eYFP_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_dscAp_eYFP_mhcA.dna",
+     "bytes": 1259528
+    },
+    {
+     "name": "pBSK_Alfa1_dscAp_mCerulean_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_dscAp_mCerulean_mhcA.dna",
+     "bytes": 1079381
+    },
+    {
+     "name": "pBSK_Alfa1_dscAp_mCherry_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_dscAp_mCherry_mhcA.dna",
+     "bytes": 3692634
+    },
+    {
+     "name": "pBSK_Alfa1_dscAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa1_dscAp_sfGFP_mhcAt.dna",
+     "bytes": 2046411
+    },
+    {
+     "name": "pBSK_Alfa2_DdOri.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_DdOri.dna",
+     "bytes": 724387
+    },
+    {
+     "name": "pBSK_Alfa2_DdOri_stuffer_coaA_NeoR_mhcA_coaA_sfGFP_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_DdOri_stuffer_coaA_NeoR_mhcA_coaA_sfGFP_mhcA.dna",
+     "bytes": 2993389
+    },
+    {
+     "name": "pBSK_Alfa2_Ile_tRNA_sgRNA_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_Ile_tRNA_sgRNA_mhcA.dna",
+     "bytes": 725185
+    },
+    {
+     "name": "pBSK_Alfa2_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_Stuffer.dna",
+     "bytes": 123510
+    },
+    {
+     "name": "pBSK_Alfa2_actin15p_mCherry_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_actin15p_mCherry_mhcAt.dna",
+     "bytes": 958466
+    },
+    {
+     "name": "pBSK_Alfa2_actin15p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_actin15p_sfGFP_mhcAt.dna",
+     "bytes": 268657
+    },
+    {
+     "name": "pBSK_Alfa2_coaA_dabA_FL_sfGFP_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaA_dabA_FL_sfGFP_mhcA.dna",
+     "bytes": 2363200
+    },
+    {
+     "name": "pBSK_Alfa2_coaA_sfGFP_FL_H2B_FL_HA_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaA_sfGFP_FL_H2B_FL_HA_mhcA.dna",
+     "bytes": 2970591
+    },
+    {
+     "name": "pBSK_Alfa2_coaAp_dabA_FL_7xHis_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaAp_dabA_FL_7xHis_mhcAt.dna",
+     "bytes": 2902966
+    },
+    {
+     "name": "pBSK_Alfa2_coaAp_dabA_FL_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaAp_dabA_FL_mNeonGreen_mhcAt.dna",
+     "bytes": 1951067
+    },
+    {
+     "name": "pBSK_Alfa2_coaAp_dabA_FL_tagBFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaAp_dabA_FL_tagBFP_mhcAt.dna",
+     "bytes": 2927486
+    },
+    {
+     "name": "pBSK_Alfa2_coaAp_mCherry_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaAp_mCherry_mhcAt.dna",
+     "bytes": 779498
+    },
+    {
+     "name": "pBSK_Alfa2_coaAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_coaAp_sfGFP_mhcAt.dna",
+     "bytes": 1441396
+    },
+    {
+     "name": "pBSK_Alfa2_loxP_coaAp_BsR_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_loxP_coaAp_BsR_mhcAt_loxP.dna",
+     "bytes": 767968
+    },
+    {
+     "name": "pBSK_Alfa2_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Alfa2_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "bytes": 789551
+    },
+    {
+     "name": "pBSK_AlfaC_DdOri.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaC_DdOri.dna",
+     "bytes": 2272522
+    },
+    {
+     "name": "pBSK_AlfaC_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaC_Stuffer.dna",
+     "bytes": 1700714
+    },
+    {
+     "name": "pBSK_AlfaC_loxP_coaAp_Bsr_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaC_loxP_coaAp_Bsr_mhcAt_loxP.dna",
+     "bytes": 2317780
+    },
+    {
+     "name": "pBSK_AlfaC_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaC_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "bytes": 2339363
+    },
+    {
+     "name": "pBSK_AlfaD_DdOri.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaD_DdOri.dna",
+     "bytes": 3453404
+    },
+    {
+     "name": "pBSK_AlfaD_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaD_Stuffer.dna",
+     "bytes": 2853885
+    },
+    {
+     "name": "pBSK_AlfaE_loxP_coaAp_BsR_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaE_loxP_coaAp_BsR_mhcAt_loxP.dna",
+     "bytes": 4892456
+    },
+    {
+     "name": "pBSK_AlfaE_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaE_loxP_coaAp_HygR_mhcAt_loxP.dna",
+     "bytes": 4914043
+    },
+    {
+     "name": "pBSK_AlfaZ_DdOri.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaZ_DdOri.dna",
+     "bytes": 4847200
+    },
+    {
+     "name": "pBSK_AlfaZ_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_AlfaZ_Stuffer.dna",
+     "bytes": 4248710
+    },
+    {
+     "name": "pBSK_Omega1_DdOri_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_DdOri_Stuffer.dna",
+     "bytes": 757451
+    },
+    {
+     "name": "pBSK_Omega1_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_Stuffer.dna",
+     "bytes": 53151
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_Myc_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_actin15p_Myc_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1918510
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mNeonGreen_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_actin15p_mNeonGreen_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1952701
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_tagBFP_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_actin15p_tagBFP_GGGSx4_RalGDS_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 2043876
+    },
+    {
+     "name": "pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_7xHis_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_7xHis_mhcAt.dna",
+     "bytes": 3624146
+    },
+    {
+     "name": "pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_mNeonGreen_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_mNeonGreen_mhcAt.dna",
+     "bytes": 2676461
+    },
+    {
+     "name": "pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_sfGFP_mhcAt.dna",
+     "bytes": 3088915
+    },
+    {
+     "name": "pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_tagBFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_coaAp_NeoR_mhcAt_coaAp_dabA_FL_tagBFP_mhcAt.dna",
+     "bytes": 3272063
+    },
+    {
+     "name": "pBSK_Omega1_coaAp_Renilla_mhcAt_loxPcoaA_BsR_mhcA-loxP.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_coaAp_Renilla_mhcAt_loxPcoaA_BsR_mhcA-loxP.dna",
+     "bytes": 11664167
+    },
+    {
+     "name": "pBSK_Omega1_dscA_eYFP_mhcA_coaA_NeoR_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_dscA_eYFP_mhcA_coaA_NeoR_mhcA.dna",
+     "bytes": 2041194
+    },
+    {
+     "name": "pBSK_Omega1_dscA_mCerulean_mhcA_coaA_NeoR_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega1_dscA_mCerulean_mhcA_coaA_NeoR_mhcA.dna",
+     "bytes": 1504504
+    },
+    {
+     "name": "pBSK_Omega2_DdOri_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega2_DdOri_Stuffer.dna",
+     "bytes": 758900
+    },
+    {
+     "name": "pBSK_Omega2_Stuffer.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega2_Stuffer.dna",
+     "bytes": 75882
+    },
+    {
+     "name": "pBSK_Omega2_actin15p_mNeonGreen_mhcAt_coaA_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega2_actin15p_mNeonGreen_mhcAt_coaA_NeoR_mhcAt.dna",
+     "bytes": 2175346
+    },
+    {
+     "name": "pBSK_Omega2_coaA_NeoR_mhcA_coaA_sfGFP_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega2_coaA_NeoR_mhcA_coaA_sfGFP_mhcA.dna",
+     "bytes": 2160584
+    },
+    {
+     "name": "pBSK_Omega2_coaA_mNeonGreen_mhcA_coaA_NeoR_mhcA.dna",
+     "path": "goldenbraid/legacy-constructs/pBSK_Omega2_coaA_mNeonGreen_mhcA_coaA_NeoR_mhcA.dna",
+     "bytes": 1469826
+    },
+    {
+     "name": "pBluescript_Alfa1_coaAp_BsR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa1_coaAp_BsR_mhcAt.dna",
+     "bytes": 686237
+    },
+    {
+     "name": "pBluescript_Alfa1_coaAp_HygR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa1_coaAp_HygR_mhcAt.dna",
+     "bytes": 707821
+    },
+    {
+     "name": "pBluescript_Alfa1_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa1_coaAp_NeoR_mhcAt.dna",
+     "bytes": 702356
+    },
+    {
+     "name": "pBluescript_Alfa1_ecmAp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa1_ecmAp_mNeonGreen_actin8t.dna",
+     "bytes": 698255
+    },
+    {
+     "name": "pBluescript_Alfa2_coaA_HygR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa2_coaA_HygR_mhcAt.dna",
+     "bytes": 765457
+    },
+    {
+     "name": "pBluescript_Alfa2_coaAp_BsR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa2_coaAp_BsR_mhcAt.dna",
+     "bytes": 743875
+    },
+    {
+     "name": "pBluescript_Alfa2_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pBluescript_Alfa2_coaAp_NeoR_mhcAt.dna",
+     "bytes": 759953
+    },
+    {
+     "name": "pDGD_Alfa1_DDBG0288429p_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Alfa1_DDBG0288429p_sfGFP_mhcAt.dna",
+     "bytes": 1637532
+    },
+    {
+     "name": "pDGD_Alfa1_aurKp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Alfa1_aurKp_sfGFP_mhcAt.dna",
+     "bytes": 774198
+    },
+    {
+     "name": "pDGD_Alfa1_coaAp_eYFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Alfa1_coaAp_eYFP_mhcAt.dna",
+     "bytes": 1390386
+    },
+    {
+     "name": "pDGD_Alfa1_coaAp_mCerulean_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Alfa1_coaAp_mCerulean_mhcAt.dna",
+     "bytes": 808775
+    },
+    {
+     "name": "pDGD_Alfa1_thyAp_sfGFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Alfa1_thyAp_sfGFP_mhcAt.dna",
+     "bytes": 1823660
+    },
+    {
+     "name": "pDGD_Omega1_DDBG0288429p_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Omega1_DDBG0288429p_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1694283
+    },
+    {
+     "name": "pDGD_Omega1_aurKp_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Omega1_aurKp_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "bytes": 833810
+    },
+    {
+     "name": "pDGD_Omega1_coaAp_eYFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Omega1_coaAp_eYFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1445885
+    },
+    {
+     "name": "pDGD_Omega1_coaAp_mCerulean_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Omega1_coaAp_mCerulean_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "bytes": 864369
+    },
+    {
+     "name": "pDGD_Omega1_thyAp_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDGD_Omega1_thyAp_sfGFP_mhcAt_coaAp_NeoR_mhcAt.dna",
+     "bytes": 2605679
+    },
+    {
+     "name": "pDG_Alfa1_coaAp_PH-FL-tagBFP_mhcAt.dna",
+     "path": "goldenbraid/legacy-constructs/pDG_Alfa1_coaAp_PH-FL-tagBFP_mhcAt.dna",
+     "bytes": 1379893
+    }
+   ]
+  },
+  {
+   "key": "legacy-actin8-terminator",
+   "title": "Legacy actin8 terminator",
+   "blurb": "Earlier pBSK-based constructs that use the actin8 terminator.",
+   "in_git": false,
+   "count": 49,
+   "bytes": 188452543,
+   "files": [
+    {
+     "name": "pBSK_Alfa1N_coaA_dscA_GGGSx4_3xFLAG_actin8.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_coaA_dscA_GGGSx4_3xFLAG_actin8.dna",
+     "bytes": 7268826
+    },
+    {
+     "name": "pBSK_Alfa1N_coaA_dscA_GGGSx4_7xHis_actin8.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_coaA_dscA_GGGSx4_7xHis_actin8.dna",
+     "bytes": 13543991
+    },
+    {
+     "name": "pBSK_Alfa1N_coaA_dscA_GGGSx4_GST_actin8.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_coaA_dscA_GGGSx4_GST_actin8.dna",
+     "bytes": 3752049
+    },
+    {
+     "name": "pBSK_Alfa1N_coaA_dscA_GGGSx4_Myc_actin8.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_coaA_dscA_GGGSx4_Myc_actin8.dna",
+     "bytes": 7065088
+    },
+    {
+     "name": "pBSK_Alfa1N_cotBp_mCerulean_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_cotBp_mCerulean_actin8t.dna",
+     "bytes": 1126099
+    },
+    {
+     "name": "pBSK_Alfa1N_cotBp_mCherry_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_cotBp_mCherry_actin8t.dna",
+     "bytes": 215067
+    },
+    {
+     "name": "pBSK_Alfa1N_cotBp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1N_cotBp_mNeonGreen_actin8t.dna",
+     "bytes": 83495
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_Cas9_SV40NLS_eGFP_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_Cas9_SV40NLS_eGFP_actin8t.dna",
+     "bytes": 5353350
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_FfLuc_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_FfLuc_actin8t.dna",
+     "bytes": 4625719
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_GST_GGGSx4_H2B_GGGSx4_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_GST_GGGSx4_H2B_GGGSx4_mNeonGreen_actin8t.dna",
+     "bytes": 1684492
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_HA_GGGSx4_H2B_GGGSx4_mIFP_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_HA_GGGSx4_H2B_GGGSx4_mIFP_actin8t.dna",
+     "bytes": 1792708
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_Myc_GGGSx4_H2B_GGGSx4_tagBFP_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_Myc_GGGSx4_H2B_GGGSx4_tagBFP_actin8t.dna",
+     "bytes": 1697529
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_Renilla_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_Renilla_actin8t.dna",
+     "bytes": 38875
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_mIFP_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_mIFP_actin8t.dna",
+     "bytes": 1056022
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_mNeonGreen_GGGSx4_H2B_GGGSx4_GST_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_mNeonGreen_GGGSx4_H2B_GGGSx4_GST_actin8t.dna",
+     "bytes": 1674238
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_tagBFP_GGGSx4_H2B_GGGSx4_Myc_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_tagBFP_GGGSx4_H2B_GGGSx4_Myc_actin8t.dna",
+     "bytes": 1725762
+    },
+    {
+     "name": "pBSK_Alfa1_actin15p_tagBFP_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_actin15p_tagBFP_actin8t.dna",
+     "bytes": 976391
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_FfLuc_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_coaAp_FfLuc_actin8t.dna",
+     "bytes": 22018073
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_Renilla_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_coaAp_Renilla_actin8t.dna",
+     "bytes": 39111
+    },
+    {
+     "name": "pBSK_Alfa1_coaAp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa1_coaAp_mNeonGreen_actin8t.dna",
+     "bytes": 692807
+    },
+    {
+     "name": "pBSK_Alfa2B_actin15p_FfLuc_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2B_actin15p_FfLuc_actin8t.dna",
+     "bytes": 1010433
+    },
+    {
+     "name": "pBSK_Alfa2N_ecmAp_mCherry_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2N_ecmAp_mCherry_actin8t.dna",
+     "bytes": 53377
+    },
+    {
+     "name": "pBSK_Alfa2N_ecmAp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2N_ecmAp_mNeonGreen_actin8t.dna",
+     "bytes": 53211
+    },
+    {
+     "name": "pBSK_Alfa2_CRISPR1.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_CRISPR1.dna",
+     "bytes": 36036355
+    },
+    {
+     "name": "pBSK_Alfa2_Ile-tRNA_sgRNA_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_Ile-tRNA_sgRNA_actin8t.dna",
+     "bytes": 722331
+    },
+    {
+     "name": "pBSK_Alfa2_a15p_mNeonGreen_a8t_coaAp_NeoR_mhcAt_DdOri_spacer.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_a15p_mNeonGreen_a8t_coaAp_NeoR_mhcAt_DdOri_spacer.dna",
+     "bytes": 2323567
+    },
+    {
+     "name": "pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA-lacZ_mhcAt_coaAp_NeoR_mhcAt_stuffer Map.png",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA-lacZ_mhcAt_coaAp_NeoR_mhcAt_stuffer Map.png",
+     "bytes": 591311
+    },
+    {
+     "name": "pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA-lacZ_mhcAt_coaAp_NeoR_mhcAt_stuffer.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA-lacZ_mhcAt_coaAp_NeoR_mhcAt_stuffer.dna",
+     "bytes": 19342333
+    },
+    {
+     "name": "pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA_mhcAt_coaAp_NeoR_mhcAt_stuffer.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Alfa2_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA_mhcAt_coaAp_NeoR_mhcAt_stuffer.dna",
+     "bytes": 19277024
+    },
+    {
+     "name": "pBSK_Omega1N_cotBp_mCherry_mhcAt_ecmAp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1N_cotBp_mCherry_mhcAt_ecmAp_mNeonGreen_actin8t.dna",
+     "bytes": 186953
+    },
+    {
+     "name": "pBSK_Omega1N_cotBp_mNeonGreen_mhcAt_ecmAp_mCherry_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1N_cotBp_mNeonGreen_mhcAt_ecmAp_mCherry_actin8t.dna",
+     "bytes": 66237
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_Cas9-NLS-eGFP_actin8t_Ile-tRNA-sgRNA_mhcAt.dna",
+     "bytes": 6104792
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_GST_GGGSx4_ilie-1_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_GST_GGGSx4_ilie-1_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1989150
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_SA95_GGGSx4_GST_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_SA95_GGGSx4_GST_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1968427
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mCherry_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_mCherry_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1465232
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mIFP_acin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_mIFP_acin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1833799
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_BsR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_BsR_mhcAt.dna",
+     "bytes": 1454348
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_HygR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_HygR_mhcAt.dna",
+     "bytes": 1476694
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_mNeonGreen_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1471343
+    },
+    {
+     "name": "pBSK_Omega1_actin15p_tagBFP_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega1_actin15p_tagBFP_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 1756057
+    },
+    {
+     "name": "pBSK_Omega2_coaA_mNeonGreen_actin8_coaA_NeoR_mhcA.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBSK_Omega2_coaA_mNeonGreen_actin8_coaA_NeoR_mhcA.dna",
+     "bytes": 1471333
+    },
+    {
+     "name": "pBluescript_Alfa1_actin15p_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Alfa1_actin15p_mNeonGreen_actin8t.dna",
+     "bytes": 694038
+    },
+    {
+     "name": "pBluescript_Alfa1_ecmAp_mCherry_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Alfa1_ecmAp_mCherry_actin8t.dna",
+     "bytes": 728629
+    },
+    {
+     "name": "pBluescript_Alfa2_actin15p_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Alfa2_actin15p_mNeonGreen_actin8t.dna",
+     "bytes": 753232
+    },
+    {
+     "name": "pBluescript_Alfa2_ecmAp_mCherry_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Alfa2_ecmAp_mCherry_actin8t.dna",
+     "bytes": 752473
+    },
+    {
+     "name": "pBluescript_Alfa2_ecmAp_mNeonGreen_actin8t.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Alfa2_ecmAp_mNeonGreen_actin8t.dna",
+     "bytes": 757438
+    },
+    {
+     "name": "pBluescript_Omega1_actin15p_SA31_GGGSx4_GST_actin8t_coaAp_NeoR_mhcAt.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Omega1_actin15p_SA31_GGGSx4_GST_actin8t_coaAp_NeoR_mhcAt.dna",
+     "bytes": 3752102
+    },
+    {
+     "name": "pBluescript_Omega1_actin15p_SA31_GGGSx4_mNeonGreen_actin8t_coaApromoter_NeoR_mhcAterminator.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Omega1_actin15p_SA31_GGGSx4_mNeonGreen_actin8t_coaApromoter_NeoR_mhcAterminator.dna",
+     "bytes": 1970646
+    },
+    {
+     "name": "pBluescript_Omega1_actin15p_SA95_GGGSx4_mNeonGreen_actin8t_coaApromoter_NeoR_mhcAterminator.dna",
+     "path": "goldenbraid/legacy-actin8-terminator/pBluescript_Omega1_actin15p_SA95_GGGSx4_mNeonGreen_actin8t_coaApromoter_NeoR_mhcAterminator.dna",
+     "bytes": 1959986
+    }
+   ]
+  }
+ ]
+}

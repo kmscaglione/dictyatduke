@@ -436,13 +436,40 @@ def check_gene_loci():
           else f"table differs from the genome FASTA for {drift}: rebuild gene_loci.json")
 
 
+def check_goldenbraid_files():
+    """assets/goldenbraid/manifest.json (Downloads page): every file that ships
+    in git must exist at the listed size, and each such group needs its zip.
+    The legacy groups live only on the server, so here they are reported, not
+    required (on the server, a missing one is a broken download link)."""
+    print("GoldenBraid plasmid files")
+    try:
+        m = load(os.path.join("goldenbraid", "manifest.json"))
+    except (OSError, ValueError) as e:
+        return fail(f"could not load goldenbraid/manifest.json ({e})")
+    groups = {g["key"]: g for g in m.get("groups", [])}
+    check({"assemblies", "backbones", "parts"} <= set(groups), "assemblies, backbones and parts groups listed")
+    for g in groups.values():
+        files = g.get("files", [])
+        present = [f for f in files if os.path.isfile(os.path.join(ASSETS, f["path"]))]
+        wrong = [f["name"] for f in present if os.path.getsize(os.path.join(ASSETS, f["path"])) != f["bytes"]]
+        if g.get("in_git"):
+            zp = os.path.join(ASSETS, (g.get("zip") or {}).get("path", ""))
+            check(len(present) == len(files) and not wrong and os.path.isfile(zp),
+                  f"{g['title']}: all {len(files)} files present at the listed size, plus zip"
+                  if len(present) == len(files) and not wrong and os.path.isfile(zp)
+                  else f"{g['title']}: {len(files) - len(present)} missing, {len(wrong)} wrong size, zip {'ok' if os.path.isfile(zp) else 'MISSING'}")
+        else:
+            check(not wrong, f"{g['title']} (server only): {len(present)} of {len(files)} present here"
+                  if not wrong else f"{g['title']}: {len(wrong)} files differ in size from the manifest")
+
+
 def main():
     print("=== dictyBase data self-check ===")
     for fn in (check_facets, check_featured_loci, check_gaf_fresh, check_headline,
                check_gomer, check_function_summaries, check_strain_gene_links,
                check_phenotype_refs, check_strain_metadata, check_ddb0_ids,
                check_insitu_maeda, check_go_complex_terms, check_ax2_orthologs,
-               check_gene_loci):
+               check_gene_loci, check_goldenbraid_files):
         fn()
     print(f"\n{_checks - _fail}/{_checks} checks passed"
           + (f" — {_fail} FAILED" if _fail else " — all good"))

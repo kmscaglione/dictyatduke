@@ -218,6 +218,27 @@ the `.gbf` set changes. `build_orthogroups.py` reads `data/orthofinder/Orthogrou
 Until this build runs, KGL29A/PJ11 appear in the dropdowns but won't load, and the
 curated-ortholog jumps to the other 8 line up only once their names are rebuilt.
 
+### GoldenBraid plasmid files (legacy maps not in git)
+
+The Downloads page lists the Shaulsky lab's GoldenBraid SnapGene maps from
+`assets/goldenbraid/manifest.json`. Assemblies, backbones and parts (~18 MB) are
+committed. The two legacy folders (~345 MB, mostly SnapGene's saved edit history)
+are gitignored, so copy them to the box once, from a Mac that has the
+`assets/goldenbraid/legacy-*` folders (run `build_goldenbraid_downloads.py` there
+first). On the Duke VPN:
+
+```bash
+rsync -av assets/goldenbraid/legacy-constructs assets/goldenbraid/legacy-actin8-terminator \
+  kms205@152.3.103.75:/srv/web/dicty.labs.duke.edu/html/assets/goldenbraid/
+# then on the server:
+sudo /srv/web/bin/web_chown apache assets/goldenbraid
+python3 scripts/check_data.py      # "server only: N of N present" for both legacy groups
+```
+
+To change the kit files, update the source folders and rerun
+`python3 scripts/build_goldenbraid_downloads.py [SOURCE_DIR]` (default `~/Downloads`).
+Commit the result; re-copy the legacy folders if they changed.
+
 ## Curation backup (off-box)
 
 Durable curator state lives ONLY on the VM under `uploads/curator_state/`

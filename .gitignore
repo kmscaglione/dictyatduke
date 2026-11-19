@@ -87,3 +87,8 @@ uploads/
 # Multimedia movie galleries (~177 MB) — preserved, but too large for git;
 # stored on the server instead (see the multimedia gallery decision).
 assets/dictybase-downloads/site-mirror/multimedia/
+
+# GoldenBraid legacy SnapGene maps (~345 MB, mostly saved edit history) — too
+# large for git; copied to the server by hand. scripts/build_goldenbraid_downloads.py
+assets/goldenbraid/legacy-constructs/
+assets/goldenbraid/legacy-actin8-terminator/

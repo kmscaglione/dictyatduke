@@ -246,6 +246,15 @@ def main():
     check("served page has no inline <script> (CSP-safe)", "<script>" not in home)
     check("asset-version passed via <meta>", 'name="asset-version"' in home)
 
+    # GoldenBraid SnapGene maps download as files, not as the HTML page (a .dna
+    # missing from STATIC_EXTS silently falls through to the site shell).
+    st, h = get_headers("/assets/goldenbraid/assemblies/pDGB_ACN_coaAp_PH%28dagA%29_FlexibleLinker_sfGFP_mhcAt.dna")
+    check("GoldenBraid .dna file downloads as a binary file",
+          st == 200 and h.get("content-type", "").startswith("application/octet-stream"))
+    st, gb = get_json("/assets/goldenbraid/manifest.json")
+    check("GoldenBraid file manifest lists the kit groups",
+          st == 200 and {"assemblies", "backbones", "parts"} <= {g.get("key") for g in (gb or {}).get("groups", [])})
+
     print(f"\n{_passed}/{_passed + _failed} passed"
           + (f" — {_failed} FAILED" if _failed else " — all good"))
     return 1 if _failed else 0

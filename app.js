@@ -10913,6 +10913,10 @@ function openDownloadsPage(updateRoute = true) {
             </li>
           </ul>
         </section>
+        <section class="data-block downloads-section" id="goldenbraid-plasmid-files">
+          <h3>GoldenBraid plasmid files</h3>
+          <div data-goldenbraid-files><p class="notice muted">Loading GoldenBraid files…</p></div>
+        </section>
         <section class="data-block downloads-section" id="current-go-annotations">
           <h3>GO annotations (current)</h3>
           <p class="downloads-blurb">Every dictyBase Gene Ontology annotation from the current GO Consortium release: <strong>68,097</strong> across 8,659 genes. This is the up-to-date set; the “GO Association Files” section below is a preserved 2013 snapshot.</p>
@@ -10932,10 +10936,55 @@ function openDownloadsPage(updateRoute = true) {
       </div>
     </article>`;
   toolsShell.removeAttribute("hidden");
-  scrollToY(toolsShell.offsetTop - 60);
-  loadGenomeAssemblies();
+  // A link to the GoldenBraid section lands there once the lists above it have
+  // loaded (they change its position). Skip the usual scroll to the page top,
+  // whose smooth animation would otherwise override the jump.
+  const toGoldenBraid = window.location.hash === "#goldenbraid-plasmid-files";
+  if (!toGoldenBraid) scrollToY(toolsShell.offsetTop - 60);
+  Promise.all([loadGenomeAssemblies(), loadGoldenBraidFiles()]).then(() => {
+    const sec = toGoldenBraid && document.getElementById("goldenbraid-plasmid-files");
+    // Jump instantly, as the browser does for any #anchor on page load.
+    if (sec) window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 60, behavior: "instant" });
+  });
   loadDownloads();
   loadChangelog();
+}
+
+// GoldenBraid kit SnapGene maps (assets/goldenbraid/manifest.json, built by
+// scripts/build_goldenbraid_downloads.py): one collapsible group per folder, a
+// zip per group where there is one, and a name filter across all groups.
+async function loadGoldenBraidFiles() {
+  const el = document.querySelector("[data-goldenbraid-files]");
+  if (!el) return;
+  let m;
+  try { m = await fetch("/assets/goldenbraid/manifest.json").then((r) => r.json()); }
+  catch { el.innerHTML = `<p class="notice muted">GoldenBraid files are unavailable right now.</p>`; return; }
+  const href = (p) => "/assets/" + p.split("/").map(encodeURIComponent).join("/");
+  const total = m.groups.reduce((n, g) => n + g.count, 0);
+  el.innerHTML = `
+    <p class="downloads-blurb">${escapeHtml(m.credit)} ${total.toLocaleString()} plasmid maps as ${escapeHtml(m.format)} The plasmids themselves can be ordered from the <a class="text-link" href="/stock-center">Stock Center</a>.</p>
+    <div class="form-field" style="max-width:420px;margin:0 0 10px"><input type="search" data-gb-filter placeholder="Filter files by name, e.g. mNeonGreen or act15p" aria-label="Filter GoldenBraid files"></div>
+    ${m.groups.map((g) => `
+      <details class="gb-group" data-gb-group>
+        <summary><strong>${escapeHtml(g.title)}</strong> <span class="muted">· <span data-gb-count>${g.count}</span> files · ${fmtBytes(g.bytes)}</span></summary>
+        <p class="downloads-blurb" style="margin:6px 0">${escapeHtml(g.blurb)}${g.zip ? ` <a class="downloads-file" href="${href(g.zip.path)}" download>Download all (zip) <span class="downloads-size">${fmtBytes(g.zip.bytes)}</span></a>` : ""}</p>
+        <ul class="gb-files">${g.files.map((f) => `<li data-gb-name="${escapeHtml(f.name.toLowerCase())}"><a class="text-link" href="${href(f.path)}" download>${escapeHtml(f.name)}</a> <span class="downloads-size">${fmtBytes(f.bytes)}</span></li>`).join("")}</ul>
+      </details>`).join("")}`;
+  const filter = el.querySelector("[data-gb-filter]");
+  filter.addEventListener("input", () => {
+    const q = filter.value.trim().toLowerCase();
+    for (const grp of el.querySelectorAll("[data-gb-group]")) {
+      let shown = 0;
+      for (const li of grp.querySelectorAll("[data-gb-name]")) {
+        const hit = !q || li.dataset.gbName.includes(q);
+        li.hidden = !hit;
+        if (hit) shown++;
+      }
+      grp.querySelector("[data-gb-count]").textContent = q ? `${shown} of ${grp.querySelectorAll("[data-gb-name]").length}` : grp.querySelectorAll("[data-gb-name]").length;
+      grp.hidden = !!q && !shown;
+      grp.open = !!q && shown > 0;
+    }
+  });
 }
 
 // Per-genome assembly FASTA + GFF3 downloads, from the genome manifest. One row

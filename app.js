@@ -14006,7 +14006,16 @@ recordShell.addEventListener("keydown", (event) => {
   recordShell.querySelector(`[role="tab"][data-tab="${target.dataset.tab}"]`)?.focus();
 });
 
-window.addEventListener("popstate", hydrateFromRoute);
+// A same-page #section link (e.g. a Downloads menu item while on /downloads)
+// fires popstate too. Re-rendering then fights the jump to the section and
+// overshoots, so when only the hash changed and its target is on the page,
+// just scroll there.
+window.addEventListener("popstate", () => {
+  const sameRoute = window.location.pathname + window.location.search === lastRoutedPath;
+  const target = sameRoute && window.location.hash && document.getElementById(window.location.hash.slice(1));
+  if (target) { scrollToEl(target); return; }
+  hydrateFromRoute();
+});
 
 // A proper not-found view (instead of silently showing the home page) for an
 // unknown route or an unresolvable /gene/<token>. Offers a search box + the main
@@ -14519,7 +14528,9 @@ function renderPaperSessionForm(el, token, s) {
   });
 }
 
+let lastRoutedPath = "";   // path+query of the last render (see the popstate handler)
 function hydrateFromRoute() {
+  lastRoutedPath = window.location.pathname + window.location.search;
   showHomeChrome(true);  // default; the branch openers below flip it off for non-home views
   const params = new URLSearchParams(window.location.search);
   const pathParts = window.location.pathname.split("/").filter(Boolean);

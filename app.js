@@ -3251,6 +3251,139 @@ async function importPaperResults(fileInput) {
   } catch (e) { if (msg) msg.textContent = (e && e.message) || "Import failed — check the JSON file."; }
 }
 
+// A curator POST from outside the gene editor. (initCurate keeps its own
+// copy inside its closure; the paper queue is top-level code and needs this.)
+async function curatorApi(path, body) {
+  try {
+    const r = await fetch(path, { method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${curatorToken}` },
+      body: JSON.stringify(body) });
+    const d = await r.json().catch(() => ({}));
+    return { ok: r.ok, d };
+  } catch { return { ok: false, d: { error: "Network error." } }; }
+}
+
+// The DDPHENO term proposed for an AI or author phenotype. Three states: a
+// proposed term, an explicit "no suitable term", or not mapped at all (drafts
+// made before mapping existed, or wording the author rewrote).
+function ddphenoChip(x) {
+  const base = "font-size:10.5px;margin-left:5px;padding:0 5px;border-radius:3px;white-space:nowrap";
+  if (x.ddpheno_id) {
+    return ` <span title="DDPHENO term proposed for this observation" style="${base};border:1px solid #a7f3d0;background:#ecfdf5;color:#047857">${escapeHtml(x.ddpheno_id)} ${escapeHtml(x.ddpheno_term || "")}</span>`;
+  }
+  if (x.no_term) {
+    return ` <span title="${escapeHtml(x.ddpheno_note || "No suitable DDPHENO term")}" style="${base};border:1px solid #fde68a;background:#fffbeb;color:#92400e">⚠ ${escapeHtml(x.ddpheno_note || "No suitable DDPHENO term")}</span>`;
+  }
+  return ` <span title="No DDPHENO term has been proposed for this wording" style="${base};border:1px solid #e2e8f0;color:#64748b">DDPHENO: not mapped</span>`;
+}
+
+// Search DDPHENO by name, synonym or id, ranked like the GO search: exact,
+// prefix, word start, substring, then synonyms.
+async function searchDdpheno(q, limit = 12) {
+  const onto = await ensurePhenotypeOntology();
+  const s = String(q || "").trim().toLowerCase().split(/\s+/).join(" ");
+  if (!s) return [];
+  const idq = s.match(/^(?:ddpheno:?\s*)?(\d{1,7})$/);
+  const hits = [];
+  for (const [name, v] of Object.entries(onto || {})) {
+    const id = (v || {}).id || "";
+    if (!id) continue;
+    if (idq) { if (id === "DDPHENO:" + idq[1].padStart(7, "0")) return [{ id, name, def: v.definition || "" }]; continue; }
+    const low = name.toLowerCase();
+    let rank = low === s ? 0 : low.startsWith(s) ? 1 : new RegExp("\\b" + s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(low) ? 2 : low.includes(s) ? 3 : -1;
+    let syn = "";
+    if (rank < 0) {
+      syn = (v.synonyms || []).find((y) => String(y).toLowerCase().includes(s)) || "";
+      if (syn) rank = 4;
+    }
+    if (rank >= 0) hits.push({ rank, id, name, def: v.definition || "", syn });
+  }
+  hits.sort((a, b) => a.rank - b.rank || a.name.length - b.name.length);
+  return hits.slice(0, limit);
+}
+
+// Inline picker under a submitted entry: search the ontology, choose a term,
+// set the evidence (GO) or the no-change flag (phenotype), then Save. The
+// author's term is only the starting search, so a curator who prefers a
+// different term picks it here; nothing reaches the record until Save.
+function openCurationPicker(btn, kind, onSaved) {
+  const row = btn.closest(".pd-subrow") || btn.parentElement;
+  const open = row.querySelector(".pd-picker");
+  if (open) { open.remove(); return; }
+  const isGo = kind === "go";
+  const FIELD_S = "padding:3px 6px;border:1px solid #d7dee0;border-radius:5px;font-size:12.5px";
+  const EVIDENCE = [["IDA", "direct assay"], ["IMP", "mutant phenotype"], ["IGI", "genetic interaction"],
+    ["IPI", "physical interaction"], ["IEP", "expression pattern"], ["IC", "curator inference"], ["TAS", "author statement"]];
+  const ASPECT_WORD = { P: "biological process", F: "molecular function", C: "cellular component" };
+  const box = document.createElement("div");
+  box.className = "pd-picker";
+  box.style.cssText = "margin:5px 0 6px 14px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:7px;background:#fff;font-size:12.5px";
+  box.innerHTML = `
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:5px">
+      <strong>${isGo ? "Add a curated GO annotation" : "Add a curated phenotype"}</strong>
+      <span class="muted">gene</span><input class="pk-gene" value="${escapeHtml(btn.dataset.gene || "")}" style="${FIELD_S};width:110px" aria-label="Gene">
+      <span class="muted">PMID ${escapeHtml(btn.dataset.pmid || "")}</span></div>
+    <input class="pk-q" type="search" value="${escapeHtml(btn.dataset.q || "")}" placeholder="${isGo ? "Search GO terms, or paste a GO id" : "Search DDPHENO terms, or paste a DDPHENO id"}" style="${FIELD_S};width:100%" aria-label="Search terms">
+    <div class="pk-list" style="max-height:190px;overflow:auto;margin:4px 0;border:1px solid #eef2f7;border-radius:5px"></div>
+    <div style="margin:4px 0">Chosen: <span class="pk-sel muted">none yet. Pick a term above.</span></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      ${isGo
+        ? `<label>Evidence <select class="pk-ev" style="${FIELD_S}"><option value="">choose…</option>${EVIDENCE.map(([c, w]) => `<option value="${c}">${c}  ${w}</option>`).join("")}</select></label>`
+        : `<label style="display:flex;gap:4px;align-items:center"><input type="checkbox" class="pk-neg"${btn.dataset.negative === "1" ? " checked" : ""}> tested, no change</label>`}
+      <button type="button" class="pk-save" disabled style="font-size:12px;padding:2px 10px">Save to curated record</button>
+      <button type="button" class="pk-cancel" style="font-size:12px;padding:2px 10px">Cancel</button>
+      <span class="pk-msg muted" style="font-size:12px"></span></div>`;
+  row.appendChild(box);
+  const q = box.querySelector(".pk-q"), list = box.querySelector(".pk-list"), selEl = box.querySelector(".pk-sel");
+  const saveBtn = box.querySelector(".pk-save"), msg = box.querySelector(".pk-msg"), evSel = box.querySelector(".pk-ev");
+  let chosen = null, seq = 0, timer = null;
+  const ready = () => { saveBtn.disabled = !(chosen && (!isGo || evSel.value)); };
+  const run = async () => {
+    const s = q.value.trim();
+    if (s.length < 2) { list.innerHTML = ""; return; }
+    const mine = ++seq;
+    let items = [], note = "";
+    try {
+      if (isGo) {
+        const r = await (await fetch(`/api/go-search?q=${encodeURIComponent(s)}`)).json();
+        items = (r.terms || []).map((t) => ({ id: t.id, name: t.name, sub: ASPECT_WORD[t.aspect] || t.aspect, aspect: t.aspect }));
+        if (r.relaxed) note = `No term matches the whole phrase; showing matches for “${r.searched}”.`;
+      } else {
+        items = (await searchDdpheno(s)).map((t) => ({ id: t.id, name: t.name, sub: t.syn ? `synonym: ${t.syn}` : "", def: t.def }));
+      }
+    } catch { items = []; }
+    if (mine !== seq) return;
+    list.innerHTML = (note ? `<div style="padding:4px 8px;font-size:11.5px;color:#92400e;background:#fffbeb">${escapeHtml(note)}</div>` : "")
+      + (items.length ? items.map((t, i) => `<div class="pk-item" data-i="${i}" title="${escapeHtml(t.def || "")}" style="padding:4px 8px;cursor:pointer;border-bottom:1px solid #f1f5f9">${escapeHtml(t.name)} <span class="muted" style="font-size:11px">${escapeHtml(t.id)}${t.sub ? " · " + escapeHtml(t.sub) : ""}</span></div>`).join("")
+        : `<div style="padding:6px 8px;color:#6b7280">No ${isGo ? "GO" : "DDPHENO"} term matches. Try other words${isGo ? "" : ", or leave this one unmapped"}.</div>`);
+    list.querySelectorAll(".pk-item").forEach((el) => el.addEventListener("click", () => {
+      chosen = items[Number(el.dataset.i)];
+      list.querySelectorAll(".pk-item").forEach((o) => { o.style.background = ""; });
+      el.style.background = "#e7f0ee";
+      selEl.className = "pk-sel";
+      selEl.innerHTML = `<strong>${escapeHtml(chosen.name)}</strong> <span class="muted">${escapeHtml(chosen.id)}${chosen.sub ? " · " + escapeHtml(chosen.sub) : ""}</span>`;
+      ready();
+    }));
+  };
+  q.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(run, 180); });
+  if (evSel) evSel.addEventListener("change", ready);
+  box.querySelector(".pk-cancel").addEventListener("click", () => box.remove());
+  saveBtn.addEventListener("click", async () => {
+    if (!chosen) return;
+    const gene = box.querySelector(".pk-gene").value.trim();
+    saveBtn.disabled = true; msg.textContent = "Saving…";
+    const common = { ddb: gene, action: "add", pmid: btn.dataset.pmid, submission_key: btn.dataset.key };
+    const { ok, d } = isGo
+      ? await curatorApi("/api/curator/go", { ...common, go_id: chosen.id, aspect: chosen.aspect, evidence: evSel.value })
+      : await curatorApi("/api/curator/phenotype", { ...common, term: chosen.name, negative: box.querySelector(".pk-neg").checked });
+    if (!ok) { msg.textContent = (d && d.error) || "Could not save."; msg.style.color = "#b91c1c"; ready(); return; }
+    msg.textContent = "Saved ✓"; msg.style.color = "#047857";
+    setTimeout(() => { if (onSaved) onSaved(); }, 500);
+  });
+  q.focus();
+  run();
+}
+
 function paperDraftCard(d) {
   const esc = escapeHtml;
   const gsPlainLine = (x) => `<div style="font-size:12.5px;margin:2px 0"><strong>${esc(x.gene || "?")}:</strong> ${esc(x.sentence || "")}</div>`;
@@ -3276,7 +3409,8 @@ function paperDraftCard(d) {
       ${ai.summary ? `<p style="font-size:12.5px;margin:4px 0;font-style:italic">${esc(ai.summary)}</p>` : ""}
       ${gsLines}
       ${list("GO", ai.go, (x) => `${x.gene || "?"}: ${x.term || ""} (${x.aspect || "?"}${x.evidence ? ", " + x.evidence : ""})`)}
-      ${list("Phenotypes", ai.phenotypes, (x) => `${x.gene || "?"}: ${x.phenotype || ""}`)}
+      ${(ai.phenotypes || []).length ? `<div style="font-size:12.5px;margin:2px 0"><strong>Phenotypes:</strong> ${ai.phenotypes.slice(0, 12).map((x) =>
+          item(`${x.negative ? "[no change] " : ""}${x.gene || "?"}: ${x.phenotype || ""}`, x.support) + ddphenoChip(x)).join("; ")}</div>` : ""}
       ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}
       ${ai.drafted_from ? `<p class="muted" style="font-size:11px;margin:3px 0 0">Well-supported draft from ${esc(String(ai.drafted_from).replace("_", " "))}${ai.model ? " · " + esc(ai.model) : ""}. Hover an item for its supporting quote.</p>` : ""}`;
   }
@@ -3307,20 +3441,26 @@ function paperDraftCard(d) {
     if (!meta) return "";
     return `<div style="font-size:11px;color:${meta.colour};margin:1px 0 3px 14px">${meta.label}${dec.by ? ` by ${esc(dec.by)}` : ""}${dec.note ? `: “${esc(dec.note)}”` : ""}</div>`;
   };
-  const subRows = (label, arr, fmt, extraFor) => arr && arr.length
+  // What a curator has already added to the curated record from this entry.
+  const addedBadge = (it) => (it.added || []).map((a) =>
+    `<div style="font-size:11px;color:#1d4ed8;margin:1px 0 3px 14px">＋ added to the curated record: ${esc(a.what)}${a.by ? ` by ${esc(a.by)}` : ""}</div>`).join("");
+  const subRows = (label, arr, fmt, extraFor, chipFor) => arr && arr.length
     ? `<div style="margin-top:3px"><em>${label}:</em>${arr.map((x) => {
         const meta = DEC[(x.decision || {}).state];
         const bg = meta ? meta.bg : (x.unsure ? "#fffbeb" : "");
-        return `<div style="margin:2px 0;padding:2px 4px;border-radius:4px${bg ? `;background:${bg}` : ""}">
-          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}${x.edited ? `<strong style="color:#1d4ed8;font-size:11px">✎ author changed this</strong> ` : ""}<span>${esc(fmt(x))}</span>${x.figure ? `<strong style="color:#047857;font-size:11px;margin-left:5px" title="Where the author says the paper shows this">📄 ${esc(x.figure)}</strong>` : ""}${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}</div>`;
+        return `<div class="pd-subrow" style="margin:2px 0;padding:2px 4px;border-radius:4px${bg ? `;background:${bg}` : ""}">
+          ${x.unsure ? `<strong style="color:#b45309;font-size:11px">⚑ author unsure</strong> ` : ""}${x.edited ? `<strong style="color:#1d4ed8;font-size:11px">✎ author changed this</strong> ` : ""}<span>${esc(fmt(x))}</span>${chipFor ? chipFor(x) : ""}${x.figure ? `<strong style="color:#047857;font-size:11px;margin-left:5px" title="Where the author says the paper shows this">📄 ${esc(x.figure)}</strong>` : ""}${decideBtns(x, extraFor ? extraFor(x) : "")}${decBadge(x)}${addedBadge(x)}</div>`;
       }).join("")}</div>`
     : "";
-  // An author GO entry that carries a real GO id can go straight into the
-  // curated record, and from there into the GAF export. Without an id there is
-  // nothing to add, so the button is not offered.
-  const addGoBtn = (x) => x.go_id
-    ? `<button type="button" class="pd-addgo" data-gene="${esc(x.gene || "")}" data-goid="${esc(x.go_id)}" data-aspect="${esc(x.aspect || "")}" data-pmid="${esc(d.pmid)}" title="Add this as a curated GO annotation, which puts it in the GAF export" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to GO</button>`
-    : `<span class="muted" style="font-size:10.5px;margin-left:3px">needs a GO id</span>`;
+  // Adding to the curated record always goes through a picker: the curator
+  // chooses the term (the author's is only the starting search) and the
+  // evidence, and nothing is saved until they press Save. The GO record feeds
+  // the GAF export, so a term nobody chose must never reach it.
+  const pickBtn = (cls, label, title, x, q) => `<button type="button" class="${cls}" data-key="${esc(x.key || "")}" data-gene="${esc(x.gene || "")}" data-q="${esc(q || "")}" data-negative="${x.negative ? 1 : 0}" data-pmid="${esc(d.pmid)}" title="${esc(title)}" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">${label}</button>`;
+  const addGoBtn = (x) => pickBtn("pd-addgo", "→ add to GO…",
+    "Find the GO term and choose the evidence code. Nothing is saved until you press Save.", x, x.term || x.go_id);
+  const addPhenoBtn = (x) => pickBtn("pd-addpheno", "→ add phenotype…",
+    "Find the DDPHENO term for this observation. Nothing is saved until you press Save.", x, x.ddpheno_term || x.phenotype);
   const addSumBtn = (x) => `<button type="button" class="pd-addsum" data-gene="${esc(x.gene || "")}" data-sentence="${esc(x.sentence || "")}" data-pmid="${esc(d.pmid)}" title="Append this sentence to the gene's curated summary" style="font-size:10.5px;margin-left:3px;padding:1px 6px;border:1px solid #d7dee0;border-radius:4px;background:#fff;cursor:pointer;white-space:nowrap">→ add to summary</button>`;
   const submitted = sub ? `<div style="margin-top:6px;border-left:3px solid #10b981;padding-left:8px;font-size:12.5px;background:#f0fdf4">
       <strong>Author submitted</strong>${sub.submitter ? ` by ${esc(sub.submitter)}` : ""}${(sub.orcid || {}).id
@@ -3333,7 +3473,7 @@ function paperDraftCard(d) {
                       + (ed ? `<span style="font-size:11px;color:#1d4ed8;font-weight:600"> · ✎ ${ed} changed by the author</span>` : ""); })()}
       ${subRows("Gene summaries", sub.gene_summaries, (x) => `${x.gene || "?"}: ${x.sentence || ""}`, addSumBtn)}
       ${subRows("GO", sub.go, (x) => `${x.gene}: ${x.term} (${x.aspect})${x.go_id ? ` [${x.go_id}]` : " [no GO id]"}`, addGoBtn)}
-      ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.negative ? "[no change] " : ""}${x.gene}: ${x.phenotype}`)}
+      ${subRows("Phenotypes", sub.phenotypes, (x) => `${x.negative ? "[no change] " : ""}${x.gene}: ${x.phenotype}`, addPhenoBtn, ddphenoChip)}
       ${subRows("Interactions", sub.interactions, (x) => `${x.gene_a} + ${x.gene_b} (${x.type})`)}
       ${sub.note ? `<div style="margin-top:5px;background:#fff;border:1px dashed #cbd5e1;border-radius:5px;padding:5px 7px">
         <strong style="font-size:11px;color:#475569">🔒 Private note from the author</strong>
@@ -3476,23 +3616,12 @@ async function loadPaperDrafts() {
           loadPaperDrafts();
         } catch { ftBtn.textContent = "failed"; setTimeout(() => { ftBtn.textContent = orig; ftBtn.disabled = false; }, 1800); }
       });
-      // Promote an author's GO annotation into the curated record. The evidence
-      // code is the curator's call, so we ask rather than guess: an annotation
-      // with the wrong evidence is worse than one that waited.
-      card.querySelectorAll(".pd-addgo").forEach((btn) => btn.addEventListener("click", async () => {
-        const ev = (prompt(`Evidence code for ${btn.dataset.gene} ${btn.dataset.goid}?\n\n`
-          + "IDA  direct assay\nIMP  mutant phenotype\nIGI  genetic interaction\n"
-          + "IPI  physical interaction\nIEP  expression pattern\nIC   curator inference\nTAS  author statement",
-          "IMP") || "").trim().toUpperCase();
-        if (!ev) return;
-        const orig = btn.textContent; btn.disabled = true; btn.textContent = "adding…";
-        const { ok, d: res } = await curatorPost("/api/curator/go", {
-          ddb: btn.dataset.gene, action: "add", go_id: btn.dataset.goid,
-          aspect: btn.dataset.aspect, evidence: ev, pmid: btn.dataset.pmid,
-        });
-        if (ok) { btn.textContent = "✓ added"; }
-        else { btn.textContent = orig; btn.disabled = false; alert((res && res.error) || "Could not add that annotation."); }
-      }));
+      // Promote an author's GO entry or phenotype into the curated record, through
+      // a picker where the curator chooses the term and (for GO) the evidence.
+      card.querySelectorAll(".pd-addgo").forEach((btn) => btn.addEventListener("click", () =>
+        openCurationPicker(btn, "go", () => loadPaperDrafts())));
+      card.querySelectorAll(".pd-addpheno").forEach((btn) => btn.addEventListener("click", () =>
+        openCurationPicker(btn, "pheno", () => loadPaperDrafts())));
 
       // Delete a submission outright, for when it should not exist rather than
       // just be hidden. Two-step confirm: this is not recoverable from the UI.

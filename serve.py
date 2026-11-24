@@ -2787,42 +2787,95 @@ _CLAUDE_CODE_NOTE = ("Curate this paper in Claude Code: use Export batch, curate
                      "then Import results. Fetch full text first for a whole-paper draft.")
 
 # Dicty Phenotype Ontology (DDPHENO) as the controlled vocabulary for AI phenotype
-# curation: the model must choose phenotype terms from this list, never invent free
-# text. Built once from assets/phenotype_ontology.json (the same file the Phenotypes
-# tab uses, so the AI and the site share one vocabulary).
+# curation. Built once from assets/phenotype_ontology.json (the same file the
+# Phenotypes tab uses, so the AI and the site share one vocabulary).
+#
+# Every AI phenotype carries two things: the observation in plain words (what the
+# paper shows, which is what an author can check) and the DDPHENO term proposed
+# for it. When no term fits, the item is KEPT and flagged no_term, because a real
+# observation with no ontology home is still something a curator needs to see.
 _PHENO_TERMS = None          # [(name, id)]
-_PHENO_BY_LC = None          # lowercased name -> (canonical name, id)
+_PHENO_BY_LC = None          # lowercased name or synonym -> (canonical name, id)
+_PHENO_BY_ID = None          # DDPHENO id -> canonical name
 _PHENO_PROMPT = None         # "name (DDPHENO:id)" per line, for the prompt
+_DDPHENO_ID_RE = re.compile(r"^DDPHENO:\d{7}$")
 
 
 def _load_pheno_ontology():
-    global _PHENO_TERMS, _PHENO_BY_LC, _PHENO_PROMPT
+    global _PHENO_TERMS, _PHENO_BY_LC, _PHENO_BY_ID, _PHENO_PROMPT
     if _PHENO_TERMS is None:
         try:
             data = _load_json("phenotype_ontology.json") or {}
         except Exception:
             data = {}
         _PHENO_TERMS = [(name, (v or {}).get("id", "")) for name, v in data.items() if name]
-        _PHENO_BY_LC = {name.lower(): (name, tid) for name, tid in _PHENO_TERMS}
+        _PHENO_BY_ID = {tid: name for name, tid in _PHENO_TERMS if tid}
+        by_lc = {}
+        # Synonyms first, so a term's own name wins when the two collide.
+        for name, v in data.items():
+            for syn in (v or {}).get("synonyms") or []:
+                by_lc.setdefault(" ".join(str(syn).split()).lower(), (name, (v or {}).get("id", "")))
+        for name, tid in _PHENO_TERMS:
+            by_lc[" ".join(name.split()).lower()] = (name, tid)
+        _PHENO_BY_LC = by_lc
         _PHENO_PROMPT = "\n".join(f"{name} ({tid})" for name, tid in _PHENO_TERMS)
     return _PHENO_TERMS
 
 
-def _normalize_phenotypes(items):
-    """Snap AI phenotypes to the DDPHENO vocabulary: keep only terms whose name
-    matches the ontology, returning the canonical name + id and the supporting
-    quote. Free-text phenotypes that match nothing are dropped."""
+def _pheno_lookup(text):
+    """(canonical name, id) for an exact DDPHENO name or synonym, else None."""
     _load_pheno_ontology()
+    return _PHENO_BY_LC.get(" ".join(str(text or "").split()).lower())
+
+
+def map_phenotype(x):
+    """The DDPHENO mapping for one phenotype item, as fields to merge into it.
+
+    Accepts the proposed term as ddpheno_id / ddpheno_term (or the older
+    phenotype_id). An id is only trusted if it is a current DDPHENO term, and the
+    term's own name is then taken from the ontology, never from the model. With no
+    usable proposal, the observation itself is tried as an exact term name. What
+    is left is flagged no_term with the reason, so "the AI found no term" and
+    "the AI gave a bad id" are both visible to the curator, never silently dropped."""
+    _load_pheno_ontology()
+    cand = str(x.get("ddpheno_id") or x.get("phenotype_id") or "").strip().upper()
+    if cand and _DDPHENO_ID_RE.match(cand) and cand in _PHENO_BY_ID:
+        return {"ddpheno_id": cand, "ddpheno_term": _PHENO_BY_ID[cand]}
+    for text in (x.get("ddpheno_term"), x.get("phenotype")):
+        hit = _pheno_lookup(text)
+        if hit and hit[1]:
+            return {"ddpheno_id": hit[1], "ddpheno_term": hit[0]}
+    note = (f"{cand} is not a current DDPHENO term" if cand and cand not in ("NONE", "N/A")
+            else "No suitable DDPHENO term")
+    return {"ddpheno_id": "", "ddpheno_term": "", "no_term": True, "ddpheno_note": note}
+
+
+def clean_phenotypes(items, limit=100, observation_len=500):
+    """AI phenotype items in the shared shape: gene, the observation, the
+    supporting quote, the negative flag, and the DDPHENO mapping. Used by both
+    drafting routes (server AI and the Claude Code batch) so they cannot drift."""
     out = []
-    for x in items or []:
+    for x in (items or [])[:limit]:
         if not isinstance(x, dict):
             continue
-        hit = _PHENO_BY_LC.get(str(x.get("phenotype", "")).strip().lower())
-        if not hit:
+        obs = " ".join(str(x.get("phenotype") or x.get("observation") or "").split())[:observation_len]
+        m = map_phenotype(x)
+        if not obs:
+            obs = m.get("ddpheno_term", "")
+        if not obs:
             continue
-        out.append({"gene": str(x.get("gene", ""))[:60], "phenotype": hit[0],
-                    "phenotype_id": hit[1], "support": str(x.get("support", ""))[:400]})
-    return out[:30]
+        row = {"gene": str(x.get("gene", ""))[:60], "phenotype": obs, **m}
+        if x.get("support"):
+            row["support"] = str(x["support"])[:400]
+        if x.get("negative"):
+            row["negative"] = True
+        out.append(row)
+    return out
+
+
+def _normalize_phenotypes(items):
+    """Server-drafted AI phenotypes, mapped to DDPHENO (see clean_phenotypes)."""
+    return clean_phenotypes(items, limit=30, observation_len=400)
 
 
 def _normalize_go(items):
@@ -2889,13 +2942,16 @@ def _curation_ai_draft(paper, genes, full_text=None):
         "paper characterizes); "
         '"go" (list of {gene, go_id:"GO:#######", term, aspect:"P"|"F"|"C", '
         'evidence:"IDA"|"IMP"|"IPI"|"IGI"|"IEP", support}); '
-        '"phenotypes" (list of {gene, phenotype, phenotype_id, support}); '
+        '"phenotypes" (list of {gene, phenotype, ddpheno_id, ddpheno_term, negative, support}); '
         '"interactions" (list of {gene_a, gene_b, type:"physical"|"genetic", support}). '
         "For `go`, use real Gene Ontology terms and give the matching GO id; only terms that "
         "resolve to a current GO term are kept, so do not invent ids or terms. "
-        "For phenotypes, `phenotype` MUST be an exact term name copied from the Dicty Phenotype "
-        "Ontology provided below, and `phenotype_id` its DDPHENO id; if no ontology term fits the "
-        "result, omit that phenotype rather than inventing one. In every go/phenotype/interaction, "
+        "For phenotypes, `phenotype` is the observation in plain words, as the paper shows it. "
+        "Then look the observation up in the Dicty Phenotype Ontology provided below: "
+        "`ddpheno_term` is the exact name of the best fitting term and `ddpheno_id` its DDPHENO "
+        "id. Choose the most specific term that is genuinely true of the result. If no term fits, "
+        'set both to "" and still return the phenotype: a curator needs to see it. Set '
+        "`negative` true only for something the paper tested and found unchanged. In every go/phenotype/interaction, "
         "`support` is a short verbatim quote from the paper that directly shows it; if you cannot "
         "quote direct evidence, omit the item. Output ONLY the JSON object."
     )
@@ -3129,9 +3185,11 @@ def annotate_submission(sub):
         return None
     out = dict(sub)
     decisions = sub.get("decisions") or {}
+    added = sub.get("added") or {}
     for kind in SUBMISSION_KINDS:
         out[kind] = [{**it, "key": _decision_key(kind, it),
-                      "decision": decisions.get(_decision_key(kind, it)) or {}}
+                      "decision": decisions.get(_decision_key(kind, it)) or {},
+                      "added": added.get(_decision_key(kind, it)) or []}
                      for it in (sub.get(kind) or []) if isinstance(it, dict)]
     return out
 
@@ -3619,7 +3677,9 @@ _CURATION_INSTRUCTIONS = (
     'of a dictyBase gene summary, stating what THIS paper shows the gene does or '
     'what its mutant reveals"}], '
     '"go": [{"gene": "symbol", "term": "GO term name", "aspect": "P|F|C", "go_id": "GO:0006909"}], '
-    '"phenotypes": [{"gene": "symbol", "phenotype": "mutant phenotype", "negative": false}], '
+    '"phenotypes": [{"gene": "symbol", "phenotype": "the observation in plain words", '
+    '"ddpheno_id": "DDPHENO:0000433", "ddpheno_term": "increased secretion of lysosomal enzymes", '
+    '"negative": false}], '
     '"interactions": [{"gene_a": "symbol", "gene_b": "symbol", "type": "physical|genetic"}]}]}\n'
     "Use ONLY Dictyostelium genes actually named in the paper. Be specific and "
     "grounded in the text; never invent gene IDs, GO terms, or numbers. Prefer the "
@@ -3637,6 +3697,15 @@ _CURATION_INSTRUCTIONS = (
     "every id against the current ontology and discards any it does not "
     "recognise, keeping your wording so a curator can map it by hand. If you are "
     "not sure, leave go_id out and describe the function plainly.\n"
+    "PHENOTYPES AND DDPHENO: write \"phenotype\" as the observation in plain words, "
+    "as the paper shows it. Then look it up in `phenotype_ontology` (the Dicty "
+    "Phenotype Ontology, included in this file: id, name, synonyms, definition) "
+    "and give the best fitting term as \"ddpheno_id\" and \"ddpheno_term\". Read "
+    "the definition: pick the most specific term that is genuinely true of the "
+    "result, not a loose neighbour. If no term fits, set both to \"\" and keep the "
+    "phenotype anyway. dictyBase flags it \"no suitable DDPHENO term\" for the "
+    "curator, which is a useful answer, not a failure. Never invent an id; the "
+    "server checks every id against the ontology and flags any it does not know.\n"
     "Then import the JSON back into dictyBase via the curator portal's "
     "'Import results' button."
 )
@@ -3657,7 +3726,16 @@ def paper_export_bundle():
             "abstract": d.get("abstract", ""), "full_text": ft, "has_full_text": bool(ft),
             "detected_genes": [g.get("symbol") for g in d.get("genes", []) if g.get("symbol")],
         })
-    return {"instructions": _CURATION_INSTRUCTIONS, "count": len(papers), "papers": papers}
+    try:
+        onto = _load_json("phenotype_ontology.json") or {}
+    except Exception:
+        onto = {}
+    ddpheno = [{"id": (v or {}).get("id", ""), "name": name,
+                "synonyms": (v or {}).get("synonyms") or [],
+                "definition": (v or {}).get("definition", "")}
+               for name, v in onto.items() if name and (v or {}).get("id")]
+    return {"instructions": _CURATION_INSTRUCTIONS, "count": len(papers), "papers": papers,
+            "phenotype_ontology": ddpheno}
 
 
 def import_curation_results(results):
@@ -3686,7 +3764,7 @@ def import_curation_results(results):
             "summary": str(r.get("summary", ""))[:800],
             "gene_summaries": clean(r.get("gene_summaries"), ["gene", "sentence"]),
             "go": _clean_go(clean(r.get("go"), ["gene", "term", "aspect", "go_id"])),
-            "phenotypes": clean(r.get("phenotypes"), ["gene", "phenotype"]),
+            "phenotypes": clean_phenotypes(r.get("phenotypes")),
             "interactions": clean(r.get("interactions"), ["gene_a", "gene_b", "type"]),
         }
         d["curated_source"] = "claude-code"
@@ -3754,6 +3832,54 @@ def paper_session_get(token):
     return 200, _paper_public_view(d)
 
 
+def _carry_ddpheno(rows, ai_rows):
+    """Give each submitted phenotype the DDPHENO mapping it should carry.
+
+    The author edits the observation, never the ontology term. An entry they
+    left as drafted keeps the AI's proposed term (or its no-term flag). One they
+    rewrote, or added, gets a term only if their words are exactly a DDPHENO name
+    or synonym; otherwise it is left unmapped for the curator, not flagged
+    no_term, because nobody has actually looked for a term for the new wording."""
+    norm = lambda s: " ".join(str(s or "").split()).lower()
+    drafted = {}
+    for a in ai_rows or []:
+        if isinstance(a, dict):
+            drafted.setdefault((norm(a.get("gene")), norm(a.get("phenotype"))), a)
+    out = []
+    for r in rows:
+        a = drafted.get((norm(r.get("gene")), norm(r.get("phenotype"))))
+        if a and (a.get("ddpheno_id") or a.get("no_term")):
+            for k in ("ddpheno_id", "ddpheno_term", "no_term", "ddpheno_note"):
+                if a.get(k):
+                    r[k] = a[k]
+        else:
+            hit = _pheno_lookup(r.get("phenotype"))
+            if hit and hit[1]:
+                r["ddpheno_term"], r["ddpheno_id"] = hit
+        out.append(r)
+    return out
+
+
+def record_submission_added(pmid, key, what, curator):
+    """Note on a submitted item what the curator added to the curated record
+    from it (for example "GO:0006909 phagocytosis, IMP"), so the queue shows it
+    after a reload. Purely a record: the annotation itself is already saved."""
+    pmid = re.sub(r"\D", "", str(pmid or ""))
+    store = _load_paper_drafts()
+    d = next((x for x in store.get("drafts", []) if x.get("pmid") == pmid), None)
+    if not d or not d.get("submission"):
+        return False
+    valid = {_decision_key(k, it) for k in SUBMISSION_KINDS
+             for it in (d["submission"].get(k) or []) if isinstance(it, dict)}
+    if key not in valid:
+        return False
+    added = d["submission"].setdefault("added", {})
+    added.setdefault(key, []).append({"what": str(what)[:300], "by": curator or "Curator",
+                                      "at": datetime.datetime.utcnow().isoformat() + "Z"})
+    _atomic_write_json(PAPER_DRAFTS_PATH, store)
+    return True
+
+
 def paper_session_submit(token, payload):
     store = _load_paper_drafts()
     d = next((x for x in store.get("drafts", []) if x.get("token") == token), None)
@@ -3785,7 +3911,8 @@ def paper_session_submit(token, payload):
     sub = {
         "gene_summaries": clean(cur.get("gene_summaries"), ["gene", "sentence"]),
         "go": _clean_go(clean(cur.get("go"), ["gene", "term", "aspect", "go_id"])),
-        "phenotypes": clean(cur.get("phenotypes"), ["gene", "phenotype"]),
+        "phenotypes": _carry_ddpheno(clean(cur.get("phenotypes"), ["gene", "phenotype"]),
+                                     (d.get("ai") or {}).get("phenotypes")),
         "interactions": clean(cur.get("interactions"), ["gene_a", "gene_b", "type"]),
         "note": str(payload.get("note", ""))[:4000],
         "submitter": str(payload.get("submitter", ""))[:200],
@@ -3807,6 +3934,7 @@ def paper_session_submit(token, payload):
     # new key, so it lands back in the curator's queue as undecided.
     live = {_decision_key(k, it) for k in SUBMISSION_KINDS for it in sub[k]}
     sub["decisions"] = {k: v for k, v in (prev.get("decisions") or {}).items() if k in live}
+    sub["added"] = {k: v for k, v in (prev.get("added") or {}).items() if k in live}
     sub["awaiting_author"] = any(v.get("state") == "clarify" for v in sub["decisions"].values())
     d["submission"] = sub
     d["status"] = "submitted"
@@ -6040,6 +6168,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         else:
             evidence = (body.get("evidence") or "").strip().upper()
             pmid = re.sub(r"\D", "", (body.get("pmid") or ""))
+            # Only a current GO term can go into the GAF, and its aspect is the
+            # ontology's, not whatever the form said.
+            onto_name, onto_aspect = go_term(go_id)
+            if not onto_name:
+                self.send_json(400, {"error": f"{go_id} is not a current GO term."})
+                return
+            if onto_aspect in ("P", "F", "C") and onto_aspect != aspect:
+                cur[aspect] = [e for e in cur[aspect] if not (len(e) >= 1 and e[0] == go_id)]
+                aspect = onto_aspect
             if not evidence:
                 self.send_json(400, {"error": "An evidence code is required (e.g. IDA, IMP, IPI)."})
                 return
@@ -6053,7 +6190,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         save_gene_override(ddb, {"curated_go": cur, "curator": curator, "curator_date":
                                  datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()},
                            curator, action="go-" + action)
-        self.send_json(200, {"ok": True, "ddb": ddb, "curated_go": cur})
+        added = False
+        if action != "delete" and body.get("submission_key"):
+            name, _asp = go_term(go_id)
+            what = f"{go_id} {name or ''}, {evidence}".replace("  ", " ")
+            added = record_submission_added(body.get("pmid"), str(body["submission_key"]), what, curator)
+        self.send_json(200, {"ok": True, "ddb": ddb, "curated_go": cur, "recorded": added})
 
     def _handle_curator_phenotype(self):
         """Add or delete a curated phenotype. Body: {ddb, action:add|delete,
@@ -6066,6 +6208,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_json(*err)
             return
         ddb = (body.get("ddb") or "").strip()
+        if ddb and not re.match(r"^DDB_G\d+$", ddb):
+            ddb = resolve_gene(ddb) or ddb      # accept a gene symbol too, as GO does
         term = (body.get("term") or "").strip()
         action = (body.get("action") or "add").strip()
         if not re.match(r"^DDB_G\d+$", ddb) or not term:
@@ -6089,7 +6233,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         save_gene_override(ddb, {"curated_phenotypes": rows, "curator": curator, "curator_date":
                                  datetime.datetime.utcnow().strftime("%d-%b-%Y").upper()},
                            curator, action="phenotype-" + action)
-        self.send_json(200, {"ok": True, "ddb": ddb, "curated_phenotypes": rows})
+        added = False
+        if action != "delete" and body.get("submission_key"):
+            hit = _pheno_lookup(term)
+            what = (f"{hit[1]} {hit[0]}" if hit and hit[1] else term) + (" (no change)" if body.get("negative") else "")
+            added = record_submission_added(body.get("pmid"), str(body["submission_key"]), what, curator)
+        self.send_json(200, {"ok": True, "ddb": ddb, "curated_phenotypes": rows, "recorded": added})
 
     def _handle_curator_nomenclature(self):
         """Set a gene's symbol and synonyms. Body: {ddb, symbol, synonyms:[...]}.

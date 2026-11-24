@@ -3393,6 +3393,7 @@ function paperDraftCard(d) {
     ? d.genes.map((g) => `<a class="text-link" href="/gene/${encodeURIComponent(g.symbol || g.ddb)}" target="_blank" rel="noopener">${esc(g.symbol || g.ddb)}</a>`).join(", ")
     : `<span class="muted">none detected in the abstract</span>`;
   const ai = d.ai || {};
+  const aiBlock = (ai) => {
   let aiHtml;
   if (!ai.ok) {
     aiHtml = `<p class="muted" style="font-size:12px;margin:4px 0">AI suggestions: ${esc(ai.note || "unavailable")}</p>`;
@@ -3414,6 +3415,15 @@ function paperDraftCard(d) {
       ${list("Interactions", ai.interactions, (x) => `${x.gene_a || "?"} + ${x.gene_b || "?"} (${x.type || "?"})`)}
       ${ai.drafted_from ? `<p class="muted" style="font-size:11px;margin:3px 0 0">Well-supported draft from ${esc(String(ai.drafted_from).replace("_", " "))}${ai.model ? " · " + esc(ai.model) : ""}. Hover an item for its supporting quote.</p>` : ""}`;
   }
+  return aiHtml;
+  };
+  // Earlier AI drafts that a redraft replaced, newest first, so a curator can
+  // compare the new suggestions with what was there (and what the author saw).
+  const history = (d.ai_history || []).slice().reverse();
+  const aiHtml = aiBlock(ai) + (history.length ? history.map((h) => `
+      <details style="margin-top:4px;border-left:3px solid #cbd5e1;padding-left:8px">
+        <summary style="cursor:pointer;font-size:12px;color:#475569">Earlier AI draft, replaced ${esc(String(h.replaced_at || "").slice(0, 10))}</summary>
+        <div style="opacity:.85">${aiBlock(h)}</div></details>`).join("") : "");
   const corr = d.corr_name
     ? `${esc(d.corr_name)}${d.corr_email ? ` &lt;${esc(d.corr_email)}&gt;` : ` <span class="muted">(no email found)</span>`}`
     : `<span class="muted">corresponding author not identified</span>`;

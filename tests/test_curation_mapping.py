@@ -92,6 +92,19 @@ class DraftStoreTest(unittest.TestCase):
         self.assertEqual(ph[0]["ddpheno_term"], "increased secretion of lysosomal enzymes")
         self.assertTrue(ph[1]["no_term"])
 
+    def test_redraft_keeps_the_earlier_draft(self):
+        serve.import_curation_results([{"pmid": "123", "summary": "first",
+                                        "phenotypes": [{"gene": "g", "phenotype": "old free text"}]}])
+        serve.import_curation_results([{"pmid": "123", "summary": "second"}])
+        d = self.draft()
+        self.assertEqual(d["ai"]["summary"], "second")
+        self.assertEqual(d["ai_history"][-1]["summary"], "first")
+        self.assertEqual(d["ai_history"][-1]["phenotypes"][0]["phenotype"], "old free text")
+        self.assertTrue(d["ai_history"][-1]["replaced_at"])
+        for i in range(8):
+            serve.import_curation_results([{"pmid": "123", "summary": f"again {i}"}])
+        self.assertEqual(len(self.draft()["ai_history"]), 5)
+
     def test_bundle_carries_the_ontology(self):
         b = serve.paper_export_bundle()
         self.assertGreater(len(b["phenotype_ontology"]), 500)

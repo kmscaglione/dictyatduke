@@ -3725,6 +3725,9 @@ def paper_export_bundle():
             "url": d.get("url"), "journal": d.get("journal", ""),
             "abstract": d.get("abstract", ""), "full_text": ft, "has_full_text": bool(ft),
             "detected_genes": [g.get("symbol") for g in d.get("genes", []) if g.get("symbol")],
+            # So a curator can pick out the papers they mean (for a redraft, say)
+            # without the earlier AI draft itself, which would anchor a fresh one.
+            "status": d.get("status", ""), "author_submitted": bool(d.get("submission")),
         })
     try:
         onto = _load_json("phenotype_ontology.json") or {}
@@ -3759,6 +3762,13 @@ def import_curation_results(results):
         d = by_pmid.get(pmid)
         if not d:
             continue
+        # A redraft must not erase the draft it replaces: curators compare the
+        # two, and the earlier one is what the author was originally shown.
+        old = d.get("ai") or {}
+        if old.get("ok"):
+            hist = d.setdefault("ai_history", [])
+            hist.append({**old, "replaced_at": datetime.datetime.utcnow().isoformat() + "Z"})
+            del hist[:-5]                       # keep the five most recent
         d["ai"] = {
             "ok": True, "model": "Claude Code (whole paper)",
             "summary": str(r.get("summary", ""))[:800],
